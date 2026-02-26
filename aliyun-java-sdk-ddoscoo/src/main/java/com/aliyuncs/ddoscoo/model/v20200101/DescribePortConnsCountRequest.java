@@ -36,7 +36,7 @@ public class DescribePortConnsCountRequest extends RpcAcsRequest<DescribePortCon
 
 	private List<String> instanceIdss;
 	public DescribePortConnsCountRequest() {
-		super("ddoscoo", "2020-01-01", "DescribePortConnsCount");
+		super("ddoscoo", "2020-01-01", "DescribePortConnsCount", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

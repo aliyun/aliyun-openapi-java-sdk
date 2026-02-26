@@ -49,25 +49,25 @@ public class DescribeScdnDomainDetailResponse extends AcsResponse {
 
 		private String gmtCreated;
 
-		private String gmtModified;
-
-		private String domainStatus;
-
-		private String cname;
-
-		private String domainName;
+		private String sSLPub;
 
 		private String description;
 
 		private String sSLProtocol;
 
-		private String sSLPub;
-
-		private String scope;
+		private String resourceGroupId;
 
 		private String certName;
 
-		private String resourceGroupId;
+		private String scope;
+
+		private String cname;
+
+		private String domainStatus;
+
+		private String gmtModified;
+
+		private String domainName;
 
 		private List<Source> sources;
 
@@ -79,36 +79,12 @@ public class DescribeScdnDomainDetailResponse extends AcsResponse {
 			this.gmtCreated = gmtCreated;
 		}
 
-		public String getGmtModified() {
-			return this.gmtModified;
+		public String getSSLPub() {
+			return this.sSLPub;
 		}
 
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getDomainStatus() {
-			return this.domainStatus;
-		}
-
-		public void setDomainStatus(String domainStatus) {
-			this.domainStatus = domainStatus;
-		}
-
-		public String getCname() {
-			return this.cname;
-		}
-
-		public void setCname(String cname) {
-			this.cname = cname;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setSSLPub(String sSLPub) {
+			this.sSLPub = sSLPub;
 		}
 
 		public String getDescription() {
@@ -127,20 +103,12 @@ public class DescribeScdnDomainDetailResponse extends AcsResponse {
 			this.sSLProtocol = sSLProtocol;
 		}
 
-		public String getSSLPub() {
-			return this.sSLPub;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setSSLPub(String sSLPub) {
-			this.sSLPub = sSLPub;
-		}
-
-		public String getScope() {
-			return this.scope;
-		}
-
-		public void setScope(String scope) {
-			this.scope = scope;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getCertName() {
@@ -151,12 +119,44 @@ public class DescribeScdnDomainDetailResponse extends AcsResponse {
 			this.certName = certName;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getScope() {
+			return this.scope;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setScope(String scope) {
+			this.scope = scope;
+		}
+
+		public String getCname() {
+			return this.cname;
+		}
+
+		public void setCname(String cname) {
+			this.cname = cname;
+		}
+
+		public String getDomainStatus() {
+			return this.domainStatus;
+		}
+
+		public void setDomainStatus(String domainStatus) {
+			this.domainStatus = domainStatus;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public List<Source> getSources() {
@@ -169,23 +169,15 @@ public class DescribeScdnDomainDetailResponse extends AcsResponse {
 
 		public static class Source {
 
-			private String content;
-
 			private String type;
-
-			private Integer port;
-
-			private String enabled;
 
 			private String priority;
 
-			public String getContent() {
-				return this.content;
-			}
+			private Integer port;
 
-			public void setContent(String content) {
-				this.content = content;
-			}
+			private String content;
+
+			private String enabled;
 
 			public String getType() {
 				return this.type;
@@ -193,6 +185,14 @@ public class DescribeScdnDomainDetailResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getPriority() {
+				return this.priority;
+			}
+
+			public void setPriority(String priority) {
+				this.priority = priority;
 			}
 
 			public Integer getPort() {
@@ -203,20 +203,20 @@ public class DescribeScdnDomainDetailResponse extends AcsResponse {
 				this.port = port;
 			}
 
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
+			}
+
 			public String getEnabled() {
 				return this.enabled;
 			}
 
 			public void setEnabled(String enabled) {
 				this.enabled = enabled;
-			}
-
-			public String getPriority() {
-				return this.priority;
-			}
-
-			public void setPriority(String priority) {
-				this.priority = priority;
 			}
 		}
 	}

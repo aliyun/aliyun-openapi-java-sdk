@@ -27,7 +27,7 @@ public class DescribeRecoverableTimeRangeRequest extends RpcAcsRequest<DescribeR
 
 	private String clusterId;
 	public DescribeRecoverableTimeRangeRequest() {
-		super("HBase", "2019-01-01", "DescribeRecoverableTimeRange", "hbase");
+		super("HBase", "2019-01-01", "DescribeRecoverableTimeRange");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

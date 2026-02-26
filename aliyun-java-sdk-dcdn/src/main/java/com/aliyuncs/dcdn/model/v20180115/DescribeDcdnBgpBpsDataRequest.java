@@ -29,11 +29,15 @@ public class DescribeDcdnBgpBpsDataRequest extends RpcAcsRequest<DescribeDcdnBgp
 
 	private String startTime;
 
+	private String devicePort;
+
 	private String endTime;
 
 	private Long ownerId;
 
 	private String interval;
+
+	private String deviceName;
 	public DescribeDcdnBgpBpsDataRequest() {
 		super("dcdn", "2018-01-15", "DescribeDcdnBgpBpsData");
 		setMethod(MethodType.POST);
@@ -62,6 +66,17 @@ public class DescribeDcdnBgpBpsDataRequest extends RpcAcsRequest<DescribeDcdnBgp
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getDevicePort() {
+		return this.devicePort;
+	}
+
+	public void setDevicePort(String devicePort) {
+		this.devicePort = devicePort;
+		if(devicePort != null){
+			putQueryParameter("DevicePort", devicePort);
 		}
 	}
 
@@ -95,6 +110,17 @@ public class DescribeDcdnBgpBpsDataRequest extends RpcAcsRequest<DescribeDcdnBgp
 		this.interval = interval;
 		if(interval != null){
 			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

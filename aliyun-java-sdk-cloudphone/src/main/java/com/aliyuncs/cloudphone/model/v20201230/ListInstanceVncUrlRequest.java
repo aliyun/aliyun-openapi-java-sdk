@@ -34,7 +34,7 @@ public class ListInstanceVncUrlRequest extends RpcAcsRequest<ListInstanceVncUrlR
 
 	private String instanceId;
 	public ListInstanceVncUrlRequest() {
-		super("cloudphone", "2020-12-30", "ListInstanceVncUrl", "cloudphone");
+		super("cloudphone", "2020-12-30", "ListInstanceVncUrl");
 		setMethod(MethodType.POST);
 	}
 

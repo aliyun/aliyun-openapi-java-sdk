@@ -27,6 +27,8 @@ public class CancelAutoSnapshotPolicyRequest extends RpcAcsRequest<CancelAutoSna
 
 	private Long resourceOwnerId;
 
+	private String autoSnapshotPolicyId;
+
 	private String diskIds;
 
 	private String resourceOwnerAccount;
@@ -49,6 +51,17 @@ public class CancelAutoSnapshotPolicyRequest extends RpcAcsRequest<CancelAutoSna
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAutoSnapshotPolicyId() {
+		return this.autoSnapshotPolicyId;
+	}
+
+	public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		if(autoSnapshotPolicyId != null){
+			putQueryParameter("autoSnapshotPolicyId", autoSnapshotPolicyId);
 		}
 	}
 

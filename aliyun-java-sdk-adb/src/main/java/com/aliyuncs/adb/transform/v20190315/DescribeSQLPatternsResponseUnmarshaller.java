@@ -51,6 +51,20 @@ public class DescribeSQLPatternsResponseUnmarshaller {
 			patternDetailsItem.setQueryCount(_ctx.longValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].QueryCount"));
 			patternDetailsItem.setFailedCount(_ctx.longValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].FailedCount"));
 			patternDetailsItem.setBlockable(_ctx.booleanValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].Blockable"));
+			patternDetailsItem.setQueryTimeSum(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].QueryTimeSum"));
+			patternDetailsItem.setQueryTimePercentage(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].QueryTimePercentage"));
+			patternDetailsItem.setPeakMemorySum(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].PeakMemorySum"));
+			patternDetailsItem.setPeakMemoryPercentage(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].PeakMemoryPercentage"));
+			patternDetailsItem.setScanSizeSum(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].ScanSizeSum"));
+			patternDetailsItem.setScanSizePercentage(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].ScanSizePercentage"));
+			patternDetailsItem.setAverageOperatorCost(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].AverageOperatorCost"));
+			patternDetailsItem.setMaxOperatorCost(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].MaxOperatorCost"));
+			patternDetailsItem.setOperatorCostSum(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].OperatorCostSum"));
+			patternDetailsItem.setOperatorCostPercentage(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].OperatorCostPercentage"));
+			patternDetailsItem.setAverageScanCost(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].AverageScanCost"));
+			patternDetailsItem.setMaxScanCost(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].MaxScanCost"));
+			patternDetailsItem.setScanCostSum(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].ScanCostSum"));
+			patternDetailsItem.setScanCostPercentage(_ctx.doubleValue("DescribeSQLPatternsResponse.PatternDetails["+ i +"].ScanCostPercentage"));
 
 			patternDetails.add(patternDetailsItem);
 		}

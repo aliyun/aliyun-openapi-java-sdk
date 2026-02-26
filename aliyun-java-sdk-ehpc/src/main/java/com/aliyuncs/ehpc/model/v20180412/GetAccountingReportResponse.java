@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAccountingReportResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCoreTime;
 
 	private String metrics;
 
-	private Integer totalCoreTime;
-
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
 	private Integer pageNumber;
 
+	private Integer totalCount;
+
 	private List<String> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalCoreTime() {
+		return this.totalCoreTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalCoreTime(Integer totalCoreTime) {
+		this.totalCoreTime = totalCoreTime;
 	}
 
 	public String getMetrics() {
@@ -55,20 +55,12 @@ public class GetAccountingReportResponse extends AcsResponse {
 		this.metrics = metrics;
 	}
 
-	public Integer getTotalCoreTime() {
-		return this.totalCoreTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalCoreTime(Integer totalCoreTime) {
-		this.totalCoreTime = totalCoreTime;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -85,6 +77,14 @@ public class GetAccountingReportResponse extends AcsResponse {
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<String> getData() {

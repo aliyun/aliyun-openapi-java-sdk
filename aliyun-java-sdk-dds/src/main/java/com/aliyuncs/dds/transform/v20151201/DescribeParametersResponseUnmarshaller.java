@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.dds.model.v20151201.DescribeParametersResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeParametersResponse.Parameter;
+import com.aliyuncs.dds.model.v20151201.DescribeParametersResponse.Parameter1;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,20 +40,21 @@ public class DescribeParametersResponseUnmarshaller {
 			parameter.setForceRestart(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ForceRestart"));
 			parameter.setParameterDescription(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterDescription"));
 			parameter.setModifiableStatus(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ModifiableStatus"));
+			parameter.setCharacterType(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].CharacterType"));
 
 			runningParameters.add(parameter);
 		}
 		describeParametersResponse.setRunningParameters(runningParameters);
 
-		List<Parameter> configParameters = new ArrayList<Parameter>();
+		List<Parameter1> configParameters = new ArrayList<Parameter1>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParametersResponse.ConfigParameters.Length"); i++) {
-			Parameter parameter1 = new Parameter();
+			Parameter1 parameter1 = new Parameter1();
 			parameter1.setCheckingCode(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].CheckingCode"));
 			parameter1.setParameterName(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterName"));
 			parameter1.setParameterValue(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterValue"));
-			parameter1.setForceRestart(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ForceRestart"));
+			parameter1.setForceRestart(_ctx.booleanValue("DescribeParametersResponse.ConfigParameters["+ i +"].ForceRestart"));
 			parameter1.setParameterDescription(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterDescription"));
-			parameter1.setModifiableStatus(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ModifiableStatus"));
+			parameter1.setModifiableStatus(_ctx.booleanValue("DescribeParametersResponse.ConfigParameters["+ i +"].ModifiableStatus"));
 
 			configParameters.add(parameter1);
 		}

@@ -101,6 +101,8 @@ public class DescribeMetaListResponse extends AcsResponse {
 
 		private List<String> tables;
 
+		private List<Long> size;
+
 		public String getDatabase() {
 			return this.database;
 		}
@@ -115,6 +117,14 @@ public class DescribeMetaListResponse extends AcsResponse {
 
 		public void setTables(List<String> tables) {
 			this.tables = tables;
+		}
+
+		public List<Long> getSize() {
+			return this.size;
+		}
+
+		public void setSize(List<Long> size) {
+			this.size = size;
 		}
 	}
 

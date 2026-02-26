@@ -1,3 +1,36 @@
+2023-03-16 Version: 2.0.8
+- Increase flow control value for ListDbfs.
+- Fix errorcode.
+- Add ImageId for ListDbfsAttachableEcsInstances.
+- Support list snapshot links in batch.
+
+2023-01-29 Version: 2.0.7
+- Update autoSnapshotPolicy.
+
+2023-01-05 Version: 2.0.6
+- Fix bug for name of TotalSize.
+- Fix bug for name of totalSize.
+- Support force delete dbfs.
+
+2023-01-03 Version: 2.0.5
+- Supported snapshot link for DBFS.
+- Supported showing snapshot info.
+- Support for showing snapshot info.
+
+2022-12-15 Version: 2.0.4
+- Supported delete snapshots.
+- Supported auto snapshot.
+- Fix docx.
+
+2022-08-22 Version: 2.0.3
+- Automatically generate sdk tasks.
+
+2022-08-22 Version: 2.0.2
+- Automatically generate sdk tasks.
+
+2022-08-16 Version: 2.0.1
+- The new parameter AdvancedFeatures is added to the CreateDbfs interface.
+
 2021-08-12 Version: 2.0.0
 - Support query dbfs specification.
 

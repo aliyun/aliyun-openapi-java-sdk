@@ -35,7 +35,7 @@ public class DescribeFlowStatisticRequest extends RpcAcsRequest<DescribeFlowStat
 
 	private String desktopId;
 	public DescribeFlowStatisticRequest() {
-		super("ecd", "2020-09-30", "DescribeFlowStatistic");
+		super("ecd", "2020-09-30", "DescribeFlowStatistic", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

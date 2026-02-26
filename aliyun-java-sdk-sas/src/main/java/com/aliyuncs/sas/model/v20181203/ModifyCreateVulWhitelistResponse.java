@@ -14,6 +14,7 @@
 
 package com.aliyuncs.sas.model.v20181203;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.sas.transform.v20181203.ModifyCreateVulWhitelistResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,12 +27,35 @@ public class ModifyCreateVulWhitelistResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<VulWhitelist> vulWhitelistList;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<VulWhitelist> getVulWhitelistList() {
+		return this.vulWhitelistList;
+	}
+
+	public void setVulWhitelistList(List<VulWhitelist> vulWhitelistList) {
+		this.vulWhitelistList = vulWhitelistList;
+	}
+
+	public static class VulWhitelist {
+
+		private Long id;
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
 	}
 
 	@Override

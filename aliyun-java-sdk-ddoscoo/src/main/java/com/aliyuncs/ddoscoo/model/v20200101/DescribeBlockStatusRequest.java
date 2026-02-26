@@ -30,7 +30,7 @@ public class DescribeBlockStatusRequest extends RpcAcsRequest<DescribeBlockStatu
 
 	private List<String> instanceIdss;
 	public DescribeBlockStatusRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeBlockStatus");
+		super("ddoscoo", "2020-01-01", "DescribeBlockStatus", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

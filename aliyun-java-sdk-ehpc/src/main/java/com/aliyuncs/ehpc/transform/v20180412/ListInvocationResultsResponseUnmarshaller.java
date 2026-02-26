@@ -27,20 +27,20 @@ public class ListInvocationResultsResponseUnmarshaller {
 	public static ListInvocationResultsResponse unmarshall(ListInvocationResultsResponse listInvocationResultsResponse, UnmarshallerContext _ctx) {
 		
 		listInvocationResultsResponse.setRequestId(_ctx.stringValue("ListInvocationResultsResponse.RequestId"));
-		listInvocationResultsResponse.setTotalCount(_ctx.integerValue("ListInvocationResultsResponse.TotalCount"));
-		listInvocationResultsResponse.setPageNumber(_ctx.integerValue("ListInvocationResultsResponse.PageNumber"));
 		listInvocationResultsResponse.setPageSize(_ctx.integerValue("ListInvocationResultsResponse.PageSize"));
+		listInvocationResultsResponse.setPageNumber(_ctx.integerValue("ListInvocationResultsResponse.PageNumber"));
+		listInvocationResultsResponse.setTotalCount(_ctx.integerValue("ListInvocationResultsResponse.TotalCount"));
 
 		List<InvocationResult> invocationResults = new ArrayList<InvocationResult>();
 		for (int i = 0; i < _ctx.lengthValue("ListInvocationResultsResponse.InvocationResults.Length"); i++) {
 			InvocationResult invocationResult = new InvocationResult();
 			invocationResult.setSuccess(_ctx.booleanValue("ListInvocationResultsResponse.InvocationResults["+ i +"].Success"));
+			invocationResult.setMessage(_ctx.stringValue("ListInvocationResultsResponse.InvocationResults["+ i +"].Message"));
+			invocationResult.setFinishedTime(_ctx.stringValue("ListInvocationResultsResponse.InvocationResults["+ i +"].FinishedTime"));
 			invocationResult.setCommandId(_ctx.stringValue("ListInvocationResultsResponse.InvocationResults["+ i +"].CommandId"));
 			invocationResult.setInstanceId(_ctx.stringValue("ListInvocationResultsResponse.InvocationResults["+ i +"].InstanceId"));
 			invocationResult.setInvokeRecordStatus(_ctx.stringValue("ListInvocationResultsResponse.InvocationResults["+ i +"].InvokeRecordStatus"));
-			invocationResult.setFinishedTime(_ctx.stringValue("ListInvocationResultsResponse.InvocationResults["+ i +"].FinishedTime"));
 			invocationResult.setExitCode(_ctx.integerValue("ListInvocationResultsResponse.InvocationResults["+ i +"].ExitCode"));
-			invocationResult.setMessage(_ctx.stringValue("ListInvocationResultsResponse.InvocationResults["+ i +"].Message"));
 
 			invocationResults.add(invocationResult);
 		}

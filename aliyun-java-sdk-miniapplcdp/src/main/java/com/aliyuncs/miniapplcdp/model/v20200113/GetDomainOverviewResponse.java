@@ -65,6 +65,8 @@ public class GetDomainOverviewResponse extends AcsResponse {
 
 		private String domainType;
 
+		private Boolean withCertificate;
+
 		public String getAppId() {
 			return this.appId;
 		}
@@ -135,6 +137,14 @@ public class GetDomainOverviewResponse extends AcsResponse {
 
 		public void setDomainType(String domainType) {
 			this.domainType = domainType;
+		}
+
+		public Boolean getWithCertificate() {
+			return this.withCertificate;
+		}
+
+		public void setWithCertificate(Boolean withCertificate) {
+			this.withCertificate = withCertificate;
 		}
 	}
 

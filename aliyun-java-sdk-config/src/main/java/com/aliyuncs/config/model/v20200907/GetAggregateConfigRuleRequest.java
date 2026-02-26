@@ -28,8 +28,10 @@ public class GetAggregateConfigRuleRequest extends RpcAcsRequest<GetAggregateCon
 	private String configRuleId;
 
 	private String aggregatorId;
+
+	private String tag;
 	public GetAggregateConfigRuleRequest() {
-		super("Config", "2020-09-07", "GetAggregateConfigRule");
+		super("Config", "2020-09-07", "GetAggregateConfigRule", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class GetAggregateConfigRuleRequest extends RpcAcsRequest<GetAggregateCon
 		this.aggregatorId = aggregatorId;
 		if(aggregatorId != null){
 			putQueryParameter("AggregatorId", aggregatorId);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

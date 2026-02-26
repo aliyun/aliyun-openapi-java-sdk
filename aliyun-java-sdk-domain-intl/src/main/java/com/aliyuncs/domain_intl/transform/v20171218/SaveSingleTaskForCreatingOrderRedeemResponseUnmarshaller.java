@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveSingleTaskForCreatingOrderRedeemResponseUnmarshaller {
 
-	public static SaveSingleTaskForCreatingOrderRedeemResponse unmarshall(SaveSingleTaskForCreatingOrderRedeemResponse saveSingleTaskForCreatingOrderRedeemResponse, UnmarshallerContext context) {
+	public static SaveSingleTaskForCreatingOrderRedeemResponse unmarshall(SaveSingleTaskForCreatingOrderRedeemResponse saveSingleTaskForCreatingOrderRedeemResponse, UnmarshallerContext _ctx) {
 		
-		saveSingleTaskForCreatingOrderRedeemResponse.setRequestId(context.stringValue("SaveSingleTaskForCreatingOrderRedeemResponse.RequestId"));
-		saveSingleTaskForCreatingOrderRedeemResponse.setTaskNo(context.stringValue("SaveSingleTaskForCreatingOrderRedeemResponse.TaskNo"));
+		saveSingleTaskForCreatingOrderRedeemResponse.setRequestId(_ctx.stringValue("SaveSingleTaskForCreatingOrderRedeemResponse.RequestId"));
+		saveSingleTaskForCreatingOrderRedeemResponse.setTaskNo(_ctx.stringValue("SaveSingleTaskForCreatingOrderRedeemResponse.TaskNo"));
 	 
 	 	return saveSingleTaskForCreatingOrderRedeemResponse;
 	}

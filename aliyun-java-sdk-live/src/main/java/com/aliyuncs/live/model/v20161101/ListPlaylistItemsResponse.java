@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPlaylistItemsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer total;
 
+	private String requestId;
+
 	private List<ProgramItem> programItems;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotal() {
 		return this.total;
@@ -45,6 +37,14 @@ public class ListPlaylistItemsResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ProgramItem> getProgramItems() {
@@ -57,40 +57,24 @@ public class ListPlaylistItemsResponse extends AcsResponse {
 
 	public static class ProgramItem {
 
-		private String programId;
-
-		private String programItemId;
-
-		private String programItemName;
+		private Integer index;
 
 		private String resourceType;
 
+		private String programItemId;
+
+		private String programId;
+
+		private String programItemName;
+
 		private String resourceValue;
 
-		private Integer index;
-
-		public String getProgramId() {
-			return this.programId;
+		public Integer getIndex() {
+			return this.index;
 		}
 
-		public void setProgramId(String programId) {
-			this.programId = programId;
-		}
-
-		public String getProgramItemId() {
-			return this.programItemId;
-		}
-
-		public void setProgramItemId(String programItemId) {
-			this.programItemId = programItemId;
-		}
-
-		public String getProgramItemName() {
-			return this.programItemName;
-		}
-
-		public void setProgramItemName(String programItemName) {
-			this.programItemName = programItemName;
+		public void setIndex(Integer index) {
+			this.index = index;
 		}
 
 		public String getResourceType() {
@@ -101,20 +85,36 @@ public class ListPlaylistItemsResponse extends AcsResponse {
 			this.resourceType = resourceType;
 		}
 
+		public String getProgramItemId() {
+			return this.programItemId;
+		}
+
+		public void setProgramItemId(String programItemId) {
+			this.programItemId = programItemId;
+		}
+
+		public String getProgramId() {
+			return this.programId;
+		}
+
+		public void setProgramId(String programId) {
+			this.programId = programId;
+		}
+
+		public String getProgramItemName() {
+			return this.programItemName;
+		}
+
+		public void setProgramItemName(String programItemName) {
+			this.programItemName = programItemName;
+		}
+
 		public String getResourceValue() {
 			return this.resourceValue;
 		}
 
 		public void setResourceValue(String resourceValue) {
 			this.resourceValue = resourceValue;
-		}
-
-		public Integer getIndex() {
-			return this.index;
-		}
-
-		public void setIndex(Integer index) {
-			this.index = index;
 		}
 	}
 

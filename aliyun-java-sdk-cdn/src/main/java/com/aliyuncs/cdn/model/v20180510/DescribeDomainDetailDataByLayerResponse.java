@@ -47,50 +47,34 @@ public class DescribeDomainDetailDataByLayerResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
-
-		private String domainName;
-
-		private Float bps;
+		private Long traf;
 
 		private Float qps;
 
-		private Long traf;
+		private Float ipv6Qps;
+
+		private Float ipv6Bps;
 
 		private Long acc;
 
 		private Long ipv6Traf;
 
-		private Float ipv6Bps;
-
 		private Long ipv6Acc;
 
-		private Float ipv6Qps;
+		private String timeStamp;
 
 		private String httpCode;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
+		private Float bps;
+
+		private String domainName;
+
+		public Long getTraf() {
+			return this.traf;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public Float getBps() {
-			return this.bps;
-		}
-
-		public void setBps(Float bps) {
-			this.bps = bps;
+		public void setTraf(Long traf) {
+			this.traf = traf;
 		}
 
 		public Float getQps() {
@@ -101,12 +85,20 @@ public class DescribeDomainDetailDataByLayerResponse extends AcsResponse {
 			this.qps = qps;
 		}
 
-		public Long getTraf() {
-			return this.traf;
+		public Float getIpv6Qps() {
+			return this.ipv6Qps;
 		}
 
-		public void setTraf(Long traf) {
-			this.traf = traf;
+		public void setIpv6Qps(Float ipv6Qps) {
+			this.ipv6Qps = ipv6Qps;
+		}
+
+		public Float getIpv6Bps() {
+			return this.ipv6Bps;
+		}
+
+		public void setIpv6Bps(Float ipv6Bps) {
+			this.ipv6Bps = ipv6Bps;
 		}
 
 		public Long getAcc() {
@@ -125,14 +117,6 @@ public class DescribeDomainDetailDataByLayerResponse extends AcsResponse {
 			this.ipv6Traf = ipv6Traf;
 		}
 
-		public Float getIpv6Bps() {
-			return this.ipv6Bps;
-		}
-
-		public void setIpv6Bps(Float ipv6Bps) {
-			this.ipv6Bps = ipv6Bps;
-		}
-
 		public Long getIpv6Acc() {
 			return this.ipv6Acc;
 		}
@@ -141,12 +125,12 @@ public class DescribeDomainDetailDataByLayerResponse extends AcsResponse {
 			this.ipv6Acc = ipv6Acc;
 		}
 
-		public Float getIpv6Qps() {
-			return this.ipv6Qps;
+		public String getTimeStamp() {
+			return this.timeStamp;
 		}
 
-		public void setIpv6Qps(Float ipv6Qps) {
-			this.ipv6Qps = ipv6Qps;
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 
 		public String getHttpCode() {
@@ -155,6 +139,22 @@ public class DescribeDomainDetailDataByLayerResponse extends AcsResponse {
 
 		public void setHttpCode(String httpCode) {
 			this.httpCode = httpCode;
+		}
+
+		public Float getBps() {
+			return this.bps;
+		}
+
+		public void setBps(Float bps) {
+			this.bps = bps;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 	}
 

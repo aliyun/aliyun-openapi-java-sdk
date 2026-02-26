@@ -29,7 +29,7 @@ public class ResizeDiskSizeRequest extends RpcAcsRequest<ResizeDiskSizeResponse>
 
 	private String clusterId;
 	public ResizeDiskSizeRequest() {
-		super("HBase", "2019-01-01", "ResizeDiskSize", "hbase");
+		super("HBase", "2019-01-01", "ResizeDiskSize");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

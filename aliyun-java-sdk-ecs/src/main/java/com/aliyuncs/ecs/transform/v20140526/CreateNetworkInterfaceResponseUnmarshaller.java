@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.CreateNetworkInterfaceResponse;
+import com.aliyuncs.ecs.model.v20140526.CreateNetworkInterfaceResponse.Ipv4PrefixSet;
+import com.aliyuncs.ecs.model.v20140526.CreateNetworkInterfaceResponse.Ipv6PrefixSet;
 import com.aliyuncs.ecs.model.v20140526.CreateNetworkInterfaceResponse.Ipv6Set;
 import com.aliyuncs.ecs.model.v20140526.CreateNetworkInterfaceResponse.PrivateIpSet;
 import com.aliyuncs.ecs.model.v20140526.CreateNetworkInterfaceResponse.Tag;
@@ -43,6 +45,7 @@ public class CreateNetworkInterfaceResponseUnmarshaller {
 		createNetworkInterfaceResponse.setResourceGroupId(_ctx.stringValue("CreateNetworkInterfaceResponse.ResourceGroupId"));
 		createNetworkInterfaceResponse.setZoneId(_ctx.stringValue("CreateNetworkInterfaceResponse.ZoneId"));
 		createNetworkInterfaceResponse.setPrivateIpAddress(_ctx.stringValue("CreateNetworkInterfaceResponse.PrivateIpAddress"));
+		createNetworkInterfaceResponse.setSourceDestCheck(_ctx.booleanValue("CreateNetworkInterfaceResponse.SourceDestCheck"));
 
 		List<String> securityGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("CreateNetworkInterfaceResponse.SecurityGroupIds.Length"); i++) {
@@ -78,6 +81,24 @@ public class CreateNetworkInterfaceResponseUnmarshaller {
 			ipv6Sets.add(ipv6Set);
 		}
 		createNetworkInterfaceResponse.setIpv6Sets(ipv6Sets);
+
+		List<Ipv4PrefixSet> ipv4PrefixSets = new ArrayList<Ipv4PrefixSet>();
+		for (int i = 0; i < _ctx.lengthValue("CreateNetworkInterfaceResponse.Ipv4PrefixSets.Length"); i++) {
+			Ipv4PrefixSet ipv4PrefixSet = new Ipv4PrefixSet();
+			ipv4PrefixSet.setIpv4Prefix(_ctx.stringValue("CreateNetworkInterfaceResponse.Ipv4PrefixSets["+ i +"].Ipv4Prefix"));
+
+			ipv4PrefixSets.add(ipv4PrefixSet);
+		}
+		createNetworkInterfaceResponse.setIpv4PrefixSets(ipv4PrefixSets);
+
+		List<Ipv6PrefixSet> ipv6PrefixSets = new ArrayList<Ipv6PrefixSet>();
+		for (int i = 0; i < _ctx.lengthValue("CreateNetworkInterfaceResponse.Ipv6PrefixSets.Length"); i++) {
+			Ipv6PrefixSet ipv6PrefixSet = new Ipv6PrefixSet();
+			ipv6PrefixSet.setIpv6Prefix(_ctx.stringValue("CreateNetworkInterfaceResponse.Ipv6PrefixSets["+ i +"].Ipv6Prefix"));
+
+			ipv6PrefixSets.add(ipv6PrefixSet);
+		}
+		createNetworkInterfaceResponse.setIpv6PrefixSets(ipv6PrefixSets);
 	 
 	 	return createNetworkInterfaceResponse;
 	}

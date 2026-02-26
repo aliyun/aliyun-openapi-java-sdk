@@ -25,8 +25,6 @@ import com.aliyuncs.pvtz.Endpoint;
 public class DescribeZoneInfoRequest extends RpcAcsRequest<DescribeZoneInfoResponse> {
 	   
 
-	private String userClientIp;
-
 	private String zoneId;
 
 	private String lang;
@@ -37,17 +35,6 @@ public class DescribeZoneInfoRequest extends RpcAcsRequest<DescribeZoneInfoRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
 	}
 
 	public String getZoneId() {

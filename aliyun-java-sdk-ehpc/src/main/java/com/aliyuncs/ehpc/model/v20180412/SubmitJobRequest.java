@@ -31,6 +31,8 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 
 	private String clockTime;
 
+	private Integer jobRetryPriority;
+
 	private String commandLine;
 
 	private String jobQueue;
@@ -43,6 +45,8 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 
 	private String mem;
 
+	private Integer jobRetryCount;
+
 	private String stdoutRedirectPath;
 
 	private String variables;
@@ -50,6 +54,8 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 	private String postCmdLine;
 
 	private String runasUser;
+
+	private Integer cpu;
 
 	private String clusterId;
 
@@ -61,7 +67,11 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 
 	private Integer gpu;
 
+	private Integer jobRetryOnExitCode;
+
 	private Integer node;
+
+	private Boolean async;
 
 	private Integer task;
 
@@ -71,7 +81,7 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 
 	private String containerId;
 	public SubmitJobRequest() {
-		super("EHPC", "2018-04-12", "SubmitJob");
+		super("EHPC", "2018-04-12", "SubmitJob", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -109,6 +119,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.clockTime = clockTime;
 		if(clockTime != null){
 			putQueryParameter("ClockTime", clockTime);
+		}
+	}
+
+	public Integer getJobRetryPriority() {
+		return this.jobRetryPriority;
+	}
+
+	public void setJobRetryPriority(Integer jobRetryPriority) {
+		this.jobRetryPriority = jobRetryPriority;
+		if(jobRetryPriority != null){
+			putQueryParameter("JobRetry.Priority", jobRetryPriority.toString());
 		}
 	}
 
@@ -178,6 +199,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		}
 	}
 
+	public Integer getJobRetryCount() {
+		return this.jobRetryCount;
+	}
+
+	public void setJobRetryCount(Integer jobRetryCount) {
+		this.jobRetryCount = jobRetryCount;
+		if(jobRetryCount != null){
+			putQueryParameter("JobRetry.Count", jobRetryCount.toString());
+		}
+	}
+
 	public String getStdoutRedirectPath() {
 		return this.stdoutRedirectPath;
 	}
@@ -219,6 +251,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.runasUser = runasUser;
 		if(runasUser != null){
 			putQueryParameter("RunasUser", runasUser);
+		}
+	}
+
+	public Integer getCpu() {
+		return this.cpu;
+	}
+
+	public void setCpu(Integer cpu) {
+		this.cpu = cpu;
+		if(cpu != null){
+			putQueryParameter("Cpu", cpu.toString());
 		}
 	}
 
@@ -277,6 +320,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		}
 	}
 
+	public Integer getJobRetryOnExitCode() {
+		return this.jobRetryOnExitCode;
+	}
+
+	public void setJobRetryOnExitCode(Integer jobRetryOnExitCode) {
+		this.jobRetryOnExitCode = jobRetryOnExitCode;
+		if(jobRetryOnExitCode != null){
+			putQueryParameter("JobRetry.OnExitCode", jobRetryOnExitCode.toString());
+		}
+	}
+
 	public Integer getNode() {
 		return this.node;
 	}
@@ -285,6 +339,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.node = node;
 		if(node != null){
 			putQueryParameter("Node", node.toString());
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 

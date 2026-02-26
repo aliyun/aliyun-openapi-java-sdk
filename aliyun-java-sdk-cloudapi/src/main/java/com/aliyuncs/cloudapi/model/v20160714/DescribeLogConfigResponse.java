@@ -47,45 +47,13 @@ public class DescribeLogConfigResponse extends AcsResponse {
 
 	public static class LogInfo {
 
-		private String regionId;
-
-		private String slsProject;
-
 		private String slsLogStore;
 
 		private String logType;
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
+		private String slsProject;
 
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getSlsProject() {
-			return this.slsProject;
-		}
-
-		public void setSlsProject(String slsProject) {
-			this.slsProject = slsProject;
-		}
+		private String regionId;
 
 		public String getSlsLogStore() {
 			return this.slsLogStore;
@@ -101,6 +69,22 @@ public class DescribeLogConfigResponse extends AcsResponse {
 
 		public void setLogType(String logType) {
 			this.logType = logType;
+		}
+
+		public String getSlsProject() {
+			return this.slsProject;
+		}
+
+		public void setSlsProject(String slsProject) {
+			this.slsProject = slsProject;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

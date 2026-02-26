@@ -15,6 +15,7 @@
 package com.aliyuncs.eais.model.v20190624;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.eais.Endpoint;
 
@@ -29,11 +30,17 @@ public class DescribeEaisRequest extends RpcAcsRequest<DescribeEaisResponse> {
 
 	private Integer pageNumber;
 
-	private String instanceName;
+	private String resourceGroupId;
 
 	private Integer pageSize;
 
 	private String instanceType;
+
+	private List<Tag> tags;
+
+	private String clientInstanceId;
+
+	private String instanceName;
 
 	private String status;
 	public DescribeEaisRequest() {
@@ -67,14 +74,14 @@ public class DescribeEaisRequest extends RpcAcsRequest<DescribeEaisResponse> {
 		}
 	}
 
-	public String getInstanceName() {
-		return this.instanceName;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putQueryParameter("InstanceName", instanceName);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -100,6 +107,42 @@ public class DescribeEaisRequest extends RpcAcsRequest<DescribeEaisResponse> {
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getClientInstanceId() {
+		return this.clientInstanceId;
+	}
+
+	public void setClientInstanceId(String clientInstanceId) {
+		this.clientInstanceId = clientInstanceId;
+		if(clientInstanceId != null){
+			putQueryParameter("ClientInstanceId", clientInstanceId);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
 	public String getStatus() {
 		return this.status;
 	}
@@ -108,6 +151,29 @@ public class DescribeEaisRequest extends RpcAcsRequest<DescribeEaisResponse> {
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

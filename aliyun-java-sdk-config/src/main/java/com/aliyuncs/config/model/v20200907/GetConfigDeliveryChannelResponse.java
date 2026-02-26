@@ -66,11 +66,15 @@ public class GetConfigDeliveryChannelResponse extends AcsResponse {
 
 		private Boolean configurationSnapshot;
 
+		private Boolean compliantSnapshot;
+
 		private Boolean configurationItemChangeNotification;
 
 		private Boolean nonCompliantNotification;
 
 		private Long accountId;
+
+		private String deliverySnapshotTime;
 
 		public Integer getStatus() {
 			return this.status;
@@ -152,6 +156,14 @@ public class GetConfigDeliveryChannelResponse extends AcsResponse {
 			this.configurationSnapshot = configurationSnapshot;
 		}
 
+		public Boolean getCompliantSnapshot() {
+			return this.compliantSnapshot;
+		}
+
+		public void setCompliantSnapshot(Boolean compliantSnapshot) {
+			this.compliantSnapshot = compliantSnapshot;
+		}
+
 		public Boolean getConfigurationItemChangeNotification() {
 			return this.configurationItemChangeNotification;
 		}
@@ -174,6 +186,14 @@ public class GetConfigDeliveryChannelResponse extends AcsResponse {
 
 		public void setAccountId(Long accountId) {
 			this.accountId = accountId;
+		}
+
+		public String getDeliverySnapshotTime() {
+			return this.deliverySnapshotTime;
+		}
+
+		public void setDeliverySnapshotTime(String deliverySnapshotTime) {
+			this.deliverySnapshotTime = deliverySnapshotTime;
 		}
 	}
 

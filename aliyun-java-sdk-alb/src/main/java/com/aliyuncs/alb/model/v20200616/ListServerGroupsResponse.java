@@ -93,6 +93,10 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private Boolean serviceManagedEnabled;
+
+		private String serviceManagedMode;
+
 		private Boolean configManagedEnabled;
 
 		private Boolean upstreamKeepaliveEnabled;
@@ -103,11 +107,27 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		private String serviceName;
 
+		private String createTime;
+
+		private Boolean crossZoneEnabled;
+
 		private List<Tag> tags;
+
+		private List<String> relatedLoadBalancerIds;
+
+		private List<String> relatedListenerIds;
+
+		private List<String> relatedRuleIds;
 
 		private HealthCheckConfig healthCheckConfig;
 
 		private StickySessionConfig stickySessionConfig;
+
+		private UchConfig uchConfig;
+
+		private ConnectionDrainConfig connectionDrainConfig;
+
+		private SlowStartConfig slowStartConfig;
 
 		public String getBizProtocol() {
 			return this.protocol;
@@ -173,6 +193,22 @@ public class ListServerGroupsResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
+		public Boolean getServiceManagedEnabled() {
+			return this.serviceManagedEnabled;
+		}
+
+		public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+			this.serviceManagedEnabled = serviceManagedEnabled;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
+		}
+
 		public Boolean getConfigManagedEnabled() {
 			return this.configManagedEnabled;
 		}
@@ -213,12 +249,52 @@ public class ListServerGroupsResponse extends AcsResponse {
 			this.serviceName = serviceName;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Boolean getCrossZoneEnabled() {
+			return this.crossZoneEnabled;
+		}
+
+		public void setCrossZoneEnabled(Boolean crossZoneEnabled) {
+			this.crossZoneEnabled = crossZoneEnabled;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<String> getRelatedLoadBalancerIds() {
+			return this.relatedLoadBalancerIds;
+		}
+
+		public void setRelatedLoadBalancerIds(List<String> relatedLoadBalancerIds) {
+			this.relatedLoadBalancerIds = relatedLoadBalancerIds;
+		}
+
+		public List<String> getRelatedListenerIds() {
+			return this.relatedListenerIds;
+		}
+
+		public void setRelatedListenerIds(List<String> relatedListenerIds) {
+			this.relatedListenerIds = relatedListenerIds;
+		}
+
+		public List<String> getRelatedRuleIds() {
+			return this.relatedRuleIds;
+		}
+
+		public void setRelatedRuleIds(List<String> relatedRuleIds) {
+			this.relatedRuleIds = relatedRuleIds;
 		}
 
 		public HealthCheckConfig getHealthCheckConfig() {
@@ -235,6 +311,30 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		public void setStickySessionConfig(StickySessionConfig stickySessionConfig) {
 			this.stickySessionConfig = stickySessionConfig;
+		}
+
+		public UchConfig getUchConfig() {
+			return this.uchConfig;
+		}
+
+		public void setUchConfig(UchConfig uchConfig) {
+			this.uchConfig = uchConfig;
+		}
+
+		public ConnectionDrainConfig getConnectionDrainConfig() {
+			return this.connectionDrainConfig;
+		}
+
+		public void setConnectionDrainConfig(ConnectionDrainConfig connectionDrainConfig) {
+			this.connectionDrainConfig = connectionDrainConfig;
+		}
+
+		public SlowStartConfig getSlowStartConfig() {
+			return this.slowStartConfig;
+		}
+
+		public void setSlowStartConfig(SlowStartConfig slowStartConfig) {
+			this.slowStartConfig = slowStartConfig;
 		}
 
 		public static class Tag {
@@ -283,6 +383,10 @@ public class ListServerGroupsResponse extends AcsResponse {
 			private Integer healthyThreshold;
 
 			private Integer unhealthyThreshold;
+
+			private Boolean healthCheckTcpFastCloseEnabled;
+
+			private List<String> healthCheckHttpCodes;
 
 			private List<String> healthCheckCodes;
 
@@ -374,6 +478,22 @@ public class ListServerGroupsResponse extends AcsResponse {
 				this.unhealthyThreshold = unhealthyThreshold;
 			}
 
+			public Boolean getHealthCheckTcpFastCloseEnabled() {
+				return this.healthCheckTcpFastCloseEnabled;
+			}
+
+			public void setHealthCheckTcpFastCloseEnabled(Boolean healthCheckTcpFastCloseEnabled) {
+				this.healthCheckTcpFastCloseEnabled = healthCheckTcpFastCloseEnabled;
+			}
+
+			public List<String> getHealthCheckHttpCodes() {
+				return this.healthCheckHttpCodes;
+			}
+
+			public void setHealthCheckHttpCodes(List<String> healthCheckHttpCodes) {
+				this.healthCheckHttpCodes = healthCheckHttpCodes;
+			}
+
 			public List<String> getHealthCheckCodes() {
 				return this.healthCheckCodes;
 			}
@@ -423,6 +543,75 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 			public void setStickySessionType(String stickySessionType) {
 				this.stickySessionType = stickySessionType;
+			}
+		}
+
+		public static class UchConfig {
+
+			private String type;
+
+			private String value;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
+		public static class ConnectionDrainConfig {
+
+			private Boolean connectionDrainEnabled;
+
+			private Integer connectionDrainTimeout;
+
+			public Boolean getConnectionDrainEnabled() {
+				return this.connectionDrainEnabled;
+			}
+
+			public void setConnectionDrainEnabled(Boolean connectionDrainEnabled) {
+				this.connectionDrainEnabled = connectionDrainEnabled;
+			}
+
+			public Integer getConnectionDrainTimeout() {
+				return this.connectionDrainTimeout;
+			}
+
+			public void setConnectionDrainTimeout(Integer connectionDrainTimeout) {
+				this.connectionDrainTimeout = connectionDrainTimeout;
+			}
+		}
+
+		public static class SlowStartConfig {
+
+			private Boolean slowStartEnabled;
+
+			private Integer slowStartDuration;
+
+			public Boolean getSlowStartEnabled() {
+				return this.slowStartEnabled;
+			}
+
+			public void setSlowStartEnabled(Boolean slowStartEnabled) {
+				this.slowStartEnabled = slowStartEnabled;
+			}
+
+			public Integer getSlowStartDuration() {
+				return this.slowStartDuration;
+			}
+
+			public void setSlowStartDuration(Integer slowStartDuration) {
+				this.slowStartDuration = slowStartDuration;
 			}
 		}
 	}

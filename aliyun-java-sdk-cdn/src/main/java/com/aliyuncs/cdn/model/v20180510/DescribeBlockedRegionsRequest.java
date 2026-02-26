@@ -26,8 +26,6 @@ public class DescribeBlockedRegionsRequest extends RpcAcsRequest<DescribeBlocked
 	   
 
 	private String language;
-
-	private Long ownerId;
 	public DescribeBlockedRegionsRequest() {
 		super("Cdn", "2018-05-10", "DescribeBlockedRegions");
 		setMethod(MethodType.GET);
@@ -45,17 +43,6 @@ public class DescribeBlockedRegionsRequest extends RpcAcsRequest<DescribeBlocked
 		this.language = language;
 		if(language != null){
 			putQueryParameter("Language", language);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -101,6 +101,10 @@ public class CreateUserResponse extends AcsResponse {
 
 		private String userId;
 
+		private String avatarUrl;
+
+		private String nickname;
+
 		public String getDisplayName() {
 			return this.displayName;
 		}
@@ -155,6 +159,22 @@ public class CreateUserResponse extends AcsResponse {
 
 		public void setUserId(String userId) {
 			this.userId = userId;
+		}
+
+		public String getAvatarUrl() {
+			return this.avatarUrl;
+		}
+
+		public void setAvatarUrl(String avatarUrl) {
+			this.avatarUrl = avatarUrl;
+		}
+
+		public String getNickname() {
+			return this.nickname;
+		}
+
+		public void setNickname(String nickname) {
+			this.nickname = nickname;
 		}
 	}
 

@@ -31,17 +31,17 @@ public class QueryPushStatByAppResponseUnmarshaller {
 		List<AppPushStat> appPushStats = new ArrayList<AppPushStat>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPushStatByAppResponse.AppPushStats.Length"); i++) {
 			AppPushStat appPushStat = new AppPushStat();
-			appPushStat.setTime(_ctx.stringValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].Time"));
+			appPushStat.setAcceptCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].AcceptCount"));
 			appPushStat.setDeletedCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].DeletedCount"));
 			appPushStat.setOpenedCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].OpenedCount"));
-			appPushStat.setSmsReceiveSuccessCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].SmsReceiveSuccessCount"));
-			appPushStat.setSmsSkipCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].SmsSkipCount"));
-			appPushStat.setSmsReceiveFailedCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].SmsReceiveFailedCount"));
-			appPushStat.setSmsFailedCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].SmsFailedCount"));
 			appPushStat.setReceivedCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].ReceivedCount"));
 			appPushStat.setSentCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].SentCount"));
+			appPushStat.setSmsFailedCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].SmsFailedCount"));
+			appPushStat.setSmsReceiveFailedCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].SmsReceiveFailedCount"));
+			appPushStat.setSmsReceiveSuccessCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].SmsReceiveSuccessCount"));
 			appPushStat.setSmsSentCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].SmsSentCount"));
-			appPushStat.setAcceptCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].AcceptCount"));
+			appPushStat.setSmsSkipCount(_ctx.longValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].SmsSkipCount"));
+			appPushStat.setTime(_ctx.stringValue("QueryPushStatByAppResponse.AppPushStats["+ i +"].Time"));
 
 			appPushStats.add(appPushStat);
 		}

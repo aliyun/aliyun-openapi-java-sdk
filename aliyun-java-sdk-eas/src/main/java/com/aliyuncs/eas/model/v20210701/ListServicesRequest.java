@@ -25,13 +25,29 @@ import com.aliyuncs.eas.Endpoint;
 public class ListServicesRequest extends RoaAcsRequest<ListServicesResponse> {
 	   
 
-	private String filter;
-
-	private Integer pageSize;
+	private String serviceUid;
 
 	private String sort;
 
+	private String label;
+
+	private String serviceStatus;
+
+	private String groupName;
+
 	private Integer pageNumber;
+
+	private String filter;
+
+	private String serviceType;
+
+	private String parentServiceUid;
+
+	private Integer pageSize;
+
+	private String serviceName;
+
+	private String resourceName;
 
 	private String order;
 	public ListServicesRequest() {
@@ -44,25 +60,14 @@ public class ListServicesRequest extends RoaAcsRequest<ListServicesResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getFilter() {
-		return this.filter;
+	public String getServiceUid() {
+		return this.serviceUid;
 	}
 
-	public void setFilter(String filter) {
-		this.filter = filter;
-		if(filter != null){
-			putQueryParameter("Filter", filter);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setServiceUid(String serviceUid) {
+		this.serviceUid = serviceUid;
+		if(serviceUid != null){
+			putQueryParameter("ServiceUid", serviceUid);
 		}
 	}
 
@@ -77,6 +82,39 @@ public class ListServicesRequest extends RoaAcsRequest<ListServicesResponse> {
 		}
 	}
 
+	public String getLabel() {
+		return this.label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+		if(label != null){
+			putQueryParameter("Label", label);
+		}
+	}
+
+	public String getServiceStatus() {
+		return this.serviceStatus;
+	}
+
+	public void setServiceStatus(String serviceStatus) {
+		this.serviceStatus = serviceStatus;
+		if(serviceStatus != null){
+			putQueryParameter("ServiceStatus", serviceStatus);
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -85,6 +123,72 @@ public class ListServicesRequest extends RoaAcsRequest<ListServicesResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("Filter", filter);
+		}
+	}
+
+	public String getServiceType() {
+		return this.serviceType;
+	}
+
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
+		if(serviceType != null){
+			putQueryParameter("ServiceType", serviceType);
+		}
+	}
+
+	public String getParentServiceUid() {
+		return this.parentServiceUid;
+	}
+
+	public void setParentServiceUid(String parentServiceUid) {
+		this.parentServiceUid = parentServiceUid;
+		if(parentServiceUid != null){
+			putQueryParameter("ParentServiceUid", parentServiceUid);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public String getResourceName() {
+		return this.resourceName;
+	}
+
+	public void setResourceName(String resourceName) {
+		this.resourceName = resourceName;
+		if(resourceName != null){
+			putQueryParameter("ResourceName", resourceName);
 		}
 	}
 

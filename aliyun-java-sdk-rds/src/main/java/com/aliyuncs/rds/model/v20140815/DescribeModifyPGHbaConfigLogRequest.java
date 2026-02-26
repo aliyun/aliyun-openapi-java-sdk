@@ -31,6 +31,8 @@ public class DescribeModifyPGHbaConfigLogRequest extends RpcAcsRequest<DescribeM
 
 	private String startTime;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -79,6 +81,17 @@ public class DescribeModifyPGHbaConfigLogRequest extends RpcAcsRequest<DescribeM
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

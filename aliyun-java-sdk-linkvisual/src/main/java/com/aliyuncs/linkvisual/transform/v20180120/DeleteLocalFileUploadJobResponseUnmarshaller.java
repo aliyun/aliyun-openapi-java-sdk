@@ -24,10 +24,10 @@ public class DeleteLocalFileUploadJobResponseUnmarshaller {
 	public static DeleteLocalFileUploadJobResponse unmarshall(DeleteLocalFileUploadJobResponse deleteLocalFileUploadJobResponse, UnmarshallerContext _ctx) {
 		
 		deleteLocalFileUploadJobResponse.setRequestId(_ctx.stringValue("DeleteLocalFileUploadJobResponse.RequestId"));
-		deleteLocalFileUploadJobResponse.setSuccess(_ctx.booleanValue("DeleteLocalFileUploadJobResponse.Success"));
 		deleteLocalFileUploadJobResponse.setCode(_ctx.stringValue("DeleteLocalFileUploadJobResponse.Code"));
-		deleteLocalFileUploadJobResponse.setErrorMessage(_ctx.stringValue("DeleteLocalFileUploadJobResponse.ErrorMessage"));
 		deleteLocalFileUploadJobResponse.setData(_ctx.mapValue("DeleteLocalFileUploadJobResponse.Data"));
+		deleteLocalFileUploadJobResponse.setErrorMessage(_ctx.stringValue("DeleteLocalFileUploadJobResponse.ErrorMessage"));
+		deleteLocalFileUploadJobResponse.setSuccess(_ctx.booleanValue("DeleteLocalFileUploadJobResponse.Success"));
 	 
 	 	return deleteLocalFileUploadJobResponse;
 	}

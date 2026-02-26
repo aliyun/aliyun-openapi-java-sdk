@@ -81,6 +81,10 @@ public class SearchMediaResponse extends AcsResponse {
 
 		private AttachedMedia attachedMedia;
 
+		private AiData aiData;
+
+		private AiRoughData aiRoughData;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -137,6 +141,22 @@ public class SearchMediaResponse extends AcsResponse {
 			this.attachedMedia = attachedMedia;
 		}
 
+		public AiData getAiData() {
+			return this.aiData;
+		}
+
+		public void setAiData(AiData aiData) {
+			this.aiData = aiData;
+		}
+
+		public AiRoughData getAiRoughData() {
+			return this.aiRoughData;
+		}
+
+		public void setAiRoughData(AiRoughData aiRoughData) {
+			this.aiRoughData = aiRoughData;
+		}
+
 		public static class Video {
 
 			private String status;
@@ -189,11 +209,19 @@ public class SearchMediaResponse extends AcsResponse {
 
 			private String preprocessStatus;
 
+			private String restoreExpiration;
+
+			private String restoreStatus;
+
+			private String storageClass;
+
 			private Long size;
 
 			private Float duration;
 
 			private String title;
+
+			private String referenceId;
 
 			private List<PlayInfo> playInfoList;
 
@@ -401,6 +429,30 @@ public class SearchMediaResponse extends AcsResponse {
 				this.preprocessStatus = preprocessStatus;
 			}
 
+			public String getRestoreExpiration() {
+				return this.restoreExpiration;
+			}
+
+			public void setRestoreExpiration(String restoreExpiration) {
+				this.restoreExpiration = restoreExpiration;
+			}
+
+			public String getRestoreStatus() {
+				return this.restoreStatus;
+			}
+
+			public void setRestoreStatus(String restoreStatus) {
+				this.restoreStatus = restoreStatus;
+			}
+
+			public String getStorageClass() {
+				return this.storageClass;
+			}
+
+			public void setStorageClass(String storageClass) {
+				this.storageClass = storageClass;
+			}
+
 			public Long getSize() {
 				return this.size;
 			}
@@ -423,6 +475,14 @@ public class SearchMediaResponse extends AcsResponse {
 
 			public void setTitle(String title) {
 				this.title = title;
+			}
+
+			public String getReferenceId() {
+				return this.referenceId;
+			}
+
+			public void setReferenceId(String referenceId) {
+				this.referenceId = referenceId;
 			}
 
 			public List<PlayInfo> getPlayInfoList() {
@@ -649,11 +709,19 @@ public class SearchMediaResponse extends AcsResponse {
 
 			private String preprocessStatus;
 
+			private String restoreExpiration;
+
+			private String restoreStatus;
+
+			private String storageClass;
+
 			private Long size;
 
 			private Float duration;
 
 			private String title;
+
+			private String referenceId;
 
 			private List<PlayInfo4> playInfoList3;
 
@@ -837,6 +905,30 @@ public class SearchMediaResponse extends AcsResponse {
 				this.preprocessStatus = preprocessStatus;
 			}
 
+			public String getRestoreExpiration() {
+				return this.restoreExpiration;
+			}
+
+			public void setRestoreExpiration(String restoreExpiration) {
+				this.restoreExpiration = restoreExpiration;
+			}
+
+			public String getRestoreStatus() {
+				return this.restoreStatus;
+			}
+
+			public void setRestoreStatus(String restoreStatus) {
+				this.restoreStatus = restoreStatus;
+			}
+
+			public String getStorageClass() {
+				return this.storageClass;
+			}
+
+			public void setStorageClass(String storageClass) {
+				this.storageClass = storageClass;
+			}
+
 			public Long getSize() {
 				return this.size;
 			}
@@ -859,6 +951,14 @@ public class SearchMediaResponse extends AcsResponse {
 
 			public void setTitle(String title) {
 				this.title = title;
+			}
+
+			public String getReferenceId() {
+				return this.referenceId;
+			}
+
+			public void setReferenceId(String referenceId) {
+				this.referenceId = referenceId;
 			}
 
 			public List<PlayInfo4> getPlayInfoList3() {
@@ -1395,6 +1495,181 @@ public class SearchMediaResponse extends AcsResponse {
 				public void setLevel(Long level) {
 					this.level = level;
 				}
+			}
+		}
+
+		public static class AiData {
+
+			private List<AiLabelInfoItem> aiLabelInfo;
+
+			private List<OcrInfoItem> ocrInfo;
+
+			public List<AiLabelInfoItem> getAiLabelInfo() {
+				return this.aiLabelInfo;
+			}
+
+			public void setAiLabelInfo(List<AiLabelInfoItem> aiLabelInfo) {
+				this.aiLabelInfo = aiLabelInfo;
+			}
+
+			public List<OcrInfoItem> getOcrInfo() {
+				return this.ocrInfo;
+			}
+
+			public void setOcrInfo(List<OcrInfoItem> ocrInfo) {
+				this.ocrInfo = ocrInfo;
+			}
+
+			public static class AiLabelInfoItem {
+
+				private String category;
+
+				private String labelName;
+
+				private String labelId;
+
+				private List<OccurrencesItem> occurrences;
+
+				public String getCategory() {
+					return this.category;
+				}
+
+				public void setCategory(String category) {
+					this.category = category;
+				}
+
+				public String getLabelName() {
+					return this.labelName;
+				}
+
+				public void setLabelName(String labelName) {
+					this.labelName = labelName;
+				}
+
+				public String getLabelId() {
+					return this.labelId;
+				}
+
+				public void setLabelId(String labelId) {
+					this.labelId = labelId;
+				}
+
+				public List<OccurrencesItem> getOccurrences() {
+					return this.occurrences;
+				}
+
+				public void setOccurrences(List<OccurrencesItem> occurrences) {
+					this.occurrences = occurrences;
+				}
+
+				public static class OccurrencesItem {
+
+					private Double score;
+
+					private Double from;
+
+					private Double to;
+
+					public Double getScore() {
+						return this.score;
+					}
+
+					public void setScore(Double score) {
+						this.score = score;
+					}
+
+					public Double getFrom() {
+						return this.from;
+					}
+
+					public void setFrom(Double from) {
+						this.from = from;
+					}
+
+					public Double getTo() {
+						return this.to;
+					}
+
+					public void setTo(Double to) {
+						this.to = to;
+					}
+				}
+			}
+
+			public static class OcrInfoItem {
+
+				private Double from;
+
+				private Double to;
+
+				private String content;
+
+				public Double getFrom() {
+					return this.from;
+				}
+
+				public void setFrom(Double from) {
+					this.from = from;
+				}
+
+				public Double getTo() {
+					return this.to;
+				}
+
+				public void setTo(Double to) {
+					this.to = to;
+				}
+
+				public String getContent() {
+					return this.content;
+				}
+
+				public void setContent(String content) {
+					this.content = content;
+				}
+			}
+		}
+
+		public static class AiRoughData {
+
+			private String saveType;
+
+			private String status;
+
+			private String aiJobId;
+
+			private String aiCategory;
+
+			public String getSaveType() {
+				return this.saveType;
+			}
+
+			public void setSaveType(String saveType) {
+				this.saveType = saveType;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getAiJobId() {
+				return this.aiJobId;
+			}
+
+			public void setAiJobId(String aiJobId) {
+				this.aiJobId = aiJobId;
+			}
+
+			public String getAiCategory() {
+				return this.aiCategory;
+			}
+
+			public void setAiCategory(String aiCategory) {
+				this.aiCategory = aiCategory;
 			}
 		}
 	}

@@ -27,15 +27,27 @@ public class GetAuthTokenRequest extends RpcAcsRequest<GetAuthTokenResponse> {
 
 	private Long resourceOwnerId;
 
+	private String origin;
+
+	private String sceneCode;
+
+	private Integer cuApiCode;
+
 	private String resourceOwnerAccount;
 
-	private String origin;
+	private Integer ctApiCode;
 
 	private Long ownerId;
 
+	private String version;
+
 	private String url;
+
+	private Integer bizType;
+
+	private Integer cmApiCode;
 	public GetAuthTokenRequest() {
-		super("Dypnsapi", "2017-05-25", "GetAuthToken");
+		super("Dypnsapi", "2017-05-25", "GetAuthToken", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,6 +66,39 @@ public class GetAuthTokenRequest extends RpcAcsRequest<GetAuthTokenResponse> {
 		}
 	}
 
+	public String getOrigin() {
+		return this.origin;
+	}
+
+	public void setOrigin(String origin) {
+		this.origin = origin;
+		if(origin != null){
+			putQueryParameter("Origin", origin);
+		}
+	}
+
+	public String getSceneCode() {
+		return this.sceneCode;
+	}
+
+	public void setSceneCode(String sceneCode) {
+		this.sceneCode = sceneCode;
+		if(sceneCode != null){
+			putQueryParameter("SceneCode", sceneCode);
+		}
+	}
+
+	public Integer getCuApiCode() {
+		return this.cuApiCode;
+	}
+
+	public void setCuApiCode(Integer cuApiCode) {
+		this.cuApiCode = cuApiCode;
+		if(cuApiCode != null){
+			putQueryParameter("CuApiCode", cuApiCode.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -65,14 +110,14 @@ public class GetAuthTokenRequest extends RpcAcsRequest<GetAuthTokenResponse> {
 		}
 	}
 
-	public String getOrigin() {
-		return this.origin;
+	public Integer getCtApiCode() {
+		return this.ctApiCode;
 	}
 
-	public void setOrigin(String origin) {
-		this.origin = origin;
-		if(origin != null){
-			putQueryParameter("Origin", origin);
+	public void setCtApiCode(Integer ctApiCode) {
+		this.ctApiCode = ctApiCode;
+		if(ctApiCode != null){
+			putQueryParameter("CtApiCode", ctApiCode.toString());
 		}
 	}
 
@@ -87,6 +132,17 @@ public class GetAuthTokenRequest extends RpcAcsRequest<GetAuthTokenResponse> {
 		}
 	}
 
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+		if(version != null){
+			putQueryParameter("Version", version);
+		}
+	}
+
 	public String getUrl() {
 		return this.url;
 	}
@@ -95,6 +151,28 @@ public class GetAuthTokenRequest extends RpcAcsRequest<GetAuthTokenResponse> {
 		this.url = url;
 		if(url != null){
 			putQueryParameter("Url", url);
+		}
+	}
+
+	public Integer getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(Integer bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType.toString());
+		}
+	}
+
+	public Integer getCmApiCode() {
+		return this.cmApiCode;
+	}
+
+	public void setCmApiCode(Integer cmApiCode) {
+		this.cmApiCode = cmApiCode;
+		if(cmApiCode != null){
+			putQueryParameter("CmApiCode", cmApiCode.toString());
 		}
 	}
 

@@ -24,69 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIpv6LocationAndIspResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String ipAddress;
-
-	private String country;
-
-	private String city;
-
-	private String iSP;
-
-	private String countryCode;
-
 	private String cityCode;
 
 	private String iSPCode;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String iSP;
 
-	public String getIpAddress() {
-		return this.ipAddress;
-	}
+	private String country;
 
-	public void setIpAddress(String ipAddress) {
-		this.ipAddress = ipAddress;
-	}
+	private String ipAddress;
 
-	public String getCountry() {
-		return this.country;
-	}
+	private String city;
 
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	public String getCity() {
-		return this.city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getISP() {
-		return this.iSP;
-	}
-
-	public void setISP(String iSP) {
-		this.iSP = iSP;
-	}
-
-	public String getCountryCode() {
-		return this.countryCode;
-	}
-
-	public void setCountryCode(String countryCode) {
-		this.countryCode = countryCode;
-	}
+	private String countryCode;
 
 	public String getCityCode() {
 		return this.cityCode;
@@ -102,6 +54,54 @@ public class DescribeIpv6LocationAndIspResponse extends AcsResponse {
 
 	public void setISPCode(String iSPCode) {
 		this.iSPCode = iSPCode;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getISP() {
+		return this.iSP;
+	}
+
+	public void setISP(String iSP) {
+		this.iSP = iSP;
+	}
+
+	public String getCountry() {
+		return this.country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getIpAddress() {
+		return this.ipAddress;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+	}
+
+	public String getCity() {
+		return this.city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCountryCode() {
+		return this.countryCode;
+	}
+
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
 	}
 
 	@Override

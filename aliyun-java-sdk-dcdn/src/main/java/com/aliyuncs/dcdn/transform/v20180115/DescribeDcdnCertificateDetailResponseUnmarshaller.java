@@ -23,10 +23,10 @@ public class DescribeDcdnCertificateDetailResponseUnmarshaller {
 	public static DescribeDcdnCertificateDetailResponse unmarshall(DescribeDcdnCertificateDetailResponse describeDcdnCertificateDetailResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnCertificateDetailResponse.setRequestId(_ctx.stringValue("DescribeDcdnCertificateDetailResponse.RequestId"));
-		describeDcdnCertificateDetailResponse.setCert(_ctx.stringValue("DescribeDcdnCertificateDetailResponse.Cert"));
-		describeDcdnCertificateDetailResponse.setKey(_ctx.stringValue("DescribeDcdnCertificateDetailResponse.Key"));
-		describeDcdnCertificateDetailResponse.setCertId(_ctx.longValue("DescribeDcdnCertificateDetailResponse.CertId"));
 		describeDcdnCertificateDetailResponse.setCertName(_ctx.stringValue("DescribeDcdnCertificateDetailResponse.CertName"));
+		describeDcdnCertificateDetailResponse.setKey(_ctx.stringValue("DescribeDcdnCertificateDetailResponse.Key"));
+		describeDcdnCertificateDetailResponse.setCert(_ctx.stringValue("DescribeDcdnCertificateDetailResponse.Cert"));
+		describeDcdnCertificateDetailResponse.setCertId(_ctx.longValue("DescribeDcdnCertificateDetailResponse.CertId"));
 	 
 	 	return describeDcdnCertificateDetailResponse;
 	}

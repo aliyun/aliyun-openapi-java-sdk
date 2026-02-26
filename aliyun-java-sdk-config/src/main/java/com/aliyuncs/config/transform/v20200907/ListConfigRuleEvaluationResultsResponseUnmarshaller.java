@@ -45,6 +45,8 @@ public class ListConfigRuleEvaluationResultsResponseUnmarshaller {
 			evaluationResult.setConfigRuleInvokedTimestamp(_ctx.longValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].ConfigRuleInvokedTimestamp"));
 			evaluationResult.setInvokingEventMessageType(_ctx.stringValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].InvokingEventMessageType"));
 			evaluationResult.setRemediationEnabled(_ctx.booleanValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].RemediationEnabled"));
+			evaluationResult.setEvaluationId(_ctx.stringValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationId"));
+			evaluationResult.setLastNonCompliantRecordTimestamp(_ctx.longValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].LastNonCompliantRecordTimestamp"));
 
 			EvaluationResultIdentifier evaluationResultIdentifier = new EvaluationResultIdentifier();
 			evaluationResultIdentifier.setOrderingTimestamp(_ctx.longValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.OrderingTimestamp"));
@@ -54,12 +56,13 @@ public class ListConfigRuleEvaluationResultsResponseUnmarshaller {
 			evaluationResultQualifier.setConfigRuleArn(_ctx.stringValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ConfigRuleArn"));
 			evaluationResultQualifier.setResourceType(_ctx.stringValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceType"));
 			evaluationResultQualifier.setConfigRuleName(_ctx.stringValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ConfigRuleName"));
-			evaluationResultQualifier.setResourceId(_ctx.stringValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceId"));
+			evaluationResultQualifier.setResourceGroupId(_ctx.stringValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceGroupId"));
 			evaluationResultQualifier.setConfigRuleId(_ctx.stringValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ConfigRuleId"));
 			evaluationResultQualifier.setResourceName(_ctx.stringValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceName"));
 			evaluationResultQualifier.setRegionId(_ctx.stringValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.RegionId"));
 			evaluationResultQualifier.setCompliancePackId(_ctx.stringValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.CompliancePackId"));
 			evaluationResultQualifier.setIgnoreDate(_ctx.stringValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.IgnoreDate"));
+			evaluationResultQualifier.setResourceId(_ctx.stringValue("ListConfigRuleEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceId"));
 			evaluationResultIdentifier.setEvaluationResultQualifier(evaluationResultQualifier);
 			evaluationResult.setEvaluationResultIdentifier(evaluationResultIdentifier);
 

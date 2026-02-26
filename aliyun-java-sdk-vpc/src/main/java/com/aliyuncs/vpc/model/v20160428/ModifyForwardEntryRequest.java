@@ -37,6 +37,8 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 
 	private String externalIp;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ipProtocol;
@@ -124,6 +126,17 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 		this.externalIp = externalIp;
 		if(externalIp != null){
 			putQueryParameter("ExternalIp", externalIp);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

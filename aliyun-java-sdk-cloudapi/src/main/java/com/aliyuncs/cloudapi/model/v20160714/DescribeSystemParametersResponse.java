@@ -47,29 +47,13 @@ public class DescribeSystemParametersResponse extends AcsResponse {
 
 	public static class SystemParamItem {
 
-		private String paramName;
-
-		private String paramType;
-
 		private String demoValue;
 
 		private String description;
 
-		public String getParamName() {
-			return this.paramName;
-		}
+		private String paramName;
 
-		public void setParamName(String paramName) {
-			this.paramName = paramName;
-		}
-
-		public String getParamType() {
-			return this.paramType;
-		}
-
-		public void setParamType(String paramType) {
-			this.paramType = paramType;
-		}
+		private String paramType;
 
 		public String getDemoValue() {
 			return this.demoValue;
@@ -85,6 +69,22 @@ public class DescribeSystemParametersResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getParamName() {
+			return this.paramName;
+		}
+
+		public void setParamName(String paramName) {
+			this.paramName = paramName;
+		}
+
+		public String getParamType() {
+			return this.paramType;
+		}
+
+		public void setParamType(String paramType) {
+			this.paramType = paramType;
 		}
 	}
 

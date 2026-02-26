@@ -126,6 +126,28 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private List<AcrRegistryInfo> acrRegistryInfos;
 
+	private String fixedIp;
+
+	private Integer fixedIpRetainHour;
+
+	private String dataCacheBucket;
+
+	private String dataCachePL;
+
+	private Integer dataCacheProvisionedIops;
+
+	private Boolean dataCacheBurstingEnabled;
+
+	private Boolean dryRun;
+
+	private List<String> computeCategory;
+
+	private String gpuDriverVersion;
+
+	private String plainHttpRegistry;
+
+	private String insecureRegistry;
+
     public Integer getEphemeralStorage() {
         return this.ephemeralStorage;
     }
@@ -310,6 +332,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				putQueryParameter("Container." + (depth1 + 1) + ".StdinOnce", containers.get(depth1).getStdinOnce());
 				putQueryParameter("Container." + (depth1 + 1) + ".Tty", containers.get(depth1).getTty());
 				putQueryParameter("Container." + (depth1 + 1) + ".Gpu", containers.get(depth1).getGpu());
+				putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVarHide", containers.get(depth1).getEnvironmentVarHide());
 
 				if (containers.get(depth1).getCommands() != null) {
 					for (int i = 0; i < containers.get(depth1).getCommands().size(); i++) {
@@ -323,9 +346,11 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				}
 				if (containers.get(depth1).getVolumeMounts() != null) {
 					for (int depth2 = 0; depth2 < containers.get(depth1).getVolumeMounts().size(); depth2++) {
+						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPropagation", containers.get(depth1).getVolumeMounts().get(depth2).getMountPropagation());
 						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPath", containers.get(depth1).getVolumeMounts().get(depth2).getMountPath());
 						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".ReadOnly", containers.get(depth1).getVolumeMounts().get(depth2).getReadOnly());
 						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".Name", containers.get(depth1).getVolumeMounts().get(depth2).getName());
+						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".SubPath", containers.get(depth1).getVolumeMounts().get(depth2).getSubPath());
 					}
 				}
 				if (containers.get(depth1).getPorts() != null) {
@@ -556,9 +581,11 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				}
 				if (initContainers.get(depth1).getVolumeMounts() != null) {
 					for (int depth2 = 0; depth2 < initContainers.get(depth1).getVolumeMounts().size(); depth2++) {
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPropagation", initContainers.get(depth1).getVolumeMounts().get(depth2).getMountPropagation());
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPath", initContainers.get(depth1).getVolumeMounts().get(depth2).getMountPath());
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".ReadOnly", initContainers.get(depth1).getVolumeMounts().get(depth2).getReadOnly());
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".Name", initContainers.get(depth1).getVolumeMounts().get(depth2).getName());
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".SubPath", initContainers.get(depth1).getVolumeMounts().get(depth2).getSubPath());
 					}
 				}
 				if (initContainers.get(depth1).getPorts() != null) {
@@ -613,8 +640,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		this.securityContextSysctls = securityContextSysctls;
 		if (securityContextSysctls != null) {
 			for (int depth1 = 0; depth1 < securityContextSysctls.size(); depth1++) {
-				putQueryParameter("SecurityContext.Sysctl." + (depth1 + 1) + ".Key", tags.get(depth1).getKey());
-				putQueryParameter("SecurityContext.Sysctl." + (depth1 + 1) + ".Value", tags.get(depth1).getValue());
+				putQueryParameter("SecurityContext.Sysctl." + (depth1 + 1) + ".Key", securityContextSysctls.get(depth1).getKey());
+				putQueryParameter("SecurityContext.Sysctl." + (depth1 + 1) + ".Value", securityContextSysctls.get(depth1).getValue());
 			}
 		}
 	}
@@ -629,6 +656,52 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			for (int i = 0; i < ntpServers.size(); i++) {
 				putQueryParameter("NtpServer." + (i + 1), ntpServers.get(i));
 			}
+		}
+	}
+
+	public List<String> getComputeCategory() {
+		return computeCategory;
+	}
+
+	public void setComputeCategory(List<String> computeCategory) {
+		this.computeCategory = computeCategory;
+		if (computeCategory != null) {
+			for (int i = 0; i < computeCategory.size(); i++){
+				putQueryParameter("ComputeCategory." + (i + 1), computeCategory.get(i));
+			}
+		}
+	}
+
+	public String getGpuDriverVersion() {
+		return gpuDriverVersion;
+	}
+
+	public void setGpuDriverVersion(String gpuDriverVersion) {
+		this.gpuDriverVersion = gpuDriverVersion;
+		if (gpuDriverVersion != null) {
+			putQueryParameter("GpuDriverVersion", gpuDriverVersion);
+		}
+	}
+
+	public String getPlainHttpRegistry() {
+		return plainHttpRegistry;
+	}
+
+	public void setPlainHttpRegistry(String plainHttpRegistry) {
+		this.plainHttpRegistry = plainHttpRegistry;
+		if (plainHttpRegistry != null) {
+			putQueryParameter("PlainHttpRegistry", plainHttpRegistry);
+		}
+	}
+
+	public String getInsecureRegistry() {
+		return insecureRegistry;
+	}
+
+	public void setInsecureRegistry(String insecureRegistry) {
+		this.insecureRegistry = insecureRegistry;
+		if (insecureRegistry != null) {
+			putQueryParameter("InsecureRegistry", insecureRegistry);
 		}
 	}
 
@@ -726,6 +799,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.ReadOnly", volumes.get(depth1).getNFSVolumeReadOnly());
 
 				putQueryParameter("Volume." + (depth1 + 1) + ".EmptyDirVolume.Medium", volumes.get(depth1).getEmptyDirVolumeMedium());
+				putQueryParameter("Volume." + (depth1 + 1) + ".EmptyDirVolume.SizeLimit", volumes.get(depth1).getEmptyDirVolumeSizeLimit());
 
 				if (volumes.get(depth1).getConfigFileVolumeConfigFileToPaths() != null) {
 					for (int depth2 = 0; depth2 < volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().size(); depth2++) {
@@ -927,6 +1001,83 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		}
 	}
 
+	public String getFixedIp() {
+		return fixedIp;
+	}
+
+	public void setFixedIp(String fixedIp) {
+		this.fixedIp = fixedIp;
+		if (null != fixedIp) {
+			putQueryParameter("FixedIp", fixedIp);
+		}
+	}
+
+	public Integer getFixedIpRetainHour() {
+		return fixedIpRetainHour;
+	}
+
+	public void setFixedIpRetainHour(Integer fixedIpRetainHour) {
+		this.fixedIpRetainHour = fixedIpRetainHour;
+		if (null != fixedIpRetainHour) {
+			putQueryParameter("FixedIpRetainHour", fixedIpRetainHour);
+		}
+	}
+
+	public String getDataCacheBucket() {
+		return dataCacheBucket;
+	}
+
+	public void setDataCacheBucket(String dataCacheBucket) {
+		this.dataCacheBucket = dataCacheBucket;
+		if (null != dataCacheBucket) {
+			putQueryParameter("DataCacheBucket", dataCacheBucket);
+		}
+	}
+
+	public String getDataCachePL() {
+		return dataCachePL;
+	}
+
+	public void setDataCachePL(String dataCachePL) {
+		this.dataCachePL = dataCachePL;
+		if (null != dataCachePL) {
+			putQueryParameter("DataCachePL", dataCachePL);
+		}
+	}
+
+	public Integer getDataCacheProvisionedIops() {
+		return dataCacheProvisionedIops;
+	}
+
+	public void setDataCacheProvisionedIops(Integer dataCacheProvisionedIops) {
+		this.dataCacheProvisionedIops = dataCacheProvisionedIops;
+		if (null != dataCacheProvisionedIops) {
+			putQueryParameter("DataCacheProvisionedIops", dataCacheProvisionedIops);
+		}
+	}
+
+	public Boolean getDataCacheBurstingEnabled() {
+		return dataCacheBurstingEnabled;
+	}
+
+	public void setDataCacheBurstingEnabled(Boolean dataCacheBurstingEnabled) {
+		this.dataCacheBurstingEnabled = dataCacheBurstingEnabled;
+		if (null != dataCacheBurstingEnabled){
+			putQueryParameter("DataCacheBurstingEnabled", dataCacheBurstingEnabled);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if (null != dryRun){
+			putQueryParameter("DryRun", dryRun);
+		}
+	}
+
 	public static class Container {
 
 		private String image;
@@ -958,6 +1109,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		private List<Port> ports;
 
 		private List<EnvironmentVar> environmentVars;
+
+		private Boolean environmentVarHide;
 
 		private ContainerProbe readinessProbe;
 
@@ -1115,6 +1268,14 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		public void setEnvironmentVars(List<EnvironmentVar> environmentVars) {
 			this.environmentVars = environmentVars;
+		}
+
+		public Boolean getEnvironmentVarHide() {
+			return environmentVarHide;
+		}
+
+		public void setEnvironmentVarHide(Boolean environmentVarHide) {
+			this.environmentVarHide = environmentVarHide;
 		}
 
 		public SecurityContext getSecurityContext() {
@@ -1279,7 +1440,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				return name;
 			}
 
-			public void setName(String key) {
+			public void setName(String name) {
 				this.name = name;
 			}
 
@@ -1302,7 +1463,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				return name;
 			}
 
-			public void setName(String key) {
+			public void setName(String name) {
 				this.name = name;
 			}
 
@@ -1317,6 +1478,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		public static class VolumeMount {
 
+			private String mountPropagation;
+
 			private String mountPath;
 
 			private Boolean readOnly;
@@ -1324,6 +1487,14 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			private String name;
 
 			private String subPath;
+
+			public String getMountPropagation() {
+				return this.mountPropagation;
+			}
+
+			public void setMountPropagation(String mountPropagation) {
+				this.mountPropagation = mountPropagation;
+			}
 
 			public String getMountPath() {
 				return this.mountPath;
@@ -1628,6 +1799,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
                 putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".InstanceId", acrRegistryInfos.get(depth1).getInstanceId());
                 putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".InstanceName", acrRegistryInfos.get(depth1).getInstanceName());
                 putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".RegionId", acrRegistryInfos.get(depth1).getRegionId());
+				putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".ArnService", acrRegistryInfos.get(depth1).getArnService());
+				putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".ArnUser", acrRegistryInfos.get(depth1).getArnUser());
             }
         }
     }
@@ -1641,6 +1814,10 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
         private String regionId;
 
         private List<String> domains;
+
+		private String arnService;
+
+		private String arnUser;
 
         public List<String> getDomains() {
             return this.domains;
@@ -1673,6 +1850,22 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
         public void setRegionId(String regionId) {
             this.regionId = regionId;
         }
+
+		public String getArnService() {
+			return arnService;
+		}
+
+		public void setArnService(String arnService) {
+			this.arnService = arnService;
+		}
+
+		public String getArnUser() {
+			return arnUser;
+		}
+
+		public void setArnUser(String arnUser) {
+			this.arnUser = arnUser;
+		}
     }
 
 	public static class Tag {
@@ -1713,6 +1906,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		private Integer configFileVolumeDefaultModel;
 
 		private String emptyDirVolumeMedium;
+
+		private String emptyDirVolumeSizeLimit;
 
 		private String diskVolumeDiskId;
 
@@ -1770,6 +1965,14 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		public void setEmptyDirVolumeMedium(String emptyDirVolumeMedium) {
 			this.emptyDirVolumeMedium = emptyDirVolumeMedium;
+		}
+
+		public String getEmptyDirVolumeSizeLimit() {
+			return emptyDirVolumeSizeLimit;
+		}
+
+		public void setEmptyDirVolumeSizeLimit(String emptyDirVolumeSizeLimit) {
+			this.emptyDirVolumeSizeLimit = emptyDirVolumeSizeLimit;
 		}
 
 		public String getDiskVolumeDiskId() {

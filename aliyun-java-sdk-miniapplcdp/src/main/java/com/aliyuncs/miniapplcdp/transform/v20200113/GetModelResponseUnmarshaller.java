@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.miniapplcdp.model.v20200113.GetModelResponse;
 import com.aliyuncs.miniapplcdp.model.v20200113.GetModelResponse.Data;
-import com.aliyuncs.miniapplcdp.model.v20200113.GetModelResponse.Data.NameItem;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -42,6 +41,7 @@ public class GetModelResponseUnmarshaller {
 		data.setModelId(_ctx.stringValue("GetModelResponse.Data.ModelId"));
 		data.setModifiedTime(_ctx.stringValue("GetModelResponse.Data.ModifiedTime"));
 		data.setModuleId(_ctx.stringValue("GetModelResponse.Data.ModuleId"));
+		data.setModelName(_ctx.stringValue("GetModelResponse.Data.ModelName"));
 		data.setProps(_ctx.mapValue("GetModelResponse.Data.Props"));
 		data.setRevision(_ctx.integerValue("GetModelResponse.Data.Revision"));
 		data.setSchemaVersion(_ctx.stringValue("GetModelResponse.Data.SchemaVersion"));
@@ -52,15 +52,6 @@ public class GetModelResponseUnmarshaller {
 
 		List<Map<Object, Object>> attributes = _ctx.listMapValue("GetModelResponse.Data.Attributes");
 		data.setAttributes(attributes);
-
-		List<NameItem> modelName = new ArrayList<NameItem>();
-		for (int i = 0; i < _ctx.lengthValue("GetModelResponse.Data.ModelName.Length"); i++) {
-			NameItem nameItem = new NameItem();
-			nameItem.setGood(_ctx.stringValue("GetModelResponse.Data.ModelName["+ i +"].Good"));
-
-			modelName.add(nameItem);
-		}
-		data.setModelName(modelName);
 		getModelResponse.setData(data);
 	 
 	 	return getModelResponse;

@@ -61,6 +61,8 @@ public class DescribeCertsResponse extends AcsResponse {
 
 		private Integer id;
 
+		private String certIdentifier;
+
 		public String getEndDate() {
 			return this.endDate;
 		}
@@ -115,6 +117,14 @@ public class DescribeCertsResponse extends AcsResponse {
 
 		public void setId(Integer id) {
 			this.id = id;
+		}
+
+		public String getCertIdentifier() {
+			return this.certIdentifier;
+		}
+
+		public void setCertIdentifier(String certIdentifier) {
+			this.certIdentifier = certIdentifier;
 		}
 	}
 

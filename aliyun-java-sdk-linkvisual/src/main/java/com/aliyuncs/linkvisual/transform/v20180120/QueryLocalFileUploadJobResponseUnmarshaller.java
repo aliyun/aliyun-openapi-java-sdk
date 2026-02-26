@@ -29,9 +29,9 @@ public class QueryLocalFileUploadJobResponseUnmarshaller {
 	public static QueryLocalFileUploadJobResponse unmarshall(QueryLocalFileUploadJobResponse queryLocalFileUploadJobResponse, UnmarshallerContext _ctx) {
 		
 		queryLocalFileUploadJobResponse.setRequestId(_ctx.stringValue("QueryLocalFileUploadJobResponse.RequestId"));
-		queryLocalFileUploadJobResponse.setSuccess(_ctx.booleanValue("QueryLocalFileUploadJobResponse.Success"));
 		queryLocalFileUploadJobResponse.setCode(_ctx.stringValue("QueryLocalFileUploadJobResponse.Code"));
 		queryLocalFileUploadJobResponse.setErrorMessage(_ctx.stringValue("QueryLocalFileUploadJobResponse.ErrorMessage"));
+		queryLocalFileUploadJobResponse.setSuccess(_ctx.booleanValue("QueryLocalFileUploadJobResponse.Success"));
 
 		Data data = new Data();
 		data.setStatus(_ctx.integerValue("QueryLocalFileUploadJobResponse.Data.Status"));
@@ -39,20 +39,20 @@ public class QueryLocalFileUploadJobResponseUnmarshaller {
 		List<ResultListItem> resultList = new ArrayList<ResultListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryLocalFileUploadJobResponse.Data.ResultList.Length"); i++) {
 			ResultListItem resultListItem = new ResultListItem();
-			resultListItem.setIotId(_ctx.stringValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].IotId"));
+			resultListItem.setSlotEndTime(_ctx.integerValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].SlotEndTime"));
 			resultListItem.setProductKey(_ctx.stringValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].ProductKey"));
 			resultListItem.setDeviceName(_ctx.stringValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].DeviceName"));
 			resultListItem.setSlotStartTime(_ctx.integerValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].SlotStartTime"));
-			resultListItem.setSlotEndTime(_ctx.integerValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].SlotEndTime"));
-			resultListItem.setSlotStatus(_ctx.integerValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].SlotStatus"));
 			resultListItem.setCode(_ctx.integerValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].Code"));
+			resultListItem.setSlotStatus(_ctx.integerValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].SlotStatus"));
+			resultListItem.setIotId(_ctx.stringValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].IotId"));
 
 			List<FileListItem> fileList = new ArrayList<FileListItem>();
 			for (int j = 0; j < _ctx.lengthValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].FileList.Length"); j++) {
 				FileListItem fileListItem = new FileListItem();
+				fileListItem.setFileName(_ctx.stringValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].FileList["+ j +"].FileName"));
 				fileListItem.setFileStartTime(_ctx.integerValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].FileList["+ j +"].FileStartTime"));
 				fileListItem.setFileEndTime(_ctx.integerValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].FileList["+ j +"].FileEndTime"));
-				fileListItem.setFileName(_ctx.stringValue("QueryLocalFileUploadJobResponse.Data.ResultList["+ i +"].FileList["+ j +"].FileName"));
 
 				fileList.add(fileListItem);
 			}

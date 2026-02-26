@@ -26,7 +26,7 @@ public class CheckProcessResultRequest extends RpcAcsRequest<CheckProcessResultR
 
 	private String token;
 	public CheckProcessResultRequest() {
-		super("Copyright", "2019-01-23", "CheckProcessResult");
+		super("Copyright", "2019-01-23", "CheckProcessResult", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

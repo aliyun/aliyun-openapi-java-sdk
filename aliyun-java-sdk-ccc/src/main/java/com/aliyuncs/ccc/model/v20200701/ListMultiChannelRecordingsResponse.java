@@ -97,6 +97,8 @@ public class ListMultiChannelRecordingsResponse extends AcsResponse {
 
 		private String agentChannelId;
 
+		private List<HoldTimeSegment> holdTimeSegments;
+
 		public String getFileName() {
 			return this.fileName;
 		}
@@ -175,6 +177,37 @@ public class ListMultiChannelRecordingsResponse extends AcsResponse {
 
 		public void setAgentChannelId(String agentChannelId) {
 			this.agentChannelId = agentChannelId;
+		}
+
+		public List<HoldTimeSegment> getHoldTimeSegments() {
+			return this.holdTimeSegments;
+		}
+
+		public void setHoldTimeSegments(List<HoldTimeSegment> holdTimeSegments) {
+			this.holdTimeSegments = holdTimeSegments;
+		}
+
+		public static class HoldTimeSegment {
+
+			private Long startTime;
+
+			private Long endTime;
+
+			public Long getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(Long startTime) {
+				this.startTime = startTime;
+			}
+
+			public Long getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
+			}
 		}
 	}
 

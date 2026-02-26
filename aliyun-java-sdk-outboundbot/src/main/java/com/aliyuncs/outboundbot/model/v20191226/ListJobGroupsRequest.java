@@ -31,6 +31,8 @@ public class ListJobGroupsRequest extends RpcAcsRequest<ListJobGroupsResponse> {
 
 	private Long endTime;
 
+	private Boolean onlyMinConcurrencyEnabled;
+
 	private Long startTime;
 
 	private Integer pageNumber;
@@ -79,6 +81,17 @@ public class ListJobGroupsRequest extends RpcAcsRequest<ListJobGroupsResponse> {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Boolean getOnlyMinConcurrencyEnabled() {
+		return this.onlyMinConcurrencyEnabled;
+	}
+
+	public void setOnlyMinConcurrencyEnabled(Boolean onlyMinConcurrencyEnabled) {
+		this.onlyMinConcurrencyEnabled = onlyMinConcurrencyEnabled;
+		if(onlyMinConcurrencyEnabled != null){
+			putQueryParameter("OnlyMinConcurrencyEnabled", onlyMinConcurrencyEnabled.toString());
 		}
 	}
 

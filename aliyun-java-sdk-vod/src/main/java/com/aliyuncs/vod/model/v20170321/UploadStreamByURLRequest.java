@@ -36,6 +36,8 @@ public class UploadStreamByURLRequest extends RpcAcsRequest<UploadStreamByURLRes
 	private String streamURL;
 
 	private String mediaId;
+
+	private String uploadMetadata;
 	public UploadStreamByURLRequest() {
 		super("vod", "2017-03-21", "UploadStreamByURL", "vod");
 		setMethod(MethodType.POST);
@@ -108,6 +110,17 @@ public class UploadStreamByURLRequest extends RpcAcsRequest<UploadStreamByURLRes
 		this.mediaId = mediaId;
 		if(mediaId != null){
 			putQueryParameter("MediaId", mediaId);
+		}
+	}
+
+	public String getUploadMetadata() {
+		return this.uploadMetadata;
+	}
+
+	public void setUploadMetadata(String uploadMetadata) {
+		this.uploadMetadata = uploadMetadata;
+		if(uploadMetadata != null){
+			putQueryParameter("UploadMetadata", uploadMetadata);
 		}
 	}
 

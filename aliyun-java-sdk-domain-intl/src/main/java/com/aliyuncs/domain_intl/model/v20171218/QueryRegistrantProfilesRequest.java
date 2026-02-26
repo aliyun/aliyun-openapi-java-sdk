@@ -15,59 +15,39 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryRegistrantProfilesRequest extends RpcAcsRequest<QueryRegistrantProfilesResponse> {
-	
-	public QueryRegistrantProfilesRequest() {
-		super("Domain-intl", "2017-12-18", "QueryRegistrantProfiles", "domain");
-	}
-
-	private String registrantOrganization;
-
-	private String userClientIp;
+	   
 
 	private Long registrantProfileId;
 
+	private Integer pageNum;
+
 	private Integer pageSize;
-
-	private String registrantType;
-
-	private String registrantProfileType;
 
 	private String realNameStatus;
 
 	private String lang;
 
-	private Integer pageNum;
+	private String email;
+
+	private String registrantType;
+
+	private String registrantProfileType;
 
 	private Boolean defaultRegistrantProfile;
 
-	private String email;
+	private String registrantOrganization;
 
-	public String getRegistrantOrganization() {
-		return this.registrantOrganization;
-	}
-
-	public void setRegistrantOrganization(String registrantOrganization) {
-		this.registrantOrganization = registrantOrganization;
-		if(registrantOrganization != null){
-			putQueryParameter("RegistrantOrganization", registrantOrganization);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
+	private String userClientIp;
+	public QueryRegistrantProfilesRequest() {
+		super("Domain-intl", "2017-12-18", "QueryRegistrantProfiles");
+		setMethod(MethodType.POST);
 	}
 
 	public Long getRegistrantProfileId() {
@@ -81,6 +61,17 @@ public class QueryRegistrantProfilesRequest extends RpcAcsRequest<QueryRegistran
 		}
 	}
 
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -89,28 +80,6 @@ public class QueryRegistrantProfilesRequest extends RpcAcsRequest<QueryRegistran
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getRegistrantType() {
-		return this.registrantType;
-	}
-
-	public void setRegistrantType(String registrantType) {
-		this.registrantType = registrantType;
-		if(registrantType != null){
-			putQueryParameter("RegistrantType", registrantType);
-		}
-	}
-
-	public String getRegistrantProfileType() {
-		return this.registrantProfileType;
-	}
-
-	public void setRegistrantProfileType(String registrantProfileType) {
-		this.registrantProfileType = registrantProfileType;
-		if(registrantProfileType != null){
-			putQueryParameter("RegistrantProfileType", registrantProfileType);
 		}
 	}
 
@@ -136,14 +105,36 @@ public class QueryRegistrantProfilesRequest extends RpcAcsRequest<QueryRegistran
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
+	public String getEmail() {
+		return this.email;
 	}
 
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
+		}
+	}
+
+	public String getRegistrantType() {
+		return this.registrantType;
+	}
+
+	public void setRegistrantType(String registrantType) {
+		this.registrantType = registrantType;
+		if(registrantType != null){
+			putQueryParameter("RegistrantType", registrantType);
+		}
+	}
+
+	public String getRegistrantProfileType() {
+		return this.registrantProfileType;
+	}
+
+	public void setRegistrantProfileType(String registrantProfileType) {
+		this.registrantProfileType = registrantProfileType;
+		if(registrantProfileType != null){
+			putQueryParameter("RegistrantProfileType", registrantProfileType);
 		}
 	}
 
@@ -158,14 +149,25 @@ public class QueryRegistrantProfilesRequest extends RpcAcsRequest<QueryRegistran
 		}
 	}
 
-	public String getEmail() {
-		return this.email;
+	public String getRegistrantOrganization() {
+		return this.registrantOrganization;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
-		if(email != null){
-			putQueryParameter("Email", email);
+	public void setRegistrantOrganization(String registrantOrganization) {
+		this.registrantOrganization = registrantOrganization;
+		if(registrantOrganization != null){
+			putQueryParameter("RegistrantOrganization", registrantOrganization);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

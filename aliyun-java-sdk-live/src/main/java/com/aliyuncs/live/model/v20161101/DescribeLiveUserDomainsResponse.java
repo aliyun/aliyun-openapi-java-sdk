@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveUserDomainsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
 	private Long totalCount;
 
 	private List<PageData> domains;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getPageNumber() {
 		return this.pageNumber;
@@ -57,6 +49,14 @@ public class DescribeLiveUserDomainsResponse extends AcsResponse {
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getTotalCount() {
@@ -77,29 +77,23 @@ public class DescribeLiveUserDomainsResponse extends AcsResponse {
 
 	public static class PageData {
 
-		private String domainName;
-
 		private String cname;
 
-		private String liveDomainType;
+		private String description;
+
+		private String domainName;
 
 		private String gmtCreated;
 
 		private String gmtModified;
 
-		private String description;
-
 		private String liveDomainStatus;
+
+		private String liveDomainType;
 
 		private String regionName;
 
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
+		private String resourceGroupId;
 
 		public String getCname() {
 			return this.cname;
@@ -109,12 +103,20 @@ public class DescribeLiveUserDomainsResponse extends AcsResponse {
 			this.cname = cname;
 		}
 
-		public String getLiveDomainType() {
-			return this.liveDomainType;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setLiveDomainType(String liveDomainType) {
-			this.liveDomainType = liveDomainType;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getGmtCreated() {
@@ -133,14 +135,6 @@ public class DescribeLiveUserDomainsResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
 		public String getLiveDomainStatus() {
 			return this.liveDomainStatus;
 		}
@@ -149,12 +143,28 @@ public class DescribeLiveUserDomainsResponse extends AcsResponse {
 			this.liveDomainStatus = liveDomainStatus;
 		}
 
+		public String getLiveDomainType() {
+			return this.liveDomainType;
+		}
+
+		public void setLiveDomainType(String liveDomainType) {
+			this.liveDomainType = liveDomainType;
+		}
+
 		public String getRegionName() {
 			return this.regionName;
 		}
 
 		public void setRegionName(String regionName) {
 			this.regionName = regionName;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

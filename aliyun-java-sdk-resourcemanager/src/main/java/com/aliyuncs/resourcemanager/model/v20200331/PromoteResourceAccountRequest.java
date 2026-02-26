@@ -30,7 +30,7 @@ public class PromoteResourceAccountRequest extends RpcAcsRequest<PromoteResource
 
 	private String email;
 	public PromoteResourceAccountRequest() {
-		super("ResourceManager", "2020-03-31", "PromoteResourceAccount");
+		super("ResourceManager", "2020-03-31", "PromoteResourceAccount", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

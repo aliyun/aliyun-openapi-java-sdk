@@ -1,10 +1,7 @@
 package com.aliyuncs.http;
 
-import lombok.ToString;
-
 import java.util.Map;
 
-@ToString(callSuper = true)
 public class HttpRequest extends HttpMessage {
 
     public HttpRequest(String strUrl) {
@@ -17,4 +14,5 @@ public class HttpRequest extends HttpMessage {
             this.headers = tmpHeaders;
         }
     }
+
 }

@@ -24,10 +24,23 @@ import com.aliyuncs.http.MethodType;
 public class DeleteNatGatewayRequest extends RpcAcsRequest<DeleteNatGatewayResponse> {
 	   
 
+	private Boolean forceDelete;
+
 	private String natGatewayId;
 	public DeleteNatGatewayRequest() {
 		super("Ens", "2017-11-10", "DeleteNatGateway", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public Boolean getForceDelete() {
+		return this.forceDelete;
+	}
+
+	public void setForceDelete(Boolean forceDelete) {
+		this.forceDelete = forceDelete;
+		if(forceDelete != null){
+			putQueryParameter("ForceDelete", forceDelete.toString());
+		}
 	}
 
 	public String getNatGatewayId() {

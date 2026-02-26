@@ -27,25 +27,27 @@ public class ListRealtimeAgentStatesRequest extends RpcAcsRequest<ListRealtimeAg
 
 	private String callTypeList;
 
-	private String query;
-
 	private Boolean outboundScenario;
 
 	private Integer pageNumber;
+
+	private String agentIdList;
+
+	private Integer pageSize;
+
+	private String stateList;
+
+	private String query;
 
 	private String instanceId;
 
 	private String workModeList;
 
-	private String agentIdList;
-
 	private String skillGroupId;
 
 	private String agentName;
 
-	private Integer pageSize;
-
-	private String stateList;
+	private String mediaType;
 	public ListRealtimeAgentStatesRequest() {
 		super("CCC", "2020-07-01", "ListRealtimeAgentStates", "CCC");
 		setMethod(MethodType.POST);
@@ -63,17 +65,6 @@ public class ListRealtimeAgentStatesRequest extends RpcAcsRequest<ListRealtimeAg
 		this.callTypeList = callTypeList;
 		if(callTypeList != null){
 			putQueryParameter("CallTypeList", callTypeList);
-		}
-	}
-
-	public String getQuery() {
-		return this.query;
-	}
-
-	public void setQuery(String query) {
-		this.query = query;
-		if(query != null){
-			putQueryParameter("Query", query);
 		}
 	}
 
@@ -99,6 +90,50 @@ public class ListRealtimeAgentStatesRequest extends RpcAcsRequest<ListRealtimeAg
 		}
 	}
 
+	public String getAgentIdList() {
+		return this.agentIdList;
+	}
+
+	public void setAgentIdList(String agentIdList) {
+		this.agentIdList = agentIdList;
+		if(agentIdList != null){
+			putBodyParameter("AgentIdList", agentIdList);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getStateList() {
+		return this.stateList;
+	}
+
+	public void setStateList(String stateList) {
+		this.stateList = stateList;
+		if(stateList != null){
+			putBodyParameter("StateList", stateList);
+		}
+	}
+
+	public String getQuery() {
+		return this.query;
+	}
+
+	public void setQuery(String query) {
+		this.query = query;
+		if(query != null){
+			putQueryParameter("Query", query);
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -118,17 +153,6 @@ public class ListRealtimeAgentStatesRequest extends RpcAcsRequest<ListRealtimeAg
 		this.workModeList = workModeList;
 		if(workModeList != null){
 			putQueryParameter("WorkModeList", workModeList);
-		}
-	}
-
-	public String getAgentIdList() {
-		return this.agentIdList;
-	}
-
-	public void setAgentIdList(String agentIdList) {
-		this.agentIdList = agentIdList;
-		if(agentIdList != null){
-			putBodyParameter("AgentIdList", agentIdList);
 		}
 	}
 
@@ -154,25 +178,14 @@ public class ListRealtimeAgentStatesRequest extends RpcAcsRequest<ListRealtimeAg
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getMediaType() {
+		return this.mediaType;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getStateList() {
-		return this.stateList;
-	}
-
-	public void setStateList(String stateList) {
-		this.stateList = stateList;
-		if(stateList != null){
-			putBodyParameter("StateList", stateList);
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+		if(mediaType != null){
+			putQueryParameter("MediaType", mediaType);
 		}
 	}
 

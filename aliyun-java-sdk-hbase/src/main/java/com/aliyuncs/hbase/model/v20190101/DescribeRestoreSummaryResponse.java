@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRestoreSummaryResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer hasMoreRestoreRecord;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String requestId;
 
 	private Integer total;
 
+	private Integer hasMoreRestoreRecord;
+
 	private List<Rescord> rescords;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getHasMoreRestoreRecord() {
-		return this.hasMoreRestoreRecord;
-	}
-
-	public void setHasMoreRestoreRecord(Integer hasMoreRestoreRecord) {
-		this.hasMoreRestoreRecord = hasMoreRestoreRecord;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -61,12 +53,12 @@ public class DescribeRestoreSummaryResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotal() {
@@ -75,6 +67,14 @@ public class DescribeRestoreSummaryResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public Integer getHasMoreRestoreRecord() {
+		return this.hasMoreRestoreRecord;
+	}
+
+	public void setHasMoreRestoreRecord(Integer hasMoreRestoreRecord) {
+		this.hasMoreRestoreRecord = hasMoreRestoreRecord;
 	}
 
 	public List<Rescord> getRescords() {
@@ -87,28 +87,28 @@ public class DescribeRestoreSummaryResponse extends AcsResponse {
 
 	public static class Rescord {
 
-		private String recordId;
+		private String status;
 
 		private String finishTime;
 
 		private String schemaProcess;
 
-		private String hfileRestoreProcess;
+		private String bulkLoadProcess;
+
+		private String recordId;
 
 		private String createTime;
 
-		private String bulkLoadProcess;
-
-		private String status;
-
 		private String logProcess;
 
-		public String getRecordId() {
-			return this.recordId;
+		private String hfileRestoreProcess;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setRecordId(String recordId) {
-			this.recordId = recordId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getFinishTime() {
@@ -127,12 +127,20 @@ public class DescribeRestoreSummaryResponse extends AcsResponse {
 			this.schemaProcess = schemaProcess;
 		}
 
-		public String getHfileRestoreProcess() {
-			return this.hfileRestoreProcess;
+		public String getBulkLoadProcess() {
+			return this.bulkLoadProcess;
 		}
 
-		public void setHfileRestoreProcess(String hfileRestoreProcess) {
-			this.hfileRestoreProcess = hfileRestoreProcess;
+		public void setBulkLoadProcess(String bulkLoadProcess) {
+			this.bulkLoadProcess = bulkLoadProcess;
+		}
+
+		public String getRecordId() {
+			return this.recordId;
+		}
+
+		public void setRecordId(String recordId) {
+			this.recordId = recordId;
 		}
 
 		public String getCreateTime() {
@@ -143,28 +151,20 @@ public class DescribeRestoreSummaryResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getBulkLoadProcess() {
-			return this.bulkLoadProcess;
-		}
-
-		public void setBulkLoadProcess(String bulkLoadProcess) {
-			this.bulkLoadProcess = bulkLoadProcess;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getLogProcess() {
 			return this.logProcess;
 		}
 
 		public void setLogProcess(String logProcess) {
 			this.logProcess = logProcess;
+		}
+
+		public String getHfileRestoreProcess() {
+			return this.hfileRestoreProcess;
+		}
+
+		public void setHfileRestoreProcess(String hfileRestoreProcess) {
+			this.hfileRestoreProcess = hfileRestoreProcess;
 		}
 	}
 

@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -26,7 +27,7 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
+	private String switchMode;
 
 	private String dBInstanceId;
 
@@ -46,6 +47,10 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 	public ModifyDBInstanceTDERequest() {
 		super("Dds", "2015-12-01", "ModifyDBInstanceTDE", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -59,14 +64,14 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getSwitchMode() {
+		return this.switchMode;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setSwitchMode(String switchMode) {
+		this.switchMode = switchMode;
+		if(switchMode != null){
+			putQueryParameter("SwitchMode", switchMode);
 		}
 	}
 

@@ -117,7 +117,17 @@ public class DescribeIngressResponse extends AcsResponse {
 
 		private String listenerProtocol;
 
+		private String certIds;
+
+		private String securityPolicyId;
+
+		private Integer requestTimeout;
+
+		private Integer idleTimeout;
+
 		private List<Rule> rules;
+
+		private List<Svc> svcs;
 
 		private DefaultRule defaultRule;
 
@@ -201,12 +211,52 @@ public class DescribeIngressResponse extends AcsResponse {
 			this.listenerProtocol = listenerProtocol;
 		}
 
+		public String getCertIds() {
+			return this.certIds;
+		}
+
+		public void setCertIds(String certIds) {
+			this.certIds = certIds;
+		}
+
+		public String getSecurityPolicyId() {
+			return this.securityPolicyId;
+		}
+
+		public void setSecurityPolicyId(String securityPolicyId) {
+			this.securityPolicyId = securityPolicyId;
+		}
+
+		public Integer getRequestTimeout() {
+			return this.requestTimeout;
+		}
+
+		public void setRequestTimeout(Integer requestTimeout) {
+			this.requestTimeout = requestTimeout;
+		}
+
+		public Integer getIdleTimeout() {
+			return this.idleTimeout;
+		}
+
+		public void setIdleTimeout(Integer idleTimeout) {
+			this.idleTimeout = idleTimeout;
+		}
+
 		public List<Rule> getRules() {
 			return this.rules;
 		}
 
 		public void setRules(List<Rule> rules) {
 			this.rules = rules;
+		}
+
+		public List<Svc> getSvcs() {
+			return this.svcs;
+		}
+
+		public void setSvcs(List<Svc> svcs) {
+			this.svcs = svcs;
 		}
 
 		public DefaultRule getDefaultRule() {
@@ -228,6 +278,10 @@ public class DescribeIngressResponse extends AcsResponse {
 			private String appId;
 
 			private String path;
+
+			private String backendProtocol;
+
+			private String rewritePath;
 
 			public String getAppName() {
 				return this.appName;
@@ -268,6 +322,75 @@ public class DescribeIngressResponse extends AcsResponse {
 			public void setPath(String path) {
 				this.path = path;
 			}
+
+			public String getBackendProtocol() {
+				return this.backendProtocol;
+			}
+
+			public void setBackendProtocol(String backendProtocol) {
+				this.backendProtocol = backendProtocol;
+			}
+
+			public String getRewritePath() {
+				return this.rewritePath;
+			}
+
+			public void setRewritePath(String rewritePath) {
+				this.rewritePath = rewritePath;
+			}
+		}
+
+		public static class Svc {
+
+			private Long id;
+
+			private String appId;
+
+			private String backendProtocol;
+
+			private Integer backendPort;
+
+			private String name;
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
+
+			public String getBackendProtocol() {
+				return this.backendProtocol;
+			}
+
+			public void setBackendProtocol(String backendProtocol) {
+				this.backendProtocol = backendProtocol;
+			}
+
+			public Integer getBackendPort() {
+				return this.backendPort;
+			}
+
+			public void setBackendPort(Integer backendPort) {
+				this.backendPort = backendPort;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
 		}
 
 		public static class DefaultRule {
@@ -277,6 +400,8 @@ public class DescribeIngressResponse extends AcsResponse {
 			private String appName;
 
 			private String appId;
+
+			private String backendProtocol;
 
 			public Integer getContainerPort() {
 				return this.containerPort;
@@ -300,6 +425,14 @@ public class DescribeIngressResponse extends AcsResponse {
 
 			public void setAppId(String appId) {
 				this.appId = appId;
+			}
+
+			public String getBackendProtocol() {
+				return this.backendProtocol;
+			}
+
+			public void setBackendProtocol(String backendProtocol) {
+				this.backendProtocol = backendProtocol;
 			}
 		}
 	}

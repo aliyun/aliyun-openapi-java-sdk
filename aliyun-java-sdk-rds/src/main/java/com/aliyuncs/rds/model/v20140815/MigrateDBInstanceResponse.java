@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class MigrateDBInstanceResponse extends AcsResponse {
 
+	private Integer migrationId;
+
 	private String requestId;
 
 	private Integer taskId;
 
-	private Integer migrationId;
+	public Integer getMigrationId() {
+		return this.migrationId;
+	}
+
+	public void setMigrationId(Integer migrationId) {
+		this.migrationId = migrationId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class MigrateDBInstanceResponse extends AcsResponse {
 
 	public void setTaskId(Integer taskId) {
 		this.taskId = taskId;
-	}
-
-	public Integer getMigrationId() {
-		return this.migrationId;
-	}
-
-	public void setMigrationId(Integer migrationId) {
-		this.migrationId = migrationId;
 	}
 
 	@Override

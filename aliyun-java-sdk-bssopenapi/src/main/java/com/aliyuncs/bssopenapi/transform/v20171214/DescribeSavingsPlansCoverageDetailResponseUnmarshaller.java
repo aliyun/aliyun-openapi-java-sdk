@@ -40,6 +40,7 @@ public class DescribeSavingsPlansCoverageDetailResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items.Length"); i++) {
 			Item item = new Item();
 			item.setUserId(_ctx.longValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].UserId"));
+			item.setOwnerId(_ctx.longValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].OwnerId"));
 			item.setInstanceId(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].InstanceId"));
 			item.setCurrency(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].Currency"));
 			item.setInstanceSpec(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].InstanceSpec"));

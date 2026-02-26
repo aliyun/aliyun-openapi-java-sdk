@@ -102,9 +102,15 @@ public class QueryAccountAddressInfoResponse extends AcsResponse {
 
 		private String trueName;
 
-		private Province province;
+		private String selfServicingBusinessRegNum;
+
+		private String selfServicingIdentificationNum;
+
+		private District district;
 
 		private City city;
+
+		private Province province;
 
 		public String getAccountAttr() {
 			return this.accountAttr;
@@ -210,12 +216,28 @@ public class QueryAccountAddressInfoResponse extends AcsResponse {
 			this.trueName = trueName;
 		}
 
-		public Province getProvince() {
-			return this.province;
+		public String getSelfServicingBusinessRegNum() {
+			return this.selfServicingBusinessRegNum;
 		}
 
-		public void setProvince(Province province) {
-			this.province = province;
+		public void setSelfServicingBusinessRegNum(String selfServicingBusinessRegNum) {
+			this.selfServicingBusinessRegNum = selfServicingBusinessRegNum;
+		}
+
+		public String getSelfServicingIdentificationNum() {
+			return this.selfServicingIdentificationNum;
+		}
+
+		public void setSelfServicingIdentificationNum(String selfServicingIdentificationNum) {
+			this.selfServicingIdentificationNum = selfServicingIdentificationNum;
+		}
+
+		public District getDistrict() {
+			return this.district;
+		}
+
+		public void setDistrict(District district) {
+			this.district = district;
 		}
 
 		public City getCity() {
@@ -226,7 +248,15 @@ public class QueryAccountAddressInfoResponse extends AcsResponse {
 			this.city = city;
 		}
 
-		public static class Province {
+		public Province getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(Province province) {
+			this.province = province;
+		}
+
+		public static class District {
 
 			private String name;
 
@@ -250,6 +280,29 @@ public class QueryAccountAddressInfoResponse extends AcsResponse {
 		}
 
 		public static class City {
+
+			private String name;
+
+			private String id;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+		}
+
+		public static class Province {
 
 			private String name;
 

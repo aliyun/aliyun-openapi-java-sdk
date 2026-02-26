@@ -47,17 +47,9 @@ public class ListSummaryAppsResponse extends AcsResponse {
 
 	public static class SummaryAppInfo {
 
-		private String appName;
-
 		private Long appKey;
 
-		public String getAppName() {
-			return this.appName;
-		}
-
-		public void setAppName(String appName) {
-			this.appName = appName;
-		}
+		private String appName;
 
 		public Long getAppKey() {
 			return this.appKey;
@@ -65,6 +57,14 @@ public class ListSummaryAppsResponse extends AcsResponse {
 
 		public void setAppKey(Long appKey) {
 			this.appKey = appKey;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 	}
 

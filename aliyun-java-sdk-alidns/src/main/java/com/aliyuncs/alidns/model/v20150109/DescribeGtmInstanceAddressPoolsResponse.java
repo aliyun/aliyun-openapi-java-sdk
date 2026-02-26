@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGtmInstanceAddressPoolsResponse extends AcsResponse {
 
+	private Integer pageSize;
+
 	private String requestId;
-
-	private Integer totalItems;
-
-	private Integer totalPages;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalPages;
+
+	private Integer totalItems;
 
 	private List<AddrPool> addrPools;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,22 +51,6 @@ public class DescribeGtmInstanceAddressPoolsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalItems() {
-		return this.totalItems;
-	}
-
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
-	}
-
-	public Integer getTotalPages() {
-		return this.totalPages;
-	}
-
-	public void setTotalPages(Integer totalPages) {
-		this.totalPages = totalPages;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +61,20 @@ public class DescribeGtmInstanceAddressPoolsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalPages() {
+		return this.totalPages;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalPages(Integer totalPages) {
+		this.totalPages = totalPages;
+	}
+
+	public Integer getTotalItems() {
+		return this.totalItems;
+	}
+
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
 	}
 
 	public List<AddrPool> getAddrPools() {
@@ -87,108 +87,36 @@ public class DescribeGtmInstanceAddressPoolsResponse extends AcsResponse {
 
 	public static class AddrPool {
 
-		private String addrPoolId;
-
-		private String createTime;
-
-		private Long createTimestamp;
-
-		private String updateTime;
-
-		private Long updateTimestamp;
-
-		private Integer addrCount;
-
-		private Integer minAvailableAddrNum;
-
-		private String monitorConfigId;
-
-		private String monitorStatus;
-
-		private String name;
+		private String type;
 
 		private String status;
 
-		private String type;
+		private String updateTime;
 
-		public String getAddrPoolId() {
-			return this.addrPoolId;
+		private String createTime;
+
+		private String monitorConfigId;
+
+		private Integer minAvailableAddrNum;
+
+		private Long updateTimestamp;
+
+		private String monitorStatus;
+
+		private String addrPoolId;
+
+		private String name;
+
+		private Integer addrCount;
+
+		private Long createTimestamp;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setAddrPoolId(String addrPoolId) {
-			this.addrPoolId = addrPoolId;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public Long getUpdateTimestamp() {
-			return this.updateTimestamp;
-		}
-
-		public void setUpdateTimestamp(Long updateTimestamp) {
-			this.updateTimestamp = updateTimestamp;
-		}
-
-		public Integer getAddrCount() {
-			return this.addrCount;
-		}
-
-		public void setAddrCount(Integer addrCount) {
-			this.addrCount = addrCount;
-		}
-
-		public Integer getMinAvailableAddrNum() {
-			return this.minAvailableAddrNum;
-		}
-
-		public void setMinAvailableAddrNum(Integer minAvailableAddrNum) {
-			this.minAvailableAddrNum = minAvailableAddrNum;
-		}
-
-		public String getMonitorConfigId() {
-			return this.monitorConfigId;
-		}
-
-		public void setMonitorConfigId(String monitorConfigId) {
-			this.monitorConfigId = monitorConfigId;
-		}
-
-		public String getMonitorStatus() {
-			return this.monitorStatus;
-		}
-
-		public void setMonitorStatus(String monitorStatus) {
-			this.monitorStatus = monitorStatus;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getStatus() {
@@ -199,12 +127,84 @@ public class DescribeGtmInstanceAddressPoolsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getMonitorConfigId() {
+			return this.monitorConfigId;
+		}
+
+		public void setMonitorConfigId(String monitorConfigId) {
+			this.monitorConfigId = monitorConfigId;
+		}
+
+		public Integer getMinAvailableAddrNum() {
+			return this.minAvailableAddrNum;
+		}
+
+		public void setMinAvailableAddrNum(Integer minAvailableAddrNum) {
+			this.minAvailableAddrNum = minAvailableAddrNum;
+		}
+
+		public Long getUpdateTimestamp() {
+			return this.updateTimestamp;
+		}
+
+		public void setUpdateTimestamp(Long updateTimestamp) {
+			this.updateTimestamp = updateTimestamp;
+		}
+
+		public String getMonitorStatus() {
+			return this.monitorStatus;
+		}
+
+		public void setMonitorStatus(String monitorStatus) {
+			this.monitorStatus = monitorStatus;
+		}
+
+		public String getAddrPoolId() {
+			return this.addrPoolId;
+		}
+
+		public void setAddrPoolId(String addrPoolId) {
+			this.addrPoolId = addrPoolId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getAddrCount() {
+			return this.addrCount;
+		}
+
+		public void setAddrCount(Integer addrCount) {
+			this.addrCount = addrCount;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 	}
 

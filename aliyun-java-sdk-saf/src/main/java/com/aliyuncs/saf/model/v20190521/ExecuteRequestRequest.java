@@ -30,7 +30,7 @@ public class ExecuteRequestRequest extends RpcAcsRequest<ExecuteRequestResponse>
 
 	private String service;
 	public ExecuteRequestRequest() {
-		super("saf", "2019-05-21", "ExecuteRequest");
+		super("saf", "2019-05-21", "ExecuteRequest", "saf");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -46,7 +46,7 @@ public class ExecuteRequestRequest extends RpcAcsRequest<ExecuteRequestResponse>
 	public void setServiceParameters(String serviceParameters) {
 		this.serviceParameters = serviceParameters;
 		if(serviceParameters != null){
-			putQueryParameter("ServiceParameters", serviceParameters);
+			putBodyParameter("ServiceParameters", serviceParameters);
 		}
 	}
 
@@ -57,7 +57,7 @@ public class ExecuteRequestRequest extends RpcAcsRequest<ExecuteRequestResponse>
 	public void setService(String service) {
 		this.service = service;
 		if(service != null){
-			putQueryParameter("Service", service);
+			putBodyParameter("Service", service);
 		}
 	}
 

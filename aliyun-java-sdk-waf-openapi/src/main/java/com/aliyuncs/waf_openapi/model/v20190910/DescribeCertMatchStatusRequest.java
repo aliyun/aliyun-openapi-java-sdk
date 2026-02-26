@@ -30,6 +30,8 @@ public class DescribeCertMatchStatusRequest extends RpcAcsRequest<DescribeCertMa
 
 	private String privateKey;
 
+	private String resourceGroupId;
+
 	private String instanceId;
 
 	private String domain;
@@ -62,6 +64,17 @@ public class DescribeCertMatchStatusRequest extends RpcAcsRequest<DescribeCertMa
 		this.privateKey = privateKey;
 		if(privateKey != null){
 			putQueryParameter("PrivateKey", privateKey);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

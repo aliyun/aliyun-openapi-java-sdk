@@ -45,6 +45,8 @@ public class DescribeInstanceSourcesRequest extends RpcAcsRequest<DescribeInstan
 
 	private Integer authStatus;
 
+	private Integer featureType;
+
 	private Integer currentPage;
 
 	private String instanceId;
@@ -164,6 +166,17 @@ public class DescribeInstanceSourcesRequest extends RpcAcsRequest<DescribeInstan
 		this.authStatus = authStatus;
 		if(authStatus != null){
 			putQueryParameter("AuthStatus", authStatus.toString());
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

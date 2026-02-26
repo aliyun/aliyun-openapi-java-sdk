@@ -33,7 +33,7 @@ public class ListModelsRequest extends RoaAcsRequest<ListModelsResponse> {
 
 	private Integer pageNumber;
 	public ListModelsRequest() {
-		super("OpenSearch", "2017-12-25", "ListModels", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListModels");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models");
 		setMethod(MethodType.GET);
 		try {

@@ -29,7 +29,7 @@ public class DescribeABTestSceneRequest extends RoaAcsRequest<DescribeABTestScen
 
 	private String appGroupIdentity;
 	public DescribeABTestSceneRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeABTestScene", "opensearch");
+		super("OpenSearch", "2017-12-25", "DescribeABTestScene");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]");
 		setMethod(MethodType.GET);
 		try {

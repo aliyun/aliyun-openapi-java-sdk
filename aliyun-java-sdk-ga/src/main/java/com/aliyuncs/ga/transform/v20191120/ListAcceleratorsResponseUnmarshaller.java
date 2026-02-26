@@ -21,6 +21,9 @@ import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse;
 import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem;
 import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.BasicBandwidthPackage;
 import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.CrossDomainBandwidthPackage;
+import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.IpSetConfig;
+import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.ServiceManagedInfosItem;
+import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,36 +33,70 @@ public class ListAcceleratorsResponseUnmarshaller {
 		
 		listAcceleratorsResponse.setRequestId(_ctx.stringValue("ListAcceleratorsResponse.RequestId"));
 		listAcceleratorsResponse.setTotalCount(_ctx.integerValue("ListAcceleratorsResponse.TotalCount"));
-		listAcceleratorsResponse.setPageNumber(_ctx.integerValue("ListAcceleratorsResponse.PageNumber"));
 		listAcceleratorsResponse.setPageSize(_ctx.integerValue("ListAcceleratorsResponse.PageSize"));
+		listAcceleratorsResponse.setPageNumber(_ctx.integerValue("ListAcceleratorsResponse.PageNumber"));
 
 		List<AcceleratorsItem> accelerators = new ArrayList<AcceleratorsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAcceleratorsResponse.Accelerators.Length"); i++) {
 			AcceleratorsItem acceleratorsItem = new AcceleratorsItem();
+			acceleratorsItem.setDnsName(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].DnsName"));
+			acceleratorsItem.setType(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Type"));
+			acceleratorsItem.setSecondDnsName(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].SecondDnsName"));
+			acceleratorsItem.setSpec(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Spec"));
+			acceleratorsItem.setState(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].State"));
+			acceleratorsItem.setCreateTime(_ctx.longValue("ListAcceleratorsResponse.Accelerators["+ i +"].CreateTime"));
+			acceleratorsItem.setCenId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].CenId"));
+			acceleratorsItem.setDdosId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].DdosId"));
+			acceleratorsItem.setRegionId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].RegionId"));
+			acceleratorsItem.setInstanceChargeType(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].InstanceChargeType"));
 			acceleratorsItem.setAcceleratorId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].AcceleratorId"));
-			acceleratorsItem.setName(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Name"));
 			acceleratorsItem.setDescription(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Description"));
 			acceleratorsItem.setBandwidth(_ctx.integerValue("ListAcceleratorsResponse.Accelerators["+ i +"].Bandwidth"));
-			acceleratorsItem.setType(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Type"));
-			acceleratorsItem.setInstanceChargeType(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].InstanceChargeType"));
+			acceleratorsItem.setBandwidthBillingType(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].BandwidthBillingType"));
 			acceleratorsItem.setExpiredTime(_ctx.longValue("ListAcceleratorsResponse.Accelerators["+ i +"].ExpiredTime"));
-			acceleratorsItem.setCenId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].CenId"));
-			acceleratorsItem.setState(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].State"));
-			acceleratorsItem.setDnsName(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].DnsName"));
-			acceleratorsItem.setCreateTime(_ctx.longValue("ListAcceleratorsResponse.Accelerators["+ i +"].CreateTime"));
-			acceleratorsItem.setRegionId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].RegionId"));
-			acceleratorsItem.setSpec(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Spec"));
+			acceleratorsItem.setName(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Name"));
+			acceleratorsItem.setResourceGroupId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].ResourceGroupId"));
+			acceleratorsItem.setCrossBorderMode(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].CrossBorderMode"));
+			acceleratorsItem.setCrossBorderStatus(_ctx.booleanValue("ListAcceleratorsResponse.Accelerators["+ i +"].CrossBorderStatus"));
+			acceleratorsItem.setUpgradableStatus(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].UpgradableStatus"));
+			acceleratorsItem.setServiceId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].ServiceId"));
+			acceleratorsItem.setServiceManaged(_ctx.booleanValue("ListAcceleratorsResponse.Accelerators["+ i +"].ServiceManaged"));
 
 			BasicBandwidthPackage basicBandwidthPackage = new BasicBandwidthPackage();
-			basicBandwidthPackage.setInstanceId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].BasicBandwidthPackage.InstanceId"));
 			basicBandwidthPackage.setBandwidth(_ctx.integerValue("ListAcceleratorsResponse.Accelerators["+ i +"].BasicBandwidthPackage.Bandwidth"));
 			basicBandwidthPackage.setBandwidthType(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].BasicBandwidthPackage.BandwidthType"));
+			basicBandwidthPackage.setInstanceId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].BasicBandwidthPackage.InstanceId"));
 			acceleratorsItem.setBasicBandwidthPackage(basicBandwidthPackage);
 
 			CrossDomainBandwidthPackage crossDomainBandwidthPackage = new CrossDomainBandwidthPackage();
-			crossDomainBandwidthPackage.setInstanceId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].CrossDomainBandwidthPackage.InstanceId"));
 			crossDomainBandwidthPackage.setBandwidth(_ctx.integerValue("ListAcceleratorsResponse.Accelerators["+ i +"].CrossDomainBandwidthPackage.Bandwidth"));
+			crossDomainBandwidthPackage.setInstanceId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].CrossDomainBandwidthPackage.InstanceId"));
 			acceleratorsItem.setCrossDomainBandwidthPackage(crossDomainBandwidthPackage);
+
+			IpSetConfig ipSetConfig = new IpSetConfig();
+			ipSetConfig.setAccessMode(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].IpSetConfig.AccessMode"));
+			acceleratorsItem.setIpSetConfig(ipSetConfig);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListAcceleratorsResponse.Accelerators["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			acceleratorsItem.setTags(tags);
+
+			List<ServiceManagedInfosItem> serviceManagedInfos = new ArrayList<ServiceManagedInfosItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListAcceleratorsResponse.Accelerators["+ i +"].ServiceManagedInfos.Length"); j++) {
+				ServiceManagedInfosItem serviceManagedInfosItem = new ServiceManagedInfosItem();
+				serviceManagedInfosItem.setAction(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].ServiceManagedInfos["+ j +"].Action"));
+				serviceManagedInfosItem.setChildType(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].ServiceManagedInfos["+ j +"].ChildType"));
+				serviceManagedInfosItem.setIsManaged(_ctx.booleanValue("ListAcceleratorsResponse.Accelerators["+ i +"].ServiceManagedInfos["+ j +"].IsManaged"));
+
+				serviceManagedInfos.add(serviceManagedInfosItem);
+			}
+			acceleratorsItem.setServiceManagedInfos(serviceManagedInfos);
 
 			accelerators.add(acceleratorsItem);
 		}

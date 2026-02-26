@@ -47,11 +47,19 @@ public class GenerateMergedTableResponse extends AcsResponse {
 
 	public static class Result {
 
+		private String primaryKey;
+
 		private Map<Object,Object> mergeTable;
 
 		private Map<Object,Object> fromTable;
 
-		private String primaryKey;
+		public String getPrimaryKey() {
+			return this.primaryKey;
+		}
+
+		public void setPrimaryKey(String primaryKey) {
+			this.primaryKey = primaryKey;
+		}
 
 		public Map<Object,Object> getMergeTable() {
 			return this.mergeTable;
@@ -67,14 +75,6 @@ public class GenerateMergedTableResponse extends AcsResponse {
 
 		public void setFromTable(Map<Object,Object> fromTable) {
 			this.fromTable = fromTable;
-		}
-
-		public String getPrimaryKey() {
-			return this.primaryKey;
-		}
-
-		public void setPrimaryKey(String primaryKey) {
-			this.primaryKey = primaryKey;
 		}
 	}
 

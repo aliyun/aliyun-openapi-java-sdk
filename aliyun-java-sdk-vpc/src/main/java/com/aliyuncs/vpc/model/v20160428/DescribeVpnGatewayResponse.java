@@ -65,7 +65,21 @@ public class DescribeVpnGatewayResponse extends AcsResponse {
 
 	private String name;
 
+	private String networkType;
+
+	private String disasterRecoveryInternetIp;
+
+	private String disasterRecoveryVSwitchId;
+
+	private String sslVpnInternetIp;
+
+	private String resourceGroupId;
+
+	private String gatewayType;
+
 	private List<Tag> tags;
+
+	private List<String> eniInstanceIds;
 
 	private ReservationData reservationData;
 
@@ -229,12 +243,68 @@ public class DescribeVpnGatewayResponse extends AcsResponse {
 		this.name = name;
 	}
 
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+	}
+
+	public String getDisasterRecoveryInternetIp() {
+		return this.disasterRecoveryInternetIp;
+	}
+
+	public void setDisasterRecoveryInternetIp(String disasterRecoveryInternetIp) {
+		this.disasterRecoveryInternetIp = disasterRecoveryInternetIp;
+	}
+
+	public String getDisasterRecoveryVSwitchId() {
+		return this.disasterRecoveryVSwitchId;
+	}
+
+	public void setDisasterRecoveryVSwitchId(String disasterRecoveryVSwitchId) {
+		this.disasterRecoveryVSwitchId = disasterRecoveryVSwitchId;
+	}
+
+	public String getSslVpnInternetIp() {
+		return this.sslVpnInternetIp;
+	}
+
+	public void setSslVpnInternetIp(String sslVpnInternetIp) {
+		this.sslVpnInternetIp = sslVpnInternetIp;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getGatewayType() {
+		return this.gatewayType;
+	}
+
+	public void setGatewayType(String gatewayType) {
+		this.gatewayType = gatewayType;
+	}
+
 	public List<Tag> getTags() {
 		return this.tags;
 	}
 
 	public void setTags(List<Tag> tags) {
 		this.tags = tags;
+	}
+
+	public List<String> getEniInstanceIds() {
+		return this.eniInstanceIds;
+	}
+
+	public void setEniInstanceIds(List<String> eniInstanceIds) {
+		this.eniInstanceIds = eniInstanceIds;
 	}
 
 	public ReservationData getReservationData() {

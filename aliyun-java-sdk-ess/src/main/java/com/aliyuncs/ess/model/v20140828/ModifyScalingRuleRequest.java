@@ -26,7 +26,11 @@ import com.aliyuncs.ess.Endpoint;
 public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleResponse> {
 	   
 
+	private String metricType;
+
 	private Long resourceOwnerId;
+
+	private List<AlarmDimension> alarmDimensions;
 
 	private List<StepAdjustment> stepAdjustments;
 
@@ -37,6 +41,8 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 	private Integer initialMaxSize;
 
 	private String scalingRuleName;
+
+	private String hybridMonitorNamespace;
 
 	private Integer cooldown;
 
@@ -64,6 +70,8 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 
 	private Integer predictiveValueBuffer;
 
+	private List<HybridMetrics> hybridMetricss;
+
 	private Integer scaleOutEvaluationCount;
 
 	private Integer minAdjustmentMagnitude;
@@ -78,6 +86,17 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		} catch (Exception e) {}
 	}
 
+	public String getMetricType() {
+		return this.metricType;
+	}
+
+	public void setMetricType(String metricType) {
+		this.metricType = metricType;
+		if(metricType != null){
+			putQueryParameter("MetricType", metricType);
+		}
+	}
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -89,6 +108,20 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		}
 	}
 
+	public List<AlarmDimension> getAlarmDimensions() {
+		return this.alarmDimensions;
+	}
+
+	public void setAlarmDimensions(List<AlarmDimension> alarmDimensions) {
+		this.alarmDimensions = alarmDimensions;	
+		if (alarmDimensions != null) {
+			for (int depth1 = 0; depth1 < alarmDimensions.size(); depth1++) {
+				putQueryParameter("AlarmDimension." + (depth1 + 1) + ".DimensionValue" , alarmDimensions.get(depth1).getDimensionValue());
+				putQueryParameter("AlarmDimension." + (depth1 + 1) + ".DimensionKey" , alarmDimensions.get(depth1).getDimensionKey());
+			}
+		}	
+	}
+
 	public List<StepAdjustment> getStepAdjustments() {
 		return this.stepAdjustments;
 	}
@@ -97,8 +130,8 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		this.stepAdjustments = stepAdjustments;	
 		if (stepAdjustments != null) {
 			for (int depth1 = 0; depth1 < stepAdjustments.size(); depth1++) {
-				putQueryParameter("StepAdjustment." + (depth1 + 1) + ".MetricIntervalLowerBound" , stepAdjustments.get(depth1).getMetricIntervalLowerBound());
 				putQueryParameter("StepAdjustment." + (depth1 + 1) + ".MetricIntervalUpperBound" , stepAdjustments.get(depth1).getMetricIntervalUpperBound());
+				putQueryParameter("StepAdjustment." + (depth1 + 1) + ".MetricIntervalLowerBound" , stepAdjustments.get(depth1).getMetricIntervalLowerBound());
 				putQueryParameter("StepAdjustment." + (depth1 + 1) + ".ScalingAdjustment" , stepAdjustments.get(depth1).getScalingAdjustment());
 			}
 		}	
@@ -145,6 +178,17 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		this.scalingRuleName = scalingRuleName;
 		if(scalingRuleName != null){
 			putQueryParameter("ScalingRuleName", scalingRuleName);
+		}
+	}
+
+	public String getHybridMonitorNamespace() {
+		return this.hybridMonitorNamespace;
+	}
+
+	public void setHybridMonitorNamespace(String hybridMonitorNamespace) {
+		this.hybridMonitorNamespace = hybridMonitorNamespace;
+		if(hybridMonitorNamespace != null){
+			putQueryParameter("HybridMonitorNamespace", hybridMonitorNamespace);
 		}
 	}
 
@@ -291,6 +335,28 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		}
 	}
 
+	public List<HybridMetrics> getHybridMetricss() {
+		return this.hybridMetricss;
+	}
+
+	public void setHybridMetricss(List<HybridMetrics> hybridMetricss) {
+		this.hybridMetricss = hybridMetricss;	
+		if (hybridMetricss != null) {
+			for (int depth1 = 0; depth1 < hybridMetricss.size(); depth1++) {
+				putQueryParameter("HybridMetrics." + (depth1 + 1) + ".Statistic" , hybridMetricss.get(depth1).getStatistic());
+				putQueryParameter("HybridMetrics." + (depth1 + 1) + ".Expression" , hybridMetricss.get(depth1).getExpression());
+				putQueryParameter("HybridMetrics." + (depth1 + 1) + ".Id" , hybridMetricss.get(depth1).getId());
+				putQueryParameter("HybridMetrics." + (depth1 + 1) + ".MetricName" , hybridMetricss.get(depth1).getMetricName());
+				if (hybridMetricss.get(depth1).getDimensionss() != null) {
+					for (int depth2 = 0; depth2 < hybridMetricss.get(depth1).getDimensionss().size(); depth2++) {
+						putQueryParameter("HybridMetrics." + (depth1 + 1) + ".Dimensions." + (depth2 + 1) + ".DimensionValue" , hybridMetricss.get(depth1).getDimensionss().get(depth2).getDimensionValue());
+						putQueryParameter("HybridMetrics." + (depth1 + 1) + ".Dimensions." + (depth2 + 1) + ".DimensionKey" , hybridMetricss.get(depth1).getDimensionss().get(depth2).getDimensionKey());
+					}
+				}
+			}
+		}	
+	}
+
 	public Integer getScaleOutEvaluationCount() {
 		return this.scaleOutEvaluationCount;
 	}
@@ -324,21 +390,36 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		}
 	}
 
-	public static class StepAdjustment {
+	public static class AlarmDimension {
 
-		private Float metricIntervalLowerBound;
+		private String dimensionValue;
+
+		private String dimensionKey;
+
+		public String getDimensionValue() {
+			return this.dimensionValue;
+		}
+
+		public void setDimensionValue(String dimensionValue) {
+			this.dimensionValue = dimensionValue;
+		}
+
+		public String getDimensionKey() {
+			return this.dimensionKey;
+		}
+
+		public void setDimensionKey(String dimensionKey) {
+			this.dimensionKey = dimensionKey;
+		}
+	}
+
+	public static class StepAdjustment {
 
 		private Float metricIntervalUpperBound;
 
+		private Float metricIntervalLowerBound;
+
 		private Integer scalingAdjustment;
-
-		public Float getMetricIntervalLowerBound() {
-			return this.metricIntervalLowerBound;
-		}
-
-		public void setMetricIntervalLowerBound(Float metricIntervalLowerBound) {
-			this.metricIntervalLowerBound = metricIntervalLowerBound;
-		}
 
 		public Float getMetricIntervalUpperBound() {
 			return this.metricIntervalUpperBound;
@@ -348,12 +429,96 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 			this.metricIntervalUpperBound = metricIntervalUpperBound;
 		}
 
+		public Float getMetricIntervalLowerBound() {
+			return this.metricIntervalLowerBound;
+		}
+
+		public void setMetricIntervalLowerBound(Float metricIntervalLowerBound) {
+			this.metricIntervalLowerBound = metricIntervalLowerBound;
+		}
+
 		public Integer getScalingAdjustment() {
 			return this.scalingAdjustment;
 		}
 
 		public void setScalingAdjustment(Integer scalingAdjustment) {
 			this.scalingAdjustment = scalingAdjustment;
+		}
+	}
+
+	public static class HybridMetrics {
+
+		private String statistic;
+
+		private String expression;
+
+		private String id;
+
+		private String metricName;
+
+		private List<Dimensions> dimensionss;
+
+		public String getStatistic() {
+			return this.statistic;
+		}
+
+		public void setStatistic(String statistic) {
+			this.statistic = statistic;
+		}
+
+		public String getExpression() {
+			return this.expression;
+		}
+
+		public void setExpression(String expression) {
+			this.expression = expression;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getMetricName() {
+			return this.metricName;
+		}
+
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
+		}
+
+		public List<Dimensions> getDimensionss() {
+			return this.dimensionss;
+		}
+
+		public void setDimensionss(List<Dimensions> dimensionss) {
+			this.dimensionss = dimensionss;
+		}
+
+		public static class Dimensions {
+
+			private String dimensionValue;
+
+			private String dimensionKey;
+
+			public String getDimensionValue() {
+				return this.dimensionValue;
+			}
+
+			public void setDimensionValue(String dimensionValue) {
+				this.dimensionValue = dimensionValue;
+			}
+
+			public String getDimensionKey() {
+				return this.dimensionKey;
+			}
+
+			public void setDimensionKey(String dimensionKey) {
+				this.dimensionKey = dimensionKey;
+			}
 		}
 	}
 

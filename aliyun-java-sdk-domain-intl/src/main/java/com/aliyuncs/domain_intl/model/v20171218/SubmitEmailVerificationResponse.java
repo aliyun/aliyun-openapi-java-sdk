@@ -27,11 +27,11 @@ public class SubmitEmailVerificationResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<SendResult> existList;
+
 	private List<SendResult> successList;
 
 	private List<SendResult> failList;
-
-	private List<SendResult> existList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,6 +39,14 @@ public class SubmitEmailVerificationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<SendResult> getExistList() {
+		return this.existList;
+	}
+
+	public void setExistList(List<SendResult> existList) {
+		this.existList = existList;
 	}
 
 	public List<SendResult> getSuccessList() {
@@ -55,14 +63,6 @@ public class SubmitEmailVerificationResponse extends AcsResponse {
 
 	public void setFailList(List<SendResult> failList) {
 		this.failList = failList;
-	}
-
-	public List<SendResult> getExistList() {
-		return this.existList;
-	}
-
-	public void setExistList(List<SendResult> existList) {
-		this.existList = existList;
 	}
 
 	public static class SendResult {

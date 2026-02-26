@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnSecSpecInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String version;
 
+	private String requestId;
+
 	private List<RuleInfoItem> specInfos;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getVersion() {
 		return this.version;
@@ -45,6 +37,14 @@ public class DescribeDcdnSecSpecInfoResponse extends AcsResponse {
 
 	public void setVersion(String version) {
 		this.version = version;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<RuleInfoItem> getSpecInfos() {
@@ -81,9 +81,9 @@ public class DescribeDcdnSecSpecInfoResponse extends AcsResponse {
 
 			private String code;
 
-			private String expr;
-
 			private String value;
+
+			private String expr;
 
 			public String getCode() {
 				return this.code;
@@ -93,20 +93,20 @@ public class DescribeDcdnSecSpecInfoResponse extends AcsResponse {
 				this.code = code;
 			}
 
-			public String getExpr() {
-				return this.expr;
-			}
-
-			public void setExpr(String expr) {
-				this.expr = expr;
-			}
-
 			public String getValue() {
 				return this.value;
 			}
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getExpr() {
+				return this.expr;
+			}
+
+			public void setExpr(String expr) {
+				this.expr = expr;
 			}
 		}
 	}

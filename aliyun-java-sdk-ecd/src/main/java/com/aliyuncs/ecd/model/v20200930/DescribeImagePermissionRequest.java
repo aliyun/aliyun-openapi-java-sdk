@@ -27,7 +27,7 @@ public class DescribeImagePermissionRequest extends RpcAcsRequest<DescribeImageP
 
 	private String imageId;
 	public DescribeImagePermissionRequest() {
-		super("ecd", "2020-09-30", "DescribeImagePermission");
+		super("ecd", "2020-09-30", "DescribeImagePermission", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

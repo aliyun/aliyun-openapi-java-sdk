@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetUserUploadFileJobRequest extends RpcAcsRequest<GetUserUploadFileJobResponse> {
 	   
 
-	private String jobKey;
-
 	private Long tid;
+
+	private String jobKey;
 	public GetUserUploadFileJobRequest() {
 		super("dms-enterprise", "2018-11-01", "GetUserUploadFileJob", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class GetUserUploadFileJobRequest extends RpcAcsRequest<GetUserUploadFile
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getJobKey() {
-		return this.jobKey;
-	}
-
-	public void setJobKey(String jobKey) {
-		this.jobKey = jobKey;
-		if(jobKey != null){
-			putQueryParameter("JobKey", jobKey);
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class GetUserUploadFileJobRequest extends RpcAcsRequest<GetUserUploadFile
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getJobKey() {
+		return this.jobKey;
+	}
+
+	public void setJobKey(String jobKey) {
+		this.jobKey = jobKey;
+		if(jobKey != null){
+			putQueryParameter("JobKey", jobKey);
 		}
 	}
 

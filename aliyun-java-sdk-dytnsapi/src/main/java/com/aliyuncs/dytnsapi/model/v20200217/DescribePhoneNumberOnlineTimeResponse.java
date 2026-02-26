@@ -68,12 +68,22 @@ public class DescribePhoneNumberOnlineTimeResponse extends AcsResponse {
 
 		private String verifyResult;
 
+		private String carrierCode;
+
 		public String getVerifyResult() {
 			return this.verifyResult;
 		}
 
 		public void setVerifyResult(String verifyResult) {
 			this.verifyResult = verifyResult;
+		}
+
+		public String getCarrierCode() {
+			return this.carrierCode;
+		}
+
+		public void setCarrierCode(String carrierCode) {
+			this.carrierCode = carrierCode;
 		}
 	}
 

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateLiveStreamMonitorResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String monitorId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getMonitorId() {
 		return this.monitorId;
@@ -42,6 +34,14 @@ public class CreateLiveStreamMonitorResponse extends AcsResponse {
 
 	public void setMonitorId(String monitorId) {
 		this.monitorId = monitorId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

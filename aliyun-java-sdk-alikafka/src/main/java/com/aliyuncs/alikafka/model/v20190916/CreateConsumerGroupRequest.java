@@ -15,6 +15,7 @@
 package com.aliyuncs.alikafka.model.v20190916;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.alikafka.Endpoint;
 
@@ -30,6 +31,8 @@ public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGrou
 	private String remark;
 
 	private String instanceId;
+
+	private List<Tag> tags;
 	public CreateConsumerGroupRequest() {
 		super("alikafka", "2019-09-16", "CreateConsumerGroup", "alikafka");
 		setMethod(MethodType.POST);
@@ -69,6 +72,43 @@ public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGrou
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

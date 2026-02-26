@@ -28,21 +28,21 @@ public class QueryFaceAllDeviceGroupResponseUnmarshaller {
 	public static QueryFaceAllDeviceGroupResponse unmarshall(QueryFaceAllDeviceGroupResponse queryFaceAllDeviceGroupResponse, UnmarshallerContext _ctx) {
 		
 		queryFaceAllDeviceGroupResponse.setRequestId(_ctx.stringValue("QueryFaceAllDeviceGroupResponse.RequestId"));
-		queryFaceAllDeviceGroupResponse.setSuccess(_ctx.booleanValue("QueryFaceAllDeviceGroupResponse.Success"));
 		queryFaceAllDeviceGroupResponse.setCode(_ctx.stringValue("QueryFaceAllDeviceGroupResponse.Code"));
 		queryFaceAllDeviceGroupResponse.setErrorMessage(_ctx.stringValue("QueryFaceAllDeviceGroupResponse.ErrorMessage"));
+		queryFaceAllDeviceGroupResponse.setSuccess(_ctx.booleanValue("QueryFaceAllDeviceGroupResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryFaceAllDeviceGroupResponse.Data.Total"));
 		data.setPageNo(_ctx.integerValue("QueryFaceAllDeviceGroupResponse.Data.PageNo"));
 		data.setPageSize(_ctx.integerValue("QueryFaceAllDeviceGroupResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryFaceAllDeviceGroupResponse.Data.Total"));
 
 		List<DeviceGroupListItem> deviceGroupList = new ArrayList<DeviceGroupListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFaceAllDeviceGroupResponse.Data.DeviceGroupList.Length"); i++) {
 			DeviceGroupListItem deviceGroupListItem = new DeviceGroupListItem();
 			deviceGroupListItem.setDeviceGroupId(_ctx.stringValue("QueryFaceAllDeviceGroupResponse.Data.DeviceGroupList["+ i +"].DeviceGroupId"));
-			deviceGroupListItem.setDeviceGroupName(_ctx.stringValue("QueryFaceAllDeviceGroupResponse.Data.DeviceGroupList["+ i +"].DeviceGroupName"));
 			deviceGroupListItem.setModifiedTime(_ctx.stringValue("QueryFaceAllDeviceGroupResponse.Data.DeviceGroupList["+ i +"].ModifiedTime"));
+			deviceGroupListItem.setDeviceGroupName(_ctx.stringValue("QueryFaceAllDeviceGroupResponse.Data.DeviceGroupList["+ i +"].DeviceGroupName"));
 
 			deviceGroupList.add(deviceGroupListItem);
 		}

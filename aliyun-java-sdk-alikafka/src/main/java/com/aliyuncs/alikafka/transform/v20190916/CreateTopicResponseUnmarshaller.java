@@ -23,9 +23,9 @@ public class CreateTopicResponseUnmarshaller {
 	public static CreateTopicResponse unmarshall(CreateTopicResponse createTopicResponse, UnmarshallerContext _ctx) {
 		
 		createTopicResponse.setRequestId(_ctx.stringValue("CreateTopicResponse.RequestId"));
-		createTopicResponse.setSuccess(_ctx.booleanValue("CreateTopicResponse.Success"));
 		createTopicResponse.setCode(_ctx.integerValue("CreateTopicResponse.Code"));
 		createTopicResponse.setMessage(_ctx.stringValue("CreateTopicResponse.Message"));
+		createTopicResponse.setSuccess(_ctx.booleanValue("CreateTopicResponse.Success"));
 	 
 	 	return createTopicResponse;
 	}

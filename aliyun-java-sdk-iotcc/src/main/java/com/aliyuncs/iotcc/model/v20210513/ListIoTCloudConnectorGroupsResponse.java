@@ -89,6 +89,8 @@ public class ListIoTCloudConnectorGroupsResponse extends AcsResponse {
 
 		private String type;
 
+		private String serviceType;
+
 		private List<IoTCloudConnectorsItem> ioTCloudConnectors;
 
 		public String getIoTCloudConnectorGroupId() {
@@ -139,6 +141,14 @@ public class ListIoTCloudConnectorGroupsResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getServiceType() {
+			return this.serviceType;
+		}
+
+		public void setServiceType(String serviceType) {
+			this.serviceType = serviceType;
+		}
+
 		public List<IoTCloudConnectorsItem> getIoTCloudConnectors() {
 			return this.ioTCloudConnectors;
 		}
@@ -162,6 +172,8 @@ public class ListIoTCloudConnectorGroupsResponse extends AcsResponse {
 			private String iSP;
 
 			private String aPN;
+
+			private String serviceType;
 
 			public String getIoTCloudConnectorId() {
 				return this.ioTCloudConnectorId;
@@ -217,6 +229,14 @@ public class ListIoTCloudConnectorGroupsResponse extends AcsResponse {
 
 			public void setAPN(String aPN) {
 				this.aPN = aPN;
+			}
+
+			public String getServiceType() {
+				return this.serviceType;
+			}
+
+			public void setServiceType(String serviceType) {
+				this.serviceType = serviceType;
 			}
 		}
 	}

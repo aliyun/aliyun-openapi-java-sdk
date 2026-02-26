@@ -31,8 +31,6 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 
 	private String nextToken;
 
-	private String requestId;
-
 	private Integer limit;
 
 	private String flowName;
@@ -79,17 +77,6 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 

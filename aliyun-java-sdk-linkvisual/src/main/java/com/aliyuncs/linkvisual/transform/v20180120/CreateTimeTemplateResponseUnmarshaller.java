@@ -23,10 +23,10 @@ public class CreateTimeTemplateResponseUnmarshaller {
 	public static CreateTimeTemplateResponse unmarshall(CreateTimeTemplateResponse createTimeTemplateResponse, UnmarshallerContext _ctx) {
 		
 		createTimeTemplateResponse.setRequestId(_ctx.stringValue("CreateTimeTemplateResponse.RequestId"));
-		createTimeTemplateResponse.setSuccess(_ctx.booleanValue("CreateTimeTemplateResponse.Success"));
-		createTimeTemplateResponse.setErrorMessage(_ctx.stringValue("CreateTimeTemplateResponse.ErrorMessage"));
 		createTimeTemplateResponse.setCode(_ctx.stringValue("CreateTimeTemplateResponse.Code"));
 		createTimeTemplateResponse.setData(_ctx.stringValue("CreateTimeTemplateResponse.Data"));
+		createTimeTemplateResponse.setErrorMessage(_ctx.stringValue("CreateTimeTemplateResponse.ErrorMessage"));
+		createTimeTemplateResponse.setSuccess(_ctx.booleanValue("CreateTimeTemplateResponse.Success"));
 	 
 	 	return createTimeTemplateResponse;
 	}

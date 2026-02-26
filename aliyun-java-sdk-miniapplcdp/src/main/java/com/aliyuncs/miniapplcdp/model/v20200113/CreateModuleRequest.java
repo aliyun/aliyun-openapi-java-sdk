@@ -30,13 +30,19 @@ public class CreateModuleRequest extends RpcAcsRequest<CreateModuleResponse> {
 
 	private String description;
 
+	private String source;
+
 	private String platform;
 
 	private String targetAppSource;
 
+	private String moduleType;
+
 	private String minimumPlatformVersion;
 
 	private String moduleName;
+
+	private String sourceModuleId;
 	public CreateModuleRequest() {
 		super("miniapplcdp", "2020-01-13", "CreateModule");
 		setMethod(MethodType.POST);
@@ -75,6 +81,17 @@ public class CreateModuleRequest extends RpcAcsRequest<CreateModuleResponse> {
 		}
 	}
 
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
+	}
+
 	public String getPlatform() {
 		return this.platform;
 	}
@@ -97,6 +114,17 @@ public class CreateModuleRequest extends RpcAcsRequest<CreateModuleResponse> {
 		}
 	}
 
+	public String getModuleType() {
+		return this.moduleType;
+	}
+
+	public void setModuleType(String moduleType) {
+		this.moduleType = moduleType;
+		if(moduleType != null){
+			putQueryParameter("ModuleType", moduleType);
+		}
+	}
+
 	public String getMinimumPlatformVersion() {
 		return this.minimumPlatformVersion;
 	}
@@ -116,6 +144,17 @@ public class CreateModuleRequest extends RpcAcsRequest<CreateModuleResponse> {
 		this.moduleName = moduleName;
 		if(moduleName != null){
 			putQueryParameter("ModuleName", moduleName);
+		}
+	}
+
+	public String getSourceModuleId() {
+		return this.sourceModuleId;
+	}
+
+	public void setSourceModuleId(String sourceModuleId) {
+		this.sourceModuleId = sourceModuleId;
+		if(sourceModuleId != null){
+			putQueryParameter("SourceModuleId", sourceModuleId);
 		}
 	}
 

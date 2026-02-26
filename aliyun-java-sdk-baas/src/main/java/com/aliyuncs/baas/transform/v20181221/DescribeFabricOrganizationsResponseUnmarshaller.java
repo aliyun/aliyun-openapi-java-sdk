@@ -51,6 +51,7 @@ public class DescribeFabricOrganizationsResponseUnmarshaller {
 			resultItem.setZoneId(_ctx.stringValue("DescribeFabricOrganizationsResponse.Result["+ i +"].ZoneId"));
 			resultItem.setUserCount(_ctx.integerValue("DescribeFabricOrganizationsResponse.Result["+ i +"].UserCount"));
 			resultItem.setOrganizationName(_ctx.stringValue("DescribeFabricOrganizationsResponse.Result["+ i +"].OrganizationName"));
+			resultItem.setMajorVersion(_ctx.stringValue("DescribeFabricOrganizationsResponse.Result["+ i +"].MajorVersion"));
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFabricOrganizationsResponse.Result["+ i +"].Tags.Length"); j++) {

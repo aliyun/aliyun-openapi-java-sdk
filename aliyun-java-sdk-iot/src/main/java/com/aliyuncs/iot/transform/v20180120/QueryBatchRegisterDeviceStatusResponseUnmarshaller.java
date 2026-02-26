@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.QueryBatchRegisterDeviceStatusResponse;
 import com.aliyuncs.iot.model.v20180120.QueryBatchRegisterDeviceStatusResponse.Data;
+import com.aliyuncs.iot.model.v20180120.QueryBatchRegisterDeviceStatusResponse.Data.InvalidDetailListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +46,17 @@ public class QueryBatchRegisterDeviceStatusResponseUnmarshaller {
 			invalidList.add(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidList["+ i +"]"));
 		}
 		data.setInvalidList(invalidList);
+
+		List<InvalidDetailListItem> invalidDetailList = new ArrayList<InvalidDetailListItem>();
+		for (int i = 0; i < _ctx.lengthValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidDetailList.Length"); i++) {
+			InvalidDetailListItem invalidDetailListItem = new InvalidDetailListItem();
+			invalidDetailListItem.setDeviceName(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidDetailList["+ i +"].DeviceName"));
+			invalidDetailListItem.setErrorMsg(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidDetailList["+ i +"].ErrorMsg"));
+			invalidDetailListItem.setNickName(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidDetailList["+ i +"].NickName"));
+
+			invalidDetailList.add(invalidDetailListItem);
+		}
+		data.setInvalidDetailList(invalidDetailList);
 		queryBatchRegisterDeviceStatusResponse.setData(data);
 	 
 	 	return queryBatchRegisterDeviceStatusResponse;

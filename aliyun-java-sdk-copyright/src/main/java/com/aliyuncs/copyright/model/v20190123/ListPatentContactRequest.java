@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListPatentContactRequest extends RpcAcsRequest<ListPatentContactResponse> {
 	   
 	public ListPatentContactRequest() {
-		super("Copyright", "2019-01-23", "ListPatentContact");
+		super("Copyright", "2019-01-23", "ListPatentContact", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

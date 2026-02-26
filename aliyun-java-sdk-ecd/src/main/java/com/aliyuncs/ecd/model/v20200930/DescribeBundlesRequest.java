@@ -28,13 +28,19 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 
 	private Float gpuCount;
 
+	private List<String> imageIds;
+
 	private List<String> bundleIds;
 
 	private String desktopTypeFamily;
 
+	private Boolean selectedBundle;
+
 	private String nextToken;
 
 	private Boolean fromDesktopGroup;
+
+	private String scope;
 
 	private String bundleType;
 
@@ -43,6 +49,10 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 	private Boolean volumeEncryptionEnabled;
 
 	private Integer memorySize;
+
+	private String sessionType;
+
+	private String osType;
 
 	private Integer maxResults;
 
@@ -53,8 +63,10 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 	private Integer cpuCount;
 
 	private Boolean supportMultiSession;
+
+	private String gpuDriverType;
 	public DescribeBundlesRequest() {
-		super("ecd", "2020-09-30", "DescribeBundles");
+		super("ecd", "2020-09-30", "DescribeBundles", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,6 +83,19 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		if(gpuCount != null){
 			putQueryParameter("GpuCount", gpuCount.toString());
 		}
+	}
+
+	public List<String> getImageIds() {
+		return this.imageIds;
+	}
+
+	public void setImageIds(List<String> imageIds) {
+		this.imageIds = imageIds;	
+		if (imageIds != null) {
+			for (int i = 0; i < imageIds.size(); i++) {
+				putQueryParameter("ImageId." + (i + 1) , imageIds.get(i));
+			}
+		}	
 	}
 
 	public List<String> getBundleIds() {
@@ -97,6 +122,17 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		}
 	}
 
+	public Boolean getSelectedBundle() {
+		return this.selectedBundle;
+	}
+
+	public void setSelectedBundle(Boolean selectedBundle) {
+		this.selectedBundle = selectedBundle;
+		if(selectedBundle != null){
+			putQueryParameter("SelectedBundle", selectedBundle.toString());
+		}
+	}
+
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -116,6 +152,17 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		this.fromDesktopGroup = fromDesktopGroup;
 		if(fromDesktopGroup != null){
 			putQueryParameter("FromDesktopGroup", fromDesktopGroup.toString());
+		}
+	}
+
+	public String getScope() {
+		return this.scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+		if(scope != null){
+			putQueryParameter("Scope", scope);
 		}
 	}
 
@@ -160,6 +207,28 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		this.memorySize = memorySize;
 		if(memorySize != null){
 			putQueryParameter("MemorySize", memorySize.toString());
+		}
+	}
+
+	public String getSessionType() {
+		return this.sessionType;
+	}
+
+	public void setSessionType(String sessionType) {
+		this.sessionType = sessionType;
+		if(sessionType != null){
+			putQueryParameter("SessionType", sessionType);
+		}
+	}
+
+	public String getOsType() {
+		return this.osType;
+	}
+
+	public void setOsType(String osType) {
+		this.osType = osType;
+		if(osType != null){
+			putQueryParameter("OsType", osType);
 		}
 	}
 
@@ -215,6 +284,17 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		this.supportMultiSession = supportMultiSession;
 		if(supportMultiSession != null){
 			putQueryParameter("SupportMultiSession", supportMultiSession.toString());
+		}
+	}
+
+	public String getGpuDriverType() {
+		return this.gpuDriverType;
+	}
+
+	public void setGpuDriverType(String gpuDriverType) {
+		this.gpuDriverType = gpuDriverType;
+		if(gpuDriverType != null){
+			putQueryParameter("GpuDriverType", gpuDriverType);
 		}
 	}
 

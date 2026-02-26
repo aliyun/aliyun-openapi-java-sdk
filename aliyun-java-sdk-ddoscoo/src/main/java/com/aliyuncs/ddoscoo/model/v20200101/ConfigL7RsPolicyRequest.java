@@ -25,18 +25,31 @@ import com.aliyuncs.ddoscoo.Endpoint;
 public class ConfigL7RsPolicyRequest extends RpcAcsRequest<ConfigL7RsPolicyResponse> {
 	   
 
+	private Integer upstreamRetry;
+
 	private String resourceGroupId;
 
 	private String domain;
 
 	private String policy;
 	public ConfigL7RsPolicyRequest() {
-		super("ddoscoo", "2020-01-01", "ConfigL7RsPolicy");
+		super("ddoscoo", "2020-01-01", "ConfigL7RsPolicy", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getUpstreamRetry() {
+		return this.upstreamRetry;
+	}
+
+	public void setUpstreamRetry(Integer upstreamRetry) {
+		this.upstreamRetry = upstreamRetry;
+		if(upstreamRetry != null){
+			putQueryParameter("UpstreamRetry", upstreamRetry.toString());
+		}
 	}
 
 	public String getResourceGroupId() {

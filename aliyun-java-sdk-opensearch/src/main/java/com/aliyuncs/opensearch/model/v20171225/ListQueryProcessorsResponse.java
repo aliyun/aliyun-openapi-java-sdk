@@ -48,26 +48,26 @@ public class ListQueryProcessorsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String name;
+		private Integer created;
 
 		private Boolean active;
 
-		private String domain;
-
-		private Integer created;
-
 		private Integer updated;
+
+		private String name;
+
+		private String domain;
 
 		private List<String> indexes;
 
 		private List<Map<Object,Object>> processors;
 
-		public String getName() {
-			return this.name;
+		public Integer getCreated() {
+			return this.created;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setCreated(Integer created) {
+			this.created = created;
 		}
 
 		public Boolean getActive() {
@@ -78,28 +78,28 @@ public class ListQueryProcessorsResponse extends AcsResponse {
 			this.active = active;
 		}
 
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
-
-		public Integer getCreated() {
-			return this.created;
-		}
-
-		public void setCreated(Integer created) {
-			this.created = created;
-		}
-
 		public Integer getUpdated() {
 			return this.updated;
 		}
 
 		public void setUpdated(Integer updated) {
 			this.updated = updated;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 
 		public List<String> getIndexes() {

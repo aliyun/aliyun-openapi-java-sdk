@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScheduleTasksResponse extends AcsResponse {
 
-	private String message;
-
 	private String code;
 
-	private Boolean success;
+	private String message;
 
 	private String requestId;
 
+	private Boolean success;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -51,12 +43,12 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -65,6 +57,14 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,21 +77,13 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalRecordCount;
-
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
+		private Integer totalRecordCount;
+
 		private List<TimerInfosItem> timerInfos;
-
-		public Integer getTotalRecordCount() {
-			return this.totalRecordCount;
-		}
-
-		public void setTotalRecordCount(Integer totalRecordCount) {
-			this.totalRecordCount = totalRecordCount;
-		}
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -109,6 +101,14 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalRecordCount() {
+			return this.totalRecordCount;
+		}
+
+		public void setTotalRecordCount(Integer totalRecordCount) {
+			this.totalRecordCount = totalRecordCount;
+		}
+
 		public List<TimerInfosItem> getTimerInfos() {
 			return this.timerInfos;
 		}
@@ -119,37 +119,33 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 
 		public static class TimerInfosItem {
 
-			private String status;
-
 			private String action;
 
-			private String plannedEndTime;
-
-			private String plannedTime;
+			private String crontabJobId;
 
 			private String dBClusterId;
 
-			private String region;
-
-			private String plannedStartTime;
-
-			private String taskId;
-
-			private String orderId;
+			private String dbClusterDescription;
 
 			private String dbClusterStatus;
 
-			private String dbClusterDescription;
+			private String orderId;
+
+			private String plannedEndTime;
+
+			private String plannedFlashingOffTime;
+
+			private String plannedStartTime;
+
+			private String plannedTime;
+
+			private String region;
+
+			private String status;
 
 			private Boolean taskCancel;
 
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
+			private String taskId;
 
 			public String getAction() {
 				return this.action;
@@ -159,20 +155,12 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 				this.action = action;
 			}
 
-			public String getPlannedEndTime() {
-				return this.plannedEndTime;
+			public String getCrontabJobId() {
+				return this.crontabJobId;
 			}
 
-			public void setPlannedEndTime(String plannedEndTime) {
-				this.plannedEndTime = plannedEndTime;
-			}
-
-			public String getPlannedTime() {
-				return this.plannedTime;
-			}
-
-			public void setPlannedTime(String plannedTime) {
-				this.plannedTime = plannedTime;
+			public void setCrontabJobId(String crontabJobId) {
+				this.crontabJobId = crontabJobId;
 			}
 
 			public String getDBClusterId() {
@@ -183,36 +171,12 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 				this.dBClusterId = dBClusterId;
 			}
 
-			public String getRegion() {
-				return this.region;
+			public String getDbClusterDescription() {
+				return this.dbClusterDescription;
 			}
 
-			public void setRegion(String region) {
-				this.region = region;
-			}
-
-			public String getPlannedStartTime() {
-				return this.plannedStartTime;
-			}
-
-			public void setPlannedStartTime(String plannedStartTime) {
-				this.plannedStartTime = plannedStartTime;
-			}
-
-			public String getTaskId() {
-				return this.taskId;
-			}
-
-			public void setTaskId(String taskId) {
-				this.taskId = taskId;
-			}
-
-			public String getOrderId() {
-				return this.orderId;
-			}
-
-			public void setOrderId(String orderId) {
-				this.orderId = orderId;
+			public void setDbClusterDescription(String dbClusterDescription) {
+				this.dbClusterDescription = dbClusterDescription;
 			}
 
 			public String getDbClusterStatus() {
@@ -223,12 +187,60 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 				this.dbClusterStatus = dbClusterStatus;
 			}
 
-			public String getDbClusterDescription() {
-				return this.dbClusterDescription;
+			public String getOrderId() {
+				return this.orderId;
 			}
 
-			public void setDbClusterDescription(String dbClusterDescription) {
-				this.dbClusterDescription = dbClusterDescription;
+			public void setOrderId(String orderId) {
+				this.orderId = orderId;
+			}
+
+			public String getPlannedEndTime() {
+				return this.plannedEndTime;
+			}
+
+			public void setPlannedEndTime(String plannedEndTime) {
+				this.plannedEndTime = plannedEndTime;
+			}
+
+			public String getPlannedFlashingOffTime() {
+				return this.plannedFlashingOffTime;
+			}
+
+			public void setPlannedFlashingOffTime(String plannedFlashingOffTime) {
+				this.plannedFlashingOffTime = plannedFlashingOffTime;
+			}
+
+			public String getPlannedStartTime() {
+				return this.plannedStartTime;
+			}
+
+			public void setPlannedStartTime(String plannedStartTime) {
+				this.plannedStartTime = plannedStartTime;
+			}
+
+			public String getPlannedTime() {
+				return this.plannedTime;
+			}
+
+			public void setPlannedTime(String plannedTime) {
+				this.plannedTime = plannedTime;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public Boolean getTaskCancel() {
@@ -237,6 +249,14 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 
 			public void setTaskCancel(Boolean taskCancel) {
 				this.taskCancel = taskCancel;
+			}
+
+			public String getTaskId() {
+				return this.taskId;
+			}
+
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
 			}
 		}
 	}

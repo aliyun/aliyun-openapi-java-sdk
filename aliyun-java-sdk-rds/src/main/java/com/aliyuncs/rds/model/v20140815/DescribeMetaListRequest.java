@@ -31,6 +31,8 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 
 	private String pattern;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private String dBInstanceId;
@@ -41,7 +43,7 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 
 	private String resourceOwnerAccount;
 
-	private Integer backupSetID;
+	private Long backupSetID;
 
 	private Long ownerId;
 
@@ -87,6 +89,17 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 		this.pattern = pattern;
 		if(pattern != null){
 			putQueryParameter("Pattern", pattern);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -145,11 +158,11 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 		}
 	}
 
-	public Integer getBackupSetID() {
+	public Long getBackupSetID() {
 		return this.backupSetID;
 	}
 
-	public void setBackupSetID(Integer backupSetID) {
+	public void setBackupSetID(Long backupSetID) {
 		this.backupSetID = backupSetID;
 		if(backupSetID != null){
 			putQueryParameter("BackupSetID", backupSetID.toString());

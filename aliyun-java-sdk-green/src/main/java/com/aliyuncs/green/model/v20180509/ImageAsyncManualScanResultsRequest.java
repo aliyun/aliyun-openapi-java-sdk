@@ -27,7 +27,7 @@ public class ImageAsyncManualScanResultsRequest extends RoaAcsRequest<ImageAsync
 
 	private String clientInfo;
 	public ImageAsyncManualScanResultsRequest() {
-		super("Green", "2018-05-09", "ImageAsyncManualScanResults", "green");
+		super("Green", "2018-05-09", "ImageAsyncManualScanResults");
 		setUriPattern("/green/image/manual/scan/results");
 		setMethod(MethodType.POST);
 		try {

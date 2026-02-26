@@ -24,6 +24,9 @@ public class AddPrometheusInstanceResponseUnmarshaller {
 		
 		addPrometheusInstanceResponse.setRequestId(_ctx.stringValue("AddPrometheusInstanceResponse.RequestId"));
 		addPrometheusInstanceResponse.setData(_ctx.stringValue("AddPrometheusInstanceResponse.Data"));
+		addPrometheusInstanceResponse.setCode(_ctx.integerValue("AddPrometheusInstanceResponse.Code"));
+		addPrometheusInstanceResponse.setMessage(_ctx.stringValue("AddPrometheusInstanceResponse.Message"));
+		addPrometheusInstanceResponse.setSuccess(_ctx.booleanValue("AddPrometheusInstanceResponse.Success"));
 	 
 	 	return addPrometheusInstanceResponse;
 	}

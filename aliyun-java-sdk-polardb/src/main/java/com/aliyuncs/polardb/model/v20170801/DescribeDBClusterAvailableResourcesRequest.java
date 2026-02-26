@@ -43,7 +43,7 @@ public class DescribeDBClusterAvailableResourcesRequest extends RpcAcsRequest<De
 
 	private String payType;
 	public DescribeDBClusterAvailableResourcesRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusterAvailableResources");
+		super("polardb", "2017-08-01", "DescribeDBClusterAvailableResources", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

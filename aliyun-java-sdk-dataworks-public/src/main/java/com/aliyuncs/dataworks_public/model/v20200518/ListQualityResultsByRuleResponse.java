@@ -145,7 +145,7 @@ public class ListQualityResultsByRuleResponse extends AcsResponse {
 
 			private String checkerName;
 
-			private Integer ruleId;
+			private Long ruleId;
 
 			private Boolean fixedCheck;
 
@@ -195,7 +195,7 @@ public class ListQualityResultsByRuleResponse extends AcsResponse {
 
 			private Float lowerValue;
 
-			private Integer entityId;
+			private Long entityId;
 
 			private String whereCondition;
 
@@ -205,7 +205,9 @@ public class ListQualityResultsByRuleResponse extends AcsResponse {
 
 			private String taskId;
 
-			private Integer id;
+			private Long id;
+
+			private Boolean open;
 
 			private List<ReferenceValueItem> referenceValue;
 
@@ -275,11 +277,11 @@ public class ListQualityResultsByRuleResponse extends AcsResponse {
 				this.checkerName = checkerName;
 			}
 
-			public Integer getRuleId() {
+			public Long getRuleId() {
 				return this.ruleId;
 			}
 
-			public void setRuleId(Integer ruleId) {
+			public void setRuleId(Long ruleId) {
 				this.ruleId = ruleId;
 			}
 
@@ -475,11 +477,11 @@ public class ListQualityResultsByRuleResponse extends AcsResponse {
 				this.lowerValue = lowerValue;
 			}
 
-			public Integer getEntityId() {
+			public Long getEntityId() {
 				return this.entityId;
 			}
 
-			public void setEntityId(Integer entityId) {
+			public void setEntityId(Long entityId) {
 				this.entityId = entityId;
 			}
 
@@ -515,12 +517,20 @@ public class ListQualityResultsByRuleResponse extends AcsResponse {
 				this.taskId = taskId;
 			}
 
-			public Integer getId() {
+			public Long getId() {
 				return this.id;
 			}
 
-			public void setId(Integer id) {
+			public void setId(Long id) {
 				this.id = id;
+			}
+
+			public Boolean getOpen() {
+				return this.open;
+			}
+
+			public void setOpen(Boolean open) {
+				this.open = open;
 			}
 
 			public List<ReferenceValueItem> getReferenceValue() {

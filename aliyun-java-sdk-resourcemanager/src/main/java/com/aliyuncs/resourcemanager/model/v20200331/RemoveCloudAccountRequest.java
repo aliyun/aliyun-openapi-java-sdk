@@ -28,7 +28,7 @@ public class RemoveCloudAccountRequest extends RpcAcsRequest<RemoveCloudAccountR
 
 	private String accountId;
 	public RemoveCloudAccountRequest() {
-		super("ResourceManager", "2020-03-31", "RemoveCloudAccount");
+		super("ResourceManager", "2020-03-31", "RemoveCloudAccount", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

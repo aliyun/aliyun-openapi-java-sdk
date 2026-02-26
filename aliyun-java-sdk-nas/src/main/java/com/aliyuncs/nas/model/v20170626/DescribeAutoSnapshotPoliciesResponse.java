@@ -95,6 +95,8 @@ public class DescribeAutoSnapshotPoliciesResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String fileSystemType;
+
 		public String getTimePoints() {
 			return this.timePoints;
 		}
@@ -165,6 +167,14 @@ public class DescribeAutoSnapshotPoliciesResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getFileSystemType() {
+			return this.fileSystemType;
+		}
+
+		public void setFileSystemType(String fileSystemType) {
+			this.fileSystemType = fileSystemType;
 		}
 	}
 

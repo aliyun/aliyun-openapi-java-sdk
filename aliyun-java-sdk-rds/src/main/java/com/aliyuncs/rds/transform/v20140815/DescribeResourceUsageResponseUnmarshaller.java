@@ -23,20 +23,21 @@ public class DescribeResourceUsageResponseUnmarshaller {
 	public static DescribeResourceUsageResponse unmarshall(DescribeResourceUsageResponse describeResourceUsageResponse, UnmarshallerContext _ctx) {
 		
 		describeResourceUsageResponse.setRequestId(_ctx.stringValue("DescribeResourceUsageResponse.RequestId"));
-		describeResourceUsageResponse.setBackupOssDataSize(_ctx.longValue("DescribeResourceUsageResponse.BackupOssDataSize"));
-		describeResourceUsageResponse.setDiskUsed(_ctx.longValue("DescribeResourceUsageResponse.DiskUsed"));
 		describeResourceUsageResponse.setArchiveBackupSize(_ctx.longValue("DescribeResourceUsageResponse.ArchiveBackupSize"));
-		describeResourceUsageResponse.setBackupOssLogSize(_ctx.longValue("DescribeResourceUsageResponse.BackupOssLogSize"));
-		describeResourceUsageResponse.setBackupLogSize(_ctx.longValue("DescribeResourceUsageResponse.BackupLogSize"));
 		describeResourceUsageResponse.setBackupDataSize(_ctx.longValue("DescribeResourceUsageResponse.BackupDataSize"));
-		describeResourceUsageResponse.setColdBackupSize(_ctx.longValue("DescribeResourceUsageResponse.ColdBackupSize"));
-		describeResourceUsageResponse.setDataSize(_ctx.longValue("DescribeResourceUsageResponse.DataSize"));
-		describeResourceUsageResponse.setPaidBackupSize(_ctx.longValue("DescribeResourceUsageResponse.PaidBackupSize"));
-		describeResourceUsageResponse.setLogSize(_ctx.longValue("DescribeResourceUsageResponse.LogSize"));
+		describeResourceUsageResponse.setBackupLogSize(_ctx.longValue("DescribeResourceUsageResponse.BackupLogSize"));
+		describeResourceUsageResponse.setBackupOssDataSize(_ctx.longValue("DescribeResourceUsageResponse.BackupOssDataSize"));
+		describeResourceUsageResponse.setBackupOssLogSize(_ctx.longValue("DescribeResourceUsageResponse.BackupOssLogSize"));
 		describeResourceUsageResponse.setBackupSize(_ctx.longValue("DescribeResourceUsageResponse.BackupSize"));
+		describeResourceUsageResponse.setColdBackupSize(_ctx.longValue("DescribeResourceUsageResponse.ColdBackupSize"));
 		describeResourceUsageResponse.setDBInstanceId(_ctx.stringValue("DescribeResourceUsageResponse.DBInstanceId"));
+		describeResourceUsageResponse.setDataSize(_ctx.longValue("DescribeResourceUsageResponse.DataSize"));
+		describeResourceUsageResponse.setDiskUsed(_ctx.longValue("DescribeResourceUsageResponse.DiskUsed"));
 		describeResourceUsageResponse.setEngine(_ctx.stringValue("DescribeResourceUsageResponse.Engine"));
+		describeResourceUsageResponse.setLogSize(_ctx.longValue("DescribeResourceUsageResponse.LogSize"));
+		describeResourceUsageResponse.setPaidBackupSize(_ctx.longValue("DescribeResourceUsageResponse.PaidBackupSize"));
 		describeResourceUsageResponse.setSQLSize(_ctx.longValue("DescribeResourceUsageResponse.SQLSize"));
+		describeResourceUsageResponse.setBackupEcsSnapshotSize(_ctx.stringValue("DescribeResourceUsageResponse.BackupEcsSnapshotSize"));
 	 
 	 	return describeResourceUsageResponse;
 	}

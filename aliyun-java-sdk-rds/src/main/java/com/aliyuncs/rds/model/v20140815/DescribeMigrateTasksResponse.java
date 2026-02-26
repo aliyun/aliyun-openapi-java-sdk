@@ -29,9 +29,9 @@ public class DescribeMigrateTasksResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private String requestId;
-
 	private Integer pageRecordCount;
+
+	private String requestId;
 
 	private Integer totalRecordCount;
 
@@ -53,20 +53,20 @@ public class DescribeMigrateTasksResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageRecordCount() {
 		return this.pageRecordCount;
 	}
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -87,44 +87,28 @@ public class DescribeMigrateTasksResponse extends AcsResponse {
 
 	public static class MigrateTask {
 
-		private String endTime;
-
-		private String status;
-
-		private String description;
+		private String backupMode;
 
 		private String createTime;
 
 		private String dBName;
 
-		private String backupMode;
+		private String description;
 
-		private String migrateTaskId;
+		private String endTime;
 
 		private String isDBReplaced;
 
-		public String getEndTime() {
-			return this.endTime;
+		private String migrateTaskId;
+
+		private String status;
+
+		public String getBackupMode() {
+			return this.backupMode;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setBackupMode(String backupMode) {
+			this.backupMode = backupMode;
 		}
 
 		public String getCreateTime() {
@@ -143,12 +127,28 @@ public class DescribeMigrateTasksResponse extends AcsResponse {
 			this.dBName = dBName;
 		}
 
-		public String getBackupMode() {
-			return this.backupMode;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setBackupMode(String backupMode) {
-			this.backupMode = backupMode;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getIsDBReplaced() {
+			return this.isDBReplaced;
+		}
+
+		public void setIsDBReplaced(String isDBReplaced) {
+			this.isDBReplaced = isDBReplaced;
 		}
 
 		public String getMigrateTaskId() {
@@ -159,12 +159,12 @@ public class DescribeMigrateTasksResponse extends AcsResponse {
 			this.migrateTaskId = migrateTaskId;
 		}
 
-		public String getIsDBReplaced() {
-			return this.isDBReplaced;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setIsDBReplaced(String isDBReplaced) {
-			this.isDBReplaced = isDBReplaced;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

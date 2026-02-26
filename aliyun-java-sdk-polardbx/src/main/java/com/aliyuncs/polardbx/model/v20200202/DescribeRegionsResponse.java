@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRegionsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
-
-	private Integer errorCode;
-
-	private Boolean success;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
+	private Integer errorCode;
+
 	private List<Region> regions;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -53,12 +45,20 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Integer getErrorCode() {
-		return this.errorCode;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -69,12 +69,12 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Integer getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public List<Region> getRegions() {
@@ -87,20 +87,20 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	public static class Region {
 
-		private String regionId;
+		private Boolean supportPolarx10;
 
 		private Boolean supportPolarx20;
 
-		private Boolean supportPolarx10;
+		private String regionId;
 
 		private List<Zone> zones;
 
-		public String getRegionId() {
-			return this.regionId;
+		public Boolean getSupportPolarx10() {
+			return this.supportPolarx10;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setSupportPolarx10(Boolean supportPolarx10) {
+			this.supportPolarx10 = supportPolarx10;
 		}
 
 		public Boolean getSupportPolarx20() {
@@ -111,12 +111,12 @@ public class DescribeRegionsResponse extends AcsResponse {
 			this.supportPolarx20 = supportPolarx20;
 		}
 
-		public Boolean getSupportPolarx10() {
-			return this.supportPolarx10;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setSupportPolarx10(Boolean supportPolarx10) {
-			this.supportPolarx10 = supportPolarx10;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<Zone> getZones() {

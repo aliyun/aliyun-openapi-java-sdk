@@ -31,7 +31,7 @@ public class UpdateSummariesRequest extends RoaAcsRequest<UpdateSummariesRespons
 
 	private String appGroupIdentity;
 	public UpdateSummariesRequest() {
-		super("OpenSearch", "2017-12-25", "UpdateSummaries", "opensearch");
+		super("OpenSearch", "2017-12-25", "UpdateSummaries");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/summaries");
 		setMethod(MethodType.PUT);
 		try {

@@ -33,6 +33,8 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 	private Long totalCount;
 
+	private String nextToken;
+
 	private List<Command> commands;
 
 	public Long getPageSize() {
@@ -67,6 +69,14 @@ public class DescribeCommandsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
 	public List<Command> getCommands() {
 		return this.commands;
 	}
@@ -77,33 +87,37 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 	public static class Command {
 
-		private String creationTime;
-
-		private String type;
-
-		private Long timeout;
-
-		private Integer invokeTimes;
-
-		private String commandId;
-
-		private String workingDir;
-
 		private String description;
-
-		private Integer version;
-
-		private String provider;
-
-		private String commandContent;
 
 		private String category;
 
-		private Boolean latest;
+		private String resourceGroupId;
+
+		private Long timeout;
+
+		private String provider;
 
 		private String name;
 
+		private String workingDir;
+
+		private String commandContent;
+
+		private String type;
+
+		private Integer version;
+
+		private Integer invokeTimes;
+
+		private String creationTime;
+
+		private String launcher;
+
+		private Boolean latest;
+
 		private Boolean enableParameter;
+
+		private String commandId;
 
 		private List<ParameterDefinition> parameterDefinitions;
 
@@ -111,84 +125,12 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		private List<String> parameterNames;
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public Long getTimeout() {
-			return this.timeout;
-		}
-
-		public void setTimeout(Long timeout) {
-			this.timeout = timeout;
-		}
-
-		public Integer getInvokeTimes() {
-			return this.invokeTimes;
-		}
-
-		public void setInvokeTimes(Integer invokeTimes) {
-			this.invokeTimes = invokeTimes;
-		}
-
-		public String getCommandId() {
-			return this.commandId;
-		}
-
-		public void setCommandId(String commandId) {
-			this.commandId = commandId;
-		}
-
-		public String getWorkingDir() {
-			return this.workingDir;
-		}
-
-		public void setWorkingDir(String workingDir) {
-			this.workingDir = workingDir;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public Integer getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Integer version) {
-			this.version = version;
-		}
-
-		public String getProvider() {
-			return this.provider;
-		}
-
-		public void setProvider(String provider) {
-			this.provider = provider;
-		}
-
-		public String getCommandContent() {
-			return this.commandContent;
-		}
-
-		public void setCommandContent(String commandContent) {
-			this.commandContent = commandContent;
 		}
 
 		public String getCategory() {
@@ -199,12 +141,28 @@ public class DescribeCommandsResponse extends AcsResponse {
 			this.category = category;
 		}
 
-		public Boolean getLatest() {
-			return this.latest;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setLatest(Boolean latest) {
-			this.latest = latest;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Long getTimeout() {
+			return this.timeout;
+		}
+
+		public void setTimeout(Long timeout) {
+			this.timeout = timeout;
+		}
+
+		public String getProvider() {
+			return this.provider;
+		}
+
+		public void setProvider(String provider) {
+			this.provider = provider;
 		}
 
 		public String getName() {
@@ -215,12 +173,84 @@ public class DescribeCommandsResponse extends AcsResponse {
 			this.name = name;
 		}
 
+		public String getWorkingDir() {
+			return this.workingDir;
+		}
+
+		public void setWorkingDir(String workingDir) {
+			this.workingDir = workingDir;
+		}
+
+		public String getCommandContent() {
+			return this.commandContent;
+		}
+
+		public void setCommandContent(String commandContent) {
+			this.commandContent = commandContent;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public Integer getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Integer version) {
+			this.version = version;
+		}
+
+		public Integer getInvokeTimes() {
+			return this.invokeTimes;
+		}
+
+		public void setInvokeTimes(Integer invokeTimes) {
+			this.invokeTimes = invokeTimes;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getLauncher() {
+			return this.launcher;
+		}
+
+		public void setLauncher(String launcher) {
+			this.launcher = launcher;
+		}
+
+		public Boolean getLatest() {
+			return this.latest;
+		}
+
+		public void setLatest(Boolean latest) {
+			this.latest = latest;
+		}
+
 		public Boolean getEnableParameter() {
 			return this.enableParameter;
 		}
 
 		public void setEnableParameter(Boolean enableParameter) {
 			this.enableParameter = enableParameter;
+		}
+
+		public String getCommandId() {
+			return this.commandId;
+		}
+
+		public void setCommandId(String commandId) {
+			this.commandId = commandId;
 		}
 
 		public List<ParameterDefinition> getParameterDefinitions() {
@@ -249,22 +279,24 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		public static class ParameterDefinition {
 
-			private Boolean required;
+			private String defaultValue;
 
 			private String description;
 
-			private String defaultValue;
+			private Boolean required;
 
 			private String parameterName;
 
+			private String patternRegex;
+
 			private List<String> possibleValues;
 
-			public Boolean getRequired() {
-				return this.required;
+			public String getDefaultValue() {
+				return this.defaultValue;
 			}
 
-			public void setRequired(Boolean required) {
-				this.required = required;
+			public void setDefaultValue(String defaultValue) {
+				this.defaultValue = defaultValue;
 			}
 
 			public String getDescription() {
@@ -275,12 +307,12 @@ public class DescribeCommandsResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getDefaultValue() {
-				return this.defaultValue;
+			public Boolean getRequired() {
+				return this.required;
 			}
 
-			public void setDefaultValue(String defaultValue) {
-				this.defaultValue = defaultValue;
+			public void setRequired(Boolean required) {
+				this.required = required;
 			}
 
 			public String getParameterName() {
@@ -289,6 +321,14 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 			public void setParameterName(String parameterName) {
 				this.parameterName = parameterName;
+			}
+
+			public String getPatternRegex() {
+				return this.patternRegex;
+			}
+
+			public void setPatternRegex(String patternRegex) {
+				this.patternRegex = patternRegex;
 			}
 
 			public List<String> getPossibleValues() {

@@ -26,6 +26,8 @@ public class DeleteK8sApplicationRequest extends RoaAcsRequest<DeleteK8sApplicat
 	   
 
 	private String appId;
+
+	private Boolean force;
 	public DeleteK8sApplicationRequest() {
 		super("Edas", "2017-08-01", "DeleteK8sApplication", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
@@ -44,6 +46,17 @@ public class DeleteK8sApplicationRequest extends RoaAcsRequest<DeleteK8sApplicat
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

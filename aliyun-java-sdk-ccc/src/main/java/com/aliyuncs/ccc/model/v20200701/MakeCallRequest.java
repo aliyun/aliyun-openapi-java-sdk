@@ -40,6 +40,8 @@ public class MakeCallRequest extends RpcAcsRequest<MakeCallResponse> {
 	private String caller;
 
 	private String instanceId;
+
+	private String mediaType;
 	public MakeCallRequest() {
 		super("CCC", "2020-07-01", "MakeCall", "CCC");
 		setMethod(MethodType.POST);
@@ -134,6 +136,17 @@ public class MakeCallRequest extends RpcAcsRequest<MakeCallResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getMediaType() {
+		return this.mediaType;
+	}
+
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+		if(mediaType != null){
+			putQueryParameter("MediaType", mediaType);
 		}
 	}
 

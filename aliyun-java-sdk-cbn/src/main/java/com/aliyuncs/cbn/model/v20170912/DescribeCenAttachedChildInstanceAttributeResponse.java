@@ -39,13 +39,17 @@ public class DescribeCenAttachedChildInstanceAttributeResponse extends AcsRespon
 
 	private String cenId;
 
-	private String childInstanceName;
+	private String managedService;
 
 	private String ipv6StatusInCen;
 
 	private String childInstanceAttachTime;
 
+	private String childInstanceName;
+
 	private List<ChildInstanceRouteTable> childInstanceRouteTables;
+
+	private ChildInstanceAttributes childInstanceAttributes;
 
 	public String getStatus() {
 		return this.status;
@@ -103,12 +107,12 @@ public class DescribeCenAttachedChildInstanceAttributeResponse extends AcsRespon
 		this.cenId = cenId;
 	}
 
-	public String getChildInstanceName() {
-		return this.childInstanceName;
+	public String getManagedService() {
+		return this.managedService;
 	}
 
-	public void setChildInstanceName(String childInstanceName) {
-		this.childInstanceName = childInstanceName;
+	public void setManagedService(String managedService) {
+		this.managedService = managedService;
 	}
 
 	public String getIpv6StatusInCen() {
@@ -127,12 +131,28 @@ public class DescribeCenAttachedChildInstanceAttributeResponse extends AcsRespon
 		this.childInstanceAttachTime = childInstanceAttachTime;
 	}
 
+	public String getChildInstanceName() {
+		return this.childInstanceName;
+	}
+
+	public void setChildInstanceName(String childInstanceName) {
+		this.childInstanceName = childInstanceName;
+	}
+
 	public List<ChildInstanceRouteTable> getChildInstanceRouteTables() {
 		return this.childInstanceRouteTables;
 	}
 
 	public void setChildInstanceRouteTables(List<ChildInstanceRouteTable> childInstanceRouteTables) {
 		this.childInstanceRouteTables = childInstanceRouteTables;
+	}
+
+	public ChildInstanceAttributes getChildInstanceAttributes() {
+		return this.childInstanceAttributes;
+	}
+
+	public void setChildInstanceAttributes(ChildInstanceAttributes childInstanceAttributes) {
+		this.childInstanceAttributes = childInstanceAttributes;
 	}
 
 	public static class ChildInstanceRouteTable {
@@ -155,6 +175,72 @@ public class DescribeCenAttachedChildInstanceAttributeResponse extends AcsRespon
 
 		public void setRouteTableType(String routeTableType) {
 			this.routeTableType = routeTableType;
+		}
+	}
+
+	public static class ChildInstanceAttributes {
+
+		private String cidrBlock;
+
+		private String ipv6CidrBlock;
+
+		private List<Ipv6CidrBlock> ipv6CidrBlocks;
+
+		private List<String> secondaryCidrBlocks;
+
+		public String getCidrBlock() {
+			return this.cidrBlock;
+		}
+
+		public void setCidrBlock(String cidrBlock) {
+			this.cidrBlock = cidrBlock;
+		}
+
+		public String getIpv6CidrBlock() {
+			return this.ipv6CidrBlock;
+		}
+
+		public void setIpv6CidrBlock(String ipv6CidrBlock) {
+			this.ipv6CidrBlock = ipv6CidrBlock;
+		}
+
+		public List<Ipv6CidrBlock> getIpv6CidrBlocks() {
+			return this.ipv6CidrBlocks;
+		}
+
+		public void setIpv6CidrBlocks(List<Ipv6CidrBlock> ipv6CidrBlocks) {
+			this.ipv6CidrBlocks = ipv6CidrBlocks;
+		}
+
+		public List<String> getSecondaryCidrBlocks() {
+			return this.secondaryCidrBlocks;
+		}
+
+		public void setSecondaryCidrBlocks(List<String> secondaryCidrBlocks) {
+			this.secondaryCidrBlocks = secondaryCidrBlocks;
+		}
+
+		public static class Ipv6CidrBlock {
+
+			private String ipv6Isp;
+
+			private String ipv6CidrBlock;
+
+			public String getIpv6Isp() {
+				return this.ipv6Isp;
+			}
+
+			public void setIpv6Isp(String ipv6Isp) {
+				this.ipv6Isp = ipv6Isp;
+			}
+
+			public String getIpv6CidrBlock() {
+				return this.ipv6CidrBlock;
+			}
+
+			public void setIpv6CidrBlock(String ipv6CidrBlock) {
+				this.ipv6CidrBlock = ipv6CidrBlock;
+			}
 		}
 	}
 

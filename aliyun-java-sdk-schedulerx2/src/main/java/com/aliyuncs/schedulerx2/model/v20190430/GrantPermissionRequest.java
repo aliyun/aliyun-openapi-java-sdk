@@ -27,17 +27,17 @@ public class GrantPermissionRequest extends RpcAcsRequest<GrantPermissionRespons
 
 	private String namespaceSource;
 
-	private String groupId;
-
 	private String userId;
 
 	private Boolean grantOption;
+
+	private String groupId;
 
 	private String namespace;
 
 	private String userName;
 	public GrantPermissionRequest() {
-		super("schedulerx2", "2019-04-30", "GrantPermission");
+		super("schedulerx2", "2019-04-30", "GrantPermission", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,17 +53,6 @@ public class GrantPermissionRequest extends RpcAcsRequest<GrantPermissionRespons
 		this.namespaceSource = namespaceSource;
 		if(namespaceSource != null){
 			putQueryParameter("NamespaceSource", namespaceSource);
-		}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -86,6 +75,17 @@ public class GrantPermissionRequest extends RpcAcsRequest<GrantPermissionRespons
 		this.grantOption = grantOption;
 		if(grantOption != null){
 			putQueryParameter("GrantOption", grantOption.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

@@ -179,6 +179,16 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			private String earlyMediaState;
 
+			private String releaseReason;
+
+			private Long dialingTime;
+
+			private Long talkTime;
+
+			private Long heldTime;
+
+			private String callIds;
+
 			public String getContactDisposition() {
 				return this.contactDisposition;
 			}
@@ -417,6 +427,46 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			public void setEarlyMediaState(String earlyMediaState) {
 				this.earlyMediaState = earlyMediaState;
+			}
+
+			public String getReleaseReason() {
+				return this.releaseReason;
+			}
+
+			public void setReleaseReason(String releaseReason) {
+				this.releaseReason = releaseReason;
+			}
+
+			public Long getDialingTime() {
+				return this.dialingTime;
+			}
+
+			public void setDialingTime(Long dialingTime) {
+				this.dialingTime = dialingTime;
+			}
+
+			public Long getTalkTime() {
+				return this.talkTime;
+			}
+
+			public void setTalkTime(Long talkTime) {
+				this.talkTime = talkTime;
+			}
+
+			public Long getHeldTime() {
+				return this.heldTime;
+			}
+
+			public void setHeldTime(Long heldTime) {
+				this.heldTime = heldTime;
+			}
+
+			public String getCallIds() {
+				return this.callIds;
+			}
+
+			public void setCallIds(String callIds) {
+				this.callIds = callIds;
 			}
 		}
 	}

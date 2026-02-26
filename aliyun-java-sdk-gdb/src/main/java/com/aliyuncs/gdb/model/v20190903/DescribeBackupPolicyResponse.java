@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupPolicyResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer logBackupRetentionPeriod;
 
 	private Integer backupRetentionPeriod;
 
-	private String preferredBackupTime;
+	private String requestId;
 
 	private String preferredBackupPeriod;
 
+	private String preferredBackupTime;
+
 	private String enableBackupLog;
 
-	private Integer logBackupRetentionPeriod;
-
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getLogBackupRetentionPeriod() {
+		return this.logBackupRetentionPeriod;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
+		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
 	}
 
 	public Integer getBackupRetentionPeriod() {
@@ -52,12 +52,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.backupRetentionPeriod = backupRetentionPeriod;
 	}
 
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getPreferredBackupPeriod() {
@@ -68,20 +68,20 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.preferredBackupPeriod = preferredBackupPeriod;
 	}
 
+	public String getPreferredBackupTime() {
+		return this.preferredBackupTime;
+	}
+
+	public void setPreferredBackupTime(String preferredBackupTime) {
+		this.preferredBackupTime = preferredBackupTime;
+	}
+
 	public String getEnableBackupLog() {
 		return this.enableBackupLog;
 	}
 
 	public void setEnableBackupLog(String enableBackupLog) {
 		this.enableBackupLog = enableBackupLog;
-	}
-
-	public Integer getLogBackupRetentionPeriod() {
-		return this.logBackupRetentionPeriod;
-	}
-
-	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
-		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
 	}
 
 	@Override

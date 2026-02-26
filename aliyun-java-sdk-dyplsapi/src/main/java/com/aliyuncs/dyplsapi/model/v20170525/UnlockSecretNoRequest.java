@@ -27,15 +27,15 @@ public class UnlockSecretNoRequest extends RpcAcsRequest<UnlockSecretNoResponse>
 
 	private Long resourceOwnerId;
 
+	private String secretNo;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
 	private String poolKey;
-
-	private String secretNo;
 	public UnlockSecretNoRequest() {
-		super("Dyplsapi", "2017-05-25", "UnlockSecretNo");
+		super("Dyplsapi", "2017-05-25", "UnlockSecretNo", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,6 +51,17 @@ public class UnlockSecretNoRequest extends RpcAcsRequest<UnlockSecretNoResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSecretNo() {
+		return this.secretNo;
+	}
+
+	public void setSecretNo(String secretNo) {
+		this.secretNo = secretNo;
+		if(secretNo != null){
+			putQueryParameter("SecretNo", secretNo);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class UnlockSecretNoRequest extends RpcAcsRequest<UnlockSecretNoResponse>
 		this.poolKey = poolKey;
 		if(poolKey != null){
 			putQueryParameter("PoolKey", poolKey);
-		}
-	}
-
-	public String getSecretNo() {
-		return this.secretNo;
-	}
-
-	public void setSecretNo(String secretNo) {
-		this.secretNo = secretNo;
-		if(secretNo != null){
-			putQueryParameter("SecretNo", secretNo);
 		}
 	}
 

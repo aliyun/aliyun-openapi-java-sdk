@@ -27,10 +27,6 @@ public class DescribeLiveUserBillPredictionRequest extends RpcAcsRequest<Describ
 
 	private String startTime;
 
-	private String dimension;
-
-	private String area;
-
 	private String endTime;
 
 	private Long ownerId;
@@ -51,28 +47,6 @@ public class DescribeLiveUserBillPredictionRequest extends RpcAcsRequest<Describ
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getDimension() {
-		return this.dimension;
-	}
-
-	public void setDimension(String dimension) {
-		this.dimension = dimension;
-		if(dimension != null){
-			putQueryParameter("Dimension", dimension);
-		}
-	}
-
-	public String getArea() {
-		return this.area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
-		if(area != null){
-			putQueryParameter("Area", area);
 		}
 	}
 

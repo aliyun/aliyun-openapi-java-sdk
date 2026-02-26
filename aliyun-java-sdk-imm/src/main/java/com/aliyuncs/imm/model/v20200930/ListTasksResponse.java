@@ -96,6 +96,10 @@ public class ListTasksResponse extends AcsResponse {
 
 		private Map<Object,Object> tags;
 
+		private String taskRequestDefinition;
+
+		private Integer progress;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -166,6 +170,22 @@ public class ListTasksResponse extends AcsResponse {
 
 		public void setTags(Map<Object,Object> tags) {
 			this.tags = tags;
+		}
+
+		public String getTaskRequestDefinition() {
+			return this.taskRequestDefinition;
+		}
+
+		public void setTaskRequestDefinition(String taskRequestDefinition) {
+			this.taskRequestDefinition = taskRequestDefinition;
+		}
+
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
 		}
 	}
 

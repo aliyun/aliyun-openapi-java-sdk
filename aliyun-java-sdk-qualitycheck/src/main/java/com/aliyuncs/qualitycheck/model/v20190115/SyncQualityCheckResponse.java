@@ -135,6 +135,8 @@ public class SyncQualityCheckResponse extends AcsResponse {
 
 			private List<ConditionHitInfo> hit;
 
+			private RuleInfoBase ruleInfoBase;
+
 			public String getRuleName() {
 				return this.ruleName;
 			}
@@ -157,6 +159,14 @@ public class SyncQualityCheckResponse extends AcsResponse {
 
 			public void setHit(List<ConditionHitInfo> hit) {
 				this.hit = hit;
+			}
+
+			public RuleInfoBase getRuleInfoBase() {
+				return this.ruleInfoBase;
+			}
+
+			public void setRuleInfoBase(RuleInfoBase ruleInfoBase) {
+				this.ruleInfoBase = ruleInfoBase;
 			}
 
 			public static class ConditionHitInfo {
@@ -315,6 +325,79 @@ public class SyncQualityCheckResponse extends AcsResponse {
 					public void setSilenceDuration(Integer silenceDuration) {
 						this.silenceDuration = silenceDuration;
 					}
+				}
+			}
+
+			public static class RuleInfoBase {
+
+				private Integer level;
+
+				private String comments;
+
+				private Integer scoreNum;
+
+				private Integer scoreType;
+
+				private Integer scoreNumType;
+
+				private Integer type;
+
+				private String ruleCategoryName;
+
+				public Integer getLevel() {
+					return this.level;
+				}
+
+				public void setLevel(Integer level) {
+					this.level = level;
+				}
+
+				public String getComments() {
+					return this.comments;
+				}
+
+				public void setComments(String comments) {
+					this.comments = comments;
+				}
+
+				public Integer getScoreNum() {
+					return this.scoreNum;
+				}
+
+				public void setScoreNum(Integer scoreNum) {
+					this.scoreNum = scoreNum;
+				}
+
+				public Integer getScoreType() {
+					return this.scoreType;
+				}
+
+				public void setScoreType(Integer scoreType) {
+					this.scoreType = scoreType;
+				}
+
+				public Integer getScoreNumType() {
+					return this.scoreNumType;
+				}
+
+				public void setScoreNumType(Integer scoreNumType) {
+					this.scoreNumType = scoreNumType;
+				}
+
+				public Integer getType() {
+					return this.type;
+				}
+
+				public void setType(Integer type) {
+					this.type = type;
+				}
+
+				public String getRuleCategoryName() {
+					return this.ruleCategoryName;
+				}
+
+				public void setRuleCategoryName(String ruleCategoryName) {
+					this.ruleCategoryName = ruleCategoryName;
 				}
 			}
 		}

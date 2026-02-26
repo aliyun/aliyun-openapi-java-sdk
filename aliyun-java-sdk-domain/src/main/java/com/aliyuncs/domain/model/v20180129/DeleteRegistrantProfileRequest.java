@@ -31,7 +31,7 @@ public class DeleteRegistrantProfileRequest extends RpcAcsRequest<DeleteRegistra
 
 	private String lang;
 	public DeleteRegistrantProfileRequest() {
-		super("Domain", "2018-01-29", "DeleteRegistrantProfile");
+		super("Domain", "2018-01-29", "DeleteRegistrantProfile", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

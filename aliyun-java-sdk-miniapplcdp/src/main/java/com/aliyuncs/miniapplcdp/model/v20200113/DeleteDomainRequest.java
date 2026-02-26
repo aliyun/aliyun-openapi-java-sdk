@@ -29,6 +29,8 @@ public class DeleteDomainRequest extends RpcAcsRequest<DeleteDomainResponse> {
 	private String domain;
 
 	private String envId;
+
+	private String source;
 	public DeleteDomainRequest() {
 		super("miniapplcdp", "2020-01-13", "DeleteDomain");
 		setMethod(MethodType.POST);
@@ -64,6 +66,17 @@ public class DeleteDomainRequest extends RpcAcsRequest<DeleteDomainResponse> {
 		this.envId = envId;
 		if(envId != null){
 			putQueryParameter("EnvId", envId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

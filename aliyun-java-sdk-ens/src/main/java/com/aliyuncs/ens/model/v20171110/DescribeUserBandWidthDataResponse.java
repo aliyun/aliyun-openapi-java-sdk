@@ -89,37 +89,37 @@ public class DescribeUserBandWidthDataResponse extends AcsResponse {
 
 		public static class BandWidthMonitorDataItem {
 
-			private Integer downBandWidth;
+			private Long downBandWidth;
 
-			private Integer internetRX;
+			private Long internetRX;
 
-			private Integer internetTX;
+			private Long internetTX;
 
 			private String timeStamp;
 
-			private Integer upBandWidth;
+			private Long upBandWidth;
 
-			public Integer getDownBandWidth() {
+			public Long getDownBandWidth() {
 				return this.downBandWidth;
 			}
 
-			public void setDownBandWidth(Integer downBandWidth) {
+			public void setDownBandWidth(Long downBandWidth) {
 				this.downBandWidth = downBandWidth;
 			}
 
-			public Integer getInternetRX() {
+			public Long getInternetRX() {
 				return this.internetRX;
 			}
 
-			public void setInternetRX(Integer internetRX) {
+			public void setInternetRX(Long internetRX) {
 				this.internetRX = internetRX;
 			}
 
-			public Integer getInternetTX() {
+			public Long getInternetTX() {
 				return this.internetTX;
 			}
 
-			public void setInternetTX(Integer internetTX) {
+			public void setInternetTX(Long internetTX) {
 				this.internetTX = internetTX;
 			}
 
@@ -131,11 +131,11 @@ public class DescribeUserBandWidthDataResponse extends AcsResponse {
 				this.timeStamp = timeStamp;
 			}
 
-			public Integer getUpBandWidth() {
+			public Long getUpBandWidth() {
 				return this.upBandWidth;
 			}
 
-			public void setUpBandWidth(Integer upBandWidth) {
+			public void setUpBandWidth(Long upBandWidth) {
 				this.upBandWidth = upBandWidth;
 			}
 		}

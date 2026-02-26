@@ -27,9 +27,13 @@ public class ListTransitRouterAvailableResourceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean supportMulticast;
+
 	private List<String> slaveZones;
 
 	private List<String> masterZones;
+
+	private List<String> availableZones;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,6 +41,14 @@ public class ListTransitRouterAvailableResourceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSupportMulticast() {
+		return this.supportMulticast;
+	}
+
+	public void setSupportMulticast(Boolean supportMulticast) {
+		this.supportMulticast = supportMulticast;
 	}
 
 	public List<String> getSlaveZones() {
@@ -53,6 +65,14 @@ public class ListTransitRouterAvailableResourceResponse extends AcsResponse {
 
 	public void setMasterZones(List<String> masterZones) {
 		this.masterZones = masterZones;
+	}
+
+	public List<String> getAvailableZones() {
+		return this.availableZones;
+	}
+
+	public void setAvailableZones(List<String> availableZones) {
+		this.availableZones = availableZones;
 	}
 
 	@Override

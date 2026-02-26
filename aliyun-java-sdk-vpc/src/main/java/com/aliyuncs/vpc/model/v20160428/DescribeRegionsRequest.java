@@ -27,6 +27,8 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 
 	private Long resourceOwnerId;
 
+	private String productType;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -51,6 +53,17 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
 		}
 	}
 

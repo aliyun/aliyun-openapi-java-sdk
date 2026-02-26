@@ -33,7 +33,7 @@ public class DescribeDDosEventSrcIpRequest extends RpcAcsRequest<DescribeDDosEve
 
 	private String eventType;
 	public DescribeDDosEventSrcIpRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDDosEventSrcIp");
+		super("ddoscoo", "2020-01-01", "DescribeDDosEventSrcIp", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

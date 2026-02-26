@@ -27,21 +27,21 @@ public class DescribeDomainTrafficDataResponseUnmarshaller {
 	public static DescribeDomainTrafficDataResponse unmarshall(DescribeDomainTrafficDataResponse describeDomainTrafficDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainTrafficDataResponse.setRequestId(_ctx.stringValue("DescribeDomainTrafficDataResponse.RequestId"));
-		describeDomainTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeDomainTrafficDataResponse.DomainName"));
-		describeDomainTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeDomainTrafficDataResponse.StartTime"));
 		describeDomainTrafficDataResponse.setEndTime(_ctx.stringValue("DescribeDomainTrafficDataResponse.EndTime"));
+		describeDomainTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeDomainTrafficDataResponse.StartTime"));
+		describeDomainTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeDomainTrafficDataResponse.DomainName"));
 		describeDomainTrafficDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainTrafficDataResponse.DataInterval"));
 
 		List<DataModule> trafficDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainTrafficDataResponse.TrafficDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setHttpsDomesticValue(_ctx.stringValue("DescribeDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].HttpsDomesticValue"));
 			dataModule.setValue(_ctx.stringValue("DescribeDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].Value"));
-			dataModule.setDomesticValue(_ctx.stringValue("DescribeDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].DomesticValue"));
 			dataModule.setOverseasValue(_ctx.stringValue("DescribeDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].OverseasValue"));
 			dataModule.setHttpsValue(_ctx.stringValue("DescribeDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].HttpsValue"));
-			dataModule.setHttpsDomesticValue(_ctx.stringValue("DescribeDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].HttpsDomesticValue"));
 			dataModule.setHttpsOverseasValue(_ctx.stringValue("DescribeDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].HttpsOverseasValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setDomesticValue(_ctx.stringValue("DescribeDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].DomesticValue"));
 
 			trafficDataPerInterval.add(dataModule);
 		}

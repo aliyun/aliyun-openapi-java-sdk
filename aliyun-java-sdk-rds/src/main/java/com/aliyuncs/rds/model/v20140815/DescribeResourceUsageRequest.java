@@ -27,13 +27,15 @@ public class DescribeResourceUsageRequest extends RpcAcsRequest<DescribeResource
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
+	private String dBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String dBInstanceId;
 	public DescribeResourceUsageRequest() {
 		super("Rds", "2014-08-15", "DescribeResourceUsage", "rds");
 		setMethod(MethodType.POST);
@@ -51,6 +53,28 @@ public class DescribeResourceUsageRequest extends RpcAcsRequest<DescribeResource
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -84,17 +108,6 @@ public class DescribeResourceUsageRequest extends RpcAcsRequest<DescribeResource
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

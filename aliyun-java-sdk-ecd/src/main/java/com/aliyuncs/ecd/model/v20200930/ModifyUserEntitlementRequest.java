@@ -32,7 +32,7 @@ public class ModifyUserEntitlementRequest extends RpcAcsRequest<ModifyUserEntitl
 
 	private List<String> endUserIds;
 	public ModifyUserEntitlementRequest() {
-		super("ecd", "2020-09-30", "ModifyUserEntitlement");
+		super("ecd", "2020-09-30", "ModifyUserEntitlement", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

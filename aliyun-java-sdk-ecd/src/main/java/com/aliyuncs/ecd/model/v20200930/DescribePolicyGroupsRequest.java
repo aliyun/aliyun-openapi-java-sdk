@@ -28,11 +28,13 @@ public class DescribePolicyGroupsRequest extends RpcAcsRequest<DescribePolicyGro
 
 	private String nextToken;
 
+	private String scope;
+
 	private Integer maxResults;
 
 	private List<String> policyGroupIds;
 	public DescribePolicyGroupsRequest() {
-		super("ecd", "2020-09-30", "DescribePolicyGroups");
+		super("ecd", "2020-09-30", "DescribePolicyGroups", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,6 +50,17 @@ public class DescribePolicyGroupsRequest extends RpcAcsRequest<DescribePolicyGro
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getScope() {
+		return this.scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+		if(scope != null){
+			putQueryParameter("Scope", scope);
 		}
 	}
 

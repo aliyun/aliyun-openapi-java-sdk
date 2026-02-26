@@ -26,6 +26,11 @@ import com.aliyuncs.http.MethodType;
 public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 	   
 
+	private Boolean feedback;
+
+	@SerializedName("streamExtension")
+	private StreamExtension streamExtension;
+
 	private String textRequest;
 
 	private Long tenantId;
@@ -37,6 +42,28 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 	public SendMessageRequest() {
 		super("avatar", "2022-01-30", "SendMessage");
 		setMethod(MethodType.POST);
+	}
+
+	public Boolean getFeedback() {
+		return this.feedback;
+	}
+
+	public void setFeedback(Boolean feedback) {
+		this.feedback = feedback;
+		if(feedback != null){
+			putQueryParameter("Feedback", feedback.toString());
+		}
+	}
+
+	public StreamExtension getStreamExtension() {
+		return this.streamExtension;
+	}
+
+	public void setStreamExtension(StreamExtension streamExtension) {
+		this.streamExtension = streamExtension;	
+		if (streamExtension != null) {
+			putQueryParameter("StreamExtension" , new Gson().toJson(streamExtension));
+		}	
 	}
 
 	public String getTextRequest() {
@@ -80,6 +107,42 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 		this.sessionId = sessionId;
 		if(sessionId != null){
 			putQueryParameter("SessionId", sessionId);
+		}
+	}
+
+	public static class StreamExtension {
+
+		@SerializedName("IsStream")
+		private Boolean isStream;
+
+		@SerializedName("Index")
+		private Integer index;
+
+		@SerializedName("Position")
+		private String position;
+
+		public Boolean getIsStream() {
+			return this.isStream;
+		}
+
+		public void setIsStream(Boolean isStream) {
+			this.isStream = isStream;
+		}
+
+		public Integer getIndex() {
+			return this.index;
+		}
+
+		public void setIndex(Integer index) {
+			this.index = index;
+		}
+
+		public String getPosition() {
+			return this.position;
+		}
+
+		public void setPosition(String position) {
+			this.position = position;
 		}
 	}
 

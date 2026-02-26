@@ -25,13 +25,13 @@ import com.aliyuncs.push.Endpoint;
 public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSResponse> {
 	   
 
-	private String extParameters;
-
-	private String apnsEnv;
-
 	private String title;
 
 	private String body;
+
+	private String extParameters;
+
+	private String apnsEnv;
 
 	private String jobKey;
 
@@ -47,28 +47,6 @@ public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getExtParameters() {
-		return this.extParameters;
-	}
-
-	public void setExtParameters(String extParameters) {
-		this.extParameters = extParameters;
-		if(extParameters != null){
-			putQueryParameter("ExtParameters", extParameters);
-		}
-	}
-
-	public String getApnsEnv() {
-		return this.apnsEnv;
-	}
-
-	public void setApnsEnv(String apnsEnv) {
-		this.apnsEnv = apnsEnv;
-		if(apnsEnv != null){
-			putQueryParameter("ApnsEnv", apnsEnv);
-		}
 	}
 
 	public String getTitle() {
@@ -90,6 +68,28 @@ public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSRespons
 		this.body = body;
 		if(body != null){
 			putQueryParameter("Body", body);
+		}
+	}
+
+	public String getExtParameters() {
+		return this.extParameters;
+	}
+
+	public void setExtParameters(String extParameters) {
+		this.extParameters = extParameters;
+		if(extParameters != null){
+			putQueryParameter("ExtParameters", extParameters);
+		}
+	}
+
+	public String getApnsEnv() {
+		return this.apnsEnv;
+	}
+
+	public void setApnsEnv(String apnsEnv) {
+		this.apnsEnv = apnsEnv;
+		if(apnsEnv != null){
+			putQueryParameter("ApnsEnv", apnsEnv);
 		}
 	}
 

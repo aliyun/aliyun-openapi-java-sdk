@@ -47,19 +47,11 @@ public class BatchSetScdnDomainConfigsResponse extends AcsResponse {
 
 	public static class DomainConfigModel {
 
-		private String domainName;
-
 		private Long configId;
 
+		private String domainName;
+
 		private String functionName;
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
 
 		public Long getConfigId() {
 			return this.configId;
@@ -67,6 +59,14 @@ public class BatchSetScdnDomainConfigsResponse extends AcsResponse {
 
 		public void setConfigId(Long configId) {
 			this.configId = configId;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getFunctionName() {

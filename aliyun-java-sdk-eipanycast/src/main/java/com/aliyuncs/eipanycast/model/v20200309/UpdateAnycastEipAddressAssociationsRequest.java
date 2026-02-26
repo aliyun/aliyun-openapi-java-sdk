@@ -40,7 +40,7 @@ public class UpdateAnycastEipAddressAssociationsRequest extends RpcAcsRequest<Up
 
 	private String bindInstanceId;
 	public UpdateAnycastEipAddressAssociationsRequest() {
-		super("Eipanycast", "2020-03-09", "UpdateAnycastEipAddressAssociations");
+		super("Eipanycast", "2020-03-09", "UpdateAnycastEipAddressAssociations", "eipanycast");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

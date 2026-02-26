@@ -37,7 +37,7 @@ public class CreatePortsForClickHouseRequest extends RpcAcsRequest<CreatePortsFo
 
 	private Long ownerId;
 	public CreatePortsForClickHouseRequest() {
-		super("clickhouse", "2019-11-11", "CreatePortsForClickHouse");
+		super("clickhouse", "2019-11-11", "CreatePortsForClickHouse", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

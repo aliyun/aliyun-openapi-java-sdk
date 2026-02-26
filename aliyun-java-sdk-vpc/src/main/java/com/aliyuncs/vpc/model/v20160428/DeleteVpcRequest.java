@@ -27,6 +27,12 @@ public class DeleteVpcRequest extends RpcAcsRequest<DeleteVpcResponse> {
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
+	private Boolean forceDelete;
+
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -51,6 +57,39 @@ public class DeleteVpcRequest extends RpcAcsRequest<DeleteVpcResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getForceDelete() {
+		return this.forceDelete;
+	}
+
+	public void setForceDelete(Boolean forceDelete) {
+		this.forceDelete = forceDelete;
+		if(forceDelete != null){
+			putQueryParameter("ForceDelete", forceDelete.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

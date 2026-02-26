@@ -29,6 +29,8 @@ public class UpdateInstanceRequest extends RoaAcsRequest<UpdateInstanceResponse>
 
 	private String clientToken;
 
+	private Boolean force;
+
 	private String body;
 
 	private String orderActionType;
@@ -61,6 +63,17 @@ public class UpdateInstanceRequest extends RoaAcsRequest<UpdateInstanceResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("force", force.toString());
 		}
 	}
 

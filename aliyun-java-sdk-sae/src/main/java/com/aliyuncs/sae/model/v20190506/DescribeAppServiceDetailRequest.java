@@ -27,7 +27,11 @@ public class DescribeAppServiceDetailRequest extends RoaAcsRequest<DescribeAppSe
 
 	private String serviceType;
 
+	private String nacosNamespaceId;
+
 	private String appId;
+
+	private String nacosInstanceId;
 
 	private String serviceVersion;
 
@@ -55,6 +59,17 @@ public class DescribeAppServiceDetailRequest extends RoaAcsRequest<DescribeAppSe
 		}
 	}
 
+	public String getNacosNamespaceId() {
+		return this.nacosNamespaceId;
+	}
+
+	public void setNacosNamespaceId(String nacosNamespaceId) {
+		this.nacosNamespaceId = nacosNamespaceId;
+		if(nacosNamespaceId != null){
+			putQueryParameter("NacosNamespaceId", nacosNamespaceId);
+		}
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -63,6 +78,17 @@ public class DescribeAppServiceDetailRequest extends RoaAcsRequest<DescribeAppSe
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getNacosInstanceId() {
+		return this.nacosInstanceId;
+	}
+
+	public void setNacosInstanceId(String nacosInstanceId) {
+		this.nacosInstanceId = nacosInstanceId;
+		if(nacosInstanceId != null){
+			putQueryParameter("NacosInstanceId", nacosInstanceId);
 		}
 	}
 

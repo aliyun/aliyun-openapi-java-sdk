@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainHttpCodeDataByLayerResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dataInterval;
 
+	private String requestId;
+
 	private List<DataModule> httpCodeDataInterval;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDataInterval() {
 		return this.dataInterval;
@@ -45,6 +37,14 @@ public class DescribeDomainHttpCodeDataByLayerResponse extends AcsResponse {
 
 	public void setDataInterval(String dataInterval) {
 		this.dataInterval = dataInterval;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DataModule> getHttpCodeDataInterval() {
@@ -57,19 +57,11 @@ public class DescribeDomainHttpCodeDataByLayerResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
-
 		private String value;
 
+		private String timeStamp;
+
 		private String totalValue;
-
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
 
 		public String getValue() {
 			return this.value;
@@ -77,6 +69,14 @@ public class DescribeDomainHttpCodeDataByLayerResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 
 		public String getTotalValue() {

@@ -27,29 +27,29 @@ public class ListUserAnalyzersResponseUnmarshaller {
 
 	public static ListUserAnalyzersResponse unmarshall(ListUserAnalyzersResponse listUserAnalyzersResponse, UnmarshallerContext _ctx) {
 		
-		listUserAnalyzersResponse.setRequestId(_ctx.stringValue("ListUserAnalyzersResponse.requestId"));
 		listUserAnalyzersResponse.setTotalCount(_ctx.integerValue("ListUserAnalyzersResponse.totalCount"));
+		listUserAnalyzersResponse.setRequestId(_ctx.stringValue("ListUserAnalyzersResponse.requestId"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserAnalyzersResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setId(_ctx.stringValue("ListUserAnalyzersResponse.result["+ i +"].id"));
-			resultItem.setName(_ctx.stringValue("ListUserAnalyzersResponse.result["+ i +"].name"));
-			resultItem.setBusiness(_ctx.stringValue("ListUserAnalyzersResponse.result["+ i +"].business"));
-			resultItem.setAvailable(_ctx.booleanValue("ListUserAnalyzersResponse.result["+ i +"].available"));
 			resultItem.setCreated(_ctx.integerValue("ListUserAnalyzersResponse.result["+ i +"].created"));
+			resultItem.setAvailable(_ctx.booleanValue("ListUserAnalyzersResponse.result["+ i +"].available"));
+			resultItem.setName(_ctx.stringValue("ListUserAnalyzersResponse.result["+ i +"].name"));
 			resultItem.setUpdated(_ctx.integerValue("ListUserAnalyzersResponse.result["+ i +"].updated"));
+			resultItem.setId(_ctx.stringValue("ListUserAnalyzersResponse.result["+ i +"].id"));
+			resultItem.setBusiness(_ctx.stringValue("ListUserAnalyzersResponse.result["+ i +"].business"));
 
 			List<DictsItem> dicts = new ArrayList<DictsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListUserAnalyzersResponse.result["+ i +"].dicts.Length"); j++) {
 				DictsItem dictsItem = new DictsItem();
-				dictsItem.setId(_ctx.stringValue("ListUserAnalyzersResponse.result["+ i +"].dicts["+ j +"].id"));
+				dictsItem.setCreated(_ctx.integerValue("ListUserAnalyzersResponse.result["+ i +"].dicts["+ j +"].created"));
+				dictsItem.setEntriesCount(_ctx.integerValue("ListUserAnalyzersResponse.result["+ i +"].dicts["+ j +"].entriesCount"));
 				dictsItem.setType(_ctx.stringValue("ListUserAnalyzersResponse.result["+ i +"].dicts["+ j +"].type"));
 				dictsItem.setEntriesLimit(_ctx.integerValue("ListUserAnalyzersResponse.result["+ i +"].dicts["+ j +"].entriesLimit"));
-				dictsItem.setEntriesCount(_ctx.integerValue("ListUserAnalyzersResponse.result["+ i +"].dicts["+ j +"].entriesCount"));
 				dictsItem.setAvailable(_ctx.booleanValue("ListUserAnalyzersResponse.result["+ i +"].dicts["+ j +"].available"));
-				dictsItem.setCreated(_ctx.integerValue("ListUserAnalyzersResponse.result["+ i +"].dicts["+ j +"].created"));
 				dictsItem.setUpdated(_ctx.integerValue("ListUserAnalyzersResponse.result["+ i +"].dicts["+ j +"].updated"));
+				dictsItem.setId(_ctx.stringValue("ListUserAnalyzersResponse.result["+ i +"].dicts["+ j +"].id"));
 
 				dicts.add(dictsItem);
 			}

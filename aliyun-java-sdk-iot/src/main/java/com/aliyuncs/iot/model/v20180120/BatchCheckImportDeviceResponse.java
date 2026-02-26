@@ -77,6 +77,8 @@ public class BatchCheckImportDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
+		private List<InvalidDetailListItem> invalidDetailList;
+
 		private List<String> invalidDeviceNameList;
 
 		private List<String> invalidDeviceSecretList;
@@ -84,6 +86,14 @@ public class BatchCheckImportDeviceResponse extends AcsResponse {
 		private List<String> invalidSnList;
 
 		private List<String> repeatedDeviceNameList;
+
+		public List<InvalidDetailListItem> getInvalidDetailList() {
+			return this.invalidDetailList;
+		}
+
+		public void setInvalidDetailList(List<InvalidDetailListItem> invalidDetailList) {
+			this.invalidDetailList = invalidDetailList;
+		}
 
 		public List<String> getInvalidDeviceNameList() {
 			return this.invalidDeviceNameList;
@@ -115,6 +125,49 @@ public class BatchCheckImportDeviceResponse extends AcsResponse {
 
 		public void setRepeatedDeviceNameList(List<String> repeatedDeviceNameList) {
 			this.repeatedDeviceNameList = repeatedDeviceNameList;
+		}
+
+		public static class InvalidDetailListItem {
+
+			private String deviceName;
+
+			private String deviceSecret;
+
+			private String sn;
+
+			private String errorMsg;
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
+			}
+
+			public String getDeviceSecret() {
+				return this.deviceSecret;
+			}
+
+			public void setDeviceSecret(String deviceSecret) {
+				this.deviceSecret = deviceSecret;
+			}
+
+			public String getSn() {
+				return this.sn;
+			}
+
+			public void setSn(String sn) {
+				this.sn = sn;
+			}
+
+			public String getErrorMsg() {
+				return this.errorMsg;
+			}
+
+			public void setErrorMsg(String errorMsg) {
+				this.errorMsg = errorMsg;
+			}
 		}
 	}
 

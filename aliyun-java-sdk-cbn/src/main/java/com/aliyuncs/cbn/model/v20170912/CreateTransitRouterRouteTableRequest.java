@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -29,7 +30,11 @@ public class CreateTransitRouterRouteTableRequest extends RpcAcsRequest<CreateTr
 
 	private String clientToken;
 
+	private RouteTableOptions routeTableOptions;
+
 	private String transitRouterRouteTableDescription;
+
+	private List<Tag> tags;
 
 	private Boolean dryRun;
 
@@ -43,7 +48,7 @@ public class CreateTransitRouterRouteTableRequest extends RpcAcsRequest<CreateTr
 
 	private String transitRouterId;
 	public CreateTransitRouterRouteTableRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterRouteTable");
+		super("Cbn", "2017-09-12", "CreateTransitRouterRouteTable", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,6 +78,18 @@ public class CreateTransitRouterRouteTableRequest extends RpcAcsRequest<CreateTr
 		}
 	}
 
+	public RouteTableOptions getRouteTableOptions() {
+		return this.routeTableOptions;
+	}
+
+	public void setRouteTableOptions(RouteTableOptions routeTableOptions) {
+		this.routeTableOptions = routeTableOptions;	
+		if (routeTableOptions != null) {
+			
+				putQueryParameter("RouteTableOptions.MultiRegionECMP" , routeTableOptions.getMultiRegionECMP());
+		}	
+	}
+
 	public String getTransitRouterRouteTableDescription() {
 		return this.transitRouterRouteTableDescription;
 	}
@@ -82,6 +99,20 @@ public class CreateTransitRouterRouteTableRequest extends RpcAcsRequest<CreateTr
 		if(transitRouterRouteTableDescription != null){
 			putQueryParameter("TransitRouterRouteTableDescription", transitRouterRouteTableDescription);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public Boolean getDryRun() {
@@ -147,6 +178,42 @@ public class CreateTransitRouterRouteTableRequest extends RpcAcsRequest<CreateTr
 		this.transitRouterId = transitRouterId;
 		if(transitRouterId != null){
 			putQueryParameter("TransitRouterId", transitRouterId);
+		}
+	}
+
+	public static class RouteTableOptions {
+
+		private String multiRegionECMP;
+
+		public String getMultiRegionECMP() {
+			return this.multiRegionECMP;
+		}
+
+		public void setMultiRegionECMP(String multiRegionECMP) {
+			this.multiRegionECMP = multiRegionECMP;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -133,6 +133,8 @@ public class DescribeTablesResponse extends AcsResponse {
 
 		private List<Rule> ruleList;
 
+		private List<ModelTagsItem> modelTags;
+
 		public Long getCreationTime() {
 			return this.creationTime;
 		}
@@ -357,6 +359,14 @@ public class DescribeTablesResponse extends AcsResponse {
 			this.ruleList = ruleList;
 		}
 
+		public List<ModelTagsItem> getModelTags() {
+			return this.modelTags;
+		}
+
+		public void setModelTags(List<ModelTagsItem> modelTags) {
+			this.modelTags = modelTags;
+		}
+
 		public static class Rule {
 
 			private String displayName;
@@ -397,6 +407,29 @@ public class DescribeTablesResponse extends AcsResponse {
 
 			public void setCount(Long count) {
 				this.count = count;
+			}
+		}
+
+		public static class ModelTagsItem {
+
+			private Long id;
+
+			private String name;
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

@@ -44,6 +44,7 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 			availableZone.setZoneName(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].ZoneName"));
 			availableZone.setNetworkTypes(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].NetworkTypes"));
 			availableZone.setRegionId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].RegionId"));
+			availableZone.setIsMainSale(_ctx.booleanValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].IsMainSale"));
 
 			List<SupportedEngine> supportedEngines = new ArrayList<SupportedEngine>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines.Length"); j++) {

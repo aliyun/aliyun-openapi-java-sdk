@@ -28,6 +28,8 @@ public class CreateCenInterRegionTrafficQosPolicyRequest extends RpcAcsRequest<C
 
 	private Long resourceOwnerId;
 
+	private String bandwidthGuaranteeMode;
+
 	private String clientToken;
 
 	private List<TrafficQosQueues> trafficQosQueuess;
@@ -48,7 +50,7 @@ public class CreateCenInterRegionTrafficQosPolicyRequest extends RpcAcsRequest<C
 
 	private String transitRouterAttachmentId;
 	public CreateCenInterRegionTrafficQosPolicyRequest() {
-		super("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosPolicy");
+		super("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosPolicy", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,6 +66,17 @@ public class CreateCenInterRegionTrafficQosPolicyRequest extends RpcAcsRequest<C
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getBandwidthGuaranteeMode() {
+		return this.bandwidthGuaranteeMode;
+	}
+
+	public void setBandwidthGuaranteeMode(String bandwidthGuaranteeMode) {
+		this.bandwidthGuaranteeMode = bandwidthGuaranteeMode;
+		if(bandwidthGuaranteeMode != null){
+			putQueryParameter("BandwidthGuaranteeMode", bandwidthGuaranteeMode);
 		}
 	}
 
@@ -91,6 +104,7 @@ public class CreateCenInterRegionTrafficQosPolicyRequest extends RpcAcsRequest<C
 						putQueryParameter("TrafficQosQueues." + (depth1 + 1) + ".Dscps." + (i + 1) , trafficQosQueuess.get(depth1).getDscpss().get(i));
 					}
 				}
+				putQueryParameter("TrafficQosQueues." + (depth1 + 1) + ".Bandwidth" , trafficQosQueuess.get(depth1).getBandwidth());
 				putQueryParameter("TrafficQosQueues." + (depth1 + 1) + ".QosQueueName" , trafficQosQueuess.get(depth1).getQosQueueName());
 				putQueryParameter("TrafficQosQueues." + (depth1 + 1) + ".RemainBandwidthPercent" , trafficQosQueuess.get(depth1).getRemainBandwidthPercent());
 				putQueryParameter("TrafficQosQueues." + (depth1 + 1) + ".QosQueueDescription" , trafficQosQueuess.get(depth1).getQosQueueDescription());
@@ -190,6 +204,8 @@ public class CreateCenInterRegionTrafficQosPolicyRequest extends RpcAcsRequest<C
 
 		private List<Integer> dscpss;
 
+		private String bandwidth;
+
 		private String qosQueueName;
 
 		private String remainBandwidthPercent;
@@ -202,6 +218,14 @@ public class CreateCenInterRegionTrafficQosPolicyRequest extends RpcAcsRequest<C
 
 		public void setDscpss(List<Integer> dscpss) {
 			this.dscpss = dscpss;
+		}
+
+		public String getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(String bandwidth) {
+			this.bandwidth = bandwidth;
 		}
 
 		public String getQosQueueName() {

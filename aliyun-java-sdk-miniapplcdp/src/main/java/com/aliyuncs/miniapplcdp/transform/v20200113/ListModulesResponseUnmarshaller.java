@@ -43,8 +43,10 @@ public class ListModulesResponseUnmarshaller {
 			moduleItem.setMinimumPlatformVersion(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].MinimumPlatformVersion"));
 			moduleItem.setModuleId(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].ModuleId"));
 			moduleItem.setModuleName(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].ModuleName"));
+			moduleItem.setOwnerAppId(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].OwnerAppId"));
 			moduleItem.setOwnerUserId(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].OwnerUserId"));
 			moduleItem.setPlatform(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].Platform"));
+			moduleItem.setPlatformVersion(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].PlatformVersion"));
 
 			items.add(moduleItem);
 		}

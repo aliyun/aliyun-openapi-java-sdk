@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.domain.model.v20180129.QueryDomainByInstanceIdResponse;
+import com.aliyuncs.domain.model.v20180129.QueryDomainByInstanceIdResponse.TagItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,12 +57,25 @@ public class QueryDomainByInstanceIdResponseUnmarshaller {
 		queryDomainByInstanceIdResponse.setExpirationCurrDateDiff(_ctx.integerValue("QueryDomainByInstanceIdResponse.ExpirationCurrDateDiff"));
 		queryDomainByInstanceIdResponse.setDomainType(_ctx.stringValue("QueryDomainByInstanceIdResponse.DomainType"));
 		queryDomainByInstanceIdResponse.setDomainStatus(_ctx.stringValue("QueryDomainByInstanceIdResponse.DomainStatus"));
+		queryDomainByInstanceIdResponse.setResourceGroupId(_ctx.stringValue("QueryDomainByInstanceIdResponse.ResourceGroupId"));
+		queryDomainByInstanceIdResponse.setDomainLifecycleStatus(_ctx.stringValue("QueryDomainByInstanceIdResponse.DomainLifecycleStatus"));
+		queryDomainByInstanceIdResponse.setPrivacyServiceStatus(_ctx.stringValue("QueryDomainByInstanceIdResponse.PrivacyServiceStatus"));
 
 		List<String> dnsList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDomainByInstanceIdResponse.DnsList.Length"); i++) {
 			dnsList.add(_ctx.stringValue("QueryDomainByInstanceIdResponse.DnsList["+ i +"]"));
 		}
 		queryDomainByInstanceIdResponse.setDnsList(dnsList);
+
+		List<TagItem> tag = new ArrayList<TagItem>();
+		for (int i = 0; i < _ctx.lengthValue("QueryDomainByInstanceIdResponse.Tag.Length"); i++) {
+			TagItem tagItem = new TagItem();
+			tagItem.setKey(_ctx.stringValue("QueryDomainByInstanceIdResponse.Tag["+ i +"].Key"));
+			tagItem.setValue(_ctx.stringValue("QueryDomainByInstanceIdResponse.Tag["+ i +"].Value"));
+
+			tag.add(tagItem);
+		}
+		queryDomainByInstanceIdResponse.setTag(tag);
 	 
 	 	return queryDomainByInstanceIdResponse;
 	}

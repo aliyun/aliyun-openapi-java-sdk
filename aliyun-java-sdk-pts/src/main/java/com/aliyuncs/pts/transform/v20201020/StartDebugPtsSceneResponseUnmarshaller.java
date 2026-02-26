@@ -23,11 +23,11 @@ public class StartDebugPtsSceneResponseUnmarshaller {
 	public static StartDebugPtsSceneResponse unmarshall(StartDebugPtsSceneResponse startDebugPtsSceneResponse, UnmarshallerContext _ctx) {
 		
 		startDebugPtsSceneResponse.setRequestId(_ctx.stringValue("StartDebugPtsSceneResponse.RequestId"));
-		startDebugPtsSceneResponse.setCode(_ctx.stringValue("StartDebugPtsSceneResponse.Code"));
 		startDebugPtsSceneResponse.setMessage(_ctx.stringValue("StartDebugPtsSceneResponse.Message"));
-		startDebugPtsSceneResponse.setHttpStatusCode(_ctx.integerValue("StartDebugPtsSceneResponse.HttpStatusCode"));
-		startDebugPtsSceneResponse.setSuccess(_ctx.booleanValue("StartDebugPtsSceneResponse.Success"));
 		startDebugPtsSceneResponse.setPlanId(_ctx.stringValue("StartDebugPtsSceneResponse.PlanId"));
+		startDebugPtsSceneResponse.setHttpStatusCode(_ctx.integerValue("StartDebugPtsSceneResponse.HttpStatusCode"));
+		startDebugPtsSceneResponse.setCode(_ctx.stringValue("StartDebugPtsSceneResponse.Code"));
+		startDebugPtsSceneResponse.setSuccess(_ctx.booleanValue("StartDebugPtsSceneResponse.Success"));
 	 
 	 	return startDebugPtsSceneResponse;
 	}

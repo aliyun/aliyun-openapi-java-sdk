@@ -23,15 +23,7 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class SetDomainCertificateRequest extends RpcAcsRequest<SetDomainCertificateResponse> {
-	
-	public SetDomainCertificateRequest() {
-		super("CloudAPI", "2016-07-14", "SetDomainCertificate", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String certificatePrivateKey;
 
@@ -41,9 +33,21 @@ public class SetDomainCertificateRequest extends RpcAcsRequest<SetDomainCertific
 
 	private String certificateBody;
 
+	private String sslVerifyDepth;
+
+	private String caCertificateBody;
+
 	private String securityToken;
 
 	private String certificateName;
+	public SetDomainCertificateRequest() {
+		super("CloudAPI", "2016-07-14", "SetDomainCertificate", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCertificatePrivateKey() {
 		return this.certificatePrivateKey;
@@ -89,29 +93,32 @@ public class SetDomainCertificateRequest extends RpcAcsRequest<SetDomainCertific
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public String getSslVerifyDepth() {
+		return this.sslVerifyDepth;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setSslVerifyDepth(String sslVerifyDepth) {
+		this.sslVerifyDepth = sslVerifyDepth;
+		if(sslVerifyDepth != null){
+			putQueryParameter("SslVerifyDepth", sslVerifyDepth);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
+	public String getCaCertificateBody() {
+		return this.caCertificateBody;
+	}
+
+	public void setCaCertificateBody(String caCertificateBody) {
+		this.caCertificateBody = caCertificateBody;
+		if(caCertificateBody != null){
+			putQueryParameter("CaCertificateBody", caCertificateBody);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

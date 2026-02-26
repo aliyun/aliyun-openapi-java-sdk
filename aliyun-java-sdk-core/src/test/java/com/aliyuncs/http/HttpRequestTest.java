@@ -65,11 +65,4 @@ public class HttpRequestTest {
         }
 
     }
-
-    @Test
-    public void toStringTest() {
-        HttpRequest request = new HttpRequest("testURL");
-        String res = request.toString();
-        Assert.assertTrue(res.contains("testURL"));
-    }
 }

@@ -67,17 +67,9 @@ public class ListInvocationStatusResponse extends AcsResponse {
 
 	public static class InvokeInstance {
 
-		private String instanceId;
-
 		private String instanceInvokeStatus;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String instanceId;
 
 		public String getInstanceInvokeStatus() {
 			return this.instanceInvokeStatus;
@@ -85,6 +77,14 @@ public class ListInvocationStatusResponse extends AcsResponse {
 
 		public void setInstanceInvokeStatus(String instanceInvokeStatus) {
 			this.instanceInvokeStatus = instanceInvokeStatus;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

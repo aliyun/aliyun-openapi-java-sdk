@@ -47,6 +47,7 @@ public class GetDISyncInstanceInfoResponseUnmarshaller {
 			stepDetailItem.setStatus(_ctx.stringValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.StepDetail["+ i +"].Status"));
 			stepDetailItem.setStepId(_ctx.longValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.StepDetail["+ i +"].StepId"));
 			stepDetailItem.setStepName(_ctx.stringValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.StepDetail["+ i +"].StepName"));
+			stepDetailItem.setInfo(_ctx.stringValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.StepDetail["+ i +"].Info"));
 
 			stepDetail.add(stepDetailItem);
 		}

@@ -29,6 +29,9 @@ public class CreatePrometheusAlertRuleResponseUnmarshaller {
 	public static CreatePrometheusAlertRuleResponse unmarshall(CreatePrometheusAlertRuleResponse createPrometheusAlertRuleResponse, UnmarshallerContext _ctx) {
 		
 		createPrometheusAlertRuleResponse.setRequestId(_ctx.stringValue("CreatePrometheusAlertRuleResponse.RequestId"));
+		createPrometheusAlertRuleResponse.setCode(_ctx.longValue("CreatePrometheusAlertRuleResponse.Code"));
+		createPrometheusAlertRuleResponse.setSuccess(_ctx.booleanValue("CreatePrometheusAlertRuleResponse.Success"));
+		createPrometheusAlertRuleResponse.setMessage(_ctx.stringValue("CreatePrometheusAlertRuleResponse.Message"));
 
 		PrometheusAlertRule prometheusAlertRule = new PrometheusAlertRule();
 		prometheusAlertRule.setStatus(_ctx.integerValue("CreatePrometheusAlertRuleResponse.PrometheusAlertRule.Status"));

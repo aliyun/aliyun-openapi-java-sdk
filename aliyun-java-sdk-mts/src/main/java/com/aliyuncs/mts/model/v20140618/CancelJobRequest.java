@@ -27,13 +27,13 @@ public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
 
 	private Long resourceOwnerId;
 
+	private String jobId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String jobId;
 	public CancelJobRequest() {
 		super("Mts", "2014-06-18", "CancelJob", "mts");
 		setMethod(MethodType.POST);
@@ -51,6 +51,17 @@ public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
 		}
 	}
 

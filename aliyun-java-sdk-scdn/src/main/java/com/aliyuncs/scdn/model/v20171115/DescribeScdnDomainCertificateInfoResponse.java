@@ -47,56 +47,32 @@ public class DescribeScdnDomainCertificateInfoResponse extends AcsResponse {
 
 	public static class CertInfo {
 
-		private String domainName;
-
-		private String certName;
-
-		private String certDomainName;
-
-		private String certExpireTime;
+		private String status;
 
 		private String certLife;
 
-		private String certOrg;
-
-		private String certType;
-
-		private String sSLProtocol;
-
-		private String status;
+		private String certExpireTime;
 
 		private String sSLPub;
 
-		public String getDomainName() {
-			return this.domainName;
+		private String sSLProtocol;
+
+		private String certType;
+
+		private String certDomainName;
+
+		private String certName;
+
+		private String certOrg;
+
+		private String domainName;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getCertName() {
-			return this.certName;
-		}
-
-		public void setCertName(String certName) {
-			this.certName = certName;
-		}
-
-		public String getCertDomainName() {
-			return this.certDomainName;
-		}
-
-		public void setCertDomainName(String certDomainName) {
-			this.certDomainName = certDomainName;
-		}
-
-		public String getCertExpireTime() {
-			return this.certExpireTime;
-		}
-
-		public void setCertExpireTime(String certExpireTime) {
-			this.certExpireTime = certExpireTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getCertLife() {
@@ -107,20 +83,20 @@ public class DescribeScdnDomainCertificateInfoResponse extends AcsResponse {
 			this.certLife = certLife;
 		}
 
-		public String getCertOrg() {
-			return this.certOrg;
+		public String getCertExpireTime() {
+			return this.certExpireTime;
 		}
 
-		public void setCertOrg(String certOrg) {
-			this.certOrg = certOrg;
+		public void setCertExpireTime(String certExpireTime) {
+			this.certExpireTime = certExpireTime;
 		}
 
-		public String getCertType() {
-			return this.certType;
+		public String getSSLPub() {
+			return this.sSLPub;
 		}
 
-		public void setCertType(String certType) {
-			this.certType = certType;
+		public void setSSLPub(String sSLPub) {
+			this.sSLPub = sSLPub;
 		}
 
 		public String getSSLProtocol() {
@@ -131,20 +107,44 @@ public class DescribeScdnDomainCertificateInfoResponse extends AcsResponse {
 			this.sSLProtocol = sSLProtocol;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getCertType() {
+			return this.certType;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCertType(String certType) {
+			this.certType = certType;
 		}
 
-		public String getSSLPub() {
-			return this.sSLPub;
+		public String getCertDomainName() {
+			return this.certDomainName;
 		}
 
-		public void setSSLPub(String sSLPub) {
-			this.sSLPub = sSLPub;
+		public void setCertDomainName(String certDomainName) {
+			this.certDomainName = certDomainName;
+		}
+
+		public String getCertName() {
+			return this.certName;
+		}
+
+		public void setCertName(String certName) {
+			this.certName = certName;
+		}
+
+		public String getCertOrg() {
+			return this.certOrg;
+		}
+
+		public void setCertOrg(String certOrg) {
+			this.certOrg = certOrg;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 	}
 

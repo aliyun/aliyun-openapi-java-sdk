@@ -15,6 +15,7 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.r_kvstore.Endpoint;
 
@@ -27,7 +28,11 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private Long resourceOwnerId;
 
+	private String connectionStringPrefix;
+
 	private String secondaryZoneId;
+
+	private Integer slaveReadOnlyCount;
 
 	private String couponNo;
 
@@ -41,6 +46,10 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private String securityToken;
 
+	private List<Tag> tags;
+
+	private String globalSecurityGroupIds;
+
 	private String businessInfo;
 
 	private Integer shardCount;
@@ -48,6 +57,8 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 	private String autoRenewPeriod;
 
 	private Integer period;
+
+	private Boolean dryRun;
 
 	private String backupId;
 
@@ -63,7 +74,11 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private String autoRenew;
 
+	private Integer port;
+
 	private String zoneId;
+
+	private Integer replicaCount;
 
 	private String clientToken;
 
@@ -75,6 +90,8 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private String instanceType;
 
+	private String restoreTime;
+
 	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
@@ -83,11 +100,21 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private String ownerAccount;
 
+	private String recoverConfigMode;
+
 	private String globalInstanceId;
+
+	private String paramGroupId;
 
 	private String vpcId;
 
+	private Integer readOnlyCount;
+
 	private String chargeType;
+
+	private Integer slaveReplicaCount;
+
+	private String clusterBackupId;
 	public CreateTairInstanceRequest() {
 		super("R-kvstore", "2015-01-01", "CreateTairInstance", "redisa");
 		setMethod(MethodType.POST);
@@ -108,6 +135,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		}
 	}
 
+	public String getConnectionStringPrefix() {
+		return this.connectionStringPrefix;
+	}
+
+	public void setConnectionStringPrefix(String connectionStringPrefix) {
+		this.connectionStringPrefix = connectionStringPrefix;
+		if(connectionStringPrefix != null){
+			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+		}
+	}
+
 	public String getSecondaryZoneId() {
 		return this.secondaryZoneId;
 	}
@@ -116,6 +154,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.secondaryZoneId = secondaryZoneId;
 		if(secondaryZoneId != null){
 			putQueryParameter("SecondaryZoneId", secondaryZoneId);
+		}
+	}
+
+	public Integer getSlaveReadOnlyCount() {
+		return this.slaveReadOnlyCount;
+	}
+
+	public void setSlaveReadOnlyCount(Integer slaveReadOnlyCount) {
+		this.slaveReadOnlyCount = slaveReadOnlyCount;
+		if(slaveReadOnlyCount != null){
+			putQueryParameter("SlaveReadOnlyCount", slaveReadOnlyCount.toString());
 		}
 	}
 
@@ -185,6 +234,31 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getGlobalSecurityGroupIds() {
+		return this.globalSecurityGroupIds;
+	}
+
+	public void setGlobalSecurityGroupIds(String globalSecurityGroupIds) {
+		this.globalSecurityGroupIds = globalSecurityGroupIds;
+		if(globalSecurityGroupIds != null){
+			putQueryParameter("GlobalSecurityGroupIds", globalSecurityGroupIds);
+		}
+	}
+
 	public String getBusinessInfo() {
 		return this.businessInfo;
 	}
@@ -226,6 +300,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -306,6 +391,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		}
 	}
 
+	public Integer getPort() {
+		return this.port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -314,6 +410,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Integer getReplicaCount() {
+		return this.replicaCount;
+	}
+
+	public void setReplicaCount(Integer replicaCount) {
+		this.replicaCount = replicaCount;
+		if(replicaCount != null){
+			putQueryParameter("ReplicaCount", replicaCount.toString());
 		}
 	}
 
@@ -372,6 +479,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		}
 	}
 
+	public String getRestoreTime() {
+		return this.restoreTime;
+	}
+
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
+		}
+	}
+
 	public Boolean getAutoPay() {
 		return this.autoPay;
 	}
@@ -416,6 +534,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		}
 	}
 
+	public String getRecoverConfigMode() {
+		return this.recoverConfigMode;
+	}
+
+	public void setRecoverConfigMode(String recoverConfigMode) {
+		this.recoverConfigMode = recoverConfigMode;
+		if(recoverConfigMode != null){
+			putQueryParameter("RecoverConfigMode", recoverConfigMode);
+		}
+	}
+
 	public String getGlobalInstanceId() {
 		return this.globalInstanceId;
 	}
@@ -424,6 +553,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.globalInstanceId = globalInstanceId;
 		if(globalInstanceId != null){
 			putQueryParameter("GlobalInstanceId", globalInstanceId);
+		}
+	}
+
+	public String getParamGroupId() {
+		return this.paramGroupId;
+	}
+
+	public void setParamGroupId(String paramGroupId) {
+		this.paramGroupId = paramGroupId;
+		if(paramGroupId != null){
+			putQueryParameter("ParamGroupId", paramGroupId);
 		}
 	}
 
@@ -438,6 +578,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		}
 	}
 
+	public Integer getReadOnlyCount() {
+		return this.readOnlyCount;
+	}
+
+	public void setReadOnlyCount(Integer readOnlyCount) {
+		this.readOnlyCount = readOnlyCount;
+		if(readOnlyCount != null){
+			putQueryParameter("ReadOnlyCount", readOnlyCount.toString());
+		}
+	}
+
 	public String getChargeType() {
 		return this.chargeType;
 	}
@@ -446,6 +597,51 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public Integer getSlaveReplicaCount() {
+		return this.slaveReplicaCount;
+	}
+
+	public void setSlaveReplicaCount(Integer slaveReplicaCount) {
+		this.slaveReplicaCount = slaveReplicaCount;
+		if(slaveReplicaCount != null){
+			putQueryParameter("SlaveReplicaCount", slaveReplicaCount.toString());
+		}
+	}
+
+	public String getClusterBackupId() {
+		return this.clusterBackupId;
+	}
+
+	public void setClusterBackupId(String clusterBackupId) {
+		this.clusterBackupId = clusterBackupId;
+		if(clusterBackupId != null){
+			putQueryParameter("ClusterBackupId", clusterBackupId);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -46,9 +46,11 @@ public class GetMetadataAmountResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer maxVirtualHosts;
+
 		private Integer currentVirtualHosts;
 
-		private Integer maxVirtualHosts;
+		private Integer maxQueues;
 
 		private Integer currentExchanges;
 
@@ -56,7 +58,13 @@ public class GetMetadataAmountResponse extends AcsResponse {
 
 		private Integer currentQueues;
 
-		private Integer maxQueues;
+		public Integer getMaxVirtualHosts() {
+			return this.maxVirtualHosts;
+		}
+
+		public void setMaxVirtualHosts(Integer maxVirtualHosts) {
+			this.maxVirtualHosts = maxVirtualHosts;
+		}
 
 		public Integer getCurrentVirtualHosts() {
 			return this.currentVirtualHosts;
@@ -66,12 +74,12 @@ public class GetMetadataAmountResponse extends AcsResponse {
 			this.currentVirtualHosts = currentVirtualHosts;
 		}
 
-		public Integer getMaxVirtualHosts() {
-			return this.maxVirtualHosts;
+		public Integer getMaxQueues() {
+			return this.maxQueues;
 		}
 
-		public void setMaxVirtualHosts(Integer maxVirtualHosts) {
-			this.maxVirtualHosts = maxVirtualHosts;
+		public void setMaxQueues(Integer maxQueues) {
+			this.maxQueues = maxQueues;
 		}
 
 		public Integer getCurrentExchanges() {
@@ -96,14 +104,6 @@ public class GetMetadataAmountResponse extends AcsResponse {
 
 		public void setCurrentQueues(Integer currentQueues) {
 			this.currentQueues = currentQueues;
-		}
-
-		public Integer getMaxQueues() {
-			return this.maxQueues;
-		}
-
-		public void setMaxQueues(Integer maxQueues) {
-			this.maxQueues = maxQueues;
 		}
 	}
 

@@ -89,9 +89,17 @@ public class ListRulesResponse extends AcsResponse {
 
 		private String ruleStatus;
 
+		private String direction;
+
+		private Boolean serviceManagedEnabled;
+
+		private String serviceManagedMode;
+
 		private List<Action> ruleActions;
 
 		private List<Condition> ruleConditions;
+
+		private List<Tag> tags;
 
 		public String getListenerId() {
 			return this.listenerId;
@@ -141,6 +149,30 @@ public class ListRulesResponse extends AcsResponse {
 			this.ruleStatus = ruleStatus;
 		}
 
+		public String getDirection() {
+			return this.direction;
+		}
+
+		public void setDirection(String direction) {
+			this.direction = direction;
+		}
+
+		public Boolean getServiceManagedEnabled() {
+			return this.serviceManagedEnabled;
+		}
+
+		public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+			this.serviceManagedEnabled = serviceManagedEnabled;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
+		}
+
 		public List<Action> getRuleActions() {
 			return this.ruleActions;
 		}
@@ -157,6 +189,14 @@ public class ListRulesResponse extends AcsResponse {
 			this.ruleConditions = ruleConditions;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public static class Action {
 
 			private Integer order;
@@ -171,11 +211,15 @@ public class ListRulesResponse extends AcsResponse {
 
 			private RedirectConfig redirectConfig;
 
+			private RemoveHeaderConfig removeHeaderConfig;
+
 			private RewriteConfig rewriteConfig;
 
 			private TrafficMirrorConfig trafficMirrorConfig;
 
 			private TrafficLimitConfig trafficLimitConfig;
+
+			private CorsConfig corsConfig;
 
 			public Integer getOrder() {
 				return this.order;
@@ -225,6 +269,14 @@ public class ListRulesResponse extends AcsResponse {
 				this.redirectConfig = redirectConfig;
 			}
 
+			public RemoveHeaderConfig getRemoveHeaderConfig() {
+				return this.removeHeaderConfig;
+			}
+
+			public void setRemoveHeaderConfig(RemoveHeaderConfig removeHeaderConfig) {
+				this.removeHeaderConfig = removeHeaderConfig;
+			}
+
 			public RewriteConfig getRewriteConfig() {
 				return this.rewriteConfig;
 			}
@@ -247,6 +299,14 @@ public class ListRulesResponse extends AcsResponse {
 
 			public void setTrafficLimitConfig(TrafficLimitConfig trafficLimitConfig) {
 				this.trafficLimitConfig = trafficLimitConfig;
+			}
+
+			public CorsConfig getCorsConfig() {
+				return this.corsConfig;
+			}
+
+			public void setCorsConfig(CorsConfig corsConfig) {
+				this.corsConfig = corsConfig;
 			}
 
 			public static class FixedResponseConfig {
@@ -286,12 +346,22 @@ public class ListRulesResponse extends AcsResponse {
 
 				private List<ServerGroupTuple> serverGroupTuples;
 
+				private ServerGroupStickySession serverGroupStickySession;
+
 				public List<ServerGroupTuple> getServerGroupTuples() {
 					return this.serverGroupTuples;
 				}
 
 				public void setServerGroupTuples(List<ServerGroupTuple> serverGroupTuples) {
 					this.serverGroupTuples = serverGroupTuples;
+				}
+
+				public ServerGroupStickySession getServerGroupStickySession() {
+					return this.serverGroupStickySession;
+				}
+
+				public void setServerGroupStickySession(ServerGroupStickySession serverGroupStickySession) {
+					this.serverGroupStickySession = serverGroupStickySession;
 				}
 
 				public static class ServerGroupTuple {
@@ -316,15 +386,48 @@ public class ListRulesResponse extends AcsResponse {
 						this.weight = weight;
 					}
 				}
+
+				public static class ServerGroupStickySession {
+
+					private Boolean enabled;
+
+					private Integer timeout;
+
+					public Boolean getEnabled() {
+						return this.enabled;
+					}
+
+					public void setEnabled(Boolean enabled) {
+						this.enabled = enabled;
+					}
+
+					public Integer getTimeout() {
+						return this.timeout;
+					}
+
+					public void setTimeout(Integer timeout) {
+						this.timeout = timeout;
+					}
+				}
 			}
 
 			public static class InsertHeaderConfig {
+
+				private Boolean coverEnabled;
 
 				private String key;
 
 				private String value;
 
 				private String valueType;
+
+				public Boolean getCoverEnabled() {
+					return this.coverEnabled;
+				}
+
+				public void setCoverEnabled(Boolean coverEnabled) {
+					this.coverEnabled = coverEnabled;
+				}
 
 				public String getKey() {
 					return this.key;
@@ -414,6 +517,19 @@ public class ListRulesResponse extends AcsResponse {
 				}
 			}
 
+			public static class RemoveHeaderConfig {
+
+				private String key;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+			}
+
 			public static class RewriteConfig {
 
 				private String host;
@@ -449,7 +565,17 @@ public class ListRulesResponse extends AcsResponse {
 
 			public static class TrafficMirrorConfig {
 
+				private String targetType;
+
 				private MirrorGroupConfig mirrorGroupConfig;
+
+				public String getTargetType() {
+					return this.targetType;
+				}
+
+				public void setTargetType(String targetType) {
+					this.targetType = targetType;
+				}
 
 				public MirrorGroupConfig getMirrorGroupConfig() {
 					return this.mirrorGroupConfig;
@@ -500,12 +626,85 @@ public class ListRulesResponse extends AcsResponse {
 
 				private Integer qPS;
 
+				private Integer perIpQps;
+
 				public Integer getQPS() {
 					return this.qPS;
 				}
 
 				public void setQPS(Integer qPS) {
 					this.qPS = qPS;
+				}
+
+				public Integer getPerIpQps() {
+					return this.perIpQps;
+				}
+
+				public void setPerIpQps(Integer perIpQps) {
+					this.perIpQps = perIpQps;
+				}
+			}
+
+			public static class CorsConfig {
+
+				private String allowCredentials;
+
+				private Long maxAge;
+
+				private List<String> allowOrigin;
+
+				private List<String> allowMethods;
+
+				private List<String> allowHeaders;
+
+				private List<String> exposeHeaders;
+
+				public String getAllowCredentials() {
+					return this.allowCredentials;
+				}
+
+				public void setAllowCredentials(String allowCredentials) {
+					this.allowCredentials = allowCredentials;
+				}
+
+				public Long getMaxAge() {
+					return this.maxAge;
+				}
+
+				public void setMaxAge(Long maxAge) {
+					this.maxAge = maxAge;
+				}
+
+				public List<String> getAllowOrigin() {
+					return this.allowOrigin;
+				}
+
+				public void setAllowOrigin(List<String> allowOrigin) {
+					this.allowOrigin = allowOrigin;
+				}
+
+				public List<String> getAllowMethods() {
+					return this.allowMethods;
+				}
+
+				public void setAllowMethods(List<String> allowMethods) {
+					this.allowMethods = allowMethods;
+				}
+
+				public List<String> getAllowHeaders() {
+					return this.allowHeaders;
+				}
+
+				public void setAllowHeaders(List<String> allowHeaders) {
+					this.allowHeaders = allowHeaders;
+				}
+
+				public List<String> getExposeHeaders() {
+					return this.exposeHeaders;
+				}
+
+				public void setExposeHeaders(List<String> exposeHeaders) {
+					this.exposeHeaders = exposeHeaders;
 				}
 			}
 		}
@@ -527,6 +726,10 @@ public class ListRulesResponse extends AcsResponse {
 			private QueryStringConfig queryStringConfig;
 
 			private SourceIpConfig sourceIpConfig;
+
+			private ResponseStatusCodeConfig responseStatusCodeConfig;
+
+			private ResponseHeaderConfig responseHeaderConfig;
 
 			public String getType() {
 				return this.type;
@@ -590,6 +793,22 @@ public class ListRulesResponse extends AcsResponse {
 
 			public void setSourceIpConfig(SourceIpConfig sourceIpConfig) {
 				this.sourceIpConfig = sourceIpConfig;
+			}
+
+			public ResponseStatusCodeConfig getResponseStatusCodeConfig() {
+				return this.responseStatusCodeConfig;
+			}
+
+			public void setResponseStatusCodeConfig(ResponseStatusCodeConfig responseStatusCodeConfig) {
+				this.responseStatusCodeConfig = responseStatusCodeConfig;
+			}
+
+			public ResponseHeaderConfig getResponseHeaderConfig() {
+				return this.responseHeaderConfig;
+			}
+
+			public void setResponseHeaderConfig(ResponseHeaderConfig responseHeaderConfig) {
+				this.responseHeaderConfig = responseHeaderConfig;
 			}
 
 			public static class CookieConfig {
@@ -737,6 +956,65 @@ public class ListRulesResponse extends AcsResponse {
 				public void setValues9(List<String> values9) {
 					this.values9 = values9;
 				}
+			}
+
+			public static class ResponseStatusCodeConfig {
+
+				private List<String> values10;
+
+				public List<String> getValues10() {
+					return this.values10;
+				}
+
+				public void setValues10(List<String> values10) {
+					this.values10 = values10;
+				}
+			}
+
+			public static class ResponseHeaderConfig {
+
+				private String key;
+
+				private List<String> values11;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public List<String> getValues11() {
+					return this.values11;
+				}
+
+				public void setValues11(List<String> values11) {
+					this.values11 = values11;
+				}
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

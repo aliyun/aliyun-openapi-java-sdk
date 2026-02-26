@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackMenuResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<ListItem> list;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeBackMenuResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ListItem> getList() {
@@ -57,17 +57,9 @@ public class DescribeBackMenuResponse extends AcsResponse {
 
 	public static class ListItem {
 
-		private String menuName;
-
 		private Boolean support;
 
-		public String getMenuName() {
-			return this.menuName;
-		}
-
-		public void setMenuName(String menuName) {
-			this.menuName = menuName;
-		}
+		private String menuName;
 
 		public Boolean getSupport() {
 			return this.support;
@@ -75,6 +67,14 @@ public class DescribeBackMenuResponse extends AcsResponse {
 
 		public void setSupport(Boolean support) {
 			this.support = support;
+		}
+
+		public String getMenuName() {
+			return this.menuName;
+		}
+
+		public void setMenuName(String menuName) {
+			this.menuName = menuName;
 		}
 	}
 

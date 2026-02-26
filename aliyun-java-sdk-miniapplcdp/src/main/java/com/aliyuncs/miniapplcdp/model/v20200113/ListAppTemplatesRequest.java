@@ -27,6 +27,8 @@ public class ListAppTemplatesRequest extends RpcAcsRequest<ListAppTemplatesRespo
 	private String templateType;
 
 	private String appType;
+
+	private String source;
 	public ListAppTemplatesRequest() {
 		super("miniapplcdp", "2020-01-13", "ListAppTemplates");
 		setMethod(MethodType.POST);
@@ -51,6 +53,17 @@ public class ListAppTemplatesRequest extends RpcAcsRequest<ListAppTemplatesRespo
 		this.appType = appType;
 		if(appType != null){
 			putQueryParameter("AppType", appType);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

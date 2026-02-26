@@ -62,6 +62,7 @@ public class ListFilesResponseUnmarshaller {
 			file.setLastEditTime(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].LastEditTime"));
 			file.setContent(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].Content"));
 			file.setNodeId(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].NodeId"));
+			file.setAbsoluteFolderPath(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].AbsoluteFolderPath"));
 
 			files.add(file);
 		}

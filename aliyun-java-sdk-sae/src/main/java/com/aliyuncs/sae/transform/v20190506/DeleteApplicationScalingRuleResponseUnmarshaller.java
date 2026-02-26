@@ -24,6 +24,10 @@ public class DeleteApplicationScalingRuleResponseUnmarshaller {
 		
 		deleteApplicationScalingRuleResponse.setRequestId(_ctx.stringValue("DeleteApplicationScalingRuleResponse.RequestId"));
 		deleteApplicationScalingRuleResponse.setTraceId(_ctx.stringValue("DeleteApplicationScalingRuleResponse.TraceId"));
+		deleteApplicationScalingRuleResponse.setMessage(_ctx.stringValue("DeleteApplicationScalingRuleResponse.Message"));
+		deleteApplicationScalingRuleResponse.setErrorCode(_ctx.stringValue("DeleteApplicationScalingRuleResponse.ErrorCode"));
+		deleteApplicationScalingRuleResponse.setCode(_ctx.stringValue("DeleteApplicationScalingRuleResponse.Code"));
+		deleteApplicationScalingRuleResponse.setSuccess(_ctx.booleanValue("DeleteApplicationScalingRuleResponse.Success"));
 	 
 	 	return deleteApplicationScalingRuleResponse;
 	}

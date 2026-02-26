@@ -89,7 +89,7 @@ public class ListBatchOperateCardsTasksResponse extends AcsResponse {
 
 		private String iccidsOssFilePath;
 
-		private Boolean operateResultOssFilePath;
+		private String operateResultOssFilePath;
 
 		private String description;
 
@@ -147,11 +147,11 @@ public class ListBatchOperateCardsTasksResponse extends AcsResponse {
 			this.iccidsOssFilePath = iccidsOssFilePath;
 		}
 
-		public Boolean getOperateResultOssFilePath() {
+		public String getOperateResultOssFilePath() {
 			return this.operateResultOssFilePath;
 		}
 
-		public void setOperateResultOssFilePath(Boolean operateResultOssFilePath) {
+		public void setOperateResultOssFilePath(String operateResultOssFilePath) {
 			this.operateResultOssFilePath = operateResultOssFilePath;
 		}
 

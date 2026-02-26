@@ -80,6 +80,8 @@ public class GetCustomerInformationResponse extends AcsResponse {
 
 		private String website;
 
+		private String customerCategory;
+
 		public String getBiz() {
 			return this.biz;
 		}
@@ -94,6 +96,14 @@ public class GetCustomerInformationResponse extends AcsResponse {
 
 		public void setWebsite(String website) {
 			this.website = website;
+		}
+
+		public String getCustomerCategory() {
+			return this.customerCategory;
+		}
+
+		public void setCustomerCategory(String customerCategory) {
+			this.customerCategory = customerCategory;
 		}
 	}
 

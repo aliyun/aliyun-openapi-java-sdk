@@ -25,16 +25,29 @@ import com.aliyuncs.nas.Endpoint;
 public class DescribeLogAnalysisRequest extends RpcAcsRequest<DescribeLogAnalysisResponse> {
 	   
 
+	private String fileSystemType;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
 	public DescribeLogAnalysisRequest() {
-		super("NAS", "2017-06-26", "DescribeLogAnalysis", "NAS");
+		super("NAS", "2017-06-26", "DescribeLogAnalysis", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getFileSystemType() {
+		return this.fileSystemType;
+	}
+
+	public void setFileSystemType(String fileSystemType) {
+		this.fileSystemType = fileSystemType;
+		if(fileSystemType != null){
+			putQueryParameter("FileSystemType", fileSystemType);
+		}
 	}
 
 	public Integer getPageNumber() {

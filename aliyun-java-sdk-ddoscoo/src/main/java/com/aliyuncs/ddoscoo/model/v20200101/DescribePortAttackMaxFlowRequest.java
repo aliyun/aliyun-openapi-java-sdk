@@ -34,7 +34,7 @@ public class DescribePortAttackMaxFlowRequest extends RpcAcsRequest<DescribePort
 
 	private List<String> instanceIdss;
 	public DescribePortAttackMaxFlowRequest() {
-		super("ddoscoo", "2020-01-01", "DescribePortAttackMaxFlow");
+		super("ddoscoo", "2020-01-01", "DescribePortAttackMaxFlow", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

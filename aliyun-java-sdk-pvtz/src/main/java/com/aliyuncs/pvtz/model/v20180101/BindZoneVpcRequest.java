@@ -26,6 +26,8 @@ import com.aliyuncs.pvtz.Endpoint;
 public class BindZoneVpcRequest extends RpcAcsRequest<BindZoneVpcResponse> {
 	   
 
+	private String clientToken;
+
 	private String userClientIp;
 
 	private String zoneId;
@@ -40,6 +42,17 @@ public class BindZoneVpcRequest extends RpcAcsRequest<BindZoneVpcResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getUserClientIp() {
@@ -83,6 +96,7 @@ public class BindZoneVpcRequest extends RpcAcsRequest<BindZoneVpcResponse> {
 		this.vpcss = vpcss;	
 		if (vpcss != null) {
 			for (int depth1 = 0; depth1 < vpcss.size(); depth1++) {
+				putQueryParameter("Vpcs." + (depth1 + 1) + ".VpcType" , vpcss.get(depth1).getVpcType());
 				putQueryParameter("Vpcs." + (depth1 + 1) + ".RegionId" , vpcss.get(depth1).getRegionId());
 				putQueryParameter("Vpcs." + (depth1 + 1) + ".VpcId" , vpcss.get(depth1).getVpcId());
 			}
@@ -91,9 +105,19 @@ public class BindZoneVpcRequest extends RpcAcsRequest<BindZoneVpcResponse> {
 
 	public static class Vpcs {
 
+		private String vpcType;
+
 		private String regionId;
 
 		private String vpcId;
+
+		public String getVpcType() {
+			return this.vpcType;
+		}
+
+		public void setVpcType(String vpcType) {
+			this.vpcType = vpcType;
+		}
 
 		public String getRegionId() {
 			return this.regionId;

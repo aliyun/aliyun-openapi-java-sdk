@@ -27,13 +27,13 @@ public class DescribeDedicatedHostGroupsRequest extends RpcAcsRequest<DescribeDe
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
 	private String imageCategory;
 
 	private String dedicatedHostGroupId;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
 	public DescribeDedicatedHostGroupsRequest() {
 		super("Rds", "2014-08-15", "DescribeDedicatedHostGroups", "rds");
 		setMethod(MethodType.POST);
@@ -51,28 +51,6 @@ public class DescribeDedicatedHostGroupsRequest extends RpcAcsRequest<DescribeDe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -95,6 +73,28 @@ public class DescribeDedicatedHostGroupsRequest extends RpcAcsRequest<DescribeDe
 		this.dedicatedHostGroupId = dedicatedHostGroupId;
 		if(dedicatedHostGroupId != null){
 			putQueryParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

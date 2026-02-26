@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListConfigRulesForTargetResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class ListConfigRulesForTargetResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DataItem> getData() {
@@ -57,19 +57,69 @@ public class ListConfigRulesForTargetResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private String aggregatorId;
+
+		private String configRuleId;
+
+		private String policyType;
+
+		private Boolean remediation;
+
+		private String tagKey;
+
+		private String tagValue;
+
 		private String targetId;
 
 		private String targetType;
 
-		private String configRuleId;
+		public String getAggregatorId() {
+			return this.aggregatorId;
+		}
 
-		private String aggregatorId;
+		public void setAggregatorId(String aggregatorId) {
+			this.aggregatorId = aggregatorId;
+		}
 
-		private String tagKey;
+		public String getConfigRuleId() {
+			return this.configRuleId;
+		}
 
-		private Boolean remediation;
+		public void setConfigRuleId(String configRuleId) {
+			this.configRuleId = configRuleId;
+		}
 
-		private String policyType;
+		public String getPolicyType() {
+			return this.policyType;
+		}
+
+		public void setPolicyType(String policyType) {
+			this.policyType = policyType;
+		}
+
+		public Boolean getRemediation() {
+			return this.remediation;
+		}
+
+		public void setRemediation(Boolean remediation) {
+			this.remediation = remediation;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
 
 		public String getTargetId() {
 			return this.targetId;
@@ -85,46 +135,6 @@ public class ListConfigRulesForTargetResponse extends AcsResponse {
 
 		public void setTargetType(String targetType) {
 			this.targetType = targetType;
-		}
-
-		public String getConfigRuleId() {
-			return this.configRuleId;
-		}
-
-		public void setConfigRuleId(String configRuleId) {
-			this.configRuleId = configRuleId;
-		}
-
-		public String getAggregatorId() {
-			return this.aggregatorId;
-		}
-
-		public void setAggregatorId(String aggregatorId) {
-			this.aggregatorId = aggregatorId;
-		}
-
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
-
-		public Boolean getRemediation() {
-			return this.remediation;
-		}
-
-		public void setRemediation(Boolean remediation) {
-			this.remediation = remediation;
-		}
-
-		public String getPolicyType() {
-			return this.policyType;
-		}
-
-		public void setPolicyType(String policyType) {
-			this.policyType = policyType;
 		}
 	}
 

@@ -38,6 +38,10 @@ public class DescribeApplicationScalingRulesResponseUnmarshaller {
 		
 		describeApplicationScalingRulesResponse.setRequestId(_ctx.stringValue("DescribeApplicationScalingRulesResponse.RequestId"));
 		describeApplicationScalingRulesResponse.setTraceId(_ctx.stringValue("DescribeApplicationScalingRulesResponse.TraceId"));
+		describeApplicationScalingRulesResponse.setMessage(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Message"));
+		describeApplicationScalingRulesResponse.setErrorCode(_ctx.stringValue("DescribeApplicationScalingRulesResponse.ErrorCode"));
+		describeApplicationScalingRulesResponse.setCode(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Code"));
+		describeApplicationScalingRulesResponse.setSuccess(_ctx.booleanValue("DescribeApplicationScalingRulesResponse.Success"));
 
 		Data data = new Data();
 		data.setCurrentPage(_ctx.integerValue("DescribeApplicationScalingRulesResponse.Data.CurrentPage"));
@@ -54,6 +58,9 @@ public class DescribeApplicationScalingRulesResponseUnmarshaller {
 			applicationScalingRule.setScaleRuleEnabled(_ctx.booleanValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].ScaleRuleEnabled"));
 			applicationScalingRule.setScaleRuleType(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].ScaleRuleType"));
 			applicationScalingRule.setScaleRuleName(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].ScaleRuleName"));
+			applicationScalingRule.setMinReadyInstances(_ctx.integerValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].MinReadyInstances"));
+			applicationScalingRule.setMinReadyInstanceRatio(_ctx.integerValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].MinReadyInstanceRatio"));
+			applicationScalingRule.setEnableIdle(_ctx.booleanValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].EnableIdle"));
 
 			Timer timer = new Timer();
 			timer.setEndDate(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Timer.EndDate"));
@@ -125,6 +132,10 @@ public class DescribeApplicationScalingRulesResponseUnmarshaller {
 				Metric1 metric1 = new Metric1();
 				metric1.setMetricTargetAverageUtilization(_ctx.integerValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Metric.Metrics["+ j +"].MetricTargetAverageUtilization"));
 				metric1.setMetricType(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Metric.Metrics["+ j +"].MetricType"));
+				metric1.setSlbProject(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Metric.Metrics["+ j +"].SlbProject"));
+				metric1.setSlbLogstore(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Metric.Metrics["+ j +"].SlbLogstore"));
+				metric1.setVport(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Metric.Metrics["+ j +"].Vport"));
+				metric1.setSlbId(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Data.ApplicationScalingRules["+ i +"].Metric.Metrics["+ j +"].SlbId"));
 
 				metrics.add(metric1);
 			}

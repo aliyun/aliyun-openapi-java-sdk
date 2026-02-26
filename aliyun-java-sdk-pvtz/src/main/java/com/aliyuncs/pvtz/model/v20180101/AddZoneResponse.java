@@ -24,13 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddZoneResponse extends AcsResponse {
 
+	private String zoneName;
+
+	private String zoneId;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String zoneId;
+	public String getZoneName() {
+		return this.zoneName;
+	}
 
-	private String zoneName;
+	public void setZoneName(String zoneName) {
+		this.zoneName = zoneName;
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,22 +62,6 @@ public class AddZoneResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-	}
-
-	public String getZoneName() {
-		return this.zoneName;
-	}
-
-	public void setZoneName(String zoneName) {
-		this.zoneName = zoneName;
 	}
 
 	@Override

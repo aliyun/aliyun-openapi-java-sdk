@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddDomainBackupResponse extends AcsResponse {
 
+	private String periodType;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String periodType;
+	public String getPeriodType() {
+		return this.periodType;
+	}
+
+	public void setPeriodType(String periodType) {
+		this.periodType = periodType;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class AddDomainBackupResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getPeriodType() {
-		return this.periodType;
-	}
-
-	public void setPeriodType(String periodType) {
-		this.periodType = periodType;
 	}
 
 	@Override

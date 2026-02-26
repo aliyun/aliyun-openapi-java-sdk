@@ -36,7 +36,11 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 
 	private Long pageNumber;
 
+	private String resourceGroupId;
+
 	private String provider;
+
+	private String nextToken;
 
 	private String contentEncoding;
 
@@ -53,6 +57,8 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 	private Long ownerId;
 
 	private String name;
+
+	private Integer maxResults;
 	public DescribeCommandsRequest() {
 		super("Ecs", "2014-05-26", "DescribeCommands", "ecs");
 		setMethod(MethodType.POST);
@@ -117,6 +123,17 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getProvider() {
 		return this.provider;
 	}
@@ -125,6 +142,17 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		this.provider = provider;
 		if(provider != null){
 			putQueryParameter("Provider", provider);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -158,8 +186,8 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -219,19 +247,22 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
-	public static class Tag {
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
 
-		private String key;
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public static class Tag {
 
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -239,6 +270,14 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

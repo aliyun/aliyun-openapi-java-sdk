@@ -45,7 +45,7 @@ public class UpdateTransitRouterVbrAttachmentAttributeRequest extends RpcAcsRequ
 
 	private String transitRouterAttachmentDescription;
 	public UpdateTransitRouterVbrAttachmentAttributeRequest() {
-		super("Cbn", "2017-09-12", "UpdateTransitRouterVbrAttachmentAttribute");
+		super("Cbn", "2017-09-12", "UpdateTransitRouterVbrAttachmentAttribute", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

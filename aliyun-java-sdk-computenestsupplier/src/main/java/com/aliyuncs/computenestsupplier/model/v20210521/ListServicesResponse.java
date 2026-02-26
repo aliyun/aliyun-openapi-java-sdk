@@ -29,7 +29,7 @@ public class ListServicesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String totalCount;
+	private Integer totalCount;
 
 	private Integer maxResults;
 
@@ -51,11 +51,11 @@ public class ListServicesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTotalCount() {
+	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
-	public void setTotalCount(String totalCount) {
+	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
 	}
 
@@ -103,6 +103,8 @@ public class ListServicesResponse extends AcsResponse {
 
 		private String shareType;
 
+		private String approvalType;
+
 		private String versionName;
 
 		private String artifactId;
@@ -117,9 +119,37 @@ public class ListServicesResponse extends AcsResponse {
 
 		private String tenantType;
 
+		private String resourceGroupId;
+
+		private String sourceServiceId;
+
+		private String sourceServiceVersion;
+
+		private String sourceSupplierName;
+
+		private String resellServiceId;
+
+		private String latestResellSourceServiceVersion;
+
+		private String resellApplyStatus;
+
+		private String virtualInternetService;
+
+		private String categories;
+
+		private String serviceDiscoverable;
+
+		private Boolean hasDraft;
+
+		private Boolean hasBeta;
+
+		private String buildInfo;
+
 		private List<ServiceInfo> serviceInfos;
 
 		private List<Tag> tags;
+
+		private Commodity commodity;
 
 		public String getStatus() {
 			return this.status;
@@ -225,6 +255,14 @@ public class ListServicesResponse extends AcsResponse {
 			this.shareType = shareType;
 		}
 
+		public String getApprovalType() {
+			return this.approvalType;
+		}
+
+		public void setApprovalType(String approvalType) {
+			this.approvalType = approvalType;
+		}
+
 		public String getVersionName() {
 			return this.versionName;
 		}
@@ -281,6 +319,110 @@ public class ListServicesResponse extends AcsResponse {
 			this.tenantType = tenantType;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getSourceServiceId() {
+			return this.sourceServiceId;
+		}
+
+		public void setSourceServiceId(String sourceServiceId) {
+			this.sourceServiceId = sourceServiceId;
+		}
+
+		public String getSourceServiceVersion() {
+			return this.sourceServiceVersion;
+		}
+
+		public void setSourceServiceVersion(String sourceServiceVersion) {
+			this.sourceServiceVersion = sourceServiceVersion;
+		}
+
+		public String getSourceSupplierName() {
+			return this.sourceSupplierName;
+		}
+
+		public void setSourceSupplierName(String sourceSupplierName) {
+			this.sourceSupplierName = sourceSupplierName;
+		}
+
+		public String getResellServiceId() {
+			return this.resellServiceId;
+		}
+
+		public void setResellServiceId(String resellServiceId) {
+			this.resellServiceId = resellServiceId;
+		}
+
+		public String getLatestResellSourceServiceVersion() {
+			return this.latestResellSourceServiceVersion;
+		}
+
+		public void setLatestResellSourceServiceVersion(String latestResellSourceServiceVersion) {
+			this.latestResellSourceServiceVersion = latestResellSourceServiceVersion;
+		}
+
+		public String getResellApplyStatus() {
+			return this.resellApplyStatus;
+		}
+
+		public void setResellApplyStatus(String resellApplyStatus) {
+			this.resellApplyStatus = resellApplyStatus;
+		}
+
+		public String getVirtualInternetService() {
+			return this.virtualInternetService;
+		}
+
+		public void setVirtualInternetService(String virtualInternetService) {
+			this.virtualInternetService = virtualInternetService;
+		}
+
+		public String getCategories() {
+			return this.categories;
+		}
+
+		public void setCategories(String categories) {
+			this.categories = categories;
+		}
+
+		public String getServiceDiscoverable() {
+			return this.serviceDiscoverable;
+		}
+
+		public void setServiceDiscoverable(String serviceDiscoverable) {
+			this.serviceDiscoverable = serviceDiscoverable;
+		}
+
+		public Boolean getHasDraft() {
+			return this.hasDraft;
+		}
+
+		public void setHasDraft(Boolean hasDraft) {
+			this.hasDraft = hasDraft;
+		}
+
+		public Boolean getHasBeta() {
+			return this.hasBeta;
+		}
+
+		public void setHasBeta(Boolean hasBeta) {
+			this.hasBeta = hasBeta;
+		}
+
+		public String getBuildInfo() {
+			return this.buildInfo;
+		}
+
+		public void setBuildInfo(String buildInfo) {
+			this.buildInfo = buildInfo;
+		}
+
 		public List<ServiceInfo> getServiceInfos() {
 			return this.serviceInfos;
 		}
@@ -295,6 +437,14 @@ public class ListServicesResponse extends AcsResponse {
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public Commodity getCommodity() {
+			return this.commodity;
+		}
+
+		public void setCommodity(Commodity commodity) {
+			this.commodity = commodity;
 		}
 
 		public static class ServiceInfo {
@@ -360,6 +510,39 @@ public class ListServicesResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class Commodity {
+
+			private String commodityCode;
+
+			private String type;
+
+			private String saasBoostMetadata;
+
+			public String getCommodityCode() {
+				return this.commodityCode;
+			}
+
+			public void setCommodityCode(String commodityCode) {
+				this.commodityCode = commodityCode;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getSaasBoostMetadata() {
+				return this.saasBoostMetadata;
+			}
+
+			public void setSaasBoostMetadata(String saasBoostMetadata) {
+				this.saasBoostMetadata = saasBoostMetadata;
 			}
 		}
 	}

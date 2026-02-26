@@ -33,13 +33,15 @@ public class AllocateAnycastEipAddressRequest extends RpcAcsRequest<AllocateAnyc
 
 	private String description;
 
+	private String resourceGroupId;
+
 	private String internetChargeType;
 
 	private String name;
 
 	private String instanceChargeType;
 	public AllocateAnycastEipAddressRequest() {
-		super("Eipanycast", "2020-03-09", "AllocateAnycastEipAddress");
+		super("Eipanycast", "2020-03-09", "AllocateAnycastEipAddress", "eipanycast");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -88,6 +90,17 @@ public class AllocateAnycastEipAddressRequest extends RpcAcsRequest<AllocateAnyc
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -31,7 +31,7 @@ public class CreateFirstRankRequest extends RoaAcsRequest<CreateFirstRankRespons
 
 	private String appGroupIdentity;
 	public CreateFirstRankRequest() {
-		super("OpenSearch", "2017-12-25", "CreateFirstRank", "opensearch");
+		super("OpenSearch", "2017-12-25", "CreateFirstRank");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/first-ranks");
 		setMethod(MethodType.POST);
 		try {

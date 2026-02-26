@@ -23,9 +23,9 @@ public class UpdateHanaBackupSettingResponseUnmarshaller {
 	public static UpdateHanaBackupSettingResponse unmarshall(UpdateHanaBackupSettingResponse updateHanaBackupSettingResponse, UnmarshallerContext _ctx) {
 		
 		updateHanaBackupSettingResponse.setRequestId(_ctx.stringValue("UpdateHanaBackupSettingResponse.RequestId"));
-		updateHanaBackupSettingResponse.setSuccess(_ctx.booleanValue("UpdateHanaBackupSettingResponse.Success"));
 		updateHanaBackupSettingResponse.setCode(_ctx.stringValue("UpdateHanaBackupSettingResponse.Code"));
 		updateHanaBackupSettingResponse.setMessage(_ctx.stringValue("UpdateHanaBackupSettingResponse.Message"));
+		updateHanaBackupSettingResponse.setSuccess(_ctx.booleanValue("UpdateHanaBackupSettingResponse.Success"));
 	 
 	 	return updateHanaBackupSettingResponse;
 	}

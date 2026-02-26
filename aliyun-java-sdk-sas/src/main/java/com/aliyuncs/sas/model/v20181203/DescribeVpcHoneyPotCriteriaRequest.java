@@ -24,6 +24,8 @@ import com.aliyuncs.sas.Endpoint;
  */
 public class DescribeVpcHoneyPotCriteriaRequest extends RpcAcsRequest<DescribeVpcHoneyPotCriteriaResponse> {
 	   
+
+	private String lang;
 	public DescribeVpcHoneyPotCriteriaRequest() {
 		super("Sas", "2018-12-03", "DescribeVpcHoneyPotCriteria");
 		setMethod(MethodType.POST);
@@ -31,6 +33,17 @@ public class DescribeVpcHoneyPotCriteriaRequest extends RpcAcsRequest<DescribeVp
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	@Override

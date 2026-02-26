@@ -26,11 +26,11 @@ public class UpdateABTestGroupResponseUnmarshaller {
 		updateABTestGroupResponse.setRequestId(_ctx.stringValue("UpdateABTestGroupResponse.requestId"));
 
 		Result result = new Result();
-		result.setId(_ctx.stringValue("UpdateABTestGroupResponse.result.id"));
-		result.setName(_ctx.stringValue("UpdateABTestGroupResponse.result.name"));
-		result.setStatus(_ctx.integerValue("UpdateABTestGroupResponse.result.status"));
 		result.setCreated(_ctx.integerValue("UpdateABTestGroupResponse.result.created"));
+		result.setStatus(_ctx.integerValue("UpdateABTestGroupResponse.result.status"));
 		result.setUpdated(_ctx.integerValue("UpdateABTestGroupResponse.result.updated"));
+		result.setName(_ctx.stringValue("UpdateABTestGroupResponse.result.name"));
+		result.setId(_ctx.stringValue("UpdateABTestGroupResponse.result.id"));
 		updateABTestGroupResponse.setResult(result);
 	 
 	 	return updateABTestGroupResponse;

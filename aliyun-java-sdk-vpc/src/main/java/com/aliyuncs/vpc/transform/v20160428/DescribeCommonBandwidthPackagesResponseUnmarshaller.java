@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vpc.model.v20160428.DescribeCommonBandwidthPackagesResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackage;
 import com.aliyuncs.vpc.model.v20160428.DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackage.PublicIpAddresse;
+import com.aliyuncs.vpc.model.v20160428.DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackage.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,6 +57,8 @@ public class DescribeCommonBandwidthPackagesResponseUnmarshaller {
 			commonBandwidthPackage.setName(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Name"));
 			commonBandwidthPackage.setISP(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].ISP"));
 			commonBandwidthPackage.setHasReservationData(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].HasReservationData"));
+			commonBandwidthPackage.setBizType(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].BizType"));
+			commonBandwidthPackage.setZone(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Zone"));
 
 			List<String> securityProtectionTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].SecurityProtectionTypes.Length"); j++) {
@@ -73,6 +76,16 @@ public class DescribeCommonBandwidthPackagesResponseUnmarshaller {
 				publicIpAddresses.add(publicIpAddresse);
 			}
 			commonBandwidthPackage.setPublicIpAddresses(publicIpAddresses);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			commonBandwidthPackage.setTags(tags);
 
 			commonBandwidthPackages.add(commonBandwidthPackage);
 		}

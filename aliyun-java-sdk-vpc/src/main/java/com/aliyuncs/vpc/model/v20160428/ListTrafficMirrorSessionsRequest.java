@@ -32,6 +32,8 @@ public class ListTrafficMirrorSessionsRequest extends RpcAcsRequest<ListTrafficM
 
 	private Boolean enabled;
 
+	private String resourceGroupId;
+
 	private String trafficMirrorSessionName;
 
 	private String nextToken;
@@ -49,6 +51,8 @@ public class ListTrafficMirrorSessionsRequest extends RpcAcsRequest<ListTrafficM
 	private String trafficMirrorTargetId;
 
 	private String trafficMirrorFilterId;
+
+	private List<Tags> tagss;
 
 	private Integer maxResults;
 
@@ -92,6 +96,17 @@ public class ListTrafficMirrorSessionsRequest extends RpcAcsRequest<ListTrafficM
 		this.enabled = enabled;
 		if(enabled != null){
 			putQueryParameter("Enabled", enabled.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -196,6 +211,20 @@ public class ListTrafficMirrorSessionsRequest extends RpcAcsRequest<ListTrafficM
 		}
 	}
 
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public Integer getMaxResults() {
 		return this.maxResults;
 	}
@@ -215,6 +244,29 @@ public class ListTrafficMirrorSessionsRequest extends RpcAcsRequest<ListTrafficM
 		this.virtualNetworkId = virtualNetworkId;
 		if(virtualNetworkId != null){
 			putQueryParameter("VirtualNetworkId", virtualNetworkId.toString());
+		}
+	}
+
+	public static class Tags {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

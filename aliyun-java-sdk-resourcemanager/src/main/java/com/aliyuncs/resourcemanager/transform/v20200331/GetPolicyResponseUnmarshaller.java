@@ -26,14 +26,14 @@ public class GetPolicyResponseUnmarshaller {
 		getPolicyResponse.setRequestId(_ctx.stringValue("GetPolicyResponse.RequestId"));
 
 		Policy policy = new Policy();
+		policy.setAttachmentCount(_ctx.integerValue("GetPolicyResponse.Policy.AttachmentCount"));
+		policy.setCreateDate(_ctx.stringValue("GetPolicyResponse.Policy.CreateDate"));
 		policy.setDefaultVersion(_ctx.stringValue("GetPolicyResponse.Policy.DefaultVersion"));
-		policy.setUpdateDate(_ctx.stringValue("GetPolicyResponse.Policy.UpdateDate"));
 		policy.setDescription(_ctx.stringValue("GetPolicyResponse.Policy.Description"));
 		policy.setPolicyDocument(_ctx.stringValue("GetPolicyResponse.Policy.PolicyDocument"));
-		policy.setAttachmentCount(_ctx.integerValue("GetPolicyResponse.Policy.AttachmentCount"));
 		policy.setPolicyName(_ctx.stringValue("GetPolicyResponse.Policy.PolicyName"));
-		policy.setCreateDate(_ctx.stringValue("GetPolicyResponse.Policy.CreateDate"));
 		policy.setPolicyType(_ctx.stringValue("GetPolicyResponse.Policy.PolicyType"));
+		policy.setUpdateDate(_ctx.stringValue("GetPolicyResponse.Policy.UpdateDate"));
 		getPolicyResponse.setPolicy(policy);
 	 
 	 	return getPolicyResponse;

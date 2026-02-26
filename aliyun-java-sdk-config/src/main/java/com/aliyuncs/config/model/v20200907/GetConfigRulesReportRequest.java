@@ -27,7 +27,7 @@ public class GetConfigRulesReportRequest extends RpcAcsRequest<GetConfigRulesRep
 
 	private String reportId;
 	public GetConfigRulesReportRequest() {
-		super("Config", "2020-09-07", "GetConfigRulesReport");
+		super("Config", "2020-09-07", "GetConfigRulesReport", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

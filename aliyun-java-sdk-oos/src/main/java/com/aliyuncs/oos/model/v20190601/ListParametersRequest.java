@@ -37,6 +37,8 @@ public class ListParametersRequest extends RpcAcsRequest<ListParametersResponse>
 
 	private String sortOrder;
 
+	private String shareType;
+
 	private String tags;
 
 	private String name;
@@ -116,6 +118,17 @@ public class ListParametersRequest extends RpcAcsRequest<ListParametersResponse>
 		this.sortOrder = sortOrder;
 		if(sortOrder != null){
 			putQueryParameter("SortOrder", sortOrder);
+		}
+	}
+
+	public String getShareType() {
+		return this.shareType;
+	}
+
+	public void setShareType(String shareType) {
+		this.shareType = shareType;
+		if(shareType != null){
+			putQueryParameter("ShareType", shareType);
 		}
 	}
 

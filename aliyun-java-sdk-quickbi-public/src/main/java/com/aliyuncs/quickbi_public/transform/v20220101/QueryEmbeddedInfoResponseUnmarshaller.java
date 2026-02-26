@@ -33,8 +33,8 @@ public class QueryEmbeddedInfoResponseUnmarshaller {
 
 		Detail detail = new Detail();
 		detail.setDashboardOfflineQuery(_ctx.integerValue("QueryEmbeddedInfoResponse.Result.Detail.DashboardOfflineQuery"));
-		detail.setReport(_ctx.integerValue("QueryEmbeddedInfoResponse.Result.Detail.Report"));
 		detail.setPage(_ctx.integerValue("QueryEmbeddedInfoResponse.Result.Detail.Page"));
+		detail.setReport(_ctx.integerValue("QueryEmbeddedInfoResponse.Result.Detail.Report"));
 		result.setDetail(detail);
 		queryEmbeddedInfoResponse.setResult(result);
 	 

@@ -26,18 +26,18 @@ public class ListInterventionDictionariesResponseUnmarshaller {
 
 	public static ListInterventionDictionariesResponse unmarshall(ListInterventionDictionariesResponse listInterventionDictionariesResponse, UnmarshallerContext _ctx) {
 		
-		listInterventionDictionariesResponse.setRequestId(_ctx.stringValue("ListInterventionDictionariesResponse.requestId"));
 		listInterventionDictionariesResponse.setTotalCount(_ctx.integerValue("ListInterventionDictionariesResponse.totalCount"));
+		listInterventionDictionariesResponse.setRequestId(_ctx.stringValue("ListInterventionDictionariesResponse.requestId"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInterventionDictionariesResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setId(_ctx.integerValue("ListInterventionDictionariesResponse.result["+ i +"].id"));
-			resultItem.setName(_ctx.stringValue("ListInterventionDictionariesResponse.result["+ i +"].name"));
+			resultItem.setCreated(_ctx.integerValue("ListInterventionDictionariesResponse.result["+ i +"].created"));
 			resultItem.setType(_ctx.stringValue("ListInterventionDictionariesResponse.result["+ i +"].type"));
 			resultItem.setAnalyzer(_ctx.stringValue("ListInterventionDictionariesResponse.result["+ i +"].analyzer"));
-			resultItem.setCreated(_ctx.integerValue("ListInterventionDictionariesResponse.result["+ i +"].created"));
+			resultItem.setName(_ctx.stringValue("ListInterventionDictionariesResponse.result["+ i +"].name"));
 			resultItem.setUpdated(_ctx.integerValue("ListInterventionDictionariesResponse.result["+ i +"].updated"));
+			resultItem.setId(_ctx.integerValue("ListInterventionDictionariesResponse.result["+ i +"].id"));
 
 			result.add(resultItem);
 		}

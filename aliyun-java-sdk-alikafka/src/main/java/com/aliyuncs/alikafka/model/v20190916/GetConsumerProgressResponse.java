@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetConsumerProgressResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private ConsumerProgress consumerProgress;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GetConsumerProgressResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public ConsumerProgress getConsumerProgress() {
 		return this.consumerProgress;
 	}
@@ -77,19 +77,13 @@ public class GetConsumerProgressResponse extends AcsResponse {
 
 	public static class ConsumerProgress {
 
-		private Long totalDiff;
-
 		private Long lastTimestamp;
+
+		private Long totalDiff;
 
 		private List<TopicListItem> topicList;
 
-		public Long getTotalDiff() {
-			return this.totalDiff;
-		}
-
-		public void setTotalDiff(Long totalDiff) {
-			this.totalDiff = totalDiff;
-		}
+		private List<RebalanceInfoListItem> rebalanceInfoList;
 
 		public Long getLastTimestamp() {
 			return this.lastTimestamp;
@@ -97,6 +91,14 @@ public class GetConsumerProgressResponse extends AcsResponse {
 
 		public void setLastTimestamp(Long lastTimestamp) {
 			this.lastTimestamp = lastTimestamp;
+		}
+
+		public Long getTotalDiff() {
+			return this.totalDiff;
+		}
+
+		public void setTotalDiff(Long totalDiff) {
+			this.totalDiff = totalDiff;
 		}
 
 		public List<TopicListItem> getTopicList() {
@@ -107,23 +109,23 @@ public class GetConsumerProgressResponse extends AcsResponse {
 			this.topicList = topicList;
 		}
 
-		public static class TopicListItem {
+		public List<RebalanceInfoListItem> getRebalanceInfoList() {
+			return this.rebalanceInfoList;
+		}
 
-			private String topic;
+		public void setRebalanceInfoList(List<RebalanceInfoListItem> rebalanceInfoList) {
+			this.rebalanceInfoList = rebalanceInfoList;
+		}
+
+		public static class TopicListItem {
 
 			private Long totalDiff;
 
 			private Long lastTimestamp;
 
+			private String topic;
+
 			private List<OffsetListItem> offsetList;
-
-			public String getTopic() {
-				return this.topic;
-			}
-
-			public void setTopic(String topic) {
-				this.topic = topic;
-			}
 
 			public Long getTotalDiff() {
 				return this.totalDiff;
@@ -141,6 +143,14 @@ public class GetConsumerProgressResponse extends AcsResponse {
 				this.lastTimestamp = lastTimestamp;
 			}
 
+			public String getTopic() {
+				return this.topic;
+			}
+
+			public void setTopic(String topic) {
+				this.topic = topic;
+			}
+
 			public List<OffsetListItem> getOffsetList() {
 				return this.offsetList;
 			}
@@ -151,13 +161,27 @@ public class GetConsumerProgressResponse extends AcsResponse {
 
 			public static class OffsetListItem {
 
+				private Integer partition;
+
 				private Long brokerOffset;
 
 				private Long consumerOffset;
 
 				private Long lastTimestamp;
 
-				private Integer partition;
+				private String clientIp;
+
+				private String clientId;
+
+				private String memberId;
+
+				public Integer getPartition() {
+					return this.partition;
+				}
+
+				public void setPartition(Integer partition) {
+					this.partition = partition;
+				}
 
 				public Long getBrokerOffset() {
 					return this.brokerOffset;
@@ -183,13 +207,92 @@ public class GetConsumerProgressResponse extends AcsResponse {
 					this.lastTimestamp = lastTimestamp;
 				}
 
-				public Integer getPartition() {
-					return this.partition;
+				public String getClientIp() {
+					return this.clientIp;
 				}
 
-				public void setPartition(Integer partition) {
-					this.partition = partition;
+				public void setClientIp(String clientIp) {
+					this.clientIp = clientIp;
 				}
+
+				public String getClientId() {
+					return this.clientId;
+				}
+
+				public void setClientId(String clientId) {
+					this.clientId = clientId;
+				}
+
+				public String getMemberId() {
+					return this.memberId;
+				}
+
+				public void setMemberId(String memberId) {
+					this.memberId = memberId;
+				}
+			}
+		}
+
+		public static class RebalanceInfoListItem {
+
+			private Long generation;
+
+			private Long lastRebalanceTimestamp;
+
+			private String reason;
+
+			private String groupId;
+
+			private Long rebalanceTimeConsuming;
+
+			private Boolean rebalanceSuccess;
+
+			public Long getGeneration() {
+				return this.generation;
+			}
+
+			public void setGeneration(Long generation) {
+				this.generation = generation;
+			}
+
+			public Long getLastRebalanceTimestamp() {
+				return this.lastRebalanceTimestamp;
+			}
+
+			public void setLastRebalanceTimestamp(Long lastRebalanceTimestamp) {
+				this.lastRebalanceTimestamp = lastRebalanceTimestamp;
+			}
+
+			public String getReason() {
+				return this.reason;
+			}
+
+			public void setReason(String reason) {
+				this.reason = reason;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public Long getRebalanceTimeConsuming() {
+				return this.rebalanceTimeConsuming;
+			}
+
+			public void setRebalanceTimeConsuming(Long rebalanceTimeConsuming) {
+				this.rebalanceTimeConsuming = rebalanceTimeConsuming;
+			}
+
+			public Boolean getRebalanceSuccess() {
+				return this.rebalanceSuccess;
+			}
+
+			public void setRebalanceSuccess(Boolean rebalanceSuccess) {
+				this.rebalanceSuccess = rebalanceSuccess;
 			}
 		}
 	}

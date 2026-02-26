@@ -14,7 +14,11 @@
 
 package com.aliyuncs.ros.transform.v20190910;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ros.model.v20190910.ContinueCreateStackResponse;
+import com.aliyuncs.ros.model.v20190910.ContinueCreateStackResponse.DryRunResult;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,6 +28,27 @@ public class ContinueCreateStackResponseUnmarshaller {
 		
 		continueCreateStackResponse.setRequestId(_ctx.stringValue("ContinueCreateStackResponse.RequestId"));
 		continueCreateStackResponse.setStackId(_ctx.stringValue("ContinueCreateStackResponse.StackId"));
+
+		DryRunResult dryRunResult = new DryRunResult();
+
+		List<String> parametersAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ContinueCreateStackResponse.DryRunResult.ParametersAllowedToBeModified.Length"); i++) {
+			parametersAllowedToBeModified.add(_ctx.stringValue("ContinueCreateStackResponse.DryRunResult.ParametersAllowedToBeModified["+ i +"]"));
+		}
+		dryRunResult.setParametersAllowedToBeModified(parametersAllowedToBeModified);
+
+		List<String> parametersConditionallyAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ContinueCreateStackResponse.DryRunResult.ParametersConditionallyAllowedToBeModified.Length"); i++) {
+			parametersConditionallyAllowedToBeModified.add(_ctx.stringValue("ContinueCreateStackResponse.DryRunResult.ParametersConditionallyAllowedToBeModified["+ i +"]"));
+		}
+		dryRunResult.setParametersConditionallyAllowedToBeModified(parametersConditionallyAllowedToBeModified);
+
+		List<String> parametersNotAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ContinueCreateStackResponse.DryRunResult.ParametersNotAllowedToBeModified.Length"); i++) {
+			parametersNotAllowedToBeModified.add(_ctx.stringValue("ContinueCreateStackResponse.DryRunResult.ParametersNotAllowedToBeModified["+ i +"]"));
+		}
+		dryRunResult.setParametersNotAllowedToBeModified(parametersNotAllowedToBeModified);
+		continueCreateStackResponse.setDryRunResult(dryRunResult);
 	 
 	 	return continueCreateStackResponse;
 	}

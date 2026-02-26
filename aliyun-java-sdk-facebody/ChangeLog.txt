@@ -1,3 +1,48 @@
+2024-04-22 Version: 2.0.14
+- Update DetectFace.
+
+2024-03-13 Version: 2.0.13
+- Update QueryFaceImageTemplate.
+
+2023-11-14 Version: 2.0.12
+- Release DeepfakeFace.
+
+2023-10-10 Version: 2.0.11
+- Update MergeImageFace.
+
+2023-04-21 Version: 2.0.10
+- Release MergeImageFace.
+
+2023-02-03 Version: 2.0.6
+- Release CompareFaceWithMask DetectInfraredLivingFace.
+
+2023-01-06 Version: 2.0.5
+- Release DetectInfraredLivingFace and CompareFaceWithMask.
+
+2022-12-23 Version: 2.0.4
+- Publish Swift.
+
+2022-12-23 Version: 2.0.3
+- Update api ExecuteServerSideVerification The base64 data format is changed from string byte to string.
+
+2022-12-22 Version: 2.0.2
+- Publish Swift.
+
+2022-12-14 Version: 2.0.1
+- Publish Swift.
+
+2022-12-08 Version: 2.0.0
+- Publish Swift.
+
+2022-12-02 Version: 1.2.33
+- Publish Swift.
+
+2022-11-16 Version: 1.2.32
+- Publish Swift.
+
+2022-09-29 Version: 1.2.31
+- Update CompareFace.
+
 2022-07-25 Version: 1.2.30
 - Update MonitorExamination.
 

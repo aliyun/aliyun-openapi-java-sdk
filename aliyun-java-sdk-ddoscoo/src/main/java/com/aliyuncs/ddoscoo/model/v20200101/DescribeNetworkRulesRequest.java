@@ -35,7 +35,7 @@ public class DescribeNetworkRulesRequest extends RpcAcsRequest<DescribeNetworkRu
 
 	private String forwardProtocol;
 	public DescribeNetworkRulesRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeNetworkRules");
+		super("ddoscoo", "2020-01-01", "DescribeNetworkRules", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

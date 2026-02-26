@@ -45,6 +45,8 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 
 	private String templateId;
 
+	private String priority;
+
 	private String pipelineId;
 
 	private String contentType;
@@ -168,6 +170,17 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
+		}
+	}
+
+	public String getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority);
 		}
 	}
 

@@ -29,7 +29,7 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 
 	private String pageSize;
 	public DescribeUserEncryptionKeyListRequest() {
-		super("gpdb", "2016-05-03", "DescribeUserEncryptionKeyList");
+		super("gpdb", "2016-05-03", "DescribeUserEncryptionKeyList", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

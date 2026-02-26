@@ -46,23 +46,15 @@ public class GetSortScriptResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String type;
-
 		private String scope;
-
-		private String status;
 
 		private String createTime;
 
+		private String status;
+
 		private String modifyTime;
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
+		private String type;
 
 		public String getScope() {
 			return this.scope;
@@ -70,14 +62,6 @@ public class GetSortScriptResponse extends AcsResponse {
 
 		public void setScope(String scope) {
 			this.scope = scope;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 
 		public String getCreateTime() {
@@ -88,12 +72,28 @@ public class GetSortScriptResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public String getModifyTime() {
 			return this.modifyTime;
 		}
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

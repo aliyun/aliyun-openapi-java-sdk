@@ -25,15 +25,28 @@ import com.aliyuncs.opensearch.Endpoint;
 public class RenewAppGroupRequest extends RoaAcsRequest<RenewAppGroupResponse> {
 	   
 
+	private String clientToken;
+
 	private String appGroupIdentity;
 	public RenewAppGroupRequest() {
-		super("OpenSearch", "2017-12-25", "RenewAppGroup", "opensearch");
+		super("OpenSearch", "2017-12-25", "RenewAppGroup");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/actions/renew");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("clientToken", clientToken);
+		}
 	}
 
 	public String getAppGroupIdentity() {

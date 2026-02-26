@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainsBySourceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String sources;
 
+	private String requestId;
+
 	private List<DomainsData> domainsList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getSources() {
 		return this.sources;
@@ -45,6 +37,14 @@ public class DescribeDomainsBySourceResponse extends AcsResponse {
 
 	public void setSources(String sources) {
 		this.sources = sources;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DomainsData> getDomainsList() {
@@ -89,40 +89,24 @@ public class DescribeDomainsBySourceResponse extends AcsResponse {
 
 		public static class DomainInfo {
 
-			private String domainName;
-
-			private String domainCname;
-
-			private String createTime;
+			private String status;
 
 			private String updateTime;
 
-			private String status;
+			private String createTime;
+
+			private String domainCname;
 
 			private String cdnType;
 
-			public String getDomainName() {
-				return this.domainName;
+			private String domainName;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setDomainName(String domainName) {
-				this.domainName = domainName;
-			}
-
-			public String getDomainCname() {
-				return this.domainCname;
-			}
-
-			public void setDomainCname(String domainCname) {
-				this.domainCname = domainCname;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getUpdateTime() {
@@ -133,12 +117,20 @@ public class DescribeDomainsBySourceResponse extends AcsResponse {
 				this.updateTime = updateTime;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getDomainCname() {
+				return this.domainCname;
+			}
+
+			public void setDomainCname(String domainCname) {
+				this.domainCname = domainCname;
 			}
 
 			public String getCdnType() {
@@ -147,6 +139,14 @@ public class DescribeDomainsBySourceResponse extends AcsResponse {
 
 			public void setCdnType(String cdnType) {
 				this.cdnType = cdnType;
+			}
+
+			public String getDomainName() {
+				return this.domainName;
+			}
+
+			public void setDomainName(String domainName) {
+				this.domainName = domainName;
 			}
 		}
 	}

@@ -29,9 +29,9 @@ public class ListInstanceUserPermissionsRequest extends RpcAcsRequest<ListInstan
 
 	private Integer pageNumber;
 
-	private String instanceId;
-
 	private Integer pageSize;
+
+	private String instanceId;
 
 	private String userName;
 	public ListInstanceUserPermissionsRequest() {
@@ -65,17 +65,6 @@ public class ListInstanceUserPermissionsRequest extends RpcAcsRequest<ListInstan
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -84,6 +73,17 @@ public class ListInstanceUserPermissionsRequest extends RpcAcsRequest<ListInstan
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceRecordLifeCycleResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private Integer code;
+	private Boolean success;
 
 	private List<DataItem> data;
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class QueryDeviceRecordLifeCycleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class QueryDeviceRecordLifeCycleResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -77,17 +77,9 @@ public class QueryDeviceRecordLifeCycleResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String iotId;
-
 		private Integer day;
 
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
-		}
+		private String iotId;
 
 		public Integer getDay() {
 			return this.day;
@@ -95,6 +87,14 @@ public class QueryDeviceRecordLifeCycleResponse extends AcsResponse {
 
 		public void setDay(Integer day) {
 			this.day = day;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 	}
 

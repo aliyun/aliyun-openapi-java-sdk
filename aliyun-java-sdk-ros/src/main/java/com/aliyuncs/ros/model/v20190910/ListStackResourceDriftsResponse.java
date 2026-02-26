@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListStackResourceDriftsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<ResourceDrift> resourceDrifts;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class ListStackResourceDriftsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ResourceDrift> getResourceDrifts() {
@@ -57,38 +57,32 @@ public class ListStackResourceDriftsResponse extends AcsResponse {
 
 	public static class ResourceDrift {
 
-		private String driftDetectionTime;
-
-		private String resourceDriftStatus;
+		private String logicalResourceId;
 
 		private String stackId;
 
-		private String resourceType;
-
 		private String physicalResourceId;
 
-		private String logicalResourceId;
+		private String driftDetectionTime;
 
-		private String actualProperties;
+		private String resourceType;
 
 		private String expectedProperties;
 
+		private String resourceDriftStatus;
+
+		private String actualProperties;
+
 		private List<PropertyDifference> propertyDifferences;
 
-		public String getDriftDetectionTime() {
-			return this.driftDetectionTime;
+		private ModuleInfo moduleInfo;
+
+		public String getLogicalResourceId() {
+			return this.logicalResourceId;
 		}
 
-		public void setDriftDetectionTime(String driftDetectionTime) {
-			this.driftDetectionTime = driftDetectionTime;
-		}
-
-		public String getResourceDriftStatus() {
-			return this.resourceDriftStatus;
-		}
-
-		public void setResourceDriftStatus(String resourceDriftStatus) {
-			this.resourceDriftStatus = resourceDriftStatus;
+		public void setLogicalResourceId(String logicalResourceId) {
+			this.logicalResourceId = logicalResourceId;
 		}
 
 		public String getStackId() {
@@ -99,14 +93,6 @@ public class ListStackResourceDriftsResponse extends AcsResponse {
 			this.stackId = stackId;
 		}
 
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
 		public String getPhysicalResourceId() {
 			return this.physicalResourceId;
 		}
@@ -115,20 +101,20 @@ public class ListStackResourceDriftsResponse extends AcsResponse {
 			this.physicalResourceId = physicalResourceId;
 		}
 
-		public String getLogicalResourceId() {
-			return this.logicalResourceId;
+		public String getDriftDetectionTime() {
+			return this.driftDetectionTime;
 		}
 
-		public void setLogicalResourceId(String logicalResourceId) {
-			this.logicalResourceId = logicalResourceId;
+		public void setDriftDetectionTime(String driftDetectionTime) {
+			this.driftDetectionTime = driftDetectionTime;
 		}
 
-		public String getActualProperties() {
-			return this.actualProperties;
+		public String getResourceType() {
+			return this.resourceType;
 		}
 
-		public void setActualProperties(String actualProperties) {
-			this.actualProperties = actualProperties;
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public String getExpectedProperties() {
@@ -139,6 +125,22 @@ public class ListStackResourceDriftsResponse extends AcsResponse {
 			this.expectedProperties = expectedProperties;
 		}
 
+		public String getResourceDriftStatus() {
+			return this.resourceDriftStatus;
+		}
+
+		public void setResourceDriftStatus(String resourceDriftStatus) {
+			this.resourceDriftStatus = resourceDriftStatus;
+		}
+
+		public String getActualProperties() {
+			return this.actualProperties;
+		}
+
+		public void setActualProperties(String actualProperties) {
+			this.actualProperties = actualProperties;
+		}
+
 		public List<PropertyDifference> getPropertyDifferences() {
 			return this.propertyDifferences;
 		}
@@ -147,23 +149,23 @@ public class ListStackResourceDriftsResponse extends AcsResponse {
 			this.propertyDifferences = propertyDifferences;
 		}
 
-		public static class PropertyDifference {
+		public ModuleInfo getModuleInfo() {
+			return this.moduleInfo;
+		}
 
-			private String propertyPath;
+		public void setModuleInfo(ModuleInfo moduleInfo) {
+			this.moduleInfo = moduleInfo;
+		}
+
+		public static class PropertyDifference {
 
 			private String actualValue;
 
-			private String expectedValue;
-
 			private String differenceType;
 
-			public String getPropertyPath() {
-				return this.propertyPath;
-			}
+			private String propertyPath;
 
-			public void setPropertyPath(String propertyPath) {
-				this.propertyPath = propertyPath;
-			}
+			private String expectedValue;
 
 			public String getActualValue() {
 				return this.actualValue;
@@ -173,6 +175,22 @@ public class ListStackResourceDriftsResponse extends AcsResponse {
 				this.actualValue = actualValue;
 			}
 
+			public String getDifferenceType() {
+				return this.differenceType;
+			}
+
+			public void setDifferenceType(String differenceType) {
+				this.differenceType = differenceType;
+			}
+
+			public String getPropertyPath() {
+				return this.propertyPath;
+			}
+
+			public void setPropertyPath(String propertyPath) {
+				this.propertyPath = propertyPath;
+			}
+
 			public String getExpectedValue() {
 				return this.expectedValue;
 			}
@@ -180,13 +198,28 @@ public class ListStackResourceDriftsResponse extends AcsResponse {
 			public void setExpectedValue(String expectedValue) {
 				this.expectedValue = expectedValue;
 			}
+		}
 
-			public String getDifferenceType() {
-				return this.differenceType;
+		public static class ModuleInfo {
+
+			private String logicalIdHierarchy;
+
+			private String typeHierarchy;
+
+			public String getLogicalIdHierarchy() {
+				return this.logicalIdHierarchy;
 			}
 
-			public void setDifferenceType(String differenceType) {
-				this.differenceType = differenceType;
+			public void setLogicalIdHierarchy(String logicalIdHierarchy) {
+				this.logicalIdHierarchy = logicalIdHierarchy;
+			}
+
+			public String getTypeHierarchy() {
+				return this.typeHierarchy;
+			}
+
+			public void setTypeHierarchy(String typeHierarchy) {
+				this.typeHierarchy = typeHierarchy;
 			}
 		}
 	}

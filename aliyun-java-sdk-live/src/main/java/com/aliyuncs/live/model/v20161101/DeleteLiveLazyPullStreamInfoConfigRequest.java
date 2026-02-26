@@ -25,11 +25,11 @@ import com.aliyuncs.live.Endpoint;
 public class DeleteLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<DeleteLiveLazyPullStreamInfoConfigResponse> {
 	   
 
+	private String appName;
+
 	private String domainName;
 
 	private Long ownerId;
-
-	private String appName;
 	public DeleteLiveLazyPullStreamInfoConfigRequest() {
 		super("live", "2016-11-01", "DeleteLiveLazyPullStreamInfoConfig", "live");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class DeleteLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<Del
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getDomainName() {
@@ -58,17 +69,6 @@ public class DeleteLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<Del
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
 		}
 	}
 

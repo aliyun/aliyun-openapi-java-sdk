@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveSingleTaskForDomainNameProxyServiceResponseUnmarshaller {
 
-	public static SaveSingleTaskForDomainNameProxyServiceResponse unmarshall(SaveSingleTaskForDomainNameProxyServiceResponse saveSingleTaskForDomainNameProxyServiceResponse, UnmarshallerContext context) {
+	public static SaveSingleTaskForDomainNameProxyServiceResponse unmarshall(SaveSingleTaskForDomainNameProxyServiceResponse saveSingleTaskForDomainNameProxyServiceResponse, UnmarshallerContext _ctx) {
 		
-		saveSingleTaskForDomainNameProxyServiceResponse.setRequestId(context.stringValue("SaveSingleTaskForDomainNameProxyServiceResponse.RequestId"));
-		saveSingleTaskForDomainNameProxyServiceResponse.setTaskNo(context.stringValue("SaveSingleTaskForDomainNameProxyServiceResponse.TaskNo"));
+		saveSingleTaskForDomainNameProxyServiceResponse.setRequestId(_ctx.stringValue("SaveSingleTaskForDomainNameProxyServiceResponse.RequestId"));
+		saveSingleTaskForDomainNameProxyServiceResponse.setTaskNo(_ctx.stringValue("SaveSingleTaskForDomainNameProxyServiceResponse.TaskNo"));
 	 
 	 	return saveSingleTaskForDomainNameProxyServiceResponse;
 	}

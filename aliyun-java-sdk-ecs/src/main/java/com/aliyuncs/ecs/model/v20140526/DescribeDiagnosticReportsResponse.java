@@ -215,9 +215,4 @@ public class DescribeDiagnosticReportsResponse extends AcsResponse {
 	public DescribeDiagnosticReportsResponse getInstance(UnmarshallerContext context) {
 		return	DescribeDiagnosticReportsResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

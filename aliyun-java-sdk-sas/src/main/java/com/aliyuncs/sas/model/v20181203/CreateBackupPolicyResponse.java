@@ -26,12 +26,55 @@ public class CreateBackupPolicyResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
+	private BackupPolicy backupPolicy;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public BackupPolicy getBackupPolicy() {
+		return this.backupPolicy;
+	}
+
+	public void setBackupPolicy(BackupPolicy backupPolicy) {
+		this.backupPolicy = backupPolicy;
+	}
+
+	public static class BackupPolicy {
+
+		private String id;
+
+		private String status;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 	}
 
 	@Override

@@ -24,9 +24,9 @@ public class CheckFaceUserDoExistOnDeviceResponseUnmarshaller {
 	public static CheckFaceUserDoExistOnDeviceResponse unmarshall(CheckFaceUserDoExistOnDeviceResponse checkFaceUserDoExistOnDeviceResponse, UnmarshallerContext _ctx) {
 		
 		checkFaceUserDoExistOnDeviceResponse.setRequestId(_ctx.stringValue("CheckFaceUserDoExistOnDeviceResponse.RequestId"));
-		checkFaceUserDoExistOnDeviceResponse.setSuccess(_ctx.booleanValue("CheckFaceUserDoExistOnDeviceResponse.Success"));
 		checkFaceUserDoExistOnDeviceResponse.setCode(_ctx.stringValue("CheckFaceUserDoExistOnDeviceResponse.Code"));
 		checkFaceUserDoExistOnDeviceResponse.setErrorMessage(_ctx.stringValue("CheckFaceUserDoExistOnDeviceResponse.ErrorMessage"));
+		checkFaceUserDoExistOnDeviceResponse.setSuccess(_ctx.booleanValue("CheckFaceUserDoExistOnDeviceResponse.Success"));
 
 		Data data = new Data();
 		data.setDoExist(_ctx.booleanValue("CheckFaceUserDoExistOnDeviceResponse.Data.DoExist"));

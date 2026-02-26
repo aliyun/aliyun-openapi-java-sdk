@@ -48,7 +48,7 @@ public class ModifyADConnectorDirectoryRequest extends RpcAcsRequest<ModifyADCon
 
 	private String oUName;
 	public ModifyADConnectorDirectoryRequest() {
-		super("ecd", "2020-09-30", "ModifyADConnectorDirectory");
+		super("ecd", "2020-09-30", "ModifyADConnectorDirectory", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

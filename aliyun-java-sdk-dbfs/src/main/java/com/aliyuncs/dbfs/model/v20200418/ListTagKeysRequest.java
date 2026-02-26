@@ -25,7 +25,7 @@ import com.aliyuncs.dbfs.Endpoint;
 public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
 	   
 	public ListTagKeysRequest() {
-		super("DBFS", "2020-04-18", "ListTagKeys");
+		super("DBFS", "2020-04-18", "ListTagKeys", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -63,6 +63,7 @@ public class GetDataServicePublishedApiResponseUnmarshaller {
 		data.setApiName(_ctx.stringValue("GetDataServicePublishedApiResponse.Data.ApiName"));
 		data.setTenantId(_ctx.longValue("GetDataServicePublishedApiResponse.Data.TenantId"));
 		data.setApiPath(_ctx.stringValue("GetDataServicePublishedApiResponse.Data.ApiPath"));
+		data.setSqlMode(_ctx.integerValue("GetDataServicePublishedApiResponse.Data.SqlMode"));
 
 		List<Integer> protocols = new ArrayList<Integer>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataServicePublishedApiResponse.Data.Protocols.Length"); i++) {

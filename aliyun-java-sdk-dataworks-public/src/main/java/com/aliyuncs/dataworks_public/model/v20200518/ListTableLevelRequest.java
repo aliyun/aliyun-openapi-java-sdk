@@ -27,9 +27,9 @@ public class ListTableLevelRequest extends RpcAcsRequest<ListTableLevelResponse>
 
 	private Integer levelType;
 
-	private Integer pageSize;
-
 	private Integer pageNum;
+
+	private Integer pageSize;
 
 	private Long projectId;
 	public ListTableLevelRequest() {
@@ -52,17 +52,6 @@ public class ListTableLevelRequest extends RpcAcsRequest<ListTableLevelResponse>
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -71,6 +60,17 @@ public class ListTableLevelRequest extends RpcAcsRequest<ListTableLevelResponse>
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

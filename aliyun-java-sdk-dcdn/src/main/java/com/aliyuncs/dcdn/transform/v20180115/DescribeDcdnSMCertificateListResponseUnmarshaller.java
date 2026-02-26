@@ -36,9 +36,9 @@ public class DescribeDcdnSMCertificateListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnSMCertificateListResponse.CertificateListModel.CertList.Length"); i++) {
 			Cert cert = new Cert();
 			cert.setCertName(_ctx.stringValue("DescribeDcdnSMCertificateListResponse.CertificateListModel.CertList["+ i +"].CertName"));
+			cert.setIssuer(_ctx.stringValue("DescribeDcdnSMCertificateListResponse.CertificateListModel.CertList["+ i +"].Issuer"));
 			cert.setCertIdentifier(_ctx.stringValue("DescribeDcdnSMCertificateListResponse.CertificateListModel.CertList["+ i +"].CertIdentifier"));
 			cert.setCommon(_ctx.stringValue("DescribeDcdnSMCertificateListResponse.CertificateListModel.CertList["+ i +"].Common"));
-			cert.setIssuer(_ctx.stringValue("DescribeDcdnSMCertificateListResponse.CertificateListModel.CertList["+ i +"].Issuer"));
 
 			certList.add(cert);
 		}

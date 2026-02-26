@@ -25,6 +25,7 @@ import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.NodeCo
 import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.NodeConfiguration.NodeInputOutput;
 import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.NodeConfiguration.NodeInputOutput1;
 import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.NodeConfiguration.OutputContextParameter;
+import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.ResourceDownloadLink;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -63,6 +64,7 @@ public class GetFileResponseUnmarshaller {
 		file.setContent(_ctx.stringValue("GetFileResponse.Data.File.Content"));
 		file.setNodeId(_ctx.longValue("GetFileResponse.Data.File.NodeId"));
 		file.setAdvancedSettings(_ctx.stringValue("GetFileResponse.Data.File.AdvancedSettings"));
+		file.setFileId(_ctx.longValue("GetFileResponse.Data.File.FileId"));
 		data.setFile(file);
 
 		NodeConfiguration nodeConfiguration = new NodeConfiguration();
@@ -80,6 +82,10 @@ public class GetFileResponseUnmarshaller {
 		nodeConfiguration.setAutoRerunIntervalMillis(_ctx.integerValue("GetFileResponse.Data.NodeConfiguration.AutoRerunIntervalMillis"));
 		nodeConfiguration.setCronExpress(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.CronExpress"));
 		nodeConfiguration.setStartImmediately(_ctx.booleanValue("GetFileResponse.Data.NodeConfiguration.StartImmediately"));
+		nodeConfiguration.setApplyScheduleImmediately(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.ApplyScheduleImmediately"));
+		nodeConfiguration.setIgnoreParentSkipRunningProperty(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.IgnoreParentSkipRunningProperty"));
+		nodeConfiguration.setTimeout(_ctx.integerValue("GetFileResponse.Data.NodeConfiguration.Timeout"));
+		nodeConfiguration.setImageId(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.ImageId"));
 
 		List<NodeInputOutput> inputList = new ArrayList<NodeInputOutput>();
 		for (int i = 0; i < _ctx.lengthValue("GetFileResponse.Data.NodeConfiguration.InputList.Length"); i++) {
@@ -123,6 +129,10 @@ public class GetFileResponseUnmarshaller {
 		}
 		nodeConfiguration.setOutputParameters(outputParameters);
 		data.setNodeConfiguration(nodeConfiguration);
+
+		ResourceDownloadLink resourceDownloadLink = new ResourceDownloadLink();
+		resourceDownloadLink.setDownloadLink(_ctx.stringValue("GetFileResponse.Data.ResourceDownloadLink.downloadLink"));
+		data.setResourceDownloadLink(resourceDownloadLink);
 		getFileResponse.setData(data);
 	 
 	 	return getFileResponse;

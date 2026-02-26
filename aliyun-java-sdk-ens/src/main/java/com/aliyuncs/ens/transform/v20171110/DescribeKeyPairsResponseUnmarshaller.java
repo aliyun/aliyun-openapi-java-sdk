@@ -37,6 +37,7 @@ public class DescribeKeyPairsResponseUnmarshaller {
 			keyPair.setCreationTime(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].CreationTime"));
 			keyPair.setKeyPairFingerPrint(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairFingerPrint"));
 			keyPair.setKeyPairName(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairName"));
+			keyPair.setKeyPairId(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairId"));
 
 			keyPairs.add(keyPair);
 		}

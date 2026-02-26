@@ -15,22 +15,24 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CancelTaskRequest extends RpcAcsRequest<CancelTaskResponse> {
-	
-	public CancelTaskRequest() {
-		super("Domain-intl", "2017-12-18", "CancelTask", "domain");
-	}
+	   
 
 	private String userClientIp;
 
 	private String taskNo;
 
 	private String lang;
+	public CancelTaskRequest() {
+		super("Domain-intl", "2017-12-18", "CancelTask");
+		setMethod(MethodType.POST);
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;

@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -28,8 +29,6 @@ public class ModifyResourceGroupRequest extends RpcAcsRequest<ModifyResourceGrou
 
 	private String resourceGroupId;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -40,6 +39,10 @@ public class ModifyResourceGroupRequest extends RpcAcsRequest<ModifyResourceGrou
 	public ModifyResourceGroupRequest() {
 		super("Dds", "2015-12-01", "ModifyResourceGroup", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -61,17 +64,6 @@ public class ModifyResourceGroupRequest extends RpcAcsRequest<ModifyResourceGrou
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

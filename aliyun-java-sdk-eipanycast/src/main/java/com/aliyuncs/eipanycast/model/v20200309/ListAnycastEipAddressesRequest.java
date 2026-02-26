@@ -26,6 +26,8 @@ import com.aliyuncs.eipanycast.Endpoint;
 public class ListAnycastEipAddressesRequest extends RpcAcsRequest<ListAnycastEipAddressesResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String nextToken;
 
 	private String instanceChargeType;
@@ -37,6 +39,8 @@ public class ListAnycastEipAddressesRequest extends RpcAcsRequest<ListAnycastEip
 	private String anycastEipAddress;
 
 	private List<String> anycastIdss;
+
+	private List<Tags> tagss;
 
 	private String internetChargeType;
 
@@ -50,12 +54,23 @@ public class ListAnycastEipAddressesRequest extends RpcAcsRequest<ListAnycastEip
 
 	private String status;
 	public ListAnycastEipAddressesRequest() {
-		super("Eipanycast", "2020-03-09", "ListAnycastEipAddresses");
+		super("Eipanycast", "2020-03-09", "ListAnycastEipAddresses", "eipanycast");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getNextToken() {
@@ -126,6 +141,20 @@ public class ListAnycastEipAddressesRequest extends RpcAcsRequest<ListAnycastEip
 		}	
 	}
 
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public String getInternetChargeType() {
 		return this.internetChargeType;
 	}
@@ -191,6 +220,29 @@ public class ListAnycastEipAddressesRequest extends RpcAcsRequest<ListAnycastEip
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class Tags {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

@@ -31,8 +31,6 @@ public class RecognizeVideoCastCrewListRequest extends RpcAcsRequest<RecognizeVi
 	@SerializedName("params")
 	private List<Params> params;
 
-	private String registerUrl;
-
 	private String videoUrl;
 	public RecognizeVideoCastCrewListRequest() {
 		super("videorecog", "2020-03-20", "RecognizeVideoCastCrewList", "videorecog");
@@ -52,17 +50,6 @@ public class RecognizeVideoCastCrewListRequest extends RpcAcsRequest<RecognizeVi
 		if (params != null) {
 			putBodyParameter("Params" , new Gson().toJson(params));
 		}	
-	}
-
-	public String getRegisterUrl() {
-		return this.registerUrl;
-	}
-
-	public void setRegisterUrl(String registerUrl) {
-		this.registerUrl = registerUrl;
-		if(registerUrl != null){
-			putBodyParameter("RegisterUrl", registerUrl);
-		}
 	}
 
 	public String getVideoUrl() {

@@ -54,7 +54,7 @@ public class ExportDesktopListInfoRequest extends RpcAcsRequest<ExportDesktopLis
 
 	private String userName;
 	public ExportDesktopListInfoRequest() {
-		super("ecd", "2020-09-30", "ExportDesktopListInfo");
+		super("ecd", "2020-09-30", "ExportDesktopListInfo", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

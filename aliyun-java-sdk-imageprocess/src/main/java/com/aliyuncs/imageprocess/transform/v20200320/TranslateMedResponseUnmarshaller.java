@@ -26,8 +26,8 @@ public class TranslateMedResponseUnmarshaller {
 		translateMedResponse.setRequestId(_ctx.stringValue("TranslateMedResponse.RequestId"));
 
 		Data data = new Data();
-		data.setText(_ctx.stringValue("TranslateMedResponse.Data.Text"));
 		data.setWords(_ctx.longValue("TranslateMedResponse.Data.Words"));
+		data.setText(_ctx.stringValue("TranslateMedResponse.Data.Text"));
 		translateMedResponse.setData(data);
 	 
 	 	return translateMedResponse;

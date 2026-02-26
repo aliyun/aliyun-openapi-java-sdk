@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupTimesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private RestoreTime restoreTime;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -44,6 +36,14 @@ public class DescribeBackupTimesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public RestoreTime getRestoreTime() {
@@ -56,17 +56,9 @@ public class DescribeBackupTimesResponse extends AcsResponse {
 
 	public static class RestoreTime {
 
-		private String startTime;
-
 		private String endTime;
 
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
+		private String startTime;
 
 		public String getEndTime() {
 			return this.endTime;
@@ -74,6 +66,14 @@ public class DescribeBackupTimesResponse extends AcsResponse {
 
 		public void setEndTime(String endTime) {
 			this.endTime = endTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 	}
 

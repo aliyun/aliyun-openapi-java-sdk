@@ -22,6 +22,7 @@ public class VerifyUserResponseUnmarshaller {
 
 	public static VerifyUserResponse unmarshall(VerifyUserResponse verifyUserResponse, UnmarshallerContext _ctx) {
 		
+		verifyUserResponse.setRequestId(_ctx.stringValue("VerifyUserResponse.RequestId"));
 	 
 	 	return verifyUserResponse;
 	}

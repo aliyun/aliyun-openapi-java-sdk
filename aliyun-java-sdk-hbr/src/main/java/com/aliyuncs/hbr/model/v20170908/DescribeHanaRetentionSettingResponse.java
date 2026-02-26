@@ -26,25 +26,25 @@ public class DescribeHanaRetentionSettingResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
-
-	private String message;
-
 	private String vaultId;
-
-	private String clusterId;
-
-	private String databaseName;
-
-	private Long retentionDays;
 
 	private String schedule;
 
-	private Boolean disabled;
+	private Boolean success;
+
+	private String databaseName;
 
 	private Long lastExecuteTime;
+
+	private Boolean disabled;
+
+	private String code;
+
+	private Long retentionDays;
+
+	private String message;
+
+	private String clusterId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,30 +52,6 @@ public class DescribeHanaRetentionSettingResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getVaultId() {
@@ -86,12 +62,20 @@ public class DescribeHanaRetentionSettingResponse extends AcsResponse {
 		this.vaultId = vaultId;
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getSchedule() {
+		return this.schedule;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
+	public void setSchedule(String schedule) {
+		this.schedule = schedule;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getDatabaseName() {
@@ -102,20 +86,12 @@ public class DescribeHanaRetentionSettingResponse extends AcsResponse {
 		this.databaseName = databaseName;
 	}
 
-	public Long getRetentionDays() {
-		return this.retentionDays;
+	public Long getLastExecuteTime() {
+		return this.lastExecuteTime;
 	}
 
-	public void setRetentionDays(Long retentionDays) {
-		this.retentionDays = retentionDays;
-	}
-
-	public String getSchedule() {
-		return this.schedule;
-	}
-
-	public void setSchedule(String schedule) {
-		this.schedule = schedule;
+	public void setLastExecuteTime(Long lastExecuteTime) {
+		this.lastExecuteTime = lastExecuteTime;
 	}
 
 	public Boolean getDisabled() {
@@ -126,12 +102,36 @@ public class DescribeHanaRetentionSettingResponse extends AcsResponse {
 		this.disabled = disabled;
 	}
 
-	public Long getLastExecuteTime() {
-		return this.lastExecuteTime;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setLastExecuteTime(Long lastExecuteTime) {
-		this.lastExecuteTime = lastExecuteTime;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Long getRetentionDays() {
+		return this.retentionDays;
+	}
+
+	public void setRetentionDays(Long retentionDays) {
+		this.retentionDays = retentionDays;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
 	}
 
 	@Override

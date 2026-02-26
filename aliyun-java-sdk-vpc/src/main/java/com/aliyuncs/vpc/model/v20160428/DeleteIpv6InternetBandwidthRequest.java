@@ -27,7 +27,11 @@ public class DeleteIpv6InternetBandwidthRequest extends RpcAcsRequest<DeleteIpv6
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String ipv6InternetBandwidthId;
+
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -56,6 +60,17 @@ public class DeleteIpv6InternetBandwidthRequest extends RpcAcsRequest<DeleteIpv6
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
 	public String getIpv6InternetBandwidthId() {
 		return this.ipv6InternetBandwidthId;
 	}
@@ -64,6 +79,17 @@ public class DeleteIpv6InternetBandwidthRequest extends RpcAcsRequest<DeleteIpv6
 		this.ipv6InternetBandwidthId = ipv6InternetBandwidthId;
 		if(ipv6InternetBandwidthId != null){
 			putQueryParameter("Ipv6InternetBandwidthId", ipv6InternetBandwidthId);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

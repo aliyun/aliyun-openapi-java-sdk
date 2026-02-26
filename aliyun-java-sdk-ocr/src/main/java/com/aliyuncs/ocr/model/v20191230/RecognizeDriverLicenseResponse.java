@@ -149,6 +149,10 @@ public class RecognizeDriverLicenseResponse extends AcsResponse {
 
 			private String issueUnit;
 
+			private String nationality;
+
+			private String birthDate;
+
 			public String getVehicleType() {
 				return this.vehicleType;
 			}
@@ -219,6 +223,22 @@ public class RecognizeDriverLicenseResponse extends AcsResponse {
 
 			public void setIssueUnit(String issueUnit) {
 				this.issueUnit = issueUnit;
+			}
+
+			public String getNationality() {
+				return this.nationality;
+			}
+
+			public void setNationality(String nationality) {
+				this.nationality = nationality;
+			}
+
+			public String getBirthDate() {
+				return this.birthDate;
+			}
+
+			public void setBirthDate(String birthDate) {
+				this.birthDate = birthDate;
 			}
 		}
 	}

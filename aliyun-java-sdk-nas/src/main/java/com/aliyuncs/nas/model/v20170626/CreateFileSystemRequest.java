@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
@@ -41,6 +42,10 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 
 	private Integer duration;
 
+	private String resourceGroupId;
+
+	private List<Tag> tags;
+
 	private Boolean dryRun;
 
 	private Long bandwidth;
@@ -57,7 +62,7 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 
 	private String kmsKeyId;
 	public CreateFileSystemRequest() {
-		super("NAS", "2017-06-26", "CreateFileSystem", "NAS");
+		super("NAS", "2017-06-26", "CreateFileSystem", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -153,6 +158,31 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public Boolean getDryRun() {
 		return this.dryRun;
 	}
@@ -238,6 +268,29 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		this.kmsKeyId = kmsKeyId;
 		if(kmsKeyId != null){
 			putQueryParameter("KmsKeyId", kmsKeyId);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

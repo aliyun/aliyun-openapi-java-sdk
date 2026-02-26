@@ -180,6 +180,7 @@ public class UpdateListenerAttributeRequest extends RpcAcsRequest<UpdateListener
 			for (int depth1 = 0; depth1 < caCertificates.size(); depth1++) {
 				if (caCertificates.get(depth1) != null) {
 					
+						putQueryParameter("CaCertificates." + (depth1 + 1) + ".CertificateId" , caCertificates.get(depth1).getCertificateId());
 				}
 			}
 		}	
@@ -193,8 +194,12 @@ public class UpdateListenerAttributeRequest extends RpcAcsRequest<UpdateListener
 		this.xForwardedForConfig = xForwardedForConfig;	
 		if (xForwardedForConfig != null) {
 			
+				putQueryParameter("XForwardedForConfig.XForwardedForClientSourceIpsTrusted" , xForwardedForConfig.getXForwardedForClientSourceIpsTrusted());
 				putQueryParameter("XForwardedForConfig.XForwardedForClientCertSubjectDNAlias" , xForwardedForConfig.getXForwardedForClientCertSubjectDNAlias());
+				putQueryParameter("XForwardedForConfig.XForwardedForClientSourceIpsEnabled" , xForwardedForConfig.getXForwardedForClientSourceIpsEnabled());
 				putQueryParameter("XForwardedForConfig.XForwardedForClientCertIssuerDNEnabled" , xForwardedForConfig.getXForwardedForClientCertIssuerDNEnabled());
+				putQueryParameter("XForwardedForConfig.XForwardedForHostEnabled" , xForwardedForConfig.getXForwardedForHostEnabled());
+				putQueryParameter("XForwardedForConfig.XForwardedForProcessingMode" , xForwardedForConfig.getXForwardedForProcessingMode());
 				putQueryParameter("XForwardedForConfig.XForwardedForClientCertFingerprintEnabled" , xForwardedForConfig.getXForwardedForClientCertFingerprintEnabled());
 				putQueryParameter("XForwardedForConfig.XForwardedForClientCertIssuerDNAlias" , xForwardedForConfig.getXForwardedForClientCertIssuerDNAlias());
 				putQueryParameter("XForwardedForConfig.XForwardedForProtoEnabled" , xForwardedForConfig.getXForwardedForProtoEnabled());
@@ -342,13 +347,31 @@ public class UpdateListenerAttributeRequest extends RpcAcsRequest<UpdateListener
 	}
 
 	public static class CaCertificates {
+
+		private String certificateId;
+
+		public String getCertificateId() {
+			return this.certificateId;
+		}
+
+		public void setCertificateId(String certificateId) {
+			this.certificateId = certificateId;
+		}
 	}
 
 	public static class XForwardedForConfig {
 
+		private String xForwardedForClientSourceIpsTrusted;
+
 		private String xForwardedForClientCertSubjectDNAlias;
 
+		private Boolean xForwardedForClientSourceIpsEnabled;
+
 		private Boolean xForwardedForClientCertIssuerDNEnabled;
+
+		private Boolean xForwardedForHostEnabled;
+
+		private String xForwardedForProcessingMode;
 
 		private Boolean xForwardedForClientCertFingerprintEnabled;
 
@@ -372,6 +395,14 @@ public class UpdateListenerAttributeRequest extends RpcAcsRequest<UpdateListener
 
 		private Boolean xForwardedForSLBIdEnabled;
 
+		public String getXForwardedForClientSourceIpsTrusted() {
+			return this.xForwardedForClientSourceIpsTrusted;
+		}
+
+		public void setXForwardedForClientSourceIpsTrusted(String xForwardedForClientSourceIpsTrusted) {
+			this.xForwardedForClientSourceIpsTrusted = xForwardedForClientSourceIpsTrusted;
+		}
+
 		public String getXForwardedForClientCertSubjectDNAlias() {
 			return this.xForwardedForClientCertSubjectDNAlias;
 		}
@@ -380,12 +411,36 @@ public class UpdateListenerAttributeRequest extends RpcAcsRequest<UpdateListener
 			this.xForwardedForClientCertSubjectDNAlias = xForwardedForClientCertSubjectDNAlias;
 		}
 
+		public Boolean getXForwardedForClientSourceIpsEnabled() {
+			return this.xForwardedForClientSourceIpsEnabled;
+		}
+
+		public void setXForwardedForClientSourceIpsEnabled(Boolean xForwardedForClientSourceIpsEnabled) {
+			this.xForwardedForClientSourceIpsEnabled = xForwardedForClientSourceIpsEnabled;
+		}
+
 		public Boolean getXForwardedForClientCertIssuerDNEnabled() {
 			return this.xForwardedForClientCertIssuerDNEnabled;
 		}
 
 		public void setXForwardedForClientCertIssuerDNEnabled(Boolean xForwardedForClientCertIssuerDNEnabled) {
 			this.xForwardedForClientCertIssuerDNEnabled = xForwardedForClientCertIssuerDNEnabled;
+		}
+
+		public Boolean getXForwardedForHostEnabled() {
+			return this.xForwardedForHostEnabled;
+		}
+
+		public void setXForwardedForHostEnabled(Boolean xForwardedForHostEnabled) {
+			this.xForwardedForHostEnabled = xForwardedForHostEnabled;
+		}
+
+		public String getXForwardedForProcessingMode() {
+			return this.xForwardedForProcessingMode;
+		}
+
+		public void setXForwardedForProcessingMode(String xForwardedForProcessingMode) {
+			this.xForwardedForProcessingMode = xForwardedForProcessingMode;
 		}
 
 		public Boolean getXForwardedForClientCertFingerprintEnabled() {

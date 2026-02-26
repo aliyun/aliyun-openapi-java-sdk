@@ -133,6 +133,8 @@ public class QueryTaskDetailListResponse extends AcsResponse {
 
 		private String errorMsg;
 
+		private String failReason;
+
 		public String getUpdateTime() {
 			return this.updateTime;
 		}
@@ -235,6 +237,14 @@ public class QueryTaskDetailListResponse extends AcsResponse {
 
 		public void setErrorMsg(String errorMsg) {
 			this.errorMsg = errorMsg;
+		}
+
+		public String getFailReason() {
+			return this.failReason;
+		}
+
+		public void setFailReason(String failReason) {
+			this.failReason = failReason;
 		}
 	}
 

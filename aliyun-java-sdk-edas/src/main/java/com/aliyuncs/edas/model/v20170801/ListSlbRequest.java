@@ -24,6 +24,12 @@ import com.aliyuncs.edas.Endpoint;
  */
 public class ListSlbRequest extends RoaAcsRequest<ListSlbResponse> {
 	   
+
+	private String slbType;
+
+	private String vpcId;
+
+	private String addressType;
 	public ListSlbRequest() {
 		super("Edas", "2017-08-01", "ListSlb", "Edas");
 		setUriPattern("/pop/v5/slb_list");
@@ -32,6 +38,39 @@ public class ListSlbRequest extends RoaAcsRequest<ListSlbResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSlbType() {
+		return this.slbType;
+	}
+
+	public void setSlbType(String slbType) {
+		this.slbType = slbType;
+		if(slbType != null){
+			putQueryParameter("SlbType", slbType);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getAddressType() {
+		return this.addressType;
+	}
+
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+		if(addressType != null){
+			putQueryParameter("AddressType", addressType);
+		}
 	}
 
 	@Override

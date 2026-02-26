@@ -26,11 +26,11 @@ public class DescribeInterventionDictionaryResponseUnmarshaller {
 		describeInterventionDictionaryResponse.setRequestId(_ctx.stringValue("DescribeInterventionDictionaryResponse.requestId"));
 
 		Result result = new Result();
-		result.setName(_ctx.stringValue("DescribeInterventionDictionaryResponse.result.name"));
-		result.setType(_ctx.stringValue("DescribeInterventionDictionaryResponse.result.type"));
-		result.setAnalyzer(_ctx.stringValue("DescribeInterventionDictionaryResponse.result.analyzer"));
 		result.setCreated(_ctx.stringValue("DescribeInterventionDictionaryResponse.result.created"));
+		result.setAnalyzer(_ctx.stringValue("DescribeInterventionDictionaryResponse.result.analyzer"));
 		result.setUpdated(_ctx.stringValue("DescribeInterventionDictionaryResponse.result.updated"));
+		result.setType(_ctx.stringValue("DescribeInterventionDictionaryResponse.result.type"));
+		result.setName(_ctx.stringValue("DescribeInterventionDictionaryResponse.result.name"));
 		describeInterventionDictionaryResponse.setResult(result);
 	 
 	 	return describeInterventionDictionaryResponse;

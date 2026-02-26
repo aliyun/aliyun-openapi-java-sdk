@@ -32,7 +32,7 @@ public class DeleteWebPreciseAccessRuleRequest extends RpcAcsRequest<DeleteWebPr
 
 	private String domain;
 	public DeleteWebPreciseAccessRuleRequest() {
-		super("ddoscoo", "2020-01-01", "DeleteWebPreciseAccessRule");
+		super("ddoscoo", "2020-01-01", "DeleteWebPreciseAccessRule", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

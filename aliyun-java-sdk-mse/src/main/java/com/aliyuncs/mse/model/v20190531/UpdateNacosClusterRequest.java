@@ -29,17 +29,17 @@ public class UpdateNacosClusterRequest extends RpcAcsRequest<UpdateNacosClusterR
 
 	private Integer checkPort;
 
+	private String namespaceId;
+
+	private String serviceName;
+
 	private String groupName;
 
 	private String instanceId;
 
-	private String namespaceId;
-
 	private String healthChecker;
 
 	private String acceptLanguage;
-
-	private String serviceName;
 
 	private Boolean useInstancePortForCheck;
 	public UpdateNacosClusterRequest() {
@@ -73,6 +73,28 @@ public class UpdateNacosClusterRequest extends RpcAcsRequest<UpdateNacosClusterR
 		}
 	}
 
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
 	public String getGroupName() {
 		return this.groupName;
 	}
@@ -95,17 +117,6 @@ public class UpdateNacosClusterRequest extends RpcAcsRequest<UpdateNacosClusterR
 		}
 	}
 
-	public String getNamespaceId() {
-		return this.namespaceId;
-	}
-
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
-		}
-	}
-
 	public String getHealthChecker() {
 		return this.healthChecker;
 	}
@@ -125,17 +136,6 @@ public class UpdateNacosClusterRequest extends RpcAcsRequest<UpdateNacosClusterR
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 

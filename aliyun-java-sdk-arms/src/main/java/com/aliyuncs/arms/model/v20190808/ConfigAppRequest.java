@@ -28,6 +28,8 @@ public class ConfigAppRequest extends RpcAcsRequest<ConfigAppResponse> {
 	private String appIds;
 
 	private String enable;
+
+	private String type;
 	public ConfigAppRequest() {
 		super("ARMS", "2019-08-08", "ConfigApp", "arms");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class ConfigAppRequest extends RpcAcsRequest<ConfigAppResponse> {
 		this.enable = enable;
 		if(enable != null){
 			putQueryParameter("Enable", enable);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

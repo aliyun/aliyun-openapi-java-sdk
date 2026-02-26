@@ -27,18 +27,18 @@ public class DescribeScdnDomainOriginBpsDataResponseUnmarshaller {
 	public static DescribeScdnDomainOriginBpsDataResponse unmarshall(DescribeScdnDomainOriginBpsDataResponse describeScdnDomainOriginBpsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeScdnDomainOriginBpsDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.RequestId"));
-		describeScdnDomainOriginBpsDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.DomainName"));
-		describeScdnDomainOriginBpsDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.StartTime"));
 		describeScdnDomainOriginBpsDataResponse.setEndTime(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.EndTime"));
+		describeScdnDomainOriginBpsDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.StartTime"));
+		describeScdnDomainOriginBpsDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.DomainName"));
 		describeScdnDomainOriginBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.DataInterval"));
 
 		List<DataModule> originBpsDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setOriginBpsValue(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].OriginBpsValue"));
 			dataModule.setHttpOriginBpsValue(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].HttpOriginBpsValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setHttpsOriginBpsValue(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].HttpsOriginBpsValue"));
+			dataModule.setOriginBpsValue(_ctx.stringValue("DescribeScdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].OriginBpsValue"));
 
 			originBpsDataPerInterval.add(dataModule);
 		}

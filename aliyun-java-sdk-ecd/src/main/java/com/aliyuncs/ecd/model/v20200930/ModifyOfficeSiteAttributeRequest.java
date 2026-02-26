@@ -34,8 +34,10 @@ public class ModifyOfficeSiteAttributeRequest extends RpcAcsRequest<ModifyOffice
 	private Boolean needVerifyLoginRisk;
 
 	private Boolean needVerifyZeroDevice;
+
+	private Boolean enableAdminAccess;
 	public ModifyOfficeSiteAttributeRequest() {
-		super("ecd", "2020-09-30", "ModifyOfficeSiteAttribute");
+		super("ecd", "2020-09-30", "ModifyOfficeSiteAttribute", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -95,6 +97,17 @@ public class ModifyOfficeSiteAttributeRequest extends RpcAcsRequest<ModifyOffice
 		this.needVerifyZeroDevice = needVerifyZeroDevice;
 		if(needVerifyZeroDevice != null){
 			putQueryParameter("NeedVerifyZeroDevice", needVerifyZeroDevice.toString());
+		}
+	}
+
+	public Boolean getEnableAdminAccess() {
+		return this.enableAdminAccess;
+	}
+
+	public void setEnableAdminAccess(Boolean enableAdminAccess) {
+		this.enableAdminAccess = enableAdminAccess;
+		if(enableAdminAccess != null){
+			putQueryParameter("EnableAdminAccess", enableAdminAccess.toString());
 		}
 	}
 

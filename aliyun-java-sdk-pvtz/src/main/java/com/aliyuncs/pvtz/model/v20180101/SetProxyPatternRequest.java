@@ -27,6 +27,8 @@ public class SetProxyPatternRequest extends RpcAcsRequest<SetProxyPatternRespons
 
 	private String proxyPattern;
 
+	private String clientToken;
+
 	private String userClientIp;
 
 	private String zoneId;
@@ -49,6 +51,17 @@ public class SetProxyPatternRequest extends RpcAcsRequest<SetProxyPatternRespons
 		this.proxyPattern = proxyPattern;
 		if(proxyPattern != null){
 			putQueryParameter("ProxyPattern", proxyPattern);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

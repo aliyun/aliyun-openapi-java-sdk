@@ -25,11 +25,11 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class GetDataServiceFolderRequest extends RpcAcsRequest<GetDataServiceFolderResponse> {
 	   
 
+	private Long folderId;
+
 	private Long tenantId;
 
 	private Long projectId;
-
-	private Long folderId;
 	public GetDataServiceFolderRequest() {
 		super("dataworks-public", "2020-05-18", "GetDataServiceFolder");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class GetDataServiceFolderRequest extends RpcAcsRequest<GetDataServiceFol
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getFolderId() {
+		return this.folderId;
+	}
+
+	public void setFolderId(Long folderId) {
+		this.folderId = folderId;
+		if(folderId != null){
+			putBodyParameter("FolderId", folderId.toString());
+		}
 	}
 
 	public Long getTenantId() {
@@ -58,17 +69,6 @@ public class GetDataServiceFolderRequest extends RpcAcsRequest<GetDataServiceFol
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
-		}
-	}
-
-	public Long getFolderId() {
-		return this.folderId;
-	}
-
-	public void setFolderId(Long folderId) {
-		this.folderId = folderId;
-		if(folderId != null){
-			putBodyParameter("FolderId", folderId.toString());
 		}
 	}
 

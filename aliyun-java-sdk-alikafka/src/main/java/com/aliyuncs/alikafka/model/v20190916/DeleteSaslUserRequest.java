@@ -27,6 +27,8 @@ public class DeleteSaslUserRequest extends RpcAcsRequest<DeleteSaslUserResponse>
 
 	private String type;
 
+	private String mechanism;
+
 	private String instanceId;
 
 	private String username;
@@ -47,6 +49,17 @@ public class DeleteSaslUserRequest extends RpcAcsRequest<DeleteSaslUserResponse>
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getMechanism() {
+		return this.mechanism;
+	}
+
+	public void setMechanism(String mechanism) {
+		this.mechanism = mechanism;
+		if(mechanism != null){
+			putQueryParameter("Mechanism", mechanism);
 		}
 	}
 

@@ -23,10 +23,10 @@ public class DetachNasFileSystemResponseUnmarshaller {
 	public static DetachNasFileSystemResponse unmarshall(DetachNasFileSystemResponse detachNasFileSystemResponse, UnmarshallerContext _ctx) {
 		
 		detachNasFileSystemResponse.setRequestId(_ctx.stringValue("DetachNasFileSystemResponse.RequestId"));
-		detachNasFileSystemResponse.setSuccess(_ctx.booleanValue("DetachNasFileSystemResponse.Success"));
 		detachNasFileSystemResponse.setCode(_ctx.stringValue("DetachNasFileSystemResponse.Code"));
 		detachNasFileSystemResponse.setMessage(_ctx.stringValue("DetachNasFileSystemResponse.Message"));
 		detachNasFileSystemResponse.setTaskId(_ctx.stringValue("DetachNasFileSystemResponse.TaskId"));
+		detachNasFileSystemResponse.setSuccess(_ctx.booleanValue("DetachNasFileSystemResponse.Success"));
 	 
 	 	return detachNasFileSystemResponse;
 	}

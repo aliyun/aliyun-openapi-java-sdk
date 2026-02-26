@@ -24,15 +24,15 @@ import com.aliyuncs.http.MethodType;
 public class CreateInstancesRequest extends RpcAcsRequest<CreateInstancesResponse> {
 	   
 
+	private String imageId;
+
+	private String clientToken;
+
 	private Integer autoRenewPeriod;
 
 	private Integer period;
 
 	private Integer amount;
-
-	private String imageId;
-
-	private String clientToken;
 
 	private Boolean autoRenew;
 
@@ -42,8 +42,30 @@ public class CreateInstancesRequest extends RpcAcsRequest<CreateInstancesRespons
 
 	private String chargeType;
 	public CreateInstancesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "CreateInstances");
+		super("SWAS-OPEN", "2020-06-01", "CreateInstances", "SWAS-OPEN");
 		setMethod(MethodType.POST);
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public Integer getAutoRenewPeriod() {
@@ -76,28 +98,6 @@ public class CreateInstancesRequest extends RpcAcsRequest<CreateInstancesRespons
 		this.amount = amount;
 		if(amount != null){
 			putQueryParameter("Amount", amount.toString());
-		}
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

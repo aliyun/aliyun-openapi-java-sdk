@@ -27,7 +27,7 @@ public class TextFeedbackRequest extends RoaAcsRequest<TextFeedbackResponse> {
 
 	private String clientInfo;
 	public TextFeedbackRequest() {
-		super("Green", "2018-05-09", "TextFeedback", "green");
+		super("Green", "2018-05-09", "TextFeedback");
 		setUriPattern("/green/text/feedback");
 		setMethod(MethodType.POST);
 		try {

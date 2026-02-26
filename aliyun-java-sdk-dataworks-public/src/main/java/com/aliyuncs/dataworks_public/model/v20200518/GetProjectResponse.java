@@ -121,6 +121,10 @@ public class GetProjectResponse extends AcsResponse {
 
 		private Long tenantId;
 
+		private String resourceManagerResourceGroupId;
+
+		private List<Tag> tags;
+
 		private List<String> envTypes;
 
 		public Integer getStatus() {
@@ -339,12 +343,51 @@ public class GetProjectResponse extends AcsResponse {
 			this.tenantId = tenantId;
 		}
 
+		public String getResourceManagerResourceGroupId() {
+			return this.resourceManagerResourceGroupId;
+		}
+
+		public void setResourceManagerResourceGroupId(String resourceManagerResourceGroupId) {
+			this.resourceManagerResourceGroupId = resourceManagerResourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getEnvTypes() {
 			return this.envTypes;
 		}
 
 		public void setEnvTypes(List<String> envTypes) {
 			this.envTypes = envTypes;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

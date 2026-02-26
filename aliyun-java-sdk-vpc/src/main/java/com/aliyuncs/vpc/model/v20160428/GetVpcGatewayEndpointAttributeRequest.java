@@ -27,9 +27,9 @@ public class GetVpcGatewayEndpointAttributeRequest extends RpcAcsRequest<GetVpcG
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String endpointId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
@@ -54,17 +54,6 @@ public class GetVpcGatewayEndpointAttributeRequest extends RpcAcsRequest<GetVpcG
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getEndpointId() {
 		return this.endpointId;
 	}
@@ -73,6 +62,17 @@ public class GetVpcGatewayEndpointAttributeRequest extends RpcAcsRequest<GetVpcG
 		this.endpointId = endpointId;
 		if(endpointId != null){
 			putQueryParameter("EndpointId", endpointId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

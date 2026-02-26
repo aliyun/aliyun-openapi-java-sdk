@@ -32,8 +32,8 @@ public class DescribeBlockedRegionsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeBlockedRegionsResponse.InfoList.Length"); i++) {
 			InfoItem infoItem = new InfoItem();
 			infoItem.setCountriesAndRegions(_ctx.stringValue("DescribeBlockedRegionsResponse.InfoList["+ i +"].CountriesAndRegions"));
-			infoItem.setCountriesAndRegionsName(_ctx.stringValue("DescribeBlockedRegionsResponse.InfoList["+ i +"].CountriesAndRegionsName"));
 			infoItem.setContinent(_ctx.stringValue("DescribeBlockedRegionsResponse.InfoList["+ i +"].Continent"));
+			infoItem.setCountriesAndRegionsName(_ctx.stringValue("DescribeBlockedRegionsResponse.InfoList["+ i +"].CountriesAndRegionsName"));
 
 			infoList.add(infoItem);
 		}

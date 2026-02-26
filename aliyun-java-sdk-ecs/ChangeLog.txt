@@ -1,3 +1,260 @@
+2026-01-20 Version: 5.11.26
+- Generated 2014-05-26 for `Ecs`.
+
+2025-12-02 Version: 5.11.25
+- Support TrustedSystemMode for CreateAutoProvisioningGroup.
+
+2025-09-15 Version: 5.11.24
+- Support TrustedSystemMode for LaunchTemplate.
+
+2025-09-11 Version: 5.11.23
+- Generated 2014-05-26 for `Ecs`.
+
+2025-07-01 Version: 5.11.22
+- Support LoginAsNonRoot for LaunchTemplate.
+
+2025-05-27 Version: 5.11.20
+- Add KmsKeyId for LaunchTemplate.
+
+2025-04-15 Version: 5.11.19
+- Generate SDK unified.
+
+2025-03-12 Version: 5.11.18
+- Unified upgrade SDK.
+
+2025-03-03 Version: 5.11.17
+- Add DeleteOnRelase for LaunchTemplate.
+
+2025-01-14 Version: 5.11.16
+- Add EndTerminalSession.
+
+2024-12-20 Version: 5.11.15
+- Build java SDK.
+
+2024-11-22 Version: 5.11.14
+- Support importImage with clientToken.
+
+2024-11-07 Version: 5.11.13
+- Add source dest check param.
+
+2024-10-31 Version: 5.11.12
+- DescribeInstanceTypes add CpuOptions.
+
+2024-10-30 Version: 5.11.11
+- Support describe and modify NVMe on instance.
+
+2024-10-15 Version: 5.11.10
+- Add ResourcePoolOptions.Strategy for CreateAutoProvisioningGroup.
+
+2024-09-14 Version: 5.11.9
+- Update EBS default encrypted APIs from private to public.
+- Support describe and modify source dest check property of ENI.
+
+2024-09-10 Version: 5.11.8
+- Update EBS default encrypted APIs from private to public.
+
+2024-05-23 Version: 5.11.7
+- Add SnapshotLinkId for DescribeSnapshots.
+
+2024-04-26 Version: 5.11.6
+- Add SupportedBootModes for DescribeInstanceTypes.
+
+2024-03-13 Version: 5.11.5
+- Supported Username for StartTerminalSession.
+
+2024-02-01 Version: 5.11.4
+- Support DryRun for DeleteInstance.
+- Support DryRun for ModifyInstanceSpec.
+
+2024-02-01 Version: 5.11.3
+- Describe tcpOptionAddress.
+
+2023-12-07 Version: 5.11.2
+- ECS SDK publish full package.
+
+2023-11-06 Version: 5.11.1
+- CreateAutoProvisioningGroup support SecurityOptions.
+
+2023-10-17 Version: 5.11.0
+- Update ALL.
+
+2023-10-17 Version: 5.10.59
+- Generated 2014-05-26 for `Ecs`.
+
+2023-10-17 Version: 5.10.58
+- Generated 2014-05-26 for `Ecs`.
+
+2023-10-17 Version: 5.10.57
+- Generated 2014-05-26 for `Ecs`.
+
+2023-08-17 Version: 4.24.66
+- Supported CommandLine for StartTerminalSession.
+
+2023-08-01 Version: 4.24.65
+- CreateLaunchTemplate, CreateLaunchTemplateVersion, DescribeLaunchTemplateVersions support DeletionProtection.
+
+2023-06-13 Version: 4.24.64
+- CreateAutoProvisioningGroup support NetworkInterface.
+
+2023-05-25 Version: 4.24.63
+- DescribeDemands add PrivatePoolId.
+
+2023-04-26 Version: 5.10.56
+- Adjust migrate instance.
+
+2023-04-24 Version: 4.24.62
+- ModifyDiskSpec add PerformanceControlOptions.
+
+2023-03-29 Version: 4.24.61
+- Change visibility of param ActionType in DescribeImageSupportInstanceTypes.
+
+2023-03-27 Version: 4.24.60
+- Add dedicated block stroage cluster ModifyDiskSpec.
+- Support jumbo frame.
+
+2023-02-20 Version: 4.24.59
+- Edit error code.
+- Change timeout.
+- Add ErrorCode ServiceUnavailable for DescribeLaunchTemplates.
+- Add an error code to indicate insufficient quota in the zone.
+- Add specific error code for some unknown error.
+- Delete unused error code.
+- Support AutoRelaseTIme.
+
+2023-02-13 Version: 4.24.58
+- Support TagPolicy Verify NoTag.
+- Fixed bugs for DescribeDemands error code.
+- Add encrypted disk ErrorCode.
+- DescribeDedicatedHosts supports SocketDetails param to check socket capacities of specified dedicated hosts.
+
+2023-02-10 Version: 4.24.57
+- Add parameter DedicatedHostId for DescribePrice.
+
+2023-02-10 Version: 4.24.56
+- Support TagPolicy Verify NoTag.
+- Fixed bugs for DescribeDemands error code.
+- Add encrypted disk ErrorCode.
+- DescribeDedicatedHosts supports SocketDetails param to check socket capacities of specified dedicated hosts.
+
+2023-02-07 Version: 4.24.55
+- Support tag.
+
+2023-02-06 Version: 4.24.54
+- Add OpenAPI DescribeReservedInstanceAutoRenewAttribute, ModifyReservedInstanceAutoRenewAttribute.
+
+2023-01-30 Version: 4.24.52
+- Support system tag.
+
+2023-01-15 Version: 4.24.51
+- Support autoProvisioningGroup instance pattern.
+
+2023-01-13 Version: 4.24.50
+- Add nat errorCode.
+- Support tag for managed instance.
+
+2023-01-05 Version: 4.24.49
+- Deprecate DescribeDedicatedBlockStorageClusters API.
+- Deprecate CreateDedicatedBlockStorageCluster API.
+- Add ErrorCode to ReplaceSystemDisk API.
+- Supported SystemDiskEncrypted for DescribeLaunchTemplateVersions CreateLaunchTemplateVersion and CreateLaunchTemplate.
+
+2023-01-05 Version: 4.24.48
+- Deprecate DescribeDedicatedBlockStorageClusters API.
+- Deprecate CreateDedicatedBlockStorageCluster API.
+- Add ErrorCode to ReplaceSystemDisk API.
+- Supported SystemDiskEncrypted for DescribeLaunchTemplateVersions CreateLaunchTemplateVersion and CreateLaunchTemplate.
+
+2023-01-04 Version: 4.24.47
+- Support release nat public ip.
+
+2023-01-04 Version: 4.24.46
+- CreateSnapshot CreateDisk support system tag.
+- Supported network card index.
+
+2023-01-03 Version: 4.24.45
+- Support InstanceMetadataTags for MetaOption.
+
+2022-12-27 Version: 4.24.44
+- CreateImage support system tag.
+- Fixed ModifyImageAttribute error code.
+- Add CreateRouteEntry ErrorCode Map.
+- Add parameter for ModifyPrepayInstanceSpec.
+- Support  networkCard.
+- Add responselog.
+- Support Attributes field in DescribeDiagnosticReportAttributes.
+
+2022-11-29 Version: 4.24.43
+- Add error code for ModifyInstanceNetworkSpec.
+- Add invalid account buying spot error code.
+- Support ip prefix for eni.
+- Update the StorageLocationArn to private.
+
+2022-11-24 Version: 4.24.42
+- Add error code for ModifyInstanceNetworkSpec.
+- Add invalid account buying spot error code.
+- Support ip prefix for eni.
+- Update the StorageLocationArn to private.
+
+2022-11-23 Version: 4.24.41
+- Add and optimize error code.
+- Support issue occurrence time.
+- Fixed bug for shared encrypted image created instance limit zoneId error code.
+- DescribeTasks add ResourceIds Parameter.
+
+2022-11-18 Version: 4.24.40
+- Supported PRICE PRICING_PLAN_RESULT_NOT_FOUND error code for CreateCapacityReservation CreateElasticityAssurance.
+- Image check supported in CreateImage .
+
+2022-11-03 Version: 4.24.39
+- Automatically generate sdk tasks.
+
+2022-11-02 Version: 4.24.38
+- Automatically generate sdk tasks.
+
+2022-11-02 Version: 4.24.37
+- Automatically generate sdk tasks.
+
+2022-11-02 Version: 4.24.36
+- Support LICENSE.
+
+2022-11-02 Version: 4.24.35
+- Support LICENSE.
+
+2022-10-28 Version: 4.24.34
+- Automatically generate sdk tasks.
+
+2022-10-27 Version: 4.24.33
+- Automatically generate sdk tasks.
+
+2022-10-27 Version: 4.24.32
+- Automatically generate sdk tasks.
+
+2022-10-19 Version: 4.24.31
+- Automatically generate sdk tasks.
+
+2022-10-14 Version: 4.24.30
+- Add GPUMemorySize to DescribeInstanceTypes api.
+
+2022-09-21 Version: 4.24.29
+- Automatically generate sdk tasks.
+
+2022-09-21 Version: 4.24.28
+- Automatically generate sdk tasks.
+
+2022-09-14 Version: 4.24.27
+- Automatically generate sdk tasks.
+
+2022-09-09 Version: 4.24.26
+- Automatically generate sdk tasks.
+
+2022-09-07 Version: 4.24.25
+- Support attribute filtering for DescribeInstanceTypes.
+- Provide cpuArchitecture and insatnceCategory attribute in DescribeInstanceTypes.
+
+2022-08-31 Version: 4.24.24
+- Support create image with boot mode.
+- Provide image boot mode info in DescribeImages.
+
 2022-08-02 Version: 4.24.23
 - Support ecs instance diagnostic features.
 

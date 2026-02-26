@@ -24,6 +24,8 @@ public class DeleteIntegrationResponseUnmarshaller {
 		
 		deleteIntegrationResponse.setRequestId(_ctx.stringValue("DeleteIntegrationResponse.RequestId"));
 		deleteIntegrationResponse.setData(_ctx.stringValue("DeleteIntegrationResponse.Data"));
+		deleteIntegrationResponse.setCode(_ctx.integerValue("DeleteIntegrationResponse.Code"));
+		deleteIntegrationResponse.setMessage(_ctx.stringValue("DeleteIntegrationResponse.Message"));
 	 
 	 	return deleteIntegrationResponse;
 	}

@@ -57,32 +57,44 @@ public class DescribeShowListResponse extends AcsResponse {
 
 	public static class ShowListInfo {
 
-		private Integer showListRepeatTimes;
+		private String currentShowId;
 
-		private Integer totalShowListRepeatTimes;
+		private String background;
+
+		private String watermark;
 
 		private String highPriorityShowId;
 
 		private String highPriorityShowStartTime;
 
-		private String currentShowId;
+		private Integer showListRepeatTimes;
+
+		private Integer totalShowListRepeatTimes;
 
 		private List<Show> showList;
 
-		public Integer getShowListRepeatTimes() {
-			return this.showListRepeatTimes;
+		public String getCurrentShowId() {
+			return this.currentShowId;
 		}
 
-		public void setShowListRepeatTimes(Integer showListRepeatTimes) {
-			this.showListRepeatTimes = showListRepeatTimes;
+		public void setCurrentShowId(String currentShowId) {
+			this.currentShowId = currentShowId;
 		}
 
-		public Integer getTotalShowListRepeatTimes() {
-			return this.totalShowListRepeatTimes;
+		public String getBackground() {
+			return this.background;
 		}
 
-		public void setTotalShowListRepeatTimes(Integer totalShowListRepeatTimes) {
-			this.totalShowListRepeatTimes = totalShowListRepeatTimes;
+		public void setBackground(String background) {
+			this.background = background;
+		}
+
+		public String getWatermark() {
+			return this.watermark;
+		}
+
+		public void setWatermark(String watermark) {
+			this.watermark = watermark;
 		}
 
 		public String getHighPriorityShowId() {
@@ -101,12 +113,20 @@ public class DescribeShowListResponse extends AcsResponse {
 			this.highPriorityShowStartTime = highPriorityShowStartTime;
 		}
 
-		public String getCurrentShowId() {
-			return this.currentShowId;
+		public Integer getShowListRepeatTimes() {
+			return this.showListRepeatTimes;
 		}
 
-		public void setCurrentShowId(String currentShowId) {
-			this.currentShowId = currentShowId;
+		public void setShowListRepeatTimes(Integer showListRepeatTimes) {
+			this.showListRepeatTimes = showListRepeatTimes;
+		}
+
+		public Integer getTotalShowListRepeatTimes() {
+			return this.totalShowListRepeatTimes;
+		}
+
+		public void setTotalShowListRepeatTimes(Integer totalShowListRepeatTimes) {
+			this.totalShowListRepeatTimes = totalShowListRepeatTimes;
 		}
 
 		public List<Show> getShowList() {
@@ -119,31 +139,15 @@ public class DescribeShowListResponse extends AcsResponse {
 
 		public static class Show {
 
-			private String showId;
-
-			private String showName;
-
 			private Long duration;
 
 			private Integer repeatTimes;
 
+			private String showId;
+
+			private String showName;
+
 			private ResourceInfo resourceInfo;
-
-			public String getShowId() {
-				return this.showId;
-			}
-
-			public void setShowId(String showId) {
-				this.showId = showId;
-			}
-
-			public String getShowName() {
-				return this.showName;
-			}
-
-			public void setShowName(String showName) {
-				this.showName = showName;
-			}
 
 			public Long getDuration() {
 				return this.duration;
@@ -161,6 +165,22 @@ public class DescribeShowListResponse extends AcsResponse {
 				this.repeatTimes = repeatTimes;
 			}
 
+			public String getShowId() {
+				return this.showId;
+			}
+
+			public void setShowId(String showId) {
+				this.showId = showId;
+			}
+
+			public String getShowName() {
+				return this.showName;
+			}
+
+			public void setShowName(String showName) {
+				this.showName = showName;
+			}
+
 			public ResourceInfo getResourceInfo() {
 				return this.resourceInfo;
 			}
@@ -171,13 +191,21 @@ public class DescribeShowListResponse extends AcsResponse {
 
 			public static class ResourceInfo {
 
-				private String resourceId;
+				private Integer liveInputType;
 
-				private String resourceUrl;
+				private String resourceId;
 
 				private String resourceType;
 
-				private Integer liveInputType;
+				private String resourceUrl;
+
+				public Integer getLiveInputType() {
+					return this.liveInputType;
+				}
+
+				public void setLiveInputType(Integer liveInputType) {
+					this.liveInputType = liveInputType;
+				}
 
 				public String getResourceId() {
 					return this.resourceId;
@@ -185,14 +213,6 @@ public class DescribeShowListResponse extends AcsResponse {
 
 				public void setResourceId(String resourceId) {
 					this.resourceId = resourceId;
-				}
-
-				public String getResourceUrl() {
-					return this.resourceUrl;
-				}
-
-				public void setResourceUrl(String resourceUrl) {
-					this.resourceUrl = resourceUrl;
 				}
 
 				public String getResourceType() {
@@ -203,12 +223,12 @@ public class DescribeShowListResponse extends AcsResponse {
 					this.resourceType = resourceType;
 				}
 
-				public Integer getLiveInputType() {
-					return this.liveInputType;
+				public String getResourceUrl() {
+					return this.resourceUrl;
 				}
 
-				public void setLiveInputType(Integer liveInputType) {
-					this.liveInputType = liveInputType;
+				public void setResourceUrl(String resourceUrl) {
+					this.resourceUrl = resourceUrl;
 				}
 			}
 		}

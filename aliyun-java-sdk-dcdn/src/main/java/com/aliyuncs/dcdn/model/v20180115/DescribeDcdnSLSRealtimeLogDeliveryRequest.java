@@ -25,8 +25,6 @@ import com.aliyuncs.dcdn.Endpoint;
 public class DescribeDcdnSLSRealtimeLogDeliveryRequest extends RpcAcsRequest<DescribeDcdnSLSRealtimeLogDeliveryResponse> {
 	   
 
-	private String businessType;
-
 	private String projectName;
 
 	private Long ownerId;
@@ -37,17 +35,6 @@ public class DescribeDcdnSLSRealtimeLogDeliveryRequest extends RpcAcsRequest<Des
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getBusinessType() {
-		return this.businessType;
-	}
-
-	public void setBusinessType(String businessType) {
-		this.businessType = businessType;
-		if(businessType != null){
-			putQueryParameter("BusinessType", businessType);
-		}
 	}
 
 	public String getProjectName() {

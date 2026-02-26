@@ -14,6 +14,7 @@
 
 package com.aliyuncs.polardb.model.v20170801;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.polardb.transform.v20170801.DescribeBackupPolicyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -53,6 +54,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 	private String dataLevel2BackupAnotherRegionRetentionPeriod;
 
 	private String dataLevel2BackupAnotherRegionRegion;
+
+	private String backupPolicyLevel;
+
+	private String advancedPolicyOption;
+
+	private List<AdvancedDataPolicy> advancedDataPolicies;
 
 	public String getPreferredBackupPeriod() {
 		return this.preferredBackupPeriod;
@@ -172,6 +179,183 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setDataLevel2BackupAnotherRegionRegion(String dataLevel2BackupAnotherRegionRegion) {
 		this.dataLevel2BackupAnotherRegionRegion = dataLevel2BackupAnotherRegionRegion;
+	}
+
+	public String getBackupPolicyLevel() {
+		return this.backupPolicyLevel;
+	}
+
+	public void setBackupPolicyLevel(String backupPolicyLevel) {
+		this.backupPolicyLevel = backupPolicyLevel;
+	}
+
+	public String getAdvancedPolicyOption() {
+		return this.advancedPolicyOption;
+	}
+
+	public void setAdvancedPolicyOption(String advancedPolicyOption) {
+		this.advancedPolicyOption = advancedPolicyOption;
+	}
+
+	public List<AdvancedDataPolicy> getAdvancedDataPolicies() {
+		return this.advancedDataPolicies;
+	}
+
+	public void setAdvancedDataPolicies(List<AdvancedDataPolicy> advancedDataPolicies) {
+		this.advancedDataPolicies = advancedDataPolicies;
+	}
+
+	public static class AdvancedDataPolicy {
+
+		private Boolean onlyPreserveOneEachHour;
+
+		private String retentionValue;
+
+		private String bakType;
+
+		private String filterKey;
+
+		private String filterValue;
+
+		private String destType;
+
+		private String filterType;
+
+		private String srcRegion;
+
+		private Boolean autoCreated;
+
+		private String srcType;
+
+		private Boolean onlyPreserveOneEachDay;
+
+		private String dumpAction;
+
+		private String policyId;
+
+		private String destRegion;
+
+		private String retentionType;
+
+		public Boolean getOnlyPreserveOneEachHour() {
+			return this.onlyPreserveOneEachHour;
+		}
+
+		public void setOnlyPreserveOneEachHour(Boolean onlyPreserveOneEachHour) {
+			this.onlyPreserveOneEachHour = onlyPreserveOneEachHour;
+		}
+
+		public String getRetentionValue() {
+			return this.retentionValue;
+		}
+
+		public void setRetentionValue(String retentionValue) {
+			this.retentionValue = retentionValue;
+		}
+
+		public String getBakType() {
+			return this.bakType;
+		}
+
+		public void setBakType(String bakType) {
+			this.bakType = bakType;
+		}
+
+		public String getFilterKey() {
+			return this.filterKey;
+		}
+
+		public void setFilterKey(String filterKey) {
+			this.filterKey = filterKey;
+		}
+
+		public String getFilterValue() {
+			return this.filterValue;
+		}
+
+		public void setFilterValue(String filterValue) {
+			this.filterValue = filterValue;
+		}
+
+		public String getDestType() {
+			return this.destType;
+		}
+
+		public void setDestType(String destType) {
+			this.destType = destType;
+		}
+
+		public String getFilterType() {
+			return this.filterType;
+		}
+
+		public void setFilterType(String filterType) {
+			this.filterType = filterType;
+		}
+
+		public String getSrcRegion() {
+			return this.srcRegion;
+		}
+
+		public void setSrcRegion(String srcRegion) {
+			this.srcRegion = srcRegion;
+		}
+
+		public Boolean getAutoCreated() {
+			return this.autoCreated;
+		}
+
+		public void setAutoCreated(Boolean autoCreated) {
+			this.autoCreated = autoCreated;
+		}
+
+		public String getSrcType() {
+			return this.srcType;
+		}
+
+		public void setSrcType(String srcType) {
+			this.srcType = srcType;
+		}
+
+		public Boolean getOnlyPreserveOneEachDay() {
+			return this.onlyPreserveOneEachDay;
+		}
+
+		public void setOnlyPreserveOneEachDay(Boolean onlyPreserveOneEachDay) {
+			this.onlyPreserveOneEachDay = onlyPreserveOneEachDay;
+		}
+
+		public String getDumpAction() {
+			return this.dumpAction;
+		}
+
+		public void setDumpAction(String dumpAction) {
+			this.dumpAction = dumpAction;
+		}
+
+		public String getPolicyId() {
+			return this.policyId;
+		}
+
+		public void setPolicyId(String policyId) {
+			this.policyId = policyId;
+		}
+
+		public String getDestRegion() {
+			return this.destRegion;
+		}
+
+		public void setDestRegion(String destRegion) {
+			this.destRegion = destRegion;
+		}
+
+		public String getRetentionType() {
+			return this.retentionType;
+		}
+
+		public void setRetentionType(String retentionType) {
+			this.retentionType = retentionType;
+		}
 	}
 
 	@Override

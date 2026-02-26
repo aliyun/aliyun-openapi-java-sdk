@@ -33,23 +33,23 @@ public class GetProductQuotaDimensionResponseUnmarshaller {
 		quotaDimension.setDimensionKey(_ctx.stringValue("GetProductQuotaDimensionResponse.QuotaDimension.DimensionKey"));
 		quotaDimension.setName(_ctx.stringValue("GetProductQuotaDimensionResponse.QuotaDimension.Name"));
 
-		List<String> dimensionValues = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaDimensionResponse.QuotaDimension.DimensionValues.Length"); i++) {
-			dimensionValues.add(_ctx.stringValue("GetProductQuotaDimensionResponse.QuotaDimension.DimensionValues["+ i +"]"));
-		}
-		quotaDimension.setDimensionValues(dimensionValues);
-
 		List<String> dependentDimensions = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaDimensionResponse.QuotaDimension.DependentDimensions.Length"); i++) {
 			dependentDimensions.add(_ctx.stringValue("GetProductQuotaDimensionResponse.QuotaDimension.DependentDimensions["+ i +"]"));
 		}
 		quotaDimension.setDependentDimensions(dependentDimensions);
 
+		List<String> dimensionValues = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaDimensionResponse.QuotaDimension.DimensionValues.Length"); i++) {
+			dimensionValues.add(_ctx.stringValue("GetProductQuotaDimensionResponse.QuotaDimension.DimensionValues["+ i +"]"));
+		}
+		quotaDimension.setDimensionValues(dimensionValues);
+
 		List<DimensionValueDetailItem> dimensionValueDetail = new ArrayList<DimensionValueDetailItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaDimensionResponse.QuotaDimension.DimensionValueDetail.Length"); i++) {
 			DimensionValueDetailItem dimensionValueDetailItem = new DimensionValueDetailItem();
-			dimensionValueDetailItem.setValue(_ctx.stringValue("GetProductQuotaDimensionResponse.QuotaDimension.DimensionValueDetail["+ i +"].Value"));
 			dimensionValueDetailItem.setName(_ctx.stringValue("GetProductQuotaDimensionResponse.QuotaDimension.DimensionValueDetail["+ i +"].Name"));
+			dimensionValueDetailItem.setValue(_ctx.stringValue("GetProductQuotaDimensionResponse.QuotaDimension.DimensionValueDetail["+ i +"].Value"));
 
 			dimensionValueDetail.add(dimensionValueDetailItem);
 		}

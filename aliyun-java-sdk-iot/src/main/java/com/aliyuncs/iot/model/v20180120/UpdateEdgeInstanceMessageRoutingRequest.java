@@ -45,7 +45,7 @@ public class UpdateEdgeInstanceMessageRoutingRequest extends RpcAcsRequest<Updat
 
 	private Integer targetIotHubQos;
 	public UpdateEdgeInstanceMessageRoutingRequest() {
-		super("Iot", "2018-01-20", "UpdateEdgeInstanceMessageRouting");
+		super("Iot", "2018-01-20", "UpdateEdgeInstanceMessageRouting", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

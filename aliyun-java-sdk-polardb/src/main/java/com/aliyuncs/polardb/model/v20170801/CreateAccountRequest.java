@@ -27,6 +27,8 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private Long resourceOwnerId;
 
+	private String nodeType;
+
 	private String clientToken;
 
 	private String accountType;
@@ -48,8 +50,10 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 	private String accountPassword;
 
 	private String dBName;
+
+	private String privForAllDB;
 	public CreateAccountRequest() {
-		super("polardb", "2017-08-01", "CreateAccount");
+		super("polardb", "2017-08-01", "CreateAccount", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,6 +69,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType);
 		}
 	}
 
@@ -186,6 +201,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.dBName = dBName;
 		if(dBName != null){
 			putQueryParameter("DBName", dBName);
+		}
+	}
+
+	public String getPrivForAllDB() {
+		return this.privForAllDB;
+	}
+
+	public void setPrivForAllDB(String privForAllDB) {
+		this.privForAllDB = privForAllDB;
+		if(privForAllDB != null){
+			putQueryParameter("PrivForAllDB", privForAllDB);
 		}
 	}
 

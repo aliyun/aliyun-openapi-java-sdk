@@ -22,6 +22,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Attachment;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.MountInstance;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.OperationLock;
+import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Placement;
 import com.aliyuncs.ecs.model.v20140526.DescribeDisksResponse.Disk.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -81,6 +82,12 @@ public class DescribeDisksResponseUnmarshaller {
 			disk.setProvisionedIops(_ctx.longValue("DescribeDisksResponse.Disks["+ i +"].ProvisionedIops"));
 			disk.setBurstingEnabled(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].BurstingEnabled"));
 			disk.setThroughput(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].Throughput"));
+			disk.setThroughputRead(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].ThroughputRead"));
+			disk.setThroughputWrite(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].ThroughputWrite"));
+
+			Placement placement = new Placement();
+			placement.setZoneIds(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Placement.ZoneIds"));
+			disk.setPlacement(placement);
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDisksResponse.Disks["+ i +"].OperationLocks.Length"); j++) {
@@ -118,6 +125,12 @@ public class DescribeDisksResponseUnmarshaller {
 				attachment.setInstanceId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].InstanceId"));
 				attachment.setDevice(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].Device"));
 				attachment.setAttachedTime(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].AttachedTime"));
+				attachment.setNsId(_ctx.longValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].NsId"));
+				attachment.setNguid(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].Nguid"));
+				attachment.setIdentifier(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].Identifier"));
+				attachment.setTargetDevice(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].TargetDevice"));
+				attachment.setAccessToken(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].AccessToken"));
+				attachment.setVuid(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Attachments["+ j +"].Vuid"));
 
 				attachments.add(attachment);
 			}

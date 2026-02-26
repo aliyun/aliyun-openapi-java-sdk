@@ -45,6 +45,7 @@ public class DescribeCenVbrHealthCheckResponseUnmarshaller {
 			vbrHealthCheck.setHealthCheckSourceIp(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckSourceIp"));
 			vbrHealthCheck.setPacketLoss(_ctx.longValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].PacketLoss"));
 			vbrHealthCheck.setHealthCheckOnly(_ctx.booleanValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckOnly"));
+			vbrHealthCheck.setDescription(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].Description"));
 
 			vbrHealthChecks.add(vbrHealthCheck);
 		}

@@ -27,6 +27,12 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private Integer totalCount;
+
 	private List<ServersItem> servers;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ServersItem> getServers() {
@@ -60,6 +90,14 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 		private String state;
 
 		private String status;
+
+		private String namespace;
+
+		private String name;
+
+		private String payType;
+
+		private String latestAction;
 
 		private List<AICInstancesItem> aICInstances;
 
@@ -119,6 +157,38 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public String getLatestAction() {
+			return this.latestAction;
+		}
+
+		public void setLatestAction(String latestAction) {
+			this.latestAction = latestAction;
+		}
+
 		public List<AICInstancesItem> getAICInstances() {
 			return this.aICInstances;
 		}
@@ -143,7 +213,13 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 
 			private String status;
 
+			private String name;
+
+			private String latestAction;
+
 			private NetworkAttributes networkAttributes;
+
+			private SdgDeployInfo sdgDeployInfo;
 
 			public Long getFrequency() {
 				return this.frequency;
@@ -201,12 +277,36 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 				this.status = status;
 			}
 
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getLatestAction() {
+				return this.latestAction;
+			}
+
+			public void setLatestAction(String latestAction) {
+				this.latestAction = latestAction;
+			}
+
 			public NetworkAttributes getNetworkAttributes() {
 				return this.networkAttributes;
 			}
 
 			public void setNetworkAttributes(NetworkAttributes networkAttributes) {
 				this.networkAttributes = networkAttributes;
+			}
+
+			public SdgDeployInfo getSdgDeployInfo() {
+				return this.sdgDeployInfo;
+			}
+
+			public void setSdgDeployInfo(SdgDeployInfo sdgDeployInfo) {
+				this.sdgDeployInfo = sdgDeployInfo;
 			}
 
 			public static class NetworkAttributes {
@@ -239,6 +339,29 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 
 				public void setVSwitchId(String vSwitchId) {
 					this.vSwitchId = vSwitchId;
+				}
+			}
+
+			public static class SdgDeployInfo {
+
+				private String sDGId;
+
+				private String status;
+
+				public String getSDGId() {
+					return this.sDGId;
+				}
+
+				public void setSDGId(String sDGId) {
+					this.sDGId = sDGId;
+				}
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
 				}
 			}
 		}

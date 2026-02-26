@@ -36,6 +36,7 @@ public class GetDirectoryOrFilePropertiesResponseUnmarshaller {
 		entry.setName(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.Name"));
 		entry.setRetrieveTime(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.RetrieveTime"));
 		entry.setInode(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.Inode"));
+		entry.setHasArchiveFile(_ctx.booleanValue("GetDirectoryOrFilePropertiesResponse.Entry.HasArchiveFile"));
 		getDirectoryOrFilePropertiesResponse.setEntry(entry);
 	 
 	 	return getDirectoryOrFilePropertiesResponse;

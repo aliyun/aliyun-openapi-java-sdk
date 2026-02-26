@@ -25,7 +25,11 @@ import com.aliyuncs.oos.Endpoint;
 public class GenerateExecutionPolicyRequest extends RpcAcsRequest<GenerateExecutionPolicyResponse> {
 	   
 
+	private String templateContent;
+
 	private String templateVersion;
+
+	private String ramRole;
 
 	private String templateName;
 	public GenerateExecutionPolicyRequest() {
@@ -37,6 +41,17 @@ public class GenerateExecutionPolicyRequest extends RpcAcsRequest<GenerateExecut
 		} catch (Exception e) {}
 	}
 
+	public String getTemplateContent() {
+		return this.templateContent;
+	}
+
+	public void setTemplateContent(String templateContent) {
+		this.templateContent = templateContent;
+		if(templateContent != null){
+			putQueryParameter("TemplateContent", templateContent);
+		}
+	}
+
 	public String getTemplateVersion() {
 		return this.templateVersion;
 	}
@@ -45,6 +60,17 @@ public class GenerateExecutionPolicyRequest extends RpcAcsRequest<GenerateExecut
 		this.templateVersion = templateVersion;
 		if(templateVersion != null){
 			putQueryParameter("TemplateVersion", templateVersion);
+		}
+	}
+
+	public String getRamRole() {
+		return this.ramRole;
+	}
+
+	public void setRamRole(String ramRole) {
+		this.ramRole = ramRole;
+		if(ramRole != null){
+			putQueryParameter("RamRole", ramRole);
 		}
 	}
 

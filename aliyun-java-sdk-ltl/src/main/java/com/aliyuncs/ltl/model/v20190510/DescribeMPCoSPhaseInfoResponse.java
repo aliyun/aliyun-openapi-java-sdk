@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMPCoSPhaseInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
-
-	private Boolean success;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -51,20 +43,28 @@ public class DescribeMPCoSPhaseInfoResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,57 +77,25 @@ public class DescribeMPCoSPhaseInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String productKey;
-
-		private String iotId;
-
-		private String dataValue;
-
-		private Long blockNumber;
-
 		private String previousHash;
 
-		private String blockHash;
-
-		private String transactionHash;
+		private String productKey;
 
 		private String dataHash;
 
+		private String dataValue;
+
 		private Long timestamp;
 
+		private String transactionHash;
+
+		private String blockHash;
+
+		private Long blockNumber;
+
+		private String iotId;
+
 		private List<RelatedData> relatedDataList;
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
-		}
-
-		public String getDataValue() {
-			return this.dataValue;
-		}
-
-		public void setDataValue(String dataValue) {
-			this.dataValue = dataValue;
-		}
-
-		public Long getBlockNumber() {
-			return this.blockNumber;
-		}
-
-		public void setBlockNumber(Long blockNumber) {
-			this.blockNumber = blockNumber;
-		}
 
 		public String getPreviousHash() {
 			return this.previousHash;
@@ -137,20 +105,12 @@ public class DescribeMPCoSPhaseInfoResponse extends AcsResponse {
 			this.previousHash = previousHash;
 		}
 
-		public String getBlockHash() {
-			return this.blockHash;
+		public String getProductKey() {
+			return this.productKey;
 		}
 
-		public void setBlockHash(String blockHash) {
-			this.blockHash = blockHash;
-		}
-
-		public String getTransactionHash() {
-			return this.transactionHash;
-		}
-
-		public void setTransactionHash(String transactionHash) {
-			this.transactionHash = transactionHash;
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
 		}
 
 		public String getDataHash() {
@@ -161,12 +121,52 @@ public class DescribeMPCoSPhaseInfoResponse extends AcsResponse {
 			this.dataHash = dataHash;
 		}
 
+		public String getDataValue() {
+			return this.dataValue;
+		}
+
+		public void setDataValue(String dataValue) {
+			this.dataValue = dataValue;
+		}
+
 		public Long getTimestamp() {
 			return this.timestamp;
 		}
 
 		public void setTimestamp(Long timestamp) {
 			this.timestamp = timestamp;
+		}
+
+		public String getTransactionHash() {
+			return this.transactionHash;
+		}
+
+		public void setTransactionHash(String transactionHash) {
+			this.transactionHash = transactionHash;
+		}
+
+		public String getBlockHash() {
+			return this.blockHash;
+		}
+
+		public void setBlockHash(String blockHash) {
+			this.blockHash = blockHash;
+		}
+
+		public Long getBlockNumber() {
+			return this.blockNumber;
+		}
+
+		public void setBlockNumber(Long blockNumber) {
+			this.blockNumber = blockNumber;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 
 		public List<RelatedData> getRelatedDataList() {
@@ -179,31 +179,15 @@ public class DescribeMPCoSPhaseInfoResponse extends AcsResponse {
 
 		public static class RelatedData {
 
-			private String relatedPhaseId;
-
-			private String relatedPhaseName;
-
 			private String relatedDataKey;
-
-			private String relatedDataSeq;
 
 			private String relatedPhaseDataHash;
 
-			public String getRelatedPhaseId() {
-				return this.relatedPhaseId;
-			}
+			private String relatedDataSeq;
 
-			public void setRelatedPhaseId(String relatedPhaseId) {
-				this.relatedPhaseId = relatedPhaseId;
-			}
+			private String relatedPhaseName;
 
-			public String getRelatedPhaseName() {
-				return this.relatedPhaseName;
-			}
-
-			public void setRelatedPhaseName(String relatedPhaseName) {
-				this.relatedPhaseName = relatedPhaseName;
-			}
+			private String relatedPhaseId;
 
 			public String getRelatedDataKey() {
 				return this.relatedDataKey;
@@ -211,6 +195,14 @@ public class DescribeMPCoSPhaseInfoResponse extends AcsResponse {
 
 			public void setRelatedDataKey(String relatedDataKey) {
 				this.relatedDataKey = relatedDataKey;
+			}
+
+			public String getRelatedPhaseDataHash() {
+				return this.relatedPhaseDataHash;
+			}
+
+			public void setRelatedPhaseDataHash(String relatedPhaseDataHash) {
+				this.relatedPhaseDataHash = relatedPhaseDataHash;
 			}
 
 			public String getRelatedDataSeq() {
@@ -221,12 +213,20 @@ public class DescribeMPCoSPhaseInfoResponse extends AcsResponse {
 				this.relatedDataSeq = relatedDataSeq;
 			}
 
-			public String getRelatedPhaseDataHash() {
-				return this.relatedPhaseDataHash;
+			public String getRelatedPhaseName() {
+				return this.relatedPhaseName;
 			}
 
-			public void setRelatedPhaseDataHash(String relatedPhaseDataHash) {
-				this.relatedPhaseDataHash = relatedPhaseDataHash;
+			public void setRelatedPhaseName(String relatedPhaseName) {
+				this.relatedPhaseName = relatedPhaseName;
+			}
+
+			public String getRelatedPhaseId() {
+				return this.relatedPhaseId;
+			}
+
+			public void setRelatedPhaseId(String relatedPhaseId) {
+				this.relatedPhaseId = relatedPhaseId;
 			}
 		}
 	}

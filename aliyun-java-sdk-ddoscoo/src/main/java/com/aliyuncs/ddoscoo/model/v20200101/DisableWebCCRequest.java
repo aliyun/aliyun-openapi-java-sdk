@@ -29,7 +29,7 @@ public class DisableWebCCRequest extends RpcAcsRequest<DisableWebCCResponse> {
 
 	private String domain;
 	public DisableWebCCRequest() {
-		super("ddoscoo", "2020-01-01", "DisableWebCC");
+		super("ddoscoo", "2020-01-01", "DisableWebCC", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

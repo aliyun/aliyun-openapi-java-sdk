@@ -99,6 +99,8 @@ public class DescribeCenVbrHealthCheckResponse extends AcsResponse {
 
 		private Boolean healthCheckOnly;
 
+		private String description;
+
 		public String getHealthCheckTargetIp() {
 			return this.healthCheckTargetIp;
 		}
@@ -185,6 +187,14 @@ public class DescribeCenVbrHealthCheckResponse extends AcsResponse {
 
 		public void setHealthCheckOnly(Boolean healthCheckOnly) {
 			this.healthCheckOnly = healthCheckOnly;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 

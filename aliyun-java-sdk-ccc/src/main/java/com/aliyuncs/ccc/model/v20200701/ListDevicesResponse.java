@@ -101,6 +101,8 @@ public class ListDevicesResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String deviceType;
+
 		public String getExtension() {
 			return this.extension;
 		}
@@ -155,6 +157,14 @@ public class ListDevicesResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getDeviceType() {
+			return this.deviceType;
+		}
+
+		public void setDeviceType(String deviceType) {
+			this.deviceType = deviceType;
 		}
 	}
 

@@ -26,13 +26,13 @@ public class DescribeRestoreIncrDetailResponseUnmarshaller {
 		describeRestoreIncrDetailResponse.setRequestId(_ctx.stringValue("DescribeRestoreIncrDetailResponse.RequestId"));
 
 		RestoreIncrDetail restoreIncrDetail = new RestoreIncrDetail();
-		restoreIncrDetail.setState(_ctx.stringValue("DescribeRestoreIncrDetailResponse.RestoreIncrDetail.State"));
-		restoreIncrDetail.setStartTime(_ctx.stringValue("DescribeRestoreIncrDetailResponse.RestoreIncrDetail.StartTime"));
 		restoreIncrDetail.setEndTime(_ctx.stringValue("DescribeRestoreIncrDetailResponse.RestoreIncrDetail.EndTime"));
+		restoreIncrDetail.setStartTime(_ctx.stringValue("DescribeRestoreIncrDetailResponse.RestoreIncrDetail.StartTime"));
+		restoreIncrDetail.setProcess(_ctx.stringValue("DescribeRestoreIncrDetailResponse.RestoreIncrDetail.Process"));
 		restoreIncrDetail.setRestoreStartTs(_ctx.stringValue("DescribeRestoreIncrDetailResponse.RestoreIncrDetail.RestoreStartTs"));
+		restoreIncrDetail.setState(_ctx.stringValue("DescribeRestoreIncrDetailResponse.RestoreIncrDetail.State"));
 		restoreIncrDetail.setRestoredTs(_ctx.stringValue("DescribeRestoreIncrDetailResponse.RestoreIncrDetail.RestoredTs"));
 		restoreIncrDetail.setRestoreDelay(_ctx.stringValue("DescribeRestoreIncrDetailResponse.RestoreIncrDetail.RestoreDelay"));
-		restoreIncrDetail.setProcess(_ctx.stringValue("DescribeRestoreIncrDetailResponse.RestoreIncrDetail.Process"));
 		describeRestoreIncrDetailResponse.setRestoreIncrDetail(restoreIncrDetail);
 	 
 	 	return describeRestoreIncrDetailResponse;

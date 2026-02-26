@@ -24,9 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScalingActivityDetailResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String scalingActivityId;
 
 	private String detail;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getScalingActivityId() {
 		return this.scalingActivityId;

@@ -31,6 +31,8 @@ public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceRespons
 
 	private String securityToken;
 
+	private String timeShift;
+
 	private String restoreTime;
 
 	private String resourceOwnerAccount;
@@ -83,6 +85,17 @@ public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceRespons
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getTimeShift() {
+		return this.timeShift;
+	}
+
+	public void setTimeShift(String timeShift) {
+		this.timeShift = timeShift;
+		if(timeShift != null){
+			putQueryParameter("TimeShift", timeShift);
 		}
 	}
 

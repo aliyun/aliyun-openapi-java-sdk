@@ -23,9 +23,6 @@ public class RefreshDBClusterStorageUsageResponseUnmarshaller {
 	public static RefreshDBClusterStorageUsageResponse unmarshall(RefreshDBClusterStorageUsageResponse refreshDBClusterStorageUsageResponse, UnmarshallerContext _ctx) {
 		
 		refreshDBClusterStorageUsageResponse.setRequestId(_ctx.stringValue("RefreshDBClusterStorageUsageResponse.RequestId"));
-		refreshDBClusterStorageUsageResponse.setUsedStorage(_ctx.stringValue("RefreshDBClusterStorageUsageResponse.UsedStorage"));
-		refreshDBClusterStorageUsageResponse.setDBClusterId(_ctx.stringValue("RefreshDBClusterStorageUsageResponse.DBClusterId"));
-		refreshDBClusterStorageUsageResponse.setUsedStorageModified(_ctx.stringValue("RefreshDBClusterStorageUsageResponse.UsedStorageModified"));
 	 
 	 	return refreshDBClusterStorageUsageResponse;
 	}

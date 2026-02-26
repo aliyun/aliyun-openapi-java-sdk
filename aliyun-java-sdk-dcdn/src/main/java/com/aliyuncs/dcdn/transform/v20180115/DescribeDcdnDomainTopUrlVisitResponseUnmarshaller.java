@@ -27,17 +27,17 @@ public class DescribeDcdnDomainTopUrlVisitResponseUnmarshaller {
 	public static DescribeDcdnDomainTopUrlVisitResponse unmarshall(DescribeDcdnDomainTopUrlVisitResponse describeDcdnDomainTopUrlVisitResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnDomainTopUrlVisitResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.RequestId"));
-		describeDcdnDomainTopUrlVisitResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.DomainName"));
 		describeDcdnDomainTopUrlVisitResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.StartTime"));
+		describeDcdnDomainTopUrlVisitResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.DomainName"));
 
 		List<UrlList> allUrlList = new ArrayList<UrlList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainTopUrlVisitResponse.AllUrlList.Length"); i++) {
 			UrlList urlList = new UrlList();
+			urlList.setFlow(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.AllUrlList["+ i +"].Flow"));
 			urlList.setUrlDetail(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.AllUrlList["+ i +"].UrlDetail"));
+			urlList.setFlowProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.AllUrlList["+ i +"].FlowProportion"));
 			urlList.setVisitData(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.AllUrlList["+ i +"].VisitData"));
 			urlList.setVisitProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.AllUrlList["+ i +"].VisitProportion"));
-			urlList.setFlow(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.AllUrlList["+ i +"].Flow"));
-			urlList.setFlowProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.AllUrlList["+ i +"].FlowProportion"));
 
 			allUrlList.add(urlList);
 		}
@@ -46,11 +46,11 @@ public class DescribeDcdnDomainTopUrlVisitResponseUnmarshaller {
 		List<UrlList> url200List = new ArrayList<UrlList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainTopUrlVisitResponse.Url200List.Length"); i++) {
 			UrlList urlList1 = new UrlList();
+			urlList1.setFlow(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url200List["+ i +"].Flow"));
 			urlList1.setUrlDetail(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url200List["+ i +"].UrlDetail"));
+			urlList1.setFlowProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.Url200List["+ i +"].FlowProportion"));
 			urlList1.setVisitData(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url200List["+ i +"].VisitData"));
 			urlList1.setVisitProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.Url200List["+ i +"].VisitProportion"));
-			urlList1.setFlow(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url200List["+ i +"].Flow"));
-			urlList1.setFlowProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.Url200List["+ i +"].FlowProportion"));
 
 			url200List.add(urlList1);
 		}
@@ -59,11 +59,11 @@ public class DescribeDcdnDomainTopUrlVisitResponseUnmarshaller {
 		List<UrlList> url300List = new ArrayList<UrlList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainTopUrlVisitResponse.Url300List.Length"); i++) {
 			UrlList urlList2 = new UrlList();
+			urlList2.setFlow(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url300List["+ i +"].Flow"));
 			urlList2.setUrlDetail(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url300List["+ i +"].UrlDetail"));
+			urlList2.setFlowProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.Url300List["+ i +"].FlowProportion"));
 			urlList2.setVisitData(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url300List["+ i +"].VisitData"));
 			urlList2.setVisitProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.Url300List["+ i +"].VisitProportion"));
-			urlList2.setFlow(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url300List["+ i +"].Flow"));
-			urlList2.setFlowProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.Url300List["+ i +"].FlowProportion"));
 
 			url300List.add(urlList2);
 		}
@@ -72,11 +72,11 @@ public class DescribeDcdnDomainTopUrlVisitResponseUnmarshaller {
 		List<UrlList> url400List = new ArrayList<UrlList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainTopUrlVisitResponse.Url400List.Length"); i++) {
 			UrlList urlList3 = new UrlList();
+			urlList3.setFlow(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url400List["+ i +"].Flow"));
 			urlList3.setUrlDetail(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url400List["+ i +"].UrlDetail"));
+			urlList3.setFlowProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.Url400List["+ i +"].FlowProportion"));
 			urlList3.setVisitData(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url400List["+ i +"].VisitData"));
 			urlList3.setVisitProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.Url400List["+ i +"].VisitProportion"));
-			urlList3.setFlow(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url400List["+ i +"].Flow"));
-			urlList3.setFlowProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.Url400List["+ i +"].FlowProportion"));
 
 			url400List.add(urlList3);
 		}
@@ -85,11 +85,11 @@ public class DescribeDcdnDomainTopUrlVisitResponseUnmarshaller {
 		List<UrlList> url500List = new ArrayList<UrlList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainTopUrlVisitResponse.Url500List.Length"); i++) {
 			UrlList urlList4 = new UrlList();
+			urlList4.setFlow(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url500List["+ i +"].Flow"));
 			urlList4.setUrlDetail(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url500List["+ i +"].UrlDetail"));
+			urlList4.setFlowProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.Url500List["+ i +"].FlowProportion"));
 			urlList4.setVisitData(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url500List["+ i +"].VisitData"));
 			urlList4.setVisitProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.Url500List["+ i +"].VisitProportion"));
-			urlList4.setFlow(_ctx.stringValue("DescribeDcdnDomainTopUrlVisitResponse.Url500List["+ i +"].Flow"));
-			urlList4.setFlowProportion(_ctx.floatValue("DescribeDcdnDomainTopUrlVisitResponse.Url500List["+ i +"].FlowProportion"));
 
 			url500List.add(urlList4);
 		}

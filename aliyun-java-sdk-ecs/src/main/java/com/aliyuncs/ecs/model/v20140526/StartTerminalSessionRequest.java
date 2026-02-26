@@ -16,6 +16,8 @@ package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -28,6 +30,15 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 
 	private Long resourceOwnerId;
 
+	private String commandLine;
+
+	@SerializedName("encryptionOptions")
+	private EncryptionOptions encryptionOptions;
+
+	private String targetServer;
+
+	private String connectionType;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -37,6 +48,10 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 	private List<String> instanceIds;
 
 	private Integer portNumber;
+
+	private String passwordName;
+
+	private String username;
 	public StartTerminalSessionRequest() {
 		super("Ecs", "2014-05-26", "StartTerminalSession", "ecs");
 		setMethod(MethodType.POST);
@@ -54,6 +69,50 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCommandLine() {
+		return this.commandLine;
+	}
+
+	public void setCommandLine(String commandLine) {
+		this.commandLine = commandLine;
+		if(commandLine != null){
+			putQueryParameter("CommandLine", commandLine);
+		}
+	}
+
+	public EncryptionOptions getEncryptionOptions() {
+		return this.encryptionOptions;
+	}
+
+	public void setEncryptionOptions(EncryptionOptions encryptionOptions) {
+		this.encryptionOptions = encryptionOptions;	
+		if (encryptionOptions != null) {
+			putQueryParameter("EncryptionOptions" , new Gson().toJson(encryptionOptions));
+		}	
+	}
+
+	public String getTargetServer() {
+		return this.targetServer;
+	}
+
+	public void setTargetServer(String targetServer) {
+		this.targetServer = targetServer;
+		if(targetServer != null){
+			putQueryParameter("TargetServer", targetServer);
+		}
+	}
+
+	public String getConnectionType() {
+		return this.connectionType;
+	}
+
+	public void setConnectionType(String connectionType) {
+		this.connectionType = connectionType;
+		if(connectionType != null){
+			putQueryParameter("ConnectionType", connectionType);
 		}
 	}
 
@@ -111,6 +170,64 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 		this.portNumber = portNumber;
 		if(portNumber != null){
 			putQueryParameter("PortNumber", portNumber.toString());
+		}
+	}
+
+	public String getPasswordName() {
+		return this.passwordName;
+	}
+
+	public void setPasswordName(String passwordName) {
+		this.passwordName = passwordName;
+		if(passwordName != null){
+			putQueryParameter("PasswordName", passwordName);
+		}
+	}
+
+	public String getUsername() {
+		return this.username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+		if(username != null){
+			putQueryParameter("Username", username);
+		}
+	}
+
+	public static class EncryptionOptions {
+
+		@SerializedName("Enabled")
+		private Boolean enabled;
+
+		@SerializedName("KMSKeyId")
+		private String kMSKeyId;
+
+		@SerializedName("Mode")
+		private String mode;
+
+		public Boolean getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
 		}
 	}
 

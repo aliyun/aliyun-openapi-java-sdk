@@ -25,13 +25,13 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class CreateUploadFileJobRequest extends RpcAcsRequest<CreateUploadFileJobResponse> {
 	   
 
-	private String fileSource;
-
 	private Long tid;
 
-	private String fileName;
-
 	private String uploadURL;
+
+	private String fileSource;
+
+	private String fileName;
 	public CreateUploadFileJobRequest() {
 		super("dms-enterprise", "2018-11-01", "CreateUploadFileJob", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class CreateUploadFileJobRequest extends RpcAcsRequest<CreateUploadFileJo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFileSource() {
-		return this.fileSource;
-	}
-
-	public void setFileSource(String fileSource) {
-		this.fileSource = fileSource;
-		if(fileSource != null){
-			putQueryParameter("FileSource", fileSource);
-		}
 	}
 
 	public Long getTid() {
@@ -63,17 +52,6 @@ public class CreateUploadFileJobRequest extends RpcAcsRequest<CreateUploadFileJo
 		}
 	}
 
-	public String getFileName() {
-		return this.fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		if(fileName != null){
-			putQueryParameter("FileName", fileName);
-		}
-	}
-
 	public String getUploadURL() {
 		return this.uploadURL;
 	}
@@ -82,6 +60,28 @@ public class CreateUploadFileJobRequest extends RpcAcsRequest<CreateUploadFileJo
 		this.uploadURL = uploadURL;
 		if(uploadURL != null){
 			putQueryParameter("UploadURL", uploadURL);
+		}
+	}
+
+	public String getFileSource() {
+		return this.fileSource;
+	}
+
+	public void setFileSource(String fileSource) {
+		this.fileSource = fileSource;
+		if(fileSource != null){
+			putQueryParameter("FileSource", fileSource);
+		}
+	}
+
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putQueryParameter("FileName", fileName);
 		}
 	}
 

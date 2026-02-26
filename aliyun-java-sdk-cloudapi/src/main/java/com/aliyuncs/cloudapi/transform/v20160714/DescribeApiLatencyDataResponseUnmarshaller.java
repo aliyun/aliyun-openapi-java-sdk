@@ -31,8 +31,8 @@ public class DescribeApiLatencyDataResponseUnmarshaller {
 		List<MonitorItem> callLatencys = new ArrayList<MonitorItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApiLatencyDataResponse.CallLatencys.Length"); i++) {
 			MonitorItem monitorItem = new MonitorItem();
-			monitorItem.setItemTime(_ctx.stringValue("DescribeApiLatencyDataResponse.CallLatencys["+ i +"].ItemTime"));
 			monitorItem.setItemValue(_ctx.stringValue("DescribeApiLatencyDataResponse.CallLatencys["+ i +"].ItemValue"));
+			monitorItem.setItemTime(_ctx.stringValue("DescribeApiLatencyDataResponse.CallLatencys["+ i +"].ItemTime"));
 
 			callLatencys.add(monitorItem);
 		}

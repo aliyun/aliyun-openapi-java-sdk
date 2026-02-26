@@ -24,95 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryContactInfoResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String createDate;
-
-	private String registrantName;
-
-	private String registrantOrganization;
-
-	private String country;
-
-	private String province;
-
-	private String city;
-
-	private String address;
-
 	private String email;
-
-	private String postalCode;
-
-	private String telArea;
 
 	private String telephone;
 
+	private String requestId;
+
+	private String address;
+
+	private String postalCode;
+
+	private String city;
+
+	private String createDate;
+
+	private String province;
+
+	private String registrantName;
+
+	private String country;
+
+	private String registrantOrganization;
+
 	private String telExt;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getCreateDate() {
-		return this.createDate;
-	}
-
-	public void setCreateDate(String createDate) {
-		this.createDate = createDate;
-	}
-
-	public String getRegistrantName() {
-		return this.registrantName;
-	}
-
-	public void setRegistrantName(String registrantName) {
-		this.registrantName = registrantName;
-	}
-
-	public String getRegistrantOrganization() {
-		return this.registrantOrganization;
-	}
-
-	public void setRegistrantOrganization(String registrantOrganization) {
-		this.registrantOrganization = registrantOrganization;
-	}
-
-	public String getCountry() {
-		return this.country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	public String getProvince() {
-		return this.province;
-	}
-
-	public void setProvince(String province) {
-		this.province = province;
-	}
-
-	public String getCity() {
-		return this.city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	private String telArea;
 
 	public String getEmail() {
 		return this.email;
@@ -120,22 +56,6 @@ public class QueryContactInfoResponse extends AcsResponse {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getPostalCode() {
-		return this.postalCode;
-	}
-
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
-	}
-
-	public String getTelArea() {
-		return this.telArea;
-	}
-
-	public void setTelArea(String telArea) {
-		this.telArea = telArea;
 	}
 
 	public String getTelephone() {
@@ -146,12 +66,92 @@ public class QueryContactInfoResponse extends AcsResponse {
 		this.telephone = telephone;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPostalCode() {
+		return this.postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
+
+	public String getCity() {
+		return this.city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCreateDate() {
+		return this.createDate;
+	}
+
+	public void setCreateDate(String createDate) {
+		this.createDate = createDate;
+	}
+
+	public String getProvince() {
+		return this.province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+	}
+
+	public String getRegistrantName() {
+		return this.registrantName;
+	}
+
+	public void setRegistrantName(String registrantName) {
+		this.registrantName = registrantName;
+	}
+
+	public String getCountry() {
+		return this.country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getRegistrantOrganization() {
+		return this.registrantOrganization;
+	}
+
+	public void setRegistrantOrganization(String registrantOrganization) {
+		this.registrantOrganization = registrantOrganization;
+	}
+
 	public String getTelExt() {
 		return this.telExt;
 	}
 
 	public void setTelExt(String telExt) {
 		this.telExt = telExt;
+	}
+
+	public String getTelArea() {
+		return this.telArea;
+	}
+
+	public void setTelArea(String telArea) {
+		this.telArea = telArea;
 	}
 
 	@Override

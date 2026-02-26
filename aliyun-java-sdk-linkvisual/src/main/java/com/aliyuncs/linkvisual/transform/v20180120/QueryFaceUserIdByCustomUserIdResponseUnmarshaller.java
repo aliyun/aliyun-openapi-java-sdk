@@ -24,15 +24,15 @@ public class QueryFaceUserIdByCustomUserIdResponseUnmarshaller {
 	public static QueryFaceUserIdByCustomUserIdResponse unmarshall(QueryFaceUserIdByCustomUserIdResponse queryFaceUserIdByCustomUserIdResponse, UnmarshallerContext _ctx) {
 		
 		queryFaceUserIdByCustomUserIdResponse.setRequestId(_ctx.stringValue("QueryFaceUserIdByCustomUserIdResponse.RequestId"));
-		queryFaceUserIdByCustomUserIdResponse.setSuccess(_ctx.booleanValue("QueryFaceUserIdByCustomUserIdResponse.Success"));
-		queryFaceUserIdByCustomUserIdResponse.setErrorMessage(_ctx.stringValue("QueryFaceUserIdByCustomUserIdResponse.ErrorMessage"));
 		queryFaceUserIdByCustomUserIdResponse.setCode(_ctx.stringValue("QueryFaceUserIdByCustomUserIdResponse.Code"));
+		queryFaceUserIdByCustomUserIdResponse.setErrorMessage(_ctx.stringValue("QueryFaceUserIdByCustomUserIdResponse.ErrorMessage"));
+		queryFaceUserIdByCustomUserIdResponse.setSuccess(_ctx.booleanValue("QueryFaceUserIdByCustomUserIdResponse.Success"));
 
 		Data data = new Data();
-		data.setUserId(_ctx.stringValue("QueryFaceUserIdByCustomUserIdResponse.Data.UserId"));
+		data.setParams(_ctx.stringValue("QueryFaceUserIdByCustomUserIdResponse.Data.Params"));
 		data.setCustomUserId(_ctx.stringValue("QueryFaceUserIdByCustomUserIdResponse.Data.CustomUserId"));
 		data.setName(_ctx.stringValue("QueryFaceUserIdByCustomUserIdResponse.Data.Name"));
-		data.setParams(_ctx.stringValue("QueryFaceUserIdByCustomUserIdResponse.Data.Params"));
+		data.setUserId(_ctx.stringValue("QueryFaceUserIdByCustomUserIdResponse.Data.UserId"));
 		queryFaceUserIdByCustomUserIdResponse.setData(data);
 	 
 	 	return queryFaceUserIdByCustomUserIdResponse;

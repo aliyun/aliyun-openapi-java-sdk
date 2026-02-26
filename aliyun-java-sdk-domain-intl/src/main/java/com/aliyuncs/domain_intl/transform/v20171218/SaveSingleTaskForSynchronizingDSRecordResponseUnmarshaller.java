@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveSingleTaskForSynchronizingDSRecordResponseUnmarshaller {
 
-	public static SaveSingleTaskForSynchronizingDSRecordResponse unmarshall(SaveSingleTaskForSynchronizingDSRecordResponse saveSingleTaskForSynchronizingDSRecordResponse, UnmarshallerContext context) {
+	public static SaveSingleTaskForSynchronizingDSRecordResponse unmarshall(SaveSingleTaskForSynchronizingDSRecordResponse saveSingleTaskForSynchronizingDSRecordResponse, UnmarshallerContext _ctx) {
 		
-		saveSingleTaskForSynchronizingDSRecordResponse.setRequestId(context.stringValue("SaveSingleTaskForSynchronizingDSRecordResponse.RequestId"));
-		saveSingleTaskForSynchronizingDSRecordResponse.setTaskNo(context.stringValue("SaveSingleTaskForSynchronizingDSRecordResponse.TaskNo"));
+		saveSingleTaskForSynchronizingDSRecordResponse.setRequestId(_ctx.stringValue("SaveSingleTaskForSynchronizingDSRecordResponse.RequestId"));
+		saveSingleTaskForSynchronizingDSRecordResponse.setTaskNo(_ctx.stringValue("SaveSingleTaskForSynchronizingDSRecordResponse.TaskNo"));
 	 
 	 	return saveSingleTaskForSynchronizingDSRecordResponse;
 	}

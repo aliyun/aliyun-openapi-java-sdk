@@ -39,6 +39,8 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 
 	private String ownerAccount;
 
+	private Boolean isRotate;
+
 	private String encryptionKey;
 
 	private Long ownerId;
@@ -131,6 +133,17 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Boolean getIsRotate() {
+		return this.isRotate;
+	}
+
+	public void setIsRotate(Boolean isRotate) {
+		this.isRotate = isRotate;
+		if(isRotate != null){
+			putQueryParameter("IsRotate", isRotate.toString());
 		}
 	}
 

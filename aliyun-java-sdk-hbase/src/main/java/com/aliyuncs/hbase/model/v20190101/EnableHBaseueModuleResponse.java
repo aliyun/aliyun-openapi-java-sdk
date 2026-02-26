@@ -26,9 +26,9 @@ public class EnableHBaseueModuleResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String clusterId;
-
 	private String orderId;
+
+	private String clusterId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class EnableHBaseueModuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-	}
-
 	public String getOrderId() {
 		return this.orderId;
 	}
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
 	}
 
 	@Override

@@ -61,19 +61,19 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 		private String componentName;
 
-		private String locationId;
-
 		private String componentType;
 
 		private String effect;
 
-		private ComponentLayer componentLayer;
+		private String locationId;
 
-		private TextLayerContent textLayerContent;
+		private CaptionLayerContent captionLayerContent;
+
+		private ComponentLayer componentLayer;
 
 		private ImageLayerContent imageLayerContent;
 
-		private CaptionLayerContent captionLayerContent;
+		private TextLayerContent textLayerContent;
 
 		public String getComponentId() {
 			return this.componentId;
@@ -89,14 +89,6 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 		public void setComponentName(String componentName) {
 			this.componentName = componentName;
-		}
-
-		public String getLocationId() {
-			return this.locationId;
-		}
-
-		public void setLocationId(String locationId) {
-			this.locationId = locationId;
 		}
 
 		public String getComponentType() {
@@ -115,28 +107,12 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 			this.effect = effect;
 		}
 
-		public ComponentLayer getComponentLayer() {
-			return this.componentLayer;
+		public String getLocationId() {
+			return this.locationId;
 		}
 
-		public void setComponentLayer(ComponentLayer componentLayer) {
-			this.componentLayer = componentLayer;
-		}
-
-		public TextLayerContent getTextLayerContent() {
-			return this.textLayerContent;
-		}
-
-		public void setTextLayerContent(TextLayerContent textLayerContent) {
-			this.textLayerContent = textLayerContent;
-		}
-
-		public ImageLayerContent getImageLayerContent() {
-			return this.imageLayerContent;
-		}
-
-		public void setImageLayerContent(ImageLayerContent imageLayerContent) {
-			this.imageLayerContent = imageLayerContent;
+		public void setLocationId(String locationId) {
+			this.locationId = locationId;
 		}
 
 		public CaptionLayerContent getCaptionLayerContent() {
@@ -147,79 +123,74 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 			this.captionLayerContent = captionLayerContent;
 		}
 
-		public static class ComponentLayer {
-
-			private Float heightNormalized;
-
-			private Float widthNormalized;
-
-			private String positionRefer;
-
-			private Integer transparency;
-
-			private List<Float> positionNormalizeds;
-
-			public Float getHeightNormalized() {
-				return this.heightNormalized;
-			}
-
-			public void setHeightNormalized(Float heightNormalized) {
-				this.heightNormalized = heightNormalized;
-			}
-
-			public Float getWidthNormalized() {
-				return this.widthNormalized;
-			}
-
-			public void setWidthNormalized(Float widthNormalized) {
-				this.widthNormalized = widthNormalized;
-			}
-
-			public String getPositionRefer() {
-				return this.positionRefer;
-			}
-
-			public void setPositionRefer(String positionRefer) {
-				this.positionRefer = positionRefer;
-			}
-
-			public Integer getTransparency() {
-				return this.transparency;
-			}
-
-			public void setTransparency(Integer transparency) {
-				this.transparency = transparency;
-			}
-
-			public List<Float> getPositionNormalizeds() {
-				return this.positionNormalizeds;
-			}
-
-			public void setPositionNormalizeds(List<Float> positionNormalizeds) {
-				this.positionNormalizeds = positionNormalizeds;
-			}
+		public ComponentLayer getComponentLayer() {
+			return this.componentLayer;
 		}
 
-		public static class TextLayerContent {
+		public void setComponentLayer(ComponentLayer componentLayer) {
+			this.componentLayer = componentLayer;
+		}
 
-			private String text;
+		public ImageLayerContent getImageLayerContent() {
+			return this.imageLayerContent;
+		}
+
+		public void setImageLayerContent(ImageLayerContent imageLayerContent) {
+			this.imageLayerContent = imageLayerContent;
+		}
+
+		public TextLayerContent getTextLayerContent() {
+			return this.textLayerContent;
+		}
+
+		public void setTextLayerContent(TextLayerContent textLayerContent) {
+			this.textLayerContent = textLayerContent;
+		}
+
+		public static class CaptionLayerContent {
+
+			private String borderColor;
+
+			private Float borderWidthNormalized;
 
 			private String color;
 
 			private String fontName;
 
+			private Float lineSpaceNormalized;
+
+			private String locationId;
+
+			private Integer ptsOffset;
+
+			private Boolean showSourceLan;
+
 			private Float sizeNormalized;
 
-			private Float borderWidthNormalized;
+			private String sourceLan;
 
-			private String borderColor;
+			private String targetLan;
 
-			public String getText() {
-				return this.text;
+			private Integer wordCountPerLine;
+
+			private Float wordSpaceNormalized;
+
+			private Integer wordsCount;
+
+			public String getBorderColor() {
+				return this.borderColor;
 			}
 
-			public void setText(String text) {
-				this.text = text;
+			public void setBorderColor(String borderColor) {
+				this.borderColor = borderColor;
+			}
+
+			public Float getBorderWidthNormalized() {
+				return this.borderWidthNormalized;
+			}
+
+			public void setBorderWidthNormalized(Float borderWidthNormalized) {
+				this.borderWidthNormalized = borderWidthNormalized;
 			}
 
 			public String getColor() {
@@ -238,73 +209,13 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 				this.fontName = fontName;
 			}
 
-			public Float getSizeNormalized() {
-				return this.sizeNormalized;
+			public Float getLineSpaceNormalized() {
+				return this.lineSpaceNormalized;
 			}
 
-			public void setSizeNormalized(Float sizeNormalized) {
-				this.sizeNormalized = sizeNormalized;
+			public void setLineSpaceNormalized(Float lineSpaceNormalized) {
+				this.lineSpaceNormalized = lineSpaceNormalized;
 			}
-
-			public Float getBorderWidthNormalized() {
-				return this.borderWidthNormalized;
-			}
-
-			public void setBorderWidthNormalized(Float borderWidthNormalized) {
-				this.borderWidthNormalized = borderWidthNormalized;
-			}
-
-			public String getBorderColor() {
-				return this.borderColor;
-			}
-
-			public void setBorderColor(String borderColor) {
-				this.borderColor = borderColor;
-			}
-		}
-
-		public static class ImageLayerContent {
-
-			private String materialId;
-
-			public String getMaterialId() {
-				return this.materialId;
-			}
-
-			public void setMaterialId(String materialId) {
-				this.materialId = materialId;
-			}
-		}
-
-		public static class CaptionLayerContent {
-
-			private String locationId;
-
-			private Integer ptsOffset;
-
-			private Integer wordsCount;
-
-			private String color;
-
-			private String fontName;
-
-			private String sourceLan;
-
-			private String targetLan;
-
-			private Boolean showSourceLan;
-
-			private Float sizeNormalized;
-
-			private Float borderWidthNormalized;
-
-			private String borderColor;
-
-			private Integer wordCountPerLine;
-
-			private Float wordSpaceNormalized;
-
-			private Float lineSpaceNormalized;
 
 			public String getLocationId() {
 				return this.locationId;
@@ -320,46 +231,6 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 			public void setPtsOffset(Integer ptsOffset) {
 				this.ptsOffset = ptsOffset;
-			}
-
-			public Integer getWordsCount() {
-				return this.wordsCount;
-			}
-
-			public void setWordsCount(Integer wordsCount) {
-				this.wordsCount = wordsCount;
-			}
-
-			public String getColor() {
-				return this.color;
-			}
-
-			public void setColor(String color) {
-				this.color = color;
-			}
-
-			public String getFontName() {
-				return this.fontName;
-			}
-
-			public void setFontName(String fontName) {
-				this.fontName = fontName;
-			}
-
-			public String getSourceLan() {
-				return this.sourceLan;
-			}
-
-			public void setSourceLan(String sourceLan) {
-				this.sourceLan = sourceLan;
-			}
-
-			public String getTargetLan() {
-				return this.targetLan;
-			}
-
-			public void setTargetLan(String targetLan) {
-				this.targetLan = targetLan;
 			}
 
 			public Boolean getShowSourceLan() {
@@ -378,20 +249,20 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 				this.sizeNormalized = sizeNormalized;
 			}
 
-			public Float getBorderWidthNormalized() {
-				return this.borderWidthNormalized;
+			public String getSourceLan() {
+				return this.sourceLan;
 			}
 
-			public void setBorderWidthNormalized(Float borderWidthNormalized) {
-				this.borderWidthNormalized = borderWidthNormalized;
+			public void setSourceLan(String sourceLan) {
+				this.sourceLan = sourceLan;
 			}
 
-			public String getBorderColor() {
-				return this.borderColor;
+			public String getTargetLan() {
+				return this.targetLan;
 			}
 
-			public void setBorderColor(String borderColor) {
-				this.borderColor = borderColor;
+			public void setTargetLan(String targetLan) {
+				this.targetLan = targetLan;
 			}
 
 			public Integer getWordCountPerLine() {
@@ -410,12 +281,141 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 				this.wordSpaceNormalized = wordSpaceNormalized;
 			}
 
-			public Float getLineSpaceNormalized() {
-				return this.lineSpaceNormalized;
+			public Integer getWordsCount() {
+				return this.wordsCount;
 			}
 
-			public void setLineSpaceNormalized(Float lineSpaceNormalized) {
-				this.lineSpaceNormalized = lineSpaceNormalized;
+			public void setWordsCount(Integer wordsCount) {
+				this.wordsCount = wordsCount;
+			}
+		}
+
+		public static class ComponentLayer {
+
+			private Float heightNormalized;
+
+			private String positionRefer;
+
+			private Integer transparency;
+
+			private Float widthNormalized;
+
+			private List<Float> positionNormalizeds;
+
+			public Float getHeightNormalized() {
+				return this.heightNormalized;
+			}
+
+			public void setHeightNormalized(Float heightNormalized) {
+				this.heightNormalized = heightNormalized;
+			}
+
+			public String getPositionRefer() {
+				return this.positionRefer;
+			}
+
+			public void setPositionRefer(String positionRefer) {
+				this.positionRefer = positionRefer;
+			}
+
+			public Integer getTransparency() {
+				return this.transparency;
+			}
+
+			public void setTransparency(Integer transparency) {
+				this.transparency = transparency;
+			}
+
+			public Float getWidthNormalized() {
+				return this.widthNormalized;
+			}
+
+			public void setWidthNormalized(Float widthNormalized) {
+				this.widthNormalized = widthNormalized;
+			}
+
+			public List<Float> getPositionNormalizeds() {
+				return this.positionNormalizeds;
+			}
+
+			public void setPositionNormalizeds(List<Float> positionNormalizeds) {
+				this.positionNormalizeds = positionNormalizeds;
+			}
+		}
+
+		public static class ImageLayerContent {
+
+			private String materialId;
+
+			public String getMaterialId() {
+				return this.materialId;
+			}
+
+			public void setMaterialId(String materialId) {
+				this.materialId = materialId;
+			}
+		}
+
+		public static class TextLayerContent {
+
+			private String borderColor;
+
+			private Float borderWidthNormalized;
+
+			private String color;
+
+			private String fontName;
+
+			private Float sizeNormalized;
+
+			private String text;
+
+			public String getBorderColor() {
+				return this.borderColor;
+			}
+
+			public void setBorderColor(String borderColor) {
+				this.borderColor = borderColor;
+			}
+
+			public Float getBorderWidthNormalized() {
+				return this.borderWidthNormalized;
+			}
+
+			public void setBorderWidthNormalized(Float borderWidthNormalized) {
+				this.borderWidthNormalized = borderWidthNormalized;
+			}
+
+			public String getColor() {
+				return this.color;
+			}
+
+			public void setColor(String color) {
+				this.color = color;
+			}
+
+			public String getFontName() {
+				return this.fontName;
+			}
+
+			public void setFontName(String fontName) {
+				this.fontName = fontName;
+			}
+
+			public Float getSizeNormalized() {
+				return this.sizeNormalized;
+			}
+
+			public void setSizeNormalized(Float sizeNormalized) {
+				this.sizeNormalized = sizeNormalized;
+			}
+
+			public String getText() {
+				return this.text;
+			}
+
+			public void setText(String text) {
+				this.text = text;
 			}
 		}
 	}

@@ -31,7 +31,7 @@ public class RunPreTrainServiceRequest extends RpcAcsRequest<RunPreTrainServiceR
 
 	private String serviceName;
 	public RunPreTrainServiceRequest() {
-		super("nlp-automl", "2019-11-11", "RunPreTrainService", "nlpautoml");
+		super("nlp-automl", "2019-11-11", "RunPreTrainService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

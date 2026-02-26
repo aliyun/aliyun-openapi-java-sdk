@@ -27,6 +27,8 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 
 	private Long resourceOwnerId;
 
+	private String destinationZoneId;
+
 	private String diskCategory;
 
 	private String diskId;
@@ -38,6 +40,8 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 	private String performanceLevel;
 
 	private String ownerAccount;
+
+	private PerformanceControlOptions performanceControlOptions;
 
 	private Long ownerId;
 
@@ -59,6 +63,17 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDestinationZoneId() {
+		return this.destinationZoneId;
+	}
+
+	public void setDestinationZoneId(String destinationZoneId) {
+		this.destinationZoneId = destinationZoneId;
+		if(destinationZoneId != null){
+			putQueryParameter("DestinationZoneId", destinationZoneId);
 		}
 	}
 
@@ -128,6 +143,20 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 		}
 	}
 
+	public PerformanceControlOptions getPerformanceControlOptions() {
+		return this.performanceControlOptions;
+	}
+
+	public void setPerformanceControlOptions(PerformanceControlOptions performanceControlOptions) {
+		this.performanceControlOptions = performanceControlOptions;	
+		if (performanceControlOptions != null) {
+			
+				putQueryParameter("PerformanceControlOptions.IOPS" , performanceControlOptions.getIOPS());
+				putQueryParameter("PerformanceControlOptions.Throughput" , performanceControlOptions.getThroughput());
+				putQueryParameter("PerformanceControlOptions.Recover" , performanceControlOptions.getRecover());
+		}	
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -147,6 +176,39 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 		this.provisionedIops = provisionedIops;
 		if(provisionedIops != null){
 			putQueryParameter("ProvisionedIops", provisionedIops.toString());
+		}
+	}
+
+	public static class PerformanceControlOptions {
+
+		private Integer iOPS;
+
+		private Integer throughput;
+
+		private String recover;
+
+		public Integer getIOPS() {
+			return this.iOPS;
+		}
+
+		public void setIOPS(Integer iOPS) {
+			this.iOPS = iOPS;
+		}
+
+		public Integer getThroughput() {
+			return this.throughput;
+		}
+
+		public void setThroughput(Integer throughput) {
+			this.throughput = throughput;
+		}
+
+		public String getRecover() {
+			return this.recover;
+		}
+
+		public void setRecover(String recover) {
+			this.recover = recover;
 		}
 	}
 

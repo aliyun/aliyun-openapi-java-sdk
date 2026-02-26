@@ -23,9 +23,9 @@ public class DescribeDohUserInfoResponseUnmarshaller {
 	public static DescribeDohUserInfoResponse unmarshall(DescribeDohUserInfoResponse describeDohUserInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeDohUserInfoResponse.setRequestId(_ctx.stringValue("DescribeDohUserInfoResponse.RequestId"));
+		describeDohUserInfoResponse.setSubDomainCount(_ctx.integerValue("DescribeDohUserInfoResponse.SubDomainCount"));
 		describeDohUserInfoResponse.setPdnsId(_ctx.longValue("DescribeDohUserInfoResponse.PdnsId"));
 		describeDohUserInfoResponse.setDomainCount(_ctx.integerValue("DescribeDohUserInfoResponse.DomainCount"));
-		describeDohUserInfoResponse.setSubDomainCount(_ctx.integerValue("DescribeDohUserInfoResponse.SubDomainCount"));
 	 
 	 	return describeDohUserInfoResponse;
 	}

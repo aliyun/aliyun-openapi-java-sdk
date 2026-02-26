@@ -95,6 +95,10 @@ public class DescribeUsersInGroupResponse extends AcsResponse {
 
 		private String userDesktopId;
 
+		private String endUserRemark;
+
+		private String displayName;
+
 		private List<UserSetPropertiesModelsItem> userSetPropertiesModels;
 
 		private ExternalInfo externalInfo;
@@ -169,6 +173,22 @@ public class DescribeUsersInGroupResponse extends AcsResponse {
 
 		public void setUserDesktopId(String userDesktopId) {
 			this.userDesktopId = userDesktopId;
+		}
+
+		public String getEndUserRemark() {
+			return this.endUserRemark;
+		}
+
+		public void setEndUserRemark(String endUserRemark) {
+			this.endUserRemark = endUserRemark;
+		}
+
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
 		}
 
 		public List<UserSetPropertiesModelsItem> getUserSetPropertiesModels() {

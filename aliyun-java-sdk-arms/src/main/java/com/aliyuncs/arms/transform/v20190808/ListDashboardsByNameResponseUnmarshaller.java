@@ -24,6 +24,8 @@ public class ListDashboardsByNameResponseUnmarshaller {
 		
 		listDashboardsByNameResponse.setRequestId(_ctx.stringValue("ListDashboardsByNameResponse.RequestId"));
 		listDashboardsByNameResponse.setData(_ctx.stringValue("ListDashboardsByNameResponse.Data"));
+		listDashboardsByNameResponse.setCode(_ctx.integerValue("ListDashboardsByNameResponse.Code"));
+		listDashboardsByNameResponse.setMessage(_ctx.stringValue("ListDashboardsByNameResponse.Message"));
 	 
 	 	return listDashboardsByNameResponse;
 	}

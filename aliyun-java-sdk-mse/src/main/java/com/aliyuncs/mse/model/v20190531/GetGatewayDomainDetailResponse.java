@@ -122,6 +122,12 @@ public class GetGatewayDomainDetailResponse extends AcsResponse {
 
 		private String gmtAfter;
 
+		private String http2;
+
+		private String tlsMax;
+
+		private String tlsMin;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -264,6 +270,30 @@ public class GetGatewayDomainDetailResponse extends AcsResponse {
 
 		public void setGmtAfter(String gmtAfter) {
 			this.gmtAfter = gmtAfter;
+		}
+
+		public String getHttp2() {
+			return this.http2;
+		}
+
+		public void setHttp2(String http2) {
+			this.http2 = http2;
+		}
+
+		public String getTlsMax() {
+			return this.tlsMax;
+		}
+
+		public void setTlsMax(String tlsMax) {
+			this.tlsMax = tlsMax;
+		}
+
+		public String getTlsMin() {
+			return this.tlsMin;
+		}
+
+		public void setTlsMin(String tlsMin) {
+			this.tlsMin = tlsMin;
 		}
 	}
 

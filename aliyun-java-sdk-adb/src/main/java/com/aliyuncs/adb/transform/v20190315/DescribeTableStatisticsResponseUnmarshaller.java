@@ -31,6 +31,7 @@ public class DescribeTableStatisticsResponseUnmarshaller {
 		describeTableStatisticsResponse.setPageSize(_ctx.stringValue("DescribeTableStatisticsResponse.PageSize"));
 		describeTableStatisticsResponse.setPageNumber(_ctx.stringValue("DescribeTableStatisticsResponse.PageNumber"));
 		describeTableStatisticsResponse.setDBClusterId(_ctx.stringValue("DescribeTableStatisticsResponse.DBClusterId"));
+		describeTableStatisticsResponse.setSchemaNames(_ctx.stringValue("DescribeTableStatisticsResponse.SchemaNames"));
 
 		List<TableStatisticRecords> items = new ArrayList<TableStatisticRecords>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTableStatisticsResponse.Items.Length"); i++) {
@@ -43,6 +44,10 @@ public class DescribeTableStatisticsResponseUnmarshaller {
 			tableStatisticRecords.setPrimaryKeyIndexSize(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].PrimaryKeyIndexSize"));
 			tableStatisticRecords.setPartitionCount(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].PartitionCount"));
 			tableStatisticRecords.setColdDataSize(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].ColdDataSize"));
+			tableStatisticRecords.setSpaceRatio(_ctx.doubleValue("DescribeTableStatisticsResponse.Items["+ i +"].SpaceRatio"));
+			tableStatisticRecords.setTotalSize(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].TotalSize"));
+			tableStatisticRecords.setHotDataSize(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].HotDataSize"));
+			tableStatisticRecords.setOtherSize(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].OtherSize"));
 
 			items.add(tableStatisticRecords);
 		}

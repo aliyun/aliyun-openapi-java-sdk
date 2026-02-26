@@ -31,7 +31,7 @@ public class DisableDeviceTunnelRequest extends RpcAcsRequest<DisableDeviceTunne
 
 	private String deviceName;
 	public DisableDeviceTunnelRequest() {
-		super("Iot", "2018-01-20", "DisableDeviceTunnel");
+		super("Iot", "2018-01-20", "DisableDeviceTunnel", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -21,8 +21,10 @@ import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet;
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData;
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData.DataDisk;
+import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData.ImageOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData.InstanceTag;
 import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData.NetworkInterface;
+import com.aliyuncs.ecs.model.v20140526.DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSet.LaunchTemplateData.SecurityOptions;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -89,12 +91,30 @@ public class DescribeLaunchTemplateVersionsResponseUnmarshaller {
 			launchTemplateData.setIpv6AddressCount(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Ipv6AddressCount"));
 			launchTemplateData.setSystemDiskProvisionedIops(_ctx.longValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.ProvisionedIops"));
 			launchTemplateData.setSystemDiskBurstingEnabled(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.BurstingEnabled"));
+			launchTemplateData.setSystemDiskEncrypted(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Encrypted"));
+			launchTemplateData.setDeletionProtection(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DeletionProtection"));
+			launchTemplateData.setCreditSpecification(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.CreditSpecification"));
+			launchTemplateData.setAutoRenew(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.AutoRenew"));
+			launchTemplateData.setAutoRenewPeriod(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.AutoRenewPeriod"));
+			launchTemplateData.setPeriodUnit(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.PeriodUnit"));
+			launchTemplateData.setHttpEndpoint(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HttpEndpoint"));
+			launchTemplateData.setHttpTokens(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HttpTokens"));
+			launchTemplateData.setHttpPutResponseHopLimit(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HttpPutResponseHopLimit"));
+			launchTemplateData.setSystemDiskKMSKeyId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.KMSKeyId"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupIds.Length"); j++) {
 				securityGroupIds.add(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupIds["+ j +"]"));
 			}
 			launchTemplateData.setSecurityGroupIds(securityGroupIds);
+
+			ImageOptions imageOptions = new ImageOptions();
+			imageOptions.setLoginAsNonRoot(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ImageOptions.LoginAsNonRoot"));
+			launchTemplateData.setImageOptions(imageOptions);
+
+			SecurityOptions securityOptions = new SecurityOptions();
+			securityOptions.setTrustedSystemMode(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityOptions.TrustedSystemMode"));
+			launchTemplateData.setSecurityOptions(securityOptions);
 
 			List<DataDisk> dataDisks = new ArrayList<DataDisk>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks.Length"); j++) {
@@ -111,6 +131,7 @@ public class DescribeLaunchTemplateVersionsResponseUnmarshaller {
 				dataDisk.setProvisionedIops(_ctx.longValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].ProvisionedIops"));
 				dataDisk.setBurstingEnabled(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].BurstingEnabled"));
 				dataDisk.setAutoSnapshotPolicyId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].AutoSnapshotPolicyId"));
+				dataDisk.setKMSKeyId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].KMSKeyId"));
 
 				dataDisks.add(dataDisk);
 			}
@@ -126,6 +147,7 @@ public class DescribeLaunchTemplateVersionsResponseUnmarshaller {
 				networkInterface.setSecurityGroupId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].SecurityGroupId"));
 				networkInterface.setInstanceType(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].InstanceType"));
 				networkInterface.setNetworkInterfaceTrafficMode(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].NetworkInterfaceTrafficMode"));
+				networkInterface.setDeleteOnRelease(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].DeleteOnRelease"));
 
 				List<String> securityGroupIds1 = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].SecurityGroupIds.Length"); k++) {

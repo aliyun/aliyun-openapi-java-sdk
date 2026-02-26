@@ -33,6 +33,8 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 
 	private String appName;
 
+	private Integer onDemand;
+
 	private String streamName;
 
 	private String vodTranscodeGroupId;
@@ -92,6 +94,17 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public Integer getOnDemand() {
+		return this.onDemand;
+	}
+
+	public void setOnDemand(Integer onDemand) {
+		this.onDemand = onDemand;
+		if(onDemand != null){
+			putQueryParameter("OnDemand", onDemand.toString());
 		}
 	}
 

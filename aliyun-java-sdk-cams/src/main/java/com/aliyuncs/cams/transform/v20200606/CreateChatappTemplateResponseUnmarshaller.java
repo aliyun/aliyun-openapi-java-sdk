@@ -26,6 +26,7 @@ public class CreateChatappTemplateResponseUnmarshaller {
 		createChatappTemplateResponse.setRequestId(_ctx.stringValue("CreateChatappTemplateResponse.RequestId"));
 		createChatappTemplateResponse.setCode(_ctx.stringValue("CreateChatappTemplateResponse.Code"));
 		createChatappTemplateResponse.setMessage(_ctx.stringValue("CreateChatappTemplateResponse.Message"));
+		createChatappTemplateResponse.setAccessDeniedDetail(_ctx.stringValue("CreateChatappTemplateResponse.AccessDeniedDetail"));
 
 		Data data = new Data();
 		data.setTemplateCode(_ctx.stringValue("CreateChatappTemplateResponse.Data.TemplateCode"));

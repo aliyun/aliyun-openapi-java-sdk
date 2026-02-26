@@ -32,7 +32,7 @@ public class DescribeHanaDatabasesRequest extends RpcAcsRequest<DescribeHanaData
 
 	private Integer pageNumber;
 
-	private String token;
+	private String resourceGroupId;
 
 	private Integer pageSize;
 	public DescribeHanaDatabasesRequest() {
@@ -78,14 +78,14 @@ public class DescribeHanaDatabasesRequest extends RpcAcsRequest<DescribeHanaData
 		}
 	}
 
-	public String getToken() {
-		return this.token;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

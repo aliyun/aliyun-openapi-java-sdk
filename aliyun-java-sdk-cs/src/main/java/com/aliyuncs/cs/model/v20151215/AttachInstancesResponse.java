@@ -47,19 +47,11 @@ public class AttachInstancesResponse extends AcsResponse {
 
 	public static class ListItem {
 
-		private String instanceId;
-
 		private String code;
 
+		private String instanceId;
+
 		private String message;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
 
 		public String getCode() {
 			return this.code;
@@ -67,6 +59,14 @@ public class AttachInstancesResponse extends AcsResponse {
 
 		public void setCode(String code) {
 			this.code = code;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getMessage() {

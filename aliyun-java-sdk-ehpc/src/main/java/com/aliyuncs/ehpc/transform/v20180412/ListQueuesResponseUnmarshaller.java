@@ -32,14 +32,17 @@ public class ListQueuesResponseUnmarshaller {
 		List<QueueInfo> queues = new ArrayList<QueueInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListQueuesResponse.Queues.Length"); i++) {
 			QueueInfo queueInfo = new QueueInfo();
-			queueInfo.setQueueName(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].QueueName"));
 			queueInfo.setType(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].Type"));
-			queueInfo.setResourceGroupId(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].ResourceGroupId"));
 			queueInfo.setHostNamePrefix(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].HostNamePrefix"));
+			queueInfo.setQueueName(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].QueueName"));
+			queueInfo.setEnableAutoGrow(_ctx.booleanValue("ListQueuesResponse.Queues["+ i +"].EnableAutoGrow"));
+			queueInfo.setResourceGroupId(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].ResourceGroupId"));
+			queueInfo.setImageId(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].ImageId"));
 			queueInfo.setHostNameSuffix(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].HostNameSuffix"));
 			queueInfo.setSpotStrategy(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].SpotStrategy"));
-			queueInfo.setImageId(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].ImageId"));
-			queueInfo.setEnableAutoGrow(_ctx.booleanValue("ListQueuesResponse.Queues["+ i +"].EnableAutoGrow"));
+			queueInfo.setDeploymentSetId(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].DeploymentSetId"));
+			queueInfo.setUseESS(_ctx.booleanValue("ListQueuesResponse.Queues["+ i +"].UseESS"));
+			queueInfo.setNetworkInterfaceTrafficMode(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].NetworkInterfaceTrafficMode"));
 
 			List<String> computeInstanceType = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListQueuesResponse.Queues["+ i +"].ComputeInstanceType.Length"); j++) {

@@ -29,13 +29,17 @@ public class DescribeDBNodePerformanceRequest extends RpcAcsRequest<DescribeDBNo
 
 	private String startTime;
 
+	private String type;
+
 	private String key;
 
 	private String dBClusterId;
 
 	private String endTime;
+
+	private String interval;
 	public DescribeDBNodePerformanceRequest() {
-		super("polardb", "2017-08-01", "DescribeDBNodePerformance");
+		super("polardb", "2017-08-01", "DescribeDBNodePerformance", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,6 +66,17 @@ public class DescribeDBNodePerformanceRequest extends RpcAcsRequest<DescribeDBNo
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
@@ -95,6 +110,17 @@ public class DescribeDBNodePerformanceRequest extends RpcAcsRequest<DescribeDBNo
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 

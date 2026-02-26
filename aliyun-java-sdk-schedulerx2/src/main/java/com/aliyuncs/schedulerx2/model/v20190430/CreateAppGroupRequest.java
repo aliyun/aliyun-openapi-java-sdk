@@ -42,13 +42,19 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 
 	private String groupId;
 
+	private Integer appType;
+
+	private Integer appVersion;
+
 	private String monitorConfigJson;
 
 	private String namespace;
 
+	private Boolean enableLog;
+
 	private String appKey;
 	public CreateAppGroupRequest() {
-		super("schedulerx2", "2019-04-30", "CreateAppGroup");
+		super("schedulerx2", "2019-04-30", "CreateAppGroup", "schedulerx2");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {
@@ -145,6 +151,28 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		}
 	}
 
+	public Integer getAppType() {
+		return this.appType;
+	}
+
+	public void setAppType(Integer appType) {
+		this.appType = appType;
+		if(appType != null){
+			putQueryParameter("AppType", appType.toString());
+		}
+	}
+
+	public Integer getAppVersion() {
+		return this.appVersion;
+	}
+
+	public void setAppVersion(Integer appVersion) {
+		this.appVersion = appVersion;
+		if(appVersion != null){
+			putQueryParameter("AppVersion", appVersion.toString());
+		}
+	}
+
 	public String getMonitorConfigJson() {
 		return this.monitorConfigJson;
 	}
@@ -164,6 +192,17 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public Boolean getEnableLog() {
+		return this.enableLog;
+	}
+
+	public void setEnableLog(Boolean enableLog) {
+		this.enableLog = enableLog;
+		if(enableLog != null){
+			putQueryParameter("EnableLog", enableLog.toString());
 		}
 	}
 

@@ -30,7 +30,7 @@ public class DeleteServiceInstancesRequest extends RpcAcsRequest<DeleteServiceIn
 
 	private List<String> serviceInstanceIds;
 	public DeleteServiceInstancesRequest() {
-		super("ComputeNest", "2021-06-01", "DeleteServiceInstances");
+		super("ComputeNest", "2021-06-01", "DeleteServiceInstances", "computenest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

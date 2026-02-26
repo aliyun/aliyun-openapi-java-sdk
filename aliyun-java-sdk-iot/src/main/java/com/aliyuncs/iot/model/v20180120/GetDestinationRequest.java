@@ -29,7 +29,7 @@ public class GetDestinationRequest extends RpcAcsRequest<GetDestinationResponse>
 
 	private Long destinationId;
 	public GetDestinationRequest() {
-		super("Iot", "2018-01-20", "GetDestination");
+		super("Iot", "2018-01-20", "GetDestination", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

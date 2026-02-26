@@ -23,8 +23,8 @@ public class DescribeRdsCommodityResponseUnmarshaller {
 	public static DescribeRdsCommodityResponse unmarshall(DescribeRdsCommodityResponse describeRdsCommodityResponse, UnmarshallerContext _ctx) {
 		
 		describeRdsCommodityResponse.setRequestId(_ctx.stringValue("DescribeRdsCommodityResponse.RequestId"));
-		describeRdsCommodityResponse.setSuccess(_ctx.booleanValue("DescribeRdsCommodityResponse.Success"));
 		describeRdsCommodityResponse.setData(_ctx.stringValue("DescribeRdsCommodityResponse.Data"));
+		describeRdsCommodityResponse.setSuccess(_ctx.booleanValue("DescribeRdsCommodityResponse.Success"));
 	 
 	 	return describeRdsCommodityResponse;
 	}

@@ -25,6 +25,8 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class GetProjectRequest extends RpcAcsRequest<GetProjectResponse> {
 	   
 
+	private String projectIdentifier;
+
 	private Long projectId;
 	public GetProjectRequest() {
 		super("dataworks-public", "2020-05-18", "GetProject");
@@ -33,6 +35,17 @@ public class GetProjectRequest extends RpcAcsRequest<GetProjectResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getProjectIdentifier() {
+		return this.projectIdentifier;
+	}
+
+	public void setProjectIdentifier(String projectIdentifier) {
+		this.projectIdentifier = projectIdentifier;
+		if(projectIdentifier != null){
+			putQueryParameter("ProjectIdentifier", projectIdentifier);
+		}
 	}
 
 	public Long getProjectId() {

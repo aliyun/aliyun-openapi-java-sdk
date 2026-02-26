@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.videoenhan.model.v20200320.QueryFaceVideoTemplateResponse;
 import com.aliyuncs.videoenhan.model.v20200320.QueryFaceVideoTemplateResponse.Data;
 import com.aliyuncs.videoenhan.model.v20200320.QueryFaceVideoTemplateResponse.Data.ElementsItem;
+import com.aliyuncs.videoenhan.model.v20200320.QueryFaceVideoTemplateResponse.Data.ElementsItem.FaceInfosItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,19 +29,30 @@ public class QueryFaceVideoTemplateResponseUnmarshaller {
 	public static QueryFaceVideoTemplateResponse unmarshall(QueryFaceVideoTemplateResponse queryFaceVideoTemplateResponse, UnmarshallerContext _ctx) {
 		
 		queryFaceVideoTemplateResponse.setRequestId(_ctx.stringValue("QueryFaceVideoTemplateResponse.RequestId"));
-		queryFaceVideoTemplateResponse.setMessage(_ctx.stringValue("QueryFaceVideoTemplateResponse.Message"));
 		queryFaceVideoTemplateResponse.setCode(_ctx.stringValue("QueryFaceVideoTemplateResponse.Code"));
+		queryFaceVideoTemplateResponse.setMessage(_ctx.stringValue("QueryFaceVideoTemplateResponse.Message"));
 
 		Data data = new Data();
+		data.setTotal(_ctx.longValue("QueryFaceVideoTemplateResponse.Data.Total"));
 
 		List<ElementsItem> elements = new ArrayList<ElementsItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFaceVideoTemplateResponse.Data.Elements.Length"); i++) {
 			ElementsItem elementsItem = new ElementsItem();
-			elementsItem.setTemplateURL(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].TemplateURL"));
-			elementsItem.setUserId(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].UserId"));
 			elementsItem.setCreateTime(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].CreateTime"));
 			elementsItem.setUpdateTime(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].UpdateTime"));
+			elementsItem.setUserId(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].UserId"));
 			elementsItem.setTemplateId(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].TemplateId"));
+			elementsItem.setTemplateURL(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].TemplateURL"));
+
+			List<FaceInfosItem> faceInfos = new ArrayList<FaceInfosItem>();
+			for (int j = 0; j < _ctx.lengthValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].FaceInfos.Length"); j++) {
+				FaceInfosItem faceInfosItem = new FaceInfosItem();
+				faceInfosItem.setTemplateFaceID(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].FaceInfos["+ j +"].TemplateFaceID"));
+				faceInfosItem.setTemplateFaceURL(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].FaceInfos["+ j +"].TemplateFaceURL"));
+
+				faceInfos.add(faceInfosItem);
+			}
+			elementsItem.setFaceInfos(faceInfos);
 
 			elements.add(elementsItem);
 		}

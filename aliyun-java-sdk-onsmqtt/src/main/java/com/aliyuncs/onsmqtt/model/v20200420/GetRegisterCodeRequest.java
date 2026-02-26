@@ -27,7 +27,7 @@ public class GetRegisterCodeRequest extends RpcAcsRequest<GetRegisterCodeRespons
 
 	private String mqttInstanceId;
 	public GetRegisterCodeRequest() {
-		super("OnsMqtt", "2020-04-20", "GetRegisterCode");
+		super("OnsMqtt", "2020-04-20", "GetRegisterCode", "onsmqtt");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

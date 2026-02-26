@@ -29,7 +29,7 @@ public class DeregisterDelegatedAdministratorRequest extends RpcAcsRequest<Dereg
 
 	private String servicePrincipal;
 	public DeregisterDelegatedAdministratorRequest() {
-		super("ResourceManager", "2020-03-31", "DeregisterDelegatedAdministrator");
+		super("ResourceManager", "2020-03-31", "DeregisterDelegatedAdministrator", "resourcemanager");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

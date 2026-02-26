@@ -99,6 +99,8 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 
 		private List<Resource> resources;
 
+		private List<Tag> tags;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -187,6 +189,14 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 			this.resources = resources;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public static class IngressAclEntry {
 
 			private String networkAclEntryId;
@@ -200,6 +210,8 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 			private String description;
 
 			private String sourceCidrIp;
+
+			private String ipVersion;
 
 			private String protocol;
 
@@ -253,6 +265,14 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 				this.sourceCidrIp = sourceCidrIp;
 			}
 
+			public String getIpVersion() {
+				return this.ipVersion;
+			}
+
+			public void setIpVersion(String ipVersion) {
+				this.ipVersion = ipVersion;
+			}
+
 			public String getBizProtocol() {
 				return this.protocol;
 			}
@@ -285,6 +305,8 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 			private String protocol;
 
 			private String destinationCidrIp;
+
+			private String ipVersion;
 
 			private String port;
 
@@ -344,6 +366,14 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 				this.destinationCidrIp = destinationCidrIp;
 			}
 
+			public String getIpVersion() {
+				return this.ipVersion;
+			}
+
+			public void setIpVersion(String ipVersion) {
+				this.ipVersion = ipVersion;
+			}
+
 			public String getPort() {
 				return this.port;
 			}
@@ -383,6 +413,29 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 
 			public void setResourceId(String resourceId) {
 				this.resourceId = resourceId;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

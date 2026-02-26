@@ -39,13 +39,19 @@ public class ModifyBgpGroupAttributeRequest extends RpcAcsRequest<ModifyBgpGroup
 
 	private Boolean isFakeAsn;
 
+	private Boolean clearAuthKey;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private Integer routeQuota;
+
 	private Long ownerId;
 
 	private String name;
+
+	private Long localAsn;
 	public ModifyBgpGroupAttributeRequest() {
 		super("Vpc", "2016-04-28", "ModifyBgpGroupAttribute", "vpc");
 		setMethod(MethodType.POST);
@@ -132,6 +138,17 @@ public class ModifyBgpGroupAttributeRequest extends RpcAcsRequest<ModifyBgpGroup
 		}
 	}
 
+	public Boolean getClearAuthKey() {
+		return this.clearAuthKey;
+	}
+
+	public void setClearAuthKey(Boolean clearAuthKey) {
+		this.clearAuthKey = clearAuthKey;
+		if(clearAuthKey != null){
+			putQueryParameter("ClearAuthKey", clearAuthKey.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -154,6 +171,17 @@ public class ModifyBgpGroupAttributeRequest extends RpcAcsRequest<ModifyBgpGroup
 		}
 	}
 
+	public Integer getRouteQuota() {
+		return this.routeQuota;
+	}
+
+	public void setRouteQuota(Integer routeQuota) {
+		this.routeQuota = routeQuota;
+		if(routeQuota != null){
+			putQueryParameter("RouteQuota", routeQuota.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -173,6 +201,17 @@ public class ModifyBgpGroupAttributeRequest extends RpcAcsRequest<ModifyBgpGroup
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getLocalAsn() {
+		return this.localAsn;
+	}
+
+	public void setLocalAsn(Long localAsn) {
+		this.localAsn = localAsn;
+		if(localAsn != null){
+			putQueryParameter("LocalAsn", localAsn.toString());
 		}
 	}
 

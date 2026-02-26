@@ -27,6 +27,8 @@ public class GetMseSourceRequest extends RpcAcsRequest<GetMseSourceResponse> {
 
 	private String gatewayUniqueId;
 
+	private String type;
+
 	private String acceptLanguage;
 	public GetMseSourceRequest() {
 		super("mse", "2019-05-31", "GetMseSource", "mse");
@@ -45,6 +47,17 @@ public class GetMseSourceRequest extends RpcAcsRequest<GetMseSourceResponse> {
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

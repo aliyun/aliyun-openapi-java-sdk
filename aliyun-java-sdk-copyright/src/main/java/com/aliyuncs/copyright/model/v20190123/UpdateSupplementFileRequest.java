@@ -26,7 +26,7 @@ public class UpdateSupplementFileRequest extends RpcAcsRequest<UpdateSupplementF
 
 	private String supplementId;
 	public UpdateSupplementFileRequest() {
-		super("Copyright", "2019-01-23", "UpdateSupplementFile");
+		super("Copyright", "2019-01-23", "UpdateSupplementFile", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

@@ -27,11 +27,13 @@ public class RefreshVodObjectCachesRequest extends RpcAcsRequest<RefreshVodObjec
 
 	private String objectPath;
 
-	private Long ownerId;
-
 	private String securityToken;
 
 	private String objectType;
+
+	private Long ownerId;
+
+	private Boolean force;
 	public RefreshVodObjectCachesRequest() {
 		super("vod", "2017-03-21", "RefreshVodObjectCaches", "vod");
 		setMethod(MethodType.POST);
@@ -49,17 +51,6 @@ public class RefreshVodObjectCachesRequest extends RpcAcsRequest<RefreshVodObjec
 		this.objectPath = objectPath;
 		if(objectPath != null){
 			putQueryParameter("ObjectPath", objectPath);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -82,6 +73,28 @@ public class RefreshVodObjectCachesRequest extends RpcAcsRequest<RefreshVodObjec
 		this.objectType = objectType;
 		if(objectType != null){
 			putQueryParameter("ObjectType", objectType);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

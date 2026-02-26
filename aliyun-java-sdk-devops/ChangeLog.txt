@@ -1,0 +1,28 @@
+2024-03-28 Version: 1.0.7
+- Add min_access_level and organization_alis fields.
+- Add CreateCommitWithMultipleFiles api.
+- Add CreateComment api.
+
+2024-02-27 Version: 1.0.6
+- Fix ListUserKeys the field of title spell issue.
+
+2024-02-01 Version: 1.0.5
+- Fix ListUserKeys the field of title spell issue.
+
+2024-01-31 Version: 1.0.4
+- Add check runs related api.
+
+2024-01-29 Version: 1.0.3
+- Add field to ListMergeRequest and MergeMergeRequest api.
+
+2024-01-23 Version: 1.0.2
+- Add field to ListMergeRequest and MergeMergeRequest api.
+
+2024-01-11 Version: 1.0.1
+- Add reviewTime field to merge requests api.
+- Add email field to repository member.
+
+2024-01-04 Version: 1.0.0
+- Add commit status related api.
+- Add merge request related api.
+

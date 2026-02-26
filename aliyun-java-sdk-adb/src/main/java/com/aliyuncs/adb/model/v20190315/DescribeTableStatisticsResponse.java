@@ -35,6 +35,8 @@ public class DescribeTableStatisticsResponse extends AcsResponse {
 
 	private String dBClusterId;
 
+	private String schemaNames;
+
 	private List<TableStatisticRecords> items;
 
 	public String getTotalCount() {
@@ -77,6 +79,14 @@ public class DescribeTableStatisticsResponse extends AcsResponse {
 		this.dBClusterId = dBClusterId;
 	}
 
+	public String getSchemaNames() {
+		return this.schemaNames;
+	}
+
+	public void setSchemaNames(String schemaNames) {
+		this.schemaNames = schemaNames;
+	}
+
 	public List<TableStatisticRecords> getItems() {
 		return this.items;
 	}
@@ -102,6 +112,14 @@ public class DescribeTableStatisticsResponse extends AcsResponse {
 		private Long partitionCount;
 
 		private Long coldDataSize;
+
+		private Double spaceRatio;
+
+		private Long totalSize;
+
+		private Long hotDataSize;
+
+		private Long otherSize;
 
 		public String getSchemaName() {
 			return this.schemaName;
@@ -165,6 +183,38 @@ public class DescribeTableStatisticsResponse extends AcsResponse {
 
 		public void setColdDataSize(Long coldDataSize) {
 			this.coldDataSize = coldDataSize;
+		}
+
+		public Double getSpaceRatio() {
+			return this.spaceRatio;
+		}
+
+		public void setSpaceRatio(Double spaceRatio) {
+			this.spaceRatio = spaceRatio;
+		}
+
+		public Long getTotalSize() {
+			return this.totalSize;
+		}
+
+		public void setTotalSize(Long totalSize) {
+			this.totalSize = totalSize;
+		}
+
+		public Long getHotDataSize() {
+			return this.hotDataSize;
+		}
+
+		public void setHotDataSize(Long hotDataSize) {
+			this.hotDataSize = hotDataSize;
+		}
+
+		public Long getOtherSize() {
+			return this.otherSize;
+		}
+
+		public void setOtherSize(Long otherSize) {
+			this.otherSize = otherSize;
 		}
 	}
 

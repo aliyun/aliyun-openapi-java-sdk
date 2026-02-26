@@ -37,15 +37,21 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 
 	private Long ownerId;
 
+	private String isSwitchOverForDisaster;
+
 	private String vSwitchId;
 
 	private String plannedStartTime;
 
+	private String vPCId;
+
 	private String zoneId;
+
+	private String zoneType;
 
 	private Boolean fromTimeService;
 	public ModifyDBClusterPrimaryZoneRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterPrimaryZone");
+		super("polardb", "2017-08-01", "ModifyDBClusterPrimaryZone", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -119,6 +125,17 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 		}
 	}
 
+	public String getIsSwitchOverForDisaster() {
+		return this.isSwitchOverForDisaster;
+	}
+
+	public void setIsSwitchOverForDisaster(String isSwitchOverForDisaster) {
+		this.isSwitchOverForDisaster = isSwitchOverForDisaster;
+		if(isSwitchOverForDisaster != null){
+			putQueryParameter("IsSwitchOverForDisaster", isSwitchOverForDisaster);
+		}
+	}
+
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -141,6 +158,17 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 		}
 	}
 
+	public String getVPCId() {
+		return this.vPCId;
+	}
+
+	public void setVPCId(String vPCId) {
+		this.vPCId = vPCId;
+		if(vPCId != null){
+			putQueryParameter("VPCId", vPCId);
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -149,6 +177,17 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getZoneType() {
+		return this.zoneType;
+	}
+
+	public void setZoneType(String zoneType) {
+		this.zoneType = zoneType;
+		if(zoneType != null){
+			putQueryParameter("ZoneType", zoneType);
 		}
 	}
 

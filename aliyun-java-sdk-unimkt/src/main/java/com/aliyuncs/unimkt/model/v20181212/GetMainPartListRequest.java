@@ -37,7 +37,7 @@ public class GetMainPartListRequest extends RpcAcsRequest<GetMainPartListRespons
 
 	private String mainName;
 	public GetMainPartListRequest() {
-		super("UniMkt", "2018-12-12", "GetMainPartList", "1.0.0");
+		super("UniMkt", "2018-12-12", "GetMainPartList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

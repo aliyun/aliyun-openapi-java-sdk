@@ -25,11 +25,9 @@ import com.aliyuncs.imm.Endpoint;
 public class DeleteBindingRequest extends RpcAcsRequest<DeleteBindingResponse> {
 	   
 
-	private String projectName;
-
-	private Boolean cleanup;
-
 	private String datasetName;
+
+	private String projectName;
 
 	private String uRI;
 	public DeleteBindingRequest() {
@@ -41,28 +39,6 @@ public class DeleteBindingRequest extends RpcAcsRequest<DeleteBindingResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
-	public Boolean getCleanup() {
-		return this.cleanup;
-	}
-
-	public void setCleanup(Boolean cleanup) {
-		this.cleanup = cleanup;
-		if(cleanup != null){
-			putQueryParameter("Cleanup", cleanup.toString());
-		}
-	}
-
 	public String getDatasetName() {
 		return this.datasetName;
 	}
@@ -71,6 +47,17 @@ public class DeleteBindingRequest extends RpcAcsRequest<DeleteBindingResponse> {
 		this.datasetName = datasetName;
 		if(datasetName != null){
 			putQueryParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 

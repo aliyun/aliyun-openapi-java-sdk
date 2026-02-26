@@ -29,7 +29,7 @@ public class RankPreviewQueryRequest extends RoaAcsRequest<RankPreviewQueryRespo
 
 	private String appGroupIdentity;
 	public RankPreviewQueryRequest() {
-		super("OpenSearch", "2017-12-25", "RankPreviewQuery", "opensearch");
+		super("OpenSearch", "2017-12-25", "RankPreviewQuery");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/query-rank");
 		setMethod(MethodType.POST);
 		try {

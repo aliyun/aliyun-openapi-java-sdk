@@ -47,8 +47,6 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 	public static class DBEndpoint {
 
-		private String nodeWithRoles;
-
 		private String nodes;
 
 		private String readWriteMode;
@@ -63,15 +61,23 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		private String autoAddNewNodes;
 
+		private String dBClusterId;
+
+		private String sccMode;
+
+		private String polarSccTimeoutAction;
+
+		private String polarSccWaitTimeout;
+
+		private String nodeWithRoles;
+
+		private String consistLevelControlVersion;
+
+		private String dBEndpointCreateTime;
+
+		private String dBEndpointStatus;
+
 		private List<Address> addressItems;
-
-		public String getNodeWithRoles() {
-			return this.nodeWithRoles;
-		}
-
-		public void setNodeWithRoles(String nodeWithRoles) {
-			this.nodeWithRoles = nodeWithRoles;
-		}
 
 		public String getNodes() {
 			return this.nodes;
@@ -129,6 +135,70 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 			this.autoAddNewNodes = autoAddNewNodes;
 		}
 
+		public String getDBClusterId() {
+			return this.dBClusterId;
+		}
+
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
+		}
+
+		public String getSccMode() {
+			return this.sccMode;
+		}
+
+		public void setSccMode(String sccMode) {
+			this.sccMode = sccMode;
+		}
+
+		public String getPolarSccTimeoutAction() {
+			return this.polarSccTimeoutAction;
+		}
+
+		public void setPolarSccTimeoutAction(String polarSccTimeoutAction) {
+			this.polarSccTimeoutAction = polarSccTimeoutAction;
+		}
+
+		public String getPolarSccWaitTimeout() {
+			return this.polarSccWaitTimeout;
+		}
+
+		public void setPolarSccWaitTimeout(String polarSccWaitTimeout) {
+			this.polarSccWaitTimeout = polarSccWaitTimeout;
+		}
+
+		public String getNodeWithRoles() {
+			return this.nodeWithRoles;
+		}
+
+		public void setNodeWithRoles(String nodeWithRoles) {
+			this.nodeWithRoles = nodeWithRoles;
+		}
+
+		public String getConsistLevelControlVersion() {
+			return this.consistLevelControlVersion;
+		}
+
+		public void setConsistLevelControlVersion(String consistLevelControlVersion) {
+			this.consistLevelControlVersion = consistLevelControlVersion;
+		}
+
+		public String getDBEndpointCreateTime() {
+			return this.dBEndpointCreateTime;
+		}
+
+		public void setDBEndpointCreateTime(String dBEndpointCreateTime) {
+			this.dBEndpointCreateTime = dBEndpointCreateTime;
+		}
+
+		public String getDBEndpointStatus() {
+			return this.dBEndpointStatus;
+		}
+
+		public void setDBEndpointStatus(String dBEndpointStatus) {
+			this.dBEndpointStatus = dBEndpointStatus;
+		}
+
 		public List<Address> getAddressItems() {
 			return this.addressItems;
 		}
@@ -154,6 +224,8 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 			private String vPCId;
 
 			private String iPAddress;
+
+			private Boolean dashboardUsed;
 
 			public String getVSwitchId() {
 				return this.vSwitchId;
@@ -217,6 +289,14 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 			public void setIPAddress(String iPAddress) {
 				this.iPAddress = iPAddress;
+			}
+
+			public Boolean getDashboardUsed() {
+				return this.dashboardUsed;
+			}
+
+			public void setDashboardUsed(Boolean dashboardUsed) {
+				this.dashboardUsed = dashboardUsed;
 			}
 		}
 	}

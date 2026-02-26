@@ -26,6 +26,8 @@ public class DescribeNamespaceResourcesRequest extends RoaAcsRequest<DescribeNam
 	   
 
 	private String namespaceId;
+
+	private String nameSpaceShortId;
 	public DescribeNamespaceResourcesRequest() {
 		super("sae", "2019-05-06", "DescribeNamespaceResources", "serverless");
 		setUriPattern("/pop/v1/sam/namespace/describeNamespaceResources");
@@ -44,6 +46,17 @@ public class DescribeNamespaceResourcesRequest extends RoaAcsRequest<DescribeNam
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getNameSpaceShortId() {
+		return this.nameSpaceShortId;
+	}
+
+	public void setNameSpaceShortId(String nameSpaceShortId) {
+		this.nameSpaceShortId = nameSpaceShortId;
+		if(nameSpaceShortId != null){
+			putQueryParameter("NameSpaceShortId", nameSpaceShortId);
 		}
 	}
 

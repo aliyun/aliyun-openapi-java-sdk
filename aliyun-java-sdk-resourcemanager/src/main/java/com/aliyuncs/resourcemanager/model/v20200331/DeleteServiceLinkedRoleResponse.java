@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteServiceLinkedRoleResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String deletionTaskId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getDeletionTaskId() {
 		return this.deletionTaskId;
@@ -42,6 +34,14 @@ public class DeleteServiceLinkedRoleResponse extends AcsResponse {
 
 	public void setDeletionTaskId(String deletionTaskId) {
 		this.deletionTaskId = deletionTaskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -34,8 +34,8 @@ public class DescribeDcdnDeletedDomainsResponseUnmarshaller {
 		List<PageData> domains = new ArrayList<PageData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDeletedDomainsResponse.Domains.Length"); i++) {
 			PageData pageData = new PageData();
-			pageData.setDomainName(_ctx.stringValue("DescribeDcdnDeletedDomainsResponse.Domains["+ i +"].DomainName"));
 			pageData.setGmtModified(_ctx.stringValue("DescribeDcdnDeletedDomainsResponse.Domains["+ i +"].GmtModified"));
+			pageData.setDomainName(_ctx.stringValue("DescribeDcdnDeletedDomainsResponse.Domains["+ i +"].DomainName"));
 
 			domains.add(pageData);
 		}

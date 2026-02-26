@@ -111,6 +111,12 @@ public class DescribeDirectoriesResponse extends AcsResponse {
 
 		private Boolean needVerifyLoginRisk;
 
+		private String adHostname;
+
+		private String backupDns;
+
+		private String backupDCHostname;
+
 		private List<ADConnector> aDConnectors;
 
 		private List<Log> logs;
@@ -297,6 +303,30 @@ public class DescribeDirectoriesResponse extends AcsResponse {
 
 		public void setNeedVerifyLoginRisk(Boolean needVerifyLoginRisk) {
 			this.needVerifyLoginRisk = needVerifyLoginRisk;
+		}
+
+		public String getAdHostname() {
+			return this.adHostname;
+		}
+
+		public void setAdHostname(String adHostname) {
+			this.adHostname = adHostname;
+		}
+
+		public String getBackupDns() {
+			return this.backupDns;
+		}
+
+		public void setBackupDns(String backupDns) {
+			this.backupDns = backupDns;
+		}
+
+		public String getBackupDCHostname() {
+			return this.backupDCHostname;
+		}
+
+		public void setBackupDCHostname(String backupDCHostname) {
+			this.backupDCHostname = backupDCHostname;
 		}
 
 		public List<ADConnector> getADConnectors() {

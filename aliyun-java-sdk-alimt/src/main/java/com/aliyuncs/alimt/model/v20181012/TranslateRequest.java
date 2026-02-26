@@ -33,6 +33,8 @@ public class TranslateRequest extends RpcAcsRequest<TranslateResponse> {
 
 	private String scene;
 
+	private String context;
+
 	private String targetLanguage;
 	public TranslateRequest() {
 		super("alimt", "2018-10-12", "Translate");
@@ -84,6 +86,17 @@ public class TranslateRequest extends RpcAcsRequest<TranslateResponse> {
 		this.scene = scene;
 		if(scene != null){
 			putBodyParameter("Scene", scene);
+		}
+	}
+
+	public String getContext() {
+		return this.context;
+	}
+
+	public void setContext(String context) {
+		this.context = context;
+		if(context != null){
+			putQueryParameter("Context", context);
 		}
 	}
 

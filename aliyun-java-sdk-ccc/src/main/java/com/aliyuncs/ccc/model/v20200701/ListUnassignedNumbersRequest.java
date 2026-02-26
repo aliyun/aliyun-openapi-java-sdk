@@ -29,8 +29,6 @@ public class ListUnassignedNumbersRequest extends RpcAcsRequest<ListUnassignedNu
 
 	private String searchPattern;
 
-	private String instanceId;
-
 	private Integer pageSize;
 	public ListUnassignedNumbersRequest() {
 		super("CCC", "2020-07-01", "ListUnassignedNumbers", "CCC");
@@ -60,17 +58,6 @@ public class ListUnassignedNumbersRequest extends RpcAcsRequest<ListUnassignedNu
 		this.searchPattern = searchPattern;
 		if(searchPattern != null){
 			putQueryParameter("SearchPattern", searchPattern);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

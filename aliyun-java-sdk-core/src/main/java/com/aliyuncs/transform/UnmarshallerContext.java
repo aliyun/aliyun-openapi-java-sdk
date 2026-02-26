@@ -13,7 +13,7 @@ public class UnmarshallerContext {
 
     public Integer integerValue(String key) {
         String value = responseMap.get(key);
-        if (null == value || 0 == value.length()) {
+        if (null == value || value.isEmpty()) {
             return null;
         }
         return Integer.valueOf(value);
@@ -25,7 +25,7 @@ public class UnmarshallerContext {
 
     public Long longValue(String key) {
         String value = responseMap.get(key);
-        if (null == value || 0 == value.length()) {
+        if (null == value || value.isEmpty()) {
             return null;
         }
         return Long.valueOf(responseMap.get(key));
@@ -33,7 +33,7 @@ public class UnmarshallerContext {
 
     public Boolean booleanValue(String key) {
         String value = responseMap.get(key);
-        if (null == value || 0 == value.length()) {
+        if (null == value || value.isEmpty()) {
             return null;
         }
         return Boolean.valueOf(responseMap.get(key));
@@ -41,7 +41,7 @@ public class UnmarshallerContext {
 
     public Float floatValue(String key) {
         String value = responseMap.get(key);
-        if (null == value || 0 == value.length()) {
+        if (null == value || value.isEmpty()) {
             return null;
         }
         return Float.valueOf(responseMap.get(key));
@@ -49,7 +49,7 @@ public class UnmarshallerContext {
 
     public Double doubleValue(String key) {
         String value = responseMap.get(key);
-        if (null == value || 0 == value.length()) {
+        if (null == value || value.isEmpty()) {
             return null;
         }
         return Double.valueOf(responseMap.get(key));
@@ -57,7 +57,7 @@ public class UnmarshallerContext {
 
     public int lengthValue(String key) {
         String value = responseMap.get(key);
-        if (null == value || 0 == value.length()) {
+        if (null == value || value.isEmpty()) {
             return 0;
         }
         return Integer.valueOf(responseMap.get(key));

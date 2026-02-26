@@ -24,10 +24,10 @@ public class DescribeIpInfoResponseUnmarshaller {
 		
 		describeIpInfoResponse.setRequestId(_ctx.stringValue("DescribeIpInfoResponse.RequestId"));
 		describeIpInfoResponse.setCdnIp(_ctx.stringValue("DescribeIpInfoResponse.CdnIp"));
-		describeIpInfoResponse.setISP(_ctx.stringValue("DescribeIpInfoResponse.ISP"));
-		describeIpInfoResponse.setIspEname(_ctx.stringValue("DescribeIpInfoResponse.IspEname"));
-		describeIpInfoResponse.setRegion(_ctx.stringValue("DescribeIpInfoResponse.Region"));
 		describeIpInfoResponse.setRegionEname(_ctx.stringValue("DescribeIpInfoResponse.RegionEname"));
+		describeIpInfoResponse.setRegion(_ctx.stringValue("DescribeIpInfoResponse.Region"));
+		describeIpInfoResponse.setIspEname(_ctx.stringValue("DescribeIpInfoResponse.IspEname"));
+		describeIpInfoResponse.setISP(_ctx.stringValue("DescribeIpInfoResponse.ISP"));
 	 
 	 	return describeIpInfoResponse;
 	}

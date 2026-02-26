@@ -49,6 +49,7 @@ public class QueryFigureClustersResponseUnmarshaller {
 		
 		queryFigureClustersResponse.setRequestId(_ctx.stringValue("QueryFigureClustersResponse.RequestId"));
 		queryFigureClustersResponse.setNextToken(_ctx.stringValue("QueryFigureClustersResponse.NextToken"));
+		queryFigureClustersResponse.setTotalCount(_ctx.longValue("QueryFigureClustersResponse.TotalCount"));
 
 		List<FigureClustersItem> figureClusters = new ArrayList<FigureClustersItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFigureClustersResponse.FigureClusters.Length"); i++) {
@@ -70,6 +71,7 @@ public class QueryFigureClustersResponseUnmarshaller {
 			figureClustersItem.setMaxAge(_ctx.floatValue("QueryFigureClustersResponse.FigureClusters["+ i +"].MaxAge"));
 			figureClustersItem.setCustomId(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].CustomId"));
 			figureClustersItem.setCustomLabels(_ctx.mapValue("QueryFigureClustersResponse.FigureClusters["+ i +"].CustomLabels"));
+			figureClustersItem.setMetaLockVersion(_ctx.longValue("QueryFigureClustersResponse.FigureClusters["+ i +"].MetaLockVersion"));
 
 			Cover cover = new Cover();
 			cover.setOwnerId(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.OwnerId"));
@@ -107,9 +109,8 @@ public class QueryFigureClustersResponseUnmarshaller {
 			cover.setPerformer(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.Performer"));
 			cover.setLanguage(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.Language"));
 			cover.setAlbum(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.Album"));
-			cover.setDocumentLanguage(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.DocumentLanguage"));
 			cover.setPageCount(_ctx.longValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.PageCount"));
-			cover.setDocumentContent(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.DocumentContent"));
+			cover.setDocumentText(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.DocumentText"));
 			cover.setETag(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.ETag"));
 			cover.setCacheControl(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.CacheControl"));
 			cover.setContentDisposition(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.ContentDisposition"));

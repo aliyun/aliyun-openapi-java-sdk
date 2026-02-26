@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnUserSecDropResponse extends AcsResponse {
 
+	private String msg;
+
 	private String requestId;
 
 	private Integer drops;
 
-	private String msg;
-
 	private String uuidStr;
+
+	public String getMsg() {
+		return this.msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,14 +54,6 @@ public class DescribeDcdnUserSecDropResponse extends AcsResponse {
 
 	public void setDrops(Integer drops) {
 		this.drops = drops;
-	}
-
-	public String getMsg() {
-		return this.msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
 	}
 
 	public String getUuidStr() {

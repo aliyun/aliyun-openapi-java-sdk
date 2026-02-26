@@ -141,9 +141,25 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		private String physicalConnectionId;
 
+		private Integer bandwidth;
+
+		private String resourceGroupId;
+
+		private String ecrId;
+
+		private Boolean sitelinkEnable;
+
+		private String ecrAttatchStatus;
+
+		private String ecrOwnerId;
+
+		private Integer mtu;
+
 		private List<AssociatedPhysicalConnection> associatedPhysicalConnections;
 
 		private List<AssociatedCen> associatedCens;
+
+		private List<TagsItem> tags;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -401,6 +417,62 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 			this.physicalConnectionId = physicalConnectionId;
 		}
 
+		public Integer getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getEcrId() {
+			return this.ecrId;
+		}
+
+		public void setEcrId(String ecrId) {
+			this.ecrId = ecrId;
+		}
+
+		public Boolean getSitelinkEnable() {
+			return this.sitelinkEnable;
+		}
+
+		public void setSitelinkEnable(Boolean sitelinkEnable) {
+			this.sitelinkEnable = sitelinkEnable;
+		}
+
+		public String getEcrAttatchStatus() {
+			return this.ecrAttatchStatus;
+		}
+
+		public void setEcrAttatchStatus(String ecrAttatchStatus) {
+			this.ecrAttatchStatus = ecrAttatchStatus;
+		}
+
+		public String getEcrOwnerId() {
+			return this.ecrOwnerId;
+		}
+
+		public void setEcrOwnerId(String ecrOwnerId) {
+			this.ecrOwnerId = ecrOwnerId;
+		}
+
+		public Integer getMtu() {
+			return this.mtu;
+		}
+
+		public void setMtu(Integer mtu) {
+			this.mtu = mtu;
+		}
+
 		public List<AssociatedPhysicalConnection> getAssociatedPhysicalConnections() {
 			return this.associatedPhysicalConnections;
 		}
@@ -415,6 +487,14 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		public void setAssociatedCens(List<AssociatedCen> associatedCens) {
 			this.associatedCens = associatedCens;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
 		}
 
 		public static class AssociatedPhysicalConnection {
@@ -600,6 +680,29 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 			public void setCenStatus(String cenStatus) {
 				this.cenStatus = cenStatus;
+			}
+		}
+
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

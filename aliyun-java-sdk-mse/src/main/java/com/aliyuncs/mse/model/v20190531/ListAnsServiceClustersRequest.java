@@ -27,26 +27,24 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 
 	private String clusterName;
 
-	private String clusterId;
-
 	private Integer pageNum;
+
+	private String namespaceId;
+
+	private Integer pageSize;
+
+	private String serviceName;
+
+	private String clusterId;
 
 	private String groupName;
 
 	private String instanceId;
 
-	private String namespaceId;
-
-	private String requestPars;
-
-	private Integer pageSize;
-
 	private String acceptLanguage;
-
-	private String serviceName;
 	public ListAnsServiceClustersRequest() {
 		super("mse", "2019-05-31", "ListAnsServiceClusters", "mse");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -64,17 +62,6 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -83,6 +70,50 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -108,39 +139,6 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 		}
 	}
 
-	public String getNamespaceId() {
-		return this.namespaceId;
-	}
-
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -149,17 +147,6 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 

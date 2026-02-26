@@ -157,6 +157,14 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 
 			private String payMode;
 
+			private String deductCycleType;
+
+			private String restPoolValue;
+
+			private String commodityCode;
+
+			private String currentPoolValue;
+
 			private List<Tag> tags;
 
 			public String getStatus() {
@@ -309,6 +317,38 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 
 			public void setPayMode(String payMode) {
 				this.payMode = payMode;
+			}
+
+			public String getDeductCycleType() {
+				return this.deductCycleType;
+			}
+
+			public void setDeductCycleType(String deductCycleType) {
+				this.deductCycleType = deductCycleType;
+			}
+
+			public String getRestPoolValue() {
+				return this.restPoolValue;
+			}
+
+			public void setRestPoolValue(String restPoolValue) {
+				this.restPoolValue = restPoolValue;
+			}
+
+			public String getCommodityCode() {
+				return this.commodityCode;
+			}
+
+			public void setCommodityCode(String commodityCode) {
+				this.commodityCode = commodityCode;
+			}
+
+			public String getCurrentPoolValue() {
+				return this.currentPoolValue;
+			}
+
+			public void setCurrentPoolValue(String currentPoolValue) {
+				this.currentPoolValue = currentPoolValue;
 			}
 
 			public List<Tag> getTags() {

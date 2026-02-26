@@ -56,6 +56,7 @@ public class ListJobGroupsResponseUnmarshaller {
 			jobGroup.setScriptName(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ScriptName"));
 			jobGroup.setScriptVersion(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ScriptVersion"));
 			jobGroup.setModifyTime(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ModifyTime"));
+			jobGroup.setMinConcurrency(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].MinConcurrency"));
 
 			Progress progress = new Progress();
 			progress.setTotalNotAnswered(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalNotAnswered"));

@@ -25,6 +25,8 @@ import com.aliyuncs.nas.Endpoint;
 public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskResponse> {
 	   
 
+	private String dstDirectory;
+
 	private String clientToken;
 
 	private String directory;
@@ -32,6 +34,8 @@ public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskR
 	private String srcTaskId;
 
 	private String dataType;
+
+	private Boolean createDirIfNotExist;
 
 	private String fileSystemId;
 
@@ -41,14 +45,31 @@ public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskR
 
 	private String entryList;
 
+	private String includes;
+
+	private String conflictPolicy;
+
 	private String taskAction;
+
+	private String transferFileListPath;
 	public CreateDataFlowTaskRequest() {
-		super("NAS", "2017-06-26", "CreateDataFlowTask", "NAS");
+		super("NAS", "2017-06-26", "CreateDataFlowTask", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDstDirectory() {
+		return this.dstDirectory;
+	}
+
+	public void setDstDirectory(String dstDirectory) {
+		this.dstDirectory = dstDirectory;
+		if(dstDirectory != null){
+			putQueryParameter("DstDirectory", dstDirectory);
+		}
 	}
 
 	public String getClientToken() {
@@ -92,6 +113,17 @@ public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskR
 		this.dataType = dataType;
 		if(dataType != null){
 			putQueryParameter("DataType", dataType);
+		}
+	}
+
+	public Boolean getCreateDirIfNotExist() {
+		return this.createDirIfNotExist;
+	}
+
+	public void setCreateDirIfNotExist(Boolean createDirIfNotExist) {
+		this.createDirIfNotExist = createDirIfNotExist;
+		if(createDirIfNotExist != null){
+			putQueryParameter("CreateDirIfNotExist", createDirIfNotExist.toString());
 		}
 	}
 
@@ -139,6 +171,28 @@ public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskR
 		}
 	}
 
+	public String getIncludes() {
+		return this.includes;
+	}
+
+	public void setIncludes(String includes) {
+		this.includes = includes;
+		if(includes != null){
+			putQueryParameter("Includes", includes);
+		}
+	}
+
+	public String getConflictPolicy() {
+		return this.conflictPolicy;
+	}
+
+	public void setConflictPolicy(String conflictPolicy) {
+		this.conflictPolicy = conflictPolicy;
+		if(conflictPolicy != null){
+			putQueryParameter("ConflictPolicy", conflictPolicy);
+		}
+	}
+
 	public String getTaskAction() {
 		return this.taskAction;
 	}
@@ -147,6 +201,17 @@ public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskR
 		this.taskAction = taskAction;
 		if(taskAction != null){
 			putQueryParameter("TaskAction", taskAction);
+		}
+	}
+
+	public String getTransferFileListPath() {
+		return this.transferFileListPath;
+	}
+
+	public void setTransferFileListPath(String transferFileListPath) {
+		this.transferFileListPath = transferFileListPath;
+		if(transferFileListPath != null){
+			putQueryParameter("TransferFileListPath", transferFileListPath);
 		}
 	}
 

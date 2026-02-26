@@ -27,18 +27,18 @@ public class DescribeApiIpControlsResponseUnmarshaller {
 	public static DescribeApiIpControlsResponse unmarshall(DescribeApiIpControlsResponse describeApiIpControlsResponse, UnmarshallerContext _ctx) {
 		
 		describeApiIpControlsResponse.setRequestId(_ctx.stringValue("DescribeApiIpControlsResponse.RequestId"));
-		describeApiIpControlsResponse.setTotalCount(_ctx.integerValue("DescribeApiIpControlsResponse.TotalCount"));
-		describeApiIpControlsResponse.setPageSize(_ctx.integerValue("DescribeApiIpControlsResponse.PageSize"));
 		describeApiIpControlsResponse.setPageNumber(_ctx.integerValue("DescribeApiIpControlsResponse.PageNumber"));
+		describeApiIpControlsResponse.setPageSize(_ctx.integerValue("DescribeApiIpControlsResponse.PageSize"));
+		describeApiIpControlsResponse.setTotalCount(_ctx.integerValue("DescribeApiIpControlsResponse.TotalCount"));
 
 		List<ApiIpControlItem> apiIpControls = new ArrayList<ApiIpControlItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApiIpControlsResponse.ApiIpControls.Length"); i++) {
 			ApiIpControlItem apiIpControlItem = new ApiIpControlItem();
+			apiIpControlItem.setBoundTime(_ctx.stringValue("DescribeApiIpControlsResponse.ApiIpControls["+ i +"].BoundTime"));
 			apiIpControlItem.setApiId(_ctx.stringValue("DescribeApiIpControlsResponse.ApiIpControls["+ i +"].ApiId"));
-			apiIpControlItem.setApiName(_ctx.stringValue("DescribeApiIpControlsResponse.ApiIpControls["+ i +"].ApiName"));
 			apiIpControlItem.setIpControlId(_ctx.stringValue("DescribeApiIpControlsResponse.ApiIpControls["+ i +"].IpControlId"));
 			apiIpControlItem.setIpControlName(_ctx.stringValue("DescribeApiIpControlsResponse.ApiIpControls["+ i +"].IpControlName"));
-			apiIpControlItem.setBoundTime(_ctx.stringValue("DescribeApiIpControlsResponse.ApiIpControls["+ i +"].BoundTime"));
+			apiIpControlItem.setApiName(_ctx.stringValue("DescribeApiIpControlsResponse.ApiIpControls["+ i +"].ApiName"));
 
 			apiIpControls.add(apiIpControlItem);
 		}

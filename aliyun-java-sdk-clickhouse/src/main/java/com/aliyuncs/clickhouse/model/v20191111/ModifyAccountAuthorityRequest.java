@@ -49,7 +49,7 @@ public class ModifyAccountAuthorityRequest extends RpcAcsRequest<ModifyAccountAu
 
 	private String totalDatabases;
 	public ModifyAccountAuthorityRequest() {
-		super("clickhouse", "2019-11-11", "ModifyAccountAuthority");
+		super("clickhouse", "2019-11-11", "ModifyAccountAuthority", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

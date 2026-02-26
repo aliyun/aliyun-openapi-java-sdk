@@ -22,11 +22,14 @@ import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.Config
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.Compliance;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.ConfigRuleEvaluationStatus;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.CreateBy;
+import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.ExcludeTagsScopeItem;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.ManagedRule;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.ManagedRule.SourceDetailsItem2;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.Scope;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.Source;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.Source.SourceDetailsItem;
+import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.TagsItem;
+import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.TagsScopeItem;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -49,9 +52,12 @@ public class GetAggregateConfigRuleResponseUnmarshaller {
 		configRule.setModifiedTimestamp(_ctx.longValue("GetAggregateConfigRuleResponse.ConfigRule.ModifiedTimestamp"));
 		configRule.setCreateTimestamp(_ctx.longValue("GetAggregateConfigRuleResponse.ConfigRule.CreateTimestamp"));
 		configRule.setResourceTypesScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ResourceTypesScope"));
+		configRule.setExcludeRegionIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeRegionIdsScope"));
 		configRule.setRegionIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.RegionIdsScope"));
 		configRule.setExcludeResourceIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeResourceIdsScope"));
+		configRule.setResourceIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ResourceIdsScope"));
 		configRule.setResourceGroupIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ResourceGroupIdsScope"));
+		configRule.setExcludeResourceGroupIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeResourceGroupIdsScope"));
 		configRule.setTagKeyScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.TagKeyScope"));
 		configRule.setTagValueScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.TagValueScope"));
 		configRule.setConfigRuleTriggerTypes(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ConfigRuleTriggerTypes"));
@@ -59,11 +65,16 @@ public class GetAggregateConfigRuleResponseUnmarshaller {
 		configRule.setFolderIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.FolderIdsScope"));
 		configRule.setExcludeFolderIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeFolderIdsScope"));
 		configRule.setExcludeAccountIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeAccountIdsScope"));
+		configRule.setResourceNameScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ResourceNameScope"));
 		configRule.setAccountId(_ctx.longValue("GetAggregateConfigRuleResponse.ConfigRule.AccountId"));
+		configRule.setServiceChannel(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ServiceChannel"));
+		configRule.setExtendContent(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExtendContent"));
+		configRule.setAccountIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.AccountIdsScope"));
 
 		Source source = new Source();
 		source.setOwner(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Source.Owner"));
 		source.setIdentifier(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Source.Identifier"));
+		source.setConditions(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Source.Conditions"));
 
 		List<Map<Object, Object>> sourceConditions = _ctx.listMapValue("GetAggregateConfigRuleResponse.ConfigRule.Source.SourceConditions");
 		source.setSourceConditions(sourceConditions);
@@ -140,6 +151,36 @@ public class GetAggregateConfigRuleResponseUnmarshaller {
 		compliance.setComplianceType(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Compliance.ComplianceType"));
 		compliance.setCount(_ctx.integerValue("GetAggregateConfigRuleResponse.ConfigRule.Compliance.Count"));
 		configRule.setCompliance(compliance);
+
+		List<TagsScopeItem> tagsScope = new ArrayList<TagsScopeItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetAggregateConfigRuleResponse.ConfigRule.TagsScope.Length"); i++) {
+			TagsScopeItem tagsScopeItem = new TagsScopeItem();
+			tagsScopeItem.setTagKey(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.TagsScope["+ i +"].TagKey"));
+			tagsScopeItem.setTagValue(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.TagsScope["+ i +"].TagValue"));
+
+			tagsScope.add(tagsScopeItem);
+		}
+		configRule.setTagsScope(tagsScope);
+
+		List<ExcludeTagsScopeItem> excludeTagsScope = new ArrayList<ExcludeTagsScopeItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeTagsScope.Length"); i++) {
+			ExcludeTagsScopeItem excludeTagsScopeItem = new ExcludeTagsScopeItem();
+			excludeTagsScopeItem.setTagKey(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeTagsScope["+ i +"].TagKey"));
+			excludeTagsScopeItem.setTagValue(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeTagsScope["+ i +"].TagValue"));
+
+			excludeTagsScope.add(excludeTagsScopeItem);
+		}
+		configRule.setExcludeTagsScope(excludeTagsScope);
+
+		List<TagsItem> tags = new ArrayList<TagsItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetAggregateConfigRuleResponse.ConfigRule.Tags.Length"); i++) {
+			TagsItem tagsItem = new TagsItem();
+			tagsItem.setTagKey(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Tags["+ i +"].TagKey"));
+			tagsItem.setTagValue(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Tags["+ i +"].TagValue"));
+
+			tags.add(tagsItem);
+		}
+		configRule.setTags(tags);
 		getAggregateConfigRuleResponse.setConfigRule(configRule);
 	 
 	 	return getAggregateConfigRuleResponse;

@@ -27,11 +27,13 @@ public class UpdateClusterSpecRequest extends RpcAcsRequest<UpdateClusterSpecRes
 
 	private String clusterSpecification;
 
+	private Integer instanceCount;
+
 	private String clusterId;
 
 	private String instanceId;
 
-	private Integer instanceCount;
+	private String mseVersion;
 
 	private String acceptLanguage;
 	public UpdateClusterSpecRequest() {
@@ -51,6 +53,17 @@ public class UpdateClusterSpecRequest extends RpcAcsRequest<UpdateClusterSpecRes
 		this.clusterSpecification = clusterSpecification;
 		if(clusterSpecification != null){
 			putQueryParameter("ClusterSpecification", clusterSpecification);
+		}
+	}
+
+	public Integer getInstanceCount() {
+		return this.instanceCount;
+	}
+
+	public void setInstanceCount(Integer instanceCount) {
+		this.instanceCount = instanceCount;
+		if(instanceCount != null){
+			putQueryParameter("InstanceCount", instanceCount.toString());
 		}
 	}
 
@@ -76,14 +89,14 @@ public class UpdateClusterSpecRequest extends RpcAcsRequest<UpdateClusterSpecRes
 		}
 	}
 
-	public Integer getInstanceCount() {
-		return this.instanceCount;
+	public String getMseVersion() {
+		return this.mseVersion;
 	}
 
-	public void setInstanceCount(Integer instanceCount) {
-		this.instanceCount = instanceCount;
-		if(instanceCount != null){
-			putQueryParameter("InstanceCount", instanceCount.toString());
+	public void setMseVersion(String mseVersion) {
+		this.mseVersion = mseVersion;
+		if(mseVersion != null){
+			putQueryParameter("MseVersion", mseVersion);
 		}
 	}
 

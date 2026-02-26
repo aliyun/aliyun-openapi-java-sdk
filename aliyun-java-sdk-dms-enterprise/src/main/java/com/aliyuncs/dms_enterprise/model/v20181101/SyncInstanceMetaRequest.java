@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class SyncInstanceMetaRequest extends RpcAcsRequest<SyncInstanceMetaResponse> {
 	   
 
-	private Boolean ignoreTable;
-
 	private Long tid;
+
+	private Boolean ignoreTable;
 
 	private String instanceId;
 	public SyncInstanceMetaRequest() {
@@ -39,17 +39,6 @@ public class SyncInstanceMetaRequest extends RpcAcsRequest<SyncInstanceMetaRespo
 		} catch (Exception e) {}
 	}
 
-	public Boolean getIgnoreTable() {
-		return this.ignoreTable;
-	}
-
-	public void setIgnoreTable(Boolean ignoreTable) {
-		this.ignoreTable = ignoreTable;
-		if(ignoreTable != null){
-			putQueryParameter("IgnoreTable", ignoreTable.toString());
-		}
-	}
-
 	public Long getTid() {
 		return this.tid;
 	}
@@ -58,6 +47,17 @@ public class SyncInstanceMetaRequest extends RpcAcsRequest<SyncInstanceMetaRespo
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Boolean getIgnoreTable() {
+		return this.ignoreTable;
+	}
+
+	public void setIgnoreTable(Boolean ignoreTable) {
+		this.ignoreTable = ignoreTable;
+		if(ignoreTable != null){
+			putQueryParameter("IgnoreTable", ignoreTable.toString());
 		}
 	}
 

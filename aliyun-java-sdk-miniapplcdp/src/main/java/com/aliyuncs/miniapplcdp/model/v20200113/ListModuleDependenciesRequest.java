@@ -24,12 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class ListModuleDependenciesRequest extends RpcAcsRequest<ListModuleDependenciesResponse> {
 	   
 
+	private String source;
+
 	private String moduleId;
 
 	private Boolean recursive;
 	public ListModuleDependenciesRequest() {
 		super("miniapplcdp", "2020-01-13", "ListModuleDependencies");
 		setMethod(MethodType.POST);
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
 	}
 
 	public String getModuleId() {

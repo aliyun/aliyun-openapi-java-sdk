@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.DescribeNatGatewaysResponse;
 import com.aliyuncs.ens.model.v20171110.DescribeNatGatewaysResponse.NatGateway;
+import com.aliyuncs.ens.model.v20171110.DescribeNatGatewaysResponse.NatGateway.IpList;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,18 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGateway.setName(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Name"));
 			natGateway.setCreationTime(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].CreationTime"));
 			natGateway.setSpec(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Spec"));
+			natGateway.setStatus(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Status"));
+
+			List<IpList> ipLists = new ArrayList<IpList>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists.Length"); j++) {
+				IpList ipList = new IpList();
+				ipList.setUsingStatus(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists["+ j +"].UsingStatus"));
+				ipList.setIpAddress(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists["+ j +"].IpAddress"));
+				ipList.setAllocationId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists["+ j +"].AllocationId"));
+
+				ipLists.add(ipList);
+			}
+			natGateway.setIpLists(ipLists);
 
 			natGateways.add(natGateway);
 		}

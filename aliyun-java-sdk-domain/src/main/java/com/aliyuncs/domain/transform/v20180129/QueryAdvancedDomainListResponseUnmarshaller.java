@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.domain.model.v20180129.QueryAdvancedDomainListResponse;
 import com.aliyuncs.domain.model.v20180129.QueryAdvancedDomainListResponse.Domain;
+import com.aliyuncs.domain.model.v20180129.QueryAdvancedDomainListResponse.Domain.TagItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,12 +58,23 @@ public class QueryAdvancedDomainListResponseUnmarshaller {
 			domain.setProductId(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].ProductId"));
 			domain.setDomainStatus(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainStatus"));
 			domain.setDomainType(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainType"));
+			domain.setResourceGroupId(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].ResourceGroupId"));
 
 			List<String> dnsList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("QueryAdvancedDomainListResponse.Data["+ i +"].DnsList.Length"); j++) {
 				dnsList.add(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DnsList["+ j +"]"));
 			}
 			domain.setDnsList(dnsList);
+
+			List<TagItem> tag = new ArrayList<TagItem>();
+			for (int j = 0; j < _ctx.lengthValue("QueryAdvancedDomainListResponse.Data["+ i +"].Tag.Length"); j++) {
+				TagItem tagItem = new TagItem();
+				tagItem.setKey(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].Tag["+ j +"].Key"));
+				tagItem.setValue(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].Tag["+ j +"].Value"));
+
+				tag.add(tagItem);
+			}
+			domain.setTag(tag);
 
 			data.add(domain);
 		}

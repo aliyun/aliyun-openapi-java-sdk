@@ -66,6 +66,8 @@ public class RegisterDefaultPatchBaselineResponse extends AcsResponse {
 
 		private String shareType;
 
+		private String resourceGroupId;
+
 		public String getOperationSystem() {
 			return this.operationSystem;
 		}
@@ -144,6 +146,14 @@ public class RegisterDefaultPatchBaselineResponse extends AcsResponse {
 
 		public void setShareType(String shareType) {
 			this.shareType = shareType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

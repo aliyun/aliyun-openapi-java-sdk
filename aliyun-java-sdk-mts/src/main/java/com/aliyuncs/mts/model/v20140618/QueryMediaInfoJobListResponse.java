@@ -15,6 +15,7 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.mts.transform.v20140618.QueryMediaInfoJobListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -249,6 +250,8 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 
 			private String fileSize;
 
+			private String fileMd5;
+
 			private Streams streams;
 
 			private Format format;
@@ -307,6 +310,14 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 
 			public void setFileSize(String fileSize) {
 				this.fileSize = fileSize;
+			}
+
+			public String getFileMd5() {
+				return this.fileMd5;
+			}
+
+			public void setFileMd5(String fileMd5) {
+				this.fileMd5 = fileMd5;
 			}
 
 			public Streams getStreams() {
@@ -411,7 +422,11 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 
 					private String colorPrimaries;
 
+					private String durationInaccurate;
+
 					private NetworkCost networkCost;
+
+					private DolbyVision dolbyVision;
 
 					public String getSar() {
 						return this.sar;
@@ -621,12 +636,28 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 						this.colorPrimaries = colorPrimaries;
 					}
 
+					public String getDurationInaccurate() {
+						return this.durationInaccurate;
+					}
+
+					public void setDurationInaccurate(String durationInaccurate) {
+						this.durationInaccurate = durationInaccurate;
+					}
+
 					public NetworkCost getNetworkCost() {
 						return this.networkCost;
 					}
 
 					public void setNetworkCost(NetworkCost networkCost) {
 						this.networkCost = networkCost;
+					}
+
+					public DolbyVision getDolbyVision() {
+						return this.dolbyVision;
+					}
+
+					public void setDolbyVision(DolbyVision dolbyVision) {
+						this.dolbyVision = dolbyVision;
 					}
 
 					public static class NetworkCost {
@@ -659,6 +690,29 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 
 						public void setCostBandwidth(String costBandwidth) {
 							this.costBandwidth = costBandwidth;
+						}
+					}
+
+					public static class DolbyVision {
+
+						private String profile;
+
+						private String level;
+
+						public String getProfile() {
+							return this.profile;
+						}
+
+						public void setProfile(String profile) {
+							this.profile = profile;
+						}
+
+						public String getLevel() {
+							return this.level;
+						}
+
+						public void setLevel(String level) {
+							this.level = level;
 						}
 					}
 				}
@@ -696,6 +750,8 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 					private String codecTag;
 
 					private String codecTimeBase;
+
+					private String durationInaccurate;
 
 					public String getTimebase() {
 						return this.timebase;
@@ -824,6 +880,14 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 					public void setCodecTimeBase(String codecTimeBase) {
 						this.codecTimeBase = codecTimeBase;
 					}
+
+					public String getDurationInaccurate() {
+						return this.durationInaccurate;
+					}
+
+					public void setDurationInaccurate(String durationInaccurate) {
+						this.durationInaccurate = durationInaccurate;
+					}
 				}
 
 				public static class SubtitleStream {
@@ -948,6 +1012,8 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 
 				private String formatName;
 
+				private Map<Object,Object> tags;
+
 				public String getStartTime() {
 					return this.startTime;
 				}
@@ -1010,6 +1076,14 @@ public class QueryMediaInfoJobListResponse extends AcsResponse {
 
 				public void setFormatName(String formatName) {
 					this.formatName = formatName;
+				}
+
+				public Map<Object,Object> getTags() {
+					return this.tags;
+				}
+
+				public void setTags(Map<Object,Object> tags) {
+					this.tags = tags;
 				}
 			}
 		}

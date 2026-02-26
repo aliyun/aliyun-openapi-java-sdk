@@ -34,7 +34,7 @@ public class CompareFacesRequest extends RpcAcsRequest<CompareFacesResponse> {
 
 	private String sourceImageValue;
 	public CompareFacesRequest() {
-		super("Cloudauth", "2019-03-07", "CompareFaces");
+		super("Cloudauth", "2019-03-07", "CompareFaces", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

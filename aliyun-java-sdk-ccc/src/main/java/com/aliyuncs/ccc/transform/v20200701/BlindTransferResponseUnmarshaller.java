@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.BlindTransferResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.BlindTransferResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.BlindTransferResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.BlindTransferResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -58,7 +57,6 @@ public class BlindTransferResponseUnmarshaller {
 			channelContext.setUserId(_ctx.stringValue("BlindTransferResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
 			channelContext.setChannelFlags(_ctx.stringValue("BlindTransferResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
 			channelContext.setTimestamp(_ctx.longValue("BlindTransferResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("BlindTransferResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("BlindTransferResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("BlindTransferResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("BlindTransferResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));

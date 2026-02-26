@@ -29,15 +29,11 @@ public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
 
 	private String type;
 
-	private String requestId;
-
 	private String roleArn;
 
 	private String name;
 
 	private String definition;
-
-	private String externalStorageLocation;
 	public UpdateFlowRequest() {
 		super("fnf", "2019-03-15", "UpdateFlow", "fnf");
 		setMethod(MethodType.POST);
@@ -66,17 +62,6 @@ public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
 		this.type = type;
 		if(type != null){
 			putBodyParameter("Type", type);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 
@@ -110,17 +95,6 @@ public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
 		this.definition = definition;
 		if(definition != null){
 			putBodyParameter("Definition", definition);
-		}
-	}
-
-	public String getExternalStorageLocation() {
-		return this.externalStorageLocation;
-	}
-
-	public void setExternalStorageLocation(String externalStorageLocation) {
-		this.externalStorageLocation = externalStorageLocation;
-		if(externalStorageLocation != null){
-			putBodyParameter("ExternalStorageLocation", externalStorageLocation);
 		}
 	}
 

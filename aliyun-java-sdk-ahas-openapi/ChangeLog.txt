@@ -1,3 +1,9 @@
+2022-10-19 Version: 1.0.6
+- Add workspace relation.
+
+2022-10-17 Version: 1.0.5
+- Support thresholdMode in flow rule api.
+
 2020-12-27 Version: 1.0.4
 - Add public region.
 

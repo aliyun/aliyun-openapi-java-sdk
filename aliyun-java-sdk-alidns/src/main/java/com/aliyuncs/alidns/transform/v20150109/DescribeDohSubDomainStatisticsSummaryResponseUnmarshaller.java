@@ -27,23 +27,23 @@ public class DescribeDohSubDomainStatisticsSummaryResponseUnmarshaller {
 	public static DescribeDohSubDomainStatisticsSummaryResponse unmarshall(DescribeDohSubDomainStatisticsSummaryResponse describeDohSubDomainStatisticsSummaryResponse, UnmarshallerContext _ctx) {
 		
 		describeDohSubDomainStatisticsSummaryResponse.setRequestId(_ctx.stringValue("DescribeDohSubDomainStatisticsSummaryResponse.RequestId"));
-		describeDohSubDomainStatisticsSummaryResponse.setTotalItems(_ctx.integerValue("DescribeDohSubDomainStatisticsSummaryResponse.TotalItems"));
-		describeDohSubDomainStatisticsSummaryResponse.setTotalPages(_ctx.integerValue("DescribeDohSubDomainStatisticsSummaryResponse.TotalPages"));
 		describeDohSubDomainStatisticsSummaryResponse.setPageSize(_ctx.integerValue("DescribeDohSubDomainStatisticsSummaryResponse.PageSize"));
 		describeDohSubDomainStatisticsSummaryResponse.setPageNumber(_ctx.integerValue("DescribeDohSubDomainStatisticsSummaryResponse.PageNumber"));
+		describeDohSubDomainStatisticsSummaryResponse.setTotalPages(_ctx.integerValue("DescribeDohSubDomainStatisticsSummaryResponse.TotalPages"));
+		describeDohSubDomainStatisticsSummaryResponse.setTotalItems(_ctx.integerValue("DescribeDohSubDomainStatisticsSummaryResponse.TotalItems"));
 
 		List<Statistic> statistics = new ArrayList<Statistic>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics.Length"); i++) {
 			Statistic statistic = new Statistic();
-			statistic.setSubDomain(_ctx.stringValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics["+ i +"].SubDomain"));
-			statistic.setV4HttpCount(_ctx.longValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics["+ i +"].V4HttpCount"));
 			statistic.setV6HttpCount(_ctx.longValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics["+ i +"].V6HttpCount"));
 			statistic.setV4HttpsCount(_ctx.longValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics["+ i +"].V4HttpsCount"));
-			statistic.setV6HttpsCount(_ctx.longValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics["+ i +"].V6HttpsCount"));
-			statistic.setTotalCount(_ctx.longValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics["+ i +"].TotalCount"));
 			statistic.setIpCount(_ctx.longValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics["+ i +"].IpCount"));
+			statistic.setSubDomain(_ctx.stringValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics["+ i +"].SubDomain"));
+			statistic.setTotalCount(_ctx.longValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics["+ i +"].TotalCount"));
 			statistic.setHttpCount(_ctx.longValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics["+ i +"].HttpCount"));
 			statistic.setHttpsCount(_ctx.longValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics["+ i +"].HttpsCount"));
+			statistic.setV4HttpCount(_ctx.longValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics["+ i +"].V4HttpCount"));
+			statistic.setV6HttpsCount(_ctx.longValue("DescribeDohSubDomainStatisticsSummaryResponse.Statistics["+ i +"].V6HttpsCount"));
 
 			statistics.add(statistic);
 		}

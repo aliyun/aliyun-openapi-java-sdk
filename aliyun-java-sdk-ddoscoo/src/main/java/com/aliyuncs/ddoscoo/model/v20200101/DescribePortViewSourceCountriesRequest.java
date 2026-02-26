@@ -34,7 +34,7 @@ public class DescribePortViewSourceCountriesRequest extends RpcAcsRequest<Descri
 
 	private List<String> instanceIdss;
 	public DescribePortViewSourceCountriesRequest() {
-		super("ddoscoo", "2020-01-01", "DescribePortViewSourceCountries");
+		super("ddoscoo", "2020-01-01", "DescribePortViewSourceCountries", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

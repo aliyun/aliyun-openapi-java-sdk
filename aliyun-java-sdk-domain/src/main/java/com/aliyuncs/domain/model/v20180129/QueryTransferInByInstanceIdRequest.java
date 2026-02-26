@@ -31,7 +31,7 @@ public class QueryTransferInByInstanceIdRequest extends RpcAcsRequest<QueryTrans
 
 	private String lang;
 	public QueryTransferInByInstanceIdRequest() {
-		super("Domain", "2018-01-29", "QueryTransferInByInstanceId");
+		super("Domain", "2018-01-29", "QueryTransferInByInstanceId", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

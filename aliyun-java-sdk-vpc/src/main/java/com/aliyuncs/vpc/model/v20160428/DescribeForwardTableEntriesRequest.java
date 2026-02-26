@@ -37,6 +37,8 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 
 	private Integer pageSize;
 
+	private String natGatewayId;
+
 	private String externalIp;
 
 	private String resourceOwnerAccount;
@@ -124,6 +126,17 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getNatGatewayId() {
+		return this.natGatewayId;
+	}
+
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
+		if(natGatewayId != null){
+			putQueryParameter("NatGatewayId", natGatewayId);
 		}
 	}
 

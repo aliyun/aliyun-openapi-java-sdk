@@ -35,7 +35,7 @@ public class DescribeDBInitializeVariableRequest extends RpcAcsRequest<DescribeD
 
 	private Long ownerId;
 	public DescribeDBInitializeVariableRequest() {
-		super("polardb", "2017-08-01", "DescribeDBInitializeVariable");
+		super("polardb", "2017-08-01", "DescribeDBInitializeVariable", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

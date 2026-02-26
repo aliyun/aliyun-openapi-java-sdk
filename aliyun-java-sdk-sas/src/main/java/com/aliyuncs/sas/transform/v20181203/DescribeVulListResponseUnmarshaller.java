@@ -20,11 +20,14 @@ import java.util.List;
 import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse;
 import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord;
 import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord.ExtendContentJson;
+import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord.ExtendContentJson.AgentScanVul;
 import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord.ExtendContentJson.Necessity;
+import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord.ExtendContentJson.PreCheck;
 import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord.ExtendContentJson.RpmEntity;
 import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord.ProcessInfo;
 import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord.ProcessInfo.Process;
 import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord.ProcessInfo.Process.SubProcess;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +44,9 @@ public class DescribeVulListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeVulListResponse.VulRecords.Length"); i++) {
 			VulRecord vulRecord = new VulRecord();
 			vulRecord.setStatus(_ctx.integerValue("DescribeVulListResponse.VulRecords["+ i +"].Status"));
+			vulRecord.setIsPoc(_ctx.integerValue("DescribeVulListResponse.VulRecords["+ i +"].IsPoc"));
+			vulRecord.setRaspDefend(_ctx.integerValue("DescribeVulListResponse.VulRecords["+ i +"].RaspDefend"));
+			vulRecord.setRaspStatus(_ctx.integerValue("DescribeVulListResponse.VulRecords["+ i +"].RaspStatus"));
 			vulRecord.setType(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Type"));
 			vulRecord.setModifyTs(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].ModifyTs"));
 			vulRecord.setInternetIp(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].InternetIp"));
@@ -82,6 +88,7 @@ public class DescribeVulListResponseUnmarshaller {
 			vulRecord.setBind(_ctx.booleanValue("DescribeVulListResponse.VulRecords["+ i +"].Bind"));
 			vulRecord.setOsName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].OsName"));
 			vulRecord.setAuthVersion(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].AuthVersion"));
+			vulRecord.setProduct(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Product"));
 
 			ExtendContentJson extendContentJson = new ExtendContentJson();
 			extendContentJson.setStatus(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Status"));
@@ -106,6 +113,8 @@ public class DescribeVulListResponseUnmarshaller {
 			extendContentJson.setAbsolutePath(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.AbsolutePath"));
 			extendContentJson.setProof(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Proof"));
 			extendContentJson.setReason(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Reason"));
+			extendContentJson.setLevel(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Level"));
+			extendContentJson.setRenderData(_ctx.mapValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RenderData"));
 
 			List<String> cveList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.cveList.Length"); j++) {
@@ -124,6 +133,17 @@ public class DescribeVulListResponseUnmarshaller {
 			necessity.setAssets_factor(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Necessity.Assets_factor"));
 			extendContentJson.setNecessity(necessity);
 
+			PreCheck preCheck = new PreCheck();
+			preCheck.setMsg(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.PreCheck.Msg"));
+			preCheck.setCode(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.PreCheck.Code"));
+			extendContentJson.setPreCheck(preCheck);
+
+			AgentScanVul agentScanVul = new AgentScanVul();
+			agentScanVul.setPoc(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.AgentScanVul.Poc"));
+			agentScanVul.setProof(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.AgentScanVul.Proof"));
+			agentScanVul.setTarget(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.AgentScanVul.Target"));
+			extendContentJson.setAgentScanVul(agentScanVul);
+
 			List<RpmEntity> rpmEntityList = new ArrayList<RpmEntity>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList.Length"); j++) {
 				RpmEntity rpmEntity = new RpmEntity();
@@ -136,6 +156,7 @@ public class DescribeVulListResponseUnmarshaller {
 				rpmEntity.setName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Name"));
 				rpmEntity.setUpdateCmd(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].UpdateCmd"));
 				rpmEntity.setPid(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Pid"));
+				rpmEntity.setExtendField(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].ExtendField"));
 
 				List<String> matchList = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].MatchList.Length"); k++) {

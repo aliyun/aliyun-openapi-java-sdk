@@ -85,6 +85,12 @@ public class ListCenInterRegionTrafficQosPoliciesResponse extends AcsResponse {
 
 		private String trafficQosPolicyDescription;
 
+		private String bandwidthGuaranteeMode;
+
+		private String transitRouterId;
+
+		private String transitRouterAttachmentId;
+
 		private List<TrafficQosQueue> trafficQosQueues;
 
 		public String getTrafficQosPolicyName() {
@@ -119,6 +125,30 @@ public class ListCenInterRegionTrafficQosPoliciesResponse extends AcsResponse {
 			this.trafficQosPolicyDescription = trafficQosPolicyDescription;
 		}
 
+		public String getBandwidthGuaranteeMode() {
+			return this.bandwidthGuaranteeMode;
+		}
+
+		public void setBandwidthGuaranteeMode(String bandwidthGuaranteeMode) {
+			this.bandwidthGuaranteeMode = bandwidthGuaranteeMode;
+		}
+
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
+		}
+
+		public String getTransitRouterAttachmentId() {
+			return this.transitRouterAttachmentId;
+		}
+
+		public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
+			this.transitRouterAttachmentId = transitRouterAttachmentId;
+		}
+
 		public List<TrafficQosQueue> getTrafficQosQueues() {
 			return this.trafficQosQueues;
 		}
@@ -133,9 +163,13 @@ public class ListCenInterRegionTrafficQosPoliciesResponse extends AcsResponse {
 
 			private Integer remainBandwidthPercent;
 
+			private String bandwidth;
+
 			private String qosQueueId;
 
 			private String qosQueueDescription;
+
+			private String effectiveBandwidth;
 
 			private List<Integer> dscps;
 
@@ -155,6 +189,14 @@ public class ListCenInterRegionTrafficQosPoliciesResponse extends AcsResponse {
 				this.remainBandwidthPercent = remainBandwidthPercent;
 			}
 
+			public String getBandwidth() {
+				return this.bandwidth;
+			}
+
+			public void setBandwidth(String bandwidth) {
+				this.bandwidth = bandwidth;
+			}
+
 			public String getQosQueueId() {
 				return this.qosQueueId;
 			}
@@ -169,6 +211,14 @@ public class ListCenInterRegionTrafficQosPoliciesResponse extends AcsResponse {
 
 			public void setQosQueueDescription(String qosQueueDescription) {
 				this.qosQueueDescription = qosQueueDescription;
+			}
+
+			public String getEffectiveBandwidth() {
+				return this.effectiveBandwidth;
+			}
+
+			public void setEffectiveBandwidth(String effectiveBandwidth) {
+				this.effectiveBandwidth = effectiveBandwidth;
 			}
 
 			public List<Integer> getDscps() {

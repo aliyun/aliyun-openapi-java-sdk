@@ -31,9 +31,9 @@ public class InstallBackupClientsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
 	private String taskId;
+
+	private Boolean success;
 
 	private List<InstanceStatusesItem> instanceStatuses;
 
@@ -61,20 +61,20 @@ public class InstallBackupClientsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getTaskId() {
 		return this.taskId;
 	}
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<InstanceStatusesItem> getInstanceStatuses() {
@@ -87,19 +87,11 @@ public class InstallBackupClientsResponse extends AcsResponse {
 
 	public static class InstanceStatusesItem {
 
-		private String instanceId;
-
 		private Boolean validInstance;
 
+		private String instanceId;
+
 		private String errorCode;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
 
 		public Boolean getValidInstance() {
 			return this.validInstance;
@@ -107,6 +99,14 @@ public class InstallBackupClientsResponse extends AcsResponse {
 
 		public void setValidInstance(Boolean validInstance) {
 			this.validInstance = validInstance;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getErrorCode() {

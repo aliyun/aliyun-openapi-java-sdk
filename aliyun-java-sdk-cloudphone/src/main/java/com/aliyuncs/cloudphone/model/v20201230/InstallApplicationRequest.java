@@ -39,7 +39,7 @@ public class InstallApplicationRequest extends RpcAcsRequest<InstallApplicationR
 
 	private List<String> instanceIds;
 	public InstallApplicationRequest() {
-		super("cloudphone", "2020-12-30", "InstallApplication", "cloudphone");
+		super("cloudphone", "2020-12-30", "InstallApplication");
 		setMethod(MethodType.POST);
 	}
 

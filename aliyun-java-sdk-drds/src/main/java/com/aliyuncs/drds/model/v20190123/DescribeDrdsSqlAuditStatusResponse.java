@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDrdsSqlAuditStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeDrdsSqlAuditStatusResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DataItem> getData() {
@@ -57,19 +57,27 @@ public class DescribeDrdsSqlAuditStatusResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String dbName;
+		private String extraSlsLogStore;
 
-		private String enabled;
+		private String dbName;
 
 		private String detailed;
 
 		private Boolean extraWriteEnabled;
 
+		private String enabled;
+
 		private Long extraAliUid;
 
 		private String extraSlsProject;
 
-		private String extraSlsLogStore;
+		public String getExtraSlsLogStore() {
+			return this.extraSlsLogStore;
+		}
+
+		public void setExtraSlsLogStore(String extraSlsLogStore) {
+			this.extraSlsLogStore = extraSlsLogStore;
+		}
 
 		public String getDbName() {
 			return this.dbName;
@@ -77,14 +85,6 @@ public class DescribeDrdsSqlAuditStatusResponse extends AcsResponse {
 
 		public void setDbName(String dbName) {
 			this.dbName = dbName;
-		}
-
-		public String getEnabled() {
-			return this.enabled;
-		}
-
-		public void setEnabled(String enabled) {
-			this.enabled = enabled;
 		}
 
 		public String getDetailed() {
@@ -103,6 +103,14 @@ public class DescribeDrdsSqlAuditStatusResponse extends AcsResponse {
 			this.extraWriteEnabled = extraWriteEnabled;
 		}
 
+		public String getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(String enabled) {
+			this.enabled = enabled;
+		}
+
 		public Long getExtraAliUid() {
 			return this.extraAliUid;
 		}
@@ -117,14 +125,6 @@ public class DescribeDrdsSqlAuditStatusResponse extends AcsResponse {
 
 		public void setExtraSlsProject(String extraSlsProject) {
 			this.extraSlsProject = extraSlsProject;
-		}
-
-		public String getExtraSlsLogStore() {
-			return this.extraSlsLogStore;
-		}
-
-		public void setExtraSlsLogStore(String extraSlsLogStore) {
-			this.extraSlsLogStore = extraSlsLogStore;
 		}
 	}
 

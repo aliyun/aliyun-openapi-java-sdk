@@ -15,16 +15,14 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest<SaveSingleTaskForCreatingOrderActivateResponse> {
-	
-	public SaveSingleTaskForCreatingOrderActivateRequest() {
-		super("Domain-intl", "2017-12-18", "SaveSingleTaskForCreatingOrderActivate", "domain");
-	}
+	   
 
 	private String country;
 
@@ -79,6 +77,10 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 	private String registrantName;
 
 	private Boolean usePromotion;
+	public SaveSingleTaskForCreatingOrderActivateRequest() {
+		super("Domain-intl", "2017-12-18", "SaveSingleTaskForCreatingOrderActivate");
+		setMethod(MethodType.POST);
+	}
 
 	public String getCountry() {
 		return this.country;

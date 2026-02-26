@@ -26,13 +26,15 @@ public class CreateFirewallRuleRequest extends RpcAcsRequest<CreateFirewallRuleR
 
 	private String clientToken;
 
+	private String remark;
+
 	private String instanceId;
 
 	private String ruleProtocol;
 
 	private String port;
 	public CreateFirewallRuleRequest() {
-		super("SWAS-OPEN", "2020-06-01", "CreateFirewallRule");
+		super("SWAS-OPEN", "2020-06-01", "CreateFirewallRule", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 
@@ -44,6 +46,17 @@ public class CreateFirewallRuleRequest extends RpcAcsRequest<CreateFirewallRuleR
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 

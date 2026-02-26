@@ -23,15 +23,7 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class DescribeTrafficControlsRequest extends RpcAcsRequest<DescribeTrafficControlsResponse> {
-	
-	public DescribeTrafficControlsRequest() {
-		super("CloudAPI", "2016-07-14", "DescribeTrafficControls", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String trafficControlId;
 
@@ -48,6 +40,14 @@ public class DescribeTrafficControlsRequest extends RpcAcsRequest<DescribeTraffi
 	private Integer pageSize;
 
 	private String apiId;
+	public DescribeTrafficControlsRequest() {
+		super("CloudAPI", "2016-07-14", "DescribeTrafficControls", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTrafficControlId() {
 		return this.trafficControlId;
@@ -104,29 +104,10 @@ public class DescribeTrafficControlsRequest extends RpcAcsRequest<DescribeTraffi
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

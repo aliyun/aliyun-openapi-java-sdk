@@ -171,6 +171,10 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private Integer throughput;
 
+		private Integer throughputRead;
+
+		private Integer throughputWrite;
+
 		private List<OperationLock> operationLocks;
 
 		private List<MountInstance> mountInstances;
@@ -178,6 +182,8 @@ public class DescribeDisksResponse extends AcsResponse {
 		private List<Tag> tags;
 
 		private List<Attachment> attachments;
+
+		private Placement placement;
 
 		public String getSerialNumber() {
 			return this.serialNumber;
@@ -515,6 +521,22 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.throughput = throughput;
 		}
 
+		public Integer getThroughputRead() {
+			return this.throughputRead;
+		}
+
+		public void setThroughputRead(Integer throughputRead) {
+			this.throughputRead = throughputRead;
+		}
+
+		public Integer getThroughputWrite() {
+			return this.throughputWrite;
+		}
+
+		public void setThroughputWrite(Integer throughputWrite) {
+			this.throughputWrite = throughputWrite;
+		}
+
 		public List<OperationLock> getOperationLocks() {
 			return this.operationLocks;
 		}
@@ -545,6 +567,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setAttachments(List<Attachment> attachments) {
 			this.attachments = attachments;
+		}
+
+		public Placement getPlacement() {
+			return this.placement;
+		}
+
+		public void setPlacement(Placement placement) {
+			this.placement = placement;
 		}
 
 		public static class OperationLock {
@@ -624,6 +654,18 @@ public class DescribeDisksResponse extends AcsResponse {
 
 			private String attachedTime;
 
+			private Long nsId;
+
+			private String nguid;
+
+			private String identifier;
+
+			private String targetDevice;
+
+			private String accessToken;
+
+			private String vuid;
+
 			public String getInstanceId() {
 				return this.instanceId;
 			}
@@ -646,6 +688,67 @@ public class DescribeDisksResponse extends AcsResponse {
 
 			public void setAttachedTime(String attachedTime) {
 				this.attachedTime = attachedTime;
+			}
+
+			public Long getNsId() {
+				return this.nsId;
+			}
+
+			public void setNsId(Long nsId) {
+				this.nsId = nsId;
+			}
+
+			public String getNguid() {
+				return this.nguid;
+			}
+
+			public void setNguid(String nguid) {
+				this.nguid = nguid;
+			}
+
+			public String getIdentifier() {
+				return this.identifier;
+			}
+
+			public void setIdentifier(String identifier) {
+				this.identifier = identifier;
+			}
+
+			public String getTargetDevice() {
+				return this.targetDevice;
+			}
+
+			public void setTargetDevice(String targetDevice) {
+				this.targetDevice = targetDevice;
+			}
+
+			public String getAccessToken() {
+				return this.accessToken;
+			}
+
+			public void setAccessToken(String accessToken) {
+				this.accessToken = accessToken;
+			}
+
+			public String getVuid() {
+				return this.vuid;
+			}
+
+			public void setVuid(String vuid) {
+				this.vuid = vuid;
+			}
+		}
+
+		public static class Placement {
+
+			private String zoneIds;
+
+			public String getZoneIds() {
+				return this.zoneIds;
+			}
+
+			public void setZoneIds(String zoneIds) {
+				this.zoneIds = zoneIds;
 			}
 		}
 	}

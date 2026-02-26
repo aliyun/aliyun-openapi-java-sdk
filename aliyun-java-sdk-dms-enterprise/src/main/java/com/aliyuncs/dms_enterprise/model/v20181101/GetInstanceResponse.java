@@ -121,6 +121,8 @@ public class GetInstanceResponse extends AcsResponse {
 
 		private String ecsRegion;
 
+		private String sellSitd;
+
 		private List<String> ownerIdList;
 
 		private List<String> ownerNameList;
@@ -301,6 +303,14 @@ public class GetInstanceResponse extends AcsResponse {
 
 		public void setEcsRegion(String ecsRegion) {
 			this.ecsRegion = ecsRegion;
+		}
+
+		public String getSellSitd() {
+			return this.sellSitd;
+		}
+
+		public void setSellSitd(String sellSitd) {
+			this.sellSitd = sellSitd;
 		}
 
 		public List<String> getOwnerIdList() {

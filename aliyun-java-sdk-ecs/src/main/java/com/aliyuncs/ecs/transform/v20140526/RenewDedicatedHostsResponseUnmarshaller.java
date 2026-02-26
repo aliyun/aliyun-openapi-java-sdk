@@ -23,6 +23,7 @@ public class RenewDedicatedHostsResponseUnmarshaller {
 	public static RenewDedicatedHostsResponse unmarshall(RenewDedicatedHostsResponse renewDedicatedHostsResponse, UnmarshallerContext _ctx) {
 		
 		renewDedicatedHostsResponse.setRequestId(_ctx.stringValue("RenewDedicatedHostsResponse.RequestId"));
+		renewDedicatedHostsResponse.setOrderId(_ctx.stringValue("RenewDedicatedHostsResponse.OrderId"));
 	 
 	 	return renewDedicatedHostsResponse;
 	}

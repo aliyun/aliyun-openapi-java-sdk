@@ -57,33 +57,17 @@ public class ListPlaylistResponse extends AcsResponse {
 
 	public static class ProgramInfo {
 
-		private String programId;
-
-		private String programName;
-
 		private String casterId;
 
 		private String domainName;
 
+		private String programId;
+
+		private String programName;
+
 		private Integer repeatNumber;
 
 		private Integer status;
-
-		public String getProgramId() {
-			return this.programId;
-		}
-
-		public void setProgramId(String programId) {
-			this.programId = programId;
-		}
-
-		public String getProgramName() {
-			return this.programName;
-		}
-
-		public void setProgramName(String programName) {
-			this.programName = programName;
-		}
 
 		public String getCasterId() {
 			return this.casterId;
@@ -99,6 +83,22 @@ public class ListPlaylistResponse extends AcsResponse {
 
 		public void setDomainName(String domainName) {
 			this.domainName = domainName;
+		}
+
+		public String getProgramId() {
+			return this.programId;
+		}
+
+		public void setProgramId(String programId) {
+			this.programId = programId;
+		}
+
+		public String getProgramName() {
+			return this.programName;
+		}
+
+		public void setProgramName(String programName) {
+			this.programName = programName;
 		}
 
 		public Integer getRepeatNumber() {

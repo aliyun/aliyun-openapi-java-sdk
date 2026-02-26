@@ -29,11 +29,15 @@ public class ListAppInstanceGroupRequest extends RpcAcsRequest<ListAppInstanceGr
 
 	private String productType;
 
+	private String appCenterImageId;
+
+	private Integer pageSize;
+
+	private String nodeInstanceType;
+
 	private String appInstanceGroupName;
 
 	private String appInstanceGroupId;
-
-	private Integer pageSize;
 
 	private List<String> statuss;
 	public ListAppInstanceGroupRequest() {
@@ -63,6 +67,39 @@ public class ListAppInstanceGroupRequest extends RpcAcsRequest<ListAppInstanceGr
 		}
 	}
 
+	public String getAppCenterImageId() {
+		return this.appCenterImageId;
+	}
+
+	public void setAppCenterImageId(String appCenterImageId) {
+		this.appCenterImageId = appCenterImageId;
+		if(appCenterImageId != null){
+			putQueryParameter("AppCenterImageId", appCenterImageId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getNodeInstanceType() {
+		return this.nodeInstanceType;
+	}
+
+	public void setNodeInstanceType(String nodeInstanceType) {
+		this.nodeInstanceType = nodeInstanceType;
+		if(nodeInstanceType != null){
+			putQueryParameter("NodeInstanceType", nodeInstanceType);
+		}
+	}
+
 	public String getAppInstanceGroupName() {
 		return this.appInstanceGroupName;
 	}
@@ -82,17 +119,6 @@ public class ListAppInstanceGroupRequest extends RpcAcsRequest<ListAppInstanceGr
 		this.appInstanceGroupId = appInstanceGroupId;
 		if(appInstanceGroupId != null){
 			putQueryParameter("AppInstanceGroupId", appInstanceGroupId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

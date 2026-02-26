@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListClusterLogsResponse extends AcsResponse {
 
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	private String requestId;
 
 	private Integer totalCount;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
 	private String clusterId;
 
 	private List<LogInfo> logs;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class ListClusterLogsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public String getClusterId() {
@@ -89,11 +89,11 @@ public class ListClusterLogsResponse extends AcsResponse {
 
 		private String operation;
 
-		private String level;
-
 		private String message;
 
 		private String createTime;
+
+		private String level;
 
 		public String getOperation() {
 			return this.operation;
@@ -101,14 +101,6 @@ public class ListClusterLogsResponse extends AcsResponse {
 
 		public void setOperation(String operation) {
 			this.operation = operation;
-		}
-
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
 		}
 
 		public String getMessage() {
@@ -125,6 +117,14 @@ public class ListClusterLogsResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
 		}
 	}
 

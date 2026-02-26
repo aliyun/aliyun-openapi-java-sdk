@@ -35,7 +35,7 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String preferredBackupTime;
 	public ModifyBackupPolicyRequest() {
-		super("HBase", "2019-01-01", "ModifyBackupPolicy", "hbase");
+		super("HBase", "2019-01-01", "ModifyBackupPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

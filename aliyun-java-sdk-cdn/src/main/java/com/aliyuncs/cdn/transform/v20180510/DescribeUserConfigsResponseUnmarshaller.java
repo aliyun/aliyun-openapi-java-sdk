@@ -30,9 +30,9 @@ public class DescribeUserConfigsResponseUnmarshaller {
 		Configs configs = new Configs();
 
 		OssLogConfig ossLogConfig = new OssLogConfig();
+		ossLogConfig.setPrefix(_ctx.stringValue("DescribeUserConfigsResponse.Configs.OssLogConfig.Prefix"));
 		ossLogConfig.setEnable(_ctx.stringValue("DescribeUserConfigsResponse.Configs.OssLogConfig.Enable"));
 		ossLogConfig.setBucket(_ctx.stringValue("DescribeUserConfigsResponse.Configs.OssLogConfig.Bucket"));
-		ossLogConfig.setPrefix(_ctx.stringValue("DescribeUserConfigsResponse.Configs.OssLogConfig.Prefix"));
 		configs.setOssLogConfig(ossLogConfig);
 
 		WafConfig wafConfig = new WafConfig();

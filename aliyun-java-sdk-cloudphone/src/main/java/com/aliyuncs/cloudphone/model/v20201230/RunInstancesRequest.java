@@ -25,6 +25,28 @@ import com.aliyuncs.http.MethodType;
 public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	   
 
+	private String keyPairName;
+
+	private String resolution;
+
+	private List<Tag> tags;
+
+	private Long period;
+
+	private Long ownerId;
+
+	private String vSwitchId;
+
+	private String privateIpAddress;
+
+	private String periodUnit;
+
+	private String instanceName;
+
+	private Boolean autoRenew;
+
+	private Integer eipBandwidth;
+
 	private String imageId;
 
 	private String clientToken;
@@ -33,17 +55,9 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String description;
 
-	private String keyPairName;
-
-	private String resolution;
-
 	private String instanceType;
 
-	private List<Tag> tags;
-
 	private Integer amount;
-
-	private Long period;
 
 	private Boolean autoPay;
 
@@ -51,22 +65,134 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
-	private String vSwitchId;
-
-	private String periodUnit;
-
-	private String instanceName;
-
-	private Boolean autoRenew;
-
 	private String chargeType;
-
-	private Integer eipBandwidth;
 	public RunInstancesRequest() {
-		super("cloudphone", "2020-12-30", "RunInstances", "cloudphone");
+		super("cloudphone", "2020-12-30", "RunInstances");
 		setMethod(MethodType.POST);
+	}
+
+	public String getKeyPairName() {
+		return this.keyPairName;
+	}
+
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+		if(keyPairName != null){
+			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
+
+	public String getResolution() {
+		return this.resolution;
+	}
+
+	public void setResolution(String resolution) {
+		this.resolution = resolution;
+		if(resolution != null){
+			putQueryParameter("Resolution", resolution);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
+	}
+
+	public Long getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Long period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
+		}
+	}
+
+	public Integer getEipBandwidth() {
+		return this.eipBandwidth;
+	}
+
+	public void setEipBandwidth(Integer eipBandwidth) {
+		this.eipBandwidth = eipBandwidth;
+		if(eipBandwidth != null){
+			putQueryParameter("EipBandwidth", eipBandwidth.toString());
+		}
 	}
 
 	public String getImageId() {
@@ -113,28 +239,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
-	public String getKeyPairName() {
-		return this.keyPairName;
-	}
-
-	public void setKeyPairName(String keyPairName) {
-		this.keyPairName = keyPairName;
-		if(keyPairName != null){
-			putQueryParameter("KeyPairName", keyPairName);
-		}
-	}
-
-	public String getResolution() {
-		return this.resolution;
-	}
-
-	public void setResolution(String resolution) {
-		this.resolution = resolution;
-		if(resolution != null){
-			putQueryParameter("Resolution", resolution);
-		}
-	}
-
 	public String getInstanceType() {
 		return this.instanceType;
 	}
@@ -146,20 +250,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-			}
-		}	
-	}
-
 	public Integer getAmount() {
 		return this.amount;
 	}
@@ -168,17 +258,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.amount = amount;
 		if(amount != null){
 			putQueryParameter("Amount", amount.toString());
-		}
-	}
-
-	public Long getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Long period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
 		}
 	}
 
@@ -215,61 +294,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
-	public String getPeriodUnit() {
-		return this.periodUnit;
-	}
-
-	public void setPeriodUnit(String periodUnit) {
-		this.periodUnit = periodUnit;
-		if(periodUnit != null){
-			putQueryParameter("PeriodUnit", periodUnit);
-		}
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
-	public Boolean getAutoRenew() {
-		return this.autoRenew;
-	}
-
-	public void setAutoRenew(Boolean autoRenew) {
-		this.autoRenew = autoRenew;
-		if(autoRenew != null){
-			putQueryParameter("AutoRenew", autoRenew.toString());
-		}
-	}
-
 	public String getChargeType() {
 		return this.chargeType;
 	}
@@ -278,17 +302,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
-		}
-	}
-
-	public Integer getEipBandwidth() {
-		return this.eipBandwidth;
-	}
-
-	public void setEipBandwidth(Integer eipBandwidth) {
-		this.eipBandwidth = eipBandwidth;
-		if(eipBandwidth != null){
-			putQueryParameter("EipBandwidth", eipBandwidth.toString());
 		}
 	}
 

@@ -25,15 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPtsReportDetailsResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
-	private Boolean success;
+	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
-
-	private Integer httpStatusCode;
+	private Boolean success;
 
 	private List<ApiMetrics> apiMetricsList;
 
@@ -43,6 +43,14 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 	private SceneSnapShot sceneSnapShot;
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -51,12 +59,12 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -67,20 +75,12 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ApiMetrics> getApiMetricsList() {
@@ -117,56 +117,40 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 	public static class ApiMetrics {
 
-		private Float avgTps;
-
-		private Float avgRt;
-
-		private Float seg50Rt;
+		private Long failCountBiz;
 
 		private Float seg75Rt;
 
-		private Float seg90Rt;
+		private Long allCount;
 
-		private Float seg99Rt;
-
-		private Float maxRt;
+		private Float avgTps;
 
 		private Float minRt;
 
-		private Float successRateReq;
+		private Float seg99Rt;
+
+		private Float seg50Rt;
+
+		private Float maxRt;
+
+		private Float seg90Rt;
 
 		private Float successRateBiz;
 
+		private Float avgRt;
+
 		private Long failCountReq;
 
-		private Long failCountBiz;
-
-		private Long allCount;
+		private Float successRateReq;
 
 		private String apiName;
 
-		public Float getAvgTps() {
-			return this.avgTps;
+		public Long getFailCountBiz() {
+			return this.failCountBiz;
 		}
 
-		public void setAvgTps(Float avgTps) {
-			this.avgTps = avgTps;
-		}
-
-		public Float getAvgRt() {
-			return this.avgRt;
-		}
-
-		public void setAvgRt(Float avgRt) {
-			this.avgRt = avgRt;
-		}
-
-		public Float getSeg50Rt() {
-			return this.seg50Rt;
-		}
-
-		public void setSeg50Rt(Float seg50Rt) {
-			this.seg50Rt = seg50Rt;
+		public void setFailCountBiz(Long failCountBiz) {
+			this.failCountBiz = failCountBiz;
 		}
 
 		public Float getSeg75Rt() {
@@ -177,28 +161,20 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 			this.seg75Rt = seg75Rt;
 		}
 
-		public Float getSeg90Rt() {
-			return this.seg90Rt;
+		public Long getAllCount() {
+			return this.allCount;
 		}
 
-		public void setSeg90Rt(Float seg90Rt) {
-			this.seg90Rt = seg90Rt;
+		public void setAllCount(Long allCount) {
+			this.allCount = allCount;
 		}
 
-		public Float getSeg99Rt() {
-			return this.seg99Rt;
+		public Float getAvgTps() {
+			return this.avgTps;
 		}
 
-		public void setSeg99Rt(Float seg99Rt) {
-			this.seg99Rt = seg99Rt;
-		}
-
-		public Float getMaxRt() {
-			return this.maxRt;
-		}
-
-		public void setMaxRt(Float maxRt) {
-			this.maxRt = maxRt;
+		public void setAvgTps(Float avgTps) {
+			this.avgTps = avgTps;
 		}
 
 		public Float getMinRt() {
@@ -209,12 +185,36 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 			this.minRt = minRt;
 		}
 
-		public Float getSuccessRateReq() {
-			return this.successRateReq;
+		public Float getSeg99Rt() {
+			return this.seg99Rt;
 		}
 
-		public void setSuccessRateReq(Float successRateReq) {
-			this.successRateReq = successRateReq;
+		public void setSeg99Rt(Float seg99Rt) {
+			this.seg99Rt = seg99Rt;
+		}
+
+		public Float getSeg50Rt() {
+			return this.seg50Rt;
+		}
+
+		public void setSeg50Rt(Float seg50Rt) {
+			this.seg50Rt = seg50Rt;
+		}
+
+		public Float getMaxRt() {
+			return this.maxRt;
+		}
+
+		public void setMaxRt(Float maxRt) {
+			this.maxRt = maxRt;
+		}
+
+		public Float getSeg90Rt() {
+			return this.seg90Rt;
+		}
+
+		public void setSeg90Rt(Float seg90Rt) {
+			this.seg90Rt = seg90Rt;
 		}
 
 		public Float getSuccessRateBiz() {
@@ -225,6 +225,14 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 			this.successRateBiz = successRateBiz;
 		}
 
+		public Float getAvgRt() {
+			return this.avgRt;
+		}
+
+		public void setAvgRt(Float avgRt) {
+			this.avgRt = avgRt;
+		}
+
 		public Long getFailCountReq() {
 			return this.failCountReq;
 		}
@@ -233,20 +241,12 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 			this.failCountReq = failCountReq;
 		}
 
-		public Long getFailCountBiz() {
-			return this.failCountBiz;
+		public Float getSuccessRateReq() {
+			return this.successRateReq;
 		}
 
-		public void setFailCountBiz(Long failCountBiz) {
-			this.failCountBiz = failCountBiz;
-		}
-
-		public Long getAllCount() {
-			return this.allCount;
-		}
-
-		public void setAllCount(Long allCount) {
-			this.allCount = allCount;
+		public void setSuccessRateReq(Float successRateReq) {
+			this.successRateReq = successRateReq;
 		}
 
 		public String getApiName() {
@@ -260,25 +260,17 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 	public static class ReportOverView {
 
-		private String reportId;
-
 		private String reportName;
-
-		private String startTime;
 
 		private String endTime;
 
+		private String startTime;
+
 		private Integer agentCount;
 
+		private String reportId;
+
 		private Long vum;
-
-		public String getReportId() {
-			return this.reportId;
-		}
-
-		public void setReportId(String reportId) {
-			this.reportId = reportId;
-		}
 
 		public String getReportName() {
 			return this.reportName;
@@ -286,14 +278,6 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 		public void setReportName(String reportName) {
 			this.reportName = reportName;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
 		}
 
 		public String getEndTime() {
@@ -304,12 +288,28 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
 		public Integer getAgentCount() {
 			return this.agentCount;
 		}
 
 		public void setAgentCount(Integer agentCount) {
 			this.agentCount = agentCount;
+		}
+
+		public String getReportId() {
+			return this.reportId;
+		}
+
+		public void setReportId(String reportId) {
+			this.reportId = reportId;
 		}
 
 		public Long getVum() {
@@ -323,30 +323,46 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 	public static class SceneMetrics {
 
-		private Float avgTps;
+		private Long failCountBiz;
+
+		private Long allCount;
+
+		private Float successRateBiz;
 
 		private Float avgRt;
 
-		private Float seg90Rt;
+		private Long failCountReq;
+
+		private Float avgTps;
 
 		private Float seg99Rt;
 
 		private Float successRateReq;
 
-		private Float successRateBiz;
+		private Float seg90Rt;
 
-		private Long failCountReq;
-
-		private Long failCountBiz;
-
-		private Long allCount;
-
-		public Float getAvgTps() {
-			return this.avgTps;
+		public Long getFailCountBiz() {
+			return this.failCountBiz;
 		}
 
-		public void setAvgTps(Float avgTps) {
-			this.avgTps = avgTps;
+		public void setFailCountBiz(Long failCountBiz) {
+			this.failCountBiz = failCountBiz;
+		}
+
+		public Long getAllCount() {
+			return this.allCount;
+		}
+
+		public void setAllCount(Long allCount) {
+			this.allCount = allCount;
+		}
+
+		public Float getSuccessRateBiz() {
+			return this.successRateBiz;
+		}
+
+		public void setSuccessRateBiz(Float successRateBiz) {
+			this.successRateBiz = successRateBiz;
 		}
 
 		public Float getAvgRt() {
@@ -357,12 +373,20 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 			this.avgRt = avgRt;
 		}
 
-		public Float getSeg90Rt() {
-			return this.seg90Rt;
+		public Long getFailCountReq() {
+			return this.failCountReq;
 		}
 
-		public void setSeg90Rt(Float seg90Rt) {
-			this.seg90Rt = seg90Rt;
+		public void setFailCountReq(Long failCountReq) {
+			this.failCountReq = failCountReq;
+		}
+
+		public Float getAvgTps() {
+			return this.avgTps;
+		}
+
+		public void setAvgTps(Float avgTps) {
+			this.avgTps = avgTps;
 		}
 
 		public Float getSeg99Rt() {
@@ -381,54 +405,30 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 			this.successRateReq = successRateReq;
 		}
 
-		public Float getSuccessRateBiz() {
-			return this.successRateBiz;
+		public Float getSeg90Rt() {
+			return this.seg90Rt;
 		}
 
-		public void setSuccessRateBiz(Float successRateBiz) {
-			this.successRateBiz = successRateBiz;
-		}
-
-		public Long getFailCountReq() {
-			return this.failCountReq;
-		}
-
-		public void setFailCountReq(Long failCountReq) {
-			this.failCountReq = failCountReq;
-		}
-
-		public Long getFailCountBiz() {
-			return this.failCountBiz;
-		}
-
-		public void setFailCountBiz(Long failCountBiz) {
-			this.failCountBiz = failCountBiz;
-		}
-
-		public Long getAllCount() {
-			return this.allCount;
-		}
-
-		public void setAllCount(Long allCount) {
-			this.allCount = allCount;
+		public void setSeg90Rt(Float seg90Rt) {
+			this.seg90Rt = seg90Rt;
 		}
 	}
 
 	public static class SceneSnapShot {
 
-		private String sceneId;
-
-		private String sceneName;
-
-		private String createTime;
+		private String status;
 
 		private String modifiedTime;
 
-		private String status;
+		private String createTime;
 
-		private List<Relation> relationList;
+		private String sceneName;
+
+		private String sceneId;
 
 		private List<FileParameter> fileParameterList;
+
+		private List<Relation> relationList;
 
 		private List<GlobalParameter> globalParameterList;
 
@@ -436,28 +436,12 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 		private AdvanceSetting advanceSetting;
 
-		public String getSceneId() {
-			return this.sceneId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setSceneId(String sceneId) {
-			this.sceneId = sceneId;
-		}
-
-		public String getSceneName() {
-			return this.sceneName;
-		}
-
-		public void setSceneName(String sceneName) {
-			this.sceneName = sceneName;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getModifiedTime() {
@@ -468,20 +452,28 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 			this.modifiedTime = modifiedTime;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
-		public List<Relation> getRelationList() {
-			return this.relationList;
+		public String getSceneName() {
+			return this.sceneName;
 		}
 
-		public void setRelationList(List<Relation> relationList) {
-			this.relationList = relationList;
+		public void setSceneName(String sceneName) {
+			this.sceneName = sceneName;
+		}
+
+		public String getSceneId() {
+			return this.sceneId;
+		}
+
+		public void setSceneId(String sceneId) {
+			this.sceneId = sceneId;
 		}
 
 		public List<FileParameter> getFileParameterList() {
@@ -490,6 +482,14 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 		public void setFileParameterList(List<FileParameter> fileParameterList) {
 			this.fileParameterList = fileParameterList;
+		}
+
+		public List<Relation> getRelationList() {
+			return this.relationList;
+		}
+
+		public void setRelationList(List<Relation> relationList) {
+			this.relationList = relationList;
 		}
 
 		public List<GlobalParameter> getGlobalParameterList() {
@@ -516,23 +516,38 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 			this.advanceSetting = advanceSetting;
 		}
 
-		public static class Relation {
+		public static class FileParameter {
 
-			private String relationId;
+			private String fileOssAddress;
+
+			private String fileName;
+
+			public String getFileOssAddress() {
+				return this.fileOssAddress;
+			}
+
+			public void setFileOssAddress(String fileOssAddress) {
+				this.fileOssAddress = fileOssAddress;
+			}
+
+			public String getFileName() {
+				return this.fileName;
+			}
+
+			public void setFileName(String fileName) {
+				this.fileName = fileName;
+			}
+		}
+
+		public static class Relation {
 
 			private String relationName;
 
-			private List<Api> apiList;
+			private String relationId;
 
 			private List<FileParameterExplain> fileParameterExplainList;
 
-			public String getRelationId() {
-				return this.relationId;
-			}
-
-			public void setRelationId(String relationId) {
-				this.relationId = relationId;
-			}
+			private List<Api> apiList;
 
 			public String getRelationName() {
 				return this.relationName;
@@ -542,12 +557,12 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 				this.relationName = relationName;
 			}
 
-			public List<Api> getApiList() {
-				return this.apiList;
+			public String getRelationId() {
+				return this.relationId;
 			}
 
-			public void setApiList(List<Api> apiList) {
-				this.apiList = apiList;
+			public void setRelationId(String relationId) {
+				this.relationId = relationId;
 			}
 
 			public List<FileParameterExplain> getFileParameterExplainList() {
@@ -558,25 +573,76 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 				this.fileParameterExplainList = fileParameterExplainList;
 			}
 
+			public List<Api> getApiList() {
+				return this.apiList;
+			}
+
+			public void setApiList(List<Api> apiList) {
+				this.apiList = apiList;
+			}
+
+			public static class FileParameterExplain {
+
+				private Boolean cycleOnce;
+
+				private String fileParamName;
+
+				private String fileName;
+
+				private Boolean baseFile;
+
+				public Boolean getCycleOnce() {
+					return this.cycleOnce;
+				}
+
+				public void setCycleOnce(Boolean cycleOnce) {
+					this.cycleOnce = cycleOnce;
+				}
+
+				public String getFileParamName() {
+					return this.fileParamName;
+				}
+
+				public void setFileParamName(String fileParamName) {
+					this.fileParamName = fileParamName;
+				}
+
+				public String getFileName() {
+					return this.fileName;
+				}
+
+				public void setFileName(String fileName) {
+					this.fileName = fileName;
+				}
+
+				public Boolean getBaseFile() {
+					return this.baseFile;
+				}
+
+				public void setBaseFile(Boolean baseFile) {
+					this.baseFile = baseFile;
+				}
+			}
+
 			public static class Api {
 
 				private String apiId;
 
-				private String apiName;
+				private Integer timeoutInSecond;
 
 				private String url;
 
 				private String method;
 
-				private Integer timeoutInSecond;
-
 				private Integer redirectCountLimit;
+
+				private String apiName;
+
+				private List<CheckPoint> checkPointList;
 
 				private List<Header> headerList;
 
 				private List<Export> exportList;
-
-				private List<CheckPoint> checkPointList;
 
 				private Body body;
 
@@ -588,12 +654,12 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 					this.apiId = apiId;
 				}
 
-				public String getApiName() {
-					return this.apiName;
+				public Integer getTimeoutInSecond() {
+					return this.timeoutInSecond;
 				}
 
-				public void setApiName(String apiName) {
-					this.apiName = apiName;
+				public void setTimeoutInSecond(Integer timeoutInSecond) {
+					this.timeoutInSecond = timeoutInSecond;
 				}
 
 				public String getUrl() {
@@ -612,20 +678,28 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 					this.method = method;
 				}
 
-				public Integer getTimeoutInSecond() {
-					return this.timeoutInSecond;
-				}
-
-				public void setTimeoutInSecond(Integer timeoutInSecond) {
-					this.timeoutInSecond = timeoutInSecond;
-				}
-
 				public Integer getRedirectCountLimit() {
 					return this.redirectCountLimit;
 				}
 
 				public void setRedirectCountLimit(Integer redirectCountLimit) {
 					this.redirectCountLimit = redirectCountLimit;
+				}
+
+				public String getApiName() {
+					return this.apiName;
+				}
+
+				public void setApiName(String apiName) {
+					this.apiName = apiName;
+				}
+
+				public List<CheckPoint> getCheckPointList() {
+					return this.checkPointList;
+				}
+
+				public void setCheckPointList(List<CheckPoint> checkPointList) {
+					this.checkPointList = checkPointList;
 				}
 
 				public List<Header> getHeaderList() {
@@ -644,14 +718,6 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 					this.exportList = exportList;
 				}
 
-				public List<CheckPoint> getCheckPointList() {
-					return this.checkPointList;
-				}
-
-				public void setCheckPointList(List<CheckPoint> checkPointList) {
-					this.checkPointList = checkPointList;
-				}
-
 				public Body getBody() {
 					return this.body;
 				}
@@ -660,75 +726,7 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 					this.body = body;
 				}
 
-				public static class Header {
-
-					private String headerName;
-
-					private String headerValue;
-
-					public String getHeaderName() {
-						return this.headerName;
-					}
-
-					public void setHeaderName(String headerName) {
-						this.headerName = headerName;
-					}
-
-					public String getHeaderValue() {
-						return this.headerValue;
-					}
-
-					public void setHeaderValue(String headerValue) {
-						this.headerValue = headerValue;
-					}
-				}
-
-				public static class Export {
-
-					private String exportName;
-
-					private String exportType;
-
-					private String exportValue;
-
-					private String count;
-
-					public String getExportName() {
-						return this.exportName;
-					}
-
-					public void setExportName(String exportName) {
-						this.exportName = exportName;
-					}
-
-					public String getExportType() {
-						return this.exportType;
-					}
-
-					public void setExportType(String exportType) {
-						this.exportType = exportType;
-					}
-
-					public String getExportValue() {
-						return this.exportValue;
-					}
-
-					public void setExportValue(String exportValue) {
-						this.exportValue = exportValue;
-					}
-
-					public String getCount() {
-						return this.count;
-					}
-
-					public void setCount(String count) {
-						this.count = count;
-					}
-				}
-
 				public static class CheckPoint {
-
-					private String checkPoint;
 
 					private String checkType;
 
@@ -736,13 +734,7 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 					private String expectValue;
 
-					public String getCheckPoint() {
-						return this.checkPoint;
-					}
-
-					public void setCheckPoint(String checkPoint) {
-						this.checkPoint = checkPoint;
-					}
+					private String checkPoint;
 
 					public String getCheckType() {
 						return this.checkType;
@@ -767,21 +759,87 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 					public void setExpectValue(String expectValue) {
 						this.expectValue = expectValue;
 					}
+
+					public String getCheckPoint() {
+						return this.checkPoint;
+					}
+
+					public void setCheckPoint(String checkPoint) {
+						this.checkPoint = checkPoint;
+					}
+				}
+
+				public static class Header {
+
+					private String headerValue;
+
+					private String headerName;
+
+					public String getHeaderValue() {
+						return this.headerValue;
+					}
+
+					public void setHeaderValue(String headerValue) {
+						this.headerValue = headerValue;
+					}
+
+					public String getHeaderName() {
+						return this.headerName;
+					}
+
+					public void setHeaderName(String headerName) {
+						this.headerName = headerName;
+					}
+				}
+
+				public static class Export {
+
+					private String exportType;
+
+					private String exportValue;
+
+					private String exportName;
+
+					private String count;
+
+					public String getExportType() {
+						return this.exportType;
+					}
+
+					public void setExportType(String exportType) {
+						this.exportType = exportType;
+					}
+
+					public String getExportValue() {
+						return this.exportValue;
+					}
+
+					public void setExportValue(String exportValue) {
+						this.exportValue = exportValue;
+					}
+
+					public String getExportName() {
+						return this.exportName;
+					}
+
+					public void setExportName(String exportName) {
+						this.exportName = exportName;
+					}
+
+					public String getCount() {
+						return this.count;
+					}
+
+					public void setCount(String count) {
+						this.count = count;
+					}
 				}
 
 				public static class Body {
 
-					private String contentType;
-
 					private String bodyValue;
 
-					public String getContentType() {
-						return this.contentType;
-					}
-
-					public void setContentType(String contentType) {
-						this.contentType = contentType;
-					}
+					private String contentType;
 
 					public String getBodyValue() {
 						return this.bodyValue;
@@ -790,73 +848,15 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 					public void setBodyValue(String bodyValue) {
 						this.bodyValue = bodyValue;
 					}
+
+					public String getContentType() {
+						return this.contentType;
+					}
+
+					public void setContentType(String contentType) {
+						this.contentType = contentType;
+					}
 				}
-			}
-
-			public static class FileParameterExplain {
-
-				private String fileName;
-
-				private String fileParamName;
-
-				private Boolean cycleOnce;
-
-				private Boolean baseFile;
-
-				public String getFileName() {
-					return this.fileName;
-				}
-
-				public void setFileName(String fileName) {
-					this.fileName = fileName;
-				}
-
-				public String getFileParamName() {
-					return this.fileParamName;
-				}
-
-				public void setFileParamName(String fileParamName) {
-					this.fileParamName = fileParamName;
-				}
-
-				public Boolean getCycleOnce() {
-					return this.cycleOnce;
-				}
-
-				public void setCycleOnce(Boolean cycleOnce) {
-					this.cycleOnce = cycleOnce;
-				}
-
-				public Boolean getBaseFile() {
-					return this.baseFile;
-				}
-
-				public void setBaseFile(Boolean baseFile) {
-					this.baseFile = baseFile;
-				}
-			}
-		}
-
-		public static class FileParameter {
-
-			private String fileName;
-
-			private String fileOssAddress;
-
-			public String getFileName() {
-				return this.fileName;
-			}
-
-			public void setFileName(String fileName) {
-				this.fileName = fileName;
-			}
-
-			public String getFileOssAddress() {
-				return this.fileOssAddress;
-			}
-
-			public void setFileOssAddress(String fileOssAddress) {
-				this.fileOssAddress = fileOssAddress;
 			}
 		}
 
@@ -885,25 +885,17 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 		public static class LoadConfig {
 
-			private String testMode;
-
 			private Integer maxRunningTime;
 
 			private Integer agentCount;
+
+			private String testMode;
 
 			private List<ApiLoadConfig> apiLoadConfigList;
 
 			private List<RelationLoadConfig> relationLoadConfigList;
 
 			private Configuration configuration;
-
-			public String getTestMode() {
-				return this.testMode;
-			}
-
-			public void setTestMode(String testMode) {
-				this.testMode = testMode;
-			}
 
 			public Integer getMaxRunningTime() {
 				return this.maxRunningTime;
@@ -919,6 +911,14 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 			public void setAgentCount(Integer agentCount) {
 				this.agentCount = agentCount;
+			}
+
+			public String getTestMode() {
+				return this.testMode;
+			}
+
+			public void setTestMode(String testMode) {
+				this.testMode = testMode;
 			}
 
 			public List<ApiLoadConfig> getApiLoadConfigList() {
@@ -993,13 +993,21 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 			public static class Configuration {
 
+				private Integer allRpsBegin;
+
 				private Integer allConcurrencyBegin;
 
 				private Integer allConcurrencyLimit;
 
-				private Integer allRpsBegin;
-
 				private Integer allRpsLimit;
+
+				public Integer getAllRpsBegin() {
+					return this.allRpsBegin;
+				}
+
+				public void setAllRpsBegin(Integer allRpsBegin) {
+					this.allRpsBegin = allRpsBegin;
+				}
 
 				public Integer getAllConcurrencyBegin() {
 					return this.allConcurrencyBegin;
@@ -1015,14 +1023,6 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 				public void setAllConcurrencyLimit(Integer allConcurrencyLimit) {
 					this.allConcurrencyLimit = allConcurrencyLimit;
-				}
-
-				public Integer getAllRpsBegin() {
-					return this.allRpsBegin;
-				}
-
-				public void setAllRpsBegin(Integer allRpsBegin) {
-					this.allRpsBegin = allRpsBegin;
 				}
 
 				public Integer getAllRpsLimit() {

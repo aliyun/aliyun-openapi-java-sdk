@@ -259,6 +259,12 @@ public class DescribePipelineResponse extends AcsResponse {
 
 				private String taskId;
 
+				private Long createTime;
+
+				private Long startTime;
+
+				private Long updateTime;
+
 				public Integer getStatus() {
 					return this.status;
 				}
@@ -329,6 +335,30 @@ public class DescribePipelineResponse extends AcsResponse {
 
 				public void setTaskId(String taskId) {
 					this.taskId = taskId;
+				}
+
+				public Long getCreateTime() {
+					return this.createTime;
+				}
+
+				public void setCreateTime(Long createTime) {
+					this.createTime = createTime;
+				}
+
+				public Long getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(Long startTime) {
+					this.startTime = startTime;
+				}
+
+				public Long getUpdateTime() {
+					return this.updateTime;
+				}
+
+				public void setUpdateTime(Long updateTime) {
+					this.updateTime = updateTime;
 				}
 			}
 		}

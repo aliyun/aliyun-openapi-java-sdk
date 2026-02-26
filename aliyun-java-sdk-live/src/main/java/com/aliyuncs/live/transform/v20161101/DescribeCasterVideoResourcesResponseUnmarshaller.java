@@ -32,17 +32,19 @@ public class DescribeCasterVideoResourcesResponseUnmarshaller {
 		List<VideoResource> videoResources = new ArrayList<VideoResource>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCasterVideoResourcesResponse.VideoResources.Length"); i++) {
 			VideoResource videoResource = new VideoResource();
-			videoResource.setMaterialId(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].MaterialId"));
-			videoResource.setResourceId(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].ResourceId"));
-			videoResource.setResourceName(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].ResourceName"));
-			videoResource.setLocationId(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].LocationId"));
-			videoResource.setLiveStreamUrl(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].LiveStreamUrl"));
-			videoResource.setFlvUrl(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].FlvUrl"));
-			videoResource.setRepeatNum(_ctx.integerValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].RepeatNum"));
-			videoResource.setVodUrl(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].VodUrl"));
 			videoResource.setBeginOffset(_ctx.integerValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].BeginOffset"));
 			videoResource.setEndOffset(_ctx.integerValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].EndOffset"));
+			videoResource.setFlvUrl(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].FlvUrl"));
+			videoResource.setImageId(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].ImageId"));
+			videoResource.setImageUrl(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].ImageUrl"));
+			videoResource.setLiveStreamUrl(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].LiveStreamUrl"));
+			videoResource.setLocationId(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].LocationId"));
+			videoResource.setMaterialId(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].MaterialId"));
 			videoResource.setPtsCallbackInterval(_ctx.integerValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].PtsCallbackInterval"));
+			videoResource.setRepeatNum(_ctx.integerValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].RepeatNum"));
+			videoResource.setResourceId(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].ResourceId"));
+			videoResource.setResourceName(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].ResourceName"));
+			videoResource.setVodUrl(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].VodUrl"));
 
 			videoResources.add(videoResource);
 		}

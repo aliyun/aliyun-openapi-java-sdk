@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeBackupsResponse;
+import com.aliyuncs.r_kvstore.model.v20150101.DescribeBackupsResponse.AccessDeniedDetail;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeBackupsResponse.Backup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -30,6 +31,19 @@ public class DescribeBackupsResponseUnmarshaller {
 		describeBackupsResponse.setPageNumber(_ctx.integerValue("DescribeBackupsResponse.PageNumber"));
 		describeBackupsResponse.setPageSize(_ctx.integerValue("DescribeBackupsResponse.PageSize"));
 		describeBackupsResponse.setTotalCount(_ctx.integerValue("DescribeBackupsResponse.TotalCount"));
+		describeBackupsResponse.setFullStorageSize(_ctx.longValue("DescribeBackupsResponse.FullStorageSize"));
+		describeBackupsResponse.setLogStorageSize(_ctx.longValue("DescribeBackupsResponse.LogStorageSize"));
+		describeBackupsResponse.setFreeSize(_ctx.longValue("DescribeBackupsResponse.FreeSize"));
+
+		AccessDeniedDetail accessDeniedDetail = new AccessDeniedDetail();
+		accessDeniedDetail.setAuthAction(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.AuthAction"));
+		accessDeniedDetail.setAuthPrincipalDisplayName(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.AuthPrincipalDisplayName"));
+		accessDeniedDetail.setAuthPrincipalOwnerId(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.AuthPrincipalOwnerId"));
+		accessDeniedDetail.setAuthPrincipalType(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.AuthPrincipalType"));
+		accessDeniedDetail.setEncodedDiagnosticMessage(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.EncodedDiagnosticMessage"));
+		accessDeniedDetail.setNoPermissionType(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.NoPermissionType"));
+		accessDeniedDetail.setPolicyType(_ctx.stringValue("DescribeBackupsResponse.AccessDeniedDetail.PolicyType"));
+		describeBackupsResponse.setAccessDeniedDetail(accessDeniedDetail);
 
 		List<Backup> backups = new ArrayList<Backup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupsResponse.Backups.Length"); i++) {
@@ -40,13 +54,16 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupDownloadURL(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDownloadURL"));
 			backup.setNodeInstanceId(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].NodeInstanceId"));
 			backup.setBackupEndTime(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupEndTime"));
-			backup.setBackupId(_ctx.integerValue("DescribeBackupsResponse.Backups["+ i +"].BackupId"));
+			backup.setBackupId(_ctx.longValue("DescribeBackupsResponse.Backups["+ i +"].BackupId"));
 			backup.setBackupDBNames(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDBNames"));
 			backup.setEngineVersion(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].EngineVersion"));
 			backup.setBackupIntranetDownloadURL(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupIntranetDownloadURL"));
 			backup.setBackupSize(_ctx.longValue("DescribeBackupsResponse.Backups["+ i +"].BackupSize"));
 			backup.setBackupMode(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMode"));
 			backup.setBackupMethod(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMethod"));
+			backup.setBackupJobID(_ctx.longValue("DescribeBackupsResponse.Backups["+ i +"].BackupJobID"));
+			backup.setRecoverConfigMode(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].RecoverConfigMode"));
+			backup.setExpectExpireTime(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].ExpectExpireTime"));
 
 			backups.add(backup);
 		}

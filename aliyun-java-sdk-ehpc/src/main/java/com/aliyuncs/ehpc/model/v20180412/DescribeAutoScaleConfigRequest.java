@@ -27,7 +27,7 @@ public class DescribeAutoScaleConfigRequest extends RpcAcsRequest<DescribeAutoSc
 
 	private String clusterId;
 	public DescribeAutoScaleConfigRequest() {
-		super("EHPC", "2018-04-12", "DescribeAutoScaleConfig");
+		super("EHPC", "2018-04-12", "DescribeAutoScaleConfig", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

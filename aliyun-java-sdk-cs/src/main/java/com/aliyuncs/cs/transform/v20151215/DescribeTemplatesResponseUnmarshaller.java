@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cs.model.v20151215.DescribeTemplatesResponse;
 import com.aliyuncs.cs.model.v20151215.DescribeTemplatesResponse.Page_info;
-import com.aliyuncs.cs.model.v20151215.DescribeTemplatesResponse.TemplatesItem;
+import com.aliyuncs.cs.model.v20151215.DescribeTemplatesResponse.Template;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,24 +30,25 @@ public class DescribeTemplatesResponseUnmarshaller {
 
 		Page_info page_info = new Page_info();
 		page_info.setPage_number(_ctx.longValue("DescribeTemplatesResponse.page_info.page_number"));
-		page_info.setTotal_count(_ctx.longValue("DescribeTemplatesResponse.page_info.total_count"));
 		page_info.setPage_size(_ctx.longValue("DescribeTemplatesResponse.page_info.page_size"));
+		page_info.setTotal_count(_ctx.longValue("DescribeTemplatesResponse.page_info.total_count"));
 		describeTemplatesResponse.setPage_info(page_info);
 
-		List<TemplatesItem> templates = new ArrayList<TemplatesItem>();
+		List<Template> templates = new ArrayList<Template>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTemplatesResponse.templates.Length"); i++) {
-			TemplatesItem templatesItem = new TemplatesItem();
-			templatesItem.setTemplate(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].template"));
-			templatesItem.setCreated(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].created"));
-			templatesItem.setName(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].name"));
-			templatesItem.setDescription(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].description"));
-			templatesItem.setTemplate_type(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].template_type"));
-			templatesItem.setId(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].id"));
-			templatesItem.setAcl(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].acl"));
-			templatesItem.setUpdated(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].updated"));
-			templatesItem.setTags(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].tags"));
+			Template template = new Template();
+			template.setAcl(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].acl"));
+			template.setId(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].id"));
+			template.setName(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].name"));
+			template.setDescription(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].description"));
+			template.setTags(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].tags"));
+			template.setTemplate(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].template"));
+			template.setTemplate_type(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].template_type"));
+			template.setCreated(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].created"));
+			template.setUpdated(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].updated"));
+			template.setTemplate_with_hist_id(_ctx.stringValue("DescribeTemplatesResponse.templates["+ i +"].template_with_hist_id"));
 
-			templates.add(templatesItem);
+			templates.add(template);
 		}
 		describeTemplatesResponse.setTemplates(templates);
 	 

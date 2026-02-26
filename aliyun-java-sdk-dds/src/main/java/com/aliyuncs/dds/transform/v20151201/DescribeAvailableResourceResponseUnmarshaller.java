@@ -24,6 +24,7 @@ import com.aliyuncs.dds.model.v20151201.DescribeAvailableResourceResponse.Suppor
 import com.aliyuncs.dds.model.v20151201.DescribeAvailableResourceResponse.SupportedDBType.AvailableZone.SupportedEngineVersion.SupportedEngine;
 import com.aliyuncs.dds.model.v20151201.DescribeAvailableResourceResponse.SupportedDBType.AvailableZone.SupportedEngineVersion.SupportedEngine.SupportedNodeType;
 import com.aliyuncs.dds.model.v20151201.DescribeAvailableResourceResponse.SupportedDBType.AvailableZone.SupportedEngineVersion.SupportedEngine.SupportedNodeType.AvailableResource;
+import com.aliyuncs.dds.model.v20151201.DescribeAvailableResourceResponse.SupportedDBType.AvailableZone.SupportedEngineVersion.SupportedEngine.SupportedNodeType.AvailableResource.DBInstanceStorageRange;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -65,6 +66,12 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 								AvailableResource availableResource = new AvailableResource();
 								availableResource.setInstanceClassRemark(_ctx.stringValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources["+ n +"].InstanceClassRemark"));
 								availableResource.setInstanceClass(_ctx.stringValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources["+ n +"].InstanceClass"));
+
+								DBInstanceStorageRange dBInstanceStorageRange = new DBInstanceStorageRange();
+								dBInstanceStorageRange.setMin(_ctx.integerValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources["+ n +"].DBInstanceStorageRange.Min"));
+								dBInstanceStorageRange.setMax(_ctx.integerValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources["+ n +"].DBInstanceStorageRange.Max"));
+								dBInstanceStorageRange.setStep(_ctx.integerValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources["+ n +"].DBInstanceStorageRange.Step"));
+								availableResource.setDBInstanceStorageRange(dBInstanceStorageRange);
 
 								availableResources.add(availableResource);
 							}

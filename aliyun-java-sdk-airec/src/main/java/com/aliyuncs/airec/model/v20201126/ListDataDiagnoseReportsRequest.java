@@ -27,7 +27,7 @@ public class ListDataDiagnoseReportsRequest extends RoaAcsRequest<ListDataDiagno
 
 	private String instanceId;
 
-	private Integer taskCreateTime;
+	private Long taskCreateTime;
 	public ListDataDiagnoseReportsRequest() {
 		super("Airec", "2020-11-26", "ListDataDiagnoseReports", "airec");
 		setUriPattern("/v2/openapi/instances/[instanceId]/data-diagnose-reports");
@@ -49,11 +49,11 @@ public class ListDataDiagnoseReportsRequest extends RoaAcsRequest<ListDataDiagno
 		}
 	}
 
-	public Integer getTaskCreateTime() {
+	public Long getTaskCreateTime() {
 		return this.taskCreateTime;
 	}
 
-	public void setTaskCreateTime(Integer taskCreateTime) {
+	public void setTaskCreateTime(Long taskCreateTime) {
 		this.taskCreateTime = taskCreateTime;
 		if(taskCreateTime != null){
 			putQueryParameter("taskCreateTime", taskCreateTime.toString());

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListJobTemplatesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<JobTemplates> templates;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListJobTemplatesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListJobTemplatesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<JobTemplates> getTemplates() {
@@ -77,120 +77,54 @@ public class ListJobTemplatesResponse extends AcsResponse {
 
 	public static class JobTemplates {
 
-		private String id;
-
-		private String name;
-
-		private String commandLine;
-
-		private String runasUser;
-
-		private Integer priority;
-
-		private String packagePath;
-
-		private String stdoutRedirectPath;
-
-		private String stderrRedirectPath;
-
-		private Boolean reRunable;
-
-		private String arrayRequest;
+		private Integer task;
 
 		private String variables;
 
+		private String commandLine;
+
 		private String queue;
 
-		private String clockTime;
-
-		private Integer node;
-
-		private Integer task;
-
-		private Integer thread;
+		private Integer priority;
 
 		private String mem;
 
+		private Integer thread;
+
+		private String arrayRequest;
+
+		private String stderrRedirectPath;
+
+		private Integer node;
+
+		private String stdoutRedirectPath;
+
 		private Integer gpu;
 
-		public String getId() {
-			return this.id;
+		private String packagePath;
+
+		private String clockTime;
+
+		private Boolean reRunable;
+
+		private String name;
+
+		private String id;
+
+		private String runasUser;
+
+		private String inputFileUrl;
+
+		private Boolean withUnzipCmd;
+
+		private String unzipCmd;
+
+		public Integer getTask() {
+			return this.task;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getCommandLine() {
-			return this.commandLine;
-		}
-
-		public void setCommandLine(String commandLine) {
-			this.commandLine = commandLine;
-		}
-
-		public String getRunasUser() {
-			return this.runasUser;
-		}
-
-		public void setRunasUser(String runasUser) {
-			this.runasUser = runasUser;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
-
-		public String getPackagePath() {
-			return this.packagePath;
-		}
-
-		public void setPackagePath(String packagePath) {
-			this.packagePath = packagePath;
-		}
-
-		public String getStdoutRedirectPath() {
-			return this.stdoutRedirectPath;
-		}
-
-		public void setStdoutRedirectPath(String stdoutRedirectPath) {
-			this.stdoutRedirectPath = stdoutRedirectPath;
-		}
-
-		public String getStderrRedirectPath() {
-			return this.stderrRedirectPath;
-		}
-
-		public void setStderrRedirectPath(String stderrRedirectPath) {
-			this.stderrRedirectPath = stderrRedirectPath;
-		}
-
-		public Boolean getReRunable() {
-			return this.reRunable;
-		}
-
-		public void setReRunable(Boolean reRunable) {
-			this.reRunable = reRunable;
-		}
-
-		public String getArrayRequest() {
-			return this.arrayRequest;
-		}
-
-		public void setArrayRequest(String arrayRequest) {
-			this.arrayRequest = arrayRequest;
+		public void setTask(Integer task) {
+			this.task = task;
 		}
 
 		public String getVariables() {
@@ -201,6 +135,14 @@ public class ListJobTemplatesResponse extends AcsResponse {
 			this.variables = variables;
 		}
 
+		public String getCommandLine() {
+			return this.commandLine;
+		}
+
+		public void setCommandLine(String commandLine) {
+			this.commandLine = commandLine;
+		}
+
 		public String getQueue() {
 			return this.queue;
 		}
@@ -209,36 +151,12 @@ public class ListJobTemplatesResponse extends AcsResponse {
 			this.queue = queue;
 		}
 
-		public String getClockTime() {
-			return this.clockTime;
+		public Integer getPriority() {
+			return this.priority;
 		}
 
-		public void setClockTime(String clockTime) {
-			this.clockTime = clockTime;
-		}
-
-		public Integer getNode() {
-			return this.node;
-		}
-
-		public void setNode(Integer node) {
-			this.node = node;
-		}
-
-		public Integer getTask() {
-			return this.task;
-		}
-
-		public void setTask(Integer task) {
-			this.task = task;
-		}
-
-		public Integer getThread() {
-			return this.thread;
-		}
-
-		public void setThread(Integer thread) {
-			this.thread = thread;
+		public void setPriority(Integer priority) {
+			this.priority = priority;
 		}
 
 		public String getMem() {
@@ -249,12 +167,124 @@ public class ListJobTemplatesResponse extends AcsResponse {
 			this.mem = mem;
 		}
 
+		public Integer getThread() {
+			return this.thread;
+		}
+
+		public void setThread(Integer thread) {
+			this.thread = thread;
+		}
+
+		public String getArrayRequest() {
+			return this.arrayRequest;
+		}
+
+		public void setArrayRequest(String arrayRequest) {
+			this.arrayRequest = arrayRequest;
+		}
+
+		public String getStderrRedirectPath() {
+			return this.stderrRedirectPath;
+		}
+
+		public void setStderrRedirectPath(String stderrRedirectPath) {
+			this.stderrRedirectPath = stderrRedirectPath;
+		}
+
+		public Integer getNode() {
+			return this.node;
+		}
+
+		public void setNode(Integer node) {
+			this.node = node;
+		}
+
+		public String getStdoutRedirectPath() {
+			return this.stdoutRedirectPath;
+		}
+
+		public void setStdoutRedirectPath(String stdoutRedirectPath) {
+			this.stdoutRedirectPath = stdoutRedirectPath;
+		}
+
 		public Integer getGpu() {
 			return this.gpu;
 		}
 
 		public void setGpu(Integer gpu) {
 			this.gpu = gpu;
+		}
+
+		public String getPackagePath() {
+			return this.packagePath;
+		}
+
+		public void setPackagePath(String packagePath) {
+			this.packagePath = packagePath;
+		}
+
+		public String getClockTime() {
+			return this.clockTime;
+		}
+
+		public void setClockTime(String clockTime) {
+			this.clockTime = clockTime;
+		}
+
+		public Boolean getReRunable() {
+			return this.reRunable;
+		}
+
+		public void setReRunable(Boolean reRunable) {
+			this.reRunable = reRunable;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getRunasUser() {
+			return this.runasUser;
+		}
+
+		public void setRunasUser(String runasUser) {
+			this.runasUser = runasUser;
+		}
+
+		public String getInputFileUrl() {
+			return this.inputFileUrl;
+		}
+
+		public void setInputFileUrl(String inputFileUrl) {
+			this.inputFileUrl = inputFileUrl;
+		}
+
+		public Boolean getWithUnzipCmd() {
+			return this.withUnzipCmd;
+		}
+
+		public void setWithUnzipCmd(Boolean withUnzipCmd) {
+			this.withUnzipCmd = withUnzipCmd;
+		}
+
+		public String getUnzipCmd() {
+			return this.unzipCmd;
+		}
+
+		public void setUnzipCmd(String unzipCmd) {
+			this.unzipCmd = unzipCmd;
 		}
 	}
 

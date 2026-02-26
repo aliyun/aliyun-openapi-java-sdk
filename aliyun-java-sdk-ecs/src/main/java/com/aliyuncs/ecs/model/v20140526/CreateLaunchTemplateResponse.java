@@ -28,6 +28,8 @@ public class CreateLaunchTemplateResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long launchTemplateVersionNumber;
+
 	public String getLaunchTemplateId() {
 		return this.launchTemplateId;
 	}
@@ -42,6 +44,14 @@ public class CreateLaunchTemplateResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getLaunchTemplateVersionNumber() {
+		return this.launchTemplateVersionNumber;
+	}
+
+	public void setLaunchTemplateVersionNumber(Long launchTemplateVersionNumber) {
+		this.launchTemplateVersionNumber = launchTemplateVersionNumber;
 	}
 
 	@Override

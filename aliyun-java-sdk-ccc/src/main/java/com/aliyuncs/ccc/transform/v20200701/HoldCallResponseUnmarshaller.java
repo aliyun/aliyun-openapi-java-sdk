@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.HoldCallResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.HoldCallResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.HoldCallResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.HoldCallResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,7 +56,6 @@ public class HoldCallResponseUnmarshaller {
 			channelContext.setUserId(_ctx.stringValue("HoldCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
 			channelContext.setSkillGroupId(_ctx.stringValue("HoldCallResponse.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId"));
 			channelContext.setTimestamp(_ctx.longValue("HoldCallResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("HoldCallResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("HoldCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("HoldCallResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("HoldCallResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));

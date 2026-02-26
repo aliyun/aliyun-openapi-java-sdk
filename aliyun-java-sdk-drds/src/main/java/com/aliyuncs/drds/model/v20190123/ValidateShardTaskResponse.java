@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ValidateShardTaskResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<ListItem> list;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class ValidateShardTaskResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ListItem> getList() {
@@ -57,17 +57,9 @@ public class ValidateShardTaskResponse extends AcsResponse {
 
 	public static class ListItem {
 
-		private String item;
-
 		private Integer result;
 
-		public String getItem() {
-			return this.item;
-		}
-
-		public void setItem(String item) {
-			this.item = item;
-		}
+		private String item;
 
 		public Integer getResult() {
 			return this.result;
@@ -75,6 +67,14 @@ public class ValidateShardTaskResponse extends AcsResponse {
 
 		public void setResult(Integer result) {
 			this.result = result;
+		}
+
+		public String getItem() {
+			return this.item;
+		}
+
+		public void setItem(String item) {
+			this.item = item;
 		}
 	}
 

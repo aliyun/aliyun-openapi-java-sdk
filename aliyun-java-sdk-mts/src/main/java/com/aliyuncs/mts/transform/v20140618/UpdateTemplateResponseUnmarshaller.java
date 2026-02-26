@@ -17,6 +17,7 @@ package com.aliyuncs.mts.transform.v20140618;
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse;
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template;
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.Audio;
+import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.Audio.Volume;
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.Container;
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.MuxConfig;
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.MuxConfig.Gif;
@@ -25,6 +26,7 @@ import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.MuxConfi
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.TransConfig;
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.Video;
 import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.Video.BitrateBnd;
+import com.aliyuncs.mts.model.v20140618.UpdateTemplateResponse.Template.Video.NarrowBand;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -61,11 +63,18 @@ public class UpdateTemplateResponseUnmarshaller {
 		video.setPreset(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Preset"));
 		video.setScanMode(_ctx.stringValue("UpdateTemplateResponse.Template.Video.ScanMode"));
 		video.setResoPriority(_ctx.stringValue("UpdateTemplateResponse.Template.Video.ResoPriority"));
+		video.setHdr2sdr(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Hdr2sdr"));
 
 		BitrateBnd bitrateBnd = new BitrateBnd();
 		bitrateBnd.setMax(_ctx.stringValue("UpdateTemplateResponse.Template.Video.BitrateBnd.Max"));
 		bitrateBnd.setMin(_ctx.stringValue("UpdateTemplateResponse.Template.Video.BitrateBnd.Min"));
 		video.setBitrateBnd(bitrateBnd);
+
+		NarrowBand narrowBand = new NarrowBand();
+		narrowBand.setVersion(_ctx.stringValue("UpdateTemplateResponse.Template.Video.NarrowBand.Version"));
+		narrowBand.setAbrmax(_ctx.floatValue("UpdateTemplateResponse.Template.Video.NarrowBand.Abrmax"));
+		narrowBand.setMaxAbrRatio(_ctx.floatValue("UpdateTemplateResponse.Template.Video.NarrowBand.MaxAbrRatio"));
+		video.setNarrowBand(narrowBand);
 		template.setVideo(video);
 
 		TransConfig transConfig = new TransConfig();
@@ -105,6 +114,15 @@ public class UpdateTemplateResponseUnmarshaller {
 		audio.setQscale(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Qscale"));
 		audio.setChannels(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Channels"));
 		audio.setBitrate(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Bitrate"));
+
+		Volume volume = new Volume();
+		volume.setBizMethod(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Volume.Method"));
+		volume.setTruePeak(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Volume.TruePeak"));
+		volume.setIntegratedLoudnessTarget(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Volume.IntegratedLoudnessTarget"));
+		volume.setLevel(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Volume.Level"));
+		volume.setLoudnessRangeTarget(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Volume.LoudnessRangeTarget"));
+		volume.setPeakLevel(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Volume.PeakLevel"));
+		audio.setVolume(volume);
 		template.setAudio(audio);
 
 		Container container = new Container();

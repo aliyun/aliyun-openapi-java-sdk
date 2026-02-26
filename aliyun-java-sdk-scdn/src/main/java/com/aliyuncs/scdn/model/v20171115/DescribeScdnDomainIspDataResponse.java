@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScdnDomainIspDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
 	private String dataInterval;
 
-	private String startTime;
-
-	private String endTime;
-
 	private List<ISPProportionData> value;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,22 +77,6 @@ public class DescribeScdnDomainIspDataResponse extends AcsResponse {
 		this.dataInterval = dataInterval;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
 	public List<ISPProportionData> getValue() {
 		return this.value;
 	}
@@ -87,60 +87,52 @@ public class DescribeScdnDomainIspDataResponse extends AcsResponse {
 
 	public static class ISPProportionData {
 
-		private String iSP;
+		private String totalQuery;
 
-		private String proportion;
+		private String totalBytes;
 
-		private String ispEname;
-
-		private String avgObjectSize;
+		private String avgResponseRate;
 
 		private String avgResponseTime;
+
+		private String reqErrRate;
+
+		private String avgObjectSize;
 
 		private String bps;
 
 		private String qps;
 
-		private String avgResponseRate;
+		private String proportion;
 
-		private String reqErrRate;
+		private String ispEname;
 
-		private String totalBytes;
+		private String iSP;
 
 		private String bytesProportion;
 
-		private String totalQuery;
-
-		public String getISP() {
-			return this.iSP;
+		public String getTotalQuery() {
+			return this.totalQuery;
 		}
 
-		public void setISP(String iSP) {
-			this.iSP = iSP;
+		public void setTotalQuery(String totalQuery) {
+			this.totalQuery = totalQuery;
 		}
 
-		public String getProportion() {
-			return this.proportion;
+		public String getTotalBytes() {
+			return this.totalBytes;
 		}
 
-		public void setProportion(String proportion) {
-			this.proportion = proportion;
+		public void setTotalBytes(String totalBytes) {
+			this.totalBytes = totalBytes;
 		}
 
-		public String getIspEname() {
-			return this.ispEname;
+		public String getAvgResponseRate() {
+			return this.avgResponseRate;
 		}
 
-		public void setIspEname(String ispEname) {
-			this.ispEname = ispEname;
-		}
-
-		public String getAvgObjectSize() {
-			return this.avgObjectSize;
-		}
-
-		public void setAvgObjectSize(String avgObjectSize) {
-			this.avgObjectSize = avgObjectSize;
+		public void setAvgResponseRate(String avgResponseRate) {
+			this.avgResponseRate = avgResponseRate;
 		}
 
 		public String getAvgResponseTime() {
@@ -149,6 +141,22 @@ public class DescribeScdnDomainIspDataResponse extends AcsResponse {
 
 		public void setAvgResponseTime(String avgResponseTime) {
 			this.avgResponseTime = avgResponseTime;
+		}
+
+		public String getReqErrRate() {
+			return this.reqErrRate;
+		}
+
+		public void setReqErrRate(String reqErrRate) {
+			this.reqErrRate = reqErrRate;
+		}
+
+		public String getAvgObjectSize() {
+			return this.avgObjectSize;
+		}
+
+		public void setAvgObjectSize(String avgObjectSize) {
+			this.avgObjectSize = avgObjectSize;
 		}
 
 		public String getBps() {
@@ -167,28 +175,28 @@ public class DescribeScdnDomainIspDataResponse extends AcsResponse {
 			this.qps = qps;
 		}
 
-		public String getAvgResponseRate() {
-			return this.avgResponseRate;
+		public String getProportion() {
+			return this.proportion;
 		}
 
-		public void setAvgResponseRate(String avgResponseRate) {
-			this.avgResponseRate = avgResponseRate;
+		public void setProportion(String proportion) {
+			this.proportion = proportion;
 		}
 
-		public String getReqErrRate() {
-			return this.reqErrRate;
+		public String getIspEname() {
+			return this.ispEname;
 		}
 
-		public void setReqErrRate(String reqErrRate) {
-			this.reqErrRate = reqErrRate;
+		public void setIspEname(String ispEname) {
+			this.ispEname = ispEname;
 		}
 
-		public String getTotalBytes() {
-			return this.totalBytes;
+		public String getISP() {
+			return this.iSP;
 		}
 
-		public void setTotalBytes(String totalBytes) {
-			this.totalBytes = totalBytes;
+		public void setISP(String iSP) {
+			this.iSP = iSP;
 		}
 
 		public String getBytesProportion() {
@@ -197,14 +205,6 @@ public class DescribeScdnDomainIspDataResponse extends AcsResponse {
 
 		public void setBytesProportion(String bytesProportion) {
 			this.bytesProportion = bytesProportion;
-		}
-
-		public String getTotalQuery() {
-			return this.totalQuery;
-		}
-
-		public void setTotalQuery(String totalQuery) {
-			this.totalQuery = totalQuery;
 		}
 	}
 

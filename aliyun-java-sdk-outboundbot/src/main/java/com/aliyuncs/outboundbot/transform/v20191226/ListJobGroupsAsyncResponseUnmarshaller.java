@@ -54,6 +54,7 @@ public class ListJobGroupsAsyncResponseUnmarshaller {
 			jobGroup.setScriptName(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ScriptName"));
 			jobGroup.setScriptVersion(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ScriptVersion"));
 			jobGroup.setModifyTime(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ModifyTime"));
+			jobGroup.setMinConcurrency(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].MinConcurrency"));
 
 			Strategy strategy = new Strategy();
 			strategy.setEndTime(_ctx.longValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Strategy.EndTime"));

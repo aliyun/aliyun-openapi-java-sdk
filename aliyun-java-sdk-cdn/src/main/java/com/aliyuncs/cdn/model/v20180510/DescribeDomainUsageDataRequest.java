@@ -25,23 +25,21 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomainUsageDataResponse> {
 	   
 
-	private String startTime;
-
-	private String type;
-
-	private String dataProtocol;
-
 	private String area;
+
+	private String field;
 
 	private String domainName;
 
 	private String endTime;
 
-	private Long ownerId;
-
-	private String field;
-
 	private String interval;
+
+	private String startTime;
+
+	private String type;
+
+	private String dataProtocol;
 	public DescribeDomainUsageDataRequest() {
 		super("Cdn", "2018-05-10", "DescribeDomainUsageData");
 		setMethod(MethodType.POST);
@@ -49,6 +47,61 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getArea() {
+		return this.area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+		if(area != null){
+			putQueryParameter("Area", area);
+		}
+	}
+
+	public String getField() {
+		return this.field;
+	}
+
+	public void setField(String field) {
+		this.field = field;
+		if(field != null){
+			putQueryParameter("Field", field);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
+		}
 	}
 
 	public String getStartTime() {
@@ -81,72 +134,6 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 		this.dataProtocol = dataProtocol;
 		if(dataProtocol != null){
 			putQueryParameter("DataProtocol", dataProtocol);
-		}
-	}
-
-	public String getArea() {
-		return this.area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
-		if(area != null){
-			putQueryParameter("Area", area);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getField() {
-		return this.field;
-	}
-
-	public void setField(String field) {
-		this.field = field;
-		if(field != null){
-			putQueryParameter("Field", field);
-		}
-	}
-
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
 		}
 	}
 

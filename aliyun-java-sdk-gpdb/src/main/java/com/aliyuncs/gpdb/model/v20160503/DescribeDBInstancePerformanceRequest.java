@@ -27,13 +27,15 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 
 	private String startTime;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private String key;
 
 	private String endTime;
 	public DescribeDBInstancePerformanceRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstancePerformance");
+		super("gpdb", "2016-05-03", "DescribeDBInstancePerformance", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,6 +51,17 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

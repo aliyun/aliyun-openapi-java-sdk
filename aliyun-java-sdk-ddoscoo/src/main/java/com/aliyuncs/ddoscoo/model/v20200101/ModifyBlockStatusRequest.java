@@ -34,7 +34,7 @@ public class ModifyBlockStatusRequest extends RpcAcsRequest<ModifyBlockStatusRes
 
 	private String status;
 	public ModifyBlockStatusRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyBlockStatus");
+		super("ddoscoo", "2020-01-01", "ModifyBlockStatus", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

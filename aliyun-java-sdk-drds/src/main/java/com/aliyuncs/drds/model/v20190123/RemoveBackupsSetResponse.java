@@ -26,9 +26,9 @@ public class RemoveBackupsSetResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
 	private String result;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class RemoveBackupsSetResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getResult() {
 		return this.result;
 	}
 
 	public void setResult(String result) {
 		this.result = result;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

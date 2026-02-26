@@ -47,62 +47,46 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 	public static class ImageInfo {
 
-		private String uid;
+		private String status;
 
-		private String imageId;
-
-		private String imageName;
-
-		private String imageOwnerAlias;
+		private String postInstallScript;
 
 		private String description;
 
-		private String status;
+		private Integer size;
 
-		private String productCode;
+		private String imageOwnerAlias;
+
+		private String imageName;
 
 		private String skuCode;
 
 		private String pricingCycle;
 
-		private String postInstallScript;
+		private String imageId;
 
-		private Integer size;
+		private String productCode;
+
+		private String uid;
 
 		private BaseOsTag baseOsTag;
 
 		private OsTag osTag;
 
-		public String getUid() {
-			return this.uid;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setUid(String uid) {
-			this.uid = uid;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getImageId() {
-			return this.imageId;
+		public String getPostInstallScript() {
+			return this.postInstallScript;
 		}
 
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getImageName() {
-			return this.imageName;
-		}
-
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
-		}
-
-		public String getImageOwnerAlias() {
-			return this.imageOwnerAlias;
-		}
-
-		public void setImageOwnerAlias(String imageOwnerAlias) {
-			this.imageOwnerAlias = imageOwnerAlias;
+		public void setPostInstallScript(String postInstallScript) {
+			this.postInstallScript = postInstallScript;
 		}
 
 		public String getDescription() {
@@ -113,20 +97,28 @@ public class ListCustomImagesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Integer getSize() {
+			return this.size;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setSize(Integer size) {
+			this.size = size;
 		}
 
-		public String getProductCode() {
-			return this.productCode;
+		public String getImageOwnerAlias() {
+			return this.imageOwnerAlias;
 		}
 
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
+		public void setImageOwnerAlias(String imageOwnerAlias) {
+			this.imageOwnerAlias = imageOwnerAlias;
+		}
+
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
 		}
 
 		public String getSkuCode() {
@@ -145,20 +137,28 @@ public class ListCustomImagesResponse extends AcsResponse {
 			this.pricingCycle = pricingCycle;
 		}
 
-		public String getPostInstallScript() {
-			return this.postInstallScript;
+		public String getImageId() {
+			return this.imageId;
 		}
 
-		public void setPostInstallScript(String postInstallScript) {
-			this.postInstallScript = postInstallScript;
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 
-		public Integer getSize() {
-			return this.size;
+		public String getProductCode() {
+			return this.productCode;
 		}
 
-		public void setSize(Integer size) {
-			this.size = size;
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
+		}
+
+		public String getUid() {
+			return this.uid;
+		}
+
+		public void setUid(String uid) {
+			this.uid = uid;
 		}
 
 		public BaseOsTag getBaseOsTag() {
@@ -179,21 +179,13 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 		public static class BaseOsTag {
 
-			private String osTag;
-
 			private String platform;
+
+			private String osTag;
 
 			private String version;
 
 			private String architecture;
-
-			public String getOsTag() {
-				return this.osTag;
-			}
-
-			public void setOsTag(String osTag) {
-				this.osTag = osTag;
-			}
 
 			public String getPlatform() {
 				return this.platform;
@@ -201,6 +193,14 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 			public void setPlatform(String platform) {
 				this.platform = platform;
+			}
+
+			public String getOsTag() {
+				return this.osTag;
+			}
+
+			public void setOsTag(String osTag) {
+				this.osTag = osTag;
 			}
 
 			public String getVersion() {
@@ -222,31 +222,15 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 		public static class OsTag {
 
-			private String osTag;
-
-			private String baseOsTag;
-
 			private String platform;
+
+			private String osTag;
 
 			private String version;
 
 			private String architecture;
 
-			public String getOsTag() {
-				return this.osTag;
-			}
-
-			public void setOsTag(String osTag) {
-				this.osTag = osTag;
-			}
-
-			public String getBaseOsTag() {
-				return this.baseOsTag;
-			}
-
-			public void setBaseOsTag(String baseOsTag) {
-				this.baseOsTag = baseOsTag;
-			}
+			private String baseOsTag;
 
 			public String getPlatform() {
 				return this.platform;
@@ -254,6 +238,14 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 			public void setPlatform(String platform) {
 				this.platform = platform;
+			}
+
+			public String getOsTag() {
+				return this.osTag;
+			}
+
+			public void setOsTag(String osTag) {
+				this.osTag = osTag;
 			}
 
 			public String getVersion() {
@@ -270,6 +262,14 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 			public void setArchitecture(String architecture) {
 				this.architecture = architecture;
+			}
+
+			public String getBaseOsTag() {
+				return this.baseOsTag;
+			}
+
+			public void setBaseOsTag(String baseOsTag) {
+				this.baseOsTag = baseOsTag;
 			}
 		}
 	}

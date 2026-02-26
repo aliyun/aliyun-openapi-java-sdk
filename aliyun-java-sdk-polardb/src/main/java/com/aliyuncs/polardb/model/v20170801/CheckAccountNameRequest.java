@@ -37,7 +37,7 @@ public class CheckAccountNameRequest extends RpcAcsRequest<CheckAccountNameRespo
 
 	private Long ownerId;
 	public CheckAccountNameRequest() {
-		super("polardb", "2017-08-01", "CheckAccountName");
+		super("polardb", "2017-08-01", "CheckAccountName", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

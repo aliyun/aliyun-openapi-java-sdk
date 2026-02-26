@@ -41,9 +41,9 @@ public class DescribeSQLLogReportListResponseUnmarshaller {
 			List<LatencyTopNItem> latencyTopNItems = new ArrayList<LatencyTopNItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSQLLogReportListResponse.Items["+ i +"].LatencyTopNItems.Length"); j++) {
 				LatencyTopNItem latencyTopNItem = new LatencyTopNItem();
-				latencyTopNItem.setSQLText(_ctx.stringValue("DescribeSQLLogReportListResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLText"));
-				latencyTopNItem.setSQLExecuteTimes(_ctx.longValue("DescribeSQLLogReportListResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLExecuteTimes"));
 				latencyTopNItem.setAvgLatency(_ctx.longValue("DescribeSQLLogReportListResponse.Items["+ i +"].LatencyTopNItems["+ j +"].AvgLatency"));
+				latencyTopNItem.setSQLExecuteTimes(_ctx.longValue("DescribeSQLLogReportListResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLExecuteTimes"));
+				latencyTopNItem.setSQLText(_ctx.stringValue("DescribeSQLLogReportListResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLText"));
 
 				latencyTopNItems.add(latencyTopNItem);
 			}

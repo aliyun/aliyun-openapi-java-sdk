@@ -15,6 +15,9 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -29,7 +32,12 @@ public class UpdateTransitRouterVpcAttachmentAttributeRequest extends RpcAcsRequ
 
 	private String clientToken;
 
+	@SerializedName("transitRouterVPCAttachmentOptions")
+	private Map<String,String> transitRouterVPCAttachmentOptions;
+
 	private String transitRouterAttachmentName;
+
+	private Boolean autoPublishRouteEnabled;
 
 	private Boolean dryRun;
 
@@ -43,7 +51,7 @@ public class UpdateTransitRouterVpcAttachmentAttributeRequest extends RpcAcsRequ
 
 	private String transitRouterAttachmentDescription;
 	public UpdateTransitRouterVpcAttachmentAttributeRequest() {
-		super("Cbn", "2017-09-12", "UpdateTransitRouterVpcAttachmentAttribute");
+		super("Cbn", "2017-09-12", "UpdateTransitRouterVpcAttachmentAttribute", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,6 +81,17 @@ public class UpdateTransitRouterVpcAttachmentAttributeRequest extends RpcAcsRequ
 		}
 	}
 
+	public Map<String,String> getTransitRouterVPCAttachmentOptions() {
+		return this.transitRouterVPCAttachmentOptions;
+	}
+
+	public void setTransitRouterVPCAttachmentOptions(Map<String,String> transitRouterVPCAttachmentOptions) {
+		this.transitRouterVPCAttachmentOptions = transitRouterVPCAttachmentOptions;	
+		if (transitRouterVPCAttachmentOptions != null) {
+			putQueryParameter("TransitRouterVPCAttachmentOptions" , new Gson().toJson(transitRouterVPCAttachmentOptions));
+		}	
+	}
+
 	public String getTransitRouterAttachmentName() {
 		return this.transitRouterAttachmentName;
 	}
@@ -81,6 +100,17 @@ public class UpdateTransitRouterVpcAttachmentAttributeRequest extends RpcAcsRequ
 		this.transitRouterAttachmentName = transitRouterAttachmentName;
 		if(transitRouterAttachmentName != null){
 			putQueryParameter("TransitRouterAttachmentName", transitRouterAttachmentName);
+		}
+	}
+
+	public Boolean getAutoPublishRouteEnabled() {
+		return this.autoPublishRouteEnabled;
+	}
+
+	public void setAutoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
+		this.autoPublishRouteEnabled = autoPublishRouteEnabled;
+		if(autoPublishRouteEnabled != null){
+			putQueryParameter("AutoPublishRouteEnabled", autoPublishRouteEnabled.toString());
 		}
 	}
 

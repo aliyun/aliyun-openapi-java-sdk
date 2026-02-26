@@ -27,18 +27,18 @@ public class DescribeIpControlPolicyItemsResponseUnmarshaller {
 	public static DescribeIpControlPolicyItemsResponse unmarshall(DescribeIpControlPolicyItemsResponse describeIpControlPolicyItemsResponse, UnmarshallerContext _ctx) {
 		
 		describeIpControlPolicyItemsResponse.setRequestId(_ctx.stringValue("DescribeIpControlPolicyItemsResponse.RequestId"));
-		describeIpControlPolicyItemsResponse.setTotalCount(_ctx.integerValue("DescribeIpControlPolicyItemsResponse.TotalCount"));
-		describeIpControlPolicyItemsResponse.setPageSize(_ctx.integerValue("DescribeIpControlPolicyItemsResponse.PageSize"));
 		describeIpControlPolicyItemsResponse.setPageNumber(_ctx.integerValue("DescribeIpControlPolicyItemsResponse.PageNumber"));
+		describeIpControlPolicyItemsResponse.setPageSize(_ctx.integerValue("DescribeIpControlPolicyItemsResponse.PageSize"));
+		describeIpControlPolicyItemsResponse.setTotalCount(_ctx.integerValue("DescribeIpControlPolicyItemsResponse.TotalCount"));
 
 		List<IpControlPolicyItem> ipControlPolicyItems = new ArrayList<IpControlPolicyItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIpControlPolicyItemsResponse.IpControlPolicyItems.Length"); i++) {
 			IpControlPolicyItem ipControlPolicyItem = new IpControlPolicyItem();
-			ipControlPolicyItem.setAppId(_ctx.stringValue("DescribeIpControlPolicyItemsResponse.IpControlPolicyItems["+ i +"].AppId"));
-			ipControlPolicyItem.setCidrIp(_ctx.stringValue("DescribeIpControlPolicyItemsResponse.IpControlPolicyItems["+ i +"].CidrIp"));
-			ipControlPolicyItem.setPolicyItemId(_ctx.stringValue("DescribeIpControlPolicyItemsResponse.IpControlPolicyItems["+ i +"].PolicyItemId"));
-			ipControlPolicyItem.setCreateTime(_ctx.stringValue("DescribeIpControlPolicyItemsResponse.IpControlPolicyItems["+ i +"].CreateTime"));
 			ipControlPolicyItem.setModifiedTime(_ctx.stringValue("DescribeIpControlPolicyItemsResponse.IpControlPolicyItems["+ i +"].ModifiedTime"));
+			ipControlPolicyItem.setPolicyItemId(_ctx.stringValue("DescribeIpControlPolicyItemsResponse.IpControlPolicyItems["+ i +"].PolicyItemId"));
+			ipControlPolicyItem.setCidrIp(_ctx.stringValue("DescribeIpControlPolicyItemsResponse.IpControlPolicyItems["+ i +"].CidrIp"));
+			ipControlPolicyItem.setCreateTime(_ctx.stringValue("DescribeIpControlPolicyItemsResponse.IpControlPolicyItems["+ i +"].CreateTime"));
+			ipControlPolicyItem.setAppId(_ctx.stringValue("DescribeIpControlPolicyItemsResponse.IpControlPolicyItems["+ i +"].AppId"));
 
 			ipControlPolicyItems.add(ipControlPolicyItem);
 		}

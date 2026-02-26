@@ -159,6 +159,8 @@ public class ListUsersResponse extends AcsResponse {
 
 			private String deviceState;
 
+			private Boolean primary;
+
 			private List<PhoneNumber> personalOutboundNumberList;
 
 			private List<UserSkillLevel> skillLevelList;
@@ -281,6 +283,14 @@ public class ListUsersResponse extends AcsResponse {
 
 			public void setDeviceState(String deviceState) {
 				this.deviceState = deviceState;
+			}
+
+			public Boolean getPrimary() {
+				return this.primary;
+			}
+
+			public void setPrimary(Boolean primary) {
+				this.primary = primary;
 			}
 
 			public List<PhoneNumber> getPersonalOutboundNumberList() {

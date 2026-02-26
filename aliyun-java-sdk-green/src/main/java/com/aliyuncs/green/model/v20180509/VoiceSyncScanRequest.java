@@ -27,7 +27,7 @@ public class VoiceSyncScanRequest extends RoaAcsRequest<VoiceSyncScanResponse> {
 
 	private String clientInfo;
 	public VoiceSyncScanRequest() {
-		super("Green", "2018-05-09", "VoiceSyncScan", "green");
+		super("Green", "2018-05-09", "VoiceSyncScan");
 		setUriPattern("/green/voice/syncscan");
 		setMethod(MethodType.POST);
 		try {

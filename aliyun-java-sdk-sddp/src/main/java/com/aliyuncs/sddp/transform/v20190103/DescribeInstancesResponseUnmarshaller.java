@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.sddp.model.v20190103.DescribeInstancesResponse;
 import com.aliyuncs.sddp.model.v20190103.DescribeInstancesResponse.Instance;
+import com.aliyuncs.sddp.model.v20190103.DescribeInstancesResponse.Instance.ModelTagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -65,6 +66,16 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setSensitiveCount(_ctx.integerValue("DescribeInstancesResponse.Items["+ i +"].SensitiveCount"));
 			instance.setId(_ctx.longValue("DescribeInstancesResponse.Items["+ i +"].Id"));
 			instance.setProductCode(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].ProductCode"));
+
+			List<ModelTagsItem> modelTags = new ArrayList<ModelTagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Items["+ i +"].ModelTags.Length"); j++) {
+				ModelTagsItem modelTagsItem = new ModelTagsItem();
+				modelTagsItem.setId(_ctx.longValue("DescribeInstancesResponse.Items["+ i +"].ModelTags["+ j +"].Id"));
+				modelTagsItem.setName(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].ModelTags["+ j +"].Name"));
+
+				modelTags.add(modelTagsItem);
+			}
+			instance.setModelTags(modelTags);
 
 			items.add(instance);
 		}

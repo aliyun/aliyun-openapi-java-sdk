@@ -33,8 +33,8 @@ public class DescribeDbInstanceDbsResponseUnmarshaller {
 		List<Database> databases = new ArrayList<Database>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDbInstanceDbsResponse.Databases.Length"); i++) {
 			Database database = new Database();
-			database.setDbName(_ctx.stringValue("DescribeDbInstanceDbsResponse.Databases["+ i +"].DbName"));
 			database.setStatus(_ctx.integerValue("DescribeDbInstanceDbsResponse.Databases["+ i +"].Status"));
+			database.setDbName(_ctx.stringValue("DescribeDbInstanceDbsResponse.Databases["+ i +"].DbName"));
 			database.setDescription(_ctx.stringValue("DescribeDbInstanceDbsResponse.Databases["+ i +"].Description"));
 
 			databases.add(database);

@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDevicePictureFileResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +48,6 @@ public class QueryDevicePictureFileResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -58,12 +58,12 @@ public class QueryDevicePictureFileResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -76,31 +76,15 @@ public class QueryDevicePictureFileResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String iotId;
-
-		private Long picCreateTime;
-
 		private String picId;
 
 		private String picUrl;
 
+		private Long picCreateTime;
+
 		private String thumbUrl;
 
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
-		}
-
-		public Long getPicCreateTime() {
-			return this.picCreateTime;
-		}
-
-		public void setPicCreateTime(Long picCreateTime) {
-			this.picCreateTime = picCreateTime;
-		}
+		private String iotId;
 
 		public String getPicId() {
 			return this.picId;
@@ -118,12 +102,28 @@ public class QueryDevicePictureFileResponse extends AcsResponse {
 			this.picUrl = picUrl;
 		}
 
+		public Long getPicCreateTime() {
+			return this.picCreateTime;
+		}
+
+		public void setPicCreateTime(Long picCreateTime) {
+			this.picCreateTime = picCreateTime;
+		}
+
 		public String getThumbUrl() {
 			return this.thumbUrl;
 		}
 
 		public void setThumbUrl(String thumbUrl) {
 			this.thumbUrl = thumbUrl;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 	}
 

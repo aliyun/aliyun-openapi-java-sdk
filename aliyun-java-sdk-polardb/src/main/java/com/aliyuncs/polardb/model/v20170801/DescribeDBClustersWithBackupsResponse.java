@@ -115,6 +115,10 @@ public class DescribeDBClustersWithBackupsResponse extends AcsResponse {
 
 		private String engine;
 
+		private String category;
+
+		private String cnClass;
+
 		public String getDeletedTime() {
 			return this.deletedTime;
 		}
@@ -265,6 +269,22 @@ public class DescribeDBClustersWithBackupsResponse extends AcsResponse {
 
 		public void setEngine(String engine) {
 			this.engine = engine;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getCnClass() {
+			return this.cnClass;
+		}
+
+		public void setCnClass(String cnClass) {
+			this.cnClass = cnClass;
 		}
 	}
 

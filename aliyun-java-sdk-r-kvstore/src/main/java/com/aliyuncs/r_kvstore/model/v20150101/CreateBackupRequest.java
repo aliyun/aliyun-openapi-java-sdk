@@ -35,6 +35,8 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 
 	private Long ownerId;
 
+	private Long backupRetentionPeriod;
+
 	private String instanceId;
 	public CreateBackupRequest() {
 		super("R-kvstore", "2015-01-01", "CreateBackup", "redisa");
@@ -97,6 +99,17 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
+	}
+
+	public void setBackupRetentionPeriod(Long backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
+		if(backupRetentionPeriod != null){
+			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod.toString());
 		}
 	}
 

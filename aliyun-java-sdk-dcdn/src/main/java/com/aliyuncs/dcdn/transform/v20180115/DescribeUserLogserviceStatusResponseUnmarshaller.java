@@ -23,10 +23,10 @@ public class DescribeUserLogserviceStatusResponseUnmarshaller {
 	public static DescribeUserLogserviceStatusResponse unmarshall(DescribeUserLogserviceStatusResponse describeUserLogserviceStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeUserLogserviceStatusResponse.setRequestId(_ctx.stringValue("DescribeUserLogserviceStatusResponse.RequestId"));
-		describeUserLogserviceStatusResponse.setEnabled(_ctx.booleanValue("DescribeUserLogserviceStatusResponse.Enabled"));
-		describeUserLogserviceStatusResponse.setOnService(_ctx.booleanValue("DescribeUserLogserviceStatusResponse.OnService"));
 		describeUserLogserviceStatusResponse.setInDebt(_ctx.booleanValue("DescribeUserLogserviceStatusResponse.InDebt"));
+		describeUserLogserviceStatusResponse.setOnService(_ctx.booleanValue("DescribeUserLogserviceStatusResponse.OnService"));
 		describeUserLogserviceStatusResponse.setInDebtOverdue(_ctx.booleanValue("DescribeUserLogserviceStatusResponse.InDebtOverdue"));
+		describeUserLogserviceStatusResponse.setEnabled(_ctx.booleanValue("DescribeUserLogserviceStatusResponse.Enabled"));
 	 
 	 	return describeUserLogserviceStatusResponse;
 	}

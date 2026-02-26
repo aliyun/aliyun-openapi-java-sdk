@@ -24,6 +24,9 @@ public class GetClusterAllUrlResponseUnmarshaller {
 		
 		getClusterAllUrlResponse.setRequestId(_ctx.stringValue("GetClusterAllUrlResponse.RequestId"));
 		getClusterAllUrlResponse.setData(_ctx.stringValue("GetClusterAllUrlResponse.Data"));
+		getClusterAllUrlResponse.setCode(_ctx.integerValue("GetClusterAllUrlResponse.Code"));
+		getClusterAllUrlResponse.setMessage(_ctx.stringValue("GetClusterAllUrlResponse.Message"));
+		getClusterAllUrlResponse.setSuccess(_ctx.booleanValue("GetClusterAllUrlResponse.Success"));
 	 
 	 	return getClusterAllUrlResponse;
 	}

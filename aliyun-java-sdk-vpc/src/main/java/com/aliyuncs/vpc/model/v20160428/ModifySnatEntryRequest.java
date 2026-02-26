@@ -31,7 +31,11 @@ public class ModifySnatEntryRequest extends RpcAcsRequest<ModifySnatEntryRespons
 
 	private String snatIp;
 
+	private Integer eipAffinity;
+
 	private String snatEntryId;
+
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -42,6 +46,8 @@ public class ModifySnatEntryRequest extends RpcAcsRequest<ModifySnatEntryRespons
 	private Long ownerId;
 
 	private String snatEntryName;
+
+	private String networkInterfaceId;
 	public ModifySnatEntryRequest() {
 		super("Vpc", "2016-04-28", "ModifySnatEntry", "vpc");
 		setMethod(MethodType.POST);
@@ -84,6 +90,17 @@ public class ModifySnatEntryRequest extends RpcAcsRequest<ModifySnatEntryRespons
 		}
 	}
 
+	public Integer getEipAffinity() {
+		return this.eipAffinity;
+	}
+
+	public void setEipAffinity(Integer eipAffinity) {
+		this.eipAffinity = eipAffinity;
+		if(eipAffinity != null){
+			putQueryParameter("EipAffinity", eipAffinity.toString());
+		}
+	}
+
 	public String getSnatEntryId() {
 		return this.snatEntryId;
 	}
@@ -92,6 +109,17 @@ public class ModifySnatEntryRequest extends RpcAcsRequest<ModifySnatEntryRespons
 		this.snatEntryId = snatEntryId;
 		if(snatEntryId != null){
 			putQueryParameter("SnatEntryId", snatEntryId);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -147,6 +175,17 @@ public class ModifySnatEntryRequest extends RpcAcsRequest<ModifySnatEntryRespons
 		this.snatEntryName = snatEntryName;
 		if(snatEntryName != null){
 			putQueryParameter("SnatEntryName", snatEntryName);
+		}
+	}
+
+	public String getNetworkInterfaceId() {
+		return this.networkInterfaceId;
+	}
+
+	public void setNetworkInterfaceId(String networkInterfaceId) {
+		this.networkInterfaceId = networkInterfaceId;
+		if(networkInterfaceId != null){
+			putQueryParameter("NetworkInterfaceId", networkInterfaceId);
 		}
 	}
 

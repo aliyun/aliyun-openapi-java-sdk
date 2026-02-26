@@ -14,14 +14,7 @@
 
 package com.aliyuncs.rds.transform.v20140815;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.rds.model.v20140815.DescribePriceResponse;
-import com.aliyuncs.rds.model.v20140815.DescribePriceResponse.PriceInfo;
-import com.aliyuncs.rds.model.v20140815.DescribePriceResponse.PriceInfo.ActivityInfo;
-import com.aliyuncs.rds.model.v20140815.DescribePriceResponse.PriceInfo.Coupon;
-import com.aliyuncs.rds.model.v20140815.DescribePriceResponse.Rule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,49 +22,6 @@ public class DescribePriceResponseUnmarshaller {
 
 	public static DescribePriceResponse unmarshall(DescribePriceResponse describePriceResponse, UnmarshallerContext _ctx) {
 		
-		describePriceResponse.setRequestId(_ctx.stringValue("DescribePriceResponse.RequestId"));
-
-		PriceInfo priceInfo = new PriceInfo();
-		priceInfo.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.OriginalPrice"));
-		priceInfo.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.DiscountPrice"));
-		priceInfo.setCurrency(_ctx.stringValue("DescribePriceResponse.PriceInfo.Currency"));
-		priceInfo.setTradePrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.TradePrice"));
-
-		List<String> ruleIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.RuleIds.Length"); i++) {
-			ruleIds.add(_ctx.stringValue("DescribePriceResponse.PriceInfo.RuleIds["+ i +"]"));
-		}
-		priceInfo.setRuleIds(ruleIds);
-
-		ActivityInfo activityInfo = new ActivityInfo();
-		activityInfo.setCheckErrMsg(_ctx.stringValue("DescribePriceResponse.PriceInfo.ActivityInfo.CheckErrMsg"));
-		activityInfo.setErrorCode(_ctx.stringValue("DescribePriceResponse.PriceInfo.ActivityInfo.ErrorCode"));
-		activityInfo.setSuccess(_ctx.stringValue("DescribePriceResponse.PriceInfo.ActivityInfo.Success"));
-		priceInfo.setActivityInfo(activityInfo);
-
-		List<Coupon> coupons = new ArrayList<Coupon>();
-		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Coupons.Length"); i++) {
-			Coupon coupon = new Coupon();
-			coupon.setIsSelected(_ctx.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].IsSelected"));
-			coupon.setCouponNo(_ctx.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].CouponNo"));
-			coupon.setName(_ctx.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].Name"));
-			coupon.setDescription(_ctx.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].Description"));
-
-			coupons.add(coupon);
-		}
-		priceInfo.setCoupons(coupons);
-		describePriceResponse.setPriceInfo(priceInfo);
-
-		List<Rule> rules = new ArrayList<Rule>();
-		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.Rules.Length"); i++) {
-			Rule rule = new Rule();
-			rule.setName(_ctx.stringValue("DescribePriceResponse.Rules["+ i +"].Name"));
-			rule.setDescription(_ctx.stringValue("DescribePriceResponse.Rules["+ i +"].Description"));
-			rule.setRuleId(_ctx.longValue("DescribePriceResponse.Rules["+ i +"].RuleId"));
-
-			rules.add(rule);
-		}
-		describePriceResponse.setRules(rules);
 	 
 	 	return describePriceResponse;
 	}

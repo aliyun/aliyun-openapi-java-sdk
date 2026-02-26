@@ -87,24 +87,24 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 
 	public static class RestoreSummary {
 
-		private String recordId;
+		private String endTime;
 
 		private String startTime;
 
-		private String endTime;
-
 		private String state;
 
-		private String targetCluster;
+		private String recordId;
 
 		private String restoreToDate;
 
-		public String getRecordId() {
-			return this.recordId;
+		private String targetCluster;
+
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setRecordId(String recordId) {
-			this.recordId = recordId;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getStartTime() {
@@ -115,14 +115,6 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
 		public String getState() {
 			return this.state;
 		}
@@ -131,12 +123,12 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getTargetCluster() {
-			return this.targetCluster;
+		public String getRecordId() {
+			return this.recordId;
 		}
 
-		public void setTargetCluster(String targetCluster) {
-			this.targetCluster = targetCluster;
+		public void setRecordId(String recordId) {
+			this.recordId = recordId;
 		}
 
 		public String getRestoreToDate() {
@@ -146,19 +138,27 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 		public void setRestoreToDate(String restoreToDate) {
 			this.restoreToDate = restoreToDate;
 		}
+
+		public String getTargetCluster() {
+			return this.targetCluster;
+		}
+
+		public void setTargetCluster(String targetCluster) {
+			this.targetCluster = targetCluster;
+		}
 	}
 
 	public static class RestoreSchema {
 
 		private Integer succeed;
 
-		private Integer fail;
-
-		private Long total;
+		private Integer pageSize;
 
 		private Integer pageNumber;
 
-		private Integer pageSize;
+		private Integer fail;
+
+		private Long total;
 
 		private List<RestoreSchemaDetail> restoreSchemaDetails;
 
@@ -168,6 +168,22 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 
 		public void setSucceed(Integer succeed) {
 			this.succeed = succeed;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Integer getPageNumber() {
+			return this.pageNumber;
+		}
+
+		public void setPageNumber(Integer pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public Integer getFail() {
@@ -186,22 +202,6 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 			this.total = total;
 		}
 
-		public Integer getPageNumber() {
-			return this.pageNumber;
-		}
-
-		public void setPageNumber(Integer pageNumber) {
-			this.pageNumber = pageNumber;
-		}
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public List<RestoreSchemaDetail> getRestoreSchemaDetails() {
 			return this.restoreSchemaDetails;
 		}
@@ -212,22 +212,30 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 
 		public static class RestoreSchemaDetail {
 
-			private String table;
-
-			private String startTime;
-
 			private String endTime;
-
-			private String state;
 
 			private String message;
 
-			public String getTable() {
-				return this.table;
+			private String startTime;
+
+			private String table;
+
+			private String state;
+
+			public String getEndTime() {
+				return this.endTime;
 			}
 
-			public void setTable(String table) {
-				this.table = table;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
+			}
+
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
 			}
 
 			public String getStartTime() {
@@ -238,12 +246,12 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public String getEndTime() {
-				return this.endTime;
+			public String getTable() {
+				return this.table;
 			}
 
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
+			public void setTable(String table) {
+				this.table = table;
 			}
 
 			public String getState() {
@@ -253,14 +261,6 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 			public void setState(String state) {
 				this.state = state;
 			}
-
-			public String getMessage() {
-				return this.message;
-			}
-
-			public void setMessage(String message) {
-				this.message = message;
-			}
 		}
 	}
 
@@ -268,17 +268,17 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 
 		private Integer succeed;
 
-		private Integer fail;
-
 		private String dataSize;
 
 		private String speed;
 
-		private Long total;
+		private Integer pageSize;
+
+		private Integer fail;
 
 		private Integer pageNumber;
 
-		private Integer pageSize;
+		private Long total;
 
 		private List<RestoreFullDetail> restoreFullDetails;
 
@@ -288,14 +288,6 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 
 		public void setSucceed(Integer succeed) {
 			this.succeed = succeed;
-		}
-
-		public Integer getFail() {
-			return this.fail;
-		}
-
-		public void setFail(Integer fail) {
-			this.fail = fail;
 		}
 
 		public String getDataSize() {
@@ -314,12 +306,20 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 			this.speed = speed;
 		}
 
-		public Long getTotal() {
-			return this.total;
+		public Integer getPageSize() {
+			return this.pageSize;
 		}
 
-		public void setTotal(Long total) {
-			this.total = total;
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Integer getFail() {
+			return this.fail;
+		}
+
+		public void setFail(Integer fail) {
+			this.fail = fail;
 		}
 
 		public Integer getPageNumber() {
@@ -330,12 +330,12 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 			this.pageNumber = pageNumber;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
+		public Long getTotal() {
+			return this.total;
 		}
 
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
+		public void setTotal(Long total) {
+			this.total = total;
 		}
 
 		public List<RestoreFullDetail> getRestoreFullDetails() {
@@ -348,13 +348,9 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 
 		public static class RestoreFullDetail {
 
-			private String table;
-
-			private String state;
+			private String endTime;
 
 			private String startTime;
-
-			private String endTime;
 
 			private String process;
 
@@ -362,22 +358,18 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 
 			private String speed;
 
+			private String state;
+
 			private String message;
 
-			public String getTable() {
-				return this.table;
+			private String table;
+
+			public String getEndTime() {
+				return this.endTime;
 			}
 
-			public void setTable(String table) {
-				this.table = table;
-			}
-
-			public String getState() {
-				return this.state;
-			}
-
-			public void setState(String state) {
-				this.state = state;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
 			}
 
 			public String getStartTime() {
@@ -386,14 +378,6 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 
 			public void setStartTime(String startTime) {
 				this.startTime = startTime;
-			}
-
-			public String getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
 			}
 
 			public String getProcess() {
@@ -420,6 +404,14 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 				this.speed = speed;
 			}
 
+			public String getState() {
+				return this.state;
+			}
+
+			public void setState(String state) {
+				this.state = state;
+			}
+
 			public String getMessage() {
 				return this.message;
 			}
@@ -427,31 +419,39 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 			public void setMessage(String message) {
 				this.message = message;
 			}
+
+			public String getTable() {
+				return this.table;
+			}
+
+			public void setTable(String table) {
+				this.table = table;
+			}
 		}
 	}
 
 	public static class RestoreIncrDetail {
 
-		private String state;
+		private String endTime;
 
 		private String startTime;
 
-		private String endTime;
+		private String process;
 
 		private String restoreStartTs;
+
+		private String state;
 
 		private String restoredTs;
 
 		private String restoreDelay;
 
-		private String process;
-
-		public String getState() {
-			return this.state;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getStartTime() {
@@ -462,12 +462,12 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getProcess() {
+			return this.process;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setProcess(String process) {
+			this.process = process;
 		}
 
 		public String getRestoreStartTs() {
@@ -476,6 +476,14 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 
 		public void setRestoreStartTs(String restoreStartTs) {
 			this.restoreStartTs = restoreStartTs;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public String getRestoredTs() {
@@ -492,14 +500,6 @@ public class DescribeRestoreTablesResponse extends AcsResponse {
 
 		public void setRestoreDelay(String restoreDelay) {
 			this.restoreDelay = restoreDelay;
-		}
-
-		public String getProcess() {
-			return this.process;
-		}
-
-		public void setProcess(String process) {
-			this.process = process;
 		}
 	}
 

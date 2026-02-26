@@ -115,6 +115,12 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 
 		private String gatewayZoneId;
 
+		private String gatewayRegionId;
+
+		private String medMatchMode;
+
+		private Long operateMed;
+
 		private List<String> sourceRegionIds;
 
 		private List<String> sourceChildInstanceTypes;
@@ -146,6 +152,8 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 		private List<String> operateCommunitySet;
 
 		private List<String> srcZoneIds;
+
+		private List<Long> matchMeds;
 
 		public String getRouteMapId() {
 			return this.routeMapId;
@@ -299,6 +307,30 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 			this.gatewayZoneId = gatewayZoneId;
 		}
 
+		public String getGatewayRegionId() {
+			return this.gatewayRegionId;
+		}
+
+		public void setGatewayRegionId(String gatewayRegionId) {
+			this.gatewayRegionId = gatewayRegionId;
+		}
+
+		public String getMedMatchMode() {
+			return this.medMatchMode;
+		}
+
+		public void setMedMatchMode(String medMatchMode) {
+			this.medMatchMode = medMatchMode;
+		}
+
+		public Long getOperateMed() {
+			return this.operateMed;
+		}
+
+		public void setOperateMed(Long operateMed) {
+			this.operateMed = operateMed;
+		}
+
 		public List<String> getSourceRegionIds() {
 			return this.sourceRegionIds;
 		}
@@ -425,6 +457,14 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 
 		public void setSrcZoneIds(List<String> srcZoneIds) {
 			this.srcZoneIds = srcZoneIds;
+		}
+
+		public List<Long> getMatchMeds() {
+			return this.matchMeds;
+		}
+
+		public void setMatchMeds(List<Long> matchMeds) {
+			this.matchMeds = matchMeds;
 		}
 	}
 

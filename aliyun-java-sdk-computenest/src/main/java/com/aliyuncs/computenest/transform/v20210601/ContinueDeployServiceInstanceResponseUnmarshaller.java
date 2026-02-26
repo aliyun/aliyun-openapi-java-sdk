@@ -14,7 +14,11 @@
 
 package com.aliyuncs.computenest.transform.v20210601;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.computenest.model.v20210601.ContinueDeployServiceInstanceResponse;
+import com.aliyuncs.computenest.model.v20210601.ContinueDeployServiceInstanceResponse.DryRunResult;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,6 +27,28 @@ public class ContinueDeployServiceInstanceResponseUnmarshaller {
 	public static ContinueDeployServiceInstanceResponse unmarshall(ContinueDeployServiceInstanceResponse continueDeployServiceInstanceResponse, UnmarshallerContext _ctx) {
 		
 		continueDeployServiceInstanceResponse.setRequestId(_ctx.stringValue("ContinueDeployServiceInstanceResponse.RequestId"));
+		continueDeployServiceInstanceResponse.setServiceInstanceId(_ctx.stringValue("ContinueDeployServiceInstanceResponse.ServiceInstanceId"));
+
+		DryRunResult dryRunResult = new DryRunResult();
+
+		List<String> parametersNotAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ContinueDeployServiceInstanceResponse.DryRunResult.ParametersNotAllowedToBeModified.Length"); i++) {
+			parametersNotAllowedToBeModified.add(_ctx.stringValue("ContinueDeployServiceInstanceResponse.DryRunResult.ParametersNotAllowedToBeModified["+ i +"]"));
+		}
+		dryRunResult.setParametersNotAllowedToBeModified(parametersNotAllowedToBeModified);
+
+		List<String> parametersConditionallyAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ContinueDeployServiceInstanceResponse.DryRunResult.ParametersConditionallyAllowedToBeModified.Length"); i++) {
+			parametersConditionallyAllowedToBeModified.add(_ctx.stringValue("ContinueDeployServiceInstanceResponse.DryRunResult.ParametersConditionallyAllowedToBeModified["+ i +"]"));
+		}
+		dryRunResult.setParametersConditionallyAllowedToBeModified(parametersConditionallyAllowedToBeModified);
+
+		List<String> parametersAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ContinueDeployServiceInstanceResponse.DryRunResult.ParametersAllowedToBeModified.Length"); i++) {
+			parametersAllowedToBeModified.add(_ctx.stringValue("ContinueDeployServiceInstanceResponse.DryRunResult.ParametersAllowedToBeModified["+ i +"]"));
+		}
+		dryRunResult.setParametersAllowedToBeModified(parametersAllowedToBeModified);
+		continueDeployServiceInstanceResponse.setDryRunResult(dryRunResult);
 	 
 	 	return continueDeployServiceInstanceResponse;
 	}

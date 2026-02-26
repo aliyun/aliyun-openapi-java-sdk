@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.domain.model.v20180129.ScrollDomainListResponse;
 import com.aliyuncs.domain.model.v20180129.ScrollDomainListResponse.Domain;
+import com.aliyuncs.domain.model.v20180129.ScrollDomainListResponse.Domain.TagItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -54,12 +55,23 @@ public class ScrollDomainListResponseUnmarshaller {
 			domain.setProductId(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].ProductId"));
 			domain.setDomainStatus(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainStatus"));
 			domain.setDomainType(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainType"));
+			domain.setResourceGroupId(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].ResourceGroupId"));
 
 			List<String> dnsList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ScrollDomainListResponse.Data["+ i +"].DnsList.Length"); j++) {
 				dnsList.add(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DnsList["+ j +"]"));
 			}
 			domain.setDnsList(dnsList);
+
+			List<TagItem> tag = new ArrayList<TagItem>();
+			for (int j = 0; j < _ctx.lengthValue("ScrollDomainListResponse.Data["+ i +"].Tag.Length"); j++) {
+				TagItem tagItem = new TagItem();
+				tagItem.setKey(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].Tag["+ j +"].Key"));
+				tagItem.setValue(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].Tag["+ j +"].Value"));
+
+				tag.add(tagItem);
+			}
+			domain.setTag(tag);
 
 			data.add(domain);
 		}

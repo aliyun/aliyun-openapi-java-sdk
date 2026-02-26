@@ -15,6 +15,7 @@
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudapi.Endpoint;
 
@@ -23,17 +24,13 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class SetVpcAccessRequest extends RpcAcsRequest<SetVpcAccessResponse> {
-	
-	public SetVpcAccessRequest() {
-		super("CloudAPI", "2016-07-14", "SetVpcAccess", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String description;
 
 	private String instanceId;
+
+	private String vpcTargetHostName;
 
 	private String securityToken;
 
@@ -42,6 +39,27 @@ public class SetVpcAccessRequest extends RpcAcsRequest<SetVpcAccessResponse> {
 	private String vpcId;
 
 	private String name;
+
+	private List<Tag> tags;
+	public SetVpcAccessRequest() {
+		super("CloudAPI", "2016-07-14", "SetVpcAccess", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -54,29 +72,21 @@ public class SetVpcAccessRequest extends RpcAcsRequest<SetVpcAccessResponse> {
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public String getVpcTargetHostName() {
+		return this.vpcTargetHostName;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setVpcTargetHostName(String vpcTargetHostName) {
+		this.vpcTargetHostName = vpcTargetHostName;
+		if(vpcTargetHostName != null){
+			putQueryParameter("VpcTargetHostName", vpcTargetHostName);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -114,6 +124,43 @@ public class SetVpcAccessRequest extends RpcAcsRequest<SetVpcAccessResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

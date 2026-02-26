@@ -87,9 +87,8 @@ public class FuzzyQueryResponseUnmarshaller {
 			filesItem.setPerformer(_ctx.stringValue("FuzzyQueryResponse.Files["+ i +"].Performer"));
 			filesItem.setLanguage(_ctx.stringValue("FuzzyQueryResponse.Files["+ i +"].Language"));
 			filesItem.setAlbum(_ctx.stringValue("FuzzyQueryResponse.Files["+ i +"].Album"));
-			filesItem.setDocumentLanguage(_ctx.stringValue("FuzzyQueryResponse.Files["+ i +"].DocumentLanguage"));
 			filesItem.setPageCount(_ctx.longValue("FuzzyQueryResponse.Files["+ i +"].PageCount"));
-			filesItem.setDocumentContent(_ctx.stringValue("FuzzyQueryResponse.Files["+ i +"].DocumentContent"));
+			filesItem.setDocumentText(_ctx.stringValue("FuzzyQueryResponse.Files["+ i +"].DocumentText"));
 			filesItem.setETag(_ctx.stringValue("FuzzyQueryResponse.Files["+ i +"].ETag"));
 			filesItem.setCacheControl(_ctx.stringValue("FuzzyQueryResponse.Files["+ i +"].CacheControl"));
 			filesItem.setContentDisposition(_ctx.stringValue("FuzzyQueryResponse.Files["+ i +"].ContentDisposition"));

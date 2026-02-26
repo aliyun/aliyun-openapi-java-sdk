@@ -57,19 +57,11 @@ public class QueryUserTagMetaListResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String tagName;
-
 		private String tagDescription;
 
 		private String tagId;
 
-		public String getTagName() {
-			return this.tagName;
-		}
-
-		public void setTagName(String tagName) {
-			this.tagName = tagName;
-		}
+		private String tagName;
 
 		public String getTagDescription() {
 			return this.tagDescription;
@@ -85,6 +77,14 @@ public class QueryUserTagMetaListResponse extends AcsResponse {
 
 		public void setTagId(String tagId) {
 			this.tagId = tagId;
+		}
+
+		public String getTagName() {
+			return this.tagName;
+		}
+
+		public void setTagName(String tagName) {
+			this.tagName = tagName;
 		}
 	}
 

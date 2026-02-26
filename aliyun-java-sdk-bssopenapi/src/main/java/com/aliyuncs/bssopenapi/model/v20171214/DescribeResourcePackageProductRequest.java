@@ -27,7 +27,7 @@ public class DescribeResourcePackageProductRequest extends RpcAcsRequest<Describ
 
 	private String productCode;
 	public DescribeResourcePackageProductRequest() {
-		super("BssOpenApi", "2017-12-14", "DescribeResourcePackageProduct");
+		super("BssOpenApi", "2017-12-14", "DescribeResourcePackageProduct", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

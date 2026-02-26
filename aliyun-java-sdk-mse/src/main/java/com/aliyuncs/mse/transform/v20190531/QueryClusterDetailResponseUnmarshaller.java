@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.mse.model.v20190531.QueryClusterDetailResponse;
 import com.aliyuncs.mse.model.v20190531.QueryClusterDetailResponse.Data;
 import com.aliyuncs.mse.model.v20190531.QueryClusterDetailResponse.Data.InstanceModel;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -68,6 +69,8 @@ public class QueryClusterDetailResponseUnmarshaller {
 		data.setMseVersion(_ctx.stringValue("QueryClusterDetailResponse.Data.MseVersion"));
 		data.setChargeType(_ctx.stringValue("QueryClusterDetailResponse.Data.ChargeType"));
 		data.setOrderClusterVersion(_ctx.stringValue("QueryClusterDetailResponse.Data.OrderClusterVersion"));
+		data.setTags(_ctx.mapValue("QueryClusterDetailResponse.Data.Tags"));
+		data.setResourceGroupId(_ctx.stringValue("QueryClusterDetailResponse.Data.ResourceGroupId"));
 
 		List<InstanceModel> instanceModels = new ArrayList<InstanceModel>();
 		for (int i = 0; i < _ctx.lengthValue("QueryClusterDetailResponse.Data.InstanceModels.Length"); i++) {

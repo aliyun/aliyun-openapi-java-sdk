@@ -34,7 +34,11 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 
 	private String ensRegionId;
 
+	private String instanceId;
+
 	private String status;
+
+	private String snapshotId;
 
 	private String pageNumber;
 
@@ -109,6 +113,17 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	public String getStatus() {
 		return this.status;
 	}
@@ -117,6 +132,17 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
 		}
 	}
 

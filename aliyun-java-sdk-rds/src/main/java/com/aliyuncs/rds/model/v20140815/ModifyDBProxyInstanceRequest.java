@@ -15,6 +15,9 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rds.Endpoint;
 
@@ -27,13 +30,23 @@ public class ModifyDBProxyInstanceRequest extends RpcAcsRequest<ModifyDBProxyIns
 
 	private Long resourceOwnerId;
 
+	private String vSwitchIds;
+
+	@SerializedName("migrateAZ")
+	private List<MigrateAZ> migrateAZ;
+
 	private String effectiveTime;
 
 	private String effectiveSpecificTime;
 
+	@SerializedName("dBProxyNodes")
+	private List<DBProxyNodes> dBProxyNodes;
+
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
+
+	private String dBProxyEngineType;
 
 	private Long ownerId;
 
@@ -60,6 +73,28 @@ public class ModifyDBProxyInstanceRequest extends RpcAcsRequest<ModifyDBProxyIns
 		}
 	}
 
+	public String getVSwitchIds() {
+		return this.vSwitchIds;
+	}
+
+	public void setVSwitchIds(String vSwitchIds) {
+		this.vSwitchIds = vSwitchIds;
+		if(vSwitchIds != null){
+			putQueryParameter("VSwitchIds", vSwitchIds);
+		}
+	}
+
+	public List<MigrateAZ> getMigrateAZ() {
+		return this.migrateAZ;
+	}
+
+	public void setMigrateAZ(List<MigrateAZ> migrateAZ) {
+		this.migrateAZ = migrateAZ;	
+		if (migrateAZ != null) {
+			putQueryParameter("MigrateAZ" , new Gson().toJson(migrateAZ));
+		}	
+	}
+
 	public String getEffectiveTime() {
 		return this.effectiveTime;
 	}
@@ -82,6 +117,17 @@ public class ModifyDBProxyInstanceRequest extends RpcAcsRequest<ModifyDBProxyIns
 		}
 	}
 
+	public List<DBProxyNodes> getDBProxyNodes() {
+		return this.dBProxyNodes;
+	}
+
+	public void setDBProxyNodes(List<DBProxyNodes> dBProxyNodes) {
+		this.dBProxyNodes = dBProxyNodes;	
+		if (dBProxyNodes != null) {
+			putQueryParameter("DBProxyNodes" , new Gson().toJson(dBProxyNodes));
+		}	
+	}
+
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -101,6 +147,17 @@ public class ModifyDBProxyInstanceRequest extends RpcAcsRequest<ModifyDBProxyIns
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
+		if(dBProxyEngineType != null){
+			putQueryParameter("DBProxyEngineType", dBProxyEngineType);
 		}
 	}
 
@@ -134,6 +191,78 @@ public class ModifyDBProxyInstanceRequest extends RpcAcsRequest<ModifyDBProxyIns
 		this.dBProxyInstanceType = dBProxyInstanceType;
 		if(dBProxyInstanceType != null){
 			putQueryParameter("DBProxyInstanceType", dBProxyInstanceType);
+		}
+	}
+
+	public static class MigrateAZ {
+
+		@SerializedName("destVpcId")
+		private String destVpcId;
+
+		@SerializedName("dbProxyEndpointId")
+		private String dbProxyEndpointId;
+
+		@SerializedName("destVSwitchId")
+		private String destVSwitchId;
+
+		public String getDestVpcId() {
+			return this.destVpcId;
+		}
+
+		public void setDestVpcId(String destVpcId) {
+			this.destVpcId = destVpcId;
+		}
+
+		public String getDbProxyEndpointId() {
+			return this.dbProxyEndpointId;
+		}
+
+		public void setDbProxyEndpointId(String dbProxyEndpointId) {
+			this.dbProxyEndpointId = dbProxyEndpointId;
+		}
+
+		public String getDestVSwitchId() {
+			return this.destVSwitchId;
+		}
+
+		public void setDestVSwitchId(String destVSwitchId) {
+			this.destVSwitchId = destVSwitchId;
+		}
+	}
+
+	public static class DBProxyNodes {
+
+		@SerializedName("cpuCores")
+		private String cpuCores;
+
+		@SerializedName("zoneId")
+		private String zoneId;
+
+		@SerializedName("nodeCounts")
+		private String nodeCounts;
+
+		public String getCpuCores() {
+			return this.cpuCores;
+		}
+
+		public void setCpuCores(String cpuCores) {
+			this.cpuCores = cpuCores;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getNodeCounts() {
+			return this.nodeCounts;
+		}
+
+		public void setNodeCounts(String nodeCounts) {
+			this.nodeCounts = nodeCounts;
 		}
 	}
 

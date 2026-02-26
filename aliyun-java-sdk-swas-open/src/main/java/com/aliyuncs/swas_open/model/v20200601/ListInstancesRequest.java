@@ -15,6 +15,7 @@
 package com.aliyuncs.swas_open.model.v20200601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -24,18 +25,39 @@ import com.aliyuncs.http.MethodType;
 public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 	   
 
+	private String planType;
+
 	private Integer pageNumber;
 
-	private String instanceIds;
+	private String resourceGroupId;
 
 	private Integer pageSize;
 
 	private String publicIpAddresses;
 
+	private List<Tag> tags;
+
+	private String instanceName;
+
+	private String instanceIds;
+
 	private String chargeType;
+
+	private String status;
 	public ListInstancesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListInstances");
+		super("SWAS-OPEN", "2020-06-01", "ListInstances", "SWAS-OPEN");
 		setMethod(MethodType.POST);
+	}
+
+	public String getPlanType() {
+		return this.planType;
+	}
+
+	public void setPlanType(String planType) {
+		this.planType = planType;
+		if(planType != null){
+			putQueryParameter("PlanType", planType);
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -49,14 +71,14 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		}
 	}
 
-	public String getInstanceIds() {
-		return this.instanceIds;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -82,6 +104,42 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
 	public String getChargeType() {
 		return this.chargeType;
 	}
@@ -90,6 +148,40 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

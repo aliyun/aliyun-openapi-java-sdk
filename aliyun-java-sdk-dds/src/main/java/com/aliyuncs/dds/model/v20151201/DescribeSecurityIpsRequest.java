@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -26,7 +27,7 @@ public class DescribeSecurityIpsRequest extends RpcAcsRequest<DescribeSecurityIp
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
+	private Boolean showHDMIps;
 
 	private String dBInstanceId;
 
@@ -38,6 +39,10 @@ public class DescribeSecurityIpsRequest extends RpcAcsRequest<DescribeSecurityIp
 	public DescribeSecurityIpsRequest() {
 		super("Dds", "2015-12-01", "DescribeSecurityIps", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -51,14 +56,14 @@ public class DescribeSecurityIpsRequest extends RpcAcsRequest<DescribeSecurityIp
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public Boolean getShowHDMIps() {
+		return this.showHDMIps;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setShowHDMIps(Boolean showHDMIps) {
+		this.showHDMIps = showHDMIps;
+		if(showHDMIps != null){
+			putQueryParameter("ShowHDMIps", showHDMIps.toString());
 		}
 	}
 

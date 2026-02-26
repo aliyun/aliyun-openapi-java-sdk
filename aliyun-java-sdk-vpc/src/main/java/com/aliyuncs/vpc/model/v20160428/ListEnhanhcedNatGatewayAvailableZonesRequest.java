@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -32,6 +33,8 @@ public class ListEnhanhcedNatGatewayAvailableZonesRequest extends RpcAcsRequest<
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private List<Filter> filter;
 
 	private String acceptLanguage;
 	public ListEnhanhcedNatGatewayAvailableZonesRequest() {
@@ -87,6 +90,23 @@ public class ListEnhanhcedNatGatewayAvailableZonesRequest extends RpcAcsRequest<
 		}
 	}
 
+	public List<Filter> getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(List<Filter> filter) {
+		this.filter = filter;	
+		if (filter != null) {
+			for (int depth1 = 0; depth1 < filter.size(); depth1++) {
+				if (filter.get(depth1) != null) {
+					
+						putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filter.get(depth1).getKey());
+						putQueryParameter("Filter." + (depth1 + 1) + ".Value" , filter.get(depth1).getValue());
+				}
+			}
+		}	
+	}
+
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -95,6 +115,29 @@ public class ListEnhanhcedNatGatewayAvailableZonesRequest extends RpcAcsRequest<
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
+	}
+
+	public static class Filter {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

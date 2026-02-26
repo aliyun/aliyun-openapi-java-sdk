@@ -27,13 +27,27 @@ public class ListResourceInstancesRequest extends RoaAcsRequest<ListResourceInst
 
 	private String resourceId;
 
-	private Integer pageSize;
+	private String instanceStatus;
 
 	private String clusterId;
 
-	private String chargeType;
+	private String sort;
 
 	private Integer pageNumber;
+
+	private String filter;
+
+	private String instanceName;
+
+	private String instanceId;
+
+	private Integer pageSize;
+
+	private String chargeType;
+
+	private String instanceIP;
+
+	private String order;
 	public ListResourceInstancesRequest() {
 		super("eas", "2021-07-01", "ListResourceInstances", "eas");
 		setUriPattern("/api/v2/resources/[ClusterId]/[ResourceId]/instances");
@@ -55,14 +69,14 @@ public class ListResourceInstancesRequest extends RoaAcsRequest<ListResourceInst
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getInstanceStatus() {
+		return this.instanceStatus;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setInstanceStatus(String instanceStatus) {
+		this.instanceStatus = instanceStatus;
+		if(instanceStatus != null){
+			putQueryParameter("InstanceStatus", instanceStatus);
 		}
 	}
 
@@ -77,14 +91,14 @@ public class ListResourceInstancesRequest extends RoaAcsRequest<ListResourceInst
 		}
 	}
 
-	public String getChargeType() {
-		return this.chargeType;
+	public String getSort() {
+		return this.sort;
 	}
 
-	public void setChargeType(String chargeType) {
-		this.chargeType = chargeType;
-		if(chargeType != null){
-			putQueryParameter("ChargeType", chargeType);
+	public void setSort(String sort) {
+		this.sort = sort;
+		if(sort != null){
+			putQueryParameter("Sort", sort);
 		}
 	}
 
@@ -96,6 +110,83 @@ public class ListResourceInstancesRequest extends RoaAcsRequest<ListResourceInst
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("Filter", filter);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public String getInstanceIP() {
+		return this.instanceIP;
+	}
+
+	public void setInstanceIP(String instanceIP) {
+		this.instanceIP = instanceIP;
+		if(instanceIP != null){
+			putQueryParameter("InstanceIP", instanceIP);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 

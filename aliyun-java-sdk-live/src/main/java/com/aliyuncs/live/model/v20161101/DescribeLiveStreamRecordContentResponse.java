@@ -47,24 +47,40 @@ public class DescribeLiveStreamRecordContentResponse extends AcsResponse {
 
 	public static class RecordContentInfo {
 
-		private String ossEndpoint;
+		private String endTime;
+
+		private String startTime;
+
+		private Float duration;
 
 		private String ossBucket;
 
 		private String ossObjectPrefix;
 
-		private String startTime;
+		private String ossEndpoint;
 
-		private String endTime;
-
-		private Float duration;
-
-		public String getOssEndpoint() {
-			return this.ossEndpoint;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setOssEndpoint(String ossEndpoint) {
-			this.ossEndpoint = ossEndpoint;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public Float getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Float duration) {
+			this.duration = duration;
 		}
 
 		public String getOssBucket() {
@@ -83,28 +99,12 @@ public class DescribeLiveStreamRecordContentResponse extends AcsResponse {
 			this.ossObjectPrefix = ossObjectPrefix;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public String getOssEndpoint() {
+			return this.ossEndpoint;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public Float getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(Float duration) {
-			this.duration = duration;
+		public void setOssEndpoint(String ossEndpoint) {
+			this.ossEndpoint = ossEndpoint;
 		}
 	}
 

@@ -23,6 +23,7 @@ public class AddPublicIpAddressPoolCidrBlockResponseUnmarshaller {
 	public static AddPublicIpAddressPoolCidrBlockResponse unmarshall(AddPublicIpAddressPoolCidrBlockResponse addPublicIpAddressPoolCidrBlockResponse, UnmarshallerContext _ctx) {
 		
 		addPublicIpAddressPoolCidrBlockResponse.setRequestId(_ctx.stringValue("AddPublicIpAddressPoolCidrBlockResponse.RequestId"));
+		addPublicIpAddressPoolCidrBlockResponse.setCidrBlock(_ctx.stringValue("AddPublicIpAddressPoolCidrBlockResponse.CidrBlock"));
 	 
 	 	return addPublicIpAddressPoolCidrBlockResponse;
 	}

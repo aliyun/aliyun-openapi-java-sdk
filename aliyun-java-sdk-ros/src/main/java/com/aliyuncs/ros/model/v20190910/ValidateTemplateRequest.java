@@ -15,6 +15,7 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ros.Endpoint;
 
@@ -25,9 +26,15 @@ import com.aliyuncs.ros.Endpoint;
 public class ValidateTemplateRequest extends RpcAcsRequest<ValidateTemplateResponse> {
 	   
 
+	private String validationOption;
+
+	private String clientToken;
+
 	private String templateBody;
 
 	private String templateURL;
+
+	private List<String> updateInfoOptionss;
 	public ValidateTemplateRequest() {
 		super("ROS", "2019-09-10", "ValidateTemplate", "ros");
 		setMethod(MethodType.POST);
@@ -37,6 +44,28 @@ public class ValidateTemplateRequest extends RpcAcsRequest<ValidateTemplateRespo
 		} catch (Exception e) {}
 	}
 
+	public String getValidationOption() {
+		return this.validationOption;
+	}
+
+	public void setValidationOption(String validationOption) {
+		this.validationOption = validationOption;
+		if(validationOption != null){
+			putQueryParameter("ValidationOption", validationOption);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
 	public String getTemplateBody() {
 		return this.templateBody;
 	}
@@ -44,7 +73,7 @@ public class ValidateTemplateRequest extends RpcAcsRequest<ValidateTemplateRespo
 	public void setTemplateBody(String templateBody) {
 		this.templateBody = templateBody;
 		if(templateBody != null){
-			putQueryParameter("TemplateBody", templateBody);
+			putBodyParameter("TemplateBody", templateBody);
 		}
 	}
 
@@ -57,6 +86,19 @@ public class ValidateTemplateRequest extends RpcAcsRequest<ValidateTemplateRespo
 		if(templateURL != null){
 			putQueryParameter("TemplateURL", templateURL);
 		}
+	}
+
+	public List<String> getUpdateInfoOptionss() {
+		return this.updateInfoOptionss;
+	}
+
+	public void setUpdateInfoOptionss(List<String> updateInfoOptionss) {
+		this.updateInfoOptionss = updateInfoOptionss;	
+		if (updateInfoOptionss != null) {
+			for (int i = 0; i < updateInfoOptionss.size(); i++) {
+				putQueryParameter("UpdateInfoOptions." + (i + 1) , updateInfoOptionss.get(i));
+			}
+		}	
 	}
 
 	@Override

@@ -32,6 +32,8 @@ public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancer
 
 	private Boolean forceAttach;
 
+	private List<LoadBalancerConfig> loadBalancerConfigs;
+
 	private List<String> loadBalancers;
 
 	private String resourceOwnerAccount;
@@ -81,6 +83,20 @@ public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancer
 		}
 	}
 
+	public List<LoadBalancerConfig> getLoadBalancerConfigs() {
+		return this.loadBalancerConfigs;
+	}
+
+	public void setLoadBalancerConfigs(List<LoadBalancerConfig> loadBalancerConfigs) {
+		this.loadBalancerConfigs = loadBalancerConfigs;	
+		if (loadBalancerConfigs != null) {
+			for (int depth1 = 0; depth1 < loadBalancerConfigs.size(); depth1++) {
+				putQueryParameter("LoadBalancerConfig." + (depth1 + 1) + ".LoadBalancerId" , loadBalancerConfigs.get(depth1).getLoadBalancerId());
+				putQueryParameter("LoadBalancerConfig." + (depth1 + 1) + ".Weight" , loadBalancerConfigs.get(depth1).getWeight());
+			}
+		}	
+	}
+
 	public List<String> getLoadBalancers() {
 		return this.loadBalancers;
 	}
@@ -124,6 +140,29 @@ public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancer
 		this.async = async;
 		if(async != null){
 			putQueryParameter("Async", async.toString());
+		}
+	}
+
+	public static class LoadBalancerConfig {
+
+		private String loadBalancerId;
+
+		private Integer weight;
+
+		public String getLoadBalancerId() {
+			return this.loadBalancerId;
+		}
+
+		public void setLoadBalancerId(String loadBalancerId) {
+			this.loadBalancerId = loadBalancerId;
+		}
+
+		public Integer getWeight() {
+			return this.weight;
+		}
+
+		public void setWeight(Integer weight) {
+			this.weight = weight;
 		}
 	}
 

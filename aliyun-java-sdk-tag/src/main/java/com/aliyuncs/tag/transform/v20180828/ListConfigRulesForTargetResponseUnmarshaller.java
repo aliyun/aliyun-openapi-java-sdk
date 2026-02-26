@@ -32,13 +32,14 @@ public class ListConfigRulesForTargetResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListConfigRulesForTargetResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setAggregatorId(_ctx.stringValue("ListConfigRulesForTargetResponse.Data["+ i +"].AggregatorId"));
+			dataItem.setConfigRuleId(_ctx.stringValue("ListConfigRulesForTargetResponse.Data["+ i +"].ConfigRuleId"));
+			dataItem.setPolicyType(_ctx.stringValue("ListConfigRulesForTargetResponse.Data["+ i +"].PolicyType"));
+			dataItem.setRemediation(_ctx.booleanValue("ListConfigRulesForTargetResponse.Data["+ i +"].Remediation"));
+			dataItem.setTagKey(_ctx.stringValue("ListConfigRulesForTargetResponse.Data["+ i +"].TagKey"));
+			dataItem.setTagValue(_ctx.stringValue("ListConfigRulesForTargetResponse.Data["+ i +"].TagValue"));
 			dataItem.setTargetId(_ctx.stringValue("ListConfigRulesForTargetResponse.Data["+ i +"].TargetId"));
 			dataItem.setTargetType(_ctx.stringValue("ListConfigRulesForTargetResponse.Data["+ i +"].TargetType"));
-			dataItem.setConfigRuleId(_ctx.stringValue("ListConfigRulesForTargetResponse.Data["+ i +"].ConfigRuleId"));
-			dataItem.setAggregatorId(_ctx.stringValue("ListConfigRulesForTargetResponse.Data["+ i +"].AggregatorId"));
-			dataItem.setTagKey(_ctx.stringValue("ListConfigRulesForTargetResponse.Data["+ i +"].TagKey"));
-			dataItem.setRemediation(_ctx.booleanValue("ListConfigRulesForTargetResponse.Data["+ i +"].Remediation"));
-			dataItem.setPolicyType(_ctx.stringValue("ListConfigRulesForTargetResponse.Data["+ i +"].PolicyType"));
 
 			data.add(dataItem);
 		}

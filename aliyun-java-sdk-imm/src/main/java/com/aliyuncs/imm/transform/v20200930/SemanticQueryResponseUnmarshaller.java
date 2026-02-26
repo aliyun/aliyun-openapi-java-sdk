@@ -18,8 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.imm.model.v20200930.SemanticQueryResponse;
-import com.aliyuncs.imm.model.v20200930.SemanticQueryResponse.AggregationsItem;
-import com.aliyuncs.imm.model.v20200930.SemanticQueryResponse.AggregationsItem.GroupsItem;
 import com.aliyuncs.imm.model.v20200930.SemanticQueryResponse.FilesItem;
 import com.aliyuncs.imm.model.v20200930.SemanticQueryResponse.FilesItem.AddressesItem;
 import com.aliyuncs.imm.model.v20200930.SemanticQueryResponse.FilesItem.AudioCoversItem;
@@ -89,9 +87,8 @@ public class SemanticQueryResponseUnmarshaller {
 			filesItem.setPerformer(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].Performer"));
 			filesItem.setLanguage(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].Language"));
 			filesItem.setAlbum(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].Album"));
-			filesItem.setDocumentLanguage(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].DocumentLanguage"));
 			filesItem.setPageCount(_ctx.longValue("SemanticQueryResponse.Files["+ i +"].PageCount"));
-			filesItem.setDocumentContent(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].DocumentContent"));
+			filesItem.setDocumentText(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].DocumentText"));
 			filesItem.setETag(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].ETag"));
 			filesItem.setCacheControl(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].CacheControl"));
 			filesItem.setContentDisposition(_ctx.stringValue("SemanticQueryResponse.Files["+ i +"].ContentDisposition"));
@@ -371,27 +368,6 @@ public class SemanticQueryResponseUnmarshaller {
 			files.add(filesItem);
 		}
 		semanticQueryResponse.setFiles(files);
-
-		List<AggregationsItem> aggregations = new ArrayList<AggregationsItem>();
-		for (int i = 0; i < _ctx.lengthValue("SemanticQueryResponse.Aggregations.Length"); i++) {
-			AggregationsItem aggregationsItem = new AggregationsItem();
-			aggregationsItem.setField(_ctx.stringValue("SemanticQueryResponse.Aggregations["+ i +"].Field"));
-			aggregationsItem.setOperation(_ctx.stringValue("SemanticQueryResponse.Aggregations["+ i +"].Operation"));
-			aggregationsItem.setValue(_ctx.floatValue("SemanticQueryResponse.Aggregations["+ i +"].Value"));
-
-			List<GroupsItem> groups = new ArrayList<GroupsItem>();
-			for (int j = 0; j < _ctx.lengthValue("SemanticQueryResponse.Aggregations["+ i +"].Groups.Length"); j++) {
-				GroupsItem groupsItem = new GroupsItem();
-				groupsItem.setValue(_ctx.stringValue("SemanticQueryResponse.Aggregations["+ i +"].Groups["+ j +"].Value"));
-				groupsItem.setCount(_ctx.longValue("SemanticQueryResponse.Aggregations["+ i +"].Groups["+ j +"].Count"));
-
-				groups.add(groupsItem);
-			}
-			aggregationsItem.setGroups(groups);
-
-			aggregations.add(aggregationsItem);
-		}
-		semanticQueryResponse.setAggregations(aggregations);
 	 
 	 	return semanticQueryResponse;
 	}

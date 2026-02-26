@@ -115,6 +115,38 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Boolean eniTrunkSupported;
 
+		private Float cpuSpeedFrequency;
+
+		private Float cpuTurboFrequency;
+
+		private String physicalProcessorModel;
+
+		private Boolean networkEncryptionSupport;
+
+		private String instanceCategory;
+
+		private String cpuArchitecture;
+
+		private Float gPUMemorySize;
+
+		private Integer networkCardQuantity;
+
+		private Boolean jumboFrameSupport;
+
+		private List<NetworkCardInfo> networkCards;
+
+		private List<Attribute> attributes;
+
+		private List<String> supportedBootModes;
+
+		private EnhancedNetwork enhancedNetwork;
+
+		private CpuOptions cpuOptions;
+
+		private Clock clock;
+
+		private NetworkInfo networkInfo;
+
 		public Integer getEniTotalQuantity() {
 			return this.eniTotalQuantity;
 		}
@@ -345,6 +377,348 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setEniTrunkSupported(Boolean eniTrunkSupported) {
 			this.eniTrunkSupported = eniTrunkSupported;
+		}
+
+		public Float getCpuSpeedFrequency() {
+			return this.cpuSpeedFrequency;
+		}
+
+		public void setCpuSpeedFrequency(Float cpuSpeedFrequency) {
+			this.cpuSpeedFrequency = cpuSpeedFrequency;
+		}
+
+		public Float getCpuTurboFrequency() {
+			return this.cpuTurboFrequency;
+		}
+
+		public void setCpuTurboFrequency(Float cpuTurboFrequency) {
+			this.cpuTurboFrequency = cpuTurboFrequency;
+		}
+
+		public String getPhysicalProcessorModel() {
+			return this.physicalProcessorModel;
+		}
+
+		public void setPhysicalProcessorModel(String physicalProcessorModel) {
+			this.physicalProcessorModel = physicalProcessorModel;
+		}
+
+		public Boolean getNetworkEncryptionSupport() {
+			return this.networkEncryptionSupport;
+		}
+
+		public void setNetworkEncryptionSupport(Boolean networkEncryptionSupport) {
+			this.networkEncryptionSupport = networkEncryptionSupport;
+		}
+
+		public String getInstanceCategory() {
+			return this.instanceCategory;
+		}
+
+		public void setInstanceCategory(String instanceCategory) {
+			this.instanceCategory = instanceCategory;
+		}
+
+		public String getCpuArchitecture() {
+			return this.cpuArchitecture;
+		}
+
+		public void setCpuArchitecture(String cpuArchitecture) {
+			this.cpuArchitecture = cpuArchitecture;
+		}
+
+		public Float getGPUMemorySize() {
+			return this.gPUMemorySize;
+		}
+
+		public void setGPUMemorySize(Float gPUMemorySize) {
+			this.gPUMemorySize = gPUMemorySize;
+		}
+
+		public Integer getNetworkCardQuantity() {
+			return this.networkCardQuantity;
+		}
+
+		public void setNetworkCardQuantity(Integer networkCardQuantity) {
+			this.networkCardQuantity = networkCardQuantity;
+		}
+
+		public Boolean getJumboFrameSupport() {
+			return this.jumboFrameSupport;
+		}
+
+		public void setJumboFrameSupport(Boolean jumboFrameSupport) {
+			this.jumboFrameSupport = jumboFrameSupport;
+		}
+
+		public List<NetworkCardInfo> getNetworkCards() {
+			return this.networkCards;
+		}
+
+		public void setNetworkCards(List<NetworkCardInfo> networkCards) {
+			this.networkCards = networkCards;
+		}
+
+		public List<Attribute> getAttributes() {
+			return this.attributes;
+		}
+
+		public void setAttributes(List<Attribute> attributes) {
+			this.attributes = attributes;
+		}
+
+		public List<String> getSupportedBootModes() {
+			return this.supportedBootModes;
+		}
+
+		public void setSupportedBootModes(List<String> supportedBootModes) {
+			this.supportedBootModes = supportedBootModes;
+		}
+
+		public EnhancedNetwork getEnhancedNetwork() {
+			return this.enhancedNetwork;
+		}
+
+		public void setEnhancedNetwork(EnhancedNetwork enhancedNetwork) {
+			this.enhancedNetwork = enhancedNetwork;
+		}
+
+		public CpuOptions getCpuOptions() {
+			return this.cpuOptions;
+		}
+
+		public void setCpuOptions(CpuOptions cpuOptions) {
+			this.cpuOptions = cpuOptions;
+		}
+
+		public Clock getClock() {
+			return this.clock;
+		}
+
+		public void setClock(Clock clock) {
+			this.clock = clock;
+		}
+
+		public NetworkInfo getNetworkInfo() {
+			return this.networkInfo;
+		}
+
+		public void setNetworkInfo(NetworkInfo networkInfo) {
+			this.networkInfo = networkInfo;
+		}
+
+		public static class NetworkCardInfo {
+
+			private Integer networkCardIndex;
+
+			public Integer getNetworkCardIndex() {
+				return this.networkCardIndex;
+			}
+
+			public void setNetworkCardIndex(Integer networkCardIndex) {
+				this.networkCardIndex = networkCardIndex;
+			}
+		}
+
+		public static class Attribute {
+
+			private String name;
+
+			private String value;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
+		public static class EnhancedNetwork {
+
+			private Boolean sriovSupport;
+
+			private Integer vfQueueNumberPerEni;
+
+			private Boolean rssSupport;
+
+			public Boolean getSriovSupport() {
+				return this.sriovSupport;
+			}
+
+			public void setSriovSupport(Boolean sriovSupport) {
+				this.sriovSupport = sriovSupport;
+			}
+
+			public Integer getVfQueueNumberPerEni() {
+				return this.vfQueueNumberPerEni;
+			}
+
+			public void setVfQueueNumberPerEni(Integer vfQueueNumberPerEni) {
+				this.vfQueueNumberPerEni = vfQueueNumberPerEni;
+			}
+
+			public Boolean getRssSupport() {
+				return this.rssSupport;
+			}
+
+			public void setRssSupport(Boolean rssSupport) {
+				this.rssSupport = rssSupport;
+			}
+		}
+
+		public static class CpuOptions {
+
+			private Integer threadsPerCore;
+
+			private Integer core;
+
+			private Integer coreFactor;
+
+			private Boolean hyperThreadingAdjustable;
+
+			private List<String> supportedTopologyTypes;
+
+			public Integer getThreadsPerCore() {
+				return this.threadsPerCore;
+			}
+
+			public void setThreadsPerCore(Integer threadsPerCore) {
+				this.threadsPerCore = threadsPerCore;
+			}
+
+			public Integer getCore() {
+				return this.core;
+			}
+
+			public void setCore(Integer core) {
+				this.core = core;
+			}
+
+			public Integer getCoreFactor() {
+				return this.coreFactor;
+			}
+
+			public void setCoreFactor(Integer coreFactor) {
+				this.coreFactor = coreFactor;
+			}
+
+			public Boolean getHyperThreadingAdjustable() {
+				return this.hyperThreadingAdjustable;
+			}
+
+			public void setHyperThreadingAdjustable(Boolean hyperThreadingAdjustable) {
+				this.hyperThreadingAdjustable = hyperThreadingAdjustable;
+			}
+
+			public List<String> getSupportedTopologyTypes() {
+				return this.supportedTopologyTypes;
+			}
+
+			public void setSupportedTopologyTypes(List<String> supportedTopologyTypes) {
+				this.supportedTopologyTypes = supportedTopologyTypes;
+			}
+		}
+
+		public static class Clock {
+
+			private String ptpSupport;
+
+			public String getPtpSupport() {
+				return this.ptpSupport;
+			}
+
+			public void setPtpSupport(String ptpSupport) {
+				this.ptpSupport = ptpSupport;
+			}
+		}
+
+		public static class NetworkInfo {
+
+			private BandwidthWeighting bandwidthWeighting;
+
+			public BandwidthWeighting getBandwidthWeighting() {
+				return this.bandwidthWeighting;
+			}
+
+			public void setBandwidthWeighting(BandwidthWeighting bandwidthWeighting) {
+				this.bandwidthWeighting = bandwidthWeighting;
+			}
+
+			public static class BandwidthWeighting {
+
+				private List<WeightingInfo> weightingInfos;
+
+				public List<WeightingInfo> getWeightingInfos() {
+					return this.weightingInfos;
+				}
+
+				public void setWeightingInfos(List<WeightingInfo> weightingInfos) {
+					this.weightingInfos = weightingInfos;
+				}
+
+				public static class WeightingInfo {
+
+					private Long vpcBandwidth;
+
+					private Long ebsBurstBandwidth;
+
+					private Long ebsBandwidth;
+
+					private Long vpcBurstBandwidth;
+
+					private String name;
+
+					public Long getVpcBandwidth() {
+						return this.vpcBandwidth;
+					}
+
+					public void setVpcBandwidth(Long vpcBandwidth) {
+						this.vpcBandwidth = vpcBandwidth;
+					}
+
+					public Long getEbsBurstBandwidth() {
+						return this.ebsBurstBandwidth;
+					}
+
+					public void setEbsBurstBandwidth(Long ebsBurstBandwidth) {
+						this.ebsBurstBandwidth = ebsBurstBandwidth;
+					}
+
+					public Long getEbsBandwidth() {
+						return this.ebsBandwidth;
+					}
+
+					public void setEbsBandwidth(Long ebsBandwidth) {
+						this.ebsBandwidth = ebsBandwidth;
+					}
+
+					public Long getVpcBurstBandwidth() {
+						return this.vpcBurstBandwidth;
+					}
+
+					public void setVpcBurstBandwidth(Long vpcBurstBandwidth) {
+						this.vpcBurstBandwidth = vpcBurstBandwidth;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+				}
+			}
 		}
 	}
 

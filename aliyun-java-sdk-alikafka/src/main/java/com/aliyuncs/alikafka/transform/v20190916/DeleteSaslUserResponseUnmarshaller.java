@@ -23,9 +23,9 @@ public class DeleteSaslUserResponseUnmarshaller {
 	public static DeleteSaslUserResponse unmarshall(DeleteSaslUserResponse deleteSaslUserResponse, UnmarshallerContext _ctx) {
 		
 		deleteSaslUserResponse.setRequestId(_ctx.stringValue("DeleteSaslUserResponse.RequestId"));
-		deleteSaslUserResponse.setSuccess(_ctx.booleanValue("DeleteSaslUserResponse.Success"));
 		deleteSaslUserResponse.setCode(_ctx.integerValue("DeleteSaslUserResponse.Code"));
 		deleteSaslUserResponse.setMessage(_ctx.stringValue("DeleteSaslUserResponse.Message"));
+		deleteSaslUserResponse.setSuccess(_ctx.booleanValue("DeleteSaslUserResponse.Success"));
 	 
 	 	return deleteSaslUserResponse;
 	}

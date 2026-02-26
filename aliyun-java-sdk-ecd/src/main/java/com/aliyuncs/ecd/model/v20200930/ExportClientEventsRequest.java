@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -26,6 +27,8 @@ public class ExportClientEventsRequest extends RpcAcsRequest<ExportClientEventsR
 	   
 
 	private String officeSiteId;
+
+	private List<String> eventTypess;
 
 	private String startTime;
 
@@ -42,8 +45,10 @@ public class ExportClientEventsRequest extends RpcAcsRequest<ExportClientEventsR
 	private Integer maxResults;
 
 	private String eventType;
+
+	private String langType;
 	public ExportClientEventsRequest() {
-		super("ecd", "2020-09-30", "ExportClientEvents");
+		super("ecd", "2020-09-30", "ExportClientEvents", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +65,19 @@ public class ExportClientEventsRequest extends RpcAcsRequest<ExportClientEventsR
 		if(officeSiteId != null){
 			putQueryParameter("OfficeSiteId", officeSiteId);
 		}
+	}
+
+	public List<String> getEventTypess() {
+		return this.eventTypess;
+	}
+
+	public void setEventTypess(List<String> eventTypess) {
+		this.eventTypess = eventTypess;	
+		if (eventTypess != null) {
+			for (int i = 0; i < eventTypess.size(); i++) {
+				putQueryParameter("EventTypes." + (i + 1) , eventTypess.get(i));
+			}
+		}	
 	}
 
 	public String getStartTime() {
@@ -147,6 +165,17 @@ public class ExportClientEventsRequest extends RpcAcsRequest<ExportClientEventsR
 		this.eventType = eventType;
 		if(eventType != null){
 			putQueryParameter("EventType", eventType);
+		}
+	}
+
+	public String getLangType() {
+		return this.langType;
+	}
+
+	public void setLangType(String langType) {
+		this.langType = langType;
+		if(langType != null){
+			putQueryParameter("LangType", langType);
 		}
 	}
 

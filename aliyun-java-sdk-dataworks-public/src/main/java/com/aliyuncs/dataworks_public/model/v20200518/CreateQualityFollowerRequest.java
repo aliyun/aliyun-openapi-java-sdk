@@ -25,13 +25,15 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class CreateQualityFollowerRequest extends RpcAcsRequest<CreateQualityFollowerResponse> {
 	   
 
-	private Integer alarmMode;
-
 	private String projectName;
 
 	private String follower;
 
 	private Long entityId;
+
+	private Integer alarmMode;
+
+	private Long projectId;
 	public CreateQualityFollowerRequest() {
 		super("dataworks-public", "2020-05-18", "CreateQualityFollower");
 		setMethod(MethodType.POST);
@@ -39,17 +41,6 @@ public class CreateQualityFollowerRequest extends RpcAcsRequest<CreateQualityFol
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getAlarmMode() {
-		return this.alarmMode;
-	}
-
-	public void setAlarmMode(Integer alarmMode) {
-		this.alarmMode = alarmMode;
-		if(alarmMode != null){
-			putBodyParameter("AlarmMode", alarmMode.toString());
-		}
 	}
 
 	public String getProjectName() {
@@ -82,6 +73,28 @@ public class CreateQualityFollowerRequest extends RpcAcsRequest<CreateQualityFol
 		this.entityId = entityId;
 		if(entityId != null){
 			putBodyParameter("EntityId", entityId.toString());
+		}
+	}
+
+	public Integer getAlarmMode() {
+		return this.alarmMode;
+	}
+
+	public void setAlarmMode(Integer alarmMode) {
+		this.alarmMode = alarmMode;
+		if(alarmMode != null){
+			putBodyParameter("AlarmMode", alarmMode.toString());
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

@@ -24,6 +24,8 @@ public class AdjustVideoColorResponseUnmarshaller {
 	public static AdjustVideoColorResponse unmarshall(AdjustVideoColorResponse adjustVideoColorResponse, UnmarshallerContext _ctx) {
 		
 		adjustVideoColorResponse.setRequestId(_ctx.stringValue("AdjustVideoColorResponse.RequestId"));
+		adjustVideoColorResponse.setCode(_ctx.stringValue("AdjustVideoColorResponse.Code"));
+		adjustVideoColorResponse.setMessage(_ctx.stringValue("AdjustVideoColorResponse.Message"));
 
 		Data data = new Data();
 		data.setVideoUrl(_ctx.stringValue("AdjustVideoColorResponse.Data.VideoUrl"));

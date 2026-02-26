@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ddoscoo.model.v20200101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ddoscoo.transform.v20200101.DescribeDefenseCountStatisticsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -54,6 +55,10 @@ public class DescribeDefenseCountStatisticsResponse extends AcsResponse {
 
 		private Integer secHighSpeedCountRemain;
 
+		private List<HkResourcePackageDetail> hkPackageDetail;
+
+		private List<UnlimitedResourcePackageDetail> unlimitedPackageDetail;
+
 		public Integer getFlowPackCountRemain() {
 			return this.flowPackCountRemain;
 		}
@@ -84,6 +89,108 @@ public class DescribeDefenseCountStatisticsResponse extends AcsResponse {
 
 		public void setSecHighSpeedCountRemain(Integer secHighSpeedCountRemain) {
 			this.secHighSpeedCountRemain = secHighSpeedCountRemain;
+		}
+
+		public List<HkResourcePackageDetail> getHkPackageDetail() {
+			return this.hkPackageDetail;
+		}
+
+		public void setHkPackageDetail(List<HkResourcePackageDetail> hkPackageDetail) {
+			this.hkPackageDetail = hkPackageDetail;
+		}
+
+		public List<UnlimitedResourcePackageDetail> getUnlimitedPackageDetail() {
+			return this.unlimitedPackageDetail;
+		}
+
+		public void setUnlimitedPackageDetail(List<UnlimitedResourcePackageDetail> unlimitedPackageDetail) {
+			this.unlimitedPackageDetail = unlimitedPackageDetail;
+		}
+
+		public static class HkResourcePackageDetail {
+
+			private Long endTime;
+
+			private Long startTime;
+
+			private Long buyNum;
+
+			private Long usedNum;
+
+			public Long getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
+			}
+
+			public Long getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(Long startTime) {
+				this.startTime = startTime;
+			}
+
+			public Long getBuyNum() {
+				return this.buyNum;
+			}
+
+			public void setBuyNum(Long buyNum) {
+				this.buyNum = buyNum;
+			}
+
+			public Long getUsedNum() {
+				return this.usedNum;
+			}
+
+			public void setUsedNum(Long usedNum) {
+				this.usedNum = usedNum;
+			}
+		}
+
+		public static class UnlimitedResourcePackageDetail {
+
+			private Long endTime;
+
+			private Long startTime;
+
+			private Long buyNum;
+
+			private Long usedNum;
+
+			public Long getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
+			}
+
+			public Long getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(Long startTime) {
+				this.startTime = startTime;
+			}
+
+			public Long getBuyNum() {
+				return this.buyNum;
+			}
+
+			public void setBuyNum(Long buyNum) {
+				this.buyNum = buyNum;
+			}
+
+			public Long getUsedNum() {
+				return this.usedNum;
+			}
+
+			public void setUsedNum(Long usedNum) {
+				this.usedNum = usedNum;
+			}
 		}
 	}
 

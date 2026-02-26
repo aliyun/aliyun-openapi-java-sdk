@@ -35,6 +35,8 @@ public class GetTaskResponseUnmarshaller {
 		getTaskResponse.setTaskType(_ctx.stringValue("GetTaskResponse.TaskType"));
 		getTaskResponse.setTaskId(_ctx.stringValue("GetTaskResponse.TaskId"));
 		getTaskResponse.setTags(_ctx.mapValue("GetTaskResponse.Tags"));
+		getTaskResponse.setTaskRequestDefinition(_ctx.stringValue("GetTaskResponse.TaskRequestDefinition"));
+		getTaskResponse.setProgress(_ctx.integerValue("GetTaskResponse.Progress"));
 	 
 	 	return getTaskResponse;
 	}

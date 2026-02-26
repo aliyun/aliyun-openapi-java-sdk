@@ -25,6 +25,12 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainDetailDataByLayerRequest extends RpcAcsRequest<DescribeDomainDetailDataByLayerResponse> {
 	   
 
+	private String field;
+
+	private String domainName;
+
+	private String endTime;
+
 	private String locationNameEn;
 
 	private String startTime;
@@ -32,14 +38,6 @@ public class DescribeDomainDetailDataByLayerRequest extends RpcAcsRequest<Descri
 	private String ispNameEn;
 
 	private String layer;
-
-	private String domainName;
-
-	private String endTime;
-
-	private Long ownerId;
-
-	private String field;
 	public DescribeDomainDetailDataByLayerRequest() {
 		super("Cdn", "2018-05-10", "DescribeDomainDetailDataByLayer");
 		setMethod(MethodType.GET);
@@ -47,6 +45,39 @@ public class DescribeDomainDetailDataByLayerRequest extends RpcAcsRequest<Descri
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getField() {
+		return this.field;
+	}
+
+	public void setField(String field) {
+		this.field = field;
+		if(field != null){
+			putQueryParameter("Field", field);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public String getLocationNameEn() {
@@ -90,50 +121,6 @@ public class DescribeDomainDetailDataByLayerRequest extends RpcAcsRequest<Descri
 		this.layer = layer;
 		if(layer != null){
 			putQueryParameter("Layer", layer);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getField() {
-		return this.field;
-	}
-
-	public void setField(String field) {
-		this.field = field;
-		if(field != null){
-			putQueryParameter("Field", field);
 		}
 	}
 

@@ -27,14 +27,14 @@ public class DescribeDcdnServiceResponseUnmarshaller {
 	public static DescribeDcdnServiceResponse unmarshall(DescribeDcdnServiceResponse describeDcdnServiceResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnServiceResponse.setRequestId(_ctx.stringValue("DescribeDcdnServiceResponse.RequestId"));
-		describeDcdnServiceResponse.setInstanceId(_ctx.stringValue("DescribeDcdnServiceResponse.InstanceId"));
-		describeDcdnServiceResponse.setInternetChargeType(_ctx.stringValue("DescribeDcdnServiceResponse.InternetChargeType"));
-		describeDcdnServiceResponse.setOpeningTime(_ctx.stringValue("DescribeDcdnServiceResponse.OpeningTime"));
-		describeDcdnServiceResponse.setChangingChargeType(_ctx.stringValue("DescribeDcdnServiceResponse.ChangingChargeType"));
-		describeDcdnServiceResponse.setChangingAffectTime(_ctx.stringValue("DescribeDcdnServiceResponse.ChangingAffectTime"));
-		describeDcdnServiceResponse.setWebsocketChangingType(_ctx.stringValue("DescribeDcdnServiceResponse.WebsocketChangingType"));
-		describeDcdnServiceResponse.setWebsocketType(_ctx.stringValue("DescribeDcdnServiceResponse.WebsocketType"));
 		describeDcdnServiceResponse.setWebsocketChangingTime(_ctx.stringValue("DescribeDcdnServiceResponse.WebsocketChangingTime"));
+		describeDcdnServiceResponse.setWebsocketChangingType(_ctx.stringValue("DescribeDcdnServiceResponse.WebsocketChangingType"));
+		describeDcdnServiceResponse.setChangingAffectTime(_ctx.stringValue("DescribeDcdnServiceResponse.ChangingAffectTime"));
+		describeDcdnServiceResponse.setChangingChargeType(_ctx.stringValue("DescribeDcdnServiceResponse.ChangingChargeType"));
+		describeDcdnServiceResponse.setOpeningTime(_ctx.stringValue("DescribeDcdnServiceResponse.OpeningTime"));
+		describeDcdnServiceResponse.setInternetChargeType(_ctx.stringValue("DescribeDcdnServiceResponse.InternetChargeType"));
+		describeDcdnServiceResponse.setWebsocketType(_ctx.stringValue("DescribeDcdnServiceResponse.WebsocketType"));
+		describeDcdnServiceResponse.setInstanceId(_ctx.stringValue("DescribeDcdnServiceResponse.InstanceId"));
 
 		List<LockReason> operationLocks = new ArrayList<LockReason>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnServiceResponse.OperationLocks.Length"); i++) {

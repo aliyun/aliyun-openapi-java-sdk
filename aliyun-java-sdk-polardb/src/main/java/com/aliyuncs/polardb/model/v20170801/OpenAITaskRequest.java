@@ -27,6 +27,10 @@ public class OpenAITaskRequest extends RpcAcsRequest<OpenAITaskResponse> {
 
 	private Long resourceOwnerId;
 
+	private String nodeType;
+
+	private String resourceGroupId;
+
 	private String password;
 
 	private String resourceOwnerAccount;
@@ -39,7 +43,7 @@ public class OpenAITaskRequest extends RpcAcsRequest<OpenAITaskResponse> {
 
 	private String username;
 	public OpenAITaskRequest() {
-		super("polardb", "2017-08-01", "OpenAITask");
+		super("polardb", "2017-08-01", "OpenAITask", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,6 +59,28 @@ public class OpenAITaskRequest extends RpcAcsRequest<OpenAITaskResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

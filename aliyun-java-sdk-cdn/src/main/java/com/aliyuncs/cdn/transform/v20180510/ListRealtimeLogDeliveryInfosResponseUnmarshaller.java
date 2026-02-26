@@ -31,8 +31,8 @@ public class ListRealtimeLogDeliveryInfosResponseUnmarshaller {
 		List<RealtimeLogDeliveryInfos> content = new ArrayList<RealtimeLogDeliveryInfos>();
 		for (int i = 0; i < _ctx.lengthValue("ListRealtimeLogDeliveryInfosResponse.Content.Length"); i++) {
 			RealtimeLogDeliveryInfos realtimeLogDeliveryInfos = new RealtimeLogDeliveryInfos();
-			realtimeLogDeliveryInfos.setProject(_ctx.stringValue("ListRealtimeLogDeliveryInfosResponse.Content["+ i +"].Project"));
 			realtimeLogDeliveryInfos.setLogstore(_ctx.stringValue("ListRealtimeLogDeliveryInfosResponse.Content["+ i +"].Logstore"));
+			realtimeLogDeliveryInfos.setProject(_ctx.stringValue("ListRealtimeLogDeliveryInfosResponse.Content["+ i +"].Project"));
 			realtimeLogDeliveryInfos.setRegion(_ctx.stringValue("ListRealtimeLogDeliveryInfosResponse.Content["+ i +"].Region"));
 
 			content.add(realtimeLogDeliveryInfos);

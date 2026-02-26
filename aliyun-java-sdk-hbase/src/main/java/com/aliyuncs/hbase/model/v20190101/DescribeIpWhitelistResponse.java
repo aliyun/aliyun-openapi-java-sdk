@@ -47,19 +47,11 @@ public class DescribeIpWhitelistResponse extends AcsResponse {
 
 	public static class Group {
 
-		private String groupName;
-
 		private Integer ipVersion;
 
+		private String groupName;
+
 		private List<String> ipList;
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
 
 		public Integer getIpVersion() {
 			return this.ipVersion;
@@ -67,6 +59,14 @@ public class DescribeIpWhitelistResponse extends AcsResponse {
 
 		public void setIpVersion(Integer ipVersion) {
 			this.ipVersion = ipVersion;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 
 		public List<String> getIpList() {

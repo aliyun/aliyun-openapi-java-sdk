@@ -52,6 +52,8 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 
 	private String zoneId;
 
+	private String packageType;
+
 	private String status;
 	public DescribeElasticityAssurancesRequest() {
 		super("Ecs", "2014-05-26", "DescribeElasticityAssurances", "ecs");
@@ -205,6 +207,17 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getPackageType() {
+		return this.packageType;
+	}
+
+	public void setPackageType(String packageType) {
+		this.packageType = packageType;
+		if(packageType != null){
+			putQueryParameter("PackageType", packageType);
 		}
 	}
 

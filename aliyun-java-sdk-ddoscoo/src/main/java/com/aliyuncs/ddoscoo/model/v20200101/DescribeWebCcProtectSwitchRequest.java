@@ -30,7 +30,7 @@ public class DescribeWebCcProtectSwitchRequest extends RpcAcsRequest<DescribeWeb
 
 	private String resourceGroupId;
 	public DescribeWebCcProtectSwitchRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeWebCcProtectSwitch");
+		super("ddoscoo", "2020-01-01", "DescribeWebCcProtectSwitch", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,24 +32,24 @@ public class DescribeSqlFlashbakTaskResponseUnmarshaller {
 		List<SqlFlashbackTask> sqlFlashbackTasks = new ArrayList<SqlFlashbackTask>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks.Length"); i++) {
 			SqlFlashbackTask sqlFlashbackTask = new SqlFlashbackTask();
-			sqlFlashbackTask.setId(_ctx.longValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].Id"));
-			sqlFlashbackTask.setGmtCreate(_ctx.longValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].GmtCreate"));
-			sqlFlashbackTask.setGmtModified(_ctx.longValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].GmtModified"));
-			sqlFlashbackTask.setInstId(_ctx.stringValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].InstId"));
-			sqlFlashbackTask.setDbName(_ctx.stringValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].DbName"));
-			sqlFlashbackTask.setSearchStartTime(_ctx.longValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].SearchStartTime"));
-			sqlFlashbackTask.setSearchEndTime(_ctx.longValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].SearchEndTime"));
 			sqlFlashbackTask.setTableName(_ctx.stringValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].TableName"));
-			sqlFlashbackTask.setTraceId(_ctx.stringValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].TraceId"));
-			sqlFlashbackTask.setSqlType(_ctx.stringValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].SqlType"));
-			sqlFlashbackTask.setSqlPk(_ctx.stringValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].SqlPk"));
-			sqlFlashbackTask.setRecallType(_ctx.integerValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].RecallType"));
-			sqlFlashbackTask.setRecallStatus(_ctx.integerValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].RecallStatus"));
-			sqlFlashbackTask.setRecallProgress(_ctx.integerValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].RecallProgress"));
-			sqlFlashbackTask.setRecallRestoreType(_ctx.integerValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].RecallRestoreType"));
-			sqlFlashbackTask.setDownloadUrl(_ctx.stringValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].DownloadUrl"));
+			sqlFlashbackTask.setSearchEndTime(_ctx.longValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].SearchEndTime"));
 			sqlFlashbackTask.setExpireTime(_ctx.longValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].ExpireTime"));
+			sqlFlashbackTask.setDownloadUrl(_ctx.stringValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].DownloadUrl"));
+			sqlFlashbackTask.setRecallProgress(_ctx.integerValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].RecallProgress"));
+			sqlFlashbackTask.setSqlPk(_ctx.stringValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].SqlPk"));
+			sqlFlashbackTask.setInstId(_ctx.stringValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].InstId"));
+			sqlFlashbackTask.setRecallType(_ctx.integerValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].RecallType"));
+			sqlFlashbackTask.setSearchStartTime(_ctx.longValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].SearchStartTime"));
+			sqlFlashbackTask.setGmtModified(_ctx.longValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].GmtModified"));
 			sqlFlashbackTask.setSqlCounter(_ctx.longValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].SqlCounter"));
+			sqlFlashbackTask.setDbName(_ctx.stringValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].DbName"));
+			sqlFlashbackTask.setRecallRestoreType(_ctx.integerValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].RecallRestoreType"));
+			sqlFlashbackTask.setGmtCreate(_ctx.longValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].GmtCreate"));
+			sqlFlashbackTask.setTraceId(_ctx.stringValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].TraceId"));
+			sqlFlashbackTask.setId(_ctx.longValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].Id"));
+			sqlFlashbackTask.setRecallStatus(_ctx.integerValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].RecallStatus"));
+			sqlFlashbackTask.setSqlType(_ctx.stringValue("DescribeSqlFlashbakTaskResponse.SqlFlashbackTasks["+ i +"].SqlType"));
 
 			sqlFlashbackTasks.add(sqlFlashbackTask);
 		}

@@ -27,27 +27,28 @@ public class GetExperimentTaskResponseUnmarshaller {
 	public static GetExperimentTaskResponse unmarshall(GetExperimentTaskResponse getExperimentTaskResponse, UnmarshallerContext _ctx) {
 		
 		getExperimentTaskResponse.setRequestId(_ctx.stringValue("GetExperimentTaskResponse.RequestId"));
-		getExperimentTaskResponse.setExperimentId(_ctx.stringValue("GetExperimentTaskResponse.ExperimentId"));
+		getExperimentTaskResponse.setTaskId(_ctx.stringValue("GetExperimentTaskResponse.TaskId"));
 		getExperimentTaskResponse.setExperimentName(_ctx.stringValue("GetExperimentTaskResponse.ExperimentName"));
+		getExperimentTaskResponse.setState(_ctx.stringValue("GetExperimentTaskResponse.State"));
+		getExperimentTaskResponse.setExperimentId(_ctx.stringValue("GetExperimentTaskResponse.ExperimentId"));
 		getExperimentTaskResponse.setHttpStatusCode(_ctx.integerValue("GetExperimentTaskResponse.HttpStatusCode"));
 		getExperimentTaskResponse.setStartTime(_ctx.longValue("GetExperimentTaskResponse.StartTime"));
-		getExperimentTaskResponse.setState(_ctx.stringValue("GetExperimentTaskResponse.State"));
 		getExperimentTaskResponse.setSuccess(_ctx.booleanValue("GetExperimentTaskResponse.Success"));
-		getExperimentTaskResponse.setTaskId(_ctx.stringValue("GetExperimentTaskResponse.TaskId"));
 		getExperimentTaskResponse.setResult(_ctx.stringValue("GetExperimentTaskResponse.Result"));
+		getExperimentTaskResponse.setNamespace(_ctx.stringValue("GetExperimentTaskResponse.Namespace"));
 
 		List<ActivitiesItem> activities = new ArrayList<ActivitiesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetExperimentTaskResponse.Activities.Length"); i++) {
 			ActivitiesItem activitiesItem = new ActivitiesItem();
-			activitiesItem.setActivityId(_ctx.stringValue("GetExperimentTaskResponse.Activities["+ i +"].ActivityId"));
-			activitiesItem.setActivityName(_ctx.stringValue("GetExperimentTaskResponse.Activities["+ i +"].ActivityName"));
-			activitiesItem.setCheckState(_ctx.stringValue("GetExperimentTaskResponse.Activities["+ i +"].CheckState"));
 			activitiesItem.setEndTime(_ctx.longValue("GetExperimentTaskResponse.Activities["+ i +"].EndTime"));
-			activitiesItem.setExperimentTaskId(_ctx.stringValue("GetExperimentTaskResponse.Activities["+ i +"].ExperimentTaskId"));
-			activitiesItem.setRunResult(_ctx.stringValue("GetExperimentTaskResponse.Activities["+ i +"].RunResult"));
 			activitiesItem.setStartTime(_ctx.longValue("GetExperimentTaskResponse.Activities["+ i +"].StartTime"));
+			activitiesItem.setCheckState(_ctx.stringValue("GetExperimentTaskResponse.Activities["+ i +"].CheckState"));
+			activitiesItem.setRunResult(_ctx.stringValue("GetExperimentTaskResponse.Activities["+ i +"].RunResult"));
 			activitiesItem.setState(_ctx.stringValue("GetExperimentTaskResponse.Activities["+ i +"].State"));
+			activitiesItem.setActivityId(_ctx.stringValue("GetExperimentTaskResponse.Activities["+ i +"].ActivityId"));
 			activitiesItem.setPhase(_ctx.stringValue("GetExperimentTaskResponse.Activities["+ i +"].Phase"));
+			activitiesItem.setActivityName(_ctx.stringValue("GetExperimentTaskResponse.Activities["+ i +"].ActivityName"));
+			activitiesItem.setExperimentTaskId(_ctx.stringValue("GetExperimentTaskResponse.Activities["+ i +"].ExperimentTaskId"));
 			activitiesItem.setTaskId(_ctx.stringValue("GetExperimentTaskResponse.Activities["+ i +"].TaskId"));
 
 			activities.add(activitiesItem);

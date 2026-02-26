@@ -23,9 +23,9 @@ public class DescribeGWSClusterPolicyResponseUnmarshaller {
 	public static DescribeGWSClusterPolicyResponse unmarshall(DescribeGWSClusterPolicyResponse describeGWSClusterPolicyResponse, UnmarshallerContext _ctx) {
 		
 		describeGWSClusterPolicyResponse.setRequestId(_ctx.stringValue("DescribeGWSClusterPolicyResponse.RequestId"));
+		describeGWSClusterPolicyResponse.setWatermark(_ctx.stringValue("DescribeGWSClusterPolicyResponse.Watermark"));
 		describeGWSClusterPolicyResponse.setClipboard(_ctx.stringValue("DescribeGWSClusterPolicyResponse.Clipboard"));
 		describeGWSClusterPolicyResponse.setUsbRedirect(_ctx.stringValue("DescribeGWSClusterPolicyResponse.UsbRedirect"));
-		describeGWSClusterPolicyResponse.setWatermark(_ctx.stringValue("DescribeGWSClusterPolicyResponse.Watermark"));
 		describeGWSClusterPolicyResponse.setLocalDrive(_ctx.stringValue("DescribeGWSClusterPolicyResponse.LocalDrive"));
 	 
 	 	return describeGWSClusterPolicyResponse;

@@ -23,21 +23,21 @@ public class DescribeAutoScaleConfigResponseUnmarshaller {
 	public static DescribeAutoScaleConfigResponse unmarshall(DescribeAutoScaleConfigResponse describeAutoScaleConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeAutoScaleConfigResponse.setRequestId(_ctx.stringValue("DescribeAutoScaleConfigResponse.RequestId"));
-		describeAutoScaleConfigResponse.setUid(_ctx.stringValue("DescribeAutoScaleConfigResponse.Uid"));
-		describeAutoScaleConfigResponse.setClusterId(_ctx.stringValue("DescribeAutoScaleConfigResponse.ClusterId"));
+		describeAutoScaleConfigResponse.setMaxNodesInCluster(_ctx.integerValue("DescribeAutoScaleConfigResponse.MaxNodesInCluster"));
+		describeAutoScaleConfigResponse.setGrowTimeoutInMinutes(_ctx.integerValue("DescribeAutoScaleConfigResponse.GrowTimeoutInMinutes"));
+		describeAutoScaleConfigResponse.setSpotStrategy(_ctx.stringValue("DescribeAutoScaleConfigResponse.SpotStrategy"));
+		describeAutoScaleConfigResponse.setEnableAutoShrink(_ctx.booleanValue("DescribeAutoScaleConfigResponse.EnableAutoShrink"));
 		describeAutoScaleConfigResponse.setClusterType(_ctx.stringValue("DescribeAutoScaleConfigResponse.ClusterType"));
 		describeAutoScaleConfigResponse.setEnableAutoGrow(_ctx.booleanValue("DescribeAutoScaleConfigResponse.EnableAutoGrow"));
-		describeAutoScaleConfigResponse.setEnableAutoShrink(_ctx.booleanValue("DescribeAutoScaleConfigResponse.EnableAutoShrink"));
+		describeAutoScaleConfigResponse.setExcludeNodes(_ctx.stringValue("DescribeAutoScaleConfigResponse.ExcludeNodes"));
 		describeAutoScaleConfigResponse.setGrowIntervalInMinutes(_ctx.integerValue("DescribeAutoScaleConfigResponse.GrowIntervalInMinutes"));
 		describeAutoScaleConfigResponse.setShrinkIntervalInMinutes(_ctx.integerValue("DescribeAutoScaleConfigResponse.ShrinkIntervalInMinutes"));
+		describeAutoScaleConfigResponse.setSpotPriceLimit(_ctx.stringValue("DescribeAutoScaleConfigResponse.SpotPriceLimit"));
 		describeAutoScaleConfigResponse.setShrinkIdleTimes(_ctx.integerValue("DescribeAutoScaleConfigResponse.ShrinkIdleTimes"));
-		describeAutoScaleConfigResponse.setGrowTimeoutInMinutes(_ctx.integerValue("DescribeAutoScaleConfigResponse.GrowTimeoutInMinutes"));
 		describeAutoScaleConfigResponse.setExtraNodesGrowRatio(_ctx.integerValue("DescribeAutoScaleConfigResponse.ExtraNodesGrowRatio"));
 		describeAutoScaleConfigResponse.setGrowRatio(_ctx.integerValue("DescribeAutoScaleConfigResponse.GrowRatio"));
-		describeAutoScaleConfigResponse.setMaxNodesInCluster(_ctx.integerValue("DescribeAutoScaleConfigResponse.MaxNodesInCluster"));
-		describeAutoScaleConfigResponse.setExcludeNodes(_ctx.stringValue("DescribeAutoScaleConfigResponse.ExcludeNodes"));
-		describeAutoScaleConfigResponse.setSpotStrategy(_ctx.stringValue("DescribeAutoScaleConfigResponse.SpotStrategy"));
-		describeAutoScaleConfigResponse.setSpotPriceLimit(_ctx.stringValue("DescribeAutoScaleConfigResponse.SpotPriceLimit"));
+		describeAutoScaleConfigResponse.setUid(_ctx.stringValue("DescribeAutoScaleConfigResponse.Uid"));
+		describeAutoScaleConfigResponse.setClusterId(_ctx.stringValue("DescribeAutoScaleConfigResponse.ClusterId"));
 	 
 	 	return describeAutoScaleConfigResponse;
 	}

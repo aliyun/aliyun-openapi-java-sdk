@@ -1,3 +1,58 @@
+2023-06-25 Version: 1.1.8
+- Support better trace logging for error locating.
+- Improve API definition.
+- Better logging.
+- Log response data.
+- Blacklist certain user.
+- Publish document.
+- Optimize RAM authentication.
+- Fix billing pop service.
+- Regular RAM error message.
+- Improve RAM authentication.
+
+2023-05-17 Version: 1.1.7
+- Account Halt Check by Default.
+
+2023-05-10 Version: 1.1.6
+- Supported insufficient balance check.
+- Other improvements.
+
+2023-04-28 Version: 1.1.5
+- Change api backend.
+- Modify error code.
+- Delete headers module in response.
+- Add return param .
+- Fixed bug.
+- Change to brick.
+- Supported for hiding old api.
+- Access bill.
+- Improve error code.
+- Add credit verify.
+
+2023-03-01 Version: 1.1.4
+- Change param invisible.
+
+2023-02-24 Version: 1.1.3
+- Change backend api.
+- Change to new api.
+
+2023-02-03 Version: 1.1.2
+- Fix docs error.
+- Fix error code.
+- Set input param must.
+
+2023-01-13 Version: 1.1.1
+- Support Service of empty number.
+
+2023-01-09 Version: 1.1.0
+- Delete numberType.
+
+2022-10-20 Version: 1.0.9
+- Support Service of number analysis.
+
+2022-09-21 Version: 1.0.8
+- Automatically generate sdk tasks.
+
 2022-07-26 Version: 1.0.7
 - Support Service of number analysis.
 

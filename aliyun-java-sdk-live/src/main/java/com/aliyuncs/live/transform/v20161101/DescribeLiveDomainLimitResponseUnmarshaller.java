@@ -31,9 +31,13 @@ public class DescribeLiveDomainLimitResponseUnmarshaller {
 		List<LiveDomainLimit> liveDomainLimitList = new ArrayList<LiveDomainLimit>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList.Length"); i++) {
 			LiveDomainLimit liveDomainLimit = new LiveDomainLimit();
-			liveDomainLimit.setDomainName(_ctx.stringValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList["+ i +"].DomainName"));
-			liveDomainLimit.setLimitNum(_ctx.integerValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList["+ i +"].LimitNum"));
 			liveDomainLimit.setLimitTranscodeNum(_ctx.integerValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList["+ i +"].LimitTranscodeNum"));
+			liveDomainLimit.setCurrentTranscodeNum(_ctx.integerValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList["+ i +"].CurrentTranscodeNum"));
+			liveDomainLimit.setLimitNum(_ctx.integerValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList["+ i +"].LimitNum"));
+			liveDomainLimit.setLimitTransferNum(_ctx.integerValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList["+ i +"].LimitTransferNum"));
+			liveDomainLimit.setCurrentNum(_ctx.integerValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList["+ i +"].CurrentNum"));
+			liveDomainLimit.setCurrentTransferNum(_ctx.integerValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList["+ i +"].CurrentTransferNum"));
+			liveDomainLimit.setDomainName(_ctx.stringValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList["+ i +"].DomainName"));
 
 			liveDomainLimitList.add(liveDomainLimit);
 		}

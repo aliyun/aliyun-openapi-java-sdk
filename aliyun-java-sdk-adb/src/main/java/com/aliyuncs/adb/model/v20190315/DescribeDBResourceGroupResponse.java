@@ -27,6 +27,8 @@ public class DescribeDBResourceGroupResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String dBClusterId;
+
 	private List<PoolInfo> groupsInfo;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class DescribeDBResourceGroupResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
 	}
 
 	public List<PoolInfo> getGroupsInfo() {
@@ -58,6 +68,8 @@ public class DescribeDBResourceGroupResponse extends AcsResponse {
 		private String groupUsers;
 
 		private Integer nodeNum;
+
+		private List<String> groupUserList;
 
 		public String getGroupType() {
 			return this.groupType;
@@ -105,6 +117,14 @@ public class DescribeDBResourceGroupResponse extends AcsResponse {
 
 		public void setNodeNum(Integer nodeNum) {
 			this.nodeNum = nodeNum;
+		}
+
+		public List<String> getGroupUserList() {
+			return this.groupUserList;
+		}
+
+		public void setGroupUserList(List<String> groupUserList) {
+			this.groupUserList = groupUserList;
 		}
 	}
 

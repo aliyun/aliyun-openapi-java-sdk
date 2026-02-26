@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SetZoneRecordStatusResponse extends AcsResponse {
 
+	private String status;
+
 	private String requestId;
 
 	private Long recordId;
 
-	private String status;
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class SetZoneRecordStatusResponse extends AcsResponse {
 
 	public void setRecordId(Long recordId) {
 		this.recordId = recordId;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	@Override

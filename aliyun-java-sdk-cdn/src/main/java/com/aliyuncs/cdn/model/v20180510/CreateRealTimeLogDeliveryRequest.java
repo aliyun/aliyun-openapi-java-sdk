@@ -25,11 +25,9 @@ import com.aliyuncs.cdn.Endpoint;
 public class CreateRealTimeLogDeliveryRequest extends RpcAcsRequest<CreateRealTimeLogDeliveryResponse> {
 	   
 
-	private String project;
-
-	private Long ownerId;
-
 	private String domain;
+
+	private String project;
 
 	private String region;
 
@@ -43,28 +41,6 @@ public class CreateRealTimeLogDeliveryRequest extends RpcAcsRequest<CreateRealTi
 		} catch (Exception e) {}
 	}
 
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getDomain() {
 		return this.domain;
 	}
@@ -73,6 +49,17 @@ public class CreateRealTimeLogDeliveryRequest extends RpcAcsRequest<CreateRealTi
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
 		}
 	}
 

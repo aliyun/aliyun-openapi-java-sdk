@@ -41,9 +41,7 @@ public class ListUnassignedNumbersResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListUnassignedNumbersResponse.Data.List.Length"); i++) {
 			PhoneNumber phoneNumber = new PhoneNumber();
 			phoneNumber.setNumber(_ctx.stringValue("ListUnassignedNumbersResponse.Data.List["+ i +"].Number"));
-			phoneNumber.setActive(_ctx.booleanValue("ListUnassignedNumbersResponse.Data.List["+ i +"].Active"));
 			phoneNumber.setCity(_ctx.stringValue("ListUnassignedNumbersResponse.Data.List["+ i +"].City"));
-			phoneNumber.setUsage(_ctx.booleanValue("ListUnassignedNumbersResponse.Data.List["+ i +"].Usage"));
 			phoneNumber.setProvince(_ctx.stringValue("ListUnassignedNumbersResponse.Data.List["+ i +"].Province"));
 
 			list.add(phoneNumber);

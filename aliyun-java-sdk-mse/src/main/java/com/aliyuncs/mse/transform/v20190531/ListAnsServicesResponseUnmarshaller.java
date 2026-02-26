@@ -43,6 +43,7 @@ public class ListAnsServicesResponseUnmarshaller {
 			simpleNacosAnsService.setIpCount(_ctx.integerValue("ListAnsServicesResponse.Data["+ i +"].IpCount"));
 			simpleNacosAnsService.setName(_ctx.stringValue("ListAnsServicesResponse.Data["+ i +"].Name"));
 			simpleNacosAnsService.setClusterCount(_ctx.integerValue("ListAnsServicesResponse.Data["+ i +"].ClusterCount"));
+			simpleNacosAnsService.setSource(_ctx.stringValue("ListAnsServicesResponse.Data["+ i +"].Source"));
 
 			data.add(simpleNacosAnsService);
 		}

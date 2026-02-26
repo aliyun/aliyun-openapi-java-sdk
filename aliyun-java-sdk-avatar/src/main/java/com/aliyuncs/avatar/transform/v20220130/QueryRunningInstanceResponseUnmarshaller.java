@@ -37,6 +37,7 @@ public class QueryRunningInstanceResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("QueryRunningInstanceResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setSessionId(_ctx.stringValue("QueryRunningInstanceResponse.Data["+ i +"].SessionId"));
+			dataItem.setToken(_ctx.stringValue("QueryRunningInstanceResponse.Data["+ i +"].Token"));
 
 			Channel channel = new Channel();
 			channel.setChannelId(_ctx.stringValue("QueryRunningInstanceResponse.Data["+ i +"].Channel.ChannelId"));

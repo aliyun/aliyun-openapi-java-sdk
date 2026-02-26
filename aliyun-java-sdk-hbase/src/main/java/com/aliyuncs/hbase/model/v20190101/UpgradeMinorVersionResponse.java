@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpgradeMinorVersionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String upgradingComponents;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getUpgradingComponents() {
 		return this.upgradingComponents;
@@ -42,6 +34,14 @@ public class UpgradeMinorVersionResponse extends AcsResponse {
 
 	public void setUpgradingComponents(String upgradingComponents) {
 		this.upgradingComponents = upgradingComponents;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

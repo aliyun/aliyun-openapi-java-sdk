@@ -27,7 +27,7 @@ public class DescribeDBInstanceUsageRequest extends RpcAcsRequest<DescribeDBInst
 
 	private String clusterId;
 	public DescribeDBInstanceUsageRequest() {
-		super("HBase", "2019-01-01", "DescribeDBInstanceUsage", "hbase");
+		super("HBase", "2019-01-01", "DescribeDBInstanceUsage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

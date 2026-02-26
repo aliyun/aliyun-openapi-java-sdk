@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDeletedInstancesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Long totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Long totalCount;
 
 	private List<Instance> instances;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeDeletedInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeDeletedInstancesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Instance> getInstances() {
@@ -77,29 +77,37 @@ public class DescribeDeletedInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
+		private String status;
+
 		private String instanceId;
+
+		private String regionId;
+
+		private String parentId;
+
+		private String clusterType;
 
 		private String instanceName;
 
-		private String status;
+		private String zoneId;
+
+		private String deleteTime;
+
+		private String moduleStackVersion;
 
 		private String majorVersion;
 
 		private String engine;
 
-		private String regionId;
-
-		private String zoneId;
-
 		private String createdTime;
 
-		private String deleteTime;
+		public String getStatus() {
+			return this.status;
+		}
 
-		private String clusterType;
-
-		private String moduleStackVersion;
-
-		private String parentId;
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -107,6 +115,30 @@ public class DescribeDeletedInstancesResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getParentId() {
+			return this.parentId;
+		}
+
+		public void setParentId(String parentId) {
+			this.parentId = parentId;
+		}
+
+		public String getClusterType() {
+			return this.clusterType;
+		}
+
+		public void setClusterType(String clusterType) {
+			this.clusterType = clusterType;
 		}
 
 		public String getInstanceName() {
@@ -117,12 +149,28 @@ public class DescribeDeletedInstancesResponse extends AcsResponse {
 			this.instanceName = instanceName;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getDeleteTime() {
+			return this.deleteTime;
+		}
+
+		public void setDeleteTime(String deleteTime) {
+			this.deleteTime = deleteTime;
+		}
+
+		public String getModuleStackVersion() {
+			return this.moduleStackVersion;
+		}
+
+		public void setModuleStackVersion(String moduleStackVersion) {
+			this.moduleStackVersion = moduleStackVersion;
 		}
 
 		public String getMajorVersion() {
@@ -141,60 +189,12 @@ public class DescribeDeletedInstancesResponse extends AcsResponse {
 			this.engine = engine;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
 		public String getCreatedTime() {
 			return this.createdTime;
 		}
 
 		public void setCreatedTime(String createdTime) {
 			this.createdTime = createdTime;
-		}
-
-		public String getDeleteTime() {
-			return this.deleteTime;
-		}
-
-		public void setDeleteTime(String deleteTime) {
-			this.deleteTime = deleteTime;
-		}
-
-		public String getClusterType() {
-			return this.clusterType;
-		}
-
-		public void setClusterType(String clusterType) {
-			this.clusterType = clusterType;
-		}
-
-		public String getModuleStackVersion() {
-			return this.moduleStackVersion;
-		}
-
-		public void setModuleStackVersion(String moduleStackVersion) {
-			this.moduleStackVersion = moduleStackVersion;
-		}
-
-		public String getParentId() {
-			return this.parentId;
-		}
-
-		public void setParentId(String parentId) {
-			this.parentId = parentId;
 		}
 	}
 

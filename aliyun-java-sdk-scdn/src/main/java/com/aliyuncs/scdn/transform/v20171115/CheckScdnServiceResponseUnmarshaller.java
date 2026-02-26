@@ -23,10 +23,10 @@ public class CheckScdnServiceResponseUnmarshaller {
 	public static CheckScdnServiceResponse unmarshall(CheckScdnServiceResponse checkScdnServiceResponse, UnmarshallerContext _ctx) {
 		
 		checkScdnServiceResponse.setRequestId(_ctx.stringValue("CheckScdnServiceResponse.RequestId"));
-		checkScdnServiceResponse.setEnabled(_ctx.booleanValue("CheckScdnServiceResponse.Enabled"));
-		checkScdnServiceResponse.setOnService(_ctx.booleanValue("CheckScdnServiceResponse.OnService"));
 		checkScdnServiceResponse.setInDebt(_ctx.booleanValue("CheckScdnServiceResponse.InDebt"));
+		checkScdnServiceResponse.setOnService(_ctx.booleanValue("CheckScdnServiceResponse.OnService"));
 		checkScdnServiceResponse.setInDebtOverdue(_ctx.booleanValue("CheckScdnServiceResponse.InDebtOverdue"));
+		checkScdnServiceResponse.setEnabled(_ctx.booleanValue("CheckScdnServiceResponse.Enabled"));
 	 
 	 	return checkScdnServiceResponse;
 	}

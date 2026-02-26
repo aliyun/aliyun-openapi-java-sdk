@@ -29,7 +29,7 @@ public class RegisterDelegatedAdministratorRequest extends RpcAcsRequest<Registe
 
 	private String servicePrincipal;
 	public RegisterDelegatedAdministratorRequest() {
-		super("ResourceManager", "2020-03-31", "RegisterDelegatedAdministrator");
+		super("ResourceManager", "2020-03-31", "RegisterDelegatedAdministrator", "resourcemanager");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

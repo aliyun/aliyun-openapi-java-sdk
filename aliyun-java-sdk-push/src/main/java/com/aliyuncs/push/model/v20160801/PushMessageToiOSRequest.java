@@ -29,6 +29,8 @@ public class PushMessageToiOSRequest extends RpcAcsRequest<PushMessageToiOSRespo
 
 	private String body;
 
+	private Boolean storeOffline;
+
 	private String jobKey;
 
 	private String target;
@@ -64,6 +66,17 @@ public class PushMessageToiOSRequest extends RpcAcsRequest<PushMessageToiOSRespo
 		this.body = body;
 		if(body != null){
 			putQueryParameter("Body", body);
+		}
+	}
+
+	public Boolean getStoreOffline() {
+		return this.storeOffline;
+	}
+
+	public void setStoreOffline(Boolean storeOffline) {
+		this.storeOffline = storeOffline;
+		if(storeOffline != null){
+			putQueryParameter("StoreOffline", storeOffline.toString());
 		}
 	}
 

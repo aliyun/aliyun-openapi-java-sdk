@@ -29,6 +29,8 @@ public class GetResourceTypeTemplateResponse extends AcsResponse {
 
 	private Map<Object,Object> templateBody;
 
+	private String templateContent;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -43,6 +45,14 @@ public class GetResourceTypeTemplateResponse extends AcsResponse {
 
 	public void setTemplateBody(Map<Object,Object> templateBody) {
 		this.templateBody = templateBody;
+	}
+
+	public String getTemplateContent() {
+		return this.templateContent;
+	}
+
+	public void setTemplateContent(String templateContent) {
+		this.templateContent = templateContent;
 	}
 
 	@Override

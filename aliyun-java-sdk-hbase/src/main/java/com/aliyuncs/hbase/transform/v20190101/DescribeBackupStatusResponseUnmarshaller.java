@@ -23,9 +23,9 @@ public class DescribeBackupStatusResponseUnmarshaller {
 	public static DescribeBackupStatusResponse unmarshall(DescribeBackupStatusResponse describeBackupStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeBackupStatusResponse.setRequestId(_ctx.stringValue("DescribeBackupStatusResponse.RequestId"));
-		describeBackupStatusResponse.setClusterId(_ctx.stringValue("DescribeBackupStatusResponse.ClusterId"));
-		describeBackupStatusResponse.setBackupStatus(_ctx.stringValue("DescribeBackupStatusResponse.BackupStatus"));
 		describeBackupStatusResponse.setBdsClusterId(_ctx.stringValue("DescribeBackupStatusResponse.BdsClusterId"));
+		describeBackupStatusResponse.setBackupStatus(_ctx.stringValue("DescribeBackupStatusResponse.BackupStatus"));
+		describeBackupStatusResponse.setClusterId(_ctx.stringValue("DescribeBackupStatusResponse.ClusterId"));
 	 
 	 	return describeBackupStatusResponse;
 	}

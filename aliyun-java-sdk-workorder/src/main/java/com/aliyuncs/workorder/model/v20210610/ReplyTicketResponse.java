@@ -26,11 +26,11 @@ public class ReplyTicketResponse extends AcsResponse {
 
 	private Integer code;
 
-	private String requestId;
-
 	private String message;
 
 	private String data;
+
+	private String requestId;
 
 	private Boolean success;
 
@@ -40,14 +40,6 @@ public class ReplyTicketResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -64,6 +56,14 @@ public class ReplyTicketResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {

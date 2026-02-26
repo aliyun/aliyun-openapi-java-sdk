@@ -25,6 +25,8 @@ import com.aliyuncs.live.Endpoint;
 public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<DescribeLiveDomainStreamTranscodeDataResponse> {
 	   
 
+	private String precision;
+
 	private String startTime;
 
 	private String split;
@@ -43,6 +45,17 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPrecision() {
+		return this.precision;
+	}
+
+	public void setPrecision(String precision) {
+		this.precision = precision;
+		if(precision != null){
+			putQueryParameter("Precision", precision);
+		}
 	}
 
 	public String getStartTime() {

@@ -32,10 +32,10 @@ public class ListPlaylistResponseUnmarshaller {
 		List<ProgramInfo> programList = new ArrayList<ProgramInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListPlaylistResponse.ProgramList.Length"); i++) {
 			ProgramInfo programInfo = new ProgramInfo();
-			programInfo.setProgramId(_ctx.stringValue("ListPlaylistResponse.ProgramList["+ i +"].ProgramId"));
-			programInfo.setProgramName(_ctx.stringValue("ListPlaylistResponse.ProgramList["+ i +"].ProgramName"));
 			programInfo.setCasterId(_ctx.stringValue("ListPlaylistResponse.ProgramList["+ i +"].CasterId"));
 			programInfo.setDomainName(_ctx.stringValue("ListPlaylistResponse.ProgramList["+ i +"].DomainName"));
+			programInfo.setProgramId(_ctx.stringValue("ListPlaylistResponse.ProgramList["+ i +"].ProgramId"));
+			programInfo.setProgramName(_ctx.stringValue("ListPlaylistResponse.ProgramList["+ i +"].ProgramName"));
 			programInfo.setRepeatNumber(_ctx.integerValue("ListPlaylistResponse.ProgramList["+ i +"].RepeatNumber"));
 			programInfo.setStatus(_ctx.integerValue("ListPlaylistResponse.ProgramList["+ i +"].Status"));
 

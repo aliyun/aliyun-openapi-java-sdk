@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLifecycleActionsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
-	private Integer maxResults;
+	private String requestId;
 
 	private Integer totalCount;
 
+	private Integer maxResults;
+
 	private List<LifecycleAction> lifecycleActions;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -51,12 +43,12 @@ public class DescribeLifecycleActionsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalCount() {
@@ -65,6 +57,14 @@ public class DescribeLifecycleActionsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<LifecycleAction> getLifecycleActions() {
@@ -77,15 +77,23 @@ public class DescribeLifecycleActionsResponse extends AcsResponse {
 
 	public static class LifecycleAction {
 
+		private String lifecycleHookId;
+
 		private String lifecycleActionToken;
 
 		private String lifecycleActionStatus;
 
 		private String lifecycleActionResult;
 
-		private String lifecycleHookId;
-
 		private List<String> instanceIds;
+
+		public String getLifecycleHookId() {
+			return this.lifecycleHookId;
+		}
+
+		public void setLifecycleHookId(String lifecycleHookId) {
+			this.lifecycleHookId = lifecycleHookId;
+		}
 
 		public String getLifecycleActionToken() {
 			return this.lifecycleActionToken;
@@ -109,14 +117,6 @@ public class DescribeLifecycleActionsResponse extends AcsResponse {
 
 		public void setLifecycleActionResult(String lifecycleActionResult) {
 			this.lifecycleActionResult = lifecycleActionResult;
-		}
-
-		public String getLifecycleHookId() {
-			return this.lifecycleHookId;
-		}
-
-		public void setLifecycleHookId(String lifecycleHookId) {
-			this.lifecycleHookId = lifecycleHookId;
 		}
 
 		public List<String> getInstanceIds() {

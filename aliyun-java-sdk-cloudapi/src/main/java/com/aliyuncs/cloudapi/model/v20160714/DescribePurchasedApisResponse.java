@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePurchasedApisResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<PurchasedApi> purchasedApis;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribePurchasedApisResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribePurchasedApisResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<PurchasedApi> getPurchasedApis() {
@@ -77,60 +77,42 @@ public class DescribePurchasedApisResponse extends AcsResponse {
 
 	public static class PurchasedApi {
 
-		private String regionId;
-
-		private String groupId;
-
-		private String groupName;
-
-		private String apiId;
-
-		private String apiName;
-
-		private String stageName;
-
-		private String description;
+		private String visibility;
 
 		private String purchasedTime;
 
-		public String getBizRegionId() {
-			return this.regionId;
+		private String apiId;
+
+		private String modifiedTime;
+
+		private String description;
+
+		private String groupName;
+
+		private String groupId;
+
+		private String deployedTime;
+
+		private String stageName;
+
+		private String apiName;
+
+		private String regionId;
+
+		public String getVisibility() {
+			return this.visibility;
 		}
 
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setVisibility(String visibility) {
+			this.visibility = visibility;
 		}
 
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
-		public String getRegionId() {
-			return this.regionId;
+		public String getPurchasedTime() {
+			return this.purchasedTime;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
+		public void setPurchasedTime(String purchasedTime) {
+			this.purchasedTime = purchasedTime;
 		}
 
 		public String getApiId() {
@@ -141,20 +123,12 @@ public class DescribePurchasedApisResponse extends AcsResponse {
 			this.apiId = apiId;
 		}
 
-		public String getApiName() {
-			return this.apiName;
+		public String getModifiedTime() {
+			return this.modifiedTime;
 		}
 
-		public void setApiName(String apiName) {
-			this.apiName = apiName;
-		}
-
-		public String getStageName() {
-			return this.stageName;
-		}
-
-		public void setStageName(String stageName) {
-			this.stageName = stageName;
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
 		}
 
 		public String getDescription() {
@@ -165,12 +139,52 @@ public class DescribePurchasedApisResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getPurchasedTime() {
-			return this.purchasedTime;
+		public String getGroupName() {
+			return this.groupName;
 		}
 
-		public void setPurchasedTime(String purchasedTime) {
-			this.purchasedTime = purchasedTime;
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getDeployedTime() {
+			return this.deployedTime;
+		}
+
+		public void setDeployedTime(String deployedTime) {
+			this.deployedTime = deployedTime;
+		}
+
+		public String getStageName() {
+			return this.stageName;
+		}
+
+		public void setStageName(String stageName) {
+			this.stageName = stageName;
+		}
+
+		public String getApiName() {
+			return this.apiName;
+		}
+
+		public void setApiName(String apiName) {
+			this.apiName = apiName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

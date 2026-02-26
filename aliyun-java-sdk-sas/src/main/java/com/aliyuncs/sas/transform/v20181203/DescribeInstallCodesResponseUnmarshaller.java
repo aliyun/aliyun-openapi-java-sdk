@@ -40,6 +40,7 @@ public class DescribeInstallCodesResponseUnmarshaller {
 			installCode.setOs(_ctx.stringValue("DescribeInstallCodesResponse.InstallCodes["+ i +"].Os"));
 			installCode.setTag(_ctx.stringValue("DescribeInstallCodesResponse.InstallCodes["+ i +"].Tag"));
 			installCode.setVendor(_ctx.integerValue("DescribeInstallCodesResponse.InstallCodes["+ i +"].Vendor"));
+			installCode.setProxyCluster(_ctx.stringValue("DescribeInstallCodesResponse.InstallCodes["+ i +"].ProxyCluster"));
 
 			installCodes.add(installCode);
 		}

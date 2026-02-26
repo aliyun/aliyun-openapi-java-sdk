@@ -25,21 +25,19 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeCdnReportRequest extends RpcAcsRequest<DescribeCdnReportResponse> {
 	   
 
+	private String area;
+
 	private Long reportId;
 
-	private String startTime;
-
-	private String area;
+	private String isOverseas;
 
 	private String domainName;
 
 	private String endTime;
 
-	private Long ownerId;
+	private String startTime;
 
 	private String httpCode;
-
-	private String isOverseas;
 	public DescribeCdnReportRequest() {
 		super("Cdn", "2018-05-10", "DescribeCdnReport");
 		setMethod(MethodType.POST);
@@ -47,6 +45,17 @@ public class DescribeCdnReportRequest extends RpcAcsRequest<DescribeCdnReportRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getArea() {
+		return this.area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+		if(area != null){
+			putQueryParameter("Area", area);
+		}
 	}
 
 	public Long getReportId() {
@@ -60,25 +69,14 @@ public class DescribeCdnReportRequest extends RpcAcsRequest<DescribeCdnReportRes
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getIsOverseas() {
+		return this.isOverseas;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getArea() {
-		return this.area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
-		if(area != null){
-			putQueryParameter("Area", area);
+	public void setIsOverseas(String isOverseas) {
+		this.isOverseas = isOverseas;
+		if(isOverseas != null){
+			putQueryParameter("IsOverseas", isOverseas);
 		}
 	}
 
@@ -104,14 +102,14 @@ public class DescribeCdnReportRequest extends RpcAcsRequest<DescribeCdnReportRes
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -123,17 +121,6 @@ public class DescribeCdnReportRequest extends RpcAcsRequest<DescribeCdnReportRes
 		this.httpCode = httpCode;
 		if(httpCode != null){
 			putQueryParameter("HttpCode", httpCode);
-		}
-	}
-
-	public String getIsOverseas() {
-		return this.isOverseas;
-	}
-
-	public void setIsOverseas(String isOverseas) {
-		this.isOverseas = isOverseas;
-		if(isOverseas != null){
-			putQueryParameter("IsOverseas", isOverseas);
 		}
 	}
 

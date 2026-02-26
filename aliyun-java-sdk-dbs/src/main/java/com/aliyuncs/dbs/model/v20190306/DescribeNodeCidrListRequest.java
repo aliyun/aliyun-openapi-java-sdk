@@ -31,7 +31,7 @@ public class DescribeNodeCidrListRequest extends RpcAcsRequest<DescribeNodeCidrL
 
 	private String region;
 	public DescribeNodeCidrListRequest() {
-		super("Dbs", "2019-03-06", "DescribeNodeCidrList");
+		super("Dbs", "2019-03-06", "DescribeNodeCidrList", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

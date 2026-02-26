@@ -26,19 +26,19 @@ import com.aliyuncs.ga.Endpoint;
 public class CreateEndpointGroupRequest extends RpcAcsRequest<CreateEndpointGroupResponse> {
 	   
 
+	private List<PortOverrides> portOverridess;
+
+	private Boolean healthCheckEnabled;
+
 	private String clientToken;
 
 	private Integer healthCheckIntervalSeconds;
-
-	private Integer trafficPercentage;
 
 	private String description;
 
 	private String healthCheckProtocol;
 
-	private Integer healthCheckPort;
-
-	private Integer thresholdCount;
+	private String endpointRequestProtocol;
 
 	private String listenerId;
 
@@ -46,11 +46,21 @@ public class CreateEndpointGroupRequest extends RpcAcsRequest<CreateEndpointGrou
 
 	private List<EndpointConfigurations> endpointConfigurationss;
 
+	private String endpointGroupType;
+
+	private String acceleratorId;
+
+	private List<Tag> tags;
+
+	private Integer trafficPercentage;
+
+	private Integer healthCheckPort;
+
+	private Integer thresholdCount;
+
 	private String endpointGroupRegion;
 
 	private String name;
-
-	private String acceleratorId;
 	public CreateEndpointGroupRequest() {
 		super("Ga", "2019-11-20", "CreateEndpointGroup", "gaplus");
 		setMethod(MethodType.POST);
@@ -58,6 +68,31 @@ public class CreateEndpointGroupRequest extends RpcAcsRequest<CreateEndpointGrou
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<PortOverrides> getPortOverridess() {
+		return this.portOverridess;
+	}
+
+	public void setPortOverridess(List<PortOverrides> portOverridess) {
+		this.portOverridess = portOverridess;	
+		if (portOverridess != null) {
+			for (int depth1 = 0; depth1 < portOverridess.size(); depth1++) {
+				putQueryParameter("PortOverrides." + (depth1 + 1) + ".ListenerPort" , portOverridess.get(depth1).getListenerPort());
+				putQueryParameter("PortOverrides." + (depth1 + 1) + ".EndpointPort" , portOverridess.get(depth1).getEndpointPort());
+			}
+		}	
+	}
+
+	public Boolean getHealthCheckEnabled() {
+		return this.healthCheckEnabled;
+	}
+
+	public void setHealthCheckEnabled(Boolean healthCheckEnabled) {
+		this.healthCheckEnabled = healthCheckEnabled;
+		if(healthCheckEnabled != null){
+			putQueryParameter("HealthCheckEnabled", healthCheckEnabled.toString());
+		}
 	}
 
 	public String getClientToken() {
@@ -79,17 +114,6 @@ public class CreateEndpointGroupRequest extends RpcAcsRequest<CreateEndpointGrou
 		this.healthCheckIntervalSeconds = healthCheckIntervalSeconds;
 		if(healthCheckIntervalSeconds != null){
 			putQueryParameter("HealthCheckIntervalSeconds", healthCheckIntervalSeconds.toString());
-		}
-	}
-
-	public Integer getTrafficPercentage() {
-		return this.trafficPercentage;
-	}
-
-	public void setTrafficPercentage(Integer trafficPercentage) {
-		this.trafficPercentage = trafficPercentage;
-		if(trafficPercentage != null){
-			putQueryParameter("TrafficPercentage", trafficPercentage.toString());
 		}
 	}
 
@@ -115,25 +139,14 @@ public class CreateEndpointGroupRequest extends RpcAcsRequest<CreateEndpointGrou
 		}
 	}
 
-	public Integer getHealthCheckPort() {
-		return this.healthCheckPort;
+	public String getEndpointRequestProtocol() {
+		return this.endpointRequestProtocol;
 	}
 
-	public void setHealthCheckPort(Integer healthCheckPort) {
-		this.healthCheckPort = healthCheckPort;
-		if(healthCheckPort != null){
-			putQueryParameter("HealthCheckPort", healthCheckPort.toString());
-		}
-	}
-
-	public Integer getThresholdCount() {
-		return this.thresholdCount;
-	}
-
-	public void setThresholdCount(Integer thresholdCount) {
-		this.thresholdCount = thresholdCount;
-		if(thresholdCount != null){
-			putQueryParameter("ThresholdCount", thresholdCount.toString());
+	public void setEndpointRequestProtocol(String endpointRequestProtocol) {
+		this.endpointRequestProtocol = endpointRequestProtocol;
+		if(endpointRequestProtocol != null){
+			putQueryParameter("EndpointRequestProtocol", endpointRequestProtocol);
 		}
 	}
 
@@ -167,11 +180,82 @@ public class CreateEndpointGroupRequest extends RpcAcsRequest<CreateEndpointGrou
 		this.endpointConfigurationss = endpointConfigurationss;	
 		if (endpointConfigurationss != null) {
 			for (int depth1 = 0; depth1 < endpointConfigurationss.size(); depth1++) {
-				putQueryParameter("EndpointConfigurations." + (depth1 + 1) + ".Endpoint" , endpointConfigurationss.get(depth1).getEndpoint());
-				putQueryParameter("EndpointConfigurations." + (depth1 + 1) + ".Weight" , endpointConfigurationss.get(depth1).getWeight());
 				putQueryParameter("EndpointConfigurations." + (depth1 + 1) + ".Type" , endpointConfigurationss.get(depth1).getType());
+				putQueryParameter("EndpointConfigurations." + (depth1 + 1) + ".EnableClientIPPreservation" , endpointConfigurationss.get(depth1).getEnableClientIPPreservation());
+				putQueryParameter("EndpointConfigurations." + (depth1 + 1) + ".Weight" , endpointConfigurationss.get(depth1).getWeight());
+				putQueryParameter("EndpointConfigurations." + (depth1 + 1) + ".EnableProxyProtocol" , endpointConfigurationss.get(depth1).getEnableProxyProtocol());
+				putQueryParameter("EndpointConfigurations." + (depth1 + 1) + ".Endpoint" , endpointConfigurationss.get(depth1).getEndpoint());
 			}
 		}	
+	}
+
+	public String getEndpointGroupType() {
+		return this.endpointGroupType;
+	}
+
+	public void setEndpointGroupType(String endpointGroupType) {
+		this.endpointGroupType = endpointGroupType;
+		if(endpointGroupType != null){
+			putQueryParameter("EndpointGroupType", endpointGroupType);
+		}
+	}
+
+	public String getAcceleratorId() {
+		return this.acceleratorId;
+	}
+
+	public void setAcceleratorId(String acceleratorId) {
+		this.acceleratorId = acceleratorId;
+		if(acceleratorId != null){
+			putQueryParameter("AcceleratorId", acceleratorId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
+	}
+
+	public Integer getTrafficPercentage() {
+		return this.trafficPercentage;
+	}
+
+	public void setTrafficPercentage(Integer trafficPercentage) {
+		this.trafficPercentage = trafficPercentage;
+		if(trafficPercentage != null){
+			putQueryParameter("TrafficPercentage", trafficPercentage.toString());
+		}
+	}
+
+	public Integer getHealthCheckPort() {
+		return this.healthCheckPort;
+	}
+
+	public void setHealthCheckPort(Integer healthCheckPort) {
+		this.healthCheckPort = healthCheckPort;
+		if(healthCheckPort != null){
+			putQueryParameter("HealthCheckPort", healthCheckPort.toString());
+		}
+	}
+
+	public Integer getThresholdCount() {
+		return this.thresholdCount;
+	}
+
+	public void setThresholdCount(Integer thresholdCount) {
+		this.thresholdCount = thresholdCount;
+		if(thresholdCount != null){
+			putQueryParameter("ThresholdCount", thresholdCount.toString());
+		}
 	}
 
 	public String getEndpointGroupRegion() {
@@ -196,31 +280,55 @@ public class CreateEndpointGroupRequest extends RpcAcsRequest<CreateEndpointGrou
 		}
 	}
 
-	public String getAcceleratorId() {
-		return this.acceleratorId;
-	}
+	public static class PortOverrides {
 
-	public void setAcceleratorId(String acceleratorId) {
-		this.acceleratorId = acceleratorId;
-		if(acceleratorId != null){
-			putQueryParameter("AcceleratorId", acceleratorId);
+		private Integer listenerPort;
+
+		private Integer endpointPort;
+
+		public Integer getListenerPort() {
+			return this.listenerPort;
+		}
+
+		public void setListenerPort(Integer listenerPort) {
+			this.listenerPort = listenerPort;
+		}
+
+		public Integer getEndpointPort() {
+			return this.endpointPort;
+		}
+
+		public void setEndpointPort(Integer endpointPort) {
+			this.endpointPort = endpointPort;
 		}
 	}
 
 	public static class EndpointConfigurations {
 
-		private String endpoint;
+		private String type;
+
+		private Boolean enableClientIPPreservation;
 
 		private Integer weight;
 
-		private String type;
+		private Boolean enableProxyProtocol;
 
-		public String getEndpoint() {
-			return this.endpoint;
+		private String endpoint;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setEndpoint(String endpoint) {
-			this.endpoint = endpoint;
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public Boolean getEnableClientIPPreservation() {
+			return this.enableClientIPPreservation;
+		}
+
+		public void setEnableClientIPPreservation(Boolean enableClientIPPreservation) {
+			this.enableClientIPPreservation = enableClientIPPreservation;
 		}
 
 		public Integer getWeight() {
@@ -231,12 +339,43 @@ public class CreateEndpointGroupRequest extends RpcAcsRequest<CreateEndpointGrou
 			this.weight = weight;
 		}
 
-		public String getType() {
-			return this.type;
+		public Boolean getEnableProxyProtocol() {
+			return this.enableProxyProtocol;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setEnableProxyProtocol(Boolean enableProxyProtocol) {
+			this.enableProxyProtocol = enableProxyProtocol;
+		}
+
+		public String getEndpoint() {
+			return this.endpoint;
+		}
+
+		public void setEndpoint(String endpoint) {
+			this.endpoint = endpoint;
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

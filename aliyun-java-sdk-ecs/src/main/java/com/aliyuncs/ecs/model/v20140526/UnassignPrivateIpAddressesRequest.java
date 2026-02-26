@@ -28,6 +28,8 @@ public class UnassignPrivateIpAddressesRequest extends RpcAcsRequest<UnassignPri
 
 	private Long resourceOwnerId;
 
+	private List<String> ipv4Prefixs;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -55,6 +57,19 @@ public class UnassignPrivateIpAddressesRequest extends RpcAcsRequest<UnassignPri
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public List<String> getIpv4Prefixs() {
+		return this.ipv4Prefixs;
+	}
+
+	public void setIpv4Prefixs(List<String> ipv4Prefixs) {
+		this.ipv4Prefixs = ipv4Prefixs;	
+		if (ipv4Prefixs != null) {
+			for (int i = 0; i < ipv4Prefixs.size(); i++) {
+				putQueryParameter("Ipv4Prefix." + (i + 1) , ipv4Prefixs.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {

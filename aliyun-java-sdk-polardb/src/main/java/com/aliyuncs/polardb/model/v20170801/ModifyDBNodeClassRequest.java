@@ -29,7 +29,13 @@ public class ModifyDBNodeClassRequest extends RpcAcsRequest<ModifyDBNodeClassRes
 
 	private String clientToken;
 
+	private Boolean autoUseCoupon;
+
 	private String plannedEndTime;
+
+	private String cloudProvider;
+
+	private String dBNodeType;
 
 	private String dBNodeTargetClass;
 
@@ -39,15 +45,19 @@ public class ModifyDBNodeClassRequest extends RpcAcsRequest<ModifyDBNodeClassRes
 
 	private String ownerAccount;
 
+	private String plannedFlashingOffTime;
+
 	private Long ownerId;
 
 	private String plannedStartTime;
+
+	private String promotionCode;
 
 	private String modifyType;
 
 	private String subCategory;
 	public ModifyDBNodeClassRequest() {
-		super("polardb", "2017-08-01", "ModifyDBNodeClass");
+		super("polardb", "2017-08-01", "ModifyDBNodeClass", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -77,6 +87,17 @@ public class ModifyDBNodeClassRequest extends RpcAcsRequest<ModifyDBNodeClassRes
 		}
 	}
 
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
+		}
+	}
+
 	public String getPlannedEndTime() {
 		return this.plannedEndTime;
 	}
@@ -85,6 +106,28 @@ public class ModifyDBNodeClassRequest extends RpcAcsRequest<ModifyDBNodeClassRes
 		this.plannedEndTime = plannedEndTime;
 		if(plannedEndTime != null){
 			putQueryParameter("PlannedEndTime", plannedEndTime);
+		}
+	}
+
+	public String getCloudProvider() {
+		return this.cloudProvider;
+	}
+
+	public void setCloudProvider(String cloudProvider) {
+		this.cloudProvider = cloudProvider;
+		if(cloudProvider != null){
+			putQueryParameter("CloudProvider", cloudProvider);
+		}
+	}
+
+	public String getDBNodeType() {
+		return this.dBNodeType;
+	}
+
+	public void setDBNodeType(String dBNodeType) {
+		this.dBNodeType = dBNodeType;
+		if(dBNodeType != null){
+			putQueryParameter("DBNodeType", dBNodeType);
 		}
 	}
 
@@ -132,6 +175,17 @@ public class ModifyDBNodeClassRequest extends RpcAcsRequest<ModifyDBNodeClassRes
 		}
 	}
 
+	public String getPlannedFlashingOffTime() {
+		return this.plannedFlashingOffTime;
+	}
+
+	public void setPlannedFlashingOffTime(String plannedFlashingOffTime) {
+		this.plannedFlashingOffTime = plannedFlashingOffTime;
+		if(plannedFlashingOffTime != null){
+			putQueryParameter("PlannedFlashingOffTime", plannedFlashingOffTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -151,6 +205,17 @@ public class ModifyDBNodeClassRequest extends RpcAcsRequest<ModifyDBNodeClassRes
 		this.plannedStartTime = plannedStartTime;
 		if(plannedStartTime != null){
 			putQueryParameter("PlannedStartTime", plannedStartTime);
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 

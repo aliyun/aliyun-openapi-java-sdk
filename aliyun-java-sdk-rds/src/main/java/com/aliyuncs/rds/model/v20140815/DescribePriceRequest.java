@@ -15,6 +15,8 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rds.Endpoint;
 
@@ -41,6 +43,9 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private Integer quantity;
 
+	@SerializedName("serverlessConfig")
+	private ServerlessConfig serverlessConfig;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -60,6 +65,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	private String timeType;
 
 	private String payType;
+
+	private String dBNode;
 
 	private String orderType;
 	public DescribePriceRequest() {
@@ -157,6 +164,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		if(quantity != null){
 			putQueryParameter("Quantity", quantity.toString());
 		}
+	}
+
+	public ServerlessConfig getServerlessConfig() {
+		return this.serverlessConfig;
+	}
+
+	public void setServerlessConfig(ServerlessConfig serverlessConfig) {
+		this.serverlessConfig = serverlessConfig;	
+		if (serverlessConfig != null) {
+			putQueryParameter("ServerlessConfig" , new Gson().toJson(serverlessConfig));
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -269,6 +287,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
+	public String getDBNode() {
+		return this.dBNode;
+	}
+
+	public void setDBNode(String dBNode) {
+		this.dBNode = dBNode;
+		if(dBNode != null){
+			putQueryParameter("DBNode", dBNode);
+		}
+	}
+
 	public String getOrderType() {
 		return this.orderType;
 	}
@@ -277,6 +306,31 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.orderType = orderType;
 		if(orderType != null){
 			putQueryParameter("OrderType", orderType);
+		}
+	}
+
+	public static class ServerlessConfig {
+
+		@SerializedName("MinCapacity")
+		private Double minCapacity;
+
+		@SerializedName("MaxCapacity")
+		private Double maxCapacity;
+
+		public Double getMinCapacity() {
+			return this.minCapacity;
+		}
+
+		public void setMinCapacity(Double minCapacity) {
+			this.minCapacity = minCapacity;
+		}
+
+		public Double getMaxCapacity() {
+			return this.maxCapacity;
+		}
+
+		public void setMaxCapacity(Double maxCapacity) {
+			this.maxCapacity = maxCapacity;
 		}
 	}
 

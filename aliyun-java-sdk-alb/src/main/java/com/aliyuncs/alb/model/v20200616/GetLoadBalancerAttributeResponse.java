@@ -29,6 +29,8 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String addressType;
 
+	private Integer bandwidthCapacity;
+
 	private String bandwidthPackageId;
 
 	private String createTime;
@@ -43,6 +45,10 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String loadBalancerName;
 
+	private Boolean serviceManagedEnabled;
+
+	private String serviceManagedMode;
+
 	private String loadBalancerStatus;
 
 	private String regionId;
@@ -53,15 +59,29 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String vpcId;
 
+	private Boolean configManagedEnabled;
+
 	private String addressIpVersion;
 
 	private String ipv6AddressType;
+
+	private Boolean backToOriginRouteEnabled;
+
+	private String loadBalancerVersion;
+
+	private String sysSecurityGroupId;
 
 	private List<LoadBalancerOperationLock> loadBalancerOperationLocks;
 
 	private List<Tag> tags;
 
 	private List<ZoneMapping> zoneMappings;
+
+	private List<AssociatedResource> associatedResources;
+
+	private List<String> featureLabels;
+
+	private List<String> securityGroupIds;
 
 	private AccessLogConfig accessLogConfig;
 
@@ -85,6 +105,14 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setAddressType(String addressType) {
 		this.addressType = addressType;
+	}
+
+	public Integer getBandwidthCapacity() {
+		return this.bandwidthCapacity;
+	}
+
+	public void setBandwidthCapacity(Integer bandwidthCapacity) {
+		this.bandwidthCapacity = bandwidthCapacity;
 	}
 
 	public String getBandwidthPackageId() {
@@ -143,6 +171,22 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 		this.loadBalancerName = loadBalancerName;
 	}
 
+	public Boolean getServiceManagedEnabled() {
+		return this.serviceManagedEnabled;
+	}
+
+	public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+		this.serviceManagedEnabled = serviceManagedEnabled;
+	}
+
+	public String getServiceManagedMode() {
+		return this.serviceManagedMode;
+	}
+
+	public void setServiceManagedMode(String serviceManagedMode) {
+		this.serviceManagedMode = serviceManagedMode;
+	}
+
 	public String getLoadBalancerStatus() {
 		return this.loadBalancerStatus;
 	}
@@ -183,6 +227,14 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 		this.vpcId = vpcId;
 	}
 
+	public Boolean getConfigManagedEnabled() {
+		return this.configManagedEnabled;
+	}
+
+	public void setConfigManagedEnabled(Boolean configManagedEnabled) {
+		this.configManagedEnabled = configManagedEnabled;
+	}
+
 	public String getAddressIpVersion() {
 		return this.addressIpVersion;
 	}
@@ -197,6 +249,30 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setIpv6AddressType(String ipv6AddressType) {
 		this.ipv6AddressType = ipv6AddressType;
+	}
+
+	public Boolean getBackToOriginRouteEnabled() {
+		return this.backToOriginRouteEnabled;
+	}
+
+	public void setBackToOriginRouteEnabled(Boolean backToOriginRouteEnabled) {
+		this.backToOriginRouteEnabled = backToOriginRouteEnabled;
+	}
+
+	public String getLoadBalancerVersion() {
+		return this.loadBalancerVersion;
+	}
+
+	public void setLoadBalancerVersion(String loadBalancerVersion) {
+		this.loadBalancerVersion = loadBalancerVersion;
+	}
+
+	public String getSysSecurityGroupId() {
+		return this.sysSecurityGroupId;
+	}
+
+	public void setSysSecurityGroupId(String sysSecurityGroupId) {
+		this.sysSecurityGroupId = sysSecurityGroupId;
 	}
 
 	public List<LoadBalancerOperationLock> getLoadBalancerOperationLocks() {
@@ -221,6 +297,30 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setZoneMappings(List<ZoneMapping> zoneMappings) {
 		this.zoneMappings = zoneMappings;
+	}
+
+	public List<AssociatedResource> getAssociatedResources() {
+		return this.associatedResources;
+	}
+
+	public void setAssociatedResources(List<AssociatedResource> associatedResources) {
+		this.associatedResources = associatedResources;
+	}
+
+	public List<String> getFeatureLabels() {
+		return this.featureLabels;
+	}
+
+	public void setFeatureLabels(List<String> featureLabels) {
+		this.featureLabels = featureLabels;
+	}
+
+	public List<String> getSecurityGroupIds() {
+		return this.securityGroupIds;
+	}
+
+	public void setSecurityGroupIds(List<String> securityGroupIds) {
+		this.securityGroupIds = securityGroupIds;
 	}
 
 	public AccessLogConfig getAccessLogConfig() {
@@ -307,6 +407,12 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 		private String zoneId;
 
+		private String allocationId;
+
+		private String eipType;
+
+		private String status;
+
 		private List<LoadBalancerAddress> loadBalancerAddresses;
 
 		public String getVSwitchId() {
@@ -325,6 +431,30 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
+		public String getAllocationId() {
+			return this.allocationId;
+		}
+
+		public void setAllocationId(String allocationId) {
+			this.allocationId = allocationId;
+		}
+
+		public String getEipType() {
+			return this.eipType;
+		}
+
+		public void setEipType(String eipType) {
+			this.eipType = eipType;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public List<LoadBalancerAddress> getLoadBalancerAddresses() {
 			return this.loadBalancerAddresses;
 		}
@@ -338,6 +468,20 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 			private String address;
 
 			private String ipv6Address;
+
+			private String intranetAddress;
+
+			private String allocationId;
+
+			private String eipType;
+
+			private String intranetAddressHcStatus;
+
+			private String ipv6AddressHcStatus;
+
+			private List<String> ipv4LocalAddresses;
+
+			private List<String> ipv6LocalAddresses;
 
 			public String getAddress() {
 				return this.address;
@@ -354,6 +498,115 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 			public void setIpv6Address(String ipv6Address) {
 				this.ipv6Address = ipv6Address;
 			}
+
+			public String getIntranetAddress() {
+				return this.intranetAddress;
+			}
+
+			public void setIntranetAddress(String intranetAddress) {
+				this.intranetAddress = intranetAddress;
+			}
+
+			public String getAllocationId() {
+				return this.allocationId;
+			}
+
+			public void setAllocationId(String allocationId) {
+				this.allocationId = allocationId;
+			}
+
+			public String getEipType() {
+				return this.eipType;
+			}
+
+			public void setEipType(String eipType) {
+				this.eipType = eipType;
+			}
+
+			public String getIntranetAddressHcStatus() {
+				return this.intranetAddressHcStatus;
+			}
+
+			public void setIntranetAddressHcStatus(String intranetAddressHcStatus) {
+				this.intranetAddressHcStatus = intranetAddressHcStatus;
+			}
+
+			public String getIpv6AddressHcStatus() {
+				return this.ipv6AddressHcStatus;
+			}
+
+			public void setIpv6AddressHcStatus(String ipv6AddressHcStatus) {
+				this.ipv6AddressHcStatus = ipv6AddressHcStatus;
+			}
+
+			public List<String> getIpv4LocalAddresses() {
+				return this.ipv4LocalAddresses;
+			}
+
+			public void setIpv4LocalAddresses(List<String> ipv4LocalAddresses) {
+				this.ipv4LocalAddresses = ipv4LocalAddresses;
+			}
+
+			public List<String> getIpv6LocalAddresses() {
+				return this.ipv6LocalAddresses;
+			}
+
+			public void setIpv6LocalAddresses(List<String> ipv6LocalAddresses) {
+				this.ipv6LocalAddresses = ipv6LocalAddresses;
+			}
+		}
+	}
+
+	public static class AssociatedResource {
+
+		private String associatedResourceType;
+
+		private String associatedResourceId;
+
+		private String policyId;
+
+		private String status;
+
+		private String associatedMode;
+
+		public String getAssociatedResourceType() {
+			return this.associatedResourceType;
+		}
+
+		public void setAssociatedResourceType(String associatedResourceType) {
+			this.associatedResourceType = associatedResourceType;
+		}
+
+		public String getAssociatedResourceId() {
+			return this.associatedResourceId;
+		}
+
+		public void setAssociatedResourceId(String associatedResourceId) {
+			this.associatedResourceId = associatedResourceId;
+		}
+
+		public String getPolicyId() {
+			return this.policyId;
+		}
+
+		public void setPolicyId(String policyId) {
+			this.policyId = policyId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getAssociatedMode() {
+			return this.associatedMode;
+		}
+
+		public void setAssociatedMode(String associatedMode) {
+			this.associatedMode = associatedMode;
 		}
 	}
 
@@ -405,7 +658,27 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	public static class LoadBalancerBillingConfig {
 
+		private Integer internetBandwidth;
+
+		private String internetChargeType;
+
 		private String payType;
+
+		public Integer getInternetBandwidth() {
+			return this.internetBandwidth;
+		}
+
+		public void setInternetBandwidth(Integer internetBandwidth) {
+			this.internetBandwidth = internetBandwidth;
+		}
+
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
+		}
 
 		public String getPayType() {
 			return this.payType;

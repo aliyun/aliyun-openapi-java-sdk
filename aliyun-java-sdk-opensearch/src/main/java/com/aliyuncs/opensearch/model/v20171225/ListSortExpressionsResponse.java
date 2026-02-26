@@ -47,30 +47,22 @@ public class ListSortExpressionsResponse extends AcsResponse {
 
 	public static class FirstRankItem {
 
-		private String name;
-
-		private String description;
+		private Integer created;
 
 		private Boolean active;
 
-		private Integer created;
+		private String description;
 
 		private Integer updated;
 
-		public String getName() {
-			return this.name;
+		private String name;
+
+		public Integer getCreated() {
+			return this.created;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setCreated(Integer created) {
+			this.created = created;
 		}
 
 		public Boolean getActive() {
@@ -81,12 +73,12 @@ public class ListSortExpressionsResponse extends AcsResponse {
 			this.active = active;
 		}
 
-		public Integer getCreated() {
-			return this.created;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setCreated(Integer created) {
-			this.created = created;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Integer getUpdated() {
@@ -95,6 +87,14 @@ public class ListSortExpressionsResponse extends AcsResponse {
 
 		public void setUpdated(Integer updated) {
 			this.updated = updated;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

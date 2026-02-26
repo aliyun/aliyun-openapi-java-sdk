@@ -14,7 +14,6 @@
 
 package com.aliyuncs.ccc.model.v20200701;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20200701.ModifySkillLevelsOfUserResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,7 +32,7 @@ public class ModifySkillLevelsOfUserResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> params;
+	private String data;
 
 	public String getCode() {
 		return this.code;
@@ -67,12 +66,12 @@ public class ModifySkillLevelsOfUserResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getParams() {
-		return this.params;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setParams(List<String> params) {
-		this.params = params;
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override

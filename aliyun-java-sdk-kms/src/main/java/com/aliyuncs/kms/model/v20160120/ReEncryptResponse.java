@@ -68,9 +68,4 @@ public class ReEncryptResponse extends AcsResponse {
 	public ReEncryptResponse getInstance(UnmarshallerContext context) {
 		return	ReEncryptResponseUnmarshaller.unmarshall(this, context);
 	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
 }

@@ -28,8 +28,10 @@ public class DescribeJobRequest extends RpcAcsRequest<DescribeJobResponse> {
 	private String clusterId;
 
 	private String jobId;
+
+	private Boolean async;
 	public DescribeJobRequest() {
-		super("EHPC", "2018-04-12", "DescribeJob");
+		super("EHPC", "2018-04-12", "DescribeJob", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class DescribeJobRequest extends RpcAcsRequest<DescribeJobResponse> {
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId);
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 

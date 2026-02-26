@@ -1,0 +1,210 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.sddp.model.v20190103;
+
+import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class DescribeColumnsV2Request extends RpcAcsRequest<DescribeColumnsV2Response> {
+	   
+
+	private String productCode;
+
+	private String ruleName;
+
+	private Long riskLevelId;
+
+	private String sensLevelName;
+
+	private Integer pageSize;
+
+	private String tableId;
+
+	private String lang;
+
+	private String tableName;
+
+	private Integer currentPage;
+
+	private Long instanceId;
+
+	private String instanceName;
+
+	private String name;
+
+	private Long ruleId;
+	public DescribeColumnsV2Request() {
+		super("Sddp", "2019-01-03", "DescribeColumnsV2", "sddp");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+		if(productCode != null){
+			putQueryParameter("ProductCode", productCode);
+		}
+	}
+
+	public String getRuleName() {
+		return this.ruleName;
+	}
+
+	public void setRuleName(String ruleName) {
+		this.ruleName = ruleName;
+		if(ruleName != null){
+			putQueryParameter("RuleName", ruleName);
+		}
+	}
+
+	public Long getRiskLevelId() {
+		return this.riskLevelId;
+	}
+
+	public void setRiskLevelId(Long riskLevelId) {
+		this.riskLevelId = riskLevelId;
+		if(riskLevelId != null){
+			putQueryParameter("RiskLevelId", riskLevelId.toString());
+		}
+	}
+
+	public String getSensLevelName() {
+		return this.sensLevelName;
+	}
+
+	public void setSensLevelName(String sensLevelName) {
+		this.sensLevelName = sensLevelName;
+		if(sensLevelName != null){
+			putQueryParameter("SensLevelName", sensLevelName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTableId() {
+		return this.tableId;
+	}
+
+	public void setTableId(String tableId) {
+		this.tableId = tableId;
+		if(tableId != null){
+			putQueryParameter("TableId", tableId);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public Long getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(Long instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId.toString());
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(Long ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId.toString());
+		}
+	}
+
+	@Override
+	public Class<DescribeColumnsV2Response> getResponseClass() {
+		return DescribeColumnsV2Response.class;
+	}
+
+}

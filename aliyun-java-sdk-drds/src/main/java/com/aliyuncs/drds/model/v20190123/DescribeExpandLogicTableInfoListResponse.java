@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeExpandLogicTableInfoListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeExpandLogicTableInfoListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DataItem> getData() {
@@ -57,11 +57,19 @@ public class DescribeExpandLogicTableInfoListResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private String shardTbKey;
+
 		private String tableName;
 
 		private String shardDbKey;
 
-		private String shardTbKey;
+		public String getShardTbKey() {
+			return this.shardTbKey;
+		}
+
+		public void setShardTbKey(String shardTbKey) {
+			this.shardTbKey = shardTbKey;
+		}
 
 		public String getTableName() {
 			return this.tableName;
@@ -77,14 +85,6 @@ public class DescribeExpandLogicTableInfoListResponse extends AcsResponse {
 
 		public void setShardDbKey(String shardDbKey) {
 			this.shardDbKey = shardDbKey;
-		}
-
-		public String getShardTbKey() {
-			return this.shardTbKey;
-		}
-
-		public void setShardTbKey(String shardTbKey) {
-			this.shardTbKey = shardTbKey;
 		}
 	}
 

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListActiveAppsResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
 	private Boolean success;
 
 	private List<DataItem> data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -57,6 +49,14 @@ public class ListActiveAppsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,27 +77,19 @@ public class ListActiveAppsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String namespace;
-
 		private String appName;
-
-		private Integer appType;
 
 		private Long lastHealthPingTime;
 
-		private String ahasAppName;
-
 		private Integer currentLevel;
+
+		private String namespace;
+
+		private Integer appType;
 
 		private Integer dirtyLevel;
 
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
+		private String ahasAppName;
 
 		public String getAppName() {
 			return this.appName;
@@ -105,14 +97,6 @@ public class ListActiveAppsResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
-		}
-
-		public Integer getAppType() {
-			return this.appType;
-		}
-
-		public void setAppType(Integer appType) {
-			this.appType = appType;
 		}
 
 		public Long getLastHealthPingTime() {
@@ -123,14 +107,6 @@ public class ListActiveAppsResponse extends AcsResponse {
 			this.lastHealthPingTime = lastHealthPingTime;
 		}
 
-		public String getAhasAppName() {
-			return this.ahasAppName;
-		}
-
-		public void setAhasAppName(String ahasAppName) {
-			this.ahasAppName = ahasAppName;
-		}
-
 		public Integer getCurrentLevel() {
 			return this.currentLevel;
 		}
@@ -139,12 +115,36 @@ public class ListActiveAppsResponse extends AcsResponse {
 			this.currentLevel = currentLevel;
 		}
 
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public Integer getAppType() {
+			return this.appType;
+		}
+
+		public void setAppType(Integer appType) {
+			this.appType = appType;
+		}
+
 		public Integer getDirtyLevel() {
 			return this.dirtyLevel;
 		}
 
 		public void setDirtyLevel(Integer dirtyLevel) {
 			this.dirtyLevel = dirtyLevel;
+		}
+
+		public String getAhasAppName() {
+			return this.ahasAppName;
+		}
+
+		public void setAhasAppName(String ahasAppName) {
+			this.ahasAppName = ahasAppName;
 		}
 	}
 

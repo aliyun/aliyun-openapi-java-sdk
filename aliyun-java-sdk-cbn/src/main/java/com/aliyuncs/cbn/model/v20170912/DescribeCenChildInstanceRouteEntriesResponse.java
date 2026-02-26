@@ -95,6 +95,12 @@ public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 
 		private String routeTableId;
 
+		private Long med;
+
+		private String vpnTunnelIp;
+
+		private String vpnTunnelId;
+
 		private List<CenRouteMapRecord> cenRouteMapRecords;
 
 		private List<Conflict> conflicts;
@@ -173,6 +179,30 @@ public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 
 		public void setRouteTableId(String routeTableId) {
 			this.routeTableId = routeTableId;
+		}
+
+		public Long getMed() {
+			return this.med;
+		}
+
+		public void setMed(Long med) {
+			this.med = med;
+		}
+
+		public String getVpnTunnelIp() {
+			return this.vpnTunnelIp;
+		}
+
+		public void setVpnTunnelIp(String vpnTunnelIp) {
+			this.vpnTunnelIp = vpnTunnelIp;
+		}
+
+		public String getVpnTunnelId() {
+			return this.vpnTunnelId;
+		}
+
+		public void setVpnTunnelId(String vpnTunnelId) {
+			this.vpnTunnelId = vpnTunnelId;
 		}
 
 		public List<CenRouteMapRecord> getCenRouteMapRecords() {

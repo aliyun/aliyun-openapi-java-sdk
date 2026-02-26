@@ -29,6 +29,8 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 
 	private List<ParameterGroup> paramGroup;
 
+	private List<RelatedCustinsInfoItem> relatedCustinsInfo;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -45,45 +47,37 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 		this.paramGroup = paramGroup;
 	}
 
+	public List<RelatedCustinsInfoItem> getRelatedCustinsInfo() {
+		return this.relatedCustinsInfo;
+	}
+
+	public void setRelatedCustinsInfo(List<RelatedCustinsInfoItem> relatedCustinsInfo) {
+		this.relatedCustinsInfo = relatedCustinsInfo;
+	}
+
 	public static class ParameterGroup {
-
-		private String updateTime;
-
-		private String parameterGroupDesc;
 
 		private String createTime;
 
+		private String engine;
+
+		private String engineVersion;
+
 		private Integer forceRestart;
+
+		private Integer paramCounts;
+
+		private String parameterGroupDesc;
 
 		private String parameterGroupId;
 
 		private String parameterGroupName;
 
-		private String engine;
-
-		private Integer paramCounts;
-
-		private String engineVersion;
-
 		private Integer parameterGroupType;
 
+		private String updateTime;
+
 		private List<ParameterDetail> paramDetail;
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getParameterGroupDesc() {
-			return this.parameterGroupDesc;
-		}
-
-		public void setParameterGroupDesc(String parameterGroupDesc) {
-			this.parameterGroupDesc = parameterGroupDesc;
-		}
 
 		public String getCreateTime() {
 			return this.createTime;
@@ -93,12 +87,44 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
 		public Integer getForceRestart() {
 			return this.forceRestart;
 		}
 
 		public void setForceRestart(Integer forceRestart) {
 			this.forceRestart = forceRestart;
+		}
+
+		public Integer getParamCounts() {
+			return this.paramCounts;
+		}
+
+		public void setParamCounts(Integer paramCounts) {
+			this.paramCounts = paramCounts;
+		}
+
+		public String getParameterGroupDesc() {
+			return this.parameterGroupDesc;
+		}
+
+		public void setParameterGroupDesc(String parameterGroupDesc) {
+			this.parameterGroupDesc = parameterGroupDesc;
 		}
 
 		public String getParameterGroupId() {
@@ -117,36 +143,20 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 			this.parameterGroupName = parameterGroupName;
 		}
 
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public Integer getParamCounts() {
-			return this.paramCounts;
-		}
-
-		public void setParamCounts(Integer paramCounts) {
-			this.paramCounts = paramCounts;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
 		public Integer getParameterGroupType() {
 			return this.parameterGroupType;
 		}
 
 		public void setParameterGroupType(Integer parameterGroupType) {
 			this.parameterGroupType = parameterGroupType;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public List<ParameterDetail> getParamDetail() {
@@ -178,6 +188,29 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 			public void setParamValue(String paramValue) {
 				this.paramValue = paramValue;
 			}
+		}
+	}
+
+	public static class RelatedCustinsInfoItem {
+
+		private String appliedTime;
+
+		private String dBInstanceName;
+
+		public String getAppliedTime() {
+			return this.appliedTime;
+		}
+
+		public void setAppliedTime(String appliedTime) {
+			this.appliedTime = appliedTime;
+		}
+
+		public String getDBInstanceName() {
+			return this.dBInstanceName;
+		}
+
+		public void setDBInstanceName(String dBInstanceName) {
+			this.dBInstanceName = dBInstanceName;
 		}
 	}
 

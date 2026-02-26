@@ -35,7 +35,7 @@ public class GetJobInfoRequest extends RpcAcsRequest<GetJobInfoResponse> {
 
 	private String jobName;
 	public GetJobInfoRequest() {
-		super("schedulerx2", "2019-04-30", "GetJobInfo");
+		super("schedulerx2", "2019-04-30", "GetJobInfo", "schedulerx2");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

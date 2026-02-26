@@ -31,7 +31,7 @@ public class ListAppsRequest extends RoaAcsRequest<ListAppsResponse> {
 
 	private Boolean group;
 	public ListAppsRequest() {
-		super("OpenSearch", "2017-12-25", "ListApps", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListApps");
 		setUriPattern("/v4/openapi/apps");
 		setMethod(MethodType.GET);
 		try {

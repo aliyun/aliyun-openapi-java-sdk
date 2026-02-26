@@ -36,6 +36,9 @@ public class DescribeNoticeConfigResponseUnmarshaller {
 			noticeConfig.setCurrentPage(_ctx.integerValue("DescribeNoticeConfigResponse.NoticeConfigList["+ i +"].CurrentPage"));
 			noticeConfig.setProject(_ctx.stringValue("DescribeNoticeConfigResponse.NoticeConfigList["+ i +"].Project"));
 			noticeConfig.setRoute(_ctx.integerValue("DescribeNoticeConfigResponse.NoticeConfigList["+ i +"].Route"));
+			noticeConfig.setAllFocusLevel(_ctx.stringValue("DescribeNoticeConfigResponse.NoticeConfigList["+ i +"].AllFocusLevel"));
+			noticeConfig.setFocusLevel(_ctx.stringValue("DescribeNoticeConfigResponse.NoticeConfigList["+ i +"].FocusLevel"));
+			noticeConfig.setCustomThreshold(_ctx.integerValue("DescribeNoticeConfigResponse.NoticeConfigList["+ i +"].CustomThreshold"));
 
 			noticeConfigList.add(noticeConfig);
 		}

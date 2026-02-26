@@ -28,25 +28,25 @@ public class ListSystemRulesResponseUnmarshaller {
 	public static ListSystemRulesResponse unmarshall(ListSystemRulesResponse listSystemRulesResponse, UnmarshallerContext _ctx) {
 		
 		listSystemRulesResponse.setRequestId(_ctx.stringValue("ListSystemRulesResponse.RequestId"));
-		listSystemRulesResponse.setCode(_ctx.stringValue("ListSystemRulesResponse.Code"));
 		listSystemRulesResponse.setMessage(_ctx.stringValue("ListSystemRulesResponse.Message"));
+		listSystemRulesResponse.setCode(_ctx.stringValue("ListSystemRulesResponse.Code"));
 		listSystemRulesResponse.setSuccess(_ctx.booleanValue("ListSystemRulesResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("ListSystemRulesResponse.Data.TotalCount"));
-		data.setTotalPage(_ctx.integerValue("ListSystemRulesResponse.Data.TotalPage"));
 		data.setPageIndex(_ctx.integerValue("ListSystemRulesResponse.Data.PageIndex"));
+		data.setTotalPage(_ctx.integerValue("ListSystemRulesResponse.Data.TotalPage"));
 		data.setPageSize(_ctx.integerValue("ListSystemRulesResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("ListSystemRulesResponse.Data.TotalCount"));
 
 		List<DatasItem> datas = new ArrayList<DatasItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListSystemRulesResponse.Data.Datas.Length"); i++) {
 			DatasItem datasItem = new DatasItem();
 			datasItem.setAppName(_ctx.stringValue("ListSystemRulesResponse.Data.Datas["+ i +"].AppName"));
+			datasItem.setNamespace(_ctx.stringValue("ListSystemRulesResponse.Data.Datas["+ i +"].Namespace"));
 			datasItem.setMetricType(_ctx.integerValue("ListSystemRulesResponse.Data.Datas["+ i +"].MetricType"));
 			datasItem.setThreshold(_ctx.floatValue("ListSystemRulesResponse.Data.Datas["+ i +"].Threshold"));
 			datasItem.setEnable(_ctx.booleanValue("ListSystemRulesResponse.Data.Datas["+ i +"].Enable"));
 			datasItem.setRuleId(_ctx.longValue("ListSystemRulesResponse.Data.Datas["+ i +"].RuleId"));
-			datasItem.setNamespace(_ctx.stringValue("ListSystemRulesResponse.Data.Datas["+ i +"].Namespace"));
 
 			datas.add(datasItem);
 		}

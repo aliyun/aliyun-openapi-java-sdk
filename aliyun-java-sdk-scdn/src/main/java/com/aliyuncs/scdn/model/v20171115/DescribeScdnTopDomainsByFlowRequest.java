@@ -25,15 +25,13 @@ import com.aliyuncs.scdn.Endpoint;
 public class DescribeScdnTopDomainsByFlowRequest extends RpcAcsRequest<DescribeScdnTopDomainsByFlowResponse> {
 	   
 
-	private String startTime;
+	private String product;
 
 	private Long limit;
 
-	private String product;
-
 	private String endTime;
 
-	private Long ownerId;
+	private String startTime;
 	public DescribeScdnTopDomainsByFlowRequest() {
 		super("scdn", "2017-11-15", "DescribeScdnTopDomainsByFlow");
 		setMethod(MethodType.POST);
@@ -43,14 +41,14 @@ public class DescribeScdnTopDomainsByFlowRequest extends RpcAcsRequest<DescribeS
 		} catch (Exception e) {}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getProduct() {
+		return this.product;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("Product", product);
 		}
 	}
 
@@ -65,17 +63,6 @@ public class DescribeScdnTopDomainsByFlowRequest extends RpcAcsRequest<DescribeS
 		}
 	}
 
-	public String getProduct() {
-		return this.product;
-	}
-
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -87,14 +74,14 @@ public class DescribeScdnTopDomainsByFlowRequest extends RpcAcsRequest<DescribeS
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 

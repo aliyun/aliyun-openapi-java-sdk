@@ -14,6 +14,7 @@
 
 package com.aliyuncs.polardb.model.v20170801;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.polardb.transform.v20170801.DescribeLogBackupPolicyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,6 +34,8 @@ public class DescribeLogBackupPolicyResponse extends AcsResponse {
 	private String logBackupAnotherRegionRegion;
 
 	private Integer enableBackupLog;
+
+	private List<AdvancedLogPolicy> advancedLogPolicies;
 
 	public Integer getLogBackupRetentionPeriod() {
 		return this.logBackupRetentionPeriod;
@@ -72,6 +75,97 @@ public class DescribeLogBackupPolicyResponse extends AcsResponse {
 
 	public void setEnableBackupLog(Integer enableBackupLog) {
 		this.enableBackupLog = enableBackupLog;
+	}
+
+	public List<AdvancedLogPolicy> getAdvancedLogPolicies() {
+		return this.advancedLogPolicies;
+	}
+
+	public void setAdvancedLogPolicies(List<AdvancedLogPolicy> advancedLogPolicies) {
+		this.advancedLogPolicies = advancedLogPolicies;
+	}
+
+	public static class AdvancedLogPolicy {
+
+		private String logRetentionType;
+
+		private String destType;
+
+		private String srcRegion;
+
+		private Integer enableLogBackup;
+
+		private String srcType;
+
+		private String policyId;
+
+		private String logRetentionValue;
+
+		private String destRegion;
+
+		public String getLogRetentionType() {
+			return this.logRetentionType;
+		}
+
+		public void setLogRetentionType(String logRetentionType) {
+			this.logRetentionType = logRetentionType;
+		}
+
+		public String getDestType() {
+			return this.destType;
+		}
+
+		public void setDestType(String destType) {
+			this.destType = destType;
+		}
+
+		public String getSrcRegion() {
+			return this.srcRegion;
+		}
+
+		public void setSrcRegion(String srcRegion) {
+			this.srcRegion = srcRegion;
+		}
+
+		public Integer getEnableLogBackup() {
+			return this.enableLogBackup;
+		}
+
+		public void setEnableLogBackup(Integer enableLogBackup) {
+			this.enableLogBackup = enableLogBackup;
+		}
+
+		public String getSrcType() {
+			return this.srcType;
+		}
+
+		public void setSrcType(String srcType) {
+			this.srcType = srcType;
+		}
+
+		public String getPolicyId() {
+			return this.policyId;
+		}
+
+		public void setPolicyId(String policyId) {
+			this.policyId = policyId;
+		}
+
+		public String getLogRetentionValue() {
+			return this.logRetentionValue;
+		}
+
+		public void setLogRetentionValue(String logRetentionValue) {
+			this.logRetentionValue = logRetentionValue;
+		}
+
+		public String getDestRegion() {
+			return this.destRegion;
+		}
+
+		public void setDestRegion(String destRegion) {
+			this.destRegion = destRegion;
+		}
 	}
 
 	@Override

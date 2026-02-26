@@ -24,22 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SetDataResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String data;
-
 	private Integer code;
-
-	private Boolean success;
 
 	private String message;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String data;
+
+	private String requestId;
+
+	private Boolean success;
+
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getData() {
@@ -50,12 +58,12 @@ public class SetDataResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -64,14 +72,6 @@ public class SetDataResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	@Override

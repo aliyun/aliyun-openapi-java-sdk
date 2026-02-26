@@ -27,11 +27,7 @@ public class ListOrdersRequest extends RpcAcsRequest<ListOrdersResponse> {
 
 	private String orderStatus;
 
-	private String searchContent;
-
 	private String searchDateType;
-
-	private String endTime;
 
 	private String startTime;
 
@@ -44,6 +40,10 @@ public class ListOrdersRequest extends RpcAcsRequest<ListOrdersResponse> {
 	private Integer pageSize;
 
 	private String orderResultType;
+
+	private String searchContent;
+
+	private String endTime;
 	public ListOrdersRequest() {
 		super("dms-enterprise", "2018-11-01", "ListOrders", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -64,17 +64,6 @@ public class ListOrdersRequest extends RpcAcsRequest<ListOrdersResponse> {
 		}
 	}
 
-	public String getSearchContent() {
-		return this.searchContent;
-	}
-
-	public void setSearchContent(String searchContent) {
-		this.searchContent = searchContent;
-		if(searchContent != null){
-			putQueryParameter("SearchContent", searchContent);
-		}
-	}
-
 	public String getSearchDateType() {
 		return this.searchDateType;
 	}
@@ -83,17 +72,6 @@ public class ListOrdersRequest extends RpcAcsRequest<ListOrdersResponse> {
 		this.searchDateType = searchDateType;
 		if(searchDateType != null){
 			putQueryParameter("SearchDateType", searchDateType);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -160,6 +138,28 @@ public class ListOrdersRequest extends RpcAcsRequest<ListOrdersResponse> {
 		this.orderResultType = orderResultType;
 		if(orderResultType != null){
 			putQueryParameter("OrderResultType", orderResultType);
+		}
+	}
+
+	public String getSearchContent() {
+		return this.searchContent;
+	}
+
+	public void setSearchContent(String searchContent) {
+		this.searchContent = searchContent;
+		if(searchContent != null){
+			putQueryParameter("SearchContent", searchContent);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 

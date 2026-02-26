@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRegionsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<Region> regions;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<Region> getRegions() {
 		return this.regions;
 	}
@@ -77,18 +77,18 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	public static class Region {
 
-		private String regionId;
+		private Integer vaultCount;
 
 		private String localName;
 
-		private Integer vaultCount;
+		private String regionId;
 
-		public String getRegionId() {
-			return this.regionId;
+		public Integer getVaultCount() {
+			return this.vaultCount;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setVaultCount(Integer vaultCount) {
+			this.vaultCount = vaultCount;
 		}
 
 		public String getLocalName() {
@@ -99,12 +99,12 @@ public class DescribeRegionsResponse extends AcsResponse {
 			this.localName = localName;
 		}
 
-		public Integer getVaultCount() {
-			return this.vaultCount;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setVaultCount(Integer vaultCount) {
-			this.vaultCount = vaultCount;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

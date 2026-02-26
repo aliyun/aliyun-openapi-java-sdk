@@ -48,11 +48,11 @@ public class GetSortScriptFileResponse extends AcsResponse {
 
 		private String content;
 
-		private Long version;
-
 		private String createTime;
 
 		private String modifyTime;
+
+		private Long version;
 
 		public String getContent() {
 			return this.content;
@@ -60,14 +60,6 @@ public class GetSortScriptFileResponse extends AcsResponse {
 
 		public void setContent(String content) {
 			this.content = content;
-		}
-
-		public Long getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Long version) {
-			this.version = version;
 		}
 
 		public String getCreateTime() {
@@ -84,6 +76,14 @@ public class GetSortScriptFileResponse extends AcsResponse {
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
 		}
 	}
 

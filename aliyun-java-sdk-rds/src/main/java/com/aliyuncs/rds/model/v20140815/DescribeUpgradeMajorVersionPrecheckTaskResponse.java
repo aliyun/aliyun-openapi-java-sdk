@@ -91,6 +91,14 @@ public class DescribeUpgradeMajorVersionPrecheckTaskResponse extends AcsResponse
 
 		private String checkTime;
 
+		private Integer recommendDiskSize;
+
+		private Integer recommendLeastMemSize;
+
+		private Integer recommendMemSize;
+
+		private String upgradeMode;
+
 		public String getTargetMajorVersion() {
 			return this.targetMajorVersion;
 		}
@@ -145,6 +153,38 @@ public class DescribeUpgradeMajorVersionPrecheckTaskResponse extends AcsResponse
 
 		public void setCheckTime(String checkTime) {
 			this.checkTime = checkTime;
+		}
+
+		public Integer getRecommendDiskSize() {
+			return this.recommendDiskSize;
+		}
+
+		public void setRecommendDiskSize(Integer recommendDiskSize) {
+			this.recommendDiskSize = recommendDiskSize;
+		}
+
+		public Integer getRecommendLeastMemSize() {
+			return this.recommendLeastMemSize;
+		}
+
+		public void setRecommendLeastMemSize(Integer recommendLeastMemSize) {
+			this.recommendLeastMemSize = recommendLeastMemSize;
+		}
+
+		public Integer getRecommendMemSize() {
+			return this.recommendMemSize;
+		}
+
+		public void setRecommendMemSize(Integer recommendMemSize) {
+			this.recommendMemSize = recommendMemSize;
+		}
+
+		public String getUpgradeMode() {
+			return this.upgradeMode;
+		}
+
+		public void setUpgradeMode(String upgradeMode) {
+			this.upgradeMode = upgradeMode;
 		}
 	}
 

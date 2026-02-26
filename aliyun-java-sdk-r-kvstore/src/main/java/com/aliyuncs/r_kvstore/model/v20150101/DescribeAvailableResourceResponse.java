@@ -57,6 +57,8 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		private String regionId;
 
+		private Boolean isMainSale;
+
 		private List<SupportedEngine> supportedEngines;
 
 		public String getStatus() {
@@ -97,6 +99,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public Boolean getIsMainSale() {
+			return this.isMainSale;
+		}
+
+		public void setIsMainSale(Boolean isMainSale) {
+			this.isMainSale = isMainSale;
 		}
 
 		public List<SupportedEngine> getSupportedEngines() {

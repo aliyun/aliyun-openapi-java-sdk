@@ -27,15 +27,15 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 
 	private Integer pageNum;
 
-	private Integer pageSize;
-
 	private String requestId;
 
-	private Boolean success;
+	private Integer pageSize;
+
+	private Integer totalPageNum;
 
 	private Integer totalItemNum;
 
-	private Integer totalPageNum;
+	private Boolean success;
 
 	private List<OpateLogs> data;
 
@@ -47,14 +47,6 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 		this.pageNum = pageNum;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -63,12 +55,20 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
 	}
 
 	public Integer getTotalItemNum() {
@@ -79,12 +79,12 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<OpateLogs> getData() {
@@ -97,39 +97,15 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 
 	public static class OpateLogs {
 
-		private String bizId;
-
-		private String bizType;
-
-		private String operateName;
-
 		private Long operateTime;
 
 		private String operateUserType;
 
-		public String getBizId() {
-			return this.bizId;
-		}
+		private String bizId;
 
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
+		private String operateName;
 
-		public String getBizType() {
-			return this.bizType;
-		}
-
-		public void setBizType(String bizType) {
-			this.bizType = bizType;
-		}
-
-		public String getOperateName() {
-			return this.operateName;
-		}
-
-		public void setOperateName(String operateName) {
-			this.operateName = operateName;
-		}
+		private String bizType;
 
 		public Long getOperateTime() {
 			return this.operateTime;
@@ -145,6 +121,30 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 
 		public void setOperateUserType(String operateUserType) {
 			this.operateUserType = operateUserType;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
+		public String getOperateName() {
+			return this.operateName;
+		}
+
+		public void setOperateName(String operateName) {
+			this.operateName = operateName;
+		}
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
 		}
 	}
 

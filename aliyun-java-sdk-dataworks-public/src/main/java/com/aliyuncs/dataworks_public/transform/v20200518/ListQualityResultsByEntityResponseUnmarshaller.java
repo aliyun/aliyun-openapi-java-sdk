@@ -51,7 +51,7 @@ public class ListQualityResultsByEntityResponseUnmarshaller {
 			ruleChecksItem.setCheckResultStatus(_ctx.integerValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].CheckResultStatus"));
 			ruleChecksItem.setTemplateName(_ctx.stringValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].TemplateName"));
 			ruleChecksItem.setCheckerName(_ctx.stringValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].CheckerName"));
-			ruleChecksItem.setRuleId(_ctx.integerValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].RuleId"));
+			ruleChecksItem.setRuleId(_ctx.longValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].RuleId"));
 			ruleChecksItem.setFixedCheck(_ctx.booleanValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].FixedCheck"));
 			ruleChecksItem.setOp(_ctx.stringValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].Op"));
 			ruleChecksItem.setUpperValue(_ctx.floatValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].UpperValue"));
@@ -76,12 +76,12 @@ public class ListQualityResultsByEntityResponseUnmarshaller {
 			ruleChecksItem.setEndTime(_ctx.longValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].EndTime"));
 			ruleChecksItem.setMethodName(_ctx.stringValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].MethodName"));
 			ruleChecksItem.setLowerValue(_ctx.floatValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].LowerValue"));
-			ruleChecksItem.setEntityId(_ctx.integerValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].EntityId"));
+			ruleChecksItem.setEntityId(_ctx.longValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].EntityId"));
 			ruleChecksItem.setWhereCondition(_ctx.stringValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].WhereCondition"));
 			ruleChecksItem.setExpectValue(_ctx.floatValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].ExpectValue"));
 			ruleChecksItem.setTemplateId(_ctx.integerValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].TemplateId"));
 			ruleChecksItem.setTaskId(_ctx.stringValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].TaskId"));
-			ruleChecksItem.setId(_ctx.integerValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].Id"));
+			ruleChecksItem.setId(_ctx.longValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].Id"));
 
 			List<ReferenceValueItem> referenceValue = new ArrayList<ReferenceValueItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListQualityResultsByEntityResponse.Data.RuleChecks["+ i +"].ReferenceValue.Length"); j++) {

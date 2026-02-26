@@ -65,6 +65,9 @@ public class DescribePipelineResponseUnmarshaller {
 				task.setMessage(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].Message"));
 				task.setShowManualIgnore(_ctx.booleanValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].ShowManualIgnore"));
 				task.setTaskId(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].TaskId"));
+				task.setCreateTime(_ctx.longValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].CreateTime"));
+				task.setStartTime(_ctx.longValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].StartTime"));
+				task.setUpdateTime(_ctx.longValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].UpdateTime"));
 
 				taskList.add(task);
 			}

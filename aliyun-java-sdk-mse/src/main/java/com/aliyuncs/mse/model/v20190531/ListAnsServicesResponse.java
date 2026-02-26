@@ -127,6 +127,8 @@ public class ListAnsServicesResponse extends AcsResponse {
 
 		private Integer clusterCount;
 
+		private String source;
+
 		public Integer getHealthyInstanceCount() {
 			return this.healthyInstanceCount;
 		}
@@ -165,6 +167,14 @@ public class ListAnsServicesResponse extends AcsResponse {
 
 		public void setClusterCount(Integer clusterCount) {
 			this.clusterCount = clusterCount;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
 		}
 	}
 

@@ -51,7 +51,7 @@ public class QueryAvailableInstancesRequest extends RpcAcsRequest<QueryAvailable
 
 	private String region;
 	public QueryAvailableInstancesRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryAvailableInstances");
+		super("BssOpenApi", "2017-12-14", "QueryAvailableInstances", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

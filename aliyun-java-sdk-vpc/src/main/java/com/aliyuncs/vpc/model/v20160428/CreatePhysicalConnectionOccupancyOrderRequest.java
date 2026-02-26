@@ -29,6 +29,8 @@ public class CreatePhysicalConnectionOccupancyOrderRequest extends RpcAcsRequest
 
 	private String clientToken;
 
+	private Integer autoRenewDuration;
+
 	private String instanceChargeType;
 
 	private Integer period;
@@ -40,6 +42,8 @@ public class CreatePhysicalConnectionOccupancyOrderRequest extends RpcAcsRequest
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Boolean autoRenew;
 
 	private String physicalConnectionId;
 
@@ -72,6 +76,17 @@ public class CreatePhysicalConnectionOccupancyOrderRequest extends RpcAcsRequest
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Integer getAutoRenewDuration() {
+		return this.autoRenewDuration;
+	}
+
+	public void setAutoRenewDuration(Integer autoRenewDuration) {
+		this.autoRenewDuration = autoRenewDuration;
+		if(autoRenewDuration != null){
+			putQueryParameter("AutoRenewDuration", autoRenewDuration.toString());
 		}
 	}
 
@@ -138,6 +153,17 @@ public class CreatePhysicalConnectionOccupancyOrderRequest extends RpcAcsRequest
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 

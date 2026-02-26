@@ -25,6 +25,12 @@ import com.aliyuncs.videorecog.Endpoint;
 public class SplitVideoPartsRequest extends RpcAcsRequest<SplitVideoPartsResponse> {
 	   
 
+	private String template;
+
+	private Integer minTime;
+
+	private Integer maxTime;
+
 	private String videoUrl;
 	public SplitVideoPartsRequest() {
 		super("videorecog", "2020-03-20", "SplitVideoParts", "videorecog");
@@ -33,6 +39,39 @@ public class SplitVideoPartsRequest extends RpcAcsRequest<SplitVideoPartsRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTemplate() {
+		return this.template;
+	}
+
+	public void setTemplate(String template) {
+		this.template = template;
+		if(template != null){
+			putBodyParameter("Template", template);
+		}
+	}
+
+	public Integer getMinTime() {
+		return this.minTime;
+	}
+
+	public void setMinTime(Integer minTime) {
+		this.minTime = minTime;
+		if(minTime != null){
+			putBodyParameter("MinTime", minTime.toString());
+		}
+	}
+
+	public Integer getMaxTime() {
+		return this.maxTime;
+	}
+
+	public void setMaxTime(Integer maxTime) {
+		this.maxTime = maxTime;
+		if(maxTime != null){
+			putBodyParameter("MaxTime", maxTime.toString());
+		}
 	}
 
 	public String getVideoUrl() {

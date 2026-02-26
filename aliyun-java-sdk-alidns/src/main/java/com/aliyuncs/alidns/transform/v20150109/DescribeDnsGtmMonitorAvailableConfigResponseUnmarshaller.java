@@ -34,13 +34,13 @@ public class DescribeDnsGtmMonitorAvailableConfigResponseUnmarshaller {
 		List<Ipv4IspCityNode> ipv4IspCityNodes = new ArrayList<Ipv4IspCityNode>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv4IspCityNodes.Length"); i++) {
 			Ipv4IspCityNode ipv4IspCityNode = new Ipv4IspCityNode();
-			ipv4IspCityNode.setGroupName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv4IspCityNodes["+ i +"].GroupName"));
 			ipv4IspCityNode.setCityCode(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv4IspCityNodes["+ i +"].CityCode"));
+			ipv4IspCityNode.setGroupName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv4IspCityNodes["+ i +"].GroupName"));
+			ipv4IspCityNode.setIspCode(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv4IspCityNodes["+ i +"].IspCode"));
+			ipv4IspCityNode.setCityName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv4IspCityNodes["+ i +"].CityName"));
 			ipv4IspCityNode.setIspName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv4IspCityNodes["+ i +"].IspName"));
 			ipv4IspCityNode.setGroupType(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv4IspCityNodes["+ i +"].GroupType"));
-			ipv4IspCityNode.setCityName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv4IspCityNodes["+ i +"].CityName"));
 			ipv4IspCityNode.setDefaultSelected(_ctx.booleanValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv4IspCityNodes["+ i +"].DefaultSelected"));
-			ipv4IspCityNode.setIspCode(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv4IspCityNodes["+ i +"].IspCode"));
 
 			List<String> ips = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv4IspCityNodes["+ i +"].Ips.Length"); j++) {
@@ -55,13 +55,13 @@ public class DescribeDnsGtmMonitorAvailableConfigResponseUnmarshaller {
 		List<DomainIpv4IspCityNode> domainIpv4IspCityNodes = new ArrayList<DomainIpv4IspCityNode>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv4IspCityNodes.Length"); i++) {
 			DomainIpv4IspCityNode domainIpv4IspCityNode = new DomainIpv4IspCityNode();
-			domainIpv4IspCityNode.setGroupName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv4IspCityNodes["+ i +"].GroupName"));
 			domainIpv4IspCityNode.setCityCode(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv4IspCityNodes["+ i +"].CityCode"));
+			domainIpv4IspCityNode.setGroupName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv4IspCityNodes["+ i +"].GroupName"));
+			domainIpv4IspCityNode.setIspCode(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv4IspCityNodes["+ i +"].IspCode"));
+			domainIpv4IspCityNode.setCityName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv4IspCityNodes["+ i +"].CityName"));
 			domainIpv4IspCityNode.setIspName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv4IspCityNodes["+ i +"].IspName"));
 			domainIpv4IspCityNode.setGroupType(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv4IspCityNodes["+ i +"].GroupType"));
-			domainIpv4IspCityNode.setCityName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv4IspCityNodes["+ i +"].CityName"));
 			domainIpv4IspCityNode.setDefaultSelected(_ctx.booleanValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv4IspCityNodes["+ i +"].DefaultSelected"));
-			domainIpv4IspCityNode.setIspCode(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv4IspCityNodes["+ i +"].IspCode"));
 
 			List<String> ips1 = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv4IspCityNodes["+ i +"].Ips.Length"); j++) {
@@ -76,13 +76,13 @@ public class DescribeDnsGtmMonitorAvailableConfigResponseUnmarshaller {
 		List<DomainIpv6IspCityNode> domainIpv6IspCityNodes = new ArrayList<DomainIpv6IspCityNode>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv6IspCityNodes.Length"); i++) {
 			DomainIpv6IspCityNode domainIpv6IspCityNode = new DomainIpv6IspCityNode();
-			domainIpv6IspCityNode.setGroupName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv6IspCityNodes["+ i +"].GroupName"));
 			domainIpv6IspCityNode.setCityCode(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv6IspCityNodes["+ i +"].CityCode"));
+			domainIpv6IspCityNode.setGroupName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv6IspCityNodes["+ i +"].GroupName"));
+			domainIpv6IspCityNode.setIspCode(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv6IspCityNodes["+ i +"].IspCode"));
+			domainIpv6IspCityNode.setCityName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv6IspCityNodes["+ i +"].CityName"));
 			domainIpv6IspCityNode.setIspName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv6IspCityNodes["+ i +"].IspName"));
 			domainIpv6IspCityNode.setGroupType(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv6IspCityNodes["+ i +"].GroupType"));
-			domainIpv6IspCityNode.setCityName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv6IspCityNodes["+ i +"].CityName"));
 			domainIpv6IspCityNode.setDefaultSelected(_ctx.booleanValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv6IspCityNodes["+ i +"].DefaultSelected"));
-			domainIpv6IspCityNode.setIspCode(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv6IspCityNodes["+ i +"].IspCode"));
 
 			List<String> ips2 = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDnsGtmMonitorAvailableConfigResponse.DomainIpv6IspCityNodes["+ i +"].Ips.Length"); j++) {
@@ -97,13 +97,13 @@ public class DescribeDnsGtmMonitorAvailableConfigResponseUnmarshaller {
 		List<Ipv6IspCityNode> ipv6IspCityNodes = new ArrayList<Ipv6IspCityNode>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv6IspCityNodes.Length"); i++) {
 			Ipv6IspCityNode ipv6IspCityNode = new Ipv6IspCityNode();
-			ipv6IspCityNode.setGroupName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv6IspCityNodes["+ i +"].GroupName"));
 			ipv6IspCityNode.setCityCode(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv6IspCityNodes["+ i +"].CityCode"));
+			ipv6IspCityNode.setGroupName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv6IspCityNodes["+ i +"].GroupName"));
+			ipv6IspCityNode.setIspCode(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv6IspCityNodes["+ i +"].IspCode"));
+			ipv6IspCityNode.setCityName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv6IspCityNodes["+ i +"].CityName"));
 			ipv6IspCityNode.setIspName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv6IspCityNodes["+ i +"].IspName"));
 			ipv6IspCityNode.setGroupType(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv6IspCityNodes["+ i +"].GroupType"));
-			ipv6IspCityNode.setCityName(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv6IspCityNodes["+ i +"].CityName"));
 			ipv6IspCityNode.setDefaultSelected(_ctx.booleanValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv6IspCityNodes["+ i +"].DefaultSelected"));
-			ipv6IspCityNode.setIspCode(_ctx.stringValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv6IspCityNodes["+ i +"].IspCode"));
 
 			List<String> ips3 = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDnsGtmMonitorAvailableConfigResponse.Ipv6IspCityNodes["+ i +"].Ips.Length"); j++) {

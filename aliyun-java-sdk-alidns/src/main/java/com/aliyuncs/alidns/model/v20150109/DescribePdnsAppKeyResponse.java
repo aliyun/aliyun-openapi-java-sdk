@@ -46,21 +46,13 @@ public class DescribePdnsAppKeyResponse extends AcsResponse {
 
 	public static class AppKey {
 
-		private String state;
-
 		private String appKeyId;
-
-		private String createDate;
 
 		private String appKeySecret;
 
-		public String getState() {
-			return this.state;
-		}
+		private String state;
 
-		public void setState(String state) {
-			this.state = state;
-		}
+		private String createDate;
 
 		public String getAppKeyId() {
 			return this.appKeyId;
@@ -70,20 +62,28 @@ public class DescribePdnsAppKeyResponse extends AcsResponse {
 			this.appKeyId = appKeyId;
 		}
 
-		public String getCreateDate() {
-			return this.createDate;
-		}
-
-		public void setCreateDate(String createDate) {
-			this.createDate = createDate;
-		}
-
 		public String getAppKeySecret() {
 			return this.appKeySecret;
 		}
 
 		public void setAppKeySecret(String appKeySecret) {
 			this.appKeySecret = appKeySecret;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getCreateDate() {
+			return this.createDate;
+		}
+
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
 		}
 	}
 

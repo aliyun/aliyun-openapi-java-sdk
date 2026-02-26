@@ -27,7 +27,7 @@ public class AddSimilarityImageRequest extends RoaAcsRequest<AddSimilarityImageR
 
 	private String clientInfo;
 	public AddSimilarityImageRequest() {
-		super("Green", "2018-05-09", "AddSimilarityImage", "green");
+		super("Green", "2018-05-09", "AddSimilarityImage");
 		setUriPattern("/green/similarity/image/add");
 		setMethod(MethodType.POST);
 		try {

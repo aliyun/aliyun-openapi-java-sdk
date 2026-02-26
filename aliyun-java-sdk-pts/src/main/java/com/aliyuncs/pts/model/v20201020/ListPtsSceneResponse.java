@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPtsSceneResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String code;
-
 	private String message;
+
+	private String requestId;
 
 	private Integer httpStatusCode;
 
+	private String code;
+
+	private Boolean success;
+
 	private List<SceneView> sceneViewList;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,12 +53,12 @@ public class ListPtsSceneResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -61,20 +69,12 @@ public class ListPtsSceneResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<SceneView> getSceneViewList() {
@@ -87,11 +87,19 @@ public class ListPtsSceneResponse extends AcsResponse {
 
 	public static class SceneView {
 
+		private String createTime;
+
 		private String sceneId;
 
 		private String sceneName;
 
-		private String createTime;
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
 
 		public String getSceneId() {
 			return this.sceneId;
@@ -107,14 +115,6 @@ public class ListPtsSceneResponse extends AcsResponse {
 
 		public void setSceneName(String sceneName) {
 			this.sceneName = sceneName;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 	}
 

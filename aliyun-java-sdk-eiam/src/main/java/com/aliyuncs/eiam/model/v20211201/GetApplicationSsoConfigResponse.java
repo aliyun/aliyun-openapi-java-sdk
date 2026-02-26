@@ -121,7 +121,15 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 			private String signatureAlgorithm;
 
+			private Boolean responseSigned;
+
+			private Boolean assertionSigned;
+
+			private String idPEntityId;
+
 			private List<AttributeStatement> attributeStatements;
+
+			private List<OptionalRelayStatesItem> optionalRelayStates;
 
 			public String getSpSsoAcsUrl() {
 				return this.spSsoAcsUrl;
@@ -171,12 +179,44 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 				this.signatureAlgorithm = signatureAlgorithm;
 			}
 
+			public Boolean getResponseSigned() {
+				return this.responseSigned;
+			}
+
+			public void setResponseSigned(Boolean responseSigned) {
+				this.responseSigned = responseSigned;
+			}
+
+			public Boolean getAssertionSigned() {
+				return this.assertionSigned;
+			}
+
+			public void setAssertionSigned(Boolean assertionSigned) {
+				this.assertionSigned = assertionSigned;
+			}
+
+			public String getIdPEntityId() {
+				return this.idPEntityId;
+			}
+
+			public void setIdPEntityId(String idPEntityId) {
+				this.idPEntityId = idPEntityId;
+			}
+
 			public List<AttributeStatement> getAttributeStatements() {
 				return this.attributeStatements;
 			}
 
 			public void setAttributeStatements(List<AttributeStatement> attributeStatements) {
 				this.attributeStatements = attributeStatements;
+			}
+
+			public List<OptionalRelayStatesItem> getOptionalRelayStates() {
+				return this.optionalRelayStates;
+			}
+
+			public void setOptionalRelayStates(List<OptionalRelayStatesItem> optionalRelayStates) {
+				this.optionalRelayStates = optionalRelayStates;
 			}
 
 			public static class AttributeStatement {
@@ -201,9 +241,36 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 					this.attributeValueExpression = attributeValueExpression;
 				}
 			}
+
+			public static class OptionalRelayStatesItem {
+
+				private String relayState;
+
+				private String displayName;
+
+				public String getRelayState() {
+					return this.relayState;
+				}
+
+				public void setRelayState(String relayState) {
+					this.relayState = relayState;
+				}
+
+				public String getDisplayName() {
+					return this.displayName;
+				}
+
+				public void setDisplayName(String displayName) {
+					this.displayName = displayName;
+				}
+			}
 		}
 
 		public static class OidcSsoConfig {
+
+			private Boolean passwordTotpMfaRequired;
+
+			private String passwordAuthenticationSourceId;
 
 			private Boolean pkceRequired;
 
@@ -217,9 +284,13 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 			private String subjectIdExpression;
 
+			private String allowedPublicClient;
+
 			private List<CustomClaim> customClaims;
 
 			private List<String> redirectUris;
+
+			private List<String> postLogoutRedirectUris;
 
 			private List<String> grantTypes;
 
@@ -228,6 +299,22 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 			private List<String> grantScopes;
 
 			private List<String> pkceChallengeMethods;
+
+			public Boolean getPasswordTotpMfaRequired() {
+				return this.passwordTotpMfaRequired;
+			}
+
+			public void setPasswordTotpMfaRequired(Boolean passwordTotpMfaRequired) {
+				this.passwordTotpMfaRequired = passwordTotpMfaRequired;
+			}
+
+			public String getPasswordAuthenticationSourceId() {
+				return this.passwordAuthenticationSourceId;
+			}
+
+			public void setPasswordAuthenticationSourceId(String passwordAuthenticationSourceId) {
+				this.passwordAuthenticationSourceId = passwordAuthenticationSourceId;
+			}
 
 			public Boolean getPkceRequired() {
 				return this.pkceRequired;
@@ -277,6 +364,14 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 				this.subjectIdExpression = subjectIdExpression;
 			}
 
+			public String getAllowedPublicClient() {
+				return this.allowedPublicClient;
+			}
+
+			public void setAllowedPublicClient(String allowedPublicClient) {
+				this.allowedPublicClient = allowedPublicClient;
+			}
+
 			public List<CustomClaim> getCustomClaims() {
 				return this.customClaims;
 			}
@@ -291,6 +386,14 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 			public void setRedirectUris(List<String> redirectUris) {
 				this.redirectUris = redirectUris;
+			}
+
+			public List<String> getPostLogoutRedirectUris() {
+				return this.postLogoutRedirectUris;
+			}
+
+			public void setPostLogoutRedirectUris(List<String> postLogoutRedirectUris) {
+				this.postLogoutRedirectUris = postLogoutRedirectUris;
 			}
 
 			public List<String> getGrantTypes() {
@@ -369,6 +472,8 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 			private String oauth2UserinfoEndpoint;
 
+			private String oidcLogoutEndpoint;
+
 			public String getSamlSsoEndpoint() {
 				return this.samlSsoEndpoint;
 			}
@@ -439,6 +544,14 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 			public void setOauth2UserinfoEndpoint(String oauth2UserinfoEndpoint) {
 				this.oauth2UserinfoEndpoint = oauth2UserinfoEndpoint;
+			}
+
+			public String getOidcLogoutEndpoint() {
+				return this.oidcLogoutEndpoint;
+			}
+
+			public void setOidcLogoutEndpoint(String oidcLogoutEndpoint) {
+				this.oidcLogoutEndpoint = oidcLogoutEndpoint;
 			}
 		}
 	}

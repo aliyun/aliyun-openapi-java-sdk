@@ -87,7 +87,15 @@ public class ListAclsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Boolean serviceManagedEnabled;
+
+		private String serviceManagedMode;
+
 		private Boolean configManagedEnabled;
+
+		private String createTime;
+
+		private List<Tag> tags;
 
 		public String getAclId() {
 			return this.aclId;
@@ -129,12 +137,67 @@ public class ListAclsResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public Boolean getServiceManagedEnabled() {
+			return this.serviceManagedEnabled;
+		}
+
+		public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+			this.serviceManagedEnabled = serviceManagedEnabled;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
+		}
+
 		public Boolean getConfigManagedEnabled() {
 			return this.configManagedEnabled;
 		}
 
 		public void setConfigManagedEnabled(Boolean configManagedEnabled) {
 			this.configManagedEnabled = configManagedEnabled;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

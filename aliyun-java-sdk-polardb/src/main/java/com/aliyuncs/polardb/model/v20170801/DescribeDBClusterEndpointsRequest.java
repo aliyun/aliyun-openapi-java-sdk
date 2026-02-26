@@ -29,6 +29,8 @@ public class DescribeDBClusterEndpointsRequest extends RpcAcsRequest<DescribeDBC
 
 	private String dBEndpointId;
 
+	private String describeType;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -36,8 +38,10 @@ public class DescribeDBClusterEndpointsRequest extends RpcAcsRequest<DescribeDBC
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String polarFsInstanceId;
 	public DescribeDBClusterEndpointsRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusterEndpoints");
+		super("polardb", "2017-08-01", "DescribeDBClusterEndpoints", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,6 +68,17 @@ public class DescribeDBClusterEndpointsRequest extends RpcAcsRequest<DescribeDBC
 		this.dBEndpointId = dBEndpointId;
 		if(dBEndpointId != null){
 			putQueryParameter("DBEndpointId", dBEndpointId);
+		}
+	}
+
+	public String getDescribeType() {
+		return this.describeType;
+	}
+
+	public void setDescribeType(String describeType) {
+		this.describeType = describeType;
+		if(describeType != null){
+			putQueryParameter("DescribeType", describeType);
 		}
 	}
 
@@ -108,6 +123,17 @@ public class DescribeDBClusterEndpointsRequest extends RpcAcsRequest<DescribeDBC
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPolarFsInstanceId() {
+		return this.polarFsInstanceId;
+	}
+
+	public void setPolarFsInstanceId(String polarFsInstanceId) {
+		this.polarFsInstanceId = polarFsInstanceId;
+		if(polarFsInstanceId != null){
+			putQueryParameter("PolarFsInstanceId", polarFsInstanceId);
 		}
 	}
 

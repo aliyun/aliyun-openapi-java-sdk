@@ -31,7 +31,7 @@ public class TransferInRefetchWhoisEmailRequest extends RpcAcsRequest<TransferIn
 
 	private String lang;
 	public TransferInRefetchWhoisEmailRequest() {
-		super("Domain", "2018-01-29", "TransferInRefetchWhoisEmail");
+		super("Domain", "2018-01-29", "TransferInRefetchWhoisEmail", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

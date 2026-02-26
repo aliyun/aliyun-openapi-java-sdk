@@ -26,11 +26,15 @@ import com.aliyuncs.ros.Endpoint;
 public class DeleteStackRequest extends RpcAcsRequest<DeleteStackResponse> {
 	   
 
-	private String stackId;
-
-	private List<String> retainResourcess;
+	private List<String> deleteOptionss;
 
 	private Boolean retainAllResources;
+
+	private String stackId;
+
+	private Long parallelism;
+
+	private List<String> retainResourcess;
 
 	private String ramRoleName;
 	public DeleteStackRequest() {
@@ -42,6 +46,30 @@ public class DeleteStackRequest extends RpcAcsRequest<DeleteStackResponse> {
 		} catch (Exception e) {}
 	}
 
+	public List<String> getDeleteOptionss() {
+		return this.deleteOptionss;
+	}
+
+	public void setDeleteOptionss(List<String> deleteOptionss) {
+		this.deleteOptionss = deleteOptionss;	
+		if (deleteOptionss != null) {
+			for (int i = 0; i < deleteOptionss.size(); i++) {
+				putQueryParameter("DeleteOptions." + (i + 1) , deleteOptionss.get(i));
+			}
+		}	
+	}
+
+	public Boolean getRetainAllResources() {
+		return this.retainAllResources;
+	}
+
+	public void setRetainAllResources(Boolean retainAllResources) {
+		this.retainAllResources = retainAllResources;
+		if(retainAllResources != null){
+			putQueryParameter("RetainAllResources", retainAllResources.toString());
+		}
+	}
+
 	public String getStackId() {
 		return this.stackId;
 	}
@@ -50,6 +78,17 @@ public class DeleteStackRequest extends RpcAcsRequest<DeleteStackResponse> {
 		this.stackId = stackId;
 		if(stackId != null){
 			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public Long getParallelism() {
+		return this.parallelism;
+	}
+
+	public void setParallelism(Long parallelism) {
+		this.parallelism = parallelism;
+		if(parallelism != null){
+			putQueryParameter("Parallelism", parallelism.toString());
 		}
 	}
 
@@ -64,17 +103,6 @@ public class DeleteStackRequest extends RpcAcsRequest<DeleteStackResponse> {
 				putQueryParameter("RetainResources." + (i + 1) , retainResourcess.get(i));
 			}
 		}	
-	}
-
-	public Boolean getRetainAllResources() {
-		return this.retainAllResources;
-	}
-
-	public void setRetainAllResources(Boolean retainAllResources) {
-		this.retainAllResources = retainAllResources;
-		if(retainAllResources != null){
-			putQueryParameter("RetainAllResources", retainAllResources.toString());
-		}
 	}
 
 	public String getRamRoleName() {

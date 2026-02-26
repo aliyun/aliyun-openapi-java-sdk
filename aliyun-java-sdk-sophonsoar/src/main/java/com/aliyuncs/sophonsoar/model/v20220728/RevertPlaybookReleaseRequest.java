@@ -1,0 +1,77 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.sophonsoar.model.v20220728;
+
+import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class RevertPlaybookReleaseRequest extends RpcAcsRequest<RevertPlaybookReleaseResponse> {
+	   
+
+	private String playbookUuid;
+
+	private Integer playReleaseId;
+
+	private Boolean isPublish;
+	public RevertPlaybookReleaseRequest() {
+		super("sophonsoar", "2022-07-28", "RevertPlaybookRelease");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+	}
+
+	public String getPlaybookUuid() {
+		return this.playbookUuid;
+	}
+
+	public void setPlaybookUuid(String playbookUuid) {
+		this.playbookUuid = playbookUuid;
+		if(playbookUuid != null){
+			putBodyParameter("PlaybookUuid", playbookUuid);
+		}
+	}
+
+	public Integer getPlayReleaseId() {
+		return this.playReleaseId;
+	}
+
+	public void setPlayReleaseId(Integer playReleaseId) {
+		this.playReleaseId = playReleaseId;
+		if(playReleaseId != null){
+			putBodyParameter("PlayReleaseId", playReleaseId.toString());
+		}
+	}
+
+	public Boolean getIsPublish() {
+		return this.isPublish;
+	}
+
+	public void setIsPublish(Boolean isPublish) {
+		this.isPublish = isPublish;
+		if(isPublish != null){
+			putBodyParameter("IsPublish", isPublish.toString());
+		}
+	}
+
+	@Override
+	public Class<RevertPlaybookReleaseResponse> getResponseClass() {
+		return RevertPlaybookReleaseResponse.class;
+	}
+
+}

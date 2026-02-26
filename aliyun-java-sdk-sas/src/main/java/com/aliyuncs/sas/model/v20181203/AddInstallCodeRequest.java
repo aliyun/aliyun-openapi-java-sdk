@@ -31,6 +31,8 @@ public class AddInstallCodeRequest extends RpcAcsRequest<AddInstallCodeResponse>
 
 	private Long groupId;
 
+	private String proxyCluster;
+
 	private Boolean onlyImage;
 
 	private String vendorName;
@@ -73,6 +75,17 @@ public class AddInstallCodeRequest extends RpcAcsRequest<AddInstallCodeResponse>
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId.toString());
+		}
+	}
+
+	public String getProxyCluster() {
+		return this.proxyCluster;
+	}
+
+	public void setProxyCluster(String proxyCluster) {
+		this.proxyCluster = proxyCluster;
+		if(proxyCluster != null){
+			putQueryParameter("ProxyCluster", proxyCluster);
 		}
 	}
 

@@ -103,7 +103,15 @@ public class ListManagedRulesResponse extends AcsResponse {
 
 			private String helpUrls;
 
+			private Boolean supportPreviewManagedRule;
+
+			private String remediationTemplateIdentifier;
+
+			private String remediationTemplateName;
+
 			private List<String> labels;
+
+			private Scope scope;
 
 			public Integer getRiskLevel() {
 				return this.riskLevel;
@@ -161,12 +169,57 @@ public class ListManagedRulesResponse extends AcsResponse {
 				this.helpUrls = helpUrls;
 			}
 
+			public Boolean getSupportPreviewManagedRule() {
+				return this.supportPreviewManagedRule;
+			}
+
+			public void setSupportPreviewManagedRule(Boolean supportPreviewManagedRule) {
+				this.supportPreviewManagedRule = supportPreviewManagedRule;
+			}
+
+			public String getRemediationTemplateIdentifier() {
+				return this.remediationTemplateIdentifier;
+			}
+
+			public void setRemediationTemplateIdentifier(String remediationTemplateIdentifier) {
+				this.remediationTemplateIdentifier = remediationTemplateIdentifier;
+			}
+
+			public String getRemediationTemplateName() {
+				return this.remediationTemplateName;
+			}
+
+			public void setRemediationTemplateName(String remediationTemplateName) {
+				this.remediationTemplateName = remediationTemplateName;
+			}
+
 			public List<String> getLabels() {
 				return this.labels;
 			}
 
 			public void setLabels(List<String> labels) {
 				this.labels = labels;
+			}
+
+			public Scope getScope() {
+				return this.scope;
+			}
+
+			public void setScope(Scope scope) {
+				this.scope = scope;
+			}
+
+			public static class Scope {
+
+				private List<String> complianceResourceTypes;
+
+				public List<String> getComplianceResourceTypes() {
+					return this.complianceResourceTypes;
+				}
+
+				public void setComplianceResourceTypes(List<String> complianceResourceTypes) {
+					this.complianceResourceTypes = complianceResourceTypes;
+				}
 			}
 		}
 	}

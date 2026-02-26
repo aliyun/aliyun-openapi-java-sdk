@@ -25,11 +25,11 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeCdnSMCertificateListRequest extends RpcAcsRequest<DescribeCdnSMCertificateListResponse> {
 	   
 
+	private String securityToken;
+
 	private String domainName;
 
 	private Long ownerId;
-
-	private String securityToken;
 	public DescribeCdnSMCertificateListRequest() {
 		super("Cdn", "2018-05-10", "DescribeCdnSMCertificateList");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class DescribeCdnSMCertificateListRequest extends RpcAcsRequest<DescribeC
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -58,17 +69,6 @@ public class DescribeCdnSMCertificateListRequest extends RpcAcsRequest<DescribeC
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -27,6 +27,10 @@ public class GetKubernetesSourceRequest extends RpcAcsRequest<GetKubernetesSourc
 
 	private String gatewayUniqueId;
 
+	private Boolean isAll;
+
+	private String vpcId;
+
 	private String acceptLanguage;
 	public GetKubernetesSourceRequest() {
 		super("mse", "2019-05-31", "GetKubernetesSource", "mse");
@@ -45,6 +49,28 @@ public class GetKubernetesSourceRequest extends RpcAcsRequest<GetKubernetesSourc
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public Boolean getIsAll() {
+		return this.isAll;
+	}
+
+	public void setIsAll(Boolean isAll) {
+		this.isAll = isAll;
+		if(isAll != null){
+			putQueryParameter("IsAll", isAll.toString());
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

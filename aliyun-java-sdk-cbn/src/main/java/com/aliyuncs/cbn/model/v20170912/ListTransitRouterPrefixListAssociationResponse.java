@@ -91,6 +91,8 @@ public class ListTransitRouterPrefixListAssociationResponse extends AcsResponse 
 
 		private String transitRouterTableId;
 
+		private String transitRouterId;
+
 		public String getPrefixListId() {
 			return this.prefixListId;
 		}
@@ -145,6 +147,14 @@ public class ListTransitRouterPrefixListAssociationResponse extends AcsResponse 
 
 		public void setTransitRouterTableId(String transitRouterTableId) {
 			this.transitRouterTableId = transitRouterTableId;
+		}
+
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
 		}
 	}
 

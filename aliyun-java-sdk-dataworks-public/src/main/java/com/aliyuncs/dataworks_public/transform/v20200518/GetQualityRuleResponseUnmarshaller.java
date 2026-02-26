@@ -53,6 +53,8 @@ public class GetQualityRuleResponseUnmarshaller {
 		data.setTrend(_ctx.stringValue("GetQualityRuleResponse.Data.Trend"));
 		data.setTemplateId(_ctx.integerValue("GetQualityRuleResponse.Data.TemplateId"));
 		data.setId(_ctx.longValue("GetQualityRuleResponse.Data.Id"));
+		data.setOpenSwitch(_ctx.booleanValue("GetQualityRuleResponse.Data.OpenSwitch"));
+		data.setTaskSetting(_ctx.stringValue("GetQualityRuleResponse.Data.TaskSetting"));
 		getQualityRuleResponse.setData(data);
 	 
 	 	return getQualityRuleResponse;

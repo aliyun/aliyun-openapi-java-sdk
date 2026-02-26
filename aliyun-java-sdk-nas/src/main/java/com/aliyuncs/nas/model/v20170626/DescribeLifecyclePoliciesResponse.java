@@ -89,7 +89,15 @@ public class DescribeLifecyclePoliciesResponse extends AcsResponse {
 
 		private String lifecyclePolicyName;
 
+		private String lifecycleRuleType;
+
+		private String status;
+
+		private Boolean enableLifecycle;
+
 		private List<String> paths;
+
+		private List<String> fsetIds;
 
 		public String getFileSystemId() {
 			return this.fileSystemId;
@@ -139,12 +147,44 @@ public class DescribeLifecyclePoliciesResponse extends AcsResponse {
 			this.lifecyclePolicyName = lifecyclePolicyName;
 		}
 
+		public String getLifecycleRuleType() {
+			return this.lifecycleRuleType;
+		}
+
+		public void setLifecycleRuleType(String lifecycleRuleType) {
+			this.lifecycleRuleType = lifecycleRuleType;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Boolean getEnableLifecycle() {
+			return this.enableLifecycle;
+		}
+
+		public void setEnableLifecycle(Boolean enableLifecycle) {
+			this.enableLifecycle = enableLifecycle;
+		}
+
 		public List<String> getPaths() {
 			return this.paths;
 		}
 
 		public void setPaths(List<String> paths) {
 			this.paths = paths;
+		}
+
+		public List<String> getFsetIds() {
+			return this.fsetIds;
+		}
+
+		public void setFsetIds(List<String> fsetIds) {
+			this.fsetIds = fsetIds;
 		}
 	}
 

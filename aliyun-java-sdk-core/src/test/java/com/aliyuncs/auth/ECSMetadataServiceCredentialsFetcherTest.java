@@ -1,9 +1,5 @@
 package com.aliyuncs.auth;
 
-import static org.mockito.Mockito.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -23,6 +19,8 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
+
+import static org.mockito.Mockito.*;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(CompatibleUrlConnClient.class)
@@ -45,7 +43,7 @@ public class ECSMetadataServiceCredentialsFetcherTest {
 
     @Test
     public void setNullRoleName() {
-        thrown.expect(NullPointerException.class);
+        thrown.expect(IllegalArgumentException.class);
         ECSMetadataServiceCredentialsFetcher fetcher = new ECSMetadataServiceCredentialsFetcher();
         Assert.assertNotNull(fetcher);
         fetcher.setRoleName(null);
@@ -252,5 +250,45 @@ public class ECSMetadataServiceCredentialsFetcherTest {
         ECSMetadataServiceCredentialsFetcher fetcher = new ECSMetadataServiceCredentialsFetcher();
         fetcher.setRoleName("role");
         fetcher.fetch(-1);
+    }
+
+    @Test
+    public void fetchWithMetadaToken() throws ClientException, IOException {
+        PowerMockito.mockStatic(CompatibleUrlConnClient.class);
+        BDDMockito.given(CompatibleUrlConnClient.compatibleGetResponse(any(HttpRequest.class))).willThrow(new RuntimeException("test"));
+        ECSMetadataServiceCredentialsFetcher fetcher = new ECSMetadataServiceCredentialsFetcher();
+        try {
+            fetcher.fetch();
+            Assert.fail();
+        } catch (ClientException e) {
+            Assert.assertEquals("Failed to connect ECS Metadata Service: java.lang.RuntimeException: test",
+                    e.getMessage());
+        }
+        ECSMetadataServiceCredentialsFetcher v2Fetcher = new ECSMetadataServiceCredentialsFetcher("", true, 900, 1200);
+        try {
+            v2Fetcher.fetch();
+            Assert.fail();
+        } catch (ClientException e) {
+            Assert.assertEquals("Failed to get token from ECS Metadata Service, and fallback to IMDS v1 is disabled via the disableIMDSv1 configuration is turned on. Original error: Failed to connect ECS Metadata Service: java.lang.RuntimeException: test",
+                    e.getMessage());
+        }
+        HttpResponse response = mock(HttpResponse.class);
+        when(response.getStatus()).thenReturn(HttpURLConnection.HTTP_INTERNAL_ERROR);
+        BDDMockito.given(CompatibleUrlConnClient.compatibleGetResponse(any(HttpRequest.class))).willReturn(response);
+        try {
+            fetcher.fetch();
+            Assert.fail();
+        } catch (ClientException e) {
+            Assert.assertEquals("Failed to get RAM session credentials from ECS metadata service. HttpCode=500",
+                    e.getMessage());
+        }
+        try {
+            v2Fetcher.fetch();
+            Assert.fail();
+        } catch (ClientException e) {
+            Assert.assertEquals("Failed to get token from ECS Metadata Service, and fallback to IMDS v1 is disabled via the disableIMDSv1 configuration is turned on. Original error: Failed to get token from ECS Metadata Service. HttpCode=500, ResponseMessage=null",
+                    e.getMessage());
+        }
+
     }
 }

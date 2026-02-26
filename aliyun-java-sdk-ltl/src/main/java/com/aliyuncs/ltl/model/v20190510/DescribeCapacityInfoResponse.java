@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCapacityInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
-
-	private Boolean success;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -50,20 +42,28 @@ public class DescribeCapacityInfoResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -76,17 +76,25 @@ public class DescribeCapacityInfoResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long countQuota;
+
 		private Long capacityQuota;
+
+		private Long usedCount;
 
 		private Long usedCapacity;
 
 		private Long memberUsedCapacity;
 
-		private Long countQuota;
-
-		private Long usedCount;
-
 		private Long memberUsedCount;
+
+		public Long getCountQuota() {
+			return this.countQuota;
+		}
+
+		public void setCountQuota(Long countQuota) {
+			this.countQuota = countQuota;
+		}
 
 		public Long getCapacityQuota() {
 			return this.capacityQuota;
@@ -94,6 +102,14 @@ public class DescribeCapacityInfoResponse extends AcsResponse {
 
 		public void setCapacityQuota(Long capacityQuota) {
 			this.capacityQuota = capacityQuota;
+		}
+
+		public Long getUsedCount() {
+			return this.usedCount;
+		}
+
+		public void setUsedCount(Long usedCount) {
+			this.usedCount = usedCount;
 		}
 
 		public Long getUsedCapacity() {
@@ -110,22 +126,6 @@ public class DescribeCapacityInfoResponse extends AcsResponse {
 
 		public void setMemberUsedCapacity(Long memberUsedCapacity) {
 			this.memberUsedCapacity = memberUsedCapacity;
-		}
-
-		public Long getCountQuota() {
-			return this.countQuota;
-		}
-
-		public void setCountQuota(Long countQuota) {
-			this.countQuota = countQuota;
-		}
-
-		public Long getUsedCount() {
-			return this.usedCount;
-		}
-
-		public void setUsedCount(Long usedCount) {
-			this.usedCount = usedCount;
 		}
 
 		public Long getMemberUsedCount() {

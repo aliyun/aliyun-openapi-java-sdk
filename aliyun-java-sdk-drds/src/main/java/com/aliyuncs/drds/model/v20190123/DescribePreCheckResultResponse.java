@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePreCheckResultResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private PreCheckResult preCheckResult;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribePreCheckResultResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public PreCheckResult getPreCheckResult() {
@@ -89,13 +89,21 @@ public class DescribePreCheckResultResponse extends AcsResponse {
 
 		public static class SubCheckItemsItem {
 
+			private String errorMsgCode;
+
 			private String preCheckItemName;
 
 			private String state;
 
-			private String errorMsgCode;
-
 			private List<String> errorMsgParams;
+
+			public String getErrorMsgCode() {
+				return this.errorMsgCode;
+			}
+
+			public void setErrorMsgCode(String errorMsgCode) {
+				this.errorMsgCode = errorMsgCode;
+			}
 
 			public String getPreCheckItemName() {
 				return this.preCheckItemName;
@@ -111,14 +119,6 @@ public class DescribePreCheckResultResponse extends AcsResponse {
 
 			public void setState(String state) {
 				this.state = state;
-			}
-
-			public String getErrorMsgCode() {
-				return this.errorMsgCode;
-			}
-
-			public void setErrorMsgCode(String errorMsgCode) {
-				this.errorMsgCode = errorMsgCode;
 			}
 
 			public List<String> getErrorMsgParams() {

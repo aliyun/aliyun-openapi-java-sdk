@@ -14,6 +14,9 @@
 
 package com.aliyuncs.mts.transform.v20140618;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse;
 import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse.SnapshotJob;
 import com.aliyuncs.mts.model.v20140618.SubmitSnapshotJobResponse.SnapshotJob.Input;
@@ -49,6 +52,12 @@ public class SubmitSnapshotJobResponseUnmarshaller {
 		snapshotConfig.setWidth(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Width"));
 		snapshotConfig.setHeight(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Height"));
 		snapshotConfig.setNum(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.Num"));
+
+		List<Long> timeArray = new ArrayList<Long>();
+		for (int i = 0; i < _ctx.lengthValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TimeArray.Length"); i++) {
+			timeArray.add(_ctx.longValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TimeArray["+ i +"]"));
+		}
+		snapshotConfig.setTimeArray(timeArray);
 
 		TileOut tileOut = new TileOut();
 		tileOut.setPadding(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.SnapshotConfig.TileOut.Padding"));

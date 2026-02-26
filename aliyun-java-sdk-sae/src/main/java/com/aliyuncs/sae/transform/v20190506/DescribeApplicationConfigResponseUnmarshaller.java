@@ -23,6 +23,7 @@ import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.C
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.MountDescItem;
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.OssMountDesc;
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.Tag;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,6 +49,7 @@ public class DescribeApplicationConfigResponseUnmarshaller {
 		data.setLiveness(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Liveness"));
 		data.setPackageUrl(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PackageUrl"));
 		data.setPackageType(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PackageType"));
+		data.setPackageRuntimeCustomBuild(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PackageRuntimeCustomBuild"));
 		data.setPreStop(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PreStop"));
 		data.setPackageVersion(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PackageVersion"));
 		data.setJarStartArgs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.JarStartArgs"));
@@ -90,9 +92,24 @@ public class DescribeApplicationConfigResponseUnmarshaller {
 		data.setMseApplicationId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MseApplicationId"));
 		data.setAcrInstanceId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AcrInstanceId"));
 		data.setAcrAssumeRoleArn(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AcrAssumeRoleArn"));
+		data.setImagePullSecrets(_ctx.stringValue("DescribeApplicationConfigResponse.Data.ImagePullSecrets"));
+		data.setEnableImageAccl(_ctx.booleanValue("DescribeApplicationConfigResponse.Data.EnableImageAccl"));
 		data.setAssociateEip(_ctx.booleanValue("DescribeApplicationConfigResponse.Data.AssociateEip"));
 		data.setKafkaConfigs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.KafkaConfigs"));
 		data.setProgrammingLanguage(_ctx.stringValue("DescribeApplicationConfigResponse.Data.ProgrammingLanguage"));
+		data.setPvtzDiscovery(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PvtzDiscovery"));
+		data.setMicroRegistration(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MicroRegistration"));
+		data.setNasConfigs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.NasConfigs"));
+		data.setPython(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Python"));
+		data.setPythonModules(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PythonModules"));
+		data.setDotnet(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Dotnet"));
+		data.setMseApplicationName(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MseApplicationName"));
+		data.setSaeVersion(_ctx.stringValue("DescribeApplicationConfigResponse.Data.SaeVersion"));
+		data.setAppSource(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AppSource"));
+		data.setServiceTags(_ctx.mapValue("DescribeApplicationConfigResponse.Data.ServiceTags"));
+		data.setMicroRegistrationConfig(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MicroRegistrationConfig"));
+		data.setEnableIdle(_ctx.booleanValue("DescribeApplicationConfigResponse.Data.EnableIdle"));
+		data.setEnableNewArms(_ctx.booleanValue("DescribeApplicationConfigResponse.Data.EnableNewArms"));
 
 		List<ConfigMapMountDescItem> configMapMountDesc = new ArrayList<ConfigMapMountDescItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc.Length"); i++) {

@@ -15,7 +15,9 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -28,25 +30,33 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private Integer dBInstanceStorage;
 
+	private String secondaryZoneId;
+
 	private String couponNo;
 
 	private String engineVersion;
 
 	private String networkType;
 
+	private String srcRegion;
+
 	private String storageType;
 
 	private String resourceGroupId;
 
-	private String securityToken;
-
 	private String dBInstanceDescription;
+
+	private List<Tag> tags;
+
+	private String globalSecurityGroupIds;
 
 	private String businessInfo;
 
 	private Integer period;
 
 	private String backupId;
+
+	private String encryptionKey;
 
 	private Long ownerId;
 
@@ -55,6 +65,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String securityIPList;
 
 	private String vSwitchId;
+
+	private Long provisionedIops;
 
 	private String autoRenew;
 
@@ -72,6 +84,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String engine;
 
+	private String hiddenZoneId;
+
 	private String restoreTime;
 
 	private String resourceOwnerAccount;
@@ -82,7 +96,11 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String clusterId;
 
+	private String restoreType;
+
 	private String accountPassword;
+
+	private Boolean encrypted;
 
 	private String vpcId;
 
@@ -90,6 +108,10 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	public CreateDBInstanceRequest() {
 		super("Dds", "2015-12-01", "CreateDBInstance", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -111,6 +133,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBInstanceStorage = dBInstanceStorage;
 		if(dBInstanceStorage != null){
 			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
+		}
+	}
+
+	public String getSecondaryZoneId() {
+		return this.secondaryZoneId;
+	}
+
+	public void setSecondaryZoneId(String secondaryZoneId) {
+		this.secondaryZoneId = secondaryZoneId;
+		if(secondaryZoneId != null){
+			putQueryParameter("SecondaryZoneId", secondaryZoneId);
 		}
 	}
 
@@ -147,6 +180,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getSrcRegion() {
+		return this.srcRegion;
+	}
+
+	public void setSrcRegion(String srcRegion) {
+		this.srcRegion = srcRegion;
+		if(srcRegion != null){
+			putQueryParameter("SrcRegion", srcRegion);
+		}
+	}
+
 	public String getStorageType() {
 		return this.storageType;
 	}
@@ -169,17 +213,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
 	public String getDBInstanceDescription() {
 		return this.dBInstanceDescription;
 	}
@@ -188,6 +221,31 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBInstanceDescription = dBInstanceDescription;
 		if(dBInstanceDescription != null){
 			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getGlobalSecurityGroupIds() {
+		return this.globalSecurityGroupIds;
+	}
+
+	public void setGlobalSecurityGroupIds(String globalSecurityGroupIds) {
+		this.globalSecurityGroupIds = globalSecurityGroupIds;
+		if(globalSecurityGroupIds != null){
+			putQueryParameter("GlobalSecurityGroupIds", globalSecurityGroupIds);
 		}
 	}
 
@@ -221,6 +279,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.backupId = backupId;
 		if(backupId != null){
 			putQueryParameter("BackupId", backupId);
+		}
+	}
+
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
 		}
 	}
 
@@ -265,6 +334,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public Long getProvisionedIops() {
+		return this.provisionedIops;
+	}
+
+	public void setProvisionedIops(Long provisionedIops) {
+		this.provisionedIops = provisionedIops;
+		if(provisionedIops != null){
+			putQueryParameter("ProvisionedIops", provisionedIops.toString());
 		}
 	}
 
@@ -356,6 +436,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getHiddenZoneId() {
+		return this.hiddenZoneId;
+	}
+
+	public void setHiddenZoneId(String hiddenZoneId) {
+		this.hiddenZoneId = hiddenZoneId;
+		if(hiddenZoneId != null){
+			putQueryParameter("HiddenZoneId", hiddenZoneId);
+		}
+	}
+
 	public String getRestoreTime() {
 		return this.restoreTime;
 	}
@@ -411,6 +502,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getRestoreType() {
+		return this.restoreType;
+	}
+
+	public void setRestoreType(String restoreType) {
+		this.restoreType = restoreType;
+		if(restoreType != null){
+			putQueryParameter("RestoreType", restoreType);
+		}
+	}
+
 	public String getAccountPassword() {
 		return this.accountPassword;
 	}
@@ -419,6 +521,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.accountPassword = accountPassword;
 		if(accountPassword != null){
 			putQueryParameter("AccountPassword", accountPassword);
+		}
+	}
+
+	public Boolean getEncrypted() {
+		return this.encrypted;
+	}
+
+	public void setEncrypted(Boolean encrypted) {
+		this.encrypted = encrypted;
+		if(encrypted != null){
+			putQueryParameter("Encrypted", encrypted.toString());
 		}
 	}
 
@@ -441,6 +554,29 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

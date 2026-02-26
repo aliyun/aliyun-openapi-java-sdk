@@ -27,7 +27,7 @@ public class DescribeElasticBandwidthSpecRequest extends RpcAcsRequest<DescribeE
 
 	private String instanceId;
 	public DescribeElasticBandwidthSpecRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeElasticBandwidthSpec");
+		super("ddoscoo", "2020-01-01", "DescribeElasticBandwidthSpec", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -30,17 +30,17 @@ public class ListQueueUpStreamBindingsResponseUnmarshaller {
 		listQueueUpStreamBindingsResponse.setRequestId(_ctx.stringValue("ListQueueUpStreamBindingsResponse.RequestId"));
 
 		Data data = new Data();
-		data.setNextToken(_ctx.stringValue("ListQueueUpStreamBindingsResponse.Data.NextToken"));
 		data.setMaxResults(_ctx.stringValue("ListQueueUpStreamBindingsResponse.Data.MaxResults"));
+		data.setNextToken(_ctx.stringValue("ListQueueUpStreamBindingsResponse.Data.NextToken"));
 
 		List<BindingVO> bindings = new ArrayList<BindingVO>();
 		for (int i = 0; i < _ctx.lengthValue("ListQueueUpStreamBindingsResponse.Data.Bindings.Length"); i++) {
 			BindingVO bindingVO = new BindingVO();
 			bindingVO.setSourceExchange(_ctx.stringValue("ListQueueUpStreamBindingsResponse.Data.Bindings["+ i +"].SourceExchange"));
-			bindingVO.setDestinationName(_ctx.stringValue("ListQueueUpStreamBindingsResponse.Data.Bindings["+ i +"].DestinationName"));
-			bindingVO.setBindingType(_ctx.stringValue("ListQueueUpStreamBindingsResponse.Data.Bindings["+ i +"].BindingType"));
-			bindingVO.setBindingKey(_ctx.stringValue("ListQueueUpStreamBindingsResponse.Data.Bindings["+ i +"].BindingKey"));
 			bindingVO.setArgument(_ctx.stringValue("ListQueueUpStreamBindingsResponse.Data.Bindings["+ i +"].Argument"));
+			bindingVO.setBindingKey(_ctx.stringValue("ListQueueUpStreamBindingsResponse.Data.Bindings["+ i +"].BindingKey"));
+			bindingVO.setBindingType(_ctx.stringValue("ListQueueUpStreamBindingsResponse.Data.Bindings["+ i +"].BindingType"));
+			bindingVO.setDestinationName(_ctx.stringValue("ListQueueUpStreamBindingsResponse.Data.Bindings["+ i +"].DestinationName"));
 
 			bindings.add(bindingVO);
 		}

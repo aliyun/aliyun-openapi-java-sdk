@@ -27,7 +27,7 @@ public class DescribeWebCustomPortsRequest extends RpcAcsRequest<DescribeWebCust
 
 	private String resourceGroupId;
 	public DescribeWebCustomPortsRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeWebCustomPorts");
+		super("ddoscoo", "2020-01-01", "DescribeWebCustomPorts", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

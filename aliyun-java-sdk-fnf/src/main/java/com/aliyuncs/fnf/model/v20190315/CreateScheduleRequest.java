@@ -25,17 +25,17 @@ import com.aliyuncs.fnf.Endpoint;
 public class CreateScheduleRequest extends RpcAcsRequest<CreateScheduleResponse> {
 	   
 
+	private String cronExpression;
+
+	private String description;
+
 	private String scheduleName;
 
-	private String cronExpression;
+	private String signatureVersion;
 
 	private String payload;
 
-	private String requestId;
-
 	private Boolean enable;
-
-	private String description;
 
 	private String flowName;
 	public CreateScheduleRequest() {
@@ -45,6 +45,28 @@ public class CreateScheduleRequest extends RpcAcsRequest<CreateScheduleResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCronExpression() {
+		return this.cronExpression;
+	}
+
+	public void setCronExpression(String cronExpression) {
+		this.cronExpression = cronExpression;
+		if(cronExpression != null){
+			putBodyParameter("CronExpression", cronExpression);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
+		}
 	}
 
 	public String getScheduleName() {
@@ -58,14 +80,14 @@ public class CreateScheduleRequest extends RpcAcsRequest<CreateScheduleResponse>
 		}
 	}
 
-	public String getCronExpression() {
-		return this.cronExpression;
+	public String getSignatureVersion() {
+		return this.signatureVersion;
 	}
 
-	public void setCronExpression(String cronExpression) {
-		this.cronExpression = cronExpression;
-		if(cronExpression != null){
-			putBodyParameter("CronExpression", cronExpression);
+	public void setSignatureVersion(String signatureVersion) {
+		this.signatureVersion = signatureVersion;
+		if(signatureVersion != null){
+			putQueryParameter("SignatureVersion", signatureVersion);
 		}
 	}
 
@@ -80,17 +102,6 @@ public class CreateScheduleRequest extends RpcAcsRequest<CreateScheduleResponse>
 		}
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
-		}
-	}
-
 	public Boolean getEnable() {
 		return this.enable;
 	}
@@ -99,17 +110,6 @@ public class CreateScheduleRequest extends RpcAcsRequest<CreateScheduleResponse>
 		this.enable = enable;
 		if(enable != null){
 			putBodyParameter("Enable", enable.toString());
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putBodyParameter("Description", description);
 		}
 	}
 

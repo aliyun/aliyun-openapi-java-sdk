@@ -39,7 +39,7 @@ public class ListAppGroupsRequest extends RoaAcsRequest<ListAppGroupsResponse> {
 
 	private Integer pageNumber;
 	public ListAppGroupsRequest() {
-		super("OpenSearch", "2017-12-25", "ListAppGroups", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListAppGroups");
 		setUriPattern("/v4/openapi/app-groups");
 		setMethod(MethodType.GET);
 		try {

@@ -35,7 +35,7 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 
 	private List<String> tagKey;
 	public UntagResourcesRequest() {
-		super("ResourceManager", "2020-03-31", "UntagResources");
+		super("ResourceManager", "2020-03-31", "UntagResources", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

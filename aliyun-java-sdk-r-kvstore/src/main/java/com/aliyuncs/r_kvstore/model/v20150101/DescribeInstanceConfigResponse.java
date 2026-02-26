@@ -28,6 +28,18 @@ public class DescribeInstanceConfigResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String paramReplMode;
+
+	private String paramReplTimeout;
+
+	private String paramNoLooseSentinelEnabled;
+
+	private String paramSentinelCompatEnable;
+
+	private String paramNoLooseSentinelPasswordFreeAccess;
+
+	private String paramNoLooseSentinelPasswordFreeCommands;
+
 	public String getConfig() {
 		return this.config;
 	}
@@ -42,6 +54,54 @@ public class DescribeInstanceConfigResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getParamReplMode() {
+		return this.paramReplMode;
+	}
+
+	public void setParamReplMode(String paramReplMode) {
+		this.paramReplMode = paramReplMode;
+	}
+
+	public String getParamReplTimeout() {
+		return this.paramReplTimeout;
+	}
+
+	public void setParamReplTimeout(String paramReplTimeout) {
+		this.paramReplTimeout = paramReplTimeout;
+	}
+
+	public String getParamNoLooseSentinelEnabled() {
+		return this.paramNoLooseSentinelEnabled;
+	}
+
+	public void setParamNoLooseSentinelEnabled(String paramNoLooseSentinelEnabled) {
+		this.paramNoLooseSentinelEnabled = paramNoLooseSentinelEnabled;
+	}
+
+	public String getParamSentinelCompatEnable() {
+		return this.paramSentinelCompatEnable;
+	}
+
+	public void setParamSentinelCompatEnable(String paramSentinelCompatEnable) {
+		this.paramSentinelCompatEnable = paramSentinelCompatEnable;
+	}
+
+	public String getParamNoLooseSentinelPasswordFreeAccess() {
+		return this.paramNoLooseSentinelPasswordFreeAccess;
+	}
+
+	public void setParamNoLooseSentinelPasswordFreeAccess(String paramNoLooseSentinelPasswordFreeAccess) {
+		this.paramNoLooseSentinelPasswordFreeAccess = paramNoLooseSentinelPasswordFreeAccess;
+	}
+
+	public String getParamNoLooseSentinelPasswordFreeCommands() {
+		return this.paramNoLooseSentinelPasswordFreeCommands;
+	}
+
+	public void setParamNoLooseSentinelPasswordFreeCommands(String paramNoLooseSentinelPasswordFreeCommands) {
+		this.paramNoLooseSentinelPasswordFreeCommands = paramNoLooseSentinelPasswordFreeCommands;
 	}
 
 	@Override

@@ -83,6 +83,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String encryptType;
 
+		private String encryptMode;
+
 		private String preprocessStatus;
 
 		private String streamType;
@@ -106,6 +108,12 @@ public class GetPlayInfoResponse extends AcsResponse {
 		private String hDRType;
 
 		private Integer bitDepth;
+
+		private Integer jobType;
+
+		private String jobExt;
+
+		private String codecName;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -211,6 +219,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 			this.encryptType = encryptType;
 		}
 
+		public String getEncryptMode() {
+			return this.encryptMode;
+		}
+
+		public void setEncryptMode(String encryptMode) {
+			this.encryptMode = encryptMode;
+		}
+
 		public String getPreprocessStatus() {
 			return this.preprocessStatus;
 		}
@@ -306,6 +322,30 @@ public class GetPlayInfoResponse extends AcsResponse {
 		public void setBitDepth(Integer bitDepth) {
 			this.bitDepth = bitDepth;
 		}
+
+		public Integer getJobType() {
+			return this.jobType;
+		}
+
+		public void setJobType(Integer jobType) {
+			this.jobType = jobType;
+		}
+
+		public String getJobExt() {
+			return this.jobExt;
+		}
+
+		public void setJobExt(String jobExt) {
+			this.jobExt = jobExt;
+		}
+
+		public String getCodecName() {
+			return this.codecName;
+		}
+
+		public void setCodecName(String codecName) {
+			this.codecName = codecName;
+		}
 	}
 
 	public static class VideoBase {
@@ -329,6 +369,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 		private String mediaType;
 
 		private String danMuURL;
+
+		private String storageClass;
 
 		private List<Thumbnail> thumbnailList;
 
@@ -410,6 +452,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setDanMuURL(String danMuURL) {
 			this.danMuURL = danMuURL;
+		}
+
+		public String getStorageClass() {
+			return this.storageClass;
+		}
+
+		public void setStorageClass(String storageClass) {
+			this.storageClass = storageClass;
 		}
 
 		public List<Thumbnail> getThumbnailList() {

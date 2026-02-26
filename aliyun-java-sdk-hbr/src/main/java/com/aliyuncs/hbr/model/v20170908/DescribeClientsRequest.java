@@ -28,31 +28,19 @@ public class DescribeClientsRequest extends RpcAcsRequest<DescribeClientsRespons
 
 	private String clientType;
 
-	private String innerIpAddresses;
-
 	private String clientId;
-
-	private String privateIpAddresses;
 
 	private String vaultId;
 
 	private Integer pageNumber;
 
-	private String vaultRegionId;
+	private String resourceGroupId;
 
 	private Integer pageSize;
 
 	private String sourceType;
 
 	private String clusterId;
-
-	private String token;
-
-	private String instanceIds;
-
-	private Boolean fromFile;
-
-	private String status;
 	public DescribeClientsRequest() {
 		super("hbr", "2017-09-08", "DescribeClients", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -74,17 +62,6 @@ public class DescribeClientsRequest extends RpcAcsRequest<DescribeClientsRespons
 		}
 	}
 
-	public String getInnerIpAddresses() {
-		return this.innerIpAddresses;
-	}
-
-	public void setInnerIpAddresses(String innerIpAddresses) {
-		this.innerIpAddresses = innerIpAddresses;
-		if(innerIpAddresses != null){
-			putQueryParameter("InnerIpAddresses", innerIpAddresses);
-		}
-	}
-
 	public String getClientId() {
 		return this.clientId;
 	}
@@ -93,17 +70,6 @@ public class DescribeClientsRequest extends RpcAcsRequest<DescribeClientsRespons
 		this.clientId = clientId;
 		if(clientId != null){
 			putQueryParameter("ClientId", clientId);
-		}
-	}
-
-	public String getPrivateIpAddresses() {
-		return this.privateIpAddresses;
-	}
-
-	public void setPrivateIpAddresses(String privateIpAddresses) {
-		this.privateIpAddresses = privateIpAddresses;
-		if(privateIpAddresses != null){
-			putQueryParameter("PrivateIpAddresses", privateIpAddresses);
 		}
 	}
 
@@ -129,14 +95,14 @@ public class DescribeClientsRequest extends RpcAcsRequest<DescribeClientsRespons
 		}
 	}
 
-	public String getVaultRegionId() {
-		return this.vaultRegionId;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setVaultRegionId(String vaultRegionId) {
-		this.vaultRegionId = vaultRegionId;
-		if(vaultRegionId != null){
-			putQueryParameter("VaultRegionId", vaultRegionId);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -170,50 +136,6 @@ public class DescribeClientsRequest extends RpcAcsRequest<DescribeClientsRespons
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
-		}
-	}
-
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
-	public Boolean getFromFile() {
-		return this.fromFile;
-	}
-
-	public void setFromFile(Boolean fromFile) {
-		this.fromFile = fromFile;
-		if(fromFile != null){
-			putQueryParameter("FromFile", fromFile.toString());
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
 		}
 	}
 

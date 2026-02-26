@@ -27,11 +27,11 @@ public class DescribeDrdsDBResponseUnmarshaller {
 		describeDrdsDBResponse.setSuccess(_ctx.booleanValue("DescribeDrdsDBResponse.Success"));
 
 		Data data = new Data();
-		data.setDbName(_ctx.stringValue("DescribeDrdsDBResponse.Data.DbName"));
 		data.setStatus(_ctx.stringValue("DescribeDrdsDBResponse.Data.Status"));
+		data.setDbName(_ctx.stringValue("DescribeDrdsDBResponse.Data.DbName"));
+		data.setSchema(_ctx.stringValue("DescribeDrdsDBResponse.Data.Schema"));
 		data.setCreateTime(_ctx.stringValue("DescribeDrdsDBResponse.Data.CreateTime"));
 		data.setMode(_ctx.stringValue("DescribeDrdsDBResponse.Data.Mode"));
-		data.setSchema(_ctx.stringValue("DescribeDrdsDBResponse.Data.Schema"));
 		data.setDbInstType(_ctx.stringValue("DescribeDrdsDBResponse.Data.DbInstType"));
 		data.setInstRole(_ctx.stringValue("DescribeDrdsDBResponse.Data.InstRole"));
 		describeDrdsDBResponse.setData(data);

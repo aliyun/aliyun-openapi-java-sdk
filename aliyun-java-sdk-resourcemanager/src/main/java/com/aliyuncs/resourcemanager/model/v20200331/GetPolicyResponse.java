@@ -46,21 +46,37 @@ public class GetPolicyResponse extends AcsResponse {
 
 	public static class Policy {
 
-		private String defaultVersion;
+		private Integer attachmentCount;
 
-		private String updateDate;
+		private String createDate;
+
+		private String defaultVersion;
 
 		private String description;
 
 		private String policyDocument;
 
-		private Integer attachmentCount;
-
 		private String policyName;
 
-		private String createDate;
-
 		private String policyType;
+
+		private String updateDate;
+
+		public Integer getAttachmentCount() {
+			return this.attachmentCount;
+		}
+
+		public void setAttachmentCount(Integer attachmentCount) {
+			this.attachmentCount = attachmentCount;
+		}
+
+		public String getCreateDate() {
+			return this.createDate;
+		}
+
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
+		}
 
 		public String getDefaultVersion() {
 			return this.defaultVersion;
@@ -68,14 +84,6 @@ public class GetPolicyResponse extends AcsResponse {
 
 		public void setDefaultVersion(String defaultVersion) {
 			this.defaultVersion = defaultVersion;
-		}
-
-		public String getUpdateDate() {
-			return this.updateDate;
-		}
-
-		public void setUpdateDate(String updateDate) {
-			this.updateDate = updateDate;
 		}
 
 		public String getDescription() {
@@ -94,14 +102,6 @@ public class GetPolicyResponse extends AcsResponse {
 			this.policyDocument = policyDocument;
 		}
 
-		public Integer getAttachmentCount() {
-			return this.attachmentCount;
-		}
-
-		public void setAttachmentCount(Integer attachmentCount) {
-			this.attachmentCount = attachmentCount;
-		}
-
 		public String getPolicyName() {
 			return this.policyName;
 		}
@@ -110,20 +110,20 @@ public class GetPolicyResponse extends AcsResponse {
 			this.policyName = policyName;
 		}
 
-		public String getCreateDate() {
-			return this.createDate;
-		}
-
-		public void setCreateDate(String createDate) {
-			this.createDate = createDate;
-		}
-
 		public String getPolicyType() {
 			return this.policyType;
 		}
 
 		public void setPolicyType(String policyType) {
 			this.policyType = policyType;
+		}
+
+		public String getUpdateDate() {
+			return this.updateDate;
+		}
+
+		public void setUpdateDate(String updateDate) {
+			this.updateDate = updateDate;
 		}
 	}
 

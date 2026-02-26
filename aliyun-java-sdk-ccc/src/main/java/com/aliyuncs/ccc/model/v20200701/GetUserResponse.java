@@ -115,6 +115,10 @@ public class GetUserResponse extends AcsResponse {
 
 		private String deviceState;
 
+		private String nickname;
+
+		private String avatarUrl;
+
 		public String getDisplayName() {
 			return this.displayName;
 		}
@@ -225,6 +229,22 @@ public class GetUserResponse extends AcsResponse {
 
 		public void setDeviceState(String deviceState) {
 			this.deviceState = deviceState;
+		}
+
+		public String getNickname() {
+			return this.nickname;
+		}
+
+		public void setNickname(String nickname) {
+			this.nickname = nickname;
+		}
+
+		public String getAvatarUrl() {
+			return this.avatarUrl;
+		}
+
+		public void setAvatarUrl(String avatarUrl) {
+			this.avatarUrl = avatarUrl;
 		}
 	}
 

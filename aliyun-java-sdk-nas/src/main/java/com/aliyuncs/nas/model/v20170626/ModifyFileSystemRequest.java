@@ -15,6 +15,8 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
@@ -27,9 +29,12 @@ public class ModifyFileSystemRequest extends RpcAcsRequest<ModifyFileSystemRespo
 
 	private String description;
 
+	@SerializedName("options")
+	private Options options;
+
 	private String fileSystemId;
 	public ModifyFileSystemRequest() {
-		super("NAS", "2017-06-26", "ModifyFileSystem", "NAS");
+		super("NAS", "2017-06-26", "ModifyFileSystem", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,6 +53,17 @@ public class ModifyFileSystemRequest extends RpcAcsRequest<ModifyFileSystemRespo
 		}
 	}
 
+	public Options getOptions() {
+		return this.options;
+	}
+
+	public void setOptions(Options options) {
+		this.options = options;	
+		if (options != null) {
+			putQueryParameter("Options" , new Gson().toJson(options));
+		}	
+	}
+
 	public String getFileSystemId() {
 		return this.fileSystemId;
 	}
@@ -56,6 +72,20 @@ public class ModifyFileSystemRequest extends RpcAcsRequest<ModifyFileSystemRespo
 		this.fileSystemId = fileSystemId;
 		if(fileSystemId != null){
 			putQueryParameter("FileSystemId", fileSystemId);
+		}
+	}
+
+	public static class Options {
+
+		@SerializedName("EnableOplock")
+		private Boolean enableOplock;
+
+		public Boolean getEnableOplock() {
+			return this.enableOplock;
+		}
+
+		public void setEnableOplock(Boolean enableOplock) {
+			this.enableOplock = enableOplock;
 		}
 	}
 

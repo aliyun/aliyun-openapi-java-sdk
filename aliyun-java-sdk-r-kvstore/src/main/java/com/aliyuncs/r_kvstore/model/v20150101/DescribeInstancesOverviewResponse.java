@@ -97,6 +97,8 @@ public class DescribeInstancesOverviewResponse extends AcsResponse {
 
 		private String instanceStatus;
 
+		private String secondaryZoneId;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -255,6 +257,14 @@ public class DescribeInstancesOverviewResponse extends AcsResponse {
 
 		public void setInstanceStatus(String instanceStatus) {
 			this.instanceStatus = instanceStatus;
+		}
+
+		public String getSecondaryZoneId() {
+			return this.secondaryZoneId;
+		}
+
+		public void setSecondaryZoneId(String secondaryZoneId) {
+			this.secondaryZoneId = secondaryZoneId;
 		}
 	}
 

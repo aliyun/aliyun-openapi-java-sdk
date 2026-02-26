@@ -28,7 +28,7 @@ public class OperateFeeOrderRequest extends RpcAcsRequest<OperateFeeOrderRespons
 
 	private String status;
 	public OperateFeeOrderRequest() {
-		super("Copyright", "2019-01-23", "OperateFeeOrder");
+		super("Copyright", "2019-01-23", "OperateFeeOrder", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

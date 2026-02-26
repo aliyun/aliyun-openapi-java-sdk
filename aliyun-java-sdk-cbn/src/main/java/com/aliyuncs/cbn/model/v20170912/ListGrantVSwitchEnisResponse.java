@@ -29,6 +29,10 @@ public class ListGrantVSwitchEnisResponse extends AcsResponse {
 
 	private String totalCount;
 
+	private String nextToken;
+
+	private Long maxResults;
+
 	private List<GrantVSwitchEni> grantVSwitchEnis;
 
 	public String getRequestId() {
@@ -45,6 +49,22 @@ public class ListGrantVSwitchEnisResponse extends AcsResponse {
 
 	public void setTotalCount(String totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public Long getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Long maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<GrantVSwitchEni> getGrantVSwitchEnis() {
@@ -66,6 +86,10 @@ public class ListGrantVSwitchEnisResponse extends AcsResponse {
 		private String description;
 
 		private Boolean transitRouterFlag;
+
+		private String networkInterfaceName;
+
+		private String primaryIpAddress;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -105,6 +129,22 @@ public class ListGrantVSwitchEnisResponse extends AcsResponse {
 
 		public void setTransitRouterFlag(Boolean transitRouterFlag) {
 			this.transitRouterFlag = transitRouterFlag;
+		}
+
+		public String getNetworkInterfaceName() {
+			return this.networkInterfaceName;
+		}
+
+		public void setNetworkInterfaceName(String networkInterfaceName) {
+			this.networkInterfaceName = networkInterfaceName;
+		}
+
+		public String getPrimaryIpAddress() {
+			return this.primaryIpAddress;
+		}
+
+		public void setPrimaryIpAddress(String primaryIpAddress) {
+			this.primaryIpAddress = primaryIpAddress;
 		}
 	}
 

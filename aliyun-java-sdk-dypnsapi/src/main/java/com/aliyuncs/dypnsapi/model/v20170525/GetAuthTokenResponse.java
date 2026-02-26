@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAuthTokenResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private TokenInfo tokenInfo;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class GetAuthTokenResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public TokenInfo getTokenInfo() {
 		return this.tokenInfo;
 	}
@@ -66,17 +66,9 @@ public class GetAuthTokenResponse extends AcsResponse {
 
 	public static class TokenInfo {
 
-		private String jwtToken;
-
 		private String accessToken;
 
-		public String getJwtToken() {
-			return this.jwtToken;
-		}
-
-		public void setJwtToken(String jwtToken) {
-			this.jwtToken = jwtToken;
-		}
+		private String jwtToken;
 
 		public String getAccessToken() {
 			return this.accessToken;
@@ -84,6 +76,14 @@ public class GetAuthTokenResponse extends AcsResponse {
 
 		public void setAccessToken(String accessToken) {
 			this.accessToken = accessToken;
+		}
+
+		public String getJwtToken() {
+			return this.jwtToken;
+		}
+
+		public void setJwtToken(String jwtToken) {
+			this.jwtToken = jwtToken;
 		}
 	}
 

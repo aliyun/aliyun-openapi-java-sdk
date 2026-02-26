@@ -24,29 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBatchResultCountResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer status;
 
 	private Integer totalCount;
 
-	private Integer successCount;
+	private Long taskId;
+
+	private String requestId;
 
 	private Integer failedCount;
 
-	private String reason;
+	private Integer successCount;
 
 	private String batchType;
 
-	private Long taskId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String reason;
 
 	public Integer getStatus() {
 		return this.status;
@@ -64,12 +56,20 @@ public class DescribeBatchResultCountResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getSuccessCount() {
-		return this.successCount;
+	public Long getTaskId() {
+		return this.taskId;
 	}
 
-	public void setSuccessCount(Integer successCount) {
-		this.successCount = successCount;
+	public void setTaskId(Long taskId) {
+		this.taskId = taskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getFailedCount() {
@@ -80,12 +80,12 @@ public class DescribeBatchResultCountResponse extends AcsResponse {
 		this.failedCount = failedCount;
 	}
 
-	public String getReason() {
-		return this.reason;
+	public Integer getSuccessCount() {
+		return this.successCount;
 	}
 
-	public void setReason(String reason) {
-		this.reason = reason;
+	public void setSuccessCount(Integer successCount) {
+		this.successCount = successCount;
 	}
 
 	public String getBatchType() {
@@ -96,12 +96,12 @@ public class DescribeBatchResultCountResponse extends AcsResponse {
 		this.batchType = batchType;
 	}
 
-	public Long getTaskId() {
-		return this.taskId;
+	public String getReason() {
+		return this.reason;
 	}
 
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
+	public void setReason(String reason) {
+		this.reason = reason;
 	}
 
 	@Override

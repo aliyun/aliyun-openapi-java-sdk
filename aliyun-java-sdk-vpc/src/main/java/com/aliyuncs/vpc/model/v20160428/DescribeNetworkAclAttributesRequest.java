@@ -33,6 +33,8 @@ public class DescribeNetworkAclAttributesRequest extends RpcAcsRequest<DescribeN
 
 	private String resourceOwnerAccount;
 
+	private String ownerAccount;
+
 	private Long ownerId;
 	public DescribeNetworkAclAttributesRequest() {
 		super("Vpc", "2016-04-28", "DescribeNetworkAclAttributes", "vpc");
@@ -84,6 +86,17 @@ public class DescribeNetworkAclAttributesRequest extends RpcAcsRequest<DescribeN
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

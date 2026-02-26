@@ -31,7 +31,7 @@ public class ModifyWebPreciseAccessSwitchRequest extends RpcAcsRequest<ModifyWeb
 
 	private String config;
 	public ModifyWebPreciseAccessSwitchRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebPreciseAccessSwitch");
+		super("ddoscoo", "2020-01-01", "ModifyWebPreciseAccessSwitch", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

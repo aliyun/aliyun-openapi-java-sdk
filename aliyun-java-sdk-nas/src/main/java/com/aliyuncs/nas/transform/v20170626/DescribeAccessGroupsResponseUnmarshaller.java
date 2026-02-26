@@ -41,6 +41,8 @@ public class DescribeAccessGroupsResponseUnmarshaller {
 			accessGroup.setAccessGroupType(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].AccessGroupType"));
 			accessGroup.setRuleCount(_ctx.integerValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].RuleCount"));
 			accessGroup.setMountTargetCount(_ctx.integerValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].MountTargetCount"));
+			accessGroup.setFileSystemType(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].FileSystemType"));
+			accessGroup.setRegionId(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].RegionId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].Tags.Length"); j++) {

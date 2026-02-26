@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
 	private Integer totalRecordCount;
 
 	private List<TaskProgressInfo> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -57,6 +49,14 @@ public class DescribeTasksResponse extends AcsResponse {
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -77,42 +77,66 @@ public class DescribeTasksResponse extends AcsResponse {
 
 	public static class TaskProgressInfo {
 
-		private String status;
+		private String beginTime;
+
+		private String currentStepName;
+
+		private String dBName;
+
+		private String expectedFinishTime;
 
 		private String finishTime;
 
 		private String progress;
 
-		private String stepsInfo;
-
-		private String beginTime;
-
-		private String expectedFinishTime;
-
-		private String taskErrorCode;
-
-		private String currentStepName;
-
 		private String progressInfo;
-
-		private String stepProgressInfo;
-
-		private String taskErrorMessage;
-
-		private String taskAction;
 
 		private Integer remain;
 
-		private String dBName;
+		private String status;
+
+		private String stepProgressInfo;
+
+		private String stepsInfo;
+
+		private String taskAction;
+
+		private String taskErrorCode;
+
+		private String taskErrorMessage;
 
 		private String taskId;
 
-		public String getStatus() {
-			return this.status;
+		public String getBeginTime() {
+			return this.beginTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setBeginTime(String beginTime) {
+			this.beginTime = beginTime;
+		}
+
+		public String getCurrentStepName() {
+			return this.currentStepName;
+		}
+
+		public void setCurrentStepName(String currentStepName) {
+			this.currentStepName = currentStepName;
+		}
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
+		public String getExpectedFinishTime() {
+			return this.expectedFinishTime;
+		}
+
+		public void setExpectedFinishTime(String expectedFinishTime) {
+			this.expectedFinishTime = expectedFinishTime;
 		}
 
 		public String getFinishTime() {
@@ -131,76 +155,12 @@ public class DescribeTasksResponse extends AcsResponse {
 			this.progress = progress;
 		}
 
-		public String getStepsInfo() {
-			return this.stepsInfo;
-		}
-
-		public void setStepsInfo(String stepsInfo) {
-			this.stepsInfo = stepsInfo;
-		}
-
-		public String getBeginTime() {
-			return this.beginTime;
-		}
-
-		public void setBeginTime(String beginTime) {
-			this.beginTime = beginTime;
-		}
-
-		public String getExpectedFinishTime() {
-			return this.expectedFinishTime;
-		}
-
-		public void setExpectedFinishTime(String expectedFinishTime) {
-			this.expectedFinishTime = expectedFinishTime;
-		}
-
-		public String getTaskErrorCode() {
-			return this.taskErrorCode;
-		}
-
-		public void setTaskErrorCode(String taskErrorCode) {
-			this.taskErrorCode = taskErrorCode;
-		}
-
-		public String getCurrentStepName() {
-			return this.currentStepName;
-		}
-
-		public void setCurrentStepName(String currentStepName) {
-			this.currentStepName = currentStepName;
-		}
-
 		public String getProgressInfo() {
 			return this.progressInfo;
 		}
 
 		public void setProgressInfo(String progressInfo) {
 			this.progressInfo = progressInfo;
-		}
-
-		public String getStepProgressInfo() {
-			return this.stepProgressInfo;
-		}
-
-		public void setStepProgressInfo(String stepProgressInfo) {
-			this.stepProgressInfo = stepProgressInfo;
-		}
-
-		public String getTaskErrorMessage() {
-			return this.taskErrorMessage;
-		}
-
-		public void setTaskErrorMessage(String taskErrorMessage) {
-			this.taskErrorMessage = taskErrorMessage;
-		}
-
-		public String getTaskAction() {
-			return this.taskAction;
-		}
-
-		public void setTaskAction(String taskAction) {
-			this.taskAction = taskAction;
 		}
 
 		public Integer getRemain() {
@@ -211,12 +171,52 @@ public class DescribeTasksResponse extends AcsResponse {
 			this.remain = remain;
 		}
 
-		public String getDBName() {
-			return this.dBName;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getStepProgressInfo() {
+			return this.stepProgressInfo;
+		}
+
+		public void setStepProgressInfo(String stepProgressInfo) {
+			this.stepProgressInfo = stepProgressInfo;
+		}
+
+		public String getStepsInfo() {
+			return this.stepsInfo;
+		}
+
+		public void setStepsInfo(String stepsInfo) {
+			this.stepsInfo = stepsInfo;
+		}
+
+		public String getTaskAction() {
+			return this.taskAction;
+		}
+
+		public void setTaskAction(String taskAction) {
+			this.taskAction = taskAction;
+		}
+
+		public String getTaskErrorCode() {
+			return this.taskErrorCode;
+		}
+
+		public void setTaskErrorCode(String taskErrorCode) {
+			this.taskErrorCode = taskErrorCode;
+		}
+
+		public String getTaskErrorMessage() {
+			return this.taskErrorMessage;
+		}
+
+		public void setTaskErrorMessage(String taskErrorMessage) {
+			this.taskErrorMessage = taskErrorMessage;
 		}
 
 		public String getTaskId() {

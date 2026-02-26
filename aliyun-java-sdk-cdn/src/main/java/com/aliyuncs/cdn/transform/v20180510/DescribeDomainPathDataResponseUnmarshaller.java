@@ -26,21 +26,21 @@ public class DescribeDomainPathDataResponseUnmarshaller {
 
 	public static DescribeDomainPathDataResponse unmarshall(DescribeDomainPathDataResponse describeDomainPathDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainPathDataResponse.setDomainName(_ctx.stringValue("DescribeDomainPathDataResponse.DomainName"));
-		describeDomainPathDataResponse.setStartTime(_ctx.stringValue("DescribeDomainPathDataResponse.StartTime"));
 		describeDomainPathDataResponse.setEndTime(_ctx.stringValue("DescribeDomainPathDataResponse.EndTime"));
+		describeDomainPathDataResponse.setStartTime(_ctx.stringValue("DescribeDomainPathDataResponse.StartTime"));
 		describeDomainPathDataResponse.setPageSize(_ctx.integerValue("DescribeDomainPathDataResponse.PageSize"));
 		describeDomainPathDataResponse.setPageNumber(_ctx.integerValue("DescribeDomainPathDataResponse.PageNumber"));
-		describeDomainPathDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainPathDataResponse.DataInterval"));
 		describeDomainPathDataResponse.setTotalCount(_ctx.integerValue("DescribeDomainPathDataResponse.TotalCount"));
+		describeDomainPathDataResponse.setDomainName(_ctx.stringValue("DescribeDomainPathDataResponse.DomainName"));
+		describeDomainPathDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainPathDataResponse.DataInterval"));
 
 		List<UsageData> pathDataPerInterval = new ArrayList<UsageData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainPathDataResponse.PathDataPerInterval.Length"); i++) {
 			UsageData usageData = new UsageData();
-			usageData.setTraffic(_ctx.integerValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Traffic"));
-			usageData.setAcc(_ctx.integerValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Acc"));
 			usageData.setPath(_ctx.stringValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Path"));
 			usageData.setTime(_ctx.stringValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Time"));
+			usageData.setAcc(_ctx.integerValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Acc"));
+			usageData.setTraffic(_ctx.integerValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Traffic"));
 
 			pathDataPerInterval.add(usageData);
 		}

@@ -1,3 +1,118 @@
+2025-12-10 Version: 1.8.58
+- Generated 2017-08-01 for `polardb`.
+
+2025-11-28 Version: 1.8.57
+- Update endpoint info.
+
+2025-10-17 Version: 1.8.56
+- Generated 2017-08-01 for `polardb`.
+
+2025-06-13 Version: 1.8.55
+- Support DescribeHaLogs.
+
+2025-05-06 Version: 1.8.54
+- Generated 2017-08-01 for `polardb`.
+
+2025-03-13 Version: 1.8.53
+- DescribeLicenseCodes support filter by mac address or system id.
+
+2025-02-06 Version: 1.8.52
+- DescribeLicenseCodes support filter by mac address or system id.
+
+2025-01-20 Version: 1.8.51
+- Generated 2017-08-01 for `polardb`.
+
+2024-12-19 Version: 1.8.50
+- Generated 2017-08-01 for `polardb`.
+
+2024-12-13 Version: 1.8.49
+- Generated 2017-08-01 for `polardb`.
+
+2024-11-18 Version: 1.8.48
+- Generated 2017-08-01 for `polardb`.
+
+2024-04-24 Version: 1.8.47
+- Support new feature.
+
+2024-01-05 Version: 1.8.46
+- Support new feature.
+
+2024-01-05 Version: 1.8.45
+- Support new feature.
+
+2023-12-27 Version: 1.8.44
+- Support new feature.
+
+2023-11-07 Version: 1.8.43
+- Support new feature.
+
+2023-10-30 Version: 1.8.42
+- Support new feature.
+
+2023-09-14 Version: 1.8.41
+- Support new feature.
+
+2023-09-07 Version: 1.8.40
+- Support new feature.
+
+2023-08-02 Version: 1.8.39
+- Support new feature.
+
+2023-07-26 Version: 1.8.38
+- Support new feature.
+
+2023-07-21 Version: 1.8.37
+- Support new feature.
+
+2023-07-19 Version: 1.8.36
+- Support new feature.
+
+2023-07-11 Version: 1.8.35
+- Support new feature.
+
+2023-07-06 Version: 1.8.34
+- DescribeDBClusterAttribute support new feature.
+
+2023-06-28 Version: 1.8.33
+- DescribeClassList support masterHa.
+- ModifyDBClusterPrimaryZone support VPCId.
+
+2023-06-21 Version: 1.8.32
+- Support new feature.
+
+2023-06-14 Version: 1.8.31
+- Support new feature.
+
+2023-06-12 Version: 1.8.30
+- Associate OpenAPI Error Code.
+
+2023-05-25 Version: 1.8.29
+- CreateDBCluster support xengine and binlog feature.
+
+2023-05-12 Version: 1.8.28
+- Update some parameters.
+
+2023-03-15 Version: 1.8.27
+- Support hot standby cluster and proxy for SENormal.
+
+2023-03-09 Version: 1.8.26
+- Support modify dbcluster storage space.
+
+2023-03-08 Version: 1.8.25
+- Support new feature.
+
+2023-03-02 Version: 1.8.24
+- Generated 2017-08-01 for `polardb`.
+
+2022-12-05 Version: 1.8.23
+- Support GDN feature.
+
+2022-10-10 Version: 1.8.22
+- Support serverless feature.
+
+2022-09-09 Version: 1.8.21
+- Support new feature.
+
 2022-08-04 Version: 1.8.20
 - Support new feature.
 

@@ -45,7 +45,6 @@ public class ListCommitsResponseUnmarshaller {
 			commitItem.setMainModuleCommitId(_ctx.stringValue("ListCommitsResponse.Data.Items["+ i +"].MainModuleCommitId"));
 			commitItem.setMainModuleId(_ctx.stringValue("ListCommitsResponse.Data.Items["+ i +"].MainModuleId"));
 			commitItem.setModelDataPath(_ctx.stringValue("ListCommitsResponse.Data.Items["+ i +"].ModelDataPath"));
-			commitItem.setModelDigest(_ctx.mapValue("ListCommitsResponse.Data.Items["+ i +"].ModelDigest"));
 			commitItem.setModifiedTime(_ctx.stringValue("ListCommitsResponse.Data.Items["+ i +"].ModifiedTime"));
 			commitItem.setModuleId(_ctx.stringValue("ListCommitsResponse.Data.Items["+ i +"].ModuleId"));
 			commitItem.setResourceDataPath(_ctx.stringValue("ListCommitsResponse.Data.Items["+ i +"].ResourceDataPath"));
@@ -54,6 +53,8 @@ public class ListCommitsResponseUnmarshaller {
 			commitItem.setRollbackType(_ctx.stringValue("ListCommitsResponse.Data.Items["+ i +"].RollbackType"));
 			commitItem.setSchemaVersion(_ctx.stringValue("ListCommitsResponse.Data.Items["+ i +"].SchemaVersion"));
 			commitItem.setCommitType(_ctx.stringValue("ListCommitsResponse.Data.Items["+ i +"].CommitType"));
+			commitItem.setModelDigest(_ctx.mapValue("ListCommitsResponse.Data.Items["+ i +"].ModelDigest"));
+			commitItem.setCommitDigest(_ctx.stringValue("ListCommitsResponse.Data.Items["+ i +"].CommitDigest"));
 
 			items.add(commitItem);
 		}

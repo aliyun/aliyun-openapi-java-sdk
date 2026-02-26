@@ -25,69 +25,86 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse> {
 	   
 
-	private String productCode;
-
 	private String faceContrastPicture;
+
+	private String readImg;
+
+	private String rarelyCharacters;
+
+	private String voluntaryCustomizedContent;
 
 	private String userId;
 
-	private String certifyId;
-
 	private String encryptType;
 
-	private String certNo;
+	private String mode;
 
 	private String outerOrderNo;
-
-	private String certType;
 
 	private String faceContrastPictureUrl;
 
 	private String model;
 
+	private String certifyUrlStyle;
+
 	private String metaInfo;
 
-	private String ossObjectName;
+	private String cameraSelection;
+
+	private String validityDate;
 
 	private String certName;
 
 	private String ip;
 
-	private String mobile;
-
-	private String authId;
-
 	private Long sceneId;
 
 	private String ossBucketName;
 
+	private String crop;
+
+	private String certifyUrlType;
+
+	private String birthday;
+
+	private String productCode;
+
+	private String videoEvidence;
+
+	private String certifyId;
+
+	private String certNo;
+
+	private String certType;
+
+	private String suitableType;
+
+	private String ossObjectName;
+
+	private String appQualityCheck;
+
+	private String mobile;
+
+	private String faceGuardOutput;
+
+	private String authId;
+
+	private String procedurePriority;
+
 	private String callbackToken;
+
+	private String uiCustomUrl;
 
 	private String returnUrl;
 
 	private String callbackUrl;
-
-	private String crop;
-
-	private String certifyUrlType;
 	public InitFaceVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "InitFaceVerify");
+		super("Cloudauth", "2019-03-07", "InitFaceVerify", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-		if(productCode != null){
-			putQueryParameter("ProductCode", productCode);
-		}
 	}
 
 	public String getFaceContrastPicture() {
@@ -98,6 +115,39 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		this.faceContrastPicture = faceContrastPicture;
 		if(faceContrastPicture != null){
 			putBodyParameter("FaceContrastPicture", faceContrastPicture);
+		}
+	}
+
+	public String getReadImg() {
+		return this.readImg;
+	}
+
+	public void setReadImg(String readImg) {
+		this.readImg = readImg;
+		if(readImg != null){
+			putQueryParameter("ReadImg", readImg);
+		}
+	}
+
+	public String getRarelyCharacters() {
+		return this.rarelyCharacters;
+	}
+
+	public void setRarelyCharacters(String rarelyCharacters) {
+		this.rarelyCharacters = rarelyCharacters;
+		if(rarelyCharacters != null){
+			putQueryParameter("RarelyCharacters", rarelyCharacters);
+		}
+	}
+
+	public String getVoluntaryCustomizedContent() {
+		return this.voluntaryCustomizedContent;
+	}
+
+	public void setVoluntaryCustomizedContent(String voluntaryCustomizedContent) {
+		this.voluntaryCustomizedContent = voluntaryCustomizedContent;
+		if(voluntaryCustomizedContent != null){
+			putQueryParameter("VoluntaryCustomizedContent", voluntaryCustomizedContent);
 		}
 	}
 
@@ -112,17 +162,6 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		}
 	}
 
-	public String getCertifyId() {
-		return this.certifyId;
-	}
-
-	public void setCertifyId(String certifyId) {
-		this.certifyId = certifyId;
-		if(certifyId != null){
-			putQueryParameter("CertifyId", certifyId);
-		}
-	}
-
 	public String getEncryptType() {
 		return this.encryptType;
 	}
@@ -134,14 +173,14 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		}
 	}
 
-	public String getCertNo() {
-		return this.certNo;
+	public String getMode() {
+		return this.mode;
 	}
 
-	public void setCertNo(String certNo) {
-		this.certNo = certNo;
-		if(certNo != null){
-			putQueryParameter("CertNo", certNo);
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putQueryParameter("Mode", mode);
 		}
 	}
 
@@ -153,17 +192,6 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		this.outerOrderNo = outerOrderNo;
 		if(outerOrderNo != null){
 			putQueryParameter("OuterOrderNo", outerOrderNo);
-		}
-	}
-
-	public String getCertType() {
-		return this.certType;
-	}
-
-	public void setCertType(String certType) {
-		this.certType = certType;
-		if(certType != null){
-			putQueryParameter("CertType", certType);
 		}
 	}
 
@@ -189,6 +217,17 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		}
 	}
 
+	public String getCertifyUrlStyle() {
+		return this.certifyUrlStyle;
+	}
+
+	public void setCertifyUrlStyle(String certifyUrlStyle) {
+		this.certifyUrlStyle = certifyUrlStyle;
+		if(certifyUrlStyle != null){
+			putQueryParameter("CertifyUrlStyle", certifyUrlStyle);
+		}
+	}
+
 	public String getMetaInfo() {
 		return this.metaInfo;
 	}
@@ -200,14 +239,25 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		}
 	}
 
-	public String getOssObjectName() {
-		return this.ossObjectName;
+	public String getCameraSelection() {
+		return this.cameraSelection;
 	}
 
-	public void setOssObjectName(String ossObjectName) {
-		this.ossObjectName = ossObjectName;
-		if(ossObjectName != null){
-			putQueryParameter("OssObjectName", ossObjectName);
+	public void setCameraSelection(String cameraSelection) {
+		this.cameraSelection = cameraSelection;
+		if(cameraSelection != null){
+			putQueryParameter("CameraSelection", cameraSelection);
+		}
+	}
+
+	public String getValidityDate() {
+		return this.validityDate;
+	}
+
+	public void setValidityDate(String validityDate) {
+		this.validityDate = validityDate;
+		if(validityDate != null){
+			putQueryParameter("ValidityDate", validityDate);
 		}
 	}
 
@@ -233,28 +283,6 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		}
 	}
 
-	public String getMobile() {
-		return this.mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-		if(mobile != null){
-			putQueryParameter("Mobile", mobile);
-		}
-	}
-
-	public String getAuthId() {
-		return this.authId;
-	}
-
-	public void setAuthId(String authId) {
-		this.authId = authId;
-		if(authId != null){
-			putBodyParameter("AuthId", authId);
-		}
-	}
-
 	public Long getSceneId() {
 		return this.sceneId;
 	}
@@ -277,6 +305,171 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		}
 	}
 
+	public String getCrop() {
+		return this.crop;
+	}
+
+	public void setCrop(String crop) {
+		this.crop = crop;
+		if(crop != null){
+			putBodyParameter("Crop", crop);
+		}
+	}
+
+	public String getCertifyUrlType() {
+		return this.certifyUrlType;
+	}
+
+	public void setCertifyUrlType(String certifyUrlType) {
+		this.certifyUrlType = certifyUrlType;
+		if(certifyUrlType != null){
+			putQueryParameter("CertifyUrlType", certifyUrlType);
+		}
+	}
+
+	public String getBirthday() {
+		return this.birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+		if(birthday != null){
+			putQueryParameter("Birthday", birthday);
+		}
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+		if(productCode != null){
+			putQueryParameter("ProductCode", productCode);
+		}
+	}
+
+	public String getVideoEvidence() {
+		return this.videoEvidence;
+	}
+
+	public void setVideoEvidence(String videoEvidence) {
+		this.videoEvidence = videoEvidence;
+		if(videoEvidence != null){
+			putQueryParameter("VideoEvidence", videoEvidence);
+		}
+	}
+
+	public String getCertifyId() {
+		return this.certifyId;
+	}
+
+	public void setCertifyId(String certifyId) {
+		this.certifyId = certifyId;
+		if(certifyId != null){
+			putQueryParameter("CertifyId", certifyId);
+		}
+	}
+
+	public String getCertNo() {
+		return this.certNo;
+	}
+
+	public void setCertNo(String certNo) {
+		this.certNo = certNo;
+		if(certNo != null){
+			putQueryParameter("CertNo", certNo);
+		}
+	}
+
+	public String getCertType() {
+		return this.certType;
+	}
+
+	public void setCertType(String certType) {
+		this.certType = certType;
+		if(certType != null){
+			putQueryParameter("CertType", certType);
+		}
+	}
+
+	public String getSuitableType() {
+		return this.suitableType;
+	}
+
+	public void setSuitableType(String suitableType) {
+		this.suitableType = suitableType;
+		if(suitableType != null){
+			putQueryParameter("SuitableType", suitableType);
+		}
+	}
+
+	public String getOssObjectName() {
+		return this.ossObjectName;
+	}
+
+	public void setOssObjectName(String ossObjectName) {
+		this.ossObjectName = ossObjectName;
+		if(ossObjectName != null){
+			putQueryParameter("OssObjectName", ossObjectName);
+		}
+	}
+
+	public String getAppQualityCheck() {
+		return this.appQualityCheck;
+	}
+
+	public void setAppQualityCheck(String appQualityCheck) {
+		this.appQualityCheck = appQualityCheck;
+		if(appQualityCheck != null){
+			putQueryParameter("AppQualityCheck", appQualityCheck);
+		}
+	}
+
+	public String getMobile() {
+		return this.mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+		if(mobile != null){
+			putQueryParameter("Mobile", mobile);
+		}
+	}
+
+	public String getFaceGuardOutput() {
+		return this.faceGuardOutput;
+	}
+
+	public void setFaceGuardOutput(String faceGuardOutput) {
+		this.faceGuardOutput = faceGuardOutput;
+		if(faceGuardOutput != null){
+			putQueryParameter("FaceGuardOutput", faceGuardOutput);
+		}
+	}
+
+	public String getAuthId() {
+		return this.authId;
+	}
+
+	public void setAuthId(String authId) {
+		this.authId = authId;
+		if(authId != null){
+			putBodyParameter("AuthId", authId);
+		}
+	}
+
+	public String getProcedurePriority() {
+		return this.procedurePriority;
+	}
+
+	public void setProcedurePriority(String procedurePriority) {
+		this.procedurePriority = procedurePriority;
+		if(procedurePriority != null){
+			putQueryParameter("ProcedurePriority", procedurePriority);
+		}
+	}
+
 	public String getCallbackToken() {
 		return this.callbackToken;
 	}
@@ -285,6 +478,17 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		this.callbackToken = callbackToken;
 		if(callbackToken != null){
 			putQueryParameter("CallbackToken", callbackToken);
+		}
+	}
+
+	public String getUiCustomUrl() {
+		return this.uiCustomUrl;
+	}
+
+	public void setUiCustomUrl(String uiCustomUrl) {
+		this.uiCustomUrl = uiCustomUrl;
+		if(uiCustomUrl != null){
+			putQueryParameter("UiCustomUrl", uiCustomUrl);
 		}
 	}
 
@@ -307,28 +511,6 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		this.callbackUrl = callbackUrl;
 		if(callbackUrl != null){
 			putQueryParameter("CallbackUrl", callbackUrl);
-		}
-	}
-
-	public String getCrop() {
-		return this.crop;
-	}
-
-	public void setCrop(String crop) {
-		this.crop = crop;
-		if(crop != null){
-			putBodyParameter("Crop", crop);
-		}
-	}
-
-	public String getCertifyUrlType() {
-		return this.certifyUrlType;
-	}
-
-	public void setCertifyUrlType(String certifyUrlType) {
-		this.certifyUrlType = certifyUrlType;
-		if(certifyUrlType != null){
-			putQueryParameter("CertifyUrlType", certifyUrlType);
 		}
 	}
 

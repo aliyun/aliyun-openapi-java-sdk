@@ -90,6 +90,14 @@ public class GetRealtimeCampaignStatsResponse extends AcsResponse {
 
 		private Long totalAgents;
 
+		private Long outboundScenarioReadyAgents;
+
+		private Long outboundScenarioBreakingAgents;
+
+		private Long outboundScenarioTalkingAgents;
+
+		private Long outboundScenarioWorkingAgents;
+
 		public Long getLoggedInAgents() {
 			return this.loggedInAgents;
 		}
@@ -144,6 +152,38 @@ public class GetRealtimeCampaignStatsResponse extends AcsResponse {
 
 		public void setTotalAgents(Long totalAgents) {
 			this.totalAgents = totalAgents;
+		}
+
+		public Long getOutboundScenarioReadyAgents() {
+			return this.outboundScenarioReadyAgents;
+		}
+
+		public void setOutboundScenarioReadyAgents(Long outboundScenarioReadyAgents) {
+			this.outboundScenarioReadyAgents = outboundScenarioReadyAgents;
+		}
+
+		public Long getOutboundScenarioBreakingAgents() {
+			return this.outboundScenarioBreakingAgents;
+		}
+
+		public void setOutboundScenarioBreakingAgents(Long outboundScenarioBreakingAgents) {
+			this.outboundScenarioBreakingAgents = outboundScenarioBreakingAgents;
+		}
+
+		public Long getOutboundScenarioTalkingAgents() {
+			return this.outboundScenarioTalkingAgents;
+		}
+
+		public void setOutboundScenarioTalkingAgents(Long outboundScenarioTalkingAgents) {
+			this.outboundScenarioTalkingAgents = outboundScenarioTalkingAgents;
+		}
+
+		public Long getOutboundScenarioWorkingAgents() {
+			return this.outboundScenarioWorkingAgents;
+		}
+
+		public void setOutboundScenarioWorkingAgents(Long outboundScenarioWorkingAgents) {
+			this.outboundScenarioWorkingAgents = outboundScenarioWorkingAgents;
 		}
 	}
 

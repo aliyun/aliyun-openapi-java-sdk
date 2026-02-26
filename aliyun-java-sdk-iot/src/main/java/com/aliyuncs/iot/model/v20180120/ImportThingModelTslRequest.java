@@ -39,7 +39,7 @@ public class ImportThingModelTslRequest extends RpcAcsRequest<ImportThingModelTs
 
 	private String functionBlockId;
 	public ImportThingModelTslRequest() {
-		super("Iot", "2018-01-20", "ImportThingModelTsl");
+		super("Iot", "2018-01-20", "ImportThingModelTsl", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

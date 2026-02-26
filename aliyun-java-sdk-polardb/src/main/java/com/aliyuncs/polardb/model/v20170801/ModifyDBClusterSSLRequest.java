@@ -43,7 +43,7 @@ public class ModifyDBClusterSSLRequest extends RpcAcsRequest<ModifyDBClusterSSLR
 
 	private String sSLEnabled;
 	public ModifyDBClusterSSLRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterSSL");
+		super("polardb", "2017-08-01", "ModifyDBClusterSSL", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,108 @@
+2024-12-12 Version: 1.53.15
+- Supported Pageable of ListDataLakeDatabase API.
+
+2024-11-27 Version: 1.53.14
+- Support ListDataLakeCatalog, ListDataLakeDatabase, ListDataLakeTablebaseInfo, GetDataLakeCatalog, GetDataLakeDatabase, GetDataLakeTable API.
+
+2024-08-02 Version: 1.53.13
+- Support switch login user
+
+2024-04-26 Version: 1.53.12
+- Supported ApproveOrder request parameter NewApproverList.
+- Add ListSensitiveColumnInfo API.
+- Supported GetDataCorrectOrderDetail return ConfigDetail Information.
+
+2024-04-18 Version: 1.53.11
+- Supported ApproveOrder request parameter NewApproverList.
+- Add ListSensitiveColumnInfo API.
+- Supported GetDataCorrectOrderDetail return ConfigDetail Information.
+
+2024-03-27 Version: 1.53.10
+- AddInstance, ModifyInstance add ssl param
+
+2024-01-23 Version: 1.53.9
+- Support AddInstance, ModifyInstance
+
+2023-12-06 Version: 1.53.8
+- Support CreateProcCorrectOrder request param of ExecMode.
+
+2023-10-19 Version: 1.53.7
+- Support CreateAuthorityTemplate, UpdateAuthorityTemplate, GetAuthorityTemplateItem, GetAuthorityTemplate return TenantId information.
+
+2023-10-12 Version: 1.53.6
+- Support GetOrderBaseInfo to response AttachmentKey and OriginAttachmentName information.
+
+2023-10-11 Version: 1.53.5
+- Support CreateProcCorrectAPI.
+
+2023-10-10 Version: 1.53.4
+- Support CreateProcCorrectAPI.
+
+2023-09-28 Version: 1.53.3
+- Support CreateProcCorrectAPI.
+
+2023-09-20 Version: 1.53.2
+- Support CreateProcCorrectAPI.
+
+2023-07-12 Version: 1.53.1
+- Change API CreateDataArchiveOrder and GetDataArchiveCount to public.
+
+2023-07-10 Version: 1.53.0
+- Change API CreateDataArchiveOrder and GetDataArchiveCount to public.
+
+2023-07-10 Version: 1.52.3
+- Change API CreateDataArchiveOrder and GetDataArchiveCount to public.
+
+2023-07-07 Version: 1.52.2
+- Add new API CreateDataArchiveOrder. 
+
+2023-07-07 Version: 1.52.1
+- Add new API CreateDataArchiveOrder. 
+
+2023-07-06 Version: 1.52.0
+- Modify GetDataArchiveOrderDetail API. Add output parameter: TempTableNameMap.
+
+2023-06-30 Version: 1.51.0
+- Modify ListTaskFlowsByPage API. Add output parameter: DagOwnerId.
+- Modify ReRunTaskFlowInstance, ReSumeTaskFlowInstance: input parameter DagVersion is not required.
+
+2023-05-26 Version: 1.49.0
+- Modify ListTaskFlowsByPage API. Add output parameters: CronBeginDate, CronEndDate. Modified input parameter CronParam as ScheduleParam.
+
+2023-05-15 Version: 1.48.0
+- Support SkipDataCorrectRowCheck API.
+
+2023-04-27 Version: 1.47.0
+- Support GetDataExportPreCheckDetail API.
+- Modify GetOpLog API.
+
+2023-04-24 Version: 1.46.0
+- Supported GetDatabaseExportOrderDetail,CreateDatabaseExportOrder,CreateDataExportOrder API.
+- Supported CreateDataTrackOrder,GetDataTrackJobDegree,GetDataTrackJobTableMeta,GetDataTrackOrderDetail,SearchDataTrackResult,DownloadDataTrackResult,QueryDataTrackResultDownloadStatus API.
+
+2023-04-11 Version: 1.45.0
+- Supported ListDataImportSQLPreCheckDetail,GetDataImportSQL,ListDataImportSQLType API.
+
+2023-01-13 Version: 1.44.0
+- Supported GetProxy, ListProxies to return RegionId information.
+- Supported SearchDatabase to return CatalogName information.
+
+2022-12-21 Version: 1.43.0
+- Supported GetProxyAccess API.
+
+2022-12-02 Version: 1.42.0
+- Supported GetStructSyncOrderDetail OrderId param required.
+
+2022-11-23 Version: 1.41.0
+- Supported GetDataCronClearConfig,GetDataCorrectRollbackFile,GetOrderAttachmentFile API.
+
+2022-10-28 Version: 1.40.0
+- Support BuyPayAsYouGoOrder, RefundPayAsYouGoOrder, ListEffectiveOrders, ListClassificationTemplates.
+- Modify RegisterInstance, UpdateInstance, ListInstances, GetInstance, GetApprovalDetail.
+
+2022-09-19 Version: 1.39.0
+- Supported UpdateTaskConfig, ListTaskFlowConstants, UpdateTaskFlowConstants, CheckServiceLinkedRoleForDeleting, ResumeTaskFlowInstance, ListServerGroups, ListTaskFlowsByPage, UpdateTaskContent, UpdateScenario, ListScenarios, DeleteScenario, CreateScenario, BackFill, UpdateTaskTimeVariables, UpdateTaskFlowTimeVariables, ListTaskFlowTimeVariables, UpdateTaskFlowCooperators, GetRuleNumLimitOfSLA, GetIntervalLimitOfSLA, UpdateSLARules, ListDefaultSLARules, ListSLARules, MoveTaskFlowToScenario, ListServers, ListTaskFlowInstance, UpdateTaskName, ListTaskFlowCooperators, GetTaskFlowNotification, UpdateTaskOutput, GetTask, UpdateTaskFlowNotification, DeleteTaskFlowEdgesByCondition, ListTaskFlowEdgesByCondition, UpdateTaskFlowEdges, AddTaskFlowEdges, GetTaskFlowGraph, UpdateTaskFlowRelations, UpdateTaskFlowNameAndDesc, UpdateTaskFlowOwner, UpdateTaskFlowSchedule, ListTasksInTaskFlow, PublishAndDeployTaskFlow, StopTaskFlowInstance, SuspendTaskFlowInstance, ReRunTaskFlowInstance, MakeTaskFlowInstanceSuccess, DeleteTask, CreateTask, CreateTaskFlow API.
+
 2022-07-27 Version: 1.38.0
 - Support ListProxies API to return protocolType, protocolPort and remove mysqlPort.
 - Support GetProxy API to return protocolType, protocolPort and remove mysqlPort.

@@ -30,6 +30,8 @@ public class QueryFigureClustersResponse extends AcsResponse {
 
 	private String nextToken;
 
+	private Long totalCount;
+
 	private List<FigureClustersItem> figureClusters;
 
 	public String getRequestId() {
@@ -46,6 +48,14 @@ public class QueryFigureClustersResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<FigureClustersItem> getFigureClusters() {
@@ -91,6 +101,8 @@ public class QueryFigureClustersResponse extends AcsResponse {
 		private String customId;
 
 		private Map<Object,Object> customLabels;
+
+		private Long metaLockVersion;
 
 		private Cover cover;
 
@@ -230,6 +242,14 @@ public class QueryFigureClustersResponse extends AcsResponse {
 			this.customLabels = customLabels;
 		}
 
+		public Long getMetaLockVersion() {
+			return this.metaLockVersion;
+		}
+
+		public void setMetaLockVersion(Long metaLockVersion) {
+			this.metaLockVersion = metaLockVersion;
+		}
+
 		public Cover getCover() {
 			return this.cover;
 		}
@@ -310,11 +330,9 @@ public class QueryFigureClustersResponse extends AcsResponse {
 
 			private String album;
 
-			private String documentLanguage;
-
 			private Long pageCount;
 
-			private String documentContent;
+			private String documentText;
 
 			private String eTag;
 
@@ -678,14 +696,6 @@ public class QueryFigureClustersResponse extends AcsResponse {
 				this.album = album;
 			}
 
-			public String getDocumentLanguage() {
-				return this.documentLanguage;
-			}
-
-			public void setDocumentLanguage(String documentLanguage) {
-				this.documentLanguage = documentLanguage;
-			}
-
 			public Long getPageCount() {
 				return this.pageCount;
 			}
@@ -694,12 +704,12 @@ public class QueryFigureClustersResponse extends AcsResponse {
 				this.pageCount = pageCount;
 			}
 
-			public String getDocumentContent() {
-				return this.documentContent;
+			public String getDocumentText() {
+				return this.documentText;
 			}
 
-			public void setDocumentContent(String documentContent) {
-				this.documentContent = documentContent;
+			public void setDocumentText(String documentText) {
+				this.documentText = documentText;
 			}
 
 			public String getETag() {

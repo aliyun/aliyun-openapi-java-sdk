@@ -27,21 +27,25 @@ public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTy
 
 	private String appliedScope;
 
-	private Integer memorySize;
-
 	private Float gpuCount;
-
-	private String instanceTypeFamily;
 
 	private String desktopTypeId;
 
 	private String desktopIdForModify;
 
+	private String desktopGroupIdForModify;
+
+	private Integer memorySize;
+
+	private String instanceTypeFamily;
+
 	private Integer cpuCount;
+
+	private String gpuDriverType;
 
 	private String orderType;
 	public DescribeDesktopTypesRequest() {
-		super("ecd", "2020-09-30", "DescribeDesktopTypes");
+		super("ecd", "2020-09-30", "DescribeDesktopTypes", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,17 +64,6 @@ public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTy
 		}
 	}
 
-	public Integer getMemorySize() {
-		return this.memorySize;
-	}
-
-	public void setMemorySize(Integer memorySize) {
-		this.memorySize = memorySize;
-		if(memorySize != null){
-			putQueryParameter("MemorySize", memorySize.toString());
-		}
-	}
-
 	public Float getGpuCount() {
 		return this.gpuCount;
 	}
@@ -79,17 +72,6 @@ public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTy
 		this.gpuCount = gpuCount;
 		if(gpuCount != null){
 			putQueryParameter("GpuCount", gpuCount.toString());
-		}
-	}
-
-	public String getInstanceTypeFamily() {
-		return this.instanceTypeFamily;
-	}
-
-	public void setInstanceTypeFamily(String instanceTypeFamily) {
-		this.instanceTypeFamily = instanceTypeFamily;
-		if(instanceTypeFamily != null){
-			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
 		}
 	}
 
@@ -115,6 +97,39 @@ public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTy
 		}
 	}
 
+	public String getDesktopGroupIdForModify() {
+		return this.desktopGroupIdForModify;
+	}
+
+	public void setDesktopGroupIdForModify(String desktopGroupIdForModify) {
+		this.desktopGroupIdForModify = desktopGroupIdForModify;
+		if(desktopGroupIdForModify != null){
+			putQueryParameter("DesktopGroupIdForModify", desktopGroupIdForModify);
+		}
+	}
+
+	public Integer getMemorySize() {
+		return this.memorySize;
+	}
+
+	public void setMemorySize(Integer memorySize) {
+		this.memorySize = memorySize;
+		if(memorySize != null){
+			putQueryParameter("MemorySize", memorySize.toString());
+		}
+	}
+
+	public String getInstanceTypeFamily() {
+		return this.instanceTypeFamily;
+	}
+
+	public void setInstanceTypeFamily(String instanceTypeFamily) {
+		this.instanceTypeFamily = instanceTypeFamily;
+		if(instanceTypeFamily != null){
+			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
+		}
+	}
+
 	public Integer getCpuCount() {
 		return this.cpuCount;
 	}
@@ -123,6 +138,17 @@ public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTy
 		this.cpuCount = cpuCount;
 		if(cpuCount != null){
 			putQueryParameter("CpuCount", cpuCount.toString());
+		}
+	}
+
+	public String getGpuDriverType() {
+		return this.gpuDriverType;
+	}
+
+	public void setGpuDriverType(String gpuDriverType) {
+		this.gpuDriverType = gpuDriverType;
+		if(gpuDriverType != null){
+			putQueryParameter("GpuDriverType", gpuDriverType);
 		}
 	}
 

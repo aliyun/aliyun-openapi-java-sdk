@@ -43,6 +43,8 @@ public class DescribeDialogueNodeStatisticsResponse extends AcsResponse {
 
 	private List<NoAnswerDialogueNode> noAnswerDialogueNodes;
 
+	private List<HangUpDialogueNodesItem> hangUpDialogueNodes;
+
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
@@ -113,6 +115,14 @@ public class DescribeDialogueNodeStatisticsResponse extends AcsResponse {
 
 	public void setNoAnswerDialogueNodes(List<NoAnswerDialogueNode> noAnswerDialogueNodes) {
 		this.noAnswerDialogueNodes = noAnswerDialogueNodes;
+	}
+
+	public List<HangUpDialogueNodesItem> getHangUpDialogueNodes() {
+		return this.hangUpDialogueNodes;
+	}
+
+	public void setHangUpDialogueNodes(List<HangUpDialogueNodesItem> hangUpDialogueNodes) {
+		this.hangUpDialogueNodes = hangUpDialogueNodes;
 	}
 
 	public static class NoAnswerDialogueNode {
@@ -195,6 +205,49 @@ public class DescribeDialogueNodeStatisticsResponse extends AcsResponse {
 
 		public void setNodeId(String nodeId) {
 			this.nodeId = nodeId;
+		}
+	}
+
+	public static class HangUpDialogueNodesItem {
+
+		private Integer hangUpNum;
+
+		private String nodeId;
+
+		private String nodeName;
+
+		private String rateDisplay;
+
+		public Integer getHangUpNum() {
+			return this.hangUpNum;
+		}
+
+		public void setHangUpNum(Integer hangUpNum) {
+			this.hangUpNum = hangUpNum;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
+		}
+
+		public String getNodeName() {
+			return this.nodeName;
+		}
+
+		public void setNodeName(String nodeName) {
+			this.nodeName = nodeName;
+		}
+
+		public String getRateDisplay() {
+			return this.rateDisplay;
+		}
+
+		public void setRateDisplay(String rateDisplay) {
+			this.rateDisplay = rateDisplay;
 		}
 	}
 

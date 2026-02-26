@@ -251,6 +251,26 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private Boolean systemDiskBurstingEnabled;
 
+			private String systemDiskEncrypted;
+
+			private Boolean deletionProtection;
+
+			private String creditSpecification;
+
+			private Boolean autoRenew;
+
+			private Integer autoRenewPeriod;
+
+			private String periodUnit;
+
+			private String httpEndpoint;
+
+			private String httpTokens;
+
+			private Integer httpPutResponseHopLimit;
+
+			private String systemDiskKMSKeyId;
+
 			private List<DataDisk> dataDisks;
 
 			private List<NetworkInterface> networkInterfaces;
@@ -258,6 +278,10 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 			private List<InstanceTag> tags;
 
 			private List<String> securityGroupIds;
+
+			private ImageOptions imageOptions;
+
+			private SecurityOptions securityOptions;
 
 			public String getDeploymentSetId() {
 				return this.deploymentSetId;
@@ -587,6 +611,86 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
 			}
 
+			public String getSystemDiskEncrypted() {
+				return this.systemDiskEncrypted;
+			}
+
+			public void setSystemDiskEncrypted(String systemDiskEncrypted) {
+				this.systemDiskEncrypted = systemDiskEncrypted;
+			}
+
+			public Boolean getDeletionProtection() {
+				return this.deletionProtection;
+			}
+
+			public void setDeletionProtection(Boolean deletionProtection) {
+				this.deletionProtection = deletionProtection;
+			}
+
+			public String getCreditSpecification() {
+				return this.creditSpecification;
+			}
+
+			public void setCreditSpecification(String creditSpecification) {
+				this.creditSpecification = creditSpecification;
+			}
+
+			public Boolean getAutoRenew() {
+				return this.autoRenew;
+			}
+
+			public void setAutoRenew(Boolean autoRenew) {
+				this.autoRenew = autoRenew;
+			}
+
+			public Integer getAutoRenewPeriod() {
+				return this.autoRenewPeriod;
+			}
+
+			public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+				this.autoRenewPeriod = autoRenewPeriod;
+			}
+
+			public String getPeriodUnit() {
+				return this.periodUnit;
+			}
+
+			public void setPeriodUnit(String periodUnit) {
+				this.periodUnit = periodUnit;
+			}
+
+			public String getHttpEndpoint() {
+				return this.httpEndpoint;
+			}
+
+			public void setHttpEndpoint(String httpEndpoint) {
+				this.httpEndpoint = httpEndpoint;
+			}
+
+			public String getHttpTokens() {
+				return this.httpTokens;
+			}
+
+			public void setHttpTokens(String httpTokens) {
+				this.httpTokens = httpTokens;
+			}
+
+			public Integer getHttpPutResponseHopLimit() {
+				return this.httpPutResponseHopLimit;
+			}
+
+			public void setHttpPutResponseHopLimit(Integer httpPutResponseHopLimit) {
+				this.httpPutResponseHopLimit = httpPutResponseHopLimit;
+			}
+
+			public String getSystemDiskKMSKeyId() {
+				return this.systemDiskKMSKeyId;
+			}
+
+			public void setSystemDiskKMSKeyId(String systemDiskKMSKeyId) {
+				this.systemDiskKMSKeyId = systemDiskKMSKeyId;
+			}
+
 			public List<DataDisk> getDataDisks() {
 				return this.dataDisks;
 			}
@@ -619,6 +723,22 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.securityGroupIds = securityGroupIds;
 			}
 
+			public ImageOptions getImageOptions() {
+				return this.imageOptions;
+			}
+
+			public void setImageOptions(ImageOptions imageOptions) {
+				this.imageOptions = imageOptions;
+			}
+
+			public SecurityOptions getSecurityOptions() {
+				return this.securityOptions;
+			}
+
+			public void setSecurityOptions(SecurityOptions securityOptions) {
+				this.securityOptions = securityOptions;
+			}
+
 			public static class DataDisk {
 
 				private String performanceLevel;
@@ -644,6 +764,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				private Boolean burstingEnabled;
 
 				private String autoSnapshotPolicyId;
+
+				private String kMSKeyId;
 
 				public String getPerformanceLevel() {
 					return this.performanceLevel;
@@ -740,6 +862,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
 					this.autoSnapshotPolicyId = autoSnapshotPolicyId;
 				}
+
+				public String getKMSKeyId() {
+					return this.kMSKeyId;
+				}
+
+				public void setKMSKeyId(String kMSKeyId) {
+					this.kMSKeyId = kMSKeyId;
+				}
 			}
 
 			public static class NetworkInterface {
@@ -757,6 +887,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				private String instanceType;
 
 				private String networkInterfaceTrafficMode;
+
+				private Boolean deleteOnRelease;
 
 				private List<String> securityGroupIds1;
 
@@ -816,6 +948,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 					this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
 				}
 
+				public Boolean getDeleteOnRelease() {
+					return this.deleteOnRelease;
+				}
+
+				public void setDeleteOnRelease(Boolean deleteOnRelease) {
+					this.deleteOnRelease = deleteOnRelease;
+				}
+
 				public List<String> getSecurityGroupIds1() {
 					return this.securityGroupIds1;
 				}
@@ -845,6 +985,32 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 				public void setValue(String value) {
 					this.value = value;
+				}
+			}
+
+			public static class ImageOptions {
+
+				private Boolean loginAsNonRoot;
+
+				public Boolean getLoginAsNonRoot() {
+					return this.loginAsNonRoot;
+				}
+
+				public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
+					this.loginAsNonRoot = loginAsNonRoot;
+				}
+			}
+
+			public static class SecurityOptions {
+
+				private String trustedSystemMode;
+
+				public String getTrustedSystemMode() {
+					return this.trustedSystemMode;
+				}
+
+				public void setTrustedSystemMode(String trustedSystemMode) {
+					this.trustedSystemMode = trustedSystemMode;
 				}
 			}
 		}

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.mts.model.v20140618.QueryMediaCensorJobListResponse;
 import com.aliyuncs.mts.model.v20140618.QueryMediaCensorJobListResponse.MediaCensorJob;
+import com.aliyuncs.mts.model.v20140618.QueryMediaCensorJobListResponse.MediaCensorJob.AudioCensorResult;
 import com.aliyuncs.mts.model.v20140618.QueryMediaCensorJobListResponse.MediaCensorJob.BarrageCensorResult;
 import com.aliyuncs.mts.model.v20140618.QueryMediaCensorJobListResponse.MediaCensorJob.CoverImageCensorResult;
 import com.aliyuncs.mts.model.v20140618.QueryMediaCensorJobListResponse.MediaCensorJob.CoverImageCensorResult.Result;
@@ -135,6 +136,11 @@ public class QueryMediaCensorJobListResponseUnmarshaller {
 			}
 			vensorCensorResult.setCensorResults(censorResults);
 			mediaCensorJob.setVensorCensorResult(vensorCensorResult);
+
+			AudioCensorResult audioCensorResult = new AudioCensorResult();
+			audioCensorResult.setSuggestion(_ctx.stringValue("QueryMediaCensorJobListResponse.MediaCensorJobList["+ i +"].AudioCensorResult.Suggestion"));
+			audioCensorResult.setLabel(_ctx.stringValue("QueryMediaCensorJobListResponse.MediaCensorJobList["+ i +"].AudioCensorResult.Label"));
+			mediaCensorJob.setAudioCensorResult(audioCensorResult);
 
 			List<CoverImageCensorResult> coverImageCensorResults = new ArrayList<CoverImageCensorResult>();
 			for (int j = 0; j < _ctx.lengthValue("QueryMediaCensorJobListResponse.MediaCensorJobList["+ i +"].CoverImageCensorResults.Length"); j++) {

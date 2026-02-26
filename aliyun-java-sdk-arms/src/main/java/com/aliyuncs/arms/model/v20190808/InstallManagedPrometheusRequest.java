@@ -25,6 +25,10 @@ import com.aliyuncs.arms.Endpoint;
 public class InstallManagedPrometheusRequest extends RpcAcsRequest<InstallManagedPrometheusResponse> {
 	   
 
+	private String grafanaInstanceId;
+
+	private String clusterName;
+
 	private String securityGroupId;
 
 	private String clusterId;
@@ -35,6 +39,10 @@ public class InstallManagedPrometheusRequest extends RpcAcsRequest<InstallManage
 
 	private String vSwitchId;
 
+	private String vcExtraInfo;
+
+	private String resourceGroupId;
+
 	private String vpcId;
 	public InstallManagedPrometheusRequest() {
 		super("ARMS", "2019-08-08", "InstallManagedPrometheus", "arms");
@@ -43,6 +51,28 @@ public class InstallManagedPrometheusRequest extends RpcAcsRequest<InstallManage
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getGrafanaInstanceId() {
+		return this.grafanaInstanceId;
+	}
+
+	public void setGrafanaInstanceId(String grafanaInstanceId) {
+		this.grafanaInstanceId = grafanaInstanceId;
+		if(grafanaInstanceId != null){
+			putQueryParameter("GrafanaInstanceId", grafanaInstanceId);
+		}
+	}
+
+	public String getClusterName() {
+		return this.clusterName;
+	}
+
+	public void setClusterName(String clusterName) {
+		this.clusterName = clusterName;
+		if(clusterName != null){
+			putQueryParameter("ClusterName", clusterName);
+		}
 	}
 
 	public String getSecurityGroupId() {
@@ -97,6 +127,28 @@ public class InstallManagedPrometheusRequest extends RpcAcsRequest<InstallManage
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getVcExtraInfo() {
+		return this.vcExtraInfo;
+	}
+
+	public void setVcExtraInfo(String vcExtraInfo) {
+		this.vcExtraInfo = vcExtraInfo;
+		if(vcExtraInfo != null){
+			putQueryParameter("VcExtraInfo", vcExtraInfo);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

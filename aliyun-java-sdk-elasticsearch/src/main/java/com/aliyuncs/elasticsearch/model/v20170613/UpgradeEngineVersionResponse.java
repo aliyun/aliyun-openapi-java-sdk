@@ -14,6 +14,7 @@
 
 package com.aliyuncs.elasticsearch.model.v20170613;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.elasticsearch.transform.v20170613.UpgradeEngineVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,7 +27,7 @@ public class UpgradeEngineVersionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Result result;
+	private List<ResultItem> result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,21 +37,21 @@ public class UpgradeEngineVersionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Result getResult() {
+	public List<ResultItem> getResult() {
 		return this.result;
 	}
 
-	public void setResult(Result result) {
+	public void setResult(List<ResultItem> result) {
 		this.result = result;
 	}
 
-	public static class Result {
+	public static class ResultItem {
 
 		private String validateType;
 
 		private String status;
 
-		private ValidateResult validateResult;
+		private List<ValidateResultItem> validateResult;
 
 		public String getValidateType() {
 			return this.validateType;
@@ -68,15 +69,15 @@ public class UpgradeEngineVersionResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public ValidateResult getValidateResult() {
+		public List<ValidateResultItem> getValidateResult() {
 			return this.validateResult;
 		}
 
-		public void setValidateResult(ValidateResult validateResult) {
+		public void setValidateResult(List<ValidateResultItem> validateResult) {
 			this.validateResult = validateResult;
 		}
 
-		public static class ValidateResult {
+		public static class ValidateResultItem {
 
 			private String errorType;
 

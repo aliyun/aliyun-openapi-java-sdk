@@ -37,7 +37,11 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 
 	private String serviceRegionId;
 
+	private Long fileCategoryCode;
+
 	private Integer currentPage;
+
+	private Long templateId;
 
 	private String instanceId;
 
@@ -119,6 +123,17 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 		}
 	}
 
+	public Long getFileCategoryCode() {
+		return this.fileCategoryCode;
+	}
+
+	public void setFileCategoryCode(Long fileCategoryCode) {
+		this.fileCategoryCode = fileCategoryCode;
+		if(fileCategoryCode != null){
+			putQueryParameter("FileCategoryCode", fileCategoryCode.toString());
+		}
+	}
+
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -127,6 +142,17 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public Long getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(Long templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId.toString());
 		}
 	}
 

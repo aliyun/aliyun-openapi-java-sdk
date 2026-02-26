@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDnsGtmLogsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItems;
-
-	private Integer totalPages;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
+	private Integer totalPages;
+
+	private Integer totalItems;
+
 	private List<Log> logs;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,12 +53,12 @@ public class DescribeDnsGtmLogsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalItems() {
-		return this.totalItems;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getTotalPages() {
@@ -61,20 +69,12 @@ public class DescribeDnsGtmLogsResponse extends AcsResponse {
 		this.totalPages = totalPages;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalItems() {
+		return this.totalItems;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
 	}
 
 	public List<Log> getLogs() {
@@ -87,21 +87,45 @@ public class DescribeDnsGtmLogsResponse extends AcsResponse {
 
 	public static class Log {
 
+		private Long operTimestamp;
+
+		private String entityId;
+
+		private String entityType;
+
 		private String operTime;
 
 		private String operAction;
 
-		private String entityType;
-
-		private String entityId;
+		private String content;
 
 		private String entityName;
 
-		private Long operTimestamp;
-
 		private Long id;
 
-		private String content;
+		public Long getOperTimestamp() {
+			return this.operTimestamp;
+		}
+
+		public void setOperTimestamp(Long operTimestamp) {
+			this.operTimestamp = operTimestamp;
+		}
+
+		public String getEntityId() {
+			return this.entityId;
+		}
+
+		public void setEntityId(String entityId) {
+			this.entityId = entityId;
+		}
+
+		public String getEntityType() {
+			return this.entityType;
+		}
+
+		public void setEntityType(String entityType) {
+			this.entityType = entityType;
+		}
 
 		public String getOperTime() {
 			return this.operTime;
@@ -119,20 +143,12 @@ public class DescribeDnsGtmLogsResponse extends AcsResponse {
 			this.operAction = operAction;
 		}
 
-		public String getEntityType() {
-			return this.entityType;
+		public String getContent() {
+			return this.content;
 		}
 
-		public void setEntityType(String entityType) {
-			this.entityType = entityType;
-		}
-
-		public String getEntityId() {
-			return this.entityId;
-		}
-
-		public void setEntityId(String entityId) {
-			this.entityId = entityId;
+		public void setContent(String content) {
+			this.content = content;
 		}
 
 		public String getEntityName() {
@@ -143,28 +159,12 @@ public class DescribeDnsGtmLogsResponse extends AcsResponse {
 			this.entityName = entityName;
 		}
 
-		public Long getOperTimestamp() {
-			return this.operTimestamp;
-		}
-
-		public void setOperTimestamp(Long operTimestamp) {
-			this.operTimestamp = operTimestamp;
-		}
-
 		public Long getId() {
 			return this.id;
 		}
 
 		public void setId(Long id) {
 			this.id = id;
-		}
-
-		public String getContent() {
-			return this.content;
-		}
-
-		public void setContent(String content) {
-			this.content = content;
 		}
 	}
 

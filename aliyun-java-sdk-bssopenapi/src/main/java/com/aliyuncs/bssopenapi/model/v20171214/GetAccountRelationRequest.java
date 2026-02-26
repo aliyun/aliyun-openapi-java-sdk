@@ -29,7 +29,7 @@ public class GetAccountRelationRequest extends RpcAcsRequest<GetAccountRelationR
 
 	private Long relationId;
 	public GetAccountRelationRequest() {
-		super("BssOpenApi", "2017-12-14", "GetAccountRelation");
+		super("BssOpenApi", "2017-12-14", "GetAccountRelation", "bssopenapi");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

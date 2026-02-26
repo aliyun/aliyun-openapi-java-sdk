@@ -27,9 +27,9 @@ public class DeleteGatewayDomainRequest extends RpcAcsRequest<DeleteGatewayDomai
 
 	private String gatewayUniqueId;
 
-	private String acceptLanguage;
-
 	private String id;
+
+	private String acceptLanguage;
 	public DeleteGatewayDomainRequest() {
 		super("mse", "2019-05-31", "DeleteGatewayDomain", "mse");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class DeleteGatewayDomainRequest extends RpcAcsRequest<DeleteGatewayDomai
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public String getId() {
 		return this.id;
 	}
@@ -69,6 +58,17 @@ public class DeleteGatewayDomainRequest extends RpcAcsRequest<DeleteGatewayDomai
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

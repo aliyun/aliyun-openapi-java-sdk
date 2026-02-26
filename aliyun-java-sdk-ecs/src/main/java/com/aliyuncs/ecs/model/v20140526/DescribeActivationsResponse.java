@@ -33,6 +33,8 @@ public class DescribeActivationsResponse extends AcsResponse {
 
 	private Long totalCount;
 
+	private String nextToken;
+
 	private List<Activation> activationList;
 
 	public Long getPageSize() {
@@ -67,6 +69,14 @@ public class DescribeActivationsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
 	public List<Activation> getActivationList() {
 		return this.activationList;
 	}
@@ -96,6 +106,10 @@ public class DescribeActivationsResponse extends AcsResponse {
 		private Long timeToLiveInHours;
 
 		private String activationId;
+
+		private String resourceGroupId;
+
+		private List<Tag> tags;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -175,6 +189,45 @@ public class DescribeActivationsResponse extends AcsResponse {
 
 		public void setActivationId(String activationId) {
 			this.activationId = activationId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

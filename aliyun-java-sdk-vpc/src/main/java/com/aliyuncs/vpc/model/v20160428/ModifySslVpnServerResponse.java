@@ -58,6 +58,12 @@ public class ModifySslVpnServerResponse extends AcsResponse {
 
 	private String proto;
 
+	private String resourceGroupId;
+
+	private String iDaaSApplicationId;
+
+	private String iDaaSInstanceVersion;
+
 	public String getInternetIp() {
 		return this.internetIp;
 	}
@@ -192,6 +198,30 @@ public class ModifySslVpnServerResponse extends AcsResponse {
 
 	public void setProto(String proto) {
 		this.proto = proto;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getIDaaSApplicationId() {
+		return this.iDaaSApplicationId;
+	}
+
+	public void setIDaaSApplicationId(String iDaaSApplicationId) {
+		this.iDaaSApplicationId = iDaaSApplicationId;
+	}
+
+	public String getIDaaSInstanceVersion() {
+		return this.iDaaSInstanceVersion;
+	}
+
+	public void setIDaaSInstanceVersion(String iDaaSInstanceVersion) {
+		this.iDaaSInstanceVersion = iDaaSInstanceVersion;
 	}
 
 	@Override

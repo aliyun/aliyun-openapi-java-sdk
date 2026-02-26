@@ -32,16 +32,16 @@ public class ListExecutionsResponseUnmarshaller {
 		List<ExecutionsItem> executions = new ArrayList<ExecutionsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListExecutionsResponse.Executions.Length"); i++) {
 			ExecutionsItem executionsItem = new ExecutionsItem();
-			executionsItem.setName(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Name"));
-			executionsItem.setFlowName(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].FlowName"));
-			executionsItem.setFlowDefinition(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].FlowDefinition"));
-			executionsItem.setInput(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Input"));
-			executionsItem.setOutput(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Output"));
 			executionsItem.setStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Status"));
-			executionsItem.setStartedTime(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StartedTime"));
 			executionsItem.setStoppedTime(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StoppedTime"));
+			executionsItem.setStartedTime(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StartedTime"));
+			executionsItem.setFlowDefinition(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].FlowDefinition"));
 			executionsItem.setExternalInputUri(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ExternalInputUri"));
+			executionsItem.setOutput(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Output"));
+			executionsItem.setFlowName(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].FlowName"));
 			executionsItem.setExternalOutputUri(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ExternalOutputUri"));
+			executionsItem.setName(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Name"));
+			executionsItem.setInput(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Input"));
 
 			executions.add(executionsItem);
 		}

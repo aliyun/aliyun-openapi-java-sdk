@@ -14,7 +14,11 @@
 
 package com.aliyuncs.cloudapi.transform.v20160714;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.cloudapi.model.v20160714.RemoveVpcAccessResponse;
+import com.aliyuncs.cloudapi.model.v20160714.RemoveVpcAccessResponse.Api;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,6 +27,17 @@ public class RemoveVpcAccessResponseUnmarshaller {
 	public static RemoveVpcAccessResponse unmarshall(RemoveVpcAccessResponse removeVpcAccessResponse, UnmarshallerContext _ctx) {
 		
 		removeVpcAccessResponse.setRequestId(_ctx.stringValue("RemoveVpcAccessResponse.RequestId"));
+
+		List<Api> apis = new ArrayList<Api>();
+		for (int i = 0; i < _ctx.lengthValue("RemoveVpcAccessResponse.Apis.Length"); i++) {
+			Api api = new Api();
+			api.setApiId(_ctx.stringValue("RemoveVpcAccessResponse.Apis["+ i +"].ApiId"));
+			api.setStageId(_ctx.stringValue("RemoveVpcAccessResponse.Apis["+ i +"].StageId"));
+			api.setGroupId(_ctx.stringValue("RemoveVpcAccessResponse.Apis["+ i +"].GroupId"));
+
+			apis.add(api);
+		}
+		removeVpcAccessResponse.setApis(apis);
 	 
 	 	return removeVpcAccessResponse;
 	}

@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.transform.v20180510;
 
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnReportResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,7 +24,7 @@ public class DescribeCdnReportResponseUnmarshaller {
 	public static DescribeCdnReportResponse unmarshall(DescribeCdnReportResponse describeCdnReportResponse, UnmarshallerContext _ctx) {
 		
 		describeCdnReportResponse.setRequestId(_ctx.stringValue("DescribeCdnReportResponse.RequestId"));
-		describeCdnReportResponse.setContent(_ctx.stringValue("DescribeCdnReportResponse.Content"));
+		describeCdnReportResponse.setContent(_ctx.mapValue("DescribeCdnReportResponse.Content"));
 	 
 	 	return describeCdnReportResponse;
 	}

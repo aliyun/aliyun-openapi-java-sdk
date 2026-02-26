@@ -97,6 +97,12 @@ public class ListWirelessCloudConnectorsResponse extends AcsResponse {
 
 		private String createTime;
 
+		private String businessType;
+
+		private String serviceType;
+
+		private String wirelessCloudConnectorGroupId;
+
 		public String getWirelessCloudConnectorId() {
 			return this.wirelessCloudConnectorId;
 		}
@@ -175,6 +181,30 @@ public class ListWirelessCloudConnectorsResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getBusinessType() {
+			return this.businessType;
+		}
+
+		public void setBusinessType(String businessType) {
+			this.businessType = businessType;
+		}
+
+		public String getServiceType() {
+			return this.serviceType;
+		}
+
+		public void setServiceType(String serviceType) {
+			this.serviceType = serviceType;
+		}
+
+		public String getWirelessCloudConnectorGroupId() {
+			return this.wirelessCloudConnectorGroupId;
+		}
+
+		public void setWirelessCloudConnectorGroupId(String wirelessCloudConnectorGroupId) {
+			this.wirelessCloudConnectorGroupId = wirelessCloudConnectorGroupId;
 		}
 	}
 

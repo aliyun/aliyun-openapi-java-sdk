@@ -15,6 +15,7 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -24,9 +25,13 @@ import com.aliyuncs.http.MethodType;
 public class DescribeEnsEipAddressesRequest extends RpcAcsRequest<DescribeEnsEipAddressesResponse> {
 	   
 
+	private String eipName;
+
 	private String eipAddress;
 
 	private String ensRegionId;
+
+	private String standby;
 
 	private String allocationId;
 
@@ -36,10 +41,23 @@ public class DescribeEnsEipAddressesRequest extends RpcAcsRequest<DescribeEnsEip
 
 	private Integer pageSize;
 
+	private List<String> ensRegionIds;
+
 	private String associatedInstanceId;
 	public DescribeEnsEipAddressesRequest() {
 		super("Ens", "2017-11-10", "DescribeEnsEipAddresses", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getEipName() {
+		return this.eipName;
+	}
+
+	public void setEipName(String eipName) {
+		this.eipName = eipName;
+		if(eipName != null){
+			putQueryParameter("EipName", eipName);
+		}
 	}
 
 	public String getEipAddress() {
@@ -61,6 +79,17 @@ public class DescribeEnsEipAddressesRequest extends RpcAcsRequest<DescribeEnsEip
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
+		}
+	}
+
+	public String getStandby() {
+		return this.standby;
+	}
+
+	public void setStandby(String standby) {
+		this.standby = standby;
+		if(standby != null){
+			putQueryParameter("Standby", standby);
 		}
 	}
 
@@ -106,6 +135,19 @@ public class DescribeEnsEipAddressesRequest extends RpcAcsRequest<DescribeEnsEip
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public List<String> getEnsRegionIds() {
+		return this.ensRegionIds;
+	}
+
+	public void setEnsRegionIds(List<String> ensRegionIds) {
+		this.ensRegionIds = ensRegionIds;	
+		if (ensRegionIds != null) {
+			for (int depth1 = 0; depth1 < ensRegionIds.size(); depth1++) {
+				putQueryParameter("EnsRegionIds." + (depth1 + 1) , ensRegionIds.get(depth1));
+			}
+		}	
 	}
 
 	public String getAssociatedInstanceId() {

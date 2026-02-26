@@ -37,7 +37,13 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 
 	private Long ownerId;
 
+	private String resourceGroupId;
+
+	private String creationTime;
+
 	private List<AssociateVpc> associateVpcs;
+
+	private List<Tag> tags;
 
 	private DhcpOptions dhcpOptions;
 
@@ -89,12 +95,36 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 		this.ownerId = ownerId;
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getCreationTime() {
+		return this.creationTime;
+	}
+
+	public void setCreationTime(String creationTime) {
+		this.creationTime = creationTime;
+	}
+
 	public List<AssociateVpc> getAssociateVpcs() {
 		return this.associateVpcs;
 	}
 
 	public void setAssociateVpcs(List<AssociateVpc> associateVpcs) {
 		this.associateVpcs = associateVpcs;
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
 	}
 
 	public DhcpOptions getDhcpOptions() {
@@ -125,6 +155,29 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

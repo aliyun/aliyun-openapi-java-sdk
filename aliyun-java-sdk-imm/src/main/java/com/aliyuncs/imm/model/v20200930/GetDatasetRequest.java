@@ -25,11 +25,11 @@ import com.aliyuncs.imm.Endpoint;
 public class GetDatasetRequest extends RpcAcsRequest<GetDatasetResponse> {
 	   
 
+	private String datasetName;
+
 	private String projectName;
 
 	private Boolean withStatistics;
-
-	private String datasetName;
 	public GetDatasetRequest() {
 		super("imm", "2020-09-30", "GetDataset", "imm");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class GetDatasetRequest extends RpcAcsRequest<GetDatasetResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDatasetName() {
+		return this.datasetName;
+	}
+
+	public void setDatasetName(String datasetName) {
+		this.datasetName = datasetName;
+		if(datasetName != null){
+			putQueryParameter("DatasetName", datasetName);
+		}
 	}
 
 	public String getProjectName() {
@@ -58,17 +69,6 @@ public class GetDatasetRequest extends RpcAcsRequest<GetDatasetResponse> {
 		this.withStatistics = withStatistics;
 		if(withStatistics != null){
 			putQueryParameter("WithStatistics", withStatistics.toString());
-		}
-	}
-
-	public String getDatasetName() {
-		return this.datasetName;
-	}
-
-	public void setDatasetName(String datasetName) {
-		this.datasetName = datasetName;
-		if(datasetName != null){
-			putQueryParameter("DatasetName", datasetName);
 		}
 	}
 

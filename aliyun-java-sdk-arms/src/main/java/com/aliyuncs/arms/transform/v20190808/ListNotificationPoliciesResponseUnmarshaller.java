@@ -50,6 +50,8 @@ public class ListNotificationPoliciesResponseUnmarshaller {
 			policies.setRepeatInterval(_ctx.longValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].RepeatInterval"));
 			policies.setEscalationPolicyId(_ctx.longValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].EscalationPolicyId"));
 			policies.setIntegrationId(_ctx.longValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].IntegrationId"));
+			policies.setDirectedMode(_ctx.booleanValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].DirectedMode"));
+			policies.setState(_ctx.stringValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].State"));
 
 			GroupRule groupRule = new GroupRule();
 			groupRule.setGroupWait(_ctx.longValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].GroupRule.GroupWait"));
@@ -78,6 +80,12 @@ public class ListNotificationPoliciesResponseUnmarshaller {
 				notifyObjectsItem.setNotifyObjectType(_ctx.stringValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].NotifyRule.NotifyObjects["+ j +"].NotifyObjectType"));
 				notifyObjectsItem.setNotifyObjectId(_ctx.longValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].NotifyRule.NotifyObjects["+ j +"].NotifyObjectId"));
 				notifyObjectsItem.setNotifyObjectName(_ctx.stringValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].NotifyRule.NotifyObjects["+ j +"].NotifyObjectName"));
+
+				List<String> notifyChannels1 = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].NotifyRule.NotifyObjects["+ j +"].NotifyChannels.Length"); k++) {
+					notifyChannels1.add(_ctx.stringValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].NotifyRule.NotifyObjects["+ j +"].NotifyChannels["+ k +"]"));
+				}
+				notifyObjectsItem.setNotifyChannels1(notifyChannels1);
 
 				notifyObjects.add(notifyObjectsItem);
 			}

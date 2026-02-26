@@ -24,15 +24,7 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
-	
-	public TagResourcesRequest() {
-		super("CloudAPI", "2016-07-14", "TagResources", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> resourceIds;
 
@@ -41,6 +33,14 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 	private String securityToken;
 
 	private List<Tag> tags;
+	public TagResourcesRequest() {
+		super("CloudAPI", "2016-07-14", "TagResources", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getResourceIds() {
 		return this.resourceIds;
@@ -66,29 +66,10 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

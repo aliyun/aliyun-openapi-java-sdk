@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.InitiateAttendedTransferResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.InitiateAttendedTransferResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.InitiateAttendedTransferResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.InitiateAttendedTransferResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -60,7 +59,6 @@ public class InitiateAttendedTransferResponseUnmarshaller {
 			channelContext.setChannelFlags(_ctx.stringValue("InitiateAttendedTransferResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
 			channelContext.setSkillGroupId(_ctx.stringValue("InitiateAttendedTransferResponse.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId"));
 			channelContext.setTimestamp(_ctx.longValue("InitiateAttendedTransferResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("InitiateAttendedTransferResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("InitiateAttendedTransferResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("InitiateAttendedTransferResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("InitiateAttendedTransferResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));

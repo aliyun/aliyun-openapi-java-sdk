@@ -16,6 +16,9 @@ package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -34,7 +37,14 @@ public class CreateTransitRouterVpcAttachmentRequest extends RpcAcsRequest<Creat
 
 	private String cenId;
 
+	@SerializedName("transitRouterVPCAttachmentOptions")
+	private Map<String,String> transitRouterVPCAttachmentOptions;
+
 	private String transitRouterAttachmentName;
+
+	private List<Tag> tags;
+
+	private Boolean autoPublishRouteEnabled;
 
 	private Boolean dryRun;
 
@@ -54,7 +64,7 @@ public class CreateTransitRouterVpcAttachmentRequest extends RpcAcsRequest<Creat
 
 	private String chargeType;
 	public CreateTransitRouterVpcAttachmentRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterVpcAttachment");
+		super("Cbn", "2017-09-12", "CreateTransitRouterVpcAttachment", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -106,6 +116,17 @@ public class CreateTransitRouterVpcAttachmentRequest extends RpcAcsRequest<Creat
 		}
 	}
 
+	public Map<String,String> getTransitRouterVPCAttachmentOptions() {
+		return this.transitRouterVPCAttachmentOptions;
+	}
+
+	public void setTransitRouterVPCAttachmentOptions(Map<String,String> transitRouterVPCAttachmentOptions) {
+		this.transitRouterVPCAttachmentOptions = transitRouterVPCAttachmentOptions;	
+		if (transitRouterVPCAttachmentOptions != null) {
+			putQueryParameter("TransitRouterVPCAttachmentOptions" , new Gson().toJson(transitRouterVPCAttachmentOptions));
+		}	
+	}
+
 	public String getTransitRouterAttachmentName() {
 		return this.transitRouterAttachmentName;
 	}
@@ -114,6 +135,31 @@ public class CreateTransitRouterVpcAttachmentRequest extends RpcAcsRequest<Creat
 		this.transitRouterAttachmentName = transitRouterAttachmentName;
 		if(transitRouterAttachmentName != null){
 			putQueryParameter("TransitRouterAttachmentName", transitRouterAttachmentName);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public Boolean getAutoPublishRouteEnabled() {
+		return this.autoPublishRouteEnabled;
+	}
+
+	public void setAutoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
+		this.autoPublishRouteEnabled = autoPublishRouteEnabled;
+		if(autoPublishRouteEnabled != null){
+			putQueryParameter("AutoPublishRouteEnabled", autoPublishRouteEnabled.toString());
 		}
 	}
 
@@ -216,6 +262,29 @@ public class CreateTransitRouterVpcAttachmentRequest extends RpcAcsRequest<Creat
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSQLLogFilesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
 	private Integer totalRecordCount;
 
 	private List<LogFile> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -57,6 +49,14 @@ public class DescribeSQLLogFilesResponse extends AcsResponse {
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -79,13 +79,13 @@ public class DescribeSQLLogFilesResponse extends AcsResponse {
 
 		private String fileID;
 
-		private String logStartTime;
-
-		private String logSize;
-
 		private String logDownloadURL;
 
 		private String logEndTime;
+
+		private String logSize;
+
+		private String logStartTime;
 
 		private String logStatus;
 
@@ -95,22 +95,6 @@ public class DescribeSQLLogFilesResponse extends AcsResponse {
 
 		public void setFileID(String fileID) {
 			this.fileID = fileID;
-		}
-
-		public String getLogStartTime() {
-			return this.logStartTime;
-		}
-
-		public void setLogStartTime(String logStartTime) {
-			this.logStartTime = logStartTime;
-		}
-
-		public String getLogSize() {
-			return this.logSize;
-		}
-
-		public void setLogSize(String logSize) {
-			this.logSize = logSize;
 		}
 
 		public String getLogDownloadURL() {
@@ -127,6 +111,22 @@ public class DescribeSQLLogFilesResponse extends AcsResponse {
 
 		public void setLogEndTime(String logEndTime) {
 			this.logEndTime = logEndTime;
+		}
+
+		public String getLogSize() {
+			return this.logSize;
+		}
+
+		public void setLogSize(String logSize) {
+			this.logSize = logSize;
+		}
+
+		public String getLogStartTime() {
+			return this.logStartTime;
+		}
+
+		public void setLogStartTime(String logStartTime) {
+			this.logStartTime = logStartTime;
 		}
 
 		public String getLogStatus() {

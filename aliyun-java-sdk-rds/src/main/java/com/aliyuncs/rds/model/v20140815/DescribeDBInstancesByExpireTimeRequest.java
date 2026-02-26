@@ -29,6 +29,8 @@ public class DescribeDBInstancesByExpireTimeRequest extends RpcAcsRequest<Descri
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private Boolean expired;
 
 	private Integer pageSize;
@@ -72,6 +74,17 @@ public class DescribeDBInstancesByExpireTimeRequest extends RpcAcsRequest<Descri
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -26,6 +26,8 @@ public class ValidateTemplateContentRequest extends RpcAcsRequest<ValidateTempla
 	   
 
 	private String content;
+
+	private String templateURL;
 	public ValidateTemplateContentRequest() {
 		super("oos", "2019-06-01", "ValidateTemplateContent", "oos");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class ValidateTemplateContentRequest extends RpcAcsRequest<ValidateTempla
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public String getTemplateURL() {
+		return this.templateURL;
+	}
+
+	public void setTemplateURL(String templateURL) {
+		this.templateURL = templateURL;
+		if(templateURL != null){
+			putQueryParameter("TemplateURL", templateURL);
 		}
 	}
 

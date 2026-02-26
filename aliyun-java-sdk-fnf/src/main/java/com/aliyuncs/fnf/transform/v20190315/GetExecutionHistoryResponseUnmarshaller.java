@@ -32,12 +32,12 @@ public class GetExecutionHistoryResponseUnmarshaller {
 		List<EventsItem> events = new ArrayList<EventsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetExecutionHistoryResponse.Events.Length"); i++) {
 			EventsItem eventsItem = new EventsItem();
-			eventsItem.setStepName(_ctx.stringValue("GetExecutionHistoryResponse.Events["+ i +"].StepName"));
 			eventsItem.setType(_ctx.stringValue("GetExecutionHistoryResponse.Events["+ i +"].Type"));
 			eventsItem.setEventId(_ctx.longValue("GetExecutionHistoryResponse.Events["+ i +"].EventId"));
+			eventsItem.setTime(_ctx.stringValue("GetExecutionHistoryResponse.Events["+ i +"].Time"));
 			eventsItem.setScheduleEventId(_ctx.longValue("GetExecutionHistoryResponse.Events["+ i +"].ScheduleEventId"));
 			eventsItem.setEventDetail(_ctx.stringValue("GetExecutionHistoryResponse.Events["+ i +"].EventDetail"));
-			eventsItem.setTime(_ctx.stringValue("GetExecutionHistoryResponse.Events["+ i +"].Time"));
+			eventsItem.setStepName(_ctx.stringValue("GetExecutionHistoryResponse.Events["+ i +"].StepName"));
 
 			events.add(eventsItem);
 		}

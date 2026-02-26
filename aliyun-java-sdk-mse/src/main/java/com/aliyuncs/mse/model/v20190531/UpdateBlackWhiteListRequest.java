@@ -25,6 +25,8 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateBlackWhiteListRequest extends RpcAcsRequest<UpdateBlackWhiteListResponse> {
 	   
 
+	private String note;
+
 	private String gatewayUniqueId;
 
 	private String type;
@@ -33,9 +35,13 @@ public class UpdateBlackWhiteListRequest extends RpcAcsRequest<UpdateBlackWhiteL
 
 	private Boolean isWhite;
 
+	private String resourceIdJsonList;
+
 	private Long id;
 
 	private String resourceType;
+
+	private String name;
 
 	private String acceptLanguage;
 
@@ -47,6 +53,17 @@ public class UpdateBlackWhiteListRequest extends RpcAcsRequest<UpdateBlackWhiteL
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNote() {
+		return this.note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+		if(note != null){
+			putQueryParameter("Note", note);
+		}
 	}
 
 	public String getGatewayUniqueId() {
@@ -93,6 +110,17 @@ public class UpdateBlackWhiteListRequest extends RpcAcsRequest<UpdateBlackWhiteL
 		}
 	}
 
+	public String getResourceIdJsonList() {
+		return this.resourceIdJsonList;
+	}
+
+	public void setResourceIdJsonList(String resourceIdJsonList) {
+		this.resourceIdJsonList = resourceIdJsonList;
+		if(resourceIdJsonList != null){
+			putQueryParameter("ResourceIdJsonList", resourceIdJsonList);
+		}
+	}
+
 	public Long getId() {
 		return this.id;
 	}
@@ -112,6 +140,17 @@ public class UpdateBlackWhiteListRequest extends RpcAcsRequest<UpdateBlackWhiteL
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.outboundbot.model.v20191226;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.outboundbot.Endpoint;
 
@@ -52,6 +53,10 @@ public class SearchTaskRequest extends RpcAcsRequest<SearchTaskResponse> {
 	private String jobGroupNameQuery;
 
 	private String taskId;
+
+	private List<String> labelsJsons;
+
+	private String callingNumber;
 
 	private String instanceId;
 
@@ -230,6 +235,30 @@ public class SearchTaskRequest extends RpcAcsRequest<SearchTaskResponse> {
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public List<String> getLabelsJsons() {
+		return this.labelsJsons;
+	}
+
+	public void setLabelsJsons(List<String> labelsJsons) {
+		this.labelsJsons = labelsJsons;	
+		if (labelsJsons != null) {
+			for (int i = 0; i < labelsJsons.size(); i++) {
+				putQueryParameter("LabelsJson." + (i + 1) , labelsJsons.get(i));
+			}
+		}	
+	}
+
+	public String getCallingNumber() {
+		return this.callingNumber;
+	}
+
+	public void setCallingNumber(String callingNumber) {
+		this.callingNumber = callingNumber;
+		if(callingNumber != null){
+			putQueryParameter("CallingNumber", callingNumber);
 		}
 	}
 

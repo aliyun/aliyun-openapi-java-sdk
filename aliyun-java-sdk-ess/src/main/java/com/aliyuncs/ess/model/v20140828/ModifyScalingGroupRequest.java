@@ -28,53 +28,75 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 
 	private Long resourceOwnerId;
 
-	private String scalingGroupId;
+	private Boolean azBalance;
 
-	private List<String> vSwitchIds;
+	private List<String> vSwitchIdss;
+
+	private Integer maxInstanceLifetime;
 
 	private String activeScalingConfigurationId;
 
-	private Integer onDemandBaseCapacity;
-
-	private Integer onDemandPercentageAboveBaseCapacity;
-
 	private Boolean spotInstanceRemedy;
+
+	private String customPolicyARN;
+
+	private Integer stopInstanceTimeout;
 
 	private Integer defaultCooldown;
 
-	private String removalPolicy1;
-
-	private String removalPolicy2;
+	private List<String> healthCheckTypess;
 
 	private String multiAZPolicy;
-
-	private String healthCheckType;
 
 	private String launchTemplateId;
 
 	private Integer desiredCapacity;
 
+	private List<LaunchTemplateOverride> launchTemplateOverrides;
+
+	private Boolean compensateWithOnDemand;
+
+	private CapacityOptions capacityOptions;
+
+	private Integer minSize;
+
+	private Long ownerId;
+
+	private Integer maxSize;
+
+	private String scalingGroupId;
+
+	private Integer onDemandBaseCapacity;
+
+	private Integer onDemandPercentageAboveBaseCapacity;
+
+	private String spotAllocationStrategy;
+
+	private Boolean disableDesiredCapacity;
+
+	private String removalPolicy1;
+
+	private String removalPolicy2;
+
+	private String removalPolicy3;
+
+	private String healthCheckType;
+
 	private String resourceOwnerAccount;
 
 	private String scalingGroupName;
 
-	private List<LaunchTemplateOverride> launchTemplateOverrides;
-
 	private String ownerAccount;
-
-	private Boolean compensateWithOnDemand;
 
 	private Integer spotInstancePools;
 
-	private Integer minSize;
-
 	private Boolean groupDeletionProtection;
-
-	private Long ownerId;
 
 	private String launchTemplateVersion;
 
-	private Integer maxSize;
+	private String scalingPolicy;
+
+	private String allocationStrategy;
 	public ModifyScalingGroupRequest() {
 		super("Ess", "2014-08-28", "ModifyScalingGroup", "ess");
 		setMethod(MethodType.POST);
@@ -95,28 +117,39 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		}
 	}
 
-	public String getScalingGroupId() {
-		return this.scalingGroupId;
+	public Boolean getAzBalance() {
+		return this.azBalance;
 	}
 
-	public void setScalingGroupId(String scalingGroupId) {
-		this.scalingGroupId = scalingGroupId;
-		if(scalingGroupId != null){
-			putQueryParameter("ScalingGroupId", scalingGroupId);
+	public void setAzBalance(Boolean azBalance) {
+		this.azBalance = azBalance;
+		if(azBalance != null){
+			putQueryParameter("AzBalance", azBalance.toString());
 		}
 	}
 
-	public List<String> getVSwitchIds() {
-		return this.vSwitchIds;
+	public List<String> getVSwitchIdss() {
+		return this.vSwitchIdss;
 	}
 
-	public void setVSwitchIds(List<String> vSwitchIds) {
-		this.vSwitchIds = vSwitchIds;	
-		if (vSwitchIds != null) {
-			for (int i = 0; i < vSwitchIds.size(); i++) {
-				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIds.get(i));
+	public void setVSwitchIdss(List<String> vSwitchIdss) {
+		this.vSwitchIdss = vSwitchIdss;	
+		if (vSwitchIdss != null) {
+			for (int i = 0; i < vSwitchIdss.size(); i++) {
+				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIdss.get(i));
 			}
 		}	
+	}
+
+	public Integer getMaxInstanceLifetime() {
+		return this.maxInstanceLifetime;
+	}
+
+	public void setMaxInstanceLifetime(Integer maxInstanceLifetime) {
+		this.maxInstanceLifetime = maxInstanceLifetime;
+		if(maxInstanceLifetime != null){
+			putQueryParameter("MaxInstanceLifetime", maxInstanceLifetime.toString());
+		}
 	}
 
 	public String getActiveScalingConfigurationId() {
@@ -127,28 +160,6 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		this.activeScalingConfigurationId = activeScalingConfigurationId;
 		if(activeScalingConfigurationId != null){
 			putQueryParameter("ActiveScalingConfigurationId", activeScalingConfigurationId);
-		}
-	}
-
-	public Integer getOnDemandBaseCapacity() {
-		return this.onDemandBaseCapacity;
-	}
-
-	public void setOnDemandBaseCapacity(Integer onDemandBaseCapacity) {
-		this.onDemandBaseCapacity = onDemandBaseCapacity;
-		if(onDemandBaseCapacity != null){
-			putQueryParameter("OnDemandBaseCapacity", onDemandBaseCapacity.toString());
-		}
-	}
-
-	public Integer getOnDemandPercentageAboveBaseCapacity() {
-		return this.onDemandPercentageAboveBaseCapacity;
-	}
-
-	public void setOnDemandPercentageAboveBaseCapacity(Integer onDemandPercentageAboveBaseCapacity) {
-		this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
-		if(onDemandPercentageAboveBaseCapacity != null){
-			putQueryParameter("OnDemandPercentageAboveBaseCapacity", onDemandPercentageAboveBaseCapacity.toString());
 		}
 	}
 
@@ -163,6 +174,28 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		}
 	}
 
+	public String getCustomPolicyARN() {
+		return this.customPolicyARN;
+	}
+
+	public void setCustomPolicyARN(String customPolicyARN) {
+		this.customPolicyARN = customPolicyARN;
+		if(customPolicyARN != null){
+			putQueryParameter("CustomPolicyARN", customPolicyARN);
+		}
+	}
+
+	public Integer getStopInstanceTimeout() {
+		return this.stopInstanceTimeout;
+	}
+
+	public void setStopInstanceTimeout(Integer stopInstanceTimeout) {
+		this.stopInstanceTimeout = stopInstanceTimeout;
+		if(stopInstanceTimeout != null){
+			putQueryParameter("StopInstanceTimeout", stopInstanceTimeout.toString());
+		}
+	}
+
 	public Integer getDefaultCooldown() {
 		return this.defaultCooldown;
 	}
@@ -174,26 +207,17 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		}
 	}
 
-	public String getRemovalPolicy1() {
-		return this.removalPolicy1;
+	public List<String> getHealthCheckTypess() {
+		return this.healthCheckTypess;
 	}
 
-	public void setRemovalPolicy1(String removalPolicy1) {
-		this.removalPolicy1 = removalPolicy1;
-		if(removalPolicy1 != null){
-			putQueryParameter("RemovalPolicy.1", removalPolicy1);
-		}
-	}
-
-	public String getRemovalPolicy2() {
-		return this.removalPolicy2;
-	}
-
-	public void setRemovalPolicy2(String removalPolicy2) {
-		this.removalPolicy2 = removalPolicy2;
-		if(removalPolicy2 != null){
-			putQueryParameter("RemovalPolicy.2", removalPolicy2);
-		}
+	public void setHealthCheckTypess(List<String> healthCheckTypess) {
+		this.healthCheckTypess = healthCheckTypess;	
+		if (healthCheckTypess != null) {
+			for (int i = 0; i < healthCheckTypess.size(); i++) {
+				putQueryParameter("HealthCheckTypes." + (i + 1) , healthCheckTypess.get(i));
+			}
+		}	
 	}
 
 	public String getMultiAZPolicy() {
@@ -204,17 +228,6 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		this.multiAZPolicy = multiAZPolicy;
 		if(multiAZPolicy != null){
 			putQueryParameter("MultiAZPolicy", multiAZPolicy);
-		}
-	}
-
-	public String getHealthCheckType() {
-		return this.healthCheckType;
-	}
-
-	public void setHealthCheckType(String healthCheckType) {
-		this.healthCheckType = healthCheckType;
-		if(healthCheckType != null){
-			putQueryParameter("HealthCheckType", healthCheckType);
 		}
 	}
 
@@ -240,6 +253,180 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		}
 	}
 
+	public List<LaunchTemplateOverride> getLaunchTemplateOverrides() {
+		return this.launchTemplateOverrides;
+	}
+
+	public void setLaunchTemplateOverrides(List<LaunchTemplateOverride> launchTemplateOverrides) {
+		this.launchTemplateOverrides = launchTemplateOverrides;	
+		if (launchTemplateOverrides != null) {
+			for (int depth1 = 0; depth1 < launchTemplateOverrides.size(); depth1++) {
+				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".WeightedCapacity" , launchTemplateOverrides.get(depth1).getWeightedCapacity());
+				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".InstanceType" , launchTemplateOverrides.get(depth1).getInstanceType());
+				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".SpotPriceLimit" , launchTemplateOverrides.get(depth1).getSpotPriceLimit());
+			}
+		}	
+	}
+
+	public Boolean getCompensateWithOnDemand() {
+		return this.compensateWithOnDemand;
+	}
+
+	public void setCompensateWithOnDemand(Boolean compensateWithOnDemand) {
+		this.compensateWithOnDemand = compensateWithOnDemand;
+		if(compensateWithOnDemand != null){
+			putQueryParameter("CompensateWithOnDemand", compensateWithOnDemand.toString());
+		}
+	}
+
+	public CapacityOptions getCapacityOptions() {
+		return this.capacityOptions;
+	}
+
+	public void setCapacityOptions(CapacityOptions capacityOptions) {
+		this.capacityOptions = capacityOptions;	
+		if (capacityOptions != null) {
+			
+				putQueryParameter("CapacityOptions.CompensateWithOnDemand" , capacityOptions.getCompensateWithOnDemand());
+				putQueryParameter("CapacityOptions.PriceComparisonMode" , capacityOptions.getPriceComparisonMode());
+				putQueryParameter("CapacityOptions.OnDemandBaseCapacity" , capacityOptions.getOnDemandBaseCapacity());
+				putQueryParameter("CapacityOptions.SpotAutoReplaceOnDemand" , capacityOptions.getSpotAutoReplaceOnDemand());
+				putQueryParameter("CapacityOptions.OnDemandPercentageAboveBaseCapacity" , capacityOptions.getOnDemandPercentageAboveBaseCapacity());
+		}	
+	}
+
+	public Integer getMinSize() {
+		return this.minSize;
+	}
+
+	public void setMinSize(Integer minSize) {
+		this.minSize = minSize;
+		if(minSize != null){
+			putQueryParameter("MinSize", minSize.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getMaxSize() {
+		return this.maxSize;
+	}
+
+	public void setMaxSize(Integer maxSize) {
+		this.maxSize = maxSize;
+		if(maxSize != null){
+			putQueryParameter("MaxSize", maxSize.toString());
+		}
+	}
+
+	public String getScalingGroupId() {
+		return this.scalingGroupId;
+	}
+
+	public void setScalingGroupId(String scalingGroupId) {
+		this.scalingGroupId = scalingGroupId;
+		if(scalingGroupId != null){
+			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public Integer getOnDemandBaseCapacity() {
+		return this.onDemandBaseCapacity;
+	}
+
+	public void setOnDemandBaseCapacity(Integer onDemandBaseCapacity) {
+		this.onDemandBaseCapacity = onDemandBaseCapacity;
+		if(onDemandBaseCapacity != null){
+			putQueryParameter("OnDemandBaseCapacity", onDemandBaseCapacity.toString());
+		}
+	}
+
+	public Integer getOnDemandPercentageAboveBaseCapacity() {
+		return this.onDemandPercentageAboveBaseCapacity;
+	}
+
+	public void setOnDemandPercentageAboveBaseCapacity(Integer onDemandPercentageAboveBaseCapacity) {
+		this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
+		if(onDemandPercentageAboveBaseCapacity != null){
+			putQueryParameter("OnDemandPercentageAboveBaseCapacity", onDemandPercentageAboveBaseCapacity.toString());
+		}
+	}
+
+	public String getSpotAllocationStrategy() {
+		return this.spotAllocationStrategy;
+	}
+
+	public void setSpotAllocationStrategy(String spotAllocationStrategy) {
+		this.spotAllocationStrategy = spotAllocationStrategy;
+		if(spotAllocationStrategy != null){
+			putQueryParameter("SpotAllocationStrategy", spotAllocationStrategy);
+		}
+	}
+
+	public Boolean getDisableDesiredCapacity() {
+		return this.disableDesiredCapacity;
+	}
+
+	public void setDisableDesiredCapacity(Boolean disableDesiredCapacity) {
+		this.disableDesiredCapacity = disableDesiredCapacity;
+		if(disableDesiredCapacity != null){
+			putQueryParameter("DisableDesiredCapacity", disableDesiredCapacity.toString());
+		}
+	}
+
+	public String getRemovalPolicy1() {
+		return this.removalPolicy1;
+	}
+
+	public void setRemovalPolicy1(String removalPolicy1) {
+		this.removalPolicy1 = removalPolicy1;
+		if(removalPolicy1 != null){
+			putQueryParameter("RemovalPolicy.1", removalPolicy1);
+		}
+	}
+
+	public String getRemovalPolicy2() {
+		return this.removalPolicy2;
+	}
+
+	public void setRemovalPolicy2(String removalPolicy2) {
+		this.removalPolicy2 = removalPolicy2;
+		if(removalPolicy2 != null){
+			putQueryParameter("RemovalPolicy.2", removalPolicy2);
+		}
+	}
+
+	public String getRemovalPolicy3() {
+		return this.removalPolicy3;
+	}
+
+	public void setRemovalPolicy3(String removalPolicy3) {
+		this.removalPolicy3 = removalPolicy3;
+		if(removalPolicy3 != null){
+			putQueryParameter("RemovalPolicy.3", removalPolicy3);
+		}
+	}
+
+	public String getHealthCheckType() {
+		return this.healthCheckType;
+	}
+
+	public void setHealthCheckType(String healthCheckType) {
+		this.healthCheckType = healthCheckType;
+		if(healthCheckType != null){
+			putQueryParameter("HealthCheckType", healthCheckType);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -262,20 +449,6 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		}
 	}
 
-	public List<LaunchTemplateOverride> getLaunchTemplateOverrides() {
-		return this.launchTemplateOverrides;
-	}
-
-	public void setLaunchTemplateOverrides(List<LaunchTemplateOverride> launchTemplateOverrides) {
-		this.launchTemplateOverrides = launchTemplateOverrides;	
-		if (launchTemplateOverrides != null) {
-			for (int depth1 = 0; depth1 < launchTemplateOverrides.size(); depth1++) {
-				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".WeightedCapacity" , launchTemplateOverrides.get(depth1).getWeightedCapacity());
-				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".InstanceType" , launchTemplateOverrides.get(depth1).getInstanceType());
-			}
-		}	
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -284,17 +457,6 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Boolean getCompensateWithOnDemand() {
-		return this.compensateWithOnDemand;
-	}
-
-	public void setCompensateWithOnDemand(Boolean compensateWithOnDemand) {
-		this.compensateWithOnDemand = compensateWithOnDemand;
-		if(compensateWithOnDemand != null){
-			putQueryParameter("CompensateWithOnDemand", compensateWithOnDemand.toString());
 		}
 	}
 
@@ -309,17 +471,6 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		}
 	}
 
-	public Integer getMinSize() {
-		return this.minSize;
-	}
-
-	public void setMinSize(Integer minSize) {
-		this.minSize = minSize;
-		if(minSize != null){
-			putQueryParameter("MinSize", minSize.toString());
-		}
-	}
-
 	public Boolean getGroupDeletionProtection() {
 		return this.groupDeletionProtection;
 	}
@@ -328,17 +479,6 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		this.groupDeletionProtection = groupDeletionProtection;
 		if(groupDeletionProtection != null){
 			putQueryParameter("GroupDeletionProtection", groupDeletionProtection.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -353,14 +493,25 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		}
 	}
 
-	public Integer getMaxSize() {
-		return this.maxSize;
+	public String getScalingPolicy() {
+		return this.scalingPolicy;
 	}
 
-	public void setMaxSize(Integer maxSize) {
-		this.maxSize = maxSize;
-		if(maxSize != null){
-			putQueryParameter("MaxSize", maxSize.toString());
+	public void setScalingPolicy(String scalingPolicy) {
+		this.scalingPolicy = scalingPolicy;
+		if(scalingPolicy != null){
+			putQueryParameter("ScalingPolicy", scalingPolicy);
+		}
+	}
+
+	public String getAllocationStrategy() {
+		return this.allocationStrategy;
+	}
+
+	public void setAllocationStrategy(String allocationStrategy) {
+		this.allocationStrategy = allocationStrategy;
+		if(allocationStrategy != null){
+			putQueryParameter("AllocationStrategy", allocationStrategy);
 		}
 	}
 
@@ -369,6 +520,8 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		private Integer weightedCapacity;
 
 		private String instanceType;
+
+		private Float spotPriceLimit;
 
 		public Integer getWeightedCapacity() {
 			return this.weightedCapacity;
@@ -384,6 +537,67 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
+		}
+
+		public Float getSpotPriceLimit() {
+			return this.spotPriceLimit;
+		}
+
+		public void setSpotPriceLimit(Float spotPriceLimit) {
+			this.spotPriceLimit = spotPriceLimit;
+		}
+	}
+
+	public static class CapacityOptions {
+
+		private Boolean compensateWithOnDemand;
+
+		private String priceComparisonMode;
+
+		private Integer onDemandBaseCapacity;
+
+		private Boolean spotAutoReplaceOnDemand;
+
+		private Integer onDemandPercentageAboveBaseCapacity;
+
+		public Boolean getCompensateWithOnDemand() {
+			return this.compensateWithOnDemand;
+		}
+
+		public void setCompensateWithOnDemand(Boolean compensateWithOnDemand) {
+			this.compensateWithOnDemand = compensateWithOnDemand;
+		}
+
+		public String getPriceComparisonMode() {
+			return this.priceComparisonMode;
+		}
+
+		public void setPriceComparisonMode(String priceComparisonMode) {
+			this.priceComparisonMode = priceComparisonMode;
+		}
+
+		public Integer getOnDemandBaseCapacity() {
+			return this.onDemandBaseCapacity;
+		}
+
+		public void setOnDemandBaseCapacity(Integer onDemandBaseCapacity) {
+			this.onDemandBaseCapacity = onDemandBaseCapacity;
+		}
+
+		public Boolean getSpotAutoReplaceOnDemand() {
+			return this.spotAutoReplaceOnDemand;
+		}
+
+		public void setSpotAutoReplaceOnDemand(Boolean spotAutoReplaceOnDemand) {
+			this.spotAutoReplaceOnDemand = spotAutoReplaceOnDemand;
+		}
+
+		public Integer getOnDemandPercentageAboveBaseCapacity() {
+			return this.onDemandPercentageAboveBaseCapacity;
+		}
+
+		public void setOnDemandPercentageAboveBaseCapacity(Integer onDemandPercentageAboveBaseCapacity) {
+			this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
 		}
 	}
 

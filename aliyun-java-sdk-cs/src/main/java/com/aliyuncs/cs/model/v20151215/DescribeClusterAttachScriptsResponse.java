@@ -28,4 +28,9 @@ public class DescribeClusterAttachScriptsResponse extends AcsResponse {
 	public DescribeClusterAttachScriptsResponse getInstance(UnmarshallerContext context) {
 		return	DescribeClusterAttachScriptsResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

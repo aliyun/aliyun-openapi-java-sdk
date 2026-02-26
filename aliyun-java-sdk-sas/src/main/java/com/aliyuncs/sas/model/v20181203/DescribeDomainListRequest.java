@@ -25,15 +25,15 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeDomainListRequest extends RpcAcsRequest<DescribeDomainListResponse> {
 	   
 
-	private Integer currentPage;
-
-	private String fuzzyDomain;
-
 	private String sourceIp;
 
 	private String domainType;
 
 	private Integer pageSize;
+
+	private Integer currentPage;
+
+	private String fuzzyDomain;
 	public DescribeDomainListRequest() {
 		super("Sas", "2018-12-03", "DescribeDomainList");
 		setMethod(MethodType.POST);
@@ -41,28 +41,6 @@ public class DescribeDomainListRequest extends RpcAcsRequest<DescribeDomainListR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getFuzzyDomain() {
-		return this.fuzzyDomain;
-	}
-
-	public void setFuzzyDomain(String fuzzyDomain) {
-		this.fuzzyDomain = fuzzyDomain;
-		if(fuzzyDomain != null){
-			putQueryParameter("FuzzyDomain", fuzzyDomain);
-		}
 	}
 
 	public String getSourceIp() {
@@ -95,6 +73,28 @@ public class DescribeDomainListRequest extends RpcAcsRequest<DescribeDomainListR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getFuzzyDomain() {
+		return this.fuzzyDomain;
+	}
+
+	public void setFuzzyDomain(String fuzzyDomain) {
+		this.fuzzyDomain = fuzzyDomain;
+		if(fuzzyDomain != null){
+			putQueryParameter("FuzzyDomain", fuzzyDomain);
 		}
 	}
 

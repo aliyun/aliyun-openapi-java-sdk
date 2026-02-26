@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEventRecordPlansResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class QueryEventRecordPlansResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class QueryEventRecordPlansResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,23 +77,15 @@ public class QueryEventRecordPlansResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
-
 		private Integer pageSize;
-
-		private Integer page;
 
 		private Integer pageCount;
 
+		private Integer total;
+
+		private Integer page;
+
 		private List<ListItem> list;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -103,20 +95,28 @@ public class QueryEventRecordPlansResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getPage() {
-			return this.page;
-		}
-
-		public void setPage(Integer page) {
-			this.page = page;
-		}
-
 		public Integer getPageCount() {
 			return this.pageCount;
 		}
 
 		public void setPageCount(Integer pageCount) {
 			this.pageCount = pageCount;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
+		}
+
+		public Integer getPage() {
+			return this.page;
+		}
+
+		public void setPage(Integer page) {
+			this.page = page;
 		}
 
 		public List<ListItem> getList() {
@@ -131,15 +131,15 @@ public class QueryEventRecordPlansResponse extends AcsResponse {
 
 			private String eventType;
 
+			private Integer recordDuration;
+
+			private Integer preRecordDuration;
+
 			private String planId;
 
 			private String name;
 
 			private String templateId;
-
-			private Integer preRecordDuration;
-
-			private Integer recordDuration;
 
 			public String getEventType() {
 				return this.eventType;
@@ -147,6 +147,22 @@ public class QueryEventRecordPlansResponse extends AcsResponse {
 
 			public void setEventType(String eventType) {
 				this.eventType = eventType;
+			}
+
+			public Integer getRecordDuration() {
+				return this.recordDuration;
+			}
+
+			public void setRecordDuration(Integer recordDuration) {
+				this.recordDuration = recordDuration;
+			}
+
+			public Integer getPreRecordDuration() {
+				return this.preRecordDuration;
+			}
+
+			public void setPreRecordDuration(Integer preRecordDuration) {
+				this.preRecordDuration = preRecordDuration;
 			}
 
 			public String getPlanId() {
@@ -171,22 +187,6 @@ public class QueryEventRecordPlansResponse extends AcsResponse {
 
 			public void setTemplateId(String templateId) {
 				this.templateId = templateId;
-			}
-
-			public Integer getPreRecordDuration() {
-				return this.preRecordDuration;
-			}
-
-			public void setPreRecordDuration(Integer preRecordDuration) {
-				this.preRecordDuration = preRecordDuration;
-			}
-
-			public Integer getRecordDuration() {
-				return this.recordDuration;
-			}
-
-			public void setRecordDuration(Integer recordDuration) {
-				this.recordDuration = recordDuration;
 			}
 		}
 	}

@@ -25,23 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeParametersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String engine;
 
 	private String engineVersion;
 
+	private String requestId;
+
 	private List<DBInstanceParameter> configParameters;
 
-	private List<DBInstanceParameter> runningParameters;
+	private List<DBInstanceParameter1> runningParameters;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private ParamGroupInfo paramGroupInfo;
 
 	public String getEngine() {
 		return this.engine;
@@ -59,6 +53,14 @@ public class DescribeParametersResponse extends AcsResponse {
 		this.engineVersion = engineVersion;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<DBInstanceParameter> getConfigParameters() {
 		return this.configParameters;
 	}
@@ -67,12 +69,20 @@ public class DescribeParametersResponse extends AcsResponse {
 		this.configParameters = configParameters;
 	}
 
-	public List<DBInstanceParameter> getRunningParameters() {
+	public List<DBInstanceParameter1> getRunningParameters() {
 		return this.runningParameters;
 	}
 
-	public void setRunningParameters(List<DBInstanceParameter> runningParameters) {
+	public void setRunningParameters(List<DBInstanceParameter1> runningParameters) {
 		this.runningParameters = runningParameters;
+	}
+
+	public ParamGroupInfo getParamGroupInfo() {
+		return this.paramGroupInfo;
+	}
+
+	public void setParamGroupInfo(ParamGroupInfo paramGroupInfo) {
+		this.paramGroupInfo = paramGroupInfo;
 	}
 
 	public static class DBInstanceParameter {
@@ -105,6 +115,102 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		public void setParameterValue(String parameterValue) {
 			this.parameterValue = parameterValue;
+		}
+	}
+
+	public static class DBInstanceParameter1 {
+
+		private String parameterDefaultValue;
+
+		private String parameterDescription;
+
+		private String parameterName;
+
+		private String parameterValue;
+
+		private String parameterValueRange;
+
+		public String getParameterDefaultValue() {
+			return this.parameterDefaultValue;
+		}
+
+		public void setParameterDefaultValue(String parameterDefaultValue) {
+			this.parameterDefaultValue = parameterDefaultValue;
+		}
+
+		public String getParameterDescription() {
+			return this.parameterDescription;
+		}
+
+		public void setParameterDescription(String parameterDescription) {
+			this.parameterDescription = parameterDescription;
+		}
+
+		public String getParameterName() {
+			return this.parameterName;
+		}
+
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
+
+		public String getParameterValue() {
+			return this.parameterValue;
+		}
+
+		public void setParameterValue(String parameterValue) {
+			this.parameterValue = parameterValue;
+		}
+
+		public String getParameterValueRange() {
+			return this.parameterValueRange;
+		}
+
+		public void setParameterValueRange(String parameterValueRange) {
+			this.parameterValueRange = parameterValueRange;
+		}
+	}
+
+	public static class ParamGroupInfo {
+
+		private String paramGroupId;
+
+		private String parameterGroupDesc;
+
+		private String parameterGroupName;
+
+		private String parameterGroupType;
+
+		public String getParamGroupId() {
+			return this.paramGroupId;
+		}
+
+		public void setParamGroupId(String paramGroupId) {
+			this.paramGroupId = paramGroupId;
+		}
+
+		public String getParameterGroupDesc() {
+			return this.parameterGroupDesc;
+		}
+
+		public void setParameterGroupDesc(String parameterGroupDesc) {
+			this.parameterGroupDesc = parameterGroupDesc;
+		}
+
+		public String getParameterGroupName() {
+			return this.parameterGroupName;
+		}
+
+		public void setParameterGroupName(String parameterGroupName) {
+			this.parameterGroupName = parameterGroupName;
+		}
+
+		public String getParameterGroupType() {
+			return this.parameterGroupType;
+		}
+
+		public void setParameterGroupType(String parameterGroupType) {
+			this.parameterGroupType = parameterGroupType;
 		}
 	}
 

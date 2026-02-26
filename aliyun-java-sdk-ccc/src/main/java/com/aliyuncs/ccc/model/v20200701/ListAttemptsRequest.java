@@ -29,6 +29,8 @@ public class ListAttemptsRequest extends RpcAcsRequest<ListAttemptsResponse> {
 
 	private String campaignId;
 
+	private String criteria;
+
 	private String callee;
 
 	private Long startTime;
@@ -78,6 +80,17 @@ public class ListAttemptsRequest extends RpcAcsRequest<ListAttemptsResponse> {
 		this.campaignId = campaignId;
 		if(campaignId != null){
 			putQueryParameter("CampaignId", campaignId);
+		}
+	}
+
+	public String getCriteria() {
+		return this.criteria;
+	}
+
+	public void setCriteria(String criteria) {
+		this.criteria = criteria;
+		if(criteria != null){
+			putQueryParameter("Criteria", criteria);
 		}
 	}
 

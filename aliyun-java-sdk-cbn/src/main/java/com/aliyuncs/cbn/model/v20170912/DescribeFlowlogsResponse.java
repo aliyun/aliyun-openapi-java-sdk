@@ -109,7 +109,15 @@ public class DescribeFlowlogsResponse extends AcsResponse {
 
 		private String transitRouterAttachmentId;
 
+		private String transitRouterId;
+
+		private String logFormatString;
+
+		private String flowLogVersion;
+
 		private Long interval;
+
+		private List<Tag> tags;
 
 		public String getStatus() {
 			return this.status;
@@ -199,12 +207,67 @@ public class DescribeFlowlogsResponse extends AcsResponse {
 			this.transitRouterAttachmentId = transitRouterAttachmentId;
 		}
 
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
+		}
+
+		public String getLogFormatString() {
+			return this.logFormatString;
+		}
+
+		public void setLogFormatString(String logFormatString) {
+			this.logFormatString = logFormatString;
+		}
+
+		public String getFlowLogVersion() {
+			return this.flowLogVersion;
+		}
+
+		public void setFlowLogVersion(String flowLogVersion) {
+			this.flowLogVersion = flowLogVersion;
+		}
+
 		public Long getInterval() {
 			return this.interval;
 		}
 
 		public void setInterval(Long interval) {
 			this.interval = interval;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

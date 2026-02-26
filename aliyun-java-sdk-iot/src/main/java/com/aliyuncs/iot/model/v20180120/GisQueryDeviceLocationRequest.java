@@ -30,7 +30,7 @@ public class GisQueryDeviceLocationRequest extends RpcAcsRequest<GisQueryDeviceL
 
 	private List<ThingList> thingLists;
 	public GisQueryDeviceLocationRequest() {
-		super("Iot", "2018-01-20", "GisQueryDeviceLocation");
+		super("Iot", "2018-01-20", "GisQueryDeviceLocation", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

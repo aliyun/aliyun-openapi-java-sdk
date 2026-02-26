@@ -26,7 +26,7 @@ public class CreateBenchmarkTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String name;
+	private String taskName;
 
 	private String region;
 
@@ -40,12 +40,12 @@ public class CreateBenchmarkTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getName() {
-		return this.name;
+	public String getTaskName() {
+		return this.taskName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTaskName(String taskName) {
+		this.taskName = taskName;
 	}
 
 	public String getRegion() {

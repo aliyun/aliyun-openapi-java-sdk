@@ -30,6 +30,8 @@ public class DescribeScalingActivitiesRequest extends RpcAcsRequest<DescribeScal
 
 	private String scalingGroupId;
 
+	private String instanceRefreshTaskId;
+
 	private Integer pageNumber;
 
 	private String statusCode;
@@ -71,6 +73,17 @@ public class DescribeScalingActivitiesRequest extends RpcAcsRequest<DescribeScal
 		this.scalingGroupId = scalingGroupId;
 		if(scalingGroupId != null){
 			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public String getInstanceRefreshTaskId() {
+		return this.instanceRefreshTaskId;
+	}
+
+	public void setInstanceRefreshTaskId(String instanceRefreshTaskId) {
+		this.instanceRefreshTaskId = instanceRefreshTaskId;
+		if(instanceRefreshTaskId != null){
+			putQueryParameter("InstanceRefreshTaskId", instanceRefreshTaskId);
 		}
 	}
 

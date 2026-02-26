@@ -28,23 +28,29 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private String description;
-
 	private String startTime;
-
-	private String platform;
 
 	private String resourceGroupId;
 
 	private String privatePoolOptionsMatchCriteria;
 
-	private String instanceType;
-
 	private List<Tag> tags;
 
 	private String endTimeType;
+
+	private Long ownerId;
+
+	private List<String> zoneIds;
+
+	private Integer instanceAmount;
+
+	private String clientToken;
+
+	private String description;
+
+	private String platform;
+
+	private String instanceType;
 
 	private String resourceOwnerAccount;
 
@@ -53,12 +59,6 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 	private String ownerAccount;
 
 	private String endTime;
-
-	private Long ownerId;
-
-	private List<String> zoneIds;
-
-	private Integer instanceAmount;
 	public CreateCapacityReservationRequest() {
 		super("Ecs", "2014-05-26", "CreateCapacityReservation", "ecs");
 		setMethod(MethodType.POST);
@@ -79,28 +79,6 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -109,17 +87,6 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getPlatform() {
-		return this.platform;
-	}
-
-	public void setPlatform(String platform) {
-		this.platform = platform;
-		if(platform != null){
-			putQueryParameter("Platform", platform);
 		}
 	}
 
@@ -145,17 +112,6 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -164,8 +120,8 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -178,6 +134,85 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 		this.endTimeType = endTimeType;
 		if(endTimeType != null){
 			putQueryParameter("EndTimeType", endTimeType);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public List<String> getZoneIds() {
+		return this.zoneIds;
+	}
+
+	public void setZoneIds(List<String> zoneIds) {
+		this.zoneIds = zoneIds;	
+		if (zoneIds != null) {
+			for (int i = 0; i < zoneIds.size(); i++) {
+				putQueryParameter("ZoneId." + (i + 1) , zoneIds.get(i));
+			}
+		}	
+	}
+
+	public Integer getInstanceAmount() {
+		return this.instanceAmount;
+	}
+
+	public void setInstanceAmount(Integer instanceAmount) {
+		this.instanceAmount = instanceAmount;
+		if(instanceAmount != null){
+			putQueryParameter("InstanceAmount", instanceAmount.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getPlatform() {
+		return this.platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 
@@ -225,54 +260,11 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public List<String> getZoneIds() {
-		return this.zoneIds;
-	}
-
-	public void setZoneIds(List<String> zoneIds) {
-		this.zoneIds = zoneIds;	
-		if (zoneIds != null) {
-			for (int i = 0; i < zoneIds.size(); i++) {
-				putQueryParameter("ZoneId." + (i + 1) , zoneIds.get(i));
-			}
-		}	
-	}
-
-	public Integer getInstanceAmount() {
-		return this.instanceAmount;
-	}
-
-	public void setInstanceAmount(Integer instanceAmount) {
-		this.instanceAmount = instanceAmount;
-		if(instanceAmount != null){
-			putQueryParameter("InstanceAmount", instanceAmount.toString());
-		}
-	}
-
 	public static class Tag {
-
-		private String key;
 
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -280,6 +272,14 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

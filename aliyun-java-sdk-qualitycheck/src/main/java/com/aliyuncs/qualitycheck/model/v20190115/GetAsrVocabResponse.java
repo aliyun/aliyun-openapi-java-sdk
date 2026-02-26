@@ -79,6 +79,10 @@ public class GetAsrVocabResponse extends AcsResponse {
 
 		private String name;
 
+		private Integer asrVersion;
+
+		private String modelCustomizationId;
+
 		private List<Word> words;
 
 		public String getName() {
@@ -87,6 +91,22 @@ public class GetAsrVocabResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public Integer getAsrVersion() {
+			return this.asrVersion;
+		}
+
+		public void setAsrVersion(Integer asrVersion) {
+			this.asrVersion = asrVersion;
+		}
+
+		public String getModelCustomizationId() {
+			return this.modelCustomizationId;
+		}
+
+		public void setModelCustomizationId(String modelCustomizationId) {
+			this.modelCustomizationId = modelCustomizationId;
 		}
 
 		public List<Word> getWords() {

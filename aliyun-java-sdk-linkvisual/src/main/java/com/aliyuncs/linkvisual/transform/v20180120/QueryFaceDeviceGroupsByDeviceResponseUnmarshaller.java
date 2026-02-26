@@ -28,21 +28,21 @@ public class QueryFaceDeviceGroupsByDeviceResponseUnmarshaller {
 	public static QueryFaceDeviceGroupsByDeviceResponse unmarshall(QueryFaceDeviceGroupsByDeviceResponse queryFaceDeviceGroupsByDeviceResponse, UnmarshallerContext _ctx) {
 		
 		queryFaceDeviceGroupsByDeviceResponse.setRequestId(_ctx.stringValue("QueryFaceDeviceGroupsByDeviceResponse.RequestId"));
-		queryFaceDeviceGroupsByDeviceResponse.setSuccess(_ctx.booleanValue("QueryFaceDeviceGroupsByDeviceResponse.Success"));
 		queryFaceDeviceGroupsByDeviceResponse.setCode(_ctx.stringValue("QueryFaceDeviceGroupsByDeviceResponse.Code"));
 		queryFaceDeviceGroupsByDeviceResponse.setErrorMessage(_ctx.stringValue("QueryFaceDeviceGroupsByDeviceResponse.ErrorMessage"));
+		queryFaceDeviceGroupsByDeviceResponse.setSuccess(_ctx.booleanValue("QueryFaceDeviceGroupsByDeviceResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryFaceDeviceGroupsByDeviceResponse.Data.Total"));
 		data.setPageNo(_ctx.integerValue("QueryFaceDeviceGroupsByDeviceResponse.Data.PageNo"));
 		data.setPageSize(_ctx.integerValue("QueryFaceDeviceGroupsByDeviceResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryFaceDeviceGroupsByDeviceResponse.Data.Total"));
 
 		List<DeviceGroupListItem> deviceGroupList = new ArrayList<DeviceGroupListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFaceDeviceGroupsByDeviceResponse.Data.DeviceGroupList.Length"); i++) {
 			DeviceGroupListItem deviceGroupListItem = new DeviceGroupListItem();
 			deviceGroupListItem.setDeviceGroupId(_ctx.stringValue("QueryFaceDeviceGroupsByDeviceResponse.Data.DeviceGroupList["+ i +"].DeviceGroupId"));
-			deviceGroupListItem.setDeviceGroupName(_ctx.stringValue("QueryFaceDeviceGroupsByDeviceResponse.Data.DeviceGroupList["+ i +"].DeviceGroupName"));
 			deviceGroupListItem.setModifiedTime(_ctx.stringValue("QueryFaceDeviceGroupsByDeviceResponse.Data.DeviceGroupList["+ i +"].ModifiedTime"));
+			deviceGroupListItem.setDeviceGroupName(_ctx.stringValue("QueryFaceDeviceGroupsByDeviceResponse.Data.DeviceGroupList["+ i +"].DeviceGroupName"));
 
 			deviceGroupList.add(deviceGroupListItem);
 		}

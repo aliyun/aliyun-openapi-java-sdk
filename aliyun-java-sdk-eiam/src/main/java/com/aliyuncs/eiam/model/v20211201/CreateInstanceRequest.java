@@ -24,10 +24,23 @@ import com.aliyuncs.http.MethodType;
  */
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
 	   
+
+	private String description;
 	public CreateInstanceRequest() {
 		super("Eiam", "2021-12-01", "CreateInstance", "eiam");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
 	@Override

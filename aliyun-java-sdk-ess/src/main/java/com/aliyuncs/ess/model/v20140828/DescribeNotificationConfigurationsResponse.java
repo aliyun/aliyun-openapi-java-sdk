@@ -47,11 +47,21 @@ public class DescribeNotificationConfigurationsResponse extends AcsResponse {
 
 	public static class NotificationConfigurationModel {
 
-		private String scalingGroupId;
-
 		private String notificationArn;
 
+		private String scalingGroupId;
+
+		private String timeZone;
+
 		private List<String> notificationTypes;
+
+		public String getNotificationArn() {
+			return this.notificationArn;
+		}
+
+		public void setNotificationArn(String notificationArn) {
+			this.notificationArn = notificationArn;
+		}
 
 		public String getScalingGroupId() {
 			return this.scalingGroupId;
@@ -61,12 +71,12 @@ public class DescribeNotificationConfigurationsResponse extends AcsResponse {
 			this.scalingGroupId = scalingGroupId;
 		}
 
-		public String getNotificationArn() {
-			return this.notificationArn;
+		public String getTimeZone() {
+			return this.timeZone;
 		}
 
-		public void setNotificationArn(String notificationArn) {
-			this.notificationArn = notificationArn;
+		public void setTimeZone(String timeZone) {
+			this.timeZone = timeZone;
 		}
 
 		public List<String> getNotificationTypes() {

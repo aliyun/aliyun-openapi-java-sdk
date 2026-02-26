@@ -66,6 +66,8 @@ public class GetDirectoryOrFilePropertiesResponse extends AcsResponse {
 
 		private String inode;
 
+		private Boolean hasArchiveFile;
+
 		public String getType() {
 			return this.type;
 		}
@@ -144,6 +146,14 @@ public class GetDirectoryOrFilePropertiesResponse extends AcsResponse {
 
 		public void setInode(String inode) {
 			this.inode = inode;
+		}
+
+		public Boolean getHasArchiveFile() {
+			return this.hasArchiveFile;
+		}
+
+		public void setHasArchiveFile(Boolean hasArchiveFile) {
+			this.hasArchiveFile = hasArchiveFile;
 		}
 	}
 

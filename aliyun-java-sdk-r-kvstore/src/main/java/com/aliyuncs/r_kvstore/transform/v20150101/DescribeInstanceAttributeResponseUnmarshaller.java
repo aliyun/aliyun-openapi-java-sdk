@@ -54,13 +54,18 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setInstanceName(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceName"));
 			dBInstanceAttribute.setSecurityIPList(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].SecurityIPList"));
 			dBInstanceAttribute.setShardCount(_ctx.integerValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ShardCount"));
+			dBInstanceAttribute.setReplicaCount(_ctx.integerValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplicaCount"));
+			dBInstanceAttribute.setSlaveReplicaCount(_ctx.integerValue("DescribeInstanceAttributeResponse.Instances["+ i +"].SlaveReplicaCount"));
+			dBInstanceAttribute.setReadOnlyCount(_ctx.integerValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReadOnlyCount"));
+			dBInstanceAttribute.setSlaveReadOnlyCount(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].SlaveReadOnlyCount"));
 			dBInstanceAttribute.setGlobalInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].GlobalInstanceId"));
 			dBInstanceAttribute.setQPS(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].QPS"));
 			dBInstanceAttribute.setAuditLogRetention(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].AuditLogRetention"));
 			dBInstanceAttribute.setZoneType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ZoneType"));
 			dBInstanceAttribute.setMaintainStartTime(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].MaintainStartTime"));
-			dBInstanceAttribute.setInstanceClass(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceClass"));
 			dBInstanceAttribute.setMaintainEndTime(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].MaintainEndTime"));
+			dBInstanceAttribute.setInstanceClass(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceClass"));
+			dBInstanceAttribute.setRealInstanceClass(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].RealInstanceClass"));
 			dBInstanceAttribute.setInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceId"));
 			dBInstanceAttribute.setInstanceType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceType"));
 			dBInstanceAttribute.setHasRenewChangeOrder(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].HasRenewChangeOrder"));
@@ -79,6 +84,10 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setEngine(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Engine"));
 			dBInstanceAttribute.setStorage(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Storage"));
 			dBInstanceAttribute.setCloudType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].CloudType"));
+			dBInstanceAttribute.setIsOrderCompleted(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].IsOrderCompleted"));
+			dBInstanceAttribute.setIsSupportTDE(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].IsSupportTDE"));
+			dBInstanceAttribute.setAutoSecondaryZone(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].AutoSecondaryZone"));
+			dBInstanceAttribute.setComputingType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ComputingType"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags.Length"); j++) {

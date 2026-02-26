@@ -47,21 +47,13 @@ public class DescribeUserUsageDetailDataExportTaskResponse extends AcsResponse {
 
 	public static class UsageDataPerPage {
 
-		private Integer totalCount;
-
 		private Integer pageSize;
 
 		private Integer pageNumber;
 
+		private Integer totalCount;
+
 		private List<DataItem> data;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -79,6 +71,14 @@ public class DescribeUserUsageDetailDataExportTaskResponse extends AcsResponse {
 			this.pageNumber = pageNumber;
 		}
 
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<DataItem> getData() {
 			return this.data;
 		}
@@ -89,19 +89,51 @@ public class DescribeUserUsageDetailDataExportTaskResponse extends AcsResponse {
 
 		public static class DataItem {
 
+			private String status;
+
+			private String updateTime;
+
+			private String downloadUrl;
+
+			private String createTime;
+
 			private String taskName;
 
 			private String taskId;
 
-			private String createTime;
-
-			private String updateTime;
-
-			private String status;
-
-			private String downloadUrl;
-
 			private TaskConfig taskConfig;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getUpdateTime() {
+				return this.updateTime;
+			}
+
+			public void setUpdateTime(String updateTime) {
+				this.updateTime = updateTime;
+			}
+
+			public String getDownloadUrl() {
+				return this.downloadUrl;
+			}
+
+			public void setDownloadUrl(String downloadUrl) {
+				this.downloadUrl = downloadUrl;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
 
 			public String getTaskName() {
 				return this.taskName;
@@ -119,38 +151,6 @@ public class DescribeUserUsageDetailDataExportTaskResponse extends AcsResponse {
 				this.taskId = taskId;
 			}
 
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getUpdateTime() {
-				return this.updateTime;
-			}
-
-			public void setUpdateTime(String updateTime) {
-				this.updateTime = updateTime;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getDownloadUrl() {
-				return this.downloadUrl;
-			}
-
-			public void setDownloadUrl(String downloadUrl) {
-				this.downloadUrl = downloadUrl;
-			}
-
 			public TaskConfig getTaskConfig() {
 				return this.taskConfig;
 			}
@@ -161,17 +161,9 @@ public class DescribeUserUsageDetailDataExportTaskResponse extends AcsResponse {
 
 			public static class TaskConfig {
 
-				private String startTime;
-
 				private String endTime;
 
-				public String getStartTime() {
-					return this.startTime;
-				}
-
-				public void setStartTime(String startTime) {
-					this.startTime = startTime;
-				}
+				private String startTime;
 
 				public String getEndTime() {
 					return this.endTime;
@@ -179,6 +171,14 @@ public class DescribeUserUsageDetailDataExportTaskResponse extends AcsResponse {
 
 				public void setEndTime(String endTime) {
 					this.endTime = endTime;
+				}
+
+				public String getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
 				}
 			}
 		}

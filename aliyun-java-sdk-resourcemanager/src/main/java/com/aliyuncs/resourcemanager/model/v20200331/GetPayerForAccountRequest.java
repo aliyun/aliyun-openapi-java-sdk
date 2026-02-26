@@ -28,7 +28,7 @@ public class GetPayerForAccountRequest extends RpcAcsRequest<GetPayerForAccountR
 
 	private String accountId;
 	public GetPayerForAccountRequest() {
-		super("ResourceManager", "2020-03-31", "GetPayerForAccount");
+		super("ResourceManager", "2020-03-31", "GetPayerForAccount", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

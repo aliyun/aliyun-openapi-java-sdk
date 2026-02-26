@@ -50,6 +50,7 @@ public class QueryTaskDetailListResponseUnmarshaller {
 			taskDetail.setTaskTypeDescription(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskTypeDescription"));
 			taskDetail.setTryCount(_ctx.integerValue("QueryTaskDetailListResponse.Data["+ i +"].TryCount"));
 			taskDetail.setErrorMsg(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].ErrorMsg"));
+			taskDetail.setFailReason(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].FailReason"));
 
 			data.add(taskDetail);
 		}

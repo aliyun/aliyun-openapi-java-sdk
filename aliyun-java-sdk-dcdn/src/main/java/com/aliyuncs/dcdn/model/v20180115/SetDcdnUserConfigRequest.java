@@ -27,13 +27,13 @@ public class SetDcdnUserConfigRequest extends RpcAcsRequest<SetDcdnUserConfigRes
 
 	private String configs;
 
+	private String securityToken;
+
 	private String ownerAccount;
 
 	private Long ownerId;
 
 	private Integer functionId;
-
-	private String securityToken;
 	public SetDcdnUserConfigRequest() {
 		super("dcdn", "2018-01-15", "SetDcdnUserConfig");
 		setMethod(MethodType.POST);
@@ -51,6 +51,17 @@ public class SetDcdnUserConfigRequest extends RpcAcsRequest<SetDcdnUserConfigRes
 		this.configs = configs;
 		if(configs != null){
 			putQueryParameter("Configs", configs);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class SetDcdnUserConfigRequest extends RpcAcsRequest<SetDcdnUserConfigRes
 		this.functionId = functionId;
 		if(functionId != null){
 			putQueryParameter("FunctionId", functionId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

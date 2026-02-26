@@ -35,6 +35,8 @@ public class CreateDBLinkRequest extends RpcAcsRequest<CreateDBLinkResponse> {
 
 	private String targetIp;
 
+	private String resourceGroupId;
+
 	private String dBLinkName;
 
 	private String targetPort;
@@ -55,7 +57,7 @@ public class CreateDBLinkRequest extends RpcAcsRequest<CreateDBLinkResponse> {
 
 	private String vpcId;
 	public CreateDBLinkRequest() {
-		super("polardb", "2017-08-01", "CreateDBLink");
+		super("polardb", "2017-08-01", "CreateDBLink", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -115,6 +117,17 @@ public class CreateDBLinkRequest extends RpcAcsRequest<CreateDBLinkResponse> {
 		this.targetIp = targetIp;
 		if(targetIp != null){
 			putQueryParameter("TargetIp", targetIp);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -30,19 +30,19 @@ public class DescribeImageGatewayConfigResponseUnmarshaller {
 		describeImageGatewayConfigResponse.setRequestId(_ctx.stringValue("DescribeImageGatewayConfigResponse.RequestId"));
 
 		Imagegw imagegw = new Imagegw();
+		imagegw.setUpdateDateTime(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.UpdateDateTime"));
+		imagegw.setImageExpirationTimeout(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.ImageExpirationTimeout"));
+		imagegw.setMongoDBURI(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.MongoDBURI"));
 		imagegw.setDefaultImageLocation(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.DefaultImageLocation"));
 		imagegw.setPullUpdateTimeout(_ctx.longValue("DescribeImageGatewayConfigResponse.Imagegw.PullUpdateTimeout"));
-		imagegw.setMongoDBURI(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.MongoDBURI"));
-		imagegw.setImageExpirationTimeout(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.ImageExpirationTimeout"));
-		imagegw.setUpdateDateTime(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.UpdateDateTime"));
 
 		List<LocationInfo> locations = new ArrayList<LocationInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeImageGatewayConfigResponse.Imagegw.Locations.Length"); i++) {
 			LocationInfo locationInfo = new LocationInfo();
-			locationInfo.setLocation(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].Location"));
-			locationInfo.setRemoteType(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].RemoteType"));
-			locationInfo.setAuthentication(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].Authentication"));
 			locationInfo.setURL(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].URL"));
+			locationInfo.setRemoteType(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].RemoteType"));
+			locationInfo.setLocation(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].Location"));
+			locationInfo.setAuthentication(_ctx.stringValue("DescribeImageGatewayConfigResponse.Imagegw.Locations["+ i +"].Authentication"));
 
 			locations.add(locationInfo);
 		}

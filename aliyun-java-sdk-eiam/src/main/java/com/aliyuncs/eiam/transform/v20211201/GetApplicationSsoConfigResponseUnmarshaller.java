@@ -24,6 +24,7 @@ import com.aliyuncs.eiam.model.v20211201.GetApplicationSsoConfigResponse.Applica
 import com.aliyuncs.eiam.model.v20211201.GetApplicationSsoConfigResponse.ApplicationSsoConfig.ProtocolEndpointDomain;
 import com.aliyuncs.eiam.model.v20211201.GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig;
 import com.aliyuncs.eiam.model.v20211201.GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.AttributeStatement;
+import com.aliyuncs.eiam.model.v20211201.GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.OptionalRelayStatesItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +46,9 @@ public class GetApplicationSsoConfigResponseUnmarshaller {
 		samlSsoConfig.setNameIdValueExpression(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.NameIdValueExpression"));
 		samlSsoConfig.setDefaultRelayState(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.DefaultRelayState"));
 		samlSsoConfig.setSignatureAlgorithm(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.SignatureAlgorithm"));
+		samlSsoConfig.setResponseSigned(_ctx.booleanValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.ResponseSigned"));
+		samlSsoConfig.setAssertionSigned(_ctx.booleanValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.AssertionSigned"));
+		samlSsoConfig.setIdPEntityId(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.IdPEntityId"));
 
 		List<AttributeStatement> attributeStatements = new ArrayList<AttributeStatement>();
 		for (int i = 0; i < _ctx.lengthValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.AttributeStatements.Length"); i++) {
@@ -55,21 +59,40 @@ public class GetApplicationSsoConfigResponseUnmarshaller {
 			attributeStatements.add(attributeStatement);
 		}
 		samlSsoConfig.setAttributeStatements(attributeStatements);
+
+		List<OptionalRelayStatesItem> optionalRelayStates = new ArrayList<OptionalRelayStatesItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.OptionalRelayStates.Length"); i++) {
+			OptionalRelayStatesItem optionalRelayStatesItem = new OptionalRelayStatesItem();
+			optionalRelayStatesItem.setRelayState(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.OptionalRelayStates["+ i +"].RelayState"));
+			optionalRelayStatesItem.setDisplayName(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.SamlSsoConfig.OptionalRelayStates["+ i +"].DisplayName"));
+
+			optionalRelayStates.add(optionalRelayStatesItem);
+		}
+		samlSsoConfig.setOptionalRelayStates(optionalRelayStates);
 		applicationSsoConfig.setSamlSsoConfig(samlSsoConfig);
 
 		OidcSsoConfig oidcSsoConfig = new OidcSsoConfig();
+		oidcSsoConfig.setPasswordTotpMfaRequired(_ctx.booleanValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.PasswordTotpMfaRequired"));
+		oidcSsoConfig.setPasswordAuthenticationSourceId(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.PasswordAuthenticationSourceId"));
 		oidcSsoConfig.setPkceRequired(_ctx.booleanValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.PkceRequired"));
 		oidcSsoConfig.setAccessTokenEffectiveTime(_ctx.longValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.AccessTokenEffectiveTime"));
 		oidcSsoConfig.setCodeEffectiveTime(_ctx.longValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.CodeEffectiveTime"));
 		oidcSsoConfig.setIdTokenEffectiveTime(_ctx.longValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.IdTokenEffectiveTime"));
 		oidcSsoConfig.setRefreshTokenEffective(_ctx.longValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.RefreshTokenEffective"));
 		oidcSsoConfig.setSubjectIdExpression(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.SubjectIdExpression"));
+		oidcSsoConfig.setAllowedPublicClient(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.AllowedPublicClient"));
 
 		List<String> redirectUris = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.RedirectUris.Length"); i++) {
 			redirectUris.add(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.RedirectUris["+ i +"]"));
 		}
 		oidcSsoConfig.setRedirectUris(redirectUris);
+
+		List<String> postLogoutRedirectUris = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.PostLogoutRedirectUris.Length"); i++) {
+			postLogoutRedirectUris.add(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.PostLogoutRedirectUris["+ i +"]"));
+		}
+		oidcSsoConfig.setPostLogoutRedirectUris(postLogoutRedirectUris);
 
 		List<String> grantTypes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.GrantTypes.Length"); i++) {
@@ -116,6 +139,7 @@ public class GetApplicationSsoConfigResponseUnmarshaller {
 		protocolEndpointDomain.setOauth2TokenEndpoint(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.ProtocolEndpointDomain.Oauth2TokenEndpoint"));
 		protocolEndpointDomain.setOauth2DeviceAuthorizationEndpoint(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.ProtocolEndpointDomain.Oauth2DeviceAuthorizationEndpoint"));
 		protocolEndpointDomain.setOauth2UserinfoEndpoint(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.ProtocolEndpointDomain.Oauth2UserinfoEndpoint"));
+		protocolEndpointDomain.setOidcLogoutEndpoint(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.ProtocolEndpointDomain.OidcLogoutEndpoint"));
 		applicationSsoConfig.setProtocolEndpointDomain(protocolEndpointDomain);
 		getApplicationSsoConfigResponse.setApplicationSsoConfig(applicationSsoConfig);
 	 

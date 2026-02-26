@@ -27,7 +27,7 @@ public class DisableSmbAclRequest extends RpcAcsRequest<DisableSmbAclResponse> {
 
 	private String fileSystemId;
 	public DisableSmbAclRequest() {
-		super("NAS", "2017-06-26", "DisableSmbAcl", "NAS");
+		super("NAS", "2017-06-26", "DisableSmbAcl", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,6 +32,10 @@ public class CreateApplicationScalingRuleResponseUnmarshaller {
 		
 		createApplicationScalingRuleResponse.setRequestId(_ctx.stringValue("CreateApplicationScalingRuleResponse.RequestId"));
 		createApplicationScalingRuleResponse.setTraceId(_ctx.stringValue("CreateApplicationScalingRuleResponse.TraceId"));
+		createApplicationScalingRuleResponse.setMessage(_ctx.stringValue("CreateApplicationScalingRuleResponse.Message"));
+		createApplicationScalingRuleResponse.setErrorCode(_ctx.stringValue("CreateApplicationScalingRuleResponse.ErrorCode"));
+		createApplicationScalingRuleResponse.setCode(_ctx.stringValue("CreateApplicationScalingRuleResponse.Code"));
+		createApplicationScalingRuleResponse.setSuccess(_ctx.booleanValue("CreateApplicationScalingRuleResponse.Success"));
 
 		Data data = new Data();
 		data.setUpdateTime(_ctx.longValue("CreateApplicationScalingRuleResponse.Data.UpdateTime"));
@@ -41,6 +45,7 @@ public class CreateApplicationScalingRuleResponseUnmarshaller {
 		data.setScaleRuleEnabled(_ctx.booleanValue("CreateApplicationScalingRuleResponse.Data.ScaleRuleEnabled"));
 		data.setScaleRuleType(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.ScaleRuleType"));
 		data.setScaleRuleName(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.ScaleRuleName"));
+		data.setEnableIdle(_ctx.booleanValue("CreateApplicationScalingRuleResponse.Data.EnableIdle"));
 
 		Timer timer = new Timer();
 		timer.setEndDate(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Timer.EndDate"));
@@ -52,6 +57,8 @@ public class CreateApplicationScalingRuleResponseUnmarshaller {
 			Schedule schedule = new Schedule();
 			schedule.setAtTime(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].AtTime"));
 			schedule.setTargetReplicas(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].TargetReplicas"));
+			schedule.setMaxReplicas(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].MaxReplicas"));
+			schedule.setMinReplicas(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].MinReplicas"));
 
 			schedules.add(schedule);
 		}
@@ -67,6 +74,10 @@ public class CreateApplicationScalingRuleResponseUnmarshaller {
 			Metric1 metric1 = new Metric1();
 			metric1.setMetricTargetAverageUtilization(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].MetricTargetAverageUtilization"));
 			metric1.setMetricType(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].MetricType"));
+			metric1.setSlbProject(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].SlbProject"));
+			metric1.setSlbLogstore(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].SlbLogstore"));
+			metric1.setVport(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].Vport"));
+			metric1.setSlbId(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].SlbId"));
 
 			metrics.add(metric1);
 		}

@@ -34,7 +34,7 @@ public class QueryDeviceByTagsRequest extends RpcAcsRequest<QueryDeviceByTagsRes
 
 	private Integer currentPage;
 	public QueryDeviceByTagsRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceByTags");
+		super("Iot", "2018-01-20", "QueryDeviceByTags", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

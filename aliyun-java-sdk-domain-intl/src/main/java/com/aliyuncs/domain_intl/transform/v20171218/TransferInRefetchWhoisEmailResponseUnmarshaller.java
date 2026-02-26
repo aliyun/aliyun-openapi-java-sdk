@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TransferInRefetchWhoisEmailResponseUnmarshaller {
 
-	public static TransferInRefetchWhoisEmailResponse unmarshall(TransferInRefetchWhoisEmailResponse transferInRefetchWhoisEmailResponse, UnmarshallerContext context) {
+	public static TransferInRefetchWhoisEmailResponse unmarshall(TransferInRefetchWhoisEmailResponse transferInRefetchWhoisEmailResponse, UnmarshallerContext _ctx) {
 		
-		transferInRefetchWhoisEmailResponse.setRequestId(context.stringValue("TransferInRefetchWhoisEmailResponse.RequestId"));
+		transferInRefetchWhoisEmailResponse.setRequestId(_ctx.stringValue("TransferInRefetchWhoisEmailResponse.RequestId"));
 	 
 	 	return transferInRefetchWhoisEmailResponse;
 	}

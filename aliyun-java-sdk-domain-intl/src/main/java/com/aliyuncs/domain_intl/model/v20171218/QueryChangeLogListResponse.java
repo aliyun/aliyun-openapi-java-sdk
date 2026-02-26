@@ -25,38 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryChangeLogListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
+	private Boolean prePage;
 
 	private Integer currentPageNum;
 
-	private Integer totalPageNum;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Boolean prePage;
-
-	private Boolean nextPage;
+	private Integer totalPageNum;
 
 	private Boolean resultLimit;
 
+	private Integer totalItemNum;
+
+	private Boolean nextPage;
+
 	private List<ChangeLog> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getPrePage() {
+		return this.prePage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
+	public void setPrePage(Boolean prePage) {
+		this.prePage = prePage;
 	}
 
 	public Integer getCurrentPageNum() {
@@ -67,12 +59,12 @@ public class QueryChangeLogListResponse extends AcsResponse {
 		this.currentPageNum = currentPageNum;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -83,20 +75,12 @@ public class QueryChangeLogListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Boolean getPrePage() {
-		return this.prePage;
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
 	}
 
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
-	}
-
-	public Boolean getNextPage() {
-		return this.nextPage;
-	}
-
-	public void setNextPage(Boolean nextPage) {
-		this.nextPage = nextPage;
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
 	}
 
 	public Boolean getResultLimit() {
@@ -105,6 +89,22 @@ public class QueryChangeLogListResponse extends AcsResponse {
 
 	public void setResultLimit(Boolean resultLimit) {
 		this.resultLimit = resultLimit;
+	}
+
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
+	}
+
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
+	}
+
+	public Boolean getNextPage() {
+		return this.nextPage;
+	}
+
+	public void setNextPage(Boolean nextPage) {
+		this.nextPage = nextPage;
 	}
 
 	public List<ChangeLog> getData() {
@@ -117,24 +117,32 @@ public class QueryChangeLogListResponse extends AcsResponse {
 
 	public static class ChangeLog {
 
-		private String domainName;
+		private String operation;
+
+		private String time;
 
 		private String result;
 
-		private String operation;
+		private String domainName;
 
 		private String operationIPAddress;
 
 		private String details;
 
-		private String time;
-
-		public String getDomainName() {
-			return this.domainName;
+		public String getOperation() {
+			return this.operation;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setOperation(String operation) {
+			this.operation = operation;
+		}
+
+		public String getTime() {
+			return this.time;
+		}
+
+		public void setTime(String time) {
+			this.time = time;
 		}
 
 		public String getResult() {
@@ -145,12 +153,12 @@ public class QueryChangeLogListResponse extends AcsResponse {
 			this.result = result;
 		}
 
-		public String getOperation() {
-			return this.operation;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setOperation(String operation) {
-			this.operation = operation;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getOperationIPAddress() {
@@ -167,14 +175,6 @@ public class QueryChangeLogListResponse extends AcsResponse {
 
 		public void setDetails(String details) {
 			this.details = details;
-		}
-
-		public String getTime() {
-			return this.time;
-		}
-
-		public void setTime(String time) {
-			this.time = time;
 		}
 	}
 

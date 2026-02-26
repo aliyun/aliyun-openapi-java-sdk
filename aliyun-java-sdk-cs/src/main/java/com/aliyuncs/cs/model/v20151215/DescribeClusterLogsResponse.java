@@ -24,66 +24,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeClusterLogsResponse extends AcsResponse {
 
-	private String cluster_id;
-
-	private String cluster_log;
-
-	private String created;
-
-	private String log_level;
-
-	private String iD;
-
-	private String updated;
-
-	public String getCluster_id() {
-		return this.cluster_id;
-	}
-
-	public void setCluster_id(String cluster_id) {
-		this.cluster_id = cluster_id;
-	}
-
-	public String getCluster_log() {
-		return this.cluster_log;
-	}
-
-	public void setCluster_log(String cluster_log) {
-		this.cluster_log = cluster_log;
-	}
-
-	public String getCreated() {
-		return this.created;
-	}
-
-	public void setCreated(String created) {
-		this.created = created;
-	}
-
-	public String getLog_level() {
-		return this.log_level;
-	}
-
-	public void setLog_level(String log_level) {
-		this.log_level = log_level;
-	}
-
-	public String getID() {
-		return this.iD;
-	}
-
-	public void setID(String iD) {
-		this.iD = iD;
-	}
-
-	public String getUpdated() {
-		return this.updated;
-	}
-
-	public void setUpdated(String updated) {
-		this.updated = updated;
-	}
-
 	@Override
 	public DescribeClusterLogsResponse getInstance(UnmarshallerContext context) {
 		return	DescribeClusterLogsResponseUnmarshaller.unmarshall(this, context);

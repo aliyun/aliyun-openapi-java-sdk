@@ -31,8 +31,6 @@ public class ListIndexTemplatesRequest extends RoaAcsRequest<ListIndexTemplatesR
 
 	private Integer page;
 
-	private String body;
-
 	private String indexTemplate;
 	public ListIndexTemplatesRequest() {
 		super("elasticsearch", "2017-06-13", "ListIndexTemplates", "elasticsearch");
@@ -74,17 +72,6 @@ public class ListIndexTemplatesRequest extends RoaAcsRequest<ListIndexTemplatesR
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

@@ -56,19 +56,11 @@ public class QueryDatasetSwitchInfoResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer isOpenRowLevelPermission;
-
 		private String cubeId;
 
 		private Integer isOpenColumnLevelPermission;
 
-		public Integer getIsOpenRowLevelPermission() {
-			return this.isOpenRowLevelPermission;
-		}
-
-		public void setIsOpenRowLevelPermission(Integer isOpenRowLevelPermission) {
-			this.isOpenRowLevelPermission = isOpenRowLevelPermission;
-		}
+		private Integer isOpenRowLevelPermission;
 
 		public String getCubeId() {
 			return this.cubeId;
@@ -84,6 +76,14 @@ public class QueryDatasetSwitchInfoResponse extends AcsResponse {
 
 		public void setIsOpenColumnLevelPermission(Integer isOpenColumnLevelPermission) {
 			this.isOpenColumnLevelPermission = isOpenColumnLevelPermission;
+		}
+
+		public Integer getIsOpenRowLevelPermission() {
+			return this.isOpenRowLevelPermission;
+		}
+
+		public void setIsOpenRowLevelPermission(Integer isOpenRowLevelPermission) {
+			this.isOpenRowLevelPermission = isOpenRowLevelPermission;
 		}
 	}
 

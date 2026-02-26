@@ -25,9 +25,9 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeCdnUserResourcePackageRequest extends RpcAcsRequest<DescribeCdnUserResourcePackageResponse> {
 	   
 
-	private Long ownerId;
-
 	private String securityToken;
+
+	private Long ownerId;
 
 	private String status;
 	public DescribeCdnUserResourcePackageRequest() {
@@ -39,17 +39,6 @@ public class DescribeCdnUserResourcePackageRequest extends RpcAcsRequest<Describ
 		} catch (Exception e) {}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -58,6 +47,17 @@ public class DescribeCdnUserResourcePackageRequest extends RpcAcsRequest<Describ
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

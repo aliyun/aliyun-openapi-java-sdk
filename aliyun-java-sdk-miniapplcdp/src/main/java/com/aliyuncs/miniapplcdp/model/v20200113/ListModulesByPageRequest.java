@@ -26,9 +26,17 @@ public class ListModulesByPageRequest extends RpcAcsRequest<ListModulesByPageRes
 
 	private String description;
 
+	private String customParentId;
+
+	private String source;
+
 	private Integer pageNumber;
 
 	private String platform;
+
+	private Boolean hasOwnerApp;
+
+	private String moduleType;
 
 	private Integer pageSize;
 
@@ -51,6 +59,28 @@ public class ListModulesByPageRequest extends RpcAcsRequest<ListModulesByPageRes
 		}
 	}
 
+	public String getCustomParentId() {
+		return this.customParentId;
+	}
+
+	public void setCustomParentId(String customParentId) {
+		this.customParentId = customParentId;
+		if(customParentId != null){
+			putQueryParameter("CustomParentId", customParentId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -70,6 +100,28 @@ public class ListModulesByPageRequest extends RpcAcsRequest<ListModulesByPageRes
 		this.platform = platform;
 		if(platform != null){
 			putQueryParameter("Platform", platform);
+		}
+	}
+
+	public Boolean getHasOwnerApp() {
+		return this.hasOwnerApp;
+	}
+
+	public void setHasOwnerApp(Boolean hasOwnerApp) {
+		this.hasOwnerApp = hasOwnerApp;
+		if(hasOwnerApp != null){
+			putQueryParameter("HasOwnerApp", hasOwnerApp.toString());
+		}
+	}
+
+	public String getModuleType() {
+		return this.moduleType;
+	}
+
+	public void setModuleType(String moduleType) {
+		this.moduleType = moduleType;
+		if(moduleType != null){
+			putQueryParameter("ModuleType", moduleType);
 		}
 	}
 

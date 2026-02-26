@@ -27,22 +27,22 @@ public class DescribeDomainQpsDataByLayerResponseUnmarshaller {
 	public static DescribeDomainQpsDataByLayerResponse unmarshall(DescribeDomainQpsDataByLayerResponse describeDomainQpsDataByLayerResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainQpsDataByLayerResponse.setRequestId(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.RequestId"));
-		describeDomainQpsDataByLayerResponse.setDomainName(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.DomainName"));
-		describeDomainQpsDataByLayerResponse.setStartTime(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.StartTime"));
 		describeDomainQpsDataByLayerResponse.setEndTime(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.EndTime"));
-		describeDomainQpsDataByLayerResponse.setDataInterval(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.DataInterval"));
+		describeDomainQpsDataByLayerResponse.setStartTime(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.StartTime"));
 		describeDomainQpsDataByLayerResponse.setLayer(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.Layer"));
+		describeDomainQpsDataByLayerResponse.setDomainName(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.DomainName"));
+		describeDomainQpsDataByLayerResponse.setDataInterval(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.DataInterval"));
 
 		List<DataModule> qpsDataInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainQpsDataByLayerResponse.QpsDataInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.QpsDataInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.QpsDataInterval["+ i +"].Value"));
-			dataModule.setDomesticValue(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.QpsDataInterval["+ i +"].DomesticValue"));
-			dataModule.setOverseasValue(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.QpsDataInterval["+ i +"].OverseasValue"));
 			dataModule.setAccValue(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.QpsDataInterval["+ i +"].AccValue"));
 			dataModule.setAccDomesticValue(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.QpsDataInterval["+ i +"].AccDomesticValue"));
+			dataModule.setOverseasValue(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.QpsDataInterval["+ i +"].OverseasValue"));
 			dataModule.setAccOverseasValue(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.QpsDataInterval["+ i +"].AccOverseasValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.QpsDataInterval["+ i +"].TimeStamp"));
+			dataModule.setDomesticValue(_ctx.stringValue("DescribeDomainQpsDataByLayerResponse.QpsDataInterval["+ i +"].DomesticValue"));
 
 			qpsDataInterval.add(dataModule);
 		}

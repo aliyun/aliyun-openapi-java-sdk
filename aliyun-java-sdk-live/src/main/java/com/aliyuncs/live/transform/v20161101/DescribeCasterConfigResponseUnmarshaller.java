@@ -22,6 +22,8 @@ import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.RecordConf
 import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.RecordConfig.RecordFormatItem;
 import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.SyncGroup;
 import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.TranscodeConfig;
+import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.TranscodeConfig.CustomParams;
+import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.TranscodeConfig.CustomParams.Video;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,17 +32,40 @@ public class DescribeCasterConfigResponseUnmarshaller {
 	public static DescribeCasterConfigResponse unmarshall(DescribeCasterConfigResponse describeCasterConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeCasterConfigResponse.setRequestId(_ctx.stringValue("DescribeCasterConfigResponse.RequestId"));
+		describeCasterConfigResponse.setAutoSwitchUrgentConfig(_ctx.stringValue("DescribeCasterConfigResponse.AutoSwitchUrgentConfig"));
+		describeCasterConfigResponse.setAutoSwitchUrgentOn(_ctx.stringValue("DescribeCasterConfigResponse.AutoSwitchUrgentOn"));
+		describeCasterConfigResponse.setCallbackUrl(_ctx.stringValue("DescribeCasterConfigResponse.CallbackUrl"));
 		describeCasterConfigResponse.setCasterId(_ctx.stringValue("DescribeCasterConfigResponse.CasterId"));
 		describeCasterConfigResponse.setCasterName(_ctx.stringValue("DescribeCasterConfigResponse.CasterName"));
-		describeCasterConfigResponse.setDomainName(_ctx.stringValue("DescribeCasterConfigResponse.DomainName"));
-		describeCasterConfigResponse.setSideOutputUrlList(_ctx.stringValue("DescribeCasterConfigResponse.SideOutputUrlList"));
-		describeCasterConfigResponse.setDelay(_ctx.floatValue("DescribeCasterConfigResponse.Delay"));
-		describeCasterConfigResponse.setUrgentMaterialId(_ctx.stringValue("DescribeCasterConfigResponse.UrgentMaterialId"));
-		describeCasterConfigResponse.setSideOutputUrl(_ctx.stringValue("DescribeCasterConfigResponse.SideOutputUrl"));
-		describeCasterConfigResponse.setCallbackUrl(_ctx.stringValue("DescribeCasterConfigResponse.CallbackUrl"));
-		describeCasterConfigResponse.setProgramName(_ctx.stringValue("DescribeCasterConfigResponse.ProgramName"));
-		describeCasterConfigResponse.setProgramEffect(_ctx.integerValue("DescribeCasterConfigResponse.ProgramEffect"));
 		describeCasterConfigResponse.setChannelEnable(_ctx.integerValue("DescribeCasterConfigResponse.ChannelEnable"));
+		describeCasterConfigResponse.setDelay(_ctx.floatValue("DescribeCasterConfigResponse.Delay"));
+		describeCasterConfigResponse.setDomainName(_ctx.stringValue("DescribeCasterConfigResponse.DomainName"));
+		describeCasterConfigResponse.setProgramEffect(_ctx.integerValue("DescribeCasterConfigResponse.ProgramEffect"));
+		describeCasterConfigResponse.setProgramName(_ctx.stringValue("DescribeCasterConfigResponse.ProgramName"));
+		describeCasterConfigResponse.setSideOutputUrl(_ctx.stringValue("DescribeCasterConfigResponse.SideOutputUrl"));
+		describeCasterConfigResponse.setSideOutputUrlList(_ctx.stringValue("DescribeCasterConfigResponse.SideOutputUrlList"));
+		describeCasterConfigResponse.setUrgentImageId(_ctx.stringValue("DescribeCasterConfigResponse.UrgentImageId"));
+		describeCasterConfigResponse.setUrgentImageUrl(_ctx.stringValue("DescribeCasterConfigResponse.UrgentImageUrl"));
+		describeCasterConfigResponse.setUrgentLiveStreamUrl(_ctx.stringValue("DescribeCasterConfigResponse.UrgentLiveStreamUrl"));
+		describeCasterConfigResponse.setUrgentMaterialId(_ctx.stringValue("DescribeCasterConfigResponse.UrgentMaterialId"));
+
+		RecordConfig recordConfig = new RecordConfig();
+		recordConfig.setOnDemand(_ctx.integerValue("DescribeCasterConfigResponse.RecordConfig.OnDemand"));
+		recordConfig.setOssBucket(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.OssBucket"));
+		recordConfig.setOssEndpoint(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.OssEndpoint"));
+
+		List<RecordFormatItem> recordFormat = new ArrayList<RecordFormatItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat.Length"); i++) {
+			RecordFormatItem recordFormatItem = new RecordFormatItem();
+			recordFormatItem.setCycleDuration(_ctx.integerValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].CycleDuration"));
+			recordFormatItem.setFormat(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].Format"));
+			recordFormatItem.setOssObjectPrefix(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].OssObjectPrefix"));
+			recordFormatItem.setSliceOssObjectPrefix(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].SliceOssObjectPrefix"));
+
+			recordFormat.add(recordFormatItem);
+		}
+		recordConfig.setRecordFormat(recordFormat);
+		describeCasterConfigResponse.setRecordConfig(recordConfig);
 
 		TranscodeConfig transcodeConfig = new TranscodeConfig();
 		transcodeConfig.setCasterTemplate(_ctx.stringValue("DescribeCasterConfigResponse.TranscodeConfig.CasterTemplate"));
@@ -50,30 +75,23 @@ public class DescribeCasterConfigResponseUnmarshaller {
 			liveTemplateIds.add(_ctx.stringValue("DescribeCasterConfigResponse.TranscodeConfig.LiveTemplateIds["+ i +"]"));
 		}
 		transcodeConfig.setLiveTemplateIds(liveTemplateIds);
+
+		CustomParams customParams = new CustomParams();
+
+		Video video = new Video();
+		video.setFps(_ctx.integerValue("DescribeCasterConfigResponse.TranscodeConfig.CustomParams.video.fps"));
+		video.setBitrate(_ctx.integerValue("DescribeCasterConfigResponse.TranscodeConfig.CustomParams.video.bitrate"));
+		video.setWidth(_ctx.integerValue("DescribeCasterConfigResponse.TranscodeConfig.CustomParams.video.width"));
+		video.setHeight(_ctx.integerValue("DescribeCasterConfigResponse.TranscodeConfig.CustomParams.video.height"));
+		customParams.setVideo(video);
+		transcodeConfig.setCustomParams(customParams);
 		describeCasterConfigResponse.setTranscodeConfig(transcodeConfig);
-
-		RecordConfig recordConfig = new RecordConfig();
-		recordConfig.setOssEndpoint(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.OssEndpoint"));
-		recordConfig.setOssBucket(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.OssBucket"));
-
-		List<RecordFormatItem> recordFormat = new ArrayList<RecordFormatItem>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat.Length"); i++) {
-			RecordFormatItem recordFormatItem = new RecordFormatItem();
-			recordFormatItem.setFormat(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].Format"));
-			recordFormatItem.setOssObjectPrefix(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].OssObjectPrefix"));
-			recordFormatItem.setSliceOssObjectPrefix(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].SliceOssObjectPrefix"));
-			recordFormatItem.setCycleDuration(_ctx.integerValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].CycleDuration"));
-
-			recordFormat.add(recordFormatItem);
-		}
-		recordConfig.setRecordFormat(recordFormat);
-		describeCasterConfigResponse.setRecordConfig(recordConfig);
 
 		List<SyncGroup> syncGroupsConfig = new ArrayList<SyncGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCasterConfigResponse.SyncGroupsConfig.Length"); i++) {
 			SyncGroup syncGroup = new SyncGroup();
-			syncGroup.setMode(_ctx.integerValue("DescribeCasterConfigResponse.SyncGroupsConfig["+ i +"].Mode"));
 			syncGroup.setHostResourceId(_ctx.stringValue("DescribeCasterConfigResponse.SyncGroupsConfig["+ i +"].HostResourceId"));
+			syncGroup.setMode(_ctx.integerValue("DescribeCasterConfigResponse.SyncGroupsConfig["+ i +"].Mode"));
 
 			List<String> resourceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCasterConfigResponse.SyncGroupsConfig["+ i +"].ResourceIds.Length"); j++) {

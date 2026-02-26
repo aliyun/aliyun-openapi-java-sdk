@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.elasticsearch.model.v20170613.UpdateKibanaWhiteIpsResponse;
 import com.aliyuncs.elasticsearch.model.v20170613.UpdateKibanaWhiteIpsResponse.Result;
+import com.aliyuncs.elasticsearch.model.v20170613.UpdateKibanaWhiteIpsResponse.Result.NetworkConfig;
+import com.aliyuncs.elasticsearch.model.v20170613.UpdateKibanaWhiteIpsResponse.Result.NetworkConfig.WhiteIpGroupListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +43,29 @@ public class UpdateKibanaWhiteIpsResponseUnmarshaller {
 			kibanaIPWhitelist.add(_ctx.stringValue("UpdateKibanaWhiteIpsResponse.Result.kibanaIPWhitelist["+ i +"]"));
 		}
 		result.setKibanaIPWhitelist(kibanaIPWhitelist);
+
+		NetworkConfig networkConfig = new NetworkConfig();
+		networkConfig.setVpcId(_ctx.stringValue("UpdateKibanaWhiteIpsResponse.Result.networkConfig.vpcId"));
+		networkConfig.setVswitchId(_ctx.stringValue("UpdateKibanaWhiteIpsResponse.Result.networkConfig.vswitchId"));
+		networkConfig.setVsArea(_ctx.stringValue("UpdateKibanaWhiteIpsResponse.Result.networkConfig.vsArea"));
+		networkConfig.setType(_ctx.stringValue("UpdateKibanaWhiteIpsResponse.Result.networkConfig.type"));
+
+		List<WhiteIpGroupListItem> whiteIpGroupList = new ArrayList<WhiteIpGroupListItem>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateKibanaWhiteIpsResponse.Result.networkConfig.whiteIpGroupList.Length"); i++) {
+			WhiteIpGroupListItem whiteIpGroupListItem = new WhiteIpGroupListItem();
+			whiteIpGroupListItem.setGroupName(_ctx.stringValue("UpdateKibanaWhiteIpsResponse.Result.networkConfig.whiteIpGroupList["+ i +"].groupName"));
+			whiteIpGroupListItem.setWhiteIpType(_ctx.stringValue("UpdateKibanaWhiteIpsResponse.Result.networkConfig.whiteIpGroupList["+ i +"].whiteIpType"));
+
+			List<String> ips = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("UpdateKibanaWhiteIpsResponse.Result.networkConfig.whiteIpGroupList["+ i +"].ips.Length"); j++) {
+				ips.add(_ctx.stringValue("UpdateKibanaWhiteIpsResponse.Result.networkConfig.whiteIpGroupList["+ i +"].ips["+ j +"]"));
+			}
+			whiteIpGroupListItem.setIps(ips);
+
+			whiteIpGroupList.add(whiteIpGroupListItem);
+		}
+		networkConfig.setWhiteIpGroupList(whiteIpGroupList);
+		result.setNetworkConfig(networkConfig);
 		updateKibanaWhiteIpsResponse.setResult(result);
 	 
 	 	return updateKibanaWhiteIpsResponse;

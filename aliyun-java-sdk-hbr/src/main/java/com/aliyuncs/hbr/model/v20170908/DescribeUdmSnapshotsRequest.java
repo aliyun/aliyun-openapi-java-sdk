@@ -15,6 +15,8 @@
 package com.aliyuncs.hbr.model.v20170908;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hbr.Endpoint;
 
@@ -25,13 +27,19 @@ import com.aliyuncs.hbr.Endpoint;
 public class DescribeUdmSnapshotsRequest extends RpcAcsRequest<DescribeUdmSnapshotsResponse> {
 	   
 
+	private List<Object> snapshotIds;
+
 	private Long endTime;
 
 	private Long startTime;
 
+	private String jobId;
+
 	private String instanceId;
 
 	private String sourceType;
+
+	private String diskId;
 
 	private String udmRegionId;
 	public DescribeUdmSnapshotsRequest() {
@@ -41,6 +49,17 @@ public class DescribeUdmSnapshotsRequest extends RpcAcsRequest<DescribeUdmSnapsh
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<Object> getSnapshotIds() {
+		return this.snapshotIds;
+	}
+
+	public void setSnapshotIds(List<Object> snapshotIds) {
+		this.snapshotIds = snapshotIds;
+		if(snapshotIds != null){
+			putBodyParameter("SnapshotIds", new Gson().toJson(snapshotIds));
+		}
 	}
 
 	public Long getEndTime() {
@@ -65,6 +84,17 @@ public class DescribeUdmSnapshotsRequest extends RpcAcsRequest<DescribeUdmSnapsh
 		}
 	}
 
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -84,6 +114,17 @@ public class DescribeUdmSnapshotsRequest extends RpcAcsRequest<DescribeUdmSnapsh
 		this.sourceType = sourceType;
 		if(sourceType != null){
 			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getDiskId() {
+		return this.diskId;
+	}
+
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
+		if(diskId != null){
+			putQueryParameter("DiskId", diskId);
 		}
 	}
 

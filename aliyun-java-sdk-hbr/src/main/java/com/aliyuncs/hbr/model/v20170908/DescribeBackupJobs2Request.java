@@ -69,6 +69,7 @@ public class DescribeBackupJobs2Request extends RpcAcsRequest<DescribeBackupJobs
 					}
 				}
 				putQueryParameter("Filters." + (depth1 + 1) + ".Key" , filterss.get(depth1).getKey());
+				putQueryParameter("Filters." + (depth1 + 1) + ".Operator" , filterss.get(depth1).getOperator());
 			}
 		}	
 	}
@@ -112,6 +113,8 @@ public class DescribeBackupJobs2Request extends RpcAcsRequest<DescribeBackupJobs
 
 		private String key;
 
+		private String operator;
+
 		public List<String> getValuess() {
 			return this.valuess;
 		}
@@ -126,6 +129,14 @@ public class DescribeBackupJobs2Request extends RpcAcsRequest<DescribeBackupJobs
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+
+		public String getOperator() {
+			return this.operator;
+		}
+
+		public void setOperator(String operator) {
+			this.operator = operator;
 		}
 	}
 

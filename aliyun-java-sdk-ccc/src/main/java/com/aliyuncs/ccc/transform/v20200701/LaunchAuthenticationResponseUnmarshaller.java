@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.LaunchAuthenticationResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.LaunchAuthenticationResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.LaunchAuthenticationResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.LaunchAuthenticationResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -59,7 +58,6 @@ public class LaunchAuthenticationResponseUnmarshaller {
 			channelContext.setChannelFlags(_ctx.stringValue("LaunchAuthenticationResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
 			channelContext.setSkillGroupId(_ctx.stringValue("LaunchAuthenticationResponse.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId"));
 			channelContext.setTimestamp(_ctx.longValue("LaunchAuthenticationResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("LaunchAuthenticationResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("LaunchAuthenticationResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("LaunchAuthenticationResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("LaunchAuthenticationResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));

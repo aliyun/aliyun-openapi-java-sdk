@@ -15,6 +15,7 @@
 package com.aliyuncs.alikafka.model.v20190916;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.alikafka.transform.v20190916.GetAllowedIpListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -25,31 +26,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAllowedIpListResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private AllowedList allowedList;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -65,6 +50,22 @@ public class GetAllowedIpListResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public AllowedList getAllowedList() {
@@ -111,6 +112,8 @@ public class GetAllowedIpListResponse extends AcsResponse {
 
 			private String portRange;
 
+			private Map<Object,Object> allowedIpGroup;
+
 			private List<String> allowedIpList;
 
 			public String getPortRange() {
@@ -119,6 +122,14 @@ public class GetAllowedIpListResponse extends AcsResponse {
 
 			public void setPortRange(String portRange) {
 				this.portRange = portRange;
+			}
+
+			public Map<Object,Object> getAllowedIpGroup() {
+				return this.allowedIpGroup;
+			}
+
+			public void setAllowedIpGroup(Map<Object,Object> allowedIpGroup) {
+				this.allowedIpGroup = allowedIpGroup;
 			}
 
 			public List<String> getAllowedIpList() {

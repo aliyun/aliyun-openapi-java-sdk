@@ -23,9 +23,10 @@ public class UpgradePrePayOrderResponseUnmarshaller {
 	public static UpgradePrePayOrderResponse unmarshall(UpgradePrePayOrderResponse upgradePrePayOrderResponse, UnmarshallerContext _ctx) {
 		
 		upgradePrePayOrderResponse.setRequestId(_ctx.stringValue("UpgradePrePayOrderResponse.RequestId"));
-		upgradePrePayOrderResponse.setSuccess(_ctx.booleanValue("UpgradePrePayOrderResponse.Success"));
 		upgradePrePayOrderResponse.setCode(_ctx.integerValue("UpgradePrePayOrderResponse.Code"));
 		upgradePrePayOrderResponse.setMessage(_ctx.stringValue("UpgradePrePayOrderResponse.Message"));
+		upgradePrePayOrderResponse.setSuccess(_ctx.booleanValue("UpgradePrePayOrderResponse.Success"));
+		upgradePrePayOrderResponse.setOrderId(_ctx.stringValue("UpgradePrePayOrderResponse.OrderId"));
 	 
 	 	return upgradePrePayOrderResponse;
 	}

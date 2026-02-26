@@ -35,11 +35,11 @@ public class DescribeDBInstancesByPerformanceResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstancesByPerformanceResponse.Items.Length"); i++) {
 			DBInstancePerformance dBInstancePerformance = new DBInstancePerformance();
 			dBInstancePerformance.setCPUUsage(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].CPUUsage"));
-			dBInstancePerformance.setSessionUsage(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].SessionUsage"));
-			dBInstancePerformance.setDBInstanceId(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].DBInstanceId"));
 			dBInstancePerformance.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].DBInstanceDescription"));
-			dBInstancePerformance.setIOPSUsage(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].IOPSUsage"));
+			dBInstancePerformance.setDBInstanceId(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].DBInstanceId"));
 			dBInstancePerformance.setDiskUsage(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].DiskUsage"));
+			dBInstancePerformance.setIOPSUsage(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].IOPSUsage"));
+			dBInstancePerformance.setSessionUsage(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].SessionUsage"));
 
 			items.add(dBInstancePerformance);
 		}

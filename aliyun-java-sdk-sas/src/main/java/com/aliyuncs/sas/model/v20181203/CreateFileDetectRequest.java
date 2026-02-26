@@ -32,6 +32,8 @@ public class CreateFileDetectRequest extends RpcAcsRequest<CreateFileDetectRespo
 	private Integer type;
 
 	private String sourceIp;
+
+	private String downloadUrl;
 	public CreateFileDetectRequest() {
 		super("Sas", "2018-12-03", "CreateFileDetect");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class CreateFileDetectRequest extends RpcAcsRequest<CreateFileDetectRespo
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getDownloadUrl() {
+		return this.downloadUrl;
+	}
+
+	public void setDownloadUrl(String downloadUrl) {
+		this.downloadUrl = downloadUrl;
+		if(downloadUrl != null){
+			putQueryParameter("DownloadUrl", downloadUrl);
 		}
 	}
 

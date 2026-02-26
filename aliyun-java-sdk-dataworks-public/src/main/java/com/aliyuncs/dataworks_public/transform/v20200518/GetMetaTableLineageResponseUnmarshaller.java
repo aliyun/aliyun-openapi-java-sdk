@@ -43,6 +43,7 @@ public class GetMetaTableLineageResponseUnmarshaller {
 			dataEntityListItem.setTableName(_ctx.stringValue("GetMetaTableLineageResponse.Data.DataEntityList["+ i +"].TableName"));
 			dataEntityListItem.setTableGuid(_ctx.stringValue("GetMetaTableLineageResponse.Data.DataEntityList["+ i +"].TableGuid"));
 			dataEntityListItem.setCreateTimestamp(_ctx.longValue("GetMetaTableLineageResponse.Data.DataEntityList["+ i +"].CreateTimestamp"));
+			dataEntityListItem.setDatabaseName(_ctx.stringValue("GetMetaTableLineageResponse.Data.DataEntityList["+ i +"].DatabaseName"));
 
 			dataEntityList.add(dataEntityListItem);
 		}

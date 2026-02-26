@@ -27,9 +27,9 @@ public class ListRankingModelTemplatesRequest extends RoaAcsRequest<ListRankingM
 
 	private String instanceId;
 
-	private Integer size;
+	private Long size;
 
-	private Integer page;
+	private Long page;
 	public ListRankingModelTemplatesRequest() {
 		super("Airec", "2020-11-26", "ListRankingModelTemplates", "airec");
 		setUriPattern("/v2/openapi/instances/[instanceId]/ranking-model-templates");
@@ -51,22 +51,22 @@ public class ListRankingModelTemplatesRequest extends RoaAcsRequest<ListRankingM
 		}
 	}
 
-	public Integer getSize() {
+	public Long getSize() {
 		return this.size;
 	}
 
-	public void setSize(Integer size) {
+	public void setSize(Long size) {
 		this.size = size;
 		if(size != null){
 			putQueryParameter("size", size.toString());
 		}
 	}
 
-	public Integer getPage() {
+	public Long getPage() {
 		return this.page;
 	}
 
-	public void setPage(Integer page) {
+	public void setPage(Long page) {
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());

@@ -35,10 +35,6 @@ public class ListLogstashRequest extends RoaAcsRequest<ListLogstashResponse> {
 
 	private Integer page;
 
-	private String ownerId;
-
-	private String body;
-
 	private String version;
 
 	private String tags;
@@ -104,28 +100,6 @@ public class ListLogstashRequest extends RoaAcsRequest<ListLogstashResponse> {
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("ownerId", ownerId);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

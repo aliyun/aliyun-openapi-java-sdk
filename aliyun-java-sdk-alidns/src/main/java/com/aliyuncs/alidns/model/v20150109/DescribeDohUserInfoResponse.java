@@ -26,11 +26,11 @@ public class DescribeDohUserInfoResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer subDomainCount;
+
 	private Long pdnsId;
 
 	private Integer domainCount;
-
-	private Integer subDomainCount;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,6 +38,14 @@ public class DescribeDohUserInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getSubDomainCount() {
+		return this.subDomainCount;
+	}
+
+	public void setSubDomainCount(Integer subDomainCount) {
+		this.subDomainCount = subDomainCount;
 	}
 
 	public Long getPdnsId() {
@@ -54,14 +62,6 @@ public class DescribeDohUserInfoResponse extends AcsResponse {
 
 	public void setDomainCount(Integer domainCount) {
 		this.domainCount = domainCount;
-	}
-
-	public Integer getSubDomainCount() {
-		return this.subDomainCount;
-	}
-
-	public void setSubDomainCount(Integer subDomainCount) {
-		this.subDomainCount = subDomainCount;
 	}
 
 	@Override

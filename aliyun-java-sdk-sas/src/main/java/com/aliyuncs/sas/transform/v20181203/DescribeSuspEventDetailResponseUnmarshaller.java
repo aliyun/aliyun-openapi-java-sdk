@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.sas.model.v20181203.DescribeSuspEventDetailResponse;
+import com.aliyuncs.sas.model.v20181203.DescribeSuspEventDetailResponse.EventNote;
 import com.aliyuncs.sas.model.v20181203.DescribeSuspEventDetailResponse.QuaraFile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -31,11 +32,13 @@ public class DescribeSuspEventDetailResponseUnmarshaller {
 		describeSuspEventDetailResponse.setDataSource(_ctx.stringValue("DescribeSuspEventDetailResponse.DataSource"));
 		describeSuspEventDetailResponse.setEventName(_ctx.stringValue("DescribeSuspEventDetailResponse.EventName"));
 		describeSuspEventDetailResponse.setInternetIp(_ctx.stringValue("DescribeSuspEventDetailResponse.InternetIp"));
+		describeSuspEventDetailResponse.setAlarmUniqueInfo(_ctx.stringValue("DescribeSuspEventDetailResponse.AlarmUniqueInfo"));
 		describeSuspEventDetailResponse.setIntranetIp(_ctx.stringValue("DescribeSuspEventDetailResponse.IntranetIp"));
 		describeSuspEventDetailResponse.setLastTime(_ctx.stringValue("DescribeSuspEventDetailResponse.LastTime"));
 		describeSuspEventDetailResponse.setOperateMsg(_ctx.stringValue("DescribeSuspEventDetailResponse.OperateMsg"));
 		describeSuspEventDetailResponse.setUuid(_ctx.stringValue("DescribeSuspEventDetailResponse.Uuid"));
 		describeSuspEventDetailResponse.setCanBeDealOnLine(_ctx.booleanValue("DescribeSuspEventDetailResponse.CanBeDealOnLine"));
+		describeSuspEventDetailResponse.setAccessCode(_ctx.stringValue("DescribeSuspEventDetailResponse.AccessCode"));
 		describeSuspEventDetailResponse.setEventTypeDesc(_ctx.stringValue("DescribeSuspEventDetailResponse.EventTypeDesc"));
 		describeSuspEventDetailResponse.setEventDesc(_ctx.stringValue("DescribeSuspEventDetailResponse.EventDesc"));
 		describeSuspEventDetailResponse.setInstanceName(_ctx.stringValue("DescribeSuspEventDetailResponse.InstanceName"));
@@ -51,6 +54,7 @@ public class DescribeSuspEventDetailResponseUnmarshaller {
 			QuaraFile quaraFile = new QuaraFile();
 			quaraFile.setType(_ctx.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].Type"));
 			quaraFile.setValue(_ctx.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].Value"));
+			quaraFile.setValueDisplay(_ctx.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].ValueDisplay"));
 			quaraFile.setInfoType(_ctx.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].InfoType"));
 			quaraFile.setNameDisplay(_ctx.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].NameDisplay"));
 			quaraFile.setName(_ctx.stringValue("DescribeSuspEventDetailResponse.Details["+ i +"].Name"));
@@ -58,6 +62,17 @@ public class DescribeSuspEventDetailResponseUnmarshaller {
 			details.add(quaraFile);
 		}
 		describeSuspEventDetailResponse.setDetails(details);
+
+		List<EventNote> eventNotes = new ArrayList<EventNote>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSuspEventDetailResponse.EventNotes.Length"); i++) {
+			EventNote eventNote = new EventNote();
+			eventNote.setNote(_ctx.stringValue("DescribeSuspEventDetailResponse.EventNotes["+ i +"].Note"));
+			eventNote.setNoteId(_ctx.longValue("DescribeSuspEventDetailResponse.EventNotes["+ i +"].NoteId"));
+			eventNote.setNoteTime(_ctx.stringValue("DescribeSuspEventDetailResponse.EventNotes["+ i +"].NoteTime"));
+
+			eventNotes.add(eventNote);
+		}
+		describeSuspEventDetailResponse.setEventNotes(eventNotes);
 	 
 	 	return describeSuspEventDetailResponse;
 	}

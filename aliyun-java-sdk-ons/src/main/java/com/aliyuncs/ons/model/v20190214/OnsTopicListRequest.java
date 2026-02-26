@@ -26,6 +26,8 @@ import com.aliyuncs.ons.Endpoint;
 public class OnsTopicListRequest extends RpcAcsRequest<OnsTopicListResponse> {
 	   
 
+	private String userId;
+
 	private String instanceId;
 
 	private String topic;
@@ -38,6 +40,17 @@ public class OnsTopicListRequest extends RpcAcsRequest<OnsTopicListResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
 	}
 
 	public String getInstanceId() {

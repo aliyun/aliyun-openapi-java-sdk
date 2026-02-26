@@ -52,6 +52,9 @@ public class ListTemplatesResponseUnmarshaller {
 			template.setHasTrigger(_ctx.booleanValue("ListTemplatesResponse.Templates["+ i +"].HasTrigger"));
 			template.setTemplateId(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateId"));
 			template.setShareType(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].ShareType"));
+			template.setIsFavorite(_ctx.booleanValue("ListTemplatesResponse.Templates["+ i +"].IsFavorite"));
+			template.setPublisher(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].Publisher"));
+			template.setConstraints(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].Constraints"));
 
 			templates.add(template);
 		}

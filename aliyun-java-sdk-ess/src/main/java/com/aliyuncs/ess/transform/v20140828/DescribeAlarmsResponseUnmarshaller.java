@@ -20,6 +20,9 @@ import java.util.List;
 import com.aliyuncs.ess.model.v20140828.DescribeAlarmsResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeAlarmsResponse.Alarm;
 import com.aliyuncs.ess.model.v20140828.DescribeAlarmsResponse.Alarm.Dimension;
+import com.aliyuncs.ess.model.v20140828.DescribeAlarmsResponse.Alarm.Expression;
+import com.aliyuncs.ess.model.v20140828.DescribeAlarmsResponse.Alarm.HybridMetric;
+import com.aliyuncs.ess.model.v20140828.DescribeAlarmsResponse.Alarm.HybridMetric.Dimension2;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,27 +31,30 @@ public class DescribeAlarmsResponseUnmarshaller {
 	public static DescribeAlarmsResponse unmarshall(DescribeAlarmsResponse describeAlarmsResponse, UnmarshallerContext _ctx) {
 		
 		describeAlarmsResponse.setRequestId(_ctx.stringValue("DescribeAlarmsResponse.RequestId"));
-		describeAlarmsResponse.setTotalCount(_ctx.integerValue("DescribeAlarmsResponse.TotalCount"));
-		describeAlarmsResponse.setPageNumber(_ctx.integerValue("DescribeAlarmsResponse.PageNumber"));
 		describeAlarmsResponse.setPageSize(_ctx.integerValue("DescribeAlarmsResponse.PageSize"));
+		describeAlarmsResponse.setPageNumber(_ctx.integerValue("DescribeAlarmsResponse.PageNumber"));
+		describeAlarmsResponse.setTotalCount(_ctx.integerValue("DescribeAlarmsResponse.TotalCount"));
 
 		List<Alarm> alarmList = new ArrayList<Alarm>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAlarmsResponse.AlarmList.Length"); i++) {
 			Alarm alarm = new Alarm();
 			alarm.setAlarmTaskId(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].AlarmTaskId"));
-			alarm.setName(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Name"));
-			alarm.setDescription(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Description"));
-			alarm.setMetricType(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].MetricType"));
 			alarm.setMetricName(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].MetricName"));
-			alarm.setPeriod(_ctx.integerValue("DescribeAlarmsResponse.AlarmList["+ i +"].Period"));
-			alarm.setStatistics(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Statistics"));
-			alarm.setComparisonOperator(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].ComparisonOperator"));
-			alarm.setThreshold(_ctx.floatValue("DescribeAlarmsResponse.AlarmList["+ i +"].Threshold"));
 			alarm.setEvaluationCount(_ctx.integerValue("DescribeAlarmsResponse.AlarmList["+ i +"].EvaluationCount"));
 			alarm.setState(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].State"));
+			alarm.setPeriod(_ctx.integerValue("DescribeAlarmsResponse.AlarmList["+ i +"].Period"));
 			alarm.setScalingGroupId(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].ScalingGroupId"));
-			alarm.setEnable(_ctx.booleanValue("DescribeAlarmsResponse.AlarmList["+ i +"].Enable"));
+			alarm.setComparisonOperator(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].ComparisonOperator"));
 			alarm.setEffective(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Effective"));
+			alarm.setDescription(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Description"));
+			alarm.setMetricType(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].MetricType"));
+			alarm.setName(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Name"));
+			alarm.setThreshold(_ctx.floatValue("DescribeAlarmsResponse.AlarmList["+ i +"].Threshold"));
+			alarm.setEnable(_ctx.booleanValue("DescribeAlarmsResponse.AlarmList["+ i +"].Enable"));
+			alarm.setStatistics(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Statistics"));
+			alarm.setExpressionsLogicOperator(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].ExpressionsLogicOperator"));
+			alarm.setHybridMonitorNamespace(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].HybridMonitorNamespace"));
+			alarm.setPromQL(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].PromQL"));
 
 			List<String> alarmActions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAlarmsResponse.AlarmList["+ i +"].AlarmActions.Length"); j++) {
@@ -65,6 +71,41 @@ public class DescribeAlarmsResponseUnmarshaller {
 				dimensions.add(dimension);
 			}
 			alarm.setDimensions(dimensions);
+
+			List<Expression> expressions = new ArrayList<Expression>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAlarmsResponse.AlarmList["+ i +"].Expressions.Length"); j++) {
+				Expression expression = new Expression();
+				expression.setMetricName(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Expressions["+ j +"].MetricName"));
+				expression.setComparisonOperator(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Expressions["+ j +"].ComparisonOperator"));
+				expression.setPeriod(_ctx.integerValue("DescribeAlarmsResponse.AlarmList["+ i +"].Expressions["+ j +"].Period"));
+				expression.setStatistics(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].Expressions["+ j +"].Statistics"));
+				expression.setThreshold(_ctx.floatValue("DescribeAlarmsResponse.AlarmList["+ i +"].Expressions["+ j +"].Threshold"));
+
+				expressions.add(expression);
+			}
+			alarm.setExpressions(expressions);
+
+			List<HybridMetric> hybridMetrics = new ArrayList<HybridMetric>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAlarmsResponse.AlarmList["+ i +"].HybridMetrics.Length"); j++) {
+				HybridMetric hybridMetric = new HybridMetric();
+				hybridMetric.setId(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].HybridMetrics["+ j +"].Id"));
+				hybridMetric.setExpression(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].HybridMetrics["+ j +"].Expression"));
+				hybridMetric.setMetricName(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].HybridMetrics["+ j +"].MetricName"));
+				hybridMetric.setStatistic(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].HybridMetrics["+ j +"].Statistic"));
+
+				List<Dimension2> dimensions1 = new ArrayList<Dimension2>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeAlarmsResponse.AlarmList["+ i +"].HybridMetrics["+ j +"].Dimensions.Length"); k++) {
+					Dimension2 dimension2 = new Dimension2();
+					dimension2.setDimensionKey(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].HybridMetrics["+ j +"].Dimensions["+ k +"].DimensionKey"));
+					dimension2.setDimensionValue(_ctx.stringValue("DescribeAlarmsResponse.AlarmList["+ i +"].HybridMetrics["+ j +"].Dimensions["+ k +"].DimensionValue"));
+
+					dimensions1.add(dimension2);
+				}
+				hybridMetric.setDimensions1(dimensions1);
+
+				hybridMetrics.add(hybridMetric);
+			}
+			alarm.setHybridMetrics(hybridMetrics);
 
 			alarmList.add(alarm);
 		}

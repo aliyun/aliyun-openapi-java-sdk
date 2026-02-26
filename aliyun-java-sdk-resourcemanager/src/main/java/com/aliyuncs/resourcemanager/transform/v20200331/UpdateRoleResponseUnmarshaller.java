@@ -26,15 +26,15 @@ public class UpdateRoleResponseUnmarshaller {
 		updateRoleResponse.setRequestId(_ctx.stringValue("UpdateRoleResponse.RequestId"));
 
 		Role role = new Role();
-		role.setAssumeRolePolicyDocument(_ctx.stringValue("UpdateRoleResponse.Role.AssumeRolePolicyDocument"));
-		role.setRolePrincipalName(_ctx.stringValue("UpdateRoleResponse.Role.RolePrincipalName"));
-		role.setDescription(_ctx.stringValue("UpdateRoleResponse.Role.Description"));
-		role.setUpdateDate(_ctx.stringValue("UpdateRoleResponse.Role.UpdateDate"));
-		role.setMaxSessionDuration(_ctx.longValue("UpdateRoleResponse.Role.MaxSessionDuration"));
-		role.setRoleName(_ctx.stringValue("UpdateRoleResponse.Role.RoleName"));
-		role.setCreateDate(_ctx.stringValue("UpdateRoleResponse.Role.CreateDate"));
-		role.setRoleId(_ctx.stringValue("UpdateRoleResponse.Role.RoleId"));
 		role.setArn(_ctx.stringValue("UpdateRoleResponse.Role.Arn"));
+		role.setAssumeRolePolicyDocument(_ctx.stringValue("UpdateRoleResponse.Role.AssumeRolePolicyDocument"));
+		role.setCreateDate(_ctx.stringValue("UpdateRoleResponse.Role.CreateDate"));
+		role.setDescription(_ctx.stringValue("UpdateRoleResponse.Role.Description"));
+		role.setMaxSessionDuration(_ctx.longValue("UpdateRoleResponse.Role.MaxSessionDuration"));
+		role.setRoleId(_ctx.stringValue("UpdateRoleResponse.Role.RoleId"));
+		role.setRoleName(_ctx.stringValue("UpdateRoleResponse.Role.RoleName"));
+		role.setRolePrincipalName(_ctx.stringValue("UpdateRoleResponse.Role.RolePrincipalName"));
+		role.setUpdateDate(_ctx.stringValue("UpdateRoleResponse.Role.UpdateDate"));
 		updateRoleResponse.setRole(role);
 	 
 	 	return updateRoleResponse;

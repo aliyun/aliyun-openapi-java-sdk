@@ -132,7 +132,15 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 
 			private Integer score;
 
+			private Integer enableDasPro;
+
+			private Integer state;
+
+			private Integer taskType;
+
 			private Instance instance;
+
+			private AutoFunction autoFunction;
 
 			public Long getEndTime() {
 				return this.endTime;
@@ -182,12 +190,44 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 				this.score = score;
 			}
 
+			public Integer getEnableDasPro() {
+				return this.enableDasPro;
+			}
+
+			public void setEnableDasPro(Integer enableDasPro) {
+				this.enableDasPro = enableDasPro;
+			}
+
+			public Integer getState() {
+				return this.state;
+			}
+
+			public void setState(Integer state) {
+				this.state = state;
+			}
+
+			public Integer getTaskType() {
+				return this.taskType;
+			}
+
+			public void setTaskType(Integer taskType) {
+				this.taskType = taskType;
+			}
+
 			public Instance getInstance() {
 				return this.instance;
 			}
 
 			public void setInstance(Instance instance) {
 				this.instance = instance;
+			}
+
+			public AutoFunction getAutoFunction() {
+				return this.autoFunction;
+			}
+
+			public void setAutoFunction(AutoFunction autoFunction) {
+				this.autoFunction = autoFunction;
 			}
 
 			public static class Instance {
@@ -213,6 +253,16 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 				private String nodeId;
 
 				private String engineVersion;
+
+				private String instanceAlias;
+
+				private String cpu;
+
+				private Integer memory;
+
+				private Integer storage;
+
+				private String category;
 
 				public String getVpcId() {
 					return this.vpcId;
@@ -300,6 +350,99 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 
 				public void setEngineVersion(String engineVersion) {
 					this.engineVersion = engineVersion;
+				}
+
+				public String getInstanceAlias() {
+					return this.instanceAlias;
+				}
+
+				public void setInstanceAlias(String instanceAlias) {
+					this.instanceAlias = instanceAlias;
+				}
+
+				public String getCpu() {
+					return this.cpu;
+				}
+
+				public void setCpu(String cpu) {
+					this.cpu = cpu;
+				}
+
+				public Integer getMemory() {
+					return this.memory;
+				}
+
+				public void setMemory(Integer memory) {
+					this.memory = memory;
+				}
+
+				public Integer getStorage() {
+					return this.storage;
+				}
+
+				public void setStorage(Integer storage) {
+					this.storage = storage;
+				}
+
+				public String getCategory() {
+					return this.category;
+				}
+
+				public void setCategory(String category) {
+					this.category = category;
+				}
+			}
+
+			public static class AutoFunction {
+
+				private Integer eventSubscription;
+
+				private Integer autoIndex;
+
+				private Integer autoLimitedSql;
+
+				private Integer autoResourceOptimize;
+
+				private Integer autoScale;
+
+				public Integer getEventSubscription() {
+					return this.eventSubscription;
+				}
+
+				public void setEventSubscription(Integer eventSubscription) {
+					this.eventSubscription = eventSubscription;
+				}
+
+				public Integer getAutoIndex() {
+					return this.autoIndex;
+				}
+
+				public void setAutoIndex(Integer autoIndex) {
+					this.autoIndex = autoIndex;
+				}
+
+				public Integer getAutoLimitedSql() {
+					return this.autoLimitedSql;
+				}
+
+				public void setAutoLimitedSql(Integer autoLimitedSql) {
+					this.autoLimitedSql = autoLimitedSql;
+				}
+
+				public Integer getAutoResourceOptimize() {
+					return this.autoResourceOptimize;
+				}
+
+				public void setAutoResourceOptimize(Integer autoResourceOptimize) {
+					this.autoResourceOptimize = autoResourceOptimize;
+				}
+
+				public Integer getAutoScale() {
+					return this.autoScale;
+				}
+
+				public void setAutoScale(Integer autoScale) {
+					this.autoScale = autoScale;
 				}
 			}
 		}

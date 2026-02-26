@@ -25,6 +25,8 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class CreateUdfFileRequest extends RpcAcsRequest<CreateUdfFileResponse> {
 	   
 
+	private Boolean createFolderIfNotExists;
+
 	private String returnValue;
 
 	private String resources;
@@ -55,6 +57,17 @@ public class CreateUdfFileRequest extends RpcAcsRequest<CreateUdfFileResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getCreateFolderIfNotExists() {
+		return this.createFolderIfNotExists;
+	}
+
+	public void setCreateFolderIfNotExists(Boolean createFolderIfNotExists) {
+		this.createFolderIfNotExists = createFolderIfNotExists;
+		if(createFolderIfNotExists != null){
+			putBodyParameter("CreateFolderIfNotExists", createFolderIfNotExists.toString());
+		}
 	}
 
 	public String getReturnValue() {

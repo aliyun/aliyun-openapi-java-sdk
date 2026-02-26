@@ -31,11 +31,21 @@ public class ModifyRouteEntryRequest extends RpcAcsRequest<ModifyRouteEntryRespo
 
 	private String description;
 
+	private String newNextHopId;
+
+	private String routeTableId;
+
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String destinationCidrBlock;
+
 	private Long ownerId;
+
+	private String newNextHopType;
 
 	private String routeEntryId;
 	public ModifyRouteEntryRequest() {
@@ -80,6 +90,39 @@ public class ModifyRouteEntryRequest extends RpcAcsRequest<ModifyRouteEntryRespo
 		}
 	}
 
+	public String getNewNextHopId() {
+		return this.newNextHopId;
+	}
+
+	public void setNewNextHopId(String newNextHopId) {
+		this.newNextHopId = newNextHopId;
+		if(newNextHopId != null){
+			putQueryParameter("NewNextHopId", newNextHopId);
+		}
+	}
+
+	public String getRouteTableId() {
+		return this.routeTableId;
+	}
+
+	public void setRouteTableId(String routeTableId) {
+		this.routeTableId = routeTableId;
+		if(routeTableId != null){
+			putQueryParameter("RouteTableId", routeTableId);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -102,6 +145,17 @@ public class ModifyRouteEntryRequest extends RpcAcsRequest<ModifyRouteEntryRespo
 		}
 	}
 
+	public String getDestinationCidrBlock() {
+		return this.destinationCidrBlock;
+	}
+
+	public void setDestinationCidrBlock(String destinationCidrBlock) {
+		this.destinationCidrBlock = destinationCidrBlock;
+		if(destinationCidrBlock != null){
+			putQueryParameter("DestinationCidrBlock", destinationCidrBlock);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -110,6 +164,17 @@ public class ModifyRouteEntryRequest extends RpcAcsRequest<ModifyRouteEntryRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getNewNextHopType() {
+		return this.newNextHopType;
+	}
+
+	public void setNewNextHopType(String newNextHopType) {
+		this.newNextHopType = newNextHopType;
+		if(newNextHopType != null){
+			putQueryParameter("NewNextHopType", newNextHopType);
 		}
 	}
 

@@ -24,21 +24,7 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class DescribeApiGroupsRequest extends RpcAcsRequest<DescribeApiGroupsResponse> {
-	
-	public DescribeApiGroupsRequest() {
-		super("CloudAPI", "2016-07-14", "DescribeApiGroups", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String groupId;
-
-	private Boolean enableTagAuth;
-
-	private String groupName;
+	   
 
 	private Integer pageNumber;
 
@@ -48,37 +34,22 @@ public class DescribeApiGroupsRequest extends RpcAcsRequest<DescribeApiGroupsRes
 
 	private List<Tag> tags;
 
-	public String getGroupId() {
-		return this.groupId;
-	}
+	private String groupId;
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
+	private String sort;
 
-	public Boolean getEnableTagAuth() {
-		return this.enableTagAuth;
-	}
+	private Boolean enableTagAuth;
 
-	public void setEnableTagAuth(Boolean enableTagAuth) {
-		this.enableTagAuth = enableTagAuth;
-		if(enableTagAuth != null){
-			putQueryParameter("EnableTagAuth", enableTagAuth.toString());
-		}
-	}
+	private String groupName;
 
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
-		}
+	private String instanceId;
+	public DescribeApiGroupsRequest() {
+		super("CloudAPI", "2016-07-14", "DescribeApiGroups", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Integer getPageNumber() {
@@ -92,29 +63,10 @@ public class DescribeApiGroupsRequest extends RpcAcsRequest<DescribeApiGroupsRes
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -145,6 +97,61 @@ public class DescribeApiGroupsRequest extends RpcAcsRequest<DescribeApiGroupsRes
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getSort() {
+		return this.sort;
+	}
+
+	public void setSort(String sort) {
+		this.sort = sort;
+		if(sort != null){
+			putQueryParameter("Sort", sort);
+		}
+	}
+
+	public Boolean getEnableTagAuth() {
+		return this.enableTagAuth;
+	}
+
+	public void setEnableTagAuth(Boolean enableTagAuth) {
+		this.enableTagAuth = enableTagAuth;
+		if(enableTagAuth != null){
+			putQueryParameter("EnableTagAuth", enableTagAuth.toString());
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	public static class Tag {

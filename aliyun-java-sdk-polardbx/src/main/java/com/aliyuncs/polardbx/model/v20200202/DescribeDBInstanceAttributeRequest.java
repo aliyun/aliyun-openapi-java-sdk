@@ -26,6 +26,8 @@ public class DescribeDBInstanceAttributeRequest extends RpcAcsRequest<DescribeDB
 	   
 
 	private String dBInstanceName;
+
+	private String resourceGroupId;
 	public DescribeDBInstanceAttributeRequest() {
 		super("polardbx", "2020-02-02", "DescribeDBInstanceAttribute", "polardbx");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DescribeDBInstanceAttributeRequest extends RpcAcsRequest<DescribeDB
 		this.dBInstanceName = dBInstanceName;
 		if(dBInstanceName != null){
 			putQueryParameter("DBInstanceName", dBInstanceName);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

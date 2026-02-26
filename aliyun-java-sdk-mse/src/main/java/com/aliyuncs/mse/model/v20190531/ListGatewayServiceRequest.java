@@ -119,6 +119,9 @@ public class ListGatewayServiceRequest extends RpcAcsRequest<ListGatewayServiceR
 		@SerializedName("GatewayUniqueId")
 		private String gatewayUniqueId;
 
+		@SerializedName("ServiceProtocol")
+		private String serviceProtocol;
+
 		@SerializedName("Name")
 		private String name;
 
@@ -137,6 +140,14 @@ public class ListGatewayServiceRequest extends RpcAcsRequest<ListGatewayServiceR
 
 		public void setGatewayUniqueId(String gatewayUniqueId) {
 			this.gatewayUniqueId = gatewayUniqueId;
+		}
+
+		public String getServiceProtocol() {
+			return this.serviceProtocol;
+		}
+
+		public void setServiceProtocol(String serviceProtocol) {
+			this.serviceProtocol = serviceProtocol;
 		}
 
 		public String getName() {

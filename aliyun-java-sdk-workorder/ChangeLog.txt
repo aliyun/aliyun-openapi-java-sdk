@@ -1,3 +1,6 @@
+2022-10-19 Version: 4.6.4
+- Public Sdk.
+
 2021-06-16 Version: 4.6.3
 - Encrypt Dialog Content.
 

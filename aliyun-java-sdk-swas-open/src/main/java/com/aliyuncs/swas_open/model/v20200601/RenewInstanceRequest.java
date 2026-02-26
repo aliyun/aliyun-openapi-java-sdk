@@ -30,7 +30,7 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 
 	private String instanceId;
 	public RenewInstanceRequest() {
-		super("SWAS-OPEN", "2020-06-01", "RenewInstance");
+		super("SWAS-OPEN", "2020-06-01", "RenewInstance", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 

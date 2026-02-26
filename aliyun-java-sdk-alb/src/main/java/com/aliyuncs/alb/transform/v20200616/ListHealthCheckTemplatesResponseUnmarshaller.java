@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alb.model.v20200616.ListHealthCheckTemplatesResponse;
 import com.aliyuncs.alb.model.v20200616.ListHealthCheckTemplatesResponse.HealthCheckTemplate;
+import com.aliyuncs.alb.model.v20200616.ListHealthCheckTemplatesResponse.HealthCheckTemplate.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,12 +47,31 @@ public class ListHealthCheckTemplatesResponseUnmarshaller {
 			healthCheckTemplate.setHealthCheckTimeout(_ctx.integerValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthCheckTimeout"));
 			healthCheckTemplate.setHealthyThreshold(_ctx.integerValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthyThreshold"));
 			healthCheckTemplate.setUnhealthyThreshold(_ctx.integerValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].UnhealthyThreshold"));
+			healthCheckTemplate.setHealthCheckTcpFastCloseEnabled(_ctx.booleanValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthCheckTcpFastCloseEnabled"));
+			healthCheckTemplate.setServiceManagedEnabled(_ctx.booleanValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].ServiceManagedEnabled"));
+			healthCheckTemplate.setServiceManagedMode(_ctx.stringValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].ServiceManagedMode"));
+
+			List<String> healthCheckHttpCodes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthCheckHttpCodes.Length"); j++) {
+				healthCheckHttpCodes.add(_ctx.stringValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthCheckHttpCodes["+ j +"]"));
+			}
+			healthCheckTemplate.setHealthCheckHttpCodes(healthCheckHttpCodes);
 
 			List<String> healthCheckCodes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthCheckCodes.Length"); j++) {
 				healthCheckCodes.add(_ctx.stringValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthCheckCodes["+ j +"]"));
 			}
 			healthCheckTemplate.setHealthCheckCodes(healthCheckCodes);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			healthCheckTemplate.setTags(tags);
 
 			healthCheckTemplates.add(healthCheckTemplate);
 		}

@@ -71,6 +71,19 @@ public class GetK8sApplicationResponseUnmarshaller {
 		app.setClusterId(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.ClusterId"));
 		app.setDevelopType(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.DevelopType"));
 		app.setSlbInfo(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.SlbInfo"));
+		app.setAnnotations(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.Annotations"));
+		app.setLabels(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.Labels"));
+		app.setLimitEphemeralStorage(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.LimitEphemeralStorage"));
+		app.setRequestEphemeralStorage(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.RequestEphemeralStorage"));
+		app.setEnableEmptyPushReject(_ctx.booleanValue("GetK8sApplicationResponse.Applcation.App.EnableEmptyPushReject"));
+		app.setEnableLosslessRule(_ctx.booleanValue("GetK8sApplicationResponse.Applcation.App.EnableLosslessRule"));
+		app.setLosslessRuleAligned(_ctx.booleanValue("GetK8sApplicationResponse.Applcation.App.LosslessRuleAligned"));
+		app.setLosslessRuleDelayTime(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.LosslessRuleDelayTime"));
+		app.setLosslessRuleFuncType(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.LosslessRuleFuncType"));
+		app.setLosslessRuleRelated(_ctx.booleanValue("GetK8sApplicationResponse.Applcation.App.LosslessRuleRelated"));
+		app.setLosslessRuleWarmupTime(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.LosslessRuleWarmupTime"));
+		app.setFeatureAnnotations(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.FeatureAnnotations"));
+		app.setWorkloadType(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.WorkloadType"));
 
 		List<String> cmdArgs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.App.CmdArgs.Length"); i++) {
@@ -107,6 +120,7 @@ public class GetK8sApplicationResponseUnmarshaller {
 		conf.setK8sVolumeInfo(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.K8sVolumeInfo"));
 		conf.setAffinity(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.Affinity"));
 		conf.setTolerations(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.Tolerations"));
+		conf.setUserBaseImageUrl(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.UserBaseImageUrl"));
 		applcation.setConf(conf);
 
 		LatestVersion latestVersion = new LatestVersion();
@@ -119,6 +133,7 @@ public class GetK8sApplicationResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.DeployGroups.Length"); i++) {
 			DeployGroup deployGroup = new DeployGroup();
 			deployGroup.setEnv(_ctx.stringValue("GetK8sApplicationResponse.Applcation.DeployGroups["+ i +"].Env"));
+			deployGroup.setEnvFrom(_ctx.stringValue("GetK8sApplicationResponse.Applcation.DeployGroups["+ i +"].EnvFrom"));
 
 			List<ComponentsItem> components = new ArrayList<ComponentsItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.DeployGroups["+ i +"].Components.Length"); j++) {

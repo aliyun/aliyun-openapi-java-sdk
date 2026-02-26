@@ -31,7 +31,7 @@ public class DeleteDomainGroupRequest extends RpcAcsRequest<DeleteDomainGroupRes
 
 	private String lang;
 	public DeleteDomainGroupRequest() {
-		super("Domain", "2018-01-29", "DeleteDomainGroup");
+		super("Domain", "2018-01-29", "DeleteDomainGroup", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

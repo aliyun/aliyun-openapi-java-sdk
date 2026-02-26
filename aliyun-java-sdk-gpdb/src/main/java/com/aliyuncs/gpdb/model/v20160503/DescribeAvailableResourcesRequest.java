@@ -31,7 +31,7 @@ public class DescribeAvailableResourcesRequest extends RpcAcsRequest<DescribeAva
 
 	private String region;
 	public DescribeAvailableResourcesRequest() {
-		super("gpdb", "2016-05-03", "DescribeAvailableResources");
+		super("gpdb", "2016-05-03", "DescribeAvailableResources", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

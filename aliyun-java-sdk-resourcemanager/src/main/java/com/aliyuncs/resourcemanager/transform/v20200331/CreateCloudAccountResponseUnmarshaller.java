@@ -26,16 +26,16 @@ public class CreateCloudAccountResponseUnmarshaller {
 		createCloudAccountResponse.setRequestId(_ctx.stringValue("CreateCloudAccountResponse.RequestId"));
 
 		Account account = new Account();
-		account.setStatus(_ctx.stringValue("CreateCloudAccountResponse.Account.Status"));
-		account.setType(_ctx.stringValue("CreateCloudAccountResponse.Account.Type"));
+		account.setAccountId(_ctx.stringValue("CreateCloudAccountResponse.Account.AccountId"));
+		account.setAccountName(_ctx.stringValue("CreateCloudAccountResponse.Account.AccountName"));
 		account.setDisplayName(_ctx.stringValue("CreateCloudAccountResponse.Account.DisplayName"));
 		account.setFolderId(_ctx.stringValue("CreateCloudAccountResponse.Account.FolderId"));
-		account.setResourceDirectoryId(_ctx.stringValue("CreateCloudAccountResponse.Account.ResourceDirectoryId"));
-		account.setRecordId(_ctx.stringValue("CreateCloudAccountResponse.Account.RecordId"));
-		account.setAccountId(_ctx.stringValue("CreateCloudAccountResponse.Account.AccountId"));
 		account.setJoinMethod(_ctx.stringValue("CreateCloudAccountResponse.Account.JoinMethod"));
 		account.setModifyTime(_ctx.stringValue("CreateCloudAccountResponse.Account.ModifyTime"));
-		account.setAccountName(_ctx.stringValue("CreateCloudAccountResponse.Account.AccountName"));
+		account.setRecordId(_ctx.stringValue("CreateCloudAccountResponse.Account.RecordId"));
+		account.setResourceDirectoryId(_ctx.stringValue("CreateCloudAccountResponse.Account.ResourceDirectoryId"));
+		account.setStatus(_ctx.stringValue("CreateCloudAccountResponse.Account.Status"));
+		account.setType(_ctx.stringValue("CreateCloudAccountResponse.Account.Type"));
 		createCloudAccountResponse.setAccount(account);
 	 
 	 	return createCloudAccountResponse;

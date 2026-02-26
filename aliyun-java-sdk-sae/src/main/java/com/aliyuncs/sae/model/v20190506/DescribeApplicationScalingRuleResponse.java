@@ -29,6 +29,14 @@ public class DescribeApplicationScalingRuleResponse extends AcsResponse {
 
 	private String traceId;
 
+	private String message;
+
+	private String errorCode;
+
+	private String code;
+
+	private Boolean success;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -45,6 +53,38 @@ public class DescribeApplicationScalingRuleResponse extends AcsResponse {
 
 	public void setTraceId(String traceId) {
 		this.traceId = traceId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -70,6 +110,12 @@ public class DescribeApplicationScalingRuleResponse extends AcsResponse {
 		private String scaleRuleType;
 
 		private String scaleRuleName;
+
+		private Integer minReadyInstances;
+
+		private Integer minReadyInstanceRatio;
+
+		private Boolean enableIdle;
 
 		private Timer timer;
 
@@ -129,6 +175,30 @@ public class DescribeApplicationScalingRuleResponse extends AcsResponse {
 
 		public void setScaleRuleName(String scaleRuleName) {
 			this.scaleRuleName = scaleRuleName;
+		}
+
+		public Integer getMinReadyInstances() {
+			return this.minReadyInstances;
+		}
+
+		public void setMinReadyInstances(Integer minReadyInstances) {
+			this.minReadyInstances = minReadyInstances;
+		}
+
+		public Integer getMinReadyInstanceRatio() {
+			return this.minReadyInstanceRatio;
+		}
+
+		public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
+			this.minReadyInstanceRatio = minReadyInstanceRatio;
+		}
+
+		public Boolean getEnableIdle() {
+			return this.enableIdle;
+		}
+
+		public void setEnableIdle(Boolean enableIdle) {
+			this.enableIdle = enableIdle;
 		}
 
 		public Timer getTimer() {
@@ -195,6 +265,10 @@ public class DescribeApplicationScalingRuleResponse extends AcsResponse {
 
 				private Integer targetReplicas;
 
+				private Integer minReplicas;
+
+				private Integer maxReplicas;
+
 				public String getAtTime() {
 					return this.atTime;
 				}
@@ -209,6 +283,22 @@ public class DescribeApplicationScalingRuleResponse extends AcsResponse {
 
 				public void setTargetReplicas(Integer targetReplicas) {
 					this.targetReplicas = targetReplicas;
+				}
+
+				public Integer getMinReplicas() {
+					return this.minReplicas;
+				}
+
+				public void setMinReplicas(Integer minReplicas) {
+					this.minReplicas = minReplicas;
+				}
+
+				public Integer getMaxReplicas() {
+					return this.maxReplicas;
+				}
+
+				public void setMaxReplicas(Integer maxReplicas) {
+					this.maxReplicas = maxReplicas;
 				}
 			}
 		}
@@ -281,6 +371,14 @@ public class DescribeApplicationScalingRuleResponse extends AcsResponse {
 
 				private String metricType;
 
+				private String slbProject;
+
+				private String slbLogstore;
+
+				private String vport;
+
+				private String slbId;
+
 				public Integer getMetricTargetAverageUtilization() {
 					return this.metricTargetAverageUtilization;
 				}
@@ -295,6 +393,38 @@ public class DescribeApplicationScalingRuleResponse extends AcsResponse {
 
 				public void setMetricType(String metricType) {
 					this.metricType = metricType;
+				}
+
+				public String getSlbProject() {
+					return this.slbProject;
+				}
+
+				public void setSlbProject(String slbProject) {
+					this.slbProject = slbProject;
+				}
+
+				public String getSlbLogstore() {
+					return this.slbLogstore;
+				}
+
+				public void setSlbLogstore(String slbLogstore) {
+					this.slbLogstore = slbLogstore;
+				}
+
+				public String getVport() {
+					return this.vport;
+				}
+
+				public void setVport(String vport) {
+					this.vport = vport;
+				}
+
+				public String getSlbId() {
+					return this.slbId;
+				}
+
+				public void setSlbId(String slbId) {
+					this.slbId = slbId;
 				}
 			}
 

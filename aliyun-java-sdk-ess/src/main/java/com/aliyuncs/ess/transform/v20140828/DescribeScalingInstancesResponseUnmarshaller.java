@@ -27,31 +27,34 @@ public class DescribeScalingInstancesResponseUnmarshaller {
 	public static DescribeScalingInstancesResponse unmarshall(DescribeScalingInstancesResponse describeScalingInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeScalingInstancesResponse.setRequestId(_ctx.stringValue("DescribeScalingInstancesResponse.RequestId"));
-		describeScalingInstancesResponse.setTotalCount(_ctx.integerValue("DescribeScalingInstancesResponse.TotalCount"));
-		describeScalingInstancesResponse.setTotalSpotCount(_ctx.integerValue("DescribeScalingInstancesResponse.TotalSpotCount"));
-		describeScalingInstancesResponse.setPageNumber(_ctx.integerValue("DescribeScalingInstancesResponse.PageNumber"));
 		describeScalingInstancesResponse.setPageSize(_ctx.integerValue("DescribeScalingInstancesResponse.PageSize"));
+		describeScalingInstancesResponse.setPageNumber(_ctx.integerValue("DescribeScalingInstancesResponse.PageNumber"));
+		describeScalingInstancesResponse.setTotalSpotCount(_ctx.integerValue("DescribeScalingInstancesResponse.TotalSpotCount"));
+		describeScalingInstancesResponse.setTotalCount(_ctx.integerValue("DescribeScalingInstancesResponse.TotalCount"));
 
 		List<ScalingInstance> scalingInstances = new ArrayList<ScalingInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScalingInstancesResponse.ScalingInstances.Length"); i++) {
 			ScalingInstance scalingInstance = new ScalingInstance();
-			scalingInstance.setInstanceId(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].InstanceId"));
-			scalingInstance.setScalingConfigurationId(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].ScalingConfigurationId"));
-			scalingInstance.setScalingGroupId(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].ScalingGroupId"));
-			scalingInstance.setHealthStatus(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].HealthStatus"));
-			scalingInstance.setLoadBalancerWeight(_ctx.integerValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].LoadBalancerWeight"));
-			scalingInstance.setLifecycleState(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].LifecycleState"));
 			scalingInstance.setCreationTime(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].CreationTime"));
-			scalingInstance.setCreationType(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].CreationType"));
+			scalingInstance.setLoadBalancerWeight(_ctx.integerValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].LoadBalancerWeight"));
 			scalingInstance.setLaunchTemplateId(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].LaunchTemplateId"));
+			scalingInstance.setInstanceId(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].InstanceId"));
+			scalingInstance.setSpotStrategy(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].SpotStrategy"));
 			scalingInstance.setLaunchTemplateVersion(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].LaunchTemplateVersion"));
+			scalingInstance.setHealthStatus(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].HealthStatus"));
+			scalingInstance.setScalingGroupId(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].ScalingGroupId"));
 			scalingInstance.setWarmupState(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].WarmupState"));
+			scalingInstance.setLifecycleState(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].LifecycleState"));
+			scalingInstance.setCreationType(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].CreationType"));
+			scalingInstance.setZoneId(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].ZoneId"));
+			scalingInstance.setScalingConfigurationId(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].ScalingConfigurationId"));
 			scalingInstance.setEntrusted(_ctx.booleanValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].Entrusted"));
 			scalingInstance.setWeightedCapacity(_ctx.integerValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].WeightedCapacity"));
 			scalingInstance.setCreatedTime(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].CreatedTime"));
-			scalingInstance.setSpotStrategy(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].SpotStrategy"));
-			scalingInstance.setZoneId(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].ZoneId"));
 			scalingInstance.setScalingActivityId(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].ScalingActivityId"));
+			scalingInstance.setInstanceType(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].InstanceType"));
+			scalingInstance.setScalingInstanceId(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].ScalingInstanceId"));
+			scalingInstance.setPrivateIpAddress(_ctx.stringValue("DescribeScalingInstancesResponse.ScalingInstances["+ i +"].PrivateIpAddress"));
 
 			scalingInstances.add(scalingInstance);
 		}

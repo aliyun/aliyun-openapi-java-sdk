@@ -34,7 +34,7 @@ public class CreateTagResourcesRequest extends RpcAcsRequest<CreateTagResourcesR
 
 	private List<String> resourceIdss;
 	public CreateTagResourcesRequest() {
-		super("ddoscoo", "2020-01-01", "CreateTagResources");
+		super("ddoscoo", "2020-01-01", "CreateTagResources", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

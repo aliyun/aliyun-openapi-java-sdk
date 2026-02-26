@@ -79,6 +79,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String connInstanceId;
 
+		private Long isFirstOpenBw;
+
+		private Long isFirstOpenQps;
+
+		private String ip;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -165,6 +171,30 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setConnInstanceId(String connInstanceId) {
 			this.connInstanceId = connInstanceId;
+		}
+
+		public Long getIsFirstOpenBw() {
+			return this.isFirstOpenBw;
+		}
+
+		public void setIsFirstOpenBw(Long isFirstOpenBw) {
+			this.isFirstOpenBw = isFirstOpenBw;
+		}
+
+		public Long getIsFirstOpenQps() {
+			return this.isFirstOpenQps;
+		}
+
+		public void setIsFirstOpenQps(Long isFirstOpenQps) {
+			this.isFirstOpenQps = isFirstOpenQps;
+		}
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
 		}
 	}
 

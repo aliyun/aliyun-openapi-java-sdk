@@ -27,13 +27,13 @@ public class ModifySecurityGroupConfigurationRequest extends RpcAcsRequest<Modif
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String securityGroupId;
 
-	private Long ownerId;
-
 	private String dBInstanceId;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
 	public ModifySecurityGroupConfigurationRequest() {
 		super("Rds", "2014-08-15", "ModifySecurityGroupConfiguration", "rds");
 		setMethod(MethodType.POST);
@@ -54,17 +54,6 @@ public class ModifySecurityGroupConfigurationRequest extends RpcAcsRequest<Modif
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getSecurityGroupId() {
 		return this.securityGroupId;
 	}
@@ -76,17 +65,6 @@ public class ModifySecurityGroupConfigurationRequest extends RpcAcsRequest<Modif
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -95,6 +73,28 @@ public class ModifySecurityGroupConfigurationRequest extends RpcAcsRequest<Modif
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

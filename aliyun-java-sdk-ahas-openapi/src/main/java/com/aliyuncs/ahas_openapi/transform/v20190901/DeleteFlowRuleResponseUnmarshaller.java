@@ -24,8 +24,8 @@ public class DeleteFlowRuleResponseUnmarshaller {
 	public static DeleteFlowRuleResponse unmarshall(DeleteFlowRuleResponse deleteFlowRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteFlowRuleResponse.setRequestId(_ctx.stringValue("DeleteFlowRuleResponse.RequestId"));
-		deleteFlowRuleResponse.setCode(_ctx.stringValue("DeleteFlowRuleResponse.Code"));
 		deleteFlowRuleResponse.setMessage(_ctx.stringValue("DeleteFlowRuleResponse.Message"));
+		deleteFlowRuleResponse.setCode(_ctx.stringValue("DeleteFlowRuleResponse.Code"));
 		deleteFlowRuleResponse.setSuccess(_ctx.booleanValue("DeleteFlowRuleResponse.Success"));
 
 		Data data = new Data();

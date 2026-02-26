@@ -27,6 +27,8 @@ public class ReleaseLindormInstanceRequest extends RpcAcsRequest<ReleaseLindormI
 
 	private Long resourceOwnerId;
 
+	private Boolean immediately;
+
 	private String securityToken;
 
 	private String resourceOwnerAccount;
@@ -53,6 +55,17 @@ public class ReleaseLindormInstanceRequest extends RpcAcsRequest<ReleaseLindormI
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getImmediately() {
+		return this.immediately;
+	}
+
+	public void setImmediately(Boolean immediately) {
+		this.immediately = immediately;
+		if(immediately != null){
+			putQueryParameter("Immediately", immediately.toString());
 		}
 	}
 

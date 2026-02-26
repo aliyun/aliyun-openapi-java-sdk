@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainQpsDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String startTime;
-
-	private String endTime;
-
 	private String dataInterval;
 
 	private List<DataModule> qpsDataInterval;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeDomainQpsDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public String getDataInterval() {
@@ -87,14 +87,6 @@ public class DescribeDomainQpsDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
-
-		private String value;
-
-		private String domesticValue;
-
-		private String overseasValue;
-
 		private String accValue;
 
 		private String accDomesticValue;
@@ -103,47 +95,23 @@ public class DescribeDomainQpsDataResponse extends AcsResponse {
 
 		private String httpsValue;
 
-		private String httpsDomesticValue;
-
 		private String httpsOverseasValue;
 
-		private String httpsAccValue;
-
-		private String httpsAccDomesticValue;
+		private String domesticValue;
 
 		private String httpsAccOverseasValue;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
+		private String httpsDomesticValue;
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
+		private String httpsAccValue;
 
-		public String getValue() {
-			return this.value;
-		}
+		private String value;
 
-		public void setValue(String value) {
-			this.value = value;
-		}
+		private String overseasValue;
 
-		public String getDomesticValue() {
-			return this.domesticValue;
-		}
+		private String timeStamp;
 
-		public void setDomesticValue(String domesticValue) {
-			this.domesticValue = domesticValue;
-		}
-
-		public String getOverseasValue() {
-			return this.overseasValue;
-		}
-
-		public void setOverseasValue(String overseasValue) {
-			this.overseasValue = overseasValue;
-		}
+		private String httpsAccDomesticValue;
 
 		public String getAccValue() {
 			return this.accValue;
@@ -177,20 +145,36 @@ public class DescribeDomainQpsDataResponse extends AcsResponse {
 			this.httpsValue = httpsValue;
 		}
 
-		public String getHttpsDomesticValue() {
-			return this.httpsDomesticValue;
-		}
-
-		public void setHttpsDomesticValue(String httpsDomesticValue) {
-			this.httpsDomesticValue = httpsDomesticValue;
-		}
-
 		public String getHttpsOverseasValue() {
 			return this.httpsOverseasValue;
 		}
 
 		public void setHttpsOverseasValue(String httpsOverseasValue) {
 			this.httpsOverseasValue = httpsOverseasValue;
+		}
+
+		public String getDomesticValue() {
+			return this.domesticValue;
+		}
+
+		public void setDomesticValue(String domesticValue) {
+			this.domesticValue = domesticValue;
+		}
+
+		public String getHttpsAccOverseasValue() {
+			return this.httpsAccOverseasValue;
+		}
+
+		public void setHttpsAccOverseasValue(String httpsAccOverseasValue) {
+			this.httpsAccOverseasValue = httpsAccOverseasValue;
+		}
+
+		public String getHttpsDomesticValue() {
+			return this.httpsDomesticValue;
+		}
+
+		public void setHttpsDomesticValue(String httpsDomesticValue) {
+			this.httpsDomesticValue = httpsDomesticValue;
 		}
 
 		public String getHttpsAccValue() {
@@ -201,20 +185,36 @@ public class DescribeDomainQpsDataResponse extends AcsResponse {
 			this.httpsAccValue = httpsAccValue;
 		}
 
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getOverseasValue() {
+			return this.overseasValue;
+		}
+
+		public void setOverseasValue(String overseasValue) {
+			this.overseasValue = overseasValue;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
+
 		public String getHttpsAccDomesticValue() {
 			return this.httpsAccDomesticValue;
 		}
 
 		public void setHttpsAccDomesticValue(String httpsAccDomesticValue) {
 			this.httpsAccDomesticValue = httpsAccDomesticValue;
-		}
-
-		public String getHttpsAccOverseasValue() {
-			return this.httpsAccOverseasValue;
-		}
-
-		public void setHttpsAccOverseasValue(String httpsAccOverseasValue) {
-			this.httpsAccOverseasValue = httpsAccOverseasValue;
 		}
 	}
 

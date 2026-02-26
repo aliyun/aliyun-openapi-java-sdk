@@ -45,7 +45,7 @@ public class UploadImageRequest extends RpcAcsRequest<UploadImageResponse> {
 
 	private String gpuDriverType;
 	public UploadImageRequest() {
-		super("ecd", "2020-09-30", "UploadImage");
+		super("ecd", "2020-09-30", "UploadImage", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DescribeParametersRequest extends RpcAcsRequest<DescribeParametersR
 
 	private String dBInstanceId;
 	public DescribeParametersRequest() {
-		super("gpdb", "2016-05-03", "DescribeParameters");
+		super("gpdb", "2016-05-03", "DescribeParameters", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

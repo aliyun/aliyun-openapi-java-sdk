@@ -47,6 +47,8 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerHTTPListenerAttributeResponse.setHealthCheckURI(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.HealthCheckURI"));
 		describeLoadBalancerHTTPListenerAttributeResponse.setServerCertificateId(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.ServerCertificateId"));
 		describeLoadBalancerHTTPListenerAttributeResponse.setHealthCheckMethod(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.HealthCheckMethod"));
+		describeLoadBalancerHTTPListenerAttributeResponse.setXForwardedFor(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.XForwardedFor"));
+		describeLoadBalancerHTTPListenerAttributeResponse.setBackendServerPort(_ctx.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.BackendServerPort"));
 	 
 	 	return describeLoadBalancerHTTPListenerAttributeResponse;
 	}

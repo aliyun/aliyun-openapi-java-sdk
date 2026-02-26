@@ -46,29 +46,13 @@ public class ListSlowQueryQueriesResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer start;
-
-		private Integer end;
-
 		private Integer index;
 
 		private String appQuery;
 
-		public Integer getStart() {
-			return this.start;
-		}
+		private Integer start;
 
-		public void setStart(Integer start) {
-			this.start = start;
-		}
-
-		public Integer getEnd() {
-			return this.end;
-		}
-
-		public void setEnd(Integer end) {
-			this.end = end;
-		}
+		private Integer end;
 
 		public Integer getIndex() {
 			return this.index;
@@ -84,6 +68,22 @@ public class ListSlowQueryQueriesResponse extends AcsResponse {
 
 		public void setAppQuery(String appQuery) {
 			this.appQuery = appQuery;
+		}
+
+		public Integer getStart() {
+			return this.start;
+		}
+
+		public void setStart(Integer start) {
+			this.start = start;
+		}
+
+		public Integer getEnd() {
+			return this.end;
+		}
+
+		public void setEnd(Integer end) {
+			this.end = end;
 		}
 	}
 

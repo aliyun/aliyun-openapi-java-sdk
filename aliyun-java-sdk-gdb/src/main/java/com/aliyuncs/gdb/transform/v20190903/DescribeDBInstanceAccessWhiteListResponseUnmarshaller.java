@@ -31,8 +31,8 @@ public class DescribeDBInstanceAccessWhiteListResponseUnmarshaller {
 		List<DBInstanceIPArray> items = new ArrayList<DBInstanceIPArray>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceAccessWhiteListResponse.Items.Length"); i++) {
 			DBInstanceIPArray dBInstanceIPArray = new DBInstanceIPArray();
-			dBInstanceIPArray.setDBInstanceIPArrayName(_ctx.stringValue("DescribeDBInstanceAccessWhiteListResponse.Items["+ i +"].DBInstanceIPArrayName"));
 			dBInstanceIPArray.setDBInstanceIPArrayAttribute(_ctx.stringValue("DescribeDBInstanceAccessWhiteListResponse.Items["+ i +"].DBInstanceIPArrayAttribute"));
+			dBInstanceIPArray.setDBInstanceIPArrayName(_ctx.stringValue("DescribeDBInstanceAccessWhiteListResponse.Items["+ i +"].DBInstanceIPArrayName"));
 			dBInstanceIPArray.setSecurityIps(_ctx.stringValue("DescribeDBInstanceAccessWhiteListResponse.Items["+ i +"].SecurityIps"));
 
 			items.add(dBInstanceIPArray);

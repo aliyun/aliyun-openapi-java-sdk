@@ -25,17 +25,17 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineNamespaceResponse> {
 	   
 
+	private Integer serviceCount;
+
+	private String id;
+
 	private String clusterId;
 
 	private String instanceId;
 
-	private Integer serviceCount;
-
 	private String name;
 
 	private String acceptLanguage;
-
-	private String id;
 
 	private String desc;
 	public UpdateEngineNamespaceRequest() {
@@ -45,6 +45,28 @@ public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineName
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getServiceCount() {
+		return this.serviceCount;
+	}
+
+	public void setServiceCount(Integer serviceCount) {
+		this.serviceCount = serviceCount;
+		if(serviceCount != null){
+			putQueryParameter("ServiceCount", serviceCount.toString());
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
 	}
 
 	public String getClusterId() {
@@ -69,17 +91,6 @@ public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineName
 		}
 	}
 
-	public Integer getServiceCount() {
-		return this.serviceCount;
-	}
-
-	public void setServiceCount(Integer serviceCount) {
-		this.serviceCount = serviceCount;
-		if(serviceCount != null){
-			putQueryParameter("ServiceCount", serviceCount.toString());
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -99,17 +110,6 @@ public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineName
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
 		}
 	}
 

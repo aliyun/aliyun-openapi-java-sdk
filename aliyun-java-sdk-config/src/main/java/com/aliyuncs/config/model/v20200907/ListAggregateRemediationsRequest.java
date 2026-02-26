@@ -29,7 +29,7 @@ public class ListAggregateRemediationsRequest extends RpcAcsRequest<ListAggregat
 
 	private String aggregatorId;
 	public ListAggregateRemediationsRequest() {
-		super("Config", "2020-09-07", "ListAggregateRemediations");
+		super("Config", "2020-09-07", "ListAggregateRemediations", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

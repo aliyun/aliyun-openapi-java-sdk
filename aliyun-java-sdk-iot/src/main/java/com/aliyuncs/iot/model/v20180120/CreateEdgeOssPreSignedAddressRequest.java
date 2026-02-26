@@ -37,7 +37,7 @@ public class CreateEdgeOssPreSignedAddressRequest extends RpcAcsRequest<CreateEd
 
 	private String instanceId;
 	public CreateEdgeOssPreSignedAddressRequest() {
-		super("Iot", "2018-01-20", "CreateEdgeOssPreSignedAddress");
+		super("Iot", "2018-01-20", "CreateEdgeOssPreSignedAddress", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

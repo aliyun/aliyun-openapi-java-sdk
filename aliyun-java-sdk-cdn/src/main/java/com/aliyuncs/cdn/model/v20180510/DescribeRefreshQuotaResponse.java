@@ -24,54 +24,58 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRefreshQuotaResponse extends AcsResponse {
 
-	private String requestId;
+	private String preloadRemain;
 
-	private String urlQuota;
+	private String blockRemain;
 
-	private String dirQuota;
+	private String regexRemain;
 
 	private String urlRemain;
 
 	private String dirRemain;
 
-	private String preloadQuota;
+	private String urlQuota;
 
 	private String blockQuota;
 
-	private String preloadRemain;
+	private String requestId;
 
-	private String blockRemain;
-
-	private String regexQuota;
-
-	private String regexRemain;
+	private String dirQuota;
 
 	private String preloadEdgeQuota;
 
 	private String preloadEdgeRemain;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String preloadQuota;
+
+	private String regexQuota;
+
+	private String ignoreParamsQuota;
+
+	private String ignoreParamsRemain;
+
+	public String getPreloadRemain() {
+		return this.preloadRemain;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPreloadRemain(String preloadRemain) {
+		this.preloadRemain = preloadRemain;
 	}
 
-	public String getUrlQuota() {
-		return this.urlQuota;
+	public String getBlockRemain() {
+		return this.blockRemain;
 	}
 
-	public void setUrlQuota(String urlQuota) {
-		this.urlQuota = urlQuota;
+	public void setBlockRemain(String blockRemain) {
+		this.blockRemain = blockRemain;
 	}
 
-	public String getDirQuota() {
-		return this.dirQuota;
+	public String getRegexRemain() {
+		return this.regexRemain;
 	}
 
-	public void setDirQuota(String dirQuota) {
-		this.dirQuota = dirQuota;
+	public void setRegexRemain(String regexRemain) {
+		this.regexRemain = regexRemain;
 	}
 
 	public String getUrlRemain() {
@@ -90,12 +94,12 @@ public class DescribeRefreshQuotaResponse extends AcsResponse {
 		this.dirRemain = dirRemain;
 	}
 
-	public String getPreloadQuota() {
-		return this.preloadQuota;
+	public String getUrlQuota() {
+		return this.urlQuota;
 	}
 
-	public void setPreloadQuota(String preloadQuota) {
-		this.preloadQuota = preloadQuota;
+	public void setUrlQuota(String urlQuota) {
+		this.urlQuota = urlQuota;
 	}
 
 	public String getBlockQuota() {
@@ -106,36 +110,20 @@ public class DescribeRefreshQuotaResponse extends AcsResponse {
 		this.blockQuota = blockQuota;
 	}
 
-	public String getPreloadRemain() {
-		return this.preloadRemain;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPreloadRemain(String preloadRemain) {
-		this.preloadRemain = preloadRemain;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public String getBlockRemain() {
-		return this.blockRemain;
+	public String getDirQuota() {
+		return this.dirQuota;
 	}
 
-	public void setBlockRemain(String blockRemain) {
-		this.blockRemain = blockRemain;
-	}
-
-	public String getRegexQuota() {
-		return this.regexQuota;
-	}
-
-	public void setRegexQuota(String regexQuota) {
-		this.regexQuota = regexQuota;
-	}
-
-	public String getRegexRemain() {
-		return this.regexRemain;
-	}
-
-	public void setRegexRemain(String regexRemain) {
-		this.regexRemain = regexRemain;
+	public void setDirQuota(String dirQuota) {
+		this.dirQuota = dirQuota;
 	}
 
 	public String getPreloadEdgeQuota() {
@@ -152,6 +140,38 @@ public class DescribeRefreshQuotaResponse extends AcsResponse {
 
 	public void setPreloadEdgeRemain(String preloadEdgeRemain) {
 		this.preloadEdgeRemain = preloadEdgeRemain;
+	}
+
+	public String getPreloadQuota() {
+		return this.preloadQuota;
+	}
+
+	public void setPreloadQuota(String preloadQuota) {
+		this.preloadQuota = preloadQuota;
+	}
+
+	public String getRegexQuota() {
+		return this.regexQuota;
+	}
+
+	public void setRegexQuota(String regexQuota) {
+		this.regexQuota = regexQuota;
+	}
+
+	public String getIgnoreParamsQuota() {
+		return this.ignoreParamsQuota;
+	}
+
+	public void setIgnoreParamsQuota(String ignoreParamsQuota) {
+		this.ignoreParamsQuota = ignoreParamsQuota;
+	}
+
+	public String getIgnoreParamsRemain() {
+		return this.ignoreParamsRemain;
+	}
+
+	public void setIgnoreParamsRemain(String ignoreParamsRemain) {
+		this.ignoreParamsRemain = ignoreParamsRemain;
 	}
 
 	@Override

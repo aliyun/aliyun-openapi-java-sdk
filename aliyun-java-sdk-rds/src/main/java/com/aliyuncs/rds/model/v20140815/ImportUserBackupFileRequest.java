@@ -27,7 +27,15 @@ public class ImportUserBackupFileRequest extends RpcAcsRequest<ImportUserBackupF
 
 	private Long resourceOwnerId;
 
+	private String sourceInfo;
+
 	private String engineVersion;
+
+	private String mode;
+
+	private String resourceGroupId;
+
+	private String dBInstanceId;
 
 	private Integer retention;
 
@@ -38,6 +46,10 @@ public class ImportUserBackupFileRequest extends RpcAcsRequest<ImportUserBackupF
 	private String bucketRegion;
 
 	private Long ownerId;
+
+	private String masterInfo;
+
+	private Boolean buildReplication;
 
 	private Integer restoreSize;
 
@@ -64,6 +76,17 @@ public class ImportUserBackupFileRequest extends RpcAcsRequest<ImportUserBackupF
 		}
 	}
 
+	public String getSourceInfo() {
+		return this.sourceInfo;
+	}
+
+	public void setSourceInfo(String sourceInfo) {
+		this.sourceInfo = sourceInfo;
+		if(sourceInfo != null){
+			putQueryParameter("SourceInfo", sourceInfo);
+		}
+	}
+
 	public String getEngineVersion() {
 		return this.engineVersion;
 	}
@@ -72,6 +95,39 @@ public class ImportUserBackupFileRequest extends RpcAcsRequest<ImportUserBackupF
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putQueryParameter("Mode", mode);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -127,6 +183,28 @@ public class ImportUserBackupFileRequest extends RpcAcsRequest<ImportUserBackupF
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMasterInfo() {
+		return this.masterInfo;
+	}
+
+	public void setMasterInfo(String masterInfo) {
+		this.masterInfo = masterInfo;
+		if(masterInfo != null){
+			putQueryParameter("MasterInfo", masterInfo);
+		}
+	}
+
+	public Boolean getBuildReplication() {
+		return this.buildReplication;
+	}
+
+	public void setBuildReplication(Boolean buildReplication) {
+		this.buildReplication = buildReplication;
+		if(buildReplication != null){
+			putQueryParameter("BuildReplication", buildReplication.toString());
 		}
 	}
 

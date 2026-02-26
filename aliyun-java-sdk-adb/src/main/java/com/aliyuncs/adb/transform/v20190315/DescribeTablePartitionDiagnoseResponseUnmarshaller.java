@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.adb.model.v20190315.DescribeTablePartitionDiagnoseResponse;
+import com.aliyuncs.adb.model.v20190315.DescribeTablePartitionDiagnoseResponse.DetectionItemsItem;
 import com.aliyuncs.adb.model.v20190315.DescribeTablePartitionDiagnoseResponse.TablePartitionDiagnose;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -41,10 +42,23 @@ public class DescribeTablePartitionDiagnoseResponseUnmarshaller {
 			tablePartitionDiagnose.setPartitionDetail(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].PartitionDetail"));
 			tablePartitionDiagnose.setSchemaName(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].SchemaName"));
 			tablePartitionDiagnose.setPartitionNumber(_ctx.integerValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].PartitionNumber"));
+			tablePartitionDiagnose.setSpaceRatio(_ctx.doubleValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].SpaceRatio"));
+			tablePartitionDiagnose.setTotalSize(_ctx.longValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].TotalSize"));
 
 			items.add(tablePartitionDiagnose);
 		}
 		describeTablePartitionDiagnoseResponse.setItems(items);
+
+		List<DetectionItemsItem> detectionItems = new ArrayList<DetectionItemsItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeTablePartitionDiagnoseResponse.DetectionItems.Length"); i++) {
+			DetectionItemsItem detectionItemsItem = new DetectionItemsItem();
+			detectionItemsItem.setName(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.DetectionItems["+ i +"].Name"));
+			detectionItemsItem.setMessage(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.DetectionItems["+ i +"].Message"));
+			detectionItemsItem.setStatus(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.DetectionItems["+ i +"].Status"));
+
+			detectionItems.add(detectionItemsItem);
+		}
+		describeTablePartitionDiagnoseResponse.setDetectionItems(detectionItems);
 	 
 	 	return describeTablePartitionDiagnoseResponse;
 	}

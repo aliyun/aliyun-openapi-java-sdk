@@ -25,8 +25,8 @@ public class UpdateExperimentBasicInfoResponseUnmarshaller {
 		updateExperimentBasicInfoResponse.setRequestId(_ctx.stringValue("UpdateExperimentBasicInfoResponse.RequestId"));
 		updateExperimentBasicInfoResponse.setMessage(_ctx.stringValue("UpdateExperimentBasicInfoResponse.Message"));
 		updateExperimentBasicInfoResponse.setHttpStatusCode(_ctx.integerValue("UpdateExperimentBasicInfoResponse.HttpStatusCode"));
-		updateExperimentBasicInfoResponse.setSuccess(_ctx.booleanValue("UpdateExperimentBasicInfoResponse.Success"));
 		updateExperimentBasicInfoResponse.setCode(_ctx.stringValue("UpdateExperimentBasicInfoResponse.Code"));
+		updateExperimentBasicInfoResponse.setSuccess(_ctx.booleanValue("UpdateExperimentBasicInfoResponse.Success"));
 	 
 	 	return updateExperimentBasicInfoResponse;
 	}

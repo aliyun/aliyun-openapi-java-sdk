@@ -25,23 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryServicePackAndPriceResponse extends AcsResponse {
 
+	private Integer originalAmount;
+
 	private String requestId;
 
-	private String regionId;
+	private Float discountPrice;
 
 	private Float tradePrice;
 
 	private Float originalPrice;
 
-	private Float discountPrice;
+	private Integer chargeAmount;
 
 	private String currency;
 
-	private Integer originalAmount;
-
-	private Integer chargeAmount;
+	private String regionId;
 
 	private List<ServicePackInfo> servicePack;
+
+	public Integer getOriginalAmount() {
+		return this.originalAmount;
+	}
+
+	public void setOriginalAmount(Integer originalAmount) {
+		this.originalAmount = originalAmount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,12 +59,12 @@ public class QueryServicePackAndPriceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
+	public Float getDiscountPrice() {
+		return this.discountPrice;
 	}
 
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
+	public void setDiscountPrice(Float discountPrice) {
+		this.discountPrice = discountPrice;
 	}
 
 	public Float getTradePrice() {
@@ -75,12 +83,12 @@ public class QueryServicePackAndPriceResponse extends AcsResponse {
 		this.originalPrice = originalPrice;
 	}
 
-	public Float getDiscountPrice() {
-		return this.discountPrice;
+	public Integer getChargeAmount() {
+		return this.chargeAmount;
 	}
 
-	public void setDiscountPrice(Float discountPrice) {
-		this.discountPrice = discountPrice;
+	public void setChargeAmount(Integer chargeAmount) {
+		this.chargeAmount = chargeAmount;
 	}
 
 	public String getCurrency() {
@@ -91,20 +99,12 @@ public class QueryServicePackAndPriceResponse extends AcsResponse {
 		this.currency = currency;
 	}
 
-	public Integer getOriginalAmount() {
-		return this.originalAmount;
+	public String getRegionId() {
+		return this.regionId;
 	}
 
-	public void setOriginalAmount(Integer originalAmount) {
-		this.originalAmount = originalAmount;
-	}
-
-	public Integer getChargeAmount() {
-		return this.chargeAmount;
-	}
-
-	public void setChargeAmount(Integer chargeAmount) {
-		this.chargeAmount = chargeAmount;
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	public List<ServicePackInfo> getServicePack() {
@@ -117,20 +117,20 @@ public class QueryServicePackAndPriceResponse extends AcsResponse {
 
 	public static class ServicePackInfo {
 
-		private String instanceName;
+		private Integer endTime;
 
 		private Integer capacity;
 
 		private Integer startTime;
 
-		private Integer endTime;
+		private String instanceName;
 
-		public String getInstanceName() {
-			return this.instanceName;
+		public Integer getEndTime() {
+			return this.endTime;
 		}
 
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setEndTime(Integer endTime) {
+			this.endTime = endTime;
 		}
 
 		public Integer getCapacity() {
@@ -149,12 +149,12 @@ public class QueryServicePackAndPriceResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public Integer getEndTime() {
-			return this.endTime;
+		public String getInstanceName() {
+			return this.instanceName;
 		}
 
-		public void setEndTime(Integer endTime) {
-			this.endTime = endTime;
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 	}
 

@@ -31,17 +31,19 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 
 	private String systemDBCharset;
 
-	private String binlogRole;
-
 	private String engineVersion;
 
 	private String resourceGroupId;
 
 	private String dBInstanceDescription;
 
+	private String backupSetRegion;
+
 	private String period;
 
 	private String backupSetId;
+
+	private String encryptionKey;
 
 	private Long ownerId;
 
@@ -53,7 +55,7 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 
 	private String privateIpAddress;
 
-	private String binlogName;
+	private String roleARN;
 
 	private String zoneId;
 
@@ -78,8 +80,6 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 	private String ownerAccount;
 
 	private String usedTime;
-
-	private String binlogPosition;
 
 	private String restoreType;
 
@@ -130,17 +130,6 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		}
 	}
 
-	public String getBinlogRole() {
-		return this.binlogRole;
-	}
-
-	public void setBinlogRole(String binlogRole) {
-		this.binlogRole = binlogRole;
-		if(binlogRole != null){
-			putQueryParameter("BinlogRole", binlogRole);
-		}
-	}
-
 	public String getEngineVersion() {
 		return this.engineVersion;
 	}
@@ -174,6 +163,17 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		}
 	}
 
+	public String getBackupSetRegion() {
+		return this.backupSetRegion;
+	}
+
+	public void setBackupSetRegion(String backupSetRegion) {
+		this.backupSetRegion = backupSetRegion;
+		if(backupSetRegion != null){
+			putQueryParameter("BackupSetRegion", backupSetRegion);
+		}
+	}
+
 	public String getPeriod() {
 		return this.period;
 	}
@@ -193,6 +193,17 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		this.backupSetId = backupSetId;
 		if(backupSetId != null){
 			putQueryParameter("BackupSetId", backupSetId);
+		}
+	}
+
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
 		}
 	}
 
@@ -251,14 +262,14 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		}
 	}
 
-	public String getBinlogName() {
-		return this.binlogName;
+	public String getRoleARN() {
+		return this.roleARN;
 	}
 
-	public void setBinlogName(String binlogName) {
-		this.binlogName = binlogName;
-		if(binlogName != null){
-			putQueryParameter("BinlogName", binlogName);
+	public void setRoleARN(String roleARN) {
+		this.roleARN = roleARN;
+		if(roleARN != null){
+			putQueryParameter("RoleARN", roleARN);
 		}
 	}
 
@@ -391,17 +402,6 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime);
-		}
-	}
-
-	public String getBinlogPosition() {
-		return this.binlogPosition;
-	}
-
-	public void setBinlogPosition(String binlogPosition) {
-		this.binlogPosition = binlogPosition;
-		if(binlogPosition != null){
-			putQueryParameter("BinlogPosition", binlogPosition);
 		}
 	}
 

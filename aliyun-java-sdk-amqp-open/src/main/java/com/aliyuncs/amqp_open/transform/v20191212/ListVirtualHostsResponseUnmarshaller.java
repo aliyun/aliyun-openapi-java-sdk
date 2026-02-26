@@ -30,8 +30,8 @@ public class ListVirtualHostsResponseUnmarshaller {
 		listVirtualHostsResponse.setRequestId(_ctx.stringValue("ListVirtualHostsResponse.RequestId"));
 
 		Data data = new Data();
-		data.setNextToken(_ctx.stringValue("ListVirtualHostsResponse.Data.NextToken"));
 		data.setMaxResults(_ctx.integerValue("ListVirtualHostsResponse.Data.MaxResults"));
+		data.setNextToken(_ctx.stringValue("ListVirtualHostsResponse.Data.NextToken"));
 
 		List<VhostVO> virtualHosts = new ArrayList<VhostVO>();
 		for (int i = 0; i < _ctx.lengthValue("ListVirtualHostsResponse.Data.VirtualHosts.Length"); i++) {

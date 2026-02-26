@@ -14,6 +14,7 @@
 
 package com.aliyuncs.vpc.model.v20160428;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vpc.transform.v20160428.DescribeIpv6GatewayAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -47,6 +48,14 @@ public class DescribeIpv6GatewayAttributeResponse extends AcsResponse {
 	private String businessStatus;
 
 	private String name;
+
+	private String resourceGroupId;
+
+	private String gatewayRouteTableId;
+
+	private Long ownerId;
+
+	private List<Tag> tags;
 
 	public String getVpcId() {
 		return this.vpcId;
@@ -142,6 +151,61 @@ public class DescribeIpv6GatewayAttributeResponse extends AcsResponse {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getGatewayRouteTableId() {
+		return this.gatewayRouteTableId;
+	}
+
+	public void setGatewayRouteTableId(String gatewayRouteTableId) {
+		this.gatewayRouteTableId = gatewayRouteTableId;
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 	}
 
 	@Override

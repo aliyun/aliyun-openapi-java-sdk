@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetLogicDatabaseRequest extends RpcAcsRequest<GetLogicDatabaseResponse> {
 	   
 
-	private String dbId;
-
 	private Long tid;
+
+	private String dbId;
 	public GetLogicDatabaseRequest() {
 		super("dms-enterprise", "2018-11-01", "GetLogicDatabase", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class GetLogicDatabaseRequest extends RpcAcsRequest<GetLogicDatabaseRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDbId() {
-		return this.dbId;
-	}
-
-	public void setDbId(String dbId) {
-		this.dbId = dbId;
-		if(dbId != null){
-			putQueryParameter("DbId", dbId);
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class GetLogicDatabaseRequest extends RpcAcsRequest<GetLogicDatabaseRespo
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getDbId() {
+		return this.dbId;
+	}
+
+	public void setDbId(String dbId) {
+		this.dbId = dbId;
+		if(dbId != null){
+			putQueryParameter("DbId", dbId);
 		}
 	}
 

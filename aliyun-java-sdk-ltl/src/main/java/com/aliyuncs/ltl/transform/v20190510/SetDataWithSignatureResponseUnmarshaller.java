@@ -23,10 +23,10 @@ public class SetDataWithSignatureResponseUnmarshaller {
 	public static SetDataWithSignatureResponse unmarshall(SetDataWithSignatureResponse setDataWithSignatureResponse, UnmarshallerContext _ctx) {
 		
 		setDataWithSignatureResponse.setRequestId(_ctx.stringValue("SetDataWithSignatureResponse.RequestId"));
-		setDataWithSignatureResponse.setData(_ctx.stringValue("SetDataWithSignatureResponse.Data"));
 		setDataWithSignatureResponse.setCode(_ctx.integerValue("SetDataWithSignatureResponse.Code"));
-		setDataWithSignatureResponse.setSuccess(_ctx.booleanValue("SetDataWithSignatureResponse.Success"));
 		setDataWithSignatureResponse.setMessage(_ctx.stringValue("SetDataWithSignatureResponse.Message"));
+		setDataWithSignatureResponse.setData(_ctx.stringValue("SetDataWithSignatureResponse.Data"));
+		setDataWithSignatureResponse.setSuccess(_ctx.booleanValue("SetDataWithSignatureResponse.Success"));
 	 
 	 	return setDataWithSignatureResponse;
 	}

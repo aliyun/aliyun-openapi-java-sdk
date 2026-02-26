@@ -5,5 +5,5 @@ import com.aliyuncs.exceptions.ClientException;
 
 public interface Unmarshaller {
 
-    <T extends AcsResponse> T unmarshal(Class<T> clasz, String content) throws ClientException;
+    <T extends AcsResponse> T unmarshal(Class<T> clazz, String content) throws ClientException;
 }

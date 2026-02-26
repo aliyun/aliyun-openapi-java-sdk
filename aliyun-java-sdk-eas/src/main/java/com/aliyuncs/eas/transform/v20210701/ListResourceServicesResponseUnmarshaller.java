@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.eas.model.v20210701.ListResourceServicesResponse;
 import com.aliyuncs.eas.model.v20210701.ListResourceServicesResponse.ServicesItem;
+import com.aliyuncs.eas.model.v20210701.ListResourceServicesResponse.ServicesItem.LabelsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -62,9 +63,25 @@ public class ListResourceServicesResponseUnmarshaller {
 			servicesItem.setUpdateTime(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].UpdateTime"));
 			servicesItem.setWeight(_ctx.integerValue("ListResourceServicesResponse.Services["+ i +"].Weight"));
 			servicesItem.setServiceId(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].ServiceId"));
+			servicesItem.setServiceUid(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].ServiceUid"));
 			servicesItem.setAccessToken(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].AccessToken"));
 			servicesItem.setSource(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].Source"));
 			servicesItem.setExtraData(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].ExtraData"));
+			servicesItem.setRole(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].Role"));
+			servicesItem.setRoleAttrs(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].RoleAttrs"));
+			servicesItem.setSafetyLock(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].SafetyLock"));
+			servicesItem.setSecondaryInternetEndpoint(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].SecondaryInternetEndpoint"));
+			servicesItem.setSecondaryIntranetEndpoint(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].SecondaryIntranetEndpoint"));
+
+			List<LabelsItem> labels = new ArrayList<LabelsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListResourceServicesResponse.Services["+ i +"].Labels.Length"); j++) {
+				LabelsItem labelsItem = new LabelsItem();
+				labelsItem.setLabelKey(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].Labels["+ j +"].LabelKey"));
+				labelsItem.setLabelValue(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].Labels["+ j +"].LabelValue"));
+
+				labels.add(labelsItem);
+			}
+			servicesItem.setLabels(labels);
 
 			services.add(servicesItem);
 		}

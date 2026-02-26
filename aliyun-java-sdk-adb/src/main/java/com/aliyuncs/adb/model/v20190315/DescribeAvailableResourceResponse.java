@@ -59,7 +59,13 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		private String zoneId;
 
+		private String zoneName;
+
 		private List<SupportedModeItem> supportedMode;
+
+		private List<String> supportedComputeResource;
+
+		private List<String> supportedStorageResource;
 
 		public String getZoneId() {
 			return this.zoneId;
@@ -69,12 +75,36 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
+		public String getZoneName() {
+			return this.zoneName;
+		}
+
+		public void setZoneName(String zoneName) {
+			this.zoneName = zoneName;
+		}
+
 		public List<SupportedModeItem> getSupportedMode() {
 			return this.supportedMode;
 		}
 
 		public void setSupportedMode(List<SupportedModeItem> supportedMode) {
 			this.supportedMode = supportedMode;
+		}
+
+		public List<String> getSupportedComputeResource() {
+			return this.supportedComputeResource;
+		}
+
+		public void setSupportedComputeResource(List<String> supportedComputeResource) {
+			this.supportedComputeResource = supportedComputeResource;
+		}
+
+		public List<String> getSupportedStorageResource() {
+			return this.supportedStorageResource;
+		}
+
+		public void setSupportedStorageResource(List<String> supportedStorageResource) {
+			this.supportedStorageResource = supportedStorageResource;
 		}
 
 		public static class SupportedModeItem {
@@ -135,9 +165,9 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 					private String storageType;
 
-					private List<String> supportedComputeResource;
+					private List<String> supportedComputeResource1;
 
-					private List<String> supportedStorageResource;
+					private List<String> supportedStorageResource2;
 
 					private SupportedElasticIOResource supportedElasticIOResource;
 
@@ -149,20 +179,20 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 						this.storageType = storageType;
 					}
 
-					public List<String> getSupportedComputeResource() {
-						return this.supportedComputeResource;
+					public List<String> getSupportedComputeResource1() {
+						return this.supportedComputeResource1;
 					}
 
-					public void setSupportedComputeResource(List<String> supportedComputeResource) {
-						this.supportedComputeResource = supportedComputeResource;
+					public void setSupportedComputeResource1(List<String> supportedComputeResource1) {
+						this.supportedComputeResource1 = supportedComputeResource1;
 					}
 
-					public List<String> getSupportedStorageResource() {
-						return this.supportedStorageResource;
+					public List<String> getSupportedStorageResource2() {
+						return this.supportedStorageResource2;
 					}
 
-					public void setSupportedStorageResource(List<String> supportedStorageResource) {
-						this.supportedStorageResource = supportedStorageResource;
+					public void setSupportedStorageResource2(List<String> supportedStorageResource2) {
+						this.supportedStorageResource2 = supportedStorageResource2;
 					}
 
 					public SupportedElasticIOResource getSupportedElasticIOResource() {
@@ -307,17 +337,17 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 					public static class SupportedExecutor {
 
-						private NodeCount1 nodeCount1;
+						private NodeCount3 nodeCount3;
 
-						public NodeCount1 getNodeCount1() {
-							return this.nodeCount1;
+						public NodeCount3 getNodeCount3() {
+							return this.nodeCount3;
 						}
 
-						public void setNodeCount1(NodeCount1 nodeCount1) {
-							this.nodeCount1 = nodeCount1;
+						public void setNodeCount3(NodeCount3 nodeCount3) {
+							this.nodeCount3 = nodeCount3;
 						}
 
-						public static class NodeCount1 {
+						public static class NodeCount3 {
 
 							private String step;
 

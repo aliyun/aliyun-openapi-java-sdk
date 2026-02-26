@@ -30,11 +30,17 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 
 	private List<String> endUserIdss;
 
+	private List<String> imageIds;
+
+	private List<String> bundleIds;
+
 	private String desktopGroupName;
 
 	private String desktopGroupId;
 
 	private String nextToken;
+
+	private List<Tag> tags;
 
 	private Integer period;
 
@@ -46,11 +52,13 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 
 	private Integer maxResults;
 
+	private String protocolType;
+
 	private String policyGroupId;
 
 	private Integer status;
 	public DescribeDesktopGroupsRequest() {
-		super("ecd", "2020-09-30", "DescribeDesktopGroups");
+		super("ecd", "2020-09-30", "DescribeDesktopGroups", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -78,6 +86,32 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 		if (endUserIdss != null) {
 			for (int i = 0; i < endUserIdss.size(); i++) {
 				putQueryParameter("EndUserIds." + (i + 1) , endUserIdss.get(i));
+			}
+		}	
+	}
+
+	public List<String> getImageIds() {
+		return this.imageIds;
+	}
+
+	public void setImageIds(List<String> imageIds) {
+		this.imageIds = imageIds;	
+		if (imageIds != null) {
+			for (int i = 0; i < imageIds.size(); i++) {
+				putQueryParameter("ImageId." + (i + 1) , imageIds.get(i));
+			}
+		}	
+	}
+
+	public List<String> getBundleIds() {
+		return this.bundleIds;
+	}
+
+	public void setBundleIds(List<String> bundleIds) {
+		this.bundleIds = bundleIds;	
+		if (bundleIds != null) {
+			for (int i = 0; i < bundleIds.size(); i++) {
+				putQueryParameter("BundleId." + (i + 1) , bundleIds.get(i));
 			}
 		}	
 	}
@@ -113,6 +147,20 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public Integer getPeriod() {
@@ -172,6 +220,17 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 		}
 	}
 
+	public String getProtocolType() {
+		return this.protocolType;
+	}
+
+	public void setProtocolType(String protocolType) {
+		this.protocolType = protocolType;
+		if(protocolType != null){
+			putQueryParameter("ProtocolType", protocolType);
+		}
+	}
+
 	public String getPolicyGroupId() {
 		return this.policyGroupId;
 	}
@@ -191,6 +250,29 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -24,15 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UninstallPromClusterResponse extends AcsResponse {
 
-	private Boolean data;
+	private String data;
 
 	private String requestId;
 
-	public Boolean getData() {
+	private String message;
+
+	private Integer code;
+
+	public String getData() {
 		return this.data;
 	}
 
-	public void setData(Boolean data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 
@@ -42,6 +46,22 @@ public class UninstallPromClusterResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	@Override

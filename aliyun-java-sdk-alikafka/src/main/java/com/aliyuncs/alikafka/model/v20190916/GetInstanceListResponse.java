@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetInstanceListResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<InstanceVO> instanceList;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GetInstanceListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<InstanceVO> getInstanceList() {
 		return this.instanceList;
 	}
@@ -77,75 +77,107 @@ public class GetInstanceListResponse extends AcsResponse {
 
 	public static class InstanceVO {
 
-		private String instanceId;
-
-		private String regionId;
-
-		private Integer serviceStatus;
-
 		private String vpcId;
 
-		private String vSwitchId;
-
-		private String endPoint;
-
-		private Long createTime;
-
-		private Long expiredTime;
+		private String specType;
 
 		private Integer deployType;
 
-		private String sslEndPoint;
-
-		private String name;
-
-		private Integer ioMax;
-
-		private Integer eipMax;
-
-		private Integer diskType;
+		private Long createTime;
 
 		private Integer diskSize;
 
+		private Integer diskType;
+
+		private String securityGroup;
+
+		private String sslEndPoint;
+
+		private String instanceId;
+
+		private String allConfig;
+
+		private Integer serviceStatus;
+
+		private Integer eipMax;
+
+		private String regionId;
+
 		private Integer msgRetain;
+
+		private String vSwitchId;
+
+		private Long expiredTime;
 
 		private Integer topicNumLimit;
 
 		private String zoneId;
 
+		private Integer ioMaxRead;
+
+		private Integer ioMaxWrite;
+
+		private Integer ioMax;
+
 		private Integer paidType;
 
-		private String specType;
+		private String name;
 
-		private String securityGroup;
+		private String endPoint;
 
-		private List<UpgradeServiceDetailInfoVO> upgradeServiceDetailInfo;
+		private String domainEndpoint;
+
+		private String vpcSaslEndPoint;
+
+		private String saslEndPoint;
+
+		private String sslDomainEndpoint;
+
+		private String saslDomainEndpoint;
+
+		private String vpcSaslDomainEndpoint;
+
+		private String resourceGroupId;
+
+		private Integer usedTopicCount;
+
+		private Integer usedGroupCount;
+
+		private Integer usedPartitionCount;
+
+		private String kmsKeyId;
+
+		private String standardZoneId;
+
+		private String ioMaxSpec;
+
+		private Integer reservedPublishCapacity;
+
+		private Integer reservedSubscribeCapacity;
+
+		private Integer viewInstanceStatusCode;
+
+		private String series;
+
+		private Boolean autoCreateGroupEnable;
+
+		private Boolean autoCreateTopicEnable;
+
+		private Integer defaultPartitionNum;
+
+		private Integer brokerCount;
+
+		private Integer recommendedPartitionCount;
+
+		private String backupZoneId;
 
 		private List<TagVO> tags;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private List<String> vSwitchIds;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private UpgradeServiceDetailInfo upgradeServiceDetailInfo;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public Integer getServiceStatus() {
-			return this.serviceStatus;
-		}
-
-		public void setServiceStatus(Integer serviceStatus) {
-			this.serviceStatus = serviceStatus;
-		}
+		private ConfluentConfig confluentConfig;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -155,36 +187,12 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public String getSpecType() {
+			return this.specType;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getEndPoint() {
-			return this.endPoint;
-		}
-
-		public void setEndPoint(String endPoint) {
-			this.endPoint = endPoint;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(Long expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setSpecType(String specType) {
+			this.specType = specType;
 		}
 
 		public Integer getDeployType() {
@@ -195,44 +203,12 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.deployType = deployType;
 		}
 
-		public String getSslEndPoint() {
-			return this.sslEndPoint;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setSslEndPoint(String sslEndPoint) {
-			this.sslEndPoint = sslEndPoint;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Integer getIoMax() {
-			return this.ioMax;
-		}
-
-		public void setIoMax(Integer ioMax) {
-			this.ioMax = ioMax;
-		}
-
-		public Integer getEipMax() {
-			return this.eipMax;
-		}
-
-		public void setEipMax(Integer eipMax) {
-			this.eipMax = eipMax;
-		}
-
-		public Integer getDiskType() {
-			return this.diskType;
-		}
-
-		public void setDiskType(Integer diskType) {
-			this.diskType = diskType;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public Integer getDiskSize() {
@@ -243,12 +219,92 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.diskSize = diskSize;
 		}
 
+		public Integer getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(Integer diskType) {
+			this.diskType = diskType;
+		}
+
+		public String getSecurityGroup() {
+			return this.securityGroup;
+		}
+
+		public void setSecurityGroup(String securityGroup) {
+			this.securityGroup = securityGroup;
+		}
+
+		public String getSslEndPoint() {
+			return this.sslEndPoint;
+		}
+
+		public void setSslEndPoint(String sslEndPoint) {
+			this.sslEndPoint = sslEndPoint;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getAllConfig() {
+			return this.allConfig;
+		}
+
+		public void setAllConfig(String allConfig) {
+			this.allConfig = allConfig;
+		}
+
+		public Integer getServiceStatus() {
+			return this.serviceStatus;
+		}
+
+		public void setServiceStatus(Integer serviceStatus) {
+			this.serviceStatus = serviceStatus;
+		}
+
+		public Integer getEipMax() {
+			return this.eipMax;
+		}
+
+		public void setEipMax(Integer eipMax) {
+			this.eipMax = eipMax;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public Integer getMsgRetain() {
 			return this.msgRetain;
 		}
 
 		public void setMsgRetain(Integer msgRetain) {
 			this.msgRetain = msgRetain;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public Long getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(Long expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public Integer getTopicNumLimit() {
@@ -267,6 +323,30 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
+		public Integer getIoMaxRead() {
+			return this.ioMaxRead;
+		}
+
+		public void setIoMaxRead(Integer ioMaxRead) {
+			this.ioMaxRead = ioMaxRead;
+		}
+
+		public Integer getIoMaxWrite() {
+			return this.ioMaxWrite;
+		}
+
+		public void setIoMaxWrite(Integer ioMaxWrite) {
+			this.ioMaxWrite = ioMaxWrite;
+		}
+
+		public Integer getIoMax() {
+			return this.ioMax;
+		}
+
+		public void setIoMax(Integer ioMax) {
+			this.ioMax = ioMax;
+		}
+
 		public Integer getPaidType() {
 			return this.paidType;
 		}
@@ -275,28 +355,204 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.paidType = paidType;
 		}
 
-		public String getSpecType() {
-			return this.specType;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setSpecType(String specType) {
-			this.specType = specType;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getSecurityGroup() {
-			return this.securityGroup;
+		public String getEndPoint() {
+			return this.endPoint;
 		}
 
-		public void setSecurityGroup(String securityGroup) {
-			this.securityGroup = securityGroup;
+		public void setEndPoint(String endPoint) {
+			this.endPoint = endPoint;
 		}
 
-		public List<UpgradeServiceDetailInfoVO> getUpgradeServiceDetailInfo() {
-			return this.upgradeServiceDetailInfo;
+		public String getDomainEndpoint() {
+			return this.domainEndpoint;
 		}
 
-		public void setUpgradeServiceDetailInfo(List<UpgradeServiceDetailInfoVO> upgradeServiceDetailInfo) {
-			this.upgradeServiceDetailInfo = upgradeServiceDetailInfo;
+		public void setDomainEndpoint(String domainEndpoint) {
+			this.domainEndpoint = domainEndpoint;
+		}
+
+		public String getVpcSaslEndPoint() {
+			return this.vpcSaslEndPoint;
+		}
+
+		public void setVpcSaslEndPoint(String vpcSaslEndPoint) {
+			this.vpcSaslEndPoint = vpcSaslEndPoint;
+		}
+
+		public String getSaslEndPoint() {
+			return this.saslEndPoint;
+		}
+
+		public void setSaslEndPoint(String saslEndPoint) {
+			this.saslEndPoint = saslEndPoint;
+		}
+
+		public String getSslDomainEndpoint() {
+			return this.sslDomainEndpoint;
+		}
+
+		public void setSslDomainEndpoint(String sslDomainEndpoint) {
+			this.sslDomainEndpoint = sslDomainEndpoint;
+		}
+
+		public String getSaslDomainEndpoint() {
+			return this.saslDomainEndpoint;
+		}
+
+		public void setSaslDomainEndpoint(String saslDomainEndpoint) {
+			this.saslDomainEndpoint = saslDomainEndpoint;
+		}
+
+		public String getVpcSaslDomainEndpoint() {
+			return this.vpcSaslDomainEndpoint;
+		}
+
+		public void setVpcSaslDomainEndpoint(String vpcSaslDomainEndpoint) {
+			this.vpcSaslDomainEndpoint = vpcSaslDomainEndpoint;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Integer getUsedTopicCount() {
+			return this.usedTopicCount;
+		}
+
+		public void setUsedTopicCount(Integer usedTopicCount) {
+			this.usedTopicCount = usedTopicCount;
+		}
+
+		public Integer getUsedGroupCount() {
+			return this.usedGroupCount;
+		}
+
+		public void setUsedGroupCount(Integer usedGroupCount) {
+			this.usedGroupCount = usedGroupCount;
+		}
+
+		public Integer getUsedPartitionCount() {
+			return this.usedPartitionCount;
+		}
+
+		public void setUsedPartitionCount(Integer usedPartitionCount) {
+			this.usedPartitionCount = usedPartitionCount;
+		}
+
+		public String getKmsKeyId() {
+			return this.kmsKeyId;
+		}
+
+		public void setKmsKeyId(String kmsKeyId) {
+			this.kmsKeyId = kmsKeyId;
+		}
+
+		public String getStandardZoneId() {
+			return this.standardZoneId;
+		}
+
+		public void setStandardZoneId(String standardZoneId) {
+			this.standardZoneId = standardZoneId;
+		}
+
+		public String getIoMaxSpec() {
+			return this.ioMaxSpec;
+		}
+
+		public void setIoMaxSpec(String ioMaxSpec) {
+			this.ioMaxSpec = ioMaxSpec;
+		}
+
+		public Integer getReservedPublishCapacity() {
+			return this.reservedPublishCapacity;
+		}
+
+		public void setReservedPublishCapacity(Integer reservedPublishCapacity) {
+			this.reservedPublishCapacity = reservedPublishCapacity;
+		}
+
+		public Integer getReservedSubscribeCapacity() {
+			return this.reservedSubscribeCapacity;
+		}
+
+		public void setReservedSubscribeCapacity(Integer reservedSubscribeCapacity) {
+			this.reservedSubscribeCapacity = reservedSubscribeCapacity;
+		}
+
+		public Integer getViewInstanceStatusCode() {
+			return this.viewInstanceStatusCode;
+		}
+
+		public void setViewInstanceStatusCode(Integer viewInstanceStatusCode) {
+			this.viewInstanceStatusCode = viewInstanceStatusCode;
+		}
+
+		public String getSeries() {
+			return this.series;
+		}
+
+		public void setSeries(String series) {
+			this.series = series;
+		}
+
+		public Boolean getAutoCreateGroupEnable() {
+			return this.autoCreateGroupEnable;
+		}
+
+		public void setAutoCreateGroupEnable(Boolean autoCreateGroupEnable) {
+			this.autoCreateGroupEnable = autoCreateGroupEnable;
+		}
+
+		public Boolean getAutoCreateTopicEnable() {
+			return this.autoCreateTopicEnable;
+		}
+
+		public void setAutoCreateTopicEnable(Boolean autoCreateTopicEnable) {
+			this.autoCreateTopicEnable = autoCreateTopicEnable;
+		}
+
+		public Integer getDefaultPartitionNum() {
+			return this.defaultPartitionNum;
+		}
+
+		public void setDefaultPartitionNum(Integer defaultPartitionNum) {
+			this.defaultPartitionNum = defaultPartitionNum;
+		}
+
+		public Integer getBrokerCount() {
+			return this.brokerCount;
+		}
+
+		public void setBrokerCount(Integer brokerCount) {
+			this.brokerCount = brokerCount;
+		}
+
+		public Integer getRecommendedPartitionCount() {
+			return this.recommendedPartitionCount;
+		}
+
+		public void setRecommendedPartitionCount(Integer recommendedPartitionCount) {
+			this.recommendedPartitionCount = recommendedPartitionCount;
+		}
+
+		public String getBackupZoneId() {
+			return this.backupZoneId;
+		}
+
+		public void setBackupZoneId(String backupZoneId) {
+			this.backupZoneId = backupZoneId;
 		}
 
 		public List<TagVO> getTags() {
@@ -307,17 +563,28 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
-		public static class UpgradeServiceDetailInfoVO {
+		public List<String> getVSwitchIds() {
+			return this.vSwitchIds;
+		}
 
-			private String current2OpenSourceVersion;
+		public void setVSwitchIds(List<String> vSwitchIds) {
+			this.vSwitchIds = vSwitchIds;
+		}
 
-			public String getCurrent2OpenSourceVersion() {
-				return this.current2OpenSourceVersion;
-			}
+		public UpgradeServiceDetailInfo getUpgradeServiceDetailInfo() {
+			return this.upgradeServiceDetailInfo;
+		}
 
-			public void setCurrent2OpenSourceVersion(String current2OpenSourceVersion) {
-				this.current2OpenSourceVersion = current2OpenSourceVersion;
-			}
+		public void setUpgradeServiceDetailInfo(UpgradeServiceDetailInfo upgradeServiceDetailInfo) {
+			this.upgradeServiceDetailInfo = upgradeServiceDetailInfo;
+		}
+
+		public ConfluentConfig getConfluentConfig() {
+			return this.confluentConfig;
+		}
+
+		public void setConfluentConfig(ConfluentConfig confluentConfig) {
+			this.confluentConfig = confluentConfig;
 		}
 
 		public static class TagVO {
@@ -340,6 +607,202 @@ public class GetInstanceListResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class UpgradeServiceDetailInfo {
+
+			private String current2OpenSourceVersion;
+
+			public String getCurrent2OpenSourceVersion() {
+				return this.current2OpenSourceVersion;
+			}
+
+			public void setCurrent2OpenSourceVersion(String current2OpenSourceVersion) {
+				this.current2OpenSourceVersion = current2OpenSourceVersion;
+			}
+		}
+
+		public static class ConfluentConfig {
+
+			private Integer kafkaCU;
+
+			private Integer kafkaStorage;
+
+			private Integer kafkaReplica;
+
+			private Integer zooKeeperCU;
+
+			private Integer zooKeeperStorage;
+
+			private Integer zooKeeperReplica;
+
+			private Integer controlCenterCU;
+
+			private Integer controlCenterStorage;
+
+			private Integer controlCenterReplica;
+
+			private Integer schemaRegistryCU;
+
+			private Integer schemaRegistryReplica;
+
+			private Integer connectCU;
+
+			private Integer connectReplica;
+
+			private Integer ksqlCU;
+
+			private Integer ksqlStorage;
+
+			private Integer ksqlReplica;
+
+			private Integer kafkaRestProxyCU;
+
+			private Integer kafkaRestProxyReplica;
+
+			public Integer getKafkaCU() {
+				return this.kafkaCU;
+			}
+
+			public void setKafkaCU(Integer kafkaCU) {
+				this.kafkaCU = kafkaCU;
+			}
+
+			public Integer getKafkaStorage() {
+				return this.kafkaStorage;
+			}
+
+			public void setKafkaStorage(Integer kafkaStorage) {
+				this.kafkaStorage = kafkaStorage;
+			}
+
+			public Integer getKafkaReplica() {
+				return this.kafkaReplica;
+			}
+
+			public void setKafkaReplica(Integer kafkaReplica) {
+				this.kafkaReplica = kafkaReplica;
+			}
+
+			public Integer getZooKeeperCU() {
+				return this.zooKeeperCU;
+			}
+
+			public void setZooKeeperCU(Integer zooKeeperCU) {
+				this.zooKeeperCU = zooKeeperCU;
+			}
+
+			public Integer getZooKeeperStorage() {
+				return this.zooKeeperStorage;
+			}
+
+			public void setZooKeeperStorage(Integer zooKeeperStorage) {
+				this.zooKeeperStorage = zooKeeperStorage;
+			}
+
+			public Integer getZooKeeperReplica() {
+				return this.zooKeeperReplica;
+			}
+
+			public void setZooKeeperReplica(Integer zooKeeperReplica) {
+				this.zooKeeperReplica = zooKeeperReplica;
+			}
+
+			public Integer getControlCenterCU() {
+				return this.controlCenterCU;
+			}
+
+			public void setControlCenterCU(Integer controlCenterCU) {
+				this.controlCenterCU = controlCenterCU;
+			}
+
+			public Integer getControlCenterStorage() {
+				return this.controlCenterStorage;
+			}
+
+			public void setControlCenterStorage(Integer controlCenterStorage) {
+				this.controlCenterStorage = controlCenterStorage;
+			}
+
+			public Integer getControlCenterReplica() {
+				return this.controlCenterReplica;
+			}
+
+			public void setControlCenterReplica(Integer controlCenterReplica) {
+				this.controlCenterReplica = controlCenterReplica;
+			}
+
+			public Integer getSchemaRegistryCU() {
+				return this.schemaRegistryCU;
+			}
+
+			public void setSchemaRegistryCU(Integer schemaRegistryCU) {
+				this.schemaRegistryCU = schemaRegistryCU;
+			}
+
+			public Integer getSchemaRegistryReplica() {
+				return this.schemaRegistryReplica;
+			}
+
+			public void setSchemaRegistryReplica(Integer schemaRegistryReplica) {
+				this.schemaRegistryReplica = schemaRegistryReplica;
+			}
+
+			public Integer getConnectCU() {
+				return this.connectCU;
+			}
+
+			public void setConnectCU(Integer connectCU) {
+				this.connectCU = connectCU;
+			}
+
+			public Integer getConnectReplica() {
+				return this.connectReplica;
+			}
+
+			public void setConnectReplica(Integer connectReplica) {
+				this.connectReplica = connectReplica;
+			}
+
+			public Integer getKsqlCU() {
+				return this.ksqlCU;
+			}
+
+			public void setKsqlCU(Integer ksqlCU) {
+				this.ksqlCU = ksqlCU;
+			}
+
+			public Integer getKsqlStorage() {
+				return this.ksqlStorage;
+			}
+
+			public void setKsqlStorage(Integer ksqlStorage) {
+				this.ksqlStorage = ksqlStorage;
+			}
+
+			public Integer getKsqlReplica() {
+				return this.ksqlReplica;
+			}
+
+			public void setKsqlReplica(Integer ksqlReplica) {
+				this.ksqlReplica = ksqlReplica;
+			}
+
+			public Integer getKafkaRestProxyCU() {
+				return this.kafkaRestProxyCU;
+			}
+
+			public void setKafkaRestProxyCU(Integer kafkaRestProxyCU) {
+				this.kafkaRestProxyCU = kafkaRestProxyCU;
+			}
+
+			public Integer getKafkaRestProxyReplica() {
+				return this.kafkaRestProxyReplica;
+			}
+
+			public void setKafkaRestProxyReplica(Integer kafkaRestProxyReplica) {
+				this.kafkaRestProxyReplica = kafkaRestProxyReplica;
 			}
 		}
 	}

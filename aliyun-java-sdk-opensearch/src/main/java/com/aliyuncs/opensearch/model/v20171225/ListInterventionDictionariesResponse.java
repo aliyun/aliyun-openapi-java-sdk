@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInterventionDictionariesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<ResultItem> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class ListInterventionDictionariesResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ResultItem> getResult() {
@@ -57,32 +57,24 @@ public class ListInterventionDictionariesResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private Integer id;
-
-		private String name;
+		private Integer created;
 
 		private String type;
 
 		private String analyzer;
 
-		private Integer created;
+		private String name;
 
 		private Integer updated;
 
-		public Integer getId() {
-			return this.id;
+		private Integer id;
+
+		public Integer getCreated() {
+			return this.created;
 		}
 
-		public void setId(Integer id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setCreated(Integer created) {
+			this.created = created;
 		}
 
 		public String getType() {
@@ -101,12 +93,12 @@ public class ListInterventionDictionariesResponse extends AcsResponse {
 			this.analyzer = analyzer;
 		}
 
-		public Integer getCreated() {
-			return this.created;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setCreated(Integer created) {
-			this.created = created;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Integer getUpdated() {
@@ -115,6 +107,14 @@ public class ListInterventionDictionariesResponse extends AcsResponse {
 
 		public void setUpdated(Integer updated) {
 			this.updated = updated;
+		}
+
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
 		}
 	}
 

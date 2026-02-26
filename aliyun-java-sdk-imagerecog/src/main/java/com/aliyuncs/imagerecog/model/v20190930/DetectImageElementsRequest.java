@@ -27,7 +27,7 @@ public class DetectImageElementsRequest extends RpcAcsRequest<DetectImageElement
 
 	private String url;
 	public DetectImageElementsRequest() {
-		super("imagerecog", "2019-09-30", "DetectImageElements", "imagerecog");
+		super("imagerecog", "2019-09-30", "DetectImageElements");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

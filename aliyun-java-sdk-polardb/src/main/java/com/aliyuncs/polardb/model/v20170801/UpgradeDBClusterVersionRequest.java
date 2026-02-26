@@ -43,11 +43,15 @@ public class UpgradeDBClusterVersionRequest extends RpcAcsRequest<UpgradeDBClust
 
 	private String plannedStartTime;
 
+	private String targetDBRevisionVersionCode;
+
+	private String targetProxyRevisionVersionCode;
+
 	private String upgradePolicy;
 
 	private Boolean fromTimeService;
 	public UpgradeDBClusterVersionRequest() {
-		super("polardb", "2017-08-01", "UpgradeDBClusterVersion");
+		super("polardb", "2017-08-01", "UpgradeDBClusterVersion", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -151,6 +155,28 @@ public class UpgradeDBClusterVersionRequest extends RpcAcsRequest<UpgradeDBClust
 		this.plannedStartTime = plannedStartTime;
 		if(plannedStartTime != null){
 			putQueryParameter("PlannedStartTime", plannedStartTime);
+		}
+	}
+
+	public String getTargetDBRevisionVersionCode() {
+		return this.targetDBRevisionVersionCode;
+	}
+
+	public void setTargetDBRevisionVersionCode(String targetDBRevisionVersionCode) {
+		this.targetDBRevisionVersionCode = targetDBRevisionVersionCode;
+		if(targetDBRevisionVersionCode != null){
+			putQueryParameter("TargetDBRevisionVersionCode", targetDBRevisionVersionCode);
+		}
+	}
+
+	public String getTargetProxyRevisionVersionCode() {
+		return this.targetProxyRevisionVersionCode;
+	}
+
+	public void setTargetProxyRevisionVersionCode(String targetProxyRevisionVersionCode) {
+		this.targetProxyRevisionVersionCode = targetProxyRevisionVersionCode;
+		if(targetProxyRevisionVersionCode != null){
+			putQueryParameter("TargetProxyRevisionVersionCode", targetProxyRevisionVersionCode);
 		}
 	}
 

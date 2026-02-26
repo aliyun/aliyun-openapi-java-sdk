@@ -48,19 +48,11 @@ public class ListExchangesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String nextToken;
-
 		private Integer maxResults;
 
+		private String nextToken;
+
 		private List<ExchangeVO> exchanges;
-
-		public String getNextToken() {
-			return this.nextToken;
-		}
-
-		public void setNextToken(String nextToken) {
-			this.nextToken = nextToken;
-		}
 
 		public Integer getMaxResults() {
 			return this.maxResults;
@@ -68,6 +60,14 @@ public class ListExchangesResponse extends AcsResponse {
 
 		public void setMaxResults(Integer maxResults) {
 			this.maxResults = maxResults;
+		}
+
+		public String getNextToken() {
+			return this.nextToken;
+		}
+
+		public void setNextToken(String nextToken) {
+			this.nextToken = nextToken;
 		}
 
 		public List<ExchangeVO> getExchanges() {
@@ -80,41 +80,17 @@ public class ListExchangesResponse extends AcsResponse {
 
 		public static class ExchangeVO {
 
-			private String name;
-
-			private String vHostName;
-
-			private String exchangeType;
-
 			private Boolean autoDeleteState;
-
-			private Map<Object,Object> attributes;
 
 			private Long createTime;
 
-			public String getName() {
-				return this.name;
-			}
+			private Map<Object,Object> attributes;
 
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String vHostName;
 
-			public String getVHostName() {
-				return this.vHostName;
-			}
+			private String name;
 
-			public void setVHostName(String vHostName) {
-				this.vHostName = vHostName;
-			}
-
-			public String getExchangeType() {
-				return this.exchangeType;
-			}
-
-			public void setExchangeType(String exchangeType) {
-				this.exchangeType = exchangeType;
-			}
+			private String exchangeType;
 
 			public Boolean getAutoDeleteState() {
 				return this.autoDeleteState;
@@ -122,6 +98,14 @@ public class ListExchangesResponse extends AcsResponse {
 
 			public void setAutoDeleteState(Boolean autoDeleteState) {
 				this.autoDeleteState = autoDeleteState;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
 			}
 
 			public Map<Object,Object> getAttributes() {
@@ -132,12 +116,28 @@ public class ListExchangesResponse extends AcsResponse {
 				this.attributes = attributes;
 			}
 
-			public Long getCreateTime() {
-				return this.createTime;
+			public String getVHostName() {
+				return this.vHostName;
 			}
 
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
+			public void setVHostName(String vHostName) {
+				this.vHostName = vHostName;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getExchangeType() {
+				return this.exchangeType;
+			}
+
+			public void setExchangeType(String exchangeType) {
+				this.exchangeType = exchangeType;
 			}
 		}
 	}

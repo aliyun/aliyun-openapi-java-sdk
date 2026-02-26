@@ -199,6 +199,8 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String databaseType;
+
 		public String getCrossRoleName() {
 			return this.crossRoleName;
 		}
@@ -485,6 +487,14 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getDatabaseType() {
+			return this.databaseType;
+		}
+
+		public void setDatabaseType(String databaseType) {
+			this.databaseType = databaseType;
 		}
 	}
 

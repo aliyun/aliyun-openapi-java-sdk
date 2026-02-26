@@ -28,8 +28,10 @@ public class DescribeBackSourceCidrRequest extends RpcAcsRequest<DescribeBackSou
 	private String line;
 
 	private String resourceGroupId;
+
+	private String ipVersion;
 	public DescribeBackSourceCidrRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeBackSourceCidr");
+		super("ddoscoo", "2020-01-01", "DescribeBackSourceCidr", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class DescribeBackSourceCidrRequest extends RpcAcsRequest<DescribeBackSou
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getIpVersion() {
+		return this.ipVersion;
+	}
+
+	public void setIpVersion(String ipVersion) {
+		this.ipVersion = ipVersion;
+		if(ipVersion != null){
+			putQueryParameter("IpVersion", ipVersion);
 		}
 	}
 

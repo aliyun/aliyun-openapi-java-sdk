@@ -30,6 +30,8 @@ public class DeleteInstancesRequest extends RpcAcsRequest<DeleteInstancesRespons
 
 	private String clientToken;
 
+	private Boolean forceStop;
+
 	private Boolean terminateSubscription;
 
 	private Boolean dryRun;
@@ -71,6 +73,17 @@ public class DeleteInstancesRequest extends RpcAcsRequest<DeleteInstancesRespons
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getForceStop() {
+		return this.forceStop;
+	}
+
+	public void setForceStop(Boolean forceStop) {
+		this.forceStop = forceStop;
+		if(forceStop != null){
+			putQueryParameter("ForceStop", forceStop.toString());
 		}
 	}
 

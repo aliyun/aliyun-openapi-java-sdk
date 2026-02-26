@@ -49,11 +49,11 @@ public class ListInstalledSoftwareResponse extends AcsResponse {
 
 		private String softwareId;
 
-		private String softwareName;
+		private String softwareStatus;
 
 		private String softwareVersion;
 
-		private String softwareStatus;
+		private String softwareName;
 
 		public String getSoftwareId() {
 			return this.softwareId;
@@ -63,12 +63,12 @@ public class ListInstalledSoftwareResponse extends AcsResponse {
 			this.softwareId = softwareId;
 		}
 
-		public String getSoftwareName() {
-			return this.softwareName;
+		public String getSoftwareStatus() {
+			return this.softwareStatus;
 		}
 
-		public void setSoftwareName(String softwareName) {
-			this.softwareName = softwareName;
+		public void setSoftwareStatus(String softwareStatus) {
+			this.softwareStatus = softwareStatus;
 		}
 
 		public String getSoftwareVersion() {
@@ -79,12 +79,12 @@ public class ListInstalledSoftwareResponse extends AcsResponse {
 			this.softwareVersion = softwareVersion;
 		}
 
-		public String getSoftwareStatus() {
-			return this.softwareStatus;
+		public String getSoftwareName() {
+			return this.softwareName;
 		}
 
-		public void setSoftwareStatus(String softwareStatus) {
-			this.softwareStatus = softwareStatus;
+		public void setSoftwareName(String softwareName) {
+			this.softwareName = softwareName;
 		}
 	}
 

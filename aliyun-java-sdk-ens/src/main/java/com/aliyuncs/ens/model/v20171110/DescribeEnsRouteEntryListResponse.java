@@ -91,6 +91,10 @@ public class DescribeEnsRouteEntryListResponse extends AcsResponse {
 
 		private String routeTableId;
 
+		private String sourceCidrBlock;
+
+		private String creationTime;
+
 		private List<NextHop> nextHops;
 
 		public String getStatus() {
@@ -149,6 +153,22 @@ public class DescribeEnsRouteEntryListResponse extends AcsResponse {
 			this.routeTableId = routeTableId;
 		}
 
+		public String getSourceCidrBlock() {
+			return this.sourceCidrBlock;
+		}
+
+		public void setSourceCidrBlock(String sourceCidrBlock) {
+			this.sourceCidrBlock = sourceCidrBlock;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
 		public List<NextHop> getNextHops() {
 			return this.nextHops;
 		}
@@ -162,6 +182,8 @@ public class DescribeEnsRouteEntryListResponse extends AcsResponse {
 			private String nextHopId;
 
 			private String nextHopType;
+
+			private String nextHopName;
 
 			public String getNextHopId() {
 				return this.nextHopId;
@@ -177,6 +199,14 @@ public class DescribeEnsRouteEntryListResponse extends AcsResponse {
 
 			public void setNextHopType(String nextHopType) {
 				this.nextHopType = nextHopType;
+			}
+
+			public String getNextHopName() {
+				return this.nextHopName;
+			}
+
+			public void setNextHopName(String nextHopName) {
+				this.nextHopName = nextHopName;
 			}
 		}
 	}

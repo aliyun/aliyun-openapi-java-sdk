@@ -30,9 +30,7 @@ public class UpgradeClientRequest extends RpcAcsRequest<UpgradeClientResponse> {
 
 	private String vaultId;
 
-	private String token;
-
-	private Boolean fromFile;
+	private String resourceGroupId;
 	public UpgradeClientRequest() {
 		super("hbr", "2017-09-08", "UpgradeClient", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -65,25 +63,14 @@ public class UpgradeClientRequest extends RpcAcsRequest<UpgradeClientResponse> {
 		}
 	}
 
-	public String getToken() {
-		return this.token;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
-		}
-	}
-
-	public Boolean getFromFile() {
-		return this.fromFile;
-	}
-
-	public void setFromFile(Boolean fromFile) {
-		this.fromFile = fromFile;
-		if(fromFile != null){
-			putQueryParameter("FromFile", fromFile.toString());
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

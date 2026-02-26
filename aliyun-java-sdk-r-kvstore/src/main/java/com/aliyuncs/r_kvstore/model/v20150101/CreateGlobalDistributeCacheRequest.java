@@ -27,7 +27,11 @@ public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlob
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String securityToken;
+
+	private String effectiveTime;
 
 	private String resourceOwnerAccount;
 
@@ -56,6 +60,17 @@ public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlob
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -64,6 +79,17 @@ public class CreateGlobalDistributeCacheRequest extends RpcAcsRequest<CreateGlob
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 

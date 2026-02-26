@@ -31,7 +31,7 @@ public class DescribeLogicInstanceTopologyResponse extends AcsResponse {
 
 	private List<NodeInfo> redisProxyList;
 
-	private List<NodeInfo> redisShardList;
+	private List<NodeInfo1> redisShardList;
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -57,11 +57,11 @@ public class DescribeLogicInstanceTopologyResponse extends AcsResponse {
 		this.redisProxyList = redisProxyList;
 	}
 
-	public List<NodeInfo> getRedisShardList() {
+	public List<NodeInfo1> getRedisShardList() {
 		return this.redisShardList;
 	}
 
-	public void setRedisShardList(List<NodeInfo> redisShardList) {
+	public void setRedisShardList(List<NodeInfo1> redisShardList) {
 		this.redisShardList = redisShardList;
 	}
 
@@ -115,6 +115,69 @@ public class DescribeLogicInstanceTopologyResponse extends AcsResponse {
 
 		public void setNodeId(String nodeId) {
 			this.nodeId = nodeId;
+		}
+	}
+
+	public static class NodeInfo1 {
+
+		private String capacity;
+
+		private String connection;
+
+		private String nodeType;
+
+		private String bandwidth;
+
+		private String nodeId;
+
+		private String subInstanceType;
+
+		public String getCapacity() {
+			return this.capacity;
+		}
+
+		public void setCapacity(String capacity) {
+			this.capacity = capacity;
+		}
+
+		public String getConnection() {
+			return this.connection;
+		}
+
+		public void setConnection(String connection) {
+			this.connection = connection;
+		}
+
+		public String getNodeType() {
+			return this.nodeType;
+		}
+
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
+		}
+
+		public String getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(String bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
+		}
+
+		public String getSubInstanceType() {
+			return this.subInstanceType;
+		}
+
+		public void setSubInstanceType(String subInstanceType) {
+			this.subInstanceType = subInstanceType;
 		}
 	}
 

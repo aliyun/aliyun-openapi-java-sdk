@@ -25,9 +25,11 @@ import com.aliyuncs.videoenhan.Endpoint;
 public class QueryFaceVideoTemplateRequest extends RpcAcsRequest<QueryFaceVideoTemplateResponse> {
 	   
 
-	private String userId;
+	private Long pageSize;
 
 	private String templateId;
+
+	private Long pageNo;
 	public QueryFaceVideoTemplateRequest() {
 		super("videoenhan", "2020-03-20", "QueryFaceVideoTemplate", "videoenhan");
 		setMethod(MethodType.POST);
@@ -37,14 +39,14 @@ public class QueryFaceVideoTemplateRequest extends RpcAcsRequest<QueryFaceVideoT
 		} catch (Exception e) {}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public Long getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -56,6 +58,17 @@ public class QueryFaceVideoTemplateRequest extends RpcAcsRequest<QueryFaceVideoT
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
+		}
+	}
+
+	public Long getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Long pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 

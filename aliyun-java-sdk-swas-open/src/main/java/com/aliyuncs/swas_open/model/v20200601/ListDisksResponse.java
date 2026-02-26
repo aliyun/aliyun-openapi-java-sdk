@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDisksResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<Disk> disks;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListDisksResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListDisksResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Disk> getDisks() {
@@ -77,64 +77,42 @@ public class ListDisksResponse extends AcsResponse {
 
 	public static class Disk {
 
-		private String diskId;
-
-		private String regionId;
-
-		private String diskName;
-
-		private String diskType;
-
-		private Integer size;
+		private String creationTime;
 
 		private String status;
 
-		private String instanceId;
+		private String device;
 
-		private String creationTime;
+		private Integer size;
+
+		private String diskName;
 
 		private String diskChargeType;
 
-		private String device;
+		private String diskType;
 
-		public String getDiskId() {
-			return this.diskId;
+		private String category;
+
+		private String diskId;
+
+		private String instanceId;
+
+		private String regionId;
+
+		private String remark;
+
+		private String instanceName;
+
+		private String resourceGroupId;
+
+		private List<Tag> tags;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setDiskId(String diskId) {
-			this.diskId = diskId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getDiskName() {
-			return this.diskName;
-		}
-
-		public void setDiskName(String diskName) {
-			this.diskName = diskName;
-		}
-
-		public String getDiskType() {
-			return this.diskType;
-		}
-
-		public void setDiskType(String diskType) {
-			this.diskType = diskType;
-		}
-
-		public Integer getSize() {
-			return this.size;
-		}
-
-		public void setSize(Integer size) {
-			this.size = size;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getStatus() {
@@ -145,20 +123,28 @@ public class ListDisksResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getDevice() {
+			return this.device;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setDevice(String device) {
+			this.device = device;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public Integer getSize() {
+			return this.size;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setSize(Integer size) {
+			this.size = size;
+		}
+
+		public String getDiskName() {
+			return this.diskName;
+		}
+
+		public void setDiskName(String diskName) {
+			this.diskName = diskName;
 		}
 
 		public String getDiskChargeType() {
@@ -169,12 +155,99 @@ public class ListDisksResponse extends AcsResponse {
 			this.diskChargeType = diskChargeType;
 		}
 
-		public String getDevice() {
-			return this.device;
+		public String getDiskType() {
+			return this.diskType;
 		}
 
-		public void setDevice(String device) {
-			this.device = device;
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getDiskId() {
+			return this.diskId;
+		}
+
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

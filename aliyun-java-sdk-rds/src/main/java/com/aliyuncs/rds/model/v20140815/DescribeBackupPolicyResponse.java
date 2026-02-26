@@ -24,73 +24,69 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupPolicyResponse extends AcsResponse {
 
-	private Integer logBackupRetentionPeriod;
-
-	private String archiveBackupKeepPolicy;
-
 	private String archiveBackupKeepCount;
 
-	private Integer localLogRetentionHours;
-
-	private Integer backupRetentionPeriod;
-
-	private String requestId;
-
-	private String preferredBackupPeriod;
-
-	private String compressType;
-
-	private Integer supportReleasedKeep;
-
-	private String localLogRetentionSpace;
-
-	private Integer supportVolumeShadowCopy;
-
-	private String backupMethod;
-
-	private String logBackupFrequency;
-
-	private String preferredNextBackupTime;
-
-	private String highSpaceUsageProtection;
-
-	private String duplicationContent;
+	private String archiveBackupKeepPolicy;
 
 	private String archiveBackupRetentionPeriod;
 
 	private String backupInterval;
 
-	private String releasedKeepPolicy;
+	private String backupLog;
 
-	private String preferredBackupTime;
+	private String backupMethod;
 
-	private String duplication;
+	private Integer backupPriority;
 
-	private Integer logBackupLocalRetentionNumber;
+	private Integer backupRetentionPeriod;
 
 	private String category;
 
+	private String compressType;
+
+	private String duplication;
+
+	private String duplicationContent;
+
 	private String enableBackupLog;
 
-	private String backupLog;
+	private Boolean enableIncrementDataBackup;
+
+	private Boolean enablePitrProtection;
+
+	private String highSpaceUsageProtection;
+
+	private Integer localLogRetentionHours;
+
+	private String localLogRetentionSpace;
+
+	private String logBackupFrequency;
+
+	private Integer logBackupLocalRetentionNumber;
+
+	private Integer logBackupRetentionPeriod;
+
+	private Integer pitrRetentionPeriod;
+
+	private String preferredBackupPeriod;
+
+	private String preferredBackupTime;
+
+	private String preferredNextBackupTime;
+
+	private String releasedKeepPolicy;
+
+	private String requestId;
+
+	private Boolean supportModifyBackupPriority;
+
+	private Integer supportReleasedKeep;
+
+	private Integer supportVolumeShadowCopy;
+
+	private Long supportsHighFrequencyBackup;
 
 	private DuplicationLocation duplicationLocation;
-
-	public Integer getLogBackupRetentionPeriod() {
-		return this.logBackupRetentionPeriod;
-	}
-
-	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
-		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
-	}
-
-	public String getArchiveBackupKeepPolicy() {
-		return this.archiveBackupKeepPolicy;
-	}
-
-	public void setArchiveBackupKeepPolicy(String archiveBackupKeepPolicy) {
-		this.archiveBackupKeepPolicy = archiveBackupKeepPolicy;
-	}
 
 	public String getArchiveBackupKeepCount() {
 		return this.archiveBackupKeepCount;
@@ -100,108 +96,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.archiveBackupKeepCount = archiveBackupKeepCount;
 	}
 
-	public Integer getLocalLogRetentionHours() {
-		return this.localLogRetentionHours;
+	public String getArchiveBackupKeepPolicy() {
+		return this.archiveBackupKeepPolicy;
 	}
 
-	public void setLocalLogRetentionHours(Integer localLogRetentionHours) {
-		this.localLogRetentionHours = localLogRetentionHours;
-	}
-
-	public Integer getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
-
-	public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getPreferredBackupPeriod() {
-		return this.preferredBackupPeriod;
-	}
-
-	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-		this.preferredBackupPeriod = preferredBackupPeriod;
-	}
-
-	public String getCompressType() {
-		return this.compressType;
-	}
-
-	public void setCompressType(String compressType) {
-		this.compressType = compressType;
-	}
-
-	public Integer getSupportReleasedKeep() {
-		return this.supportReleasedKeep;
-	}
-
-	public void setSupportReleasedKeep(Integer supportReleasedKeep) {
-		this.supportReleasedKeep = supportReleasedKeep;
-	}
-
-	public String getLocalLogRetentionSpace() {
-		return this.localLogRetentionSpace;
-	}
-
-	public void setLocalLogRetentionSpace(String localLogRetentionSpace) {
-		this.localLogRetentionSpace = localLogRetentionSpace;
-	}
-
-	public Integer getSupportVolumeShadowCopy() {
-		return this.supportVolumeShadowCopy;
-	}
-
-	public void setSupportVolumeShadowCopy(Integer supportVolumeShadowCopy) {
-		this.supportVolumeShadowCopy = supportVolumeShadowCopy;
-	}
-
-	public String getBackupMethod() {
-		return this.backupMethod;
-	}
-
-	public void setBackupMethod(String backupMethod) {
-		this.backupMethod = backupMethod;
-	}
-
-	public String getLogBackupFrequency() {
-		return this.logBackupFrequency;
-	}
-
-	public void setLogBackupFrequency(String logBackupFrequency) {
-		this.logBackupFrequency = logBackupFrequency;
-	}
-
-	public String getPreferredNextBackupTime() {
-		return this.preferredNextBackupTime;
-	}
-
-	public void setPreferredNextBackupTime(String preferredNextBackupTime) {
-		this.preferredNextBackupTime = preferredNextBackupTime;
-	}
-
-	public String getHighSpaceUsageProtection() {
-		return this.highSpaceUsageProtection;
-	}
-
-	public void setHighSpaceUsageProtection(String highSpaceUsageProtection) {
-		this.highSpaceUsageProtection = highSpaceUsageProtection;
-	}
-
-	public String getDuplicationContent() {
-		return this.duplicationContent;
-	}
-
-	public void setDuplicationContent(String duplicationContent) {
-		this.duplicationContent = duplicationContent;
+	public void setArchiveBackupKeepPolicy(String archiveBackupKeepPolicy) {
+		this.archiveBackupKeepPolicy = archiveBackupKeepPolicy;
 	}
 
 	public String getArchiveBackupRetentionPeriod() {
@@ -220,36 +120,36 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.backupInterval = backupInterval;
 	}
 
-	public String getReleasedKeepPolicy() {
-		return this.releasedKeepPolicy;
+	public String getBackupLog() {
+		return this.backupLog;
 	}
 
-	public void setReleasedKeepPolicy(String releasedKeepPolicy) {
-		this.releasedKeepPolicy = releasedKeepPolicy;
+	public void setBackupLog(String backupLog) {
+		this.backupLog = backupLog;
 	}
 
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
+	public String getBackupMethod() {
+		return this.backupMethod;
 	}
 
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
+	public void setBackupMethod(String backupMethod) {
+		this.backupMethod = backupMethod;
 	}
 
-	public String getDuplication() {
-		return this.duplication;
+	public Integer getBackupPriority() {
+		return this.backupPriority;
 	}
 
-	public void setDuplication(String duplication) {
-		this.duplication = duplication;
+	public void setBackupPriority(Integer backupPriority) {
+		this.backupPriority = backupPriority;
 	}
 
-	public Integer getLogBackupLocalRetentionNumber() {
-		return this.logBackupLocalRetentionNumber;
+	public Integer getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
 	}
 
-	public void setLogBackupLocalRetentionNumber(Integer logBackupLocalRetentionNumber) {
-		this.logBackupLocalRetentionNumber = logBackupLocalRetentionNumber;
+	public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
 	}
 
 	public String getCategory() {
@@ -260,6 +160,30 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.category = category;
 	}
 
+	public String getCompressType() {
+		return this.compressType;
+	}
+
+	public void setCompressType(String compressType) {
+		this.compressType = compressType;
+	}
+
+	public String getDuplication() {
+		return this.duplication;
+	}
+
+	public void setDuplication(String duplication) {
+		this.duplication = duplication;
+	}
+
+	public String getDuplicationContent() {
+		return this.duplicationContent;
+	}
+
+	public void setDuplicationContent(String duplicationContent) {
+		this.duplicationContent = duplicationContent;
+	}
+
 	public String getEnableBackupLog() {
 		return this.enableBackupLog;
 	}
@@ -268,12 +192,148 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.enableBackupLog = enableBackupLog;
 	}
 
-	public String getBackupLog() {
-		return this.backupLog;
+	public Boolean getEnableIncrementDataBackup() {
+		return this.enableIncrementDataBackup;
 	}
 
-	public void setBackupLog(String backupLog) {
-		this.backupLog = backupLog;
+	public void setEnableIncrementDataBackup(Boolean enableIncrementDataBackup) {
+		this.enableIncrementDataBackup = enableIncrementDataBackup;
+	}
+
+	public Boolean getEnablePitrProtection() {
+		return this.enablePitrProtection;
+	}
+
+	public void setEnablePitrProtection(Boolean enablePitrProtection) {
+		this.enablePitrProtection = enablePitrProtection;
+	}
+
+	public String getHighSpaceUsageProtection() {
+		return this.highSpaceUsageProtection;
+	}
+
+	public void setHighSpaceUsageProtection(String highSpaceUsageProtection) {
+		this.highSpaceUsageProtection = highSpaceUsageProtection;
+	}
+
+	public Integer getLocalLogRetentionHours() {
+		return this.localLogRetentionHours;
+	}
+
+	public void setLocalLogRetentionHours(Integer localLogRetentionHours) {
+		this.localLogRetentionHours = localLogRetentionHours;
+	}
+
+	public String getLocalLogRetentionSpace() {
+		return this.localLogRetentionSpace;
+	}
+
+	public void setLocalLogRetentionSpace(String localLogRetentionSpace) {
+		this.localLogRetentionSpace = localLogRetentionSpace;
+	}
+
+	public String getLogBackupFrequency() {
+		return this.logBackupFrequency;
+	}
+
+	public void setLogBackupFrequency(String logBackupFrequency) {
+		this.logBackupFrequency = logBackupFrequency;
+	}
+
+	public Integer getLogBackupLocalRetentionNumber() {
+		return this.logBackupLocalRetentionNumber;
+	}
+
+	public void setLogBackupLocalRetentionNumber(Integer logBackupLocalRetentionNumber) {
+		this.logBackupLocalRetentionNumber = logBackupLocalRetentionNumber;
+	}
+
+	public Integer getLogBackupRetentionPeriod() {
+		return this.logBackupRetentionPeriod;
+	}
+
+	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
+		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
+	}
+
+	public Integer getPitrRetentionPeriod() {
+		return this.pitrRetentionPeriod;
+	}
+
+	public void setPitrRetentionPeriod(Integer pitrRetentionPeriod) {
+		this.pitrRetentionPeriod = pitrRetentionPeriod;
+	}
+
+	public String getPreferredBackupPeriod() {
+		return this.preferredBackupPeriod;
+	}
+
+	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
+		this.preferredBackupPeriod = preferredBackupPeriod;
+	}
+
+	public String getPreferredBackupTime() {
+		return this.preferredBackupTime;
+	}
+
+	public void setPreferredBackupTime(String preferredBackupTime) {
+		this.preferredBackupTime = preferredBackupTime;
+	}
+
+	public String getPreferredNextBackupTime() {
+		return this.preferredNextBackupTime;
+	}
+
+	public void setPreferredNextBackupTime(String preferredNextBackupTime) {
+		this.preferredNextBackupTime = preferredNextBackupTime;
+	}
+
+	public String getReleasedKeepPolicy() {
+		return this.releasedKeepPolicy;
+	}
+
+	public void setReleasedKeepPolicy(String releasedKeepPolicy) {
+		this.releasedKeepPolicy = releasedKeepPolicy;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSupportModifyBackupPriority() {
+		return this.supportModifyBackupPriority;
+	}
+
+	public void setSupportModifyBackupPriority(Boolean supportModifyBackupPriority) {
+		this.supportModifyBackupPriority = supportModifyBackupPriority;
+	}
+
+	public Integer getSupportReleasedKeep() {
+		return this.supportReleasedKeep;
+	}
+
+	public void setSupportReleasedKeep(Integer supportReleasedKeep) {
+		this.supportReleasedKeep = supportReleasedKeep;
+	}
+
+	public Integer getSupportVolumeShadowCopy() {
+		return this.supportVolumeShadowCopy;
+	}
+
+	public void setSupportVolumeShadowCopy(Integer supportVolumeShadowCopy) {
+		this.supportVolumeShadowCopy = supportVolumeShadowCopy;
+	}
+
+	public Long getSupportsHighFrequencyBackup() {
+		return this.supportsHighFrequencyBackup;
+	}
+
+	public void setSupportsHighFrequencyBackup(Long supportsHighFrequencyBackup) {
+		this.supportsHighFrequencyBackup = supportsHighFrequencyBackup;
 	}
 
 	public DuplicationLocation getDuplicationLocation() {

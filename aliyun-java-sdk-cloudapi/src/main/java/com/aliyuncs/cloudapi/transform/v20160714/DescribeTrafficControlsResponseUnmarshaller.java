@@ -29,22 +29,22 @@ public class DescribeTrafficControlsResponseUnmarshaller {
 	public static DescribeTrafficControlsResponse unmarshall(DescribeTrafficControlsResponse describeTrafficControlsResponse, UnmarshallerContext _ctx) {
 		
 		describeTrafficControlsResponse.setRequestId(_ctx.stringValue("DescribeTrafficControlsResponse.RequestId"));
-		describeTrafficControlsResponse.setTotalCount(_ctx.integerValue("DescribeTrafficControlsResponse.TotalCount"));
-		describeTrafficControlsResponse.setPageSize(_ctx.integerValue("DescribeTrafficControlsResponse.PageSize"));
 		describeTrafficControlsResponse.setPageNumber(_ctx.integerValue("DescribeTrafficControlsResponse.PageNumber"));
+		describeTrafficControlsResponse.setPageSize(_ctx.integerValue("DescribeTrafficControlsResponse.PageSize"));
+		describeTrafficControlsResponse.setTotalCount(_ctx.integerValue("DescribeTrafficControlsResponse.TotalCount"));
 
 		List<TrafficControl> trafficControls = new ArrayList<TrafficControl>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTrafficControlsResponse.TrafficControls.Length"); i++) {
 			TrafficControl trafficControl = new TrafficControl();
-			trafficControl.setTrafficControlId(_ctx.stringValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].TrafficControlId"));
-			trafficControl.setTrafficControlName(_ctx.stringValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].TrafficControlName"));
+			trafficControl.setUserDefault(_ctx.integerValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].UserDefault"));
+			trafficControl.setApiDefault(_ctx.integerValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].ApiDefault"));
+			trafficControl.setModifiedTime(_ctx.stringValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].ModifiedTime"));
 			trafficControl.setDescription(_ctx.stringValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].Description"));
 			trafficControl.setTrafficControlUnit(_ctx.stringValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].TrafficControlUnit"));
-			trafficControl.setApiDefault(_ctx.integerValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].ApiDefault"));
-			trafficControl.setUserDefault(_ctx.integerValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].UserDefault"));
+			trafficControl.setTrafficControlName(_ctx.stringValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].TrafficControlName"));
 			trafficControl.setAppDefault(_ctx.integerValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].AppDefault"));
+			trafficControl.setTrafficControlId(_ctx.stringValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].TrafficControlId"));
 			trafficControl.setCreatedTime(_ctx.stringValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].CreatedTime"));
-			trafficControl.setModifiedTime(_ctx.stringValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].ModifiedTime"));
 
 			List<SpecialPolicy> specialPolicies = new ArrayList<SpecialPolicy>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].SpecialPolicies.Length"); j++) {
@@ -54,8 +54,8 @@ public class DescribeTrafficControlsResponseUnmarshaller {
 				List<Special> specials = new ArrayList<Special>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].SpecialPolicies["+ j +"].Specials.Length"); k++) {
 					Special special = new Special();
-					special.setSpecialKey(_ctx.stringValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].SpecialPolicies["+ j +"].Specials["+ k +"].SpecialKey"));
 					special.setTrafficValue(_ctx.integerValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].SpecialPolicies["+ j +"].Specials["+ k +"].TrafficValue"));
+					special.setSpecialKey(_ctx.stringValue("DescribeTrafficControlsResponse.TrafficControls["+ i +"].SpecialPolicies["+ j +"].Specials["+ k +"].SpecialKey"));
 
 					specials.add(special);
 				}

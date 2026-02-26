@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryPictureSearchJobResultResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryPictureSearchJobResultResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,31 +77,15 @@ public class QueryPictureSearchJobResultResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
-
-		private Integer pageCount;
-
 		private Integer currentPage;
 
 		private Integer pageSize;
 
+		private Integer total;
+
+		private Integer pageCount;
+
 		private List<SearchData> pageData;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
-
-		public Integer getPageCount() {
-			return this.pageCount;
-		}
-
-		public void setPageCount(Integer pageCount) {
-			this.pageCount = pageCount;
-		}
 
 		public Integer getCurrentPage() {
 			return this.currentPage;
@@ -119,6 +103,22 @@ public class QueryPictureSearchJobResultResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
+		}
+
+		public Integer getPageCount() {
+			return this.pageCount;
+		}
+
+		public void setPageCount(Integer pageCount) {
+			this.pageCount = pageCount;
+		}
+
 		public List<SearchData> getPageData() {
 			return this.pageData;
 		}
@@ -129,26 +129,26 @@ public class QueryPictureSearchJobResultResponse extends AcsResponse {
 
 		public static class SearchData {
 
-			private String vectorId;
+			private String picUrl;
 
 			private Long eventTime;
 
-			private Float threshold;
-
-			private String picUrl;
-
-			private String iotId;
-
 			private String gatewayIotId;
+
+			private String vectorId;
 
 			private String deviceNickName;
 
-			public String getVectorId() {
-				return this.vectorId;
+			private Float threshold;
+
+			private String iotId;
+
+			public String getPicUrl() {
+				return this.picUrl;
 			}
 
-			public void setVectorId(String vectorId) {
-				this.vectorId = vectorId;
+			public void setPicUrl(String picUrl) {
+				this.picUrl = picUrl;
 			}
 
 			public Long getEventTime() {
@@ -159,30 +159,6 @@ public class QueryPictureSearchJobResultResponse extends AcsResponse {
 				this.eventTime = eventTime;
 			}
 
-			public Float getThreshold() {
-				return this.threshold;
-			}
-
-			public void setThreshold(Float threshold) {
-				this.threshold = threshold;
-			}
-
-			public String getPicUrl() {
-				return this.picUrl;
-			}
-
-			public void setPicUrl(String picUrl) {
-				this.picUrl = picUrl;
-			}
-
-			public String getIotId() {
-				return this.iotId;
-			}
-
-			public void setIotId(String iotId) {
-				this.iotId = iotId;
-			}
-
 			public String getGatewayIotId() {
 				return this.gatewayIotId;
 			}
@@ -191,12 +167,36 @@ public class QueryPictureSearchJobResultResponse extends AcsResponse {
 				this.gatewayIotId = gatewayIotId;
 			}
 
+			public String getVectorId() {
+				return this.vectorId;
+			}
+
+			public void setVectorId(String vectorId) {
+				this.vectorId = vectorId;
+			}
+
 			public String getDeviceNickName() {
 				return this.deviceNickName;
 			}
 
 			public void setDeviceNickName(String deviceNickName) {
 				this.deviceNickName = deviceNickName;
+			}
+
+			public Float getThreshold() {
+				return this.threshold;
+			}
+
+			public void setThreshold(Float threshold) {
+				this.threshold = threshold;
+			}
+
+			public String getIotId() {
+				return this.iotId;
+			}
+
+			public void setIotId(String iotId) {
+				this.iotId = iotId;
 			}
 		}
 	}

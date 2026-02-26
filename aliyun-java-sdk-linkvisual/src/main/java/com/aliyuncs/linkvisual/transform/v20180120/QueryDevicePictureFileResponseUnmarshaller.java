@@ -24,16 +24,16 @@ public class QueryDevicePictureFileResponseUnmarshaller {
 	public static QueryDevicePictureFileResponse unmarshall(QueryDevicePictureFileResponse queryDevicePictureFileResponse, UnmarshallerContext _ctx) {
 		
 		queryDevicePictureFileResponse.setRequestId(_ctx.stringValue("QueryDevicePictureFileResponse.RequestId"));
-		queryDevicePictureFileResponse.setSuccess(_ctx.booleanValue("QueryDevicePictureFileResponse.Success"));
-		queryDevicePictureFileResponse.setErrorMessage(_ctx.stringValue("QueryDevicePictureFileResponse.ErrorMessage"));
 		queryDevicePictureFileResponse.setCode(_ctx.stringValue("QueryDevicePictureFileResponse.Code"));
+		queryDevicePictureFileResponse.setErrorMessage(_ctx.stringValue("QueryDevicePictureFileResponse.ErrorMessage"));
+		queryDevicePictureFileResponse.setSuccess(_ctx.booleanValue("QueryDevicePictureFileResponse.Success"));
 
 		Data data = new Data();
-		data.setIotId(_ctx.stringValue("QueryDevicePictureFileResponse.Data.IotId"));
-		data.setPicCreateTime(_ctx.longValue("QueryDevicePictureFileResponse.Data.PicCreateTime"));
 		data.setPicId(_ctx.stringValue("QueryDevicePictureFileResponse.Data.PicId"));
 		data.setPicUrl(_ctx.stringValue("QueryDevicePictureFileResponse.Data.PicUrl"));
+		data.setPicCreateTime(_ctx.longValue("QueryDevicePictureFileResponse.Data.PicCreateTime"));
 		data.setThumbUrl(_ctx.stringValue("QueryDevicePictureFileResponse.Data.ThumbUrl"));
+		data.setIotId(_ctx.stringValue("QueryDevicePictureFileResponse.Data.IotId"));
 		queryDevicePictureFileResponse.setData(data);
 	 
 	 	return queryDevicePictureFileResponse;

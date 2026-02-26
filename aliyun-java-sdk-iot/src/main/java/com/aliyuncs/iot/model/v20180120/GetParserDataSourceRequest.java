@@ -29,7 +29,7 @@ public class GetParserDataSourceRequest extends RpcAcsRequest<GetParserDataSourc
 
 	private Long dataSourceId;
 	public GetParserDataSourceRequest() {
-		super("Iot", "2018-01-20", "GetParserDataSource");
+		super("Iot", "2018-01-20", "GetParserDataSource", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

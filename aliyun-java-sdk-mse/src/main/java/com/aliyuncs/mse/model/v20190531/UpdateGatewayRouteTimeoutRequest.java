@@ -32,11 +32,11 @@ public class UpdateGatewayRouteTimeoutRequest extends RpcAcsRequest<UpdateGatewa
 
 	private String gatewayUniqueId;
 
-	private String acceptLanguage;
-
 	private Long id;
 
 	private Long gatewayId;
+
+	private String acceptLanguage;
 	public UpdateGatewayRouteTimeoutRequest() {
 		super("mse", "2019-05-31", "UpdateGatewayRouteTimeout", "mse");
 		setMethod(MethodType.POST);
@@ -68,17 +68,6 @@ public class UpdateGatewayRouteTimeoutRequest extends RpcAcsRequest<UpdateGatewa
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public Long getId() {
 		return this.id;
 	}
@@ -98,6 +87,17 @@ public class UpdateGatewayRouteTimeoutRequest extends RpcAcsRequest<UpdateGatewa
 		this.gatewayId = gatewayId;
 		if(gatewayId != null){
 			putQueryParameter("GatewayId", gatewayId.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

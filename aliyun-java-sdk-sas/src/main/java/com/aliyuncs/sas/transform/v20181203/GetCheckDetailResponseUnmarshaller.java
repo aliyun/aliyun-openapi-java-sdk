@@ -14,8 +14,12 @@
 
 package com.aliyuncs.sas.transform.v20181203;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.sas.model.v20181203.GetCheckDetailResponse;
 import com.aliyuncs.sas.model.v20181203.GetCheckDetailResponse.AssistInfo;
+import com.aliyuncs.sas.model.v20181203.GetCheckDetailResponse.CustomConfigsItem;
 import com.aliyuncs.sas.model.v20181203.GetCheckDetailResponse.Description;
 import com.aliyuncs.sas.model.v20181203.GetCheckDetailResponse.Solution;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -44,6 +48,19 @@ public class GetCheckDetailResponseUnmarshaller {
 		assistInfo.setValue(_ctx.stringValue("GetCheckDetailResponse.AssistInfo.Value"));
 		assistInfo.setLink(_ctx.stringValue("GetCheckDetailResponse.AssistInfo.Link"));
 		getCheckDetailResponse.setAssistInfo(assistInfo);
+
+		List<CustomConfigsItem> customConfigs = new ArrayList<CustomConfigsItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetCheckDetailResponse.CustomConfigs.Length"); i++) {
+			CustomConfigsItem customConfigsItem = new CustomConfigsItem();
+			customConfigsItem.setName(_ctx.stringValue("GetCheckDetailResponse.CustomConfigs["+ i +"].Name"));
+			customConfigsItem.setTypeDefine(_ctx.stringValue("GetCheckDetailResponse.CustomConfigs["+ i +"].TypeDefine"));
+			customConfigsItem.setDefaultValue(_ctx.stringValue("GetCheckDetailResponse.CustomConfigs["+ i +"].DefaultValue"));
+			customConfigsItem.setValue(_ctx.stringValue("GetCheckDetailResponse.CustomConfigs["+ i +"].Value"));
+			customConfigsItem.setShowName(_ctx.stringValue("GetCheckDetailResponse.CustomConfigs["+ i +"].ShowName"));
+
+			customConfigs.add(customConfigsItem);
+		}
+		getCheckDetailResponse.setCustomConfigs(customConfigs);
 	 
 	 	return getCheckDetailResponse;
 	}

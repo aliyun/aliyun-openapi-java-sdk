@@ -44,6 +44,8 @@ public class DescribeStrategyResponseUnmarshaller {
 			strategy.setRiskCount(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].RiskCount"));
 			strategy.setName(_ctx.stringValue("DescribeStrategyResponse.Strategies["+ i +"].Name"));
 			strategy.setId(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].Id"));
+			strategy.setStartTime(_ctx.stringValue("DescribeStrategyResponse.Strategies["+ i +"].StartTime"));
+			strategy.setEndTime(_ctx.stringValue("DescribeStrategyResponse.Strategies["+ i +"].EndTime"));
 
 			List<ConfigTarget> configTargets = new ArrayList<ConfigTarget>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeStrategyResponse.Strategies["+ i +"].ConfigTargets.Length"); j++) {

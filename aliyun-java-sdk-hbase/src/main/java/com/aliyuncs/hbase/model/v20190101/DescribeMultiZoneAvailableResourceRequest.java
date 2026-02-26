@@ -29,7 +29,7 @@ public class DescribeMultiZoneAvailableResourceRequest extends RpcAcsRequest<Des
 
 	private String chargeType;
 	public DescribeMultiZoneAvailableResourceRequest() {
-		super("HBase", "2019-01-01", "DescribeMultiZoneAvailableResource", "hbase");
+		super("HBase", "2019-01-01", "DescribeMultiZoneAvailableResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

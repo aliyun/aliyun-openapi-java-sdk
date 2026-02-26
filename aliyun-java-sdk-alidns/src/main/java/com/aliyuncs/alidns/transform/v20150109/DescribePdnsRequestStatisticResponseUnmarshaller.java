@@ -31,19 +31,19 @@ public class DescribePdnsRequestStatisticResponseUnmarshaller {
 		List<StatisticItem> data = new ArrayList<StatisticItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePdnsRequestStatisticResponse.Data.Length"); i++) {
 			StatisticItem statisticItem = new StatisticItem();
-			statisticItem.setUdpTotalCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].UdpTotalCount"));
-			statisticItem.setIpCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].IpCount"));
+			statisticItem.setV6HttpCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].V6HttpCount"));
+			statisticItem.setV6HttpsCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].V6HttpsCount"));
+			statisticItem.setTimestamp(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].Timestamp"));
 			statisticItem.setTotalCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].TotalCount"));
 			statisticItem.setV4HttpCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].V4HttpCount"));
-			statisticItem.setV6HttpCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].V6HttpCount"));
-			statisticItem.setV4Count(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].V4Count"));
-			statisticItem.setHttpsCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].HttpsCount"));
-			statisticItem.setHttpCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].HttpCount"));
 			statisticItem.setV4HttpsCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].V4HttpsCount"));
-			statisticItem.setTimestamp(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].Timestamp"));
-			statisticItem.setV6HttpsCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].V6HttpsCount"));
-			statisticItem.setDohTotalCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].DohTotalCount"));
+			statisticItem.setV4Count(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].V4Count"));
 			statisticItem.setV6Count(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].V6Count"));
+			statisticItem.setHttpCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].HttpCount"));
+			statisticItem.setHttpsCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].HttpsCount"));
+			statisticItem.setDohTotalCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].DohTotalCount"));
+			statisticItem.setUdpTotalCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].UdpTotalCount"));
+			statisticItem.setIpCount(_ctx.longValue("DescribePdnsRequestStatisticResponse.Data["+ i +"].IpCount"));
 
 			data.add(statisticItem);
 		}

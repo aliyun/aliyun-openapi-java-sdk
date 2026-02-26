@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeHaVipsResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeHaVipsResponse.HaVip;
+import com.aliyuncs.vpc.model.v20160428.DescribeHaVipsResponse.HaVip.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +47,7 @@ public class DescribeHaVipsResponseUnmarshaller {
 			haVip.setDescription(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].Description"));
 			haVip.setMasterInstanceId(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].MasterInstanceId"));
 			haVip.setName(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].Name"));
+			haVip.setResourceGroupId(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].ResourceGroupId"));
 
 			List<String> associatedEipAddresses = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeHaVipsResponse.HaVips["+ i +"].AssociatedEipAddresses.Length"); j++) {
@@ -58,6 +60,16 @@ public class DescribeHaVipsResponseUnmarshaller {
 				associatedInstances.add(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].AssociatedInstances["+ j +"]"));
 			}
 			haVip.setAssociatedInstances(associatedInstances);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeHaVipsResponse.HaVips["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			haVip.setTags(tags);
 
 			haVips.add(haVip);
 		}

@@ -36,7 +36,7 @@ public class SaveOrUpdatePatentPlanRequest extends RpcAcsRequest<SaveOrUpdatePat
 
 	private Long planId;
 	public SaveOrUpdatePatentPlanRequest() {
-		super("Copyright", "2019-01-23", "SaveOrUpdatePatentPlan");
+		super("Copyright", "2019-01-23", "SaveOrUpdatePatentPlan", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

@@ -41,10 +41,23 @@ public class DescribeAppServiceDetailResponseUnmarshaller {
 		data.setServiceName(_ctx.stringValue("DescribeAppServiceDetailResponse.Data.ServiceName"));
 		data.setVersion(_ctx.stringValue("DescribeAppServiceDetailResponse.Data.Version"));
 		data.setServiceType(_ctx.stringValue("DescribeAppServiceDetailResponse.Data.ServiceType"));
+		data.setServiceProtocol(_ctx.stringValue("DescribeAppServiceDetailResponse.Data.ServiceProtocol"));
 		data.setEdasAppName(_ctx.stringValue("DescribeAppServiceDetailResponse.Data.EdasAppName"));
 		data.setMetadata(_ctx.mapValue("DescribeAppServiceDetailResponse.Data.Metadata"));
 		data.setSpringApplicationName(_ctx.stringValue("DescribeAppServiceDetailResponse.Data.SpringApplicationName"));
 		data.setDubboApplicationName(_ctx.stringValue("DescribeAppServiceDetailResponse.Data.DubboApplicationName"));
+
+		List<Long> servicePorts = new ArrayList<Long>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAppServiceDetailResponse.Data.ServicePorts.Length"); i++) {
+			servicePorts.add(_ctx.longValue("DescribeAppServiceDetailResponse.Data.ServicePorts["+ i +"]"));
+		}
+		data.setServicePorts(servicePorts);
+
+		List<String> serviceTags = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAppServiceDetailResponse.Data.ServiceTags.Length"); i++) {
+			serviceTags.add(_ctx.stringValue("DescribeAppServiceDetailResponse.Data.ServiceTags["+ i +"]"));
+		}
+		data.setServiceTags(serviceTags);
 
 		List<Method> methods = new ArrayList<Method>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAppServiceDetailResponse.Data.Methods.Length"); i++) {

@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListLogosResponse extends AcsResponse {
 
+	private Integer nextPage;
+
 	private String requestId;
 
 	private Boolean success;
 
 	private String version;
 
-	private Integer nextPage;
+	private String logoVersion;
 
 	private Integer pageNumber;
 
-	private String logoVersion;
-
 	private List<Goods> data;
+
+	public Integer getNextPage() {
+		return this.nextPage;
+	}
+
+	public void setNextPage(Integer nextPage) {
+		this.nextPage = nextPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -63,12 +71,12 @@ public class ListLogosResponse extends AcsResponse {
 		this.version = version;
 	}
 
-	public Integer getNextPage() {
-		return this.nextPage;
+	public String getLogoVersion() {
+		return this.logoVersion;
 	}
 
-	public void setNextPage(Integer nextPage) {
-		this.nextPage = nextPage;
+	public void setLogoVersion(String logoVersion) {
+		this.logoVersion = logoVersion;
 	}
 
 	public Integer getPageNumber() {
@@ -77,14 +85,6 @@ public class ListLogosResponse extends AcsResponse {
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-	}
-
-	public String getLogoVersion() {
-		return this.logoVersion;
-	}
-
-	public void setLogoVersion(String logoVersion) {
-		this.logoVersion = logoVersion;
 	}
 
 	public List<Goods> getData() {
@@ -102,6 +102,16 @@ public class ListLogosResponse extends AcsResponse {
 		private String url;
 
 		private Integer collect;
+
+		private Integer tagId;
+
+		private Boolean enableChangeColor;
+
+		private Boolean enableChangeFont;
+
+		private Boolean enableChangeIcon;
+
+		private Boolean enableChangeLayout;
 
 		public String getGoodsId() {
 			return this.goodsId;
@@ -125,6 +135,46 @@ public class ListLogosResponse extends AcsResponse {
 
 		public void setCollect(Integer collect) {
 			this.collect = collect;
+		}
+
+		public Integer getTagId() {
+			return this.tagId;
+		}
+
+		public void setTagId(Integer tagId) {
+			this.tagId = tagId;
+		}
+
+		public Boolean getEnableChangeColor() {
+			return this.enableChangeColor;
+		}
+
+		public void setEnableChangeColor(Boolean enableChangeColor) {
+			this.enableChangeColor = enableChangeColor;
+		}
+
+		public Boolean getEnableChangeFont() {
+			return this.enableChangeFont;
+		}
+
+		public void setEnableChangeFont(Boolean enableChangeFont) {
+			this.enableChangeFont = enableChangeFont;
+		}
+
+		public Boolean getEnableChangeIcon() {
+			return this.enableChangeIcon;
+		}
+
+		public void setEnableChangeIcon(Boolean enableChangeIcon) {
+			this.enableChangeIcon = enableChangeIcon;
+		}
+
+		public Boolean getEnableChangeLayout() {
+			return this.enableChangeLayout;
+		}
+
+		public void setEnableChangeLayout(Boolean enableChangeLayout) {
+			this.enableChangeLayout = enableChangeLayout;
 		}
 	}
 

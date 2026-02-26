@@ -26,11 +26,11 @@ public class DescribeABTestGroupResponseUnmarshaller {
 		describeABTestGroupResponse.setRequestId(_ctx.stringValue("DescribeABTestGroupResponse.requestId"));
 
 		Result result = new Result();
-		result.setId(_ctx.stringValue("DescribeABTestGroupResponse.result.id"));
-		result.setName(_ctx.stringValue("DescribeABTestGroupResponse.result.name"));
-		result.setStatus(_ctx.integerValue("DescribeABTestGroupResponse.result.status"));
 		result.setCreated(_ctx.integerValue("DescribeABTestGroupResponse.result.created"));
+		result.setStatus(_ctx.integerValue("DescribeABTestGroupResponse.result.status"));
 		result.setUpdated(_ctx.integerValue("DescribeABTestGroupResponse.result.updated"));
+		result.setName(_ctx.stringValue("DescribeABTestGroupResponse.result.name"));
+		result.setId(_ctx.stringValue("DescribeABTestGroupResponse.result.id"));
 		describeABTestGroupResponse.setResult(result);
 	 
 	 	return describeABTestGroupResponse;

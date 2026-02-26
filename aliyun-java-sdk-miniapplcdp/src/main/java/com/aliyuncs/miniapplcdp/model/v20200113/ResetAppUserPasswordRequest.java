@@ -28,6 +28,8 @@ public class ResetAppUserPasswordRequest extends RpcAcsRequest<ResetAppUserPassw
 
 	private String envId;
 
+	private String source;
+
 	private String userName;
 	public ResetAppUserPasswordRequest() {
 		super("miniapplcdp", "2020-01-13", "ResetAppUserPassword");
@@ -53,6 +55,17 @@ public class ResetAppUserPasswordRequest extends RpcAcsRequest<ResetAppUserPassw
 		this.envId = envId;
 		if(envId != null){
 			putQueryParameter("EnvId", envId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

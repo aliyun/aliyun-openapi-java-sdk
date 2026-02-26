@@ -27,11 +27,9 @@ public class DescribeScdnDDoSTrafficInfoRequest extends RpcAcsRequest<DescribeSc
 
 	private String line;
 
-	private String startTime;
-
 	private String endTime;
 
-	private Long ownerId;
+	private String startTime;
 	public DescribeScdnDDoSTrafficInfoRequest() {
 		super("scdn", "2017-11-15", "DescribeScdnDDoSTrafficInfo");
 		setMethod(MethodType.GET);
@@ -52,17 +50,6 @@ public class DescribeScdnDDoSTrafficInfoRequest extends RpcAcsRequest<DescribeSc
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -74,14 +61,14 @@ public class DescribeScdnDDoSTrafficInfoRequest extends RpcAcsRequest<DescribeSc
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 

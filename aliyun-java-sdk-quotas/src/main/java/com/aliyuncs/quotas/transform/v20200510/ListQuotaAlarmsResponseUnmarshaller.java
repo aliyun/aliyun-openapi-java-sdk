@@ -35,20 +35,20 @@ public class ListQuotaAlarmsResponseUnmarshaller {
 		List<QuotaAlarm> quotaAlarms = new ArrayList<QuotaAlarm>();
 		for (int i = 0; i < _ctx.lengthValue("ListQuotaAlarmsResponse.QuotaAlarms.Length"); i++) {
 			QuotaAlarm quotaAlarm = new QuotaAlarm();
-			quotaAlarm.setAlarmId(_ctx.stringValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].AlarmId"));
-			quotaAlarm.setQuotaDimensions(_ctx.mapValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].QuotaDimensions"));
 			quotaAlarm.setThresholdPercent(_ctx.floatValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].ThresholdPercent"));
-			quotaAlarm.setProductCode(_ctx.stringValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].ProductCode"));
+			quotaAlarm.setThresholdType(_ctx.stringValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].ThresholdType"));
+			quotaAlarm.setQuotaDimensions(_ctx.mapValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].QuotaDimensions"));
 			quotaAlarm.setCreateTime(_ctx.stringValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].CreateTime"));
-			quotaAlarm.setWebHook(_ctx.stringValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].WebHook"));
-			quotaAlarm.setQuotaUsage(_ctx.floatValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].QuotaUsage"));
-			quotaAlarm.setExceedThreshold(_ctx.booleanValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].ExceedThreshold"));
 			quotaAlarm.setQuotaActionCode(_ctx.stringValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].QuotaActionCode"));
-			quotaAlarm.setQuotaValue(_ctx.floatValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].QuotaValue"));
 			quotaAlarm.setAlarmName(_ctx.stringValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].AlarmName"));
 			quotaAlarm.setNotifyTarget(_ctx.stringValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].NotifyTarget"));
+			quotaAlarm.setQuotaUsage(_ctx.floatValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].QuotaUsage"));
+			quotaAlarm.setQuotaValue(_ctx.floatValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].QuotaValue"));
+			quotaAlarm.setAlarmId(_ctx.stringValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].AlarmId"));
 			quotaAlarm.setThreshold(_ctx.floatValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].Threshold"));
-			quotaAlarm.setThresholdType(_ctx.stringValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].ThresholdType"));
+			quotaAlarm.setProductCode(_ctx.stringValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].ProductCode"));
+			quotaAlarm.setWebHook(_ctx.stringValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].WebHook"));
+			quotaAlarm.setExceedThreshold(_ctx.booleanValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].ExceedThreshold"));
 
 			List<String> notifyChannels = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListQuotaAlarmsResponse.QuotaAlarms["+ i +"].NotifyChannels.Length"); j++) {

@@ -1,3 +1,12 @@
+2024-06-18 Version: 1.0.5
+- Generated 2020-02-02 for `polardbx`.
+
+2024-06-17 Version: 1.0.4
+- CreateDBInstance add DNStorageSpace
+
+2024-05-22 Version: 1.0.3
+- DescribeDBInstances, add cpuType.
+
 2021-09-08 Version: 1.0.2
 - Support DescribeBinaryLog to search binary logs.
 

@@ -23,12 +23,12 @@ public class DescribePolicyResponseUnmarshaller {
 	public static DescribePolicyResponse unmarshall(DescribePolicyResponse describePolicyResponse, UnmarshallerContext _ctx) {
 		
 		describePolicyResponse.setRequestId(_ctx.stringValue("DescribePolicyResponse.RequestId"));
-		describePolicyResponse.setAccessId(_ctx.stringValue("DescribePolicyResponse.AccessId"));
-		describePolicyResponse.setEncodedPolicy(_ctx.stringValue("DescribePolicyResponse.EncodedPolicy"));
 		describePolicyResponse.setSignature(_ctx.stringValue("DescribePolicyResponse.Signature"));
-		describePolicyResponse.setFileDir(_ctx.stringValue("DescribePolicyResponse.FileDir"));
 		describePolicyResponse.setHost(_ctx.stringValue("DescribePolicyResponse.Host"));
 		describePolicyResponse.setExpireTime(_ctx.longValue("DescribePolicyResponse.ExpireTime"));
+		describePolicyResponse.setEncodedPolicy(_ctx.stringValue("DescribePolicyResponse.EncodedPolicy"));
+		describePolicyResponse.setFileDir(_ctx.stringValue("DescribePolicyResponse.FileDir"));
+		describePolicyResponse.setAccessId(_ctx.stringValue("DescribePolicyResponse.AccessId"));
 	 
 	 	return describePolicyResponse;
 	}

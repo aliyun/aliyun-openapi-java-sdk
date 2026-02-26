@@ -23,8 +23,8 @@ public class SetupBroadcastTablesResponseUnmarshaller {
 	public static SetupBroadcastTablesResponse unmarshall(SetupBroadcastTablesResponse setupBroadcastTablesResponse, UnmarshallerContext _ctx) {
 		
 		setupBroadcastTablesResponse.setRequestId(_ctx.stringValue("SetupBroadcastTablesResponse.RequestId"));
-		setupBroadcastTablesResponse.setSuccess(_ctx.booleanValue("SetupBroadcastTablesResponse.Success"));
 		setupBroadcastTablesResponse.setData(_ctx.booleanValue("SetupBroadcastTablesResponse.Data"));
+		setupBroadcastTablesResponse.setSuccess(_ctx.booleanValue("SetupBroadcastTablesResponse.Success"));
 	 
 	 	return setupBroadcastTablesResponse;
 	}

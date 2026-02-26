@@ -31,7 +31,7 @@ public class ListDelegatedAdministratorsRequest extends RpcAcsRequest<ListDelega
 
 	private String servicePrincipal;
 	public ListDelegatedAdministratorsRequest() {
-		super("ResourceManager", "2020-03-31", "ListDelegatedAdministrators");
+		super("ResourceManager", "2020-03-31", "ListDelegatedAdministrators", "resourcemanager");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

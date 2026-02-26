@@ -31,31 +31,31 @@ public class DescribeBackupSummaryResponseUnmarshaller {
 		describeBackupSummaryResponse.setRequestId(_ctx.stringValue("DescribeBackupSummaryResponse.RequestId"));
 
 		Incr incr = new Incr();
+		incr.setStatus(_ctx.stringValue("DescribeBackupSummaryResponse.Incr.Status"));
+		incr.setSpeed(_ctx.stringValue("DescribeBackupSummaryResponse.Incr.Speed"));
 		incr.setPos(_ctx.stringValue("DescribeBackupSummaryResponse.Incr.Pos"));
 		incr.setQueueLogNum(_ctx.stringValue("DescribeBackupSummaryResponse.Incr.QueueLogNum"));
-		incr.setSpeed(_ctx.stringValue("DescribeBackupSummaryResponse.Incr.Speed"));
-		incr.setStatus(_ctx.stringValue("DescribeBackupSummaryResponse.Incr.Status"));
-		incr.setRunningLogNum(_ctx.stringValue("DescribeBackupSummaryResponse.Incr.RunningLogNum"));
 		incr.setBackupLogSize(_ctx.stringValue("DescribeBackupSummaryResponse.Incr.BackupLogSize"));
+		incr.setRunningLogNum(_ctx.stringValue("DescribeBackupSummaryResponse.Incr.RunningLogNum"));
 		describeBackupSummaryResponse.setIncr(incr);
 
 		Full full = new Full();
 		full.setHasMore(_ctx.stringValue("DescribeBackupSummaryResponse.Full.HasMore"));
-		full.setNextFullBackupDate(_ctx.stringValue("DescribeBackupSummaryResponse.Full.NextFullBackupDate"));
-		full.setPageNumber(_ctx.integerValue("DescribeBackupSummaryResponse.Full.PageNumber"));
 		full.setPageSize(_ctx.integerValue("DescribeBackupSummaryResponse.Full.PageSize"));
+		full.setPageNumber(_ctx.integerValue("DescribeBackupSummaryResponse.Full.PageNumber"));
 		full.setTotal(_ctx.integerValue("DescribeBackupSummaryResponse.Full.Total"));
+		full.setNextFullBackupDate(_ctx.stringValue("DescribeBackupSummaryResponse.Full.NextFullBackupDate"));
 
 		List<Record> records = new ArrayList<Record>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupSummaryResponse.Full.Records.Length"); i++) {
 			Record record = new Record();
-			record.setRecordId(_ctx.stringValue("DescribeBackupSummaryResponse.Full.Records["+ i +"].RecordId"));
+			record.setStatus(_ctx.stringValue("DescribeBackupSummaryResponse.Full.Records["+ i +"].Status"));
 			record.setFinishTime(_ctx.stringValue("DescribeBackupSummaryResponse.Full.Records["+ i +"].FinishTime"));
 			record.setProcess(_ctx.stringValue("DescribeBackupSummaryResponse.Full.Records["+ i +"].Process"));
-			record.setCreateTime(_ctx.stringValue("DescribeBackupSummaryResponse.Full.Records["+ i +"].CreateTime"));
 			record.setDataSize(_ctx.stringValue("DescribeBackupSummaryResponse.Full.Records["+ i +"].DataSize"));
 			record.setSpeed(_ctx.stringValue("DescribeBackupSummaryResponse.Full.Records["+ i +"].Speed"));
-			record.setStatus(_ctx.stringValue("DescribeBackupSummaryResponse.Full.Records["+ i +"].Status"));
+			record.setRecordId(_ctx.stringValue("DescribeBackupSummaryResponse.Full.Records["+ i +"].RecordId"));
+			record.setCreateTime(_ctx.stringValue("DescribeBackupSummaryResponse.Full.Records["+ i +"].CreateTime"));
 
 			records.add(record);
 		}

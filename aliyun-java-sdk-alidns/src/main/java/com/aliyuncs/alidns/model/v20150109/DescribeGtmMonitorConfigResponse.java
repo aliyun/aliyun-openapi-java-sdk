@@ -27,25 +27,25 @@ public class DescribeGtmMonitorConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String monitorConfigId;
-
-	private String createTime;
-
-	private Long createTimestamp;
-
-	private String updateTime;
-
-	private Long updateTimestamp;
+	private Integer timeout;
 
 	private String protocolType;
 
-	private Integer interval;
+	private String createTime;
+
+	private String updateTime;
 
 	private Integer evaluationCount;
 
-	private Integer timeout;
+	private Long updateTimestamp;
 
 	private String monitorExtendInfo;
+
+	private String monitorConfigId;
+
+	private Long createTimestamp;
+
+	private Integer interval;
 
 	private List<IspCityNode> ispCityNodes;
 
@@ -57,44 +57,12 @@ public class DescribeGtmMonitorConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMonitorConfigId() {
-		return this.monitorConfigId;
+	public Integer getTimeout() {
+		return this.timeout;
 	}
 
-	public void setMonitorConfigId(String monitorConfigId) {
-		this.monitorConfigId = monitorConfigId;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
-
-	public Long getCreateTimestamp() {
-		return this.createTimestamp;
-	}
-
-	public void setCreateTimestamp(Long createTimestamp) {
-		this.createTimestamp = createTimestamp;
-	}
-
-	public String getUpdateTime() {
-		return this.updateTime;
-	}
-
-	public void setUpdateTime(String updateTime) {
-		this.updateTime = updateTime;
-	}
-
-	public Long getUpdateTimestamp() {
-		return this.updateTimestamp;
-	}
-
-	public void setUpdateTimestamp(Long updateTimestamp) {
-		this.updateTimestamp = updateTimestamp;
+	public void setTimeout(Integer timeout) {
+		this.timeout = timeout;
 	}
 
 	public String getProtocolType() {
@@ -105,12 +73,20 @@ public class DescribeGtmMonitorConfigResponse extends AcsResponse {
 		this.protocolType = protocolType;
 	}
 
-	public Integer getInterval() {
-		return this.interval;
+	public String getCreateTime() {
+		return this.createTime;
 	}
 
-	public void setInterval(Integer interval) {
-		this.interval = interval;
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getUpdateTime() {
+		return this.updateTime;
+	}
+
+	public void setUpdateTime(String updateTime) {
+		this.updateTime = updateTime;
 	}
 
 	public Integer getEvaluationCount() {
@@ -121,12 +97,12 @@ public class DescribeGtmMonitorConfigResponse extends AcsResponse {
 		this.evaluationCount = evaluationCount;
 	}
 
-	public Integer getTimeout() {
-		return this.timeout;
+	public Long getUpdateTimestamp() {
+		return this.updateTimestamp;
 	}
 
-	public void setTimeout(Integer timeout) {
-		this.timeout = timeout;
+	public void setUpdateTimestamp(Long updateTimestamp) {
+		this.updateTimestamp = updateTimestamp;
 	}
 
 	public String getMonitorExtendInfo() {
@@ -135,6 +111,30 @@ public class DescribeGtmMonitorConfigResponse extends AcsResponse {
 
 	public void setMonitorExtendInfo(String monitorExtendInfo) {
 		this.monitorExtendInfo = monitorExtendInfo;
+	}
+
+	public String getMonitorConfigId() {
+		return this.monitorConfigId;
+	}
+
+	public void setMonitorConfigId(String monitorConfigId) {
+		this.monitorConfigId = monitorConfigId;
+	}
+
+	public Long getCreateTimestamp() {
+		return this.createTimestamp;
+	}
+
+	public void setCreateTimestamp(Long createTimestamp) {
+		this.createTimestamp = createTimestamp;
+	}
+
+	public Integer getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Integer interval) {
+		this.interval = interval;
 	}
 
 	public List<IspCityNode> getIspCityNodes() {
@@ -147,17 +147,25 @@ public class DescribeGtmMonitorConfigResponse extends AcsResponse {
 
 	public static class IspCityNode {
 
-		private String countryName;
-
-		private String countryCode;
-
-		private String cityName;
-
 		private String cityCode;
+
+		private String countryName;
 
 		private String ispCode;
 
+		private String cityName;
+
+		private String countryCode;
+
 		private String ispName;
+
+		public String getCityCode() {
+			return this.cityCode;
+		}
+
+		public void setCityCode(String cityCode) {
+			this.cityCode = cityCode;
+		}
 
 		public String getCountryName() {
 			return this.countryName;
@@ -167,12 +175,12 @@ public class DescribeGtmMonitorConfigResponse extends AcsResponse {
 			this.countryName = countryName;
 		}
 
-		public String getCountryCode() {
-			return this.countryCode;
+		public String getIspCode() {
+			return this.ispCode;
 		}
 
-		public void setCountryCode(String countryCode) {
-			this.countryCode = countryCode;
+		public void setIspCode(String ispCode) {
+			this.ispCode = ispCode;
 		}
 
 		public String getCityName() {
@@ -183,20 +191,12 @@ public class DescribeGtmMonitorConfigResponse extends AcsResponse {
 			this.cityName = cityName;
 		}
 
-		public String getCityCode() {
-			return this.cityCode;
+		public String getCountryCode() {
+			return this.countryCode;
 		}
 
-		public void setCityCode(String cityCode) {
-			this.cityCode = cityCode;
-		}
-
-		public String getIspCode() {
-			return this.ispCode;
-		}
-
-		public void setIspCode(String ispCode) {
-			this.ispCode = ispCode;
+		public void setCountryCode(String countryCode) {
+			this.countryCode = countryCode;
 		}
 
 		public String getIspName() {

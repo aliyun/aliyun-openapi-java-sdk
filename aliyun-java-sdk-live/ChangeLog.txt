@@ -1,3 +1,171 @@
+2026-02-10 Version: 3.9.76
+- Generated 2016-11-01 for `live`.
+
+2025-12-26 Version: 3.9.75
+- Generated 2016-11-01 for `live`.
+
+2025-12-02 Version: 3.9.74
+- Generated 2016-11-01 for `live`.
+
+2025-10-29 Version: 3.9.73
+- Generated 2016-11-01 for `live`.
+
+2025-09-09 Version: 3.9.72
+- support query rtc live rooms
+
+2025-08-19 Version: 3.9.71
+- Generated 2016-11-01 for `live`.
+
+2025-08-13 Version: 3.9.70
+- Generated 2016-11-01 for `live`.
+
+2025-08-05 Version: 3.9.69
+- Generated 2016-11-01 for `live`.
+
+2025-07-29 Version: 3.9.68
+- Generated 2016-11-01 for `live`.
+
+2025-06-11 Version: 3.9.67
+支持创建RTC WHIP推流地址
+
+2025-05-12 Version: 3.9.66
+- Generated 2016-11-01 for `live`.
+
+2025-03-27 Version: 3.9.65
+- Generated 2016-11-01 for `live`.
+
+2024-12-06 Version: 3.9.64
+- Generated 2016-11-01 for `live`.
+
+2024-11-14 Version: 3.9.63
+- Generated 2016-11-01 for `live`.
+
+2024-10-30 Version: 3.9.62
+- Update to support new apis.
+
+2024-10-30 Version: 3.9.61
+- Update to support new apis.
+
+2024-09-26 Version: 3.9.60
+- Update to support new apis.
+
+2024-08-22 Version: 3.9.59
+- Update to support new apis.
+
+2024-08-13 Version: 3.9.58
+- Update to support new apis.
+
+2024-08-06 Version: 3.9.57
+- Update to support new apis.
+
+2024-08-01 Version: 3.9.56
+- Update to support new apis.
+
+2024-07-05 Version: 3.9.55
+- Update to support new apis.
+
+2024-06-18 Version: 3.9.54
+- Update to support new apis.
+
+2024-06-14 Version: 3.9.53
+- Update to support new apis.
+
+2024-06-04 Version: 3.9.52
+- Update to support new apis.
+
+2024-05-24 Version: 3.9.51
+- Update to support new apis.
+
+2024-05-11 Version: 3.9.50
+- Update to support new apis.
+
+2024-04-29 Version: 3.9.49
+- Update to support new apis.
+
+2024-03-13 Version: 3.9.48
+- Update to support new apis.
+
+2024-03-06 Version: 3.9.47
+- Update to support new apis.
+
+2024-03-01 Version: 3.9.46
+- Update to support new apis.
+
+2024-01-31 Version: 3.9.45
+- Update to support new apis.
+
+2024-01-16 Version: 3.9.44
+- Update to support new apis.
+
+2023-12-26 Version: 3.9.43
+- Update to support new apis.
+
+2023-12-13 Version: 3.9.42
+- Update to support new apis.
+
+2023-11-22 Version: 3.9.41
+- Update to support new apis.
+
+2023-10-30 Version: 3.9.40
+- Update to support new apis.
+
+2023-10-18 Version: 3.9.39
+- Update to support new apis.
+
+2023-08-08 Version: 3.9.38
+- Generated 2016-11-01 for `live`.
+
+2023-05-16 Version: 3.9.37
+- Live sdk update.
+
+2023-05-16 Version: 3.9.36
+- Live sdk update.
+
+2023-04-04 Version: 3.9.35
+- Live sdk update.
+
+2023-03-23 Version: 3.9.34
+- Live sdk update.
+
+2023-02-28 Version: 3.9.33
+- Live sdk update.
+
+2023-02-10 Version: 3.9.32
+- Live sdk update.
+
+2023-01-05 Version: 3.9.31
+- Live sdk update.
+
+2022-12-28 Version: 3.9.29
+- Live sdk update.
+
+2022-12-08 Version: 3.9.28
+- Add live message mute related interface.
+
+2022-12-05 Version: 3.9.27
+- Add list live message interface.
+
+2022-12-05 Version: 3.9.26
+- Add list live message interface.
+
+2022-12-04 Version: 3.9.25
+- Support live interaction and message.
+
+2022-12-02 Version: 3.9.24
+- Support live interaction and message.
+
+2022-10-31 Version: 3.9.23
+- Live pre sdk test.
+
+2022-09-21 Version: 3.9.22
+- Generated 2016-11-01 for `live`.
+
+2022-09-15 Version: 3.9.21
+- Generated 2016-11-01 for `live`.
+
+2022-09-15 Version: 3.9.20
+- Generated 2016-11-01 for `live`.
+
 2022-06-21 Version: 3.9.19
 - Generated 2016-11-01 for `live`.
 

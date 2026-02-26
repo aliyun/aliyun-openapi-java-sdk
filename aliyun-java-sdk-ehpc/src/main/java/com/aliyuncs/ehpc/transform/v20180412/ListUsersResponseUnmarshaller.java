@@ -27,16 +27,16 @@ public class ListUsersResponseUnmarshaller {
 	public static ListUsersResponse unmarshall(ListUsersResponse listUsersResponse, UnmarshallerContext _ctx) {
 		
 		listUsersResponse.setRequestId(_ctx.stringValue("ListUsersResponse.RequestId"));
-		listUsersResponse.setTotalCount(_ctx.integerValue("ListUsersResponse.TotalCount"));
-		listUsersResponse.setPageNumber(_ctx.integerValue("ListUsersResponse.PageNumber"));
 		listUsersResponse.setPageSize(_ctx.integerValue("ListUsersResponse.PageSize"));
+		listUsersResponse.setPageNumber(_ctx.integerValue("ListUsersResponse.PageNumber"));
+		listUsersResponse.setTotalCount(_ctx.integerValue("ListUsersResponse.TotalCount"));
 
 		List<UserInfo> users = new ArrayList<UserInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListUsersResponse.Users.Length"); i++) {
 			UserInfo userInfo = new UserInfo();
 			userInfo.setName(_ctx.stringValue("ListUsersResponse.Users["+ i +"].Name"));
-			userInfo.setGroup(_ctx.stringValue("ListUsersResponse.Users["+ i +"].Group"));
 			userInfo.setAddTime(_ctx.stringValue("ListUsersResponse.Users["+ i +"].AddTime"));
+			userInfo.setGroup(_ctx.stringValue("ListUsersResponse.Users["+ i +"].Group"));
 
 			users.add(userInfo);
 		}

@@ -25,7 +25,11 @@ import com.aliyuncs.cs.Endpoint;
 public class DeleteClusterRequest extends RoaAcsRequest<DeleteClusterResponse> {
 	   
 
+	private Boolean retain_all_resources;
+
 	private String clusterId;
+
+	private Boolean keep_slb;
 	public DeleteClusterRequest() {
 		super("CS", "2015-12-15", "DeleteCluster");
 		setUriPattern("/clusters/[ClusterId]");
@@ -36,6 +40,17 @@ public class DeleteClusterRequest extends RoaAcsRequest<DeleteClusterResponse> {
 		} catch (Exception e) {}
 	}
 
+	public Boolean getRetain_all_resources() {
+		return this.retain_all_resources;
+	}
+
+	public void setRetain_all_resources(Boolean retain_all_resources) {
+		this.retain_all_resources = retain_all_resources;
+		if(retain_all_resources != null){
+			putQueryParameter("retain_all_resources", retain_all_resources.toString());
+		}
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -44,6 +59,17 @@ public class DeleteClusterRequest extends RoaAcsRequest<DeleteClusterResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putPathParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Boolean getKeep_slb() {
+		return this.keep_slb;
+	}
+
+	public void setKeep_slb(Boolean keep_slb) {
+		this.keep_slb = keep_slb;
+		if(keep_slb != null){
+			putQueryParameter("keep_slb", keep_slb.toString());
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mse.Endpoint;
 
@@ -27,13 +28,29 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String clusterSpecification;
 
+	private String resourceGroupId;
+
+	private String requestPars;
+
+	private List<Tag> tags;
+
+	private String vSwitchId;
+
+	private String clusterType;
+
+	private String instanceName;
+
+	private String netType;
+
+	private String mseVersion;
+
+	private String region;
+
 	private String pubSlbSpecification;
 
 	private String privateSlbSpecification;
 
 	private Integer instanceCount;
-
-	private String requestPars;
 
 	private String connectionType;
 
@@ -41,21 +58,13 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String diskType;
 
-	private String vSwitchId;
-
-	private String clusterType;
-
 	private String pubNetworkFlow;
 
 	private String vpcId;
 
-	private String netType;
-
-	private String mseVersion;
-
 	private String acceptLanguage;
 
-	private String region;
+	private String chargeType;
 	public CreateClusterRequest() {
 		super("mse", "2019-05-31", "CreateCluster", "mse");
 		setMethod(MethodType.POST);
@@ -73,6 +82,108 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.clusterSpecification = clusterSpecification;
 		if(clusterSpecification != null){
 			putQueryParameter("ClusterSpecification", clusterSpecification);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getClusterType() {
+		return this.clusterType;
+	}
+
+	public void setClusterType(String clusterType) {
+		this.clusterType = clusterType;
+		if(clusterType != null){
+			putQueryParameter("ClusterType", clusterType);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public String getNetType() {
+		return this.netType;
+	}
+
+	public void setNetType(String netType) {
+		this.netType = netType;
+		if(netType != null){
+			putQueryParameter("NetType", netType);
+		}
+	}
+
+	public String getMseVersion() {
+		return this.mseVersion;
+	}
+
+	public void setMseVersion(String mseVersion) {
+		this.mseVersion = mseVersion;
+		if(mseVersion != null){
+			putQueryParameter("MseVersion", mseVersion);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 
@@ -109,17 +220,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
-		}
-	}
-
 	public String getConnectionType() {
 		return this.connectionType;
 	}
@@ -153,28 +253,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
-	public String getClusterType() {
-		return this.clusterType;
-	}
-
-	public void setClusterType(String clusterType) {
-		this.clusterType = clusterType;
-		if(clusterType != null){
-			putQueryParameter("ClusterType", clusterType);
-		}
-	}
-
 	public String getPubNetworkFlow() {
 		return this.pubNetworkFlow;
 	}
@@ -197,28 +275,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getNetType() {
-		return this.netType;
-	}
-
-	public void setNetType(String netType) {
-		this.netType = netType;
-		if(netType != null){
-			putQueryParameter("NetType", netType);
-		}
-	}
-
-	public String getMseVersion() {
-		return this.mseVersion;
-	}
-
-	public void setMseVersion(String mseVersion) {
-		this.mseVersion = mseVersion;
-		if(mseVersion != null){
-			putQueryParameter("MseVersion", mseVersion);
-		}
-	}
-
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -230,14 +286,37 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getRegion() {
-		return this.region;
+	public String getChargeType() {
+		return this.chargeType;
 	}
 
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

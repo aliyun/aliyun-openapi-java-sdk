@@ -41,6 +41,7 @@ public class ListTransitRouterPrefixListAssociationResponseUnmarshaller {
 			prefixList.setNextHopInstanceId(_ctx.stringValue("ListTransitRouterPrefixListAssociationResponse.PrefixLists["+ i +"].NextHopInstanceId"));
 			prefixList.setNextHopType(_ctx.stringValue("ListTransitRouterPrefixListAssociationResponse.PrefixLists["+ i +"].NextHopType"));
 			prefixList.setTransitRouterTableId(_ctx.stringValue("ListTransitRouterPrefixListAssociationResponse.PrefixLists["+ i +"].TransitRouterTableId"));
+			prefixList.setTransitRouterId(_ctx.stringValue("ListTransitRouterPrefixListAssociationResponse.PrefixLists["+ i +"].TransitRouterId"));
 
 			prefixLists.add(prefixList);
 		}

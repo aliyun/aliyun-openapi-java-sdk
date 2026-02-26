@@ -29,6 +29,8 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 
 	private String type;
 
+	private String dataProtocol;
+
 	private String area;
 
 	private String domainName;
@@ -68,6 +70,17 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getDataProtocol() {
+		return this.dataProtocol;
+	}
+
+	public void setDataProtocol(String dataProtocol) {
+		this.dataProtocol = dataProtocol;
+		if(dataProtocol != null){
+			putQueryParameter("DataProtocol", dataProtocol);
 		}
 	}
 

@@ -28,7 +28,7 @@ public class CreateCostUnitRequest extends RpcAcsRequest<CreateCostUnitResponse>
 
 	private List<UnitEntityList> unitEntityLists;
 	public CreateCostUnitRequest() {
-		super("BssOpenApi", "2017-12-14", "CreateCostUnit");
+		super("BssOpenApi", "2017-12-14", "CreateCostUnit", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupTablesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Long total;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Long total;
 
 	private List<BackupRecord> backupRecords;
 
 	private List<String> tables;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,14 +51,6 @@ public class DescribeBackupTablesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Long getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Long total) {
-		this.total = total;
 	}
 
 	public Integer getPageSize() {
@@ -61,12 +61,12 @@ public class DescribeBackupTablesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Long getTotal() {
+		return this.total;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotal(Long total) {
+		this.total = total;
 	}
 
 	public List<BackupRecord> getBackupRecords() {
@@ -87,13 +87,9 @@ public class DescribeBackupTablesResponse extends AcsResponse {
 
 	public static class BackupRecord {
 
-		private String table;
-
-		private String state;
+		private String endTime;
 
 		private String startTime;
-
-		private String endTime;
 
 		private String process;
 
@@ -101,22 +97,18 @@ public class DescribeBackupTablesResponse extends AcsResponse {
 
 		private String speed;
 
+		private String state;
+
 		private String message;
 
-		public String getTable() {
-			return this.table;
+		private String table;
+
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setTable(String table) {
-			this.table = table;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getStartTime() {
@@ -125,14 +117,6 @@ public class DescribeBackupTablesResponse extends AcsResponse {
 
 		public void setStartTime(String startTime) {
 			this.startTime = startTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
 		}
 
 		public String getProcess() {
@@ -159,12 +143,28 @@ public class DescribeBackupTablesResponse extends AcsResponse {
 			this.speed = speed;
 		}
 
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
 		public String getMessage() {
 			return this.message;
 		}
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getTable() {
+			return this.table;
+		}
+
+		public void setTable(String table) {
+			this.table = table;
 		}
 	}
 

@@ -41,7 +41,7 @@ public class ServiceInvokeRequest extends RpcAcsRequest<ServiceInvokeResponse> {
 
 	private String applicationExternalId;
 	public ServiceInvokeRequest() {
-		super("idaas-doraemon", "2021-05-20", "ServiceInvoke");
+		super("idaas-doraemon", "2021-05-20", "ServiceInvoke", "idaasauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

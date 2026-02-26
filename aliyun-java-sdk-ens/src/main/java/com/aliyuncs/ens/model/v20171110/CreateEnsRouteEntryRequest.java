@@ -26,8 +26,6 @@ public class CreateEnsRouteEntryRequest extends RpcAcsRequest<CreateEnsRouteEntr
 
 	private String routeEntryName;
 
-	private String description;
-
 	private String nextHopId;
 
 	private String nextHopType;
@@ -35,6 +33,10 @@ public class CreateEnsRouteEntryRequest extends RpcAcsRequest<CreateEnsRouteEntr
 	private String routeTableId;
 
 	private String destinationCidrBlock;
+
+	private String description;
+
+	private String sourceCidrBlock;
 	public CreateEnsRouteEntryRequest() {
 		super("Ens", "2017-11-10", "CreateEnsRouteEntry", "ens");
 		setMethod(MethodType.POST);
@@ -48,17 +50,6 @@ public class CreateEnsRouteEntryRequest extends RpcAcsRequest<CreateEnsRouteEntr
 		this.routeEntryName = routeEntryName;
 		if(routeEntryName != null){
 			putQueryParameter("RouteEntryName", routeEntryName);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 
@@ -103,6 +94,28 @@ public class CreateEnsRouteEntryRequest extends RpcAcsRequest<CreateEnsRouteEntr
 		this.destinationCidrBlock = destinationCidrBlock;
 		if(destinationCidrBlock != null){
 			putQueryParameter("DestinationCidrBlock", destinationCidrBlock);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSourceCidrBlock() {
+		return this.sourceCidrBlock;
+	}
+
+	public void setSourceCidrBlock(String sourceCidrBlock) {
+		this.sourceCidrBlock = sourceCidrBlock;
+		if(sourceCidrBlock != null){
+			putQueryParameter("SourceCidrBlock", sourceCidrBlock);
 		}
 	}
 

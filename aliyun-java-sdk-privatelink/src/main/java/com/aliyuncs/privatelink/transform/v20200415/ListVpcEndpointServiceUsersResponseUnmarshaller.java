@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.privatelink.model.v20200415.ListVpcEndpointServiceUsersResponse;
 import com.aliyuncs.privatelink.model.v20200415.ListVpcEndpointServiceUsersResponse.User;
+import com.aliyuncs.privatelink.model.v20200415.ListVpcEndpointServiceUsersResponse.UserARN;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,7 +29,8 @@ public class ListVpcEndpointServiceUsersResponseUnmarshaller {
 		
 		listVpcEndpointServiceUsersResponse.setRequestId(_ctx.stringValue("ListVpcEndpointServiceUsersResponse.RequestId"));
 		listVpcEndpointServiceUsersResponse.setNextToken(_ctx.stringValue("ListVpcEndpointServiceUsersResponse.NextToken"));
-		listVpcEndpointServiceUsersResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointServiceUsersResponse.MaxResults"));
+		listVpcEndpointServiceUsersResponse.setMaxResults(_ctx.integerValue("ListVpcEndpointServiceUsersResponse.MaxResults"));
+		listVpcEndpointServiceUsersResponse.setTotalCount(_ctx.stringValue("ListVpcEndpointServiceUsersResponse.TotalCount"));
 
 		List<User> users = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointServiceUsersResponse.Users.Length"); i++) {
@@ -38,6 +40,15 @@ public class ListVpcEndpointServiceUsersResponseUnmarshaller {
 			users.add(user);
 		}
 		listVpcEndpointServiceUsersResponse.setUsers(users);
+
+		List<UserARN> userARNs = new ArrayList<UserARN>();
+		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointServiceUsersResponse.UserARNs.Length"); i++) {
+			UserARN userARN = new UserARN();
+			userARN.setUserARN(_ctx.stringValue("ListVpcEndpointServiceUsersResponse.UserARNs["+ i +"].UserARN"));
+
+			userARNs.add(userARN);
+		}
+		listVpcEndpointServiceUsersResponse.setUserARNs(userARNs);
 	 
 	 	return listVpcEndpointServiceUsersResponse;
 	}

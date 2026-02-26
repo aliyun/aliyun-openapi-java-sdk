@@ -31,6 +31,8 @@ public class AssignIpv6AddressesResponse extends AcsResponse {
 
 	private List<String> ipv6Sets;
 
+	private List<String> ipv6PrefixSets;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -53,6 +55,14 @@ public class AssignIpv6AddressesResponse extends AcsResponse {
 
 	public void setIpv6Sets(List<String> ipv6Sets) {
 		this.ipv6Sets = ipv6Sets;
+	}
+
+	public List<String> getIpv6PrefixSets() {
+		return this.ipv6PrefixSets;
+	}
+
+	public void setIpv6PrefixSets(List<String> ipv6PrefixSets) {
+		this.ipv6PrefixSets = ipv6PrefixSets;
 	}
 
 	@Override

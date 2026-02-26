@@ -32,6 +32,8 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 	private String displayName;
 
 	private String name;
+
+	private String mediaType;
 	public CreateSkillGroupRequest() {
 		super("CCC", "2020-07-01", "CreateSkillGroup", "CCC");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getMediaType() {
+		return this.mediaType;
+	}
+
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+		if(mediaType != null){
+			putQueryParameter("MediaType", mediaType);
 		}
 	}
 

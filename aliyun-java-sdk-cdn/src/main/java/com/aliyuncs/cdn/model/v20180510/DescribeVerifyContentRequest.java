@@ -26,8 +26,6 @@ public class DescribeVerifyContentRequest extends RpcAcsRequest<DescribeVerifyCo
 	   
 
 	private String domainName;
-
-	private Long ownerId;
 	public DescribeVerifyContentRequest() {
 		super("Cdn", "2018-05-10", "DescribeVerifyContent");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class DescribeVerifyContentRequest extends RpcAcsRequest<DescribeVerifyCo
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

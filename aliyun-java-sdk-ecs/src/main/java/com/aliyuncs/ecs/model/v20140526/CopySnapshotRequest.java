@@ -30,11 +30,15 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 
 	private String snapshotId;
 
+	private String clientToken;
+
 	private String destinationRegionId;
 
 	private String resourceGroupId;
 
 	private List<Tag> tags;
+
+	private List<Arn> arns;
 
 	private String resourceOwnerAccount;
 
@@ -44,7 +48,13 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 
 	private String destinationSnapshotDescription;
 
+	private Boolean encrypted;
+
 	private Integer retentionDays;
+
+	private String kMSKeyId;
+
+	private String destinationStorageLocationArn;
 	public CopySnapshotRequest() {
 		super("Ecs", "2014-05-26", "CopySnapshot", "ecs");
 		setMethod(MethodType.POST);
@@ -73,6 +83,17 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 		this.snapshotId = snapshotId;
 		if(snapshotId != null){
 			putQueryParameter("SnapshotId", snapshotId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -108,6 +129,21 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
+	}
+
+	public List<Arn> getArns() {
+		return this.arns;
+	}
+
+	public void setArns(List<Arn> arns) {
+		this.arns = arns;	
+		if (arns != null) {
+			for (int depth1 = 0; depth1 < arns.size(); depth1++) {
+				putQueryParameter("Arn." + (depth1 + 1) + ".RoleType" , arns.get(depth1).getRoleType());
+				putQueryParameter("Arn." + (depth1 + 1) + ".Rolearn" , arns.get(depth1).getRolearn());
+				putQueryParameter("Arn." + (depth1 + 1) + ".AssumeRoleFor" , arns.get(depth1).getAssumeRoleFor());
 			}
 		}	
 	}
@@ -156,6 +192,17 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 		}
 	}
 
+	public Boolean getEncrypted() {
+		return this.encrypted;
+	}
+
+	public void setEncrypted(Boolean encrypted) {
+		this.encrypted = encrypted;
+		if(encrypted != null){
+			putQueryParameter("Encrypted", encrypted.toString());
+		}
+	}
+
 	public Integer getRetentionDays() {
 		return this.retentionDays;
 	}
@@ -164,6 +211,28 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 		this.retentionDays = retentionDays;
 		if(retentionDays != null){
 			putQueryParameter("RetentionDays", retentionDays.toString());
+		}
+	}
+
+	public String getKMSKeyId() {
+		return this.kMSKeyId;
+	}
+
+	public void setKMSKeyId(String kMSKeyId) {
+		this.kMSKeyId = kMSKeyId;
+		if(kMSKeyId != null){
+			putQueryParameter("KMSKeyId", kMSKeyId);
+		}
+	}
+
+	public String getDestinationStorageLocationArn() {
+		return this.destinationStorageLocationArn;
+	}
+
+	public void setDestinationStorageLocationArn(String destinationStorageLocationArn) {
+		this.destinationStorageLocationArn = destinationStorageLocationArn;
+		if(destinationStorageLocationArn != null){
+			putQueryParameter("DestinationStorageLocationArn", destinationStorageLocationArn);
 		}
 	}
 
@@ -187,6 +256,39 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+	}
+
+	public static class Arn {
+
+		private String roleType;
+
+		private String rolearn;
+
+		private Long assumeRoleFor;
+
+		public String getRoleType() {
+			return this.roleType;
+		}
+
+		public void setRoleType(String roleType) {
+			this.roleType = roleType;
+		}
+
+		public String getRolearn() {
+			return this.rolearn;
+		}
+
+		public void setRolearn(String rolearn) {
+			this.rolearn = rolearn;
+		}
+
+		public Long getAssumeRoleFor() {
+			return this.assumeRoleFor;
+		}
+
+		public void setAssumeRoleFor(Long assumeRoleFor) {
+			this.assumeRoleFor = assumeRoleFor;
 		}
 	}
 

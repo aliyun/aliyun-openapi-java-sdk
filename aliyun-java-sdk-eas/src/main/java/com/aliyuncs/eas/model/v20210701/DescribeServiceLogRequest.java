@@ -25,9 +25,15 @@ import com.aliyuncs.eas.Endpoint;
 public class DescribeServiceLogRequest extends RoaAcsRequest<DescribeServiceLogResponse> {
 	   
 
+	private String instanceName;
+
+	private String containerName;
+
+	private Boolean previous;
+
 	private String ip;
 
-	private Integer pageSize;
+	private Long pageSize;
 
 	private String endTime;
 
@@ -37,7 +43,7 @@ public class DescribeServiceLogRequest extends RoaAcsRequest<DescribeServiceLogR
 
 	private String clusterId;
 
-	private Integer pageNum;
+	private Long pageNum;
 
 	private String keyword;
 	public DescribeServiceLogRequest() {
@@ -48,6 +54,39 @@ public class DescribeServiceLogRequest extends RoaAcsRequest<DescribeServiceLogR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public String getContainerName() {
+		return this.containerName;
+	}
+
+	public void setContainerName(String containerName) {
+		this.containerName = containerName;
+		if(containerName != null){
+			putQueryParameter("ContainerName", containerName);
+		}
+	}
+
+	public Boolean getPrevious() {
+		return this.previous;
+	}
+
+	public void setPrevious(Boolean previous) {
+		this.previous = previous;
+		if(previous != null){
+			putQueryParameter("Previous", previous.toString());
+		}
 	}
 
 	public String getIp() {
@@ -61,11 +100,11 @@ public class DescribeServiceLogRequest extends RoaAcsRequest<DescribeServiceLogR
 		}
 	}
 
-	public Integer getPageSize() {
+	public Long getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(Integer pageSize) {
+	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
@@ -116,11 +155,11 @@ public class DescribeServiceLogRequest extends RoaAcsRequest<DescribeServiceLogR
 		}
 	}
 
-	public Integer getPageNum() {
+	public Long getPageNum() {
 		return this.pageNum;
 	}
 
-	public void setPageNum(Integer pageNum) {
+	public void setPageNum(Long pageNum) {
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());

@@ -27,7 +27,7 @@ public class EmptySlsLogstoreRequest extends RpcAcsRequest<EmptySlsLogstoreRespo
 
 	private String resourceGroupId;
 	public EmptySlsLogstoreRequest() {
-		super("ddoscoo", "2020-01-01", "EmptySlsLogstore");
+		super("ddoscoo", "2020-01-01", "EmptySlsLogstore", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

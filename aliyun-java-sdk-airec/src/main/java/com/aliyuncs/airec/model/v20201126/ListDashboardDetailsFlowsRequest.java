@@ -33,9 +33,9 @@ public class ListDashboardDetailsFlowsRequest extends RoaAcsRequest<ListDashboar
 
 	private String traceIds;
 
-	private Integer endTime;
+	private Long endTime;
 
-	private Integer startTime;
+	private Long startTime;
 
 	private String sceneIds;
 	public ListDashboardDetailsFlowsRequest() {
@@ -92,22 +92,22 @@ public class ListDashboardDetailsFlowsRequest extends RoaAcsRequest<ListDashboar
 		}
 	}
 
-	public Integer getEndTime() {
+	public Long getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(Integer endTime) {
+	public void setEndTime(Long endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("endTime", endTime.toString());
 		}
 	}
 
-	public Integer getStartTime() {
+	public Long getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(Integer startTime) {
+	public void setStartTime(Long startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("startTime", startTime.toString());

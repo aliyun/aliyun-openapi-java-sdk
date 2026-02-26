@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGtmAccessStrategiesResponse extends AcsResponse {
 
+	private Integer pageSize;
+
 	private String requestId;
-
-	private Integer totalItems;
-
-	private Integer totalPages;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalPages;
+
+	private Integer totalItems;
 
 	private List<Strategy> strategies;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,22 +51,6 @@ public class DescribeGtmAccessStrategiesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalItems() {
-		return this.totalItems;
-	}
-
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
-	}
-
-	public Integer getTotalPages() {
-		return this.totalPages;
-	}
-
-	public void setTotalPages(Integer totalPages) {
-		this.totalPages = totalPages;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +61,20 @@ public class DescribeGtmAccessStrategiesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalPages() {
+		return this.totalPages;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalPages(Integer totalPages) {
+		this.totalPages = totalPages;
+	}
+
+	public Integer getTotalItems() {
+		return this.totalItems;
+	}
+
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
 	}
 
 	public List<Strategy> getStrategies() {
@@ -87,46 +87,46 @@ public class DescribeGtmAccessStrategiesResponse extends AcsResponse {
 
 	public static class Strategy {
 
-		private String strategyId;
+		private String accessMode;
 
 		private String strategyName;
 
-		private String createTime;
-
-		private Long createTimestamp;
-
-		private String defaultAddrPoolId;
-
-		private String defaultAddrPoolName;
-
-		private String failoverAddrPoolId;
-
-		private String failoverAddrPoolName;
-
-		private String accessMode;
-
-		private String accessStatus;
+		private String defaultAddrPoolMonitorStatus;
 
 		private String strategyMode;
 
-		private String instanceId;
+		private String createTime;
 
 		private String defaultAddrPoolStatus;
 
+		private String instanceId;
+
+		private String failoverAddrPoolId;
+
+		private String defaultAddrPoolId;
+
+		private String strategyId;
+
 		private String failoverAddrPoolStatus;
 
-		private String defaultAddrPoolMonitorStatus;
+		private String accessStatus;
 
 		private String failoverAddrPoolMonitorStatus;
 
+		private String defaultAddrPoolName;
+
+		private String failoverAddrPoolName;
+
+		private Long createTimestamp;
+
 		private List<Line> lines;
 
-		public String getStrategyId() {
-			return this.strategyId;
+		public String getAccessMode() {
+			return this.accessMode;
 		}
 
-		public void setStrategyId(String strategyId) {
-			this.strategyId = strategyId;
+		public void setAccessMode(String accessMode) {
+			this.accessMode = accessMode;
 		}
 
 		public String getStrategyName() {
@@ -137,68 +137,12 @@ public class DescribeGtmAccessStrategiesResponse extends AcsResponse {
 			this.strategyName = strategyName;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getDefaultAddrPoolMonitorStatus() {
+			return this.defaultAddrPoolMonitorStatus;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
-
-		public String getDefaultAddrPoolId() {
-			return this.defaultAddrPoolId;
-		}
-
-		public void setDefaultAddrPoolId(String defaultAddrPoolId) {
-			this.defaultAddrPoolId = defaultAddrPoolId;
-		}
-
-		public String getDefaultAddrPoolName() {
-			return this.defaultAddrPoolName;
-		}
-
-		public void setDefaultAddrPoolName(String defaultAddrPoolName) {
-			this.defaultAddrPoolName = defaultAddrPoolName;
-		}
-
-		public String getFailoverAddrPoolId() {
-			return this.failoverAddrPoolId;
-		}
-
-		public void setFailoverAddrPoolId(String failoverAddrPoolId) {
-			this.failoverAddrPoolId = failoverAddrPoolId;
-		}
-
-		public String getFailoverAddrPoolName() {
-			return this.failoverAddrPoolName;
-		}
-
-		public void setFailoverAddrPoolName(String failoverAddrPoolName) {
-			this.failoverAddrPoolName = failoverAddrPoolName;
-		}
-
-		public String getAccessMode() {
-			return this.accessMode;
-		}
-
-		public void setAccessMode(String accessMode) {
-			this.accessMode = accessMode;
-		}
-
-		public String getAccessStatus() {
-			return this.accessStatus;
-		}
-
-		public void setAccessStatus(String accessStatus) {
-			this.accessStatus = accessStatus;
+		public void setDefaultAddrPoolMonitorStatus(String defaultAddrPoolMonitorStatus) {
+			this.defaultAddrPoolMonitorStatus = defaultAddrPoolMonitorStatus;
 		}
 
 		public String getStrategyMode() {
@@ -209,12 +153,12 @@ public class DescribeGtmAccessStrategiesResponse extends AcsResponse {
 			this.strategyMode = strategyMode;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getDefaultAddrPoolStatus() {
@@ -225,6 +169,38 @@ public class DescribeGtmAccessStrategiesResponse extends AcsResponse {
 			this.defaultAddrPoolStatus = defaultAddrPoolStatus;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getFailoverAddrPoolId() {
+			return this.failoverAddrPoolId;
+		}
+
+		public void setFailoverAddrPoolId(String failoverAddrPoolId) {
+			this.failoverAddrPoolId = failoverAddrPoolId;
+		}
+
+		public String getDefaultAddrPoolId() {
+			return this.defaultAddrPoolId;
+		}
+
+		public void setDefaultAddrPoolId(String defaultAddrPoolId) {
+			this.defaultAddrPoolId = defaultAddrPoolId;
+		}
+
+		public String getStrategyId() {
+			return this.strategyId;
+		}
+
+		public void setStrategyId(String strategyId) {
+			this.strategyId = strategyId;
+		}
+
 		public String getFailoverAddrPoolStatus() {
 			return this.failoverAddrPoolStatus;
 		}
@@ -233,12 +209,12 @@ public class DescribeGtmAccessStrategiesResponse extends AcsResponse {
 			this.failoverAddrPoolStatus = failoverAddrPoolStatus;
 		}
 
-		public String getDefaultAddrPoolMonitorStatus() {
-			return this.defaultAddrPoolMonitorStatus;
+		public String getAccessStatus() {
+			return this.accessStatus;
 		}
 
-		public void setDefaultAddrPoolMonitorStatus(String defaultAddrPoolMonitorStatus) {
-			this.defaultAddrPoolMonitorStatus = defaultAddrPoolMonitorStatus;
+		public void setAccessStatus(String accessStatus) {
+			this.accessStatus = accessStatus;
 		}
 
 		public String getFailoverAddrPoolMonitorStatus() {
@@ -247,6 +223,30 @@ public class DescribeGtmAccessStrategiesResponse extends AcsResponse {
 
 		public void setFailoverAddrPoolMonitorStatus(String failoverAddrPoolMonitorStatus) {
 			this.failoverAddrPoolMonitorStatus = failoverAddrPoolMonitorStatus;
+		}
+
+		public String getDefaultAddrPoolName() {
+			return this.defaultAddrPoolName;
+		}
+
+		public void setDefaultAddrPoolName(String defaultAddrPoolName) {
+			this.defaultAddrPoolName = defaultAddrPoolName;
+		}
+
+		public String getFailoverAddrPoolName() {
+			return this.failoverAddrPoolName;
+		}
+
+		public void setFailoverAddrPoolName(String failoverAddrPoolName) {
+			this.failoverAddrPoolName = failoverAddrPoolName;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 
 		public List<Line> getLines() {
@@ -259,13 +259,21 @@ public class DescribeGtmAccessStrategiesResponse extends AcsResponse {
 
 		public static class Line {
 
+			private String groupName;
+
 			private String lineCode;
 
 			private String lineName;
 
 			private String groupCode;
 
-			private String groupName;
+			public String getGroupName() {
+				return this.groupName;
+			}
+
+			public void setGroupName(String groupName) {
+				this.groupName = groupName;
+			}
 
 			public String getLineCode() {
 				return this.lineCode;
@@ -289,14 +297,6 @@ public class DescribeGtmAccessStrategiesResponse extends AcsResponse {
 
 			public void setGroupCode(String groupCode) {
 				this.groupCode = groupCode;
-			}
-
-			public String getGroupName() {
-				return this.groupName;
-			}
-
-			public void setGroupName(String groupName) {
-				this.groupName = groupName;
 			}
 		}
 	}

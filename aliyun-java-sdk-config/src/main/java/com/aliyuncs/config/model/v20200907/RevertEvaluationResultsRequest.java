@@ -33,7 +33,7 @@ public class RevertEvaluationResultsRequest extends RpcAcsRequest<RevertEvaluati
 	@SerializedName("resources")
 	private List<Resources> resources;
 	public RevertEvaluationResultsRequest() {
-		super("Config", "2020-09-07", "RevertEvaluationResults");
+		super("Config", "2020-09-07", "RevertEvaluationResults", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

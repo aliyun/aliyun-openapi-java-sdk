@@ -44,6 +44,7 @@ public class ListDestinationResponseUnmarshaller {
 			destinationsItem.setIsFailover(_ctx.booleanValue("ListDestinationResponse.Destinations["+ i +"].IsFailover"));
 			destinationsItem.setUtcCreated(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].UtcCreated"));
 			destinationsItem.setDescription(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].Description"));
+			destinationsItem.setStatus(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].Status"));
 
 			destinations.add(destinationsItem);
 		}

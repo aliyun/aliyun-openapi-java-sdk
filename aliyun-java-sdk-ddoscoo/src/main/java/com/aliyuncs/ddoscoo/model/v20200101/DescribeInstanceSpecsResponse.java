@@ -69,6 +69,18 @@ public class DescribeInstanceSpecsResponse extends AcsResponse {
 
 		private Integer domainLimit;
 
+		private String elasticBwModel;
+
+		private Long cpsLimit;
+
+		private Long connLimit;
+
+		private Long realLimitBw;
+
+		private String elasticQpsMode;
+
+		private Long elasticQps;
+
 		public Integer getBaseBandwidth() {
 			return this.baseBandwidth;
 		}
@@ -155,6 +167,54 @@ public class DescribeInstanceSpecsResponse extends AcsResponse {
 
 		public void setDomainLimit(Integer domainLimit) {
 			this.domainLimit = domainLimit;
+		}
+
+		public String getElasticBwModel() {
+			return this.elasticBwModel;
+		}
+
+		public void setElasticBwModel(String elasticBwModel) {
+			this.elasticBwModel = elasticBwModel;
+		}
+
+		public Long getCpsLimit() {
+			return this.cpsLimit;
+		}
+
+		public void setCpsLimit(Long cpsLimit) {
+			this.cpsLimit = cpsLimit;
+		}
+
+		public Long getConnLimit() {
+			return this.connLimit;
+		}
+
+		public void setConnLimit(Long connLimit) {
+			this.connLimit = connLimit;
+		}
+
+		public Long getRealLimitBw() {
+			return this.realLimitBw;
+		}
+
+		public void setRealLimitBw(Long realLimitBw) {
+			this.realLimitBw = realLimitBw;
+		}
+
+		public String getElasticQpsMode() {
+			return this.elasticQpsMode;
+		}
+
+		public void setElasticQpsMode(String elasticQpsMode) {
+			this.elasticQpsMode = elasticQpsMode;
+		}
+
+		public Long getElasticQps() {
+			return this.elasticQps;
+		}
+
+		public void setElasticQps(Long elasticQps) {
+			this.elasticQps = elasticQps;
 		}
 	}
 

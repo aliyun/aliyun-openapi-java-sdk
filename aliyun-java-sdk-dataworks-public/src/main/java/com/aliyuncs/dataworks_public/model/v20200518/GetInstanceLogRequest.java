@@ -28,6 +28,8 @@ public class GetInstanceLogRequest extends RpcAcsRequest<GetInstanceLogResponse>
 	private String projectEnv;
 
 	private Long instanceId;
+
+	private Long instanceHistoryId;
 	public GetInstanceLogRequest() {
 		super("dataworks-public", "2020-05-18", "GetInstanceLog");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class GetInstanceLogRequest extends RpcAcsRequest<GetInstanceLogResponse>
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putBodyParameter("InstanceId", instanceId.toString());
+		}
+	}
+
+	public Long getInstanceHistoryId() {
+		return this.instanceHistoryId;
+	}
+
+	public void setInstanceHistoryId(Long instanceHistoryId) {
+		this.instanceHistoryId = instanceHistoryId;
+		if(instanceHistoryId != null){
+			putBodyParameter("InstanceHistoryId", instanceHistoryId.toString());
 		}
 	}
 

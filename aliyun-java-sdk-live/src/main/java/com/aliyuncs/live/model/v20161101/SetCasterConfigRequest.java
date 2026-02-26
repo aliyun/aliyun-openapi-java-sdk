@@ -31,6 +31,8 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 
 	private String programName;
 
+	private String urgentImageUrl;
+
 	private String recordConfig;
 
 	private String urgentMaterialId;
@@ -38,6 +40,12 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 	private String transcodeConfig;
 
 	private String casterName;
+
+	private Boolean autoSwitchUrgentOn;
+
+	private String autoSwitchUrgentConfig;
+
+	private String urgentLiveStreamUrl;
 
 	private String sideOutputUrl;
 
@@ -52,6 +60,8 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 	private Long ownerId;
 
 	private Float delay;
+
+	private String urgentImageId;
 
 	private String callbackUrl;
 	public SetCasterConfigRequest() {
@@ -96,6 +106,17 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		}
 	}
 
+	public String getUrgentImageUrl() {
+		return this.urgentImageUrl;
+	}
+
+	public void setUrgentImageUrl(String urgentImageUrl) {
+		this.urgentImageUrl = urgentImageUrl;
+		if(urgentImageUrl != null){
+			putQueryParameter("UrgentImageUrl", urgentImageUrl);
+		}
+	}
+
 	public String getRecordConfig() {
 		return this.recordConfig;
 	}
@@ -137,6 +158,39 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		this.casterName = casterName;
 		if(casterName != null){
 			putQueryParameter("CasterName", casterName);
+		}
+	}
+
+	public Boolean getAutoSwitchUrgentOn() {
+		return this.autoSwitchUrgentOn;
+	}
+
+	public void setAutoSwitchUrgentOn(Boolean autoSwitchUrgentOn) {
+		this.autoSwitchUrgentOn = autoSwitchUrgentOn;
+		if(autoSwitchUrgentOn != null){
+			putQueryParameter("AutoSwitchUrgentOn", autoSwitchUrgentOn.toString());
+		}
+	}
+
+	public String getAutoSwitchUrgentConfig() {
+		return this.autoSwitchUrgentConfig;
+	}
+
+	public void setAutoSwitchUrgentConfig(String autoSwitchUrgentConfig) {
+		this.autoSwitchUrgentConfig = autoSwitchUrgentConfig;
+		if(autoSwitchUrgentConfig != null){
+			putQueryParameter("AutoSwitchUrgentConfig", autoSwitchUrgentConfig);
+		}
+	}
+
+	public String getUrgentLiveStreamUrl() {
+		return this.urgentLiveStreamUrl;
+	}
+
+	public void setUrgentLiveStreamUrl(String urgentLiveStreamUrl) {
+		this.urgentLiveStreamUrl = urgentLiveStreamUrl;
+		if(urgentLiveStreamUrl != null){
+			putQueryParameter("UrgentLiveStreamUrl", urgentLiveStreamUrl);
 		}
 	}
 
@@ -214,6 +268,17 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		this.delay = delay;
 		if(delay != null){
 			putQueryParameter("Delay", delay.toString());
+		}
+	}
+
+	public String getUrgentImageId() {
+		return this.urgentImageId;
+	}
+
+	public void setUrgentImageId(String urgentImageId) {
+		this.urgentImageId = urgentImageId;
+		if(urgentImageId != null){
+			putQueryParameter("UrgentImageId", urgentImageId);
 		}
 	}
 

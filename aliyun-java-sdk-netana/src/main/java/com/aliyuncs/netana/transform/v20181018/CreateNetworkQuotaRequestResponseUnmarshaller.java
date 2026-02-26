@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateNetworkQuotaRequestResponseUnmarshaller {
 
-	public static CreateNetworkQuotaRequestResponse unmarshall(CreateNetworkQuotaRequestResponse createNetworkQuotaRequestResponse, UnmarshallerContext context) {
+	public static CreateNetworkQuotaRequestResponse unmarshall(CreateNetworkQuotaRequestResponse createNetworkQuotaRequestResponse, UnmarshallerContext _ctx) {
 		
-		createNetworkQuotaRequestResponse.setRequestId(context.stringValue("CreateNetworkQuotaRequestResponse.RequestId"));
+		createNetworkQuotaRequestResponse.setRequestId(_ctx.stringValue("CreateNetworkQuotaRequestResponse.RequestId"));
 	 
 	 	return createNetworkQuotaRequestResponse;
 	}

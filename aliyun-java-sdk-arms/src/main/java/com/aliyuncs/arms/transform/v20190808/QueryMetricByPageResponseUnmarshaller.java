@@ -36,6 +36,7 @@ public class QueryMetricByPageResponseUnmarshaller {
 		data.setPageSize(_ctx.integerValue("QueryMetricByPageResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QueryMetricByPageResponse.Data.Total"));
 		data.setPage(_ctx.integerValue("QueryMetricByPageResponse.Data.Page"));
+		data.setCompleted(_ctx.booleanValue("QueryMetricByPageResponse.Data.Completed"));
 
 		List<Map<Object, Object>> items = _ctx.listMapValue("QueryMetricByPageResponse.Data.Items");
 		data.setItems(items);

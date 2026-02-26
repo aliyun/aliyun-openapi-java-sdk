@@ -47,15 +47,31 @@ public class DescribeDnsGtmAddressPoolAvailableConfigResponse extends AcsRespons
 
 	public static class AttributeInfo {
 
+		private String fatherCode;
+
+		private String groupName;
+
 		private String lineCode;
 
 		private String lineName;
 
 		private String groupCode;
 
-		private String groupName;
+		public String getFatherCode() {
+			return this.fatherCode;
+		}
 
-		private String fatherCode;
+		public void setFatherCode(String fatherCode) {
+			this.fatherCode = fatherCode;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
 
 		public String getLineCode() {
 			return this.lineCode;
@@ -79,22 +95,6 @@ public class DescribeDnsGtmAddressPoolAvailableConfigResponse extends AcsRespons
 
 		public void setGroupCode(String groupCode) {
 			this.groupCode = groupCode;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
-
-		public String getFatherCode() {
-			return this.fatherCode;
-		}
-
-		public void setFatherCode(String fatherCode) {
-			this.fatherCode = fatherCode;
 		}
 	}
 

@@ -25,17 +25,17 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensitiveColumnsDetailResponse> {
 	   
 
+	private Long tid;
+
+	private String tableName;
+
 	private String schemaName;
 
 	private String columnName;
 
-	private Long tid;
-
 	private Long dbId;
 
 	private Boolean logic;
-
-	private String tableName;
 	public ListSensitiveColumnsDetailRequest() {
 		super("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -43,6 +43,28 @@ public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensiti
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
+		}
 	}
 
 	public String getSchemaName() {
@@ -67,17 +89,6 @@ public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensiti
 		}
 	}
 
-	public Long getTid() {
-		return this.tid;
-	}
-
-	public void setTid(Long tid) {
-		this.tid = tid;
-		if(tid != null){
-			putQueryParameter("Tid", tid.toString());
-		}
-	}
-
 	public Long getDbId() {
 		return this.dbId;
 	}
@@ -97,17 +108,6 @@ public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensiti
 		this.logic = logic;
 		if(logic != null){
 			putQueryParameter("Logic", logic.toString());
-		}
-	}
-
-	public String getTableName() {
-		return this.tableName;
-	}
-
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-		if(tableName != null){
-			putQueryParameter("TableName", tableName);
 		}
 	}
 

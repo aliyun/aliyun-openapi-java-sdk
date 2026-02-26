@@ -20,16 +20,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeIpv6LocationAndIspResponseUnmarshaller {
 
-	public static DescribeIpv6LocationAndIspResponse unmarshall(DescribeIpv6LocationAndIspResponse describeIpv6LocationAndIspResponse, UnmarshallerContext context) {
+	public static DescribeIpv6LocationAndIspResponse unmarshall(DescribeIpv6LocationAndIspResponse describeIpv6LocationAndIspResponse, UnmarshallerContext _ctx) {
 		
-		describeIpv6LocationAndIspResponse.setRequestId(context.stringValue("DescribeIpv6LocationAndIspResponse.RequestId"));
-		describeIpv6LocationAndIspResponse.setIpAddress(context.stringValue("DescribeIpv6LocationAndIspResponse.IpAddress"));
-		describeIpv6LocationAndIspResponse.setCountry(context.stringValue("DescribeIpv6LocationAndIspResponse.Country"));
-		describeIpv6LocationAndIspResponse.setCity(context.stringValue("DescribeIpv6LocationAndIspResponse.City"));
-		describeIpv6LocationAndIspResponse.setISP(context.stringValue("DescribeIpv6LocationAndIspResponse.ISP"));
-		describeIpv6LocationAndIspResponse.setCountryCode(context.stringValue("DescribeIpv6LocationAndIspResponse.CountryCode"));
-		describeIpv6LocationAndIspResponse.setCityCode(context.stringValue("DescribeIpv6LocationAndIspResponse.CityCode"));
-		describeIpv6LocationAndIspResponse.setISPCode(context.stringValue("DescribeIpv6LocationAndIspResponse.ISPCode"));
+		describeIpv6LocationAndIspResponse.setRequestId(_ctx.stringValue("DescribeIpv6LocationAndIspResponse.RequestId"));
+		describeIpv6LocationAndIspResponse.setCityCode(_ctx.stringValue("DescribeIpv6LocationAndIspResponse.CityCode"));
+		describeIpv6LocationAndIspResponse.setISPCode(_ctx.stringValue("DescribeIpv6LocationAndIspResponse.ISPCode"));
+		describeIpv6LocationAndIspResponse.setISP(_ctx.stringValue("DescribeIpv6LocationAndIspResponse.ISP"));
+		describeIpv6LocationAndIspResponse.setCountry(_ctx.stringValue("DescribeIpv6LocationAndIspResponse.Country"));
+		describeIpv6LocationAndIspResponse.setIpAddress(_ctx.stringValue("DescribeIpv6LocationAndIspResponse.IpAddress"));
+		describeIpv6LocationAndIspResponse.setCity(_ctx.stringValue("DescribeIpv6LocationAndIspResponse.City"));
+		describeIpv6LocationAndIspResponse.setCountryCode(_ctx.stringValue("DescribeIpv6LocationAndIspResponse.CountryCode"));
 	 
 	 	return describeIpv6LocationAndIspResponse;
 	}

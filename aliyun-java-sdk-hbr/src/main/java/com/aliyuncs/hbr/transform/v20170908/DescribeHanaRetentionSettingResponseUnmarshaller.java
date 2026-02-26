@@ -23,16 +23,16 @@ public class DescribeHanaRetentionSettingResponseUnmarshaller {
 	public static DescribeHanaRetentionSettingResponse unmarshall(DescribeHanaRetentionSettingResponse describeHanaRetentionSettingResponse, UnmarshallerContext _ctx) {
 		
 		describeHanaRetentionSettingResponse.setRequestId(_ctx.stringValue("DescribeHanaRetentionSettingResponse.RequestId"));
-		describeHanaRetentionSettingResponse.setSuccess(_ctx.booleanValue("DescribeHanaRetentionSettingResponse.Success"));
-		describeHanaRetentionSettingResponse.setCode(_ctx.stringValue("DescribeHanaRetentionSettingResponse.Code"));
-		describeHanaRetentionSettingResponse.setMessage(_ctx.stringValue("DescribeHanaRetentionSettingResponse.Message"));
 		describeHanaRetentionSettingResponse.setVaultId(_ctx.stringValue("DescribeHanaRetentionSettingResponse.VaultId"));
-		describeHanaRetentionSettingResponse.setClusterId(_ctx.stringValue("DescribeHanaRetentionSettingResponse.ClusterId"));
-		describeHanaRetentionSettingResponse.setDatabaseName(_ctx.stringValue("DescribeHanaRetentionSettingResponse.DatabaseName"));
-		describeHanaRetentionSettingResponse.setRetentionDays(_ctx.longValue("DescribeHanaRetentionSettingResponse.RetentionDays"));
 		describeHanaRetentionSettingResponse.setSchedule(_ctx.stringValue("DescribeHanaRetentionSettingResponse.Schedule"));
-		describeHanaRetentionSettingResponse.setDisabled(_ctx.booleanValue("DescribeHanaRetentionSettingResponse.Disabled"));
+		describeHanaRetentionSettingResponse.setSuccess(_ctx.booleanValue("DescribeHanaRetentionSettingResponse.Success"));
+		describeHanaRetentionSettingResponse.setDatabaseName(_ctx.stringValue("DescribeHanaRetentionSettingResponse.DatabaseName"));
 		describeHanaRetentionSettingResponse.setLastExecuteTime(_ctx.longValue("DescribeHanaRetentionSettingResponse.LastExecuteTime"));
+		describeHanaRetentionSettingResponse.setDisabled(_ctx.booleanValue("DescribeHanaRetentionSettingResponse.Disabled"));
+		describeHanaRetentionSettingResponse.setCode(_ctx.stringValue("DescribeHanaRetentionSettingResponse.Code"));
+		describeHanaRetentionSettingResponse.setRetentionDays(_ctx.longValue("DescribeHanaRetentionSettingResponse.RetentionDays"));
+		describeHanaRetentionSettingResponse.setMessage(_ctx.stringValue("DescribeHanaRetentionSettingResponse.Message"));
+		describeHanaRetentionSettingResponse.setClusterId(_ctx.stringValue("DescribeHanaRetentionSettingResponse.ClusterId"));
 	 
 	 	return describeHanaRetentionSettingResponse;
 	}

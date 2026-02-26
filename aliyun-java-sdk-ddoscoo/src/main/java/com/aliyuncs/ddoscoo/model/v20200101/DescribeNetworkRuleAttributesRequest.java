@@ -27,7 +27,7 @@ public class DescribeNetworkRuleAttributesRequest extends RpcAcsRequest<Describe
 
 	private String networkRules;
 	public DescribeNetworkRuleAttributesRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeNetworkRuleAttributes");
+		super("ddoscoo", "2020-01-01", "DescribeNetworkRuleAttributes", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

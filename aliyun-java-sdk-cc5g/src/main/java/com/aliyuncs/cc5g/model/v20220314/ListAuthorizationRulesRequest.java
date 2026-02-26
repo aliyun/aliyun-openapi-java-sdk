@@ -31,6 +31,8 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 
 	private String type;
 
+	private String protocol;
+
 	private List<String> authorizationRuleIds;
 
 	private String nextToken;
@@ -38,6 +40,8 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 	private String policy;
 
 	private Boolean dns;
+
+	private String destinationPort;
 
 	private List<String> names;
 
@@ -84,6 +88,17 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 		}
 	}
 
+	public String getBizProtocol() {
+		return this.protocol;
+	}
+
+	public void setBizProtocol(String protocol) {
+		this.protocol = protocol;
+		if(protocol != null){
+			putQueryParameter("Protocol", protocol);
+		}
+	}
+
 	public List<String> getAuthorizationRuleIds() {
 		return this.authorizationRuleIds;
 	}
@@ -127,6 +142,17 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 		this.dns = dns;
 		if(dns != null){
 			putQueryParameter("Dns", dns.toString());
+		}
+	}
+
+	public String getDestinationPort() {
+		return this.destinationPort;
+	}
+
+	public void setDestinationPort(String destinationPort) {
+		this.destinationPort = destinationPort;
+		if(destinationPort != null){
+			putQueryParameter("DestinationPort", destinationPort);
 		}
 	}
 

@@ -36,7 +36,7 @@ public class SaveSingleTaskForModifyingDnsHostRequest extends RpcAcsRequest<Save
 
 	private String lang;
 	public SaveSingleTaskForModifyingDnsHostRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForModifyingDnsHost");
+		super("Domain", "2018-01-29", "SaveSingleTaskForModifyingDnsHost", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

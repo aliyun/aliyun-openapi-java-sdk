@@ -81,6 +81,8 @@ public class BatchQueryAgAccountResponse extends AcsResponse {
 
 		private String pk;
 
+		private String showNickName;
+
 		public String getLoginEmail() {
 			return this.loginEmail;
 		}
@@ -95,6 +97,14 @@ public class BatchQueryAgAccountResponse extends AcsResponse {
 
 		public void setPk(String pk) {
 			this.pk = pk;
+		}
+
+		public String getShowNickName() {
+			return this.showNickName;
+		}
+
+		public void setShowNickName(String showNickName) {
+			this.showNickName = showNickName;
 		}
 	}
 

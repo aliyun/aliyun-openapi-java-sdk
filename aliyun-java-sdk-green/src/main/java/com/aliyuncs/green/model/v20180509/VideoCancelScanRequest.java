@@ -27,7 +27,7 @@ public class VideoCancelScanRequest extends RoaAcsRequest<VideoCancelScanRespons
 
 	private String clientInfo;
 	public VideoCancelScanRequest() {
-		super("Green", "2018-05-09", "VideoCancelScan", "green");
+		super("Green", "2018-05-09", "VideoCancelScan");
 		setUriPattern("/green/video/cancelscan");
 		setMethod(MethodType.POST);
 		try {

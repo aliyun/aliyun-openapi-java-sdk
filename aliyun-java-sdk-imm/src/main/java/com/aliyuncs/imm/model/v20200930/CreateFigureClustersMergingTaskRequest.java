@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import java.util.Map;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
@@ -30,20 +31,22 @@ public class CreateFigureClustersMergingTaskRequest extends RpcAcsRequest<Create
 
 	private String userData;
 
-	private String projectName;
-
-	private String notifyTopicName;
-
-	private String notifyEndpoint;
+	@SerializedName("notification")
+	private Notification notification;
 
 	private String datasetName;
 
 	private String from;
 
-	private String to;
+	@SerializedName("froms")
+	private List<String> froms;
+
+	private String projectName;
 
 	@SerializedName("tags")
 	private Map<String,String> tags;
+
+	private String to;
 	public CreateFigureClustersMergingTaskRequest() {
 		super("imm", "2020-09-30", "CreateFigureClustersMergingTask", "imm");
 		setMethod(MethodType.POST);
@@ -64,37 +67,15 @@ public class CreateFigureClustersMergingTaskRequest extends RpcAcsRequest<Create
 		}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
+	public Notification getNotification() {
+		return this.notification;
 	}
 
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
-	public String getNotifyTopicName() {
-		return this.notifyTopicName;
-	}
-
-	public void setNotifyTopicName(String notifyTopicName) {
-		this.notifyTopicName = notifyTopicName;
-		if(notifyTopicName != null){
-			putQueryParameter("NotifyTopicName", notifyTopicName);
-		}
-	}
-
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
-	}
-
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
-		if(notifyEndpoint != null){
-			putQueryParameter("NotifyEndpoint", notifyEndpoint);
-		}
+	public void setNotification(Notification notification) {
+		this.notification = notification;	
+		if (notification != null) {
+			putQueryParameter("Notification" , new Gson().toJson(notification));
+		}	
 	}
 
 	public String getDatasetName() {
@@ -119,14 +100,25 @@ public class CreateFigureClustersMergingTaskRequest extends RpcAcsRequest<Create
 		}
 	}
 
-	public String getTo() {
-		return this.to;
+	public List<String> getFroms() {
+		return this.froms;
 	}
 
-	public void setTo(String to) {
-		this.to = to;
-		if(to != null){
-			putQueryParameter("To", to);
+	public void setFroms(List<String> froms) {
+		this.froms = froms;	
+		if (froms != null) {
+			putQueryParameter("Froms" , new Gson().toJson(froms));
+		}	
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 
@@ -139,6 +131,103 @@ public class CreateFigureClustersMergingTaskRequest extends RpcAcsRequest<Create
 		if (tags != null) {
 			putQueryParameter("Tags" , new Gson().toJson(tags));
 		}	
+	}
+
+	public String getTo() {
+		return this.to;
+	}
+
+	public void setTo(String to) {
+		this.to = to;
+		if(to != null){
+			putQueryParameter("To", to);
+		}
+	}
+
+	public static class Notification {
+
+		@SerializedName("MNS")
+		private MNS mNS;
+
+		@SerializedName("RocketMQ")
+		private RocketMQ rocketMQ;
+
+		public MNS getMNS() {
+			return this.mNS;
+		}
+
+		public void setMNS(MNS mNS) {
+			this.mNS = mNS;
+		}
+
+		public RocketMQ getRocketMQ() {
+			return this.rocketMQ;
+		}
+
+		public void setRocketMQ(RocketMQ rocketMQ) {
+			this.rocketMQ = rocketMQ;
+		}
+
+		public static class MNS {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
+		}
+
+		public static class RocketMQ {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("InstanceId")
+			private String instanceId;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
+		}
 	}
 
 	@Override

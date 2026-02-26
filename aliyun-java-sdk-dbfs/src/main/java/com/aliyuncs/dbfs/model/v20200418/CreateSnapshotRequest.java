@@ -35,7 +35,7 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 
 	private Integer retentionDays;
 	public CreateSnapshotRequest() {
-		super("DBFS", "2020-04-18", "CreateSnapshot");
+		super("DBFS", "2020-04-18", "CreateSnapshot", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

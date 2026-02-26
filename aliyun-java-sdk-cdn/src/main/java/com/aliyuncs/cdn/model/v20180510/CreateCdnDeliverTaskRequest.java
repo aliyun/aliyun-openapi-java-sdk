@@ -27,15 +27,13 @@ public class CreateCdnDeliverTaskRequest extends RpcAcsRequest<CreateCdnDeliverT
 
 	private String reports;
 
-	private String deliver;
-
-	private String domainName;
-
-	private Long ownerId;
-
 	private String schedule;
 
 	private String name;
+
+	private String domainName;
+
+	private String deliver;
 	public CreateCdnDeliverTaskRequest() {
 		super("Cdn", "2018-05-10", "CreateCdnDeliverTask");
 		setMethod(MethodType.POST);
@@ -53,39 +51,6 @@ public class CreateCdnDeliverTaskRequest extends RpcAcsRequest<CreateCdnDeliverT
 		this.reports = reports;
 		if(reports != null){
 			putBodyParameter("Reports", reports);
-		}
-	}
-
-	public String getDeliver() {
-		return this.deliver;
-	}
-
-	public void setDeliver(String deliver) {
-		this.deliver = deliver;
-		if(deliver != null){
-			putBodyParameter("Deliver", deliver);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putBodyParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -108,6 +73,28 @@ public class CreateCdnDeliverTaskRequest extends RpcAcsRequest<CreateCdnDeliverT
 		this.name = name;
 		if(name != null){
 			putBodyParameter("Name", name);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putBodyParameter("DomainName", domainName);
+		}
+	}
+
+	public String getDeliver() {
+		return this.deliver;
+	}
+
+	public void setDeliver(String deliver) {
+		this.deliver = deliver;
+		if(deliver != null){
+			putBodyParameter("Deliver", deliver);
 		}
 	}
 

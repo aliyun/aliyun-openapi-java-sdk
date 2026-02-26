@@ -27,6 +27,8 @@ public class UpdateApplicationScalingRuleRequest extends RoaAcsRequest<UpdateApp
 
 	private String scalingRuleName;
 
+	private String scalingBehaviour;
+
 	private Boolean scalingRuleEnable;
 
 	private String scalingRuleTimer;
@@ -56,6 +58,17 @@ public class UpdateApplicationScalingRuleRequest extends RoaAcsRequest<UpdateApp
 		this.scalingRuleName = scalingRuleName;
 		if(scalingRuleName != null){
 			putQueryParameter("ScalingRuleName", scalingRuleName);
+		}
+	}
+
+	public String getScalingBehaviour() {
+		return this.scalingBehaviour;
+	}
+
+	public void setScalingBehaviour(String scalingBehaviour) {
+		this.scalingBehaviour = scalingBehaviour;
+		if(scalingBehaviour != null){
+			putQueryParameter("ScalingBehaviour", scalingBehaviour);
 		}
 	}
 

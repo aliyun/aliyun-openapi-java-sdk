@@ -81,6 +81,20 @@ public class DescribeVodCertificateListResponse extends AcsResponse {
 
 			private String common;
 
+			private Long createTime;
+
+			private Long endTime;
+
+			private String algorithm;
+
+			private String certIdentifier;
+
+			private Boolean domainMatchCert;
+
+			private String instanceId;
+
+			private String signAlgorithm;
+
 			public Long getLastTime() {
 				return this.lastTime;
 			}
@@ -127,6 +141,62 @@ public class DescribeVodCertificateListResponse extends AcsResponse {
 
 			public void setCommon(String common) {
 				this.common = common;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
+			}
+
+			public String getAlgorithm() {
+				return this.algorithm;
+			}
+
+			public void setAlgorithm(String algorithm) {
+				this.algorithm = algorithm;
+			}
+
+			public String getCertIdentifier() {
+				return this.certIdentifier;
+			}
+
+			public void setCertIdentifier(String certIdentifier) {
+				this.certIdentifier = certIdentifier;
+			}
+
+			public Boolean getDomainMatchCert() {
+				return this.domainMatchCert;
+			}
+
+			public void setDomainMatchCert(Boolean domainMatchCert) {
+				this.domainMatchCert = domainMatchCert;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getSignAlgorithm() {
+				return this.signAlgorithm;
+			}
+
+			public void setSignAlgorithm(String signAlgorithm) {
+				this.signAlgorithm = signAlgorithm;
 			}
 		}
 	}

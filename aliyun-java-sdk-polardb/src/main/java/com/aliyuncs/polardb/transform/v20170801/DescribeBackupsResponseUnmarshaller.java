@@ -30,6 +30,8 @@ public class DescribeBackupsResponseUnmarshaller {
 		describeBackupsResponse.setTotalRecordCount(_ctx.stringValue("DescribeBackupsResponse.TotalRecordCount"));
 		describeBackupsResponse.setPageRecordCount(_ctx.stringValue("DescribeBackupsResponse.PageRecordCount"));
 		describeBackupsResponse.setPageNumber(_ctx.stringValue("DescribeBackupsResponse.PageNumber"));
+		describeBackupsResponse.setTotalLevel2BackupSize(_ctx.stringValue("DescribeBackupsResponse.TotalLevel2BackupSize"));
+		describeBackupsResponse.setAllowShareBackup(_ctx.booleanValue("DescribeBackupsResponse.AllowShareBackup"));
 
 		List<Backup> items = new ArrayList<Backup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupsResponse.Items.Length"); i++) {
@@ -40,6 +42,8 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupStatus(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupStatus"));
 			backup.setBackupType(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupType"));
 			backup.setBackupStartTime(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupStartTime"));
+			backup.setExpectExpireTime(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].ExpectExpireTime"));
+			backup.setExpectExpireType(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].ExpectExpireType"));
 			backup.setIsAvail(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].IsAvail"));
 			backup.setBackupEndTime(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupEndTime"));
 			backup.setBackupId(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupId"));
@@ -47,6 +51,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupsLevel(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupsLevel"));
 			backup.setBackupMode(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupMode"));
 			backup.setBackupMethod(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupMethod"));
+			backup.setShareType(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].ShareType"));
 
 			items.add(backup);
 		}

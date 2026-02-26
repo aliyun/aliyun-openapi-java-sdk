@@ -32,6 +32,8 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 
 	private String description;
 
+	private String startTime;
+
 	private String platform;
 
 	private String resourceGroupId;
@@ -41,6 +43,8 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 	private String instanceType;
 
 	private List<Tag> tags;
+
+	private Integer autoRenewPeriod;
 
 	private Integer period;
 
@@ -53,6 +57,8 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 	private String periodUnit;
 
 	private String offeringType;
+
+	private Boolean autoRenew;
 
 	private String zoneId;
 
@@ -98,6 +104,17 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -157,6 +174,17 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 			}
 		}	
+	}
+
+	public Integer getAutoRenewPeriod() {
+		return this.autoRenewPeriod;
+	}
+
+	public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+		this.autoRenewPeriod = autoRenewPeriod;
+		if(autoRenewPeriod != null){
+			putQueryParameter("AutoRenewPeriod", autoRenewPeriod.toString());
+		}
 	}
 
 	public Integer getPeriod() {
@@ -222,6 +250,17 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		this.offeringType = offeringType;
 		if(offeringType != null){
 			putQueryParameter("OfferingType", offeringType);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 

@@ -37,7 +37,7 @@ public class ImportDeviceRequest extends RpcAcsRequest<ImportDeviceResponse> {
 
 	private String deviceName;
 	public ImportDeviceRequest() {
-		super("Iot", "2018-01-20", "ImportDevice");
+		super("Iot", "2018-01-20", "ImportDevice", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

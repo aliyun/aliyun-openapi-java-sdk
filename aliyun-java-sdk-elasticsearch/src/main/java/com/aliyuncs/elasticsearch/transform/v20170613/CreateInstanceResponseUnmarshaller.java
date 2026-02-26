@@ -15,7 +15,6 @@
 package com.aliyuncs.elasticsearch.transform.v20170613;
 
 import com.aliyuncs.elasticsearch.model.v20170613.CreateInstanceResponse;
-import com.aliyuncs.elasticsearch.model.v20170613.CreateInstanceResponse.Result;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,11 +22,6 @@ public class CreateInstanceResponseUnmarshaller {
 
 	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
 		
-		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
-
-		Result result = new Result();
-		result.setInstanceId(_ctx.stringValue("CreateInstanceResponse.Result.instanceId"));
-		createInstanceResponse.setResult(result);
 	 
 	 	return createInstanceResponse;
 	}

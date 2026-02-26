@@ -47,19 +47,11 @@ public class ListBindingsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String nextToken;
-
 		private Integer maxResults;
 
+		private String nextToken;
+
 		private List<BindingDO> bindings;
-
-		public String getNextToken() {
-			return this.nextToken;
-		}
-
-		public void setNextToken(String nextToken) {
-			this.nextToken = nextToken;
-		}
 
 		public Integer getMaxResults() {
 			return this.maxResults;
@@ -67,6 +59,14 @@ public class ListBindingsResponse extends AcsResponse {
 
 		public void setMaxResults(Integer maxResults) {
 			this.maxResults = maxResults;
+		}
+
+		public String getNextToken() {
+			return this.nextToken;
+		}
+
+		public void setNextToken(String nextToken) {
+			this.nextToken = nextToken;
 		}
 
 		public List<BindingDO> getBindings() {
@@ -81,13 +81,13 @@ public class ListBindingsResponse extends AcsResponse {
 
 			private String sourceExchange;
 
-			private String destinationName;
-
-			private String bindingType;
+			private String argument;
 
 			private String bindingKey;
 
-			private String argument;
+			private String bindingType;
+
+			private String destinationName;
 
 			public String getSourceExchange() {
 				return this.sourceExchange;
@@ -97,20 +97,12 @@ public class ListBindingsResponse extends AcsResponse {
 				this.sourceExchange = sourceExchange;
 			}
 
-			public String getDestinationName() {
-				return this.destinationName;
+			public String getArgument() {
+				return this.argument;
 			}
 
-			public void setDestinationName(String destinationName) {
-				this.destinationName = destinationName;
-			}
-
-			public String getBindingType() {
-				return this.bindingType;
-			}
-
-			public void setBindingType(String bindingType) {
-				this.bindingType = bindingType;
+			public void setArgument(String argument) {
+				this.argument = argument;
 			}
 
 			public String getBindingKey() {
@@ -121,12 +113,20 @@ public class ListBindingsResponse extends AcsResponse {
 				this.bindingKey = bindingKey;
 			}
 
-			public String getArgument() {
-				return this.argument;
+			public String getBindingType() {
+				return this.bindingType;
 			}
 
-			public void setArgument(String argument) {
-				this.argument = argument;
+			public void setBindingType(String bindingType) {
+				this.bindingType = bindingType;
+			}
+
+			public String getDestinationName() {
+				return this.destinationName;
+			}
+
+			public void setDestinationName(String destinationName) {
+				this.destinationName = destinationName;
 			}
 		}
 	}

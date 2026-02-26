@@ -21,6 +21,8 @@ import com.aliyuncs.appstream_center.model.v20210901.ListAppInstanceGroupRespons
 import com.aliyuncs.appstream_center.model.v20210901.ListAppInstanceGroupResponse.Data;
 import com.aliyuncs.appstream_center.model.v20210901.ListAppInstanceGroupResponse.Data.AppsItem;
 import com.aliyuncs.appstream_center.model.v20210901.ListAppInstanceGroupResponse.Data.Node;
+import com.aliyuncs.appstream_center.model.v20210901.ListAppInstanceGroupResponse.Data.Node.RecurrenceSchedule;
+import com.aliyuncs.appstream_center.model.v20210901.ListAppInstanceGroupResponse.Data.Node.RecurrenceSchedule.TimerPeriod;
 import com.aliyuncs.appstream_center.model.v20210901.ListAppInstanceGroupResponse.Data.OtaInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -57,6 +59,9 @@ public class ListAppInstanceGroupResponseUnmarshaller {
 			data.setAppInstanceGroupName(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].AppInstanceGroupName"));
 			data.setExpiredTime(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].ExpiredTime"));
 			data.setOsType(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].OsType"));
+			data.setResourceStatus(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].ResourceStatus"));
+			data.setAppPolicyId(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].AppPolicyId"));
+			data.setChargeResourceMode(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].ChargeResourceMode"));
 
 			OtaInfo otaInfo = new OtaInfo();
 			otaInfo.setOtaVersion(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].OtaInfo.OtaVersion"));
@@ -69,6 +74,9 @@ public class ListAppInstanceGroupResponseUnmarshaller {
 				AppsItem appsItem = new AppsItem();
 				appsItem.setAppId(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].Apps["+ j +"].AppId"));
 				appsItem.setAppName(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].Apps["+ j +"].AppName"));
+				appsItem.setAppVersion(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].Apps["+ j +"].AppVersion"));
+				appsItem.setAppVersionName(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].Apps["+ j +"].AppVersionName"));
+				appsItem.setAppIcon(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].Apps["+ j +"].AppIcon"));
 
 				apps.add(appsItem);
 			}
@@ -90,6 +98,36 @@ public class ListAppInstanceGroupResponseUnmarshaller {
 				node.setScalingStep(_ctx.integerValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].ScalingStep"));
 				node.setScalingUsageThreshold(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].ScalingUsageThreshold"));
 				node.setScalingDownAfterIdleMinutes(_ctx.integerValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].ScalingDownAfterIdleMinutes"));
+				node.setStrategyDisableDate(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].StrategyDisableDate"));
+				node.setStrategyEnableDate(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].StrategyEnableDate"));
+				node.setWarmUp(_ctx.booleanValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].WarmUp"));
+				node.setNodeTypeName(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].NodeTypeName"));
+
+				List<RecurrenceSchedule> recurrenceSchedules = new ArrayList<RecurrenceSchedule>();
+				for (int k = 0; k < _ctx.lengthValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].RecurrenceSchedules.Length"); k++) {
+					RecurrenceSchedule recurrenceSchedule = new RecurrenceSchedule();
+					recurrenceSchedule.setRecurrenceType(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].RecurrenceSchedules["+ k +"].RecurrenceType"));
+
+					List<Integer> recurrenceValues = new ArrayList<Integer>();
+					for (int l = 0; l < _ctx.lengthValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].RecurrenceSchedules["+ k +"].RecurrenceValues.Length"); l++) {
+						recurrenceValues.add(_ctx.integerValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].RecurrenceSchedules["+ k +"].RecurrenceValues["+ l +"]"));
+					}
+					recurrenceSchedule.setRecurrenceValues(recurrenceValues);
+
+					List<TimerPeriod> timerPeriods = new ArrayList<TimerPeriod>();
+					for (int l = 0; l < _ctx.lengthValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].RecurrenceSchedules["+ k +"].TimerPeriods.Length"); l++) {
+						TimerPeriod timerPeriod = new TimerPeriod();
+						timerPeriod.setAmount(_ctx.integerValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].RecurrenceSchedules["+ k +"].TimerPeriods["+ l +"].Amount"));
+						timerPeriod.setEndTime(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].RecurrenceSchedules["+ k +"].TimerPeriods["+ l +"].EndTime"));
+						timerPeriod.setStartTime(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].RecurrenceSchedules["+ k +"].TimerPeriods["+ l +"].StartTime"));
+
+						timerPeriods.add(timerPeriod);
+					}
+					recurrenceSchedule.setTimerPeriods(timerPeriods);
+
+					recurrenceSchedules.add(recurrenceSchedule);
+				}
+				node.setRecurrenceSchedules(recurrenceSchedules);
 
 				nodePool.add(node);
 			}

@@ -31,8 +31,8 @@ public class DescribeApiTrafficDataResponseUnmarshaller {
 		List<MonitorItem> callUploads = new ArrayList<MonitorItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApiTrafficDataResponse.CallUploads.Length"); i++) {
 			MonitorItem monitorItem = new MonitorItem();
-			monitorItem.setItemTime(_ctx.stringValue("DescribeApiTrafficDataResponse.CallUploads["+ i +"].ItemTime"));
 			monitorItem.setItemValue(_ctx.stringValue("DescribeApiTrafficDataResponse.CallUploads["+ i +"].ItemValue"));
+			monitorItem.setItemTime(_ctx.stringValue("DescribeApiTrafficDataResponse.CallUploads["+ i +"].ItemTime"));
 
 			callUploads.add(monitorItem);
 		}
@@ -40,11 +40,11 @@ public class DescribeApiTrafficDataResponseUnmarshaller {
 
 		List<MonitorItem> callDownloads = new ArrayList<MonitorItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApiTrafficDataResponse.CallDownloads.Length"); i++) {
-			MonitorItem monitorItem_ = new MonitorItem();
-			monitorItem_.setItemTime(_ctx.stringValue("DescribeApiTrafficDataResponse.CallDownloads["+ i +"].ItemTime"));
-			monitorItem_.setItemValue(_ctx.stringValue("DescribeApiTrafficDataResponse.CallDownloads["+ i +"].ItemValue"));
+			MonitorItem monitorItem1 = new MonitorItem();
+			monitorItem1.setItemValue(_ctx.stringValue("DescribeApiTrafficDataResponse.CallDownloads["+ i +"].ItemValue"));
+			monitorItem1.setItemTime(_ctx.stringValue("DescribeApiTrafficDataResponse.CallDownloads["+ i +"].ItemTime"));
 
-			callDownloads.add(monitorItem_);
+			callDownloads.add(monitorItem1);
 		}
 		describeApiTrafficDataResponse.setCallDownloads(callDownloads);
 	 

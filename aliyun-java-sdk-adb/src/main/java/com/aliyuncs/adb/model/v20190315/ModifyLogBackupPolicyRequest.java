@@ -27,6 +27,8 @@ public class ModifyLogBackupPolicyRequest extends RpcAcsRequest<ModifyLogBackupP
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String enableBackupLog;
 
 	private String resourceOwnerAccount;
@@ -55,6 +57,17 @@ public class ModifyLogBackupPolicyRequest extends RpcAcsRequest<ModifyLogBackupP
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

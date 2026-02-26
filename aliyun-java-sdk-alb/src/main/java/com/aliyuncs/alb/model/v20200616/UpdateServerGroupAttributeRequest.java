@@ -26,21 +26,31 @@ import com.aliyuncs.alb.Endpoint;
 public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServerGroupAttributeResponse> {
 	   
 
+	private Boolean crossZoneEnabled;
+
 	private String serverGroupName;
 
 	private String clientToken;
 
 	private HealthCheckConfig healthCheckConfig;
 
+	private SlowStartConfig slowStartConfig;
+
 	private String scheduler;
 
 	private String serverGroupId;
+
+	private Boolean upstreamKeepaliveEnabled;
 
 	private String serviceName;
 
 	private StickySessionConfig stickySessionConfig;
 
 	private Boolean dryRun;
+
+	private ConnectionDrainConfig connectionDrainConfig;
+
+	private UchConfig uchConfig;
 	public UpdateServerGroupAttributeRequest() {
 		super("Alb", "2020-06-16", "UpdateServerGroupAttribute", "alb");
 		setMethod(MethodType.POST);
@@ -48,6 +58,17 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getCrossZoneEnabled() {
+		return this.crossZoneEnabled;
+	}
+
+	public void setCrossZoneEnabled(Boolean crossZoneEnabled) {
+		this.crossZoneEnabled = crossZoneEnabled;
+		if(crossZoneEnabled != null){
+			putQueryParameter("CrossZoneEnabled", crossZoneEnabled.toString());
+		}
 	}
 
 	public String getServerGroupName() {
@@ -92,10 +113,29 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 				putQueryParameter("HealthCheckConfig.HealthCheckProtocol" , healthCheckConfig.getHealthCheckProtocol());
 				putQueryParameter("HealthCheckConfig.UnhealthyThreshold" , healthCheckConfig.getUnhealthyThreshold());
 				putQueryParameter("HealthCheckConfig.HealthyThreshold" , healthCheckConfig.getHealthyThreshold());
+				putQueryParameter("HealthCheckConfig.HealthCheckTcpFastCloseEnabled" , healthCheckConfig.getHealthCheckTcpFastCloseEnabled());
 				putQueryParameter("HealthCheckConfig.HealthCheckPath" , healthCheckConfig.getHealthCheckPath());
 				putQueryParameter("HealthCheckConfig.HealthCheckInterval" , healthCheckConfig.getHealthCheckInterval());
+				if (healthCheckConfig.getHealthCheckHttpCodes() != null) {
+					for (int depth1 = 0; depth1 < healthCheckConfig.getHealthCheckHttpCodes().size(); depth1++) {
+						putQueryParameter("HealthCheckConfig.HealthCheckHttpCodes." + (depth1 + 1) , healthCheckConfig.getHealthCheckHttpCodes().get(depth1));
+					}
+				}
 				putQueryParameter("HealthCheckConfig.HealthCheckHttpVersion" , healthCheckConfig.getHealthCheckHttpVersion());
 				putQueryParameter("HealthCheckConfig.HealthCheckConnectPort" , healthCheckConfig.getHealthCheckConnectPort());
+		}	
+	}
+
+	public SlowStartConfig getSlowStartConfig() {
+		return this.slowStartConfig;
+	}
+
+	public void setSlowStartConfig(SlowStartConfig slowStartConfig) {
+		this.slowStartConfig = slowStartConfig;	
+		if (slowStartConfig != null) {
+			
+				putQueryParameter("SlowStartConfig.SlowStartDuration" , slowStartConfig.getSlowStartDuration());
+				putQueryParameter("SlowStartConfig.SlowStartEnabled" , slowStartConfig.getSlowStartEnabled());
 		}	
 	}
 
@@ -118,6 +158,17 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 		this.serverGroupId = serverGroupId;
 		if(serverGroupId != null){
 			putQueryParameter("ServerGroupId", serverGroupId);
+		}
+	}
+
+	public Boolean getUpstreamKeepaliveEnabled() {
+		return this.upstreamKeepaliveEnabled;
+	}
+
+	public void setUpstreamKeepaliveEnabled(Boolean upstreamKeepaliveEnabled) {
+		this.upstreamKeepaliveEnabled = upstreamKeepaliveEnabled;
+		if(upstreamKeepaliveEnabled != null){
+			putQueryParameter("UpstreamKeepaliveEnabled", upstreamKeepaliveEnabled.toString());
 		}
 	}
 
@@ -158,6 +209,32 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 		}
 	}
 
+	public ConnectionDrainConfig getConnectionDrainConfig() {
+		return this.connectionDrainConfig;
+	}
+
+	public void setConnectionDrainConfig(ConnectionDrainConfig connectionDrainConfig) {
+		this.connectionDrainConfig = connectionDrainConfig;	
+		if (connectionDrainConfig != null) {
+			
+				putQueryParameter("ConnectionDrainConfig.ConnectionDrainEnabled" , connectionDrainConfig.getConnectionDrainEnabled());
+				putQueryParameter("ConnectionDrainConfig.ConnectionDrainTimeout" , connectionDrainConfig.getConnectionDrainTimeout());
+		}	
+	}
+
+	public UchConfig getUchConfig() {
+		return this.uchConfig;
+	}
+
+	public void setUchConfig(UchConfig uchConfig) {
+		this.uchConfig = uchConfig;	
+		if (uchConfig != null) {
+			
+				putQueryParameter("UchConfig.Type" , uchConfig.getType());
+				putQueryParameter("UchConfig.Value" , uchConfig.getValue());
+		}	
+	}
+
 	public static class HealthCheckConfig {
 
 		private List<String> healthCheckCodes;
@@ -176,9 +253,13 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 
 		private Integer healthyThreshold;
 
+		private Boolean healthCheckTcpFastCloseEnabled;
+
 		private String healthCheckPath;
 
 		private Integer healthCheckInterval;
+
+		private List<String> healthCheckHttpCodes;
 
 		private String healthCheckHttpVersion;
 
@@ -248,6 +329,14 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 			this.healthyThreshold = healthyThreshold;
 		}
 
+		public Boolean getHealthCheckTcpFastCloseEnabled() {
+			return this.healthCheckTcpFastCloseEnabled;
+		}
+
+		public void setHealthCheckTcpFastCloseEnabled(Boolean healthCheckTcpFastCloseEnabled) {
+			this.healthCheckTcpFastCloseEnabled = healthCheckTcpFastCloseEnabled;
+		}
+
 		public String getHealthCheckPath() {
 			return this.healthCheckPath;
 		}
@@ -264,6 +353,14 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 			this.healthCheckInterval = healthCheckInterval;
 		}
 
+		public List<String> getHealthCheckHttpCodes() {
+			return this.healthCheckHttpCodes;
+		}
+
+		public void setHealthCheckHttpCodes(List<String> healthCheckHttpCodes) {
+			this.healthCheckHttpCodes = healthCheckHttpCodes;
+		}
+
 		public String getHealthCheckHttpVersion() {
 			return this.healthCheckHttpVersion;
 		}
@@ -278,6 +375,29 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 
 		public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
 			this.healthCheckConnectPort = healthCheckConnectPort;
+		}
+	}
+
+	public static class SlowStartConfig {
+
+		private Integer slowStartDuration;
+
+		private Boolean slowStartEnabled;
+
+		public Integer getSlowStartDuration() {
+			return this.slowStartDuration;
+		}
+
+		public void setSlowStartDuration(Integer slowStartDuration) {
+			this.slowStartDuration = slowStartDuration;
+		}
+
+		public Boolean getSlowStartEnabled() {
+			return this.slowStartEnabled;
+		}
+
+		public void setSlowStartEnabled(Boolean slowStartEnabled) {
+			this.slowStartEnabled = slowStartEnabled;
 		}
 	}
 
@@ -321,6 +441,52 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 
 		public void setStickySessionType(String stickySessionType) {
 			this.stickySessionType = stickySessionType;
+		}
+	}
+
+	public static class ConnectionDrainConfig {
+
+		private Boolean connectionDrainEnabled;
+
+		private Integer connectionDrainTimeout;
+
+		public Boolean getConnectionDrainEnabled() {
+			return this.connectionDrainEnabled;
+		}
+
+		public void setConnectionDrainEnabled(Boolean connectionDrainEnabled) {
+			this.connectionDrainEnabled = connectionDrainEnabled;
+		}
+
+		public Integer getConnectionDrainTimeout() {
+			return this.connectionDrainTimeout;
+		}
+
+		public void setConnectionDrainTimeout(Integer connectionDrainTimeout) {
+			this.connectionDrainTimeout = connectionDrainTimeout;
+		}
+	}
+
+	public static class UchConfig {
+
+		private String type;
+
+		private String value;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

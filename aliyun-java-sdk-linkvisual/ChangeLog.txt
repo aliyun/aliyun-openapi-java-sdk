@@ -1,3 +1,39 @@
+2024-02-04 Version: 1.5.23
+- Generated 2018-01-20 for `Linkvisual`.
+
+2024-02-01 Version: 1.5.22
+- Generated 2018-01-20 for `Linkvisual`.
+
+2024-01-16 Version: 1.5.21
+- Generated 2018-01-20 for `Linkvisual`.
+
+2024-01-15 Version: 1.5.20
+- Generated 2018-01-20 for `Linkvisual`.
+
+2024-01-08 Version: 1.5.19
+- Add gb device create API.
+
+2023-12-20 Version: 1.5.18
+- Add RTMP device related interfaces.
+
+2023-11-16 Version: 1.5.17
+- 新增按时间下载本地录像接口.
+
+2023-10-30 Version: 1.5.16
+- 新增按时间下载云存录像接口.
+
+2023-09-18 Version: 1.5.15
+- Query voice intercom support WebSocket scheme.
+
+2023-05-11 Version: 1.5.14
+- Support Live Streaming and VOD P2P.
+
+2022-12-26 Version: 1.5.13
+- 增加IP协议版本配置接口.
+
+2022-12-08 Version: 1.5.12
+- Generated 2018-01-20 for `Linkvisual`.
+
 2022-02-15 Version: 1.5.11
 - Generated 2018-01-20 for `Linkvisual`.
 

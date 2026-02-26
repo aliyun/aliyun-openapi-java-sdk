@@ -23,8 +23,8 @@ public class AddZoneRecordResponseUnmarshaller {
 	public static AddZoneRecordResponse unmarshall(AddZoneRecordResponse addZoneRecordResponse, UnmarshallerContext _ctx) {
 		
 		addZoneRecordResponse.setRequestId(_ctx.stringValue("AddZoneRecordResponse.RequestId"));
-		addZoneRecordResponse.setSuccess(_ctx.booleanValue("AddZoneRecordResponse.Success"));
 		addZoneRecordResponse.setRecordId(_ctx.longValue("AddZoneRecordResponse.RecordId"));
+		addZoneRecordResponse.setSuccess(_ctx.booleanValue("AddZoneRecordResponse.Success"));
 	 
 	 	return addZoneRecordResponse;
 	}

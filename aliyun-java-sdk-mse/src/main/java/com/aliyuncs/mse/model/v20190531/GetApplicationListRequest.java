@@ -39,6 +39,8 @@ public class GetApplicationListRequest extends RpcAcsRequest<GetApplicationListR
 
 	private String appId;
 
+	private String namespace;
+
 	private String acceptLanguage;
 
 	private Boolean sentinelEnable;
@@ -127,6 +129,17 @@ public class GetApplicationListRequest extends RpcAcsRequest<GetApplicationListR
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

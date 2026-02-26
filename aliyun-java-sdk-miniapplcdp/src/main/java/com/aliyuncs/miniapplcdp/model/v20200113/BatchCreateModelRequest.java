@@ -24,6 +24,10 @@ import com.aliyuncs.http.MethodType;
 public class BatchCreateModelRequest extends RpcAcsRequest<BatchCreateModelResponse> {
 	   
 
+	private String source;
+
+	private String schemaVersion;
+
 	private String modelDataJson;
 
 	private String subType;
@@ -31,11 +35,31 @@ public class BatchCreateModelRequest extends RpcAcsRequest<BatchCreateModelRespo
 	private String appId;
 
 	private String moduleId;
-
-	private String schemaVersion;
 	public BatchCreateModelRequest() {
 		super("miniapplcdp", "2020-01-13", "BatchCreateModel");
 		setMethod(MethodType.POST);
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
+	}
+
+	public String getSchemaVersion() {
+		return this.schemaVersion;
+	}
+
+	public void setSchemaVersion(String schemaVersion) {
+		this.schemaVersion = schemaVersion;
+		if(schemaVersion != null){
+			putQueryParameter("SchemaVersion", schemaVersion);
+		}
 	}
 
 	public String getModelDataJson() {
@@ -79,17 +103,6 @@ public class BatchCreateModelRequest extends RpcAcsRequest<BatchCreateModelRespo
 		this.moduleId = moduleId;
 		if(moduleId != null){
 			putQueryParameter("ModuleId", moduleId);
-		}
-	}
-
-	public String getSchemaVersion() {
-		return this.schemaVersion;
-	}
-
-	public void setSchemaVersion(String schemaVersion) {
-		this.schemaVersion = schemaVersion;
-		if(schemaVersion != null){
-			putQueryParameter("SchemaVersion", schemaVersion);
 		}
 	}
 

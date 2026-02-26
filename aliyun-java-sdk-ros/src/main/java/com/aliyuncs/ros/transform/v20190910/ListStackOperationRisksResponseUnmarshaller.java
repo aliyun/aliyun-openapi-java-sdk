@@ -28,17 +28,23 @@ public class ListStackOperationRisksResponseUnmarshaller {
 		
 		listStackOperationRisksResponse.setRequestId(_ctx.stringValue("ListStackOperationRisksResponse.RequestId"));
 
+		List<String> missingPolicyActions = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ListStackOperationRisksResponse.MissingPolicyActions.Length"); i++) {
+			missingPolicyActions.add(_ctx.stringValue("ListStackOperationRisksResponse.MissingPolicyActions["+ i +"]"));
+		}
+		listStackOperationRisksResponse.setMissingPolicyActions(missingPolicyActions);
+
 		List<Resource> riskResources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("ListStackOperationRisksResponse.RiskResources.Length"); i++) {
 			Resource resource = new Resource();
 			resource.setLogicalResourceId(_ctx.stringValue("ListStackOperationRisksResponse.RiskResources["+ i +"].LogicalResourceId"));
 			resource.setPhysicalResourceId(_ctx.stringValue("ListStackOperationRisksResponse.RiskResources["+ i +"].PhysicalResourceId"));
+			resource.setRequestId(_ctx.stringValue("ListStackOperationRisksResponse.RiskResources["+ i +"].RequestId"));
 			resource.setResourceType(_ctx.stringValue("ListStackOperationRisksResponse.RiskResources["+ i +"].ResourceType"));
-			resource.setReason(_ctx.stringValue("ListStackOperationRisksResponse.RiskResources["+ i +"].Reason"));
-			resource.setRiskType(_ctx.stringValue("ListStackOperationRisksResponse.RiskResources["+ i +"].RiskType"));
 			resource.setCode(_ctx.stringValue("ListStackOperationRisksResponse.RiskResources["+ i +"].Code"));
 			resource.setMessage(_ctx.stringValue("ListStackOperationRisksResponse.RiskResources["+ i +"].Message"));
-			resource.setRequestId(_ctx.stringValue("ListStackOperationRisksResponse.RiskResources["+ i +"].RequestId"));
+			resource.setRiskType(_ctx.stringValue("ListStackOperationRisksResponse.RiskResources["+ i +"].RiskType"));
+			resource.setReason(_ctx.stringValue("ListStackOperationRisksResponse.RiskResources["+ i +"].Reason"));
 
 			riskResources.add(resource);
 		}

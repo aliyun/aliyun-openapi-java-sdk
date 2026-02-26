@@ -71,6 +71,7 @@ public class ListDataServicePublishedApisResponseUnmarshaller {
 			api.setApiName(_ctx.stringValue("ListDataServicePublishedApisResponse.Data.Apis["+ i +"].ApiName"));
 			api.setTenantId(_ctx.longValue("ListDataServicePublishedApisResponse.Data.Apis["+ i +"].TenantId"));
 			api.setApiPath(_ctx.stringValue("ListDataServicePublishedApisResponse.Data.Apis["+ i +"].ApiPath"));
+			api.setSqlMode(_ctx.integerValue("ListDataServicePublishedApisResponse.Data.Apis["+ i +"].SqlMode"));
 
 			List<Integer> protocols = new ArrayList<Integer>();
 			for (int j = 0; j < _ctx.lengthValue("ListDataServicePublishedApisResponse.Data.Apis["+ i +"].Protocols.Length"); j++) {

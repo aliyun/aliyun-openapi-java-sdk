@@ -36,7 +36,7 @@ public class DescribePortFlowListRequest extends RpcAcsRequest<DescribePortFlowL
 
 	private Integer interval;
 	public DescribePortFlowListRequest() {
-		super("ddoscoo", "2020-01-01", "DescribePortFlowList");
+		super("ddoscoo", "2020-01-01", "DescribePortFlowList", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

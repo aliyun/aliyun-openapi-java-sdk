@@ -27,6 +27,9 @@ public class ListRemediationsResponseUnmarshaller {
 	public static ListRemediationsResponse unmarshall(ListRemediationsResponse listRemediationsResponse, UnmarshallerContext _ctx) {
 		
 		listRemediationsResponse.setRequestId(_ctx.stringValue("ListRemediationsResponse.RequestId"));
+		listRemediationsResponse.setPageNumber(_ctx.longValue("ListRemediationsResponse.PageNumber"));
+		listRemediationsResponse.setPageSize(_ctx.longValue("ListRemediationsResponse.PageSize"));
+		listRemediationsResponse.setTotalCount(_ctx.stringValue("ListRemediationsResponse.TotalCount"));
 
 		List<Remediation> remediations = new ArrayList<Remediation>();
 		for (int i = 0; i < _ctx.lengthValue("ListRemediationsResponse.Remediations.Length"); i++) {

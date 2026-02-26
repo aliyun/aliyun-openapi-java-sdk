@@ -23,15 +23,15 @@ public class DescribeScdnUserQuotaResponseUnmarshaller {
 	public static DescribeScdnUserQuotaResponse unmarshall(DescribeScdnUserQuotaResponse describeScdnUserQuotaResponse, UnmarshallerContext _ctx) {
 		
 		describeScdnUserQuotaResponse.setRequestId(_ctx.stringValue("DescribeScdnUserQuotaResponse.RequestId"));
-		describeScdnUserQuotaResponse.setDomainQuota(_ctx.integerValue("DescribeScdnUserQuotaResponse.DomainQuota"));
-		describeScdnUserQuotaResponse.setRefreshUrlQuota(_ctx.integerValue("DescribeScdnUserQuotaResponse.RefreshUrlQuota"));
-		describeScdnUserQuotaResponse.setRefreshDirQuota(_ctx.integerValue("DescribeScdnUserQuotaResponse.RefreshDirQuota"));
-		describeScdnUserQuotaResponse.setRefreshUrlRemain(_ctx.integerValue("DescribeScdnUserQuotaResponse.RefreshUrlRemain"));
-		describeScdnUserQuotaResponse.setRefreshDirRemain(_ctx.integerValue("DescribeScdnUserQuotaResponse.RefreshDirRemain"));
-		describeScdnUserQuotaResponse.setPreloadQuota(_ctx.integerValue("DescribeScdnUserQuotaResponse.PreloadQuota"));
-		describeScdnUserQuotaResponse.setPreloadRemain(_ctx.integerValue("DescribeScdnUserQuotaResponse.PreloadRemain"));
 		describeScdnUserQuotaResponse.setBlockQuota(_ctx.integerValue("DescribeScdnUserQuotaResponse.BlockQuota"));
+		describeScdnUserQuotaResponse.setRefreshUrlRemain(_ctx.integerValue("DescribeScdnUserQuotaResponse.RefreshUrlRemain"));
+		describeScdnUserQuotaResponse.setDomainQuota(_ctx.integerValue("DescribeScdnUserQuotaResponse.DomainQuota"));
 		describeScdnUserQuotaResponse.setBlockRemain(_ctx.integerValue("DescribeScdnUserQuotaResponse.BlockRemain"));
+		describeScdnUserQuotaResponse.setPreloadRemain(_ctx.integerValue("DescribeScdnUserQuotaResponse.PreloadRemain"));
+		describeScdnUserQuotaResponse.setRefreshUrlQuota(_ctx.integerValue("DescribeScdnUserQuotaResponse.RefreshUrlQuota"));
+		describeScdnUserQuotaResponse.setPreloadQuota(_ctx.integerValue("DescribeScdnUserQuotaResponse.PreloadQuota"));
+		describeScdnUserQuotaResponse.setRefreshDirQuota(_ctx.integerValue("DescribeScdnUserQuotaResponse.RefreshDirQuota"));
+		describeScdnUserQuotaResponse.setRefreshDirRemain(_ctx.integerValue("DescribeScdnUserQuotaResponse.RefreshDirRemain"));
 	 
 	 	return describeScdnUserQuotaResponse;
 	}

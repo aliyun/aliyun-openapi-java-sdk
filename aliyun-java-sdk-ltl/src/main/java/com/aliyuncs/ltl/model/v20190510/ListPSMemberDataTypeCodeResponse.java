@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPSMemberDataTypeCodeResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
-
-	private Boolean success;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -51,20 +43,28 @@ public class ListPSMemberDataTypeCodeResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,21 +77,13 @@ public class ListPSMemberDataTypeCodeResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
-
 		private Integer num;
+
+		private Integer total;
 
 		private Integer size;
 
 		private List<MemberInfo> pageData;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
 
 		public Integer getNum() {
 			return this.num;
@@ -99,6 +91,14 @@ public class ListPSMemberDataTypeCodeResponse extends AcsResponse {
 
 		public void setNum(Integer num) {
 			this.num = num;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public Integer getSize() {
@@ -121,11 +121,11 @@ public class ListPSMemberDataTypeCodeResponse extends AcsResponse {
 
 			private String memberId;
 
+			private String dataTypeCode;
+
 			private String memberName;
 
 			private String memberUid;
-
-			private String dataTypeCode;
 
 			public String getMemberId() {
 				return this.memberId;
@@ -133,6 +133,14 @@ public class ListPSMemberDataTypeCodeResponse extends AcsResponse {
 
 			public void setMemberId(String memberId) {
 				this.memberId = memberId;
+			}
+
+			public String getDataTypeCode() {
+				return this.dataTypeCode;
+			}
+
+			public void setDataTypeCode(String dataTypeCode) {
+				this.dataTypeCode = dataTypeCode;
 			}
 
 			public String getMemberName() {
@@ -149,14 +157,6 @@ public class ListPSMemberDataTypeCodeResponse extends AcsResponse {
 
 			public void setMemberUid(String memberUid) {
 				this.memberUid = memberUid;
-			}
-
-			public String getDataTypeCode() {
-				return this.dataTypeCode;
-			}
-
-			public void setDataTypeCode(String dataTypeCode) {
-				this.dataTypeCode = dataTypeCode;
 			}
 		}
 	}

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTopicStatusResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private TopicStatus topicStatus;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class GetTopicStatusResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public TopicStatus getTopicStatus() {
@@ -109,15 +109,23 @@ public class GetTopicStatusResponse extends AcsResponse {
 
 		public static class OffsetTableItem {
 
-			private Long minOffset;
+			private Integer partition;
 
-			private Long maxOffset;
+			private Long minOffset;
 
 			private Long lastUpdateTimestamp;
 
+			private Long maxOffset;
+
 			private String topic;
 
-			private Integer partition;
+			public Integer getPartition() {
+				return this.partition;
+			}
+
+			public void setPartition(Integer partition) {
+				this.partition = partition;
+			}
 
 			public Long getMinOffset() {
 				return this.minOffset;
@@ -125,14 +133,6 @@ public class GetTopicStatusResponse extends AcsResponse {
 
 			public void setMinOffset(Long minOffset) {
 				this.minOffset = minOffset;
-			}
-
-			public Long getMaxOffset() {
-				return this.maxOffset;
-			}
-
-			public void setMaxOffset(Long maxOffset) {
-				this.maxOffset = maxOffset;
 			}
 
 			public Long getLastUpdateTimestamp() {
@@ -143,20 +143,20 @@ public class GetTopicStatusResponse extends AcsResponse {
 				this.lastUpdateTimestamp = lastUpdateTimestamp;
 			}
 
+			public Long getMaxOffset() {
+				return this.maxOffset;
+			}
+
+			public void setMaxOffset(Long maxOffset) {
+				this.maxOffset = maxOffset;
+			}
+
 			public String getTopic() {
 				return this.topic;
 			}
 
 			public void setTopic(String topic) {
 				this.topic = topic;
-			}
-
-			public Integer getPartition() {
-				return this.partition;
-			}
-
-			public void setPartition(Integer partition) {
-				this.partition = partition;
 			}
 		}
 	}

@@ -25,16 +25,29 @@ import com.aliyuncs.polardb.Endpoint;
 public class DescribeMaskingRulesRequest extends RpcAcsRequest<DescribeMaskingRulesResponse> {
 	   
 
+	private String interfaceVersion;
+
 	private String dBClusterId;
 
 	private String ruleNameList;
 	public DescribeMaskingRulesRequest() {
-		super("polardb", "2017-08-01", "DescribeMaskingRules");
+		super("polardb", "2017-08-01", "DescribeMaskingRules", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getInterfaceVersion() {
+		return this.interfaceVersion;
+	}
+
+	public void setInterfaceVersion(String interfaceVersion) {
+		this.interfaceVersion = interfaceVersion;
+		if(interfaceVersion != null){
+			putQueryParameter("InterfaceVersion", interfaceVersion);
+		}
 	}
 
 	public String getDBClusterId() {

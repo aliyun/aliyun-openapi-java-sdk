@@ -14,8 +14,13 @@
 
 package com.aliyuncs.facebody.transform.v20191230;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.facebody.model.v20191230.AddFaceImageTemplateResponse;
 import com.aliyuncs.facebody.model.v20191230.AddFaceImageTemplateResponse.Data;
+import com.aliyuncs.facebody.model.v20191230.AddFaceImageTemplateResponse.Data.FaceInfosItem;
+import com.aliyuncs.facebody.model.v20191230.AddFaceImageTemplateResponse.Data.FaceInfosItem.FaceRect;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +34,22 @@ public class AddFaceImageTemplateResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setTemplateId(_ctx.stringValue("AddFaceImageTemplateResponse.Data.TemplateId"));
+
+		List<FaceInfosItem> faceInfos = new ArrayList<FaceInfosItem>();
+		for (int i = 0; i < _ctx.lengthValue("AddFaceImageTemplateResponse.Data.FaceInfos.Length"); i++) {
+			FaceInfosItem faceInfosItem = new FaceInfosItem();
+			faceInfosItem.setTemplateFaceID(_ctx.stringValue("AddFaceImageTemplateResponse.Data.FaceInfos["+ i +"].TemplateFaceID"));
+
+			FaceRect faceRect = new FaceRect();
+			faceRect.setX(_ctx.stringValue("AddFaceImageTemplateResponse.Data.FaceInfos["+ i +"].FaceRect.X"));
+			faceRect.setY(_ctx.stringValue("AddFaceImageTemplateResponse.Data.FaceInfos["+ i +"].FaceRect.Y"));
+			faceRect.setHeight(_ctx.stringValue("AddFaceImageTemplateResponse.Data.FaceInfos["+ i +"].FaceRect.Height"));
+			faceRect.setWidth(_ctx.stringValue("AddFaceImageTemplateResponse.Data.FaceInfos["+ i +"].FaceRect.Width"));
+			faceInfosItem.setFaceRect(faceRect);
+
+			faceInfos.add(faceInfosItem);
+		}
+		data.setFaceInfos(faceInfos);
 		addFaceImageTemplateResponse.setData(data);
 	 
 	 	return addFaceImageTemplateResponse;

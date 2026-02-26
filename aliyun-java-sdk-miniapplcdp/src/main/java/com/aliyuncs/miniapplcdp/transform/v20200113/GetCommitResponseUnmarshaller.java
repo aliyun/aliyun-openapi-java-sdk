@@ -44,8 +44,14 @@ public class GetCommitResponseUnmarshaller {
 		data.setRollbackType(_ctx.stringValue("GetCommitResponse.Data.RollbackType"));
 		data.setSchemaVersion(_ctx.stringValue("GetCommitResponse.Data.SchemaVersion"));
 		data.setCommitType(_ctx.stringValue("GetCommitResponse.Data.CommitType"));
+		data.setModelDigest(_ctx.mapValue("GetCommitResponse.Data.ModelDigest"));
+		data.setResourceDigest(_ctx.mapValue("GetCommitResponse.Data.ResourceDigest"));
+		data.setCommitDigest(_ctx.stringValue("GetCommitResponse.Data.CommitDigest"));
 
-		List<Map<Object, Object>> modelPack = _ctx.listMapValue("GetCommitResponse.Data.ModelPack");
+		List<String> modelPack = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetCommitResponse.Data.ModelPack.Length"); i++) {
+			modelPack.add(_ctx.stringValue("GetCommitResponse.Data.ModelPack["+ i +"]"));
+		}
 		data.setModelPack(modelPack);
 
 		List<Map<Object, Object>> resourcePack = _ctx.listMapValue("GetCommitResponse.Data.ResourcePack");

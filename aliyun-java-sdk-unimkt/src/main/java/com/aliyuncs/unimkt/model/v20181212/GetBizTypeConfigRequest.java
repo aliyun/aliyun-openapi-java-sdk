@@ -27,7 +27,7 @@ public class GetBizTypeConfigRequest extends RpcAcsRequest<GetBizTypeConfigRespo
 
 	private String bizType;
 	public GetBizTypeConfigRequest() {
-		super("UniMkt", "2018-12-12", "GetBizTypeConfig", "1.0.0");
+		super("UniMkt", "2018-12-12", "GetBizTypeConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

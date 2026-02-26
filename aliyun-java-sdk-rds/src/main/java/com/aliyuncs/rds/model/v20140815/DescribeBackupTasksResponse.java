@@ -47,26 +47,26 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 	public static class BackupJob {
 
-		private String process;
+		private String backupId;
 
 		private String backupJobId;
+
+		private String backupProgressStatus;
 
 		private String backupStatus;
 
 		private String jobMode;
 
-		private String backupProgressStatus;
-
-		private String backupId;
+		private String process;
 
 		private String taskAction;
 
-		public String getProcess() {
-			return this.process;
+		public String getBackupId() {
+			return this.backupId;
 		}
 
-		public void setProcess(String process) {
-			this.process = process;
+		public void setBackupId(String backupId) {
+			this.backupId = backupId;
 		}
 
 		public String getBackupJobId() {
@@ -75,6 +75,14 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		public void setBackupJobId(String backupJobId) {
 			this.backupJobId = backupJobId;
+		}
+
+		public String getBackupProgressStatus() {
+			return this.backupProgressStatus;
+		}
+
+		public void setBackupProgressStatus(String backupProgressStatus) {
+			this.backupProgressStatus = backupProgressStatus;
 		}
 
 		public String getBackupStatus() {
@@ -93,20 +101,12 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 			this.jobMode = jobMode;
 		}
 
-		public String getBackupProgressStatus() {
-			return this.backupProgressStatus;
+		public String getProcess() {
+			return this.process;
 		}
 
-		public void setBackupProgressStatus(String backupProgressStatus) {
-			this.backupProgressStatus = backupProgressStatus;
-		}
-
-		public String getBackupId() {
-			return this.backupId;
-		}
-
-		public void setBackupId(String backupId) {
-			this.backupId = backupId;
+		public void setProcess(String process) {
+			this.process = process;
 		}
 
 		public String getTaskAction() {

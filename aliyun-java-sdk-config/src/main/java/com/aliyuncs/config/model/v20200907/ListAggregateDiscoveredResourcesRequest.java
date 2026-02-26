@@ -33,15 +33,23 @@ public class ListAggregateDiscoveredResourcesRequest extends RpcAcsRequest<ListA
 
 	private String aggregatorId;
 
+	private Long endUpdateTimestamp;
+
+	private Long resourceAccountId;
+
 	private String nextToken;
+
+	private Long startUpdateTimestamp;
 
 	private String resourceId;
 
 	private String resourceTypes;
 
+	private String excludeResourceTypes;
+
 	private Integer maxResults;
 	public ListAggregateDiscoveredResourcesRequest() {
-		super("Config", "2020-09-07", "ListAggregateDiscoveredResources");
+		super("Config", "2020-09-07", "ListAggregateDiscoveredResources", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -93,6 +101,28 @@ public class ListAggregateDiscoveredResourcesRequest extends RpcAcsRequest<ListA
 		}
 	}
 
+	public Long getEndUpdateTimestamp() {
+		return this.endUpdateTimestamp;
+	}
+
+	public void setEndUpdateTimestamp(Long endUpdateTimestamp) {
+		this.endUpdateTimestamp = endUpdateTimestamp;
+		if(endUpdateTimestamp != null){
+			putQueryParameter("EndUpdateTimestamp", endUpdateTimestamp.toString());
+		}
+	}
+
+	public Long getResourceAccountId() {
+		return this.resourceAccountId;
+	}
+
+	public void setResourceAccountId(Long resourceAccountId) {
+		this.resourceAccountId = resourceAccountId;
+		if(resourceAccountId != null){
+			putQueryParameter("ResourceAccountId", resourceAccountId.toString());
+		}
+	}
+
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -101,6 +131,17 @@ public class ListAggregateDiscoveredResourcesRequest extends RpcAcsRequest<ListA
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Long getStartUpdateTimestamp() {
+		return this.startUpdateTimestamp;
+	}
+
+	public void setStartUpdateTimestamp(Long startUpdateTimestamp) {
+		this.startUpdateTimestamp = startUpdateTimestamp;
+		if(startUpdateTimestamp != null){
+			putQueryParameter("StartUpdateTimestamp", startUpdateTimestamp.toString());
 		}
 	}
 
@@ -123,6 +164,17 @@ public class ListAggregateDiscoveredResourcesRequest extends RpcAcsRequest<ListA
 		this.resourceTypes = resourceTypes;
 		if(resourceTypes != null){
 			putQueryParameter("ResourceTypes", resourceTypes);
+		}
+	}
+
+	public String getExcludeResourceTypes() {
+		return this.excludeResourceTypes;
+	}
+
+	public void setExcludeResourceTypes(String excludeResourceTypes) {
+		this.excludeResourceTypes = excludeResourceTypes;
+		if(excludeResourceTypes != null){
+			putQueryParameter("ExcludeResourceTypes", excludeResourceTypes);
 		}
 	}
 

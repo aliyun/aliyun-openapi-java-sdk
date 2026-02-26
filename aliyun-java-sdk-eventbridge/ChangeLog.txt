@@ -1,0 +1,42 @@
+2025-10-31 Version: 1.0.13
+- RabbitMQMetaSourceTask add InnerNameSuffix param.
+
+2024-03-14 Version: 1.0.12
+- Fixed bugs for PauseEventStreaming and DeleteEventStreaming
+
+2024-02-28 Version: 1.0.11
+- Fixed bugs for ListUserDefinedEventSources
+
+2024-02-01 Version: 1.0.10
+- Bugfix: change response code type to string for StartEventStreaming.
+
+2024-01-25 Version: 1.0.9
+- Add source prometheus to event streaming.
+
+2023-11-07 Version: 1.0.8
+- Update param.
+
+2023-09-14 Version: 1.0.7
+- Update param.
+
+2023-06-09 Version: 1.0.6
+- Add listTargets api.
+
+2023-04-21 Version: 1.0.5
+- Update api param.
+
+2023-04-12 Version: 1.0.4
+- Add new api.
+
+2023-04-06 Version: 1.0.3
+- Update Api check.
+
+2023-03-21 Version: 1.0.2
+- Add new interface.
+
+2023-02-27 Version: 1.0.1
+- Add new interface.
+
+2023-02-16 Version: 1.0.0
+- Add new interface.
+

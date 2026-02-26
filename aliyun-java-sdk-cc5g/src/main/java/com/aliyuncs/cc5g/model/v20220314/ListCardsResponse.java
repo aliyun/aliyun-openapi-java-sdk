@@ -109,6 +109,10 @@ public class ListCardsResponse extends AcsResponse {
 
 		private String businessStatus;
 
+		private String msisdn;
+
+		private String usageDataTotal;
+
 		public String getIccid() {
 			return this.iccid;
 		}
@@ -235,6 +239,22 @@ public class ListCardsResponse extends AcsResponse {
 
 		public void setBusinessStatus(String businessStatus) {
 			this.businessStatus = businessStatus;
+		}
+
+		public String getMsisdn() {
+			return this.msisdn;
+		}
+
+		public void setMsisdn(String msisdn) {
+			this.msisdn = msisdn;
+		}
+
+		public String getUsageDataTotal() {
+			return this.usageDataTotal;
+		}
+
+		public void setUsageDataTotal(String usageDataTotal) {
+			this.usageDataTotal = usageDataTotal;
 		}
 	}
 

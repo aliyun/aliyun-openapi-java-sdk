@@ -1,3 +1,51 @@
+2025-11-11 Version: 1.0.14
+- Supported bind idp user api.
+
+2025-10-30 Version: 1.0.13
+- Supported Custom Privacy Policy.
+
+2025-10-20 Version: 1.0.12
+- Supported Brand.
+
+2025-08-25 Version: 1.0.11
+- Generated 2021-12-01 for `Eiam`.
+
+2025-03-21 Version: 1.0.10
+- Support Conditional Access Policy.
+
+2025-01-09 Version: 1.0.9
+- Supported GetInstanceLicense.
+
+2024-11-01 Version: 1.0.8
+- Support API DeleteOrganizationalUnitChildren.
+- Update API CreateOrganizationalUnit: update param OrganizationalUnitName Max Length.
+- Update API GetApplication: update response param.
+- Update API GetApplicationSsoConfig: update response param.
+- Update API SetApplicationSsoConfig: update param SamlSsoConfig.
+
+2024-10-30 Version: 1.0.7
+- Add RunSynchronizationJob API.
+- Add GetSynchronizationJob API.
+- Update ListSynchronizationJobs API.
+
+2024-07-30 Version: 1.0.6
+- Add RunSynchronizationJob API.
+- Add GetSynchronizationJob API.
+- Update ListSynchronizationJobs API.
+
+2023-12-21 Version: 1.0.5
+- Support vpn api.
+
+2023-01-04 Version: 1.0.4
+- OIDC protocol application support password grant type.
+
+2022-11-16 Version: 1.0.3
+- GetApplication API supported return ApplicationTemplateId field.
+
+2022-08-18 Version: 1.0.2
+- Support Application authorization manage.
+- Support User and Organizational Unit resource query operation.
+
 2022-08-03 Version: 1.0.1
 - Support Application Resource manage.
 

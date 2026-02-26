@@ -32,6 +32,8 @@ public class DescribeKeyPairsRequest extends RpcAcsRequest<DescribeKeyPairsRespo
 
 	private String keyPairName;
 
+	private Boolean includePublicKey;
+
 	private Integer pageNumber;
 
 	private String resourceGroupId;
@@ -82,6 +84,17 @@ public class DescribeKeyPairsRequest extends RpcAcsRequest<DescribeKeyPairsRespo
 		this.keyPairName = keyPairName;
 		if(keyPairName != null){
 			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
+
+	public Boolean getIncludePublicKey() {
+		return this.includePublicKey;
+	}
+
+	public void setIncludePublicKey(Boolean includePublicKey) {
+		this.includePublicKey = includePublicKey;
+		if(includePublicKey != null){
+			putQueryParameter("IncludePublicKey", includePublicKey.toString());
 		}
 	}
 

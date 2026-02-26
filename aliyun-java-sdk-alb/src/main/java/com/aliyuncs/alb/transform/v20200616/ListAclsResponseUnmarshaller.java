@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alb.model.v20200616.ListAclsResponse;
 import com.aliyuncs.alb.model.v20200616.ListAclsResponse.Acl;
+import com.aliyuncs.alb.model.v20200616.ListAclsResponse.Acl.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,7 +40,20 @@ public class ListAclsResponseUnmarshaller {
 			acl.setAclStatus(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].AclStatus"));
 			acl.setAddressIPVersion(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].AddressIPVersion"));
 			acl.setResourceGroupId(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].ResourceGroupId"));
+			acl.setServiceManagedEnabled(_ctx.booleanValue("ListAclsResponse.Acls["+ i +"].ServiceManagedEnabled"));
+			acl.setServiceManagedMode(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].ServiceManagedMode"));
 			acl.setConfigManagedEnabled(_ctx.booleanValue("ListAclsResponse.Acls["+ i +"].ConfigManagedEnabled"));
+			acl.setCreateTime(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].CreateTime"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListAclsResponse.Acls["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			acl.setTags(tags);
 
 			acls.add(acl);
 		}

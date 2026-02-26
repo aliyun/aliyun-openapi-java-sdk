@@ -27,7 +27,7 @@ public class GenerateMergedTableRequest extends RoaAcsRequest<GenerateMergedTabl
 
 	private String spec;
 	public GenerateMergedTableRequest() {
-		super("OpenSearch", "2017-12-25", "GenerateMergedTable", "opensearch");
+		super("OpenSearch", "2017-12-25", "GenerateMergedTable");
 		setUriPattern("/v4/openapi/assist/schema/actions/merge");
 		setMethod(MethodType.POST);
 		try {

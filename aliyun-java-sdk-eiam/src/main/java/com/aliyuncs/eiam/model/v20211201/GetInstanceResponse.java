@@ -55,17 +55,11 @@ public class GetInstanceResponse extends AcsResponse {
 
 		private String description;
 
-		private String logoUrl;
-
-		private String faviconUrl;
-
-		private String title;
-
-		private List<CustomEndpoint> customEndpoints;
-
 		private List<String> egressAddresses;
 
 		private DefaultEndpoint defaultEndpoint;
+
+		private DomainConfig domainConfig;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -99,38 +93,6 @@ public class GetInstanceResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getLogoUrl() {
-			return this.logoUrl;
-		}
-
-		public void setLogoUrl(String logoUrl) {
-			this.logoUrl = logoUrl;
-		}
-
-		public String getFaviconUrl() {
-			return this.faviconUrl;
-		}
-
-		public void setFaviconUrl(String faviconUrl) {
-			this.faviconUrl = faviconUrl;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
-		}
-
-		public List<CustomEndpoint> getCustomEndpoints() {
-			return this.customEndpoints;
-		}
-
-		public void setCustomEndpoints(List<CustomEndpoint> customEndpoints) {
-			this.customEndpoints = customEndpoints;
-		}
-
 		public List<String> getEgressAddresses() {
 			return this.egressAddresses;
 		}
@@ -147,27 +109,12 @@ public class GetInstanceResponse extends AcsResponse {
 			this.defaultEndpoint = defaultEndpoint;
 		}
 
-		public static class CustomEndpoint {
+		public DomainConfig getDomainConfig() {
+			return this.domainConfig;
+		}
 
-			private String endpoint;
-
-			private String status;
-
-			public String getEndpoint() {
-				return this.endpoint;
-			}
-
-			public void setEndpoint(String endpoint) {
-				this.endpoint = endpoint;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
+		public void setDomainConfig(DomainConfig domainConfig) {
+			this.domainConfig = domainConfig;
 		}
 
 		public static class DefaultEndpoint {
@@ -190,6 +137,39 @@ public class GetInstanceResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+		}
+
+		public static class DomainConfig {
+
+			private String initDomainAutoRedirectStatus;
+
+			private String defaultDomain;
+
+			private String initDomain;
+
+			public String getInitDomainAutoRedirectStatus() {
+				return this.initDomainAutoRedirectStatus;
+			}
+
+			public void setInitDomainAutoRedirectStatus(String initDomainAutoRedirectStatus) {
+				this.initDomainAutoRedirectStatus = initDomainAutoRedirectStatus;
+			}
+
+			public String getDefaultDomain() {
+				return this.defaultDomain;
+			}
+
+			public void setDefaultDomain(String defaultDomain) {
+				this.defaultDomain = defaultDomain;
+			}
+
+			public String getInitDomain() {
+				return this.initDomain;
+			}
+
+			public void setInitDomain(String initDomain) {
+				this.initDomain = initDomain;
 			}
 		}
 	}

@@ -33,8 +33,6 @@ public class ListCasesResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean success;
-
 	private Data data;
 
 	public String getRequestId() {
@@ -67,14 +65,6 @@ public class ListCasesResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Data getData() {
@@ -133,8 +123,6 @@ public class ListCasesResponse extends AcsResponse {
 
 			private Long attemptCount;
 
-			private String expandInfo;
-
 			private String failureReason;
 
 			private String phoneNumber;
@@ -144,6 +132,8 @@ public class ListCasesResponse extends AcsResponse {
 			private String caseId;
 
 			private String customVariables;
+
+			private String abandonPhase;
 
 			public String getAbandonType() {
 				return this.abandonType;
@@ -159,14 +149,6 @@ public class ListCasesResponse extends AcsResponse {
 
 			public void setAttemptCount(Long attemptCount) {
 				this.attemptCount = attemptCount;
-			}
-
-			public String getExpandInfo() {
-				return this.expandInfo;
-			}
-
-			public void setExpandInfo(String expandInfo) {
-				this.expandInfo = expandInfo;
 			}
 
 			public String getFailureReason() {
@@ -207,6 +189,14 @@ public class ListCasesResponse extends AcsResponse {
 
 			public void setCustomVariables(String customVariables) {
 				this.customVariables = customVariables;
+			}
+
+			public String getAbandonPhase() {
+				return this.abandonPhase;
+			}
+
+			public void setAbandonPhase(String abandonPhase) {
+				this.abandonPhase = abandonPhase;
 			}
 		}
 	}

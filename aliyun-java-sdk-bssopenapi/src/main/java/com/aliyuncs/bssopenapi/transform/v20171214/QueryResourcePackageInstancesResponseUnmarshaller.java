@@ -56,6 +56,7 @@ public class QueryResourcePackageInstancesResponseUnmarshaller {
 			instance.setDeductType(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].DeductType"));
 			instance.setTotalAmountUnit(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].TotalAmountUnit"));
 			instance.setRemainingAmount(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].RemainingAmount"));
+			instance.setCommodityCode(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].CommodityCode"));
 
 			List<String> applicableProducts = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].ApplicableProducts.Length"); j++) {

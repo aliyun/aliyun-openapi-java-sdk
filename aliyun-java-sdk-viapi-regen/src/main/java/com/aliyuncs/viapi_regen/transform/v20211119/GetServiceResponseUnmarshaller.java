@@ -16,6 +16,7 @@ package com.aliyuncs.viapi_regen.transform.v20211119;
 
 import com.aliyuncs.viapi_regen.model.v20211119.GetServiceResponse;
 import com.aliyuncs.viapi_regen.model.v20211119.GetServiceResponse.Data;
+import com.aliyuncs.viapi_regen.model.v20211119.GetServiceResponse.Data.DataReflowInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,12 +34,19 @@ public class GetServiceResponseUnmarshaller {
 		data.setServiceName(_ctx.stringValue("GetServiceResponse.Data.ServiceName"));
 		data.setServiceDescription(_ctx.stringValue("GetServiceResponse.Data.ServiceDescription"));
 		data.setStatus(_ctx.stringValue("GetServiceResponse.Data.Status"));
-		data.setCurlExample(_ctx.stringValue("GetServiceResponse.Data.CurlExample"));
+		data.setServiceId(_ctx.stringValue("GetServiceResponse.Data.ServiceId"));
 		data.setInputParams(_ctx.stringValue("GetServiceResponse.Data.InputParams"));
 		data.setOutputParams(_ctx.stringValue("GetServiceResponse.Data.OutputParams"));
 		data.setErrorcodes(_ctx.stringValue("GetServiceResponse.Data.Errorcodes"));
 		data.setInputExample(_ctx.stringValue("GetServiceResponse.Data.InputExample"));
 		data.setOutputExample(_ctx.stringValue("GetServiceResponse.Data.OutputExample"));
+
+		DataReflowInfo dataReflowInfo = new DataReflowInfo();
+		dataReflowInfo.setDataReflowCount(_ctx.longValue("GetServiceResponse.Data.DataReflowInfo.DataReflowCount"));
+		dataReflowInfo.setDataReflowRate(_ctx.longValue("GetServiceResponse.Data.DataReflowInfo.DataReflowRate"));
+		dataReflowInfo.setDataReflowOssPath(_ctx.stringValue("GetServiceResponse.Data.DataReflowInfo.DataReflowOssPath"));
+		dataReflowInfo.setEnableDataReflowFlag(_ctx.booleanValue("GetServiceResponse.Data.DataReflowInfo.EnableDataReflowFlag"));
+		data.setDataReflowInfo(dataReflowInfo);
 		getServiceResponse.setData(data);
 	 
 	 	return getServiceResponse;

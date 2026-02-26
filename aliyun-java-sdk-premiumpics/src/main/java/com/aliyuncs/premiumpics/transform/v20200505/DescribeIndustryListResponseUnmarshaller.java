@@ -32,9 +32,9 @@ public class DescribeIndustryListResponseUnmarshaller {
 		List<Industries> data = new ArrayList<Industries>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIndustryListResponse.Data.Length"); i++) {
 			Industries industries = new Industries();
+			industries.setIndustryId(_ctx.stringValue("DescribeIndustryListResponse.Data["+ i +"].IndustryId"));
 			industries.setName(_ctx.stringValue("DescribeIndustryListResponse.Data["+ i +"].Name"));
 			industries.setDescription(_ctx.stringValue("DescribeIndustryListResponse.Data["+ i +"].Description"));
-			industries.setIndustryId(_ctx.stringValue("DescribeIndustryListResponse.Data["+ i +"].IndustryId"));
 
 			data.add(industries);
 		}

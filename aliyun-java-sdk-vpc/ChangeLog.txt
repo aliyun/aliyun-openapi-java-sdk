@@ -1,3 +1,229 @@
+2026-02-04 Version: 3.2.31
+- Delete NAT BandwidthPackage API.
+- FNAT DOMAIN SUPPORT.
+
+2025-07-10 Version: 3.2.30
+- Generated 2016-04-28 for `Vpc`.
+
+2025-07-10 Version: 3.2.30
+- Generated 2016-04-28 for `Vpc`.
+
+2024-10-25 Version: 3.2.29
+- Support HA VPN attachment.
+
+2023-07-21 Version: 3.2.28
+- Add error code.
+- Add Deliver Param.
+- Add errorcode.
+- Support tags for CreateTrafficMirrorSession and CreatePublicIpAddressPool.
+- VBR and RI support resource group and tags.
+- Api Type Tag.
+- Add Error Code.
+- Update doc required of Tag API.
+- Supported Coip.
+- Add reeor code.
+- Add ErrorCode.
+- Increased errorCode NotSupportLinkrole for API ActivateRouterInterface.
+- Fixed IncorrectStatus bug for APIs, ActivateRouterInterface, ConnectRouterInterface and DeactivateRouterInterface.
+- Add new errorcode.
+- Support source ip ram for GetVpcRouteEntrySummary.
+
+2023-07-03 Version: 3.2.27
+- Add CidrList Limit.
+- Delete CreateNatIp invalid fields.
+
+2023-06-30 Version: 3.2.26
+- Support HA VPN.
+- Api Type tag.
+- Api Type Tag.
+- Add ErrorCode.
+- Support HA-VPN.
+- Disuse some nat64 interface.
+- Optimize CreateNatGateway.
+
+2023-06-27 Version: 3.2.25
+- Add error code.
+- Add ErrorCode.
+- Add errorCode for ListPublicIpAddressPoolsForCommonBuy.
+- Add new errorcode.
+- Modify parameter type.
+- Change parameter instanceId  of DeleteVSwitchCidrReservation to requeired, add error code, and add tags in DescribeCommonBandwidthPackages response.
+- Update traffic mirror service api.
+- Add error code for MoveResourceGroup and AllocateVpcIpv6Cidr.
+- Api tag.
+- Support tag when create resources.
+- Add errorCode.
+- Change API RAM meta.
+
+2023-06-09 Version: 3.2.24
+- RegionId Field is required.
+- Supported Zone for AllocateEipSegmentAddress.
+- Supported ReservationData for DescribeIpv6Addresses.
+- Add ErrorCode.
+- Supported ClientIp Ram check For AddPublicIpAddressPoolCidrBlock.
+- Supported InstanceId and IpAddress For AllocateEipAddress.
+- Support error code for the port range of SSL VPN server.
+- Modify api timeout.
+- Support Ha Vpn.
+- Add error code.
+
+2023-05-22 Version: 3.2.23
+- Add ErrorCode.
+- AssociateRouteTable and UnassociateRouteTable Supported Idempotence.
+- Fix bugs for network acl region when query data.
+- Fixed the field regionId of CreateNetworkAcl response.
+- Supported new errorCode for AssociateEipAddressBatch.
+- Update httpStatusCode for  Forbidden.
+- Supported clientIP for PublicIpAddressPool.
+- VPC and CommomBandwidth return tag info.
+- Support coupon query price.
+- Support auto renew router interface.
+- Support accept-language.
+- Add error code illegal resourceGroupId.
+- Change the partial output reference visibility.
+
+2023-05-21 Version: 3.2.22
+- Add ErrorCode.
+- AssociateRouteTable and UnassociateRouteTable Supported Idempotence.
+- Fix bugs for network acl region when query data.
+- Fixed the field regionId of CreateNetworkAcl response.
+- Supported new errorCode for AssociateEipAddressBatch.
+- Update httpStatusCode for  Forbidden.
+- Supported clientIP for PublicIpAddressPool.
+- VPC and CommomBandwidth return tag info.
+- Support coupon query price.
+- Support auto renew router interface.
+- Support accept-language.
+- Add error code illegal resourceGroupId.
+- Change the partial output reference visibility.
+
+2023-05-03 Version: 3.2.21
+- Supported Zone for AllocateEipAddress.
+- Support HA-VPN.
+- CreateFullNatEntry, ModifyFullNatEntryAttribute, DeleteFullNatEntry support idempotent.
+- Support VBR allow prefixes.
+- Support adDetailLocation.
+- Fix ErrorCode.
+
+2023-04-15 Version: 3.2.20
+- CreateForwardEntry add error code.
+- Fix description error.
+- Add Error Code.
+- Parameter Tag is requeired for TagResources.
+- Add error code and message.
+- Supported Zone for AllocateEipAddress.
+- Add Delete IPv4Gw ErrorCode.
+- Supported Ipam for Vpc.
+- Support for multi-zone backend.
+- Add ErrorCode.
+- Add new ErrorCode and TrafficMirror supports to cumtomize PackageLength.
+
+2023-03-28 Version: 3.2.19
+- Support create pconn with tag.
+- Add errorcode for OpenFlowLogService.
+- Supported BandwidthPackageId for DescribeEipAddresses.
+- The number oftraffic mirror source on the gateway side is limited to 30.
+- Support associate transfer.
+- Hide OrderId of AllocateEipSegmentAddress.
+- Update error code of DeleteVSwitch.
+- CreateFullNatEntry add error code.
+- Support tag and resource group for dhcp options set and gateway endpoint.
+- Fixed bugs for CreationTime.
+- Fix pageNo.
+- Add errorcode for AssociateEipAddress.
+- Modify timeout.
+
+2023-03-10 Version: 3.2.18
+- Support create default VPC and create default vSwitch .
+
+2023-03-07 Version: 3.2.17
+- Add UnassociateNetworkAcl api error code.
+- Add ram error code.
+- Error code update.
+- Add AdminQueryVpcInfo  control policy.
+- OpenFlowLogService add errorcode.
+- CreateNatIp add error code.
+- Modify errorCode for OpenFlowLogService.
+- Add  error code.
+- Add errorCode for OpenFlowLogService.
+- Delete access control policy.
+- Add ControlPolicy for DescribeNatgates.
+- Supported ControlPolicy For Natgw API.
+- Fix TrafficPath Name.
+- Add ForceDeleteVpc Param.
+
+2023-01-31 Version: 3.2.16
+- Supported set high definition monitor log status for eip.
+- Supported batch associate eip to cloud products.
+- Supported VpcDescribeVpcNatGatewayNetworkInterfaceQuota.
+
+2023-01-31 Version: 3.2.15
+- Supported set high definition monitor log status for eip.
+- Supported batch associate eip to cloud products.
+- Supported VpcDescribeVpcNatGatewayNetworkInterfaceQuota.
+
+2023-01-16 Version: 3.2.14
+- Supported set high definition monitor log status for eip.
+- Supported batch associate eip to cloud products.
+- Supported VpcDescribeVpcNatGatewayNetworkInterfaceQuota.
+
+2023-01-09 Version: 3.2.13
+- Fix typos in ErrorCodes.
+- Add ErrorMessage translation.
+- Vpn support tag.
+- Add attachment resource for terraform.
+- Support diagnose vpn connection.
+- Change timeout and api rate limit for fullnat.
+- Add error Code.
+- Add error code dependencyViolation vSwitchCidrReservation.
+- Change input param.
+- Add errorcode  IncorrectVpcStatus for action CreateVpnRouteEntry.
+- Add errorcode FinancialLocked for action DeleteVpnConnection.
+- Support resource group and tags.
+- Support Return ResourceUid.
+
+2022-12-22 Version: 3.2.12
+- Supported set high definition monitor log status for eip.
+- Supported batch associate eip to cloud products.
+
+2022-12-22 Version: 3.2.11
+- Support FlowLog Managed.
+- Add error code for DeleteFullNatEntry, ListFullNatEntries, DescribeNatGateways.
+- Change timeout for CreateFullNatEntry, DescribeNatGateways.
+- Add error code.
+- TagCode ExpressConnect.
+
+2022-12-15 Version: 3.2.10
+- Supported ShareType for ListPublicIpAddressPools.
+- Supported OwnerId for ListPublicIpAddressPools.
+
+2022-11-24 Version: 3.2.9
+- Supported OwnerId for ListPublicIpAddressPools.
+- Supported ShareType for ListPublicIpAddressPools.
+
+2022-11-21 Version: 3.2.8
+- ResponseLog true.
+- Support bandwidth.
+- Fix error code translation error.
+- Repair error code English translation.
+- Changes the param NextToken of ListDhcpOptionsSet to optional in API docs.
+- Fixed CreateVpcPrefixList paramer name invalid.
+
+2022-09-20 Version: 3.2.7
+- DescribeSnatTableEntries DescribeSnatTableEntries ListFullnatEntries support query --by natGatewayId.
+
+2022-09-01 Version: 3.2.6
+- Support DescribeNatGateways return EipBindMode.
+
+2022-08-26 Version: 3.2.5
+- Support DescribeNatGateways return Tags.
+
+2022-08-19 Version: 3.2.4
+- Optimize DescribePublicIpAddress API.
+
+2022-08-19 Version: 3.2.3
+- Add DescribePublicIpAddress Interface.
+
 2022-08-12 Version: 3.2.2
 - Natgateway add param eipBindMode.
 

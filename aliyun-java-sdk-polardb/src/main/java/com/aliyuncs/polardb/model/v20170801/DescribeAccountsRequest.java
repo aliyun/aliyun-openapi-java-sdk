@@ -27,6 +27,8 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 
 	private Long resourceOwnerId;
 
+	private String nodeType;
+
 	private Integer pageNumber;
 
 	private String accountName;
@@ -41,7 +43,7 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 
 	private Long ownerId;
 	public DescribeAccountsRequest() {
-		super("polardb", "2017-08-01", "DescribeAccounts");
+		super("polardb", "2017-08-01", "DescribeAccounts", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,6 +59,17 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType);
 		}
 	}
 

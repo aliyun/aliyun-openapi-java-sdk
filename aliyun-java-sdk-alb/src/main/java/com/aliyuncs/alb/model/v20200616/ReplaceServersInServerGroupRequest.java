@@ -76,6 +76,7 @@ public class ReplaceServersInServerGroupRequest extends RpcAcsRequest<ReplaceSer
 			for (int depth1 = 0; depth1 < addedServers.size(); depth1++) {
 				if (addedServers.get(depth1) != null) {
 					
+						putQueryParameter("AddedServers." + (depth1 + 1) + ".RemoteIpEnabled" , addedServers.get(depth1).getRemoteIpEnabled());
 						putQueryParameter("AddedServers." + (depth1 + 1) + ".ServerType" , addedServers.get(depth1).getServerType());
 						putQueryParameter("AddedServers." + (depth1 + 1) + ".Port" , addedServers.get(depth1).getPort());
 						putQueryParameter("AddedServers." + (depth1 + 1) + ".Description" , addedServers.get(depth1).getDescription());
@@ -119,6 +120,8 @@ public class ReplaceServersInServerGroupRequest extends RpcAcsRequest<ReplaceSer
 
 	public static class AddedServers {
 
+		private Boolean remoteIpEnabled;
+
 		private String serverType;
 
 		private Integer port;
@@ -130,6 +133,14 @@ public class ReplaceServersInServerGroupRequest extends RpcAcsRequest<ReplaceSer
 		private Integer weight;
 
 		private String serverId;
+
+		public Boolean getRemoteIpEnabled() {
+			return this.remoteIpEnabled;
+		}
+
+		public void setRemoteIpEnabled(Boolean remoteIpEnabled) {
+			this.remoteIpEnabled = remoteIpEnabled;
+		}
 
 		public String getServerType() {
 			return this.serverType;

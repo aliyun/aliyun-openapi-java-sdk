@@ -29,13 +29,23 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 
 	private String fileTypes;
 
+	private Boolean needContent;
+
+	private Boolean needAbsoluteFolderPath;
+
 	private String projectIdentifier;
 
 	private Integer pageNumber;
 
+	private String fileIdIn;
+
+	private String lastEditUser;
+
 	private String fileFolderPath;
 
 	private Integer pageSize;
+
+	private String exactFileName;
 
 	private String keyword;
 
@@ -75,6 +85,28 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 		}
 	}
 
+	public Boolean getNeedContent() {
+		return this.needContent;
+	}
+
+	public void setNeedContent(Boolean needContent) {
+		this.needContent = needContent;
+		if(needContent != null){
+			putBodyParameter("NeedContent", needContent.toString());
+		}
+	}
+
+	public Boolean getNeedAbsoluteFolderPath() {
+		return this.needAbsoluteFolderPath;
+	}
+
+	public void setNeedAbsoluteFolderPath(Boolean needAbsoluteFolderPath) {
+		this.needAbsoluteFolderPath = needAbsoluteFolderPath;
+		if(needAbsoluteFolderPath != null){
+			putBodyParameter("NeedAbsoluteFolderPath", needAbsoluteFolderPath.toString());
+		}
+	}
+
 	public String getProjectIdentifier() {
 		return this.projectIdentifier;
 	}
@@ -97,6 +129,28 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 		}
 	}
 
+	public String getFileIdIn() {
+		return this.fileIdIn;
+	}
+
+	public void setFileIdIn(String fileIdIn) {
+		this.fileIdIn = fileIdIn;
+		if(fileIdIn != null){
+			putBodyParameter("FileIdIn", fileIdIn);
+		}
+	}
+
+	public String getLastEditUser() {
+		return this.lastEditUser;
+	}
+
+	public void setLastEditUser(String lastEditUser) {
+		this.lastEditUser = lastEditUser;
+		if(lastEditUser != null){
+			putBodyParameter("LastEditUser", lastEditUser);
+		}
+	}
+
 	public String getFileFolderPath() {
 		return this.fileFolderPath;
 	}
@@ -116,6 +170,17 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getExactFileName() {
+		return this.exactFileName;
+	}
+
+	public void setExactFileName(String exactFileName) {
+		this.exactFileName = exactFileName;
+		if(exactFileName != null){
+			putBodyParameter("ExactFileName", exactFileName);
 		}
 	}
 

@@ -33,6 +33,8 @@ public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String dBProxyEngineType;
+
 	private List<PerformanceKey> performanceKeys;
 
 	public String getEndTime() {
@@ -67,6 +69,14 @@ public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
+	}
+
 	public List<PerformanceKey> getPerformanceKeys() {
 		return this.performanceKeys;
 	}
@@ -80,6 +90,12 @@ public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 		private String valueFormat;
 
 		private String key;
+
+		private String service;
+
+		private String node;
+
+		private String server;
 
 		private List<PerformanceValue> values;
 
@@ -97,6 +113,30 @@ public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+
+		public String getService() {
+			return this.service;
+		}
+
+		public void setService(String service) {
+			this.service = service;
+		}
+
+		public String getNode() {
+			return this.node;
+		}
+
+		public void setNode(String node) {
+			this.node = node;
+		}
+
+		public String getServer() {
+			return this.server;
+		}
+
+		public void setServer(String server) {
+			this.server = server;
 		}
 
 		public List<PerformanceValue> getValues() {

@@ -56,6 +56,17 @@ public class DescribeVpnGatewaysResponseUnmarshaller {
 			vpnGateway.setSslVpn(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].SslVpn"));
 			vpnGateway.setName(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].Name"));
 			vpnGateway.setNetworkType(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].NetworkType"));
+			vpnGateway.setDisasterRecoveryInternetIp(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].DisasterRecoveryInternetIp"));
+			vpnGateway.setDisasterRecoveryVSwitchId(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].DisasterRecoveryVSwitchId"));
+			vpnGateway.setSslVpnInternetIp(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].SslVpnInternetIp"));
+			vpnGateway.setResourceGroupId(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].ResourceGroupId"));
+			vpnGateway.setGatewayType(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].GatewayType"));
+
+			List<String> eniInstanceIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].EniInstanceIds.Length"); j++) {
+				eniInstanceIds.add(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].EniInstanceIds["+ j +"]"));
+			}
+			vpnGateway.setEniInstanceIds(eniInstanceIds);
 
 			ReservationData reservationData = new ReservationData();
 			reservationData.setStatus(_ctx.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].ReservationData.Status"));

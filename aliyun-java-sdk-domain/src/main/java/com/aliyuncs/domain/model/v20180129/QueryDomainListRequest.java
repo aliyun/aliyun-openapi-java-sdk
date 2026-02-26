@@ -15,6 +15,7 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.domain.Endpoint;
 
@@ -27,13 +28,21 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 
 	private String productDomainType;
 
+	private String ccompany;
+
 	private String orderKeyType;
+
+	private String registrar;
 
 	private Integer pageNum;
 
 	private String orderByType;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
+
+	private List<Tag> tags;
 
 	private String lang;
 
@@ -53,7 +62,7 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 
 	private Long startRegistrationDate;
 	public QueryDomainListRequest() {
-		super("Domain", "2018-01-29", "QueryDomainList");
+		super("Domain", "2018-01-29", "QueryDomainList", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -72,6 +81,17 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		}
 	}
 
+	public String getCcompany() {
+		return this.ccompany;
+	}
+
+	public void setCcompany(String ccompany) {
+		this.ccompany = ccompany;
+		if(ccompany != null){
+			putQueryParameter("Ccompany", ccompany);
+		}
+	}
+
 	public String getOrderKeyType() {
 		return this.orderKeyType;
 	}
@@ -80,6 +100,17 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		this.orderKeyType = orderKeyType;
 		if(orderKeyType != null){
 			putQueryParameter("OrderKeyType", orderKeyType);
+		}
+	}
+
+	public String getRegistrar() {
+		return this.registrar;
+	}
+
+	public void setRegistrar(String registrar) {
+		this.registrar = registrar;
+		if(registrar != null){
+			putQueryParameter("Registrar", registrar);
 		}
 	}
 
@@ -105,6 +136,17 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -114,6 +156,20 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getLang() {
@@ -212,6 +268,29 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		this.startRegistrationDate = startRegistrationDate;
 		if(startRegistrationDate != null){
 			putQueryParameter("StartRegistrationDate", startRegistrationDate.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

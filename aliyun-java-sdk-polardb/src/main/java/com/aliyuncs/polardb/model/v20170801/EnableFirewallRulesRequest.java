@@ -39,7 +39,7 @@ public class EnableFirewallRulesRequest extends RpcAcsRequest<EnableFirewallRule
 
 	private String ruleNameList;
 	public EnableFirewallRulesRequest() {
-		super("polardb", "2017-08-01", "EnableFirewallRules");
+		super("polardb", "2017-08-01", "EnableFirewallRules", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

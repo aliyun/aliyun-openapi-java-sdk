@@ -41,7 +41,7 @@ public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPriv
 
 	private String dBName;
 	public GrantAccountPrivilegeRequest() {
-		super("polardb", "2017-08-01", "GrantAccountPrivilege");
+		super("polardb", "2017-08-01", "GrantAccountPrivilege", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

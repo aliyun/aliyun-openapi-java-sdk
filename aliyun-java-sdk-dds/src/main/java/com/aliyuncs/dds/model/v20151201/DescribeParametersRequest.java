@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -26,7 +27,7 @@ public class DescribeParametersRequest extends RpcAcsRequest<DescribeParametersR
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
+	private String extraParam;
 
 	private String dBInstanceId;
 
@@ -42,6 +43,10 @@ public class DescribeParametersRequest extends RpcAcsRequest<DescribeParametersR
 	public DescribeParametersRequest() {
 		super("Dds", "2015-12-01", "DescribeParameters", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -55,14 +60,14 @@ public class DescribeParametersRequest extends RpcAcsRequest<DescribeParametersR
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getExtraParam() {
+		return this.extraParam;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setExtraParam(String extraParam) {
+		this.extraParam = extraParam;
+		if(extraParam != null){
+			putQueryParameter("ExtraParam", extraParam);
 		}
 	}
 

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCloudMetricProfilingsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<ProfilingInfo> profilings;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListCloudMetricProfilingsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListCloudMetricProfilingsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ProfilingInfo> getProfilings() {
@@ -79,17 +79,17 @@ public class ListCloudMetricProfilingsResponse extends AcsResponse {
 
 		private String profilingId;
 
-		private String instanceId;
-
-		private String hostName;
+		private String triggerTime;
 
 		private Integer pid;
 
+		private String hostName;
+
 		private Integer duration;
 
-		private Integer freq;
+		private String instanceId;
 
-		private String triggerTime;
+		private Integer freq;
 
 		public String getProfilingId() {
 			return this.profilingId;
@@ -99,20 +99,12 @@ public class ListCloudMetricProfilingsResponse extends AcsResponse {
 			this.profilingId = profilingId;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getTriggerTime() {
+			return this.triggerTime;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getHostName() {
-			return this.hostName;
-		}
-
-		public void setHostName(String hostName) {
-			this.hostName = hostName;
+		public void setTriggerTime(String triggerTime) {
+			this.triggerTime = triggerTime;
 		}
 
 		public Integer getPid() {
@@ -123,6 +115,14 @@ public class ListCloudMetricProfilingsResponse extends AcsResponse {
 			this.pid = pid;
 		}
 
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
+
 		public Integer getDuration() {
 			return this.duration;
 		}
@@ -131,20 +131,20 @@ public class ListCloudMetricProfilingsResponse extends AcsResponse {
 			this.duration = duration;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public Integer getFreq() {
 			return this.freq;
 		}
 
 		public void setFreq(Integer freq) {
 			this.freq = freq;
-		}
-
-		public String getTriggerTime() {
-			return this.triggerTime;
-		}
-
-		public void setTriggerTime(String triggerTime) {
-			this.triggerTime = triggerTime;
 		}
 	}
 

@@ -25,11 +25,7 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainRealTimeDetailDataRequest extends RpcAcsRequest<DescribeDomainRealTimeDetailDataResponse> {
 	   
 
-	private String locationNameEn;
-
-	private String startTime;
-
-	private String ispNameEn;
+	private String field;
 
 	private String merge;
 
@@ -39,9 +35,11 @@ public class DescribeDomainRealTimeDetailDataRequest extends RpcAcsRequest<Descr
 
 	private String mergeLocIsp;
 
-	private Long ownerId;
+	private String locationNameEn;
 
-	private String field;
+	private String startTime;
+
+	private String ispNameEn;
 	public DescribeDomainRealTimeDetailDataRequest() {
 		super("Cdn", "2018-05-10", "DescribeDomainRealTimeDetailData");
 		setMethod(MethodType.GET);
@@ -51,36 +49,14 @@ public class DescribeDomainRealTimeDetailDataRequest extends RpcAcsRequest<Descr
 		} catch (Exception e) {}
 	}
 
-	public String getLocationNameEn() {
-		return this.locationNameEn;
+	public String getField() {
+		return this.field;
 	}
 
-	public void setLocationNameEn(String locationNameEn) {
-		this.locationNameEn = locationNameEn;
-		if(locationNameEn != null){
-			putQueryParameter("LocationNameEn", locationNameEn);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getIspNameEn() {
-		return this.ispNameEn;
-	}
-
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
-		if(ispNameEn != null){
-			putQueryParameter("IspNameEn", ispNameEn);
+	public void setField(String field) {
+		this.field = field;
+		if(field != null){
+			putQueryParameter("Field", field);
 		}
 	}
 
@@ -128,25 +104,36 @@ public class DescribeDomainRealTimeDetailDataRequest extends RpcAcsRequest<Descr
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getLocationNameEn() {
+		return this.locationNameEn;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+		if(locationNameEn != null){
+			putQueryParameter("LocationNameEn", locationNameEn);
 		}
 	}
 
-	public String getField() {
-		return this.field;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setField(String field) {
-		this.field = field;
-		if(field != null){
-			putQueryParameter("Field", field);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		if(ispNameEn != null){
+			putQueryParameter("IspNameEn", ispNameEn);
 		}
 	}
 

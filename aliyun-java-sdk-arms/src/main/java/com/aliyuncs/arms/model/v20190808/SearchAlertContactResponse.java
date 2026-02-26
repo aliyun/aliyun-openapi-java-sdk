@@ -111,6 +111,8 @@ public class SearchAlertContactResponse extends AcsResponse {
 
 			private String phone;
 
+			private String resourceGroupId;
+
 			public Long getUpdateTime() {
 				return this.updateTime;
 			}
@@ -197,6 +199,14 @@ public class SearchAlertContactResponse extends AcsResponse {
 
 			public void setPhone(String phone) {
 				this.phone = phone;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 		}
 	}

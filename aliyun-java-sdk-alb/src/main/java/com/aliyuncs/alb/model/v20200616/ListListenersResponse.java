@@ -95,11 +95,19 @@ public class ListListenersResponse extends AcsResponse {
 
 		private String loadBalancerId;
 
+		private Boolean serviceManagedEnabled;
+
+		private String serviceManagedMode;
+
 		private Integer requestTimeout;
 
 		private String securityPolicyId;
 
 		private List<DefaultAction> defaultActions;
+
+		private List<Tag> tags;
+
+		private List<AssociatedResource> associatedResources;
 
 		private LogConfig logConfig;
 
@@ -179,6 +187,22 @@ public class ListListenersResponse extends AcsResponse {
 			this.loadBalancerId = loadBalancerId;
 		}
 
+		public Boolean getServiceManagedEnabled() {
+			return this.serviceManagedEnabled;
+		}
+
+		public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+			this.serviceManagedEnabled = serviceManagedEnabled;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
+		}
+
 		public Integer getRequestTimeout() {
 			return this.requestTimeout;
 		}
@@ -201,6 +225,22 @@ public class ListListenersResponse extends AcsResponse {
 
 		public void setDefaultActions(List<DefaultAction> defaultActions) {
 			this.defaultActions = defaultActions;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public List<AssociatedResource> getAssociatedResources() {
+			return this.associatedResources;
+		}
+
+		public void setAssociatedResources(List<AssociatedResource> associatedResources) {
+			this.associatedResources = associatedResources;
 		}
 
 		public LogConfig getLogConfig() {
@@ -273,6 +313,82 @@ public class ListListenersResponse extends AcsResponse {
 						this.serverGroupId = serverGroupId;
 					}
 				}
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
+		public static class AssociatedResource {
+
+			private String associatedResourceType;
+
+			private String associatedResourceId;
+
+			private String policyId;
+
+			private String status;
+
+			private String associatedMode;
+
+			public String getAssociatedResourceType() {
+				return this.associatedResourceType;
+			}
+
+			public void setAssociatedResourceType(String associatedResourceType) {
+				this.associatedResourceType = associatedResourceType;
+			}
+
+			public String getAssociatedResourceId() {
+				return this.associatedResourceId;
+			}
+
+			public void setAssociatedResourceId(String associatedResourceId) {
+				this.associatedResourceId = associatedResourceId;
+			}
+
+			public String getPolicyId() {
+				return this.policyId;
+			}
+
+			public void setPolicyId(String policyId) {
+				this.policyId = policyId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getAssociatedMode() {
+				return this.associatedMode;
+			}
+
+			public void setAssociatedMode(String associatedMode) {
+				this.associatedMode = associatedMode;
 			}
 		}
 
@@ -377,11 +493,19 @@ public class ListListenersResponse extends AcsResponse {
 
 			private Boolean xForwardedForEnabled;
 
+			private String xForwardedForProcessingMode;
+
 			private Boolean xForwardedForProtoEnabled;
 
 			private Boolean xForwardedForSLBIdEnabled;
 
 			private Boolean xForwardedForSLBPortEnabled;
+
+			private Boolean xForwardedForClientSourceIpsEnabled;
+
+			private String xForwardedForClientSourceIpsTrusted;
+
+			private Boolean xForwardedForHostEnabled;
 
 			public String getXForwardedForClientCertClientVerifyAlias() {
 				return this.xForwardedForClientCertClientVerifyAlias;
@@ -463,6 +587,14 @@ public class ListListenersResponse extends AcsResponse {
 				this.xForwardedForEnabled = xForwardedForEnabled;
 			}
 
+			public String getXForwardedForProcessingMode() {
+				return this.xForwardedForProcessingMode;
+			}
+
+			public void setXForwardedForProcessingMode(String xForwardedForProcessingMode) {
+				this.xForwardedForProcessingMode = xForwardedForProcessingMode;
+			}
+
 			public Boolean getXForwardedForProtoEnabled() {
 				return this.xForwardedForProtoEnabled;
 			}
@@ -485,6 +617,30 @@ public class ListListenersResponse extends AcsResponse {
 
 			public void setXForwardedForSLBPortEnabled(Boolean xForwardedForSLBPortEnabled) {
 				this.xForwardedForSLBPortEnabled = xForwardedForSLBPortEnabled;
+			}
+
+			public Boolean getXForwardedForClientSourceIpsEnabled() {
+				return this.xForwardedForClientSourceIpsEnabled;
+			}
+
+			public void setXForwardedForClientSourceIpsEnabled(Boolean xForwardedForClientSourceIpsEnabled) {
+				this.xForwardedForClientSourceIpsEnabled = xForwardedForClientSourceIpsEnabled;
+			}
+
+			public String getXForwardedForClientSourceIpsTrusted() {
+				return this.xForwardedForClientSourceIpsTrusted;
+			}
+
+			public void setXForwardedForClientSourceIpsTrusted(String xForwardedForClientSourceIpsTrusted) {
+				this.xForwardedForClientSourceIpsTrusted = xForwardedForClientSourceIpsTrusted;
+			}
+
+			public Boolean getXForwardedForHostEnabled() {
+				return this.xForwardedForHostEnabled;
+			}
+
+			public void setXForwardedForHostEnabled(Boolean xForwardedForHostEnabled) {
+				this.xForwardedForHostEnabled = xForwardedForHostEnabled;
 			}
 		}
 	}

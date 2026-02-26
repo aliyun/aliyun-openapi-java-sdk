@@ -31,9 +31,13 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 
 	private String coverURL;
 
+	private String userData;
+
 	private Long cateId;
 
 	private String videoId;
+
+	private String referenceId;
 
 	private String tags;
 	public UpdateVideoInfoRequest() {
@@ -78,6 +82,17 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 		}
 	}
 
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
 	public Long getCateId() {
 		return this.cateId;
 	}
@@ -97,6 +112,17 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public String getReferenceId() {
+		return this.referenceId;
+	}
+
+	public void setReferenceId(String referenceId) {
+		this.referenceId = referenceId;
+		if(referenceId != null){
+			putQueryParameter("ReferenceId", referenceId);
 		}
 	}
 

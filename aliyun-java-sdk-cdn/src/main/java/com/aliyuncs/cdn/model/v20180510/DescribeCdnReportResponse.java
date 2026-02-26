@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cdn.model.v20180510;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cdn.transform.v20180510.DescribeCdnReportResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,9 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCdnReportResponse extends AcsResponse {
 
+	private Map<Object,Object> content;
+
 	private String requestId;
 
-	private String content;
+	public Map<Object,Object> getContent() {
+		return this.content;
+	}
+
+	public void setContent(Map<Object,Object> content) {
+		this.content = content;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,14 +43,6 @@ public class DescribeCdnReportResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getContent() {
-		return this.content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
 	}
 
 	@Override

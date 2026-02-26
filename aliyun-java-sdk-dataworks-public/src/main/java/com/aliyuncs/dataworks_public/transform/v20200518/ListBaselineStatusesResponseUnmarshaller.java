@@ -55,6 +55,7 @@ public class ListBaselineStatusesResponseUnmarshaller {
 			baselineStatusesItem.setBuffer(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].Buffer"));
 			baselineStatusesItem.setSlaTime(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].SlaTime"));
 			baselineStatusesItem.setExpTime(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].ExpTime"));
+			baselineStatusesItem.setBaselineType(_ctx.stringValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].BaselineType"));
 
 			baselineStatuses.add(baselineStatusesItem);
 		}

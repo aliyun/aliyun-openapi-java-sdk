@@ -28,6 +28,8 @@ public class DeleteQualityFollowerRequest extends RpcAcsRequest<DeleteQualityFol
 	private String projectName;
 
 	private Long followerId;
+
+	private Long projectId;
 	public DeleteQualityFollowerRequest() {
 		super("dataworks-public", "2020-05-18", "DeleteQualityFollower");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class DeleteQualityFollowerRequest extends RpcAcsRequest<DeleteQualityFol
 		this.followerId = followerId;
 		if(followerId != null){
 			putBodyParameter("FollowerId", followerId.toString());
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

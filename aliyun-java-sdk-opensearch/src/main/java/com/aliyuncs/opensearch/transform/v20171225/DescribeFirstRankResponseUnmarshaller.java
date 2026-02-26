@@ -30,15 +30,15 @@ public class DescribeFirstRankResponseUnmarshaller {
 		describeFirstRankResponse.setRequestId(_ctx.stringValue("DescribeFirstRankResponse.requestId"));
 
 		Result result = new Result();
-		result.setName(_ctx.stringValue("DescribeFirstRankResponse.result.name"));
 		result.setDescription(_ctx.stringValue("DescribeFirstRankResponse.result.description"));
 		result.setActive(_ctx.booleanValue("DescribeFirstRankResponse.result.active"));
+		result.setName(_ctx.stringValue("DescribeFirstRankResponse.result.name"));
 
 		List<MetaItem> meta = new ArrayList<MetaItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFirstRankResponse.result.meta.Length"); i++) {
 			MetaItem metaItem = new MetaItem();
-			metaItem.setAttribute(_ctx.stringValue("DescribeFirstRankResponse.result.meta["+ i +"].attribute"));
 			metaItem.setArg(_ctx.stringValue("DescribeFirstRankResponse.result.meta["+ i +"].arg"));
+			metaItem.setAttribute(_ctx.stringValue("DescribeFirstRankResponse.result.meta["+ i +"].attribute"));
 			metaItem.setWeight(_ctx.floatValue("DescribeFirstRankResponse.result.meta["+ i +"].weight"));
 
 			meta.add(metaItem);

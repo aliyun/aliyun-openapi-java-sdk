@@ -33,6 +33,8 @@ public class UpdateInstanceResponseUnmarshaller {
 	public static UpdateInstanceResponse unmarshall(UpdateInstanceResponse updateInstanceResponse, UnmarshallerContext _ctx) {
 		
 		updateInstanceResponse.setRequestId(_ctx.stringValue("UpdateInstanceResponse.RequestId"));
+		updateInstanceResponse.setCode(_ctx.stringValue("UpdateInstanceResponse.Code"));
+		updateInstanceResponse.setMessage(_ctx.stringValue("UpdateInstanceResponse.Message"));
 
 		Result result = new Result();
 		result.setNodeAmount(_ctx.integerValue("UpdateInstanceResponse.Result.nodeAmount"));

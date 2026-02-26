@@ -170,7 +170,11 @@ public class UpdateTemplateResponse extends AcsResponse {
 
 			private String resoPriority;
 
+			private String hdr2sdr;
+
 			private BitrateBnd bitrateBnd;
+
+			private NarrowBand narrowBand;
 
 			public String getLongShortMode() {
 				return this.longShortMode;
@@ -340,12 +344,28 @@ public class UpdateTemplateResponse extends AcsResponse {
 				this.resoPriority = resoPriority;
 			}
 
+			public String getHdr2sdr() {
+				return this.hdr2sdr;
+			}
+
+			public void setHdr2sdr(String hdr2sdr) {
+				this.hdr2sdr = hdr2sdr;
+			}
+
 			public BitrateBnd getBitrateBnd() {
 				return this.bitrateBnd;
 			}
 
 			public void setBitrateBnd(BitrateBnd bitrateBnd) {
 				this.bitrateBnd = bitrateBnd;
+			}
+
+			public NarrowBand getNarrowBand() {
+				return this.narrowBand;
+			}
+
+			public void setNarrowBand(NarrowBand narrowBand) {
+				this.narrowBand = narrowBand;
 			}
 
 			public static class BitrateBnd {
@@ -368,6 +388,39 @@ public class UpdateTemplateResponse extends AcsResponse {
 
 				public void setMin(String min) {
 					this.min = min;
+				}
+			}
+
+			public static class NarrowBand {
+
+				private String version;
+
+				private Float abrmax;
+
+				private Float maxAbrRatio;
+
+				public String getVersion() {
+					return this.version;
+				}
+
+				public void setVersion(String version) {
+					this.version = version;
+				}
+
+				public Float getAbrmax() {
+					return this.abrmax;
+				}
+
+				public void setAbrmax(Float abrmax) {
+					this.abrmax = abrmax;
+				}
+
+				public Float getMaxAbrRatio() {
+					return this.maxAbrRatio;
+				}
+
+				public void setMaxAbrRatio(Float maxAbrRatio) {
+					this.maxAbrRatio = maxAbrRatio;
 				}
 			}
 		}
@@ -573,6 +626,8 @@ public class UpdateTemplateResponse extends AcsResponse {
 
 			private String bitrate;
 
+			private Volume volume;
+
 			public String getProfile() {
 				return this.profile;
 			}
@@ -627,6 +682,77 @@ public class UpdateTemplateResponse extends AcsResponse {
 
 			public void setBitrate(String bitrate) {
 				this.bitrate = bitrate;
+			}
+
+			public Volume getVolume() {
+				return this.volume;
+			}
+
+			public void setVolume(Volume volume) {
+				this.volume = volume;
+			}
+
+			public static class Volume {
+
+				private String method;
+
+				private String truePeak;
+
+				private String integratedLoudnessTarget;
+
+				private String level;
+
+				private String loudnessRangeTarget;
+
+				private String peakLevel;
+
+				public String getBizMethod() {
+					return this.method;
+				}
+
+				public void setBizMethod(String method) {
+					this.method = method;
+				}
+
+				public String getTruePeak() {
+					return this.truePeak;
+				}
+
+				public void setTruePeak(String truePeak) {
+					this.truePeak = truePeak;
+				}
+
+				public String getIntegratedLoudnessTarget() {
+					return this.integratedLoudnessTarget;
+				}
+
+				public void setIntegratedLoudnessTarget(String integratedLoudnessTarget) {
+					this.integratedLoudnessTarget = integratedLoudnessTarget;
+				}
+
+				public String getLevel() {
+					return this.level;
+				}
+
+				public void setLevel(String level) {
+					this.level = level;
+				}
+
+				public String getLoudnessRangeTarget() {
+					return this.loudnessRangeTarget;
+				}
+
+				public void setLoudnessRangeTarget(String loudnessRangeTarget) {
+					this.loudnessRangeTarget = loudnessRangeTarget;
+				}
+
+				public String getPeakLevel() {
+					return this.peakLevel;
+				}
+
+				public void setPeakLevel(String peakLevel) {
+					this.peakLevel = peakLevel;
+				}
 			}
 		}
 

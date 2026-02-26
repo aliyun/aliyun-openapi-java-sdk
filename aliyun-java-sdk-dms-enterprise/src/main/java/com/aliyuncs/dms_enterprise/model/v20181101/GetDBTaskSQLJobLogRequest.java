@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetDBTaskSQLJobLogRequest extends RpcAcsRequest<GetDBTaskSQLJobLogResponse> {
 	   
 
-	private Long jobId;
-
 	private Long tid;
+
+	private Long jobId;
 	public GetDBTaskSQLJobLogRequest() {
 		super("dms-enterprise", "2018-11-01", "GetDBTaskSQLJobLog", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class GetDBTaskSQLJobLogRequest extends RpcAcsRequest<GetDBTaskSQLJobLogR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(Long jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId.toString());
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class GetDBTaskSQLJobLogRequest extends RpcAcsRequest<GetDBTaskSQLJobLogR
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(Long jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId.toString());
 		}
 	}
 

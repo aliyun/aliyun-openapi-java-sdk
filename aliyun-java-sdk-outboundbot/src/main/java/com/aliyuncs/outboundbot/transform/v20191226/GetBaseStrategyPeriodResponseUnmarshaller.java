@@ -28,10 +28,11 @@ public class GetBaseStrategyPeriodResponseUnmarshaller {
 		
 		getBaseStrategyPeriodResponse.setRequestId(_ctx.stringValue("GetBaseStrategyPeriodResponse.RequestId"));
 		getBaseStrategyPeriodResponse.setHttpStatusCode(_ctx.integerValue("GetBaseStrategyPeriodResponse.HttpStatusCode"));
-		getBaseStrategyPeriodResponse.setOnlyWeekdays(_ctx.booleanValue("GetBaseStrategyPeriodResponse.OnlyWeekdays"));
 		getBaseStrategyPeriodResponse.setSuccess(_ctx.booleanValue("GetBaseStrategyPeriodResponse.Success"));
 		getBaseStrategyPeriodResponse.setCode(_ctx.stringValue("GetBaseStrategyPeriodResponse.Code"));
 		getBaseStrategyPeriodResponse.setMessage(_ctx.stringValue("GetBaseStrategyPeriodResponse.Message"));
+		getBaseStrategyPeriodResponse.setOnlyWeekdays(_ctx.booleanValue("GetBaseStrategyPeriodResponse.OnlyWeekdays"));
+		getBaseStrategyPeriodResponse.setOnlyWorkdays(_ctx.booleanValue("GetBaseStrategyPeriodResponse.OnlyWorkdays"));
 
 		List<TimeFrame> workingTime = new ArrayList<TimeFrame>();
 		for (int i = 0; i < _ctx.lengthValue("GetBaseStrategyPeriodResponse.WorkingTime.Length"); i++) {

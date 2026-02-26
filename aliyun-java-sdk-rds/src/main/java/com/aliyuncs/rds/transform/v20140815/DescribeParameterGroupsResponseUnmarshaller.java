@@ -32,16 +32,16 @@ public class DescribeParameterGroupsResponseUnmarshaller {
 		List<ParameterGroup> parameterGroups = new ArrayList<ParameterGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParameterGroupsResponse.ParameterGroups.Length"); i++) {
 			ParameterGroup parameterGroup = new ParameterGroup();
-			parameterGroup.setUpdateTime(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].UpdateTime"));
-			parameterGroup.setParameterGroupDesc(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterGroupDesc"));
 			parameterGroup.setCreateTime(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].CreateTime"));
+			parameterGroup.setEngine(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].Engine"));
+			parameterGroup.setEngineVersion(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].EngineVersion"));
 			parameterGroup.setForceRestart(_ctx.integerValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ForceRestart"));
+			parameterGroup.setParamCounts(_ctx.integerValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParamCounts"));
+			parameterGroup.setParameterGroupDesc(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterGroupDesc"));
 			parameterGroup.setParameterGroupId(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterGroupId"));
 			parameterGroup.setParameterGroupName(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterGroupName"));
-			parameterGroup.setEngine(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].Engine"));
-			parameterGroup.setParamCounts(_ctx.integerValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParamCounts"));
-			parameterGroup.setEngineVersion(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].EngineVersion"));
 			parameterGroup.setParameterGroupType(_ctx.integerValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterGroupType"));
+			parameterGroup.setUpdateTime(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].UpdateTime"));
 
 			parameterGroups.add(parameterGroup);
 		}

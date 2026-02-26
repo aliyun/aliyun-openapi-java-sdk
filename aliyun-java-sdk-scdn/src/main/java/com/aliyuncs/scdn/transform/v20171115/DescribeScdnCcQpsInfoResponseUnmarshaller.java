@@ -28,17 +28,17 @@ public class DescribeScdnCcQpsInfoResponseUnmarshaller {
 		
 		describeScdnCcQpsInfoResponse.setRequestId(_ctx.stringValue("DescribeScdnCcQpsInfoResponse.RequestId"));
 
-		List<String> totals = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeScdnCcQpsInfoResponse.Totals.Length"); i++) {
-			totals.add(_ctx.stringValue("DescribeScdnCcQpsInfoResponse.Totals["+ i +"]"));
-		}
-		describeScdnCcQpsInfoResponse.setTotals(totals);
-
 		List<String> attacks = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScdnCcQpsInfoResponse.Attacks.Length"); i++) {
 			attacks.add(_ctx.stringValue("DescribeScdnCcQpsInfoResponse.Attacks["+ i +"]"));
 		}
 		describeScdnCcQpsInfoResponse.setAttacks(attacks);
+
+		List<String> totals = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnCcQpsInfoResponse.Totals.Length"); i++) {
+			totals.add(_ctx.stringValue("DescribeScdnCcQpsInfoResponse.Totals["+ i +"]"));
+		}
+		describeScdnCcQpsInfoResponse.setTotals(totals);
 
 		List<TimeScope> timeScopes = new ArrayList<TimeScope>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScdnCcQpsInfoResponse.TimeScopes.Length"); i++) {

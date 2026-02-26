@@ -47,28 +47,44 @@ public class DescribeGtmMonitorAvailableConfigResponse extends AcsResponse {
 
 	public static class IspCityNode {
 
-		private String ispName;
+		private String cityCode;
+
+		private Boolean mainland;
+
+		private String groupName;
 
 		private String ispCode;
 
 		private String cityName;
 
-		private String cityCode;
-
-		private Boolean defaultSelected;
-
-		private Boolean mainland;
+		private String ispName;
 
 		private String groupType;
 
-		private String groupName;
+		private Boolean defaultSelected;
 
-		public String getIspName() {
-			return this.ispName;
+		public String getCityCode() {
+			return this.cityCode;
 		}
 
-		public void setIspName(String ispName) {
-			this.ispName = ispName;
+		public void setCityCode(String cityCode) {
+			this.cityCode = cityCode;
+		}
+
+		public Boolean getMainland() {
+			return this.mainland;
+		}
+
+		public void setMainland(Boolean mainland) {
+			this.mainland = mainland;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 
 		public String getIspCode() {
@@ -87,28 +103,12 @@ public class DescribeGtmMonitorAvailableConfigResponse extends AcsResponse {
 			this.cityName = cityName;
 		}
 
-		public String getCityCode() {
-			return this.cityCode;
+		public String getIspName() {
+			return this.ispName;
 		}
 
-		public void setCityCode(String cityCode) {
-			this.cityCode = cityCode;
-		}
-
-		public Boolean getDefaultSelected() {
-			return this.defaultSelected;
-		}
-
-		public void setDefaultSelected(Boolean defaultSelected) {
-			this.defaultSelected = defaultSelected;
-		}
-
-		public Boolean getMainland() {
-			return this.mainland;
-		}
-
-		public void setMainland(Boolean mainland) {
-			this.mainland = mainland;
+		public void setIspName(String ispName) {
+			this.ispName = ispName;
 		}
 
 		public String getGroupType() {
@@ -119,12 +119,12 @@ public class DescribeGtmMonitorAvailableConfigResponse extends AcsResponse {
 			this.groupType = groupType;
 		}
 
-		public String getGroupName() {
-			return this.groupName;
+		public Boolean getDefaultSelected() {
+			return this.defaultSelected;
 		}
 
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
+		public void setDefaultSelected(Boolean defaultSelected) {
+			this.defaultSelected = defaultSelected;
 		}
 	}
 

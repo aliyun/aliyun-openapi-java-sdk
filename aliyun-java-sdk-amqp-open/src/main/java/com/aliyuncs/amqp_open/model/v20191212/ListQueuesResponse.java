@@ -48,19 +48,11 @@ public class ListQueuesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String nextToken;
-
 		private Integer maxResults;
 
+		private String nextToken;
+
 		private List<QueueVO> queues;
-
-		public String getNextToken() {
-			return this.nextToken;
-		}
-
-		public void setNextToken(String nextToken) {
-			this.nextToken = nextToken;
-		}
 
 		public Integer getMaxResults() {
 			return this.maxResults;
@@ -68,6 +60,14 @@ public class ListQueuesResponse extends AcsResponse {
 
 		public void setMaxResults(Integer maxResults) {
 			this.maxResults = maxResults;
+		}
+
+		public String getNextToken() {
+			return this.nextToken;
+		}
+
+		public void setNextToken(String nextToken) {
+			this.nextToken = nextToken;
 		}
 
 		public List<QueueVO> getQueues() {
@@ -80,21 +80,61 @@ public class ListQueuesResponse extends AcsResponse {
 
 		public static class QueueVO {
 
+			private Boolean exclusiveState;
+
+			private Boolean autoDeleteState;
+
+			private Long createTime;
+
+			private Map<Object,Object> attributes;
+
+			private String vHostName;
+
 			private String name;
 
 			private String ownerId;
 
-			private String vHostName;
-
-			private Boolean autoDeleteState;
-
-			private Boolean exclusiveState;
-
-			private Long createTime;
-
 			private Long lastConsumeTime;
 
-			private Map<Object,Object> attributes;
+			public Boolean getExclusiveState() {
+				return this.exclusiveState;
+			}
+
+			public void setExclusiveState(Boolean exclusiveState) {
+				this.exclusiveState = exclusiveState;
+			}
+
+			public Boolean getAutoDeleteState() {
+				return this.autoDeleteState;
+			}
+
+			public void setAutoDeleteState(Boolean autoDeleteState) {
+				this.autoDeleteState = autoDeleteState;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public Map<Object,Object> getAttributes() {
+				return this.attributes;
+			}
+
+			public void setAttributes(Map<Object,Object> attributes) {
+				this.attributes = attributes;
+			}
+
+			public String getVHostName() {
+				return this.vHostName;
+			}
+
+			public void setVHostName(String vHostName) {
+				this.vHostName = vHostName;
+			}
 
 			public String getName() {
 				return this.name;
@@ -112,52 +152,12 @@ public class ListQueuesResponse extends AcsResponse {
 				this.ownerId = ownerId;
 			}
 
-			public String getVHostName() {
-				return this.vHostName;
-			}
-
-			public void setVHostName(String vHostName) {
-				this.vHostName = vHostName;
-			}
-
-			public Boolean getAutoDeleteState() {
-				return this.autoDeleteState;
-			}
-
-			public void setAutoDeleteState(Boolean autoDeleteState) {
-				this.autoDeleteState = autoDeleteState;
-			}
-
-			public Boolean getExclusiveState() {
-				return this.exclusiveState;
-			}
-
-			public void setExclusiveState(Boolean exclusiveState) {
-				this.exclusiveState = exclusiveState;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
-
 			public Long getLastConsumeTime() {
 				return this.lastConsumeTime;
 			}
 
 			public void setLastConsumeTime(Long lastConsumeTime) {
 				this.lastConsumeTime = lastConsumeTime;
-			}
-
-			public Map<Object,Object> getAttributes() {
-				return this.attributes;
-			}
-
-			public void setAttributes(Map<Object,Object> attributes) {
-				this.attributes = attributes;
 			}
 		}
 	}

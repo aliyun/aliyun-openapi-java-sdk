@@ -35,6 +35,8 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 
 	private String securityToken;
 
+	private Boolean endTimeIncluded;
+
 	private String streamName;
 
 	private String ossBucket;
@@ -105,6 +107,17 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Boolean getEndTimeIncluded() {
+		return this.endTimeIncluded;
+	}
+
+	public void setEndTimeIncluded(Boolean endTimeIncluded) {
+		this.endTimeIncluded = endTimeIncluded;
+		if(endTimeIncluded != null){
+			putQueryParameter("EndTimeIncluded", endTimeIncluded.toString());
 		}
 	}
 

@@ -31,7 +31,7 @@ public class CreateSecondRankRequest extends RoaAcsRequest<CreateSecondRankRespo
 
 	private String appGroupIdentity;
 	public CreateSecondRankRequest() {
-		super("OpenSearch", "2017-12-25", "CreateSecondRank", "opensearch");
+		super("OpenSearch", "2017-12-25", "CreateSecondRank");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks");
 		setMethod(MethodType.POST);
 		try {

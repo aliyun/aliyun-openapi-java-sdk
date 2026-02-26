@@ -29,7 +29,7 @@ public class CloseDeviceTunnelRequest extends RpcAcsRequest<CloseDeviceTunnelRes
 
 	private String tunnelId;
 	public CloseDeviceTunnelRequest() {
-		super("Iot", "2018-01-20", "CloseDeviceTunnel");
+		super("Iot", "2018-01-20", "CloseDeviceTunnel", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

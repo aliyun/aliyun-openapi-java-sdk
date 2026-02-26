@@ -51,6 +51,11 @@ public class DescribeVulDetailsResponseUnmarshaller {
 			cve.setContent(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Content"));
 			cve.setPoc(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Poc"));
 			cve.setOtherId(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].OtherId"));
+			cve.setInstanceName(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].InstanceName"));
+			cve.setInternetIp(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].InternetIp"));
+			cve.setIntranetIp(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].IntranetIp"));
+			cve.setTargetId(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].TargetId"));
+			cve.setTargetName(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].TargetName"));
 
 			List<Classify> classifys = new ArrayList<Classify>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVulDetailsResponse.Cves["+ i +"].Classifys.Length"); j++) {

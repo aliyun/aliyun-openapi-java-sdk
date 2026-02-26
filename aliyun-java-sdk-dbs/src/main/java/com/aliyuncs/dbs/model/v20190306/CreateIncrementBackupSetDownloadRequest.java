@@ -27,15 +27,15 @@ public class CreateIncrementBackupSetDownloadRequest extends RpcAcsRequest<Creat
 
 	private String clientToken;
 
+	private String backupSetDataFormat;
+
 	private String backupSetName;
 
 	private String backupSetId;
 
 	private String ownerId;
-
-	private String backupSetDataFormat;
 	public CreateIncrementBackupSetDownloadRequest() {
-		super("Dbs", "2019-03-06", "CreateIncrementBackupSetDownload");
+		super("Dbs", "2019-03-06", "CreateIncrementBackupSetDownload", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,6 +51,17 @@ public class CreateIncrementBackupSetDownloadRequest extends RpcAcsRequest<Creat
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getBackupSetDataFormat() {
+		return this.backupSetDataFormat;
+	}
+
+	public void setBackupSetDataFormat(String backupSetDataFormat) {
+		this.backupSetDataFormat = backupSetDataFormat;
+		if(backupSetDataFormat != null){
+			putQueryParameter("BackupSetDataFormat", backupSetDataFormat);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class CreateIncrementBackupSetDownloadRequest extends RpcAcsRequest<Creat
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public String getBackupSetDataFormat() {
-		return this.backupSetDataFormat;
-	}
-
-	public void setBackupSetDataFormat(String backupSetDataFormat) {
-		this.backupSetDataFormat = backupSetDataFormat;
-		if(backupSetDataFormat != null){
-			putQueryParameter("BackupSetDataFormat", backupSetDataFormat);
 		}
 	}
 

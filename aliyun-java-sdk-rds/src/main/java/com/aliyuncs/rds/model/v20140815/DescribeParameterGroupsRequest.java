@@ -27,6 +27,10 @@ public class DescribeParameterGroupsRequest extends RpcAcsRequest<DescribeParame
 
 	private Long resourceOwnerId;
 
+	private Boolean enableDetail;
+
+	private String resourceGroupId;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
@@ -47,6 +51,28 @@ public class DescribeParameterGroupsRequest extends RpcAcsRequest<DescribeParame
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getEnableDetail() {
+		return this.enableDetail;
+	}
+
+	public void setEnableDetail(Boolean enableDetail) {
+		this.enableDetail = enableDetail;
+		if(enableDetail != null){
+			putQueryParameter("EnableDetail", enableDetail.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

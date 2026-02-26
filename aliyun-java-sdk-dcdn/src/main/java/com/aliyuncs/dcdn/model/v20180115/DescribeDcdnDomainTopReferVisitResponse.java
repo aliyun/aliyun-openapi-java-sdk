@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnDomainTopReferVisitResponse extends AcsResponse {
 
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String startTime;
-
 	private List<ReferList> topReferList;
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeDcdnDomainTopReferVisitResponse extends AcsResponse {
 		this.domainName = domainName;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
 	public List<ReferList> getTopReferList() {
 		return this.topReferList;
 	}
@@ -67,39 +67,15 @@ public class DescribeDcdnDomainTopReferVisitResponse extends AcsResponse {
 
 	public static class ReferList {
 
-		private String referDetail;
-
-		private String visitData;
-
-		private Float visitProportion;
-
 		private String flow;
 
 		private Float flowProportion;
 
-		public String getReferDetail() {
-			return this.referDetail;
-		}
+		private String visitData;
 
-		public void setReferDetail(String referDetail) {
-			this.referDetail = referDetail;
-		}
+		private String referDetail;
 
-		public String getVisitData() {
-			return this.visitData;
-		}
-
-		public void setVisitData(String visitData) {
-			this.visitData = visitData;
-		}
-
-		public Float getVisitProportion() {
-			return this.visitProportion;
-		}
-
-		public void setVisitProportion(Float visitProportion) {
-			this.visitProportion = visitProportion;
-		}
+		private Float visitProportion;
 
 		public String getFlow() {
 			return this.flow;
@@ -115,6 +91,30 @@ public class DescribeDcdnDomainTopReferVisitResponse extends AcsResponse {
 
 		public void setFlowProportion(Float flowProportion) {
 			this.flowProportion = flowProportion;
+		}
+
+		public String getVisitData() {
+			return this.visitData;
+		}
+
+		public void setVisitData(String visitData) {
+			this.visitData = visitData;
+		}
+
+		public String getReferDetail() {
+			return this.referDetail;
+		}
+
+		public void setReferDetail(String referDetail) {
+			this.referDetail = referDetail;
+		}
+
+		public Float getVisitProportion() {
+			return this.visitProportion;
+		}
+
+		public void setVisitProportion(Float visitProportion) {
+			this.visitProportion = visitProportion;
 		}
 	}
 

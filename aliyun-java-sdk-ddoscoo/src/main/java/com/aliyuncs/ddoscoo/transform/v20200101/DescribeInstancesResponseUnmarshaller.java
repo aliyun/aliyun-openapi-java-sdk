@@ -43,6 +43,9 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setEnabled(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Enabled"));
 			instance.setInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceId"));
 			instance.setConnInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnInstanceId"));
+			instance.setIsFirstOpenBw(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].IsFirstOpenBw"));
+			instance.setIsFirstOpenQps(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].IsFirstOpenQps"));
+			instance.setIp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Ip"));
 
 			instances.add(instance);
 		}

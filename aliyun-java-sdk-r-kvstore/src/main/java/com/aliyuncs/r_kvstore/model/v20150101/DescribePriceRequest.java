@@ -31,7 +31,11 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String instances;
 
+	private String secondaryZoneId;
+
 	private String couponNo;
+
+	private String engineVersion;
 
 	private String instanceClass;
 
@@ -40,6 +44,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	private String securityToken;
 
 	private String businessInfo;
+
+	private Integer shardCount;
 
 	private Long period;
 
@@ -104,6 +110,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
+	public String getSecondaryZoneId() {
+		return this.secondaryZoneId;
+	}
+
+	public void setSecondaryZoneId(String secondaryZoneId) {
+		this.secondaryZoneId = secondaryZoneId;
+		if(secondaryZoneId != null){
+			putQueryParameter("SecondaryZoneId", secondaryZoneId);
+		}
+	}
+
 	public String getCouponNo() {
 		return this.couponNo;
 	}
@@ -112,6 +129,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.couponNo = couponNo;
 		if(couponNo != null){
 			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
 		}
 	}
 
@@ -156,6 +184,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.businessInfo = businessInfo;
 		if(businessInfo != null){
 			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public Integer getShardCount() {
+		return this.shardCount;
+	}
+
+	public void setShardCount(Integer shardCount) {
+		this.shardCount = shardCount;
+		if(shardCount != null){
+			putQueryParameter("ShardCount", shardCount.toString());
 		}
 	}
 

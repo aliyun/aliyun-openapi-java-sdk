@@ -30,15 +30,21 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String description;
 
 	private String platform;
 
 	private String resourceGroupId;
 
+	private Features features;
+
 	private String bootMode;
 
 	private String imageName;
+
+	private String storageLocationArn;
 
 	private List<Tag> tags;
 
@@ -47,6 +53,8 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 	private String licenseType;
 
 	private String detectionStrategy;
+
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -93,6 +101,17 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -126,6 +145,19 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		}
 	}
 
+	public Features getFeatures() {
+		return this.features;
+	}
+
+	public void setFeatures(Features features) {
+		this.features = features;	
+		if (features != null) {
+			
+				putQueryParameter("Features.NvmeSupport" , features.getNvmeSupport());
+				putQueryParameter("Features.ImdsSupport" , features.getImdsSupport());
+		}	
+	}
+
 	public String getBootMode() {
 		return this.bootMode;
 	}
@@ -145,6 +177,17 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		this.imageName = imageName;
 		if(imageName != null){
 			putQueryParameter("ImageName", imageName);
+		}
+	}
+
+	public String getStorageLocationArn() {
+		return this.storageLocationArn;
+	}
+
+	public void setStorageLocationArn(String storageLocationArn) {
+		this.storageLocationArn = storageLocationArn;
+		if(storageLocationArn != null){
+			putQueryParameter("StorageLocationArn", storageLocationArn);
 		}
 	}
 
@@ -192,6 +235,17 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		this.detectionStrategy = detectionStrategy;
 		if(detectionStrategy != null){
 			putQueryParameter("DetectionStrategy", detectionStrategy);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -299,6 +353,29 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 		public void setDiskImageSize(Integer diskImageSize) {
 			this.diskImageSize = diskImageSize;
+		}
+	}
+
+	public static class Features {
+
+		private String nvmeSupport;
+
+		private String imdsSupport;
+
+		public String getNvmeSupport() {
+			return this.nvmeSupport;
+		}
+
+		public void setNvmeSupport(String nvmeSupport) {
+			this.nvmeSupport = nvmeSupport;
+		}
+
+		public String getImdsSupport() {
+			return this.imdsSupport;
+		}
+
+		public void setImdsSupport(String imdsSupport) {
+			this.imdsSupport = imdsSupport;
 		}
 	}
 

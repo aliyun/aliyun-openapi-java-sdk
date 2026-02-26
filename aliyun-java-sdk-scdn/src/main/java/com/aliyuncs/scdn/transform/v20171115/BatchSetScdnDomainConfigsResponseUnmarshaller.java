@@ -31,8 +31,8 @@ public class BatchSetScdnDomainConfigsResponseUnmarshaller {
 		List<DomainConfigModel> domainConfigList = new ArrayList<DomainConfigModel>();
 		for (int i = 0; i < _ctx.lengthValue("BatchSetScdnDomainConfigsResponse.DomainConfigList.Length"); i++) {
 			DomainConfigModel domainConfigModel = new DomainConfigModel();
-			domainConfigModel.setDomainName(_ctx.stringValue("BatchSetScdnDomainConfigsResponse.DomainConfigList["+ i +"].DomainName"));
 			domainConfigModel.setConfigId(_ctx.longValue("BatchSetScdnDomainConfigsResponse.DomainConfigList["+ i +"].ConfigId"));
+			domainConfigModel.setDomainName(_ctx.stringValue("BatchSetScdnDomainConfigsResponse.DomainConfigList["+ i +"].DomainName"));
 			domainConfigModel.setFunctionName(_ctx.stringValue("BatchSetScdnDomainConfigsResponse.DomainConfigList["+ i +"].FunctionName"));
 
 			domainConfigList.add(domainConfigModel);

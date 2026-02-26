@@ -25,17 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeClusterConnectionResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String netType;
-
 	private String vpcId;
 
 	private String vSwitchId;
 
-	private String dbType;
+	private String requestId;
 
 	private String isMultimod;
+
+	private String dbType;
+
+	private String netType;
 
 	private List<ZkConnAddr> zkConnAddrs;
 
@@ -46,22 +46,6 @@ public class DescribeClusterConnectionResponse extends AcsResponse {
 	private UiProxyConnAddrInfo uiProxyConnAddrInfo;
 
 	private ThriftConn thriftConn;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getNetType() {
-		return this.netType;
-	}
-
-	public void setNetType(String netType) {
-		this.netType = netType;
-	}
 
 	public String getVpcId() {
 		return this.vpcId;
@@ -79,12 +63,12 @@ public class DescribeClusterConnectionResponse extends AcsResponse {
 		this.vSwitchId = vSwitchId;
 	}
 
-	public String getDbType() {
-		return this.dbType;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDbType(String dbType) {
-		this.dbType = dbType;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getIsMultimod() {
@@ -93,6 +77,22 @@ public class DescribeClusterConnectionResponse extends AcsResponse {
 
 	public void setIsMultimod(String isMultimod) {
 		this.isMultimod = isMultimod;
+	}
+
+	public String getDbType() {
+		return this.dbType;
+	}
+
+	public void setDbType(String dbType) {
+		this.dbType = dbType;
+	}
+
+	public String getNetType() {
+		return this.netType;
+	}
+
+	public void setNetType(String netType) {
+		this.netType = netType;
 	}
 
 	public List<ZkConnAddr> getZkConnAddrs() {

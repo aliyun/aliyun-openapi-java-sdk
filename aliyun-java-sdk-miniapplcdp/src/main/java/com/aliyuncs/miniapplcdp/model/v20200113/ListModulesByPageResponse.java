@@ -107,9 +107,15 @@ public class ListModulesByPageResponse extends AcsResponse {
 
 			private String moduleName;
 
+			private String ownerAppId;
+
 			private String ownerUserId;
 
 			private String platform;
+
+			private String moduleType;
+
+			private String platformVersion;
 
 			public String getDescription() {
 				return this.description;
@@ -183,6 +189,14 @@ public class ListModulesByPageResponse extends AcsResponse {
 				this.moduleName = moduleName;
 			}
 
+			public String getOwnerAppId() {
+				return this.ownerAppId;
+			}
+
+			public void setOwnerAppId(String ownerAppId) {
+				this.ownerAppId = ownerAppId;
+			}
+
 			public String getOwnerUserId() {
 				return this.ownerUserId;
 			}
@@ -197,6 +211,22 @@ public class ListModulesByPageResponse extends AcsResponse {
 
 			public void setPlatform(String platform) {
 				this.platform = platform;
+			}
+
+			public String getModuleType() {
+				return this.moduleType;
+			}
+
+			public void setModuleType(String moduleType) {
+				this.moduleType = moduleType;
+			}
+
+			public String getPlatformVersion() {
+				return this.platformVersion;
+			}
+
+			public void setPlatformVersion(String platformVersion) {
+				this.platformVersion = platformVersion;
 			}
 		}
 	}

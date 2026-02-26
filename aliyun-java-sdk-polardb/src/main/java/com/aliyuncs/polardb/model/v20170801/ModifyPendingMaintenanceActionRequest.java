@@ -27,6 +27,8 @@ public class ModifyPendingMaintenanceActionRequest extends RpcAcsRequest<ModifyP
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private String switchTime;
@@ -39,7 +41,7 @@ public class ModifyPendingMaintenanceActionRequest extends RpcAcsRequest<ModifyP
 
 	private String ids;
 	public ModifyPendingMaintenanceActionRequest() {
-		super("polardb", "2017-08-01", "ModifyPendingMaintenanceAction");
+		super("polardb", "2017-08-01", "ModifyPendingMaintenanceAction", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,6 +57,17 @@ public class ModifyPendingMaintenanceActionRequest extends RpcAcsRequest<ModifyP
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

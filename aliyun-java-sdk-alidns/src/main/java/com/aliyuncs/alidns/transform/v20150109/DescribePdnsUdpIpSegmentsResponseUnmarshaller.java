@@ -34,12 +34,12 @@ public class DescribePdnsUdpIpSegmentsResponseUnmarshaller {
 		List<IpSegment> ipSegments = new ArrayList<IpSegment>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePdnsUdpIpSegmentsResponse.IpSegments.Length"); i++) {
 			IpSegment ipSegment = new IpSegment();
-			ipSegment.setUpdateDate(_ctx.stringValue("DescribePdnsUdpIpSegmentsResponse.IpSegments["+ i +"].UpdateDate"));
-			ipSegment.setState(_ctx.stringValue("DescribePdnsUdpIpSegmentsResponse.IpSegments["+ i +"].State"));
+			ipSegment.setName(_ctx.stringValue("DescribePdnsUdpIpSegmentsResponse.IpSegments["+ i +"].Name"));
 			ipSegment.setIp(_ctx.stringValue("DescribePdnsUdpIpSegmentsResponse.IpSegments["+ i +"].Ip"));
 			ipSegment.setMask(_ctx.longValue("DescribePdnsUdpIpSegmentsResponse.IpSegments["+ i +"].Mask"));
+			ipSegment.setState(_ctx.stringValue("DescribePdnsUdpIpSegmentsResponse.IpSegments["+ i +"].State"));
 			ipSegment.setCreateDate(_ctx.stringValue("DescribePdnsUdpIpSegmentsResponse.IpSegments["+ i +"].CreateDate"));
-			ipSegment.setName(_ctx.stringValue("DescribePdnsUdpIpSegmentsResponse.IpSegments["+ i +"].Name"));
+			ipSegment.setUpdateDate(_ctx.stringValue("DescribePdnsUdpIpSegmentsResponse.IpSegments["+ i +"].UpdateDate"));
 
 			ipSegments.add(ipSegment);
 		}

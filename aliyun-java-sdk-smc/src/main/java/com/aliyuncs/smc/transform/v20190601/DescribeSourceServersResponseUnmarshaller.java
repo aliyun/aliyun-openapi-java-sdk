@@ -22,6 +22,7 @@ import com.aliyuncs.smc.model.v20190601.DescribeSourceServersResponse.SourceServ
 import com.aliyuncs.smc.model.v20190601.DescribeSourceServersResponse.SourceServer.DataDisk;
 import com.aliyuncs.smc.model.v20190601.DescribeSourceServersResponse.SourceServer.DataDisk.Part;
 import com.aliyuncs.smc.model.v20190601.DescribeSourceServersResponse.SourceServer.SystemDiskPart;
+import com.aliyuncs.smc.model.v20190601.DescribeSourceServersResponse.SourceServer.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,28 +32,31 @@ public class DescribeSourceServersResponseUnmarshaller {
 		
 		describeSourceServersResponse.setRequestId(_ctx.stringValue("DescribeSourceServersResponse.RequestId"));
 		describeSourceServersResponse.setTotalCount(_ctx.integerValue("DescribeSourceServersResponse.TotalCount"));
-		describeSourceServersResponse.setPageNumber(_ctx.integerValue("DescribeSourceServersResponse.PageNumber"));
 		describeSourceServersResponse.setPageSize(_ctx.integerValue("DescribeSourceServersResponse.PageSize"));
+		describeSourceServersResponse.setPageNumber(_ctx.integerValue("DescribeSourceServersResponse.PageNumber"));
 
 		List<SourceServer> sourceServers = new ArrayList<SourceServer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSourceServersResponse.SourceServers.Length"); i++) {
 			SourceServer sourceServer = new SourceServer();
-			sourceServer.setSourceId(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].SourceId"));
-			sourceServer.setJobId(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].JobId"));
-			sourceServer.setAgentVersion(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].AgentVersion"));
-			sourceServer.setName(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].Name"));
-			sourceServer.setDescription(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].Description"));
-			sourceServer.setKernelLevel(_ctx.integerValue("DescribeSourceServersResponse.SourceServers["+ i +"].KernelLevel"));
-			sourceServer.setPlatform(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].Platform"));
-			sourceServer.setArchitecture(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].Architecture"));
-			sourceServer.setSystemDiskSize(_ctx.integerValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskSize"));
-			sourceServer.setReplicationDriver(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].ReplicationDriver"));
-			sourceServer.setSystemInfo(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemInfo"));
 			sourceServer.setCreationTime(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].CreationTime"));
-			sourceServer.setState(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].State"));
-			sourceServer.setErrorCode(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].ErrorCode"));
-			sourceServer.setStatusInfo(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].StatusInfo"));
 			sourceServer.setHeartbeatRate(_ctx.integerValue("DescribeSourceServersResponse.SourceServers["+ i +"].HeartbeatRate"));
+			sourceServer.setState(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].State"));
+			sourceServer.setKernelLevel(_ctx.integerValue("DescribeSourceServersResponse.SourceServers["+ i +"].KernelLevel"));
+			sourceServer.setSourceId(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].SourceId"));
+			sourceServer.setAgentVersion(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].AgentVersion"));
+			sourceServer.setStatusInfo(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].StatusInfo"));
+			sourceServer.setSystemDiskSize(_ctx.integerValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskSize"));
+			sourceServer.setDescription(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].Description"));
+			sourceServer.setErrorCode(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].ErrorCode"));
+			sourceServer.setJobId(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].JobId"));
+			sourceServer.setPlatform(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].Platform"));
+			sourceServer.setReplicationDriver(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].ReplicationDriver"));
+			sourceServer.setName(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].Name"));
+			sourceServer.setSystemInfo(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemInfo"));
+			sourceServer.setArchitecture(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].Architecture"));
+			sourceServer.setRegionNo(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].RegionNo"));
+			sourceServer.setInstanceId(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].InstanceId"));
+			sourceServer.setResourceGroupId(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].ResourceGroupId"));
 
 			List<DataDisk> dataDisks = new ArrayList<DataDisk>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks.Length"); j++) {
@@ -64,11 +68,11 @@ public class DescribeSourceServersResponseUnmarshaller {
 				List<Part> parts = new ArrayList<Part>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts.Length"); k++) {
 					Part part = new Part();
-					part.setPath(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Path"));
-					part.setDevice(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Device"));
+					part.setCanBlock(_ctx.booleanValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].CanBlock"));
 					part.setSizeBytes(_ctx.longValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].SizeBytes"));
 					part.setNeed(_ctx.booleanValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Need"));
-					part.setCanBlock(_ctx.booleanValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].CanBlock"));
+					part.setDevice(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Device"));
+					part.setPath(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Path"));
 
 					parts.add(part);
 				}
@@ -81,15 +85,25 @@ public class DescribeSourceServersResponseUnmarshaller {
 			List<SystemDiskPart> systemDiskParts = new ArrayList<SystemDiskPart>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts.Length"); j++) {
 				SystemDiskPart systemDiskPart = new SystemDiskPart();
-				systemDiskPart.setPath(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts["+ j +"].Path"));
-				systemDiskPart.setDevice(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts["+ j +"].Device"));
+				systemDiskPart.setCanBlock(_ctx.booleanValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts["+ j +"].CanBlock"));
 				systemDiskPart.setSizeBytes(_ctx.longValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts["+ j +"].SizeBytes"));
 				systemDiskPart.setNeed(_ctx.booleanValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts["+ j +"].Need"));
-				systemDiskPart.setCanBlock(_ctx.booleanValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts["+ j +"].CanBlock"));
+				systemDiskPart.setDevice(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts["+ j +"].Device"));
+				systemDiskPart.setPath(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts["+ j +"].Path"));
 
 				systemDiskParts.add(systemDiskPart);
 			}
 			sourceServer.setSystemDiskParts(systemDiskParts);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSourceServersResponse.SourceServers["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			sourceServer.setTags(tags);
 
 			sourceServers.add(sourceServer);
 		}

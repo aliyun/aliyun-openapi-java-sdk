@@ -31,7 +31,7 @@ public class DescribeFirstRankRequest extends RoaAcsRequest<DescribeFirstRankRes
 
 	private String appGroupIdentity;
 	public DescribeFirstRankRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeFirstRank", "opensearch");
+		super("OpenSearch", "2017-12-25", "DescribeFirstRank");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/first-ranks/[name]");
 		setMethod(MethodType.GET);
 		try {

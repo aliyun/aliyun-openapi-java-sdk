@@ -26,11 +26,11 @@ public class GetIfEcsTypeSupportHtConfigResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean defaultHtEnabled;
+
 	private String instanceType;
 
 	private Boolean supportHtConfig;
-
-	private Boolean defaultHtEnabled;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,6 +38,14 @@ public class GetIfEcsTypeSupportHtConfigResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getDefaultHtEnabled() {
+		return this.defaultHtEnabled;
+	}
+
+	public void setDefaultHtEnabled(Boolean defaultHtEnabled) {
+		this.defaultHtEnabled = defaultHtEnabled;
 	}
 
 	public String getInstanceType() {
@@ -54,14 +62,6 @@ public class GetIfEcsTypeSupportHtConfigResponse extends AcsResponse {
 
 	public void setSupportHtConfig(Boolean supportHtConfig) {
 		this.supportHtConfig = supportHtConfig;
-	}
-
-	public Boolean getDefaultHtEnabled() {
-		return this.defaultHtEnabled;
-	}
-
-	public void setDefaultHtEnabled(Boolean defaultHtEnabled) {
-		this.defaultHtEnabled = defaultHtEnabled;
 	}
 
 	@Override

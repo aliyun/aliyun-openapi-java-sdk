@@ -30,6 +30,7 @@ public class DescribeDataBackupsResponseUnmarshaller {
 		describeDataBackupsResponse.setPageSize(_ctx.integerValue("DescribeDataBackupsResponse.PageSize"));
 		describeDataBackupsResponse.setPageNumber(_ctx.integerValue("DescribeDataBackupsResponse.PageNumber"));
 		describeDataBackupsResponse.setTotalCount(_ctx.integerValue("DescribeDataBackupsResponse.TotalCount"));
+		describeDataBackupsResponse.setTotalBackupSize(_ctx.longValue("DescribeDataBackupsResponse.TotalBackupSize"));
 
 		List<Backup> items = new ArrayList<Backup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataBackupsResponse.Items.Length"); i++) {
@@ -46,6 +47,7 @@ public class DescribeDataBackupsResponseUnmarshaller {
 			backup.setBackupMode(_ctx.stringValue("DescribeDataBackupsResponse.Items["+ i +"].BackupMode"));
 			backup.setBackupStartTimeLocal(_ctx.stringValue("DescribeDataBackupsResponse.Items["+ i +"].BackupStartTimeLocal"));
 			backup.setDBInstanceId(_ctx.stringValue("DescribeDataBackupsResponse.Items["+ i +"].DBInstanceId"));
+			backup.setBackupMethod(_ctx.stringValue("DescribeDataBackupsResponse.Items["+ i +"].BackupMethod"));
 
 			items.add(backup);
 		}

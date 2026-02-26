@@ -15,6 +15,9 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -24,6 +27,9 @@ import com.aliyuncs.arms.Endpoint;
  */
 public class DeleteTraceAppRequest extends RpcAcsRequest<DeleteTraceAppResponse> {
 	   
+
+	@SerializedName("deleteReason")
+	private DeleteReason deleteReason;
 
 	private String appId;
 
@@ -37,6 +43,17 @@ public class DeleteTraceAppRequest extends RpcAcsRequest<DeleteTraceAppResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public DeleteReason getDeleteReason() {
+		return this.deleteReason;
+	}
+
+	public void setDeleteReason(DeleteReason deleteReason) {
+		this.deleteReason = deleteReason;	
+		if (deleteReason != null) {
+			putQueryParameter("DeleteReason" , new Gson().toJson(deleteReason));
+		}	
 	}
 
 	public String getAppId() {
@@ -69,6 +86,56 @@ public class DeleteTraceAppRequest extends RpcAcsRequest<DeleteTraceAppResponse>
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public static class DeleteReason {
+
+		@SerializedName("Remark")
+		private String remark;
+
+		@SerializedName("ReasonIds")
+		private List<ReasonIdsItem> reasonIds;
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
+		public List<ReasonIdsItem> getReasonIds() {
+			return this.reasonIds;
+		}
+
+		public void setReasonIds(List<ReasonIdsItem> reasonIds) {
+			this.reasonIds = reasonIds;
+		}
+
+		public static class ReasonIdsItem {
+
+			@SerializedName("Name")
+			private String name;
+
+			@SerializedName("Id")
+			private Integer id;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Integer getId() {
+				return this.id;
+			}
+
+			public void setId(Integer id) {
+				this.id = id;
+			}
 		}
 	}
 

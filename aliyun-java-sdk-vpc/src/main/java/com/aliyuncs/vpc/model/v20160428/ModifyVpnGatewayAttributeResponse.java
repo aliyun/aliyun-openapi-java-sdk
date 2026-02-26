@@ -54,6 +54,14 @@ public class ModifyVpnGatewayAttributeResponse extends AcsResponse {
 
 	private String name;
 
+	private String disasterRecoveryInternetIp;
+
+	private String disasterRecoveryVSwitchId;
+
+	private String sslVpnInternetIp;
+
+	private String resourceGroupId;
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -172,6 +180,38 @@ public class ModifyVpnGatewayAttributeResponse extends AcsResponse {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDisasterRecoveryInternetIp() {
+		return this.disasterRecoveryInternetIp;
+	}
+
+	public void setDisasterRecoveryInternetIp(String disasterRecoveryInternetIp) {
+		this.disasterRecoveryInternetIp = disasterRecoveryInternetIp;
+	}
+
+	public String getDisasterRecoveryVSwitchId() {
+		return this.disasterRecoveryVSwitchId;
+	}
+
+	public void setDisasterRecoveryVSwitchId(String disasterRecoveryVSwitchId) {
+		this.disasterRecoveryVSwitchId = disasterRecoveryVSwitchId;
+	}
+
+	public String getSslVpnInternetIp() {
+		return this.sslVpnInternetIp;
+	}
+
+	public void setSslVpnInternetIp(String sslVpnInternetIp) {
+		this.sslVpnInternetIp = sslVpnInternetIp;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

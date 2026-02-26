@@ -46,30 +46,22 @@ public class DescribeInterventionDictionaryResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String name;
-
-		private String type;
+		private String created;
 
 		private String analyzer;
 
-		private String created;
-
 		private String updated;
 
-		public String getName() {
-			return this.name;
+		private String type;
+
+		private String name;
+
+		public String getCreated() {
+			return this.created;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
+		public void setCreated(String created) {
+			this.created = created;
 		}
 
 		public String getAnalyzer() {
@@ -80,20 +72,28 @@ public class DescribeInterventionDictionaryResponse extends AcsResponse {
 			this.analyzer = analyzer;
 		}
 
-		public String getCreated() {
-			return this.created;
-		}
-
-		public void setCreated(String created) {
-			this.created = created;
-		}
-
 		public String getUpdated() {
 			return this.updated;
 		}
 
 		public void setUpdated(String updated) {
 			this.updated = updated;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

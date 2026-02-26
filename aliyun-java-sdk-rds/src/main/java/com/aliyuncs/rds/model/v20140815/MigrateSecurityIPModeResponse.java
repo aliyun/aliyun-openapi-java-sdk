@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class MigrateSecurityIPModeResponse extends AcsResponse {
 
-	private String securityIPMode;
-
 	private String dBInstanceId;
 
 	private String requestId;
 
-	public String getSecurityIPMode() {
-		return this.securityIPMode;
-	}
-
-	public void setSecurityIPMode(String securityIPMode) {
-		this.securityIPMode = securityIPMode;
-	}
+	private String securityIPMode;
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -52,6 +44,14 @@ public class MigrateSecurityIPModeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSecurityIPMode() {
+		return this.securityIPMode;
+	}
+
+	public void setSecurityIPMode(String securityIPMode) {
+		this.securityIPMode = securityIPMode;
 	}
 
 	@Override

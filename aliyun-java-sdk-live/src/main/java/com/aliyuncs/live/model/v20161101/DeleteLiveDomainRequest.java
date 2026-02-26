@@ -25,13 +25,13 @@ import com.aliyuncs.live.Endpoint;
 public class DeleteLiveDomainRequest extends RpcAcsRequest<DeleteLiveDomainResponse> {
 	   
 
+	private String securityToken;
+
 	private String ownerAccount;
 
 	private String domainName;
 
 	private Long ownerId;
-
-	private String securityToken;
 	public DeleteLiveDomainRequest() {
 		super("live", "2016-11-01", "DeleteLiveDomain", "live");
 		setMethod(MethodType.POST);
@@ -39,6 +39,17 @@ public class DeleteLiveDomainRequest extends RpcAcsRequest<DeleteLiveDomainRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -71,17 +82,6 @@ public class DeleteLiveDomainRequest extends RpcAcsRequest<DeleteLiveDomainRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

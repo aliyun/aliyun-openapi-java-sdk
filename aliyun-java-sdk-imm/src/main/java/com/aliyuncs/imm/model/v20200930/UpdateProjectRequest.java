@@ -25,29 +25,25 @@ import com.aliyuncs.imm.Endpoint;
 public class UpdateProjectRequest extends RpcAcsRequest<UpdateProjectResponse> {
 	   
 
-	private Long engineConcurrency;
+	private Long datasetMaxBindCount;
+
+	private String description;
+
+	private Long datasetMaxRelationCount;
+
+	private Long datasetMaxFileCount;
 
 	private String projectName;
 
-	private Long datasetMaxBindCount;
-
 	private Long projectMaxDatasetCount;
+
+	private Long datasetMaxEntityCount;
+
+	private String templateId;
 
 	private Long datasetMaxTotalFileSize;
 
 	private String serviceRole;
-
-	private Long projectQueriesPerSecond;
-
-	private Long datasetMaxRelationCount;
-
-	private String description;
-
-	private Long datasetMaxEntityCount;
-
-	private Long datasetMaxFileCount;
-
-	private String templateId;
 	public UpdateProjectRequest() {
 		super("imm", "2020-09-30", "UpdateProject", "imm");
 		setMethod(MethodType.POST);
@@ -57,14 +53,47 @@ public class UpdateProjectRequest extends RpcAcsRequest<UpdateProjectResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getEngineConcurrency() {
-		return this.engineConcurrency;
+	public Long getDatasetMaxBindCount() {
+		return this.datasetMaxBindCount;
 	}
 
-	public void setEngineConcurrency(Long engineConcurrency) {
-		this.engineConcurrency = engineConcurrency;
-		if(engineConcurrency != null){
-			putQueryParameter("EngineConcurrency", engineConcurrency.toString());
+	public void setDatasetMaxBindCount(Long datasetMaxBindCount) {
+		this.datasetMaxBindCount = datasetMaxBindCount;
+		if(datasetMaxBindCount != null){
+			putQueryParameter("DatasetMaxBindCount", datasetMaxBindCount.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Long getDatasetMaxRelationCount() {
+		return this.datasetMaxRelationCount;
+	}
+
+	public void setDatasetMaxRelationCount(Long datasetMaxRelationCount) {
+		this.datasetMaxRelationCount = datasetMaxRelationCount;
+		if(datasetMaxRelationCount != null){
+			putQueryParameter("DatasetMaxRelationCount", datasetMaxRelationCount.toString());
+		}
+	}
+
+	public Long getDatasetMaxFileCount() {
+		return this.datasetMaxFileCount;
+	}
+
+	public void setDatasetMaxFileCount(Long datasetMaxFileCount) {
+		this.datasetMaxFileCount = datasetMaxFileCount;
+		if(datasetMaxFileCount != null){
+			putQueryParameter("DatasetMaxFileCount", datasetMaxFileCount.toString());
 		}
 	}
 
@@ -79,17 +108,6 @@ public class UpdateProjectRequest extends RpcAcsRequest<UpdateProjectResponse> {
 		}
 	}
 
-	public Long getDatasetMaxBindCount() {
-		return this.datasetMaxBindCount;
-	}
-
-	public void setDatasetMaxBindCount(Long datasetMaxBindCount) {
-		this.datasetMaxBindCount = datasetMaxBindCount;
-		if(datasetMaxBindCount != null){
-			putQueryParameter("DatasetMaxBindCount", datasetMaxBindCount.toString());
-		}
-	}
-
 	public Long getProjectMaxDatasetCount() {
 		return this.projectMaxDatasetCount;
 	}
@@ -98,6 +116,28 @@ public class UpdateProjectRequest extends RpcAcsRequest<UpdateProjectResponse> {
 		this.projectMaxDatasetCount = projectMaxDatasetCount;
 		if(projectMaxDatasetCount != null){
 			putQueryParameter("ProjectMaxDatasetCount", projectMaxDatasetCount.toString());
+		}
+	}
+
+	public Long getDatasetMaxEntityCount() {
+		return this.datasetMaxEntityCount;
+	}
+
+	public void setDatasetMaxEntityCount(Long datasetMaxEntityCount) {
+		this.datasetMaxEntityCount = datasetMaxEntityCount;
+		if(datasetMaxEntityCount != null){
+			putQueryParameter("DatasetMaxEntityCount", datasetMaxEntityCount.toString());
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 
@@ -120,72 +160,6 @@ public class UpdateProjectRequest extends RpcAcsRequest<UpdateProjectResponse> {
 		this.serviceRole = serviceRole;
 		if(serviceRole != null){
 			putQueryParameter("ServiceRole", serviceRole);
-		}
-	}
-
-	public Long getProjectQueriesPerSecond() {
-		return this.projectQueriesPerSecond;
-	}
-
-	public void setProjectQueriesPerSecond(Long projectQueriesPerSecond) {
-		this.projectQueriesPerSecond = projectQueriesPerSecond;
-		if(projectQueriesPerSecond != null){
-			putQueryParameter("ProjectQueriesPerSecond", projectQueriesPerSecond.toString());
-		}
-	}
-
-	public Long getDatasetMaxRelationCount() {
-		return this.datasetMaxRelationCount;
-	}
-
-	public void setDatasetMaxRelationCount(Long datasetMaxRelationCount) {
-		this.datasetMaxRelationCount = datasetMaxRelationCount;
-		if(datasetMaxRelationCount != null){
-			putQueryParameter("DatasetMaxRelationCount", datasetMaxRelationCount.toString());
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getDatasetMaxEntityCount() {
-		return this.datasetMaxEntityCount;
-	}
-
-	public void setDatasetMaxEntityCount(Long datasetMaxEntityCount) {
-		this.datasetMaxEntityCount = datasetMaxEntityCount;
-		if(datasetMaxEntityCount != null){
-			putQueryParameter("DatasetMaxEntityCount", datasetMaxEntityCount.toString());
-		}
-	}
-
-	public Long getDatasetMaxFileCount() {
-		return this.datasetMaxFileCount;
-	}
-
-	public void setDatasetMaxFileCount(Long datasetMaxFileCount) {
-		this.datasetMaxFileCount = datasetMaxFileCount;
-		if(datasetMaxFileCount != null){
-			putQueryParameter("DatasetMaxFileCount", datasetMaxFileCount.toString());
-		}
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId);
 		}
 	}
 

@@ -27,7 +27,11 @@ public class DeleteNatIpRequest extends RpcAcsRequest<DeleteNatIpResponse> {
 
 	private Long resourceOwnerId;
 
+	private String ipv4Prefix;
+
 	private String clientToken;
+
+	private String natGatewayId;
 
 	private Boolean dryRun;
 
@@ -58,6 +62,17 @@ public class DeleteNatIpRequest extends RpcAcsRequest<DeleteNatIpResponse> {
 		}
 	}
 
+	public String getIpv4Prefix() {
+		return this.ipv4Prefix;
+	}
+
+	public void setIpv4Prefix(String ipv4Prefix) {
+		this.ipv4Prefix = ipv4Prefix;
+		if(ipv4Prefix != null){
+			putQueryParameter("Ipv4Prefix", ipv4Prefix);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -66,6 +81,17 @@ public class DeleteNatIpRequest extends RpcAcsRequest<DeleteNatIpResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getNatGatewayId() {
+		return this.natGatewayId;
+	}
+
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
+		if(natGatewayId != null){
+			putQueryParameter("NatGatewayId", natGatewayId);
 		}
 	}
 

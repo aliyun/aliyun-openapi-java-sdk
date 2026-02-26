@@ -30,13 +30,19 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 
 	private String stackPolicyDuringUpdateBody;
 
+	private String resourceGroupId;
+
 	private String templateVersion;
+
+	private Boolean dryRun;
 
 	private Boolean disableRollback;
 
 	private String templateId;
 
 	private List<Tags> tagss;
+
+	private List<String> dryRunOptionss;
 
 	private List<Parameters> parameterss;
 
@@ -45,6 +51,8 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 	private String templateBody;
 
 	private String stackId;
+
+	private Long parallelism;
 
 	private String templateURL;
 
@@ -90,6 +98,17 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getTemplateVersion() {
 		return this.templateVersion;
 	}
@@ -98,6 +117,17 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 		this.templateVersion = templateVersion;
 		if(templateVersion != null){
 			putQueryParameter("TemplateVersion", templateVersion);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -137,6 +167,19 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 		}	
 	}
 
+	public List<String> getDryRunOptionss() {
+		return this.dryRunOptionss;
+	}
+
+	public void setDryRunOptionss(List<String> dryRunOptionss) {
+		this.dryRunOptionss = dryRunOptionss;	
+		if (dryRunOptionss != null) {
+			for (int i = 0; i < dryRunOptionss.size(); i++) {
+				putQueryParameter("DryRunOptions." + (i + 1) , dryRunOptionss.get(i));
+			}
+		}	
+	}
+
 	public List<Parameters> getParameterss() {
 		return this.parameterss;
 	}
@@ -169,7 +212,7 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 	public void setTemplateBody(String templateBody) {
 		this.templateBody = templateBody;
 		if(templateBody != null){
-			putQueryParameter("TemplateBody", templateBody);
+			putBodyParameter("TemplateBody", templateBody);
 		}
 	}
 
@@ -181,6 +224,17 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 		this.stackId = stackId;
 		if(stackId != null){
 			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public Long getParallelism() {
+		return this.parallelism;
+	}
+
+	public void setParallelism(Long parallelism) {
+		this.parallelism = parallelism;
+		if(parallelism != null){
+			putQueryParameter("Parallelism", parallelism.toString());
 		}
 	}
 

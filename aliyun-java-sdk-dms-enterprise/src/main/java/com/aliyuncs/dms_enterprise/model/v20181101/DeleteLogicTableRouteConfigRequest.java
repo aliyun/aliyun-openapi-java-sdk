@@ -25,11 +25,11 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class DeleteLogicTableRouteConfigRequest extends RpcAcsRequest<DeleteLogicTableRouteConfigResponse> {
 	   
 
-	private String routeKey;
-
 	private Long tid;
 
 	private Long tableId;
+
+	private String routeKey;
 	public DeleteLogicTableRouteConfigRequest() {
 		super("dms-enterprise", "2018-11-01", "DeleteLogicTableRouteConfig", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class DeleteLogicTableRouteConfigRequest extends RpcAcsRequest<DeleteLogi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getRouteKey() {
-		return this.routeKey;
-	}
-
-	public void setRouteKey(String routeKey) {
-		this.routeKey = routeKey;
-		if(routeKey != null){
-			putQueryParameter("RouteKey", routeKey);
-		}
 	}
 
 	public Long getTid() {
@@ -69,6 +58,17 @@ public class DeleteLogicTableRouteConfigRequest extends RpcAcsRequest<DeleteLogi
 		this.tableId = tableId;
 		if(tableId != null){
 			putQueryParameter("TableId", tableId.toString());
+		}
+	}
+
+	public String getRouteKey() {
+		return this.routeKey;
+	}
+
+	public void setRouteKey(String routeKey) {
+		this.routeKey = routeKey;
+		if(routeKey != null){
+			putQueryParameter("RouteKey", routeKey);
 		}
 	}
 

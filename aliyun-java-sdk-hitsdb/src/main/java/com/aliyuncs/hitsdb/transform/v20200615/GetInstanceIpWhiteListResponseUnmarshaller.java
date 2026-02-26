@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.hitsdb.model.v20200615.GetInstanceIpWhiteListResponse;
+import com.aliyuncs.hitsdb.model.v20200615.GetInstanceIpWhiteListResponse.GroupListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,6 +34,16 @@ public class GetInstanceIpWhiteListResponseUnmarshaller {
 			ipList.add(_ctx.stringValue("GetInstanceIpWhiteListResponse.IpList["+ i +"]"));
 		}
 		getInstanceIpWhiteListResponse.setIpList(ipList);
+
+		List<GroupListItem> groupList = new ArrayList<GroupListItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetInstanceIpWhiteListResponse.GroupList.Length"); i++) {
+			GroupListItem groupListItem = new GroupListItem();
+			groupListItem.setGroupName(_ctx.stringValue("GetInstanceIpWhiteListResponse.GroupList["+ i +"].GroupName"));
+			groupListItem.setSecurityIpList(_ctx.stringValue("GetInstanceIpWhiteListResponse.GroupList["+ i +"].SecurityIpList"));
+
+			groupList.add(groupListItem);
+		}
+		getInstanceIpWhiteListResponse.setGroupList(groupList);
 	 
 	 	return getInstanceIpWhiteListResponse;
 	}

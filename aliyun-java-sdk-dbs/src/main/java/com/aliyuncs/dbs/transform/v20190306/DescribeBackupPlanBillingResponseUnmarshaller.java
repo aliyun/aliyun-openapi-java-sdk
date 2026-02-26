@@ -44,7 +44,6 @@ public class DescribeBackupPlanBillingResponseUnmarshaller {
 		item.setContStorageSize(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.ContStorageSize"));
 		item.setBuyChargeType(_ctx.stringValue("DescribeBackupPlanBillingResponse.Item.BuyChargeType"));
 		item.setUsedIncrementBytes(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.UsedIncrementBytes"));
-		item.setResourceGroupId(_ctx.stringValue("DescribeBackupPlanBillingResponse.Item.ResourceGroupId"));
 		describeBackupPlanBillingResponse.setItem(item);
 	 
 	 	return describeBackupPlanBillingResponse;

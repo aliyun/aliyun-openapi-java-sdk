@@ -25,51 +25,99 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainInfoResponse extends AcsResponse {
 
+	private String recordLineTreeJson;
+
+	private String groupName;
+
+	private Boolean inBlackHole;
+
+	private Boolean regionLines;
+
+	private Boolean slaveDns;
+
+	private Boolean aliDomain;
+
 	private String requestId;
 
-	private String domainId;
+	private String resourceGroupId;
+
+	private String instanceId;
 
 	private String domainName;
 
-	private String punyCode;
+	private String createTime;
 
-	private Boolean aliDomain;
+	private String punyCode;
 
 	private String remark;
 
 	private String groupId;
 
-	private String groupName;
-
-	private String instanceId;
-
 	private String versionCode;
 
-	private String versionName;
+	private String domainId;
 
 	private Long minTtl;
 
-	private String recordLineTreeJson;
-
-	private String lineType;
-
-	private Boolean regionLines;
-
-	private Boolean inBlackHole;
-
 	private Boolean inClean;
 
-	private Boolean slaveDns;
+	private String versionName;
 
-	private String resourceGroupId;
-
-	private String createTime;
+	private String lineType;
 
 	private List<RecordLine> recordLines;
 
 	private List<String> dnsServers;
 
 	private List<String> availableTtls;
+
+	public String getRecordLineTreeJson() {
+		return this.recordLineTreeJson;
+	}
+
+	public void setRecordLineTreeJson(String recordLineTreeJson) {
+		this.recordLineTreeJson = recordLineTreeJson;
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
+
+	public Boolean getInBlackHole() {
+		return this.inBlackHole;
+	}
+
+	public void setInBlackHole(Boolean inBlackHole) {
+		this.inBlackHole = inBlackHole;
+	}
+
+	public Boolean getRegionLines() {
+		return this.regionLines;
+	}
+
+	public void setRegionLines(Boolean regionLines) {
+		this.regionLines = regionLines;
+	}
+
+	public Boolean getSlaveDns() {
+		return this.slaveDns;
+	}
+
+	public void setSlaveDns(Boolean slaveDns) {
+		this.slaveDns = slaveDns;
+	}
+
+	public Boolean getAliDomain() {
+		return this.aliDomain;
+	}
+
+	public void setAliDomain(Boolean aliDomain) {
+		this.aliDomain = aliDomain;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -79,12 +127,20 @@ public class DescribeDomainInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDomainId() {
-		return this.domainId;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setDomainId(String domainId) {
-		this.domainId = domainId;
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public String getDomainName() {
@@ -95,20 +151,20 @@ public class DescribeDomainInfoResponse extends AcsResponse {
 		this.domainName = domainName;
 	}
 
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
 	public String getPunyCode() {
 		return this.punyCode;
 	}
 
 	public void setPunyCode(String punyCode) {
 		this.punyCode = punyCode;
-	}
-
-	public Boolean getAliDomain() {
-		return this.aliDomain;
-	}
-
-	public void setAliDomain(Boolean aliDomain) {
-		this.aliDomain = aliDomain;
 	}
 
 	public String getRemark() {
@@ -127,22 +183,6 @@ public class DescribeDomainInfoResponse extends AcsResponse {
 		this.groupId = groupId;
 	}
 
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
 	public String getVersionCode() {
 		return this.versionCode;
 	}
@@ -151,12 +191,12 @@ public class DescribeDomainInfoResponse extends AcsResponse {
 		this.versionCode = versionCode;
 	}
 
-	public String getVersionName() {
-		return this.versionName;
+	public String getDomainId() {
+		return this.domainId;
 	}
 
-	public void setVersionName(String versionName) {
-		this.versionName = versionName;
+	public void setDomainId(String domainId) {
+		this.domainId = domainId;
 	}
 
 	public Long getMinTtl() {
@@ -167,38 +207,6 @@ public class DescribeDomainInfoResponse extends AcsResponse {
 		this.minTtl = minTtl;
 	}
 
-	public String getRecordLineTreeJson() {
-		return this.recordLineTreeJson;
-	}
-
-	public void setRecordLineTreeJson(String recordLineTreeJson) {
-		this.recordLineTreeJson = recordLineTreeJson;
-	}
-
-	public String getLineType() {
-		return this.lineType;
-	}
-
-	public void setLineType(String lineType) {
-		this.lineType = lineType;
-	}
-
-	public Boolean getRegionLines() {
-		return this.regionLines;
-	}
-
-	public void setRegionLines(Boolean regionLines) {
-		this.regionLines = regionLines;
-	}
-
-	public Boolean getInBlackHole() {
-		return this.inBlackHole;
-	}
-
-	public void setInBlackHole(Boolean inBlackHole) {
-		this.inBlackHole = inBlackHole;
-	}
-
 	public Boolean getInClean() {
 		return this.inClean;
 	}
@@ -207,28 +215,20 @@ public class DescribeDomainInfoResponse extends AcsResponse {
 		this.inClean = inClean;
 	}
 
-	public Boolean getSlaveDns() {
-		return this.slaveDns;
+	public String getVersionName() {
+		return this.versionName;
 	}
 
-	public void setSlaveDns(Boolean slaveDns) {
-		this.slaveDns = slaveDns;
+	public void setVersionName(String versionName) {
+		this.versionName = versionName;
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getLineType() {
+		return this.lineType;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setLineType(String lineType) {
+		this.lineType = lineType;
 	}
 
 	public List<RecordLine> getRecordLines() {
@@ -257,21 +257,13 @@ public class DescribeDomainInfoResponse extends AcsResponse {
 
 	public static class RecordLine {
 
-		private String lineCode;
-
 		private String fatherCode;
-
-		private String lineName;
 
 		private String lineDisplayName;
 
-		public String getLineCode() {
-			return this.lineCode;
-		}
+		private String lineCode;
 
-		public void setLineCode(String lineCode) {
-			this.lineCode = lineCode;
-		}
+		private String lineName;
 
 		public String getFatherCode() {
 			return this.fatherCode;
@@ -281,20 +273,28 @@ public class DescribeDomainInfoResponse extends AcsResponse {
 			this.fatherCode = fatherCode;
 		}
 
-		public String getLineName() {
-			return this.lineName;
-		}
-
-		public void setLineName(String lineName) {
-			this.lineName = lineName;
-		}
-
 		public String getLineDisplayName() {
 			return this.lineDisplayName;
 		}
 
 		public void setLineDisplayName(String lineDisplayName) {
 			this.lineDisplayName = lineDisplayName;
+		}
+
+		public String getLineCode() {
+			return this.lineCode;
+		}
+
+		public void setLineCode(String lineCode) {
+			this.lineCode = lineCode;
+		}
+
+		public String getLineName() {
+			return this.lineName;
+		}
+
+		public void setLineName(String lineName) {
+			this.lineName = lineName;
 		}
 	}
 

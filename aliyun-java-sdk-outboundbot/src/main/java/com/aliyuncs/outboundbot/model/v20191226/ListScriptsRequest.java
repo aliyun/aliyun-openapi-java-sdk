@@ -25,7 +25,11 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class ListScriptsRequest extends RpcAcsRequest<ListScriptsResponse> {
 	   
 
+	private String scriptName;
+
 	private Integer pageNumber;
+
+	private String nluEngine;
 
 	private String instanceId;
 
@@ -39,6 +43,17 @@ public class ListScriptsRequest extends RpcAcsRequest<ListScriptsResponse> {
 		} catch (Exception e) {}
 	}
 
+	public String getScriptName() {
+		return this.scriptName;
+	}
+
+	public void setScriptName(String scriptName) {
+		this.scriptName = scriptName;
+		if(scriptName != null){
+			putQueryParameter("ScriptName", scriptName);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -47,6 +62,17 @@ public class ListScriptsRequest extends RpcAcsRequest<ListScriptsResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getNluEngine() {
+		return this.nluEngine;
+	}
+
+	public void setNluEngine(String nluEngine) {
+		this.nluEngine = nluEngine;
+		if(nluEngine != null){
+			putQueryParameter("NluEngine", nluEngine);
 		}
 	}
 

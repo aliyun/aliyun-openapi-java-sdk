@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateHotParamRuleResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
 	private Boolean success;
 
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -57,6 +49,14 @@ public class CreateHotParamRuleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,102 +77,38 @@ public class CreateHotParamRuleResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String appName;
-
-		private Integer burstCount;
-
-		private Integer controlBehavior;
-
-		private Float threshold;
-
-		private Long statDurationSec;
-
-		private Boolean enable;
-
-		private Integer metricType;
-
-		private Long ruleId;
-
-		private Integer maxQueueingTimeMs;
+		private Integer paramIdx;
 
 		private String namespace;
 
-		private Integer paramIdx;
+		private Long statDurationSec;
+
+		private Integer burstCount;
+
+		private Long ruleId;
 
 		private String resource;
 
+		private String appName;
+
+		private Integer maxQueueingTimeMs;
+
+		private Integer controlBehavior;
+
+		private Integer metricType;
+
+		private Float threshold;
+
+		private Boolean enable;
+
 		private List<ParamFlowItemListItem> paramFlowItemList;
 
-		public String getAppName() {
-			return this.appName;
+		public Integer getParamIdx() {
+			return this.paramIdx;
 		}
 
-		public void setAppName(String appName) {
-			this.appName = appName;
-		}
-
-		public Integer getBurstCount() {
-			return this.burstCount;
-		}
-
-		public void setBurstCount(Integer burstCount) {
-			this.burstCount = burstCount;
-		}
-
-		public Integer getControlBehavior() {
-			return this.controlBehavior;
-		}
-
-		public void setControlBehavior(Integer controlBehavior) {
-			this.controlBehavior = controlBehavior;
-		}
-
-		public Float getThreshold() {
-			return this.threshold;
-		}
-
-		public void setThreshold(Float threshold) {
-			this.threshold = threshold;
-		}
-
-		public Long getStatDurationSec() {
-			return this.statDurationSec;
-		}
-
-		public void setStatDurationSec(Long statDurationSec) {
-			this.statDurationSec = statDurationSec;
-		}
-
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
-		}
-
-		public Integer getMetricType() {
-			return this.metricType;
-		}
-
-		public void setMetricType(Integer metricType) {
-			this.metricType = metricType;
-		}
-
-		public Long getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(Long ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public Integer getMaxQueueingTimeMs() {
-			return this.maxQueueingTimeMs;
-		}
-
-		public void setMaxQueueingTimeMs(Integer maxQueueingTimeMs) {
-			this.maxQueueingTimeMs = maxQueueingTimeMs;
+		public void setParamIdx(Integer paramIdx) {
+			this.paramIdx = paramIdx;
 		}
 
 		public String getNamespace() {
@@ -183,12 +119,28 @@ public class CreateHotParamRuleResponse extends AcsResponse {
 			this.namespace = namespace;
 		}
 
-		public Integer getParamIdx() {
-			return this.paramIdx;
+		public Long getStatDurationSec() {
+			return this.statDurationSec;
 		}
 
-		public void setParamIdx(Integer paramIdx) {
-			this.paramIdx = paramIdx;
+		public void setStatDurationSec(Long statDurationSec) {
+			this.statDurationSec = statDurationSec;
+		}
+
+		public Integer getBurstCount() {
+			return this.burstCount;
+		}
+
+		public void setBurstCount(Integer burstCount) {
+			this.burstCount = burstCount;
+		}
+
+		public Long getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(Long ruleId) {
+			this.ruleId = ruleId;
 		}
 
 		public String getResource() {
@@ -197,6 +149,54 @@ public class CreateHotParamRuleResponse extends AcsResponse {
 
 		public void setResource(String resource) {
 			this.resource = resource;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
+		}
+
+		public Integer getMaxQueueingTimeMs() {
+			return this.maxQueueingTimeMs;
+		}
+
+		public void setMaxQueueingTimeMs(Integer maxQueueingTimeMs) {
+			this.maxQueueingTimeMs = maxQueueingTimeMs;
+		}
+
+		public Integer getControlBehavior() {
+			return this.controlBehavior;
+		}
+
+		public void setControlBehavior(Integer controlBehavior) {
+			this.controlBehavior = controlBehavior;
+		}
+
+		public Integer getMetricType() {
+			return this.metricType;
+		}
+
+		public void setMetricType(Integer metricType) {
+			this.metricType = metricType;
+		}
+
+		public Float getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(Float threshold) {
+			this.threshold = threshold;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
 		}
 
 		public List<ParamFlowItemListItem> getParamFlowItemList() {
@@ -209,11 +209,19 @@ public class CreateHotParamRuleResponse extends AcsResponse {
 
 		public static class ParamFlowItemListItem {
 
+			private String itemValue;
+
 			private String itemType;
 
 			private Float threshold;
 
-			private String itemValue;
+			public String getItemValue() {
+				return this.itemValue;
+			}
+
+			public void setItemValue(String itemValue) {
+				this.itemValue = itemValue;
+			}
 
 			public String getItemType() {
 				return this.itemType;
@@ -229,14 +237,6 @@ public class CreateHotParamRuleResponse extends AcsResponse {
 
 			public void setThreshold(Float threshold) {
 				this.threshold = threshold;
-			}
-
-			public String getItemValue() {
-				return this.itemValue;
-			}
-
-			public void setItemValue(String itemValue) {
-				this.itemValue = itemValue;
 			}
 		}
 	}

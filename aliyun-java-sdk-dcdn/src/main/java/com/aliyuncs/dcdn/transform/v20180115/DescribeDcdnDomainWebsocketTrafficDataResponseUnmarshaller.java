@@ -27,16 +27,16 @@ public class DescribeDcdnDomainWebsocketTrafficDataResponseUnmarshaller {
 	public static DescribeDcdnDomainWebsocketTrafficDataResponse unmarshall(DescribeDcdnDomainWebsocketTrafficDataResponse describeDcdnDomainWebsocketTrafficDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnDomainWebsocketTrafficDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.RequestId"));
-		describeDcdnDomainWebsocketTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.DomainName"));
-		describeDcdnDomainWebsocketTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.StartTime"));
 		describeDcdnDomainWebsocketTrafficDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.EndTime"));
+		describeDcdnDomainWebsocketTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.StartTime"));
+		describeDcdnDomainWebsocketTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.DomainName"));
 		describeDcdnDomainWebsocketTrafficDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.DataInterval"));
 
 		List<DataModule> trafficDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainWebsocketTrafficDataResponse.TrafficDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.TrafficDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setWebsocketTraffic(_ctx.floatValue("DescribeDcdnDomainWebsocketTrafficDataResponse.TrafficDataPerInterval["+ i +"].WebsocketTraffic"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainWebsocketTrafficDataResponse.TrafficDataPerInterval["+ i +"].TimeStamp"));
 
 			trafficDataPerInterval.add(dataModule);
 		}

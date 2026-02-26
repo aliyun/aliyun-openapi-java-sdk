@@ -1,3 +1,6 @@
+2023-06-25 Version: 3.0.2
+- Supported ExecuteRequest For Big Parameter.
+
 2021-12-01 Version: 3.0.1
 - Supported RequestDecision For YN.
 

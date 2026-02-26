@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -30,11 +31,13 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 
 	private Integer readonlyReplicas;
 
+	private String targetSecondaryZoneId;
+
 	private String couponNo;
 
 	private String nodeClass;
 
-	private String securityToken;
+	private String targetZoneId;
 
 	private String effectiveTime;
 
@@ -56,12 +59,20 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 
 	private String ownerAccount;
 
+	private String targetVswitchId;
+
 	private Long ownerId;
+
+	private String targetHiddenZoneId;
 
 	private String orderType;
 	public ModifyNodeSpecRequest() {
 		super("Dds", "2015-12-01", "ModifyNodeSpec", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -97,6 +108,17 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		}
 	}
 
+	public String getTargetSecondaryZoneId() {
+		return this.targetSecondaryZoneId;
+	}
+
+	public void setTargetSecondaryZoneId(String targetSecondaryZoneId) {
+		this.targetSecondaryZoneId = targetSecondaryZoneId;
+		if(targetSecondaryZoneId != null){
+			putQueryParameter("TargetSecondaryZoneId", targetSecondaryZoneId);
+		}
+	}
+
 	public String getCouponNo() {
 		return this.couponNo;
 	}
@@ -119,14 +141,14 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getTargetZoneId() {
+		return this.targetZoneId;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setTargetZoneId(String targetZoneId) {
+		this.targetZoneId = targetZoneId;
+		if(targetZoneId != null){
+			putQueryParameter("TargetZoneId", targetZoneId);
 		}
 	}
 
@@ -240,6 +262,17 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		}
 	}
 
+	public String getTargetVswitchId() {
+		return this.targetVswitchId;
+	}
+
+	public void setTargetVswitchId(String targetVswitchId) {
+		this.targetVswitchId = targetVswitchId;
+		if(targetVswitchId != null){
+			putQueryParameter("TargetVswitchId", targetVswitchId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -248,6 +281,17 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTargetHiddenZoneId() {
+		return this.targetHiddenZoneId;
+	}
+
+	public void setTargetHiddenZoneId(String targetHiddenZoneId) {
+		this.targetHiddenZoneId = targetHiddenZoneId;
+		if(targetHiddenZoneId != null){
+			putQueryParameter("TargetHiddenZoneId", targetHiddenZoneId);
 		}
 	}
 

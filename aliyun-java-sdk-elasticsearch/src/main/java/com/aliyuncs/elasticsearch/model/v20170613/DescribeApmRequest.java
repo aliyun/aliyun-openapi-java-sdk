@@ -26,8 +26,6 @@ public class DescribeApmRequest extends RoaAcsRequest<DescribeApmResponse> {
 	   
 
 	private String instanceId;
-
-	private String body;
 	public DescribeApmRequest() {
 		super("elasticsearch", "2017-06-13", "DescribeApm", "elasticsearch");
 		setUriPattern("/openapi/apm/[instanceId]");
@@ -46,17 +44,6 @@ public class DescribeApmRequest extends RoaAcsRequest<DescribeApmResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("instanceId", instanceId);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

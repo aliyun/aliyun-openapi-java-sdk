@@ -58,9 +58,9 @@ public class QueryUserRoleInfoInWorkspaceResponse extends AcsResponse {
 
 		private String roleCode;
 
-		private String roleName;
-
 		private Long roleId;
+
+		private String roleName;
 
 		public String getRoleCode() {
 			return this.roleCode;
@@ -70,20 +70,20 @@ public class QueryUserRoleInfoInWorkspaceResponse extends AcsResponse {
 			this.roleCode = roleCode;
 		}
 
-		public String getRoleName() {
-			return this.roleName;
-		}
-
-		public void setRoleName(String roleName) {
-			this.roleName = roleName;
-		}
-
 		public Long getRoleId() {
 			return this.roleId;
 		}
 
 		public void setRoleId(Long roleId) {
 			this.roleId = roleId;
+		}
+
+		public String getRoleName() {
+			return this.roleName;
+		}
+
+		public void setRoleName(String roleName) {
+			this.roleName = roleName;
 		}
 	}
 

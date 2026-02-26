@@ -26,11 +26,11 @@ public class GetAccountingReportResponseUnmarshaller {
 	public static GetAccountingReportResponse unmarshall(GetAccountingReportResponse getAccountingReportResponse, UnmarshallerContext _ctx) {
 		
 		getAccountingReportResponse.setRequestId(_ctx.stringValue("GetAccountingReportResponse.RequestId"));
-		getAccountingReportResponse.setMetrics(_ctx.stringValue("GetAccountingReportResponse.Metrics"));
 		getAccountingReportResponse.setTotalCoreTime(_ctx.integerValue("GetAccountingReportResponse.TotalCoreTime"));
-		getAccountingReportResponse.setTotalCount(_ctx.integerValue("GetAccountingReportResponse.TotalCount"));
+		getAccountingReportResponse.setMetrics(_ctx.stringValue("GetAccountingReportResponse.Metrics"));
 		getAccountingReportResponse.setPageSize(_ctx.integerValue("GetAccountingReportResponse.PageSize"));
 		getAccountingReportResponse.setPageNumber(_ctx.integerValue("GetAccountingReportResponse.PageNumber"));
+		getAccountingReportResponse.setTotalCount(_ctx.integerValue("GetAccountingReportResponse.TotalCount"));
 
 		List<String> data = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetAccountingReportResponse.Data.Length"); i++) {

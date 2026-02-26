@@ -25,9 +25,11 @@ import com.aliyuncs.waf_openapi.Endpoint;
 public class CreateProtectionModuleRuleRequest extends RpcAcsRequest<CreateProtectionModuleRuleResponse> {
 	   
 
-	private String defenseType;
-
 	private String rule;
+
+	private String resourceGroupId;
+
+	private String defenseType;
 
 	private String instanceId;
 
@@ -41,17 +43,6 @@ public class CreateProtectionModuleRuleRequest extends RpcAcsRequest<CreateProte
 		} catch (Exception e) {}
 	}
 
-	public String getDefenseType() {
-		return this.defenseType;
-	}
-
-	public void setDefenseType(String defenseType) {
-		this.defenseType = defenseType;
-		if(defenseType != null){
-			putQueryParameter("DefenseType", defenseType);
-		}
-	}
-
 	public String getRule() {
 		return this.rule;
 	}
@@ -60,6 +51,28 @@ public class CreateProtectionModuleRuleRequest extends RpcAcsRequest<CreateProte
 		this.rule = rule;
 		if(rule != null){
 			putQueryParameter("Rule", rule);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDefenseType() {
+		return this.defenseType;
+	}
+
+	public void setDefenseType(String defenseType) {
+		this.defenseType = defenseType;
+		if(defenseType != null){
+			putQueryParameter("DefenseType", defenseType);
 		}
 	}
 

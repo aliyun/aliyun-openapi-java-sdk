@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSqlFlashbakTaskResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<SqlFlashbackTask> sqlFlashbackTasks;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeSqlFlashbakTaskResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<SqlFlashbackTask> getSqlFlashbackTasks() {
@@ -57,88 +57,48 @@ public class DescribeSqlFlashbakTaskResponse extends AcsResponse {
 
 	public static class SqlFlashbackTask {
 
-		private Long id;
-
-		private Long gmtCreate;
-
-		private Long gmtModified;
-
-		private String instId;
-
-		private String dbName;
-
-		private Long searchStartTime;
+		private String tableName;
 
 		private Long searchEndTime;
 
-		private String tableName;
-
-		private String traceId;
-
-		private String sqlType;
-
-		private String sqlPk;
-
-		private Integer recallType;
-
-		private Integer recallStatus;
-
-		private Integer recallProgress;
-
-		private Integer recallRestoreType;
+		private Long expireTime;
 
 		private String downloadUrl;
 
-		private Long expireTime;
+		private Integer recallProgress;
+
+		private String sqlPk;
+
+		private String instId;
+
+		private Integer recallType;
+
+		private Long searchStartTime;
+
+		private Long gmtModified;
 
 		private Long sqlCounter;
 
-		public Long getId() {
-			return this.id;
+		private String dbName;
+
+		private Integer recallRestoreType;
+
+		private Long gmtCreate;
+
+		private String traceId;
+
+		private Long id;
+
+		private Integer recallStatus;
+
+		private String sqlType;
+
+		public String getTableName() {
+			return this.tableName;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public Long getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getInstId() {
-			return this.instId;
-		}
-
-		public void setInstId(String instId) {
-			this.instId = instId;
-		}
-
-		public String getDbName() {
-			return this.dbName;
-		}
-
-		public void setDbName(String dbName) {
-			this.dbName = dbName;
-		}
-
-		public Long getSearchStartTime() {
-			return this.searchStartTime;
-		}
-
-		public void setSearchStartTime(Long searchStartTime) {
-			this.searchStartTime = searchStartTime;
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 
 		public Long getSearchEndTime() {
@@ -149,68 +109,12 @@ public class DescribeSqlFlashbakTaskResponse extends AcsResponse {
 			this.searchEndTime = searchEndTime;
 		}
 
-		public String getTableName() {
-			return this.tableName;
+		public Long getExpireTime() {
+			return this.expireTime;
 		}
 
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
-
-		public String getTraceId() {
-			return this.traceId;
-		}
-
-		public void setTraceId(String traceId) {
-			this.traceId = traceId;
-		}
-
-		public String getSqlType() {
-			return this.sqlType;
-		}
-
-		public void setSqlType(String sqlType) {
-			this.sqlType = sqlType;
-		}
-
-		public String getSqlPk() {
-			return this.sqlPk;
-		}
-
-		public void setSqlPk(String sqlPk) {
-			this.sqlPk = sqlPk;
-		}
-
-		public Integer getRecallType() {
-			return this.recallType;
-		}
-
-		public void setRecallType(Integer recallType) {
-			this.recallType = recallType;
-		}
-
-		public Integer getRecallStatus() {
-			return this.recallStatus;
-		}
-
-		public void setRecallStatus(Integer recallStatus) {
-			this.recallStatus = recallStatus;
-		}
-
-		public Integer getRecallProgress() {
-			return this.recallProgress;
-		}
-
-		public void setRecallProgress(Integer recallProgress) {
-			this.recallProgress = recallProgress;
-		}
-
-		public Integer getRecallRestoreType() {
-			return this.recallRestoreType;
-		}
-
-		public void setRecallRestoreType(Integer recallRestoreType) {
-			this.recallRestoreType = recallRestoreType;
+		public void setExpireTime(Long expireTime) {
+			this.expireTime = expireTime;
 		}
 
 		public String getDownloadUrl() {
@@ -221,12 +125,52 @@ public class DescribeSqlFlashbakTaskResponse extends AcsResponse {
 			this.downloadUrl = downloadUrl;
 		}
 
-		public Long getExpireTime() {
-			return this.expireTime;
+		public Integer getRecallProgress() {
+			return this.recallProgress;
 		}
 
-		public void setExpireTime(Long expireTime) {
-			this.expireTime = expireTime;
+		public void setRecallProgress(Integer recallProgress) {
+			this.recallProgress = recallProgress;
+		}
+
+		public String getSqlPk() {
+			return this.sqlPk;
+		}
+
+		public void setSqlPk(String sqlPk) {
+			this.sqlPk = sqlPk;
+		}
+
+		public String getInstId() {
+			return this.instId;
+		}
+
+		public void setInstId(String instId) {
+			this.instId = instId;
+		}
+
+		public Integer getRecallType() {
+			return this.recallType;
+		}
+
+		public void setRecallType(Integer recallType) {
+			this.recallType = recallType;
+		}
+
+		public Long getSearchStartTime() {
+			return this.searchStartTime;
+		}
+
+		public void setSearchStartTime(Long searchStartTime) {
+			this.searchStartTime = searchStartTime;
+		}
+
+		public Long getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public Long getSqlCounter() {
@@ -235,6 +179,62 @@ public class DescribeSqlFlashbakTaskResponse extends AcsResponse {
 
 		public void setSqlCounter(Long sqlCounter) {
 			this.sqlCounter = sqlCounter;
+		}
+
+		public String getDbName() {
+			return this.dbName;
+		}
+
+		public void setDbName(String dbName) {
+			this.dbName = dbName;
+		}
+
+		public Integer getRecallRestoreType() {
+			return this.recallRestoreType;
+		}
+
+		public void setRecallRestoreType(Integer recallRestoreType) {
+			this.recallRestoreType = recallRestoreType;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getTraceId() {
+			return this.traceId;
+		}
+
+		public void setTraceId(String traceId) {
+			this.traceId = traceId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Integer getRecallStatus() {
+			return this.recallStatus;
+		}
+
+		public void setRecallStatus(Integer recallStatus) {
+			this.recallStatus = recallStatus;
+		}
+
+		public String getSqlType() {
+			return this.sqlType;
+		}
+
+		public void setSqlType(String sqlType) {
+			this.sqlType = sqlType;
 		}
 	}
 

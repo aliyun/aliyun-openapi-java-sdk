@@ -27,7 +27,7 @@ public class OpenIotServiceRequest extends RpcAcsRequest<OpenIotServiceResponse>
 
 	private Long ownerId;
 	public OpenIotServiceRequest() {
-		super("Iot", "2018-01-20", "OpenIotService");
+		super("Iot", "2018-01-20", "OpenIotService", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

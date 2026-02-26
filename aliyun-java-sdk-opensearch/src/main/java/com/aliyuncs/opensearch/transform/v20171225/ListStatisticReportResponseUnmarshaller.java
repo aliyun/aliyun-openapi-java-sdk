@@ -26,8 +26,8 @@ public class ListStatisticReportResponseUnmarshaller {
 
 	public static ListStatisticReportResponse unmarshall(ListStatisticReportResponse listStatisticReportResponse, UnmarshallerContext _ctx) {
 		
-		listStatisticReportResponse.setRequestId(_ctx.stringValue("ListStatisticReportResponse.requestId"));
 		listStatisticReportResponse.setTotalCount(_ctx.longValue("ListStatisticReportResponse.totalCount"));
+		listStatisticReportResponse.setRequestId(_ctx.stringValue("ListStatisticReportResponse.requestId"));
 
 		List<Map<Object, Object>> result = _ctx.listMapValue("ListStatisticReportResponse.result");
 		listStatisticReportResponse.setResult(result);

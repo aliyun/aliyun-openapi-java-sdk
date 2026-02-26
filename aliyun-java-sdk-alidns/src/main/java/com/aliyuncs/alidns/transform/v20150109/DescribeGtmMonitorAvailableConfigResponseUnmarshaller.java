@@ -31,14 +31,14 @@ public class DescribeGtmMonitorAvailableConfigResponseUnmarshaller {
 		List<IspCityNode> ispCityNodes = new ArrayList<IspCityNode>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes.Length"); i++) {
 			IspCityNode ispCityNode = new IspCityNode();
-			ispCityNode.setIspName(_ctx.stringValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].IspName"));
+			ispCityNode.setCityCode(_ctx.stringValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].CityCode"));
+			ispCityNode.setMainland(_ctx.booleanValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].Mainland"));
+			ispCityNode.setGroupName(_ctx.stringValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].GroupName"));
 			ispCityNode.setIspCode(_ctx.stringValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].IspCode"));
 			ispCityNode.setCityName(_ctx.stringValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].CityName"));
-			ispCityNode.setCityCode(_ctx.stringValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].CityCode"));
-			ispCityNode.setDefaultSelected(_ctx.booleanValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].DefaultSelected"));
-			ispCityNode.setMainland(_ctx.booleanValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].Mainland"));
+			ispCityNode.setIspName(_ctx.stringValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].IspName"));
 			ispCityNode.setGroupType(_ctx.stringValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].GroupType"));
-			ispCityNode.setGroupName(_ctx.stringValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].GroupName"));
+			ispCityNode.setDefaultSelected(_ctx.booleanValue("DescribeGtmMonitorAvailableConfigResponse.IspCityNodes["+ i +"].DefaultSelected"));
 
 			ispCityNodes.add(ispCityNode);
 		}

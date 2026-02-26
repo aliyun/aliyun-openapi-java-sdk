@@ -36,10 +36,14 @@ public class UpdateAggregatorRequest extends RpcAcsRequest<UpdateAggregatorRespo
 
 	private String aggregatorId;
 
+	private String folderId;
+
+	private String tag;
+
 	@SerializedName("aggregatorAccounts")
 	private List<AggregatorAccounts> aggregatorAccounts;
 	public UpdateAggregatorRequest() {
-		super("Config", "2020-09-07", "UpdateAggregator");
+		super("Config", "2020-09-07", "UpdateAggregator", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -88,6 +92,28 @@ public class UpdateAggregatorRequest extends RpcAcsRequest<UpdateAggregatorRespo
 		this.aggregatorId = aggregatorId;
 		if(aggregatorId != null){
 			putBodyParameter("AggregatorId", aggregatorId);
+		}
+	}
+
+	public String getFolderId() {
+		return this.folderId;
+	}
+
+	public void setFolderId(String folderId) {
+		this.folderId = folderId;
+		if(folderId != null){
+			putBodyParameter("FolderId", folderId);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

@@ -24,28 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePartnerConfigResponse extends AcsResponse {
 
-	private String contact;
-
-	private String partnerCode;
+	private String requestId;
 
 	private String partnerName;
 
-	private String requestId;
+	private String partnerCode;
 
-	public String getContact() {
-		return this.contact;
+	private String contact;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setContact(String contact) {
-		this.contact = contact;
-	}
-
-	public String getPartnerCode() {
-		return this.partnerCode;
-	}
-
-	public void setPartnerCode(String partnerCode) {
-		this.partnerCode = partnerCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getPartnerName() {
@@ -56,12 +48,20 @@ public class DescribePartnerConfigResponse extends AcsResponse {
 		this.partnerName = partnerName;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getPartnerCode() {
+		return this.partnerCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPartnerCode(String partnerCode) {
+		this.partnerCode = partnerCode;
+	}
+
+	public String getContact() {
+		return this.contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
 	}
 
 	@Override

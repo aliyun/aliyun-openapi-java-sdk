@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.GetTemplateResponse;
 import com.aliyuncs.ros.model.v20190910.GetTemplateResponse.Permission;
+import com.aliyuncs.ros.model.v20190910.GetTemplateResponse.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,9 +30,8 @@ public class GetTemplateResponseUnmarshaller {
 		getTemplateResponse.setRequestId(_ctx.stringValue("GetTemplateResponse.RequestId"));
 		getTemplateResponse.setTemplateARN(_ctx.stringValue("GetTemplateResponse.TemplateARN"));
 		getTemplateResponse.setDescription(_ctx.stringValue("GetTemplateResponse.Description"));
-		getTemplateResponse.setResourceGroupId(_ctx.stringValue("GetTemplateResponse.ResourceGroupId"));
-		getTemplateResponse.setStackGroupName(_ctx.stringValue("GetTemplateResponse.StackGroupName"));
 		getTemplateResponse.setCreateTime(_ctx.stringValue("GetTemplateResponse.CreateTime"));
+		getTemplateResponse.setStackGroupName(_ctx.stringValue("GetTemplateResponse.StackGroupName"));
 		getTemplateResponse.setTemplateVersion(_ctx.stringValue("GetTemplateResponse.TemplateVersion"));
 		getTemplateResponse.setTemplateBody(_ctx.stringValue("GetTemplateResponse.TemplateBody"));
 		getTemplateResponse.setChangeSetId(_ctx.stringValue("GetTemplateResponse.ChangeSetId"));
@@ -40,20 +40,33 @@ public class GetTemplateResponseUnmarshaller {
 		getTemplateResponse.setTemplateName(_ctx.stringValue("GetTemplateResponse.TemplateName"));
 		getTemplateResponse.setRegionId(_ctx.stringValue("GetTemplateResponse.RegionId"));
 		getTemplateResponse.setTemplateId(_ctx.stringValue("GetTemplateResponse.TemplateId"));
-		getTemplateResponse.setShareType(_ctx.stringValue("GetTemplateResponse.ShareType"));
 		getTemplateResponse.setStackId(_ctx.stringValue("GetTemplateResponse.StackId"));
+		getTemplateResponse.setShareType(_ctx.stringValue("GetTemplateResponse.ShareType"));
+		getTemplateResponse.setResourceGroupId(_ctx.stringValue("GetTemplateResponse.ResourceGroupId"));
+		getTemplateResponse.set_Interface(_ctx.stringValue("GetTemplateResponse.Interface"));
 
 		List<Permission> permissions = new ArrayList<Permission>();
 		for (int i = 0; i < _ctx.lengthValue("GetTemplateResponse.Permissions.Length"); i++) {
 			Permission permission = new Permission();
-			permission.setShareOption(_ctx.stringValue("GetTemplateResponse.Permissions["+ i +"].ShareOption"));
-			permission.setAccountId(_ctx.stringValue("GetTemplateResponse.Permissions["+ i +"].AccountId"));
-			permission.setTemplateVersion(_ctx.stringValue("GetTemplateResponse.Permissions["+ i +"].TemplateVersion"));
 			permission.setVersionOption(_ctx.stringValue("GetTemplateResponse.Permissions["+ i +"].VersionOption"));
+			permission.setAccountId(_ctx.stringValue("GetTemplateResponse.Permissions["+ i +"].AccountId"));
+			permission.setShareOption(_ctx.stringValue("GetTemplateResponse.Permissions["+ i +"].ShareOption"));
+			permission.setTemplateVersion(_ctx.stringValue("GetTemplateResponse.Permissions["+ i +"].TemplateVersion"));
+			permission.setShareSource(_ctx.stringValue("GetTemplateResponse.Permissions["+ i +"].ShareSource"));
 
 			permissions.add(permission);
 		}
 		getTemplateResponse.setPermissions(permissions);
+
+		List<TagsItem> tags = new ArrayList<TagsItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetTemplateResponse.Tags.Length"); i++) {
+			TagsItem tagsItem = new TagsItem();
+			tagsItem.setKey(_ctx.stringValue("GetTemplateResponse.Tags["+ i +"].Key"));
+			tagsItem.setValue(_ctx.stringValue("GetTemplateResponse.Tags["+ i +"].Value"));
+
+			tags.add(tagsItem);
+		}
+		getTemplateResponse.setTags(tags);
 	 
 	 	return getTemplateResponse;
 	}

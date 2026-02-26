@@ -29,6 +29,8 @@ public class CreateOrUpdateIMRobotRequest extends RpcAcsRequest<CreateOrUpdateIM
 
 	private String robotAddress;
 
+	private String dingSignKey;
+
 	private String robotName;
 
 	private Long robotId;
@@ -70,6 +72,17 @@ public class CreateOrUpdateIMRobotRequest extends RpcAcsRequest<CreateOrUpdateIM
 		this.robotAddress = robotAddress;
 		if(robotAddress != null){
 			putBodyParameter("RobotAddress", robotAddress);
+		}
+	}
+
+	public String getDingSignKey() {
+		return this.dingSignKey;
+	}
+
+	public void setDingSignKey(String dingSignKey) {
+		this.dingSignKey = dingSignKey;
+		if(dingSignKey != null){
+			putBodyParameter("DingSignKey", dingSignKey);
 		}
 	}
 

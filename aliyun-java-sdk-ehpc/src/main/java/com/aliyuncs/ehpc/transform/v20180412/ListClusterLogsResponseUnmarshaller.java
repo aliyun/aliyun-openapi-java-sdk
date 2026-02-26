@@ -27,18 +27,18 @@ public class ListClusterLogsResponseUnmarshaller {
 	public static ListClusterLogsResponse unmarshall(ListClusterLogsResponse listClusterLogsResponse, UnmarshallerContext _ctx) {
 		
 		listClusterLogsResponse.setRequestId(_ctx.stringValue("ListClusterLogsResponse.RequestId"));
-		listClusterLogsResponse.setTotalCount(_ctx.integerValue("ListClusterLogsResponse.TotalCount"));
-		listClusterLogsResponse.setPageNumber(_ctx.integerValue("ListClusterLogsResponse.PageNumber"));
 		listClusterLogsResponse.setPageSize(_ctx.integerValue("ListClusterLogsResponse.PageSize"));
+		listClusterLogsResponse.setPageNumber(_ctx.integerValue("ListClusterLogsResponse.PageNumber"));
+		listClusterLogsResponse.setTotalCount(_ctx.integerValue("ListClusterLogsResponse.TotalCount"));
 		listClusterLogsResponse.setClusterId(_ctx.stringValue("ListClusterLogsResponse.ClusterId"));
 
 		List<LogInfo> logs = new ArrayList<LogInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListClusterLogsResponse.Logs.Length"); i++) {
 			LogInfo logInfo = new LogInfo();
 			logInfo.setOperation(_ctx.stringValue("ListClusterLogsResponse.Logs["+ i +"].Operation"));
-			logInfo.setLevel(_ctx.stringValue("ListClusterLogsResponse.Logs["+ i +"].Level"));
 			logInfo.setMessage(_ctx.stringValue("ListClusterLogsResponse.Logs["+ i +"].Message"));
 			logInfo.setCreateTime(_ctx.stringValue("ListClusterLogsResponse.Logs["+ i +"].CreateTime"));
+			logInfo.setLevel(_ctx.stringValue("ListClusterLogsResponse.Logs["+ i +"].Level"));
 
 			logs.add(logInfo);
 		}

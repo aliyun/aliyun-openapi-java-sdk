@@ -27,15 +27,21 @@ public class ListConfigRuleEvaluationResultsRequest extends RpcAcsRequest<ListCo
 
 	private String configRuleId;
 
-	private String nextToken;
+	private String regions;
 
-	private Integer maxResults;
+	private String nextToken;
 
 	private String compliancePackId;
 
 	private String complianceType;
+
+	private String resourceTypes;
+
+	private String resourceGroupIds;
+
+	private Integer maxResults;
 	public ListConfigRuleEvaluationResultsRequest() {
-		super("Config", "2020-09-07", "ListConfigRuleEvaluationResults");
+		super("Config", "2020-09-07", "ListConfigRuleEvaluationResults", "config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,6 +60,17 @@ public class ListConfigRuleEvaluationResultsRequest extends RpcAcsRequest<ListCo
 		}
 	}
 
+	public String getRegions() {
+		return this.regions;
+	}
+
+	public void setRegions(String regions) {
+		this.regions = regions;
+		if(regions != null){
+			putQueryParameter("Regions", regions);
+		}
+	}
+
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -62,17 +79,6 @@ public class ListConfigRuleEvaluationResultsRequest extends RpcAcsRequest<ListCo
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
@@ -95,6 +101,39 @@ public class ListConfigRuleEvaluationResultsRequest extends RpcAcsRequest<ListCo
 		this.complianceType = complianceType;
 		if(complianceType != null){
 			putQueryParameter("ComplianceType", complianceType);
+		}
+	}
+
+	public String getResourceTypes() {
+		return this.resourceTypes;
+	}
+
+	public void setResourceTypes(String resourceTypes) {
+		this.resourceTypes = resourceTypes;
+		if(resourceTypes != null){
+			putQueryParameter("ResourceTypes", resourceTypes);
+		}
+	}
+
+	public String getResourceGroupIds() {
+		return this.resourceGroupIds;
+	}
+
+	public void setResourceGroupIds(String resourceGroupIds) {
+		this.resourceGroupIds = resourceGroupIds;
+		if(resourceGroupIds != null){
+			putQueryParameter("ResourceGroupIds", resourceGroupIds);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

@@ -25,21 +25,13 @@ import com.aliyuncs.arms.Endpoint;
 public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationResponse> {
 	   
 
-	private String shortToken;
-
-	private String fieldRedefineRules;
-
-	private String stat;
+	private String initiativeRecoverValue;
 
 	private String liveness;
 
 	private Long integrationId;
 
 	private String description;
-
-	private String apiEndpoint;
-
-	private Boolean autoRecover;
 
 	private Long recoverTime;
 
@@ -48,6 +40,14 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 	private String integrationName;
 
 	private Boolean state;
+
+	private String initiativeRecoverField;
+
+	private String fieldRedefineRules;
+
+	private String stat;
+
+	private Boolean autoRecover;
 
 	private String extendedFieldRedefineRules;
 
@@ -61,36 +61,14 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 		} catch (Exception e) {}
 	}
 
-	public String getShortToken() {
-		return this.shortToken;
+	public String getInitiativeRecoverValue() {
+		return this.initiativeRecoverValue;
 	}
 
-	public void setShortToken(String shortToken) {
-		this.shortToken = shortToken;
-		if(shortToken != null){
-			putBodyParameter("ShortToken", shortToken);
-		}
-	}
-
-	public String getFieldRedefineRules() {
-		return this.fieldRedefineRules;
-	}
-
-	public void setFieldRedefineRules(String fieldRedefineRules) {
-		this.fieldRedefineRules = fieldRedefineRules;
-		if(fieldRedefineRules != null){
-			putBodyParameter("FieldRedefineRules", fieldRedefineRules);
-		}
-	}
-
-	public String getStat() {
-		return this.stat;
-	}
-
-	public void setStat(String stat) {
-		this.stat = stat;
-		if(stat != null){
-			putBodyParameter("Stat", stat);
+	public void setInitiativeRecoverValue(String initiativeRecoverValue) {
+		this.initiativeRecoverValue = initiativeRecoverValue;
+		if(initiativeRecoverValue != null){
+			putBodyParameter("InitiativeRecoverValue", initiativeRecoverValue);
 		}
 	}
 
@@ -124,28 +102,6 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
-		}
-	}
-
-	public String getApiEndpoint() {
-		return this.apiEndpoint;
-	}
-
-	public void setApiEndpoint(String apiEndpoint) {
-		this.apiEndpoint = apiEndpoint;
-		if(apiEndpoint != null){
-			putBodyParameter("ApiEndpoint", apiEndpoint);
-		}
-	}
-
-	public Boolean getAutoRecover() {
-		return this.autoRecover;
-	}
-
-	public void setAutoRecover(Boolean autoRecover) {
-		this.autoRecover = autoRecover;
-		if(autoRecover != null){
-			putBodyParameter("AutoRecover", autoRecover.toString());
 		}
 	}
 
@@ -190,6 +146,50 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 		this.state = state;
 		if(state != null){
 			putBodyParameter("State", state.toString());
+		}
+	}
+
+	public String getInitiativeRecoverField() {
+		return this.initiativeRecoverField;
+	}
+
+	public void setInitiativeRecoverField(String initiativeRecoverField) {
+		this.initiativeRecoverField = initiativeRecoverField;
+		if(initiativeRecoverField != null){
+			putBodyParameter("InitiativeRecoverField", initiativeRecoverField);
+		}
+	}
+
+	public String getFieldRedefineRules() {
+		return this.fieldRedefineRules;
+	}
+
+	public void setFieldRedefineRules(String fieldRedefineRules) {
+		this.fieldRedefineRules = fieldRedefineRules;
+		if(fieldRedefineRules != null){
+			putBodyParameter("FieldRedefineRules", fieldRedefineRules);
+		}
+	}
+
+	public String getStat() {
+		return this.stat;
+	}
+
+	public void setStat(String stat) {
+		this.stat = stat;
+		if(stat != null){
+			putBodyParameter("Stat", stat);
+		}
+	}
+
+	public Boolean getAutoRecover() {
+		return this.autoRecover;
+	}
+
+	public void setAutoRecover(Boolean autoRecover) {
+		this.autoRecover = autoRecover;
+		if(autoRecover != null){
+			putBodyParameter("AutoRecover", autoRecover.toString());
 		}
 	}
 

@@ -26,7 +26,7 @@ public class DeleteUserSearchCompanyRequest extends RpcAcsRequest<DeleteUserSear
 
 	private Long id;
 	public DeleteUserSearchCompanyRequest() {
-		super("Copyright", "2019-01-23", "DeleteUserSearchCompany");
+		super("Copyright", "2019-01-23", "DeleteUserSearchCompany", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

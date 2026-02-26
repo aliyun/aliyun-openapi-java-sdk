@@ -28,6 +28,8 @@ public class RemoveUserFromVpcEndpointServiceRequest extends RpcAcsRequest<Remov
 
 	private String clientToken;
 
+	private String userARN;
+
 	private Long userId;
 
 	private Boolean dryRun;
@@ -51,6 +53,17 @@ public class RemoveUserFromVpcEndpointServiceRequest extends RpcAcsRequest<Remov
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getUserARN() {
+		return this.userARN;
+	}
+
+	public void setUserARN(String userARN) {
+		this.userARN = userARN;
+		if(userARN != null){
+			putQueryParameter("UserARN", userARN);
 		}
 	}
 

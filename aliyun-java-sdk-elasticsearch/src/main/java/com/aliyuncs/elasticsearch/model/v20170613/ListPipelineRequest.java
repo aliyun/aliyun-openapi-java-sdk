@@ -31,8 +31,6 @@ public class ListPipelineRequest extends RoaAcsRequest<ListPipelineResponse> {
 
 	private Integer page;
 
-	private String body;
-
 	private String pipelineId;
 	public ListPipelineRequest() {
 		super("elasticsearch", "2017-06-13", "ListPipeline", "elasticsearch");
@@ -74,17 +72,6 @@ public class ListPipelineRequest extends RoaAcsRequest<ListPipelineResponse> {
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

@@ -27,13 +27,13 @@ public class GetUserApplicationsResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer httpStatusCode;
-
 	private String requestId;
 
-	private Boolean success;
+	private Integer httpStatusCode;
 
 	private String code;
+
+	private Boolean success;
 
 	private List<AppNameAndIdPairsItem> appNameAndIdPairs;
 
@@ -45,14 +45,6 @@ public class GetUserApplicationsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -61,12 +53,12 @@ public class GetUserApplicationsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -75,6 +67,14 @@ public class GetUserApplicationsResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<AppNameAndIdPairsItem> getAppNameAndIdPairs() {
@@ -87,21 +87,13 @@ public class GetUserApplicationsResponse extends AcsResponse {
 
 	public static class AppNameAndIdPairsItem {
 
-		private String appId;
-
 		private String appName;
 
-		private Integer appType;
+		private String appId;
 
 		private Integer scopeType;
 
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
+		private Integer appType;
 
 		public String getAppName() {
 			return this.appName;
@@ -111,12 +103,12 @@ public class GetUserApplicationsResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public Integer getAppType() {
-			return this.appType;
+		public String getAppId() {
+			return this.appId;
 		}
 
-		public void setAppType(Integer appType) {
-			this.appType = appType;
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public Integer getScopeType() {
@@ -125,6 +117,14 @@ public class GetUserApplicationsResponse extends AcsResponse {
 
 		public void setScopeType(Integer scopeType) {
 			this.scopeType = scopeType;
+		}
+
+		public Integer getAppType() {
+			return this.appType;
+		}
+
+		public void setAppType(Integer appType) {
+			this.appType = appType;
 		}
 	}
 

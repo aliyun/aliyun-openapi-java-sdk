@@ -31,7 +31,7 @@ public class CreateCalculationRequest extends RpcAcsRequest<CreateCalculationRes
 
 	private String queryString;
 	public CreateCalculationRequest() {
-		super("UniMkt", "2018-12-12", "CreateCalculation", "1.0.0");
+		super("UniMkt", "2018-12-12", "CreateCalculation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

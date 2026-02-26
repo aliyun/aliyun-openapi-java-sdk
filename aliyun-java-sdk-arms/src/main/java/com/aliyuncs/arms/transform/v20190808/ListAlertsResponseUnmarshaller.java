@@ -30,6 +30,7 @@ public class ListAlertsResponseUnmarshaller {
 	public static ListAlertsResponse unmarshall(ListAlertsResponse listAlertsResponse, UnmarshallerContext _ctx) {
 		
 		listAlertsResponse.setRequestId(_ctx.stringValue("ListAlertsResponse.RequestId"));
+		listAlertsResponse.setMessage(_ctx.stringValue("ListAlertsResponse.Message"));
 
 		PageBean pageBean = new PageBean();
 		pageBean.setTotal(_ctx.longValue("ListAlertsResponse.PageBean.Total"));
@@ -46,6 +47,13 @@ public class ListAlertsResponseUnmarshaller {
 			listAlertsItem.setDispatchRuleName(_ctx.stringValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].DispatchRuleName"));
 			listAlertsItem.setCreateTime(_ctx.stringValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].CreateTime"));
 			listAlertsItem.setAlertId(_ctx.longValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].AlertId"));
+			listAlertsItem.setSolution(_ctx.stringValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].Solution"));
+			listAlertsItem.setOwner(_ctx.stringValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].Owner"));
+			listAlertsItem.setHandler(_ctx.stringValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].Handler"));
+			listAlertsItem.setAcknowledgeTime(_ctx.longValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].AcknowledgeTime"));
+			listAlertsItem.setRecoverTime(_ctx.longValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].RecoverTime"));
+			listAlertsItem.setNotifyRobots(_ctx.stringValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].NotifyRobots"));
+			listAlertsItem.setDescribe(_ctx.stringValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].Describe"));
 
 			List<ActivitiesItem> activities = new ArrayList<ActivitiesItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].Activities.Length"); j++) {

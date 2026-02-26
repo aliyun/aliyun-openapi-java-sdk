@@ -26,8 +26,6 @@ public class DescribeDynamicSettingsRequest extends RoaAcsRequest<DescribeDynami
 	   
 
 	private String instanceId;
-
-	private String body;
 	public DescribeDynamicSettingsRequest() {
 		super("elasticsearch", "2017-06-13", "DescribeDynamicSettings", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/dynamic-settings");
@@ -46,17 +44,6 @@ public class DescribeDynamicSettingsRequest extends RoaAcsRequest<DescribeDynami
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

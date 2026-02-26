@@ -27,7 +27,7 @@ public class DeletePtsScenesRequest extends RpcAcsRequest<DeletePtsScenesRespons
 
 	private String sceneIds;
 	public DeletePtsScenesRequest() {
-		super("PTS", "2020-10-20", "DeletePtsScenes", "pts");
+		super("PTS", "2020-10-20", "DeletePtsScenes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

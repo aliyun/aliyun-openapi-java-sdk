@@ -25,15 +25,13 @@ import com.aliyuncs.cdn.Endpoint;
 public class CreateUserUsageDataExportTaskRequest extends RpcAcsRequest<CreateUserUsageDataExportTaskResponse> {
 	   
 
+	private String endTime;
+
 	private String taskName;
 
 	private String language;
 
 	private String startTime;
-
-	private String endTime;
-
-	private Long ownerId;
 	public CreateUserUsageDataExportTaskRequest() {
 		super("Cdn", "2018-05-10", "CreateUserUsageDataExportTask");
 		setMethod(MethodType.POST);
@@ -41,6 +39,17 @@ public class CreateUserUsageDataExportTaskRequest extends RpcAcsRequest<CreateUs
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public String getTaskName() {
@@ -73,28 +82,6 @@ public class CreateUserUsageDataExportTaskRequest extends RpcAcsRequest<CreateUs
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

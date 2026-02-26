@@ -30,6 +30,7 @@ public class DescribePrePaidInstanceStockResponseUnmarshaller {
 		describePrePaidInstanceStockResponse.setInstanceSpec(_ctx.stringValue("DescribePrePaidInstanceStockResponse.InstanceSpec"));
 		describePrePaidInstanceStockResponse.setMemory(_ctx.integerValue("DescribePrePaidInstanceStockResponse.Memory"));
 		describePrePaidInstanceStockResponse.setSystemDiskSize(_ctx.integerValue("DescribePrePaidInstanceStockResponse.SystemDiskSize"));
+		describePrePaidInstanceStockResponse.setResourceGap(_ctx.stringValue("DescribePrePaidInstanceStockResponse.ResourceGap"));
 	 
 	 	return describePrePaidInstanceStockResponse;
 	}

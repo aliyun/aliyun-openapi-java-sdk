@@ -37,7 +37,7 @@ public class CreateVerifySettingRequest extends RpcAcsRequest<CreateVerifySettin
 
 	private Boolean privacyStep;
 	public CreateVerifySettingRequest() {
-		super("Cloudauth", "2019-03-07", "CreateVerifySetting");
+		super("Cloudauth", "2019-03-07", "CreateVerifySetting", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

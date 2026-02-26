@@ -27,7 +27,7 @@ public class DisableSceneDefensePolicyRequest extends RpcAcsRequest<DisableScene
 
 	private String policyId;
 	public DisableSceneDefensePolicyRequest() {
-		super("ddoscoo", "2020-01-01", "DisableSceneDefensePolicy");
+		super("ddoscoo", "2020-01-01", "DisableSceneDefensePolicy", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

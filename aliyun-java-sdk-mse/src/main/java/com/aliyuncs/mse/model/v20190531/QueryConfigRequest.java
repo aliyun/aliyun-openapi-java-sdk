@@ -25,22 +25,46 @@ import com.aliyuncs.mse.Endpoint;
 public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 	   
 
+	private String requestPars;
+
+	private Boolean needRunningConf;
+
 	private String configType;
 
 	private String clusterId;
 
 	private String instanceId;
 
-	private String requestPars;
-
 	private String acceptLanguage;
 	public QueryConfigRequest() {
 		super("mse", "2019-05-31", "QueryConfig", "mse");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public Boolean getNeedRunningConf() {
+		return this.needRunningConf;
+	}
+
+	public void setNeedRunningConf(Boolean needRunningConf) {
+		this.needRunningConf = needRunningConf;
+		if(needRunningConf != null){
+			putQueryParameter("NeedRunningConf", needRunningConf.toString());
+		}
 	}
 
 	public String getConfigType() {
@@ -73,17 +97,6 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

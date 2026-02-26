@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetConfigRuleReportResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private Integer httpStatusCode;
-
 	private Data data;
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,14 +56,6 @@ public class GetConfigRuleReportResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -66,21 +66,13 @@ public class GetConfigRuleReportResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String reportId;
-
 		private Long createdTime;
+
+		private String reportId;
 
 		private String targetId;
 
 		private String targetType;
-
-		public String getReportId() {
-			return this.reportId;
-		}
-
-		public void setReportId(String reportId) {
-			this.reportId = reportId;
-		}
 
 		public Long getCreatedTime() {
 			return this.createdTime;
@@ -88,6 +80,14 @@ public class GetConfigRuleReportResponse extends AcsResponse {
 
 		public void setCreatedTime(Long createdTime) {
 			this.createdTime = createdTime;
+		}
+
+		public String getReportId() {
+			return this.reportId;
+		}
+
+		public void setReportId(String reportId) {
+			this.reportId = reportId;
 		}
 
 		public String getTargetId() {

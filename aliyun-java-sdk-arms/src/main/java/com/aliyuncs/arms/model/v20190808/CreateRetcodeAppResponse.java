@@ -14,6 +14,7 @@
 
 package com.aliyuncs.arms.model.v20190808;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.arms.transform.v20190808.CreateRetcodeAppResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,6 +27,14 @@ public class CreateRetcodeAppResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer code;
+
+	private String data;
+
+	private Boolean success;
+
+	private String message;
+
 	private RetcodeAppDataBean retcodeAppDataBean;
 
 	public String getRequestId() {
@@ -34,6 +43,38 @@ public class CreateRetcodeAppResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public RetcodeAppDataBean getRetcodeAppDataBean() {
@@ -50,6 +91,10 @@ public class CreateRetcodeAppResponse extends AcsResponse {
 
 		private Long appId;
 
+		private String resourceGroupId;
+
+		private List<TagsItem> tags;
+
 		public String getPid() {
 			return this.pid;
 		}
@@ -64,6 +109,45 @@ public class CreateRetcodeAppResponse extends AcsResponse {
 
 		public void setAppId(Long appId) {
 			this.appId = appId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

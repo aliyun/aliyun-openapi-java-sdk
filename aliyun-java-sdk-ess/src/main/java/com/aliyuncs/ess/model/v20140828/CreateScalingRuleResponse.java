@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateScalingRuleResponse extends AcsResponse {
 
-	private String scalingRuleId;
-
 	private String scalingRuleAri;
 
 	private String requestId;
 
-	public String getScalingRuleId() {
-		return this.scalingRuleId;
-	}
-
-	public void setScalingRuleId(String scalingRuleId) {
-		this.scalingRuleId = scalingRuleId;
-	}
+	private String scalingRuleId;
 
 	public String getScalingRuleAri() {
 		return this.scalingRuleAri;
@@ -52,6 +44,14 @@ public class CreateScalingRuleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getScalingRuleId() {
+		return this.scalingRuleId;
+	}
+
+	public void setScalingRuleId(String scalingRuleId) {
+		this.scalingRuleId = scalingRuleId;
 	}
 
 	@Override

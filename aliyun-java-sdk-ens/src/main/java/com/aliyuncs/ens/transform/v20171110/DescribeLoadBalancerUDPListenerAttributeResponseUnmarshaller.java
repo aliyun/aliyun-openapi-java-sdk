@@ -38,6 +38,7 @@ public class DescribeLoadBalancerUDPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerUDPListenerAttributeResponse.setHealthCheckReq(_ctx.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.HealthCheckReq"));
 		describeLoadBalancerUDPListenerAttributeResponse.setHealthCheckExp(_ctx.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.HealthCheckExp"));
 		describeLoadBalancerUDPListenerAttributeResponse.setEipTransmit(_ctx.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.EipTransmit"));
+		describeLoadBalancerUDPListenerAttributeResponse.setEstablishedTimeout(_ctx.integerValue("DescribeLoadBalancerUDPListenerAttributeResponse.EstablishedTimeout"));
 	 
 	 	return describeLoadBalancerUDPListenerAttributeResponse;
 	}

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.sddp.model.v20190103.DescribeTablesResponse;
 import com.aliyuncs.sddp.model.v20190103.DescribeTablesResponse.Table;
+import com.aliyuncs.sddp.model.v20190103.DescribeTablesResponse.Table.ModelTagsItem;
 import com.aliyuncs.sddp.model.v20190103.DescribeTablesResponse.Table.Rule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -74,6 +75,16 @@ public class DescribeTablesResponseUnmarshaller {
 				ruleList.add(rule);
 			}
 			table.setRuleList(ruleList);
+
+			List<ModelTagsItem> modelTags = new ArrayList<ModelTagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeTablesResponse.Items["+ i +"].ModelTags.Length"); j++) {
+				ModelTagsItem modelTagsItem = new ModelTagsItem();
+				modelTagsItem.setId(_ctx.longValue("DescribeTablesResponse.Items["+ i +"].ModelTags["+ j +"].Id"));
+				modelTagsItem.setName(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].ModelTags["+ j +"].Name"));
+
+				modelTags.add(modelTagsItem);
+			}
+			table.setModelTags(modelTags);
 
 			items.add(table);
 		}

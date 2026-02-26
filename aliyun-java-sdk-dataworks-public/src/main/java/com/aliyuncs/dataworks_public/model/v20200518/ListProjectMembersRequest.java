@@ -25,11 +25,11 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class ListProjectMembersRequest extends RpcAcsRequest<ListProjectMembersResponse> {
 	   
 
+	private Integer pageNumber;
+
 	private Integer pageSize;
 
 	private Long projectId;
-
-	private Integer pageNumber;
 	public ListProjectMembersRequest() {
 		super("dataworks-public", "2020-05-18", "ListProjectMembers");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class ListProjectMembersRequest extends RpcAcsRequest<ListProjectMembersR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public Integer getPageSize() {
@@ -58,17 +69,6 @@ public class ListProjectMembersRequest extends RpcAcsRequest<ListProjectMembersR
 		this.projectId = projectId;
 		if(projectId != null){
 			putQueryParameter("ProjectId", projectId.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

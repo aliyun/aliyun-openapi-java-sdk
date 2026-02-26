@@ -15,6 +15,9 @@
 package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ram.Endpoint;
@@ -30,11 +33,14 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 
 	private String assumeRolePolicyDocument;
 
+	@SerializedName("tag")
+	private List<Tag> tag;
+
 	private Long maxSessionDuration;
 
 	private String roleName;
 	public CreateRoleRequest() {
-		super("Ram", "2015-05-01", "CreateRole", "Ram");
+		super("Ram", "2015-05-01", "CreateRole", "ram");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -65,6 +71,17 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 		}
 	}
 
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			putQueryParameter("Tag" , new Gson().toJson(tag));
+		}	
+	}
+
 	public Long getMaxSessionDuration() {
 		return this.maxSessionDuration;
 	}
@@ -84,6 +101,31 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 		this.roleName = roleName;
 		if(roleName != null){
 			putQueryParameter("RoleName", roleName);
+		}
+	}
+
+	public static class Tag {
+
+		@SerializedName("Value")
+		private String value;
+
+		@SerializedName("Key")
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

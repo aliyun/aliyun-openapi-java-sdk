@@ -34,6 +34,8 @@ public class CreateVpcGatewayEndpointResponse extends AcsResponse {
 
 	private String creationTime;
 
+	private String resourceGroupId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +74,14 @@ public class CreateVpcGatewayEndpointResponse extends AcsResponse {
 
 	public void setCreationTime(String creationTime) {
 		this.creationTime = creationTime;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

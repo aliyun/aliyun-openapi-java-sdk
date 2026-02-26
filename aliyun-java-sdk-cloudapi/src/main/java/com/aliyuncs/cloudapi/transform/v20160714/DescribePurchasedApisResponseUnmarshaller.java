@@ -27,21 +27,24 @@ public class DescribePurchasedApisResponseUnmarshaller {
 	public static DescribePurchasedApisResponse unmarshall(DescribePurchasedApisResponse describePurchasedApisResponse, UnmarshallerContext _ctx) {
 		
 		describePurchasedApisResponse.setRequestId(_ctx.stringValue("DescribePurchasedApisResponse.RequestId"));
-		describePurchasedApisResponse.setTotalCount(_ctx.integerValue("DescribePurchasedApisResponse.TotalCount"));
-		describePurchasedApisResponse.setPageSize(_ctx.integerValue("DescribePurchasedApisResponse.PageSize"));
 		describePurchasedApisResponse.setPageNumber(_ctx.integerValue("DescribePurchasedApisResponse.PageNumber"));
+		describePurchasedApisResponse.setPageSize(_ctx.integerValue("DescribePurchasedApisResponse.PageSize"));
+		describePurchasedApisResponse.setTotalCount(_ctx.integerValue("DescribePurchasedApisResponse.TotalCount"));
 
 		List<PurchasedApi> purchasedApis = new ArrayList<PurchasedApi>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePurchasedApisResponse.PurchasedApis.Length"); i++) {
 			PurchasedApi purchasedApi = new PurchasedApi();
-			purchasedApi.setRegionId(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].RegionId"));
-			purchasedApi.setGroupId(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].GroupId"));
-			purchasedApi.setGroupName(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].GroupName"));
-			purchasedApi.setApiId(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].ApiId"));
-			purchasedApi.setApiName(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].ApiName"));
-			purchasedApi.setStageName(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].StageName"));
-			purchasedApi.setDescription(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].Description"));
+			purchasedApi.setVisibility(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].Visibility"));
 			purchasedApi.setPurchasedTime(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].PurchasedTime"));
+			purchasedApi.setApiId(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].ApiId"));
+			purchasedApi.setModifiedTime(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].ModifiedTime"));
+			purchasedApi.setDescription(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].Description"));
+			purchasedApi.setGroupName(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].GroupName"));
+			purchasedApi.setGroupId(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].GroupId"));
+			purchasedApi.setDeployedTime(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].DeployedTime"));
+			purchasedApi.setStageName(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].StageName"));
+			purchasedApi.setApiName(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].ApiName"));
+			purchasedApi.setRegionId(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].RegionId"));
 
 			purchasedApis.add(purchasedApi);
 		}

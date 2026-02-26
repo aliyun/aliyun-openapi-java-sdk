@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ExecuteScriptRequest extends RpcAcsRequest<ExecuteScriptResponse> {
 	   
 
-	private String script;
-
 	private Long tid;
+
+	private String script;
 
 	private Integer dbId;
 
@@ -41,17 +41,6 @@ public class ExecuteScriptRequest extends RpcAcsRequest<ExecuteScriptResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getScript() {
-		return this.script;
-	}
-
-	public void setScript(String script) {
-		this.script = script;
-		if(script != null){
-			putQueryParameter("Script", script);
-		}
-	}
-
 	public Long getTid() {
 		return this.tid;
 	}
@@ -60,6 +49,17 @@ public class ExecuteScriptRequest extends RpcAcsRequest<ExecuteScriptResponse> {
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getScript() {
+		return this.script;
+	}
+
+	public void setScript(String script) {
+		this.script = script;
+		if(script != null){
+			putQueryParameter("Script", script);
 		}
 	}
 

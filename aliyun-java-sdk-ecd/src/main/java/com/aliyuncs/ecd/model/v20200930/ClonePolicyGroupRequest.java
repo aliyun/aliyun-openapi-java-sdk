@@ -29,7 +29,7 @@ public class ClonePolicyGroupRequest extends RpcAcsRequest<ClonePolicyGroupRespo
 
 	private String policyGroupId;
 	public ClonePolicyGroupRequest() {
-		super("ecd", "2020-09-30", "ClonePolicyGroup");
+		super("ecd", "2020-09-30", "ClonePolicyGroup", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

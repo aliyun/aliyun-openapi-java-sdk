@@ -23,6 +23,7 @@ public class CheckAccountNameAvailableResponseUnmarshaller {
 	public static CheckAccountNameAvailableResponse unmarshall(CheckAccountNameAvailableResponse checkAccountNameAvailableResponse, UnmarshallerContext _ctx) {
 		
 		checkAccountNameAvailableResponse.setRequestId(_ctx.stringValue("CheckAccountNameAvailableResponse.RequestId"));
+		checkAccountNameAvailableResponse.setResourceGroupId(_ctx.stringValue("CheckAccountNameAvailableResponse.ResourceGroupId"));
 	 
 	 	return checkAccountNameAvailableResponse;
 	}

@@ -24,41 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainDnssecInfoResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String domainName;
-
 	private String status;
 
-	private String dsRecord;
+	private String requestId;
 
 	private String digest;
 
-	private String digestType;
-
-	private String algorithm;
+	private String domainName;
 
 	private String publicKey;
+
+	private String digestType;
+
+	private String dsRecord;
 
 	private String keyTag;
 
 	private String flags;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-	}
+	private String algorithm;
 
 	public String getStatus() {
 		return this.status;
@@ -68,12 +52,12 @@ public class DescribeDomainDnssecInfoResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getDsRecord() {
-		return this.dsRecord;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDsRecord(String dsRecord) {
-		this.dsRecord = dsRecord;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDigest() {
@@ -84,20 +68,12 @@ public class DescribeDomainDnssecInfoResponse extends AcsResponse {
 		this.digest = digest;
 	}
 
-	public String getDigestType() {
-		return this.digestType;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setDigestType(String digestType) {
-		this.digestType = digestType;
-	}
-
-	public String getAlgorithm() {
-		return this.algorithm;
-	}
-
-	public void setAlgorithm(String algorithm) {
-		this.algorithm = algorithm;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
 	}
 
 	public String getPublicKey() {
@@ -106,6 +82,22 @@ public class DescribeDomainDnssecInfoResponse extends AcsResponse {
 
 	public void setPublicKey(String publicKey) {
 		this.publicKey = publicKey;
+	}
+
+	public String getDigestType() {
+		return this.digestType;
+	}
+
+	public void setDigestType(String digestType) {
+		this.digestType = digestType;
+	}
+
+	public String getDsRecord() {
+		return this.dsRecord;
+	}
+
+	public void setDsRecord(String dsRecord) {
+		this.dsRecord = dsRecord;
 	}
 
 	public String getKeyTag() {
@@ -122,6 +114,14 @@ public class DescribeDomainDnssecInfoResponse extends AcsResponse {
 
 	public void setFlags(String flags) {
 		this.flags = flags;
+	}
+
+	public String getAlgorithm() {
+		return this.algorithm;
+	}
+
+	public void setAlgorithm(String algorithm) {
+		this.algorithm = algorithm;
 	}
 
 	@Override

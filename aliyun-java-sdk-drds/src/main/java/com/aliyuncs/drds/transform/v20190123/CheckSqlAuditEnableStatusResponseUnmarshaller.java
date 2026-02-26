@@ -23,8 +23,8 @@ public class CheckSqlAuditEnableStatusResponseUnmarshaller {
 	public static CheckSqlAuditEnableStatusResponse unmarshall(CheckSqlAuditEnableStatusResponse checkSqlAuditEnableStatusResponse, UnmarshallerContext _ctx) {
 		
 		checkSqlAuditEnableStatusResponse.setRequestId(_ctx.stringValue("CheckSqlAuditEnableStatusResponse.RequestId"));
-		checkSqlAuditEnableStatusResponse.setSuccess(_ctx.booleanValue("CheckSqlAuditEnableStatusResponse.Success"));
 		checkSqlAuditEnableStatusResponse.setStatus(_ctx.stringValue("CheckSqlAuditEnableStatusResponse.Status"));
+		checkSqlAuditEnableStatusResponse.setSuccess(_ctx.booleanValue("CheckSqlAuditEnableStatusResponse.Success"));
 	 
 	 	return checkSqlAuditEnableStatusResponse;
 	}

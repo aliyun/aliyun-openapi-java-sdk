@@ -31,19 +31,19 @@ public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupP
 
 	private Integer pageNum;
 
-	private String ownerId;
-
 	private String resourceGroupId;
 
 	private String backupPlanStatus;
 
-	private String backupPlanName;
-
 	private Integer pageSize;
+
+	private String ownerId;
+
+	private String backupPlanName;
 
 	private String region;
 	public DescribeBackupPlanListRequest() {
-		super("Dbs", "2019-03-06", "DescribeBackupPlanList");
+		super("Dbs", "2019-03-06", "DescribeBackupPlanList", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -84,17 +84,6 @@ public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupP
 		}
 	}
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -117,17 +106,6 @@ public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupP
 		}
 	}
 
-	public String getBackupPlanName() {
-		return this.backupPlanName;
-	}
-
-	public void setBackupPlanName(String backupPlanName) {
-		this.backupPlanName = backupPlanName;
-		if(backupPlanName != null){
-			putQueryParameter("BackupPlanName", backupPlanName);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -136,6 +114,28 @@ public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupP
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getBackupPlanName() {
+		return this.backupPlanName;
+	}
+
+	public void setBackupPlanName(String backupPlanName) {
+		this.backupPlanName = backupPlanName;
+		if(backupPlanName != null){
+			putQueryParameter("BackupPlanName", backupPlanName);
 		}
 	}
 

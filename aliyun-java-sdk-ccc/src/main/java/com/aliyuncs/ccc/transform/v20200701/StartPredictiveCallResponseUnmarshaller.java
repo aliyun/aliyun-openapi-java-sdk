@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.StartPredictiveCallResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.StartPredictiveCallResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.StartPredictiveCallResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.StartPredictiveCallResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,7 +56,6 @@ public class StartPredictiveCallResponseUnmarshaller {
 			channelContext.setUserId(_ctx.stringValue("StartPredictiveCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
 			channelContext.setChannelFlags(_ctx.stringValue("StartPredictiveCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
 			channelContext.setTimestamp(_ctx.longValue("StartPredictiveCallResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("StartPredictiveCallResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("StartPredictiveCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("StartPredictiveCallResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("StartPredictiveCallResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));

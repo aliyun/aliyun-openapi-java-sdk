@@ -33,7 +33,7 @@ public class ModifyBackupPlanNameRequest extends RpcAcsRequest<ModifyBackupPlanN
 
 	private String backupPlanName;
 	public ModifyBackupPlanNameRequest() {
-		super("Dbs", "2019-03-06", "ModifyBackupPlanName");
+		super("Dbs", "2019-03-06", "ModifyBackupPlanName", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DisableWebAccessLogConfigRequest extends RpcAcsRequest<DisableWebAc
 
 	private String domain;
 	public DisableWebAccessLogConfigRequest() {
-		super("ddoscoo", "2020-01-01", "DisableWebAccessLogConfig");
+		super("ddoscoo", "2020-01-01", "DisableWebAccessLogConfig", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -88,6 +88,8 @@ public class ListCheckInstanceResultResponse extends AcsResponse {
 
 		private String instanceName;
 
+		private String statusMessage;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -126,6 +128,14 @@ public class ListCheckInstanceResultResponse extends AcsResponse {
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
+		}
+
+		public String getStatusMessage() {
+			return this.statusMessage;
+		}
+
+		public void setStatusMessage(String statusMessage) {
+			this.statusMessage = statusMessage;
 		}
 	}
 

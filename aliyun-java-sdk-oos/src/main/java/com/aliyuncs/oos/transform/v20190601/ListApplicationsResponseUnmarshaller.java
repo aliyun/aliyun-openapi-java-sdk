@@ -40,6 +40,7 @@ public class ListApplicationsResponseUnmarshaller {
 			application.setTags(_ctx.mapValue("ListApplicationsResponse.Applications["+ i +"].Tags"));
 			application.setName(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].Name"));
 			application.setCreateDate(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].CreateDate"));
+			application.setApplicationType(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].ApplicationType"));
 
 			applications.add(application);
 		}

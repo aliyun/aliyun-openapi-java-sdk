@@ -25,11 +25,11 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ReDeployLhDagVersionRequest extends RpcAcsRequest<ReDeployLhDagVersionResponse> {
 	   
 
-	private Long dagVersion;
-
 	private Long dagId;
 
 	private Long tid;
+
+	private Long dagVersion;
 	public ReDeployLhDagVersionRequest() {
 		super("dms-enterprise", "2018-11-01", "ReDeployLhDagVersion", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class ReDeployLhDagVersionRequest extends RpcAcsRequest<ReDeployLhDagVers
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getDagVersion() {
-		return this.dagVersion;
-	}
-
-	public void setDagVersion(Long dagVersion) {
-		this.dagVersion = dagVersion;
-		if(dagVersion != null){
-			putQueryParameter("DagVersion", dagVersion.toString());
-		}
 	}
 
 	public Long getDagId() {
@@ -69,6 +58,17 @@ public class ReDeployLhDagVersionRequest extends RpcAcsRequest<ReDeployLhDagVers
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getDagVersion() {
+		return this.dagVersion;
+	}
+
+	public void setDagVersion(Long dagVersion) {
+		this.dagVersion = dagVersion;
+		if(dagVersion != null){
+			putQueryParameter("DagVersion", dagVersion.toString());
 		}
 	}
 

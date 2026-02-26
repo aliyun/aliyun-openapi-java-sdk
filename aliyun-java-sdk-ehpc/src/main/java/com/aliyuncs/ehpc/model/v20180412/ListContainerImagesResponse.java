@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListContainerImagesResponse extends AcsResponse {
 
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	private String requestId;
 
 	private Integer totalCount;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
 	private String dBInfo;
 
 	private List<ImagesItem> images;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class ListContainerImagesResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public String getDBInfo() {
@@ -87,13 +87,9 @@ public class ListContainerImagesResponse extends AcsResponse {
 
 	public static class ImagesItem {
 
-		private String system;
-
 		private String type;
 
 		private String status;
-
-		private String imageId;
 
 		private String updateDateTime;
 
@@ -101,13 +97,9 @@ public class ListContainerImagesResponse extends AcsResponse {
 
 		private String tag;
 
-		public String getSystem() {
-			return this.system;
-		}
+		private String system;
 
-		public void setSystem(String system) {
-			this.system = system;
-		}
+		private String imageId;
 
 		public String getType() {
 			return this.type;
@@ -123,14 +115,6 @@ public class ListContainerImagesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
 		}
 
 		public String getUpdateDateTime() {
@@ -155,6 +139,22 @@ public class ListContainerImagesResponse extends AcsResponse {
 
 		public void setTag(String tag) {
 			this.tag = tag;
+		}
+
+		public String getSystem() {
+			return this.system;
+		}
+
+		public void setSystem(String system) {
+			this.system = system;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 	}
 

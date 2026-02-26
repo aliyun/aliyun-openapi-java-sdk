@@ -64,6 +64,8 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
 	private String privateServiceName;
 
+	private String resourceGroupId;
+
 	public String getPayer() {
 		return this.payer;
 	}
@@ -222,6 +224,14 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
 	public void setPrivateServiceName(String privateServiceName) {
 		this.privateServiceName = privateServiceName;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

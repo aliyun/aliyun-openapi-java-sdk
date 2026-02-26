@@ -24,6 +24,7 @@ public class CreateReplicationJobResponseUnmarshaller {
 		
 		createReplicationJobResponse.setRequestId(_ctx.stringValue("CreateReplicationJobResponse.RequestId"));
 		createReplicationJobResponse.setJobId(_ctx.stringValue("CreateReplicationJobResponse.JobId"));
+		createReplicationJobResponse.setOrderId(_ctx.stringValue("CreateReplicationJobResponse.OrderId"));
 	 
 	 	return createReplicationJobResponse;
 	}

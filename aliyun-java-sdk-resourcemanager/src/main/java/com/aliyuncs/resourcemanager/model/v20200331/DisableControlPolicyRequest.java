@@ -26,7 +26,7 @@ import com.aliyuncs.resourcemanager.Endpoint;
 public class DisableControlPolicyRequest extends RpcAcsRequest<DisableControlPolicyResponse> {
 	   
 	public DisableControlPolicyRequest() {
-		super("ResourceManager", "2020-03-31", "DisableControlPolicy");
+		super("ResourceManager", "2020-03-31", "DisableControlPolicy", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -105,11 +105,25 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 		private String buildContent;
 
+		private String repairMode;
+
+		private String testContent;
+
+		private String imageFamily;
+
+		private String nvmeSupport;
+
 		private List<Tag> tags;
 
 		private List<String> toRegionIds;
 
 		private List<String> addAccounts;
+
+		private ImportImageOptions importImageOptions;
+
+		private AdvancedOptions advancedOptions;
+
+		private ImageOptions imageOptions;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -223,6 +237,38 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.buildContent = buildContent;
 		}
 
+		public String getRepairMode() {
+			return this.repairMode;
+		}
+
+		public void setRepairMode(String repairMode) {
+			this.repairMode = repairMode;
+		}
+
+		public String getTestContent() {
+			return this.testContent;
+		}
+
+		public void setTestContent(String testContent) {
+			this.testContent = testContent;
+		}
+
+		public String getImageFamily() {
+			return this.imageFamily;
+		}
+
+		public void setImageFamily(String imageFamily) {
+			this.imageFamily = imageFamily;
+		}
+
+		public String getNvmeSupport() {
+			return this.nvmeSupport;
+		}
+
+		public void setNvmeSupport(String nvmeSupport) {
+			this.nvmeSupport = nvmeSupport;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -247,6 +293,30 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.addAccounts = addAccounts;
 		}
 
+		public ImportImageOptions getImportImageOptions() {
+			return this.importImageOptions;
+		}
+
+		public void setImportImageOptions(ImportImageOptions importImageOptions) {
+			this.importImageOptions = importImageOptions;
+		}
+
+		public AdvancedOptions getAdvancedOptions() {
+			return this.advancedOptions;
+		}
+
+		public void setAdvancedOptions(AdvancedOptions advancedOptions) {
+			this.advancedOptions = advancedOptions;
+		}
+
+		public ImageOptions getImageOptions() {
+			return this.imageOptions;
+		}
+
+		public void setImageOptions(ImageOptions imageOptions) {
+			this.imageOptions = imageOptions;
+		}
+
 		public static class Tag {
 
 			private String tagValue;
@@ -267,6 +337,360 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+		}
+
+		public static class ImportImageOptions {
+
+			private String architecture;
+
+			private String oSType;
+
+			private String platform;
+
+			private String bootMode;
+
+			private String licenseType;
+
+			private Boolean retainImportedImage;
+
+			private String retentionStrategy;
+
+			private String imageName;
+
+			private String description;
+
+			private String roleName;
+
+			private List<DiskDeviceMapping> diskDeviceMappings;
+
+			private List<ImportImageTag> importImageTags;
+
+			private Features features;
+
+			public String getArchitecture() {
+				return this.architecture;
+			}
+
+			public void setArchitecture(String architecture) {
+				this.architecture = architecture;
+			}
+
+			public String getOSType() {
+				return this.oSType;
+			}
+
+			public void setOSType(String oSType) {
+				this.oSType = oSType;
+			}
+
+			public String getPlatform() {
+				return this.platform;
+			}
+
+			public void setPlatform(String platform) {
+				this.platform = platform;
+			}
+
+			public String getBootMode() {
+				return this.bootMode;
+			}
+
+			public void setBootMode(String bootMode) {
+				this.bootMode = bootMode;
+			}
+
+			public String getLicenseType() {
+				return this.licenseType;
+			}
+
+			public void setLicenseType(String licenseType) {
+				this.licenseType = licenseType;
+			}
+
+			public Boolean getRetainImportedImage() {
+				return this.retainImportedImage;
+			}
+
+			public void setRetainImportedImage(Boolean retainImportedImage) {
+				this.retainImportedImage = retainImportedImage;
+			}
+
+			public String getRetentionStrategy() {
+				return this.retentionStrategy;
+			}
+
+			public void setRetentionStrategy(String retentionStrategy) {
+				this.retentionStrategy = retentionStrategy;
+			}
+
+			public String getImageName() {
+				return this.imageName;
+			}
+
+			public void setImageName(String imageName) {
+				this.imageName = imageName;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getRoleName() {
+				return this.roleName;
+			}
+
+			public void setRoleName(String roleName) {
+				this.roleName = roleName;
+			}
+
+			public List<DiskDeviceMapping> getDiskDeviceMappings() {
+				return this.diskDeviceMappings;
+			}
+
+			public void setDiskDeviceMappings(List<DiskDeviceMapping> diskDeviceMappings) {
+				this.diskDeviceMappings = diskDeviceMappings;
+			}
+
+			public List<ImportImageTag> getImportImageTags() {
+				return this.importImageTags;
+			}
+
+			public void setImportImageTags(List<ImportImageTag> importImageTags) {
+				this.importImageTags = importImageTags;
+			}
+
+			public Features getFeatures() {
+				return this.features;
+			}
+
+			public void setFeatures(Features features) {
+				this.features = features;
+			}
+
+			public static class DiskDeviceMapping {
+
+				private String oSSBucket;
+
+				private String oSSObject;
+
+				private String format;
+
+				private Integer diskImageSize;
+
+				public String getOSSBucket() {
+					return this.oSSBucket;
+				}
+
+				public void setOSSBucket(String oSSBucket) {
+					this.oSSBucket = oSSBucket;
+				}
+
+				public String getOSSObject() {
+					return this.oSSObject;
+				}
+
+				public void setOSSObject(String oSSObject) {
+					this.oSSObject = oSSObject;
+				}
+
+				public String getFormat() {
+					return this.format;
+				}
+
+				public void setFormat(String format) {
+					this.format = format;
+				}
+
+				public Integer getDiskImageSize() {
+					return this.diskImageSize;
+				}
+
+				public void setDiskImageSize(Integer diskImageSize) {
+					this.diskImageSize = diskImageSize;
+				}
+			}
+
+			public static class ImportImageTag {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class Features {
+
+				private String nvmeSupport;
+
+				private String imdsSupport;
+
+				public String getNvmeSupport() {
+					return this.nvmeSupport;
+				}
+
+				public void setNvmeSupport(String nvmeSupport) {
+					this.nvmeSupport = nvmeSupport;
+				}
+
+				public String getImdsSupport() {
+					return this.imdsSupport;
+				}
+
+				public void setImdsSupport(String imdsSupport) {
+					this.imdsSupport = imdsSupport;
+				}
+			}
+		}
+
+		public static class AdvancedOptions {
+
+			private Boolean retainCloudAssistant;
+
+			private Boolean skipBuildImage;
+
+			private Boolean skipCheckImage;
+
+			private String imageNameSuffix;
+
+			public Boolean getRetainCloudAssistant() {
+				return this.retainCloudAssistant;
+			}
+
+			public void setRetainCloudAssistant(Boolean retainCloudAssistant) {
+				this.retainCloudAssistant = retainCloudAssistant;
+			}
+
+			public Boolean getSkipBuildImage() {
+				return this.skipBuildImage;
+			}
+
+			public void setSkipBuildImage(Boolean skipBuildImage) {
+				this.skipBuildImage = skipBuildImage;
+			}
+
+			public Boolean getSkipCheckImage() {
+				return this.skipCheckImage;
+			}
+
+			public void setSkipCheckImage(Boolean skipCheckImage) {
+				this.skipCheckImage = skipCheckImage;
+			}
+
+			public String getImageNameSuffix() {
+				return this.imageNameSuffix;
+			}
+
+			public void setImageNameSuffix(String imageNameSuffix) {
+				this.imageNameSuffix = imageNameSuffix;
+			}
+		}
+
+		public static class ImageOptions {
+
+			private String imageName;
+
+			private String imageFamily;
+
+			private String description;
+
+			private List<ImageTag> imageTags;
+
+			private ImageFeatures imageFeatures;
+
+			public String getImageName() {
+				return this.imageName;
+			}
+
+			public void setImageName(String imageName) {
+				this.imageName = imageName;
+			}
+
+			public String getImageFamily() {
+				return this.imageFamily;
+			}
+
+			public void setImageFamily(String imageFamily) {
+				this.imageFamily = imageFamily;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public List<ImageTag> getImageTags() {
+				return this.imageTags;
+			}
+
+			public void setImageTags(List<ImageTag> imageTags) {
+				this.imageTags = imageTags;
+			}
+
+			public ImageFeatures getImageFeatures() {
+				return this.imageFeatures;
+			}
+
+			public void setImageFeatures(ImageFeatures imageFeatures) {
+				this.imageFeatures = imageFeatures;
+			}
+
+			public static class ImageTag {
+
+				private String tagKey;
+
+				private String tagValue;
+
+				public String getTagKey() {
+					return this.tagKey;
+				}
+
+				public void setTagKey(String tagKey) {
+					this.tagKey = tagKey;
+				}
+
+				public String getTagValue() {
+					return this.tagValue;
+				}
+
+				public void setTagValue(String tagValue) {
+					this.tagValue = tagValue;
+				}
+			}
+
+			public static class ImageFeatures {
+
+				private String nvmeSupport;
+
+				public String getNvmeSupport() {
+					return this.nvmeSupport;
+				}
+
+				public void setNvmeSupport(String nvmeSupport) {
+					this.nvmeSupport = nvmeSupport;
+				}
 			}
 		}
 	}

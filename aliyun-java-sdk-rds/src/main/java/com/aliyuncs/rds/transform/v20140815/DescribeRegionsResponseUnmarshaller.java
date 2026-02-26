@@ -31,10 +31,10 @@ public class DescribeRegionsResponseUnmarshaller {
 		List<RDSRegion> regions = new ArrayList<RDSRegion>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
 			RDSRegion rDSRegion = new RDSRegion();
-			rDSRegion.setZoneId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].ZoneId"));
-			rDSRegion.setRegionEndpoint(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
 			rDSRegion.setLocalName(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].LocalName"));
+			rDSRegion.setRegionEndpoint(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
 			rDSRegion.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
+			rDSRegion.setZoneId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].ZoneId"));
 			rDSRegion.setZoneName(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].ZoneName"));
 
 			regions.add(rDSRegion);

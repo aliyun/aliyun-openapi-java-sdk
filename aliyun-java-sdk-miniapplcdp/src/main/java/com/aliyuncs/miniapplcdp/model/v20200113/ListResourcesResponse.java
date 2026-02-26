@@ -15,7 +15,6 @@
 package com.aliyuncs.miniapplcdp.model.v20200113;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.miniapplcdp.transform.v20200113.ListResourcesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -62,7 +61,7 @@ public class ListResourcesResponse extends AcsResponse {
 
 			private String appId;
 
-			private Map<Object,Object> content;
+			private Object content;
 
 			private String createTime;
 
@@ -82,6 +81,8 @@ public class ListResourcesResponse extends AcsResponse {
 
 			private String resourceType;
 
+			private String resourceDigest;
+
 			public String getAppId() {
 				return this.appId;
 			}
@@ -90,11 +91,11 @@ public class ListResourcesResponse extends AcsResponse {
 				this.appId = appId;
 			}
 
-			public Map<Object,Object> getContent() {
+			public Object getContent() {
 				return this.content;
 			}
 
-			public void setContent(Map<Object,Object> content) {
+			public void setContent(Object content) {
 				this.content = content;
 			}
 
@@ -168,6 +169,14 @@ public class ListResourcesResponse extends AcsResponse {
 
 			public void setResourceType(String resourceType) {
 				this.resourceType = resourceType;
+			}
+
+			public String getResourceDigest() {
+				return this.resourceDigest;
+			}
+
+			public void setResourceDigest(String resourceDigest) {
+				this.resourceDigest = resourceDigest;
 			}
 		}
 	}

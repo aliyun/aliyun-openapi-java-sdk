@@ -14,6 +14,7 @@
 
 package com.aliyuncs.mts.model.v20140618;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.mts.transform.v20140618.SubmitSnapshotJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -180,6 +181,8 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 
 			private String num;
 
+			private List<Long> timeArray;
+
 			private TileOut tileOut;
 
 			private OutputFile outputFile;
@@ -232,6 +235,14 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 
 			public void setNum(String num) {
 				this.num = num;
+			}
+
+			public List<Long> getTimeArray() {
+				return this.timeArray;
+			}
+
+			public void setTimeArray(List<Long> timeArray) {
+				this.timeArray = timeArray;
 			}
 
 			public TileOut getTileOut() {

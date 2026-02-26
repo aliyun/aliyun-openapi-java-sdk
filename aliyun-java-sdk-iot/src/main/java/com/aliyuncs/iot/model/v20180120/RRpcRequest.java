@@ -33,11 +33,13 @@ public class RRpcRequest extends RpcAcsRequest<RRpcResponse> {
 
 	private String productKey;
 
+	private String contentType;
+
 	private String topic;
 
 	private String deviceName;
 	public RRpcRequest() {
-		super("Iot", "2018-01-20", "RRpc");
+		super("Iot", "2018-01-20", "RRpc", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -74,7 +76,7 @@ public class RRpcRequest extends RpcAcsRequest<RRpcResponse> {
 	public void setRequestBase64Byte(String requestBase64Byte) {
 		this.requestBase64Byte = requestBase64Byte;
 		if(requestBase64Byte != null){
-			putQueryParameter("RequestBase64Byte", requestBase64Byte);
+			putBodyParameter("RequestBase64Byte", requestBase64Byte);
 		}
 	}
 
@@ -86,6 +88,17 @@ public class RRpcRequest extends RpcAcsRequest<RRpcResponse> {
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getContentType() {
+		return this.contentType;
+	}
+
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+		if(contentType != null){
+			putQueryParameter("ContentType", contentType);
 		}
 	}
 

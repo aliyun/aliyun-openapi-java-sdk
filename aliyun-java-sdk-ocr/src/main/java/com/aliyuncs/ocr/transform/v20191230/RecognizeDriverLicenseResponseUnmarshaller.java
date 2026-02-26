@@ -48,6 +48,8 @@ public class RecognizeDriverLicenseResponseUnmarshaller {
 		faceResult.setLicenseNumber(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.LicenseNumber"));
 		faceResult.setName(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.Name"));
 		faceResult.setIssueUnit(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.IssueUnit"));
+		faceResult.setNationality(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.Nationality"));
+		faceResult.setBirthDate(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.BirthDate"));
 		data.setFaceResult(faceResult);
 		recognizeDriverLicenseResponse.setData(data);
 	 

@@ -80,6 +80,8 @@ public class GetMonoRecordingResponse extends AcsResponse {
 
 		private String fileName;
 
+		private Long duration;
+
 		public String getFileUrl() {
 			return this.fileUrl;
 		}
@@ -94,6 +96,14 @@ public class GetMonoRecordingResponse extends AcsResponse {
 
 		public void setFileName(String fileName) {
 			this.fileName = fileName;
+		}
+
+		public Long getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Long duration) {
+			this.duration = duration;
 		}
 	}
 

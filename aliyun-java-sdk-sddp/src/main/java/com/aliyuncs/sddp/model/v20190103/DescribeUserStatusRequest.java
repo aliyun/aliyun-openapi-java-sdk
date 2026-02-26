@@ -25,6 +25,8 @@ import com.aliyuncs.sddp.Endpoint;
 public class DescribeUserStatusRequest extends RpcAcsRequest<DescribeUserStatusResponse> {
 	   
 
+	private Integer featureType;
+
 	private String lang;
 	public DescribeUserStatusRequest() {
 		super("Sddp", "2019-01-03", "DescribeUserStatus", "sddp");
@@ -33,6 +35,17 @@ public class DescribeUserStatusRequest extends RpcAcsRequest<DescribeUserStatusR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
+		}
 	}
 
 	public String getLang() {

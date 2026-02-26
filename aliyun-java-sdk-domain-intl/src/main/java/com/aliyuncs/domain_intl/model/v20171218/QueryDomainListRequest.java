@@ -15,34 +15,24 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListResponse> {
-	
-	public QueryDomainListRequest() {
-		super("Domain-intl", "2017-12-18", "QueryDomainList", "domain");
-	}
-
-	private Long endExpirationDate;
+	   
 
 	private String productDomainType;
 
+	private String ccompany;
+
 	private String orderKeyType;
-
-	private String domainName;
-
-	private Long startExpirationDate;
 
 	private Integer pageNum;
 
 	private String orderByType;
-
-	private Long endRegistrationDate;
-
-	private String userClientIp;
 
 	private Integer pageSize;
 
@@ -50,17 +40,20 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 
 	private String queryType;
 
+	private Long endExpirationDate;
+
+	private String domainName;
+
+	private Long startExpirationDate;
+
+	private Long endRegistrationDate;
+
+	private String userClientIp;
+
 	private Long startRegistrationDate;
-
-	public Long getEndExpirationDate() {
-		return this.endExpirationDate;
-	}
-
-	public void setEndExpirationDate(Long endExpirationDate) {
-		this.endExpirationDate = endExpirationDate;
-		if(endExpirationDate != null){
-			putQueryParameter("EndExpirationDate", endExpirationDate.toString());
-		}
+	public QueryDomainListRequest() {
+		super("Domain-intl", "2017-12-18", "QueryDomainList");
+		setMethod(MethodType.POST);
 	}
 
 	public String getProductDomainType() {
@@ -74,6 +67,17 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		}
 	}
 
+	public String getCcompany() {
+		return this.ccompany;
+	}
+
+	public void setCcompany(String ccompany) {
+		this.ccompany = ccompany;
+		if(ccompany != null){
+			putQueryParameter("Ccompany", ccompany);
+		}
+	}
+
 	public String getOrderKeyType() {
 		return this.orderKeyType;
 	}
@@ -82,28 +86,6 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		this.orderKeyType = orderKeyType;
 		if(orderKeyType != null){
 			putQueryParameter("OrderKeyType", orderKeyType);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getStartExpirationDate() {
-		return this.startExpirationDate;
-	}
-
-	public void setStartExpirationDate(Long startExpirationDate) {
-		this.startExpirationDate = startExpirationDate;
-		if(startExpirationDate != null){
-			putQueryParameter("StartExpirationDate", startExpirationDate.toString());
 		}
 	}
 
@@ -126,28 +108,6 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		this.orderByType = orderByType;
 		if(orderByType != null){
 			putQueryParameter("OrderByType", orderByType);
-		}
-	}
-
-	public Long getEndRegistrationDate() {
-		return this.endRegistrationDate;
-	}
-
-	public void setEndRegistrationDate(Long endRegistrationDate) {
-		this.endRegistrationDate = endRegistrationDate;
-		if(endRegistrationDate != null){
-			putQueryParameter("EndRegistrationDate", endRegistrationDate.toString());
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 
@@ -181,6 +141,61 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		this.queryType = queryType;
 		if(queryType != null){
 			putQueryParameter("QueryType", queryType);
+		}
+	}
+
+	public Long getEndExpirationDate() {
+		return this.endExpirationDate;
+	}
+
+	public void setEndExpirationDate(Long endExpirationDate) {
+		this.endExpirationDate = endExpirationDate;
+		if(endExpirationDate != null){
+			putQueryParameter("EndExpirationDate", endExpirationDate.toString());
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getStartExpirationDate() {
+		return this.startExpirationDate;
+	}
+
+	public void setStartExpirationDate(Long startExpirationDate) {
+		this.startExpirationDate = startExpirationDate;
+		if(startExpirationDate != null){
+			putQueryParameter("StartExpirationDate", startExpirationDate.toString());
+		}
+	}
+
+	public Long getEndRegistrationDate() {
+		return this.endRegistrationDate;
+	}
+
+	public void setEndRegistrationDate(Long endRegistrationDate) {
+		this.endRegistrationDate = endRegistrationDate;
+		if(endRegistrationDate != null){
+			putQueryParameter("EndRegistrationDate", endRegistrationDate.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

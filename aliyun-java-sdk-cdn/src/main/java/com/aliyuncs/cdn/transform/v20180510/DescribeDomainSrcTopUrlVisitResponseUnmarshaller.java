@@ -27,17 +27,17 @@ public class DescribeDomainSrcTopUrlVisitResponseUnmarshaller {
 	public static DescribeDomainSrcTopUrlVisitResponse unmarshall(DescribeDomainSrcTopUrlVisitResponse describeDomainSrcTopUrlVisitResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainSrcTopUrlVisitResponse.setRequestId(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.RequestId"));
-		describeDomainSrcTopUrlVisitResponse.setDomainName(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.DomainName"));
 		describeDomainSrcTopUrlVisitResponse.setStartTime(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.StartTime"));
+		describeDomainSrcTopUrlVisitResponse.setDomainName(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.DomainName"));
 
 		List<UrlList> allUrlList = new ArrayList<UrlList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainSrcTopUrlVisitResponse.AllUrlList.Length"); i++) {
 			UrlList urlList = new UrlList();
+			urlList.setFlow(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.AllUrlList["+ i +"].Flow"));
 			urlList.setUrlDetail(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.AllUrlList["+ i +"].UrlDetail"));
+			urlList.setFlowProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.AllUrlList["+ i +"].FlowProportion"));
 			urlList.setVisitData(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.AllUrlList["+ i +"].VisitData"));
 			urlList.setVisitProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.AllUrlList["+ i +"].VisitProportion"));
-			urlList.setFlow(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.AllUrlList["+ i +"].Flow"));
-			urlList.setFlowProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.AllUrlList["+ i +"].FlowProportion"));
 
 			allUrlList.add(urlList);
 		}
@@ -46,11 +46,11 @@ public class DescribeDomainSrcTopUrlVisitResponseUnmarshaller {
 		List<UrlList> url200List = new ArrayList<UrlList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainSrcTopUrlVisitResponse.Url200List.Length"); i++) {
 			UrlList urlList1 = new UrlList();
+			urlList1.setFlow(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url200List["+ i +"].Flow"));
 			urlList1.setUrlDetail(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url200List["+ i +"].UrlDetail"));
+			urlList1.setFlowProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.Url200List["+ i +"].FlowProportion"));
 			urlList1.setVisitData(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url200List["+ i +"].VisitData"));
 			urlList1.setVisitProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.Url200List["+ i +"].VisitProportion"));
-			urlList1.setFlow(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url200List["+ i +"].Flow"));
-			urlList1.setFlowProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.Url200List["+ i +"].FlowProportion"));
 
 			url200List.add(urlList1);
 		}
@@ -59,11 +59,11 @@ public class DescribeDomainSrcTopUrlVisitResponseUnmarshaller {
 		List<UrlList> url300List = new ArrayList<UrlList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainSrcTopUrlVisitResponse.Url300List.Length"); i++) {
 			UrlList urlList2 = new UrlList();
+			urlList2.setFlow(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url300List["+ i +"].Flow"));
 			urlList2.setUrlDetail(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url300List["+ i +"].UrlDetail"));
+			urlList2.setFlowProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.Url300List["+ i +"].FlowProportion"));
 			urlList2.setVisitData(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url300List["+ i +"].VisitData"));
 			urlList2.setVisitProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.Url300List["+ i +"].VisitProportion"));
-			urlList2.setFlow(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url300List["+ i +"].Flow"));
-			urlList2.setFlowProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.Url300List["+ i +"].FlowProportion"));
 
 			url300List.add(urlList2);
 		}
@@ -72,11 +72,11 @@ public class DescribeDomainSrcTopUrlVisitResponseUnmarshaller {
 		List<UrlList> url400List = new ArrayList<UrlList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainSrcTopUrlVisitResponse.Url400List.Length"); i++) {
 			UrlList urlList3 = new UrlList();
+			urlList3.setFlow(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url400List["+ i +"].Flow"));
 			urlList3.setUrlDetail(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url400List["+ i +"].UrlDetail"));
+			urlList3.setFlowProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.Url400List["+ i +"].FlowProportion"));
 			urlList3.setVisitData(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url400List["+ i +"].VisitData"));
 			urlList3.setVisitProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.Url400List["+ i +"].VisitProportion"));
-			urlList3.setFlow(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url400List["+ i +"].Flow"));
-			urlList3.setFlowProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.Url400List["+ i +"].FlowProportion"));
 
 			url400List.add(urlList3);
 		}
@@ -85,11 +85,11 @@ public class DescribeDomainSrcTopUrlVisitResponseUnmarshaller {
 		List<UrlList> url500List = new ArrayList<UrlList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainSrcTopUrlVisitResponse.Url500List.Length"); i++) {
 			UrlList urlList4 = new UrlList();
+			urlList4.setFlow(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url500List["+ i +"].Flow"));
 			urlList4.setUrlDetail(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url500List["+ i +"].UrlDetail"));
+			urlList4.setFlowProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.Url500List["+ i +"].FlowProportion"));
 			urlList4.setVisitData(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url500List["+ i +"].VisitData"));
 			urlList4.setVisitProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.Url500List["+ i +"].VisitProportion"));
-			urlList4.setFlow(_ctx.stringValue("DescribeDomainSrcTopUrlVisitResponse.Url500List["+ i +"].Flow"));
-			urlList4.setFlowProportion(_ctx.floatValue("DescribeDomainSrcTopUrlVisitResponse.Url500List["+ i +"].FlowProportion"));
 
 			url500List.add(urlList4);
 		}

@@ -91,6 +91,8 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 		private Boolean https2HttpEnable;
 
+		private String certRegion;
+
 		private List<ProxyConfig> proxyTypes;
 
 		private List<RealServer> realServers;
@@ -237,6 +239,14 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 		public void setHttps2HttpEnable(Boolean https2HttpEnable) {
 			this.https2HttpEnable = https2HttpEnable;
+		}
+
+		public String getCertRegion() {
+			return this.certRegion;
+		}
+
+		public void setCertRegion(String certRegion) {
+			this.certRegion = certRegion;
 		}
 
 		public List<ProxyConfig> getProxyTypes() {

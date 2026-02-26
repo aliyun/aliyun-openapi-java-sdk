@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLogBackupFilesResponse extends AcsResponse {
 
-	private Long totalFileSize;
-
 	private Integer pageNumber;
+
+	private Integer pageRecordCount;
 
 	private String requestId;
 
-	private Integer pageRecordCount;
+	private Long totalFileSize;
 
 	private Integer totalRecordCount;
 
 	private List<BinLogFile> items;
-
-	public Long getTotalFileSize() {
-		return this.totalFileSize;
-	}
-
-	public void setTotalFileSize(Long totalFileSize) {
-		this.totalFileSize = totalFileSize;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -51,6 +43,14 @@ public class DescribeLogBackupFilesResponse extends AcsResponse {
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
 	}
 
 	public String getRequestId() {
@@ -61,12 +61,12 @@ public class DescribeLogBackupFilesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
+	public Long getTotalFileSize() {
+		return this.totalFileSize;
 	}
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
+	public void setTotalFileSize(Long totalFileSize) {
+		this.totalFileSize = totalFileSize;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -87,24 +87,32 @@ public class DescribeLogBackupFilesResponse extends AcsResponse {
 
 	public static class BinLogFile {
 
-		private String logBeginTime;
+		private String downloadLink;
+
+		private Long fileSize;
 
 		private String intranetDownloadLink;
 
 		private String linkExpiredTime;
 
-		private String downloadLink;
+		private String logBeginTime;
 
 		private String logEndTime;
 
-		private Long fileSize;
-
-		public String getLogBeginTime() {
-			return this.logBeginTime;
+		public String getDownloadLink() {
+			return this.downloadLink;
 		}
 
-		public void setLogBeginTime(String logBeginTime) {
-			this.logBeginTime = logBeginTime;
+		public void setDownloadLink(String downloadLink) {
+			this.downloadLink = downloadLink;
+		}
+
+		public Long getFileSize() {
+			return this.fileSize;
+		}
+
+		public void setFileSize(Long fileSize) {
+			this.fileSize = fileSize;
 		}
 
 		public String getIntranetDownloadLink() {
@@ -123,12 +131,12 @@ public class DescribeLogBackupFilesResponse extends AcsResponse {
 			this.linkExpiredTime = linkExpiredTime;
 		}
 
-		public String getDownloadLink() {
-			return this.downloadLink;
+		public String getLogBeginTime() {
+			return this.logBeginTime;
 		}
 
-		public void setDownloadLink(String downloadLink) {
-			this.downloadLink = downloadLink;
+		public void setLogBeginTime(String logBeginTime) {
+			this.logBeginTime = logBeginTime;
 		}
 
 		public String getLogEndTime() {
@@ -137,14 +145,6 @@ public class DescribeLogBackupFilesResponse extends AcsResponse {
 
 		public void setLogEndTime(String logEndTime) {
 			this.logEndTime = logEndTime;
-		}
-
-		public Long getFileSize() {
-			return this.fileSize;
-		}
-
-		public void setFileSize(Long fileSize) {
-			this.fileSize = fileSize;
 		}
 	}
 

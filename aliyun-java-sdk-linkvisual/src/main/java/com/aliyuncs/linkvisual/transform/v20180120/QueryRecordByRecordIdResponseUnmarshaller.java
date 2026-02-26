@@ -27,17 +27,17 @@ public class QueryRecordByRecordIdResponseUnmarshaller {
 	public static QueryRecordByRecordIdResponse unmarshall(QueryRecordByRecordIdResponse queryRecordByRecordIdResponse, UnmarshallerContext _ctx) {
 		
 		queryRecordByRecordIdResponse.setRequestId(_ctx.stringValue("QueryRecordByRecordIdResponse.RequestId"));
-		queryRecordByRecordIdResponse.setSuccess(_ctx.booleanValue("QueryRecordByRecordIdResponse.Success"));
-		queryRecordByRecordIdResponse.setErrorMessage(_ctx.stringValue("QueryRecordByRecordIdResponse.ErrorMessage"));
 		queryRecordByRecordIdResponse.setCode(_ctx.stringValue("QueryRecordByRecordIdResponse.Code"));
+		queryRecordByRecordIdResponse.setErrorMessage(_ctx.stringValue("QueryRecordByRecordIdResponse.ErrorMessage"));
+		queryRecordByRecordIdResponse.setSuccess(_ctx.booleanValue("QueryRecordByRecordIdResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryRecordByRecordIdResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setEndTime(_ctx.stringValue("QueryRecordByRecordIdResponse.Data["+ i +"].EndTime"));
 			dataItem.setFileName(_ctx.stringValue("QueryRecordByRecordIdResponse.Data["+ i +"].FileName"));
 			dataItem.setVodUrl(_ctx.stringValue("QueryRecordByRecordIdResponse.Data["+ i +"].VodUrl"));
 			dataItem.setBeginTime(_ctx.stringValue("QueryRecordByRecordIdResponse.Data["+ i +"].BeginTime"));
-			dataItem.setEndTime(_ctx.stringValue("QueryRecordByRecordIdResponse.Data["+ i +"].EndTime"));
 
 			data.add(dataItem);
 		}

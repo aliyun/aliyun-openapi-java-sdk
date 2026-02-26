@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteCasterComponentResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String casterId;
 
 	private String componentId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getCasterId() {
 		return this.casterId;
@@ -52,6 +44,14 @@ public class DeleteCasterComponentResponse extends AcsResponse {
 
 	public void setComponentId(String componentId) {
 		this.componentId = componentId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

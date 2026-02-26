@@ -29,9 +29,9 @@ public class TransferDeviceInstanceResponseUnmarshaller {
 	public static TransferDeviceInstanceResponse unmarshall(TransferDeviceInstanceResponse transferDeviceInstanceResponse, UnmarshallerContext _ctx) {
 		
 		transferDeviceInstanceResponse.setRequestId(_ctx.stringValue("TransferDeviceInstanceResponse.RequestId"));
-		transferDeviceInstanceResponse.setSuccess(_ctx.booleanValue("TransferDeviceInstanceResponse.Success"));
-		transferDeviceInstanceResponse.setErrorMessage(_ctx.stringValue("TransferDeviceInstanceResponse.ErrorMessage"));
 		transferDeviceInstanceResponse.setCode(_ctx.stringValue("TransferDeviceInstanceResponse.Code"));
+		transferDeviceInstanceResponse.setErrorMessage(_ctx.stringValue("TransferDeviceInstanceResponse.ErrorMessage"));
+		transferDeviceInstanceResponse.setSuccess(_ctx.booleanValue("TransferDeviceInstanceResponse.Success"));
 
 		Data data = new Data();
 

@@ -85,6 +85,16 @@ public class ListTransitRouterMulticastDomainsResponse extends AcsResponse {
 
 		private String status;
 
+		private String transitRouterId;
+
+		private String regionId;
+
+		private String cenId;
+
+		private List<Tag> tags;
+
+		private Options options;
+
 		public String getTransitRouterMulticastDomainId() {
 			return this.transitRouterMulticastDomainId;
 		}
@@ -115,6 +125,92 @@ public class ListTransitRouterMulticastDomainsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getCenId() {
+			return this.cenId;
+		}
+
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public Options getOptions() {
+			return this.options;
+		}
+
+		public void setOptions(Options options) {
+			this.options = options;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
+		public static class Options {
+
+			private String igmpv2Support;
+
+			private String strictSourceControl;
+
+			public String getIgmpv2Support() {
+				return this.igmpv2Support;
+			}
+
+			public void setIgmpv2Support(String igmpv2Support) {
+				this.igmpv2Support = igmpv2Support;
+			}
+
+			public String getStrictSourceControl() {
+				return this.strictSourceControl;
+			}
+
+			public void setStrictSourceControl(String strictSourceControl) {
+				this.strictSourceControl = strictSourceControl;
+			}
 		}
 	}
 

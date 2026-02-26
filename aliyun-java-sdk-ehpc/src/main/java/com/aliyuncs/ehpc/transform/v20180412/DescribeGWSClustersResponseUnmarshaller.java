@@ -27,19 +27,19 @@ public class DescribeGWSClustersResponseUnmarshaller {
 	public static DescribeGWSClustersResponse unmarshall(DescribeGWSClustersResponse describeGWSClustersResponse, UnmarshallerContext _ctx) {
 		
 		describeGWSClustersResponse.setRequestId(_ctx.stringValue("DescribeGWSClustersResponse.RequestId"));
-		describeGWSClustersResponse.setTotalCount(_ctx.integerValue("DescribeGWSClustersResponse.TotalCount"));
-		describeGWSClustersResponse.setPageNumber(_ctx.integerValue("DescribeGWSClustersResponse.PageNumber"));
 		describeGWSClustersResponse.setPageSize(_ctx.integerValue("DescribeGWSClustersResponse.PageSize"));
+		describeGWSClustersResponse.setPageNumber(_ctx.integerValue("DescribeGWSClustersResponse.PageNumber"));
 		describeGWSClustersResponse.setCallerType(_ctx.stringValue("DescribeGWSClustersResponse.CallerType"));
+		describeGWSClustersResponse.setTotalCount(_ctx.integerValue("DescribeGWSClustersResponse.TotalCount"));
 
 		List<ClusterInfo> clusters = new ArrayList<ClusterInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGWSClustersResponse.Clusters.Length"); i++) {
 			ClusterInfo clusterInfo = new ClusterInfo();
-			clusterInfo.setClusterId(_ctx.stringValue("DescribeGWSClustersResponse.Clusters["+ i +"].ClusterId"));
-			clusterInfo.setStatus(_ctx.stringValue("DescribeGWSClustersResponse.Clusters["+ i +"].Status"));
-			clusterInfo.setCreateTime(_ctx.stringValue("DescribeGWSClustersResponse.Clusters["+ i +"].CreateTime"));
 			clusterInfo.setVpcId(_ctx.stringValue("DescribeGWSClustersResponse.Clusters["+ i +"].VpcId"));
+			clusterInfo.setStatus(_ctx.stringValue("DescribeGWSClustersResponse.Clusters["+ i +"].Status"));
 			clusterInfo.setInstanceCount(_ctx.integerValue("DescribeGWSClustersResponse.Clusters["+ i +"].InstanceCount"));
+			clusterInfo.setCreateTime(_ctx.stringValue("DescribeGWSClustersResponse.Clusters["+ i +"].CreateTime"));
+			clusterInfo.setClusterId(_ctx.stringValue("DescribeGWSClustersResponse.Clusters["+ i +"].ClusterId"));
 
 			clusters.add(clusterInfo);
 		}

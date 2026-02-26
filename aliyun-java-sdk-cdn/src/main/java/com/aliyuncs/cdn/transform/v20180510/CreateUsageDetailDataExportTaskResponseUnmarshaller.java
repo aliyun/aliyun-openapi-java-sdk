@@ -23,8 +23,8 @@ public class CreateUsageDetailDataExportTaskResponseUnmarshaller {
 	public static CreateUsageDetailDataExportTaskResponse unmarshall(CreateUsageDetailDataExportTaskResponse createUsageDetailDataExportTaskResponse, UnmarshallerContext _ctx) {
 		
 		createUsageDetailDataExportTaskResponse.setRequestId(_ctx.stringValue("CreateUsageDetailDataExportTaskResponse.RequestId"));
-		createUsageDetailDataExportTaskResponse.setStartTime(_ctx.stringValue("CreateUsageDetailDataExportTaskResponse.StartTime"));
 		createUsageDetailDataExportTaskResponse.setEndTime(_ctx.stringValue("CreateUsageDetailDataExportTaskResponse.EndTime"));
+		createUsageDetailDataExportTaskResponse.setStartTime(_ctx.stringValue("CreateUsageDetailDataExportTaskResponse.StartTime"));
 		createUsageDetailDataExportTaskResponse.setTaskId(_ctx.stringValue("CreateUsageDetailDataExportTaskResponse.TaskId"));
 	 
 	 	return createUsageDetailDataExportTaskResponse;

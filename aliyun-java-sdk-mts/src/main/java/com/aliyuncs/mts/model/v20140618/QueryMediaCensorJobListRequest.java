@@ -31,8 +31,6 @@ public class QueryMediaCensorJobListRequest extends RpcAcsRequest<QueryMediaCens
 
 	private String startOfJobCreatedTimeRange;
 
-	private String jobId;
-
 	private String state;
 
 	private String endOfJobCreatedTimeRange;
@@ -46,6 +44,8 @@ public class QueryMediaCensorJobListRequest extends RpcAcsRequest<QueryMediaCens
 	private Long ownerId;
 
 	private String pipelineId;
+
+	private String jobIds;
 	public QueryMediaCensorJobListRequest() {
 		super("Mts", "2014-06-18", "QueryMediaCensorJobList", "mts");
 		setMethod(MethodType.POST);
@@ -85,17 +85,6 @@ public class QueryMediaCensorJobListRequest extends RpcAcsRequest<QueryMediaCens
 		this.startOfJobCreatedTimeRange = startOfJobCreatedTimeRange;
 		if(startOfJobCreatedTimeRange != null){
 			putQueryParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
-		}
-	}
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
 		}
 	}
 
@@ -173,6 +162,17 @@ public class QueryMediaCensorJobListRequest extends RpcAcsRequest<QueryMediaCens
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getJobIds() {
+		return this.jobIds;
+	}
+
+	public void setJobIds(String jobIds) {
+		this.jobIds = jobIds;
+		if(jobIds != null){
+			putQueryParameter("JobIds", jobIds);
 		}
 	}
 

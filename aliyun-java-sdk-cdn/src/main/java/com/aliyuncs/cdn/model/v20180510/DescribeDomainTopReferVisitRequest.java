@@ -25,17 +25,13 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainTopReferVisitRequest extends RpcAcsRequest<DescribeDomainTopReferVisitResponse> {
 	   
 
-	private String startTime;
-
-	private String percent;
-
 	private String domainName;
 
 	private String endTime;
 
-	private Long ownerId;
-
 	private String sortBy;
+
+	private String startTime;
 	public DescribeDomainTopReferVisitRequest() {
 		super("Cdn", "2018-05-10", "DescribeDomainTopReferVisit");
 		setMethod(MethodType.POST);
@@ -43,28 +39,6 @@ public class DescribeDomainTopReferVisitRequest extends RpcAcsRequest<DescribeDo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getPercent() {
-		return this.percent;
-	}
-
-	public void setPercent(String percent) {
-		this.percent = percent;
-		if(percent != null){
-			putQueryParameter("Percent", percent);
-		}
 	}
 
 	public String getDomainName() {
@@ -89,17 +63,6 @@ public class DescribeDomainTopReferVisitRequest extends RpcAcsRequest<DescribeDo
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getSortBy() {
 		return this.sortBy;
 	}
@@ -108,6 +71,17 @@ public class DescribeDomainTopReferVisitRequest extends RpcAcsRequest<DescribeDo
 		this.sortBy = sortBy;
 		if(sortBy != null){
 			putQueryParameter("SortBy", sortBy);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 

@@ -26,8 +26,6 @@ public class DescribeAckOperatorRequest extends RoaAcsRequest<DescribeAckOperato
 	   
 
 	private String clusterId;
-
-	private String body;
 	public DescribeAckOperatorRequest() {
 		super("elasticsearch", "2017-06-13", "DescribeAckOperator", "elasticsearch");
 		setUriPattern("/openapi/ack-clusters/[ClusterId]/operator");
@@ -46,17 +44,6 @@ public class DescribeAckOperatorRequest extends RoaAcsRequest<DescribeAckOperato
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putPathParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

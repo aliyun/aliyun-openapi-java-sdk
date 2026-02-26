@@ -92,6 +92,18 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 
 	private Boolean isNewContainerVersion;
 
+	private Boolean isNewMultiVersion;
+
+	private Long threatAnalysisCapacity;
+
+	private Long cspmCapacity;
+
+	private Long vulFixCapacity;
+
+	private Long raspCapacity;
+
+	private Long agentlessCapacity;
+
 	public Integer getMVAuthCount() {
 		return this.mVAuthCount;
 	}
@@ -362,6 +374,54 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 
 	public void setIsNewContainerVersion(Boolean isNewContainerVersion) {
 		this.isNewContainerVersion = isNewContainerVersion;
+	}
+
+	public Boolean getIsNewMultiVersion() {
+		return this.isNewMultiVersion;
+	}
+
+	public void setIsNewMultiVersion(Boolean isNewMultiVersion) {
+		this.isNewMultiVersion = isNewMultiVersion;
+	}
+
+	public Long getThreatAnalysisCapacity() {
+		return this.threatAnalysisCapacity;
+	}
+
+	public void setThreatAnalysisCapacity(Long threatAnalysisCapacity) {
+		this.threatAnalysisCapacity = threatAnalysisCapacity;
+	}
+
+	public Long getCspmCapacity() {
+		return this.cspmCapacity;
+	}
+
+	public void setCspmCapacity(Long cspmCapacity) {
+		this.cspmCapacity = cspmCapacity;
+	}
+
+	public Long getVulFixCapacity() {
+		return this.vulFixCapacity;
+	}
+
+	public void setVulFixCapacity(Long vulFixCapacity) {
+		this.vulFixCapacity = vulFixCapacity;
+	}
+
+	public Long getRaspCapacity() {
+		return this.raspCapacity;
+	}
+
+	public void setRaspCapacity(Long raspCapacity) {
+		this.raspCapacity = raspCapacity;
+	}
+
+	public Long getAgentlessCapacity() {
+		return this.agentlessCapacity;
+	}
+
+	public void setAgentlessCapacity(Long agentlessCapacity) {
+		this.agentlessCapacity = agentlessCapacity;
 	}
 
 	@Override

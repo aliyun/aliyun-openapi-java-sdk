@@ -26,7 +26,7 @@ public class QueryUserTagValueListRequest extends RpcAcsRequest<QueryUserTagValu
 
 	private String userId;
 	public QueryUserTagValueListRequest() {
-		super("quickbi-public", "2022-01-01", "QueryUserTagValueList", "quickbi");
+		super("quickbi-public", "2022-01-01", "QueryUserTagValueList", "2.2.0");
 		setMethod(MethodType.GET);
 	}
 

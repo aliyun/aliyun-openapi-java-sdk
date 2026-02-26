@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDrdsDBClusterResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private DbInstance dbInstance;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeDrdsDBClusterResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public DbInstance getDbInstance() {
@@ -57,27 +57,27 @@ public class DescribeDrdsDBClusterResponse extends AcsResponse {
 
 	public static class DbInstance {
 
-		private String dBInstanceId;
+		private String expireTime;
 
-		private Integer port;
+		private String payType;
 
 		private String dBInstanceStatus;
 
-		private String dbInstType;
+		private String networkType;
 
-		private String engine;
+		private Integer port;
 
 		private String engineVersion;
 
 		private String rdsInstType;
 
-		private String payType;
-
-		private String expireTime;
-
 		private String remainDays;
 
-		private String networkType;
+		private String dBInstanceId;
+
+		private String dbInstType;
+
+		private String engine;
 
 		private String readMode;
 
@@ -85,20 +85,20 @@ public class DescribeDrdsDBClusterResponse extends AcsResponse {
 
 		private List<DBNode> dBNodes;
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
+		public String getExpireTime() {
+			return this.expireTime;
 		}
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
 		}
 
-		public Integer getPort() {
-			return this.port;
+		public String getPayType() {
+			return this.payType;
 		}
 
-		public void setPort(Integer port) {
-			this.port = port;
+		public void setPayType(String payType) {
+			this.payType = payType;
 		}
 
 		public String getDBInstanceStatus() {
@@ -109,20 +109,20 @@ public class DescribeDrdsDBClusterResponse extends AcsResponse {
 			this.dBInstanceStatus = dBInstanceStatus;
 		}
 
-		public String getDbInstType() {
-			return this.dbInstType;
+		public String getNetworkType() {
+			return this.networkType;
 		}
 
-		public void setDbInstType(String dbInstType) {
-			this.dbInstType = dbInstType;
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
 		}
 
-		public String getEngine() {
-			return this.engine;
+		public Integer getPort() {
+			return this.port;
 		}
 
-		public void setEngine(String engine) {
-			this.engine = engine;
+		public void setPort(Integer port) {
+			this.port = port;
 		}
 
 		public String getEngineVersion() {
@@ -141,22 +141,6 @@ public class DescribeDrdsDBClusterResponse extends AcsResponse {
 			this.rdsInstType = rdsInstType;
 		}
 
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
-
 		public String getRemainDays() {
 			return this.remainDays;
 		}
@@ -165,12 +149,28 @@ public class DescribeDrdsDBClusterResponse extends AcsResponse {
 			this.remainDays = remainDays;
 		}
 
-		public String getNetworkType() {
-			return this.networkType;
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
 		}
 
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
+
+		public String getDbInstType() {
+			return this.dbInstType;
+		}
+
+		public void setDbInstType(String dbInstType) {
+			this.dbInstType = dbInstType;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
 		}
 
 		public String getReadMode() {
@@ -199,18 +199,18 @@ public class DescribeDrdsDBClusterResponse extends AcsResponse {
 
 		public static class Endpoint {
 
-			private String nodeIds;
+			private Integer readWeight;
 
 			private String endpointId;
 
-			private Integer readWeight;
+			private String nodeIds;
 
-			public String getNodeIds() {
-				return this.nodeIds;
+			public Integer getReadWeight() {
+				return this.readWeight;
 			}
 
-			public void setNodeIds(String nodeIds) {
-				this.nodeIds = nodeIds;
+			public void setReadWeight(Integer readWeight) {
+				this.readWeight = readWeight;
 			}
 
 			public String getEndpointId() {
@@ -221,31 +221,31 @@ public class DescribeDrdsDBClusterResponse extends AcsResponse {
 				this.endpointId = endpointId;
 			}
 
-			public Integer getReadWeight() {
-				return this.readWeight;
+			public String getNodeIds() {
+				return this.nodeIds;
 			}
 
-			public void setReadWeight(Integer readWeight) {
-				this.readWeight = readWeight;
+			public void setNodeIds(String nodeIds) {
+				this.nodeIds = nodeIds;
 			}
 		}
 
 		public static class DBNode {
 
-			private String dBNodeId;
+			private String dBNodeRole;
 
 			private String zoneId;
 
+			private String dBNodeId;
+
 			private String dBNodeStatus;
 
-			private String dBNodeRole;
-
-			public String getDBNodeId() {
-				return this.dBNodeId;
+			public String getDBNodeRole() {
+				return this.dBNodeRole;
 			}
 
-			public void setDBNodeId(String dBNodeId) {
-				this.dBNodeId = dBNodeId;
+			public void setDBNodeRole(String dBNodeRole) {
+				this.dBNodeRole = dBNodeRole;
 			}
 
 			public String getZoneId() {
@@ -256,20 +256,20 @@ public class DescribeDrdsDBClusterResponse extends AcsResponse {
 				this.zoneId = zoneId;
 			}
 
+			public String getDBNodeId() {
+				return this.dBNodeId;
+			}
+
+			public void setDBNodeId(String dBNodeId) {
+				this.dBNodeId = dBNodeId;
+			}
+
 			public String getDBNodeStatus() {
 				return this.dBNodeStatus;
 			}
 
 			public void setDBNodeStatus(String dBNodeStatus) {
 				this.dBNodeStatus = dBNodeStatus;
-			}
-
-			public String getDBNodeRole() {
-				return this.dBNodeRole;
-			}
-
-			public void setDBNodeRole(String dBNodeRole) {
-				this.dBNodeRole = dBNodeRole;
 			}
 		}
 	}

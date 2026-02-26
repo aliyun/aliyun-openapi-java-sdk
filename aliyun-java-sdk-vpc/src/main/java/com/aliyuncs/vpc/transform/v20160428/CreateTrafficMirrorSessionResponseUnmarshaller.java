@@ -24,6 +24,7 @@ public class CreateTrafficMirrorSessionResponseUnmarshaller {
 		
 		createTrafficMirrorSessionResponse.setRequestId(_ctx.stringValue("CreateTrafficMirrorSessionResponse.RequestId"));
 		createTrafficMirrorSessionResponse.setTrafficMirrorSessionId(_ctx.stringValue("CreateTrafficMirrorSessionResponse.TrafficMirrorSessionId"));
+		createTrafficMirrorSessionResponse.setResourceGroupId(_ctx.stringValue("CreateTrafficMirrorSessionResponse.ResourceGroupId"));
 	 
 	 	return createTrafficMirrorSessionResponse;
 	}

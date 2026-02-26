@@ -25,17 +25,17 @@ import com.aliyuncs.mse.Endpoint;
 public class ListListenersByConfigRequest extends RpcAcsRequest<ListListenersByConfigResponse> {
 	   
 
-	private String instanceId;
-
-	private String dataId;
-
 	private String namespaceId;
 
 	private String requestPars;
 
-	private String acceptLanguage;
-
 	private String group;
+
+	private String instanceId;
+
+	private String dataId;
+
+	private String acceptLanguage;
 	public ListListenersByConfigRequest() {
 		super("mse", "2019-05-31", "ListListenersByConfig", "mse");
 		setMethod(MethodType.POST);
@@ -43,28 +43,6 @@ public class ListListenersByConfigRequest extends RpcAcsRequest<ListListenersByC
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getDataId() {
-		return this.dataId;
-	}
-
-	public void setDataId(String dataId) {
-		this.dataId = dataId;
-		if(dataId != null){
-			putQueryParameter("DataId", dataId);
-		}
 	}
 
 	public String getNamespaceId() {
@@ -89,17 +67,6 @@ public class ListListenersByConfigRequest extends RpcAcsRequest<ListListenersByC
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public String getGroup() {
 		return this.group;
 	}
@@ -108,6 +75,39 @@ public class ListListenersByConfigRequest extends RpcAcsRequest<ListListenersByC
 		this.group = group;
 		if(group != null){
 			putQueryParameter("Group", group);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getDataId() {
+		return this.dataId;
+	}
+
+	public void setDataId(String dataId) {
+		this.dataId = dataId;
+		if(dataId != null){
+			putQueryParameter("DataId", dataId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

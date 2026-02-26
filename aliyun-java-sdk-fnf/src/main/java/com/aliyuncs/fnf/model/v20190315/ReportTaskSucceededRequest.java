@@ -27,8 +27,6 @@ public class ReportTaskSucceededRequest extends RpcAcsRequest<ReportTaskSucceede
 
 	private String output;
 
-	private String requestId;
-
 	private String taskToken;
 	public ReportTaskSucceededRequest() {
 		super("fnf", "2019-03-15", "ReportTaskSucceeded", "fnf");
@@ -47,17 +45,6 @@ public class ReportTaskSucceededRequest extends RpcAcsRequest<ReportTaskSucceede
 		this.output = output;
 		if(output != null){
 			putBodyParameter("Output", output);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 

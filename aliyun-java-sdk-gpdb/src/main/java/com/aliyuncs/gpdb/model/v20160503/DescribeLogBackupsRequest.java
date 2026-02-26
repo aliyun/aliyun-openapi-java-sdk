@@ -35,7 +35,7 @@ public class DescribeLogBackupsRequest extends RpcAcsRequest<DescribeLogBackupsR
 
 	private String endTime;
 	public DescribeLogBackupsRequest() {
-		super("gpdb", "2016-05-03", "DescribeLogBackups");
+		super("gpdb", "2016-05-03", "DescribeLogBackups", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

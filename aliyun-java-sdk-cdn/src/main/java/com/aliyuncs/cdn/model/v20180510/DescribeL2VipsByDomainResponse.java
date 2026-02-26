@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeL2VipsByDomainResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String domainName;
 
+	private String requestId;
+
 	private List<String> vips;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDomainName() {
 		return this.domainName;
@@ -45,6 +37,14 @@ public class DescribeL2VipsByDomainResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<String> getVips() {

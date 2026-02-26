@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceProxyConfigurationResponse extends AcsResponse {
 
-	private String persistentConnectionsConfiguration;
-
 	private String attacksProtectionConfiguration;
+
+	private String persistentConnectionsConfiguration;
 
 	private String requestId;
 
 	private String transparentSwitchConfiguration;
-
-	public String getPersistentConnectionsConfiguration() {
-		return this.persistentConnectionsConfiguration;
-	}
-
-	public void setPersistentConnectionsConfiguration(String persistentConnectionsConfiguration) {
-		this.persistentConnectionsConfiguration = persistentConnectionsConfiguration;
-	}
 
 	public String getAttacksProtectionConfiguration() {
 		return this.attacksProtectionConfiguration;
@@ -46,6 +38,14 @@ public class DescribeDBInstanceProxyConfigurationResponse extends AcsResponse {
 
 	public void setAttacksProtectionConfiguration(String attacksProtectionConfiguration) {
 		this.attacksProtectionConfiguration = attacksProtectionConfiguration;
+	}
+
+	public String getPersistentConnectionsConfiguration() {
+		return this.persistentConnectionsConfiguration;
+	}
+
+	public void setPersistentConnectionsConfiguration(String persistentConnectionsConfiguration) {
+		this.persistentConnectionsConfiguration = persistentConnectionsConfiguration;
 	}
 
 	public String getRequestId() {

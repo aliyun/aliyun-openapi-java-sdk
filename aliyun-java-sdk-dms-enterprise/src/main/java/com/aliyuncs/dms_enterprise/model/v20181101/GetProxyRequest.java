@@ -27,8 +27,6 @@ public class GetProxyRequest extends RpcAcsRequest<GetProxyResponse> {
 
 	private Long tid;
 
-	private Long instanceId;
-
 	private Long proxyId;
 	public GetProxyRequest() {
 		super("dms-enterprise", "2018-11-01", "GetProxy", "dms-enterprise");
@@ -47,17 +45,6 @@ public class GetProxyRequest extends RpcAcsRequest<GetProxyResponse> {
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
-		}
-	}
-
-	public Long getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(Long instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId.toString());
 		}
 	}
 

@@ -24,6 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StartWorkflowResponse extends AcsResponse {
 
+	private String jobName;
+
+	public String getJobName() {
+		return this.jobName;
+	}
+
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+	}
+
 	@Override
 	public StartWorkflowResponse getInstance(UnmarshallerContext context) {
 		return	StartWorkflowResponseUnmarshaller.unmarshall(this, context);

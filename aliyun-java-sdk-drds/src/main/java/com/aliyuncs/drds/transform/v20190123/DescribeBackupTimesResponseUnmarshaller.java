@@ -27,8 +27,8 @@ public class DescribeBackupTimesResponseUnmarshaller {
 		describeBackupTimesResponse.setSuccess(_ctx.booleanValue("DescribeBackupTimesResponse.Success"));
 
 		RestoreTime restoreTime = new RestoreTime();
-		restoreTime.setStartTime(_ctx.stringValue("DescribeBackupTimesResponse.RestoreTime.StartTime"));
 		restoreTime.setEndTime(_ctx.stringValue("DescribeBackupTimesResponse.RestoreTime.EndTime"));
+		restoreTime.setStartTime(_ctx.stringValue("DescribeBackupTimesResponse.RestoreTime.StartTime"));
 		describeBackupTimesResponse.setRestoreTime(restoreTime);
 	 
 	 	return describeBackupTimesResponse;

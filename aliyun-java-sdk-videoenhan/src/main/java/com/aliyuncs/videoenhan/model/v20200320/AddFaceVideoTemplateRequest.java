@@ -25,7 +25,7 @@ import com.aliyuncs.videoenhan.Endpoint;
 public class AddFaceVideoTemplateRequest extends RpcAcsRequest<AddFaceVideoTemplateResponse> {
 	   
 
-	private String userId;
+	private String videoScene;
 
 	private String videoURL;
 	public AddFaceVideoTemplateRequest() {
@@ -37,14 +37,14 @@ public class AddFaceVideoTemplateRequest extends RpcAcsRequest<AddFaceVideoTempl
 		} catch (Exception e) {}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getVideoScene() {
+		return this.videoScene;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
+	public void setVideoScene(String videoScene) {
+		this.videoScene = videoScene;
+		if(videoScene != null){
+			putBodyParameter("VideoScene", videoScene);
 		}
 	}
 

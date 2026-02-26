@@ -29,7 +29,7 @@ public class ModifySecurityGroupsRequest extends RpcAcsRequest<ModifySecurityGro
 
 	private String securityGroupIds;
 	public ModifySecurityGroupsRequest() {
-		super("HBase", "2019-01-01", "ModifySecurityGroups", "hbase");
+		super("HBase", "2019-01-01", "ModifySecurityGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

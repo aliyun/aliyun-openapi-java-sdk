@@ -31,8 +31,6 @@ public class ListApplicationsWithTagRulesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer code;
-
 	private Boolean success;
 
 	private Data data;
@@ -59,14 +57,6 @@ public class ListApplicationsWithTagRulesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -129,6 +119,8 @@ public class ListApplicationsWithTagRulesResponse extends AcsResponse {
 
 		public static class ApplicationList {
 
+			private String namespace;
+
 			private String appName;
 
 			private String appId;
@@ -136,6 +128,14 @@ public class ListApplicationsWithTagRulesResponse extends AcsResponse {
 			private Long routeStatus;
 
 			private List<RouteRule> routeRules;
+
+			public String getNamespace() {
+				return this.namespace;
+			}
+
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
+			}
 
 			public String getAppName() {
 				return this.appName;

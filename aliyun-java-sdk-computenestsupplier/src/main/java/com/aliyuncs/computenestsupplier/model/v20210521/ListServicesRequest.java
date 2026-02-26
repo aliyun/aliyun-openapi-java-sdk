@@ -28,15 +28,15 @@ public class ListServicesRequest extends RpcAcsRequest<ListServicesResponse> {
 
 	private Boolean allVersions;
 
+	private String resourceGroupId;
+
 	private String nextToken;
 
 	private List<Tag> tags;
 
-	private List<RequestTag> requestTags;
-
 	private List<Filter> filters;
 
-	private String maxResults;
+	private Integer maxResults;
 	public ListServicesRequest() {
 		super("ComputeNestSupplier", "2021-05-21", "ListServices");
 		setMethod(MethodType.POST);
@@ -54,6 +54,17 @@ public class ListServicesRequest extends RpcAcsRequest<ListServicesResponse> {
 		this.allVersions = allVersions;
 		if(allVersions != null){
 			putQueryParameter("AllVersions", allVersions.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -82,20 +93,6 @@ public class ListServicesRequest extends RpcAcsRequest<ListServicesResponse> {
 		}	
 	}
 
-	public List<RequestTag> getRequestTags() {
-		return this.requestTags;
-	}
-
-	public void setRequestTags(List<RequestTag> requestTags) {
-		this.requestTags = requestTags;	
-		if (requestTags != null) {
-			for (int depth1 = 0; depth1 < requestTags.size(); depth1++) {
-				putQueryParameter("RequestTag." + (depth1 + 1) + ".Value" , requestTags.get(depth1).getValue());
-				putQueryParameter("RequestTag." + (depth1 + 1) + ".Key" , requestTags.get(depth1).getKey());
-			}
-		}	
-	}
-
 	public List<Filter> getFilters() {
 		return this.filters;
 	}
@@ -114,41 +111,18 @@ public class ListServicesRequest extends RpcAcsRequest<ListServicesResponse> {
 		}	
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults);
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
 	public static class Tag {
-
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-	}
-
-	public static class RequestTag {
 
 		private String value;
 

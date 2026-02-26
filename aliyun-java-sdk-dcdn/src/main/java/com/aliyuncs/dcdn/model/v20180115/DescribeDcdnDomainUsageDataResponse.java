@@ -25,45 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnDomainUsageDataResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String domainName;
-
-	private String startTime;
-
 	private String endTime;
 
 	private String type;
 
+	private String startTime;
+
+	private String requestId;
+
 	private String area;
+
+	private String domainName;
 
 	private String dataInterval;
 
 	private List<DataModule> usageDataPerInterval;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
 
 	public String getEndTime() {
 		return this.endTime;
@@ -81,12 +57,36 @@ public class DescribeDcdnDomainUsageDataResponse extends AcsResponse {
 		this.type = type;
 	}
 
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getArea() {
 		return this.area;
 	}
 
 	public void setArea(String area) {
 		this.area = area;
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
 	}
 
 	public String getDataInterval() {
@@ -107,13 +107,21 @@ public class DescribeDcdnDomainUsageDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
+		private String value;
+
 		private String timeStamp;
 
 		private String peakTime;
 
-		private String value;
-
 		private String specialValue;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -129,14 +137,6 @@ public class DescribeDcdnDomainUsageDataResponse extends AcsResponse {
 
 		public void setPeakTime(String peakTime) {
 			this.peakTime = peakTime;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
 		}
 
 		public String getSpecialValue() {

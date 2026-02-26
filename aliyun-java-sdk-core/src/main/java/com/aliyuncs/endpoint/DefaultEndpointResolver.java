@@ -4,6 +4,7 @@ import com.aliyuncs.IAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
+import com.aliyuncs.utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +38,16 @@ public class DefaultEndpointResolver implements EndpointResolver {
             resolverChain.add(new LocalConfigGlobalEndpointResolver(userConfig));
         }
 
-        if (profile.isUsingInternalLocationService()) {
-            resolverChain.add(new InternalLocationServiceEndpointResolver(client));
+        String locationServiceEndpoint = profile.getLocationServiceEndpoint();
+        String locationServiceApiVersion = profile.getLocationServiceApiVersion();
+        if (!StringUtils.isEmpty(locationServiceEndpoint) && !StringUtils.isEmpty(locationServiceApiVersion)) {
+            resolverChain.add(new LocationServiceEndpointResolver(client,
+                    locationServiceEndpoint,
+                    locationServiceApiVersion));
+        } else if (profile.isUsingInternalLocationService()) {
+            resolverChain.add(new LocationServiceEndpointResolver(client,
+                    "location-inner.aliyuncs.com",
+                    "2015-12-25"));
         } else {
             resolverChain.add(new LocationServiceEndpointResolver(client));
         }

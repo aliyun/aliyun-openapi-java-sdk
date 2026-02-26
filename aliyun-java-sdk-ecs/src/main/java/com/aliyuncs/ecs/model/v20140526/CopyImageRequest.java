@@ -32,11 +32,15 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 
 	private String encryptAlgorithm;
 
+	private String clientToken;
+
 	private String destinationRegionId;
 
 	private String resourceGroupId;
 
 	private List<Tag> tags;
+
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -93,6 +97,17 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
 	public String getDestinationRegionId() {
 		return this.destinationRegionId;
 	}
@@ -127,6 +142,17 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {

@@ -31,7 +31,7 @@ public class DeleteCompliancePacksRequest extends RpcAcsRequest<DeleteCompliance
 
 	private Boolean deleteRule;
 	public DeleteCompliancePacksRequest() {
-		super("Config", "2020-09-07", "DeleteCompliancePacks");
+		super("Config", "2020-09-07", "DeleteCompliancePacks", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

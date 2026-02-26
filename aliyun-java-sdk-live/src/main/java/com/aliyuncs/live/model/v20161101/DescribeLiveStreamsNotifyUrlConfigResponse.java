@@ -50,6 +50,8 @@ public class DescribeLiveStreamsNotifyUrlConfigResponse extends AcsResponse {
 
 		private String notifyUrl;
 
+		private String exceptionNotifyUrl;
+
 		private String notifyReqAuth;
 
 		private String notifyAuthKey;
@@ -72,6 +74,14 @@ public class DescribeLiveStreamsNotifyUrlConfigResponse extends AcsResponse {
 
 		public void setNotifyUrl(String notifyUrl) {
 			this.notifyUrl = notifyUrl;
+		}
+
+		public String getExceptionNotifyUrl() {
+			return this.exceptionNotifyUrl;
+		}
+
+		public void setExceptionNotifyUrl(String exceptionNotifyUrl) {
+			this.exceptionNotifyUrl = exceptionNotifyUrl;
 		}
 
 		public String getNotifyReqAuth() {

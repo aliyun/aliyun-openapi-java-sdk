@@ -28,8 +28,10 @@ public class RerunJobsRequest extends RpcAcsRequest<RerunJobsResponse> {
 	private String jobs;
 
 	private String clusterId;
+
+	private Boolean async;
 	public RerunJobsRequest() {
-		super("EHPC", "2018-04-12", "RerunJobs");
+		super("EHPC", "2018-04-12", "RerunJobs", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class RerunJobsRequest extends RpcAcsRequest<RerunJobsResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 

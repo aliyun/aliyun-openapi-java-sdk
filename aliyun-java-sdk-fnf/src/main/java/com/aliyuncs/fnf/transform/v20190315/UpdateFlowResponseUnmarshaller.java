@@ -23,15 +23,15 @@ public class UpdateFlowResponseUnmarshaller {
 	public static UpdateFlowResponse unmarshall(UpdateFlowResponse updateFlowResponse, UnmarshallerContext _ctx) {
 		
 		updateFlowResponse.setRequestId(_ctx.stringValue("UpdateFlowResponse.RequestId"));
-		updateFlowResponse.setName(_ctx.stringValue("UpdateFlowResponse.Name"));
-		updateFlowResponse.setDescription(_ctx.stringValue("UpdateFlowResponse.Description"));
-		updateFlowResponse.setDefinition(_ctx.stringValue("UpdateFlowResponse.Definition"));
-		updateFlowResponse.setId(_ctx.stringValue("UpdateFlowResponse.Id"));
 		updateFlowResponse.setType(_ctx.stringValue("UpdateFlowResponse.Type"));
+		updateFlowResponse.setDefinition(_ctx.stringValue("UpdateFlowResponse.Definition"));
 		updateFlowResponse.setRoleArn(_ctx.stringValue("UpdateFlowResponse.RoleArn"));
+		updateFlowResponse.setDescription(_ctx.stringValue("UpdateFlowResponse.Description"));
+		updateFlowResponse.setExternalStorageLocation(_ctx.stringValue("UpdateFlowResponse.ExternalStorageLocation"));
+		updateFlowResponse.setName(_ctx.stringValue("UpdateFlowResponse.Name"));
 		updateFlowResponse.setCreatedTime(_ctx.stringValue("UpdateFlowResponse.CreatedTime"));
 		updateFlowResponse.setLastModifiedTime(_ctx.stringValue("UpdateFlowResponse.LastModifiedTime"));
-		updateFlowResponse.setExternalStorageLocation(_ctx.stringValue("UpdateFlowResponse.ExternalStorageLocation"));
+		updateFlowResponse.setId(_ctx.stringValue("UpdateFlowResponse.Id"));
 	 
 	 	return updateFlowResponse;
 	}

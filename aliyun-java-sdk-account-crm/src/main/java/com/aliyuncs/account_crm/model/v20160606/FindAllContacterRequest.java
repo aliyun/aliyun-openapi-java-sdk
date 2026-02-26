@@ -26,6 +26,8 @@ public class FindAllContacterRequest extends RpcAcsRequest<FindAllContacterRespo
 
 	private String localeString;
 
+	private String appName;
+
 	private String type;
 
 	private Long userId;
@@ -42,6 +44,17 @@ public class FindAllContacterRequest extends RpcAcsRequest<FindAllContacterRespo
 		this.localeString = localeString;
 		if(localeString != null){
 			putQueryParameter("LocaleString", localeString);
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
 		}
 	}
 

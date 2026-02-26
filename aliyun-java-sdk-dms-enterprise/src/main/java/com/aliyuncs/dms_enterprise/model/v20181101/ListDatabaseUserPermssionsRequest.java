@@ -29,11 +29,11 @@ public class ListDatabaseUserPermssionsRequest extends RpcAcsRequest<ListDatabas
 
 	private Integer pageNumber;
 
+	private Integer pageSize;
+
 	private String permType;
 
 	private String dbId;
-
-	private Integer pageSize;
 
 	private Boolean logic;
 
@@ -69,6 +69,17 @@ public class ListDatabaseUserPermssionsRequest extends RpcAcsRequest<ListDatabas
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getPermType() {
 		return this.permType;
 	}
@@ -88,17 +99,6 @@ public class ListDatabaseUserPermssionsRequest extends RpcAcsRequest<ListDatabas
 		this.dbId = dbId;
 		if(dbId != null){
 			putQueryParameter("DbId", dbId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

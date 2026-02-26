@@ -66,6 +66,8 @@ public class CreateInstanceResponse extends AcsResponse {
 
 	private String userName;
 
+	private Long orderId;
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -232,6 +234,14 @@ public class CreateInstanceResponse extends AcsResponse {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

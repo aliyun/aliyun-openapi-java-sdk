@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -34,6 +35,8 @@ public class CreateCenBandwidthPackageRequest extends RpcAcsRequest<CreateCenBan
 	private Integer autoRenewDuration;
 
 	private String bandwidthPackageChargeType;
+
+	private List<Tag> tags;
 
 	private String geographicRegionBId;
 
@@ -57,7 +60,7 @@ public class CreateCenBandwidthPackageRequest extends RpcAcsRequest<CreateCenBan
 
 	private String pricingCycle;
 	public CreateCenBandwidthPackageRequest() {
-		super("Cbn", "2017-09-12", "CreateCenBandwidthPackage");
+		super("Cbn", "2017-09-12", "CreateCenBandwidthPackage", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -118,6 +121,20 @@ public class CreateCenBandwidthPackageRequest extends RpcAcsRequest<CreateCenBan
 		if(bandwidthPackageChargeType != null){
 			putQueryParameter("BandwidthPackageChargeType", bandwidthPackageChargeType);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getGeographicRegionBId() {
@@ -238,6 +255,29 @@ public class CreateCenBandwidthPackageRequest extends RpcAcsRequest<CreateCenBan
 		this.pricingCycle = pricingCycle;
 		if(pricingCycle != null){
 			putQueryParameter("PricingCycle", pricingCycle);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

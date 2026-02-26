@@ -23,10 +23,10 @@ public class ModifyPtsSceneResponseUnmarshaller {
 	public static ModifyPtsSceneResponse unmarshall(ModifyPtsSceneResponse modifyPtsSceneResponse, UnmarshallerContext _ctx) {
 		
 		modifyPtsSceneResponse.setRequestId(_ctx.stringValue("ModifyPtsSceneResponse.RequestId"));
-		modifyPtsSceneResponse.setSuccess(_ctx.booleanValue("ModifyPtsSceneResponse.Success"));
-		modifyPtsSceneResponse.setCode(_ctx.stringValue("ModifyPtsSceneResponse.Code"));
 		modifyPtsSceneResponse.setMessage(_ctx.stringValue("ModifyPtsSceneResponse.Message"));
 		modifyPtsSceneResponse.setHttpStatusCode(_ctx.integerValue("ModifyPtsSceneResponse.HttpStatusCode"));
+		modifyPtsSceneResponse.setCode(_ctx.stringValue("ModifyPtsSceneResponse.Code"));
+		modifyPtsSceneResponse.setSuccess(_ctx.booleanValue("ModifyPtsSceneResponse.Success"));
 	 
 	 	return modifyPtsSceneResponse;
 	}

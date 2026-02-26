@@ -45,6 +45,8 @@ public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEdit
 
 	private Long ownerId;
 
+	private String appId;
+
 	private String timeline;
 	public ProduceEditingProjectVideoRequest() {
 		super("vod", "2017-03-21", "ProduceEditingProjectVideo", "vod");
@@ -162,6 +164,17 @@ public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEdit
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

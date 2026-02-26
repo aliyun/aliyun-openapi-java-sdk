@@ -37,6 +37,7 @@ public class GetVpcPrefixListEntriesResponseUnmarshaller {
 			prefixListCidrs.setPrefixListId(_ctx.stringValue("GetVpcPrefixListEntriesResponse.PrefixListEntry["+ i +"].PrefixListId"));
 			prefixListCidrs.setCidr(_ctx.stringValue("GetVpcPrefixListEntriesResponse.PrefixListEntry["+ i +"].Cidr"));
 			prefixListCidrs.setDescription(_ctx.stringValue("GetVpcPrefixListEntriesResponse.PrefixListEntry["+ i +"].Description"));
+			prefixListCidrs.setRegionId(_ctx.stringValue("GetVpcPrefixListEntriesResponse.PrefixListEntry["+ i +"].RegionId"));
 
 			prefixListEntry.add(prefixListCidrs);
 		}

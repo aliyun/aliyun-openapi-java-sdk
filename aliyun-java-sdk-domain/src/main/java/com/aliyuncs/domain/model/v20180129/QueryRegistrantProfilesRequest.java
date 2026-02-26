@@ -27,6 +27,8 @@ public class QueryRegistrantProfilesRequest extends RpcAcsRequest<QueryRegistran
 
 	private Long registrantProfileId;
 
+	private String remark;
+
 	private Integer pageNum;
 
 	private Integer pageSize;
@@ -49,7 +51,7 @@ public class QueryRegistrantProfilesRequest extends RpcAcsRequest<QueryRegistran
 
 	private String userClientIp;
 	public QueryRegistrantProfilesRequest() {
-		super("Domain", "2018-01-29", "QueryRegistrantProfiles");
+		super("Domain", "2018-01-29", "QueryRegistrantProfiles", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,6 +67,17 @@ public class QueryRegistrantProfilesRequest extends RpcAcsRequest<QueryRegistran
 		this.registrantProfileId = registrantProfileId;
 		if(registrantProfileId != null){
 			putQueryParameter("RegistrantProfileId", registrantProfileId.toString());
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 

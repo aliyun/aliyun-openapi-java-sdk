@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class DeleteLakeHouseSpaceRequest extends RpcAcsRequest<DeleteLakeHouseSpaceResponse> {
 	   
 
-	private Long spaceId;
-
 	private Long tid;
+
+	private Long spaceId;
 	public DeleteLakeHouseSpaceRequest() {
 		super("dms-enterprise", "2018-11-01", "DeleteLakeHouseSpace", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DeleteLakeHouseSpaceRequest extends RpcAcsRequest<DeleteLakeHouseSp
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getSpaceId() {
-		return this.spaceId;
-	}
-
-	public void setSpaceId(Long spaceId) {
-		this.spaceId = spaceId;
-		if(spaceId != null){
-			putQueryParameter("SpaceId", spaceId.toString());
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class DeleteLakeHouseSpaceRequest extends RpcAcsRequest<DeleteLakeHouseSp
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getSpaceId() {
+		return this.spaceId;
+	}
+
+	public void setSpaceId(Long spaceId) {
+		this.spaceId = spaceId;
+		if(spaceId != null){
+			putQueryParameter("SpaceId", spaceId.toString());
 		}
 	}
 

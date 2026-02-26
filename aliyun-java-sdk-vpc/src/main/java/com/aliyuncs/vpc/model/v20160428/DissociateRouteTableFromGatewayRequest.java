@@ -33,6 +33,8 @@ public class DissociateRouteTableFromGatewayRequest extends RpcAcsRequest<Dissoc
 
 	private String routeTableId;
 
+	private String gatewayType;
+
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
@@ -90,6 +92,17 @@ public class DissociateRouteTableFromGatewayRequest extends RpcAcsRequest<Dissoc
 		this.routeTableId = routeTableId;
 		if(routeTableId != null){
 			putQueryParameter("RouteTableId", routeTableId);
+		}
+	}
+
+	public String getGatewayType() {
+		return this.gatewayType;
+	}
+
+	public void setGatewayType(String gatewayType) {
+		this.gatewayType = gatewayType;
+		if(gatewayType != null){
+			putQueryParameter("GatewayType", gatewayType);
 		}
 	}
 

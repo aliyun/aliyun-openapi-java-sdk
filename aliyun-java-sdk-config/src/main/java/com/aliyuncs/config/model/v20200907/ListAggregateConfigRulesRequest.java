@@ -33,13 +33,21 @@ public class ListAggregateConfigRulesRequest extends RpcAcsRequest<ListAggregate
 
 	private Integer pageSize;
 
+	private String compliancePackId;
+
+	private String tag;
+
+	private String keyword;
+
 	private String complianceType;
+
+	private String resourceTypes;
 
 	private Integer riskLevel;
 
 	private String configRuleName;
 	public ListAggregateConfigRulesRequest() {
-		super("Config", "2020-09-07", "ListAggregateConfigRules");
+		super("Config", "2020-09-07", "ListAggregateConfigRules", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -91,6 +99,39 @@ public class ListAggregateConfigRulesRequest extends RpcAcsRequest<ListAggregate
 		}
 	}
 
+	public String getCompliancePackId() {
+		return this.compliancePackId;
+	}
+
+	public void setCompliancePackId(String compliancePackId) {
+		this.compliancePackId = compliancePackId;
+		if(compliancePackId != null){
+			putQueryParameter("CompliancePackId", compliancePackId);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
+		}
+	}
+
 	public String getComplianceType() {
 		return this.complianceType;
 	}
@@ -99,6 +140,17 @@ public class ListAggregateConfigRulesRequest extends RpcAcsRequest<ListAggregate
 		this.complianceType = complianceType;
 		if(complianceType != null){
 			putQueryParameter("ComplianceType", complianceType);
+		}
+	}
+
+	public String getResourceTypes() {
+		return this.resourceTypes;
+	}
+
+	public void setResourceTypes(String resourceTypes) {
+		this.resourceTypes = resourceTypes;
+		if(resourceTypes != null){
+			putQueryParameter("ResourceTypes", resourceTypes);
 		}
 	}
 

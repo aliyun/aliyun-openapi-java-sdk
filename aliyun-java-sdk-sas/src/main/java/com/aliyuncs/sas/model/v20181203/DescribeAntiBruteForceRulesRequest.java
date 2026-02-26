@@ -28,6 +28,14 @@ public class DescribeAntiBruteForceRulesRequest extends RpcAcsRequest<DescribeAn
 	private Long resourceOwnerId;
 
 	private String sourceIp;
+
+	private String pageSize;
+
+	private Long id;
+
+	private Integer currentPage;
+
+	private String name;
 	public DescribeAntiBruteForceRulesRequest() {
 		super("Sas", "2018-12-03", "DescribeAntiBruteForceRules");
 		setMethod(MethodType.POST);
@@ -56,6 +64,50 @@ public class DescribeAntiBruteForceRulesRequest extends RpcAcsRequest<DescribeAn
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

@@ -28,6 +28,10 @@ public class ListPrefixListsRequest extends RpcAcsRequest<ListPrefixListsRespons
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
+	private String nextToken;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -36,9 +40,9 @@ public class ListPrefixListsRequest extends RpcAcsRequest<ListPrefixListsRespons
 
 	private Long ownerId;
 
-	private String prefixListName;
+	private List<Tags> tagss;
 
-	private String nextToken;
+	private String prefixListName;
 
 	private Long maxResults;
 	public ListPrefixListsRequest() {
@@ -58,6 +62,28 @@ public class ListPrefixListsRequest extends RpcAcsRequest<ListPrefixListsRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -107,6 +133,20 @@ public class ListPrefixListsRequest extends RpcAcsRequest<ListPrefixListsRespons
 		}
 	}
 
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public String getPrefixListName() {
 		return this.prefixListName;
 	}
@@ -118,17 +158,6 @@ public class ListPrefixListsRequest extends RpcAcsRequest<ListPrefixListsRespons
 		}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
 	public Long getMaxResults() {
 		return this.maxResults;
 	}
@@ -137,6 +166,29 @@ public class ListPrefixListsRequest extends RpcAcsRequest<ListPrefixListsRespons
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public static class Tags {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

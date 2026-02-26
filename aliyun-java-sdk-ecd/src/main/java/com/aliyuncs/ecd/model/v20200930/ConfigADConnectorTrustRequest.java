@@ -28,8 +28,10 @@ public class ConfigADConnectorTrustRequest extends RpcAcsRequest<ConfigADConnect
 	private String officeSiteId;
 
 	private String trustKey;
+
+	private Boolean rdsLicenseDomain;
 	public ConfigADConnectorTrustRequest() {
-		super("ecd", "2020-09-30", "ConfigADConnectorTrust");
+		super("ecd", "2020-09-30", "ConfigADConnectorTrust", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class ConfigADConnectorTrustRequest extends RpcAcsRequest<ConfigADConnect
 		this.trustKey = trustKey;
 		if(trustKey != null){
 			putQueryParameter("TrustKey", trustKey);
+		}
+	}
+
+	public Boolean getRdsLicenseDomain() {
+		return this.rdsLicenseDomain;
+	}
+
+	public void setRdsLicenseDomain(Boolean rdsLicenseDomain) {
+		this.rdsLicenseDomain = rdsLicenseDomain;
+		if(rdsLicenseDomain != null){
+			putQueryParameter("RdsLicenseDomain", rdsLicenseDomain.toString());
 		}
 	}
 

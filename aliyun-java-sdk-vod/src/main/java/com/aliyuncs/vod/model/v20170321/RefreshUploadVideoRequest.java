@@ -32,6 +32,8 @@ public class RefreshUploadVideoRequest extends RpcAcsRequest<RefreshUploadVideoR
 	private String videoId;
 
 	private Long ownerId;
+
+	private String referenceId;
 	public RefreshUploadVideoRequest() {
 		super("vod", "2017-03-21", "RefreshUploadVideo", "vod");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class RefreshUploadVideoRequest extends RpcAcsRequest<RefreshUploadVideoR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getReferenceId() {
+		return this.referenceId;
+	}
+
+	public void setReferenceId(String referenceId) {
+		this.referenceId = referenceId;
+		if(referenceId != null){
+			putQueryParameter("ReferenceId", referenceId);
 		}
 	}
 

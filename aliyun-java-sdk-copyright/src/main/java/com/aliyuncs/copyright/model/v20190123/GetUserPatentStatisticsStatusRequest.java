@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetUserPatentStatisticsStatusRequest extends RpcAcsRequest<GetUserPatentStatisticsStatusResponse> {
 	   
 	public GetUserPatentStatisticsStatusRequest() {
-		super("Copyright", "2019-01-23", "GetUserPatentStatisticsStatus");
+		super("Copyright", "2019-01-23", "GetUserPatentStatisticsStatus", "swcopyright");
 		setMethod(MethodType.GET);
 	}
 

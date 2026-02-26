@@ -29,30 +29,30 @@ public class QueryTimeTemplateResponseUnmarshaller {
 	public static QueryTimeTemplateResponse unmarshall(QueryTimeTemplateResponse queryTimeTemplateResponse, UnmarshallerContext _ctx) {
 		
 		queryTimeTemplateResponse.setRequestId(_ctx.stringValue("QueryTimeTemplateResponse.RequestId"));
-		queryTimeTemplateResponse.setSuccess(_ctx.booleanValue("QueryTimeTemplateResponse.Success"));
-		queryTimeTemplateResponse.setErrorMessage(_ctx.stringValue("QueryTimeTemplateResponse.ErrorMessage"));
 		queryTimeTemplateResponse.setCode(_ctx.stringValue("QueryTimeTemplateResponse.Code"));
+		queryTimeTemplateResponse.setErrorMessage(_ctx.stringValue("QueryTimeTemplateResponse.ErrorMessage"));
+		queryTimeTemplateResponse.setSuccess(_ctx.booleanValue("QueryTimeTemplateResponse.Success"));
 
 		Data data = new Data();
+		data.setPageSize(_ctx.integerValue("QueryTimeTemplateResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QueryTimeTemplateResponse.Data.Total"));
 		data.setPageCount(_ctx.integerValue("QueryTimeTemplateResponse.Data.PageCount"));
 		data.setPage(_ctx.integerValue("QueryTimeTemplateResponse.Data.Page"));
-		data.setPageSize(_ctx.integerValue("QueryTimeTemplateResponse.Data.PageSize"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTimeTemplateResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
+			listItem.setAllDay(_ctx.integerValue("QueryTimeTemplateResponse.Data.List["+ i +"].AllDay"));
 			listItem.set_Default(_ctx.integerValue("QueryTimeTemplateResponse.Data.List["+ i +"].Default"));
 			listItem.setName(_ctx.stringValue("QueryTimeTemplateResponse.Data.List["+ i +"].Name"));
 			listItem.setTemplateId(_ctx.stringValue("QueryTimeTemplateResponse.Data.List["+ i +"].TemplateId"));
-			listItem.setAllDay(_ctx.integerValue("QueryTimeTemplateResponse.Data.List["+ i +"].AllDay"));
 
 			List<TimeSectionListItem> timeSectionList = new ArrayList<TimeSectionListItem>();
 			for (int j = 0; j < _ctx.lengthValue("QueryTimeTemplateResponse.Data.List["+ i +"].TimeSectionList.Length"); j++) {
 				TimeSectionListItem timeSectionListItem = new TimeSectionListItem();
+				timeSectionListItem.setEnd(_ctx.integerValue("QueryTimeTemplateResponse.Data.List["+ i +"].TimeSectionList["+ j +"].End"));
 				timeSectionListItem.setDayOfWeek(_ctx.integerValue("QueryTimeTemplateResponse.Data.List["+ i +"].TimeSectionList["+ j +"].DayOfWeek"));
 				timeSectionListItem.setBegin(_ctx.integerValue("QueryTimeTemplateResponse.Data.List["+ i +"].TimeSectionList["+ j +"].Begin"));
-				timeSectionListItem.setEnd(_ctx.integerValue("QueryTimeTemplateResponse.Data.List["+ i +"].TimeSectionList["+ j +"].End"));
 
 				timeSectionList.add(timeSectionListItem);
 			}

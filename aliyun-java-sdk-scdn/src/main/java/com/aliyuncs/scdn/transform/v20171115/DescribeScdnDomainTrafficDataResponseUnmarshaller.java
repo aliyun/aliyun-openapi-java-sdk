@@ -27,17 +27,17 @@ public class DescribeScdnDomainTrafficDataResponseUnmarshaller {
 	public static DescribeScdnDomainTrafficDataResponse unmarshall(DescribeScdnDomainTrafficDataResponse describeScdnDomainTrafficDataResponse, UnmarshallerContext _ctx) {
 		
 		describeScdnDomainTrafficDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainTrafficDataResponse.RequestId"));
-		describeScdnDomainTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainTrafficDataResponse.DomainName"));
-		describeScdnDomainTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainTrafficDataResponse.StartTime"));
 		describeScdnDomainTrafficDataResponse.setEndTime(_ctx.stringValue("DescribeScdnDomainTrafficDataResponse.EndTime"));
+		describeScdnDomainTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainTrafficDataResponse.StartTime"));
+		describeScdnDomainTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainTrafficDataResponse.DomainName"));
 		describeScdnDomainTrafficDataResponse.setDataInterval(_ctx.stringValue("DescribeScdnDomainTrafficDataResponse.DataInterval"));
 
 		List<DataModule> trafficDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainTrafficDataResponse.TrafficDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeScdnDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setTrafficValue(_ctx.stringValue("DescribeScdnDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].TrafficValue"));
 			dataModule.setHttpTrafficValue(_ctx.stringValue("DescribeScdnDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].HttpTrafficValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeScdnDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setHttpsTrafficValue(_ctx.stringValue("DescribeScdnDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].HttpsTrafficValue"));
 
 			trafficDataPerInterval.add(dataModule);

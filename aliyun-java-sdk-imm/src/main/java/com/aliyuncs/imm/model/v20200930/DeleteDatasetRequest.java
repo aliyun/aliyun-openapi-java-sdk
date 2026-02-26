@@ -25,9 +25,9 @@ import com.aliyuncs.imm.Endpoint;
 public class DeleteDatasetRequest extends RpcAcsRequest<DeleteDatasetResponse> {
 	   
 
-	private String projectName;
-
 	private String datasetName;
+
+	private String projectName;
 	public DeleteDatasetRequest() {
 		super("imm", "2020-09-30", "DeleteDataset", "imm");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DeleteDatasetRequest extends RpcAcsRequest<DeleteDatasetResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
 	}
 
 	public String getDatasetName() {
@@ -56,6 +45,17 @@ public class DeleteDatasetRequest extends RpcAcsRequest<DeleteDatasetResponse> {
 		this.datasetName = datasetName;
 		if(datasetName != null){
 			putQueryParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 

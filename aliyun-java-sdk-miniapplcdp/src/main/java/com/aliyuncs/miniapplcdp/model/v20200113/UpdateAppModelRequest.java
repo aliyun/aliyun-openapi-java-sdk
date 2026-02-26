@@ -26,13 +26,15 @@ public class UpdateAppModelRequest extends RpcAcsRequest<UpdateAppModelResponse>
 
 	private String encodeType;
 
-	private String subType;
-
-	private String appId;
+	private String source;
 
 	private String schemaVersion;
 
 	private String content;
+
+	private String subType;
+
+	private String appId;
 	public UpdateAppModelRequest() {
 		super("miniapplcdp", "2020-01-13", "UpdateAppModel");
 		setMethod(MethodType.POST);
@@ -49,25 +51,14 @@ public class UpdateAppModelRequest extends RpcAcsRequest<UpdateAppModelResponse>
 		}
 	}
 
-	public String getSubType() {
-		return this.subType;
+	public String getSource() {
+		return this.source;
 	}
 
-	public void setSubType(String subType) {
-		this.subType = subType;
-		if(subType != null){
-			putQueryParameter("SubType", subType);
-		}
-	}
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 
@@ -90,6 +81,28 @@ public class UpdateAppModelRequest extends RpcAcsRequest<UpdateAppModelResponse>
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public String getSubType() {
+		return this.subType;
+	}
+
+	public void setSubType(String subType) {
+		this.subType = subType;
+		if(subType != null){
+			putQueryParameter("SubType", subType);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

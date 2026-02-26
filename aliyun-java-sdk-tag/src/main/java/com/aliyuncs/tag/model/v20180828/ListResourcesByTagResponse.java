@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListResourcesByTagResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<TagResource> resources;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class ListResourcesByTagResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<TagResource> getResources() {
@@ -79,11 +79,19 @@ public class ListResourcesByTagResponse extends AcsResponse {
 
 		public static class Tag {
 
+			private String category;
+
 			private String key;
 
 			private String value;
 
-			private String category;
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
+			}
 
 			public String getKey() {
 				return this.key;
@@ -99,14 +107,6 @@ public class ListResourcesByTagResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
-			}
-
-			public String getCategory() {
-				return this.category;
-			}
-
-			public void setCategory(String category) {
-				this.category = category;
 			}
 		}
 	}

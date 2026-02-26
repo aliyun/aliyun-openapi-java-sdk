@@ -47,46 +47,30 @@ public class DescribeDcdnDomainByCertificateResponse extends AcsResponse {
 
 	public static class CertInfo {
 
-		private String issuer;
-
-		private String certType;
-
-		private String certSubjectCommonName;
+		private String certStartTime;
 
 		private String certExpireTime;
 
-		private String certStartTime;
+		private String certCaIsLegacy;
+
+		private String certSubjectCommonName;
+
+		private String certType;
 
 		private String domainNames;
 
-		private String domainList;
-
 		private String certExpired;
 
-		private String certCaIsLegacy;
+		private String issuer;
 
-		public String getIssuer() {
-			return this.issuer;
+		private String domainList;
+
+		public String getCertStartTime() {
+			return this.certStartTime;
 		}
 
-		public void setIssuer(String issuer) {
-			this.issuer = issuer;
-		}
-
-		public String getCertType() {
-			return this.certType;
-		}
-
-		public void setCertType(String certType) {
-			this.certType = certType;
-		}
-
-		public String getCertSubjectCommonName() {
-			return this.certSubjectCommonName;
-		}
-
-		public void setCertSubjectCommonName(String certSubjectCommonName) {
-			this.certSubjectCommonName = certSubjectCommonName;
+		public void setCertStartTime(String certStartTime) {
+			this.certStartTime = certStartTime;
 		}
 
 		public String getCertExpireTime() {
@@ -97,12 +81,28 @@ public class DescribeDcdnDomainByCertificateResponse extends AcsResponse {
 			this.certExpireTime = certExpireTime;
 		}
 
-		public String getCertStartTime() {
-			return this.certStartTime;
+		public String getCertCaIsLegacy() {
+			return this.certCaIsLegacy;
 		}
 
-		public void setCertStartTime(String certStartTime) {
-			this.certStartTime = certStartTime;
+		public void setCertCaIsLegacy(String certCaIsLegacy) {
+			this.certCaIsLegacy = certCaIsLegacy;
+		}
+
+		public String getCertSubjectCommonName() {
+			return this.certSubjectCommonName;
+		}
+
+		public void setCertSubjectCommonName(String certSubjectCommonName) {
+			this.certSubjectCommonName = certSubjectCommonName;
+		}
+
+		public String getCertType() {
+			return this.certType;
+		}
+
+		public void setCertType(String certType) {
+			this.certType = certType;
 		}
 
 		public String getDomainNames() {
@@ -113,14 +113,6 @@ public class DescribeDcdnDomainByCertificateResponse extends AcsResponse {
 			this.domainNames = domainNames;
 		}
 
-		public String getDomainList() {
-			return this.domainList;
-		}
-
-		public void setDomainList(String domainList) {
-			this.domainList = domainList;
-		}
-
 		public String getCertExpired() {
 			return this.certExpired;
 		}
@@ -129,12 +121,20 @@ public class DescribeDcdnDomainByCertificateResponse extends AcsResponse {
 			this.certExpired = certExpired;
 		}
 
-		public String getCertCaIsLegacy() {
-			return this.certCaIsLegacy;
+		public String getIssuer() {
+			return this.issuer;
 		}
 
-		public void setCertCaIsLegacy(String certCaIsLegacy) {
-			this.certCaIsLegacy = certCaIsLegacy;
+		public void setIssuer(String issuer) {
+			this.issuer = issuer;
+		}
+
+		public String getDomainList() {
+			return this.domainList;
+		}
+
+		public void setDomainList(String domainList) {
+			this.domainList = domainList;
 		}
 	}
 

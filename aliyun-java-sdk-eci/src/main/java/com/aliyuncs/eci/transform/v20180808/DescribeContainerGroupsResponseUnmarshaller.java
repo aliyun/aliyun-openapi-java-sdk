@@ -85,6 +85,7 @@ public class DescribeContainerGroupsResponseUnmarshaller {
             containerGroup.setSpotStrategy(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].SpotStrategy"));
             containerGroup.setTenantEniIp(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].TenantEniIp"));
             containerGroup.setEphemeralStorage(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].EphemeralStorage"));
+            containerGroup.setComputeCategory(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].ComputeCategory"));
 
             DnsConfig dnsConfig = new DnsConfig();
 
@@ -285,6 +286,7 @@ public class DescribeContainerGroupsResponseUnmarshaller {
                     volumeMount.setMountPropagation(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Containers[" + j + "].VolumeMounts[" + k + "].MountPropagation"));
                     volumeMount.setMountPath(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Containers[" + j + "].VolumeMounts[" + k + "].MountPath"));
                     volumeMount.setReadOnly(context.booleanValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Containers[" + j + "].VolumeMounts[" + k + "].ReadOnly"));
+                    volumeMount.setSubPath(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Containers[" + j + "].VolumeMounts[" + k + "].SubPath"));
 
                     volumeMounts.add(volumeMount);
                 }
@@ -332,6 +334,8 @@ public class DescribeContainerGroupsResponseUnmarshaller {
                 volume.setFlexVolumeDriver(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Volumes[" + j + "].FlexVolumeDriver"));
                 volume.setFlexVolumeFsType(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Volumes[" + j + "].FlexVolumeFsType"));
                 volume.setFlexVolumeOptions(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Volumes[" + j + "].FlexVolumeOptions"));
+                volume.setEmptyDirVolumeMedium(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Volumes[" + j + "].EmptyDirVolumeMedium"));
+                volume.setEmptyDirVolumeSizeLimit(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Volumes[" + j + "].EmptyDirVolumeSizeLimit"));
 
                 List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths = new ArrayList<ConfigFileVolumeConfigFileToPath>();
                 for (int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Volumes[" + j + "].ConfigFileVolumeConfigFileToPaths.Length"); k++) {
@@ -413,6 +417,7 @@ public class DescribeContainerGroupsResponseUnmarshaller {
                     volumeMount.setMountPath(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].InitContainers[" + j + "].VolumeMounts[" + k + "].MountPath"));
                     volumeMount.setReadOnly(context.booleanValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].InitContainers[" + j + "].VolumeMounts[" + k + "].ReadOnly"));
                     volumeMount.setMountPropagation(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].InitContainers[" + j + "].VolumeMounts[" + k + "].MountPropagation"));
+                    volumeMount.setSubPath(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].InitContainers[" + j + "].VolumeMounts[" + k + "].SubPath"));
 
                     volumeMounts.add(volumeMount);
                 }

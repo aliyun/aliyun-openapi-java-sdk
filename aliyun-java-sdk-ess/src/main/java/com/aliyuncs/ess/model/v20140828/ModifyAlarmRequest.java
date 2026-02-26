@@ -30,6 +30,8 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 
 	private String description;
 
+	private String expressionsLogicOperator;
+
 	private List<String> alarmActions;
 
 	private Float threshold;
@@ -43,6 +45,8 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 	private List<Dimension> dimensions;
 
 	private Integer period;
+
+	private List<Expression> expressions;
 
 	private String resourceOwnerAccount;
 
@@ -85,6 +89,17 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getExpressionsLogicOperator() {
+		return this.expressionsLogicOperator;
+	}
+
+	public void setExpressionsLogicOperator(String expressionsLogicOperator) {
+		this.expressionsLogicOperator = expressionsLogicOperator;
+		if(expressionsLogicOperator != null){
+			putQueryParameter("ExpressionsLogicOperator", expressionsLogicOperator);
 		}
 	}
 
@@ -168,6 +183,23 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 		if(period != null){
 			putQueryParameter("Period", period.toString());
 		}
+	}
+
+	public List<Expression> getExpressions() {
+		return this.expressions;
+	}
+
+	public void setExpressions(List<Expression> expressions) {
+		this.expressions = expressions;	
+		if (expressions != null) {
+			for (int depth1 = 0; depth1 < expressions.size(); depth1++) {
+				putQueryParameter("Expression." + (depth1 + 1) + ".Period" , expressions.get(depth1).getPeriod());
+				putQueryParameter("Expression." + (depth1 + 1) + ".Threshold" , expressions.get(depth1).getThreshold());
+				putQueryParameter("Expression." + (depth1 + 1) + ".MetricName" , expressions.get(depth1).getMetricName());
+				putQueryParameter("Expression." + (depth1 + 1) + ".ComparisonOperator" , expressions.get(depth1).getComparisonOperator());
+				putQueryParameter("Expression." + (depth1 + 1) + ".Statistics" , expressions.get(depth1).getStatistics());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -267,6 +299,59 @@ public class ModifyAlarmRequest extends RpcAcsRequest<ModifyAlarmResponse> {
 
 		public void setDimensionKey(String dimensionKey) {
 			this.dimensionKey = dimensionKey;
+		}
+	}
+
+	public static class Expression {
+
+		private Integer period;
+
+		private Float threshold;
+
+		private String metricName;
+
+		private String comparisonOperator;
+
+		private String statistics;
+
+		public Integer getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(Integer period) {
+			this.period = period;
+		}
+
+		public Float getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(Float threshold) {
+			this.threshold = threshold;
+		}
+
+		public String getMetricName() {
+			return this.metricName;
+		}
+
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
+		}
+
+		public String getComparisonOperator() {
+			return this.comparisonOperator;
+		}
+
+		public void setComparisonOperator(String comparisonOperator) {
+			this.comparisonOperator = comparisonOperator;
+		}
+
+		public String getStatistics() {
+			return this.statistics;
+		}
+
+		public void setStatistics(String statistics) {
+			this.statistics = statistics;
 		}
 	}
 

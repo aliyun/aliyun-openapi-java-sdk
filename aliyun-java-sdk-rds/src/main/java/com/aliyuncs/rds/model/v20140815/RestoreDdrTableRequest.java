@@ -31,6 +31,8 @@ public class RestoreDdrTableRequest extends RpcAcsRequest<RestoreDdrTableRespons
 
 	private String clientToken;
 
+	private String resourceGroupId;
+
 	private String tableMeta;
 
 	private String dBInstanceId;
@@ -85,6 +87,17 @@ public class RestoreDdrTableRequest extends RpcAcsRequest<RestoreDdrTableRespons
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

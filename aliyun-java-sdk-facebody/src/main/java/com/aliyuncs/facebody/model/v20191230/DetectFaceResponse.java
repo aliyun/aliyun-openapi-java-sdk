@@ -53,13 +53,15 @@ public class DetectFaceResponse extends AcsResponse {
 
 		private List<Float> faceProbabilityList;
 
-		private List<Float> pupils;
+		private List<Double> pupils;
 
 		private List<Integer> faceRectangles;
 
 		private List<Float> poseList;
 
 		private List<Float> landmarks;
+
+		private List<Float> landmarkScore;
 
 		private Qualities qualities;
 
@@ -87,11 +89,11 @@ public class DetectFaceResponse extends AcsResponse {
 			this.faceProbabilityList = faceProbabilityList;
 		}
 
-		public List<Float> getPupils() {
+		public List<Double> getPupils() {
 			return this.pupils;
 		}
 
-		public void setPupils(List<Float> pupils) {
+		public void setPupils(List<Double> pupils) {
 			this.pupils = pupils;
 		}
 
@@ -117,6 +119,14 @@ public class DetectFaceResponse extends AcsResponse {
 
 		public void setLandmarks(List<Float> landmarks) {
 			this.landmarks = landmarks;
+		}
+
+		public List<Float> getLandmarkScore() {
+			return this.landmarkScore;
+		}
+
+		public void setLandmarkScore(List<Float> landmarkScore) {
+			this.landmarkScore = landmarkScore;
 		}
 
 		public Qualities getQualities() {

@@ -47,20 +47,20 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	public static class Region {
 
-		private String regionId;
+		private String regionEndpoint;
 
 		private String localName;
 
-		private String regionEndpoint;
+		private String regionId;
 
 		private List<Zone> zones;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getRegionEndpoint() {
+			return this.regionEndpoint;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setRegionEndpoint(String regionEndpoint) {
+			this.regionEndpoint = regionEndpoint;
 		}
 
 		public String getLocalName() {
@@ -71,12 +71,12 @@ public class DescribeRegionsResponse extends AcsResponse {
 			this.localName = localName;
 		}
 
-		public String getRegionEndpoint() {
-			return this.regionEndpoint;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setRegionEndpoint(String regionEndpoint) {
-			this.regionEndpoint = regionEndpoint;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<Zone> getZones() {

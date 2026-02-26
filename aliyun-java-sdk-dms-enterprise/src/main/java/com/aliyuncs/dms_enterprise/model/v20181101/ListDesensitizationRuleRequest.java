@@ -25,17 +25,17 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListDesensitizationRuleRequest extends RpcAcsRequest<ListDesensitizationRuleResponse> {
 	   
 
-	private String ruleType;
-
 	private String ruleName;
 
 	private Integer pageNumber;
 
 	private Long tid;
 
-	private String funcType;
-
 	private Integer pageSize;
+
+	private String ruleType;
+
+	private String funcType;
 
 	private Integer ruleId;
 	public ListDesensitizationRuleRequest() {
@@ -45,17 +45,6 @@ public class ListDesensitizationRuleRequest extends RpcAcsRequest<ListDesensitiz
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getRuleType() {
-		return this.ruleType;
-	}
-
-	public void setRuleType(String ruleType) {
-		this.ruleType = ruleType;
-		if(ruleType != null){
-			putQueryParameter("RuleType", ruleType);
-		}
 	}
 
 	public String getRuleName() {
@@ -91,17 +80,6 @@ public class ListDesensitizationRuleRequest extends RpcAcsRequest<ListDesensitiz
 		}
 	}
 
-	public String getFuncType() {
-		return this.funcType;
-	}
-
-	public void setFuncType(String funcType) {
-		this.funcType = funcType;
-		if(funcType != null){
-			putQueryParameter("FuncType", funcType);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -110,6 +88,28 @@ public class ListDesensitizationRuleRequest extends RpcAcsRequest<ListDesensitiz
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getRuleType() {
+		return this.ruleType;
+	}
+
+	public void setRuleType(String ruleType) {
+		this.ruleType = ruleType;
+		if(ruleType != null){
+			putQueryParameter("RuleType", ruleType);
+		}
+	}
+
+	public String getFuncType() {
+		return this.funcType;
+	}
+
+	public void setFuncType(String funcType) {
+		this.funcType = funcType;
+		if(funcType != null){
+			putQueryParameter("FuncType", funcType);
 		}
 	}
 

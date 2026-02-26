@@ -27,6 +27,8 @@ public class DescribeGtmAccessStrategyAvailableConfigResponse extends AcsRespons
 
 	private String requestId;
 
+	private Boolean suggestSetDefaultLine;
+
 	private List<AddrPool> addrPools;
 
 	private List<Line> lines;
@@ -37,6 +39,14 @@ public class DescribeGtmAccessStrategyAvailableConfigResponse extends AcsRespons
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuggestSetDefaultLine() {
+		return this.suggestSetDefaultLine;
+	}
+
+	public void setSuggestSetDefaultLine(Boolean suggestSetDefaultLine) {
+		this.suggestSetDefaultLine = suggestSetDefaultLine;
 	}
 
 	public List<AddrPool> getAddrPools() {
@@ -80,17 +90,33 @@ public class DescribeGtmAccessStrategyAvailableConfigResponse extends AcsRespons
 
 	public static class Line {
 
+		private String status;
+
+		private String fatherCode;
+
 		private String lineCode;
+
+		private String groupName;
 
 		private String lineName;
 
 		private String groupCode;
 
-		private String groupName;
+		public String getStatus() {
+			return this.status;
+		}
 
-		private String status;
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
-		private String fatherCode;
+		public String getFatherCode() {
+			return this.fatherCode;
+		}
+
+		public void setFatherCode(String fatherCode) {
+			this.fatherCode = fatherCode;
+		}
 
 		public String getLineCode() {
 			return this.lineCode;
@@ -98,6 +124,14 @@ public class DescribeGtmAccessStrategyAvailableConfigResponse extends AcsRespons
 
 		public void setLineCode(String lineCode) {
 			this.lineCode = lineCode;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 
 		public String getLineName() {
@@ -114,30 +148,6 @@ public class DescribeGtmAccessStrategyAvailableConfigResponse extends AcsRespons
 
 		public void setGroupCode(String groupCode) {
 			this.groupCode = groupCode;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getFatherCode() {
-			return this.fatherCode;
-		}
-
-		public void setFatherCode(String fatherCode) {
-			this.fatherCode = fatherCode;
 		}
 	}
 

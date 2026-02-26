@@ -83,6 +83,10 @@ public class ListIpv4GatewaysResponse extends AcsResponse {
 
 		private String ipv4GatewayName;
 
+		private String resourceGroupId;
+
+		private List<Tag> tags;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -145,6 +149,45 @@ public class ListIpv4GatewaysResponse extends AcsResponse {
 
 		public void setIpv4GatewayName(String ipv4GatewayName) {
 			this.ipv4GatewayName = ipv4GatewayName;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

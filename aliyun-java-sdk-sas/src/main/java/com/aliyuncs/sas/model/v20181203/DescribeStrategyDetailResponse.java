@@ -57,6 +57,16 @@ public class DescribeStrategyDetailResponse extends AcsResponse {
 
 		private Integer cycleStartTime;
 
+		private String startTime;
+
+		private String endTime;
+
+		private String customType;
+
+		private String targetType;
+
+		private String riskSubTypeName;
+
 		private List<RiskTypeWhiteListQueryResult> riskTypeWhiteListQueryResultList;
 
 		public Integer getType() {
@@ -97,6 +107,46 @@ public class DescribeStrategyDetailResponse extends AcsResponse {
 
 		public void setCycleStartTime(Integer cycleStartTime) {
 			this.cycleStartTime = cycleStartTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getCustomType() {
+			return this.customType;
+		}
+
+		public void setCustomType(String customType) {
+			this.customType = customType;
+		}
+
+		public String getTargetType() {
+			return this.targetType;
+		}
+
+		public void setTargetType(String targetType) {
+			this.targetType = targetType;
+		}
+
+		public String getRiskSubTypeName() {
+			return this.riskSubTypeName;
+		}
+
+		public void setRiskSubTypeName(String riskSubTypeName) {
+			this.riskSubTypeName = riskSubTypeName;
 		}
 
 		public List<RiskTypeWhiteListQueryResult> getRiskTypeWhiteListQueryResultList() {

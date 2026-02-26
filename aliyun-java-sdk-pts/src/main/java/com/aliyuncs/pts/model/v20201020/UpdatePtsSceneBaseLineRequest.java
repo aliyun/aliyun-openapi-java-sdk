@@ -31,7 +31,7 @@ public class UpdatePtsSceneBaseLineRequest extends RpcAcsRequest<UpdatePtsSceneB
 
 	private String apiBaselines;
 	public UpdatePtsSceneBaseLineRequest() {
-		super("PTS", "2020-10-20", "UpdatePtsSceneBaseLine", "pts");
+		super("PTS", "2020-10-20", "UpdatePtsSceneBaseLine");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

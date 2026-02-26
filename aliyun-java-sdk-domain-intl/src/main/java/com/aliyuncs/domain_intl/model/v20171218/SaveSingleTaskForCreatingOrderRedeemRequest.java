@@ -15,22 +15,14 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveSingleTaskForCreatingOrderRedeemRequest extends RpcAcsRequest<SaveSingleTaskForCreatingOrderRedeemResponse> {
-	
-	public SaveSingleTaskForCreatingOrderRedeemRequest() {
-		super("Domain-intl", "2017-12-18", "SaveSingleTaskForCreatingOrderRedeem", "domain");
-	}
-
-	private String promotionNo;
-
-	private Long currentExpirationDate;
-
-	private String userClientIp;
+	   
 
 	private String domainName;
 
@@ -38,41 +30,18 @@ public class SaveSingleTaskForCreatingOrderRedeemRequest extends RpcAcsRequest<S
 
 	private Boolean useCoupon;
 
+	private String promotionNo;
+
+	private Long currentExpirationDate;
+
+	private String userClientIp;
+
 	private String lang;
 
 	private Boolean usePromotion;
-
-	public String getPromotionNo() {
-		return this.promotionNo;
-	}
-
-	public void setPromotionNo(String promotionNo) {
-		this.promotionNo = promotionNo;
-		if(promotionNo != null){
-			putQueryParameter("PromotionNo", promotionNo);
-		}
-	}
-
-	public Long getCurrentExpirationDate() {
-		return this.currentExpirationDate;
-	}
-
-	public void setCurrentExpirationDate(Long currentExpirationDate) {
-		this.currentExpirationDate = currentExpirationDate;
-		if(currentExpirationDate != null){
-			putQueryParameter("CurrentExpirationDate", currentExpirationDate.toString());
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
+	public SaveSingleTaskForCreatingOrderRedeemRequest() {
+		super("Domain-intl", "2017-12-18", "SaveSingleTaskForCreatingOrderRedeem");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDomainName() {
@@ -105,6 +74,39 @@ public class SaveSingleTaskForCreatingOrderRedeemRequest extends RpcAcsRequest<S
 		this.useCoupon = useCoupon;
 		if(useCoupon != null){
 			putQueryParameter("UseCoupon", useCoupon.toString());
+		}
+	}
+
+	public String getPromotionNo() {
+		return this.promotionNo;
+	}
+
+	public void setPromotionNo(String promotionNo) {
+		this.promotionNo = promotionNo;
+		if(promotionNo != null){
+			putQueryParameter("PromotionNo", promotionNo);
+		}
+	}
+
+	public Long getCurrentExpirationDate() {
+		return this.currentExpirationDate;
+	}
+
+	public void setCurrentExpirationDate(Long currentExpirationDate) {
+		this.currentExpirationDate = currentExpirationDate;
+		if(currentExpirationDate != null){
+			putQueryParameter("CurrentExpirationDate", currentExpirationDate.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

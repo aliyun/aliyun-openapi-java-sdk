@@ -27,9 +27,9 @@ public class UpdateEndpointGroupAttributeRequest extends RpcAcsRequest<UpdateEnd
 
 	private String clientToken;
 
-	private String name;
-
 	private String description;
+
+	private String name;
 
 	private String endpointGroupId;
 	public UpdateEndpointGroupAttributeRequest() {
@@ -52,17 +52,6 @@ public class UpdateEndpointGroupAttributeRequest extends RpcAcsRequest<UpdateEnd
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -71,6 +60,17 @@ public class UpdateEndpointGroupAttributeRequest extends RpcAcsRequest<UpdateEnd
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

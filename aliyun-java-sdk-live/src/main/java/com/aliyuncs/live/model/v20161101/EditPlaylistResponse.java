@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class EditPlaylistResponse extends AcsResponse {
 
-	private String requestId;
+	private String casterId;
 
 	private String programId;
 
-	private String casterId;
+	private String requestId;
 
 	private Items items;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCasterId() {
+		return this.casterId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCasterId(String casterId) {
+		this.casterId = casterId;
 	}
 
 	public String getProgramId() {
@@ -49,12 +49,12 @@ public class EditPlaylistResponse extends AcsResponse {
 		this.programId = programId;
 	}
 
-	public String getCasterId() {
-		return this.casterId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCasterId(String casterId) {
-		this.casterId = casterId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Items getItems() {
@@ -67,17 +67,9 @@ public class EditPlaylistResponse extends AcsResponse {
 
 	public static class Items {
 
-		private List<SuccessItem> successItems;
-
 		private List<FailedItem> failedItems;
 
-		public List<SuccessItem> getSuccessItems() {
-			return this.successItems;
-		}
-
-		public void setSuccessItems(List<SuccessItem> successItems) {
-			this.successItems = successItems;
-		}
+		private List<SuccessItem> successItems;
 
 		public List<FailedItem> getFailedItems() {
 			return this.failedItems;
@@ -87,7 +79,15 @@ public class EditPlaylistResponse extends AcsResponse {
 			this.failedItems = failedItems;
 		}
 
-		public static class SuccessItem {
+		public List<SuccessItem> getSuccessItems() {
+			return this.successItems;
+		}
+
+		public void setSuccessItems(List<SuccessItem> successItems) {
+			this.successItems = successItems;
+		}
+
+		public static class FailedItem {
 
 			private String itemId;
 
@@ -110,7 +110,7 @@ public class EditPlaylistResponse extends AcsResponse {
 			}
 		}
 
-		public static class FailedItem {
+		public static class SuccessItem {
 
 			private String itemId;
 

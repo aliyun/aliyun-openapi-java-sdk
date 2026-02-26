@@ -71,11 +71,11 @@ public class DescribeDcdnSMCertificateListResponse extends AcsResponse {
 
 			private String certName;
 
+			private String issuer;
+
 			private String certIdentifier;
 
 			private String common;
-
-			private String issuer;
 
 			public String getCertName() {
 				return this.certName;
@@ -83,6 +83,14 @@ public class DescribeDcdnSMCertificateListResponse extends AcsResponse {
 
 			public void setCertName(String certName) {
 				this.certName = certName;
+			}
+
+			public String getIssuer() {
+				return this.issuer;
+			}
+
+			public void setIssuer(String issuer) {
+				this.issuer = issuer;
 			}
 
 			public String getCertIdentifier() {
@@ -99,14 +107,6 @@ public class DescribeDcdnSMCertificateListResponse extends AcsResponse {
 
 			public void setCommon(String common) {
 				this.common = common;
-			}
-
-			public String getIssuer() {
-				return this.issuer;
-			}
-
-			public void setIssuer(String issuer) {
-				this.issuer = issuer;
 			}
 		}
 	}

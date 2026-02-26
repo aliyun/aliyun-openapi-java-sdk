@@ -27,11 +27,11 @@ public class RefreshDcdnObjectCachesRequest extends RpcAcsRequest<RefreshDcdnObj
 
 	private String objectPath;
 
-	private Long ownerId;
-
 	private String securityToken;
 
 	private String objectType;
+
+	private Long ownerId;
 	public RefreshDcdnObjectCachesRequest() {
 		super("dcdn", "2018-01-15", "RefreshDcdnObjectCaches");
 		setMethod(MethodType.POST);
@@ -49,17 +49,6 @@ public class RefreshDcdnObjectCachesRequest extends RpcAcsRequest<RefreshDcdnObj
 		this.objectPath = objectPath;
 		if(objectPath != null){
 			putQueryParameter("ObjectPath", objectPath);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -82,6 +71,17 @@ public class RefreshDcdnObjectCachesRequest extends RpcAcsRequest<RefreshDcdnObj
 		this.objectType = objectType;
 		if(objectType != null){
 			putQueryParameter("ObjectType", objectType);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

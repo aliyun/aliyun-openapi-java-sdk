@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.BatchCheckImportDeviceResponse;
 import com.aliyuncs.iot.model.v20180120.BatchCheckImportDeviceResponse.Data;
+import com.aliyuncs.iot.model.v20180120.BatchCheckImportDeviceResponse.Data.InvalidDetailListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,6 +57,18 @@ public class BatchCheckImportDeviceResponseUnmarshaller {
 			repeatedDeviceNameList.add(_ctx.stringValue("BatchCheckImportDeviceResponse.Data.RepeatedDeviceNameList["+ i +"]"));
 		}
 		data.setRepeatedDeviceNameList(repeatedDeviceNameList);
+
+		List<InvalidDetailListItem> invalidDetailList = new ArrayList<InvalidDetailListItem>();
+		for (int i = 0; i < _ctx.lengthValue("BatchCheckImportDeviceResponse.Data.InvalidDetailList.Length"); i++) {
+			InvalidDetailListItem invalidDetailListItem = new InvalidDetailListItem();
+			invalidDetailListItem.setDeviceName(_ctx.stringValue("BatchCheckImportDeviceResponse.Data.InvalidDetailList["+ i +"].DeviceName"));
+			invalidDetailListItem.setDeviceSecret(_ctx.stringValue("BatchCheckImportDeviceResponse.Data.InvalidDetailList["+ i +"].DeviceSecret"));
+			invalidDetailListItem.setSn(_ctx.stringValue("BatchCheckImportDeviceResponse.Data.InvalidDetailList["+ i +"].Sn"));
+			invalidDetailListItem.setErrorMsg(_ctx.stringValue("BatchCheckImportDeviceResponse.Data.InvalidDetailList["+ i +"].ErrorMsg"));
+
+			invalidDetailList.add(invalidDetailListItem);
+		}
+		data.setInvalidDetailList(invalidDetailList);
 		batchCheckImportDeviceResponse.setData(data);
 	 
 	 	return batchCheckImportDeviceResponse;

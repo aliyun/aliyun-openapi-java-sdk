@@ -45,7 +45,7 @@ public class ListTrafficMarkingPoliciesRequest extends RpcAcsRequest<ListTraffic
 
 	private Integer maxResults;
 	public ListTrafficMarkingPoliciesRequest() {
-		super("Cbn", "2017-09-12", "ListTrafficMarkingPolicies");
+		super("Cbn", "2017-09-12", "ListTrafficMarkingPolicies", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

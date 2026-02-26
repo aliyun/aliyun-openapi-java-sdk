@@ -48,23 +48,27 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 
 		private String account;
 
+		private String alias;
+
+		private String brand;
+
+		private String deviceId;
+
+		private String deviceToken;
+
+		private String deviceType;
+
 		private String lastOnlineTime;
+
+		private String model;
+
+		private Boolean online;
 
 		private String phoneNumber;
 
 		private Boolean pushEnabled;
 
-		private String deviceType;
-
-		private String deviceId;
-
-		private Boolean online;
-
 		private String tags;
-
-		private String deviceToken;
-
-		private String alias;
 
 		public String getAccount() {
 			return this.account;
@@ -74,12 +78,68 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 			this.account = account;
 		}
 
+		public String getAlias() {
+			return this.alias;
+		}
+
+		public void setAlias(String alias) {
+			this.alias = alias;
+		}
+
+		public String getBrand() {
+			return this.brand;
+		}
+
+		public void setBrand(String brand) {
+			this.brand = brand;
+		}
+
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
+		}
+
+		public String getDeviceToken() {
+			return this.deviceToken;
+		}
+
+		public void setDeviceToken(String deviceToken) {
+			this.deviceToken = deviceToken;
+		}
+
+		public String getDeviceType() {
+			return this.deviceType;
+		}
+
+		public void setDeviceType(String deviceType) {
+			this.deviceType = deviceType;
+		}
+
 		public String getLastOnlineTime() {
 			return this.lastOnlineTime;
 		}
 
 		public void setLastOnlineTime(String lastOnlineTime) {
 			this.lastOnlineTime = lastOnlineTime;
+		}
+
+		public String getModel() {
+			return this.model;
+		}
+
+		public void setModel(String model) {
+			this.model = model;
+		}
+
+		public Boolean getOnline() {
+			return this.online;
+		}
+
+		public void setOnline(Boolean online) {
+			this.online = online;
 		}
 
 		public String getPhoneNumber() {
@@ -98,52 +158,12 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 			this.pushEnabled = pushEnabled;
 		}
 
-		public String getDeviceType() {
-			return this.deviceType;
-		}
-
-		public void setDeviceType(String deviceType) {
-			this.deviceType = deviceType;
-		}
-
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
-
-		public Boolean getOnline() {
-			return this.online;
-		}
-
-		public void setOnline(Boolean online) {
-			this.online = online;
-		}
-
 		public String getTags() {
 			return this.tags;
 		}
 
 		public void setTags(String tags) {
 			this.tags = tags;
-		}
-
-		public String getDeviceToken() {
-			return this.deviceToken;
-		}
-
-		public void setDeviceToken(String deviceToken) {
-			this.deviceToken = deviceToken;
-		}
-
-		public String getAlias() {
-			return this.alias;
-		}
-
-		public void setAlias(String alias) {
-			this.alias = alias;
 		}
 	}
 

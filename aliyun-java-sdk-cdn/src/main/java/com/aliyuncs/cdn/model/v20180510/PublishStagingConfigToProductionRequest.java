@@ -25,11 +25,7 @@ import com.aliyuncs.cdn.Endpoint;
 public class PublishStagingConfigToProductionRequest extends RpcAcsRequest<PublishStagingConfigToProductionResponse> {
 	   
 
-	private String functionName;
-
 	private String domainName;
-
-	private Long ownerId;
 	public PublishStagingConfigToProductionRequest() {
 		super("Cdn", "2018-05-10", "PublishStagingConfigToProduction");
 		setMethod(MethodType.POST);
@@ -37,17 +33,6 @@ public class PublishStagingConfigToProductionRequest extends RpcAcsRequest<Publi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFunctionName() {
-		return this.functionName;
-	}
-
-	public void setFunctionName(String functionName) {
-		this.functionName = functionName;
-		if(functionName != null){
-			putQueryParameter("FunctionName", functionName);
-		}
 	}
 
 	public String getDomainName() {
@@ -58,17 +43,6 @@ public class PublishStagingConfigToProductionRequest extends RpcAcsRequest<Publi
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

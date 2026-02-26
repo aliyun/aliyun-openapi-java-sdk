@@ -27,9 +27,15 @@ public class ListApplicationRequest extends RoaAcsRequest<ListApplicationRespons
 
 	private String resourceGroupId;
 
+	private String appIds;
+
 	private String appName;
 
 	private String logicalRegionId;
+
+	private Integer pageSize;
+
+	private Integer currentPage;
 
 	private String clusterId;
 
@@ -55,6 +61,17 @@ public class ListApplicationRequest extends RoaAcsRequest<ListApplicationRespons
 		}
 	}
 
+	public String getAppIds() {
+		return this.appIds;
+	}
+
+	public void setAppIds(String appIds) {
+		this.appIds = appIds;
+		if(appIds != null){
+			putQueryParameter("AppIds", appIds);
+		}
+	}
+
 	public String getAppName() {
 		return this.appName;
 	}
@@ -74,6 +91,28 @@ public class ListApplicationRequest extends RoaAcsRequest<ListApplicationRespons
 		this.logicalRegionId = logicalRegionId;
 		if(logicalRegionId != null){
 			putQueryParameter("LogicalRegionId", logicalRegionId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

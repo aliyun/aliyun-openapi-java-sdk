@@ -36,7 +36,7 @@ public class DescribeProtocolMountTargetRequest extends RpcAcsRequest<DescribePr
 
 	private Long maxResults;
 	public DescribeProtocolMountTargetRequest() {
-		super("NAS", "2017-06-26", "DescribeProtocolMountTarget", "NAS");
+		super("NAS", "2017-06-26", "DescribeProtocolMountTarget", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

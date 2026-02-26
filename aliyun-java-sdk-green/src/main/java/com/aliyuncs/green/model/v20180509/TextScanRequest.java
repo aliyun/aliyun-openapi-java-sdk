@@ -27,7 +27,7 @@ public class TextScanRequest extends RoaAcsRequest<TextScanResponse> {
 
 	private String clientInfo;
 	public TextScanRequest() {
-		super("Green", "2018-05-09", "TextScan", "green");
+		super("Green", "2018-05-09", "TextScan");
 		setUriPattern("/green/text/scan");
 		setMethod(MethodType.POST);
 		try {

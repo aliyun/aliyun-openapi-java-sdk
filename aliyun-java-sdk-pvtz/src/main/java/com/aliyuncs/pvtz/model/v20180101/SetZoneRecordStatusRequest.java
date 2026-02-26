@@ -25,6 +25,8 @@ import com.aliyuncs.pvtz.Endpoint;
 public class SetZoneRecordStatusRequest extends RpcAcsRequest<SetZoneRecordStatusResponse> {
 	   
 
+	private String clientToken;
+
 	private Long recordId;
 
 	private String userClientIp;
@@ -39,6 +41,17 @@ public class SetZoneRecordStatusRequest extends RpcAcsRequest<SetZoneRecordStatu
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public Long getRecordId() {

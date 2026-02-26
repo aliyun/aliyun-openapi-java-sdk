@@ -23,6 +23,7 @@ public class SubmitWorkflowJobResponseUnmarshaller {
 	public static SubmitWorkflowJobResponse unmarshall(SubmitWorkflowJobResponse submitWorkflowJobResponse, UnmarshallerContext _ctx) {
 		
 		submitWorkflowJobResponse.setRequestId(_ctx.stringValue("SubmitWorkflowJobResponse.RequestId"));
+		submitWorkflowJobResponse.setTaskId(_ctx.stringValue("SubmitWorkflowJobResponse.TaskId"));
 	 
 	 	return submitWorkflowJobResponse;
 	}

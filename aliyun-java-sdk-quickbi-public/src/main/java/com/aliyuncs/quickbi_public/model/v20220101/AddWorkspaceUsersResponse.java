@@ -61,9 +61,9 @@ public class AddWorkspaceUsersResponse extends AcsResponse {
 
 		private Map<Object,Object> failureDetail;
 
-		private Integer total;
-
 		private Integer success;
+
+		private Integer total;
 
 		public Integer getFailure() {
 			return this.failure;
@@ -81,20 +81,20 @@ public class AddWorkspaceUsersResponse extends AcsResponse {
 			this.failureDetail = failureDetail;
 		}
 
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
-
 		public Integer getSuccess() {
 			return this.success;
 		}
 
 		public void setSuccess(Integer success) {
 			this.success = success;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 	}
 

@@ -31,9 +31,9 @@ public class GetTurnServerListResponse extends AcsResponse {
 
 	private String message;
 
-	private String data;
-
 	private String requestId;
+
+	private String data;
 
 	private List<String> params;
 
@@ -61,20 +61,20 @@ public class GetTurnServerListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public List<String> getParams() {

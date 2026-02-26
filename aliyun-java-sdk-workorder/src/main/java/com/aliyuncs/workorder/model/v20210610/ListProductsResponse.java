@@ -27,9 +27,9 @@ public class ListProductsResponse extends AcsResponse {
 
 	private Integer code;
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private Boolean success;
 
@@ -43,20 +43,20 @@ public class ListProductsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -77,19 +77,11 @@ public class ListProductsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String directoryName;
-
 		private Long directoryId;
 
+		private String directoryName;
+
 		private List<ProductListItem> productList;
-
-		public String getDirectoryName() {
-			return this.directoryName;
-		}
-
-		public void setDirectoryName(String directoryName) {
-			this.directoryName = directoryName;
-		}
 
 		public Long getDirectoryId() {
 			return this.directoryId;
@@ -97,6 +89,14 @@ public class ListProductsResponse extends AcsResponse {
 
 		public void setDirectoryId(Long directoryId) {
 			this.directoryId = directoryId;
+		}
+
+		public String getDirectoryName() {
+			return this.directoryName;
+		}
+
+		public void setDirectoryName(String directoryName) {
+			this.directoryName = directoryName;
 		}
 
 		public List<ProductListItem> getProductList() {

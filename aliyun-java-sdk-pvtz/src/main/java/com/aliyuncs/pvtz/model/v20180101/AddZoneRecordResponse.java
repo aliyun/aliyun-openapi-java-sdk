@@ -26,9 +26,9 @@ public class AddZoneRecordResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
 	private Long recordId;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class AddZoneRecordResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public Long getRecordId() {
 		return this.recordId;
 	}
 
 	public void setRecordId(Long recordId) {
 		this.recordId = recordId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

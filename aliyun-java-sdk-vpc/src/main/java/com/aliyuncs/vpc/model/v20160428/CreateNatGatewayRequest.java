@@ -15,6 +15,9 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -27,19 +30,37 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	private Long resourceOwnerId;
 
+	private String ipv4Prefix;
+
+	private String networkType;
+
+	private String spec;
+
+	private Boolean icmpReplyEnabled;
+
+	private List<Tag> tags;
+
+	private Long ownerId;
+
+	private String vSwitchId;
+
+	private String natIp;
+
+	private String internetChargeType;
+
+	private String name;
+
+	private Boolean privateLinkEnabled;
+
+	private String pricingCycle;
+
 	private String clientToken;
 
 	private Boolean securityProtectionEnabled;
 
 	private String description;
 
-	private String networkType;
-
-	private String spec;
-
 	private String duration;
-
-	private Boolean icmpReplyEnabled;
 
 	private String natType;
 
@@ -51,19 +72,12 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
-	private String vSwitchId;
-
-	private String internetChargeType;
-
 	private String vpcId;
-
-	private String name;
 
 	private String eipBindMode;
 
-	private String pricingCycle;
+	@SerializedName("accessMode")
+	private AccessMode accessMode;
 	public CreateNatGatewayRequest() {
 		super("Vpc", "2016-04-28", "CreateNatGateway", "vpc");
 		setMethod(MethodType.POST);
@@ -81,6 +95,141 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getIpv4Prefix() {
+		return this.ipv4Prefix;
+	}
+
+	public void setIpv4Prefix(String ipv4Prefix) {
+		this.ipv4Prefix = ipv4Prefix;
+		if(ipv4Prefix != null){
+			putQueryParameter("Ipv4Prefix", ipv4Prefix);
+		}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
+		}
+	}
+
+	public String getSpec() {
+		return this.spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+		if(spec != null){
+			putQueryParameter("Spec", spec);
+		}
+	}
+
+	public Boolean getIcmpReplyEnabled() {
+		return this.icmpReplyEnabled;
+	}
+
+	public void setIcmpReplyEnabled(Boolean icmpReplyEnabled) {
+		this.icmpReplyEnabled = icmpReplyEnabled;
+		if(icmpReplyEnabled != null){
+			putQueryParameter("IcmpReplyEnabled", icmpReplyEnabled.toString());
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getNatIp() {
+		return this.natIp;
+	}
+
+	public void setNatIp(String natIp) {
+		this.natIp = natIp;
+		if(natIp != null){
+			putQueryParameter("NatIp", natIp);
+		}
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Boolean getPrivateLinkEnabled() {
+		return this.privateLinkEnabled;
+	}
+
+	public void setPrivateLinkEnabled(Boolean privateLinkEnabled) {
+		this.privateLinkEnabled = privateLinkEnabled;
+		if(privateLinkEnabled != null){
+			putQueryParameter("PrivateLinkEnabled", privateLinkEnabled.toString());
+		}
+	}
+
+	public String getPricingCycle() {
+		return this.pricingCycle;
+	}
+
+	public void setPricingCycle(String pricingCycle) {
+		this.pricingCycle = pricingCycle;
+		if(pricingCycle != null){
+			putQueryParameter("PricingCycle", pricingCycle);
 		}
 	}
 
@@ -117,28 +266,6 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		}
 	}
 
-	public String getNetworkType() {
-		return this.networkType;
-	}
-
-	public void setNetworkType(String networkType) {
-		this.networkType = networkType;
-		if(networkType != null){
-			putQueryParameter("NetworkType", networkType);
-		}
-	}
-
-	public String getSpec() {
-		return this.spec;
-	}
-
-	public void setSpec(String spec) {
-		this.spec = spec;
-		if(spec != null){
-			putQueryParameter("Spec", spec);
-		}
-	}
-
 	public String getDuration() {
 		return this.duration;
 	}
@@ -147,17 +274,6 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		this.duration = duration;
 		if(duration != null){
 			putQueryParameter("Duration", duration);
-		}
-	}
-
-	public Boolean getIcmpReplyEnabled() {
-		return this.icmpReplyEnabled;
-	}
-
-	public void setIcmpReplyEnabled(Boolean icmpReplyEnabled) {
-		this.icmpReplyEnabled = icmpReplyEnabled;
-		if(icmpReplyEnabled != null){
-			putQueryParameter("IcmpReplyEnabled", icmpReplyEnabled.toString());
 		}
 	}
 
@@ -216,39 +332,6 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
-		}
-	}
-
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -257,17 +340,6 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -282,14 +354,62 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		}
 	}
 
-	public String getPricingCycle() {
-		return this.pricingCycle;
+	public AccessMode getAccessMode() {
+		return this.accessMode;
 	}
 
-	public void setPricingCycle(String pricingCycle) {
-		this.pricingCycle = pricingCycle;
-		if(pricingCycle != null){
-			putQueryParameter("PricingCycle", pricingCycle);
+	public void setAccessMode(AccessMode accessMode) {
+		this.accessMode = accessMode;	
+		if (accessMode != null) {
+			putQueryParameter("AccessMode" , new Gson().toJson(accessMode));
+		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
+	public static class AccessMode {
+
+		@SerializedName("ModeValue")
+		private String modeValue;
+
+		@SerializedName("TunnelType")
+		private String tunnelType;
+
+		public String getModeValue() {
+			return this.modeValue;
+		}
+
+		public void setModeValue(String modeValue) {
+			this.modeValue = modeValue;
+		}
+
+		public String getTunnelType() {
+			return this.tunnelType;
+		}
+
+		public void setTunnelType(String tunnelType) {
+			this.tunnelType = tunnelType;
 		}
 	}
 

@@ -25,9 +25,13 @@ import com.aliyuncs.airec.Endpoint;
 public class ListItemsRequest extends RoaAcsRequest<ListItemsResponse> {
 	   
 
+	private Boolean strategyUsed;
+
 	private String instanceId;
 
 	private Integer size;
+
+	private Boolean withInvalidDetail;
 
 	private Integer page;
 	public ListItemsRequest() {
@@ -38,6 +42,17 @@ public class ListItemsRequest extends RoaAcsRequest<ListItemsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getStrategyUsed() {
+		return this.strategyUsed;
+	}
+
+	public void setStrategyUsed(Boolean strategyUsed) {
+		this.strategyUsed = strategyUsed;
+		if(strategyUsed != null){
+			putQueryParameter("strategyUsed", strategyUsed.toString());
+		}
 	}
 
 	public String getInstanceId() {
@@ -59,6 +74,17 @@ public class ListItemsRequest extends RoaAcsRequest<ListItemsResponse> {
 		this.size = size;
 		if(size != null){
 			putQueryParameter("size", size.toString());
+		}
+	}
+
+	public Boolean getWithInvalidDetail() {
+		return this.withInvalidDetail;
+	}
+
+	public void setWithInvalidDetail(Boolean withInvalidDetail) {
+		this.withInvalidDetail = withInvalidDetail;
+		if(withInvalidDetail != null){
+			putQueryParameter("withInvalidDetail", withInvalidDetail.toString());
 		}
 	}
 

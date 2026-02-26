@@ -23,15 +23,16 @@ public class DescribeFlowResponseUnmarshaller {
 	public static DescribeFlowResponse unmarshall(DescribeFlowResponse describeFlowResponse, UnmarshallerContext _ctx) {
 		
 		describeFlowResponse.setRequestId(_ctx.stringValue("DescribeFlowResponse.RequestId"));
-		describeFlowResponse.setName(_ctx.stringValue("DescribeFlowResponse.Name"));
-		describeFlowResponse.setDescription(_ctx.stringValue("DescribeFlowResponse.Description"));
-		describeFlowResponse.setDefinition(_ctx.stringValue("DescribeFlowResponse.Definition"));
-		describeFlowResponse.setId(_ctx.stringValue("DescribeFlowResponse.Id"));
 		describeFlowResponse.setType(_ctx.stringValue("DescribeFlowResponse.Type"));
+		describeFlowResponse.setDefinition(_ctx.stringValue("DescribeFlowResponse.Definition"));
 		describeFlowResponse.setRoleArn(_ctx.stringValue("DescribeFlowResponse.RoleArn"));
+		describeFlowResponse.setDescription(_ctx.stringValue("DescribeFlowResponse.Description"));
+		describeFlowResponse.setExternalStorageLocation(_ctx.stringValue("DescribeFlowResponse.ExternalStorageLocation"));
+		describeFlowResponse.setName(_ctx.stringValue("DescribeFlowResponse.Name"));
 		describeFlowResponse.setCreatedTime(_ctx.stringValue("DescribeFlowResponse.CreatedTime"));
 		describeFlowResponse.setLastModifiedTime(_ctx.stringValue("DescribeFlowResponse.LastModifiedTime"));
-		describeFlowResponse.setExternalStorageLocation(_ctx.stringValue("DescribeFlowResponse.ExternalStorageLocation"));
+		describeFlowResponse.setId(_ctx.stringValue("DescribeFlowResponse.Id"));
+		describeFlowResponse.setExecutionMode(_ctx.stringValue("DescribeFlowResponse.ExecutionMode"));
 	 
 	 	return describeFlowResponse;
 	}

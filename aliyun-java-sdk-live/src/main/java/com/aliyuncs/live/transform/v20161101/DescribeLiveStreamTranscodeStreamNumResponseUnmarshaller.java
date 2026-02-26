@@ -14,7 +14,11 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamTranscodeStreamNumResponse;
+import com.aliyuncs.live.model.v20161101.DescribeLiveStreamTranscodeStreamNumResponse.Transcode_details;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,10 +27,20 @@ public class DescribeLiveStreamTranscodeStreamNumResponseUnmarshaller {
 	public static DescribeLiveStreamTranscodeStreamNumResponse unmarshall(DescribeLiveStreamTranscodeStreamNumResponse describeLiveStreamTranscodeStreamNumResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveStreamTranscodeStreamNumResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamTranscodeStreamNumResponse.RequestId"));
-		describeLiveStreamTranscodeStreamNumResponse.setTotal(_ctx.longValue("DescribeLiveStreamTranscodeStreamNumResponse.Total"));
-		describeLiveStreamTranscodeStreamNumResponse.setTranscodedNumber(_ctx.longValue("DescribeLiveStreamTranscodeStreamNumResponse.TranscodedNumber"));
 		describeLiveStreamTranscodeStreamNumResponse.setUntranscodeNumber(_ctx.longValue("DescribeLiveStreamTranscodeStreamNumResponse.UntranscodeNumber"));
 		describeLiveStreamTranscodeStreamNumResponse.setLazyTranscodedNumber(_ctx.longValue("DescribeLiveStreamTranscodeStreamNumResponse.LazyTranscodedNumber"));
+		describeLiveStreamTranscodeStreamNumResponse.setTranscodedNumber(_ctx.longValue("DescribeLiveStreamTranscodeStreamNumResponse.TranscodedNumber"));
+		describeLiveStreamTranscodeStreamNumResponse.setTotal(_ctx.longValue("DescribeLiveStreamTranscodeStreamNumResponse.Total"));
+
+		List<Transcode_details> transcodeStreamCountDetails = new ArrayList<Transcode_details>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamTranscodeStreamNumResponse.TranscodeStreamCountDetails.Length"); i++) {
+			Transcode_details transcode_details = new Transcode_details();
+			transcode_details.setTemplate(_ctx.stringValue("DescribeLiveStreamTranscodeStreamNumResponse.TranscodeStreamCountDetails["+ i +"].Template"));
+			transcode_details.setCount(_ctx.integerValue("DescribeLiveStreamTranscodeStreamNumResponse.TranscodeStreamCountDetails["+ i +"].Count"));
+
+			transcodeStreamCountDetails.add(transcode_details);
+		}
+		describeLiveStreamTranscodeStreamNumResponse.setTranscodeStreamCountDetails(transcodeStreamCountDetails);
 	 
 	 	return describeLiveStreamTranscodeStreamNumResponse;
 	}

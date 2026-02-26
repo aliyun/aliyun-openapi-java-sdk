@@ -1,3 +1,39 @@
+2025-07-30 Version: 4.7.14
+- Generated 2019-01-15 for `Qualitycheck`.
+
+2024-11-04 Version: 4.7.13
+- Generated 2019-01-15 for `Qualitycheck`.
+
+2024-07-30 Version: 4.7.12
+- Generated 2019-01-15 for `Qualitycheck`.
+
+2024-07-23 Version: 4.7.11
+- Generated 2019-01-15 for `Qualitycheck`.
+
+2024-07-15 Version: 4.7.10
+- Generated 2019-01-15 for `Qualitycheck`.
+
+2023-12-07 Version: 4.7.9
+- Add  GetRuleV4 param schemeTaskConfigId/schemeTaskConfigName
+
+2023-11-30 Version: 4.7.8
+- Add  GetRuleV4Str
+
+2023-07-26 Version: 4.7.7
+- Add pvalues for GetRuleV4.
+
+2023-04-27 Version: 4.7.6
+- Add Api. UploadDataV4.
+
+2023-04-12 Version: 4.7.5
+- Add Api.
+
+2022-10-20 Version: 4.7.4
+- Add Api.
+
+2022-10-17 Version: 4.7.3
+- Add Api.
+
 2022-05-30 Version: 4.7.1
 - Add Api.
 

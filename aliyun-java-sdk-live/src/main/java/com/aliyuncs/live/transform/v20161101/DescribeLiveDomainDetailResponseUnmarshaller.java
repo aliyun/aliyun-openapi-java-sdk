@@ -26,18 +26,19 @@ public class DescribeLiveDomainDetailResponseUnmarshaller {
 		describeLiveDomainDetailResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainDetailResponse.RequestId"));
 
 		DomainDetail domainDetail = new DomainDetail();
+		domainDetail.setCertName(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.CertName"));
+		domainDetail.setCname(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Cname"));
+		domainDetail.setDescription(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Description"));
+		domainDetail.setDomainName(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.DomainName"));
+		domainDetail.setDomainStatus(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.DomainStatus"));
 		domainDetail.setGmtCreated(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.GmtCreated"));
 		domainDetail.setGmtModified(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.GmtModified"));
-		domainDetail.setDomainStatus(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.DomainStatus"));
-		domainDetail.setCname(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Cname"));
-		domainDetail.setDomainName(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.DomainName"));
 		domainDetail.setLiveDomainType(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.LiveDomainType"));
 		domainDetail.setRegion(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Region"));
-		domainDetail.setDescription(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Description"));
 		domainDetail.setSSLProtocol(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.SSLProtocol"));
 		domainDetail.setSSLPub(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.SSLPub"));
 		domainDetail.setScope(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Scope"));
-		domainDetail.setCertName(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.CertName"));
+		domainDetail.setResourceGroupId(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.ResourceGroupId"));
 		describeLiveDomainDetailResponse.setDomainDetail(domainDetail);
 	 
 	 	return describeLiveDomainDetailResponse;

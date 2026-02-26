@@ -1,7 +1,7 @@
 English | [简体中文](./README-CN.md)
 
 <p align="center">
-<a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg"></a>
+<a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg" alt="alibaba cloud logo"></a>
 </p>
 
 <h1 align="center">Alibaba Cloud SDK for Java (V1.0)</h1>
@@ -41,14 +41,12 @@ If you have any problem while using Alibaba Cloud SDK for Java (V1.0), please [s
 ## Requirements
 
 - To use Alibaba Cloud SDK for Java, you must have an Alibaba Cloud account as well as an `AccessKey ID` and an `AccessKey Secret`. Create and view your AccessKey on the [RAM console](https://ram.console.aliyun.com "RAM console") or contact your system administrator.
-
-- To use the Alibaba Cloud SDK for Java to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
-
-- The Alibaba Cloud Java SDK requires JDK 1.6 or later.
+- To use the Alibaba Cloud SDK for Java to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com) if required.
+- The Alibaba Cloud Java SDK requires JDK 1.8 or later.
 
 ## Installation
 
-If you use Apache Maven to manage Java projects, you only need to add corresponding dependencies to the pom.xml files of the projects. You can download the Maven dependencies of different cloud products in [Alibaba Cloud developer resources](https://help.aliyun.com/learn/developer.html).
+If you use Apache Maven to manage Java projects, you only need to add corresponding dependencies to the pom.xml files of the projects. You can view the Maven dependencies of different cloud products in [Alibaba Cloud SDK Center](https://api.aliyun.com/api-tools/sdklang?language=java&sdkStyle=old).
 
 You must install `aliyun-java-sdk-core` library no matter which product development kit you want to use. For example, to call the ECS SDK, you need to install `aliyun-java-sdk-core` library  and `aliyun-java-sdk-ecs` library .
 
@@ -58,7 +56,7 @@ To use the Ecs SDK as an example, you only need to declare the following two dep
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>[4.4.9,5.0.0)</version>
+    <version>[4.6.3,5.0.0)</version>
 </dependency>
 <dependency>
     <groupId>com.aliyun</groupId>
@@ -68,11 +66,12 @@ To use the Ecs SDK as an example, you only need to declare the following two dep
 ```
 
 If maven is not downloading jar packages from a central repository, you need to add these dependencies in the pom.xml file, or a NoClassDefFoundError exception will be reported
+
 ```xml
 <dependency>
     <groupId>com.google.code.gson</groupId>
     <artifactId>gson</artifactId>
-    <version>2.8.5</version>
+    <version>2.10.1</version>
 </dependency>
 <dependency>
     <groupId>io.opentracing</groupId>
@@ -87,38 +86,37 @@ If maven is not downloading jar packages from a central repository, you need to 
 ```
 
 ## Troubleshoot
-[Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) Provide OpenAPI diagnosis service to help developers locate quickly and provide solutions for developers through `RequestID` or `error message`.
+
+[Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) Provide OpenAPI diagnosis service to help developers quickly locate and troubleshoot errors by using `RequestID` or `error message`, and provide solutions.
 
 ## Quick Examples
 
-The following code example shows the three main steps to use Alibaba Cloud SDK for Java (V1.0):
-
-1. Create and initialize a `DefaultAcsClient` instance.
-
-2. Create an API request and set parameters.
-
-3. Initiate the request and handle the response or exceptions.
+The following code example shows how to use Alibaba Cloud SDK for Java :
 
 ```java
 package com.testprogram;
+
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.ecs.model.v20140526.*;
+
 public class Main {
     public static void main(String[] args) {
-        // Create and initialize a DefaultAcsClient instance
+        // 1. Create and initialize a DefaultAcsClient instance
         DefaultProfile profile = DefaultProfile.getProfile(
             "<your-region-id>",          // The region ID
             "<your-access-key-id>",      // The AccessKey ID of the RAM account
             "<your-access-key-secret>"); // The AccessKey Secret of the RAM account
         IAcsClient client = new DefaultAcsClient(profile);
-        // Create an API request and set parameters
+
+        // 2. Create an API request and set parameters
         DescribeInstancesRequest request = new DescribeInstancesRequest();
         request.setPageSize(10);
-        // Initiate the request and handle the response or exceptions
+
+        // 3. Initiate the request and handle the response or exceptions
         DescribeInstancesResponse response;
         try {
             response = client.getAcsResponse(request);
@@ -134,28 +132,33 @@ public class Main {
 }
 ```
 
+> For security reason, we don't recommend to hard code credentials information in source code. You should access
+> credentials from external configurations or environment variables.
 
 ## Documentation
-* [Requirements](./docs/0-Requirements-EN.md)
-* [Installation](./docs/1-Installation-EN.md)
-* [Client & Credentials](./docs/2-Client-EN.md)
-* [Connection Pool](./docs/3-Pool-EN.md)
-* [Timeout](./docs/4-Timeout-EN.md)
-* [HTTPS Configurations](./docs/5-HTTPS-EN.md)
-* [Proxy Configurations](./docs/6-Proxy-EN.md)
-* [Debug](./docs/7-Debug-EN.md)
-* [Log](./docs/8-Log-EN.md)
-* [Exception](./docs/9-Exception-EN.md)
-* [Endpoint](./docs/10-Endpoint-EN.md)
 
+- [Requirements](./docs/0-Requirements-EN.md)
+- [Installation](./docs/1-Installation-EN.md)
+- [Client & Credentials](./docs/2-Client-EN.md)
+- [Connection Pool](./docs/3-Pool-EN.md)
+- [Timeout](./docs/4-Timeout-EN.md)
+- [HTTPS Configurations](./docs/5-HTTPS-EN.md)
+- [Proxy Configurations](./docs/6-Proxy-EN.md)
+- [Debug](./docs/7-Debug-EN.md)
+- [Log](./docs/8-Log-EN.md)
+- [Exception](./docs/9-Exception-EN.md)
+- [Endpoint](./docs/10-Endpoint-EN.md)
 
 ## Issues
+
 [Opening an Issue](https://github.com/aliyun/aliyun-openapi-java-sdk/issues/new), Issues not conforming to the guidelines may be closed immediately.
 
 ## Changelog
+
 Detailed changes for each release are documented in the [release notes](./aliyun-java-sdk-core/ChangeLog.txt).
 
 ## Contribution
+
 Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before making a pull request.
 
 ## References
@@ -166,6 +169,7 @@ Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before making
 * [V2.0 Java SDK Documentation](https://help.aliyun.com/zh/sdk/developer-reference/v2-java-sdk)
 
 ## License
+
 [Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 Copyright (c) 2009-present, Alibaba Cloud All rights reserved.

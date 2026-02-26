@@ -26,6 +26,8 @@ import com.aliyuncs.vpc.Endpoint;
 public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressResponse> {
 	   
 
+	private String ipAddress;
+
 	private Long resourceOwnerId;
 
 	private String publicIpAddressPoolId;
@@ -37,6 +39,10 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 	private String description;
 
 	private String resourceGroupId;
+
+	private String zone;
+
+	private List<Tag> tags;
 
 	private String netmode;
 
@@ -56,6 +62,8 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 
 	private Long activityId;
 
+	private String instanceId;
+
 	private String internetChargeType;
 
 	private String name;
@@ -70,6 +78,17 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIpAddress() {
+		return this.ipAddress;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+		if(ipAddress != null){
+			putQueryParameter("IpAddress", ipAddress);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -136,6 +155,31 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
+	}
+
+	public String getZone() {
+		return this.zone;
+	}
+
+	public void setZone(String zone) {
+		this.zone = zone;
+		if(zone != null){
+			putQueryParameter("Zone", zone);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getNetmode() {
@@ -237,6 +281,17 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	public String getInternetChargeType() {
 		return this.internetChargeType;
 	}
@@ -280,6 +335,29 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		this.pricingCycle = pricingCycle;
 		if(pricingCycle != null){
 			putQueryParameter("PricingCycle", pricingCycle);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

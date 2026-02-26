@@ -29,6 +29,8 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 
 	private String imageId;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -64,6 +66,17 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

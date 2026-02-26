@@ -32,11 +32,11 @@ public class GetCloudMetricLogsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetCloudMetricLogsResponse.MetricLogs.Length"); i++) {
 			MetricLog metricLog = new MetricLog();
 			metricLog.setTime(_ctx.integerValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].Time"));
-			metricLog.setInstanceId(_ctx.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].InstanceId"));
-			metricLog.setHostname(_ctx.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].Hostname"));
-			metricLog.setNetworkInterface(_ctx.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].NetworkInterface"));
 			metricLog.setDiskDevice(_ctx.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].DiskDevice"));
+			metricLog.setNetworkInterface(_ctx.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].NetworkInterface"));
 			metricLog.setMetricData(_ctx.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].MetricData"));
+			metricLog.setHostname(_ctx.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].Hostname"));
+			metricLog.setInstanceId(_ctx.stringValue("GetCloudMetricLogsResponse.MetricLogs["+ i +"].InstanceId"));
 
 			metricLogs.add(metricLog);
 		}

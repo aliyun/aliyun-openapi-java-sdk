@@ -25,9 +25,15 @@ import com.aliyuncs.http.MethodType;
 public class ListWirelessCloudConnectorsRequest extends RpcAcsRequest<ListWirelessCloudConnectorsResponse> {
 	   
 
+	private String wirelessCloudConnectorGroupId;
+
+	private String businessType;
+
 	private String nextToken;
 
 	private List<String> wirelessCloudConnectorIds;
+
+	private String isInGroup;
 
 	private List<String> names;
 
@@ -37,6 +43,28 @@ public class ListWirelessCloudConnectorsRequest extends RpcAcsRequest<ListWirele
 	public ListWirelessCloudConnectorsRequest() {
 		super("CC5G", "2022-03-14", "ListWirelessCloudConnectors", "fivegcc");
 		setMethod(MethodType.GET);
+	}
+
+	public String getWirelessCloudConnectorGroupId() {
+		return this.wirelessCloudConnectorGroupId;
+	}
+
+	public void setWirelessCloudConnectorGroupId(String wirelessCloudConnectorGroupId) {
+		this.wirelessCloudConnectorGroupId = wirelessCloudConnectorGroupId;
+		if(wirelessCloudConnectorGroupId != null){
+			putQueryParameter("WirelessCloudConnectorGroupId", wirelessCloudConnectorGroupId);
+		}
+	}
+
+	public String getBusinessType() {
+		return this.businessType;
+	}
+
+	public void setBusinessType(String businessType) {
+		this.businessType = businessType;
+		if(businessType != null){
+			putQueryParameter("BusinessType", businessType);
+		}
 	}
 
 	public String getNextToken() {
@@ -61,6 +89,17 @@ public class ListWirelessCloudConnectorsRequest extends RpcAcsRequest<ListWirele
 				putQueryParameter("WirelessCloudConnectorIds." + (depth1 + 1) , wirelessCloudConnectorIds.get(depth1));
 			}
 		}	
+	}
+
+	public String getIsInGroup() {
+		return this.isInGroup;
+	}
+
+	public void setIsInGroup(String isInGroup) {
+		this.isInGroup = isInGroup;
+		if(isInGroup != null){
+			putQueryParameter("IsInGroup", isInGroup);
+		}
 	}
 
 	public List<String> getNames() {

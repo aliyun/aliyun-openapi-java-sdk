@@ -26,19 +26,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInterventionDictionaryEntriesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<WordItem> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -46,6 +38,14 @@ public class ListInterventionDictionaryEntriesResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<WordItem> getResult() {
@@ -60,15 +60,15 @@ public class ListInterventionDictionaryEntriesResponse extends AcsResponse {
 
 		private String cmd;
 
-		private String word;
-
 		private Long created;
 
-		private Long updated;
+		private String word;
+
+		private Map<Object,Object> relevance;
 
 		private String status;
 
-		private Map<Object,Object> relevance;
+		private Long updated;
 
 		private List<Token> tokens;
 
@@ -80,14 +80,6 @@ public class ListInterventionDictionaryEntriesResponse extends AcsResponse {
 			this.cmd = cmd;
 		}
 
-		public String getWord() {
-			return this.word;
-		}
-
-		public void setWord(String word) {
-			this.word = word;
-		}
-
 		public Long getCreated() {
 			return this.created;
 		}
@@ -96,12 +88,20 @@ public class ListInterventionDictionaryEntriesResponse extends AcsResponse {
 			this.created = created;
 		}
 
-		public Long getUpdated() {
-			return this.updated;
+		public String getWord() {
+			return this.word;
 		}
 
-		public void setUpdated(Long updated) {
-			this.updated = updated;
+		public void setWord(String word) {
+			this.word = word;
+		}
+
+		public Map<Object,Object> getRelevance() {
+			return this.relevance;
+		}
+
+		public void setRelevance(Map<Object,Object> relevance) {
+			this.relevance = relevance;
 		}
 
 		public String getStatus() {
@@ -112,12 +112,12 @@ public class ListInterventionDictionaryEntriesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Map<Object,Object> getRelevance() {
-			return this.relevance;
+		public Long getUpdated() {
+			return this.updated;
 		}
 
-		public void setRelevance(Map<Object,Object> relevance) {
-			this.relevance = relevance;
+		public void setUpdated(Long updated) {
+			this.updated = updated;
 		}
 
 		public List<Token> getTokens() {

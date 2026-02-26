@@ -41,7 +41,7 @@ public class PublishRouteEntriesRequest extends RpcAcsRequest<PublishRouteEntrie
 
 	private String childInstanceRouteTableId;
 	public PublishRouteEntriesRequest() {
-		super("Cbn", "2017-09-12", "PublishRouteEntries");
+		super("Cbn", "2017-09-12", "PublishRouteEntries", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,6 +32,8 @@ public class DescribeDeploymentSetSupportedInstanceTypeFamilyRequest extends Rpc
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String strategy;
 	public DescribeDeploymentSetSupportedInstanceTypeFamilyRequest() {
 		super("Ecs", "2014-05-26", "DescribeDeploymentSetSupportedInstanceTypeFamily", "ecs");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class DescribeDeploymentSetSupportedInstanceTypeFamilyRequest extends Rpc
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStrategy() {
+		return this.strategy;
+	}
+
+	public void setStrategy(String strategy) {
+		this.strategy = strategy;
+		if(strategy != null){
+			putQueryParameter("Strategy", strategy);
 		}
 	}
 

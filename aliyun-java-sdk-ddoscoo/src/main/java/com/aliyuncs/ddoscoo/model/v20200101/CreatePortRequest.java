@@ -36,7 +36,7 @@ public class CreatePortRequest extends RpcAcsRequest<CreatePortResponse> {
 
 	private String frontendPort;
 	public CreatePortRequest() {
-		super("ddoscoo", "2020-01-01", "CreatePort");
+		super("ddoscoo", "2020-01-01", "CreatePort", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,6 +35,7 @@ public class DescribeCertificatesResponseUnmarshaller {
 			certificate.setCertificateName(_ctx.stringValue("DescribeCertificatesResponse.Certificates["+ i +"].CertificateName"));
 			certificate.setCertificateId(_ctx.longValue("DescribeCertificatesResponse.Certificates["+ i +"].CertificateId"));
 			certificate.setCommonName(_ctx.stringValue("DescribeCertificatesResponse.Certificates["+ i +"].CommonName"));
+			certificate.setEndTime(_ctx.longValue("DescribeCertificatesResponse.Certificates["+ i +"].EndTime"));
 
 			List<String> sans = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCertificatesResponse.Certificates["+ i +"].Sans.Length"); j++) {

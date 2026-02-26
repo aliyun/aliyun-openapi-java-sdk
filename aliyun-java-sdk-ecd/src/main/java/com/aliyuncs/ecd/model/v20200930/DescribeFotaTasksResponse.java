@@ -27,6 +27,12 @@ public class DescribeFotaTasksResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
+	private String message;
+
+	private String nextToken;
+
 	private List<FotaTask> fotaTasks;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class DescribeFotaTasksResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<FotaTask> getFotaTasks() {
@@ -62,6 +92,8 @@ public class DescribeFotaTasksResponse extends AcsResponse {
 		private String releaseNote;
 
 		private Integer size;
+
+		private Integer pendingCustomImageCount;
 
 		public String getTaskUid() {
 			return this.taskUid;
@@ -125,6 +157,14 @@ public class DescribeFotaTasksResponse extends AcsResponse {
 
 		public void setSize(Integer size) {
 			this.size = size;
+		}
+
+		public Integer getPendingCustomImageCount() {
+			return this.pendingCustomImageCount;
+		}
+
+		public void setPendingCustomImageCount(Integer pendingCustomImageCount) {
+			this.pendingCustomImageCount = pendingCustomImageCount;
 		}
 	}
 

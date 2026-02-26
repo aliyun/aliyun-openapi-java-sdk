@@ -37,7 +37,7 @@ public class UninstallApplicationRequest extends RpcAcsRequest<UninstallApplicat
 
 	private List<String> instanceIds;
 	public UninstallApplicationRequest() {
-		super("cloudphone", "2020-12-30", "UninstallApplication", "cloudphone");
+		super("cloudphone", "2020-12-30", "UninstallApplication");
 		setMethod(MethodType.POST);
 	}
 

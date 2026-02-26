@@ -25,9 +25,11 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class SubmitOrderApprovalRequest extends RpcAcsRequest<SubmitOrderApprovalResponse> {
 	   
 
+	private Long tid;
+
 	private Long orderId;
 
-	private Long tid;
+	private String realLoginUserUid;
 	public SubmitOrderApprovalRequest() {
 		super("dms-enterprise", "2018-11-01", "SubmitOrderApproval", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,6 +37,17 @@ public class SubmitOrderApprovalRequest extends RpcAcsRequest<SubmitOrderApprova
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
 	}
 
 	public Long getOrderId() {
@@ -48,14 +61,14 @@ public class SubmitOrderApprovalRequest extends RpcAcsRequest<SubmitOrderApprova
 		}
 	}
 
-	public Long getTid() {
-		return this.tid;
+	public String getRealLoginUserUid() {
+		return this.realLoginUserUid;
 	}
 
-	public void setTid(Long tid) {
-		this.tid = tid;
-		if(tid != null){
-			putQueryParameter("Tid", tid.toString());
+	public void setRealLoginUserUid(String realLoginUserUid) {
+		this.realLoginUserUid = realLoginUserUid;
+		if(realLoginUserUid != null){
+			putQueryParameter("RealLoginUserUid", realLoginUserUid);
 		}
 	}
 

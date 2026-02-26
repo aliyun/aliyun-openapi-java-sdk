@@ -23,7 +23,8 @@ public class OpenTrafficMirrorServiceResponseUnmarshaller {
 	public static OpenTrafficMirrorServiceResponse unmarshall(OpenTrafficMirrorServiceResponse openTrafficMirrorServiceResponse, UnmarshallerContext _ctx) {
 		
 		openTrafficMirrorServiceResponse.setRequestId(_ctx.stringValue("OpenTrafficMirrorServiceResponse.RequestId"));
-		openTrafficMirrorServiceResponse.setOrderId(_ctx.stringValue("OpenTrafficMirrorServiceResponse.OrderId"));
+		openTrafficMirrorServiceResponse.setCode(_ctx.stringValue("OpenTrafficMirrorServiceResponse.Code"));
+		openTrafficMirrorServiceResponse.setMessage(_ctx.stringValue("OpenTrafficMirrorServiceResponse.Message"));
 	 
 	 	return openTrafficMirrorServiceResponse;
 	}

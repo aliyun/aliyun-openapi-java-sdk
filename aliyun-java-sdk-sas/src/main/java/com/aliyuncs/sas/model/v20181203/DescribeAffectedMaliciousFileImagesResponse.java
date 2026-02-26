@@ -93,6 +93,32 @@ public class DescribeAffectedMaliciousFileImagesResponse extends AcsResponse {
 
 		private String highLight;
 
+		private String containerId;
+
+		private String image;
+
+		private String pod;
+
+		private String clusterId;
+
+		private String clusterName;
+
+		private String maliciousSource;
+
+		private String instanceName;
+
+		private String internetIp;
+
+		private String intranetIp;
+
+		private String targetId;
+
+		private String targetName;
+
+		private String targetType;
+
+		private String uuid;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -235,6 +261,110 @@ public class DescribeAffectedMaliciousFileImagesResponse extends AcsResponse {
 
 		public void setHighLight(String highLight) {
 			this.highLight = highLight;
+		}
+
+		public String getContainerId() {
+			return this.containerId;
+		}
+
+		public void setContainerId(String containerId) {
+			this.containerId = containerId;
+		}
+
+		public String getImage() {
+			return this.image;
+		}
+
+		public void setImage(String image) {
+			this.image = image;
+		}
+
+		public String getPod() {
+			return this.pod;
+		}
+
+		public void setPod(String pod) {
+			this.pod = pod;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public String getMaliciousSource() {
+			return this.maliciousSource;
+		}
+
+		public void setMaliciousSource(String maliciousSource) {
+			this.maliciousSource = maliciousSource;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
+
+		public String getTargetId() {
+			return this.targetId;
+		}
+
+		public void setTargetId(String targetId) {
+			this.targetId = targetId;
+		}
+
+		public String getTargetName() {
+			return this.targetName;
+		}
+
+		public void setTargetName(String targetName) {
+			this.targetName = targetName;
+		}
+
+		public String getTargetType() {
+			return this.targetType;
+		}
+
+		public void setTargetType(String targetType) {
+			this.targetType = targetType;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
 		}
 	}
 

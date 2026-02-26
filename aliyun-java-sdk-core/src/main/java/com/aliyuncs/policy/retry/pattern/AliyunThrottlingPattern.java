@@ -10,10 +10,7 @@ public class AliyunThrottlingPattern implements Pattern {
 
     private Map<String, String> throttlingMap = new HashMap<String, String>();
     private static String Remain = "remain";
-    private static String Limit = "limit";
-    private static String Time = "time";
     private static String TimeLeft = "timeleft";
-    private static String Reset = "reset";
     private AliyunThrottlingPattern anotherPattern;
 
     public AliyunThrottlingPattern(String content) {

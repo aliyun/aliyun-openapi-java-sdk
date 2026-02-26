@@ -14,7 +14,6 @@
 
 package com.aliyuncs.das.model.v20200116;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.das.transform.v20200116.GetDasProServiceUsageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,7 +32,7 @@ public class GetDasProServiceUsageResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private List<Unit> data;
+	private Data data;
 
 	public String getMessage() {
 		return this.message;
@@ -67,25 +66,21 @@ public class GetDasProServiceUsageResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<Unit> getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<Unit> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public static class Unit {
+	public static class Data {
 
 		private Double storageFreeQuotaInMB;
 
 		private String ip;
 
-		private Long custinsId;
-
 		private String userId;
-
-		private String uuid;
 
 		private Long expireTime;
 
@@ -129,28 +124,12 @@ public class GetDasProServiceUsageResponse extends AcsResponse {
 			this.ip = ip;
 		}
 
-		public Long getCustinsId() {
-			return this.custinsId;
-		}
-
-		public void setCustinsId(Long custinsId) {
-			this.custinsId = custinsId;
-		}
-
 		public String getUserId() {
 			return this.userId;
 		}
 
 		public void setUserId(String userId) {
 			this.userId = userId;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
 		}
 
 		public Long getExpireTime() {

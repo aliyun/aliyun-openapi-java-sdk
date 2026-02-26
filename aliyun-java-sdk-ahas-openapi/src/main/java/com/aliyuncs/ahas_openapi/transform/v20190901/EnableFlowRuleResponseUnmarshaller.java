@@ -29,24 +29,24 @@ public class EnableFlowRuleResponseUnmarshaller {
 		enableFlowRuleResponse.setSuccess(_ctx.booleanValue("EnableFlowRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setAppName(_ctx.stringValue("EnableFlowRuleResponse.Data.AppName"));
-		data.setClusterEstimatedMaxQps(_ctx.floatValue("EnableFlowRuleResponse.Data.ClusterEstimatedMaxQps"));
-		data.setClusterFallbackStrategy(_ctx.integerValue("EnableFlowRuleResponse.Data.ClusterFallbackStrategy"));
-		data.setClusterFallbackThreshold(_ctx.integerValue("EnableFlowRuleResponse.Data.ClusterFallbackThreshold"));
-		data.setClusterMode(_ctx.booleanValue("EnableFlowRuleResponse.Data.ClusterMode"));
-		data.setClusterThresholdType(_ctx.integerValue("EnableFlowRuleResponse.Data.ClusterThresholdType"));
-		data.setControlBehavior(_ctx.integerValue("EnableFlowRuleResponse.Data.ControlBehavior"));
-		data.setThreshold(_ctx.floatValue("EnableFlowRuleResponse.Data.Threshold"));
-		data.setEnable(_ctx.booleanValue("EnableFlowRuleResponse.Data.Enable"));
-		data.setLimitOrigin(_ctx.stringValue("EnableFlowRuleResponse.Data.LimitOrigin"));
-		data.setMaxQueueingTimeMs(_ctx.integerValue("EnableFlowRuleResponse.Data.MaxQueueingTimeMs"));
-		data.setNamespace(_ctx.stringValue("EnableFlowRuleResponse.Data.Namespace"));
 		data.setRefResource(_ctx.stringValue("EnableFlowRuleResponse.Data.RefResource"));
+		data.setClusterFallbackThreshold(_ctx.integerValue("EnableFlowRuleResponse.Data.ClusterFallbackThreshold"));
+		data.setNamespace(_ctx.stringValue("EnableFlowRuleResponse.Data.Namespace"));
+		data.setStatDurationMs(_ctx.integerValue("EnableFlowRuleResponse.Data.StatDurationMs"));
+		data.setLimitOrigin(_ctx.stringValue("EnableFlowRuleResponse.Data.LimitOrigin"));
+		data.setClusterThresholdType(_ctx.integerValue("EnableFlowRuleResponse.Data.ClusterThresholdType"));
+		data.setRuleId(_ctx.longValue("EnableFlowRuleResponse.Data.RuleId"));
 		data.setRelationStrategy(_ctx.integerValue("EnableFlowRuleResponse.Data.RelationStrategy"));
 		data.setResource(_ctx.stringValue("EnableFlowRuleResponse.Data.Resource"));
-		data.setRuleId(_ctx.longValue("EnableFlowRuleResponse.Data.RuleId"));
-		data.setStatDurationMs(_ctx.integerValue("EnableFlowRuleResponse.Data.StatDurationMs"));
+		data.setAppName(_ctx.stringValue("EnableFlowRuleResponse.Data.AppName"));
+		data.setMaxQueueingTimeMs(_ctx.integerValue("EnableFlowRuleResponse.Data.MaxQueueingTimeMs"));
+		data.setControlBehavior(_ctx.integerValue("EnableFlowRuleResponse.Data.ControlBehavior"));
+		data.setClusterEstimatedMaxQps(_ctx.floatValue("EnableFlowRuleResponse.Data.ClusterEstimatedMaxQps"));
 		data.setWarmUpPeriodSec(_ctx.integerValue("EnableFlowRuleResponse.Data.WarmUpPeriodSec"));
+		data.setClusterFallbackStrategy(_ctx.integerValue("EnableFlowRuleResponse.Data.ClusterFallbackStrategy"));
+		data.setThreshold(_ctx.floatValue("EnableFlowRuleResponse.Data.Threshold"));
+		data.setClusterMode(_ctx.booleanValue("EnableFlowRuleResponse.Data.ClusterMode"));
+		data.setEnable(_ctx.booleanValue("EnableFlowRuleResponse.Data.Enable"));
 		enableFlowRuleResponse.setData(data);
 	 
 	 	return enableFlowRuleResponse;

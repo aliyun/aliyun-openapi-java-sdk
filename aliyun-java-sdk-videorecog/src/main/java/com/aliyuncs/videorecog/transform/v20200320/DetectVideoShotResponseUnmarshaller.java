@@ -27,6 +27,8 @@ public class DetectVideoShotResponseUnmarshaller {
 	public static DetectVideoShotResponse unmarshall(DetectVideoShotResponse detectVideoShotResponse, UnmarshallerContext _ctx) {
 		
 		detectVideoShotResponse.setRequestId(_ctx.stringValue("DetectVideoShotResponse.RequestId"));
+		detectVideoShotResponse.setMessage(_ctx.stringValue("DetectVideoShotResponse.Message"));
+		detectVideoShotResponse.setCode(_ctx.stringValue("DetectVideoShotResponse.Code"));
 
 		Data data = new Data();
 

@@ -143,6 +143,18 @@ public class QuerySavingsPlansDeductLogResponse extends AcsResponse {
 
 			private Long ownerId;
 
+			private String billingCycle;
+
+			private String region;
+
+			private String instanceSpec;
+
+			private String instanceTypeFamily;
+
+			private String billingOfficialPrice;
+
+			private String deductedOfficialPrice;
+
 			public String getEndTime() {
 				return this.endTime;
 			}
@@ -237,6 +249,54 @@ public class QuerySavingsPlansDeductLogResponse extends AcsResponse {
 
 			public void setOwnerId(Long ownerId) {
 				this.ownerId = ownerId;
+			}
+
+			public String getBillingCycle() {
+				return this.billingCycle;
+			}
+
+			public void setBillingCycle(String billingCycle) {
+				this.billingCycle = billingCycle;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public String getInstanceSpec() {
+				return this.instanceSpec;
+			}
+
+			public void setInstanceSpec(String instanceSpec) {
+				this.instanceSpec = instanceSpec;
+			}
+
+			public String getInstanceTypeFamily() {
+				return this.instanceTypeFamily;
+			}
+
+			public void setInstanceTypeFamily(String instanceTypeFamily) {
+				this.instanceTypeFamily = instanceTypeFamily;
+			}
+
+			public String getBillingOfficialPrice() {
+				return this.billingOfficialPrice;
+			}
+
+			public void setBillingOfficialPrice(String billingOfficialPrice) {
+				this.billingOfficialPrice = billingOfficialPrice;
+			}
+
+			public String getDeductedOfficialPrice() {
+				return this.deductedOfficialPrice;
+			}
+
+			public void setDeductedOfficialPrice(String deductedOfficialPrice) {
+				this.deductedOfficialPrice = deductedOfficialPrice;
 			}
 		}
 	}

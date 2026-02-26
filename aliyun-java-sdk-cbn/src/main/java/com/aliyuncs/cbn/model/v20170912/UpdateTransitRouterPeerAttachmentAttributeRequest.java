@@ -33,6 +33,8 @@ public class UpdateTransitRouterPeerAttachmentAttributeRequest extends RpcAcsReq
 
 	private String transitRouterAttachmentName;
 
+	private String defaultLinkType;
+
 	private Boolean autoPublishRouteEnabled;
 
 	private Boolean dryRun;
@@ -51,7 +53,7 @@ public class UpdateTransitRouterPeerAttachmentAttributeRequest extends RpcAcsReq
 
 	private String cenBandwidthPackageId;
 	public UpdateTransitRouterPeerAttachmentAttributeRequest() {
-		super("Cbn", "2017-09-12", "UpdateTransitRouterPeerAttachmentAttribute");
+		super("Cbn", "2017-09-12", "UpdateTransitRouterPeerAttachmentAttribute", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -100,6 +102,17 @@ public class UpdateTransitRouterPeerAttachmentAttributeRequest extends RpcAcsReq
 		this.transitRouterAttachmentName = transitRouterAttachmentName;
 		if(transitRouterAttachmentName != null){
 			putQueryParameter("TransitRouterAttachmentName", transitRouterAttachmentName);
+		}
+	}
+
+	public String getDefaultLinkType() {
+		return this.defaultLinkType;
+	}
+
+	public void setDefaultLinkType(String defaultLinkType) {
+		this.defaultLinkType = defaultLinkType;
+		if(defaultLinkType != null){
+			putQueryParameter("DefaultLinkType", defaultLinkType);
 		}
 	}
 

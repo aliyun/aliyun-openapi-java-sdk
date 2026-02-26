@@ -26,6 +26,8 @@ import com.aliyuncs.ehpc.Endpoint;
 public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridClusterResponse> {
 	   
 
+	private String ecsOrderManagerInstanceType;
+
 	private String keyPairName;
 
 	private Boolean multiOs;
@@ -39,6 +41,10 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 	private String resourceGroupId;
 
 	private String password;
+
+	private String hybridClusterOpMode;
+
+	private WinAdPar winAdPar;
 
 	private Float computeSpotPriceLimit;
 
@@ -72,6 +78,8 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private String ecsOrderComputeInstanceType;
 
+	private OpenldapPar openldapPar;
+
 	private String jobQueue;
 
 	private String volumeType;
@@ -88,6 +96,8 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private List<Nodes> nodess;
 
+	private String plugin;
+
 	private List<Application> applications;
 
 	private String vpcId;
@@ -98,12 +108,23 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private String location;
 	public CreateHybridClusterRequest() {
-		super("EHPC", "2018-04-12", "CreateHybridCluster");
+		super("EHPC", "2018-04-12", "CreateHybridCluster", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getEcsOrderManagerInstanceType() {
+		return this.ecsOrderManagerInstanceType;
+	}
+
+	public void setEcsOrderManagerInstanceType(String ecsOrderManagerInstanceType) {
+		this.ecsOrderManagerInstanceType = ecsOrderManagerInstanceType;
+		if(ecsOrderManagerInstanceType != null){
+			putQueryParameter("EcsOrder.Manager.InstanceType", ecsOrderManagerInstanceType);
+		}
 	}
 
 	public String getKeyPairName() {
@@ -181,6 +202,32 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		if(password != null){
 			putQueryParameter("Password", password);
 		}
+	}
+
+	public String getHybridClusterOpMode() {
+		return this.hybridClusterOpMode;
+	}
+
+	public void setHybridClusterOpMode(String hybridClusterOpMode) {
+		this.hybridClusterOpMode = hybridClusterOpMode;
+		if(hybridClusterOpMode != null){
+			putQueryParameter("HybridClusterOpMode", hybridClusterOpMode);
+		}
+	}
+
+	public WinAdPar getWinAdPar() {
+		return this.winAdPar;
+	}
+
+	public void setWinAdPar(WinAdPar winAdPar) {
+		this.winAdPar = winAdPar;	
+		if (winAdPar != null) {
+			
+				putQueryParameter("WinAdPar.AdUser" , winAdPar.getAdUser());
+				putQueryParameter("WinAdPar.AdUserPasswd" , winAdPar.getAdUserPasswd());
+				putQueryParameter("WinAdPar.AdIp" , winAdPar.getAdIp());
+				putQueryParameter("WinAdPar.AdDc" , winAdPar.getAdDc());
+		}	
 	}
 
 	public Float getComputeSpotPriceLimit() {
@@ -362,6 +409,20 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		}
 	}
 
+	public OpenldapPar getOpenldapPar() {
+		return this.openldapPar;
+	}
+
+	public void setOpenldapPar(OpenldapPar openldapPar) {
+		this.openldapPar = openldapPar;	
+		if (openldapPar != null) {
+			
+				putQueryParameter("OpenldapPar.FallbackHomeDir" , openldapPar.getFallbackHomeDir());
+				putQueryParameter("OpenldapPar.BaseDn" , openldapPar.getBaseDn());
+				putQueryParameter("OpenldapPar.LdapServerIp" , openldapPar.getLdapServerIp());
+		}	
+	}
+
 	public String getJobQueue() {
 		return this.jobQueue;
 	}
@@ -450,10 +511,22 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 				putQueryParameter("Nodes." + (depth1 + 1) + ".IpAddress" , nodess.get(depth1).getIpAddress());
 				putQueryParameter("Nodes." + (depth1 + 1) + ".HostName" , nodess.get(depth1).getHostName());
 				putQueryParameter("Nodes." + (depth1 + 1) + ".Role" , nodess.get(depth1).getRole());
-				putQueryParameter("Nodes." + (depth1 + 1) + ".AccountType" , nodess.get(depth1).getAccountType());
 				putQueryParameter("Nodes." + (depth1 + 1) + ".SchedulerType" , nodess.get(depth1).getSchedulerType());
+				putQueryParameter("Nodes." + (depth1 + 1) + ".AccountType" , nodess.get(depth1).getAccountType());
+				putQueryParameter("Nodes." + (depth1 + 1) + ".Dir" , nodess.get(depth1).getDir());
 			}
 		}	
+	}
+
+	public String getPlugin() {
+		return this.plugin;
+	}
+
+	public void setPlugin(String plugin) {
+		this.plugin = plugin;
+		if(plugin != null){
+			putQueryParameter("Plugin", plugin);
+		}
 	}
 
 	public List<Application> getApplications() {
@@ -513,6 +586,49 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		}
 	}
 
+	public static class WinAdPar {
+
+		private String adUser;
+
+		private String adUserPasswd;
+
+		private String adIp;
+
+		private String adDc;
+
+		public String getAdUser() {
+			return this.adUser;
+		}
+
+		public void setAdUser(String adUser) {
+			this.adUser = adUser;
+		}
+
+		public String getAdUserPasswd() {
+			return this.adUserPasswd;
+		}
+
+		public void setAdUserPasswd(String adUserPasswd) {
+			this.adUserPasswd = adUserPasswd;
+		}
+
+		public String getAdIp() {
+			return this.adIp;
+		}
+
+		public void setAdIp(String adIp) {
+			this.adIp = adIp;
+		}
+
+		public String getAdDc() {
+			return this.adDc;
+		}
+
+		public void setAdDc(String adDc) {
+			this.adDc = adDc;
+		}
+	}
+
 	public static class PostInstallScript {
 
 		private String args;
@@ -536,6 +652,39 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		}
 	}
 
+	public static class OpenldapPar {
+
+		private String fallbackHomeDir;
+
+		private String baseDn;
+
+		private String ldapServerIp;
+
+		public String getFallbackHomeDir() {
+			return this.fallbackHomeDir;
+		}
+
+		public void setFallbackHomeDir(String fallbackHomeDir) {
+			this.fallbackHomeDir = fallbackHomeDir;
+		}
+
+		public String getBaseDn() {
+			return this.baseDn;
+		}
+
+		public void setBaseDn(String baseDn) {
+			this.baseDn = baseDn;
+		}
+
+		public String getLdapServerIp() {
+			return this.ldapServerIp;
+		}
+
+		public void setLdapServerIp(String ldapServerIp) {
+			this.ldapServerIp = ldapServerIp;
+		}
+	}
+
 	public static class Nodes {
 
 		private String ipAddress;
@@ -544,9 +693,11 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 		private String role;
 
+		private String schedulerType;
+
 		private String accountType;
 
-		private String schedulerType;
+		private String dir;
 
 		public String getIpAddress() {
 			return this.ipAddress;
@@ -572,6 +723,14 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 			this.role = role;
 		}
 
+		public String getSchedulerType() {
+			return this.schedulerType;
+		}
+
+		public void setSchedulerType(String schedulerType) {
+			this.schedulerType = schedulerType;
+		}
+
 		public String getAccountType() {
 			return this.accountType;
 		}
@@ -580,12 +739,12 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 			this.accountType = accountType;
 		}
 
-		public String getSchedulerType() {
-			return this.schedulerType;
+		public String getDir() {
+			return this.dir;
 		}
 
-		public void setSchedulerType(String schedulerType) {
-			this.schedulerType = schedulerType;
+		public void setDir(String dir) {
+			this.dir = dir;
 		}
 	}
 

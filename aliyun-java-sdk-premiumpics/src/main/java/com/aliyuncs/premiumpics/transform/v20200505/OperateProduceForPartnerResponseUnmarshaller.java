@@ -23,8 +23,8 @@ public class OperateProduceForPartnerResponseUnmarshaller {
 	public static OperateProduceForPartnerResponse unmarshall(OperateProduceForPartnerResponse operateProduceForPartnerResponse, UnmarshallerContext _ctx) {
 		
 		operateProduceForPartnerResponse.setRequestId(_ctx.stringValue("OperateProduceForPartnerResponse.RequestId"));
-		operateProduceForPartnerResponse.setErrorCode(_ctx.stringValue("OperateProduceForPartnerResponse.ErrorCode"));
 		operateProduceForPartnerResponse.setErrorMsg(_ctx.stringValue("OperateProduceForPartnerResponse.ErrorMsg"));
+		operateProduceForPartnerResponse.setErrorCode(_ctx.stringValue("OperateProduceForPartnerResponse.ErrorCode"));
 		operateProduceForPartnerResponse.setSuccess(_ctx.booleanValue("OperateProduceForPartnerResponse.Success"));
 	 
 	 	return operateProduceForPartnerResponse;

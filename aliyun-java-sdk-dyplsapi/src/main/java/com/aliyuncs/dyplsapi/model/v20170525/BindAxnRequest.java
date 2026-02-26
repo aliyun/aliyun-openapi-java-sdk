@@ -49,6 +49,8 @@ public class BindAxnRequest extends RpcAcsRequest<BindAxnResponse> {
 
 	private String outOrderId;
 
+	private String extend;
+
 	private String poolKey;
 
 	private String expiration;
@@ -63,7 +65,7 @@ public class BindAxnRequest extends RpcAcsRequest<BindAxnResponse> {
 
 	private String callRestrict;
 	public BindAxnRequest() {
-		super("Dyplsapi", "2017-05-25", "BindAxn");
+		super("Dyplsapi", "2017-05-25", "BindAxn", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -200,6 +202,17 @@ public class BindAxnRequest extends RpcAcsRequest<BindAxnResponse> {
 		this.outOrderId = outOrderId;
 		if(outOrderId != null){
 			putQueryParameter("OutOrderId", outOrderId);
+		}
+	}
+
+	public String getExtend() {
+		return this.extend;
+	}
+
+	public void setExtend(String extend) {
+		this.extend = extend;
+		if(extend != null){
+			putQueryParameter("Extend", extend);
 		}
 	}
 

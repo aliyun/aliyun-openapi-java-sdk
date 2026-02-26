@@ -23,8 +23,8 @@ public class ImportUserBackupFileResponseUnmarshaller {
 	public static ImportUserBackupFileResponse unmarshall(ImportUserBackupFileResponse importUserBackupFileResponse, UnmarshallerContext _ctx) {
 		
 		importUserBackupFileResponse.setRequestId(_ctx.stringValue("ImportUserBackupFileResponse.RequestId"));
-		importUserBackupFileResponse.setStatus(_ctx.booleanValue("ImportUserBackupFileResponse.Status"));
 		importUserBackupFileResponse.setBackupId(_ctx.stringValue("ImportUserBackupFileResponse.BackupId"));
+		importUserBackupFileResponse.setStatus(_ctx.booleanValue("ImportUserBackupFileResponse.Status"));
 	 
 	 	return importUserBackupFileResponse;
 	}

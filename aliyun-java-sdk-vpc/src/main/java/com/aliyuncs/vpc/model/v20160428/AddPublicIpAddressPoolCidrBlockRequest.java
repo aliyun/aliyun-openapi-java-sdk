@@ -25,6 +25,8 @@ import com.aliyuncs.vpc.Endpoint;
 public class AddPublicIpAddressPoolCidrBlockRequest extends RpcAcsRequest<AddPublicIpAddressPoolCidrBlockResponse> {
 	   
 
+	private Integer cidrMask;
+
 	private String publicIpAddressPoolId;
 
 	private Long resourceOwnerId;
@@ -47,6 +49,17 @@ public class AddPublicIpAddressPoolCidrBlockRequest extends RpcAcsRequest<AddPub
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getCidrMask() {
+		return this.cidrMask;
+	}
+
+	public void setCidrMask(Integer cidrMask) {
+		this.cidrMask = cidrMask;
+		if(cidrMask != null){
+			putQueryParameter("CidrMask", cidrMask.toString());
+		}
 	}
 
 	public String getPublicIpAddressPoolId() {

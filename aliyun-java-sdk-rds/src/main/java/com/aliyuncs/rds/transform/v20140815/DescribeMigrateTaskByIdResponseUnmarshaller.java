@@ -23,15 +23,15 @@ public class DescribeMigrateTaskByIdResponseUnmarshaller {
 	public static DescribeMigrateTaskByIdResponse unmarshall(DescribeMigrateTaskByIdResponse describeMigrateTaskByIdResponse, UnmarshallerContext _ctx) {
 		
 		describeMigrateTaskByIdResponse.setRequestId(_ctx.stringValue("DescribeMigrateTaskByIdResponse.RequestId"));
-		describeMigrateTaskByIdResponse.setStatus(_ctx.stringValue("DescribeMigrateTaskByIdResponse.Status"));
-		describeMigrateTaskByIdResponse.setEndTime(_ctx.stringValue("DescribeMigrateTaskByIdResponse.EndTime"));
-		describeMigrateTaskByIdResponse.setDBInstanceName(_ctx.stringValue("DescribeMigrateTaskByIdResponse.DBInstanceName"));
-		describeMigrateTaskByIdResponse.setDescription(_ctx.stringValue("DescribeMigrateTaskByIdResponse.Description"));
-		describeMigrateTaskByIdResponse.setCreateTime(_ctx.stringValue("DescribeMigrateTaskByIdResponse.CreateTime"));
-		describeMigrateTaskByIdResponse.setDBName(_ctx.stringValue("DescribeMigrateTaskByIdResponse.DBName"));
 		describeMigrateTaskByIdResponse.setBackupMode(_ctx.stringValue("DescribeMigrateTaskByIdResponse.BackupMode"));
-		describeMigrateTaskByIdResponse.setMigrateTaskId(_ctx.stringValue("DescribeMigrateTaskByIdResponse.MigrateTaskId"));
+		describeMigrateTaskByIdResponse.setCreateTime(_ctx.stringValue("DescribeMigrateTaskByIdResponse.CreateTime"));
+		describeMigrateTaskByIdResponse.setDBInstanceName(_ctx.stringValue("DescribeMigrateTaskByIdResponse.DBInstanceName"));
+		describeMigrateTaskByIdResponse.setDBName(_ctx.stringValue("DescribeMigrateTaskByIdResponse.DBName"));
+		describeMigrateTaskByIdResponse.setDescription(_ctx.stringValue("DescribeMigrateTaskByIdResponse.Description"));
+		describeMigrateTaskByIdResponse.setEndTime(_ctx.stringValue("DescribeMigrateTaskByIdResponse.EndTime"));
 		describeMigrateTaskByIdResponse.setIsDBReplaced(_ctx.stringValue("DescribeMigrateTaskByIdResponse.IsDBReplaced"));
+		describeMigrateTaskByIdResponse.setMigrateTaskId(_ctx.stringValue("DescribeMigrateTaskByIdResponse.MigrateTaskId"));
+		describeMigrateTaskByIdResponse.setStatus(_ctx.stringValue("DescribeMigrateTaskByIdResponse.Status"));
 	 
 	 	return describeMigrateTaskByIdResponse;
 	}

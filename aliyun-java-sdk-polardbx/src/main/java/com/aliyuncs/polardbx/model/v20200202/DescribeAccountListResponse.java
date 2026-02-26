@@ -67,19 +67,35 @@ public class DescribeAccountListResponse extends AcsResponse {
 
 	public static class Account {
 
+		private String gmtCreated;
+
+		private String dBInstanceName;
+
 		private String accountDescription;
 
-		private String accountName;
+		private String dBName;
 
 		private String accountPrivilege;
 
 		private String accountType;
 
-		private String dBInstanceName;
+		private String accountName;
 
-		private String dBName;
+		public String getGmtCreated() {
+			return this.gmtCreated;
+		}
 
-		private String gmtCreated;
+		public void setGmtCreated(String gmtCreated) {
+			this.gmtCreated = gmtCreated;
+		}
+
+		public String getDBInstanceName() {
+			return this.dBInstanceName;
+		}
+
+		public void setDBInstanceName(String dBInstanceName) {
+			this.dBInstanceName = dBInstanceName;
+		}
 
 		public String getAccountDescription() {
 			return this.accountDescription;
@@ -89,12 +105,12 @@ public class DescribeAccountListResponse extends AcsResponse {
 			this.accountDescription = accountDescription;
 		}
 
-		public String getAccountName() {
-			return this.accountName;
+		public String getDBName() {
+			return this.dBName;
 		}
 
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
 		}
 
 		public String getAccountPrivilege() {
@@ -113,28 +129,12 @@ public class DescribeAccountListResponse extends AcsResponse {
 			this.accountType = accountType;
 		}
 
-		public String getDBInstanceName() {
-			return this.dBInstanceName;
+		public String getAccountName() {
+			return this.accountName;
 		}
 
-		public void setDBInstanceName(String dBInstanceName) {
-			this.dBInstanceName = dBInstanceName;
-		}
-
-		public String getDBName() {
-			return this.dBName;
-		}
-
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
-
-		public String getGmtCreated() {
-			return this.gmtCreated;
-		}
-
-		public void setGmtCreated(String gmtCreated) {
-			this.gmtCreated = gmtCreated;
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 	}
 

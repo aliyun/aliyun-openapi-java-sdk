@@ -165,6 +165,10 @@ public class ListCampaignsResponse extends AcsResponse {
 
 			private Boolean simulation;
 
+			private Float completionRate;
+
+			private String contactFlowId;
+
 			public Long getActualEndTime() {
 				return this.actualEndTime;
 			}
@@ -307,6 +311,22 @@ public class ListCampaignsResponse extends AcsResponse {
 
 			public void setSimulation(Boolean simulation) {
 				this.simulation = simulation;
+			}
+
+			public Float getCompletionRate() {
+				return this.completionRate;
+			}
+
+			public void setCompletionRate(Float completionRate) {
+				this.completionRate = completionRate;
+			}
+
+			public String getContactFlowId() {
+				return this.contactFlowId;
+			}
+
+			public void setContactFlowId(String contactFlowId) {
+				this.contactFlowId = contactFlowId;
 			}
 		}
 	}

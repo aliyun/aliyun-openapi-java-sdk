@@ -27,7 +27,7 @@ public class ClassifyingRubbishRequest extends RpcAcsRequest<ClassifyingRubbishR
 
 	private String imageURL;
 	public ClassifyingRubbishRequest() {
-		super("imagerecog", "2019-09-30", "ClassifyingRubbish", "imagerecog");
+		super("imagerecog", "2019-09-30", "ClassifyingRubbish");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

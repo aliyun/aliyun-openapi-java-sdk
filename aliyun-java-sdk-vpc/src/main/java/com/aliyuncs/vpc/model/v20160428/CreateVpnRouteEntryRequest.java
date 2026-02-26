@@ -33,6 +33,8 @@ public class CreateVpnRouteEntryRequest extends RpcAcsRequest<CreateVpnRouteEntr
 
 	private Boolean publishVpc;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -98,6 +100,17 @@ public class CreateVpnRouteEntryRequest extends RpcAcsRequest<CreateVpnRouteEntr
 		this.publishVpc = publishVpc;
 		if(publishVpc != null){
 			putQueryParameter("PublishVpc", publishVpc.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

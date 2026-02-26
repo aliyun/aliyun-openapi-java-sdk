@@ -26,6 +26,8 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 	   
 
 	private String videoId;
+
+	private String referenceId;
 	public GetVideoInfoRequest() {
 		super("vod", "2017-03-21", "GetVideoInfo", "vod");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public String getReferenceId() {
+		return this.referenceId;
+	}
+
+	public void setReferenceId(String referenceId) {
+		this.referenceId = referenceId;
+		if(referenceId != null){
+			putQueryParameter("ReferenceId", referenceId);
 		}
 	}
 

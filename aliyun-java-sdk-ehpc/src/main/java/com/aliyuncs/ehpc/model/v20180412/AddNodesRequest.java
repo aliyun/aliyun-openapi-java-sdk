@@ -15,6 +15,7 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ehpc.Endpoint;
 
@@ -25,29 +26,17 @@ import com.aliyuncs.ehpc.Endpoint;
 public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 	   
 
-	private String imageId;
-
-	private String systemDiskLevel;
-
-	private String clientToken;
-
-	private Boolean allocatePublicAddress;
-
-	private Integer internetMaxBandWidthOut;
-
-	private String jobQueue;
+	private String dnsConfig;
 
 	private String imageOwnerAlias;
 
-	private String systemDiskType;
-
-	private Integer minCount;
+	private List<DataDisks> dataDiskss;
 
 	private Integer systemDiskSize;
 
-	private String instanceType;
-
 	private String hostNamePrefix;
+
+	private String computeSpotInterruptionBehavior;
 
 	private String computeSpotPriceLimit;
 
@@ -56,8 +45,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 	private Integer period;
 
 	private Integer count;
-
-	private String clusterId;
 
 	private String computeSpotStrategy;
 
@@ -73,8 +60,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String autoRenew;
 
-	private String ecsChargeType;
-
 	private String internetChargeType;
 
 	private String createMode;
@@ -82,8 +67,34 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 	private String zoneId;
 
 	private Integer internetMaxBandWidthIn;
+
+	private String imageId;
+
+	private String systemDiskLevel;
+
+	private String clientToken;
+
+	private Boolean allocatePublicAddress;
+
+	private Integer internetMaxBandWidthOut;
+
+	private String jobQueue;
+
+	private String systemDiskType;
+
+	private Integer minCount;
+
+	private String instanceType;
+
+	private String clusterId;
+
+	private String networkInterfaceTrafficMode;
+
+	private Integer computeSpotDuration;
+
+	private String ecsChargeType;
 	public AddNodesRequest() {
-		super("EHPC", "2018-04-12", "AddNodes");
+		super("EHPC", "2018-04-12", "AddNodes", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -91,69 +102,14 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getImageId() {
-		return this.imageId;
+	public String getDnsConfig() {
+		return this.dnsConfig;
 	}
 
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getSystemDiskLevel() {
-		return this.systemDiskLevel;
-	}
-
-	public void setSystemDiskLevel(String systemDiskLevel) {
-		this.systemDiskLevel = systemDiskLevel;
-		if(systemDiskLevel != null){
-			putQueryParameter("SystemDiskLevel", systemDiskLevel);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public Boolean getAllocatePublicAddress() {
-		return this.allocatePublicAddress;
-	}
-
-	public void setAllocatePublicAddress(Boolean allocatePublicAddress) {
-		this.allocatePublicAddress = allocatePublicAddress;
-		if(allocatePublicAddress != null){
-			putQueryParameter("AllocatePublicAddress", allocatePublicAddress.toString());
-		}
-	}
-
-	public Integer getInternetMaxBandWidthOut() {
-		return this.internetMaxBandWidthOut;
-	}
-
-	public void setInternetMaxBandWidthOut(Integer internetMaxBandWidthOut) {
-		this.internetMaxBandWidthOut = internetMaxBandWidthOut;
-		if(internetMaxBandWidthOut != null){
-			putQueryParameter("InternetMaxBandWidthOut", internetMaxBandWidthOut.toString());
-		}
-	}
-
-	public String getJobQueue() {
-		return this.jobQueue;
-	}
-
-	public void setJobQueue(String jobQueue) {
-		this.jobQueue = jobQueue;
-		if(jobQueue != null){
-			putQueryParameter("JobQueue", jobQueue);
+	public void setDnsConfig(String dnsConfig) {
+		this.dnsConfig = dnsConfig;
+		if(dnsConfig != null){
+			putQueryParameter("DnsConfig", dnsConfig);
 		}
 	}
 
@@ -168,26 +124,22 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
-	public String getSystemDiskType() {
-		return this.systemDiskType;
+	public List<DataDisks> getDataDiskss() {
+		return this.dataDiskss;
 	}
 
-	public void setSystemDiskType(String systemDiskType) {
-		this.systemDiskType = systemDiskType;
-		if(systemDiskType != null){
-			putQueryParameter("SystemDiskType", systemDiskType);
-		}
-	}
-
-	public Integer getMinCount() {
-		return this.minCount;
-	}
-
-	public void setMinCount(Integer minCount) {
-		this.minCount = minCount;
-		if(minCount != null){
-			putQueryParameter("MinCount", minCount.toString());
-		}
+	public void setDataDiskss(List<DataDisks> dataDiskss) {
+		this.dataDiskss = dataDiskss;	
+		if (dataDiskss != null) {
+			for (int depth1 = 0; depth1 < dataDiskss.size(); depth1++) {
+				putQueryParameter("DataDisks." + (depth1 + 1) + ".DataDiskDeleteWithInstance" , dataDiskss.get(depth1).getDataDiskDeleteWithInstance());
+				putQueryParameter("DataDisks." + (depth1 + 1) + ".DataDiskEncrypted" , dataDiskss.get(depth1).getDataDiskEncrypted());
+				putQueryParameter("DataDisks." + (depth1 + 1) + ".DataDiskKMSKeyId" , dataDiskss.get(depth1).getDataDiskKMSKeyId());
+				putQueryParameter("DataDisks." + (depth1 + 1) + ".DataDiskSize" , dataDiskss.get(depth1).getDataDiskSize());
+				putQueryParameter("DataDisks." + (depth1 + 1) + ".DataDiskCategory" , dataDiskss.get(depth1).getDataDiskCategory());
+				putQueryParameter("DataDisks." + (depth1 + 1) + ".DataDiskPerformanceLevel" , dataDiskss.get(depth1).getDataDiskPerformanceLevel());
+			}
+		}	
 	}
 
 	public Integer getSystemDiskSize() {
@@ -201,17 +153,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
 	public String getHostNamePrefix() {
 		return this.hostNamePrefix;
 	}
@@ -220,6 +161,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.hostNamePrefix = hostNamePrefix;
 		if(hostNamePrefix != null){
 			putQueryParameter("HostNamePrefix", hostNamePrefix);
+		}
+	}
+
+	public String getComputeSpotInterruptionBehavior() {
+		return this.computeSpotInterruptionBehavior;
+	}
+
+	public void setComputeSpotInterruptionBehavior(String computeSpotInterruptionBehavior) {
+		this.computeSpotInterruptionBehavior = computeSpotInterruptionBehavior;
+		if(computeSpotInterruptionBehavior != null){
+			putQueryParameter("ComputeSpotInterruptionBehavior", computeSpotInterruptionBehavior);
 		}
 	}
 
@@ -264,17 +216,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.count = count;
 		if(count != null){
 			putQueryParameter("Count", count.toString());
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -355,17 +296,6 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
-	public String getEcsChargeType() {
-		return this.ecsChargeType;
-	}
-
-	public void setEcsChargeType(String ecsChargeType) {
-		this.ecsChargeType = ecsChargeType;
-		if(ecsChargeType != null){
-			putQueryParameter("EcsChargeType", ecsChargeType);
-		}
-	}
-
 	public String getInternetChargeType() {
 		return this.internetChargeType;
 	}
@@ -407,6 +337,212 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.internetMaxBandWidthIn = internetMaxBandWidthIn;
 		if(internetMaxBandWidthIn != null){
 			putQueryParameter("InternetMaxBandWidthIn", internetMaxBandWidthIn.toString());
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getSystemDiskLevel() {
+		return this.systemDiskLevel;
+	}
+
+	public void setSystemDiskLevel(String systemDiskLevel) {
+		this.systemDiskLevel = systemDiskLevel;
+		if(systemDiskLevel != null){
+			putQueryParameter("SystemDiskLevel", systemDiskLevel);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getAllocatePublicAddress() {
+		return this.allocatePublicAddress;
+	}
+
+	public void setAllocatePublicAddress(Boolean allocatePublicAddress) {
+		this.allocatePublicAddress = allocatePublicAddress;
+		if(allocatePublicAddress != null){
+			putQueryParameter("AllocatePublicAddress", allocatePublicAddress.toString());
+		}
+	}
+
+	public Integer getInternetMaxBandWidthOut() {
+		return this.internetMaxBandWidthOut;
+	}
+
+	public void setInternetMaxBandWidthOut(Integer internetMaxBandWidthOut) {
+		this.internetMaxBandWidthOut = internetMaxBandWidthOut;
+		if(internetMaxBandWidthOut != null){
+			putQueryParameter("InternetMaxBandWidthOut", internetMaxBandWidthOut.toString());
+		}
+	}
+
+	public String getJobQueue() {
+		return this.jobQueue;
+	}
+
+	public void setJobQueue(String jobQueue) {
+		this.jobQueue = jobQueue;
+		if(jobQueue != null){
+			putQueryParameter("JobQueue", jobQueue);
+		}
+	}
+
+	public String getSystemDiskType() {
+		return this.systemDiskType;
+	}
+
+	public void setSystemDiskType(String systemDiskType) {
+		this.systemDiskType = systemDiskType;
+		if(systemDiskType != null){
+			putQueryParameter("SystemDiskType", systemDiskType);
+		}
+	}
+
+	public Integer getMinCount() {
+		return this.minCount;
+	}
+
+	public void setMinCount(Integer minCount) {
+		this.minCount = minCount;
+		if(minCount != null){
+			putQueryParameter("MinCount", minCount.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getNetworkInterfaceTrafficMode() {
+		return this.networkInterfaceTrafficMode;
+	}
+
+	public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		if(networkInterfaceTrafficMode != null){
+			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
+		}
+	}
+
+	public Integer getComputeSpotDuration() {
+		return this.computeSpotDuration;
+	}
+
+	public void setComputeSpotDuration(Integer computeSpotDuration) {
+		this.computeSpotDuration = computeSpotDuration;
+		if(computeSpotDuration != null){
+			putQueryParameter("ComputeSpotDuration", computeSpotDuration.toString());
+		}
+	}
+
+	public String getEcsChargeType() {
+		return this.ecsChargeType;
+	}
+
+	public void setEcsChargeType(String ecsChargeType) {
+		this.ecsChargeType = ecsChargeType;
+		if(ecsChargeType != null){
+			putQueryParameter("EcsChargeType", ecsChargeType);
+		}
+	}
+
+	public static class DataDisks {
+
+		private Boolean dataDiskDeleteWithInstance;
+
+		private Boolean dataDiskEncrypted;
+
+		private String dataDiskKMSKeyId;
+
+		private Integer dataDiskSize;
+
+		private String dataDiskCategory;
+
+		private String dataDiskPerformanceLevel;
+
+		public Boolean getDataDiskDeleteWithInstance() {
+			return this.dataDiskDeleteWithInstance;
+		}
+
+		public void setDataDiskDeleteWithInstance(Boolean dataDiskDeleteWithInstance) {
+			this.dataDiskDeleteWithInstance = dataDiskDeleteWithInstance;
+		}
+
+		public Boolean getDataDiskEncrypted() {
+			return this.dataDiskEncrypted;
+		}
+
+		public void setDataDiskEncrypted(Boolean dataDiskEncrypted) {
+			this.dataDiskEncrypted = dataDiskEncrypted;
+		}
+
+		public String getDataDiskKMSKeyId() {
+			return this.dataDiskKMSKeyId;
+		}
+
+		public void setDataDiskKMSKeyId(String dataDiskKMSKeyId) {
+			this.dataDiskKMSKeyId = dataDiskKMSKeyId;
+		}
+
+		public Integer getDataDiskSize() {
+			return this.dataDiskSize;
+		}
+
+		public void setDataDiskSize(Integer dataDiskSize) {
+			this.dataDiskSize = dataDiskSize;
+		}
+
+		public String getDataDiskCategory() {
+			return this.dataDiskCategory;
+		}
+
+		public void setDataDiskCategory(String dataDiskCategory) {
+			this.dataDiskCategory = dataDiskCategory;
+		}
+
+		public String getDataDiskPerformanceLevel() {
+			return this.dataDiskPerformanceLevel;
+		}
+
+		public void setDataDiskPerformanceLevel(String dataDiskPerformanceLevel) {
+			this.dataDiskPerformanceLevel = dataDiskPerformanceLevel;
 		}
 	}
 

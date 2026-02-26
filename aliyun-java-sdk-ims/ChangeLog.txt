@@ -1,0 +1,52 @@
+2025-02-07 Version: 3.3.12
+- UpdatePasskey/DeletePasskey/ListPasskeys.
+
+2025-01-17 Version: 3.3.11
+- UpdateLoginProfile/GetLoginProfile add response param AutoDisableLoginStatus
+- SetSecurityPreference/GetSecurityPreference add response param MaxIdleDays
+
+2024-12-10 Version: 3.3.10
+- SetUserSsoSettings add request param and response param SsoLoginWithDomain
+- GetUserSsoSettings add request param SsoLoginWithDomain
+
+2024-10-23 Version: 3.3.9
+ListUsers，ListUserBasicInfos api新增支持status字段
+
+2024-05-07 Version: 3.3.8
+- GetVerificationInfo api, make visibility public.
+
+2023-12-13 Version: 3.3.7
+- CreateApplication api, add configuration of required scopes.
+- UpdateApplication api, add configuration of required scopes.
+- GetApplication api, add configuration of required scopes.
+- ListApplications api, add configuration of required scopes.
+
+2023-08-11 Version: 3.3.6
+- GetOIDCProvider api, add configuration of issuance limit time.
+- ListOIDCProviders api, add configuration of issuance limit time.
+- UpdateOIDCProvider api, add configuration of issuance limit time.
+- AddFingerprintToOIDCProvider api, add configuration of issuance limit time.
+- AddClientIdToOIDCProvider api, add configuration of issuance limit time.
+- RemoveFingerprintFromOIDCProvider api, add configuration of issuance limit time.
+- RemoveClientIdFromOIDCProvider api, add configuration of issuance limit time.
+- CreateOIDCProvider api,  add configuration of issuance limit time.
+
+2023-03-31 Version: 3.3.5
+- SetVerificationInfo api.
+- GetVerificationInfo api.
+- UnbindVerification api,  user unbind verification.
+- SetSecurityPreference, add configuration of verify type for login.
+- GetSecurityPreference.
+
+2023-03-24 Version: 3.3.4
+- ListUserBasicInfos bug fix, delete tags element.
+
+2023-02-21 Version: 3.3.3
+- Add recyclebin api for user and accesskey.
+
+2023-01-09 Version: 3.3.2
+- Add verification configuration for risky logins.
+
+2023-01-06 Version: 3.3.1
+- Add tag api tagResources、untagResources、listTagResources
+

@@ -35,7 +35,7 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 
 	private Long ownerId;
 	public DeleteDBClusterRequest() {
-		super("clickhouse", "2019-11-11", "DeleteDBCluster");
+		super("clickhouse", "2019-11-11", "DeleteDBCluster", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

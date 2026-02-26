@@ -31,8 +31,8 @@ public class DetectHipKeypointXRayResponseUnmarshaller {
 		detectHipKeypointXRayResponse.setRequestId(_ctx.stringValue("DetectHipKeypointXRayResponse.RequestId"));
 
 		Data data = new Data();
-		data.setOrgId(_ctx.stringValue("DetectHipKeypointXRayResponse.Data.OrgId"));
 		data.setImageUrl(_ctx.stringValue("DetectHipKeypointXRayResponse.Data.ImageUrl"));
+		data.setOrgId(_ctx.stringValue("DetectHipKeypointXRayResponse.Data.OrgId"));
 		data.setOrgName(_ctx.stringValue("DetectHipKeypointXRayResponse.Data.OrgName"));
 
 		List<KeyPointsItem> keyPoints = new ArrayList<KeyPointsItem>();
@@ -47,8 +47,8 @@ public class DetectHipKeypointXRayResponseUnmarshaller {
 			keyPointsItem.setCoordinates(coordinates);
 
 			Tag tag = new Tag();
-			tag.setLabel(_ctx.stringValue("DetectHipKeypointXRayResponse.Data.KeyPoints["+ i +"].Tag.Label"));
 			tag.setDirection(_ctx.stringValue("DetectHipKeypointXRayResponse.Data.KeyPoints["+ i +"].Tag.Direction"));
+			tag.setLabel(_ctx.stringValue("DetectHipKeypointXRayResponse.Data.KeyPoints["+ i +"].Tag.Label"));
 			keyPointsItem.setTag(tag);
 
 			keyPoints.add(keyPointsItem);

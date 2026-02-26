@@ -27,7 +27,7 @@ public class DisableSlowQueryRequest extends RoaAcsRequest<DisableSlowQueryRespo
 
 	private String appGroupIdentity;
 	public DisableSlowQueryRequest() {
-		super("OpenSearch", "2017-12-25", "DisableSlowQuery", "opensearch");
+		super("OpenSearch", "2017-12-25", "DisableSlowQuery");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/actions/disable");
 		setMethod(MethodType.POST);
 		try {

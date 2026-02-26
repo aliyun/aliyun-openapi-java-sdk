@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -26,8 +27,6 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String nodeId;
@@ -35,6 +34,8 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private Integer newPort;
 
 	private String newConnectionString;
 
@@ -44,6 +45,10 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 	public ModifyDBInstanceConnectionStringRequest() {
 		super("Dds", "2015-12-01", "ModifyDBInstanceConnectionString", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -54,17 +59,6 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -109,6 +103,17 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getNewPort() {
+		return this.newPort;
+	}
+
+	public void setNewPort(Integer newPort) {
+		this.newPort = newPort;
+		if(newPort != null){
+			putQueryParameter("NewPort", newPort.toString());
 		}
 	}
 

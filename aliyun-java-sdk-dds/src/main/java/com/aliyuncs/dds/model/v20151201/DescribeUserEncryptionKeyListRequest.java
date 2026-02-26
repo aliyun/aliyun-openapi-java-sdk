@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -26,8 +27,6 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -36,10 +35,16 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 
 	private Long ownerId;
 
+	private String roleARN;
+
 	private String targetRegionId;
 	public DescribeUserEncryptionKeyListRequest() {
 		super("Dds", "2015-12-01", "DescribeUserEncryptionKeyList", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -50,17 +55,6 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -105,6 +99,17 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getRoleARN() {
+		return this.roleARN;
+	}
+
+	public void setRoleARN(String roleARN) {
+		this.roleARN = roleARN;
+		if(roleARN != null){
+			putQueryParameter("RoleARN", roleARN);
 		}
 	}
 

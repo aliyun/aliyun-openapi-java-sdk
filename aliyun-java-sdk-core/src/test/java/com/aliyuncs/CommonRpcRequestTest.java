@@ -1,9 +1,6 @@
 package com.aliyuncs;
 
-import com.aliyuncs.auth.BasicSessionCredentials;
-import com.aliyuncs.auth.BearerTokenCredentials;
-import com.aliyuncs.auth.KeyPairCredentials;
-import com.aliyuncs.auth.Signer;
+import com.aliyuncs.auth.*;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.UserAgentConfig;
@@ -245,6 +242,8 @@ public class CommonRpcRequestTest {
         commonRpcRequest.setHttpContentType(FormatType.JSON);
         commonRpcRequest.signRequest(signer, bearerTokenCredentials, FormatType.JSON, domain);
         Assert.assertTrue(commonRpcRequest.getSysUrl().contains("BearerToken=token"));
+        Assert.assertTrue(commonRpcRequest.getSysUrl().contains("SignatureType=BEARERTOKEN"));
+        Assert.assertEquals("token", commonRpcRequest.getSysHeaders().get("x-acs-bearer-token"));
         Map<String, String> map = commonRpcRequest.getSysBodyParameters();
         Assert.assertEquals("test", map.get("test"));
 
@@ -252,6 +251,15 @@ public class CommonRpcRequestTest {
         when(bearerTokenCredentials.getBearerToken()).thenReturn(null);
         commonRpcRequest.signRequest(signer, bearerTokenCredentials, FormatType.JSON, domain);
         Assert.assertFalse(commonRpcRequest.getSysUrl().contains("BearerToken=token"));
+
+        commonRpcRequest = new CommonRpcRequest("test");
+        commonRpcRequest.setSysProtocol(ProtocolType.HTTP);
+        IDTokenCredentials idTokenCredentials = mock(IDTokenCredentials.class);
+        when(idTokenCredentials.getIDToken()).thenReturn("token");
+        commonRpcRequest.putBodyParameter("test", "test");
+        commonRpcRequest.setHttpContentType(FormatType.JSON);
+        commonRpcRequest.signRequest(signer, idTokenCredentials, FormatType.JSON, domain);
+        Assert.assertEquals("token", commonRpcRequest.getSysHeaders().get("x-acs-zero-trust-idtoken"));
 
         commonRpcRequest = new CommonRpcRequest("test");
         commonRpcRequest.setSysProtocol(ProtocolType.HTTP);

@@ -24,6 +24,8 @@ import com.aliyuncs.sas.Endpoint;
  */
 public class DescribeServiceLinkedRoleStatusRequest extends RpcAcsRequest<DescribeServiceLinkedRoleStatusResponse> {
 	   
+
+	private String serviceLinkedRole;
 	public DescribeServiceLinkedRoleStatusRequest() {
 		super("Sas", "2018-12-03", "DescribeServiceLinkedRoleStatus");
 		setMethod(MethodType.POST);
@@ -31,6 +33,17 @@ public class DescribeServiceLinkedRoleStatusRequest extends RpcAcsRequest<Descri
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getServiceLinkedRole() {
+		return this.serviceLinkedRole;
+	}
+
+	public void setServiceLinkedRole(String serviceLinkedRole) {
+		this.serviceLinkedRole = serviceLinkedRole;
+		if(serviceLinkedRole != null){
+			putQueryParameter("ServiceLinkedRole", serviceLinkedRole);
+		}
 	}
 
 	@Override

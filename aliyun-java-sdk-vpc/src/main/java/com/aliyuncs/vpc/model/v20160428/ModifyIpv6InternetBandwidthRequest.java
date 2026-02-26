@@ -31,6 +31,8 @@ public class ModifyIpv6InternetBandwidthRequest extends RpcAcsRequest<ModifyIpv6
 
 	private String ipv6InternetBandwidthId;
 
+	private Boolean dryRun;
+
 	private Long bandwidth;
 
 	private String resourceOwnerAccount;
@@ -79,6 +81,17 @@ public class ModifyIpv6InternetBandwidthRequest extends RpcAcsRequest<ModifyIpv6
 		this.ipv6InternetBandwidthId = ipv6InternetBandwidthId;
 		if(ipv6InternetBandwidthId != null){
 			putQueryParameter("Ipv6InternetBandwidthId", ipv6InternetBandwidthId);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

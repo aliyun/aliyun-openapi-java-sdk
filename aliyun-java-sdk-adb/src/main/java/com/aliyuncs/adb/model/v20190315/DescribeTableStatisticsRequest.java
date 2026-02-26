@@ -27,11 +27,7 @@ public class DescribeTableStatisticsRequest extends RpcAcsRequest<DescribeTableS
 
 	private Long resourceOwnerId;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	private String order;
+	private String schemaName;
 
 	private String resourceOwnerAccount;
 
@@ -40,6 +36,14 @@ public class DescribeTableStatisticsRequest extends RpcAcsRequest<DescribeTableS
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String keyword;
+
+	private String order;
 	public DescribeTableStatisticsRequest() {
 		super("adb", "2019-03-15", "DescribeTableStatistics", "ads");
 		setMethod(MethodType.POST);
@@ -60,36 +64,14 @@ public class DescribeTableStatisticsRequest extends RpcAcsRequest<DescribeTableS
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getSchemaName() {
+		return this.schemaName;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		if(order != null){
-			putQueryParameter("Order", order);
+	public void setSchemaName(String schemaName) {
+		this.schemaName = schemaName;
+		if(schemaName != null){
+			putQueryParameter("SchemaName", schemaName);
 		}
 	}
 
@@ -134,6 +116,50 @@ public class DescribeTableStatisticsRequest extends RpcAcsRequest<DescribeTableS
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 

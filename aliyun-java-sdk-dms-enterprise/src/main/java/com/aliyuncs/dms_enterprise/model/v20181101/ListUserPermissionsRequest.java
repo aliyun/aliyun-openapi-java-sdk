@@ -33,15 +33,15 @@ public class ListUserPermissionsRequest extends RpcAcsRequest<ListUserPermission
 
 	private Integer pageNumber;
 
+	private String envType;
+
+	private Integer pageSize;
+
 	private String permType;
 
 	private String databaseName;
 
-	private String envType;
-
 	private String dbType;
-
-	private Integer pageSize;
 
 	private Boolean logic;
 	public ListUserPermissionsRequest() {
@@ -97,6 +97,28 @@ public class ListUserPermissionsRequest extends RpcAcsRequest<ListUserPermission
 		}
 	}
 
+	public String getEnvType() {
+		return this.envType;
+	}
+
+	public void setEnvType(String envType) {
+		this.envType = envType;
+		if(envType != null){
+			putQueryParameter("EnvType", envType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getPermType() {
 		return this.permType;
 	}
@@ -119,17 +141,6 @@ public class ListUserPermissionsRequest extends RpcAcsRequest<ListUserPermission
 		}
 	}
 
-	public String getEnvType() {
-		return this.envType;
-	}
-
-	public void setEnvType(String envType) {
-		this.envType = envType;
-		if(envType != null){
-			putQueryParameter("EnvType", envType);
-		}
-	}
-
 	public String getDbType() {
 		return this.dbType;
 	}
@@ -138,17 +149,6 @@ public class ListUserPermissionsRequest extends RpcAcsRequest<ListUserPermission
 		this.dbType = dbType;
 		if(dbType != null){
 			putQueryParameter("DbType", dbType);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

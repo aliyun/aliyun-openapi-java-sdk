@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListProofChainResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
-
-	private Boolean success;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -51,20 +43,28 @@ public class ListProofChainResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,21 +77,13 @@ public class ListProofChainResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
-
 		private Integer num;
+
+		private Integer total;
 
 		private Integer size;
 
 		private List<ProofChainInfo> pageData;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
 
 		public Integer getNum() {
 			return this.num;
@@ -99,6 +91,14 @@ public class ListProofChainResponse extends AcsResponse {
 
 		public void setNum(Integer num) {
 			this.num = num;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public Integer getSize() {
@@ -119,33 +119,17 @@ public class ListProofChainResponse extends AcsResponse {
 
 		public static class ProofChainInfo {
 
-			private String bizChainId;
-
-			private String name;
-
 			private String remark;
+
+			private String bizChainId;
 
 			private String roleType;
 
 			private String bizChainCode;
 
+			private String name;
+
 			private String dataTypeCode;
-
-			public String getBizChainId() {
-				return this.bizChainId;
-			}
-
-			public void setBizChainId(String bizChainId) {
-				this.bizChainId = bizChainId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
 
 			public String getRemark() {
 				return this.remark;
@@ -153,6 +137,14 @@ public class ListProofChainResponse extends AcsResponse {
 
 			public void setRemark(String remark) {
 				this.remark = remark;
+			}
+
+			public String getBizChainId() {
+				return this.bizChainId;
+			}
+
+			public void setBizChainId(String bizChainId) {
+				this.bizChainId = bizChainId;
 			}
 
 			public String getRoleType() {
@@ -169,6 +161,14 @@ public class ListProofChainResponse extends AcsResponse {
 
 			public void setBizChainCode(String bizChainCode) {
 				this.bizChainCode = bizChainCode;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public String getDataTypeCode() {

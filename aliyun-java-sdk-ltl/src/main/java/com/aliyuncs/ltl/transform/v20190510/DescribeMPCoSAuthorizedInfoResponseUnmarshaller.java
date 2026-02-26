@@ -30,16 +30,16 @@ public class DescribeMPCoSAuthorizedInfoResponseUnmarshaller {
 		
 		describeMPCoSAuthorizedInfoResponse.setRequestId(_ctx.stringValue("DescribeMPCoSAuthorizedInfoResponse.RequestId"));
 		describeMPCoSAuthorizedInfoResponse.setCode(_ctx.integerValue("DescribeMPCoSAuthorizedInfoResponse.Code"));
-		describeMPCoSAuthorizedInfoResponse.setSuccess(_ctx.booleanValue("DescribeMPCoSAuthorizedInfoResponse.Success"));
 		describeMPCoSAuthorizedInfoResponse.setMessage(_ctx.stringValue("DescribeMPCoSAuthorizedInfoResponse.Message"));
+		describeMPCoSAuthorizedInfoResponse.setSuccess(_ctx.booleanValue("DescribeMPCoSAuthorizedInfoResponse.Success"));
 
 		Data data = new Data();
 
 		List<AuthorizedPhase> authorizedPhaseList = new ArrayList<AuthorizedPhase>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMPCoSAuthorizedInfoResponse.Data.AuthorizedPhaseList.Length"); i++) {
 			AuthorizedPhase authorizedPhase = new AuthorizedPhase();
-			authorizedPhase.setPhaseId(_ctx.stringValue("DescribeMPCoSAuthorizedInfoResponse.Data.AuthorizedPhaseList["+ i +"].PhaseId"));
 			authorizedPhase.setPhaseName(_ctx.stringValue("DescribeMPCoSAuthorizedInfoResponse.Data.AuthorizedPhaseList["+ i +"].PhaseName"));
+			authorizedPhase.setPhaseId(_ctx.stringValue("DescribeMPCoSAuthorizedInfoResponse.Data.AuthorizedPhaseList["+ i +"].PhaseId"));
 
 			authorizedPhaseList.add(authorizedPhase);
 		}
@@ -48,8 +48,8 @@ public class DescribeMPCoSAuthorizedInfoResponseUnmarshaller {
 		List<UnAuthorizedPhase> unAuthorizedPhaseList = new ArrayList<UnAuthorizedPhase>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMPCoSAuthorizedInfoResponse.Data.UnAuthorizedPhaseList.Length"); i++) {
 			UnAuthorizedPhase unAuthorizedPhase = new UnAuthorizedPhase();
-			unAuthorizedPhase.setPhaseId(_ctx.stringValue("DescribeMPCoSAuthorizedInfoResponse.Data.UnAuthorizedPhaseList["+ i +"].PhaseId"));
 			unAuthorizedPhase.setPhaseName(_ctx.stringValue("DescribeMPCoSAuthorizedInfoResponse.Data.UnAuthorizedPhaseList["+ i +"].PhaseName"));
+			unAuthorizedPhase.setPhaseId(_ctx.stringValue("DescribeMPCoSAuthorizedInfoResponse.Data.UnAuthorizedPhaseList["+ i +"].PhaseId"));
 
 			unAuthorizedPhaseList.add(unAuthorizedPhase);
 		}

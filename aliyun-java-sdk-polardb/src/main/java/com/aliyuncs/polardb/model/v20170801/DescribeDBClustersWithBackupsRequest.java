@@ -33,6 +33,8 @@ public class DescribeDBClustersWithBackupsRequest extends RpcAcsRequest<Describe
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private String resourceOwnerAccount;
@@ -47,7 +49,7 @@ public class DescribeDBClustersWithBackupsRequest extends RpcAcsRequest<Describe
 
 	private String dBClusterIds;
 	public DescribeDBClustersWithBackupsRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClustersWithBackups");
+		super("polardb", "2017-08-01", "DescribeDBClustersWithBackups", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -96,6 +98,17 @@ public class DescribeDBClustersWithBackupsRequest extends RpcAcsRequest<Describe
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

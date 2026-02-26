@@ -135,6 +135,8 @@ public class ListNodesResponse extends AcsResponse {
 
 			private Boolean repeatability;
 
+			private Integer repeatMode;
+
 			private Long projectId;
 
 			private String programType;
@@ -167,6 +169,20 @@ public class ListNodesResponse extends AcsResponse {
 
 			private Long nodeId;
 
+			private String resGroupIdentifier;
+
+			private Integer fileType;
+
+			private Long fileId;
+
+			private Integer fileVersion;
+
+			private Long deployDate;
+
+			private Long createTime;
+
+			private Long modifyTime;
+
 			public String getSchedulerType() {
 				return this.schedulerType;
 			}
@@ -189,6 +205,14 @@ public class ListNodesResponse extends AcsResponse {
 
 			public void setRepeatability(Boolean repeatability) {
 				this.repeatability = repeatability;
+			}
+
+			public Integer getRepeatMode() {
+				return this.repeatMode;
+			}
+
+			public void setRepeatMode(Integer repeatMode) {
+				this.repeatMode = repeatMode;
 			}
 
 			public Long getProjectId() {
@@ -317,6 +341,62 @@ public class ListNodesResponse extends AcsResponse {
 
 			public void setNodeId(Long nodeId) {
 				this.nodeId = nodeId;
+			}
+
+			public String getResGroupIdentifier() {
+				return this.resGroupIdentifier;
+			}
+
+			public void setResGroupIdentifier(String resGroupIdentifier) {
+				this.resGroupIdentifier = resGroupIdentifier;
+			}
+
+			public Integer getFileType() {
+				return this.fileType;
+			}
+
+			public void setFileType(Integer fileType) {
+				this.fileType = fileType;
+			}
+
+			public Long getFileId() {
+				return this.fileId;
+			}
+
+			public void setFileId(Long fileId) {
+				this.fileId = fileId;
+			}
+
+			public Integer getFileVersion() {
+				return this.fileVersion;
+			}
+
+			public void setFileVersion(Integer fileVersion) {
+				this.fileVersion = fileVersion;
+			}
+
+			public Long getDeployDate() {
+				return this.deployDate;
+			}
+
+			public void setDeployDate(Long deployDate) {
+				this.deployDate = deployDate;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getModifyTime() {
+				return this.modifyTime;
+			}
+
+			public void setModifyTime(Long modifyTime) {
+				this.modifyTime = modifyTime;
 			}
 		}
 	}

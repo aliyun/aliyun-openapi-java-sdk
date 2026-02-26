@@ -28,8 +28,10 @@ public class StartAggregateRemediationRequest extends RpcAcsRequest<StartAggrega
 	private String configRuleId;
 
 	private String aggregatorId;
+
+	private Long resourceAccountId;
 	public StartAggregateRemediationRequest() {
-		super("Config", "2020-09-07", "StartAggregateRemediation");
+		super("Config", "2020-09-07", "StartAggregateRemediation", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class StartAggregateRemediationRequest extends RpcAcsRequest<StartAggrega
 		this.aggregatorId = aggregatorId;
 		if(aggregatorId != null){
 			putQueryParameter("AggregatorId", aggregatorId);
+		}
+	}
+
+	public Long getResourceAccountId() {
+		return this.resourceAccountId;
+	}
+
+	public void setResourceAccountId(Long resourceAccountId) {
+		this.resourceAccountId = resourceAccountId;
+		if(resourceAccountId != null){
+			putQueryParameter("ResourceAccountId", resourceAccountId.toString());
 		}
 	}
 

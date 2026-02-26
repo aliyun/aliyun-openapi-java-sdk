@@ -29,13 +29,13 @@ public class DescribeMPCoSResourceInfoResponseUnmarshaller {
 		
 		describeMPCoSResourceInfoResponse.setRequestId(_ctx.stringValue("DescribeMPCoSResourceInfoResponse.RequestId"));
 		describeMPCoSResourceInfoResponse.setCode(_ctx.integerValue("DescribeMPCoSResourceInfoResponse.Code"));
-		describeMPCoSResourceInfoResponse.setSuccess(_ctx.booleanValue("DescribeMPCoSResourceInfoResponse.Success"));
 		describeMPCoSResourceInfoResponse.setMessage(_ctx.stringValue("DescribeMPCoSResourceInfoResponse.Message"));
+		describeMPCoSResourceInfoResponse.setSuccess(_ctx.booleanValue("DescribeMPCoSResourceInfoResponse.Success"));
 
 		Data data = new Data();
+		data.setPhaseGroupQuota(_ctx.longValue("DescribeMPCoSResourceInfoResponse.Data.PhaseGroupQuota"));
 		data.setMemberQuota(_ctx.longValue("DescribeMPCoSResourceInfoResponse.Data.MemberQuota"));
 		data.setUsedMember(_ctx.longValue("DescribeMPCoSResourceInfoResponse.Data.UsedMember"));
-		data.setPhaseGroupQuota(_ctx.longValue("DescribeMPCoSResourceInfoResponse.Data.PhaseGroupQuota"));
 		data.setUsedPhaseGroup(_ctx.longValue("DescribeMPCoSResourceInfoResponse.Data.UsedPhaseGroup"));
 
 		List<PhaseQuotaInfo> phaseQuotaInfoList = new ArrayList<PhaseQuotaInfo>();

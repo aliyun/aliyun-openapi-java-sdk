@@ -95,6 +95,8 @@ public class ListDDLPublishRecordsResponse extends AcsResponse {
 
 		private Long workflowInstanceId;
 
+		private String comment;
+
 		private List<PublishTaskInfo> publishTaskInfoList;
 
 		public String getAuditStatus() {
@@ -167,6 +169,14 @@ public class ListDDLPublishRecordsResponse extends AcsResponse {
 
 		public void setWorkflowInstanceId(Long workflowInstanceId) {
 			this.workflowInstanceId = workflowInstanceId;
+		}
+
+		public String getComment() {
+			return this.comment;
+		}
+
+		public void setComment(String comment) {
+			this.comment = comment;
 		}
 
 		public List<PublishTaskInfo> getPublishTaskInfoList() {

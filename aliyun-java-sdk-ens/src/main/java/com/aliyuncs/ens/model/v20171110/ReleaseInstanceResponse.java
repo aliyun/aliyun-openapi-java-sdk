@@ -26,12 +26,22 @@ public class ReleaseInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String resourceType;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
 	}
 
 	@Override

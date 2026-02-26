@@ -27,6 +27,8 @@ public class ModifyEventTypeStatusRequest extends RpcAcsRequest<ModifyEventTypeS
 
 	private String subTypeIds;
 
+	private Integer featureType;
+
 	private String lang;
 	public ModifyEventTypeStatusRequest() {
 		super("Sddp", "2019-01-03", "ModifyEventTypeStatus", "sddp");
@@ -45,6 +47,17 @@ public class ModifyEventTypeStatusRequest extends RpcAcsRequest<ModifyEventTypeS
 		this.subTypeIds = subTypeIds;
 		if(subTypeIds != null){
 			putQueryParameter("SubTypeIds", subTypeIds);
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

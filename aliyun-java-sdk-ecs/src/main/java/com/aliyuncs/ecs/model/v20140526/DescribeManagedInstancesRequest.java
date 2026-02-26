@@ -30,7 +30,15 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 
 	private Long pageNumber;
 
+	private String resourceGroupId;
+
+	private String machineId;
+
+	private String nextToken;
+
 	private Long pageSize;
+
+	private List<Tag> tags;
 
 	private String resourceOwnerAccount;
 
@@ -40,9 +48,13 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 
 	private Long ownerId;
 
+	private String connected;
+
 	private String instanceName;
 
 	private List<String> instanceIds;
+
+	private Integer maxResults;
 
 	private String instanceIp;
 
@@ -78,6 +90,39 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getMachineId() {
+		return this.machineId;
+	}
+
+	public void setMachineId(String machineId) {
+		this.machineId = machineId;
+		if(machineId != null){
+			putQueryParameter("MachineId", machineId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
 	public Long getPageSize() {
 		return this.pageSize;
 	}
@@ -87,6 +132,20 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -133,6 +192,17 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 		}
 	}
 
+	public String getConnected() {
+		return this.connected;
+	}
+
+	public void setConnected(String connected) {
+		this.connected = connected;
+		if(connected != null){
+			putQueryParameter("Connected", connected);
+		}
+	}
+
 	public String getInstanceName() {
 		return this.instanceName;
 	}
@@ -157,6 +227,17 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 		}	
 	}
 
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
 	public String getInstanceIp() {
 		return this.instanceIp;
 	}
@@ -176,6 +257,29 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 		this.activationId = activationId;
 		if(activationId != null){
 			putQueryParameter("ActivationId", activationId);
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

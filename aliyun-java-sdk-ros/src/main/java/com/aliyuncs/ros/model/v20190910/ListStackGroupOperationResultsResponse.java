@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListStackGroupOperationResultsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<StackGroupOperationResult> stackGroupOperationResults;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListStackGroupOperationResultsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListStackGroupOperationResultsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<StackGroupOperationResult> getStackGroupOperationResults() {
@@ -77,13 +77,31 @@ public class ListStackGroupOperationResultsResponse extends AcsResponse {
 
 	public static class StackGroupOperationResult {
 
+		private String status;
+
+		private String statusReason;
+
 		private String accountId;
 
 		private String regionId;
 
-		private String status;
+		private String rdFolderId;
 
-		private String statusReason;
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getStatusReason() {
+			return this.statusReason;
+		}
+
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
+		}
 
 		public String getAccountId() {
 			return this.accountId;
@@ -101,20 +119,12 @@ public class ListStackGroupOperationResultsResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getRdFolderId() {
+			return this.rdFolderId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getStatusReason() {
-			return this.statusReason;
-		}
-
-		public void setStatusReason(String statusReason) {
-			this.statusReason = statusReason;
+		public void setRdFolderId(String rdFolderId) {
+			this.rdFolderId = rdFolderId;
 		}
 	}
 

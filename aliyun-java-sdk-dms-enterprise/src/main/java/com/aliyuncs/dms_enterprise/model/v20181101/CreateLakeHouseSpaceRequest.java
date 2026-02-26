@@ -25,19 +25,19 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class CreateLakeHouseSpaceRequest extends RpcAcsRequest<CreateLakeHouseSpaceResponse> {
 	   
 
-	private String spaceName;
-
 	private String description;
 
 	private Long tid;
 
 	private String mode;
 
-	private String dwDbType;
-
 	private String prodDbId;
 
 	private String devDbId;
+
+	private String spaceName;
+
+	private String dwDbType;
 
 	private String spaceConfig;
 	public CreateLakeHouseSpaceRequest() {
@@ -47,17 +47,6 @@ public class CreateLakeHouseSpaceRequest extends RpcAcsRequest<CreateLakeHouseSp
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSpaceName() {
-		return this.spaceName;
-	}
-
-	public void setSpaceName(String spaceName) {
-		this.spaceName = spaceName;
-		if(spaceName != null){
-			putQueryParameter("SpaceName", spaceName);
-		}
 	}
 
 	public String getDescription() {
@@ -93,17 +82,6 @@ public class CreateLakeHouseSpaceRequest extends RpcAcsRequest<CreateLakeHouseSp
 		}
 	}
 
-	public String getDwDbType() {
-		return this.dwDbType;
-	}
-
-	public void setDwDbType(String dwDbType) {
-		this.dwDbType = dwDbType;
-		if(dwDbType != null){
-			putQueryParameter("DwDbType", dwDbType);
-		}
-	}
-
 	public String getProdDbId() {
 		return this.prodDbId;
 	}
@@ -123,6 +101,28 @@ public class CreateLakeHouseSpaceRequest extends RpcAcsRequest<CreateLakeHouseSp
 		this.devDbId = devDbId;
 		if(devDbId != null){
 			putQueryParameter("DevDbId", devDbId);
+		}
+	}
+
+	public String getSpaceName() {
+		return this.spaceName;
+	}
+
+	public void setSpaceName(String spaceName) {
+		this.spaceName = spaceName;
+		if(spaceName != null){
+			putQueryParameter("SpaceName", spaceName);
+		}
+	}
+
+	public String getDwDbType() {
+		return this.dwDbType;
+	}
+
+	public void setDwDbType(String dwDbType) {
+		this.dwDbType = dwDbType;
+		if(dwDbType != null){
+			putQueryParameter("DwDbType", dwDbType);
 		}
 	}
 

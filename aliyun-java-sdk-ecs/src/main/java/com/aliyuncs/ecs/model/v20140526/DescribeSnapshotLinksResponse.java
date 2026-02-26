@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSnapshotLinksResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private Integer pageSize;
 
 	private String requestId;
@@ -34,6 +36,14 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 	private Integer totalCount;
 
 	private List<SnapshotLink> snapshotLinks;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;

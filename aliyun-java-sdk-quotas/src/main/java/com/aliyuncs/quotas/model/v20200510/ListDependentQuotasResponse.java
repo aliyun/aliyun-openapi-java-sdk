@@ -91,9 +91,9 @@ public class ListDependentQuotasResponse extends AcsResponse {
 
 			private String dimensionKey;
 
-			private List<String> dimensionValues;
-
 			private List<String> dependentDimension;
+
+			private List<String> dimensionValues;
 
 			public String getDimensionKey() {
 				return this.dimensionKey;
@@ -103,20 +103,20 @@ public class ListDependentQuotasResponse extends AcsResponse {
 				this.dimensionKey = dimensionKey;
 			}
 
-			public List<String> getDimensionValues() {
-				return this.dimensionValues;
-			}
-
-			public void setDimensionValues(List<String> dimensionValues) {
-				this.dimensionValues = dimensionValues;
-			}
-
 			public List<String> getDependentDimension() {
 				return this.dependentDimension;
 			}
 
 			public void setDependentDimension(List<String> dependentDimension) {
 				this.dependentDimension = dependentDimension;
+			}
+
+			public List<String> getDimensionValues() {
+				return this.dimensionValues;
+			}
+
+			public void setDimensionValues(List<String> dimensionValues) {
+				this.dimensionValues = dimensionValues;
 			}
 		}
 	}

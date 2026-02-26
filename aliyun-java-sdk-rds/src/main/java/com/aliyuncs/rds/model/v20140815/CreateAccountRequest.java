@@ -42,6 +42,8 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 	private Long ownerId;
 
 	private String accountPassword;
+
+	private Boolean checkPolicy;
 	public CreateAccountRequest() {
 		super("Rds", "2014-08-15", "CreateAccount", "rds");
 		setMethod(MethodType.POST);
@@ -147,6 +149,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.accountPassword = accountPassword;
 		if(accountPassword != null){
 			putQueryParameter("AccountPassword", accountPassword);
+		}
+	}
+
+	public Boolean getCheckPolicy() {
+		return this.checkPolicy;
+	}
+
+	public void setCheckPolicy(Boolean checkPolicy) {
+		this.checkPolicy = checkPolicy;
+		if(checkPolicy != null){
+			putQueryParameter("CheckPolicy", checkPolicy.toString());
 		}
 	}
 

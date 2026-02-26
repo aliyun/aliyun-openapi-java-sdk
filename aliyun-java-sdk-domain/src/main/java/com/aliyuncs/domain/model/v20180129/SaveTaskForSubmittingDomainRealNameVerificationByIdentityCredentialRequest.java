@@ -38,7 +38,7 @@ public class SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential
 
 	private String identityCredentialNo;
 	public SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest() {
-		super("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential");
+		super("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,23 +25,23 @@ import com.aliyuncs.imm.Endpoint;
 public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 	   
 
-	private String projectName;
-
 	private Long datasetMaxBindCount;
 
-	private Long datasetMaxTotalFileSize;
+	private String description;
 
 	private Long datasetMaxRelationCount;
 
 	private String datasetName;
 
-	private String description;
+	private Long datasetMaxFileCount;
+
+	private String projectName;
 
 	private Long datasetMaxEntityCount;
 
-	private Long datasetMaxFileCount;
-
 	private String templateId;
+
+	private Long datasetMaxTotalFileSize;
 	public CreateDatasetRequest() {
 		super("imm", "2020-09-30", "CreateDataset", "imm");
 		setMethod(MethodType.POST);
@@ -49,17 +49,6 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
 	}
 
 	public Long getDatasetMaxBindCount() {
@@ -73,14 +62,14 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 		}
 	}
 
-	public Long getDatasetMaxTotalFileSize() {
-		return this.datasetMaxTotalFileSize;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setDatasetMaxTotalFileSize(Long datasetMaxTotalFileSize) {
-		this.datasetMaxTotalFileSize = datasetMaxTotalFileSize;
-		if(datasetMaxTotalFileSize != null){
-			putQueryParameter("DatasetMaxTotalFileSize", datasetMaxTotalFileSize.toString());
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -106,14 +95,25 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public Long getDatasetMaxFileCount() {
+		return this.datasetMaxFileCount;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setDatasetMaxFileCount(Long datasetMaxFileCount) {
+		this.datasetMaxFileCount = datasetMaxFileCount;
+		if(datasetMaxFileCount != null){
+			putQueryParameter("DatasetMaxFileCount", datasetMaxFileCount.toString());
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 
@@ -128,17 +128,6 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 		}
 	}
 
-	public Long getDatasetMaxFileCount() {
-		return this.datasetMaxFileCount;
-	}
-
-	public void setDatasetMaxFileCount(Long datasetMaxFileCount) {
-		this.datasetMaxFileCount = datasetMaxFileCount;
-		if(datasetMaxFileCount != null){
-			putQueryParameter("DatasetMaxFileCount", datasetMaxFileCount.toString());
-		}
-	}
-
 	public String getTemplateId() {
 		return this.templateId;
 	}
@@ -147,6 +136,17 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
+		}
+	}
+
+	public Long getDatasetMaxTotalFileSize() {
+		return this.datasetMaxTotalFileSize;
+	}
+
+	public void setDatasetMaxTotalFileSize(Long datasetMaxTotalFileSize) {
+		this.datasetMaxTotalFileSize = datasetMaxTotalFileSize;
+		if(datasetMaxTotalFileSize != null){
+			putQueryParameter("DatasetMaxTotalFileSize", datasetMaxTotalFileSize.toString());
 		}
 	}
 

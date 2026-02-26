@@ -47,10 +47,6 @@ public class ListFCTriggerResponse extends AcsResponse {
 
 	public static class FCTrigger {
 
-		private String eventMetaName;
-
-		private String eventMetaVersion;
-
 		private String triggerARN;
 
 		private String roleARN;
@@ -59,21 +55,9 @@ public class ListFCTriggerResponse extends AcsResponse {
 
 		private String notes;
 
-		public String getEventMetaName() {
-			return this.eventMetaName;
-		}
+		private String eventMetaName;
 
-		public void setEventMetaName(String eventMetaName) {
-			this.eventMetaName = eventMetaName;
-		}
-
-		public String getEventMetaVersion() {
-			return this.eventMetaVersion;
-		}
-
-		public void setEventMetaVersion(String eventMetaVersion) {
-			this.eventMetaVersion = eventMetaVersion;
-		}
+		private String eventMetaVersion;
 
 		public String getTriggerARN() {
 			return this.triggerARN;
@@ -105,6 +89,22 @@ public class ListFCTriggerResponse extends AcsResponse {
 
 		public void setNotes(String notes) {
 			this.notes = notes;
+		}
+
+		public String getEventMetaName() {
+			return this.eventMetaName;
+		}
+
+		public void setEventMetaName(String eventMetaName) {
+			this.eventMetaName = eventMetaName;
+		}
+
+		public String getEventMetaVersion() {
+			return this.eventMetaVersion;
+		}
+
+		public void setEventMetaVersion(String eventMetaVersion) {
+			this.eventMetaVersion = eventMetaVersion;
 		}
 	}
 

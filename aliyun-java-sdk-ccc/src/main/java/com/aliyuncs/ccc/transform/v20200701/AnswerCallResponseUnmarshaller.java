@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.AnswerCallResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.AnswerCallResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.AnswerCallResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.AnswerCallResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -52,19 +51,20 @@ public class AnswerCallResponseUnmarshaller {
 		List<ChannelContext> channelContexts = new ArrayList<ChannelContext>();
 		for (int i = 0; i < _ctx.lengthValue("AnswerCallResponse.Data.CallContext.ChannelContexts.Length"); i++) {
 			ChannelContext channelContext = new ChannelContext();
+			channelContext.setIndex(_ctx.longValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].Index"));
 			channelContext.setReleaseInitiator(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator"));
 			channelContext.setChannelState(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelState"));
 			channelContext.setDestination(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].Destination"));
 			channelContext.setUserId(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
 			channelContext.setSkillGroupId(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId"));
 			channelContext.setTimestamp(_ctx.longValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));
 			channelContext.setChannelId(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelId"));
 			channelContext.setOriginator(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].Originator"));
 			channelContext.setUserExtension(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserExtension"));
+			channelContext.setChannelVariables(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelVariables"));
 
 			channelContexts.add(channelContext);
 		}

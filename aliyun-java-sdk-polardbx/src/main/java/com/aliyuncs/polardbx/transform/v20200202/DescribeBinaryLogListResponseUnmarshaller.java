@@ -34,17 +34,17 @@ public class DescribeBinaryLogListResponseUnmarshaller {
 		List<LogListItem> logList = new ArrayList<LogListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBinaryLogListResponse.LogList.Length"); i++) {
 			LogListItem logListItem = new LogListItem();
-			logListItem.setId(_ctx.longValue("DescribeBinaryLogListResponse.LogList["+ i +"].Id"));
-			logListItem.setCreatedTime(_ctx.stringValue("DescribeBinaryLogListResponse.LogList["+ i +"].CreatedTime"));
-			logListItem.setModifiedTime(_ctx.stringValue("DescribeBinaryLogListResponse.LogList["+ i +"].ModifiedTime"));
-			logListItem.setFileName(_ctx.stringValue("DescribeBinaryLogListResponse.LogList["+ i +"].FileName"));
-			logListItem.setUploadStatus(_ctx.integerValue("DescribeBinaryLogListResponse.LogList["+ i +"].UploadStatus"));
-			logListItem.setPurgeStatus(_ctx.integerValue("DescribeBinaryLogListResponse.LogList["+ i +"].PurgeStatus"));
-			logListItem.setUploadHost(_ctx.stringValue("DescribeBinaryLogListResponse.LogList["+ i +"].UploadHost"));
-			logListItem.setBeginTime(_ctx.stringValue("DescribeBinaryLogListResponse.LogList["+ i +"].BeginTime"));
 			logListItem.setEndTime(_ctx.stringValue("DescribeBinaryLogListResponse.LogList["+ i +"].EndTime"));
-			logListItem.setLogSize(_ctx.longValue("DescribeBinaryLogListResponse.LogList["+ i +"].LogSize"));
+			logListItem.setModifiedTime(_ctx.stringValue("DescribeBinaryLogListResponse.LogList["+ i +"].ModifiedTime"));
+			logListItem.setUploadHost(_ctx.stringValue("DescribeBinaryLogListResponse.LogList["+ i +"].UploadHost"));
+			logListItem.setUploadStatus(_ctx.integerValue("DescribeBinaryLogListResponse.LogList["+ i +"].UploadStatus"));
 			logListItem.setDownloadLink(_ctx.stringValue("DescribeBinaryLogListResponse.LogList["+ i +"].DownloadLink"));
+			logListItem.setBeginTime(_ctx.stringValue("DescribeBinaryLogListResponse.LogList["+ i +"].BeginTime"));
+			logListItem.setLogSize(_ctx.longValue("DescribeBinaryLogListResponse.LogList["+ i +"].LogSize"));
+			logListItem.setFileName(_ctx.stringValue("DescribeBinaryLogListResponse.LogList["+ i +"].FileName"));
+			logListItem.setCreatedTime(_ctx.stringValue("DescribeBinaryLogListResponse.LogList["+ i +"].CreatedTime"));
+			logListItem.setPurgeStatus(_ctx.integerValue("DescribeBinaryLogListResponse.LogList["+ i +"].PurgeStatus"));
+			logListItem.setId(_ctx.longValue("DescribeBinaryLogListResponse.LogList["+ i +"].Id"));
 
 			logList.add(logListItem);
 		}

@@ -33,8 +33,8 @@ public class ListPreferredEcsTypesResponseUnmarshaller {
 		List<SeriesInfo> series = new ArrayList<SeriesInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListPreferredEcsTypesResponse.Series.Length"); i++) {
 			SeriesInfo seriesInfo = new SeriesInfo();
-			seriesInfo.setSeriesId(_ctx.stringValue("ListPreferredEcsTypesResponse.Series["+ i +"].SeriesId"));
 			seriesInfo.setSeriesName(_ctx.stringValue("ListPreferredEcsTypesResponse.Series["+ i +"].SeriesName"));
+			seriesInfo.setSeriesId(_ctx.stringValue("ListPreferredEcsTypesResponse.Series["+ i +"].SeriesId"));
 
 			Roles roles = new Roles();
 

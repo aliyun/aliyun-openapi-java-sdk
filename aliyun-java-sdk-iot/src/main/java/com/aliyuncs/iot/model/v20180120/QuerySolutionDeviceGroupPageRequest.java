@@ -35,7 +35,7 @@ public class QuerySolutionDeviceGroupPageRequest extends RpcAcsRequest<QuerySolu
 
 	private Integer pageSize;
 	public QuerySolutionDeviceGroupPageRequest() {
-		super("Iot", "2018-01-20", "QuerySolutionDeviceGroupPage");
+		super("Iot", "2018-01-20", "QuerySolutionDeviceGroupPage", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

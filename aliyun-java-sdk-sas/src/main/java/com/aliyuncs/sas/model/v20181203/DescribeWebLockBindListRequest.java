@@ -27,13 +27,13 @@ public class DescribeWebLockBindListRequest extends RpcAcsRequest<DescribeWebLoc
 
 	private String remark;
 
-	private Integer currentPage;
-
 	private String sourceIp;
 
 	private Integer pageSize;
 
 	private String lang;
+
+	private Integer currentPage;
 
 	private String status;
 	public DescribeWebLockBindListRequest() {
@@ -53,17 +53,6 @@ public class DescribeWebLockBindListRequest extends RpcAcsRequest<DescribeWebLoc
 		this.remark = remark;
 		if(remark != null){
 			putQueryParameter("Remark", remark);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -97,6 +86,17 @@ public class DescribeWebLockBindListRequest extends RpcAcsRequest<DescribeWebLoc
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

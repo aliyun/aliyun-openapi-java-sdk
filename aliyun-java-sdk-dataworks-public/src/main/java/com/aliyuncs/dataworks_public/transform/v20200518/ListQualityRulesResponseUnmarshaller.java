@@ -48,7 +48,7 @@ public class ListQualityRulesResponseUnmarshaller {
 			rulesItem.setTableName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].TableName"));
 			rulesItem.setOnDuty(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].OnDuty"));
 			rulesItem.setComment(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].Comment"));
-			rulesItem.setRuleCheckerRelationId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].RuleCheckerRelationId"));
+			rulesItem.setRuleCheckerRelationId(_ctx.longValue("ListQualityRulesResponse.Data.Rules["+ i +"].RuleCheckerRelationId"));
 			rulesItem.setFixCheck(_ctx.booleanValue("ListQualityRulesResponse.Data.Rules["+ i +"].FixCheck"));
 			rulesItem.setMethodId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].MethodId"));
 			rulesItem.setTemplateName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].TemplateName"));
@@ -62,10 +62,10 @@ public class ListQualityRulesResponseUnmarshaller {
 			rulesItem.setHistoryCriticalThreshold(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].HistoryCriticalThreshold"));
 			rulesItem.setMethodName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].MethodName"));
 			rulesItem.setCheckerId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].CheckerId"));
-			rulesItem.setEntityId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].EntityId"));
+			rulesItem.setEntityId(_ctx.longValue("ListQualityRulesResponse.Data.Rules["+ i +"].EntityId"));
 			rulesItem.setExpectValue(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].ExpectValue"));
 			rulesItem.setTemplateId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].TemplateId"));
-			rulesItem.setId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].Id"));
+			rulesItem.setId(_ctx.longValue("ListQualityRulesResponse.Data.Rules["+ i +"].Id"));
 			rulesItem.setRuleName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].RuleName"));
 
 			rules.add(rulesItem);

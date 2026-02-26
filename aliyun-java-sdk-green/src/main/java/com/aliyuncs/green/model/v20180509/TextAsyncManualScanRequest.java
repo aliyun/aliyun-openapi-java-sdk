@@ -27,7 +27,7 @@ public class TextAsyncManualScanRequest extends RoaAcsRequest<TextAsyncManualSca
 
 	private String clientInfo;
 	public TextAsyncManualScanRequest() {
-		super("Green", "2018-05-09", "TextAsyncManualScan", "green");
+		super("Green", "2018-05-09", "TextAsyncManualScan");
 		setUriPattern("/green/text/manual/asyncScan");
 		setMethod(MethodType.POST);
 		try {

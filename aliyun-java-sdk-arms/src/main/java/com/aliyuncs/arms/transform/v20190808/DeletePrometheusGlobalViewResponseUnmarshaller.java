@@ -24,6 +24,8 @@ public class DeletePrometheusGlobalViewResponseUnmarshaller {
 		
 		deletePrometheusGlobalViewResponse.setRequestId(_ctx.stringValue("DeletePrometheusGlobalViewResponse.RequestId"));
 		deletePrometheusGlobalViewResponse.setData(_ctx.stringValue("DeletePrometheusGlobalViewResponse.Data"));
+		deletePrometheusGlobalViewResponse.setCode(_ctx.integerValue("DeletePrometheusGlobalViewResponse.Code"));
+		deletePrometheusGlobalViewResponse.setMessage(_ctx.stringValue("DeletePrometheusGlobalViewResponse.Message"));
 	 
 	 	return deletePrometheusGlobalViewResponse;
 	}

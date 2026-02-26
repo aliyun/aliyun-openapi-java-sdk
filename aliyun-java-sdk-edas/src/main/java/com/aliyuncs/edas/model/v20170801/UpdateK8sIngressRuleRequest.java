@@ -31,7 +31,11 @@ public class UpdateK8sIngressRuleRequest extends RoaAcsRequest<UpdateK8sIngressR
 
 	private String ingressConf;
 
+	private String annotations;
+
 	private String clusterId;
+
+	private String labels;
 	public UpdateK8sIngressRuleRequest() {
 		super("Edas", "2017-08-01", "UpdateK8sIngressRule", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_ingress");
@@ -75,6 +79,17 @@ public class UpdateK8sIngressRuleRequest extends RoaAcsRequest<UpdateK8sIngressR
 		}
 	}
 
+	public String getAnnotations() {
+		return this.annotations;
+	}
+
+	public void setAnnotations(String annotations) {
+		this.annotations = annotations;
+		if(annotations != null){
+			putQueryParameter("Annotations", annotations);
+		}
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -83,6 +98,17 @@ public class UpdateK8sIngressRuleRequest extends RoaAcsRequest<UpdateK8sIngressR
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getLabels() {
+		return this.labels;
+	}
+
+	public void setLabels(String labels) {
+		this.labels = labels;
+		if(labels != null){
+			putQueryParameter("Labels", labels);
 		}
 	}
 

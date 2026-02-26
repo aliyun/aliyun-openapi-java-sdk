@@ -35,6 +35,8 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 
 	private String pullAppName;
 
+	private String transcodeLazy;
+
 	private String pullProtocol;
 	public SetLiveLazyPullStreamInfoConfigRequest() {
 		super("live", "2016-11-01", "SetLiveLazyPullStreamInfoConfig", "live");
@@ -97,6 +99,17 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 		this.pullAppName = pullAppName;
 		if(pullAppName != null){
 			putQueryParameter("PullAppName", pullAppName);
+		}
+	}
+
+	public String getTranscodeLazy() {
+		return this.transcodeLazy;
+	}
+
+	public void setTranscodeLazy(String transcodeLazy) {
+		this.transcodeLazy = transcodeLazy;
+		if(transcodeLazy != null){
+			putQueryParameter("TranscodeLazy", transcodeLazy);
 		}
 	}
 

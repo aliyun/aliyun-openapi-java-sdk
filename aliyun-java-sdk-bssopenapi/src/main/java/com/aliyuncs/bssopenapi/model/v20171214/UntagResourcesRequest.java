@@ -30,11 +30,11 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 
 	private List<String> resourceIds;
 
-	private List<String> tagKeys;
-
 	private String resourceType;
+
+	private List<String> tagKeys;
 	public UntagResourcesRequest() {
-		super("BssOpenApi", "2017-12-14", "UntagResources");
+		super("BssOpenApi", "2017-12-14", "UntagResources", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,6 +66,17 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		}	
 	}
 
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
 	public List<String> getTagKeys() {
 		return this.tagKeys;
 	}
@@ -77,17 +88,6 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
 			}
 		}	
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
 	}
 
 	@Override

@@ -28,9 +28,21 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private String officeSiteId;
 
+	private String snapshotPolicyId;
+
+	private String qosRuleId;
+
+	private List<String> imageIds;
+
 	private String desktopStatus;
 
+	private String resourceGroupId;
+
+	private String desktopGroupId;
+
 	private String nextToken;
+
+	private Boolean onlyDesktopGroup;
 
 	private Boolean queryFotaUpdate;
 
@@ -42,6 +54,10 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private List<Tag> tags;
 
+	private String desktopType;
+
+	private List<String> desktopStatusLists;
+
 	private String desktopName;
 
 	private String groupId;
@@ -50,13 +66,21 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private List<String> excludedEndUserIds;
 
+	private String gpuInstanceGroupId;
+
 	private Boolean filterDesktopGroup;
 
 	private String managementFlag;
 
+	private String subPayType;
+
 	private String expiredTime;
 
 	private Integer maxResults;
+
+	private Boolean fillResourceGroup;
+
+	private List<String> osTypess;
 
 	private String protocolType;
 
@@ -66,7 +90,7 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private String userName;
 	public DescribeDesktopsRequest() {
-		super("ecd", "2020-09-30", "DescribeDesktops");
+		super("ecd", "2020-09-30", "DescribeDesktops", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -85,6 +109,41 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		}
 	}
 
+	public String getSnapshotPolicyId() {
+		return this.snapshotPolicyId;
+	}
+
+	public void setSnapshotPolicyId(String snapshotPolicyId) {
+		this.snapshotPolicyId = snapshotPolicyId;
+		if(snapshotPolicyId != null){
+			putQueryParameter("SnapshotPolicyId", snapshotPolicyId);
+		}
+	}
+
+	public String getQosRuleId() {
+		return this.qosRuleId;
+	}
+
+	public void setQosRuleId(String qosRuleId) {
+		this.qosRuleId = qosRuleId;
+		if(qosRuleId != null){
+			putQueryParameter("QosRuleId", qosRuleId);
+		}
+	}
+
+	public List<String> getImageIds() {
+		return this.imageIds;
+	}
+
+	public void setImageIds(List<String> imageIds) {
+		this.imageIds = imageIds;	
+		if (imageIds != null) {
+			for (int i = 0; i < imageIds.size(); i++) {
+				putQueryParameter("ImageId." + (i + 1) , imageIds.get(i));
+			}
+		}	
+	}
+
 	public String getDesktopStatus() {
 		return this.desktopStatus;
 	}
@@ -96,6 +155,28 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDesktopGroupId() {
+		return this.desktopGroupId;
+	}
+
+	public void setDesktopGroupId(String desktopGroupId) {
+		this.desktopGroupId = desktopGroupId;
+		if(desktopGroupId != null){
+			putQueryParameter("DesktopGroupId", desktopGroupId);
+		}
+	}
+
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -104,6 +185,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Boolean getOnlyDesktopGroup() {
+		return this.onlyDesktopGroup;
+	}
+
+	public void setOnlyDesktopGroup(Boolean onlyDesktopGroup) {
+		this.onlyDesktopGroup = onlyDesktopGroup;
+		if(onlyDesktopGroup != null){
+			putQueryParameter("OnlyDesktopGroup", onlyDesktopGroup.toString());
 		}
 	}
 
@@ -169,6 +261,30 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		}	
 	}
 
+	public String getDesktopType() {
+		return this.desktopType;
+	}
+
+	public void setDesktopType(String desktopType) {
+		this.desktopType = desktopType;
+		if(desktopType != null){
+			putQueryParameter("DesktopType", desktopType);
+		}
+	}
+
+	public List<String> getDesktopStatusLists() {
+		return this.desktopStatusLists;
+	}
+
+	public void setDesktopStatusLists(List<String> desktopStatusLists) {
+		this.desktopStatusLists = desktopStatusLists;	
+		if (desktopStatusLists != null) {
+			for (int i = 0; i < desktopStatusLists.size(); i++) {
+				putQueryParameter("DesktopStatusList." + (i + 1) , desktopStatusLists.get(i));
+			}
+		}	
+	}
+
 	public String getDesktopName() {
 		return this.desktopName;
 	}
@@ -215,6 +331,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		}	
 	}
 
+	public String getGpuInstanceGroupId() {
+		return this.gpuInstanceGroupId;
+	}
+
+	public void setGpuInstanceGroupId(String gpuInstanceGroupId) {
+		this.gpuInstanceGroupId = gpuInstanceGroupId;
+		if(gpuInstanceGroupId != null){
+			putQueryParameter("GpuInstanceGroupId", gpuInstanceGroupId);
+		}
+	}
+
 	public Boolean getFilterDesktopGroup() {
 		return this.filterDesktopGroup;
 	}
@@ -234,6 +361,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		this.managementFlag = managementFlag;
 		if(managementFlag != null){
 			putQueryParameter("ManagementFlag", managementFlag);
+		}
+	}
+
+	public String getSubPayType() {
+		return this.subPayType;
+	}
+
+	public void setSubPayType(String subPayType) {
+		this.subPayType = subPayType;
+		if(subPayType != null){
+			putQueryParameter("SubPayType", subPayType);
 		}
 	}
 
@@ -257,6 +395,30 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
 		}
+	}
+
+	public Boolean getFillResourceGroup() {
+		return this.fillResourceGroup;
+	}
+
+	public void setFillResourceGroup(Boolean fillResourceGroup) {
+		this.fillResourceGroup = fillResourceGroup;
+		if(fillResourceGroup != null){
+			putQueryParameter("FillResourceGroup", fillResourceGroup.toString());
+		}
+	}
+
+	public List<String> getOsTypess() {
+		return this.osTypess;
+	}
+
+	public void setOsTypess(List<String> osTypess) {
+		this.osTypess = osTypess;	
+		if (osTypess != null) {
+			for (int i = 0; i < osTypess.size(); i++) {
+				putQueryParameter("OsTypes." + (i + 1) , osTypess.get(i));
+			}
+		}	
 	}
 
 	public String getProtocolType() {

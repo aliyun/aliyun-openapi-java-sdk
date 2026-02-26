@@ -23,9 +23,9 @@ public class DeleteSnapshotResponseUnmarshaller {
 	public static DeleteSnapshotResponse unmarshall(DeleteSnapshotResponse deleteSnapshotResponse, UnmarshallerContext _ctx) {
 		
 		deleteSnapshotResponse.setRequestId(_ctx.stringValue("DeleteSnapshotResponse.RequestId"));
-		deleteSnapshotResponse.setSuccess(_ctx.booleanValue("DeleteSnapshotResponse.Success"));
 		deleteSnapshotResponse.setCode(_ctx.stringValue("DeleteSnapshotResponse.Code"));
 		deleteSnapshotResponse.setMessage(_ctx.stringValue("DeleteSnapshotResponse.Message"));
+		deleteSnapshotResponse.setSuccess(_ctx.booleanValue("DeleteSnapshotResponse.Success"));
 	 
 	 	return deleteSnapshotResponse;
 	}

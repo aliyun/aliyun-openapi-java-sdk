@@ -28,17 +28,22 @@ public class GetConsumerListResponseUnmarshaller {
 	public static GetConsumerListResponse unmarshall(GetConsumerListResponse getConsumerListResponse, UnmarshallerContext _ctx) {
 		
 		getConsumerListResponse.setRequestId(_ctx.stringValue("GetConsumerListResponse.RequestId"));
-		getConsumerListResponse.setSuccess(_ctx.booleanValue("GetConsumerListResponse.Success"));
 		getConsumerListResponse.setCode(_ctx.integerValue("GetConsumerListResponse.Code"));
 		getConsumerListResponse.setMessage(_ctx.stringValue("GetConsumerListResponse.Message"));
+		getConsumerListResponse.setSuccess(_ctx.booleanValue("GetConsumerListResponse.Success"));
+		getConsumerListResponse.setTotal(_ctx.longValue("GetConsumerListResponse.Total"));
+		getConsumerListResponse.setPageSize(_ctx.integerValue("GetConsumerListResponse.PageSize"));
+		getConsumerListResponse.setCurrentPage(_ctx.integerValue("GetConsumerListResponse.CurrentPage"));
 
 		List<ConsumerVO> consumerList = new ArrayList<ConsumerVO>();
 		for (int i = 0; i < _ctx.lengthValue("GetConsumerListResponse.ConsumerList.Length"); i++) {
 			ConsumerVO consumerVO = new ConsumerVO();
-			consumerVO.setRegionId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].RegionId"));
-			consumerVO.setInstanceId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].InstanceId"));
 			consumerVO.setConsumerId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].ConsumerId"));
+			consumerVO.setInstanceId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].InstanceId"));
 			consumerVO.setRemark(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].Remark"));
+			consumerVO.setRegionId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].RegionId"));
+			consumerVO.setAutomaticallyCreatedGroup(_ctx.booleanValue("GetConsumerListResponse.ConsumerList["+ i +"].AutomaticallyCreatedGroup"));
+			consumerVO.setCreateTime(_ctx.longValue("GetConsumerListResponse.ConsumerList["+ i +"].CreateTime"));
 
 			List<TagVO> tags = new ArrayList<TagVO>();
 			for (int j = 0; j < _ctx.lengthValue("GetConsumerListResponse.ConsumerList["+ i +"].Tags.Length"); j++) {

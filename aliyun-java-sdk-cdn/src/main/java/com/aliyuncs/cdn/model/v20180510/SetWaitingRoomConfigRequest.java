@@ -25,11 +25,9 @@ import com.aliyuncs.cdn.Endpoint;
 public class SetWaitingRoomConfigRequest extends RpcAcsRequest<SetWaitingRoomConfigResponse> {
 	   
 
-	private String waitUrl;
-
-	private String waitUri;
-
 	private Integer maxTimeWait;
+
+	private String waitUrl;
 
 	private String domainName;
 
@@ -37,7 +35,7 @@ public class SetWaitingRoomConfigRequest extends RpcAcsRequest<SetWaitingRoomCon
 
 	private Integer gapTime;
 
-	private Long ownerId;
+	private String waitUri;
 	public SetWaitingRoomConfigRequest() {
 		super("Cdn", "2018-05-10", "SetWaitingRoomConfig");
 		setMethod(MethodType.POST);
@@ -45,28 +43,6 @@ public class SetWaitingRoomConfigRequest extends RpcAcsRequest<SetWaitingRoomCon
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getWaitUrl() {
-		return this.waitUrl;
-	}
-
-	public void setWaitUrl(String waitUrl) {
-		this.waitUrl = waitUrl;
-		if(waitUrl != null){
-			putQueryParameter("WaitUrl", waitUrl);
-		}
-	}
-
-	public String getWaitUri() {
-		return this.waitUri;
-	}
-
-	public void setWaitUri(String waitUri) {
-		this.waitUri = waitUri;
-		if(waitUri != null){
-			putQueryParameter("WaitUri", waitUri);
-		}
 	}
 
 	public Integer getMaxTimeWait() {
@@ -77,6 +53,17 @@ public class SetWaitingRoomConfigRequest extends RpcAcsRequest<SetWaitingRoomCon
 		this.maxTimeWait = maxTimeWait;
 		if(maxTimeWait != null){
 			putQueryParameter("MaxTimeWait", maxTimeWait.toString());
+		}
+	}
+
+	public String getWaitUrl() {
+		return this.waitUrl;
+	}
+
+	public void setWaitUrl(String waitUrl) {
+		this.waitUrl = waitUrl;
+		if(waitUrl != null){
+			putQueryParameter("WaitUrl", waitUrl);
 		}
 	}
 
@@ -113,14 +100,14 @@ public class SetWaitingRoomConfigRequest extends RpcAcsRequest<SetWaitingRoomCon
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getWaitUri() {
+		return this.waitUri;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setWaitUri(String waitUri) {
+		this.waitUri = waitUri;
+		if(waitUri != null){
+			putQueryParameter("WaitUri", waitUri);
 		}
 	}
 

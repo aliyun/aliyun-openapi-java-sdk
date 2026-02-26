@@ -22,6 +22,7 @@ import com.aliyuncs.facebody.model.v20191230.DetectLivingFaceResponse.Data;
 import com.aliyuncs.facebody.model.v20191230.DetectLivingFaceResponse.Data.Element;
 import com.aliyuncs.facebody.model.v20191230.DetectLivingFaceResponse.Data.Element.Result;
 import com.aliyuncs.facebody.model.v20191230.DetectLivingFaceResponse.Data.Element.Result.Frame;
+import com.aliyuncs.facebody.model.v20191230.DetectLivingFaceResponse.Data.Element.Result.Rect;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +39,7 @@ public class DetectLivingFaceResponseUnmarshaller {
 			Element element = new Element();
 			element.setImageURL(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].ImageURL"));
 			element.setTaskId(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].TaskId"));
+			element.setFaceNumber(_ctx.longValue("DetectLivingFaceResponse.Data.Elements["+ i +"].FaceNumber"));
 
 			List<Result> results = new ArrayList<Result>();
 			for (int j = 0; j < _ctx.lengthValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results.Length"); j++) {
@@ -45,6 +47,14 @@ public class DetectLivingFaceResponseUnmarshaller {
 				result.setSuggestion(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Suggestion"));
 				result.setLabel(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Label"));
 				result.setRate(_ctx.floatValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Rate"));
+				result.setMessageTips(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].MessageTips"));
+
+				Rect rect = new Rect();
+				rect.setLeft(_ctx.longValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Rect.Left"));
+				rect.setTop(_ctx.longValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Rect.Top"));
+				rect.setWidth(_ctx.longValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Rect.Width"));
+				rect.setHeight(_ctx.longValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Rect.Height"));
+				result.setRect(rect);
 
 				List<Frame> frames = new ArrayList<Frame>();
 				for (int k = 0; k < _ctx.lengthValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Frames.Length"); k++) {

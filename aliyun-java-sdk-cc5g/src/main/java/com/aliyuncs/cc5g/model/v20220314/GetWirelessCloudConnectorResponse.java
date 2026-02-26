@@ -47,7 +47,15 @@ public class GetWirelessCloudConnectorResponse extends AcsResponse {
 
 	private String createTime;
 
+	private String businessType;
+
+	private String wirelessCloudConnectorGroupId;
+
+	private String serviceType;
+
 	private List<NetLink> netLinks;
+
+	private List<String> features;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -137,12 +145,44 @@ public class GetWirelessCloudConnectorResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
+	public String getBusinessType() {
+		return this.businessType;
+	}
+
+	public void setBusinessType(String businessType) {
+		this.businessType = businessType;
+	}
+
+	public String getWirelessCloudConnectorGroupId() {
+		return this.wirelessCloudConnectorGroupId;
+	}
+
+	public void setWirelessCloudConnectorGroupId(String wirelessCloudConnectorGroupId) {
+		this.wirelessCloudConnectorGroupId = wirelessCloudConnectorGroupId;
+	}
+
+	public String getServiceType() {
+		return this.serviceType;
+	}
+
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
+	}
+
 	public List<NetLink> getNetLinks() {
 		return this.netLinks;
 	}
 
 	public void setNetLinks(List<NetLink> netLinks) {
 		this.netLinks = netLinks;
+	}
+
+	public List<String> getFeatures() {
+		return this.features;
+	}
+
+	public void setFeatures(List<String> features) {
+		this.features = features;
 	}
 
 	public static class NetLink {
@@ -157,6 +197,8 @@ public class GetWirelessCloudConnectorResponse extends AcsResponse {
 
 		private String status;
 
+		private String type;
+
 		private String aPN;
 
 		private String iSP;
@@ -164,6 +206,8 @@ public class GetWirelessCloudConnectorResponse extends AcsResponse {
 		private String vpcId;
 
 		private String createTime;
+
+		private String grantAliUid;
 
 		private List<String> vSwitchs;
 
@@ -207,6 +251,14 @@ public class GetWirelessCloudConnectorResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
 		public String getAPN() {
 			return this.aPN;
 		}
@@ -237,6 +289,14 @@ public class GetWirelessCloudConnectorResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getGrantAliUid() {
+			return this.grantAliUid;
+		}
+
+		public void setGrantAliUid(String grantAliUid) {
+			this.grantAliUid = grantAliUid;
 		}
 
 		public List<String> getVSwitchs() {

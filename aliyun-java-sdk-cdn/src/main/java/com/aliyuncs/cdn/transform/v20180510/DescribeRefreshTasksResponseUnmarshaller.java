@@ -34,13 +34,13 @@ public class DescribeRefreshTasksResponseUnmarshaller {
 		List<CDNTask> tasks = new ArrayList<CDNTask>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRefreshTasksResponse.Tasks.Length"); i++) {
 			CDNTask cDNTask = new CDNTask();
-			cDNTask.setTaskId(_ctx.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].TaskId"));
-			cDNTask.setObjectPath(_ctx.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].ObjectPath"));
-			cDNTask.setProcess(_ctx.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].Process"));
 			cDNTask.setStatus(_ctx.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].Status"));
 			cDNTask.setCreationTime(_ctx.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].CreationTime"));
-			cDNTask.setDescription(_ctx.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].Description"));
 			cDNTask.setObjectType(_ctx.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].ObjectType"));
+			cDNTask.setProcess(_ctx.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].Process"));
+			cDNTask.setDescription(_ctx.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].Description"));
+			cDNTask.setObjectPath(_ctx.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].ObjectPath"));
+			cDNTask.setTaskId(_ctx.stringValue("DescribeRefreshTasksResponse.Tasks["+ i +"].TaskId"));
 
 			tasks.add(cDNTask);
 		}

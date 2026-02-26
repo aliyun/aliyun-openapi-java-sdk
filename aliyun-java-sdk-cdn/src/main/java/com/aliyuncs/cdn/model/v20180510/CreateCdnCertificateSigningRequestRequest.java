@@ -27,21 +27,19 @@ public class CreateCdnCertificateSigningRequestRequest extends RpcAcsRequest<Cre
 
 	private String country;
 
-	private String city;
-
 	private String commonName;
 
-	private String state;
-
-	private String email;
+	private String city;
 
 	private String sANs;
 
-	private Long ownerId;
-
 	private String organization;
 
+	private String state;
+
 	private String organizationUnit;
+
+	private String email;
 	public CreateCdnCertificateSigningRequestRequest() {
 		super("Cdn", "2018-05-10", "CreateCdnCertificateSigningRequest");
 		setMethod(MethodType.POST);
@@ -62,17 +60,6 @@ public class CreateCdnCertificateSigningRequestRequest extends RpcAcsRequest<Cre
 		}
 	}
 
-	public String getCity() {
-		return this.city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-		if(city != null){
-			putQueryParameter("City", city);
-		}
-	}
-
 	public String getCommonName() {
 		return this.commonName;
 	}
@@ -84,25 +71,14 @@ public class CreateCdnCertificateSigningRequestRequest extends RpcAcsRequest<Cre
 		}
 	}
 
-	public String getState() {
-		return this.state;
+	public String getCity() {
+		return this.city;
 	}
 
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("State", state);
-		}
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-		if(email != null){
-			putQueryParameter("Email", email);
+	public void setCity(String city) {
+		this.city = city;
+		if(city != null){
+			putQueryParameter("City", city);
 		}
 	}
 
@@ -117,17 +93,6 @@ public class CreateCdnCertificateSigningRequestRequest extends RpcAcsRequest<Cre
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getOrganization() {
 		return this.organization;
 	}
@@ -139,6 +104,17 @@ public class CreateCdnCertificateSigningRequestRequest extends RpcAcsRequest<Cre
 		}
 	}
 
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
 	public String getOrganizationUnit() {
 		return this.organizationUnit;
 	}
@@ -147,6 +123,17 @@ public class CreateCdnCertificateSigningRequestRequest extends RpcAcsRequest<Cre
 		this.organizationUnit = organizationUnit;
 		if(organizationUnit != null){
 			putQueryParameter("OrganizationUnit", organizationUnit);
+		}
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
 		}
 	}
 

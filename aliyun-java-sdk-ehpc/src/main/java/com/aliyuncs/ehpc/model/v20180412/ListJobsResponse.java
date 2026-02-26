@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListJobsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<JobInfo> jobs;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListJobsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListJobsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<JobInfo> getJobs() {
@@ -77,51 +77,35 @@ public class ListJobsResponse extends AcsResponse {
 
 	public static class JobInfo {
 
-		private String id;
-
-		private String name;
-
 		private String owner;
 
-		private String nodeList;
-
-		private String priority;
+		private String comment;
 
 		private String state;
 
-		private String submitTime;
+		private String stderr;
+
+		private String priority;
+
+		private String shellPath;
+
+		private String stdout;
+
+		private String arrayRequest;
 
 		private String startTime;
 
 		private String lastModifyTime;
 
-		private String stdout;
+		private String nodeList;
 
-		private String stderr;
+		private String name;
 
-		private String shellPath;
+		private String id;
 
-		private String comment;
-
-		private String arrayRequest;
+		private String submitTime;
 
 		private Resources resources;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getOwner() {
 			return this.owner;
@@ -131,20 +115,12 @@ public class ListJobsResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
-		public String getNodeList() {
-			return this.nodeList;
+		public String getComment() {
+			return this.comment;
 		}
 
-		public void setNodeList(String nodeList) {
-			this.nodeList = nodeList;
-		}
-
-		public String getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(String priority) {
-			this.priority = priority;
+		public void setComment(String comment) {
+			this.comment = comment;
 		}
 
 		public String getState() {
@@ -155,12 +131,44 @@ public class ListJobsResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getSubmitTime() {
-			return this.submitTime;
+		public String getStderr() {
+			return this.stderr;
 		}
 
-		public void setSubmitTime(String submitTime) {
-			this.submitTime = submitTime;
+		public void setStderr(String stderr) {
+			this.stderr = stderr;
+		}
+
+		public String getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(String priority) {
+			this.priority = priority;
+		}
+
+		public String getShellPath() {
+			return this.shellPath;
+		}
+
+		public void setShellPath(String shellPath) {
+			this.shellPath = shellPath;
+		}
+
+		public String getStdout() {
+			return this.stdout;
+		}
+
+		public void setStdout(String stdout) {
+			this.stdout = stdout;
+		}
+
+		public String getArrayRequest() {
+			return this.arrayRequest;
+		}
+
+		public void setArrayRequest(String arrayRequest) {
+			this.arrayRequest = arrayRequest;
 		}
 
 		public String getStartTime() {
@@ -179,44 +187,36 @@ public class ListJobsResponse extends AcsResponse {
 			this.lastModifyTime = lastModifyTime;
 		}
 
-		public String getStdout() {
-			return this.stdout;
+		public String getNodeList() {
+			return this.nodeList;
 		}
 
-		public void setStdout(String stdout) {
-			this.stdout = stdout;
+		public void setNodeList(String nodeList) {
+			this.nodeList = nodeList;
 		}
 
-		public String getStderr() {
-			return this.stderr;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setStderr(String stderr) {
-			this.stderr = stderr;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getShellPath() {
-			return this.shellPath;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setShellPath(String shellPath) {
-			this.shellPath = shellPath;
+		public void setId(String id) {
+			this.id = id;
 		}
 
-		public String getComment() {
-			return this.comment;
+		public String getSubmitTime() {
+			return this.submitTime;
 		}
 
-		public void setComment(String comment) {
-			this.comment = comment;
-		}
-
-		public String getArrayRequest() {
-			return this.arrayRequest;
-		}
-
-		public void setArrayRequest(String arrayRequest) {
-			this.arrayRequest = arrayRequest;
+		public void setSubmitTime(String submitTime) {
+			this.submitTime = submitTime;
 		}
 
 		public Resources getResources() {

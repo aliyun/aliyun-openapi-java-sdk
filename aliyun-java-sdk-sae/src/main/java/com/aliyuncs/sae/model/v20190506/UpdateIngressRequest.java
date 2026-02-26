@@ -25,9 +25,9 @@ import com.aliyuncs.sae.Endpoint;
 public class UpdateIngressRequest extends RoaAcsRequest<UpdateIngressResponse> {
 	   
 
-	private Long ingressId;
-
 	private String listenerPort;
+
+	private Integer requestTimeout;
 
 	private String description;
 
@@ -37,7 +37,15 @@ public class UpdateIngressRequest extends RoaAcsRequest<UpdateIngressResponse> {
 
 	private String certId;
 
+	private String certIds;
+
 	private String listenerProtocol;
+
+	private String securityPolicyId;
+
+	private Integer idleTimeout;
+
+	private Long ingressId;
 
 	private String defaultRule;
 	public UpdateIngressRequest() {
@@ -50,17 +58,6 @@ public class UpdateIngressRequest extends RoaAcsRequest<UpdateIngressResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getIngressId() {
-		return this.ingressId;
-	}
-
-	public void setIngressId(Long ingressId) {
-		this.ingressId = ingressId;
-		if(ingressId != null){
-			putQueryParameter("IngressId", ingressId.toString());
-		}
-	}
-
 	public String getListenerPort() {
 		return this.listenerPort;
 	}
@@ -69,6 +66,17 @@ public class UpdateIngressRequest extends RoaAcsRequest<UpdateIngressResponse> {
 		this.listenerPort = listenerPort;
 		if(listenerPort != null){
 			putQueryParameter("ListenerPort", listenerPort);
+		}
+	}
+
+	public Integer getRequestTimeout() {
+		return this.requestTimeout;
+	}
+
+	public void setRequestTimeout(Integer requestTimeout) {
+		this.requestTimeout = requestTimeout;
+		if(requestTimeout != null){
+			putQueryParameter("RequestTimeout", requestTimeout.toString());
 		}
 	}
 
@@ -116,6 +124,17 @@ public class UpdateIngressRequest extends RoaAcsRequest<UpdateIngressResponse> {
 		}
 	}
 
+	public String getCertIds() {
+		return this.certIds;
+	}
+
+	public void setCertIds(String certIds) {
+		this.certIds = certIds;
+		if(certIds != null){
+			putQueryParameter("CertIds", certIds);
+		}
+	}
+
 	public String getListenerProtocol() {
 		return this.listenerProtocol;
 	}
@@ -124,6 +143,39 @@ public class UpdateIngressRequest extends RoaAcsRequest<UpdateIngressResponse> {
 		this.listenerProtocol = listenerProtocol;
 		if(listenerProtocol != null){
 			putQueryParameter("ListenerProtocol", listenerProtocol);
+		}
+	}
+
+	public String getSecurityPolicyId() {
+		return this.securityPolicyId;
+	}
+
+	public void setSecurityPolicyId(String securityPolicyId) {
+		this.securityPolicyId = securityPolicyId;
+		if(securityPolicyId != null){
+			putQueryParameter("SecurityPolicyId", securityPolicyId);
+		}
+	}
+
+	public Integer getIdleTimeout() {
+		return this.idleTimeout;
+	}
+
+	public void setIdleTimeout(Integer idleTimeout) {
+		this.idleTimeout = idleTimeout;
+		if(idleTimeout != null){
+			putQueryParameter("IdleTimeout", idleTimeout.toString());
+		}
+	}
+
+	public Long getIngressId() {
+		return this.ingressId;
+	}
+
+	public void setIngressId(Long ingressId) {
+		this.ingressId = ingressId;
+		if(ingressId != null){
+			putQueryParameter("IngressId", ingressId.toString());
 		}
 	}
 

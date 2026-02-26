@@ -91,6 +91,12 @@ public class GetApprovalDetailResponse extends AcsResponse {
 
 		private String workflowInsCode;
 
+		private Long templateId;
+
+		private String thirdpartyWorkflowUrl;
+
+		private String thirdpartyWorkflowComment;
+
 		private List<WorkflowNode> workflowNodes;
 
 		private List<CurrentHandler> currentHandlers;
@@ -151,6 +157,30 @@ public class GetApprovalDetailResponse extends AcsResponse {
 
 		public void setWorkflowInsCode(String workflowInsCode) {
 			this.workflowInsCode = workflowInsCode;
+		}
+
+		public Long getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(Long templateId) {
+			this.templateId = templateId;
+		}
+
+		public String getThirdpartyWorkflowUrl() {
+			return this.thirdpartyWorkflowUrl;
+		}
+
+		public void setThirdpartyWorkflowUrl(String thirdpartyWorkflowUrl) {
+			this.thirdpartyWorkflowUrl = thirdpartyWorkflowUrl;
+		}
+
+		public String getThirdpartyWorkflowComment() {
+			return this.thirdpartyWorkflowComment;
+		}
+
+		public void setThirdpartyWorkflowComment(String thirdpartyWorkflowComment) {
+			this.thirdpartyWorkflowComment = thirdpartyWorkflowComment;
 		}
 
 		public List<WorkflowNode> getWorkflowNodes() {

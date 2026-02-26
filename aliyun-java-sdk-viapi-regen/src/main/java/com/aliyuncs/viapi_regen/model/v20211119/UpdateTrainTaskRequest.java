@@ -16,6 +16,7 @@ package com.aliyuncs.viapi_regen.model.v20211119;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.viapi_regen.Endpoint;
 
 /**
  * @author auto create
@@ -26,12 +27,28 @@ public class UpdateTrainTaskRequest extends RpcAcsRequest<UpdateTrainTaskRespons
 
 	private String description;
 
+	private String trainMode;
+
 	private Long id;
 
+	private String datasetIds;
+
+	private Long preTrainTaskId;
+
+	private Boolean preTrainTaskFlag;
+
+	private String advancedParameters;
+
 	private String name;
+
+	private String labelIds;
 	public UpdateTrainTaskRequest() {
-		super("viapi-regen", "2021-11-19", "UpdateTrainTask", "viapi-regen");
+		super("viapi-regen", "2021-11-19", "UpdateTrainTask", "selflearning");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDescription() {
@@ -42,6 +59,17 @@ public class UpdateTrainTaskRequest extends RpcAcsRequest<UpdateTrainTaskRespons
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
+		}
+	}
+
+	public String getTrainMode() {
+		return this.trainMode;
+	}
+
+	public void setTrainMode(String trainMode) {
+		this.trainMode = trainMode;
+		if(trainMode != null){
+			putBodyParameter("TrainMode", trainMode);
 		}
 	}
 
@@ -56,6 +84,50 @@ public class UpdateTrainTaskRequest extends RpcAcsRequest<UpdateTrainTaskRespons
 		}
 	}
 
+	public String getDatasetIds() {
+		return this.datasetIds;
+	}
+
+	public void setDatasetIds(String datasetIds) {
+		this.datasetIds = datasetIds;
+		if(datasetIds != null){
+			putBodyParameter("DatasetIds", datasetIds);
+		}
+	}
+
+	public Long getPreTrainTaskId() {
+		return this.preTrainTaskId;
+	}
+
+	public void setPreTrainTaskId(Long preTrainTaskId) {
+		this.preTrainTaskId = preTrainTaskId;
+		if(preTrainTaskId != null){
+			putBodyParameter("PreTrainTaskId", preTrainTaskId.toString());
+		}
+	}
+
+	public Boolean getPreTrainTaskFlag() {
+		return this.preTrainTaskFlag;
+	}
+
+	public void setPreTrainTaskFlag(Boolean preTrainTaskFlag) {
+		this.preTrainTaskFlag = preTrainTaskFlag;
+		if(preTrainTaskFlag != null){
+			putBodyParameter("PreTrainTaskFlag", preTrainTaskFlag.toString());
+		}
+	}
+
+	public String getAdvancedParameters() {
+		return this.advancedParameters;
+	}
+
+	public void setAdvancedParameters(String advancedParameters) {
+		this.advancedParameters = advancedParameters;
+		if(advancedParameters != null){
+			putBodyParameter("AdvancedParameters", advancedParameters);
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -64,6 +136,17 @@ public class UpdateTrainTaskRequest extends RpcAcsRequest<UpdateTrainTaskRespons
 		this.name = name;
 		if(name != null){
 			putBodyParameter("Name", name);
+		}
+	}
+
+	public String getLabelIds() {
+		return this.labelIds;
+	}
+
+	public void setLabelIds(String labelIds) {
+		this.labelIds = labelIds;
+		if(labelIds != null){
+			putBodyParameter("LabelIds", labelIds);
 		}
 	}
 

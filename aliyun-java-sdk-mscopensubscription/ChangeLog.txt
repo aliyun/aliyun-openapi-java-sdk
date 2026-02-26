@@ -1,3 +1,6 @@
+2024-08-02 Version: 1.0.1
+- Update for Enterprise Standard 1.
+
 2021-12-10 Version: 1.0.0
 - Init.
 

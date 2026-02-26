@@ -77,85 +77,31 @@ public class DescribeUserDomainsResponse extends AcsResponse {
 
 	public static class PageData {
 
-		private String domainName;
-
-		private String cname;
-
-		private String cdnType;
-
-		private String domainStatus;
-
-		private String gmtCreated;
-
-		private String gmtModified;
-
-		private String description;
-
 		private String sslProtocol;
-
-		private String resourceGroupId;
 
 		private String sandbox;
 
+		private String gmtModified;
+
+		private String domainName;
+
+		private Long domainId;
+
+		private String gmtCreated;
+
+		private String description;
+
 		private String coverage;
 
+		private String resourceGroupId;
+
+		private String cname;
+
+		private String domainStatus;
+
+		private String cdnType;
+
 		private List<Source> sources;
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getCname() {
-			return this.cname;
-		}
-
-		public void setCname(String cname) {
-			this.cname = cname;
-		}
-
-		public String getCdnType() {
-			return this.cdnType;
-		}
-
-		public void setCdnType(String cdnType) {
-			this.cdnType = cdnType;
-		}
-
-		public String getDomainStatus() {
-			return this.domainStatus;
-		}
-
-		public void setDomainStatus(String domainStatus) {
-			this.domainStatus = domainStatus;
-		}
-
-		public String getGmtCreated() {
-			return this.gmtCreated;
-		}
-
-		public void setGmtCreated(String gmtCreated) {
-			this.gmtCreated = gmtCreated;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
 
 		public String getSslProtocol() {
 			return this.sslProtocol;
@@ -163,14 +109,6 @@ public class DescribeUserDomainsResponse extends AcsResponse {
 
 		public void setSslProtocol(String sslProtocol) {
 			this.sslProtocol = sslProtocol;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getSandbox() {
@@ -181,12 +119,84 @@ public class DescribeUserDomainsResponse extends AcsResponse {
 			this.sandbox = sandbox;
 		}
 
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public Long getDomainId() {
+			return this.domainId;
+		}
+
+		public void setDomainId(Long domainId) {
+			this.domainId = domainId;
+		}
+
+		public String getGmtCreated() {
+			return this.gmtCreated;
+		}
+
+		public void setGmtCreated(String gmtCreated) {
+			this.gmtCreated = gmtCreated;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public String getCoverage() {
 			return this.coverage;
 		}
 
 		public void setCoverage(String coverage) {
 			this.coverage = coverage;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCname() {
+			return this.cname;
+		}
+
+		public void setCname(String cname) {
+			this.cname = cname;
+		}
+
+		public String getDomainStatus() {
+			return this.domainStatus;
+		}
+
+		public void setDomainStatus(String domainStatus) {
+			this.domainStatus = domainStatus;
+		}
+
+		public String getCdnType() {
+			return this.cdnType;
+		}
+
+		public void setCdnType(String cdnType) {
+			this.cdnType = cdnType;
 		}
 
 		public List<Source> getSources() {
@@ -201,13 +211,13 @@ public class DescribeUserDomainsResponse extends AcsResponse {
 
 			private String type;
 
-			private String content;
-
-			private Integer port;
+			private String weight;
 
 			private String priority;
 
-			private String weight;
+			private Integer port;
+
+			private String content;
 
 			public String getType() {
 				return this.type;
@@ -217,20 +227,12 @@ public class DescribeUserDomainsResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public String getContent() {
-				return this.content;
+			public String getWeight() {
+				return this.weight;
 			}
 
-			public void setContent(String content) {
-				this.content = content;
-			}
-
-			public Integer getPort() {
-				return this.port;
-			}
-
-			public void setPort(Integer port) {
-				this.port = port;
+			public void setWeight(String weight) {
+				this.weight = weight;
 			}
 
 			public String getPriority() {
@@ -241,12 +243,20 @@ public class DescribeUserDomainsResponse extends AcsResponse {
 				this.priority = priority;
 			}
 
-			public String getWeight() {
-				return this.weight;
+			public Integer getPort() {
+				return this.port;
 			}
 
-			public void setWeight(String weight) {
-				this.weight = weight;
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
 			}
 		}
 	}

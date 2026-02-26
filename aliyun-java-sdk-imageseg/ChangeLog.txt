@@ -1,3 +1,21 @@
+2024-07-30 Version: 1.1.15
+- Update SegmentCloth.
+
+2023-12-06 Version: 1.1.14
+- Update SegmentCloth.
+
+2022-11-18 Version: 1.1.13
+- Update RefineMask.
+
+2022-11-01 Version: 1.1.12
+- Update RefineMask.
+
+2022-10-17 Version: 1.1.11
+- Update RefineMask.
+
+2022-09-29 Version: 1.1.10
+- Update RefineMask.
+
 2020-12-22 Version: 1.1.9
 - Update SegmentAnimal SegmentCommonImage.
 

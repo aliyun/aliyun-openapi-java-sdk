@@ -29,7 +29,7 @@ public class DeleteAsyncTaskRequest extends RpcAcsRequest<DeleteAsyncTaskRespons
 
 	private Integer taskId;
 	public DeleteAsyncTaskRequest() {
-		super("ddoscoo", "2020-01-01", "DeleteAsyncTask");
+		super("ddoscoo", "2020-01-01", "DeleteAsyncTask", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

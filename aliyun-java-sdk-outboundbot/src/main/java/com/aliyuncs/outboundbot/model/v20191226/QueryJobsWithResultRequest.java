@@ -15,6 +15,7 @@
 package com.aliyuncs.outboundbot.model.v20191226;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.outboundbot.Endpoint;
 
@@ -27,19 +28,29 @@ public class QueryJobsWithResultRequest extends RpcAcsRequest<QueryJobsWithResul
 
 	private Boolean hasReachedEndOfFlowFilter;
 
-	private Boolean hasAnsweredFilter;
+	private Long endActualTimeFilter;
 
 	private Integer pageNumber;
 
+	private Boolean hasHangUpByRejectionFilter;
+
+	private Integer pageSize;
+
+	private Long startActualTimeFilter;
+
+	private Boolean hasAnsweredFilter;
+
+	private List<String> labelsJsons;
+
+	private String taskStatusFilter;
+
 	private String queryText;
 
-	private Boolean hasHangUpByRejectionFilter;
+	private String jobFailureReasonsFilter;
 
 	private String instanceId;
 
 	private String jobStatusFilter;
-
-	private Integer pageSize;
 
 	private String jobGroupId;
 	public QueryJobsWithResultRequest() {
@@ -62,14 +73,14 @@ public class QueryJobsWithResultRequest extends RpcAcsRequest<QueryJobsWithResul
 		}
 	}
 
-	public Boolean getHasAnsweredFilter() {
-		return this.hasAnsweredFilter;
+	public Long getEndActualTimeFilter() {
+		return this.endActualTimeFilter;
 	}
 
-	public void setHasAnsweredFilter(Boolean hasAnsweredFilter) {
-		this.hasAnsweredFilter = hasAnsweredFilter;
-		if(hasAnsweredFilter != null){
-			putQueryParameter("HasAnsweredFilter", hasAnsweredFilter.toString());
+	public void setEndActualTimeFilter(Long endActualTimeFilter) {
+		this.endActualTimeFilter = endActualTimeFilter;
+		if(endActualTimeFilter != null){
+			putQueryParameter("EndActualTimeFilter", endActualTimeFilter.toString());
 		}
 	}
 
@@ -84,6 +95,74 @@ public class QueryJobsWithResultRequest extends RpcAcsRequest<QueryJobsWithResul
 		}
 	}
 
+	public Boolean getHasHangUpByRejectionFilter() {
+		return this.hasHangUpByRejectionFilter;
+	}
+
+	public void setHasHangUpByRejectionFilter(Boolean hasHangUpByRejectionFilter) {
+		this.hasHangUpByRejectionFilter = hasHangUpByRejectionFilter;
+		if(hasHangUpByRejectionFilter != null){
+			putQueryParameter("HasHangUpByRejectionFilter", hasHangUpByRejectionFilter.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getStartActualTimeFilter() {
+		return this.startActualTimeFilter;
+	}
+
+	public void setStartActualTimeFilter(Long startActualTimeFilter) {
+		this.startActualTimeFilter = startActualTimeFilter;
+		if(startActualTimeFilter != null){
+			putQueryParameter("StartActualTimeFilter", startActualTimeFilter.toString());
+		}
+	}
+
+	public Boolean getHasAnsweredFilter() {
+		return this.hasAnsweredFilter;
+	}
+
+	public void setHasAnsweredFilter(Boolean hasAnsweredFilter) {
+		this.hasAnsweredFilter = hasAnsweredFilter;
+		if(hasAnsweredFilter != null){
+			putQueryParameter("HasAnsweredFilter", hasAnsweredFilter.toString());
+		}
+	}
+
+	public List<String> getLabelsJsons() {
+		return this.labelsJsons;
+	}
+
+	public void setLabelsJsons(List<String> labelsJsons) {
+		this.labelsJsons = labelsJsons;	
+		if (labelsJsons != null) {
+			for (int i = 0; i < labelsJsons.size(); i++) {
+				putQueryParameter("LabelsJson." + (i + 1) , labelsJsons.get(i));
+			}
+		}	
+	}
+
+	public String getTaskStatusFilter() {
+		return this.taskStatusFilter;
+	}
+
+	public void setTaskStatusFilter(String taskStatusFilter) {
+		this.taskStatusFilter = taskStatusFilter;
+		if(taskStatusFilter != null){
+			putQueryParameter("TaskStatusFilter", taskStatusFilter);
+		}
+	}
+
 	public String getQueryText() {
 		return this.queryText;
 	}
@@ -95,14 +174,14 @@ public class QueryJobsWithResultRequest extends RpcAcsRequest<QueryJobsWithResul
 		}
 	}
 
-	public Boolean getHasHangUpByRejectionFilter() {
-		return this.hasHangUpByRejectionFilter;
+	public String getJobFailureReasonsFilter() {
+		return this.jobFailureReasonsFilter;
 	}
 
-	public void setHasHangUpByRejectionFilter(Boolean hasHangUpByRejectionFilter) {
-		this.hasHangUpByRejectionFilter = hasHangUpByRejectionFilter;
-		if(hasHangUpByRejectionFilter != null){
-			putQueryParameter("HasHangUpByRejectionFilter", hasHangUpByRejectionFilter.toString());
+	public void setJobFailureReasonsFilter(String jobFailureReasonsFilter) {
+		this.jobFailureReasonsFilter = jobFailureReasonsFilter;
+		if(jobFailureReasonsFilter != null){
+			putQueryParameter("JobFailureReasonsFilter", jobFailureReasonsFilter);
 		}
 	}
 
@@ -125,17 +204,6 @@ public class QueryJobsWithResultRequest extends RpcAcsRequest<QueryJobsWithResul
 		this.jobStatusFilter = jobStatusFilter;
 		if(jobStatusFilter != null){
 			putQueryParameter("JobStatusFilter", jobStatusFilter);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

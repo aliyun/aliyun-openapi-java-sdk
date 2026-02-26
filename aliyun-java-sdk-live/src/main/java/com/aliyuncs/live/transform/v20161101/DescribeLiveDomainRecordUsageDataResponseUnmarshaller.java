@@ -27,13 +27,16 @@ public class DescribeLiveDomainRecordUsageDataResponseUnmarshaller {
 	public static DescribeLiveDomainRecordUsageDataResponse unmarshall(DescribeLiveDomainRecordUsageDataResponse describeLiveDomainRecordUsageDataResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveDomainRecordUsageDataResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.RequestId"));
+		describeLiveDomainRecordUsageDataResponse.setEndTime(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.EndTime"));
+		describeLiveDomainRecordUsageDataResponse.setStartTime(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.StartTime"));
 
 		List<DataModule> recordUsageData = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].TimeStamp"));
-			dataModule.setDomain(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].Domain"));
 			dataModule.setType(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].Type"));
+			dataModule.setDomain(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].Domain"));
+			dataModule.setRegion(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].Region"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].TimeStamp"));
 			dataModule.setDuration(_ctx.longValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].Duration"));
 			dataModule.setCount(_ctx.longValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].Count"));
 

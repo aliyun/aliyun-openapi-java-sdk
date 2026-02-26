@@ -15,22 +15,24 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveSingleTaskForCancelingTransferInRequest extends RpcAcsRequest<SaveSingleTaskForCancelingTransferInResponse> {
-	
-	public SaveSingleTaskForCancelingTransferInRequest() {
-		super("Domain-intl", "2017-12-18", "SaveSingleTaskForCancelingTransferIn", "domain");
-	}
+	   
 
 	private String domainName;
 
 	private String userClientIp;
 
 	private String lang;
+	public SaveSingleTaskForCancelingTransferInRequest() {
+		super("Domain-intl", "2017-12-18", "SaveSingleTaskForCancelingTransferIn");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDomainName() {
 		return this.domainName;

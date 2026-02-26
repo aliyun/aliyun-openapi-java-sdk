@@ -39,7 +39,7 @@ public class IgnoreAggregateEvaluationResultsRequest extends RpcAcsRequest<Ignor
 
 	private String aggregatorId;
 	public IgnoreAggregateEvaluationResultsRequest() {
-		super("Config", "2020-09-07", "IgnoreAggregateEvaluationResults");
+		super("Config", "2020-09-07", "IgnoreAggregateEvaluationResults", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,9 +29,9 @@ import com.aliyuncs.imm.Endpoint;
 public class BatchUpdateFileMetaRequest extends RpcAcsRequest<BatchUpdateFileMetaResponse> {
 	   
 
-	private String projectName;
-
 	private String datasetName;
+
+	private String projectName;
 
 	@SerializedName("files")
 	private List<Files> files;
@@ -44,17 +44,6 @@ public class BatchUpdateFileMetaRequest extends RpcAcsRequest<BatchUpdateFileMet
 		} catch (Exception e) {}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
 	public String getDatasetName() {
 		return this.datasetName;
 	}
@@ -63,6 +52,17 @@ public class BatchUpdateFileMetaRequest extends RpcAcsRequest<BatchUpdateFileMet
 		this.datasetName = datasetName;
 		if(datasetName != null){
 			putQueryParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 

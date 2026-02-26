@@ -63,15 +63,15 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 		private String layoutType;
 
-		private List<ScreenInputConfig> screenInputConfigList;
+		private List<LayerOrderConfig> layerOrderConfigList;
 
 		private List<MediaInputConfig> mediaInputConfigList;
 
-		private List<LayerOrderConfig> layerOrderConfigList;
-
-		private CommonConfig commonConfig;
+		private List<ScreenInputConfig> screenInputConfigList;
 
 		private BgImageConfig bgImageConfig;
+
+		private CommonConfig commonConfig;
 
 		public String getLayoutId() {
 			return this.layoutId;
@@ -97,12 +97,12 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 			this.layoutType = layoutType;
 		}
 
-		public List<ScreenInputConfig> getScreenInputConfigList() {
-			return this.screenInputConfigList;
+		public List<LayerOrderConfig> getLayerOrderConfigList() {
+			return this.layerOrderConfigList;
 		}
 
-		public void setScreenInputConfigList(List<ScreenInputConfig> screenInputConfigList) {
-			this.screenInputConfigList = screenInputConfigList;
+		public void setLayerOrderConfigList(List<LayerOrderConfig> layerOrderConfigList) {
+			this.layerOrderConfigList = layerOrderConfigList;
 		}
 
 		public List<MediaInputConfig> getMediaInputConfigList() {
@@ -113,20 +113,12 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 			this.mediaInputConfigList = mediaInputConfigList;
 		}
 
-		public List<LayerOrderConfig> getLayerOrderConfigList() {
-			return this.layerOrderConfigList;
+		public List<ScreenInputConfig> getScreenInputConfigList() {
+			return this.screenInputConfigList;
 		}
 
-		public void setLayerOrderConfigList(List<LayerOrderConfig> layerOrderConfigList) {
-			this.layerOrderConfigList = layerOrderConfigList;
-		}
-
-		public CommonConfig getCommonConfig() {
-			return this.commonConfig;
-		}
-
-		public void setCommonConfig(CommonConfig commonConfig) {
-			this.commonConfig = commonConfig;
+		public void setScreenInputConfigList(List<ScreenInputConfig> screenInputConfigList) {
+			this.screenInputConfigList = screenInputConfigList;
 		}
 
 		public BgImageConfig getBgImageConfig() {
@@ -137,243 +129,12 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 			this.bgImageConfig = bgImageConfig;
 		}
 
-		public static class ScreenInputConfig {
-
-			private String id;
-
-			private Integer index;
-
-			private String channelId;
-
-			private String videoResourceId;
-
-			private String color;
-
-			private String positionX;
-
-			private String positionY;
-
-			private Float heightNormalized;
-
-			private Integer portraitType;
-
-			private Boolean onlyAudio;
-
-			private AudioConfig audioConfig;
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public Integer getIndex() {
-				return this.index;
-			}
-
-			public void setIndex(Integer index) {
-				this.index = index;
-			}
-
-			public String getChannelId() {
-				return this.channelId;
-			}
-
-			public void setChannelId(String channelId) {
-				this.channelId = channelId;
-			}
-
-			public String getVideoResourceId() {
-				return this.videoResourceId;
-			}
-
-			public void setVideoResourceId(String videoResourceId) {
-				this.videoResourceId = videoResourceId;
-			}
-
-			public String getColor() {
-				return this.color;
-			}
-
-			public void setColor(String color) {
-				this.color = color;
-			}
-
-			public String getPositionX() {
-				return this.positionX;
-			}
-
-			public void setPositionX(String positionX) {
-				this.positionX = positionX;
-			}
-
-			public String getPositionY() {
-				return this.positionY;
-			}
-
-			public void setPositionY(String positionY) {
-				this.positionY = positionY;
-			}
-
-			public Float getHeightNormalized() {
-				return this.heightNormalized;
-			}
-
-			public void setHeightNormalized(Float heightNormalized) {
-				this.heightNormalized = heightNormalized;
-			}
-
-			public Integer getPortraitType() {
-				return this.portraitType;
-			}
-
-			public void setPortraitType(Integer portraitType) {
-				this.portraitType = portraitType;
-			}
-
-			public Boolean getOnlyAudio() {
-				return this.onlyAudio;
-			}
-
-			public void setOnlyAudio(Boolean onlyAudio) {
-				this.onlyAudio = onlyAudio;
-			}
-
-			public AudioConfig getAudioConfig() {
-				return this.audioConfig;
-			}
-
-			public void setAudioConfig(AudioConfig audioConfig) {
-				this.audioConfig = audioConfig;
-			}
-
-			public static class AudioConfig {
-
-				private Float volumeRate;
-
-				private String validChannel;
-
-				public Float getVolumeRate() {
-					return this.volumeRate;
-				}
-
-				public void setVolumeRate(Float volumeRate) {
-					this.volumeRate = volumeRate;
-				}
-
-				public String getValidChannel() {
-					return this.validChannel;
-				}
-
-				public void setValidChannel(String validChannel) {
-					this.validChannel = validChannel;
-				}
-			}
+		public CommonConfig getCommonConfig() {
+			return this.commonConfig;
 		}
 
-		public static class MediaInputConfig {
-
-			private String id;
-
-			private Integer index;
-
-			private String channelId;
-
-			private String videoResourceId;
-
-			private String imageMaterialId;
-
-			private String fillMode;
-
-			private String positionRefer;
-
-			private Float widthNormalized;
-
-			private Float heightNormalized;
-
-			private List<Float> positionNormalized;
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public Integer getIndex() {
-				return this.index;
-			}
-
-			public void setIndex(Integer index) {
-				this.index = index;
-			}
-
-			public String getChannelId() {
-				return this.channelId;
-			}
-
-			public void setChannelId(String channelId) {
-				this.channelId = channelId;
-			}
-
-			public String getVideoResourceId() {
-				return this.videoResourceId;
-			}
-
-			public void setVideoResourceId(String videoResourceId) {
-				this.videoResourceId = videoResourceId;
-			}
-
-			public String getImageMaterialId() {
-				return this.imageMaterialId;
-			}
-
-			public void setImageMaterialId(String imageMaterialId) {
-				this.imageMaterialId = imageMaterialId;
-			}
-
-			public String getFillMode() {
-				return this.fillMode;
-			}
-
-			public void setFillMode(String fillMode) {
-				this.fillMode = fillMode;
-			}
-
-			public String getPositionRefer() {
-				return this.positionRefer;
-			}
-
-			public void setPositionRefer(String positionRefer) {
-				this.positionRefer = positionRefer;
-			}
-
-			public Float getWidthNormalized() {
-				return this.widthNormalized;
-			}
-
-			public void setWidthNormalized(Float widthNormalized) {
-				this.widthNormalized = widthNormalized;
-			}
-
-			public Float getHeightNormalized() {
-				return this.heightNormalized;
-			}
-
-			public void setHeightNormalized(Float heightNormalized) {
-				this.heightNormalized = heightNormalized;
-			}
-
-			public List<Float> getPositionNormalized() {
-				return this.positionNormalized;
-			}
-
-			public void setPositionNormalized(List<Float> positionNormalized) {
-				this.positionNormalized = positionNormalized;
-			}
+		public void setCommonConfig(CommonConfig commonConfig) {
+			this.commonConfig = commonConfig;
 		}
 
 		public static class LayerOrderConfig {
@@ -399,19 +160,27 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 			}
 		}
 
-		public static class CommonConfig {
-
-			private String videoResourceId;
+		public static class MediaInputConfig {
 
 			private String channelId;
 
-			public String getVideoResourceId() {
-				return this.videoResourceId;
-			}
+			private String fillMode;
 
-			public void setVideoResourceId(String videoResourceId) {
-				this.videoResourceId = videoResourceId;
-			}
+			private Float heightNormalized;
+
+			private String id;
+
+			private String imageMaterialId;
+
+			private Integer index;
+
+			private String positionRefer;
+
+			private String videoResourceId;
+
+			private Float widthNormalized;
+
+			private List<Float> positionNormalized;
 
 			public String getChannelId() {
 				return this.channelId;
@@ -420,17 +189,22 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 			public void setChannelId(String channelId) {
 				this.channelId = channelId;
 			}
-		}
 
-		public static class BgImageConfig {
+			public String getFillMode() {
+				return this.fillMode;
+			}
 
-			private String id;
+			public void setFillMode(String fillMode) {
+				this.fillMode = fillMode;
+			}
 
-			private String materialId;
+			public Float getHeightNormalized() {
+				return this.heightNormalized;
+			}
 
-			private String imageUrl;
-
-			private String locationId;
+			public void setHeightNormalized(Float heightNormalized) {
+				this.heightNormalized = heightNormalized;
+			}
 
 			public String getId() {
 				return this.id;
@@ -440,12 +214,207 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 				this.id = id;
 			}
 
-			public String getMaterialId() {
-				return this.materialId;
+			public String getImageMaterialId() {
+				return this.imageMaterialId;
 			}
 
-			public void setMaterialId(String materialId) {
-				this.materialId = materialId;
+			public void setImageMaterialId(String imageMaterialId) {
+				this.imageMaterialId = imageMaterialId;
+			}
+
+			public Integer getIndex() {
+				return this.index;
+			}
+
+			public void setIndex(Integer index) {
+				this.index = index;
+			}
+
+			public String getPositionRefer() {
+				return this.positionRefer;
+			}
+
+			public void setPositionRefer(String positionRefer) {
+				this.positionRefer = positionRefer;
+			}
+
+			public String getVideoResourceId() {
+				return this.videoResourceId;
+			}
+
+			public void setVideoResourceId(String videoResourceId) {
+				this.videoResourceId = videoResourceId;
+			}
+
+			public Float getWidthNormalized() {
+				return this.widthNormalized;
+			}
+
+			public void setWidthNormalized(Float widthNormalized) {
+				this.widthNormalized = widthNormalized;
+			}
+
+			public List<Float> getPositionNormalized() {
+				return this.positionNormalized;
+			}
+
+			public void setPositionNormalized(List<Float> positionNormalized) {
+				this.positionNormalized = positionNormalized;
+			}
+		}
+
+		public static class ScreenInputConfig {
+
+			private String channelId;
+
+			private String color;
+
+			private Float heightNormalized;
+
+			private String id;
+
+			private Integer index;
+
+			private Boolean onlyAudio;
+
+			private Integer portraitType;
+
+			private String positionX;
+
+			private String positionY;
+
+			private String videoResourceId;
+
+			private AudioConfig audioConfig;
+
+			public String getChannelId() {
+				return this.channelId;
+			}
+
+			public void setChannelId(String channelId) {
+				this.channelId = channelId;
+			}
+
+			public String getColor() {
+				return this.color;
+			}
+
+			public void setColor(String color) {
+				this.color = color;
+			}
+
+			public Float getHeightNormalized() {
+				return this.heightNormalized;
+			}
+
+			public void setHeightNormalized(Float heightNormalized) {
+				this.heightNormalized = heightNormalized;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public Integer getIndex() {
+				return this.index;
+			}
+
+			public void setIndex(Integer index) {
+				this.index = index;
+			}
+
+			public Boolean getOnlyAudio() {
+				return this.onlyAudio;
+			}
+
+			public void setOnlyAudio(Boolean onlyAudio) {
+				this.onlyAudio = onlyAudio;
+			}
+
+			public Integer getPortraitType() {
+				return this.portraitType;
+			}
+
+			public void setPortraitType(Integer portraitType) {
+				this.portraitType = portraitType;
+			}
+
+			public String getPositionX() {
+				return this.positionX;
+			}
+
+			public void setPositionX(String positionX) {
+				this.positionX = positionX;
+			}
+
+			public String getPositionY() {
+				return this.positionY;
+			}
+
+			public void setPositionY(String positionY) {
+				this.positionY = positionY;
+			}
+
+			public String getVideoResourceId() {
+				return this.videoResourceId;
+			}
+
+			public void setVideoResourceId(String videoResourceId) {
+				this.videoResourceId = videoResourceId;
+			}
+
+			public AudioConfig getAudioConfig() {
+				return this.audioConfig;
+			}
+
+			public void setAudioConfig(AudioConfig audioConfig) {
+				this.audioConfig = audioConfig;
+			}
+
+			public static class AudioConfig {
+
+				private String validChannel;
+
+				private Float volumeRate;
+
+				public String getValidChannel() {
+					return this.validChannel;
+				}
+
+				public void setValidChannel(String validChannel) {
+					this.validChannel = validChannel;
+				}
+
+				public Float getVolumeRate() {
+					return this.volumeRate;
+				}
+
+				public void setVolumeRate(Float volumeRate) {
+					this.volumeRate = volumeRate;
+				}
+			}
+		}
+
+		public static class BgImageConfig {
+
+			private String id;
+
+			private String imageUrl;
+
+			private String locationId;
+
+			private String materialId;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
 			}
 
 			public String getImageUrl() {
@@ -462,6 +431,37 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 			public void setLocationId(String locationId) {
 				this.locationId = locationId;
+			}
+
+			public String getMaterialId() {
+				return this.materialId;
+			}
+
+			public void setMaterialId(String materialId) {
+				this.materialId = materialId;
+			}
+		}
+
+		public static class CommonConfig {
+
+			private String channelId;
+
+			private String videoResourceId;
+
+			public String getChannelId() {
+				return this.channelId;
+			}
+
+			public void setChannelId(String channelId) {
+				this.channelId = channelId;
+			}
+
+			public String getVideoResourceId() {
+				return this.videoResourceId;
+			}
+
+			public void setVideoResourceId(String videoResourceId) {
+				this.videoResourceId = videoResourceId;
 			}
 		}
 	}

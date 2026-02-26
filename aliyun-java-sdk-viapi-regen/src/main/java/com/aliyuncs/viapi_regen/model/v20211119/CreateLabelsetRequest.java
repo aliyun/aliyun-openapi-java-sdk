@@ -16,6 +16,7 @@ package com.aliyuncs.viapi_regen.model.v20211119;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.viapi_regen.Endpoint;
 
 /**
  * @author auto create
@@ -27,6 +28,8 @@ public class CreateLabelsetRequest extends RpcAcsRequest<CreateLabelsetResponse>
 	private String description;
 
 	private String type;
+
+	private Long preLabelId;
 
 	private String tagUserList;
 
@@ -40,8 +43,12 @@ public class CreateLabelsetRequest extends RpcAcsRequest<CreateLabelsetResponse>
 
 	private String tagSettings;
 	public CreateLabelsetRequest() {
-		super("viapi-regen", "2021-11-19", "CreateLabelset", "viapi-regen");
+		super("viapi-regen", "2021-11-19", "CreateLabelset", "selflearning");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDescription() {
@@ -63,6 +70,17 @@ public class CreateLabelsetRequest extends RpcAcsRequest<CreateLabelsetResponse>
 		this.type = type;
 		if(type != null){
 			putBodyParameter("Type", type);
+		}
+	}
+
+	public Long getPreLabelId() {
+		return this.preLabelId;
+	}
+
+	public void setPreLabelId(Long preLabelId) {
+		this.preLabelId = preLabelId;
+		if(preLabelId != null){
+			putBodyParameter("PreLabelId", preLabelId.toString());
 		}
 	}
 

@@ -15,22 +15,35 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class VerifyEmailRequest extends RpcAcsRequest<VerifyEmailResponse> {
-	
-	public VerifyEmailRequest() {
-		super("Domain-intl", "2017-12-18", "VerifyEmail", "domain");
-	}
+	   
+
+	private String token;
 
 	private String userClientIp;
 
 	private String lang;
+	public VerifyEmailRequest() {
+		super("Domain-intl", "2017-12-18", "VerifyEmail");
+		setMethod(MethodType.POST);
+	}
 
-	private String token;
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putQueryParameter("Token", token);
+		}
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -51,17 +64,6 @@ public class VerifyEmailRequest extends RpcAcsRequest<VerifyEmailResponse> {
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
 		}
 	}
 

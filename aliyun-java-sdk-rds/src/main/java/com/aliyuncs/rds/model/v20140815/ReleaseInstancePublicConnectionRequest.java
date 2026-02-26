@@ -27,6 +27,8 @@ public class ReleaseInstancePublicConnectionRequest extends RpcAcsRequest<Releas
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -34,8 +36,6 @@ public class ReleaseInstancePublicConnectionRequest extends RpcAcsRequest<Releas
 	private Long ownerId;
 
 	private String currentConnectionString;
-
-	private String dBInstanceId;
 	public ReleaseInstancePublicConnectionRequest() {
 		super("Rds", "2014-08-15", "ReleaseInstancePublicConnection", "rds");
 		setMethod(MethodType.POST);
@@ -53,6 +53,17 @@ public class ReleaseInstancePublicConnectionRequest extends RpcAcsRequest<Releas
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -97,17 +108,6 @@ public class ReleaseInstancePublicConnectionRequest extends RpcAcsRequest<Releas
 		this.currentConnectionString = currentConnectionString;
 		if(currentConnectionString != null){
 			putQueryParameter("CurrentConnectionString", currentConnectionString);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

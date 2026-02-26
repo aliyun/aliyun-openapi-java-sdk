@@ -52,6 +52,7 @@ public class DescribeInstancesOverviewResponseUnmarshaller {
 			kVStoreInstance.setResourceGroupId(_ctx.stringValue("DescribeInstancesOverviewResponse.Instances["+ i +"].ResourceGroupId"));
 			kVStoreInstance.setZoneId(_ctx.stringValue("DescribeInstancesOverviewResponse.Instances["+ i +"].ZoneId"));
 			kVStoreInstance.setInstanceStatus(_ctx.stringValue("DescribeInstancesOverviewResponse.Instances["+ i +"].InstanceStatus"));
+			kVStoreInstance.setSecondaryZoneId(_ctx.stringValue("DescribeInstancesOverviewResponse.Instances["+ i +"].SecondaryZoneId"));
 
 			instances.add(kVStoreInstance);
 		}

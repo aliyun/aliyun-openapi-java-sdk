@@ -40,7 +40,7 @@ public class XmlReader implements Reader {
         path = buildPath(element, path, appendPath);
         List<Element> childElements = XmlUtils.getChildElements(element);
 
-        if (childElements.size() == 0) {
+        if (childElements.isEmpty()) {
             map.put(path, element.getTextContent());
             return;
         }

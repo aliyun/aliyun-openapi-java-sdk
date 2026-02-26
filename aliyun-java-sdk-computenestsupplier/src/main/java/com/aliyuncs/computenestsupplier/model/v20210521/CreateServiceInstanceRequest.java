@@ -36,7 +36,13 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 
 	private List<Tag> tags;
 
-	private List<RequestTag> requestTags;
+	private Boolean dryRun;
+
+	private String endTime;
+
+	private String specificationName;
+
+	private String name;
 
 	private String serviceVersion;
 
@@ -110,18 +116,48 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 		}	
 	}
 
-	public List<RequestTag> getRequestTags() {
-		return this.requestTags;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setRequestTags(List<RequestTag> requestTags) {
-		this.requestTags = requestTags;	
-		if (requestTags != null) {
-			for (int depth1 = 0; depth1 < requestTags.size(); depth1++) {
-				putQueryParameter("RequestTag." + (depth1 + 1) + ".Value" , requestTags.get(depth1).getValue());
-				putQueryParameter("RequestTag." + (depth1 + 1) + ".Key" , requestTags.get(depth1).getKey());
-			}
-		}	
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getSpecificationName() {
+		return this.specificationName;
+	}
+
+	public void setSpecificationName(String specificationName) {
+		this.specificationName = specificationName;
+		if(specificationName != null){
+			putQueryParameter("SpecificationName", specificationName);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
 	}
 
 	public String getServiceVersion() {
@@ -158,29 +194,6 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 	}
 
 	public static class Tag {
-
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-	}
-
-	public static class RequestTag {
 
 		private String value;
 

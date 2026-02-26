@@ -27,7 +27,7 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 
 	private String clusterId;
 	public DescribeSecurityGroupsRequest() {
-		super("HBase", "2019-01-01", "DescribeSecurityGroups", "hbase");
+		super("HBase", "2019-01-01", "DescribeSecurityGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

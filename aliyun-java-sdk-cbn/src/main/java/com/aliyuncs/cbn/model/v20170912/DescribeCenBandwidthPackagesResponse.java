@@ -119,6 +119,8 @@ public class DescribeCenBandwidthPackagesResponse extends AcsResponse {
 
 		private String hasReservationData;
 
+		private String serviceType;
+
 		private List<OrginInterRegionBandwidthLimit> orginInterRegionBandwidthLimits;
 
 		private List<Tag> tags;
@@ -291,6 +293,14 @@ public class DescribeCenBandwidthPackagesResponse extends AcsResponse {
 
 		public void setHasReservationData(String hasReservationData) {
 			this.hasReservationData = hasReservationData;
+		}
+
+		public String getServiceType() {
+			return this.serviceType;
+		}
+
+		public void setServiceType(String serviceType) {
+			this.serviceType = serviceType;
 		}
 
 		public List<OrginInterRegionBandwidthLimit> getOrginInterRegionBandwidthLimits() {

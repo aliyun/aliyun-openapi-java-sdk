@@ -87,6 +87,14 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 
 	private String domainStatus;
 
+	private String resourceGroupId;
+
+	private String domainLifecycleStatus;
+
+	private String privacyServiceStatus;
+
+	private List<TagItem> tag;
+
 	private List<String> dnsList;
 
 	public String getEmail() {
@@ -337,12 +345,67 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 		this.domainStatus = domainStatus;
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getDomainLifecycleStatus() {
+		return this.domainLifecycleStatus;
+	}
+
+	public void setDomainLifecycleStatus(String domainLifecycleStatus) {
+		this.domainLifecycleStatus = domainLifecycleStatus;
+	}
+
+	public String getPrivacyServiceStatus() {
+		return this.privacyServiceStatus;
+	}
+
+	public void setPrivacyServiceStatus(String privacyServiceStatus) {
+		this.privacyServiceStatus = privacyServiceStatus;
+	}
+
+	public List<TagItem> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<TagItem> tag) {
+		this.tag = tag;
+	}
+
 	public List<String> getDnsList() {
 		return this.dnsList;
 	}
 
 	public void setDnsList(List<String> dnsList) {
 		this.dnsList = dnsList;
+	}
+
+	public static class TagItem {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 	}
 
 	@Override

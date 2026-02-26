@@ -27,6 +27,8 @@ public class DescribeUuidsByVulNamesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer vulCount;
+
 	private List<MachineInfoStatistic> machineInfoStatistics;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class DescribeUuidsByVulNamesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getVulCount() {
+		return this.vulCount;
+	}
+
+	public void setVulCount(Integer vulCount) {
+		this.vulCount = vulCount;
 	}
 
 	public List<MachineInfoStatistic> getMachineInfoStatistics() {

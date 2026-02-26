@@ -31,7 +31,7 @@ public class ModifyWebCacheModeRequest extends RpcAcsRequest<ModifyWebCacheModeR
 
 	private String domain;
 	public ModifyWebCacheModeRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebCacheMode");
+		super("ddoscoo", "2020-01-01", "ModifyWebCacheMode", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

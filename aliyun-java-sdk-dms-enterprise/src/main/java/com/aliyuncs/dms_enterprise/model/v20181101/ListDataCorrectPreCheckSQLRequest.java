@@ -25,15 +25,15 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListDataCorrectPreCheckSQLRequest extends RpcAcsRequest<ListDataCorrectPreCheckSQLResponse> {
 	   
 
-	private Long orderId;
-
 	private Long pageNumber;
 
 	private Long tid;
 
-	private Long dbId;
-
 	private Long pageSize;
+
+	private Long orderId;
+
+	private Long dbId;
 	public ListDataCorrectPreCheckSQLRequest() {
 		super("dms-enterprise", "2018-11-01", "ListDataCorrectPreCheckSQL", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class ListDataCorrectPreCheckSQLRequest extends RpcAcsRequest<ListDataCor
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId.toString());
-		}
 	}
 
 	public Long getPageNumber() {
@@ -76,17 +65,6 @@ public class ListDataCorrectPreCheckSQLRequest extends RpcAcsRequest<ListDataCor
 		}
 	}
 
-	public Long getDbId() {
-		return this.dbId;
-	}
-
-	public void setDbId(Long dbId) {
-		this.dbId = dbId;
-		if(dbId != null){
-			putQueryParameter("DbId", dbId.toString());
-		}
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
@@ -95,6 +73,28 @@ public class ListDataCorrectPreCheckSQLRequest extends RpcAcsRequest<ListDataCor
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId.toString());
+		}
+	}
+
+	public Long getDbId() {
+		return this.dbId;
+	}
+
+	public void setDbId(Long dbId) {
+		this.dbId = dbId;
+		if(dbId != null){
+			putQueryParameter("DbId", dbId.toString());
 		}
 	}
 

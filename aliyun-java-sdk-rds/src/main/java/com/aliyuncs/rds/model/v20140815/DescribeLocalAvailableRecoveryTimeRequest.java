@@ -27,11 +27,13 @@ public class DescribeLocalAvailableRecoveryTimeRequest extends RpcAcsRequest<Des
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
+	private String dBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
-
-	private String dBInstanceId;
 
 	private String region;
 	public DescribeLocalAvailableRecoveryTimeRequest() {
@@ -54,6 +56,28 @@ public class DescribeLocalAvailableRecoveryTimeRequest extends RpcAcsRequest<Des
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -73,17 +97,6 @@ public class DescribeLocalAvailableRecoveryTimeRequest extends RpcAcsRequest<Des
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

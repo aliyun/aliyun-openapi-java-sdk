@@ -25,11 +25,11 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class CreateMetaCategoryRequest extends RpcAcsRequest<CreateMetaCategoryResponse> {
 	   
 
+	private Long parentId;
+
 	private String name;
 
 	private String comment;
-
-	private Long parentId;
 	public CreateMetaCategoryRequest() {
 		super("dataworks-public", "2020-05-18", "CreateMetaCategory");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class CreateMetaCategoryRequest extends RpcAcsRequest<CreateMetaCategoryR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getParentId() {
+		return this.parentId;
+	}
+
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
+		if(parentId != null){
+			putBodyParameter("ParentId", parentId.toString());
+		}
 	}
 
 	public String getName() {
@@ -58,17 +69,6 @@ public class CreateMetaCategoryRequest extends RpcAcsRequest<CreateMetaCategoryR
 		this.comment = comment;
 		if(comment != null){
 			putBodyParameter("Comment", comment);
-		}
-	}
-
-	public Long getParentId() {
-		return this.parentId;
-	}
-
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
-		if(parentId != null){
-			putBodyParameter("ParentId", parentId.toString());
 		}
 	}
 

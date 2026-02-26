@@ -25,40 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScalingInstancesResponse extends AcsResponse {
 
-	private Integer totalCount;
-
-	private Integer totalSpotCount;
-
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private String requestId;
+	private Integer pageNumber;
+
+	private Integer totalSpotCount;
+
+	private Integer totalCount;
 
 	private List<ScalingInstance> scalingInstances;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public Integer getTotalSpotCount() {
-		return this.totalSpotCount;
-	}
-
-	public void setTotalSpotCount(Integer totalSpotCount) {
-		this.totalSpotCount = totalSpotCount;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +53,28 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getTotalSpotCount() {
+		return this.totalSpotCount;
+	}
+
+	public void setTotalSpotCount(Integer totalSpotCount) {
+		this.totalSpotCount = totalSpotCount;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ScalingInstance> getScalingInstances() {
@@ -87,27 +87,31 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 
 	public static class ScalingInstance {
 
-		private String instanceId;
-
-		private String scalingConfigurationId;
-
-		private String scalingGroupId;
-
-		private String healthStatus;
+		private String creationTime;
 
 		private Integer loadBalancerWeight;
 
-		private String lifecycleState;
-
-		private String creationTime;
-
-		private String creationType;
-
 		private String launchTemplateId;
+
+		private String instanceId;
+
+		private String spotStrategy;
 
 		private String launchTemplateVersion;
 
+		private String healthStatus;
+
+		private String scalingGroupId;
+
 		private String warmupState;
+
+		private String lifecycleState;
+
+		private String creationType;
+
+		private String zoneId;
+
+		private String scalingConfigurationId;
 
 		private Boolean entrusted;
 
@@ -115,42 +119,20 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 
 		private String createdTime;
 
-		private String spotStrategy;
-
-		private String zoneId;
-
 		private String scalingActivityId;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		private String instanceType;
+
+		private String scalingInstanceId;
+
+		private String privateIpAddress;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getScalingConfigurationId() {
-			return this.scalingConfigurationId;
-		}
-
-		public void setScalingConfigurationId(String scalingConfigurationId) {
-			this.scalingConfigurationId = scalingConfigurationId;
-		}
-
-		public String getScalingGroupId() {
-			return this.scalingGroupId;
-		}
-
-		public void setScalingGroupId(String scalingGroupId) {
-			this.scalingGroupId = scalingGroupId;
-		}
-
-		public String getHealthStatus() {
-			return this.healthStatus;
-		}
-
-		public void setHealthStatus(String healthStatus) {
-			this.healthStatus = healthStatus;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public Integer getLoadBalancerWeight() {
@@ -161,36 +143,28 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 			this.loadBalancerWeight = loadBalancerWeight;
 		}
 
-		public String getLifecycleState() {
-			return this.lifecycleState;
-		}
-
-		public void setLifecycleState(String lifecycleState) {
-			this.lifecycleState = lifecycleState;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getCreationType() {
-			return this.creationType;
-		}
-
-		public void setCreationType(String creationType) {
-			this.creationType = creationType;
-		}
-
 		public String getLaunchTemplateId() {
 			return this.launchTemplateId;
 		}
 
 		public void setLaunchTemplateId(String launchTemplateId) {
 			this.launchTemplateId = launchTemplateId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
 		}
 
 		public String getLaunchTemplateVersion() {
@@ -201,12 +175,60 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 			this.launchTemplateVersion = launchTemplateVersion;
 		}
 
+		public String getHealthStatus() {
+			return this.healthStatus;
+		}
+
+		public void setHealthStatus(String healthStatus) {
+			this.healthStatus = healthStatus;
+		}
+
+		public String getScalingGroupId() {
+			return this.scalingGroupId;
+		}
+
+		public void setScalingGroupId(String scalingGroupId) {
+			this.scalingGroupId = scalingGroupId;
+		}
+
 		public String getWarmupState() {
 			return this.warmupState;
 		}
 
 		public void setWarmupState(String warmupState) {
 			this.warmupState = warmupState;
+		}
+
+		public String getLifecycleState() {
+			return this.lifecycleState;
+		}
+
+		public void setLifecycleState(String lifecycleState) {
+			this.lifecycleState = lifecycleState;
+		}
+
+		public String getCreationType() {
+			return this.creationType;
+		}
+
+		public void setCreationType(String creationType) {
+			this.creationType = creationType;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getScalingConfigurationId() {
+			return this.scalingConfigurationId;
+		}
+
+		public void setScalingConfigurationId(String scalingConfigurationId) {
+			this.scalingConfigurationId = scalingConfigurationId;
 		}
 
 		public Boolean getEntrusted() {
@@ -233,28 +255,36 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 			this.createdTime = createdTime;
 		}
 
-		public String getSpotStrategy() {
-			return this.spotStrategy;
-		}
-
-		public void setSpotStrategy(String spotStrategy) {
-			this.spotStrategy = spotStrategy;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
 		public String getScalingActivityId() {
 			return this.scalingActivityId;
 		}
 
 		public void setScalingActivityId(String scalingActivityId) {
 			this.scalingActivityId = scalingActivityId;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getScalingInstanceId() {
+			return this.scalingInstanceId;
+		}
+
+		public void setScalingInstanceId(String scalingInstanceId) {
+			this.scalingInstanceId = scalingInstanceId;
+		}
+
+		public String getPrivateIpAddress() {
+			return this.privateIpAddress;
+		}
+
+		public void setPrivateIpAddress(String privateIpAddress) {
+			this.privateIpAddress = privateIpAddress;
 		}
 	}
 

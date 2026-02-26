@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SdkGenerateByAppResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String downloadLink;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getDownloadLink() {
 		return this.downloadLink;
@@ -42,6 +34,14 @@ public class SdkGenerateByAppResponse extends AcsResponse {
 
 	public void setDownloadLink(String downloadLink) {
 		this.downloadLink = downloadLink;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

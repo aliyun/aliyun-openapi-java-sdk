@@ -49,6 +49,7 @@ public class ListResourcesByPageResponseUnmarshaller {
 			resourceItem.setRevision(_ctx.integerValue("ListResourcesByPageResponse.Data.Items["+ i +"].Revision"));
 			resourceItem.setSchemaVersion(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].SchemaVersion"));
 			resourceItem.setResourceType(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].ResourceType"));
+			resourceItem.setResourceDigest(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].ResourceDigest"));
 
 			items.add(resourceItem);
 		}

@@ -133,6 +133,8 @@ public class ListBriefSkillGroupsResponse extends AcsResponse {
 
 			private String instanceId;
 
+			private String mediaType;
+
 			public String getDisplayName() {
 				return this.displayName;
 			}
@@ -187,6 +189,14 @@ public class ListBriefSkillGroupsResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+
+			public String getMediaType() {
+				return this.mediaType;
+			}
+
+			public void setMediaType(String mediaType) {
+				this.mediaType = mediaType;
 			}
 		}
 	}

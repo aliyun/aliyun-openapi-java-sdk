@@ -31,7 +31,7 @@ public class QueryDnsHostRequest extends RpcAcsRequest<QueryDnsHostResponse> {
 
 	private String lang;
 	public QueryDnsHostRequest() {
-		super("Domain", "2018-01-29", "QueryDnsHost");
+		super("Domain", "2018-01-29", "QueryDnsHost", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

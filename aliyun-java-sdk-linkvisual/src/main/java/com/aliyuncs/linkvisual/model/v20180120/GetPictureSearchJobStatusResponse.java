@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPictureSearchJobStatusResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class GetPictureSearchJobStatusResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,26 +76,34 @@ public class GetPictureSearchJobStatusResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String jobId;
+		private Long endTime;
+
+		private Long startTime;
 
 		private Integer jobStatus;
 
 		private String searchPicUrl;
 
-		private Long startTime;
+		private Long createTime;
 
-		private Long endTime;
+		private String jobId;
 
 		private Float threshold;
 
-		private Long createTime;
-
-		public String getJobId() {
-			return this.jobId;
+		public Long getEndTime() {
+			return this.endTime;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
 		}
 
 		public Integer getJobStatus() {
@@ -114,20 +122,20 @@ public class GetPictureSearchJobStatusResponse extends AcsResponse {
 			this.searchPicUrl = searchPicUrl;
 		}
 
-		public Long getStartTime() {
-			return this.startTime;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
-		public Long getEndTime() {
-			return this.endTime;
+		public String getJobId() {
+			return this.jobId;
 		}
 
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
 		public Float getThreshold() {
@@ -136,14 +144,6 @@ public class GetPictureSearchJobStatusResponse extends AcsResponse {
 
 		public void setThreshold(Float threshold) {
 			this.threshold = threshold;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
 		}
 	}
 

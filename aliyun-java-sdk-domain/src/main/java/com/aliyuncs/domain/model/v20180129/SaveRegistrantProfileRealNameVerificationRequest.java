@@ -73,7 +73,7 @@ public class SaveRegistrantProfileRealNameVerificationRequest extends RpcAcsRequ
 
 	private String registrantName;
 	public SaveRegistrantProfileRealNameVerificationRequest() {
-		super("Domain", "2018-01-29", "SaveRegistrantProfileRealNameVerification");
+		super("Domain", "2018-01-29", "SaveRegistrantProfileRealNameVerification", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

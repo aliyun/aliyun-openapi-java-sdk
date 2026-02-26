@@ -27,7 +27,7 @@ public class CloseBackupRequest extends RpcAcsRequest<CloseBackupResponse> {
 
 	private String clusterId;
 	public CloseBackupRequest() {
-		super("HBase", "2019-01-01", "CloseBackup", "hbase");
+		super("HBase", "2019-01-01", "CloseBackup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

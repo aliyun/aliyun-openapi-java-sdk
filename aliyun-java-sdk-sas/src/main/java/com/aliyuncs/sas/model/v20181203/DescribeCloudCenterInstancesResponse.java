@@ -548,6 +548,8 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 
 		private Integer count;
 
+		private String nextToken;
+
 		public Integer getCurrentPage() {
 			return this.currentPage;
 		}
@@ -578,6 +580,14 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 
 		public void setCount(Integer count) {
 			this.count = count;
+		}
+
+		public String getNextToken() {
+			return this.nextToken;
+		}
+
+		public void setNextToken(String nextToken) {
+			this.nextToken = nextToken;
 		}
 	}
 

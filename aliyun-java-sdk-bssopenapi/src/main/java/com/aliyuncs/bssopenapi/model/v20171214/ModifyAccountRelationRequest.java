@@ -44,7 +44,7 @@ public class ModifyAccountRelationRequest extends RpcAcsRequest<ModifyAccountRel
 
 	private List<String> permissionCodess;
 	public ModifyAccountRelationRequest() {
-		super("BssOpenApi", "2017-12-14", "ModifyAccountRelation");
+		super("BssOpenApi", "2017-12-14", "ModifyAccountRelation", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

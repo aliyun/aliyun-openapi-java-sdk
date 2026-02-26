@@ -27,23 +27,23 @@ public class DescribeGtmLogsResponseUnmarshaller {
 	public static DescribeGtmLogsResponse unmarshall(DescribeGtmLogsResponse describeGtmLogsResponse, UnmarshallerContext _ctx) {
 		
 		describeGtmLogsResponse.setRequestId(_ctx.stringValue("DescribeGtmLogsResponse.RequestId"));
-		describeGtmLogsResponse.setTotalItems(_ctx.integerValue("DescribeGtmLogsResponse.TotalItems"));
-		describeGtmLogsResponse.setTotalPages(_ctx.integerValue("DescribeGtmLogsResponse.TotalPages"));
 		describeGtmLogsResponse.setPageSize(_ctx.integerValue("DescribeGtmLogsResponse.PageSize"));
 		describeGtmLogsResponse.setPageNumber(_ctx.integerValue("DescribeGtmLogsResponse.PageNumber"));
+		describeGtmLogsResponse.setTotalPages(_ctx.integerValue("DescribeGtmLogsResponse.TotalPages"));
+		describeGtmLogsResponse.setTotalItems(_ctx.integerValue("DescribeGtmLogsResponse.TotalItems"));
 
 		List<Log> logs = new ArrayList<Log>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGtmLogsResponse.Logs.Length"); i++) {
 			Log log = new Log();
-			log.setOperTime(_ctx.stringValue("DescribeGtmLogsResponse.Logs["+ i +"].OperTime"));
-			log.setOperAction(_ctx.stringValue("DescribeGtmLogsResponse.Logs["+ i +"].OperAction"));
-			log.setEntityType(_ctx.stringValue("DescribeGtmLogsResponse.Logs["+ i +"].EntityType"));
-			log.setEntityId(_ctx.stringValue("DescribeGtmLogsResponse.Logs["+ i +"].EntityId"));
-			log.setEntityName(_ctx.stringValue("DescribeGtmLogsResponse.Logs["+ i +"].EntityName"));
-			log.setOperIp(_ctx.stringValue("DescribeGtmLogsResponse.Logs["+ i +"].OperIp"));
 			log.setOperTimestamp(_ctx.longValue("DescribeGtmLogsResponse.Logs["+ i +"].OperTimestamp"));
-			log.setId(_ctx.longValue("DescribeGtmLogsResponse.Logs["+ i +"].Id"));
+			log.setEntityId(_ctx.stringValue("DescribeGtmLogsResponse.Logs["+ i +"].EntityId"));
+			log.setEntityType(_ctx.stringValue("DescribeGtmLogsResponse.Logs["+ i +"].EntityType"));
+			log.setOperTime(_ctx.stringValue("DescribeGtmLogsResponse.Logs["+ i +"].OperTime"));
+			log.setOperIp(_ctx.stringValue("DescribeGtmLogsResponse.Logs["+ i +"].OperIp"));
+			log.setOperAction(_ctx.stringValue("DescribeGtmLogsResponse.Logs["+ i +"].OperAction"));
 			log.setContent(_ctx.stringValue("DescribeGtmLogsResponse.Logs["+ i +"].Content"));
+			log.setEntityName(_ctx.stringValue("DescribeGtmLogsResponse.Logs["+ i +"].EntityName"));
+			log.setId(_ctx.longValue("DescribeGtmLogsResponse.Logs["+ i +"].Id"));
 
 			logs.add(log);
 		}

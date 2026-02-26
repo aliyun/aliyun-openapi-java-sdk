@@ -27,9 +27,9 @@ public class GetMetaCategoryRequest extends RpcAcsRequest<GetMetaCategoryRespons
 
 	private Long parentCategoryId;
 
-	private Integer pageSize;
-
 	private Integer pageNum;
+
+	private Integer pageSize;
 	public GetMetaCategoryRequest() {
 		super("dataworks-public", "2020-05-18", "GetMetaCategory");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class GetMetaCategoryRequest extends RpcAcsRequest<GetMetaCategoryRespons
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -69,6 +58,17 @@ public class GetMetaCategoryRequest extends RpcAcsRequest<GetMetaCategoryRespons
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
@@ -36,11 +37,17 @@ public class AddServiceSourceRequest extends RpcAcsRequest<AddServiceSourceRespo
 
 	private String type;
 
+	@SerializedName("pathList")
+	private List<String> pathList;
+
 	private String address;
 
 	private String name;
 
 	private String acceptLanguage;
+
+	@SerializedName("groupList")
+	private List<String> groupList;
 	public AddServiceSourceRequest() {
 		super("mse", "2019-05-31", "AddServiceSource", "mse");
 		setMethod(MethodType.POST);
@@ -94,6 +101,17 @@ public class AddServiceSourceRequest extends RpcAcsRequest<AddServiceSourceRespo
 		}
 	}
 
+	public List<String> getPathList() {
+		return this.pathList;
+	}
+
+	public void setPathList(List<String> pathList) {
+		this.pathList = pathList;	
+		if (pathList != null) {
+			putQueryParameter("PathList" , new Gson().toJson(pathList));
+		}	
+	}
+
 	public String getAddress() {
 		return this.address;
 	}
@@ -127,7 +145,21 @@ public class AddServiceSourceRequest extends RpcAcsRequest<AddServiceSourceRespo
 		}
 	}
 
+	public List<String> getGroupList() {
+		return this.groupList;
+	}
+
+	public void setGroupList(List<String> groupList) {
+		this.groupList = groupList;	
+		if (groupList != null) {
+			putQueryParameter("GroupList" , new Gson().toJson(groupList));
+		}	
+	}
+
 	public static class IngressOptionsRequest {
+
+		@SerializedName("EnableStatus")
+		private Boolean enableStatus;
 
 		@SerializedName("EnableIngress")
 		private Boolean enableIngress;
@@ -137,6 +169,14 @@ public class AddServiceSourceRequest extends RpcAcsRequest<AddServiceSourceRespo
 
 		@SerializedName("IngressClass")
 		private String ingressClass;
+
+		public Boolean getEnableStatus() {
+			return this.enableStatus;
+		}
+
+		public void setEnableStatus(Boolean enableStatus) {
+			this.enableStatus = enableStatus;
+		}
 
 		public Boolean getEnableIngress() {
 			return this.enableIngress;

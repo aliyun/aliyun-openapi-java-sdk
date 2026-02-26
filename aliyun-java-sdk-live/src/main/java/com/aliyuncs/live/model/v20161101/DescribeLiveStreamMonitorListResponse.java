@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer total;
 
+	private String requestId;
+
 	private List<LiveStreamMonitorInfo> liveStreamMonitorList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotal() {
 		return this.total;
@@ -45,6 +37,14 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<LiveStreamMonitorInfo> getLiveStreamMonitorList() {
@@ -57,58 +57,40 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
 	public static class LiveStreamMonitorInfo {
 
-		private String monitorId;
-
-		private String monitorName;
-
-		private String domain;
-
-		private String outputTemplate;
+		private String monitorConfig;
 
 		private Integer status;
 
-		private String region;
+		private String monitorId;
+
+		private String domain;
+
+		private String callbackUrl;
 
 		private Integer audioFrom;
 
-		private String startTime;
+		private String dingTalkWebHookUrl;
+
+		private String monitorName;
 
 		private String stopTime;
+
+		private String startTime;
+
+		private String outputTemplate;
+
+		private String region;
 
 		private List<InputConfig> inputList;
 
 		private OutputUrls outputUrls;
 
-		public String getMonitorId() {
-			return this.monitorId;
+		public String getMonitorConfig() {
+			return this.monitorConfig;
 		}
 
-		public void setMonitorId(String monitorId) {
-			this.monitorId = monitorId;
-		}
-
-		public String getMonitorName() {
-			return this.monitorName;
-		}
-
-		public void setMonitorName(String monitorName) {
-			this.monitorName = monitorName;
-		}
-
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
-
-		public String getOutputTemplate() {
-			return this.outputTemplate;
-		}
-
-		public void setOutputTemplate(String outputTemplate) {
-			this.outputTemplate = outputTemplate;
+		public void setMonitorConfig(String monitorConfig) {
+			this.monitorConfig = monitorConfig;
 		}
 
 		public Integer getStatus() {
@@ -119,12 +101,28 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getRegion() {
-			return this.region;
+		public String getMonitorId() {
+			return this.monitorId;
 		}
 
-		public void setRegion(String region) {
-			this.region = region;
+		public void setMonitorId(String monitorId) {
+			this.monitorId = monitorId;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
+		public String getCallbackUrl() {
+			return this.callbackUrl;
+		}
+
+		public void setCallbackUrl(String callbackUrl) {
+			this.callbackUrl = callbackUrl;
 		}
 
 		public Integer getAudioFrom() {
@@ -135,12 +133,20 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 			this.audioFrom = audioFrom;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public String getDingTalkWebHookUrl() {
+			return this.dingTalkWebHookUrl;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setDingTalkWebHookUrl(String dingTalkWebHookUrl) {
+			this.dingTalkWebHookUrl = dingTalkWebHookUrl;
+		}
+
+		public String getMonitorName() {
+			return this.monitorName;
+		}
+
+		public void setMonitorName(String monitorName) {
+			this.monitorName = monitorName;
 		}
 
 		public String getStopTime() {
@@ -149,6 +155,30 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
 		public void setStopTime(String stopTime) {
 			this.stopTime = stopTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getOutputTemplate() {
+			return this.outputTemplate;
+		}
+
+		public void setOutputTemplate(String outputTemplate) {
+			this.outputTemplate = outputTemplate;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
 		public List<InputConfig> getInputList() {
@@ -171,11 +201,11 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
 			private Integer index;
 
+			private String inputUrl;
+
 			private Integer layoutId;
 
 			private String streamName;
-
-			private String inputUrl;
 
 			private LayoutConfig layoutConfig;
 
@@ -187,6 +217,14 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
 			public void setIndex(Integer index) {
 				this.index = index;
+			}
+
+			public String getInputUrl() {
+				return this.inputUrl;
+			}
+
+			public void setInputUrl(String inputUrl) {
+				this.inputUrl = inputUrl;
 			}
 
 			public Integer getLayoutId() {
@@ -203,14 +241,6 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
 			public void setStreamName(String streamName) {
 				this.streamName = streamName;
-			}
-
-			public String getInputUrl() {
-				return this.inputUrl;
-			}
-
-			public void setInputUrl(String inputUrl) {
-				this.inputUrl = inputUrl;
 			}
 
 			public LayoutConfig getLayoutConfig() {
@@ -288,17 +318,9 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
 		public static class OutputUrls {
 
-			private String rtmpUrl;
-
 			private String flvUrl;
 
-			public String getRtmpUrl() {
-				return this.rtmpUrl;
-			}
-
-			public void setRtmpUrl(String rtmpUrl) {
-				this.rtmpUrl = rtmpUrl;
-			}
+			private String rtmpUrl;
 
 			public String getFlvUrl() {
 				return this.flvUrl;
@@ -306,6 +328,14 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
 			public void setFlvUrl(String flvUrl) {
 				this.flvUrl = flvUrl;
+			}
+
+			public String getRtmpUrl() {
+				return this.rtmpUrl;
+			}
+
+			public void setRtmpUrl(String rtmpUrl) {
+				this.rtmpUrl = rtmpUrl;
 			}
 		}
 	}

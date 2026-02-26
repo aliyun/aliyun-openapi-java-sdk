@@ -27,6 +27,8 @@ public class CreateParameterGroupRequest extends RpcAcsRequest<CreateParameterGr
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -43,7 +45,7 @@ public class CreateParameterGroupRequest extends RpcAcsRequest<CreateParameterGr
 
 	private String parameterGroupDesc;
 	public CreateParameterGroupRequest() {
-		super("polardb", "2017-08-01", "CreateParameterGroup");
+		super("polardb", "2017-08-01", "CreateParameterGroup", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,6 +61,17 @@ public class CreateParameterGroupRequest extends RpcAcsRequest<CreateParameterGr
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

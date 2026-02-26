@@ -43,6 +43,8 @@ public class GetOrderBaseInfoResponseUnmarshaller {
 		orderBaseInfo.setStatusDesc(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.StatusDesc"));
 		orderBaseInfo.setPluginType(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.PluginType"));
 		orderBaseInfo.setOrderId(_ctx.longValue("GetOrderBaseInfoResponse.OrderBaseInfo.OrderId"));
+		orderBaseInfo.setAttachmentKey(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.AttachmentKey"));
+		orderBaseInfo.setOriginAttachmentName(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.OriginAttachmentName"));
 
 		List<String> relatedUserNickList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetOrderBaseInfoResponse.OrderBaseInfo.RelatedUserNickList.Length"); i++) {

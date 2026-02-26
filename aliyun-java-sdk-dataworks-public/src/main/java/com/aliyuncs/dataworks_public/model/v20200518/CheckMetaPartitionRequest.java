@@ -27,13 +27,13 @@ public class CheckMetaPartitionRequest extends RpcAcsRequest<CheckMetaPartitionR
 
 	private String dataSourceType;
 
+	private String clusterId;
+
 	private String partition;
 
 	private String tableGuid;
 
 	private String databaseName;
-
-	private String clusterId;
 
 	private String tableName;
 	public CheckMetaPartitionRequest() {
@@ -53,6 +53,17 @@ public class CheckMetaPartitionRequest extends RpcAcsRequest<CheckMetaPartitionR
 		this.dataSourceType = dataSourceType;
 		if(dataSourceType != null){
 			putQueryParameter("DataSourceType", dataSourceType);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -86,17 +97,6 @@ public class CheckMetaPartitionRequest extends RpcAcsRequest<CheckMetaPartitionR
 		this.databaseName = databaseName;
 		if(databaseName != null){
 			putQueryParameter("DatabaseName", databaseName);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

@@ -27,19 +27,19 @@ public class ListNacosHistoryConfigsRequest extends RpcAcsRequest<ListNacosHisto
 
 	private Integer pageNum;
 
-	private String instanceId;
-
-	private String dataId;
-
 	private String namespaceId;
 
 	private String requestPars;
 
 	private Integer pageSize;
 
-	private String acceptLanguage;
-
 	private String group;
+
+	private String instanceId;
+
+	private String dataId;
+
+	private String acceptLanguage;
 	public ListNacosHistoryConfigsRequest() {
 		super("mse", "2019-05-31", "ListNacosHistoryConfigs", "mse");
 		setMethod(MethodType.POST);
@@ -57,28 +57,6 @@ public class ListNacosHistoryConfigsRequest extends RpcAcsRequest<ListNacosHisto
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getDataId() {
-		return this.dataId;
-	}
-
-	public void setDataId(String dataId) {
-		this.dataId = dataId;
-		if(dataId != null){
-			putQueryParameter("DataId", dataId);
 		}
 	}
 
@@ -115,17 +93,6 @@ public class ListNacosHistoryConfigsRequest extends RpcAcsRequest<ListNacosHisto
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public String getGroup() {
 		return this.group;
 	}
@@ -134,6 +101,39 @@ public class ListNacosHistoryConfigsRequest extends RpcAcsRequest<ListNacosHisto
 		this.group = group;
 		if(group != null){
 			putQueryParameter("Group", group);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getDataId() {
+		return this.dataId;
+	}
+
+	public void setDataId(String dataId) {
+		this.dataId = dataId;
+		if(dataId != null){
+			putQueryParameter("DataId", dataId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

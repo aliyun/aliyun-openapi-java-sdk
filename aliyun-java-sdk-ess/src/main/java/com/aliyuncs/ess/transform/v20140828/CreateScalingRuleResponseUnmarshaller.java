@@ -23,8 +23,8 @@ public class CreateScalingRuleResponseUnmarshaller {
 	public static CreateScalingRuleResponse unmarshall(CreateScalingRuleResponse createScalingRuleResponse, UnmarshallerContext _ctx) {
 		
 		createScalingRuleResponse.setRequestId(_ctx.stringValue("CreateScalingRuleResponse.RequestId"));
-		createScalingRuleResponse.setScalingRuleId(_ctx.stringValue("CreateScalingRuleResponse.ScalingRuleId"));
 		createScalingRuleResponse.setScalingRuleAri(_ctx.stringValue("CreateScalingRuleResponse.ScalingRuleAri"));
+		createScalingRuleResponse.setScalingRuleId(_ctx.stringValue("CreateScalingRuleResponse.ScalingRuleId"));
 	 
 	 	return createScalingRuleResponse;
 	}

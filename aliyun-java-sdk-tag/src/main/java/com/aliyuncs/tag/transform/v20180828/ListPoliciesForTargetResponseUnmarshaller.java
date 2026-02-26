@@ -32,10 +32,10 @@ public class ListPoliciesForTargetResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListPoliciesForTargetResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setPolicyContent(_ctx.stringValue("ListPoliciesForTargetResponse.Data["+ i +"].PolicyContent"));
+			dataItem.setPolicyDesc(_ctx.stringValue("ListPoliciesForTargetResponse.Data["+ i +"].PolicyDesc"));
 			dataItem.setPolicyId(_ctx.stringValue("ListPoliciesForTargetResponse.Data["+ i +"].PolicyId"));
 			dataItem.setPolicyName(_ctx.stringValue("ListPoliciesForTargetResponse.Data["+ i +"].PolicyName"));
-			dataItem.setPolicyDesc(_ctx.stringValue("ListPoliciesForTargetResponse.Data["+ i +"].PolicyDesc"));
-			dataItem.setPolicyContent(_ctx.stringValue("ListPoliciesForTargetResponse.Data["+ i +"].PolicyContent"));
 			dataItem.setUserType(_ctx.stringValue("ListPoliciesForTargetResponse.Data["+ i +"].UserType"));
 
 			data.add(dataItem);

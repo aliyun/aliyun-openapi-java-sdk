@@ -29,7 +29,7 @@ public class InstallSoftwareRequest extends RpcAcsRequest<InstallSoftwareRespons
 
 	private String application;
 	public InstallSoftwareRequest() {
-		super("EHPC", "2018-04-12", "InstallSoftware");
+		super("EHPC", "2018-04-12", "InstallSoftware", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

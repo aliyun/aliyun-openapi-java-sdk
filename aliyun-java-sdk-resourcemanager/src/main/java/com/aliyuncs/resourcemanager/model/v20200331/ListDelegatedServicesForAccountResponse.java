@@ -51,6 +51,8 @@ public class ListDelegatedServicesForAccountResponse extends AcsResponse {
 
 		private String servicePrincipal;
 
+		private String status;
+
 		public String getDelegationEnabledTime() {
 			return this.delegationEnabledTime;
 		}
@@ -65,6 +67,14 @@ public class ListDelegatedServicesForAccountResponse extends AcsResponse {
 
 		public void setServicePrincipal(String servicePrincipal) {
 			this.servicePrincipal = servicePrincipal;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

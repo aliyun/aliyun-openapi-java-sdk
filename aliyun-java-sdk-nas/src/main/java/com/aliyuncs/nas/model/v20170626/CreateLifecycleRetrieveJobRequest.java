@@ -26,16 +26,29 @@ import com.aliyuncs.nas.Endpoint;
 public class CreateLifecycleRetrieveJobRequest extends RpcAcsRequest<CreateLifecycleRetrieveJobResponse> {
 	   
 
+	private String storageType;
+
 	private String fileSystemId;
 
 	private List<String> pathss;
 	public CreateLifecycleRetrieveJobRequest() {
-		super("NAS", "2017-06-26", "CreateLifecycleRetrieveJob", "NAS");
+		super("NAS", "2017-06-26", "CreateLifecycleRetrieveJob", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
+		}
 	}
 
 	public String getFileSystemId() {

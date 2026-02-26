@@ -47,26 +47,26 @@ public class ListSoftwaresResponse extends AcsResponse {
 
 	public static class SoftwareInfo {
 
-		private String ehpcVersion;
+		private String schedulerType;
 
 		private String osTag;
 
-		private String schedulerType;
-
 		private String schedulerVersion;
-
-		private String accountType;
 
 		private String accountVersion;
 
+		private String accountType;
+
+		private String ehpcVersion;
+
 		private List<ApplicationInfo> applications;
 
-		public String getEhpcVersion() {
-			return this.ehpcVersion;
+		public String getSchedulerType() {
+			return this.schedulerType;
 		}
 
-		public void setEhpcVersion(String ehpcVersion) {
-			this.ehpcVersion = ehpcVersion;
+		public void setSchedulerType(String schedulerType) {
+			this.schedulerType = schedulerType;
 		}
 
 		public String getOsTag() {
@@ -77,20 +77,20 @@ public class ListSoftwaresResponse extends AcsResponse {
 			this.osTag = osTag;
 		}
 
-		public String getSchedulerType() {
-			return this.schedulerType;
-		}
-
-		public void setSchedulerType(String schedulerType) {
-			this.schedulerType = schedulerType;
-		}
-
 		public String getSchedulerVersion() {
 			return this.schedulerVersion;
 		}
 
 		public void setSchedulerVersion(String schedulerVersion) {
 			this.schedulerVersion = schedulerVersion;
+		}
+
+		public String getAccountVersion() {
+			return this.accountVersion;
+		}
+
+		public void setAccountVersion(String accountVersion) {
+			this.accountVersion = accountVersion;
 		}
 
 		public String getAccountType() {
@@ -101,12 +101,12 @@ public class ListSoftwaresResponse extends AcsResponse {
 			this.accountType = accountType;
 		}
 
-		public String getAccountVersion() {
-			return this.accountVersion;
+		public String getEhpcVersion() {
+			return this.ehpcVersion;
 		}
 
-		public void setAccountVersion(String accountVersion) {
-			this.accountVersion = accountVersion;
+		public void setEhpcVersion(String ehpcVersion) {
+			this.ehpcVersion = ehpcVersion;
 		}
 
 		public List<ApplicationInfo> getApplications() {
@@ -119,13 +119,21 @@ public class ListSoftwaresResponse extends AcsResponse {
 
 		public static class ApplicationInfo {
 
+			private Boolean required;
+
 			private String tag;
 
 			private String name;
 
 			private String version;
 
-			private Boolean required;
+			public Boolean getRequired() {
+				return this.required;
+			}
+
+			public void setRequired(Boolean required) {
+				this.required = required;
+			}
 
 			public String getTag() {
 				return this.tag;
@@ -149,14 +157,6 @@ public class ListSoftwaresResponse extends AcsResponse {
 
 			public void setVersion(String version) {
 				this.version = version;
-			}
-
-			public Boolean getRequired() {
-				return this.required;
-			}
-
-			public void setRequired(Boolean required) {
-				this.required = required;
 			}
 		}
 	}

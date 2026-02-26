@@ -28,6 +28,8 @@ public class ListActivatedAlertsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String message;
+
 	private Page page;
 
 	public String getRequestId() {
@@ -36,6 +38,14 @@ public class ListActivatedAlertsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Page getPage() {

@@ -27,11 +27,11 @@ public class DescribeDBInstanceIPArrayListRequest extends RpcAcsRequest<Describe
 
 	private Long resourceOwnerId;
 
-	private String ownerAccount;
-
 	private String whitelistNetworkType;
 
 	private String dBInstanceId;
+
+	private String ownerAccount;
 	public DescribeDBInstanceIPArrayListRequest() {
 		super("Rds", "2014-08-15", "DescribeDBInstanceIPArrayList", "rds");
 		setMethod(MethodType.POST);
@@ -49,17 +49,6 @@ public class DescribeDBInstanceIPArrayListRequest extends RpcAcsRequest<Describe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -82,6 +71,17 @@ public class DescribeDBInstanceIPArrayListRequest extends RpcAcsRequest<Describe
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

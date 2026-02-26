@@ -19,6 +19,14 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.Attribute;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.Clock;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.CpuOptions;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.EnhancedNetwork;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkCardInfo;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkInfo;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkInfo.BandwidthWeighting;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkInfo.BandwidthWeighting.WeightingInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -61,6 +69,82 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setInstanceTypeFamily(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeFamily"));
 			instanceType.setEniQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniQuantity"));
 			instanceType.setEniTrunkSupported(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniTrunkSupported"));
+			instanceType.setCpuSpeedFrequency(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuSpeedFrequency"));
+			instanceType.setCpuTurboFrequency(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuTurboFrequency"));
+			instanceType.setPhysicalProcessorModel(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].PhysicalProcessorModel"));
+			instanceType.setNetworkEncryptionSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkEncryptionSupport"));
+			instanceType.setInstanceCategory(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceCategory"));
+			instanceType.setCpuArchitecture(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuArchitecture"));
+			instanceType.setGPUMemorySize(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUMemorySize"));
+			instanceType.setNetworkCardQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCardQuantity"));
+			instanceType.setJumboFrameSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].JumboFrameSupport"));
+
+			List<String> supportedBootModes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].SupportedBootModes.Length"); j++) {
+				supportedBootModes.add(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].SupportedBootModes["+ j +"]"));
+			}
+			instanceType.setSupportedBootModes(supportedBootModes);
+
+			EnhancedNetwork enhancedNetwork = new EnhancedNetwork();
+			enhancedNetwork.setSriovSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.SriovSupport"));
+			enhancedNetwork.setVfQueueNumberPerEni(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.VfQueueNumberPerEni"));
+			enhancedNetwork.setRssSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.RssSupport"));
+			instanceType.setEnhancedNetwork(enhancedNetwork);
+
+			CpuOptions cpuOptions = new CpuOptions();
+			cpuOptions.setThreadsPerCore(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.ThreadsPerCore"));
+			cpuOptions.setCore(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.Core"));
+			cpuOptions.setCoreFactor(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.CoreFactor"));
+			cpuOptions.setHyperThreadingAdjustable(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.HyperThreadingAdjustable"));
+
+			List<String> supportedTopologyTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.SupportedTopologyTypes.Length"); j++) {
+				supportedTopologyTypes.add(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.SupportedTopologyTypes["+ j +"]"));
+			}
+			cpuOptions.setSupportedTopologyTypes(supportedTopologyTypes);
+			instanceType.setCpuOptions(cpuOptions);
+
+			Clock clock = new Clock();
+			clock.setPtpSupport(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Clock.PtpSupport"));
+			instanceType.setClock(clock);
+
+			NetworkInfo networkInfo = new NetworkInfo();
+
+			BandwidthWeighting bandwidthWeighting = new BandwidthWeighting();
+
+			List<WeightingInfo> weightingInfos = new ArrayList<WeightingInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos.Length"); j++) {
+				WeightingInfo weightingInfo = new WeightingInfo();
+				weightingInfo.setVpcBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].VpcBandwidth"));
+				weightingInfo.setEbsBurstBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].EbsBurstBandwidth"));
+				weightingInfo.setEbsBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].EbsBandwidth"));
+				weightingInfo.setVpcBurstBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].VpcBurstBandwidth"));
+				weightingInfo.setName(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].Name"));
+
+				weightingInfos.add(weightingInfo);
+			}
+			bandwidthWeighting.setWeightingInfos(weightingInfos);
+			networkInfo.setBandwidthWeighting(bandwidthWeighting);
+			instanceType.setNetworkInfo(networkInfo);
+
+			List<NetworkCardInfo> networkCards = new ArrayList<NetworkCardInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCards.Length"); j++) {
+				NetworkCardInfo networkCardInfo = new NetworkCardInfo();
+				networkCardInfo.setNetworkCardIndex(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCards["+ j +"].NetworkCardIndex"));
+
+				networkCards.add(networkCardInfo);
+			}
+			instanceType.setNetworkCards(networkCards);
+
+			List<Attribute> attributes = new ArrayList<Attribute>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Attributes.Length"); j++) {
+				Attribute attribute = new Attribute();
+				attribute.setName(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Attributes["+ j +"].Name"));
+				attribute.setValue(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Attributes["+ j +"].Value"));
+
+				attributes.add(attribute);
+			}
+			instanceType.setAttributes(attributes);
 
 			instanceTypes.add(instanceType);
 		}

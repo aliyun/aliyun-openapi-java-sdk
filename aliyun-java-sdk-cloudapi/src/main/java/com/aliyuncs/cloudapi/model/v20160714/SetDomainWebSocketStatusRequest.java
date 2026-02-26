@@ -23,15 +23,9 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class SetDomainWebSocketStatusRequest extends RpcAcsRequest<SetDomainWebSocketStatusResponse> {
-	
-	public SetDomainWebSocketStatusRequest() {
-		super("CloudAPI", "2016-07-14", "SetDomainWebSocketStatus", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String wSSEnable;
 
 	private String groupId;
 
@@ -40,6 +34,25 @@ public class SetDomainWebSocketStatusRequest extends RpcAcsRequest<SetDomainWebS
 	private String securityToken;
 
 	private String actionValue;
+	public SetDomainWebSocketStatusRequest() {
+		super("CloudAPI", "2016-07-14", "SetDomainWebSocketStatus", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getWSSEnable() {
+		return this.wSSEnable;
+	}
+
+	public void setWSSEnable(String wSSEnable) {
+		this.wSSEnable = wSSEnable;
+		if(wSSEnable != null){
+			putQueryParameter("WSSEnable", wSSEnable);
+		}
+	}
 
 	public String getGroupId() {
 		return this.groupId;
@@ -63,29 +76,10 @@ public class SetDomainWebSocketStatusRequest extends RpcAcsRequest<SetDomainWebS
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

@@ -34,9 +34,9 @@ public class ListProductDimensionGroupsResponseUnmarshaller {
 		List<DimensionGroupsItem> dimensionGroups = new ArrayList<DimensionGroupsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListProductDimensionGroupsResponse.DimensionGroups.Length"); i++) {
 			DimensionGroupsItem dimensionGroupsItem = new DimensionGroupsItem();
-			dimensionGroupsItem.setGroupName(_ctx.stringValue("ListProductDimensionGroupsResponse.DimensionGroups["+ i +"].GroupName"));
 			dimensionGroupsItem.setProductCode(_ctx.stringValue("ListProductDimensionGroupsResponse.DimensionGroups["+ i +"].ProductCode"));
 			dimensionGroupsItem.setGroupCode(_ctx.stringValue("ListProductDimensionGroupsResponse.DimensionGroups["+ i +"].GroupCode"));
+			dimensionGroupsItem.setGroupName(_ctx.stringValue("ListProductDimensionGroupsResponse.DimensionGroups["+ i +"].GroupName"));
 
 			List<String> dimensionKeys = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListProductDimensionGroupsResponse.DimensionGroups["+ i +"].DimensionKeys.Length"); j++) {

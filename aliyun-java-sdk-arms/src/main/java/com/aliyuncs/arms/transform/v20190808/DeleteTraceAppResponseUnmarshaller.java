@@ -24,6 +24,9 @@ public class DeleteTraceAppResponseUnmarshaller {
 		
 		deleteTraceAppResponse.setRequestId(_ctx.stringValue("DeleteTraceAppResponse.RequestId"));
 		deleteTraceAppResponse.setData(_ctx.stringValue("DeleteTraceAppResponse.Data"));
+		deleteTraceAppResponse.setMessage(_ctx.stringValue("DeleteTraceAppResponse.Message"));
+		deleteTraceAppResponse.setCode(_ctx.longValue("DeleteTraceAppResponse.Code"));
+		deleteTraceAppResponse.setSuccess(_ctx.booleanValue("DeleteTraceAppResponse.Success"));
 	 
 	 	return deleteTraceAppResponse;
 	}

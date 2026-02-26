@@ -27,23 +27,23 @@ public class DescribeApiHistoriesResponseUnmarshaller {
 	public static DescribeApiHistoriesResponse unmarshall(DescribeApiHistoriesResponse describeApiHistoriesResponse, UnmarshallerContext _ctx) {
 		
 		describeApiHistoriesResponse.setRequestId(_ctx.stringValue("DescribeApiHistoriesResponse.RequestId"));
-		describeApiHistoriesResponse.setTotalCount(_ctx.integerValue("DescribeApiHistoriesResponse.TotalCount"));
-		describeApiHistoriesResponse.setPageSize(_ctx.integerValue("DescribeApiHistoriesResponse.PageSize"));
 		describeApiHistoriesResponse.setPageNumber(_ctx.integerValue("DescribeApiHistoriesResponse.PageNumber"));
+		describeApiHistoriesResponse.setPageSize(_ctx.integerValue("DescribeApiHistoriesResponse.PageSize"));
+		describeApiHistoriesResponse.setTotalCount(_ctx.integerValue("DescribeApiHistoriesResponse.TotalCount"));
 
 		List<ApiHisItem> apiHisItems = new ArrayList<ApiHisItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApiHistoriesResponse.ApiHisItems.Length"); i++) {
 			ApiHisItem apiHisItem = new ApiHisItem();
-			apiHisItem.setRegionId(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].RegionId"));
+			apiHisItem.setStatus(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].Status"));
 			apiHisItem.setApiId(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].ApiId"));
-			apiHisItem.setApiName(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].ApiName"));
-			apiHisItem.setGroupId(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].GroupId"));
+			apiHisItem.setDescription(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].Description"));
 			apiHisItem.setGroupName(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].GroupName"));
+			apiHisItem.setGroupId(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].GroupId"));
+			apiHisItem.setDeployedTime(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].DeployedTime"));
 			apiHisItem.setStageName(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].StageName"));
 			apiHisItem.setHistoryVersion(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].HistoryVersion"));
-			apiHisItem.setStatus(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].Status"));
-			apiHisItem.setDescription(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].Description"));
-			apiHisItem.setDeployedTime(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].DeployedTime"));
+			apiHisItem.setApiName(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].ApiName"));
+			apiHisItem.setRegionId(_ctx.stringValue("DescribeApiHistoriesResponse.ApiHisItems["+ i +"].RegionId"));
 
 			apiHisItems.add(apiHisItem);
 		}

@@ -170,6 +170,22 @@ public class ImAuditResponse extends AcsResponse {
 
 				private String suggestion;
 
+				private List<HintWordsInfoItem> hintWordsInfo;
+
+				private List<QrcodeLocationsItem> qrcodeLocations;
+
+				private List<ProgramCodeDataItem> programCodeData;
+
+				private List<LogoDataItem> logoData;
+
+				private List<SfaceDataItem> sfaceData;
+
+				private List<FramesItem> frames;
+
+				private List<String> qrcodeData;
+
+				private List<String> ocrData;
+
 				public String getLabel() {
 					return this.label;
 				}
@@ -200,6 +216,351 @@ public class ImAuditResponse extends AcsResponse {
 
 				public void setSuggestion(String suggestion) {
 					this.suggestion = suggestion;
+				}
+
+				public List<HintWordsInfoItem> getHintWordsInfo() {
+					return this.hintWordsInfo;
+				}
+
+				public void setHintWordsInfo(List<HintWordsInfoItem> hintWordsInfo) {
+					this.hintWordsInfo = hintWordsInfo;
+				}
+
+				public List<QrcodeLocationsItem> getQrcodeLocations() {
+					return this.qrcodeLocations;
+				}
+
+				public void setQrcodeLocations(List<QrcodeLocationsItem> qrcodeLocations) {
+					this.qrcodeLocations = qrcodeLocations;
+				}
+
+				public List<ProgramCodeDataItem> getProgramCodeData() {
+					return this.programCodeData;
+				}
+
+				public void setProgramCodeData(List<ProgramCodeDataItem> programCodeData) {
+					this.programCodeData = programCodeData;
+				}
+
+				public List<LogoDataItem> getLogoData() {
+					return this.logoData;
+				}
+
+				public void setLogoData(List<LogoDataItem> logoData) {
+					this.logoData = logoData;
+				}
+
+				public List<SfaceDataItem> getSfaceData() {
+					return this.sfaceData;
+				}
+
+				public void setSfaceData(List<SfaceDataItem> sfaceData) {
+					this.sfaceData = sfaceData;
+				}
+
+				public List<FramesItem> getFrames() {
+					return this.frames;
+				}
+
+				public void setFrames(List<FramesItem> frames) {
+					this.frames = frames;
+				}
+
+				public List<String> getQrcodeData() {
+					return this.qrcodeData;
+				}
+
+				public void setQrcodeData(List<String> qrcodeData) {
+					this.qrcodeData = qrcodeData;
+				}
+
+				public List<String> getOcrData() {
+					return this.ocrData;
+				}
+
+				public void setOcrData(List<String> ocrData) {
+					this.ocrData = ocrData;
+				}
+
+				public static class HintWordsInfoItem {
+
+					private String context;
+
+					public String getContext() {
+						return this.context;
+					}
+
+					public void setContext(String context) {
+						this.context = context;
+					}
+				}
+
+				public static class QrcodeLocationsItem {
+
+					private Float x;
+
+					private Float y;
+
+					private Float w;
+
+					private Float h;
+
+					private String qrcode;
+
+					public Float getX() {
+						return this.x;
+					}
+
+					public void setX(Float x) {
+						this.x = x;
+					}
+
+					public Float getY() {
+						return this.y;
+					}
+
+					public void setY(Float y) {
+						this.y = y;
+					}
+
+					public Float getW() {
+						return this.w;
+					}
+
+					public void setW(Float w) {
+						this.w = w;
+					}
+
+					public Float getH() {
+						return this.h;
+					}
+
+					public void setH(Float h) {
+						this.h = h;
+					}
+
+					public String getQrcode() {
+						return this.qrcode;
+					}
+
+					public void setQrcode(String qrcode) {
+						this.qrcode = qrcode;
+					}
+				}
+
+				public static class ProgramCodeDataItem {
+
+					private Float x;
+
+					private Float y;
+
+					private Float w;
+
+					private Float h;
+
+					public Float getX() {
+						return this.x;
+					}
+
+					public void setX(Float x) {
+						this.x = x;
+					}
+
+					public Float getY() {
+						return this.y;
+					}
+
+					public void setY(Float y) {
+						this.y = y;
+					}
+
+					public Float getW() {
+						return this.w;
+					}
+
+					public void setW(Float w) {
+						this.w = w;
+					}
+
+					public Float getH() {
+						return this.h;
+					}
+
+					public void setH(Float h) {
+						this.h = h;
+					}
+				}
+
+				public static class LogoDataItem {
+
+					private String type;
+
+					private String name;
+
+					private Float x;
+
+					private Float y;
+
+					private Float w;
+
+					private Float h;
+
+					public String getType() {
+						return this.type;
+					}
+
+					public void setType(String type) {
+						this.type = type;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public Float getX() {
+						return this.x;
+					}
+
+					public void setX(Float x) {
+						this.x = x;
+					}
+
+					public Float getY() {
+						return this.y;
+					}
+
+					public void setY(Float y) {
+						this.y = y;
+					}
+
+					public Float getW() {
+						return this.w;
+					}
+
+					public void setW(Float w) {
+						this.w = w;
+					}
+
+					public Float getH() {
+						return this.h;
+					}
+
+					public void setH(Float h) {
+						this.h = h;
+					}
+				}
+
+				public static class SfaceDataItem {
+
+					private Float x;
+
+					private Float y;
+
+					private Float w;
+
+					private Float h;
+
+					private List<FacesItem> faces;
+
+					public Float getX() {
+						return this.x;
+					}
+
+					public void setX(Float x) {
+						this.x = x;
+					}
+
+					public Float getY() {
+						return this.y;
+					}
+
+					public void setY(Float y) {
+						this.y = y;
+					}
+
+					public Float getW() {
+						return this.w;
+					}
+
+					public void setW(Float w) {
+						this.w = w;
+					}
+
+					public Float getH() {
+						return this.h;
+					}
+
+					public void setH(Float h) {
+						this.h = h;
+					}
+
+					public List<FacesItem> getFaces() {
+						return this.faces;
+					}
+
+					public void setFaces(List<FacesItem> faces) {
+						this.faces = faces;
+					}
+
+					public static class FacesItem {
+
+						private String name;
+
+						private Float re;
+
+						private String idid;
+
+						public String getName() {
+							return this.name;
+						}
+
+						public void setName(String name) {
+							this.name = name;
+						}
+
+						public Float getRe() {
+							return this.re;
+						}
+
+						public void setRe(Float re) {
+							this.re = re;
+						}
+
+						public String getIdid() {
+							return this.idid;
+						}
+
+						public void setIdid(String idid) {
+							this.idid = idid;
+						}
+					}
+				}
+
+				public static class FramesItem {
+
+					private Float rate;
+
+					private String url;
+
+					public Float getRate() {
+						return this.rate;
+					}
+
+					public void setRate(Float rate) {
+						this.rate = rate;
+					}
+
+					public String getUrl() {
+						return this.url;
+					}
+
+					public void setUrl(String url) {
+						this.url = url;
+					}
 				}
 			}
 		}
@@ -335,12 +696,75 @@ public class ImAuditResponse extends AcsResponse {
 
 					private String label;
 
+					private List<ContextsItem> contexts;
+
 					public String getLabel() {
 						return this.label;
 					}
 
 					public void setLabel(String label) {
 						this.label = label;
+					}
+
+					public List<ContextsItem> getContexts() {
+						return this.contexts;
+					}
+
+					public void setContexts(List<ContextsItem> contexts) {
+						this.contexts = contexts;
+					}
+
+					public static class ContextsItem {
+
+						private String context;
+
+						private String libName;
+
+						private String libCode;
+
+						private String ruleType;
+
+						private List<String> positions;
+
+						public String getContext() {
+							return this.context;
+						}
+
+						public void setContext(String context) {
+							this.context = context;
+						}
+
+						public String getLibName() {
+							return this.libName;
+						}
+
+						public void setLibName(String libName) {
+							this.libName = libName;
+						}
+
+						public String getLibCode() {
+							return this.libCode;
+						}
+
+						public void setLibCode(String libCode) {
+							this.libCode = libCode;
+						}
+
+						public String getRuleType() {
+							return this.ruleType;
+						}
+
+						public void setRuleType(String ruleType) {
+							this.ruleType = ruleType;
+						}
+
+						public List<String> getPositions() {
+							return this.positions;
+						}
+
+						public void setPositions(List<String> positions) {
+							this.positions = positions;
+						}
 					}
 				}
 			}

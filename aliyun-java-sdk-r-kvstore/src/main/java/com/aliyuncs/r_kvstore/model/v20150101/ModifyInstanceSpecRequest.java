@@ -27,11 +27,19 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private Long resourceOwnerId;
 
+	private String nodeType;
+
 	private String clientToken;
+
+	private Integer slaveReadOnlyCount;
 
 	private String couponNo;
 
+	private Integer storage;
+
 	private String instanceClass;
+
+	private String storageType;
 
 	private String securityToken;
 
@@ -40,6 +48,8 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 	private String sourceBiz;
 
 	private String businessInfo;
+
+	private Integer shardCount;
 
 	private Boolean autoPay;
 
@@ -51,11 +61,19 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private Long ownerId;
 
+	private Boolean forceTrans;
+
 	private String instanceId;
+
+	private Integer readOnlyCount;
 
 	private Boolean forceUpgrade;
 
+	private Integer slaveReplicaCount;
+
 	private String orderType;
+
+	private Integer replicaCount;
 	public ModifyInstanceSpecRequest() {
 		super("R-kvstore", "2015-01-01", "ModifyInstanceSpec", "redisa");
 		setMethod(MethodType.POST);
@@ -76,6 +94,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		}
 	}
 
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -84,6 +113,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Integer getSlaveReadOnlyCount() {
+		return this.slaveReadOnlyCount;
+	}
+
+	public void setSlaveReadOnlyCount(Integer slaveReadOnlyCount) {
+		this.slaveReadOnlyCount = slaveReadOnlyCount;
+		if(slaveReadOnlyCount != null){
+			putQueryParameter("SlaveReadOnlyCount", slaveReadOnlyCount.toString());
 		}
 	}
 
@@ -98,6 +138,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		}
 	}
 
+	public Integer getStorage() {
+		return this.storage;
+	}
+
+	public void setStorage(Integer storage) {
+		this.storage = storage;
+		if(storage != null){
+			putQueryParameter("Storage", storage.toString());
+		}
+	}
+
 	public String getInstanceClass() {
 		return this.instanceClass;
 	}
@@ -106,6 +157,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.instanceClass = instanceClass;
 		if(instanceClass != null){
 			putQueryParameter("InstanceClass", instanceClass);
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
 		}
 	}
 
@@ -150,6 +212,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.businessInfo = businessInfo;
 		if(businessInfo != null){
 			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public Integer getShardCount() {
+		return this.shardCount;
+	}
+
+	public void setShardCount(Integer shardCount) {
+		this.shardCount = shardCount;
+		if(shardCount != null){
+			putQueryParameter("ShardCount", shardCount.toString());
 		}
 	}
 
@@ -208,6 +281,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		}
 	}
 
+	public Boolean getForceTrans() {
+		return this.forceTrans;
+	}
+
+	public void setForceTrans(Boolean forceTrans) {
+		this.forceTrans = forceTrans;
+		if(forceTrans != null){
+			putQueryParameter("ForceTrans", forceTrans.toString());
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -216,6 +300,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getReadOnlyCount() {
+		return this.readOnlyCount;
+	}
+
+	public void setReadOnlyCount(Integer readOnlyCount) {
+		this.readOnlyCount = readOnlyCount;
+		if(readOnlyCount != null){
+			putQueryParameter("ReadOnlyCount", readOnlyCount.toString());
 		}
 	}
 
@@ -230,6 +325,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		}
 	}
 
+	public Integer getSlaveReplicaCount() {
+		return this.slaveReplicaCount;
+	}
+
+	public void setSlaveReplicaCount(Integer slaveReplicaCount) {
+		this.slaveReplicaCount = slaveReplicaCount;
+		if(slaveReplicaCount != null){
+			putQueryParameter("SlaveReplicaCount", slaveReplicaCount.toString());
+		}
+	}
+
 	public String getOrderType() {
 		return this.orderType;
 	}
@@ -238,6 +344,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.orderType = orderType;
 		if(orderType != null){
 			putQueryParameter("OrderType", orderType);
+		}
+	}
+
+	public Integer getReplicaCount() {
+		return this.replicaCount;
+	}
+
+	public void setReplicaCount(Integer replicaCount) {
+		this.replicaCount = replicaCount;
+		if(replicaCount != null){
+			putQueryParameter("ReplicaCount", replicaCount.toString());
 		}
 	}
 

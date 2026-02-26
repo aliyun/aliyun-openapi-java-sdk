@@ -31,6 +31,10 @@ public class ImportSwaggerResponse extends AcsResponse {
 
 	private List<ApiImportSwaggerFailed> failed;
 
+	private List<ApiImportModelFailed> modelFailed;
+
+	private List<ApiImportModelSuccess> modelSuccess;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -55,15 +59,31 @@ public class ImportSwaggerResponse extends AcsResponse {
 		this.failed = failed;
 	}
 
+	public List<ApiImportModelFailed> getModelFailed() {
+		return this.modelFailed;
+	}
+
+	public void setModelFailed(List<ApiImportModelFailed> modelFailed) {
+		this.modelFailed = modelFailed;
+	}
+
+	public List<ApiImportModelSuccess> getModelSuccess() {
+		return this.modelSuccess;
+	}
+
+	public void setModelSuccess(List<ApiImportModelSuccess> modelSuccess) {
+		this.modelSuccess = modelSuccess;
+	}
+
 	public static class ApiImportSwaggerSuccess {
 
 		private String path;
 
 		private String httpMethod;
 
-		private String apiUid;
-
 		private String apiOperation;
+
+		private String apiUid;
 
 		public String getPath() {
 			return this.path;
@@ -81,20 +101,20 @@ public class ImportSwaggerResponse extends AcsResponse {
 			this.httpMethod = httpMethod;
 		}
 
-		public String getApiUid() {
-			return this.apiUid;
-		}
-
-		public void setApiUid(String apiUid) {
-			this.apiUid = apiUid;
-		}
-
 		public String getApiOperation() {
 			return this.apiOperation;
 		}
 
 		public void setApiOperation(String apiOperation) {
 			this.apiOperation = apiOperation;
+		}
+
+		public String getApiUid() {
+			return this.apiUid;
+		}
+
+		public void setApiUid(String apiUid) {
+			this.apiUid = apiUid;
 		}
 	}
 
@@ -128,6 +148,82 @@ public class ImportSwaggerResponse extends AcsResponse {
 
 		public void setErrorMsg(String errorMsg) {
 			this.errorMsg = errorMsg;
+		}
+	}
+
+	public static class ApiImportModelFailed {
+
+		private String errorMsg;
+
+		private String modelName;
+
+		private String groupId;
+
+		public String getErrorMsg() {
+			return this.errorMsg;
+		}
+
+		public void setErrorMsg(String errorMsg) {
+			this.errorMsg = errorMsg;
+		}
+
+		public String getModelName() {
+			return this.modelName;
+		}
+
+		public void setModelName(String modelName) {
+			this.modelName = modelName;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+	}
+
+	public static class ApiImportModelSuccess {
+
+		private String modelUid;
+
+		private String modelName;
+
+		private String groupId;
+
+		private String modelOperation;
+
+		public String getModelUid() {
+			return this.modelUid;
+		}
+
+		public void setModelUid(String modelUid) {
+			this.modelUid = modelUid;
+		}
+
+		public String getModelName() {
+			return this.modelName;
+		}
+
+		public void setModelName(String modelName) {
+			this.modelName = modelName;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getModelOperation() {
+			return this.modelOperation;
+		}
+
+		public void setModelOperation(String modelOperation) {
+			this.modelOperation = modelOperation;
 		}
 	}
 

@@ -27,6 +27,8 @@ public class StopAppServerRequest extends RpcAcsRequest<StopAppServerResponse> {
 	private String appId;
 
 	private String envId;
+
+	private String source;
 	public StopAppServerRequest() {
 		super("miniapplcdp", "2020-01-13", "StopAppServer");
 		setMethod(MethodType.POST);
@@ -51,6 +53,17 @@ public class StopAppServerRequest extends RpcAcsRequest<StopAppServerResponse> {
 		this.envId = envId;
 		if(envId != null){
 			putQueryParameter("EnvId", envId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

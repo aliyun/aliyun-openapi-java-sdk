@@ -23,6 +23,7 @@ public class CreateDcdnDeliverTaskResponseUnmarshaller {
 	public static CreateDcdnDeliverTaskResponse unmarshall(CreateDcdnDeliverTaskResponse createDcdnDeliverTaskResponse, UnmarshallerContext _ctx) {
 		
 		createDcdnDeliverTaskResponse.setRequestId(_ctx.stringValue("CreateDcdnDeliverTaskResponse.RequestId"));
+		createDcdnDeliverTaskResponse.setDeliverId(_ctx.stringValue("CreateDcdnDeliverTaskResponse.DeliverId"));
 	 
 	 	return createDcdnDeliverTaskResponse;
 	}

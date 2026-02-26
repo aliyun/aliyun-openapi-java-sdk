@@ -30,9 +30,9 @@ public class UpdateHanaBackupPlanRequest extends RpcAcsRequest<UpdateHanaBackupP
 
 	private String clusterId;
 
-	private String token;
-
 	private String schedule;
+
+	private String resourceGroupId;
 
 	private String backupPrefix;
 
@@ -71,17 +71,6 @@ public class UpdateHanaBackupPlanRequest extends RpcAcsRequest<UpdateHanaBackupP
 		}
 	}
 
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
-		}
-	}
-
 	public String getSchedule() {
 		return this.schedule;
 	}
@@ -90,6 +79,17 @@ public class UpdateHanaBackupPlanRequest extends RpcAcsRequest<UpdateHanaBackupP
 		this.schedule = schedule;
 		if(schedule != null){
 			putQueryParameter("Schedule", schedule);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

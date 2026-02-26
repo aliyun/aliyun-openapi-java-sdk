@@ -52,6 +52,8 @@ public class RecognizeBankCardResponse extends AcsResponse {
 
 		private String bankName;
 
+		private String cardType;
+
 		public String getCardNumber() {
 			return this.cardNumber;
 		}
@@ -74,6 +76,14 @@ public class RecognizeBankCardResponse extends AcsResponse {
 
 		public void setBankName(String bankName) {
 			this.bankName = bankName;
+		}
+
+		public String getCardType() {
+			return this.cardType;
+		}
+
+		public void setCardType(String cardType) {
+			this.cardType = cardType;
 		}
 	}
 

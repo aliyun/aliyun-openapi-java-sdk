@@ -32,9 +32,18 @@ public class DescribeTransferHistoryResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeTransferHistoryResponse.HistoryDetails.Length"); i++) {
 			HistoryDetail historyDetail = new HistoryDetail();
 			historyDetail.setSourceDBCluster(_ctx.stringValue("DescribeTransferHistoryResponse.HistoryDetails["+ i +"].SourceDBCluster"));
+			historyDetail.setSourceControlVersion(_ctx.stringValue("DescribeTransferHistoryResponse.HistoryDetails["+ i +"].SourceControlVersion"));
 			historyDetail.setTargetDBCluster(_ctx.stringValue("DescribeTransferHistoryResponse.HistoryDetails["+ i +"].TargetDBCluster"));
+			historyDetail.setTargetControlVersion(_ctx.stringValue("DescribeTransferHistoryResponse.HistoryDetails["+ i +"].TargetControlVersion"));
 			historyDetail.setStatus(_ctx.stringValue("DescribeTransferHistoryResponse.HistoryDetails["+ i +"].Status"));
 			historyDetail.setProgress(_ctx.stringValue("DescribeTransferHistoryResponse.HistoryDetails["+ i +"].Progress"));
+			historyDetail.setDisableWriteWindows(_ctx.stringValue("DescribeTransferHistoryResponse.HistoryDetails["+ i +"].DisableWriteWindows"));
+			historyDetail.setUnsyncedBytes(_ctx.longValue("DescribeTransferHistoryResponse.HistoryDetails["+ i +"].UnsyncedBytes"));
+			historyDetail.setUnsyncedParts(_ctx.longValue("DescribeTransferHistoryResponse.HistoryDetails["+ i +"].UnsyncedParts"));
+			historyDetail.setPartsPerMinute(_ctx.doubleValue("DescribeTransferHistoryResponse.HistoryDetails["+ i +"].PartsPerMinute"));
+			historyDetail.setBytesPerMinute(_ctx.longValue("DescribeTransferHistoryResponse.HistoryDetails["+ i +"].BytesPerMinute"));
+			historyDetail.setSubJob(_ctx.stringValue("DescribeTransferHistoryResponse.HistoryDetails["+ i +"].SubJob"));
+			historyDetail.setSubJobStatus(_ctx.stringValue("DescribeTransferHistoryResponse.HistoryDetails["+ i +"].SubJobStatus"));
 
 			historyDetails.add(historyDetail);
 		}

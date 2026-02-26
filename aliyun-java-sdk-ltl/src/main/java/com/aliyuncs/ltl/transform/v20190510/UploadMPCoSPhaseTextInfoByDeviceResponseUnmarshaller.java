@@ -24,9 +24,9 @@ public class UploadMPCoSPhaseTextInfoByDeviceResponseUnmarshaller {
 		
 		uploadMPCoSPhaseTextInfoByDeviceResponse.setRequestId(_ctx.stringValue("UploadMPCoSPhaseTextInfoByDeviceResponse.RequestId"));
 		uploadMPCoSPhaseTextInfoByDeviceResponse.setCode(_ctx.integerValue("UploadMPCoSPhaseTextInfoByDeviceResponse.Code"));
-		uploadMPCoSPhaseTextInfoByDeviceResponse.setSuccess(_ctx.booleanValue("UploadMPCoSPhaseTextInfoByDeviceResponse.Success"));
 		uploadMPCoSPhaseTextInfoByDeviceResponse.setMessage(_ctx.stringValue("UploadMPCoSPhaseTextInfoByDeviceResponse.Message"));
 		uploadMPCoSPhaseTextInfoByDeviceResponse.setData(_ctx.stringValue("UploadMPCoSPhaseTextInfoByDeviceResponse.Data"));
+		uploadMPCoSPhaseTextInfoByDeviceResponse.setSuccess(_ctx.booleanValue("UploadMPCoSPhaseTextInfoByDeviceResponse.Success"));
 	 
 	 	return uploadMPCoSPhaseTextInfoByDeviceResponse;
 	}

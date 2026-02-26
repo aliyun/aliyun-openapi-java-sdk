@@ -26,7 +26,11 @@ import com.aliyuncs.nas.Endpoint;
 public class DescribeFilesetsRequest extends RpcAcsRequest<DescribeFilesetsResponse> {
 	   
 
+	private String orderByField;
+
 	private String nextToken;
+
+	private String sortOrder;
 
 	private String fileSystemId;
 
@@ -34,12 +38,23 @@ public class DescribeFilesetsRequest extends RpcAcsRequest<DescribeFilesetsRespo
 
 	private Long maxResults;
 	public DescribeFilesetsRequest() {
-		super("NAS", "2017-06-26", "DescribeFilesets", "NAS");
+		super("NAS", "2017-06-26", "DescribeFilesets", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOrderByField() {
+		return this.orderByField;
+	}
+
+	public void setOrderByField(String orderByField) {
+		this.orderByField = orderByField;
+		if(orderByField != null){
+			putQueryParameter("OrderByField", orderByField);
+		}
 	}
 
 	public String getNextToken() {
@@ -50,6 +65,17 @@ public class DescribeFilesetsRequest extends RpcAcsRequest<DescribeFilesetsRespo
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+		if(sortOrder != null){
+			putQueryParameter("SortOrder", sortOrder);
 		}
 	}
 

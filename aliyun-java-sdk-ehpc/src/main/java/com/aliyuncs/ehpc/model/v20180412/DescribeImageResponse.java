@@ -46,13 +46,9 @@ public class DescribeImageResponse extends AcsResponse {
 
 	public static class ImageInfo {
 
-		private String system;
-
 		private String type;
 
 		private String status;
-
-		private String imageId;
 
 		private String updateDateTime;
 
@@ -60,13 +56,9 @@ public class DescribeImageResponse extends AcsResponse {
 
 		private String tag;
 
-		public String getSystem() {
-			return this.system;
-		}
+		private String system;
 
-		public void setSystem(String system) {
-			this.system = system;
-		}
+		private String imageId;
 
 		public String getType() {
 			return this.type;
@@ -82,14 +74,6 @@ public class DescribeImageResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
 		}
 
 		public String getUpdateDateTime() {
@@ -114,6 +98,22 @@ public class DescribeImageResponse extends AcsResponse {
 
 		public void setTag(String tag) {
 			this.tag = tag;
+		}
+
+		public String getSystem() {
+			return this.system;
+		}
+
+		public void setSystem(String system) {
+			this.system = system;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 	}
 

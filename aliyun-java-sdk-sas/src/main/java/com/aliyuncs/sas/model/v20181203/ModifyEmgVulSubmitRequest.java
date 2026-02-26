@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class ModifyEmgVulSubmitRequest extends RpcAcsRequest<ModifyEmgVulSubmitResponse> {
 	   
 
-	private String name;
-
 	private String userAgreement;
 
 	private String lang;
+
+	private String name;
 	public ModifyEmgVulSubmitRequest() {
 		super("Sas", "2018-12-03", "ModifyEmgVulSubmit");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class ModifyEmgVulSubmitRequest extends RpcAcsRequest<ModifyEmgVulSubmitR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
 	}
 
 	public String getUserAgreement() {
@@ -69,6 +58,17 @@ public class ModifyEmgVulSubmitRequest extends RpcAcsRequest<ModifyEmgVulSubmitR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

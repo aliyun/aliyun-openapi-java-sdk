@@ -34,6 +34,8 @@ public class RedeployDedicatedHostRequest extends RpcAcsRequest<RedeployDedicate
 	private String dedicatedHostId;
 
 	private Long ownerId;
+
+	private String migrationType;
 	public RedeployDedicatedHostRequest() {
 		super("Ecs", "2014-05-26", "RedeployDedicatedHost", "ecs");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class RedeployDedicatedHostRequest extends RpcAcsRequest<RedeployDedicate
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMigrationType() {
+		return this.migrationType;
+	}
+
+	public void setMigrationType(String migrationType) {
+		this.migrationType = migrationType;
+		if(migrationType != null){
+			putQueryParameter("MigrationType", migrationType);
 		}
 	}
 

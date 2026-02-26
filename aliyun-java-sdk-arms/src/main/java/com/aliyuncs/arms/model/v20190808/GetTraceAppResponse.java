@@ -65,6 +65,16 @@ public class GetTraceAppResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String source;
+
+		private String resourceGroupId;
+
+		private String clusterId;
+
+		private String language;
+
+		private List<TagsItem> tags;
+
 		private List<String> labels;
 
 		public String getType() {
@@ -139,12 +149,75 @@ public class GetTraceAppResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getLanguage() {
+			return this.language;
+		}
+
+		public void setLanguage(String language) {
+			this.language = language;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getLabels() {
 			return this.labels;
 		}
 
 		public void setLabels(List<String> labels) {
 			this.labels = labels;
+		}
+
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

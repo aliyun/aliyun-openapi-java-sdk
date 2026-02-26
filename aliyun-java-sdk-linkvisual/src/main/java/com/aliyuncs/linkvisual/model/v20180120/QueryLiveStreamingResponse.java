@@ -24,15 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryLiveStreamingResponse extends AcsResponse {
 
+	private String code;
+
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String errorMessage;
-
-	private String code;
-
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,22 +66,6 @@ public class QueryLiveStreamingResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -78,6 +78,10 @@ public class QueryLiveStreamingResponse extends AcsResponse {
 
 		private String path;
 
+		private String relayDecryptKey;
+
+		private String stunInfo;
+
 		private String decryptKey;
 
 		public String getPath() {
@@ -86,6 +90,22 @@ public class QueryLiveStreamingResponse extends AcsResponse {
 
 		public void setPath(String path) {
 			this.path = path;
+		}
+
+		public String getRelayDecryptKey() {
+			return this.relayDecryptKey;
+		}
+
+		public void setRelayDecryptKey(String relayDecryptKey) {
+			this.relayDecryptKey = relayDecryptKey;
+		}
+
+		public String getStunInfo() {
+			return this.stunInfo;
+		}
+
+		public void setStunInfo(String stunInfo) {
+			this.stunInfo = stunInfo;
 		}
 
 		public String getDecryptKey() {

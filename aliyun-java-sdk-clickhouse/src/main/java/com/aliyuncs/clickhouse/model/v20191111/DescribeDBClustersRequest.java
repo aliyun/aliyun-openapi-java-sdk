@@ -32,9 +32,9 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 
 	private String dBClusterStatus;
 
-	private String controlVersion;
-
 	private Integer pageNumber;
+
+	private String resourceGroupId;
 
 	private Integer pageSize;
 
@@ -48,7 +48,7 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 
 	private String dBClusterIds;
 	public DescribeDBClustersRequest() {
-		super("clickhouse", "2019-11-11", "DescribeDBClusters");
+		super("clickhouse", "2019-11-11", "DescribeDBClusters", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -89,17 +89,6 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		}
 	}
 
-	public String getControlVersion() {
-		return this.controlVersion;
-	}
-
-	public void setControlVersion(String controlVersion) {
-		this.controlVersion = controlVersion;
-		if(controlVersion != null){
-			putQueryParameter("ControlVersion", controlVersion);
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -108,6 +97,17 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

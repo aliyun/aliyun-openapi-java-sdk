@@ -21,6 +21,7 @@ import com.aliyuncs.vpc.model.v20160428.DescribeVirtualBorderRoutersResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVirtualBorderRoutersResponse.VirtualBorderRouterType;
 import com.aliyuncs.vpc.model.v20160428.DescribeVirtualBorderRoutersResponse.VirtualBorderRouterType.AssociatedCen;
 import com.aliyuncs.vpc.model.v20160428.DescribeVirtualBorderRoutersResponse.VirtualBorderRouterType.AssociatedPhysicalConnection;
+import com.aliyuncs.vpc.model.v20160428.DescribeVirtualBorderRoutersResponse.VirtualBorderRouterType.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -68,6 +69,13 @@ public class DescribeVirtualBorderRoutersResponseUnmarshaller {
 			virtualBorderRouterType.setAccessPointId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AccessPointId"));
 			virtualBorderRouterType.setPConnVbrChargeType(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PConnVbrChargeType"));
 			virtualBorderRouterType.setPhysicalConnectionId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PhysicalConnectionId"));
+			virtualBorderRouterType.setBandwidth(_ctx.integerValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].Bandwidth"));
+			virtualBorderRouterType.setResourceGroupId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].ResourceGroupId"));
+			virtualBorderRouterType.setEcrId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].EcrId"));
+			virtualBorderRouterType.setSitelinkEnable(_ctx.booleanValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].SitelinkEnable"));
+			virtualBorderRouterType.setEcrAttatchStatus(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].EcrAttatchStatus"));
+			virtualBorderRouterType.setEcrOwnerId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].EcrOwnerId"));
+			virtualBorderRouterType.setMtu(_ctx.integerValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].Mtu"));
 
 			List<AssociatedPhysicalConnection> associatedPhysicalConnections = new ArrayList<AssociatedPhysicalConnection>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections.Length"); j++) {
@@ -102,6 +110,16 @@ public class DescribeVirtualBorderRoutersResponseUnmarshaller {
 				associatedCens.add(associatedCen);
 			}
 			virtualBorderRouterType.setAssociatedCens(associatedCens);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			virtualBorderRouterType.setTags(tags);
 
 			virtualBorderRouterSet.add(virtualBorderRouterType);
 		}

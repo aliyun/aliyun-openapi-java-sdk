@@ -67,6 +67,8 @@ public class DescribeNetworkRulesResponse extends AcsResponse {
 
 		private Integer backendPort;
 
+		private String remark;
+
 		private List<String> realServers;
 
 		public Integer getFrontendPort() {
@@ -107,6 +109,14 @@ public class DescribeNetworkRulesResponse extends AcsResponse {
 
 		public void setBackendPort(Integer backendPort) {
 			this.backendPort = backendPort;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 
 		public List<String> getRealServers() {

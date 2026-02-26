@@ -23,8 +23,8 @@ public class CheckZoneNameResponseUnmarshaller {
 	public static CheckZoneNameResponse unmarshall(CheckZoneNameResponse checkZoneNameResponse, UnmarshallerContext _ctx) {
 		
 		checkZoneNameResponse.setRequestId(_ctx.stringValue("CheckZoneNameResponse.RequestId"));
-		checkZoneNameResponse.setSuccess(_ctx.booleanValue("CheckZoneNameResponse.Success"));
 		checkZoneNameResponse.setCheck(_ctx.booleanValue("CheckZoneNameResponse.Check"));
+		checkZoneNameResponse.setSuccess(_ctx.booleanValue("CheckZoneNameResponse.Success"));
 	 
 	 	return checkZoneNameResponse;
 	}

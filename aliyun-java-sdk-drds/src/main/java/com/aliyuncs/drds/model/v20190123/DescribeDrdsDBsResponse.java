@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDrdsDBsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
+	private String pageSize;
 
 	private String pageNumber;
 
-	private String pageSize;
+	private String requestId;
 
 	private String total;
 
+	private Boolean success;
+
 	private List<Db> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public String getPageNumber() {
@@ -61,12 +53,12 @@ public class DescribeDrdsDBsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTotal() {
@@ -75,6 +67,14 @@ public class DescribeDrdsDBsResponse extends AcsResponse {
 
 	public void setTotal(String total) {
 		this.total = total;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Db> getData() {
@@ -87,17 +87,25 @@ public class DescribeDrdsDBsResponse extends AcsResponse {
 
 	public static class Db {
 
+		private String status;
+
 		private String dbName;
 
-		private String status;
+		private String schema;
 
 		private String createTime;
 
 		private String mode;
 
-		private String schema;
-
 		private String dbInstType;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getDbName() {
 			return this.dbName;
@@ -107,12 +115,12 @@ public class DescribeDrdsDBsResponse extends AcsResponse {
 			this.dbName = dbName;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getSchema() {
+			return this.schema;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setSchema(String schema) {
+			this.schema = schema;
 		}
 
 		public String getCreateTime() {
@@ -129,14 +137,6 @@ public class DescribeDrdsDBsResponse extends AcsResponse {
 
 		public void setMode(String mode) {
 			this.mode = mode;
-		}
-
-		public String getSchema() {
-			return this.schema;
-		}
-
-		public void setSchema(String schema) {
-			this.schema = schema;
 		}
 
 		public String getDbInstType() {

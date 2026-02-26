@@ -31,6 +31,8 @@ public class DescribeSslVpnServersRequest extends RpcAcsRequest<DescribeSslVpnSe
 
 	private String sslVpnServerId;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private String resourceOwnerAccount;
@@ -81,6 +83,17 @@ public class DescribeSslVpnServersRequest extends RpcAcsRequest<DescribeSslVpnSe
 		this.sslVpnServerId = sslVpnServerId;
 		if(sslVpnServerId != null){
 			putQueryParameter("SslVpnServerId", sslVpnServerId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

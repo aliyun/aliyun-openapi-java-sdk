@@ -27,13 +27,13 @@ public class ReleaseReadWriteSplittingConnectionRequest extends RpcAcsRequest<Re
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String dBInstanceId;
 	public ReleaseReadWriteSplittingConnectionRequest() {
 		super("Rds", "2014-08-15", "ReleaseReadWriteSplittingConnection", "rds");
 		setMethod(MethodType.POST);
@@ -51,6 +51,17 @@ public class ReleaseReadWriteSplittingConnectionRequest extends RpcAcsRequest<Re
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class ReleaseReadWriteSplittingConnectionRequest extends RpcAcsRequest<Re
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

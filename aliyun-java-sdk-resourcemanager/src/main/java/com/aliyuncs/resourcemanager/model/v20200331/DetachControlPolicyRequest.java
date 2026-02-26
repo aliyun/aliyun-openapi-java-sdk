@@ -30,7 +30,7 @@ public class DetachControlPolicyRequest extends RpcAcsRequest<DetachControlPolic
 
 	private String policyId;
 	public DetachControlPolicyRequest() {
-		super("ResourceManager", "2020-03-31", "DetachControlPolicy");
+		super("ResourceManager", "2020-03-31", "DetachControlPolicy", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -30,6 +30,10 @@ public class ValidateShrinkNodesRequest extends RoaAcsRequest<ValidateShrinkNode
 	private String instanceId;
 
 	private String nodeType;
+
+	private Integer count;
+
+	private String body;
 	public ValidateShrinkNodesRequest() {
 		super("elasticsearch", "2017-06-13", "ValidateShrinkNodes", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/validate-shrink-nodes");
@@ -70,6 +74,28 @@ public class ValidateShrinkNodesRequest extends RoaAcsRequest<ValidateShrinkNode
 		this.nodeType = nodeType;
 		if(nodeType != null){
 			putQueryParameter("nodeType", nodeType);
+		}
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+		if(count != null){
+			putQueryParameter("count", count.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

@@ -48,6 +48,11 @@ public class GetVideoListResponseUnmarshaller {
 			video.setDuration(_ctx.floatValue("GetVideoListResponse.VideoList["+ i +"].Duration"));
 			video.setTitle(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Title"));
 			video.setModifyTime(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].ModifyTime"));
+			video.setStorageClass(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].StorageClass"));
+			video.setRestoreStatus(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].RestoreStatus"));
+			video.setRestoreExpiration(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].RestoreExpiration"));
+			video.setUserData(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].UserData"));
+			video.setReferenceId(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].ReferenceId"));
 
 			List<String> snapshots = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetVideoListResponse.VideoList["+ i +"].Snapshots.Length"); j++) {

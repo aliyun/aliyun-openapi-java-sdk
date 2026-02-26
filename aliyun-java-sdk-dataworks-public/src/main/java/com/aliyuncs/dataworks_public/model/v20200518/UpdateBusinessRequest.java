@@ -29,13 +29,13 @@ public class UpdateBusinessRequest extends RpcAcsRequest<UpdateBusinessResponse>
 
 	private Long businessId;
 
-	private String businessName;
-
 	private String description;
 
-	private Long projectId;
-
 	private String projectIdentifier;
+
+	private String businessName;
+
+	private Long projectId;
 	public UpdateBusinessRequest() {
 		super("dataworks-public", "2020-05-18", "UpdateBusiness");
 		setMethod(MethodType.POST);
@@ -67,17 +67,6 @@ public class UpdateBusinessRequest extends RpcAcsRequest<UpdateBusinessResponse>
 		}
 	}
 
-	public String getBusinessName() {
-		return this.businessName;
-	}
-
-	public void setBusinessName(String businessName) {
-		this.businessName = businessName;
-		if(businessName != null){
-			putBodyParameter("BusinessName", businessName);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -89,17 +78,6 @@ public class UpdateBusinessRequest extends RpcAcsRequest<UpdateBusinessResponse>
 		}
 	}
 
-	public Long getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(Long projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putBodyParameter("ProjectId", projectId.toString());
-		}
-	}
-
 	public String getProjectIdentifier() {
 		return this.projectIdentifier;
 	}
@@ -108,6 +86,28 @@ public class UpdateBusinessRequest extends RpcAcsRequest<UpdateBusinessResponse>
 		this.projectIdentifier = projectIdentifier;
 		if(projectIdentifier != null){
 			putBodyParameter("ProjectIdentifier", projectIdentifier);
+		}
+	}
+
+	public String getBusinessName() {
+		return this.businessName;
+	}
+
+	public void setBusinessName(String businessName) {
+		this.businessName = businessName;
+		if(businessName != null){
+			putBodyParameter("BusinessName", businessName);
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

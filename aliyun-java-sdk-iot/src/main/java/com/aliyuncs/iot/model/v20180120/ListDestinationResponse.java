@@ -121,6 +121,8 @@ public class ListDestinationResponse extends AcsResponse {
 
 		private String description;
 
+		private String status;
+
 		public Long getDestinationId() {
 			return this.destinationId;
 		}
@@ -175,6 +177,14 @@ public class ListDestinationResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

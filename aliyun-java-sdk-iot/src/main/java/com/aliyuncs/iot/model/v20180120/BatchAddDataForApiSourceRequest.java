@@ -31,7 +31,7 @@ public class BatchAddDataForApiSourceRequest extends RpcAcsRequest<BatchAddDataF
 
 	private String apiId;
 	public BatchAddDataForApiSourceRequest() {
-		super("Iot", "2018-01-20", "BatchAddDataForApiSource");
+		super("Iot", "2018-01-20", "BatchAddDataForApiSource", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

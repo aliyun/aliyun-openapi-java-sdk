@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.oos.model.v20190601.GetParametersByPathResponse;
 import com.aliyuncs.oos.model.v20190601.GetParametersByPathResponse.Parameter;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +47,7 @@ public class GetParametersByPathResponseUnmarshaller {
 			parameter.setName(_ctx.stringValue("GetParametersByPathResponse.Parameters["+ i +"].Name"));
 			parameter.setId(_ctx.stringValue("GetParametersByPathResponse.Parameters["+ i +"].Id"));
 			parameter.setShareType(_ctx.stringValue("GetParametersByPathResponse.Parameters["+ i +"].ShareType"));
+			parameter.setTags(_ctx.mapValue("GetParametersByPathResponse.Parameters["+ i +"].Tags"));
 
 			parameters.add(parameter);
 		}

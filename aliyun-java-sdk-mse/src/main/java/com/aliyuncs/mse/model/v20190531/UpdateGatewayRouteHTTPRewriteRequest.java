@@ -27,13 +27,13 @@ public class UpdateGatewayRouteHTTPRewriteRequest extends RpcAcsRequest<UpdateGa
 
 	private String gatewayUniqueId;
 
-	private String httpRewriteJSON;
-
-	private String acceptLanguage;
-
 	private Long id;
 
 	private Long gatewayId;
+
+	private String httpRewriteJSON;
+
+	private String acceptLanguage;
 	public UpdateGatewayRouteHTTPRewriteRequest() {
 		super("mse", "2019-05-31", "UpdateGatewayRouteHTTPRewrite", "mse");
 		setMethod(MethodType.POST);
@@ -51,28 +51,6 @@ public class UpdateGatewayRouteHTTPRewriteRequest extends RpcAcsRequest<UpdateGa
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
-		}
-	}
-
-	public String getHttpRewriteJSON() {
-		return this.httpRewriteJSON;
-	}
-
-	public void setHttpRewriteJSON(String httpRewriteJSON) {
-		this.httpRewriteJSON = httpRewriteJSON;
-		if(httpRewriteJSON != null){
-			putQueryParameter("HttpRewriteJSON", httpRewriteJSON);
-		}
-	}
-
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 
@@ -95,6 +73,28 @@ public class UpdateGatewayRouteHTTPRewriteRequest extends RpcAcsRequest<UpdateGa
 		this.gatewayId = gatewayId;
 		if(gatewayId != null){
 			putQueryParameter("GatewayId", gatewayId.toString());
+		}
+	}
+
+	public String getHttpRewriteJSON() {
+		return this.httpRewriteJSON;
+	}
+
+	public void setHttpRewriteJSON(String httpRewriteJSON) {
+		this.httpRewriteJSON = httpRewriteJSON;
+		if(httpRewriteJSON != null){
+			putQueryParameter("HttpRewriteJSON", httpRewriteJSON);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

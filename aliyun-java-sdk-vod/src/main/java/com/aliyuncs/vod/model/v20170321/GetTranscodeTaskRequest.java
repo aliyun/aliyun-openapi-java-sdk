@@ -26,6 +26,8 @@ public class GetTranscodeTaskRequest extends RpcAcsRequest<GetTranscodeTaskRespo
 	   
 
 	private String transcodeTaskId;
+
+	private String jobIds;
 	public GetTranscodeTaskRequest() {
 		super("vod", "2017-03-21", "GetTranscodeTask", "vod");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class GetTranscodeTaskRequest extends RpcAcsRequest<GetTranscodeTaskRespo
 		this.transcodeTaskId = transcodeTaskId;
 		if(transcodeTaskId != null){
 			putQueryParameter("TranscodeTaskId", transcodeTaskId);
+		}
+	}
+
+	public String getJobIds() {
+		return this.jobIds;
+	}
+
+	public void setJobIds(String jobIds) {
+		this.jobIds = jobIds;
+		if(jobIds != null){
+			putQueryParameter("JobIds", jobIds);
 		}
 	}
 

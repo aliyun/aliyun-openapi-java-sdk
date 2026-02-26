@@ -28,6 +28,7 @@ public class DescribeLiveStreamsNotifyUrlConfigResponseUnmarshaller {
 		LiveStreamsNotifyConfig liveStreamsNotifyConfig = new LiveStreamsNotifyConfig();
 		liveStreamsNotifyConfig.setDomainName(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.DomainName"));
 		liveStreamsNotifyConfig.setNotifyUrl(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.NotifyUrl"));
+		liveStreamsNotifyConfig.setExceptionNotifyUrl(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.ExceptionNotifyUrl"));
 		liveStreamsNotifyConfig.setNotifyReqAuth(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.NotifyReqAuth"));
 		liveStreamsNotifyConfig.setNotifyAuthKey(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.NotifyAuthKey"));
 		liveStreamsNotifyConfig.setAuthType(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.AuthType"));

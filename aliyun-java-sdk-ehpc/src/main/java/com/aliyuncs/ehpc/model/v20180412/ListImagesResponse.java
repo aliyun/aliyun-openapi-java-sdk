@@ -47,33 +47,21 @@ public class ListImagesResponse extends AcsResponse {
 
 	public static class OsInfo {
 
-		private String osTag;
-
-		private String platform;
-
 		private String version;
-
-		private String architecture;
 
 		private String baseOsTag;
 
+		private String platform;
+
+		private String osTag;
+
 		private String imageId;
 
-		public String getOsTag() {
-			return this.osTag;
-		}
+		private String architecture;
 
-		public void setOsTag(String osTag) {
-			this.osTag = osTag;
-		}
+		private String oSName;
 
-		public String getPlatform() {
-			return this.platform;
-		}
-
-		public void setPlatform(String platform) {
-			this.platform = platform;
-		}
+		private String oSNameEn;
 
 		public String getVersion() {
 			return this.version;
@@ -81,14 +69,6 @@ public class ListImagesResponse extends AcsResponse {
 
 		public void setVersion(String version) {
 			this.version = version;
-		}
-
-		public String getArchitecture() {
-			return this.architecture;
-		}
-
-		public void setArchitecture(String architecture) {
-			this.architecture = architecture;
 		}
 
 		public String getBaseOsTag() {
@@ -99,12 +79,52 @@ public class ListImagesResponse extends AcsResponse {
 			this.baseOsTag = baseOsTag;
 		}
 
+		public String getPlatform() {
+			return this.platform;
+		}
+
+		public void setPlatform(String platform) {
+			this.platform = platform;
+		}
+
+		public String getOsTag() {
+			return this.osTag;
+		}
+
+		public void setOsTag(String osTag) {
+			this.osTag = osTag;
+		}
+
 		public String getImageId() {
 			return this.imageId;
 		}
 
 		public void setImageId(String imageId) {
 			this.imageId = imageId;
+		}
+
+		public String getArchitecture() {
+			return this.architecture;
+		}
+
+		public void setArchitecture(String architecture) {
+			this.architecture = architecture;
+		}
+
+		public String getOSName() {
+			return this.oSName;
+		}
+
+		public void setOSName(String oSName) {
+			this.oSName = oSName;
+		}
+
+		public String getOSNameEn() {
+			return this.oSNameEn;
+		}
+
+		public void setOSNameEn(String oSNameEn) {
+			this.oSNameEn = oSNameEn;
 		}
 	}
 

@@ -25,19 +25,21 @@ import com.aliyuncs.mse.Endpoint;
 public class ExportNacosConfigRequest extends RpcAcsRequest<ExportNacosConfigResponse> {
 	   
 
-	private String instanceId;
-
-	private String dataId;
+	private String dataIds;
 
 	private String appName;
 
 	private String namespaceId;
 
+	private String group;
+
+	private String instanceId;
+
+	private String dataId;
+
 	private String acceptLanguage;
 
 	private String ids;
-
-	private String group;
 	public ExportNacosConfigRequest() {
 		super("mse", "2019-05-31", "ExportNacosConfig", "mse");
 		setMethod(MethodType.POST);
@@ -47,25 +49,14 @@ public class ExportNacosConfigRequest extends RpcAcsRequest<ExportNacosConfigRes
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getDataIds() {
+		return this.dataIds;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getDataId() {
-		return this.dataId;
-	}
-
-	public void setDataId(String dataId) {
-		this.dataId = dataId;
-		if(dataId != null){
-			putQueryParameter("DataId", dataId);
+	public void setDataIds(String dataIds) {
+		this.dataIds = dataIds;
+		if(dataIds != null){
+			putQueryParameter("DataIds", dataIds);
 		}
 	}
 
@@ -91,6 +82,39 @@ public class ExportNacosConfigRequest extends RpcAcsRequest<ExportNacosConfigRes
 		}
 	}
 
+	public String getGroup() {
+		return this.group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+		if(group != null){
+			putQueryParameter("Group", group);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getDataId() {
+		return this.dataId;
+	}
+
+	public void setDataId(String dataId) {
+		this.dataId = dataId;
+		if(dataId != null){
+			putQueryParameter("DataId", dataId);
+		}
+	}
+
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -110,17 +134,6 @@ public class ExportNacosConfigRequest extends RpcAcsRequest<ExportNacosConfigRes
 		this.ids = ids;
 		if(ids != null){
 			putQueryParameter("Ids", ids);
-		}
-	}
-
-	public String getGroup() {
-		return this.group;
-	}
-
-	public void setGroup(String group) {
-		this.group = group;
-		if(group != null){
-			putQueryParameter("Group", group);
 		}
 	}
 

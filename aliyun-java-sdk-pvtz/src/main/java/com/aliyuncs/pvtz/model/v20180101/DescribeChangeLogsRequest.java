@@ -31,17 +31,17 @@ public class DescribeChangeLogsRequest extends RpcAcsRequest<DescribeChangeLogsR
 
 	private Long endTimestamp;
 
-	private String entityType;
-
 	private Integer pageSize;
-
-	private String userClientIp;
-
-	private String zoneId;
 
 	private String keyword;
 
 	private String lang;
+
+	private String entityType;
+
+	private String userClientIp;
+
+	private String zoneId;
 	public DescribeChangeLogsRequest() {
 		super("pvtz", "2018-01-01", "DescribeChangeLogs", "pvtz");
 		setMethod(MethodType.POST);
@@ -84,17 +84,6 @@ public class DescribeChangeLogsRequest extends RpcAcsRequest<DescribeChangeLogsR
 		}
 	}
 
-	public String getEntityType() {
-		return this.entityType;
-	}
-
-	public void setEntityType(String entityType) {
-		this.entityType = entityType;
-		if(entityType != null){
-			putQueryParameter("EntityType", entityType);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -103,28 +92,6 @@ public class DescribeChangeLogsRequest extends RpcAcsRequest<DescribeChangeLogsR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
@@ -147,6 +114,39 @@ public class DescribeChangeLogsRequest extends RpcAcsRequest<DescribeChangeLogsR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getEntityType() {
+		return this.entityType;
+	}
+
+	public void setEntityType(String entityType) {
+		this.entityType = entityType;
+		if(entityType != null){
+			putQueryParameter("EntityType", entityType);
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

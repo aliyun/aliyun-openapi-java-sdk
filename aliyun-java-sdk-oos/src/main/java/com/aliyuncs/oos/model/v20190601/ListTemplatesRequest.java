@@ -51,6 +51,8 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 
 	private Integer maxResults;
 
+	private Boolean isFavorite;
+
 	private String templateFormat;
 
 	private String sortField;
@@ -194,6 +196,17 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public Boolean getIsFavorite() {
+		return this.isFavorite;
+	}
+
+	public void setIsFavorite(Boolean isFavorite) {
+		this.isFavorite = isFavorite;
+		if(isFavorite != null){
+			putQueryParameter("IsFavorite", isFavorite.toString());
 		}
 	}
 

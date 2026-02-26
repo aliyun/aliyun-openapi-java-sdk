@@ -32,20 +32,20 @@ public class ListSoftwaresResponseUnmarshaller {
 		List<SoftwareInfo> softwares = new ArrayList<SoftwareInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListSoftwaresResponse.Softwares.Length"); i++) {
 			SoftwareInfo softwareInfo = new SoftwareInfo();
-			softwareInfo.setEhpcVersion(_ctx.stringValue("ListSoftwaresResponse.Softwares["+ i +"].EhpcVersion"));
-			softwareInfo.setOsTag(_ctx.stringValue("ListSoftwaresResponse.Softwares["+ i +"].OsTag"));
 			softwareInfo.setSchedulerType(_ctx.stringValue("ListSoftwaresResponse.Softwares["+ i +"].SchedulerType"));
+			softwareInfo.setOsTag(_ctx.stringValue("ListSoftwaresResponse.Softwares["+ i +"].OsTag"));
 			softwareInfo.setSchedulerVersion(_ctx.stringValue("ListSoftwaresResponse.Softwares["+ i +"].SchedulerVersion"));
-			softwareInfo.setAccountType(_ctx.stringValue("ListSoftwaresResponse.Softwares["+ i +"].AccountType"));
 			softwareInfo.setAccountVersion(_ctx.stringValue("ListSoftwaresResponse.Softwares["+ i +"].AccountVersion"));
+			softwareInfo.setAccountType(_ctx.stringValue("ListSoftwaresResponse.Softwares["+ i +"].AccountType"));
+			softwareInfo.setEhpcVersion(_ctx.stringValue("ListSoftwaresResponse.Softwares["+ i +"].EhpcVersion"));
 
 			List<ApplicationInfo> applications = new ArrayList<ApplicationInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListSoftwaresResponse.Softwares["+ i +"].Applications.Length"); j++) {
 				ApplicationInfo applicationInfo = new ApplicationInfo();
+				applicationInfo.setRequired(_ctx.booleanValue("ListSoftwaresResponse.Softwares["+ i +"].Applications["+ j +"].Required"));
 				applicationInfo.setTag(_ctx.stringValue("ListSoftwaresResponse.Softwares["+ i +"].Applications["+ j +"].Tag"));
 				applicationInfo.setName(_ctx.stringValue("ListSoftwaresResponse.Softwares["+ i +"].Applications["+ j +"].Name"));
 				applicationInfo.setVersion(_ctx.stringValue("ListSoftwaresResponse.Softwares["+ i +"].Applications["+ j +"].Version"));
-				applicationInfo.setRequired(_ctx.booleanValue("ListSoftwaresResponse.Softwares["+ i +"].Applications["+ j +"].Required"));
 
 				applications.add(applicationInfo);
 			}

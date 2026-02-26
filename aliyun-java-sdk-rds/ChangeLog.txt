@@ -1,3 +1,208 @@
+2025-09-10 Version: 2.7.58
+- Generated 2014-08-15 for `Rds`.
+
+2025-08-11 Version: 2.7.57
+- Generated 2014-08-15 for `Rds`.
+
+2025-07-04 Version: 2.7.56
+- Supported param and error code.
+
+2025-05-22 Version: 2.7.55
+- Generated 2014-08-15 for `Rds`.
+
+2024-08-13 Version: 2.7.54
+- Support RDS Custom.
+
+2024-07-23 Version: 2.7.53
+- Generated 2014-08-15 for `Rds`.
+
+2024-07-03 Version: 2.7.52
+- Generated 2014-08-15 for `Rds`.
+
+2024-06-27 Version: 2.7.51
+- Generated 2014-08-15 for `Rds`.
+
+2024-05-23 Version: 2.7.50
+- Generated 2014-08-15 for `Rds`.
+
+2024-04-30 Version: 2.7.49
+- Generated 2014-08-15 for `Rds`.
+
+2023-08-02 Version: 2.7.48
+- Fixed bug.
+
+2023-07-31 Version: 2.7.47
+- Fix bug ram.
+- Add minor version error.
+- Support to select the minor version of the kernel when the modify instance error reports that the kernel version does not support it.
+
+2023-07-30 Version: 2.7.46
+- Fix bug ram.
+- Add minor version error.
+- Support to select the minor version of the kernel when the modify instance error reports that the kernel version does not support it.
+
+2023-07-29 Version: 2.7.45
+- Fix bug ram.
+- Add minor version error.
+- Support to select the minor version of the kernel when the modify instance error reports that the kernel version does not support it.
+
+2023-07-28 Version: 2.7.44
+- Fix bug ram.
+- Add minor version error.
+- Support to select the minor version of the kernel when the modify instance error reports that the kernel version does not support it.
+
+2023-07-27 Version: 2.7.43
+- Fix bug ram.
+- Add minor version error.
+- Support to select the minor version of the kernel when the modify instance error reports that the kernel version does not support it.
+
+2023-07-25 Version: 2.7.42
+- Add error code.
+- Support System param.
+
+2023-07-24 Version: 2.7.41
+- Add error code.
+- Add error code for CreateDBNodes.
+
+2023-07-23 Version: 2.7.40
+- Fix 500 for CreateOrder.
+- Support sts.
+
+2023-07-22 Version: 2.7.39
+- Fix 500 for CreateOrder.
+- Support sts.
+
+2023-07-21 Version: 2.7.38
+- Fix 500 for CreateOrder.
+- Support sts.
+
+2023-07-20 Version: 2.7.37
+- Fix bug of lack fill resourceOwnerId in DescribeHostWebshell.
+
+2023-07-19 Version: 2.7.36
+- Add openapis for whitelist template.
+
+2023-07-18 Version: 2.7.35
+- Supported RDS PostgreSQL manage extensions.
+
+2023-07-17 Version: 2.7.34
+- Add TimeOut.
+
+2023-07-16 Version: 2.7.33
+- Add error code.
+
+2023-07-15 Version: 2.7.32
+- Add error code.
+
+2023-07-13 Version: 2.7.31
+- Support change instance config event for rds.
+- Add NodeId param for restart slave.
+
+2023-07-12 Version: 2.7.30
+- Add error coede.
+- Fix bugs for 500.
+
+2023-07-11 Version: 2.7.29
+- Fixed 500 for interface.
+
+2023-07-10 Version: 2.7.28
+- Fixed 500 for interface.
+
+2023-07-10 Version: 2.7.27
+- Add DescribeClassDetails Api.
+
+2023-07-09 Version: 2.7.26
+- Add AutoUseCoupon field.
+- Api Offline.
+
+2023-07-08 Version: 2.7.25
+- Add AutoUseCoupon field.
+- Api Offline.
+
+2023-07-07 Version: 2.7.24
+- Add AutoUseCoupon field.
+- Api Offline.
+
+2023-07-06 Version: 2.7.23
+- Add AutoUseCoupon field.
+- Api Offline.
+
+2023-07-05 Version: 2.7.22
+- Add AutoUseCoupon field.
+- Api Offline.
+
+2023-07-04 Version: 2.7.21
+- Fix bugs for  DescribeDedicatedHosts.
+- Fixed bugs add ERRORCODE.
+- Added serverless config to support serverless price query.
+
+2023-07-04 Version: 2.7.20
+- ModifyBackupPolicy API support parameter BackupPriority.
+- DescribeBackupPolicy API add return parameters: BackupPriority and SupportModifyBackupPriority.
+
+2023-07-03 Version: 2.7.19
+- Fix bugs for  DescribeDedicatedHosts.
+- Fixed bugs add ERRORCODE.
+- Added serverless config to support serverless price query.
+
+2023-07-02 Version: 2.7.18
+- Fixed bugs for lack of regionId.
+- Fix error code.
+
+2023-07-01 Version: 2.7.17
+- Fixed bugs for lack of regionId.
+- Fix error code.
+
+2023-06-30 Version: 2.7.16
+- Fixed bugs for lack of regionId.
+- Fix error code.
+
+2023-06-30 Version: 2.7.15
+- ModifyBackupPolicy API support parameter BackupPriority.
+- DescribeBackupPolicy API add return parameters: BackupPriority and SupportModifyBackupPriority.
+
+2023-06-29 Version: 2.7.14
+- Support More Open Api.
+
+2023-06-26 Version: 2.7.13
+- Support More Open Api.
+
+2023-06-13 Version: 2.7.12
+- Support More Open Api.
+
+2023-06-05 Version: 2.7.11
+- Support More Open Api.
+
+2023-06-02 Version: 2.7.10
+- Support More Open Api.
+
+2023-06-02 Version: 2.7.9
+- Support More Open Api.
+
+2023-05-24 Version: 2.7.8
+- Support More Open Api.
+
+2023-04-12 Version: 2.7.7
+- Support More Open Api.
+
+2023-03-27 Version: 2.7.6
+- Support More Open Api.
+
+2023-02-21 Version: 2.7.5
+- Support More Open Api.
+
+2022-12-15 Version: 2.7.4
+- Support More Open Api.
+
+2022-11-22 Version: 2.7.3
+- Support More Open Api.
+
+2022-10-28 Version: 2.7.2
+- Support More Open Api.
+
+2022-08-31 Version: 2.7.1
+- Support More Open Api.
+
 2022-05-24 Version: 2.7.0
 - StartDBInstance parameter change.
 

@@ -2,23 +2,20 @@ package com.aliyuncs.auth;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.AuthUtils;
+import com.aliyuncs.utils.ProfileUtils;
 import com.aliyuncs.utils.StringUtils;
-import org.ini4j.Profile;
-import org.ini4j.Wini;
-
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvider {
-    private static volatile Wini ini;
+    private static volatile Map<String, Map<String, String>> ini;
 
-    private static Wini getIni(String filePath) throws IOException {
+    private static Map<String, Map<String, String>> getIni(String filePath) throws IOException {
         if (null == ini) {
             synchronized (ProfileCredentialsProvider.class) {
                 if (null == ini) {
-                    ini = new Wini(new File(filePath));
+                    ini = ProfileUtils.parseFile(filePath);
                 }
             }
         }
@@ -31,10 +28,10 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         if (filePath == null) {
             filePath = AuthConstant.DEFAULT_CREDENTIALS_FILE_PATH;
         }
-        if (filePath.length() == 0) {
+        if (filePath.isEmpty()) {
             throw new ClientException("The specified credentials file is empty");
         }
-        Wini ini;
+        Map<String, Map<String, String>> ini;
         try {
             ini = getIni(filePath);
         } catch (IOException e) {
@@ -49,16 +46,14 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         return createCredential(clientConfig, credentialsProviderFactory);
     }
 
-    private Map<String, Map<String, String>> loadIni(Wini ini) {
+    private Map<String, Map<String, String>> loadIni(Map<String, Map<String, String>> ini) {
         Map<String, Map<String, String>> client = new HashMap<String, Map<String, String>>();
-        boolean enable;
-        for (Map.Entry<String, Profile.Section> clientType : ini.entrySet()) {
-            enable = clientType.getValue().get(AuthConstant.INI_ENABLE, boolean.class);
-            if (enable) {
+        String enable;
+        for (Map.Entry<String, Map<String, String>> clientType : ini.entrySet()) {
+            enable = clientType.getValue().get(AuthConstant.INI_ENABLE);
+            if (Boolean.parseBoolean(enable)) {
                 Map<String, String> clientConfig = new HashMap<String, String>();
-                for (Map.Entry<String, String> enabledClient : clientType.getValue().entrySet()) {
-                    clientConfig.put(enabledClient.getKey(), enabledClient.getValue());
-                }
+                clientConfig.putAll(clientType.getValue());
                 client.put(clientType.getKey(), clientConfig);
             }
         }
@@ -80,10 +75,13 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         if (AuthConstant.INI_TYPE_RAM.equals(configType)) {
             return getInstanceProfileCredentials(clientConfig, factory);
         }
+        if (AuthConstant.INI_TYPE_OIDC.equals(configType)) {
+            return getSTSOIDCRoleSessionCredentials(clientConfig, factory);
+        }
         String accessKeyId = clientConfig.get(AuthConstant.INI_ACCESS_KEY_ID);
         String accessKeySecret = clientConfig.get(AuthConstant.INI_ACCESS_KEY_IDSECRET);
         if (StringUtils.isEmpty(accessKeyId) || StringUtils.isEmpty(accessKeySecret)) {
-            return null;
+            throw new ClientException("The configured access_key_id or access_key_secret is empty.");
         }
         return new BasicCredentials(accessKeyId, accessKeySecret);
     }
@@ -109,6 +107,30 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         return provider.getCredentials();
     }
 
+    private AlibabaCloudCredentials getSTSOIDCRoleSessionCredentials(Map<String, String> clientConfig,
+                                                             CredentialsProviderFactory factory) throws ClientException {
+        String roleSessionName = clientConfig.get(AuthConstant.INI_ROLE_SESSION_NAME);
+        String roleArn = clientConfig.get(AuthConstant.INI_ROLE_ARN);
+        String OIDCProviderArn = clientConfig.get(AuthConstant.INI_OIDC_PROVIDER_ARN);
+        String OIDCTokenFilePath = clientConfig.get(AuthConstant.INI_OIDC_TOKEN_FILE_PATH);
+        String policy = clientConfig.get(AuthConstant.INI_POLICY);
+        if (StringUtils.isEmpty(roleArn)) {
+            throw new ClientException("The configured role_arn is empty.");
+        }
+        if (StringUtils.isEmpty(OIDCProviderArn)) {
+            throw new ClientException("The configured oidc_provider_arn is empty.");
+        }
+        OIDCCredentialsProvider provider = factory.createCredentialsProvider(
+                OIDCCredentialsProvider.builder()
+                        .roleArn(roleArn)
+                        .roleSessionName(roleSessionName)
+                        .oidcProviderArn(OIDCProviderArn)
+                        .oidcTokenFilePath(OIDCTokenFilePath)
+                        .policy(policy)
+                        .build());
+        return provider.getCredentials();
+    }
+
     private AlibabaCloudCredentials getSTSGetSessionAccessKeyCredentials(Map<String, String> clientConfig,
                                                                          CredentialsProviderFactory factory)
             throws ClientException {
@@ -117,7 +139,7 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         if (StringUtils.isEmpty(privateKeyFile)) {
             throw new ClientException("The configured private_key_file is empty");
         }
-        String privateKey = AuthUtils.getPrivateKey(privateKeyFile);
+        String privateKey = AuthUtils.readFile(privateKeyFile);
         if (StringUtils.isEmpty(publicKeyId) || StringUtils.isEmpty(privateKey)) {
             throw new ClientException("The configured public_key_id or private_key_file content is empty");
         }

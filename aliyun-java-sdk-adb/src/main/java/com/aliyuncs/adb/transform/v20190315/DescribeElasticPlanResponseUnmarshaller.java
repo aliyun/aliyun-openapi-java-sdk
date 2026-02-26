@@ -33,6 +33,7 @@ public class DescribeElasticPlanResponseUnmarshaller {
 			ElasticPlanInfo elasticPlanInfo = new ElasticPlanInfo();
 			elasticPlanInfo.setEndTime(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].EndTime"));
 			elasticPlanInfo.setWeeklyRepeat(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].WeeklyRepeat"));
+			elasticPlanInfo.setMonthlyRepeat(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].MonthlyRepeat"));
 			elasticPlanInfo.setStartTime(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].StartTime"));
 			elasticPlanInfo.setResourcePoolName(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].ResourcePoolName"));
 			elasticPlanInfo.setStartDay(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].StartDay"));
@@ -40,6 +41,8 @@ public class DescribeElasticPlanResponseUnmarshaller {
 			elasticPlanInfo.setEnable(_ctx.booleanValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].Enable"));
 			elasticPlanInfo.setEndDay(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].EndDay"));
 			elasticPlanInfo.setPlanName(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].PlanName"));
+			elasticPlanInfo.setElasticPlanType(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].ElasticPlanType"));
+			elasticPlanInfo.setElasticPlanWorkerSpec(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].ElasticPlanWorkerSpec"));
 
 			elasticPlanList.add(elasticPlanInfo);
 		}

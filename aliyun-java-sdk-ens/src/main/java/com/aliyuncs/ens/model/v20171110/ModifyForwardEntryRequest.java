@@ -24,14 +24,79 @@ import com.aliyuncs.http.MethodType;
 public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryResponse> {
 	   
 
+	private String internalIp;
+
+	private String externalIp;
+
+	private String ipProtocol;
+
+	private Integer healthCheckPort;
+
+	private String externalPort;
+
 	private String forwardEntryId;
 
 	private String forwardEntryName;
 
-	private Integer healthCheckPort;
+	private String internalPort;
 	public ModifyForwardEntryRequest() {
 		super("Ens", "2017-11-10", "ModifyForwardEntry", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getInternalIp() {
+		return this.internalIp;
+	}
+
+	public void setInternalIp(String internalIp) {
+		this.internalIp = internalIp;
+		if(internalIp != null){
+			putQueryParameter("InternalIp", internalIp);
+		}
+	}
+
+	public String getExternalIp() {
+		return this.externalIp;
+	}
+
+	public void setExternalIp(String externalIp) {
+		this.externalIp = externalIp;
+		if(externalIp != null){
+			putQueryParameter("ExternalIp", externalIp);
+		}
+	}
+
+	public String getIpProtocol() {
+		return this.ipProtocol;
+	}
+
+	public void setIpProtocol(String ipProtocol) {
+		this.ipProtocol = ipProtocol;
+		if(ipProtocol != null){
+			putQueryParameter("IpProtocol", ipProtocol);
+		}
+	}
+
+	public Integer getHealthCheckPort() {
+		return this.healthCheckPort;
+	}
+
+	public void setHealthCheckPort(Integer healthCheckPort) {
+		this.healthCheckPort = healthCheckPort;
+		if(healthCheckPort != null){
+			putQueryParameter("HealthCheckPort", healthCheckPort.toString());
+		}
+	}
+
+	public String getExternalPort() {
+		return this.externalPort;
+	}
+
+	public void setExternalPort(String externalPort) {
+		this.externalPort = externalPort;
+		if(externalPort != null){
+			putQueryParameter("ExternalPort", externalPort);
+		}
 	}
 
 	public String getForwardEntryId() {
@@ -56,14 +121,14 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 		}
 	}
 
-	public Integer getHealthCheckPort() {
-		return this.healthCheckPort;
+	public String getInternalPort() {
+		return this.internalPort;
 	}
 
-	public void setHealthCheckPort(Integer healthCheckPort) {
-		this.healthCheckPort = healthCheckPort;
-		if(healthCheckPort != null){
-			putQueryParameter("HealthCheckPort", healthCheckPort.toString());
+	public void setInternalPort(String internalPort) {
+		this.internalPort = internalPort;
+		if(internalPort != null){
+			putQueryParameter("InternalPort", internalPort);
 		}
 	}
 

@@ -59,13 +59,13 @@ public class GenerateSessionAccessKeyResponse extends AcsResponse {
             this.sessionAccessKeyId = sessionAccessKeyId;
         }
 
-        public String getSessionAccessKeySecert() {
+        public String getSessionAccessKeySecret() {
             return sessionAccessKeySecret;
         }
 
         @XmlElement(name = "SessionAccessKeySecret")
-        public void setSessionAccessKeySecert(String sessionAccessKeySecert) {
-            this.sessionAccessKeySecret = sessionAccessKeySecert;
+        public void setSessionAccessKeySecret(String sessionAccessKeySecret) {
+            this.sessionAccessKeySecret = sessionAccessKeySecret;
         }
 
         public String getExpiration() {

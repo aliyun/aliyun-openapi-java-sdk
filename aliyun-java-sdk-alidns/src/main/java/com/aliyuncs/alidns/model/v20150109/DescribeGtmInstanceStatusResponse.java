@@ -24,19 +24,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGtmInstanceStatusResponse extends AcsResponse {
 
+	private String status;
+
+	private Integer strategyNotAvailableNum;
+
 	private String requestId;
+
+	private Integer switchToFailoverStrategyNum;
+
+	private String statusReason;
 
 	private Integer addrNotAvailableNum;
 
 	private Integer addrPoolNotAvailableNum;
 
-	private Integer switchToFailoverStrategyNum;
+	public String getStatus() {
+		return this.status;
+	}
 
-	private Integer strategyNotAvailableNum;
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-	private String status;
+	public Integer getStrategyNotAvailableNum() {
+		return this.strategyNotAvailableNum;
+	}
 
-	private String statusReason;
+	public void setStrategyNotAvailableNum(Integer strategyNotAvailableNum) {
+		this.strategyNotAvailableNum = strategyNotAvailableNum;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +60,22 @@ public class DescribeGtmInstanceStatusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getSwitchToFailoverStrategyNum() {
+		return this.switchToFailoverStrategyNum;
+	}
+
+	public void setSwitchToFailoverStrategyNum(Integer switchToFailoverStrategyNum) {
+		this.switchToFailoverStrategyNum = switchToFailoverStrategyNum;
+	}
+
+	public String getStatusReason() {
+		return this.statusReason;
+	}
+
+	public void setStatusReason(String statusReason) {
+		this.statusReason = statusReason;
 	}
 
 	public Integer getAddrNotAvailableNum() {
@@ -60,38 +92,6 @@ public class DescribeGtmInstanceStatusResponse extends AcsResponse {
 
 	public void setAddrPoolNotAvailableNum(Integer addrPoolNotAvailableNum) {
 		this.addrPoolNotAvailableNum = addrPoolNotAvailableNum;
-	}
-
-	public Integer getSwitchToFailoverStrategyNum() {
-		return this.switchToFailoverStrategyNum;
-	}
-
-	public void setSwitchToFailoverStrategyNum(Integer switchToFailoverStrategyNum) {
-		this.switchToFailoverStrategyNum = switchToFailoverStrategyNum;
-	}
-
-	public Integer getStrategyNotAvailableNum() {
-		return this.strategyNotAvailableNum;
-	}
-
-	public void setStrategyNotAvailableNum(Integer strategyNotAvailableNum) {
-		this.strategyNotAvailableNum = strategyNotAvailableNum;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getStatusReason() {
-		return this.statusReason;
-	}
-
-	public void setStatusReason(String statusReason) {
-		this.statusReason = statusReason;
 	}
 
 	@Override

@@ -47,19 +47,13 @@ public class GetScriptFileNamesResponse extends AcsResponse {
 
 	public static class FileInfos {
 
-		private String fileName;
-
 		private String createTime;
+
+		private String fileName;
 
 		private String modifyTime;
 
-		public String getFileName() {
-			return this.fileName;
-		}
-
-		public void setFileName(String fileName) {
-			this.fileName = fileName;
-		}
+		private String pathName;
 
 		public String getCreateTime() {
 			return this.createTime;
@@ -69,12 +63,28 @@ public class GetScriptFileNamesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getFileName() {
+			return this.fileName;
+		}
+
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
 		public String getModifyTime() {
 			return this.modifyTime;
 		}
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getPathName() {
+			return this.pathName;
+		}
+
+		public void setPathName(String pathName) {
+			this.pathName = pathName;
 		}
 	}
 

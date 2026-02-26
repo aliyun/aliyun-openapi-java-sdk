@@ -26,13 +26,13 @@ import com.aliyuncs.alikafka.Endpoint;
 public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
 	   
 
-	private List<String> resourceIds;
-
-	private String resourceType;
-
 	private String nextToken;
 
 	private List<Tag> tags;
+
+	private List<String> resourceIds;
+
+	private String resourceType;
 	public ListTagResourcesRequest() {
 		super("alikafka", "2019-09-16", "ListTagResources", "alikafka");
 		setMethod(MethodType.POST);
@@ -40,30 +40,6 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<String> getResourceIds() {
-		return this.resourceIds;
-	}
-
-	public void setResourceIds(List<String> resourceIds) {
-		this.resourceIds = resourceIds;	
-		if (resourceIds != null) {
-			for (int i = 0; i < resourceIds.size(); i++) {
-				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
-			}
-		}	
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
 	}
 
 	public String getNextToken() {
@@ -89,6 +65,30 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public List<String> getResourceIds() {
+		return this.resourceIds;
+	}
+
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
 	}
 
 	public static class Tag {

@@ -47,99 +47,111 @@ public class DescribeClusterResponse extends AcsResponse {
 
 	public static class ClusterInfo {
 
-		private String id;
-
-		private String regionId;
-
-		private String name;
-
-		private String description;
-
 		private String status;
-
-		private String osTag;
-
-		private String accountType;
-
-		private String schedulerType;
-
-		private String createTime;
-
-		private String securityGroupId;
 
 		private String vpcId;
 
-		private String vSwitchId;
+		private String keyPairName;
 
-		private String volumeType;
+		private String ecsChargeType;
+
+		private String securityGroupId;
+
+		private String sccClusterId;
+
+		private String createTime;
+
+		private String accountType;
+
+		private String volumeProtocol;
+
+		private String description;
 
 		private String volumeId;
 
-		private String volumeProtocol;
+		private Boolean haEnable;
+
+		private String baseOsTag;
+
+		private String name;
+
+		private String imageId;
+
+		private String schedulerType;
+
+		private String schedulerVersion;
+
+		private String deployMode;
+
+		private String imageOwnerAlias;
+
+		private String osTag;
 
 		private String volumeMountpoint;
 
 		private String remoteDirectory;
 
-		private String deployMode;
+		private String regionId;
 
-		private Boolean haEnable;
+		private String vSwitchId;
 
-		private String ecsChargeType;
+		private String imageName;
 
-		private String keyPairName;
-
-		private String sccClusterId;
-
-		private String clientVersion;
-
-		private String imageOwnerAlias;
-
-		private String imageId;
+		private String volumeType;
 
 		private String location;
 
-		private String baseOsTag;
+		private String id;
 
-		private String imageName;
+		private String clientVersion;
+
+		private String zoneId;
+
+		private String resourceGroupId;
+
+		private String ramRoleName;
+
+		private String ramNodeTypes;
+
+		private String clusterVersion;
+
+		private Integer withoutAgent;
+
+		private String plugin;
+
+		private Integer schedulerPreInstall;
+
+		private String domain;
+
+		private String openldapPar;
+
+		private String winAdPar;
+
+		private String period;
+
+		private String periodUnit;
+
+		private String autoRenewPeriod;
+
+		private String autoRenew;
+
+		private String computeSpotStrategy;
+
+		private String computeSpotPriceLimit;
 
 		private List<ApplicationInfo> applications;
 
 		private List<PostInstallScriptInfo> postInstallScripts;
 
+		private List<OnPremiseInfoItem> onPremiseInfo;
+
+		private List<AddOnsInfoItem> addOnsInfo;
+
+		private List<NodesInfo> nodes;
+
 		private EcsInfo ecsInfo;
 
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
+		private InitialImage initialImage;
 
 		public String getStatus() {
 			return this.status;
@@ -147,46 +159,6 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getOsTag() {
-			return this.osTag;
-		}
-
-		public void setOsTag(String osTag) {
-			this.osTag = osTag;
-		}
-
-		public String getAccountType() {
-			return this.accountType;
-		}
-
-		public void setAccountType(String accountType) {
-			this.accountType = accountType;
-		}
-
-		public String getSchedulerType() {
-			return this.schedulerType;
-		}
-
-		public void setSchedulerType(String schedulerType) {
-			this.schedulerType = schedulerType;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getSecurityGroupId() {
-			return this.securityGroupId;
-		}
-
-		public void setSecurityGroupId(String securityGroupId) {
-			this.securityGroupId = securityGroupId;
 		}
 
 		public String getVpcId() {
@@ -197,20 +169,68 @@ public class DescribeClusterResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public String getKeyPairName() {
+			return this.keyPairName;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
+		public void setKeyPairName(String keyPairName) {
+			this.keyPairName = keyPairName;
 		}
 
-		public String getVolumeType() {
-			return this.volumeType;
+		public String getEcsChargeType() {
+			return this.ecsChargeType;
 		}
 
-		public void setVolumeType(String volumeType) {
-			this.volumeType = volumeType;
+		public void setEcsChargeType(String ecsChargeType) {
+			this.ecsChargeType = ecsChargeType;
+		}
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getSccClusterId() {
+			return this.sccClusterId;
+		}
+
+		public void setSccClusterId(String sccClusterId) {
+			this.sccClusterId = sccClusterId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getAccountType() {
+			return this.accountType;
+		}
+
+		public void setAccountType(String accountType) {
+			this.accountType = accountType;
+		}
+
+		public String getVolumeProtocol() {
+			return this.volumeProtocol;
+		}
+
+		public void setVolumeProtocol(String volumeProtocol) {
+			this.volumeProtocol = volumeProtocol;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getVolumeId() {
@@ -221,12 +241,76 @@ public class DescribeClusterResponse extends AcsResponse {
 			this.volumeId = volumeId;
 		}
 
-		public String getVolumeProtocol() {
-			return this.volumeProtocol;
+		public Boolean getHaEnable() {
+			return this.haEnable;
 		}
 
-		public void setVolumeProtocol(String volumeProtocol) {
-			this.volumeProtocol = volumeProtocol;
+		public void setHaEnable(Boolean haEnable) {
+			this.haEnable = haEnable;
+		}
+
+		public String getBaseOsTag() {
+			return this.baseOsTag;
+		}
+
+		public void setBaseOsTag(String baseOsTag) {
+			this.baseOsTag = baseOsTag;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getSchedulerType() {
+			return this.schedulerType;
+		}
+
+		public void setSchedulerType(String schedulerType) {
+			this.schedulerType = schedulerType;
+		}
+
+		public String getSchedulerVersion() {
+			return this.schedulerVersion;
+		}
+
+		public void setSchedulerVersion(String schedulerVersion) {
+			this.schedulerVersion = schedulerVersion;
+		}
+
+		public String getDeployMode() {
+			return this.deployMode;
+		}
+
+		public void setDeployMode(String deployMode) {
+			this.deployMode = deployMode;
+		}
+
+		public String getImageOwnerAlias() {
+			return this.imageOwnerAlias;
+		}
+
+		public void setImageOwnerAlias(String imageOwnerAlias) {
+			this.imageOwnerAlias = imageOwnerAlias;
+		}
+
+		public String getOsTag() {
+			return this.osTag;
+		}
+
+		public void setOsTag(String osTag) {
+			this.osTag = osTag;
 		}
 
 		public String getVolumeMountpoint() {
@@ -245,68 +329,36 @@ public class DescribeClusterResponse extends AcsResponse {
 			this.remoteDirectory = remoteDirectory;
 		}
 
-		public String getDeployMode() {
-			return this.deployMode;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setDeployMode(String deployMode) {
-			this.deployMode = deployMode;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
-		public Boolean getHaEnable() {
-			return this.haEnable;
+		public String getVSwitchId() {
+			return this.vSwitchId;
 		}
 
-		public void setHaEnable(Boolean haEnable) {
-			this.haEnable = haEnable;
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
 		}
 
-		public String getEcsChargeType() {
-			return this.ecsChargeType;
+		public String getImageName() {
+			return this.imageName;
 		}
 
-		public void setEcsChargeType(String ecsChargeType) {
-			this.ecsChargeType = ecsChargeType;
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
 		}
 
-		public String getKeyPairName() {
-			return this.keyPairName;
+		public String getVolumeType() {
+			return this.volumeType;
 		}
 
-		public void setKeyPairName(String keyPairName) {
-			this.keyPairName = keyPairName;
-		}
-
-		public String getSccClusterId() {
-			return this.sccClusterId;
-		}
-
-		public void setSccClusterId(String sccClusterId) {
-			this.sccClusterId = sccClusterId;
-		}
-
-		public String getClientVersion() {
-			return this.clientVersion;
-		}
-
-		public void setClientVersion(String clientVersion) {
-			this.clientVersion = clientVersion;
-		}
-
-		public String getImageOwnerAlias() {
-			return this.imageOwnerAlias;
-		}
-
-		public void setImageOwnerAlias(String imageOwnerAlias) {
-			this.imageOwnerAlias = imageOwnerAlias;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
+		public void setVolumeType(String volumeType) {
+			this.volumeType = volumeType;
 		}
 
 		public String getLocation() {
@@ -317,20 +369,156 @@ public class DescribeClusterResponse extends AcsResponse {
 			this.location = location;
 		}
 
-		public String getBaseOsTag() {
-			return this.baseOsTag;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setBaseOsTag(String baseOsTag) {
-			this.baseOsTag = baseOsTag;
+		public void setId(String id) {
+			this.id = id;
 		}
 
-		public String getImageName() {
-			return this.imageName;
+		public String getClientVersion() {
+			return this.clientVersion;
 		}
 
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
+		public void setClientVersion(String clientVersion) {
+			this.clientVersion = clientVersion;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getRamRoleName() {
+			return this.ramRoleName;
+		}
+
+		public void setRamRoleName(String ramRoleName) {
+			this.ramRoleName = ramRoleName;
+		}
+
+		public String getRamNodeTypes() {
+			return this.ramNodeTypes;
+		}
+
+		public void setRamNodeTypes(String ramNodeTypes) {
+			this.ramNodeTypes = ramNodeTypes;
+		}
+
+		public String getClusterVersion() {
+			return this.clusterVersion;
+		}
+
+		public void setClusterVersion(String clusterVersion) {
+			this.clusterVersion = clusterVersion;
+		}
+
+		public Integer getWithoutAgent() {
+			return this.withoutAgent;
+		}
+
+		public void setWithoutAgent(Integer withoutAgent) {
+			this.withoutAgent = withoutAgent;
+		}
+
+		public String getPlugin() {
+			return this.plugin;
+		}
+
+		public void setPlugin(String plugin) {
+			this.plugin = plugin;
+		}
+
+		public Integer getSchedulerPreInstall() {
+			return this.schedulerPreInstall;
+		}
+
+		public void setSchedulerPreInstall(Integer schedulerPreInstall) {
+			this.schedulerPreInstall = schedulerPreInstall;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
+		public String getOpenldapPar() {
+			return this.openldapPar;
+		}
+
+		public void setOpenldapPar(String openldapPar) {
+			this.openldapPar = openldapPar;
+		}
+
+		public String getWinAdPar() {
+			return this.winAdPar;
+		}
+
+		public void setWinAdPar(String winAdPar) {
+			this.winAdPar = winAdPar;
+		}
+
+		public String getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(String period) {
+			this.period = period;
+		}
+
+		public String getPeriodUnit() {
+			return this.periodUnit;
+		}
+
+		public void setPeriodUnit(String periodUnit) {
+			this.periodUnit = periodUnit;
+		}
+
+		public String getAutoRenewPeriod() {
+			return this.autoRenewPeriod;
+		}
+
+		public void setAutoRenewPeriod(String autoRenewPeriod) {
+			this.autoRenewPeriod = autoRenewPeriod;
+		}
+
+		public String getAutoRenew() {
+			return this.autoRenew;
+		}
+
+		public void setAutoRenew(String autoRenew) {
+			this.autoRenew = autoRenew;
+		}
+
+		public String getComputeSpotStrategy() {
+			return this.computeSpotStrategy;
+		}
+
+		public void setComputeSpotStrategy(String computeSpotStrategy) {
+			this.computeSpotStrategy = computeSpotStrategy;
+		}
+
+		public String getComputeSpotPriceLimit() {
+			return this.computeSpotPriceLimit;
+		}
+
+		public void setComputeSpotPriceLimit(String computeSpotPriceLimit) {
+			this.computeSpotPriceLimit = computeSpotPriceLimit;
 		}
 
 		public List<ApplicationInfo> getApplications() {
@@ -349,12 +537,44 @@ public class DescribeClusterResponse extends AcsResponse {
 			this.postInstallScripts = postInstallScripts;
 		}
 
+		public List<OnPremiseInfoItem> getOnPremiseInfo() {
+			return this.onPremiseInfo;
+		}
+
+		public void setOnPremiseInfo(List<OnPremiseInfoItem> onPremiseInfo) {
+			this.onPremiseInfo = onPremiseInfo;
+		}
+
+		public List<AddOnsInfoItem> getAddOnsInfo() {
+			return this.addOnsInfo;
+		}
+
+		public void setAddOnsInfo(List<AddOnsInfoItem> addOnsInfo) {
+			this.addOnsInfo = addOnsInfo;
+		}
+
+		public List<NodesInfo> getNodes() {
+			return this.nodes;
+		}
+
+		public void setNodes(List<NodesInfo> nodes) {
+			this.nodes = nodes;
+		}
+
 		public EcsInfo getEcsInfo() {
 			return this.ecsInfo;
 		}
 
 		public void setEcsInfo(EcsInfo ecsInfo) {
 			this.ecsInfo = ecsInfo;
+		}
+
+		public InitialImage getInitialImage() {
+			return this.initialImage;
+		}
+
+		public void setInitialImage(InitialImage initialImage) {
+			this.initialImage = initialImage;
 		}
 
 		public static class ApplicationInfo {
@@ -413,6 +633,155 @@ public class DescribeClusterResponse extends AcsResponse {
 			}
 		}
 
+		public static class OnPremiseInfoItem {
+
+			private String type;
+
+			private String hostName;
+
+			private String iP;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getHostName() {
+				return this.hostName;
+			}
+
+			public void setHostName(String hostName) {
+				this.hostName = hostName;
+			}
+
+			public String getIP() {
+				return this.iP;
+			}
+
+			public void setIP(String iP) {
+				this.iP = iP;
+			}
+		}
+
+		public static class AddOnsInfoItem {
+
+			private String softwareId;
+
+			private String deployMode;
+
+			private Integer port;
+
+			private String status;
+
+			private String uRL;
+
+			public String getSoftwareId() {
+				return this.softwareId;
+			}
+
+			public void setSoftwareId(String softwareId) {
+				this.softwareId = softwareId;
+			}
+
+			public String getDeployMode() {
+				return this.deployMode;
+			}
+
+			public void setDeployMode(String deployMode) {
+				this.deployMode = deployMode;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
+			}
+		}
+
+		public static class NodesInfo {
+
+			private String role;
+
+			private String hostName;
+
+			private String ipAddress;
+
+			private String accountType;
+
+			private String dir;
+
+			private String schedulerType;
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
+			public String getHostName() {
+				return this.hostName;
+			}
+
+			public void setHostName(String hostName) {
+				this.hostName = hostName;
+			}
+
+			public String getIpAddress() {
+				return this.ipAddress;
+			}
+
+			public void setIpAddress(String ipAddress) {
+				this.ipAddress = ipAddress;
+			}
+
+			public String getAccountType() {
+				return this.accountType;
+			}
+
+			public void setAccountType(String accountType) {
+				this.accountType = accountType;
+			}
+
+			public String getDir() {
+				return this.dir;
+			}
+
+			public void setDir(String dir) {
+				this.dir = dir;
+			}
+
+			public String getSchedulerType() {
+				return this.schedulerType;
+			}
+
+			public void setSchedulerType(String schedulerType) {
+				this.schedulerType = schedulerType;
+			}
+		}
+
 		public static class EcsInfo {
 
 			private Manager manager;
@@ -420,6 +789,8 @@ public class DescribeClusterResponse extends AcsResponse {
 			private Compute compute;
 
 			private Login login;
+
+			private ProxyMgr proxyMgr;
 
 			public Manager getManager() {
 				return this.manager;
@@ -445,19 +816,19 @@ public class DescribeClusterResponse extends AcsResponse {
 				this.login = login;
 			}
 
-			public static class Manager {
+			public ProxyMgr getProxyMgr() {
+				return this.proxyMgr;
+			}
 
-				private Integer count;
+			public void setProxyMgr(ProxyMgr proxyMgr) {
+				this.proxyMgr = proxyMgr;
+			}
+
+			public static class Manager {
 
 				private String instanceType;
 
-				public Integer getCount() {
-					return this.count;
-				}
-
-				public void setCount(Integer count) {
-					this.count = count;
-				}
+				private Integer count;
 
 				public String getInstanceType() {
 					return this.instanceType;
@@ -465,22 +836,22 @@ public class DescribeClusterResponse extends AcsResponse {
 
 				public void setInstanceType(String instanceType) {
 					this.instanceType = instanceType;
+				}
+
+				public Integer getCount() {
+					return this.count;
+				}
+
+				public void setCount(Integer count) {
+					this.count = count;
 				}
 			}
 
 			public static class Compute {
 
-				private Integer count;
-
 				private String instanceType;
 
-				public Integer getCount() {
-					return this.count;
-				}
-
-				public void setCount(Integer count) {
-					this.count = count;
-				}
+				private Integer count;
 
 				public String getInstanceType() {
 					return this.instanceType;
@@ -488,22 +859,22 @@ public class DescribeClusterResponse extends AcsResponse {
 
 				public void setInstanceType(String instanceType) {
 					this.instanceType = instanceType;
+				}
+
+				public Integer getCount() {
+					return this.count;
+				}
+
+				public void setCount(Integer count) {
+					this.count = count;
 				}
 			}
 
 			public static class Login {
 
-				private Integer count;
-
 				private String instanceType;
 
-				public Integer getCount() {
-					return this.count;
-				}
-
-				public void setCount(Integer count) {
-					this.count = count;
-				}
+				private Integer count;
 
 				public String getInstanceType() {
 					return this.instanceType;
@@ -512,6 +883,70 @@ public class DescribeClusterResponse extends AcsResponse {
 				public void setInstanceType(String instanceType) {
 					this.instanceType = instanceType;
 				}
+
+				public Integer getCount() {
+					return this.count;
+				}
+
+				public void setCount(Integer count) {
+					this.count = count;
+				}
+			}
+
+			public static class ProxyMgr {
+
+				private String instanceType;
+
+				private Integer count;
+
+				public String getInstanceType() {
+					return this.instanceType;
+				}
+
+				public void setInstanceType(String instanceType) {
+					this.instanceType = instanceType;
+				}
+
+				public Integer getCount() {
+					return this.count;
+				}
+
+				public void setCount(Integer count) {
+					this.count = count;
+				}
+			}
+		}
+
+		public static class InitialImage {
+
+			private String osTag;
+
+			private String imageOwnerAlias;
+
+			private String imageId;
+
+			public String getOsTag() {
+				return this.osTag;
+			}
+
+			public void setOsTag(String osTag) {
+				this.osTag = osTag;
+			}
+
+			public String getImageOwnerAlias() {
+				return this.imageOwnerAlias;
+			}
+
+			public void setImageOwnerAlias(String imageOwnerAlias) {
+				this.imageOwnerAlias = imageOwnerAlias;
+			}
+
+			public String getImageId() {
+				return this.imageId;
+			}
+
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
 			}
 		}
 	}

@@ -26,11 +26,9 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeTagResourcesRequest extends RpcAcsRequest<DescribeTagResourcesResponse> {
 	   
 
-	private List<Tag> tags;
-
 	private List<String> resourceIds;
 
-	private Long ownerId;
+	private List<Tag> tags;
 
 	private String resourceType;
 	public DescribeTagResourcesRequest() {
@@ -40,20 +38,6 @@ public class DescribeTagResourcesRequest extends RpcAcsRequest<DescribeTagResour
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-			}
-		}	
 	}
 
 	public List<String> getResourceIds() {
@@ -69,15 +53,18 @@ public class DescribeTagResourcesRequest extends RpcAcsRequest<DescribeTagResour
 		}	
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public String getResourceType() {

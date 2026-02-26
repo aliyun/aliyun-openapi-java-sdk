@@ -24,9 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RunPreTrainServiceResponse extends AcsResponse {
 
+	private String predictResult;
+
 	private String requestId;
 
-	private String predictResult;
+	private Integer billingCount;
+
+	public String getPredictResult() {
+		return this.predictResult;
+	}
+
+	public void setPredictResult(String predictResult) {
+		this.predictResult = predictResult;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,12 +46,12 @@ public class RunPreTrainServiceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getPredictResult() {
-		return this.predictResult;
+	public Integer getBillingCount() {
+		return this.billingCount;
 	}
 
-	public void setPredictResult(String predictResult) {
-		this.predictResult = predictResult;
+	public void setBillingCount(Integer billingCount) {
+		this.billingCount = billingCount;
 	}
 
 	@Override

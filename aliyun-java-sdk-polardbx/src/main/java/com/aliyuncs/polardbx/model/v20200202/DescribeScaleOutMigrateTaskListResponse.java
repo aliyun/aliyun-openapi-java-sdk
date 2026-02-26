@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScaleOutMigrateTaskListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer progress;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Integer getProgress() {
 		return this.progress;
@@ -42,6 +34,14 @@ public class DescribeScaleOutMigrateTaskListResponse extends AcsResponse {
 
 	public void setProgress(Integer progress) {
 		this.progress = progress;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

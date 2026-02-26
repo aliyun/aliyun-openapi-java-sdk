@@ -48,6 +48,7 @@ public class ListUserLevelsOfSkillGroupResponseUnmarshaller {
 			userSkillLevel.setSkillGroupName(_ctx.stringValue("ListUserLevelsOfSkillGroupResponse.Data.List["+ i +"].SkillGroupName"));
 			userSkillLevel.setRoleName(_ctx.stringValue("ListUserLevelsOfSkillGroupResponse.Data.List["+ i +"].RoleName"));
 			userSkillLevel.setRoleId(_ctx.stringValue("ListUserLevelsOfSkillGroupResponse.Data.List["+ i +"].RoleId"));
+			userSkillLevel.setRamId(_ctx.stringValue("ListUserLevelsOfSkillGroupResponse.Data.List["+ i +"].RamId"));
 
 			list.add(userSkillLevel);
 		}

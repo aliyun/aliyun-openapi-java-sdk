@@ -28,9 +28,9 @@ public class DescribeScdnDomainHttpCodeDataResponseUnmarshaller {
 	public static DescribeScdnDomainHttpCodeDataResponse unmarshall(DescribeScdnDomainHttpCodeDataResponse describeScdnDomainHttpCodeDataResponse, UnmarshallerContext _ctx) {
 		
 		describeScdnDomainHttpCodeDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.RequestId"));
-		describeScdnDomainHttpCodeDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.DomainName"));
-		describeScdnDomainHttpCodeDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.StartTime"));
 		describeScdnDomainHttpCodeDataResponse.setEndTime(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.EndTime"));
+		describeScdnDomainHttpCodeDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.StartTime"));
+		describeScdnDomainHttpCodeDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.DomainName"));
 		describeScdnDomainHttpCodeDataResponse.setDataInterval(_ctx.stringValue("DescribeScdnDomainHttpCodeDataResponse.DataInterval"));
 
 		List<DataModule> dataPerInterval = new ArrayList<DataModule>();

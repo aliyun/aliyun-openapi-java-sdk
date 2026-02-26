@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.BargeInCallResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.BargeInCallResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.BargeInCallResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.BargeInCallResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -59,7 +58,6 @@ public class BargeInCallResponseUnmarshaller {
 			channelContext.setChannelFlags(_ctx.stringValue("BargeInCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
 			channelContext.setSkillGroupId(_ctx.stringValue("BargeInCallResponse.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId"));
 			channelContext.setTimestamp(_ctx.longValue("BargeInCallResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("BargeInCallResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("BargeInCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("BargeInCallResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("BargeInCallResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));

@@ -45,9 +45,11 @@ public class DescribeCenChildInstanceRouteEntriesRequest extends RpcAcsRequest<D
 
 	private String childInstanceId;
 
+	private String childInstanceRouteTableId;
+
 	private String status;
 	public DescribeCenChildInstanceRouteEntriesRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenChildInstanceRouteEntries");
+		super("Cbn", "2017-09-12", "DescribeCenChildInstanceRouteEntries", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -162,6 +164,17 @@ public class DescribeCenChildInstanceRouteEntriesRequest extends RpcAcsRequest<D
 		this.childInstanceId = childInstanceId;
 		if(childInstanceId != null){
 			putQueryParameter("ChildInstanceId", childInstanceId);
+		}
+	}
+
+	public String getChildInstanceRouteTableId() {
+		return this.childInstanceRouteTableId;
+	}
+
+	public void setChildInstanceRouteTableId(String childInstanceRouteTableId) {
+		this.childInstanceRouteTableId = childInstanceRouteTableId;
+		if(childInstanceRouteTableId != null){
+			putQueryParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
 		}
 	}
 

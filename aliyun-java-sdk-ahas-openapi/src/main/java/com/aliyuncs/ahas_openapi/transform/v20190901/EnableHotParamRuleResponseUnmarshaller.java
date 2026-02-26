@@ -28,29 +28,29 @@ public class EnableHotParamRuleResponseUnmarshaller {
 	public static EnableHotParamRuleResponse unmarshall(EnableHotParamRuleResponse enableHotParamRuleResponse, UnmarshallerContext _ctx) {
 		
 		enableHotParamRuleResponse.setRequestId(_ctx.stringValue("EnableHotParamRuleResponse.RequestId"));
-		enableHotParamRuleResponse.setCode(_ctx.stringValue("EnableHotParamRuleResponse.Code"));
 		enableHotParamRuleResponse.setMessage(_ctx.stringValue("EnableHotParamRuleResponse.Message"));
+		enableHotParamRuleResponse.setCode(_ctx.stringValue("EnableHotParamRuleResponse.Code"));
 		enableHotParamRuleResponse.setSuccess(_ctx.booleanValue("EnableHotParamRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setAppName(_ctx.stringValue("EnableHotParamRuleResponse.Data.AppName"));
-		data.setBurstCount(_ctx.integerValue("EnableHotParamRuleResponse.Data.BurstCount"));
-		data.setControlBehavior(_ctx.integerValue("EnableHotParamRuleResponse.Data.ControlBehavior"));
-		data.setEnable(_ctx.booleanValue("EnableHotParamRuleResponse.Data.Enable"));
-		data.setMaxQueueingTimeMs(_ctx.integerValue("EnableHotParamRuleResponse.Data.MaxQueueingTimeMs"));
-		data.setMetricType(_ctx.integerValue("EnableHotParamRuleResponse.Data.MetricType"));
-		data.setNamespace(_ctx.stringValue("EnableHotParamRuleResponse.Data.Namespace"));
 		data.setParamIdx(_ctx.integerValue("EnableHotParamRuleResponse.Data.ParamIdx"));
-		data.setResource(_ctx.stringValue("EnableHotParamRuleResponse.Data.Resource"));
-		data.setRuleId(_ctx.longValue("EnableHotParamRuleResponse.Data.RuleId"));
+		data.setNamespace(_ctx.stringValue("EnableHotParamRuleResponse.Data.Namespace"));
 		data.setStatDurationSec(_ctx.longValue("EnableHotParamRuleResponse.Data.StatDurationSec"));
+		data.setBurstCount(_ctx.integerValue("EnableHotParamRuleResponse.Data.BurstCount"));
+		data.setRuleId(_ctx.longValue("EnableHotParamRuleResponse.Data.RuleId"));
+		data.setResource(_ctx.stringValue("EnableHotParamRuleResponse.Data.Resource"));
+		data.setAppName(_ctx.stringValue("EnableHotParamRuleResponse.Data.AppName"));
+		data.setMaxQueueingTimeMs(_ctx.integerValue("EnableHotParamRuleResponse.Data.MaxQueueingTimeMs"));
+		data.setControlBehavior(_ctx.integerValue("EnableHotParamRuleResponse.Data.ControlBehavior"));
+		data.setMetricType(_ctx.integerValue("EnableHotParamRuleResponse.Data.MetricType"));
 		data.setThreshold(_ctx.floatValue("EnableHotParamRuleResponse.Data.Threshold"));
+		data.setEnable(_ctx.booleanValue("EnableHotParamRuleResponse.Data.Enable"));
 
 		List<ParamFlowItemListItem> paramFlowItemList = new ArrayList<ParamFlowItemListItem>();
 		for (int i = 0; i < _ctx.lengthValue("EnableHotParamRuleResponse.Data.ParamFlowItemList.Length"); i++) {
 			ParamFlowItemListItem paramFlowItemListItem = new ParamFlowItemListItem();
-			paramFlowItemListItem.setItemType(_ctx.stringValue("EnableHotParamRuleResponse.Data.ParamFlowItemList["+ i +"].ItemType"));
 			paramFlowItemListItem.setItemValue(_ctx.stringValue("EnableHotParamRuleResponse.Data.ParamFlowItemList["+ i +"].ItemValue"));
+			paramFlowItemListItem.setItemType(_ctx.stringValue("EnableHotParamRuleResponse.Data.ParamFlowItemList["+ i +"].ItemType"));
 			paramFlowItemListItem.setThreshold(_ctx.floatValue("EnableHotParamRuleResponse.Data.ParamFlowItemList["+ i +"].Threshold"));
 
 			paramFlowItemList.add(paramFlowItemListItem);

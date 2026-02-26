@@ -46,6 +46,8 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 	private String privateIpAddress;
 
 	private String instanceId;
+
+	private String vpcId;
 	public AssociateEipAddressRequest() {
 		super("Vpc", "2016-04-28", "AssociateEipAddress", "vpc");
 		setMethod(MethodType.POST);
@@ -173,6 +175,17 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

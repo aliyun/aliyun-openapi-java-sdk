@@ -23,8 +23,8 @@ public class CreateHybridClusterResponseUnmarshaller {
 	public static CreateHybridClusterResponse unmarshall(CreateHybridClusterResponse createHybridClusterResponse, UnmarshallerContext _ctx) {
 		
 		createHybridClusterResponse.setRequestId(_ctx.stringValue("CreateHybridClusterResponse.RequestId"));
-		createHybridClusterResponse.setClusterId(_ctx.stringValue("CreateHybridClusterResponse.ClusterId"));
 		createHybridClusterResponse.setTaskId(_ctx.stringValue("CreateHybridClusterResponse.TaskId"));
+		createHybridClusterResponse.setClusterId(_ctx.stringValue("CreateHybridClusterResponse.ClusterId"));
 	 
 	 	return createHybridClusterResponse;
 	}

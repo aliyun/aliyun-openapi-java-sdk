@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryFaceUserBatchResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private List<DataItem> data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class QueryFaceUserBatchResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class QueryFaceUserBatchResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -77,26 +77,26 @@ public class QueryFaceUserBatchResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String userId;
+		private String params;
 
 		private String customUserId;
 
-		private String name;
-
-		private String params;
-
 		private Long createTime;
+
+		private String userId;
+
+		private String name;
 
 		private Long modifyTime;
 
 		private List<FacePicListItem> facePicList;
 
-		public String getUserId() {
-			return this.userId;
+		public String getParams() {
+			return this.params;
 		}
 
-		public void setUserId(String userId) {
-			this.userId = userId;
+		public void setParams(String params) {
+			this.params = params;
 		}
 
 		public String getCustomUserId() {
@@ -107,28 +107,28 @@ public class QueryFaceUserBatchResponse extends AcsResponse {
 			this.customUserId = customUserId;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getParams() {
-			return this.params;
-		}
-
-		public void setParams(String params) {
-			this.params = params;
-		}
-
 		public Long getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Long getModifyTime() {
@@ -149,19 +149,11 @@ public class QueryFaceUserBatchResponse extends AcsResponse {
 
 		public static class FacePicListItem {
 
-			private String faceMd5;
-
 			private String faceUrl;
 
+			private String faceMd5;
+
 			private List<FeatureDTO> featureDTOList;
-
-			public String getFaceMd5() {
-				return this.faceMd5;
-			}
-
-			public void setFaceMd5(String faceMd5) {
-				this.faceMd5 = faceMd5;
-			}
 
 			public String getFaceUrl() {
 				return this.faceUrl;
@@ -169,6 +161,14 @@ public class QueryFaceUserBatchResponse extends AcsResponse {
 
 			public void setFaceUrl(String faceUrl) {
 				this.faceUrl = faceUrl;
+			}
+
+			public String getFaceMd5() {
+				return this.faceMd5;
+			}
+
+			public void setFaceMd5(String faceMd5) {
+				this.faceMd5 = faceMd5;
 			}
 
 			public List<FeatureDTO> getFeatureDTOList() {
@@ -183,15 +183,15 @@ public class QueryFaceUserBatchResponse extends AcsResponse {
 
 				private String algorithmName;
 
-				private String algorithmProvider;
-
 				private String algorithmVersion;
 
-				private String faceMd5;
+				private String algorithmProvider;
+
+				private String errorMessage;
 
 				private String errorCode;
 
-				private String errorMessage;
+				private String faceMd5;
 
 				public String getAlgorithmName() {
 					return this.algorithmName;
@@ -199,14 +199,6 @@ public class QueryFaceUserBatchResponse extends AcsResponse {
 
 				public void setAlgorithmName(String algorithmName) {
 					this.algorithmName = algorithmName;
-				}
-
-				public String getAlgorithmProvider() {
-					return this.algorithmProvider;
-				}
-
-				public void setAlgorithmProvider(String algorithmProvider) {
-					this.algorithmProvider = algorithmProvider;
 				}
 
 				public String getAlgorithmVersion() {
@@ -217,12 +209,20 @@ public class QueryFaceUserBatchResponse extends AcsResponse {
 					this.algorithmVersion = algorithmVersion;
 				}
 
-				public String getFaceMd5() {
-					return this.faceMd5;
+				public String getAlgorithmProvider() {
+					return this.algorithmProvider;
 				}
 
-				public void setFaceMd5(String faceMd5) {
-					this.faceMd5 = faceMd5;
+				public void setAlgorithmProvider(String algorithmProvider) {
+					this.algorithmProvider = algorithmProvider;
+				}
+
+				public String getErrorMessage() {
+					return this.errorMessage;
+				}
+
+				public void setErrorMessage(String errorMessage) {
+					this.errorMessage = errorMessage;
 				}
 
 				public String getErrorCode() {
@@ -233,12 +233,12 @@ public class QueryFaceUserBatchResponse extends AcsResponse {
 					this.errorCode = errorCode;
 				}
 
-				public String getErrorMessage() {
-					return this.errorMessage;
+				public String getFaceMd5() {
+					return this.faceMd5;
 				}
 
-				public void setErrorMessage(String errorMessage) {
-					this.errorMessage = errorMessage;
+				public void setFaceMd5(String faceMd5) {
+					this.faceMd5 = faceMd5;
 				}
 			}
 		}

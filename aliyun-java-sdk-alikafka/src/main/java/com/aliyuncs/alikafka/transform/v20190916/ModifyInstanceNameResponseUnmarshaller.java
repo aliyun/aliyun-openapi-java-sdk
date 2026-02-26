@@ -23,9 +23,9 @@ public class ModifyInstanceNameResponseUnmarshaller {
 	public static ModifyInstanceNameResponse unmarshall(ModifyInstanceNameResponse modifyInstanceNameResponse, UnmarshallerContext _ctx) {
 		
 		modifyInstanceNameResponse.setRequestId(_ctx.stringValue("ModifyInstanceNameResponse.RequestId"));
-		modifyInstanceNameResponse.setSuccess(_ctx.booleanValue("ModifyInstanceNameResponse.Success"));
 		modifyInstanceNameResponse.setCode(_ctx.integerValue("ModifyInstanceNameResponse.Code"));
 		modifyInstanceNameResponse.setMessage(_ctx.stringValue("ModifyInstanceNameResponse.Message"));
+		modifyInstanceNameResponse.setSuccess(_ctx.booleanValue("ModifyInstanceNameResponse.Success"));
 	 
 	 	return modifyInstanceNameResponse;
 	}

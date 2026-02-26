@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.mse.model.v20190531.ListClustersResponse;
 import com.aliyuncs.mse.model.v20190531.ListClustersResponse.ClusterForListModel;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,6 +57,8 @@ public class ListClustersResponseUnmarshaller {
 			clusterForListModel.setInstanceCount(_ctx.longValue("ListClustersResponse.Data["+ i +"].InstanceCount"));
 			clusterForListModel.setClusterName(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ClusterName"));
 			clusterForListModel.setMseVersion(_ctx.stringValue("ListClustersResponse.Data["+ i +"].MseVersion"));
+			clusterForListModel.setTags(_ctx.mapValue("ListClustersResponse.Data["+ i +"].Tags"));
+			clusterForListModel.setResourceGroupId(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ResourceGroupId"));
 
 			data.add(clusterForListModel);
 		}

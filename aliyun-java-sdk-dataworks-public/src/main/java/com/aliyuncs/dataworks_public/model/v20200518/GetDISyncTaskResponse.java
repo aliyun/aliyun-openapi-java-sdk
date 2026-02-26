@@ -14,6 +14,7 @@
 
 package com.aliyuncs.dataworks_public.model.v20200518;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dataworks_public.transform.v20200518.GetDISyncTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -62,6 +63,8 @@ public class GetDISyncTaskResponse extends AcsResponse {
 
 		private String message;
 
+		private List<AlarmListItem> alarmList;
+
 		private SolutionDetail solutionDetail;
 
 		public String getCode() {
@@ -88,12 +91,179 @@ public class GetDISyncTaskResponse extends AcsResponse {
 			this.message = message;
 		}
 
+		public List<AlarmListItem> getAlarmList() {
+			return this.alarmList;
+		}
+
+		public void setAlarmList(List<AlarmListItem> alarmList) {
+			this.alarmList = alarmList;
+		}
+
 		public SolutionDetail getSolutionDetail() {
 			return this.solutionDetail;
 		}
 
 		public void setSolutionDetail(SolutionDetail solutionDetail) {
 			this.solutionDetail = solutionDetail;
+		}
+
+		public static class AlarmListItem {
+
+			private Long id;
+
+			private Boolean enabled;
+
+			private String ruleName;
+
+			private String metric;
+
+			private String description;
+
+			private List<AlarmRuleListItem> alarmRuleList;
+
+			private NotifyRule notifyRule;
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public Boolean getEnabled() {
+				return this.enabled;
+			}
+
+			public void setEnabled(Boolean enabled) {
+				this.enabled = enabled;
+			}
+
+			public String getRuleName() {
+				return this.ruleName;
+			}
+
+			public void setRuleName(String ruleName) {
+				this.ruleName = ruleName;
+			}
+
+			public String getMetric() {
+				return this.metric;
+			}
+
+			public void setMetric(String metric) {
+				this.metric = metric;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public List<AlarmRuleListItem> getAlarmRuleList() {
+				return this.alarmRuleList;
+			}
+
+			public void setAlarmRuleList(List<AlarmRuleListItem> alarmRuleList) {
+				this.alarmRuleList = alarmRuleList;
+			}
+
+			public NotifyRule getNotifyRule() {
+				return this.notifyRule;
+			}
+
+			public void setNotifyRule(NotifyRule notifyRule) {
+				this.notifyRule = notifyRule;
+			}
+
+			public static class AlarmRuleListItem {
+
+				private String level;
+
+				private String comparator;
+
+				private Long threshold;
+
+				private Long duration;
+
+				private String aggregator;
+
+				public String getLevel() {
+					return this.level;
+				}
+
+				public void setLevel(String level) {
+					this.level = level;
+				}
+
+				public String getComparator() {
+					return this.comparator;
+				}
+
+				public void setComparator(String comparator) {
+					this.comparator = comparator;
+				}
+
+				public Long getThreshold() {
+					return this.threshold;
+				}
+
+				public void setThreshold(Long threshold) {
+					this.threshold = threshold;
+				}
+
+				public Long getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(Long duration) {
+					this.duration = duration;
+				}
+
+				public String getAggregator() {
+					return this.aggregator;
+				}
+
+				public void setAggregator(String aggregator) {
+					this.aggregator = aggregator;
+				}
+			}
+
+			public static class NotifyRule {
+
+				private Long interval;
+
+				private List<String> warning;
+
+				private List<String> critical;
+
+				public Long getInterval() {
+					return this.interval;
+				}
+
+				public void setInterval(Long interval) {
+					this.interval = interval;
+				}
+
+				public List<String> getWarning() {
+					return this.warning;
+				}
+
+				public void setWarning(List<String> warning) {
+					this.warning = warning;
+				}
+
+				public List<String> getCritical() {
+					return this.critical;
+				}
+
+				public void setCritical(List<String> critical) {
+					this.critical = critical;
+				}
+			}
 		}
 
 		public static class SolutionDetail {

@@ -25,31 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetConsumerListResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
+	private Long total;
+
+	private Integer pageSize;
+
+	private Integer currentPage;
+
 	private List<ConsumerVO> consumerList;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -67,6 +57,46 @@ public class GetConsumerListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Long getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Long total) {
+		this.total = total;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
+
 	public List<ConsumerVO> getConsumerList() {
 		return this.consumerList;
 	}
@@ -77,22 +107,26 @@ public class GetConsumerListResponse extends AcsResponse {
 
 	public static class ConsumerVO {
 
-		private String regionId;
+		private String consumerId;
 
 		private String instanceId;
 
-		private String consumerId;
-
 		private String remark;
+
+		private String regionId;
+
+		private Boolean automaticallyCreatedGroup;
+
+		private Long createTime;
 
 		private List<TagVO> tags;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getConsumerId() {
+			return this.consumerId;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setConsumerId(String consumerId) {
+			this.consumerId = consumerId;
 		}
 
 		public String getInstanceId() {
@@ -103,20 +137,36 @@ public class GetConsumerListResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getConsumerId() {
-			return this.consumerId;
-		}
-
-		public void setConsumerId(String consumerId) {
-			this.consumerId = consumerId;
-		}
-
 		public String getRemark() {
 			return this.remark;
 		}
 
 		public void setRemark(String remark) {
 			this.remark = remark;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Boolean getAutomaticallyCreatedGroup() {
+			return this.automaticallyCreatedGroup;
+		}
+
+		public void setAutomaticallyCreatedGroup(Boolean automaticallyCreatedGroup) {
+			this.automaticallyCreatedGroup = automaticallyCreatedGroup;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public List<TagVO> getTags() {

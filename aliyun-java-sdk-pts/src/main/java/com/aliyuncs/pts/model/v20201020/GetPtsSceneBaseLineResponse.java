@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPtsSceneBaseLineResponse extends AcsResponse {
 
+	private String sceneId;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
 
 	private String message;
 
 	private Integer httpStatusCode;
 
-	private String sceneId;
+	private String code;
+
+	private Boolean success;
 
 	private Baseline baseline;
+
+	public String getSceneId() {
+		return this.sceneId;
+	}
+
+	public void setSceneId(String sceneId) {
+		this.sceneId = sceneId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,22 +53,6 @@ public class GetPtsSceneBaseLineResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -79,12 +71,20 @@ public class GetPtsSceneBaseLineResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getSceneId() {
-		return this.sceneId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setSceneId(String sceneId) {
-		this.sceneId = sceneId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Baseline getBaseline() {
@@ -129,85 +129,29 @@ public class GetPtsSceneBaseLineResponse extends AcsResponse {
 
 		public static class ChainBaselineData {
 
-			private Float avgTps;
-
-			private Float avgRt;
-
-			private Float seg90Rt;
-
-			private Float seg99Rt;
-
-			private Float successRateReq;
-
-			private Float successRateBiz;
-
-			private Long failCountReq;
-
 			private Long failCountBiz;
+
+			private Float avgTps;
 
 			private Integer minRt;
 
+			private Float seg99Rt;
+
 			private Integer maxRt;
+
+			private Float seg90Rt;
+
+			private Float successRateBiz;
+
+			private Float avgRt;
+
+			private Long failCountReq;
 
 			private String name;
 
+			private Float successRateReq;
+
 			private Long id;
-
-			public Float getAvgTps() {
-				return this.avgTps;
-			}
-
-			public void setAvgTps(Float avgTps) {
-				this.avgTps = avgTps;
-			}
-
-			public Float getAvgRt() {
-				return this.avgRt;
-			}
-
-			public void setAvgRt(Float avgRt) {
-				this.avgRt = avgRt;
-			}
-
-			public Float getSeg90Rt() {
-				return this.seg90Rt;
-			}
-
-			public void setSeg90Rt(Float seg90Rt) {
-				this.seg90Rt = seg90Rt;
-			}
-
-			public Float getSeg99Rt() {
-				return this.seg99Rt;
-			}
-
-			public void setSeg99Rt(Float seg99Rt) {
-				this.seg99Rt = seg99Rt;
-			}
-
-			public Float getSuccessRateReq() {
-				return this.successRateReq;
-			}
-
-			public void setSuccessRateReq(Float successRateReq) {
-				this.successRateReq = successRateReq;
-			}
-
-			public Float getSuccessRateBiz() {
-				return this.successRateBiz;
-			}
-
-			public void setSuccessRateBiz(Float successRateBiz) {
-				this.successRateBiz = successRateBiz;
-			}
-
-			public Long getFailCountReq() {
-				return this.failCountReq;
-			}
-
-			public void setFailCountReq(Long failCountReq) {
-				this.failCountReq = failCountReq;
-			}
 
 			public Long getFailCountBiz() {
 				return this.failCountBiz;
@@ -215,6 +159,14 @@ public class GetPtsSceneBaseLineResponse extends AcsResponse {
 
 			public void setFailCountBiz(Long failCountBiz) {
 				this.failCountBiz = failCountBiz;
+			}
+
+			public Float getAvgTps() {
+				return this.avgTps;
+			}
+
+			public void setAvgTps(Float avgTps) {
+				this.avgTps = avgTps;
 			}
 
 			public Integer getMinRt() {
@@ -225,6 +177,14 @@ public class GetPtsSceneBaseLineResponse extends AcsResponse {
 				this.minRt = minRt;
 			}
 
+			public Float getSeg99Rt() {
+				return this.seg99Rt;
+			}
+
+			public void setSeg99Rt(Float seg99Rt) {
+				this.seg99Rt = seg99Rt;
+			}
+
 			public Integer getMaxRt() {
 				return this.maxRt;
 			}
@@ -233,12 +193,52 @@ public class GetPtsSceneBaseLineResponse extends AcsResponse {
 				this.maxRt = maxRt;
 			}
 
+			public Float getSeg90Rt() {
+				return this.seg90Rt;
+			}
+
+			public void setSeg90Rt(Float seg90Rt) {
+				this.seg90Rt = seg90Rt;
+			}
+
+			public Float getSuccessRateBiz() {
+				return this.successRateBiz;
+			}
+
+			public void setSuccessRateBiz(Float successRateBiz) {
+				this.successRateBiz = successRateBiz;
+			}
+
+			public Float getAvgRt() {
+				return this.avgRt;
+			}
+
+			public void setAvgRt(Float avgRt) {
+				this.avgRt = avgRt;
+			}
+
+			public Long getFailCountReq() {
+				return this.failCountReq;
+			}
+
+			public void setFailCountReq(Long failCountReq) {
+				this.failCountReq = failCountReq;
+			}
+
 			public String getName() {
 				return this.name;
 			}
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public Float getSuccessRateReq() {
+				return this.successRateReq;
+			}
+
+			public void setSuccessRateReq(Float successRateReq) {
+				this.successRateReq = successRateReq;
 			}
 
 			public Long getId() {
@@ -252,28 +252,36 @@ public class GetPtsSceneBaseLineResponse extends AcsResponse {
 
 		public static class SceneBaseline {
 
-			private Float avgTps;
+			private Long failCountBiz;
+
+			private Float successRateBiz;
 
 			private Float avgRt;
 
-			private Float seg90Rt;
+			private Long failCountReq;
+
+			private Float avgTps;
 
 			private Float seg99Rt;
 
 			private Float successRateReq;
 
-			private Float successRateBiz;
+			private Float seg90Rt;
 
-			private Long failCountReq;
-
-			private Long failCountBiz;
-
-			public Float getAvgTps() {
-				return this.avgTps;
+			public Long getFailCountBiz() {
+				return this.failCountBiz;
 			}
 
-			public void setAvgTps(Float avgTps) {
-				this.avgTps = avgTps;
+			public void setFailCountBiz(Long failCountBiz) {
+				this.failCountBiz = failCountBiz;
+			}
+
+			public Float getSuccessRateBiz() {
+				return this.successRateBiz;
+			}
+
+			public void setSuccessRateBiz(Float successRateBiz) {
+				this.successRateBiz = successRateBiz;
 			}
 
 			public Float getAvgRt() {
@@ -284,12 +292,20 @@ public class GetPtsSceneBaseLineResponse extends AcsResponse {
 				this.avgRt = avgRt;
 			}
 
-			public Float getSeg90Rt() {
-				return this.seg90Rt;
+			public Long getFailCountReq() {
+				return this.failCountReq;
 			}
 
-			public void setSeg90Rt(Float seg90Rt) {
-				this.seg90Rt = seg90Rt;
+			public void setFailCountReq(Long failCountReq) {
+				this.failCountReq = failCountReq;
+			}
+
+			public Float getAvgTps() {
+				return this.avgTps;
+			}
+
+			public void setAvgTps(Float avgTps) {
+				this.avgTps = avgTps;
 			}
 
 			public Float getSeg99Rt() {
@@ -308,28 +324,12 @@ public class GetPtsSceneBaseLineResponse extends AcsResponse {
 				this.successRateReq = successRateReq;
 			}
 
-			public Float getSuccessRateBiz() {
-				return this.successRateBiz;
+			public Float getSeg90Rt() {
+				return this.seg90Rt;
 			}
 
-			public void setSuccessRateBiz(Float successRateBiz) {
-				this.successRateBiz = successRateBiz;
-			}
-
-			public Long getFailCountReq() {
-				return this.failCountReq;
-			}
-
-			public void setFailCountReq(Long failCountReq) {
-				this.failCountReq = failCountReq;
-			}
-
-			public Long getFailCountBiz() {
-				return this.failCountBiz;
-			}
-
-			public void setFailCountBiz(Long failCountBiz) {
-				this.failCountBiz = failCountBiz;
+			public void setSeg90Rt(Float seg90Rt) {
+				this.seg90Rt = seg90Rt;
 			}
 		}
 	}

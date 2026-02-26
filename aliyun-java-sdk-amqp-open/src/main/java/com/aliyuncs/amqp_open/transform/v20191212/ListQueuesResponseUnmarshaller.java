@@ -31,20 +31,20 @@ public class ListQueuesResponseUnmarshaller {
 		listQueuesResponse.setRequestId(_ctx.stringValue("ListQueuesResponse.RequestId"));
 
 		Data data = new Data();
-		data.setNextToken(_ctx.stringValue("ListQueuesResponse.Data.NextToken"));
 		data.setMaxResults(_ctx.integerValue("ListQueuesResponse.Data.MaxResults"));
+		data.setNextToken(_ctx.stringValue("ListQueuesResponse.Data.NextToken"));
 
 		List<QueueVO> queues = new ArrayList<QueueVO>();
 		for (int i = 0; i < _ctx.lengthValue("ListQueuesResponse.Data.Queues.Length"); i++) {
 			QueueVO queueVO = new QueueVO();
+			queueVO.setExclusiveState(_ctx.booleanValue("ListQueuesResponse.Data.Queues["+ i +"].ExclusiveState"));
+			queueVO.setAutoDeleteState(_ctx.booleanValue("ListQueuesResponse.Data.Queues["+ i +"].AutoDeleteState"));
+			queueVO.setCreateTime(_ctx.longValue("ListQueuesResponse.Data.Queues["+ i +"].CreateTime"));
+			queueVO.setAttributes(_ctx.mapValue("ListQueuesResponse.Data.Queues["+ i +"].Attributes"));
+			queueVO.setVHostName(_ctx.stringValue("ListQueuesResponse.Data.Queues["+ i +"].VHostName"));
 			queueVO.setName(_ctx.stringValue("ListQueuesResponse.Data.Queues["+ i +"].Name"));
 			queueVO.setOwnerId(_ctx.stringValue("ListQueuesResponse.Data.Queues["+ i +"].OwnerId"));
-			queueVO.setVHostName(_ctx.stringValue("ListQueuesResponse.Data.Queues["+ i +"].VHostName"));
-			queueVO.setAutoDeleteState(_ctx.booleanValue("ListQueuesResponse.Data.Queues["+ i +"].AutoDeleteState"));
-			queueVO.setExclusiveState(_ctx.booleanValue("ListQueuesResponse.Data.Queues["+ i +"].ExclusiveState"));
-			queueVO.setCreateTime(_ctx.longValue("ListQueuesResponse.Data.Queues["+ i +"].CreateTime"));
 			queueVO.setLastConsumeTime(_ctx.longValue("ListQueuesResponse.Data.Queues["+ i +"].LastConsumeTime"));
-			queueVO.setAttributes(_ctx.mapValue("ListQueuesResponse.Data.Queues["+ i +"].Attributes"));
 
 			queues.add(queueVO);
 		}

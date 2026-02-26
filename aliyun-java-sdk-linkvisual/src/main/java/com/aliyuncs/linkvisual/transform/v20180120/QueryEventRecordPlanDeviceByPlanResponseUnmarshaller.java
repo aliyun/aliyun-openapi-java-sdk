@@ -28,21 +28,21 @@ public class QueryEventRecordPlanDeviceByPlanResponseUnmarshaller {
 	public static QueryEventRecordPlanDeviceByPlanResponse unmarshall(QueryEventRecordPlanDeviceByPlanResponse queryEventRecordPlanDeviceByPlanResponse, UnmarshallerContext _ctx) {
 		
 		queryEventRecordPlanDeviceByPlanResponse.setRequestId(_ctx.stringValue("QueryEventRecordPlanDeviceByPlanResponse.RequestId"));
-		queryEventRecordPlanDeviceByPlanResponse.setSuccess(_ctx.booleanValue("QueryEventRecordPlanDeviceByPlanResponse.Success"));
-		queryEventRecordPlanDeviceByPlanResponse.setErrorMessage(_ctx.stringValue("QueryEventRecordPlanDeviceByPlanResponse.ErrorMessage"));
 		queryEventRecordPlanDeviceByPlanResponse.setCode(_ctx.stringValue("QueryEventRecordPlanDeviceByPlanResponse.Code"));
+		queryEventRecordPlanDeviceByPlanResponse.setErrorMessage(_ctx.stringValue("QueryEventRecordPlanDeviceByPlanResponse.ErrorMessage"));
+		queryEventRecordPlanDeviceByPlanResponse.setSuccess(_ctx.booleanValue("QueryEventRecordPlanDeviceByPlanResponse.Success"));
 
 		Data data = new Data();
+		data.setPageSize(_ctx.integerValue("QueryEventRecordPlanDeviceByPlanResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QueryEventRecordPlanDeviceByPlanResponse.Data.Total"));
 		data.setPageCount(_ctx.integerValue("QueryEventRecordPlanDeviceByPlanResponse.Data.PageCount"));
 		data.setPage(_ctx.integerValue("QueryEventRecordPlanDeviceByPlanResponse.Data.Page"));
-		data.setPageSize(_ctx.integerValue("QueryEventRecordPlanDeviceByPlanResponse.Data.PageSize"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryEventRecordPlanDeviceByPlanResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setIotId(_ctx.stringValue("QueryEventRecordPlanDeviceByPlanResponse.Data.List["+ i +"].IotId"));
 			listItem.setStreamType(_ctx.integerValue("QueryEventRecordPlanDeviceByPlanResponse.Data.List["+ i +"].StreamType"));
+			listItem.setIotId(_ctx.stringValue("QueryEventRecordPlanDeviceByPlanResponse.Data.List["+ i +"].IotId"));
 
 			list.add(listItem);
 		}

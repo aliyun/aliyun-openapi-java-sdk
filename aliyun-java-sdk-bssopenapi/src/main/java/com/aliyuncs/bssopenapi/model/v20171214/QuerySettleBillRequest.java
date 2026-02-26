@@ -49,7 +49,7 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 
 	private Integer maxResults;
 	public QuerySettleBillRequest() {
-		super("BssOpenApi", "2017-12-14", "QuerySettleBill");
+		super("BssOpenApi", "2017-12-14", "QuerySettleBill", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

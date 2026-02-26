@@ -31,7 +31,7 @@ public class AddAutoCcWhitelistRequest extends RpcAcsRequest<AddAutoCcWhitelistR
 
 	private String instanceId;
 	public AddAutoCcWhitelistRequest() {
-		super("ddoscoo", "2020-01-01", "AddAutoCcWhitelist");
+		super("ddoscoo", "2020-01-01", "AddAutoCcWhitelist", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

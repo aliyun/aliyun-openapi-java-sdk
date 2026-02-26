@@ -25,31 +25,29 @@ import com.aliyuncs.mse.Endpoint;
 public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<CreateOrUpdateSwimmingLaneGroupResponse> {
 	   
 
-	private String source;
-
-	private String gmtModified;
-
-	private String userId;
-
-	private String licenseKey;
-
 	private String appIds;
 
-	private Boolean enable;
-
-	private String entryApp;
+	private Boolean dbGrayEnable;
 
 	private Long id;
 
-	private String gmtCreate;
-
 	private String name;
 
-	private String acceptLanguage;
+	private String messageQueueFilterSide;
 
 	private String region;
 
 	private Integer status;
+
+	private Boolean messageQueueGrayEnable;
+
+	private String entryApp;
+
+	private Boolean recordCanaryDetail;
+
+	private String namespace;
+
+	private String acceptLanguage;
 	public CreateOrUpdateSwimmingLaneGroupRequest() {
 		super("mse", "2019-05-31", "CreateOrUpdateSwimmingLaneGroup", "mse");
 		setMethod(MethodType.POST);
@@ -57,50 +55,6 @@ public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<Create
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSource() {
-		return this.source;
-	}
-
-	public void setSource(String source) {
-		this.source = source;
-		if(source != null){
-			putQueryParameter("Source", source);
-		}
-	}
-
-	public String getGmtModified() {
-		return this.gmtModified;
-	}
-
-	public void setGmtModified(String gmtModified) {
-		this.gmtModified = gmtModified;
-		if(gmtModified != null){
-			putQueryParameter("GmtModified", gmtModified);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public String getLicenseKey() {
-		return this.licenseKey;
-	}
-
-	public void setLicenseKey(String licenseKey) {
-		this.licenseKey = licenseKey;
-		if(licenseKey != null){
-			putQueryParameter("LicenseKey", licenseKey);
-		}
 	}
 
 	public String getAppIds() {
@@ -114,25 +68,14 @@ public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<Create
 		}
 	}
 
-	public Boolean getEnable() {
-		return this.enable;
+	public Boolean getDbGrayEnable() {
+		return this.dbGrayEnable;
 	}
 
-	public void setEnable(Boolean enable) {
-		this.enable = enable;
-		if(enable != null){
-			putQueryParameter("Enable", enable.toString());
-		}
-	}
-
-	public String getEntryApp() {
-		return this.entryApp;
-	}
-
-	public void setEntryApp(String entryApp) {
-		this.entryApp = entryApp;
-		if(entryApp != null){
-			putQueryParameter("EntryApp", entryApp);
+	public void setDbGrayEnable(Boolean dbGrayEnable) {
+		this.dbGrayEnable = dbGrayEnable;
+		if(dbGrayEnable != null){
+			putQueryParameter("DbGrayEnable", dbGrayEnable.toString());
 		}
 	}
 
@@ -147,17 +90,6 @@ public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<Create
 		}
 	}
 
-	public String getGmtCreate() {
-		return this.gmtCreate;
-	}
-
-	public void setGmtCreate(String gmtCreate) {
-		this.gmtCreate = gmtCreate;
-		if(gmtCreate != null){
-			putQueryParameter("GmtCreate", gmtCreate);
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -169,14 +101,14 @@ public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<Create
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
+	public String getMessageQueueFilterSide() {
+		return this.messageQueueFilterSide;
 	}
 
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
+	public void setMessageQueueFilterSide(String messageQueueFilterSide) {
+		this.messageQueueFilterSide = messageQueueFilterSide;
+		if(messageQueueFilterSide != null){
+			putQueryParameter("MessageQueueFilterSide", messageQueueFilterSide);
 		}
 	}
 
@@ -199,6 +131,61 @@ public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<Create
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status.toString());
+		}
+	}
+
+	public Boolean getMessageQueueGrayEnable() {
+		return this.messageQueueGrayEnable;
+	}
+
+	public void setMessageQueueGrayEnable(Boolean messageQueueGrayEnable) {
+		this.messageQueueGrayEnable = messageQueueGrayEnable;
+		if(messageQueueGrayEnable != null){
+			putQueryParameter("MessageQueueGrayEnable", messageQueueGrayEnable.toString());
+		}
+	}
+
+	public String getEntryApp() {
+		return this.entryApp;
+	}
+
+	public void setEntryApp(String entryApp) {
+		this.entryApp = entryApp;
+		if(entryApp != null){
+			putQueryParameter("EntryApp", entryApp);
+		}
+	}
+
+	public Boolean getRecordCanaryDetail() {
+		return this.recordCanaryDetail;
+	}
+
+	public void setRecordCanaryDetail(Boolean recordCanaryDetail) {
+		this.recordCanaryDetail = recordCanaryDetail;
+		if(recordCanaryDetail != null){
+			putQueryParameter("RecordCanaryDetail", recordCanaryDetail.toString());
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

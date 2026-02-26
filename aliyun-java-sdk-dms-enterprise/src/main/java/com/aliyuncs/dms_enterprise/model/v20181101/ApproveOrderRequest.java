@@ -31,7 +31,19 @@ public class ApproveOrderRequest extends RpcAcsRequest<ApproveOrderResponse> {
 
 	private String approvalType;
 
+	private Long newApprover;
+
+	private Long approvalNodeId;
+
+	private Long oldApprover;
+
+	private String realLoginUserUid;
+
 	private String comment;
+
+	private String approvalNodePos;
+
+	private String newApproverList;
 	public ApproveOrderRequest() {
 		super("dms-enterprise", "2018-11-01", "ApproveOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -74,6 +86,50 @@ public class ApproveOrderRequest extends RpcAcsRequest<ApproveOrderResponse> {
 		}
 	}
 
+	public Long getNewApprover() {
+		return this.newApprover;
+	}
+
+	public void setNewApprover(Long newApprover) {
+		this.newApprover = newApprover;
+		if(newApprover != null){
+			putQueryParameter("NewApprover", newApprover.toString());
+		}
+	}
+
+	public Long getApprovalNodeId() {
+		return this.approvalNodeId;
+	}
+
+	public void setApprovalNodeId(Long approvalNodeId) {
+		this.approvalNodeId = approvalNodeId;
+		if(approvalNodeId != null){
+			putQueryParameter("ApprovalNodeId", approvalNodeId.toString());
+		}
+	}
+
+	public Long getOldApprover() {
+		return this.oldApprover;
+	}
+
+	public void setOldApprover(Long oldApprover) {
+		this.oldApprover = oldApprover;
+		if(oldApprover != null){
+			putQueryParameter("OldApprover", oldApprover.toString());
+		}
+	}
+
+	public String getRealLoginUserUid() {
+		return this.realLoginUserUid;
+	}
+
+	public void setRealLoginUserUid(String realLoginUserUid) {
+		this.realLoginUserUid = realLoginUserUid;
+		if(realLoginUserUid != null){
+			putQueryParameter("RealLoginUserUid", realLoginUserUid);
+		}
+	}
+
 	public String getComment() {
 		return this.comment;
 	}
@@ -82,6 +138,28 @@ public class ApproveOrderRequest extends RpcAcsRequest<ApproveOrderResponse> {
 		this.comment = comment;
 		if(comment != null){
 			putQueryParameter("Comment", comment);
+		}
+	}
+
+	public String getApprovalNodePos() {
+		return this.approvalNodePos;
+	}
+
+	public void setApprovalNodePos(String approvalNodePos) {
+		this.approvalNodePos = approvalNodePos;
+		if(approvalNodePos != null){
+			putQueryParameter("ApprovalNodePos", approvalNodePos);
+		}
+	}
+
+	public String getNewApproverList() {
+		return this.newApproverList;
+	}
+
+	public void setNewApproverList(String newApproverList) {
+		this.newApproverList = newApproverList;
+		if(newApproverList != null){
+			putQueryParameter("NewApproverList", newApproverList);
 		}
 	}
 

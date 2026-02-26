@@ -20,7 +20,9 @@ import java.util.List;
 import com.aliyuncs.computenest.model.v20210601.ListServiceInstancesResponse;
 import com.aliyuncs.computenest.model.v20210601.ListServiceInstancesResponse.ServiceInstance;
 import com.aliyuncs.computenest.model.v20210601.ListServiceInstancesResponse.ServiceInstance.Service;
+import com.aliyuncs.computenest.model.v20210601.ListServiceInstancesResponse.ServiceInstance.Service.Commodity;
 import com.aliyuncs.computenest.model.v20210601.ListServiceInstancesResponse.ServiceInstance.Service.ServiceInfo;
+import com.aliyuncs.computenest.model.v20210601.ListServiceInstancesResponse.ServiceInstance.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,11 +33,12 @@ public class ListServiceInstancesResponseUnmarshaller {
 		listServiceInstancesResponse.setRequestId(_ctx.stringValue("ListServiceInstancesResponse.RequestId"));
 		listServiceInstancesResponse.setNextToken(_ctx.stringValue("ListServiceInstancesResponse.NextToken"));
 		listServiceInstancesResponse.setTotalCount(_ctx.longValue("ListServiceInstancesResponse.TotalCount"));
-		listServiceInstancesResponse.setMaxResults(_ctx.stringValue("ListServiceInstancesResponse.MaxResults"));
+		listServiceInstancesResponse.setMaxResults(_ctx.integerValue("ListServiceInstancesResponse.MaxResults"));
 
 		List<ServiceInstance> serviceInstances = new ArrayList<ServiceInstance>();
 		for (int i = 0; i < _ctx.lengthValue("ListServiceInstancesResponse.ServiceInstances.Length"); i++) {
 			ServiceInstance serviceInstance = new ServiceInstance();
+			serviceInstance.setName(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Name"));
 			serviceInstance.setStatus(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Status"));
 			serviceInstance.setOutputs(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Outputs"));
 			serviceInstance.setUpdateTime(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].UpdateTime"));
@@ -50,6 +53,14 @@ public class ListServiceInstancesResponseUnmarshaller {
 			serviceInstance.setOperationStartTime(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].OperationStartTime"));
 			serviceInstance.setOperationEndTime(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].OperationEndTime"));
 			serviceInstance.setEnableInstanceOps(_ctx.booleanValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].EnableInstanceOps"));
+			serviceInstance.setSource(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Source"));
+			serviceInstance.setEndTime(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].EndTime"));
+			serviceInstance.setServiceType(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].ServiceType"));
+			serviceInstance.setPayType(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].PayType"));
+			serviceInstance.setMarketInstanceId(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].MarketInstanceId"));
+			serviceInstance.setResourceGroupId(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].ResourceGroupId"));
+			serviceInstance.setBizStatus(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].BizStatus"));
+			serviceInstance.setOrderId(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].OrderId"));
 
 			Service service = new Service();
 			service.setStatus(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.Status"));
@@ -60,6 +71,12 @@ public class ListServiceInstancesResponseUnmarshaller {
 			service.setSupplierUrl(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.SupplierUrl"));
 			service.setServiceType(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.ServiceType"));
 			service.setSupplierName(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.SupplierName"));
+			service.setVersionName(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.VersionName"));
+
+			Commodity commodity = new Commodity();
+			commodity.setSaasBoostMetadata(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.Commodity.SaasBoostMetadata"));
+			commodity.setType(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.Commodity.Type"));
+			service.setCommodity(commodity);
 
 			List<ServiceInfo> serviceInfos = new ArrayList<ServiceInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.ServiceInfos.Length"); j++) {
@@ -73,6 +90,16 @@ public class ListServiceInstancesResponseUnmarshaller {
 			}
 			service.setServiceInfos(serviceInfos);
 			serviceInstance.setService(service);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			serviceInstance.setTags(tags);
 
 			serviceInstances.add(serviceInstance);
 		}

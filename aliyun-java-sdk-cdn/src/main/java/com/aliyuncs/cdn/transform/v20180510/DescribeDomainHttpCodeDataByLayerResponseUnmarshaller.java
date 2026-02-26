@@ -32,8 +32,8 @@ public class DescribeDomainHttpCodeDataByLayerResponseUnmarshaller {
 		List<DataModule> httpCodeDataInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainHttpCodeDataByLayerResponse.HttpCodeDataInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainHttpCodeDataByLayerResponse.HttpCodeDataInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(_ctx.stringValue("DescribeDomainHttpCodeDataByLayerResponse.HttpCodeDataInterval["+ i +"].Value"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainHttpCodeDataByLayerResponse.HttpCodeDataInterval["+ i +"].TimeStamp"));
 			dataModule.setTotalValue(_ctx.stringValue("DescribeDomainHttpCodeDataByLayerResponse.HttpCodeDataInterval["+ i +"].TotalValue"));
 
 			httpCodeDataInterval.add(dataModule);

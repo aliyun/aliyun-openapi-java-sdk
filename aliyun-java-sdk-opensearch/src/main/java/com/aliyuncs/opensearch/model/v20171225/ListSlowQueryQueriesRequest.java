@@ -29,7 +29,7 @@ public class ListSlowQueryQueriesRequest extends RoaAcsRequest<ListSlowQueryQuer
 
 	private String appGroupIdentity;
 	public ListSlowQueryQueriesRequest() {
-		super("OpenSearch", "2017-12-25", "ListSlowQueryQueries", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListSlowQueryQueries");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/categories/[categoryIndex]/queries");
 		setMethod(MethodType.GET);
 		try {

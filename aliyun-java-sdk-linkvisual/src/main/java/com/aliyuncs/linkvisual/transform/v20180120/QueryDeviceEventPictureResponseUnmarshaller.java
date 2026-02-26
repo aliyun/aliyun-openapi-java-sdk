@@ -23,10 +23,10 @@ public class QueryDeviceEventPictureResponseUnmarshaller {
 	public static QueryDeviceEventPictureResponse unmarshall(QueryDeviceEventPictureResponse queryDeviceEventPictureResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceEventPictureResponse.setRequestId(_ctx.stringValue("QueryDeviceEventPictureResponse.RequestId"));
-		queryDeviceEventPictureResponse.setSuccess(_ctx.booleanValue("QueryDeviceEventPictureResponse.Success"));
-		queryDeviceEventPictureResponse.setErrorMessage(_ctx.stringValue("QueryDeviceEventPictureResponse.ErrorMessage"));
 		queryDeviceEventPictureResponse.setCode(_ctx.integerValue("QueryDeviceEventPictureResponse.Code"));
 		queryDeviceEventPictureResponse.setData(_ctx.stringValue("QueryDeviceEventPictureResponse.Data"));
+		queryDeviceEventPictureResponse.setErrorMessage(_ctx.stringValue("QueryDeviceEventPictureResponse.ErrorMessage"));
+		queryDeviceEventPictureResponse.setSuccess(_ctx.booleanValue("QueryDeviceEventPictureResponse.Success"));
 	 
 	 	return queryDeviceEventPictureResponse;
 	}

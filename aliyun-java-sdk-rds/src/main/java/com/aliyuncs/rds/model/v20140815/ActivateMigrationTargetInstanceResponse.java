@@ -28,11 +28,11 @@ public class ActivateMigrationTargetInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long taskId;
-
 	private String sourceIpAddress;
 
 	private Long sourcePort;
+
+	private Long taskId;
 
 	public String getDBInstanceName() {
 		return this.dBInstanceName;
@@ -50,14 +50,6 @@ public class ActivateMigrationTargetInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
-	}
-
 	public String getSourceIpAddress() {
 		return this.sourceIpAddress;
 	}
@@ -72,6 +64,14 @@ public class ActivateMigrationTargetInstanceResponse extends AcsResponse {
 
 	public void setSourcePort(Long sourcePort) {
 		this.sourcePort = sourcePort;
+	}
+
+	public Long getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(Long taskId) {
+		this.taskId = taskId;
 	}
 
 	@Override

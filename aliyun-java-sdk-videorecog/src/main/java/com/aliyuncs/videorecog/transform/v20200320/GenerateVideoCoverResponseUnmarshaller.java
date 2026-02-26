@@ -28,6 +28,8 @@ public class GenerateVideoCoverResponseUnmarshaller {
 	public static GenerateVideoCoverResponse unmarshall(GenerateVideoCoverResponse generateVideoCoverResponse, UnmarshallerContext _ctx) {
 		
 		generateVideoCoverResponse.setRequestId(_ctx.stringValue("GenerateVideoCoverResponse.RequestId"));
+		generateVideoCoverResponse.setMessage(_ctx.stringValue("GenerateVideoCoverResponse.Message"));
+		generateVideoCoverResponse.setCode(_ctx.stringValue("GenerateVideoCoverResponse.Code"));
 
 		Data data = new Data();
 

@@ -49,15 +49,15 @@ public class GetCloudMetricLogsResponse extends AcsResponse {
 
 		private Integer time;
 
-		private String instanceId;
-
-		private String hostname;
+		private String diskDevice;
 
 		private String networkInterface;
 
-		private String diskDevice;
-
 		private String metricData;
+
+		private String hostname;
+
+		private String instanceId;
 
 		public Integer getTime() {
 			return this.time;
@@ -65,30 +65,6 @@ public class GetCloudMetricLogsResponse extends AcsResponse {
 
 		public void setTime(Integer time) {
 			this.time = time;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getHostname() {
-			return this.hostname;
-		}
-
-		public void setHostname(String hostname) {
-			this.hostname = hostname;
-		}
-
-		public String getNetworkInterface() {
-			return this.networkInterface;
-		}
-
-		public void setNetworkInterface(String networkInterface) {
-			this.networkInterface = networkInterface;
 		}
 
 		public String getDiskDevice() {
@@ -99,12 +75,36 @@ public class GetCloudMetricLogsResponse extends AcsResponse {
 			this.diskDevice = diskDevice;
 		}
 
+		public String getNetworkInterface() {
+			return this.networkInterface;
+		}
+
+		public void setNetworkInterface(String networkInterface) {
+			this.networkInterface = networkInterface;
+		}
+
 		public String getMetricData() {
 			return this.metricData;
 		}
 
 		public void setMetricData(String metricData) {
 			this.metricData = metricData;
+		}
+
+		public String getHostname() {
+			return this.hostname;
+		}
+
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

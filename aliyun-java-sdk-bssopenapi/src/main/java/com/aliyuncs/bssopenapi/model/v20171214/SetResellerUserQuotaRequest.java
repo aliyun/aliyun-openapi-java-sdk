@@ -33,7 +33,7 @@ public class SetResellerUserQuotaRequest extends RpcAcsRequest<SetResellerUserQu
 
 	private String currency;
 	public SetResellerUserQuotaRequest() {
-		super("BssOpenApi", "2017-12-14", "SetResellerUserQuota");
+		super("BssOpenApi", "2017-12-14", "SetResellerUserQuota", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

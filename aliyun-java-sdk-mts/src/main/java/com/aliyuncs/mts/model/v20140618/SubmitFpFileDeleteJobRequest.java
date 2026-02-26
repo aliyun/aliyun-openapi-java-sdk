@@ -31,6 +31,8 @@ public class SubmitFpFileDeleteJobRequest extends RpcAcsRequest<SubmitFpFileDele
 
 	private String userData;
 
+	private String primaryKeys;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -79,6 +81,17 @@ public class SubmitFpFileDeleteJobRequest extends RpcAcsRequest<SubmitFpFileDele
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getPrimaryKeys() {
+		return this.primaryKeys;
+	}
+
+	public void setPrimaryKeys(String primaryKeys) {
+		this.primaryKeys = primaryKeys;
+		if(primaryKeys != null){
+			putQueryParameter("PrimaryKeys", primaryKeys);
 		}
 	}
 

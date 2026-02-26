@@ -27,6 +27,8 @@ public class CreateUsageDetailDataExportTaskRequest extends RpcAcsRequest<Create
 
 	private String domainNames;
 
+	private String endTime;
+
 	private String taskName;
 
 	private String language;
@@ -36,10 +38,6 @@ public class CreateUsageDetailDataExportTaskRequest extends RpcAcsRequest<Create
 	private String type;
 
 	private String group;
-
-	private String endTime;
-
-	private Long ownerId;
 	public CreateUsageDetailDataExportTaskRequest() {
 		super("Cdn", "2018-05-10", "CreateUsageDetailDataExportTask");
 		setMethod(MethodType.POST);
@@ -57,6 +55,17 @@ public class CreateUsageDetailDataExportTaskRequest extends RpcAcsRequest<Create
 		this.domainNames = domainNames;
 		if(domainNames != null){
 			putQueryParameter("DomainNames", domainNames);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -112,28 +121,6 @@ public class CreateUsageDetailDataExportTaskRequest extends RpcAcsRequest<Create
 		this.group = group;
 		if(group != null){
 			putQueryParameter("Group", group);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

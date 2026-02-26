@@ -95,6 +95,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private Boolean instantAccess;
 
+		private Boolean available;
+
 		private Integer remainTime;
 
 		private String sourceDiskSize;
@@ -123,6 +125,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String snapshotId;
 
+		private String regionId;
+
 		private String resourceGroupId;
 
 		private String category;
@@ -136,6 +140,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 		private String sourceSnapshotId;
 
 		private String sourceRegionId;
+
+		private String snapshotLinkId;
 
 		private List<Tag> tags;
 
@@ -169,6 +175,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setInstantAccess(Boolean instantAccess) {
 			this.instantAccess = instantAccess;
+		}
+
+		public Boolean getAvailable() {
+			return this.available;
+		}
+
+		public void setAvailable(Boolean available) {
+			this.available = available;
 		}
 
 		public Integer getRemainTime() {
@@ -283,6 +297,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 			this.snapshotId = snapshotId;
 		}
 
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
@@ -337,6 +359,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setSourceRegionId(String sourceRegionId) {
 			this.sourceRegionId = sourceRegionId;
+		}
+
+		public String getSnapshotLinkId() {
+			return this.snapshotLinkId;
+		}
+
+		public void setSnapshotLinkId(String snapshotLinkId) {
+			this.snapshotLinkId = snapshotLinkId;
 		}
 
 		public List<Tag> getTags() {

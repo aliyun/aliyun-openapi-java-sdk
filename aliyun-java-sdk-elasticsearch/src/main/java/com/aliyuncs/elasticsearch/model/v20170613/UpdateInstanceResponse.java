@@ -27,6 +27,10 @@ public class UpdateInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
+	private String message;
+
 	private Result result;
 
 	public String getRequestId() {
@@ -35,6 +39,22 @@ public class UpdateInstanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Result getResult() {

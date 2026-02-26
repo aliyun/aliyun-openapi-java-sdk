@@ -15,26 +15,33 @@
 package com.aliyuncs.netana.model.v20181018;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.netana.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeNetworkQuotasRequest extends RpcAcsRequest<DescribeNetworkQuotasResponse> {
-	
-	public DescribeNetworkQuotasRequest() {
-		super("Netana", "2018-10-18", "DescribeNetworkQuotas", "Netana");
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String product;
-
 	private String quotaPublicityName;
+
+	private String product;
 
 	private String resourceOwnerAccount;
 
 	private String resourceType;
+	public DescribeNetworkQuotasRequest() {
+		super("Netana", "2018-10-18", "DescribeNetworkQuotas", "netana");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -47,36 +54,6 @@ public class DescribeNetworkQuotasRequest extends RpcAcsRequest<DescribeNetworkQ
 		}
 	}
 
-	public String getBizProduct() {
-		return this.product;
-	}
-
-	public void setBizProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizProduct instead of this.
-	 */
-	@Deprecated
-	public String getProduct() {
-		return this.product;
-	}
-
-	/**
-	 * @deprecated use setBizProduct instead of this.
-	 */
-	@Deprecated
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
-		}
-	}
-
 	public String getQuotaPublicityName() {
 		return this.quotaPublicityName;
 	}
@@ -85,6 +62,17 @@ public class DescribeNetworkQuotasRequest extends RpcAcsRequest<DescribeNetworkQ
 		this.quotaPublicityName = quotaPublicityName;
 		if(quotaPublicityName != null){
 			putQueryParameter("QuotaPublicityName", quotaPublicityName);
+		}
+	}
+
+	public String getProduct() {
+		return this.product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("Product", product);
 		}
 	}
 

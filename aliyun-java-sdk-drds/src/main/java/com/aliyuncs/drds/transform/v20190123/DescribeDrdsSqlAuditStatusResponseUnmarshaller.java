@@ -32,13 +32,13 @@ public class DescribeDrdsSqlAuditStatusResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsSqlAuditStatusResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setExtraSlsLogStore(_ctx.stringValue("DescribeDrdsSqlAuditStatusResponse.Data["+ i +"].ExtraSlsLogStore"));
 			dataItem.setDbName(_ctx.stringValue("DescribeDrdsSqlAuditStatusResponse.Data["+ i +"].DbName"));
-			dataItem.setEnabled(_ctx.stringValue("DescribeDrdsSqlAuditStatusResponse.Data["+ i +"].Enabled"));
 			dataItem.setDetailed(_ctx.stringValue("DescribeDrdsSqlAuditStatusResponse.Data["+ i +"].Detailed"));
 			dataItem.setExtraWriteEnabled(_ctx.booleanValue("DescribeDrdsSqlAuditStatusResponse.Data["+ i +"].ExtraWriteEnabled"));
+			dataItem.setEnabled(_ctx.stringValue("DescribeDrdsSqlAuditStatusResponse.Data["+ i +"].Enabled"));
 			dataItem.setExtraAliUid(_ctx.longValue("DescribeDrdsSqlAuditStatusResponse.Data["+ i +"].ExtraAliUid"));
 			dataItem.setExtraSlsProject(_ctx.stringValue("DescribeDrdsSqlAuditStatusResponse.Data["+ i +"].ExtraSlsProject"));
-			dataItem.setExtraSlsLogStore(_ctx.stringValue("DescribeDrdsSqlAuditStatusResponse.Data["+ i +"].ExtraSlsLogStore"));
 
 			data.add(dataItem);
 		}

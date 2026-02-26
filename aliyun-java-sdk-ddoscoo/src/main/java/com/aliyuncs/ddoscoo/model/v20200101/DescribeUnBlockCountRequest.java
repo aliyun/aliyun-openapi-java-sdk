@@ -27,7 +27,7 @@ public class DescribeUnBlockCountRequest extends RpcAcsRequest<DescribeUnBlockCo
 
 	private String resourceGroupId;
 	public DescribeUnBlockCountRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeUnBlockCount");
+		super("ddoscoo", "2020-01-01", "DescribeUnBlockCount", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

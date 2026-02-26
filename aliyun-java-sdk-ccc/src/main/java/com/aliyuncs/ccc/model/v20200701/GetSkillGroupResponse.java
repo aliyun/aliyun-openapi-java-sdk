@@ -86,6 +86,8 @@ public class GetSkillGroupResponse extends AcsResponse {
 
 		private String skillGroupId;
 
+		private String mediaType;
+
 		public String getDisplayName() {
 			return this.displayName;
 		}
@@ -124,6 +126,14 @@ public class GetSkillGroupResponse extends AcsResponse {
 
 		public void setSkillGroupId(String skillGroupId) {
 			this.skillGroupId = skillGroupId;
+		}
+
+		public String getMediaType() {
+			return this.mediaType;
+		}
+
+		public void setMediaType(String mediaType) {
+			this.mediaType = mediaType;
 		}
 	}
 

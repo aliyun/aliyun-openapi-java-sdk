@@ -32,6 +32,8 @@ public class ListTrafficMirrorFiltersRequest extends RpcAcsRequest<ListTrafficMi
 
 	private String trafficMirrorFilterName;
 
+	private String resourceGroupId;
+
 	private String nextToken;
 
 	private String resourceOwnerAccount;
@@ -39,6 +41,8 @@ public class ListTrafficMirrorFiltersRequest extends RpcAcsRequest<ListTrafficMi
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private List<Tags> tagss;
 
 	private Integer maxResults;
 	public ListTrafficMirrorFiltersRequest() {
@@ -82,6 +86,17 @@ public class ListTrafficMirrorFiltersRequest extends RpcAcsRequest<ListTrafficMi
 		this.trafficMirrorFilterName = trafficMirrorFilterName;
 		if(trafficMirrorFilterName != null){
 			putQueryParameter("TrafficMirrorFilterName", trafficMirrorFilterName);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -129,6 +144,20 @@ public class ListTrafficMirrorFiltersRequest extends RpcAcsRequest<ListTrafficMi
 		}
 	}
 
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public Integer getMaxResults() {
 		return this.maxResults;
 	}
@@ -137,6 +166,29 @@ public class ListTrafficMirrorFiltersRequest extends RpcAcsRequest<ListTrafficMi
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public static class Tags {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

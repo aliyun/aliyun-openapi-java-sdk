@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -26,7 +27,11 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 
 	private Long resourceOwnerId;
 
+	private String srcRegion;
+
 	private String securityToken;
+
+	private String instanceType;
 
 	private String dBInstanceId;
 
@@ -38,6 +43,10 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 	public DescribeBackupPolicyRequest() {
 		super("Dds", "2015-12-01", "DescribeBackupPolicy", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -51,6 +60,17 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 		}
 	}
 
+	public String getSrcRegion() {
+		return this.srcRegion;
+	}
+
+	public void setSrcRegion(String srcRegion) {
+		this.srcRegion = srcRegion;
+		if(srcRegion != null){
+			putQueryParameter("SrcRegion", srcRegion);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -59,6 +79,17 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 

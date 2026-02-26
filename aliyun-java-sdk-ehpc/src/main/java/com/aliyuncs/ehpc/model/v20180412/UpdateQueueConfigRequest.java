@@ -25,20 +25,35 @@ import com.aliyuncs.ehpc.Endpoint;
 public class UpdateQueueConfigRequest extends RpcAcsRequest<UpdateQueueConfigResponse> {
 	   
 
+	private String deploymentSetId;
+
 	private String queueName;
 
 	private String clusterId;
+
+	private String networkInterfaceTrafficMode;
 
 	private String resourceGroupId;
 
 	private String computeInstanceType;
 	public UpdateQueueConfigRequest() {
-		super("EHPC", "2018-04-12", "UpdateQueueConfig");
+		super("EHPC", "2018-04-12", "UpdateQueueConfig", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDeploymentSetId() {
+		return this.deploymentSetId;
+	}
+
+	public void setDeploymentSetId(String deploymentSetId) {
+		this.deploymentSetId = deploymentSetId;
+		if(deploymentSetId != null){
+			putQueryParameter("DeploymentSetId", deploymentSetId);
+		}
 	}
 
 	public String getQueueName() {
@@ -60,6 +75,17 @@ public class UpdateQueueConfigRequest extends RpcAcsRequest<UpdateQueueConfigRes
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getNetworkInterfaceTrafficMode() {
+		return this.networkInterfaceTrafficMode;
+	}
+
+	public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		if(networkInterfaceTrafficMode != null){
+			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
 		}
 	}
 

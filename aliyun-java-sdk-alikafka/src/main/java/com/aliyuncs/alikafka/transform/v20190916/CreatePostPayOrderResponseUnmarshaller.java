@@ -23,9 +23,9 @@ public class CreatePostPayOrderResponseUnmarshaller {
 	public static CreatePostPayOrderResponse unmarshall(CreatePostPayOrderResponse createPostPayOrderResponse, UnmarshallerContext _ctx) {
 		
 		createPostPayOrderResponse.setRequestId(_ctx.stringValue("CreatePostPayOrderResponse.RequestId"));
-		createPostPayOrderResponse.setSuccess(_ctx.booleanValue("CreatePostPayOrderResponse.Success"));
 		createPostPayOrderResponse.setCode(_ctx.integerValue("CreatePostPayOrderResponse.Code"));
 		createPostPayOrderResponse.setMessage(_ctx.stringValue("CreatePostPayOrderResponse.Message"));
+		createPostPayOrderResponse.setSuccess(_ctx.booleanValue("CreatePostPayOrderResponse.Success"));
 		createPostPayOrderResponse.setOrderId(_ctx.stringValue("CreatePostPayOrderResponse.OrderId"));
 	 
 	 	return createPostPayOrderResponse;

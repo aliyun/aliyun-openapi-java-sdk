@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.bssopenapi.model.v20171214.GetOrderDetailResponse;
 import com.aliyuncs.bssopenapi.model.v20171214.GetOrderDetailResponse.Data;
 import com.aliyuncs.bssopenapi.model.v20171214.GetOrderDetailResponse.Data.Order;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -68,6 +69,7 @@ public class GetOrderDetailResponseUnmarshaller {
 			order.setPretaxGrossAmount(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PretaxGrossAmount"));
 			order.setOrderId(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].OrderId"));
 			order.setProductCode(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].ProductCode"));
+			order.setExtendInfos(_ctx.mapValue("GetOrderDetailResponse.Data.OrderList["+ i +"].ExtendInfos"));
 
 			orderList.add(order);
 		}

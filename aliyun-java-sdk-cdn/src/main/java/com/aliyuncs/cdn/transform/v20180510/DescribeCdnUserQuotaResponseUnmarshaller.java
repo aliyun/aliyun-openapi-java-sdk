@@ -23,15 +23,17 @@ public class DescribeCdnUserQuotaResponseUnmarshaller {
 	public static DescribeCdnUserQuotaResponse unmarshall(DescribeCdnUserQuotaResponse describeCdnUserQuotaResponse, UnmarshallerContext _ctx) {
 		
 		describeCdnUserQuotaResponse.setRequestId(_ctx.stringValue("DescribeCdnUserQuotaResponse.RequestId"));
-		describeCdnUserQuotaResponse.setDomainQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.DomainQuota"));
-		describeCdnUserQuotaResponse.setRefreshUrlQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshUrlQuota"));
-		describeCdnUserQuotaResponse.setRefreshDirQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshDirQuota"));
-		describeCdnUserQuotaResponse.setRefreshUrlRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshUrlRemain"));
-		describeCdnUserQuotaResponse.setRefreshDirRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshDirRemain"));
-		describeCdnUserQuotaResponse.setPreloadQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.PreloadQuota"));
-		describeCdnUserQuotaResponse.setPreloadRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.PreloadRemain"));
 		describeCdnUserQuotaResponse.setBlockQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.BlockQuota"));
+		describeCdnUserQuotaResponse.setRefreshUrlRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshUrlRemain"));
+		describeCdnUserQuotaResponse.setDomainQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.DomainQuota"));
 		describeCdnUserQuotaResponse.setBlockRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.BlockRemain"));
+		describeCdnUserQuotaResponse.setPreloadRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.PreloadRemain"));
+		describeCdnUserQuotaResponse.setRefreshUrlQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshUrlQuota"));
+		describeCdnUserQuotaResponse.setPreloadQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.PreloadQuota"));
+		describeCdnUserQuotaResponse.setRefreshDirQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshDirQuota"));
+		describeCdnUserQuotaResponse.setRefreshDirRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshDirRemain"));
+		describeCdnUserQuotaResponse.setIgnoreParamsQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.IgnoreParamsQuota"));
+		describeCdnUserQuotaResponse.setIgnoreParamsRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.IgnoreParamsRemain"));
 	 
 	 	return describeCdnUserQuotaResponse;
 	}

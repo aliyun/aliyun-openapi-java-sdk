@@ -35,7 +35,7 @@ public class RefundInstanceRequest extends RpcAcsRequest<RefundInstanceResponse>
 
 	private String instanceId;
 	public RefundInstanceRequest() {
-		super("BssOpenApi", "2017-12-14", "RefundInstance");
+		super("BssOpenApi", "2017-12-14", "RefundInstance", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

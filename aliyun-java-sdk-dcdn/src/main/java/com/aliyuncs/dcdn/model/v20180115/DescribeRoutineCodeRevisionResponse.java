@@ -25,17 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRoutineCodeRevisionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Map<Object,Object> content;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Map<Object,Object> getContent() {
 		return this.content;
@@ -43,6 +35,14 @@ public class DescribeRoutineCodeRevisionResponse extends AcsResponse {
 
 	public void setContent(Map<Object,Object> content) {
 		this.content = content;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -95,7 +95,35 @@ public class DescribeImageListWithBaselineNameResponse extends AcsResponse {
 
 		private String repoName;
 
+		private String clusterId;
+
+		private String clusterName;
+
 		private String repoNamespace;
+
+		private String pod;
+
+		private String namespace;
+
+		private String containerId;
+
+		private String image;
+
+		private String baselineType;
+
+		private String instanceName;
+
+		private String internetIp;
+
+		private String intranetIp;
+
+		private String targetName;
+
+		private String targetId;
+
+		private String targetType;
+
+		private Long lastScanTime;
 
 		public Integer getMiddleRiskImage() {
 			return this.middleRiskImage;
@@ -249,12 +277,124 @@ public class DescribeImageListWithBaselineNameResponse extends AcsResponse {
 			this.repoName = repoName;
 		}
 
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
 		public String getRepoNamespace() {
 			return this.repoNamespace;
 		}
 
 		public void setRepoNamespace(String repoNamespace) {
 			this.repoNamespace = repoNamespace;
+		}
+
+		public String getPod() {
+			return this.pod;
+		}
+
+		public void setPod(String pod) {
+			this.pod = pod;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getContainerId() {
+			return this.containerId;
+		}
+
+		public void setContainerId(String containerId) {
+			this.containerId = containerId;
+		}
+
+		public String getImage() {
+			return this.image;
+		}
+
+		public void setImage(String image) {
+			this.image = image;
+		}
+
+		public String getBaselineType() {
+			return this.baselineType;
+		}
+
+		public void setBaselineType(String baselineType) {
+			this.baselineType = baselineType;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
+
+		public String getTargetName() {
+			return this.targetName;
+		}
+
+		public void setTargetName(String targetName) {
+			this.targetName = targetName;
+		}
+
+		public String getTargetId() {
+			return this.targetId;
+		}
+
+		public void setTargetId(String targetId) {
+			this.targetId = targetId;
+		}
+
+		public String getTargetType() {
+			return this.targetType;
+		}
+
+		public void setTargetType(String targetType) {
+			this.targetType = targetType;
+		}
+
+		public Long getLastScanTime() {
+			return this.lastScanTime;
+		}
+
+		public void setLastScanTime(Long lastScanTime) {
+			this.lastScanTime = lastScanTime;
 		}
 	}
 

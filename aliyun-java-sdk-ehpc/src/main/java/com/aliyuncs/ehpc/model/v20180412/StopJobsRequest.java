@@ -28,8 +28,10 @@ public class StopJobsRequest extends RpcAcsRequest<StopJobsResponse> {
 	private String jobs;
 
 	private String clusterId;
+
+	private Boolean async;
 	public StopJobsRequest() {
-		super("EHPC", "2018-04-12", "StopJobs");
+		super("EHPC", "2018-04-12", "StopJobs", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class StopJobsRequest extends RpcAcsRequest<StopJobsResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 

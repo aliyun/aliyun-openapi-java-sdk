@@ -88,6 +88,8 @@ public class GetDestinationResponse extends AcsResponse {
 
 		private String utcCreated;
 
+		private String status;
+
 		public String getDestinationId() {
 			return this.destinationId;
 		}
@@ -134,6 +136,14 @@ public class GetDestinationResponse extends AcsResponse {
 
 		public void setUtcCreated(String utcCreated) {
 			this.utcCreated = utcCreated;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHotDbListResponse extends AcsResponse {
 
+	private String msg;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String msg;
-
 	private Data data;
+
+	public String getMsg() {
+		return this.msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,14 +55,6 @@ public class DescribeHotDbListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMsg() {
-		return this.msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
 	}
 
 	public Data getData() {

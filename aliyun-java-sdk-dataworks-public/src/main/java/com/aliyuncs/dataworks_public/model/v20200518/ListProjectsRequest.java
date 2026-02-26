@@ -15,6 +15,9 @@
 package com.aliyuncs.dataworks_public.model.v20200518;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dataworks_public.Endpoint;
 
@@ -25,9 +28,14 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class ListProjectsRequest extends RpcAcsRequest<ListProjectsResponse> {
 	   
 
-	private Integer pageSize;
-
 	private Integer pageNumber;
+
+	@SerializedName("tags")
+	private List<Tags> tags;
+
+	private String resourceManagerResourceGroupId;
+
+	private Integer pageSize;
 	public ListProjectsRequest() {
 		super("dataworks-public", "2020-05-18", "ListProjects");
 		setMethod(MethodType.POST);
@@ -35,6 +43,39 @@ public class ListProjectsRequest extends RpcAcsRequest<ListProjectsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public List<Tags> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tags> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			putQueryParameter("Tags" , new Gson().toJson(tags));
+		}	
+	}
+
+	public String getResourceManagerResourceGroupId() {
+		return this.resourceManagerResourceGroupId;
+	}
+
+	public void setResourceManagerResourceGroupId(String resourceManagerResourceGroupId) {
+		this.resourceManagerResourceGroupId = resourceManagerResourceGroupId;
+		if(resourceManagerResourceGroupId != null){
+			putQueryParameter("ResourceManagerResourceGroupId", resourceManagerResourceGroupId);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -48,14 +89,28 @@ public class ListProjectsRequest extends RpcAcsRequest<ListProjectsResponse> {
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+	public static class Tags {
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+		@SerializedName("Value")
+		private String value;
+
+		@SerializedName("Key")
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

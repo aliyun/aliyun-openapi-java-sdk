@@ -23,8 +23,8 @@ public class DisableSlowQueryResponseUnmarshaller {
 
 	public static DisableSlowQueryResponse unmarshall(DisableSlowQueryResponse disableSlowQueryResponse, UnmarshallerContext _ctx) {
 		
-		disableSlowQueryResponse.setRequestId(_ctx.stringValue("DisableSlowQueryResponse.requestId"));
 		disableSlowQueryResponse.setResult(_ctx.mapValue("DisableSlowQueryResponse.result"));
+		disableSlowQueryResponse.setRequestId(_ctx.stringValue("DisableSlowQueryResponse.requestId"));
 	 
 	 	return disableSlowQueryResponse;
 	}

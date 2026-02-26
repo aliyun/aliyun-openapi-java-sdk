@@ -38,6 +38,8 @@ public class DeleteIpv4GatewayRequest extends RpcAcsRequest<DeleteIpv4GatewayRes
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String internetMode;
 	public DeleteIpv4GatewayRequest() {
 		super("Vpc", "2016-04-28", "DeleteIpv4Gateway", "vpc");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class DeleteIpv4GatewayRequest extends RpcAcsRequest<DeleteIpv4GatewayRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInternetMode() {
+		return this.internetMode;
+	}
+
+	public void setInternetMode(String internetMode) {
+		this.internetMode = internetMode;
+		if(internetMode != null){
+			putQueryParameter("InternetMode", internetMode);
 		}
 	}
 

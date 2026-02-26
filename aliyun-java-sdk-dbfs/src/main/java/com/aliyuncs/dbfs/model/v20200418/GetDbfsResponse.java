@@ -85,13 +85,19 @@ public class GetDbfsResponse extends AcsResponse {
 
 		private Boolean enableRaid;
 
+		private String instanceType;
+
 		private Integer raidStrip;
+
+		private String lastFailed;
 
 		private List<TagList> tags;
 
 		private List<EcsListItem> ecsList;
 
 		private List<EbsListItem> ebsList;
+
+		private SnapshotInfo snapshotInfo;
 
 		public String getStatus() {
 			return this.status;
@@ -245,12 +251,28 @@ public class GetDbfsResponse extends AcsResponse {
 			this.enableRaid = enableRaid;
 		}
 
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
 		public Integer getRaidStrip() {
 			return this.raidStrip;
 		}
 
 		public void setRaidStrip(Integer raidStrip) {
 			this.raidStrip = raidStrip;
+		}
+
+		public String getLastFailed() {
+			return this.lastFailed;
+		}
+
+		public void setLastFailed(String lastFailed) {
+			this.lastFailed = lastFailed;
 		}
 
 		public List<TagList> getTags() {
@@ -275,6 +297,14 @@ public class GetDbfsResponse extends AcsResponse {
 
 		public void setEbsList(List<EbsListItem> ebsList) {
 			this.ebsList = ebsList;
+		}
+
+		public SnapshotInfo getSnapshotInfo() {
+			return this.snapshotInfo;
+		}
+
+		public void setSnapshotInfo(SnapshotInfo snapshotInfo) {
+			this.snapshotInfo = snapshotInfo;
 		}
 
 		public static class TagList {
@@ -343,6 +373,49 @@ public class GetDbfsResponse extends AcsResponse {
 
 			public void setSizeG(Integer sizeG) {
 				this.sizeG = sizeG;
+			}
+		}
+
+		public static class SnapshotInfo {
+
+			private Integer snapshotCount;
+
+			private String linkId;
+
+			private Long totalSize;
+
+			private String policyId;
+
+			public Integer getSnapshotCount() {
+				return this.snapshotCount;
+			}
+
+			public void setSnapshotCount(Integer snapshotCount) {
+				this.snapshotCount = snapshotCount;
+			}
+
+			public String getLinkId() {
+				return this.linkId;
+			}
+
+			public void setLinkId(String linkId) {
+				this.linkId = linkId;
+			}
+
+			public Long getTotalSize() {
+				return this.totalSize;
+			}
+
+			public void setTotalSize(Long totalSize) {
+				this.totalSize = totalSize;
+			}
+
+			public String getPolicyId() {
+				return this.policyId;
+			}
+
+			public void setPolicyId(String policyId) {
+				this.policyId = policyId;
 			}
 		}
 	}

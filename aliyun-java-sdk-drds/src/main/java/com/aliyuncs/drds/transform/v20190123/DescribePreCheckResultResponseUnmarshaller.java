@@ -37,9 +37,9 @@ public class DescribePreCheckResultResponseUnmarshaller {
 		List<SubCheckItemsItem> subCheckItems = new ArrayList<SubCheckItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePreCheckResultResponse.PreCheckResult.SubCheckItems.Length"); i++) {
 			SubCheckItemsItem subCheckItemsItem = new SubCheckItemsItem();
+			subCheckItemsItem.setErrorMsgCode(_ctx.stringValue("DescribePreCheckResultResponse.PreCheckResult.SubCheckItems["+ i +"].ErrorMsgCode"));
 			subCheckItemsItem.setPreCheckItemName(_ctx.stringValue("DescribePreCheckResultResponse.PreCheckResult.SubCheckItems["+ i +"].PreCheckItemName"));
 			subCheckItemsItem.setState(_ctx.stringValue("DescribePreCheckResultResponse.PreCheckResult.SubCheckItems["+ i +"].State"));
-			subCheckItemsItem.setErrorMsgCode(_ctx.stringValue("DescribePreCheckResultResponse.PreCheckResult.SubCheckItems["+ i +"].ErrorMsgCode"));
 
 			List<String> errorMsgParams = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePreCheckResultResponse.PreCheckResult.SubCheckItems["+ i +"].ErrorMsgParams.Length"); j++) {

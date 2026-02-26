@@ -42,6 +42,7 @@ public class DescribeLoginBaseConfigsResponseUnmarshaller {
 			baseConfig.setTotalCount(_ctx.integerValue("DescribeLoginBaseConfigsResponse.BaseConfigs["+ i +"].TotalCount"));
 			baseConfig.setUuidCount(_ctx.integerValue("DescribeLoginBaseConfigsResponse.BaseConfigs["+ i +"].UuidCount"));
 			baseConfig.setLocation(_ctx.stringValue("DescribeLoginBaseConfigsResponse.BaseConfigs["+ i +"].Location"));
+			baseConfig.setRemark(_ctx.stringValue("DescribeLoginBaseConfigsResponse.BaseConfigs["+ i +"].Remark"));
 
 			List<Target> targetList = new ArrayList<Target>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLoginBaseConfigsResponse.BaseConfigs["+ i +"].TargetList.Length"); j++) {

@@ -25,11 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDrdsShardingDbsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
+	private String pageNumber;
+
+	private String pageSize;
+
+	private String total;
+
 	private List<ShardingDb> shardingDbs;
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,12 +53,28 @@ public class DescribeDrdsShardingDbsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public String getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(String total) {
+		this.total = total;
 	}
 
 	public List<ShardingDb> getShardingDbs() {
@@ -57,71 +87,31 @@ public class DescribeDrdsShardingDbsResponse extends AcsResponse {
 
 	public static class ShardingDb {
 
-		private String shardingDbName;
-
-		private String dbInstanceId;
-
-		private String groupName;
-
-		private String dbStatus;
-
-		private String dbType;
-
 		private Integer minPoolSize;
 
 		private Integer maxPoolSize;
 
-		private Integer idleTimeOut;
-
-		private Integer blockingTimeout;
-
-		private String connectionProperties;
-
-		private Integer preparedStatementCacheSize;
-
-		private String userName;
+		private String dbInstanceId;
 
 		private String connectUrl;
 
-		public String getShardingDbName() {
-			return this.shardingDbName;
-		}
+		private String groupName;
 
-		public void setShardingDbName(String shardingDbName) {
-			this.shardingDbName = shardingDbName;
-		}
+		private String dbType;
 
-		public String getDbInstanceId() {
-			return this.dbInstanceId;
-		}
+		private Integer idleTimeOut;
 
-		public void setDbInstanceId(String dbInstanceId) {
-			this.dbInstanceId = dbInstanceId;
-		}
+		private String shardingDbName;
 
-		public String getGroupName() {
-			return this.groupName;
-		}
+		private Integer blockingTimeout;
 
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
+		private Integer preparedStatementCacheSize;
 
-		public String getDbStatus() {
-			return this.dbStatus;
-		}
+		private String connectionProperties;
 
-		public void setDbStatus(String dbStatus) {
-			this.dbStatus = dbStatus;
-		}
+		private String userName;
 
-		public String getDbType() {
-			return this.dbType;
-		}
-
-		public void setDbType(String dbType) {
-			this.dbType = dbType;
-		}
+		private String dbStatus;
 
 		public Integer getMinPoolSize() {
 			return this.minPoolSize;
@@ -139,12 +129,52 @@ public class DescribeDrdsShardingDbsResponse extends AcsResponse {
 			this.maxPoolSize = maxPoolSize;
 		}
 
+		public String getDbInstanceId() {
+			return this.dbInstanceId;
+		}
+
+		public void setDbInstanceId(String dbInstanceId) {
+			this.dbInstanceId = dbInstanceId;
+		}
+
+		public String getConnectUrl() {
+			return this.connectUrl;
+		}
+
+		public void setConnectUrl(String connectUrl) {
+			this.connectUrl = connectUrl;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public String getDbType() {
+			return this.dbType;
+		}
+
+		public void setDbType(String dbType) {
+			this.dbType = dbType;
+		}
+
 		public Integer getIdleTimeOut() {
 			return this.idleTimeOut;
 		}
 
 		public void setIdleTimeOut(Integer idleTimeOut) {
 			this.idleTimeOut = idleTimeOut;
+		}
+
+		public String getShardingDbName() {
+			return this.shardingDbName;
+		}
+
+		public void setShardingDbName(String shardingDbName) {
+			this.shardingDbName = shardingDbName;
 		}
 
 		public Integer getBlockingTimeout() {
@@ -155,20 +185,20 @@ public class DescribeDrdsShardingDbsResponse extends AcsResponse {
 			this.blockingTimeout = blockingTimeout;
 		}
 
-		public String getConnectionProperties() {
-			return this.connectionProperties;
-		}
-
-		public void setConnectionProperties(String connectionProperties) {
-			this.connectionProperties = connectionProperties;
-		}
-
 		public Integer getPreparedStatementCacheSize() {
 			return this.preparedStatementCacheSize;
 		}
 
 		public void setPreparedStatementCacheSize(Integer preparedStatementCacheSize) {
 			this.preparedStatementCacheSize = preparedStatementCacheSize;
+		}
+
+		public String getConnectionProperties() {
+			return this.connectionProperties;
+		}
+
+		public void setConnectionProperties(String connectionProperties) {
+			this.connectionProperties = connectionProperties;
 		}
 
 		public String getUserName() {
@@ -179,12 +209,12 @@ public class DescribeDrdsShardingDbsResponse extends AcsResponse {
 			this.userName = userName;
 		}
 
-		public String getConnectUrl() {
-			return this.connectUrl;
+		public String getDbStatus() {
+			return this.dbStatus;
 		}
 
-		public void setConnectUrl(String connectUrl) {
-			this.connectUrl = connectUrl;
+		public void setDbStatus(String dbStatus) {
+			this.dbStatus = dbStatus;
 		}
 	}
 

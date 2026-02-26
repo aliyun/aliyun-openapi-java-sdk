@@ -43,7 +43,7 @@ public class SaveSingleTaskForCreatingOrderRenewRequest extends RpcAcsRequest<Sa
 
 	private Boolean usePromotion;
 	public SaveSingleTaskForCreatingOrderRenewRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRenew");
+		super("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRenew", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

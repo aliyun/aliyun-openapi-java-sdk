@@ -32,11 +32,15 @@ public class DescribeVpnGatewaysRequest extends RpcAcsRequest<DescribeVpnGateway
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private List<Tag> tags;
 
 	private String businessStatus;
+
+	private String gatewayType;
 
 	private String resourceOwnerAccount;
 
@@ -91,6 +95,17 @@ public class DescribeVpnGatewaysRequest extends RpcAcsRequest<DescribeVpnGateway
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -124,6 +139,17 @@ public class DescribeVpnGatewaysRequest extends RpcAcsRequest<DescribeVpnGateway
 		this.businessStatus = businessStatus;
 		if(businessStatus != null){
 			putQueryParameter("BusinessStatus", businessStatus);
+		}
+	}
+
+	public String getGatewayType() {
+		return this.gatewayType;
+	}
+
+	public void setGatewayType(String gatewayType) {
+		this.gatewayType = gatewayType;
+		if(gatewayType != null){
+			putQueryParameter("GatewayType", gatewayType);
 		}
 	}
 

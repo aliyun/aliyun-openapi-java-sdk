@@ -27,13 +27,19 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 
 	private String startTime;
 
+	private String type;
+
+	private String subGroupName;
+
 	private String key;
 
 	private String dBClusterId;
 
 	private String endTime;
+
+	private String interval;
 	public DescribeDBClusterPerformanceRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusterPerformance");
+		super("polardb", "2017-08-01", "DescribeDBClusterPerformance", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,6 +55,28 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getSubGroupName() {
+		return this.subGroupName;
+	}
+
+	public void setSubGroupName(String subGroupName) {
+		this.subGroupName = subGroupName;
+		if(subGroupName != null){
+			putQueryParameter("SubGroupName", subGroupName);
 		}
 	}
 
@@ -82,6 +110,17 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 

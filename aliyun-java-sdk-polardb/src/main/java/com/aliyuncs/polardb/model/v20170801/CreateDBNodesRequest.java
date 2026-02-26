@@ -32,7 +32,15 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 
 	private String endpointBindList;
 
+	private Boolean autoUseCoupon;
+
 	private String plannedEndTime;
+
+	private String cloudProvider;
+
+	private String resourceGroupId;
+
+	private String dBNodeType;
 
 	private String resourceOwnerAccount;
 
@@ -44,11 +52,13 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 
 	private String plannedStartTime;
 
+	private String promotionCode;
+
 	private List<DBNode> dBNodes;
 
 	private String imciSwitch;
 	public CreateDBNodesRequest() {
-		super("polardb", "2017-08-01", "CreateDBNodes");
+		super("polardb", "2017-08-01", "CreateDBNodes", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -89,6 +99,17 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 		}
 	}
 
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
+		}
+	}
+
 	public String getPlannedEndTime() {
 		return this.plannedEndTime;
 	}
@@ -97,6 +118,39 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 		this.plannedEndTime = plannedEndTime;
 		if(plannedEndTime != null){
 			putQueryParameter("PlannedEndTime", plannedEndTime);
+		}
+	}
+
+	public String getCloudProvider() {
+		return this.cloudProvider;
+	}
+
+	public void setCloudProvider(String cloudProvider) {
+		this.cloudProvider = cloudProvider;
+		if(cloudProvider != null){
+			putQueryParameter("CloudProvider", cloudProvider);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDBNodeType() {
+		return this.dBNodeType;
+	}
+
+	public void setDBNodeType(String dBNodeType) {
+		this.dBNodeType = dBNodeType;
+		if(dBNodeType != null){
+			putQueryParameter("DBNodeType", dBNodeType);
 		}
 	}
 
@@ -152,6 +206,17 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 		this.plannedStartTime = plannedStartTime;
 		if(plannedStartTime != null){
 			putQueryParameter("PlannedStartTime", plannedStartTime);
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 

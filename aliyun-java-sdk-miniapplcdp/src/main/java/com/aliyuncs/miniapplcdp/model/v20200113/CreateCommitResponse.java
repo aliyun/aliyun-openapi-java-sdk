@@ -61,8 +61,6 @@ public class CreateCommitResponse extends AcsResponse {
 
 		private String modelDataPath;
 
-		private Map<Object,Object> modelDigest;
-
 		private String modifiedTime;
 
 		private String moduleId;
@@ -133,14 +131,6 @@ public class CreateCommitResponse extends AcsResponse {
 
 		public void setModelDataPath(String modelDataPath) {
 			this.modelDataPath = modelDataPath;
-		}
-
-		public Map<Object,Object> getModelDigest() {
-			return this.modelDigest;
-		}
-
-		public void setModelDigest(Map<Object,Object> modelDigest) {
-			this.modelDigest = modelDigest;
 		}
 
 		public String getModifiedTime() {

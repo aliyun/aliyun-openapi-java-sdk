@@ -35,6 +35,8 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 
 	private String backupMethod;
 
+	private Long backupRetentionPeriod;
+
 	private String dBName;
 	public CreateBackupRequest() {
 		super("Rds", "2014-08-15", "CreateBackup", "rds");
@@ -97,6 +99,17 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		this.backupMethod = backupMethod;
 		if(backupMethod != null){
 			putQueryParameter("BackupMethod", backupMethod);
+		}
+	}
+
+	public Long getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
+	}
+
+	public void setBackupRetentionPeriod(Long backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
+		if(backupRetentionPeriod != null){
+			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod.toString());
 		}
 	}
 

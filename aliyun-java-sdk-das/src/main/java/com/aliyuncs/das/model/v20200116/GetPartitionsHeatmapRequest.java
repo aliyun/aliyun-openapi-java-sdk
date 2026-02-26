@@ -25,25 +25,11 @@ import com.aliyuncs.das.Endpoint;
 public class GetPartitionsHeatmapRequest extends RpcAcsRequest<GetPartitionsHeatmapResponse> {
 	   
 
-	private String skipAuth;
-
-	private String signature;
+	private String timeRange;
 
 	private String type;
 
-	private String userId;
-
-	private String uid;
-
 	private String consoleContext;
-
-	private String accessKey;
-
-	private String timestamp;
-
-	private String timeRange;
-
-	private String __context;
 
 	private String instanceId;
 	public GetPartitionsHeatmapRequest() {
@@ -55,25 +41,14 @@ public class GetPartitionsHeatmapRequest extends RpcAcsRequest<GetPartitionsHeat
 		} catch (Exception e) {}
 	}
 
-	public String getSkipAuth() {
-		return this.skipAuth;
+	public String getTimeRange() {
+		return this.timeRange;
 	}
 
-	public void setSkipAuth(String skipAuth) {
-		this.skipAuth = skipAuth;
-		if(skipAuth != null){
-			putQueryParameter("skipAuth", skipAuth);
-		}
-	}
-
-	public String getSignature() {
-		return this.signature;
-	}
-
-	public void setSignature(String signature) {
-		this.signature = signature;
-		if(signature != null){
-			putQueryParameter("signature", signature);
+	public void setTimeRange(String timeRange) {
+		this.timeRange = timeRange;
+		if(timeRange != null){
+			putQueryParameter("TimeRange", timeRange);
 		}
 	}
 
@@ -88,28 +63,6 @@ public class GetPartitionsHeatmapRequest extends RpcAcsRequest<GetPartitionsHeat
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public String getUid() {
-		return this.uid;
-	}
-
-	public void setUid(String uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid);
-		}
-	}
-
 	public String getConsoleContext() {
 		return this.consoleContext;
 	}
@@ -118,50 +71,6 @@ public class GetPartitionsHeatmapRequest extends RpcAcsRequest<GetPartitionsHeat
 		this.consoleContext = consoleContext;
 		if(consoleContext != null){
 			putQueryParameter("ConsoleContext", consoleContext);
-		}
-	}
-
-	public String getAccessKey() {
-		return this.accessKey;
-	}
-
-	public void setAccessKey(String accessKey) {
-		this.accessKey = accessKey;
-		if(accessKey != null){
-			putQueryParameter("accessKey", accessKey);
-		}
-	}
-
-	public String getTimestamp() {
-		return this.timestamp;
-	}
-
-	public void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
-		if(timestamp != null){
-			putQueryParameter("timestamp", timestamp);
-		}
-	}
-
-	public String getTimeRange() {
-		return this.timeRange;
-	}
-
-	public void setTimeRange(String timeRange) {
-		this.timeRange = timeRange;
-		if(timeRange != null){
-			putQueryParameter("TimeRange", timeRange);
-		}
-	}
-
-	public String get__Context() {
-		return this.__context;
-	}
-
-	public void set__Context(String __context) {
-		this.__context = __context;
-		if(__context != null){
-			putQueryParameter("__context", __context);
 		}
 	}
 

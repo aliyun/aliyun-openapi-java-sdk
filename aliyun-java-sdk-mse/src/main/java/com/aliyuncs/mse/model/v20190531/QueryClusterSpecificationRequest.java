@@ -27,6 +27,8 @@ public class QueryClusterSpecificationRequest extends RpcAcsRequest<QueryCluster
 
 	private String connectType;
 
+	private String mseVersion;
+
 	private String acceptLanguage;
 	public QueryClusterSpecificationRequest() {
 		super("mse", "2019-05-31", "QueryClusterSpecification", "mse");
@@ -45,6 +47,17 @@ public class QueryClusterSpecificationRequest extends RpcAcsRequest<QueryCluster
 		this.connectType = connectType;
 		if(connectType != null){
 			putQueryParameter("ConnectType", connectType);
+		}
+	}
+
+	public String getMseVersion() {
+		return this.mseVersion;
+	}
+
+	public void setMseVersion(String mseVersion) {
+		this.mseVersion = mseVersion;
+		if(mseVersion != null){
+			putQueryParameter("MseVersion", mseVersion);
 		}
 	}
 

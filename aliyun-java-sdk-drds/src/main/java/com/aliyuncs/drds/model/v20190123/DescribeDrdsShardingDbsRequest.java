@@ -27,7 +27,11 @@ public class DescribeDrdsShardingDbsRequest extends RpcAcsRequest<DescribeDrdsSh
 
 	private String drdsInstanceId;
 
+	private Long pageNumber;
+
 	private String dbName;
+
+	private Long pageSize;
 
 	private String dbNamePattern;
 	public DescribeDrdsShardingDbsRequest() {
@@ -50,6 +54,17 @@ public class DescribeDrdsShardingDbsRequest extends RpcAcsRequest<DescribeDrdsSh
 		}
 	}
 
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	public String getDbName() {
 		return this.dbName;
 	}
@@ -58,6 +73,17 @@ public class DescribeDrdsShardingDbsRequest extends RpcAcsRequest<DescribeDrdsSh
 		this.dbName = dbName;
 		if(dbName != null){
 			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

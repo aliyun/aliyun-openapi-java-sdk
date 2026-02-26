@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNetworkAnalyticsLatencyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<RoundTripLatencyInfo> roundTripLatencies;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeNetworkAnalyticsLatencyResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<RoundTripLatencyInfo> getRoundTripLatencies() {
@@ -77,27 +77,19 @@ public class DescribeNetworkAnalyticsLatencyResponse extends AcsResponse {
 
 	public static class RoundTripLatencyInfo {
 
-		private String roundTripLatency;
-
 		private String dataType;
+
+		private String ip;
+
+		private String roundTripLatency;
 
 		private String dateTime;
 
-		private String ip;
+		private Carrier carrier;
 
 		private Country country;
 
 		private Province province;
-
-		private Carrier carrier;
-
-		public String getRoundTripLatency() {
-			return this.roundTripLatency;
-		}
-
-		public void setRoundTripLatency(String roundTripLatency) {
-			this.roundTripLatency = roundTripLatency;
-		}
 
 		public String getDataType() {
 			return this.dataType;
@@ -105,6 +97,22 @@ public class DescribeNetworkAnalyticsLatencyResponse extends AcsResponse {
 
 		public void setDataType(String dataType) {
 			this.dataType = dataType;
+		}
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public String getRoundTripLatency() {
+			return this.roundTripLatency;
+		}
+
+		public void setRoundTripLatency(String roundTripLatency) {
+			this.roundTripLatency = roundTripLatency;
 		}
 
 		public String getDateTime() {
@@ -115,12 +123,12 @@ public class DescribeNetworkAnalyticsLatencyResponse extends AcsResponse {
 			this.dateTime = dateTime;
 		}
 
-		public String getIp() {
-			return this.ip;
+		public Carrier getCarrier() {
+			return this.carrier;
 		}
 
-		public void setIp(String ip) {
-			this.ip = ip;
+		public void setCarrier(Carrier carrier) {
+			this.carrier = carrier;
 		}
 
 		public Country getCountry() {
@@ -139,85 +147,11 @@ public class DescribeNetworkAnalyticsLatencyResponse extends AcsResponse {
 			this.province = province;
 		}
 
-		public Carrier getCarrier() {
-			return this.carrier;
-		}
-
-		public void setCarrier(Carrier carrier) {
-			this.carrier = carrier;
-		}
-
-		public static class Country {
-
-			private String countryCode;
-
-			private Boolean countryCn;
-
-			private String countryEn;
-
-			public String getCountryCode() {
-				return this.countryCode;
-			}
-
-			public void setCountryCode(String countryCode) {
-				this.countryCode = countryCode;
-			}
-
-			public Boolean getCountryCn() {
-				return this.countryCn;
-			}
-
-			public void setCountryCn(Boolean countryCn) {
-				this.countryCn = countryCn;
-			}
-
-			public String getCountryEn() {
-				return this.countryEn;
-			}
-
-			public void setCountryEn(String countryEn) {
-				this.countryEn = countryEn;
-			}
-		}
-
-		public static class Province {
-
-			private String provinceCode;
-
-			private Boolean provinceCn;
-
-			private String provinceEn;
-
-			public String getProvinceCode() {
-				return this.provinceCode;
-			}
-
-			public void setProvinceCode(String provinceCode) {
-				this.provinceCode = provinceCode;
-			}
-
-			public Boolean getProvinceCn() {
-				return this.provinceCn;
-			}
-
-			public void setProvinceCn(Boolean provinceCn) {
-				this.provinceCn = provinceCn;
-			}
-
-			public String getProvinceEn() {
-				return this.provinceEn;
-			}
-
-			public void setProvinceEn(String provinceEn) {
-				this.provinceEn = provinceEn;
-			}
-		}
-
 		public static class Carrier {
 
 			private String carrierCode;
 
-			private Boolean carrierCn;
+			private String carrierCn;
 
 			private String carrierEn;
 
@@ -229,11 +163,11 @@ public class DescribeNetworkAnalyticsLatencyResponse extends AcsResponse {
 				this.carrierCode = carrierCode;
 			}
 
-			public Boolean getCarrierCn() {
+			public String getCarrierCn() {
 				return this.carrierCn;
 			}
 
-			public void setCarrierCn(Boolean carrierCn) {
+			public void setCarrierCn(String carrierCn) {
 				this.carrierCn = carrierCn;
 			}
 
@@ -243,6 +177,72 @@ public class DescribeNetworkAnalyticsLatencyResponse extends AcsResponse {
 
 			public void setCarrierEn(String carrierEn) {
 				this.carrierEn = carrierEn;
+			}
+		}
+
+		public static class Country {
+
+			private String countryCn;
+
+			private String countryEn;
+
+			private String countryCode;
+
+			public String getCountryCn() {
+				return this.countryCn;
+			}
+
+			public void setCountryCn(String countryCn) {
+				this.countryCn = countryCn;
+			}
+
+			public String getCountryEn() {
+				return this.countryEn;
+			}
+
+			public void setCountryEn(String countryEn) {
+				this.countryEn = countryEn;
+			}
+
+			public String getCountryCode() {
+				return this.countryCode;
+			}
+
+			public void setCountryCode(String countryCode) {
+				this.countryCode = countryCode;
+			}
+		}
+
+		public static class Province {
+
+			private String provinceCode;
+
+			private String provinceCn;
+
+			private String provinceEn;
+
+			public String getProvinceCode() {
+				return this.provinceCode;
+			}
+
+			public void setProvinceCode(String provinceCode) {
+				this.provinceCode = provinceCode;
+			}
+
+			public String getProvinceCn() {
+				return this.provinceCn;
+			}
+
+			public void setProvinceCn(String provinceCn) {
+				this.provinceCn = provinceCn;
+			}
+
+			public String getProvinceEn() {
+				return this.provinceEn;
+			}
+
+			public void setProvinceEn(String provinceEn) {
+				this.provinceEn = provinceEn;
 			}
 		}
 	}

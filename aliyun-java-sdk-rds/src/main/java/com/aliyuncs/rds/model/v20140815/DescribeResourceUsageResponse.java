@@ -24,51 +24,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeResourceUsageResponse extends AcsResponse {
 
-	private Long backupOssDataSize;
-
-	private Long diskUsed;
-
 	private Long archiveBackupSize;
-
-	private Long backupOssLogSize;
-
-	private Long backupLogSize;
 
 	private Long backupDataSize;
 
+	private Long backupLogSize;
+
+	private Long backupOssDataSize;
+
+	private Long backupOssLogSize;
+
+	private Long backupSize;
+
 	private Long coldBackupSize;
 
+	private String dBInstanceId;
+
 	private Long dataSize;
+
+	private Long diskUsed;
+
+	private String engine;
+
+	private Long logSize;
 
 	private Long paidBackupSize;
 
 	private String requestId;
 
-	private Long logSize;
-
-	private Long backupSize;
-
-	private String dBInstanceId;
-
-	private String engine;
-
 	private Long sQLSize;
 
-	public Long getBackupOssDataSize() {
-		return this.backupOssDataSize;
-	}
-
-	public void setBackupOssDataSize(Long backupOssDataSize) {
-		this.backupOssDataSize = backupOssDataSize;
-	}
-
-	public Long getDiskUsed() {
-		return this.diskUsed;
-	}
-
-	public void setDiskUsed(Long diskUsed) {
-		this.diskUsed = diskUsed;
-	}
+	private String backupEcsSnapshotSize;
 
 	public Long getArchiveBackupSize() {
 		return this.archiveBackupSize;
@@ -76,22 +62,6 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 
 	public void setArchiveBackupSize(Long archiveBackupSize) {
 		this.archiveBackupSize = archiveBackupSize;
-	}
-
-	public Long getBackupOssLogSize() {
-		return this.backupOssLogSize;
-	}
-
-	public void setBackupOssLogSize(Long backupOssLogSize) {
-		this.backupOssLogSize = backupOssLogSize;
-	}
-
-	public Long getBackupLogSize() {
-		return this.backupLogSize;
-	}
-
-	public void setBackupLogSize(Long backupLogSize) {
-		this.backupLogSize = backupLogSize;
 	}
 
 	public Long getBackupDataSize() {
@@ -102,6 +72,38 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 		this.backupDataSize = backupDataSize;
 	}
 
+	public Long getBackupLogSize() {
+		return this.backupLogSize;
+	}
+
+	public void setBackupLogSize(Long backupLogSize) {
+		this.backupLogSize = backupLogSize;
+	}
+
+	public Long getBackupOssDataSize() {
+		return this.backupOssDataSize;
+	}
+
+	public void setBackupOssDataSize(Long backupOssDataSize) {
+		this.backupOssDataSize = backupOssDataSize;
+	}
+
+	public Long getBackupOssLogSize() {
+		return this.backupOssLogSize;
+	}
+
+	public void setBackupOssLogSize(Long backupOssLogSize) {
+		this.backupOssLogSize = backupOssLogSize;
+	}
+
+	public Long getBackupSize() {
+		return this.backupSize;
+	}
+
+	public void setBackupSize(Long backupSize) {
+		this.backupSize = backupSize;
+	}
+
 	public Long getColdBackupSize() {
 		return this.coldBackupSize;
 	}
@@ -110,12 +112,44 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 		this.coldBackupSize = coldBackupSize;
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
+
 	public Long getDataSize() {
 		return this.dataSize;
 	}
 
 	public void setDataSize(Long dataSize) {
 		this.dataSize = dataSize;
+	}
+
+	public Long getDiskUsed() {
+		return this.diskUsed;
+	}
+
+	public void setDiskUsed(Long diskUsed) {
+		this.diskUsed = diskUsed;
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+	}
+
+	public Long getLogSize() {
+		return this.logSize;
+	}
+
+	public void setLogSize(Long logSize) {
+		this.logSize = logSize;
 	}
 
 	public Long getPaidBackupSize() {
@@ -134,44 +168,20 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getLogSize() {
-		return this.logSize;
-	}
-
-	public void setLogSize(Long logSize) {
-		this.logSize = logSize;
-	}
-
-	public Long getBackupSize() {
-		return this.backupSize;
-	}
-
-	public void setBackupSize(Long backupSize) {
-		this.backupSize = backupSize;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
-
 	public Long getSQLSize() {
 		return this.sQLSize;
 	}
 
 	public void setSQLSize(Long sQLSize) {
 		this.sQLSize = sQLSize;
+	}
+
+	public String getBackupEcsSnapshotSize() {
+		return this.backupEcsSnapshotSize;
+	}
+
+	public void setBackupEcsSnapshotSize(String backupEcsSnapshotSize) {
+		this.backupEcsSnapshotSize = backupEcsSnapshotSize;
 	}
 
 	@Override

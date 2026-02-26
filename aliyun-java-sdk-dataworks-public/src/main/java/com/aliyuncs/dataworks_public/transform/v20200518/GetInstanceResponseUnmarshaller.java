@@ -46,6 +46,7 @@ public class GetInstanceResponseUnmarshaller {
 		data.setDagType(_ctx.stringValue("GetInstanceResponse.Data.DagType"));
 		data.setBusinessId(_ctx.longValue("GetInstanceResponse.Data.BusinessId"));
 		data.setTaskRerunTime(_ctx.integerValue("GetInstanceResponse.Data.TaskRerunTime"));
+		data.setPeriodNumber(_ctx.integerValue("GetInstanceResponse.Data.PeriodNumber"));
 		data.setModifyTime(_ctx.longValue("GetInstanceResponse.Data.ModifyTime"));
 		data.setRepeatability(_ctx.booleanValue("GetInstanceResponse.Data.Repeatability"));
 		data.setRepeatInterval(_ctx.longValue("GetInstanceResponse.Data.RepeatInterval"));
@@ -58,6 +59,7 @@ public class GetInstanceResponseUnmarshaller {
 		data.setDqcDescription(_ctx.stringValue("GetInstanceResponse.Data.DqcDescription"));
 		data.setNodeId(_ctx.longValue("GetInstanceResponse.Data.NodeId"));
 		data.setCreateUser(_ctx.stringValue("GetInstanceResponse.Data.CreateUser"));
+		data.setOwner(_ctx.stringValue("GetInstanceResponse.Data.Owner"));
 		getInstanceResponse.setData(data);
 	 
 	 	return getInstanceResponse;

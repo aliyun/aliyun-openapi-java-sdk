@@ -25,11 +25,11 @@ import com.aliyuncs.imm.Endpoint;
 public class ListDatasetsRequest extends RpcAcsRequest<ListDatasetsResponse> {
 	   
 
-	private String projectName;
+	private String prefix;
 
 	private String nextToken;
 
-	private String prefix;
+	private String projectName;
 
 	private Long maxResults;
 	public ListDatasetsRequest() {
@@ -41,14 +41,14 @@ public class ListDatasetsRequest extends RpcAcsRequest<ListDatasetsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
+	public String getPrefix() {
+		return this.prefix;
 	}
 
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
+	public void setPrefix(String prefix) {
+		this.prefix = prefix;
+		if(prefix != null){
+			putQueryParameter("Prefix", prefix);
 		}
 	}
 
@@ -63,14 +63,14 @@ public class ListDatasetsRequest extends RpcAcsRequest<ListDatasetsResponse> {
 		}
 	}
 
-	public String getPrefix() {
-		return this.prefix;
+	public String getProjectName() {
+		return this.projectName;
 	}
 
-	public void setPrefix(String prefix) {
-		this.prefix = prefix;
-		if(prefix != null){
-			putQueryParameter("Prefix", prefix);
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 

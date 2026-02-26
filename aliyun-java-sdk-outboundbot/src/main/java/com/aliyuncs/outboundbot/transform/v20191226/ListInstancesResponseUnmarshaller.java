@@ -33,6 +33,9 @@ public class ListInstancesResponseUnmarshaller {
 		listInstancesResponse.setCode(_ctx.stringValue("ListInstancesResponse.Code"));
 		listInstancesResponse.setMessage(_ctx.stringValue("ListInstancesResponse.Message"));
 		listInstancesResponse.setSuccess(_ctx.booleanValue("ListInstancesResponse.Success"));
+		listInstancesResponse.setTotalCount(_ctx.integerValue("ListInstancesResponse.TotalCount"));
+		listInstancesResponse.setPageNumber(_ctx.integerValue("ListInstancesResponse.PageNumber"));
+		listInstancesResponse.setPageSize(_ctx.integerValue("ListInstancesResponse.PageSize"));
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstancesResponse.Instances.Length"); i++) {
@@ -50,11 +53,13 @@ public class ListInstancesResponseUnmarshaller {
 			instance.setResourceGroupId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 			instance.setCreatorName(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].CreatorName"));
 			instance.setMaxConcurrentConversation(_ctx.integerValue("ListInstancesResponse.Instances["+ i +"].MaxConcurrentConversation"));
+			instance.setIsPreset(_ctx.booleanValue("ListInstancesResponse.Instances["+ i +"].IsPreset"));
 
 			NluProfile nluProfile = new NluProfile();
 			nluProfile.setAccessKey(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.AccessKey"));
 			nluProfile.setSecretKey(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.SecretKey"));
 			nluProfile.setEndpoint(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.Endpoint"));
+			nluProfile.setAgentId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.AgentId"));
 			instance.setNluProfile(nluProfile);
 
 			List<ResourceTag> resourceTags = new ArrayList<ResourceTag>();

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePriceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Float totalTradePrice;
 
+	private String requestId;
+
 	private List<PriceInfo> prices;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Float getTotalTradePrice() {
 		return this.totalTradePrice;
@@ -45,6 +37,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 	public void setTotalTradePrice(Float totalTradePrice) {
 		this.totalTradePrice = totalTradePrice;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<PriceInfo> getPrices() {
@@ -57,21 +57,13 @@ public class DescribePriceResponse extends AcsResponse {
 
 	public static class PriceInfo {
 
-		private String nodeType;
-
 		private Float originalPrice;
 
-		private Float tradePrice;
+		private String nodeType;
 
 		private String currency;
 
-		public String getNodeType() {
-			return this.nodeType;
-		}
-
-		public void setNodeType(String nodeType) {
-			this.nodeType = nodeType;
-		}
+		private Float tradePrice;
 
 		public Float getOriginalPrice() {
 			return this.originalPrice;
@@ -81,12 +73,12 @@ public class DescribePriceResponse extends AcsResponse {
 			this.originalPrice = originalPrice;
 		}
 
-		public Float getTradePrice() {
-			return this.tradePrice;
+		public String getNodeType() {
+			return this.nodeType;
 		}
 
-		public void setTradePrice(Float tradePrice) {
-			this.tradePrice = tradePrice;
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
 		}
 
 		public String getCurrency() {
@@ -95,6 +87,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 		public void setCurrency(String currency) {
 			this.currency = currency;
+		}
+
+		public Float getTradePrice() {
+			return this.tradePrice;
+		}
+
+		public void setTradePrice(Float tradePrice) {
+			this.tradePrice = tradePrice;
 		}
 	}
 

@@ -1,3 +1,26 @@
+2023-11-13 Version: 3.26.17
+- Add response parameters in GetK8sApplication.
+- Add request parameters in InsertK8sApplication.
+
+2023-03-27 Version: 3.26.16
+- Add UserBaseImageUrl parameter for InsertK8sApplication API.
+- Add UserBaseImageUrl parameter for DeployK8sApplication API.
+
+2023-01-09 Version: 3.26.15
+- Add Behaviour parameter for CreateApplicationScalingRule API.
+
+2023-01-03 Version: 3.26.14
+- Update UpdateApplicationScalingRule API.
+
+2023-01-03 Version: 3.26.13
+- Update UpdateApplicationScalingRule API.
+
+2022-11-17 Version: 3.26.12
+- Modify InsertK8sApplication API.
+
+2022-08-17 Version: 3.26.11
+- DeleteK8sApplication add params force.
+
 2022-08-12 Version: 3.26.10
 - Support swimming lane sdk.
 

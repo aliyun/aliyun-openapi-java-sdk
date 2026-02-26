@@ -27,7 +27,7 @@ public class ActivateOfficeSiteRequest extends RpcAcsRequest<ActivateOfficeSiteR
 
 	private String officeSiteId;
 	public ActivateOfficeSiteRequest() {
-		super("ecd", "2020-09-30", "ActivateOfficeSite");
+		super("ecd", "2020-09-30", "ActivateOfficeSite", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

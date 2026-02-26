@@ -23,9 +23,9 @@ public class EnableHanaBackupPlanResponseUnmarshaller {
 	public static EnableHanaBackupPlanResponse unmarshall(EnableHanaBackupPlanResponse enableHanaBackupPlanResponse, UnmarshallerContext _ctx) {
 		
 		enableHanaBackupPlanResponse.setRequestId(_ctx.stringValue("EnableHanaBackupPlanResponse.RequestId"));
-		enableHanaBackupPlanResponse.setSuccess(_ctx.booleanValue("EnableHanaBackupPlanResponse.Success"));
 		enableHanaBackupPlanResponse.setCode(_ctx.stringValue("EnableHanaBackupPlanResponse.Code"));
 		enableHanaBackupPlanResponse.setMessage(_ctx.stringValue("EnableHanaBackupPlanResponse.Message"));
+		enableHanaBackupPlanResponse.setSuccess(_ctx.booleanValue("EnableHanaBackupPlanResponse.Success"));
 	 
 	 	return enableHanaBackupPlanResponse;
 	}

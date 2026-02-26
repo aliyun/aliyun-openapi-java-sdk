@@ -25,25 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLogoResponse extends AcsResponse {
 
+	private String fontDescription;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String colorOne;
-
-	private String colorTwo;
-
-	private String colorThree;
-
-	private String colorDescription;
+	private String brandName;
 
 	private String namePath;
 
-	private String fontDescription;
+	private String colorTwo;
 
-	private String brandName;
+	private String colorOne;
+
+	private String colorDescription;
+
+	private String colorThree;
 
 	private List<String> images;
+
+	public String getFontDescription() {
+		return this.fontDescription;
+	}
+
+	public void setFontDescription(String fontDescription) {
+		this.fontDescription = fontDescription;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,36 +69,12 @@ public class DescribeLogoResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getColorOne() {
-		return this.colorOne;
+	public String getBrandName() {
+		return this.brandName;
 	}
 
-	public void setColorOne(String colorOne) {
-		this.colorOne = colorOne;
-	}
-
-	public String getColorTwo() {
-		return this.colorTwo;
-	}
-
-	public void setColorTwo(String colorTwo) {
-		this.colorTwo = colorTwo;
-	}
-
-	public String getColorThree() {
-		return this.colorThree;
-	}
-
-	public void setColorThree(String colorThree) {
-		this.colorThree = colorThree;
-	}
-
-	public String getColorDescription() {
-		return this.colorDescription;
-	}
-
-	public void setColorDescription(String colorDescription) {
-		this.colorDescription = colorDescription;
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;
 	}
 
 	public String getNamePath() {
@@ -101,20 +85,36 @@ public class DescribeLogoResponse extends AcsResponse {
 		this.namePath = namePath;
 	}
 
-	public String getFontDescription() {
-		return this.fontDescription;
+	public String getColorTwo() {
+		return this.colorTwo;
 	}
 
-	public void setFontDescription(String fontDescription) {
-		this.fontDescription = fontDescription;
+	public void setColorTwo(String colorTwo) {
+		this.colorTwo = colorTwo;
 	}
 
-	public String getBrandName() {
-		return this.brandName;
+	public String getColorOne() {
+		return this.colorOne;
 	}
 
-	public void setBrandName(String brandName) {
-		this.brandName = brandName;
+	public void setColorOne(String colorOne) {
+		this.colorOne = colorOne;
+	}
+
+	public String getColorDescription() {
+		return this.colorDescription;
+	}
+
+	public void setColorDescription(String colorDescription) {
+		this.colorDescription = colorDescription;
+	}
+
+	public String getColorThree() {
+		return this.colorThree;
+	}
+
+	public void setColorThree(String colorThree) {
+		this.colorThree = colorThree;
 	}
 
 	public List<String> getImages() {

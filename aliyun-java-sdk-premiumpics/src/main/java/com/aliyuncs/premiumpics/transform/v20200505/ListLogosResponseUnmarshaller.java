@@ -27,11 +27,11 @@ public class ListLogosResponseUnmarshaller {
 	public static ListLogosResponse unmarshall(ListLogosResponse listLogosResponse, UnmarshallerContext _ctx) {
 		
 		listLogosResponse.setRequestId(_ctx.stringValue("ListLogosResponse.RequestId"));
+		listLogosResponse.setNextPage(_ctx.integerValue("ListLogosResponse.NextPage"));
 		listLogosResponse.setSuccess(_ctx.booleanValue("ListLogosResponse.Success"));
 		listLogosResponse.setVersion(_ctx.stringValue("ListLogosResponse.Version"));
-		listLogosResponse.setNextPage(_ctx.integerValue("ListLogosResponse.NextPage"));
-		listLogosResponse.setPageNumber(_ctx.integerValue("ListLogosResponse.PageNumber"));
 		listLogosResponse.setLogoVersion(_ctx.stringValue("ListLogosResponse.LogoVersion"));
+		listLogosResponse.setPageNumber(_ctx.integerValue("ListLogosResponse.PageNumber"));
 
 		List<Goods> data = new ArrayList<Goods>();
 		for (int i = 0; i < _ctx.lengthValue("ListLogosResponse.Data.Length"); i++) {
@@ -39,6 +39,11 @@ public class ListLogosResponseUnmarshaller {
 			goods.setGoodsId(_ctx.stringValue("ListLogosResponse.Data["+ i +"].GoodsId"));
 			goods.setUrl(_ctx.stringValue("ListLogosResponse.Data["+ i +"].Url"));
 			goods.setCollect(_ctx.integerValue("ListLogosResponse.Data["+ i +"].Collect"));
+			goods.setTagId(_ctx.integerValue("ListLogosResponse.Data["+ i +"].TagId"));
+			goods.setEnableChangeColor(_ctx.booleanValue("ListLogosResponse.Data["+ i +"].EnableChangeColor"));
+			goods.setEnableChangeFont(_ctx.booleanValue("ListLogosResponse.Data["+ i +"].EnableChangeFont"));
+			goods.setEnableChangeIcon(_ctx.booleanValue("ListLogosResponse.Data["+ i +"].EnableChangeIcon"));
+			goods.setEnableChangeLayout(_ctx.booleanValue("ListLogosResponse.Data["+ i +"].EnableChangeLayout"));
 
 			data.add(goods);
 		}

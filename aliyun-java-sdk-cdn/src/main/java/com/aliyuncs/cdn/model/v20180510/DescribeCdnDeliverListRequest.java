@@ -26,8 +26,6 @@ public class DescribeCdnDeliverListRequest extends RpcAcsRequest<DescribeCdnDeli
 	   
 
 	private Long deliverId;
-
-	private Long ownerId;
 	public DescribeCdnDeliverListRequest() {
 		super("Cdn", "2018-05-10", "DescribeCdnDeliverList");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class DescribeCdnDeliverListRequest extends RpcAcsRequest<DescribeCdnDeli
 		this.deliverId = deliverId;
 		if(deliverId != null){
 			putQueryParameter("DeliverId", deliverId.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

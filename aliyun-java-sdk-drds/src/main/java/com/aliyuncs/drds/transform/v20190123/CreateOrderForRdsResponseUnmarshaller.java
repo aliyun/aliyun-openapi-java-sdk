@@ -23,8 +23,8 @@ public class CreateOrderForRdsResponseUnmarshaller {
 	public static CreateOrderForRdsResponse unmarshall(CreateOrderForRdsResponse createOrderForRdsResponse, UnmarshallerContext _ctx) {
 		
 		createOrderForRdsResponse.setRequestId(_ctx.stringValue("CreateOrderForRdsResponse.RequestId"));
-		createOrderForRdsResponse.setSuccess(_ctx.booleanValue("CreateOrderForRdsResponse.Success"));
 		createOrderForRdsResponse.setData(_ctx.stringValue("CreateOrderForRdsResponse.Data"));
+		createOrderForRdsResponse.setSuccess(_ctx.booleanValue("CreateOrderForRdsResponse.Success"));
 	 
 	 	return createOrderForRdsResponse;
 	}

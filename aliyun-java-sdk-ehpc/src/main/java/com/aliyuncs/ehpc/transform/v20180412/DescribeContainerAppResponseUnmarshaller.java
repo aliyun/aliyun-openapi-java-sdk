@@ -26,13 +26,13 @@ public class DescribeContainerAppResponseUnmarshaller {
 		describeContainerAppResponse.setRequestId(_ctx.stringValue("DescribeContainerAppResponse.RequestId"));
 
 		ContainerAppInfo containerAppInfo = new ContainerAppInfo();
-		containerAppInfo.setId(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Id"));
-		containerAppInfo.setName(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Name"));
+		containerAppInfo.setType(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Type"));
 		containerAppInfo.setDescription(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Description"));
+		containerAppInfo.setCreateTime(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.CreateTime"));
 		containerAppInfo.setRepository(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Repository"));
 		containerAppInfo.setImageTag(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.ImageTag"));
-		containerAppInfo.setCreateTime(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.CreateTime"));
-		containerAppInfo.setType(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Type"));
+		containerAppInfo.setName(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Name"));
+		containerAppInfo.setId(_ctx.stringValue("DescribeContainerAppResponse.ContainerAppInfo.Id"));
 		describeContainerAppResponse.setContainerAppInfo(containerAppInfo);
 	 
 	 	return describeContainerAppResponse;

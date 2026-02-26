@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetClusterVolumesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String regionId;
 
+	private String requestId;
+
 	private List<VolumeInfo> volumes;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getRegionId() {
 		return this.regionId;
@@ -45,6 +37,14 @@ public class GetClusterVolumesResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<VolumeInfo> getVolumes() {
@@ -57,25 +57,33 @@ public class GetClusterVolumesResponse extends AcsResponse {
 
 	public static class VolumeInfo {
 
+		private String jobQueue;
+
 		private String volumeId;
-
-		private String volumeType;
-
-		private String volumeProtocol;
-
-		private String volumeMountpoint;
 
 		private String remoteDirectory;
 
+		private String volumeMountpoint;
+
 		private String localDirectory;
 
-		private String location;
-
-		private String jobQueue;
+		private String volumeType;
 
 		private Boolean mustKeep;
 
+		private String location;
+
+		private String volumeProtocol;
+
 		private List<RoleInfo> roles;
+
+		public String getJobQueue() {
+			return this.jobQueue;
+		}
+
+		public void setJobQueue(String jobQueue) {
+			this.jobQueue = jobQueue;
+		}
 
 		public String getVolumeId() {
 			return this.volumeId;
@@ -83,30 +91,6 @@ public class GetClusterVolumesResponse extends AcsResponse {
 
 		public void setVolumeId(String volumeId) {
 			this.volumeId = volumeId;
-		}
-
-		public String getVolumeType() {
-			return this.volumeType;
-		}
-
-		public void setVolumeType(String volumeType) {
-			this.volumeType = volumeType;
-		}
-
-		public String getVolumeProtocol() {
-			return this.volumeProtocol;
-		}
-
-		public void setVolumeProtocol(String volumeProtocol) {
-			this.volumeProtocol = volumeProtocol;
-		}
-
-		public String getVolumeMountpoint() {
-			return this.volumeMountpoint;
-		}
-
-		public void setVolumeMountpoint(String volumeMountpoint) {
-			this.volumeMountpoint = volumeMountpoint;
 		}
 
 		public String getRemoteDirectory() {
@@ -117,12 +101,36 @@ public class GetClusterVolumesResponse extends AcsResponse {
 			this.remoteDirectory = remoteDirectory;
 		}
 
+		public String getVolumeMountpoint() {
+			return this.volumeMountpoint;
+		}
+
+		public void setVolumeMountpoint(String volumeMountpoint) {
+			this.volumeMountpoint = volumeMountpoint;
+		}
+
 		public String getLocalDirectory() {
 			return this.localDirectory;
 		}
 
 		public void setLocalDirectory(String localDirectory) {
 			this.localDirectory = localDirectory;
+		}
+
+		public String getVolumeType() {
+			return this.volumeType;
+		}
+
+		public void setVolumeType(String volumeType) {
+			this.volumeType = volumeType;
+		}
+
+		public Boolean getMustKeep() {
+			return this.mustKeep;
+		}
+
+		public void setMustKeep(Boolean mustKeep) {
+			this.mustKeep = mustKeep;
 		}
 
 		public String getLocation() {
@@ -133,20 +141,12 @@ public class GetClusterVolumesResponse extends AcsResponse {
 			this.location = location;
 		}
 
-		public String getJobQueue() {
-			return this.jobQueue;
+		public String getVolumeProtocol() {
+			return this.volumeProtocol;
 		}
 
-		public void setJobQueue(String jobQueue) {
-			this.jobQueue = jobQueue;
-		}
-
-		public Boolean getMustKeep() {
-			return this.mustKeep;
-		}
-
-		public void setMustKeep(Boolean mustKeep) {
-			this.mustKeep = mustKeep;
+		public void setVolumeProtocol(String volumeProtocol) {
+			this.volumeProtocol = volumeProtocol;
 		}
 
 		public List<RoleInfo> getRoles() {

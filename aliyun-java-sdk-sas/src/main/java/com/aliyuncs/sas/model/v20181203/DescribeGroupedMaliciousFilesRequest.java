@@ -15,6 +15,7 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.sas.Endpoint;
 
@@ -33,11 +34,15 @@ public class DescribeGroupedMaliciousFilesRequest extends RpcAcsRequest<Describe
 
 	private String imageDigest;
 
+	private List<String> scanRanges;
+
 	private String pageSize;
 
 	private String lang;
 
 	private String imageTag;
+
+	private String maliciousMd5;
 
 	private Integer currentPage;
 
@@ -105,6 +110,19 @@ public class DescribeGroupedMaliciousFilesRequest extends RpcAcsRequest<Describe
 		}
 	}
 
+	public List<String> getScanRanges() {
+		return this.scanRanges;
+	}
+
+	public void setScanRanges(List<String> scanRanges) {
+		this.scanRanges = scanRanges;	
+		if (scanRanges != null) {
+			for (int i = 0; i < scanRanges.size(); i++) {
+				putQueryParameter("ScanRange." + (i + 1) , scanRanges.get(i));
+			}
+		}	
+	}
+
 	public String getPageSize() {
 		return this.pageSize;
 	}
@@ -135,6 +153,17 @@ public class DescribeGroupedMaliciousFilesRequest extends RpcAcsRequest<Describe
 		this.imageTag = imageTag;
 		if(imageTag != null){
 			putQueryParameter("ImageTag", imageTag);
+		}
+	}
+
+	public String getMaliciousMd5() {
+		return this.maliciousMd5;
+	}
+
+	public void setMaliciousMd5(String maliciousMd5) {
+		this.maliciousMd5 = maliciousMd5;
+		if(maliciousMd5 != null){
+			putQueryParameter("MaliciousMd5", maliciousMd5);
 		}
 	}
 

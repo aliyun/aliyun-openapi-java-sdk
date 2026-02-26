@@ -39,7 +39,7 @@ public class DeleteTransitRouterMulticastDomainRequest extends RpcAcsRequest<Del
 
 	private Long ownerId;
 	public DeleteTransitRouterMulticastDomainRequest() {
-		super("Cbn", "2017-09-12", "DeleteTransitRouterMulticastDomain");
+		super("Cbn", "2017-09-12", "DeleteTransitRouterMulticastDomain", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

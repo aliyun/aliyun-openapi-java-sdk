@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryLocalFileUploadJobResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class QueryLocalFileUploadJobResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,7 +99,7 @@ public class QueryLocalFileUploadJobResponse extends AcsResponse {
 
 		public static class ResultListItem {
 
-			private String iotId;
+			private Integer slotEndTime;
 
 			private String productKey;
 
@@ -107,20 +107,20 @@ public class QueryLocalFileUploadJobResponse extends AcsResponse {
 
 			private Integer slotStartTime;
 
-			private Integer slotEndTime;
+			private Integer code;
 
 			private Integer slotStatus;
 
-			private Integer code;
+			private String iotId;
 
 			private List<FileListItem> fileList;
 
-			public String getIotId() {
-				return this.iotId;
+			public Integer getSlotEndTime() {
+				return this.slotEndTime;
 			}
 
-			public void setIotId(String iotId) {
-				this.iotId = iotId;
+			public void setSlotEndTime(Integer slotEndTime) {
+				this.slotEndTime = slotEndTime;
 			}
 
 			public String getProductKey() {
@@ -147,12 +147,12 @@ public class QueryLocalFileUploadJobResponse extends AcsResponse {
 				this.slotStartTime = slotStartTime;
 			}
 
-			public Integer getSlotEndTime() {
-				return this.slotEndTime;
+			public Integer getCode() {
+				return this.code;
 			}
 
-			public void setSlotEndTime(Integer slotEndTime) {
-				this.slotEndTime = slotEndTime;
+			public void setCode(Integer code) {
+				this.code = code;
 			}
 
 			public Integer getSlotStatus() {
@@ -163,12 +163,12 @@ public class QueryLocalFileUploadJobResponse extends AcsResponse {
 				this.slotStatus = slotStatus;
 			}
 
-			public Integer getCode() {
-				return this.code;
+			public String getIotId() {
+				return this.iotId;
 			}
 
-			public void setCode(Integer code) {
-				this.code = code;
+			public void setIotId(String iotId) {
+				this.iotId = iotId;
 			}
 
 			public List<FileListItem> getFileList() {
@@ -181,11 +181,19 @@ public class QueryLocalFileUploadJobResponse extends AcsResponse {
 
 			public static class FileListItem {
 
+				private String fileName;
+
 				private Integer fileStartTime;
 
 				private Integer fileEndTime;
 
-				private String fileName;
+				public String getFileName() {
+					return this.fileName;
+				}
+
+				public void setFileName(String fileName) {
+					this.fileName = fileName;
+				}
 
 				public Integer getFileStartTime() {
 					return this.fileStartTime;
@@ -201,14 +209,6 @@ public class QueryLocalFileUploadJobResponse extends AcsResponse {
 
 				public void setFileEndTime(Integer fileEndTime) {
 					this.fileEndTime = fileEndTime;
-				}
-
-				public String getFileName() {
-					return this.fileName;
-				}
-
-				public void setFileName(String fileName) {
-					this.fileName = fileName;
 				}
 			}
 		}

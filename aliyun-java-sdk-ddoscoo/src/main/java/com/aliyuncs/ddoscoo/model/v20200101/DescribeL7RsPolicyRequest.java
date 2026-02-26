@@ -32,7 +32,7 @@ public class DescribeL7RsPolicyRequest extends RpcAcsRequest<DescribeL7RsPolicyR
 
 	private String domain;
 	public DescribeL7RsPolicyRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeL7RsPolicy");
+		super("ddoscoo", "2020-01-01", "DescribeL7RsPolicy", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

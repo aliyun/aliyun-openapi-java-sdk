@@ -25,13 +25,13 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class ListFileVersionsRequest extends RpcAcsRequest<ListFileVersionsResponse> {
 	   
 
-	private Integer pageSize;
-
-	private Long projectId;
-
 	private String projectIdentifier;
 
 	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private Long projectId;
 
 	private Long fileId;
 	public ListFileVersionsRequest() {
@@ -41,28 +41,6 @@ public class ListFileVersionsRequest extends RpcAcsRequest<ListFileVersionsRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Long getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(Long projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putBodyParameter("ProjectId", projectId.toString());
-		}
 	}
 
 	public String getProjectIdentifier() {
@@ -84,6 +62,28 @@ public class ListFileVersionsRequest extends RpcAcsRequest<ListFileVersionsRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

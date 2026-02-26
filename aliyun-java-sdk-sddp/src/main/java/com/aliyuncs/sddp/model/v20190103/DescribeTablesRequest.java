@@ -41,6 +41,8 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 
 	private Integer currentPage;
 
+	private Long templateId;
+
 	private Long instanceId;
 
 	private String name;
@@ -140,6 +142,17 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public Long getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(Long templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId.toString());
 		}
 	}
 

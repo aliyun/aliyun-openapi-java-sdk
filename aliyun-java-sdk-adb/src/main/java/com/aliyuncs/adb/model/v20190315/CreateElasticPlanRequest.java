@@ -27,11 +27,15 @@ public class CreateElasticPlanRequest extends RpcAcsRequest<CreateElasticPlanRes
 
 	private Long resourceOwnerId;
 
+	private String elasticPlanType;
+
 	private String elasticPlanTimeStart;
 
 	private String elasticPlanEndDay;
 
 	private String elasticPlanWeeklyRepeat;
+
+	private String elasticPlanWorkerSpec;
 
 	private Boolean elasticPlanEnable;
 
@@ -48,6 +52,8 @@ public class CreateElasticPlanRequest extends RpcAcsRequest<CreateElasticPlanRes
 	private Long ownerId;
 
 	private String elasticPlanName;
+
+	private String elasticPlanMonthlyRepeat;
 
 	private String resourcePoolName;
 
@@ -69,6 +75,17 @@ public class CreateElasticPlanRequest extends RpcAcsRequest<CreateElasticPlanRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getElasticPlanType() {
+		return this.elasticPlanType;
+	}
+
+	public void setElasticPlanType(String elasticPlanType) {
+		this.elasticPlanType = elasticPlanType;
+		if(elasticPlanType != null){
+			putQueryParameter("ElasticPlanType", elasticPlanType);
 		}
 	}
 
@@ -102,6 +119,17 @@ public class CreateElasticPlanRequest extends RpcAcsRequest<CreateElasticPlanRes
 		this.elasticPlanWeeklyRepeat = elasticPlanWeeklyRepeat;
 		if(elasticPlanWeeklyRepeat != null){
 			putQueryParameter("ElasticPlanWeeklyRepeat", elasticPlanWeeklyRepeat);
+		}
+	}
+
+	public String getElasticPlanWorkerSpec() {
+		return this.elasticPlanWorkerSpec;
+	}
+
+	public void setElasticPlanWorkerSpec(String elasticPlanWorkerSpec) {
+		this.elasticPlanWorkerSpec = elasticPlanWorkerSpec;
+		if(elasticPlanWorkerSpec != null){
+			putQueryParameter("ElasticPlanWorkerSpec", elasticPlanWorkerSpec);
 		}
 	}
 
@@ -190,6 +218,17 @@ public class CreateElasticPlanRequest extends RpcAcsRequest<CreateElasticPlanRes
 		this.elasticPlanName = elasticPlanName;
 		if(elasticPlanName != null){
 			putQueryParameter("ElasticPlanName", elasticPlanName);
+		}
+	}
+
+	public String getElasticPlanMonthlyRepeat() {
+		return this.elasticPlanMonthlyRepeat;
+	}
+
+	public void setElasticPlanMonthlyRepeat(String elasticPlanMonthlyRepeat) {
+		this.elasticPlanMonthlyRepeat = elasticPlanMonthlyRepeat;
+		if(elasticPlanMonthlyRepeat != null){
+			putQueryParameter("ElasticPlanMonthlyRepeat", elasticPlanMonthlyRepeat);
 		}
 	}
 

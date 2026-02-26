@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.ListVpcGatewayEndpointsResponse;
 import com.aliyuncs.vpc.model.v20160428.ListVpcGatewayEndpointsResponse.Endpoint;
+import com.aliyuncs.vpc.model.v20160428.ListVpcGatewayEndpointsResponse.Endpoint.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,12 +43,23 @@ public class ListVpcGatewayEndpointsResponseUnmarshaller {
 			endpoint.setPolicyDocument(_ctx.stringValue("ListVpcGatewayEndpointsResponse.Endpoints["+ i +"].PolicyDocument"));
 			endpoint.setCreationTime(_ctx.stringValue("ListVpcGatewayEndpointsResponse.Endpoints["+ i +"].CreationTime"));
 			endpoint.setEndpointStatus(_ctx.stringValue("ListVpcGatewayEndpointsResponse.Endpoints["+ i +"].EndpointStatus"));
+			endpoint.setResourceGroupId(_ctx.stringValue("ListVpcGatewayEndpointsResponse.Endpoints["+ i +"].ResourceGroupId"));
 
 			List<String> associatedRouteTables = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListVpcGatewayEndpointsResponse.Endpoints["+ i +"].AssociatedRouteTables.Length"); j++) {
 				associatedRouteTables.add(_ctx.stringValue("ListVpcGatewayEndpointsResponse.Endpoints["+ i +"].AssociatedRouteTables["+ j +"]"));
 			}
 			endpoint.setAssociatedRouteTables(associatedRouteTables);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListVpcGatewayEndpointsResponse.Endpoints["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListVpcGatewayEndpointsResponse.Endpoints["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListVpcGatewayEndpointsResponse.Endpoints["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			endpoint.setTags(tags);
 
 			endpoints.add(endpoint);
 		}

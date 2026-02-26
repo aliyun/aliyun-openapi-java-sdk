@@ -28,18 +28,19 @@ public class DescribeDomainNsResponseUnmarshaller {
 		describeDomainNsResponse.setRequestId(_ctx.stringValue("DescribeDomainNsResponse.RequestId"));
 		describeDomainNsResponse.setAllAliDns(_ctx.booleanValue("DescribeDomainNsResponse.AllAliDns"));
 		describeDomainNsResponse.setIncludeAliDns(_ctx.booleanValue("DescribeDomainNsResponse.IncludeAliDns"));
-
-		List<String> dnsServers = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeDomainNsResponse.DnsServers.Length"); i++) {
-			dnsServers.add(_ctx.stringValue("DescribeDomainNsResponse.DnsServers["+ i +"]"));
-		}
-		describeDomainNsResponse.setDnsServers(dnsServers);
+		describeDomainNsResponse.setDetectFailedReasonCode(_ctx.stringValue("DescribeDomainNsResponse.DetectFailedReasonCode"));
 
 		List<String> expectDnsServers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainNsResponse.ExpectDnsServers.Length"); i++) {
 			expectDnsServers.add(_ctx.stringValue("DescribeDomainNsResponse.ExpectDnsServers["+ i +"]"));
 		}
 		describeDomainNsResponse.setExpectDnsServers(expectDnsServers);
+
+		List<String> dnsServers = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainNsResponse.DnsServers.Length"); i++) {
+			dnsServers.add(_ctx.stringValue("DescribeDomainNsResponse.DnsServers["+ i +"]"));
+		}
+		describeDomainNsResponse.setDnsServers(dnsServers);
 	 
 	 	return describeDomainNsResponse;
 	}

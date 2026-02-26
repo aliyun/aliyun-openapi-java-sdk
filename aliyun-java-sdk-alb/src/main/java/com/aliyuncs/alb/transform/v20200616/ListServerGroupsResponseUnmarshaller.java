@@ -19,9 +19,12 @@ import java.util.List;
 
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse;
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup;
+import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.ConnectionDrainConfig;
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.HealthCheckConfig;
+import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.SlowStartConfig;
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.StickySessionConfig;
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.Tag;
+import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.UchConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,11 +48,33 @@ public class ListServerGroupsResponseUnmarshaller {
 			serverGroup.setServerGroupStatus(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].ServerGroupStatus"));
 			serverGroup.setServerGroupType(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].ServerGroupType"));
 			serverGroup.setVpcId(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].VpcId"));
+			serverGroup.setServiceManagedEnabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].ServiceManagedEnabled"));
+			serverGroup.setServiceManagedMode(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].ServiceManagedMode"));
 			serverGroup.setConfigManagedEnabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].ConfigManagedEnabled"));
 			serverGroup.setUpstreamKeepaliveEnabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].UpstreamKeepaliveEnabled"));
 			serverGroup.setIpv6Enabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].Ipv6Enabled"));
 			serverGroup.setServerCount(_ctx.integerValue("ListServerGroupsResponse.ServerGroups["+ i +"].ServerCount"));
 			serverGroup.setServiceName(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].ServiceName"));
+			serverGroup.setCreateTime(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].CreateTime"));
+			serverGroup.setCrossZoneEnabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].CrossZoneEnabled"));
+
+			List<String> relatedLoadBalancerIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListServerGroupsResponse.ServerGroups["+ i +"].RelatedLoadBalancerIds.Length"); j++) {
+				relatedLoadBalancerIds.add(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].RelatedLoadBalancerIds["+ j +"]"));
+			}
+			serverGroup.setRelatedLoadBalancerIds(relatedLoadBalancerIds);
+
+			List<String> relatedListenerIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListServerGroupsResponse.ServerGroups["+ i +"].RelatedListenerIds.Length"); j++) {
+				relatedListenerIds.add(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].RelatedListenerIds["+ j +"]"));
+			}
+			serverGroup.setRelatedListenerIds(relatedListenerIds);
+
+			List<String> relatedRuleIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListServerGroupsResponse.ServerGroups["+ i +"].RelatedRuleIds.Length"); j++) {
+				relatedRuleIds.add(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].RelatedRuleIds["+ j +"]"));
+			}
+			serverGroup.setRelatedRuleIds(relatedRuleIds);
 
 			HealthCheckConfig healthCheckConfig = new HealthCheckConfig();
 			healthCheckConfig.setHealthCheckConnectPort(_ctx.integerValue("ListServerGroupsResponse.ServerGroups["+ i +"].HealthCheckConfig.HealthCheckConnectPort"));
@@ -63,6 +88,13 @@ public class ListServerGroupsResponseUnmarshaller {
 			healthCheckConfig.setHealthCheckTimeout(_ctx.integerValue("ListServerGroupsResponse.ServerGroups["+ i +"].HealthCheckConfig.HealthCheckTimeout"));
 			healthCheckConfig.setHealthyThreshold(_ctx.integerValue("ListServerGroupsResponse.ServerGroups["+ i +"].HealthCheckConfig.HealthyThreshold"));
 			healthCheckConfig.setUnhealthyThreshold(_ctx.integerValue("ListServerGroupsResponse.ServerGroups["+ i +"].HealthCheckConfig.UnhealthyThreshold"));
+			healthCheckConfig.setHealthCheckTcpFastCloseEnabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].HealthCheckConfig.HealthCheckTcpFastCloseEnabled"));
+
+			List<String> healthCheckHttpCodes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListServerGroupsResponse.ServerGroups["+ i +"].HealthCheckConfig.HealthCheckHttpCodes.Length"); j++) {
+				healthCheckHttpCodes.add(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].HealthCheckConfig.HealthCheckHttpCodes["+ j +"]"));
+			}
+			healthCheckConfig.setHealthCheckHttpCodes(healthCheckHttpCodes);
 
 			List<String> healthCheckCodes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListServerGroupsResponse.ServerGroups["+ i +"].HealthCheckConfig.HealthCheckCodes.Length"); j++) {
@@ -77,6 +109,21 @@ public class ListServerGroupsResponseUnmarshaller {
 			stickySessionConfig.setStickySessionEnabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].StickySessionConfig.StickySessionEnabled"));
 			stickySessionConfig.setStickySessionType(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].StickySessionConfig.StickySessionType"));
 			serverGroup.setStickySessionConfig(stickySessionConfig);
+
+			UchConfig uchConfig = new UchConfig();
+			uchConfig.setType(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].UchConfig.Type"));
+			uchConfig.setValue(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].UchConfig.Value"));
+			serverGroup.setUchConfig(uchConfig);
+
+			ConnectionDrainConfig connectionDrainConfig = new ConnectionDrainConfig();
+			connectionDrainConfig.setConnectionDrainEnabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].ConnectionDrainConfig.ConnectionDrainEnabled"));
+			connectionDrainConfig.setConnectionDrainTimeout(_ctx.integerValue("ListServerGroupsResponse.ServerGroups["+ i +"].ConnectionDrainConfig.ConnectionDrainTimeout"));
+			serverGroup.setConnectionDrainConfig(connectionDrainConfig);
+
+			SlowStartConfig slowStartConfig = new SlowStartConfig();
+			slowStartConfig.setSlowStartEnabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].SlowStartConfig.SlowStartEnabled"));
+			slowStartConfig.setSlowStartDuration(_ctx.integerValue("ListServerGroupsResponse.ServerGroups["+ i +"].SlowStartConfig.SlowStartDuration"));
+			serverGroup.setSlowStartConfig(slowStartConfig);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListServerGroupsResponse.ServerGroups["+ i +"].Tags.Length"); j++) {

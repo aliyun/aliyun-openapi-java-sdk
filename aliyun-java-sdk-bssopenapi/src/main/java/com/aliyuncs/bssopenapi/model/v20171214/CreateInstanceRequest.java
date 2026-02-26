@@ -46,7 +46,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private List<Parameter> parameters;
 	public CreateInstanceRequest() {
-		super("BssOpenApi", "2017-12-14", "CreateInstance");
+		super("BssOpenApi", "2017-12-14", "CreateInstance", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -23,9 +23,9 @@ public class CheckSensitiveResponseUnmarshaller {
 	public static CheckSensitiveResponse unmarshall(CheckSensitiveResponse checkSensitiveResponse, UnmarshallerContext _ctx) {
 		
 		checkSensitiveResponse.setRequestId(_ctx.stringValue("CheckSensitiveResponse.RequestId"));
-		checkSensitiveResponse.setSuccess(_ctx.booleanValue("CheckSensitiveResponse.Success"));
 		checkSensitiveResponse.setCheckResult(_ctx.stringValue("CheckSensitiveResponse.CheckResult"));
 		checkSensitiveResponse.setCheckMessage(_ctx.stringValue("CheckSensitiveResponse.CheckMessage"));
+		checkSensitiveResponse.setSuccess(_ctx.booleanValue("CheckSensitiveResponse.Success"));
 	 
 	 	return checkSensitiveResponse;
 	}

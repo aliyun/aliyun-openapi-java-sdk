@@ -27,7 +27,7 @@ public class PurgeInstanceRequest extends RpcAcsRequest<PurgeInstanceResponse> {
 
 	private String clusterId;
 	public PurgeInstanceRequest() {
-		super("HBase", "2019-01-01", "PurgeInstance", "hbase");
+		super("HBase", "2019-01-01", "PurgeInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

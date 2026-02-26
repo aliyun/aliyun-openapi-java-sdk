@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeImagePriceResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer amount;
 
-	private String imageId;
+	private String requestId;
 
 	private Float discountPrice;
 
-	private Float originalPrice;
-
 	private Float tradePrice;
 
-	private Integer amount;
+	private Float originalPrice;
+
+	private String imageId;
+
+	public Integer getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,14 +50,6 @@ public class DescribeImagePriceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
 	}
 
 	public Float getDiscountPrice() {
@@ -60,14 +60,6 @@ public class DescribeImagePriceResponse extends AcsResponse {
 		this.discountPrice = discountPrice;
 	}
 
-	public Float getOriginalPrice() {
-		return this.originalPrice;
-	}
-
-	public void setOriginalPrice(Float originalPrice) {
-		this.originalPrice = originalPrice;
-	}
-
 	public Float getTradePrice() {
 		return this.tradePrice;
 	}
@@ -76,12 +68,20 @@ public class DescribeImagePriceResponse extends AcsResponse {
 		this.tradePrice = tradePrice;
 	}
 
-	public Integer getAmount() {
-		return this.amount;
+	public Float getOriginalPrice() {
+		return this.originalPrice;
 	}
 
-	public void setAmount(Integer amount) {
-		this.amount = amount;
+	public void setOriginalPrice(Float originalPrice) {
+		this.originalPrice = originalPrice;
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
 	}
 
 	@Override

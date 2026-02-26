@@ -47,55 +47,35 @@ public class DescribeDomainCertificateInfoResponse extends AcsResponse {
 
 	public static class CertInfo {
 
-		private String domainName;
-
-		private String certName;
-
-		private String certDomainName;
-
 		private String certExpireTime;
 
 		private String certLife;
 
-		private String certOrg;
-
-		private String certType;
-
-		private String serverCertificateStatus;
-
 		private String status;
-
-		private String serverCertificate;
 
 		private String certUpdateTime;
 
+		private String certDomainName;
+
+		private String serverCertificateStatus;
+
+		private String certOrg;
+
+		private String domainName;
+
 		private String certStartTime;
+
+		private String certType;
+
+		private String certName;
 
 		private String domainCnameStatus;
 
-		public String getDomainName() {
-			return this.domainName;
-		}
+		private String serverCertificate;
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
+		private String certId;
 
-		public String getCertName() {
-			return this.certName;
-		}
-
-		public void setCertName(String certName) {
-			this.certName = certName;
-		}
-
-		public String getCertDomainName() {
-			return this.certDomainName;
-		}
-
-		public void setCertDomainName(String certDomainName) {
-			this.certDomainName = certDomainName;
-		}
+		private String certRegion;
 
 		public String getCertExpireTime() {
 			return this.certExpireTime;
@@ -113,44 +93,12 @@ public class DescribeDomainCertificateInfoResponse extends AcsResponse {
 			this.certLife = certLife;
 		}
 
-		public String getCertOrg() {
-			return this.certOrg;
-		}
-
-		public void setCertOrg(String certOrg) {
-			this.certOrg = certOrg;
-		}
-
-		public String getCertType() {
-			return this.certType;
-		}
-
-		public void setCertType(String certType) {
-			this.certType = certType;
-		}
-
-		public String getServerCertificateStatus() {
-			return this.serverCertificateStatus;
-		}
-
-		public void setServerCertificateStatus(String serverCertificateStatus) {
-			this.serverCertificateStatus = serverCertificateStatus;
-		}
-
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getServerCertificate() {
-			return this.serverCertificate;
-		}
-
-		public void setServerCertificate(String serverCertificate) {
-			this.serverCertificate = serverCertificate;
 		}
 
 		public String getCertUpdateTime() {
@@ -161,6 +109,38 @@ public class DescribeDomainCertificateInfoResponse extends AcsResponse {
 			this.certUpdateTime = certUpdateTime;
 		}
 
+		public String getCertDomainName() {
+			return this.certDomainName;
+		}
+
+		public void setCertDomainName(String certDomainName) {
+			this.certDomainName = certDomainName;
+		}
+
+		public String getServerCertificateStatus() {
+			return this.serverCertificateStatus;
+		}
+
+		public void setServerCertificateStatus(String serverCertificateStatus) {
+			this.serverCertificateStatus = serverCertificateStatus;
+		}
+
+		public String getCertOrg() {
+			return this.certOrg;
+		}
+
+		public void setCertOrg(String certOrg) {
+			this.certOrg = certOrg;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
 		public String getCertStartTime() {
 			return this.certStartTime;
 		}
@@ -169,12 +149,52 @@ public class DescribeDomainCertificateInfoResponse extends AcsResponse {
 			this.certStartTime = certStartTime;
 		}
 
+		public String getCertType() {
+			return this.certType;
+		}
+
+		public void setCertType(String certType) {
+			this.certType = certType;
+		}
+
+		public String getCertName() {
+			return this.certName;
+		}
+
+		public void setCertName(String certName) {
+			this.certName = certName;
+		}
+
 		public String getDomainCnameStatus() {
 			return this.domainCnameStatus;
 		}
 
 		public void setDomainCnameStatus(String domainCnameStatus) {
 			this.domainCnameStatus = domainCnameStatus;
+		}
+
+		public String getServerCertificate() {
+			return this.serverCertificate;
+		}
+
+		public void setServerCertificate(String serverCertificate) {
+			this.serverCertificate = serverCertificate;
+		}
+
+		public String getCertId() {
+			return this.certId;
+		}
+
+		public void setCertId(String certId) {
+			this.certId = certId;
+		}
+
+		public String getCertRegion() {
+			return this.certRegion;
+		}
+
+		public void setCertRegion(String certRegion) {
+			this.certRegion = certRegion;
 		}
 	}
 

@@ -32,9 +32,9 @@ public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUser
 
 	private String period;
 
-	private String instanceId;
-
 	private String endTime;
+
+	private String instanceId;
 	public DescribeUserBandWidthDataRequest() {
 		super("Ens", "2017-11-10", "DescribeUserBandWidthData", "ens");
 		setMethod(MethodType.POST);
@@ -84,17 +84,6 @@ public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUser
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -103,6 +92,17 @@ public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUser
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

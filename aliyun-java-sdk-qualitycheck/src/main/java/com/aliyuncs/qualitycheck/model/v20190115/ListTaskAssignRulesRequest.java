@@ -25,6 +25,8 @@ public class ListTaskAssignRulesRequest extends RpcAcsRequest<ListTaskAssignRule
 	   
 
 	private String jsonStr;
+
+	private Long baseMeAgentId;
 	public ListTaskAssignRulesRequest() {
 		super("Qualitycheck", "2019-01-15", "ListTaskAssignRules");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class ListTaskAssignRulesRequest extends RpcAcsRequest<ListTaskAssignRule
 		this.jsonStr = jsonStr;
 		if(jsonStr != null){
 			putQueryParameter("JsonStr", jsonStr);
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

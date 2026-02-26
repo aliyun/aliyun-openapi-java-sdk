@@ -69,6 +69,12 @@ public class DescribeImageInfosResponse extends AcsResponse {
 
 		private String oSType;
 
+		private String computeType;
+
+		private String regionId;
+
+		private List<DiskDeviceMapping> diskDeviceMappings;
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -115,6 +121,73 @@ public class DescribeImageInfosResponse extends AcsResponse {
 
 		public void setOSType(String oSType) {
 			this.oSType = oSType;
+		}
+
+		public String getComputeType() {
+			return this.computeType;
+		}
+
+		public void setComputeType(String computeType) {
+			this.computeType = computeType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public List<DiskDeviceMapping> getDiskDeviceMappings() {
+			return this.diskDeviceMappings;
+		}
+
+		public void setDiskDeviceMappings(List<DiskDeviceMapping> diskDeviceMappings) {
+			this.diskDeviceMappings = diskDeviceMappings;
+		}
+
+		public static class DiskDeviceMapping {
+
+			private String type;
+
+			private String size;
+
+			private String format;
+
+			private String imageId;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getSize() {
+				return this.size;
+			}
+
+			public void setSize(String size) {
+				this.size = size;
+			}
+
+			public String getFormat() {
+				return this.format;
+			}
+
+			public void setFormat(String format) {
+				this.format = format;
+			}
+
+			public String getImageId() {
+				return this.imageId;
+			}
+
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
+			}
 		}
 	}
 

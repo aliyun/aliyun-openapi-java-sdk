@@ -37,11 +37,7 @@ public class QueryClusterSpecificationResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("QueryClusterSpecificationResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setClusterSpecificationName(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].ClusterSpecificationName"));
-			dataItem.setDiskCapacity(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].DiskCapacity"));
 			dataItem.setMemoryCapacity(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].MemoryCapacity"));
-			dataItem.setInstanceCount(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].InstanceCount"));
-			dataItem.setMaxTps(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].MaxTps"));
-			dataItem.setMaxCon(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].MaxCon"));
 			dataItem.setCpuCapacity(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].CpuCapacity"));
 
 			data.add(dataItem);

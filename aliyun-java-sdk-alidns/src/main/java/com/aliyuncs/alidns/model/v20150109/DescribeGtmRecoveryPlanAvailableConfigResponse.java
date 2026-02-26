@@ -47,19 +47,11 @@ public class DescribeGtmRecoveryPlanAvailableConfigResponse extends AcsResponse 
 
 	public static class Instance {
 
-		private String instanceId;
-
 		private String instanceName;
 
+		private String instanceId;
+
 		private List<AddrPool> addrPools;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
 
 		public String getInstanceName() {
 			return this.instanceName;
@@ -67,6 +59,14 @@ public class DescribeGtmRecoveryPlanAvailableConfigResponse extends AcsResponse 
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public List<AddrPool> getAddrPools() {

@@ -44,6 +44,7 @@ public class ListModulePublishVersionsResponseUnmarshaller {
 			publishItem.setModuleId(_ctx.stringValue("ListModulePublishVersionsResponse.Data.Items["+ i +"].ModuleId"));
 			publishItem.setPublishId(_ctx.stringValue("ListModulePublishVersionsResponse.Data.Items["+ i +"].PublishId"));
 			publishItem.setVersion(_ctx.stringValue("ListModulePublishVersionsResponse.Data.Items["+ i +"].Version"));
+			publishItem.setPlatformVersion(_ctx.stringValue("ListModulePublishVersionsResponse.Data.Items["+ i +"].PlatformVersion"));
 
 			items.add(publishItem);
 		}

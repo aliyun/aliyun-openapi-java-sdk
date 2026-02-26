@@ -28,6 +28,8 @@ public class GenerateAppUserPasswordRequest extends RpcAcsRequest<GenerateAppUse
 
 	private String envId;
 
+	private String source;
+
 	private String userName;
 	public GenerateAppUserPasswordRequest() {
 		super("miniapplcdp", "2020-01-13", "GenerateAppUserPassword");
@@ -53,6 +55,17 @@ public class GenerateAppUserPasswordRequest extends RpcAcsRequest<GenerateAppUse
 		this.envId = envId;
 		if(envId != null){
 			putQueryParameter("EnvId", envId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

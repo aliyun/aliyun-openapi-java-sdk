@@ -14,6 +14,7 @@
 
 package com.aliyuncs.eas.model.v20210701;
 
+import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.eas.transform.v20210701.DescribeServiceAutoScalerResponseUnmarshaller;
@@ -33,11 +34,11 @@ public class DescribeServiceAutoScalerResponse extends AcsResponse {
 
 	private Integer maxReplica;
 
-	private Map<Object,Object> strategies;
-
-	private Map<Object,Object> currentValues;
-
 	private Map<Object,Object> behavior;
+
+	private List<ScaleStrategy> scaleStrategies;
+
+	private List<CurrentMetric> currentMetrics;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -71,28 +72,94 @@ public class DescribeServiceAutoScalerResponse extends AcsResponse {
 		this.maxReplica = maxReplica;
 	}
 
-	public Map<Object,Object> getStrategies() {
-		return this.strategies;
-	}
-
-	public void setStrategies(Map<Object,Object> strategies) {
-		this.strategies = strategies;
-	}
-
-	public Map<Object,Object> getCurrentValues() {
-		return this.currentValues;
-	}
-
-	public void setCurrentValues(Map<Object,Object> currentValues) {
-		this.currentValues = currentValues;
-	}
-
 	public Map<Object,Object> getBehavior() {
 		return this.behavior;
 	}
 
 	public void setBehavior(Map<Object,Object> behavior) {
 		this.behavior = behavior;
+	}
+
+	public List<ScaleStrategy> getScaleStrategies() {
+		return this.scaleStrategies;
+	}
+
+	public void setScaleStrategies(List<ScaleStrategy> scaleStrategies) {
+		this.scaleStrategies = scaleStrategies;
+	}
+
+	public List<CurrentMetric> getCurrentMetrics() {
+		return this.currentMetrics;
+	}
+
+	public void setCurrentMetrics(List<CurrentMetric> currentMetrics) {
+		this.currentMetrics = currentMetrics;
+	}
+
+	public static class ScaleStrategy {
+
+		private String metricName;
+
+		private Float threshold;
+
+		private String service;
+
+		public String getMetricName() {
+			return this.metricName;
+		}
+
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
+		}
+
+		public Float getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(Float threshold) {
+			this.threshold = threshold;
+		}
+
+		public String getService() {
+			return this.service;
+		}
+
+		public void setService(String service) {
+			this.service = service;
+		}
+	}
+
+	public static class CurrentMetric {
+
+		private String metricName;
+
+		private Float value;
+
+		private String service;
+
+		public String getMetricName() {
+			return this.metricName;
+		}
+
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
+		}
+
+		public Float getValue() {
+			return this.value;
+		}
+
+		public void setValue(Float value) {
+			this.value = value;
+		}
+
+		public String getService() {
+			return this.service;
+		}
+
+		public void setService(String service) {
+			this.service = service;
+		}
 	}
 
 	@Override

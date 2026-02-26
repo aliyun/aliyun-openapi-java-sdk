@@ -47,11 +47,19 @@ public class DescribeLiveDomainTimeShiftDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
+		private String type;
+
 		private String timeStamp;
 
 		private String size;
 
-		private String type;
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -67,14 +75,6 @@ public class DescribeLiveDomainTimeShiftDataResponse extends AcsResponse {
 
 		public void setSize(String size) {
 			this.size = size;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
 		}
 	}
 

@@ -120,8 +120,7 @@ public class ApacheHttpClient extends IHttpClient {
                 } else {
                     hostnameVerifier = new DefaultHostnameVerifier();
                 }
-                SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext, hostnameVerifier);
-                return sslConnectionSocketFactory;
+                return new SSLConnectionSocketFactory(sslContext, hostnameVerifier);
             } else {
                 HostnameVerifier hostnameVerifier;
                 if (null == clientConfig.getHostnameVerifier()) {

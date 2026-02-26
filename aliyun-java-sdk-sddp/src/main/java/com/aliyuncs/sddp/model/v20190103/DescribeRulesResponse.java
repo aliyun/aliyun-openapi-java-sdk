@@ -81,6 +81,8 @@ public class DescribeRulesResponse extends AcsResponse {
 
 		private Integer status;
 
+		private Integer supportForm;
+
 		private Integer warnLevel;
 
 		private Long userId;
@@ -127,6 +129,8 @@ public class DescribeRulesResponse extends AcsResponse {
 
 		private String productCode;
 
+		private Integer matchType;
+
 		public String getDisplayName() {
 			return this.displayName;
 		}
@@ -141,6 +145,14 @@ public class DescribeRulesResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public Integer getSupportForm() {
+			return this.supportForm;
+		}
+
+		public void setSupportForm(Integer supportForm) {
+			this.supportForm = supportForm;
 		}
 
 		public Integer getWarnLevel() {
@@ -325,6 +337,14 @@ public class DescribeRulesResponse extends AcsResponse {
 
 		public void setProductCode(String productCode) {
 			this.productCode = productCode;
+		}
+
+		public Integer getMatchType() {
+			return this.matchType;
+		}
+
+		public void setMatchType(Integer matchType) {
+			this.matchType = matchType;
 		}
 	}
 

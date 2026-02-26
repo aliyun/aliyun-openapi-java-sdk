@@ -51,6 +51,7 @@ public class ListIpsecServersResponseUnmarshaller {
 			ipsecServer.setMultiFactorAuthEnabled(_ctx.booleanValue("ListIpsecServersResponse.IpsecServers["+ i +"].MultiFactorAuthEnabled"));
 			ipsecServer.setMaxConnections(_ctx.integerValue("ListIpsecServersResponse.IpsecServers["+ i +"].MaxConnections"));
 			ipsecServer.setClientIpPool(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].ClientIpPool"));
+			ipsecServer.setResourceGroupId(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].ResourceGroupId"));
 
 			IkeConfig ikeConfig = new IkeConfig();
 			ikeConfig.setRemoteId(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.RemoteId"));

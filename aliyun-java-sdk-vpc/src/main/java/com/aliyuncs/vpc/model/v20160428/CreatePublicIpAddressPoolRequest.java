@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -33,15 +34,25 @@ public class CreatePublicIpAddressPoolRequest extends RpcAcsRequest<CreatePublic
 
 	private String description;
 
+	private String resourceGroupId;
+
+	private List<Tag> tags;
+
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private List<String> zoness;
+
 	private Long ownerId;
 
+	private String bizType;
+
 	private String name;
+
+	private List<String> securityProtectionTypess;
 	public CreatePublicIpAddressPoolRequest() {
 		super("Vpc", "2016-04-28", "CreatePublicIpAddressPool", "vpc");
 		setMethod(MethodType.POST);
@@ -95,6 +106,31 @@ public class CreatePublicIpAddressPoolRequest extends RpcAcsRequest<CreatePublic
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public Boolean getDryRun() {
 		return this.dryRun;
 	}
@@ -128,6 +164,19 @@ public class CreatePublicIpAddressPoolRequest extends RpcAcsRequest<CreatePublic
 		}
 	}
 
+	public List<String> getZoness() {
+		return this.zoness;
+	}
+
+	public void setZoness(List<String> zoness) {
+		this.zoness = zoness;	
+		if (zoness != null) {
+			for (int i = 0; i < zoness.size(); i++) {
+				putQueryParameter("Zones." + (i + 1) , zoness.get(i));
+			}
+		}	
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -139,6 +188,17 @@ public class CreatePublicIpAddressPoolRequest extends RpcAcsRequest<CreatePublic
 		}
 	}
 
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -147,6 +207,42 @@ public class CreatePublicIpAddressPoolRequest extends RpcAcsRequest<CreatePublic
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public List<String> getSecurityProtectionTypess() {
+		return this.securityProtectionTypess;
+	}
+
+	public void setSecurityProtectionTypess(List<String> securityProtectionTypess) {
+		this.securityProtectionTypess = securityProtectionTypess;	
+		if (securityProtectionTypess != null) {
+			for (int i = 0; i < securityProtectionTypess.size(); i++) {
+				putQueryParameter("SecurityProtectionTypes." + (i + 1) , securityProtectionTypess.get(i));
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

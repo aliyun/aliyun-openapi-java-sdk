@@ -26,12 +26,22 @@ public class SetVpcAccessResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String vpcAccessId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getVpcAccessId() {
+		return this.vpcAccessId;
+	}
+
+	public void setVpcAccessId(String vpcAccessId) {
+		this.vpcAccessId = vpcAccessId;
 	}
 
 	@Override

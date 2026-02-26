@@ -31,6 +31,8 @@ public class ModifyFlowRuleRequest extends RpcAcsRequest<ModifyFlowRuleResponse>
 
 	private String controlBehavior;
 
+	private Integer thresholdMode;
+
 	private Float threshold;
 
 	private String ahasRegionId;
@@ -83,6 +85,17 @@ public class ModifyFlowRuleRequest extends RpcAcsRequest<ModifyFlowRuleResponse>
 		this.controlBehavior = controlBehavior;
 		if(controlBehavior != null){
 			putQueryParameter("ControlBehavior", controlBehavior);
+		}
+	}
+
+	public Integer getThresholdMode() {
+		return this.thresholdMode;
+	}
+
+	public void setThresholdMode(Integer thresholdMode) {
+		this.thresholdMode = thresholdMode;
+		if(thresholdMode != null){
+			putQueryParameter("ThresholdMode", thresholdMode.toString());
 		}
 	}
 

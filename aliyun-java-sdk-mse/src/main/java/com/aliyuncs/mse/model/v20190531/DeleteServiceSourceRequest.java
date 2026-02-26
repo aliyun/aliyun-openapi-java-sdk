@@ -25,9 +25,9 @@ import com.aliyuncs.mse.Endpoint;
 public class DeleteServiceSourceRequest extends RpcAcsRequest<DeleteServiceSourceResponse> {
 	   
 
-	private Long sourceId;
-
 	private String gatewayUniqueId;
+
+	private Long sourceId;
 
 	private String acceptLanguage;
 	public DeleteServiceSourceRequest() {
@@ -39,17 +39,6 @@ public class DeleteServiceSourceRequest extends RpcAcsRequest<DeleteServiceSourc
 		} catch (Exception e) {}
 	}
 
-	public Long getSourceId() {
-		return this.sourceId;
-	}
-
-	public void setSourceId(Long sourceId) {
-		this.sourceId = sourceId;
-		if(sourceId != null){
-			putQueryParameter("SourceId", sourceId.toString());
-		}
-	}
-
 	public String getGatewayUniqueId() {
 		return this.gatewayUniqueId;
 	}
@@ -58,6 +47,17 @@ public class DeleteServiceSourceRequest extends RpcAcsRequest<DeleteServiceSourc
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public Long getSourceId() {
+		return this.sourceId;
+	}
+
+	public void setSourceId(Long sourceId) {
+		this.sourceId = sourceId;
+		if(sourceId != null){
+			putQueryParameter("SourceId", sourceId.toString());
 		}
 	}
 

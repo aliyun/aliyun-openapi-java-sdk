@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDcdnRealTimeDeliveryProjectResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<Projects> content;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class ListDcdnRealTimeDeliveryProjectResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Projects> getContent() {
@@ -57,33 +57,25 @@ public class ListDcdnRealTimeDeliveryProjectResponse extends AcsResponse {
 
 	public static class Projects {
 
-		private String projectName;
-
 		private String type;
-
-		private String domainName;
-
-		private String fieldName;
-
-		private Float samplingRate;
-
-		private String dataCenter;
-
-		private String sLSRegion;
-
-		private String sLSProject;
 
 		private String sLSLogStore;
 
+		private String dataCenter;
+
+		private String fieldName;
+
+		private String projectName;
+
+		private Float samplingRate;
+
+		private String sLSProject;
+
+		private String domainName;
+
 		private String businessType;
 
-		public String getProjectName() {
-			return this.projectName;
-		}
-
-		public void setProjectName(String projectName) {
-			this.projectName = projectName;
-		}
+		private String sLSRegion;
 
 		public String getType() {
 			return this.type;
@@ -91,54 +83,6 @@ public class ListDcdnRealTimeDeliveryProjectResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getFieldName() {
-			return this.fieldName;
-		}
-
-		public void setFieldName(String fieldName) {
-			this.fieldName = fieldName;
-		}
-
-		public Float getSamplingRate() {
-			return this.samplingRate;
-		}
-
-		public void setSamplingRate(Float samplingRate) {
-			this.samplingRate = samplingRate;
-		}
-
-		public String getDataCenter() {
-			return this.dataCenter;
-		}
-
-		public void setDataCenter(String dataCenter) {
-			this.dataCenter = dataCenter;
-		}
-
-		public String getSLSRegion() {
-			return this.sLSRegion;
-		}
-
-		public void setSLSRegion(String sLSRegion) {
-			this.sLSRegion = sLSRegion;
-		}
-
-		public String getSLSProject() {
-			return this.sLSProject;
-		}
-
-		public void setSLSProject(String sLSProject) {
-			this.sLSProject = sLSProject;
 		}
 
 		public String getSLSLogStore() {
@@ -149,12 +93,68 @@ public class ListDcdnRealTimeDeliveryProjectResponse extends AcsResponse {
 			this.sLSLogStore = sLSLogStore;
 		}
 
+		public String getDataCenter() {
+			return this.dataCenter;
+		}
+
+		public void setDataCenter(String dataCenter) {
+			this.dataCenter = dataCenter;
+		}
+
+		public String getFieldName() {
+			return this.fieldName;
+		}
+
+		public void setFieldName(String fieldName) {
+			this.fieldName = fieldName;
+		}
+
+		public String getProjectName() {
+			return this.projectName;
+		}
+
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
+		}
+
+		public Float getSamplingRate() {
+			return this.samplingRate;
+		}
+
+		public void setSamplingRate(Float samplingRate) {
+			this.samplingRate = samplingRate;
+		}
+
+		public String getSLSProject() {
+			return this.sLSProject;
+		}
+
+		public void setSLSProject(String sLSProject) {
+			this.sLSProject = sLSProject;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
 		public String getBusinessType() {
 			return this.businessType;
 		}
 
 		public void setBusinessType(String businessType) {
 			this.businessType = businessType;
+		}
+
+		public String getSLSRegion() {
+			return this.sLSRegion;
+		}
+
+		public void setSLSRegion(String sLSRegion) {
+			this.sLSRegion = sLSRegion;
 		}
 	}
 

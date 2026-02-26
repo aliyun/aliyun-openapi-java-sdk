@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckSensitiveResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String checkResult;
+
+	private String requestId;
 
 	private String checkMessage;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean success;
 
 	public String getCheckResult() {
 		return this.checkResult;
@@ -56,12 +40,28 @@ public class CheckSensitiveResponse extends AcsResponse {
 		this.checkResult = checkResult;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getCheckMessage() {
 		return this.checkMessage;
 	}
 
 	public void setCheckMessage(String checkMessage) {
 		this.checkMessage = checkMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

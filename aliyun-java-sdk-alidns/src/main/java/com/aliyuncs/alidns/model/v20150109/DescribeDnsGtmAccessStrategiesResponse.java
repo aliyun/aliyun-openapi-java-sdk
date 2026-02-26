@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDnsGtmAccessStrategiesResponse extends AcsResponse {
 
+	private Integer pageSize;
+
 	private String requestId;
-
-	private Integer totalItems;
-
-	private Integer totalPages;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalPages;
+
+	private Integer totalItems;
 
 	private List<Strategy> strategies;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,22 +51,6 @@ public class DescribeDnsGtmAccessStrategiesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalItems() {
-		return this.totalItems;
-	}
-
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
-	}
-
-	public Integer getTotalPages() {
-		return this.totalPages;
-	}
-
-	public void setTotalPages(Integer totalPages) {
-		this.totalPages = totalPages;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +61,20 @@ public class DescribeDnsGtmAccessStrategiesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalPages() {
+		return this.totalPages;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalPages(Integer totalPages) {
+		this.totalPages = totalPages;
+	}
+
+	public Integer getTotalItems() {
+		return this.totalItems;
+	}
+
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
 	}
 
 	public List<Strategy> getStrategies() {
@@ -87,23 +87,31 @@ public class DescribeDnsGtmAccessStrategiesResponse extends AcsResponse {
 
 	public static class Strategy {
 
+		private String effectiveLbaStrategy;
+
 		private String strategyId;
 
 		private String strategyName;
+
+		private String effectiveAddrPoolGroupType;
 
 		private String createTime;
 
 		private Long createTimestamp;
 
-		private String effectiveAddrPoolGroupType;
-
 		private String effectiveAddrPoolType;
 
-		private String effectiveLbaStrategy;
+		private List<EffectiveAddrPool> effectiveAddrPools;
 
 		private List<Line> lines;
 
-		private List<EffectiveAddrPool> effectiveAddrPools;
+		public String getEffectiveLbaStrategy() {
+			return this.effectiveLbaStrategy;
+		}
+
+		public void setEffectiveLbaStrategy(String effectiveLbaStrategy) {
+			this.effectiveLbaStrategy = effectiveLbaStrategy;
+		}
 
 		public String getStrategyId() {
 			return this.strategyId;
@@ -119,6 +127,14 @@ public class DescribeDnsGtmAccessStrategiesResponse extends AcsResponse {
 
 		public void setStrategyName(String strategyName) {
 			this.strategyName = strategyName;
+		}
+
+		public String getEffectiveAddrPoolGroupType() {
+			return this.effectiveAddrPoolGroupType;
+		}
+
+		public void setEffectiveAddrPoolGroupType(String effectiveAddrPoolGroupType) {
+			this.effectiveAddrPoolGroupType = effectiveAddrPoolGroupType;
 		}
 
 		public String getCreateTime() {
@@ -137,36 +153,12 @@ public class DescribeDnsGtmAccessStrategiesResponse extends AcsResponse {
 			this.createTimestamp = createTimestamp;
 		}
 
-		public String getEffectiveAddrPoolGroupType() {
-			return this.effectiveAddrPoolGroupType;
-		}
-
-		public void setEffectiveAddrPoolGroupType(String effectiveAddrPoolGroupType) {
-			this.effectiveAddrPoolGroupType = effectiveAddrPoolGroupType;
-		}
-
 		public String getEffectiveAddrPoolType() {
 			return this.effectiveAddrPoolType;
 		}
 
 		public void setEffectiveAddrPoolType(String effectiveAddrPoolType) {
 			this.effectiveAddrPoolType = effectiveAddrPoolType;
-		}
-
-		public String getEffectiveLbaStrategy() {
-			return this.effectiveLbaStrategy;
-		}
-
-		public void setEffectiveLbaStrategy(String effectiveLbaStrategy) {
-			this.effectiveLbaStrategy = effectiveLbaStrategy;
-		}
-
-		public List<Line> getLines() {
-			return this.lines;
-		}
-
-		public void setLines(List<Line> lines) {
-			this.lines = lines;
 		}
 
 		public List<EffectiveAddrPool> getEffectiveAddrPools() {
@@ -177,7 +169,60 @@ public class DescribeDnsGtmAccessStrategiesResponse extends AcsResponse {
 			this.effectiveAddrPools = effectiveAddrPools;
 		}
 
+		public List<Line> getLines() {
+			return this.lines;
+		}
+
+		public void setLines(List<Line> lines) {
+			this.lines = lines;
+		}
+
+		public static class EffectiveAddrPool {
+
+			private Integer lbaWeight;
+
+			private String name;
+
+			private Integer addrCount;
+
+			private String id;
+
+			public Integer getLbaWeight() {
+				return this.lbaWeight;
+			}
+
+			public void setLbaWeight(Integer lbaWeight) {
+				this.lbaWeight = lbaWeight;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Integer getAddrCount() {
+				return this.addrCount;
+			}
+
+			public void setAddrCount(Integer addrCount) {
+				this.addrCount = addrCount;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+		}
+
 		public static class Line {
+
+			private String groupName;
 
 			private String lineCode;
 
@@ -185,7 +230,13 @@ public class DescribeDnsGtmAccessStrategiesResponse extends AcsResponse {
 
 			private String groupCode;
 
-			private String groupName;
+			public String getGroupName() {
+				return this.groupName;
+			}
+
+			public void setGroupName(String groupName) {
+				this.groupName = groupName;
+			}
 
 			public String getLineCode() {
 				return this.lineCode;
@@ -209,57 +260,6 @@ public class DescribeDnsGtmAccessStrategiesResponse extends AcsResponse {
 
 			public void setGroupCode(String groupCode) {
 				this.groupCode = groupCode;
-			}
-
-			public String getGroupName() {
-				return this.groupName;
-			}
-
-			public void setGroupName(String groupName) {
-				this.groupName = groupName;
-			}
-		}
-
-		public static class EffectiveAddrPool {
-
-			private String id;
-
-			private String name;
-
-			private Integer addrCount;
-
-			private Integer lbaWeight;
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public Integer getAddrCount() {
-				return this.addrCount;
-			}
-
-			public void setAddrCount(Integer addrCount) {
-				this.addrCount = addrCount;
-			}
-
-			public Integer getLbaWeight() {
-				return this.lbaWeight;
-			}
-
-			public void setLbaWeight(Integer lbaWeight) {
-				this.lbaWeight = lbaWeight;
 			}
 		}
 	}

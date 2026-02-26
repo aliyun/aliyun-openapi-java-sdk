@@ -27,7 +27,7 @@ public class ModifyPtsSceneRequest extends RpcAcsRequest<ModifyPtsSceneResponse>
 
 	private String scene;
 	public ModifyPtsSceneRequest() {
-		super("PTS", "2020-10-20", "ModifyPtsScene", "pts");
+		super("PTS", "2020-10-20", "ModifyPtsScene");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -42,7 +42,7 @@ public class ModifyPtsSceneRequest extends RpcAcsRequest<ModifyPtsSceneResponse>
 	public void setScene(String scene) {
 		this.scene = scene;
 		if(scene != null){
-			putQueryParameter("Scene", scene);
+			putBodyParameter("Scene", scene);
 		}
 	}
 

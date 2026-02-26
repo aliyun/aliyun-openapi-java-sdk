@@ -25,23 +25,25 @@ import com.aliyuncs.http.MethodType;
 public class CreateApplicationClientSecretRequest extends RpcAcsRequest<CreateApplicationClientSecretResponse> {
 	   
 
-	private String instanceId;
+	private Long expirationTime;
 
 	private String applicationId;
+
+	private String instanceId;
 	public CreateApplicationClientSecretRequest() {
 		super("Eiam", "2021-12-01", "CreateApplicationClientSecret", "eiam");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Long getExpirationTime() {
+		return this.expirationTime;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setExpirationTime(Long expirationTime) {
+		this.expirationTime = expirationTime;
+		if(expirationTime != null){
+			putQueryParameter("ExpirationTime", expirationTime.toString());
 		}
 	}
 
@@ -53,6 +55,17 @@ public class CreateApplicationClientSecretRequest extends RpcAcsRequest<CreateAp
 		this.applicationId = applicationId;
 		if(applicationId != null){
 			putQueryParameter("ApplicationId", applicationId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

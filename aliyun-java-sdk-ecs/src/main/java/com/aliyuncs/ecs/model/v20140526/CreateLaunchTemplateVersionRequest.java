@@ -30,6 +30,10 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 	private Long resourceOwnerId;
 
+	private Integer httpPutResponseHopLimit;
+
+	private SecurityOptions securityOptions;
+
 	private String securityEnhancementStrategy;
 
 	private String networkType;
@@ -40,15 +44,21 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 	private String imageOwnerAlias;
 
+	private Boolean deletionProtection;
+
 	private String resourceGroupId;
 
 	private String hostName;
+
+	private ImageOptions imageOptions;
 
 	private Integer systemDiskIops;
 
 	private List<Tag> tags;
 
 	private String systemDiskAutoSnapshotPolicyId;
+
+	private Integer autoRenewPeriod;
 
 	private Integer period;
 
@@ -66,7 +76,11 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 	private Boolean systemDiskBurstingEnabled;
 
+	private String periodUnit;
+
 	private String instanceName;
+
+	private Boolean autoRenew;
 
 	private String internetChargeType;
 
@@ -88,6 +102,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 	private String description;
 
+	private String systemDiskKMSKeyId;
+
 	private String systemDiskCategory;
 
 	private String systemDiskPerformanceLevel;
@@ -95,6 +111,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 	private String userData;
 
 	private Boolean passwordInherit;
+
+	private String httpEndpoint;
 
 	private String instanceType;
 
@@ -116,6 +134,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 	private String autoReleaseTime;
 
+	private String creditSpecification;
+
 	private Integer spotDuration;
 
 	private List<String> securityGroupIdss;
@@ -128,7 +148,11 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 	private String vpcId;
 
+	private String httpTokens;
+
 	private String systemDiskDescription;
+
+	private String systemDiskEncrypted;
 	public CreateLaunchTemplateVersionRequest() {
 		super("Ecs", "2014-05-26", "CreateLaunchTemplateVersion", "ecs");
 		setMethod(MethodType.POST);
@@ -158,6 +182,29 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public Integer getHttpPutResponseHopLimit() {
+		return this.httpPutResponseHopLimit;
+	}
+
+	public void setHttpPutResponseHopLimit(Integer httpPutResponseHopLimit) {
+		this.httpPutResponseHopLimit = httpPutResponseHopLimit;
+		if(httpPutResponseHopLimit != null){
+			putQueryParameter("HttpPutResponseHopLimit", httpPutResponseHopLimit.toString());
+		}
+	}
+
+	public SecurityOptions getSecurityOptions() {
+		return this.securityOptions;
+	}
+
+	public void setSecurityOptions(SecurityOptions securityOptions) {
+		this.securityOptions = securityOptions;	
+		if (securityOptions != null) {
+			
+				putQueryParameter("SecurityOptions.TrustedSystemMode" , securityOptions.getTrustedSystemMode());
+		}	
 	}
 
 	public String getSecurityEnhancementStrategy() {
@@ -215,6 +262,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		}
 	}
 
+	public Boolean getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(Boolean deletionProtection) {
+		this.deletionProtection = deletionProtection;
+		if(deletionProtection != null){
+			putQueryParameter("DeletionProtection", deletionProtection.toString());
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -235,6 +293,18 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		if(hostName != null){
 			putQueryParameter("HostName", hostName);
 		}
+	}
+
+	public ImageOptions getImageOptions() {
+		return this.imageOptions;
+	}
+
+	public void setImageOptions(ImageOptions imageOptions) {
+		this.imageOptions = imageOptions;	
+		if (imageOptions != null) {
+			
+				putQueryParameter("ImageOptions.LoginAsNonRoot" , imageOptions.getLoginAsNonRoot());
+		}	
 	}
 
 	public Integer getSystemDiskIops() {
@@ -270,6 +340,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
 		if(systemDiskAutoSnapshotPolicyId != null){
 			putQueryParameter("SystemDisk.AutoSnapshotPolicyId", systemDiskAutoSnapshotPolicyId);
+		}
+	}
+
+	public Integer getAutoRenewPeriod() {
+		return this.autoRenewPeriod;
+	}
+
+	public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+		this.autoRenewPeriod = autoRenewPeriod;
+		if(autoRenewPeriod != null){
+			putQueryParameter("AutoRenewPeriod", autoRenewPeriod.toString());
 		}
 	}
 
@@ -361,6 +442,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		}
 	}
 
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
+		}
+	}
+
 	public String getInstanceName() {
 		return this.instanceName;
 	}
@@ -369,6 +461,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		this.instanceName = instanceName;
 		if(instanceName != null){
 			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 
@@ -482,6 +585,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		}
 	}
 
+	public String getSystemDiskKMSKeyId() {
+		return this.systemDiskKMSKeyId;
+	}
+
+	public void setSystemDiskKMSKeyId(String systemDiskKMSKeyId) {
+		this.systemDiskKMSKeyId = systemDiskKMSKeyId;
+		if(systemDiskKMSKeyId != null){
+			putQueryParameter("SystemDisk.KMSKeyId", systemDiskKMSKeyId);
+		}
+	}
+
 	public String getSystemDiskCategory() {
 		return this.systemDiskCategory;
 	}
@@ -523,6 +637,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		this.passwordInherit = passwordInherit;
 		if(passwordInherit != null){
 			putQueryParameter("PasswordInherit", passwordInherit.toString());
+		}
+	}
+
+	public String getHttpEndpoint() {
+		return this.httpEndpoint;
+	}
+
+	public void setHttpEndpoint(String httpEndpoint) {
+		this.httpEndpoint = httpEndpoint;
+		if(httpEndpoint != null){
+			putQueryParameter("HttpEndpoint", httpEndpoint);
 		}
 	}
 
@@ -590,6 +715,7 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 				}
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".InstanceType" , networkInterfaces.get(depth1).getInstanceType());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceTrafficMode" , networkInterfaces.get(depth1).getNetworkInterfaceTrafficMode());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".DeleteOnRelease" , networkInterfaces.get(depth1).getDeleteOnRelease());
 			}
 		}	
 	}
@@ -649,6 +775,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		}
 	}
 
+	public String getCreditSpecification() {
+		return this.creditSpecification;
+	}
+
+	public void setCreditSpecification(String creditSpecification) {
+		this.creditSpecification = creditSpecification;
+		if(creditSpecification != null){
+			putQueryParameter("CreditSpecification", creditSpecification);
+		}
+	}
+
 	public Integer getSpotDuration() {
 		return this.spotDuration;
 	}
@@ -693,6 +830,7 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".ProvisionedIops" , dataDisks.get(depth1).getProvisionedIops());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".BurstingEnabled" , dataDisks.get(depth1).getBurstingEnabled());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".AutoSnapshotPolicyId" , dataDisks.get(depth1).getAutoSnapshotPolicyId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
 			}
 		}	
 	}
@@ -730,6 +868,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		}
 	}
 
+	public String getHttpTokens() {
+		return this.httpTokens;
+	}
+
+	public void setHttpTokens(String httpTokens) {
+		this.httpTokens = httpTokens;
+		if(httpTokens != null){
+			putQueryParameter("HttpTokens", httpTokens);
+		}
+	}
+
 	public String getSystemDiskDescription() {
 		return this.systemDiskDescription;
 	}
@@ -738,6 +887,43 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		this.systemDiskDescription = systemDiskDescription;
 		if(systemDiskDescription != null){
 			putQueryParameter("SystemDisk.Description", systemDiskDescription);
+		}
+	}
+
+	public String getSystemDiskEncrypted() {
+		return this.systemDiskEncrypted;
+	}
+
+	public void setSystemDiskEncrypted(String systemDiskEncrypted) {
+		this.systemDiskEncrypted = systemDiskEncrypted;
+		if(systemDiskEncrypted != null){
+			putQueryParameter("SystemDisk.Encrypted", systemDiskEncrypted);
+		}
+	}
+
+	public static class SecurityOptions {
+
+		private String trustedSystemMode;
+
+		public String getTrustedSystemMode() {
+			return this.trustedSystemMode;
+		}
+
+		public void setTrustedSystemMode(String trustedSystemMode) {
+			this.trustedSystemMode = trustedSystemMode;
+		}
+	}
+
+	public static class ImageOptions {
+
+		private Boolean loginAsNonRoot;
+
+		public Boolean getLoginAsNonRoot() {
+			return this.loginAsNonRoot;
+		}
+
+		public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
+			this.loginAsNonRoot = loginAsNonRoot;
 		}
 	}
 
@@ -781,6 +967,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		private String instanceType;
 
 		private String networkInterfaceTrafficMode;
+
+		private Boolean deleteOnRelease;
 
 		public String getVSwitchId() {
 			return this.vSwitchId;
@@ -845,6 +1033,14 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
 			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
 		}
+
+		public Boolean getDeleteOnRelease() {
+			return this.deleteOnRelease;
+		}
+
+		public void setDeleteOnRelease(Boolean deleteOnRelease) {
+			this.deleteOnRelease = deleteOnRelease;
+		}
 	}
 
 	public static class DataDisk {
@@ -872,6 +1068,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		private Boolean burstingEnabled;
 
 		private String autoSnapshotPolicyId;
+
+		private String kMSKeyId;
 
 		public String getPerformanceLevel() {
 			return this.performanceLevel;
@@ -967,6 +1165,14 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
 			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
 		}
 	}
 

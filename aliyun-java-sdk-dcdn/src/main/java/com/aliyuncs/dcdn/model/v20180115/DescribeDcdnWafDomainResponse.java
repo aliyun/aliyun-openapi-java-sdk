@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnWafDomainResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<OutPutDomain> outPutDomains;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeDcdnWafDomainResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<OutPutDomain> getOutPutDomains() {
@@ -57,15 +57,23 @@ public class DescribeDcdnWafDomainResponse extends AcsResponse {
 
 	public static class OutPutDomain {
 
+		private Integer aclStatus;
+
 		private Integer status;
 
 		private String domain;
 
-		private Integer wafStatus;
-
 		private Integer ccStatus;
 
-		private Integer aclStatus;
+		private Integer wafStatus;
+
+		public Integer getAclStatus() {
+			return this.aclStatus;
+		}
+
+		public void setAclStatus(Integer aclStatus) {
+			this.aclStatus = aclStatus;
+		}
 
 		public Integer getStatus() {
 			return this.status;
@@ -83,14 +91,6 @@ public class DescribeDcdnWafDomainResponse extends AcsResponse {
 			this.domain = domain;
 		}
 
-		public Integer getWafStatus() {
-			return this.wafStatus;
-		}
-
-		public void setWafStatus(Integer wafStatus) {
-			this.wafStatus = wafStatus;
-		}
-
 		public Integer getCcStatus() {
 			return this.ccStatus;
 		}
@@ -99,12 +99,12 @@ public class DescribeDcdnWafDomainResponse extends AcsResponse {
 			this.ccStatus = ccStatus;
 		}
 
-		public Integer getAclStatus() {
-			return this.aclStatus;
+		public Integer getWafStatus() {
+			return this.wafStatus;
 		}
 
-		public void setAclStatus(Integer aclStatus) {
-			this.aclStatus = aclStatus;
+		public void setWafStatus(Integer wafStatus) {
+			this.wafStatus = wafStatus;
 		}
 	}
 

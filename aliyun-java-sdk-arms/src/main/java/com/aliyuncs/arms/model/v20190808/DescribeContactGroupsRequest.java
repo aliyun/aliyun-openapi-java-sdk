@@ -25,13 +25,15 @@ import com.aliyuncs.arms.Endpoint;
 public class DescribeContactGroupsRequest extends RpcAcsRequest<DescribeContactGroupsResponse> {
 	   
 
-	private Long size;
-
 	private Boolean isDetail;
 
-	private Long page;
-
 	private String contactGroupName;
+
+	private Long size;
+
+	private String groupIds;
+
+	private Long page;
 	public DescribeContactGroupsRequest() {
 		super("ARMS", "2019-08-08", "DescribeContactGroups", "arms");
 		setMethod(MethodType.POST);
@@ -39,17 +41,6 @@ public class DescribeContactGroupsRequest extends RpcAcsRequest<DescribeContactG
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getSize() {
-		return this.size;
-	}
-
-	public void setSize(Long size) {
-		this.size = size;
-		if(size != null){
-			putQueryParameter("Size", size.toString());
-		}
 	}
 
 	public Boolean getIsDetail() {
@@ -63,17 +54,6 @@ public class DescribeContactGroupsRequest extends RpcAcsRequest<DescribeContactG
 		}
 	}
 
-	public Long getPage() {
-		return this.page;
-	}
-
-	public void setPage(Long page) {
-		this.page = page;
-		if(page != null){
-			putQueryParameter("Page", page.toString());
-		}
-	}
-
 	public String getContactGroupName() {
 		return this.contactGroupName;
 	}
@@ -82,6 +62,39 @@ public class DescribeContactGroupsRequest extends RpcAcsRequest<DescribeContactG
 		this.contactGroupName = contactGroupName;
 		if(contactGroupName != null){
 			putQueryParameter("ContactGroupName", contactGroupName);
+		}
+	}
+
+	public Long getSize() {
+		return this.size;
+	}
+
+	public void setSize(Long size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("Size", size.toString());
+		}
+	}
+
+	public String getGroupIds() {
+		return this.groupIds;
+	}
+
+	public void setGroupIds(String groupIds) {
+		this.groupIds = groupIds;
+		if(groupIds != null){
+			putQueryParameter("GroupIds", groupIds);
+		}
+	}
+
+	public Long getPage() {
+		return this.page;
+	}
+
+	public void setPage(Long page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
 		}
 	}
 

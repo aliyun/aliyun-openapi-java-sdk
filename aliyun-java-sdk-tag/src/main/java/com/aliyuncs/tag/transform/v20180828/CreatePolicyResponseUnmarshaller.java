@@ -24,6 +24,7 @@ public class CreatePolicyResponseUnmarshaller {
 		
 		createPolicyResponse.setRequestId(_ctx.stringValue("CreatePolicyResponse.RequestId"));
 		createPolicyResponse.setPolicyId(_ctx.stringValue("CreatePolicyResponse.PolicyId"));
+		createPolicyResponse.setPolicyName(_ctx.stringValue("CreatePolicyResponse.PolicyName"));
 	 
 	 	return createPolicyResponse;
 	}

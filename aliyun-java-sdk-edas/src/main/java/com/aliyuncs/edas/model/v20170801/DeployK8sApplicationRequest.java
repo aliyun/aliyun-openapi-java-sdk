@@ -27,9 +27,13 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String nasId;
 
+	private String sidecars;
+
 	private String packageVersionId;
 
 	private Integer batchWaitTime;
+
+	private Integer requestsEphemeralStorage;
 
 	private String envs;
 
@@ -41,11 +45,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String configMountDescs;
 
+	private String startup;
+
 	private Integer memoryLimit;
+
+	private String imagePlatforms;
 
 	private String imageTag;
 
 	private String deployAcrossZones;
+
+	private Integer terminateGracePeriod;
 
 	private String deployAcrossNodes;
 
@@ -65,11 +75,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String labels;
 
+	private String userBaseImageUrl;
+
 	private Boolean useBodyEncoding;
+
+	private Integer limitEphemeralStorage;
 
 	private String changeOrderDesc;
 
 	private Integer losslessRuleFuncType;
+
+	private String canaryRuleId;
 
 	private String emptyDirs;
 
@@ -98,6 +114,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 	private String readiness;
 
 	private String liveness;
+
+	private String initContainers;
 
 	private String packageVersion;
 
@@ -161,6 +179,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
+	public String getSidecars() {
+		return this.sidecars;
+	}
+
+	public void setSidecars(String sidecars) {
+		this.sidecars = sidecars;
+		if(sidecars != null){
+			putQueryParameter("Sidecars", sidecars);
+		}
+	}
+
 	public String getPackageVersionId() {
 		return this.packageVersionId;
 	}
@@ -180,6 +209,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.batchWaitTime = batchWaitTime;
 		if(batchWaitTime != null){
 			putQueryParameter("BatchWaitTime", batchWaitTime.toString());
+		}
+	}
+
+	public Integer getRequestsEphemeralStorage() {
+		return this.requestsEphemeralStorage;
+	}
+
+	public void setRequestsEphemeralStorage(Integer requestsEphemeralStorage) {
+		this.requestsEphemeralStorage = requestsEphemeralStorage;
+		if(requestsEphemeralStorage != null){
+			putQueryParameter("RequestsEphemeralStorage", requestsEphemeralStorage.toString());
 		}
 	}
 
@@ -238,6 +278,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
+	public String getStartup() {
+		return this.startup;
+	}
+
+	public void setStartup(String startup) {
+		this.startup = startup;
+		if(startup != null){
+			putQueryParameter("Startup", startup);
+		}
+	}
+
 	public Integer getMemoryLimit() {
 		return this.memoryLimit;
 	}
@@ -246,6 +297,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.memoryLimit = memoryLimit;
 		if(memoryLimit != null){
 			putQueryParameter("MemoryLimit", memoryLimit.toString());
+		}
+	}
+
+	public String getImagePlatforms() {
+		return this.imagePlatforms;
+	}
+
+	public void setImagePlatforms(String imagePlatforms) {
+		this.imagePlatforms = imagePlatforms;
+		if(imagePlatforms != null){
+			putQueryParameter("ImagePlatforms", imagePlatforms);
 		}
 	}
 
@@ -268,6 +330,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.deployAcrossZones = deployAcrossZones;
 		if(deployAcrossZones != null){
 			putQueryParameter("DeployAcrossZones", deployAcrossZones);
+		}
+	}
+
+	public Integer getTerminateGracePeriod() {
+		return this.terminateGracePeriod;
+	}
+
+	public void setTerminateGracePeriod(Integer terminateGracePeriod) {
+		this.terminateGracePeriod = terminateGracePeriod;
+		if(terminateGracePeriod != null){
+			putQueryParameter("TerminateGracePeriod", terminateGracePeriod.toString());
 		}
 	}
 
@@ -370,6 +443,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
+	public String getUserBaseImageUrl() {
+		return this.userBaseImageUrl;
+	}
+
+	public void setUserBaseImageUrl(String userBaseImageUrl) {
+		this.userBaseImageUrl = userBaseImageUrl;
+		if(userBaseImageUrl != null){
+			putQueryParameter("UserBaseImageUrl", userBaseImageUrl);
+		}
+	}
+
 	public Boolean getUseBodyEncoding() {
 		return this.useBodyEncoding;
 	}
@@ -378,6 +462,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.useBodyEncoding = useBodyEncoding;
 		if(useBodyEncoding != null){
 			putQueryParameter("UseBodyEncoding", useBodyEncoding.toString());
+		}
+	}
+
+	public Integer getLimitEphemeralStorage() {
+		return this.limitEphemeralStorage;
+	}
+
+	public void setLimitEphemeralStorage(Integer limitEphemeralStorage) {
+		this.limitEphemeralStorage = limitEphemeralStorage;
+		if(limitEphemeralStorage != null){
+			putQueryParameter("LimitEphemeralStorage", limitEphemeralStorage.toString());
 		}
 	}
 
@@ -400,6 +495,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.losslessRuleFuncType = losslessRuleFuncType;
 		if(losslessRuleFuncType != null){
 			putQueryParameter("LosslessRuleFuncType", losslessRuleFuncType.toString());
+		}
+	}
+
+	public String getCanaryRuleId() {
+		return this.canaryRuleId;
+	}
+
+	public void setCanaryRuleId(String canaryRuleId) {
+		this.canaryRuleId = canaryRuleId;
+		if(canaryRuleId != null){
+			putQueryParameter("CanaryRuleId", canaryRuleId);
 		}
 	}
 
@@ -554,6 +660,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.liveness = liveness;
 		if(liveness != null){
 			putQueryParameter("Liveness", liveness);
+		}
+	}
+
+	public String getInitContainers() {
+		return this.initContainers;
+	}
+
+	public void setInitContainers(String initContainers) {
+		this.initContainers = initContainers;
+		if(initContainers != null){
+			putQueryParameter("InitContainers", initContainers);
 		}
 	}
 

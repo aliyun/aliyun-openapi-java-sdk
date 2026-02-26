@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class OpenPatentStatisticsRequest extends RpcAcsRequest<OpenPatentStatisticsResponse> {
 	   
 	public OpenPatentStatisticsRequest() {
-		super("Copyright", "2019-01-23", "OpenPatentStatistics");
+		super("Copyright", "2019-01-23", "OpenPatentStatistics", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

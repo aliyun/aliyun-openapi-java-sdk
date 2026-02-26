@@ -81,6 +81,10 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 
 		private Integer nntfCount;
 
+		private Integer raspDefend;
+
+		private Integer status;
+
 		private Integer handledCount;
 
 		private Long gmtLast;
@@ -97,6 +101,10 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 
 		private Integer asapCount;
 
+		private String related;
+
+		private Long ruleModifyTime;
+
 		public String getType() {
 			return this.type;
 		}
@@ -111,6 +119,22 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 
 		public void setNntfCount(Integer nntfCount) {
 			this.nntfCount = nntfCount;
+		}
+
+		public Integer getRaspDefend() {
+			return this.raspDefend;
+		}
+
+		public void setRaspDefend(Integer raspDefend) {
+			this.raspDefend = raspDefend;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Integer getHandledCount() {
@@ -175,6 +199,22 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 
 		public void setAsapCount(Integer asapCount) {
 			this.asapCount = asapCount;
+		}
+
+		public String getRelated() {
+			return this.related;
+		}
+
+		public void setRelated(String related) {
+			this.related = related;
+		}
+
+		public Long getRuleModifyTime() {
+			return this.ruleModifyTime;
+		}
+
+		public void setRuleModifyTime(Long ruleModifyTime) {
+			this.ruleModifyTime = ruleModifyTime;
 		}
 	}
 

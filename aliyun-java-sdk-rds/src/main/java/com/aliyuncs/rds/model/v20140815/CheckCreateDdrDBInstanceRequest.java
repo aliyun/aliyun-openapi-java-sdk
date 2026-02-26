@@ -31,9 +31,9 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 
 	private String sourceDBInstanceName;
 
-	private String binlogRole;
-
 	private String engineVersion;
+
+	private String resourceGroupId;
 
 	private String engine;
 
@@ -45,13 +45,9 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 
 	private Long ownerId;
 
-	private String binlogPosition;
-
 	private String dBInstanceClass;
 
 	private String restoreType;
-
-	private String binlogName;
 
 	private String sourceRegion;
 	public CheckCreateDdrDBInstanceRequest() {
@@ -96,17 +92,6 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 		}
 	}
 
-	public String getBinlogRole() {
-		return this.binlogRole;
-	}
-
-	public void setBinlogRole(String binlogRole) {
-		this.binlogRole = binlogRole;
-		if(binlogRole != null){
-			putQueryParameter("BinlogRole", binlogRole);
-		}
-	}
-
 	public String getEngineVersion() {
 		return this.engineVersion;
 	}
@@ -115,6 +100,17 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -173,17 +169,6 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 		}
 	}
 
-	public String getBinlogPosition() {
-		return this.binlogPosition;
-	}
-
-	public void setBinlogPosition(String binlogPosition) {
-		this.binlogPosition = binlogPosition;
-		if(binlogPosition != null){
-			putQueryParameter("BinlogPosition", binlogPosition);
-		}
-	}
-
 	public String getDBInstanceClass() {
 		return this.dBInstanceClass;
 	}
@@ -203,17 +188,6 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 		this.restoreType = restoreType;
 		if(restoreType != null){
 			putQueryParameter("RestoreType", restoreType);
-		}
-	}
-
-	public String getBinlogName() {
-		return this.binlogName;
-	}
-
-	public void setBinlogName(String binlogName) {
-		this.binlogName = binlogName;
-		if(binlogName != null){
-			putQueryParameter("BinlogName", binlogName);
 		}
 	}
 

@@ -103,6 +103,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String instanceName;
 
+		private String description;
+
 		private Integer size;
 
 		private String status;
@@ -110,6 +112,16 @@ public class DescribeDisksResponse extends AcsResponse {
 		private String type;
 
 		private Boolean portable;
+
+		private String snapshotId;
+
+		private String serialId;
+
+		private Boolean encrypted;
+
+		private String encryptedKeyId;
+
+		private Boolean deleteWithInstance;
 
 		public String getCategory() {
 			return this.category;
@@ -175,6 +187,14 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.instanceName = instanceName;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public Integer getSize() {
 			return this.size;
 		}
@@ -205,6 +225,46 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setPortable(Boolean portable) {
 			this.portable = portable;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public String getSerialId() {
+			return this.serialId;
+		}
+
+		public void setSerialId(String serialId) {
+			this.serialId = serialId;
+		}
+
+		public Boolean getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
+		}
+
+		public String getEncryptedKeyId() {
+			return this.encryptedKeyId;
+		}
+
+		public void setEncryptedKeyId(String encryptedKeyId) {
+			this.encryptedKeyId = encryptedKeyId;
+		}
+
+		public Boolean getDeleteWithInstance() {
+			return this.deleteWithInstance;
+		}
+
+		public void setDeleteWithInstance(Boolean deleteWithInstance) {
+			this.deleteWithInstance = deleteWithInstance;
 		}
 	}
 

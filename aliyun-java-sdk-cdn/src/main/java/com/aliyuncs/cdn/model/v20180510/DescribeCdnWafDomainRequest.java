@@ -28,8 +28,6 @@ public class DescribeCdnWafDomainRequest extends RpcAcsRequest<DescribeCdnWafDom
 	private String resourceGroupId;
 
 	private String domainName;
-
-	private Long ownerId;
 	public DescribeCdnWafDomainRequest() {
 		super("Cdn", "2018-05-10", "DescribeCdnWafDomain");
 		setMethod(MethodType.POST);
@@ -58,17 +56,6 @@ public class DescribeCdnWafDomainRequest extends RpcAcsRequest<DescribeCdnWafDom
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -39,7 +39,7 @@ public class UnassociateAnycastEipAddressRequest extends RpcAcsRequest<Unassocia
 
 	private String bindInstanceId;
 	public UnassociateAnycastEipAddressRequest() {
-		super("Eipanycast", "2020-03-09", "UnassociateAnycastEipAddress");
+		super("Eipanycast", "2020-03-09", "UnassociateAnycastEipAddress", "eipanycast");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

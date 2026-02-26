@@ -32,15 +32,15 @@ public class QueryUserGroupListByParentIdResponseUnmarshaller {
 		List<Data> result = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("QueryUserGroupListByParentIdResponse.Result.Length"); i++) {
 			Data data = new Data();
+			data.setCreateTime(_ctx.stringValue("QueryUserGroupListByParentIdResponse.Result["+ i +"].CreateTime"));
+			data.setCreateUser(_ctx.stringValue("QueryUserGroupListByParentIdResponse.Result["+ i +"].CreateUser"));
 			data.setIdentifiedPath(_ctx.stringValue("QueryUserGroupListByParentIdResponse.Result["+ i +"].IdentifiedPath"));
 			data.setModifiedTime(_ctx.stringValue("QueryUserGroupListByParentIdResponse.Result["+ i +"].ModifiedTime"));
-			data.setCreateUser(_ctx.stringValue("QueryUserGroupListByParentIdResponse.Result["+ i +"].CreateUser"));
-			data.setCreateTime(_ctx.stringValue("QueryUserGroupListByParentIdResponse.Result["+ i +"].CreateTime"));
-			data.setUserGroupId(_ctx.stringValue("QueryUserGroupListByParentIdResponse.Result["+ i +"].UserGroupId"));
-			data.setUserGroupName(_ctx.stringValue("QueryUserGroupListByParentIdResponse.Result["+ i +"].UserGroupName"));
 			data.setModifyUser(_ctx.stringValue("QueryUserGroupListByParentIdResponse.Result["+ i +"].ModifyUser"));
 			data.setParentUserGroupId(_ctx.stringValue("QueryUserGroupListByParentIdResponse.Result["+ i +"].ParentUserGroupId"));
 			data.setUserGroupDescription(_ctx.stringValue("QueryUserGroupListByParentIdResponse.Result["+ i +"].UserGroupDescription"));
+			data.setUserGroupId(_ctx.stringValue("QueryUserGroupListByParentIdResponse.Result["+ i +"].UserGroupId"));
+			data.setUserGroupName(_ctx.stringValue("QueryUserGroupListByParentIdResponse.Result["+ i +"].UserGroupName"));
 
 			result.add(data);
 		}

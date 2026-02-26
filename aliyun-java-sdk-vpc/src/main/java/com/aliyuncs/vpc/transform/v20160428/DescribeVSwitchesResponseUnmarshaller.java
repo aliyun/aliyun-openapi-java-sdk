@@ -51,6 +51,7 @@ public class DescribeVSwitchesResponseUnmarshaller {
 			vSwitch.setIpv6CidrBlock(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].Ipv6CidrBlock"));
 			vSwitch.setVSwitchName(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].VSwitchName"));
 			vSwitch.setShareType(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].ShareType"));
+			vSwitch.setEnabledIpv6(_ctx.booleanValue("DescribeVSwitchesResponse.VSwitches["+ i +"].EnabledIpv6"));
 
 			RouteTable routeTable = new RouteTable();
 			routeTable.setRouteTableId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].RouteTable.RouteTableId"));

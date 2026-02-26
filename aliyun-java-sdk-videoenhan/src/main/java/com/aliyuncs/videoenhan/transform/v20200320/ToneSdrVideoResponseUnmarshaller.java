@@ -24,6 +24,8 @@ public class ToneSdrVideoResponseUnmarshaller {
 	public static ToneSdrVideoResponse unmarshall(ToneSdrVideoResponse toneSdrVideoResponse, UnmarshallerContext _ctx) {
 		
 		toneSdrVideoResponse.setRequestId(_ctx.stringValue("ToneSdrVideoResponse.RequestId"));
+		toneSdrVideoResponse.setCode(_ctx.stringValue("ToneSdrVideoResponse.Code"));
+		toneSdrVideoResponse.setMessage(_ctx.stringValue("ToneSdrVideoResponse.Message"));
 
 		Data data = new Data();
 		data.setVideoURL(_ctx.stringValue("ToneSdrVideoResponse.Data.VideoURL"));

@@ -15,6 +15,7 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -28,13 +29,19 @@ public class CreateEipInstanceRequest extends RpcAcsRequest<CreateEipInstanceRes
 
 	private String ensRegionId;
 
-	private String instanceChargeType;
-
-	private Long bandwidth;
+	private List<Tag> tags;
 
 	private String internetChargeType;
 
 	private String name;
+
+	private String clientToken;
+
+	private String description;
+
+	private String instanceChargeType;
+
+	private Long bandwidth;
 	public CreateEipInstanceRequest() {
 		super("Ens", "2017-11-10", "CreateEipInstance", "ens");
 		setMethod(MethodType.POST);
@@ -62,6 +69,64 @@ public class CreateEipInstanceRequest extends RpcAcsRequest<CreateEipInstanceRes
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
 	public String getInstanceChargeType() {
 		return this.instanceChargeType;
 	}
@@ -84,25 +149,26 @@ public class CreateEipInstanceRequest extends RpcAcsRequest<CreateEipInstanceRes
 		}
 	}
 
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
+	public static class Tag {
 
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
 		}
-	}
 
-	public String getName() {
-		return this.name;
-	}
+		public void setValue(String value) {
+			this.value = value;
+		}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

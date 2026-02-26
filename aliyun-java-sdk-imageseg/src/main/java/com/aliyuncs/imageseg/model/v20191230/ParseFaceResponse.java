@@ -69,17 +69,9 @@ public class ParseFaceResponse extends AcsResponse {
 
 		public static class Element {
 
-			private String name;
-
 			private String imageURL;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public String getImageURL() {
 				return this.imageURL;
@@ -87,6 +79,14 @@ public class ParseFaceResponse extends AcsResponse {
 
 			public void setImageURL(String imageURL) {
 				this.imageURL = imageURL;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

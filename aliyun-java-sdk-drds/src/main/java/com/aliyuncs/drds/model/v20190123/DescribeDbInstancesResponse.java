@@ -47,40 +47,34 @@ public class DescribeDbInstancesResponse extends AcsResponse {
 
 	public static class DBInstance {
 
-		private String dBInstanceId;
-
-		private Integer dBInstanceStatus;
+		private String instanceNetworkType;
 
 		private String dBInstanceType;
 
+		private String zoneId;
+
+		private Integer dBInstanceStatus;
+
+		private String dBInstanceId;
+
 		private String engine;
+
+		private String dBInstanceDescription;
 
 		private String engineVersion;
 
 		private String regionId;
 
-		private String zoneId;
-
-		private String dBInstanceDescription;
-
-		private String instanceNetworkType;
+		private Boolean allowAllCategory;
 
 		private List<String> readOnlyDBInstanceId;
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
+		public String getInstanceNetworkType() {
+			return this.instanceNetworkType;
 		}
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
-
-		public Integer getDBInstanceStatus() {
-			return this.dBInstanceStatus;
-		}
-
-		public void setDBInstanceStatus(Integer dBInstanceStatus) {
-			this.dBInstanceStatus = dBInstanceStatus;
+		public void setInstanceNetworkType(String instanceNetworkType) {
+			this.instanceNetworkType = instanceNetworkType;
 		}
 
 		public String getDBInstanceType() {
@@ -91,12 +85,44 @@ public class DescribeDbInstancesResponse extends AcsResponse {
 			this.dBInstanceType = dBInstanceType;
 		}
 
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public Integer getDBInstanceStatus() {
+			return this.dBInstanceStatus;
+		}
+
+		public void setDBInstanceStatus(Integer dBInstanceStatus) {
+			this.dBInstanceStatus = dBInstanceStatus;
+		}
+
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
+		}
+
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
+
 		public String getEngine() {
 			return this.engine;
 		}
 
 		public void setEngine(String engine) {
 			this.engine = engine;
+		}
+
+		public String getDBInstanceDescription() {
+			return this.dBInstanceDescription;
+		}
+
+		public void setDBInstanceDescription(String dBInstanceDescription) {
+			this.dBInstanceDescription = dBInstanceDescription;
 		}
 
 		public String getEngineVersion() {
@@ -115,28 +141,12 @@ public class DescribeDbInstancesResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public Boolean getAllowAllCategory() {
+			return this.allowAllCategory;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getDBInstanceDescription() {
-			return this.dBInstanceDescription;
-		}
-
-		public void setDBInstanceDescription(String dBInstanceDescription) {
-			this.dBInstanceDescription = dBInstanceDescription;
-		}
-
-		public String getInstanceNetworkType() {
-			return this.instanceNetworkType;
-		}
-
-		public void setInstanceNetworkType(String instanceNetworkType) {
-			this.instanceNetworkType = instanceNetworkType;
+		public void setAllowAllCategory(Boolean allowAllCategory) {
+			this.allowAllCategory = allowAllCategory;
 		}
 
 		public List<String> getReadOnlyDBInstanceId() {

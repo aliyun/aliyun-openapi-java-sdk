@@ -35,10 +35,10 @@ public class DescribeSQLLogFilesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeSQLLogFilesResponse.Items.Length"); i++) {
 			LogFile logFile = new LogFile();
 			logFile.setFileID(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].FileID"));
-			logFile.setLogStartTime(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStartTime"));
-			logFile.setLogSize(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogSize"));
 			logFile.setLogDownloadURL(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogDownloadURL"));
 			logFile.setLogEndTime(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogEndTime"));
+			logFile.setLogSize(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogSize"));
+			logFile.setLogStartTime(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStartTime"));
 			logFile.setLogStatus(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStatus"));
 
 			items.add(logFile);

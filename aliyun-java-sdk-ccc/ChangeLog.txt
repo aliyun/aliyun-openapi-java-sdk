@@ -1,3 +1,54 @@
+2024-08-14 Version: 2.10.6
+- Add CallIds field for ListCallDetailRecord.
+
+2024-05-23 Version: 2.10.5
+- Generated 2017-07-05, 2020-07-01 for `CCC`.
+
+2023-06-06 Version: 2.10.4
+- Supported ListHistoricalAgentSkillGroupReport, ListIntervalAgentSkillGroupReport.
+
+2023-05-23 Version: 2.10.3
+- Supported BreakCodeDetails,FirstCheckInTime, LastCheckoutTime .
+
+2023-05-09 Version: 2.10.2
+- Supported GetVideo Api.
+
+2023-05-08 Version: 2.10.1
+- Supported GetVideo Api.
+
+2023-04-25 Version: 2.10.0
+- Iteration v2-10-0.
+
+2023-03-08 Version: 2.9.2
+- Support get early media recording.
+
+2023-03-08 Version: 2.9.1
+- Support get early media recording.
+
+2023-02-27 Version: 2.9.0
+- Support modify user displayName.
+
+2023-02-22 Version: 2.8.6
+- Supported Legacy id.
+
+2023-02-21 Version: 2.8.5
+- Supported MonoRecording Duration.
+
+2023-01-30 Version: 2.8.4
+- Supported IVR features.
+
+2022-12-08 Version: 2.8.3
+- Supported ListCallDetailRecords DialingTime.
+
+2022-11-25 Version: 2.8.0
+- Supported v2.8 .
+
+2022-10-14 Version: 2.6.8
+- Supported releaseReason for GetCallDetailRecord and ListCallDetailRecords.
+
+2022-08-24 Version: 2.6.6
+- Supported legacy api.
+
 2022-06-30 Version: 2.6.1
 - Supported ListAgentStates params query.
 

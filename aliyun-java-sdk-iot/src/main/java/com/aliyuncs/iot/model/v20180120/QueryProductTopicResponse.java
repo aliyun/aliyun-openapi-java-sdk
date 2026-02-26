@@ -87,6 +87,10 @@ public class QueryProductTopicResponse extends AcsResponse {
 
 		private String id;
 
+		private Boolean enableProxySubscribe;
+
+		private String codec;
+
 		public String getProductKey() {
 			return this.productKey;
 		}
@@ -125,6 +129,22 @@ public class QueryProductTopicResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public Boolean getEnableProxySubscribe() {
+			return this.enableProxySubscribe;
+		}
+
+		public void setEnableProxySubscribe(Boolean enableProxySubscribe) {
+			this.enableProxySubscribe = enableProxySubscribe;
+		}
+
+		public String getCodec() {
+			return this.codec;
+		}
+
+		public void setCodec(String codec) {
+			this.codec = codec;
 		}
 	}
 

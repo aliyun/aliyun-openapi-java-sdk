@@ -65,6 +65,8 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
 		private String componentTypeName;
 
+		private String componentTypeCnName;
+
 		private String datasetId;
 
 		private List<QueryParam> queryParams;
@@ -101,6 +103,14 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 			this.componentTypeName = componentTypeName;
 		}
 
+		public String getComponentTypeCnName() {
+			return this.componentTypeCnName;
+		}
+
+		public void setComponentTypeCnName(String componentTypeCnName) {
+			this.componentTypeCnName = componentTypeCnName;
+		}
+
 		public String getDatasetId() {
 			return this.datasetId;
 		}
@@ -119,9 +129,9 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
 		public static class QueryParam {
 
-			private String uid;
+			private String areaId;
 
-			private String pathId;
+			private String areaName;
 
 			private String caption;
 
@@ -129,24 +139,26 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
 			private Boolean isMeasure;
 
-			private String areaId;
+			private String pathId;
 
-			private String areaName;
+			private String uid;
 
-			public String getUid() {
-				return this.uid;
+			private String expression;
+
+			public String getAreaId() {
+				return this.areaId;
 			}
 
-			public void setUid(String uid) {
-				this.uid = uid;
+			public void setAreaId(String areaId) {
+				this.areaId = areaId;
 			}
 
-			public String getPathId() {
-				return this.pathId;
+			public String getAreaName() {
+				return this.areaName;
 			}
 
-			public void setPathId(String pathId) {
-				this.pathId = pathId;
+			public void setAreaName(String areaName) {
+				this.areaName = areaName;
 			}
 
 			public String getCaption() {
@@ -173,20 +185,28 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 				this.isMeasure = isMeasure;
 			}
 
-			public String getAreaId() {
-				return this.areaId;
+			public String getPathId() {
+				return this.pathId;
 			}
 
-			public void setAreaId(String areaId) {
-				this.areaId = areaId;
+			public void setPathId(String pathId) {
+				this.pathId = pathId;
 			}
 
-			public String getAreaName() {
-				return this.areaName;
+			public String getUid() {
+				return this.uid;
 			}
 
-			public void setAreaName(String areaName) {
-				this.areaName = areaName;
+			public void setUid(String uid) {
+				this.uid = uid;
+			}
+
+			public String getExpression() {
+				return this.expression;
+			}
+
+			public void setExpression(String expression) {
+				this.expression = expression;
 			}
 		}
 	}

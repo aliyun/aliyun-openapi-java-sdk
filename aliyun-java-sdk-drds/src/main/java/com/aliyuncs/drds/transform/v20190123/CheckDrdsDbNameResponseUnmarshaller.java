@@ -23,8 +23,8 @@ public class CheckDrdsDbNameResponseUnmarshaller {
 	public static CheckDrdsDbNameResponse unmarshall(CheckDrdsDbNameResponse checkDrdsDbNameResponse, UnmarshallerContext _ctx) {
 		
 		checkDrdsDbNameResponse.setRequestId(_ctx.stringValue("CheckDrdsDbNameResponse.RequestId"));
-		checkDrdsDbNameResponse.setSuccess(_ctx.booleanValue("CheckDrdsDbNameResponse.Success"));
 		checkDrdsDbNameResponse.setResult(_ctx.booleanValue("CheckDrdsDbNameResponse.Result"));
+		checkDrdsDbNameResponse.setSuccess(_ctx.booleanValue("CheckDrdsDbNameResponse.Success"));
 	 
 	 	return checkDrdsDbNameResponse;
 	}

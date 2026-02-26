@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIpInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String cdnIp;
 
-	private String iSP;
-
-	private String ispEname;
-
-	private String region;
+	private String requestId;
 
 	private String regionEname;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String region;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String ispEname;
+
+	private String iSP;
 
 	public String getCdnIp() {
 		return this.cdnIp;
@@ -52,20 +44,20 @@ public class DescribeIpInfoResponse extends AcsResponse {
 		this.cdnIp = cdnIp;
 	}
 
-	public String getISP() {
-		return this.iSP;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setISP(String iSP) {
-		this.iSP = iSP;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public String getIspEname() {
-		return this.ispEname;
+	public String getRegionEname() {
+		return this.regionEname;
 	}
 
-	public void setIspEname(String ispEname) {
-		this.ispEname = ispEname;
+	public void setRegionEname(String regionEname) {
+		this.regionEname = regionEname;
 	}
 
 	public String getRegion() {
@@ -76,12 +68,20 @@ public class DescribeIpInfoResponse extends AcsResponse {
 		this.region = region;
 	}
 
-	public String getRegionEname() {
-		return this.regionEname;
+	public String getIspEname() {
+		return this.ispEname;
 	}
 
-	public void setRegionEname(String regionEname) {
-		this.regionEname = regionEname;
+	public void setIspEname(String ispEname) {
+		this.ispEname = ispEname;
+	}
+
+	public String getISP() {
+		return this.iSP;
+	}
+
+	public void setISP(String iSP) {
+		this.iSP = iSP;
 	}
 
 	@Override

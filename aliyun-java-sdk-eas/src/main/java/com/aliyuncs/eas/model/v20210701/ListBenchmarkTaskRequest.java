@@ -24,6 +24,14 @@ import com.aliyuncs.eas.Endpoint;
  */
 public class ListBenchmarkTaskRequest extends RoaAcsRequest<ListBenchmarkTaskResponse> {
 	   
+
+	private String filter;
+
+	private String pageSize;
+
+	private String serviceName;
+
+	private String pageNumber;
 	public ListBenchmarkTaskRequest() {
 		super("eas", "2021-07-01", "ListBenchmarkTask", "eas");
 		setUriPattern("/api/v2/benchmark-tasks");
@@ -32,6 +40,50 @@ public class ListBenchmarkTaskRequest extends RoaAcsRequest<ListBenchmarkTaskRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("Filter", filter);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
+		}
 	}
 
 	@Override

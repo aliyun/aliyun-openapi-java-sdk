@@ -27,7 +27,7 @@ public class GetSimilarityImageRequest extends RoaAcsRequest<GetSimilarityImageR
 
 	private String clientInfo;
 	public GetSimilarityImageRequest() {
-		super("Green", "2018-05-09", "GetSimilarityImage", "green");
+		super("Green", "2018-05-09", "GetSimilarityImage");
 		setUriPattern("/green/similarity/image/get");
 		setMethod(MethodType.POST);
 		try {

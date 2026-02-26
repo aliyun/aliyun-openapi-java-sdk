@@ -76,6 +76,12 @@ public class GetLabelsetResponse extends AcsResponse {
 
 		private String labelType;
 
+		private String tagUserList;
+
+		private String tags;
+
+		private String subTaskPackageSize;
+
 		private String status;
 
 		private Long total;
@@ -118,6 +124,30 @@ public class GetLabelsetResponse extends AcsResponse {
 
 		public void setLabelType(String labelType) {
 			this.labelType = labelType;
+		}
+
+		public String getTagUserList() {
+			return this.tagUserList;
+		}
+
+		public void setTagUserList(String tagUserList) {
+			this.tagUserList = tagUserList;
+		}
+
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
+		}
+
+		public String getSubTaskPackageSize() {
+			return this.subTaskPackageSize;
+		}
+
+		public void setSubTaskPackageSize(String subTaskPackageSize) {
+			this.subTaskPackageSize = subTaskPackageSize;
 		}
 
 		public String getStatus() {

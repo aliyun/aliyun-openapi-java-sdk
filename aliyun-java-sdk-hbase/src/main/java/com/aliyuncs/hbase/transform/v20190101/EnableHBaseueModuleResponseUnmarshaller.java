@@ -23,8 +23,8 @@ public class EnableHBaseueModuleResponseUnmarshaller {
 	public static EnableHBaseueModuleResponse unmarshall(EnableHBaseueModuleResponse enableHBaseueModuleResponse, UnmarshallerContext _ctx) {
 		
 		enableHBaseueModuleResponse.setRequestId(_ctx.stringValue("EnableHBaseueModuleResponse.RequestId"));
-		enableHBaseueModuleResponse.setClusterId(_ctx.stringValue("EnableHBaseueModuleResponse.ClusterId"));
 		enableHBaseueModuleResponse.setOrderId(_ctx.stringValue("EnableHBaseueModuleResponse.OrderId"));
+		enableHBaseueModuleResponse.setClusterId(_ctx.stringValue("EnableHBaseueModuleResponse.ClusterId"));
 	 
 	 	return enableHBaseueModuleResponse;
 	}

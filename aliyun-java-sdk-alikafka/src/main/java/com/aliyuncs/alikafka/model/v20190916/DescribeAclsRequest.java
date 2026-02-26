@@ -25,11 +25,19 @@ import com.aliyuncs.alikafka.Endpoint;
 public class DescribeAclsRequest extends RpcAcsRequest<DescribeAclsResponse> {
 	   
 
+	private String aclResourcePatternType;
+
 	private String aclResourceType;
+
+	private String host;
+
+	private String aclOperationType;
 
 	private String aclResourceName;
 
 	private String instanceId;
+
+	private String aclPermissionType;
 
 	private String username;
 	public DescribeAclsRequest() {
@@ -41,6 +49,17 @@ public class DescribeAclsRequest extends RpcAcsRequest<DescribeAclsResponse> {
 		} catch (Exception e) {}
 	}
 
+	public String getAclResourcePatternType() {
+		return this.aclResourcePatternType;
+	}
+
+	public void setAclResourcePatternType(String aclResourcePatternType) {
+		this.aclResourcePatternType = aclResourcePatternType;
+		if(aclResourcePatternType != null){
+			putQueryParameter("AclResourcePatternType", aclResourcePatternType);
+		}
+	}
+
 	public String getAclResourceType() {
 		return this.aclResourceType;
 	}
@@ -49,6 +68,28 @@ public class DescribeAclsRequest extends RpcAcsRequest<DescribeAclsResponse> {
 		this.aclResourceType = aclResourceType;
 		if(aclResourceType != null){
 			putQueryParameter("AclResourceType", aclResourceType);
+		}
+	}
+
+	public String getHost() {
+		return this.host;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
+		if(host != null){
+			putQueryParameter("Host", host);
+		}
+	}
+
+	public String getAclOperationType() {
+		return this.aclOperationType;
+	}
+
+	public void setAclOperationType(String aclOperationType) {
+		this.aclOperationType = aclOperationType;
+		if(aclOperationType != null){
+			putQueryParameter("AclOperationType", aclOperationType);
 		}
 	}
 
@@ -71,6 +112,17 @@ public class DescribeAclsRequest extends RpcAcsRequest<DescribeAclsResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAclPermissionType() {
+		return this.aclPermissionType;
+	}
+
+	public void setAclPermissionType(String aclPermissionType) {
+		this.aclPermissionType = aclPermissionType;
+		if(aclPermissionType != null){
+			putQueryParameter("AclPermissionType", aclPermissionType);
 		}
 	}
 

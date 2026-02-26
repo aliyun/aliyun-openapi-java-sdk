@@ -39,6 +39,8 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private Boolean enableKms;
 
+	private Boolean enableML;
+
 	private String diskUsage;
 
 	private String diskCategory;
@@ -85,11 +87,61 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private Boolean enableSSL;
 
+	private Boolean enableMLCtrl;
+
 	private Boolean enableCdc;
 
 	private Boolean enableStream;
 
+	private Boolean enableLTS;
+
 	private Boolean enableShs;
+
+	private Boolean enableBlob;
+
+	private String maintainStartTime;
+
+	private String maintainEndTime;
+
+	private String resourceGroupId;
+
+	private String localCloudCategory;
+
+	private Integer localCloudStorage;
+
+	private String primaryZoneId;
+
+	private String standbyZoneId;
+
+	private String arbiterZoneId;
+
+	private String primaryVSwitchId;
+
+	private String standbyVSwitchId;
+
+	private String arbiterVSwitchId;
+
+	private String multiZoneCombination;
+
+	private String coreDiskCategory;
+
+	private String coreSpec;
+
+	private Integer coreNum;
+
+	private Integer coreSingleStorage;
+
+	private String logDiskCategory;
+
+	private String logSpec;
+
+	private Integer logNum;
+
+	private Integer logSingleStorage;
+
+	private String archVersion;
+
+	private Boolean enableLsqlVersionV3;
 
 	private List<Engine> engineList;
 
@@ -147,6 +199,14 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public void setEnableKms(Boolean enableKms) {
 		this.enableKms = enableKms;
+	}
+
+	public Boolean getEnableML() {
+		return this.enableML;
+	}
+
+	public void setEnableML(Boolean enableML) {
+		this.enableML = enableML;
 	}
 
 	public String getDiskUsage() {
@@ -333,6 +393,14 @@ public class GetLindormInstanceResponse extends AcsResponse {
 		this.enableSSL = enableSSL;
 	}
 
+	public Boolean getEnableMLCtrl() {
+		return this.enableMLCtrl;
+	}
+
+	public void setEnableMLCtrl(Boolean enableMLCtrl) {
+		this.enableMLCtrl = enableMLCtrl;
+	}
+
 	public Boolean getEnableCdc() {
 		return this.enableCdc;
 	}
@@ -349,12 +417,204 @@ public class GetLindormInstanceResponse extends AcsResponse {
 		this.enableStream = enableStream;
 	}
 
+	public Boolean getEnableLTS() {
+		return this.enableLTS;
+	}
+
+	public void setEnableLTS(Boolean enableLTS) {
+		this.enableLTS = enableLTS;
+	}
+
 	public Boolean getEnableShs() {
 		return this.enableShs;
 	}
 
 	public void setEnableShs(Boolean enableShs) {
 		this.enableShs = enableShs;
+	}
+
+	public Boolean getEnableBlob() {
+		return this.enableBlob;
+	}
+
+	public void setEnableBlob(Boolean enableBlob) {
+		this.enableBlob = enableBlob;
+	}
+
+	public String getMaintainStartTime() {
+		return this.maintainStartTime;
+	}
+
+	public void setMaintainStartTime(String maintainStartTime) {
+		this.maintainStartTime = maintainStartTime;
+	}
+
+	public String getMaintainEndTime() {
+		return this.maintainEndTime;
+	}
+
+	public void setMaintainEndTime(String maintainEndTime) {
+		this.maintainEndTime = maintainEndTime;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getLocalCloudCategory() {
+		return this.localCloudCategory;
+	}
+
+	public void setLocalCloudCategory(String localCloudCategory) {
+		this.localCloudCategory = localCloudCategory;
+	}
+
+	public Integer getLocalCloudStorage() {
+		return this.localCloudStorage;
+	}
+
+	public void setLocalCloudStorage(Integer localCloudStorage) {
+		this.localCloudStorage = localCloudStorage;
+	}
+
+	public String getPrimaryZoneId() {
+		return this.primaryZoneId;
+	}
+
+	public void setPrimaryZoneId(String primaryZoneId) {
+		this.primaryZoneId = primaryZoneId;
+	}
+
+	public String getStandbyZoneId() {
+		return this.standbyZoneId;
+	}
+
+	public void setStandbyZoneId(String standbyZoneId) {
+		this.standbyZoneId = standbyZoneId;
+	}
+
+	public String getArbiterZoneId() {
+		return this.arbiterZoneId;
+	}
+
+	public void setArbiterZoneId(String arbiterZoneId) {
+		this.arbiterZoneId = arbiterZoneId;
+	}
+
+	public String getPrimaryVSwitchId() {
+		return this.primaryVSwitchId;
+	}
+
+	public void setPrimaryVSwitchId(String primaryVSwitchId) {
+		this.primaryVSwitchId = primaryVSwitchId;
+	}
+
+	public String getStandbyVSwitchId() {
+		return this.standbyVSwitchId;
+	}
+
+	public void setStandbyVSwitchId(String standbyVSwitchId) {
+		this.standbyVSwitchId = standbyVSwitchId;
+	}
+
+	public String getArbiterVSwitchId() {
+		return this.arbiterVSwitchId;
+	}
+
+	public void setArbiterVSwitchId(String arbiterVSwitchId) {
+		this.arbiterVSwitchId = arbiterVSwitchId;
+	}
+
+	public String getMultiZoneCombination() {
+		return this.multiZoneCombination;
+	}
+
+	public void setMultiZoneCombination(String multiZoneCombination) {
+		this.multiZoneCombination = multiZoneCombination;
+	}
+
+	public String getCoreDiskCategory() {
+		return this.coreDiskCategory;
+	}
+
+	public void setCoreDiskCategory(String coreDiskCategory) {
+		this.coreDiskCategory = coreDiskCategory;
+	}
+
+	public String getCoreSpec() {
+		return this.coreSpec;
+	}
+
+	public void setCoreSpec(String coreSpec) {
+		this.coreSpec = coreSpec;
+	}
+
+	public Integer getCoreNum() {
+		return this.coreNum;
+	}
+
+	public void setCoreNum(Integer coreNum) {
+		this.coreNum = coreNum;
+	}
+
+	public Integer getCoreSingleStorage() {
+		return this.coreSingleStorage;
+	}
+
+	public void setCoreSingleStorage(Integer coreSingleStorage) {
+		this.coreSingleStorage = coreSingleStorage;
+	}
+
+	public String getLogDiskCategory() {
+		return this.logDiskCategory;
+	}
+
+	public void setLogDiskCategory(String logDiskCategory) {
+		this.logDiskCategory = logDiskCategory;
+	}
+
+	public String getLogSpec() {
+		return this.logSpec;
+	}
+
+	public void setLogSpec(String logSpec) {
+		this.logSpec = logSpec;
+	}
+
+	public Integer getLogNum() {
+		return this.logNum;
+	}
+
+	public void setLogNum(Integer logNum) {
+		this.logNum = logNum;
+	}
+
+	public Integer getLogSingleStorage() {
+		return this.logSingleStorage;
+	}
+
+	public void setLogSingleStorage(Integer logSingleStorage) {
+		this.logSingleStorage = logSingleStorage;
+	}
+
+	public String getArchVersion() {
+		return this.archVersion;
+	}
+
+	public void setArchVersion(String archVersion) {
+		this.archVersion = archVersion;
+	}
+
+	public Boolean getEnableLsqlVersionV3() {
+		return this.enableLsqlVersionV3;
+	}
+
+	public void setEnableLsqlVersionV3(Boolean enableLsqlVersionV3) {
+		this.enableLsqlVersionV3 = enableLsqlVersionV3;
 	}
 
 	public List<Engine> getEngineList() {

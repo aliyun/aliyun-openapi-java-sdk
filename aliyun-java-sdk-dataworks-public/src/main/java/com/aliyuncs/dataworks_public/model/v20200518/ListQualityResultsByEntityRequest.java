@@ -27,15 +27,17 @@ public class ListQualityResultsByEntityRequest extends RpcAcsRequest<ListQuality
 
 	private String projectName;
 
-	private String endDate;
-
-	private Integer pageSize;
-
-	private Integer entityId;
+	private Long entityId;
 
 	private String startDate;
 
 	private Integer pageNumber;
+
+	private String endDate;
+
+	private Integer pageSize;
+
+	private Long projectId;
 	public ListQualityResultsByEntityRequest() {
 		super("dataworks-public", "2020-05-18", "ListQualityResultsByEntity");
 		setMethod(MethodType.POST);
@@ -56,33 +58,11 @@ public class ListQualityResultsByEntityRequest extends RpcAcsRequest<ListQuality
 		}
 	}
 
-	public String getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putBodyParameter("EndDate", endDate);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getEntityId() {
+	public Long getEntityId() {
 		return this.entityId;
 	}
 
-	public void setEntityId(Integer entityId) {
+	public void setEntityId(Long entityId) {
 		this.entityId = entityId;
 		if(entityId != null){
 			putBodyParameter("EntityId", entityId.toString());
@@ -108,6 +88,39 @@ public class ListQualityResultsByEntityRequest extends RpcAcsRequest<ListQuality
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putBodyParameter("EndDate", endDate);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

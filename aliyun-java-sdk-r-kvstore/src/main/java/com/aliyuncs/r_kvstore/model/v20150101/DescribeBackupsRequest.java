@@ -25,6 +25,8 @@ import com.aliyuncs.r_kvstore.Endpoint;
 public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsResponse> {
 	   
 
+	private Long backupJobId;
+
 	private Long resourceOwnerId;
 
 	private String startTime;
@@ -39,7 +41,7 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private String ownerAccount;
 
-	private Integer backupId;
+	private Long backupId;
 
 	private String needAof;
 
@@ -55,6 +57,17 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getBackupJobId() {
+		return this.backupJobId;
+	}
+
+	public void setBackupJobId(Long backupJobId) {
+		this.backupJobId = backupJobId;
+		if(backupJobId != null){
+			putQueryParameter("BackupJobId", backupJobId.toString());
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -134,11 +147,11 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public Integer getBackupId() {
+	public Long getBackupId() {
 		return this.backupId;
 	}
 
-	public void setBackupId(Integer backupId) {
+	public void setBackupId(Long backupId) {
 		this.backupId = backupId;
 		if(backupId != null){
 			putQueryParameter("BackupId", backupId.toString());

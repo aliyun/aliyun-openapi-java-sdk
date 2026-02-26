@@ -125,6 +125,8 @@ public class GetMetaTableLineageResponse extends AcsResponse {
 
 			private Long createTimestamp;
 
+			private String databaseName;
+
 			public String getTableName() {
 				return this.tableName;
 			}
@@ -147,6 +149,14 @@ public class GetMetaTableLineageResponse extends AcsResponse {
 
 			public void setCreateTimestamp(Long createTimestamp) {
 				this.createTimestamp = createTimestamp;
+			}
+
+			public String getDatabaseName() {
+				return this.databaseName;
+			}
+
+			public void setDatabaseName(String databaseName) {
+				this.databaseName = databaseName;
 			}
 		}
 	}

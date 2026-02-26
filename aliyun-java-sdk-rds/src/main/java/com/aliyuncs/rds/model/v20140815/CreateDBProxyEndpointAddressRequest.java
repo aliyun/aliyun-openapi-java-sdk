@@ -29,9 +29,13 @@ public class CreateDBProxyEndpointAddressRequest extends RpcAcsRequest<CreateDBP
 
 	private String dBProxyConnectStringNetType;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private String dBProxyNewConnectStringPort;
+
+	private String dBProxyEngineType;
 
 	private String vSwitchId;
 
@@ -69,6 +73,17 @@ public class CreateDBProxyEndpointAddressRequest extends RpcAcsRequest<CreateDBP
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -88,6 +103,17 @@ public class CreateDBProxyEndpointAddressRequest extends RpcAcsRequest<CreateDBP
 		this.dBProxyNewConnectStringPort = dBProxyNewConnectStringPort;
 		if(dBProxyNewConnectStringPort != null){
 			putQueryParameter("DBProxyNewConnectStringPort", dBProxyNewConnectStringPort);
+		}
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
+		if(dBProxyEngineType != null){
+			putQueryParameter("DBProxyEngineType", dBProxyEngineType);
 		}
 	}
 

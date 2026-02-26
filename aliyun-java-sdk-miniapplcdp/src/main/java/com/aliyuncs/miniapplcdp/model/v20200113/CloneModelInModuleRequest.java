@@ -30,6 +30,8 @@ public class CloneModelInModuleRequest extends RpcAcsRequest<CloneModelInModuleR
 
 	private String modelId;
 
+	private String source;
+
 	private String moduleId;
 	public CloneModelInModuleRequest() {
 		super("miniapplcdp", "2020-01-13", "CloneModelInModule");
@@ -66,6 +68,17 @@ public class CloneModelInModuleRequest extends RpcAcsRequest<CloneModelInModuleR
 		this.modelId = modelId;
 		if(modelId != null){
 			putQueryParameter("ModelId", modelId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

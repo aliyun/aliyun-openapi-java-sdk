@@ -35,8 +35,11 @@ public class CreateModuleResponseUnmarshaller {
 		data.setMinimumPlatformVersion(_ctx.stringValue("CreateModuleResponse.Data.MinimumPlatformVersion"));
 		data.setModuleId(_ctx.stringValue("CreateModuleResponse.Data.ModuleId"));
 		data.setModuleName(_ctx.stringValue("CreateModuleResponse.Data.ModuleName"));
+		data.setOwnerAppId(_ctx.stringValue("CreateModuleResponse.Data.OwnerAppId"));
 		data.setOwnerUserId(_ctx.stringValue("CreateModuleResponse.Data.OwnerUserId"));
 		data.setPlatform(_ctx.stringValue("CreateModuleResponse.Data.Platform"));
+		data.setModuleType(_ctx.stringValue("CreateModuleResponse.Data.ModuleType"));
+		data.setPlatformVersion(_ctx.stringValue("CreateModuleResponse.Data.PlatformVersion"));
 		createModuleResponse.setData(data);
 	 
 	 	return createModuleResponse;

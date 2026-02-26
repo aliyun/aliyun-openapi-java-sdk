@@ -15,24 +15,32 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class VerifyContactFieldRequest extends RpcAcsRequest<VerifyContactFieldResponse> {
-	
-	public VerifyContactFieldRequest() {
-		super("Domain-intl", "2017-12-18", "VerifyContactField", "domain");
-	}
+	   
 
 	private String country;
+
+	private String city;
+
+	private String telExt;
+
+	private String province;
+
+	private String postalCode;
+
+	private String lang;
+
+	private String email;
 
 	private String address;
 
 	private String telArea;
-
-	private String city;
 
 	private String domainName;
 
@@ -42,19 +50,13 @@ public class VerifyContactFieldRequest extends RpcAcsRequest<VerifyContactFieldR
 
 	private String registrantOrganization;
 
-	private String telExt;
-
-	private String province;
-
-	private String postalCode;
-
 	private String userClientIp;
 
-	private String lang;
-
-	private String email;
-
 	private String registrantName;
+	public VerifyContactFieldRequest() {
+		super("Domain-intl", "2017-12-18", "VerifyContactField");
+		setMethod(MethodType.POST);
+	}
 
 	public String getCountry() {
 		return this.country;
@@ -64,6 +66,72 @@ public class VerifyContactFieldRequest extends RpcAcsRequest<VerifyContactFieldR
 		this.country = country;
 		if(country != null){
 			putQueryParameter("Country", country);
+		}
+	}
+
+	public String getCity() {
+		return this.city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+		if(city != null){
+			putQueryParameter("City", city);
+		}
+	}
+
+	public String getTelExt() {
+		return this.telExt;
+	}
+
+	public void setTelExt(String telExt) {
+		this.telExt = telExt;
+		if(telExt != null){
+			putQueryParameter("TelExt", telExt);
+		}
+	}
+
+	public String getProvince() {
+		return this.province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+		if(province != null){
+			putQueryParameter("Province", province);
+		}
+	}
+
+	public String getPostalCode() {
+		return this.postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+		if(postalCode != null){
+			putQueryParameter("PostalCode", postalCode);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
 		}
 	}
 
@@ -86,17 +154,6 @@ public class VerifyContactFieldRequest extends RpcAcsRequest<VerifyContactFieldR
 		this.telArea = telArea;
 		if(telArea != null){
 			putQueryParameter("TelArea", telArea);
-		}
-	}
-
-	public String getCity() {
-		return this.city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-		if(city != null){
-			putQueryParameter("City", city);
 		}
 	}
 
@@ -144,39 +201,6 @@ public class VerifyContactFieldRequest extends RpcAcsRequest<VerifyContactFieldR
 		}
 	}
 
-	public String getTelExt() {
-		return this.telExt;
-	}
-
-	public void setTelExt(String telExt) {
-		this.telExt = telExt;
-		if(telExt != null){
-			putQueryParameter("TelExt", telExt);
-		}
-	}
-
-	public String getProvince() {
-		return this.province;
-	}
-
-	public void setProvince(String province) {
-		this.province = province;
-		if(province != null){
-			putQueryParameter("Province", province);
-		}
-	}
-
-	public String getPostalCode() {
-		return this.postalCode;
-	}
-
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
-		if(postalCode != null){
-			putQueryParameter("PostalCode", postalCode);
-		}
-	}
-
 	public String getUserClientIp() {
 		return this.userClientIp;
 	}
@@ -185,28 +209,6 @@ public class VerifyContactFieldRequest extends RpcAcsRequest<VerifyContactFieldR
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-		if(email != null){
-			putQueryParameter("Email", email);
 		}
 	}
 

@@ -26,8 +26,6 @@ public class DeleteCdnDeliverTaskRequest extends RpcAcsRequest<DeleteCdnDeliverT
 	   
 
 	private Long deliverId;
-
-	private Long ownerId;
 	public DeleteCdnDeliverTaskRequest() {
 		super("Cdn", "2018-05-10", "DeleteCdnDeliverTask");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class DeleteCdnDeliverTaskRequest extends RpcAcsRequest<DeleteCdnDeliverT
 		this.deliverId = deliverId;
 		if(deliverId != null){
 			putQueryParameter("DeliverId", deliverId.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

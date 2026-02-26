@@ -31,6 +31,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Boolean uniqueSuffix;
 
+	private String instanceChargeStrategy;
+
 	private String securityId;
 
 	private String keyPairName;
@@ -46,13 +48,19 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String ensRegionId;
 
+	private List<Tag> tags;
+
 	private Long period;
 
 	private Boolean publicIpIdentification;
 
+	private String billingCycle;
+
 	private String vSwitchId;
 
 	private String privateIpAddress;
+
+	private String spotStrategy;
 
 	private String periodUnit;
 
@@ -70,13 +78,23 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Long internetMaxBandwidthOut;
 
+	private String autoUseCoupon;
+
 	private String userData;
+
+	private Boolean passwordInherit;
 
 	private String instanceType;
 
 	private String instanceChargeType;
 
 	private Long amount;
+
+	private String autoReleaseTime;
+
+	private String ipType;
+
+	private Integer spotDuration;
 
 	@SerializedName("dataDisk")
 	private List<DataDisk> dataDisk;
@@ -108,6 +126,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.uniqueSuffix = uniqueSuffix;
 		if(uniqueSuffix != null){
 			putQueryParameter("UniqueSuffix", uniqueSuffix.toString());
+		}
+	}
+
+	public String getInstanceChargeStrategy() {
+		return this.instanceChargeStrategy;
+	}
+
+	public void setInstanceChargeStrategy(String instanceChargeStrategy) {
+		this.instanceChargeStrategy = instanceChargeStrategy;
+		if(instanceChargeStrategy != null){
+			putQueryParameter("InstanceChargeStrategy", instanceChargeStrategy);
 		}
 	}
 
@@ -188,6 +217,20 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public Long getPeriod() {
 		return this.period;
 	}
@@ -210,6 +253,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public String getBillingCycle() {
+		return this.billingCycle;
+	}
+
+	public void setBillingCycle(String billingCycle) {
+		this.billingCycle = billingCycle;
+		if(billingCycle != null){
+			putQueryParameter("BillingCycle", billingCycle);
+		}
+	}
+
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -229,6 +283,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.privateIpAddress = privateIpAddress;
 		if(privateIpAddress != null){
 			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
+	public String getSpotStrategy() {
+		return this.spotStrategy;
+	}
+
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+		if(spotStrategy != null){
+			putQueryParameter("SpotStrategy", spotStrategy);
 		}
 	}
 
@@ -320,6 +385,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public String getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(String autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon);
+		}
+	}
+
 	public String getUserData() {
 		return this.userData;
 	}
@@ -328,6 +404,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public Boolean getPasswordInherit() {
+		return this.passwordInherit;
+	}
+
+	public void setPasswordInherit(Boolean passwordInherit) {
+		this.passwordInherit = passwordInherit;
+		if(passwordInherit != null){
+			putQueryParameter("PasswordInherit", passwordInherit.toString());
 		}
 	}
 
@@ -361,6 +448,39 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.amount = amount;
 		if(amount != null){
 			putQueryParameter("Amount", amount.toString());
+		}
+	}
+
+	public String getAutoReleaseTime() {
+		return this.autoReleaseTime;
+	}
+
+	public void setAutoReleaseTime(String autoReleaseTime) {
+		this.autoReleaseTime = autoReleaseTime;
+		if(autoReleaseTime != null){
+			putQueryParameter("AutoReleaseTime", autoReleaseTime);
+		}
+	}
+
+	public String getIpType() {
+		return this.ipType;
+	}
+
+	public void setIpType(String ipType) {
+		this.ipType = ipType;
+		if(ipType != null){
+			putQueryParameter("IpType", ipType);
+		}
+	}
+
+	public Integer getSpotDuration() {
+		return this.spotDuration;
+	}
+
+	public void setSpotDuration(Integer spotDuration) {
+		this.spotDuration = spotDuration;
+		if(spotDuration != null){
+			putQueryParameter("SpotDuration", spotDuration.toString());
 		}
 	}
 
@@ -402,20 +522,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		@SerializedName("Size")
 		private Long size;
 
-		public Long getSize() {
-			return this.size;
-		}
-
-		public void setSize(Long size) {
-			this.size = size;
-		}
-	}
-
-	public static class DataDisk {
-
-		@SerializedName("Size")
-		private Long size;
-
 		@SerializedName("Category")
 		private String category;
 
@@ -433,6 +539,76 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
+	public static class DataDisk {
+
+		@SerializedName("Size")
+		private Long size;
+
+		@SerializedName("Encrypted")
+		private Boolean encrypted;
+
+		@SerializedName("Category")
+		private String category;
+
+		@SerializedName("KMSKeyId")
+		private String kMSKeyId;
+
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
+		public Boolean getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
 		}
 	}
 

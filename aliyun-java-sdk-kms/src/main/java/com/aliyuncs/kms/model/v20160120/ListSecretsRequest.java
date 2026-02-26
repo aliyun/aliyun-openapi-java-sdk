@@ -26,13 +26,13 @@ import com.aliyuncs.kms.Endpoint;
 public class ListSecretsRequest extends RpcAcsRequest<ListSecretsResponse> {
 	   
 
-	private Integer pageSize;
-
 	private String filters;
 
-	private String fetchTags;
-
 	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String fetchTags;
 	public ListSecretsRequest() {
 		super("Kms", "2016-01-20", "ListSecrets", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -41,17 +41,6 @@ public class ListSecretsRequest extends RpcAcsRequest<ListSecretsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public String getFilters() {
@@ -65,17 +54,6 @@ public class ListSecretsRequest extends RpcAcsRequest<ListSecretsResponse> {
 		}
 	}
 
-	public String getFetchTags() {
-		return this.fetchTags;
-	}
-
-	public void setFetchTags(String fetchTags) {
-		this.fetchTags = fetchTags;
-		if(fetchTags != null){
-			putQueryParameter("FetchTags", fetchTags);
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -84,6 +62,28 @@ public class ListSecretsRequest extends RpcAcsRequest<ListSecretsResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getFetchTags() {
+		return this.fetchTags;
+	}
+
+	public void setFetchTags(String fetchTags) {
+		this.fetchTags = fetchTags;
+		if(fetchTags != null){
+			putQueryParameter("FetchTags", fetchTags);
 		}
 	}
 

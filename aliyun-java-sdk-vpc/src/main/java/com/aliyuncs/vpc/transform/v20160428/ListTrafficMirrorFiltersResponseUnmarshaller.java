@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.ListTrafficMirrorFiltersResponse;
 import com.aliyuncs.vpc.model.v20160428.ListTrafficMirrorFiltersResponse.TrafficMirrorFilter;
+import com.aliyuncs.vpc.model.v20160428.ListTrafficMirrorFiltersResponse.TrafficMirrorFilter.Tag;
 import com.aliyuncs.vpc.model.v20160428.ListTrafficMirrorFiltersResponse.TrafficMirrorFilter.TrafficMirrorRule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -30,6 +31,8 @@ public class ListTrafficMirrorFiltersResponseUnmarshaller {
 		listTrafficMirrorFiltersResponse.setRequestId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.RequestId"));
 		listTrafficMirrorFiltersResponse.setNextToken(_ctx.stringValue("ListTrafficMirrorFiltersResponse.NextToken"));
 		listTrafficMirrorFiltersResponse.setTotalCount(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TotalCount"));
+		listTrafficMirrorFiltersResponse.setMaxResults(_ctx.integerValue("ListTrafficMirrorFiltersResponse.MaxResults"));
+		listTrafficMirrorFiltersResponse.setCount(_ctx.integerValue("ListTrafficMirrorFiltersResponse.Count"));
 
 		List<TrafficMirrorFilter> trafficMirrorFilters = new ArrayList<TrafficMirrorFilter>();
 		for (int i = 0; i < _ctx.lengthValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters.Length"); i++) {
@@ -38,6 +41,8 @@ public class ListTrafficMirrorFiltersResponseUnmarshaller {
 			trafficMirrorFilter.setTrafficMirrorFilterDescription(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterDescription"));
 			trafficMirrorFilter.setTrafficMirrorFilterId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterId"));
 			trafficMirrorFilter.setTrafficMirrorFilterName(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterName"));
+			trafficMirrorFilter.setResourceGroupId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].ResourceGroupId"));
+			trafficMirrorFilter.setCreationTime(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].CreationTime"));
 
 			List<TrafficMirrorRule> ingressRules = new ArrayList<TrafficMirrorRule>();
 			for (int j = 0; j < _ctx.lengthValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules.Length"); j++) {
@@ -47,6 +52,7 @@ public class ListTrafficMirrorFiltersResponseUnmarshaller {
 				trafficMirrorRule.setSourceCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].SourceCidrBlock"));
 				trafficMirrorRule.setTrafficDirection(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficDirection"));
 				trafficMirrorRule.setBizProtocol(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Protocol"));
+				trafficMirrorRule.setIpVersion(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].IpVersion"));
 				trafficMirrorRule.setDestinationPortRange(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].DestinationPortRange"));
 				trafficMirrorRule.setTrafficMirrorFilterRuleId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficMirrorFilterRuleId"));
 				trafficMirrorRule.setDestinationCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].DestinationCidrBlock"));
@@ -66,6 +72,7 @@ public class ListTrafficMirrorFiltersResponseUnmarshaller {
 				trafficMirrorRule1.setSourceCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].SourceCidrBlock"));
 				trafficMirrorRule1.setTrafficDirection(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficDirection"));
 				trafficMirrorRule1.setBizProtocol(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Protocol"));
+				trafficMirrorRule1.setIpVersion(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].IpVersion"));
 				trafficMirrorRule1.setDestinationPortRange(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].DestinationPortRange"));
 				trafficMirrorRule1.setTrafficMirrorFilterRuleId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficMirrorFilterRuleId"));
 				trafficMirrorRule1.setDestinationCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].DestinationCidrBlock"));
@@ -76,6 +83,16 @@ public class ListTrafficMirrorFiltersResponseUnmarshaller {
 				egressRules.add(trafficMirrorRule1);
 			}
 			trafficMirrorFilter.setEgressRules(egressRules);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			trafficMirrorFilter.setTags(tags);
 
 			trafficMirrorFilters.add(trafficMirrorFilter);
 		}

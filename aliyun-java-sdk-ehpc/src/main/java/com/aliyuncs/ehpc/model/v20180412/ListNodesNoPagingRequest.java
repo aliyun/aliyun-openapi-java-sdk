@@ -32,10 +32,8 @@ public class ListNodesNoPagingRequest extends RpcAcsRequest<ListNodesNoPagingRes
 	private String sequence;
 
 	private String hostName;
-
-	private Boolean onlyDetached;
 	public ListNodesNoPagingRequest() {
-		super("EHPC", "2018-04-12", "ListNodesNoPaging");
+		super("EHPC", "2018-04-12", "ListNodesNoPaging", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -84,17 +82,6 @@ public class ListNodesNoPagingRequest extends RpcAcsRequest<ListNodesNoPagingRes
 		this.hostName = hostName;
 		if(hostName != null){
 			putQueryParameter("HostName", hostName);
-		}
-	}
-
-	public Boolean getOnlyDetached() {
-		return this.onlyDetached;
-	}
-
-	public void setOnlyDetached(Boolean onlyDetached) {
-		this.onlyDetached = onlyDetached;
-		if(onlyDetached != null){
-			putQueryParameter("OnlyDetached", onlyDetached.toString());
 		}
 	}
 

@@ -31,23 +31,23 @@ public class DescribeUserUsageDataExportTaskResponseUnmarshaller {
 		describeUserUsageDataExportTaskResponse.setRequestId(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.RequestId"));
 
 		UsageDataPerPage usageDataPerPage = new UsageDataPerPage();
-		usageDataPerPage.setTotalCount(_ctx.integerValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.TotalCount"));
 		usageDataPerPage.setPageSize(_ctx.integerValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.PageSize"));
 		usageDataPerPage.setPageNumber(_ctx.integerValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.PageNumber"));
+		usageDataPerPage.setTotalCount(_ctx.integerValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.TotalCount"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setStatus(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].Status"));
+			dataItem.setUpdateTime(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].UpdateTime"));
+			dataItem.setDownloadUrl(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].DownloadUrl"));
+			dataItem.setCreateTime(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].CreateTime"));
 			dataItem.setTaskName(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskName"));
 			dataItem.setTaskId(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskId"));
-			dataItem.setCreateTime(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].CreateTime"));
-			dataItem.setUpdateTime(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].UpdateTime"));
-			dataItem.setStatus(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].Status"));
-			dataItem.setDownloadUrl(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].DownloadUrl"));
 
 			TaskConfig taskConfig = new TaskConfig();
-			taskConfig.setStartTime(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskConfig.StartTime"));
 			taskConfig.setEndTime(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskConfig.EndTime"));
+			taskConfig.setStartTime(_ctx.stringValue("DescribeUserUsageDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskConfig.StartTime"));
 			dataItem.setTaskConfig(taskConfig);
 
 			data.add(dataItem);

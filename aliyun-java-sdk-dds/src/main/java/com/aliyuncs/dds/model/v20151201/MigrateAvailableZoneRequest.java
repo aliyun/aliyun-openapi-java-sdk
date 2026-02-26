@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -26,7 +27,11 @@ public class MigrateAvailableZoneRequest extends RpcAcsRequest<MigrateAvailableZ
 
 	private Long resourceOwnerId;
 
+	private String secondaryZoneId;
+
 	private String effectiveTime;
+
+	private String hiddenZoneId;
 
 	private String dBInstanceId;
 
@@ -42,6 +47,10 @@ public class MigrateAvailableZoneRequest extends RpcAcsRequest<MigrateAvailableZ
 	public MigrateAvailableZoneRequest() {
 		super("Dds", "2015-12-01", "MigrateAvailableZone", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -55,6 +64,17 @@ public class MigrateAvailableZoneRequest extends RpcAcsRequest<MigrateAvailableZ
 		}
 	}
 
+	public String getSecondaryZoneId() {
+		return this.secondaryZoneId;
+	}
+
+	public void setSecondaryZoneId(String secondaryZoneId) {
+		this.secondaryZoneId = secondaryZoneId;
+		if(secondaryZoneId != null){
+			putQueryParameter("SecondaryZoneId", secondaryZoneId);
+		}
+	}
+
 	public String getEffectiveTime() {
 		return this.effectiveTime;
 	}
@@ -63,6 +83,17 @@ public class MigrateAvailableZoneRequest extends RpcAcsRequest<MigrateAvailableZ
 		this.effectiveTime = effectiveTime;
 		if(effectiveTime != null){
 			putQueryParameter("EffectiveTime", effectiveTime);
+		}
+	}
+
+	public String getHiddenZoneId() {
+		return this.hiddenZoneId;
+	}
+
+	public void setHiddenZoneId(String hiddenZoneId) {
+		this.hiddenZoneId = hiddenZoneId;
+		if(hiddenZoneId != null){
+			putQueryParameter("HiddenZoneId", hiddenZoneId);
 		}
 	}
 

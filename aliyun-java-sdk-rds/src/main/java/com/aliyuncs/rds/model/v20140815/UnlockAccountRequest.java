@@ -27,13 +27,13 @@ public class UnlockAccountRequest extends RpcAcsRequest<UnlockAccountResponse> {
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
 	private String accountName;
 
 	private String dBInstanceId;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
 	public UnlockAccountRequest() {
 		super("Rds", "2014-08-15", "UnlockAccount", "rds");
 		setMethod(MethodType.POST);
@@ -51,28 +51,6 @@ public class UnlockAccountRequest extends RpcAcsRequest<UnlockAccountResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -95,6 +73,28 @@ public class UnlockAccountRequest extends RpcAcsRequest<UnlockAccountResponse> {
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

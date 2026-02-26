@@ -149,6 +149,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String publicIpAddressPoolId;
 
+		private String vpcId;
+
+		private String zone;
+
+		private String bizType;
+
+		private Long serviceID;
+
 		private List<LockReason> operationLocks;
 
 		private List<Tag> tags;
@@ -443,6 +451,38 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setPublicIpAddressPoolId(String publicIpAddressPoolId) {
 			this.publicIpAddressPoolId = publicIpAddressPoolId;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getZone() {
+			return this.zone;
+		}
+
+		public void setZone(String zone) {
+			this.zone = zone;
+		}
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
+		}
+
+		public Long getServiceID() {
+			return this.serviceID;
+		}
+
+		public void setServiceID(Long serviceID) {
+			this.serviceID = serviceID;
 		}
 
 		public List<LockReason> getOperationLocks() {

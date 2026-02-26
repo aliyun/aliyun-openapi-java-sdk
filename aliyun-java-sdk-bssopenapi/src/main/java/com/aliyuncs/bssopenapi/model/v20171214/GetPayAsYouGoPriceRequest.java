@@ -38,7 +38,7 @@ public class GetPayAsYouGoPriceRequest extends RpcAcsRequest<GetPayAsYouGoPriceR
 
 	private String region;
 	public GetPayAsYouGoPriceRequest() {
-		super("BssOpenApi", "2017-12-14", "GetPayAsYouGoPrice");
+		super("BssOpenApi", "2017-12-14", "GetPayAsYouGoPrice", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

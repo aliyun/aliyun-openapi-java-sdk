@@ -30,10 +30,10 @@ public class DetectImageFacesRequest extends RpcAcsRequest<DetectImageFacesRespo
 
 	private String projectName;
 
-	private String sourceURI;
-
 	@SerializedName("credentialConfig")
 	private CredentialConfig credentialConfig;
+
+	private String sourceURI;
 	public DetectImageFacesRequest() {
 		super("imm", "2020-09-30", "DetectImageFaces", "imm");
 		setMethod(MethodType.POST);
@@ -54,17 +54,6 @@ public class DetectImageFacesRequest extends RpcAcsRequest<DetectImageFacesRespo
 		}
 	}
 
-	public String getSourceURI() {
-		return this.sourceURI;
-	}
-
-	public void setSourceURI(String sourceURI) {
-		this.sourceURI = sourceURI;
-		if(sourceURI != null){
-			putQueryParameter("SourceURI", sourceURI);
-		}
-	}
-
 	public CredentialConfig getCredentialConfig() {
 		return this.credentialConfig;
 	}
@@ -74,6 +63,17 @@ public class DetectImageFacesRequest extends RpcAcsRequest<DetectImageFacesRespo
 		if (credentialConfig != null) {
 			putQueryParameter("CredentialConfig" , new Gson().toJson(credentialConfig));
 		}	
+	}
+
+	public String getSourceURI() {
+		return this.sourceURI;
+	}
+
+	public void setSourceURI(String sourceURI) {
+		this.sourceURI = sourceURI;
+		if(sourceURI != null){
+			putQueryParameter("SourceURI", sourceURI);
+		}
 	}
 
 	public static class CredentialConfig {

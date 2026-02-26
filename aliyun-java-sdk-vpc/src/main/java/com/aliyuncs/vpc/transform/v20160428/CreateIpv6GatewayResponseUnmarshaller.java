@@ -24,6 +24,7 @@ public class CreateIpv6GatewayResponseUnmarshaller {
 		
 		createIpv6GatewayResponse.setRequestId(_ctx.stringValue("CreateIpv6GatewayResponse.RequestId"));
 		createIpv6GatewayResponse.setIpv6GatewayId(_ctx.stringValue("CreateIpv6GatewayResponse.Ipv6GatewayId"));
+		createIpv6GatewayResponse.setResourceGroupId(_ctx.stringValue("CreateIpv6GatewayResponse.ResourceGroupId"));
 	 
 	 	return createIpv6GatewayResponse;
 	}

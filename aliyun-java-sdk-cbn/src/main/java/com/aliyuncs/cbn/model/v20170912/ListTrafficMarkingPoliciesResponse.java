@@ -89,6 +89,8 @@ public class ListTrafficMarkingPoliciesResponse extends AcsResponse {
 
 		private String trafficMarkingPolicyDescription;
 
+		private String transitRouterId;
+
 		private List<TrafficMatchRule> trafficMatchRules;
 
 		public String getTrafficMarkingPolicyStatus() {
@@ -139,6 +141,14 @@ public class ListTrafficMarkingPoliciesResponse extends AcsResponse {
 			this.trafficMarkingPolicyDescription = trafficMarkingPolicyDescription;
 		}
 
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
+		}
+
 		public List<TrafficMatchRule> getTrafficMatchRules() {
 			return this.trafficMatchRules;
 		}
@@ -164,6 +174,8 @@ public class ListTrafficMarkingPoliciesResponse extends AcsResponse {
 			private String trafficMatchRuleName;
 
 			private String trafficMatchRuleStatus;
+
+			private String addressFamily;
 
 			private List<Integer> dstPortRange;
 
@@ -231,6 +243,14 @@ public class ListTrafficMarkingPoliciesResponse extends AcsResponse {
 
 			public void setTrafficMatchRuleStatus(String trafficMatchRuleStatus) {
 				this.trafficMatchRuleStatus = trafficMatchRuleStatus;
+			}
+
+			public String getAddressFamily() {
+				return this.addressFamily;
+			}
+
+			public void setAddressFamily(String addressFamily) {
+				this.addressFamily = addressFamily;
 			}
 
 			public List<Integer> getDstPortRange() {

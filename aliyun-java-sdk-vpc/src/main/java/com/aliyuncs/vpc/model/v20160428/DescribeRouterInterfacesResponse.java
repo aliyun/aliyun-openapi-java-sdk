@@ -153,6 +153,12 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 
 		private String ipv6Status;
 
+		private Boolean fastLinkMode;
+
+		private String resourceGroupId;
+
+		private List<TagsItem> tags;
+
 		public String getReservationActiveTime() {
 			return this.reservationActiveTime;
 		}
@@ -455,6 +461,53 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 
 		public void setIpv6Status(String ipv6Status) {
 			this.ipv6Status = ipv6Status;
+		}
+
+		public Boolean getFastLinkMode() {
+			return this.fastLinkMode;
+		}
+
+		public void setFastLinkMode(Boolean fastLinkMode) {
+			this.fastLinkMode = fastLinkMode;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

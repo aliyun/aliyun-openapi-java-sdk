@@ -23,9 +23,9 @@ public class CreateCdnCertificateSigningRequestResponseUnmarshaller {
 	public static CreateCdnCertificateSigningRequestResponse unmarshall(CreateCdnCertificateSigningRequestResponse createCdnCertificateSigningRequestResponse, UnmarshallerContext _ctx) {
 		
 		createCdnCertificateSigningRequestResponse.setRequestId(_ctx.stringValue("CreateCdnCertificateSigningRequestResponse.RequestId"));
-		createCdnCertificateSigningRequestResponse.setCommonName(_ctx.stringValue("CreateCdnCertificateSigningRequestResponse.CommonName"));
-		createCdnCertificateSigningRequestResponse.setCsr(_ctx.stringValue("CreateCdnCertificateSigningRequestResponse.Csr"));
 		createCdnCertificateSigningRequestResponse.setPubMd5(_ctx.stringValue("CreateCdnCertificateSigningRequestResponse.PubMd5"));
+		createCdnCertificateSigningRequestResponse.setCsr(_ctx.stringValue("CreateCdnCertificateSigningRequestResponse.Csr"));
+		createCdnCertificateSigningRequestResponse.setCommonName(_ctx.stringValue("CreateCdnCertificateSigningRequestResponse.CommonName"));
 	 
 	 	return createCdnCertificateSigningRequestResponse;
 	}

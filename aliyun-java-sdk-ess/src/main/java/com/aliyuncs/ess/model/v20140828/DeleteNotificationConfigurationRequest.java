@@ -25,13 +25,13 @@ import com.aliyuncs.ess.Endpoint;
 public class DeleteNotificationConfigurationRequest extends RpcAcsRequest<DeleteNotificationConfigurationResponse> {
 	   
 
-	private String resourceOwnerAccount;
-
 	private String scalingGroupId;
 
-	private Long ownerId;
-
 	private String notificationArn;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
 	public DeleteNotificationConfigurationRequest() {
 		super("Ess", "2014-08-28", "DeleteNotificationConfiguration", "ess");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class DeleteNotificationConfigurationRequest extends RpcAcsRequest<Delete
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
 	}
 
 	public String getScalingGroupId() {
@@ -63,17 +52,6 @@ public class DeleteNotificationConfigurationRequest extends RpcAcsRequest<Delete
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getNotificationArn() {
 		return this.notificationArn;
 	}
@@ -82,6 +60,28 @@ public class DeleteNotificationConfigurationRequest extends RpcAcsRequest<Delete
 		this.notificationArn = notificationArn;
 		if(notificationArn != null){
 			putQueryParameter("NotificationArn", notificationArn);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

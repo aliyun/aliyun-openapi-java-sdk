@@ -31,13 +31,13 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 
 	private String pluginType;
 
-	private String attachmentKey;
-
-	private String comment;
-
 	private Map<Object,Object> pluginParam;
 
 	private String relatedUserList;
+
+	private String attachmentKey;
+
+	private String comment;
 	public CreateOrderRequest() {
 		super("dms-enterprise", "2018-11-01", "CreateOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -69,28 +69,6 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 		}
 	}
 
-	public String getAttachmentKey() {
-		return this.attachmentKey;
-	}
-
-	public void setAttachmentKey(String attachmentKey) {
-		this.attachmentKey = attachmentKey;
-		if(attachmentKey != null){
-			putQueryParameter("AttachmentKey", attachmentKey);
-		}
-	}
-
-	public String getComment() {
-		return this.comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-		if(comment != null){
-			putQueryParameter("Comment", comment);
-		}
-	}
-
 	public Map<Object,Object> getPluginParam() {
 		return this.pluginParam;
 	}
@@ -110,6 +88,28 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 		this.relatedUserList = relatedUserList;
 		if(relatedUserList != null){
 			putQueryParameter("RelatedUserList", relatedUserList);
+		}
+	}
+
+	public String getAttachmentKey() {
+		return this.attachmentKey;
+	}
+
+	public void setAttachmentKey(String attachmentKey) {
+		this.attachmentKey = attachmentKey;
+		if(attachmentKey != null){
+			putQueryParameter("AttachmentKey", attachmentKey);
+		}
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+		if(comment != null){
+			putQueryParameter("Comment", comment);
 		}
 	}
 

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListIpSetsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<IpSetsItem> ipSets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class ListIpSetsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<IpSetsItem> getIpSets() {
@@ -77,23 +77,25 @@ public class ListIpSetsResponse extends AcsResponse {
 
 	public static class IpSetsItem {
 
-		private String ipSetId;
-
 		private String accelerateRegionId;
+
+		private String ipVersion;
 
 		private Integer bandwidth;
 
+		private String ispType;
+
 		private String state;
 
+		private String ipSetId;
+
+		private String serviceId;
+
+		private Boolean serviceManaged;
+
+		private List<ServiceManagedInfosItem> serviceManagedInfos;
+
 		private List<String> ipAddressList;
-
-		public String getIpSetId() {
-			return this.ipSetId;
-		}
-
-		public void setIpSetId(String ipSetId) {
-			this.ipSetId = ipSetId;
-		}
 
 		public String getAccelerateRegionId() {
 			return this.accelerateRegionId;
@@ -101,6 +103,14 @@ public class ListIpSetsResponse extends AcsResponse {
 
 		public void setAccelerateRegionId(String accelerateRegionId) {
 			this.accelerateRegionId = accelerateRegionId;
+		}
+
+		public String getIpVersion() {
+			return this.ipVersion;
+		}
+
+		public void setIpVersion(String ipVersion) {
+			this.ipVersion = ipVersion;
 		}
 
 		public Integer getBandwidth() {
@@ -111,6 +121,14 @@ public class ListIpSetsResponse extends AcsResponse {
 			this.bandwidth = bandwidth;
 		}
 
+		public String getIspType() {
+			return this.ispType;
+		}
+
+		public void setIspType(String ispType) {
+			this.ispType = ispType;
+		}
+
 		public String getState() {
 			return this.state;
 		}
@@ -119,12 +137,77 @@ public class ListIpSetsResponse extends AcsResponse {
 			this.state = state;
 		}
 
+		public String getIpSetId() {
+			return this.ipSetId;
+		}
+
+		public void setIpSetId(String ipSetId) {
+			this.ipSetId = ipSetId;
+		}
+
+		public String getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(String serviceId) {
+			this.serviceId = serviceId;
+		}
+
+		public Boolean getServiceManaged() {
+			return this.serviceManaged;
+		}
+
+		public void setServiceManaged(Boolean serviceManaged) {
+			this.serviceManaged = serviceManaged;
+		}
+
+		public List<ServiceManagedInfosItem> getServiceManagedInfos() {
+			return this.serviceManagedInfos;
+		}
+
+		public void setServiceManagedInfos(List<ServiceManagedInfosItem> serviceManagedInfos) {
+			this.serviceManagedInfos = serviceManagedInfos;
+		}
+
 		public List<String> getIpAddressList() {
 			return this.ipAddressList;
 		}
 
 		public void setIpAddressList(List<String> ipAddressList) {
 			this.ipAddressList = ipAddressList;
+		}
+
+		public static class ServiceManagedInfosItem {
+
+			private String action;
+
+			private String childType;
+
+			private Boolean isManaged;
+
+			public String getAction() {
+				return this.action;
+			}
+
+			public void setAction(String action) {
+				this.action = action;
+			}
+
+			public String getChildType() {
+				return this.childType;
+			}
+
+			public void setChildType(String childType) {
+				this.childType = childType;
+			}
+
+			public Boolean getIsManaged() {
+				return this.isManaged;
+			}
+
+			public void setIsManaged(Boolean isManaged) {
+				this.isManaged = isManaged;
+			}
 		}
 	}
 

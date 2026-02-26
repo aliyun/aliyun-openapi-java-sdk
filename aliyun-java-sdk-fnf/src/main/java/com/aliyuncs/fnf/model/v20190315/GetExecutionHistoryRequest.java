@@ -29,8 +29,6 @@ public class GetExecutionHistoryRequest extends RpcAcsRequest<GetExecutionHistor
 
 	private String nextToken;
 
-	private String requestId;
-
 	private Integer limit;
 
 	private String flowName;
@@ -62,17 +60,6 @@ public class GetExecutionHistoryRequest extends RpcAcsRequest<GetExecutionHistor
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 

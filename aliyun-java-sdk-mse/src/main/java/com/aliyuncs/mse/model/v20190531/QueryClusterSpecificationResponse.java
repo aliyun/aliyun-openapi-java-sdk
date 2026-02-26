@@ -99,15 +99,7 @@ public class QueryClusterSpecificationResponse extends AcsResponse {
 
 		private String clusterSpecificationName;
 
-		private String diskCapacity;
-
 		private String memoryCapacity;
-
-		private String instanceCount;
-
-		private String maxTps;
-
-		private String maxCon;
 
 		private String cpuCapacity;
 
@@ -119,44 +111,12 @@ public class QueryClusterSpecificationResponse extends AcsResponse {
 			this.clusterSpecificationName = clusterSpecificationName;
 		}
 
-		public String getDiskCapacity() {
-			return this.diskCapacity;
-		}
-
-		public void setDiskCapacity(String diskCapacity) {
-			this.diskCapacity = diskCapacity;
-		}
-
 		public String getMemoryCapacity() {
 			return this.memoryCapacity;
 		}
 
 		public void setMemoryCapacity(String memoryCapacity) {
 			this.memoryCapacity = memoryCapacity;
-		}
-
-		public String getInstanceCount() {
-			return this.instanceCount;
-		}
-
-		public void setInstanceCount(String instanceCount) {
-			this.instanceCount = instanceCount;
-		}
-
-		public String getMaxTps() {
-			return this.maxTps;
-		}
-
-		public void setMaxTps(String maxTps) {
-			this.maxTps = maxTps;
-		}
-
-		public String getMaxCon() {
-			return this.maxCon;
-		}
-
-		public void setMaxCon(String maxCon) {
-			this.maxCon = maxCon;
 		}
 
 		public String getCpuCapacity() {

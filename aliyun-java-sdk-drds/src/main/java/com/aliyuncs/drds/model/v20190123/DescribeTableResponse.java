@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTableResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeTableResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -69,41 +69,17 @@ public class DescribeTableResponse extends AcsResponse {
 
 		public static class ColumnInfo {
 
-			private String columnName;
-
-			private String columnType;
-
-			private String extra;
-
 			private String index;
 
 			private String isAllowNull;
 
+			private String columnName;
+
 			private String isPk;
 
-			public String getColumnName() {
-				return this.columnName;
-			}
+			private String columnType;
 
-			public void setColumnName(String columnName) {
-				this.columnName = columnName;
-			}
-
-			public String getColumnType() {
-				return this.columnType;
-			}
-
-			public void setColumnType(String columnType) {
-				this.columnType = columnType;
-			}
-
-			public String getExtra() {
-				return this.extra;
-			}
-
-			public void setExtra(String extra) {
-				this.extra = extra;
-			}
+			private String extra;
 
 			public String getIndex() {
 				return this.index;
@@ -121,12 +97,36 @@ public class DescribeTableResponse extends AcsResponse {
 				this.isAllowNull = isAllowNull;
 			}
 
+			public String getColumnName() {
+				return this.columnName;
+			}
+
+			public void setColumnName(String columnName) {
+				this.columnName = columnName;
+			}
+
 			public String getIsPk() {
 				return this.isPk;
 			}
 
 			public void setIsPk(String isPk) {
 				this.isPk = isPk;
+			}
+
+			public String getColumnType() {
+				return this.columnType;
+			}
+
+			public void setColumnType(String columnType) {
+				this.columnType = columnType;
+			}
+
+			public String getExtra() {
+				return this.extra;
+			}
+
+			public void setExtra(String extra) {
+				this.extra = extra;
 			}
 		}
 	}

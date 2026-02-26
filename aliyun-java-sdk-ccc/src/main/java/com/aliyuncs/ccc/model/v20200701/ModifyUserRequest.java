@@ -25,6 +25,8 @@ import com.aliyuncs.ccc.Endpoint;
 public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 	   
 
+	private String avatarUrl;
+
 	private String roleId;
 
 	private String mobile;
@@ -35,6 +37,12 @@ public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 
 	private String instanceId;
 
+	private String displayName;
+
+	private String nickname;
+
+	private Boolean force;
+
 	private String displayId;
 	public ModifyUserRequest() {
 		super("CCC", "2020-07-01", "ModifyUser", "CCC");
@@ -43,6 +51,17 @@ public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAvatarUrl() {
+		return this.avatarUrl;
+	}
+
+	public void setAvatarUrl(String avatarUrl) {
+		this.avatarUrl = avatarUrl;
+		if(avatarUrl != null){
+			putQueryParameter("AvatarUrl", avatarUrl);
+		}
 	}
 
 	public String getRoleId() {
@@ -97,6 +116,39 @@ public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getDisplayName() {
+		return this.displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+		if(displayName != null){
+			putQueryParameter("DisplayName", displayName);
+		}
+	}
+
+	public String getNickname() {
+		return this.nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+		if(nickname != null){
+			putQueryParameter("Nickname", nickname);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

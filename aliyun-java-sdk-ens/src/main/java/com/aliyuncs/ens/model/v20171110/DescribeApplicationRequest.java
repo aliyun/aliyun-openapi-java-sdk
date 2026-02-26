@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class DescribeApplicationRequest extends RpcAcsRequest<DescribeApplicationResponse> {
 	   
 
+	private String resourceSelector;
+
 	private String appVersions;
 
 	private String outDetailStatParams;
@@ -34,6 +36,17 @@ public class DescribeApplicationRequest extends RpcAcsRequest<DescribeApplicatio
 	public DescribeApplicationRequest() {
 		super("Ens", "2017-11-10", "DescribeApplication", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getResourceSelector() {
+		return this.resourceSelector;
+	}
+
+	public void setResourceSelector(String resourceSelector) {
+		this.resourceSelector = resourceSelector;
+		if(resourceSelector != null){
+			putQueryParameter("ResourceSelector", resourceSelector);
+		}
 	}
 
 	public String getAppVersions() {

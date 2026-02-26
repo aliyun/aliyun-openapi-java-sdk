@@ -67,35 +67,19 @@ public class DescribeBackupSetListResponse extends AcsResponse {
 
 	public static class BackupSet {
 
-		private Long backupSetId;
-
-		private Long beginTime;
-
 		private Long endTime;
-
-		private Long backupSetSize;
-
-		private Integer backupModel;
 
 		private Integer status;
 
+		private Long backupSetSize;
+
+		private Long backupSetId;
+
 		private Integer backupType;
 
-		public Long getBackupSetId() {
-			return this.backupSetId;
-		}
+		private Long beginTime;
 
-		public void setBackupSetId(Long backupSetId) {
-			this.backupSetId = backupSetId;
-		}
-
-		public Long getBeginTime() {
-			return this.beginTime;
-		}
-
-		public void setBeginTime(Long beginTime) {
-			this.beginTime = beginTime;
-		}
+		private Integer backupModel;
 
 		public Long getEndTime() {
 			return this.endTime;
@@ -103,22 +87,6 @@ public class DescribeBackupSetListResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
-		}
-
-		public Long getBackupSetSize() {
-			return this.backupSetSize;
-		}
-
-		public void setBackupSetSize(Long backupSetSize) {
-			this.backupSetSize = backupSetSize;
-		}
-
-		public Integer getBackupModel() {
-			return this.backupModel;
-		}
-
-		public void setBackupModel(Integer backupModel) {
-			this.backupModel = backupModel;
 		}
 
 		public Integer getStatus() {
@@ -129,12 +97,44 @@ public class DescribeBackupSetListResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public Long getBackupSetSize() {
+			return this.backupSetSize;
+		}
+
+		public void setBackupSetSize(Long backupSetSize) {
+			this.backupSetSize = backupSetSize;
+		}
+
+		public Long getBackupSetId() {
+			return this.backupSetId;
+		}
+
+		public void setBackupSetId(Long backupSetId) {
+			this.backupSetId = backupSetId;
+		}
+
 		public Integer getBackupType() {
 			return this.backupType;
 		}
 
 		public void setBackupType(Integer backupType) {
 			this.backupType = backupType;
+		}
+
+		public Long getBeginTime() {
+			return this.beginTime;
+		}
+
+		public void setBeginTime(Long beginTime) {
+			this.beginTime = beginTime;
+		}
+
+		public Integer getBackupModel() {
+			return this.backupModel;
+		}
+
+		public void setBackupModel(Integer backupModel) {
+			this.backupModel = backupModel;
 		}
 	}
 

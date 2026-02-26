@@ -24,6 +24,8 @@ public class EraseVideoLogoResponseUnmarshaller {
 	public static EraseVideoLogoResponse unmarshall(EraseVideoLogoResponse eraseVideoLogoResponse, UnmarshallerContext _ctx) {
 		
 		eraseVideoLogoResponse.setRequestId(_ctx.stringValue("EraseVideoLogoResponse.RequestId"));
+		eraseVideoLogoResponse.setCode(_ctx.stringValue("EraseVideoLogoResponse.Code"));
+		eraseVideoLogoResponse.setMessage(_ctx.stringValue("EraseVideoLogoResponse.Message"));
 
 		Data data = new Data();
 		data.setVideoUrl(_ctx.stringValue("EraseVideoLogoResponse.Data.VideoUrl"));

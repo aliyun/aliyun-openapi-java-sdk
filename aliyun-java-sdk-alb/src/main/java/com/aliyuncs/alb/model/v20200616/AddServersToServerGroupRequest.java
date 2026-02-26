@@ -74,6 +74,7 @@ public class AddServersToServerGroupRequest extends RpcAcsRequest<AddServersToSe
 			for (int depth1 = 0; depth1 < servers.size(); depth1++) {
 				if (servers.get(depth1) != null) {
 					
+						putQueryParameter("Servers." + (depth1 + 1) + ".RemoteIpEnabled" , servers.get(depth1).getRemoteIpEnabled());
 						putQueryParameter("Servers." + (depth1 + 1) + ".ServerType" , servers.get(depth1).getServerType());
 						putQueryParameter("Servers." + (depth1 + 1) + ".Port" , servers.get(depth1).getPort());
 						putQueryParameter("Servers." + (depth1 + 1) + ".Description" , servers.get(depth1).getDescription());
@@ -98,6 +99,8 @@ public class AddServersToServerGroupRequest extends RpcAcsRequest<AddServersToSe
 
 	public static class Servers {
 
+		private Boolean remoteIpEnabled;
+
 		private String serverType;
 
 		private Integer port;
@@ -109,6 +112,14 @@ public class AddServersToServerGroupRequest extends RpcAcsRequest<AddServersToSe
 		private Integer weight;
 
 		private String serverId;
+
+		public Boolean getRemoteIpEnabled() {
+			return this.remoteIpEnabled;
+		}
+
+		public void setRemoteIpEnabled(Boolean remoteIpEnabled) {
+			this.remoteIpEnabled = remoteIpEnabled;
+		}
 
 		public String getServerType() {
 			return this.serverType;

@@ -43,6 +43,10 @@ public class DescribeContactsResponseUnmarshaller {
 			contacts.setEmail(_ctx.stringValue("DescribeContactsResponse.PageBean.AlertContacts["+ i +"].Email"));
 			contacts.setIsVerify(_ctx.booleanValue("DescribeContactsResponse.PageBean.AlertContacts["+ i +"].IsVerify"));
 			contacts.setReissueSendNotice(_ctx.longValue("DescribeContactsResponse.PageBean.AlertContacts["+ i +"].ReissueSendNotice"));
+			contacts.setIsEmailVerify(_ctx.booleanValue("DescribeContactsResponse.PageBean.AlertContacts["+ i +"].IsEmailVerify"));
+			contacts.setArmsContactId(_ctx.longValue("DescribeContactsResponse.PageBean.AlertContacts["+ i +"].ArmsContactId"));
+			contacts.setDingRobotUrl(_ctx.stringValue("DescribeContactsResponse.PageBean.AlertContacts["+ i +"].DingRobotUrl"));
+			contacts.setWebhook(_ctx.stringValue("DescribeContactsResponse.PageBean.AlertContacts["+ i +"].Webhook"));
 
 			alertContacts.add(contacts);
 		}

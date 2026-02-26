@@ -26,19 +26,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListStatisticLogsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
 
+	private String requestId;
+
 	private List<Map<Object,Object>> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -46,6 +38,14 @@ public class ListStatisticLogsResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Map<Object,Object>> getResult() {

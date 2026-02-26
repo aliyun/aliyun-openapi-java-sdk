@@ -15,6 +15,7 @@
 package com.aliyuncs.privatelink.model.v20200415;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.privatelink.Endpoint;
@@ -32,11 +33,17 @@ public class ListVpcEndpointServicesRequest extends RpcAcsRequest<ListVpcEndpoin
 
 	private String serviceStatus;
 
+	private String resourceGroupId;
+
 	private String nextToken;
 
 	private Boolean zoneAffinityEnabled;
 
 	private String serviceName;
+
+	private List<Tag> tag;
+
+	private String resourceId;
 
 	private String serviceResourceType;
 
@@ -86,6 +93,17 @@ public class ListVpcEndpointServicesRequest extends RpcAcsRequest<ListVpcEndpoin
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -119,6 +137,34 @@ public class ListVpcEndpointServicesRequest extends RpcAcsRequest<ListVpcEndpoin
 		}
 	}
 
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
+				if (tag.get(depth1) != null) {
+					
+						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
+						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
+				}
+			}
+		}	
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
+		}
+	}
+
 	public String getServiceResourceType() {
 		return this.serviceResourceType;
 	}
@@ -149,6 +195,29 @@ public class ListVpcEndpointServicesRequest extends RpcAcsRequest<ListVpcEndpoin
 		this.serviceId = serviceId;
 		if(serviceId != null){
 			putQueryParameter("ServiceId", serviceId);
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

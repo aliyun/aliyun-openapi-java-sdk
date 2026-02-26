@@ -36,7 +36,7 @@ public class SaveBatchTaskForModifyingDomainDnsRequest extends RpcAcsRequest<Sav
 
 	private String lang;
 	public SaveBatchTaskForModifyingDomainDnsRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForModifyingDomainDns");
+		super("Domain", "2018-01-29", "SaveBatchTaskForModifyingDomainDns", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -28,16 +28,18 @@ public class ListServiceInstanceLogsResponseUnmarshaller {
 		
 		listServiceInstanceLogsResponse.setRequestId(_ctx.stringValue("ListServiceInstanceLogsResponse.RequestId"));
 		listServiceInstanceLogsResponse.setNextToken(_ctx.stringValue("ListServiceInstanceLogsResponse.NextToken"));
-		listServiceInstanceLogsResponse.setMaxResults(_ctx.stringValue("ListServiceInstanceLogsResponse.MaxResults"));
+		listServiceInstanceLogsResponse.setMaxResults(_ctx.integerValue("ListServiceInstanceLogsResponse.MaxResults"));
 
 		List<ServiceInstanceLogs> serviceInstancesLogs = new ArrayList<ServiceInstanceLogs>();
 		for (int i = 0; i < _ctx.lengthValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs.Length"); i++) {
 			ServiceInstanceLogs serviceInstanceLogs = new ServiceInstanceLogs();
 			serviceInstanceLogs.setTimestamp(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].Timestamp"));
-			serviceInstanceLogs.setServiceInstanceId(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].ServiceInstanceId"));
 			serviceInstanceLogs.setSource(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].Source"));
-			serviceInstanceLogs.setPhase(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].Phase"));
 			serviceInstanceLogs.setContent(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].Content"));
+			serviceInstanceLogs.setLogType(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].LogType"));
+			serviceInstanceLogs.setResourceType(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].ResourceType"));
+			serviceInstanceLogs.setResourceId(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].ResourceId"));
+			serviceInstanceLogs.setStatus(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].Status"));
 
 			serviceInstancesLogs.add(serviceInstanceLogs);
 		}

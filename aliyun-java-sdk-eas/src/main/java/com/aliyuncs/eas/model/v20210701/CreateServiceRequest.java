@@ -25,7 +25,11 @@ import com.aliyuncs.eas.Endpoint;
 public class CreateServiceRequest extends RoaAcsRequest<CreateServiceResponse> {
 	   
 
+	private String develop;
+
 	private String body;
+
+	private String labels;
 	public CreateServiceRequest() {
 		super("eas", "2021-07-01", "CreateService", "eas");
 		setUriPattern("/api/v2/services");
@@ -36,6 +40,17 @@ public class CreateServiceRequest extends RoaAcsRequest<CreateServiceResponse> {
 		} catch (Exception e) {}
 	}
 
+	public String getDevelop() {
+		return this.develop;
+	}
+
+	public void setDevelop(String develop) {
+		this.develop = develop;
+		if(develop != null){
+			putQueryParameter("Develop", develop);
+		}
+	}
+
 	public String getBody() {
 		return this.body;
 	}
@@ -44,6 +59,17 @@ public class CreateServiceRequest extends RoaAcsRequest<CreateServiceResponse> {
 		this.body = body;
 		if(body != null){
 			putBodyParameter("body", body);
+		}
+	}
+
+	public String getLabels() {
+		return this.labels;
+	}
+
+	public void setLabels(String labels) {
+		this.labels = labels;
+		if(labels != null){
+			putQueryParameter("Labels", labels);
 		}
 	}
 

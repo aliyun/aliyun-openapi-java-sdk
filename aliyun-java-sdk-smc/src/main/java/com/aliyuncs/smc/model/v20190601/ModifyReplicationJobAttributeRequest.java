@@ -34,6 +34,8 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 
 	private String jobId;
 
+	private String replicationParameters;
+
 	private String imageName;
 
 	private Integer systemDiskSize;
@@ -41,6 +43,8 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 	private String instanceType;
 
 	private String containerRepository;
+
+	private Integer netMode;
 
 	private String containerTag;
 
@@ -50,21 +54,25 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 
 	private String resourceOwnerAccount;
 
-	private List<SystemDiskPart> systemDiskParts;
-
 	private String validTime;
+
+	private List<SystemDiskPart> systemDiskParts;
 
 	private Long ownerId;
 
+	private String launchTemplateVersion;
+
 	private List<DataDisk> dataDisks;
 
-	private String launchTemplateVersion;
+	private String vSwitchId;
 
 	private String scheduledStartTime;
 
 	private String instanceId;
 
 	private String instanceRamRole;
+
+	private String vpcId;
 
 	private String name;
 
@@ -122,6 +130,17 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 		}
 	}
 
+	public String getReplicationParameters() {
+		return this.replicationParameters;
+	}
+
+	public void setReplicationParameters(String replicationParameters) {
+		this.replicationParameters = replicationParameters;
+		if(replicationParameters != null){
+			putQueryParameter("ReplicationParameters", replicationParameters);
+		}
+	}
+
 	public String getImageName() {
 		return this.imageName;
 	}
@@ -163,6 +182,17 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 		this.containerRepository = containerRepository;
 		if(containerRepository != null){
 			putQueryParameter("ContainerRepository", containerRepository);
+		}
+	}
+
+	public Integer getNetMode() {
+		return this.netMode;
+	}
+
+	public void setNetMode(Integer netMode) {
+		this.netMode = netMode;
+		if(netMode != null){
+			putQueryParameter("NetMode", netMode.toString());
 		}
 	}
 
@@ -210,6 +240,17 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 		}
 	}
 
+	public String getValidTime() {
+		return this.validTime;
+	}
+
+	public void setValidTime(String validTime) {
+		this.validTime = validTime;
+		if(validTime != null){
+			putQueryParameter("ValidTime", validTime);
+		}
+	}
+
 	public List<SystemDiskPart> getSystemDiskParts() {
 		return this.systemDiskParts;
 	}
@@ -225,17 +266,6 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 		}	
 	}
 
-	public String getValidTime() {
-		return this.validTime;
-	}
-
-	public void setValidTime(String validTime) {
-		this.validTime = validTime;
-		if(validTime != null){
-			putQueryParameter("ValidTime", validTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -244,6 +274,17 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLaunchTemplateVersion() {
+		return this.launchTemplateVersion;
+	}
+
+	public void setLaunchTemplateVersion(String launchTemplateVersion) {
+		this.launchTemplateVersion = launchTemplateVersion;
+		if(launchTemplateVersion != null){
+			putQueryParameter("LaunchTemplateVersion", launchTemplateVersion);
 		}
 	}
 
@@ -268,14 +309,14 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 		}	
 	}
 
-	public String getLaunchTemplateVersion() {
-		return this.launchTemplateVersion;
+	public String getVSwitchId() {
+		return this.vSwitchId;
 	}
 
-	public void setLaunchTemplateVersion(String launchTemplateVersion) {
-		this.launchTemplateVersion = launchTemplateVersion;
-		if(launchTemplateVersion != null){
-			putQueryParameter("LaunchTemplateVersion", launchTemplateVersion);
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -309,6 +350,17 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 		this.instanceRamRole = instanceRamRole;
 		if(instanceRamRole != null){
 			putQueryParameter("InstanceRamRole", instanceRamRole);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

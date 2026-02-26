@@ -37,6 +37,8 @@ public class AttachNetworkInterfaceRequest extends RpcAcsRequest<AttachNetworkIn
 
 	private Long ownerId;
 
+	private Integer networkCardIndex;
+
 	private String instanceId;
 
 	private String networkInterfaceId;
@@ -112,6 +114,17 @@ public class AttachNetworkInterfaceRequest extends RpcAcsRequest<AttachNetworkIn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getNetworkCardIndex() {
+		return this.networkCardIndex;
+	}
+
+	public void setNetworkCardIndex(Integer networkCardIndex) {
+		this.networkCardIndex = networkCardIndex;
+		if(networkCardIndex != null){
+			putQueryParameter("NetworkCardIndex", networkCardIndex.toString());
 		}
 	}
 

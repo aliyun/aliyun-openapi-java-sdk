@@ -47,19 +47,11 @@ public class CreateFirstRankResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String name;
-
 		private Boolean active;
 
+		private String name;
+
 		private List<MetaItem> meta;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public Boolean getActive() {
 			return this.active;
@@ -67,6 +59,14 @@ public class CreateFirstRankResponse extends AcsResponse {
 
 		public void setActive(Boolean active) {
 			this.active = active;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<MetaItem> getMeta() {
@@ -79,19 +79,11 @@ public class CreateFirstRankResponse extends AcsResponse {
 
 		public static class MetaItem {
 
-			private String attribute;
-
 			private String arg;
 
+			private String attribute;
+
 			private Float weight;
-
-			public String getAttribute() {
-				return this.attribute;
-			}
-
-			public void setAttribute(String attribute) {
-				this.attribute = attribute;
-			}
 
 			public String getArg() {
 				return this.arg;
@@ -99,6 +91,14 @@ public class CreateFirstRankResponse extends AcsResponse {
 
 			public void setArg(String arg) {
 				this.arg = arg;
+			}
+
+			public String getAttribute() {
+				return this.attribute;
+			}
+
+			public void setAttribute(String attribute) {
+				this.attribute = attribute;
 			}
 
 			public Float getWeight() {

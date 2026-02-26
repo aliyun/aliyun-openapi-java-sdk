@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeFlowLogsResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeFlowLogsResponse.FlowLog;
+import com.aliyuncs.vpc.model.v20160428.DescribeFlowLogsResponse.FlowLog.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,6 +49,30 @@ public class DescribeFlowLogsResponseUnmarshaller {
 			flowLog.setFlowLogId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogId"));
 			flowLog.setBusinessStatus(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].BusinessStatus"));
 			flowLog.setAggregationInterval(_ctx.integerValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].AggregationInterval"));
+			flowLog.setServiceType(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ServiceType"));
+			flowLog.setResourceGroupId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ResourceGroupId"));
+			flowLog.setFlowLogDeliverStatus(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogDeliverStatus"));
+			flowLog.setFlowLogDeliverErrorMessage(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogDeliverErrorMessage"));
+			flowLog.setIpVersion(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].IpVersion"));
+			flowLog.setTrafficAnalyzerId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficAnalyzerId"));
+			flowLog.setEnableTrafficAnalyze(_ctx.booleanValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].EnableTrafficAnalyze"));
+			flowLog.setEnableLogDelivery(_ctx.booleanValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].EnableLogDelivery"));
+
+			List<String> trafficPath = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficPath.Length"); j++) {
+				trafficPath.add(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficPath["+ j +"]"));
+			}
+			flowLog.setTrafficPath(trafficPath);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			flowLog.setTags(tags);
 
 			flowLogs.add(flowLog);
 		}

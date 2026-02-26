@@ -25,39 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddFaceUserPictureResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String errorMessage;
-
 	private String code;
 
 	private Map<Object,Object> data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String errorMessage;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
+	private Boolean success;
 
 	public String getCode() {
 		return this.code;
@@ -73,6 +49,30 @@ public class AddFaceUserPictureResponse extends AcsResponse {
 
 	public void setData(Map<Object,Object> data) {
 		this.data = data;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

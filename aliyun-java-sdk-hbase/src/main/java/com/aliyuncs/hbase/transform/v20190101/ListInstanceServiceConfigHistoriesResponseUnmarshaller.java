@@ -34,11 +34,11 @@ public class ListInstanceServiceConfigHistoriesResponseUnmarshaller {
 		List<Config> configureHistoryList = new ArrayList<Config>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstanceServiceConfigHistoriesResponse.ConfigureHistoryList.Length"); i++) {
 			Config config = new Config();
-			config.setConfigureName(_ctx.stringValue("ListInstanceServiceConfigHistoriesResponse.ConfigureHistoryList["+ i +"].ConfigureName"));
-			config.setOldValue(_ctx.stringValue("ListInstanceServiceConfigHistoriesResponse.ConfigureHistoryList["+ i +"].OldValue"));
-			config.setNewValue(_ctx.stringValue("ListInstanceServiceConfigHistoriesResponse.ConfigureHistoryList["+ i +"].NewValue"));
 			config.setEffective(_ctx.stringValue("ListInstanceServiceConfigHistoriesResponse.ConfigureHistoryList["+ i +"].Effective"));
+			config.setOldValue(_ctx.stringValue("ListInstanceServiceConfigHistoriesResponse.ConfigureHistoryList["+ i +"].OldValue"));
 			config.setCreateTime(_ctx.stringValue("ListInstanceServiceConfigHistoriesResponse.ConfigureHistoryList["+ i +"].CreateTime"));
+			config.setNewValue(_ctx.stringValue("ListInstanceServiceConfigHistoriesResponse.ConfigureHistoryList["+ i +"].NewValue"));
+			config.setConfigureName(_ctx.stringValue("ListInstanceServiceConfigHistoriesResponse.ConfigureHistoryList["+ i +"].ConfigureName"));
 
 			configureHistoryList.add(config);
 		}

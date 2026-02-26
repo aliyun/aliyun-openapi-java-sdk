@@ -33,7 +33,7 @@ public class DescribeSchedulerRulesRequest extends RpcAcsRequest<DescribeSchedul
 
 	private Integer pageSize;
 	public DescribeSchedulerRulesRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeSchedulerRules");
+		super("ddoscoo", "2020-01-01", "DescribeSchedulerRules", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

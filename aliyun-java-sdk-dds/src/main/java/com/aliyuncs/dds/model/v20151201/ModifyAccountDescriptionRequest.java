@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -30,8 +31,6 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 
 	private String accountName;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -39,9 +38,15 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String characterType;
 	public ModifyAccountDescriptionRequest() {
 		super("Dds", "2015-12-01", "ModifyAccountDescription", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -74,17 +79,6 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -129,6 +123,17 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCharacterType() {
+		return this.characterType;
+	}
+
+	public void setCharacterType(String characterType) {
+		this.characterType = characterType;
+		if(characterType != null){
+			putQueryParameter("CharacterType", characterType);
 		}
 	}
 

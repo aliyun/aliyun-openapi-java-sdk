@@ -25,11 +25,11 @@ import com.aliyuncs.cdn.Endpoint;
 public class VerifyDomainOwnerRequest extends RpcAcsRequest<VerifyDomainOwnerResponse> {
 	   
 
-	private String verifyType;
+	private String globalResourcePlan;
 
 	private String domainName;
 
-	private Long ownerId;
+	private String verifyType;
 	public VerifyDomainOwnerRequest() {
 		super("Cdn", "2018-05-10", "VerifyDomainOwner");
 		setMethod(MethodType.POST);
@@ -39,14 +39,14 @@ public class VerifyDomainOwnerRequest extends RpcAcsRequest<VerifyDomainOwnerRes
 		} catch (Exception e) {}
 	}
 
-	public String getVerifyType() {
-		return this.verifyType;
+	public String getGlobalResourcePlan() {
+		return this.globalResourcePlan;
 	}
 
-	public void setVerifyType(String verifyType) {
-		this.verifyType = verifyType;
-		if(verifyType != null){
-			putQueryParameter("VerifyType", verifyType);
+	public void setGlobalResourcePlan(String globalResourcePlan) {
+		this.globalResourcePlan = globalResourcePlan;
+		if(globalResourcePlan != null){
+			putQueryParameter("GlobalResourcePlan", globalResourcePlan);
 		}
 	}
 
@@ -61,14 +61,14 @@ public class VerifyDomainOwnerRequest extends RpcAcsRequest<VerifyDomainOwnerRes
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getVerifyType() {
+		return this.verifyType;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setVerifyType(String verifyType) {
+		this.verifyType = verifyType;
+		if(verifyType != null){
+			putQueryParameter("VerifyType", verifyType);
 		}
 	}
 

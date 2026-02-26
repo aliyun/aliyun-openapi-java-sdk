@@ -28,10 +28,10 @@ public class PreviewGtmRecoveryPlanResponseUnmarshaller {
 	public static PreviewGtmRecoveryPlanResponse unmarshall(PreviewGtmRecoveryPlanResponse previewGtmRecoveryPlanResponse, UnmarshallerContext _ctx) {
 		
 		previewGtmRecoveryPlanResponse.setRequestId(_ctx.stringValue("PreviewGtmRecoveryPlanResponse.RequestId"));
-		previewGtmRecoveryPlanResponse.setTotalItems(_ctx.integerValue("PreviewGtmRecoveryPlanResponse.TotalItems"));
-		previewGtmRecoveryPlanResponse.setTotalPages(_ctx.integerValue("PreviewGtmRecoveryPlanResponse.TotalPages"));
 		previewGtmRecoveryPlanResponse.setPageSize(_ctx.integerValue("PreviewGtmRecoveryPlanResponse.PageSize"));
 		previewGtmRecoveryPlanResponse.setPageNumber(_ctx.integerValue("PreviewGtmRecoveryPlanResponse.PageNumber"));
+		previewGtmRecoveryPlanResponse.setTotalPages(_ctx.integerValue("PreviewGtmRecoveryPlanResponse.TotalPages"));
+		previewGtmRecoveryPlanResponse.setTotalItems(_ctx.integerValue("PreviewGtmRecoveryPlanResponse.TotalItems"));
 
 		List<Preview> previews = new ArrayList<Preview>();
 		for (int i = 0; i < _ctx.lengthValue("PreviewGtmRecoveryPlanResponse.Previews.Length"); i++) {

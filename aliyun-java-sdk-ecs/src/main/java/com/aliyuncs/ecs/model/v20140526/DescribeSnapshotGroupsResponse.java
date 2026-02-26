@@ -186,6 +186,8 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 
 			private String progress;
 
+			private Boolean available;
+
 			private Integer instantAccessRetentionDays;
 
 			private String snapshotId;
@@ -210,6 +212,14 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 
 			public void setProgress(String progress) {
 				this.progress = progress;
+			}
+
+			public Boolean getAvailable() {
+				return this.available;
+			}
+
+			public void setAvailable(Boolean available) {
+				this.available = available;
 			}
 
 			public Integer getInstantAccessRetentionDays() {

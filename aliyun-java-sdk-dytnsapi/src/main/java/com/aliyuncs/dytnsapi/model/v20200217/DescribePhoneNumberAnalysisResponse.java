@@ -14,7 +14,6 @@
 
 package com.aliyuncs.dytnsapi.model.v20200217;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dytnsapi.transform.v20200217.DescribePhoneNumberAnalysisResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,11 +26,11 @@ public class DescribePhoneNumberAnalysisResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
 
-	private List<DataList> data;
+	private String code;
+
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,14 +38,6 @@ public class DescribePhoneNumberAnalysisResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -57,27 +48,27 @@ public class DescribePhoneNumberAnalysisResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<DataList> getData() {
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<DataList> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public static class DataList {
-
-		private String code;
+	public static class Data {
 
 		private String number;
 
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
+		private String code;
 
 		public String getNumber() {
 			return this.number;
@@ -85,6 +76,14 @@ public class DescribePhoneNumberAnalysisResponse extends AcsResponse {
 
 		public void setNumber(String number) {
 			this.number = number;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
 		}
 	}
 

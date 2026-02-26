@@ -31,7 +31,7 @@ public class ModifyWebIpSetSwitchRequest extends RpcAcsRequest<ModifyWebIpSetSwi
 
 	private String config;
 	public ModifyWebIpSetSwitchRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebIpSetSwitch");
+		super("ddoscoo", "2020-01-01", "ModifyWebIpSetSwitch", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

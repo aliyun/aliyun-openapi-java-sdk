@@ -29,7 +29,7 @@ public class DescribeAutoCcListCountRequest extends RpcAcsRequest<DescribeAutoCc
 
 	private String queryType;
 	public DescribeAutoCcListCountRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeAutoCcListCount");
+		super("ddoscoo", "2020-01-01", "DescribeAutoCcListCount", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -101,6 +101,16 @@ public class ListHealthCheckTemplatesResponse extends AcsResponse {
 
 		private Integer unhealthyThreshold;
 
+		private Boolean healthCheckTcpFastCloseEnabled;
+
+		private Boolean serviceManagedEnabled;
+
+		private String serviceManagedMode;
+
+		private List<Tag> tags;
+
+		private List<String> healthCheckHttpCodes;
+
 		private List<String> healthCheckCodes;
 
 		public Integer getHealthCheckConnectPort() {
@@ -199,12 +209,75 @@ public class ListHealthCheckTemplatesResponse extends AcsResponse {
 			this.unhealthyThreshold = unhealthyThreshold;
 		}
 
+		public Boolean getHealthCheckTcpFastCloseEnabled() {
+			return this.healthCheckTcpFastCloseEnabled;
+		}
+
+		public void setHealthCheckTcpFastCloseEnabled(Boolean healthCheckTcpFastCloseEnabled) {
+			this.healthCheckTcpFastCloseEnabled = healthCheckTcpFastCloseEnabled;
+		}
+
+		public Boolean getServiceManagedEnabled() {
+			return this.serviceManagedEnabled;
+		}
+
+		public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+			this.serviceManagedEnabled = serviceManagedEnabled;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public List<String> getHealthCheckHttpCodes() {
+			return this.healthCheckHttpCodes;
+		}
+
+		public void setHealthCheckHttpCodes(List<String> healthCheckHttpCodes) {
+			this.healthCheckHttpCodes = healthCheckHttpCodes;
+		}
+
 		public List<String> getHealthCheckCodes() {
 			return this.healthCheckCodes;
 		}
 
 		public void setHealthCheckCodes(List<String> healthCheckCodes) {
 			this.healthCheckCodes = healthCheckCodes;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

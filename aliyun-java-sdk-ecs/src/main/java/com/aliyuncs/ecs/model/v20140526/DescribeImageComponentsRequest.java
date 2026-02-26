@@ -28,6 +28,10 @@ public class DescribeImageComponentsRequest extends RpcAcsRequest<DescribeImageC
 
 	private Long resourceOwnerId;
 
+	private String systemType;
+
+	private String componentVersion;
+
 	private List<String> imageComponentIds;
 
 	private String resourceGroupId;
@@ -43,6 +47,8 @@ public class DescribeImageComponentsRequest extends RpcAcsRequest<DescribeImageC
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String componentType;
 
 	private String name;
 
@@ -64,6 +70,28 @@ public class DescribeImageComponentsRequest extends RpcAcsRequest<DescribeImageC
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSystemType() {
+		return this.systemType;
+	}
+
+	public void setSystemType(String systemType) {
+		this.systemType = systemType;
+		if(systemType != null){
+			putQueryParameter("SystemType", systemType);
+		}
+	}
+
+	public String getComponentVersion() {
+		return this.componentVersion;
+	}
+
+	public void setComponentVersion(String componentVersion) {
+		this.componentVersion = componentVersion;
+		if(componentVersion != null){
+			putQueryParameter("ComponentVersion", componentVersion);
 		}
 	}
 
@@ -157,6 +185,17 @@ public class DescribeImageComponentsRequest extends RpcAcsRequest<DescribeImageC
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getComponentType() {
+		return this.componentType;
+	}
+
+	public void setComponentType(String componentType) {
+		this.componentType = componentType;
+		if(componentType != null){
+			putQueryParameter("ComponentType", componentType);
 		}
 	}
 

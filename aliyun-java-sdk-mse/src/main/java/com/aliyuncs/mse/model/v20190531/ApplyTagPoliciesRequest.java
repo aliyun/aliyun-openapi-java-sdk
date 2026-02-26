@@ -27,13 +27,15 @@ public class ApplyTagPoliciesRequest extends RpcAcsRequest<ApplyTagPoliciesRespo
 
 	private String rules;
 
-	private String source;
+	private String appName;
 
 	private String namespaceId;
 
 	private Boolean enable;
 
 	private String appId;
+
+	private String namespace;
 
 	private String acceptLanguage;
 
@@ -58,14 +60,14 @@ public class ApplyTagPoliciesRequest extends RpcAcsRequest<ApplyTagPoliciesRespo
 		}
 	}
 
-	public String getSource() {
-		return this.source;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setSource(String source) {
-		this.source = source;
-		if(source != null){
-			putQueryParameter("Source", source);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
 		}
 	}
 
@@ -99,6 +101,17 @@ public class ApplyTagPoliciesRequest extends RpcAcsRequest<ApplyTagPoliciesRespo
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

@@ -33,6 +33,10 @@ public class CreateOrUpdateSilencePolicyResponseUnmarshaller {
 		SilencePolicy silencePolicy = new SilencePolicy();
 		silencePolicy.setId(_ctx.longValue("CreateOrUpdateSilencePolicyResponse.SilencePolicy.Id"));
 		silencePolicy.setName(_ctx.stringValue("CreateOrUpdateSilencePolicyResponse.SilencePolicy.Name"));
+		silencePolicy.setState(_ctx.stringValue("CreateOrUpdateSilencePolicyResponse.SilencePolicy.State"));
+		silencePolicy.setEffectiveTimeType(_ctx.stringValue("CreateOrUpdateSilencePolicyResponse.SilencePolicy.EffectiveTimeType"));
+		silencePolicy.setTimePeriod(_ctx.stringValue("CreateOrUpdateSilencePolicyResponse.SilencePolicy.TimePeriod"));
+		silencePolicy.setTimeSlots(_ctx.stringValue("CreateOrUpdateSilencePolicyResponse.SilencePolicy.TimeSlots"));
 
 		List<MatchingRulesItem> matchingRules = new ArrayList<MatchingRulesItem>();
 		for (int i = 0; i < _ctx.lengthValue("CreateOrUpdateSilencePolicyResponse.SilencePolicy.MatchingRules.Length"); i++) {

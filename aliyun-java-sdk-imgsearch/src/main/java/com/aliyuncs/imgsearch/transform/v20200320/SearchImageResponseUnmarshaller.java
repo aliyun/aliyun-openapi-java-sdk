@@ -34,11 +34,11 @@ public class SearchImageResponseUnmarshaller {
 		List<MatchListItem> matchList = new ArrayList<MatchListItem>();
 		for (int i = 0; i < _ctx.lengthValue("SearchImageResponse.Data.MatchList.Length"); i++) {
 			MatchListItem matchListItem = new MatchListItem();
+			matchListItem.setImageUrl(_ctx.stringValue("SearchImageResponse.Data.MatchList["+ i +"].ImageUrl"));
+			matchListItem.setEntityId(_ctx.stringValue("SearchImageResponse.Data.MatchList["+ i +"].EntityId"));
+			matchListItem.setScore(_ctx.floatValue("SearchImageResponse.Data.MatchList["+ i +"].Score"));
 			matchListItem.setDataId(_ctx.stringValue("SearchImageResponse.Data.MatchList["+ i +"].DataId"));
 			matchListItem.setExtraData(_ctx.stringValue("SearchImageResponse.Data.MatchList["+ i +"].ExtraData"));
-			matchListItem.setEntityId(_ctx.stringValue("SearchImageResponse.Data.MatchList["+ i +"].EntityId"));
-			matchListItem.setImageUrl(_ctx.stringValue("SearchImageResponse.Data.MatchList["+ i +"].ImageUrl"));
-			matchListItem.setScore(_ctx.floatValue("SearchImageResponse.Data.MatchList["+ i +"].Score"));
 
 			matchList.add(matchListItem);
 		}

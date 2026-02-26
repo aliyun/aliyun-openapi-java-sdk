@@ -36,6 +36,8 @@ public class UpdateGatewayRouteResponse extends AcsResponse {
 
 	private Long data;
 
+	private String errorCode;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -82,6 +84,14 @@ public class UpdateGatewayRouteResponse extends AcsResponse {
 
 	public void setData(Long data) {
 		this.data = data;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	@Override

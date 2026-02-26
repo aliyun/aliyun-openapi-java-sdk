@@ -47,11 +47,19 @@ public class DescribeScdnDomainCnameResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer status;
+
 		private String domain;
 
 		private String cname;
 
-		private Integer status;
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
 
 		public String getDomain() {
 			return this.domain;
@@ -67,14 +75,6 @@ public class DescribeScdnDomainCnameResponse extends AcsResponse {
 
 		public void setCname(String cname) {
 			this.cname = cname;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
 		}
 	}
 

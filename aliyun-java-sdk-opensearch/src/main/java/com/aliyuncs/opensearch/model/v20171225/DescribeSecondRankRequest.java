@@ -31,7 +31,7 @@ public class DescribeSecondRankRequest extends RoaAcsRequest<DescribeSecondRankR
 
 	private String appGroupIdentity;
 	public DescribeSecondRankRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeSecondRank", "opensearch");
+		super("OpenSearch", "2017-12-25", "DescribeSecondRank");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks/[name]");
 		setMethod(MethodType.GET);
 		try {

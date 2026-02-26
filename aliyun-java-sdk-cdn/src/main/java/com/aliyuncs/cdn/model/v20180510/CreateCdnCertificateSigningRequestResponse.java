@@ -26,11 +26,11 @@ public class CreateCdnCertificateSigningRequestResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String commonName;
+	private String pubMd5;
 
 	private String csr;
 
-	private String pubMd5;
+	private String commonName;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,12 +40,12 @@ public class CreateCdnCertificateSigningRequestResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCommonName() {
-		return this.commonName;
+	public String getPubMd5() {
+		return this.pubMd5;
 	}
 
-	public void setCommonName(String commonName) {
-		this.commonName = commonName;
+	public void setPubMd5(String pubMd5) {
+		this.pubMd5 = pubMd5;
 	}
 
 	public String getCsr() {
@@ -56,12 +56,12 @@ public class CreateCdnCertificateSigningRequestResponse extends AcsResponse {
 		this.csr = csr;
 	}
 
-	public String getPubMd5() {
-		return this.pubMd5;
+	public String getCommonName() {
+		return this.commonName;
 	}
 
-	public void setPubMd5(String pubMd5) {
-		this.pubMd5 = pubMd5;
+	public void setCommonName(String commonName) {
+		this.commonName = commonName;
 	}
 
 	@Override

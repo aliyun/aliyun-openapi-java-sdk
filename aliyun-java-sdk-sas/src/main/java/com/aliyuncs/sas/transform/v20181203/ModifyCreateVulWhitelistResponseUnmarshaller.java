@@ -14,7 +14,11 @@
 
 package com.aliyuncs.sas.transform.v20181203;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.sas.model.v20181203.ModifyCreateVulWhitelistResponse;
+import com.aliyuncs.sas.model.v20181203.ModifyCreateVulWhitelistResponse.VulWhitelist;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,6 +27,15 @@ public class ModifyCreateVulWhitelistResponseUnmarshaller {
 	public static ModifyCreateVulWhitelistResponse unmarshall(ModifyCreateVulWhitelistResponse modifyCreateVulWhitelistResponse, UnmarshallerContext _ctx) {
 		
 		modifyCreateVulWhitelistResponse.setRequestId(_ctx.stringValue("ModifyCreateVulWhitelistResponse.RequestId"));
+
+		List<VulWhitelist> vulWhitelistList = new ArrayList<VulWhitelist>();
+		for (int i = 0; i < _ctx.lengthValue("ModifyCreateVulWhitelistResponse.VulWhitelistList.Length"); i++) {
+			VulWhitelist vulWhitelist = new VulWhitelist();
+			vulWhitelist.setId(_ctx.longValue("ModifyCreateVulWhitelistResponse.VulWhitelistList["+ i +"].Id"));
+
+			vulWhitelistList.add(vulWhitelist);
+		}
+		modifyCreateVulWhitelistResponse.setVulWhitelistList(vulWhitelistList);
 	 
 	 	return modifyCreateVulWhitelistResponse;
 	}

@@ -38,8 +38,6 @@ public class ListTransitRouterMulticastDomainAssociationsRequest extends RpcAcsR
 
 	private String resourceId;
 
-	private Boolean dryRun;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -52,7 +50,7 @@ public class ListTransitRouterMulticastDomainAssociationsRequest extends RpcAcsR
 
 	private Long maxResults;
 	public ListTransitRouterMulticastDomainAssociationsRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterMulticastDomainAssociations");
+		super("Cbn", "2017-09-12", "ListTransitRouterMulticastDomainAssociations", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -125,17 +123,6 @@ public class ListTransitRouterMulticastDomainAssociationsRequest extends RpcAcsR
 		this.resourceId = resourceId;
 		if(resourceId != null){
 			putQueryParameter("ResourceId", resourceId);
-		}
-	}
-
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

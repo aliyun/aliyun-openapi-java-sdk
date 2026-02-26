@@ -25,8 +25,6 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class DescribeCollectorRequest extends RoaAcsRequest<DescribeCollectorResponse> {
 	   
 
-	private String body;
-
 	private String resId;
 	public DescribeCollectorRequest() {
 		super("elasticsearch", "2017-06-13", "DescribeCollector", "elasticsearch");
@@ -36,17 +34,6 @@ public class DescribeCollectorRequest extends RoaAcsRequest<DescribeCollectorRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
-		}
 	}
 
 	public String getResId() {

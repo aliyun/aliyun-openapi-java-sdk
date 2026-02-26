@@ -33,10 +33,10 @@ public class CreateSQLReviewOrderRequest extends RpcAcsRequest<CreateSQLReviewOr
 	@SerializedName("param")
 	private Param param;
 
-	private String comment;
-
 	@SerializedName("relatedUserList")
 	private List<Long> relatedUserList;
+
+	private String comment;
 	public CreateSQLReviewOrderRequest() {
 		super("dms-enterprise", "2018-11-01", "CreateSQLReviewOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -68,17 +68,6 @@ public class CreateSQLReviewOrderRequest extends RpcAcsRequest<CreateSQLReviewOr
 		}	
 	}
 
-	public String getComment() {
-		return this.comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-		if(comment != null){
-			putQueryParameter("Comment", comment);
-		}
-	}
-
 	public List<Long> getRelatedUserList() {
 		return this.relatedUserList;
 	}
@@ -88,6 +77,17 @@ public class CreateSQLReviewOrderRequest extends RpcAcsRequest<CreateSQLReviewOr
 		if (relatedUserList != null) {
 			putQueryParameter("RelatedUserList" , new Gson().toJson(relatedUserList));
 		}	
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+		if(comment != null){
+			putQueryParameter("Comment", comment);
+		}
 	}
 
 	public static class Param {

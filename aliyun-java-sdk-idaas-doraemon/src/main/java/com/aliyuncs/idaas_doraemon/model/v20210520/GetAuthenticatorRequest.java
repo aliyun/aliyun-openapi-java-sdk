@@ -32,7 +32,7 @@ public class GetAuthenticatorRequest extends RpcAcsRequest<GetAuthenticatorRespo
 
 	private String applicationExternalId;
 	public GetAuthenticatorRequest() {
-		super("idaas-doraemon", "2021-05-20", "GetAuthenticator");
+		super("idaas-doraemon", "2021-05-20", "GetAuthenticator", "idaasauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

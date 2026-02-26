@@ -26,6 +26,8 @@ import com.aliyuncs.privatelink.Endpoint;
 public class ListVpcEndpointServiceUsersRequest extends RpcAcsRequest<ListVpcEndpointServiceUsersResponse> {
 	   
 
+	private String userListType;
+
 	private Long userId;
 
 	private String nextToken;
@@ -41,6 +43,17 @@ public class ListVpcEndpointServiceUsersRequest extends RpcAcsRequest<ListVpcEnd
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getUserListType() {
+		return this.userListType;
+	}
+
+	public void setUserListType(String userListType) {
+		this.userListType = userListType;
+		if(userListType != null){
+			putQueryParameter("UserListType", userListType);
+		}
 	}
 
 	public Long getUserId() {

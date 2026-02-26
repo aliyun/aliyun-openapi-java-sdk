@@ -24,9 +24,9 @@ public class DescribeDomainCustomLogConfigResponseUnmarshaller {
 		
 		describeDomainCustomLogConfigResponse.setRequestId(_ctx.stringValue("DescribeDomainCustomLogConfigResponse.RequestId"));
 		describeDomainCustomLogConfigResponse.setConfigId(_ctx.stringValue("DescribeDomainCustomLogConfigResponse.ConfigId"));
+		describeDomainCustomLogConfigResponse.setTag(_ctx.stringValue("DescribeDomainCustomLogConfigResponse.Tag"));
 		describeDomainCustomLogConfigResponse.setRemark(_ctx.stringValue("DescribeDomainCustomLogConfigResponse.Remark"));
 		describeDomainCustomLogConfigResponse.setSample(_ctx.stringValue("DescribeDomainCustomLogConfigResponse.Sample"));
-		describeDomainCustomLogConfigResponse.setTag(_ctx.stringValue("DescribeDomainCustomLogConfigResponse.Tag"));
 	 
 	 	return describeDomainCustomLogConfigResponse;
 	}

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.config.model.v20200907.ListManagedRulesResponse;
 import com.aliyuncs.config.model.v20200907.ListManagedRulesResponse.ManagedRules;
 import com.aliyuncs.config.model.v20200907.ListManagedRulesResponse.ManagedRules.ManagedRule;
+import com.aliyuncs.config.model.v20200907.ListManagedRulesResponse.ManagedRules.ManagedRule.Scope;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,12 +45,24 @@ public class ListManagedRulesResponseUnmarshaller {
 			managedRule.setConfigRuleName(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].ConfigRuleName"));
 			managedRule.setReferenceCount(_ctx.integerValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].ReferenceCount"));
 			managedRule.setHelpUrls(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].HelpUrls"));
+			managedRule.setSupportPreviewManagedRule(_ctx.booleanValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].SupportPreviewManagedRule"));
+			managedRule.setRemediationTemplateIdentifier(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].RemediationTemplateIdentifier"));
+			managedRule.setRemediationTemplateName(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].RemediationTemplateName"));
 
 			List<String> labels = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].Labels.Length"); j++) {
 				labels.add(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].Labels["+ j +"]"));
 			}
 			managedRule.setLabels(labels);
+
+			Scope scope = new Scope();
+
+			List<String> complianceResourceTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].Scope.ComplianceResourceTypes.Length"); j++) {
+				complianceResourceTypes.add(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].Scope.ComplianceResourceTypes["+ j +"]"));
+			}
+			scope.setComplianceResourceTypes(complianceResourceTypes);
+			managedRule.setScope(scope);
 
 			managedRuleList.add(managedRule);
 		}

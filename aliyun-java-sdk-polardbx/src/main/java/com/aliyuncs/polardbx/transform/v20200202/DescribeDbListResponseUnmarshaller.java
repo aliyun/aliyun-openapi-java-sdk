@@ -28,8 +28,8 @@ public class DescribeDbListResponseUnmarshaller {
 	public static DescribeDbListResponse unmarshall(DescribeDbListResponse describeDbListResponse, UnmarshallerContext _ctx) {
 		
 		describeDbListResponse.setRequestId(_ctx.stringValue("DescribeDbListResponse.RequestId"));
-		describeDbListResponse.setSuccess(_ctx.booleanValue("DescribeDbListResponse.Success"));
 		describeDbListResponse.setMessage(_ctx.stringValue("DescribeDbListResponse.Message"));
+		describeDbListResponse.setSuccess(_ctx.booleanValue("DescribeDbListResponse.Success"));
 
 		List<DB> data = new ArrayList<DB>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDbListResponse.Data.Length"); i++) {
@@ -42,8 +42,8 @@ public class DescribeDbListResponseUnmarshaller {
 			List<Account> accounts = new ArrayList<Account>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDbListResponse.Data["+ i +"].Accounts.Length"); j++) {
 				Account account = new Account();
-				account.setAccountName(_ctx.stringValue("DescribeDbListResponse.Data["+ i +"].Accounts["+ j +"].AccountName"));
 				account.setAccountPrivilege(_ctx.stringValue("DescribeDbListResponse.Data["+ i +"].Accounts["+ j +"].AccountPrivilege"));
+				account.setAccountName(_ctx.stringValue("DescribeDbListResponse.Data["+ i +"].Accounts["+ j +"].AccountName"));
 
 				accounts.add(account);
 			}

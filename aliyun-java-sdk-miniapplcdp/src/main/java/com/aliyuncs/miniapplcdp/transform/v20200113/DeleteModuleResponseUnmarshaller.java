@@ -35,6 +35,7 @@ public class DeleteModuleResponseUnmarshaller {
 		data.setMinimumPlatformVersion(_ctx.stringValue("DeleteModuleResponse.Data.MinimumPlatformVersion"));
 		data.setModuleId(_ctx.stringValue("DeleteModuleResponse.Data.ModuleId"));
 		data.setModuleName(_ctx.stringValue("DeleteModuleResponse.Data.ModuleName"));
+		data.setOwnerAppId(_ctx.stringValue("DeleteModuleResponse.Data.OwnerAppId"));
 		data.setOwnerUserId(_ctx.stringValue("DeleteModuleResponse.Data.OwnerUserId"));
 		data.setPlatform(_ctx.stringValue("DeleteModuleResponse.Data.Platform"));
 		deleteModuleResponse.setData(data);

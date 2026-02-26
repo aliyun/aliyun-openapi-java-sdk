@@ -42,9 +42,19 @@ public class CreateARMServerInstancesRequest extends RpcAcsRequest<CreateARMServ
 
 	private String serverType;
 
+	private Boolean autoUseCoupon;
+
 	private String instanceType;
 
+	private String cidr;
+
 	private Integer amount;
+
+	private String environmentVar;
+
+	private String nameSpace;
+
+	private String serverName;
 
 	private String payType;
 	public CreateARMServerInstancesRequest() {
@@ -151,6 +161,17 @@ public class CreateARMServerInstancesRequest extends RpcAcsRequest<CreateARMServ
 		}
 	}
 
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
+		}
+	}
+
 	public String getInstanceType() {
 		return this.instanceType;
 	}
@@ -162,6 +183,17 @@ public class CreateARMServerInstancesRequest extends RpcAcsRequest<CreateARMServ
 		}
 	}
 
+	public String getCidr() {
+		return this.cidr;
+	}
+
+	public void setCidr(String cidr) {
+		this.cidr = cidr;
+		if(cidr != null){
+			putQueryParameter("Cidr", cidr);
+		}
+	}
+
 	public Integer getAmount() {
 		return this.amount;
 	}
@@ -170,6 +202,39 @@ public class CreateARMServerInstancesRequest extends RpcAcsRequest<CreateARMServ
 		this.amount = amount;
 		if(amount != null){
 			putQueryParameter("Amount", amount.toString());
+		}
+	}
+
+	public String getEnvironmentVar() {
+		return this.environmentVar;
+	}
+
+	public void setEnvironmentVar(String environmentVar) {
+		this.environmentVar = environmentVar;
+		if(environmentVar != null){
+			putQueryParameter("EnvironmentVar", environmentVar);
+		}
+	}
+
+	public String getNameSpace() {
+		return this.nameSpace;
+	}
+
+	public void setNameSpace(String nameSpace) {
+		this.nameSpace = nameSpace;
+		if(nameSpace != null){
+			putQueryParameter("NameSpace", nameSpace);
+		}
+	}
+
+	public String getServerName() {
+		return this.serverName;
+	}
+
+	public void setServerName(String serverName) {
+		this.serverName = serverName;
+		if(serverName != null){
+			putQueryParameter("ServerName", serverName);
 		}
 	}
 

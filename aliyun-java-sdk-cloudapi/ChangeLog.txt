@@ -1,3 +1,42 @@
+2024-05-07 Version: 4.9.24
+- Add DescribeApisByVpcAccess.
+
+2024-01-26 Version: 4.9.23
+- Rebuild.
+
+2024-01-15 Version: 4.9.22
+- Rebuild.
+
+2023-10-26 Version: 4.9.21
+- Generated 2016-07-14 for `CloudAPI`.
+
+2023-03-23 Version: 4.9.20
+- DescribeApis add tag parameter.
+- CreateApp hidden parameter. 
+
+2023-01-31 Version: 4.9.19
+- Modify DescribeApis.
+
+2023-01-31 Version: 4.9.18
+- Modify DescribeApis.
+
+2023-01-30 Version: 4.9.17
+- Modify DescribeApis.
+
+2023-01-30 Version: 4.9.16
+- Modify DescribeApis.
+
+2022-12-05 Version: 4.9.15
+- Modify QueryRequestLogs.
+
+2022-11-29 Version: 4.9.14
+- Add DescribePluginApis.
+- Modify CreateApp.
+- Modify DeleteApp.
+
+2022-11-16 Version: 4.9.13
+- Add ImportOAS.
+
 2019-09-05 Version: 4.9.2
 - Generated 2016-07-14 for `CloudAPI`.
 

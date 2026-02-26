@@ -27,7 +27,7 @@ public class CreateImageDbRequest extends RpcAcsRequest<CreateImageDbResponse> {
 
 	private String name;
 	public CreateImageDbRequest() {
-		super("imgsearch", "2020-03-20", "CreateImageDb", "imgsearch");
+		super("imgsearch", "2020-03-20", "CreateImageDb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

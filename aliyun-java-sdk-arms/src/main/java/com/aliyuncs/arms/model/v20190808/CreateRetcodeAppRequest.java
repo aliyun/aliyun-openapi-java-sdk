@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -25,9 +26,13 @@ import com.aliyuncs.arms.Endpoint;
 public class CreateRetcodeAppRequest extends RpcAcsRequest<CreateRetcodeAppResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String retcodeAppName;
 
 	private String retcodeAppType;
+
+	private List<Tags> tagss;
 	public CreateRetcodeAppRequest() {
 		super("ARMS", "2019-08-08", "CreateRetcodeApp", "arms");
 		setMethod(MethodType.POST);
@@ -35,6 +40,17 @@ public class CreateRetcodeAppRequest extends RpcAcsRequest<CreateRetcodeAppRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getRetcodeAppName() {
@@ -56,6 +72,43 @@ public class CreateRetcodeAppRequest extends RpcAcsRequest<CreateRetcodeAppRespo
 		this.retcodeAppType = retcodeAppType;
 		if(retcodeAppType != null){
 			putQueryParameter("RetcodeAppType", retcodeAppType);
+		}
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -52,19 +52,11 @@ public class GetBaselineKeyPathResponseUnmarshaller {
 				runsItem.setStatus(_ctx.stringValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].Status"));
 				runsItem.setAbsTime(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].AbsTime"));
 				runsItem.setBeginRunningTime(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].BeginRunningTime"));
-				runsItem.setCycTime(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].CycTime"));
-				runsItem.setOwner(_ctx.stringValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].Owner"));
 				runsItem.setFinishTime(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].FinishTime"));
-				runsItem.setProjectId(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].ProjectId"));
 				runsItem.setBeginCast(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].BeginCast"));
-				runsItem.setInstanceId(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].InstanceId"));
 				runsItem.setEndCast(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].EndCast"));
 				runsItem.setBeginWaitResTime(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].BeginWaitResTime"));
-				runsItem.setInGroupId(_ctx.integerValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].InGroupId"));
-				runsItem.setNodeName(_ctx.stringValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].NodeName"));
-				runsItem.setBizdate(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].Bizdate"));
 				runsItem.setBeginWaitTimeTime(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].BeginWaitTimeTime"));
-				runsItem.setNodeId(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Runs["+ j +"].NodeId"));
 
 				runs.add(runsItem);
 			}
@@ -73,7 +65,7 @@ public class GetBaselineKeyPathResponseUnmarshaller {
 			List<TopicsItem> topics = new ArrayList<TopicsItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetBaselineKeyPathResponse.Data["+ i +"].Topics.Length"); j++) {
 				TopicsItem topicsItem = new TopicsItem();
-				topicsItem.setTopicName(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Topics["+ j +"].TopicName"));
+				topicsItem.setTopicName(_ctx.stringValue("GetBaselineKeyPathResponse.Data["+ i +"].Topics["+ j +"].TopicName"));
 				topicsItem.setInstanceId(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Topics["+ j +"].InstanceId"));
 				topicsItem.setTopicId(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Topics["+ j +"].TopicId"));
 				topicsItem.setAddTime(_ctx.longValue("GetBaselineKeyPathResponse.Data["+ i +"].Topics["+ j +"].AddTime"));

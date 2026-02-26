@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetTableTopologyRequest extends RpcAcsRequest<GetTableTopologyResponse> {
 	   
 
-	private String tableGuid;
-
 	private Long tid;
+
+	private String tableGuid;
 	public GetTableTopologyRequest() {
 		super("dms-enterprise", "2018-11-01", "GetTableTopology", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class GetTableTopologyRequest extends RpcAcsRequest<GetTableTopologyRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTableGuid() {
-		return this.tableGuid;
-	}
-
-	public void setTableGuid(String tableGuid) {
-		this.tableGuid = tableGuid;
-		if(tableGuid != null){
-			putQueryParameter("TableGuid", tableGuid);
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class GetTableTopologyRequest extends RpcAcsRequest<GetTableTopologyRespo
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getTableGuid() {
+		return this.tableGuid;
+	}
+
+	public void setTableGuid(String tableGuid) {
+		this.tableGuid = tableGuid;
+		if(tableGuid != null){
+			putQueryParameter("TableGuid", tableGuid);
 		}
 	}
 

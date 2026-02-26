@@ -14,6 +14,7 @@
 
 package com.aliyuncs.dataworks_public.model.v20200518;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dataworks_public.transform.v20200518.GetDeploymentResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -86,7 +87,17 @@ public class GetDeploymentResponse extends AcsResponse {
 
 	public static class Data {
 
+		private List<DeployedItem> deployedItems;
+
 		private Deployment deployment;
+
+		public List<DeployedItem> getDeployedItems() {
+			return this.deployedItems;
+		}
+
+		public void setDeployedItems(List<DeployedItem> deployedItems) {
+			this.deployedItems = deployedItems;
+		}
 
 		public Deployment getDeployment() {
 			return this.deployment;
@@ -94,6 +105,39 @@ public class GetDeploymentResponse extends AcsResponse {
 
 		public void setDeployment(Deployment deployment) {
 			this.deployment = deployment;
+		}
+
+		public static class DeployedItem {
+
+			private Long fileId;
+
+			private Long fileVersion;
+
+			private Integer status;
+
+			public Long getFileId() {
+				return this.fileId;
+			}
+
+			public void setFileId(Long fileId) {
+				this.fileId = fileId;
+			}
+
+			public Long getFileVersion() {
+				return this.fileVersion;
+			}
+
+			public void setFileVersion(Long fileVersion) {
+				this.fileVersion = fileVersion;
+			}
+
+			public Integer getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(Integer status) {
+				this.status = status;
+			}
 		}
 
 		public static class Deployment {

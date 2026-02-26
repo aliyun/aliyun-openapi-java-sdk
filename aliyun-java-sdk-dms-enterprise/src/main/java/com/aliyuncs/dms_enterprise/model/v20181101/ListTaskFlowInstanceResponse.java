@@ -91,6 +91,8 @@ public class ListTaskFlowInstanceResponse extends AcsResponse {
 
 		private String businessTime;
 
+		private String startTime;
+
 		private String endTime;
 
 		private String dagId;
@@ -107,6 +109,8 @@ public class ListTaskFlowInstanceResponse extends AcsResponse {
 
 		private String ownerName;
 
+		private String dagVersion;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -121,6 +125,14 @@ public class ListTaskFlowInstanceResponse extends AcsResponse {
 
 		public void setBusinessTime(String businessTime) {
 			this.businessTime = businessTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public String getEndTime() {
@@ -185,6 +197,14 @@ public class ListTaskFlowInstanceResponse extends AcsResponse {
 
 		public void setOwnerName(String ownerName) {
 			this.ownerName = ownerName;
+		}
+
+		public String getDagVersion() {
+			return this.dagVersion;
+		}
+
+		public void setDagVersion(String dagVersion) {
+			this.dagVersion = dagVersion;
 		}
 	}
 

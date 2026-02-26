@@ -23,8 +23,8 @@ public class DisableSqlAuditResponseUnmarshaller {
 	public static DisableSqlAuditResponse unmarshall(DisableSqlAuditResponse disableSqlAuditResponse, UnmarshallerContext _ctx) {
 		
 		disableSqlAuditResponse.setRequestId(_ctx.stringValue("DisableSqlAuditResponse.RequestId"));
-		disableSqlAuditResponse.setSuccess(_ctx.booleanValue("DisableSqlAuditResponse.Success"));
 		disableSqlAuditResponse.setResult(_ctx.booleanValue("DisableSqlAuditResponse.Result"));
+		disableSqlAuditResponse.setSuccess(_ctx.booleanValue("DisableSqlAuditResponse.Success"));
 	 
 	 	return disableSqlAuditResponse;
 	}

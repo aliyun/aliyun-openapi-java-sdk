@@ -155,6 +155,14 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 
 		private String province;
 
+		private String credentialNo;
+
+		private String credentialType;
+
+		private String remark;
+
+		private String params;
+
 		public String getTelExt() {
 			return this.telExt;
 		}
@@ -345,6 +353,38 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 
 		public void setProvince(String province) {
 			this.province = province;
+		}
+
+		public String getCredentialNo() {
+			return this.credentialNo;
+		}
+
+		public void setCredentialNo(String credentialNo) {
+			this.credentialNo = credentialNo;
+		}
+
+		public String getCredentialType() {
+			return this.credentialType;
+		}
+
+		public void setCredentialType(String credentialType) {
+			this.credentialType = credentialType;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
+		public String getParams() {
+			return this.params;
+		}
+
+		public void setParams(String params) {
+			this.params = params;
 		}
 	}
 

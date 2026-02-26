@@ -27,19 +27,19 @@ public class DescribeDrdsSlowSqlsResponseUnmarshaller {
 	public static DescribeDrdsSlowSqlsResponse unmarshall(DescribeDrdsSlowSqlsResponse describeDrdsSlowSqlsResponse, UnmarshallerContext _ctx) {
 		
 		describeDrdsSlowSqlsResponse.setRequestId(_ctx.stringValue("DescribeDrdsSlowSqlsResponse.RequestId"));
-		describeDrdsSlowSqlsResponse.setSuccess(_ctx.booleanValue("DescribeDrdsSlowSqlsResponse.Success"));
-		describeDrdsSlowSqlsResponse.setTotal(_ctx.integerValue("DescribeDrdsSlowSqlsResponse.Total"));
-		describeDrdsSlowSqlsResponse.setPageNumber(_ctx.integerValue("DescribeDrdsSlowSqlsResponse.PageNumber"));
 		describeDrdsSlowSqlsResponse.setPageSize(_ctx.integerValue("DescribeDrdsSlowSqlsResponse.PageSize"));
+		describeDrdsSlowSqlsResponse.setPageNumber(_ctx.integerValue("DescribeDrdsSlowSqlsResponse.PageNumber"));
+		describeDrdsSlowSqlsResponse.setTotal(_ctx.integerValue("DescribeDrdsSlowSqlsResponse.Total"));
+		describeDrdsSlowSqlsResponse.setSuccess(_ctx.booleanValue("DescribeDrdsSlowSqlsResponse.Success"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsSlowSqlsResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setSchema(_ctx.stringValue("DescribeDrdsSlowSqlsResponse.Items["+ i +"].Schema"));
-			item.setSql(_ctx.stringValue("DescribeDrdsSlowSqlsResponse.Items["+ i +"].Sql"));
 			item.setSendTime(_ctx.longValue("DescribeDrdsSlowSqlsResponse.Items["+ i +"].SendTime"));
-			item.setResponseTime(_ctx.longValue("DescribeDrdsSlowSqlsResponse.Items["+ i +"].ResponseTime"));
 			item.setHost(_ctx.stringValue("DescribeDrdsSlowSqlsResponse.Items["+ i +"].Host"));
+			item.setSql(_ctx.stringValue("DescribeDrdsSlowSqlsResponse.Items["+ i +"].Sql"));
+			item.setResponseTime(_ctx.longValue("DescribeDrdsSlowSqlsResponse.Items["+ i +"].ResponseTime"));
+			item.setSchema(_ctx.stringValue("DescribeDrdsSlowSqlsResponse.Items["+ i +"].Schema"));
 
 			items.add(item);
 		}

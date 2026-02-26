@@ -29,7 +29,7 @@ public class DeleteAggregateRemediationsRequest extends RpcAcsRequest<DeleteAggr
 
 	private String aggregatorId;
 	public DeleteAggregateRemediationsRequest() {
-		super("Config", "2020-09-07", "DeleteAggregateRemediations");
+		super("Config", "2020-09-07", "DeleteAggregateRemediations", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

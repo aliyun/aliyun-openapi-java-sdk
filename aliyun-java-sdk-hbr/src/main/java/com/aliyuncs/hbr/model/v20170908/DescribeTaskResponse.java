@@ -24,7 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTaskResponse extends AcsResponse {
 
+	private Integer progress;
+
 	private String requestId;
+
+	private Long completedTime;
+
+	private String result;
+
+	private String description;
+
+	private Long updatedTime;
 
 	private Boolean success;
 
@@ -32,19 +42,17 @@ public class DescribeTaskResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer progress;
-
-	private String description;
+	private String name;
 
 	private Long createdTime;
 
-	private Long updatedTime;
+	public Integer getProgress() {
+		return this.progress;
+	}
 
-	private String result;
-
-	private Long completedTime;
-
-	private String name;
+	public void setProgress(Integer progress) {
+		this.progress = progress;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,6 +60,38 @@ public class DescribeTaskResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getCompletedTime() {
+		return this.completedTime;
+	}
+
+	public void setCompletedTime(Long completedTime) {
+		this.completedTime = completedTime;
+	}
+
+	public String getResult() {
+		return this.result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Long getUpdatedTime() {
+		return this.updatedTime;
+	}
+
+	public void setUpdatedTime(Long updatedTime) {
+		this.updatedTime = updatedTime;
 	}
 
 	public Boolean getSuccess() {
@@ -78,20 +118,12 @@ public class DescribeTaskResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getProgress() {
-		return this.progress;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setProgress(Integer progress) {
-		this.progress = progress;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Long getCreatedTime() {
@@ -100,38 +132,6 @@ public class DescribeTaskResponse extends AcsResponse {
 
 	public void setCreatedTime(Long createdTime) {
 		this.createdTime = createdTime;
-	}
-
-	public Long getUpdatedTime() {
-		return this.updatedTime;
-	}
-
-	public void setUpdatedTime(Long updatedTime) {
-		this.updatedTime = updatedTime;
-	}
-
-	public String getResult() {
-		return this.result;
-	}
-
-	public void setResult(String result) {
-		this.result = result;
-	}
-
-	public Long getCompletedTime() {
-		return this.completedTime;
-	}
-
-	public void setCompletedTime(Long completedTime) {
-		this.completedTime = completedTime;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	@Override

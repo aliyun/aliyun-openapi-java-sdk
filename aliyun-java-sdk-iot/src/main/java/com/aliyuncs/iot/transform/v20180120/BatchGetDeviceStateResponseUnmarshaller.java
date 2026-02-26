@@ -40,6 +40,7 @@ public class BatchGetDeviceStateResponseUnmarshaller {
 			deviceStatus.setAsAddress(_ctx.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].AsAddress"));
 			deviceStatus.setLastOnlineTime(_ctx.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].LastOnlineTime"));
 			deviceStatus.setIotId(_ctx.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].IotId"));
+			deviceStatus.setTimestamp(_ctx.longValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].Timestamp"));
 
 			deviceStatusList.add(deviceStatus);
 		}

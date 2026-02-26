@@ -44,6 +44,7 @@ public class ListNodesResponseUnmarshaller {
 			nodesItem.setSchedulerType(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].SchedulerType"));
 			nodesItem.setRepeatInterval(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].RepeatInterval"));
 			nodesItem.setRepeatability(_ctx.booleanValue("ListNodesResponse.Data.Nodes["+ i +"].Repeatability"));
+			nodesItem.setRepeatMode(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].RepeatMode"));
 			nodesItem.setProjectId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].ProjectId"));
 			nodesItem.setProgramType(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].ProgramType"));
 			nodesItem.setPriority(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].Priority"));
@@ -60,6 +61,13 @@ public class ListNodesResponseUnmarshaller {
 			nodesItem.setDqcDescription(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].DqcDescription"));
 			nodesItem.setCronExpress(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].CronExpress"));
 			nodesItem.setNodeId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].NodeId"));
+			nodesItem.setResGroupIdentifier(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].ResGroupIdentifier"));
+			nodesItem.setFileType(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].FileType"));
+			nodesItem.setFileId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].FileId"));
+			nodesItem.setFileVersion(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].FileVersion"));
+			nodesItem.setDeployDate(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].DeployDate"));
+			nodesItem.setCreateTime(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].CreateTime"));
+			nodesItem.setModifyTime(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].ModifyTime"));
 
 			nodes.add(nodesItem);
 		}

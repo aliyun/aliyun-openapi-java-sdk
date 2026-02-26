@@ -23,9 +23,9 @@ public class DeleteVaultResponseUnmarshaller {
 	public static DeleteVaultResponse unmarshall(DeleteVaultResponse deleteVaultResponse, UnmarshallerContext _ctx) {
 		
 		deleteVaultResponse.setRequestId(_ctx.stringValue("DeleteVaultResponse.RequestId"));
-		deleteVaultResponse.setSuccess(_ctx.booleanValue("DeleteVaultResponse.Success"));
 		deleteVaultResponse.setCode(_ctx.stringValue("DeleteVaultResponse.Code"));
 		deleteVaultResponse.setMessage(_ctx.stringValue("DeleteVaultResponse.Message"));
+		deleteVaultResponse.setSuccess(_ctx.booleanValue("DeleteVaultResponse.Success"));
 	 
 	 	return deleteVaultResponse;
 	}

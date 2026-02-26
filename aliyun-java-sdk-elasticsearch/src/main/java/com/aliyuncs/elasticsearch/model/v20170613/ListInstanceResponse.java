@@ -86,9 +86,23 @@ public class ListInstanceResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String vpcInstanceId;
+
+		private Long endTime;
+
+		private String archType;
+
 		private List<Tag> tags;
 
 		private List<Map<Object,Object>> extendConfigs;
+
+		private List<String> kibanaIPWhitelist;
+
+		private List<String> kibanaPrivateIPWhitelist;
+
+		private List<String> publicIpWhitelist;
+
+		private List<String> privateNetworkIpWhiteList;
 
 		private ClientNodeConfiguration clientNodeConfiguration;
 
@@ -214,6 +228,30 @@ public class ListInstanceResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
+		public String getVpcInstanceId() {
+			return this.vpcInstanceId;
+		}
+
+		public void setVpcInstanceId(String vpcInstanceId) {
+			this.vpcInstanceId = vpcInstanceId;
+		}
+
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getArchType() {
+			return this.archType;
+		}
+
+		public void setArchType(String archType) {
+			this.archType = archType;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -228,6 +266,38 @@ public class ListInstanceResponse extends AcsResponse {
 
 		public void setExtendConfigs(List<Map<Object,Object>> extendConfigs) {
 			this.extendConfigs = extendConfigs;
+		}
+
+		public List<String> getKibanaIPWhitelist() {
+			return this.kibanaIPWhitelist;
+		}
+
+		public void setKibanaIPWhitelist(List<String> kibanaIPWhitelist) {
+			this.kibanaIPWhitelist = kibanaIPWhitelist;
+		}
+
+		public List<String> getKibanaPrivateIPWhitelist() {
+			return this.kibanaPrivateIPWhitelist;
+		}
+
+		public void setKibanaPrivateIPWhitelist(List<String> kibanaPrivateIPWhitelist) {
+			this.kibanaPrivateIPWhitelist = kibanaPrivateIPWhitelist;
+		}
+
+		public List<String> getPublicIpWhitelist() {
+			return this.publicIpWhitelist;
+		}
+
+		public void setPublicIpWhitelist(List<String> publicIpWhitelist) {
+			this.publicIpWhitelist = publicIpWhitelist;
+		}
+
+		public List<String> getPrivateNetworkIpWhiteList() {
+			return this.privateNetworkIpWhiteList;
+		}
+
+		public void setPrivateNetworkIpWhiteList(List<String> privateNetworkIpWhiteList) {
+			this.privateNetworkIpWhiteList = privateNetworkIpWhiteList;
 		}
 
 		public ClientNodeConfiguration getClientNodeConfiguration() {
@@ -311,6 +381,8 @@ public class ListInstanceResponse extends AcsResponse {
 
 			private String diskType;
 
+			private String specInfo;
+
 			public String getSpec() {
 				return this.spec;
 			}
@@ -342,6 +414,14 @@ public class ListInstanceResponse extends AcsResponse {
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
 			}
+
+			public String getSpecInfo() {
+				return this.specInfo;
+			}
+
+			public void setSpecInfo(String specInfo) {
+				this.specInfo = specInfo;
+			}
 		}
 
 		public static class ElasticDataNodeConfiguration {
@@ -355,6 +435,8 @@ public class ListInstanceResponse extends AcsResponse {
 			private Boolean diskEncryption;
 
 			private String diskType;
+
+			private String specInfo;
 
 			public String getSpec() {
 				return this.spec;
@@ -395,6 +477,14 @@ public class ListInstanceResponse extends AcsResponse {
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
 			}
+
+			public String getSpecInfo() {
+				return this.specInfo;
+			}
+
+			public void setSpecInfo(String specInfo) {
+				this.specInfo = specInfo;
+			}
 		}
 
 		public static class KibanaConfiguration {
@@ -406,6 +496,8 @@ public class ListInstanceResponse extends AcsResponse {
 			private Integer disk;
 
 			private String diskType;
+
+			private String specInfo;
 
 			public String getSpec() {
 				return this.spec;
@@ -437,6 +529,14 @@ public class ListInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
+			}
+
+			public String getSpecInfo() {
+				return this.specInfo;
+			}
+
+			public void setSpecInfo(String specInfo) {
+				this.specInfo = specInfo;
 			}
 		}
 
@@ -450,6 +550,8 @@ public class ListInstanceResponse extends AcsResponse {
 
 			private String diskType;
 
+			private String specInfo;
+
 			public String getSpec() {
 				return this.spec;
 			}
@@ -481,6 +583,14 @@ public class ListInstanceResponse extends AcsResponse {
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
 			}
+
+			public String getSpecInfo() {
+				return this.specInfo;
+			}
+
+			public void setSpecInfo(String specInfo) {
+				this.specInfo = specInfo;
+			}
 		}
 
 		public static class NetworkConfig {
@@ -492,6 +602,8 @@ public class ListInstanceResponse extends AcsResponse {
 			private String type;
 
 			private String vswitchId;
+
+			private List<WhiteIpGroupListItem> whiteIpGroupList;
 
 			public String getVpcId() {
 				return this.vpcId;
@@ -524,6 +636,47 @@ public class ListInstanceResponse extends AcsResponse {
 			public void setVswitchId(String vswitchId) {
 				this.vswitchId = vswitchId;
 			}
+
+			public List<WhiteIpGroupListItem> getWhiteIpGroupList() {
+				return this.whiteIpGroupList;
+			}
+
+			public void setWhiteIpGroupList(List<WhiteIpGroupListItem> whiteIpGroupList) {
+				this.whiteIpGroupList = whiteIpGroupList;
+			}
+
+			public static class WhiteIpGroupListItem {
+
+				private String groupName;
+
+				private String whiteIpType;
+
+				private List<String> ips;
+
+				public String getGroupName() {
+					return this.groupName;
+				}
+
+				public void setGroupName(String groupName) {
+					this.groupName = groupName;
+				}
+
+				public String getWhiteIpType() {
+					return this.whiteIpType;
+				}
+
+				public void setWhiteIpType(String whiteIpType) {
+					this.whiteIpType = whiteIpType;
+				}
+
+				public List<String> getIps() {
+					return this.ips;
+				}
+
+				public void setIps(List<String> ips) {
+					this.ips = ips;
+				}
+			}
 		}
 
 		public static class NodeSpec {
@@ -535,6 +688,10 @@ public class ListInstanceResponse extends AcsResponse {
 			private Boolean diskEncryption;
 
 			private String diskType;
+
+			private String performanceLevel;
+
+			private String specInfo;
 
 			public String getSpec() {
 				return this.spec;
@@ -566,6 +723,22 @@ public class ListInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
+			}
+
+			public String getPerformanceLevel() {
+				return this.performanceLevel;
+			}
+
+			public void setPerformanceLevel(String performanceLevel) {
+				this.performanceLevel = performanceLevel;
+			}
+
+			public String getSpecInfo() {
+				return this.specInfo;
+			}
+
+			public void setSpecInfo(String specInfo) {
+				this.specInfo = specInfo;
 			}
 		}
 	}

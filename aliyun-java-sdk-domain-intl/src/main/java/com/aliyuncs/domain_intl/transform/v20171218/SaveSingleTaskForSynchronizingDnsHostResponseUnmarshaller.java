@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveSingleTaskForSynchronizingDnsHostResponseUnmarshaller {
 
-	public static SaveSingleTaskForSynchronizingDnsHostResponse unmarshall(SaveSingleTaskForSynchronizingDnsHostResponse saveSingleTaskForSynchronizingDnsHostResponse, UnmarshallerContext context) {
+	public static SaveSingleTaskForSynchronizingDnsHostResponse unmarshall(SaveSingleTaskForSynchronizingDnsHostResponse saveSingleTaskForSynchronizingDnsHostResponse, UnmarshallerContext _ctx) {
 		
-		saveSingleTaskForSynchronizingDnsHostResponse.setRequestId(context.stringValue("SaveSingleTaskForSynchronizingDnsHostResponse.RequestId"));
-		saveSingleTaskForSynchronizingDnsHostResponse.setTaskNo(context.stringValue("SaveSingleTaskForSynchronizingDnsHostResponse.TaskNo"));
+		saveSingleTaskForSynchronizingDnsHostResponse.setRequestId(_ctx.stringValue("SaveSingleTaskForSynchronizingDnsHostResponse.RequestId"));
+		saveSingleTaskForSynchronizingDnsHostResponse.setTaskNo(_ctx.stringValue("SaveSingleTaskForSynchronizingDnsHostResponse.TaskNo"));
 	 
 	 	return saveSingleTaskForSynchronizingDnsHostResponse;
 	}

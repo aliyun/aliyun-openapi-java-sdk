@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
@@ -24,6 +25,8 @@ import com.aliyuncs.iot.Endpoint;
  */
 public class ListOTAUnfinishedTaskByDeviceRequest extends RpcAcsRequest<ListOTAUnfinishedTaskByDeviceResponse> {
 	   
+
+	private List<String> taskStatusLists;
 
 	private String taskStatus;
 
@@ -37,12 +40,25 @@ public class ListOTAUnfinishedTaskByDeviceRequest extends RpcAcsRequest<ListOTAU
 
 	private String deviceName;
 	public ListOTAUnfinishedTaskByDeviceRequest() {
-		super("Iot", "2018-01-20", "ListOTAUnfinishedTaskByDevice");
+		super("Iot", "2018-01-20", "ListOTAUnfinishedTaskByDevice", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getTaskStatusLists() {
+		return this.taskStatusLists;
+	}
+
+	public void setTaskStatusLists(List<String> taskStatusLists) {
+		this.taskStatusLists = taskStatusLists;	
+		if (taskStatusLists != null) {
+			for (int i = 0; i < taskStatusLists.size(); i++) {
+				putQueryParameter("TaskStatusList." + (i + 1) , taskStatusLists.get(i));
+			}
+		}	
 	}
 
 	public String getTaskStatus() {

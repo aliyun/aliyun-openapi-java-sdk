@@ -137,6 +137,26 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		private Integer version;
 
+		private Long stopDuration;
+
+		private String protocolType;
+
+		private String osType;
+
+		private Integer buyDesktopsCount;
+
+		private Integer desktopCount;
+
+		private String desktopType;
+
+		private String gpuDriverVersion;
+
+		private String subnetId;
+
+		private List<CountPerStatusItem> countPerStatus;
+
+		private List<Tag> tags;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -455,6 +475,132 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		public void setVersion(Integer version) {
 			this.version = version;
+		}
+
+		public Long getStopDuration() {
+			return this.stopDuration;
+		}
+
+		public void setStopDuration(Long stopDuration) {
+			this.stopDuration = stopDuration;
+		}
+
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
+		}
+
+		public String getOsType() {
+			return this.osType;
+		}
+
+		public void setOsType(String osType) {
+			this.osType = osType;
+		}
+
+		public Integer getBuyDesktopsCount() {
+			return this.buyDesktopsCount;
+		}
+
+		public void setBuyDesktopsCount(Integer buyDesktopsCount) {
+			this.buyDesktopsCount = buyDesktopsCount;
+		}
+
+		public Integer getDesktopCount() {
+			return this.desktopCount;
+		}
+
+		public void setDesktopCount(Integer desktopCount) {
+			this.desktopCount = desktopCount;
+		}
+
+		public String getDesktopType() {
+			return this.desktopType;
+		}
+
+		public void setDesktopType(String desktopType) {
+			this.desktopType = desktopType;
+		}
+
+		public String getGpuDriverVersion() {
+			return this.gpuDriverVersion;
+		}
+
+		public void setGpuDriverVersion(String gpuDriverVersion) {
+			this.gpuDriverVersion = gpuDriverVersion;
+		}
+
+		public String getSubnetId() {
+			return this.subnetId;
+		}
+
+		public void setSubnetId(String subnetId) {
+			this.subnetId = subnetId;
+		}
+
+		public List<CountPerStatusItem> getCountPerStatus() {
+			return this.countPerStatus;
+		}
+
+		public void setCountPerStatus(List<CountPerStatusItem> countPerStatus) {
+			this.countPerStatus = countPerStatus;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class CountPerStatusItem {
+
+			private String status;
+
+			private Integer count;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Integer getCount() {
+				return this.count;
+			}
+
+			public void setCount(Integer count) {
+				this.count = count;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

@@ -25,25 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIpSetResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String ipSetId;
 
-	private String accelerateRegionId;
+	private String requestId;
 
-	private Integer bandwidth;
+	private String ipVersion;
 
 	private String state;
 
+	private Integer bandwidth;
+
+	private String ispType;
+
+	private String accelerateRegionId;
+
+	private String acceleratorId;
+
+	private String serviceId;
+
+	private Boolean serviceManaged;
+
+	private List<ServiceManagedInfosItem> serviceManagedInfos;
+
 	private List<String> ipAddressList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getIpSetId() {
 		return this.ipSetId;
@@ -53,20 +57,20 @@ public class DescribeIpSetResponse extends AcsResponse {
 		this.ipSetId = ipSetId;
 	}
 
-	public String getAccelerateRegionId() {
-		return this.accelerateRegionId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setAccelerateRegionId(String accelerateRegionId) {
-		this.accelerateRegionId = accelerateRegionId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public Integer getBandwidth() {
-		return this.bandwidth;
+	public String getIpVersion() {
+		return this.ipVersion;
 	}
 
-	public void setBandwidth(Integer bandwidth) {
-		this.bandwidth = bandwidth;
+	public void setIpVersion(String ipVersion) {
+		this.ipVersion = ipVersion;
 	}
 
 	public String getState() {
@@ -77,12 +81,101 @@ public class DescribeIpSetResponse extends AcsResponse {
 		this.state = state;
 	}
 
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+	}
+
+	public String getIspType() {
+		return this.ispType;
+	}
+
+	public void setIspType(String ispType) {
+		this.ispType = ispType;
+	}
+
+	public String getAccelerateRegionId() {
+		return this.accelerateRegionId;
+	}
+
+	public void setAccelerateRegionId(String accelerateRegionId) {
+		this.accelerateRegionId = accelerateRegionId;
+	}
+
+	public String getAcceleratorId() {
+		return this.acceleratorId;
+	}
+
+	public void setAcceleratorId(String acceleratorId) {
+		this.acceleratorId = acceleratorId;
+	}
+
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
+	}
+
+	public Boolean getServiceManaged() {
+		return this.serviceManaged;
+	}
+
+	public void setServiceManaged(Boolean serviceManaged) {
+		this.serviceManaged = serviceManaged;
+	}
+
+	public List<ServiceManagedInfosItem> getServiceManagedInfos() {
+		return this.serviceManagedInfos;
+	}
+
+	public void setServiceManagedInfos(List<ServiceManagedInfosItem> serviceManagedInfos) {
+		this.serviceManagedInfos = serviceManagedInfos;
+	}
+
 	public List<String> getIpAddressList() {
 		return this.ipAddressList;
 	}
 
 	public void setIpAddressList(List<String> ipAddressList) {
 		this.ipAddressList = ipAddressList;
+	}
+
+	public static class ServiceManagedInfosItem {
+
+		private String action;
+
+		private String childType;
+
+		private Boolean isManaged;
+
+		public String getAction() {
+			return this.action;
+		}
+
+		public void setAction(String action) {
+			this.action = action;
+		}
+
+		public String getChildType() {
+			return this.childType;
+		}
+
+		public void setChildType(String childType) {
+			this.childType = childType;
+		}
+
+		public Boolean getIsManaged() {
+			return this.isManaged;
+		}
+
+		public void setIsManaged(Boolean isManaged) {
+			this.isManaged = isManaged;
+		}
 	}
 
 	@Override

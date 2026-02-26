@@ -26,9 +26,9 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class UpdateTableAddColumnRequest extends RpcAcsRequest<UpdateTableAddColumnResponse> {
 	   
 
-	private String tableGuid;
-
 	private List<Column> columns;
+
+	private String tableGuid;
 	public UpdateTableAddColumnRequest() {
 		super("dataworks-public", "2020-05-18", "UpdateTableAddColumn");
 		setMethod(MethodType.POST);
@@ -36,17 +36,6 @@ public class UpdateTableAddColumnRequest extends RpcAcsRequest<UpdateTableAddCol
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTableGuid() {
-		return this.tableGuid;
-	}
-
-	public void setTableGuid(String tableGuid) {
-		this.tableGuid = tableGuid;
-		if(tableGuid != null){
-			putQueryParameter("TableGuid", tableGuid);
-		}
 	}
 
 	public List<Column> getColumns() {
@@ -63,6 +52,17 @@ public class UpdateTableAddColumnRequest extends RpcAcsRequest<UpdateTableAddCol
 				putBodyParameter("Column." + (depth1 + 1) + ".ColumnType" , columns.get(depth1).getColumnType());
 			}
 		}	
+	}
+
+	public String getTableGuid() {
+		return this.tableGuid;
+	}
+
+	public void setTableGuid(String tableGuid) {
+		this.tableGuid = tableGuid;
+		if(tableGuid != null){
+			putQueryParameter("TableGuid", tableGuid);
+		}
 	}
 
 	public static class Column {

@@ -31,7 +31,7 @@ public class ActiveDeviceCertificateRequest extends RpcAcsRequest<ActiveDeviceCe
 
 	private String mqttInstanceId;
 	public ActiveDeviceCertificateRequest() {
-		super("OnsMqtt", "2020-04-20", "ActiveDeviceCertificate");
+		super("OnsMqtt", "2020-04-20", "ActiveDeviceCertificate", "onsmqtt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

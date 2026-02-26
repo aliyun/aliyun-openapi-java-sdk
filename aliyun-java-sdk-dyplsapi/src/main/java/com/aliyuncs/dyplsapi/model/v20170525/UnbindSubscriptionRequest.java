@@ -39,7 +39,7 @@ public class UnbindSubscriptionRequest extends RpcAcsRequest<UnbindSubscriptionR
 
 	private String poolKey;
 	public UnbindSubscriptionRequest() {
-		super("Dyplsapi", "2017-05-25", "UnbindSubscription");
+		super("Dyplsapi", "2017-05-25", "UnbindSubscription", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

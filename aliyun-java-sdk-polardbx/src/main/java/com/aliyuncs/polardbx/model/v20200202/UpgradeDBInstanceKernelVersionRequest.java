@@ -27,9 +27,9 @@ public class UpgradeDBInstanceKernelVersionRequest extends RpcAcsRequest<Upgrade
 
 	private String dBInstanceName;
 
-	private String switchTime;
+	private String switchMode;
 
-	private String upgradeTime;
+	private String minorVersion;
 	public UpgradeDBInstanceKernelVersionRequest() {
 		super("polardbx", "2020-02-02", "UpgradeDBInstanceKernelVersion", "polardbx");
 		setMethod(MethodType.POST);
@@ -50,25 +50,25 @@ public class UpgradeDBInstanceKernelVersionRequest extends RpcAcsRequest<Upgrade
 		}
 	}
 
-	public String getSwitchTime() {
-		return this.switchTime;
+	public String getSwitchMode() {
+		return this.switchMode;
 	}
 
-	public void setSwitchTime(String switchTime) {
-		this.switchTime = switchTime;
-		if(switchTime != null){
-			putQueryParameter("SwitchTime", switchTime);
+	public void setSwitchMode(String switchMode) {
+		this.switchMode = switchMode;
+		if(switchMode != null){
+			putQueryParameter("SwitchMode", switchMode);
 		}
 	}
 
-	public String getUpgradeTime() {
-		return this.upgradeTime;
+	public String getMinorVersion() {
+		return this.minorVersion;
 	}
 
-	public void setUpgradeTime(String upgradeTime) {
-		this.upgradeTime = upgradeTime;
-		if(upgradeTime != null){
-			putQueryParameter("UpgradeTime", upgradeTime);
+	public void setMinorVersion(String minorVersion) {
+		this.minorVersion = minorVersion;
+		if(minorVersion != null){
+			putQueryParameter("MinorVersion", minorVersion);
 		}
 	}
 

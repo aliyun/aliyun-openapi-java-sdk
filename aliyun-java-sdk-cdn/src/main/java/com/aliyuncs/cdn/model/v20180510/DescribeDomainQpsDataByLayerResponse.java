@@ -25,34 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainQpsDataByLayerResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String domainName;
+	private String endTime;
 
 	private String startTime;
 
-	private String endTime;
-
-	private String dataInterval;
+	private String requestId;
 
 	private String layer;
 
+	private String domainName;
+
+	private String dataInterval;
+
 	private List<DataModule> qpsDataInterval;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getStartTime() {
@@ -63,20 +55,12 @@ public class DescribeDomainQpsDataByLayerResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getDataInterval() {
-		return this.dataInterval;
-	}
-
-	public void setDataInterval(String dataInterval) {
-		this.dataInterval = dataInterval;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getLayer() {
@@ -85,6 +69,22 @@ public class DescribeDomainQpsDataByLayerResponse extends AcsResponse {
 
 	public void setLayer(String layer) {
 		this.layer = layer;
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
+
+	public String getDataInterval() {
+		return this.dataInterval;
+	}
+
+	public void setDataInterval(String dataInterval) {
+		this.dataInterval = dataInterval;
 	}
 
 	public List<DataModule> getQpsDataInterval() {
@@ -97,27 +97,19 @@ public class DescribeDomainQpsDataByLayerResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
-
 		private String value;
-
-		private String domesticValue;
-
-		private String overseasValue;
 
 		private String accValue;
 
 		private String accDomesticValue;
 
+		private String overseasValue;
+
 		private String accOverseasValue;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
+		private String timeStamp;
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
+		private String domesticValue;
 
 		public String getValue() {
 			return this.value;
@@ -125,22 +117,6 @@ public class DescribeDomainQpsDataByLayerResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
-		}
-
-		public String getDomesticValue() {
-			return this.domesticValue;
-		}
-
-		public void setDomesticValue(String domesticValue) {
-			this.domesticValue = domesticValue;
-		}
-
-		public String getOverseasValue() {
-			return this.overseasValue;
-		}
-
-		public void setOverseasValue(String overseasValue) {
-			this.overseasValue = overseasValue;
 		}
 
 		public String getAccValue() {
@@ -159,12 +135,36 @@ public class DescribeDomainQpsDataByLayerResponse extends AcsResponse {
 			this.accDomesticValue = accDomesticValue;
 		}
 
+		public String getOverseasValue() {
+			return this.overseasValue;
+		}
+
+		public void setOverseasValue(String overseasValue) {
+			this.overseasValue = overseasValue;
+		}
+
 		public String getAccOverseasValue() {
 			return this.accOverseasValue;
 		}
 
 		public void setAccOverseasValue(String accOverseasValue) {
 			this.accOverseasValue = accOverseasValue;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
+
+		public String getDomesticValue() {
+			return this.domesticValue;
+		}
+
+		public void setDomesticValue(String domesticValue) {
+			this.domesticValue = domesticValue;
 		}
 	}
 

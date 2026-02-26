@@ -27,9 +27,9 @@ public class GenerateMergedTableResponseUnmarshaller {
 		generateMergedTableResponse.setRequestId(_ctx.stringValue("GenerateMergedTableResponse.requestId"));
 
 		Result result = new Result();
+		result.setPrimaryKey(_ctx.stringValue("GenerateMergedTableResponse.result.primaryKey"));
 		result.setMergeTable(_ctx.mapValue("GenerateMergedTableResponse.result.mergeTable"));
 		result.setFromTable(_ctx.mapValue("GenerateMergedTableResponse.result.fromTable"));
-		result.setPrimaryKey(_ctx.stringValue("GenerateMergedTableResponse.result.primaryKey"));
 		generateMergedTableResponse.setResult(result);
 	 
 	 	return generateMergedTableResponse;

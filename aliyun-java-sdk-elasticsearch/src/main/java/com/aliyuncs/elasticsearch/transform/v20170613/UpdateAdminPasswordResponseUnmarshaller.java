@@ -23,6 +23,7 @@ public class UpdateAdminPasswordResponseUnmarshaller {
 	public static UpdateAdminPasswordResponse unmarshall(UpdateAdminPasswordResponse updateAdminPasswordResponse, UnmarshallerContext _ctx) {
 		
 		updateAdminPasswordResponse.setRequestId(_ctx.stringValue("UpdateAdminPasswordResponse.RequestId"));
+		updateAdminPasswordResponse.setResult(_ctx.booleanValue("UpdateAdminPasswordResponse.Result"));
 	 
 	 	return updateAdminPasswordResponse;
 	}

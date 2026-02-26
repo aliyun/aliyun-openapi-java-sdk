@@ -30,11 +30,9 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private List<String> ipv4Prefixs;
 
-	private String securityGroupId;
-
-	private String description;
+	private NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig;
 
 	private Integer secondaryPrivateIpAddressCount;
 
@@ -42,7 +40,7 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private String resourceGroupId;
 
-	private String instanceType;
+	private EnhancedNetwork enhancedNetwork;
 
 	private List<Tag> tags;
 
@@ -50,27 +48,51 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private Boolean visible;
 
-	private String resourceOwnerAccount;
-
 	private Integer ipv6AddressCount;
 
-	private String ownerAccount;
-
-	private Integer queuePairNumber;
+	private Integer rxQueueSize;
 
 	private Long ownerId;
-
-	private List<String> securityGroupIdss;
-
-	private String networkInterfaceTrafficMode;
 
 	private String vSwitchId;
 
 	private List<String> privateIpAddresss;
 
-	private String primaryIpAddress;
-
 	private List<String> ipv6Addresss;
+
+	private String clientToken;
+
+	private List<String> ipv6Prefixs;
+
+	private String securityGroupId;
+
+	private String description;
+
+	private Integer ipv6PrefixCount;
+
+	private Boolean sourceDestCheck;
+
+	private String instanceType;
+
+	private Integer txQueueSize;
+
+	private Boolean deleteOnRelease;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Integer queuePairNumber;
+
+	private List<String> securityGroupIdss;
+
+	private String networkInterfaceTrafficMode;
+
+	private Integer ipv4PrefixCount;
+
+	private ConnectionTrackingConfiguration connectionTrackingConfiguration;
+
+	private String primaryIpAddress;
 	public CreateNetworkInterfaceRequest() {
 		super("Ecs", "2014-05-26", "CreateNetworkInterface", "ecs");
 		setMethod(MethodType.POST);
@@ -102,37 +124,33 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public List<String> getIpv4Prefixs() {
+		return this.ipv4Prefixs;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
+	public void setIpv4Prefixs(List<String> ipv4Prefixs) {
+		this.ipv4Prefixs = ipv4Prefixs;	
+		if (ipv4Prefixs != null) {
+			for (int i = 0; i < ipv4Prefixs.size(); i++) {
+				putQueryParameter("Ipv4Prefix." + (i + 1) , ipv4Prefixs.get(i));
+			}
+		}	
 	}
 
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
+	public NetworkInterfaceTrafficConfig getNetworkInterfaceTrafficConfig() {
+		return this.networkInterfaceTrafficConfig;
 	}
 
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
+	public void setNetworkInterfaceTrafficConfig(NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig) {
+		this.networkInterfaceTrafficConfig = networkInterfaceTrafficConfig;	
+		if (networkInterfaceTrafficConfig != null) {
+			
+				putQueryParameter("NetworkInterfaceTrafficConfig.QueueNumber" , networkInterfaceTrafficConfig.getQueueNumber());
+				putQueryParameter("NetworkInterfaceTrafficConfig.NetworkInterfaceTrafficMode" , networkInterfaceTrafficConfig.getNetworkInterfaceTrafficMode());
+				putQueryParameter("NetworkInterfaceTrafficConfig.QueuePairNumber" , networkInterfaceTrafficConfig.getQueuePairNumber());
+				putQueryParameter("NetworkInterfaceTrafficConfig.TxQueueSize" , networkInterfaceTrafficConfig.getTxQueueSize());
+				putQueryParameter("NetworkInterfaceTrafficConfig.RxQueueSize" , networkInterfaceTrafficConfig.getRxQueueSize());
+		}	
 	}
 
 	public Integer getSecondaryPrivateIpAddressCount() {
@@ -168,15 +186,19 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
+	public EnhancedNetwork getEnhancedNetwork() {
+		return this.enhancedNetwork;
 	}
 
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
+	public void setEnhancedNetwork(EnhancedNetwork enhancedNetwork) {
+		this.enhancedNetwork = enhancedNetwork;	
+		if (enhancedNetwork != null) {
+			
+				putQueryParameter("EnhancedNetwork.EnableSriov" , enhancedNetwork.getEnableSriov());
+				putQueryParameter("EnhancedNetwork.EnableRss" , enhancedNetwork.getEnableRss());
+				putQueryParameter("EnhancedNetwork.VirtualFunctionTotalQueueNumber" , enhancedNetwork.getVirtualFunctionTotalQueueNumber());
+				putQueryParameter("EnhancedNetwork.VirtualFunctionQuantity" , enhancedNetwork.getVirtualFunctionQuantity());
+		}	
 	}
 
 	public List<Tag> getTags() {
@@ -215,17 +237,6 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public Integer getIpv6AddressCount() {
 		return this.ipv6AddressCount;
 	}
@@ -237,25 +248,14 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public Integer getRxQueueSize() {
+		return this.rxQueueSize;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Integer getQueuePairNumber() {
-		return this.queuePairNumber;
-	}
-
-	public void setQueuePairNumber(Integer queuePairNumber) {
-		this.queuePairNumber = queuePairNumber;
-		if(queuePairNumber != null){
-			putQueryParameter("QueuePairNumber", queuePairNumber.toString());
+	public void setRxQueueSize(Integer rxQueueSize) {
+		this.rxQueueSize = rxQueueSize;
+		if(rxQueueSize != null){
+			putQueryParameter("RxQueueSize", rxQueueSize.toString());
 		}
 	}
 
@@ -267,30 +267,6 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public List<String> getSecurityGroupIdss() {
-		return this.securityGroupIdss;
-	}
-
-	public void setSecurityGroupIdss(List<String> securityGroupIdss) {
-		this.securityGroupIdss = securityGroupIdss;	
-		if (securityGroupIdss != null) {
-			for (int i = 0; i < securityGroupIdss.size(); i++) {
-				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
-			}
-		}	
-	}
-
-	public String getNetworkInterfaceTrafficMode() {
-		return this.networkInterfaceTrafficMode;
-	}
-
-	public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
-		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
-		if(networkInterfaceTrafficMode != null){
-			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
 		}
 	}
 
@@ -318,17 +294,6 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}	
 	}
 
-	public String getPrimaryIpAddress() {
-		return this.primaryIpAddress;
-	}
-
-	public void setPrimaryIpAddress(String primaryIpAddress) {
-		this.primaryIpAddress = primaryIpAddress;
-		if(primaryIpAddress != null){
-			putQueryParameter("PrimaryIpAddress", primaryIpAddress);
-		}
-	}
-
 	public List<String> getIpv6Addresss() {
 		return this.ipv6Addresss;
 	}
@@ -340,6 +305,296 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 				putQueryParameter("Ipv6Address." + (i + 1) , ipv6Addresss.get(i));
 			}
 		}	
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public List<String> getIpv6Prefixs() {
+		return this.ipv6Prefixs;
+	}
+
+	public void setIpv6Prefixs(List<String> ipv6Prefixs) {
+		this.ipv6Prefixs = ipv6Prefixs;	
+		if (ipv6Prefixs != null) {
+			for (int i = 0; i < ipv6Prefixs.size(); i++) {
+				putQueryParameter("Ipv6Prefix." + (i + 1) , ipv6Prefixs.get(i));
+			}
+		}	
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getIpv6PrefixCount() {
+		return this.ipv6PrefixCount;
+	}
+
+	public void setIpv6PrefixCount(Integer ipv6PrefixCount) {
+		this.ipv6PrefixCount = ipv6PrefixCount;
+		if(ipv6PrefixCount != null){
+			putQueryParameter("Ipv6PrefixCount", ipv6PrefixCount.toString());
+		}
+	}
+
+	public Boolean getSourceDestCheck() {
+		return this.sourceDestCheck;
+	}
+
+	public void setSourceDestCheck(Boolean sourceDestCheck) {
+		this.sourceDestCheck = sourceDestCheck;
+		if(sourceDestCheck != null){
+			putQueryParameter("SourceDestCheck", sourceDestCheck.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public Integer getTxQueueSize() {
+		return this.txQueueSize;
+	}
+
+	public void setTxQueueSize(Integer txQueueSize) {
+		this.txQueueSize = txQueueSize;
+		if(txQueueSize != null){
+			putQueryParameter("TxQueueSize", txQueueSize.toString());
+		}
+	}
+
+	public Boolean getDeleteOnRelease() {
+		return this.deleteOnRelease;
+	}
+
+	public void setDeleteOnRelease(Boolean deleteOnRelease) {
+		this.deleteOnRelease = deleteOnRelease;
+		if(deleteOnRelease != null){
+			putQueryParameter("DeleteOnRelease", deleteOnRelease.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getQueuePairNumber() {
+		return this.queuePairNumber;
+	}
+
+	public void setQueuePairNumber(Integer queuePairNumber) {
+		this.queuePairNumber = queuePairNumber;
+		if(queuePairNumber != null){
+			putQueryParameter("QueuePairNumber", queuePairNumber.toString());
+		}
+	}
+
+	public List<String> getSecurityGroupIdss() {
+		return this.securityGroupIdss;
+	}
+
+	public void setSecurityGroupIdss(List<String> securityGroupIdss) {
+		this.securityGroupIdss = securityGroupIdss;	
+		if (securityGroupIdss != null) {
+			for (int i = 0; i < securityGroupIdss.size(); i++) {
+				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
+			}
+		}	
+	}
+
+	public String getNetworkInterfaceTrafficMode() {
+		return this.networkInterfaceTrafficMode;
+	}
+
+	public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		if(networkInterfaceTrafficMode != null){
+			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
+		}
+	}
+
+	public Integer getIpv4PrefixCount() {
+		return this.ipv4PrefixCount;
+	}
+
+	public void setIpv4PrefixCount(Integer ipv4PrefixCount) {
+		this.ipv4PrefixCount = ipv4PrefixCount;
+		if(ipv4PrefixCount != null){
+			putQueryParameter("Ipv4PrefixCount", ipv4PrefixCount.toString());
+		}
+	}
+
+	public ConnectionTrackingConfiguration getConnectionTrackingConfiguration() {
+		return this.connectionTrackingConfiguration;
+	}
+
+	public void setConnectionTrackingConfiguration(ConnectionTrackingConfiguration connectionTrackingConfiguration) {
+		this.connectionTrackingConfiguration = connectionTrackingConfiguration;	
+		if (connectionTrackingConfiguration != null) {
+			
+				putQueryParameter("ConnectionTrackingConfiguration.TcpEstablishedTimeout" , connectionTrackingConfiguration.getTcpEstablishedTimeout());
+				putQueryParameter("ConnectionTrackingConfiguration.TcpClosedAndTimeWaitTimeout" , connectionTrackingConfiguration.getTcpClosedAndTimeWaitTimeout());
+				putQueryParameter("ConnectionTrackingConfiguration.UdpTimeout" , connectionTrackingConfiguration.getUdpTimeout());
+		}	
+	}
+
+	public String getPrimaryIpAddress() {
+		return this.primaryIpAddress;
+	}
+
+	public void setPrimaryIpAddress(String primaryIpAddress) {
+		this.primaryIpAddress = primaryIpAddress;
+		if(primaryIpAddress != null){
+			putQueryParameter("PrimaryIpAddress", primaryIpAddress);
+		}
+	}
+
+	public static class NetworkInterfaceTrafficConfig {
+
+		private Integer queueNumber;
+
+		private String networkInterfaceTrafficMode;
+
+		private Integer queuePairNumber;
+
+		private Integer txQueueSize;
+
+		private Integer rxQueueSize;
+
+		public Integer getQueueNumber() {
+			return this.queueNumber;
+		}
+
+		public void setQueueNumber(Integer queueNumber) {
+			this.queueNumber = queueNumber;
+		}
+
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
+		}
+
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		}
+
+		public Integer getQueuePairNumber() {
+			return this.queuePairNumber;
+		}
+
+		public void setQueuePairNumber(Integer queuePairNumber) {
+			this.queuePairNumber = queuePairNumber;
+		}
+
+		public Integer getTxQueueSize() {
+			return this.txQueueSize;
+		}
+
+		public void setTxQueueSize(Integer txQueueSize) {
+			this.txQueueSize = txQueueSize;
+		}
+
+		public Integer getRxQueueSize() {
+			return this.rxQueueSize;
+		}
+
+		public void setRxQueueSize(Integer rxQueueSize) {
+			this.rxQueueSize = rxQueueSize;
+		}
+	}
+
+	public static class EnhancedNetwork {
+
+		private Boolean enableSriov;
+
+		private Boolean enableRss;
+
+		private Integer virtualFunctionTotalQueueNumber;
+
+		private Integer virtualFunctionQuantity;
+
+		public Boolean getEnableSriov() {
+			return this.enableSriov;
+		}
+
+		public void setEnableSriov(Boolean enableSriov) {
+			this.enableSriov = enableSriov;
+		}
+
+		public Boolean getEnableRss() {
+			return this.enableRss;
+		}
+
+		public void setEnableRss(Boolean enableRss) {
+			this.enableRss = enableRss;
+		}
+
+		public Integer getVirtualFunctionTotalQueueNumber() {
+			return this.virtualFunctionTotalQueueNumber;
+		}
+
+		public void setVirtualFunctionTotalQueueNumber(Integer virtualFunctionTotalQueueNumber) {
+			this.virtualFunctionTotalQueueNumber = virtualFunctionTotalQueueNumber;
+		}
+
+		public Integer getVirtualFunctionQuantity() {
+			return this.virtualFunctionQuantity;
+		}
+
+		public void setVirtualFunctionQuantity(Integer virtualFunctionQuantity) {
+			this.virtualFunctionQuantity = virtualFunctionQuantity;
+		}
 	}
 
 	public static class Tag {
@@ -362,6 +617,39 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+	}
+
+	public static class ConnectionTrackingConfiguration {
+
+		private Integer tcpEstablishedTimeout;
+
+		private Integer tcpClosedAndTimeWaitTimeout;
+
+		private Integer udpTimeout;
+
+		public Integer getTcpEstablishedTimeout() {
+			return this.tcpEstablishedTimeout;
+		}
+
+		public void setTcpEstablishedTimeout(Integer tcpEstablishedTimeout) {
+			this.tcpEstablishedTimeout = tcpEstablishedTimeout;
+		}
+
+		public Integer getTcpClosedAndTimeWaitTimeout() {
+			return this.tcpClosedAndTimeWaitTimeout;
+		}
+
+		public void setTcpClosedAndTimeWaitTimeout(Integer tcpClosedAndTimeWaitTimeout) {
+			this.tcpClosedAndTimeWaitTimeout = tcpClosedAndTimeWaitTimeout;
+		}
+
+		public Integer getUdpTimeout() {
+			return this.udpTimeout;
+		}
+
+		public void setUdpTimeout(Integer udpTimeout) {
+			this.udpTimeout = udpTimeout;
 		}
 	}
 

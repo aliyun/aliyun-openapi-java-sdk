@@ -24,9 +24,9 @@ public class GetHistoryDataCountResponseUnmarshaller {
 		
 		getHistoryDataCountResponse.setRequestId(_ctx.stringValue("GetHistoryDataCountResponse.RequestId"));
 		getHistoryDataCountResponse.setCode(_ctx.integerValue("GetHistoryDataCountResponse.Code"));
-		getHistoryDataCountResponse.setSuccess(_ctx.booleanValue("GetHistoryDataCountResponse.Success"));
 		getHistoryDataCountResponse.setMessage(_ctx.stringValue("GetHistoryDataCountResponse.Message"));
 		getHistoryDataCountResponse.setData(_ctx.stringValue("GetHistoryDataCountResponse.Data"));
+		getHistoryDataCountResponse.setSuccess(_ctx.booleanValue("GetHistoryDataCountResponse.Success"));
 	 
 	 	return getHistoryDataCountResponse;
 	}

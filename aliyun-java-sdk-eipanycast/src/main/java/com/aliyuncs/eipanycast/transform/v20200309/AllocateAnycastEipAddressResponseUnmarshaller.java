@@ -24,6 +24,7 @@ public class AllocateAnycastEipAddressResponseUnmarshaller {
 		
 		allocateAnycastEipAddressResponse.setRequestId(_ctx.stringValue("AllocateAnycastEipAddressResponse.RequestId"));
 		allocateAnycastEipAddressResponse.setAnycastId(_ctx.stringValue("AllocateAnycastEipAddressResponse.AnycastId"));
+		allocateAnycastEipAddressResponse.setResourceGroupId(_ctx.stringValue("AllocateAnycastEipAddressResponse.ResourceGroupId"));
 		allocateAnycastEipAddressResponse.setOrderId(_ctx.stringValue("AllocateAnycastEipAddressResponse.OrderId"));
 	 
 	 	return allocateAnycastEipAddressResponse;

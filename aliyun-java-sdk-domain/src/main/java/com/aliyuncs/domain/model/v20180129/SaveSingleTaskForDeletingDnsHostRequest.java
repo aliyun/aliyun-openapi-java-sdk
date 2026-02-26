@@ -33,7 +33,7 @@ public class SaveSingleTaskForDeletingDnsHostRequest extends RpcAcsRequest<SaveS
 
 	private String lang;
 	public SaveSingleTaskForDeletingDnsHostRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForDeletingDnsHost");
+		super("Domain", "2018-01-29", "SaveSingleTaskForDeletingDnsHost", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DescribeDiskWarningLineRequest extends RpcAcsRequest<DescribeDiskWa
 
 	private String clusterId;
 	public DescribeDiskWarningLineRequest() {
-		super("HBase", "2019-01-01", "DescribeDiskWarningLine", "hbase");
+		super("HBase", "2019-01-01", "DescribeDiskWarningLine");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

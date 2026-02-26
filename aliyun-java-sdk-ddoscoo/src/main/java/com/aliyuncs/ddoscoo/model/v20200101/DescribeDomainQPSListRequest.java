@@ -35,7 +35,7 @@ public class DescribeDomainQPSListRequest extends RpcAcsRequest<DescribeDomainQP
 
 	private Long interval;
 	public DescribeDomainQPSListRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDomainQPSList");
+		super("ddoscoo", "2020-01-01", "DescribeDomainQPSList", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

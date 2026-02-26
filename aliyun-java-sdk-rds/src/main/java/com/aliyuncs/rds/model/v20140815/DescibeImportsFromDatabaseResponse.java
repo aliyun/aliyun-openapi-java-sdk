@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
 	private Integer totalRecordCount;
 
 	private List<ImportResultFromDB> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -57,6 +49,14 @@ public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -77,31 +77,15 @@ public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 
 	public static class ImportResultFromDB {
 
-		private String incrementalImportingTime;
-
-		private Integer importId;
-
 		private String importDataStatus;
-
-		private String importDataType;
 
 		private String importDataStatusDescription;
 
-		public String getIncrementalImportingTime() {
-			return this.incrementalImportingTime;
-		}
+		private String importDataType;
 
-		public void setIncrementalImportingTime(String incrementalImportingTime) {
-			this.incrementalImportingTime = incrementalImportingTime;
-		}
+		private Integer importId;
 
-		public Integer getImportId() {
-			return this.importId;
-		}
-
-		public void setImportId(Integer importId) {
-			this.importId = importId;
-		}
+		private String incrementalImportingTime;
 
 		public String getImportDataStatus() {
 			return this.importDataStatus;
@@ -109,6 +93,14 @@ public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 
 		public void setImportDataStatus(String importDataStatus) {
 			this.importDataStatus = importDataStatus;
+		}
+
+		public String getImportDataStatusDescription() {
+			return this.importDataStatusDescription;
+		}
+
+		public void setImportDataStatusDescription(String importDataStatusDescription) {
+			this.importDataStatusDescription = importDataStatusDescription;
 		}
 
 		public String getImportDataType() {
@@ -119,12 +111,20 @@ public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 			this.importDataType = importDataType;
 		}
 
-		public String getImportDataStatusDescription() {
-			return this.importDataStatusDescription;
+		public Integer getImportId() {
+			return this.importId;
 		}
 
-		public void setImportDataStatusDescription(String importDataStatusDescription) {
-			this.importDataStatusDescription = importDataStatusDescription;
+		public void setImportId(Integer importId) {
+			this.importId = importId;
+		}
+
+		public String getIncrementalImportingTime() {
+			return this.incrementalImportingTime;
+		}
+
+		public void setIncrementalImportingTime(String incrementalImportingTime) {
+			this.incrementalImportingTime = incrementalImportingTime;
 		}
 	}
 

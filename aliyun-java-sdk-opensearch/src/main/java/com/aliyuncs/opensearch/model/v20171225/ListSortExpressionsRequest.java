@@ -29,7 +29,7 @@ public class ListSortExpressionsRequest extends RoaAcsRequest<ListSortExpression
 
 	private String appGroupIdentity;
 	public ListSortExpressionsRequest() {
-		super("OpenSearch", "2017-12-25", "ListSortExpressions", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListSortExpressions");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/sort-expressions");
 		setMethod(MethodType.GET);
 		try {

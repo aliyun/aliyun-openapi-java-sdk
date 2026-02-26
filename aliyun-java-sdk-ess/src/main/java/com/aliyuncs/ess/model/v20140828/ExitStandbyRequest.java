@@ -34,6 +34,8 @@ public class ExitStandbyRequest extends RpcAcsRequest<ExitStandbyResponse> {
 
 	private Long ownerId;
 
+	private Boolean async;
+
 	private List<String> instanceIds;
 	public ExitStandbyRequest() {
 		super("Ess", "2014-08-28", "ExitStandby", "ess");
@@ -85,6 +87,17 @@ public class ExitStandbyRequest extends RpcAcsRequest<ExitStandbyResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 

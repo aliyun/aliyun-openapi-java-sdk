@@ -29,7 +29,7 @@ public class UpdateABTestSceneRequest extends RoaAcsRequest<UpdateABTestSceneRes
 
 	private String appGroupIdentity;
 	public UpdateABTestSceneRequest() {
-		super("OpenSearch", "2017-12-25", "UpdateABTestScene", "opensearch");
+		super("OpenSearch", "2017-12-25", "UpdateABTestScene");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]");
 		setMethod(MethodType.PUT);
 		try {

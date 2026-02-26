@@ -29,25 +29,26 @@ public class ListFileSystemWithMountTargetsResponseUnmarshaller {
 	public static ListFileSystemWithMountTargetsResponse unmarshall(ListFileSystemWithMountTargetsResponse listFileSystemWithMountTargetsResponse, UnmarshallerContext _ctx) {
 		
 		listFileSystemWithMountTargetsResponse.setRequestId(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.RequestId"));
-		listFileSystemWithMountTargetsResponse.setTotalCount(_ctx.integerValue("ListFileSystemWithMountTargetsResponse.TotalCount"));
-		listFileSystemWithMountTargetsResponse.setPageNumber(_ctx.integerValue("ListFileSystemWithMountTargetsResponse.PageNumber"));
 		listFileSystemWithMountTargetsResponse.setPageSize(_ctx.integerValue("ListFileSystemWithMountTargetsResponse.PageSize"));
+		listFileSystemWithMountTargetsResponse.setPageNumber(_ctx.integerValue("ListFileSystemWithMountTargetsResponse.PageNumber"));
+		listFileSystemWithMountTargetsResponse.setTotalCount(_ctx.integerValue("ListFileSystemWithMountTargetsResponse.TotalCount"));
 
 		List<FileSystems> fileSystemList = new ArrayList<FileSystems>();
 		for (int i = 0; i < _ctx.lengthValue("ListFileSystemWithMountTargetsResponse.FileSystemList.Length"); i++) {
 			FileSystems fileSystems = new FileSystems();
+			fileSystems.setStatus(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].Status"));
+			fileSystems.setCapacity(_ctx.integerValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].Capacity"));
+			fileSystems.setCreateTime(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].CreateTime"));
+			fileSystems.setStorageType(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].StorageType"));
+			fileSystems.setBandWidth(_ctx.integerValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].BandWidth"));
 			fileSystems.setRegionId(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].RegionId"));
 			fileSystems.setFileSystemId(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].FileSystemId"));
 			fileSystems.setFileSystemType(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].FileSystemType"));
-			fileSystems.setProtocolType(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].ProtocolType"));
-			fileSystems.setCreateTime(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].CreateTime"));
-			fileSystems.setDestription(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].Destription"));
-			fileSystems.setStorageType(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].StorageType"));
 			fileSystems.setMeteredSize(_ctx.integerValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].MeteredSize"));
-			fileSystems.setCapacity(_ctx.integerValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].Capacity"));
 			fileSystems.setEncryptType(_ctx.integerValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].EncryptType"));
-			fileSystems.setBandWidth(_ctx.integerValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].BandWidth"));
-			fileSystems.setStatus(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].Status"));
+			fileSystems.setProtocolType(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].ProtocolType"));
+			fileSystems.setDestription(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].Destription"));
+			fileSystems.setVpcId(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].VpcId"));
 
 			List<Packages> packageList = new ArrayList<Packages>();
 			for (int j = 0; j < _ctx.lengthValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].PackageList.Length"); j++) {
@@ -61,12 +62,12 @@ public class ListFileSystemWithMountTargetsResponseUnmarshaller {
 			List<MountTargets> mountTargetList = new ArrayList<MountTargets>();
 			for (int j = 0; j < _ctx.lengthValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].MountTargetList.Length"); j++) {
 				MountTargets mountTargets = new MountTargets();
-				mountTargets.setMountTargetDomain(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].MountTargetList["+ j +"].MountTargetDomain"));
 				mountTargets.setStatus(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].MountTargetList["+ j +"].Status"));
-				mountTargets.setNetworkType(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].MountTargetList["+ j +"].NetworkType"));
-				mountTargets.setVswId(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].MountTargetList["+ j +"].VswId"));
 				mountTargets.setVpcId(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].MountTargetList["+ j +"].VpcId"));
+				mountTargets.setMountTargetDomain(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].MountTargetList["+ j +"].MountTargetDomain"));
 				mountTargets.setAccessGroup(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].MountTargetList["+ j +"].AccessGroup"));
+				mountTargets.setVswId(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].MountTargetList["+ j +"].VswId"));
+				mountTargets.setNetworkType(_ctx.stringValue("ListFileSystemWithMountTargetsResponse.FileSystemList["+ i +"].MountTargetList["+ j +"].NetworkType"));
 
 				mountTargetList.add(mountTargets);
 			}

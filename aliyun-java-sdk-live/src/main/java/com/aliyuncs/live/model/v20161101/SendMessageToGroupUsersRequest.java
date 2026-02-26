@@ -1,0 +1,140 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.live.model.v20161101;
+
+import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class SendMessageToGroupUsersRequest extends RpcAcsRequest<SendMessageToGroupUsersResponse> {
+	   
+
+	private String data;
+
+	private Boolean skipAudit;
+
+	private Integer type;
+
+	private String operatorUserId;
+
+	private List<String> receiverIdList;
+
+	private String groupId;
+
+	private String appId;
+	public SendMessageToGroupUsersRequest() {
+		super("live", "2016-11-01", "SendMessageToGroupUsers", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+		if(data != null){
+			putBodyParameter("Data", data);
+		}
+	}
+
+	public Boolean getSkipAudit() {
+		return this.skipAudit;
+	}
+
+	public void setSkipAudit(Boolean skipAudit) {
+		this.skipAudit = skipAudit;
+		if(skipAudit != null){
+			putQueryParameter("SkipAudit", skipAudit.toString());
+		}
+	}
+
+	public Integer getType() {
+		return this.type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+		if(type != null){
+			putBodyParameter("Type", type.toString());
+		}
+	}
+
+	public String getOperatorUserId() {
+		return this.operatorUserId;
+	}
+
+	public void setOperatorUserId(String operatorUserId) {
+		this.operatorUserId = operatorUserId;
+		if(operatorUserId != null){
+			putBodyParameter("OperatorUserId", operatorUserId);
+		}
+	}
+
+	public List<String> getReceiverIdList() {
+		return this.receiverIdList;
+	}
+
+	public void setReceiverIdList(List<String> receiverIdList) {
+		this.receiverIdList = receiverIdList;	
+		if (receiverIdList != null) {
+			String receiverIdListArrVal = "";
+			for(int depth1 = 0; depth1 < receiverIdList.size(); depth1++) {
+				receiverIdListArrVal += receiverIdList.get(depth1) + ",";
+			}
+			if (receiverIdListArrVal.length() > 0) {
+				receiverIdListArrVal = receiverIdListArrVal.substring(0, receiverIdListArrVal.length() - 1);
+			}
+			putBodyParameter("ReceiverIdList" , receiverIdListArrVal);
+		}	
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putBodyParameter("GroupId", groupId);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putBodyParameter("AppId", appId);
+		}
+	}
+
+	@Override
+	public Class<SendMessageToGroupUsersResponse> getResponseClass() {
+		return SendMessageToGroupUsersResponse.class;
+	}
+
+}

@@ -33,20 +33,20 @@ public class ListNodesNoPagingResponseUnmarshaller {
 		List<NodeInfo> nodes = new ArrayList<NodeInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListNodesNoPagingResponse.Nodes.Length"); i++) {
 			NodeInfo nodeInfo = new NodeInfo();
-			nodeInfo.setId(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Id"));
-			nodeInfo.setHostName(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].HostName"));
 			nodeInfo.setStatus(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Status"));
-			nodeInfo.setVersion(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Version"));
-			nodeInfo.setCreatedByEhpc(_ctx.booleanValue("ListNodesNoPagingResponse.Nodes["+ i +"].CreatedByEhpc"));
-			nodeInfo.setAddTime(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].AddTime"));
-			nodeInfo.setExpired(_ctx.booleanValue("ListNodesNoPagingResponse.Nodes["+ i +"].Expired"));
-			nodeInfo.setExpiredTime(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ExpiredTime"));
-			nodeInfo.setSpotStrategy(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].SpotStrategy"));
-			nodeInfo.setLockReason(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].LockReason"));
-			nodeInfo.setImageOwnerAlias(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ImageOwnerAlias"));
-			nodeInfo.setImageId(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ImageId"));
 			nodeInfo.setHtEnabled(_ctx.booleanValue("ListNodesNoPagingResponse.Nodes["+ i +"].HtEnabled"));
+			nodeInfo.setExpired(_ctx.booleanValue("ListNodesNoPagingResponse.Nodes["+ i +"].Expired"));
+			nodeInfo.setImageOwnerAlias(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ImageOwnerAlias"));
+			nodeInfo.setHostName(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].HostName"));
+			nodeInfo.setLockReason(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].LockReason"));
 			nodeInfo.setInstanceType(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].InstanceType"));
+			nodeInfo.setSpotStrategy(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].SpotStrategy"));
+			nodeInfo.setCreatedByEhpc(_ctx.booleanValue("ListNodesNoPagingResponse.Nodes["+ i +"].CreatedByEhpc"));
+			nodeInfo.setVersion(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Version"));
+			nodeInfo.setExpiredTime(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ExpiredTime"));
+			nodeInfo.setAddTime(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].AddTime"));
+			nodeInfo.setImageId(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ImageId"));
+			nodeInfo.setId(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].Id"));
 
 			List<String> roles = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListNodesNoPagingResponse.Nodes["+ i +"].Roles.Length"); j++) {
@@ -55,15 +55,15 @@ public class ListNodesNoPagingResponseUnmarshaller {
 			nodeInfo.setRoles(roles);
 
 			TotalResources totalResources = new TotalResources();
+			totalResources.setGpu(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].TotalResources.Gpu"));
 			totalResources.setCpu(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].TotalResources.Cpu"));
 			totalResources.setMemory(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].TotalResources.Memory"));
-			totalResources.setGpu(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].TotalResources.Gpu"));
 			nodeInfo.setTotalResources(totalResources);
 
 			UsedResources usedResources = new UsedResources();
+			usedResources.setGpu(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].UsedResources.Gpu"));
 			usedResources.setCpu(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].UsedResources.Cpu"));
 			usedResources.setMemory(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].UsedResources.Memory"));
-			usedResources.setGpu(_ctx.integerValue("ListNodesNoPagingResponse.Nodes["+ i +"].UsedResources.Gpu"));
 			nodeInfo.setUsedResources(usedResources);
 
 			nodes.add(nodeInfo);

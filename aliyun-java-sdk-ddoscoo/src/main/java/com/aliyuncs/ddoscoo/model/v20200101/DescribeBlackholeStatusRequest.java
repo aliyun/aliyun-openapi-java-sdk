@@ -28,7 +28,7 @@ public class DescribeBlackholeStatusRequest extends RpcAcsRequest<DescribeBlackh
 
 	private List<String> instanceIdss;
 	public DescribeBlackholeStatusRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeBlackholeStatus");
+		super("ddoscoo", "2020-01-01", "DescribeBlackholeStatus", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

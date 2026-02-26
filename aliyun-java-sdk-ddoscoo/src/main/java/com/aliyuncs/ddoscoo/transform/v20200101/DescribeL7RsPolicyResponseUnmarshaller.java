@@ -29,6 +29,7 @@ public class DescribeL7RsPolicyResponseUnmarshaller {
 		
 		describeL7RsPolicyResponse.setRequestId(_ctx.stringValue("DescribeL7RsPolicyResponse.RequestId"));
 		describeL7RsPolicyResponse.setProxyMode(_ctx.stringValue("DescribeL7RsPolicyResponse.ProxyMode"));
+		describeL7RsPolicyResponse.setUpstreamRetry(_ctx.integerValue("DescribeL7RsPolicyResponse.UpstreamRetry"));
 
 		List<AttributeItem> attributes = new ArrayList<AttributeItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeL7RsPolicyResponse.Attributes.Length"); i++) {
@@ -38,6 +39,12 @@ public class DescribeL7RsPolicyResponseUnmarshaller {
 
 			Attribute attribute = new Attribute();
 			attribute.setWeight(_ctx.integerValue("DescribeL7RsPolicyResponse.Attributes["+ i +"].Attribute.Weight"));
+			attribute.setConnectTimeout(_ctx.integerValue("DescribeL7RsPolicyResponse.Attributes["+ i +"].Attribute.ConnectTimeout"));
+			attribute.setFailTimeout(_ctx.integerValue("DescribeL7RsPolicyResponse.Attributes["+ i +"].Attribute.FailTimeout"));
+			attribute.setMaxFails(_ctx.integerValue("DescribeL7RsPolicyResponse.Attributes["+ i +"].Attribute.MaxFails"));
+			attribute.setMode(_ctx.stringValue("DescribeL7RsPolicyResponse.Attributes["+ i +"].Attribute.Mode"));
+			attribute.setReadTimeout(_ctx.integerValue("DescribeL7RsPolicyResponse.Attributes["+ i +"].Attribute.ReadTimeout"));
+			attribute.setSendTimeout(_ctx.integerValue("DescribeL7RsPolicyResponse.Attributes["+ i +"].Attribute.SendTimeout"));
 			attributeItem.setAttribute(attribute);
 
 			attributes.add(attributeItem);

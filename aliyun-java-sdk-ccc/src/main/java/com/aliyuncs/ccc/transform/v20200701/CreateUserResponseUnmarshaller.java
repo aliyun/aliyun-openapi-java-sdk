@@ -45,6 +45,8 @@ public class CreateUserResponseUnmarshaller {
 		data.setWorkMode(_ctx.stringValue("CreateUserResponse.Data.WorkMode"));
 		data.setMobile(_ctx.stringValue("CreateUserResponse.Data.Mobile"));
 		data.setUserId(_ctx.stringValue("CreateUserResponse.Data.UserId"));
+		data.setAvatarUrl(_ctx.stringValue("CreateUserResponse.Data.AvatarUrl"));
+		data.setNickname(_ctx.stringValue("CreateUserResponse.Data.Nickname"));
 		createUserResponse.setData(data);
 	 
 	 	return createUserResponse;

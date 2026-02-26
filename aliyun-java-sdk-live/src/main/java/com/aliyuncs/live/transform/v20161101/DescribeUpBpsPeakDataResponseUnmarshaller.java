@@ -31,10 +31,10 @@ public class DescribeUpBpsPeakDataResponseUnmarshaller {
 		List<DescribeUpPeakTraffic> describeUpPeakTraffics = new ArrayList<DescribeUpPeakTraffic>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics.Length"); i++) {
 			DescribeUpPeakTraffic describeUpPeakTraffic = new DescribeUpPeakTraffic();
-			describeUpPeakTraffic.setPeakTime(_ctx.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].PeakTime"));
 			describeUpPeakTraffic.setQueryTime(_ctx.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].QueryTime"));
-			describeUpPeakTraffic.setStatName(_ctx.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].StatName"));
 			describeUpPeakTraffic.setBandWidth(_ctx.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].BandWidth"));
+			describeUpPeakTraffic.setStatName(_ctx.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].StatName"));
+			describeUpPeakTraffic.setPeakTime(_ctx.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].PeakTime"));
 
 			describeUpPeakTraffics.add(describeUpPeakTraffic);
 		}

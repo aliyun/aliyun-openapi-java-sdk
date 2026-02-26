@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -29,6 +30,12 @@ public class CreateFlowLogRequest extends RpcAcsRequest<CreateFlowLogResponse> {
 
 	private String description;
 
+	private String resourceGroupId;
+
+	private String ipVersion;
+
+	private List<Tag> tags;
+
 	private String resourceId;
 
 	private String projectName;
@@ -38,6 +45,8 @@ public class CreateFlowLogRequest extends RpcAcsRequest<CreateFlowLogResponse> {
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private List<String> trafficPaths;
 
 	private Integer aggregationInterval;
 
@@ -77,6 +86,42 @@ public class CreateFlowLogRequest extends RpcAcsRequest<CreateFlowLogResponse> {
 		if(description != null){
 			putQueryParameter("Description", description);
 		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getIpVersion() {
+		return this.ipVersion;
+	}
+
+	public void setIpVersion(String ipVersion) {
+		this.ipVersion = ipVersion;
+		if(ipVersion != null){
+			putQueryParameter("IpVersion", ipVersion);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getResourceId() {
@@ -134,6 +179,19 @@ public class CreateFlowLogRequest extends RpcAcsRequest<CreateFlowLogResponse> {
 		}
 	}
 
+	public List<String> getTrafficPaths() {
+		return this.trafficPaths;
+	}
+
+	public void setTrafficPaths(List<String> trafficPaths) {
+		this.trafficPaths = trafficPaths;	
+		if (trafficPaths != null) {
+			for (int i = 0; i < trafficPaths.size(); i++) {
+				putQueryParameter("TrafficPath." + (i + 1) , trafficPaths.get(i));
+			}
+		}	
+	}
+
 	public Integer getAggregationInterval() {
 		return this.aggregationInterval;
 	}
@@ -186,6 +244,29 @@ public class CreateFlowLogRequest extends RpcAcsRequest<CreateFlowLogResponse> {
 		this.flowLogName = flowLogName;
 		if(flowLogName != null){
 			putQueryParameter("FlowLogName", flowLogName);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.dataworks_public.model.v20200518.ListProjectsResponse;
 import com.aliyuncs.dataworks_public.model.v20200518.ListProjectsResponse.PageResult;
 import com.aliyuncs.dataworks_public.model.v20200518.ListProjectsResponse.PageResult.Project;
+import com.aliyuncs.dataworks_public.model.v20200518.ListProjectsResponse.PageResult.Project.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +45,21 @@ public class ListProjectsResponseUnmarshaller {
 			project.setProjectId(_ctx.longValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ProjectId"));
 			project.setProjectDescription(_ctx.stringValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ProjectDescription"));
 			project.setProjectOwnerBaseId(_ctx.stringValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ProjectOwnerBaseId"));
+			project.setResourceManagerResourceGroupId(_ctx.stringValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ResourceManagerResourceGroupId"));
+			project.setDisableDevelopment(_ctx.booleanValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].DisableDevelopment"));
+			project.setUseProxyOdpsAccount(_ctx.booleanValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].UseProxyOdpsAccount"));
+			project.setTablePrivacyMode(_ctx.integerValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].TablePrivacyMode"));
+			project.setIsDefault(_ctx.integerValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].IsDefault"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			project.setTags(tags);
 
 			projectList.add(project);
 		}

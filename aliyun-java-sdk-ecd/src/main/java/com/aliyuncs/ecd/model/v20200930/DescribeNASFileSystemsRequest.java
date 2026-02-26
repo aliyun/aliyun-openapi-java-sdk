@@ -28,13 +28,15 @@ public class DescribeNASFileSystemsRequest extends RpcAcsRequest<DescribeNASFile
 
 	private String officeSiteId;
 
+	private Boolean matchCompatibleProfile;
+
 	private String nextToken;
 
 	private Integer maxResults;
 
 	private List<String> fileSystemIds;
 	public DescribeNASFileSystemsRequest() {
-		super("ecd", "2020-09-30", "DescribeNASFileSystems");
+		super("ecd", "2020-09-30", "DescribeNASFileSystems", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,6 +52,17 @@ public class DescribeNASFileSystemsRequest extends RpcAcsRequest<DescribeNASFile
 		this.officeSiteId = officeSiteId;
 		if(officeSiteId != null){
 			putQueryParameter("OfficeSiteId", officeSiteId);
+		}
+	}
+
+	public Boolean getMatchCompatibleProfile() {
+		return this.matchCompatibleProfile;
+	}
+
+	public void setMatchCompatibleProfile(Boolean matchCompatibleProfile) {
+		this.matchCompatibleProfile = matchCompatibleProfile;
+		if(matchCompatibleProfile != null){
+			putQueryParameter("MatchCompatibleProfile", matchCompatibleProfile.toString());
 		}
 	}
 

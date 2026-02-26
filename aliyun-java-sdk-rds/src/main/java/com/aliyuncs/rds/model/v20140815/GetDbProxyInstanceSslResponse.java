@@ -47,6 +47,8 @@ public class GetDbProxyInstanceSslResponse extends AcsResponse {
 
 	public static class DbProxyCertListItemsItem {
 
+		private String certCommonName;
+
 		private String dbInstanceName;
 
 		private String endpointName;
@@ -55,7 +57,13 @@ public class GetDbProxyInstanceSslResponse extends AcsResponse {
 
 		private String sslExpiredTime;
 
-		private String certCommonName;
+		public String getCertCommonName() {
+			return this.certCommonName;
+		}
+
+		public void setCertCommonName(String certCommonName) {
+			this.certCommonName = certCommonName;
+		}
 
 		public String getDbInstanceName() {
 			return this.dbInstanceName;
@@ -87,14 +95,6 @@ public class GetDbProxyInstanceSslResponse extends AcsResponse {
 
 		public void setSslExpiredTime(String sslExpiredTime) {
 			this.sslExpiredTime = sslExpiredTime;
-		}
-
-		public String getCertCommonName() {
-			return this.certCommonName;
-		}
-
-		public void setCertCommonName(String certCommonName) {
-			this.certCommonName = certCommonName;
 		}
 	}
 

@@ -27,7 +27,9 @@ import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.AudioStream;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.SubtitleStream;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStream;
+import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStream.DolbyVision;
 import com.aliyuncs.mts.model.v20140618.SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStream.NetworkCost;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -67,6 +69,7 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 		properties.setBitrate(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Bitrate"));
 		properties.setFileFormat(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.FileFormat"));
 		properties.setFileSize(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.FileSize"));
+		properties.setMD5(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.MD5"));
 
 		Streams streams = new Streams();
 
@@ -99,12 +102,18 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 			videoStream.setColorRange(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].ColorRange"));
 			videoStream.setColorTransfer(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].ColorTransfer"));
 			videoStream.setColorPrimaries(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].ColorPrimaries"));
+			videoStream.setDurationInaccurate(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].DurationInaccurate"));
 
 			NetworkCost networkCost = new NetworkCost();
 			networkCost.setPreloadTime(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].NetworkCost.PreloadTime"));
 			networkCost.setAvgBitrate(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].NetworkCost.AvgBitrate"));
 			networkCost.setCostBandwidth(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].NetworkCost.CostBandwidth"));
 			videoStream.setNetworkCost(networkCost);
+
+			DolbyVision dolbyVision = new DolbyVision();
+			dolbyVision.setProfile(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].DolbyVision.Profile"));
+			dolbyVision.setLevel(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].DolbyVision.Level"));
+			videoStream.setDolbyVision(dolbyVision);
 
 			videoStreamList.add(videoStream);
 		}
@@ -129,6 +138,7 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 			audioStream.setDuration(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.AudioStreamList["+ i +"].Duration"));
 			audioStream.setCodecTag(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.AudioStreamList["+ i +"].CodecTag"));
 			audioStream.setCodecTimeBase(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.AudioStreamList["+ i +"].CodecTimeBase"));
+			audioStream.setDurationInaccurate(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.AudioStreamList["+ i +"].DurationInaccurate"));
 
 			audioStreamList.add(audioStream);
 		}
@@ -162,6 +172,7 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 		format.setDuration(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Format.Duration"));
 		format.setBitrate(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Format.Bitrate"));
 		format.setFormatName(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Format.FormatName"));
+		format.setTags(_ctx.mapValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Format.Tags"));
 		properties.setFormat(format);
 		mediaInfoJob.setProperties(properties);
 		submitMediaInfoJobResponse.setMediaInfoJob(mediaInfoJob);

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScdnUserProtectInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer serviceDDoS;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Integer getServiceDDoS() {
 		return this.serviceDDoS;
@@ -42,6 +34,14 @@ public class DescribeScdnUserProtectInfoResponse extends AcsResponse {
 
 	public void setServiceDDoS(Integer serviceDDoS) {
 		this.serviceDDoS = serviceDDoS;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

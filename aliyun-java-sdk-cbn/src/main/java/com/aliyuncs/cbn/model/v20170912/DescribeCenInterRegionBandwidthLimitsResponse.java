@@ -93,6 +93,8 @@ public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 
 		private Long bandwidthLimit;
 
+		private String bandwidthType;
+
 		public String getTransitRouterAttachmentId() {
 			return this.transitRouterAttachmentId;
 		}
@@ -155,6 +157,14 @@ public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 
 		public void setBandwidthLimit(Long bandwidthLimit) {
 			this.bandwidthLimit = bandwidthLimit;
+		}
+
+		public String getBandwidthType() {
+			return this.bandwidthType;
+		}
+
+		public void setBandwidthType(String bandwidthType) {
+			this.bandwidthType = bandwidthType;
 		}
 	}
 

@@ -46,17 +46,9 @@ public class TranslateMedResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String text;
-
 		private Long words;
 
-		public String getText() {
-			return this.text;
-		}
-
-		public void setText(String text) {
-			this.text = text;
-		}
+		private String text;
 
 		public Long getWords() {
 			return this.words;
@@ -64,6 +56,14 @@ public class TranslateMedResponse extends AcsResponse {
 
 		public void setWords(Long words) {
 			this.words = words;
+		}
+
+		public String getText() {
+			return this.text;
+		}
+
+		public void setText(String text) {
+			this.text = text;
 		}
 	}
 

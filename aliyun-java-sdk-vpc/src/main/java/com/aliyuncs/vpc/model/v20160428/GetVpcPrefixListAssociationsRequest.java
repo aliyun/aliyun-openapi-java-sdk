@@ -27,15 +27,15 @@ public class GetVpcPrefixListAssociationsRequest extends RpcAcsRequest<GetVpcPre
 
 	private Long resourceOwnerId;
 
+	private String prefixListId;
+
+	private String nextToken;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String prefixListId;
-
-	private String nextToken;
 
 	private Long maxResults;
 	public GetVpcPrefixListAssociationsRequest() {
@@ -55,6 +55,28 @@ public class GetVpcPrefixListAssociationsRequest extends RpcAcsRequest<GetVpcPre
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPrefixListId() {
+		return this.prefixListId;
+	}
+
+	public void setPrefixListId(String prefixListId) {
+		this.prefixListId = prefixListId;
+		if(prefixListId != null){
+			putQueryParameter("PrefixListId", prefixListId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -88,28 +110,6 @@ public class GetVpcPrefixListAssociationsRequest extends RpcAcsRequest<GetVpcPre
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getPrefixListId() {
-		return this.prefixListId;
-	}
-
-	public void setPrefixListId(String prefixListId) {
-		this.prefixListId = prefixListId;
-		if(prefixListId != null){
-			putQueryParameter("PrefixListId", prefixListId);
-		}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
 		}
 	}
 

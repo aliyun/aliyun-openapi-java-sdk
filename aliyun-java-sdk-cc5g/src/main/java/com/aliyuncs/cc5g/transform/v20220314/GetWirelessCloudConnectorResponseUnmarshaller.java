@@ -37,6 +37,15 @@ public class GetWirelessCloudConnectorResponseUnmarshaller {
 		getWirelessCloudConnectorResponse.setDataPackageType(_ctx.stringValue("GetWirelessCloudConnectorResponse.DataPackageType"));
 		getWirelessCloudConnectorResponse.setCardCount(_ctx.stringValue("GetWirelessCloudConnectorResponse.CardCount"));
 		getWirelessCloudConnectorResponse.setCreateTime(_ctx.stringValue("GetWirelessCloudConnectorResponse.CreateTime"));
+		getWirelessCloudConnectorResponse.setBusinessType(_ctx.stringValue("GetWirelessCloudConnectorResponse.BusinessType"));
+		getWirelessCloudConnectorResponse.setWirelessCloudConnectorGroupId(_ctx.stringValue("GetWirelessCloudConnectorResponse.WirelessCloudConnectorGroupId"));
+		getWirelessCloudConnectorResponse.setServiceType(_ctx.stringValue("GetWirelessCloudConnectorResponse.ServiceType"));
+
+		List<String> features = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetWirelessCloudConnectorResponse.Features.Length"); i++) {
+			features.add(_ctx.stringValue("GetWirelessCloudConnectorResponse.Features["+ i +"]"));
+		}
+		getWirelessCloudConnectorResponse.setFeatures(features);
 
 		List<NetLink> netLinks = new ArrayList<NetLink>();
 		for (int i = 0; i < _ctx.lengthValue("GetWirelessCloudConnectorResponse.NetLinks.Length"); i++) {
@@ -46,10 +55,12 @@ public class GetWirelessCloudConnectorResponseUnmarshaller {
 			netLink.setName(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].Name"));
 			netLink.setDescription(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].Description"));
 			netLink.setStatus(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].Status"));
+			netLink.setType(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].Type"));
 			netLink.setAPN(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].APN"));
 			netLink.setISP(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].ISP"));
 			netLink.setVpcId(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].VpcId"));
 			netLink.setCreateTime(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].CreateTime"));
+			netLink.setGrantAliUid(_ctx.stringValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].GrantAliUid"));
 
 			List<String> vSwitchs = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetWirelessCloudConnectorResponse.NetLinks["+ i +"].VSwitchs.Length"); j++) {

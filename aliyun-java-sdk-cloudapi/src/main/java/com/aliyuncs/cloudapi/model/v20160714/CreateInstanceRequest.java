@@ -15,6 +15,7 @@
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudapi.Endpoint;
 
@@ -23,25 +24,27 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
-	
-	public CreateInstanceRequest() {
-		super("CloudAPI", "2016-07-14", "CreateInstance", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private Boolean autoPay;
+	   
 
 	private String instanceSpec;
 
+	private String instanceCidr;
+
 	private String httpsPolicy;
+
+	private Integer duration;
+
+	private String instanceType;
+
+	private List<Tag> tags;
+
+	private Boolean autoPay;
+
+	private String userVpcId;
 
 	private String token;
 
-	private Integer duration;
+	private List<ZoneVSwitchSecurityGroup> zoneVSwitchSecurityGroups;
 
 	private String instanceName;
 
@@ -50,16 +53,13 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private String chargeType;
 
 	private String pricingCycle;
-
-	public Boolean getAutoPay() {
-		return this.autoPay;
-	}
-
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
-		}
+	public CreateInstanceRequest() {
+		super("CloudAPI", "2016-07-14", "CreateInstance", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getInstanceSpec() {
@@ -70,6 +70,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.instanceSpec = instanceSpec;
 		if(instanceSpec != null){
 			putQueryParameter("InstanceSpec", instanceSpec);
+		}
+	}
+
+	public String getInstanceCidr() {
+		return this.instanceCidr;
+	}
+
+	public void setInstanceCidr(String instanceCidr) {
+		this.instanceCidr = instanceCidr;
+		if(instanceCidr != null){
+			putQueryParameter("InstanceCidr", instanceCidr);
 		}
 	}
 
@@ -84,6 +95,64 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getUserVpcId() {
+		return this.userVpcId;
+	}
+
+	public void setUserVpcId(String userVpcId) {
+		this.userVpcId = userVpcId;
+		if(userVpcId != null){
+			putQueryParameter("UserVpcId", userVpcId);
+		}
+	}
+
 	public String getToken() {
 		return this.token;
 	}
@@ -95,15 +164,20 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public Integer getDuration() {
-		return this.duration;
+	public List<ZoneVSwitchSecurityGroup> getZoneVSwitchSecurityGroups() {
+		return this.zoneVSwitchSecurityGroups;
 	}
 
-	public void setDuration(Integer duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration.toString());
-		}
+	public void setZoneVSwitchSecurityGroups(List<ZoneVSwitchSecurityGroup> zoneVSwitchSecurityGroups) {
+		this.zoneVSwitchSecurityGroups = zoneVSwitchSecurityGroups;	
+		if (zoneVSwitchSecurityGroups != null) {
+			for (int depth1 = 0; depth1 < zoneVSwitchSecurityGroups.size(); depth1++) {
+				putQueryParameter("ZoneVSwitchSecurityGroup." + (depth1 + 1) + ".VSwitchId" , zoneVSwitchSecurityGroups.get(depth1).getVSwitchId());
+				putQueryParameter("ZoneVSwitchSecurityGroup." + (depth1 + 1) + ".CidrBlock" , zoneVSwitchSecurityGroups.get(depth1).getCidrBlock());
+				putQueryParameter("ZoneVSwitchSecurityGroup." + (depth1 + 1) + ".SecurityGroupId" , zoneVSwitchSecurityGroups.get(depth1).getSecurityGroupId());
+				putQueryParameter("ZoneVSwitchSecurityGroup." + (depth1 + 1) + ".ZoneId" , zoneVSwitchSecurityGroups.get(depth1).getZoneId());
+			}
+		}	
 	}
 
 	public String getInstanceName() {
@@ -147,6 +221,72 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.pricingCycle = pricingCycle;
 		if(pricingCycle != null){
 			putQueryParameter("PricingCycle", pricingCycle);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
+	public static class ZoneVSwitchSecurityGroup {
+
+		private String vSwitchId;
+
+		private String cidrBlock;
+
+		private String securityGroupId;
+
+		private String zoneId;
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getCidrBlock() {
+			return this.cidrBlock;
+		}
+
+		public void setCidrBlock(String cidrBlock) {
+			this.cidrBlock = cidrBlock;
+		}
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 	}
 

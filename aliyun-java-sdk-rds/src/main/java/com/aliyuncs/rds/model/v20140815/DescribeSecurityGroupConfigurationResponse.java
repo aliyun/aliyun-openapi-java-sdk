@@ -59,9 +59,11 @@ public class DescribeSecurityGroupConfigurationResponse extends AcsResponse {
 
 		private String networkType;
 
+		private String regionId;
+
 		private String securityGroupId;
 
-		private String regionId;
+		private String securityGroupName;
 
 		public String getNetworkType() {
 			return this.networkType;
@@ -69,6 +71,14 @@ public class DescribeSecurityGroupConfigurationResponse extends AcsResponse {
 
 		public void setNetworkType(String networkType) {
 			this.networkType = networkType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getSecurityGroupId() {
@@ -79,12 +89,12 @@ public class DescribeSecurityGroupConfigurationResponse extends AcsResponse {
 			this.securityGroupId = securityGroupId;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getSecurityGroupName() {
+			return this.securityGroupName;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setSecurityGroupName(String securityGroupName) {
+			this.securityGroupName = securityGroupName;
 		}
 	}
 

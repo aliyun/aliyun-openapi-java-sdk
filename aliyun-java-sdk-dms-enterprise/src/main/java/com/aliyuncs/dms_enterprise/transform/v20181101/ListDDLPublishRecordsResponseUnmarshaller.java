@@ -45,6 +45,7 @@ public class ListDDLPublishRecordsResponseUnmarshaller {
 			dDLPublishRecord.setRiskLevel(_ctx.stringValue("ListDDLPublishRecordsResponse.DDLPublishRecordList["+ i +"].RiskLevel"));
 			dDLPublishRecord.setStatusDesc(_ctx.stringValue("ListDDLPublishRecordsResponse.DDLPublishRecordList["+ i +"].StatusDesc"));
 			dDLPublishRecord.setWorkflowInstanceId(_ctx.longValue("ListDDLPublishRecordsResponse.DDLPublishRecordList["+ i +"].WorkflowInstanceId"));
+			dDLPublishRecord.setComment(_ctx.stringValue("ListDDLPublishRecordsResponse.DDLPublishRecordList["+ i +"].Comment"));
 
 			List<PublishTaskInfo> publishTaskInfoList = new ArrayList<PublishTaskInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListDDLPublishRecordsResponse.DDLPublishRecordList["+ i +"].PublishTaskInfoList.Length"); j++) {

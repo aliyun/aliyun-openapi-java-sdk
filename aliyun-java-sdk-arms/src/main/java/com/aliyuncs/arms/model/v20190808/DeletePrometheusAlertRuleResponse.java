@@ -28,6 +28,10 @@ public class DeletePrometheusAlertRuleResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long code;
+
+	private String message;
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -42,6 +46,22 @@ public class DeletePrometheusAlertRuleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getCode() {
+		return this.code;
+	}
+
+	public void setCode(Long code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

@@ -16,6 +16,7 @@ package com.aliyuncs.viapi_regen.model.v20211119;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.viapi_regen.Endpoint;
 
 /**
  * @author auto create
@@ -28,10 +29,16 @@ public class ListTrainTasksRequest extends RpcAcsRequest<ListTrainTasksResponse>
 
 	private Long currentPage;
 
+	private String status;
+
 	private Long workspaceId;
 	public ListTrainTasksRequest() {
-		super("viapi-regen", "2021-11-19", "ListTrainTasks", "viapi-regen");
+		super("viapi-regen", "2021-11-19", "ListTrainTasks", "selflearning");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getPageSize() {
@@ -53,6 +60,17 @@ public class ListTrainTasksRequest extends RpcAcsRequest<ListTrainTasksResponse>
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putBodyParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putBodyParameter("Status", status);
 		}
 	}
 

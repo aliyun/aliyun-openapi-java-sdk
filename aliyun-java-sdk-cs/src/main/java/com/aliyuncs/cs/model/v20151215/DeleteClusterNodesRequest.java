@@ -25,8 +25,6 @@ import com.aliyuncs.cs.Endpoint;
 public class DeleteClusterNodesRequest extends RoaAcsRequest<DeleteClusterNodesResponse> {
 	   
 
-	private String release_node;
-
 	private String clusterId;
 	public DeleteClusterNodesRequest() {
 		super("CS", "2015-12-15", "DeleteClusterNodes");
@@ -36,17 +34,6 @@ public class DeleteClusterNodesRequest extends RoaAcsRequest<DeleteClusterNodesR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getRelease_node() {
-		return this.release_node;
-	}
-
-	public void setRelease_node(String release_node) {
-		this.release_node = release_node;
-		if(release_node != null){
-			putBodyParameter("release_node", release_node);
-		}
 	}
 
 	public String getClusterId() {

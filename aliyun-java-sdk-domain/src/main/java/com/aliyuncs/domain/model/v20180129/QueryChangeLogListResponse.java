@@ -129,6 +129,8 @@ public class QueryChangeLogListResponse extends AcsResponse {
 
 		private String details;
 
+		private String remark;
+
 		public String getOperation() {
 			return this.operation;
 		}
@@ -175,6 +177,14 @@ public class QueryChangeLogListResponse extends AcsResponse {
 
 		public void setDetails(String details) {
 			this.details = details;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 	}
 

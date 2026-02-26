@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +25,25 @@ import com.aliyuncs.http.MethodType;
 public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsResponse> {
 	   
 
+	private String backupJobId;
+
 	private Long resourceOwnerId;
 
 	private String startTime;
 
+	private String srcRegion;
+
 	private Integer pageNumber;
 
-	private String securityToken;
+	private String resourceGroupId;
 
 	private Integer pageSize;
 
 	private String dBInstanceId;
 
 	private String nodeId;
+
+	private String destRegion;
 
 	private String resourceOwnerAccount;
 
@@ -50,6 +57,21 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 	public DescribeBackupsRequest() {
 		super("Dds", "2015-12-01", "DescribeBackups", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getBackupJobId() {
+		return this.backupJobId;
+	}
+
+	public void setBackupJobId(String backupJobId) {
+		this.backupJobId = backupJobId;
+		if(backupJobId != null){
+			putQueryParameter("BackupJobId", backupJobId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -74,6 +96,17 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
+	public String getSrcRegion() {
+		return this.srcRegion;
+	}
+
+	public void setSrcRegion(String srcRegion) {
+		this.srcRegion = srcRegion;
+		if(srcRegion != null){
+			putQueryParameter("SrcRegion", srcRegion);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -85,14 +118,14 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -126,6 +159,17 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.nodeId = nodeId;
 		if(nodeId != null){
 			putQueryParameter("NodeId", nodeId);
+		}
+	}
+
+	public String getDestRegion() {
+		return this.destRegion;
+	}
+
+	public void setDestRegion(String destRegion) {
+		this.destRegion = destRegion;
+		if(destRegion != null){
+			putQueryParameter("DestRegion", destRegion);
 		}
 	}
 

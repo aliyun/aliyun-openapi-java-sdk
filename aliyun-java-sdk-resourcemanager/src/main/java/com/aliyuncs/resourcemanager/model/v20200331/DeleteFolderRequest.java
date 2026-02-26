@@ -28,7 +28,7 @@ public class DeleteFolderRequest extends RpcAcsRequest<DeleteFolderResponse> {
 
 	private String folderId;
 	public DeleteFolderRequest() {
-		super("ResourceManager", "2020-03-31", "DeleteFolder");
+		super("ResourceManager", "2020-03-31", "DeleteFolder", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

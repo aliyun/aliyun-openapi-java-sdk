@@ -98,6 +98,8 @@ public class BatchCreateModelResponse extends AcsResponse {
 
 			private String visibility;
 
+			private String modelDigest;
+
 			private List<Map<Object,Object>> attributes;
 
 			public String getAppId() {
@@ -250,6 +252,14 @@ public class BatchCreateModelResponse extends AcsResponse {
 
 			public void setVisibility(String visibility) {
 				this.visibility = visibility;
+			}
+
+			public String getModelDigest() {
+				return this.modelDigest;
+			}
+
+			public void setModelDigest(String modelDigest) {
+				this.modelDigest = modelDigest;
 			}
 
 			public List<Map<Object,Object>> getAttributes() {

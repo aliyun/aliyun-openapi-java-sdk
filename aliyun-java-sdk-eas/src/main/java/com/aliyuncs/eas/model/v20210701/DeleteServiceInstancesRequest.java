@@ -25,11 +25,15 @@ import com.aliyuncs.eas.Endpoint;
 public class DeleteServiceInstancesRequest extends RoaAcsRequest<DeleteServiceInstancesResponse> {
 	   
 
+	private String container;
+
 	private String instanceList;
 
 	private String serviceName;
 
 	private String clusterId;
+
+	private Boolean softRestart;
 	public DeleteServiceInstancesRequest() {
 		super("eas", "2021-07-01", "DeleteServiceInstances", "eas");
 		setUriPattern("/api/v2/services/[ClusterId]/[ServiceName]/instances");
@@ -38,6 +42,17 @@ public class DeleteServiceInstancesRequest extends RoaAcsRequest<DeleteServiceIn
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getContainer() {
+		return this.container;
+	}
+
+	public void setContainer(String container) {
+		this.container = container;
+		if(container != null){
+			putQueryParameter("Container", container);
+		}
 	}
 
 	public String getInstanceList() {
@@ -70,6 +85,17 @@ public class DeleteServiceInstancesRequest extends RoaAcsRequest<DeleteServiceIn
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putPathParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Boolean getSoftRestart() {
+		return this.softRestart;
+	}
+
+	public void setSoftRestart(Boolean softRestart) {
+		this.softRestart = softRestart;
+		if(softRestart != null){
+			putQueryParameter("SoftRestart", softRestart.toString());
 		}
 	}
 

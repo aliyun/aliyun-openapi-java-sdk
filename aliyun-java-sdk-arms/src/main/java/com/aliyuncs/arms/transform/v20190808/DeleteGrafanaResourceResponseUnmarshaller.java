@@ -24,6 +24,8 @@ public class DeleteGrafanaResourceResponseUnmarshaller {
 		
 		deleteGrafanaResourceResponse.setRequestId(_ctx.stringValue("DeleteGrafanaResourceResponse.RequestId"));
 		deleteGrafanaResourceResponse.setData(_ctx.stringValue("DeleteGrafanaResourceResponse.Data"));
+		deleteGrafanaResourceResponse.setCode(_ctx.integerValue("DeleteGrafanaResourceResponse.Code"));
+		deleteGrafanaResourceResponse.setMessage(_ctx.stringValue("DeleteGrafanaResourceResponse.Message"));
 	 
 	 	return deleteGrafanaResourceResponse;
 	}

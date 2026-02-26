@@ -25,15 +25,15 @@ import com.aliyuncs.mse.Endpoint;
 public class ImportNacosConfigRequest extends RpcAcsRequest<ImportNacosConfigResponse> {
 	   
 
-	private String instanceId;
-
 	private String namespaceId;
+
+	private String policy;
+
+	private String instanceId;
 
 	private String acceptLanguage;
 
 	private String fileUrl;
-
-	private String policy;
 	public ImportNacosConfigRequest() {
 		super("mse", "2019-05-31", "ImportNacosConfig", "mse");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class ImportNacosConfigRequest extends RpcAcsRequest<ImportNacosConfigRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getNamespaceId() {
@@ -62,6 +51,28 @@ public class ImportNacosConfigRequest extends RpcAcsRequest<ImportNacosConfigRes
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class ImportNacosConfigRequest extends RpcAcsRequest<ImportNacosConfigRes
 		this.fileUrl = fileUrl;
 		if(fileUrl != null){
 			putQueryParameter("FileUrl", fileUrl);
-		}
-	}
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
 		}
 	}
 

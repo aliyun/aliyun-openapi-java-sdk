@@ -12,21 +12,53 @@ defaults:
   run:
     shell: bash
 
+permissions:
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         java: [ 8, 11 ]
     name: Java ${{ matrix.Java }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Setup java
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v4
       with:
         distribution: 'zulu'
         java-version: ${{ matrix.java }}
     - name: Test with Maven
       run: mvn test -B -f ./aliyun-java-sdk-core/pom.xml
-    - name: Post test coverage
-      run: bash <(curl -s https://codecov.io/bash) -cF java
+    - name: Upload Coverage Report
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }} # required
+    - name: Setup OIDC
+      run: npm install @actions/core@1.6.0 @actions/http-client
+    - name: Get Id Token
+      uses: actions/github-script@v6
+      id: idtoken
+      with:
+        script: |
+          const coreDemo = require('@actions/core');
+          const idToken = await coreDemo.getIDToken('sts.aliyuncs.com');
+          const fsx = require('fs/promises');
+          await fsx.writeFile('/tmp/oidc_token', idToken);
+    - name: Integration Test
+      if: ${{ env.ACCESS_KEY_ID != '' }}
+      run: |
+        npm i o_o -g
+        o_o &
+        make functional-test
+      env:
+        ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+        ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
+        RAMAccessKeyId: ${{ secrets.RAM_ACCESS_KEY_ID }}
+        RAMAccessKeySecret: ${{ secrets.RAM_ACCESS_KEY_SECRET }}
+        roleArn: ${{ secrets.ROLE_ARN }}
+        ALIBABA_CLOUD_OIDC_PROVIDER_ARN: ${{ secrets.OIDC_PROVIDER_ARN }}
+        ALIBABA_CLOUD_OIDC_TOKEN_FILE: "/tmp/oidc_token"
+        ALIBABA_CLOUD_ROLE_ARN: ${{ secrets.OIDC_ROLE_ARN }}

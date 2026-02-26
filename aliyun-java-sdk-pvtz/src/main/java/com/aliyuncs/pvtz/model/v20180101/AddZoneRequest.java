@@ -25,15 +25,21 @@ import com.aliyuncs.pvtz.Endpoint;
 public class AddZoneRequest extends RpcAcsRequest<AddZoneResponse> {
 	   
 
+	private String clientToken;
+
+	private String resourceGroupId;
+
+	private String lang;
+
 	private String proxyPattern;
 
 	private String zoneName;
 
-	private String resourceGroupId;
+	private String zoneTag;
 
-	private String userClientIp;
+	private String dnsGroup;
 
-	private String lang;
+	private String zoneType;
 	public AddZoneRequest() {
 		super("pvtz", "2018-01-01", "AddZone", "pvtz");
 		setMethod(MethodType.POST);
@@ -41,6 +47,39 @@ public class AddZoneRequest extends RpcAcsRequest<AddZoneResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public String getProxyPattern() {
@@ -65,36 +104,36 @@ public class AddZoneRequest extends RpcAcsRequest<AddZoneResponse> {
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getZoneTag() {
+		return this.zoneTag;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setZoneTag(String zoneTag) {
+		this.zoneTag = zoneTag;
+		if(zoneTag != null){
+			putQueryParameter("ZoneTag", zoneTag);
 		}
 	}
 
-	public String getUserClientIp() {
-		return this.userClientIp;
+	public String getDnsGroup() {
+		return this.dnsGroup;
 	}
 
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
+	public void setDnsGroup(String dnsGroup) {
+		this.dnsGroup = dnsGroup;
+		if(dnsGroup != null){
+			putQueryParameter("DnsGroup", dnsGroup);
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public String getZoneType() {
+		return this.zoneType;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
+	public void setZoneType(String zoneType) {
+		this.zoneType = zoneType;
+		if(zoneType != null){
+			putQueryParameter("ZoneType", zoneType);
 		}
 	}
 

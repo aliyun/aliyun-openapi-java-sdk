@@ -27,32 +27,32 @@ public class DescribeCrossRegionBackupDBInstanceResponseUnmarshaller {
 	public static DescribeCrossRegionBackupDBInstanceResponse unmarshall(DescribeCrossRegionBackupDBInstanceResponse describeCrossRegionBackupDBInstanceResponse, UnmarshallerContext _ctx) {
 		
 		describeCrossRegionBackupDBInstanceResponse.setRequestId(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.RequestId"));
-		describeCrossRegionBackupDBInstanceResponse.setTotalRecords(_ctx.integerValue("DescribeCrossRegionBackupDBInstanceResponse.TotalRecords"));
 		describeCrossRegionBackupDBInstanceResponse.setItemsNumbers(_ctx.integerValue("DescribeCrossRegionBackupDBInstanceResponse.ItemsNumbers"));
-		describeCrossRegionBackupDBInstanceResponse.setPageSize(_ctx.integerValue("DescribeCrossRegionBackupDBInstanceResponse.PageSize"));
 		describeCrossRegionBackupDBInstanceResponse.setPageNumber(_ctx.integerValue("DescribeCrossRegionBackupDBInstanceResponse.PageNumber"));
+		describeCrossRegionBackupDBInstanceResponse.setPageSize(_ctx.integerValue("DescribeCrossRegionBackupDBInstanceResponse.PageSize"));
 		describeCrossRegionBackupDBInstanceResponse.setRegionId(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.RegionId"));
+		describeCrossRegionBackupDBInstanceResponse.setTotalRecords(_ctx.integerValue("DescribeCrossRegionBackupDBInstanceResponse.TotalRecords"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCrossRegionBackupDBInstanceResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setRelServiceId(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].RelServiceId"));
-			item.setLogBackupEnabledTime(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].LogBackupEnabledTime"));
-			item.setDBInstanceStatusDesc(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].DBInstanceStatusDesc"));
-			item.setRelService(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].RelService"));
 			item.setBackupEnabled(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].BackupEnabled"));
+			item.setBackupEnabledTime(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].BackupEnabledTime"));
+			item.setCrossBackupRegion(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].CrossBackupRegion"));
+			item.setCrossBackupType(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].CrossBackupType"));
+			item.setDBInstanceDescription(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].DBInstanceDescription"));
+			item.setDBInstanceId(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].DBInstanceId"));
 			item.setDBInstanceStatus(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].DBInstanceStatus"));
-			item.setLockMode(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].LockMode"));
+			item.setDBInstanceStatusDesc(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].DBInstanceStatusDesc"));
+			item.setEngine(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].Engine"));
 			item.setEngineVersion(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].EngineVersion"));
+			item.setLockMode(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].LockMode"));
 			item.setLogBackupEnabled(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].LogBackupEnabled"));
+			item.setLogBackupEnabledTime(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].LogBackupEnabledTime"));
+			item.setRelService(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].RelService"));
+			item.setRelServiceId(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].RelServiceId"));
 			item.setRetentType(_ctx.integerValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].RetentType"));
 			item.setRetention(_ctx.integerValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].Retention"));
-			item.setCrossBackupType(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].CrossBackupType"));
-			item.setCrossBackupRegion(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].CrossBackupRegion"));
-			item.setDBInstanceId(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].DBInstanceId"));
-			item.setEngine(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].Engine"));
-			item.setBackupEnabledTime(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].BackupEnabledTime"));
-			item.setDBInstanceDescription(_ctx.stringValue("DescribeCrossRegionBackupDBInstanceResponse.Items["+ i +"].DBInstanceDescription"));
 
 			items.add(item);
 		}

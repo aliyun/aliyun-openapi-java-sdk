@@ -29,9 +29,13 @@ public class ListVpcEndpointServiceUsersResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String maxResults;
+	private Integer maxResults;
+
+	private String totalCount;
 
 	private List<User> users;
+
+	private List<UserARN> userARNs;
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -49,12 +53,20 @@ public class ListVpcEndpointServiceUsersResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
+	}
+
+	public String getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<User> getUsers() {
@@ -63,6 +75,14 @@ public class ListVpcEndpointServiceUsersResponse extends AcsResponse {
 
 	public void setUsers(List<User> users) {
 		this.users = users;
+	}
+
+	public List<UserARN> getUserARNs() {
+		return this.userARNs;
+	}
+
+	public void setUserARNs(List<UserARN> userARNs) {
+		this.userARNs = userARNs;
 	}
 
 	public static class User {
@@ -75,6 +95,19 @@ public class ListVpcEndpointServiceUsersResponse extends AcsResponse {
 
 		public void setUserId(Long userId) {
 			this.userId = userId;
+		}
+	}
+
+	public static class UserARN {
+
+		private String userARN;
+
+		public String getUserARN() {
+			return this.userARN;
+		}
+
+		public void setUserARN(String userARN) {
+			this.userARN = userARN;
 		}
 	}
 

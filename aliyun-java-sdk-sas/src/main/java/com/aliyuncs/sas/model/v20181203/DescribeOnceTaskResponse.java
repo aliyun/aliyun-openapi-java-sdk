@@ -75,6 +75,16 @@ public class DescribeOnceTaskResponse extends AcsResponse {
 
 		private String taskId;
 
+		private String source;
+
+		private String context;
+
+		private Integer successCount;
+
+		private Integer failCount;
+
+		private String resultInfo;
+
 		public String getTaskType() {
 			return this.taskType;
 		}
@@ -145,6 +155,46 @@ public class DescribeOnceTaskResponse extends AcsResponse {
 
 		public void setTaskId(String taskId) {
 			this.taskId = taskId;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public String getContext() {
+			return this.context;
+		}
+
+		public void setContext(String context) {
+			this.context = context;
+		}
+
+		public Integer getSuccessCount() {
+			return this.successCount;
+		}
+
+		public void setSuccessCount(Integer successCount) {
+			this.successCount = successCount;
+		}
+
+		public Integer getFailCount() {
+			return this.failCount;
+		}
+
+		public void setFailCount(Integer failCount) {
+			this.failCount = failCount;
+		}
+
+		public String getResultInfo() {
+			return this.resultInfo;
+		}
+
+		public void setResultInfo(String resultInfo) {
+			this.resultInfo = resultInfo;
 		}
 	}
 

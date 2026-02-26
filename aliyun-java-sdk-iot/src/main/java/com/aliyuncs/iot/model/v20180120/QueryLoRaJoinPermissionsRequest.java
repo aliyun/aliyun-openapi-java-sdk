@@ -27,7 +27,7 @@ public class QueryLoRaJoinPermissionsRequest extends RpcAcsRequest<QueryLoRaJoin
 
 	private String iotInstanceId;
 	public QueryLoRaJoinPermissionsRequest() {
-		super("Iot", "2018-01-20", "QueryLoRaJoinPermissions");
+		super("Iot", "2018-01-20", "QueryLoRaJoinPermissions", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

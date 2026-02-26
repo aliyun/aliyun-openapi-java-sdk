@@ -28,6 +28,8 @@ public class GetQualityFollowerRequest extends RpcAcsRequest<GetQualityFollowerR
 	private String projectName;
 
 	private Long entityId;
+
+	private Long projectId;
 	public GetQualityFollowerRequest() {
 		super("dataworks-public", "2020-05-18", "GetQualityFollower");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class GetQualityFollowerRequest extends RpcAcsRequest<GetQualityFollowerR
 		this.entityId = entityId;
 		if(entityId != null){
 			putBodyParameter("EntityId", entityId.toString());
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

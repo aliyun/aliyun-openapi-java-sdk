@@ -61,6 +61,8 @@ public class ListFpShotFilesResponse extends AcsResponse {
 
 		private String fileId;
 
+		private String storeTime;
+
 		private InputFile inputFile;
 
 		public String getPrimaryKey() {
@@ -77,6 +79,14 @@ public class ListFpShotFilesResponse extends AcsResponse {
 
 		public void setFileId(String fileId) {
 			this.fileId = fileId;
+		}
+
+		public String getStoreTime() {
+			return this.storeTime;
+		}
+
+		public void setStoreTime(String storeTime) {
+			this.storeTime = storeTime;
 		}
 
 		public InputFile getInputFile() {

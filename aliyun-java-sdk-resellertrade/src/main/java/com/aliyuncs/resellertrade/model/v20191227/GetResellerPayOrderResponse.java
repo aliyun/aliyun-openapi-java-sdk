@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetResellerPayOrderResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class GetResellerPayOrderResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,20 +76,20 @@ public class GetResellerPayOrderResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String orderId;
+		private String payAmount;
 
 		private String orderStatus;
 
+		private String orderId;
+
 		private String buyerId;
 
-		private String payAmount;
-
-		public String getOrderId() {
-			return this.orderId;
+		public String getPayAmount() {
+			return this.payAmount;
 		}
 
-		public void setOrderId(String orderId) {
-			this.orderId = orderId;
+		public void setPayAmount(String payAmount) {
+			this.payAmount = payAmount;
 		}
 
 		public String getOrderStatus() {
@@ -100,20 +100,20 @@ public class GetResellerPayOrderResponse extends AcsResponse {
 			this.orderStatus = orderStatus;
 		}
 
+		public String getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(String orderId) {
+			this.orderId = orderId;
+		}
+
 		public String getBuyerId() {
 			return this.buyerId;
 		}
 
 		public void setBuyerId(String buyerId) {
 			this.buyerId = buyerId;
-		}
-
-		public String getPayAmount() {
-			return this.payAmount;
-		}
-
-		public void setPayAmount(String payAmount) {
-			this.payAmount = payAmount;
 		}
 	}
 

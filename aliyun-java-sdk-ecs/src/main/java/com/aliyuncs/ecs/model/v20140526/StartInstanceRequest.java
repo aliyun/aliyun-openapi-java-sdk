@@ -27,8 +27,6 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private Long resourceOwnerId;
 
-	private String sourceRegionId;
-
 	private Boolean initLocalDisk;
 
 	private Boolean dryRun;
@@ -57,17 +55,6 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSourceRegionId() {
-		return this.sourceRegionId;
-	}
-
-	public void setSourceRegionId(String sourceRegionId) {
-		this.sourceRegionId = sourceRegionId;
-		if(sourceRegionId != null){
-			putQueryParameter("SourceRegionId", sourceRegionId);
 		}
 	}
 

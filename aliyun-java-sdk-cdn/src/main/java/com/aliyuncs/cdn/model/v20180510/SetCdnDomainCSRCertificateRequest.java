@@ -28,8 +28,6 @@ public class SetCdnDomainCSRCertificateRequest extends RpcAcsRequest<SetCdnDomai
 	private String serverCertificate;
 
 	private String domainName;
-
-	private Long ownerId;
 	public SetCdnDomainCSRCertificateRequest() {
 		super("Cdn", "2018-05-10", "SetCdnDomainCSRCertificate");
 		setMethod(MethodType.POST);
@@ -58,17 +56,6 @@ public class SetCdnDomainCSRCertificateRequest extends RpcAcsRequest<SetCdnDomai
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

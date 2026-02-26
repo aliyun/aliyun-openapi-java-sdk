@@ -85,7 +85,13 @@ public class QueryMessageInfoResponse extends AcsResponse {
 
 		private Long generateTime;
 
+		private String transformedMessageContent;
+
+		private String transformedTopicFullName;
+
 		private List<UserProperty> userProperties;
+
+		private List<MqttProperty> mqttProperties;
 
 		public String getUniMsgId() {
 			return this.uniMsgId;
@@ -119,6 +125,22 @@ public class QueryMessageInfoResponse extends AcsResponse {
 			this.generateTime = generateTime;
 		}
 
+		public String getTransformedMessageContent() {
+			return this.transformedMessageContent;
+		}
+
+		public void setTransformedMessageContent(String transformedMessageContent) {
+			this.transformedMessageContent = transformedMessageContent;
+		}
+
+		public String getTransformedTopicFullName() {
+			return this.transformedTopicFullName;
+		}
+
+		public void setTransformedTopicFullName(String transformedTopicFullName) {
+			this.transformedTopicFullName = transformedTopicFullName;
+		}
+
 		public List<UserProperty> getUserProperties() {
 			return this.userProperties;
 		}
@@ -127,7 +149,38 @@ public class QueryMessageInfoResponse extends AcsResponse {
 			this.userProperties = userProperties;
 		}
 
+		public List<MqttProperty> getMqttProperties() {
+			return this.mqttProperties;
+		}
+
+		public void setMqttProperties(List<MqttProperty> mqttProperties) {
+			this.mqttProperties = mqttProperties;
+		}
+
 		public static class UserProperty {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
+		public static class MqttProperty {
 
 			private String key;
 

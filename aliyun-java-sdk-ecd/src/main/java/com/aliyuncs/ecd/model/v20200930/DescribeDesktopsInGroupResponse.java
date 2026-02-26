@@ -41,6 +41,8 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 	private Integer stopedPrePaidDesktopsCount;
 
+	private Integer stoppedPrePaidDesktopsCount;
+
 	private List<PaidDesktop> paidDesktops;
 
 	private List<PostPaidDesktop> postPaidDesktops;
@@ -109,6 +111,14 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 		this.stopedPrePaidDesktopsCount = stopedPrePaidDesktopsCount;
 	}
 
+	public Integer getStoppedPrePaidDesktopsCount() {
+		return this.stoppedPrePaidDesktopsCount;
+	}
+
+	public void setStoppedPrePaidDesktopsCount(Integer stoppedPrePaidDesktopsCount) {
+		this.stoppedPrePaidDesktopsCount = stoppedPrePaidDesktopsCount;
+	}
+
 	public List<PaidDesktop> getPaidDesktops() {
 		return this.paidDesktops;
 	}
@@ -155,9 +165,19 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 		private String diskType;
 
+		private String memberEniIp;
+
+		private String primaryEniIp;
+
+		private String protocolType;
+
+		private String fotaVersion;
+
 		private List<String> endUserIds;
 
 		private List<String> endUserNames;
+
+		private List<String> managementFlags;
 
 		public String getEndUserId() {
 			return this.endUserId;
@@ -271,6 +291,38 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 			this.diskType = diskType;
 		}
 
+		public String getMemberEniIp() {
+			return this.memberEniIp;
+		}
+
+		public void setMemberEniIp(String memberEniIp) {
+			this.memberEniIp = memberEniIp;
+		}
+
+		public String getPrimaryEniIp() {
+			return this.primaryEniIp;
+		}
+
+		public void setPrimaryEniIp(String primaryEniIp) {
+			this.primaryEniIp = primaryEniIp;
+		}
+
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
+		}
+
+		public String getFotaVersion() {
+			return this.fotaVersion;
+		}
+
+		public void setFotaVersion(String fotaVersion) {
+			this.fotaVersion = fotaVersion;
+		}
+
 		public List<String> getEndUserIds() {
 			return this.endUserIds;
 		}
@@ -285,6 +337,14 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 		public void setEndUserNames(List<String> endUserNames) {
 			this.endUserNames = endUserNames;
+		}
+
+		public List<String> getManagementFlags() {
+			return this.managementFlags;
+		}
+
+		public void setManagementFlags(List<String> managementFlags) {
+			this.managementFlags = managementFlags;
 		}
 	}
 
@@ -324,9 +384,19 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 		private String diskType;
 
+		private String memberEniIp;
+
+		private String primaryEniIp;
+
+		private String protocolType;
+
+		private String fotaVersion;
+
 		private List<String> endUserIds1;
 
 		private List<String> endUserNames2;
+
+		private List<String> managementFlags3;
 
 		public String getCreateDuration() {
 			return this.createDuration;
@@ -464,6 +534,38 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 			this.diskType = diskType;
 		}
 
+		public String getMemberEniIp() {
+			return this.memberEniIp;
+		}
+
+		public void setMemberEniIp(String memberEniIp) {
+			this.memberEniIp = memberEniIp;
+		}
+
+		public String getPrimaryEniIp() {
+			return this.primaryEniIp;
+		}
+
+		public void setPrimaryEniIp(String primaryEniIp) {
+			this.primaryEniIp = primaryEniIp;
+		}
+
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
+		}
+
+		public String getFotaVersion() {
+			return this.fotaVersion;
+		}
+
+		public void setFotaVersion(String fotaVersion) {
+			this.fotaVersion = fotaVersion;
+		}
+
 		public List<String> getEndUserIds1() {
 			return this.endUserIds1;
 		}
@@ -478,6 +580,14 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 		public void setEndUserNames2(List<String> endUserNames2) {
 			this.endUserNames2 = endUserNames2;
+		}
+
+		public List<String> getManagementFlags3() {
+			return this.managementFlags3;
+		}
+
+		public void setManagementFlags3(List<String> managementFlags3) {
+			this.managementFlags3 = managementFlags3;
 		}
 	}
 

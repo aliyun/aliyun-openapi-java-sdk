@@ -35,7 +35,7 @@ public class RefreshDBClusterStorageUsageRequest extends RpcAcsRequest<RefreshDB
 
 	private Boolean syncRealTime;
 	public RefreshDBClusterStorageUsageRequest() {
-		super("polardb", "2017-08-01", "RefreshDBClusterStorageUsage");
+		super("polardb", "2017-08-01", "RefreshDBClusterStorageUsage", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,6 +34,8 @@ public class CompareFaceResponseUnmarshaller {
 		data.setQualityScoreA(_ctx.floatValue("CompareFaceResponse.Data.QualityScoreA"));
 		data.setQualityScoreB(_ctx.floatValue("CompareFaceResponse.Data.QualityScoreB"));
 		data.setMessageTips(_ctx.stringValue("CompareFaceResponse.Data.MessageTips"));
+		data.setIsMaskA(_ctx.longValue("CompareFaceResponse.Data.IsMaskA"));
+		data.setIsMaskB(_ctx.longValue("CompareFaceResponse.Data.IsMaskB"));
 
 		List<Float> thresholds = new ArrayList<Float>();
 		for (int i = 0; i < _ctx.lengthValue("CompareFaceResponse.Data.Thresholds.Length"); i++) {
@@ -52,6 +54,18 @@ public class CompareFaceResponseUnmarshaller {
 			rectAList.add(_ctx.integerValue("CompareFaceResponse.Data.RectAList["+ i +"]"));
 		}
 		data.setRectAList(rectAList);
+
+		List<Long> landmarksAList = new ArrayList<Long>();
+		for (int i = 0; i < _ctx.lengthValue("CompareFaceResponse.Data.LandmarksAList.Length"); i++) {
+			landmarksAList.add(_ctx.longValue("CompareFaceResponse.Data.LandmarksAList["+ i +"]"));
+		}
+		data.setLandmarksAList(landmarksAList);
+
+		List<Long> landmarksBList = new ArrayList<Long>();
+		for (int i = 0; i < _ctx.lengthValue("CompareFaceResponse.Data.LandmarksBList.Length"); i++) {
+			landmarksBList.add(_ctx.longValue("CompareFaceResponse.Data.LandmarksBList["+ i +"]"));
+		}
+		data.setLandmarksBList(landmarksBList);
 		compareFaceResponse.setData(data);
 	 
 	 	return compareFaceResponse;

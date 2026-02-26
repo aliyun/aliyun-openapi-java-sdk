@@ -30,6 +30,8 @@ public class GetResourceRequest extends RpcAcsRequest<GetResourceResponse> {
 
 	private String appId;
 
+	private String source;
+
 	private String moduleId;
 	public GetResourceRequest() {
 		super("miniapplcdp", "2020-01-13", "GetResource");
@@ -66,6 +68,17 @@ public class GetResourceRequest extends RpcAcsRequest<GetResourceResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

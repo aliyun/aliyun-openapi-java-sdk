@@ -115,6 +115,10 @@ public class ListAppsResponse extends AcsResponse {
 
 			private String appType;
 
+			private String platformVersion;
+
+			private List<CategoryItem> categories;
+
 			public String getAppId() {
 				return this.appId;
 			}
@@ -217,6 +221,55 @@ public class ListAppsResponse extends AcsResponse {
 
 			public void setAppType(String appType) {
 				this.appType = appType;
+			}
+
+			public String getPlatformVersion() {
+				return this.platformVersion;
+			}
+
+			public void setPlatformVersion(String platformVersion) {
+				this.platformVersion = platformVersion;
+			}
+
+			public List<CategoryItem> getCategories() {
+				return this.categories;
+			}
+
+			public void setCategories(List<CategoryItem> categories) {
+				this.categories = categories;
+			}
+
+			public static class CategoryItem {
+
+				private String categoryId;
+
+				private String categoryName;
+
+				private String parentCategoryId;
+
+				public String getCategoryId() {
+					return this.categoryId;
+				}
+
+				public void setCategoryId(String categoryId) {
+					this.categoryId = categoryId;
+				}
+
+				public String getCategoryName() {
+					return this.categoryName;
+				}
+
+				public void setCategoryName(String categoryName) {
+					this.categoryName = categoryName;
+				}
+
+				public String getParentCategoryId() {
+					return this.parentCategoryId;
+				}
+
+				public void setParentCategoryId(String parentCategoryId) {
+					this.parentCategoryId = parentCategoryId;
+				}
 			}
 		}
 	}

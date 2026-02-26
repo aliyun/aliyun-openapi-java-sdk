@@ -25,6 +25,8 @@ public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
 	   
 
 	private String appId;
+
+	private String source;
 	public DeleteAppRequest() {
 		super("miniapplcdp", "2020-01-13", "DeleteApp");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

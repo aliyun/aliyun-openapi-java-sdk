@@ -32,7 +32,6 @@ public class DescribeDBClusterEndpointsResponseUnmarshaller {
 		List<DBEndpoint> items = new ArrayList<DBEndpoint>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterEndpointsResponse.Items.Length"); i++) {
 			DBEndpoint dBEndpoint = new DBEndpoint();
-			dBEndpoint.setNodeWithRoles(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].NodeWithRoles"));
 			dBEndpoint.setNodes(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].Nodes"));
 			dBEndpoint.setReadWriteMode(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].ReadWriteMode"));
 			dBEndpoint.setDBEndpointId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].DBEndpointId"));
@@ -40,6 +39,14 @@ public class DescribeDBClusterEndpointsResponseUnmarshaller {
 			dBEndpoint.setDBEndpointDescription(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].DBEndpointDescription"));
 			dBEndpoint.setEndpointType(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].EndpointType"));
 			dBEndpoint.setAutoAddNewNodes(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AutoAddNewNodes"));
+			dBEndpoint.setDBClusterId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].DBClusterId"));
+			dBEndpoint.setSccMode(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].SccMode"));
+			dBEndpoint.setPolarSccTimeoutAction(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].PolarSccTimeoutAction"));
+			dBEndpoint.setPolarSccWaitTimeout(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].PolarSccWaitTimeout"));
+			dBEndpoint.setNodeWithRoles(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].NodeWithRoles"));
+			dBEndpoint.setConsistLevelControlVersion(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].ConsistLevelControlVersion"));
+			dBEndpoint.setDBEndpointCreateTime(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].DBEndpointCreateTime"));
+			dBEndpoint.setDBEndpointStatus(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].DBEndpointStatus"));
 
 			List<Address> addressItems = new ArrayList<Address>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems.Length"); j++) {
@@ -52,6 +59,7 @@ public class DescribeDBClusterEndpointsResponseUnmarshaller {
 				address.setVpcInstanceId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].VpcInstanceId"));
 				address.setVPCId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].VPCId"));
 				address.setIPAddress(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].IPAddress"));
+				address.setDashboardUsed(_ctx.booleanValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].DashboardUsed"));
 
 				addressItems.add(address);
 			}

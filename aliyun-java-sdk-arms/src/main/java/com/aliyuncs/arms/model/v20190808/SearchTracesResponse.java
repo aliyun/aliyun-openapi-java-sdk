@@ -59,6 +59,8 @@ public class SearchTracesResponse extends AcsResponse {
 
 		private String traceID;
 
+		private String spanID;
+
 		public String getOperationName() {
 			return this.operationName;
 		}
@@ -105,6 +107,14 @@ public class SearchTracesResponse extends AcsResponse {
 
 		public void setTraceID(String traceID) {
 			this.traceID = traceID;
+		}
+
+		public String getSpanID() {
+			return this.spanID;
+		}
+
+		public void setSpanID(String spanID) {
+			this.spanID = spanID;
 		}
 	}
 

@@ -37,7 +37,7 @@ public class DescribeSynDbTablesRequest extends RpcAcsRequest<DescribeSynDbTable
 
 	private Long ownerId;
 	public DescribeSynDbTablesRequest() {
-		super("clickhouse", "2019-11-11", "DescribeSynDbTables");
+		super("clickhouse", "2019-11-11", "DescribeSynDbTables", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -75,6 +75,7 @@ public class DescribeBackupPlanListResponseUnmarshaller {
 			backupPlanDetail.setBackupSetDownloadIncrementDataFormat(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupSetDownloadIncrementDataFormat"));
 			backupPlanDetail.setEnableBackupLog(_ctx.booleanValue("DescribeBackupPlanListResponse.Items["+ i +"].EnableBackupLog"));
 			backupPlanDetail.setResourceGroupId(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].ResourceGroupId"));
+			backupPlanDetail.setDatabaseType(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].DatabaseType"));
 
 			items.add(backupPlanDetail);
 		}

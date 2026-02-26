@@ -24,9 +24,9 @@ public class UnAuthorizeDeviceGroupResponseUnmarshaller {
 		
 		unAuthorizeDeviceGroupResponse.setRequestId(_ctx.stringValue("UnAuthorizeDeviceGroupResponse.RequestId"));
 		unAuthorizeDeviceGroupResponse.setCode(_ctx.integerValue("UnAuthorizeDeviceGroupResponse.Code"));
-		unAuthorizeDeviceGroupResponse.setSuccess(_ctx.booleanValue("UnAuthorizeDeviceGroupResponse.Success"));
 		unAuthorizeDeviceGroupResponse.setMessage(_ctx.stringValue("UnAuthorizeDeviceGroupResponse.Message"));
 		unAuthorizeDeviceGroupResponse.setData(_ctx.stringValue("UnAuthorizeDeviceGroupResponse.Data"));
+		unAuthorizeDeviceGroupResponse.setSuccess(_ctx.booleanValue("UnAuthorizeDeviceGroupResponse.Success"));
 	 
 	 	return unAuthorizeDeviceGroupResponse;
 	}

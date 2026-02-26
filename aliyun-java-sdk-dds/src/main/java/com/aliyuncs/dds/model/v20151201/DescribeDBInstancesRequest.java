@@ -17,6 +17,7 @@ package com.aliyuncs.dds.model.v20151201;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -39,11 +40,11 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String expired;
 
-	private String securityToken;
-
 	private String engine;
 
 	private Integer pageSize;
+
+	private String dBNodeType;
 
 	private String dBInstanceId;
 
@@ -77,6 +78,10 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 	public DescribeDBInstancesRequest() {
 		super("Dds", "2015-12-01", "DescribeDBInstances", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -156,17 +161,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
 	public String getEngine() {
 		return this.engine;
 	}
@@ -186,6 +180,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDBNodeType() {
+		return this.dBNodeType;
+	}
+
+	public void setDBNodeType(String dBNodeType) {
+		this.dBNodeType = dBNodeType;
+		if(dBNodeType != null){
+			putQueryParameter("DBNodeType", dBNodeType);
 		}
 	}
 

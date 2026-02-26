@@ -26,28 +26,28 @@ public class ListQuotaReviewTasksResponseUnmarshaller {
 
 	public static ListQuotaReviewTasksResponse unmarshall(ListQuotaReviewTasksResponse listQuotaReviewTasksResponse, UnmarshallerContext _ctx) {
 		
-		listQuotaReviewTasksResponse.setRequestId(_ctx.stringValue("ListQuotaReviewTasksResponse.requestId"));
 		listQuotaReviewTasksResponse.setTotalCount(_ctx.integerValue("ListQuotaReviewTasksResponse.totalCount"));
+		listQuotaReviewTasksResponse.setRequestId(_ctx.stringValue("ListQuotaReviewTasksResponse.requestId"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListQuotaReviewTasksResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setId(_ctx.integerValue("ListQuotaReviewTasksResponse.result["+ i +"].id"));
-			resultItem.setAppGroupId(_ctx.integerValue("ListQuotaReviewTasksResponse.result["+ i +"].appGroupId"));
-			resultItem.setAppGroupName(_ctx.stringValue("ListQuotaReviewTasksResponse.result["+ i +"].appGroupName"));
-			resultItem.setAppGroupType(_ctx.stringValue("ListQuotaReviewTasksResponse.result["+ i +"].appGroupType"));
+			resultItem.setOldDocSize(_ctx.integerValue("ListQuotaReviewTasksResponse.result["+ i +"].oldDocSize"));
+			resultItem.setPending(_ctx.booleanValue("ListQuotaReviewTasksResponse.result["+ i +"].pending"));
+			resultItem.setMemo(_ctx.stringValue("ListQuotaReviewTasksResponse.result["+ i +"].memo"));
+			resultItem.setApproved(_ctx.booleanValue("ListQuotaReviewTasksResponse.result["+ i +"].approved"));
 			resultItem.setOldSpec(_ctx.stringValue("ListQuotaReviewTasksResponse.result["+ i +"].oldSpec"));
 			resultItem.setOldComputeResource(_ctx.integerValue("ListQuotaReviewTasksResponse.result["+ i +"].oldComputeResource"));
-			resultItem.setOldDocSize(_ctx.integerValue("ListQuotaReviewTasksResponse.result["+ i +"].oldDocSize"));
-			resultItem.setNewSpec(_ctx.stringValue("ListQuotaReviewTasksResponse.result["+ i +"].newSpec"));
-			resultItem.setNewComputeResource(_ctx.integerValue("ListQuotaReviewTasksResponse.result["+ i +"].newComputeResource"));
-			resultItem.setNewSocSize(_ctx.integerValue("ListQuotaReviewTasksResponse.result["+ i +"].newSocSize"));
-			resultItem.setMemo(_ctx.stringValue("ListQuotaReviewTasksResponse.result["+ i +"].memo"));
+			resultItem.setAppGroupType(_ctx.stringValue("ListQuotaReviewTasksResponse.result["+ i +"].appGroupType"));
 			resultItem.setAvailable(_ctx.booleanValue("ListQuotaReviewTasksResponse.result["+ i +"].available"));
-			resultItem.setPending(_ctx.booleanValue("ListQuotaReviewTasksResponse.result["+ i +"].pending"));
-			resultItem.setApproved(_ctx.booleanValue("ListQuotaReviewTasksResponse.result["+ i +"].approved"));
 			resultItem.setGmtCreate(_ctx.stringValue("ListQuotaReviewTasksResponse.result["+ i +"].gmtCreate"));
+			resultItem.setNewSocSize(_ctx.integerValue("ListQuotaReviewTasksResponse.result["+ i +"].newSocSize"));
+			resultItem.setId(_ctx.integerValue("ListQuotaReviewTasksResponse.result["+ i +"].id"));
+			resultItem.setAppGroupId(_ctx.integerValue("ListQuotaReviewTasksResponse.result["+ i +"].appGroupId"));
+			resultItem.setNewComputeResource(_ctx.integerValue("ListQuotaReviewTasksResponse.result["+ i +"].newComputeResource"));
+			resultItem.setAppGroupName(_ctx.stringValue("ListQuotaReviewTasksResponse.result["+ i +"].appGroupName"));
 			resultItem.setGmtModified(_ctx.stringValue("ListQuotaReviewTasksResponse.result["+ i +"].gmtModified"));
+			resultItem.setNewSpec(_ctx.stringValue("ListQuotaReviewTasksResponse.result["+ i +"].newSpec"));
 
 			result.add(resultItem);
 		}

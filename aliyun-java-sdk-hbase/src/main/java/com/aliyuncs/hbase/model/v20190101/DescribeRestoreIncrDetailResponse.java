@@ -46,26 +46,26 @@ public class DescribeRestoreIncrDetailResponse extends AcsResponse {
 
 	public static class RestoreIncrDetail {
 
-		private String state;
+		private String endTime;
 
 		private String startTime;
 
-		private String endTime;
+		private String process;
 
 		private String restoreStartTs;
+
+		private String state;
 
 		private String restoredTs;
 
 		private String restoreDelay;
 
-		private String process;
-
-		public String getState() {
-			return this.state;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getStartTime() {
@@ -76,12 +76,12 @@ public class DescribeRestoreIncrDetailResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getProcess() {
+			return this.process;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setProcess(String process) {
+			this.process = process;
 		}
 
 		public String getRestoreStartTs() {
@@ -90,6 +90,14 @@ public class DescribeRestoreIncrDetailResponse extends AcsResponse {
 
 		public void setRestoreStartTs(String restoreStartTs) {
 			this.restoreStartTs = restoreStartTs;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public String getRestoredTs() {
@@ -106,14 +114,6 @@ public class DescribeRestoreIncrDetailResponse extends AcsResponse {
 
 		public void setRestoreDelay(String restoreDelay) {
 			this.restoreDelay = restoreDelay;
-		}
-
-		public String getProcess() {
-			return this.process;
-		}
-
-		public void setProcess(String process) {
-			this.process = process;
 		}
 	}
 

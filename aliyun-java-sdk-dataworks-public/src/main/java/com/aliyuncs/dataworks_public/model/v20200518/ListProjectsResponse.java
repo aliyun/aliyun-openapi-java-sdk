@@ -103,6 +103,18 @@ public class ListProjectsResponse extends AcsResponse {
 
 			private String projectOwnerBaseId;
 
+			private String resourceManagerResourceGroupId;
+
+			private Boolean disableDevelopment;
+
+			private Boolean useProxyOdpsAccount;
+
+			private Integer tablePrivacyMode;
+
+			private Integer isDefault;
+
+			private List<Tag> tags;
+
 			public String getProjectStatusCode() {
 				return this.projectStatusCode;
 			}
@@ -157,6 +169,77 @@ public class ListProjectsResponse extends AcsResponse {
 
 			public void setProjectOwnerBaseId(String projectOwnerBaseId) {
 				this.projectOwnerBaseId = projectOwnerBaseId;
+			}
+
+			public String getResourceManagerResourceGroupId() {
+				return this.resourceManagerResourceGroupId;
+			}
+
+			public void setResourceManagerResourceGroupId(String resourceManagerResourceGroupId) {
+				this.resourceManagerResourceGroupId = resourceManagerResourceGroupId;
+			}
+
+			public Boolean getDisableDevelopment() {
+				return this.disableDevelopment;
+			}
+
+			public void setDisableDevelopment(Boolean disableDevelopment) {
+				this.disableDevelopment = disableDevelopment;
+			}
+
+			public Boolean getUseProxyOdpsAccount() {
+				return this.useProxyOdpsAccount;
+			}
+
+			public void setUseProxyOdpsAccount(Boolean useProxyOdpsAccount) {
+				this.useProxyOdpsAccount = useProxyOdpsAccount;
+			}
+
+			public Integer getTablePrivacyMode() {
+				return this.tablePrivacyMode;
+			}
+
+			public void setTablePrivacyMode(Integer tablePrivacyMode) {
+				this.tablePrivacyMode = tablePrivacyMode;
+			}
+
+			public Integer getIsDefault() {
+				return this.isDefault;
+			}
+
+			public void setIsDefault(Integer isDefault) {
+				this.isDefault = isDefault;
+			}
+
+			public List<Tag> getTags() {
+				return this.tags;
+			}
+
+			public void setTags(List<Tag> tags) {
+				this.tags = tags;
+			}
+
+			public static class Tag {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
 			}
 		}
 	}

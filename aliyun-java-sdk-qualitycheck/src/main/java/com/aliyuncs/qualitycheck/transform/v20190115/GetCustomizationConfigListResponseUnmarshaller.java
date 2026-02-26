@@ -40,6 +40,7 @@ public class GetCustomizationConfigListResponseUnmarshaller {
 			modelCustomizationDataSetPo.setModelName(_ctx.stringValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelName"));
 			modelCustomizationDataSetPo.setModelId(_ctx.longValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelId"));
 			modelCustomizationDataSetPo.setModeCustomizationId(_ctx.stringValue("GetCustomizationConfigListResponse.Data["+ i +"].ModeCustomizationId"));
+			modelCustomizationDataSetPo.setAsrVersion(_ctx.integerValue("GetCustomizationConfigListResponse.Data["+ i +"].AsrVersion"));
 
 			data.add(modelCustomizationDataSetPo);
 		}

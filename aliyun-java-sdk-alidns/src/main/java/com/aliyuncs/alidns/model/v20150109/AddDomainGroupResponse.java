@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddDomainGroupResponse extends AcsResponse {
 
+	private String groupName;
+
 	private String requestId;
 
 	private String groupId;
 
-	private String groupName;
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class AddDomainGroupResponse extends AcsResponse {
 
 	public void setGroupId(String groupId) {
 		this.groupId = groupId;
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
 	}
 
 	@Override

@@ -27,6 +27,8 @@ public class ListDownloadTasksRequest extends RpcAcsRequest<ListDownloadTasksRes
 
 	private Integer pageNumber;
 
+	private String instanceId;
+
 	private Integer pageSize;
 	public ListDownloadTasksRequest() {
 		super("OutboundBot", "2019-12-26", "ListDownloadTasks", "outboundbot");
@@ -45,6 +47,17 @@ public class ListDownloadTasksRequest extends RpcAcsRequest<ListDownloadTasksRes
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

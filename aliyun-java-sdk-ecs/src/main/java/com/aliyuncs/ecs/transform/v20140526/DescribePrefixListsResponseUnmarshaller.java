@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribePrefixListsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribePrefixListsResponse.PrefixList;
+import com.aliyuncs.ecs.model.v20140526.DescribePrefixListsResponse.PrefixList.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +40,17 @@ public class DescribePrefixListsResponseUnmarshaller {
 			prefixList.setAddressFamily(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].AddressFamily"));
 			prefixList.setPrefixListName(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].PrefixListName"));
 			prefixList.setPrefixListId(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].PrefixListId"));
+			prefixList.setResourceGroupId(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePrefixListsResponse.PrefixLists["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagValue(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].Tags["+ j +"].TagKey"));
+
+				tags.add(tag);
+			}
+			prefixList.setTags(tags);
 
 			prefixLists.add(prefixList);
 		}

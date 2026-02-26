@@ -26,6 +26,7 @@ public class AllocateDedicatedHostsResponseUnmarshaller {
 	public static AllocateDedicatedHostsResponse unmarshall(AllocateDedicatedHostsResponse allocateDedicatedHostsResponse, UnmarshallerContext _ctx) {
 		
 		allocateDedicatedHostsResponse.setRequestId(_ctx.stringValue("AllocateDedicatedHostsResponse.RequestId"));
+		allocateDedicatedHostsResponse.setOrderId(_ctx.stringValue("AllocateDedicatedHostsResponse.OrderId"));
 
 		List<String> dedicatedHostIdSets = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("AllocateDedicatedHostsResponse.DedicatedHostIdSets.Length"); i++) {

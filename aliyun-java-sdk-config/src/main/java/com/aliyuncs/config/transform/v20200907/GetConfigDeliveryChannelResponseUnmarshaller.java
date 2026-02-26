@@ -36,9 +36,11 @@ public class GetConfigDeliveryChannelResponseUnmarshaller {
 		deliveryChannel.setOversizedDataOSSTargetArn(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.OversizedDataOSSTargetArn"));
 		deliveryChannel.setDescription(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.Description"));
 		deliveryChannel.setConfigurationSnapshot(_ctx.booleanValue("GetConfigDeliveryChannelResponse.DeliveryChannel.ConfigurationSnapshot"));
+		deliveryChannel.setCompliantSnapshot(_ctx.booleanValue("GetConfigDeliveryChannelResponse.DeliveryChannel.CompliantSnapshot"));
 		deliveryChannel.setConfigurationItemChangeNotification(_ctx.booleanValue("GetConfigDeliveryChannelResponse.DeliveryChannel.ConfigurationItemChangeNotification"));
 		deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("GetConfigDeliveryChannelResponse.DeliveryChannel.NonCompliantNotification"));
 		deliveryChannel.setAccountId(_ctx.longValue("GetConfigDeliveryChannelResponse.DeliveryChannel.AccountId"));
+		deliveryChannel.setDeliverySnapshotTime(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.DeliverySnapshotTime"));
 		getConfigDeliveryChannelResponse.setDeliveryChannel(deliveryChannel);
 	 
 	 	return getConfigDeliveryChannelResponse;

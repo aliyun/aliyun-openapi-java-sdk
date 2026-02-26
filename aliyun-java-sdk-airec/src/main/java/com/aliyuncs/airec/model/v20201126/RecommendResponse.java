@@ -81,6 +81,10 @@ public class RecommendResponse extends AcsResponse {
 
 		private Float weight;
 
+		private Double flowWeight;
+
+		private String message;
+
 		public String getMatchInfo() {
 			return this.matchInfo;
 		}
@@ -135,6 +139,22 @@ public class RecommendResponse extends AcsResponse {
 
 		public void setWeight(Float weight) {
 			this.weight = weight;
+		}
+
+		public Double getFlowWeight() {
+			return this.flowWeight;
+		}
+
+		public void setFlowWeight(Double flowWeight) {
+			this.flowWeight = flowWeight;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
 		}
 	}
 

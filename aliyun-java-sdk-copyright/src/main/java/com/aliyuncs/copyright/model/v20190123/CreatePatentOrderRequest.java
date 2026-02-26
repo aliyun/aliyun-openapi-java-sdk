@@ -26,7 +26,7 @@ public class CreatePatentOrderRequest extends RpcAcsRequest<CreatePatentOrderRes
 
 	private String applyNumber;
 	public CreatePatentOrderRequest() {
-		super("Copyright", "2019-01-23", "CreatePatentOrder");
+		super("Copyright", "2019-01-23", "CreatePatentOrder", "swcopyright");
 		setMethod(MethodType.GET);
 	}
 

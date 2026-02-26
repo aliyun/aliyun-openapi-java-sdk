@@ -28,33 +28,38 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteResponse> {
 	   
 
-	private String gatewayUniqueId;
-
-	private String destinationType;
-
 	private String domainIdListJSON;
 
 	private Long id;
 
 	private Long gatewayId;
 
-	private Integer routeOrder;
-
 	private Boolean enableWaf;
-
-	@SerializedName("services")
-	private List<Services> services;
 
 	@SerializedName("predicates")
 	private Predicates predicates;
-
-	@SerializedName("redirectJSON")
-	private RedirectJSON redirectJSON;
 
 	@SerializedName("directResponseJSON")
 	private DirectResponseJSON directResponseJSON;
 
 	private String name;
+
+	@SerializedName("fallbackServices")
+	private List<FallbackServices> fallbackServices;
+
+	private Boolean fallback;
+
+	private String gatewayUniqueId;
+
+	private String destinationType;
+
+	private Integer routeOrder;
+
+	@SerializedName("services")
+	private List<Services> services;
+
+	@SerializedName("redirectJSON")
+	private RedirectJSON redirectJSON;
 
 	private String acceptLanguage;
 	public UpdateGatewayRouteRequest() {
@@ -64,28 +69,6 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getGatewayUniqueId() {
-		return this.gatewayUniqueId;
-	}
-
-	public void setGatewayUniqueId(String gatewayUniqueId) {
-		this.gatewayUniqueId = gatewayUniqueId;
-		if(gatewayUniqueId != null){
-			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
-		}
-	}
-
-	public String getDestinationType() {
-		return this.destinationType;
-	}
-
-	public void setDestinationType(String destinationType) {
-		this.destinationType = destinationType;
-		if(destinationType != null){
-			putQueryParameter("DestinationType", destinationType);
-		}
 	}
 
 	public String getDomainIdListJSON() {
@@ -121,17 +104,6 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 		}
 	}
 
-	public Integer getRouteOrder() {
-		return this.routeOrder;
-	}
-
-	public void setRouteOrder(Integer routeOrder) {
-		this.routeOrder = routeOrder;
-		if(routeOrder != null){
-			putQueryParameter("RouteOrder", routeOrder.toString());
-		}
-	}
-
 	public Boolean getEnableWaf() {
 		return this.enableWaf;
 	}
@@ -143,17 +115,6 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 		}
 	}
 
-	public List<Services> getServices() {
-		return this.services;
-	}
-
-	public void setServices(List<Services> services) {
-		this.services = services;	
-		if (services != null) {
-			putQueryParameter("Services" , new Gson().toJson(services));
-		}	
-	}
-
 	public Predicates getPredicates() {
 		return this.predicates;
 	}
@@ -162,17 +123,6 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 		this.predicates = predicates;	
 		if (predicates != null) {
 			putQueryParameter("Predicates" , new Gson().toJson(predicates));
-		}	
-	}
-
-	public RedirectJSON getRedirectJSON() {
-		return this.redirectJSON;
-	}
-
-	public void setRedirectJSON(RedirectJSON redirectJSON) {
-		this.redirectJSON = redirectJSON;	
-		if (redirectJSON != null) {
-			putQueryParameter("RedirectJSON" , new Gson().toJson(redirectJSON));
 		}	
 	}
 
@@ -198,6 +148,83 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 		}
 	}
 
+	public List<FallbackServices> getFallbackServices() {
+		return this.fallbackServices;
+	}
+
+	public void setFallbackServices(List<FallbackServices> fallbackServices) {
+		this.fallbackServices = fallbackServices;	
+		if (fallbackServices != null) {
+			putQueryParameter("FallbackServices" , new Gson().toJson(fallbackServices));
+		}	
+	}
+
+	public Boolean getFallback() {
+		return this.fallback;
+	}
+
+	public void setFallback(Boolean fallback) {
+		this.fallback = fallback;
+		if(fallback != null){
+			putQueryParameter("Fallback", fallback.toString());
+		}
+	}
+
+	public String getGatewayUniqueId() {
+		return this.gatewayUniqueId;
+	}
+
+	public void setGatewayUniqueId(String gatewayUniqueId) {
+		this.gatewayUniqueId = gatewayUniqueId;
+		if(gatewayUniqueId != null){
+			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public String getDestinationType() {
+		return this.destinationType;
+	}
+
+	public void setDestinationType(String destinationType) {
+		this.destinationType = destinationType;
+		if(destinationType != null){
+			putQueryParameter("DestinationType", destinationType);
+		}
+	}
+
+	public Integer getRouteOrder() {
+		return this.routeOrder;
+	}
+
+	public void setRouteOrder(Integer routeOrder) {
+		this.routeOrder = routeOrder;
+		if(routeOrder != null){
+			putQueryParameter("RouteOrder", routeOrder.toString());
+		}
+	}
+
+	public List<Services> getServices() {
+		return this.services;
+	}
+
+	public void setServices(List<Services> services) {
+		this.services = services;	
+		if (services != null) {
+			putQueryParameter("Services" , new Gson().toJson(services));
+		}	
+	}
+
+	public RedirectJSON getRedirectJSON() {
+		return this.redirectJSON;
+	}
+
+	public void setRedirectJSON(RedirectJSON redirectJSON) {
+		this.redirectJSON = redirectJSON;	
+		if (redirectJSON != null) {
+			putQueryParameter("RedirectJSON" , new Gson().toJson(redirectJSON));
+		}	
+	}
+
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -206,86 +233,6 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public static class Services {
-
-		@SerializedName("Name")
-		private String name;
-
-		@SerializedName("Namespace")
-		private String namespace;
-
-		@SerializedName("SourceType")
-		private String sourceType;
-
-		@SerializedName("ServiceId")
-		private Long serviceId;
-
-		@SerializedName("Percent")
-		private Integer percent;
-
-		@SerializedName("Version")
-		private String version;
-
-		@SerializedName("GroupName")
-		private String groupName;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
-
-		public String getSourceType() {
-			return this.sourceType;
-		}
-
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
-		public Long getServiceId() {
-			return this.serviceId;
-		}
-
-		public void setServiceId(Long serviceId) {
-			this.serviceId = serviceId;
-		}
-
-		public Integer getPercent() {
-			return this.percent;
-		}
-
-		public void setPercent(Integer percent) {
-			this.percent = percent;
-		}
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
 		}
 	}
 
@@ -444,6 +391,398 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 		}
 	}
 
+	public static class DirectResponseJSON {
+
+		@SerializedName("Code")
+		private Long code;
+
+		@SerializedName("Body")
+		private String body;
+
+		public Long getCode() {
+			return this.code;
+		}
+
+		public void setCode(Long code) {
+			this.code = code;
+		}
+
+		public String getBody() {
+			return this.body;
+		}
+
+		public void setBody(String body) {
+			this.body = body;
+		}
+	}
+
+	public static class FallbackServices {
+
+		@SerializedName("AgreementType")
+		private String agreementType;
+
+		@SerializedName("Name")
+		private String name;
+
+		@SerializedName("Namespace")
+		private String namespace;
+
+		@SerializedName("SourceType")
+		private String sourceType;
+
+		@SerializedName("ServiceId")
+		private Long serviceId;
+
+		@SerializedName("Percent")
+		private Integer percent;
+
+		@SerializedName("Version")
+		private String version;
+
+		@SerializedName("GroupName")
+		private String groupName;
+
+		@SerializedName("ServicePort")
+		private Integer servicePort;
+
+		public String getAgreementType() {
+			return this.agreementType;
+		}
+
+		public void setAgreementType(String agreementType) {
+			this.agreementType = agreementType;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
+		}
+
+		public Long getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(Long serviceId) {
+			this.serviceId = serviceId;
+		}
+
+		public Integer getPercent() {
+			return this.percent;
+		}
+
+		public void setPercent(Integer percent) {
+			this.percent = percent;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public Integer getServicePort() {
+			return this.servicePort;
+		}
+
+		public void setServicePort(Integer servicePort) {
+			this.servicePort = servicePort;
+		}
+	}
+
+	public static class Services {
+
+		@SerializedName("HttpDubboTranscoder")
+		private HttpDubboTranscoder httpDubboTranscoder;
+
+		@SerializedName("AgreementType")
+		private String agreementType;
+
+		@SerializedName("Name")
+		private String name;
+
+		@SerializedName("Namespace")
+		private String namespace;
+
+		@SerializedName("SourceType")
+		private String sourceType;
+
+		@SerializedName("ServiceId")
+		private Long serviceId;
+
+		@SerializedName("Percent")
+		private Integer percent;
+
+		@SerializedName("Version")
+		private String version;
+
+		@SerializedName("GroupName")
+		private String groupName;
+
+		@SerializedName("ServicePort")
+		private Integer servicePort;
+
+		public HttpDubboTranscoder getHttpDubboTranscoder() {
+			return this.httpDubboTranscoder;
+		}
+
+		public void setHttpDubboTranscoder(HttpDubboTranscoder httpDubboTranscoder) {
+			this.httpDubboTranscoder = httpDubboTranscoder;
+		}
+
+		public String getAgreementType() {
+			return this.agreementType;
+		}
+
+		public void setAgreementType(String agreementType) {
+			this.agreementType = agreementType;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
+		}
+
+		public Long getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(Long serviceId) {
+			this.serviceId = serviceId;
+		}
+
+		public Integer getPercent() {
+			return this.percent;
+		}
+
+		public void setPercent(Integer percent) {
+			this.percent = percent;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public Integer getServicePort() {
+			return this.servicePort;
+		}
+
+		public void setServicePort(Integer servicePort) {
+			this.servicePort = servicePort;
+		}
+
+		public static class HttpDubboTranscoder {
+
+			@SerializedName("DubboServiceName")
+			private String dubboServiceName;
+
+			@SerializedName("MothedMapList")
+			private List<MothedMapListItem> mothedMapList;
+
+			@SerializedName("DubboServiceVersion")
+			private String dubboServiceVersion;
+
+			@SerializedName("DubboServiceGroup")
+			private String dubboServiceGroup;
+
+			public String getDubboServiceName() {
+				return this.dubboServiceName;
+			}
+
+			public void setDubboServiceName(String dubboServiceName) {
+				this.dubboServiceName = dubboServiceName;
+			}
+
+			public List<MothedMapListItem> getMothedMapList() {
+				return this.mothedMapList;
+			}
+
+			public void setMothedMapList(List<MothedMapListItem> mothedMapList) {
+				this.mothedMapList = mothedMapList;
+			}
+
+			public String getDubboServiceVersion() {
+				return this.dubboServiceVersion;
+			}
+
+			public void setDubboServiceVersion(String dubboServiceVersion) {
+				this.dubboServiceVersion = dubboServiceVersion;
+			}
+
+			public String getDubboServiceGroup() {
+				return this.dubboServiceGroup;
+			}
+
+			public void setDubboServiceGroup(String dubboServiceGroup) {
+				this.dubboServiceGroup = dubboServiceGroup;
+			}
+
+			public static class MothedMapListItem {
+
+				@SerializedName("HttpMothed")
+				private String httpMothed;
+
+				@SerializedName("ParamMapsList")
+				private List<ParamMapsListItem> paramMapsList;
+
+				@SerializedName("Mothedpath")
+				private String mothedpath;
+
+				@SerializedName("DubboMothedName")
+				private String dubboMothedName;
+
+				@SerializedName("PassThroughAllHeaders")
+				private String passThroughAllHeaders;
+
+				@SerializedName("PassThroughList")
+				private List<String> passThroughList;
+
+				public String getHttpMothed() {
+					return this.httpMothed;
+				}
+
+				public void setHttpMothed(String httpMothed) {
+					this.httpMothed = httpMothed;
+				}
+
+				public List<ParamMapsListItem> getParamMapsList() {
+					return this.paramMapsList;
+				}
+
+				public void setParamMapsList(List<ParamMapsListItem> paramMapsList) {
+					this.paramMapsList = paramMapsList;
+				}
+
+				public String getMothedpath() {
+					return this.mothedpath;
+				}
+
+				public void setMothedpath(String mothedpath) {
+					this.mothedpath = mothedpath;
+				}
+
+				public String getDubboMothedName() {
+					return this.dubboMothedName;
+				}
+
+				public void setDubboMothedName(String dubboMothedName) {
+					this.dubboMothedName = dubboMothedName;
+				}
+
+				public String getPassThroughAllHeaders() {
+					return this.passThroughAllHeaders;
+				}
+
+				public void setPassThroughAllHeaders(String passThroughAllHeaders) {
+					this.passThroughAllHeaders = passThroughAllHeaders;
+				}
+
+				public List<String> getPassThroughList() {
+					return this.passThroughList;
+				}
+
+				public void setPassThroughList(List<String> passThroughList) {
+					this.passThroughList = passThroughList;
+				}
+
+				public static class ParamMapsListItem {
+
+					@SerializedName("ExtractKeySpec")
+					private String extractKeySpec;
+
+					@SerializedName("ExtractKey")
+					private String extractKey;
+
+					@SerializedName("MappingType")
+					private String mappingType;
+
+					public String getExtractKeySpec() {
+						return this.extractKeySpec;
+					}
+
+					public void setExtractKeySpec(String extractKeySpec) {
+						this.extractKeySpec = extractKeySpec;
+					}
+
+					public String getExtractKey() {
+						return this.extractKey;
+					}
+
+					public void setExtractKey(String extractKey) {
+						this.extractKey = extractKey;
+					}
+
+					public String getMappingType() {
+						return this.mappingType;
+					}
+
+					public void setMappingType(String mappingType) {
+						this.mappingType = mappingType;
+					}
+				}
+			}
+		}
+	}
+
 	public static class RedirectJSON {
 
 		@SerializedName("Path")
@@ -477,31 +816,6 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 
 		public void setHost(String host) {
 			this.host = host;
-		}
-	}
-
-	public static class DirectResponseJSON {
-
-		@SerializedName("Code")
-		private Long code;
-
-		@SerializedName("Body")
-		private String body;
-
-		public Long getCode() {
-			return this.code;
-		}
-
-		public void setCode(Long code) {
-			this.code = code;
-		}
-
-		public String getBody() {
-			return this.body;
-		}
-
-		public void setBody(String body) {
-			this.body = body;
 		}
 	}
 

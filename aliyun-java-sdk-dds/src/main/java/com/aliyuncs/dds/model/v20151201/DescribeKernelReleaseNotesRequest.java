@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -28,8 +29,6 @@ public class DescribeKernelReleaseNotesRequest extends RpcAcsRequest<DescribeKer
 
 	private String kernelVersion;
 
-	private String securityToken;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -38,6 +37,10 @@ public class DescribeKernelReleaseNotesRequest extends RpcAcsRequest<DescribeKer
 	public DescribeKernelReleaseNotesRequest() {
 		super("Dds", "2015-12-01", "DescribeKernelReleaseNotes", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -59,17 +62,6 @@ public class DescribeKernelReleaseNotesRequest extends RpcAcsRequest<DescribeKer
 		this.kernelVersion = kernelVersion;
 		if(kernelVersion != null){
 			putQueryParameter("KernelVersion", kernelVersion);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

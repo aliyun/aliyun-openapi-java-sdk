@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -27,8 +28,6 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 	private Long resourceOwnerId;
 
 	private String couponNo;
-
-	private String securityToken;
 
 	private String dBInstanceId;
 
@@ -42,6 +41,10 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 	public DescribeRenewalPriceRequest() {
 		super("Dds", "2015-12-01", "DescribeRenewalPrice", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -63,17 +66,6 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 		this.couponNo = couponNo;
 		if(couponNo != null){
 			putQueryParameter("CouponNo", couponNo);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

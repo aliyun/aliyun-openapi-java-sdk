@@ -36,7 +36,7 @@ public class QueryDatasetListRequest extends RpcAcsRequest<QueryDatasetListRespo
 
 	private String workspaceId;
 	public QueryDatasetListRequest() {
-		super("quickbi-public", "2022-01-01", "QueryDatasetList", "quickbi");
+		super("quickbi-public", "2022-01-01", "QueryDatasetList", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

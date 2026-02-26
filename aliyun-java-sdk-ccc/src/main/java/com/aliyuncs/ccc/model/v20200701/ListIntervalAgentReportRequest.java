@@ -34,6 +34,8 @@ public class ListIntervalAgentReportRequest extends RpcAcsRequest<ListIntervalAg
 	private String instanceId;
 
 	private String interval;
+
+	private String mediaType;
 	public ListIntervalAgentReportRequest() {
 		super("CCC", "2020-07-01", "ListIntervalAgentReport", "CCC");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class ListIntervalAgentReportRequest extends RpcAcsRequest<ListIntervalAg
 		this.interval = interval;
 		if(interval != null){
 			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getMediaType() {
+		return this.mediaType;
+	}
+
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+		if(mediaType != null){
+			putQueryParameter("MediaType", mediaType);
 		}
 	}
 

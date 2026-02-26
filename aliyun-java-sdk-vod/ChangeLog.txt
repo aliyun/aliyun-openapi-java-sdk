@@ -1,3 +1,85 @@
+2025-12-08 Version: 2.16.34
+- Generated 2017-03-21 for `vod`.
+
+2025-09-22 Version: 2.16.33
+- support DescribeVodUserVipsByDomain.
+
+2025-03-21 Version: 2.16.32
+- GetDailyPlayRegionStatis
+
+2025-01-08 Version: 2.16.31
+- Modify BatchGetMediaInfos.
+
+2024-12-19 Version: 2.16.30
+- Add BatchGetMediaInfos.
+- Modify UploadStreamByURL.
+
+2024-12-06 Version: 2.16.29
+-Release GetJobDetail, ListJobInfo.
+-Modify GetTranscodeTask.
+
+2024-11-28 Version: 2.16.28
+- SubmitTranscodeJobs Add SessionId.
+
+2024-10-11 Version: 2.16.27
+- GetPlayInfo Add EncryptMode.
+
+2024-08-20 Version: 2.16.26
+增加DescribeVodDomainMax95BpsData
+
+2024-08-13 Version: 2.16.25
+-DescribeVodCertificateDetail, DescribeVodCertificateList增加返回参数
+
+2024-05-08 Version: 2.16.24
+-Fixed DescribeVodMediaPlayData接口返回数据类型错误
+
+2024-04-25 Version: 2.16.23
+- Generated 2017-03-21 for `vod`.
+
+2024-01-04 Version: 2.16.22
+- open GenerateDownloadDecryptkey.
+
+2023-12-15 Version: 2.16.21
+- SubmitSnapshotJob add parameter
+
+2023-12-13 Version: 2.16.20
+- Support Media StorageClass.
+
+2023-11-15 Version: 2.16.19
+- Latest version for php.
+
+2023-11-15 Version: 2.16.18
+- Latest version for php.
+
+2023-10-18 Version: 2.16.17
+- Support Digital Watermark.
+
+2023-04-26 Version: 2.16.16
+- Api add media storage class.
+
+2023-04-26 Version: 2.16.15
+- Api add media storage class.
+
+2023-03-02 Version: 2.16.14
+- Api DescribeVodDomainUsageData add parameter Interval.
+
+2022-12-05 Version: 2.16.13
+- Add API DescribeVodDomainSrcBpsData.
+- Add API DescribeVodDomainSrcTrafficData.
+
+2022-10-28 Version: 2.16.12
+- Modify UpdateAppInfo api.
+- Modify GetAppInfos api.
+- Modify DeleteAppInfo api.
+- Modify CreateAppInfo api.
+
+2022-10-27 Version: 2.16.11
+- Modify DescribeVodUserDomains api.
+- Modify CreateUploadImage api.
+
+2022-08-25 Version: 2.16.10
+- Add kms apis.
+
 2022-07-28 Version: 2.16.9
 - Add GetImageInfos api.
 

@@ -54,6 +54,8 @@ public class DescribeVpcsResponseUnmarshaller {
 			vpc.setDhcpOptionsSetId(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].DhcpOptionsSetId"));
 			vpc.setIpv6CidrBlock(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Ipv6CidrBlock"));
 			vpc.setCenStatus(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].CenStatus"));
+			vpc.setEnabledIpv6(_ctx.booleanValue("DescribeVpcsResponse.Vpcs["+ i +"].EnabledIpv6"));
+			vpc.setDnsHostnameStatus(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].DnsHostnameStatus"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].VSwitchIds.Length"); j++) {

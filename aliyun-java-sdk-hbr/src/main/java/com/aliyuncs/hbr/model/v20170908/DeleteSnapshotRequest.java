@@ -37,6 +37,8 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 	private String instanceId;
 
 	private String sourceType;
+
+	private Boolean force;
 	public DeleteSnapshotRequest() {
 		super("hbr", "2017-09-08", "DeleteSnapshot", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -110,6 +112,17 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 		this.sourceType = sourceType;
 		if(sourceType != null){
 			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

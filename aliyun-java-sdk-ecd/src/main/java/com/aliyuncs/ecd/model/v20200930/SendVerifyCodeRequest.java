@@ -29,7 +29,7 @@ public class SendVerifyCodeRequest extends RpcAcsRequest<SendVerifyCodeResponse>
 
 	private String extraInfo;
 	public SendVerifyCodeRequest() {
-		super("ecd", "2020-09-30", "SendVerifyCode");
+		super("ecd", "2020-09-30", "SendVerifyCode", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

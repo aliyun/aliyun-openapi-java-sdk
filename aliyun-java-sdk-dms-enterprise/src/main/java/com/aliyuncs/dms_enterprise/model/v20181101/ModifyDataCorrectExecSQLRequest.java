@@ -25,11 +25,11 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ModifyDataCorrectExecSQLRequest extends RpcAcsRequest<ModifyDataCorrectExecSQLResponse> {
 	   
 
-	private Long orderId;
-
 	private String execSQL;
 
 	private Long tid;
+
+	private Long orderId;
 	public ModifyDataCorrectExecSQLRequest() {
 		super("dms-enterprise", "2018-11-01", "ModifyDataCorrectExecSQL", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class ModifyDataCorrectExecSQLRequest extends RpcAcsRequest<ModifyDataCor
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId.toString());
-		}
 	}
 
 	public String getExecSQL() {
@@ -69,6 +58,17 @@ public class ModifyDataCorrectExecSQLRequest extends RpcAcsRequest<ModifyDataCor
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId.toString());
 		}
 	}
 

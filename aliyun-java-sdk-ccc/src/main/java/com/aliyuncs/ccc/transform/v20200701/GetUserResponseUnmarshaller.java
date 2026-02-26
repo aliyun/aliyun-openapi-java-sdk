@@ -52,6 +52,8 @@ public class GetUserResponseUnmarshaller {
 		data.setDeviceId(_ctx.stringValue("GetUserResponse.Data.DeviceId"));
 		data.setDeviceExt(_ctx.stringValue("GetUserResponse.Data.DeviceExt"));
 		data.setDeviceState(_ctx.stringValue("GetUserResponse.Data.DeviceState"));
+		data.setNickname(_ctx.stringValue("GetUserResponse.Data.Nickname"));
+		data.setAvatarUrl(_ctx.stringValue("GetUserResponse.Data.AvatarUrl"));
 		getUserResponse.setData(data);
 	 
 	 	return getUserResponse;

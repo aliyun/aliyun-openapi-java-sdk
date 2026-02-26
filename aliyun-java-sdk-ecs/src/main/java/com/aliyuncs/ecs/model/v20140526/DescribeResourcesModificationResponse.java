@@ -103,6 +103,8 @@ public class DescribeResourcesModificationResponse extends AcsResponse {
 
 			private List<SupportedResource> supportedResources;
 
+			private List<ConditionSupportedResource> conditionSupportedResources;
+
 			public String getType() {
 				return this.type;
 			}
@@ -117,6 +119,14 @@ public class DescribeResourcesModificationResponse extends AcsResponse {
 
 			public void setSupportedResources(List<SupportedResource> supportedResources) {
 				this.supportedResources = supportedResources;
+			}
+
+			public List<ConditionSupportedResource> getConditionSupportedResources() {
+				return this.conditionSupportedResources;
+			}
+
+			public void setConditionSupportedResources(List<ConditionSupportedResource> conditionSupportedResources) {
+				this.conditionSupportedResources = conditionSupportedResources;
 			}
 
 			public static class SupportedResource {
@@ -179,6 +189,92 @@ public class DescribeResourcesModificationResponse extends AcsResponse {
 
 				public void setMin(Integer min) {
 					this.min = min;
+				}
+			}
+
+			public static class ConditionSupportedResource {
+
+				private String status;
+
+				private String value;
+
+				private Integer max;
+
+				private String unit;
+
+				private String statusCategory;
+
+				private Integer min;
+
+				private List<Condition> conditions;
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+
+				public Integer getMax() {
+					return this.max;
+				}
+
+				public void setMax(Integer max) {
+					this.max = max;
+				}
+
+				public String getUnit() {
+					return this.unit;
+				}
+
+				public void setUnit(String unit) {
+					this.unit = unit;
+				}
+
+				public String getStatusCategory() {
+					return this.statusCategory;
+				}
+
+				public void setStatusCategory(String statusCategory) {
+					this.statusCategory = statusCategory;
+				}
+
+				public Integer getMin() {
+					return this.min;
+				}
+
+				public void setMin(Integer min) {
+					this.min = min;
+				}
+
+				public List<Condition> getConditions() {
+					return this.conditions;
+				}
+
+				public void setConditions(List<Condition> conditions) {
+					this.conditions = conditions;
+				}
+
+				public static class Condition {
+
+					private String key;
+
+					public String getKey() {
+						return this.key;
+					}
+
+					public void setKey(String key) {
+						this.key = key;
+					}
 				}
 			}
 		}

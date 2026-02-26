@@ -30,10 +30,10 @@ public class DetectImageBodiesRequest extends RpcAcsRequest<DetectImageBodiesRes
 
 	private String projectName;
 
-	private String sourceURI;
-
 	@SerializedName("credentialConfig")
 	private CredentialConfig credentialConfig;
+
+	private String sourceURI;
 
 	private Float sensitivity;
 	public DetectImageBodiesRequest() {
@@ -56,17 +56,6 @@ public class DetectImageBodiesRequest extends RpcAcsRequest<DetectImageBodiesRes
 		}
 	}
 
-	public String getSourceURI() {
-		return this.sourceURI;
-	}
-
-	public void setSourceURI(String sourceURI) {
-		this.sourceURI = sourceURI;
-		if(sourceURI != null){
-			putQueryParameter("SourceURI", sourceURI);
-		}
-	}
-
 	public CredentialConfig getCredentialConfig() {
 		return this.credentialConfig;
 	}
@@ -76,6 +65,17 @@ public class DetectImageBodiesRequest extends RpcAcsRequest<DetectImageBodiesRes
 		if (credentialConfig != null) {
 			putQueryParameter("CredentialConfig" , new Gson().toJson(credentialConfig));
 		}	
+	}
+
+	public String getSourceURI() {
+		return this.sourceURI;
+	}
+
+	public void setSourceURI(String sourceURI) {
+		this.sourceURI = sourceURI;
+		if(sourceURI != null){
+			putQueryParameter("SourceURI", sourceURI);
+		}
 	}
 
 	public Float getSensitivity() {

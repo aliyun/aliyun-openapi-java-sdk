@@ -23,9 +23,9 @@ public class SetDevicePictureLifeCycleResponseUnmarshaller {
 	public static SetDevicePictureLifeCycleResponse unmarshall(SetDevicePictureLifeCycleResponse setDevicePictureLifeCycleResponse, UnmarshallerContext _ctx) {
 		
 		setDevicePictureLifeCycleResponse.setRequestId(_ctx.stringValue("SetDevicePictureLifeCycleResponse.RequestId"));
-		setDevicePictureLifeCycleResponse.setSuccess(_ctx.booleanValue("SetDevicePictureLifeCycleResponse.Success"));
-		setDevicePictureLifeCycleResponse.setErrorMessage(_ctx.stringValue("SetDevicePictureLifeCycleResponse.ErrorMessage"));
 		setDevicePictureLifeCycleResponse.setCode(_ctx.stringValue("SetDevicePictureLifeCycleResponse.Code"));
+		setDevicePictureLifeCycleResponse.setErrorMessage(_ctx.stringValue("SetDevicePictureLifeCycleResponse.ErrorMessage"));
+		setDevicePictureLifeCycleResponse.setSuccess(_ctx.booleanValue("SetDevicePictureLifeCycleResponse.Success"));
 	 
 	 	return setDevicePictureLifeCycleResponse;
 	}

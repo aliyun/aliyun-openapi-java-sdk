@@ -25,11 +25,11 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 	   
 
+	private String versionCode;
+
 	private String clusterId;
 
 	private String acceptLanguage;
-
-	private String versionCode;
 	public UpdateImageRequest() {
 		super("mse", "2019-05-31", "UpdateImage", "mse");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getVersionCode() {
+		return this.versionCode;
+	}
+
+	public void setVersionCode(String versionCode) {
+		this.versionCode = versionCode;
+		if(versionCode != null){
+			putQueryParameter("VersionCode", versionCode);
+		}
 	}
 
 	public String getClusterId() {
@@ -58,17 +69,6 @@ public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getVersionCode() {
-		return this.versionCode;
-	}
-
-	public void setVersionCode(String versionCode) {
-		this.versionCode = versionCode;
-		if(versionCode != null){
-			putQueryParameter("VersionCode", versionCode);
 		}
 	}
 

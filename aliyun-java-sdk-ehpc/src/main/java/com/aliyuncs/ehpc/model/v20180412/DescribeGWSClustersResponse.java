@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGWSClustersResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String requestId;
 
 	private String callerType;
 
+	private Integer totalCount;
+
 	private List<ClusterInfo> clusters;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -61,12 +53,12 @@ public class DescribeGWSClustersResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCallerType() {
@@ -75,6 +67,14 @@ public class DescribeGWSClustersResponse extends AcsResponse {
 
 	public void setCallerType(String callerType) {
 		this.callerType = callerType;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ClusterInfo> getClusters() {
@@ -87,22 +87,22 @@ public class DescribeGWSClustersResponse extends AcsResponse {
 
 	public static class ClusterInfo {
 
-		private String clusterId;
+		private String vpcId;
 
 		private String status;
 
-		private String createTime;
-
-		private String vpcId;
-
 		private Integer instanceCount;
 
-		public String getClusterId() {
-			return this.clusterId;
+		private String createTime;
+
+		private String clusterId;
+
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getStatus() {
@@ -113,6 +113,14 @@ public class DescribeGWSClustersResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public Integer getInstanceCount() {
+			return this.instanceCount;
+		}
+
+		public void setInstanceCount(Integer instanceCount) {
+			this.instanceCount = instanceCount;
+		}
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -121,20 +129,12 @@ public class DescribeGWSClustersResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getClusterId() {
+			return this.clusterId;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public Integer getInstanceCount() {
-			return this.instanceCount;
-		}
-
-		public void setInstanceCount(Integer instanceCount) {
-			this.instanceCount = instanceCount;
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 	}
 

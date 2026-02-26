@@ -25,9 +25,9 @@ import com.aliyuncs.ga.Endpoint;
 public class DeleteListenerRequest extends RpcAcsRequest<DeleteListenerResponse> {
 	   
 
-	private String listenerId;
-
 	private String clientToken;
+
+	private String listenerId;
 
 	private String acceleratorId;
 	public DeleteListenerRequest() {
@@ -39,17 +39,6 @@ public class DeleteListenerRequest extends RpcAcsRequest<DeleteListenerResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getListenerId() {
-		return this.listenerId;
-	}
-
-	public void setListenerId(String listenerId) {
-		this.listenerId = listenerId;
-		if(listenerId != null){
-			putQueryParameter("ListenerId", listenerId);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -58,6 +47,17 @@ public class DeleteListenerRequest extends RpcAcsRequest<DeleteListenerResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getListenerId() {
+		return this.listenerId;
+	}
+
+	public void setListenerId(String listenerId) {
+		this.listenerId = listenerId;
+		if(listenerId != null){
+			putQueryParameter("ListenerId", listenerId);
 		}
 	}
 

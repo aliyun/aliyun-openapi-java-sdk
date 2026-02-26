@@ -27,6 +27,12 @@ public class AssumeRoleRequestTest {
         request.setPolicy("policy");
         Assert.assertEquals("policy", request.getPolicy());
         Assert.assertEquals("policy", request.getSysQueryParameters().get("Policy"));
+        // externalId
+        Assert.assertNull(request.getExternalId());
+        Assert.assertNull(request.getSysQueryParameters().get("ExternalId"));
+        request.setExternalId("externalId");
+        Assert.assertEquals("externalId", request.getExternalId());
+        Assert.assertEquals("externalId", request.getSysQueryParameters().get("ExternalId"));
         // roleSessionName
         Assert.assertNull(request.getRoleSessionName());
         Assert.assertNull(request.getSysQueryParameters().get("RoleSessionName"));

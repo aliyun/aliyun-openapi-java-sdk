@@ -1,0 +1,14 @@
+2023-09-13 Version: 1.0.3
+- Fix ListVpcPeerConnections paramer.
+
+2023-07-25 Version: 1.0.2
+- Add move resource group api.
+
+2023-05-30 Version: 1.0.1
+- Adapt timeout.
+- Adapt rpc timeout.
+- VpcPeer Support ResourceGroup.
+
+2023-02-24 Version: 1.0.0
+- VpcPeer Support Tag.
+

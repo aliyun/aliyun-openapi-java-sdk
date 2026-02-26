@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeAccesskeyLeakListRequest extends RpcAcsRequest<DescribeAccesskeyLeakListResponse> {
 	   
 
-	private String query;
-
 	private Long startTs;
 
-	private Integer currentPage;
-
 	private Integer pageSize;
+
+	private String query;
+
+	private Integer currentPage;
 
 	private String status;
 	public DescribeAccesskeyLeakListRequest() {
@@ -41,17 +41,6 @@ public class DescribeAccesskeyLeakListRequest extends RpcAcsRequest<DescribeAcce
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getQuery() {
-		return this.query;
-	}
-
-	public void setQuery(String query) {
-		this.query = query;
-		if(query != null){
-			putQueryParameter("Query", query);
-		}
 	}
 
 	public Long getStartTs() {
@@ -65,17 +54,6 @@ public class DescribeAccesskeyLeakListRequest extends RpcAcsRequest<DescribeAcce
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -84,6 +62,28 @@ public class DescribeAccesskeyLeakListRequest extends RpcAcsRequest<DescribeAcce
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getQuery() {
+		return this.query;
+	}
+
+	public void setQuery(String query) {
+		this.query = query;
+		if(query != null){
+			putQueryParameter("Query", query);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

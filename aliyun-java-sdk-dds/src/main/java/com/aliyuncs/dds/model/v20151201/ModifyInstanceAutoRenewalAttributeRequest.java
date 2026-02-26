@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -27,8 +28,6 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 	private Long resourceOwnerId;
 
 	private String duration;
-
-	private String securityToken;
 
 	private String dBInstanceId;
 
@@ -42,6 +41,10 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 	public ModifyInstanceAutoRenewalAttributeRequest() {
 		super("Dds", "2015-12-01", "ModifyInstanceAutoRenewalAttribute", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -63,17 +66,6 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		this.duration = duration;
 		if(duration != null){
 			putQueryParameter("Duration", duration);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

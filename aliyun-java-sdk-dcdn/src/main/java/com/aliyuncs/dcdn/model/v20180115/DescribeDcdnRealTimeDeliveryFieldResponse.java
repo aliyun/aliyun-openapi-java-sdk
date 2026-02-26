@@ -47,17 +47,9 @@ public class DescribeDcdnRealTimeDeliveryFieldResponse extends AcsResponse {
 
 	public static class Fields {
 
-		private String fieldName;
-
 		private String description;
 
-		public String getFieldName() {
-			return this.fieldName;
-		}
-
-		public void setFieldName(String fieldName) {
-			this.fieldName = fieldName;
-		}
+		private String fieldName;
 
 		public String getDescription() {
 			return this.description;
@@ -65,6 +57,14 @@ public class DescribeDcdnRealTimeDeliveryFieldResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getFieldName() {
+			return this.fieldName;
+		}
+
+		public void setFieldName(String fieldName) {
+			this.fieldName = fieldName;
 		}
 	}
 

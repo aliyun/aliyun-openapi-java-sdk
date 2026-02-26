@@ -81,11 +81,17 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 		private String addressType;
 
+		private Integer bandwidthCapacity;
+
 		private String bandwidthPackageId;
 
 		private String createTime;
 
 		private String dNSName;
+
+		private Boolean serviceManagedEnabled;
+
+		private String serviceManagedMode;
 
 		private String loadBalancerBussinessStatus;
 
@@ -101,6 +107,8 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private Boolean configManagedEnabled;
+
 		private String addressIpVersion;
 
 		private String ipv6AddressType;
@@ -108,6 +116,8 @@ public class ListLoadBalancersResponse extends AcsResponse {
 		private List<LoadBalancerOperationLock> loadBalancerOperationLocks;
 
 		private List<Tag> tags;
+
+		private List<AssociatedResource> associatedResources;
 
 		private AccessLogConfig accessLogConfig;
 
@@ -133,6 +143,14 @@ public class ListLoadBalancersResponse extends AcsResponse {
 			this.addressType = addressType;
 		}
 
+		public Integer getBandwidthCapacity() {
+			return this.bandwidthCapacity;
+		}
+
+		public void setBandwidthCapacity(Integer bandwidthCapacity) {
+			this.bandwidthCapacity = bandwidthCapacity;
+		}
+
 		public String getBandwidthPackageId() {
 			return this.bandwidthPackageId;
 		}
@@ -155,6 +173,22 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 		public void setDNSName(String dNSName) {
 			this.dNSName = dNSName;
+		}
+
+		public Boolean getServiceManagedEnabled() {
+			return this.serviceManagedEnabled;
+		}
+
+		public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+			this.serviceManagedEnabled = serviceManagedEnabled;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
 		}
 
 		public String getLoadBalancerBussinessStatus() {
@@ -213,6 +247,14 @@ public class ListLoadBalancersResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
+		public Boolean getConfigManagedEnabled() {
+			return this.configManagedEnabled;
+		}
+
+		public void setConfigManagedEnabled(Boolean configManagedEnabled) {
+			this.configManagedEnabled = configManagedEnabled;
+		}
+
 		public String getAddressIpVersion() {
 			return this.addressIpVersion;
 		}
@@ -243,6 +285,14 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<AssociatedResource> getAssociatedResources() {
+			return this.associatedResources;
+		}
+
+		public void setAssociatedResources(List<AssociatedResource> associatedResources) {
+			this.associatedResources = associatedResources;
 		}
 
 		public AccessLogConfig getAccessLogConfig() {
@@ -323,6 +373,59 @@ public class ListLoadBalancersResponse extends AcsResponse {
 			}
 		}
 
+		public static class AssociatedResource {
+
+			private String associatedResourceType;
+
+			private String associatedResourceId;
+
+			private String policyId;
+
+			private String status;
+
+			private String associatedMode;
+
+			public String getAssociatedResourceType() {
+				return this.associatedResourceType;
+			}
+
+			public void setAssociatedResourceType(String associatedResourceType) {
+				this.associatedResourceType = associatedResourceType;
+			}
+
+			public String getAssociatedResourceId() {
+				return this.associatedResourceId;
+			}
+
+			public void setAssociatedResourceId(String associatedResourceId) {
+				this.associatedResourceId = associatedResourceId;
+			}
+
+			public String getPolicyId() {
+				return this.policyId;
+			}
+
+			public void setPolicyId(String policyId) {
+				this.policyId = policyId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getAssociatedMode() {
+				return this.associatedMode;
+			}
+
+			public void setAssociatedMode(String associatedMode) {
+				this.associatedMode = associatedMode;
+			}
+		}
+
 		public static class AccessLogConfig {
 
 			private String logProject;
@@ -371,7 +474,27 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 		public static class LoadBalancerBillingConfig {
 
+			private Integer internetBandwidth;
+
+			private String internetChargeType;
+
 			private String payType;
+
+			public Integer getInternetBandwidth() {
+				return this.internetBandwidth;
+			}
+
+			public void setInternetBandwidth(Integer internetBandwidth) {
+				this.internetBandwidth = internetBandwidth;
+			}
+
+			public String getInternetChargeType() {
+				return this.internetChargeType;
+			}
+
+			public void setInternetChargeType(String internetChargeType) {
+				this.internetChargeType = internetChargeType;
+			}
 
 			public String getPayType() {
 				return this.payType;

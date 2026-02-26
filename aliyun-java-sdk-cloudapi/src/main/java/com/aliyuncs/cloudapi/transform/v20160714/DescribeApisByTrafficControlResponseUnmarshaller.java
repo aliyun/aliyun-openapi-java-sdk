@@ -27,22 +27,22 @@ public class DescribeApisByTrafficControlResponseUnmarshaller {
 	public static DescribeApisByTrafficControlResponse unmarshall(DescribeApisByTrafficControlResponse describeApisByTrafficControlResponse, UnmarshallerContext _ctx) {
 		
 		describeApisByTrafficControlResponse.setRequestId(_ctx.stringValue("DescribeApisByTrafficControlResponse.RequestId"));
-		describeApisByTrafficControlResponse.setTotalCount(_ctx.integerValue("DescribeApisByTrafficControlResponse.TotalCount"));
-		describeApisByTrafficControlResponse.setPageSize(_ctx.integerValue("DescribeApisByTrafficControlResponse.PageSize"));
 		describeApisByTrafficControlResponse.setPageNumber(_ctx.integerValue("DescribeApisByTrafficControlResponse.PageNumber"));
+		describeApisByTrafficControlResponse.setPageSize(_ctx.integerValue("DescribeApisByTrafficControlResponse.PageSize"));
+		describeApisByTrafficControlResponse.setTotalCount(_ctx.integerValue("DescribeApisByTrafficControlResponse.TotalCount"));
 
 		List<ApiInfo> apiInfos = new ArrayList<ApiInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApisByTrafficControlResponse.ApiInfos.Length"); i++) {
 			ApiInfo apiInfo = new ApiInfo();
-			apiInfo.setRegionId(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].RegionId"));
-			apiInfo.setGroupId(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].GroupId"));
-			apiInfo.setGroupName(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].GroupName"));
-			apiInfo.setStageName(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].StageName"));
-			apiInfo.setApiId(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].ApiId"));
-			apiInfo.setApiName(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].ApiName"));
-			apiInfo.setDescription(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].Description"));
-			apiInfo.setVisibility(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].Visibility"));
 			apiInfo.setBoundTime(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].BoundTime"));
+			apiInfo.setVisibility(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].Visibility"));
+			apiInfo.setApiId(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].ApiId"));
+			apiInfo.setDescription(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].Description"));
+			apiInfo.setGroupName(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].GroupName"));
+			apiInfo.setGroupId(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].GroupId"));
+			apiInfo.setStageName(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].StageName"));
+			apiInfo.setApiName(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].ApiName"));
+			apiInfo.setRegionId(_ctx.stringValue("DescribeApisByTrafficControlResponse.ApiInfos["+ i +"].RegionId"));
 
 			apiInfos.add(apiInfo);
 		}

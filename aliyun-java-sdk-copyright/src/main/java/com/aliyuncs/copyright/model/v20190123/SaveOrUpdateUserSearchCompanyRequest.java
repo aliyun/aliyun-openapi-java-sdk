@@ -28,7 +28,7 @@ public class SaveOrUpdateUserSearchCompanyRequest extends RpcAcsRequest<SaveOrUp
 
 	private Integer type;
 	public SaveOrUpdateUserSearchCompanyRequest() {
-		super("Copyright", "2019-01-23", "SaveOrUpdateUserSearchCompany");
+		super("Copyright", "2019-01-23", "SaveOrUpdateUserSearchCompany", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

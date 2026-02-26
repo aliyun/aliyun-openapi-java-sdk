@@ -145,6 +145,8 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 		private Long totalExecutionCounts;
 
+		private String maxExecutionTimeMs;
+
 		public String getSQLText() {
 			return this.sQLText;
 		}
@@ -255,6 +257,14 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 		public void setTotalExecutionCounts(Long totalExecutionCounts) {
 			this.totalExecutionCounts = totalExecutionCounts;
+		}
+
+		public String getMaxExecutionTimeMs() {
+			return this.maxExecutionTimeMs;
+		}
+
+		public void setMaxExecutionTimeMs(String maxExecutionTimeMs) {
+			this.maxExecutionTimeMs = maxExecutionTimeMs;
 		}
 	}
 

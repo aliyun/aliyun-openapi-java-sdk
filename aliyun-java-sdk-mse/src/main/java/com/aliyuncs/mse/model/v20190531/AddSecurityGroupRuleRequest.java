@@ -25,13 +25,13 @@ import com.aliyuncs.mse.Endpoint;
 public class AddSecurityGroupRuleRequest extends RpcAcsRequest<AddSecurityGroupRuleResponse> {
 	   
 
-	private String portRange;
-
 	private String gatewayUniqueId;
 
 	private String securityGroupId;
 
 	private String description;
+
+	private String portRange;
 
 	private String acceptLanguage;
 	public AddSecurityGroupRuleRequest() {
@@ -41,17 +41,6 @@ public class AddSecurityGroupRuleRequest extends RpcAcsRequest<AddSecurityGroupR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getPortRange() {
-		return this.portRange;
-	}
-
-	public void setPortRange(String portRange) {
-		this.portRange = portRange;
-		if(portRange != null){
-			putQueryParameter("PortRange", portRange);
-		}
 	}
 
 	public String getGatewayUniqueId() {
@@ -84,6 +73,17 @@ public class AddSecurityGroupRuleRequest extends RpcAcsRequest<AddSecurityGroupR
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getPortRange() {
+		return this.portRange;
+	}
+
+	public void setPortRange(String portRange) {
+		this.portRange = portRange;
+		if(portRange != null){
+			putQueryParameter("PortRange", portRange);
 		}
 	}
 

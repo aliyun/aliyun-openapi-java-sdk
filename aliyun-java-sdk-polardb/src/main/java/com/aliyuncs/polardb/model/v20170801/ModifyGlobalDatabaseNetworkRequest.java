@@ -27,6 +27,8 @@ public class ModifyGlobalDatabaseNetworkRequest extends RpcAcsRequest<ModifyGlob
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private String gDNId;
@@ -37,9 +39,11 @@ public class ModifyGlobalDatabaseNetworkRequest extends RpcAcsRequest<ModifyGlob
 
 	private String ownerAccount;
 
+	private Boolean enableGlobalDomainName;
+
 	private Long ownerId;
 	public ModifyGlobalDatabaseNetworkRequest() {
-		super("polardb", "2017-08-01", "ModifyGlobalDatabaseNetwork");
+		super("polardb", "2017-08-01", "ModifyGlobalDatabaseNetwork", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,6 +59,17 @@ public class ModifyGlobalDatabaseNetworkRequest extends RpcAcsRequest<ModifyGlob
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -110,6 +125,17 @@ public class ModifyGlobalDatabaseNetworkRequest extends RpcAcsRequest<ModifyGlob
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Boolean getEnableGlobalDomainName() {
+		return this.enableGlobalDomainName;
+	}
+
+	public void setEnableGlobalDomainName(Boolean enableGlobalDomainName) {
+		this.enableGlobalDomainName = enableGlobalDomainName;
+		if(enableGlobalDomainName != null){
+			putQueryParameter("EnableGlobalDomainName", enableGlobalDomainName.toString());
 		}
 	}
 

@@ -24,75 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnRefreshQuotaResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String urlQuota;
-
-	private String dirQuota;
-
-	private String urlRemain;
-
-	private String dirRemain;
-
-	private String preloadQuota;
-
 	private String blockQuota;
-
-	private String preloadRemain;
-
-	private String blockRemain;
-
-	private String regexQuota;
 
 	private String regexRemain;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String blockRemain;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String preloadRemain;
 
-	public String getUrlQuota() {
-		return this.urlQuota;
-	}
+	private String requestId;
 
-	public void setUrlQuota(String urlQuota) {
-		this.urlQuota = urlQuota;
-	}
+	private String dirRemain;
 
-	public String getDirQuota() {
-		return this.dirQuota;
-	}
+	private String urlRemain;
 
-	public void setDirQuota(String dirQuota) {
-		this.dirQuota = dirQuota;
-	}
+	private String dirQuota;
 
-	public String getUrlRemain() {
-		return this.urlRemain;
-	}
+	private String urlQuota;
 
-	public void setUrlRemain(String urlRemain) {
-		this.urlRemain = urlRemain;
-	}
+	private String preloadQuota;
 
-	public String getDirRemain() {
-		return this.dirRemain;
-	}
-
-	public void setDirRemain(String dirRemain) {
-		this.dirRemain = dirRemain;
-	}
-
-	public String getPreloadQuota() {
-		return this.preloadQuota;
-	}
-
-	public void setPreloadQuota(String preloadQuota) {
-		this.preloadQuota = preloadQuota;
-	}
+	private String regexQuota;
 
 	public String getBlockQuota() {
 		return this.blockQuota;
@@ -102,12 +54,12 @@ public class DescribeDcdnRefreshQuotaResponse extends AcsResponse {
 		this.blockQuota = blockQuota;
 	}
 
-	public String getPreloadRemain() {
-		return this.preloadRemain;
+	public String getRegexRemain() {
+		return this.regexRemain;
 	}
 
-	public void setPreloadRemain(String preloadRemain) {
-		this.preloadRemain = preloadRemain;
+	public void setRegexRemain(String regexRemain) {
+		this.regexRemain = regexRemain;
 	}
 
 	public String getBlockRemain() {
@@ -118,20 +70,68 @@ public class DescribeDcdnRefreshQuotaResponse extends AcsResponse {
 		this.blockRemain = blockRemain;
 	}
 
+	public String getPreloadRemain() {
+		return this.preloadRemain;
+	}
+
+	public void setPreloadRemain(String preloadRemain) {
+		this.preloadRemain = preloadRemain;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getDirRemain() {
+		return this.dirRemain;
+	}
+
+	public void setDirRemain(String dirRemain) {
+		this.dirRemain = dirRemain;
+	}
+
+	public String getUrlRemain() {
+		return this.urlRemain;
+	}
+
+	public void setUrlRemain(String urlRemain) {
+		this.urlRemain = urlRemain;
+	}
+
+	public String getDirQuota() {
+		return this.dirQuota;
+	}
+
+	public void setDirQuota(String dirQuota) {
+		this.dirQuota = dirQuota;
+	}
+
+	public String getUrlQuota() {
+		return this.urlQuota;
+	}
+
+	public void setUrlQuota(String urlQuota) {
+		this.urlQuota = urlQuota;
+	}
+
+	public String getPreloadQuota() {
+		return this.preloadQuota;
+	}
+
+	public void setPreloadQuota(String preloadQuota) {
+		this.preloadQuota = preloadQuota;
+	}
+
 	public String getRegexQuota() {
 		return this.regexQuota;
 	}
 
 	public void setRegexQuota(String regexQuota) {
 		this.regexQuota = regexQuota;
-	}
-
-	public String getRegexRemain() {
-		return this.regexRemain;
-	}
-
-	public void setRegexRemain(String regexRemain) {
-		this.regexRemain = regexRemain;
 	}
 
 	@Override

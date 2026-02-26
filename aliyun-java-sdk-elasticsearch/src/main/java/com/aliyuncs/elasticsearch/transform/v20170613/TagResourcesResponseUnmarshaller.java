@@ -23,6 +23,7 @@ public class TagResourcesResponseUnmarshaller {
 	public static TagResourcesResponse unmarshall(TagResourcesResponse tagResourcesResponse, UnmarshallerContext _ctx) {
 		
 		tagResourcesResponse.setRequestId(_ctx.stringValue("TagResourcesResponse.RequestId"));
+		tagResourcesResponse.setResult(_ctx.booleanValue("TagResourcesResponse.Result"));
 	 
 	 	return tagResourcesResponse;
 	}

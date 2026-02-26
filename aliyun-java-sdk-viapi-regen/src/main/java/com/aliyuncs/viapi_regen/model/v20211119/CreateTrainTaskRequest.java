@@ -16,6 +16,7 @@ package com.aliyuncs.viapi_regen.model.v20211119;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.viapi_regen.Endpoint;
 
 /**
  * @author auto create
@@ -28,16 +29,24 @@ public class CreateTrainTaskRequest extends RpcAcsRequest<CreateTrainTaskRespons
 
 	private String trainMode;
 
-	private Long labelId;
+	private String datasetIds;
+
+	private Long preTrainTaskId;
+
+	private String advancedParameters;
 
 	private String name;
 
-	private Long datasetId;
+	private String labelIds;
 
 	private Long workspaceId;
 	public CreateTrainTaskRequest() {
-		super("viapi-regen", "2021-11-19", "CreateTrainTask", "viapi-regen");
+		super("viapi-regen", "2021-11-19", "CreateTrainTask", "selflearning");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDescription() {
@@ -62,14 +71,36 @@ public class CreateTrainTaskRequest extends RpcAcsRequest<CreateTrainTaskRespons
 		}
 	}
 
-	public Long getLabelId() {
-		return this.labelId;
+	public String getDatasetIds() {
+		return this.datasetIds;
 	}
 
-	public void setLabelId(Long labelId) {
-		this.labelId = labelId;
-		if(labelId != null){
-			putBodyParameter("LabelId", labelId.toString());
+	public void setDatasetIds(String datasetIds) {
+		this.datasetIds = datasetIds;
+		if(datasetIds != null){
+			putBodyParameter("DatasetIds", datasetIds);
+		}
+	}
+
+	public Long getPreTrainTaskId() {
+		return this.preTrainTaskId;
+	}
+
+	public void setPreTrainTaskId(Long preTrainTaskId) {
+		this.preTrainTaskId = preTrainTaskId;
+		if(preTrainTaskId != null){
+			putBodyParameter("PreTrainTaskId", preTrainTaskId.toString());
+		}
+	}
+
+	public String getAdvancedParameters() {
+		return this.advancedParameters;
+	}
+
+	public void setAdvancedParameters(String advancedParameters) {
+		this.advancedParameters = advancedParameters;
+		if(advancedParameters != null){
+			putBodyParameter("AdvancedParameters", advancedParameters);
 		}
 	}
 
@@ -84,14 +115,14 @@ public class CreateTrainTaskRequest extends RpcAcsRequest<CreateTrainTaskRespons
 		}
 	}
 
-	public Long getDatasetId() {
-		return this.datasetId;
+	public String getLabelIds() {
+		return this.labelIds;
 	}
 
-	public void setDatasetId(Long datasetId) {
-		this.datasetId = datasetId;
-		if(datasetId != null){
-			putBodyParameter("DatasetId", datasetId.toString());
+	public void setLabelIds(String labelIds) {
+		this.labelIds = labelIds;
+		if(labelIds != null){
+			putBodyParameter("LabelIds", labelIds);
 		}
 	}
 

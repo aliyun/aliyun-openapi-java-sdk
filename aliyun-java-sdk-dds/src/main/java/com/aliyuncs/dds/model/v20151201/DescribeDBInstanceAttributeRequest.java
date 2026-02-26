@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -39,9 +40,15 @@ public class DescribeDBInstanceAttributeRequest extends RpcAcsRequest<DescribeDB
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Boolean isDelete;
 	public DescribeDBInstanceAttributeRequest() {
 		super("Dds", "2015-12-01", "DescribeDBInstanceAttribute", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -129,6 +136,17 @@ public class DescribeDBInstanceAttributeRequest extends RpcAcsRequest<DescribeDB
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getIsDelete() {
+		return this.isDelete;
+	}
+
+	public void setIsDelete(Boolean isDelete) {
+		this.isDelete = isDelete;
+		if(isDelete != null){
+			putQueryParameter("IsDelete", isDelete.toString());
 		}
 	}
 

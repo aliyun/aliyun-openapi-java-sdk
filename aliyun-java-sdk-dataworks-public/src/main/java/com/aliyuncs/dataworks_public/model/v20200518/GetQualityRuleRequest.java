@@ -28,6 +28,8 @@ public class GetQualityRuleRequest extends RpcAcsRequest<GetQualityRuleResponse>
 	private String projectName;
 
 	private Long ruleId;
+
+	private Long projectId;
 	public GetQualityRuleRequest() {
 		super("dataworks-public", "2020-05-18", "GetQualityRule");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class GetQualityRuleRequest extends RpcAcsRequest<GetQualityRuleResponse>
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putBodyParameter("RuleId", ruleId.toString());
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

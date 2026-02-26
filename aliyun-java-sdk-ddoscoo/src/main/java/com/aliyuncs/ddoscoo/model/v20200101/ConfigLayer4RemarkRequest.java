@@ -27,7 +27,7 @@ public class ConfigLayer4RemarkRequest extends RpcAcsRequest<ConfigLayer4RemarkR
 
 	private String listeners;
 	public ConfigLayer4RemarkRequest() {
-		super("ddoscoo", "2020-01-01", "ConfigLayer4Remark");
+		super("ddoscoo", "2020-01-01", "ConfigLayer4Remark", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

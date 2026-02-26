@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse.ApiSummary;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse.ApiSummary.DeployedInfo;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse.ApiSummary.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,22 +29,45 @@ public class DescribeApisResponseUnmarshaller {
 	public static DescribeApisResponse unmarshall(DescribeApisResponse describeApisResponse, UnmarshallerContext _ctx) {
 		
 		describeApisResponse.setRequestId(_ctx.stringValue("DescribeApisResponse.RequestId"));
-		describeApisResponse.setTotalCount(_ctx.integerValue("DescribeApisResponse.TotalCount"));
-		describeApisResponse.setPageSize(_ctx.integerValue("DescribeApisResponse.PageSize"));
 		describeApisResponse.setPageNumber(_ctx.integerValue("DescribeApisResponse.PageNumber"));
+		describeApisResponse.setPageSize(_ctx.integerValue("DescribeApisResponse.PageSize"));
+		describeApisResponse.setTotalCount(_ctx.integerValue("DescribeApisResponse.TotalCount"));
 
 		List<ApiSummary> apiSummarys = new ArrayList<ApiSummary>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApisResponse.ApiSummarys.Length"); i++) {
 			ApiSummary apiSummary = new ApiSummary();
-			apiSummary.setRegionId(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].RegionId"));
-			apiSummary.setGroupId(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].GroupId"));
-			apiSummary.setGroupName(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].GroupName"));
-			apiSummary.setApiId(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiId"));
-			apiSummary.setApiName(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiName"));
 			apiSummary.setVisibility(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].Visibility"));
-			apiSummary.setDescription(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].Description"));
-			apiSummary.setCreatedTime(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].CreatedTime"));
+			apiSummary.setApiId(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiId"));
 			apiSummary.setModifiedTime(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ModifiedTime"));
+			apiSummary.setDescription(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].Description"));
+			apiSummary.setGroupName(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].GroupName"));
+			apiSummary.setGroupId(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].GroupId"));
+			apiSummary.setCreatedTime(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].CreatedTime"));
+			apiSummary.setApiName(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiName"));
+			apiSummary.setRegionId(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].RegionId"));
+			apiSummary.setApiPath(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiPath"));
+			apiSummary.setApiMethod(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiMethod"));
+
+			List<DeployedInfo> deployedInfos = new ArrayList<DeployedInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeApisResponse.ApiSummarys["+ i +"].DeployedInfos.Length"); j++) {
+				DeployedInfo deployedInfo = new DeployedInfo();
+				deployedInfo.setStageName(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].DeployedInfos["+ j +"].StageName"));
+				deployedInfo.setEffectiveVersion(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].DeployedInfos["+ j +"].EffectiveVersion"));
+				deployedInfo.setDeployedStatus(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].DeployedInfos["+ j +"].DeployedStatus"));
+
+				deployedInfos.add(deployedInfo);
+			}
+			apiSummary.setDeployedInfos(deployedInfos);
+
+			List<Tag> tagList = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeApisResponse.ApiSummarys["+ i +"].TagList.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].TagList["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].TagList["+ j +"].TagValue"));
+
+				tagList.add(tag);
+			}
+			apiSummary.setTagList(tagList);
 
 			apiSummarys.add(apiSummary);
 		}

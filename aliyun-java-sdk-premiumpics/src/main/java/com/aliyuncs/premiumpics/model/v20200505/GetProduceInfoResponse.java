@@ -26,11 +26,11 @@ public class GetProduceInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String bizId;
 
 	private String goodsId;
 
-	private String bizId;
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,12 +40,12 @@ public class GetProduceInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getBizId() {
+		return this.bizId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
 	}
 
 	public String getGoodsId() {
@@ -56,12 +56,12 @@ public class GetProduceInfoResponse extends AcsResponse {
 		this.goodsId = goodsId;
 	}
 
-	public String getBizId() {
-		return this.bizId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

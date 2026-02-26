@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainCustomLogConfigResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String configId;
+
+	private String tag;
+
+	private String requestId;
 
 	private String remark;
 
 	private String sample;
-
-	private String tag;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getConfigId() {
 		return this.configId;
@@ -48,6 +40,22 @@ public class DescribeDomainCustomLogConfigResponse extends AcsResponse {
 
 	public void setConfigId(String configId) {
 		this.configId = configId;
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getRemark() {
@@ -64,14 +72,6 @@ public class DescribeDomainCustomLogConfigResponse extends AcsResponse {
 
 	public void setSample(String sample) {
 		this.sample = sample;
-	}
-
-	public String getTag() {
-		return this.tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
 	}
 
 	@Override

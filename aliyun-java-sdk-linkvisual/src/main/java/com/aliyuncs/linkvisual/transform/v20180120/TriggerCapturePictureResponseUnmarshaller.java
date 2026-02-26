@@ -23,10 +23,10 @@ public class TriggerCapturePictureResponseUnmarshaller {
 	public static TriggerCapturePictureResponse unmarshall(TriggerCapturePictureResponse triggerCapturePictureResponse, UnmarshallerContext _ctx) {
 		
 		triggerCapturePictureResponse.setRequestId(_ctx.stringValue("TriggerCapturePictureResponse.RequestId"));
-		triggerCapturePictureResponse.setSuccess(_ctx.booleanValue("TriggerCapturePictureResponse.Success"));
-		triggerCapturePictureResponse.setErrorMessage(_ctx.stringValue("TriggerCapturePictureResponse.ErrorMessage"));
 		triggerCapturePictureResponse.setCode(_ctx.stringValue("TriggerCapturePictureResponse.Code"));
 		triggerCapturePictureResponse.setData(_ctx.stringValue("TriggerCapturePictureResponse.Data"));
+		triggerCapturePictureResponse.setErrorMessage(_ctx.stringValue("TriggerCapturePictureResponse.ErrorMessage"));
+		triggerCapturePictureResponse.setSuccess(_ctx.booleanValue("TriggerCapturePictureResponse.Success"));
 	 
 	 	return triggerCapturePictureResponse;
 	}

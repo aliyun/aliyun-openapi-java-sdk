@@ -29,7 +29,7 @@ public class CreateSortScriptRequest extends RoaAcsRequest<CreateSortScriptRespo
 
 	private String appGroupIdentity;
 	public CreateSortScriptRequest() {
-		super("OpenSearch", "2017-12-25", "CreateSortScript", "opensearch");
+		super("OpenSearch", "2017-12-25", "CreateSortScript");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts");
 		setMethod(MethodType.POST);
 		try {

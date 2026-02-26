@@ -90,9 +90,9 @@ public class QueryEmbeddedInfoResponse extends AcsResponse {
 
 			private Integer dashboardOfflineQuery;
 
-			private Integer report;
-
 			private Integer page;
+
+			private Integer report;
 
 			public Integer getDashboardOfflineQuery() {
 				return this.dashboardOfflineQuery;
@@ -102,20 +102,20 @@ public class QueryEmbeddedInfoResponse extends AcsResponse {
 				this.dashboardOfflineQuery = dashboardOfflineQuery;
 			}
 
-			public Integer getReport() {
-				return this.report;
-			}
-
-			public void setReport(Integer report) {
-				this.report = report;
-			}
-
 			public Integer getPage() {
 				return this.page;
 			}
 
 			public void setPage(Integer page) {
 				this.page = page;
+			}
+
+			public Integer getReport() {
+				return this.report;
+			}
+
+			public void setReport(Integer report) {
+				this.report = report;
 			}
 		}
 	}

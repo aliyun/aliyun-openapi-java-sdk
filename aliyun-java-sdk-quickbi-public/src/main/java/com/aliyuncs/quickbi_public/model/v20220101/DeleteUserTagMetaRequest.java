@@ -26,7 +26,7 @@ public class DeleteUserTagMetaRequest extends RpcAcsRequest<DeleteUserTagMetaRes
 
 	private String tagId;
 	public DeleteUserTagMetaRequest() {
-		super("quickbi-public", "2022-01-01", "DeleteUserTagMeta", "quickbi");
+		super("quickbi-public", "2022-01-01", "DeleteUserTagMeta", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

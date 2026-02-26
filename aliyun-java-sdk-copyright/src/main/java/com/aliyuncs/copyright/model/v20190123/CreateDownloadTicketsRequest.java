@@ -28,7 +28,7 @@ public class CreateDownloadTicketsRequest extends RpcAcsRequest<CreateDownloadTi
 
 	private String name;
 	public CreateDownloadTicketsRequest() {
-		super("Copyright", "2019-01-23", "CreateDownloadTickets");
+		super("Copyright", "2019-01-23", "CreateDownloadTickets", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

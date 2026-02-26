@@ -35,7 +35,7 @@ public class CancelDataFlowTaskRequest extends RpcAcsRequest<CancelDataFlowTaskR
 
 	private String dataFlowId;
 	public CancelDataFlowTaskRequest() {
-		super("NAS", "2017-06-26", "CancelDataFlowTask", "NAS");
+		super("NAS", "2017-06-26", "CancelDataFlowTask", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

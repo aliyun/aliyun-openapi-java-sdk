@@ -1,3 +1,9 @@
+2025-03-11 Version: 1.0.22
+- Generated 2019-01-23 for `Drds`.
+
+2022-08-16 Version: 1.0.21
+- Build in 2022-08-16.
+
 2021-05-23 Version: 20210523.0.0
 - New API- GetDrdsDbRdsRelationInfo, which can get private RDS list under certain DB out of DRDS instance ID and DB name.
 

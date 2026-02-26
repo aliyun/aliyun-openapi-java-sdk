@@ -15,32 +15,23 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryFailReasonForRegistrantProfileRealNameVerificationRequest extends RpcAcsRequest<QueryFailReasonForRegistrantProfileRealNameVerificationResponse> {
-	
-	public QueryFailReasonForRegistrantProfileRealNameVerificationRequest() {
-		super("Domain-intl", "2017-12-18", "QueryFailReasonForRegistrantProfileRealNameVerification", "domain");
-	}
-
-	private String userClientIp;
+	   
 
 	private Long registrantProfileID;
 
+	private String userClientIp;
+
 	private String lang;
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
+	public QueryFailReasonForRegistrantProfileRealNameVerificationRequest() {
+		super("Domain-intl", "2017-12-18", "QueryFailReasonForRegistrantProfileRealNameVerification");
+		setMethod(MethodType.POST);
 	}
 
 	public Long getRegistrantProfileID() {
@@ -51,6 +42,17 @@ public class QueryFailReasonForRegistrantProfileRealNameVerificationRequest exte
 		this.registrantProfileID = registrantProfileID;
 		if(registrantProfileID != null){
 			putQueryParameter("RegistrantProfileID", registrantProfileID.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

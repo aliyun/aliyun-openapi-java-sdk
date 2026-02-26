@@ -86,9 +86,8 @@ public class GetFileMetaResponseUnmarshaller {
 			filesItem.setPerformer(_ctx.stringValue("GetFileMetaResponse.Files["+ i +"].Performer"));
 			filesItem.setLanguage(_ctx.stringValue("GetFileMetaResponse.Files["+ i +"].Language"));
 			filesItem.setAlbum(_ctx.stringValue("GetFileMetaResponse.Files["+ i +"].Album"));
-			filesItem.setDocumentLanguage(_ctx.stringValue("GetFileMetaResponse.Files["+ i +"].DocumentLanguage"));
 			filesItem.setPageCount(_ctx.longValue("GetFileMetaResponse.Files["+ i +"].PageCount"));
-			filesItem.setDocumentContent(_ctx.stringValue("GetFileMetaResponse.Files["+ i +"].DocumentContent"));
+			filesItem.setDocumentText(_ctx.stringValue("GetFileMetaResponse.Files["+ i +"].DocumentText"));
 			filesItem.setETag(_ctx.stringValue("GetFileMetaResponse.Files["+ i +"].ETag"));
 			filesItem.setCacheControl(_ctx.stringValue("GetFileMetaResponse.Files["+ i +"].CacheControl"));
 			filesItem.setContentDisposition(_ctx.stringValue("GetFileMetaResponse.Files["+ i +"].ContentDisposition"));

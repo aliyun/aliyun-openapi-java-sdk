@@ -33,6 +33,10 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	private String pageNumber;
 
+	private String totalLevel2BackupSize;
+
+	private Boolean allowShareBackup;
+
 	private List<Backup> items;
 
 	public String getTotalRecordCount() {
@@ -67,6 +71,22 @@ public class DescribeBackupsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public String getTotalLevel2BackupSize() {
+		return this.totalLevel2BackupSize;
+	}
+
+	public void setTotalLevel2BackupSize(String totalLevel2BackupSize) {
+		this.totalLevel2BackupSize = totalLevel2BackupSize;
+	}
+
+	public Boolean getAllowShareBackup() {
+		return this.allowShareBackup;
+	}
+
+	public void setAllowShareBackup(Boolean allowShareBackup) {
+		this.allowShareBackup = allowShareBackup;
+	}
+
 	public List<Backup> getItems() {
 		return this.items;
 	}
@@ -89,6 +109,10 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String backupStartTime;
 
+		private String expectExpireTime;
+
+		private String expectExpireType;
+
 		private String isAvail;
 
 		private String backupEndTime;
@@ -102,6 +126,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 		private String backupMode;
 
 		private String backupMethod;
+
+		private String shareType;
 
 		public String getBackupSetSize() {
 			return this.backupSetSize;
@@ -149,6 +175,22 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupStartTime(String backupStartTime) {
 			this.backupStartTime = backupStartTime;
+		}
+
+		public String getExpectExpireTime() {
+			return this.expectExpireTime;
+		}
+
+		public void setExpectExpireTime(String expectExpireTime) {
+			this.expectExpireTime = expectExpireTime;
+		}
+
+		public String getExpectExpireType() {
+			return this.expectExpireType;
+		}
+
+		public void setExpectExpireType(String expectExpireType) {
+			this.expectExpireType = expectExpireType;
 		}
 
 		public String getIsAvail() {
@@ -205,6 +247,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupMethod(String backupMethod) {
 			this.backupMethod = backupMethod;
+		}
+
+		public String getShareType() {
+			return this.shareType;
+		}
+
+		public void setShareType(String shareType) {
+			this.shareType = shareType;
 		}
 	}
 

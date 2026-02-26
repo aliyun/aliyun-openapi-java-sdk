@@ -29,7 +29,7 @@ public class DescribeAttackAnalysisMaxQpsRequest extends RpcAcsRequest<DescribeA
 
 	private Long startTime;
 	public DescribeAttackAnalysisMaxQpsRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeAttackAnalysisMaxQps");
+		super("ddoscoo", "2020-01-01", "DescribeAttackAnalysisMaxQps", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

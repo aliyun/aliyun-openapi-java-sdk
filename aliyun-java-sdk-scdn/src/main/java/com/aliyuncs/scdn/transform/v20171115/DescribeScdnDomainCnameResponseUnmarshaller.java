@@ -31,9 +31,9 @@ public class DescribeScdnDomainCnameResponseUnmarshaller {
 		List<Data> cnameDatas = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainCnameResponse.CnameDatas.Length"); i++) {
 			Data data = new Data();
+			data.setStatus(_ctx.integerValue("DescribeScdnDomainCnameResponse.CnameDatas["+ i +"].Status"));
 			data.setDomain(_ctx.stringValue("DescribeScdnDomainCnameResponse.CnameDatas["+ i +"].Domain"));
 			data.setCname(_ctx.stringValue("DescribeScdnDomainCnameResponse.CnameDatas["+ i +"].Cname"));
-			data.setStatus(_ctx.integerValue("DescribeScdnDomainCnameResponse.CnameDatas["+ i +"].Status"));
 
 			cnameDatas.add(data);
 		}

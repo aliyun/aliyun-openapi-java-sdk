@@ -36,11 +36,13 @@ public class SyncSpeechByCombinationRequest extends RpcAcsRequest<SyncSpeechByCo
 
 	private String iotInstanceId;
 
+	private Boolean enforceFlag;
+
 	private String productKey;
 
 	private String deviceName;
 	public SyncSpeechByCombinationRequest() {
-		super("Iot", "2018-01-20", "SyncSpeechByCombination");
+		super("Iot", "2018-01-20", "SyncSpeechByCombination", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -102,6 +104,17 @@ public class SyncSpeechByCombinationRequest extends RpcAcsRequest<SyncSpeechByCo
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putBodyParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public Boolean getEnforceFlag() {
+		return this.enforceFlag;
+	}
+
+	public void setEnforceFlag(Boolean enforceFlag) {
+		this.enforceFlag = enforceFlag;
+		if(enforceFlag != null){
+			putBodyParameter("EnforceFlag", enforceFlag.toString());
 		}
 	}
 

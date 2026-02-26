@@ -50,7 +50,7 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private List<Integer> statuss;
 	public DescribeInstancesRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeInstances");
+		super("ddoscoo", "2020-01-01", "DescribeInstances", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

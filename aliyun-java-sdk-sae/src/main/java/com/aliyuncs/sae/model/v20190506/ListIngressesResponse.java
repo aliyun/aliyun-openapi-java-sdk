@@ -121,6 +121,8 @@ public class ListIngressesResponse extends AcsResponse {
 
 			private String certId;
 
+			private String certIds;
+
 			private String name;
 
 			private Long id;
@@ -128,6 +130,12 @@ public class ListIngressesResponse extends AcsResponse {
 			private String loadBalanceType;
 
 			private String listenerProtocol;
+
+			private String mseGatewayId;
+
+			private String mseGatewayPort;
+
+			private String mseGatewayProtocol;
 
 			public String getSlbId() {
 				return this.slbId;
@@ -177,6 +185,14 @@ public class ListIngressesResponse extends AcsResponse {
 				this.certId = certId;
 			}
 
+			public String getCertIds() {
+				return this.certIds;
+			}
+
+			public void setCertIds(String certIds) {
+				this.certIds = certIds;
+			}
+
 			public String getName() {
 				return this.name;
 			}
@@ -207,6 +223,30 @@ public class ListIngressesResponse extends AcsResponse {
 
 			public void setListenerProtocol(String listenerProtocol) {
 				this.listenerProtocol = listenerProtocol;
+			}
+
+			public String getMseGatewayId() {
+				return this.mseGatewayId;
+			}
+
+			public void setMseGatewayId(String mseGatewayId) {
+				this.mseGatewayId = mseGatewayId;
+			}
+
+			public String getMseGatewayPort() {
+				return this.mseGatewayPort;
+			}
+
+			public void setMseGatewayPort(String mseGatewayPort) {
+				this.mseGatewayPort = mseGatewayPort;
+			}
+
+			public String getMseGatewayProtocol() {
+				return this.mseGatewayProtocol;
+			}
+
+			public void setMseGatewayProtocol(String mseGatewayProtocol) {
+				this.mseGatewayProtocol = mseGatewayProtocol;
 			}
 		}
 	}

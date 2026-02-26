@@ -29,6 +29,8 @@ public class DescribeAutoRenewAttributeRequest extends RpcAcsRequest<DescribeAut
 
 	private Integer pageNumber;
 
+	private String cloudProvider;
+
 	private String resourceGroupId;
 
 	private Integer pageSize;
@@ -41,7 +43,7 @@ public class DescribeAutoRenewAttributeRequest extends RpcAcsRequest<DescribeAut
 
 	private String dBClusterIds;
 	public DescribeAutoRenewAttributeRequest() {
-		super("polardb", "2017-08-01", "DescribeAutoRenewAttribute");
+		super("polardb", "2017-08-01", "DescribeAutoRenewAttribute", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,6 +70,17 @@ public class DescribeAutoRenewAttributeRequest extends RpcAcsRequest<DescribeAut
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getCloudProvider() {
+		return this.cloudProvider;
+	}
+
+	public void setCloudProvider(String cloudProvider) {
+		this.cloudProvider = cloudProvider;
+		if(cloudProvider != null){
+			putQueryParameter("CloudProvider", cloudProvider);
 		}
 	}
 

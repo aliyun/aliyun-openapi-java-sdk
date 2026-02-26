@@ -29,64 +29,64 @@ public class DescribeDnsGtmAccessStrategyResponseUnmarshaller {
 	public static DescribeDnsGtmAccessStrategyResponse unmarshall(DescribeDnsGtmAccessStrategyResponse describeDnsGtmAccessStrategyResponse, UnmarshallerContext _ctx) {
 		
 		describeDnsGtmAccessStrategyResponse.setRequestId(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.RequestId"));
-		describeDnsGtmAccessStrategyResponse.setStrategyId(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.StrategyId"));
-		describeDnsGtmAccessStrategyResponse.setStrategyName(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.StrategyName"));
-		describeDnsGtmAccessStrategyResponse.setStrategyMode(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.StrategyMode"));
-		describeDnsGtmAccessStrategyResponse.setInstanceId(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.InstanceId"));
+		describeDnsGtmAccessStrategyResponse.setFailoverMinAvailableAddrNum(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.FailoverMinAvailableAddrNum"));
 		describeDnsGtmAccessStrategyResponse.setDefaultAddrPoolType(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.DefaultAddrPoolType"));
-		describeDnsGtmAccessStrategyResponse.setDefaultLbaStrategy(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.DefaultLbaStrategy"));
-		describeDnsGtmAccessStrategyResponse.setDefaultMinAvailableAddrNum(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.DefaultMinAvailableAddrNum"));
+		describeDnsGtmAccessStrategyResponse.setDefaultAvailableAddrNum(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.DefaultAvailableAddrNum"));
+		describeDnsGtmAccessStrategyResponse.setStrategyId(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.StrategyId"));
+		describeDnsGtmAccessStrategyResponse.setFailoverAddrPoolGroupStatus(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.FailoverAddrPoolGroupStatus"));
+		describeDnsGtmAccessStrategyResponse.setFailoverAvailableAddrNum(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.FailoverAvailableAddrNum"));
+		describeDnsGtmAccessStrategyResponse.setFailoverLbaStrategy(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.FailoverLbaStrategy"));
 		describeDnsGtmAccessStrategyResponse.setDefaultMaxReturnAddrNum(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.DefaultMaxReturnAddrNum"));
-		describeDnsGtmAccessStrategyResponse.setDefaultLatencyOptimization(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.DefaultLatencyOptimization"));
+		describeDnsGtmAccessStrategyResponse.setStrategyMode(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.StrategyMode"));
+		describeDnsGtmAccessStrategyResponse.setCreateTimestamp(_ctx.longValue("DescribeDnsGtmAccessStrategyResponse.CreateTimestamp"));
+		describeDnsGtmAccessStrategyResponse.setDefaultLbaStrategy(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.DefaultLbaStrategy"));
 		describeDnsGtmAccessStrategyResponse.setDefaultAddrPoolGroupStatus(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.DefaultAddrPoolGroupStatus"));
 		describeDnsGtmAccessStrategyResponse.setFailoverAddrPoolType(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.FailoverAddrPoolType"));
-		describeDnsGtmAccessStrategyResponse.setFailoverLbaStrategy(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.FailoverLbaStrategy"));
-		describeDnsGtmAccessStrategyResponse.setFailoverMinAvailableAddrNum(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.FailoverMinAvailableAddrNum"));
-		describeDnsGtmAccessStrategyResponse.setFailoverMaxReturnAddrNum(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.FailoverMaxReturnAddrNum"));
-		describeDnsGtmAccessStrategyResponse.setFailoverLatencyOptimization(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.FailoverLatencyOptimization"));
-		describeDnsGtmAccessStrategyResponse.setFailoverAddrPoolGroupStatus(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.FailoverAddrPoolGroupStatus"));
-		describeDnsGtmAccessStrategyResponse.setAccessMode(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.AccessMode"));
+		describeDnsGtmAccessStrategyResponse.setInstanceId(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.InstanceId"));
+		describeDnsGtmAccessStrategyResponse.setDefaultLatencyOptimization(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.DefaultLatencyOptimization"));
 		describeDnsGtmAccessStrategyResponse.setEffectiveAddrPoolGroupType(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.EffectiveAddrPoolGroupType"));
 		describeDnsGtmAccessStrategyResponse.setCreateTime(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.CreateTime"));
-		describeDnsGtmAccessStrategyResponse.setCreateTimestamp(_ctx.longValue("DescribeDnsGtmAccessStrategyResponse.CreateTimestamp"));
-		describeDnsGtmAccessStrategyResponse.setDefaultAvailableAddrNum(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.DefaultAvailableAddrNum"));
-		describeDnsGtmAccessStrategyResponse.setFailoverAvailableAddrNum(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.FailoverAvailableAddrNum"));
+		describeDnsGtmAccessStrategyResponse.setDefaultMinAvailableAddrNum(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.DefaultMinAvailableAddrNum"));
+		describeDnsGtmAccessStrategyResponse.setFailoverLatencyOptimization(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.FailoverLatencyOptimization"));
+		describeDnsGtmAccessStrategyResponse.setStrategyName(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.StrategyName"));
+		describeDnsGtmAccessStrategyResponse.setFailoverMaxReturnAddrNum(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.FailoverMaxReturnAddrNum"));
+		describeDnsGtmAccessStrategyResponse.setAccessMode(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.AccessMode"));
 
-		List<Line> lines = new ArrayList<Line>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmAccessStrategyResponse.Lines.Length"); i++) {
-			Line line = new Line();
-			line.setLineCode(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.Lines["+ i +"].LineCode"));
-			line.setLineName(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.Lines["+ i +"].LineName"));
-			line.setGroupCode(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.Lines["+ i +"].GroupCode"));
-			line.setGroupName(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.Lines["+ i +"].GroupName"));
+		List<FailoverAddrPool> failoverAddrPools = new ArrayList<FailoverAddrPool>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmAccessStrategyResponse.FailoverAddrPools.Length"); i++) {
+			FailoverAddrPool failoverAddrPool = new FailoverAddrPool();
+			failoverAddrPool.setLbaWeight(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.FailoverAddrPools["+ i +"].LbaWeight"));
+			failoverAddrPool.setName(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.FailoverAddrPools["+ i +"].Name"));
+			failoverAddrPool.setAddrCount(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.FailoverAddrPools["+ i +"].AddrCount"));
+			failoverAddrPool.setId(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.FailoverAddrPools["+ i +"].Id"));
 
-			lines.add(line);
+			failoverAddrPools.add(failoverAddrPool);
 		}
-		describeDnsGtmAccessStrategyResponse.setLines(lines);
+		describeDnsGtmAccessStrategyResponse.setFailoverAddrPools(failoverAddrPools);
 
 		List<DefaultAddrPool> defaultAddrPools = new ArrayList<DefaultAddrPool>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmAccessStrategyResponse.DefaultAddrPools.Length"); i++) {
 			DefaultAddrPool defaultAddrPool = new DefaultAddrPool();
-			defaultAddrPool.setId(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.DefaultAddrPools["+ i +"].Id"));
+			defaultAddrPool.setLbaWeight(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.DefaultAddrPools["+ i +"].LbaWeight"));
 			defaultAddrPool.setName(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.DefaultAddrPools["+ i +"].Name"));
 			defaultAddrPool.setAddrCount(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.DefaultAddrPools["+ i +"].AddrCount"));
-			defaultAddrPool.setLbaWeight(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.DefaultAddrPools["+ i +"].LbaWeight"));
+			defaultAddrPool.setId(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.DefaultAddrPools["+ i +"].Id"));
 
 			defaultAddrPools.add(defaultAddrPool);
 		}
 		describeDnsGtmAccessStrategyResponse.setDefaultAddrPools(defaultAddrPools);
 
-		List<FailoverAddrPool> failoverAddrPools = new ArrayList<FailoverAddrPool>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmAccessStrategyResponse.FailoverAddrPools.Length"); i++) {
-			FailoverAddrPool failoverAddrPool = new FailoverAddrPool();
-			failoverAddrPool.setId(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.FailoverAddrPools["+ i +"].Id"));
-			failoverAddrPool.setName(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.FailoverAddrPools["+ i +"].Name"));
-			failoverAddrPool.setAddrCount(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.FailoverAddrPools["+ i +"].AddrCount"));
-			failoverAddrPool.setLbaWeight(_ctx.integerValue("DescribeDnsGtmAccessStrategyResponse.FailoverAddrPools["+ i +"].LbaWeight"));
+		List<Line> lines = new ArrayList<Line>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmAccessStrategyResponse.Lines.Length"); i++) {
+			Line line = new Line();
+			line.setGroupName(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.Lines["+ i +"].GroupName"));
+			line.setLineCode(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.Lines["+ i +"].LineCode"));
+			line.setLineName(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.Lines["+ i +"].LineName"));
+			line.setGroupCode(_ctx.stringValue("DescribeDnsGtmAccessStrategyResponse.Lines["+ i +"].GroupCode"));
 
-			failoverAddrPools.add(failoverAddrPool);
+			lines.add(line);
 		}
-		describeDnsGtmAccessStrategyResponse.setFailoverAddrPools(failoverAddrPools);
+		describeDnsGtmAccessStrategyResponse.setLines(lines);
 	 
 	 	return describeDnsGtmAccessStrategyResponse;
 	}

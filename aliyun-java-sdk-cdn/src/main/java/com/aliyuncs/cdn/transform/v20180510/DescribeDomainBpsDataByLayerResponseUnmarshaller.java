@@ -32,9 +32,9 @@ public class DescribeDomainBpsDataByLayerResponseUnmarshaller {
 		List<DataModule> bpsDataInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainBpsDataByLayerResponse.BpsDataInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainBpsDataByLayerResponse.BpsDataInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(_ctx.stringValue("DescribeDomainBpsDataByLayerResponse.BpsDataInterval["+ i +"].Value"));
 			dataModule.setTrafficValue(_ctx.stringValue("DescribeDomainBpsDataByLayerResponse.BpsDataInterval["+ i +"].TrafficValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainBpsDataByLayerResponse.BpsDataInterval["+ i +"].TimeStamp"));
 
 			bpsDataInterval.add(dataModule);
 		}

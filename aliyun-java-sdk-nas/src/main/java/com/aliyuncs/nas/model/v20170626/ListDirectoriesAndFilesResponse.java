@@ -81,6 +81,8 @@ public class ListDirectoriesAndFilesResponse extends AcsResponse {
 
 		private String owner;
 
+		private String hasArchiveFile;
+
 		public String getType() {
 			return this.type;
 		}
@@ -175,6 +177,14 @@ public class ListDirectoriesAndFilesResponse extends AcsResponse {
 
 		public void setOwner(String owner) {
 			this.owner = owner;
+		}
+
+		public String getHasArchiveFile() {
+			return this.hasArchiveFile;
+		}
+
+		public void setHasArchiveFile(String hasArchiveFile) {
+			this.hasArchiveFile = hasArchiveFile;
 		}
 	}
 

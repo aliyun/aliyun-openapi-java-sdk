@@ -27,10 +27,12 @@ public class ListGroupsRequest extends RpcAcsRequest<ListGroupsResponse> {
 
 	private String namespaceSource;
 
+	private String appGroupName;
+
 	private String namespace;
 	public ListGroupsRequest() {
-		super("schedulerx2", "2019-04-30", "ListGroups");
-		setMethod(MethodType.GET);
+		super("schedulerx2", "2019-04-30", "ListGroups", "schedulerx2");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -45,6 +47,17 @@ public class ListGroupsRequest extends RpcAcsRequest<ListGroupsResponse> {
 		this.namespaceSource = namespaceSource;
 		if(namespaceSource != null){
 			putQueryParameter("NamespaceSource", namespaceSource);
+		}
+	}
+
+	public String getAppGroupName() {
+		return this.appGroupName;
+	}
+
+	public void setAppGroupName(String appGroupName) {
+		this.appGroupName = appGroupName;
+		if(appGroupName != null){
+			putQueryParameter("AppGroupName", appGroupName);
 		}
 	}
 

@@ -23,9 +23,9 @@ public class DeleteFaceUserGroupAndDeviceGroupRelationResponseUnmarshaller {
 	public static DeleteFaceUserGroupAndDeviceGroupRelationResponse unmarshall(DeleteFaceUserGroupAndDeviceGroupRelationResponse deleteFaceUserGroupAndDeviceGroupRelationResponse, UnmarshallerContext _ctx) {
 		
 		deleteFaceUserGroupAndDeviceGroupRelationResponse.setRequestId(_ctx.stringValue("DeleteFaceUserGroupAndDeviceGroupRelationResponse.RequestId"));
-		deleteFaceUserGroupAndDeviceGroupRelationResponse.setSuccess(_ctx.booleanValue("DeleteFaceUserGroupAndDeviceGroupRelationResponse.Success"));
-		deleteFaceUserGroupAndDeviceGroupRelationResponse.setErrorMessage(_ctx.stringValue("DeleteFaceUserGroupAndDeviceGroupRelationResponse.ErrorMessage"));
 		deleteFaceUserGroupAndDeviceGroupRelationResponse.setCode(_ctx.stringValue("DeleteFaceUserGroupAndDeviceGroupRelationResponse.Code"));
+		deleteFaceUserGroupAndDeviceGroupRelationResponse.setErrorMessage(_ctx.stringValue("DeleteFaceUserGroupAndDeviceGroupRelationResponse.ErrorMessage"));
+		deleteFaceUserGroupAndDeviceGroupRelationResponse.setSuccess(_ctx.booleanValue("DeleteFaceUserGroupAndDeviceGroupRelationResponse.Success"));
 	 
 	 	return deleteFaceUserGroupAndDeviceGroupRelationResponse;
 	}

@@ -27,6 +27,8 @@ public class ModifyInstanceMetadataOptionsRequest extends RpcAcsRequest<ModifyIn
 
 	private Long resourceOwnerId;
 
+	private String instanceMetadataTags;
+
 	private Integer httpPutResponseHopLimit;
 
 	private String httpEndpoint;
@@ -55,6 +57,17 @@ public class ModifyInstanceMetadataOptionsRequest extends RpcAcsRequest<ModifyIn
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getInstanceMetadataTags() {
+		return this.instanceMetadataTags;
+	}
+
+	public void setInstanceMetadataTags(String instanceMetadataTags) {
+		this.instanceMetadataTags = instanceMetadataTags;
+		if(instanceMetadataTags != null){
+			putQueryParameter("InstanceMetadataTags", instanceMetadataTags);
 		}
 	}
 

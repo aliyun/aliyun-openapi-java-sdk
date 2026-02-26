@@ -81,6 +81,8 @@ public class ListNatIpsResponse extends AcsResponse {
 
 		private String natIp;
 
+		private String ipv4Prefix;
+
 		private String natIpCidr;
 
 		private String natIpId;
@@ -109,6 +111,14 @@ public class ListNatIpsResponse extends AcsResponse {
 
 		public void setNatIp(String natIp) {
 			this.natIp = natIp;
+		}
+
+		public String getIpv4Prefix() {
+			return this.ipv4Prefix;
+		}
+
+		public void setIpv4Prefix(String ipv4Prefix) {
+			this.ipv4Prefix = ipv4Prefix;
 		}
 
 		public String getNatIpCidr() {

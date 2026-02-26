@@ -34,6 +34,7 @@ public class DescribeBackupFilesResponseUnmarshaller {
 		pageInfo.setPageSize(_ctx.integerValue("DescribeBackupFilesResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribeBackupFilesResponse.PageInfo.TotalCount"));
 		pageInfo.setCount(_ctx.integerValue("DescribeBackupFilesResponse.PageInfo.Count"));
+		pageInfo.setNextToken(_ctx.stringValue("DescribeBackupFilesResponse.PageInfo.NextToken"));
 		describeBackupFilesResponse.setPageInfo(pageInfo);
 
 		List<BrowseFile> backupFiles = new ArrayList<BrowseFile>();

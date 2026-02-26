@@ -16,6 +16,7 @@ package com.aliyuncs.mts.transform.v20140618;
 
 import com.aliyuncs.mts.model.v20140618.AddPipelineResponse;
 import com.aliyuncs.mts.model.v20140618.AddPipelineResponse.Pipeline;
+import com.aliyuncs.mts.model.v20140618.AddPipelineResponse.Pipeline.ExtendConfig;
 import com.aliyuncs.mts.model.v20140618.AddPipelineResponse.Pipeline.NotifyConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -41,6 +42,12 @@ public class AddPipelineResponseUnmarshaller {
 		notifyConfig.setMqTag(_ctx.stringValue("AddPipelineResponse.Pipeline.NotifyConfig.MqTag"));
 		notifyConfig.setTopic(_ctx.stringValue("AddPipelineResponse.Pipeline.NotifyConfig.Topic"));
 		pipeline.setNotifyConfig(notifyConfig);
+
+		ExtendConfig extendConfig = new ExtendConfig();
+		extendConfig.setIsBoostNew(_ctx.booleanValue("AddPipelineResponse.Pipeline.ExtendConfig.IsBoostNew"));
+		extendConfig.setMaxMultiSpeed(_ctx.integerValue("AddPipelineResponse.Pipeline.ExtendConfig.MaxMultiSpeed"));
+		extendConfig.setMultiSpeedDowngradePolicy(_ctx.stringValue("AddPipelineResponse.Pipeline.ExtendConfig.MultiSpeedDowngradePolicy"));
+		pipeline.setExtendConfig(extendConfig);
 		addPipelineResponse.setPipeline(pipeline);
 	 
 	 	return addPipelineResponse;

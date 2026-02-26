@@ -25,38 +25,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListExperimentMetasResponse extends AcsResponse {
 
-	private String code;
+	private Integer pages;
 
-	private Integer currentPage;
+	private String requestId;
 
 	private String message;
 
 	private Integer pageSize;
 
-	private Integer pages;
-
-	private String requestId;
-
-	private Boolean success;
+	private Integer currentPage;
 
 	private Integer total;
 
+	private String code;
+
+	private Boolean success;
+
 	private List<ContentItem> content;
 
-	public String getCode() {
-		return this.code;
+	public Integer getPages() {
+		return this.pages;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setPages(Integer pages) {
+		this.pages = pages;
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -75,28 +75,12 @@ public class ListExperimentMetasResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPages() {
-		return this.pages;
+	public Integer getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setPages(Integer pages) {
-		this.pages = pages;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	public Integer getTotal() {
@@ -105,6 +89,22 @@ public class ListExperimentMetasResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ContentItem> getContent() {
@@ -117,15 +117,31 @@ public class ListExperimentMetasResponse extends AcsResponse {
 
 	public static class ContentItem {
 
+		private String state;
+
+		private Long createTime;
+
 		private String experimentId;
 
 		private String name;
 
-		private Long createTime;
-
-		private String state;
-
 		private List<String> tags;
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
 
 		public String getExperimentId() {
 			return this.experimentId;
@@ -141,22 +157,6 @@ public class ListExperimentMetasResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
 		}
 
 		public List<String> getTags() {

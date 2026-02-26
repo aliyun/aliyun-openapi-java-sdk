@@ -34,7 +34,7 @@ public class OperateProduceForPartnerRequest extends RpcAcsRequest<OperateProduc
 
 	private String operateType;
 	public OperateProduceForPartnerRequest() {
-		super("Copyright", "2019-01-23", "OperateProduceForPartner");
+		super("Copyright", "2019-01-23", "OperateProduceForPartner", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

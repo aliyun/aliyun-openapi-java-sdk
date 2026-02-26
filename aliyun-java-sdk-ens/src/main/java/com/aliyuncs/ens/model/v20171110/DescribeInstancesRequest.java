@@ -15,6 +15,9 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -24,6 +27,9 @@ import com.aliyuncs.http.MethodType;
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
 	   
 
+	@SerializedName("serviceStatus")
+	private List<String> serviceStatus;
+
 	private String orderByParams;
 
 	private String ensRegionId;
@@ -31,6 +37,9 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 	private String instanceResourceType;
 
 	private String ensServiceId;
+
+	@SerializedName("tags")
+	private List<Tags> tags;
 
 	private String vSwitchId;
 
@@ -44,6 +53,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String status;
 
+	private String intranetIp;
+
 	private String imageId;
 
 	private String securityGroupId;
@@ -54,10 +65,23 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String pageSize;
 
+	private String instanceType;
+
 	private String ensRegionIds;
 	public DescribeInstancesRequest() {
 		super("Ens", "2017-11-10", "DescribeInstances", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public List<String> getServiceStatus() {
+		return this.serviceStatus;
+	}
+
+	public void setServiceStatus(List<String> serviceStatus) {
+		this.serviceStatus = serviceStatus;	
+		if (serviceStatus != null) {
+			putQueryParameter("ServiceStatus" , new Gson().toJson(serviceStatus));
+		}	
 	}
 
 	public String getOrderByParams() {
@@ -102,6 +126,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		if(ensServiceId != null){
 			putQueryParameter("EnsServiceId", ensServiceId);
 		}
+	}
+
+	public List<Tags> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tags> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			putQueryParameter("Tags" , new Gson().toJson(tags));
+		}	
 	}
 
 	public String getVSwitchId() {
@@ -170,6 +205,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public String getIntranetIp() {
+		return this.intranetIp;
+	}
+
+	public void setIntranetIp(String intranetIp) {
+		this.intranetIp = intranetIp;
+		if(intranetIp != null){
+			putQueryParameter("IntranetIp", intranetIp);
+		}
+	}
+
 	public String getImageId() {
 		return this.imageId;
 	}
@@ -225,6 +271,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
 	public String getEnsRegionIds() {
 		return this.ensRegionIds;
 	}
@@ -233,6 +290,31 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.ensRegionIds = ensRegionIds;
 		if(ensRegionIds != null){
 			putQueryParameter("EnsRegionIds", ensRegionIds);
+		}
+	}
+
+	public static class Tags {
+
+		@SerializedName("Value")
+		private String value;
+
+		@SerializedName("Key")
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

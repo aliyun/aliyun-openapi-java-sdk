@@ -38,6 +38,12 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String systemDBCharset;
 
+	private String connectionString;
+
+	private Boolean autoCreateProxy;
+
+	private String optimizedWrites;
+
 	private String engineVersion;
 
 	private Boolean deletionProtection;
@@ -50,7 +56,11 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private List<Tag> tags;
 
+	private String customExtraInfo;
+
 	private String businessInfo;
+
+	private String whitelistTemplateList;
 
 	private String period;
 
@@ -70,7 +80,11 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String autoRenew;
 
+	private String port;
+
 	private String roleARN;
+
+	private String promotionCode;
 
 	private String zoneId;
 
@@ -84,11 +98,19 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String targetDedicatedHostIdForSlave;
 
+	private Boolean externalReplication;
+
 	private String zoneIdSlave1;
 
 	private String zoneIdSlave2;
 
+	private Boolean autoUseCoupon;
+
 	private String dBIsIgnoreCase;
+
+	private String ioAccelerationEnabled;
+
+	private Boolean coldDataEnabled;
 
 	private String engine;
 
@@ -104,10 +126,14 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private Integer amount;
 
+	private Boolean autoPay;
+
 	@SerializedName("serverlessConfig")
 	private ServerlessConfig serverlessConfig;
 
 	private String usedTime;
+
+	private Boolean burstingEnabled;
 
 	private String targetMinorVersion;
 
@@ -122,6 +148,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String category;
 
 	private String payType;
+
+	private String bpeEnabled;
 	public CreateDBInstanceRequest() {
 		super("Rds", "2014-08-15", "CreateDBInstance", "rds");
 		setMethod(MethodType.POST);
@@ -183,6 +211,39 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.systemDBCharset = systemDBCharset;
 		if(systemDBCharset != null){
 			putQueryParameter("SystemDBCharset", systemDBCharset);
+		}
+	}
+
+	public String getConnectionString() {
+		return this.connectionString;
+	}
+
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+		if(connectionString != null){
+			putQueryParameter("ConnectionString", connectionString);
+		}
+	}
+
+	public Boolean getAutoCreateProxy() {
+		return this.autoCreateProxy;
+	}
+
+	public void setAutoCreateProxy(Boolean autoCreateProxy) {
+		this.autoCreateProxy = autoCreateProxy;
+		if(autoCreateProxy != null){
+			putQueryParameter("AutoCreateProxy", autoCreateProxy.toString());
+		}
+	}
+
+	public String getOptimizedWrites() {
+		return this.optimizedWrites;
+	}
+
+	public void setOptimizedWrites(String optimizedWrites) {
+		this.optimizedWrites = optimizedWrites;
+		if(optimizedWrites != null){
+			putQueryParameter("OptimizedWrites", optimizedWrites);
 		}
 	}
 
@@ -255,6 +316,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}	
 	}
 
+	public String getCustomExtraInfo() {
+		return this.customExtraInfo;
+	}
+
+	public void setCustomExtraInfo(String customExtraInfo) {
+		this.customExtraInfo = customExtraInfo;
+		if(customExtraInfo != null){
+			putQueryParameter("CustomExtraInfo", customExtraInfo);
+		}
+	}
+
 	public String getBusinessInfo() {
 		return this.businessInfo;
 	}
@@ -263,6 +335,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.businessInfo = businessInfo;
 		if(businessInfo != null){
 			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public String getWhitelistTemplateList() {
+		return this.whitelistTemplateList;
+	}
+
+	public void setWhitelistTemplateList(String whitelistTemplateList) {
+		this.whitelistTemplateList = whitelistTemplateList;
+		if(whitelistTemplateList != null){
+			putQueryParameter("WhitelistTemplateList", whitelistTemplateList);
 		}
 	}
 
@@ -365,6 +448,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
+		}
+	}
+
 	public String getRoleARN() {
 		return this.roleARN;
 	}
@@ -373,6 +467,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.roleARN = roleARN;
 		if(roleARN != null){
 			putQueryParameter("RoleARN", roleARN);
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 
@@ -442,6 +547,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public Boolean getExternalReplication() {
+		return this.externalReplication;
+	}
+
+	public void setExternalReplication(Boolean externalReplication) {
+		this.externalReplication = externalReplication;
+		if(externalReplication != null){
+			putQueryParameter("ExternalReplication", externalReplication.toString());
+		}
+	}
+
 	public String getZoneIdSlave1() {
 		return this.zoneIdSlave1;
 	}
@@ -464,6 +580,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
+		}
+	}
+
 	public String getDBIsIgnoreCase() {
 		return this.dBIsIgnoreCase;
 	}
@@ -472,6 +599,28 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBIsIgnoreCase = dBIsIgnoreCase;
 		if(dBIsIgnoreCase != null){
 			putQueryParameter("DBIsIgnoreCase", dBIsIgnoreCase);
+		}
+	}
+
+	public String getIoAccelerationEnabled() {
+		return this.ioAccelerationEnabled;
+	}
+
+	public void setIoAccelerationEnabled(String ioAccelerationEnabled) {
+		this.ioAccelerationEnabled = ioAccelerationEnabled;
+		if(ioAccelerationEnabled != null){
+			putQueryParameter("IoAccelerationEnabled", ioAccelerationEnabled);
+		}
+	}
+
+	public Boolean getColdDataEnabled() {
+		return this.coldDataEnabled;
+	}
+
+	public void setColdDataEnabled(Boolean coldDataEnabled) {
+		this.coldDataEnabled = coldDataEnabled;
+		if(coldDataEnabled != null){
+			putQueryParameter("ColdDataEnabled", coldDataEnabled.toString());
 		}
 	}
 
@@ -552,6 +701,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
 	public ServerlessConfig getServerlessConfig() {
 		return this.serverlessConfig;
 	}
@@ -571,6 +731,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
+	public Boolean getBurstingEnabled() {
+		return this.burstingEnabled;
+	}
+
+	public void setBurstingEnabled(Boolean burstingEnabled) {
+		this.burstingEnabled = burstingEnabled;
+		if(burstingEnabled != null){
+			putQueryParameter("BurstingEnabled", burstingEnabled.toString());
 		}
 	}
 
@@ -651,6 +822,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getBpeEnabled() {
+		return this.bpeEnabled;
+	}
+
+	public void setBpeEnabled(String bpeEnabled) {
+		this.bpeEnabled = bpeEnabled;
+		if(bpeEnabled != null){
+			putQueryParameter("BpeEnabled", bpeEnabled);
+		}
+	}
+
 	public static class Tag {
 
 		private String value;
@@ -682,6 +864,12 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		@SerializedName("MaxCapacity")
 		private Double maxCapacity;
 
+		@SerializedName("AutoPause")
+		private Boolean autoPause;
+
+		@SerializedName("SwitchForce")
+		private Boolean switchForce;
+
 		public Double getMinCapacity() {
 			return this.minCapacity;
 		}
@@ -696,6 +884,22 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 		public void setMaxCapacity(Double maxCapacity) {
 			this.maxCapacity = maxCapacity;
+		}
+
+		public Boolean getAutoPause() {
+			return this.autoPause;
+		}
+
+		public void setAutoPause(Boolean autoPause) {
+			this.autoPause = autoPause;
+		}
+
+		public Boolean getSwitchForce() {
+			return this.switchForce;
+		}
+
+		public void setSwitchForce(Boolean switchForce) {
+			this.switchForce = switchForce;
 		}
 	}
 

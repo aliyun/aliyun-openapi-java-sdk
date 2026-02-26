@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDbListResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String message;
-
 	private List<DB> data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,14 +55,6 @@ public class DescribeDbListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public List<DB> getData() {
@@ -119,17 +119,9 @@ public class DescribeDbListResponse extends AcsResponse {
 
 		public static class Account {
 
-			private String accountName;
-
 			private String accountPrivilege;
 
-			public String getAccountName() {
-				return this.accountName;
-			}
-
-			public void setAccountName(String accountName) {
-				this.accountName = accountName;
-			}
+			private String accountName;
 
 			public String getAccountPrivilege() {
 				return this.accountPrivilege;
@@ -137,6 +129,14 @@ public class DescribeDbListResponse extends AcsResponse {
 
 			public void setAccountPrivilege(String accountPrivilege) {
 				this.accountPrivilege = accountPrivilege;
+			}
+
+			public String getAccountName() {
+				return this.accountName;
+			}
+
+			public void setAccountName(String accountName) {
+				this.accountName = accountName;
 			}
 		}
 	}

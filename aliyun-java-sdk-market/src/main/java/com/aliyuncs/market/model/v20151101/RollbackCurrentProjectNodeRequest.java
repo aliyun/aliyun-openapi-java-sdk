@@ -25,29 +25,18 @@ import com.aliyuncs.market.Endpoint;
 public class RollbackCurrentProjectNodeRequest extends RpcAcsRequest<RollbackCurrentProjectNodeResponse> {
 	   
 
-	private String instanceId;
-
 	private String remark;
+
+	private String instanceId;
 
 	private Long nodeId;
 	public RollbackCurrentProjectNodeRequest() {
-		super("Market", "2015-11-01", "RollbackCurrentProjectNode");
+		super("Market", "2015-11-01", "RollbackCurrentProjectNode", "yunmarket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getRemark() {
@@ -58,6 +47,17 @@ public class RollbackCurrentProjectNodeRequest extends RpcAcsRequest<RollbackCur
 		this.remark = remark;
 		if(remark != null){
 			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

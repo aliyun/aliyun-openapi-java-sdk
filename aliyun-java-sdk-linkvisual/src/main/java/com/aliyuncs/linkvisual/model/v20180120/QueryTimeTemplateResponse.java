@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTimeTemplateResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class QueryTimeTemplateResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class QueryTimeTemplateResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,15 +77,23 @@ public class QueryTimeTemplateResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer pageSize;
+
 		private Integer total;
 
 		private Integer pageCount;
 
 		private Integer page;
 
-		private Integer pageSize;
-
 		private List<ListItem> list;
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
 
 		public Integer getTotal() {
 			return this.total;
@@ -111,14 +119,6 @@ public class QueryTimeTemplateResponse extends AcsResponse {
 			this.page = page;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public List<ListItem> getList() {
 			return this.list;
 		}
@@ -129,15 +129,23 @@ public class QueryTimeTemplateResponse extends AcsResponse {
 
 		public static class ListItem {
 
+			private Integer allDay;
+
 			private Integer _default;
 
 			private String name;
 
 			private String templateId;
 
-			private Integer allDay;
-
 			private List<TimeSectionListItem> timeSectionList;
+
+			public Integer getAllDay() {
+				return this.allDay;
+			}
+
+			public void setAllDay(Integer allDay) {
+				this.allDay = allDay;
+			}
 
 			public Integer get_Default() {
 				return this._default;
@@ -163,14 +171,6 @@ public class QueryTimeTemplateResponse extends AcsResponse {
 				this.templateId = templateId;
 			}
 
-			public Integer getAllDay() {
-				return this.allDay;
-			}
-
-			public void setAllDay(Integer allDay) {
-				this.allDay = allDay;
-			}
-
 			public List<TimeSectionListItem> getTimeSectionList() {
 				return this.timeSectionList;
 			}
@@ -181,11 +181,19 @@ public class QueryTimeTemplateResponse extends AcsResponse {
 
 			public static class TimeSectionListItem {
 
+				private Integer end;
+
 				private Integer dayOfWeek;
 
 				private Integer begin;
 
-				private Integer end;
+				public Integer getEnd() {
+					return this.end;
+				}
+
+				public void setEnd(Integer end) {
+					this.end = end;
+				}
 
 				public Integer getDayOfWeek() {
 					return this.dayOfWeek;
@@ -201,14 +209,6 @@ public class QueryTimeTemplateResponse extends AcsResponse {
 
 				public void setBegin(Integer begin) {
 					this.begin = begin;
-				}
-
-				public Integer getEnd() {
-					return this.end;
-				}
-
-				public void setEnd(Integer end) {
-					this.end = end;
 				}
 			}
 		}

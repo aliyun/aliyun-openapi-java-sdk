@@ -27,15 +27,15 @@ public class QueryDeviceRecordLifeCycleResponseUnmarshaller {
 	public static QueryDeviceRecordLifeCycleResponse unmarshall(QueryDeviceRecordLifeCycleResponse queryDeviceRecordLifeCycleResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceRecordLifeCycleResponse.setRequestId(_ctx.stringValue("QueryDeviceRecordLifeCycleResponse.RequestId"));
-		queryDeviceRecordLifeCycleResponse.setSuccess(_ctx.booleanValue("QueryDeviceRecordLifeCycleResponse.Success"));
-		queryDeviceRecordLifeCycleResponse.setErrorMessage(_ctx.stringValue("QueryDeviceRecordLifeCycleResponse.ErrorMessage"));
 		queryDeviceRecordLifeCycleResponse.setCode(_ctx.integerValue("QueryDeviceRecordLifeCycleResponse.Code"));
+		queryDeviceRecordLifeCycleResponse.setErrorMessage(_ctx.stringValue("QueryDeviceRecordLifeCycleResponse.ErrorMessage"));
+		queryDeviceRecordLifeCycleResponse.setSuccess(_ctx.booleanValue("QueryDeviceRecordLifeCycleResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceRecordLifeCycleResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setIotId(_ctx.stringValue("QueryDeviceRecordLifeCycleResponse.Data["+ i +"].IotId"));
 			dataItem.setDay(_ctx.integerValue("QueryDeviceRecordLifeCycleResponse.Data["+ i +"].Day"));
+			dataItem.setIotId(_ctx.stringValue("QueryDeviceRecordLifeCycleResponse.Data["+ i +"].IotId"));
 
 			data.add(dataItem);
 		}

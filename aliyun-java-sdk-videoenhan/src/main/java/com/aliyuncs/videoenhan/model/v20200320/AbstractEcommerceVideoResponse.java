@@ -26,6 +26,10 @@ public class AbstractEcommerceVideoResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
+	private String message;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -34,6 +38,22 @@ public class AbstractEcommerceVideoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -46,17 +66,9 @@ public class AbstractEcommerceVideoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String videoUrl;
-
 		private String videoCoverUrl;
 
-		public String getVideoUrl() {
-			return this.videoUrl;
-		}
-
-		public void setVideoUrl(String videoUrl) {
-			this.videoUrl = videoUrl;
-		}
+		private String videoUrl;
 
 		public String getVideoCoverUrl() {
 			return this.videoCoverUrl;
@@ -64,6 +76,14 @@ public class AbstractEcommerceVideoResponse extends AcsResponse {
 
 		public void setVideoCoverUrl(String videoCoverUrl) {
 			this.videoCoverUrl = videoCoverUrl;
+		}
+
+		public String getVideoUrl() {
+			return this.videoUrl;
+		}
+
+		public void setVideoUrl(String videoUrl) {
+			this.videoUrl = videoUrl;
 		}
 	}
 

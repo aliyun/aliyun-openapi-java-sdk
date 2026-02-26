@@ -25,13 +25,13 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class UpdateTableLevelRequest extends RpcAcsRequest<UpdateTableLevelResponse> {
 	   
 
-	private Long levelId;
-
 	private Integer levelType;
 
-	private String name;
-
 	private String description;
+
+	private Long levelId;
+
+	private String name;
 
 	private Long projectId;
 	public UpdateTableLevelRequest() {
@@ -41,17 +41,6 @@ public class UpdateTableLevelRequest extends RpcAcsRequest<UpdateTableLevelRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getLevelId() {
-		return this.levelId;
-	}
-
-	public void setLevelId(Long levelId) {
-		this.levelId = levelId;
-		if(levelId != null){
-			putQueryParameter("LevelId", levelId.toString());
-		}
 	}
 
 	public Integer getLevelType() {
@@ -65,17 +54,6 @@ public class UpdateTableLevelRequest extends RpcAcsRequest<UpdateTableLevelRespo
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -84,6 +62,28 @@ public class UpdateTableLevelRequest extends RpcAcsRequest<UpdateTableLevelRespo
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Long getLevelId() {
+		return this.levelId;
+	}
+
+	public void setLevelId(Long levelId) {
+		this.levelId = levelId;
+		if(levelId != null){
+			putQueryParameter("LevelId", levelId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

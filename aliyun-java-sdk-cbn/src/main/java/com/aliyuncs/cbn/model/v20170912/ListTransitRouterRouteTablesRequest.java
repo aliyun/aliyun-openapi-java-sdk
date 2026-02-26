@@ -30,6 +30,8 @@ public class ListTransitRouterRouteTablesRequest extends RpcAcsRequest<ListTrans
 
 	private List<String> transitRouterRouteTableNamess;
 
+	private RouteTableOptions routeTableOptions;
+
 	private String transitRouterRouteTableType;
 
 	private String transitRouterRouteTableStatus;
@@ -37,6 +39,8 @@ public class ListTransitRouterRouteTablesRequest extends RpcAcsRequest<ListTrans
 	private List<String> transitRouterRouteTableIdss;
 
 	private String nextToken;
+
+	private List<Tag> tags;
 
 	private String resourceOwnerAccount;
 
@@ -48,7 +52,7 @@ public class ListTransitRouterRouteTablesRequest extends RpcAcsRequest<ListTrans
 
 	private Integer maxResults;
 	public ListTransitRouterRouteTablesRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterRouteTables");
+		super("Cbn", "2017-09-12", "ListTransitRouterRouteTables", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -77,6 +81,18 @@ public class ListTransitRouterRouteTablesRequest extends RpcAcsRequest<ListTrans
 			for (int i = 0; i < transitRouterRouteTableNamess.size(); i++) {
 				putQueryParameter("TransitRouterRouteTableNames." + (i + 1) , transitRouterRouteTableNamess.get(i));
 			}
+		}	
+	}
+
+	public RouteTableOptions getRouteTableOptions() {
+		return this.routeTableOptions;
+	}
+
+	public void setRouteTableOptions(RouteTableOptions routeTableOptions) {
+		this.routeTableOptions = routeTableOptions;	
+		if (routeTableOptions != null) {
+			
+				putQueryParameter("RouteTableOptions.MultiRegionECMP" , routeTableOptions.getMultiRegionECMP());
 		}	
 	}
 
@@ -124,6 +140,20 @@ public class ListTransitRouterRouteTablesRequest extends RpcAcsRequest<ListTrans
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -178,6 +208,42 @@ public class ListTransitRouterRouteTablesRequest extends RpcAcsRequest<ListTrans
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public static class RouteTableOptions {
+
+		private String multiRegionECMP;
+
+		public String getMultiRegionECMP() {
+			return this.multiRegionECMP;
+		}
+
+		public void setMultiRegionECMP(String multiRegionECMP) {
+			this.multiRegionECMP = multiRegionECMP;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

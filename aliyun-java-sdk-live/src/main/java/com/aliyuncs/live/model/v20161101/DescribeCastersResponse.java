@@ -57,49 +57,39 @@ public class DescribeCastersResponse extends AcsResponse {
 
 	public static class Caster {
 
-		private Integer status;
-
-		private Integer normType;
-
 		private String casterId;
 
 		private String casterName;
-
-		private String createTime;
-
-		private String startTime;
-
-		private String purchaseTime;
-
-		private String expireTime;
-
-		private String chargeType;
 
 		private String casterTemplate;
 
 		private Integer channelEnable;
 
-		private String lastModified;
+		private String chargeType;
+
+		private String createTime;
 
 		private String duration;
 
+		private String expireTime;
+
+		private String lastModified;
+
+		private Integer normType;
+
+		private String purchaseTime;
+
 		private Integer roomId;
 
-		public Integer getStatus() {
-			return this.status;
-		}
+		private String startTime;
 
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
+		private Integer status;
 
-		public Integer getNormType() {
-			return this.normType;
-		}
+		private String clientTokenId;
 
-		public void setNormType(Integer normType) {
-			this.normType = normType;
-		}
+		private String resourceGroupId;
+
+		private List<Tag> tags;
 
 		public String getCasterId() {
 			return this.casterId;
@@ -115,46 +105,6 @@ public class DescribeCastersResponse extends AcsResponse {
 
 		public void setCasterName(String casterName) {
 			this.casterName = casterName;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getPurchaseTime() {
-			return this.purchaseTime;
-		}
-
-		public void setPurchaseTime(String purchaseTime) {
-			this.purchaseTime = purchaseTime;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
-
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
 		}
 
 		public String getCasterTemplate() {
@@ -173,12 +123,20 @@ public class DescribeCastersResponse extends AcsResponse {
 			this.channelEnable = channelEnable;
 		}
 
-		public String getLastModified() {
-			return this.lastModified;
+		public String getChargeType() {
+			return this.chargeType;
 		}
 
-		public void setLastModified(String lastModified) {
-			this.lastModified = lastModified;
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getDuration() {
@@ -189,12 +147,107 @@ public class DescribeCastersResponse extends AcsResponse {
 			this.duration = duration;
 		}
 
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getLastModified() {
+			return this.lastModified;
+		}
+
+		public void setLastModified(String lastModified) {
+			this.lastModified = lastModified;
+		}
+
+		public Integer getNormType() {
+			return this.normType;
+		}
+
+		public void setNormType(Integer normType) {
+			this.normType = normType;
+		}
+
+		public String getPurchaseTime() {
+			return this.purchaseTime;
+		}
+
+		public void setPurchaseTime(String purchaseTime) {
+			this.purchaseTime = purchaseTime;
+		}
+
 		public Integer getRoomId() {
 			return this.roomId;
 		}
 
 		public void setRoomId(Integer roomId) {
 			this.roomId = roomId;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getClientTokenId() {
+			return this.clientTokenId;
+		}
+
+		public void setClientTokenId(String clientTokenId) {
+			this.clientTokenId = clientTokenId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

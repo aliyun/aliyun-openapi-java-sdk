@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetHybridClusterConfigResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String clusterConfig;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getClusterConfig() {
 		return this.clusterConfig;
@@ -42,6 +34,14 @@ public class GetHybridClusterConfigResponse extends AcsResponse {
 
 	public void setClusterConfig(String clusterConfig) {
 		this.clusterConfig = clusterConfig;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

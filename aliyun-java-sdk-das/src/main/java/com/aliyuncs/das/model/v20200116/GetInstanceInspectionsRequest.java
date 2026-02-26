@@ -33,6 +33,8 @@ public class GetInstanceInspectionsRequest extends RpcAcsRequest<GetInstanceInsp
 
 	private String instanceArea;
 
+	private String resourceGroupId;
+
 	private String engine;
 
 	private String pageNo;
@@ -88,6 +90,17 @@ public class GetInstanceInspectionsRequest extends RpcAcsRequest<GetInstanceInsp
 		this.instanceArea = instanceArea;
 		if(instanceArea != null){
 			putQueryParameter("InstanceArea", instanceArea);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

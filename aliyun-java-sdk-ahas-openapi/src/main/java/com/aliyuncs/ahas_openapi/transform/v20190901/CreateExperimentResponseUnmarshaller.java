@@ -24,10 +24,10 @@ public class CreateExperimentResponseUnmarshaller {
 		
 		createExperimentResponse.setRequestId(_ctx.stringValue("CreateExperimentResponse.RequestId"));
 		createExperimentResponse.setMessage(_ctx.stringValue("CreateExperimentResponse.Message"));
-		createExperimentResponse.setHttpStatusCode(_ctx.integerValue("CreateExperimentResponse.HttpStatusCode"));
-		createExperimentResponse.setSuccess(_ctx.booleanValue("CreateExperimentResponse.Success"));
-		createExperimentResponse.setCode(_ctx.stringValue("CreateExperimentResponse.Code"));
 		createExperimentResponse.setExperimentId(_ctx.stringValue("CreateExperimentResponse.ExperimentId"));
+		createExperimentResponse.setHttpStatusCode(_ctx.integerValue("CreateExperimentResponse.HttpStatusCode"));
+		createExperimentResponse.setCode(_ctx.stringValue("CreateExperimentResponse.Code"));
+		createExperimentResponse.setSuccess(_ctx.booleanValue("CreateExperimentResponse.Success"));
 	 
 	 	return createExperimentResponse;
 	}

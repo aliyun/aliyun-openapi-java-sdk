@@ -58,25 +58,25 @@ public class QueryTicketInfoResponse extends AcsResponse {
 
 		private String accessTicket;
 
-		private String organizationId;
-
-		private String userId;
-
-		private Integer usedTicketNum;
-
-		private Integer maxTicketNum;
-
-		private String registerTime;
-
-		private String invalidTime;
-
-		private String worksId;
-
 		private String cmptId;
 
 		private String globalParam;
 
+		private String invalidTime;
+
+		private Integer maxTicketNum;
+
+		private String organizationId;
+
+		private String registerTime;
+
+		private Integer usedTicketNum;
+
+		private String userId;
+
 		private String watermarkParam;
+
+		private String worksId;
 
 		public String getAccessTicket() {
 			return this.accessTicket;
@@ -84,62 +84,6 @@ public class QueryTicketInfoResponse extends AcsResponse {
 
 		public void setAccessTicket(String accessTicket) {
 			this.accessTicket = accessTicket;
-		}
-
-		public String getOrganizationId() {
-			return this.organizationId;
-		}
-
-		public void setOrganizationId(String organizationId) {
-			this.organizationId = organizationId;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public Integer getUsedTicketNum() {
-			return this.usedTicketNum;
-		}
-
-		public void setUsedTicketNum(Integer usedTicketNum) {
-			this.usedTicketNum = usedTicketNum;
-		}
-
-		public Integer getMaxTicketNum() {
-			return this.maxTicketNum;
-		}
-
-		public void setMaxTicketNum(Integer maxTicketNum) {
-			this.maxTicketNum = maxTicketNum;
-		}
-
-		public String getRegisterTime() {
-			return this.registerTime;
-		}
-
-		public void setRegisterTime(String registerTime) {
-			this.registerTime = registerTime;
-		}
-
-		public String getInvalidTime() {
-			return this.invalidTime;
-		}
-
-		public void setInvalidTime(String invalidTime) {
-			this.invalidTime = invalidTime;
-		}
-
-		public String getWorksId() {
-			return this.worksId;
-		}
-
-		public void setWorksId(String worksId) {
-			this.worksId = worksId;
 		}
 
 		public String getCmptId() {
@@ -158,12 +102,68 @@ public class QueryTicketInfoResponse extends AcsResponse {
 			this.globalParam = globalParam;
 		}
 
+		public String getInvalidTime() {
+			return this.invalidTime;
+		}
+
+		public void setInvalidTime(String invalidTime) {
+			this.invalidTime = invalidTime;
+		}
+
+		public Integer getMaxTicketNum() {
+			return this.maxTicketNum;
+		}
+
+		public void setMaxTicketNum(Integer maxTicketNum) {
+			this.maxTicketNum = maxTicketNum;
+		}
+
+		public String getOrganizationId() {
+			return this.organizationId;
+		}
+
+		public void setOrganizationId(String organizationId) {
+			this.organizationId = organizationId;
+		}
+
+		public String getRegisterTime() {
+			return this.registerTime;
+		}
+
+		public void setRegisterTime(String registerTime) {
+			this.registerTime = registerTime;
+		}
+
+		public Integer getUsedTicketNum() {
+			return this.usedTicketNum;
+		}
+
+		public void setUsedTicketNum(Integer usedTicketNum) {
+			this.usedTicketNum = usedTicketNum;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
 		public String getWatermarkParam() {
 			return this.watermarkParam;
 		}
 
 		public void setWatermarkParam(String watermarkParam) {
 			this.watermarkParam = watermarkParam;
+		}
+
+		public String getWorksId() {
+			return this.worksId;
+		}
+
+		public void setWorksId(String worksId) {
+			this.worksId = worksId;
 		}
 	}
 

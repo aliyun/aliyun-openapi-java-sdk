@@ -27,16 +27,16 @@ public class CreateClientsResponseUnmarshaller {
 	public static CreateClientsResponse unmarshall(CreateClientsResponse createClientsResponse, UnmarshallerContext _ctx) {
 		
 		createClientsResponse.setRequestId(_ctx.stringValue("CreateClientsResponse.RequestId"));
-		createClientsResponse.setSuccess(_ctx.booleanValue("CreateClientsResponse.Success"));
 		createClientsResponse.setCode(_ctx.stringValue("CreateClientsResponse.Code"));
 		createClientsResponse.setMessage(_ctx.stringValue("CreateClientsResponse.Message"));
 		createClientsResponse.setTaskId(_ctx.stringValue("CreateClientsResponse.TaskId"));
+		createClientsResponse.setSuccess(_ctx.booleanValue("CreateClientsResponse.Success"));
 
 		List<InstanceStatus> instanceStatuses = new ArrayList<InstanceStatus>();
 		for (int i = 0; i < _ctx.lengthValue("CreateClientsResponse.InstanceStatuses.Length"); i++) {
 			InstanceStatus instanceStatus = new InstanceStatus();
-			instanceStatus.setInstanceId(_ctx.stringValue("CreateClientsResponse.InstanceStatuses["+ i +"].InstanceId"));
 			instanceStatus.setValidInstance(_ctx.booleanValue("CreateClientsResponse.InstanceStatuses["+ i +"].ValidInstance"));
+			instanceStatus.setInstanceId(_ctx.stringValue("CreateClientsResponse.InstanceStatuses["+ i +"].InstanceId"));
 
 			instanceStatuses.add(instanceStatus);
 		}

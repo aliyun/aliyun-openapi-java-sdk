@@ -27,6 +27,8 @@ public class ModifyAccountPasswordRequest extends RpcAcsRequest<ModifyAccountPas
 
 	private Long resourceOwnerId;
 
+	private String passwordType;
+
 	private String accountName;
 
 	private String newAccountPassword;
@@ -39,7 +41,7 @@ public class ModifyAccountPasswordRequest extends RpcAcsRequest<ModifyAccountPas
 
 	private Long ownerId;
 	public ModifyAccountPasswordRequest() {
-		super("polardb", "2017-08-01", "ModifyAccountPassword");
+		super("polardb", "2017-08-01", "ModifyAccountPassword", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,6 +57,17 @@ public class ModifyAccountPasswordRequest extends RpcAcsRequest<ModifyAccountPas
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPasswordType() {
+		return this.passwordType;
+	}
+
+	public void setPasswordType(String passwordType) {
+		this.passwordType = passwordType;
+		if(passwordType != null){
+			putQueryParameter("PasswordType", passwordType);
 		}
 	}
 

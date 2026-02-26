@@ -33,6 +33,7 @@ public class CreatePickUpWaybillResponseUnmarshaller {
 		data.setMailNo(_ctx.stringValue("CreatePickUpWaybillResponse.Data.MailNo"));
 		data.setErrorCode(_ctx.stringValue("CreatePickUpWaybillResponse.Data.ErrorCode"));
 		data.setErrorMsg(_ctx.stringValue("CreatePickUpWaybillResponse.Data.ErrorMsg"));
+		data.setGotCode(_ctx.stringValue("CreatePickUpWaybillResponse.Data.GotCode"));
 		createPickUpWaybillResponse.setData(data);
 	 
 	 	return createPickUpWaybillResponse;

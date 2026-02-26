@@ -25,15 +25,15 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class CreateDataServiceGroupRequest extends RpcAcsRequest<CreateDataServiceGroupResponse> {
 	   
 
+	private String description;
+
+	private String groupName;
+
 	private String apiGatewayGroupId;
 
 	private Long tenantId;
 
-	private String description;
-
 	private Long projectId;
-
-	private String groupName;
 	public CreateDataServiceGroupRequest() {
 		super("dataworks-public", "2020-05-18", "CreateDataServiceGroup");
 		setMethod(MethodType.POST);
@@ -41,6 +41,28 @@ public class CreateDataServiceGroupRequest extends RpcAcsRequest<CreateDataServi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putBodyParameter("GroupName", groupName);
+		}
 	}
 
 	public String getApiGatewayGroupId() {
@@ -65,17 +87,6 @@ public class CreateDataServiceGroupRequest extends RpcAcsRequest<CreateDataServi
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putBodyParameter("Description", description);
-		}
-	}
-
 	public Long getProjectId() {
 		return this.projectId;
 	}
@@ -84,17 +95,6 @@ public class CreateDataServiceGroupRequest extends RpcAcsRequest<CreateDataServi
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
-		}
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putBodyParameter("GroupName", groupName);
 		}
 	}
 

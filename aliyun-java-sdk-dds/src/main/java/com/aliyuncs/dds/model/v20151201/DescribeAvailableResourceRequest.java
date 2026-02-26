@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -26,9 +27,13 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private Long resourceOwnerId;
 
-	private String resourceGroupId;
+	private String engineVersion;
 
-	private String securityToken;
+	private String storageType;
+
+	private String replicationFactor;
+
+	private String resourceGroupId;
 
 	private String instanceChargeType;
 
@@ -38,12 +43,18 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private Long ownerId;
 
+	private String dBInstanceClass;
+
 	private String dbType;
 
 	private String zoneId;
 	public DescribeAvailableResourceRequest() {
 		super("Dds", "2015-12-01", "DescribeAvailableResource", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -57,6 +68,39 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		}
 	}
 
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
+		}
+	}
+
+	public String getReplicationFactor() {
+		return this.replicationFactor;
+	}
+
+	public void setReplicationFactor(String replicationFactor) {
+		this.replicationFactor = replicationFactor;
+		if(replicationFactor != null){
+			putQueryParameter("ReplicationFactor", replicationFactor);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -65,17 +109,6 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -120,6 +153,17 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
+
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
 		}
 	}
 

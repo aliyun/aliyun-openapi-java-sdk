@@ -223,6 +223,22 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 
 			private Long totalAbandonedInQueueTime;
 
+			private Float abandonRate;
+
+			private Long callsCausedIVRException;
+
+			private Long callsToVoicemail;
+
+			private Float averageFirstResponseTime;
+
+			private Float averageResponseTime;
+
+			private Long totalMessagesSent;
+
+			private Long totalMessagesSentByAgent;
+
+			private Long totalMessagesSentByCustomer;
+
 			public Float getAverageRingTime() {
 				return this.averageRingTime;
 			}
@@ -637,6 +653,70 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 
 			public void setTotalAbandonedInQueueTime(Long totalAbandonedInQueueTime) {
 				this.totalAbandonedInQueueTime = totalAbandonedInQueueTime;
+			}
+
+			public Float getAbandonRate() {
+				return this.abandonRate;
+			}
+
+			public void setAbandonRate(Float abandonRate) {
+				this.abandonRate = abandonRate;
+			}
+
+			public Long getCallsCausedIVRException() {
+				return this.callsCausedIVRException;
+			}
+
+			public void setCallsCausedIVRException(Long callsCausedIVRException) {
+				this.callsCausedIVRException = callsCausedIVRException;
+			}
+
+			public Long getCallsToVoicemail() {
+				return this.callsToVoicemail;
+			}
+
+			public void setCallsToVoicemail(Long callsToVoicemail) {
+				this.callsToVoicemail = callsToVoicemail;
+			}
+
+			public Float getAverageFirstResponseTime() {
+				return this.averageFirstResponseTime;
+			}
+
+			public void setAverageFirstResponseTime(Float averageFirstResponseTime) {
+				this.averageFirstResponseTime = averageFirstResponseTime;
+			}
+
+			public Float getAverageResponseTime() {
+				return this.averageResponseTime;
+			}
+
+			public void setAverageResponseTime(Float averageResponseTime) {
+				this.averageResponseTime = averageResponseTime;
+			}
+
+			public Long getTotalMessagesSent() {
+				return this.totalMessagesSent;
+			}
+
+			public void setTotalMessagesSent(Long totalMessagesSent) {
+				this.totalMessagesSent = totalMessagesSent;
+			}
+
+			public Long getTotalMessagesSentByAgent() {
+				return this.totalMessagesSentByAgent;
+			}
+
+			public void setTotalMessagesSentByAgent(Long totalMessagesSentByAgent) {
+				this.totalMessagesSentByAgent = totalMessagesSentByAgent;
+			}
+
+			public Long getTotalMessagesSentByCustomer() {
+				return this.totalMessagesSentByCustomer;
+			}
+
+			public void setTotalMessagesSentByCustomer(Long totalMessagesSentByCustomer) {
+				this.totalMessagesSentByCustomer = totalMessagesSentByCustomer;
 			}
 		}
 

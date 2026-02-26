@@ -24,15 +24,9 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class CreateApiGroupRequest extends RpcAcsRequest<CreateApiGroupResponse> {
-	
-	public CreateApiGroupRequest() {
-		super("CloudAPI", "2016-07-14", "CreateApiGroup", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String basePath;
 
 	private String description;
 
@@ -43,6 +37,25 @@ public class CreateApiGroupRequest extends RpcAcsRequest<CreateApiGroupResponse>
 	private String securityToken;
 
 	private List<Tag> tags;
+	public CreateApiGroupRequest() {
+		super("CloudAPI", "2016-07-14", "CreateApiGroup", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getBasePath() {
+		return this.basePath;
+	}
+
+	public void setBasePath(String basePath) {
+		this.basePath = basePath;
+		if(basePath != null){
+			putQueryParameter("BasePath", basePath);
+		}
+	}
 
 	public String getDescription() {
 		return this.description;
@@ -77,29 +90,10 @@ public class CreateApiGroupRequest extends RpcAcsRequest<CreateApiGroupResponse>
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

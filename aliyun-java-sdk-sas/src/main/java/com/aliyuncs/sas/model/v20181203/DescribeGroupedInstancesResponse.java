@@ -71,6 +71,10 @@ public class DescribeGroupedInstancesResponse extends AcsResponse {
 
 		private Integer groupFlag;
 
+		private Integer authVersionCheckCount;
+
+		private String os;
+
 		private List<String> groupPath;
 
 		public Long getAsapVulInstanceCount() {
@@ -127,6 +131,22 @@ public class DescribeGroupedInstancesResponse extends AcsResponse {
 
 		public void setGroupFlag(Integer groupFlag) {
 			this.groupFlag = groupFlag;
+		}
+
+		public Integer getAuthVersionCheckCount() {
+			return this.authVersionCheckCount;
+		}
+
+		public void setAuthVersionCheckCount(Integer authVersionCheckCount) {
+			this.authVersionCheckCount = authVersionCheckCount;
+		}
+
+		public String getOs() {
+			return this.os;
+		}
+
+		public void setOs(String os) {
+			this.os = os;
 		}
 
 		public List<String> getGroupPath() {

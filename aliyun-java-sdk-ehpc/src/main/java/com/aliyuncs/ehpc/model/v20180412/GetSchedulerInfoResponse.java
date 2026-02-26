@@ -47,17 +47,9 @@ public class GetSchedulerInfoResponse extends AcsResponse {
 
 	public static class SchedInfoItem {
 
-		private String schedName;
-
 		private String configuration;
 
-		public String getSchedName() {
-			return this.schedName;
-		}
-
-		public void setSchedName(String schedName) {
-			this.schedName = schedName;
-		}
+		private String schedName;
 
 		public String getConfiguration() {
 			return this.configuration;
@@ -65,6 +57,14 @@ public class GetSchedulerInfoResponse extends AcsResponse {
 
 		public void setConfiguration(String configuration) {
 			this.configuration = configuration;
+		}
+
+		public String getSchedName() {
+			return this.schedName;
+		}
+
+		public void setSchedName(String schedName) {
+			this.schedName = schedName;
 		}
 	}
 

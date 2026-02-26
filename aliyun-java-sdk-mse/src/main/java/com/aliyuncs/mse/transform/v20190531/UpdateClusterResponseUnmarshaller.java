@@ -26,6 +26,7 @@ public class UpdateClusterResponseUnmarshaller {
 		updateClusterResponse.setMessage(_ctx.stringValue("UpdateClusterResponse.Message"));
 		updateClusterResponse.setErrorCode(_ctx.stringValue("UpdateClusterResponse.ErrorCode"));
 		updateClusterResponse.setSuccess(_ctx.booleanValue("UpdateClusterResponse.Success"));
+		updateClusterResponse.setHttpStatusCode(_ctx.stringValue("UpdateClusterResponse.HttpStatusCode"));
 	 
 	 	return updateClusterResponse;
 	}

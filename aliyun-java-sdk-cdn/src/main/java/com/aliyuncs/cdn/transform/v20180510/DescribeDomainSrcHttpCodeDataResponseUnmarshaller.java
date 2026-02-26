@@ -28,9 +28,9 @@ public class DescribeDomainSrcHttpCodeDataResponseUnmarshaller {
 	public static DescribeDomainSrcHttpCodeDataResponse unmarshall(DescribeDomainSrcHttpCodeDataResponse describeDomainSrcHttpCodeDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainSrcHttpCodeDataResponse.setRequestId(_ctx.stringValue("DescribeDomainSrcHttpCodeDataResponse.RequestId"));
-		describeDomainSrcHttpCodeDataResponse.setDomainName(_ctx.stringValue("DescribeDomainSrcHttpCodeDataResponse.DomainName"));
-		describeDomainSrcHttpCodeDataResponse.setStartTime(_ctx.stringValue("DescribeDomainSrcHttpCodeDataResponse.StartTime"));
 		describeDomainSrcHttpCodeDataResponse.setEndTime(_ctx.stringValue("DescribeDomainSrcHttpCodeDataResponse.EndTime"));
+		describeDomainSrcHttpCodeDataResponse.setStartTime(_ctx.stringValue("DescribeDomainSrcHttpCodeDataResponse.StartTime"));
+		describeDomainSrcHttpCodeDataResponse.setDomainName(_ctx.stringValue("DescribeDomainSrcHttpCodeDataResponse.DomainName"));
 		describeDomainSrcHttpCodeDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainSrcHttpCodeDataResponse.DataInterval"));
 
 		List<UsageData> httpCodeData = new ArrayList<UsageData>();

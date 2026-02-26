@@ -31,68 +31,70 @@ public class ListClustersResponseUnmarshaller {
 	public static ListClustersResponse unmarshall(ListClustersResponse listClustersResponse, UnmarshallerContext _ctx) {
 		
 		listClustersResponse.setRequestId(_ctx.stringValue("ListClustersResponse.RequestId"));
-		listClustersResponse.setTotalCount(_ctx.integerValue("ListClustersResponse.TotalCount"));
-		listClustersResponse.setPageNumber(_ctx.integerValue("ListClustersResponse.PageNumber"));
 		listClustersResponse.setPageSize(_ctx.integerValue("ListClustersResponse.PageSize"));
+		listClustersResponse.setPageNumber(_ctx.integerValue("ListClustersResponse.PageNumber"));
+		listClustersResponse.setTotalCount(_ctx.integerValue("ListClustersResponse.TotalCount"));
 
 		List<ClusterInfoSimple> clusters = new ArrayList<ClusterInfoSimple>();
 		for (int i = 0; i < _ctx.lengthValue("ListClustersResponse.Clusters.Length"); i++) {
 			ClusterInfoSimple clusterInfoSimple = new ClusterInfoSimple();
-			clusterInfoSimple.setId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].Id"));
-			clusterInfoSimple.setRegionId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].RegionId"));
-			clusterInfoSimple.setZoneId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ZoneId"));
-			clusterInfoSimple.setVSwitchId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].VSwitchId"));
 			clusterInfoSimple.setVpcId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].VpcId"));
-			clusterInfoSimple.setName(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].Name"));
-			clusterInfoSimple.setDescription(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].Description"));
 			clusterInfoSimple.setStatus(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].Status"));
-			clusterInfoSimple.setOsTag(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].OsTag"));
+			clusterInfoSimple.setCreateTime(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].CreateTime"));
+			clusterInfoSimple.setIsComputeEss(_ctx.booleanValue("ListClustersResponse.Clusters["+ i +"].IsComputeEss"));
+			clusterInfoSimple.setComputeSpotStrategy(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ComputeSpotStrategy"));
 			clusterInfoSimple.setAccountType(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].AccountType"));
+			clusterInfoSimple.setCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Count"));
+			clusterInfoSimple.setEhpcVersion(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].EhpcVersion"));
+			clusterInfoSimple.setDescription(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].Description"));
+			clusterInfoSimple.setBaseOsTag(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].BaseOsTag"));
+			clusterInfoSimple.setName(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].Name"));
+			clusterInfoSimple.setImageId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ImageId"));
+			clusterInfoSimple.setComputeSpotPriceLimit(_ctx.floatValue("ListClustersResponse.Clusters["+ i +"].ComputeSpotPriceLimit"));
 			clusterInfoSimple.setSchedulerType(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].SchedulerType"));
 			clusterInfoSimple.setDeployMode(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].DeployMode"));
-			clusterInfoSimple.setCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Count"));
-			clusterInfoSimple.setInstanceType(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].InstanceType"));
-			clusterInfoSimple.setLoginNodes(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].LoginNodes"));
-			clusterInfoSimple.setCreateTime(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].CreateTime"));
-			clusterInfoSimple.setImageOwnerAlias(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ImageOwnerAlias"));
-			clusterInfoSimple.setImageId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ImageId"));
-			clusterInfoSimple.setLocation(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].Location"));
-			clusterInfoSimple.setEhpcVersion(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].EhpcVersion"));
-			clusterInfoSimple.setNodePrefix(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].NodePrefix"));
 			clusterInfoSimple.setNodeSuffix(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].NodeSuffix"));
-			clusterInfoSimple.setBaseOsTag(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].BaseOsTag"));
+			clusterInfoSimple.setImageOwnerAlias(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ImageOwnerAlias"));
+			clusterInfoSimple.setOsTag(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].OsTag"));
+			clusterInfoSimple.setNodePrefix(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].NodePrefix"));
+			clusterInfoSimple.setInstanceType(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].InstanceType"));
+			clusterInfoSimple.setRegionId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].RegionId"));
 			clusterInfoSimple.setInstanceChargeType(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].InstanceChargeType"));
-			clusterInfoSimple.setComputeSpotStrategy(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ComputeSpotStrategy"));
-			clusterInfoSimple.setComputeSpotPriceLimit(_ctx.floatValue("ListClustersResponse.Clusters["+ i +"].ComputeSpotPriceLimit"));
+			clusterInfoSimple.setVSwitchId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].VSwitchId"));
+			clusterInfoSimple.setZoneId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ZoneId"));
+			clusterInfoSimple.setLoginNodes(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].LoginNodes"));
+			clusterInfoSimple.setId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].Id"));
+			clusterInfoSimple.setLocation(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].Location"));
 			clusterInfoSimple.setClientVersion(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ClientVersion"));
-			clusterInfoSimple.setIsComputeEss(_ctx.booleanValue("ListClustersResponse.Clusters["+ i +"].IsComputeEss"));
+			clusterInfoSimple.setResourceGroupId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ResourceGroupId"));
+			clusterInfoSimple.setHasPlugin(_ctx.booleanValue("ListClustersResponse.Clusters["+ i +"].HasPlugin"));
 
 			Managers managers = new Managers();
+			managers.setOperatingCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Managers.OperatingCount"));
+			managers.setExceptionCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Managers.ExceptionCount"));
+			managers.setStoppedCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Managers.StoppedCount"));
 			managers.setTotal(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Managers.Total"));
 			managers.setNormalCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Managers.NormalCount"));
-			managers.setOperatingCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Managers.OperatingCount"));
-			managers.setStoppedCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Managers.StoppedCount"));
-			managers.setExceptionCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Managers.ExceptionCount"));
 			clusterInfoSimple.setManagers(managers);
 
 			Computes computes = new Computes();
+			computes.setOperatingCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Computes.OperatingCount"));
+			computes.setExceptionCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Computes.ExceptionCount"));
+			computes.setStoppedCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Computes.StoppedCount"));
 			computes.setTotal(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Computes.Total"));
 			computes.setNormalCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Computes.NormalCount"));
-			computes.setOperatingCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Computes.OperatingCount"));
-			computes.setStoppedCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Computes.StoppedCount"));
-			computes.setExceptionCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Computes.ExceptionCount"));
 			clusterInfoSimple.setComputes(computes);
 
 			TotalResources totalResources = new TotalResources();
+			totalResources.setGpu(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].TotalResources.Gpu"));
 			totalResources.setCpu(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].TotalResources.Cpu"));
 			totalResources.setMemory(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].TotalResources.Memory"));
-			totalResources.setGpu(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].TotalResources.Gpu"));
 			clusterInfoSimple.setTotalResources(totalResources);
 
 			UsedResources usedResources = new UsedResources();
+			usedResources.setGpu(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].UsedResources.Gpu"));
 			usedResources.setCpu(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].UsedResources.Cpu"));
 			usedResources.setMemory(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].UsedResources.Memory"));
-			usedResources.setGpu(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].UsedResources.Gpu"));
 			clusterInfoSimple.setUsedResources(usedResources);
 
 			clusters.add(clusterInfoSimple);

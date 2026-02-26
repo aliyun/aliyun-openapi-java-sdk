@@ -183,6 +183,8 @@ public class QueryResourcePackageInstancesResponse extends AcsResponse {
 
 			private String remainingAmount;
 
+			private String commodityCode;
+
 			private List<String> applicableProducts;
 
 			public String getExpiryTime() {
@@ -279,6 +281,14 @@ public class QueryResourcePackageInstancesResponse extends AcsResponse {
 
 			public void setRemainingAmount(String remainingAmount) {
 				this.remainingAmount = remainingAmount;
+			}
+
+			public String getCommodityCode() {
+				return this.commodityCode;
+			}
+
+			public void setCommodityCode(String commodityCode) {
+				this.commodityCode = commodityCode;
 			}
 
 			public List<String> getApplicableProducts() {

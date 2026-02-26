@@ -60,6 +60,12 @@ public class CreateDomainResponse extends AcsResponse {
 
 		private String domainType;
 
+		private Boolean withCertificate;
+
+		private String cname;
+
+		private Boolean checked;
+
 		public String getAppId() {
 			return this.appId;
 		}
@@ -114,6 +120,30 @@ public class CreateDomainResponse extends AcsResponse {
 
 		public void setDomainType(String domainType) {
 			this.domainType = domainType;
+		}
+
+		public Boolean getWithCertificate() {
+			return this.withCertificate;
+		}
+
+		public void setWithCertificate(Boolean withCertificate) {
+			this.withCertificate = withCertificate;
+		}
+
+		public String getCname() {
+			return this.cname;
+		}
+
+		public void setCname(String cname) {
+			this.cname = cname;
+		}
+
+		public Boolean getChecked() {
+			return this.checked;
+		}
+
+		public void setChecked(Boolean checked) {
+			this.checked = checked;
 		}
 	}
 

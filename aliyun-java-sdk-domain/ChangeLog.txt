@@ -1,3 +1,47 @@
+2025-11-05 Version: 3.15.11
+- Added query domain real time price API.
+
+2024-10-18 Version: 3.15.10
+- 基于转移码的转出接口
+- SaveSingleTaskForTransferOutByAuthorizationCode
+- SaveBatchTaskForTransferOutByAuthorizationCode
+
+2024-10-17 Version: 3.15.9
+- Supported query exchange rate.
+
+2024-06-18 Version: 3.15.8
+- Generated 2018-02-08 for `Domain`.
+
+2024-05-09 Version: 3.15.7
+- Add price info to check domain api
+
+2024-04-17 Version: 3.15.6
+- Add SnatchNo For QueryBookingDomainInfo
+
+2024-04-15 Version: 3.15.5
+- Support setting DNS on domain drop catch API
+
+2024-01-29 Version: 3.15.4
+- Add query domain list with reg
+
+2023-09-15 Version: 3.15.3
+- Add audit interface.
+
+2023-07-07 Version: 3.14.8
+- CustomApi.
+
+2023-05-31 Version: 3.15.2
+- Add server lock order by
+
+2023-03-31 Version: 3.15.1
+- Setup domain auto renewal api release.
+
+2023-03-30 Version: 3.15.0
+- Setup domain auto renewal api release.
+
+2022-09-22 Version: 3.14.11
+- Ram action config.
+
 2022-07-21 Version: 3.14.9
 - Ram action config.
 

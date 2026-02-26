@@ -85,6 +85,10 @@ public class ListGroupAuthorizationRulesResponse extends AcsResponse {
 
 		private String destinationType;
 
+		private String destinationPort;
+
+		private String protocol;
+
 		private String destination;
 
 		private String authorizationRuleName;
@@ -127,6 +131,22 @@ public class ListGroupAuthorizationRulesResponse extends AcsResponse {
 
 		public void setDestinationType(String destinationType) {
 			this.destinationType = destinationType;
+		}
+
+		public String getDestinationPort() {
+			return this.destinationPort;
+		}
+
+		public void setDestinationPort(String destinationPort) {
+			this.destinationPort = destinationPort;
+		}
+
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
 		}
 
 		public String getDestination() {

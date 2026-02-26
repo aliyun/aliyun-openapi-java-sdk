@@ -25,11 +25,21 @@ import com.aliyuncs.polardbx.Endpoint;
 public class UpdatePolarDBXInstanceNodeRequest extends RpcAcsRequest<UpdatePolarDBXInstanceNodeResponse> {
 	   
 
+	private String addDNSpec;
+
+	private String storagePoolName;
+
+	private String dbInstanceNodeCount;
+
+	private String cNNodeCount;
+
 	private String dBInstanceName;
 
 	private String clientToken;
 
-	private String dbInstanceNodeCount;
+	private String deleteDNIds;
+
+	private String dNNodeCount;
 	public UpdatePolarDBXInstanceNodeRequest() {
 		super("polardbx", "2020-02-02", "UpdatePolarDBXInstanceNode", "polardbx");
 		setMethod(MethodType.POST);
@@ -37,6 +47,50 @@ public class UpdatePolarDBXInstanceNodeRequest extends RpcAcsRequest<UpdatePolar
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAddDNSpec() {
+		return this.addDNSpec;
+	}
+
+	public void setAddDNSpec(String addDNSpec) {
+		this.addDNSpec = addDNSpec;
+		if(addDNSpec != null){
+			putQueryParameter("AddDNSpec", addDNSpec);
+		}
+	}
+
+	public String getStoragePoolName() {
+		return this.storagePoolName;
+	}
+
+	public void setStoragePoolName(String storagePoolName) {
+		this.storagePoolName = storagePoolName;
+		if(storagePoolName != null){
+			putQueryParameter("StoragePoolName", storagePoolName);
+		}
+	}
+
+	public String getDbInstanceNodeCount() {
+		return this.dbInstanceNodeCount;
+	}
+
+	public void setDbInstanceNodeCount(String dbInstanceNodeCount) {
+		this.dbInstanceNodeCount = dbInstanceNodeCount;
+		if(dbInstanceNodeCount != null){
+			putQueryParameter("DbInstanceNodeCount", dbInstanceNodeCount);
+		}
+	}
+
+	public String getCNNodeCount() {
+		return this.cNNodeCount;
+	}
+
+	public void setCNNodeCount(String cNNodeCount) {
+		this.cNNodeCount = cNNodeCount;
+		if(cNNodeCount != null){
+			putQueryParameter("CNNodeCount", cNNodeCount);
+		}
 	}
 
 	public String getDBInstanceName() {
@@ -61,14 +115,25 @@ public class UpdatePolarDBXInstanceNodeRequest extends RpcAcsRequest<UpdatePolar
 		}
 	}
 
-	public String getDbInstanceNodeCount() {
-		return this.dbInstanceNodeCount;
+	public String getDeleteDNIds() {
+		return this.deleteDNIds;
 	}
 
-	public void setDbInstanceNodeCount(String dbInstanceNodeCount) {
-		this.dbInstanceNodeCount = dbInstanceNodeCount;
-		if(dbInstanceNodeCount != null){
-			putQueryParameter("DbInstanceNodeCount", dbInstanceNodeCount);
+	public void setDeleteDNIds(String deleteDNIds) {
+		this.deleteDNIds = deleteDNIds;
+		if(deleteDNIds != null){
+			putQueryParameter("DeleteDNIds", deleteDNIds);
+		}
+	}
+
+	public String getDNNodeCount() {
+		return this.dNNodeCount;
+	}
+
+	public void setDNNodeCount(String dNNodeCount) {
+		this.dNNodeCount = dNNodeCount;
+		if(dNNodeCount != null){
+			putQueryParameter("DNNodeCount", dNNodeCount);
 		}
 	}
 

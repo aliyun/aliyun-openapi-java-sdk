@@ -33,14 +33,15 @@ public class ListPortalMenuAuthorizationResponseUnmarshaller {
 		List<Data> result = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("ListPortalMenuAuthorizationResponse.Result.Length"); i++) {
 			Data data = new Data();
-			data.setShowOnlyWithAccess(_ctx.booleanValue("ListPortalMenuAuthorizationResponse.Result["+ i +"].ShowOnlyWithAccess"));
 			data.setMenuId(_ctx.stringValue("ListPortalMenuAuthorizationResponse.Result["+ i +"].MenuId"));
+			data.setShowOnlyWithAccess(_ctx.booleanValue("ListPortalMenuAuthorizationResponse.Result["+ i +"].ShowOnlyWithAccess"));
 
 			List<ReceiversItem> receivers = new ArrayList<ReceiversItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListPortalMenuAuthorizationResponse.Result["+ i +"].Receivers.Length"); j++) {
 				ReceiversItem receiversItem = new ReceiversItem();
 				receiversItem.setReceiverId(_ctx.stringValue("ListPortalMenuAuthorizationResponse.Result["+ i +"].Receivers["+ j +"].ReceiverId"));
 				receiversItem.setReceiverType(_ctx.integerValue("ListPortalMenuAuthorizationResponse.Result["+ i +"].Receivers["+ j +"].ReceiverType"));
+				receiversItem.setAuthPointsValue(_ctx.integerValue("ListPortalMenuAuthorizationResponse.Result["+ i +"].Receivers["+ j +"].AuthPointsValue"));
 
 				receivers.add(receiversItem);
 			}

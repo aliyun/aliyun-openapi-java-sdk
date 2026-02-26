@@ -51,9 +51,9 @@ public class DescribeDomainTopClientIpVisitResponse extends AcsResponse {
 
 		private String clientIp;
 
-		private Long traffic;
-
 		private Long acc;
+
+		private Long traffic;
 
 		public Integer getRank() {
 			return this.rank;
@@ -71,20 +71,20 @@ public class DescribeDomainTopClientIpVisitResponse extends AcsResponse {
 			this.clientIp = clientIp;
 		}
 
-		public Long getTraffic() {
-			return this.traffic;
-		}
-
-		public void setTraffic(Long traffic) {
-			this.traffic = traffic;
-		}
-
 		public Long getAcc() {
 			return this.acc;
 		}
 
 		public void setAcc(Long acc) {
 			this.acc = acc;
+		}
+
+		public Long getTraffic() {
+			return this.traffic;
+		}
+
+		public void setTraffic(Long traffic) {
+			this.traffic = traffic;
 		}
 	}
 

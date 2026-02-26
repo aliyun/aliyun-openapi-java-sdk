@@ -22,7 +22,9 @@ public class DeleteClusterNodesResponseUnmarshaller {
 
 	public static DeleteClusterNodesResponse unmarshall(DeleteClusterNodesResponse deleteClusterNodesResponse, UnmarshallerContext _ctx) {
 		
-		deleteClusterNodesResponse.setRequestId(_ctx.stringValue("DeleteClusterNodesResponse.RequestId"));
+		deleteClusterNodesResponse.setCluster_id(_ctx.stringValue("DeleteClusterNodesResponse.cluster_id"));
+		deleteClusterNodesResponse.setRequest_id(_ctx.stringValue("DeleteClusterNodesResponse.request_id"));
+		deleteClusterNodesResponse.setTask_id(_ctx.stringValue("DeleteClusterNodesResponse.task_id"));
 	 
 	 	return deleteClusterNodesResponse;
 	}

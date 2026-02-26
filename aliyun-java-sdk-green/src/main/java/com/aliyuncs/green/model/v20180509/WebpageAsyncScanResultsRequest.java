@@ -27,7 +27,7 @@ public class WebpageAsyncScanResultsRequest extends RoaAcsRequest<WebpageAsyncSc
 
 	private String clientInfo;
 	public WebpageAsyncScanResultsRequest() {
-		super("Green", "2018-05-09", "WebpageAsyncScanResults", "green");
+		super("Green", "2018-05-09", "WebpageAsyncScanResults");
 		setUriPattern("/green/webpage/results");
 		setMethod(MethodType.POST);
 		try {

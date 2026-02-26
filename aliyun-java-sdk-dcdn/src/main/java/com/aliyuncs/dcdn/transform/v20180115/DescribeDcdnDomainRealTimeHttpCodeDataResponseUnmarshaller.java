@@ -28,9 +28,9 @@ public class DescribeDcdnDomainRealTimeHttpCodeDataResponseUnmarshaller {
 	public static DescribeDcdnDomainRealTimeHttpCodeDataResponse unmarshall(DescribeDcdnDomainRealTimeHttpCodeDataResponse describeDcdnDomainRealTimeHttpCodeDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnDomainRealTimeHttpCodeDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.RequestId"));
-		describeDcdnDomainRealTimeHttpCodeDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.DomainName"));
-		describeDcdnDomainRealTimeHttpCodeDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.StartTime"));
 		describeDcdnDomainRealTimeHttpCodeDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.EndTime"));
+		describeDcdnDomainRealTimeHttpCodeDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.StartTime"));
+		describeDcdnDomainRealTimeHttpCodeDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.DomainName"));
 		describeDcdnDomainRealTimeHttpCodeDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainRealTimeHttpCodeDataResponse.DataInterval"));
 
 		List<UsageData> realTimeHttpCodeData = new ArrayList<UsageData>();

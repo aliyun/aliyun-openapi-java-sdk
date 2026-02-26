@@ -54,8 +54,8 @@ public class ListDataSourcesResponseUnmarshaller {
 			dataSourcesItem.setOperator(_ctx.stringValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Operator"));
 			dataSourcesItem.setName(_ctx.stringValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Name"));
 			dataSourcesItem.setContent(_ctx.stringValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Content"));
-			dataSourcesItem.setId(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Id"));
-			dataSourcesItem.setBindingCalcEngineId(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].BindingCalcEngineId"));
+			dataSourcesItem.setId(_ctx.longValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Id"));
+			dataSourcesItem.setBindingCalcEngineId(_ctx.longValue("ListDataSourcesResponse.Data.DataSources["+ i +"].BindingCalcEngineId"));
 			dataSourcesItem.setTenantId(_ctx.longValue("ListDataSourcesResponse.Data.DataSources["+ i +"].TenantId"));
 
 			dataSources.add(dataSourcesItem);

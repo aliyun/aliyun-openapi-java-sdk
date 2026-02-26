@@ -19,6 +19,7 @@ public class ParameterHelperTest {
     @Test
     public void getUniqueNonce() {
         String nonce = ParameterHelper.getUniqueNonce();
+        Assert.assertEquals(32, nonce.length());
         Assert.assertNotEquals(nonce, ParameterHelper.getUniqueNonce());
     }
 

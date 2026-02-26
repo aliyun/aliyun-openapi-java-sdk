@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -30,8 +31,6 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 
 	private String roleIds;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String nodeId;
@@ -44,6 +43,10 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 	public SwitchDBInstanceHARequest() {
 		super("Dds", "2015-12-01", "SwitchDBInstanceHA", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -76,17 +79,6 @@ public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAR
 		this.roleIds = roleIds;
 		if(roleIds != null){
 			putQueryParameter("RoleIds", roleIds);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

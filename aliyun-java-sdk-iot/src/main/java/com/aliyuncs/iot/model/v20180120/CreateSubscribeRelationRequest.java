@@ -52,11 +52,13 @@ public class CreateSubscribeRelationRequest extends RpcAcsRequest<CreateSubscrib
 
 	private Boolean otaJobFlag;
 
+	private String subscribeFlags;
+
 	private Boolean deviceDataFlag;
 
 	private String mnsConfiguration;
 	public CreateSubscribeRelationRequest() {
-		super("Iot", "2018-01-20", "CreateSubscribeRelation");
+		super("Iot", "2018-01-20", "CreateSubscribeRelation", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -206,6 +208,17 @@ public class CreateSubscribeRelationRequest extends RpcAcsRequest<CreateSubscrib
 		this.otaJobFlag = otaJobFlag;
 		if(otaJobFlag != null){
 			putQueryParameter("OtaJobFlag", otaJobFlag.toString());
+		}
+	}
+
+	public String getSubscribeFlags() {
+		return this.subscribeFlags;
+	}
+
+	public void setSubscribeFlags(String subscribeFlags) {
+		this.subscribeFlags = subscribeFlags;
+		if(subscribeFlags != null){
+			putQueryParameter("SubscribeFlags", subscribeFlags);
 		}
 	}
 

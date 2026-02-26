@@ -24,6 +24,7 @@ import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Resul
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.Dict;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.DictListItem;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.ElasticDataNodeConfiguration;
+import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.IkHotDictsItem;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.KibanaConfiguration;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.MasterConfiguration;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.NetworkConfig;
@@ -74,6 +75,9 @@ public class DescribeInstanceResponseUnmarshaller {
 		result.setDomain(_ctx.stringValue("DescribeInstanceResponse.Result.domain"));
 		result.setDescription(_ctx.stringValue("DescribeInstanceResponse.Result.description"));
 		result.setKibanaDomain(_ctx.stringValue("DescribeInstanceResponse.Result.kibanaDomain"));
+		result.setInstanceCategory(_ctx.stringValue("DescribeInstanceResponse.Result.instanceCategory"));
+		result.setEndtime(_ctx.longValue("DescribeInstanceResponse.Result.endtime"));
+		result.setArchType(_ctx.stringValue("DescribeInstanceResponse.Result.archType"));
 
 		List<String> esIPWhitelist = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.esIPWhitelist.Length"); i++) {
@@ -119,6 +123,8 @@ public class DescribeInstanceResponseUnmarshaller {
 		nodeSpec.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.nodeSpec.disk"));
 		nodeSpec.setDiskEncryption(_ctx.booleanValue("DescribeInstanceResponse.Result.nodeSpec.diskEncryption"));
 		nodeSpec.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.nodeSpec.diskType"));
+		nodeSpec.setPerformanceLevel(_ctx.stringValue("DescribeInstanceResponse.Result.nodeSpec.performanceLevel"));
+		nodeSpec.setSpecInfo(_ctx.stringValue("DescribeInstanceResponse.Result.nodeSpec.specInfo"));
 		result.setNodeSpec(nodeSpec);
 
 		NetworkConfig networkConfig = new NetworkConfig();
@@ -147,6 +153,8 @@ public class DescribeInstanceResponseUnmarshaller {
 		KibanaConfiguration kibanaConfiguration = new KibanaConfiguration();
 		kibanaConfiguration.setAmount(_ctx.integerValue("DescribeInstanceResponse.Result.kibanaConfiguration.amount"));
 		kibanaConfiguration.setSpec(_ctx.stringValue("DescribeInstanceResponse.Result.kibanaConfiguration.spec"));
+		kibanaConfiguration.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.kibanaConfiguration.disk"));
+		kibanaConfiguration.setSpecInfo(_ctx.stringValue("DescribeInstanceResponse.Result.kibanaConfiguration.specInfo"));
 		result.setKibanaConfiguration(kibanaConfiguration);
 
 		MasterConfiguration masterConfiguration = new MasterConfiguration();
@@ -154,6 +162,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		masterConfiguration.setAmount(_ctx.integerValue("DescribeInstanceResponse.Result.masterConfiguration.amount"));
 		masterConfiguration.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.masterConfiguration.disk"));
 		masterConfiguration.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.masterConfiguration.diskType"));
+		masterConfiguration.setSpecInfo(_ctx.stringValue("DescribeInstanceResponse.Result.masterConfiguration.specInfo"));
 		result.setMasterConfiguration(masterConfiguration);
 
 		ClientNodeConfiguration clientNodeConfiguration = new ClientNodeConfiguration();
@@ -161,6 +170,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		clientNodeConfiguration.setAmount(_ctx.integerValue("DescribeInstanceResponse.Result.clientNodeConfiguration.amount"));
 		clientNodeConfiguration.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.clientNodeConfiguration.disk"));
 		clientNodeConfiguration.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.clientNodeConfiguration.diskType"));
+		clientNodeConfiguration.setSpecInfo(_ctx.stringValue("DescribeInstanceResponse.Result.clientNodeConfiguration.specInfo"));
 		result.setClientNodeConfiguration(clientNodeConfiguration);
 
 		WarmNodeConfiguration warmNodeConfiguration = new WarmNodeConfiguration();
@@ -169,6 +179,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		warmNodeConfiguration.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.warmNodeConfiguration.disk"));
 		warmNodeConfiguration.setDiskEncryption(_ctx.booleanValue("DescribeInstanceResponse.Result.warmNodeConfiguration.diskEncryption"));
 		warmNodeConfiguration.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.warmNodeConfiguration.diskType"));
+		warmNodeConfiguration.setSpecInfo(_ctx.stringValue("DescribeInstanceResponse.Result.warmNodeConfiguration.specInfo"));
 		result.setWarmNodeConfiguration(warmNodeConfiguration);
 
 		AdvancedSetting advancedSetting = new AdvancedSetting();
@@ -181,6 +192,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		elasticDataNodeConfiguration.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.elasticDataNodeConfiguration.disk"));
 		elasticDataNodeConfiguration.setDiskEncryption(_ctx.booleanValue("DescribeInstanceResponse.Result.elasticDataNodeConfiguration.diskEncryption"));
 		elasticDataNodeConfiguration.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.elasticDataNodeConfiguration.diskType"));
+		elasticDataNodeConfiguration.setSpecInfo(_ctx.stringValue("DescribeInstanceResponse.Result.elasticDataNodeConfiguration.specInfo"));
 		result.setElasticDataNodeConfiguration(elasticDataNodeConfiguration);
 
 		List<DictListItem> dictList = new ArrayList<DictListItem>();
@@ -238,6 +250,18 @@ public class DescribeInstanceResponseUnmarshaller {
 			tags.add(tag);
 		}
 		result.setTags(tags);
+
+		List<IkHotDictsItem> ikHotDicts = new ArrayList<IkHotDictsItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.ikHotDicts.Length"); i++) {
+			IkHotDictsItem ikHotDictsItem = new IkHotDictsItem();
+			ikHotDictsItem.setType(_ctx.stringValue("DescribeInstanceResponse.Result.ikHotDicts["+ i +"].type"));
+			ikHotDictsItem.setSourceType(_ctx.stringValue("DescribeInstanceResponse.Result.ikHotDicts["+ i +"].sourceType"));
+			ikHotDictsItem.setFileSize(_ctx.integerValue("DescribeInstanceResponse.Result.ikHotDicts["+ i +"].fileSize"));
+			ikHotDictsItem.setName(_ctx.stringValue("DescribeInstanceResponse.Result.ikHotDicts["+ i +"].name"));
+
+			ikHotDicts.add(ikHotDictsItem);
+		}
+		result.setIkHotDicts(ikHotDicts);
 		describeInstanceResponse.setResult(result);
 	 
 	 	return describeInstanceResponse;

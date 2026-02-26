@@ -42,7 +42,7 @@ public class AddTrafficMatchRuleToTrafficMarkingPolicyRequest extends RpcAcsRequ
 
 	private Long ownerId;
 	public AddTrafficMatchRuleToTrafficMarkingPolicyRequest() {
-		super("Cbn", "2017-09-12", "AddTrafficMatchRuleToTrafficMarkingPolicy");
+		super("Cbn", "2017-09-12", "AddTrafficMatchRuleToTrafficMarkingPolicy", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -116,6 +116,7 @@ public class AddTrafficMatchRuleToTrafficMarkingPolicyRequest extends RpcAcsRequ
 					}
 				}
 				putQueryParameter("TrafficMatchRules." + (depth1 + 1) + ".DstCidr" , trafficMatchRuless.get(depth1).getDstCidr());
+				putQueryParameter("TrafficMatchRules." + (depth1 + 1) + ".AddressFamily" , trafficMatchRuless.get(depth1).getAddressFamily());
 				putQueryParameter("TrafficMatchRules." + (depth1 + 1) + ".TrafficMatchRuleName" , trafficMatchRuless.get(depth1).getTrafficMatchRuleName());
 				putQueryParameter("TrafficMatchRules." + (depth1 + 1) + ".SrcCidr" , trafficMatchRuless.get(depth1).getSrcCidr());
 			}
@@ -169,6 +170,8 @@ public class AddTrafficMatchRuleToTrafficMarkingPolicyRequest extends RpcAcsRequ
 
 		private String dstCidr;
 
+		private String addressFamily;
+
 		private String trafficMatchRuleName;
 
 		private String srcCidr;
@@ -219,6 +222,14 @@ public class AddTrafficMatchRuleToTrafficMarkingPolicyRequest extends RpcAcsRequ
 
 		public void setDstCidr(String dstCidr) {
 			this.dstCidr = dstCidr;
+		}
+
+		public String getAddressFamily() {
+			return this.addressFamily;
+		}
+
+		public void setAddressFamily(String addressFamily) {
+			this.addressFamily = addressFamily;
 		}
 
 		public String getTrafficMatchRuleName() {

@@ -45,6 +45,9 @@ public class GetJobInstanceResponseUnmarshaller {
 		jobInstanceDetail.setScheduleTime(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.ScheduleTime"));
 		jobInstanceDetail.setDataTime(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.DataTime"));
 		jobInstanceDetail.setWorkAddr(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.WorkAddr"));
+		jobInstanceDetail.setParameters(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.Parameters"));
+		jobInstanceDetail.setJobName(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.JobName"));
+		jobInstanceDetail.setTraceId(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.TraceId"));
 		data.setJobInstanceDetail(jobInstanceDetail);
 		getJobInstanceResponse.setData(data);
 	 

@@ -29,21 +29,21 @@ public class ListDeviceResponseUnmarshaller {
 		
 		listDeviceResponse.setRequestId(_ctx.stringValue("ListDeviceResponse.RequestId"));
 		listDeviceResponse.setCode(_ctx.integerValue("ListDeviceResponse.Code"));
-		listDeviceResponse.setSuccess(_ctx.booleanValue("ListDeviceResponse.Success"));
 		listDeviceResponse.setMessage(_ctx.stringValue("ListDeviceResponse.Message"));
+		listDeviceResponse.setSuccess(_ctx.booleanValue("ListDeviceResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("ListDeviceResponse.Data.Total"));
 		data.setNum(_ctx.integerValue("ListDeviceResponse.Data.Num"));
+		data.setTotal(_ctx.integerValue("ListDeviceResponse.Data.Total"));
 		data.setSize(_ctx.integerValue("ListDeviceResponse.Data.Size"));
 
 		List<DeviceInfo> pageData = new ArrayList<DeviceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListDeviceResponse.Data.PageData.Length"); i++) {
 			DeviceInfo deviceInfo = new DeviceInfo();
-			deviceInfo.setDeviceId(_ctx.stringValue("ListDeviceResponse.Data.PageData["+ i +"].DeviceId"));
-			deviceInfo.setIotId(_ctx.stringValue("ListDeviceResponse.Data.PageData["+ i +"].IotId"));
 			deviceInfo.setStatus(_ctx.stringValue("ListDeviceResponse.Data.PageData["+ i +"].Status"));
 			deviceInfo.setLastSaveTime(_ctx.longValue("ListDeviceResponse.Data.PageData["+ i +"].LastSaveTime"));
+			deviceInfo.setDeviceId(_ctx.stringValue("ListDeviceResponse.Data.PageData["+ i +"].DeviceId"));
+			deviceInfo.setIotId(_ctx.stringValue("ListDeviceResponse.Data.PageData["+ i +"].IotId"));
 
 			pageData.add(deviceInfo);
 		}

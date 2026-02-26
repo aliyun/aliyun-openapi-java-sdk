@@ -25,11 +25,9 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserVipsByDomainResponse> {
 	   
 
-	private String available;
-
 	private String domainName;
 
-	private Long ownerId;
+	private String available;
 	public DescribeUserVipsByDomainRequest() {
 		super("Cdn", "2018-05-10", "DescribeUserVipsByDomain");
 		setMethod(MethodType.GET);
@@ -37,17 +35,6 @@ public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserV
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getAvailable() {
-		return this.available;
-	}
-
-	public void setAvailable(String available) {
-		this.available = available;
-		if(available != null){
-			putQueryParameter("Available", available);
-		}
 	}
 
 	public String getDomainName() {
@@ -61,14 +48,14 @@ public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserV
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getAvailable() {
+		return this.available;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setAvailable(String available) {
+		this.available = available;
+		if(available != null){
+			putQueryParameter("Available", available);
 		}
 	}
 

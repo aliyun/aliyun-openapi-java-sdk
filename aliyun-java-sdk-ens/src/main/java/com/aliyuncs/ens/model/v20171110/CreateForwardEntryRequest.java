@@ -34,6 +34,8 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 
 	private String externalPort;
 
+	private String standbyExternalIp;
+
 	private String natGatewayId;
 
 	private String forwardEntryName;
@@ -96,6 +98,17 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 		this.externalPort = externalPort;
 		if(externalPort != null){
 			putQueryParameter("ExternalPort", externalPort);
+		}
+	}
+
+	public String getStandbyExternalIp() {
+		return this.standbyExternalIp;
+	}
+
+	public void setStandbyExternalIp(String standbyExternalIp) {
+		this.standbyExternalIp = standbyExternalIp;
+		if(standbyExternalIp != null){
+			putQueryParameter("StandbyExternalIp", standbyExternalIp);
 		}
 	}
 

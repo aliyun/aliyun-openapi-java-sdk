@@ -101,6 +101,8 @@ public class DescribeFabricConsortiumsResponse extends AcsResponse {
 
 		private String consortiumName;
 
+		private String majorVersion;
+
 		private List<TagsItem> tags;
 
 		public Integer getChannelCount() {
@@ -237,6 +239,14 @@ public class DescribeFabricConsortiumsResponse extends AcsResponse {
 
 		public void setConsortiumName(String consortiumName) {
 			this.consortiumName = consortiumName;
+		}
+
+		public String getMajorVersion() {
+			return this.majorVersion;
+		}
+
+		public void setMajorVersion(String majorVersion) {
+			this.majorVersion = majorVersion;
 		}
 
 		public List<TagsItem> getTags() {

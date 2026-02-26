@@ -27,7 +27,7 @@ public class ImageScanFeedbackRequest extends RoaAcsRequest<ImageScanFeedbackRes
 
 	private String clientInfo;
 	public ImageScanFeedbackRequest() {
-		super("Green", "2018-05-09", "ImageScanFeedback", "green");
+		super("Green", "2018-05-09", "ImageScanFeedback");
 		setUriPattern("/green/image/feedback");
 		setMethod(MethodType.POST);
 		try {

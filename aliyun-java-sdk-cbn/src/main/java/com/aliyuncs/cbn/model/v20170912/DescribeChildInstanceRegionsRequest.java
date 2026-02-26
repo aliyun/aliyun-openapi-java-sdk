@@ -34,8 +34,10 @@ public class DescribeChildInstanceRegionsRequest extends RpcAcsRequest<DescribeC
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String acceptLanguage;
 	public DescribeChildInstanceRegionsRequest() {
-		super("Cbn", "2017-09-12", "DescribeChildInstanceRegions");
+		super("Cbn", "2017-09-12", "DescribeChildInstanceRegions", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -95,6 +97,17 @@ public class DescribeChildInstanceRegionsRequest extends RpcAcsRequest<DescribeC
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

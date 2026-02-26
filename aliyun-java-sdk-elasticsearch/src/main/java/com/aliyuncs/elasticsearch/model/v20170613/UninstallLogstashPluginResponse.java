@@ -15,6 +15,7 @@
 package com.aliyuncs.elasticsearch.model.v20170613;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.elasticsearch.transform.v20170613.UninstallLogstashPluginResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +28,8 @@ public class UninstallLogstashPluginResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Map<Object,Object> headers;
+
 	private List<String> result;
 
 	public String getRequestId() {
@@ -35,6 +38,14 @@ public class UninstallLogstashPluginResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Map<Object,Object> getHeaders() {
+		return this.headers;
+	}
+
+	public void setHeaders(Map<Object,Object> headers) {
+		this.headers = headers;
 	}
 
 	public List<String> getResult() {

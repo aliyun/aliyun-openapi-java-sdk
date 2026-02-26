@@ -27,9 +27,9 @@ public class GetGatewayOptionRequest extends RpcAcsRequest<GetGatewayOptionRespo
 
 	private String gatewayUniqueId;
 
-	private String acceptLanguage;
-
 	private Long gatewayId;
+
+	private String acceptLanguage;
 	public GetGatewayOptionRequest() {
 		super("mse", "2019-05-31", "GetGatewayOption", "mse");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class GetGatewayOptionRequest extends RpcAcsRequest<GetGatewayOptionRespo
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public Long getGatewayId() {
 		return this.gatewayId;
 	}
@@ -69,6 +58,17 @@ public class GetGatewayOptionRequest extends RpcAcsRequest<GetGatewayOptionRespo
 		this.gatewayId = gatewayId;
 		if(gatewayId != null){
 			putQueryParameter("GatewayId", gatewayId.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

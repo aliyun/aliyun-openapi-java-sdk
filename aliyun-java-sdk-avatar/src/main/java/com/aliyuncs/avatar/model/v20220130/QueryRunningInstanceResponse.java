@@ -79,6 +79,8 @@ public class QueryRunningInstanceResponse extends AcsResponse {
 
 		private String sessionId;
 
+		private String token;
+
 		private Channel channel;
 
 		private User user;
@@ -89,6 +91,14 @@ public class QueryRunningInstanceResponse extends AcsResponse {
 
 		public void setSessionId(String sessionId) {
 			this.sessionId = sessionId;
+		}
+
+		public String getToken() {
+			return this.token;
+		}
+
+		public void setToken(String token) {
+			this.token = token;
 		}
 
 		public Channel getChannel() {

@@ -29,7 +29,7 @@ public class DeleteClientIdsRequest extends RpcAcsRequest<DeleteClientIdsRespons
 
 	private String iotInstanceId;
 	public DeleteClientIdsRequest() {
-		super("Iot", "2018-01-20", "DeleteClientIds");
+		super("Iot", "2018-01-20", "DeleteClientIds", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

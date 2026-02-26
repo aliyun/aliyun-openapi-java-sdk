@@ -47,17 +47,9 @@ public class QueryUniqueDeviceStatResponse extends AcsResponse {
 
 	public static class AppDeviceStat {
 
-		private String time;
-
 		private Long count;
 
-		public String getTime() {
-			return this.time;
-		}
-
-		public void setTime(String time) {
-			this.time = time;
-		}
+		private String time;
 
 		public Long getCount() {
 			return this.count;
@@ -65,6 +57,14 @@ public class QueryUniqueDeviceStatResponse extends AcsResponse {
 
 		public void setCount(Long count) {
 			this.count = count;
+		}
+
+		public String getTime() {
+			return this.time;
+		}
+
+		public void setTime(String time) {
+			this.time = time;
 		}
 	}
 

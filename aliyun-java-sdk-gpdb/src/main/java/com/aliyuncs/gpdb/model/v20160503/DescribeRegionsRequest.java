@@ -27,7 +27,7 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 
 	private String region;
 	public DescribeRegionsRequest() {
-		super("gpdb", "2016-05-03", "DescribeRegions");
+		super("gpdb", "2016-05-03", "DescribeRegions", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

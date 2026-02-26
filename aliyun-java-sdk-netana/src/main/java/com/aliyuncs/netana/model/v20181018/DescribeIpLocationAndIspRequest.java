@@ -15,22 +15,29 @@
 package com.aliyuncs.netana.model.v20181018;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.netana.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeIpLocationAndIspRequest extends RpcAcsRequest<DescribeIpLocationAndIspResponse> {
-	
-	public DescribeIpLocationAndIspRequest() {
-		super("Netana", "2018-10-18", "DescribeIpLocationAndIsp", "Netana");
-	}
+	   
 
 	private String ipAddress;
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
+	public DescribeIpLocationAndIspRequest() {
+		super("Netana", "2018-10-18", "DescribeIpLocationAndIsp", "netana");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getIpAddress() {
 		return this.ipAddress;

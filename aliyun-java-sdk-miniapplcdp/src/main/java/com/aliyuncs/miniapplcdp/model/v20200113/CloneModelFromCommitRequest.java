@@ -30,6 +30,8 @@ public class CloneModelFromCommitRequest extends RpcAcsRequest<CloneModelFromCom
 
 	private String modelId;
 
+	private String source;
+
 	private String targetName;
 
 	private String sourceCommitId;
@@ -72,6 +74,17 @@ public class CloneModelFromCommitRequest extends RpcAcsRequest<CloneModelFromCom
 		this.modelId = modelId;
 		if(modelId != null){
 			putQueryParameter("ModelId", modelId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

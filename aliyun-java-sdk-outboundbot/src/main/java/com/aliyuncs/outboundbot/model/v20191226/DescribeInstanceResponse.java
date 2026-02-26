@@ -224,6 +224,16 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private String endpoint;
 
+			private String agentId;
+
+			private String agentKey;
+
+			private String llmAgentId;
+
+			private String llmAgentKey;
+
+			private Boolean supportBeebotPrompts;
+
 			public String getAccessKey() {
 				return this.accessKey;
 			}
@@ -246,6 +256,46 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setEndpoint(String endpoint) {
 				this.endpoint = endpoint;
+			}
+
+			public String getAgentId() {
+				return this.agentId;
+			}
+
+			public void setAgentId(String agentId) {
+				this.agentId = agentId;
+			}
+
+			public String getAgentKey() {
+				return this.agentKey;
+			}
+
+			public void setAgentKey(String agentKey) {
+				this.agentKey = agentKey;
+			}
+
+			public String getLlmAgentId() {
+				return this.llmAgentId;
+			}
+
+			public void setLlmAgentId(String llmAgentId) {
+				this.llmAgentId = llmAgentId;
+			}
+
+			public String getLlmAgentKey() {
+				return this.llmAgentKey;
+			}
+
+			public void setLlmAgentKey(String llmAgentKey) {
+				this.llmAgentKey = llmAgentKey;
+			}
+
+			public Boolean getSupportBeebotPrompts() {
+				return this.supportBeebotPrompts;
+			}
+
+			public void setSupportBeebotPrompts(Boolean supportBeebotPrompts) {
+				this.supportBeebotPrompts = supportBeebotPrompts;
 			}
 		}
 	}

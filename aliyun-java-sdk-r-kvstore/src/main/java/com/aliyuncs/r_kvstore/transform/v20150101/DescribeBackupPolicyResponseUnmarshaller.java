@@ -15,6 +15,7 @@
 package com.aliyuncs.r_kvstore.transform.v20150101;
 
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeBackupPolicyResponse;
+import com.aliyuncs.r_kvstore.model.v20150101.DescribeBackupPolicyResponse.AccessDeniedDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,6 +29,17 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		describeBackupPolicyResponse.setPreferredNextBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
 		describeBackupPolicyResponse.setPreferredBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
 		describeBackupPolicyResponse.setEnableBackupLog(_ctx.integerValue("DescribeBackupPolicyResponse.EnableBackupLog"));
+		describeBackupPolicyResponse.setDbsInstance(_ctx.stringValue("DescribeBackupPolicyResponse.DbsInstance"));
+
+		AccessDeniedDetail accessDeniedDetail = new AccessDeniedDetail();
+		accessDeniedDetail.setAuthAction(_ctx.stringValue("DescribeBackupPolicyResponse.AccessDeniedDetail.AuthAction"));
+		accessDeniedDetail.setAuthPrincipalDisplayName(_ctx.stringValue("DescribeBackupPolicyResponse.AccessDeniedDetail.AuthPrincipalDisplayName"));
+		accessDeniedDetail.setAuthPrincipalOwnerId(_ctx.stringValue("DescribeBackupPolicyResponse.AccessDeniedDetail.AuthPrincipalOwnerId"));
+		accessDeniedDetail.setAuthPrincipalType(_ctx.stringValue("DescribeBackupPolicyResponse.AccessDeniedDetail.AuthPrincipalType"));
+		accessDeniedDetail.setEncodedDiagnosticMessage(_ctx.stringValue("DescribeBackupPolicyResponse.AccessDeniedDetail.EncodedDiagnosticMessage"));
+		accessDeniedDetail.setNoPermissionType(_ctx.stringValue("DescribeBackupPolicyResponse.AccessDeniedDetail.NoPermissionType"));
+		accessDeniedDetail.setPolicyType(_ctx.stringValue("DescribeBackupPolicyResponse.AccessDeniedDetail.PolicyType"));
+		describeBackupPolicyResponse.setAccessDeniedDetail(accessDeniedDetail);
 	 
 	 	return describeBackupPolicyResponse;
 	}

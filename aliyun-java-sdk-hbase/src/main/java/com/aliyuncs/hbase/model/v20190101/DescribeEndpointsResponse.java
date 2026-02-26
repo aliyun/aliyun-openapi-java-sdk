@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEndpointsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String netType;
-
 	private String vpcId;
 
 	private String vSwitchId;
 
 	private String engine;
 
+	private String requestId;
+
+	private String netType;
+
 	private List<ConnAddrInfo> connAddrs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getNetType() {
-		return this.netType;
-	}
-
-	public void setNetType(String netType) {
-		this.netType = netType;
-	}
 
 	public String getVpcId() {
 		return this.vpcId;
@@ -77,6 +61,22 @@ public class DescribeEndpointsResponse extends AcsResponse {
 		this.engine = engine;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getNetType() {
+		return this.netType;
+	}
+
+	public void setNetType(String netType) {
+		this.netType = netType;
+	}
+
 	public List<ConnAddrInfo> getConnAddrs() {
 		return this.connAddrs;
 	}
@@ -87,21 +87,13 @@ public class DescribeEndpointsResponse extends AcsResponse {
 
 	public static class ConnAddrInfo {
 
-		private String connType;
-
 		private String connAddr;
 
 		private String connAddrPort;
 
+		private String connType;
+
 		private String netType;
-
-		public String getConnType() {
-			return this.connType;
-		}
-
-		public void setConnType(String connType) {
-			this.connType = connType;
-		}
 
 		public String getConnAddr() {
 			return this.connAddr;
@@ -117,6 +109,14 @@ public class DescribeEndpointsResponse extends AcsResponse {
 
 		public void setConnAddrPort(String connAddrPort) {
 			this.connAddrPort = connAddrPort;
+		}
+
+		public String getConnType() {
+			return this.connType;
+		}
+
+		public void setConnType(String connType) {
+			this.connType = connType;
 		}
 
 		public String getNetType() {

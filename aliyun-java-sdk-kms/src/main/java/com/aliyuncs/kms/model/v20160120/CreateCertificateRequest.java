@@ -28,13 +28,13 @@ import com.aliyuncs.kms.Endpoint;
 public class CreateCertificateRequest extends RpcAcsRequest<CreateCertificateResponse> {
 	   
 
-	private Boolean exportablePrivateKey;
-
 	private String subject;
 
-	private List<Object> subjectAlternativeNames;
-
 	private String keySpec;
+
+	private Boolean exportablePrivateKey;
+
+	private List<Object> subjectAlternativeNames;
 	public CreateCertificateRequest() {
 		super("Kms", "2016-01-20", "CreateCertificate", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -43,17 +43,6 @@ public class CreateCertificateRequest extends RpcAcsRequest<CreateCertificateRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getExportablePrivateKey() {
-		return this.exportablePrivateKey;
-	}
-
-	public void setExportablePrivateKey(Boolean exportablePrivateKey) {
-		this.exportablePrivateKey = exportablePrivateKey;
-		if(exportablePrivateKey != null){
-			putQueryParameter("ExportablePrivateKey", exportablePrivateKey.toString());
-		}
 	}
 
 	public String getSubject() {
@@ -67,17 +56,6 @@ public class CreateCertificateRequest extends RpcAcsRequest<CreateCertificateRes
 		}
 	}
 
-	public List<Object> getSubjectAlternativeNames() {
-		return this.subjectAlternativeNames;
-	}
-
-	public void setSubjectAlternativeNames(List<Object> subjectAlternativeNames) {
-		this.subjectAlternativeNames = subjectAlternativeNames;
-		if(subjectAlternativeNames != null){
-			putQueryParameter("SubjectAlternativeNames", new Gson().toJson(subjectAlternativeNames));
-		}
-	}
-
 	public String getKeySpec() {
 		return this.keySpec;
 	}
@@ -86,6 +64,28 @@ public class CreateCertificateRequest extends RpcAcsRequest<CreateCertificateRes
 		this.keySpec = keySpec;
 		if(keySpec != null){
 			putQueryParameter("KeySpec", keySpec);
+		}
+	}
+
+	public Boolean getExportablePrivateKey() {
+		return this.exportablePrivateKey;
+	}
+
+	public void setExportablePrivateKey(Boolean exportablePrivateKey) {
+		this.exportablePrivateKey = exportablePrivateKey;
+		if(exportablePrivateKey != null){
+			putQueryParameter("ExportablePrivateKey", exportablePrivateKey.toString());
+		}
+	}
+
+	public List<Object> getSubjectAlternativeNames() {
+		return this.subjectAlternativeNames;
+	}
+
+	public void setSubjectAlternativeNames(List<Object> subjectAlternativeNames) {
+		this.subjectAlternativeNames = subjectAlternativeNames;
+		if(subjectAlternativeNames != null){
+			putQueryParameter("SubjectAlternativeNames", new Gson().toJson(subjectAlternativeNames));
 		}
 	}
 

@@ -47,34 +47,36 @@ public class ListStackResourcesResponse extends AcsResponse {
 
 	public static class Resource {
 
-		private String createTime;
+		private String status;
 
 		private String logicalResourceId;
 
-		private String physicalResourceId;
-
-		private String resourceType;
+		private String updateTime;
 
 		private String stackId;
 
-		private String stackName;
-
-		private String status;
-
-		private String statusReason;
-
-		private String updateTime;
-
-		private String resourceDriftStatus;
+		private String physicalResourceId;
 
 		private String driftDetectionTime;
 
-		public String getCreateTime() {
-			return this.createTime;
+		private String resourceType;
+
+		private String resourceDriftStatus;
+
+		private String statusReason;
+
+		private String createTime;
+
+		private String stackName;
+
+		private ModuleInfo moduleInfo;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getLogicalResourceId() {
@@ -85,20 +87,12 @@ public class ListStackResourcesResponse extends AcsResponse {
 			this.logicalResourceId = logicalResourceId;
 		}
 
-		public String getPhysicalResourceId() {
-			return this.physicalResourceId;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setPhysicalResourceId(String physicalResourceId) {
-			this.physicalResourceId = physicalResourceId;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getStackId() {
@@ -109,36 +103,28 @@ public class ListStackResourcesResponse extends AcsResponse {
 			this.stackId = stackId;
 		}
 
-		public String getStackName() {
-			return this.stackName;
+		public String getPhysicalResourceId() {
+			return this.physicalResourceId;
 		}
 
-		public void setStackName(String stackName) {
-			this.stackName = stackName;
+		public void setPhysicalResourceId(String physicalResourceId) {
+			this.physicalResourceId = physicalResourceId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getDriftDetectionTime() {
+			return this.driftDetectionTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDriftDetectionTime(String driftDetectionTime) {
+			this.driftDetectionTime = driftDetectionTime;
 		}
 
-		public String getStatusReason() {
-			return this.statusReason;
+		public String getResourceType() {
+			return this.resourceType;
 		}
 
-		public void setStatusReason(String statusReason) {
-			this.statusReason = statusReason;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public String getResourceDriftStatus() {
@@ -149,12 +135,59 @@ public class ListStackResourcesResponse extends AcsResponse {
 			this.resourceDriftStatus = resourceDriftStatus;
 		}
 
-		public String getDriftDetectionTime() {
-			return this.driftDetectionTime;
+		public String getStatusReason() {
+			return this.statusReason;
 		}
 
-		public void setDriftDetectionTime(String driftDetectionTime) {
-			this.driftDetectionTime = driftDetectionTime;
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getStackName() {
+			return this.stackName;
+		}
+
+		public void setStackName(String stackName) {
+			this.stackName = stackName;
+		}
+
+		public ModuleInfo getModuleInfo() {
+			return this.moduleInfo;
+		}
+
+		public void setModuleInfo(ModuleInfo moduleInfo) {
+			this.moduleInfo = moduleInfo;
+		}
+
+		public static class ModuleInfo {
+
+			private String logicalIdHierarchy;
+
+			private String typeHierarchy;
+
+			public String getLogicalIdHierarchy() {
+				return this.logicalIdHierarchy;
+			}
+
+			public void setLogicalIdHierarchy(String logicalIdHierarchy) {
+				this.logicalIdHierarchy = logicalIdHierarchy;
+			}
+
+			public String getTypeHierarchy() {
+				return this.typeHierarchy;
+			}
+
+			public void setTypeHierarchy(String typeHierarchy) {
+				this.typeHierarchy = typeHierarchy;
+			}
 		}
 	}
 

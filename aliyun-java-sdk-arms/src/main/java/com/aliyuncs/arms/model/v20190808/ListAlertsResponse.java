@@ -27,6 +27,8 @@ public class ListAlertsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String message;
+
 	private PageBean pageBean;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class ListAlertsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public PageBean getPageBean() {
@@ -103,6 +113,20 @@ public class ListAlertsResponse extends AcsResponse {
 
 			private Long alertId;
 
+			private String solution;
+
+			private String owner;
+
+			private String handler;
+
+			private Long acknowledgeTime;
+
+			private Long recoverTime;
+
+			private String notifyRobots;
+
+			private String describe;
+
 			private List<ActivitiesItem> activities;
 
 			private List<AlertEventsItem> alertEvents;
@@ -161,6 +185,62 @@ public class ListAlertsResponse extends AcsResponse {
 
 			public void setAlertId(Long alertId) {
 				this.alertId = alertId;
+			}
+
+			public String getSolution() {
+				return this.solution;
+			}
+
+			public void setSolution(String solution) {
+				this.solution = solution;
+			}
+
+			public String getOwner() {
+				return this.owner;
+			}
+
+			public void setOwner(String owner) {
+				this.owner = owner;
+			}
+
+			public String getHandler() {
+				return this.handler;
+			}
+
+			public void setHandler(String handler) {
+				this.handler = handler;
+			}
+
+			public Long getAcknowledgeTime() {
+				return this.acknowledgeTime;
+			}
+
+			public void setAcknowledgeTime(Long acknowledgeTime) {
+				this.acknowledgeTime = acknowledgeTime;
+			}
+
+			public Long getRecoverTime() {
+				return this.recoverTime;
+			}
+
+			public void setRecoverTime(Long recoverTime) {
+				this.recoverTime = recoverTime;
+			}
+
+			public String getNotifyRobots() {
+				return this.notifyRobots;
+			}
+
+			public void setNotifyRobots(String notifyRobots) {
+				this.notifyRobots = notifyRobots;
+			}
+
+			public String getDescribe() {
+				return this.describe;
+			}
+
+			public void setDescribe(String describe) {
+				this.describe = describe;
 			}
 
 			public List<ActivitiesItem> getActivities() {

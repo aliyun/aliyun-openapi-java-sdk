@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse.TransitRouter;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse.TransitRouter.Tag;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse.TransitRouter.TransitRouterCidrListItem;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse.TransitRouter.TransitRouterPrimaryStandbyZoneInfoListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +48,39 @@ public class ListTransitRoutersResponseUnmarshaller {
 			transitRouter.setRegionId(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].RegionId"));
 			transitRouter.setServiceMode(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].ServiceMode"));
 			transitRouter.setSupportMulticast(_ctx.booleanValue("ListTransitRoutersResponse.TransitRouters["+ i +"].SupportMulticast"));
+
+			List<TransitRouterCidrListItem> transitRouterCidrList = new ArrayList<TransitRouterCidrListItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterCidrList.Length"); j++) {
+				TransitRouterCidrListItem transitRouterCidrListItem = new TransitRouterCidrListItem();
+				transitRouterCidrListItem.setCidr(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].Cidr"));
+				transitRouterCidrListItem.setName(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].Name"));
+				transitRouterCidrListItem.setDescription(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].Description"));
+				transitRouterCidrListItem.setTransitRouterCidrId(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].TransitRouterCidrId"));
+				transitRouterCidrListItem.setPublishCidrRoute(_ctx.booleanValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].PublishCidrRoute"));
+
+				transitRouterCidrList.add(transitRouterCidrListItem);
+			}
+			transitRouter.setTransitRouterCidrList(transitRouterCidrList);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListTransitRoutersResponse.TransitRouters["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			transitRouter.setTags(tags);
+
+			List<TransitRouterPrimaryStandbyZoneInfoListItem> transitRouterPrimaryStandbyZoneInfoList = new ArrayList<TransitRouterPrimaryStandbyZoneInfoListItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterPrimaryStandbyZoneInfoList.Length"); j++) {
+				TransitRouterPrimaryStandbyZoneInfoListItem transitRouterPrimaryStandbyZoneInfoListItem = new TransitRouterPrimaryStandbyZoneInfoListItem();
+				transitRouterPrimaryStandbyZoneInfoListItem.setZoneId(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterPrimaryStandbyZoneInfoList["+ j +"].ZoneId"));
+				transitRouterPrimaryStandbyZoneInfoListItem.setRole(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterPrimaryStandbyZoneInfoList["+ j +"].Role"));
+
+				transitRouterPrimaryStandbyZoneInfoList.add(transitRouterPrimaryStandbyZoneInfoListItem);
+			}
+			transitRouter.setTransitRouterPrimaryStandbyZoneInfoList(transitRouterPrimaryStandbyZoneInfoList);
 
 			transitRouters.add(transitRouter);
 		}

@@ -17,7 +17,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
-@SuppressWarnings("deprecation")
 public class BaseTest {
     protected DefaultAcsClient client = null;
     protected Credential dailyEnvCredentail = null;
@@ -29,7 +28,6 @@ public class BaseTest {
     protected String regionId = null;
 
     protected Logger logger = LoggerFactory.getLogger(BaseTest.class);
-
 
     public DefaultAcsClient getClientWithRegionIdAndLogger(String regionId) throws ClientException, IOException {
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
@@ -114,15 +112,14 @@ public class BaseTest {
 
     @Before
     public void init() throws IOException, ClientException {
-        this.accesskeyId = System.getenv("daily_accessKeyId");
-        this.accesskeySecret = System.getenv("daily_accessSecret");
+        this.accesskeyId = System.getenv("ACCESS_KEY_ID");
+        this.accesskeySecret = System.getenv("ACCESS_KEY_SECRET");
         this.tokenAccesskeyId = System.getenv("RAMAccessKeyId");
         this.tokenAccesskeySecret = System.getenv("RAMAccessKeySecret");
         this.roleArn = System.getenv("roleArn");
         this.regionId = "cn-hangzhou";
         this.client = getClientWithRegionId(this.regionId);
         dailyEnvCredentail = new Credential(accesskeyId, accesskeySecret);
-
     }
 
     protected String getToken() throws ClientException {

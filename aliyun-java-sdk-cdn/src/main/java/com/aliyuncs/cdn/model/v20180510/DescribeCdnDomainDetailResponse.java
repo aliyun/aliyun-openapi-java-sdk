@@ -47,77 +47,29 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 	public static class GetDomainDetailModel {
 
-		private String domainName;
-
-		private String cname;
-
-		private String httpsCname;
-
-		private String domainStatus;
-
-		private String cdnType;
-
-		private String serverCertificateStatus;
-
 		private String gmtCreated;
-
-		private String gmtModified;
-
-		private String resourceGroupId;
 
 		private String description;
 
+		private String httpsCname;
+
+		private String resourceGroupId;
+
+		private String serverCertificateStatus;
+
 		private String scope;
 
+		private String domainStatus;
+
+		private String cname;
+
+		private String gmtModified;
+
+		private String cdnType;
+
+		private String domainName;
+
 		private List<SourceModel> sourceModels;
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getCname() {
-			return this.cname;
-		}
-
-		public void setCname(String cname) {
-			this.cname = cname;
-		}
-
-		public String getHttpsCname() {
-			return this.httpsCname;
-		}
-
-		public void setHttpsCname(String httpsCname) {
-			this.httpsCname = httpsCname;
-		}
-
-		public String getDomainStatus() {
-			return this.domainStatus;
-		}
-
-		public void setDomainStatus(String domainStatus) {
-			this.domainStatus = domainStatus;
-		}
-
-		public String getCdnType() {
-			return this.cdnType;
-		}
-
-		public void setCdnType(String cdnType) {
-			this.cdnType = cdnType;
-		}
-
-		public String getServerCertificateStatus() {
-			return this.serverCertificateStatus;
-		}
-
-		public void setServerCertificateStatus(String serverCertificateStatus) {
-			this.serverCertificateStatus = serverCertificateStatus;
-		}
 
 		public String getGmtCreated() {
 			return this.gmtCreated;
@@ -125,22 +77,6 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 		public void setGmtCreated(String gmtCreated) {
 			this.gmtCreated = gmtCreated;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getDescription() {
@@ -151,12 +87,76 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getHttpsCname() {
+			return this.httpsCname;
+		}
+
+		public void setHttpsCname(String httpsCname) {
+			this.httpsCname = httpsCname;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getServerCertificateStatus() {
+			return this.serverCertificateStatus;
+		}
+
+		public void setServerCertificateStatus(String serverCertificateStatus) {
+			this.serverCertificateStatus = serverCertificateStatus;
+		}
+
 		public String getScope() {
 			return this.scope;
 		}
 
 		public void setScope(String scope) {
 			this.scope = scope;
+		}
+
+		public String getDomainStatus() {
+			return this.domainStatus;
+		}
+
+		public void setDomainStatus(String domainStatus) {
+			this.domainStatus = domainStatus;
+		}
+
+		public String getCname() {
+			return this.cname;
+		}
+
+		public void setCname(String cname) {
+			this.cname = cname;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getCdnType() {
+			return this.cdnType;
+		}
+
+		public void setCdnType(String cdnType) {
+			this.cdnType = cdnType;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public List<SourceModel> getSourceModels() {
@@ -169,25 +169,17 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 		public static class SourceModel {
 
-			private String content;
-
 			private String type;
 
-			private Integer port;
+			private String weight;
 
 			private String enabled;
 
 			private String priority;
 
-			private String weight;
+			private Integer port;
 
-			public String getContent() {
-				return this.content;
-			}
-
-			public void setContent(String content) {
-				this.content = content;
-			}
+			private String content;
 
 			public String getType() {
 				return this.type;
@@ -197,12 +189,12 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public Integer getPort() {
-				return this.port;
+			public String getWeight() {
+				return this.weight;
 			}
 
-			public void setPort(Integer port) {
-				this.port = port;
+			public void setWeight(String weight) {
+				this.weight = weight;
 			}
 
 			public String getEnabled() {
@@ -221,12 +213,20 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 				this.priority = priority;
 			}
 
-			public String getWeight() {
-				return this.weight;
+			public Integer getPort() {
+				return this.port;
 			}
 
-			public void setWeight(String weight) {
-				this.weight = weight;
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
 			}
 		}
 	}

@@ -28,32 +28,32 @@ public class ListDegradeRulesOfAppResponseUnmarshaller {
 	public static ListDegradeRulesOfAppResponse unmarshall(ListDegradeRulesOfAppResponse listDegradeRulesOfAppResponse, UnmarshallerContext _ctx) {
 		
 		listDegradeRulesOfAppResponse.setRequestId(_ctx.stringValue("ListDegradeRulesOfAppResponse.RequestId"));
-		listDegradeRulesOfAppResponse.setCode(_ctx.stringValue("ListDegradeRulesOfAppResponse.Code"));
 		listDegradeRulesOfAppResponse.setMessage(_ctx.stringValue("ListDegradeRulesOfAppResponse.Message"));
+		listDegradeRulesOfAppResponse.setCode(_ctx.stringValue("ListDegradeRulesOfAppResponse.Code"));
 		listDegradeRulesOfAppResponse.setSuccess(_ctx.booleanValue("ListDegradeRulesOfAppResponse.Success"));
 
 		Data data = new Data();
 		data.setPageIndex(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.PageIndex"));
+		data.setTotalPage(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.TotalPage"));
 		data.setPageSize(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.PageSize"));
 		data.setTotalCount(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.TotalCount"));
-		data.setTotalPage(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.TotalPage"));
 
 		List<DatasItem> datas = new ArrayList<DatasItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDegradeRulesOfAppResponse.Data.Datas.Length"); i++) {
 			DatasItem datasItem = new DatasItem();
-			datasItem.setAppName(_ctx.stringValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].AppName"));
-			datasItem.setEnable(_ctx.booleanValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].Enable"));
-			datasItem.setHalfOpenBaseAmountPerStep(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].HalfOpenBaseAmountPerStep"));
-			datasItem.setHalfOpenRecoveryStepNum(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].HalfOpenRecoveryStepNum"));
-			datasItem.setMinRequestAmount(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].MinRequestAmount"));
-			datasItem.setNamespace(_ctx.stringValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].Namespace"));
-			datasItem.setRecoveryTimeoutMs(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].RecoveryTimeoutMs"));
-			datasItem.setResource(_ctx.stringValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].Resource"));
-			datasItem.setRuleId(_ctx.longValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].RuleId"));
 			datasItem.setSlowRtMs(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].SlowRtMs"));
+			datasItem.setHalfOpenRecoveryStepNum(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].HalfOpenRecoveryStepNum"));
+			datasItem.setNamespace(_ctx.stringValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].Namespace"));
 			datasItem.setStatDurationMs(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].StatDurationMs"));
+			datasItem.setRuleId(_ctx.longValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].RuleId"));
 			datasItem.setStrategy(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].Strategy"));
+			datasItem.setResource(_ctx.stringValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].Resource"));
+			datasItem.setAppName(_ctx.stringValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].AppName"));
+			datasItem.setHalfOpenBaseAmountPerStep(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].HalfOpenBaseAmountPerStep"));
+			datasItem.setRecoveryTimeoutMs(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].RecoveryTimeoutMs"));
+			datasItem.setMinRequestAmount(_ctx.integerValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].MinRequestAmount"));
 			datasItem.setThreshold(_ctx.floatValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].Threshold"));
+			datasItem.setEnable(_ctx.booleanValue("ListDegradeRulesOfAppResponse.Data.Datas["+ i +"].Enable"));
 
 			datas.add(datasItem);
 		}

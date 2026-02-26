@@ -41,7 +41,7 @@ public class AssociateTransitRouterAttachmentWithRouteTableRequest extends RpcAc
 
 	private String transitRouterAttachmentId;
 	public AssociateTransitRouterAttachmentWithRouteTableRequest() {
-		super("Cbn", "2017-09-12", "AssociateTransitRouterAttachmentWithRouteTable");
+		super("Cbn", "2017-09-12", "AssociateTransitRouterAttachmentWithRouteTable", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

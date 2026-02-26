@@ -27,8 +27,6 @@ public class ModifyCdnDomainSchdmByPropertyRequest extends RpcAcsRequest<ModifyC
 
 	private String domainName;
 
-	private Long ownerId;
-
 	private String property;
 	public ModifyCdnDomainSchdmByPropertyRequest() {
 		super("Cdn", "2018-05-10", "ModifyCdnDomainSchdmByProperty");
@@ -47,17 +45,6 @@ public class ModifyCdnDomainSchdmByPropertyRequest extends RpcAcsRequest<ModifyC
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

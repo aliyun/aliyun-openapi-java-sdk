@@ -25,11 +25,19 @@ import com.aliyuncs.arms.Endpoint;
 public class CreateOrUpdateSilencePolicyRequest extends RpcAcsRequest<CreateOrUpdateSilencePolicyResponse> {
 	   
 
+	private String matchingRules;
+
+	private String timeSlots;
+
+	private String effectiveTimeType;
+
 	private String name;
 
 	private Long id;
 
-	private String matchingRules;
+	private String state;
+
+	private String timePeriod;
 	public CreateOrUpdateSilencePolicyRequest() {
 		super("ARMS", "2019-08-08", "CreateOrUpdateSilencePolicy", "arms");
 		setMethod(MethodType.POST);
@@ -37,6 +45,39 @@ public class CreateOrUpdateSilencePolicyRequest extends RpcAcsRequest<CreateOrUp
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMatchingRules() {
+		return this.matchingRules;
+	}
+
+	public void setMatchingRules(String matchingRules) {
+		this.matchingRules = matchingRules;
+		if(matchingRules != null){
+			putBodyParameter("MatchingRules", matchingRules);
+		}
+	}
+
+	public String getTimeSlots() {
+		return this.timeSlots;
+	}
+
+	public void setTimeSlots(String timeSlots) {
+		this.timeSlots = timeSlots;
+		if(timeSlots != null){
+			putQueryParameter("TimeSlots", timeSlots);
+		}
+	}
+
+	public String getEffectiveTimeType() {
+		return this.effectiveTimeType;
+	}
+
+	public void setEffectiveTimeType(String effectiveTimeType) {
+		this.effectiveTimeType = effectiveTimeType;
+		if(effectiveTimeType != null){
+			putQueryParameter("EffectiveTimeType", effectiveTimeType);
+		}
 	}
 
 	public String getName() {
@@ -61,14 +102,25 @@ public class CreateOrUpdateSilencePolicyRequest extends RpcAcsRequest<CreateOrUp
 		}
 	}
 
-	public String getMatchingRules() {
-		return this.matchingRules;
+	public String getState() {
+		return this.state;
 	}
 
-	public void setMatchingRules(String matchingRules) {
-		this.matchingRules = matchingRules;
-		if(matchingRules != null){
-			putBodyParameter("MatchingRules", matchingRules);
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putBodyParameter("State", state);
+		}
+	}
+
+	public String getTimePeriod() {
+		return this.timePeriod;
+	}
+
+	public void setTimePeriod(String timePeriod) {
+		this.timePeriod = timePeriod;
+		if(timePeriod != null){
+			putQueryParameter("TimePeriod", timePeriod);
 		}
 	}
 

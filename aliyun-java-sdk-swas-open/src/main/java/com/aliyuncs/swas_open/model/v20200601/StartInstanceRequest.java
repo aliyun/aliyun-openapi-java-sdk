@@ -28,7 +28,7 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private String instanceId;
 	public StartInstanceRequest() {
-		super("SWAS-OPEN", "2020-06-01", "StartInstance");
+		super("SWAS-OPEN", "2020-06-01", "StartInstance", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 

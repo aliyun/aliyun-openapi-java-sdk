@@ -33,6 +33,8 @@ public class ListCasesRequest extends RpcAcsRequest<ListCasesResponse> {
 
 	private Long pageSize;
 
+	private String state;
+
 	private Long pageNumber;
 	public ListCasesRequest() {
 		super("CCC", "2020-07-01", "ListCases", "CCC");
@@ -84,6 +86,17 @@ public class ListCasesRequest extends RpcAcsRequest<ListCasesResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
 		}
 	}
 

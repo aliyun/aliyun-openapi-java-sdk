@@ -91,6 +91,8 @@ public class GetFileResponse extends AcsResponse {
 
 		private NodeConfiguration nodeConfiguration;
 
+		private ResourceDownloadLink resourceDownloadLink;
+
 		public File getFile() {
 			return this.file;
 		}
@@ -105,6 +107,14 @@ public class GetFileResponse extends AcsResponse {
 
 		public void setNodeConfiguration(NodeConfiguration nodeConfiguration) {
 			this.nodeConfiguration = nodeConfiguration;
+		}
+
+		public ResourceDownloadLink getResourceDownloadLink() {
+			return this.resourceDownloadLink;
+		}
+
+		public void setResourceDownloadLink(ResourceDownloadLink resourceDownloadLink) {
+			this.resourceDownloadLink = resourceDownloadLink;
 		}
 
 		public static class File {
@@ -152,6 +162,8 @@ public class GetFileResponse extends AcsResponse {
 			private Long nodeId;
 
 			private String advancedSettings;
+
+			private Long fileId;
 
 			public Integer getCommitStatus() {
 				return this.commitStatus;
@@ -328,6 +340,14 @@ public class GetFileResponse extends AcsResponse {
 			public void setAdvancedSettings(String advancedSettings) {
 				this.advancedSettings = advancedSettings;
 			}
+
+			public Long getFileId() {
+				return this.fileId;
+			}
+
+			public void setFileId(Long fileId) {
+				this.fileId = fileId;
+			}
 		}
 
 		public static class NodeConfiguration {
@@ -359,6 +379,14 @@ public class GetFileResponse extends AcsResponse {
 			private String cronExpress;
 
 			private Boolean startImmediately;
+
+			private String applyScheduleImmediately;
+
+			private String ignoreParentSkipRunningProperty;
+
+			private Integer timeout;
+
+			private String imageId;
 
 			private List<NodeInputOutput> inputList;
 
@@ -478,6 +506,38 @@ public class GetFileResponse extends AcsResponse {
 
 			public void setStartImmediately(Boolean startImmediately) {
 				this.startImmediately = startImmediately;
+			}
+
+			public String getApplyScheduleImmediately() {
+				return this.applyScheduleImmediately;
+			}
+
+			public void setApplyScheduleImmediately(String applyScheduleImmediately) {
+				this.applyScheduleImmediately = applyScheduleImmediately;
+			}
+
+			public String getIgnoreParentSkipRunningProperty() {
+				return this.ignoreParentSkipRunningProperty;
+			}
+
+			public void setIgnoreParentSkipRunningProperty(String ignoreParentSkipRunningProperty) {
+				this.ignoreParentSkipRunningProperty = ignoreParentSkipRunningProperty;
+			}
+
+			public Integer getTimeout() {
+				return this.timeout;
+			}
+
+			public void setTimeout(Integer timeout) {
+				this.timeout = timeout;
+			}
+
+			public String getImageId() {
+				return this.imageId;
+			}
+
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
 			}
 
 			public List<NodeInputOutput> getInputList() {
@@ -622,6 +682,19 @@ public class GetFileResponse extends AcsResponse {
 				public void setDescription(String description) {
 					this.description = description;
 				}
+			}
+		}
+
+		public static class ResourceDownloadLink {
+
+			private String downloadLink;
+
+			public String getDownloadLink() {
+				return this.downloadLink;
+			}
+
+			public void setDownloadLink(String downloadLink) {
+				this.downloadLink = downloadLink;
 			}
 		}
 	}

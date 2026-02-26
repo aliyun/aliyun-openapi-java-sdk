@@ -29,13 +29,13 @@ public class ListDataServiceFoldersRequest extends RpcAcsRequest<ListDataService
 
 	private String groupId;
 
+	private Integer pageNumber;
+
 	private Integer pageSize;
 
 	private Long tenantId;
 
 	private Long projectId;
-
-	private Integer pageNumber;
 	public ListDataServiceFoldersRequest() {
 		super("dataworks-public", "2020-05-18", "ListDataServiceFolders");
 		setMethod(MethodType.POST);
@@ -64,6 +64,17 @@ public class ListDataServiceFoldersRequest extends RpcAcsRequest<ListDataService
 		this.groupId = groupId;
 		if(groupId != null){
 			putBodyParameter("GroupId", groupId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putBodyParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -97,17 +108,6 @@ public class ListDataServiceFoldersRequest extends RpcAcsRequest<ListDataService
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putBodyParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

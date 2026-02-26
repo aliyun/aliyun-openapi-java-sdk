@@ -27,7 +27,7 @@ public class DeleteNetworkRuleRequest extends RpcAcsRequest<DeleteNetworkRuleRes
 
 	private String networkRule;
 	public DeleteNetworkRuleRequest() {
-		super("ddoscoo", "2020-01-01", "DeleteNetworkRule");
+		super("ddoscoo", "2020-01-01", "DeleteNetworkRule", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

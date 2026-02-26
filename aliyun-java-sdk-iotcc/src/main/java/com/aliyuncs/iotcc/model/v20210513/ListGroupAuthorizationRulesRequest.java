@@ -31,6 +31,8 @@ public class ListGroupAuthorizationRulesRequest extends RpcAcsRequest<ListGroupA
 
 	private String type;
 
+	private List<String> protocols;
+
 	private List<String> authorizationRuleIdss;
 
 	private String nextToken;
@@ -42,6 +44,8 @@ public class ListGroupAuthorizationRulesRequest extends RpcAcsRequest<ListGroupA
 	private String ioTCloudConnectorGroupId;
 
 	private List<String> authorizationRuleNames;
+
+	private List<String> destinationPorts;
 
 	private Integer maxResults;
 	public ListGroupAuthorizationRulesRequest() {
@@ -84,6 +88,19 @@ public class ListGroupAuthorizationRulesRequest extends RpcAcsRequest<ListGroupA
 		if(type != null){
 			putQueryParameter("Type", type);
 		}
+	}
+
+	public List<String> getBizProtocols() {
+		return this.protocols;
+	}
+
+	public void setBizProtocols(List<String> protocols) {
+		this.protocols = protocols;	
+		if (protocols != null) {
+			for (int i = 0; i < protocols.size(); i++) {
+				putQueryParameter("Protocol." + (i + 1) , protocols.get(i));
+			}
+		}	
 	}
 
 	public List<String> getAuthorizationRuleIdss() {
@@ -156,6 +173,19 @@ public class ListGroupAuthorizationRulesRequest extends RpcAcsRequest<ListGroupA
 		if (authorizationRuleNames != null) {
 			for (int i = 0; i < authorizationRuleNames.size(); i++) {
 				putQueryParameter("AuthorizationRuleName." + (i + 1) , authorizationRuleNames.get(i));
+			}
+		}	
+	}
+
+	public List<String> getDestinationPorts() {
+		return this.destinationPorts;
+	}
+
+	public void setDestinationPorts(List<String> destinationPorts) {
+		this.destinationPorts = destinationPorts;	
+		if (destinationPorts != null) {
+			for (int i = 0; i < destinationPorts.size(); i++) {
+				putQueryParameter("DestinationPort." + (i + 1) , destinationPorts.get(i));
 			}
 		}	
 	}

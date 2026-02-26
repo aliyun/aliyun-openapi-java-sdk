@@ -33,6 +33,8 @@ public class ModifyAccountPasswordRequest extends RpcAcsRequest<ModifyAccountPas
 
 	private String securityToken;
 
+	private String sourceBiz;
+
 	private String oldAccountPassword;
 
 	private String resourceOwnerAccount;
@@ -92,6 +94,17 @@ public class ModifyAccountPasswordRequest extends RpcAcsRequest<ModifyAccountPas
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getSourceBiz() {
+		return this.sourceBiz;
+	}
+
+	public void setSourceBiz(String sourceBiz) {
+		this.sourceBiz = sourceBiz;
+		if(sourceBiz != null){
+			putQueryParameter("SourceBiz", sourceBiz);
 		}
 	}
 

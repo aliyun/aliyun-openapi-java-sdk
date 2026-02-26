@@ -44,6 +44,12 @@ public class DescribeInstanceStatisticsResponseUnmarshaller {
 			dataItem.setHealth(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Health"));
 			dataItem.setSysNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].SysNum"));
 			dataItem.setWeakPWNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].WeakPWNum"));
+			dataItem.setAgentlessAll(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].AgentlessAll"));
+			dataItem.setAgentlessMalicious(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].AgentlessMalicious"));
+			dataItem.setAgentlessVulCve(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].AgentlessVulCve"));
+			dataItem.setAgentlessVulSca(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].AgentlessVulSca"));
+			dataItem.setAgentlessBaseline(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].AgentlessBaseline"));
+			dataItem.setCspmNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].CspmNum"));
 
 			data.add(dataItem);
 		}

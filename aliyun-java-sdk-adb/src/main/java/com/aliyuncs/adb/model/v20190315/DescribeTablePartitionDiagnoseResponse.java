@@ -41,6 +41,8 @@ public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 
 	private List<TablePartitionDiagnose> items;
 
+	private List<DetectionItemsItem> detectionItems;
+
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
@@ -105,6 +107,14 @@ public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 		this.items = items;
 	}
 
+	public List<DetectionItemsItem> getDetectionItems() {
+		return this.detectionItems;
+	}
+
+	public void setDetectionItems(List<DetectionItemsItem> detectionItems) {
+		this.detectionItems = detectionItems;
+	}
+
 	public static class TablePartitionDiagnose {
 
 		private String tableName;
@@ -114,6 +124,10 @@ public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 		private String schemaName;
 
 		private Integer partitionNumber;
+
+		private Double spaceRatio;
+
+		private Long totalSize;
 
 		public String getTableName() {
 			return this.tableName;
@@ -145,6 +159,55 @@ public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 
 		public void setPartitionNumber(Integer partitionNumber) {
 			this.partitionNumber = partitionNumber;
+		}
+
+		public Double getSpaceRatio() {
+			return this.spaceRatio;
+		}
+
+		public void setSpaceRatio(Double spaceRatio) {
+			this.spaceRatio = spaceRatio;
+		}
+
+		public Long getTotalSize() {
+			return this.totalSize;
+		}
+
+		public void setTotalSize(Long totalSize) {
+			this.totalSize = totalSize;
+		}
+	}
+
+	public static class DetectionItemsItem {
+
+		private String name;
+
+		private String message;
+
+		private String status;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

@@ -91,6 +91,10 @@ public class DescribeVpnPbrRouteEntriesResponse extends AcsResponse {
 
 		private String routeSource;
 
+		private Integer priority;
+
+		private String nextHopTunnelId;
+
 		public String getNextHop() {
 			return this.nextHop;
 		}
@@ -145,6 +149,22 @@ public class DescribeVpnPbrRouteEntriesResponse extends AcsResponse {
 
 		public void setRouteSource(String routeSource) {
 			this.routeSource = routeSource;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public String getNextHopTunnelId() {
+			return this.nextHopTunnelId;
+		}
+
+		public void setNextHopTunnelId(String nextHopTunnelId) {
+			this.nextHopTunnelId = nextHopTunnelId;
 		}
 	}
 

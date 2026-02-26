@@ -61,6 +61,10 @@ public class QueryRegistrantProfilesResponseUnmarshaller {
 			registrantProfile.setEmailVerificationStatus(_ctx.integerValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].EmailVerificationStatus"));
 			registrantProfile.setZhAddress(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].ZhAddress"));
 			registrantProfile.setProvince(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Province"));
+			registrantProfile.setCredentialNo(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].CredentialNo"));
+			registrantProfile.setCredentialType(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].CredentialType"));
+			registrantProfile.setRemark(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Remark"));
+			registrantProfile.setParams(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Params"));
 
 			registrantProfiles.add(registrantProfile);
 		}

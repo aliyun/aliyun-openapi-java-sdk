@@ -34,14 +34,15 @@ public class DescribeLiveUserDomainsResponseUnmarshaller {
 		List<PageData> domains = new ArrayList<PageData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveUserDomainsResponse.Domains.Length"); i++) {
 			PageData pageData = new PageData();
-			pageData.setDomainName(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].DomainName"));
 			pageData.setCname(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].Cname"));
-			pageData.setLiveDomainType(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].LiveDomainType"));
+			pageData.setDescription(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].Description"));
+			pageData.setDomainName(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].DomainName"));
 			pageData.setGmtCreated(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].GmtCreated"));
 			pageData.setGmtModified(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].GmtModified"));
-			pageData.setDescription(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].Description"));
 			pageData.setLiveDomainStatus(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].LiveDomainStatus"));
+			pageData.setLiveDomainType(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].LiveDomainType"));
 			pageData.setRegionName(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].RegionName"));
+			pageData.setResourceGroupId(_ctx.stringValue("DescribeLiveUserDomainsResponse.Domains["+ i +"].ResourceGroupId"));
 
 			domains.add(pageData);
 		}

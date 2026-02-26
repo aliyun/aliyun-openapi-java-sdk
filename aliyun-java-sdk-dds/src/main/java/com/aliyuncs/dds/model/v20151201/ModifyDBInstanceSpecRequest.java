@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -30,11 +31,15 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String readonlyReplicas;
 
+	private String extraParam;
+
+	private String targetSecondaryZoneId;
+
 	private String couponNo;
 
 	private String replicationFactor;
 
-	private String securityToken;
+	private String targetZoneId;
 
 	private String effectiveTime;
 
@@ -42,20 +47,34 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String businessInfo;
 
+	private String searchNodeClass;
+
 	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private Long searchNodeStorage;
+
+	private String targetVswitchId;
+
 	private Long ownerId;
 
 	private String dBInstanceClass;
+
+	private Long searchNodeCount;
+
+	private String targetHiddenZoneId;
 
 	private String orderType;
 	public ModifyDBInstanceSpecRequest() {
 		super("Dds", "2015-12-01", "ModifyDBInstanceSpec", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -91,6 +110,28 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
+	public String getExtraParam() {
+		return this.extraParam;
+	}
+
+	public void setExtraParam(String extraParam) {
+		this.extraParam = extraParam;
+		if(extraParam != null){
+			putQueryParameter("ExtraParam", extraParam);
+		}
+	}
+
+	public String getTargetSecondaryZoneId() {
+		return this.targetSecondaryZoneId;
+	}
+
+	public void setTargetSecondaryZoneId(String targetSecondaryZoneId) {
+		this.targetSecondaryZoneId = targetSecondaryZoneId;
+		if(targetSecondaryZoneId != null){
+			putQueryParameter("TargetSecondaryZoneId", targetSecondaryZoneId);
+		}
+	}
+
 	public String getCouponNo() {
 		return this.couponNo;
 	}
@@ -113,14 +154,14 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getTargetZoneId() {
+		return this.targetZoneId;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setTargetZoneId(String targetZoneId) {
+		this.targetZoneId = targetZoneId;
+		if(targetZoneId != null){
+			putQueryParameter("TargetZoneId", targetZoneId);
 		}
 	}
 
@@ -157,6 +198,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
+	public String getSearchNodeClass() {
+		return this.searchNodeClass;
+	}
+
+	public void setSearchNodeClass(String searchNodeClass) {
+		this.searchNodeClass = searchNodeClass;
+		if(searchNodeClass != null){
+			putQueryParameter("SearchNodeClass", searchNodeClass);
+		}
+	}
+
 	public Boolean getAutoPay() {
 		return this.autoPay;
 	}
@@ -190,6 +242,28 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
+	public Long getSearchNodeStorage() {
+		return this.searchNodeStorage;
+	}
+
+	public void setSearchNodeStorage(Long searchNodeStorage) {
+		this.searchNodeStorage = searchNodeStorage;
+		if(searchNodeStorage != null){
+			putQueryParameter("SearchNodeStorage", searchNodeStorage.toString());
+		}
+	}
+
+	public String getTargetVswitchId() {
+		return this.targetVswitchId;
+	}
+
+	public void setTargetVswitchId(String targetVswitchId) {
+		this.targetVswitchId = targetVswitchId;
+		if(targetVswitchId != null){
+			putQueryParameter("TargetVswitchId", targetVswitchId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -209,6 +283,28 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.dBInstanceClass = dBInstanceClass;
 		if(dBInstanceClass != null){
 			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
+	public Long getSearchNodeCount() {
+		return this.searchNodeCount;
+	}
+
+	public void setSearchNodeCount(Long searchNodeCount) {
+		this.searchNodeCount = searchNodeCount;
+		if(searchNodeCount != null){
+			putQueryParameter("SearchNodeCount", searchNodeCount.toString());
+		}
+	}
+
+	public String getTargetHiddenZoneId() {
+		return this.targetHiddenZoneId;
+	}
+
+	public void setTargetHiddenZoneId(String targetHiddenZoneId) {
+		this.targetHiddenZoneId = targetHiddenZoneId;
+		if(targetHiddenZoneId != null){
+			putQueryParameter("TargetHiddenZoneId", targetHiddenZoneId);
 		}
 	}
 

@@ -25,13 +25,13 @@ import com.aliyuncs.imageprocess.Endpoint;
 public class DetectKneeXRayRequest extends RpcAcsRequest<DetectKneeXRayResponse> {
 	   
 
+	private String orgName;
+
 	private String dataFormat;
 
 	private String url;
 
 	private String orgId;
-
-	private String orgName;
 	public DetectKneeXRayRequest() {
 		super("imageprocess", "2020-03-20", "DetectKneeXRay", "imageprocess");
 		setMethod(MethodType.POST);
@@ -39,6 +39,17 @@ public class DetectKneeXRayRequest extends RpcAcsRequest<DetectKneeXRayResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOrgName() {
+		return this.orgName;
+	}
+
+	public void setOrgName(String orgName) {
+		this.orgName = orgName;
+		if(orgName != null){
+			putBodyParameter("OrgName", orgName);
+		}
 	}
 
 	public String getDataFormat() {
@@ -71,17 +82,6 @@ public class DetectKneeXRayRequest extends RpcAcsRequest<DetectKneeXRayResponse>
 		this.orgId = orgId;
 		if(orgId != null){
 			putBodyParameter("OrgId", orgId);
-		}
-	}
-
-	public String getOrgName() {
-		return this.orgName;
-	}
-
-	public void setOrgName(String orgName) {
-		this.orgName = orgName;
-		if(orgName != null){
-			putBodyParameter("OrgName", orgName);
 		}
 	}
 

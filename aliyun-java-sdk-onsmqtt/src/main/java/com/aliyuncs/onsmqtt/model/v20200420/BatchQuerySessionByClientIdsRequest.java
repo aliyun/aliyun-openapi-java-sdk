@@ -30,7 +30,7 @@ public class BatchQuerySessionByClientIdsRequest extends RpcAcsRequest<BatchQuer
 
 	private String instanceId;
 	public BatchQuerySessionByClientIdsRequest() {
-		super("OnsMqtt", "2020-04-20", "BatchQuerySessionByClientIds");
+		super("OnsMqtt", "2020-04-20", "BatchQuerySessionByClientIds", "onsmqtt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

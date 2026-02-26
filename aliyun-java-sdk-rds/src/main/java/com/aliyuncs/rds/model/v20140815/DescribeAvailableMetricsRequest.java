@@ -28,6 +28,8 @@ public class DescribeAvailableMetricsRequest extends RpcAcsRequest<DescribeAvail
 	private String dBInstanceName;
 
 	private Long resourceOwnerId;
+
+	private String resourceGroupId;
 	public DescribeAvailableMetricsRequest() {
 		super("Rds", "2014-08-15", "DescribeAvailableMetrics", "rds");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class DescribeAvailableMetricsRequest extends RpcAcsRequest<DescribeAvail
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

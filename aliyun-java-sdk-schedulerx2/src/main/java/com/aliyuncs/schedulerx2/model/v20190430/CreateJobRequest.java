@@ -26,11 +26,47 @@ import com.aliyuncs.schedulerx2.Endpoint;
 public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 	   
 
+	private Integer attemptInterval;
+
+	private Integer failTimes;
+
+	private Integer consumerSize;
+
+	private String groupId;
+
+	private Integer dataOffset;
+
+	private Integer taskMaxAttempt;
+
+	private Integer dispatcherSize;
+
+	private Integer priority;
+
+	private String jobType;
+
+	private Integer taskAttemptInterval;
+
+	private String executeMode;
+
+	private String timeExpression;
+
+	private Boolean timeoutEnable;
+
+	private List<ContactInfo> contactInfos;
+
+	private String name;
+
+	private Integer timeType;
+
+	private String parameters;
+
+	private Integer status;
+
 	private String namespaceSource;
 
-	private String description;
+	private String timezone;
 
-	private Integer attemptInterval;
+	private String description;
 
 	private String content;
 
@@ -40,62 +76,237 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 
 	private Integer pageSize;
 
-	private Integer consumerSize;
-
-	private String jarUrl;
-
 	private String calendar;
 
 	private Boolean failEnable;
 
 	private String sendChannel;
 
-	private Integer dataOffset;
-
-	private String groupId;
-
-	private Integer taskMaxAttempt;
-
 	private Integer maxAttempt;
 
 	private Boolean missWorkerEnable;
 
-	private Integer dispatcherSize;
-
-	private String jobType;
-
-	private Integer taskAttemptInterval;
-
-	private String executeMode;
+	private Boolean successNoticeEnable;
 
 	private Integer queueSize;
 
-	private String timeExpression;
-
 	private String className;
-
-	private Boolean timeoutEnable;
-
-	private List<ContactInfo> contactInfos;
-
-	private String name;
 
 	private String namespace;
 
+	private String xAttrs;
+
 	private Integer maxConcurrency;
-
-	private Integer timeType;
-
-	private String parameters;
-
-	private Integer status;
 	public CreateJobRequest() {
-		super("schedulerx2", "2019-04-30", "CreateJob");
+		super("schedulerx2", "2019-04-30", "CreateJob", "schedulerx2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getAttemptInterval() {
+		return this.attemptInterval;
+	}
+
+	public void setAttemptInterval(Integer attemptInterval) {
+		this.attemptInterval = attemptInterval;
+		if(attemptInterval != null){
+			putBodyParameter("AttemptInterval", attemptInterval.toString());
+		}
+	}
+
+	public Integer getFailTimes() {
+		return this.failTimes;
+	}
+
+	public void setFailTimes(Integer failTimes) {
+		this.failTimes = failTimes;
+		if(failTimes != null){
+			putBodyParameter("FailTimes", failTimes.toString());
+		}
+	}
+
+	public Integer getConsumerSize() {
+		return this.consumerSize;
+	}
+
+	public void setConsumerSize(Integer consumerSize) {
+		this.consumerSize = consumerSize;
+		if(consumerSize != null){
+			putBodyParameter("ConsumerSize", consumerSize.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putBodyParameter("GroupId", groupId);
+		}
+	}
+
+	public Integer getDataOffset() {
+		return this.dataOffset;
+	}
+
+	public void setDataOffset(Integer dataOffset) {
+		this.dataOffset = dataOffset;
+		if(dataOffset != null){
+			putBodyParameter("DataOffset", dataOffset.toString());
+		}
+	}
+
+	public Integer getTaskMaxAttempt() {
+		return this.taskMaxAttempt;
+	}
+
+	public void setTaskMaxAttempt(Integer taskMaxAttempt) {
+		this.taskMaxAttempt = taskMaxAttempt;
+		if(taskMaxAttempt != null){
+			putBodyParameter("TaskMaxAttempt", taskMaxAttempt.toString());
+		}
+	}
+
+	public Integer getDispatcherSize() {
+		return this.dispatcherSize;
+	}
+
+	public void setDispatcherSize(Integer dispatcherSize) {
+		this.dispatcherSize = dispatcherSize;
+		if(dispatcherSize != null){
+			putBodyParameter("DispatcherSize", dispatcherSize.toString());
+		}
+	}
+
+	public Integer getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(Integer priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority.toString());
+		}
+	}
+
+	public String getJobType() {
+		return this.jobType;
+	}
+
+	public void setJobType(String jobType) {
+		this.jobType = jobType;
+		if(jobType != null){
+			putBodyParameter("JobType", jobType);
+		}
+	}
+
+	public Integer getTaskAttemptInterval() {
+		return this.taskAttemptInterval;
+	}
+
+	public void setTaskAttemptInterval(Integer taskAttemptInterval) {
+		this.taskAttemptInterval = taskAttemptInterval;
+		if(taskAttemptInterval != null){
+			putBodyParameter("TaskAttemptInterval", taskAttemptInterval.toString());
+		}
+	}
+
+	public String getExecuteMode() {
+		return this.executeMode;
+	}
+
+	public void setExecuteMode(String executeMode) {
+		this.executeMode = executeMode;
+		if(executeMode != null){
+			putBodyParameter("ExecuteMode", executeMode);
+		}
+	}
+
+	public String getTimeExpression() {
+		return this.timeExpression;
+	}
+
+	public void setTimeExpression(String timeExpression) {
+		this.timeExpression = timeExpression;
+		if(timeExpression != null){
+			putBodyParameter("TimeExpression", timeExpression);
+		}
+	}
+
+	public Boolean getTimeoutEnable() {
+		return this.timeoutEnable;
+	}
+
+	public void setTimeoutEnable(Boolean timeoutEnable) {
+		this.timeoutEnable = timeoutEnable;
+		if(timeoutEnable != null){
+			putBodyParameter("TimeoutEnable", timeoutEnable.toString());
+		}
+	}
+
+	public List<ContactInfo> getContactInfos() {
+		return this.contactInfos;
+	}
+
+	public void setContactInfos(List<ContactInfo> contactInfos) {
+		this.contactInfos = contactInfos;	
+		if (contactInfos != null) {
+			for (int depth1 = 0; depth1 < contactInfos.size(); depth1++) {
+				putBodyParameter("ContactInfo." + (depth1 + 1) + ".Ding" , contactInfos.get(depth1).getDing());
+				putBodyParameter("ContactInfo." + (depth1 + 1) + ".UserPhone" , contactInfos.get(depth1).getUserPhone());
+				putBodyParameter("ContactInfo." + (depth1 + 1) + ".UserMail" , contactInfos.get(depth1).getUserMail());
+				putBodyParameter("ContactInfo." + (depth1 + 1) + ".UserName" , contactInfos.get(depth1).getUserName());
+			}
+		}	
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putBodyParameter("Name", name);
+		}
+	}
+
+	public Integer getTimeType() {
+		return this.timeType;
+	}
+
+	public void setTimeType(Integer timeType) {
+		this.timeType = timeType;
+		if(timeType != null){
+			putBodyParameter("TimeType", timeType.toString());
+		}
+	}
+
+	public String getParameters() {
+		return this.parameters;
+	}
+
+	public void setParameters(String parameters) {
+		this.parameters = parameters;
+		if(parameters != null){
+			putBodyParameter("Parameters", parameters);
+		}
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putBodyParameter("Status", status.toString());
+		}
 	}
 
 	public String getNamespaceSource() {
@@ -109,6 +320,17 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		}
 	}
 
+	public String getTimezone() {
+		return this.timezone;
+	}
+
+	public void setTimezone(String timezone) {
+		this.timezone = timezone;
+		if(timezone != null){
+			putBodyParameter("Timezone", timezone);
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -117,17 +339,6 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
-		}
-	}
-
-	public Integer getAttemptInterval() {
-		return this.attemptInterval;
-	}
-
-	public void setAttemptInterval(Integer attemptInterval) {
-		this.attemptInterval = attemptInterval;
-		if(attemptInterval != null){
-			putBodyParameter("AttemptInterval", attemptInterval.toString());
 		}
 	}
 
@@ -175,28 +386,6 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		}
 	}
 
-	public Integer getConsumerSize() {
-		return this.consumerSize;
-	}
-
-	public void setConsumerSize(Integer consumerSize) {
-		this.consumerSize = consumerSize;
-		if(consumerSize != null){
-			putBodyParameter("ConsumerSize", consumerSize.toString());
-		}
-	}
-
-	public String getJarUrl() {
-		return this.jarUrl;
-	}
-
-	public void setJarUrl(String jarUrl) {
-		this.jarUrl = jarUrl;
-		if(jarUrl != null){
-			putBodyParameter("JarUrl", jarUrl);
-		}
-	}
-
 	public String getCalendar() {
 		return this.calendar;
 	}
@@ -230,39 +419,6 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		}
 	}
 
-	public Integer getDataOffset() {
-		return this.dataOffset;
-	}
-
-	public void setDataOffset(Integer dataOffset) {
-		this.dataOffset = dataOffset;
-		if(dataOffset != null){
-			putBodyParameter("DataOffset", dataOffset.toString());
-		}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putBodyParameter("GroupId", groupId);
-		}
-	}
-
-	public Integer getTaskMaxAttempt() {
-		return this.taskMaxAttempt;
-	}
-
-	public void setTaskMaxAttempt(Integer taskMaxAttempt) {
-		this.taskMaxAttempt = taskMaxAttempt;
-		if(taskMaxAttempt != null){
-			putBodyParameter("TaskMaxAttempt", taskMaxAttempt.toString());
-		}
-	}
-
 	public Integer getMaxAttempt() {
 		return this.maxAttempt;
 	}
@@ -285,47 +441,14 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		}
 	}
 
-	public Integer getDispatcherSize() {
-		return this.dispatcherSize;
+	public Boolean getSuccessNoticeEnable() {
+		return this.successNoticeEnable;
 	}
 
-	public void setDispatcherSize(Integer dispatcherSize) {
-		this.dispatcherSize = dispatcherSize;
-		if(dispatcherSize != null){
-			putBodyParameter("DispatcherSize", dispatcherSize.toString());
-		}
-	}
-
-	public String getJobType() {
-		return this.jobType;
-	}
-
-	public void setJobType(String jobType) {
-		this.jobType = jobType;
-		if(jobType != null){
-			putBodyParameter("JobType", jobType);
-		}
-	}
-
-	public Integer getTaskAttemptInterval() {
-		return this.taskAttemptInterval;
-	}
-
-	public void setTaskAttemptInterval(Integer taskAttemptInterval) {
-		this.taskAttemptInterval = taskAttemptInterval;
-		if(taskAttemptInterval != null){
-			putBodyParameter("TaskAttemptInterval", taskAttemptInterval.toString());
-		}
-	}
-
-	public String getExecuteMode() {
-		return this.executeMode;
-	}
-
-	public void setExecuteMode(String executeMode) {
-		this.executeMode = executeMode;
-		if(executeMode != null){
-			putBodyParameter("ExecuteMode", executeMode);
+	public void setSuccessNoticeEnable(Boolean successNoticeEnable) {
+		this.successNoticeEnable = successNoticeEnable;
+		if(successNoticeEnable != null){
+			putBodyParameter("SuccessNoticeEnable", successNoticeEnable.toString());
 		}
 	}
 
@@ -340,17 +463,6 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		}
 	}
 
-	public String getTimeExpression() {
-		return this.timeExpression;
-	}
-
-	public void setTimeExpression(String timeExpression) {
-		this.timeExpression = timeExpression;
-		if(timeExpression != null){
-			putBodyParameter("TimeExpression", timeExpression);
-		}
-	}
-
 	public String getClassName() {
 		return this.className;
 	}
@@ -359,44 +471,6 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		this.className = className;
 		if(className != null){
 			putBodyParameter("ClassName", className);
-		}
-	}
-
-	public Boolean getTimeoutEnable() {
-		return this.timeoutEnable;
-	}
-
-	public void setTimeoutEnable(Boolean timeoutEnable) {
-		this.timeoutEnable = timeoutEnable;
-		if(timeoutEnable != null){
-			putBodyParameter("TimeoutEnable", timeoutEnable.toString());
-		}
-	}
-
-	public List<ContactInfo> getContactInfos() {
-		return this.contactInfos;
-	}
-
-	public void setContactInfos(List<ContactInfo> contactInfos) {
-		this.contactInfos = contactInfos;	
-		if (contactInfos != null) {
-			for (int depth1 = 0; depth1 < contactInfos.size(); depth1++) {
-				putBodyParameter("ContactInfo." + (depth1 + 1) + ".Ding" , contactInfos.get(depth1).getDing());
-				putBodyParameter("ContactInfo." + (depth1 + 1) + ".UserPhone" , contactInfos.get(depth1).getUserPhone());
-				putBodyParameter("ContactInfo." + (depth1 + 1) + ".UserMail" , contactInfos.get(depth1).getUserMail());
-				putBodyParameter("ContactInfo." + (depth1 + 1) + ".UserName" , contactInfos.get(depth1).getUserName());
-			}
-		}	
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
 		}
 	}
 
@@ -411,6 +485,17 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		}
 	}
 
+	public String getXAttrs() {
+		return this.xAttrs;
+	}
+
+	public void setXAttrs(String xAttrs) {
+		this.xAttrs = xAttrs;
+		if(xAttrs != null){
+			putBodyParameter("XAttrs", xAttrs);
+		}
+	}
+
 	public Integer getMaxConcurrency() {
 		return this.maxConcurrency;
 	}
@@ -419,39 +504,6 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		this.maxConcurrency = maxConcurrency;
 		if(maxConcurrency != null){
 			putBodyParameter("MaxConcurrency", maxConcurrency.toString());
-		}
-	}
-
-	public Integer getTimeType() {
-		return this.timeType;
-	}
-
-	public void setTimeType(Integer timeType) {
-		this.timeType = timeType;
-		if(timeType != null){
-			putBodyParameter("TimeType", timeType.toString());
-		}
-	}
-
-	public String getParameters() {
-		return this.parameters;
-	}
-
-	public void setParameters(String parameters) {
-		this.parameters = parameters;
-		if(parameters != null){
-			putBodyParameter("Parameters", parameters);
-		}
-	}
-
-	public Integer getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-		if(status != null){
-			putBodyParameter("Status", status.toString());
 		}
 	}
 

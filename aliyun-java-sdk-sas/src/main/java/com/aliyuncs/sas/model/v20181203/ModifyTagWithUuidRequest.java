@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class ModifyTagWithUuidRequest extends RpcAcsRequest<ModifyTagWithUuidResponse> {
 	   
 
-	private String tagId;
-
-	private String machineTypes;
-
 	private String tagList;
 
 	private String uuidList;
+
+	private String tagId;
+
+	private String machineTypes;
 	public ModifyTagWithUuidRequest() {
 		super("Sas", "2018-12-03", "ModifyTagWithUuid");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class ModifyTagWithUuidRequest extends RpcAcsRequest<ModifyTagWithUuidRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTagId() {
-		return this.tagId;
-	}
-
-	public void setTagId(String tagId) {
-		this.tagId = tagId;
-		if(tagId != null){
-			putQueryParameter("TagId", tagId);
-		}
-	}
-
-	public String getMachineTypes() {
-		return this.machineTypes;
-	}
-
-	public void setMachineTypes(String machineTypes) {
-		this.machineTypes = machineTypes;
-		if(machineTypes != null){
-			putQueryParameter("MachineTypes", machineTypes);
-		}
 	}
 
 	public String getTagList() {
@@ -82,6 +60,28 @@ public class ModifyTagWithUuidRequest extends RpcAcsRequest<ModifyTagWithUuidRes
 		this.uuidList = uuidList;
 		if(uuidList != null){
 			putQueryParameter("UuidList", uuidList);
+		}
+	}
+
+	public String getTagId() {
+		return this.tagId;
+	}
+
+	public void setTagId(String tagId) {
+		this.tagId = tagId;
+		if(tagId != null){
+			putQueryParameter("TagId", tagId);
+		}
+	}
+
+	public String getMachineTypes() {
+		return this.machineTypes;
+	}
+
+	public void setMachineTypes(String machineTypes) {
+		this.machineTypes = machineTypes;
+		if(machineTypes != null){
+			putQueryParameter("MachineTypes", machineTypes);
 		}
 	}
 

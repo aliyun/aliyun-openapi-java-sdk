@@ -27,13 +27,13 @@ public class UpdateABTestExperimentResponseUnmarshaller {
 		updateABTestExperimentResponse.setRequestId(_ctx.stringValue("UpdateABTestExperimentResponse.requestId"));
 
 		Result result = new Result();
-		result.setId(_ctx.stringValue("UpdateABTestExperimentResponse.result.id"));
-		result.setName(_ctx.stringValue("UpdateABTestExperimentResponse.result.name"));
-		result.setParams(_ctx.mapValue("UpdateABTestExperimentResponse.result.params"));
 		result.setCreated(_ctx.integerValue("UpdateABTestExperimentResponse.result.created"));
-		result.setUpdated(_ctx.integerValue("UpdateABTestExperimentResponse.result.updated"));
-		result.setOnline(_ctx.booleanValue("UpdateABTestExperimentResponse.result.online"));
+		result.setParams(_ctx.mapValue("UpdateABTestExperimentResponse.result.params"));
 		result.setTraffic(_ctx.integerValue("UpdateABTestExperimentResponse.result.traffic"));
+		result.setOnline(_ctx.booleanValue("UpdateABTestExperimentResponse.result.online"));
+		result.setName(_ctx.stringValue("UpdateABTestExperimentResponse.result.name"));
+		result.setUpdated(_ctx.integerValue("UpdateABTestExperimentResponse.result.updated"));
+		result.setId(_ctx.stringValue("UpdateABTestExperimentResponse.result.id"));
 		updateABTestExperimentResponse.setResult(result);
 	 
 	 	return updateABTestExperimentResponse;

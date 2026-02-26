@@ -23,8 +23,8 @@ public class ModifyScheduledTaskResponseUnmarshaller {
 
 	public static ModifyScheduledTaskResponse unmarshall(ModifyScheduledTaskResponse modifyScheduledTaskResponse, UnmarshallerContext _ctx) {
 		
-		modifyScheduledTaskResponse.setRequestId(_ctx.stringValue("ModifyScheduledTaskResponse.requestId"));
 		modifyScheduledTaskResponse.setResult(_ctx.mapValue("ModifyScheduledTaskResponse.result"));
+		modifyScheduledTaskResponse.setRequestId(_ctx.stringValue("ModifyScheduledTaskResponse.requestId"));
 	 
 	 	return modifyScheduledTaskResponse;
 	}

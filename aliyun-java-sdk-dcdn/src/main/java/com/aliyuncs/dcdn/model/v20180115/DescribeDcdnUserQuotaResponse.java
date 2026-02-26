@@ -24,56 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnUserQuotaResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer domainQuota;
-
-	private Integer refreshUrlQuota;
-
-	private Integer refreshDirQuota;
+	private Integer blockQuota;
 
 	private Integer refreshUrlRemain;
 
-	private Integer refreshDirRemain;
-
-	private Integer preloadQuota;
-
-	private Integer preloadRemain;
-
-	private Integer blockQuota;
+	private Integer domainQuota;
 
 	private Integer blockRemain;
 
-	public String getRequestId() {
-		return this.requestId;
+	private Integer preloadRemain;
+
+	private String requestId;
+
+	private Integer refreshUrlQuota;
+
+	private Integer preloadQuota;
+
+	private Integer refreshDirQuota;
+
+	private Integer refreshDirRemain;
+
+	public Integer getBlockQuota() {
+		return this.blockQuota;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getDomainQuota() {
-		return this.domainQuota;
-	}
-
-	public void setDomainQuota(Integer domainQuota) {
-		this.domainQuota = domainQuota;
-	}
-
-	public Integer getRefreshUrlQuota() {
-		return this.refreshUrlQuota;
-	}
-
-	public void setRefreshUrlQuota(Integer refreshUrlQuota) {
-		this.refreshUrlQuota = refreshUrlQuota;
-	}
-
-	public Integer getRefreshDirQuota() {
-		return this.refreshDirQuota;
-	}
-
-	public void setRefreshDirQuota(Integer refreshDirQuota) {
-		this.refreshDirQuota = refreshDirQuota;
+	public void setBlockQuota(Integer blockQuota) {
+		this.blockQuota = blockQuota;
 	}
 
 	public Integer getRefreshUrlRemain() {
@@ -84,20 +60,20 @@ public class DescribeDcdnUserQuotaResponse extends AcsResponse {
 		this.refreshUrlRemain = refreshUrlRemain;
 	}
 
-	public Integer getRefreshDirRemain() {
-		return this.refreshDirRemain;
+	public Integer getDomainQuota() {
+		return this.domainQuota;
 	}
 
-	public void setRefreshDirRemain(Integer refreshDirRemain) {
-		this.refreshDirRemain = refreshDirRemain;
+	public void setDomainQuota(Integer domainQuota) {
+		this.domainQuota = domainQuota;
 	}
 
-	public Integer getPreloadQuota() {
-		return this.preloadQuota;
+	public Integer getBlockRemain() {
+		return this.blockRemain;
 	}
 
-	public void setPreloadQuota(Integer preloadQuota) {
-		this.preloadQuota = preloadQuota;
+	public void setBlockRemain(Integer blockRemain) {
+		this.blockRemain = blockRemain;
 	}
 
 	public Integer getPreloadRemain() {
@@ -108,20 +84,44 @@ public class DescribeDcdnUserQuotaResponse extends AcsResponse {
 		this.preloadRemain = preloadRemain;
 	}
 
-	public Integer getBlockQuota() {
-		return this.blockQuota;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setBlockQuota(Integer blockQuota) {
-		this.blockQuota = blockQuota;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public Integer getBlockRemain() {
-		return this.blockRemain;
+	public Integer getRefreshUrlQuota() {
+		return this.refreshUrlQuota;
 	}
 
-	public void setBlockRemain(Integer blockRemain) {
-		this.blockRemain = blockRemain;
+	public void setRefreshUrlQuota(Integer refreshUrlQuota) {
+		this.refreshUrlQuota = refreshUrlQuota;
+	}
+
+	public Integer getPreloadQuota() {
+		return this.preloadQuota;
+	}
+
+	public void setPreloadQuota(Integer preloadQuota) {
+		this.preloadQuota = preloadQuota;
+	}
+
+	public Integer getRefreshDirQuota() {
+		return this.refreshDirQuota;
+	}
+
+	public void setRefreshDirQuota(Integer refreshDirQuota) {
+		this.refreshDirQuota = refreshDirQuota;
+	}
+
+	public Integer getRefreshDirRemain() {
+		return this.refreshDirRemain;
+	}
+
+	public void setRefreshDirRemain(Integer refreshDirRemain) {
+		this.refreshDirRemain = refreshDirRemain;
 	}
 
 	@Override

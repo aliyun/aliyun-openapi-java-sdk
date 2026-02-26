@@ -26,6 +26,10 @@ import com.aliyuncs.ecd.Endpoint;
 public class ModifyDesktopChargeTypeRequest extends RpcAcsRequest<ModifyDesktopChargeTypeResponse> {
 	   
 
+	private List<String> desktopIds;
+
+	private Integer useDuration;
+
 	private Integer period;
 
 	private Boolean autoPay;
@@ -35,15 +39,37 @@ public class ModifyDesktopChargeTypeRequest extends RpcAcsRequest<ModifyDesktopC
 	private String periodUnit;
 
 	private String chargeType;
-
-	private List<String> desktopIds;
 	public ModifyDesktopChargeTypeRequest() {
-		super("ecd", "2020-09-30", "ModifyDesktopChargeType");
+		super("ecd", "2020-09-30", "ModifyDesktopChargeType", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getDesktopIds() {
+		return this.desktopIds;
+	}
+
+	public void setDesktopIds(List<String> desktopIds) {
+		this.desktopIds = desktopIds;	
+		if (desktopIds != null) {
+			for (int i = 0; i < desktopIds.size(); i++) {
+				putQueryParameter("DesktopId." + (i + 1) , desktopIds.get(i));
+			}
+		}	
+	}
+
+	public Integer getUseDuration() {
+		return this.useDuration;
+	}
+
+	public void setUseDuration(Integer useDuration) {
+		this.useDuration = useDuration;
+		if(useDuration != null){
+			putQueryParameter("UseDuration", useDuration.toString());
+		}
 	}
 
 	public Integer getPeriod() {
@@ -99,19 +125,6 @@ public class ModifyDesktopChargeTypeRequest extends RpcAcsRequest<ModifyDesktopC
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
 		}
-	}
-
-	public List<String> getDesktopIds() {
-		return this.desktopIds;
-	}
-
-	public void setDesktopIds(List<String> desktopIds) {
-		this.desktopIds = desktopIds;	
-		if (desktopIds != null) {
-			for (int i = 0; i < desktopIds.size(); i++) {
-				putQueryParameter("DesktopId." + (i + 1) , desktopIds.get(i));
-			}
-		}	
 	}
 
 	@Override

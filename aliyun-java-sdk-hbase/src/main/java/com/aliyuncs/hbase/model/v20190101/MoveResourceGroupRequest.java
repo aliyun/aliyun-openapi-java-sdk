@@ -29,7 +29,7 @@ public class MoveResourceGroupRequest extends RpcAcsRequest<MoveResourceGroupRes
 
 	private String newResourceGroupId;
 	public MoveResourceGroupRequest() {
-		super("HBase", "2019-01-01", "MoveResourceGroup", "hbase");
+		super("HBase", "2019-01-01", "MoveResourceGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

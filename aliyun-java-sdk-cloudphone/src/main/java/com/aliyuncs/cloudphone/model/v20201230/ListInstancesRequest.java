@@ -47,6 +47,8 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 	private Long ownerId;
 
+	private List<Filter> filters;
+
 	private String instanceName;
 
 	private List<String> instanceIds;
@@ -59,7 +61,7 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 	private String status;
 	public ListInstancesRequest() {
-		super("cloudphone", "2020-12-30", "ListInstances", "cloudphone");
+		super("cloudphone", "2020-12-30", "ListInstances");
 		setMethod(MethodType.POST);
 	}
 
@@ -187,6 +189,20 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		}
 	}
 
+	public List<Filter> getFilters() {
+		return this.filters;
+	}
+
+	public void setFilters(List<Filter> filters) {
+		this.filters = filters;	
+		if (filters != null) {
+			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
+				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
+				putQueryParameter("Filter." + (depth1 + 1) + ".Value" , filters.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public String getInstanceName() {
 		return this.instanceName;
 	}
@@ -256,6 +272,29 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 	}
 
 	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+	}
+
+	public static class Filter {
 
 		private String key;
 

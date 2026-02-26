@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListFileSystemWithMountTargetsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<FileSystems> fileSystemList;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListFileSystemWithMountTargetsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListFileSystemWithMountTargetsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<FileSystems> getFileSystemList() {
@@ -77,33 +77,75 @@ public class ListFileSystemWithMountTargetsResponse extends AcsResponse {
 
 	public static class FileSystems {
 
+		private String status;
+
+		private Integer capacity;
+
+		private String createTime;
+
+		private String storageType;
+
+		private Integer bandWidth;
+
 		private String regionId;
 
 		private String fileSystemId;
 
 		private String fileSystemType;
 
-		private String protocolType;
-
-		private String createTime;
-
-		private String destription;
-
-		private String storageType;
-
 		private Integer meteredSize;
-
-		private Integer capacity;
 
 		private Integer encryptType;
 
-		private Integer bandWidth;
+		private String protocolType;
 
-		private String status;
+		private String destription;
+
+		private String vpcId;
 
 		private List<Packages> packageList;
 
 		private List<MountTargets> mountTargetList;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Integer getCapacity() {
+			return this.capacity;
+		}
+
+		public void setCapacity(Integer capacity) {
+			this.capacity = capacity;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public Integer getBandWidth() {
+			return this.bandWidth;
+		}
+
+		public void setBandWidth(Integer bandWidth) {
+			this.bandWidth = bandWidth;
+		}
 
 		public String getRegionId() {
 			return this.regionId;
@@ -129,52 +171,12 @@ public class ListFileSystemWithMountTargetsResponse extends AcsResponse {
 			this.fileSystemType = fileSystemType;
 		}
 
-		public String getProtocolType() {
-			return this.protocolType;
-		}
-
-		public void setProtocolType(String protocolType) {
-			this.protocolType = protocolType;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getDestription() {
-			return this.destription;
-		}
-
-		public void setDestription(String destription) {
-			this.destription = destription;
-		}
-
-		public String getStorageType() {
-			return this.storageType;
-		}
-
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
-		}
-
 		public Integer getMeteredSize() {
 			return this.meteredSize;
 		}
 
 		public void setMeteredSize(Integer meteredSize) {
 			this.meteredSize = meteredSize;
-		}
-
-		public Integer getCapacity() {
-			return this.capacity;
-		}
-
-		public void setCapacity(Integer capacity) {
-			this.capacity = capacity;
 		}
 
 		public Integer getEncryptType() {
@@ -185,20 +187,28 @@ public class ListFileSystemWithMountTargetsResponse extends AcsResponse {
 			this.encryptType = encryptType;
 		}
 
-		public Integer getBandWidth() {
-			return this.bandWidth;
+		public String getProtocolType() {
+			return this.protocolType;
 		}
 
-		public void setBandWidth(Integer bandWidth) {
-			this.bandWidth = bandWidth;
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getDestription() {
+			return this.destription;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDestription(String destription) {
+			this.destription = destription;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public List<Packages> getPackageList() {
@@ -232,25 +242,17 @@ public class ListFileSystemWithMountTargetsResponse extends AcsResponse {
 
 		public static class MountTargets {
 
-			private String mountTargetDomain;
-
 			private String status;
-
-			private String networkType;
-
-			private String vswId;
 
 			private String vpcId;
 
+			private String mountTargetDomain;
+
 			private String accessGroup;
 
-			public String getMountTargetDomain() {
-				return this.mountTargetDomain;
-			}
+			private String vswId;
 
-			public void setMountTargetDomain(String mountTargetDomain) {
-				this.mountTargetDomain = mountTargetDomain;
-			}
+			private String networkType;
 
 			public String getStatus() {
 				return this.status;
@@ -258,22 +260,6 @@ public class ListFileSystemWithMountTargetsResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
-			}
-
-			public String getNetworkType() {
-				return this.networkType;
-			}
-
-			public void setNetworkType(String networkType) {
-				this.networkType = networkType;
-			}
-
-			public String getVswId() {
-				return this.vswId;
-			}
-
-			public void setVswId(String vswId) {
-				this.vswId = vswId;
 			}
 
 			public String getVpcId() {
@@ -284,12 +270,36 @@ public class ListFileSystemWithMountTargetsResponse extends AcsResponse {
 				this.vpcId = vpcId;
 			}
 
+			public String getMountTargetDomain() {
+				return this.mountTargetDomain;
+			}
+
+			public void setMountTargetDomain(String mountTargetDomain) {
+				this.mountTargetDomain = mountTargetDomain;
+			}
+
 			public String getAccessGroup() {
 				return this.accessGroup;
 			}
 
 			public void setAccessGroup(String accessGroup) {
 				this.accessGroup = accessGroup;
+			}
+
+			public String getVswId() {
+				return this.vswId;
+			}
+
+			public void setVswId(String vswId) {
+				this.vswId = vswId;
+			}
+
+			public String getNetworkType() {
+				return this.networkType;
+			}
+
+			public void setNetworkType(String networkType) {
+				this.networkType = networkType;
 			}
 		}
 	}

@@ -1,3 +1,53 @@
+2024-03-05 Version: 1.14.21
+- Support UserData parameter for ApplyNodes interface.
+
+2023-09-06 Version: 1.14.20
+- Parameter changes in SubmitServerlessJob.
+
+2023-07-25 Version: 1.14.19
+- Parameter changes in SubmitServerlessJob.
+
+2023-07-20 Version: 1.14.18
+- Parameter changes in ListServerlessJobs and DescribeServerlessJobs.
+
+2023-07-14 Version: 1.14.17
+- Support Serverless Job API.
+
+2023-03-07 Version: 1.14.16
+- Support JobRetry parameters in SubmitJob API.
+
+2023-02-02 Version: 1.14.15
+- Support Async parameter in DescribeJob API.
+
+2023-01-04 Version: 1.14.14
+- Support RamRoleName and RamNodeTypes parameter in ModifyClusterAttributes APIs.
+
+2022-12-07 Version: 1.14.13
+- Support async parameter in Job APIs.
+
+2022-11-21 Version: 1.14.12
+- RunasUserPassword is not required in CreateJobFile.
+- RunasUserPassword not required in SubmitJob.
+- Add new api GetJobLog.
+
+2022-11-16 Version: 1.14.11
+- RunasUserPassword is not required in CreateJobFile.
+- RunasUserPassword not required in SubmitJob.
+- Add new api GetJobLog.
+
+2022-10-27 Version: 1.14.10
+- ListNodesByQueue and ListJobsWithFilters add Async.
+
+2022-09-28 Version: 1.14.9
+- Add ListUsersAsync
+
+2022-09-23 Version: 1.14.8
+- Add eStack APIs;
+- Add parameters for SyncUsers, AddLocalNodes and so on.
+
+2022-09-14 Version: 1.0.0
+- Generated 2017-07-14 for `EHPC`.
+
 2021-09-01 Version: 1.14.7
 - SDK updated.
 

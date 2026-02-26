@@ -35,6 +35,8 @@ public class ModifyDBProxyEndpointAddressRequest extends RpcAcsRequest<ModifyDBP
 
 	private String resourceOwnerAccount;
 
+	private String dBProxyEngineType;
+
 	private Long ownerId;
 
 	private String dBProxyEndpointId;
@@ -101,6 +103,17 @@ public class ModifyDBProxyEndpointAddressRequest extends RpcAcsRequest<ModifyDBP
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
+		if(dBProxyEngineType != null){
+			putQueryParameter("DBProxyEngineType", dBProxyEngineType);
 		}
 	}
 

@@ -27,8 +27,8 @@ public class DeleteSnapshotFilesResponseUnmarshaller {
 	public static DeleteSnapshotFilesResponse unmarshall(DeleteSnapshotFilesResponse deleteSnapshotFilesResponse, UnmarshallerContext _ctx) {
 		
 		deleteSnapshotFilesResponse.setRequestId(_ctx.stringValue("DeleteSnapshotFilesResponse.RequestId"));
-		deleteSnapshotFilesResponse.setSuccessCount(_ctx.integerValue("DeleteSnapshotFilesResponse.SuccessCount"));
 		deleteSnapshotFilesResponse.setFailureCount(_ctx.integerValue("DeleteSnapshotFilesResponse.FailureCount"));
+		deleteSnapshotFilesResponse.setSuccessCount(_ctx.integerValue("DeleteSnapshotFilesResponse.SuccessCount"));
 
 		List<SnapshotDeleteInfo> snapshotDeleteInfoList = new ArrayList<SnapshotDeleteInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DeleteSnapshotFilesResponse.SnapshotDeleteInfoList.Length"); i++) {

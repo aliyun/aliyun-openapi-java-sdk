@@ -35,13 +35,11 @@ public class ListActionRecordsRequest extends RoaAcsRequest<ListActionRecordsRes
 
 	private String requestId;
 
-	private Integer endTime;
+	private Long endTime;
 
 	private Integer page;
 
-	private Integer startTime;
-
-	private String body;
+	private Long startTime;
 
 	private String userId;
 	public ListActionRecordsRequest() {
@@ -109,11 +107,11 @@ public class ListActionRecordsRequest extends RoaAcsRequest<ListActionRecordsRes
 		}
 	}
 
-	public Integer getEndTime() {
+	public Long getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(Integer endTime) {
+	public void setEndTime(Long endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("endTime", endTime.toString());
@@ -131,25 +129,14 @@ public class ListActionRecordsRequest extends RoaAcsRequest<ListActionRecordsRes
 		}
 	}
 
-	public Integer getStartTime() {
+	public Long getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(Integer startTime) {
+	public void setStartTime(Long startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("startTime", startTime.toString());
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

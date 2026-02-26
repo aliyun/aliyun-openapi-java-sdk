@@ -73,6 +73,10 @@ public class DescribeAntiBruteForceRulesResponse extends AcsResponse {
 
 		private Long id;
 
+		private String createTime;
+
+		private Long createTimestamp;
+
 		private List<String> uuidList;
 
 		public Integer getMachineCount() {
@@ -137,6 +141,22 @@ public class DescribeAntiBruteForceRulesResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 
 		public List<String> getUuidList() {

@@ -35,6 +35,8 @@ public class ScreenChestCTRequest extends RpcAcsRequest<ScreenChestCTResponse> {
 	private List<URLList> uRLLists;
 
 	private String orgId;
+
+	private Long verbose;
 	public ScreenChestCTRequest() {
 		super("imageprocess", "2020-03-20", "ScreenChestCT", "imageprocess");
 		setMethod(MethodType.POST);
@@ -98,6 +100,17 @@ public class ScreenChestCTRequest extends RpcAcsRequest<ScreenChestCTResponse> {
 		this.orgId = orgId;
 		if(orgId != null){
 			putBodyParameter("OrgId", orgId);
+		}
+	}
+
+	public Long getVerbose() {
+		return this.verbose;
+	}
+
+	public void setVerbose(Long verbose) {
+		this.verbose = verbose;
+		if(verbose != null){
+			putBodyParameter("Verbose", verbose.toString());
 		}
 	}
 

@@ -25,7 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class OperateAgentClientInstallRequest extends RpcAcsRequest<OperateAgentClientInstallResponse> {
 	   
 
+	private String lang;
+
+	private String os;
+
 	private String instanceIds;
+
+	private String region;
 
 	private String uuids;
 	public OperateAgentClientInstallRequest() {
@@ -37,6 +43,28 @@ public class OperateAgentClientInstallRequest extends RpcAcsRequest<OperateAgent
 		} catch (Exception e) {}
 	}
 
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getOs() {
+		return this.os;
+	}
+
+	public void setOs(String os) {
+		this.os = os;
+		if(os != null){
+			putQueryParameter("Os", os);
+		}
+	}
+
 	public String getInstanceIds() {
 		return this.instanceIds;
 	}
@@ -45,6 +73,17 @@ public class OperateAgentClientInstallRequest extends RpcAcsRequest<OperateAgent
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 

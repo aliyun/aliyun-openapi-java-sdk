@@ -23,21 +23,21 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class DescribePurchasedApiGroupsRequest extends RpcAcsRequest<DescribePurchasedApiGroupsResponse> {
-	
-	public DescribePurchasedApiGroupsRequest() {
-		super("CloudAPI", "2016-07-14", "DescribePurchasedApiGroups", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageNumber;
 
 	private String securityToken;
 
 	private Integer pageSize;
+	public DescribePurchasedApiGroupsRequest() {
+		super("CloudAPI", "2016-07-14", "DescribePurchasedApiGroups", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -50,29 +50,10 @@ public class DescribePurchasedApiGroupsRequest extends RpcAcsRequest<DescribePur
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

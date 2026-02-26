@@ -29,7 +29,7 @@ public class ListVolumesRequest extends RpcAcsRequest<ListVolumesResponse> {
 
 	private Integer pageSize;
 	public ListVolumesRequest() {
-		super("EHPC", "2018-04-12", "ListVolumes");
+		super("EHPC", "2018-04-12", "ListVolumes", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

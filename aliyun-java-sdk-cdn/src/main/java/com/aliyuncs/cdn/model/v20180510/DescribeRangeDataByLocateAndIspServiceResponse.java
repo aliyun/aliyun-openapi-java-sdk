@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRangeDataByLocateAndIspServiceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String jsonResult;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getJsonResult() {
 		return this.jsonResult;
@@ -42,6 +34,14 @@ public class DescribeRangeDataByLocateAndIspServiceResponse extends AcsResponse 
 
 	public void setJsonResult(String jsonResult) {
 		this.jsonResult = jsonResult;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

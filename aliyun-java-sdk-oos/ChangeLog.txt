@@ -1,3 +1,30 @@
+2024-03-25 Version: 1.5.14
+- Generated 2019-06-01 for `oos`.
+
+2023-07-28 Version: 1.5.13
+- PatchBaseline Support Tags.
+
+2023-07-25 Version: 1.5.12
+- PatchBaseline Support Tags.
+
+2023-07-07 Version: 1.5.11
+- ListApplicationGroups rename parameter Product to ResourceProduct
+
+2023-02-06 Version: 1.5.10
+- ListApplicationGroups rename parameter Product to ResourceProduct
+
+2022-11-07 Version: 1.5.9
+- Update StartExecution add Parameter TemplateURL.
+   Update StartExecution Parameter TemplateName to optional.
+   Update ValidateTemplateContent add Parameter TemplateURL.
+   Update ValidateTemplateContent Parameter TemplateConten to optional.
+
+2022-10-12 Version: 1.5.8
+- Add Force Option for DeleteApplication API.
+
+2022-09-19 Version: 1.5.7
+- Add ops item APIs.
+
 2022-07-27 Version: 1.5.6
  - Update.
 

@@ -29,6 +29,8 @@ public class AllocateIpv6InternetBandwidthRequest extends RpcAcsRequest<Allocate
 
 	private String clientToken;
 
+	private Boolean dryRun;
+
 	private Integer bandwidth;
 
 	private String resourceOwnerAccount;
@@ -70,6 +72,17 @@ public class AllocateIpv6InternetBandwidthRequest extends RpcAcsRequest<Allocate
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

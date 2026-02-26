@@ -58,6 +58,10 @@ public class CreateOrUpdateContactResponse extends AcsResponse {
 
 		private Long reissueSendNotice;
 
+		private Boolean isEmailVerify;
+
+		private String dingRobotUrl;
+
 		public Float getContactId() {
 			return this.contactId;
 		}
@@ -104,6 +108,22 @@ public class CreateOrUpdateContactResponse extends AcsResponse {
 
 		public void setReissueSendNotice(Long reissueSendNotice) {
 			this.reissueSendNotice = reissueSendNotice;
+		}
+
+		public Boolean getIsEmailVerify() {
+			return this.isEmailVerify;
+		}
+
+		public void setIsEmailVerify(Boolean isEmailVerify) {
+			this.isEmailVerify = isEmailVerify;
+		}
+
+		public String getDingRobotUrl() {
+			return this.dingRobotUrl;
+		}
+
+		public void setDingRobotUrl(String dingRobotUrl) {
+			this.dingRobotUrl = dingRobotUrl;
 		}
 	}
 

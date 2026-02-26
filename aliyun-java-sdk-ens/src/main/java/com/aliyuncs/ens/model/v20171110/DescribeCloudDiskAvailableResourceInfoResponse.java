@@ -61,6 +61,8 @@ public class DescribeCloudDiskAvailableResourceInfoResponse extends AcsResponse 
 
 		private Long defaultDiskSize;
 
+		private List<String> ability;
+
 		public String getEnsRegionId() {
 			return this.ensRegionId;
 		}
@@ -115,6 +117,14 @@ public class DescribeCloudDiskAvailableResourceInfoResponse extends AcsResponse 
 
 		public void setDefaultDiskSize(Long defaultDiskSize) {
 			this.defaultDiskSize = defaultDiskSize;
+		}
+
+		public List<String> getAbility() {
+			return this.ability;
+		}
+
+		public void setAbility(List<String> ability) {
+			this.ability = ability;
 		}
 	}
 

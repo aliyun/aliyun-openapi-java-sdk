@@ -49,7 +49,7 @@ public class DescribeUserConnectionRecordsRequest extends RpcAcsRequest<Describe
 
 	private Integer maxResults;
 	public DescribeUserConnectionRecordsRequest() {
-		super("ecd", "2020-09-30", "DescribeUserConnectionRecords");
+		super("ecd", "2020-09-30", "DescribeUserConnectionRecords", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

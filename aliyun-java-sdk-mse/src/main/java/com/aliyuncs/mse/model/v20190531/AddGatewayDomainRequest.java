@@ -27,9 +27,15 @@ public class AddGatewayDomainRequest extends RpcAcsRequest<AddGatewayDomainRespo
 
 	private String gatewayUniqueId;
 
+	private String tlsMax;
+
 	private String protocol;
 
 	private Boolean mustHttps;
+
+	private String http2;
+
+	private String tlsMin;
 
 	private String certIdentifier;
 
@@ -56,6 +62,17 @@ public class AddGatewayDomainRequest extends RpcAcsRequest<AddGatewayDomainRespo
 		}
 	}
 
+	public String getTlsMax() {
+		return this.tlsMax;
+	}
+
+	public void setTlsMax(String tlsMax) {
+		this.tlsMax = tlsMax;
+		if(tlsMax != null){
+			putQueryParameter("TlsMax", tlsMax);
+		}
+	}
+
 	public String getBizProtocol() {
 		return this.protocol;
 	}
@@ -75,6 +92,28 @@ public class AddGatewayDomainRequest extends RpcAcsRequest<AddGatewayDomainRespo
 		this.mustHttps = mustHttps;
 		if(mustHttps != null){
 			putQueryParameter("MustHttps", mustHttps.toString());
+		}
+	}
+
+	public String getHttp2() {
+		return this.http2;
+	}
+
+	public void setHttp2(String http2) {
+		this.http2 = http2;
+		if(http2 != null){
+			putQueryParameter("Http2", http2);
+		}
+	}
+
+	public String getTlsMin() {
+		return this.tlsMin;
+	}
+
+	public void setTlsMin(String tlsMin) {
+		this.tlsMin = tlsMin;
+		if(tlsMin != null){
+			putQueryParameter("TlsMin", tlsMin);
 		}
 	}
 

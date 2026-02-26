@@ -24,6 +24,8 @@ import com.aliyuncs.cs.Endpoint;
  */
 public class StartWorkflowRequest extends RoaAcsRequest<StartWorkflowResponse> {
 	   
+
+	private String body;
 	public StartWorkflowRequest() {
 		super("CS", "2015-12-15", "StartWorkflow");
 		setUriPattern("/gs/workflow");
@@ -32,6 +34,17 @@ public class StartWorkflowRequest extends RoaAcsRequest<StartWorkflowResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
+		}
 	}
 
 	@Override

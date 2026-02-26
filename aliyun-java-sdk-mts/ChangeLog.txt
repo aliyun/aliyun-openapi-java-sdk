@@ -1,3 +1,49 @@
+2026-02-25 Version: 3.3.68
+- Add Tags And DolbyVision for MediaInfoJob.
+- Add SpecialConfig param for SubmitUrlUploadJob.
+
+2025-10-27 Version: 3.3.67
+- Add FileMd5 for SubmitMediaInfoJob and QueryMediaInfoJobList.
+
+2025-06-20 Version: 3.3.66
+- Add DurationInaccurate flag to SubmitMediaInfoJob and QueryMediaInfoJobList for media duration accuracy tracking.
+
+2025-06-20 Version: 3.3.65
+- Add DurationInaccurate flag to SubmitMediaInfoJob and QueryMediaInfoJobList for media duration accuracy tracking.
+
+2025-05-14 Version: 3.3.64
+- Update water-mark params.
+
+2024-07-23 Version: 3.3.63
+- Update water-mark params
+
+2024-07-11 Version: 3.3.62
+- SubmitSnapshotJob suport timeArray.
+
+2024-07-10 Version: 3.3.61
+- SubmitSnapshotJob suport timeArray.
+
+2024-07-05 Version: 3.3.60
+- SubmitSnapshotJob suport timeArray.
+
+2024-04-24 Version: 3.3.59
+- SubmitSnapshotJob suport timeArray.
+
+2023-07-05 Version: 3.3.58
+- Add CreateCustomGroup api sdk.
+
+2023-02-14 Version: 3.3.56
+- Update QueryFpShotJobList add duration.
+
+2023-02-08 Version: 3.3.55
+- Update QueryFpShotJobList.
+
+2022-09-14 Version: 3.3.54
+- Update ListFpShotFiles.
+
+2022-08-30 Version: 3.3.51
+- Update ListFpShotFiles and ImAudit.
+
 2022-03-28 Version: 3.3.45
 - Update ListFpShotDB and CreateFpShotDB.
 

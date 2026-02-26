@@ -107,6 +107,8 @@ public class ListIpsecServersResponse extends AcsResponse {
 
 		private String clientIpPool;
 
+		private String resourceGroupId;
+
 		private IkeConfig ikeConfig;
 
 		private IpsecConfig ipsecConfig;
@@ -229,6 +231,14 @@ public class ListIpsecServersResponse extends AcsResponse {
 
 		public void setClientIpPool(String clientIpPool) {
 			this.clientIpPool = clientIpPool;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public IkeConfig getIkeConfig() {

@@ -36,7 +36,11 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 
 	private Boolean updateIngressAclEntries;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private Boolean updateEgressAclEntries;
 
@@ -78,6 +82,7 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".Description" , egressAclEntriess.get(depth1).getDescription());
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".Protocol" , egressAclEntriess.get(depth1).getBizProtocol());
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".DestinationCidrIp" , egressAclEntriess.get(depth1).getDestinationCidrIp());
+				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".IpVersion" , egressAclEntriess.get(depth1).getIpVersion());
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".Port" , egressAclEntriess.get(depth1).getPort());
 			}
 		}	
@@ -116,6 +121,17 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 		}
 	}
 
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -124,6 +140,17 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -162,6 +189,7 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".NetworkAclEntryName" , ingressAclEntriess.get(depth1).getNetworkAclEntryName());
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Policy" , ingressAclEntriess.get(depth1).getPolicy());
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".SourceCidrIp" , ingressAclEntriess.get(depth1).getSourceCidrIp());
+				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".IpVersion" , ingressAclEntriess.get(depth1).getIpVersion());
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Description" , ingressAclEntriess.get(depth1).getDescription());
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Protocol" , ingressAclEntriess.get(depth1).getBizProtocol());
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Port" , ingressAclEntriess.get(depth1).getPort());
@@ -184,6 +212,8 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 		private String protocol;
 
 		private String destinationCidrIp;
+
+		private String ipVersion;
 
 		private String port;
 
@@ -243,6 +273,14 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 			this.destinationCidrIp = destinationCidrIp;
 		}
 
+		public String getIpVersion() {
+			return this.ipVersion;
+		}
+
+		public void setIpVersion(String ipVersion) {
+			this.ipVersion = ipVersion;
+		}
+
 		public String getPort() {
 			return this.port;
 		}
@@ -263,6 +301,8 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 		private String policy;
 
 		private String sourceCidrIp;
+
+		private String ipVersion;
 
 		private String description;
 
@@ -308,6 +348,14 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 
 		public void setSourceCidrIp(String sourceCidrIp) {
 			this.sourceCidrIp = sourceCidrIp;
+		}
+
+		public String getIpVersion() {
+			return this.ipVersion;
+		}
+
+		public void setIpVersion(String ipVersion) {
+			this.ipVersion = ipVersion;
 		}
 
 		public String getDescription() {

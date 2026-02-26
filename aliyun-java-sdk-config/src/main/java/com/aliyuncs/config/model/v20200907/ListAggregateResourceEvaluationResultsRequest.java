@@ -39,7 +39,7 @@ public class ListAggregateResourceEvaluationResultsRequest extends RpcAcsRequest
 
 	private String region;
 	public ListAggregateResourceEvaluationResultsRequest() {
-		super("Config", "2020-09-07", "ListAggregateResourceEvaluationResults");
+		super("Config", "2020-09-07", "ListAggregateResourceEvaluationResults", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

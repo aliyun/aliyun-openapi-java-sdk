@@ -25,15 +25,13 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDomainTopUrlVisitResponse> {
 	   
 
-	private String startTime;
-
 	private String domainName;
 
 	private String endTime;
 
-	private Long ownerId;
-
 	private String sortBy;
+
+	private String startTime;
 	public DescribeDomainTopUrlVisitRequest() {
 		super("Cdn", "2018-05-10", "DescribeDomainTopUrlVisit");
 		setMethod(MethodType.POST);
@@ -41,17 +39,6 @@ public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDoma
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
 	}
 
 	public String getDomainName() {
@@ -76,17 +63,6 @@ public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDoma
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getSortBy() {
 		return this.sortBy;
 	}
@@ -95,6 +71,17 @@ public class DescribeDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDoma
 		this.sortBy = sortBy;
 		if(sortBy != null){
 			putQueryParameter("SortBy", sortBy);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 

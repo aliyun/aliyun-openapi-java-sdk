@@ -72,6 +72,12 @@ public class AssumeRoleWithOIDCResponse extends AcsResponse {
 
 		private String clientIds;
 
+		private String expirationTime;
+
+		private String issuanceTime;
+
+		private String verificationInfo;
+
 		public String getSubject() {
 			return this.subject;
 		}
@@ -94,6 +100,30 @@ public class AssumeRoleWithOIDCResponse extends AcsResponse {
 
 		public void setClientIds(String clientIds) {
 			this.clientIds = clientIds;
+		}
+
+		public String getExpirationTime() {
+			return this.expirationTime;
+		}
+
+		public void setExpirationTime(String expirationTime) {
+			this.expirationTime = expirationTime;
+		}
+
+		public String getIssuanceTime() {
+			return this.issuanceTime;
+		}
+
+		public void setIssuanceTime(String issuanceTime) {
+			this.issuanceTime = issuanceTime;
+		}
+
+		public String getVerificationInfo() {
+			return this.verificationInfo;
+		}
+
+		public void setVerificationInfo(String verificationInfo) {
+			this.verificationInfo = verificationInfo;
 		}
 	}
 

@@ -63,6 +63,8 @@ public class DetectLivingFaceResponse extends AcsResponse {
 
 			private String taskId;
 
+			private Long faceNumber;
+
 			private List<Result> results;
 
 			public String getImageURL() {
@@ -81,6 +83,14 @@ public class DetectLivingFaceResponse extends AcsResponse {
 				this.taskId = taskId;
 			}
 
+			public Long getFaceNumber() {
+				return this.faceNumber;
+			}
+
+			public void setFaceNumber(Long faceNumber) {
+				this.faceNumber = faceNumber;
+			}
+
 			public List<Result> getResults() {
 				return this.results;
 			}
@@ -97,7 +107,11 @@ public class DetectLivingFaceResponse extends AcsResponse {
 
 				private Float rate;
 
+				private String messageTips;
+
 				private List<Frame> frames;
+
+				private Rect rect;
 
 				public String getSuggestion() {
 					return this.suggestion;
@@ -123,12 +137,28 @@ public class DetectLivingFaceResponse extends AcsResponse {
 					this.rate = rate;
 				}
 
+				public String getMessageTips() {
+					return this.messageTips;
+				}
+
+				public void setMessageTips(String messageTips) {
+					this.messageTips = messageTips;
+				}
+
 				public List<Frame> getFrames() {
 					return this.frames;
 				}
 
 				public void setFrames(List<Frame> frames) {
 					this.frames = frames;
+				}
+
+				public Rect getRect() {
+					return this.rect;
+				}
+
+				public void setRect(Rect rect) {
+					this.rect = rect;
 				}
 
 				public static class Frame {
@@ -151,6 +181,49 @@ public class DetectLivingFaceResponse extends AcsResponse {
 
 					public void setRate(Float rate) {
 						this.rate = rate;
+					}
+				}
+
+				public static class Rect {
+
+					private Long left;
+
+					private Long top;
+
+					private Long width;
+
+					private Long height;
+
+					public Long getLeft() {
+						return this.left;
+					}
+
+					public void setLeft(Long left) {
+						this.left = left;
+					}
+
+					public Long getTop() {
+						return this.top;
+					}
+
+					public void setTop(Long top) {
+						this.top = top;
+					}
+
+					public Long getWidth() {
+						return this.width;
+					}
+
+					public void setWidth(Long width) {
+						this.width = width;
+					}
+
+					public Long getHeight() {
+						return this.height;
+					}
+
+					public void setHeight(Long height) {
+						this.height = height;
 					}
 				}
 			}

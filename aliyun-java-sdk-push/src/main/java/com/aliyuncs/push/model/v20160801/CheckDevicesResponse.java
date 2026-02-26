@@ -47,17 +47,9 @@ public class CheckDevicesResponse extends AcsResponse {
 
 	public static class DeviceCheckInfo {
 
-		private String deviceId;
-
 		private Boolean available;
 
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
+		private String deviceId;
 
 		public Boolean getAvailable() {
 			return this.available;
@@ -65,6 +57,14 @@ public class CheckDevicesResponse extends AcsResponse {
 
 		public void setAvailable(Boolean available) {
 			this.available = available;
+		}
+
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
 		}
 	}
 

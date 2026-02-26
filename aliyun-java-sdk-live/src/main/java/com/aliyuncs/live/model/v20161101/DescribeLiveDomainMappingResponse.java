@@ -47,17 +47,9 @@ public class DescribeLiveDomainMappingResponse extends AcsResponse {
 
 	public static class LiveDomainModel {
 
-		private String domainName;
-
 		private String type;
 
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
+		private String domainName;
 
 		public String getType() {
 			return this.type;
@@ -65,6 +57,14 @@ public class DescribeLiveDomainMappingResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 	}
 

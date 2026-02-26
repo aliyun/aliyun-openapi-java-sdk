@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateInventoryLockResponse extends AcsResponse {
 
+	private Boolean status;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private Boolean status;
+	public Boolean getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class CreateInventoryLockResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public Boolean getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Boolean status) {
-		this.status = status;
 	}
 
 	@Override

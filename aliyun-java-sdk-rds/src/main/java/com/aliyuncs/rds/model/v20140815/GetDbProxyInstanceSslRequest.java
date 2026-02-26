@@ -25,6 +25,8 @@ import com.aliyuncs.rds.Endpoint;
 public class GetDbProxyInstanceSslRequest extends RpcAcsRequest<GetDbProxyInstanceSslResponse> {
 	   
 
+	private String dBProxyEngineType;
+
 	private String dbInstanceId;
 	public GetDbProxyInstanceSslRequest() {
 		super("Rds", "2014-08-15", "GetDbProxyInstanceSsl", "rds");
@@ -33,6 +35,17 @@ public class GetDbProxyInstanceSslRequest extends RpcAcsRequest<GetDbProxyInstan
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
+		if(dBProxyEngineType != null){
+			putQueryParameter("DBProxyEngineType", dBProxyEngineType);
+		}
 	}
 
 	public String getDbInstanceId() {

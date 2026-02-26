@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCpfsFileSystemsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<FileSystems> fileSystemList;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListCpfsFileSystemsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListCpfsFileSystemsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<FileSystems> getFileSystemList() {
@@ -77,37 +77,21 @@ public class ListCpfsFileSystemsResponse extends AcsResponse {
 
 	public static class FileSystems {
 
-		private String regionId;
-
-		private String zoneId;
-
 		private String fileSystemId;
-
-		private String createTime;
-
-		private String destription;
-
-		private String protocolType;
 
 		private String capacity;
 
+		private String createTime;
+
+		private String zoneId;
+
+		private String protocolType;
+
+		private String destription;
+
+		private String regionId;
+
 		private List<MountTargets> mountTargetList;
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
 
 		public String getFileSystemId() {
 			return this.fileSystemId;
@@ -115,6 +99,14 @@ public class ListCpfsFileSystemsResponse extends AcsResponse {
 
 		public void setFileSystemId(String fileSystemId) {
 			this.fileSystemId = fileSystemId;
+		}
+
+		public String getCapacity() {
+			return this.capacity;
+		}
+
+		public void setCapacity(String capacity) {
+			this.capacity = capacity;
 		}
 
 		public String getCreateTime() {
@@ -125,12 +117,12 @@ public class ListCpfsFileSystemsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getDestription() {
-			return this.destription;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setDestription(String destription) {
-			this.destription = destription;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public String getProtocolType() {
@@ -141,12 +133,20 @@ public class ListCpfsFileSystemsResponse extends AcsResponse {
 			this.protocolType = protocolType;
 		}
 
-		public String getCapacity() {
-			return this.capacity;
+		public String getDestription() {
+			return this.destription;
 		}
 
-		public void setCapacity(String capacity) {
-			this.capacity = capacity;
+		public void setDestription(String destription) {
+			this.destription = destription;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<MountTargets> getMountTargetList() {
@@ -159,22 +159,22 @@ public class ListCpfsFileSystemsResponse extends AcsResponse {
 
 		public static class MountTargets {
 
-			private String mountTargetDomain;
+			private String vpcId;
 
 			private String status;
 
-			private String networkType;
-
 			private String vswId;
 
-			private String vpcId;
+			private String networkType;
 
-			public String getMountTargetDomain() {
-				return this.mountTargetDomain;
+			private String mountTargetDomain;
+
+			public String getVpcId() {
+				return this.vpcId;
 			}
 
-			public void setMountTargetDomain(String mountTargetDomain) {
-				this.mountTargetDomain = mountTargetDomain;
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
 			}
 
 			public String getStatus() {
@@ -185,14 +185,6 @@ public class ListCpfsFileSystemsResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getNetworkType() {
-				return this.networkType;
-			}
-
-			public void setNetworkType(String networkType) {
-				this.networkType = networkType;
-			}
-
 			public String getVswId() {
 				return this.vswId;
 			}
@@ -201,12 +193,20 @@ public class ListCpfsFileSystemsResponse extends AcsResponse {
 				this.vswId = vswId;
 			}
 
-			public String getVpcId() {
-				return this.vpcId;
+			public String getNetworkType() {
+				return this.networkType;
 			}
 
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
+			public void setNetworkType(String networkType) {
+				this.networkType = networkType;
+			}
+
+			public String getMountTargetDomain() {
+				return this.mountTargetDomain;
+			}
+
+			public void setMountTargetDomain(String mountTargetDomain) {
+				this.mountTargetDomain = mountTargetDomain;
 			}
 		}
 	}

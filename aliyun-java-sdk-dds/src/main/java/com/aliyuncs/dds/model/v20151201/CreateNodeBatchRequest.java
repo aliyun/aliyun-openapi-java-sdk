@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -32,7 +33,9 @@ public class CreateNodeBatchRequest extends RpcAcsRequest<CreateNodeBatchRespons
 
 	private String couponNo;
 
-	private String securityToken;
+	private Boolean shardDirect;
+
+	private String accountName;
 
 	private String dBInstanceId;
 
@@ -47,9 +50,15 @@ public class CreateNodeBatchRequest extends RpcAcsRequest<CreateNodeBatchRespons
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String accountPassword;
 	public CreateNodeBatchRequest() {
 		super("Dds", "2015-12-01", "CreateNodeBatch", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -96,14 +105,25 @@ public class CreateNodeBatchRequest extends RpcAcsRequest<CreateNodeBatchRespons
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public Boolean getShardDirect() {
+		return this.shardDirect;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setShardDirect(Boolean shardDirect) {
+		this.shardDirect = shardDirect;
+		if(shardDirect != null){
+			putQueryParameter("ShardDirect", shardDirect.toString());
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 
@@ -181,6 +201,17 @@ public class CreateNodeBatchRequest extends RpcAcsRequest<CreateNodeBatchRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAccountPassword() {
+		return this.accountPassword;
+	}
+
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		if(accountPassword != null){
+			putQueryParameter("AccountPassword", accountPassword);
 		}
 	}
 

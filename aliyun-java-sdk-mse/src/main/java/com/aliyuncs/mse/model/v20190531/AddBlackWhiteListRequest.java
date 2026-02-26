@@ -25,6 +25,8 @@ import com.aliyuncs.mse.Endpoint;
 public class AddBlackWhiteListRequest extends RpcAcsRequest<AddBlackWhiteListResponse> {
 	   
 
+	private String note;
+
 	private String gatewayUniqueId;
 
 	private String type;
@@ -33,7 +35,11 @@ public class AddBlackWhiteListRequest extends RpcAcsRequest<AddBlackWhiteListRes
 
 	private Boolean isWhite;
 
+	private String resourceIdJsonList;
+
 	private String resourceType;
+
+	private String name;
 
 	private String acceptLanguage;
 
@@ -45,6 +51,17 @@ public class AddBlackWhiteListRequest extends RpcAcsRequest<AddBlackWhiteListRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNote() {
+		return this.note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+		if(note != null){
+			putQueryParameter("Note", note);
+		}
 	}
 
 	public String getGatewayUniqueId() {
@@ -91,6 +108,17 @@ public class AddBlackWhiteListRequest extends RpcAcsRequest<AddBlackWhiteListRes
 		}
 	}
 
+	public String getResourceIdJsonList() {
+		return this.resourceIdJsonList;
+	}
+
+	public void setResourceIdJsonList(String resourceIdJsonList) {
+		this.resourceIdJsonList = resourceIdJsonList;
+		if(resourceIdJsonList != null){
+			putQueryParameter("ResourceIdJsonList", resourceIdJsonList);
+		}
+	}
+
 	public String getResourceType() {
 		return this.resourceType;
 	}
@@ -99,6 +127,17 @@ public class AddBlackWhiteListRequest extends RpcAcsRequest<AddBlackWhiteListRes
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

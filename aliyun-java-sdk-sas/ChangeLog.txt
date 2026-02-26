@@ -1,3 +1,65 @@
+2023-07-20 Version: 1.1.37
+- Support rd sdk.
+
+2023-07-08 Version: 1.1.36
+- Supported tag.
+- Support RAM action.
+- Support NextToken.
+- Fixed bugs for os statistics.
+- Support api for vul auth.
+- Add GetCheckSale.
+- Add Vul,CSPM,RASP.
+
+2023-07-01 Version: 1.1.35
+- Supported API For ECS.
+- Service online.
+- Fixed bugs for Container.
+- Supported Global Param.
+- Support lable.
+- Fixed bugs for tags.
+- Support security score rule.
+
+2023-06-24 Version: 1.1.34
+- Supported ListInstanceRiskNum For Ecs.
+- Supported ListInstanceRiskLevels For ECS.
+- Supported ListInstanceRiskNum For ECS.
+- Change rate limiter for FileDetect API.
+- Fixed bugs for filed CycleDays  not show.
+- Fixed bugs for TimeOut.
+- Add Global Param.
+- Support container exposed analysis.
+- Supported Global Param.
+
+2023-06-17 Version: 1.1.33
+- Supported backup record.
+
+2023-06-10 Version: 1.1.32
+- Support remark for suspicious deal.
+- Supported GetClientRatioStatistic.
+- Support mistakReport for suspicious.
+- Support TimeStamp for AntiBruteRules.
+
+2023-06-06 Version: 1.1.31
+- Change ListAssetSelectionTarget Request.
+
+2023-02-22 Version: 1.1.30
+- Change DescribeLogstoreStorage Response.
+
+2022-09-28 Version: 1.1.29
+- Change RefreshAssets Public.
+
+2022-09-19 Version: 1.1.28
+- Change RefreshAssets Public.
+
+2022-09-08 Version: 1.1.27
+- Change RefreshAssets Public.
+
+2022-09-08 Version: 1.1.26
+- Change RefreshAssets Public.
+
+2022-08-31 Version: 1.1.25
+- Change GetFileDetectResult Public.
+
 2022-07-29 Version: 1.1.24
 - Change ListCheckInstanceResult Public.
 

@@ -27,20 +27,20 @@ public class ListCloudMetricProfilingsResponseUnmarshaller {
 	public static ListCloudMetricProfilingsResponse unmarshall(ListCloudMetricProfilingsResponse listCloudMetricProfilingsResponse, UnmarshallerContext _ctx) {
 		
 		listCloudMetricProfilingsResponse.setRequestId(_ctx.stringValue("ListCloudMetricProfilingsResponse.RequestId"));
-		listCloudMetricProfilingsResponse.setTotalCount(_ctx.integerValue("ListCloudMetricProfilingsResponse.TotalCount"));
-		listCloudMetricProfilingsResponse.setPageNumber(_ctx.integerValue("ListCloudMetricProfilingsResponse.PageNumber"));
 		listCloudMetricProfilingsResponse.setPageSize(_ctx.integerValue("ListCloudMetricProfilingsResponse.PageSize"));
+		listCloudMetricProfilingsResponse.setPageNumber(_ctx.integerValue("ListCloudMetricProfilingsResponse.PageNumber"));
+		listCloudMetricProfilingsResponse.setTotalCount(_ctx.integerValue("ListCloudMetricProfilingsResponse.TotalCount"));
 
 		List<ProfilingInfo> profilings = new ArrayList<ProfilingInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListCloudMetricProfilingsResponse.Profilings.Length"); i++) {
 			ProfilingInfo profilingInfo = new ProfilingInfo();
 			profilingInfo.setProfilingId(_ctx.stringValue("ListCloudMetricProfilingsResponse.Profilings["+ i +"].ProfilingId"));
-			profilingInfo.setInstanceId(_ctx.stringValue("ListCloudMetricProfilingsResponse.Profilings["+ i +"].InstanceId"));
-			profilingInfo.setHostName(_ctx.stringValue("ListCloudMetricProfilingsResponse.Profilings["+ i +"].HostName"));
-			profilingInfo.setPid(_ctx.integerValue("ListCloudMetricProfilingsResponse.Profilings["+ i +"].Pid"));
-			profilingInfo.setDuration(_ctx.integerValue("ListCloudMetricProfilingsResponse.Profilings["+ i +"].Duration"));
-			profilingInfo.setFreq(_ctx.integerValue("ListCloudMetricProfilingsResponse.Profilings["+ i +"].Freq"));
 			profilingInfo.setTriggerTime(_ctx.stringValue("ListCloudMetricProfilingsResponse.Profilings["+ i +"].TriggerTime"));
+			profilingInfo.setPid(_ctx.integerValue("ListCloudMetricProfilingsResponse.Profilings["+ i +"].Pid"));
+			profilingInfo.setHostName(_ctx.stringValue("ListCloudMetricProfilingsResponse.Profilings["+ i +"].HostName"));
+			profilingInfo.setDuration(_ctx.integerValue("ListCloudMetricProfilingsResponse.Profilings["+ i +"].Duration"));
+			profilingInfo.setInstanceId(_ctx.stringValue("ListCloudMetricProfilingsResponse.Profilings["+ i +"].InstanceId"));
+			profilingInfo.setFreq(_ctx.integerValue("ListCloudMetricProfilingsResponse.Profilings["+ i +"].Freq"));
 
 			profilings.add(profilingInfo);
 		}

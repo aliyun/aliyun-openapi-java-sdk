@@ -29,28 +29,28 @@ public class DescribeMPCoSPhaseInfoResponseUnmarshaller {
 		
 		describeMPCoSPhaseInfoResponse.setRequestId(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.RequestId"));
 		describeMPCoSPhaseInfoResponse.setCode(_ctx.integerValue("DescribeMPCoSPhaseInfoResponse.Code"));
-		describeMPCoSPhaseInfoResponse.setSuccess(_ctx.booleanValue("DescribeMPCoSPhaseInfoResponse.Success"));
 		describeMPCoSPhaseInfoResponse.setMessage(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Message"));
+		describeMPCoSPhaseInfoResponse.setSuccess(_ctx.booleanValue("DescribeMPCoSPhaseInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setProductKey(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.ProductKey"));
-		data.setIotId(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.IotId"));
-		data.setDataValue(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.DataValue"));
-		data.setBlockNumber(_ctx.longValue("DescribeMPCoSPhaseInfoResponse.Data.BlockNumber"));
 		data.setPreviousHash(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.PreviousHash"));
-		data.setBlockHash(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.BlockHash"));
-		data.setTransactionHash(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.TransactionHash"));
+		data.setProductKey(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.ProductKey"));
 		data.setDataHash(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.DataHash"));
+		data.setDataValue(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.DataValue"));
 		data.setTimestamp(_ctx.longValue("DescribeMPCoSPhaseInfoResponse.Data.Timestamp"));
+		data.setTransactionHash(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.TransactionHash"));
+		data.setBlockHash(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.BlockHash"));
+		data.setBlockNumber(_ctx.longValue("DescribeMPCoSPhaseInfoResponse.Data.BlockNumber"));
+		data.setIotId(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.IotId"));
 
 		List<RelatedData> relatedDataList = new ArrayList<RelatedData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMPCoSPhaseInfoResponse.Data.RelatedDataList.Length"); i++) {
 			RelatedData relatedData = new RelatedData();
-			relatedData.setRelatedPhaseId(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.RelatedDataList["+ i +"].RelatedPhaseId"));
-			relatedData.setRelatedPhaseName(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.RelatedDataList["+ i +"].RelatedPhaseName"));
 			relatedData.setRelatedDataKey(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.RelatedDataList["+ i +"].RelatedDataKey"));
-			relatedData.setRelatedDataSeq(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.RelatedDataList["+ i +"].RelatedDataSeq"));
 			relatedData.setRelatedPhaseDataHash(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.RelatedDataList["+ i +"].RelatedPhaseDataHash"));
+			relatedData.setRelatedDataSeq(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.RelatedDataList["+ i +"].RelatedDataSeq"));
+			relatedData.setRelatedPhaseName(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.RelatedDataList["+ i +"].RelatedPhaseName"));
+			relatedData.setRelatedPhaseId(_ctx.stringValue("DescribeMPCoSPhaseInfoResponse.Data.RelatedDataList["+ i +"].RelatedPhaseId"));
 
 			relatedDataList.add(relatedData);
 		}

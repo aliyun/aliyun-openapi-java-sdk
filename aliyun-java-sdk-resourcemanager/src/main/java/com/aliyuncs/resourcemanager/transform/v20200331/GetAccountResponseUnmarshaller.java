@@ -43,6 +43,7 @@ public class GetAccountResponseUnmarshaller {
 		account.setAccountName(_ctx.stringValue("GetAccountResponse.Account.AccountName"));
 		account.setResourceDirectoryPath(_ctx.stringValue("GetAccountResponse.Account.ResourceDirectoryPath"));
 		account.setLocation(_ctx.stringValue("GetAccountResponse.Account.Location"));
+		account.setEmailStatus(_ctx.stringValue("GetAccountResponse.Account.EmailStatus"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("GetAccountResponse.Account.Tags.Length"); i++) {

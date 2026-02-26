@@ -14,6 +14,9 @@
 
 package com.aliyuncs.eas.transform.v20210701;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.eas.model.v20210701.CreateResourceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -27,6 +30,12 @@ public class CreateResourceResponseUnmarshaller {
 		createResourceResponse.setResourceName(_ctx.stringValue("CreateResourceResponse.ResourceName"));
 		createResourceResponse.setClusterId(_ctx.stringValue("CreateResourceResponse.ClusterId"));
 		createResourceResponse.setOwnerUid(_ctx.stringValue("CreateResourceResponse.OwnerUid"));
+
+		List<String> instanceIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("CreateResourceResponse.InstanceIds.Length"); i++) {
+			instanceIds.add(_ctx.stringValue("CreateResourceResponse.InstanceIds["+ i +"]"));
+		}
+		createResourceResponse.setInstanceIds(instanceIds);
 	 
 	 	return createResourceResponse;
 	}

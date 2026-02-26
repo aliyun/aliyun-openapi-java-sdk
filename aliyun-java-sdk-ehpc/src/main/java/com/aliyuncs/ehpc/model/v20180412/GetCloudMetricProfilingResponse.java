@@ -47,21 +47,13 @@ public class GetCloudMetricProfilingResponse extends AcsResponse {
 
 	public static class SvgInfo {
 
-		private String name;
-
 		private String type;
 
 		private String url;
 
+		private String name;
+
 		private Integer size;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getType() {
 			return this.type;
@@ -77,6 +69,14 @@ public class GetCloudMetricProfilingResponse extends AcsResponse {
 
 		public void setUrl(String url) {
 			this.url = url;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Integer getSize() {

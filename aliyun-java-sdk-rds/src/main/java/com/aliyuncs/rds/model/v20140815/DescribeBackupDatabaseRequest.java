@@ -27,13 +27,13 @@ public class DescribeBackupDatabaseRequest extends RpcAcsRequest<DescribeBackupD
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String backupId;
 
 	private Long ownerId;
-
-	private String dBInstanceId;
 	public DescribeBackupDatabaseRequest() {
 		super("Rds", "2014-08-15", "DescribeBackupDatabase", "rds");
 		setMethod(MethodType.POST);
@@ -51,6 +51,17 @@ public class DescribeBackupDatabaseRequest extends RpcAcsRequest<DescribeBackupD
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class DescribeBackupDatabaseRequest extends RpcAcsRequest<DescribeBackupD
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

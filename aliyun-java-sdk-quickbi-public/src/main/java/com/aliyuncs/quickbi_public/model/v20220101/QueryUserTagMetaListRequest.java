@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class QueryUserTagMetaListRequest extends RpcAcsRequest<QueryUserTagMetaListResponse> {
 	   
 	public QueryUserTagMetaListRequest() {
-		super("quickbi-public", "2022-01-01", "QueryUserTagMetaList", "quickbi");
+		super("quickbi-public", "2022-01-01", "QueryUserTagMetaList", "2.2.0");
 		setMethod(MethodType.GET);
 	}
 

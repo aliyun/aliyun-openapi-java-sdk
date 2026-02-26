@@ -103,6 +103,10 @@ public class ListNotificationPoliciesResponse extends AcsResponse {
 
 			private Long integrationId;
 
+			private Boolean directedMode;
+
+			private String state;
+
 			private List<MatchingRulesItem> matchingRules;
 
 			private GroupRule groupRule;
@@ -165,6 +169,22 @@ public class ListNotificationPoliciesResponse extends AcsResponse {
 
 			public void setIntegrationId(Long integrationId) {
 				this.integrationId = integrationId;
+			}
+
+			public Boolean getDirectedMode() {
+				return this.directedMode;
+			}
+
+			public void setDirectedMode(Boolean directedMode) {
+				this.directedMode = directedMode;
+			}
+
+			public String getState() {
+				return this.state;
+			}
+
+			public void setState(String state) {
+				this.state = state;
 			}
 
 			public List<MatchingRulesItem> getMatchingRules() {
@@ -328,6 +348,8 @@ public class ListNotificationPoliciesResponse extends AcsResponse {
 
 					private String notifyObjectName;
 
+					private List<String> notifyChannels1;
+
 					public String getNotifyObjectType() {
 						return this.notifyObjectType;
 					}
@@ -350,6 +372,14 @@ public class ListNotificationPoliciesResponse extends AcsResponse {
 
 					public void setNotifyObjectName(String notifyObjectName) {
 						this.notifyObjectName = notifyObjectName;
+					}
+
+					public List<String> getNotifyChannels1() {
+						return this.notifyChannels1;
+					}
+
+					public void setNotifyChannels1(List<String> notifyChannels1) {
+						this.notifyChannels1 = notifyChannels1;
 					}
 				}
 			}

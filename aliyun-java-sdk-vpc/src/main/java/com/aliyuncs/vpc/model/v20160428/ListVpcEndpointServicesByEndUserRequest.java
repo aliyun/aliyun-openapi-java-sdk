@@ -27,17 +27,17 @@ public class ListVpcEndpointServicesByEndUserRequest extends RpcAcsRequest<ListV
 
 	private Long resourceOwnerId;
 
+	private String nextToken;
+
+	private String serviceName;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String nextToken;
-
 	private Long maxResults;
-
-	private String serviceName;
 	public ListVpcEndpointServicesByEndUserRequest() {
 		super("Vpc", "2016-04-28", "ListVpcEndpointServicesByEndUser", "vpc");
 		setMethod(MethodType.POST);
@@ -55,6 +55,28 @@ public class ListVpcEndpointServicesByEndUserRequest extends RpcAcsRequest<ListV
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 
@@ -91,17 +113,6 @@ public class ListVpcEndpointServicesByEndUserRequest extends RpcAcsRequest<ListV
 		}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
 	public Long getMaxResults() {
 		return this.maxResults;
 	}
@@ -110,17 +121,6 @@ public class ListVpcEndpointServicesByEndUserRequest extends RpcAcsRequest<ListV
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
-		}
-	}
-
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 

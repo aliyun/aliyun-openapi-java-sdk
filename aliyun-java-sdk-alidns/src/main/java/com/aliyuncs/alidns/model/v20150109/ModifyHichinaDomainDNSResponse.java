@@ -27,9 +27,9 @@ public class ModifyHichinaDomainDNSResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> originalDnsServers;
-
 	private List<String> newDnsServers;
+
+	private List<String> originalDnsServers;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,20 +39,20 @@ public class ModifyHichinaDomainDNSResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getOriginalDnsServers() {
-		return this.originalDnsServers;
-	}
-
-	public void setOriginalDnsServers(List<String> originalDnsServers) {
-		this.originalDnsServers = originalDnsServers;
-	}
-
 	public List<String> getNewDnsServers() {
 		return this.newDnsServers;
 	}
 
 	public void setNewDnsServers(List<String> newDnsServers) {
 		this.newDnsServers = newDnsServers;
+	}
+
+	public List<String> getOriginalDnsServers() {
+		return this.originalDnsServers;
+	}
+
+	public void setOriginalDnsServers(List<String> originalDnsServers) {
+		this.originalDnsServers = originalDnsServers;
 	}
 
 	@Override

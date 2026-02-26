@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnIpaServiceResponse extends AcsResponse {
 
+	private String changingAffectTime;
+
 	private String requestId;
-
-	private String instanceId;
-
-	private String internetChargeType;
-
-	private String openingTime;
 
 	private String changingChargeType;
 
-	private String changingAffectTime;
+	private String openingTime;
+
+	private String internetChargeType;
+
+	private String instanceId;
 
 	private List<LockReason> operationLocks;
+
+	public String getChangingAffectTime() {
+		return this.changingAffectTime;
+	}
+
+	public void setChangingAffectTime(String changingAffectTime) {
+		this.changingAffectTime = changingAffectTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,30 +53,6 @@ public class DescribeDcdnIpaServiceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-	}
-
-	public String getOpeningTime() {
-		return this.openingTime;
-	}
-
-	public void setOpeningTime(String openingTime) {
-		this.openingTime = openingTime;
 	}
 
 	public String getChangingChargeType() {
@@ -79,12 +63,28 @@ public class DescribeDcdnIpaServiceResponse extends AcsResponse {
 		this.changingChargeType = changingChargeType;
 	}
 
-	public String getChangingAffectTime() {
-		return this.changingAffectTime;
+	public String getOpeningTime() {
+		return this.openingTime;
 	}
 
-	public void setChangingAffectTime(String changingAffectTime) {
-		this.changingAffectTime = changingAffectTime;
+	public void setOpeningTime(String openingTime) {
+		this.openingTime = openingTime;
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public List<LockReason> getOperationLocks() {

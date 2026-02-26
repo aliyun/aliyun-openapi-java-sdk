@@ -30,9 +30,9 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 
 	private String keyId;
 
-	private String secretName;
-
 	private String tags;
+
+	private String secretName;
 	public TagResourceRequest() {
 		super("Kms", "2016-01-20", "TagResource", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -65,17 +65,6 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		}
 	}
 
-	public String getSecretName() {
-		return this.secretName;
-	}
-
-	public void setSecretName(String secretName) {
-		this.secretName = secretName;
-		if(secretName != null){
-			putQueryParameter("SecretName", secretName);
-		}
-	}
-
 	public String getTags() {
 		return this.tags;
 	}
@@ -84,6 +73,17 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		this.tags = tags;
 		if(tags != null){
 			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getSecretName() {
+		return this.secretName;
+	}
+
+	public void setSecretName(String secretName) {
+		this.secretName = secretName;
+		if(secretName != null){
+			putQueryParameter("SecretName", secretName);
 		}
 	}
 

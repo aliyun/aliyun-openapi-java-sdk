@@ -32,15 +32,15 @@ public class ListUserGroupsByUserIdResponseUnmarshaller {
 		List<Data> result = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserGroupsByUserIdResponse.Result.Length"); i++) {
 			Data data = new Data();
-			data.setIdentifiedPath(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].IdentifiedPath"));
-			data.setParentUsergroupId(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].ParentUsergroupId"));
-			data.setModifiedTime(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].ModifiedTime"));
-			data.setCreateUser(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].CreateUser"));
-			data.setUsergroupName(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].UsergroupName"));
 			data.setCreateTime(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].CreateTime"));
+			data.setCreateUser(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].CreateUser"));
+			data.setIdentifiedPath(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].IdentifiedPath"));
+			data.setModifiedTime(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].ModifiedTime"));
+			data.setModifyUser(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].ModifyUser"));
+			data.setParentUsergroupId(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].ParentUsergroupId"));
 			data.setUsergroupDesc(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].UsergroupDesc"));
 			data.setUsergroupId(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].UsergroupId"));
-			data.setModifyUser(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].ModifyUser"));
+			data.setUsergroupName(_ctx.stringValue("ListUserGroupsByUserIdResponse.Result["+ i +"].UsergroupName"));
 
 			result.add(data);
 		}

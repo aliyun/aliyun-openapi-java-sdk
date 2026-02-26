@@ -27,7 +27,7 @@ public class DescribeNFSClientStatusRequest extends RpcAcsRequest<DescribeNFSCli
 
 	private String instanceId;
 	public DescribeNFSClientStatusRequest() {
-		super("EHPC", "2018-04-12", "DescribeNFSClientStatus");
+		super("EHPC", "2018-04-12", "DescribeNFSClientStatus", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

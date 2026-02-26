@@ -27,7 +27,7 @@ public class DeleteGroupsRequest extends RoaAcsRequest<DeleteGroupsResponse> {
 
 	private String clientInfo;
 	public DeleteGroupsRequest() {
-		super("Green", "2018-05-09", "DeleteGroups", "green");
+		super("Green", "2018-05-09", "DeleteGroups");
 		setUriPattern("/green/sface/person/groups/delete");
 		setMethod(MethodType.POST);
 		try {

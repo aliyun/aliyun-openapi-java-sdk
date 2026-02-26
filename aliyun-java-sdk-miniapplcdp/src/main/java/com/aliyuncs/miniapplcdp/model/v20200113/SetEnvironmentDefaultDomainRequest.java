@@ -31,6 +31,8 @@ public class SetEnvironmentDefaultDomainRequest extends RpcAcsRequest<SetEnviron
 	private String domain;
 
 	private String envId;
+
+	private String source;
 	public SetEnvironmentDefaultDomainRequest() {
 		super("miniapplcdp", "2020-01-13", "SetEnvironmentDefaultDomain");
 		setMethod(MethodType.POST);
@@ -77,6 +79,17 @@ public class SetEnvironmentDefaultDomainRequest extends RpcAcsRequest<SetEnviron
 		this.envId = envId;
 		if(envId != null){
 			putQueryParameter("EnvId", envId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

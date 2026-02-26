@@ -61,6 +61,10 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setCloudType(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CloudType"));
 			dBInstance.setCapacityUnit(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CapacityUnit"));
 			dBInstance.setStorageType(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].StorageType"));
+			dBInstance.setSecondaryZoneId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].SecondaryZoneId"));
+			dBInstance.setHiddenZoneId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].HiddenZoneId"));
+			dBInstance.setBackupRetentionPolicy(_ctx.integerValue("DescribeDBInstancesResponse.DBInstances["+ i +"].BackupRetentionPolicy"));
+			dBInstance.setReleaseTime(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ReleaseTime"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Tags.Length"); j++) {

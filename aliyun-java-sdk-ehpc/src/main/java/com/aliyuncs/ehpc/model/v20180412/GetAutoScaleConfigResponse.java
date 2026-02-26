@@ -25,112 +25,52 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAutoScaleConfigResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String uid;
-
-	private String clusterId;
-
-	private String clusterType;
-
-	private Boolean enableAutoGrow;
-
-	private Boolean enableAutoShrink;
-
-	private Integer growIntervalInMinutes;
-
-	private Integer shrinkIntervalInMinutes;
-
-	private Integer shrinkIdleTimes;
+	private Integer maxNodesInCluster;
 
 	private Integer growTimeoutInMinutes;
 
-	private Integer extraNodesGrowRatio;
+	private String spotStrategy;
 
-	private Integer growRatio;
+	private Boolean enableAutoShrink;
 
-	private Integer maxNodesInCluster;
+	private String requestId;
+
+	private Boolean enableAutoGrow;
+
+	private String clusterType;
 
 	private String excludeNodes;
 
-	private String spotStrategy;
+	private Integer shrinkIntervalInMinutes;
+
+	private Integer growIntervalInMinutes;
 
 	private Float spotPriceLimit;
 
+	private Integer extraNodesGrowRatio;
+
+	private Integer shrinkIdleTimes;
+
 	private String imageId;
+
+	private Integer growRatio;
+
+	private String clusterId;
+
+	private String uid;
+
+	private Boolean computeEnableHt;
+
+	private String dnsConfig;
 
 	private List<QueueInfo> queues;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getMaxNodesInCluster() {
+		return this.maxNodesInCluster;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getUid() {
-		return this.uid;
-	}
-
-	public void setUid(String uid) {
-		this.uid = uid;
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-	}
-
-	public String getClusterType() {
-		return this.clusterType;
-	}
-
-	public void setClusterType(String clusterType) {
-		this.clusterType = clusterType;
-	}
-
-	public Boolean getEnableAutoGrow() {
-		return this.enableAutoGrow;
-	}
-
-	public void setEnableAutoGrow(Boolean enableAutoGrow) {
-		this.enableAutoGrow = enableAutoGrow;
-	}
-
-	public Boolean getEnableAutoShrink() {
-		return this.enableAutoShrink;
-	}
-
-	public void setEnableAutoShrink(Boolean enableAutoShrink) {
-		this.enableAutoShrink = enableAutoShrink;
-	}
-
-	public Integer getGrowIntervalInMinutes() {
-		return this.growIntervalInMinutes;
-	}
-
-	public void setGrowIntervalInMinutes(Integer growIntervalInMinutes) {
-		this.growIntervalInMinutes = growIntervalInMinutes;
-	}
-
-	public Integer getShrinkIntervalInMinutes() {
-		return this.shrinkIntervalInMinutes;
-	}
-
-	public void setShrinkIntervalInMinutes(Integer shrinkIntervalInMinutes) {
-		this.shrinkIntervalInMinutes = shrinkIntervalInMinutes;
-	}
-
-	public Integer getShrinkIdleTimes() {
-		return this.shrinkIdleTimes;
-	}
-
-	public void setShrinkIdleTimes(Integer shrinkIdleTimes) {
-		this.shrinkIdleTimes = shrinkIdleTimes;
+	public void setMaxNodesInCluster(Integer maxNodesInCluster) {
+		this.maxNodesInCluster = maxNodesInCluster;
 	}
 
 	public Integer getGrowTimeoutInMinutes() {
@@ -141,28 +81,44 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 		this.growTimeoutInMinutes = growTimeoutInMinutes;
 	}
 
-	public Integer getExtraNodesGrowRatio() {
-		return this.extraNodesGrowRatio;
+	public String getSpotStrategy() {
+		return this.spotStrategy;
 	}
 
-	public void setExtraNodesGrowRatio(Integer extraNodesGrowRatio) {
-		this.extraNodesGrowRatio = extraNodesGrowRatio;
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
 	}
 
-	public Integer getGrowRatio() {
-		return this.growRatio;
+	public Boolean getEnableAutoShrink() {
+		return this.enableAutoShrink;
 	}
 
-	public void setGrowRatio(Integer growRatio) {
-		this.growRatio = growRatio;
+	public void setEnableAutoShrink(Boolean enableAutoShrink) {
+		this.enableAutoShrink = enableAutoShrink;
 	}
 
-	public Integer getMaxNodesInCluster() {
-		return this.maxNodesInCluster;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMaxNodesInCluster(Integer maxNodesInCluster) {
-		this.maxNodesInCluster = maxNodesInCluster;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getEnableAutoGrow() {
+		return this.enableAutoGrow;
+	}
+
+	public void setEnableAutoGrow(Boolean enableAutoGrow) {
+		this.enableAutoGrow = enableAutoGrow;
+	}
+
+	public String getClusterType() {
+		return this.clusterType;
+	}
+
+	public void setClusterType(String clusterType) {
+		this.clusterType = clusterType;
 	}
 
 	public String getExcludeNodes() {
@@ -173,12 +129,20 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 		this.excludeNodes = excludeNodes;
 	}
 
-	public String getSpotStrategy() {
-		return this.spotStrategy;
+	public Integer getShrinkIntervalInMinutes() {
+		return this.shrinkIntervalInMinutes;
 	}
 
-	public void setSpotStrategy(String spotStrategy) {
-		this.spotStrategy = spotStrategy;
+	public void setShrinkIntervalInMinutes(Integer shrinkIntervalInMinutes) {
+		this.shrinkIntervalInMinutes = shrinkIntervalInMinutes;
+	}
+
+	public Integer getGrowIntervalInMinutes() {
+		return this.growIntervalInMinutes;
+	}
+
+	public void setGrowIntervalInMinutes(Integer growIntervalInMinutes) {
+		this.growIntervalInMinutes = growIntervalInMinutes;
 	}
 
 	public Float getSpotPriceLimit() {
@@ -189,12 +153,68 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 		this.spotPriceLimit = spotPriceLimit;
 	}
 
+	public Integer getExtraNodesGrowRatio() {
+		return this.extraNodesGrowRatio;
+	}
+
+	public void setExtraNodesGrowRatio(Integer extraNodesGrowRatio) {
+		this.extraNodesGrowRatio = extraNodesGrowRatio;
+	}
+
+	public Integer getShrinkIdleTimes() {
+		return this.shrinkIdleTimes;
+	}
+
+	public void setShrinkIdleTimes(Integer shrinkIdleTimes) {
+		this.shrinkIdleTimes = shrinkIdleTimes;
+	}
+
 	public String getImageId() {
 		return this.imageId;
 	}
 
 	public void setImageId(String imageId) {
 		this.imageId = imageId;
+	}
+
+	public Integer getGrowRatio() {
+		return this.growRatio;
+	}
+
+	public void setGrowRatio(Integer growRatio) {
+		this.growRatio = growRatio;
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+	}
+
+	public String getUid() {
+		return this.uid;
+	}
+
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
+
+	public Boolean getComputeEnableHt() {
+		return this.computeEnableHt;
+	}
+
+	public void setComputeEnableHt(Boolean computeEnableHt) {
+		this.computeEnableHt = computeEnableHt;
+	}
+
+	public String getDnsConfig() {
+		return this.dnsConfig;
+	}
+
+	public void setDnsConfig(String dnsConfig) {
+		this.dnsConfig = dnsConfig;
 	}
 
 	public List<QueueInfo> getQueues() {
@@ -207,109 +227,47 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 	public static class QueueInfo {
 
-		private String queueName;
-
-		private String resourceGroupId;
-
-		private String instanceType;
-
-		private String spotStrategy;
-
-		private Float spotPriceLimit;
-
-		private Boolean enableAutoGrow;
-
-		private Boolean enableAutoShrink;
-
-		private Integer maxNodesInQueue;
-
-		private Integer minNodesInQueue;
-
 		private String queueImageId;
-
-		private String hostNamePrefix;
-
-		private String hostNameSuffix;
-
-		private Integer systemDiskSize;
 
 		private String systemDiskCategory;
 
+		private String instanceType;
+
+		private String hostNameSuffix;
+
+		private String spotStrategy;
+
+		private Integer minNodesInQueue;
+
+		private String hostNamePrefix;
+
+		private Integer systemDiskSize;
+
+		private Integer maxNodesInQueue;
+
+		private Boolean enableAutoShrink;
+
+		private String queueName;
+
+		private Boolean enableAutoGrow;
+
 		private String systemDiskLevel;
+
+		private String resourceGroupId;
+
+		private Float spotPriceLimit;
+
+		private Long maxNodesPerCycle;
+
+		private Long minNodesPerCycle;
+
+		private Boolean autoMinNodesPerCycle;
+
+		private Boolean sortedByInventory;
 
 		private List<InstanceTypeInfo> instanceTypes;
 
-		public String getQueueName() {
-			return this.queueName;
-		}
-
-		public void setQueueName(String queueName) {
-			this.queueName = queueName;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getSpotStrategy() {
-			return this.spotStrategy;
-		}
-
-		public void setSpotStrategy(String spotStrategy) {
-			this.spotStrategy = spotStrategy;
-		}
-
-		public Float getSpotPriceLimit() {
-			return this.spotPriceLimit;
-		}
-
-		public void setSpotPriceLimit(Float spotPriceLimit) {
-			this.spotPriceLimit = spotPriceLimit;
-		}
-
-		public Boolean getEnableAutoGrow() {
-			return this.enableAutoGrow;
-		}
-
-		public void setEnableAutoGrow(Boolean enableAutoGrow) {
-			this.enableAutoGrow = enableAutoGrow;
-		}
-
-		public Boolean getEnableAutoShrink() {
-			return this.enableAutoShrink;
-		}
-
-		public void setEnableAutoShrink(Boolean enableAutoShrink) {
-			this.enableAutoShrink = enableAutoShrink;
-		}
-
-		public Integer getMaxNodesInQueue() {
-			return this.maxNodesInQueue;
-		}
-
-		public void setMaxNodesInQueue(Integer maxNodesInQueue) {
-			this.maxNodesInQueue = maxNodesInQueue;
-		}
-
-		public Integer getMinNodesInQueue() {
-			return this.minNodesInQueue;
-		}
-
-		public void setMinNodesInQueue(Integer minNodesInQueue) {
-			this.minNodesInQueue = minNodesInQueue;
-		}
+		private List<DataDisksInfo> dataDisks;
 
 		public String getQueueImageId() {
 			return this.queueImageId;
@@ -317,30 +275,6 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		public void setQueueImageId(String queueImageId) {
 			this.queueImageId = queueImageId;
-		}
-
-		public String getHostNamePrefix() {
-			return this.hostNamePrefix;
-		}
-
-		public void setHostNamePrefix(String hostNamePrefix) {
-			this.hostNamePrefix = hostNamePrefix;
-		}
-
-		public String getHostNameSuffix() {
-			return this.hostNameSuffix;
-		}
-
-		public void setHostNameSuffix(String hostNameSuffix) {
-			this.hostNameSuffix = hostNameSuffix;
-		}
-
-		public Integer getSystemDiskSize() {
-			return this.systemDiskSize;
-		}
-
-		public void setSystemDiskSize(Integer systemDiskSize) {
-			this.systemDiskSize = systemDiskSize;
 		}
 
 		public String getSystemDiskCategory() {
@@ -351,12 +285,140 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 			this.systemDiskCategory = systemDiskCategory;
 		}
 
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getHostNameSuffix() {
+			return this.hostNameSuffix;
+		}
+
+		public void setHostNameSuffix(String hostNameSuffix) {
+			this.hostNameSuffix = hostNameSuffix;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
+		public Integer getMinNodesInQueue() {
+			return this.minNodesInQueue;
+		}
+
+		public void setMinNodesInQueue(Integer minNodesInQueue) {
+			this.minNodesInQueue = minNodesInQueue;
+		}
+
+		public String getHostNamePrefix() {
+			return this.hostNamePrefix;
+		}
+
+		public void setHostNamePrefix(String hostNamePrefix) {
+			this.hostNamePrefix = hostNamePrefix;
+		}
+
+		public Integer getSystemDiskSize() {
+			return this.systemDiskSize;
+		}
+
+		public void setSystemDiskSize(Integer systemDiskSize) {
+			this.systemDiskSize = systemDiskSize;
+		}
+
+		public Integer getMaxNodesInQueue() {
+			return this.maxNodesInQueue;
+		}
+
+		public void setMaxNodesInQueue(Integer maxNodesInQueue) {
+			this.maxNodesInQueue = maxNodesInQueue;
+		}
+
+		public Boolean getEnableAutoShrink() {
+			return this.enableAutoShrink;
+		}
+
+		public void setEnableAutoShrink(Boolean enableAutoShrink) {
+			this.enableAutoShrink = enableAutoShrink;
+		}
+
+		public String getQueueName() {
+			return this.queueName;
+		}
+
+		public void setQueueName(String queueName) {
+			this.queueName = queueName;
+		}
+
+		public Boolean getEnableAutoGrow() {
+			return this.enableAutoGrow;
+		}
+
+		public void setEnableAutoGrow(Boolean enableAutoGrow) {
+			this.enableAutoGrow = enableAutoGrow;
+		}
+
 		public String getSystemDiskLevel() {
 			return this.systemDiskLevel;
 		}
 
 		public void setSystemDiskLevel(String systemDiskLevel) {
 			this.systemDiskLevel = systemDiskLevel;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Float getSpotPriceLimit() {
+			return this.spotPriceLimit;
+		}
+
+		public void setSpotPriceLimit(Float spotPriceLimit) {
+			this.spotPriceLimit = spotPriceLimit;
+		}
+
+		public Long getMaxNodesPerCycle() {
+			return this.maxNodesPerCycle;
+		}
+
+		public void setMaxNodesPerCycle(Long maxNodesPerCycle) {
+			this.maxNodesPerCycle = maxNodesPerCycle;
+		}
+
+		public Long getMinNodesPerCycle() {
+			return this.minNodesPerCycle;
+		}
+
+		public void setMinNodesPerCycle(Long minNodesPerCycle) {
+			this.minNodesPerCycle = minNodesPerCycle;
+		}
+
+		public Boolean getAutoMinNodesPerCycle() {
+			return this.autoMinNodesPerCycle;
+		}
+
+		public void setAutoMinNodesPerCycle(Boolean autoMinNodesPerCycle) {
+			this.autoMinNodesPerCycle = autoMinNodesPerCycle;
+		}
+
+		public Boolean getSortedByInventory() {
+			return this.sortedByInventory;
+		}
+
+		public void setSortedByInventory(Boolean sortedByInventory) {
+			this.sortedByInventory = sortedByInventory;
 		}
 
 		public List<InstanceTypeInfo> getInstanceTypes() {
@@ -367,19 +429,63 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 			this.instanceTypes = instanceTypes;
 		}
 
+		public List<DataDisksInfo> getDataDisks() {
+			return this.dataDisks;
+		}
+
+		public void setDataDisks(List<DataDisksInfo> dataDisks) {
+			this.dataDisks = dataDisks;
+		}
+
 		public static class InstanceTypeInfo {
+
+			private String hostNamePrefix;
+
+			private String vSwitchId;
+
+			private String zoneId;
+
+			private Float spotPriceLimit;
 
 			private String instanceType;
 
 			private String spotStrategy;
 
-			private Float spotPriceLimit;
+			private Integer spotDuration;
 
-			private String zoneId;
+			private String spotInterruptionBehavior;
 
-			private String vSwitchId;
+			public String getHostNamePrefix() {
+				return this.hostNamePrefix;
+			}
 
-			private String hostNamePrefix;
+			public void setHostNamePrefix(String hostNamePrefix) {
+				this.hostNamePrefix = hostNamePrefix;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public Float getSpotPriceLimit() {
+				return this.spotPriceLimit;
+			}
+
+			public void setSpotPriceLimit(Float spotPriceLimit) {
+				this.spotPriceLimit = spotPriceLimit;
+			}
 
 			public String getInstanceType() {
 				return this.instanceType;
@@ -397,36 +503,83 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 				this.spotStrategy = spotStrategy;
 			}
 
-			public Float getSpotPriceLimit() {
-				return this.spotPriceLimit;
+			public Integer getSpotDuration() {
+				return this.spotDuration;
 			}
 
-			public void setSpotPriceLimit(Float spotPriceLimit) {
-				this.spotPriceLimit = spotPriceLimit;
+			public void setSpotDuration(Integer spotDuration) {
+				this.spotDuration = spotDuration;
 			}
 
-			public String getZoneId() {
-				return this.zoneId;
+			public String getSpotInterruptionBehavior() {
+				return this.spotInterruptionBehavior;
 			}
 
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
+			public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
+				this.spotInterruptionBehavior = spotInterruptionBehavior;
+			}
+		}
+
+		public static class DataDisksInfo {
+
+			private String dataDiskCategory;
+
+			private Integer dataDiskSize;
+
+			private Boolean dataDiskDeleteWithInstance;
+
+			private String dataDiskPerformanceLevel;
+
+			private Boolean dataDiskEncrypted;
+
+			private String dataDiskKMSKeyId;
+
+			public String getDataDiskCategory() {
+				return this.dataDiskCategory;
 			}
 
-			public String getVSwitchId() {
-				return this.vSwitchId;
+			public void setDataDiskCategory(String dataDiskCategory) {
+				this.dataDiskCategory = dataDiskCategory;
 			}
 
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
+			public Integer getDataDiskSize() {
+				return this.dataDiskSize;
 			}
 
-			public String getHostNamePrefix() {
-				return this.hostNamePrefix;
+			public void setDataDiskSize(Integer dataDiskSize) {
+				this.dataDiskSize = dataDiskSize;
 			}
 
-			public void setHostNamePrefix(String hostNamePrefix) {
-				this.hostNamePrefix = hostNamePrefix;
+			public Boolean getDataDiskDeleteWithInstance() {
+				return this.dataDiskDeleteWithInstance;
+			}
+
+			public void setDataDiskDeleteWithInstance(Boolean dataDiskDeleteWithInstance) {
+				this.dataDiskDeleteWithInstance = dataDiskDeleteWithInstance;
+			}
+
+			public String getDataDiskPerformanceLevel() {
+				return this.dataDiskPerformanceLevel;
+			}
+
+			public void setDataDiskPerformanceLevel(String dataDiskPerformanceLevel) {
+				this.dataDiskPerformanceLevel = dataDiskPerformanceLevel;
+			}
+
+			public Boolean getDataDiskEncrypted() {
+				return this.dataDiskEncrypted;
+			}
+
+			public void setDataDiskEncrypted(Boolean dataDiskEncrypted) {
+				this.dataDiskEncrypted = dataDiskEncrypted;
+			}
+
+			public String getDataDiskKMSKeyId() {
+				return this.dataDiskKMSKeyId;
+			}
+
+			public void setDataDiskKMSKeyId(String dataDiskKMSKeyId) {
+				this.dataDiskKMSKeyId = dataDiskKMSKeyId;
 			}
 		}
 	}

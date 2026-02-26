@@ -30,7 +30,7 @@ public class DescribeWebPreciseAccessRuleRequest extends RpcAcsRequest<DescribeW
 
 	private String resourceGroupId;
 	public DescribeWebPreciseAccessRuleRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeWebPreciseAccessRule");
+		super("ddoscoo", "2020-01-01", "DescribeWebPreciseAccessRule", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

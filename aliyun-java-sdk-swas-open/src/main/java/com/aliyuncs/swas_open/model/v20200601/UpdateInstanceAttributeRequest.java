@@ -32,7 +32,7 @@ public class UpdateInstanceAttributeRequest extends RpcAcsRequest<UpdateInstance
 
 	private String instanceName;
 	public UpdateInstanceAttributeRequest() {
-		super("SWAS-OPEN", "2020-06-01", "UpdateInstanceAttribute");
+		super("SWAS-OPEN", "2020-06-01", "UpdateInstanceAttribute", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 

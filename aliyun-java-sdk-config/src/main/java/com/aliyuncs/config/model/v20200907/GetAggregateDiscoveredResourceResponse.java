@@ -68,6 +68,14 @@ public class GetAggregateDiscoveredResourceResponse extends AcsResponse {
 
 		private String resourceStatus;
 
+		private Long version;
+
+		private String complianceType;
+
+		private String vpcId;
+
+		private String vSwitchId;
+
 		public String getAvailabilityZone() {
 			return this.availabilityZone;
 		}
@@ -154,6 +162,38 @@ public class GetAggregateDiscoveredResourceResponse extends AcsResponse {
 
 		public void setResourceStatus(String resourceStatus) {
 			this.resourceStatus = resourceStatus;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
+		}
+
+		public String getComplianceType() {
+			return this.complianceType;
+		}
+
+		public void setComplianceType(String complianceType) {
+			this.complianceType = complianceType;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
 		}
 	}
 

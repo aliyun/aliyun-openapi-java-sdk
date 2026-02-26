@@ -37,7 +37,7 @@ public class QueryChannelHistoryDataRequest extends RpcAcsRequest<QueryChannelHi
 
 	private String channelId;
 	public QueryChannelHistoryDataRequest() {
-		super("UniMkt", "2018-12-12", "QueryChannelHistoryData", "1.0.0");
+		super("UniMkt", "2018-12-12", "QueryChannelHistoryData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

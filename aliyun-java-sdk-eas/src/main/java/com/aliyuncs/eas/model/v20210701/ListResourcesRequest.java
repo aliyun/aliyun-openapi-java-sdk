@@ -25,7 +25,11 @@ import com.aliyuncs.eas.Endpoint;
 public class ListResourcesRequest extends RoaAcsRequest<ListResourcesResponse> {
 	   
 
+	private String resourceId;
+
 	private Integer pageSize;
+
+	private String resourceName;
 
 	private Integer pageNumber;
 	public ListResourcesRequest() {
@@ -38,6 +42,17 @@ public class ListResourcesRequest extends RoaAcsRequest<ListResourcesResponse> {
 		} catch (Exception e) {}
 	}
 
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -46,6 +61,17 @@ public class ListResourcesRequest extends RoaAcsRequest<ListResourcesResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getResourceName() {
+		return this.resourceName;
+	}
+
+	public void setResourceName(String resourceName) {
+		this.resourceName = resourceName;
+		if(resourceName != null){
+			putQueryParameter("ResourceName", resourceName);
 		}
 	}
 

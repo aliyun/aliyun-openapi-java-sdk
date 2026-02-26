@@ -28,6 +28,8 @@ public class GetCommitRequest extends RpcAcsRequest<GetCommitResponse> {
 
 	private String commitId;
 
+	private String source;
+
 	private String moduleId;
 
 	private String schemaVersion;
@@ -55,6 +57,17 @@ public class GetCommitRequest extends RpcAcsRequest<GetCommitResponse> {
 		this.commitId = commitId;
 		if(commitId != null){
 			putQueryParameter("CommitId", commitId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

@@ -1,3 +1,72 @@
+2026-01-07 Version: 3.0.25
+- Generated 2020-10-28 for `mPaaS`.
+
+2025-11-14 Version: 3.0.24
+- Generated 2020-10-28 for `mPaaS`.
+
+2025-08-25 Version: 2.1.12
+- Generated 2020-07-10 for `mPaaS`.
+
+2025-06-03 Version: 3.0.23
+- Generated 2020-10-28 for `mPaaS`.
+
+2025-04-24 Version: 3.0.22
+- Generated 2020-10-28 for `mPaaS`.
+
+2025-04-23 Version: 3.0.21
+- Generated 2020-10-28 for `mPaaS`.
+
+2025-04-23 Version: 3.0.20
+- Generated 2020-10-28 for `mPaaS`.
+
+2025-02-20 Version: 3.0.19
+- Generated 2020-10-28 for `mPaaS`.
+
+2024-09-20 Version: 3.0.18
+- Generated 2020-10-28 for `mPaaS`.
+
+2024-06-06 Version: 3.0.17
+- Generated 2020-10-28 for `mPaaS`.
+
+2024-05-31 Version: 3.0.16
+- Generated 2020-10-28 for `mPaaS`.
+
+2024-05-31 Version: 3.0.15
+- Generated 2020-10-28 for `mPaaS`.
+
+2024-05-27 Version: 3.0.14
+- Generated 2020-10-28 for `mPaaS`.
+
+2024-05-23 Version: 2.1.11
+- Add Mds pagination.
+
+2024-03-14 Version: 4.0.2
+- Add paging params to request and response.
+
+2024-02-27 Version: 2.1.10
+- Add vivo classification.
+
+2024-01-23 Version: 3.0.13
+- GoInit.
+
+2023-11-28 Version: 3.0.12
+- GoInit.
+
+2023-07-19 Version: 3.0.11
+- Support  paging query for list in MDS.
+
+2023-03-31 Version: 3.0.10
+- Support vivo classification.
+
+2022-11-29 Version: 3.0.9
+- Support vivo classification.
+
+2022-08-29 Version: 4.0.1
+- Support for Goverment Cloud.
+
+2022-08-29 Version: 4.0.0
+- Support for Goverment Cloud.
+
 2022-06-24 Version: 3.0.8
 - Support vivo classification.
 

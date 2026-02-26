@@ -25,13 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListProxySQLExecAuditLogRequest extends RpcAcsRequest<ListProxySQLExecAuditLogResponse> {
 	   
 
-	private String sQLType;
-
 	private String searchName;
 
 	private String opUserName;
-
-	private Long endTime;
 
 	private Long startTime;
 
@@ -41,6 +37,10 @@ public class ListProxySQLExecAuditLogRequest extends RpcAcsRequest<ListProxySQLE
 
 	private Integer pageSize;
 
+	private String sQLType;
+
+	private Long endTime;
+
 	private String execState;
 	public ListProxySQLExecAuditLogRequest() {
 		super("dms-enterprise", "2018-11-01", "ListProxySQLExecAuditLog", "dms-enterprise");
@@ -49,17 +49,6 @@ public class ListProxySQLExecAuditLogRequest extends RpcAcsRequest<ListProxySQLE
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSQLType() {
-		return this.sQLType;
-	}
-
-	public void setSQLType(String sQLType) {
-		this.sQLType = sQLType;
-		if(sQLType != null){
-			putQueryParameter("SQLType", sQLType);
-		}
 	}
 
 	public String getSearchName() {
@@ -81,17 +70,6 @@ public class ListProxySQLExecAuditLogRequest extends RpcAcsRequest<ListProxySQLE
 		this.opUserName = opUserName;
 		if(opUserName != null){
 			putQueryParameter("OpUserName", opUserName);
-		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -136,6 +114,28 @@ public class ListProxySQLExecAuditLogRequest extends RpcAcsRequest<ListProxySQLE
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSQLType() {
+		return this.sQLType;
+	}
+
+	public void setSQLType(String sQLType) {
+		this.sQLType = sQLType;
+		if(sQLType != null){
+			putQueryParameter("SQLType", sQLType);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 

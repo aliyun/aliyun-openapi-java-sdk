@@ -43,10 +43,16 @@ public class DescribeDisksResponseUnmarshaller {
 			disksItem.setEnsRegionId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].EnsRegionId"));
 			disksItem.setInstanceId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].InstanceId"));
 			disksItem.setInstanceName(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].InstanceName"));
+			disksItem.setDescription(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Description"));
 			disksItem.setSize(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].Size"));
 			disksItem.setStatus(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Status"));
 			disksItem.setType(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Type"));
 			disksItem.setPortable(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].Portable"));
+			disksItem.setSnapshotId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].SnapshotId"));
+			disksItem.setSerialId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].SerialId"));
+			disksItem.setEncrypted(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].Encrypted"));
+			disksItem.setEncryptedKeyId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].EncryptedKeyId"));
+			disksItem.setDeleteWithInstance(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].DeleteWithInstance"));
 
 			disks.add(disksItem);
 		}

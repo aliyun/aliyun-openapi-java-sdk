@@ -28,7 +28,7 @@ public class GetLicenseInfoRequest extends RpcAcsRequest<GetLicenseInfoResponse>
 
 	private String url;
 	public GetLicenseInfoRequest() {
-		super("Copyright", "2019-01-23", "GetLicenseInfo");
+		super("Copyright", "2019-01-23", "GetLicenseInfo", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

@@ -34,12 +34,12 @@ public class DescribeDomainCcActivityLogResponseUnmarshaller {
 		List<LogInfo> activityLog = new ArrayList<LogInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainCcActivityLogResponse.ActivityLog.Length"); i++) {
 			LogInfo logInfo = new LogInfo();
-			logInfo.setTimeStamp(_ctx.stringValue("DescribeDomainCcActivityLogResponse.ActivityLog["+ i +"].TimeStamp"));
 			logInfo.setValue(_ctx.stringValue("DescribeDomainCcActivityLogResponse.ActivityLog["+ i +"].Value"));
-			logInfo.setTriggerObject(_ctx.stringValue("DescribeDomainCcActivityLogResponse.ActivityLog["+ i +"].TriggerObject"));
-			logInfo.setDomainName(_ctx.stringValue("DescribeDomainCcActivityLogResponse.ActivityLog["+ i +"].DomainName"));
 			logInfo.setTtl(_ctx.longValue("DescribeDomainCcActivityLogResponse.ActivityLog["+ i +"].Ttl"));
 			logInfo.setAction(_ctx.stringValue("DescribeDomainCcActivityLogResponse.ActivityLog["+ i +"].Action"));
+			logInfo.setTriggerObject(_ctx.stringValue("DescribeDomainCcActivityLogResponse.ActivityLog["+ i +"].TriggerObject"));
+			logInfo.setTimeStamp(_ctx.stringValue("DescribeDomainCcActivityLogResponse.ActivityLog["+ i +"].TimeStamp"));
+			logInfo.setDomainName(_ctx.stringValue("DescribeDomainCcActivityLogResponse.ActivityLog["+ i +"].DomainName"));
 			logInfo.setRuleName(_ctx.stringValue("DescribeDomainCcActivityLogResponse.ActivityLog["+ i +"].RuleName"));
 
 			activityLog.add(logInfo);

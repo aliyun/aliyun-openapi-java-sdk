@@ -16,6 +16,7 @@ package com.aliyuncs.viapi_regen.model.v20211119;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.viapi_regen.Endpoint;
 
 /**
  * @author auto create
@@ -32,8 +33,12 @@ public class ListDatasetDatasRequest extends RpcAcsRequest<ListDatasetDatasRespo
 
 	private Long datasetId;
 	public ListDatasetDatasRequest() {
-		super("viapi-regen", "2021-11-19", "ListDatasetDatas", "viapi-regen");
+		super("viapi-regen", "2021-11-19", "ListDatasetDatas", "selflearning");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getIdentity() {

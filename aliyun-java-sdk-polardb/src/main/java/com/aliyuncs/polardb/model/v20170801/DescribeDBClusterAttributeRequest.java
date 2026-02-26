@@ -27,6 +27,8 @@ public class DescribeDBClusterAttributeRequest extends RpcAcsRequest<DescribeDBC
 
 	private Long resourceOwnerId;
 
+	private String describeType;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -35,7 +37,7 @@ public class DescribeDBClusterAttributeRequest extends RpcAcsRequest<DescribeDBC
 
 	private Long ownerId;
 	public DescribeDBClusterAttributeRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusterAttribute");
+		super("polardb", "2017-08-01", "DescribeDBClusterAttribute", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,6 +53,17 @@ public class DescribeDBClusterAttributeRequest extends RpcAcsRequest<DescribeDBC
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDescribeType() {
+		return this.describeType;
+	}
+
+	public void setDescribeType(String describeType) {
+		this.describeType = describeType;
+		if(describeType != null){
+			putQueryParameter("DescribeType", describeType);
 		}
 	}
 

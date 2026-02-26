@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUserErStatusResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean enabled;
+	private Boolean inDebt;
 
 	private Boolean onService;
 
-	private Boolean inDebt;
+	private String requestId;
 
 	private Boolean inDebtOverdue;
 
-	public String getRequestId() {
-		return this.requestId;
+	private Boolean enabled;
+
+	public Boolean getInDebt() {
+		return this.inDebt;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getEnabled() {
-		return this.enabled;
-	}
-
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
+	public void setInDebt(Boolean inDebt) {
+		this.inDebt = inDebt;
 	}
 
 	public Boolean getOnService() {
@@ -58,12 +50,12 @@ public class DescribeUserErStatusResponse extends AcsResponse {
 		this.onService = onService;
 	}
 
-	public Boolean getInDebt() {
-		return this.inDebt;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setInDebt(Boolean inDebt) {
-		this.inDebt = inDebt;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getInDebtOverdue() {
@@ -72,6 +64,14 @@ public class DescribeUserErStatusResponse extends AcsResponse {
 
 	public void setInDebtOverdue(Boolean inDebtOverdue) {
 		this.inDebtOverdue = inDebtOverdue;
+	}
+
+	public Boolean getEnabled() {
+		return this.enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	@Override

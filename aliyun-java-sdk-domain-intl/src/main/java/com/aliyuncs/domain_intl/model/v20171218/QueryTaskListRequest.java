@@ -15,38 +15,29 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTaskListRequest extends RpcAcsRequest<QueryTaskListResponse> {
-	
-	public QueryTaskListRequest() {
-		super("Domain-intl", "2017-12-18", "QueryTaskList", "domain");
-	}
-
-	private Long beginCreateTime;
+	   
 
 	private Long endCreateTime;
+
+	private Integer pageNum;
+
+	private Long beginCreateTime;
 
 	private String userClientIp;
 
 	private Integer pageSize;
 
 	private String lang;
-
-	private Integer pageNum;
-
-	public Long getBeginCreateTime() {
-		return this.beginCreateTime;
-	}
-
-	public void setBeginCreateTime(Long beginCreateTime) {
-		this.beginCreateTime = beginCreateTime;
-		if(beginCreateTime != null){
-			putQueryParameter("BeginCreateTime", beginCreateTime.toString());
-		}
+	public QueryTaskListRequest() {
+		super("Domain-intl", "2017-12-18", "QueryTaskList");
+		setMethod(MethodType.POST);
 	}
 
 	public Long getEndCreateTime() {
@@ -57,6 +48,28 @@ public class QueryTaskListRequest extends RpcAcsRequest<QueryTaskListResponse> {
 		this.endCreateTime = endCreateTime;
 		if(endCreateTime != null){
 			putQueryParameter("EndCreateTime", endCreateTime.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Long getBeginCreateTime() {
+		return this.beginCreateTime;
+	}
+
+	public void setBeginCreateTime(Long beginCreateTime) {
+		this.beginCreateTime = beginCreateTime;
+		if(beginCreateTime != null){
+			putQueryParameter("BeginCreateTime", beginCreateTime.toString());
 		}
 	}
 
@@ -90,17 +103,6 @@ public class QueryTaskListRequest extends RpcAcsRequest<QueryTaskListResponse> {
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

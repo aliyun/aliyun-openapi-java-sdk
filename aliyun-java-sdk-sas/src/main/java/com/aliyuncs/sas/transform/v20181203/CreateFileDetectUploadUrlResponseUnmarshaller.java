@@ -37,6 +37,8 @@ public class CreateFileDetectUploadUrlResponseUnmarshaller {
 			uploadUrList.setExpire(_ctx.stringValue("CreateFileDetectUploadUrlResponse.UploadUrlList["+ i +"].Expire"));
 			uploadUrList.setFileExist(_ctx.booleanValue("CreateFileDetectUploadUrlResponse.UploadUrlList["+ i +"].FileExist"));
 			uploadUrList.setHashKey(_ctx.stringValue("CreateFileDetectUploadUrlResponse.UploadUrlList["+ i +"].HashKey"));
+			uploadUrList.setCode(_ctx.stringValue("CreateFileDetectUploadUrlResponse.UploadUrlList["+ i +"].Code"));
+			uploadUrList.setMessage(_ctx.stringValue("CreateFileDetectUploadUrlResponse.UploadUrlList["+ i +"].Message"));
 
 			Context context = new Context();
 			context.setAccessId(_ctx.stringValue("CreateFileDetectUploadUrlResponse.UploadUrlList["+ i +"].Context.AccessId"));

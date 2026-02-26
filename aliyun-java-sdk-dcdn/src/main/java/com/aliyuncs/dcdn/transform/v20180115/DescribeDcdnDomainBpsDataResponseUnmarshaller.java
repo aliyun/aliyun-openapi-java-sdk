@@ -27,20 +27,20 @@ public class DescribeDcdnDomainBpsDataResponseUnmarshaller {
 	public static DescribeDcdnDomainBpsDataResponse unmarshall(DescribeDcdnDomainBpsDataResponse describeDcdnDomainBpsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnDomainBpsDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.RequestId"));
-		describeDcdnDomainBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.DomainName"));
-		describeDcdnDomainBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.StartTime"));
 		describeDcdnDomainBpsDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.EndTime"));
+		describeDcdnDomainBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.StartTime"));
+		describeDcdnDomainBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.DomainName"));
 		describeDcdnDomainBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.DataInterval"));
 
 		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].Bps"));
-			dataModule.setDynamicHttpBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicHttpBps"));
-			dataModule.setDynamicHttpsBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicHttpsBps"));
-			dataModule.setStaticHttpBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticHttpBps"));
 			dataModule.setStaticHttpsBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticHttpsBps"));
+			dataModule.setBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].Bps"));
+			dataModule.setDynamicHttpsBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicHttpsBps"));
+			dataModule.setDynamicHttpBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicHttpBps"));
+			dataModule.setStaticHttpBps(_ctx.floatValue("DescribeDcdnDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticHttpBps"));
 
 			bpsDataPerInterval.add(dataModule);
 		}

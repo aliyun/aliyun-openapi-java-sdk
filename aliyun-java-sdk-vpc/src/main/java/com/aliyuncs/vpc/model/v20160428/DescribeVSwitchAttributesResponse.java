@@ -57,7 +57,11 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 	private String shareType;
 
+	private Boolean enabledIpv6;
+
 	private List<CloudResourceSetType> cloudResources;
+
+	private List<Tag> tags;
 
 	private RouteTable routeTable;
 
@@ -189,12 +193,28 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 		this.shareType = shareType;
 	}
 
+	public Boolean getEnabledIpv6() {
+		return this.enabledIpv6;
+	}
+
+	public void setEnabledIpv6(Boolean enabledIpv6) {
+		this.enabledIpv6 = enabledIpv6;
+	}
+
 	public List<CloudResourceSetType> getCloudResources() {
 		return this.cloudResources;
 	}
 
 	public void setCloudResources(List<CloudResourceSetType> cloudResources) {
 		this.cloudResources = cloudResources;
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
 	}
 
 	public RouteTable getRouteTable() {
@@ -225,6 +245,29 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

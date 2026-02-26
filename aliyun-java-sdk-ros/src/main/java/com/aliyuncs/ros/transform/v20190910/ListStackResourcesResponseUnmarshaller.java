@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.ListStackResourcesResponse;
 import com.aliyuncs.ros.model.v20190910.ListStackResourcesResponse.Resource;
+import com.aliyuncs.ros.model.v20190910.ListStackResourcesResponse.Resource.ModuleInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,17 +32,22 @@ public class ListStackResourcesResponseUnmarshaller {
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("ListStackResourcesResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setCreateTime(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].CreateTime"));
-			resource.setLogicalResourceId(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].LogicalResourceId"));
-			resource.setPhysicalResourceId(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].PhysicalResourceId"));
-			resource.setResourceType(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].ResourceType"));
-			resource.setStackId(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].StackId"));
-			resource.setStackName(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].StackName"));
 			resource.setStatus(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].Status"));
-			resource.setStatusReason(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].StatusReason"));
+			resource.setLogicalResourceId(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].LogicalResourceId"));
 			resource.setUpdateTime(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].UpdateTime"));
-			resource.setResourceDriftStatus(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].ResourceDriftStatus"));
+			resource.setStackId(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].StackId"));
+			resource.setPhysicalResourceId(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].PhysicalResourceId"));
 			resource.setDriftDetectionTime(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].DriftDetectionTime"));
+			resource.setResourceType(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].ResourceType"));
+			resource.setResourceDriftStatus(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].ResourceDriftStatus"));
+			resource.setStatusReason(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].StatusReason"));
+			resource.setCreateTime(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].CreateTime"));
+			resource.setStackName(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].StackName"));
+
+			ModuleInfo moduleInfo = new ModuleInfo();
+			moduleInfo.setLogicalIdHierarchy(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].ModuleInfo.LogicalIdHierarchy"));
+			moduleInfo.setTypeHierarchy(_ctx.stringValue("ListStackResourcesResponse.Resources["+ i +"].ModuleInfo.TypeHierarchy"));
+			resource.setModuleInfo(moduleInfo);
 
 			resources.add(resource);
 		}

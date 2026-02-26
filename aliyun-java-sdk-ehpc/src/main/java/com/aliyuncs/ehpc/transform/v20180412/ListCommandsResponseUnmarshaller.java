@@ -27,17 +27,17 @@ public class ListCommandsResponseUnmarshaller {
 	public static ListCommandsResponse unmarshall(ListCommandsResponse listCommandsResponse, UnmarshallerContext _ctx) {
 		
 		listCommandsResponse.setRequestId(_ctx.stringValue("ListCommandsResponse.RequestId"));
-		listCommandsResponse.setTotalCount(_ctx.integerValue("ListCommandsResponse.TotalCount"));
-		listCommandsResponse.setPageNumber(_ctx.integerValue("ListCommandsResponse.PageNumber"));
 		listCommandsResponse.setPageSize(_ctx.integerValue("ListCommandsResponse.PageSize"));
+		listCommandsResponse.setPageNumber(_ctx.integerValue("ListCommandsResponse.PageNumber"));
+		listCommandsResponse.setTotalCount(_ctx.integerValue("ListCommandsResponse.TotalCount"));
 
 		List<Command> commands = new ArrayList<Command>();
 		for (int i = 0; i < _ctx.lengthValue("ListCommandsResponse.Commands.Length"); i++) {
 			Command command = new Command();
-			command.setCommandId(_ctx.stringValue("ListCommandsResponse.Commands["+ i +"].CommandId"));
-			command.setCommandContent(_ctx.stringValue("ListCommandsResponse.Commands["+ i +"].CommandContent"));
-			command.setWorkingDir(_ctx.stringValue("ListCommandsResponse.Commands["+ i +"].WorkingDir"));
 			command.setTimeout(_ctx.stringValue("ListCommandsResponse.Commands["+ i +"].Timeout"));
+			command.setCommandId(_ctx.stringValue("ListCommandsResponse.Commands["+ i +"].CommandId"));
+			command.setWorkingDir(_ctx.stringValue("ListCommandsResponse.Commands["+ i +"].WorkingDir"));
+			command.setCommandContent(_ctx.stringValue("ListCommandsResponse.Commands["+ i +"].CommandContent"));
 
 			commands.add(command);
 		}

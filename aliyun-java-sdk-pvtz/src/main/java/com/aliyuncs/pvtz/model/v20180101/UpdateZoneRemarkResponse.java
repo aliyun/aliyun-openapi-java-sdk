@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateZoneRemarkResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String zoneId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getZoneId() {
 		return this.zoneId;
@@ -42,6 +34,14 @@ public class UpdateZoneRemarkResponse extends AcsResponse {
 
 	public void setZoneId(String zoneId) {
 		this.zoneId = zoneId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

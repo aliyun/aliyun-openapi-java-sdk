@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ExecuteStructSyncRequest extends RpcAcsRequest<ExecuteStructSyncResponse> {
 	   
 
-	private Long orderId;
-
 	private Long tid;
+
+	private Long orderId;
 	public ExecuteStructSyncRequest() {
 		super("dms-enterprise", "2018-11-01", "ExecuteStructSync", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class ExecuteStructSyncRequest extends RpcAcsRequest<ExecuteStructSyncRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId.toString());
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class ExecuteStructSyncRequest extends RpcAcsRequest<ExecuteStructSyncRes
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId.toString());
 		}
 	}
 

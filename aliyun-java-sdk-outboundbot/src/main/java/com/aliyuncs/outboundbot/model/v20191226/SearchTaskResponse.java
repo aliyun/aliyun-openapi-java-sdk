@@ -43,6 +43,10 @@ public class SearchTaskResponse extends AcsResponse {
 
 	private List<SearchTaskInfo> searchTaskInfoList;
 
+	private List<Label2> labels;
+
+	private List<String> variableNames;
+
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
@@ -115,6 +119,22 @@ public class SearchTaskResponse extends AcsResponse {
 		this.searchTaskInfoList = searchTaskInfoList;
 	}
 
+	public List<Label2> getLabels() {
+		return this.labels;
+	}
+
+	public void setLabels(List<Label2> labels) {
+		this.labels = labels;
+	}
+
+	public List<String> getVariableNames() {
+		return this.variableNames;
+	}
+
+	public void setVariableNames(List<String> variableNames) {
+		this.variableNames = variableNames;
+	}
+
 	public static class SearchTaskInfo {
 
 		private String jobGroupName;
@@ -170,6 +190,10 @@ public class SearchTaskResponse extends AcsResponse {
 		private Boolean hasLastPlaybackCompleted;
 
 		private String scriptName;
+
+		private String callingNumber;
+
+		private List<Label> labels1;
 
 		private List<String> dialExceptionCodes;
 
@@ -389,12 +413,74 @@ public class SearchTaskResponse extends AcsResponse {
 			this.scriptName = scriptName;
 		}
 
+		public String getCallingNumber() {
+			return this.callingNumber;
+		}
+
+		public void setCallingNumber(String callingNumber) {
+			this.callingNumber = callingNumber;
+		}
+
+		public List<Label> getLabels1() {
+			return this.labels1;
+		}
+
+		public void setLabels1(List<Label> labels1) {
+			this.labels1 = labels1;
+		}
+
 		public List<String> getDialExceptionCodes() {
 			return this.dialExceptionCodes;
 		}
 
 		public void setDialExceptionCodes(List<String> dialExceptionCodes) {
 			this.dialExceptionCodes = dialExceptionCodes;
+		}
+
+		public static class Label {
+
+			private String k;
+
+			private String v;
+
+			public String getK() {
+				return this.k;
+			}
+
+			public void setK(String k) {
+				this.k = k;
+			}
+
+			public String getV() {
+				return this.v;
+			}
+
+			public void setV(String v) {
+				this.v = v;
+			}
+		}
+	}
+
+	public static class Label2 {
+
+		private String name;
+
+		private List<String> valueList;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public List<String> getValueList() {
+			return this.valueList;
+		}
+
+		public void setValueList(List<String> valueList) {
+			this.valueList = valueList;
 		}
 	}
 

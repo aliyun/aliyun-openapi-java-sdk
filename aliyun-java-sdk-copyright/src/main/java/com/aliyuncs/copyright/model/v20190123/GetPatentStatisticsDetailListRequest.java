@@ -40,7 +40,7 @@ public class GetPatentStatisticsDetailListRequest extends RpcAcsRequest<GetPaten
 
 	private Integer endYear;
 	public GetPatentStatisticsDetailListRequest() {
-		super("Copyright", "2019-01-23", "GetPatentStatisticsDetailList");
+		super("Copyright", "2019-01-23", "GetPatentStatisticsDetailList", "swcopyright");
 		setMethod(MethodType.GET);
 	}
 

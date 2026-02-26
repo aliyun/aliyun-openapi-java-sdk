@@ -27,7 +27,7 @@ public class GetAsyncPredictRequest extends RpcAcsRequest<GetAsyncPredictRespons
 
 	private Integer asyncPredictId;
 	public GetAsyncPredictRequest() {
-		super("nlp-automl", "2019-11-11", "GetAsyncPredict", "nlpautoml");
+		super("nlp-automl", "2019-11-11", "GetAsyncPredict");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

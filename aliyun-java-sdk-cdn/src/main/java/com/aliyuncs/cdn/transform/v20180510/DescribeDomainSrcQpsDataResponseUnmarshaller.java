@@ -27,16 +27,16 @@ public class DescribeDomainSrcQpsDataResponseUnmarshaller {
 	public static DescribeDomainSrcQpsDataResponse unmarshall(DescribeDomainSrcQpsDataResponse describeDomainSrcQpsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainSrcQpsDataResponse.setRequestId(_ctx.stringValue("DescribeDomainSrcQpsDataResponse.RequestId"));
-		describeDomainSrcQpsDataResponse.setDomainName(_ctx.stringValue("DescribeDomainSrcQpsDataResponse.DomainName"));
-		describeDomainSrcQpsDataResponse.setStartTime(_ctx.stringValue("DescribeDomainSrcQpsDataResponse.StartTime"));
 		describeDomainSrcQpsDataResponse.setEndTime(_ctx.stringValue("DescribeDomainSrcQpsDataResponse.EndTime"));
+		describeDomainSrcQpsDataResponse.setStartTime(_ctx.stringValue("DescribeDomainSrcQpsDataResponse.StartTime"));
+		describeDomainSrcQpsDataResponse.setDomainName(_ctx.stringValue("DescribeDomainSrcQpsDataResponse.DomainName"));
 		describeDomainSrcQpsDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainSrcQpsDataResponse.DataInterval"));
 
 		List<DataModule> srcQpsDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainSrcQpsDataResponse.SrcQpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainSrcQpsDataResponse.SrcQpsDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(_ctx.stringValue("DescribeDomainSrcQpsDataResponse.SrcQpsDataPerInterval["+ i +"].Value"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainSrcQpsDataResponse.SrcQpsDataPerInterval["+ i +"].TimeStamp"));
 
 			srcQpsDataPerInterval.add(dataModule);
 		}

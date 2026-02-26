@@ -23,8 +23,8 @@ public class ListDataSourceTableFieldsResponseUnmarshaller {
 
 	public static ListDataSourceTableFieldsResponse unmarshall(ListDataSourceTableFieldsResponse listDataSourceTableFieldsResponse, UnmarshallerContext _ctx) {
 		
-		listDataSourceTableFieldsResponse.setRequestId(_ctx.stringValue("ListDataSourceTableFieldsResponse.requestId"));
 		listDataSourceTableFieldsResponse.setResult(_ctx.mapValue("ListDataSourceTableFieldsResponse.result"));
+		listDataSourceTableFieldsResponse.setRequestId(_ctx.stringValue("ListDataSourceTableFieldsResponse.requestId"));
 	 
 	 	return listDataSourceTableFieldsResponse;
 	}

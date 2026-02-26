@@ -24,6 +24,8 @@ public class InterpolateVideoFrameResponseUnmarshaller {
 	public static InterpolateVideoFrameResponse unmarshall(InterpolateVideoFrameResponse interpolateVideoFrameResponse, UnmarshallerContext _ctx) {
 		
 		interpolateVideoFrameResponse.setRequestId(_ctx.stringValue("InterpolateVideoFrameResponse.RequestId"));
+		interpolateVideoFrameResponse.setCode(_ctx.stringValue("InterpolateVideoFrameResponse.Code"));
+		interpolateVideoFrameResponse.setMessage(_ctx.stringValue("InterpolateVideoFrameResponse.Message"));
 
 		Data data = new Data();
 		data.setVideoURL(_ctx.stringValue("InterpolateVideoFrameResponse.Data.VideoURL"));

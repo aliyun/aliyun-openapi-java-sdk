@@ -37,7 +37,7 @@ public class CancelPickUpWaybillRequest extends RpcAcsRequest<CancelPickUpWaybil
 
 	private Long ownerId;
 	public CancelPickUpWaybillRequest() {
-		super("Dyplsapi", "2017-05-25", "CancelPickUpWaybill");
+		super("Dyplsapi", "2017-05-25", "CancelPickUpWaybill", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

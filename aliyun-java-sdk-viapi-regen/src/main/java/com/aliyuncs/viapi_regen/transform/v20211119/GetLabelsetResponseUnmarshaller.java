@@ -33,6 +33,9 @@ public class GetLabelsetResponseUnmarshaller {
 		data.setName(_ctx.stringValue("GetLabelsetResponse.Data.Name"));
 		data.setDescription(_ctx.stringValue("GetLabelsetResponse.Data.Description"));
 		data.setLabelType(_ctx.stringValue("GetLabelsetResponse.Data.LabelType"));
+		data.setTagUserList(_ctx.stringValue("GetLabelsetResponse.Data.TagUserList"));
+		data.setTags(_ctx.stringValue("GetLabelsetResponse.Data.Tags"));
+		data.setSubTaskPackageSize(_ctx.stringValue("GetLabelsetResponse.Data.SubTaskPackageSize"));
 		data.setStatus(_ctx.stringValue("GetLabelsetResponse.Data.Status"));
 		data.setTotal(_ctx.longValue("GetLabelsetResponse.Data.Total"));
 		getLabelsetResponse.setData(data);

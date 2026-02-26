@@ -15,6 +15,7 @@
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudapi.Endpoint;
 
@@ -23,15 +24,7 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
-	
-	public CreateApiRequest() {
-		super("CloudAPI", "2016-07-14", "CreateApi", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String webSocketApiType;
 
@@ -42,6 +35,8 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	private String description;
 
 	private Boolean disableInternet;
+
+	private String backendId;
 
 	private String constantParameters;
 
@@ -63,6 +58,8 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 
 	private String requestParameters;
 
+	private List<Tag> tags;
+
 	private String resultDescriptions;
 
 	private String visibility;
@@ -77,11 +74,21 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 
 	private String resultSample;
 
+	private Boolean backendEnable;
+
 	private Boolean forceNonceCheck;
 
 	private String requestConfig;
 
 	private String resultBodyModel;
+	public CreateApiRequest() {
+		super("CloudAPI", "2016-07-14", "CreateApi", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getWebSocketApiType() {
 		return this.webSocketApiType;
@@ -101,7 +108,7 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	public void setErrorCodeSamples(String errorCodeSamples) {
 		this.errorCodeSamples = errorCodeSamples;
 		if(errorCodeSamples != null){
-			putQueryParameter("ErrorCodeSamples", errorCodeSamples);
+			putBodyParameter("ErrorCodeSamples", errorCodeSamples);
 		}
 	}
 
@@ -138,6 +145,17 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 		}
 	}
 
+	public String getBackendId() {
+		return this.backendId;
+	}
+
+	public void setBackendId(String backendId) {
+		this.backendId = backendId;
+		if(backendId != null){
+			putQueryParameter("BackendId", backendId);
+		}
+	}
+
 	public String getConstantParameters() {
 		return this.constantParameters;
 	}
@@ -145,7 +163,7 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	public void setConstantParameters(String constantParameters) {
 		this.constantParameters = constantParameters;
 		if(constantParameters != null){
-			putQueryParameter("ConstantParameters", constantParameters);
+			putBodyParameter("ConstantParameters", constantParameters);
 		}
 	}
 
@@ -178,7 +196,7 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	public void setServiceParameters(String serviceParameters) {
 		this.serviceParameters = serviceParameters;
 		if(serviceParameters != null){
-			putQueryParameter("ServiceParameters", serviceParameters);
+			putBodyParameter("ServiceParameters", serviceParameters);
 		}
 	}
 
@@ -189,7 +207,7 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	public void setFailResultSample(String failResultSample) {
 		this.failResultSample = failResultSample;
 		if(failResultSample != null){
-			putQueryParameter("FailResultSample", failResultSample);
+			putBodyParameter("FailResultSample", failResultSample);
 		}
 	}
 
@@ -200,7 +218,7 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	public void setSystemParameters(String systemParameters) {
 		this.systemParameters = systemParameters;
 		if(systemParameters != null){
-			putQueryParameter("SystemParameters", systemParameters);
+			putBodyParameter("SystemParameters", systemParameters);
 		}
 	}
 
@@ -211,33 +229,14 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	public void setServiceParametersMap(String serviceParametersMap) {
 		this.serviceParametersMap = serviceParametersMap;
 		if(serviceParametersMap != null){
-			putQueryParameter("ServiceParametersMap", serviceParametersMap);
+			putBodyParameter("ServiceParametersMap", serviceParametersMap);
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -263,8 +262,22 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	public void setRequestParameters(String requestParameters) {
 		this.requestParameters = requestParameters;
 		if(requestParameters != null){
-			putQueryParameter("RequestParameters", requestParameters);
+			putBodyParameter("RequestParameters", requestParameters);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getResultDescriptions() {
@@ -274,7 +287,7 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	public void setResultDescriptions(String resultDescriptions) {
 		this.resultDescriptions = resultDescriptions;
 		if(resultDescriptions != null){
-			putQueryParameter("ResultDescriptions", resultDescriptions);
+			putBodyParameter("ResultDescriptions", resultDescriptions);
 		}
 	}
 
@@ -340,7 +353,18 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	public void setResultSample(String resultSample) {
 		this.resultSample = resultSample;
 		if(resultSample != null){
-			putQueryParameter("ResultSample", resultSample);
+			putBodyParameter("ResultSample", resultSample);
+		}
+	}
+
+	public Boolean getBackendEnable() {
+		return this.backendEnable;
+	}
+
+	public void setBackendEnable(Boolean backendEnable) {
+		this.backendEnable = backendEnable;
+		if(backendEnable != null){
+			putQueryParameter("BackendEnable", backendEnable.toString());
 		}
 	}
 
@@ -374,6 +398,29 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 		this.resultBodyModel = resultBodyModel;
 		if(resultBodyModel != null){
 			putQueryParameter("ResultBodyModel", resultBodyModel);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

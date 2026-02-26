@@ -29,9 +29,9 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private List<NetworkInterfaceSet> networkInterfaceSets;
 
@@ -51,20 +51,20 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<NetworkInterfaceSet> getNetworkInterfaceSets() {
@@ -83,6 +83,8 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String instanceName;
+
 		private String macAddress;
 
 		private String networkInterfaceId;
@@ -93,9 +95,21 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		private String status;
 
+		private String networkId;
+
 		private String vSwitchId;
 
+		private String networkInterfaceName;
+
+		private String description;
+
+		private String type;
+
 		private List<PrivateIpSet> privateIpSets;
+
+		private List<Ipv6Set> ipv6Sets;
+
+		private List<String> securityGroupIds;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -119,6 +133,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public String getMacAddress() {
@@ -161,6 +183,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getNetworkId() {
+			return this.networkId;
+		}
+
+		public void setNetworkId(String networkId) {
+			this.networkId = networkId;
+		}
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -169,12 +199,52 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 			this.vSwitchId = vSwitchId;
 		}
 
+		public String getNetworkInterfaceName() {
+			return this.networkInterfaceName;
+		}
+
+		public void setNetworkInterfaceName(String networkInterfaceName) {
+			this.networkInterfaceName = networkInterfaceName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
 		public List<PrivateIpSet> getPrivateIpSets() {
 			return this.privateIpSets;
 		}
 
 		public void setPrivateIpSets(List<PrivateIpSet> privateIpSets) {
 			this.privateIpSets = privateIpSets;
+		}
+
+		public List<Ipv6Set> getIpv6Sets() {
+			return this.ipv6Sets;
+		}
+
+		public void setIpv6Sets(List<Ipv6Set> ipv6Sets) {
+			this.ipv6Sets = ipv6Sets;
+		}
+
+		public List<String> getSecurityGroupIds() {
+			return this.securityGroupIds;
+		}
+
+		public void setSecurityGroupIds(List<String> securityGroupIds) {
+			this.securityGroupIds = securityGroupIds;
 		}
 
 		public static class PrivateIpSet {
@@ -197,6 +267,19 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 			public void setPrimary(Boolean primary) {
 				this.primary = primary;
+			}
+		}
+
+		public static class Ipv6Set {
+
+			private String ipv6Address;
+
+			public String getIpv6Address() {
+				return this.ipv6Address;
+			}
+
+			public void setIpv6Address(String ipv6Address) {
+				this.ipv6Address = ipv6Address;
 			}
 		}
 	}

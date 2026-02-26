@@ -25,6 +25,8 @@ import com.aliyuncs.rds.Endpoint;
 public class DetachGadInstanceMemberRequest extends RpcAcsRequest<DetachGadInstanceMemberResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String memberInstanceName;
 
 	private String gadInstanceName;
@@ -35,6 +37,17 @@ public class DetachGadInstanceMemberRequest extends RpcAcsRequest<DetachGadInsta
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getMemberInstanceName() {

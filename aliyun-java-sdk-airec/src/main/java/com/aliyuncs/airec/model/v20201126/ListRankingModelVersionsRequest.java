@@ -27,9 +27,9 @@ public class ListRankingModelVersionsRequest extends RoaAcsRequest<ListRankingMo
 
 	private String instanceId;
 
-	private Integer size;
+	private Long size;
 
-	private Integer page;
+	private Long page;
 
 	private String templateId;
 
@@ -55,22 +55,22 @@ public class ListRankingModelVersionsRequest extends RoaAcsRequest<ListRankingMo
 		}
 	}
 
-	public Integer getSize() {
+	public Long getSize() {
 		return this.size;
 	}
 
-	public void setSize(Integer size) {
+	public void setSize(Long size) {
 		this.size = size;
 		if(size != null){
 			putQueryParameter("size", size.toString());
 		}
 	}
 
-	public Integer getPage() {
+	public Long getPage() {
 		return this.page;
 	}
 
-	public void setPage(Integer page) {
+	public void setPage(Long page) {
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());

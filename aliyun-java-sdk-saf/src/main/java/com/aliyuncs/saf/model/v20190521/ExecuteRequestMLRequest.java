@@ -32,7 +32,7 @@ public class ExecuteRequestMLRequest extends RpcAcsRequest<ExecuteRequestMLRespo
 
 	private String lang;
 	public ExecuteRequestMLRequest() {
-		super("saf", "2019-05-21", "ExecuteRequestML");
+		super("saf", "2019-05-21", "ExecuteRequestML", "saf");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

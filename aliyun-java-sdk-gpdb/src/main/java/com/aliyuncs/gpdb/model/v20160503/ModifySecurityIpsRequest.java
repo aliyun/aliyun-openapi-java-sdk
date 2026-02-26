@@ -27,13 +27,17 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	private String dBInstanceIPArrayName;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
+
+	private String modifyMode;
 
 	private String securityIPList;
 
 	private String dBInstanceIPArrayAttribute;
 	public ModifySecurityIpsRequest() {
-		super("gpdb", "2016-05-03", "ModifySecurityIps");
+		super("gpdb", "2016-05-03", "ModifySecurityIps", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,6 +56,17 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -60,6 +75,17 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getModifyMode() {
+		return this.modifyMode;
+	}
+
+	public void setModifyMode(String modifyMode) {
+		this.modifyMode = modifyMode;
+		if(modifyMode != null){
+			putQueryParameter("ModifyMode", modifyMode);
 		}
 	}
 

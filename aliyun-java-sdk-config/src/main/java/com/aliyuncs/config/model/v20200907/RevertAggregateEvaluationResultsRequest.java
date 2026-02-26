@@ -35,7 +35,7 @@ public class RevertAggregateEvaluationResultsRequest extends RpcAcsRequest<Rever
 
 	private String aggregatorId;
 	public RevertAggregateEvaluationResultsRequest() {
-		super("Config", "2020-09-07", "RevertAggregateEvaluationResults");
+		super("Config", "2020-09-07", "RevertAggregateEvaluationResults", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

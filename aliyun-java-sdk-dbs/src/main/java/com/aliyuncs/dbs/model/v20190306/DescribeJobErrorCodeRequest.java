@@ -29,11 +29,11 @@ public class DescribeJobErrorCodeRequest extends RpcAcsRequest<DescribeJobErrorC
 
 	private String language;
 
-	private String ownerId;
-
 	private String taskId;
+
+	private String ownerId;
 	public DescribeJobErrorCodeRequest() {
-		super("Dbs", "2019-03-06", "DescribeJobErrorCode");
+		super("Dbs", "2019-03-06", "DescribeJobErrorCode", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,17 +63,6 @@ public class DescribeJobErrorCodeRequest extends RpcAcsRequest<DescribeJobErrorC
 		}
 	}
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
 	public String getTaskId() {
 		return this.taskId;
 	}
@@ -82,6 +71,17 @@ public class DescribeJobErrorCodeRequest extends RpcAcsRequest<DescribeJobErrorC
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

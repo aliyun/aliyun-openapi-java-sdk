@@ -1,3 +1,21 @@
+2023-05-11 Version: 3.0.7
+- Supported sorting for DescribeDnsProduceInstances.
+
+2023-04-04 Version: 3.0.3
+- New Resolve Statistic Summary API.
+
+2023-03-30 Version: 3.0.2
+- New Resolve Statistic Summary API.
+
+2022-11-23 Version: 3.0.1
+- Api DescribeSubDomainRecords add Remark field.
+
+2022-08-18 Version: 3.0.0
+- Bump version.
+
+2022-08-18 Version: 2.7.0
+- Bump version.
+
 2021-09-22 Version: 2.6.32
 - Supported API for GTM.
 

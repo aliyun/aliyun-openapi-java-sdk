@@ -179,6 +179,8 @@ public class DescribeVodDomainDetailResponse extends AcsResponse {
 
 			private String enabled;
 
+			private String weight;
+
 			public String getType() {
 				return this.type;
 			}
@@ -217,6 +219,14 @@ public class DescribeVodDomainDetailResponse extends AcsResponse {
 
 			public void setEnabled(String enabled) {
 				this.enabled = enabled;
+			}
+
+			public String getWeight() {
+				return this.weight;
+			}
+
+			public void setWeight(String weight) {
+				this.weight = weight;
 			}
 		}
 	}

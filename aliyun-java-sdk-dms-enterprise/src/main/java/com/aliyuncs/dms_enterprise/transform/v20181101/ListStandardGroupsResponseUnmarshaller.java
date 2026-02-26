@@ -39,6 +39,7 @@ public class ListStandardGroupsResponseUnmarshaller {
 			standardGroupListItem.setDbType(_ctx.stringValue("ListStandardGroupsResponse.StandardGroupList["+ i +"].DbType"));
 			standardGroupListItem.setLastMenderId(_ctx.longValue("ListStandardGroupsResponse.StandardGroupList["+ i +"].LastMenderId"));
 			standardGroupListItem.setGroupMode(_ctx.stringValue("ListStandardGroupsResponse.StandardGroupList["+ i +"].GroupMode"));
+			standardGroupListItem.setGroupId(_ctx.longValue("ListStandardGroupsResponse.StandardGroupList["+ i +"].GroupId"));
 
 			standardGroupList.add(standardGroupListItem);
 		}

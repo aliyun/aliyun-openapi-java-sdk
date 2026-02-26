@@ -32,7 +32,7 @@ public class ListTargetAttachmentsForControlPolicyRequest extends RpcAcsRequest<
 
 	private Integer pageSize;
 	public ListTargetAttachmentsForControlPolicyRequest() {
-		super("ResourceManager", "2020-03-31", "ListTargetAttachmentsForControlPolicy");
+		super("ResourceManager", "2020-03-31", "ListTargetAttachmentsForControlPolicy", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

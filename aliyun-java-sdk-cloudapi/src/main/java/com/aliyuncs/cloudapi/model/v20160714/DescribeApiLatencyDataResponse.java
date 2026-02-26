@@ -47,17 +47,9 @@ public class DescribeApiLatencyDataResponse extends AcsResponse {
 
 	public static class MonitorItem {
 
-		private String itemTime;
-
 		private String itemValue;
 
-		public String getItemTime() {
-			return this.itemTime;
-		}
-
-		public void setItemTime(String itemTime) {
-			this.itemTime = itemTime;
-		}
+		private String itemTime;
 
 		public String getItemValue() {
 			return this.itemValue;
@@ -65,6 +57,14 @@ public class DescribeApiLatencyDataResponse extends AcsResponse {
 
 		public void setItemValue(String itemValue) {
 			this.itemValue = itemValue;
+		}
+
+		public String getItemTime() {
+			return this.itemTime;
+		}
+
+		public void setItemTime(String itemTime) {
+			this.itemTime = itemTime;
 		}
 	}
 

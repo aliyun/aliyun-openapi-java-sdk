@@ -27,13 +27,15 @@ public class DescribeBackupSetListRequest extends RpcAcsRequest<DescribeBackupSe
 
 	private String dBInstanceName;
 
-	private Long endTime;
-
 	private Long startTime;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private Long endTime;
+
+	private String destCrossRegion;
 	public DescribeBackupSetListRequest() {
 		super("polardbx", "2020-02-02", "DescribeBackupSetList", "polardbx");
 		setMethod(MethodType.GET);
@@ -51,17 +53,6 @@ public class DescribeBackupSetListRequest extends RpcAcsRequest<DescribeBackupSe
 		this.dBInstanceName = dBInstanceName;
 		if(dBInstanceName != null){
 			putQueryParameter("DBInstanceName", dBInstanceName);
-		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -95,6 +86,28 @@ public class DescribeBackupSetListRequest extends RpcAcsRequest<DescribeBackupSe
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public String getDestCrossRegion() {
+		return this.destCrossRegion;
+	}
+
+	public void setDestCrossRegion(String destCrossRegion) {
+		this.destCrossRegion = destCrossRegion;
+		if(destCrossRegion != null){
+			putQueryParameter("DestCrossRegion", destCrossRegion);
 		}
 	}
 

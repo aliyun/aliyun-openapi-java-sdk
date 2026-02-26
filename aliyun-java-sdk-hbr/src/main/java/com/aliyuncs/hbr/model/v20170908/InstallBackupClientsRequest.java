@@ -25,7 +25,13 @@ import com.aliyuncs.hbr.Endpoint;
 public class InstallBackupClientsRequest extends RpcAcsRequest<InstallBackupClientsResponse> {
 	   
 
+	private String crossAccountType;
+
+	private String crossAccountRoleName;
+
 	private String instanceIds;
+
+	private Long crossAccountUserId;
 	public InstallBackupClientsRequest() {
 		super("hbr", "2017-09-08", "InstallBackupClients", "hbr");
 		setMethod(MethodType.POST);
@@ -33,6 +39,28 @@ public class InstallBackupClientsRequest extends RpcAcsRequest<InstallBackupClie
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCrossAccountType() {
+		return this.crossAccountType;
+	}
+
+	public void setCrossAccountType(String crossAccountType) {
+		this.crossAccountType = crossAccountType;
+		if(crossAccountType != null){
+			putQueryParameter("CrossAccountType", crossAccountType);
+		}
+	}
+
+	public String getCrossAccountRoleName() {
+		return this.crossAccountRoleName;
+	}
+
+	public void setCrossAccountRoleName(String crossAccountRoleName) {
+		this.crossAccountRoleName = crossAccountRoleName;
+		if(crossAccountRoleName != null){
+			putQueryParameter("CrossAccountRoleName", crossAccountRoleName);
+		}
 	}
 
 	public String getInstanceIds() {
@@ -43,6 +71,17 @@ public class InstallBackupClientsRequest extends RpcAcsRequest<InstallBackupClie
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public Long getCrossAccountUserId() {
+		return this.crossAccountUserId;
+	}
+
+	public void setCrossAccountUserId(Long crossAccountUserId) {
+		this.crossAccountUserId = crossAccountUserId;
+		if(crossAccountUserId != null){
+			putQueryParameter("CrossAccountUserId", crossAccountUserId.toString());
 		}
 	}
 

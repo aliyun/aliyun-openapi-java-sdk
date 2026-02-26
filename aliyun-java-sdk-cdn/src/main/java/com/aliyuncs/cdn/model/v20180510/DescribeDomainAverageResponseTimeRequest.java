@@ -25,12 +25,6 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainAverageResponseTimeRequest extends RpcAcsRequest<DescribeDomainAverageResponseTimeResponse> {
 	   
 
-	private String locationNameEn;
-
-	private String startTime;
-
-	private String ispNameEn;
-
 	private String domainType;
 
 	private String timeMerge;
@@ -39,9 +33,13 @@ public class DescribeDomainAverageResponseTimeRequest extends RpcAcsRequest<Desc
 
 	private String endTime;
 
-	private Long ownerId;
-
 	private String interval;
+
+	private String locationNameEn;
+
+	private String startTime;
+
+	private String ispNameEn;
 	public DescribeDomainAverageResponseTimeRequest() {
 		super("Cdn", "2018-05-10", "DescribeDomainAverageResponseTime");
 		setMethod(MethodType.POST);
@@ -49,39 +47,6 @@ public class DescribeDomainAverageResponseTimeRequest extends RpcAcsRequest<Desc
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getLocationNameEn() {
-		return this.locationNameEn;
-	}
-
-	public void setLocationNameEn(String locationNameEn) {
-		this.locationNameEn = locationNameEn;
-		if(locationNameEn != null){
-			putQueryParameter("LocationNameEn", locationNameEn);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getIspNameEn() {
-		return this.ispNameEn;
-	}
-
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
-		if(ispNameEn != null){
-			putQueryParameter("IspNameEn", ispNameEn);
-		}
 	}
 
 	public String getDomainType() {
@@ -128,17 +93,6 @@ public class DescribeDomainAverageResponseTimeRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getInterval() {
 		return this.interval;
 	}
@@ -147,6 +101,39 @@ public class DescribeDomainAverageResponseTimeRequest extends RpcAcsRequest<Desc
 		this.interval = interval;
 		if(interval != null){
 			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getLocationNameEn() {
+		return this.locationNameEn;
+	}
+
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+		if(locationNameEn != null){
+			putQueryParameter("LocationNameEn", locationNameEn);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		if(ispNameEn != null){
+			putQueryParameter("IspNameEn", ispNameEn);
 		}
 	}
 

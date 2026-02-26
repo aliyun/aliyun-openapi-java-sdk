@@ -27,7 +27,7 @@ public class OpenBackupRequest extends RpcAcsRequest<OpenBackupResponse> {
 
 	private String clusterId;
 	public OpenBackupRequest() {
-		super("HBase", "2019-01-01", "OpenBackup", "hbase");
+		super("HBase", "2019-01-01", "OpenBackup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -67,6 +67,12 @@ public class DescribePhysicalConnectionLOAResponse extends AcsResponse {
 
 		private String companyName;
 
+		private String lineServiceProvider;
+
+		private String lineSPContactInfo;
+
+		private String description;
+
 		private List<PMInfoItem> pMInfo;
 
 		public String getStatus() {
@@ -147,6 +153,30 @@ public class DescribePhysicalConnectionLOAResponse extends AcsResponse {
 
 		public void setCompanyName(String companyName) {
 			this.companyName = companyName;
+		}
+
+		public String getLineServiceProvider() {
+			return this.lineServiceProvider;
+		}
+
+		public void setLineServiceProvider(String lineServiceProvider) {
+			this.lineServiceProvider = lineServiceProvider;
+		}
+
+		public String getLineSPContactInfo() {
+			return this.lineSPContactInfo;
+		}
+
+		public void setLineSPContactInfo(String lineSPContactInfo) {
+			this.lineSPContactInfo = lineSPContactInfo;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public List<PMInfoItem> getPMInfo() {

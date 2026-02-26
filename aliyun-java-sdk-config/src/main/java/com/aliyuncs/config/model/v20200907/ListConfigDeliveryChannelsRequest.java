@@ -27,7 +27,7 @@ public class ListConfigDeliveryChannelsRequest extends RpcAcsRequest<ListConfigD
 
 	private String deliveryChannelIds;
 	public ListConfigDeliveryChannelsRequest() {
-		super("Config", "2020-09-07", "ListConfigDeliveryChannels");
+		super("Config", "2020-09-07", "ListConfigDeliveryChannels", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

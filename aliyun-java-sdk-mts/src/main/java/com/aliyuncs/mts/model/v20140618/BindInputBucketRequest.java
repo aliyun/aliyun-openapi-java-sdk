@@ -29,8 +29,6 @@ public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketRespons
 
 	private Long resourceOwnerId;
 
-	private String depositorCredentials;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -38,8 +36,6 @@ public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketRespons
 	private Long ownerId;
 
 	private String bucket;
-
-	private String roleArn;
 	public BindInputBucketRequest() {
 		super("Mts", "2014-06-18", "BindInputBucket", "mts");
 		setMethod(MethodType.POST);
@@ -68,17 +64,6 @@ public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getDepositorCredentials() {
-		return this.depositorCredentials;
-	}
-
-	public void setDepositorCredentials(String depositorCredentials) {
-		this.depositorCredentials = depositorCredentials;
-		if(depositorCredentials != null){
-			putQueryParameter("DepositorCredentials", depositorCredentials);
 		}
 	}
 
@@ -123,17 +108,6 @@ public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketRespons
 		this.bucket = bucket;
 		if(bucket != null){
 			putQueryParameter("Bucket", bucket);
-		}
-	}
-
-	public String getRoleArn() {
-		return this.roleArn;
-	}
-
-	public void setRoleArn(String roleArn) {
-		this.roleArn = roleArn;
-		if(roleArn != null){
-			putQueryParameter("RoleArn", roleArn);
 		}
 	}
 

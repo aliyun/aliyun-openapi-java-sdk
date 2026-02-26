@@ -25,13 +25,13 @@ import com.aliyuncs.edas.Endpoint;
 public class ListConfigTemplatesRequest extends RoaAcsRequest<ListConfigTemplatesResponse> {
 	   
 
-	private Integer pageSize;
+	private Long pageSize;
 
 	private String name;
 
-	private Integer currentPage;
+	private Long currentPage;
 
-	private Integer id;
+	private Long id;
 	public ListConfigTemplatesRequest() {
 		super("Edas", "2017-08-01", "ListConfigTemplates", "Edas");
 		setUriPattern("/pop/v5/config_template");
@@ -42,11 +42,11 @@ public class ListConfigTemplatesRequest extends RoaAcsRequest<ListConfigTemplate
 		} catch (Exception e) {}
 	}
 
-	public Integer getPageSize() {
+	public Long getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(Integer pageSize) {
+	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
@@ -64,22 +64,22 @@ public class ListConfigTemplatesRequest extends RoaAcsRequest<ListConfigTemplate
 		}
 	}
 
-	public Integer getCurrentPage() {
+	public Long getCurrentPage() {
 		return this.currentPage;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
+	public void setCurrentPage(Long currentPage) {
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());

@@ -35,8 +35,8 @@ public class RecognizeImageColorResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("RecognizeImageColorResponse.Data.ColorTemplateList.Length"); i++) {
 			ColorTemplate colorTemplate = new ColorTemplate();
 			colorTemplate.setColor(_ctx.stringValue("RecognizeImageColorResponse.Data.ColorTemplateList["+ i +"].Color"));
-			colorTemplate.setLabel(_ctx.stringValue("RecognizeImageColorResponse.Data.ColorTemplateList["+ i +"].Label"));
 			colorTemplate.setPercentage(_ctx.floatValue("RecognizeImageColorResponse.Data.ColorTemplateList["+ i +"].Percentage"));
+			colorTemplate.setLabel(_ctx.stringValue("RecognizeImageColorResponse.Data.ColorTemplateList["+ i +"].Label"));
 
 			colorTemplateList.add(colorTemplate);
 		}

@@ -27,14 +27,14 @@ import com.aliyuncs.imm.Endpoint;
 public class UpdateStoryRequest extends RpcAcsRequest<UpdateStoryResponse> {
 	   
 
+	private String customLabels;
+
 	@SerializedName("cover")
 	private Cover cover;
 
-	private String projectName;
-
-	private String customLabels;
-
 	private String datasetName;
+
+	private String projectName;
 
 	private String customId;
 
@@ -50,28 +50,6 @@ public class UpdateStoryRequest extends RpcAcsRequest<UpdateStoryResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Cover getCover() {
-		return this.cover;
-	}
-
-	public void setCover(Cover cover) {
-		this.cover = cover;	
-		if (cover != null) {
-			putBodyParameter("Cover" , new Gson().toJson(cover));
-		}	
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putBodyParameter("ProjectName", projectName);
-		}
-	}
-
 	public String getCustomLabels() {
 		return this.customLabels;
 	}
@@ -83,6 +61,17 @@ public class UpdateStoryRequest extends RpcAcsRequest<UpdateStoryResponse> {
 		}
 	}
 
+	public Cover getCover() {
+		return this.cover;
+	}
+
+	public void setCover(Cover cover) {
+		this.cover = cover;	
+		if (cover != null) {
+			putBodyParameter("Cover" , new Gson().toJson(cover));
+		}	
+	}
+
 	public String getDatasetName() {
 		return this.datasetName;
 	}
@@ -91,6 +80,17 @@ public class UpdateStoryRequest extends RpcAcsRequest<UpdateStoryResponse> {
 		this.datasetName = datasetName;
 		if(datasetName != null){
 			putBodyParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putBodyParameter("ProjectName", projectName);
 		}
 	}
 

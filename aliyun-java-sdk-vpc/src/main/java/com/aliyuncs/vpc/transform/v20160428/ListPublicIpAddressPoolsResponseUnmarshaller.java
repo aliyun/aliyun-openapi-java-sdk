@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vpc.model.v20160428.ListPublicIpAddressPoolsResponse;
 import com.aliyuncs.vpc.model.v20160428.ListPublicIpAddressPoolsResponse.PublicIpAddressPool;
 import com.aliyuncs.vpc.model.v20160428.ListPublicIpAddressPoolsResponse.PublicIpAddressPool.PublicIpCidrBlock;
+import com.aliyuncs.vpc.model.v20160428.ListPublicIpAddressPoolsResponse.PublicIpAddressPool.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,7 +46,24 @@ public class ListPublicIpAddressPoolsResponseUnmarshaller {
 			publicIpAddressPool.setTotalIpNum(_ctx.integerValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].TotalIpNum"));
 			publicIpAddressPool.setUsedIpNum(_ctx.integerValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].UsedIpNum"));
 			publicIpAddressPool.setIpAddressRemaining(_ctx.booleanValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].IpAddressRemaining"));
-			publicIpAddressPool.setUserType(_ctx.booleanValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].UserType"));
+			publicIpAddressPool.setUserType(_ctx.stringValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].UserType"));
+			publicIpAddressPool.setOwnerId(_ctx.longValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].OwnerId"));
+			publicIpAddressPool.setShareType(_ctx.stringValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].ShareType"));
+			publicIpAddressPool.setResourceGroupId(_ctx.stringValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].ResourceGroupId"));
+			publicIpAddressPool.setBizType(_ctx.stringValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].BizType"));
+			publicIpAddressPool.setBusinessStatus(_ctx.stringValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].BusinessStatus"));
+
+			List<String> zones = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].Zones.Length"); j++) {
+				zones.add(_ctx.stringValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].Zones["+ j +"]"));
+			}
+			publicIpAddressPool.setZones(zones);
+
+			List<String> securityProtectionTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].SecurityProtectionTypes.Length"); j++) {
+				securityProtectionTypes.add(_ctx.stringValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].SecurityProtectionTypes["+ j +"]"));
+			}
+			publicIpAddressPool.setSecurityProtectionTypes(securityProtectionTypes);
 
 			List<PublicIpCidrBlock> publicIpCidrBlockList = new ArrayList<PublicIpCidrBlock>();
 			for (int j = 0; j < _ctx.lengthValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].PublicIpCidrBlockList.Length"); j++) {
@@ -59,6 +77,16 @@ public class ListPublicIpAddressPoolsResponseUnmarshaller {
 				publicIpCidrBlockList.add(publicIpCidrBlock);
 			}
 			publicIpAddressPool.setPublicIpCidrBlockList(publicIpCidrBlockList);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			publicIpAddressPool.setTags(tags);
 
 			publicIpAddressPoolList.add(publicIpAddressPool);
 		}

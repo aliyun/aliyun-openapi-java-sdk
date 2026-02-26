@@ -34,6 +34,8 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 
 	private Boolean http2Enabled;
 
+	private List<Tag> tag;
+
 	private List<DefaultActions> defaultActions;
 
 	private Integer listenerPort;
@@ -114,6 +116,23 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 		}
 	}
 
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
+				if (tag.get(depth1) != null) {
+					
+						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
+						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
+				}
+			}
+		}	
+	}
+
 	public List<DefaultActions> getDefaultActions() {
 		return this.defaultActions;
 	}
@@ -184,6 +203,7 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 			for (int depth1 = 0; depth1 < caCertificates.size(); depth1++) {
 				if (caCertificates.get(depth1) != null) {
 					
+						putQueryParameter("CaCertificates." + (depth1 + 1) + ".CertificateId" , caCertificates.get(depth1).getCertificateId());
 				}
 			}
 		}	
@@ -197,8 +217,12 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 		this.xForwardedForConfig = xForwardedForConfig;	
 		if (xForwardedForConfig != null) {
 			
+				putQueryParameter("XForwardedForConfig.XForwardedForClientSourceIpsTrusted" , xForwardedForConfig.getXForwardedForClientSourceIpsTrusted());
 				putQueryParameter("XForwardedForConfig.XForwardedForClientCertSubjectDNAlias" , xForwardedForConfig.getXForwardedForClientCertSubjectDNAlias());
+				putQueryParameter("XForwardedForConfig.XForwardedForClientSourceIpsEnabled" , xForwardedForConfig.getXForwardedForClientSourceIpsEnabled());
 				putQueryParameter("XForwardedForConfig.XForwardedForClientCertIssuerDNEnabled" , xForwardedForConfig.getXForwardedForClientCertIssuerDNEnabled());
+				putQueryParameter("XForwardedForConfig.XForwardedForHostEnabled" , xForwardedForConfig.getXForwardedForHostEnabled());
+				putQueryParameter("XForwardedForConfig.XForwardedForProcessingMode" , xForwardedForConfig.getXForwardedForProcessingMode());
 				putQueryParameter("XForwardedForConfig.XForwardedForClientCertFingerprintEnabled" , xForwardedForConfig.getXForwardedForClientCertFingerprintEnabled());
 				putQueryParameter("XForwardedForConfig.XForwardedForClientCertIssuerDNAlias" , xForwardedForConfig.getXForwardedForClientCertIssuerDNAlias());
 				putQueryParameter("XForwardedForConfig.XForwardedForProtoEnabled" , xForwardedForConfig.getXForwardedForProtoEnabled());
@@ -318,6 +342,29 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 		}
 	}
 
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
 	public static class DefaultActions {
 
 		private ForwardGroupConfig forwardGroupConfig;
@@ -368,13 +415,31 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 	}
 
 	public static class CaCertificates {
+
+		private String certificateId;
+
+		public String getCertificateId() {
+			return this.certificateId;
+		}
+
+		public void setCertificateId(String certificateId) {
+			this.certificateId = certificateId;
+		}
 	}
 
 	public static class XForwardedForConfig {
 
+		private String xForwardedForClientSourceIpsTrusted;
+
 		private String xForwardedForClientCertSubjectDNAlias;
 
+		private Boolean xForwardedForClientSourceIpsEnabled;
+
 		private Boolean xForwardedForClientCertIssuerDNEnabled;
+
+		private Boolean xForwardedForHostEnabled;
+
+		private String xForwardedForProcessingMode;
 
 		private Boolean xForwardedForClientCertFingerprintEnabled;
 
@@ -398,6 +463,14 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 
 		private Boolean xForwardedForSLBIdEnabled;
 
+		public String getXForwardedForClientSourceIpsTrusted() {
+			return this.xForwardedForClientSourceIpsTrusted;
+		}
+
+		public void setXForwardedForClientSourceIpsTrusted(String xForwardedForClientSourceIpsTrusted) {
+			this.xForwardedForClientSourceIpsTrusted = xForwardedForClientSourceIpsTrusted;
+		}
+
 		public String getXForwardedForClientCertSubjectDNAlias() {
 			return this.xForwardedForClientCertSubjectDNAlias;
 		}
@@ -406,12 +479,36 @@ public class CreateListenerRequest extends RpcAcsRequest<CreateListenerResponse>
 			this.xForwardedForClientCertSubjectDNAlias = xForwardedForClientCertSubjectDNAlias;
 		}
 
+		public Boolean getXForwardedForClientSourceIpsEnabled() {
+			return this.xForwardedForClientSourceIpsEnabled;
+		}
+
+		public void setXForwardedForClientSourceIpsEnabled(Boolean xForwardedForClientSourceIpsEnabled) {
+			this.xForwardedForClientSourceIpsEnabled = xForwardedForClientSourceIpsEnabled;
+		}
+
 		public Boolean getXForwardedForClientCertIssuerDNEnabled() {
 			return this.xForwardedForClientCertIssuerDNEnabled;
 		}
 
 		public void setXForwardedForClientCertIssuerDNEnabled(Boolean xForwardedForClientCertIssuerDNEnabled) {
 			this.xForwardedForClientCertIssuerDNEnabled = xForwardedForClientCertIssuerDNEnabled;
+		}
+
+		public Boolean getXForwardedForHostEnabled() {
+			return this.xForwardedForHostEnabled;
+		}
+
+		public void setXForwardedForHostEnabled(Boolean xForwardedForHostEnabled) {
+			this.xForwardedForHostEnabled = xForwardedForHostEnabled;
+		}
+
+		public String getXForwardedForProcessingMode() {
+			return this.xForwardedForProcessingMode;
+		}
+
+		public void setXForwardedForProcessingMode(String xForwardedForProcessingMode) {
+			this.xForwardedForProcessingMode = xForwardedForProcessingMode;
 		}
 
 		public Boolean getXForwardedForClientCertFingerprintEnabled() {

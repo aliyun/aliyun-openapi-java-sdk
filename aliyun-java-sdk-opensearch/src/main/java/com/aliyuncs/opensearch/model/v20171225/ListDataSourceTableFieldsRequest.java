@@ -29,7 +29,7 @@ public class ListDataSourceTableFieldsRequest extends RoaAcsRequest<ListDataSour
 
 	private String params;
 	public ListDataSourceTableFieldsRequest() {
-		super("OpenSearch", "2017-12-25", "ListDataSourceTableFields", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListDataSourceTableFields");
 		setUriPattern("/v4/openapi/assist/data-sources/[dataSourceType]/fields");
 		setMethod(MethodType.GET);
 		try {

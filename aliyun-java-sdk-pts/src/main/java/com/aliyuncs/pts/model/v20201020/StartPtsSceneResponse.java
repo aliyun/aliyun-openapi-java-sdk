@@ -26,15 +26,15 @@ public class StartPtsSceneResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
+
+	private String planId;
 
 	private Integer httpStatusCode;
 
-	private String planId;
+	private String code;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,22 +42,6 @@ public class StartPtsSceneResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -68,6 +52,14 @@ public class StartPtsSceneResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getPlanId() {
+		return this.planId;
+	}
+
+	public void setPlanId(String planId) {
+		this.planId = planId;
+	}
+
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
@@ -76,12 +68,20 @@ public class StartPtsSceneResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getPlanId() {
-		return this.planId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setPlanId(String planId) {
-		this.planId = planId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

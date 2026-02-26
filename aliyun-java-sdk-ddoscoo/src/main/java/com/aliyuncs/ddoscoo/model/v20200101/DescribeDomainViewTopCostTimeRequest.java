@@ -35,7 +35,7 @@ public class DescribeDomainViewTopCostTimeRequest extends RpcAcsRequest<Describe
 
 	private String domain;
 	public DescribeDomainViewTopCostTimeRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDomainViewTopCostTime");
+		super("ddoscoo", "2020-01-01", "DescribeDomainViewTopCostTime", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

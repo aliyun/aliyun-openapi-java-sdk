@@ -27,21 +27,21 @@ public class ListStackGroupOperationsResponseUnmarshaller {
 	public static ListStackGroupOperationsResponse unmarshall(ListStackGroupOperationsResponse listStackGroupOperationsResponse, UnmarshallerContext _ctx) {
 		
 		listStackGroupOperationsResponse.setRequestId(_ctx.stringValue("ListStackGroupOperationsResponse.RequestId"));
-		listStackGroupOperationsResponse.setPageNumber(_ctx.integerValue("ListStackGroupOperationsResponse.PageNumber"));
-		listStackGroupOperationsResponse.setPageSize(_ctx.integerValue("ListStackGroupOperationsResponse.PageSize"));
 		listStackGroupOperationsResponse.setTotalCount(_ctx.integerValue("ListStackGroupOperationsResponse.TotalCount"));
+		listStackGroupOperationsResponse.setPageSize(_ctx.integerValue("ListStackGroupOperationsResponse.PageSize"));
+		listStackGroupOperationsResponse.setPageNumber(_ctx.integerValue("ListStackGroupOperationsResponse.PageNumber"));
 
 		List<StackGroupOperation> stackGroupOperations = new ArrayList<StackGroupOperation>();
 		for (int i = 0; i < _ctx.lengthValue("ListStackGroupOperationsResponse.StackGroupOperations.Length"); i++) {
 			StackGroupOperation stackGroupOperation = new StackGroupOperation();
-			stackGroupOperation.setStackGroupName(_ctx.stringValue("ListStackGroupOperationsResponse.StackGroupOperations["+ i +"].StackGroupName"));
+			stackGroupOperation.setStatus(_ctx.stringValue("ListStackGroupOperationsResponse.StackGroupOperations["+ i +"].Status"));
 			stackGroupOperation.setStackGroupId(_ctx.stringValue("ListStackGroupOperationsResponse.StackGroupOperations["+ i +"].StackGroupId"));
-			stackGroupOperation.setOperationId(_ctx.stringValue("ListStackGroupOperationsResponse.StackGroupOperations["+ i +"].OperationId"));
-			stackGroupOperation.setOperationDescription(_ctx.stringValue("ListStackGroupOperationsResponse.StackGroupOperations["+ i +"].OperationDescription"));
-			stackGroupOperation.setCreateTime(_ctx.stringValue("ListStackGroupOperationsResponse.StackGroupOperations["+ i +"].CreateTime"));
 			stackGroupOperation.setEndTime(_ctx.stringValue("ListStackGroupOperationsResponse.StackGroupOperations["+ i +"].EndTime"));
 			stackGroupOperation.setAction(_ctx.stringValue("ListStackGroupOperationsResponse.StackGroupOperations["+ i +"].Action"));
-			stackGroupOperation.setStatus(_ctx.stringValue("ListStackGroupOperationsResponse.StackGroupOperations["+ i +"].Status"));
+			stackGroupOperation.setCreateTime(_ctx.stringValue("ListStackGroupOperationsResponse.StackGroupOperations["+ i +"].CreateTime"));
+			stackGroupOperation.setStackGroupName(_ctx.stringValue("ListStackGroupOperationsResponse.StackGroupOperations["+ i +"].StackGroupName"));
+			stackGroupOperation.setOperationId(_ctx.stringValue("ListStackGroupOperationsResponse.StackGroupOperations["+ i +"].OperationId"));
+			stackGroupOperation.setOperationDescription(_ctx.stringValue("ListStackGroupOperationsResponse.StackGroupOperations["+ i +"].OperationDescription"));
 
 			stackGroupOperations.add(stackGroupOperation);
 		}

@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SetDomainRecordStatusResponse extends AcsResponse {
 
+	private String status;
+
 	private String requestId;
 
 	private String recordId;
 
-	private String status;
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class SetDomainRecordStatusResponse extends AcsResponse {
 
 	public void setRecordId(String recordId) {
 		this.recordId = recordId;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	@Override

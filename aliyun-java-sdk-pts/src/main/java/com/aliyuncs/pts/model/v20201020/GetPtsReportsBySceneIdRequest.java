@@ -31,7 +31,7 @@ public class GetPtsReportsBySceneIdRequest extends RpcAcsRequest<GetPtsReportsBy
 
 	private Integer pageNumber;
 	public GetPtsReportsBySceneIdRequest() {
-		super("PTS", "2020-10-20", "GetPtsReportsBySceneId", "pts");
+		super("PTS", "2020-10-20", "GetPtsReportsBySceneId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

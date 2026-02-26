@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.alikafka.model.v20190916.GetAllowedIpListResponse;
 import com.aliyuncs.alikafka.model.v20190916.GetAllowedIpListResponse.AllowedList;
 import com.aliyuncs.alikafka.model.v20190916.GetAllowedIpListResponse.AllowedList.IPListVO;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,9 +29,9 @@ public class GetAllowedIpListResponseUnmarshaller {
 	public static GetAllowedIpListResponse unmarshall(GetAllowedIpListResponse getAllowedIpListResponse, UnmarshallerContext _ctx) {
 		
 		getAllowedIpListResponse.setRequestId(_ctx.stringValue("GetAllowedIpListResponse.RequestId"));
-		getAllowedIpListResponse.setSuccess(_ctx.booleanValue("GetAllowedIpListResponse.Success"));
 		getAllowedIpListResponse.setCode(_ctx.integerValue("GetAllowedIpListResponse.Code"));
 		getAllowedIpListResponse.setMessage(_ctx.stringValue("GetAllowedIpListResponse.Message"));
+		getAllowedIpListResponse.setSuccess(_ctx.booleanValue("GetAllowedIpListResponse.Success"));
 
 		AllowedList allowedList = new AllowedList();
 		allowedList.setDeployType(_ctx.integerValue("GetAllowedIpListResponse.AllowedList.DeployType"));
@@ -39,6 +40,7 @@ public class GetAllowedIpListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetAllowedIpListResponse.AllowedList.VpcList.Length"); i++) {
 			IPListVO iPListVO = new IPListVO();
 			iPListVO.setPortRange(_ctx.stringValue("GetAllowedIpListResponse.AllowedList.VpcList["+ i +"].PortRange"));
+			iPListVO.setAllowedIpGroup(_ctx.mapValue("GetAllowedIpListResponse.AllowedList.VpcList["+ i +"].AllowedIpGroup"));
 
 			List<String> allowedIpList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetAllowedIpListResponse.AllowedList.VpcList["+ i +"].AllowedIpList.Length"); j++) {
@@ -52,16 +54,17 @@ public class GetAllowedIpListResponseUnmarshaller {
 
 		List<IPListVO> internetList = new ArrayList<IPListVO>();
 		for (int i = 0; i < _ctx.lengthValue("GetAllowedIpListResponse.AllowedList.InternetList.Length"); i++) {
-			IPListVO iPListVO_ = new IPListVO();
-			iPListVO_.setPortRange(_ctx.stringValue("GetAllowedIpListResponse.AllowedList.InternetList["+ i +"].PortRange"));
+			IPListVO iPListVO1 = new IPListVO();
+			iPListVO1.setPortRange(_ctx.stringValue("GetAllowedIpListResponse.AllowedList.InternetList["+ i +"].PortRange"));
+			iPListVO1.setAllowedIpGroup(_ctx.mapValue("GetAllowedIpListResponse.AllowedList.InternetList["+ i +"].AllowedIpGroup"));
 
 			List<String> allowedIpList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetAllowedIpListResponse.AllowedList.InternetList["+ i +"].AllowedIpList.Length"); j++) {
 				allowedIpList.add(_ctx.stringValue("GetAllowedIpListResponse.AllowedList.InternetList["+ i +"].AllowedIpList["+ j +"]"));
 			}
-			iPListVO_.setAllowedIpList(allowedIpList);
+			iPListVO1.setAllowedIpList(allowedIpList);
 
-			internetList.add(iPListVO_);
+			internetList.add(iPListVO1);
 		}
 		allowedList.setInternetList(internetList);
 		getAllowedIpListResponse.setAllowedList(allowedList);

@@ -46,6 +46,7 @@ public class ListClusterMembersResponseUnmarshaller {
 			clusterMember.setCreateTime(_ctx.longValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].CreateTime"));
 			clusterMember.setClusterMemberId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].ClusterMemberId"));
 			clusterMember.setClusterId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].ClusterId"));
+			clusterMember.setPrivateIp(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].PrivateIp"));
 
 			clusterMemberList.add(clusterMember);
 		}

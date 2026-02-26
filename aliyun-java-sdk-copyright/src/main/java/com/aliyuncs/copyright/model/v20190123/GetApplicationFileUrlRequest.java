@@ -28,7 +28,7 @@ public class GetApplicationFileUrlRequest extends RpcAcsRequest<GetApplicationFi
 
 	private String bizId;
 	public GetApplicationFileUrlRequest() {
-		super("Copyright", "2019-01-23", "GetApplicationFileUrl");
+		super("Copyright", "2019-01-23", "GetApplicationFileUrl", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

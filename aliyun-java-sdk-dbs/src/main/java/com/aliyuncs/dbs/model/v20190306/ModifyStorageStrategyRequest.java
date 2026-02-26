@@ -25,35 +25,24 @@ import com.aliyuncs.dbs.Endpoint;
 public class ModifyStorageStrategyRequest extends RpcAcsRequest<ModifyStorageStrategyResponse> {
 	   
 
-	private Integer duplicationArchivePeriod;
-
 	private String clientToken;
 
 	private String backupPlanId;
 
+	private Integer duplicationInfrequentAccessPeriod;
+
+	private Integer duplicationArchivePeriod;
+
 	private String ownerId;
 
 	private Integer backupRetentionPeriod;
-
-	private Integer duplicationInfrequentAccessPeriod;
 	public ModifyStorageStrategyRequest() {
-		super("Dbs", "2019-03-06", "ModifyStorageStrategy");
+		super("Dbs", "2019-03-06", "ModifyStorageStrategy", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getDuplicationArchivePeriod() {
-		return this.duplicationArchivePeriod;
-	}
-
-	public void setDuplicationArchivePeriod(Integer duplicationArchivePeriod) {
-		this.duplicationArchivePeriod = duplicationArchivePeriod;
-		if(duplicationArchivePeriod != null){
-			putQueryParameter("DuplicationArchivePeriod", duplicationArchivePeriod.toString());
-		}
 	}
 
 	public String getClientToken() {
@@ -78,6 +67,28 @@ public class ModifyStorageStrategyRequest extends RpcAcsRequest<ModifyStorageStr
 		}
 	}
 
+	public Integer getDuplicationInfrequentAccessPeriod() {
+		return this.duplicationInfrequentAccessPeriod;
+	}
+
+	public void setDuplicationInfrequentAccessPeriod(Integer duplicationInfrequentAccessPeriod) {
+		this.duplicationInfrequentAccessPeriod = duplicationInfrequentAccessPeriod;
+		if(duplicationInfrequentAccessPeriod != null){
+			putQueryParameter("DuplicationInfrequentAccessPeriod", duplicationInfrequentAccessPeriod.toString());
+		}
+	}
+
+	public Integer getDuplicationArchivePeriod() {
+		return this.duplicationArchivePeriod;
+	}
+
+	public void setDuplicationArchivePeriod(Integer duplicationArchivePeriod) {
+		this.duplicationArchivePeriod = duplicationArchivePeriod;
+		if(duplicationArchivePeriod != null){
+			putQueryParameter("DuplicationArchivePeriod", duplicationArchivePeriod.toString());
+		}
+	}
+
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -97,17 +108,6 @@ public class ModifyStorageStrategyRequest extends RpcAcsRequest<ModifyStorageStr
 		this.backupRetentionPeriod = backupRetentionPeriod;
 		if(backupRetentionPeriod != null){
 			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod.toString());
-		}
-	}
-
-	public Integer getDuplicationInfrequentAccessPeriod() {
-		return this.duplicationInfrequentAccessPeriod;
-	}
-
-	public void setDuplicationInfrequentAccessPeriod(Integer duplicationInfrequentAccessPeriod) {
-		this.duplicationInfrequentAccessPeriod = duplicationInfrequentAccessPeriod;
-		if(duplicationInfrequentAccessPeriod != null){
-			putQueryParameter("DuplicationInfrequentAccessPeriod", duplicationInfrequentAccessPeriod.toString());
 		}
 	}
 

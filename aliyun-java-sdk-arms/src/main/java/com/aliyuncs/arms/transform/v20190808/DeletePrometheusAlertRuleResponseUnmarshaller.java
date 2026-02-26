@@ -24,6 +24,8 @@ public class DeletePrometheusAlertRuleResponseUnmarshaller {
 		
 		deletePrometheusAlertRuleResponse.setRequestId(_ctx.stringValue("DeletePrometheusAlertRuleResponse.RequestId"));
 		deletePrometheusAlertRuleResponse.setSuccess(_ctx.booleanValue("DeletePrometheusAlertRuleResponse.Success"));
+		deletePrometheusAlertRuleResponse.setCode(_ctx.longValue("DeletePrometheusAlertRuleResponse.Code"));
+		deletePrometheusAlertRuleResponse.setMessage(_ctx.stringValue("DeletePrometheusAlertRuleResponse.Message"));
 	 
 	 	return deletePrometheusAlertRuleResponse;
 	}

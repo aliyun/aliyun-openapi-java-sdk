@@ -35,6 +35,7 @@ public class GetDataExportOrderDetailResponseUnmarshaller {
 		KeyInfo keyInfo = new KeyInfo();
 		keyInfo.setPreCheckId(_ctx.longValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.KeyInfo.PreCheckId"));
 		keyInfo.setJobStatus(_ctx.stringValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.KeyInfo.JobStatus"));
+		keyInfo.setJobId(_ctx.longValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.KeyInfo.JobId"));
 		dataExportOrderDetail.setKeyInfo(keyInfo);
 
 		OrderDetail orderDetail = new OrderDetail();

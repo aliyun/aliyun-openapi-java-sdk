@@ -14,8 +14,12 @@
 
 package com.aliyuncs.oos.transform.v20190601;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.oos.model.v20190601.GetApplicationResponse;
 import com.aliyuncs.oos.model.v20190601.GetApplicationResponse.Application;
+import com.aliyuncs.oos.model.v20190601.GetApplicationResponse.Application.AlarmConfig;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -33,6 +37,24 @@ public class GetApplicationResponseUnmarshaller {
 		application.setTags(_ctx.mapValue("GetApplicationResponse.Application.Tags"));
 		application.setName(_ctx.stringValue("GetApplicationResponse.Application.Name"));
 		application.setCreateDate(_ctx.stringValue("GetApplicationResponse.Application.CreateDate"));
+		application.setApplicationType(_ctx.stringValue("GetApplicationResponse.Application.ApplicationType"));
+		application.setServiceId(_ctx.stringValue("GetApplicationResponse.Application.ServiceId"));
+
+		AlarmConfig alarmConfig = new AlarmConfig();
+		alarmConfig.setHealthCheckUrl(_ctx.stringValue("GetApplicationResponse.Application.AlarmConfig.HealthCheckUrl"));
+
+		List<String> contactGroups = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetApplicationResponse.Application.AlarmConfig.ContactGroups.Length"); i++) {
+			contactGroups.add(_ctx.stringValue("GetApplicationResponse.Application.AlarmConfig.ContactGroups["+ i +"]"));
+		}
+		alarmConfig.setContactGroups(contactGroups);
+
+		List<String> templateIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetApplicationResponse.Application.AlarmConfig.TemplateIds.Length"); i++) {
+			templateIds.add(_ctx.stringValue("GetApplicationResponse.Application.AlarmConfig.TemplateIds["+ i +"]"));
+		}
+		alarmConfig.setTemplateIds(templateIds);
+		application.setAlarmConfig(alarmConfig);
 		getApplicationResponse.setApplication(application);
 	 
 	 	return getApplicationResponse;

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPoliciesForTargetResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class ListPoliciesForTargetResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DataItem> getData() {
@@ -57,15 +57,31 @@ public class ListPoliciesForTargetResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private String policyContent;
+
+		private String policyDesc;
+
 		private String policyId;
 
 		private String policyName;
 
-		private String policyDesc;
-
-		private String policyContent;
-
 		private String userType;
+
+		public String getPolicyContent() {
+			return this.policyContent;
+		}
+
+		public void setPolicyContent(String policyContent) {
+			this.policyContent = policyContent;
+		}
+
+		public String getPolicyDesc() {
+			return this.policyDesc;
+		}
+
+		public void setPolicyDesc(String policyDesc) {
+			this.policyDesc = policyDesc;
+		}
 
 		public String getPolicyId() {
 			return this.policyId;
@@ -81,22 +97,6 @@ public class ListPoliciesForTargetResponse extends AcsResponse {
 
 		public void setPolicyName(String policyName) {
 			this.policyName = policyName;
-		}
-
-		public String getPolicyDesc() {
-			return this.policyDesc;
-		}
-
-		public void setPolicyDesc(String policyDesc) {
-			this.policyDesc = policyDesc;
-		}
-
-		public String getPolicyContent() {
-			return this.policyContent;
-		}
-
-		public void setPolicyContent(String policyContent) {
-			this.policyContent = policyContent;
 		}
 
 		public String getUserType() {

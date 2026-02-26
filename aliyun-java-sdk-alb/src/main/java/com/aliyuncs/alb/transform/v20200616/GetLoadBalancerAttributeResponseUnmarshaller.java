@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alb.model.v20200616.GetLoadBalancerAttributeResponse;
 import com.aliyuncs.alb.model.v20200616.GetLoadBalancerAttributeResponse.AccessLogConfig;
+import com.aliyuncs.alb.model.v20200616.GetLoadBalancerAttributeResponse.AssociatedResource;
 import com.aliyuncs.alb.model.v20200616.GetLoadBalancerAttributeResponse.DeletionProtectionConfig;
 import com.aliyuncs.alb.model.v20200616.GetLoadBalancerAttributeResponse.LoadBalancerBillingConfig;
 import com.aliyuncs.alb.model.v20200616.GetLoadBalancerAttributeResponse.LoadBalancerOperationLock;
@@ -36,6 +37,7 @@ public class GetLoadBalancerAttributeResponseUnmarshaller {
 		getLoadBalancerAttributeResponse.setRequestId(_ctx.stringValue("GetLoadBalancerAttributeResponse.RequestId"));
 		getLoadBalancerAttributeResponse.setAddressAllocatedMode(_ctx.stringValue("GetLoadBalancerAttributeResponse.AddressAllocatedMode"));
 		getLoadBalancerAttributeResponse.setAddressType(_ctx.stringValue("GetLoadBalancerAttributeResponse.AddressType"));
+		getLoadBalancerAttributeResponse.setBandwidthCapacity(_ctx.integerValue("GetLoadBalancerAttributeResponse.BandwidthCapacity"));
 		getLoadBalancerAttributeResponse.setBandwidthPackageId(_ctx.stringValue("GetLoadBalancerAttributeResponse.BandwidthPackageId"));
 		getLoadBalancerAttributeResponse.setCreateTime(_ctx.stringValue("GetLoadBalancerAttributeResponse.CreateTime"));
 		getLoadBalancerAttributeResponse.setDNSName(_ctx.stringValue("GetLoadBalancerAttributeResponse.DNSName"));
@@ -43,12 +45,30 @@ public class GetLoadBalancerAttributeResponseUnmarshaller {
 		getLoadBalancerAttributeResponse.setLoadBalancerEdition(_ctx.stringValue("GetLoadBalancerAttributeResponse.LoadBalancerEdition"));
 		getLoadBalancerAttributeResponse.setLoadBalancerId(_ctx.stringValue("GetLoadBalancerAttributeResponse.LoadBalancerId"));
 		getLoadBalancerAttributeResponse.setLoadBalancerName(_ctx.stringValue("GetLoadBalancerAttributeResponse.LoadBalancerName"));
+		getLoadBalancerAttributeResponse.setServiceManagedEnabled(_ctx.booleanValue("GetLoadBalancerAttributeResponse.ServiceManagedEnabled"));
+		getLoadBalancerAttributeResponse.setServiceManagedMode(_ctx.stringValue("GetLoadBalancerAttributeResponse.ServiceManagedMode"));
 		getLoadBalancerAttributeResponse.setLoadBalancerStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.LoadBalancerStatus"));
 		getLoadBalancerAttributeResponse.setRegionId(_ctx.stringValue("GetLoadBalancerAttributeResponse.RegionId"));
 		getLoadBalancerAttributeResponse.setResourceGroupId(_ctx.stringValue("GetLoadBalancerAttributeResponse.ResourceGroupId"));
 		getLoadBalancerAttributeResponse.setVpcId(_ctx.stringValue("GetLoadBalancerAttributeResponse.VpcId"));
+		getLoadBalancerAttributeResponse.setConfigManagedEnabled(_ctx.booleanValue("GetLoadBalancerAttributeResponse.ConfigManagedEnabled"));
 		getLoadBalancerAttributeResponse.setAddressIpVersion(_ctx.stringValue("GetLoadBalancerAttributeResponse.AddressIpVersion"));
 		getLoadBalancerAttributeResponse.setIpv6AddressType(_ctx.stringValue("GetLoadBalancerAttributeResponse.Ipv6AddressType"));
+		getLoadBalancerAttributeResponse.setBackToOriginRouteEnabled(_ctx.booleanValue("GetLoadBalancerAttributeResponse.BackToOriginRouteEnabled"));
+		getLoadBalancerAttributeResponse.setLoadBalancerVersion(_ctx.stringValue("GetLoadBalancerAttributeResponse.LoadBalancerVersion"));
+		getLoadBalancerAttributeResponse.setSysSecurityGroupId(_ctx.stringValue("GetLoadBalancerAttributeResponse.SysSecurityGroupId"));
+
+		List<String> featureLabels = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetLoadBalancerAttributeResponse.FeatureLabels.Length"); i++) {
+			featureLabels.add(_ctx.stringValue("GetLoadBalancerAttributeResponse.FeatureLabels["+ i +"]"));
+		}
+		getLoadBalancerAttributeResponse.setFeatureLabels(featureLabels);
+
+		List<String> securityGroupIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetLoadBalancerAttributeResponse.SecurityGroupIds.Length"); i++) {
+			securityGroupIds.add(_ctx.stringValue("GetLoadBalancerAttributeResponse.SecurityGroupIds["+ i +"]"));
+		}
+		getLoadBalancerAttributeResponse.setSecurityGroupIds(securityGroupIds);
 
 		AccessLogConfig accessLogConfig = new AccessLogConfig();
 		accessLogConfig.setLogProject(_ctx.stringValue("GetLoadBalancerAttributeResponse.AccessLogConfig.LogProject"));
@@ -61,6 +81,8 @@ public class GetLoadBalancerAttributeResponseUnmarshaller {
 		getLoadBalancerAttributeResponse.setDeletionProtectionConfig(deletionProtectionConfig);
 
 		LoadBalancerBillingConfig loadBalancerBillingConfig = new LoadBalancerBillingConfig();
+		loadBalancerBillingConfig.setInternetBandwidth(_ctx.integerValue("GetLoadBalancerAttributeResponse.LoadBalancerBillingConfig.InternetBandwidth"));
+		loadBalancerBillingConfig.setInternetChargeType(_ctx.stringValue("GetLoadBalancerAttributeResponse.LoadBalancerBillingConfig.InternetChargeType"));
 		loadBalancerBillingConfig.setPayType(_ctx.stringValue("GetLoadBalancerAttributeResponse.LoadBalancerBillingConfig.PayType"));
 		getLoadBalancerAttributeResponse.setLoadBalancerBillingConfig(loadBalancerBillingConfig);
 
@@ -94,12 +116,32 @@ public class GetLoadBalancerAttributeResponseUnmarshaller {
 			ZoneMapping zoneMapping = new ZoneMapping();
 			zoneMapping.setVSwitchId(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].VSwitchId"));
 			zoneMapping.setZoneId(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].ZoneId"));
+			zoneMapping.setAllocationId(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].AllocationId"));
+			zoneMapping.setEipType(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].EipType"));
+			zoneMapping.setStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].Status"));
 
 			List<LoadBalancerAddress> loadBalancerAddresses = new ArrayList<LoadBalancerAddress>();
 			for (int j = 0; j < _ctx.lengthValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses.Length"); j++) {
 				LoadBalancerAddress loadBalancerAddress = new LoadBalancerAddress();
 				loadBalancerAddress.setAddress(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Address"));
 				loadBalancerAddress.setIpv6Address(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Ipv6Address"));
+				loadBalancerAddress.setIntranetAddress(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].IntranetAddress"));
+				loadBalancerAddress.setAllocationId(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].AllocationId"));
+				loadBalancerAddress.setEipType(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].EipType"));
+				loadBalancerAddress.setIntranetAddressHcStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].IntranetAddressHcStatus"));
+				loadBalancerAddress.setIpv6AddressHcStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Ipv6AddressHcStatus"));
+
+				List<String> ipv4LocalAddresses = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Ipv4LocalAddresses.Length"); k++) {
+					ipv4LocalAddresses.add(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Ipv4LocalAddresses["+ k +"]"));
+				}
+				loadBalancerAddress.setIpv4LocalAddresses(ipv4LocalAddresses);
+
+				List<String> ipv6LocalAddresses = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Ipv6LocalAddresses.Length"); k++) {
+					ipv6LocalAddresses.add(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Ipv6LocalAddresses["+ k +"]"));
+				}
+				loadBalancerAddress.setIpv6LocalAddresses(ipv6LocalAddresses);
 
 				loadBalancerAddresses.add(loadBalancerAddress);
 			}
@@ -108,6 +150,19 @@ public class GetLoadBalancerAttributeResponseUnmarshaller {
 			zoneMappings.add(zoneMapping);
 		}
 		getLoadBalancerAttributeResponse.setZoneMappings(zoneMappings);
+
+		List<AssociatedResource> associatedResources = new ArrayList<AssociatedResource>();
+		for (int i = 0; i < _ctx.lengthValue("GetLoadBalancerAttributeResponse.AssociatedResources.Length"); i++) {
+			AssociatedResource associatedResource = new AssociatedResource();
+			associatedResource.setAssociatedResourceType(_ctx.stringValue("GetLoadBalancerAttributeResponse.AssociatedResources["+ i +"].AssociatedResourceType"));
+			associatedResource.setAssociatedResourceId(_ctx.stringValue("GetLoadBalancerAttributeResponse.AssociatedResources["+ i +"].AssociatedResourceId"));
+			associatedResource.setPolicyId(_ctx.stringValue("GetLoadBalancerAttributeResponse.AssociatedResources["+ i +"].PolicyId"));
+			associatedResource.setStatus(_ctx.stringValue("GetLoadBalancerAttributeResponse.AssociatedResources["+ i +"].Status"));
+			associatedResource.setAssociatedMode(_ctx.stringValue("GetLoadBalancerAttributeResponse.AssociatedResources["+ i +"].AssociatedMode"));
+
+			associatedResources.add(associatedResource);
+		}
+		getLoadBalancerAttributeResponse.setAssociatedResources(associatedResources);
 	 
 	 	return getLoadBalancerAttributeResponse;
 	}

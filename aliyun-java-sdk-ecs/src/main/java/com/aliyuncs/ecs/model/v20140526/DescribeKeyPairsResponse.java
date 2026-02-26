@@ -85,6 +85,8 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String publicKey;
+
 		private List<Tag> tags;
 
 		public String getCreationTime() {
@@ -117,6 +119,14 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getPublicKey() {
+			return this.publicKey;
+		}
+
+		public void setPublicKey(String publicKey) {
+			this.publicKey = publicKey;
 		}
 
 		public List<Tag> getTags() {

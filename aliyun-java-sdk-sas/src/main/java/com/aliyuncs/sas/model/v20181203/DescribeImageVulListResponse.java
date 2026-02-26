@@ -115,6 +115,34 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 		private String canFix;
 
+		private String clusterId;
+
+		private String clusterName;
+
+		private String pod;
+
+		private String namespace;
+
+		private String image;
+
+		private String containerId;
+
+		private String internetIp;
+
+		private String intranetIp;
+
+		private String instanceName;
+
+		private String targetId;
+
+		private String targetName;
+
+		private String maliciousSource;
+
+		private String targetType;
+
+		private Long scanTime;
+
 		private List<String> layers;
 
 		private ExtendContentJson extendContentJson;
@@ -269,6 +297,118 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 		public void setCanFix(String canFix) {
 			this.canFix = canFix;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public String getPod() {
+			return this.pod;
+		}
+
+		public void setPod(String pod) {
+			this.pod = pod;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getImage() {
+			return this.image;
+		}
+
+		public void setImage(String image) {
+			this.image = image;
+		}
+
+		public String getContainerId() {
+			return this.containerId;
+		}
+
+		public void setContainerId(String containerId) {
+			this.containerId = containerId;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getTargetId() {
+			return this.targetId;
+		}
+
+		public void setTargetId(String targetId) {
+			this.targetId = targetId;
+		}
+
+		public String getTargetName() {
+			return this.targetName;
+		}
+
+		public void setTargetName(String targetName) {
+			this.targetName = targetName;
+		}
+
+		public String getMaliciousSource() {
+			return this.maliciousSource;
+		}
+
+		public void setMaliciousSource(String maliciousSource) {
+			this.maliciousSource = maliciousSource;
+		}
+
+		public String getTargetType() {
+			return this.targetType;
+		}
+
+		public void setTargetType(String targetType) {
+			this.targetType = targetType;
+		}
+
+		public Long getScanTime() {
+			return this.scanTime;
+		}
+
+		public void setScanTime(Long scanTime) {
+			this.scanTime = scanTime;
 		}
 
 		public List<String> getLayers() {

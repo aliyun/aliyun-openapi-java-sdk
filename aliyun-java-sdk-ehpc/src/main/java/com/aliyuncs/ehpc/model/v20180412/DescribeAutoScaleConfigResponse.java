@@ -24,37 +24,61 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAutoScaleConfigResponse extends AcsResponse {
 
+	private Integer maxNodesInCluster;
+
+	private Integer growTimeoutInMinutes;
+
+	private String spotStrategy;
+
 	private String requestId;
 
-	private String uid;
-
-	private String clusterId;
+	private Boolean enableAutoShrink;
 
 	private String clusterType;
 
 	private Boolean enableAutoGrow;
 
-	private Boolean enableAutoShrink;
+	private String excludeNodes;
 
 	private Integer growIntervalInMinutes;
 
 	private Integer shrinkIntervalInMinutes;
 
-	private Integer shrinkIdleTimes;
+	private String spotPriceLimit;
 
-	private Integer growTimeoutInMinutes;
+	private Integer shrinkIdleTimes;
 
 	private Integer extraNodesGrowRatio;
 
 	private Integer growRatio;
 
-	private Integer maxNodesInCluster;
+	private String uid;
 
-	private String excludeNodes;
+	private String clusterId;
 
-	private String spotStrategy;
+	public Integer getMaxNodesInCluster() {
+		return this.maxNodesInCluster;
+	}
 
-	private String spotPriceLimit;
+	public void setMaxNodesInCluster(Integer maxNodesInCluster) {
+		this.maxNodesInCluster = maxNodesInCluster;
+	}
+
+	public Integer getGrowTimeoutInMinutes() {
+		return this.growTimeoutInMinutes;
+	}
+
+	public void setGrowTimeoutInMinutes(Integer growTimeoutInMinutes) {
+		this.growTimeoutInMinutes = growTimeoutInMinutes;
+	}
+
+	public String getSpotStrategy() {
+		return this.spotStrategy;
+	}
+
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -64,20 +88,12 @@ public class DescribeAutoScaleConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getUid() {
-		return this.uid;
+	public Boolean getEnableAutoShrink() {
+		return this.enableAutoShrink;
 	}
 
-	public void setUid(String uid) {
-		this.uid = uid;
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
+	public void setEnableAutoShrink(Boolean enableAutoShrink) {
+		this.enableAutoShrink = enableAutoShrink;
 	}
 
 	public String getClusterType() {
@@ -96,12 +112,12 @@ public class DescribeAutoScaleConfigResponse extends AcsResponse {
 		this.enableAutoGrow = enableAutoGrow;
 	}
 
-	public Boolean getEnableAutoShrink() {
-		return this.enableAutoShrink;
+	public String getExcludeNodes() {
+		return this.excludeNodes;
 	}
 
-	public void setEnableAutoShrink(Boolean enableAutoShrink) {
-		this.enableAutoShrink = enableAutoShrink;
+	public void setExcludeNodes(String excludeNodes) {
+		this.excludeNodes = excludeNodes;
 	}
 
 	public Integer getGrowIntervalInMinutes() {
@@ -120,20 +136,20 @@ public class DescribeAutoScaleConfigResponse extends AcsResponse {
 		this.shrinkIntervalInMinutes = shrinkIntervalInMinutes;
 	}
 
+	public String getSpotPriceLimit() {
+		return this.spotPriceLimit;
+	}
+
+	public void setSpotPriceLimit(String spotPriceLimit) {
+		this.spotPriceLimit = spotPriceLimit;
+	}
+
 	public Integer getShrinkIdleTimes() {
 		return this.shrinkIdleTimes;
 	}
 
 	public void setShrinkIdleTimes(Integer shrinkIdleTimes) {
 		this.shrinkIdleTimes = shrinkIdleTimes;
-	}
-
-	public Integer getGrowTimeoutInMinutes() {
-		return this.growTimeoutInMinutes;
-	}
-
-	public void setGrowTimeoutInMinutes(Integer growTimeoutInMinutes) {
-		this.growTimeoutInMinutes = growTimeoutInMinutes;
 	}
 
 	public Integer getExtraNodesGrowRatio() {
@@ -152,36 +168,20 @@ public class DescribeAutoScaleConfigResponse extends AcsResponse {
 		this.growRatio = growRatio;
 	}
 
-	public Integer getMaxNodesInCluster() {
-		return this.maxNodesInCluster;
+	public String getUid() {
+		return this.uid;
 	}
 
-	public void setMaxNodesInCluster(Integer maxNodesInCluster) {
-		this.maxNodesInCluster = maxNodesInCluster;
+	public void setUid(String uid) {
+		this.uid = uid;
 	}
 
-	public String getExcludeNodes() {
-		return this.excludeNodes;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setExcludeNodes(String excludeNodes) {
-		this.excludeNodes = excludeNodes;
-	}
-
-	public String getSpotStrategy() {
-		return this.spotStrategy;
-	}
-
-	public void setSpotStrategy(String spotStrategy) {
-		this.spotStrategy = spotStrategy;
-	}
-
-	public String getSpotPriceLimit() {
-		return this.spotPriceLimit;
-	}
-
-	public void setSpotPriceLimit(String spotPriceLimit) {
-		this.spotPriceLimit = spotPriceLimit;
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
 	}
 
 	@Override

@@ -23,9 +23,9 @@ public class GetIfEcsTypeSupportHtConfigResponseUnmarshaller {
 	public static GetIfEcsTypeSupportHtConfigResponse unmarshall(GetIfEcsTypeSupportHtConfigResponse getIfEcsTypeSupportHtConfigResponse, UnmarshallerContext _ctx) {
 		
 		getIfEcsTypeSupportHtConfigResponse.setRequestId(_ctx.stringValue("GetIfEcsTypeSupportHtConfigResponse.RequestId"));
+		getIfEcsTypeSupportHtConfigResponse.setDefaultHtEnabled(_ctx.booleanValue("GetIfEcsTypeSupportHtConfigResponse.DefaultHtEnabled"));
 		getIfEcsTypeSupportHtConfigResponse.setInstanceType(_ctx.stringValue("GetIfEcsTypeSupportHtConfigResponse.InstanceType"));
 		getIfEcsTypeSupportHtConfigResponse.setSupportHtConfig(_ctx.booleanValue("GetIfEcsTypeSupportHtConfigResponse.SupportHtConfig"));
-		getIfEcsTypeSupportHtConfigResponse.setDefaultHtEnabled(_ctx.booleanValue("GetIfEcsTypeSupportHtConfigResponse.DefaultHtEnabled"));
 	 
 	 	return getIfEcsTypeSupportHtConfigResponse;
 	}

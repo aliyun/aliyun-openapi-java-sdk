@@ -27,6 +27,8 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 
 	private Long resourceOwnerId;
 
+	private String regionCode;
+
 	private Integer pageNumber;
 
 	private String securityToken;
@@ -47,7 +49,7 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 
 	private String getDbName;
 	public DescribeMetaListRequest() {
-		super("polardb", "2017-08-01", "DescribeMetaList");
+		super("polardb", "2017-08-01", "DescribeMetaList", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,6 +65,17 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getRegionCode() {
+		return this.regionCode;
+	}
+
+	public void setRegionCode(String regionCode) {
+		this.regionCode = regionCode;
+		if(regionCode != null){
+			putQueryParameter("RegionCode", regionCode);
 		}
 	}
 

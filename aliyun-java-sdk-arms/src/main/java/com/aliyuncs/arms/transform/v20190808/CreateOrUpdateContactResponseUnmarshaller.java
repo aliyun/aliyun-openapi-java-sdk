@@ -32,6 +32,8 @@ public class CreateOrUpdateContactResponseUnmarshaller {
 		alertContact.setEmail(_ctx.stringValue("CreateOrUpdateContactResponse.AlertContact.Email"));
 		alertContact.setIsVerify(_ctx.booleanValue("CreateOrUpdateContactResponse.AlertContact.IsVerify"));
 		alertContact.setReissueSendNotice(_ctx.longValue("CreateOrUpdateContactResponse.AlertContact.ReissueSendNotice"));
+		alertContact.setIsEmailVerify(_ctx.booleanValue("CreateOrUpdateContactResponse.AlertContact.isEmailVerify"));
+		alertContact.setDingRobotUrl(_ctx.stringValue("CreateOrUpdateContactResponse.AlertContact.DingRobotUrl"));
 		createOrUpdateContactResponse.setAlertContact(alertContact);
 	 
 	 	return createOrUpdateContactResponse;

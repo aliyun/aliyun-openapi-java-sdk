@@ -1,3 +1,57 @@
+2023-07-13 Version: 3.0.41
+- Public API ListAppBySwimmingLaneGroupTags.
+- Update APIs.
+- Support Pod distributed flag.
+- Support expected zone list.
+- Optimize UpdateXXXRulesStatus.
+- Fix QueryAppRPCMacMetrics result.
+- Add dataids param for config export.
+- Support get current client ip.
+- Change GetGateway timeout to 20s.
+- Update APIs for 2023-07-10.
+- Supported VPC and SecurityGroup params for service test.
+- API Type Tag.
+- Add API Type Tag.
+- Open Response Log.
+- Fixed url.
+
+2023-05-23 Version: 3.0.40
+- Rebuild.
+
+2023-04-18 Version: 3.0.39
+- Rebuild.
+
+2023-03-13 Version: 3.0.38
+- Rebuild.
+
+2023-02-09 Version: 3.0.37
+- Rebuild.
+
+2023-02-03 Version: 3.0.36
+- For all api.
+
+2023-02-03 Version: 3.0.35
+- Suport mse nologin.
+- Support mse nologin.
+- Fixed bugs timeout for ListEngineNamespaces.
+- Fixed api description.
+- Support change mseVersion.
+- Support listNamespace source type.
+- Support for checking Lua.
+
+2022-09-22 Version: 3.0.34
+- Add normandy api.
+
+2022-09-22 Version: 3.0.31
+- UpdatePluginConfig.
+- GetPlugins.
+- GetPluginConfig.
+
+2022-09-14 Version: 3.0.30
+- UpdatePluginConfig.
+- GetPlugins.
+- GetPluginConfig.
+
 2022-06-22 Version: 3.0.25
 - Add Old Version SDK.
 

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.sas.model.v20181203;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.sas.transform.v20181203.GetCheckDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -25,6 +26,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
 public class GetCheckDetailResponse extends AcsResponse {
 
 	private String requestId;
+
+	private List<CustomConfigsItem> customConfigs;
 
 	private Description description;
 
@@ -38,6 +41,14 @@ public class GetCheckDetailResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<CustomConfigsItem> getCustomConfigs() {
+		return this.customConfigs;
+	}
+
+	public void setCustomConfigs(List<CustomConfigsItem> customConfigs) {
+		this.customConfigs = customConfigs;
 	}
 
 	public Description getDescription() {
@@ -62,6 +73,59 @@ public class GetCheckDetailResponse extends AcsResponse {
 
 	public void setAssistInfo(AssistInfo assistInfo) {
 		this.assistInfo = assistInfo;
+	}
+
+	public static class CustomConfigsItem {
+
+		private String name;
+
+		private String typeDefine;
+
+		private String defaultValue;
+
+		private String value;
+
+		private String showName;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getTypeDefine() {
+			return this.typeDefine;
+		}
+
+		public void setTypeDefine(String typeDefine) {
+			this.typeDefine = typeDefine;
+		}
+
+		public String getDefaultValue() {
+			return this.defaultValue;
+		}
+
+		public void setDefaultValue(String defaultValue) {
+			this.defaultValue = defaultValue;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getShowName() {
+			return this.showName;
+		}
+
+		public void setShowName(String showName) {
+			this.showName = showName;
+		}
 	}
 
 	public static class Description {

@@ -47,7 +47,7 @@ public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyD
 
 	private String dBClusterIPArrayName;
 	public ModifyDBClusterAccessWhitelistRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterAccessWhitelist");
+		super("polardb", "2017-08-01", "ModifyDBClusterAccessWhitelist", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

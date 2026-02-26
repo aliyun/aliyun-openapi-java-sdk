@@ -31,23 +31,23 @@ public class DescribeUserUsageDetailDataExportTaskResponseUnmarshaller {
 		describeUserUsageDetailDataExportTaskResponse.setRequestId(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.RequestId"));
 
 		UsageDataPerPage usageDataPerPage = new UsageDataPerPage();
-		usageDataPerPage.setTotalCount(_ctx.integerValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.TotalCount"));
 		usageDataPerPage.setPageSize(_ctx.integerValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.PageSize"));
 		usageDataPerPage.setPageNumber(_ctx.integerValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.PageNumber"));
+		usageDataPerPage.setTotalCount(_ctx.integerValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.TotalCount"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setStatus(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].Status"));
+			dataItem.setUpdateTime(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].UpdateTime"));
+			dataItem.setDownloadUrl(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].DownloadUrl"));
+			dataItem.setCreateTime(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].CreateTime"));
 			dataItem.setTaskName(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskName"));
 			dataItem.setTaskId(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskId"));
-			dataItem.setCreateTime(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].CreateTime"));
-			dataItem.setUpdateTime(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].UpdateTime"));
-			dataItem.setStatus(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].Status"));
-			dataItem.setDownloadUrl(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].DownloadUrl"));
 
 			TaskConfig taskConfig = new TaskConfig();
-			taskConfig.setStartTime(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskConfig.StartTime"));
 			taskConfig.setEndTime(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskConfig.EndTime"));
+			taskConfig.setStartTime(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskConfig.StartTime"));
 			dataItem.setTaskConfig(taskConfig);
 
 			data.add(dataItem);

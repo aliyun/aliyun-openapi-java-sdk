@@ -53,7 +53,7 @@ public class CheckClickhouseToRDSRequest extends RpcAcsRequest<CheckClickhouseTo
 
 	private String rdsUserName;
 	public CheckClickhouseToRDSRequest() {
-		super("clickhouse", "2019-11-11", "CheckClickhouseToRDS");
+		super("clickhouse", "2019-11-11", "CheckClickhouseToRDS", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

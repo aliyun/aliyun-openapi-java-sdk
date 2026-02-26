@@ -24,39 +24,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateInstanceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Result result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Result getResult() {
-		return this.result;
-	}
-
-	public void setResult(Result result) {
-		this.result = result;
-	}
-
-	public static class Result {
-
-		private String instanceId;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-	}
-
 	@Override
 	public CreateInstanceResponse getInstance(UnmarshallerContext context) {
 		return	CreateInstanceResponseUnmarshaller.unmarshall(this, context);

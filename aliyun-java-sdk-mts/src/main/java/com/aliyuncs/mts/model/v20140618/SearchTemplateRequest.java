@@ -33,6 +33,8 @@ public class SearchTemplateRequest extends RpcAcsRequest<SearchTemplateResponse>
 
 	private String state;
 
+	private String namePrefix;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -88,6 +90,17 @@ public class SearchTemplateRequest extends RpcAcsRequest<SearchTemplateResponse>
 		this.state = state;
 		if(state != null){
 			putQueryParameter("State", state);
+		}
+	}
+
+	public String getNamePrefix() {
+		return this.namePrefix;
+	}
+
+	public void setNamePrefix(String namePrefix) {
+		this.namePrefix = namePrefix;
+		if(namePrefix != null){
+			putQueryParameter("NamePrefix", namePrefix);
 		}
 	}
 

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstancesByPerformanceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
 	private Integer totalRecordCount;
 
 	private List<DBInstancePerformance> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -57,6 +49,14 @@ public class DescribeDBInstancesByPerformanceResponse extends AcsResponse {
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -79,15 +79,15 @@ public class DescribeDBInstancesByPerformanceResponse extends AcsResponse {
 
 		private String cPUUsage;
 
-		private String sessionUsage;
+		private String dBInstanceDescription;
 
 		private String dBInstanceId;
 
-		private String dBInstanceDescription;
+		private String diskUsage;
 
 		private String iOPSUsage;
 
-		private String diskUsage;
+		private String sessionUsage;
 
 		public String getCPUUsage() {
 			return this.cPUUsage;
@@ -95,22 +95,6 @@ public class DescribeDBInstancesByPerformanceResponse extends AcsResponse {
 
 		public void setCPUUsage(String cPUUsage) {
 			this.cPUUsage = cPUUsage;
-		}
-
-		public String getSessionUsage() {
-			return this.sessionUsage;
-		}
-
-		public void setSessionUsage(String sessionUsage) {
-			this.sessionUsage = sessionUsage;
-		}
-
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
-		}
-
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
 		}
 
 		public String getDBInstanceDescription() {
@@ -121,12 +105,12 @@ public class DescribeDBInstancesByPerformanceResponse extends AcsResponse {
 			this.dBInstanceDescription = dBInstanceDescription;
 		}
 
-		public String getIOPSUsage() {
-			return this.iOPSUsage;
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
 		}
 
-		public void setIOPSUsage(String iOPSUsage) {
-			this.iOPSUsage = iOPSUsage;
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
 		}
 
 		public String getDiskUsage() {
@@ -135,6 +119,22 @@ public class DescribeDBInstancesByPerformanceResponse extends AcsResponse {
 
 		public void setDiskUsage(String diskUsage) {
 			this.diskUsage = diskUsage;
+		}
+
+		public String getIOPSUsage() {
+			return this.iOPSUsage;
+		}
+
+		public void setIOPSUsage(String iOPSUsage) {
+			this.iOPSUsage = iOPSUsage;
+		}
+
+		public String getSessionUsage() {
+			return this.sessionUsage;
+		}
+
+		public void setSessionUsage(String sessionUsage) {
+			this.sessionUsage = sessionUsage;
 		}
 	}
 

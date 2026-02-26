@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.transform.v20160428;
 
 import com.aliyuncs.vpc.model.v20160428.CreatePhysicalConnectionOccupancyOrderResponse;
+import com.aliyuncs.vpc.model.v20160428.CreatePhysicalConnectionOccupancyOrderResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,6 +24,10 @@ public class CreatePhysicalConnectionOccupancyOrderResponseUnmarshaller {
 	public static CreatePhysicalConnectionOccupancyOrderResponse unmarshall(CreatePhysicalConnectionOccupancyOrderResponse createPhysicalConnectionOccupancyOrderResponse, UnmarshallerContext _ctx) {
 		
 		createPhysicalConnectionOccupancyOrderResponse.setRequestId(_ctx.stringValue("CreatePhysicalConnectionOccupancyOrderResponse.RequestId"));
+
+		Data data = new Data();
+		data.setOrderId(_ctx.stringValue("CreatePhysicalConnectionOccupancyOrderResponse.Data.OrderId"));
+		createPhysicalConnectionOccupancyOrderResponse.setData(data);
 	 
 	 	return createPhysicalConnectionOccupancyOrderResponse;
 	}

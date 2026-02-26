@@ -26,8 +26,12 @@ public class ListRemediationsRequest extends RpcAcsRequest<ListRemediationsRespo
 	   
 
 	private String configRuleIds;
+
+	private Long pageNumber;
+
+	private Long pageSize;
 	public ListRemediationsRequest() {
-		super("Config", "2020-09-07", "ListRemediations");
+		super("Config", "2020-09-07", "ListRemediations", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,6 +47,28 @@ public class ListRemediationsRequest extends RpcAcsRequest<ListRemediationsRespo
 		this.configRuleIds = configRuleIds;
 		if(configRuleIds != null){
 			putQueryParameter("ConfigRuleIds", configRuleIds);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

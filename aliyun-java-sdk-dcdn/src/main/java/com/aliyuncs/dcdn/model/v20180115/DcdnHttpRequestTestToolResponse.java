@@ -26,9 +26,9 @@ public class DcdnHttpRequestTestToolResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String header;
-
 	private String body;
+
+	private String header;
 
 	private Integer statusCode;
 
@@ -40,20 +40,20 @@ public class DcdnHttpRequestTestToolResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getHeader() {
-		return this.header;
-	}
-
-	public void setHeader(String header) {
-		this.header = header;
-	}
-
 	public String getBody() {
 		return this.body;
 	}
 
 	public void setBody(String body) {
 		this.body = body;
+	}
+
+	public String getHeader() {
+		return this.header;
+	}
+
+	public void setHeader(String header) {
+		this.header = header;
 	}
 
 	public Integer getStatusCode() {

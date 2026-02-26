@@ -47,13 +47,21 @@ public class DescribeLiveStreamCountResponse extends AcsResponse {
 
 	public static class StreamCountInfo {
 
+		private String type;
+
 		private Long count;
 
 		private Long limit;
 
-		private String type;
-
 		private List<StreamCountDetail> streamCountDetails;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
 
 		public Long getCount() {
 			return this.count;
@@ -71,14 +79,6 @@ public class DescribeLiveStreamCountResponse extends AcsResponse {
 			this.limit = limit;
 		}
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
 		public List<StreamCountDetail> getStreamCountDetails() {
 			return this.streamCountDetails;
 		}
@@ -89,19 +89,11 @@ public class DescribeLiveStreamCountResponse extends AcsResponse {
 
 		public static class StreamCountDetail {
 
-			private String format;
-
 			private Long videoDataRate;
 
+			private String format;
+
 			private Long count;
-
-			public String getFormat() {
-				return this.format;
-			}
-
-			public void setFormat(String format) {
-				this.format = format;
-			}
 
 			public Long getVideoDataRate() {
 				return this.videoDataRate;
@@ -109,6 +101,14 @@ public class DescribeLiveStreamCountResponse extends AcsResponse {
 
 			public void setVideoDataRate(Long videoDataRate) {
 				this.videoDataRate = videoDataRate;
+			}
+
+			public String getFormat() {
+				return this.format;
+			}
+
+			public void setFormat(String format) {
+				this.format = format;
 			}
 
 			public Long getCount() {

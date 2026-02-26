@@ -31,11 +31,11 @@ public class GetDbProxyInstanceSslResponseUnmarshaller {
 		List<DbProxyCertListItemsItem> dbProxyCertListItems = new ArrayList<DbProxyCertListItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetDbProxyInstanceSslResponse.DbProxyCertListItems.Length"); i++) {
 			DbProxyCertListItemsItem dbProxyCertListItemsItem = new DbProxyCertListItemsItem();
+			dbProxyCertListItemsItem.setCertCommonName(_ctx.stringValue("GetDbProxyInstanceSslResponse.DbProxyCertListItems["+ i +"].CertCommonName"));
 			dbProxyCertListItemsItem.setDbInstanceName(_ctx.stringValue("GetDbProxyInstanceSslResponse.DbProxyCertListItems["+ i +"].DbInstanceName"));
 			dbProxyCertListItemsItem.setEndpointName(_ctx.stringValue("GetDbProxyInstanceSslResponse.DbProxyCertListItems["+ i +"].EndpointName"));
 			dbProxyCertListItemsItem.setEndpointType(_ctx.stringValue("GetDbProxyInstanceSslResponse.DbProxyCertListItems["+ i +"].EndpointType"));
 			dbProxyCertListItemsItem.setSslExpiredTime(_ctx.stringValue("GetDbProxyInstanceSslResponse.DbProxyCertListItems["+ i +"].SslExpiredTime"));
-			dbProxyCertListItemsItem.setCertCommonName(_ctx.stringValue("GetDbProxyInstanceSslResponse.DbProxyCertListItems["+ i +"].CertCommonName"));
 
 			dbProxyCertListItems.add(dbProxyCertListItemsItem);
 		}

@@ -41,6 +41,7 @@ public class DescribeWebCcProtectSwitchResponseUnmarshaller {
 			protectSwitch.setCcTemplate(_ctx.stringValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].CcTemplate"));
 			protectSwitch.setCcCustomRuleEnable(_ctx.integerValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].CcCustomRuleEnable"));
 			protectSwitch.setCcEnable(_ctx.integerValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].CcEnable"));
+			protectSwitch.setCcGlobalSwitch(_ctx.stringValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].CcGlobalSwitch"));
 
 			protectSwitchList.add(protectSwitch);
 		}

@@ -28,6 +28,7 @@ public class ListStateConfigurationsResponseUnmarshaller {
 	public static ListStateConfigurationsResponse unmarshall(ListStateConfigurationsResponse listStateConfigurationsResponse, UnmarshallerContext _ctx) {
 		
 		listStateConfigurationsResponse.setRequestId(_ctx.stringValue("ListStateConfigurationsResponse.RequestId"));
+		listStateConfigurationsResponse.setNextToken(_ctx.stringValue("ListStateConfigurationsResponse.NextToken"));
 
 		List<StateConfiguration> stateConfigurations = new ArrayList<StateConfiguration>();
 		for (int i = 0; i < _ctx.lengthValue("ListStateConfigurationsResponse.StateConfigurations.Length"); i++) {

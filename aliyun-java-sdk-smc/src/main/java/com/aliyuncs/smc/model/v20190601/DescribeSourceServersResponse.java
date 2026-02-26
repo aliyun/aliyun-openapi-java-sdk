@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSourceServersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<SourceServer> sourceServers;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeSourceServersResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<SourceServer> getSourceServers() {
@@ -77,129 +77,49 @@ public class DescribeSourceServersResponse extends AcsResponse {
 
 	public static class SourceServer {
 
-		private String sourceId;
-
-		private String jobId;
-
-		private String agentVersion;
-
-		private String name;
-
-		private String description;
-
-		private Integer kernelLevel;
-
-		private String platform;
-
-		private String architecture;
-
-		private Integer systemDiskSize;
-
-		private String replicationDriver;
-
-		private String systemInfo;
-
 		private String creationTime;
+
+		private Integer heartbeatRate;
 
 		private String state;
 
-		private String errorCode;
+		private Integer kernelLevel;
+
+		private String sourceId;
+
+		private String agentVersion;
 
 		private String statusInfo;
 
-		private Integer heartbeatRate;
+		private Integer systemDiskSize;
+
+		private String description;
+
+		private String errorCode;
+
+		private String jobId;
+
+		private String platform;
+
+		private String replicationDriver;
+
+		private String name;
+
+		private String systemInfo;
+
+		private String architecture;
+
+		private String regionNo;
+
+		private String instanceId;
+
+		private String resourceGroupId;
 
 		private List<DataDisk> dataDisks;
 
 		private List<SystemDiskPart> systemDiskParts;
 
-		public String getSourceId() {
-			return this.sourceId;
-		}
-
-		public void setSourceId(String sourceId) {
-			this.sourceId = sourceId;
-		}
-
-		public String getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getAgentVersion() {
-			return this.agentVersion;
-		}
-
-		public void setAgentVersion(String agentVersion) {
-			this.agentVersion = agentVersion;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Integer getKernelLevel() {
-			return this.kernelLevel;
-		}
-
-		public void setKernelLevel(Integer kernelLevel) {
-			this.kernelLevel = kernelLevel;
-		}
-
-		public String getPlatform() {
-			return this.platform;
-		}
-
-		public void setPlatform(String platform) {
-			this.platform = platform;
-		}
-
-		public String getArchitecture() {
-			return this.architecture;
-		}
-
-		public void setArchitecture(String architecture) {
-			this.architecture = architecture;
-		}
-
-		public Integer getSystemDiskSize() {
-			return this.systemDiskSize;
-		}
-
-		public void setSystemDiskSize(Integer systemDiskSize) {
-			this.systemDiskSize = systemDiskSize;
-		}
-
-		public String getReplicationDriver() {
-			return this.replicationDriver;
-		}
-
-		public void setReplicationDriver(String replicationDriver) {
-			this.replicationDriver = replicationDriver;
-		}
-
-		public String getSystemInfo() {
-			return this.systemInfo;
-		}
-
-		public void setSystemInfo(String systemInfo) {
-			this.systemInfo = systemInfo;
-		}
+		private List<Tag> tags;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -207,6 +127,14 @@ public class DescribeSourceServersResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public Integer getHeartbeatRate() {
+			return this.heartbeatRate;
+		}
+
+		public void setHeartbeatRate(Integer heartbeatRate) {
+			this.heartbeatRate = heartbeatRate;
 		}
 
 		public String getState() {
@@ -217,12 +145,28 @@ public class DescribeSourceServersResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getErrorCode() {
-			return this.errorCode;
+		public Integer getKernelLevel() {
+			return this.kernelLevel;
 		}
 
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
+		public void setKernelLevel(Integer kernelLevel) {
+			this.kernelLevel = kernelLevel;
+		}
+
+		public String getSourceId() {
+			return this.sourceId;
+		}
+
+		public void setSourceId(String sourceId) {
+			this.sourceId = sourceId;
+		}
+
+		public String getAgentVersion() {
+			return this.agentVersion;
+		}
+
+		public void setAgentVersion(String agentVersion) {
+			this.agentVersion = agentVersion;
 		}
 
 		public String getStatusInfo() {
@@ -233,12 +177,100 @@ public class DescribeSourceServersResponse extends AcsResponse {
 			this.statusInfo = statusInfo;
 		}
 
-		public Integer getHeartbeatRate() {
-			return this.heartbeatRate;
+		public Integer getSystemDiskSize() {
+			return this.systemDiskSize;
 		}
 
-		public void setHeartbeatRate(Integer heartbeatRate) {
-			this.heartbeatRate = heartbeatRate;
+		public void setSystemDiskSize(Integer systemDiskSize) {
+			this.systemDiskSize = systemDiskSize;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
+		public String getPlatform() {
+			return this.platform;
+		}
+
+		public void setPlatform(String platform) {
+			this.platform = platform;
+		}
+
+		public String getReplicationDriver() {
+			return this.replicationDriver;
+		}
+
+		public void setReplicationDriver(String replicationDriver) {
+			this.replicationDriver = replicationDriver;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getSystemInfo() {
+			return this.systemInfo;
+		}
+
+		public void setSystemInfo(String systemInfo) {
+			this.systemInfo = systemInfo;
+		}
+
+		public String getArchitecture() {
+			return this.architecture;
+		}
+
+		public void setArchitecture(String architecture) {
+			this.architecture = architecture;
+		}
+
+		public String getRegionNo() {
+			return this.regionNo;
+		}
+
+		public void setRegionNo(String regionNo) {
+			this.regionNo = regionNo;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<DataDisk> getDataDisks() {
@@ -255,6 +287,14 @@ public class DescribeSourceServersResponse extends AcsResponse {
 
 		public void setSystemDiskParts(List<SystemDiskPart> systemDiskParts) {
 			this.systemDiskParts = systemDiskParts;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public static class DataDisk {
@@ -301,30 +341,22 @@ public class DescribeSourceServersResponse extends AcsResponse {
 
 			public static class Part {
 
-				private String path;
-
-				private String device;
+				private Boolean canBlock;
 
 				private Long sizeBytes;
 
 				private Boolean need;
 
-				private Boolean canBlock;
+				private String device;
 
-				public String getPath() {
-					return this.path;
+				private String path;
+
+				public Boolean getCanBlock() {
+					return this.canBlock;
 				}
 
-				public void setPath(String path) {
-					this.path = path;
-				}
-
-				public String getDevice() {
-					return this.device;
-				}
-
-				public void setDevice(String device) {
-					this.device = device;
+				public void setCanBlock(Boolean canBlock) {
+					this.canBlock = canBlock;
 				}
 
 				public Long getSizeBytes() {
@@ -343,42 +375,42 @@ public class DescribeSourceServersResponse extends AcsResponse {
 					this.need = need;
 				}
 
-				public Boolean getCanBlock() {
-					return this.canBlock;
+				public String getDevice() {
+					return this.device;
 				}
 
-				public void setCanBlock(Boolean canBlock) {
-					this.canBlock = canBlock;
+				public void setDevice(String device) {
+					this.device = device;
+				}
+
+				public String getPath() {
+					return this.path;
+				}
+
+				public void setPath(String path) {
+					this.path = path;
 				}
 			}
 		}
 
 		public static class SystemDiskPart {
 
-			private String path;
-
-			private String device;
+			private Boolean canBlock;
 
 			private Long sizeBytes;
 
 			private Boolean need;
 
-			private Boolean canBlock;
+			private String device;
 
-			public String getPath() {
-				return this.path;
+			private String path;
+
+			public Boolean getCanBlock() {
+				return this.canBlock;
 			}
 
-			public void setPath(String path) {
-				this.path = path;
-			}
-
-			public String getDevice() {
-				return this.device;
-			}
-
-			public void setDevice(String device) {
-				this.device = device;
+			public void setCanBlock(Boolean canBlock) {
+				this.canBlock = canBlock;
 			}
 
 			public Long getSizeBytes() {
@@ -397,12 +429,43 @@ public class DescribeSourceServersResponse extends AcsResponse {
 				this.need = need;
 			}
 
-			public Boolean getCanBlock() {
-				return this.canBlock;
+			public String getDevice() {
+				return this.device;
 			}
 
-			public void setCanBlock(Boolean canBlock) {
-				this.canBlock = canBlock;
+			public void setDevice(String device) {
+				this.device = device;
+			}
+
+			public String getPath() {
+				return this.path;
+			}
+
+			public void setPath(String path) {
+				this.path = path;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

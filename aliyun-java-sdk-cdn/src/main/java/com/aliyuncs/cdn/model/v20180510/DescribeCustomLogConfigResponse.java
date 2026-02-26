@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCustomLogConfigResponse extends AcsResponse {
 
+	private String tag;
+
 	private String requestId;
 
 	private String remark;
 
 	private String sample;
 
-	private String tag;
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,14 +62,6 @@ public class DescribeCustomLogConfigResponse extends AcsResponse {
 
 	public void setSample(String sample) {
 		this.sample = sample;
-	}
-
-	public String getTag() {
-		return this.tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
 	}
 
 	@Override

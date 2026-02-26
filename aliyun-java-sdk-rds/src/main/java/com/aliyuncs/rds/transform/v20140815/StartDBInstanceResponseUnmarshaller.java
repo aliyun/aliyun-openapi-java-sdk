@@ -23,8 +23,8 @@ public class StartDBInstanceResponseUnmarshaller {
 	public static StartDBInstanceResponse unmarshall(StartDBInstanceResponse startDBInstanceResponse, UnmarshallerContext _ctx) {
 		
 		startDBInstanceResponse.setRequestId(_ctx.stringValue("StartDBInstanceResponse.RequestId"));
-		startDBInstanceResponse.setTaskId(_ctx.integerValue("StartDBInstanceResponse.TaskId"));
 		startDBInstanceResponse.setMigrationId(_ctx.integerValue("StartDBInstanceResponse.MigrationId"));
+		startDBInstanceResponse.setTaskId(_ctx.integerValue("StartDBInstanceResponse.TaskId"));
 	 
 	 	return startDBInstanceResponse;
 	}

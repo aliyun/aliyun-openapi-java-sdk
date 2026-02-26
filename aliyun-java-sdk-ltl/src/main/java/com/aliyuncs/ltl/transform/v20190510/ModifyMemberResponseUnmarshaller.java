@@ -24,9 +24,9 @@ public class ModifyMemberResponseUnmarshaller {
 		
 		modifyMemberResponse.setRequestId(_ctx.stringValue("ModifyMemberResponse.RequestId"));
 		modifyMemberResponse.setCode(_ctx.integerValue("ModifyMemberResponse.Code"));
-		modifyMemberResponse.setSuccess(_ctx.booleanValue("ModifyMemberResponse.Success"));
 		modifyMemberResponse.setMessage(_ctx.stringValue("ModifyMemberResponse.Message"));
 		modifyMemberResponse.setData(_ctx.stringValue("ModifyMemberResponse.Data"));
+		modifyMemberResponse.setSuccess(_ctx.booleanValue("ModifyMemberResponse.Success"));
 	 
 	 	return modifyMemberResponse;
 	}

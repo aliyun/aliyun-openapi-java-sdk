@@ -36,7 +36,7 @@ public class ExecuteWorkflowRequest extends RpcAcsRequest<ExecuteWorkflowRespons
 
 	private String instanceParameters;
 	public ExecuteWorkflowRequest() {
-		super("schedulerx2", "2019-04-30", "ExecuteWorkflow");
+		super("schedulerx2", "2019-04-30", "ExecuteWorkflow", "schedulerx2");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 		try {

@@ -26,6 +26,8 @@ import com.aliyuncs.kms.Endpoint;
 public class AsymmetricEncryptRequest extends RpcAcsRequest<AsymmetricEncryptResponse> {
 	   
 
+	private String dryRun;
+
 	private String keyVersionId;
 
 	private String keyId;
@@ -41,6 +43,17 @@ public class AsymmetricEncryptRequest extends RpcAcsRequest<AsymmetricEncryptRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(String dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun);
+		}
 	}
 
 	public String getKeyVersionId() {

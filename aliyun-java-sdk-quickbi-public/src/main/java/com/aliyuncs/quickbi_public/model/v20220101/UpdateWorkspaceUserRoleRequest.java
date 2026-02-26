@@ -28,9 +28,11 @@ public class UpdateWorkspaceUserRoleRequest extends RpcAcsRequest<UpdateWorkspac
 
 	private String userId;
 
+	private String roleIds;
+
 	private String workspaceId;
 	public UpdateWorkspaceUserRoleRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateWorkspaceUserRole", "quickbi");
+		super("quickbi-public", "2022-01-01", "UpdateWorkspaceUserRole", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 
@@ -53,6 +55,17 @@ public class UpdateWorkspaceUserRoleRequest extends RpcAcsRequest<UpdateWorkspac
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getRoleIds() {
+		return this.roleIds;
+	}
+
+	public void setRoleIds(String roleIds) {
+		this.roleIds = roleIds;
+		if(roleIds != null){
+			putQueryParameter("RoleIds", roleIds);
 		}
 	}
 

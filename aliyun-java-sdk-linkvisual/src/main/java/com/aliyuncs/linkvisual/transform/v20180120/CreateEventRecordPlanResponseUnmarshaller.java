@@ -23,10 +23,10 @@ public class CreateEventRecordPlanResponseUnmarshaller {
 	public static CreateEventRecordPlanResponse unmarshall(CreateEventRecordPlanResponse createEventRecordPlanResponse, UnmarshallerContext _ctx) {
 		
 		createEventRecordPlanResponse.setRequestId(_ctx.stringValue("CreateEventRecordPlanResponse.RequestId"));
-		createEventRecordPlanResponse.setSuccess(_ctx.booleanValue("CreateEventRecordPlanResponse.Success"));
-		createEventRecordPlanResponse.setErrorMessage(_ctx.stringValue("CreateEventRecordPlanResponse.ErrorMessage"));
 		createEventRecordPlanResponse.setCode(_ctx.stringValue("CreateEventRecordPlanResponse.Code"));
 		createEventRecordPlanResponse.setData(_ctx.stringValue("CreateEventRecordPlanResponse.Data"));
+		createEventRecordPlanResponse.setErrorMessage(_ctx.stringValue("CreateEventRecordPlanResponse.ErrorMessage"));
+		createEventRecordPlanResponse.setSuccess(_ctx.booleanValue("CreateEventRecordPlanResponse.Success"));
 	 
 	 	return createEventRecordPlanResponse;
 	}

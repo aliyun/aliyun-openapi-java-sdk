@@ -47,19 +47,11 @@ public class ListQueueConsumersResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String nextToken;
-
 		private Integer maxResults;
 
+		private String nextToken;
+
 		private List<QueueConsumerVO> consumers;
-
-		public String getNextToken() {
-			return this.nextToken;
-		}
-
-		public void setNextToken(String nextToken) {
-			this.nextToken = nextToken;
-		}
 
 		public Integer getMaxResults() {
 			return this.maxResults;
@@ -67,6 +59,14 @@ public class ListQueueConsumersResponse extends AcsResponse {
 
 		public void setMaxResults(Integer maxResults) {
 			this.maxResults = maxResults;
+		}
+
+		public String getNextToken() {
+			return this.nextToken;
+		}
+
+		public void setNextToken(String nextToken) {
+			this.nextToken = nextToken;
 		}
 
 		public List<QueueConsumerVO> getConsumers() {

@@ -26,7 +26,7 @@ public class GetSupplementInfoRequest extends RpcAcsRequest<GetSupplementInfoRes
 
 	private String supplementId;
 	public GetSupplementInfoRequest() {
-		super("Copyright", "2019-01-23", "GetSupplementInfo");
+		super("Copyright", "2019-01-23", "GetSupplementInfo", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

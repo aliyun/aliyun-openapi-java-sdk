@@ -29,6 +29,8 @@ public class ModifyFlowLogAttributeRequest extends RpcAcsRequest<ModifyFlowLogAt
 
 	private String description;
 
+	private String ipVersion;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -68,6 +70,17 @@ public class ModifyFlowLogAttributeRequest extends RpcAcsRequest<ModifyFlowLogAt
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getIpVersion() {
+		return this.ipVersion;
+	}
+
+	public void setIpVersion(String ipVersion) {
+		this.ipVersion = ipVersion;
+		if(ipVersion != null){
+			putQueryParameter("IpVersion", ipVersion);
 		}
 	}
 

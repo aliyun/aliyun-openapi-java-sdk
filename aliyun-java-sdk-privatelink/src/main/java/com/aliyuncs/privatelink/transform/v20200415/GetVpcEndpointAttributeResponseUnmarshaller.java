@@ -42,6 +42,7 @@ public class GetVpcEndpointAttributeResponseUnmarshaller {
 		getVpcEndpointAttributeResponse.setConnectionStatus(_ctx.stringValue("GetVpcEndpointAttributeResponse.ConnectionStatus"));
 		getVpcEndpointAttributeResponse.setZoneAffinityEnabled(_ctx.booleanValue("GetVpcEndpointAttributeResponse.ZoneAffinityEnabled"));
 		getVpcEndpointAttributeResponse.setPrivateServiceName(_ctx.stringValue("GetVpcEndpointAttributeResponse.PrivateServiceName"));
+		getVpcEndpointAttributeResponse.setResourceGroupId(_ctx.stringValue("GetVpcEndpointAttributeResponse.ResourceGroupId"));
 	 
 	 	return getVpcEndpointAttributeResponse;
 	}

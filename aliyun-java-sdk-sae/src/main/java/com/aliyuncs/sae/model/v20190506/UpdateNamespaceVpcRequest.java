@@ -28,6 +28,8 @@ public class UpdateNamespaceVpcRequest extends RoaAcsRequest<UpdateNamespaceVpcR
 	private String namespaceId;
 
 	private String vpcId;
+
+	private String nameSpaceShortId;
 	public UpdateNamespaceVpcRequest() {
 		super("sae", "2019-05-06", "UpdateNamespaceVpc", "serverless");
 		setUriPattern("/pop/v1/sam/namespace/updateNamespaceVpc");
@@ -57,6 +59,17 @@ public class UpdateNamespaceVpcRequest extends RoaAcsRequest<UpdateNamespaceVpcR
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getNameSpaceShortId() {
+		return this.nameSpaceShortId;
+	}
+
+	public void setNameSpaceShortId(String nameSpaceShortId) {
+		this.nameSpaceShortId = nameSpaceShortId;
+		if(nameSpaceShortId != null){
+			putQueryParameter("NameSpaceShortId", nameSpaceShortId);
 		}
 	}
 

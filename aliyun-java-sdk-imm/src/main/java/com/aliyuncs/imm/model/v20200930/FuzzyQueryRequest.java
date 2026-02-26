@@ -25,15 +25,19 @@ import com.aliyuncs.imm.Endpoint;
 public class FuzzyQueryRequest extends RpcAcsRequest<FuzzyQueryResponse> {
 	   
 
-	private String projectName;
-
 	private String nextToken;
+
+	private String datasetName;
+
+	private String order;
+
+	private String projectName;
 
 	private String query;
 
-	private Long maxResults;
+	private String sort;
 
-	private String datasetName;
+	private Long maxResults;
 	public FuzzyQueryRequest() {
 		super("imm", "2020-09-30", "FuzzyQuery", "imm");
 		setMethod(MethodType.POST);
@@ -41,17 +45,6 @@ public class FuzzyQueryRequest extends RpcAcsRequest<FuzzyQueryResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
 	}
 
 	public String getNextToken() {
@@ -62,6 +55,39 @@ public class FuzzyQueryRequest extends RpcAcsRequest<FuzzyQueryResponse> {
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getDatasetName() {
+		return this.datasetName;
+	}
+
+	public void setDatasetName(String datasetName) {
+		this.datasetName = datasetName;
+		if(datasetName != null){
+			putQueryParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 
@@ -76,6 +102,17 @@ public class FuzzyQueryRequest extends RpcAcsRequest<FuzzyQueryResponse> {
 		}
 	}
 
+	public String getSort() {
+		return this.sort;
+	}
+
+	public void setSort(String sort) {
+		this.sort = sort;
+		if(sort != null){
+			putQueryParameter("Sort", sort);
+		}
+	}
+
 	public Long getMaxResults() {
 		return this.maxResults;
 	}
@@ -84,17 +121,6 @@ public class FuzzyQueryRequest extends RpcAcsRequest<FuzzyQueryResponse> {
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
-		}
-	}
-
-	public String getDatasetName() {
-		return this.datasetName;
-	}
-
-	public void setDatasetName(String datasetName) {
-		this.datasetName = datasetName;
-		if(datasetName != null){
-			putQueryParameter("DatasetName", datasetName);
 		}
 	}
 

@@ -28,6 +28,8 @@ public class DescribeBenchmarkTaskReportResponse extends AcsResponse {
 
 	private String reportUrl;
 
+	private Object data;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class DescribeBenchmarkTaskReportResponse extends AcsResponse {
 
 	public void setReportUrl(String reportUrl) {
 		this.reportUrl = reportUrl;
+	}
+
+	public Object getData() {
+		return this.data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
 	}
 
 	@Override

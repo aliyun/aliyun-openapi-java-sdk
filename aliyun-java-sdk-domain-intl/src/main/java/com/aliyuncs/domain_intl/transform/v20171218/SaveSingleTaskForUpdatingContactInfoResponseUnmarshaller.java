@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveSingleTaskForUpdatingContactInfoResponseUnmarshaller {
 
-	public static SaveSingleTaskForUpdatingContactInfoResponse unmarshall(SaveSingleTaskForUpdatingContactInfoResponse saveSingleTaskForUpdatingContactInfoResponse, UnmarshallerContext context) {
+	public static SaveSingleTaskForUpdatingContactInfoResponse unmarshall(SaveSingleTaskForUpdatingContactInfoResponse saveSingleTaskForUpdatingContactInfoResponse, UnmarshallerContext _ctx) {
 		
-		saveSingleTaskForUpdatingContactInfoResponse.setRequestId(context.stringValue("SaveSingleTaskForUpdatingContactInfoResponse.RequestId"));
-		saveSingleTaskForUpdatingContactInfoResponse.setTaskNo(context.stringValue("SaveSingleTaskForUpdatingContactInfoResponse.TaskNo"));
+		saveSingleTaskForUpdatingContactInfoResponse.setRequestId(_ctx.stringValue("SaveSingleTaskForUpdatingContactInfoResponse.RequestId"));
+		saveSingleTaskForUpdatingContactInfoResponse.setTaskNo(_ctx.stringValue("SaveSingleTaskForUpdatingContactInfoResponse.TaskNo"));
 	 
 	 	return saveSingleTaskForUpdatingContactInfoResponse;
 	}

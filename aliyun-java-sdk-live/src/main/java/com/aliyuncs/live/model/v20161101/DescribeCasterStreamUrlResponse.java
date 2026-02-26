@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterStreamUrlResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String casterId;
+
+	private String requestId;
 
 	private Integer total;
 
 	private List<CasterStream> casterStreams;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCasterId() {
 		return this.casterId;
@@ -47,6 +39,14 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 
 	public void setCasterId(String casterId) {
 		this.casterId = casterId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotal() {
@@ -67,32 +67,24 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 
 	public static class CasterStream {
 
-		private String sceneId;
-
-		private String streamUrl;
+		private Integer outputType;
 
 		private String rtmpUrl;
 
 		private String rtsUrl;
 
-		private Integer outputType;
+		private String sceneId;
+
+		private String streamUrl;
 
 		private List<StreamInfo> streamInfos;
 
-		public String getSceneId() {
-			return this.sceneId;
+		public Integer getOutputType() {
+			return this.outputType;
 		}
 
-		public void setSceneId(String sceneId) {
-			this.sceneId = sceneId;
-		}
-
-		public String getStreamUrl() {
-			return this.streamUrl;
-		}
-
-		public void setStreamUrl(String streamUrl) {
-			this.streamUrl = streamUrl;
+		public void setOutputType(Integer outputType) {
+			this.outputType = outputType;
 		}
 
 		public String getRtmpUrl() {
@@ -111,12 +103,20 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 			this.rtsUrl = rtsUrl;
 		}
 
-		public Integer getOutputType() {
-			return this.outputType;
+		public String getSceneId() {
+			return this.sceneId;
 		}
 
-		public void setOutputType(Integer outputType) {
-			this.outputType = outputType;
+		public void setSceneId(String sceneId) {
+			this.sceneId = sceneId;
+		}
+
+		public String getStreamUrl() {
+			return this.streamUrl;
+		}
+
+		public void setStreamUrl(String streamUrl) {
+			this.streamUrl = streamUrl;
 		}
 
 		public List<StreamInfo> getStreamInfos() {
@@ -129,11 +129,19 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 
 		public static class StreamInfo {
 
+			private String outputStreamUrl;
+
 			private String transcodeConfig;
 
 			private String videoFormat;
 
-			private String outputStreamUrl;
+			public String getOutputStreamUrl() {
+				return this.outputStreamUrl;
+			}
+
+			public void setOutputStreamUrl(String outputStreamUrl) {
+				this.outputStreamUrl = outputStreamUrl;
+			}
 
 			public String getTranscodeConfig() {
 				return this.transcodeConfig;
@@ -149,14 +157,6 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 
 			public void setVideoFormat(String videoFormat) {
 				this.videoFormat = videoFormat;
-			}
-
-			public String getOutputStreamUrl() {
-				return this.outputStreamUrl;
-			}
-
-			public void setOutputStreamUrl(String outputStreamUrl) {
-				this.outputStreamUrl = outputStreamUrl;
 			}
 		}
 	}

@@ -29,22 +29,22 @@ public class ListProofChainResponseUnmarshaller {
 		
 		listProofChainResponse.setRequestId(_ctx.stringValue("ListProofChainResponse.RequestId"));
 		listProofChainResponse.setCode(_ctx.integerValue("ListProofChainResponse.Code"));
-		listProofChainResponse.setSuccess(_ctx.booleanValue("ListProofChainResponse.Success"));
 		listProofChainResponse.setMessage(_ctx.stringValue("ListProofChainResponse.Message"));
+		listProofChainResponse.setSuccess(_ctx.booleanValue("ListProofChainResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("ListProofChainResponse.Data.Total"));
 		data.setNum(_ctx.integerValue("ListProofChainResponse.Data.Num"));
+		data.setTotal(_ctx.integerValue("ListProofChainResponse.Data.Total"));
 		data.setSize(_ctx.integerValue("ListProofChainResponse.Data.Size"));
 
 		List<ProofChainInfo> pageData = new ArrayList<ProofChainInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListProofChainResponse.Data.PageData.Length"); i++) {
 			ProofChainInfo proofChainInfo = new ProofChainInfo();
-			proofChainInfo.setBizChainId(_ctx.stringValue("ListProofChainResponse.Data.PageData["+ i +"].BizChainId"));
-			proofChainInfo.setName(_ctx.stringValue("ListProofChainResponse.Data.PageData["+ i +"].Name"));
 			proofChainInfo.setRemark(_ctx.stringValue("ListProofChainResponse.Data.PageData["+ i +"].Remark"));
+			proofChainInfo.setBizChainId(_ctx.stringValue("ListProofChainResponse.Data.PageData["+ i +"].BizChainId"));
 			proofChainInfo.setRoleType(_ctx.stringValue("ListProofChainResponse.Data.PageData["+ i +"].RoleType"));
 			proofChainInfo.setBizChainCode(_ctx.stringValue("ListProofChainResponse.Data.PageData["+ i +"].BizChainCode"));
+			proofChainInfo.setName(_ctx.stringValue("ListProofChainResponse.Data.PageData["+ i +"].Name"));
 			proofChainInfo.setDataTypeCode(_ctx.stringValue("ListProofChainResponse.Data.PageData["+ i +"].DataTypeCode"));
 
 			pageData.add(proofChainInfo);

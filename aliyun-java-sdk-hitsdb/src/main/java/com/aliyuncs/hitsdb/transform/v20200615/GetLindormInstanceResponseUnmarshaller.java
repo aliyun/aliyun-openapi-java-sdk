@@ -34,6 +34,7 @@ public class GetLindormInstanceResponseUnmarshaller {
 		getLindormInstanceResponse.setNetworkType(_ctx.stringValue("GetLindormInstanceResponse.NetworkType"));
 		getLindormInstanceResponse.setServiceType(_ctx.stringValue("GetLindormInstanceResponse.ServiceType"));
 		getLindormInstanceResponse.setEnableKms(_ctx.booleanValue("GetLindormInstanceResponse.EnableKms"));
+		getLindormInstanceResponse.setEnableML(_ctx.booleanValue("GetLindormInstanceResponse.EnableML"));
 		getLindormInstanceResponse.setDiskUsage(_ctx.stringValue("GetLindormInstanceResponse.DiskUsage"));
 		getLindormInstanceResponse.setDiskCategory(_ctx.stringValue("GetLindormInstanceResponse.DiskCategory"));
 		getLindormInstanceResponse.setColdStorage(_ctx.integerValue("GetLindormInstanceResponse.ColdStorage"));
@@ -56,9 +57,34 @@ public class GetLindormInstanceResponseUnmarshaller {
 		getLindormInstanceResponse.setInstanceStatus(_ctx.stringValue("GetLindormInstanceResponse.InstanceStatus"));
 		getLindormInstanceResponse.setEnableCompute(_ctx.booleanValue("GetLindormInstanceResponse.EnableCompute"));
 		getLindormInstanceResponse.setEnableSSL(_ctx.booleanValue("GetLindormInstanceResponse.EnableSSL"));
+		getLindormInstanceResponse.setEnableMLCtrl(_ctx.booleanValue("GetLindormInstanceResponse.EnableMLCtrl"));
 		getLindormInstanceResponse.setEnableCdc(_ctx.booleanValue("GetLindormInstanceResponse.EnableCdc"));
 		getLindormInstanceResponse.setEnableStream(_ctx.booleanValue("GetLindormInstanceResponse.EnableStream"));
+		getLindormInstanceResponse.setEnableLTS(_ctx.booleanValue("GetLindormInstanceResponse.EnableLTS"));
 		getLindormInstanceResponse.setEnableShs(_ctx.booleanValue("GetLindormInstanceResponse.EnableShs"));
+		getLindormInstanceResponse.setEnableBlob(_ctx.booleanValue("GetLindormInstanceResponse.EnableBlob"));
+		getLindormInstanceResponse.setMaintainStartTime(_ctx.stringValue("GetLindormInstanceResponse.MaintainStartTime"));
+		getLindormInstanceResponse.setMaintainEndTime(_ctx.stringValue("GetLindormInstanceResponse.MaintainEndTime"));
+		getLindormInstanceResponse.setResourceGroupId(_ctx.stringValue("GetLindormInstanceResponse.ResourceGroupId"));
+		getLindormInstanceResponse.setLocalCloudCategory(_ctx.stringValue("GetLindormInstanceResponse.LocalCloudCategory"));
+		getLindormInstanceResponse.setLocalCloudStorage(_ctx.integerValue("GetLindormInstanceResponse.LocalCloudStorage"));
+		getLindormInstanceResponse.setPrimaryZoneId(_ctx.stringValue("GetLindormInstanceResponse.PrimaryZoneId"));
+		getLindormInstanceResponse.setStandbyZoneId(_ctx.stringValue("GetLindormInstanceResponse.StandbyZoneId"));
+		getLindormInstanceResponse.setArbiterZoneId(_ctx.stringValue("GetLindormInstanceResponse.ArbiterZoneId"));
+		getLindormInstanceResponse.setPrimaryVSwitchId(_ctx.stringValue("GetLindormInstanceResponse.PrimaryVSwitchId"));
+		getLindormInstanceResponse.setStandbyVSwitchId(_ctx.stringValue("GetLindormInstanceResponse.StandbyVSwitchId"));
+		getLindormInstanceResponse.setArbiterVSwitchId(_ctx.stringValue("GetLindormInstanceResponse.ArbiterVSwitchId"));
+		getLindormInstanceResponse.setMultiZoneCombination(_ctx.stringValue("GetLindormInstanceResponse.MultiZoneCombination"));
+		getLindormInstanceResponse.setCoreDiskCategory(_ctx.stringValue("GetLindormInstanceResponse.CoreDiskCategory"));
+		getLindormInstanceResponse.setCoreSpec(_ctx.stringValue("GetLindormInstanceResponse.CoreSpec"));
+		getLindormInstanceResponse.setCoreNum(_ctx.integerValue("GetLindormInstanceResponse.CoreNum"));
+		getLindormInstanceResponse.setCoreSingleStorage(_ctx.integerValue("GetLindormInstanceResponse.CoreSingleStorage"));
+		getLindormInstanceResponse.setLogDiskCategory(_ctx.stringValue("GetLindormInstanceResponse.LogDiskCategory"));
+		getLindormInstanceResponse.setLogSpec(_ctx.stringValue("GetLindormInstanceResponse.LogSpec"));
+		getLindormInstanceResponse.setLogNum(_ctx.integerValue("GetLindormInstanceResponse.LogNum"));
+		getLindormInstanceResponse.setLogSingleStorage(_ctx.integerValue("GetLindormInstanceResponse.LogSingleStorage"));
+		getLindormInstanceResponse.setArchVersion(_ctx.stringValue("GetLindormInstanceResponse.ArchVersion"));
+		getLindormInstanceResponse.setEnableLsqlVersionV3(_ctx.booleanValue("GetLindormInstanceResponse.EnableLsqlVersionV3"));
 
 		List<Engine> engineList = new ArrayList<Engine>();
 		for (int i = 0; i < _ctx.lengthValue("GetLindormInstanceResponse.EngineList.Length"); i++) {

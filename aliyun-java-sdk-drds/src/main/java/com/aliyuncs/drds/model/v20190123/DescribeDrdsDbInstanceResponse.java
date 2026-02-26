@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private DbInstance dbInstance;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public DbInstance getDbInstance() {
@@ -57,42 +57,82 @@ public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 
 	public static class DbInstance {
 
-		private String dBInstanceId;
+		private String expireTime;
+
+		private String payType;
+
+		private String dBInstanceStatus;
+
+		private String networkType;
+
+		private Integer port;
+
+		private String engineVersion;
 
 		private String dmInstanceId;
 
 		private String connectUrl;
 
-		private Integer port;
-
-		private String dBInstanceStatus;
-
-		private String dbInstType;
-
 		private Integer readWeight;
-
-		private String engine;
-
-		private String engineVersion;
 
 		private String rdsInstType;
 
-		private String payType;
-
-		private String expireTime;
-
 		private String remainDays;
 
-		private String networkType;
+		private String dBInstanceId;
+
+		private String dbInstType;
+
+		private String engine;
 
 		private List<ReadOnlyInstance> readOnlyInstances;
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
+		public String getExpireTime() {
+			return this.expireTime;
 		}
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public String getDBInstanceStatus() {
+			return this.dBInstanceStatus;
+		}
+
+		public void setDBInstanceStatus(String dBInstanceStatus) {
+			this.dBInstanceStatus = dBInstanceStatus;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
 		}
 
 		public String getDmInstanceId() {
@@ -111,52 +151,12 @@ public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 			this.connectUrl = connectUrl;
 		}
 
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
-		public String getDBInstanceStatus() {
-			return this.dBInstanceStatus;
-		}
-
-		public void setDBInstanceStatus(String dBInstanceStatus) {
-			this.dBInstanceStatus = dBInstanceStatus;
-		}
-
-		public String getDbInstType() {
-			return this.dbInstType;
-		}
-
-		public void setDbInstType(String dbInstType) {
-			this.dbInstType = dbInstType;
-		}
-
 		public Integer getReadWeight() {
 			return this.readWeight;
 		}
 
 		public void setReadWeight(Integer readWeight) {
 			this.readWeight = readWeight;
-		}
-
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
 		}
 
 		public String getRdsInstType() {
@@ -167,22 +167,6 @@ public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 			this.rdsInstType = rdsInstType;
 		}
 
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
-
 		public String getRemainDays() {
 			return this.remainDays;
 		}
@@ -191,12 +175,28 @@ public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 			this.remainDays = remainDays;
 		}
 
-		public String getNetworkType() {
-			return this.networkType;
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
 		}
 
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
+
+		public String getDbInstType() {
+			return this.dbInstType;
+		}
+
+		public void setDbInstType(String dbInstType) {
+			this.dbInstType = dbInstType;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
 		}
 
 		public List<ReadOnlyInstance> getReadOnlyInstances() {
@@ -209,42 +209,90 @@ public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 
 		public static class ReadOnlyInstance {
 
-			private String dBInstanceId;
+			private String expireTime;
+
+			private String payType;
+
+			private Integer versionAction;
+
+			private String dBInstanceStatus;
+
+			private String networkType;
+
+			private Integer port;
+
+			private String engineVersion;
 
 			private String dmInstanceId;
 
 			private String connectUrl;
 
-			private Integer port;
-
-			private String dBInstanceStatus;
-
-			private String dbInstType;
-
 			private Integer readWeight;
-
-			private String engine;
-
-			private String engineVersion;
 
 			private String rdsInstType;
 
-			private String payType;
-
-			private String expireTime;
-
 			private String remainDays;
 
-			private String networkType;
+			private String dBInstanceId;
 
-			private Integer versionAction;
+			private String dbInstType;
 
-			public String getDBInstanceId() {
-				return this.dBInstanceId;
+			private String engine;
+
+			public String getExpireTime() {
+				return this.expireTime;
 			}
 
-			public void setDBInstanceId(String dBInstanceId) {
-				this.dBInstanceId = dBInstanceId;
+			public void setExpireTime(String expireTime) {
+				this.expireTime = expireTime;
+			}
+
+			public String getPayType() {
+				return this.payType;
+			}
+
+			public void setPayType(String payType) {
+				this.payType = payType;
+			}
+
+			public Integer getVersionAction() {
+				return this.versionAction;
+			}
+
+			public void setVersionAction(Integer versionAction) {
+				this.versionAction = versionAction;
+			}
+
+			public String getDBInstanceStatus() {
+				return this.dBInstanceStatus;
+			}
+
+			public void setDBInstanceStatus(String dBInstanceStatus) {
+				this.dBInstanceStatus = dBInstanceStatus;
+			}
+
+			public String getNetworkType() {
+				return this.networkType;
+			}
+
+			public void setNetworkType(String networkType) {
+				this.networkType = networkType;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public String getEngineVersion() {
+				return this.engineVersion;
+			}
+
+			public void setEngineVersion(String engineVersion) {
+				this.engineVersion = engineVersion;
 			}
 
 			public String getDmInstanceId() {
@@ -263,52 +311,12 @@ public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 				this.connectUrl = connectUrl;
 			}
 
-			public Integer getPort() {
-				return this.port;
-			}
-
-			public void setPort(Integer port) {
-				this.port = port;
-			}
-
-			public String getDBInstanceStatus() {
-				return this.dBInstanceStatus;
-			}
-
-			public void setDBInstanceStatus(String dBInstanceStatus) {
-				this.dBInstanceStatus = dBInstanceStatus;
-			}
-
-			public String getDbInstType() {
-				return this.dbInstType;
-			}
-
-			public void setDbInstType(String dbInstType) {
-				this.dbInstType = dbInstType;
-			}
-
 			public Integer getReadWeight() {
 				return this.readWeight;
 			}
 
 			public void setReadWeight(Integer readWeight) {
 				this.readWeight = readWeight;
-			}
-
-			public String getEngine() {
-				return this.engine;
-			}
-
-			public void setEngine(String engine) {
-				this.engine = engine;
-			}
-
-			public String getEngineVersion() {
-				return this.engineVersion;
-			}
-
-			public void setEngineVersion(String engineVersion) {
-				this.engineVersion = engineVersion;
 			}
 
 			public String getRdsInstType() {
@@ -319,22 +327,6 @@ public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 				this.rdsInstType = rdsInstType;
 			}
 
-			public String getPayType() {
-				return this.payType;
-			}
-
-			public void setPayType(String payType) {
-				this.payType = payType;
-			}
-
-			public String getExpireTime() {
-				return this.expireTime;
-			}
-
-			public void setExpireTime(String expireTime) {
-				this.expireTime = expireTime;
-			}
-
 			public String getRemainDays() {
 				return this.remainDays;
 			}
@@ -343,20 +335,28 @@ public class DescribeDrdsDbInstanceResponse extends AcsResponse {
 				this.remainDays = remainDays;
 			}
 
-			public String getNetworkType() {
-				return this.networkType;
+			public String getDBInstanceId() {
+				return this.dBInstanceId;
 			}
 
-			public void setNetworkType(String networkType) {
-				this.networkType = networkType;
+			public void setDBInstanceId(String dBInstanceId) {
+				this.dBInstanceId = dBInstanceId;
 			}
 
-			public Integer getVersionAction() {
-				return this.versionAction;
+			public String getDbInstType() {
+				return this.dbInstType;
 			}
 
-			public void setVersionAction(Integer versionAction) {
-				this.versionAction = versionAction;
+			public void setDbInstType(String dbInstType) {
+				this.dbInstType = dbInstType;
+			}
+
+			public String getEngine() {
+				return this.engine;
+			}
+
+			public void setEngine(String engine) {
+				this.engine = engine;
 			}
 		}
 	}

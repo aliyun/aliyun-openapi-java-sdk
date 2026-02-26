@@ -121,6 +121,8 @@ public class DescribeOssObjectDetailResponse extends AcsResponse {
 
 			private String ruleName;
 
+			private List<ModelTagsItem> modelTags;
+
 			private List<String> sampleList;
 
 			public String getRiskLevelName() {
@@ -171,12 +173,43 @@ public class DescribeOssObjectDetailResponse extends AcsResponse {
 				this.ruleName = ruleName;
 			}
 
+			public List<ModelTagsItem> getModelTags() {
+				return this.modelTags;
+			}
+
+			public void setModelTags(List<ModelTagsItem> modelTags) {
+				this.modelTags = modelTags;
+			}
+
 			public List<String> getSampleList() {
 				return this.sampleList;
 			}
 
 			public void setSampleList(List<String> sampleList) {
 				this.sampleList = sampleList;
+			}
+
+			public static class ModelTagsItem {
+
+				private Long id;
+
+				private String name;
+
+				public Long getId() {
+					return this.id;
+				}
+
+				public void setId(Long id) {
+					this.id = id;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
 			}
 		}
 	}

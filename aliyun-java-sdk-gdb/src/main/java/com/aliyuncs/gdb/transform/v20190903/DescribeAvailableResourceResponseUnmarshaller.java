@@ -55,9 +55,9 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 						supportedStorageSize.setStorageType(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList["+ j +"].SupportedInstanceClassList["+ k +"].SupportedStorageSizeList["+ l +"].StorageType"));
 
 						StorageSize storageSize = new StorageSize();
+						storageSize.setStep(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList["+ j +"].SupportedInstanceClassList["+ k +"].SupportedStorageSizeList["+ l +"].StorageSize.Step"));
 						storageSize.setMax(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList["+ j +"].SupportedInstanceClassList["+ k +"].SupportedStorageSizeList["+ l +"].StorageSize.Max"));
 						storageSize.setMin(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList["+ j +"].SupportedInstanceClassList["+ k +"].SupportedStorageSizeList["+ l +"].StorageSize.Min"));
-						storageSize.setStep(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedSerialList["+ j +"].SupportedInstanceClassList["+ k +"].SupportedStorageSizeList["+ l +"].StorageSize.Step"));
 						supportedStorageSize.setStorageSize(storageSize);
 
 						supportedStorageSizeList.add(supportedStorageSize);

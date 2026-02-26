@@ -28,19 +28,19 @@ public class DescribeDomainLogsResponseUnmarshaller {
 		
 		describeDomainLogsResponse.setRequestId(_ctx.stringValue("DescribeDomainLogsResponse.RequestId"));
 		describeDomainLogsResponse.setTotalCount(_ctx.longValue("DescribeDomainLogsResponse.TotalCount"));
-		describeDomainLogsResponse.setPageNumber(_ctx.longValue("DescribeDomainLogsResponse.PageNumber"));
 		describeDomainLogsResponse.setPageSize(_ctx.longValue("DescribeDomainLogsResponse.PageSize"));
+		describeDomainLogsResponse.setPageNumber(_ctx.longValue("DescribeDomainLogsResponse.PageNumber"));
 
 		List<DomainLog> domainLogs = new ArrayList<DomainLog>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainLogsResponse.DomainLogs.Length"); i++) {
 			DomainLog domainLog = new DomainLog();
-			domainLog.setActionTime(_ctx.stringValue("DescribeDomainLogsResponse.DomainLogs["+ i +"].ActionTime"));
-			domainLog.setActionTimestamp(_ctx.longValue("DescribeDomainLogsResponse.DomainLogs["+ i +"].ActionTimestamp"));
-			domainLog.setDomainName(_ctx.stringValue("DescribeDomainLogsResponse.DomainLogs["+ i +"].DomainName"));
 			domainLog.setAction(_ctx.stringValue("DescribeDomainLogsResponse.DomainLogs["+ i +"].Action"));
-			domainLog.setMessage(_ctx.stringValue("DescribeDomainLogsResponse.DomainLogs["+ i +"].Message"));
-			domainLog.setClientIp(_ctx.stringValue("DescribeDomainLogsResponse.DomainLogs["+ i +"].ClientIp"));
+			domainLog.setActionTimestamp(_ctx.longValue("DescribeDomainLogsResponse.DomainLogs["+ i +"].ActionTimestamp"));
 			domainLog.setZoneId(_ctx.stringValue("DescribeDomainLogsResponse.DomainLogs["+ i +"].ZoneId"));
+			domainLog.setClientIp(_ctx.stringValue("DescribeDomainLogsResponse.DomainLogs["+ i +"].ClientIp"));
+			domainLog.setMessage(_ctx.stringValue("DescribeDomainLogsResponse.DomainLogs["+ i +"].Message"));
+			domainLog.setActionTime(_ctx.stringValue("DescribeDomainLogsResponse.DomainLogs["+ i +"].ActionTime"));
+			domainLog.setDomainName(_ctx.stringValue("DescribeDomainLogsResponse.DomainLogs["+ i +"].DomainName"));
 
 			domainLogs.add(domainLog);
 		}

@@ -24,29 +24,30 @@ public class ModifyFlowRuleResponseUnmarshaller {
 	public static ModifyFlowRuleResponse unmarshall(ModifyFlowRuleResponse modifyFlowRuleResponse, UnmarshallerContext _ctx) {
 		
 		modifyFlowRuleResponse.setRequestId(_ctx.stringValue("ModifyFlowRuleResponse.RequestId"));
-		modifyFlowRuleResponse.setCode(_ctx.stringValue("ModifyFlowRuleResponse.Code"));
 		modifyFlowRuleResponse.setMessage(_ctx.stringValue("ModifyFlowRuleResponse.Message"));
+		modifyFlowRuleResponse.setCode(_ctx.stringValue("ModifyFlowRuleResponse.Code"));
 		modifyFlowRuleResponse.setSuccess(_ctx.booleanValue("ModifyFlowRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setAppName(_ctx.stringValue("ModifyFlowRuleResponse.Data.AppName"));
-		data.setClusterEstimatedMaxQps(_ctx.floatValue("ModifyFlowRuleResponse.Data.ClusterEstimatedMaxQps"));
-		data.setClusterFallbackStrategy(_ctx.integerValue("ModifyFlowRuleResponse.Data.ClusterFallbackStrategy"));
-		data.setClusterFallbackThreshold(_ctx.integerValue("ModifyFlowRuleResponse.Data.ClusterFallbackThreshold"));
-		data.setClusterMode(_ctx.booleanValue("ModifyFlowRuleResponse.Data.ClusterMode"));
-		data.setClusterThresholdType(_ctx.integerValue("ModifyFlowRuleResponse.Data.ClusterThresholdType"));
-		data.setControlBehavior(_ctx.integerValue("ModifyFlowRuleResponse.Data.ControlBehavior"));
-		data.setThreshold(_ctx.floatValue("ModifyFlowRuleResponse.Data.Threshold"));
-		data.setEnable(_ctx.booleanValue("ModifyFlowRuleResponse.Data.Enable"));
-		data.setLimitOrigin(_ctx.stringValue("ModifyFlowRuleResponse.Data.LimitOrigin"));
-		data.setMaxQueueingTimeMs(_ctx.integerValue("ModifyFlowRuleResponse.Data.MaxQueueingTimeMs"));
-		data.setNamespace(_ctx.stringValue("ModifyFlowRuleResponse.Data.Namespace"));
 		data.setRefResource(_ctx.stringValue("ModifyFlowRuleResponse.Data.RefResource"));
-		data.setRelationStrategy(_ctx.integerValue("ModifyFlowRuleResponse.Data.RelationStrategy"));
-		data.setResource(_ctx.stringValue("ModifyFlowRuleResponse.Data.Resource"));
-		data.setRuleId(_ctx.longValue("ModifyFlowRuleResponse.Data.RuleId"));
+		data.setClusterFallbackThreshold(_ctx.integerValue("ModifyFlowRuleResponse.Data.ClusterFallbackThreshold"));
+		data.setNamespace(_ctx.stringValue("ModifyFlowRuleResponse.Data.Namespace"));
+		data.setLimitOrigin(_ctx.stringValue("ModifyFlowRuleResponse.Data.LimitOrigin"));
 		data.setStatDurationMs(_ctx.integerValue("ModifyFlowRuleResponse.Data.StatDurationMs"));
+		data.setClusterThresholdType(_ctx.integerValue("ModifyFlowRuleResponse.Data.ClusterThresholdType"));
+		data.setRuleId(_ctx.longValue("ModifyFlowRuleResponse.Data.RuleId"));
+		data.setRelationStrategy(_ctx.integerValue("ModifyFlowRuleResponse.Data.RelationStrategy"));
+		data.setAppName(_ctx.stringValue("ModifyFlowRuleResponse.Data.AppName"));
+		data.setResource(_ctx.stringValue("ModifyFlowRuleResponse.Data.Resource"));
+		data.setMaxQueueingTimeMs(_ctx.integerValue("ModifyFlowRuleResponse.Data.MaxQueueingTimeMs"));
+		data.setClusterEstimatedMaxQps(_ctx.floatValue("ModifyFlowRuleResponse.Data.ClusterEstimatedMaxQps"));
+		data.setControlBehavior(_ctx.integerValue("ModifyFlowRuleResponse.Data.ControlBehavior"));
 		data.setWarmUpPeriodSec(_ctx.integerValue("ModifyFlowRuleResponse.Data.WarmUpPeriodSec"));
+		data.setClusterFallbackStrategy(_ctx.integerValue("ModifyFlowRuleResponse.Data.ClusterFallbackStrategy"));
+		data.setThreshold(_ctx.floatValue("ModifyFlowRuleResponse.Data.Threshold"));
+		data.setThresholdMode(_ctx.integerValue("ModifyFlowRuleResponse.Data.ThresholdMode"));
+		data.setClusterMode(_ctx.booleanValue("ModifyFlowRuleResponse.Data.ClusterMode"));
+		data.setEnable(_ctx.booleanValue("ModifyFlowRuleResponse.Data.Enable"));
 		modifyFlowRuleResponse.setData(data);
 	 
 	 	return modifyFlowRuleResponse;

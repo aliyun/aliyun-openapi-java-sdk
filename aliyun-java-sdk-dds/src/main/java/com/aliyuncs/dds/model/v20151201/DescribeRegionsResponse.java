@@ -53,6 +53,8 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		private String regionName;
 
+		private String endPoint;
+
 		private List<Zone> zones;
 
 		public String getZoneIds() {
@@ -77,6 +79,14 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public void setRegionName(String regionName) {
 			this.regionName = regionName;
+		}
+
+		public String getEndPoint() {
+			return this.endPoint;
+		}
+
+		public void setEndPoint(String endPoint) {
+			this.endPoint = endPoint;
 		}
 
 		public List<Zone> getZones() {

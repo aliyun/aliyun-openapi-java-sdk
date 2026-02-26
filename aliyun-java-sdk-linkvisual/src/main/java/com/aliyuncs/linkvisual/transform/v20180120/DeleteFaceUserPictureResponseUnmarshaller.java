@@ -23,9 +23,9 @@ public class DeleteFaceUserPictureResponseUnmarshaller {
 	public static DeleteFaceUserPictureResponse unmarshall(DeleteFaceUserPictureResponse deleteFaceUserPictureResponse, UnmarshallerContext _ctx) {
 		
 		deleteFaceUserPictureResponse.setRequestId(_ctx.stringValue("DeleteFaceUserPictureResponse.RequestId"));
-		deleteFaceUserPictureResponse.setSuccess(_ctx.booleanValue("DeleteFaceUserPictureResponse.Success"));
-		deleteFaceUserPictureResponse.setErrorMessage(_ctx.stringValue("DeleteFaceUserPictureResponse.ErrorMessage"));
 		deleteFaceUserPictureResponse.setCode(_ctx.stringValue("DeleteFaceUserPictureResponse.Code"));
+		deleteFaceUserPictureResponse.setErrorMessage(_ctx.stringValue("DeleteFaceUserPictureResponse.ErrorMessage"));
+		deleteFaceUserPictureResponse.setSuccess(_ctx.booleanValue("DeleteFaceUserPictureResponse.Success"));
 	 
 	 	return deleteFaceUserPictureResponse;
 	}

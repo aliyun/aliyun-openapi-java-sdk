@@ -56,6 +56,14 @@ public class GenerateUploadTokenResponse extends AcsResponse {
 
 		private String signature;
 
+		private String xAmzSignature;
+
+		private String xAmzAlgorithm;
+
+		private String xAmzDate;
+
+		private String xAmzCredential;
+
 		public String getKey() {
 			return this.key;
 		}
@@ -94,6 +102,38 @@ public class GenerateUploadTokenResponse extends AcsResponse {
 
 		public void setSignature(String signature) {
 			this.signature = signature;
+		}
+
+		public String getXAmzSignature() {
+			return this.xAmzSignature;
+		}
+
+		public void setXAmzSignature(String xAmzSignature) {
+			this.xAmzSignature = xAmzSignature;
+		}
+
+		public String getXAmzAlgorithm() {
+			return this.xAmzAlgorithm;
+		}
+
+		public void setXAmzAlgorithm(String xAmzAlgorithm) {
+			this.xAmzAlgorithm = xAmzAlgorithm;
+		}
+
+		public String getXAmzDate() {
+			return this.xAmzDate;
+		}
+
+		public void setXAmzDate(String xAmzDate) {
+			this.xAmzDate = xAmzDate;
+		}
+
+		public String getXAmzCredential() {
+			return this.xAmzCredential;
+		}
+
+		public void setXAmzCredential(String xAmzCredential) {
+			this.xAmzCredential = xAmzCredential;
 		}
 	}
 

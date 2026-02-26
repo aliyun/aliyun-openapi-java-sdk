@@ -25,6 +25,8 @@ public class ListAsrVocabRequest extends RpcAcsRequest<ListAsrVocabResponse> {
 	   
 
 	private String jsonStr;
+
+	private Long baseMeAgentId;
 	public ListAsrVocabRequest() {
 		super("Qualitycheck", "2019-01-15", "ListAsrVocab");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class ListAsrVocabRequest extends RpcAcsRequest<ListAsrVocabResponse> {
 		this.jsonStr = jsonStr;
 		if(jsonStr != null){
 			putQueryParameter("JsonStr", jsonStr);
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

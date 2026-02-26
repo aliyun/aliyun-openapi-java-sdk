@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.MuteCallResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.MuteCallResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.MuteCallResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.MuteCallResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -58,13 +57,13 @@ public class MuteCallResponseUnmarshaller {
 			channelContext.setUserId(_ctx.stringValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
 			channelContext.setChannelFlags(_ctx.stringValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
 			channelContext.setTimestamp(_ctx.longValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));
 			channelContext.setChannelId(_ctx.stringValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelId"));
 			channelContext.setUserExtension(_ctx.stringValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserExtension"));
 			channelContext.setOriginator(_ctx.stringValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].Originator"));
+			channelContext.setSkillGroupId(_ctx.stringValue("MuteCallResponse.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId"));
 
 			channelContexts.add(channelContext);
 		}

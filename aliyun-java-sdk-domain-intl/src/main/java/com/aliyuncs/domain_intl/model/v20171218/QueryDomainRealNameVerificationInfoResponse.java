@@ -24,21 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDomainRealNameVerificationInfoResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String submissionDate;
-
-	private String identityCredential;
-
-	private String identityCredentialNo;
-
 	private String identityCredentialType;
 
-	private String domainName;
+	private String requestId;
 
 	private String instanceId;
 
+	private String domainName;
+
+	private String identityCredential;
+
+	private String submissionDate;
+
+	private String identityCredentialNo;
+
 	private String identityCredentialUrl;
+
+	public String getIdentityCredentialType() {
+		return this.identityCredentialType;
+	}
+
+	public void setIdentityCredentialType(String identityCredentialType) {
+		this.identityCredentialType = identityCredentialType;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,36 +56,12 @@ public class QueryDomainRealNameVerificationInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSubmissionDate() {
-		return this.submissionDate;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setSubmissionDate(String submissionDate) {
-		this.submissionDate = submissionDate;
-	}
-
-	public String getIdentityCredential() {
-		return this.identityCredential;
-	}
-
-	public void setIdentityCredential(String identityCredential) {
-		this.identityCredential = identityCredential;
-	}
-
-	public String getIdentityCredentialNo() {
-		return this.identityCredentialNo;
-	}
-
-	public void setIdentityCredentialNo(String identityCredentialNo) {
-		this.identityCredentialNo = identityCredentialNo;
-	}
-
-	public String getIdentityCredentialType() {
-		return this.identityCredentialType;
-	}
-
-	public void setIdentityCredentialType(String identityCredentialType) {
-		this.identityCredentialType = identityCredentialType;
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public String getDomainName() {
@@ -88,12 +72,28 @@ public class QueryDomainRealNameVerificationInfoResponse extends AcsResponse {
 		this.domainName = domainName;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getIdentityCredential() {
+		return this.identityCredential;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
+	public void setIdentityCredential(String identityCredential) {
+		this.identityCredential = identityCredential;
+	}
+
+	public String getSubmissionDate() {
+		return this.submissionDate;
+	}
+
+	public void setSubmissionDate(String submissionDate) {
+		this.submissionDate = submissionDate;
+	}
+
+	public String getIdentityCredentialNo() {
+		return this.identityCredentialNo;
+	}
+
+	public void setIdentityCredentialNo(String identityCredentialNo) {
+		this.identityCredentialNo = identityCredentialNo;
 	}
 
 	public String getIdentityCredentialUrl() {

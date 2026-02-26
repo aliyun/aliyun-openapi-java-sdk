@@ -25,6 +25,8 @@ import com.aliyuncs.mse.Endpoint;
 public class QueryAllSwimmingLaneGroupRequest extends RpcAcsRequest<QueryAllSwimmingLaneGroupResponse> {
 	   
 
+	private String namespace;
+
 	private String acceptLanguage;
 	public QueryAllSwimmingLaneGroupRequest() {
 		super("mse", "2019-05-31", "QueryAllSwimmingLaneGroup", "mse");
@@ -33,6 +35,17 @@ public class QueryAllSwimmingLaneGroupRequest extends RpcAcsRequest<QueryAllSwim
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
+		}
 	}
 
 	public String getAcceptLanguage() {

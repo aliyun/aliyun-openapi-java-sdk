@@ -27,22 +27,22 @@ public class ListStackEventsResponseUnmarshaller {
 	public static ListStackEventsResponse unmarshall(ListStackEventsResponse listStackEventsResponse, UnmarshallerContext _ctx) {
 		
 		listStackEventsResponse.setRequestId(_ctx.stringValue("ListStackEventsResponse.RequestId"));
-		listStackEventsResponse.setPageNumber(_ctx.integerValue("ListStackEventsResponse.PageNumber"));
-		listStackEventsResponse.setPageSize(_ctx.integerValue("ListStackEventsResponse.PageSize"));
 		listStackEventsResponse.setTotalCount(_ctx.integerValue("ListStackEventsResponse.TotalCount"));
+		listStackEventsResponse.setPageSize(_ctx.integerValue("ListStackEventsResponse.PageSize"));
+		listStackEventsResponse.setPageNumber(_ctx.integerValue("ListStackEventsResponse.PageNumber"));
 
 		List<Event> events = new ArrayList<Event>();
 		for (int i = 0; i < _ctx.lengthValue("ListStackEventsResponse.Events.Length"); i++) {
 			Event event = new Event();
-			event.setCreateTime(_ctx.stringValue("ListStackEventsResponse.Events["+ i +"].CreateTime"));
+			event.setStatus(_ctx.stringValue("ListStackEventsResponse.Events["+ i +"].Status"));
 			event.setEventId(_ctx.stringValue("ListStackEventsResponse.Events["+ i +"].EventId"));
 			event.setLogicalResourceId(_ctx.stringValue("ListStackEventsResponse.Events["+ i +"].LogicalResourceId"));
+			event.setStackId(_ctx.stringValue("ListStackEventsResponse.Events["+ i +"].StackId"));
 			event.setPhysicalResourceId(_ctx.stringValue("ListStackEventsResponse.Events["+ i +"].PhysicalResourceId"));
 			event.setResourceType(_ctx.stringValue("ListStackEventsResponse.Events["+ i +"].ResourceType"));
-			event.setStackId(_ctx.stringValue("ListStackEventsResponse.Events["+ i +"].StackId"));
-			event.setStackName(_ctx.stringValue("ListStackEventsResponse.Events["+ i +"].StackName"));
-			event.setStatus(_ctx.stringValue("ListStackEventsResponse.Events["+ i +"].Status"));
 			event.setStatusReason(_ctx.stringValue("ListStackEventsResponse.Events["+ i +"].StatusReason"));
+			event.setCreateTime(_ctx.stringValue("ListStackEventsResponse.Events["+ i +"].CreateTime"));
+			event.setStackName(_ctx.stringValue("ListStackEventsResponse.Events["+ i +"].StackName"));
 
 			events.add(event);
 		}

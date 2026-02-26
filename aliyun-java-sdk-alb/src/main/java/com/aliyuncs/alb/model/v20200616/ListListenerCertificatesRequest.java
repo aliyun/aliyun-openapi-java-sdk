@@ -15,6 +15,7 @@
 package com.aliyuncs.alb.model.v20200616;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.alb.Endpoint;
 
@@ -28,6 +29,8 @@ public class ListListenerCertificatesRequest extends RpcAcsRequest<ListListenerC
 	private String certificateType;
 
 	private String listenerId;
+
+	private List<String> certificateIds;
 
 	private String nextToken;
 
@@ -61,6 +64,19 @@ public class ListListenerCertificatesRequest extends RpcAcsRequest<ListListenerC
 		if(listenerId != null){
 			putQueryParameter("ListenerId", listenerId);
 		}
+	}
+
+	public List<String> getCertificateIds() {
+		return this.certificateIds;
+	}
+
+	public void setCertificateIds(List<String> certificateIds) {
+		this.certificateIds = certificateIds;	
+		if (certificateIds != null) {
+			for (int depth1 = 0; depth1 < certificateIds.size(); depth1++) {
+				putQueryParameter("CertificateIds." + (depth1 + 1) , certificateIds.get(depth1));
+			}
+		}	
 	}
 
 	public String getNextToken() {

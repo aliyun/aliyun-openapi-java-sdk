@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.arms.model.v20190808.ListTraceAppsResponse;
 import com.aliyuncs.arms.model.v20190808.ListTraceAppsResponse.TraceApp;
+import com.aliyuncs.arms.model.v20190808.ListTraceAppsResponse.TraceApp.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,12 +44,29 @@ public class ListTraceAppsResponseUnmarshaller {
 			traceApp.setAppId(_ctx.longValue("ListTraceAppsResponse.TraceApps["+ i +"].AppId"));
 			traceApp.setUserId(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].UserId"));
 			traceApp.setRegionId(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].RegionId"));
+			traceApp.setResourceGroupId(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].ResourceGroupId"));
+			traceApp.setSource(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Source"));
+			traceApp.setWorkloadName(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].WorkloadName"));
+			traceApp.setWorkloadKind(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].WorkloadKind"));
+			traceApp.setNamespace(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Namespace"));
+			traceApp.setClusterId(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].ClusterId"));
+			traceApp.setLanguage(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Language"));
 
 			List<String> labels = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListTraceAppsResponse.TraceApps["+ i +"].Labels.Length"); j++) {
 				labels.add(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Labels["+ j +"]"));
 			}
 			traceApp.setLabels(labels);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListTraceAppsResponse.TraceApps["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			traceApp.setTags(tags);
 
 			traceApps.add(traceApp);
 		}

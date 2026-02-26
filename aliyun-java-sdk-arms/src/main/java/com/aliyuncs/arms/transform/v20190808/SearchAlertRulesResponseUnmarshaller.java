@@ -60,12 +60,19 @@ public class SearchAlertRulesResponseUnmarshaller {
 			alertRuleEntity.setTitle(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].Title"));
 			alertRuleEntity.setTaskId(_ctx.longValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].TaskId"));
 			alertRuleEntity.setId(_ctx.longValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].Id"));
+			alertRuleEntity.setResourceGroupId(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].ResourceGroupId"));
 
 			List<String> alertWays = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertWays.Length"); j++) {
 				alertWays.add(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertWays["+ j +"]"));
 			}
 			alertRuleEntity.setAlertWays(alertWays);
+
+			List<String> alertWay = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertWay.Length"); j++) {
+				alertWay.add(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertWay["+ j +"]"));
+			}
+			alertRuleEntity.setAlertWay(alertWay);
 
 			AlarmContext alarmContext = new AlarmContext();
 			alarmContext.setAlarmContentTemplate(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlarmContext.AlarmContentTemplate"));

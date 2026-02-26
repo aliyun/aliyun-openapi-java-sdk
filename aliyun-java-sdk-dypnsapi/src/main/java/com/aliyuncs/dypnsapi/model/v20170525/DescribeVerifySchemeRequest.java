@@ -35,7 +35,7 @@ public class DescribeVerifySchemeRequest extends RpcAcsRequest<DescribeVerifySch
 
 	private Long customerId;
 	public DescribeVerifySchemeRequest() {
-		super("Dypnsapi", "2017-05-25", "DescribeVerifyScheme");
+		super("Dypnsapi", "2017-05-25", "DescribeVerifyScheme", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

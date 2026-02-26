@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDrdsTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<Task> tasks;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeDrdsTasksResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Task> getTasks() {
@@ -57,19 +57,11 @@ public class DescribeDrdsTasksResponse extends AcsResponse {
 
 	public static class Task {
 
-		private Long id;
-
 		private String state;
 
 		private String content;
 
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private Long id;
 
 		public String getState() {
 			return this.state;
@@ -85,6 +77,14 @@ public class DescribeDrdsTasksResponse extends AcsResponse {
 
 		public void setContent(String content) {
 			this.content = content;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

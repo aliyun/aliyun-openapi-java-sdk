@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveRegistrantProfileResponseUnmarshaller {
 
-	public static SaveRegistrantProfileResponse unmarshall(SaveRegistrantProfileResponse saveRegistrantProfileResponse, UnmarshallerContext context) {
+	public static SaveRegistrantProfileResponse unmarshall(SaveRegistrantProfileResponse saveRegistrantProfileResponse, UnmarshallerContext _ctx) {
 		
-		saveRegistrantProfileResponse.setRequestId(context.stringValue("SaveRegistrantProfileResponse.RequestId"));
-		saveRegistrantProfileResponse.setRegistrantProfileId(context.longValue("SaveRegistrantProfileResponse.RegistrantProfileId"));
+		saveRegistrantProfileResponse.setRequestId(_ctx.stringValue("SaveRegistrantProfileResponse.RequestId"));
+		saveRegistrantProfileResponse.setRegistrantProfileId(_ctx.longValue("SaveRegistrantProfileResponse.RegistrantProfileId"));
 	 
 	 	return saveRegistrantProfileResponse;
 	}

@@ -15,6 +15,8 @@ public class EnvironmentUtilsTest {
         Assert.assertNull(EnvironmentUtils.getHttpProxy());
         EnvironmentUtils.setHttpProxy("http://www.aliyun.com");
         Assert.assertEquals("http://www.aliyun.com", EnvironmentUtils.getHttpProxy());
+        // reset http proxy
+        EnvironmentUtils.setHttpProxy(null);
     }
 
     @Test
@@ -22,6 +24,8 @@ public class EnvironmentUtilsTest {
         Assert.assertNull(EnvironmentUtils.getHttpsProxy());
         EnvironmentUtils.setHttpsProxy("https://www.aliyun.com");
         Assert.assertEquals("https://www.aliyun.com", EnvironmentUtils.getHttpsProxy());
+        // reset https proxy
+        EnvironmentUtils.setHttpsProxy(null);
     }
 
     @Test
@@ -29,5 +33,7 @@ public class EnvironmentUtilsTest {
         Assert.assertNull(EnvironmentUtils.getNoProxy());
         EnvironmentUtils.setNoProxy("https://www.aliyun.com");
         Assert.assertEquals("https://www.aliyun.com", EnvironmentUtils.getNoProxy());
+        // reset no proxy
+        EnvironmentUtils.setNoProxy(null);
     }
 }

@@ -26,12 +26,12 @@ public class GetMetadataAmountResponseUnmarshaller {
 		getMetadataAmountResponse.setRequestId(_ctx.stringValue("GetMetadataAmountResponse.RequestId"));
 
 		Data data = new Data();
-		data.setCurrentVirtualHosts(_ctx.integerValue("GetMetadataAmountResponse.Data.CurrentVirtualHosts"));
 		data.setMaxVirtualHosts(_ctx.integerValue("GetMetadataAmountResponse.Data.MaxVirtualHosts"));
+		data.setCurrentVirtualHosts(_ctx.integerValue("GetMetadataAmountResponse.Data.CurrentVirtualHosts"));
+		data.setMaxQueues(_ctx.integerValue("GetMetadataAmountResponse.Data.MaxQueues"));
 		data.setCurrentExchanges(_ctx.integerValue("GetMetadataAmountResponse.Data.CurrentExchanges"));
 		data.setMaxExchanges(_ctx.integerValue("GetMetadataAmountResponse.Data.MaxExchanges"));
 		data.setCurrentQueues(_ctx.integerValue("GetMetadataAmountResponse.Data.CurrentQueues"));
-		data.setMaxQueues(_ctx.integerValue("GetMetadataAmountResponse.Data.MaxQueues"));
 		getMetadataAmountResponse.setData(data);
 	 
 	 	return getMetadataAmountResponse;

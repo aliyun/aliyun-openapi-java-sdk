@@ -101,6 +101,8 @@ public class DescribeCategoryTemplateRuleListResponse extends AcsResponse {
 
 		private Integer categoryLevel;
 
+		private Long parentModelId;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -195,6 +197,14 @@ public class DescribeCategoryTemplateRuleListResponse extends AcsResponse {
 
 		public void setCategoryLevel(Integer categoryLevel) {
 			this.categoryLevel = categoryLevel;
+		}
+
+		public Long getParentModelId() {
+			return this.parentModelId;
+		}
+
+		public void setParentModelId(Long parentModelId) {
+			this.parentModelId = parentModelId;
 		}
 	}
 

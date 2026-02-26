@@ -31,6 +31,8 @@ public class DescribeContainerGroupPriceRequest extends RpcAcsRequest<DescribeCo
 
     private String spotStrategy;
 
+    private Integer spotDuration;
+
     private String zoneId;
 
     private Long resourceOwnerId;
@@ -40,6 +42,8 @@ public class DescribeContainerGroupPriceRequest extends RpcAcsRequest<DescribeCo
     private String resourceOwnerAccount;
 
     private String ownerAccount;
+
+    private String computeCategory;
 
     private Float cpu;
 
@@ -78,6 +82,17 @@ public class DescribeContainerGroupPriceRequest extends RpcAcsRequest<DescribeCo
         }
     }
 
+    public Integer getSpotDuration() {
+        return this.spotDuration;
+    }
+
+    public void setSpotDuration(Integer spotDuration) {
+        this.spotDuration = spotDuration;
+        if (null != spotDuration) {
+            putQueryParameter("SpotDuration", spotDuration.longValue());
+        }
+    }
+
     public String getZoneId() {
         return this.zoneId;
     }
@@ -97,6 +112,17 @@ public class DescribeContainerGroupPriceRequest extends RpcAcsRequest<DescribeCo
         this.resourceOwnerId = resourceOwnerId;
         if (resourceOwnerId != null) {
             putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+        }
+    }
+
+    public String getComputeCategory() {
+        return computeCategory;
+    }
+
+    public void setComputeCategory(String computeCategory) {
+        this.computeCategory = computeCategory;
+        if(computeCategory != null){
+            putQueryParameter("ComputeCategory", computeCategory);
         }
     }
 

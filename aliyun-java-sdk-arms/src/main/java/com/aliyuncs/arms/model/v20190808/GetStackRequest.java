@@ -29,11 +29,13 @@ public class GetStackRequest extends RpcAcsRequest<GetStackResponse> {
 
 	private Long endTime;
 
-	private String rpcID;
-
 	private String pid;
 
 	private Long startTime;
+
+	private String spanID;
+
+	private String rpcID;
 	public GetStackRequest() {
 		super("ARMS", "2019-08-08", "GetStack", "arms");
 		setMethod(MethodType.POST);
@@ -65,17 +67,6 @@ public class GetStackRequest extends RpcAcsRequest<GetStackResponse> {
 		}
 	}
 
-	public String getRpcID() {
-		return this.rpcID;
-	}
-
-	public void setRpcID(String rpcID) {
-		this.rpcID = rpcID;
-		if(rpcID != null){
-			putQueryParameter("RpcID", rpcID);
-		}
-	}
-
 	public String getPid() {
 		return this.pid;
 	}
@@ -95,6 +86,28 @@ public class GetStackRequest extends RpcAcsRequest<GetStackResponse> {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getSpanID() {
+		return this.spanID;
+	}
+
+	public void setSpanID(String spanID) {
+		this.spanID = spanID;
+		if(spanID != null){
+			putQueryParameter("SpanID", spanID);
+		}
+	}
+
+	public String getRpcID() {
+		return this.rpcID;
+	}
+
+	public void setRpcID(String rpcID) {
+		this.rpcID = rpcID;
+		if(rpcID != null){
+			putQueryParameter("RpcID", rpcID);
 		}
 	}
 

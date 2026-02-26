@@ -29,11 +29,19 @@ public class CreateOrUpdateContactRequest extends RpcAcsRequest<CreateOrUpdateCo
 
 	private Long reissueSendNotice;
 
+	private String corpUserId;
+
 	private String contactName;
+
+	private String resourceGroupId;
+
+	private String dingRobotUrl;
 
 	private String phone;
 
 	private String email;
+
+	private Boolean isEmailVerify;
 	public CreateOrUpdateContactRequest() {
 		super("ARMS", "2019-08-08", "CreateOrUpdateContact", "arms");
 		setMethod(MethodType.POST);
@@ -65,6 +73,17 @@ public class CreateOrUpdateContactRequest extends RpcAcsRequest<CreateOrUpdateCo
 		}
 	}
 
+	public String getCorpUserId() {
+		return this.corpUserId;
+	}
+
+	public void setCorpUserId(String corpUserId) {
+		this.corpUserId = corpUserId;
+		if(corpUserId != null){
+			putBodyParameter("CorpUserId", corpUserId);
+		}
+	}
+
 	public String getContactName() {
 		return this.contactName;
 	}
@@ -73,6 +92,28 @@ public class CreateOrUpdateContactRequest extends RpcAcsRequest<CreateOrUpdateCo
 		this.contactName = contactName;
 		if(contactName != null){
 			putBodyParameter("ContactName", contactName);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDingRobotUrl() {
+		return this.dingRobotUrl;
+	}
+
+	public void setDingRobotUrl(String dingRobotUrl) {
+		this.dingRobotUrl = dingRobotUrl;
+		if(dingRobotUrl != null){
+			putQueryParameter("DingRobotUrl", dingRobotUrl);
 		}
 	}
 
@@ -95,6 +136,17 @@ public class CreateOrUpdateContactRequest extends RpcAcsRequest<CreateOrUpdateCo
 		this.email = email;
 		if(email != null){
 			putBodyParameter("Email", email);
+		}
+	}
+
+	public Boolean getIsEmailVerify() {
+		return this.isEmailVerify;
+	}
+
+	public void setIsEmailVerify(Boolean isEmailVerify) {
+		this.isEmailVerify = isEmailVerify;
+		if(isEmailVerify != null){
+			putBodyParameter("IsEmailVerify", isEmailVerify.toString());
 		}
 	}
 

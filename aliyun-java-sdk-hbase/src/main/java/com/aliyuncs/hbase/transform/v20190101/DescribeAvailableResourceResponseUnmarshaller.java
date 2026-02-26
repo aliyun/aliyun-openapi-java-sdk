@@ -40,8 +40,8 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 		List<AvailableZone> availableZones = new ArrayList<AvailableZone>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZones.Length"); i++) {
 			AvailableZone availableZone = new AvailableZone();
-			availableZone.setRegionId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].RegionId"));
 			availableZone.setZoneId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].ZoneId"));
+			availableZone.setRegionId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].RegionId"));
 
 			List<SupportedEngine> supportedEngines = new ArrayList<SupportedEngine>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines.Length"); j++) {
@@ -71,13 +71,13 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 
 								DBInstanceStorageRange dBInstanceStorageRange = new DBInstanceStorageRange();
 								dBInstanceStorageRange.setMaxSize(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategories["+ l +"].SupportedStorageTypes["+ m +"].CoreResources["+ n +"].DBInstanceStorageRange.MaxSize"));
-								dBInstanceStorageRange.setMinSize(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategories["+ l +"].SupportedStorageTypes["+ m +"].CoreResources["+ n +"].DBInstanceStorageRange.MinSize"));
 								dBInstanceStorageRange.setStepSize(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategories["+ l +"].SupportedStorageTypes["+ m +"].CoreResources["+ n +"].DBInstanceStorageRange.StepSize"));
+								dBInstanceStorageRange.setMinSize(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategories["+ l +"].SupportedStorageTypes["+ m +"].CoreResources["+ n +"].DBInstanceStorageRange.MinSize"));
 								coreResource.setDBInstanceStorageRange(dBInstanceStorageRange);
 
 								InstanceTypeDetail instanceTypeDetail = new InstanceTypeDetail();
-								instanceTypeDetail.setCpu(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategories["+ l +"].SupportedStorageTypes["+ m +"].CoreResources["+ n +"].InstanceTypeDetail.Cpu"));
 								instanceTypeDetail.setMem(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategories["+ l +"].SupportedStorageTypes["+ m +"].CoreResources["+ n +"].InstanceTypeDetail.Mem"));
+								instanceTypeDetail.setCpu(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategories["+ l +"].SupportedStorageTypes["+ m +"].CoreResources["+ n +"].InstanceTypeDetail.Cpu"));
 								coreResource.setInstanceTypeDetail(instanceTypeDetail);
 
 								coreResources.add(coreResource);
@@ -106,8 +106,8 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 				masterResource.setInstanceType(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].MasterResources["+ j +"].InstanceType"));
 
 				InstanceTypeDetail1 instanceTypeDetail1 = new InstanceTypeDetail1();
-				instanceTypeDetail1.setCpu(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].MasterResources["+ j +"].InstanceTypeDetail.Cpu"));
 				instanceTypeDetail1.setMem(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].MasterResources["+ j +"].InstanceTypeDetail.Mem"));
+				instanceTypeDetail1.setCpu(_ctx.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].MasterResources["+ j +"].InstanceTypeDetail.Cpu"));
 				masterResource.setInstanceTypeDetail1(instanceTypeDetail1);
 
 				masterResources.add(masterResource);

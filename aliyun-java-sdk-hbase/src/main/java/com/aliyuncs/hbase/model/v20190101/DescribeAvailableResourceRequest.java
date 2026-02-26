@@ -37,7 +37,7 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private String chargeType;
 	public DescribeAvailableResourceRequest() {
-		super("HBase", "2019-01-01", "DescribeAvailableResource", "hbase");
+		super("HBase", "2019-01-01", "DescribeAvailableResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

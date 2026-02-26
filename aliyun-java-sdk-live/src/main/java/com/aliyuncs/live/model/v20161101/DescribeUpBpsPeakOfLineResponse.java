@@ -47,29 +47,13 @@ public class DescribeUpBpsPeakOfLineResponse extends AcsResponse {
 
 	public static class DescribeUpBpsPeakOfLine {
 
-		private Float bandWidth;
-
-		private String peakTime;
-
 		private String queryTime;
 
 		private String statName;
 
-		public Float getBandWidth() {
-			return this.bandWidth;
-		}
+		private Float bandWidth;
 
-		public void setBandWidth(Float bandWidth) {
-			this.bandWidth = bandWidth;
-		}
-
-		public String getPeakTime() {
-			return this.peakTime;
-		}
-
-		public void setPeakTime(String peakTime) {
-			this.peakTime = peakTime;
-		}
+		private String peakTime;
 
 		public String getQueryTime() {
 			return this.queryTime;
@@ -85,6 +69,22 @@ public class DescribeUpBpsPeakOfLineResponse extends AcsResponse {
 
 		public void setStatName(String statName) {
 			this.statName = statName;
+		}
+
+		public Float getBandWidth() {
+			return this.bandWidth;
+		}
+
+		public void setBandWidth(Float bandWidth) {
+			this.bandWidth = bandWidth;
+		}
+
+		public String getPeakTime() {
+			return this.peakTime;
+		}
+
+		public void setPeakTime(String peakTime) {
+			this.peakTime = peakTime;
 		}
 	}
 

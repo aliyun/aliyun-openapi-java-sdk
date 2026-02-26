@@ -131,6 +131,8 @@ public class ListEngineNamespacesResponse extends AcsResponse {
 
 		private String serviceCount;
 
+		private String sourceType;
+
 		public Integer getType() {
 			return this.type;
 		}
@@ -185,6 +187,14 @@ public class ListEngineNamespacesResponse extends AcsResponse {
 
 		public void setServiceCount(String serviceCount) {
 			this.serviceCount = serviceCount;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
 		}
 	}
 

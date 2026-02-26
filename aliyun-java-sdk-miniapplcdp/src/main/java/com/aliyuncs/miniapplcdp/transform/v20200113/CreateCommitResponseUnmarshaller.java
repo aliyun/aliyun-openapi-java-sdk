@@ -34,7 +34,6 @@ public class CreateCommitResponseUnmarshaller {
 		data.setMainModuleCommitId(_ctx.stringValue("CreateCommitResponse.Data.MainModuleCommitId"));
 		data.setMainModuleId(_ctx.stringValue("CreateCommitResponse.Data.MainModuleId"));
 		data.setModelDataPath(_ctx.stringValue("CreateCommitResponse.Data.ModelDataPath"));
-		data.setModelDigest(_ctx.mapValue("CreateCommitResponse.Data.ModelDigest"));
 		data.setModifiedTime(_ctx.stringValue("CreateCommitResponse.Data.ModifiedTime"));
 		data.setModuleId(_ctx.stringValue("CreateCommitResponse.Data.ModuleId"));
 		data.setResourceDataPath(_ctx.stringValue("CreateCommitResponse.Data.ResourceDataPath"));

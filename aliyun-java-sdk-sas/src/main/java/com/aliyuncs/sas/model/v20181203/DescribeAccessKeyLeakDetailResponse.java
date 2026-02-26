@@ -64,6 +64,10 @@ public class DescribeAccessKeyLeakDetailResponse extends AcsResponse {
 
 	private String githubRepoUrl;
 
+	private Integer tokenValid;
+
+	private Long whitelistTime;
+
 	public String getType() {
 		return this.type;
 	}
@@ -222,6 +226,22 @@ public class DescribeAccessKeyLeakDetailResponse extends AcsResponse {
 
 	public void setGithubRepoUrl(String githubRepoUrl) {
 		this.githubRepoUrl = githubRepoUrl;
+	}
+
+	public Integer getTokenValid() {
+		return this.tokenValid;
+	}
+
+	public void setTokenValid(Integer tokenValid) {
+		this.tokenValid = tokenValid;
+	}
+
+	public Long getWhitelistTime() {
+		return this.whitelistTime;
+	}
+
+	public void setWhitelistTime(Long whitelistTime) {
+		this.whitelistTime = whitelistTime;
 	}
 
 	@Override

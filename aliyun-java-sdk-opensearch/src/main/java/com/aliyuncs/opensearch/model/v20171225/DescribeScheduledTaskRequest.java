@@ -29,7 +29,7 @@ public class DescribeScheduledTaskRequest extends RoaAcsRequest<DescribeSchedule
 
 	private String taskId;
 	public DescribeScheduledTaskRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeScheduledTask", "opensearch");
+		super("OpenSearch", "2017-12-25", "DescribeScheduledTask");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks/[taskId]");
 		setMethod(MethodType.GET);
 		try {

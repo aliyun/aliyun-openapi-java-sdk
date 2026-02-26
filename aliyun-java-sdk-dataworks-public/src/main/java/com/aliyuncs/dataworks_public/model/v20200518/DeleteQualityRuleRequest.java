@@ -28,6 +28,8 @@ public class DeleteQualityRuleRequest extends RpcAcsRequest<DeleteQualityRuleRes
 	private String projectName;
 
 	private Long ruleId;
+
+	private Long projectId;
 	public DeleteQualityRuleRequest() {
 		super("dataworks-public", "2020-05-18", "DeleteQualityRule");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class DeleteQualityRuleRequest extends RpcAcsRequest<DeleteQualityRuleRes
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putBodyParameter("RuleId", ruleId.toString());
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

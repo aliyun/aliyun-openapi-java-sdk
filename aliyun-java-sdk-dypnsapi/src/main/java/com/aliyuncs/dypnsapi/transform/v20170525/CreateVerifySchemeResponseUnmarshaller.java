@@ -24,8 +24,10 @@ public class CreateVerifySchemeResponseUnmarshaller {
 	public static CreateVerifySchemeResponse unmarshall(CreateVerifySchemeResponse createVerifySchemeResponse, UnmarshallerContext _ctx) {
 		
 		createVerifySchemeResponse.setRequestId(_ctx.stringValue("CreateVerifySchemeResponse.RequestId"));
-		createVerifySchemeResponse.setCode(_ctx.stringValue("CreateVerifySchemeResponse.Code"));
 		createVerifySchemeResponse.setMessage(_ctx.stringValue("CreateVerifySchemeResponse.Message"));
+		createVerifySchemeResponse.setHttpStatusCode(_ctx.longValue("CreateVerifySchemeResponse.HttpStatusCode"));
+		createVerifySchemeResponse.setCode(_ctx.stringValue("CreateVerifySchemeResponse.Code"));
+		createVerifySchemeResponse.setSuccess(_ctx.booleanValue("CreateVerifySchemeResponse.Success"));
 
 		GateVerifySchemeDTO gateVerifySchemeDTO = new GateVerifySchemeDTO();
 		gateVerifySchemeDTO.setSchemeCode(_ctx.stringValue("CreateVerifySchemeResponse.GateVerifySchemeDTO.SchemeCode"));

@@ -39,9 +39,9 @@ public class DetectFaceResponseUnmarshaller {
 		}
 		data.setFaceProbabilityList(faceProbabilityList);
 
-		List<Float> pupils = new ArrayList<Float>();
+		List<Double> pupils = new ArrayList<Double>();
 		for (int i = 0; i < _ctx.lengthValue("DetectFaceResponse.Data.Pupils.Length"); i++) {
-			pupils.add(_ctx.floatValue("DetectFaceResponse.Data.Pupils["+ i +"]"));
+			pupils.add(_ctx.doubleValue("DetectFaceResponse.Data.Pupils["+ i +"]"));
 		}
 		data.setPupils(pupils);
 
@@ -62,6 +62,12 @@ public class DetectFaceResponseUnmarshaller {
 			landmarks.add(_ctx.floatValue("DetectFaceResponse.Data.Landmarks["+ i +"]"));
 		}
 		data.setLandmarks(landmarks);
+
+		List<Float> landmarkScore = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("DetectFaceResponse.Data.LandmarkScore.Length"); i++) {
+			landmarkScore.add(_ctx.floatValue("DetectFaceResponse.Data.LandmarkScore["+ i +"]"));
+		}
+		data.setLandmarkScore(landmarkScore);
 
 		Qualities qualities = new Qualities();
 

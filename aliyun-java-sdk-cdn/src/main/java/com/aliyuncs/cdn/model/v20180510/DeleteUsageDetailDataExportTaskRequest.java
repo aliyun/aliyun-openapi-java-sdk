@@ -25,8 +25,6 @@ import com.aliyuncs.cdn.Endpoint;
 public class DeleteUsageDetailDataExportTaskRequest extends RpcAcsRequest<DeleteUsageDetailDataExportTaskResponse> {
 	   
 
-	private Long ownerId;
-
 	private String taskId;
 	public DeleteUsageDetailDataExportTaskRequest() {
 		super("Cdn", "2018-05-10", "DeleteUsageDetailDataExportTask");
@@ -35,17 +33,6 @@ public class DeleteUsageDetailDataExportTaskRequest extends RpcAcsRequest<Delete
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	public String getTaskId() {

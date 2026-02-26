@@ -31,12 +31,12 @@ public class DescribeCdnUserBillTypeResponseUnmarshaller {
 		List<BillTypeDataItem> billTypeData = new ArrayList<BillTypeDataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCdnUserBillTypeResponse.BillTypeData.Length"); i++) {
 			BillTypeDataItem billTypeDataItem = new BillTypeDataItem();
-			billTypeDataItem.setStartTime(_ctx.stringValue("DescribeCdnUserBillTypeResponse.BillTypeData["+ i +"].StartTime"));
 			billTypeDataItem.setEndTime(_ctx.stringValue("DescribeCdnUserBillTypeResponse.BillTypeData["+ i +"].EndTime"));
-			billTypeDataItem.setProduct(_ctx.stringValue("DescribeCdnUserBillTypeResponse.BillTypeData["+ i +"].Product"));
-			billTypeDataItem.setDimension(_ctx.stringValue("DescribeCdnUserBillTypeResponse.BillTypeData["+ i +"].Dimension"));
-			billTypeDataItem.setBillType(_ctx.stringValue("DescribeCdnUserBillTypeResponse.BillTypeData["+ i +"].BillType"));
+			billTypeDataItem.setStartTime(_ctx.stringValue("DescribeCdnUserBillTypeResponse.BillTypeData["+ i +"].StartTime"));
 			billTypeDataItem.setBillingCycle(_ctx.stringValue("DescribeCdnUserBillTypeResponse.BillTypeData["+ i +"].BillingCycle"));
+			billTypeDataItem.setProduct(_ctx.stringValue("DescribeCdnUserBillTypeResponse.BillTypeData["+ i +"].Product"));
+			billTypeDataItem.setBillType(_ctx.stringValue("DescribeCdnUserBillTypeResponse.BillTypeData["+ i +"].BillType"));
+			billTypeDataItem.setDimension(_ctx.stringValue("DescribeCdnUserBillTypeResponse.BillTypeData["+ i +"].Dimension"));
 
 			billTypeData.add(billTypeDataItem);
 		}

@@ -95,6 +95,30 @@ public class ListTransitRouterRouteEntriesResponse extends AcsResponse {
 
 		private String transitRouterRouteEntryDescription;
 
+		private Boolean operationalMode;
+
+		private String tag;
+
+		private String transitRouterRouteEntryNextHopResourceId;
+
+		private String transitRouterRouteEntryNextHopResourceType;
+
+		private String transitRouterRouteEntryOriginResourceType;
+
+		private String transitRouterRouteEntryOriginResourceId;
+
+		private String prefixListId;
+
+		private Integer preference;
+
+		private String vpnTunnelIp;
+
+		private List<String> communities;
+
+		private List<String> asPaths;
+
+		private PathAttributes pathAttributes;
+
 		public String getTransitRouterRouteEntryId() {
 			return this.transitRouterRouteEntryId;
 		}
@@ -165,6 +189,175 @@ public class ListTransitRouterRouteEntriesResponse extends AcsResponse {
 
 		public void setTransitRouterRouteEntryDescription(String transitRouterRouteEntryDescription) {
 			this.transitRouterRouteEntryDescription = transitRouterRouteEntryDescription;
+		}
+
+		public Boolean getOperationalMode() {
+			return this.operationalMode;
+		}
+
+		public void setOperationalMode(Boolean operationalMode) {
+			this.operationalMode = operationalMode;
+		}
+
+		public String getTag() {
+			return this.tag;
+		}
+
+		public void setTag(String tag) {
+			this.tag = tag;
+		}
+
+		public String getTransitRouterRouteEntryNextHopResourceId() {
+			return this.transitRouterRouteEntryNextHopResourceId;
+		}
+
+		public void setTransitRouterRouteEntryNextHopResourceId(String transitRouterRouteEntryNextHopResourceId) {
+			this.transitRouterRouteEntryNextHopResourceId = transitRouterRouteEntryNextHopResourceId;
+		}
+
+		public String getTransitRouterRouteEntryNextHopResourceType() {
+			return this.transitRouterRouteEntryNextHopResourceType;
+		}
+
+		public void setTransitRouterRouteEntryNextHopResourceType(String transitRouterRouteEntryNextHopResourceType) {
+			this.transitRouterRouteEntryNextHopResourceType = transitRouterRouteEntryNextHopResourceType;
+		}
+
+		public String getTransitRouterRouteEntryOriginResourceType() {
+			return this.transitRouterRouteEntryOriginResourceType;
+		}
+
+		public void setTransitRouterRouteEntryOriginResourceType(String transitRouterRouteEntryOriginResourceType) {
+			this.transitRouterRouteEntryOriginResourceType = transitRouterRouteEntryOriginResourceType;
+		}
+
+		public String getTransitRouterRouteEntryOriginResourceId() {
+			return this.transitRouterRouteEntryOriginResourceId;
+		}
+
+		public void setTransitRouterRouteEntryOriginResourceId(String transitRouterRouteEntryOriginResourceId) {
+			this.transitRouterRouteEntryOriginResourceId = transitRouterRouteEntryOriginResourceId;
+		}
+
+		public String getPrefixListId() {
+			return this.prefixListId;
+		}
+
+		public void setPrefixListId(String prefixListId) {
+			this.prefixListId = prefixListId;
+		}
+
+		public Integer getPreference() {
+			return this.preference;
+		}
+
+		public void setPreference(Integer preference) {
+			this.preference = preference;
+		}
+
+		public String getVpnTunnelIp() {
+			return this.vpnTunnelIp;
+		}
+
+		public void setVpnTunnelIp(String vpnTunnelIp) {
+			this.vpnTunnelIp = vpnTunnelIp;
+		}
+
+		public List<String> getCommunities() {
+			return this.communities;
+		}
+
+		public void setCommunities(List<String> communities) {
+			this.communities = communities;
+		}
+
+		public List<String> getAsPaths() {
+			return this.asPaths;
+		}
+
+		public void setAsPaths(List<String> asPaths) {
+			this.asPaths = asPaths;
+		}
+
+		public PathAttributes getPathAttributes() {
+			return this.pathAttributes;
+		}
+
+		public void setPathAttributes(PathAttributes pathAttributes) {
+			this.pathAttributes = pathAttributes;
+		}
+
+		public static class PathAttributes {
+
+			private String originInstanceId;
+
+			private String originInstanceType;
+
+			private String originRouteType;
+
+			private Integer preference;
+
+			private Long med;
+
+			private List<String> communities1;
+
+			private List<String> asPaths2;
+
+			public String getOriginInstanceId() {
+				return this.originInstanceId;
+			}
+
+			public void setOriginInstanceId(String originInstanceId) {
+				this.originInstanceId = originInstanceId;
+			}
+
+			public String getOriginInstanceType() {
+				return this.originInstanceType;
+			}
+
+			public void setOriginInstanceType(String originInstanceType) {
+				this.originInstanceType = originInstanceType;
+			}
+
+			public String getOriginRouteType() {
+				return this.originRouteType;
+			}
+
+			public void setOriginRouteType(String originRouteType) {
+				this.originRouteType = originRouteType;
+			}
+
+			public Integer getPreference() {
+				return this.preference;
+			}
+
+			public void setPreference(Integer preference) {
+				this.preference = preference;
+			}
+
+			public Long getMed() {
+				return this.med;
+			}
+
+			public void setMed(Long med) {
+				this.med = med;
+			}
+
+			public List<String> getCommunities1() {
+				return this.communities1;
+			}
+
+			public void setCommunities1(List<String> communities1) {
+				this.communities1 = communities1;
+			}
+
+			public List<String> getAsPaths2() {
+				return this.asPaths2;
+			}
+
+			public void setAsPaths2(List<String> asPaths2) {
+				this.asPaths2 = asPaths2;
+			}
 		}
 	}
 

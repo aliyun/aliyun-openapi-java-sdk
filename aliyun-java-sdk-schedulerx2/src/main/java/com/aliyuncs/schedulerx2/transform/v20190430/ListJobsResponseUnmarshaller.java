@@ -53,7 +53,9 @@ public class ListJobsResponseUnmarshaller {
 			job.setName(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].Name"));
 			job.setClassName(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].ClassName"));
 			job.setContent(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].Content"));
+			job.setJobType(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].JobType"));
 			job.setAttemptInterval(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].AttemptInterval"));
+			job.setXAttrs(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].XAttrs"));
 
 			MapTaskXAttrs mapTaskXAttrs = new MapTaskXAttrs();
 			mapTaskXAttrs.setTaskMaxAttempt(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].MapTaskXAttrs.TaskMaxAttempt"));

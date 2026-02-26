@@ -57,6 +57,12 @@ public class DescribeNoticeConfigResponse extends AcsResponse {
 
 		private Integer route;
 
+		private String allFocusLevel;
+
+		private String focusLevel;
+
+		private Integer customThreshold;
+
 		public Integer getTimeLimit() {
 			return this.timeLimit;
 		}
@@ -95,6 +101,30 @@ public class DescribeNoticeConfigResponse extends AcsResponse {
 
 		public void setRoute(Integer route) {
 			this.route = route;
+		}
+
+		public String getAllFocusLevel() {
+			return this.allFocusLevel;
+		}
+
+		public void setAllFocusLevel(String allFocusLevel) {
+			this.allFocusLevel = allFocusLevel;
+		}
+
+		public String getFocusLevel() {
+			return this.focusLevel;
+		}
+
+		public void setFocusLevel(String focusLevel) {
+			this.focusLevel = focusLevel;
+		}
+
+		public Integer getCustomThreshold() {
+			return this.customThreshold;
+		}
+
+		public void setCustomThreshold(Integer customThreshold) {
+			this.customThreshold = customThreshold;
 		}
 	}
 

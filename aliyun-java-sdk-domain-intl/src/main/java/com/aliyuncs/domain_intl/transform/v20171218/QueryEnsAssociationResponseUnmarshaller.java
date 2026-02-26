@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryEnsAssociationResponseUnmarshaller {
 
-	public static QueryEnsAssociationResponse unmarshall(QueryEnsAssociationResponse queryEnsAssociationResponse, UnmarshallerContext context) {
+	public static QueryEnsAssociationResponse unmarshall(QueryEnsAssociationResponse queryEnsAssociationResponse, UnmarshallerContext _ctx) {
 		
-		queryEnsAssociationResponse.setRequestId(context.stringValue("QueryEnsAssociationResponse.RequestId"));
-		queryEnsAssociationResponse.setAddress(context.stringValue("QueryEnsAssociationResponse.Address"));
+		queryEnsAssociationResponse.setRequestId(_ctx.stringValue("QueryEnsAssociationResponse.RequestId"));
+		queryEnsAssociationResponse.setAddress(_ctx.stringValue("QueryEnsAssociationResponse.Address"));
 	 
 	 	return queryEnsAssociationResponse;
 	}

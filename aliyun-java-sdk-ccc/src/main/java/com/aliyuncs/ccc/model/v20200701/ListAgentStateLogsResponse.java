@@ -87,6 +87,10 @@ public class ListAgentStateLogsResponse extends AcsResponse {
 
 		private Boolean outboundScenario;
 
+		private String breakCode;
+
+		private String workMode;
+
 		public Long getStartTime() {
 			return this.startTime;
 		}
@@ -125,6 +129,22 @@ public class ListAgentStateLogsResponse extends AcsResponse {
 
 		public void setOutboundScenario(Boolean outboundScenario) {
 			this.outboundScenario = outboundScenario;
+		}
+
+		public String getBreakCode() {
+			return this.breakCode;
+		}
+
+		public void setBreakCode(String breakCode) {
+			this.breakCode = breakCode;
+		}
+
+		public String getWorkMode() {
+			return this.workMode;
+		}
+
+		public void setWorkMode(String workMode) {
+			this.workMode = workMode;
 		}
 	}
 

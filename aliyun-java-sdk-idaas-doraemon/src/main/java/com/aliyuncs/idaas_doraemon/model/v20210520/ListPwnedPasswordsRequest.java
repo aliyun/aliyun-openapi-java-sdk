@@ -27,7 +27,7 @@ public class ListPwnedPasswordsRequest extends RpcAcsRequest<ListPwnedPasswordsR
 
 	private String prefixHexPasswordSha1Hash;
 	public ListPwnedPasswordsRequest() {
-		super("idaas-doraemon", "2021-05-20", "ListPwnedPasswords");
+		super("idaas-doraemon", "2021-05-20", "ListPwnedPasswords", "idaasauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

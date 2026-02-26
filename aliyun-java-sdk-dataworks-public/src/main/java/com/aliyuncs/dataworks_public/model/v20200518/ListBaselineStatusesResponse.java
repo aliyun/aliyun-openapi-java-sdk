@@ -157,6 +157,8 @@ public class ListBaselineStatusesResponse extends AcsResponse {
 
 			private Long expTime;
 
+			private String baselineType;
+
 			public String getStatus() {
 				return this.status;
 			}
@@ -267,6 +269,14 @@ public class ListBaselineStatusesResponse extends AcsResponse {
 
 			public void setExpTime(Long expTime) {
 				this.expTime = expTime;
+			}
+
+			public String getBaselineType() {
+				return this.baselineType;
+			}
+
+			public void setBaselineType(String baselineType) {
+				this.baselineType = baselineType;
 			}
 		}
 	}

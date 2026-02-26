@@ -32,6 +32,10 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 
 	private String clientToken;
 
+	private String cloudProvider;
+
+	private String dBNodeType;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -40,7 +44,7 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 
 	private Long ownerId;
 	public DeleteDBNodesRequest() {
-		super("polardb", "2017-08-01", "DeleteDBNodes");
+		super("polardb", "2017-08-01", "DeleteDBNodes", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -80,6 +84,28 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getCloudProvider() {
+		return this.cloudProvider;
+	}
+
+	public void setCloudProvider(String cloudProvider) {
+		this.cloudProvider = cloudProvider;
+		if(cloudProvider != null){
+			putQueryParameter("CloudProvider", cloudProvider);
+		}
+	}
+
+	public String getDBNodeType() {
+		return this.dBNodeType;
+	}
+
+	public void setDBNodeType(String dBNodeType) {
+		this.dBNodeType = dBNodeType;
+		if(dBNodeType != null){
+			putQueryParameter("DBNodeType", dBNodeType);
 		}
 	}
 

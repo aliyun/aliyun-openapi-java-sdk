@@ -32,16 +32,16 @@ public class ListDcdnRealTimeDeliveryProjectResponseUnmarshaller {
 		List<Projects> content = new ArrayList<Projects>();
 		for (int i = 0; i < _ctx.lengthValue("ListDcdnRealTimeDeliveryProjectResponse.Content.Length"); i++) {
 			Projects projects = new Projects();
-			projects.setProjectName(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].ProjectName"));
 			projects.setType(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].Type"));
-			projects.setDomainName(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].DomainName"));
-			projects.setFieldName(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].FieldName"));
-			projects.setSamplingRate(_ctx.floatValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].SamplingRate"));
-			projects.setDataCenter(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].DataCenter"));
-			projects.setSLSRegion(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].SLSRegion"));
-			projects.setSLSProject(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].SLSProject"));
 			projects.setSLSLogStore(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].SLSLogStore"));
+			projects.setDataCenter(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].DataCenter"));
+			projects.setFieldName(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].FieldName"));
+			projects.setProjectName(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].ProjectName"));
+			projects.setSamplingRate(_ctx.floatValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].SamplingRate"));
+			projects.setSLSProject(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].SLSProject"));
+			projects.setDomainName(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].DomainName"));
 			projects.setBusinessType(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].BusinessType"));
+			projects.setSLSRegion(_ctx.stringValue("ListDcdnRealTimeDeliveryProjectResponse.Content["+ i +"].SLSRegion"));
 
 			content.add(projects);
 		}

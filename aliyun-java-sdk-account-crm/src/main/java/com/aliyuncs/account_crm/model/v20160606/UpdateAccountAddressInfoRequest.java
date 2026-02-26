@@ -34,6 +34,8 @@ public class UpdateAccountAddressInfoRequest extends RpcAcsRequest<UpdateAccount
 
 	private String pK;
 
+	private String districtJsonString;
+
 	private String provinceJsonString;
 	public UpdateAccountAddressInfoRequest() {
 		super("account-crm", "2016-06-06", "UpdateAccountAddressInfo");
@@ -92,6 +94,17 @@ public class UpdateAccountAddressInfoRequest extends RpcAcsRequest<UpdateAccount
 		this.pK = pK;
 		if(pK != null){
 			putQueryParameter("PK", pK);
+		}
+	}
+
+	public String getDistrictJsonString() {
+		return this.districtJsonString;
+	}
+
+	public void setDistrictJsonString(String districtJsonString) {
+		this.districtJsonString = districtJsonString;
+		if(districtJsonString != null){
+			putQueryParameter("DistrictJsonString", districtJsonString);
 		}
 	}
 

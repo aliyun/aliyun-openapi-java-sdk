@@ -31,8 +31,6 @@ public class StopExecutionRequest extends RpcAcsRequest<StopExecutionResponse> {
 
 	private String error;
 
-	private String requestId;
-
 	private String flowName;
 	public StopExecutionRequest() {
 		super("fnf", "2019-03-15", "StopExecution", "fnf");
@@ -73,17 +71,6 @@ public class StopExecutionRequest extends RpcAcsRequest<StopExecutionResponse> {
 		this.error = error;
 		if(error != null){
 			putBodyParameter("Error", error);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 

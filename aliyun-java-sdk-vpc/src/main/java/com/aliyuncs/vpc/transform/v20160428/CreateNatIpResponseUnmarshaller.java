@@ -14,7 +14,11 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vpc.model.v20160428.CreateNatIpResponse;
+import com.aliyuncs.vpc.model.v20160428.CreateNatIpResponse.NatIp;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,6 +29,18 @@ public class CreateNatIpResponseUnmarshaller {
 		createNatIpResponse.setRequestId(_ctx.stringValue("CreateNatIpResponse.RequestId"));
 		createNatIpResponse.setNatIp(_ctx.stringValue("CreateNatIpResponse.NatIp"));
 		createNatIpResponse.setNatIpId(_ctx.stringValue("CreateNatIpResponse.NatIpId"));
+		createNatIpResponse.setIpv4Prefix(_ctx.stringValue("CreateNatIpResponse.Ipv4Prefix"));
+
+		List<NatIp> natIps = new ArrayList<NatIp>();
+		for (int i = 0; i < _ctx.lengthValue("CreateNatIpResponse.NatIps.Length"); i++) {
+			NatIp natIp = new NatIp();
+			natIp.setNatIp(_ctx.stringValue("CreateNatIpResponse.NatIps["+ i +"].NatIp"));
+			natIp.setNatIpId(_ctx.stringValue("CreateNatIpResponse.NatIps["+ i +"].NatIpId"));
+			natIp.setIpv4Prefix(_ctx.stringValue("CreateNatIpResponse.NatIps["+ i +"].Ipv4Prefix"));
+
+			natIps.add(natIp);
+		}
+		createNatIpResponse.setNatIps(natIps);
 	 
 	 	return createNatIpResponse;
 	}

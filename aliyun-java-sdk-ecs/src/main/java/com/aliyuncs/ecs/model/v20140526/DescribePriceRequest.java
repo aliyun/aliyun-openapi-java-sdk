@@ -34,6 +34,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String isp;
 
+	private String startTime;
+
 	private Integer dataDisk4Size;
 
 	private String priceUnit;
@@ -53,6 +55,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	private String internetChargeType;
 
 	private String zoneId;
+
+	private String schedulerOptionsDeploymentSetStrategy;
 
 	private String instanceNetworkType;
 
@@ -82,6 +86,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String scope;
 
+	private String schedulerOptionsDedicatedHostId;
+
 	private String instanceType;
 
 	private String dedicatedHostType;
@@ -102,6 +108,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String resourceType;
 
+	private List<DataDisk> dataDisks;
+
 	private String dataDisk1Category;
 
 	private String dataDisk2PerformanceLevel;
@@ -109,6 +117,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	private Integer systemDiskSize;
 
 	private String offeringType;
+
+	private List<RecurrenceRules> recurrenceRuless;
 	public DescribePriceRequest() {
 		super("Ecs", "2014-05-26", "DescribePrice", "ecs");
 		setMethod(MethodType.POST);
@@ -159,6 +169,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.isp = isp;
 		if(isp != null){
 			putQueryParameter("Isp", isp);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -269,6 +290,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getSchedulerOptionsDeploymentSetStrategy() {
+		return this.schedulerOptionsDeploymentSetStrategy;
+	}
+
+	public void setSchedulerOptionsDeploymentSetStrategy(String schedulerOptionsDeploymentSetStrategy) {
+		this.schedulerOptionsDeploymentSetStrategy = schedulerOptionsDeploymentSetStrategy;
+		if(schedulerOptionsDeploymentSetStrategy != null){
+			putQueryParameter("SchedulerOptions.DeploymentSetStrategy", schedulerOptionsDeploymentSetStrategy);
 		}
 	}
 
@@ -428,6 +460,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
+	public String getSchedulerOptionsDedicatedHostId() {
+		return this.schedulerOptionsDedicatedHostId;
+	}
+
+	public void setSchedulerOptionsDedicatedHostId(String schedulerOptionsDedicatedHostId) {
+		this.schedulerOptionsDedicatedHostId = schedulerOptionsDedicatedHostId;
+		if(schedulerOptionsDedicatedHostId != null){
+			putQueryParameter("SchedulerOptions.DedicatedHostId", schedulerOptionsDedicatedHostId);
+		}
+	}
+
 	public String getInstanceType() {
 		return this.instanceType;
 	}
@@ -538,6 +581,22 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
+	public List<DataDisk> getDataDisks() {
+		return this.dataDisks;
+	}
+
+	public void setDataDisks(List<DataDisk> dataDisks) {
+		this.dataDisks = dataDisks;	
+		if (dataDisks != null) {
+			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".ProvisionedIops" , dataDisks.get(depth1).getProvisionedIops());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
+			}
+		}	
+	}
+
 	public String getDataDisk1Category() {
 		return this.dataDisk1Category;
 	}
@@ -579,6 +638,108 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.offeringType = offeringType;
 		if(offeringType != null){
 			putQueryParameter("OfferingType", offeringType);
+		}
+	}
+
+	public List<RecurrenceRules> getRecurrenceRuless() {
+		return this.recurrenceRuless;
+	}
+
+	public void setRecurrenceRuless(List<RecurrenceRules> recurrenceRuless) {
+		this.recurrenceRuless = recurrenceRuless;	
+		if (recurrenceRuless != null) {
+			for (int depth1 = 0; depth1 < recurrenceRuless.size(); depth1++) {
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".EndHour" , recurrenceRuless.get(depth1).getEndHour());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".StartHour" , recurrenceRuless.get(depth1).getStartHour());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceValue" , recurrenceRuless.get(depth1).getRecurrenceValue());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceType" , recurrenceRuless.get(depth1).getRecurrenceType());
+			}
+		}	
+	}
+
+	public static class DataDisk {
+
+		private Long provisionedIops;
+
+		private Long size;
+
+		private String performanceLevel;
+
+		private String category;
+
+		public Long getProvisionedIops() {
+			return this.provisionedIops;
+		}
+
+		public void setProvisionedIops(Long provisionedIops) {
+			this.provisionedIops = provisionedIops;
+		}
+
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+	}
+
+	public static class RecurrenceRules {
+
+		private Integer endHour;
+
+		private Integer startHour;
+
+		private String recurrenceValue;
+
+		private String recurrenceType;
+
+		public Integer getEndHour() {
+			return this.endHour;
+		}
+
+		public void setEndHour(Integer endHour) {
+			this.endHour = endHour;
+		}
+
+		public Integer getStartHour() {
+			return this.startHour;
+		}
+
+		public void setStartHour(Integer startHour) {
+			this.startHour = startHour;
+		}
+
+		public String getRecurrenceValue() {
+			return this.recurrenceValue;
+		}
+
+		public void setRecurrenceValue(String recurrenceValue) {
+			this.recurrenceValue = recurrenceValue;
+		}
+
+		public String getRecurrenceType() {
+			return this.recurrenceType;
+		}
+
+		public void setRecurrenceType(String recurrenceType) {
+			this.recurrenceType = recurrenceType;
 		}
 	}
 

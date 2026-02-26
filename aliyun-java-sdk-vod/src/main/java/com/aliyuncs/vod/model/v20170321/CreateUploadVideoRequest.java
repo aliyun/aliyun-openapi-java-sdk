@@ -41,6 +41,8 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 
 	private String workflowId;
 
+	private String referenceId;
+
 	private String tags;
 
 	private String fileName;
@@ -142,6 +144,17 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		this.workflowId = workflowId;
 		if(workflowId != null){
 			putQueryParameter("WorkflowId", workflowId);
+		}
+	}
+
+	public String getReferenceId() {
+		return this.referenceId;
+	}
+
+	public void setReferenceId(String referenceId) {
+		this.referenceId = referenceId;
+		if(referenceId != null){
+			putQueryParameter("ReferenceId", referenceId);
 		}
 	}
 

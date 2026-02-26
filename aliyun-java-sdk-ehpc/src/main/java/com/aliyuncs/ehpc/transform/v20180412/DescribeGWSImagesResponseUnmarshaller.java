@@ -27,20 +27,20 @@ public class DescribeGWSImagesResponseUnmarshaller {
 	public static DescribeGWSImagesResponse unmarshall(DescribeGWSImagesResponse describeGWSImagesResponse, UnmarshallerContext _ctx) {
 		
 		describeGWSImagesResponse.setRequestId(_ctx.stringValue("DescribeGWSImagesResponse.RequestId"));
-		describeGWSImagesResponse.setTotalCount(_ctx.integerValue("DescribeGWSImagesResponse.TotalCount"));
-		describeGWSImagesResponse.setPageNumber(_ctx.integerValue("DescribeGWSImagesResponse.PageNumber"));
 		describeGWSImagesResponse.setPageSize(_ctx.integerValue("DescribeGWSImagesResponse.PageSize"));
+		describeGWSImagesResponse.setPageNumber(_ctx.integerValue("DescribeGWSImagesResponse.PageNumber"));
+		describeGWSImagesResponse.setTotalCount(_ctx.integerValue("DescribeGWSImagesResponse.TotalCount"));
 
 		List<ImageInfo> images = new ArrayList<ImageInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGWSImagesResponse.Images.Length"); i++) {
 			ImageInfo imageInfo = new ImageInfo();
-			imageInfo.setImageId(_ctx.stringValue("DescribeGWSImagesResponse.Images["+ i +"].ImageId"));
 			imageInfo.setStatus(_ctx.stringValue("DescribeGWSImagesResponse.Images["+ i +"].Status"));
-			imageInfo.setCreateTime(_ctx.stringValue("DescribeGWSImagesResponse.Images["+ i +"].CreateTime"));
-			imageInfo.setName(_ctx.stringValue("DescribeGWSImagesResponse.Images["+ i +"].Name"));
 			imageInfo.setImageType(_ctx.stringValue("DescribeGWSImagesResponse.Images["+ i +"].ImageType"));
 			imageInfo.setProgress(_ctx.stringValue("DescribeGWSImagesResponse.Images["+ i +"].Progress"));
 			imageInfo.setSize(_ctx.integerValue("DescribeGWSImagesResponse.Images["+ i +"].Size"));
+			imageInfo.setCreateTime(_ctx.stringValue("DescribeGWSImagesResponse.Images["+ i +"].CreateTime"));
+			imageInfo.setName(_ctx.stringValue("DescribeGWSImagesResponse.Images["+ i +"].Name"));
+			imageInfo.setImageId(_ctx.stringValue("DescribeGWSImagesResponse.Images["+ i +"].ImageId"));
 
 			images.add(imageInfo);
 		}

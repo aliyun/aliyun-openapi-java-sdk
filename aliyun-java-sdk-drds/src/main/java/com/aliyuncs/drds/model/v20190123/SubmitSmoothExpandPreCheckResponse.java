@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SubmitSmoothExpandPreCheckResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String msg;
+
+	private String requestId;
 
 	private Long taskId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean success;
 
 	public String getMsg() {
 		return this.msg;
@@ -56,12 +40,28 @@ public class SubmitSmoothExpandPreCheckResponse extends AcsResponse {
 		this.msg = msg;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Long getTaskId() {
 		return this.taskId;
 	}
 
 	public void setTaskId(Long taskId) {
 		this.taskId = taskId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

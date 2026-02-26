@@ -26,6 +26,7 @@ import com.aliyuncs.arms.model.v20190808.CreateOrUpdateAlertRuleResponse.AlertRu
 import com.aliyuncs.arms.model.v20190808.CreateOrUpdateAlertRuleResponse.AlertRule.Filters.CustomSLSFiltersItem;
 import com.aliyuncs.arms.model.v20190808.CreateOrUpdateAlertRuleResponse.AlertRule.Filters.DimFiltersItem;
 import com.aliyuncs.arms.model.v20190808.CreateOrUpdateAlertRuleResponse.AlertRule.LabelsItem;
+import com.aliyuncs.arms.model.v20190808.CreateOrUpdateAlertRuleResponse.AlertRule.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,7 +37,7 @@ public class CreateOrUpdateAlertRuleResponseUnmarshaller {
 		createOrUpdateAlertRuleResponse.setRequestId(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.RequestId"));
 
 		AlertRule alertRule = new AlertRule();
-		alertRule.setAlertId(_ctx.floatValue("CreateOrUpdateAlertRuleResponse.AlertRule.AlertId"));
+		alertRule.setAlertId(_ctx.longValue("CreateOrUpdateAlertRuleResponse.AlertRule.AlertId"));
 		alertRule.setAlertName(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.AlertName"));
 		alertRule.setUserId(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.UserId"));
 		alertRule.setRegionId(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.RegionId"));
@@ -55,6 +56,7 @@ public class CreateOrUpdateAlertRuleResponseUnmarshaller {
 		alertRule.setDuration(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.Duration"));
 		alertRule.setLevel(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.Level"));
 		alertRule.setMessage(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.Message"));
+		alertRule.setNotifyMode(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.NotifyMode"));
 
 		List<String> pids = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("CreateOrUpdateAlertRuleResponse.AlertRule.Pids.Length"); i++) {
@@ -142,6 +144,16 @@ public class CreateOrUpdateAlertRuleResponseUnmarshaller {
 			annotations.add(annotationsItem);
 		}
 		alertRule.setAnnotations(annotations);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("CreateOrUpdateAlertRuleResponse.AlertRule.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("CreateOrUpdateAlertRuleResponse.AlertRule.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		alertRule.setTags(tags);
 		createOrUpdateAlertRuleResponse.setAlertRule(alertRule);
 	 
 	 	return createOrUpdateAlertRuleResponse;

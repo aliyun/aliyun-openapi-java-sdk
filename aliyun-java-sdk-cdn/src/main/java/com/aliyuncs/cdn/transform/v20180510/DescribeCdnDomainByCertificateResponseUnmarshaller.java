@@ -31,15 +31,15 @@ public class DescribeCdnDomainByCertificateResponseUnmarshaller {
 		List<CertInfo> certInfos = new ArrayList<CertInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCdnDomainByCertificateResponse.CertInfos.Length"); i++) {
 			CertInfo certInfo = new CertInfo();
-			certInfo.setIssuer(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].Issuer"));
-			certInfo.setCertType(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].CertType"));
-			certInfo.setCertSubjectCommonName(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].CertSubjectCommonName"));
-			certInfo.setCertExpireTime(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].CertExpireTime"));
 			certInfo.setCertStartTime(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].CertStartTime"));
-			certInfo.setDomainNames(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].DomainNames"));
-			certInfo.setDomainList(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].DomainList"));
-			certInfo.setCertExpired(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].CertExpired"));
+			certInfo.setCertExpireTime(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].CertExpireTime"));
 			certInfo.setCertCaIsLegacy(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].CertCaIsLegacy"));
+			certInfo.setCertSubjectCommonName(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].CertSubjectCommonName"));
+			certInfo.setCertType(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].CertType"));
+			certInfo.setDomainNames(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].DomainNames"));
+			certInfo.setCertExpired(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].CertExpired"));
+			certInfo.setIssuer(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].Issuer"));
+			certInfo.setDomainList(_ctx.stringValue("DescribeCdnDomainByCertificateResponse.CertInfos["+ i +"].DomainList"));
 
 			certInfos.add(certInfo);
 		}

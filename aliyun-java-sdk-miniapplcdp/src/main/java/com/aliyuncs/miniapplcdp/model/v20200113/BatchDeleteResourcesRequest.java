@@ -28,6 +28,8 @@ public class BatchDeleteResourcesRequest extends RpcAcsRequest<BatchDeleteResour
 
 	private String resourceIdList;
 
+	private String source;
+
 	private String moduleId;
 	public BatchDeleteResourcesRequest() {
 		super("miniapplcdp", "2020-01-13", "BatchDeleteResources");
@@ -53,6 +55,17 @@ public class BatchDeleteResourcesRequest extends RpcAcsRequest<BatchDeleteResour
 		this.resourceIdList = resourceIdList;
 		if(resourceIdList != null){
 			putQueryParameter("ResourceIdList", resourceIdList);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

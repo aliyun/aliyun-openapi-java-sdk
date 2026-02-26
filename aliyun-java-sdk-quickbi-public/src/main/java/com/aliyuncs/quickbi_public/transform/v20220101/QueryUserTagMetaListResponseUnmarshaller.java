@@ -32,9 +32,9 @@ public class QueryUserTagMetaListResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryUserTagMetaListResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setTagName(_ctx.stringValue("QueryUserTagMetaListResponse.Result["+ i +"].TagName"));
 			resultItem.setTagDescription(_ctx.stringValue("QueryUserTagMetaListResponse.Result["+ i +"].TagDescription"));
 			resultItem.setTagId(_ctx.stringValue("QueryUserTagMetaListResponse.Result["+ i +"].TagId"));
+			resultItem.setTagName(_ctx.stringValue("QueryUserTagMetaListResponse.Result["+ i +"].TagName"));
 
 			result.add(resultItem);
 		}

@@ -65,11 +65,19 @@ public class CompareFaceResponse extends AcsResponse {
 
 		private String messageTips;
 
+		private Long isMaskA;
+
+		private Long isMaskB;
+
 		private List<Float> thresholds;
 
 		private List<Integer> rectBList;
 
 		private List<Integer> rectAList;
+
+		private List<Long> landmarksAList;
+
+		private List<Long> landmarksBList;
 
 		public Float getConfidence() {
 			return this.confidence;
@@ -103,6 +111,22 @@ public class CompareFaceResponse extends AcsResponse {
 			this.messageTips = messageTips;
 		}
 
+		public Long getIsMaskA() {
+			return this.isMaskA;
+		}
+
+		public void setIsMaskA(Long isMaskA) {
+			this.isMaskA = isMaskA;
+		}
+
+		public Long getIsMaskB() {
+			return this.isMaskB;
+		}
+
+		public void setIsMaskB(Long isMaskB) {
+			this.isMaskB = isMaskB;
+		}
+
 		public List<Float> getThresholds() {
 			return this.thresholds;
 		}
@@ -125,6 +149,22 @@ public class CompareFaceResponse extends AcsResponse {
 
 		public void setRectAList(List<Integer> rectAList) {
 			this.rectAList = rectAList;
+		}
+
+		public List<Long> getLandmarksAList() {
+			return this.landmarksAList;
+		}
+
+		public void setLandmarksAList(List<Long> landmarksAList) {
+			this.landmarksAList = landmarksAList;
+		}
+
+		public List<Long> getLandmarksBList() {
+			return this.landmarksBList;
+		}
+
+		public void setLandmarksBList(List<Long> landmarksBList) {
+			this.landmarksBList = landmarksBList;
 		}
 	}
 

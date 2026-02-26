@@ -1,7 +1,7 @@
 [English](./README.md) | 简体中文
 
 <p align="center">
-<a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/Aliyun.svg"></a>
+<a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/Aliyun.svg" alt="alibaba cloud logo"></a>
 </p>
 
 <h1 align="center">Alibaba Cloud SDK for Java (V1.0)</h1>
@@ -35,20 +35,25 @@
 - **V1/V2 SDK 差异对比**：[https://help.aliyun.com/zh/sdk/product-overview/differences-between-v1-and-v2-sdks](https://help.aliyun.com/zh/sdk/product-overview/differences-between-v1-and-v2-sdks)
 
 ## 环境要求
-1. 要使用 Alibaba Cloud SDK for Java ，您需要一个云账号以及一对`Access Key ID`和`Access Key Secret`。 请在阿里云控制台中的[AccessKey管理页面](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak)上创建和查看您的Access Key，或者联系您的系统管理员。
-2. 要使用 Alibaba Cloud SDK for Java 访问某个产品的API，您需要事先在[阿里云控制台](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w)中开通这个产品。
-3.  Alibaba Cloud SDK for Java 需要1.6以上的JDK。
+
+1. 要使用 Alibaba Cloud SDK for Java ，您需要一个云账号以及一对`Access Key ID`和`Access Key Secret`。 请在阿里云控制台中的[RAM管理页面](https://ram.console.aliyun.com)上创建和查看您的Access Key，或者联系您的系统管理员。
+2. 要使用 Alibaba Cloud SDK for Java 访问某个产品的API，您需要事先在[阿里云控制台](https://home.console.aliyun.com)中开通这个产品。
+3. Alibaba Cloud SDK for Java 需要 1.8 以上的 JDK。
 
 ## 安装依赖
+
 无论您要使用哪个产品的开发工具包，都必须安装`aliyun-java-sdk-core`。比如，对云服务器SDK的调用，您需要安装`aliyun-java-sdk-core`和`aliyun-java-sdk-ecs`。
-#### 通过Maven来管理项目依赖(推荐)
-如果您使用Apache Maven来管理Java项目，只需在项目的`pom.xml`文件加入相应的依赖项即可。您可以在[阿里云开发者资源](https://help.aliyun.com/learn/developer.html)中下载各云产品的Maven依赖。
+
+### 通过Maven来管理项目依赖(推荐)
+
+如果您使用Apache Maven来管理Java项目，只需在项目的`pom.xml`文件加入相应的依赖项即可。您可以在[阿里云SDK中心](https://api.aliyun.com/api-tools/sdklang?language=java&sdkStyle=old)中查看各云产品的Maven依赖。
 以使用Ecs SDK为例，您只需在`pom.xml`中声明以下两个依赖：
+
 ```xml
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>[4.4.9,5.0.0)</version>
+    <version>[4.6.3,5.0.0)</version>
 </dependency>
 <dependency>
     <groupId>com.aliyun</groupId>
@@ -58,11 +63,12 @@
 ```
 
 如果 maven 没有从中央存储库下载 jar 包，则需要将这些依赖项添加到`pom.xml`文件中，否则将报告 NoClassDefFoundError 异常
+
 ```xml
 <dependency>
     <groupId>com.google.code.gson</groupId>
     <artifactId>gson</artifactId>
-    <version>2.8.5</version>
+    <version>2.10.1</version>
 </dependency>
 <dependency>
     <groupId>io.opentracing</groupId>
@@ -77,6 +83,7 @@
 ```
 
 ## 使用诊断
+
 [Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) 提供 OpenAPI 使用诊断服务，通过 `RequestID` 或 `报错信息` ，帮助开发者快速定位，为开发者提供解决方案。
 
 ## 快速使用
@@ -88,24 +95,28 @@
 
 ```java
 package com.testprogram;
+
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.ecs.model.v20140526.*;
+
 public class Main {
     public static void main(String[] args) {
-         // 创建DefaultAcsClient实例并初始化
+        // 1. 创建DefaultAcsClient实例并初始化。
         DefaultProfile profile = DefaultProfile.getProfile(
             "<your-region-id>",          // 地域ID
             "<your-access-key-id>",      // RAM账号的AccessKey ID
             "<your-access-key-secret>"); // RAM账号Access Key Secret
         IAcsClient client = new DefaultAcsClient(profile);
-         // 创建API请求并设置参数
+
+        // 2. 创建API请求并设置参数
         DescribeInstancesRequest request = new DescribeInstancesRequest();
         request.setPageSize(10);
-        // 发起请求并处理应答或异常
+
+        // 3. 发起请求并处理应答或异常
         DescribeInstancesResponse response;
         try {
             response = client.getAcsResponse(request);
@@ -121,8 +132,10 @@ public class Main {
 }
 ```
 
+> 因为安全的原因，我们不推荐在源代码中硬编码凭证信息。你应该通过外部配置或者环境变量的方式来访问凭证信息。
 
 ## 文档
+
 * [环境要求](./docs/0-Requirements-CN.md)
 * [安装](./docs/1-Installation-CN.md)
 * [客户端与凭证](./docs/2-Client-CN.md)
@@ -136,23 +149,27 @@ public class Main {
 * [域名](./docs/10-Endpoint-CN.md)
 
 ## 问题
+
 [提交 Issue](https://github.com/aliyun/aliyun-openapi-java-sdk/issues/new)，不符合指南的问题可能会立即关闭。
 
 ## 发行说明
+
 每个版本的详细更改记录在[发行说明](./aliyun-java-sdk-core/ChangeLog.txt)中。
 
 ## 贡献
+
 提交 Pull Request 之前请阅读[贡献指南](CONTRIBUTING.md)。
 
 ## 相关
+
 * [阿里云服务 Regions & Endpoints](https://developer.aliyun.com/endpoints)
-* [OpenAPI 开发者门户](https://next.api.aliyun.com/)
+* [OpenAPI 开发者门户](https://api.aliyun.com/)
 * [最新源码](https://github.com/aliyun/aliyun-openapi-java-sdk)
 * [V2.0 Java SDK 仓库](https://github.com/aliyun/alibabacloud-java-sdk)
 * [V2.0 Java SDK 文档](https://help.aliyun.com/zh/sdk/developer-reference/v2-java-sdk)
 
 ## 许可证
+
 [Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 Copyright (c) 2009-present, Alibaba Cloud All rights reserved.
-

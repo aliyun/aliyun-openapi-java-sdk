@@ -79,6 +79,8 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 
 		private Long id;
 
+		private String serverType;
+
 		private List<String> clientErrorUuidList;
 
 		private List<String> remarkedUuidList;
@@ -175,6 +177,14 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public String getServerType() {
+			return this.serverType;
+		}
+
+		public void setServerType(String serverType) {
+			this.serverType = serverType;
 		}
 
 		public List<String> getClientErrorUuidList() {

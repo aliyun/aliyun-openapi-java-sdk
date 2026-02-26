@@ -25,11 +25,11 @@ import com.aliyuncs.live.Endpoint;
 public class DescribeLiveCertificateDetailRequest extends RpcAcsRequest<DescribeLiveCertificateDetailResponse> {
 	   
 
+	private String securityToken;
+
 	private String certName;
 
 	private Long ownerId;
-
-	private String securityToken;
 	public DescribeLiveCertificateDetailRequest() {
 		super("live", "2016-11-01", "DescribeLiveCertificateDetail", "live");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class DescribeLiveCertificateDetailRequest extends RpcAcsRequest<Describe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getCertName() {
@@ -58,17 +69,6 @@ public class DescribeLiveCertificateDetailRequest extends RpcAcsRequest<Describe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

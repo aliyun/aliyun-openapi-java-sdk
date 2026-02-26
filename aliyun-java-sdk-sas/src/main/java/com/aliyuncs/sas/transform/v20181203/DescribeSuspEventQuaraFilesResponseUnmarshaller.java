@@ -49,6 +49,7 @@ public class DescribeSuspEventQuaraFilesResponseUnmarshaller {
 			quaraFile.setMd5(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Md5"));
 			quaraFile.setId(_ctx.integerValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Id"));
 			quaraFile.setModifyTime(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].ModifyTime"));
+			quaraFile.setIntranetIp(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].IntranetIp"));
 
 			quaraFiles.add(quaraFile);
 		}

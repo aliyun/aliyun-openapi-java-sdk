@@ -30,7 +30,7 @@ public class UpdateResourceGroupRequest extends RpcAcsRequest<UpdateResourceGrou
 
 	private String resourceGroupId;
 	public UpdateResourceGroupRequest() {
-		super("ResourceManager", "2020-03-31", "UpdateResourceGroup");
+		super("ResourceManager", "2020-03-31", "UpdateResourceGroup", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

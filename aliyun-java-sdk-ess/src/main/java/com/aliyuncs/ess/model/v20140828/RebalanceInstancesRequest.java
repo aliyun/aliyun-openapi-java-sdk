@@ -27,9 +27,9 @@ public class RebalanceInstancesRequest extends RpcAcsRequest<RebalanceInstancesR
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String scalingGroupId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
@@ -54,17 +54,6 @@ public class RebalanceInstancesRequest extends RpcAcsRequest<RebalanceInstancesR
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getScalingGroupId() {
 		return this.scalingGroupId;
 	}
@@ -73,6 +62,17 @@ public class RebalanceInstancesRequest extends RpcAcsRequest<RebalanceInstancesR
 		this.scalingGroupId = scalingGroupId;
 		if(scalingGroupId != null){
 			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

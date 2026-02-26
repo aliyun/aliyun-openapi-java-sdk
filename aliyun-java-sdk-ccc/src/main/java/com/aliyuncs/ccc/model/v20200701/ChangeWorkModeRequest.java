@@ -25,6 +25,10 @@ import com.aliyuncs.ccc.Endpoint;
 public class ChangeWorkModeRequest extends RpcAcsRequest<ChangeWorkModeResponse> {
 	   
 
+	private String signedSkillGroupIdList;
+
+	private String mobile;
+
 	private String workMode;
 
 	private String userId;
@@ -39,6 +43,28 @@ public class ChangeWorkModeRequest extends RpcAcsRequest<ChangeWorkModeResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSignedSkillGroupIdList() {
+		return this.signedSkillGroupIdList;
+	}
+
+	public void setSignedSkillGroupIdList(String signedSkillGroupIdList) {
+		this.signedSkillGroupIdList = signedSkillGroupIdList;
+		if(signedSkillGroupIdList != null){
+			putQueryParameter("SignedSkillGroupIdList", signedSkillGroupIdList);
+		}
+	}
+
+	public String getMobile() {
+		return this.mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+		if(mobile != null){
+			putQueryParameter("Mobile", mobile);
+		}
 	}
 
 	public String getWorkMode() {

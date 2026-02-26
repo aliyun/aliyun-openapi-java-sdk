@@ -46,30 +46,22 @@ public class DescribePdnsUserInfoResponse extends AcsResponse {
 
 	public static class UserInfo {
 
-		private String availableService;
-
-		private String serviceType;
+		private Long pdnsId;
 
 		private String state;
 
+		private String serviceType;
+
 		private String stoppedService;
 
-		private Long pdnsId;
+		private String availableService;
 
-		public String getAvailableService() {
-			return this.availableService;
+		public Long getPdnsId() {
+			return this.pdnsId;
 		}
 
-		public void setAvailableService(String availableService) {
-			this.availableService = availableService;
-		}
-
-		public String getServiceType() {
-			return this.serviceType;
-		}
-
-		public void setServiceType(String serviceType) {
-			this.serviceType = serviceType;
+		public void setPdnsId(Long pdnsId) {
+			this.pdnsId = pdnsId;
 		}
 
 		public String getState() {
@@ -80,6 +72,14 @@ public class DescribePdnsUserInfoResponse extends AcsResponse {
 			this.state = state;
 		}
 
+		public String getServiceType() {
+			return this.serviceType;
+		}
+
+		public void setServiceType(String serviceType) {
+			this.serviceType = serviceType;
+		}
+
 		public String getStoppedService() {
 			return this.stoppedService;
 		}
@@ -88,12 +88,12 @@ public class DescribePdnsUserInfoResponse extends AcsResponse {
 			this.stoppedService = stoppedService;
 		}
 
-		public Long getPdnsId() {
-			return this.pdnsId;
+		public String getAvailableService() {
+			return this.availableService;
 		}
 
-		public void setPdnsId(Long pdnsId) {
-			this.pdnsId = pdnsId;
+		public void setAvailableService(String availableService) {
+			this.availableService = availableService;
 		}
 	}
 

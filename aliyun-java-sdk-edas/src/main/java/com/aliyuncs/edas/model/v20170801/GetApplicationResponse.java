@@ -136,6 +136,14 @@ public class GetApplicationResponse extends AcsResponse {
 
 		private Boolean enablePortCheck;
 
+		private String appPhase;
+
+		private Boolean haveManageAccess;
+
+		private String workloadType;
+
+		private String resourceGroupId;
+
 		public String getExtSlbIp() {
 			return this.extSlbIp;
 		}
@@ -375,6 +383,38 @@ public class GetApplicationResponse extends AcsResponse {
 		public void setEnablePortCheck(Boolean enablePortCheck) {
 			this.enablePortCheck = enablePortCheck;
 		}
+
+		public String getAppPhase() {
+			return this.appPhase;
+		}
+
+		public void setAppPhase(String appPhase) {
+			this.appPhase = appPhase;
+		}
+
+		public Boolean getHaveManageAccess() {
+			return this.haveManageAccess;
+		}
+
+		public void setHaveManageAccess(Boolean haveManageAccess) {
+			this.haveManageAccess = haveManageAccess;
+		}
+
+		public String getWorkloadType() {
+			return this.workloadType;
+		}
+
+		public void setWorkloadType(String workloadType) {
+			this.workloadType = workloadType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
 	}
 
 	public static class Application {
@@ -438,6 +478,14 @@ public class GetApplicationResponse extends AcsResponse {
 		private Boolean enableUrlCheck;
 
 		private Boolean enablePortCheck;
+
+		private String appPhase;
+
+		private String haveManageAccess;
+
+		private String workloadType;
+
+		private String resourceGroupId;
 
 		public String getExtSlbIp() {
 			return this.extSlbIp;
@@ -677,6 +725,38 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setEnablePortCheck(Boolean enablePortCheck) {
 			this.enablePortCheck = enablePortCheck;
+		}
+
+		public String getAppPhase() {
+			return this.appPhase;
+		}
+
+		public void setAppPhase(String appPhase) {
+			this.appPhase = appPhase;
+		}
+
+		public String getHaveManageAccess() {
+			return this.haveManageAccess;
+		}
+
+		public void setHaveManageAccess(String haveManageAccess) {
+			this.haveManageAccess = haveManageAccess;
+		}
+
+		public String getWorkloadType() {
+			return this.workloadType;
+		}
+
+		public void setWorkloadType(String workloadType) {
+			this.workloadType = workloadType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

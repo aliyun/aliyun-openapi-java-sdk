@@ -47,32 +47,24 @@ public class ListFirstRanksResponse extends AcsResponse {
 
 	public static class FirstRankItem {
 
-		private String name;
-
-		private String description;
+		private Integer created;
 
 		private Boolean active;
 
-		private Integer created;
+		private String description;
 
 		private Integer updated;
 
+		private String name;
+
 		private List<MetaItem> meta;
 
-		public String getName() {
-			return this.name;
+		public Integer getCreated() {
+			return this.created;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setCreated(Integer created) {
+			this.created = created;
 		}
 
 		public Boolean getActive() {
@@ -83,12 +75,12 @@ public class ListFirstRanksResponse extends AcsResponse {
 			this.active = active;
 		}
 
-		public Integer getCreated() {
-			return this.created;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setCreated(Integer created) {
-			this.created = created;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Integer getUpdated() {
@@ -97,6 +89,14 @@ public class ListFirstRanksResponse extends AcsResponse {
 
 		public void setUpdated(Integer updated) {
 			this.updated = updated;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<MetaItem> getMeta() {
@@ -109,19 +109,11 @@ public class ListFirstRanksResponse extends AcsResponse {
 
 		public static class MetaItem {
 
-			private String attribute;
-
 			private String arg;
 
+			private String attribute;
+
 			private Integer weight;
-
-			public String getAttribute() {
-				return this.attribute;
-			}
-
-			public void setAttribute(String attribute) {
-				this.attribute = attribute;
-			}
 
 			public String getArg() {
 				return this.arg;
@@ -129,6 +121,14 @@ public class ListFirstRanksResponse extends AcsResponse {
 
 			public void setArg(String arg) {
 				this.arg = arg;
+			}
+
+			public String getAttribute() {
+				return this.attribute;
+			}
+
+			public void setAttribute(String attribute) {
+				this.attribute = attribute;
 			}
 
 			public Integer getWeight() {

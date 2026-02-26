@@ -27,7 +27,7 @@ public class UploadCredentialsRequest extends RoaAcsRequest<UploadCredentialsRes
 
 	private String clientInfo;
 	public UploadCredentialsRequest() {
-		super("Green", "2018-05-09", "UploadCredentials", "green");
+		super("Green", "2018-05-09", "UploadCredentials");
 		setUriPattern("/green/credentials/uploadcredentials");
 		setMethod(MethodType.POST);
 		try {

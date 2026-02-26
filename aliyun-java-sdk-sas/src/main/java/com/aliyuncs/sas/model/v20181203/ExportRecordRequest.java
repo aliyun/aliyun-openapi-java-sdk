@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class ExportRecordRequest extends RpcAcsRequest<ExportRecordResponse> {
 	   
 
+	private String lang;
+
 	private String exportType;
 
 	private String params;
-
-	private String lang;
 	public ExportRecordRequest() {
 		super("Sas", "2018-12-03", "ExportRecord");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class ExportRecordRequest extends RpcAcsRequest<ExportRecordResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public String getExportType() {
@@ -58,17 +69,6 @@ public class ExportRecordRequest extends RpcAcsRequest<ExportRecordResponse> {
 		this.params = params;
 		if(params != null){
 			putQueryParameter("Params", params);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 

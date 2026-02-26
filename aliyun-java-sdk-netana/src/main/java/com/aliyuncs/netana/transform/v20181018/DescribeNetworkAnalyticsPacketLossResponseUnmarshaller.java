@@ -27,39 +27,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeNetworkAnalyticsPacketLossResponseUnmarshaller {
 
-	public static DescribeNetworkAnalyticsPacketLossResponse unmarshall(DescribeNetworkAnalyticsPacketLossResponse describeNetworkAnalyticsPacketLossResponse, UnmarshallerContext context) {
+	public static DescribeNetworkAnalyticsPacketLossResponse unmarshall(DescribeNetworkAnalyticsPacketLossResponse describeNetworkAnalyticsPacketLossResponse, UnmarshallerContext _ctx) {
 		
-		describeNetworkAnalyticsPacketLossResponse.setRequestId(context.stringValue("DescribeNetworkAnalyticsPacketLossResponse.RequestId"));
-		describeNetworkAnalyticsPacketLossResponse.setTotalCount(context.integerValue("DescribeNetworkAnalyticsPacketLossResponse.TotalCount"));
-		describeNetworkAnalyticsPacketLossResponse.setPageNumber(context.integerValue("DescribeNetworkAnalyticsPacketLossResponse.PageNumber"));
-		describeNetworkAnalyticsPacketLossResponse.setPageSize(context.integerValue("DescribeNetworkAnalyticsPacketLossResponse.PageSize"));
+		describeNetworkAnalyticsPacketLossResponse.setRequestId(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.RequestId"));
+		describeNetworkAnalyticsPacketLossResponse.setTotalCount(_ctx.integerValue("DescribeNetworkAnalyticsPacketLossResponse.TotalCount"));
+		describeNetworkAnalyticsPacketLossResponse.setPageSize(_ctx.integerValue("DescribeNetworkAnalyticsPacketLossResponse.PageSize"));
+		describeNetworkAnalyticsPacketLossResponse.setPageNumber(_ctx.integerValue("DescribeNetworkAnalyticsPacketLossResponse.PageNumber"));
 
 		List<PacketLossInfo> packetLossInfos = new ArrayList<PacketLossInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos.Length"); i++) {
 			PacketLossInfo packetLossInfo = new PacketLossInfo();
-			packetLossInfo.setInBoundTotalPacket(context.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].InBoundTotalPacket"));
-			packetLossInfo.setOutBoundTotalPacket(context.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].OutBoundTotalPacket"));
-			packetLossInfo.setDataType(context.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].DataType"));
-			packetLossInfo.setDateTime(context.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].DateTime"));
-			packetLossInfo.setIp(context.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Ip"));
+			packetLossInfo.setDataType(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].DataType"));
+			packetLossInfo.setOutBoundTotalPacket(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].OutBoundTotalPacket"));
+			packetLossInfo.setInBoundTotalPacket(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].InBoundTotalPacket"));
+			packetLossInfo.setIp(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Ip"));
+			packetLossInfo.setDateTime(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].DateTime"));
+
+			Carrier carrier = new Carrier();
+			carrier.setCarrierCode(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Carrier.CarrierCode"));
+			carrier.setCarrierCn(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Carrier.CarrierCn"));
+			carrier.setCarrierEn(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Carrier.CarrierEn"));
+			packetLossInfo.setCarrier(carrier);
 
 			Country country = new Country();
-			country.setCountryCode(context.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Country.CountryCode"));
-			country.setCountryCn(context.booleanValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Country.CountryCn"));
-			country.setCountryEn(context.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Country.CountryEn"));
+			country.setCountryCn(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Country.CountryCn"));
+			country.setCountryEn(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Country.CountryEn"));
+			country.setCountryCode(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Country.CountryCode"));
 			packetLossInfo.setCountry(country);
 
 			Province province = new Province();
-			province.setProvinceCode(context.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Province.ProvinceCode"));
-			province.setProvinceCn(context.booleanValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Province.ProvinceCn"));
-			province.setProvinceEn(context.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Province.ProvinceEn"));
+			province.setProvinceCode(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Province.ProvinceCode"));
+			province.setProvinceCn(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Province.ProvinceCn"));
+			province.setProvinceEn(_ctx.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Province.ProvinceEn"));
 			packetLossInfo.setProvince(province);
-
-			Carrier carrier = new Carrier();
-			carrier.setCarrierCode(context.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Carrier.CarrierCode"));
-			carrier.setCarrierCn(context.booleanValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Carrier.CarrierCn"));
-			carrier.setCarrierEn(context.stringValue("DescribeNetworkAnalyticsPacketLossResponse.PacketLossInfos["+ i +"].Carrier.CarrierEn"));
-			packetLossInfo.setCarrier(carrier);
 
 			packetLossInfos.add(packetLossInfo);
 		}

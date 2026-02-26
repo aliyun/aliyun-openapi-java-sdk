@@ -27,6 +27,8 @@ public class DescribeParameterGroupRequest extends RpcAcsRequest<DescribeParamet
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String parameterGroupId;
 
 	private String resourceOwnerAccount;
@@ -34,8 +36,10 @@ public class DescribeParameterGroupRequest extends RpcAcsRequest<DescribeParamet
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String dBType;
 	public DescribeParameterGroupRequest() {
-		super("polardb", "2017-08-01", "DescribeParameterGroup");
+		super("polardb", "2017-08-01", "DescribeParameterGroup", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,6 +55,17 @@ public class DescribeParameterGroupRequest extends RpcAcsRequest<DescribeParamet
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -95,6 +110,17 @@ public class DescribeParameterGroupRequest extends RpcAcsRequest<DescribeParamet
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBType() {
+		return this.dBType;
+	}
+
+	public void setDBType(String dBType) {
+		this.dBType = dBType;
+		if(dBType != null){
+			putQueryParameter("DBType", dBType);
 		}
 	}
 

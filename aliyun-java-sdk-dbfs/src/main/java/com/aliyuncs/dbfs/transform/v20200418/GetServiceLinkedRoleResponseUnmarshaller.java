@@ -24,8 +24,8 @@ public class GetServiceLinkedRoleResponseUnmarshaller {
 		
 		getServiceLinkedRoleResponse.setRequestId(_ctx.stringValue("GetServiceLinkedRoleResponse.RequestId"));
 		getServiceLinkedRoleResponse.setAccountId(_ctx.stringValue("GetServiceLinkedRoleResponse.AccountId"));
-		getServiceLinkedRoleResponse.setRegionId(_ctx.stringValue("GetServiceLinkedRoleResponse.RegionId"));
 		getServiceLinkedRoleResponse.setDbfsLinkedRole(_ctx.booleanValue("GetServiceLinkedRoleResponse.DbfsLinkedRole"));
+		getServiceLinkedRoleResponse.setRegionId(_ctx.stringValue("GetServiceLinkedRoleResponse.RegionId"));
 	 
 	 	return getServiceLinkedRoleResponse;
 	}

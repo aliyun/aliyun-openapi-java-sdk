@@ -87,6 +87,10 @@ public class ListAsrVocabResponse extends AcsResponse {
 
 		private String id;
 
+		private Integer asrVersion;
+
+		private String modelCustomizationId;
+
 		public String getVocabularyId() {
 			return this.vocabularyId;
 		}
@@ -125,6 +129,22 @@ public class ListAsrVocabResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public Integer getAsrVersion() {
+			return this.asrVersion;
+		}
+
+		public void setAsrVersion(Integer asrVersion) {
+			this.asrVersion = asrVersion;
+		}
+
+		public String getModelCustomizationId() {
+			return this.modelCustomizationId;
+		}
+
+		public void setModelCustomizationId(String modelCustomizationId) {
+			this.modelCustomizationId = modelCustomizationId;
 		}
 	}
 

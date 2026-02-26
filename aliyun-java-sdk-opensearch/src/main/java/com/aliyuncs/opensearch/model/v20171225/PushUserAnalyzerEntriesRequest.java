@@ -27,7 +27,7 @@ public class PushUserAnalyzerEntriesRequest extends RoaAcsRequest<PushUserAnalyz
 
 	private String name;
 	public PushUserAnalyzerEntriesRequest() {
-		super("OpenSearch", "2017-12-25", "PushUserAnalyzerEntries", "opensearch");
+		super("OpenSearch", "2017-12-25", "PushUserAnalyzerEntries");
 		setUriPattern("/v4/openapi/user-analyzers/[name]/entries/actions/bulk");
 		setMethod(MethodType.POST);
 		try {

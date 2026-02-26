@@ -64,7 +64,7 @@ public class GetAggregateConfigDeliveryChannelResponse extends AcsResponse {
 
 		private String description;
 
-		private Boolean configurationSnapshot;
+		private Boolean compliantSnapshot;
 
 		private Boolean configurationItemChangeNotification;
 
@@ -73,6 +73,10 @@ public class GetAggregateConfigDeliveryChannelResponse extends AcsResponse {
 		private String aggregatorId;
 
 		private String accountId;
+
+		private String deliverySnapshotTime;
+
+		private Boolean configurationSnapshot;
 
 		public Integer getStatus() {
 			return this.status;
@@ -146,12 +150,12 @@ public class GetAggregateConfigDeliveryChannelResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Boolean getConfigurationSnapshot() {
-			return this.configurationSnapshot;
+		public Boolean getCompliantSnapshot() {
+			return this.compliantSnapshot;
 		}
 
-		public void setConfigurationSnapshot(Boolean configurationSnapshot) {
-			this.configurationSnapshot = configurationSnapshot;
+		public void setCompliantSnapshot(Boolean compliantSnapshot) {
+			this.compliantSnapshot = compliantSnapshot;
 		}
 
 		public Boolean getConfigurationItemChangeNotification() {
@@ -184,6 +188,22 @@ public class GetAggregateConfigDeliveryChannelResponse extends AcsResponse {
 
 		public void setAccountId(String accountId) {
 			this.accountId = accountId;
+		}
+
+		public String getDeliverySnapshotTime() {
+			return this.deliverySnapshotTime;
+		}
+
+		public void setDeliverySnapshotTime(String deliverySnapshotTime) {
+			this.deliverySnapshotTime = deliverySnapshotTime;
+		}
+
+		public Boolean getConfigurationSnapshot() {
+			return this.configurationSnapshot;
+		}
+
+		public void setConfigurationSnapshot(Boolean configurationSnapshot) {
+			this.configurationSnapshot = configurationSnapshot;
 		}
 	}
 

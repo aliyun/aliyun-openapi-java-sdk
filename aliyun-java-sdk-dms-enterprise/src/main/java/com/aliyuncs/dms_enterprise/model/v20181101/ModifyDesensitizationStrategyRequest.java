@@ -25,19 +25,21 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ModifyDesensitizationStrategyRequest extends RpcAcsRequest<ModifyDesensitizationStrategyResponse> {
 	   
 
-	private String schemaName;
-
 	private Boolean isReset;
+
+	private Long tid;
+
+	private Boolean isDefault;
+
+	private String tableName;
+
+	private String schemaName;
 
 	private Boolean isLogic;
 
 	private String columnName;
 
-	private Long tid;
-
 	private Integer dbId;
-
-	private String tableName;
 
 	private Integer ruleId;
 	public ModifyDesensitizationStrategyRequest() {
@@ -49,17 +51,6 @@ public class ModifyDesensitizationStrategyRequest extends RpcAcsRequest<ModifyDe
 		} catch (Exception e) {}
 	}
 
-	public String getSchemaName() {
-		return this.schemaName;
-	}
-
-	public void setSchemaName(String schemaName) {
-		this.schemaName = schemaName;
-		if(schemaName != null){
-			putQueryParameter("SchemaName", schemaName);
-		}
-	}
-
 	public Boolean getIsReset() {
 		return this.isReset;
 	}
@@ -68,6 +59,50 @@ public class ModifyDesensitizationStrategyRequest extends RpcAcsRequest<ModifyDe
 		this.isReset = isReset;
 		if(isReset != null){
 			putQueryParameter("IsReset", isReset.toString());
+		}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Boolean getIsDefault() {
+		return this.isDefault;
+	}
+
+	public void setIsDefault(Boolean isDefault) {
+		this.isDefault = isDefault;
+		if(isDefault != null){
+			putQueryParameter("IsDefault", isDefault.toString());
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
+		}
+	}
+
+	public String getSchemaName() {
+		return this.schemaName;
+	}
+
+	public void setSchemaName(String schemaName) {
+		this.schemaName = schemaName;
+		if(schemaName != null){
+			putQueryParameter("SchemaName", schemaName);
 		}
 	}
 
@@ -93,17 +128,6 @@ public class ModifyDesensitizationStrategyRequest extends RpcAcsRequest<ModifyDe
 		}
 	}
 
-	public Long getTid() {
-		return this.tid;
-	}
-
-	public void setTid(Long tid) {
-		this.tid = tid;
-		if(tid != null){
-			putQueryParameter("Tid", tid.toString());
-		}
-	}
-
 	public Integer getDbId() {
 		return this.dbId;
 	}
@@ -112,17 +136,6 @@ public class ModifyDesensitizationStrategyRequest extends RpcAcsRequest<ModifyDe
 		this.dbId = dbId;
 		if(dbId != null){
 			putQueryParameter("DbId", dbId.toString());
-		}
-	}
-
-	public String getTableName() {
-		return this.tableName;
-	}
-
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-		if(tableName != null){
-			putQueryParameter("TableName", tableName);
 		}
 	}
 

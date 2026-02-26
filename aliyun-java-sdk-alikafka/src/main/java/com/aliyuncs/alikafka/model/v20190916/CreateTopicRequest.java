@@ -15,6 +15,7 @@
 package com.aliyuncs.alikafka.model.v20190916;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.alikafka.Endpoint;
 
@@ -27,11 +28,23 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 
 	private String remark;
 
+	private Long replicationFactor;
+
+	private Boolean compactTopic;
+
+	private List<Tag> tags;
+
+	private String partitionNum;
+
+	private Long minInsyncReplicas;
+
 	private String instanceId;
 
 	private String topic;
 
-	private String partitionNum;
+	private String config;
+
+	private Boolean localTopic;
 	public CreateTopicRequest() {
 		super("alikafka", "2019-09-16", "CreateTopic", "alikafka");
 		setMethod(MethodType.POST);
@@ -49,6 +62,64 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 		this.remark = remark;
 		if(remark != null){
 			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public Long getReplicationFactor() {
+		return this.replicationFactor;
+	}
+
+	public void setReplicationFactor(Long replicationFactor) {
+		this.replicationFactor = replicationFactor;
+		if(replicationFactor != null){
+			putQueryParameter("ReplicationFactor", replicationFactor.toString());
+		}
+	}
+
+	public Boolean getCompactTopic() {
+		return this.compactTopic;
+	}
+
+	public void setCompactTopic(Boolean compactTopic) {
+		this.compactTopic = compactTopic;
+		if(compactTopic != null){
+			putQueryParameter("CompactTopic", compactTopic.toString());
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getPartitionNum() {
+		return this.partitionNum;
+	}
+
+	public void setPartitionNum(String partitionNum) {
+		this.partitionNum = partitionNum;
+		if(partitionNum != null){
+			putQueryParameter("PartitionNum", partitionNum);
+		}
+	}
+
+	public Long getMinInsyncReplicas() {
+		return this.minInsyncReplicas;
+	}
+
+	public void setMinInsyncReplicas(Long minInsyncReplicas) {
+		this.minInsyncReplicas = minInsyncReplicas;
+		if(minInsyncReplicas != null){
+			putQueryParameter("MinInsyncReplicas", minInsyncReplicas.toString());
 		}
 	}
 
@@ -74,14 +145,48 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 		}
 	}
 
-	public String getPartitionNum() {
-		return this.partitionNum;
+	public String getConfig() {
+		return this.config;
 	}
 
-	public void setPartitionNum(String partitionNum) {
-		this.partitionNum = partitionNum;
-		if(partitionNum != null){
-			putQueryParameter("PartitionNum", partitionNum);
+	public void setConfig(String config) {
+		this.config = config;
+		if(config != null){
+			putQueryParameter("Config", config);
+		}
+	}
+
+	public Boolean getLocalTopic() {
+		return this.localTopic;
+	}
+
+	public void setLocalTopic(Boolean localTopic) {
+		this.localTopic = localTopic;
+		if(localTopic != null){
+			putQueryParameter("LocalTopic", localTopic.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

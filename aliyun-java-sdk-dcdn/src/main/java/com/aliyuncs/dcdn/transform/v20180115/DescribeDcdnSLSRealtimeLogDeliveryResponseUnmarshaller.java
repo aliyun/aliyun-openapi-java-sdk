@@ -26,16 +26,17 @@ public class DescribeDcdnSLSRealtimeLogDeliveryResponseUnmarshaller {
 		describeDcdnSLSRealtimeLogDeliveryResponse.setRequestId(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.RequestId"));
 
 		Content content = new Content();
-		content.setProjectName(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.ProjectName"));
-		content.setDomainName(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.DomainName"));
-		content.setFieldName(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.FieldName"));
-		content.setSamplingRate(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.SamplingRate"));
-		content.setDataCenter(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.DataCenter"));
-		content.setSLSRegion(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.SLSRegion"));
-		content.setSLSProject(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.SLSProject"));
-		content.setSLSLogStore(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.SLSLogStore"));
-		content.setBusinessType(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.BusinessType"));
+		content.setStatus(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.Status"));
 		content.setType(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.Type"));
+		content.setSLSLogStore(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.SLSLogStore"));
+		content.setDataCenter(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.DataCenter"));
+		content.setFieldName(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.FieldName"));
+		content.setProjectName(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.ProjectName"));
+		content.setSamplingRate(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.SamplingRate"));
+		content.setSLSProject(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.SLSProject"));
+		content.setDomainName(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.DomainName"));
+		content.setBusinessType(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.BusinessType"));
+		content.setSLSRegion(_ctx.stringValue("DescribeDcdnSLSRealtimeLogDeliveryResponse.Content.SLSRegion"));
 		describeDcdnSLSRealtimeLogDeliveryResponse.setContent(content);
 	 
 	 	return describeDcdnSLSRealtimeLogDeliveryResponse;

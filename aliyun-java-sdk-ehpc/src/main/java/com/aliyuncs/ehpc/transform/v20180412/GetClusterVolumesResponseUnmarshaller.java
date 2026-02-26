@@ -33,15 +33,15 @@ public class GetClusterVolumesResponseUnmarshaller {
 		List<VolumeInfo> volumes = new ArrayList<VolumeInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetClusterVolumesResponse.Volumes.Length"); i++) {
 			VolumeInfo volumeInfo = new VolumeInfo();
-			volumeInfo.setVolumeId(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].VolumeId"));
-			volumeInfo.setVolumeType(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].VolumeType"));
-			volumeInfo.setVolumeProtocol(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].VolumeProtocol"));
-			volumeInfo.setVolumeMountpoint(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].VolumeMountpoint"));
-			volumeInfo.setRemoteDirectory(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].RemoteDirectory"));
-			volumeInfo.setLocalDirectory(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].LocalDirectory"));
-			volumeInfo.setLocation(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].Location"));
 			volumeInfo.setJobQueue(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].JobQueue"));
+			volumeInfo.setVolumeId(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].VolumeId"));
+			volumeInfo.setRemoteDirectory(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].RemoteDirectory"));
+			volumeInfo.setVolumeMountpoint(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].VolumeMountpoint"));
+			volumeInfo.setLocalDirectory(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].LocalDirectory"));
+			volumeInfo.setVolumeType(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].VolumeType"));
 			volumeInfo.setMustKeep(_ctx.booleanValue("GetClusterVolumesResponse.Volumes["+ i +"].MustKeep"));
+			volumeInfo.setLocation(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].Location"));
+			volumeInfo.setVolumeProtocol(_ctx.stringValue("GetClusterVolumesResponse.Volumes["+ i +"].VolumeProtocol"));
 
 			List<RoleInfo> roles = new ArrayList<RoleInfo>();
 			for (int j = 0; j < _ctx.lengthValue("GetClusterVolumesResponse.Volumes["+ i +"].Roles.Length"); j++) {

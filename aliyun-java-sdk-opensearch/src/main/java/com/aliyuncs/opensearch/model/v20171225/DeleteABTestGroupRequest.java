@@ -31,7 +31,7 @@ public class DeleteABTestGroupRequest extends RoaAcsRequest<DeleteABTestGroupRes
 
 	private String appGroupIdentity;
 	public DeleteABTestGroupRequest() {
-		super("OpenSearch", "2017-12-25", "DeleteABTestGroup", "opensearch");
+		super("OpenSearch", "2017-12-25", "DeleteABTestGroup");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]");
 		setMethod(MethodType.DELETE);
 		try {

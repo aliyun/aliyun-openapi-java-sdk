@@ -27,38 +27,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeNetworkAnalyticsNetQualityResponseUnmarshaller {
 
-	public static DescribeNetworkAnalyticsNetQualityResponse unmarshall(DescribeNetworkAnalyticsNetQualityResponse describeNetworkAnalyticsNetQualityResponse, UnmarshallerContext context) {
+	public static DescribeNetworkAnalyticsNetQualityResponse unmarshall(DescribeNetworkAnalyticsNetQualityResponse describeNetworkAnalyticsNetQualityResponse, UnmarshallerContext _ctx) {
 		
-		describeNetworkAnalyticsNetQualityResponse.setRequestId(context.stringValue("DescribeNetworkAnalyticsNetQualityResponse.RequestId"));
-		describeNetworkAnalyticsNetQualityResponse.setTotalCount(context.integerValue("DescribeNetworkAnalyticsNetQualityResponse.TotalCount"));
-		describeNetworkAnalyticsNetQualityResponse.setPageNumber(context.integerValue("DescribeNetworkAnalyticsNetQualityResponse.PageNumber"));
-		describeNetworkAnalyticsNetQualityResponse.setPageSize(context.integerValue("DescribeNetworkAnalyticsNetQualityResponse.PageSize"));
+		describeNetworkAnalyticsNetQualityResponse.setRequestId(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.RequestId"));
+		describeNetworkAnalyticsNetQualityResponse.setTotalCount(_ctx.integerValue("DescribeNetworkAnalyticsNetQualityResponse.TotalCount"));
+		describeNetworkAnalyticsNetQualityResponse.setPageSize(_ctx.integerValue("DescribeNetworkAnalyticsNetQualityResponse.PageSize"));
+		describeNetworkAnalyticsNetQualityResponse.setPageNumber(_ctx.integerValue("DescribeNetworkAnalyticsNetQualityResponse.PageNumber"));
 
 		List<NetQuality> netQualities = new ArrayList<NetQuality>();
-		for (int i = 0; i < context.lengthValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities.Length"); i++) {
 			NetQuality netQuality = new NetQuality();
-			netQuality.setRoundTripLatency(context.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].RoundTripLatency"));
-			netQuality.setNetLevel(context.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].NetLevel"));
-			netQuality.setDataType(context.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].DataType"));
-			netQuality.setDateTime(context.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].DateTime"));
+			netQuality.setDataType(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].DataType"));
+			netQuality.setRoundTripLatency(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].RoundTripLatency"));
+			netQuality.setNetLevel(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].NetLevel"));
+			netQuality.setDateTime(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].DateTime"));
+
+			Carrier carrier = new Carrier();
+			carrier.setCarrierCode(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Carrier.CarrierCode"));
+			carrier.setCarrierCn(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Carrier.CarrierCn"));
+			carrier.setCarrierEn(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Carrier.CarrierEn"));
+			netQuality.setCarrier(carrier);
 
 			Country country = new Country();
-			country.setCountryCode(context.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Country.CountryCode"));
-			country.setCountryCn(context.booleanValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Country.CountryCn"));
-			country.setCountryEn(context.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Country.CountryEn"));
+			country.setCountryCn(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Country.CountryCn"));
+			country.setCountryEn(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Country.CountryEn"));
+			country.setCountryCode(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Country.CountryCode"));
 			netQuality.setCountry(country);
 
 			Province province = new Province();
-			province.setProvinceCode(context.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Province.ProvinceCode"));
-			province.setProvinceCn(context.booleanValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Province.ProvinceCn"));
-			province.setProvinceEn(context.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Province.ProvinceEn"));
+			province.setProvinceCode(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Province.ProvinceCode"));
+			province.setProvinceCn(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Province.ProvinceCn"));
+			province.setProvinceEn(_ctx.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Province.ProvinceEn"));
 			netQuality.setProvince(province);
-
-			Carrier carrier = new Carrier();
-			carrier.setCarrierCode(context.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Carrier.CarrierCode"));
-			carrier.setCarrierCn(context.booleanValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Carrier.CarrierCn"));
-			carrier.setCarrierEn(context.stringValue("DescribeNetworkAnalyticsNetQualityResponse.NetQualities["+ i +"].Carrier.CarrierEn"));
-			netQuality.setCarrier(carrier);
 
 			netQualities.add(netQuality);
 		}

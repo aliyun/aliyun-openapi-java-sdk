@@ -31,15 +31,13 @@ public class ListLogstashLogRequest extends RoaAcsRequest<ListLogstashLogRespons
 
 	private String query;
 
-	private Integer endTime;
+	private Long endTime;
 
-	private Integer beginTime;
+	private Long beginTime;
 
 	private Integer page;
 
 	private String type;
-
-	private String body;
 	public ListLogstashLogRequest() {
 		super("elasticsearch", "2017-06-13", "ListLogstashLog", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/search-log");
@@ -83,22 +81,22 @@ public class ListLogstashLogRequest extends RoaAcsRequest<ListLogstashLogRespons
 		}
 	}
 
-	public Integer getEndTime() {
+	public Long getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(Integer endTime) {
+	public void setEndTime(Long endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("endTime", endTime.toString());
 		}
 	}
 
-	public Integer getBeginTime() {
+	public Long getBeginTime() {
 		return this.beginTime;
 	}
 
-	public void setBeginTime(Integer beginTime) {
+	public void setBeginTime(Long beginTime) {
 		this.beginTime = beginTime;
 		if(beginTime != null){
 			putQueryParameter("beginTime", beginTime.toString());
@@ -124,17 +122,6 @@ public class ListLogstashLogRequest extends RoaAcsRequest<ListLogstashLogRespons
 		this.type = type;
 		if(type != null){
 			putQueryParameter("type", type);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

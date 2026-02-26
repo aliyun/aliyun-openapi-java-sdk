@@ -48,7 +48,7 @@ public class RegisterAuthenticatorRequest extends RpcAcsRequest<RegisterAuthenti
 
 	private String applicationExternalId;
 	public RegisterAuthenticatorRequest() {
-		super("idaas-doraemon", "2021-05-20", "RegisterAuthenticator");
+		super("idaas-doraemon", "2021-05-20", "RegisterAuthenticator", "idaasauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

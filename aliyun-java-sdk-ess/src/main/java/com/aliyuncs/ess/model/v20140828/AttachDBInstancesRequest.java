@@ -32,6 +32,10 @@ public class AttachDBInstancesRequest extends RpcAcsRequest<AttachDBInstancesRes
 
 	private Boolean forceAttach;
 
+	private String type;
+
+	private String attachMode;
+
 	private String resourceOwnerAccount;
 
 	private List<String> dBInstances;
@@ -76,6 +80,28 @@ public class AttachDBInstancesRequest extends RpcAcsRequest<AttachDBInstancesRes
 		this.forceAttach = forceAttach;
 		if(forceAttach != null){
 			putQueryParameter("ForceAttach", forceAttach.toString());
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getAttachMode() {
+		return this.attachMode;
+	}
+
+	public void setAttachMode(String attachMode) {
+		this.attachMode = attachMode;
+		if(attachMode != null){
+			putQueryParameter("AttachMode", attachMode);
 		}
 	}
 

@@ -31,13 +31,13 @@ public class QueryXpackRelateDBResponseUnmarshaller {
 		List<Cluster> clusterList = new ArrayList<Cluster>();
 		for (int i = 0; i < _ctx.lengthValue("QueryXpackRelateDBResponse.ClusterList.Length"); i++) {
 			Cluster cluster = new Cluster();
-			cluster.setClusterId(_ctx.stringValue("QueryXpackRelateDBResponse.ClusterList["+ i +"].ClusterId"));
-			cluster.setClusterName(_ctx.stringValue("QueryXpackRelateDBResponse.ClusterList["+ i +"].ClusterName"));
-			cluster.setDBVersion(_ctx.stringValue("QueryXpackRelateDBResponse.ClusterList["+ i +"].DBVersion"));
 			cluster.setStatus(_ctx.stringValue("QueryXpackRelateDBResponse.ClusterList["+ i +"].Status"));
-			cluster.setDBType(_ctx.stringValue("QueryXpackRelateDBResponse.ClusterList["+ i +"].DBType"));
+			cluster.setDBVersion(_ctx.stringValue("QueryXpackRelateDBResponse.ClusterList["+ i +"].DBVersion"));
 			cluster.setIsRelated(_ctx.booleanValue("QueryXpackRelateDBResponse.ClusterList["+ i +"].IsRelated"));
+			cluster.setClusterName(_ctx.stringValue("QueryXpackRelateDBResponse.ClusterList["+ i +"].ClusterName"));
+			cluster.setDBType(_ctx.stringValue("QueryXpackRelateDBResponse.ClusterList["+ i +"].DBType"));
 			cluster.setLockMode(_ctx.stringValue("QueryXpackRelateDBResponse.ClusterList["+ i +"].LockMode"));
+			cluster.setClusterId(_ctx.stringValue("QueryXpackRelateDBResponse.ClusterList["+ i +"].ClusterId"));
 
 			clusterList.add(cluster);
 		}

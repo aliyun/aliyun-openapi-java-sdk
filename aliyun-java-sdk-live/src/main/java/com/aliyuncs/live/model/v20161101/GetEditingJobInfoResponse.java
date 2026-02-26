@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetEditingJobInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String casterId;
 
 	private String editingTasksInfo;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getCasterId() {
 		return this.casterId;
@@ -52,6 +44,14 @@ public class GetEditingJobInfoResponse extends AcsResponse {
 
 	public void setEditingTasksInfo(String editingTasksInfo) {
 		this.editingTasksInfo = editingTasksInfo;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -46,19 +46,11 @@ public class CreateGADInstanceResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String gadInstanceName;
-
 		private String createMemberCount;
 
+		private String gadInstanceName;
+
 		private String taskID;
-
-		public String getGadInstanceName() {
-			return this.gadInstanceName;
-		}
-
-		public void setGadInstanceName(String gadInstanceName) {
-			this.gadInstanceName = gadInstanceName;
-		}
 
 		public String getCreateMemberCount() {
 			return this.createMemberCount;
@@ -66,6 +58,14 @@ public class CreateGADInstanceResponse extends AcsResponse {
 
 		public void setCreateMemberCount(String createMemberCount) {
 			this.createMemberCount = createMemberCount;
+		}
+
+		public String getGadInstanceName() {
+			return this.gadInstanceName;
+		}
+
+		public void setGadInstanceName(String gadInstanceName) {
+			this.gadInstanceName = gadInstanceName;
 		}
 
 		public String getTaskID() {

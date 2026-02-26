@@ -52,6 +52,7 @@ public class DescribeWebRulesResponseUnmarshaller {
 			webRule.setCname(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].Cname"));
 			webRule.setHttp2Enable(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].Http2Enable"));
 			webRule.setHttps2HttpEnable(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].Https2HttpEnable"));
+			webRule.setCertRegion(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].CertRegion"));
 
 			List<String> whiteList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeWebRulesResponse.WebRules["+ i +"].WhiteList.Length"); j++) {

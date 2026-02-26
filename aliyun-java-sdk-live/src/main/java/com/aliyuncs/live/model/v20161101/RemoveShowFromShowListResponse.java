@@ -28,6 +28,10 @@ public class RemoveShowFromShowListResponse extends AcsResponse {
 
 	private String showId;
 
+	private String failedList;
+
+	private String successfulShowIds;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +46,22 @@ public class RemoveShowFromShowListResponse extends AcsResponse {
 
 	public void setShowId(String showId) {
 		this.showId = showId;
+	}
+
+	public String getFailedList() {
+		return this.failedList;
+	}
+
+	public void setFailedList(String failedList) {
+		this.failedList = failedList;
+	}
+
+	public String getSuccessfulShowIds() {
+		return this.successfulShowIds;
+	}
+
+	public void setSuccessfulShowIds(String successfulShowIds) {
+		this.successfulShowIds = successfulShowIds;
 	}
 
 	@Override

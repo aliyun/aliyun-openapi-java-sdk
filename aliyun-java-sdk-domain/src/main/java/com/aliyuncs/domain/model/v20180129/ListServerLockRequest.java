@@ -33,6 +33,8 @@ public class ListServerLockRequest extends RpcAcsRequest<ListServerLockResponse>
 
 	private Long beginStartDate;
 
+	private String orderByType;
+
 	private Integer serverLockStatus;
 
 	private Long startExpireDate;
@@ -43,11 +45,13 @@ public class ListServerLockRequest extends RpcAcsRequest<ListServerLockResponse>
 
 	private String domainName;
 
+	private String orderBy;
+
 	private Long endStartDate;
 
 	private String userClientIp;
 	public ListServerLockRequest() {
-		super("Domain", "2018-01-29", "ListServerLock");
+		super("Domain", "2018-01-29", "ListServerLock", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -96,6 +100,17 @@ public class ListServerLockRequest extends RpcAcsRequest<ListServerLockResponse>
 		this.beginStartDate = beginStartDate;
 		if(beginStartDate != null){
 			putQueryParameter("BeginStartDate", beginStartDate.toString());
+		}
+	}
+
+	public String getOrderByType() {
+		return this.orderByType;
+	}
+
+	public void setOrderByType(String orderByType) {
+		this.orderByType = orderByType;
+		if(orderByType != null){
+			putQueryParameter("OrderByType", orderByType);
 		}
 	}
 
@@ -151,6 +166,17 @@ public class ListServerLockRequest extends RpcAcsRequest<ListServerLockResponse>
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
 		}
 	}
 

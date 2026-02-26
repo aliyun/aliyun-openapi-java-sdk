@@ -27,14 +27,15 @@ public class DescribeVSwitchesResponseUnmarshaller {
 	public static DescribeVSwitchesResponse unmarshall(DescribeVSwitchesResponse describeVSwitchesResponse, UnmarshallerContext _ctx) {
 		
 		describeVSwitchesResponse.setRequestId(_ctx.stringValue("DescribeVSwitchesResponse.RequestId"));
-		describeVSwitchesResponse.setTotalCount(_ctx.integerValue("DescribeVSwitchesResponse.TotalCount"));
 		describeVSwitchesResponse.setPageNumber(_ctx.integerValue("DescribeVSwitchesResponse.PageNumber"));
 		describeVSwitchesResponse.setPageSize(_ctx.integerValue("DescribeVSwitchesResponse.PageSize"));
+		describeVSwitchesResponse.setTotalCount(_ctx.integerValue("DescribeVSwitchesResponse.TotalCount"));
 
 		List<VSwitch> vSwitchs = new ArrayList<VSwitch>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVSwitchesResponse.VSwitchs.Length"); i++) {
 			VSwitch vSwitch = new VSwitch();
 			vSwitch.setAliUid(_ctx.stringValue("DescribeVSwitchesResponse.VSwitchs["+ i +"].AliUid"));
+			vSwitch.setAvailableIpAddressCount(_ctx.stringValue("DescribeVSwitchesResponse.VSwitchs["+ i +"].AvailableIpAddressCount"));
 			vSwitch.setBid(_ctx.stringValue("DescribeVSwitchesResponse.VSwitchs["+ i +"].Bid"));
 			vSwitch.setCidrBlock(_ctx.stringValue("DescribeVSwitchesResponse.VSwitchs["+ i +"].CidrBlock"));
 			vSwitch.setDescription(_ctx.stringValue("DescribeVSwitchesResponse.VSwitchs["+ i +"].Description"));

@@ -2,11 +2,9 @@ package com.aliyuncs.auth.signers;
 
 import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.Signer;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import javax.crypto.Mac;

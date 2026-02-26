@@ -28,7 +28,7 @@ public class GetFolderRequest extends RpcAcsRequest<GetFolderResponse> {
 
 	private String folderId;
 	public GetFolderRequest() {
-		super("ResourceManager", "2020-03-31", "GetFolder");
+		super("ResourceManager", "2020-03-31", "GetFolder", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

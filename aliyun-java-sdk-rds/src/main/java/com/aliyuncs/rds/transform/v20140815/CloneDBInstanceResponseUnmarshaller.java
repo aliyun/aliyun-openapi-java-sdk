@@ -23,10 +23,10 @@ public class CloneDBInstanceResponseUnmarshaller {
 	public static CloneDBInstanceResponse unmarshall(CloneDBInstanceResponse cloneDBInstanceResponse, UnmarshallerContext _ctx) {
 		
 		cloneDBInstanceResponse.setRequestId(_ctx.stringValue("CloneDBInstanceResponse.RequestId"));
-		cloneDBInstanceResponse.setDBInstanceId(_ctx.stringValue("CloneDBInstanceResponse.DBInstanceId"));
-		cloneDBInstanceResponse.setPort(_ctx.stringValue("CloneDBInstanceResponse.Port"));
 		cloneDBInstanceResponse.setConnectionString(_ctx.stringValue("CloneDBInstanceResponse.ConnectionString"));
+		cloneDBInstanceResponse.setDBInstanceId(_ctx.stringValue("CloneDBInstanceResponse.DBInstanceId"));
 		cloneDBInstanceResponse.setOrderId(_ctx.stringValue("CloneDBInstanceResponse.OrderId"));
+		cloneDBInstanceResponse.setPort(_ctx.stringValue("CloneDBInstanceResponse.Port"));
 	 
 	 	return cloneDBInstanceResponse;
 	}

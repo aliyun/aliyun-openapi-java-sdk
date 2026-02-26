@@ -33,7 +33,7 @@ public class TransferInReenterTransferAuthorizationCodeRequest extends RpcAcsReq
 
 	private String lang;
 	public TransferInReenterTransferAuthorizationCodeRequest() {
-		super("Domain", "2018-01-29", "TransferInReenterTransferAuthorizationCode");
+		super("Domain", "2018-01-29", "TransferInReenterTransferAuthorizationCode", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

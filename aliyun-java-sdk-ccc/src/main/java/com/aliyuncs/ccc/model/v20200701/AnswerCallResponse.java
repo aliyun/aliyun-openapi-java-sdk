@@ -15,7 +15,6 @@
 package com.aliyuncs.ccc.model.v20200701;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20200701.AnswerCallResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -162,6 +161,8 @@ public class AnswerCallResponse extends AcsResponse {
 
 			public static class ChannelContext {
 
+				private Long index;
+
 				private String releaseInitiator;
 
 				private String channelState;
@@ -174,8 +175,6 @@ public class AnswerCallResponse extends AcsResponse {
 
 				private Long timestamp;
 
-				private Map<Object,Object> associatedData;
-
 				private String releaseReason;
 
 				private String callType;
@@ -187,6 +186,16 @@ public class AnswerCallResponse extends AcsResponse {
 				private String originator;
 
 				private String userExtension;
+
+				private String channelVariables;
+
+				public Long getIndex() {
+					return this.index;
+				}
+
+				public void setIndex(Long index) {
+					this.index = index;
+				}
 
 				public String getReleaseInitiator() {
 					return this.releaseInitiator;
@@ -236,14 +245,6 @@ public class AnswerCallResponse extends AcsResponse {
 					this.timestamp = timestamp;
 				}
 
-				public Map<Object,Object> getAssociatedData() {
-					return this.associatedData;
-				}
-
-				public void setAssociatedData(Map<Object,Object> associatedData) {
-					this.associatedData = associatedData;
-				}
-
 				public String getReleaseReason() {
 					return this.releaseReason;
 				}
@@ -290,6 +291,14 @@ public class AnswerCallResponse extends AcsResponse {
 
 				public void setUserExtension(String userExtension) {
 					this.userExtension = userExtension;
+				}
+
+				public String getChannelVariables() {
+					return this.channelVariables;
+				}
+
+				public void setChannelVariables(String channelVariables) {
+					this.channelVariables = channelVariables;
 				}
 			}
 		}

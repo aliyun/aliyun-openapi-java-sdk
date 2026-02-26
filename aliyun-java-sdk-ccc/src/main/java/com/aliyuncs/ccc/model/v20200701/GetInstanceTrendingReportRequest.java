@@ -30,6 +30,8 @@ public class GetInstanceTrendingReportRequest extends RpcAcsRequest<GetInstanceT
 	private Long startTime;
 
 	private String instanceId;
+
+	private String mediaType;
 	public GetInstanceTrendingReportRequest() {
 		super("CCC", "2020-07-01", "GetInstanceTrendingReport", "CCC");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class GetInstanceTrendingReportRequest extends RpcAcsRequest<GetInstanceT
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getMediaType() {
+		return this.mediaType;
+	}
+
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+		if(mediaType != null){
+			putQueryParameter("MediaType", mediaType);
 		}
 	}
 

@@ -48,12 +48,22 @@ public class BlurFaceResponse extends AcsResponse {
 
 		private String imageURL;
 
+		private String maskURL;
+
 		public String getImageURL() {
 			return this.imageURL;
 		}
 
 		public void setImageURL(String imageURL) {
 			this.imageURL = imageURL;
+		}
+
+		public String getMaskURL() {
+			return this.maskURL;
+		}
+
+		public void setMaskURL(String maskURL) {
+			this.maskURL = maskURL;
 		}
 	}
 

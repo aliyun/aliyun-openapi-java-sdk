@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ros.model.v20190910.GenerateTemplatePolicyResponse;
 import com.aliyuncs.ros.model.v20190910.GenerateTemplatePolicyResponse.Policy;
 import com.aliyuncs.ros.model.v20190910.GenerateTemplatePolicyResponse.Policy.StatementItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,8 +36,9 @@ public class GenerateTemplatePolicyResponseUnmarshaller {
 		List<StatementItem> statement = new ArrayList<StatementItem>();
 		for (int i = 0; i < _ctx.lengthValue("GenerateTemplatePolicyResponse.Policy.Statement.Length"); i++) {
 			StatementItem statementItem = new StatementItem();
-			statementItem.setResource(_ctx.stringValue("GenerateTemplatePolicyResponse.Policy.Statement["+ i +"].Resource"));
 			statementItem.setEffect(_ctx.stringValue("GenerateTemplatePolicyResponse.Policy.Statement["+ i +"].Effect"));
+			statementItem.setResource(_ctx.stringValue("GenerateTemplatePolicyResponse.Policy.Statement["+ i +"].Resource"));
+			statementItem.setCondition(_ctx.mapValue("GenerateTemplatePolicyResponse.Policy.Statement["+ i +"].Condition"));
 
 			List<String> action = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GenerateTemplatePolicyResponse.Policy.Statement["+ i +"].Action.Length"); j++) {

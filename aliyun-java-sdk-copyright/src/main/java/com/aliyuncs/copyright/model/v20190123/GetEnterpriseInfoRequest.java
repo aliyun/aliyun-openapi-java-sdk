@@ -26,7 +26,7 @@ public class GetEnterpriseInfoRequest extends RpcAcsRequest<GetEnterpriseInfoRes
 
 	private String name;
 	public GetEnterpriseInfoRequest() {
-		super("Copyright", "2019-01-23", "GetEnterpriseInfo");
+		super("Copyright", "2019-01-23", "GetEnterpriseInfo", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

@@ -29,7 +29,7 @@ public class ModifySQLCollectorPolicyRequest extends RpcAcsRequest<ModifySQLColl
 
 	private String dBInstanceId;
 	public ModifySQLCollectorPolicyRequest() {
-		super("gpdb", "2016-05-03", "ModifySQLCollectorPolicy");
+		super("gpdb", "2016-05-03", "ModifySQLCollectorPolicy", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

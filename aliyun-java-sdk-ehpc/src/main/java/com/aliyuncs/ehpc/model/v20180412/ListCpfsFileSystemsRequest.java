@@ -31,7 +31,7 @@ public class ListCpfsFileSystemsRequest extends RpcAcsRequest<ListCpfsFileSystem
 
 	private String fileSystemId;
 	public ListCpfsFileSystemsRequest() {
-		super("EHPC", "2018-04-12", "ListCpfsFileSystems");
+		super("EHPC", "2018-04-12", "ListCpfsFileSystems", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

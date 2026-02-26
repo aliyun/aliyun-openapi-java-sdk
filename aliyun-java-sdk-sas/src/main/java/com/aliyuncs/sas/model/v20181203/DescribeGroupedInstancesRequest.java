@@ -29,15 +29,21 @@ public class DescribeGroupedInstancesRequest extends RpcAcsRequest<DescribeGroup
 
 	private Boolean noPage;
 
+	private Integer vendor;
+
 	private Integer pageSize;
 
 	private String lang;
+
+	private String vendors;
 
 	private String fieldValue;
 
 	private Integer currentPage;
 
 	private String machineTypes;
+
+	private String saleVersionCheckCode;
 	public DescribeGroupedInstancesRequest() {
 		super("Sas", "2018-12-03", "DescribeGroupedInstances");
 		setMethod(MethodType.POST);
@@ -69,6 +75,17 @@ public class DescribeGroupedInstancesRequest extends RpcAcsRequest<DescribeGroup
 		}
 	}
 
+	public Integer getVendor() {
+		return this.vendor;
+	}
+
+	public void setVendor(Integer vendor) {
+		this.vendor = vendor;
+		if(vendor != null){
+			putQueryParameter("Vendor", vendor.toString());
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -88,6 +105,17 @@ public class DescribeGroupedInstancesRequest extends RpcAcsRequest<DescribeGroup
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getVendors() {
+		return this.vendors;
+	}
+
+	public void setVendors(String vendors) {
+		this.vendors = vendors;
+		if(vendors != null){
+			putQueryParameter("Vendors", vendors);
 		}
 	}
 
@@ -121,6 +149,17 @@ public class DescribeGroupedInstancesRequest extends RpcAcsRequest<DescribeGroup
 		this.machineTypes = machineTypes;
 		if(machineTypes != null){
 			putQueryParameter("MachineTypes", machineTypes);
+		}
+	}
+
+	public String getSaleVersionCheckCode() {
+		return this.saleVersionCheckCode;
+	}
+
+	public void setSaleVersionCheckCode(String saleVersionCheckCode) {
+		this.saleVersionCheckCode = saleVersionCheckCode;
+		if(saleVersionCheckCode != null){
+			putQueryParameter("SaleVersionCheckCode", saleVersionCheckCode);
 		}
 	}
 

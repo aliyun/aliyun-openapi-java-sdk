@@ -24,17 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceVodUrlByTimeResponse extends AcsResponse {
 
+	private String code;
+
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String errorMessage;
-
-	private String code;
-
-	private String decryptKey;
-
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,30 +66,6 @@ public class QueryDeviceVodUrlByTimeResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getDecryptKey() {
-		return this.decryptKey;
-	}
-
-	public void setDecryptKey(String decryptKey) {
-		this.decryptKey = decryptKey;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -86,17 +76,11 @@ public class QueryDeviceVodUrlByTimeResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String vodUrl;
-
 		private String decryptKey;
 
-		public String getVodUrl() {
-			return this.vodUrl;
-		}
+		private String stunInfo;
 
-		public void setVodUrl(String vodUrl) {
-			this.vodUrl = vodUrl;
-		}
+		private String vodUrl;
 
 		public String getDecryptKey() {
 			return this.decryptKey;
@@ -104,6 +88,22 @@ public class QueryDeviceVodUrlByTimeResponse extends AcsResponse {
 
 		public void setDecryptKey(String decryptKey) {
 			this.decryptKey = decryptKey;
+		}
+
+		public String getStunInfo() {
+			return this.stunInfo;
+		}
+
+		public void setStunInfo(String stunInfo) {
+			this.stunInfo = stunInfo;
+		}
+
+		public String getVodUrl() {
+			return this.vodUrl;
+		}
+
+		public void setVodUrl(String vodUrl) {
+			this.vodUrl = vodUrl;
 		}
 	}
 

@@ -47,6 +47,13 @@ public class ListServiceInstancesResponseUnmarshaller {
 			instancesItem.setTotalProcesses(_ctx.integerValue("ListServiceInstancesResponse.Instances["+ i +"].TotalProcesses"));
 			instancesItem.setReadyProcesses(_ctx.integerValue("ListServiceInstancesResponse.Instances["+ i +"].ReadyProcesses"));
 			instancesItem.setStartAt(_ctx.stringValue("ListServiceInstancesResponse.Instances["+ i +"].StartAt"));
+			instancesItem.setRole(_ctx.stringValue("ListServiceInstancesResponse.Instances["+ i +"].Role"));
+			instancesItem.setResourceType(_ctx.stringValue("ListServiceInstancesResponse.Instances["+ i +"].ResourceType"));
+			instancesItem.setTenantInstanceIP(_ctx.stringValue("ListServiceInstancesResponse.Instances["+ i +"].TenantInstanceIP"));
+			instancesItem.setTenantHostIP(_ctx.stringValue("ListServiceInstancesResponse.Instances["+ i +"].TenantHostIP"));
+			instancesItem.setIsSpot(_ctx.booleanValue("ListServiceInstancesResponse.Instances["+ i +"].IsSpot"));
+			instancesItem.setCurrentAmount(_ctx.floatValue("ListServiceInstancesResponse.Instances["+ i +"].CurrentAmount"));
+			instancesItem.setOriginalAmount(_ctx.floatValue("ListServiceInstancesResponse.Instances["+ i +"].OriginalAmount"));
 
 			List<Map<Object, Object>> lastState = _ctx.listMapValue("ListServiceInstancesResponse.Instances["+ i +"].LastState");
 			instancesItem.setLastState(lastState);

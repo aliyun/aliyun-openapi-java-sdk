@@ -25,23 +25,21 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainCcActivityLogRequest extends RpcAcsRequest<DescribeDomainCcActivityLogResponse> {
 	   
 
+	private String domainName;
+
+	private Long pageSize;
+
+	private String endTime;
+
 	private String ruleName;
 
 	private String startTime;
 
 	private String triggerObject;
 
-	private Long pageNumber;
-
-	private Long pageSize;
-
 	private String value;
 
-	private String domainName;
-
-	private String endTime;
-
-	private Long ownerId;
+	private Long pageNumber;
 	public DescribeDomainCcActivityLogRequest() {
 		super("Cdn", "2018-05-10", "DescribeDomainCcActivityLog");
 		setMethod(MethodType.POST);
@@ -49,6 +47,39 @@ public class DescribeDomainCcActivityLogRequest extends RpcAcsRequest<DescribeDo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public String getRuleName() {
@@ -84,28 +115,6 @@ public class DescribeDomainCcActivityLogRequest extends RpcAcsRequest<DescribeDo
 		}
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getValue() {
 		return this.value;
 	}
@@ -117,36 +126,14 @@ public class DescribeDomainCcActivityLogRequest extends RpcAcsRequest<DescribeDo
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public Long getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

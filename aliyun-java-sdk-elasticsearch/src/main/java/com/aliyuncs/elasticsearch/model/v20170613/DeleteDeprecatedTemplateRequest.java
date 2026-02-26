@@ -28,8 +28,6 @@ public class DeleteDeprecatedTemplateRequest extends RoaAcsRequest<DeleteDepreca
 	private String instanceId;
 
 	private String name;
-
-	private String body;
 	public DeleteDeprecatedTemplateRequest() {
 		super("elasticsearch", "2017-06-13", "DeleteDeprecatedTemplate", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/deprecated-templates/[name]");
@@ -59,17 +57,6 @@ public class DeleteDeprecatedTemplateRequest extends RoaAcsRequest<DeleteDepreca
 		this.name = name;
 		if(name != null){
 			putPathParameter("name", name);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

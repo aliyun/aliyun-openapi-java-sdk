@@ -35,24 +35,24 @@ public class DescribeCdnUserDomainsByFuncResponseUnmarshaller {
 		List<PageData> domains = new ArrayList<PageData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCdnUserDomainsByFuncResponse.Domains.Length"); i++) {
 			PageData pageData = new PageData();
-			pageData.setDomainName(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].DomainName"));
-			pageData.setCname(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Cname"));
-			pageData.setCdnType(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].CdnType"));
-			pageData.setDomainStatus(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].DomainStatus"));
 			pageData.setGmtCreated(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].GmtCreated"));
-			pageData.setGmtModified(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].GmtModified"));
-			pageData.setDescription(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Description"));
 			pageData.setSslProtocol(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].SslProtocol"));
+			pageData.setDescription(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Description"));
 			pageData.setResourceGroupId(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].ResourceGroupId"));
+			pageData.setDomainStatus(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].DomainStatus"));
+			pageData.setCname(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Cname"));
+			pageData.setGmtModified(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].GmtModified"));
+			pageData.setCdnType(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].CdnType"));
+			pageData.setDomainName(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].DomainName"));
 
 			List<Source> sources = new ArrayList<Source>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Sources.Length"); j++) {
 				Source source = new Source();
 				source.setType(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Sources["+ j +"].Type"));
-				source.setContent(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Sources["+ j +"].Content"));
-				source.setPort(_ctx.integerValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Sources["+ j +"].Port"));
-				source.setPriority(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Sources["+ j +"].Priority"));
 				source.setWeight(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Sources["+ j +"].Weight"));
+				source.setPriority(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Sources["+ j +"].Priority"));
+				source.setPort(_ctx.integerValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Sources["+ j +"].Port"));
+				source.setContent(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Sources["+ j +"].Content"));
 
 				sources.add(source);
 			}

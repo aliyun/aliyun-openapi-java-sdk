@@ -33,7 +33,7 @@ public class DescribeSavingsPlansCoverageTotalRequest extends RpcAcsRequest<Desc
 
 	private String endPeriod;
 	public DescribeSavingsPlansCoverageTotalRequest() {
-		super("BssOpenApi", "2017-12-14", "DescribeSavingsPlansCoverageTotal");
+		super("BssOpenApi", "2017-12-14", "DescribeSavingsPlansCoverageTotal", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

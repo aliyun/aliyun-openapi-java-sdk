@@ -29,13 +29,11 @@ public class ListApmRequest extends RoaAcsRequest<ListApmResponse> {
 
 	private String instanceId;
 
-	private Integer size;
+	private Long size;
 
 	private String description;
 
-	private Integer page;
-
-	private String body;
+	private Long page;
 	public ListApmRequest() {
 		super("elasticsearch", "2017-06-13", "ListApm", "elasticsearch");
 		setUriPattern("/openapi/apm");
@@ -68,11 +66,11 @@ public class ListApmRequest extends RoaAcsRequest<ListApmResponse> {
 		}
 	}
 
-	public Integer getSize() {
+	public Long getSize() {
 		return this.size;
 	}
 
-	public void setSize(Integer size) {
+	public void setSize(Long size) {
 		this.size = size;
 		if(size != null){
 			putQueryParameter("size", size.toString());
@@ -90,25 +88,14 @@ public class ListApmRequest extends RoaAcsRequest<ListApmResponse> {
 		}
 	}
 
-	public Integer getPage() {
+	public Long getPage() {
 		return this.page;
 	}
 
-	public void setPage(Integer page) {
+	public void setPage(Long page) {
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

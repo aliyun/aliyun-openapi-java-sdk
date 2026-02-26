@@ -31,7 +31,6 @@ public class ListApplicationsWithTagRulesResponseUnmarshaller {
 		listApplicationsWithTagRulesResponse.setRequestId(_ctx.stringValue("ListApplicationsWithTagRulesResponse.RequestId"));
 		listApplicationsWithTagRulesResponse.setHttpStatusCode(_ctx.integerValue("ListApplicationsWithTagRulesResponse.HttpStatusCode"));
 		listApplicationsWithTagRulesResponse.setMessage(_ctx.stringValue("ListApplicationsWithTagRulesResponse.Message"));
-		listApplicationsWithTagRulesResponse.setCode(_ctx.integerValue("ListApplicationsWithTagRulesResponse.Code"));
 		listApplicationsWithTagRulesResponse.setSuccess(_ctx.booleanValue("ListApplicationsWithTagRulesResponse.Success"));
 
 		Data data = new Data();
@@ -42,6 +41,7 @@ public class ListApplicationsWithTagRulesResponseUnmarshaller {
 		List<ApplicationList> result = new ArrayList<ApplicationList>();
 		for (int i = 0; i < _ctx.lengthValue("ListApplicationsWithTagRulesResponse.Data.Result.Length"); i++) {
 			ApplicationList applicationList = new ApplicationList();
+			applicationList.setNamespace(_ctx.stringValue("ListApplicationsWithTagRulesResponse.Data.Result["+ i +"].Namespace"));
 			applicationList.setAppName(_ctx.stringValue("ListApplicationsWithTagRulesResponse.Data.Result["+ i +"].AppName"));
 			applicationList.setAppId(_ctx.stringValue("ListApplicationsWithTagRulesResponse.Data.Result["+ i +"].AppId"));
 			applicationList.setRouteStatus(_ctx.longValue("ListApplicationsWithTagRulesResponse.Data.Result["+ i +"].RouteStatus"));

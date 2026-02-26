@@ -25,11 +25,11 @@ import com.aliyuncs.mse.Endpoint;
 public class DeleteZnodeRequest extends RpcAcsRequest<DeleteZnodeResponse> {
 	   
 
-	private String clusterId;
-
 	private String path;
 
 	private String requestPars;
+
+	private String clusterId;
 
 	private String acceptLanguage;
 	public DeleteZnodeRequest() {
@@ -39,17 +39,6 @@ public class DeleteZnodeRequest extends RpcAcsRequest<DeleteZnodeResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
 	}
 
 	public String getPath() {
@@ -71,6 +60,17 @@ public class DeleteZnodeRequest extends RpcAcsRequest<DeleteZnodeResponse> {
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

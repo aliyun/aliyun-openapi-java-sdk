@@ -28,8 +28,8 @@ public class DescribeSecurityIpsResponseUnmarshaller {
 	public static DescribeSecurityIpsResponse unmarshall(DescribeSecurityIpsResponse describeSecurityIpsResponse, UnmarshallerContext _ctx) {
 		
 		describeSecurityIpsResponse.setRequestId(_ctx.stringValue("DescribeSecurityIpsResponse.RequestId"));
-		describeSecurityIpsResponse.setSuccess(_ctx.booleanValue("DescribeSecurityIpsResponse.Success"));
 		describeSecurityIpsResponse.setMessage(_ctx.stringValue("DescribeSecurityIpsResponse.Message"));
+		describeSecurityIpsResponse.setSuccess(_ctx.booleanValue("DescribeSecurityIpsResponse.Success"));
 
 		Data data = new Data();
 		data.setDBInstanceName(_ctx.stringValue("DescribeSecurityIpsResponse.Data.DBInstanceName"));

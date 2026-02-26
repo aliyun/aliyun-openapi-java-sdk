@@ -30,6 +30,8 @@ public class CreateAccountResponse extends AcsResponse {
 
 	private String acountName;
 
+	private String accountName;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,6 +54,14 @@ public class CreateAccountResponse extends AcsResponse {
 
 	public void setAcountName(String acountName) {
 		this.acountName = acountName;
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
 	}
 
 	@Override

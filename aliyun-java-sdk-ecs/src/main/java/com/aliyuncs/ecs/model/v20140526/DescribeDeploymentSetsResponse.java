@@ -93,6 +93,8 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 		private String deploymentSetId;
 
+		private Long accountId;
+
 		private String deploymentStrategy;
 
 		private String deploymentSetDescription;
@@ -133,6 +135,14 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 		public void setDeploymentSetId(String deploymentSetId) {
 			this.deploymentSetId = deploymentSetId;
+		}
+
+		public Long getAccountId() {
+			return this.accountId;
+		}
+
+		public void setAccountId(Long accountId) {
+			this.accountId = accountId;
 		}
 
 		public String getDeploymentStrategy() {

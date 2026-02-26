@@ -57,19 +57,11 @@ public class ListPortalMenuAuthorizationResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean showOnlyWithAccess;
-
 		private String menuId;
 
+		private Boolean showOnlyWithAccess;
+
 		private List<ReceiversItem> receivers;
-
-		public Boolean getShowOnlyWithAccess() {
-			return this.showOnlyWithAccess;
-		}
-
-		public void setShowOnlyWithAccess(Boolean showOnlyWithAccess) {
-			this.showOnlyWithAccess = showOnlyWithAccess;
-		}
 
 		public String getMenuId() {
 			return this.menuId;
@@ -77,6 +69,14 @@ public class ListPortalMenuAuthorizationResponse extends AcsResponse {
 
 		public void setMenuId(String menuId) {
 			this.menuId = menuId;
+		}
+
+		public Boolean getShowOnlyWithAccess() {
+			return this.showOnlyWithAccess;
+		}
+
+		public void setShowOnlyWithAccess(Boolean showOnlyWithAccess) {
+			this.showOnlyWithAccess = showOnlyWithAccess;
 		}
 
 		public List<ReceiversItem> getReceivers() {
@@ -93,6 +93,8 @@ public class ListPortalMenuAuthorizationResponse extends AcsResponse {
 
 			private Integer receiverType;
 
+			private Integer authPointsValue;
+
 			public String getReceiverId() {
 				return this.receiverId;
 			}
@@ -107,6 +109,14 @@ public class ListPortalMenuAuthorizationResponse extends AcsResponse {
 
 			public void setReceiverType(Integer receiverType) {
 				this.receiverType = receiverType;
+			}
+
+			public Integer getAuthPointsValue() {
+				return this.authPointsValue;
+			}
+
+			public void setAuthPointsValue(Integer authPointsValue) {
+				this.authPointsValue = authPointsValue;
 			}
 		}
 	}

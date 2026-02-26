@@ -27,6 +27,10 @@ public class CheckRoleRequest extends RpcAcsRequest<CheckRoleResponse> {
 	   
 
 	private String checkRoleType;
+
+	private String crossAccountRoleName;
+
+	private Long crossAccountUserId;
 	public CheckRoleRequest() {
 		super("hbr", "2017-09-08", "CheckRole", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -45,6 +49,28 @@ public class CheckRoleRequest extends RpcAcsRequest<CheckRoleResponse> {
 		this.checkRoleType = checkRoleType;
 		if(checkRoleType != null){
 			putQueryParameter("CheckRoleType", checkRoleType);
+		}
+	}
+
+	public String getCrossAccountRoleName() {
+		return this.crossAccountRoleName;
+	}
+
+	public void setCrossAccountRoleName(String crossAccountRoleName) {
+		this.crossAccountRoleName = crossAccountRoleName;
+		if(crossAccountRoleName != null){
+			putQueryParameter("CrossAccountRoleName", crossAccountRoleName);
+		}
+	}
+
+	public Long getCrossAccountUserId() {
+		return this.crossAccountUserId;
+	}
+
+	public void setCrossAccountUserId(Long crossAccountUserId) {
+		this.crossAccountUserId = crossAccountUserId;
+		if(crossAccountUserId != null){
+			putQueryParameter("CrossAccountUserId", crossAccountUserId.toString());
 		}
 	}
 

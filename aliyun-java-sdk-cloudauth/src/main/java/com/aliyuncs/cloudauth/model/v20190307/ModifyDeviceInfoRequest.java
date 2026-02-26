@@ -35,7 +35,7 @@ public class ModifyDeviceInfoRequest extends RpcAcsRequest<ModifyDeviceInfoRespo
 
 	private String bizType;
 	public ModifyDeviceInfoRequest() {
-		super("Cloudauth", "2019-03-07", "ModifyDeviceInfo");
+		super("Cloudauth", "2019-03-07", "ModifyDeviceInfo", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

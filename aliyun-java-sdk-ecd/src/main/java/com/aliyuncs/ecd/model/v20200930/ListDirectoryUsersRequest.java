@@ -35,7 +35,7 @@ public class ListDirectoryUsersRequest extends RpcAcsRequest<ListDirectoryUsersR
 
 	private String directoryId;
 	public ListDirectoryUsersRequest() {
-		super("ecd", "2020-09-30", "ListDirectoryUsers");
+		super("ecd", "2020-09-30", "ListDirectoryUsers", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

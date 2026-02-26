@@ -49,6 +49,7 @@ public class CreateModelResponseUnmarshaller {
 		data.setSubType(_ctx.stringValue("CreateModelResponse.Data.SubType"));
 		data.setModelType(_ctx.stringValue("CreateModelResponse.Data.ModelType"));
 		data.setVisibility(_ctx.stringValue("CreateModelResponse.Data.Visibility"));
+		data.setModelDigest(_ctx.stringValue("CreateModelResponse.Data.ModelDigest"));
 
 		List<Map<Object, Object>> attributes = _ctx.listMapValue("CreateModelResponse.Data.Attributes");
 		data.setAttributes(attributes);

@@ -22,6 +22,17 @@ public class DescirbeWorkflowResponseUnmarshaller {
 
 	public static DescirbeWorkflowResponse unmarshall(DescirbeWorkflowResponse descirbeWorkflowResponse, UnmarshallerContext _ctx) {
 		
+		descirbeWorkflowResponse.setCreate_time(_ctx.stringValue("DescirbeWorkflowResponse.create_time"));
+		descirbeWorkflowResponse.setDuration(_ctx.stringValue("DescirbeWorkflowResponse.duration"));
+		descirbeWorkflowResponse.setFinish_time(_ctx.stringValue("DescirbeWorkflowResponse.finish_time"));
+		descirbeWorkflowResponse.setInput_data_size(_ctx.stringValue("DescirbeWorkflowResponse.input_data_size"));
+		descirbeWorkflowResponse.setJob_name(_ctx.stringValue("DescirbeWorkflowResponse.job_name"));
+		descirbeWorkflowResponse.setJob_namespace(_ctx.stringValue("DescirbeWorkflowResponse.job_namespace"));
+		descirbeWorkflowResponse.setOutput_data_size(_ctx.stringValue("DescirbeWorkflowResponse.output_data_size"));
+		descirbeWorkflowResponse.setStatus(_ctx.stringValue("DescirbeWorkflowResponse.status"));
+		descirbeWorkflowResponse.setTotal_bases(_ctx.stringValue("DescirbeWorkflowResponse.total_bases"));
+		descirbeWorkflowResponse.setTotal_reads(_ctx.stringValue("DescirbeWorkflowResponse.total_reads"));
+		descirbeWorkflowResponse.setUser_input_data(_ctx.stringValue("DescirbeWorkflowResponse.user_input_data"));
 	 
 	 	return descirbeWorkflowResponse;
 	}

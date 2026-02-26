@@ -97,6 +97,16 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
 		private String healthCheckPort;
 
+		private String standbyExternalIp;
+
+		private String standbyStatus;
+
+		private String externalIpIsp;
+
+		private String standbyExternalIpIsp;
+
+		private String standbyEnsRegionId;
+
 		public String getNatGatewayId() {
 			return this.natGatewayId;
 		}
@@ -175,6 +185,46 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
 		public void setHealthCheckPort(String healthCheckPort) {
 			this.healthCheckPort = healthCheckPort;
+		}
+
+		public String getStandbyExternalIp() {
+			return this.standbyExternalIp;
+		}
+
+		public void setStandbyExternalIp(String standbyExternalIp) {
+			this.standbyExternalIp = standbyExternalIp;
+		}
+
+		public String getStandbyStatus() {
+			return this.standbyStatus;
+		}
+
+		public void setStandbyStatus(String standbyStatus) {
+			this.standbyStatus = standbyStatus;
+		}
+
+		public String getExternalIpIsp() {
+			return this.externalIpIsp;
+		}
+
+		public void setExternalIpIsp(String externalIpIsp) {
+			this.externalIpIsp = externalIpIsp;
+		}
+
+		public String getStandbyExternalIpIsp() {
+			return this.standbyExternalIpIsp;
+		}
+
+		public void setStandbyExternalIpIsp(String standbyExternalIpIsp) {
+			this.standbyExternalIpIsp = standbyExternalIpIsp;
+		}
+
+		public String getStandbyEnsRegionId() {
+			return this.standbyEnsRegionId;
+		}
+
+		public void setStandbyEnsRegionId(String standbyEnsRegionId) {
+			this.standbyEnsRegionId = standbyEnsRegionId;
 		}
 	}
 

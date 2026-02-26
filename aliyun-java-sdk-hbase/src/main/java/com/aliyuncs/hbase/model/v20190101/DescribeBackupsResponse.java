@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String enableStatus;
+
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String requestId;
 
 	private Integer totalCount;
 
 	private List<Backup> backups;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getEnableStatus() {
 		return this.enableStatus;
@@ -51,6 +43,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	public void setEnableStatus(String enableStatus) {
 		this.enableStatus = enableStatus;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -61,12 +61,12 @@ public class DescribeBackupsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalCount() {
@@ -87,45 +87,29 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	public static class Backup {
 
-		private String backupDBNames;
-
-		private Integer backupId;
-
 		private String backupStatus;
 
 		private String backupStartTime;
 
+		private String backupType;
+
+		private String backupDownloadURL;
+
+		private String backupStartTimeUTC;
+
 		private String backupEndTime;
 
-		private String backupType;
+		private String backupDBNames;
+
+		private Integer backupId;
+
+		private String backupEndTimeUTC;
+
+		private String backupSize;
 
 		private String backupMode;
 
 		private String backupMethod;
-
-		private String backupDownloadURL;
-
-		private String backupSize;
-
-		private String backupStartTimeUTC;
-
-		private String backupEndTimeUTC;
-
-		public String getBackupDBNames() {
-			return this.backupDBNames;
-		}
-
-		public void setBackupDBNames(String backupDBNames) {
-			this.backupDBNames = backupDBNames;
-		}
-
-		public Integer getBackupId() {
-			return this.backupId;
-		}
-
-		public void setBackupId(Integer backupId) {
-			this.backupId = backupId;
-		}
 
 		public String getBackupStatus() {
 			return this.backupStatus;
@@ -143,6 +127,30 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupStartTime = backupStartTime;
 		}
 
+		public String getBackupType() {
+			return this.backupType;
+		}
+
+		public void setBackupType(String backupType) {
+			this.backupType = backupType;
+		}
+
+		public String getBackupDownloadURL() {
+			return this.backupDownloadURL;
+		}
+
+		public void setBackupDownloadURL(String backupDownloadURL) {
+			this.backupDownloadURL = backupDownloadURL;
+		}
+
+		public String getBackupStartTimeUTC() {
+			return this.backupStartTimeUTC;
+		}
+
+		public void setBackupStartTimeUTC(String backupStartTimeUTC) {
+			this.backupStartTimeUTC = backupStartTimeUTC;
+		}
+
 		public String getBackupEndTime() {
 			return this.backupEndTime;
 		}
@@ -151,12 +159,36 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupEndTime = backupEndTime;
 		}
 
-		public String getBackupType() {
-			return this.backupType;
+		public String getBackupDBNames() {
+			return this.backupDBNames;
 		}
 
-		public void setBackupType(String backupType) {
-			this.backupType = backupType;
+		public void setBackupDBNames(String backupDBNames) {
+			this.backupDBNames = backupDBNames;
+		}
+
+		public Integer getBackupId() {
+			return this.backupId;
+		}
+
+		public void setBackupId(Integer backupId) {
+			this.backupId = backupId;
+		}
+
+		public String getBackupEndTimeUTC() {
+			return this.backupEndTimeUTC;
+		}
+
+		public void setBackupEndTimeUTC(String backupEndTimeUTC) {
+			this.backupEndTimeUTC = backupEndTimeUTC;
+		}
+
+		public String getBackupSize() {
+			return this.backupSize;
+		}
+
+		public void setBackupSize(String backupSize) {
+			this.backupSize = backupSize;
 		}
 
 		public String getBackupMode() {
@@ -173,38 +205,6 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupMethod(String backupMethod) {
 			this.backupMethod = backupMethod;
-		}
-
-		public String getBackupDownloadURL() {
-			return this.backupDownloadURL;
-		}
-
-		public void setBackupDownloadURL(String backupDownloadURL) {
-			this.backupDownloadURL = backupDownloadURL;
-		}
-
-		public String getBackupSize() {
-			return this.backupSize;
-		}
-
-		public void setBackupSize(String backupSize) {
-			this.backupSize = backupSize;
-		}
-
-		public String getBackupStartTimeUTC() {
-			return this.backupStartTimeUTC;
-		}
-
-		public void setBackupStartTimeUTC(String backupStartTimeUTC) {
-			this.backupStartTimeUTC = backupStartTimeUTC;
-		}
-
-		public String getBackupEndTimeUTC() {
-			return this.backupEndTimeUTC;
-		}
-
-		public void setBackupEndTimeUTC(String backupEndTimeUTC) {
-			this.backupEndTimeUTC = backupEndTimeUTC;
 		}
 	}
 

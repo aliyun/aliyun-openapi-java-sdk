@@ -31,14 +31,14 @@ public class DescribeLivePullStreamConfigResponseUnmarshaller {
 		List<LiveAppRecord> liveAppRecordList = new ArrayList<LiveAppRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList.Length"); i++) {
 			LiveAppRecord liveAppRecord = new LiveAppRecord();
-			liveAppRecord.setDomainName(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
-			liveAppRecord.setAppName(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].AppName"));
-			liveAppRecord.setStreamName(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].StreamName"));
-			liveAppRecord.setSourceUrl(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].SourceUrl"));
-			liveAppRecord.setSourceUsing(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].SourceUsing"));
-			liveAppRecord.setStartTime(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].StartTime"));
 			liveAppRecord.setEndTime(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].EndTime"));
+			liveAppRecord.setAppName(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].AppName"));
+			liveAppRecord.setSourceUrl(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].SourceUrl"));
+			liveAppRecord.setStartTime(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].StartTime"));
 			liveAppRecord.setAlways(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].Always"));
+			liveAppRecord.setStreamName(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].StreamName"));
+			liveAppRecord.setSourceUsing(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].SourceUsing"));
+			liveAppRecord.setDomainName(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
 
 			liveAppRecordList.add(liveAppRecord);
 		}

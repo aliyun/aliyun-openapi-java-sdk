@@ -121,7 +121,15 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private String privateLinkMode;
 
+		private String eipBindMode;
+
+		private String enableSessionLog;
+
 		private List<IpList> ipLists;
+
+		private List<Tag> tags;
+
+		private List<IpPrefixListItem> ipPrefixList;
 
 		private List<String> forwardTableIds;
 
@@ -132,6 +140,8 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 		private List<String> bandwidthPackageIds;
 
 		private NatGatewayPrivateInfo natGatewayPrivateInfo;
+
+		private AccessMode accessMode;
 
 		public String getStatus() {
 			return this.status;
@@ -309,12 +319,44 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.privateLinkMode = privateLinkMode;
 		}
 
+		public String getEipBindMode() {
+			return this.eipBindMode;
+		}
+
+		public void setEipBindMode(String eipBindMode) {
+			this.eipBindMode = eipBindMode;
+		}
+
+		public String getEnableSessionLog() {
+			return this.enableSessionLog;
+		}
+
+		public void setEnableSessionLog(String enableSessionLog) {
+			this.enableSessionLog = enableSessionLog;
+		}
+
 		public List<IpList> getIpLists() {
 			return this.ipLists;
 		}
 
 		public void setIpLists(List<IpList> ipLists) {
 			this.ipLists = ipLists;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public List<IpPrefixListItem> getIpPrefixList() {
+			return this.ipPrefixList;
+		}
+
+		public void setIpPrefixList(List<IpPrefixListItem> ipPrefixList) {
+			this.ipPrefixList = ipPrefixList;
 		}
 
 		public List<String> getForwardTableIds() {
@@ -355,6 +397,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public void setNatGatewayPrivateInfo(NatGatewayPrivateInfo natGatewayPrivateInfo) {
 			this.natGatewayPrivateInfo = natGatewayPrivateInfo;
+		}
+
+		public AccessMode getAccessMode() {
+			return this.accessMode;
+		}
+
+		public void setAccessMode(AccessMode accessMode) {
+			this.accessMode = accessMode;
 		}
 
 		public static class IpList {
@@ -417,6 +467,42 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			public void setPrivateIpAddress(String privateIpAddress) {
 				this.privateIpAddress = privateIpAddress;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+
+		public static class IpPrefixListItem {
+
+			private String ipPrefix;
+
+			public String getIpPrefix() {
+				return this.ipPrefix;
+			}
+
+			public void setIpPrefix(String ipPrefix) {
+				this.ipPrefix = ipPrefix;
 			}
 		}
 
@@ -500,6 +586,29 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			public void setEniType(String eniType) {
 				this.eniType = eniType;
+			}
+		}
+
+		public static class AccessMode {
+
+			private String modeValue;
+
+			private String tunnelType;
+
+			public String getModeValue() {
+				return this.modeValue;
+			}
+
+			public void setModeValue(String modeValue) {
+				this.modeValue = modeValue;
+			}
+
+			public String getTunnelType() {
+				return this.tunnelType;
+			}
+
+			public void setTunnelType(String tunnelType) {
+				this.tunnelType = tunnelType;
 			}
 		}
 	}

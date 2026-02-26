@@ -27,7 +27,9 @@ import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJ
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Properties.Streams.AudioStream;
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Properties.Streams.SubtitleStream;
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Properties.Streams.VideoStream;
+import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Properties.Streams.VideoStream.DolbyVision;
 import com.aliyuncs.mts.model.v20140618.QueryMediaInfoJobListResponse.MediaInfoJob.Properties.Streams.VideoStream.NetworkCost;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -75,6 +77,7 @@ public class QueryMediaInfoJobListResponseUnmarshaller {
 			properties.setBitrate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Bitrate"));
 			properties.setFileFormat(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.FileFormat"));
 			properties.setFileSize(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.FileSize"));
+			properties.setFileMd5(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.FileMd5"));
 
 			Streams streams = new Streams();
 
@@ -107,12 +110,18 @@ public class QueryMediaInfoJobListResponseUnmarshaller {
 				videoStream.setColorRange(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].ColorRange"));
 				videoStream.setColorTransfer(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].ColorTransfer"));
 				videoStream.setColorPrimaries(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].ColorPrimaries"));
+				videoStream.setDurationInaccurate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].DurationInaccurate"));
 
 				NetworkCost networkCost = new NetworkCost();
 				networkCost.setPreloadTime(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime"));
 				networkCost.setAvgBitrate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.AvgBitrate"));
 				networkCost.setCostBandwidth(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.CostBandwidth"));
 				videoStream.setNetworkCost(networkCost);
+
+				DolbyVision dolbyVision = new DolbyVision();
+				dolbyVision.setProfile(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].DolbyVision.Profile"));
+				dolbyVision.setLevel(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].DolbyVision.Level"));
+				videoStream.setDolbyVision(dolbyVision);
 
 				videoStreamList.add(videoStream);
 			}
@@ -137,6 +146,7 @@ public class QueryMediaInfoJobListResponseUnmarshaller {
 				audioStream.setDuration(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Duration"));
 				audioStream.setCodecTag(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecTag"));
 				audioStream.setCodecTimeBase(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecTimeBase"));
+				audioStream.setDurationInaccurate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].DurationInaccurate"));
 
 				audioStreamList.add(audioStream);
 			}
@@ -170,6 +180,7 @@ public class QueryMediaInfoJobListResponseUnmarshaller {
 			format.setDuration(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.Duration"));
 			format.setBitrate(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.Bitrate"));
 			format.setFormatName(_ctx.stringValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.FormatName"));
+			format.setTags(_ctx.mapValue("QueryMediaInfoJobListResponse.MediaInfoJobList["+ i +"].Properties.Format.Tags"));
 			properties.setFormat(format);
 			mediaInfoJob.setProperties(properties);
 

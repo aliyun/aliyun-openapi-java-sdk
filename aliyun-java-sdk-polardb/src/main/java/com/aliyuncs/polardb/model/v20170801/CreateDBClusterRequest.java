@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
@@ -29,15 +30,33 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String dBClusterDescription;
 
+	private String proxyClass;
+
+	private String proxyType;
+
+	private String scaleMax;
+
+	private String storageType;
+
 	private String creationCategory;
+
+	private String cloudProvider;
 
 	private String resourceGroupId;
 
+	private Long sourceUid;
+
 	private String dBNodeClass;
+
+	private String ensRegionId;
 
 	private String creationOption;
 
+	private List<Tag> tags;
+
 	private String sourceResourceId;
+
+	private String scaleMin;
 
 	private String backupRetentionPolicyOnClusterDeletion;
 
@@ -51,41 +70,87 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String dBMinorVersion;
 
+	private Long provisionedIops;
+
 	private Boolean autoRenew;
+
+	private String hotStandbyCluster;
+
+	private String storagePayType;
+
+	private String promotionCode;
 
 	private String zoneId;
 
+	private String storageAutoScale;
+
 	private Boolean tDEStatus;
 
+	private String allowShutDown;
+
 	private String lowerCaseTableNames;
+
+	private Boolean storageEncryption;
+
+	private String scaleRoNumMax;
+
+	private String standbyAZ;
 
 	private String clientToken;
 
 	private String defaultTimeZone;
 
+	private Boolean autoUseCoupon;
+
 	private String clusterNetworkType;
+
+	private String storageEncryptionKey;
 
 	private String parameterGroupId;
 
 	private String gDNId;
 
+	private String looseXEngine;
+
+	private String loosePolarLogBin;
+
+	private String architecture;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String looseXEngineUseMemoryPct;
+
 	private String usedTime;
 
+	private String burstingEnabled;
+
+	private String targetMinorVersion;
+
+	private Integer dBNodeNum;
+
+	private Long storageUpperBound;
+
 	private String vPCId;
+
+	private String scaleRoNumMin;
 
 	private String dBType;
 
 	private String dBVersion;
 
+	private String strictConsistency;
+
 	private String cloneDataPoint;
 
 	private String payType;
+
+	private Long storageSpace;
+
+	private String serverlessType;
 	public CreateDBClusterRequest() {
-		super("polardb", "2017-08-01", "CreateDBCluster");
+		super("polardb", "2017-08-01", "CreateDBCluster", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -115,6 +180,50 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getProxyClass() {
+		return this.proxyClass;
+	}
+
+	public void setProxyClass(String proxyClass) {
+		this.proxyClass = proxyClass;
+		if(proxyClass != null){
+			putQueryParameter("ProxyClass", proxyClass);
+		}
+	}
+
+	public String getProxyType() {
+		return this.proxyType;
+	}
+
+	public void setProxyType(String proxyType) {
+		this.proxyType = proxyType;
+		if(proxyType != null){
+			putQueryParameter("ProxyType", proxyType);
+		}
+	}
+
+	public String getScaleMax() {
+		return this.scaleMax;
+	}
+
+	public void setScaleMax(String scaleMax) {
+		this.scaleMax = scaleMax;
+		if(scaleMax != null){
+			putQueryParameter("ScaleMax", scaleMax);
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
+		}
+	}
+
 	public String getCreationCategory() {
 		return this.creationCategory;
 	}
@@ -123,6 +232,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.creationCategory = creationCategory;
 		if(creationCategory != null){
 			putQueryParameter("CreationCategory", creationCategory);
+		}
+	}
+
+	public String getCloudProvider() {
+		return this.cloudProvider;
+	}
+
+	public void setCloudProvider(String cloudProvider) {
+		this.cloudProvider = cloudProvider;
+		if(cloudProvider != null){
+			putQueryParameter("CloudProvider", cloudProvider);
 		}
 	}
 
@@ -137,6 +257,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public Long getSourceUid() {
+		return this.sourceUid;
+	}
+
+	public void setSourceUid(Long sourceUid) {
+		this.sourceUid = sourceUid;
+		if(sourceUid != null){
+			putQueryParameter("SourceUid", sourceUid.toString());
+		}
+	}
+
 	public String getDBNodeClass() {
 		return this.dBNodeClass;
 	}
@@ -145,6 +276,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.dBNodeClass = dBNodeClass;
 		if(dBNodeClass != null){
 			putQueryParameter("DBNodeClass", dBNodeClass);
+		}
+	}
+
+	public String getEnsRegionId() {
+		return this.ensRegionId;
+	}
+
+	public void setEnsRegionId(String ensRegionId) {
+		this.ensRegionId = ensRegionId;
+		if(ensRegionId != null){
+			putQueryParameter("EnsRegionId", ensRegionId);
 		}
 	}
 
@@ -159,6 +301,20 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getSourceResourceId() {
 		return this.sourceResourceId;
 	}
@@ -167,6 +323,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.sourceResourceId = sourceResourceId;
 		if(sourceResourceId != null){
 			putQueryParameter("SourceResourceId", sourceResourceId);
+		}
+	}
+
+	public String getScaleMin() {
+		return this.scaleMin;
+	}
+
+	public void setScaleMin(String scaleMin) {
+		this.scaleMin = scaleMin;
+		if(scaleMin != null){
+			putQueryParameter("ScaleMin", scaleMin);
 		}
 	}
 
@@ -236,6 +403,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public Long getProvisionedIops() {
+		return this.provisionedIops;
+	}
+
+	public void setProvisionedIops(Long provisionedIops) {
+		this.provisionedIops = provisionedIops;
+		if(provisionedIops != null){
+			putQueryParameter("ProvisionedIops", provisionedIops.toString());
+		}
+	}
+
 	public Boolean getAutoRenew() {
 		return this.autoRenew;
 	}
@@ -244,6 +422,39 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.autoRenew = autoRenew;
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew.toString());
+		}
+	}
+
+	public String getHotStandbyCluster() {
+		return this.hotStandbyCluster;
+	}
+
+	public void setHotStandbyCluster(String hotStandbyCluster) {
+		this.hotStandbyCluster = hotStandbyCluster;
+		if(hotStandbyCluster != null){
+			putQueryParameter("HotStandbyCluster", hotStandbyCluster);
+		}
+	}
+
+	public String getStoragePayType() {
+		return this.storagePayType;
+	}
+
+	public void setStoragePayType(String storagePayType) {
+		this.storagePayType = storagePayType;
+		if(storagePayType != null){
+			putQueryParameter("StoragePayType", storagePayType);
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 
@@ -258,6 +469,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getStorageAutoScale() {
+		return this.storageAutoScale;
+	}
+
+	public void setStorageAutoScale(String storageAutoScale) {
+		this.storageAutoScale = storageAutoScale;
+		if(storageAutoScale != null){
+			putQueryParameter("StorageAutoScale", storageAutoScale);
+		}
+	}
+
 	public Boolean getTDEStatus() {
 		return this.tDEStatus;
 	}
@@ -269,6 +491,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getAllowShutDown() {
+		return this.allowShutDown;
+	}
+
+	public void setAllowShutDown(String allowShutDown) {
+		this.allowShutDown = allowShutDown;
+		if(allowShutDown != null){
+			putQueryParameter("AllowShutDown", allowShutDown);
+		}
+	}
+
 	public String getLowerCaseTableNames() {
 		return this.lowerCaseTableNames;
 	}
@@ -277,6 +510,39 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.lowerCaseTableNames = lowerCaseTableNames;
 		if(lowerCaseTableNames != null){
 			putQueryParameter("LowerCaseTableNames", lowerCaseTableNames);
+		}
+	}
+
+	public Boolean getStorageEncryption() {
+		return this.storageEncryption;
+	}
+
+	public void setStorageEncryption(Boolean storageEncryption) {
+		this.storageEncryption = storageEncryption;
+		if(storageEncryption != null){
+			putQueryParameter("StorageEncryption", storageEncryption.toString());
+		}
+	}
+
+	public String getScaleRoNumMax() {
+		return this.scaleRoNumMax;
+	}
+
+	public void setScaleRoNumMax(String scaleRoNumMax) {
+		this.scaleRoNumMax = scaleRoNumMax;
+		if(scaleRoNumMax != null){
+			putQueryParameter("ScaleRoNumMax", scaleRoNumMax);
+		}
+	}
+
+	public String getStandbyAZ() {
+		return this.standbyAZ;
+	}
+
+	public void setStandbyAZ(String standbyAZ) {
+		this.standbyAZ = standbyAZ;
+		if(standbyAZ != null){
+			putQueryParameter("StandbyAZ", standbyAZ);
 		}
 	}
 
@@ -302,6 +568,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
+		}
+	}
+
 	public String getClusterNetworkType() {
 		return this.clusterNetworkType;
 	}
@@ -310,6 +587,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.clusterNetworkType = clusterNetworkType;
 		if(clusterNetworkType != null){
 			putQueryParameter("ClusterNetworkType", clusterNetworkType);
+		}
+	}
+
+	public String getStorageEncryptionKey() {
+		return this.storageEncryptionKey;
+	}
+
+	public void setStorageEncryptionKey(String storageEncryptionKey) {
+		this.storageEncryptionKey = storageEncryptionKey;
+		if(storageEncryptionKey != null){
+			putQueryParameter("StorageEncryptionKey", storageEncryptionKey);
 		}
 	}
 
@@ -335,6 +623,39 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getLooseXEngine() {
+		return this.looseXEngine;
+	}
+
+	public void setLooseXEngine(String looseXEngine) {
+		this.looseXEngine = looseXEngine;
+		if(looseXEngine != null){
+			putQueryParameter("LooseXEngine", looseXEngine);
+		}
+	}
+
+	public String getLoosePolarLogBin() {
+		return this.loosePolarLogBin;
+	}
+
+	public void setLoosePolarLogBin(String loosePolarLogBin) {
+		this.loosePolarLogBin = loosePolarLogBin;
+		if(loosePolarLogBin != null){
+			putQueryParameter("LoosePolarLogBin", loosePolarLogBin);
+		}
+	}
+
+	public String getArchitecture() {
+		return this.architecture;
+	}
+
+	public void setArchitecture(String architecture) {
+		this.architecture = architecture;
+		if(architecture != null){
+			putQueryParameter("Architecture", architecture);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -357,6 +678,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getLooseXEngineUseMemoryPct() {
+		return this.looseXEngineUseMemoryPct;
+	}
+
+	public void setLooseXEngineUseMemoryPct(String looseXEngineUseMemoryPct) {
+		this.looseXEngineUseMemoryPct = looseXEngineUseMemoryPct;
+		if(looseXEngineUseMemoryPct != null){
+			putQueryParameter("LooseXEngineUseMemoryPct", looseXEngineUseMemoryPct);
+		}
+	}
+
 	public String getUsedTime() {
 		return this.usedTime;
 	}
@@ -368,6 +700,50 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getBurstingEnabled() {
+		return this.burstingEnabled;
+	}
+
+	public void setBurstingEnabled(String burstingEnabled) {
+		this.burstingEnabled = burstingEnabled;
+		if(burstingEnabled != null){
+			putQueryParameter("BurstingEnabled", burstingEnabled);
+		}
+	}
+
+	public String getTargetMinorVersion() {
+		return this.targetMinorVersion;
+	}
+
+	public void setTargetMinorVersion(String targetMinorVersion) {
+		this.targetMinorVersion = targetMinorVersion;
+		if(targetMinorVersion != null){
+			putQueryParameter("TargetMinorVersion", targetMinorVersion);
+		}
+	}
+
+	public Integer getDBNodeNum() {
+		return this.dBNodeNum;
+	}
+
+	public void setDBNodeNum(Integer dBNodeNum) {
+		this.dBNodeNum = dBNodeNum;
+		if(dBNodeNum != null){
+			putQueryParameter("DBNodeNum", dBNodeNum.toString());
+		}
+	}
+
+	public Long getStorageUpperBound() {
+		return this.storageUpperBound;
+	}
+
+	public void setStorageUpperBound(Long storageUpperBound) {
+		this.storageUpperBound = storageUpperBound;
+		if(storageUpperBound != null){
+			putQueryParameter("StorageUpperBound", storageUpperBound.toString());
+		}
+	}
+
 	public String getVPCId() {
 		return this.vPCId;
 	}
@@ -376,6 +752,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.vPCId = vPCId;
 		if(vPCId != null){
 			putQueryParameter("VPCId", vPCId);
+		}
+	}
+
+	public String getScaleRoNumMin() {
+		return this.scaleRoNumMin;
+	}
+
+	public void setScaleRoNumMin(String scaleRoNumMin) {
+		this.scaleRoNumMin = scaleRoNumMin;
+		if(scaleRoNumMin != null){
+			putQueryParameter("ScaleRoNumMin", scaleRoNumMin);
 		}
 	}
 
@@ -401,6 +788,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getStrictConsistency() {
+		return this.strictConsistency;
+	}
+
+	public void setStrictConsistency(String strictConsistency) {
+		this.strictConsistency = strictConsistency;
+		if(strictConsistency != null){
+			putQueryParameter("StrictConsistency", strictConsistency);
+		}
+	}
+
 	public String getCloneDataPoint() {
 		return this.cloneDataPoint;
 	}
@@ -420,6 +818,51 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.payType = payType;
 		if(payType != null){
 			putQueryParameter("PayType", payType);
+		}
+	}
+
+	public Long getStorageSpace() {
+		return this.storageSpace;
+	}
+
+	public void setStorageSpace(Long storageSpace) {
+		this.storageSpace = storageSpace;
+		if(storageSpace != null){
+			putQueryParameter("StorageSpace", storageSpace.toString());
+		}
+	}
+
+	public String getServerlessType() {
+		return this.serverlessType;
+	}
+
+	public void setServerlessType(String serverlessType) {
+		this.serverlessType = serverlessType;
+		if(serverlessType != null){
+			putQueryParameter("ServerlessType", serverlessType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

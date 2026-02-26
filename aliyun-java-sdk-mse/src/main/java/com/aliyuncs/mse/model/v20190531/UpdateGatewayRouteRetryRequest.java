@@ -33,11 +33,11 @@ public class UpdateGatewayRouteRetryRequest extends RpcAcsRequest<UpdateGatewayR
 	@SerializedName("retryJSON")
 	private RetryJSON retryJSON;
 
-	private String acceptLanguage;
-
 	private Long id;
 
 	private Long gatewayId;
+
+	private String acceptLanguage;
 	public UpdateGatewayRouteRetryRequest() {
 		super("mse", "2019-05-31", "UpdateGatewayRouteRetry", "mse");
 		setMethod(MethodType.POST);
@@ -69,17 +69,6 @@ public class UpdateGatewayRouteRetryRequest extends RpcAcsRequest<UpdateGatewayR
 		}	
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public Long getId() {
 		return this.id;
 	}
@@ -99,6 +88,17 @@ public class UpdateGatewayRouteRetryRequest extends RpcAcsRequest<UpdateGatewayR
 		this.gatewayId = gatewayId;
 		if(gatewayId != null){
 			putQueryParameter("GatewayId", gatewayId.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

@@ -27,9 +27,9 @@ public class StartCasterResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<SceneInfo> pvwSceneInfos;
+	private List<SceneInfo> pgmSceneInfos;
 
-	private List<SceneInfo1> pgmSceneInfos;
+	private List<SceneInfo1> pvwSceneInfos;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,65 +39,40 @@ public class StartCasterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<SceneInfo> getPvwSceneInfos() {
-		return this.pvwSceneInfos;
-	}
-
-	public void setPvwSceneInfos(List<SceneInfo> pvwSceneInfos) {
-		this.pvwSceneInfos = pvwSceneInfos;
-	}
-
-	public List<SceneInfo1> getPgmSceneInfos() {
+	public List<SceneInfo> getPgmSceneInfos() {
 		return this.pgmSceneInfos;
 	}
 
-	public void setPgmSceneInfos(List<SceneInfo1> pgmSceneInfos) {
+	public void setPgmSceneInfos(List<SceneInfo> pgmSceneInfos) {
 		this.pgmSceneInfos = pgmSceneInfos;
+	}
+
+	public List<SceneInfo1> getPvwSceneInfos() {
+		return this.pvwSceneInfos;
+	}
+
+	public void setPvwSceneInfos(List<SceneInfo1> pvwSceneInfos) {
+		this.pvwSceneInfos = pvwSceneInfos;
 	}
 
 	public static class SceneInfo {
 
-		private String sceneId;
-
-		private String streamUrl;
-
 		private String rtsUrl;
-
-		public String getSceneId() {
-			return this.sceneId;
-		}
-
-		public void setSceneId(String sceneId) {
-			this.sceneId = sceneId;
-		}
-
-		public String getStreamUrl() {
-			return this.streamUrl;
-		}
-
-		public void setStreamUrl(String streamUrl) {
-			this.streamUrl = streamUrl;
-		}
-
-		public String getRtsUrl() {
-			return this.rtsUrl;
-		}
-
-		public void setRtsUrl(String rtsUrl) {
-			this.rtsUrl = rtsUrl;
-		}
-	}
-
-	public static class SceneInfo1 {
 
 		private String sceneId;
 
 		private String streamUrl;
-
-		private String rtsUrl;
 
 		private List<StreamInfo> streamInfos;
 
+		public String getRtsUrl() {
+			return this.rtsUrl;
+		}
+
+		public void setRtsUrl(String rtsUrl) {
+			this.rtsUrl = rtsUrl;
+		}
+
 		public String getSceneId() {
 			return this.sceneId;
 		}
@@ -112,14 +87,6 @@ public class StartCasterResponse extends AcsResponse {
 
 		public void setStreamUrl(String streamUrl) {
 			this.streamUrl = streamUrl;
-		}
-
-		public String getRtsUrl() {
-			return this.rtsUrl;
-		}
-
-		public void setRtsUrl(String rtsUrl) {
-			this.rtsUrl = rtsUrl;
 		}
 
 		public List<StreamInfo> getStreamInfos() {
@@ -132,11 +99,19 @@ public class StartCasterResponse extends AcsResponse {
 
 		public static class StreamInfo {
 
+			private String outputStreamUrl;
+
 			private String transcodeConfig;
 
 			private String videoFormat;
 
-			private String outputStreamUrl;
+			public String getOutputStreamUrl() {
+				return this.outputStreamUrl;
+			}
+
+			public void setOutputStreamUrl(String outputStreamUrl) {
+				this.outputStreamUrl = outputStreamUrl;
+			}
 
 			public String getTranscodeConfig() {
 				return this.transcodeConfig;
@@ -153,14 +128,39 @@ public class StartCasterResponse extends AcsResponse {
 			public void setVideoFormat(String videoFormat) {
 				this.videoFormat = videoFormat;
 			}
+		}
+	}
 
-			public String getOutputStreamUrl() {
-				return this.outputStreamUrl;
-			}
+	public static class SceneInfo1 {
 
-			public void setOutputStreamUrl(String outputStreamUrl) {
-				this.outputStreamUrl = outputStreamUrl;
-			}
+		private String rtsUrl;
+
+		private String sceneId;
+
+		private String streamUrl;
+
+		public String getRtsUrl() {
+			return this.rtsUrl;
+		}
+
+		public void setRtsUrl(String rtsUrl) {
+			this.rtsUrl = rtsUrl;
+		}
+
+		public String getSceneId() {
+			return this.sceneId;
+		}
+
+		public void setSceneId(String sceneId) {
+			this.sceneId = sceneId;
+		}
+
+		public String getStreamUrl() {
+			return this.streamUrl;
+		}
+
+		public void setStreamUrl(String streamUrl) {
+			this.streamUrl = streamUrl;
 		}
 	}
 

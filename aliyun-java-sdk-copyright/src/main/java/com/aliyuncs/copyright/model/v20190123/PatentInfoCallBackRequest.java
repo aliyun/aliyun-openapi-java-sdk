@@ -26,7 +26,7 @@ public class PatentInfoCallBackRequest extends RpcAcsRequest<PatentInfoCallBackR
 
 	private String data;
 	public PatentInfoCallBackRequest() {
-		super("Copyright", "2019-01-23", "PatentInfoCallBack");
+		super("Copyright", "2019-01-23", "PatentInfoCallBack", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

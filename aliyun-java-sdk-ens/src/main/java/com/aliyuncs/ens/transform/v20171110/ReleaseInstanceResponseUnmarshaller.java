@@ -23,6 +23,7 @@ public class ReleaseInstanceResponseUnmarshaller {
 	public static ReleaseInstanceResponse unmarshall(ReleaseInstanceResponse releaseInstanceResponse, UnmarshallerContext _ctx) {
 		
 		releaseInstanceResponse.setRequestId(_ctx.stringValue("ReleaseInstanceResponse.RequestId"));
+		releaseInstanceResponse.setResourceType(_ctx.stringValue("ReleaseInstanceResponse.ResourceType"));
 	 
 	 	return releaseInstanceResponse;
 	}

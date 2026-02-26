@@ -28,6 +28,8 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private Boolean instantAccess;
 
 	private List<String> excludeDiskIds;
@@ -37,6 +39,8 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 	private String resourceGroupId;
 
 	private Integer instantAccessRetentionDays;
+
+	private String storageLocationArn;
 
 	private List<String> diskIds;
 
@@ -68,6 +72,17 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -125,6 +140,17 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 		this.instantAccessRetentionDays = instantAccessRetentionDays;
 		if(instantAccessRetentionDays != null){
 			putQueryParameter("InstantAccessRetentionDays", instantAccessRetentionDays.toString());
+		}
+	}
+
+	public String getStorageLocationArn() {
+		return this.storageLocationArn;
+	}
+
+	public void setStorageLocationArn(String storageLocationArn) {
+		this.storageLocationArn = storageLocationArn;
+		if(storageLocationArn != null){
+			putQueryParameter("StorageLocationArn", storageLocationArn);
 		}
 	}
 

@@ -25,6 +25,8 @@ import com.aliyuncs.ccc.Endpoint;
 public class ListContactFlowsRequest extends RpcAcsRequest<ListContactFlowsResponse> {
 	   
 
+	private String orderByField;
+
 	private String type;
 
 	private Integer pageNumber;
@@ -32,6 +34,8 @@ public class ListContactFlowsRequest extends RpcAcsRequest<ListContactFlowsRespo
 	private String instanceId;
 
 	private Integer pageSize;
+
+	private String sortOrder;
 	public ListContactFlowsRequest() {
 		super("CCC", "2020-07-01", "ListContactFlows", "CCC");
 		setMethod(MethodType.POST);
@@ -39,6 +43,17 @@ public class ListContactFlowsRequest extends RpcAcsRequest<ListContactFlowsRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOrderByField() {
+		return this.orderByField;
+	}
+
+	public void setOrderByField(String orderByField) {
+		this.orderByField = orderByField;
+		if(orderByField != null){
+			putQueryParameter("OrderByField", orderByField);
+		}
 	}
 
 	public String getType() {
@@ -82,6 +97,17 @@ public class ListContactFlowsRequest extends RpcAcsRequest<ListContactFlowsRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+		if(sortOrder != null){
+			putQueryParameter("SortOrder", sortOrder);
 		}
 	}
 

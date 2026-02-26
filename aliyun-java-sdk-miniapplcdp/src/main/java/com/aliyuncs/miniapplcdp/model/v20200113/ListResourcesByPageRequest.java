@@ -30,6 +30,8 @@ public class ListResourcesByPageRequest extends RpcAcsRequest<ListResourcesByPag
 
 	private String description;
 
+	private String source;
+
 	private String resourceType;
 
 	private Integer pageNumber;
@@ -78,6 +80,17 @@ public class ListResourcesByPageRequest extends RpcAcsRequest<ListResourcesByPag
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

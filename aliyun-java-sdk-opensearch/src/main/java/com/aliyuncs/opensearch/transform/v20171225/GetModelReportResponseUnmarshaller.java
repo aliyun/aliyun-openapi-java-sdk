@@ -23,8 +23,8 @@ public class GetModelReportResponseUnmarshaller {
 
 	public static GetModelReportResponse unmarshall(GetModelReportResponse getModelReportResponse, UnmarshallerContext _ctx) {
 		
-		getModelReportResponse.setRequestId(_ctx.stringValue("GetModelReportResponse.requestId"));
 		getModelReportResponse.setResult(_ctx.mapValue("GetModelReportResponse.result"));
+		getModelReportResponse.setRequestId(_ctx.stringValue("GetModelReportResponse.requestId"));
 	 
 	 	return getModelReportResponse;
 	}

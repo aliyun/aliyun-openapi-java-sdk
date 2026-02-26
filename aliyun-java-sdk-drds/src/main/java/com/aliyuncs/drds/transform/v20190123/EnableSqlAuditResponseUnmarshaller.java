@@ -23,8 +23,8 @@ public class EnableSqlAuditResponseUnmarshaller {
 	public static EnableSqlAuditResponse unmarshall(EnableSqlAuditResponse enableSqlAuditResponse, UnmarshallerContext _ctx) {
 		
 		enableSqlAuditResponse.setRequestId(_ctx.stringValue("EnableSqlAuditResponse.RequestId"));
-		enableSqlAuditResponse.setSuccess(_ctx.booleanValue("EnableSqlAuditResponse.Success"));
 		enableSqlAuditResponse.setResult(_ctx.booleanValue("EnableSqlAuditResponse.Result"));
+		enableSqlAuditResponse.setSuccess(_ctx.booleanValue("EnableSqlAuditResponse.Success"));
 	 
 	 	return enableSqlAuditResponse;
 	}

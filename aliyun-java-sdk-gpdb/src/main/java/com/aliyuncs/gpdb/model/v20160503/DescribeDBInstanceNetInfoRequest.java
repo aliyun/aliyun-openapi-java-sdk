@@ -25,14 +25,27 @@ import com.aliyuncs.gpdb.Endpoint;
 public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBInstanceNetInfoResponse> {
 	   
 
+	private String connectionString;
+
 	private String dBInstanceId;
 	public DescribeDBInstanceNetInfoRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceNetInfo");
+		super("gpdb", "2016-05-03", "DescribeDBInstanceNetInfo", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getConnectionString() {
+		return this.connectionString;
+	}
+
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+		if(connectionString != null){
+			putQueryParameter("ConnectionString", connectionString);
+		}
 	}
 
 	public String getDBInstanceId() {

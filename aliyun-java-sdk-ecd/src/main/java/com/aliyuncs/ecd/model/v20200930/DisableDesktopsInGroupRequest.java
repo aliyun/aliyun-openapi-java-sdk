@@ -30,7 +30,7 @@ public class DisableDesktopsInGroupRequest extends RpcAcsRequest<DisableDesktops
 
 	private String desktopGroupId;
 	public DisableDesktopsInGroupRequest() {
-		super("ecd", "2020-09-30", "DisableDesktopsInGroup");
+		super("ecd", "2020-09-30", "DisableDesktopsInGroup", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

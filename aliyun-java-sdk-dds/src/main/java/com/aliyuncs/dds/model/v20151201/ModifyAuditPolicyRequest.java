@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -27,8 +28,6 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 	private Long resourceOwnerId;
 
 	private Integer storagePeriod;
-
-	private String securityToken;
 
 	private String auditLogSwitchSource;
 
@@ -46,6 +45,10 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 	public ModifyAuditPolicyRequest() {
 		super("Dds", "2015-12-01", "ModifyAuditPolicy", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -67,17 +70,6 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 		this.storagePeriod = storagePeriod;
 		if(storagePeriod != null){
 			putQueryParameter("StoragePeriod", storagePeriod.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

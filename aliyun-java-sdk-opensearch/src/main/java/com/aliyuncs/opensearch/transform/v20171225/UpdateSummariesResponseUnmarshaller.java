@@ -22,8 +22,8 @@ public class UpdateSummariesResponseUnmarshaller {
 
 	public static UpdateSummariesResponse unmarshall(UpdateSummariesResponse updateSummariesResponse, UnmarshallerContext _ctx) {
 		
-		updateSummariesResponse.setRequestId(_ctx.stringValue("UpdateSummariesResponse.requestId"));
 		updateSummariesResponse.setResult(_ctx.booleanValue("UpdateSummariesResponse.result"));
+		updateSummariesResponse.setRequestId(_ctx.stringValue("UpdateSummariesResponse.requestId"));
 	 
 	 	return updateSummariesResponse;
 	}

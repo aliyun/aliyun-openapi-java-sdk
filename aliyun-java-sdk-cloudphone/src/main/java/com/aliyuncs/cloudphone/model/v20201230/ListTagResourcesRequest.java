@@ -39,7 +39,7 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 
 	private String resourceType;
 	public ListTagResourcesRequest() {
-		super("cloudphone", "2020-12-30", "ListTagResources", "cloudphone");
+		super("cloudphone", "2020-12-30", "ListTagResources");
 		setMethod(MethodType.POST);
 	}
 

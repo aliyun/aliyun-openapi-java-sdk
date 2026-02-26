@@ -25,9 +25,9 @@ import com.aliyuncs.imm.Endpoint;
 public class GetFigureClusterRequest extends RpcAcsRequest<GetFigureClusterResponse> {
 	   
 
-	private String projectName;
-
 	private String datasetName;
+
+	private String projectName;
 
 	private String objectId;
 	public GetFigureClusterRequest() {
@@ -39,17 +39,6 @@ public class GetFigureClusterRequest extends RpcAcsRequest<GetFigureClusterRespo
 		} catch (Exception e) {}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
 	public String getDatasetName() {
 		return this.datasetName;
 	}
@@ -58,6 +47,17 @@ public class GetFigureClusterRequest extends RpcAcsRequest<GetFigureClusterRespo
 		this.datasetName = datasetName;
 		if(datasetName != null){
 			putQueryParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 

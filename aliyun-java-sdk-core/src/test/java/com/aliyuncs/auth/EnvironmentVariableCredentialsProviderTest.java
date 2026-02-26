@@ -15,8 +15,20 @@ public class EnvironmentVariableCredentialsProviderTest {
         Assert.assertNull(provider.getCredentials());
 
         AuthUtils.setClientType("default");
+        try {
+            provider.getCredentials();
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertEquals("Environment variable accessKeyId cannot be empty.", e.getMessage());
+        }
+
         AuthUtils.setEnvironmentAccessKeyId("accessKeyIdTest");
-        Assert.assertNull(provider.getCredentials());
+        try {
+            provider.getCredentials();
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertEquals("Environment variable accessKeySecret cannot be empty.", e.getMessage());
+        }
 
         AuthUtils.setEnvironmentAccessKeySecret("accessKeyIdTest");
         AlibabaCloudCredentials credential = provider.getCredentials();
@@ -26,14 +38,19 @@ public class EnvironmentVariableCredentialsProviderTest {
         Assert.assertEquals("accessKeyIdTest", accessKeySecret);
 
         AuthUtils.setEnvironmentAccessKeyId(null);
-        Assert.assertNull(provider.getCredentials());
+        try {
+            provider.getCredentials();
+            Assert.fail();
+        } catch (Exception e) {
+            Assert.assertEquals("Environment variable accessKeyId cannot be empty.", e.getMessage());
+        }
 
         AuthUtils.setEnvironmentAccessKeyId("");
         try {
             provider.getCredentials();
             Assert.fail();
         } catch (ClientException e){
-            Assert.assertEquals("Environment variable accessKeyId cannot be empty", e.getMessage());
+            Assert.assertEquals("Environment variable accessKeyId cannot be empty.", e.getMessage());
         }
         AuthUtils.setEnvironmentAccessKeyId("a");
         AuthUtils.setEnvironmentAccessKeySecret("");
@@ -41,10 +58,17 @@ public class EnvironmentVariableCredentialsProviderTest {
             provider.getCredentials();
             Assert.fail();
         } catch (ClientException e){
-            Assert.assertEquals("Environment variable accessKeySecret cannot be empty", e.getMessage());
+            Assert.assertEquals("Environment variable accessKeySecret cannot be empty.", e.getMessage());
         }
+        AuthUtils.setEnvironmentAccessKeySecret("secret");
+        AuthUtils.setEnvironmentSecurityToken("token");
+        BasicSessionCredentials basicSessionCredentials = (BasicSessionCredentials)provider.getCredentials();
+        Assert.assertEquals("a", basicSessionCredentials.getAccessKeyId());
+        Assert.assertEquals("secret", basicSessionCredentials.getAccessKeySecret());
+        Assert.assertEquals("token", basicSessionCredentials.getSessionToken());
 
         AuthUtils.setEnvironmentAccessKeyId(null);
         AuthUtils.setEnvironmentAccessKeySecret(null);
+        AuthUtils.setEnvironmentSecurityToken(null);
     }
 }

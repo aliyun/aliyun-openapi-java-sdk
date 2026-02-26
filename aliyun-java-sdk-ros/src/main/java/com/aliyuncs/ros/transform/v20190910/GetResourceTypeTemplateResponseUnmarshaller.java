@@ -25,6 +25,7 @@ public class GetResourceTypeTemplateResponseUnmarshaller {
 		
 		getResourceTypeTemplateResponse.setRequestId(_ctx.stringValue("GetResourceTypeTemplateResponse.RequestId"));
 		getResourceTypeTemplateResponse.setTemplateBody(_ctx.mapValue("GetResourceTypeTemplateResponse.TemplateBody"));
+		getResourceTypeTemplateResponse.setTemplateContent(_ctx.stringValue("GetResourceTypeTemplateResponse.TemplateContent"));
 	 
 	 	return getResourceTypeTemplateResponse;
 	}

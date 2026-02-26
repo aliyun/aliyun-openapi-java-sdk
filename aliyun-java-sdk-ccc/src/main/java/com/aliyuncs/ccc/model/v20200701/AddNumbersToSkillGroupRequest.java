@@ -29,6 +29,8 @@ public class AddNumbersToSkillGroupRequest extends RpcAcsRequest<AddNumbersToSki
 
 	private String instanceId;
 
+	private String instNumberGroupIdList;
+
 	private String skillGroupId;
 	public AddNumbersToSkillGroupRequest() {
 		super("CCC", "2020-07-01", "AddNumbersToSkillGroup", "CCC");
@@ -58,6 +60,17 @@ public class AddNumbersToSkillGroupRequest extends RpcAcsRequest<AddNumbersToSki
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getInstNumberGroupIdList() {
+		return this.instNumberGroupIdList;
+	}
+
+	public void setInstNumberGroupIdList(String instNumberGroupIdList) {
+		this.instNumberGroupIdList = instNumberGroupIdList;
+		if(instNumberGroupIdList != null){
+			putQueryParameter("InstNumberGroupIdList", instNumberGroupIdList);
 		}
 	}
 

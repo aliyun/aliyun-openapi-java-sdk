@@ -35,28 +35,28 @@ public class DescribePdnsRequestStatisticsResponseUnmarshaller {
 		List<StatisticItem> data = new ArrayList<StatisticItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePdnsRequestStatisticsResponse.Data.Length"); i++) {
 			StatisticItem statisticItem = new StatisticItem();
-			statisticItem.setUdpTotalCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].UdpTotalCount"));
-			statisticItem.setIpCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].IpCount"));
 			statisticItem.setDomainName(_ctx.stringValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].DomainName"));
-			statisticItem.setV6HttpCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].V6HttpCount"));
-			statisticItem.setV4Count(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].V4Count"));
-			statisticItem.setHttpsCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].HttpsCount"));
-			statisticItem.setV4HttpsCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].V4HttpsCount"));
-			statisticItem.setV6Count(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].V6Count"));
 			statisticItem.setSubDomain(_ctx.stringValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].SubDomain"));
+			statisticItem.setV6HttpCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].V6HttpCount"));
+			statisticItem.setV6HttpsCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].V6HttpsCount"));
 			statisticItem.setTotalCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].TotalCount"));
 			statisticItem.setV4HttpCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].V4HttpCount"));
+			statisticItem.setV4HttpsCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].V4HttpsCount"));
+			statisticItem.setV4Count(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].V4Count"));
+			statisticItem.setV6Count(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].V6Count"));
+			statisticItem.setHttpCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].HttpCount"));
+			statisticItem.setHttpsCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].HttpsCount"));
+			statisticItem.setDohTotalCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].DohTotalCount"));
+			statisticItem.setUdpTotalCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].UdpTotalCount"));
+			statisticItem.setIpCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].IpCount"));
 			statisticItem.setThreatCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].ThreatCount"));
 			statisticItem.setMaxThreatLevel(_ctx.stringValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].MaxThreatLevel"));
-			statisticItem.setHttpCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].HttpCount"));
-			statisticItem.setV6HttpsCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].V6HttpsCount"));
-			statisticItem.setDohTotalCount(_ctx.longValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].DohTotalCount"));
 
 			List<ThreatItem> threatInfo = new ArrayList<ThreatItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].ThreatInfo.Length"); j++) {
 				ThreatItem threatItem = new ThreatItem();
-				threatItem.setThreatLevel(_ctx.stringValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].ThreatInfo["+ j +"].ThreatLevel"));
 				threatItem.setThreatType(_ctx.stringValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].ThreatInfo["+ j +"].ThreatType"));
+				threatItem.setThreatLevel(_ctx.stringValue("DescribePdnsRequestStatisticsResponse.Data["+ i +"].ThreatInfo["+ j +"].ThreatLevel"));
 
 				threatInfo.add(threatItem);
 			}

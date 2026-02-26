@@ -54,6 +54,8 @@ public class GetProxyResponse extends AcsResponse {
 
 	private Integer protocolPort;
 
+	private String regionId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -172,6 +174,14 @@ public class GetProxyResponse extends AcsResponse {
 
 	public void setProtocolPort(Integer protocolPort) {
 		this.protocolPort = protocolPort;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	@Override

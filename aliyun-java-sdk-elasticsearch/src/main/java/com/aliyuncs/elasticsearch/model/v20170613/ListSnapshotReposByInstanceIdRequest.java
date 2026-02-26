@@ -26,8 +26,6 @@ public class ListSnapshotReposByInstanceIdRequest extends RoaAcsRequest<ListSnap
 	   
 
 	private String instanceId;
-
-	private String body;
 	public ListSnapshotReposByInstanceIdRequest() {
 		super("elasticsearch", "2017-06-13", "ListSnapshotReposByInstanceId", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/snapshot-repos");
@@ -46,17 +44,6 @@ public class ListSnapshotReposByInstanceIdRequest extends RoaAcsRequest<ListSnap
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

@@ -31,6 +31,8 @@ public class ScrollDomainListRequest extends RpcAcsRequest<ScrollDomainListRespo
 
 	private Integer startLength;
 
+	private String resourceGroupId;
+
 	private Boolean excludedSuffix;
 
 	private Integer pageSize;
@@ -69,7 +71,7 @@ public class ScrollDomainListRequest extends RpcAcsRequest<ScrollDomainListRespo
 
 	private Integer endLength;
 	public ScrollDomainListRequest() {
-		super("Domain", "2018-01-29", "ScrollDomainList");
+		super("Domain", "2018-01-29", "ScrollDomainList", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -107,6 +109,17 @@ public class ScrollDomainListRequest extends RpcAcsRequest<ScrollDomainListRespo
 		this.startLength = startLength;
 		if(startLength != null){
 			putQueryParameter("StartLength", startLength.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

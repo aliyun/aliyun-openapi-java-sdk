@@ -33,6 +33,8 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 	private String beginBizdate;
 
+	private String orderBy;
+
 	private String endBizdate;
 
 	private Long dagId;
@@ -50,6 +52,8 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 	private Long nodeId;
 
 	private Long projectId;
+
+	private String status;
 	public ListInstancesRequest() {
 		super("dataworks-public", "2020-05-18", "ListInstances");
 		setMethod(MethodType.POST);
@@ -100,6 +104,17 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		this.beginBizdate = beginBizdate;
 		if(beginBizdate != null){
 			putBodyParameter("BeginBizdate", beginBizdate);
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putBodyParameter("OrderBy", orderBy);
 		}
 	}
 
@@ -199,6 +214,17 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putBodyParameter("Status", status);
 		}
 	}
 

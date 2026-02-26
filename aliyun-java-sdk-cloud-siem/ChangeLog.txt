@@ -1,0 +1,39 @@
+2026-02-11 Version: 1.0.12
+- Generated 2022-06-16 for `cloud-siem`.
+
+2025-12-25 Version: 1.0.11
+- Generated 2022-06-16 for `cloud-siem`.
+
+2025-12-10 Version: 1.0.10
+- Add parameters to control different role.
+
+2025-12-10 Version: 1.0.9
+- Add parameters to control different role.
+
+2025-05-13 Version: 1.0.8
+- Add parameters to control different role.
+
+2025-03-31 Version: 1.0.7
+- Add parameters to control different role.
+
+2025-01-15 Version: 1.0.6
+- Add parameters to control different role.
+
+2024-08-07 Version: 1.0.5
+- Add parameters to control different role.
+
+2024-03-27 Version: 1.0.4
+- Standardizing api.
+
+2023-12-13 Version: 1.0.3
+- Standardizing api.
+
+2023-11-01 Version: 1.0.2
+- Standardizing api.
+
+2023-03-06 Version: 1.0.1
+- Get the capicity which cloud siem user used until yesterday.
+
+2023-03-03 Version: 1.0.0
+- Get the capicity which cloud siem user used until yesterday.
+

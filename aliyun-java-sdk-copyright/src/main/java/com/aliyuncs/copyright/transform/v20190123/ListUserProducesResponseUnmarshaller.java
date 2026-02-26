@@ -50,6 +50,7 @@ public class ListUserProducesResponseUnmarshaller {
 			produces.setStartTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].StartTime"));
 			produces.setOrderId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].OrderId"));
 			produces.setModifyTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].ModifyTime"));
+			produces.setOrderInstanceId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].OrderInstanceId"));
 
 			data.add(produces);
 		}

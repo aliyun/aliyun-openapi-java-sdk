@@ -29,7 +29,7 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String orderType;
 	public DescribePriceRequest() {
-		super("Market", "2015-11-01", "DescribePrice");
+		super("Market", "2015-11-01", "DescribePrice", "yunmarket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -91,6 +91,10 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private String spec;
 
+		private String status;
+
+		private List<IpList> ipLists;
+
 		public String getEnsRegionId() {
 			return this.ensRegionId;
 		}
@@ -145,6 +149,55 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public void setSpec(String spec) {
 			this.spec = spec;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public List<IpList> getIpLists() {
+			return this.ipLists;
+		}
+
+		public void setIpLists(List<IpList> ipLists) {
+			this.ipLists = ipLists;
+		}
+
+		public static class IpList {
+
+			private String usingStatus;
+
+			private String ipAddress;
+
+			private String allocationId;
+
+			public String getUsingStatus() {
+				return this.usingStatus;
+			}
+
+			public void setUsingStatus(String usingStatus) {
+				this.usingStatus = usingStatus;
+			}
+
+			public String getIpAddress() {
+				return this.ipAddress;
+			}
+
+			public void setIpAddress(String ipAddress) {
+				this.ipAddress = ipAddress;
+			}
+
+			public String getAllocationId() {
+				return this.allocationId;
+			}
+
+			public void setAllocationId(String allocationId) {
+				this.allocationId = allocationId;
+			}
 		}
 	}
 

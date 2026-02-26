@@ -29,6 +29,8 @@ public class ContinueDeployServiceInstanceRequest extends RpcAcsRequest<Continue
 
 	private String serviceInstanceId;
 
+	private Boolean dryRun;
+
 	private String parameters;
 	public ContinueDeployServiceInstanceRequest() {
 		super("ComputeNestSupplier", "2021-05-21", "ContinueDeployServiceInstance");
@@ -58,6 +60,17 @@ public class ContinueDeployServiceInstanceRequest extends RpcAcsRequest<Continue
 		this.serviceInstanceId = serviceInstanceId;
 		if(serviceInstanceId != null){
 			putQueryParameter("ServiceInstanceId", serviceInstanceId);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

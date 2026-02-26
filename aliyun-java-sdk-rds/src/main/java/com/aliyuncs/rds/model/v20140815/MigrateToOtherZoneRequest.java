@@ -35,11 +35,17 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 
 	private String zoneIdSlave2;
 
+	private String ioAccelerationEnabled;
+
 	private String effectiveTime;
 
 	private String dBInstanceId;
 
 	private String switchTime;
+
+	private String dBInstanceStorageType;
+
+	private String customExtraInfo;
 
 	private String resourceOwnerAccount;
 
@@ -120,6 +126,17 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 		}
 	}
 
+	public String getIoAccelerationEnabled() {
+		return this.ioAccelerationEnabled;
+	}
+
+	public void setIoAccelerationEnabled(String ioAccelerationEnabled) {
+		this.ioAccelerationEnabled = ioAccelerationEnabled;
+		if(ioAccelerationEnabled != null){
+			putQueryParameter("IoAccelerationEnabled", ioAccelerationEnabled);
+		}
+	}
+
 	public String getEffectiveTime() {
 		return this.effectiveTime;
 	}
@@ -150,6 +167,28 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 		this.switchTime = switchTime;
 		if(switchTime != null){
 			putQueryParameter("SwitchTime", switchTime);
+		}
+	}
+
+	public String getDBInstanceStorageType() {
+		return this.dBInstanceStorageType;
+	}
+
+	public void setDBInstanceStorageType(String dBInstanceStorageType) {
+		this.dBInstanceStorageType = dBInstanceStorageType;
+		if(dBInstanceStorageType != null){
+			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
+		}
+	}
+
+	public String getCustomExtraInfo() {
+		return this.customExtraInfo;
+	}
+
+	public void setCustomExtraInfo(String customExtraInfo) {
+		this.customExtraInfo = customExtraInfo;
+		if(customExtraInfo != null){
+			putQueryParameter("CustomExtraInfo", customExtraInfo);
 		}
 	}
 

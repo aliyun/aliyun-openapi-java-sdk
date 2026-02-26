@@ -29,21 +29,21 @@ public class ListMPCoSPhaseResponseUnmarshaller {
 		
 		listMPCoSPhaseResponse.setRequestId(_ctx.stringValue("ListMPCoSPhaseResponse.RequestId"));
 		listMPCoSPhaseResponse.setCode(_ctx.integerValue("ListMPCoSPhaseResponse.Code"));
-		listMPCoSPhaseResponse.setSuccess(_ctx.booleanValue("ListMPCoSPhaseResponse.Success"));
 		listMPCoSPhaseResponse.setMessage(_ctx.stringValue("ListMPCoSPhaseResponse.Message"));
+		listMPCoSPhaseResponse.setSuccess(_ctx.booleanValue("ListMPCoSPhaseResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("ListMPCoSPhaseResponse.Data.Total"));
 		data.setNum(_ctx.integerValue("ListMPCoSPhaseResponse.Data.Num"));
+		data.setTotal(_ctx.integerValue("ListMPCoSPhaseResponse.Data.Total"));
 		data.setSize(_ctx.integerValue("ListMPCoSPhaseResponse.Data.Size"));
 
 		List<PhaseInfo> pageData = new ArrayList<PhaseInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListMPCoSPhaseResponse.Data.PageData.Length"); i++) {
 			PhaseInfo phaseInfo = new PhaseInfo();
-			phaseInfo.setPhaseId(_ctx.stringValue("ListMPCoSPhaseResponse.Data.PageData["+ i +"].PhaseId"));
 			phaseInfo.setName(_ctx.stringValue("ListMPCoSPhaseResponse.Data.PageData["+ i +"].Name"));
 			phaseInfo.setRemark(_ctx.stringValue("ListMPCoSPhaseResponse.Data.PageData["+ i +"].Remark"));
 			phaseInfo.setAccessPermission(_ctx.integerValue("ListMPCoSPhaseResponse.Data.PageData["+ i +"].AccessPermission"));
+			phaseInfo.setPhaseId(_ctx.stringValue("ListMPCoSPhaseResponse.Data.PageData["+ i +"].PhaseId"));
 
 			pageData.add(phaseInfo);
 		}

@@ -133,6 +133,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String architecture;
 
+		private String bootMode;
+
 		private Boolean isPublic;
 
 		private Long imageOwnerId;
@@ -140,6 +142,8 @@ public class DescribeImagesResponse extends AcsResponse {
 		private Boolean loginAsNonRootSupported;
 
 		private String supplierName;
+
+		private String licenseType;
 
 		private List<DiskDeviceMapping> diskDeviceMappings;
 
@@ -333,6 +337,14 @@ public class DescribeImagesResponse extends AcsResponse {
 			this.architecture = architecture;
 		}
 
+		public String getBootMode() {
+			return this.bootMode;
+		}
+
+		public void setBootMode(String bootMode) {
+			this.bootMode = bootMode;
+		}
+
 		public Boolean getIsPublic() {
 			return this.isPublic;
 		}
@@ -363,6 +375,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setSupplierName(String supplierName) {
 			this.supplierName = supplierName;
+		}
+
+		public String getLicenseType() {
+			return this.licenseType;
+		}
+
+		public void setLicenseType(String licenseType) {
+			this.licenseType = licenseType;
 		}
 
 		public List<DiskDeviceMapping> getDiskDeviceMappings() {
@@ -416,6 +436,8 @@ public class DescribeImagesResponse extends AcsResponse {
 			private Integer remainTime;
 
 			private String format;
+
+			private Boolean encrypted;
 
 			public String getType() {
 				return this.type;
@@ -487,6 +509,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			public void setFormat(String format) {
 				this.format = format;
+			}
+
+			public Boolean getEncrypted() {
+				return this.encrypted;
+			}
+
+			public void setEncrypted(Boolean encrypted) {
+				this.encrypted = encrypted;
 			}
 		}
 
@@ -583,12 +613,62 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			private String nvmeSupport;
 
+			private String imdsSupport;
+
+			private String cpuOnlineUpgrade;
+
+			private String cpuOnlineDowngrade;
+
+			private String memoryOnlineUpgrade;
+
+			private String memoryOnlineDowngrade;
+
 			public String getNvmeSupport() {
 				return this.nvmeSupport;
 			}
 
 			public void setNvmeSupport(String nvmeSupport) {
 				this.nvmeSupport = nvmeSupport;
+			}
+
+			public String getImdsSupport() {
+				return this.imdsSupport;
+			}
+
+			public void setImdsSupport(String imdsSupport) {
+				this.imdsSupport = imdsSupport;
+			}
+
+			public String getCpuOnlineUpgrade() {
+				return this.cpuOnlineUpgrade;
+			}
+
+			public void setCpuOnlineUpgrade(String cpuOnlineUpgrade) {
+				this.cpuOnlineUpgrade = cpuOnlineUpgrade;
+			}
+
+			public String getCpuOnlineDowngrade() {
+				return this.cpuOnlineDowngrade;
+			}
+
+			public void setCpuOnlineDowngrade(String cpuOnlineDowngrade) {
+				this.cpuOnlineDowngrade = cpuOnlineDowngrade;
+			}
+
+			public String getMemoryOnlineUpgrade() {
+				return this.memoryOnlineUpgrade;
+			}
+
+			public void setMemoryOnlineUpgrade(String memoryOnlineUpgrade) {
+				this.memoryOnlineUpgrade = memoryOnlineUpgrade;
+			}
+
+			public String getMemoryOnlineDowngrade() {
+				return this.memoryOnlineDowngrade;
+			}
+
+			public void setMemoryOnlineDowngrade(String memoryOnlineDowngrade) {
+				this.memoryOnlineDowngrade = memoryOnlineDowngrade;
 			}
 		}
 	}

@@ -28,14 +28,14 @@ import com.aliyuncs.imm.Endpoint;
 public class DetectImageCroppingRequest extends RpcAcsRequest<DetectImageCroppingResponse> {
 	   
 
-	private String projectName;
-
-	private String sourceURI;
-
 	private String aspectRatios;
+
+	private String projectName;
 
 	@SerializedName("credentialConfig")
 	private CredentialConfig credentialConfig;
+
+	private String sourceURI;
 	public DetectImageCroppingRequest() {
 		super("imm", "2020-09-30", "DetectImageCropping", "imm");
 		setMethod(MethodType.POST);
@@ -43,28 +43,6 @@ public class DetectImageCroppingRequest extends RpcAcsRequest<DetectImageCroppin
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
-	public String getSourceURI() {
-		return this.sourceURI;
-	}
-
-	public void setSourceURI(String sourceURI) {
-		this.sourceURI = sourceURI;
-		if(sourceURI != null){
-			putQueryParameter("SourceURI", sourceURI);
-		}
 	}
 
 	public String getAspectRatios() {
@@ -78,6 +56,17 @@ public class DetectImageCroppingRequest extends RpcAcsRequest<DetectImageCroppin
 		}
 	}
 
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
+		}
+	}
+
 	public CredentialConfig getCredentialConfig() {
 		return this.credentialConfig;
 	}
@@ -87,6 +76,17 @@ public class DetectImageCroppingRequest extends RpcAcsRequest<DetectImageCroppin
 		if (credentialConfig != null) {
 			putQueryParameter("CredentialConfig" , new Gson().toJson(credentialConfig));
 		}	
+	}
+
+	public String getSourceURI() {
+		return this.sourceURI;
+	}
+
+	public void setSourceURI(String sourceURI) {
+		this.sourceURI = sourceURI;
+		if(sourceURI != null){
+			putQueryParameter("SourceURI", sourceURI);
+		}
 	}
 
 	public static class CredentialConfig {

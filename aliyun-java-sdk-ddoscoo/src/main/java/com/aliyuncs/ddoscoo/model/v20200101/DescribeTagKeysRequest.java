@@ -33,7 +33,7 @@ public class DescribeTagKeysRequest extends RpcAcsRequest<DescribeTagKeysRespons
 
 	private Integer pageSize;
 	public DescribeTagKeysRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeTagKeys");
+		super("ddoscoo", "2020-01-01", "DescribeTagKeys", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

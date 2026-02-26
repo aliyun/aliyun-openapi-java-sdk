@@ -36,7 +36,7 @@ public class RenewNetworkPackagesRequest extends RpcAcsRequest<RenewNetworkPacka
 
 	private String periodUnit;
 	public RenewNetworkPackagesRequest() {
-		super("ecd", "2020-09-30", "RenewNetworkPackages");
+		super("ecd", "2020-09-30", "RenewNetworkPackages", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

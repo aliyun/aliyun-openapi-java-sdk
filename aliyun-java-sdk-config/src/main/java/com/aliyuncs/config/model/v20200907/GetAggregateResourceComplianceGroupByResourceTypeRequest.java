@@ -29,7 +29,7 @@ public class GetAggregateResourceComplianceGroupByResourceTypeRequest extends Rp
 
 	private String aggregatorId;
 	public GetAggregateResourceComplianceGroupByResourceTypeRequest() {
-		super("Config", "2020-09-07", "GetAggregateResourceComplianceGroupByResourceType");
+		super("Config", "2020-09-07", "GetAggregateResourceComplianceGroupByResourceType", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

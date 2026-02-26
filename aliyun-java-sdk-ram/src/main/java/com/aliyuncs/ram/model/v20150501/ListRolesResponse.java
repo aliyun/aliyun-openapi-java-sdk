@@ -81,6 +81,8 @@ public class ListRolesResponse extends AcsResponse {
 
 		private String arn;
 
+		private List<Tag> tags;
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -135,6 +137,37 @@ public class ListRolesResponse extends AcsResponse {
 
 		public void setArn(String arn) {
 			this.arn = arn;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

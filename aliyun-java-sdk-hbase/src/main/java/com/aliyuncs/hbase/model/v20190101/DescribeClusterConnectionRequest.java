@@ -27,7 +27,7 @@ public class DescribeClusterConnectionRequest extends RpcAcsRequest<DescribeClus
 
 	private String clusterId;
 	public DescribeClusterConnectionRequest() {
-		super("HBase", "2019-01-01", "DescribeClusterConnection", "hbase");
+		super("HBase", "2019-01-01", "DescribeClusterConnection");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

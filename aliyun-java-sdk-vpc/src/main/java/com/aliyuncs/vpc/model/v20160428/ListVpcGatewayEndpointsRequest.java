@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -29,6 +30,8 @@ public class ListVpcGatewayEndpointsRequest extends RpcAcsRequest<ListVpcGateway
 
 	private String endpointId;
 
+	private String resourceGroupId;
+
 	private String nextToken;
 
 	private String serviceName;
@@ -39,7 +42,11 @@ public class ListVpcGatewayEndpointsRequest extends RpcAcsRequest<ListVpcGateway
 
 	private Long ownerId;
 
+	private List<Tags> tagss;
+
 	private String endpointName;
+
+	private String vpcId;
 
 	private Long maxResults;
 	public ListVpcGatewayEndpointsRequest() {
@@ -70,6 +77,17 @@ public class ListVpcGatewayEndpointsRequest extends RpcAcsRequest<ListVpcGateway
 		this.endpointId = endpointId;
 		if(endpointId != null){
 			putQueryParameter("EndpointId", endpointId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -128,6 +146,20 @@ public class ListVpcGatewayEndpointsRequest extends RpcAcsRequest<ListVpcGateway
 		}
 	}
 
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public String getEndpointName() {
 		return this.endpointName;
 	}
@@ -139,6 +171,17 @@ public class ListVpcGatewayEndpointsRequest extends RpcAcsRequest<ListVpcGateway
 		}
 	}
 
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
 	public Long getMaxResults() {
 		return this.maxResults;
 	}
@@ -147,6 +190,29 @@ public class ListVpcGatewayEndpointsRequest extends RpcAcsRequest<ListVpcGateway
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public static class Tags {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

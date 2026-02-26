@@ -33,7 +33,7 @@ public class QueryStudioProjectListRequest extends RpcAcsRequest<QueryStudioProj
 
 	private String name;
 	public QueryStudioProjectListRequest() {
-		super("Iot", "2018-01-20", "QueryStudioProjectList");
+		super("Iot", "2018-01-20", "QueryStudioProjectList", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

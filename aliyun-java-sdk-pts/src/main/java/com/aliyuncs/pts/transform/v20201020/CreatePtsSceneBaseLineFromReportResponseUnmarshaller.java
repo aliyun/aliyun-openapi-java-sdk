@@ -23,10 +23,10 @@ public class CreatePtsSceneBaseLineFromReportResponseUnmarshaller {
 	public static CreatePtsSceneBaseLineFromReportResponse unmarshall(CreatePtsSceneBaseLineFromReportResponse createPtsSceneBaseLineFromReportResponse, UnmarshallerContext _ctx) {
 		
 		createPtsSceneBaseLineFromReportResponse.setRequestId(_ctx.stringValue("CreatePtsSceneBaseLineFromReportResponse.RequestId"));
-		createPtsSceneBaseLineFromReportResponse.setSuccess(_ctx.booleanValue("CreatePtsSceneBaseLineFromReportResponse.Success"));
-		createPtsSceneBaseLineFromReportResponse.setCode(_ctx.stringValue("CreatePtsSceneBaseLineFromReportResponse.Code"));
 		createPtsSceneBaseLineFromReportResponse.setMessage(_ctx.stringValue("CreatePtsSceneBaseLineFromReportResponse.Message"));
 		createPtsSceneBaseLineFromReportResponse.setHttpStatusCode(_ctx.integerValue("CreatePtsSceneBaseLineFromReportResponse.HttpStatusCode"));
+		createPtsSceneBaseLineFromReportResponse.setCode(_ctx.stringValue("CreatePtsSceneBaseLineFromReportResponse.Code"));
+		createPtsSceneBaseLineFromReportResponse.setSuccess(_ctx.booleanValue("CreatePtsSceneBaseLineFromReportResponse.Success"));
 	 
 	 	return createPtsSceneBaseLineFromReportResponse;
 	}

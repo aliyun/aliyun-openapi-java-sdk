@@ -47,9 +47,9 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 
 	public static class ParameterGroupItem {
 
-		private String dBType;
-
 		private String dBVersion;
+
+		private String parameterGroupId;
 
 		private String parameterGroupName;
 
@@ -57,23 +57,15 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 
 		private String parameterGroupType;
 
-		private Integer parameterCounts;
-
 		private String parameterGroupDesc;
 
 		private String createTime;
 
-		private String parameterGroupId;
+		private Integer parameterCounts;
+
+		private String dBType;
 
 		private List<ParameterDetailItem> parameterDetail;
-
-		public String getDBType() {
-			return this.dBType;
-		}
-
-		public void setDBType(String dBType) {
-			this.dBType = dBType;
-		}
 
 		public String getDBVersion() {
 			return this.dBVersion;
@@ -81,6 +73,14 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 
 		public void setDBVersion(String dBVersion) {
 			this.dBVersion = dBVersion;
+		}
+
+		public String getParameterGroupId() {
+			return this.parameterGroupId;
+		}
+
+		public void setParameterGroupId(String parameterGroupId) {
+			this.parameterGroupId = parameterGroupId;
 		}
 
 		public String getParameterGroupName() {
@@ -107,14 +107,6 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 			this.parameterGroupType = parameterGroupType;
 		}
 
-		public Integer getParameterCounts() {
-			return this.parameterCounts;
-		}
-
-		public void setParameterCounts(Integer parameterCounts) {
-			this.parameterCounts = parameterCounts;
-		}
-
 		public String getParameterGroupDesc() {
 			return this.parameterGroupDesc;
 		}
@@ -131,12 +123,20 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getParameterGroupId() {
-			return this.parameterGroupId;
+		public Integer getParameterCounts() {
+			return this.parameterCounts;
 		}
 
-		public void setParameterGroupId(String parameterGroupId) {
-			this.parameterGroupId = parameterGroupId;
+		public void setParameterCounts(Integer parameterCounts) {
+			this.parameterCounts = parameterCounts;
+		}
+
+		public String getDBType() {
+			return this.dBType;
+		}
+
+		public void setDBType(String dBType) {
+			this.dBType = dBType;
 		}
 
 		public List<ParameterDetailItem> getParameterDetail() {

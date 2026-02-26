@@ -47,34 +47,34 @@ public class QueryPushStatByMsgResponse extends AcsResponse {
 
 	public static class PushStat {
 
-		private String messageId;
+		private Long acceptCount;
 
 		private Long deletedCount;
 
+		private String messageId;
+
 		private Long openedCount;
-
-		private Long smsReceiveSuccessCount;
-
-		private Long smsSkipCount;
-
-		private Long smsReceiveFailedCount;
-
-		private Long smsFailedCount;
 
 		private Long receivedCount;
 
 		private Long sentCount;
 
+		private Long smsFailedCount;
+
+		private Long smsReceiveFailedCount;
+
+		private Long smsReceiveSuccessCount;
+
 		private Long smsSentCount;
 
-		private Long acceptCount;
+		private Long smsSkipCount;
 
-		public String getMessageId() {
-			return this.messageId;
+		public Long getAcceptCount() {
+			return this.acceptCount;
 		}
 
-		public void setMessageId(String messageId) {
-			this.messageId = messageId;
+		public void setAcceptCount(Long acceptCount) {
+			this.acceptCount = acceptCount;
 		}
 
 		public Long getDeletedCount() {
@@ -85,44 +85,20 @@ public class QueryPushStatByMsgResponse extends AcsResponse {
 			this.deletedCount = deletedCount;
 		}
 
+		public String getMessageId() {
+			return this.messageId;
+		}
+
+		public void setMessageId(String messageId) {
+			this.messageId = messageId;
+		}
+
 		public Long getOpenedCount() {
 			return this.openedCount;
 		}
 
 		public void setOpenedCount(Long openedCount) {
 			this.openedCount = openedCount;
-		}
-
-		public Long getSmsReceiveSuccessCount() {
-			return this.smsReceiveSuccessCount;
-		}
-
-		public void setSmsReceiveSuccessCount(Long smsReceiveSuccessCount) {
-			this.smsReceiveSuccessCount = smsReceiveSuccessCount;
-		}
-
-		public Long getSmsSkipCount() {
-			return this.smsSkipCount;
-		}
-
-		public void setSmsSkipCount(Long smsSkipCount) {
-			this.smsSkipCount = smsSkipCount;
-		}
-
-		public Long getSmsReceiveFailedCount() {
-			return this.smsReceiveFailedCount;
-		}
-
-		public void setSmsReceiveFailedCount(Long smsReceiveFailedCount) {
-			this.smsReceiveFailedCount = smsReceiveFailedCount;
-		}
-
-		public Long getSmsFailedCount() {
-			return this.smsFailedCount;
-		}
-
-		public void setSmsFailedCount(Long smsFailedCount) {
-			this.smsFailedCount = smsFailedCount;
 		}
 
 		public Long getReceivedCount() {
@@ -141,6 +117,30 @@ public class QueryPushStatByMsgResponse extends AcsResponse {
 			this.sentCount = sentCount;
 		}
 
+		public Long getSmsFailedCount() {
+			return this.smsFailedCount;
+		}
+
+		public void setSmsFailedCount(Long smsFailedCount) {
+			this.smsFailedCount = smsFailedCount;
+		}
+
+		public Long getSmsReceiveFailedCount() {
+			return this.smsReceiveFailedCount;
+		}
+
+		public void setSmsReceiveFailedCount(Long smsReceiveFailedCount) {
+			this.smsReceiveFailedCount = smsReceiveFailedCount;
+		}
+
+		public Long getSmsReceiveSuccessCount() {
+			return this.smsReceiveSuccessCount;
+		}
+
+		public void setSmsReceiveSuccessCount(Long smsReceiveSuccessCount) {
+			this.smsReceiveSuccessCount = smsReceiveSuccessCount;
+		}
+
 		public Long getSmsSentCount() {
 			return this.smsSentCount;
 		}
@@ -149,12 +149,12 @@ public class QueryPushStatByMsgResponse extends AcsResponse {
 			this.smsSentCount = smsSentCount;
 		}
 
-		public Long getAcceptCount() {
-			return this.acceptCount;
+		public Long getSmsSkipCount() {
+			return this.smsSkipCount;
 		}
 
-		public void setAcceptCount(Long acceptCount) {
-			this.acceptCount = acceptCount;
+		public void setSmsSkipCount(Long smsSkipCount) {
+			this.smsSkipCount = smsSkipCount;
 		}
 	}
 

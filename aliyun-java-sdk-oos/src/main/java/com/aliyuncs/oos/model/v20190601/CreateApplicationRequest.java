@@ -15,6 +15,9 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oos.Endpoint;
 
@@ -29,11 +32,16 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 
 	private String description;
 
+	@SerializedName("alarmConfig")
+	private AlarmConfig alarmConfig;
+
 	private String resourceGroupId;
 
 	private String tags;
 
 	private String name;
+
+	private String serviceId;
 	public CreateApplicationRequest() {
 		super("oos", "2019-06-01", "CreateApplication", "oos");
 		setMethod(MethodType.POST);
@@ -63,6 +71,17 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		if(description != null){
 			putQueryParameter("Description", description);
 		}
+	}
+
+	public AlarmConfig getAlarmConfig() {
+		return this.alarmConfig;
+	}
+
+	public void setAlarmConfig(AlarmConfig alarmConfig) {
+		this.alarmConfig = alarmConfig;	
+		if (alarmConfig != null) {
+			putQueryParameter("AlarmConfig" , new Gson().toJson(alarmConfig));
+		}	
 	}
 
 	public String getResourceGroupId() {
@@ -95,6 +114,53 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
+		if(serviceId != null){
+			putQueryParameter("ServiceId", serviceId);
+		}
+	}
+
+	public static class AlarmConfig {
+
+		@SerializedName("TemplateIds")
+		private List<String> templateIds;
+
+		@SerializedName("ContactGroups")
+		private List<String> contactGroups;
+
+		@SerializedName("HealthCheckUrl")
+		private String healthCheckUrl;
+
+		public List<String> getTemplateIds() {
+			return this.templateIds;
+		}
+
+		public void setTemplateIds(List<String> templateIds) {
+			this.templateIds = templateIds;
+		}
+
+		public List<String> getContactGroups() {
+			return this.contactGroups;
+		}
+
+		public void setContactGroups(List<String> contactGroups) {
+			this.contactGroups = contactGroups;
+		}
+
+		public String getHealthCheckUrl() {
+			return this.healthCheckUrl;
+		}
+
+		public void setHealthCheckUrl(String healthCheckUrl) {
+			this.healthCheckUrl = healthCheckUrl;
 		}
 	}
 

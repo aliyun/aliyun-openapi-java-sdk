@@ -15,6 +15,7 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.adb.Endpoint;
 
@@ -35,6 +36,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String resourceGroupId;
 
+	private List<Tag> tags;
+
 	private String period;
 
 	private String backupSetID;
@@ -48,6 +51,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 	private String zoneId;
 
 	private String computeResource;
+
+	private String kmsId;
 
 	private String elasticIOResource;
 
@@ -75,11 +80,15 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String restoreType;
 
+	private Boolean enableSSL;
+
 	private String dBNodeStorage;
 
 	private String executorCount;
 
 	private String vPCId;
+
+	private Boolean diskEncryption;
 
 	private String payType;
 	public CreateDBClusterRequest() {
@@ -144,6 +153,20 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getPeriod() {
@@ -220,6 +243,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.computeResource = computeResource;
 		if(computeResource != null){
 			putQueryParameter("ComputeResource", computeResource);
+		}
+	}
+
+	public String getKmsId() {
+		return this.kmsId;
+	}
+
+	public void setKmsId(String kmsId) {
+		this.kmsId = kmsId;
+		if(kmsId != null){
+			putQueryParameter("KmsId", kmsId);
 		}
 	}
 
@@ -366,6 +400,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public Boolean getEnableSSL() {
+		return this.enableSSL;
+	}
+
+	public void setEnableSSL(Boolean enableSSL) {
+		this.enableSSL = enableSSL;
+		if(enableSSL != null){
+			putQueryParameter("EnableSSL", enableSSL.toString());
+		}
+	}
+
 	public String getDBNodeStorage() {
 		return this.dBNodeStorage;
 	}
@@ -399,6 +444,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public Boolean getDiskEncryption() {
+		return this.diskEncryption;
+	}
+
+	public void setDiskEncryption(Boolean diskEncryption) {
+		this.diskEncryption = diskEncryption;
+		if(diskEncryption != null){
+			putQueryParameter("DiskEncryption", diskEncryption.toString());
+		}
+	}
+
 	public String getPayType() {
 		return this.payType;
 	}
@@ -407,6 +463,29 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.payType = payType;
 		if(payType != null){
 			putQueryParameter("PayType", payType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

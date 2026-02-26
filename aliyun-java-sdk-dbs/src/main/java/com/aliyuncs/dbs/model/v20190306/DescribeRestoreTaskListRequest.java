@@ -31,8 +31,6 @@ public class DescribeRestoreTaskListRequest extends RpcAcsRequest<DescribeRestor
 
 	private Integer pageNum;
 
-	private String ownerId;
-
 	private Long startTimestamp;
 
 	private Long endTimestamp;
@@ -40,8 +38,10 @@ public class DescribeRestoreTaskListRequest extends RpcAcsRequest<DescribeRestor
 	private String restoreTaskId;
 
 	private Integer pageSize;
+
+	private String ownerId;
 	public DescribeRestoreTaskListRequest() {
-		super("Dbs", "2019-03-06", "DescribeRestoreTaskList");
+		super("Dbs", "2019-03-06", "DescribeRestoreTaskList", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -79,17 +79,6 @@ public class DescribeRestoreTaskListRequest extends RpcAcsRequest<DescribeRestor
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 
@@ -134,6 +123,17 @@ public class DescribeRestoreTaskListRequest extends RpcAcsRequest<DescribeRestor
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

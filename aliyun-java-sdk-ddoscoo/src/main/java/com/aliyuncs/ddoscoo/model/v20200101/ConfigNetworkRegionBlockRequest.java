@@ -29,7 +29,7 @@ public class ConfigNetworkRegionBlockRequest extends RpcAcsRequest<ConfigNetwork
 
 	private String config;
 	public ConfigNetworkRegionBlockRequest() {
-		super("ddoscoo", "2020-01-01", "ConfigNetworkRegionBlock");
+		super("ddoscoo", "2020-01-01", "ConfigNetworkRegionBlock", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

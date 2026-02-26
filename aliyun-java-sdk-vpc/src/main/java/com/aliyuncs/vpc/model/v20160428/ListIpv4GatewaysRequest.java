@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -29,6 +30,8 @@ public class ListIpv4GatewaysRequest extends RpcAcsRequest<ListIpv4GatewaysRespo
 
 	private String ipv4GatewayName;
 
+	private String resourceGroupId;
+
 	private String nextToken;
 
 	private String ipv4GatewayId;
@@ -38,6 +41,8 @@ public class ListIpv4GatewaysRequest extends RpcAcsRequest<ListIpv4GatewaysRespo
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private List<Tags> tagss;
 
 	private String vpcId;
 
@@ -70,6 +75,17 @@ public class ListIpv4GatewaysRequest extends RpcAcsRequest<ListIpv4GatewaysRespo
 		this.ipv4GatewayName = ipv4GatewayName;
 		if(ipv4GatewayName != null){
 			putQueryParameter("Ipv4GatewayName", ipv4GatewayName);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -128,6 +144,20 @@ public class ListIpv4GatewaysRequest extends RpcAcsRequest<ListIpv4GatewaysRespo
 		}
 	}
 
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -147,6 +177,29 @@ public class ListIpv4GatewaysRequest extends RpcAcsRequest<ListIpv4GatewaysRespo
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public static class Tags {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

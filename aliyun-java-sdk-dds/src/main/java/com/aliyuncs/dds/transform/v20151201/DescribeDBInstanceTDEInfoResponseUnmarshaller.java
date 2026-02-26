@@ -24,6 +24,9 @@ public class DescribeDBInstanceTDEInfoResponseUnmarshaller {
 		
 		describeDBInstanceTDEInfoResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceTDEInfoResponse.RequestId"));
 		describeDBInstanceTDEInfoResponse.setTDEStatus(_ctx.stringValue("DescribeDBInstanceTDEInfoResponse.TDEStatus"));
+		describeDBInstanceTDEInfoResponse.setRoleARN(_ctx.stringValue("DescribeDBInstanceTDEInfoResponse.RoleARN"));
+		describeDBInstanceTDEInfoResponse.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceTDEInfoResponse.EncryptionKey"));
+		describeDBInstanceTDEInfoResponse.setEncryptorName(_ctx.stringValue("DescribeDBInstanceTDEInfoResponse.EncryptorName"));
 	 
 	 	return describeDBInstanceTDEInfoResponse;
 	}

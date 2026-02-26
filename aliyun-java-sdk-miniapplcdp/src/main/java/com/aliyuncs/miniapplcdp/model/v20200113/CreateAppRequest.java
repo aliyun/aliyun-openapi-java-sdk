@@ -42,7 +42,13 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 
 	private Boolean templated;
 
+	private String sourceCommitId;
+
 	private Boolean asynchronous;
+
+	private String platformVersion;
+
+	private String categoryId;
 	public CreateAppRequest() {
 		super("miniapplcdp", "2020-01-13", "CreateApp");
 		setMethod(MethodType.POST);
@@ -147,6 +153,17 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		}
 	}
 
+	public String getSourceCommitId() {
+		return this.sourceCommitId;
+	}
+
+	public void setSourceCommitId(String sourceCommitId) {
+		this.sourceCommitId = sourceCommitId;
+		if(sourceCommitId != null){
+			putQueryParameter("SourceCommitId", sourceCommitId);
+		}
+	}
+
 	public Boolean getAsynchronous() {
 		return this.asynchronous;
 	}
@@ -155,6 +172,28 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		this.asynchronous = asynchronous;
 		if(asynchronous != null){
 			putQueryParameter("Asynchronous", asynchronous.toString());
+		}
+	}
+
+	public String getPlatformVersion() {
+		return this.platformVersion;
+	}
+
+	public void setPlatformVersion(String platformVersion) {
+		this.platformVersion = platformVersion;
+		if(platformVersion != null){
+			putQueryParameter("PlatformVersion", platformVersion);
+		}
+	}
+
+	public String getCategoryId() {
+		return this.categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+		if(categoryId != null){
+			putQueryParameter("CategoryId", categoryId);
 		}
 	}
 

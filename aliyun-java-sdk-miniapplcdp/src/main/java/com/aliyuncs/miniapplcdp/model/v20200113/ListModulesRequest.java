@@ -26,11 +26,15 @@ public class ListModulesRequest extends RpcAcsRequest<ListModulesResponse> {
 
 	private String description;
 
+	private String source;
+
+	private String platform;
+
+	private Boolean hasOwnerApp;
+
 	private String moduleName;
 
 	private String moduleId;
-
-	private String platform;
 	public ListModulesRequest() {
 		super("miniapplcdp", "2020-01-13", "ListModules");
 		setMethod(MethodType.POST);
@@ -44,6 +48,39 @@ public class ListModulesRequest extends RpcAcsRequest<ListModulesResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
+	}
+
+	public String getPlatform() {
+		return this.platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
+		}
+	}
+
+	public Boolean getHasOwnerApp() {
+		return this.hasOwnerApp;
+	}
+
+	public void setHasOwnerApp(Boolean hasOwnerApp) {
+		this.hasOwnerApp = hasOwnerApp;
+		if(hasOwnerApp != null){
+			putQueryParameter("HasOwnerApp", hasOwnerApp.toString());
 		}
 	}
 
@@ -66,17 +103,6 @@ public class ListModulesRequest extends RpcAcsRequest<ListModulesResponse> {
 		this.moduleId = moduleId;
 		if(moduleId != null){
 			putQueryParameter("ModuleId", moduleId);
-		}
-	}
-
-	public String getPlatform() {
-		return this.platform;
-	}
-
-	public void setPlatform(String platform) {
-		this.platform = platform;
-		if(platform != null){
-			putQueryParameter("Platform", platform);
 		}
 	}
 

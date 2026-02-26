@@ -27,9 +27,13 @@ public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
 
 	private String traceID;
 
+	private Long pageSize;
+
 	private Long endTime;
 
 	private Long startTime;
+
+	private Long pageNumber;
 	public GetTraceRequest() {
 		super("ARMS", "2019-08-08", "GetTrace", "arms");
 		setMethod(MethodType.POST);
@@ -47,6 +51,17 @@ public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
 		this.traceID = traceID;
 		if(traceID != null){
 			putQueryParameter("TraceID", traceID);
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -69,6 +84,17 @@ public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

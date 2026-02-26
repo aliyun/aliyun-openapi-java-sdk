@@ -32,8 +32,8 @@ public class DescribeRealtimeDeliveryAccResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData.Length"); i++) {
 			AccData accData = new AccData();
 			accData.setTimeStamp(_ctx.stringValue("DescribeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData["+ i +"].TimeStamp"));
-			accData.setSuccessNum(_ctx.integerValue("DescribeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData["+ i +"].SuccessNum"));
 			accData.setFailedNum(_ctx.integerValue("DescribeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData["+ i +"].FailedNum"));
+			accData.setSuccessNum(_ctx.integerValue("DescribeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData["+ i +"].SuccessNum"));
 
 			reatTimeDeliveryAccData.add(accData);
 		}

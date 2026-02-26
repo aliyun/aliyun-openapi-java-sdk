@@ -37,7 +37,7 @@ public class UpdateDestinationRequest extends RpcAcsRequest<UpdateDestinationRes
 
 	private String name;
 	public UpdateDestinationRequest() {
-		super("Iot", "2018-01-20", "UpdateDestination");
+		super("Iot", "2018-01-20", "UpdateDestination", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

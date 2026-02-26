@@ -29,7 +29,7 @@ public class QueryDomainSuffixRequest extends RpcAcsRequest<QueryDomainSuffixRes
 
 	private String lang;
 	public QueryDomainSuffixRequest() {
-		super("Domain", "2018-01-29", "QueryDomainSuffix");
+		super("Domain", "2018-01-29", "QueryDomainSuffix", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,6 +33,8 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 
 	private String password;
 
+	private String sourceIp;
+
 	private Integer enable;
 
 	private String lang;
@@ -45,7 +47,11 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 
 	private Integer autoScan;
 
+	private Integer featureType;
+
 	private Integer logStoreDay;
+
+	private String certificatePermission;
 
 	private Integer resourceType;
 
@@ -104,6 +110,17 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 		this.password = password;
 		if(password != null){
 			putQueryParameter("Password", password);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 
@@ -173,6 +190,17 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 		}
 	}
 
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
+		}
+	}
+
 	public Integer getLogStoreDay() {
 		return this.logStoreDay;
 	}
@@ -181,6 +209,17 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 		this.logStoreDay = logStoreDay;
 		if(logStoreDay != null){
 			putQueryParameter("LogStoreDay", logStoreDay.toString());
+		}
+	}
+
+	public String getCertificatePermission() {
+		return this.certificatePermission;
+	}
+
+	public void setCertificatePermission(String certificatePermission) {
+		this.certificatePermission = certificatePermission;
+		if(certificatePermission != null){
+			putQueryParameter("CertificatePermission", certificatePermission);
 		}
 	}
 

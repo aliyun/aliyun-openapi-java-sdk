@@ -27,6 +27,8 @@ public class ReleaseDedicatedHostRequest extends RpcAcsRequest<ReleaseDedicatedH
 
 	private Long resourceOwnerId;
 
+	private Boolean terminateSubscription;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -51,6 +53,17 @@ public class ReleaseDedicatedHostRequest extends RpcAcsRequest<ReleaseDedicatedH
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getTerminateSubscription() {
+		return this.terminateSubscription;
+	}
+
+	public void setTerminateSubscription(Boolean terminateSubscription) {
+		this.terminateSubscription = terminateSubscription;
+		if(terminateSubscription != null){
+			putQueryParameter("TerminateSubscription", terminateSubscription.toString());
 		}
 	}
 

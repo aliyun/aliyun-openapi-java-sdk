@@ -45,6 +45,9 @@ public class DescribeCenChildInstanceRouteEntriesResponseUnmarshaller {
 			cenRouteEntry.setNextHopInstanceId(_ctx.stringValue("DescribeCenChildInstanceRouteEntriesResponse.CenRouteEntries["+ i +"].NextHopInstanceId"));
 			cenRouteEntry.setDestinationCidrBlock(_ctx.stringValue("DescribeCenChildInstanceRouteEntriesResponse.CenRouteEntries["+ i +"].DestinationCidrBlock"));
 			cenRouteEntry.setRouteTableId(_ctx.stringValue("DescribeCenChildInstanceRouteEntriesResponse.CenRouteEntries["+ i +"].RouteTableId"));
+			cenRouteEntry.setMed(_ctx.longValue("DescribeCenChildInstanceRouteEntriesResponse.CenRouteEntries["+ i +"].Med"));
+			cenRouteEntry.setVpnTunnelIp(_ctx.stringValue("DescribeCenChildInstanceRouteEntriesResponse.CenRouteEntries["+ i +"].VpnTunnelIp"));
+			cenRouteEntry.setVpnTunnelId(_ctx.stringValue("DescribeCenChildInstanceRouteEntriesResponse.CenRouteEntries["+ i +"].VpnTunnelId"));
 
 			List<String> communities = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCenChildInstanceRouteEntriesResponse.CenRouteEntries["+ i +"].Communities.Length"); j++) {

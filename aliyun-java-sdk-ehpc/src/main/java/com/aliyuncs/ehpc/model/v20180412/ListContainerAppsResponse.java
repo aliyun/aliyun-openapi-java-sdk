@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListContainerAppsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<ContainerAppsItem> containerApps;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListContainerAppsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListContainerAppsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ContainerAppsItem> getContainerApps() {
@@ -77,34 +77,26 @@ public class ListContainerAppsResponse extends AcsResponse {
 
 	public static class ContainerAppsItem {
 
-		private String id;
-
-		private String name;
+		private String type;
 
 		private String description;
+
+		private String createTime;
 
 		private String repository;
 
 		private String imageTag;
 
-		private String createTime;
+		private String name;
 
-		private String type;
+		private String id;
 
-		public String getId() {
-			return this.id;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getDescription() {
@@ -113,6 +105,14 @@ public class ListContainerAppsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getRepository() {
@@ -131,20 +131,20 @@ public class ListContainerAppsResponse extends AcsResponse {
 			this.imageTag = imageTag;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

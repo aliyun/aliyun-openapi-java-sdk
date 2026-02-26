@@ -30,15 +30,17 @@ public class CreateDataCorrectOrderRequest extends RpcAcsRequest<CreateDataCorre
 
 	private Long tid;
 
-	private String attachmentKey;
-
 	@SerializedName("param")
 	private Param param;
 
-	private String comment;
-
 	@SerializedName("relatedUserList")
 	private List<Long> relatedUserList;
+
+	private String realLoginUserUid;
+
+	private String attachmentKey;
+
+	private String comment;
 	public CreateDataCorrectOrderRequest() {
 		super("dms-enterprise", "2018-11-01", "CreateDataCorrectOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -59,17 +61,6 @@ public class CreateDataCorrectOrderRequest extends RpcAcsRequest<CreateDataCorre
 		}
 	}
 
-	public String getAttachmentKey() {
-		return this.attachmentKey;
-	}
-
-	public void setAttachmentKey(String attachmentKey) {
-		this.attachmentKey = attachmentKey;
-		if(attachmentKey != null){
-			putQueryParameter("AttachmentKey", attachmentKey);
-		}
-	}
-
 	public Param getParam() {
 		return this.param;
 	}
@@ -81,17 +72,6 @@ public class CreateDataCorrectOrderRequest extends RpcAcsRequest<CreateDataCorre
 		}	
 	}
 
-	public String getComment() {
-		return this.comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-		if(comment != null){
-			putQueryParameter("Comment", comment);
-		}
-	}
-
 	public List<Long> getRelatedUserList() {
 		return this.relatedUserList;
 	}
@@ -101,6 +81,39 @@ public class CreateDataCorrectOrderRequest extends RpcAcsRequest<CreateDataCorre
 		if (relatedUserList != null) {
 			putQueryParameter("RelatedUserList" , new Gson().toJson(relatedUserList));
 		}	
+	}
+
+	public String getRealLoginUserUid() {
+		return this.realLoginUserUid;
+	}
+
+	public void setRealLoginUserUid(String realLoginUserUid) {
+		this.realLoginUserUid = realLoginUserUid;
+		if(realLoginUserUid != null){
+			putQueryParameter("RealLoginUserUid", realLoginUserUid);
+		}
+	}
+
+	public String getAttachmentKey() {
+		return this.attachmentKey;
+	}
+
+	public void setAttachmentKey(String attachmentKey) {
+		this.attachmentKey = attachmentKey;
+		if(attachmentKey != null){
+			putQueryParameter("AttachmentKey", attachmentKey);
+		}
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+		if(comment != null){
+			putQueryParameter("Comment", comment);
+		}
 	}
 
 	public static class Param {

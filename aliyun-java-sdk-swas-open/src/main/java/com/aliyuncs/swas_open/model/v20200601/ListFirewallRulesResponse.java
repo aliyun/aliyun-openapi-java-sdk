@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListFirewallRulesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<FirewallRule> firewallRules;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListFirewallRulesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListFirewallRulesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<FirewallRule> getFirewallRules() {
@@ -77,11 +77,35 @@ public class ListFirewallRulesResponse extends AcsResponse {
 
 	public static class FirewallRule {
 
+		private String remark;
+
+		private String port;
+
 		private String ruleId;
 
 		private String ruleProtocol;
 
-		private String port;
+		private String policy;
+
+		private String sourceCidrIp;
+
+		private List<Tag> tags;
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
+		}
 
 		public String getRuleId() {
 			return this.ruleId;
@@ -99,12 +123,51 @@ public class ListFirewallRulesResponse extends AcsResponse {
 			this.ruleProtocol = ruleProtocol;
 		}
 
-		public String getPort() {
-			return this.port;
+		public String getPolicy() {
+			return this.policy;
 		}
 
-		public void setPort(String port) {
-			this.port = port;
+		public void setPolicy(String policy) {
+			this.policy = policy;
+		}
+
+		public String getSourceCidrIp() {
+			return this.sourceCidrIp;
+		}
+
+		public void setSourceCidrIp(String sourceCidrIp) {
+			this.sourceCidrIp = sourceCidrIp;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

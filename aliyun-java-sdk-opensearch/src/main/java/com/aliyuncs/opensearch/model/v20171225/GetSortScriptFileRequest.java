@@ -33,7 +33,7 @@ public class GetSortScriptFileRequest extends RoaAcsRequest<GetSortScriptFileRes
 
 	private String appGroupIdentity;
 	public GetSortScriptFileRequest() {
-		super("OpenSearch", "2017-12-25", "GetSortScriptFile", "opensearch");
+		super("OpenSearch", "2017-12-25", "GetSortScriptFile");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]");
 		setMethod(MethodType.GET);
 		try {

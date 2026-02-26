@@ -32,6 +32,7 @@ public class GetUserResponseUnmarshaller {
 		data.setUserStatus(_ctx.stringValue("GetUserResponse.Data.UserStatus"));
 		data.setUserType(_ctx.stringValue("GetUserResponse.Data.UserType"));
 		data.setUserSecret(_ctx.stringValue("GetUserResponse.Data.UserSecret"));
+		data.setPlatformVersion(_ctx.stringValue("GetUserResponse.Data.PlatformVersion"));
 		getUserResponse.setData(data);
 	 
 	 	return getUserResponse;

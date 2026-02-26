@@ -44,6 +44,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private SystemDisk systemDisk;
 
+	private ImageOptions imageOptions;
+
 	private Integer deploymentSetGroupNo;
 
 	private String systemDiskAutoSnapshotPolicyId;
@@ -88,6 +90,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Boolean passwordInherit;
 
+	private PrivateDnsNameOptions privateDnsNameOptions;
+
 	private String instanceType;
 
 	private List<Arn> arns;
@@ -103,6 +107,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private Integer spotDuration;
 
 	private List<String> securityGroupIdss;
+
+	private NetworkOptions networkOptions;
 
 	private String systemDiskSize;
 
@@ -121,6 +127,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private String keyPairName;
 
 	private Float spotPriceLimit;
+
+	private String cpuOptionsTopologyType;
 
 	private Integer storageSetPartitionNumber;
 
@@ -170,6 +178,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Integer amount;
 
+	private Boolean autoPay;
+
 	private String ownerAccount;
 
 	private String tenancy;
@@ -183,6 +193,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private Long launchTemplateVersion;
 
 	private List<DataDisk> dataDisks;
+
+	private ClockOptions clockOptions;
 
 	private String storageSetId;
 
@@ -300,6 +312,18 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("SystemDisk.Encrypted" , systemDisk.getEncrypted());
 				putQueryParameter("SystemDisk.KMSKeyId" , systemDisk.getKMSKeyId());
 				putQueryParameter("SystemDisk.EncryptAlgorithm" , systemDisk.getEncryptAlgorithm());
+		}	
+	}
+
+	public ImageOptions getImageOptions() {
+		return this.imageOptions;
+	}
+
+	public void setImageOptions(ImageOptions imageOptions) {
+		this.imageOptions = imageOptions;	
+		if (imageOptions != null) {
+			
+				putQueryParameter("ImageOptions.LoginAsNonRoot" , imageOptions.getLoginAsNonRoot());
 		}	
 	}
 
@@ -545,6 +569,22 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public PrivateDnsNameOptions getPrivateDnsNameOptions() {
+		return this.privateDnsNameOptions;
+	}
+
+	public void setPrivateDnsNameOptions(PrivateDnsNameOptions privateDnsNameOptions) {
+		this.privateDnsNameOptions = privateDnsNameOptions;	
+		if (privateDnsNameOptions != null) {
+			
+				putQueryParameter("PrivateDnsNameOptions.EnableInstanceIdDnsARecord" , privateDnsNameOptions.getEnableInstanceIdDnsARecord());
+				putQueryParameter("PrivateDnsNameOptions.EnableInstanceIdDnsAAAARecord" , privateDnsNameOptions.getEnableInstanceIdDnsAAAARecord());
+				putQueryParameter("PrivateDnsNameOptions.EnableIpDnsARecord" , privateDnsNameOptions.getEnableIpDnsARecord());
+				putQueryParameter("PrivateDnsNameOptions.EnableIpDnsPtrRecord" , privateDnsNameOptions.getEnableIpDnsPtrRecord());
+				putQueryParameter("PrivateDnsNameOptions.HostnameType" , privateDnsNameOptions.getHostnameType());
+		}	
+	}
+
 	public String getInstanceType() {
 		return this.instanceType;
 	}
@@ -636,6 +676,20 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 			for (int i = 0; i < securityGroupIdss.size(); i++) {
 				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
 			}
+		}	
+	}
+
+	public NetworkOptions getNetworkOptions() {
+		return this.networkOptions;
+	}
+
+	public void setNetworkOptions(NetworkOptions networkOptions) {
+		this.networkOptions = networkOptions;	
+		if (networkOptions != null) {
+			
+				putQueryParameter("NetworkOptions.EnableJumboFrame" , networkOptions.getEnableJumboFrame());
+				putQueryParameter("NetworkOptions.EnableNetworkEncryption" , networkOptions.getEnableNetworkEncryption());
+				putQueryParameter("NetworkOptions.BandwidthWeighting" , networkOptions.getBandwidthWeighting());
 		}	
 	}
 
@@ -735,6 +789,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.spotPriceLimit = spotPriceLimit;
 		if(spotPriceLimit != null){
 			putQueryParameter("SpotPriceLimit", spotPriceLimit.toString());
+		}
+	}
+
+	public String getCpuOptionsTopologyType() {
+		return this.cpuOptionsTopologyType;
+	}
+
+	public void setCpuOptionsTopologyType(String cpuOptionsTopologyType) {
+		this.cpuOptionsTopologyType = cpuOptionsTopologyType;
+		if(cpuOptionsTopologyType != null){
+			putQueryParameter("CpuOptions.TopologyType", cpuOptionsTopologyType);
 		}
 	}
 
@@ -1015,6 +1080,13 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 						putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Ipv6Address." + (i + 1) , networkInterfaces.get(depth1).getIpv6Addresss().get(i));
 					}
 				}
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkCardIndex" , networkInterfaces.get(depth1).getNetworkCardIndex());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".DeleteOnRelease" , networkInterfaces.get(depth1).getDeleteOnRelease());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceId" , networkInterfaces.get(depth1).getNetworkInterfaceId());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".RxQueueSize" , networkInterfaces.get(depth1).getRxQueueSize());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".TxQueueSize" , networkInterfaces.get(depth1).getTxQueueSize());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SourceDestCheck" , networkInterfaces.get(depth1).getSourceDestCheck());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecondaryPrivateIpAddressCount" , networkInterfaces.get(depth1).getSecondaryPrivateIpAddressCount());
 			}
 		}	
 	}
@@ -1027,6 +1099,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.amount = amount;
 		if(amount != null){
 			putQueryParameter("Amount", amount.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -1120,6 +1203,18 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".ProvisionedIops" , dataDisks.get(depth1).getProvisionedIops());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".BurstingEnabled" , dataDisks.get(depth1).getBurstingEnabled());
 			}
+		}	
+	}
+
+	public ClockOptions getClockOptions() {
+		return this.clockOptions;
+	}
+
+	public void setClockOptions(ClockOptions clockOptions) {
+		this.clockOptions = clockOptions;	
+		if (clockOptions != null) {
+			
+				putQueryParameter("ClockOptions.PtpStatus" , clockOptions.getPtpStatus());
 		}	
 	}
 
@@ -1219,6 +1314,72 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public static class ImageOptions {
+
+		private Boolean loginAsNonRoot;
+
+		public Boolean getLoginAsNonRoot() {
+			return this.loginAsNonRoot;
+		}
+
+		public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
+			this.loginAsNonRoot = loginAsNonRoot;
+		}
+	}
+
+	public static class PrivateDnsNameOptions {
+
+		private Boolean enableInstanceIdDnsARecord;
+
+		private Boolean enableInstanceIdDnsAAAARecord;
+
+		private Boolean enableIpDnsARecord;
+
+		private Boolean enableIpDnsPtrRecord;
+
+		private String hostnameType;
+
+		public Boolean getEnableInstanceIdDnsARecord() {
+			return this.enableInstanceIdDnsARecord;
+		}
+
+		public void setEnableInstanceIdDnsARecord(Boolean enableInstanceIdDnsARecord) {
+			this.enableInstanceIdDnsARecord = enableInstanceIdDnsARecord;
+		}
+
+		public Boolean getEnableInstanceIdDnsAAAARecord() {
+			return this.enableInstanceIdDnsAAAARecord;
+		}
+
+		public void setEnableInstanceIdDnsAAAARecord(Boolean enableInstanceIdDnsAAAARecord) {
+			this.enableInstanceIdDnsAAAARecord = enableInstanceIdDnsAAAARecord;
+		}
+
+		public Boolean getEnableIpDnsARecord() {
+			return this.enableIpDnsARecord;
+		}
+
+		public void setEnableIpDnsARecord(Boolean enableIpDnsARecord) {
+			this.enableIpDnsARecord = enableIpDnsARecord;
+		}
+
+		public Boolean getEnableIpDnsPtrRecord() {
+			return this.enableIpDnsPtrRecord;
+		}
+
+		public void setEnableIpDnsPtrRecord(Boolean enableIpDnsPtrRecord) {
+			this.enableIpDnsPtrRecord = enableIpDnsPtrRecord;
+		}
+
+		public String getHostnameType() {
+			return this.hostnameType;
+		}
+
+		public void setHostnameType(String hostnameType) {
+			this.hostnameType = hostnameType;
+		}
+	}
+
 	public static class Arn {
 
 		private String roleType;
@@ -1249,6 +1410,39 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setAssumeRoleFor(Long assumeRoleFor) {
 			this.assumeRoleFor = assumeRoleFor;
+		}
+	}
+
+	public static class NetworkOptions {
+
+		private Boolean enableJumboFrame;
+
+		private Boolean enableNetworkEncryption;
+
+		private String bandwidthWeighting;
+
+		public Boolean getEnableJumboFrame() {
+			return this.enableJumboFrame;
+		}
+
+		public void setEnableJumboFrame(Boolean enableJumboFrame) {
+			this.enableJumboFrame = enableJumboFrame;
+		}
+
+		public Boolean getEnableNetworkEncryption() {
+			return this.enableNetworkEncryption;
+		}
+
+		public void setEnableNetworkEncryption(Boolean enableNetworkEncryption) {
+			this.enableNetworkEncryption = enableNetworkEncryption;
+		}
+
+		public String getBandwidthWeighting() {
+			return this.bandwidthWeighting;
+		}
+
+		public void setBandwidthWeighting(String bandwidthWeighting) {
+			this.bandwidthWeighting = bandwidthWeighting;
 		}
 	}
 
@@ -1300,6 +1494,20 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		private Long ipv6AddressCount;
 
 		private List<String> ipv6Addresss;
+
+		private Integer networkCardIndex;
+
+		private Boolean deleteOnRelease;
+
+		private String networkInterfaceId;
+
+		private Integer rxQueueSize;
+
+		private Integer txQueueSize;
+
+		private Boolean sourceDestCheck;
+
+		private Integer secondaryPrivateIpAddressCount;
 
 		public String getVSwitchId() {
 			return this.vSwitchId;
@@ -1395,6 +1603,62 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setIpv6Addresss(List<String> ipv6Addresss) {
 			this.ipv6Addresss = ipv6Addresss;
+		}
+
+		public Integer getNetworkCardIndex() {
+			return this.networkCardIndex;
+		}
+
+		public void setNetworkCardIndex(Integer networkCardIndex) {
+			this.networkCardIndex = networkCardIndex;
+		}
+
+		public Boolean getDeleteOnRelease() {
+			return this.deleteOnRelease;
+		}
+
+		public void setDeleteOnRelease(Boolean deleteOnRelease) {
+			this.deleteOnRelease = deleteOnRelease;
+		}
+
+		public String getNetworkInterfaceId() {
+			return this.networkInterfaceId;
+		}
+
+		public void setNetworkInterfaceId(String networkInterfaceId) {
+			this.networkInterfaceId = networkInterfaceId;
+		}
+
+		public Integer getRxQueueSize() {
+			return this.rxQueueSize;
+		}
+
+		public void setRxQueueSize(Integer rxQueueSize) {
+			this.rxQueueSize = rxQueueSize;
+		}
+
+		public Integer getTxQueueSize() {
+			return this.txQueueSize;
+		}
+
+		public void setTxQueueSize(Integer txQueueSize) {
+			this.txQueueSize = txQueueSize;
+		}
+
+		public Boolean getSourceDestCheck() {
+			return this.sourceDestCheck;
+		}
+
+		public void setSourceDestCheck(Boolean sourceDestCheck) {
+			this.sourceDestCheck = sourceDestCheck;
+		}
+
+		public Integer getSecondaryPrivateIpAddressCount() {
+			return this.secondaryPrivateIpAddressCount;
+		}
+
+		public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
+			this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
 		}
 	}
 
@@ -1548,6 +1812,19 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setBurstingEnabled(Boolean burstingEnabled) {
 			this.burstingEnabled = burstingEnabled;
+		}
+	}
+
+	public static class ClockOptions {
+
+		private String ptpStatus;
+
+		public String getPtpStatus() {
+			return this.ptpStatus;
+		}
+
+		public void setPtpStatus(String ptpStatus) {
+			this.ptpStatus = ptpStatus;
 		}
 	}
 

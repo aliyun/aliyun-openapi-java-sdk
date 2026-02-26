@@ -32,6 +32,8 @@ public class ListCheckResultRequest extends RpcAcsRequest<ListCheckResultRespons
 
 	private List<String> instanceTypess;
 
+	private Boolean customParam;
+
 	private String checkKey;
 
 	private Integer pageSize;
@@ -39,6 +41,8 @@ public class ListCheckResultRequest extends RpcAcsRequest<ListCheckResultRespons
 	private String lang;
 
 	private List<String> vendorss;
+
+	private List<String> typess;
 
 	private Integer currentPage;
 
@@ -97,6 +101,17 @@ public class ListCheckResultRequest extends RpcAcsRequest<ListCheckResultRespons
 		}	
 	}
 
+	public Boolean getCustomParam() {
+		return this.customParam;
+	}
+
+	public void setCustomParam(Boolean customParam) {
+		this.customParam = customParam;
+		if(customParam != null){
+			putQueryParameter("CustomParam", customParam.toString());
+		}
+	}
+
 	public String getCheckKey() {
 		return this.checkKey;
 	}
@@ -139,6 +154,19 @@ public class ListCheckResultRequest extends RpcAcsRequest<ListCheckResultRespons
 		if (vendorss != null) {
 			for (int i = 0; i < vendorss.size(); i++) {
 				putQueryParameter("Vendors." + (i + 1) , vendorss.get(i));
+			}
+		}	
+	}
+
+	public List<String> getTypess() {
+		return this.typess;
+	}
+
+	public void setTypess(List<String> typess) {
+		this.typess = typess;	
+		if (typess != null) {
+			for (int i = 0; i < typess.size(); i++) {
+				putQueryParameter("Types." + (i + 1) , typess.get(i));
 			}
 		}	
 	}

@@ -33,7 +33,7 @@ public class DescribeAutoCcBlacklistRequest extends RpcAcsRequest<DescribeAutoCc
 
 	private String keyWord;
 	public DescribeAutoCcBlacklistRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeAutoCcBlacklist");
+		super("ddoscoo", "2020-01-01", "DescribeAutoCcBlacklist", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

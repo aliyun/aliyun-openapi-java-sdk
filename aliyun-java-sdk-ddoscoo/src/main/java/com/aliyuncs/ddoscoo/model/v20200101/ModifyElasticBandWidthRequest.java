@@ -29,7 +29,7 @@ public class ModifyElasticBandWidthRequest extends RpcAcsRequest<ModifyElasticBa
 
 	private Integer elasticBandwidth;
 	public ModifyElasticBandWidthRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyElasticBandWidth");
+		super("ddoscoo", "2020-01-01", "ModifyElasticBandWidth", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

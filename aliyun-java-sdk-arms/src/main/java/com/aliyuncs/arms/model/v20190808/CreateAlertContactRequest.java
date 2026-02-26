@@ -29,6 +29,8 @@ public class CreateAlertContactRequest extends RpcAcsRequest<CreateAlertContactR
 
 	private String contactName;
 
+	private String resourceGroupId;
+
 	private String dingRobotWebhookUrl;
 
 	private String email;
@@ -62,6 +64,17 @@ public class CreateAlertContactRequest extends RpcAcsRequest<CreateAlertContactR
 		this.contactName = contactName;
 		if(contactName != null){
 			putQueryParameter("ContactName", contactName);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

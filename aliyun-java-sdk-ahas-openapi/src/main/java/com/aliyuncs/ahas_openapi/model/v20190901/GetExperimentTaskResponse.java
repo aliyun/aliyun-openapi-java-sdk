@@ -25,48 +25,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetExperimentTaskResponse extends AcsResponse {
 
-	private String experimentId;
-
-	private String experimentName;
-
-	private Integer httpStatusCode;
+	private String taskId;
 
 	private String requestId;
 
-	private Long startTime;
+	private String experimentName;
 
 	private String state;
 
-	private Boolean success;
+	private String experimentId;
 
-	private String taskId;
+	private Integer httpStatusCode;
+
+	private Long startTime;
+
+	private Boolean success;
 
 	private String result;
 
+	private String namespace;
+
 	private List<ActivitiesItem> activities;
 
-	public String getExperimentId() {
-		return this.experimentId;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setExperimentId(String experimentId) {
-		this.experimentId = experimentId;
-	}
-
-	public String getExperimentName() {
-		return this.experimentName;
-	}
-
-	public void setExperimentName(String experimentName) {
-		this.experimentName = experimentName;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public String getRequestId() {
@@ -77,12 +63,12 @@ public class GetExperimentTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
+	public String getExperimentName() {
+		return this.experimentName;
 	}
 
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
+	public void setExperimentName(String experimentName) {
+		this.experimentName = experimentName;
 	}
 
 	public String getState() {
@@ -93,6 +79,30 @@ public class GetExperimentTaskResponse extends AcsResponse {
 		this.state = state;
 	}
 
+	public String getExperimentId() {
+		return this.experimentId;
+	}
+
+	public void setExperimentId(String experimentId) {
+		this.experimentId = experimentId;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -101,20 +111,20 @@ public class GetExperimentTaskResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
 	public String getResult() {
 		return this.result;
 	}
 
 	public void setResult(String result) {
 		this.result = result;
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
 	}
 
 	public List<ActivitiesItem> getActivities() {
@@ -127,49 +137,25 @@ public class GetExperimentTaskResponse extends AcsResponse {
 
 	public static class ActivitiesItem {
 
-		private String activityId;
-
-		private String activityName;
-
-		private String checkState;
-
 		private Long endTime;
-
-		private String experimentTaskId;
-
-		private String runResult;
 
 		private Long startTime;
 
+		private String checkState;
+
+		private String runResult;
+
 		private String state;
+
+		private String activityId;
 
 		private String phase;
 
+		private String activityName;
+
+		private String experimentTaskId;
+
 		private String taskId;
-
-		public String getActivityId() {
-			return this.activityId;
-		}
-
-		public void setActivityId(String activityId) {
-			this.activityId = activityId;
-		}
-
-		public String getActivityName() {
-			return this.activityName;
-		}
-
-		public void setActivityName(String activityName) {
-			this.activityName = activityName;
-		}
-
-		public String getCheckState() {
-			return this.checkState;
-		}
-
-		public void setCheckState(String checkState) {
-			this.checkState = checkState;
-		}
 
 		public Long getEndTime() {
 			return this.endTime;
@@ -177,22 +163,6 @@ public class GetExperimentTaskResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
-		}
-
-		public String getExperimentTaskId() {
-			return this.experimentTaskId;
-		}
-
-		public void setExperimentTaskId(String experimentTaskId) {
-			this.experimentTaskId = experimentTaskId;
-		}
-
-		public String getRunResult() {
-			return this.runResult;
-		}
-
-		public void setRunResult(String runResult) {
-			this.runResult = runResult;
 		}
 
 		public Long getStartTime() {
@@ -203,6 +173,22 @@ public class GetExperimentTaskResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
+		public String getCheckState() {
+			return this.checkState;
+		}
+
+		public void setCheckState(String checkState) {
+			this.checkState = checkState;
+		}
+
+		public String getRunResult() {
+			return this.runResult;
+		}
+
+		public void setRunResult(String runResult) {
+			this.runResult = runResult;
+		}
+
 		public String getState() {
 			return this.state;
 		}
@@ -211,12 +197,36 @@ public class GetExperimentTaskResponse extends AcsResponse {
 			this.state = state;
 		}
 
+		public String getActivityId() {
+			return this.activityId;
+		}
+
+		public void setActivityId(String activityId) {
+			this.activityId = activityId;
+		}
+
 		public String getPhase() {
 			return this.phase;
 		}
 
 		public void setPhase(String phase) {
 			this.phase = phase;
+		}
+
+		public String getActivityName() {
+			return this.activityName;
+		}
+
+		public void setActivityName(String activityName) {
+			this.activityName = activityName;
+		}
+
+		public String getExperimentTaskId() {
+			return this.experimentTaskId;
+		}
+
+		public void setExperimentTaskId(String experimentTaskId) {
+			this.experimentTaskId = experimentTaskId;
 		}
 
 		public String getTaskId() {

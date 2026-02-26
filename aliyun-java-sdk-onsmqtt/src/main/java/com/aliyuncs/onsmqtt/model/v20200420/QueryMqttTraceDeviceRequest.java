@@ -41,7 +41,7 @@ public class QueryMqttTraceDeviceRequest extends RpcAcsRequest<QueryMqttTraceDev
 
 	private Integer pageSize;
 	public QueryMqttTraceDeviceRequest() {
-		super("OnsMqtt", "2020-04-20", "QueryMqttTraceDevice");
+		super("OnsMqtt", "2020-04-20", "QueryMqttTraceDevice", "onsmqtt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

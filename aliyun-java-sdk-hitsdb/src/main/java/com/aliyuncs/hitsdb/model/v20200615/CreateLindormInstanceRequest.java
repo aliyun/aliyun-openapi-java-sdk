@@ -25,29 +25,75 @@ import com.aliyuncs.hitsdb.Endpoint;
 public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormInstanceResponse> {
 	   
 
+	private String archVersion;
+
 	private Long resourceOwnerId;
 
-	private String tsdbSpec;
+	private String autoRenewDuration;
 
-	private String filestoreSpec;
+	private String resourceGroupId;
 
-	private String duration;
+	private String logSpec;
+
+	private Boolean autoRenewal;
 
 	private String securityToken;
 
 	private Integer tsdbNum;
 
+	private String primaryVSwitchId;
+
+	private Integer solrNum;
+
+	private String instanceStorage;
+
+	private Long ownerId;
+
+	private Integer lindormNum;
+
+	private String vSwitchId;
+
+	private Integer streamNum;
+
+	private Integer logSingleStorage;
+
+	private String zoneId;
+
+	private String arbiterZoneId;
+
+	private String ltsSpec;
+
+	private String pricingCycle;
+
+	private String multiZoneCombination;
+
+	private String tsdbSpec;
+
+	private String primaryZoneId;
+
+	private String filestoreSpec;
+
+	private String duration;
+
 	private String diskCategory;
 
 	private String lindormSpec;
 
-	private Integer solrNum;
+	private String ltsNum;
 
 	private Integer coldStorage;
 
-	private String instanceStorage;
+	private Integer logNum;
+
+	private String standbyVSwitchId;
 
 	private String solrSpec;
+
+	private String logDiskCategory;
+
+	private Integer coreSingleStorage;
+
+	private String standbyZoneId;
 
 	private String resourceOwnerAccount;
 
@@ -57,21 +103,15 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 
 	private Integer filestoreNum;
 
-	private Long ownerId;
-
-	private Integer lindormNum;
+	private String streamSpec;
 
 	private String coreSpec;
 
-	private String vSwitchId;
-
 	private String vPCId;
-
-	private String zoneId;
 
 	private String payType;
 
-	private String pricingCycle;
+	private String arbiterVSwitchId;
 	public CreateLindormInstanceRequest() {
 		super("hitsdb", "2020-06-15", "CreateLindormInstance", "hitsdb");
 		setMethod(MethodType.POST);
@@ -79,6 +119,17 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getArchVersion() {
+		return this.archVersion;
+	}
+
+	public void setArchVersion(String archVersion) {
+		this.archVersion = archVersion;
+		if(archVersion != null){
+			putQueryParameter("ArchVersion", archVersion);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -92,36 +143,47 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		}
 	}
 
-	public String getTsdbSpec() {
-		return this.tsdbSpec;
+	public String getAutoRenewDuration() {
+		return this.autoRenewDuration;
 	}
 
-	public void setTsdbSpec(String tsdbSpec) {
-		this.tsdbSpec = tsdbSpec;
-		if(tsdbSpec != null){
-			putQueryParameter("TsdbSpec", tsdbSpec);
+	public void setAutoRenewDuration(String autoRenewDuration) {
+		this.autoRenewDuration = autoRenewDuration;
+		if(autoRenewDuration != null){
+			putQueryParameter("AutoRenewDuration", autoRenewDuration);
 		}
 	}
 
-	public String getFilestoreSpec() {
-		return this.filestoreSpec;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setFilestoreSpec(String filestoreSpec) {
-		this.filestoreSpec = filestoreSpec;
-		if(filestoreSpec != null){
-			putQueryParameter("FilestoreSpec", filestoreSpec);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
-	public String getDuration() {
-		return this.duration;
+	public String getLogSpec() {
+		return this.logSpec;
 	}
 
-	public void setDuration(String duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration);
+	public void setLogSpec(String logSpec) {
+		this.logSpec = logSpec;
+		if(logSpec != null){
+			putQueryParameter("LogSpec", logSpec);
+		}
+	}
+
+	public Boolean getAutoRenewal() {
+		return this.autoRenewal;
+	}
+
+	public void setAutoRenewal(Boolean autoRenewal) {
+		this.autoRenewal = autoRenewal;
+		if(autoRenewal != null){
+			putQueryParameter("AutoRenewal", autoRenewal.toString());
 		}
 	}
 
@@ -147,6 +209,193 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		}
 	}
 
+	public String getPrimaryVSwitchId() {
+		return this.primaryVSwitchId;
+	}
+
+	public void setPrimaryVSwitchId(String primaryVSwitchId) {
+		this.primaryVSwitchId = primaryVSwitchId;
+		if(primaryVSwitchId != null){
+			putQueryParameter("PrimaryVSwitchId", primaryVSwitchId);
+		}
+	}
+
+	public Integer getSolrNum() {
+		return this.solrNum;
+	}
+
+	public void setSolrNum(Integer solrNum) {
+		this.solrNum = solrNum;
+		if(solrNum != null){
+			putQueryParameter("SolrNum", solrNum.toString());
+		}
+	}
+
+	public String getInstanceStorage() {
+		return this.instanceStorage;
+	}
+
+	public void setInstanceStorage(String instanceStorage) {
+		this.instanceStorage = instanceStorage;
+		if(instanceStorage != null){
+			putQueryParameter("InstanceStorage", instanceStorage);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getLindormNum() {
+		return this.lindormNum;
+	}
+
+	public void setLindormNum(Integer lindormNum) {
+		this.lindormNum = lindormNum;
+		if(lindormNum != null){
+			putQueryParameter("LindormNum", lindormNum.toString());
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public Integer getStreamNum() {
+		return this.streamNum;
+	}
+
+	public void setStreamNum(Integer streamNum) {
+		this.streamNum = streamNum;
+		if(streamNum != null){
+			putQueryParameter("StreamNum", streamNum.toString());
+		}
+	}
+
+	public Integer getLogSingleStorage() {
+		return this.logSingleStorage;
+	}
+
+	public void setLogSingleStorage(Integer logSingleStorage) {
+		this.logSingleStorage = logSingleStorage;
+		if(logSingleStorage != null){
+			putQueryParameter("LogSingleStorage", logSingleStorage.toString());
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getArbiterZoneId() {
+		return this.arbiterZoneId;
+	}
+
+	public void setArbiterZoneId(String arbiterZoneId) {
+		this.arbiterZoneId = arbiterZoneId;
+		if(arbiterZoneId != null){
+			putQueryParameter("ArbiterZoneId", arbiterZoneId);
+		}
+	}
+
+	public String getLtsSpec() {
+		return this.ltsSpec;
+	}
+
+	public void setLtsSpec(String ltsSpec) {
+		this.ltsSpec = ltsSpec;
+		if(ltsSpec != null){
+			putQueryParameter("LtsSpec", ltsSpec);
+		}
+	}
+
+	public String getPricingCycle() {
+		return this.pricingCycle;
+	}
+
+	public void setPricingCycle(String pricingCycle) {
+		this.pricingCycle = pricingCycle;
+		if(pricingCycle != null){
+			putQueryParameter("PricingCycle", pricingCycle);
+		}
+	}
+
+	public String getMultiZoneCombination() {
+		return this.multiZoneCombination;
+	}
+
+	public void setMultiZoneCombination(String multiZoneCombination) {
+		this.multiZoneCombination = multiZoneCombination;
+		if(multiZoneCombination != null){
+			putQueryParameter("MultiZoneCombination", multiZoneCombination);
+		}
+	}
+
+	public String getTsdbSpec() {
+		return this.tsdbSpec;
+	}
+
+	public void setTsdbSpec(String tsdbSpec) {
+		this.tsdbSpec = tsdbSpec;
+		if(tsdbSpec != null){
+			putQueryParameter("TsdbSpec", tsdbSpec);
+		}
+	}
+
+	public String getPrimaryZoneId() {
+		return this.primaryZoneId;
+	}
+
+	public void setPrimaryZoneId(String primaryZoneId) {
+		this.primaryZoneId = primaryZoneId;
+		if(primaryZoneId != null){
+			putQueryParameter("PrimaryZoneId", primaryZoneId);
+		}
+	}
+
+	public String getFilestoreSpec() {
+		return this.filestoreSpec;
+	}
+
+	public void setFilestoreSpec(String filestoreSpec) {
+		this.filestoreSpec = filestoreSpec;
+		if(filestoreSpec != null){
+			putQueryParameter("FilestoreSpec", filestoreSpec);
+		}
+	}
+
+	public String getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration);
+		}
+	}
+
 	public String getDiskCategory() {
 		return this.diskCategory;
 	}
@@ -169,14 +418,14 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		}
 	}
 
-	public Integer getSolrNum() {
-		return this.solrNum;
+	public String getLtsNum() {
+		return this.ltsNum;
 	}
 
-	public void setSolrNum(Integer solrNum) {
-		this.solrNum = solrNum;
-		if(solrNum != null){
-			putQueryParameter("SolrNum", solrNum.toString());
+	public void setLtsNum(String ltsNum) {
+		this.ltsNum = ltsNum;
+		if(ltsNum != null){
+			putQueryParameter("LtsNum", ltsNum);
 		}
 	}
 
@@ -191,14 +440,25 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		}
 	}
 
-	public String getInstanceStorage() {
-		return this.instanceStorage;
+	public Integer getLogNum() {
+		return this.logNum;
 	}
 
-	public void setInstanceStorage(String instanceStorage) {
-		this.instanceStorage = instanceStorage;
-		if(instanceStorage != null){
-			putQueryParameter("InstanceStorage", instanceStorage);
+	public void setLogNum(Integer logNum) {
+		this.logNum = logNum;
+		if(logNum != null){
+			putQueryParameter("LogNum", logNum.toString());
+		}
+	}
+
+	public String getStandbyVSwitchId() {
+		return this.standbyVSwitchId;
+	}
+
+	public void setStandbyVSwitchId(String standbyVSwitchId) {
+		this.standbyVSwitchId = standbyVSwitchId;
+		if(standbyVSwitchId != null){
+			putQueryParameter("StandbyVSwitchId", standbyVSwitchId);
 		}
 	}
 
@@ -210,6 +470,39 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		this.solrSpec = solrSpec;
 		if(solrSpec != null){
 			putQueryParameter("SolrSpec", solrSpec);
+		}
+	}
+
+	public String getLogDiskCategory() {
+		return this.logDiskCategory;
+	}
+
+	public void setLogDiskCategory(String logDiskCategory) {
+		this.logDiskCategory = logDiskCategory;
+		if(logDiskCategory != null){
+			putQueryParameter("LogDiskCategory", logDiskCategory);
+		}
+	}
+
+	public Integer getCoreSingleStorage() {
+		return this.coreSingleStorage;
+	}
+
+	public void setCoreSingleStorage(Integer coreSingleStorage) {
+		this.coreSingleStorage = coreSingleStorage;
+		if(coreSingleStorage != null){
+			putQueryParameter("CoreSingleStorage", coreSingleStorage.toString());
+		}
+	}
+
+	public String getStandbyZoneId() {
+		return this.standbyZoneId;
+	}
+
+	public void setStandbyZoneId(String standbyZoneId) {
+		this.standbyZoneId = standbyZoneId;
+		if(standbyZoneId != null){
+			putQueryParameter("StandbyZoneId", standbyZoneId);
 		}
 	}
 
@@ -257,25 +550,14 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getStreamSpec() {
+		return this.streamSpec;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getLindormNum() {
-		return this.lindormNum;
-	}
-
-	public void setLindormNum(Integer lindormNum) {
-		this.lindormNum = lindormNum;
-		if(lindormNum != null){
-			putQueryParameter("LindormNum", lindormNum.toString());
+	public void setStreamSpec(String streamSpec) {
+		this.streamSpec = streamSpec;
+		if(streamSpec != null){
+			putQueryParameter("StreamSpec", streamSpec);
 		}
 	}
 
@@ -290,17 +572,6 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
 	public String getVPCId() {
 		return this.vPCId;
 	}
@@ -309,17 +580,6 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		this.vPCId = vPCId;
 		if(vPCId != null){
 			putQueryParameter("VPCId", vPCId);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
@@ -334,14 +594,14 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		}
 	}
 
-	public String getPricingCycle() {
-		return this.pricingCycle;
+	public String getArbiterVSwitchId() {
+		return this.arbiterVSwitchId;
 	}
 
-	public void setPricingCycle(String pricingCycle) {
-		this.pricingCycle = pricingCycle;
-		if(pricingCycle != null){
-			putQueryParameter("PricingCycle", pricingCycle);
+	public void setArbiterVSwitchId(String arbiterVSwitchId) {
+		this.arbiterVSwitchId = arbiterVSwitchId;
+		if(arbiterVSwitchId != null){
+			putQueryParameter("ArbiterVSwitchId", arbiterVSwitchId);
 		}
 	}
 

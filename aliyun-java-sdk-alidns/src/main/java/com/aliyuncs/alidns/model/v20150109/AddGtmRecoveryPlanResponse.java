@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddGtmRecoveryPlanResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String recoveryPlanId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getRecoveryPlanId() {
 		return this.recoveryPlanId;
@@ -42,6 +34,14 @@ public class AddGtmRecoveryPlanResponse extends AcsResponse {
 
 	public void setRecoveryPlanId(String recoveryPlanId) {
 		this.recoveryPlanId = recoveryPlanId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

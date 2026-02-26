@@ -27,16 +27,16 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateGatewayRouteCORSRequest extends RpcAcsRequest<UpdateGatewayRouteCORSResponse> {
 	   
 
-	@SerializedName("corsJSON")
-	private CorsJSON corsJSON;
-
 	private String gatewayUniqueId;
-
-	private String acceptLanguage;
 
 	private Long id;
 
 	private Long gatewayId;
+
+	@SerializedName("corsJSON")
+	private CorsJSON corsJSON;
+
+	private String acceptLanguage;
 	public UpdateGatewayRouteCORSRequest() {
 		super("mse", "2019-05-31", "UpdateGatewayRouteCORS", "mse");
 		setMethod(MethodType.POST);
@@ -44,17 +44,6 @@ public class UpdateGatewayRouteCORSRequest extends RpcAcsRequest<UpdateGatewayRo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public CorsJSON getCorsJSON() {
-		return this.corsJSON;
-	}
-
-	public void setCorsJSON(CorsJSON corsJSON) {
-		this.corsJSON = corsJSON;	
-		if (corsJSON != null) {
-			putQueryParameter("CorsJSON" , new Gson().toJson(corsJSON));
-		}	
 	}
 
 	public String getGatewayUniqueId() {
@@ -65,17 +54,6 @@ public class UpdateGatewayRouteCORSRequest extends RpcAcsRequest<UpdateGatewayRo
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
-		}
-	}
-
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 
@@ -98,6 +76,28 @@ public class UpdateGatewayRouteCORSRequest extends RpcAcsRequest<UpdateGatewayRo
 		this.gatewayId = gatewayId;
 		if(gatewayId != null){
 			putQueryParameter("GatewayId", gatewayId.toString());
+		}
+	}
+
+	public CorsJSON getCorsJSON() {
+		return this.corsJSON;
+	}
+
+	public void setCorsJSON(CorsJSON corsJSON) {
+		this.corsJSON = corsJSON;	
+		if (corsJSON != null) {
+			putQueryParameter("CorsJSON" , new Gson().toJson(corsJSON));
+		}	
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

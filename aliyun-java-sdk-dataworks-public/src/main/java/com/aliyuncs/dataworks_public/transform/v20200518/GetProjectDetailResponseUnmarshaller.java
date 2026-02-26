@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.dataworks_public.model.v20200518.GetProjectDetailResponse;
 import com.aliyuncs.dataworks_public.model.v20200518.GetProjectDetailResponse.Data;
+import com.aliyuncs.dataworks_public.model.v20200518.GetProjectDetailResponse.Data.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,12 +49,27 @@ public class GetProjectDetailResponseUnmarshaller {
 		data.setProtectedMode(_ctx.integerValue("GetProjectDetailResponse.Data.ProtectedMode"));
 		data.setTenantId(_ctx.longValue("GetProjectDetailResponse.Data.TenantId"));
 		data.setSchedulerRetryInterval(_ctx.integerValue("GetProjectDetailResponse.Data.SchedulerRetryInterval"));
+		data.setResourceManagerResourceGroupId(_ctx.stringValue("GetProjectDetailResponse.Data.ResourceManagerResourceGroupId"));
+		data.setDisableDevelopment(_ctx.booleanValue("GetProjectDetailResponse.Data.DisableDevelopment"));
+		data.setUseProxyOdpsAccount(_ctx.booleanValue("GetProjectDetailResponse.Data.UseProxyOdpsAccount"));
+		data.setTablePrivacyMode(_ctx.integerValue("GetProjectDetailResponse.Data.TablePrivacyMode"));
+		data.setIsDefault(_ctx.integerValue("GetProjectDetailResponse.Data.IsDefault"));
 
 		List<String> envTypes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetProjectDetailResponse.Data.EnvTypes.Length"); i++) {
 			envTypes.add(_ctx.stringValue("GetProjectDetailResponse.Data.EnvTypes["+ i +"]"));
 		}
 		data.setEnvTypes(envTypes);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetProjectDetailResponse.Data.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("GetProjectDetailResponse.Data.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("GetProjectDetailResponse.Data.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		data.setTags(tags);
 		getProjectDetailResponse.setData(data);
 	 
 	 	return getProjectDetailResponse;

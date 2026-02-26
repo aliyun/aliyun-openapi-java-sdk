@@ -28,7 +28,7 @@ public class SavePatentRecycleRequest extends RpcAcsRequest<SavePatentRecycleRes
 
 	private String applyNumbers;
 	public SavePatentRecycleRequest() {
-		super("Copyright", "2019-01-23", "SavePatentRecycle");
+		super("Copyright", "2019-01-23", "SavePatentRecycle", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

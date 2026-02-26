@@ -32,6 +32,8 @@ public class UpdateServiceResponseUnmarshaller {
 		data.setGmtCreate(_ctx.longValue("UpdateServiceResponse.Data.GmtCreate"));
 		data.setServiceName(_ctx.stringValue("UpdateServiceResponse.Data.ServiceName"));
 		data.setServiceDescription(_ctx.stringValue("UpdateServiceResponse.Data.ServiceDescription"));
+		data.setAuthorizationType(_ctx.stringValue("UpdateServiceResponse.Data.AuthorizationType"));
+		data.setAuthorizedAccount(_ctx.stringValue("UpdateServiceResponse.Data.AuthorizedAccount"));
 		updateServiceResponse.setData(data);
 	 
 	 	return updateServiceResponse;

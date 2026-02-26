@@ -33,7 +33,7 @@ public class ModifyFirstRankRequest extends RoaAcsRequest<ModifyFirstRankRespons
 
 	private String appGroupIdentity;
 	public ModifyFirstRankRequest() {
-		super("OpenSearch", "2017-12-25", "ModifyFirstRank", "opensearch");
+		super("OpenSearch", "2017-12-25", "ModifyFirstRank");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/first-ranks/[name]");
 		setMethod(MethodType.PUT);
 		try {

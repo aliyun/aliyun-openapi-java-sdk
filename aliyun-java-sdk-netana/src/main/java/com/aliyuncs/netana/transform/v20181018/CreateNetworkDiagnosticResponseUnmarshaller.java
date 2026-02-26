@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateNetworkDiagnosticResponseUnmarshaller {
 
-	public static CreateNetworkDiagnosticResponse unmarshall(CreateNetworkDiagnosticResponse createNetworkDiagnosticResponse, UnmarshallerContext context) {
+	public static CreateNetworkDiagnosticResponse unmarshall(CreateNetworkDiagnosticResponse createNetworkDiagnosticResponse, UnmarshallerContext _ctx) {
 		
-		createNetworkDiagnosticResponse.setRequestId(context.stringValue("CreateNetworkDiagnosticResponse.RequestId"));
-		createNetworkDiagnosticResponse.setStatus(context.stringValue("CreateNetworkDiagnosticResponse.Status"));
-		createNetworkDiagnosticResponse.setTpl(context.stringValue("CreateNetworkDiagnosticResponse.Tpl"));
-		createNetworkDiagnosticResponse.setParams(context.stringValue("CreateNetworkDiagnosticResponse.Params"));
+		createNetworkDiagnosticResponse.setRequestId(_ctx.stringValue("CreateNetworkDiagnosticResponse.RequestId"));
+		createNetworkDiagnosticResponse.setStatus(_ctx.stringValue("CreateNetworkDiagnosticResponse.Status"));
+		createNetworkDiagnosticResponse.setTpl(_ctx.stringValue("CreateNetworkDiagnosticResponse.Tpl"));
+		createNetworkDiagnosticResponse.setParams(_ctx.stringValue("CreateNetworkDiagnosticResponse.Params"));
 	 
 	 	return createNetworkDiagnosticResponse;
 	}

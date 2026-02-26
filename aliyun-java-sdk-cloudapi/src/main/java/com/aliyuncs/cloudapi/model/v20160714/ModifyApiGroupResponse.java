@@ -26,13 +26,15 @@ public class ModifyApiGroupResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String basePath;
+
 	private String groupId;
 
 	private String groupName;
 
-	private String subDomain;
-
 	private String description;
+
+	private String subDomain;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,6 +42,14 @@ public class ModifyApiGroupResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getBasePath() {
+		return this.basePath;
+	}
+
+	public void setBasePath(String basePath) {
+		this.basePath = basePath;
 	}
 
 	public String getGroupId() {
@@ -58,20 +68,20 @@ public class ModifyApiGroupResponse extends AcsResponse {
 		this.groupName = groupName;
 	}
 
-	public String getSubDomain() {
-		return this.subDomain;
-	}
-
-	public void setSubDomain(String subDomain) {
-		this.subDomain = subDomain;
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getSubDomain() {
+		return this.subDomain;
+	}
+
+	public void setSubDomain(String subDomain) {
+		this.subDomain = subDomain;
 	}
 
 	@Override

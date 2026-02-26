@@ -39,7 +39,7 @@ public class QuerySavingsPlansDeductLogRequest extends RpcAcsRequest<QuerySaving
 
 	private String instanceType;
 	public QuerySavingsPlansDeductLogRequest() {
-		super("BssOpenApi", "2017-12-14", "QuerySavingsPlansDeductLog");
+		super("BssOpenApi", "2017-12-14", "QuerySavingsPlansDeductLog", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

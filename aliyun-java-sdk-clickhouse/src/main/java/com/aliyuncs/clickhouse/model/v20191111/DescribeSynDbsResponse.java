@@ -27,6 +27,12 @@ public class DescribeSynDbsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer totalCount;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	private List<SynDb> synDbs;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class DescribeSynDbsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<SynDb> getSynDbs() {

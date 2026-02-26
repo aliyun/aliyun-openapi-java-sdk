@@ -27,7 +27,7 @@ public class SegmentVideoBodyRequest extends RpcAcsRequest<SegmentVideoBodyRespo
 
 	private String videoUrl;
 	public SegmentVideoBodyRequest() {
-		super("videoseg", "2020-03-20", "SegmentVideoBody", "videoseg");
+		super("videoseg", "2020-03-20", "SegmentVideoBody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

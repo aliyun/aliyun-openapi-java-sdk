@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.domain.model.v20180129.QueryDomainListResponse;
 import com.aliyuncs.domain.model.v20180129.QueryDomainListResponse.Domain;
+import com.aliyuncs.domain.model.v20180129.QueryDomainListResponse.Domain.TagItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -54,6 +55,20 @@ public class QueryDomainListResponseUnmarshaller {
 			domain.setProductId(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].ProductId"));
 			domain.setDomainStatus(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].DomainStatus"));
 			domain.setDomainType(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].DomainType"));
+			domain.setResourceGroupId(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].ResourceGroupId"));
+			domain.setCcompany(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].Ccompany"));
+			domain.setChgholderStatus(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].ChgholderStatus"));
+			domain.setRegistrar(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].Registrar"));
+
+			List<TagItem> tag = new ArrayList<TagItem>();
+			for (int j = 0; j < _ctx.lengthValue("QueryDomainListResponse.Data["+ i +"].Tag.Length"); j++) {
+				TagItem tagItem = new TagItem();
+				tagItem.setKey(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].Tag["+ j +"].Key"));
+				tagItem.setValue(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].Tag["+ j +"].Value"));
+
+				tag.add(tagItem);
+			}
+			domain.setTag(tag);
 
 			data.add(domain);
 		}

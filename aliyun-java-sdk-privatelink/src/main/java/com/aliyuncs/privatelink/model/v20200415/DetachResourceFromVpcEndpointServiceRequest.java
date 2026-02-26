@@ -34,6 +34,8 @@ public class DetachResourceFromVpcEndpointServiceRequest extends RpcAcsRequest<D
 
 	private String resourceType;
 
+	private String zoneId;
+
 	private String serviceId;
 	public DetachResourceFromVpcEndpointServiceRequest() {
 		super("Privatelink", "2020-04-15", "DetachResourceFromVpcEndpointService", "privatelink");
@@ -86,6 +88,17 @@ public class DetachResourceFromVpcEndpointServiceRequest extends RpcAcsRequest<D
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

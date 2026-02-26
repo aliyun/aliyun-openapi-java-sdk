@@ -51,6 +51,14 @@ public class CreateOrUpdateSilencePolicyResponse extends AcsResponse {
 
 		private String name;
 
+		private String state;
+
+		private String effectiveTimeType;
+
+		private String timePeriod;
+
+		private String timeSlots;
+
 		private List<MatchingRulesItem> matchingRules;
 
 		public Long getId() {
@@ -67,6 +75,38 @@ public class CreateOrUpdateSilencePolicyResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getEffectiveTimeType() {
+			return this.effectiveTimeType;
+		}
+
+		public void setEffectiveTimeType(String effectiveTimeType) {
+			this.effectiveTimeType = effectiveTimeType;
+		}
+
+		public String getTimePeriod() {
+			return this.timePeriod;
+		}
+
+		public void setTimePeriod(String timePeriod) {
+			this.timePeriod = timePeriod;
+		}
+
+		public String getTimeSlots() {
+			return this.timeSlots;
+		}
+
+		public void setTimeSlots(String timeSlots) {
+			this.timeSlots = timeSlots;
 		}
 
 		public List<MatchingRulesItem> getMatchingRules() {

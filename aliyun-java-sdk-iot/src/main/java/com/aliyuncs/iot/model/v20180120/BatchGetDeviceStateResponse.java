@@ -89,6 +89,8 @@ public class BatchGetDeviceStateResponse extends AcsResponse {
 
 		private String iotId;
 
+		private Long timestamp;
+
 		public String getDeviceId() {
 			return this.deviceId;
 		}
@@ -135,6 +137,14 @@ public class BatchGetDeviceStateResponse extends AcsResponse {
 
 		public void setIotId(String iotId) {
 			this.iotId = iotId;
+		}
+
+		public Long getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
 		}
 	}
 

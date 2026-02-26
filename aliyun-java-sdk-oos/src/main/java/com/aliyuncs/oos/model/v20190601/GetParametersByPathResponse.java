@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.GetParametersByPathResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -100,6 +101,8 @@ public class GetParametersByPathResponse extends AcsResponse {
 		private String id;
 
 		private String shareType;
+
+		private Map<Object,Object> tags;
 
 		public String getType() {
 			return this.type;
@@ -195,6 +198,14 @@ public class GetParametersByPathResponse extends AcsResponse {
 
 		public void setShareType(String shareType) {
 			this.shareType = shareType;
+		}
+
+		public Map<Object,Object> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
 		}
 	}
 

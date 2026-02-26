@@ -23,10 +23,10 @@ public class AddUserCollectionResponseUnmarshaller {
 	public static AddUserCollectionResponse unmarshall(AddUserCollectionResponse addUserCollectionResponse, UnmarshallerContext _ctx) {
 		
 		addUserCollectionResponse.setRequestId(_ctx.stringValue("AddUserCollectionResponse.RequestId"));
-		addUserCollectionResponse.setSuccess(_ctx.booleanValue("AddUserCollectionResponse.Success"));
 		addUserCollectionResponse.setStatus(_ctx.booleanValue("AddUserCollectionResponse.Status"));
-		addUserCollectionResponse.setErrorCode(_ctx.stringValue("AddUserCollectionResponse.ErrorCode"));
 		addUserCollectionResponse.setErrorMsg(_ctx.stringValue("AddUserCollectionResponse.ErrorMsg"));
+		addUserCollectionResponse.setErrorCode(_ctx.stringValue("AddUserCollectionResponse.ErrorCode"));
+		addUserCollectionResponse.setSuccess(_ctx.booleanValue("AddUserCollectionResponse.Success"));
 	 
 	 	return addUserCollectionResponse;
 	}

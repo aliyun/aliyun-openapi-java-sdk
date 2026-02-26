@@ -27,8 +27,6 @@ public class GetBaseStrategyPeriodResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
-	private Boolean onlyWeekdays;
-
 	private String requestId;
 
 	private Boolean success;
@@ -36,6 +34,10 @@ public class GetBaseStrategyPeriodResponse extends AcsResponse {
 	private String code;
 
 	private String message;
+
+	private Boolean onlyWeekdays;
+
+	private Boolean onlyWorkdays;
 
 	private List<TimeFrame> workingTime;
 
@@ -45,14 +47,6 @@ public class GetBaseStrategyPeriodResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public Boolean getOnlyWeekdays() {
-		return this.onlyWeekdays;
-	}
-
-	public void setOnlyWeekdays(Boolean onlyWeekdays) {
-		this.onlyWeekdays = onlyWeekdays;
 	}
 
 	public String getRequestId() {
@@ -85,6 +79,22 @@ public class GetBaseStrategyPeriodResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Boolean getOnlyWeekdays() {
+		return this.onlyWeekdays;
+	}
+
+	public void setOnlyWeekdays(Boolean onlyWeekdays) {
+		this.onlyWeekdays = onlyWeekdays;
+	}
+
+	public Boolean getOnlyWorkdays() {
+		return this.onlyWorkdays;
+	}
+
+	public void setOnlyWorkdays(Boolean onlyWorkdays) {
+		this.onlyWorkdays = onlyWorkdays;
 	}
 
 	public List<TimeFrame> getWorkingTime() {

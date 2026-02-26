@@ -27,6 +27,8 @@ public class QuerySmarttagJobResponse extends AcsResponse {
 
 	private String jobStatus;
 
+	private String message;
+
 	private String requestId;
 
 	private String userData;
@@ -39,6 +41,14 @@ public class QuerySmarttagJobResponse extends AcsResponse {
 
 	public void setJobStatus(String jobStatus) {
 		this.jobStatus = jobStatus;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -67,17 +77,9 @@ public class QuerySmarttagJobResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String type;
-
 		private String data;
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
+		private String type;
 
 		public String getData() {
 			return this.data;
@@ -85,6 +87,14 @@ public class QuerySmarttagJobResponse extends AcsResponse {
 
 		public void setData(String data) {
 			this.data = data;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

@@ -26,6 +26,8 @@ import com.aliyuncs.sts.Endpoint;
 public class AssumeRoleRequest extends RpcAcsRequest<AssumeRoleResponse> {
 	   
 
+	private String externalId;
+
 	private String roleSessionName;
 
 	private String policy;
@@ -41,6 +43,17 @@ public class AssumeRoleRequest extends RpcAcsRequest<AssumeRoleResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExternalId() {
+		return this.externalId;
+	}
+
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
+		if(externalId != null){
+			putQueryParameter("ExternalId", externalId);
+		}
 	}
 
 	public String getRoleSessionName() {

@@ -16,6 +16,7 @@ package com.aliyuncs.mse.transform.v20190531;
 
 import com.aliyuncs.mse.model.v20190531.QueryConfigResponse;
 import com.aliyuncs.mse.model.v20190531.QueryConfigResponse.Data;
+import com.aliyuncs.mse.model.v20190531.QueryConfigResponse.Data.NacosRunningEnv;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,9 +50,20 @@ public class QueryConfigResponseUnmarshaller {
 		data.setUserName(_ctx.stringValue("QueryConfigResponse.Data.UserName"));
 		data.setConfigSecretSupported(_ctx.booleanValue("QueryConfigResponse.Data.ConfigSecretSupported"));
 		data.setConfigSecretEnabled(_ctx.booleanValue("QueryConfigResponse.Data.ConfigSecretEnabled"));
+		data.setNamingAuthEnabled(_ctx.booleanValue("QueryConfigResponse.Data.NamingAuthEnabled"));
+		data.setNamingAuthSupported(_ctx.booleanValue("QueryConfigResponse.Data.NamingAuthSupported"));
 		data.setNamingCreateServiceSupported(_ctx.booleanValue("QueryConfigResponse.Data.NamingCreateServiceSupported"));
 		data.setMinSessionTimeout(_ctx.stringValue("QueryConfigResponse.Data.MinSessionTimeout"));
 		data.setMaxSessionTimeout(_ctx.stringValue("QueryConfigResponse.Data.MaxSessionTimeout"));
+		data.setSnapshotCount(_ctx.stringValue("QueryConfigResponse.Data.SnapshotCount"));
+		data.setConfigContentLimit(_ctx.longValue("QueryConfigResponse.Data.ConfigContentLimit"));
+		data.setExtendedTypesEnable(_ctx.booleanValue("QueryConfigResponse.Data.ExtendedTypesEnable"));
+		data.setEurekaSupported(_ctx.booleanValue("QueryConfigResponse.Data.EurekaSupported"));
+		data.setTLSEnabled(_ctx.booleanValue("QueryConfigResponse.Data.TLSEnabled"));
+
+		NacosRunningEnv nacosRunningEnv = new NacosRunningEnv();
+		nacosRunningEnv.setEmptyProtect(_ctx.booleanValue("QueryConfigResponse.Data.NacosRunningEnv.emptyProtect"));
+		data.setNacosRunningEnv(nacosRunningEnv);
 		queryConfigResponse.setData(data);
 	 
 	 	return queryConfigResponse;

@@ -29,6 +29,8 @@ public class ListClassesRequest extends RpcAcsRequest<ListClassesResponse> {
 
 	private String clientToken;
 
+	private String engine;
+
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -66,6 +68,17 @@ public class ListClassesRequest extends RpcAcsRequest<ListClassesResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
 		}
 	}
 

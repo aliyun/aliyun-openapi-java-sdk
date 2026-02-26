@@ -24,24 +24,24 @@ public class CreateDegradeRuleResponseUnmarshaller {
 	public static CreateDegradeRuleResponse unmarshall(CreateDegradeRuleResponse createDegradeRuleResponse, UnmarshallerContext _ctx) {
 		
 		createDegradeRuleResponse.setRequestId(_ctx.stringValue("CreateDegradeRuleResponse.RequestId"));
-		createDegradeRuleResponse.setCode(_ctx.stringValue("CreateDegradeRuleResponse.Code"));
 		createDegradeRuleResponse.setMessage(_ctx.stringValue("CreateDegradeRuleResponse.Message"));
+		createDegradeRuleResponse.setCode(_ctx.stringValue("CreateDegradeRuleResponse.Code"));
 		createDegradeRuleResponse.setSuccess(_ctx.booleanValue("CreateDegradeRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setAppName(_ctx.stringValue("CreateDegradeRuleResponse.Data.AppName"));
-		data.setEnable(_ctx.booleanValue("CreateDegradeRuleResponse.Data.Enable"));
-		data.setHalfOpenBaseAmountPerStep(_ctx.integerValue("CreateDegradeRuleResponse.Data.HalfOpenBaseAmountPerStep"));
-		data.setHalfOpenRecoveryStepNum(_ctx.integerValue("CreateDegradeRuleResponse.Data.HalfOpenRecoveryStepNum"));
-		data.setMinRequestAmount(_ctx.integerValue("CreateDegradeRuleResponse.Data.MinRequestAmount"));
-		data.setNamespace(_ctx.stringValue("CreateDegradeRuleResponse.Data.Namespace"));
-		data.setRecoveryTimeoutMs(_ctx.integerValue("CreateDegradeRuleResponse.Data.RecoveryTimeoutMs"));
-		data.setResource(_ctx.stringValue("CreateDegradeRuleResponse.Data.Resource"));
-		data.setRuleId(_ctx.longValue("CreateDegradeRuleResponse.Data.RuleId"));
 		data.setSlowRtMs(_ctx.integerValue("CreateDegradeRuleResponse.Data.SlowRtMs"));
+		data.setHalfOpenRecoveryStepNum(_ctx.integerValue("CreateDegradeRuleResponse.Data.HalfOpenRecoveryStepNum"));
+		data.setNamespace(_ctx.stringValue("CreateDegradeRuleResponse.Data.Namespace"));
 		data.setStatDurationMs(_ctx.integerValue("CreateDegradeRuleResponse.Data.StatDurationMs"));
+		data.setRuleId(_ctx.longValue("CreateDegradeRuleResponse.Data.RuleId"));
 		data.setStrategy(_ctx.integerValue("CreateDegradeRuleResponse.Data.Strategy"));
+		data.setResource(_ctx.stringValue("CreateDegradeRuleResponse.Data.Resource"));
+		data.setAppName(_ctx.stringValue("CreateDegradeRuleResponse.Data.AppName"));
+		data.setHalfOpenBaseAmountPerStep(_ctx.integerValue("CreateDegradeRuleResponse.Data.HalfOpenBaseAmountPerStep"));
+		data.setRecoveryTimeoutMs(_ctx.integerValue("CreateDegradeRuleResponse.Data.RecoveryTimeoutMs"));
+		data.setMinRequestAmount(_ctx.integerValue("CreateDegradeRuleResponse.Data.MinRequestAmount"));
 		data.setThreshold(_ctx.floatValue("CreateDegradeRuleResponse.Data.Threshold"));
+		data.setEnable(_ctx.booleanValue("CreateDegradeRuleResponse.Data.Enable"));
 		createDegradeRuleResponse.setData(data);
 	 
 	 	return createDegradeRuleResponse;

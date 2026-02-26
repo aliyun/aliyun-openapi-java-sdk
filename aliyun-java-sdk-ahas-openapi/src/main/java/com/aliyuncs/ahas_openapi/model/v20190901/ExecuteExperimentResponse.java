@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ExecuteExperimentResponse extends AcsResponse {
 
-	private String code;
+	private String taskId;
 
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
 	private Boolean success;
 
-	private String taskId;
-
-	public String getCode() {
-		return this.code;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public String getMessage() {
@@ -58,20 +58,20 @@ public class ExecuteExperimentResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
 	}
 
 	@Override

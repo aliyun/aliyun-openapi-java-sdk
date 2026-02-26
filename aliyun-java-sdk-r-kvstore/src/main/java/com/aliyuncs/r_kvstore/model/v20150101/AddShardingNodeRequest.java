@@ -45,9 +45,11 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 
 	private Long ownerId;
 
-	private String instanceId;
+	private String vSwitchId;
 
-	private String shardClass;
+	private Boolean forceTrans;
+
+	private String instanceId;
 	public AddShardingNodeRequest() {
 		super("R-kvstore", "2015-01-01", "AddShardingNode", "redisa");
 		setMethod(MethodType.POST);
@@ -167,6 +169,28 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 		}
 	}
 
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public Boolean getForceTrans() {
+		return this.forceTrans;
+	}
+
+	public void setForceTrans(Boolean forceTrans) {
+		this.forceTrans = forceTrans;
+		if(forceTrans != null){
+			putQueryParameter("ForceTrans", forceTrans.toString());
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -175,17 +199,6 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getShardClass() {
-		return this.shardClass;
-	}
-
-	public void setShardClass(String shardClass) {
-		this.shardClass = shardClass;
-		if(shardClass != null){
-			putQueryParameter("ShardClass", shardClass);
 		}
 	}
 

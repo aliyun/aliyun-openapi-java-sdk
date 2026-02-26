@@ -29,6 +29,8 @@ public class CreateFileDetectUploadUrlRequest extends RpcAcsRequest<CreateFileDe
 	private List<String> hashKeyLists;
 
 	private Integer type;
+
+	private List<HashKeyContextList> hashKeyContextLists;
 	public CreateFileDetectUploadUrlRequest() {
 		super("Sas", "2018-12-03", "CreateFileDetectUploadUrl");
 		setMethod(MethodType.POST);
@@ -59,6 +61,43 @@ public class CreateFileDetectUploadUrlRequest extends RpcAcsRequest<CreateFileDe
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type.toString());
+		}
+	}
+
+	public List<HashKeyContextList> getHashKeyContextLists() {
+		return this.hashKeyContextLists;
+	}
+
+	public void setHashKeyContextLists(List<HashKeyContextList> hashKeyContextLists) {
+		this.hashKeyContextLists = hashKeyContextLists;	
+		if (hashKeyContextLists != null) {
+			for (int depth1 = 0; depth1 < hashKeyContextLists.size(); depth1++) {
+				putQueryParameter("HashKeyContextList." + (depth1 + 1) + ".HashKey" , hashKeyContextLists.get(depth1).getHashKey());
+				putQueryParameter("HashKeyContextList." + (depth1 + 1) + ".FileSize" , hashKeyContextLists.get(depth1).getFileSize());
+			}
+		}	
+	}
+
+	public static class HashKeyContextList {
+
+		private String hashKey;
+
+		private Integer fileSize;
+
+		public String getHashKey() {
+			return this.hashKey;
+		}
+
+		public void setHashKey(String hashKey) {
+			this.hashKey = hashKey;
+		}
+
+		public Integer getFileSize() {
+			return this.fileSize;
+		}
+
+		public void setFileSize(Integer fileSize) {
+			this.fileSize = fileSize;
 		}
 	}
 

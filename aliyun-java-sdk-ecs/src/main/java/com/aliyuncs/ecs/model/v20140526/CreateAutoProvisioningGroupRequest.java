@@ -16,6 +16,8 @@ package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -48,9 +50,13 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private String launchConfigurationPassword;
 
+	private String launchConfigurationAutoReleaseTime;
+
 	private String payAsYouGoAllocationStrategy;
 
 	private String defaultTargetCapacityType;
+
+	private List<Tag> tags;
 
 	private String launchConfigurationKeyPairName;
 
@@ -62,7 +68,11 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private String launchTemplateId;
 
+	private PrePaidOptions prePaidOptions;
+
 	private Long ownerId;
+
+	private String launchConfigurationImageFamily;
 
 	private Integer launchConfigurationSystemDiskSize;
 
@@ -72,7 +82,11 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private String minTargetCapacity;
 
+	private String executionMode;
+
 	private Float maxSpotPrice;
+
+	private LaunchConfiguration launchConfiguration;
 
 	private List<LaunchConfigurationArn> launchConfigurationArns;
 
@@ -97,6 +111,9 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 	private String launchConfigurationInstanceDescription;
 
 	private String spotAllocationStrategy;
+
+	@SerializedName("resourcePoolOptions")
+	private ResourcePoolOptions resourcePoolOptions;
 
 	private Boolean terminateInstances;
 
@@ -134,6 +151,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private String payAsYouGoTargetCapacity;
 
+	private Boolean hibernationOptionsConfigured;
+
 	private String totalTargetCapacity;
 
 	private String spotTargetCapacity;
@@ -168,6 +187,10 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Category" , launchConfigurationDataDisks.get(depth1).getCategory());
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , launchConfigurationDataDisks.get(depth1).getDeleteWithInstance());
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Encrypted" , launchConfigurationDataDisks.get(depth1).getEncrypted());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".EncryptAlgorithm" , launchConfigurationDataDisks.get(depth1).getEncryptAlgorithm());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".ProvisionedIops" , launchConfigurationDataDisks.get(depth1).getProvisionedIops());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".BurstingEnabled" , launchConfigurationDataDisks.get(depth1).getBurstingEnabled());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".AutoSnapshotPolicyId" , launchConfigurationDataDisks.get(depth1).getAutoSnapshotPolicyId());
 			}
 		}	
 	}
@@ -286,6 +309,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		}
 	}
 
+	public String getLaunchConfigurationAutoReleaseTime() {
+		return this.launchConfigurationAutoReleaseTime;
+	}
+
+	public void setLaunchConfigurationAutoReleaseTime(String launchConfigurationAutoReleaseTime) {
+		this.launchConfigurationAutoReleaseTime = launchConfigurationAutoReleaseTime;
+		if(launchConfigurationAutoReleaseTime != null){
+			putQueryParameter("LaunchConfiguration.AutoReleaseTime", launchConfigurationAutoReleaseTime);
+		}
+	}
+
 	public String getPayAsYouGoAllocationStrategy() {
 		return this.payAsYouGoAllocationStrategy;
 	}
@@ -306,6 +340,20 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		if(defaultTargetCapacityType != null){
 			putQueryParameter("DefaultTargetCapacityType", defaultTargetCapacityType);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public String getLaunchConfigurationKeyPairName() {
@@ -367,6 +415,30 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		}
 	}
 
+	public PrePaidOptions getPrePaidOptions() {
+		return this.prePaidOptions;
+	}
+
+	public void setPrePaidOptions(PrePaidOptions prePaidOptions) {
+		this.prePaidOptions = prePaidOptions;	
+		if (prePaidOptions != null) {
+			
+				if (prePaidOptions.getSpecifyCapacityDistribution() != null) {
+					for (int depth1 = 0; depth1 < prePaidOptions.getSpecifyCapacityDistribution().size(); depth1++) {
+						if (prePaidOptions.getSpecifyCapacityDistribution().get(depth1) != null) {
+							
+								if (prePaidOptions.getSpecifyCapacityDistribution().get(depth1).getInstanceTypes() != null) {
+									for (int depth2 = 0; depth2 < prePaidOptions.getSpecifyCapacityDistribution().get(depth1).getInstanceTypes().size(); depth2++) {
+										putQueryParameter("PrePaidOptions.SpecifyCapacityDistribution." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) , prePaidOptions.getSpecifyCapacityDistribution().get(depth1).getInstanceTypes().get(depth2));
+									}
+								}
+								putQueryParameter("PrePaidOptions.SpecifyCapacityDistribution." + (depth1 + 1) + ".MinTargetCapacity" , prePaidOptions.getSpecifyCapacityDistribution().get(depth1).getMinTargetCapacity());
+						}
+					}
+				}
+		}	
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -375,6 +447,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLaunchConfigurationImageFamily() {
+		return this.launchConfigurationImageFamily;
+	}
+
+	public void setLaunchConfigurationImageFamily(String launchConfigurationImageFamily) {
+		this.launchConfigurationImageFamily = launchConfigurationImageFamily;
+		if(launchConfigurationImageFamily != null){
+			putQueryParameter("LaunchConfiguration.ImageFamily", launchConfigurationImageFamily);
 		}
 	}
 
@@ -422,6 +505,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		}
 	}
 
+	public String getExecutionMode() {
+		return this.executionMode;
+	}
+
+	public void setExecutionMode(String executionMode) {
+		this.executionMode = executionMode;
+		if(executionMode != null){
+			putQueryParameter("ExecutionMode", executionMode);
+		}
+	}
+
 	public Float getMaxSpotPrice() {
 		return this.maxSpotPrice;
 	}
@@ -431,6 +525,41 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		if(maxSpotPrice != null){
 			putQueryParameter("MaxSpotPrice", maxSpotPrice.toString());
 		}
+	}
+
+	public LaunchConfiguration getLaunchConfiguration() {
+		return this.launchConfiguration;
+	}
+
+	public void setLaunchConfiguration(LaunchConfiguration launchConfiguration) {
+		this.launchConfiguration = launchConfiguration;	
+		if (launchConfiguration != null) {
+			
+				putQueryParameter("LaunchConfiguration.Period" , launchConfiguration.getPeriod());
+				putQueryParameter("LaunchConfiguration.PeriodUnit" , launchConfiguration.getPeriodUnit());
+				putQueryParameter("LaunchConfiguration.AutoRenew" , launchConfiguration.getAutoRenew());
+				putQueryParameter("LaunchConfiguration.AutoRenewPeriod" , launchConfiguration.getAutoRenewPeriod());
+				putQueryParameter("LaunchConfiguration.SpotDuration" , launchConfiguration.getSpotDuration());
+				putQueryParameter("LaunchConfiguration.SpotInterruptionBehavior" , launchConfiguration.getSpotInterruptionBehavior());
+				if (launchConfiguration.getImageOptions() != null) {
+					
+						putQueryParameter("LaunchConfiguration.ImageOptions.LoginAsNonRoot" , launchConfiguration.getImageOptions().getLoginAsNonRoot());
+				}
+				if (launchConfiguration.getSchedulerOptions() != null) {
+					
+						putQueryParameter("LaunchConfiguration.SchedulerOptions.DedicatedHostId" , launchConfiguration.getSchedulerOptions().getDedicatedHostId());
+						putQueryParameter("LaunchConfiguration.SchedulerOptions.DedicatedHostClusterId" , launchConfiguration.getSchedulerOptions().getDedicatedHostClusterId());
+				}
+				if (launchConfiguration.getSecurityOptions() != null) {
+					
+						putQueryParameter("LaunchConfiguration.SecurityOptions.TrustedSystemMode" , launchConfiguration.getSecurityOptions().getTrustedSystemMode());
+				}
+				if (launchConfiguration.getCpuOptions() != null) {
+					
+						putQueryParameter("LaunchConfiguration.CpuOptions.Core" , launchConfiguration.getCpuOptions().getCore());
+						putQueryParameter("LaunchConfiguration.CpuOptions.ThreadsPerCore" , launchConfiguration.getCpuOptions().getThreadsPerCore());
+				}
+		}	
 	}
 
 	public List<LaunchConfigurationArn> getLaunchConfigurationArns() {
@@ -536,6 +665,9 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 				putQueryParameter("LaunchConfiguration.SystemDisk.Encrypted" , launchConfigurationSystemDisk.getEncrypted());
 				putQueryParameter("LaunchConfiguration.SystemDisk.KMSKeyId" , launchConfigurationSystemDisk.getKMSKeyId());
 				putQueryParameter("LaunchConfiguration.SystemDisk.EncryptAlgorithm" , launchConfigurationSystemDisk.getEncryptAlgorithm());
+				putQueryParameter("LaunchConfiguration.SystemDisk.ProvisionedIops" , launchConfigurationSystemDisk.getProvisionedIops());
+				putQueryParameter("LaunchConfiguration.SystemDisk.BurstingEnabled" , launchConfigurationSystemDisk.getBurstingEnabled());
+				putQueryParameter("LaunchConfiguration.SystemDisk.AutoSnapshotPolicyId" , launchConfigurationSystemDisk.getAutoSnapshotPolicyId());
 		}	
 	}
 
@@ -570,6 +702,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		if(spotAllocationStrategy != null){
 			putQueryParameter("SpotAllocationStrategy", spotAllocationStrategy);
 		}
+	}
+
+	public ResourcePoolOptions getResourcePoolOptions() {
+		return this.resourcePoolOptions;
+	}
+
+	public void setResourcePoolOptions(ResourcePoolOptions resourcePoolOptions) {
+		this.resourcePoolOptions = resourcePoolOptions;	
+		if (resourcePoolOptions != null) {
+			putQueryParameter("ResourcePoolOptions" , new Gson().toJson(resourcePoolOptions));
+		}	
 	}
 
 	public Boolean getTerminateInstances() {
@@ -629,6 +772,35 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".Priority" , launchTemplateConfigs.get(depth1).getPriority());
 				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".InstanceType" , launchTemplateConfigs.get(depth1).getInstanceType());
 				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".WeightedCapacity" , launchTemplateConfigs.get(depth1).getWeightedCapacity());
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".MaxQuantity" , launchTemplateConfigs.get(depth1).getMaxQuantity());
+				if (launchTemplateConfigs.get(depth1).getCoress() != null) {
+					for (int i = 0; i < launchTemplateConfigs.get(depth1).getCoress().size(); i++) {
+						putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".Cores." + (i + 1) , launchTemplateConfigs.get(depth1).getCoress().get(i));
+					}
+				}
+				if (launchTemplateConfigs.get(depth1).getMemoriess() != null) {
+					for (int i = 0; i < launchTemplateConfigs.get(depth1).getMemoriess().size(); i++) {
+						putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".Memories." + (i + 1) , launchTemplateConfigs.get(depth1).getMemoriess().get(i));
+					}
+				}
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".InstanceFamilyLevel" , launchTemplateConfigs.get(depth1).getInstanceFamilyLevel());
+				if (launchTemplateConfigs.get(depth1).getExcludedInstanceTypess() != null) {
+					for (int i = 0; i < launchTemplateConfigs.get(depth1).getExcludedInstanceTypess().size(); i++) {
+						putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".ExcludedInstanceTypes." + (i + 1) , launchTemplateConfigs.get(depth1).getExcludedInstanceTypess().get(i));
+					}
+				}
+				if (launchTemplateConfigs.get(depth1).getArchitecturess() != null) {
+					for (int i = 0; i < launchTemplateConfigs.get(depth1).getArchitecturess().size(); i++) {
+						putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".Architectures." + (i + 1) , launchTemplateConfigs.get(depth1).getArchitecturess().get(i));
+					}
+				}
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".BurstablePerformance" , launchTemplateConfigs.get(depth1).getBurstablePerformance());
+				if (launchTemplateConfigs.get(depth1).getSecondaryNetworkInterfaces() != null) {
+					for (int depth2 = 0; depth2 < launchTemplateConfigs.get(depth1).getSecondaryNetworkInterfaces().size(); depth2++) {
+						putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".SecondaryNetworkInterface." + (depth2 + 1) + ".VSwitchId" , launchTemplateConfigs.get(depth1).getSecondaryNetworkInterfaces().get(depth2).getVSwitchId());
+					}
+				}
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".ImageId" , launchTemplateConfigs.get(depth1).getImageId());
 			}
 		}	
 	}
@@ -779,6 +951,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		}
 	}
 
+	public Boolean getHibernationOptionsConfigured() {
+		return this.hibernationOptionsConfigured;
+	}
+
+	public void setHibernationOptionsConfigured(Boolean hibernationOptionsConfigured) {
+		this.hibernationOptionsConfigured = hibernationOptionsConfigured;
+		if(hibernationOptionsConfigured != null){
+			putQueryParameter("HibernationOptionsConfigured", hibernationOptionsConfigured.toString());
+		}
+	}
+
 	public String getTotalTargetCapacity() {
 		return this.totalTargetCapacity;
 	}
@@ -844,6 +1027,14 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		private Boolean deleteWithInstance;
 
 		private Boolean encrypted;
+
+		private String encryptAlgorithm;
+
+		private Long provisionedIops;
+
+		private Boolean burstingEnabled;
+
+		private String autoSnapshotPolicyId;
 
 		public String getPerformanceLevel() {
 			return this.performanceLevel;
@@ -924,6 +1115,61 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		public void setEncrypted(Boolean encrypted) {
 			this.encrypted = encrypted;
 		}
+
+		public String getEncryptAlgorithm() {
+			return this.encryptAlgorithm;
+		}
+
+		public void setEncryptAlgorithm(String encryptAlgorithm) {
+			this.encryptAlgorithm = encryptAlgorithm;
+		}
+
+		public Long getProvisionedIops() {
+			return this.provisionedIops;
+		}
+
+		public void setProvisionedIops(Long provisionedIops) {
+			this.provisionedIops = provisionedIops;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
+		}
+
+		public String getAutoSnapshotPolicyId() {
+			return this.autoSnapshotPolicyId;
+		}
+
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 	}
 
 	public static class SystemDiskConfig {
@@ -949,6 +1195,217 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setDiskCategory(String diskCategory) {
 			this.diskCategory = diskCategory;
+		}
+	}
+
+	public static class PrePaidOptions {
+
+		private List<SpecifyCapacityDistributionItem> specifyCapacityDistribution;
+
+		public List<SpecifyCapacityDistributionItem> getSpecifyCapacityDistribution() {
+			return this.specifyCapacityDistribution;
+		}
+
+		public void setSpecifyCapacityDistribution(List<SpecifyCapacityDistributionItem> specifyCapacityDistribution) {
+			this.specifyCapacityDistribution = specifyCapacityDistribution;
+		}
+
+		public static class SpecifyCapacityDistributionItem {
+
+			private List<String> instanceTypes;
+
+			private Integer minTargetCapacity;
+
+			public List<String> getInstanceTypes() {
+				return this.instanceTypes;
+			}
+
+			public void setInstanceTypes(List<String> instanceTypes) {
+				this.instanceTypes = instanceTypes;
+			}
+
+			public Integer getMinTargetCapacity() {
+				return this.minTargetCapacity;
+			}
+
+			public void setMinTargetCapacity(Integer minTargetCapacity) {
+				this.minTargetCapacity = minTargetCapacity;
+			}
+		}
+	}
+
+	public static class LaunchConfiguration {
+
+		private Integer period;
+
+		private String periodUnit;
+
+		private Boolean autoRenew;
+
+		private Integer autoRenewPeriod;
+
+		private Integer spotDuration;
+
+		private String spotInterruptionBehavior;
+
+		private ImageOptions imageOptions;
+
+		private SchedulerOptions schedulerOptions;
+
+		private SecurityOptions securityOptions;
+
+		private CpuOptions cpuOptions;
+
+		public Integer getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(Integer period) {
+			this.period = period;
+		}
+
+		public String getPeriodUnit() {
+			return this.periodUnit;
+		}
+
+		public void setPeriodUnit(String periodUnit) {
+			this.periodUnit = periodUnit;
+		}
+
+		public Boolean getAutoRenew() {
+			return this.autoRenew;
+		}
+
+		public void setAutoRenew(Boolean autoRenew) {
+			this.autoRenew = autoRenew;
+		}
+
+		public Integer getAutoRenewPeriod() {
+			return this.autoRenewPeriod;
+		}
+
+		public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+			this.autoRenewPeriod = autoRenewPeriod;
+		}
+
+		public Integer getSpotDuration() {
+			return this.spotDuration;
+		}
+
+		public void setSpotDuration(Integer spotDuration) {
+			this.spotDuration = spotDuration;
+		}
+
+		public String getSpotInterruptionBehavior() {
+			return this.spotInterruptionBehavior;
+		}
+
+		public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
+			this.spotInterruptionBehavior = spotInterruptionBehavior;
+		}
+
+		public ImageOptions getImageOptions() {
+			return this.imageOptions;
+		}
+
+		public void setImageOptions(ImageOptions imageOptions) {
+			this.imageOptions = imageOptions;
+		}
+
+		public SchedulerOptions getSchedulerOptions() {
+			return this.schedulerOptions;
+		}
+
+		public void setSchedulerOptions(SchedulerOptions schedulerOptions) {
+			this.schedulerOptions = schedulerOptions;
+		}
+
+		public SecurityOptions getSecurityOptions() {
+			return this.securityOptions;
+		}
+
+		public void setSecurityOptions(SecurityOptions securityOptions) {
+			this.securityOptions = securityOptions;
+		}
+
+		public CpuOptions getCpuOptions() {
+			return this.cpuOptions;
+		}
+
+		public void setCpuOptions(CpuOptions cpuOptions) {
+			this.cpuOptions = cpuOptions;
+		}
+
+		public static class ImageOptions {
+
+			private Boolean loginAsNonRoot;
+
+			public Boolean getLoginAsNonRoot() {
+				return this.loginAsNonRoot;
+			}
+
+			public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
+				this.loginAsNonRoot = loginAsNonRoot;
+			}
+		}
+
+		public static class SchedulerOptions {
+
+			private String dedicatedHostId;
+
+			private String dedicatedHostClusterId;
+
+			public String getDedicatedHostId() {
+				return this.dedicatedHostId;
+			}
+
+			public void setDedicatedHostId(String dedicatedHostId) {
+				this.dedicatedHostId = dedicatedHostId;
+			}
+
+			public String getDedicatedHostClusterId() {
+				return this.dedicatedHostClusterId;
+			}
+
+			public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
+				this.dedicatedHostClusterId = dedicatedHostClusterId;
+			}
+		}
+
+		public static class SecurityOptions {
+
+			private String trustedSystemMode;
+
+			public String getTrustedSystemMode() {
+				return this.trustedSystemMode;
+			}
+
+			public void setTrustedSystemMode(String trustedSystemMode) {
+				this.trustedSystemMode = trustedSystemMode;
+			}
+		}
+
+		public static class CpuOptions {
+
+			private Integer core;
+
+			private Integer threadsPerCore;
+
+			public Integer getCore() {
+				return this.core;
+			}
+
+			public void setCore(Integer core) {
+				this.core = core;
+			}
+
+			public Integer getThreadsPerCore() {
+				return this.threadsPerCore;
+			}
+
+			public void setThreadsPerCore(Integer threadsPerCore) {
+				this.threadsPerCore = threadsPerCore;
+			}
 		}
 	}
 
@@ -993,6 +1450,12 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		private String encryptAlgorithm;
 
+		private Long provisionedIops;
+
+		private Boolean burstingEnabled;
+
+		private String autoSnapshotPolicyId;
+
 		public String getEncrypted() {
 			return this.encrypted;
 		}
@@ -1016,6 +1479,55 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		public void setEncryptAlgorithm(String encryptAlgorithm) {
 			this.encryptAlgorithm = encryptAlgorithm;
 		}
+
+		public Long getProvisionedIops() {
+			return this.provisionedIops;
+		}
+
+		public void setProvisionedIops(Long provisionedIops) {
+			this.provisionedIops = provisionedIops;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
+		}
+
+		public String getAutoSnapshotPolicyId() {
+			return this.autoSnapshotPolicyId;
+		}
+
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		}
+	}
+
+	public static class ResourcePoolOptions {
+
+		@SerializedName("Strategy")
+		private String strategy;
+
+		@SerializedName("PrivatePoolIds")
+		private List<String> privatePoolIds;
+
+		public String getStrategy() {
+			return this.strategy;
+		}
+
+		public void setStrategy(String strategy) {
+			this.strategy = strategy;
+		}
+
+		public List<String> getPrivatePoolIds() {
+			return this.privatePoolIds;
+		}
+
+		public void setPrivatePoolIds(List<String> privatePoolIds) {
+			this.privatePoolIds = privatePoolIds;
+		}
 	}
 
 	public static class LaunchTemplateConfig {
@@ -1029,6 +1541,24 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		private String instanceType;
 
 		private Double weightedCapacity;
+
+		private Integer maxQuantity;
+
+		private List<Integer> coress;
+
+		private List<Float> memoriess;
+
+		private String instanceFamilyLevel;
+
+		private List<String> excludedInstanceTypess;
+
+		private List<String> architecturess;
+
+		private String burstablePerformance;
+
+		private List<SecondaryNetworkInterface> secondaryNetworkInterfaces;
+
+		private String imageId;
 
 		public String getVSwitchId() {
 			return this.vSwitchId;
@@ -1068,6 +1598,91 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setWeightedCapacity(Double weightedCapacity) {
 			this.weightedCapacity = weightedCapacity;
+		}
+
+		public Integer getMaxQuantity() {
+			return this.maxQuantity;
+		}
+
+		public void setMaxQuantity(Integer maxQuantity) {
+			this.maxQuantity = maxQuantity;
+		}
+
+		public List<Integer> getCoress() {
+			return this.coress;
+		}
+
+		public void setCoress(List<Integer> coress) {
+			this.coress = coress;
+		}
+
+		public List<Float> getMemoriess() {
+			return this.memoriess;
+		}
+
+		public void setMemoriess(List<Float> memoriess) {
+			this.memoriess = memoriess;
+		}
+
+		public String getInstanceFamilyLevel() {
+			return this.instanceFamilyLevel;
+		}
+
+		public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+			this.instanceFamilyLevel = instanceFamilyLevel;
+		}
+
+		public List<String> getExcludedInstanceTypess() {
+			return this.excludedInstanceTypess;
+		}
+
+		public void setExcludedInstanceTypess(List<String> excludedInstanceTypess) {
+			this.excludedInstanceTypess = excludedInstanceTypess;
+		}
+
+		public List<String> getArchitecturess() {
+			return this.architecturess;
+		}
+
+		public void setArchitecturess(List<String> architecturess) {
+			this.architecturess = architecturess;
+		}
+
+		public String getBurstablePerformance() {
+			return this.burstablePerformance;
+		}
+
+		public void setBurstablePerformance(String burstablePerformance) {
+			this.burstablePerformance = burstablePerformance;
+		}
+
+		public List<SecondaryNetworkInterface> getSecondaryNetworkInterfaces() {
+			return this.secondaryNetworkInterfaces;
+		}
+
+		public void setSecondaryNetworkInterfaces(List<SecondaryNetworkInterface> secondaryNetworkInterfaces) {
+			this.secondaryNetworkInterfaces = secondaryNetworkInterfaces;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public static class SecondaryNetworkInterface {
+
+			private String vSwitchId;
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
 		}
 	}
 

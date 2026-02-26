@@ -27,21 +27,21 @@ public class DeleteNacosInstanceRequest extends RpcAcsRequest<DeleteNacosInstanc
 
 	private String clusterName;
 
-	private String ip;
-
 	private Boolean ephemeral;
+
+	private String namespaceId;
+
+	private String serviceName;
+
+	private String ip;
 
 	private String groupName;
 
 	private String instanceId;
 
-	private String namespaceId;
-
 	private Integer port;
 
 	private String acceptLanguage;
-
-	private String serviceName;
 	public DeleteNacosInstanceRequest() {
 		super("mse", "2019-05-31", "DeleteNacosInstance", "mse");
 		setMethod(MethodType.POST);
@@ -62,17 +62,6 @@ public class DeleteNacosInstanceRequest extends RpcAcsRequest<DeleteNacosInstanc
 		}
 	}
 
-	public String getIp() {
-		return this.ip;
-	}
-
-	public void setIp(String ip) {
-		this.ip = ip;
-		if(ip != null){
-			putQueryParameter("Ip", ip);
-		}
-	}
-
 	public Boolean getEphemeral() {
 		return this.ephemeral;
 	}
@@ -81,6 +70,39 @@ public class DeleteNacosInstanceRequest extends RpcAcsRequest<DeleteNacosInstanc
 		this.ephemeral = ephemeral;
 		if(ephemeral != null){
 			putQueryParameter("Ephemeral", ephemeral.toString());
+		}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("Ip", ip);
 		}
 	}
 
@@ -106,17 +128,6 @@ public class DeleteNacosInstanceRequest extends RpcAcsRequest<DeleteNacosInstanc
 		}
 	}
 
-	public String getNamespaceId() {
-		return this.namespaceId;
-	}
-
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
-		}
-	}
-
 	public Integer getPort() {
 		return this.port;
 	}
@@ -136,17 +147,6 @@ public class DeleteNacosInstanceRequest extends RpcAcsRequest<DeleteNacosInstanc
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 

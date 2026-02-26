@@ -71,7 +71,9 @@ public class CreateIpSetsRequest extends RpcAcsRequest<CreateIpSetsResponse> {
 		if (accelerateRegions != null) {
 			for (int depth1 = 0; depth1 < accelerateRegions.size(); depth1++) {
 				putQueryParameter("AccelerateRegion." + (depth1 + 1) + ".AccelerateRegionId" , accelerateRegions.get(depth1).getAccelerateRegionId());
+				putQueryParameter("AccelerateRegion." + (depth1 + 1) + ".IpVersion" , accelerateRegions.get(depth1).getIpVersion());
 				putQueryParameter("AccelerateRegion." + (depth1 + 1) + ".Bandwidth" , accelerateRegions.get(depth1).getBandwidth());
+				putQueryParameter("AccelerateRegion." + (depth1 + 1) + ".IspType" , accelerateRegions.get(depth1).getIspType());
 			}
 		}	
 	}
@@ -80,7 +82,11 @@ public class CreateIpSetsRequest extends RpcAcsRequest<CreateIpSetsResponse> {
 
 		private String accelerateRegionId;
 
+		private String ipVersion;
+
 		private Integer bandwidth;
+
+		private String ispType;
 
 		public String getAccelerateRegionId() {
 			return this.accelerateRegionId;
@@ -90,12 +96,28 @@ public class CreateIpSetsRequest extends RpcAcsRequest<CreateIpSetsResponse> {
 			this.accelerateRegionId = accelerateRegionId;
 		}
 
+		public String getIpVersion() {
+			return this.ipVersion;
+		}
+
+		public void setIpVersion(String ipVersion) {
+			this.ipVersion = ipVersion;
+		}
+
 		public Integer getBandwidth() {
 			return this.bandwidth;
 		}
 
 		public void setBandwidth(Integer bandwidth) {
 			this.bandwidth = bandwidth;
+		}
+
+		public String getIspType() {
+			return this.ispType;
+		}
+
+		public void setIspType(String ispType) {
+			this.ispType = ispType;
 		}
 	}
 

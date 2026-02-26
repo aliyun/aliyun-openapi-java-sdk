@@ -29,6 +29,8 @@ public class DeleteShardingNodeRequest extends RpcAcsRequest<DeleteShardingNodeR
 
 	private String securityToken;
 
+	private String effectiveTime;
+
 	private String nodeId;
 
 	private Integer shardCount;
@@ -38,6 +40,8 @@ public class DeleteShardingNodeRequest extends RpcAcsRequest<DeleteShardingNodeR
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Boolean forceTrans;
 
 	private String instanceId;
 	public DeleteShardingNodeRequest() {
@@ -68,6 +72,17 @@ public class DeleteShardingNodeRequest extends RpcAcsRequest<DeleteShardingNodeR
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 
@@ -123,6 +138,17 @@ public class DeleteShardingNodeRequest extends RpcAcsRequest<DeleteShardingNodeR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getForceTrans() {
+		return this.forceTrans;
+	}
+
+	public void setForceTrans(Boolean forceTrans) {
+		this.forceTrans = forceTrans;
+		if(forceTrans != null){
+			putQueryParameter("ForceTrans", forceTrans.toString());
 		}
 	}
 

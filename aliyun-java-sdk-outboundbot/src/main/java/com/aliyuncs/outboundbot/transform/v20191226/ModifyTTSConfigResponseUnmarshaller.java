@@ -36,6 +36,7 @@ public class ModifyTTSConfigResponseUnmarshaller {
 		tTSConfig.setVolume(_ctx.stringValue("ModifyTTSConfigResponse.TTSConfig.Volume"));
 		tTSConfig.setInstanceId(_ctx.stringValue("ModifyTTSConfigResponse.TTSConfig.InstanceId"));
 		tTSConfig.setScriptId(_ctx.stringValue("ModifyTTSConfigResponse.TTSConfig.ScriptId"));
+		tTSConfig.setPitchRate(_ctx.stringValue("ModifyTTSConfigResponse.TTSConfig.PitchRate"));
 		modifyTTSConfigResponse.setTTSConfig(tTSConfig);
 	 
 	 	return modifyTTSConfigResponse;

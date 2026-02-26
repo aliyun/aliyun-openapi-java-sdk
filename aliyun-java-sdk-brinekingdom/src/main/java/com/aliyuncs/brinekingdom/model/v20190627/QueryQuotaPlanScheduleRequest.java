@@ -17,7 +17,6 @@ package com.aliyuncs.brinekingdom.model.v20190627;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.brinekingdom.Endpoint;
 
 /**
  * @author auto create
@@ -30,10 +29,6 @@ public class QueryQuotaPlanScheduleRequest extends RpcAcsRequest<QueryQuotaPlanS
 	public QueryQuotaPlanScheduleRequest() {
 		super("brinekingdom", "2019-06-27", "QueryQuotaPlanSchedule");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public List<Long> getQuotaPlanIdss() {

@@ -47,29 +47,23 @@ public class DescribeLiveLazyPullStreamConfigResponse extends AcsResponse {
 
 	public static class LiveLazyPullConfig {
 
-		private String domainName;
-
 		private String appName;
 
-		private String pullDomainName;
+		private String pullArgs;
 
 		private String pullAppName;
 
 		private String pullProtocol;
 
-		private String pullAuthType;
-
 		private String pullAuthKey;
 
-		private String pullArgs;
+		private String pullDomainName;
 
-		public String getDomainName() {
-			return this.domainName;
-		}
+		private String domainName;
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
+		private String pullAuthType;
+
+		private String transcodeLazy;
 
 		public String getAppName() {
 			return this.appName;
@@ -79,12 +73,12 @@ public class DescribeLiveLazyPullStreamConfigResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public String getPullDomainName() {
-			return this.pullDomainName;
+		public String getPullArgs() {
+			return this.pullArgs;
 		}
 
-		public void setPullDomainName(String pullDomainName) {
-			this.pullDomainName = pullDomainName;
+		public void setPullArgs(String pullArgs) {
+			this.pullArgs = pullArgs;
 		}
 
 		public String getPullAppName() {
@@ -103,14 +97,6 @@ public class DescribeLiveLazyPullStreamConfigResponse extends AcsResponse {
 			this.pullProtocol = pullProtocol;
 		}
 
-		public String getPullAuthType() {
-			return this.pullAuthType;
-		}
-
-		public void setPullAuthType(String pullAuthType) {
-			this.pullAuthType = pullAuthType;
-		}
-
 		public String getPullAuthKey() {
 			return this.pullAuthKey;
 		}
@@ -119,12 +105,36 @@ public class DescribeLiveLazyPullStreamConfigResponse extends AcsResponse {
 			this.pullAuthKey = pullAuthKey;
 		}
 
-		public String getPullArgs() {
-			return this.pullArgs;
+		public String getPullDomainName() {
+			return this.pullDomainName;
 		}
 
-		public void setPullArgs(String pullArgs) {
-			this.pullArgs = pullArgs;
+		public void setPullDomainName(String pullDomainName) {
+			this.pullDomainName = pullDomainName;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public String getPullAuthType() {
+			return this.pullAuthType;
+		}
+
+		public void setPullAuthType(String pullAuthType) {
+			this.pullAuthType = pullAuthType;
+		}
+
+		public String getTranscodeLazy() {
+			return this.transcodeLazy;
+		}
+
+		public void setTranscodeLazy(String transcodeLazy) {
+			this.transcodeLazy = transcodeLazy;
 		}
 	}
 

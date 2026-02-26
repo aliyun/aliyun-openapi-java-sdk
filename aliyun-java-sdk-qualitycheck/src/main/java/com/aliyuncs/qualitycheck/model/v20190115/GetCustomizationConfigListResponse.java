@@ -89,6 +89,8 @@ public class GetCustomizationConfigListResponse extends AcsResponse {
 
 		private String modeCustomizationId;
 
+		private Integer asrVersion;
+
 		public Integer getTaskType() {
 			return this.taskType;
 		}
@@ -135,6 +137,14 @@ public class GetCustomizationConfigListResponse extends AcsResponse {
 
 		public void setModeCustomizationId(String modeCustomizationId) {
 			this.modeCustomizationId = modeCustomizationId;
+		}
+
+		public Integer getAsrVersion() {
+			return this.asrVersion;
+		}
+
+		public void setAsrVersion(Integer asrVersion) {
+			this.asrVersion = asrVersion;
 		}
 	}
 

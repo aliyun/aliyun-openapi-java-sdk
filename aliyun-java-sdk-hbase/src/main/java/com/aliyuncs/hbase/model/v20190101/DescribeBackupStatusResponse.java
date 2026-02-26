@@ -26,11 +26,11 @@ public class DescribeBackupStatusResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String clusterId;
+	private String bdsClusterId;
 
 	private String backupStatus;
 
-	private String bdsClusterId;
+	private String clusterId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,12 +40,12 @@ public class DescribeBackupStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getBdsClusterId() {
+		return this.bdsClusterId;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
+	public void setBdsClusterId(String bdsClusterId) {
+		this.bdsClusterId = bdsClusterId;
 	}
 
 	public String getBackupStatus() {
@@ -56,12 +56,12 @@ public class DescribeBackupStatusResponse extends AcsResponse {
 		this.backupStatus = backupStatus;
 	}
 
-	public String getBdsClusterId() {
-		return this.bdsClusterId;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setBdsClusterId(String bdsClusterId) {
-		this.bdsClusterId = bdsClusterId;
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
 	}
 
 	@Override

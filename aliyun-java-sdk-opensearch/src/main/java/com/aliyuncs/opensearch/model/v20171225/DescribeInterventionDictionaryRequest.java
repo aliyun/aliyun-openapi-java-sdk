@@ -27,7 +27,7 @@ public class DescribeInterventionDictionaryRequest extends RoaAcsRequest<Describ
 
 	private String name;
 	public DescribeInterventionDictionaryRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeInterventionDictionary", "opensearch");
+		super("OpenSearch", "2017-12-25", "DescribeInterventionDictionary");
 		setUriPattern("/v4/openapi/intervention-dictionaries/[name]");
 		setMethod(MethodType.GET);
 		try {

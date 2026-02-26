@@ -32,11 +32,11 @@ public class DescribeDcdnWafDomainResponseUnmarshaller {
 		List<OutPutDomain> outPutDomains = new ArrayList<OutPutDomain>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnWafDomainResponse.OutPutDomains.Length"); i++) {
 			OutPutDomain outPutDomain = new OutPutDomain();
+			outPutDomain.setAclStatus(_ctx.integerValue("DescribeDcdnWafDomainResponse.OutPutDomains["+ i +"].AclStatus"));
 			outPutDomain.setStatus(_ctx.integerValue("DescribeDcdnWafDomainResponse.OutPutDomains["+ i +"].Status"));
 			outPutDomain.setDomain(_ctx.stringValue("DescribeDcdnWafDomainResponse.OutPutDomains["+ i +"].Domain"));
-			outPutDomain.setWafStatus(_ctx.integerValue("DescribeDcdnWafDomainResponse.OutPutDomains["+ i +"].WafStatus"));
 			outPutDomain.setCcStatus(_ctx.integerValue("DescribeDcdnWafDomainResponse.OutPutDomains["+ i +"].CcStatus"));
-			outPutDomain.setAclStatus(_ctx.integerValue("DescribeDcdnWafDomainResponse.OutPutDomains["+ i +"].AclStatus"));
+			outPutDomain.setWafStatus(_ctx.integerValue("DescribeDcdnWafDomainResponse.OutPutDomains["+ i +"].WafStatus"));
 
 			outPutDomains.add(outPutDomain);
 		}

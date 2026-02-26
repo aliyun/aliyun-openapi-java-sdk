@@ -19,8 +19,10 @@ import java.util.List;
 
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop;
+import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.DesktopDuration;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.Disk;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.FotaUpdate;
+import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.ResourceGroup;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.Session;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -82,6 +84,15 @@ public class DescribeDesktopsResponseUnmarshaller {
 			desktop.setOfficeSiteVpcType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].OfficeSiteVpcType"));
 			desktop.setPlatform(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].Platform"));
 			desktop.setSessionType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].SessionType"));
+			desktop.setSnapshotPolicyId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].SnapshotPolicyId"));
+			desktop.setSnapshotPolicyName(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].SnapshotPolicyName"));
+			desktop.setBindAmount(_ctx.integerValue("DescribeDesktopsResponse.Desktops["+ i +"].BindAmount"));
+			desktop.setHibernationOptionsConfigured(_ctx.booleanValue("DescribeDesktopsResponse.Desktops["+ i +"].HibernationOptionsConfigured"));
+			desktop.setSupportHibernation(_ctx.booleanValue("DescribeDesktopsResponse.Desktops["+ i +"].SupportHibernation"));
+			desktop.setHibernationBeta(_ctx.booleanValue("DescribeDesktopsResponse.Desktops["+ i +"].HibernationBeta"));
+			desktop.setSubPayType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].SubPayType"));
+			desktop.setGpuInstanceGroupId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].GpuInstanceGroupId"));
+			desktop.setQosRuleId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].QosRuleId"));
 
 			List<String> endUserIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].EndUserIds.Length"); j++) {
@@ -89,11 +100,31 @@ public class DescribeDesktopsResponseUnmarshaller {
 			}
 			desktop.setEndUserIds(endUserIds);
 
+			List<String> managementFlags = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].ManagementFlags.Length"); j++) {
+				managementFlags.add(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].ManagementFlags["+ j +"]"));
+			}
+			desktop.setManagementFlags(managementFlags);
+
+			List<String> policyGroupIdList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].PolicyGroupIdList.Length"); j++) {
+				policyGroupIdList.add(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].PolicyGroupIdList["+ j +"]"));
+			}
+			desktop.setPolicyGroupIdList(policyGroupIdList);
+
+			List<String> policyGroupNameList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].PolicyGroupNameList.Length"); j++) {
+				policyGroupNameList.add(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].PolicyGroupNameList["+ j +"]"));
+			}
+			desktop.setPolicyGroupNameList(policyGroupNameList);
+
 			FotaUpdate fotaUpdate = new FotaUpdate();
 			fotaUpdate.setCurrentAppVersion(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.CurrentAppVersion"));
 			fotaUpdate.setNewAppVersion(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.NewAppVersion"));
 			fotaUpdate.setReleaseNote(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.ReleaseNote"));
 			fotaUpdate.setSize(_ctx.longValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.Size"));
+			fotaUpdate.setReleaseNoteEn(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.ReleaseNoteEn"));
+			fotaUpdate.setReleaseNoteJp(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.ReleaseNoteJp"));
 			desktop.setFotaUpdate(fotaUpdate);
 
 			List<Disk> disks = new ArrayList<Disk>();
@@ -128,6 +159,36 @@ public class DescribeDesktopsResponseUnmarshaller {
 				sessions.add(session);
 			}
 			desktop.setSessions(sessions);
+
+			List<DesktopDuration> desktopDurationList = new ArrayList<DesktopDuration>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList.Length"); j++) {
+				DesktopDuration desktopDuration = new DesktopDuration();
+				desktopDuration.setPackageId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].PackageId"));
+				desktopDuration.setPackageCreationTime(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].PackageCreationTime"));
+				desktopDuration.setPackageExpiredTime(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].PackageExpiredTime"));
+				desktopDuration.setUsedDuration(_ctx.longValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].UsedDuration"));
+				desktopDuration.setTotalDuration(_ctx.longValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].TotalDuration"));
+				desktopDuration.setPackageStatus(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].PackageStatus"));
+				desktopDuration.setPackageType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].PackageType"));
+				desktopDuration.setPeriodStartTime(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].PeriodStartTime"));
+				desktopDuration.setPeriodEndTime(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].PeriodEndTime"));
+				desktopDuration.setPostPaidLimitFee(_ctx.floatValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].PostPaidLimitFee"));
+				desktopDuration.setPackageUsedUpStrategy(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].PackageUsedUpStrategy"));
+				desktopDuration.setOrderInstanceId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopDurationList["+ j +"].OrderInstanceId"));
+
+				desktopDurationList.add(desktopDuration);
+			}
+			desktop.setDesktopDurationList(desktopDurationList);
+
+			List<ResourceGroup> resourceGroups = new ArrayList<ResourceGroup>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].ResourceGroups.Length"); j++) {
+				ResourceGroup resourceGroup = new ResourceGroup();
+				resourceGroup.setName(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].ResourceGroups["+ j +"].Name"));
+				resourceGroup.setId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].ResourceGroups["+ j +"].Id"));
+
+				resourceGroups.add(resourceGroup);
+			}
+			desktop.setResourceGroups(resourceGroups);
 
 			desktops.add(desktop);
 		}

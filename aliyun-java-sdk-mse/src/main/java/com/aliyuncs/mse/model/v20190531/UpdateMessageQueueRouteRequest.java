@@ -28,12 +28,18 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateMessageQueueRouteRequest extends RpcAcsRequest<UpdateMessageQueueRouteResponse> {
 	   
 
-	@SerializedName("tags")
-	private List<String> tags;
+	private String appName;
 
 	private Boolean enable;
 
+	@SerializedName("tags")
+	private List<String> tags;
+
+	private String filterSide;
+
 	private String appId;
+
+	private String namespace;
 
 	private String acceptLanguage;
 
@@ -47,15 +53,15 @@ public class UpdateMessageQueueRouteRequest extends RpcAcsRequest<UpdateMessageQ
 		} catch (Exception e) {}
 	}
 
-	public List<String> getTags() {
-		return this.tags;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setTags(List<String> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			putQueryParameter("Tags" , new Gson().toJson(tags));
-		}	
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public Boolean getEnable() {
@@ -69,6 +75,28 @@ public class UpdateMessageQueueRouteRequest extends RpcAcsRequest<UpdateMessageQ
 		}
 	}
 
+	public List<String> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<String> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			putQueryParameter("Tags" , new Gson().toJson(tags));
+		}	
+	}
+
+	public String getFilterSide() {
+		return this.filterSide;
+	}
+
+	public void setFilterSide(String filterSide) {
+		this.filterSide = filterSide;
+		if(filterSide != null){
+			putQueryParameter("FilterSide", filterSide);
+		}
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -77,6 +105,17 @@ public class UpdateMessageQueueRouteRequest extends RpcAcsRequest<UpdateMessageQ
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

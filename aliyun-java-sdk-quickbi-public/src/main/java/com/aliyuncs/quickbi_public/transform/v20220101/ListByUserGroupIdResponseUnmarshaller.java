@@ -41,15 +41,15 @@ public class ListByUserGroupIdResponseUnmarshaller {
 		List<UserGroupModelsItem> userGroupModels = new ArrayList<UserGroupModelsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListByUserGroupIdResponse.Result.UserGroupModels.Length"); i++) {
 			UserGroupModelsItem userGroupModelsItem = new UserGroupModelsItem();
-			userGroupModelsItem.setIdentifiedPath(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].IdentifiedPath"));
-			userGroupModelsItem.setParentUsergroupId(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].ParentUsergroupId"));
-			userGroupModelsItem.setModifiedTime(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].ModifiedTime"));
-			userGroupModelsItem.setCreateUser(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].CreateUser"));
-			userGroupModelsItem.setUsergroupName(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].UsergroupName"));
 			userGroupModelsItem.setCreateTime(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].CreateTime"));
+			userGroupModelsItem.setCreateUser(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].CreateUser"));
+			userGroupModelsItem.setIdentifiedPath(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].IdentifiedPath"));
+			userGroupModelsItem.setModifiedTime(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].ModifiedTime"));
+			userGroupModelsItem.setModifyUser(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].ModifyUser"));
+			userGroupModelsItem.setParentUsergroupId(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].ParentUsergroupId"));
 			userGroupModelsItem.setUsergroupDesc(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].UsergroupDesc"));
 			userGroupModelsItem.setUsergroupId(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].UsergroupId"));
-			userGroupModelsItem.setModifyUser(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].ModifyUser"));
+			userGroupModelsItem.setUsergroupName(_ctx.stringValue("ListByUserGroupIdResponse.Result.UserGroupModels["+ i +"].UsergroupName"));
 
 			userGroupModels.add(userGroupModelsItem);
 		}

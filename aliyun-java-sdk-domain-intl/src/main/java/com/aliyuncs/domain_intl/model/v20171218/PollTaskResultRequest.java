@@ -15,16 +15,20 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PollTaskResultRequest extends RpcAcsRequest<PollTaskResultResponse> {
-	
-	public PollTaskResultRequest() {
-		super("Domain-intl", "2017-12-18", "PollTaskResult", "domain");
-	}
+	   
+
+	private String domainName;
+
+	private Integer pageNum;
+
+	private Integer taskResultStatus;
 
 	private String instanceId;
 
@@ -32,15 +36,46 @@ public class PollTaskResultRequest extends RpcAcsRequest<PollTaskResultResponse>
 
 	private String taskNo;
 
-	private String domainName;
-
 	private Integer pageSize;
 
 	private String lang;
+	public PollTaskResultRequest() {
+		super("Domain-intl", "2017-12-18", "PollTaskResult");
+		setMethod(MethodType.POST);
+	}
 
-	private Integer pageNum;
+	public String getDomainName() {
+		return this.domainName;
+	}
 
-	private Integer taskResultStatus;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getTaskResultStatus() {
+		return this.taskResultStatus;
+	}
+
+	public void setTaskResultStatus(Integer taskResultStatus) {
+		this.taskResultStatus = taskResultStatus;
+		if(taskResultStatus != null){
+			putQueryParameter("TaskResultStatus", taskResultStatus.toString());
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -75,17 +110,6 @@ public class PollTaskResultRequest extends RpcAcsRequest<PollTaskResultResponse>
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -105,28 +129,6 @@ public class PollTaskResultRequest extends RpcAcsRequest<PollTaskResultResponse>
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public Integer getTaskResultStatus() {
-		return this.taskResultStatus;
-	}
-
-	public void setTaskResultStatus(Integer taskResultStatus) {
-		this.taskResultStatus = taskResultStatus;
-		if(taskResultStatus != null){
-			putQueryParameter("TaskResultStatus", taskResultStatus.toString());
 		}
 	}
 

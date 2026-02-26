@@ -39,9 +39,17 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 	private String gDNDescription;
 
+	private String globalDomainName;
+
+	private String dBClusterId;
+
+	private String resourceGroupId;
+
 	private List<Connection> connections;
 
 	private List<DBCluster> dBClusters;
+
+	private Labels labels;
 
 	public String getGDNStatus() {
 		return this.gDNStatus;
@@ -99,6 +107,30 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 		this.gDNDescription = gDNDescription;
 	}
 
+	public String getGlobalDomainName() {
+		return this.globalDomainName;
+	}
+
+	public void setGlobalDomainName(String globalDomainName) {
+		this.globalDomainName = globalDomainName;
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
 	public List<Connection> getConnections() {
 		return this.connections;
 	}
@@ -113,6 +145,14 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 	public void setDBClusters(List<DBCluster> dBClusters) {
 		this.dBClusters = dBClusters;
+	}
+
+	public Labels getLabels() {
+		return this.labels;
+	}
+
+	public void setLabels(Labels labels) {
+		this.labels = labels;
 	}
 
 	public static class Connection {
@@ -174,7 +214,13 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 		private String dBClusterDescription;
 
+		private String category;
+
 		private String role;
+
+		private String serverlessType;
+
+		private String memberStatus;
 
 		private List<DBNode> dBNodes;
 
@@ -274,12 +320,36 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 			this.dBClusterDescription = dBClusterDescription;
 		}
 
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
 		public String getRole() {
 			return this.role;
 		}
 
 		public void setRole(String role) {
 			this.role = role;
+		}
+
+		public String getServerlessType() {
+			return this.serverlessType;
+		}
+
+		public void setServerlessType(String serverlessType) {
+			this.serverlessType = serverlessType;
+		}
+
+		public String getMemberStatus() {
+			return this.memberStatus;
+		}
+
+		public void setMemberStatus(String memberStatus) {
+			this.memberStatus = memberStatus;
 		}
 
 		public List<DBNode> getDBNodes() {
@@ -381,6 +451,19 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 			public void setDBNodeId(String dBNodeId) {
 				this.dBNodeId = dBNodeId;
 			}
+		}
+	}
+
+	public static class Labels {
+
+		private String gDNVersion;
+
+		public String getGDNVersion() {
+			return this.gDNVersion;
+		}
+
+		public void setGDNVersion(String gDNVersion) {
+			this.gDNVersion = gDNVersion;
 		}
 	}
 

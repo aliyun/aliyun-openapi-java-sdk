@@ -26,9 +26,11 @@ public class GetAggregatorRequest extends RpcAcsRequest<GetAggregatorResponse> {
 	   
 
 	private String aggregatorId;
+
+	private String tag;
 	public GetAggregatorRequest() {
-		super("Config", "2020-09-07", "GetAggregator");
-		setMethod(MethodType.GET);
+		super("Config", "2020-09-07", "GetAggregator", "config");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -43,6 +45,17 @@ public class GetAggregatorRequest extends RpcAcsRequest<GetAggregatorResponse> {
 		this.aggregatorId = aggregatorId;
 		if(aggregatorId != null){
 			putQueryParameter("AggregatorId", aggregatorId);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

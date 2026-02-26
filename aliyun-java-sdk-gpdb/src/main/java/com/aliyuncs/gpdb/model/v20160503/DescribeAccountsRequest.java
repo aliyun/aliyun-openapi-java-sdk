@@ -25,16 +25,29 @@ import com.aliyuncs.gpdb.Endpoint;
 public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsResponse> {
 	   
 
+	private String accountType;
+
 	private String accountName;
 
 	private String dBInstanceId;
 	public DescribeAccountsRequest() {
-		super("gpdb", "2016-05-03", "DescribeAccounts");
+		super("gpdb", "2016-05-03", "DescribeAccounts", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
+		}
 	}
 
 	public String getAccountName() {

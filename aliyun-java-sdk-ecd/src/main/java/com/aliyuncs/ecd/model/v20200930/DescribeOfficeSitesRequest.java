@@ -32,11 +32,13 @@ public class DescribeOfficeSitesRequest extends RpcAcsRequest<DescribeOfficeSite
 
 	private String nextToken;
 
+	private String securityProtection;
+
 	private Integer maxResults;
 
 	private String status;
 	public DescribeOfficeSitesRequest() {
-		super("ecd", "2020-09-30", "DescribeOfficeSites");
+		super("ecd", "2020-09-30", "DescribeOfficeSites", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -76,6 +78,17 @@ public class DescribeOfficeSitesRequest extends RpcAcsRequest<DescribeOfficeSite
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getSecurityProtection() {
+		return this.securityProtection;
+	}
+
+	public void setSecurityProtection(String securityProtection) {
+		this.securityProtection = securityProtection;
+		if(securityProtection != null){
+			putQueryParameter("SecurityProtection", securityProtection);
 		}
 	}
 

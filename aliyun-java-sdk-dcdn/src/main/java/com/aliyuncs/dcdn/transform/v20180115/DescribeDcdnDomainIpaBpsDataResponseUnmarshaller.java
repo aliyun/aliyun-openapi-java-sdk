@@ -27,16 +27,16 @@ public class DescribeDcdnDomainIpaBpsDataResponseUnmarshaller {
 	public static DescribeDcdnDomainIpaBpsDataResponse unmarshall(DescribeDcdnDomainIpaBpsDataResponse describeDcdnDomainIpaBpsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnDomainIpaBpsDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainIpaBpsDataResponse.RequestId"));
-		describeDcdnDomainIpaBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainIpaBpsDataResponse.DomainName"));
-		describeDcdnDomainIpaBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainIpaBpsDataResponse.StartTime"));
 		describeDcdnDomainIpaBpsDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainIpaBpsDataResponse.EndTime"));
+		describeDcdnDomainIpaBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainIpaBpsDataResponse.StartTime"));
+		describeDcdnDomainIpaBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainIpaBpsDataResponse.DomainName"));
 		describeDcdnDomainIpaBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainIpaBpsDataResponse.DataInterval"));
 
 		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainIpaBpsDataResponse.BpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainIpaBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setIpaBps(_ctx.floatValue("DescribeDcdnDomainIpaBpsDataResponse.BpsDataPerInterval["+ i +"].IpaBps"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainIpaBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
 
 			bpsDataPerInterval.add(dataModule);
 		}

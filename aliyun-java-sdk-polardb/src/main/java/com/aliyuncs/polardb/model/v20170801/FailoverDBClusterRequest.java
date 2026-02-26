@@ -29,17 +29,21 @@ public class FailoverDBClusterRequest extends RpcAcsRequest<FailoverDBClusterRes
 
 	private String clientToken;
 
+	private Boolean rollBackForDisaster;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
 
 	private String ownerAccount;
 
+	private String targetZoneType;
+
 	private Long ownerId;
 
 	private String targetDBNodeId;
 	public FailoverDBClusterRequest() {
-		super("polardb", "2017-08-01", "FailoverDBCluster");
+		super("polardb", "2017-08-01", "FailoverDBCluster", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,6 +70,17 @@ public class FailoverDBClusterRequest extends RpcAcsRequest<FailoverDBClusterRes
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getRollBackForDisaster() {
+		return this.rollBackForDisaster;
+	}
+
+	public void setRollBackForDisaster(Boolean rollBackForDisaster) {
+		this.rollBackForDisaster = rollBackForDisaster;
+		if(rollBackForDisaster != null){
+			putQueryParameter("RollBackForDisaster", rollBackForDisaster.toString());
 		}
 	}
 
@@ -99,6 +114,17 @@ public class FailoverDBClusterRequest extends RpcAcsRequest<FailoverDBClusterRes
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getTargetZoneType() {
+		return this.targetZoneType;
+	}
+
+	public void setTargetZoneType(String targetZoneType) {
+		this.targetZoneType = targetZoneType;
+		if(targetZoneType != null){
+			putQueryParameter("TargetZoneType", targetZoneType);
 		}
 	}
 

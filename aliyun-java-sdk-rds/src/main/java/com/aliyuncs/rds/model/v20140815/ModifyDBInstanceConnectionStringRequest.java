@@ -29,9 +29,13 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	private String connectionStringPrefix;
 
+	private String pGBouncerPort;
+
 	private String generalGroupName;
 
 	private String dBInstanceId;
+
+	private Boolean retainVip;
 
 	private String resourceOwnerAccount;
 
@@ -44,6 +48,8 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 	private String currentConnectionString;
 
 	private String port;
+
+	private String targetDBInstanceId;
 	public ModifyDBInstanceConnectionStringRequest() {
 		super("Rds", "2014-08-15", "ModifyDBInstanceConnectionString", "rds");
 		setMethod(MethodType.POST);
@@ -75,6 +81,17 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		}
 	}
 
+	public String getPGBouncerPort() {
+		return this.pGBouncerPort;
+	}
+
+	public void setPGBouncerPort(String pGBouncerPort) {
+		this.pGBouncerPort = pGBouncerPort;
+		if(pGBouncerPort != null){
+			putQueryParameter("PGBouncerPort", pGBouncerPort);
+		}
+	}
+
 	public String getGeneralGroupName() {
 		return this.generalGroupName;
 	}
@@ -94,6 +111,17 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public Boolean getRetainVip() {
+		return this.retainVip;
+	}
+
+	public void setRetainVip(Boolean retainVip) {
+		this.retainVip = retainVip;
+		if(retainVip != null){
+			putQueryParameter("RetainVip", retainVip.toString());
 		}
 	}
 
@@ -160,6 +188,17 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		this.port = port;
 		if(port != null){
 			putQueryParameter("Port", port);
+		}
+	}
+
+	public String getTargetDBInstanceId() {
+		return this.targetDBInstanceId;
+	}
+
+	public void setTargetDBInstanceId(String targetDBInstanceId) {
+		this.targetDBInstanceId = targetDBInstanceId;
+		if(targetDBInstanceId != null){
+			putQueryParameter("TargetDBInstanceId", targetDBInstanceId);
 		}
 	}
 

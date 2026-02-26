@@ -30,7 +30,7 @@ public class SendVerificationCodeForBindSecureMobilePhoneRequest extends RpcAcsR
 
 	private String accountId;
 	public SendVerificationCodeForBindSecureMobilePhoneRequest() {
-		super("ResourceManager", "2020-03-31", "SendVerificationCodeForBindSecureMobilePhone");
+		super("ResourceManager", "2020-03-31", "SendVerificationCodeForBindSecureMobilePhone", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

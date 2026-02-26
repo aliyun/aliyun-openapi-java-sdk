@@ -30,8 +30,6 @@ public class GetCampaignResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean success;
-
 	private Data data;
 
 	public String getRequestId() {
@@ -56,14 +54,6 @@ public class GetCampaignResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Data getData() {
@@ -115,6 +105,12 @@ public class GetCampaignResponse extends AcsResponse {
 		private String simulationParameters;
 
 		private Long casesUncompletedAfterAttempted;
+
+		private String casesUncompletedAfterAttempt;
+
+		private Float completionRate;
+
+		private String contactFlowId;
 
 		public Long getActualEndTime() {
 			return this.actualEndTime;
@@ -274,6 +270,30 @@ public class GetCampaignResponse extends AcsResponse {
 
 		public void setCasesUncompletedAfterAttempted(Long casesUncompletedAfterAttempted) {
 			this.casesUncompletedAfterAttempted = casesUncompletedAfterAttempted;
+		}
+
+		public String getCasesUncompletedAfterAttempt() {
+			return this.casesUncompletedAfterAttempt;
+		}
+
+		public void setCasesUncompletedAfterAttempt(String casesUncompletedAfterAttempt) {
+			this.casesUncompletedAfterAttempt = casesUncompletedAfterAttempt;
+		}
+
+		public Float getCompletionRate() {
+			return this.completionRate;
+		}
+
+		public void setCompletionRate(Float completionRate) {
+			this.completionRate = completionRate;
+		}
+
+		public String getContactFlowId() {
+			return this.contactFlowId;
+		}
+
+		public void setContactFlowId(String contactFlowId) {
+			this.contactFlowId = contactFlowId;
 		}
 	}
 

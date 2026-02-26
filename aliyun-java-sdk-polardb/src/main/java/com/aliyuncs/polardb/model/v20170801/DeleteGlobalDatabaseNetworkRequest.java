@@ -27,6 +27,8 @@ public class DeleteGlobalDatabaseNetworkRequest extends RpcAcsRequest<DeleteGlob
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private String gDNId;
@@ -37,7 +39,7 @@ public class DeleteGlobalDatabaseNetworkRequest extends RpcAcsRequest<DeleteGlob
 
 	private Long ownerId;
 	public DeleteGlobalDatabaseNetworkRequest() {
-		super("polardb", "2017-08-01", "DeleteGlobalDatabaseNetwork");
+		super("polardb", "2017-08-01", "DeleteGlobalDatabaseNetwork", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +55,17 @@ public class DeleteGlobalDatabaseNetworkRequest extends RpcAcsRequest<DeleteGlob
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

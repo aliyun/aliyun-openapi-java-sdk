@@ -31,7 +31,7 @@ public class QueryProductListRequest extends RpcAcsRequest<QueryProductListRespo
 
 	private Integer pageSize;
 	public QueryProductListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryProductList");
+		super("BssOpenApi", "2017-12-14", "QueryProductList", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

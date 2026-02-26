@@ -29,6 +29,8 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 
 	private String startTime;
 
+	private String resourcePools;
+
 	private String key;
 
 	private String resourceOwnerAccount;
@@ -68,6 +70,17 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getResourcePools() {
+		return this.resourcePools;
+	}
+
+	public void setResourcePools(String resourcePools) {
+		this.resourcePools = resourcePools;
+		if(resourcePools != null){
+			putQueryParameter("ResourcePools", resourcePools);
 		}
 	}
 

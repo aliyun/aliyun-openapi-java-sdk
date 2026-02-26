@@ -77,22 +77,22 @@ public class ListInstanceServiceConfigHistoriesResponse extends AcsResponse {
 
 	public static class Config {
 
-		private String configureName;
+		private String effective;
 
 		private String oldValue;
 
-		private String newValue;
-
-		private String effective;
-
 		private String createTime;
 
-		public String getConfigureName() {
-			return this.configureName;
+		private String newValue;
+
+		private String configureName;
+
+		public String getEffective() {
+			return this.effective;
 		}
 
-		public void setConfigureName(String configureName) {
-			this.configureName = configureName;
+		public void setEffective(String effective) {
+			this.effective = effective;
 		}
 
 		public String getOldValue() {
@@ -103,6 +103,14 @@ public class ListInstanceServiceConfigHistoriesResponse extends AcsResponse {
 			this.oldValue = oldValue;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
 		public String getNewValue() {
 			return this.newValue;
 		}
@@ -111,20 +119,12 @@ public class ListInstanceServiceConfigHistoriesResponse extends AcsResponse {
 			this.newValue = newValue;
 		}
 
-		public String getEffective() {
-			return this.effective;
+		public String getConfigureName() {
+			return this.configureName;
 		}
 
-		public void setEffective(String effective) {
-			this.effective = effective;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setConfigureName(String configureName) {
+			this.configureName = configureName;
 		}
 	}
 

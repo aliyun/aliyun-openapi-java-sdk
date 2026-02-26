@@ -27,13 +27,13 @@ public class DeleteVpcGatewayEndpointRequest extends RpcAcsRequest<DeleteVpcGate
 
 	private Long resourceOwnerId;
 
-	private Boolean dryRun;
-
 	private String clientToken;
 
-	private String resourceOwnerAccount;
-
 	private String endpointId;
+
+	private Boolean dryRun;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
@@ -58,17 +58,6 @@ public class DeleteVpcGatewayEndpointRequest extends RpcAcsRequest<DeleteVpcGate
 		}
 	}
 
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -80,17 +69,6 @@ public class DeleteVpcGatewayEndpointRequest extends RpcAcsRequest<DeleteVpcGate
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getEndpointId() {
 		return this.endpointId;
 	}
@@ -99,6 +77,28 @@ public class DeleteVpcGatewayEndpointRequest extends RpcAcsRequest<DeleteVpcGate
 		this.endpointId = endpointId;
 		if(endpointId != null){
 			putQueryParameter("EndpointId", endpointId);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

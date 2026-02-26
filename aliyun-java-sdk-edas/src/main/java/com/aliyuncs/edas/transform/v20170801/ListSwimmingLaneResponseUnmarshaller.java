@@ -50,6 +50,7 @@ public class ListSwimmingLaneResponseUnmarshaller {
 				swimmingLaneAppRelationShip.setRules(_ctx.stringValue("ListSwimmingLaneResponse.Data["+ i +"].SwimmingLaneAppRelationShipList["+ j +"].Rules"));
 				swimmingLaneAppRelationShip.setLaneId(_ctx.longValue("ListSwimmingLaneResponse.Data["+ i +"].SwimmingLaneAppRelationShipList["+ j +"].LaneId"));
 				swimmingLaneAppRelationShip.setAppId(_ctx.stringValue("ListSwimmingLaneResponse.Data["+ i +"].SwimmingLaneAppRelationShipList["+ j +"].AppId"));
+				swimmingLaneAppRelationShip.setExtra(_ctx.stringValue("ListSwimmingLaneResponse.Data["+ i +"].SwimmingLaneAppRelationShipList["+ j +"].Extra"));
 
 				swimmingLaneAppRelationShipList.add(swimmingLaneAppRelationShip);
 			}

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ccc.model.v20200701;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20200701.GetRealtimeInstanceStatesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -96,6 +97,8 @@ public class GetRealtimeInstanceStatesResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private List<BreakCodeDetail> breakCodeDetailList;
+
 		public Long getWorkingAgents() {
 			return this.workingAgents;
 		}
@@ -174,6 +177,37 @@ public class GetRealtimeInstanceStatesResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public List<BreakCodeDetail> getBreakCodeDetailList() {
+			return this.breakCodeDetailList;
+		}
+
+		public void setBreakCodeDetailList(List<BreakCodeDetail> breakCodeDetailList) {
+			this.breakCodeDetailList = breakCodeDetailList;
+		}
+
+		public static class BreakCodeDetail {
+
+			private String breakCode;
+
+			private Long count;
+
+			public String getBreakCode() {
+				return this.breakCode;
+			}
+
+			public void setBreakCode(String breakCode) {
+				this.breakCode = breakCode;
+			}
+
+			public Long getCount() {
+				return this.count;
+			}
+
+			public void setCount(Long count) {
+				this.count = count;
+			}
 		}
 	}
 

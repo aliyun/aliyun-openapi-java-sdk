@@ -64,6 +64,8 @@ public class UpdateModuleResponse extends AcsResponse {
 
 		private String moduleName;
 
+		private String ownerAppId;
+
 		private String ownerUserId;
 
 		private String platform;
@@ -138,6 +140,14 @@ public class UpdateModuleResponse extends AcsResponse {
 
 		public void setModuleName(String moduleName) {
 			this.moduleName = moduleName;
+		}
+
+		public String getOwnerAppId() {
+			return this.ownerAppId;
+		}
+
+		public void setOwnerAppId(String ownerAppId) {
+			this.ownerAppId = ownerAppId;
 		}
 
 		public String getOwnerUserId() {

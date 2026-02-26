@@ -46,34 +46,26 @@ public class DescribeContainerAppResponse extends AcsResponse {
 
 	public static class ContainerAppInfo {
 
-		private String id;
-
-		private String name;
+		private String type;
 
 		private String description;
+
+		private String createTime;
 
 		private String repository;
 
 		private String imageTag;
 
-		private String createTime;
+		private String name;
 
-		private String type;
+		private String id;
 
-		public String getId() {
-			return this.id;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getDescription() {
@@ -82,6 +74,14 @@ public class DescribeContainerAppResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getRepository() {
@@ -100,20 +100,20 @@ public class DescribeContainerAppResponse extends AcsResponse {
 			this.imageTag = imageTag;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

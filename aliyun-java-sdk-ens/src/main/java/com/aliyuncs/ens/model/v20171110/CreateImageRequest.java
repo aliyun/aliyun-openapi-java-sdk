@@ -24,16 +24,31 @@ import com.aliyuncs.http.MethodType;
 public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 	   
 
+	private String snapshotId;
+
 	private String deleteAfterImageUpload;
+
+	private Boolean withDataDisks;
 
 	private String imageName;
 
-	private String product;
+	private String targetOSSRegionId;
 
 	private String instanceId;
 	public CreateImageRequest() {
 		super("Ens", "2017-11-10", "CreateImage", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
+		}
 	}
 
 	public String getDeleteAfterImageUpload() {
@@ -44,6 +59,17 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.deleteAfterImageUpload = deleteAfterImageUpload;
 		if(deleteAfterImageUpload != null){
 			putQueryParameter("DeleteAfterImageUpload", deleteAfterImageUpload);
+		}
+	}
+
+	public Boolean getWithDataDisks() {
+		return this.withDataDisks;
+	}
+
+	public void setWithDataDisks(Boolean withDataDisks) {
+		this.withDataDisks = withDataDisks;
+		if(withDataDisks != null){
+			putQueryParameter("WithDataDisks", withDataDisks.toString());
 		}
 	}
 
@@ -58,14 +84,14 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		}
 	}
 
-	public String getProduct() {
-		return this.product;
+	public String getTargetOSSRegionId() {
+		return this.targetOSSRegionId;
 	}
 
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("product", product);
+	public void setTargetOSSRegionId(String targetOSSRegionId) {
+		this.targetOSSRegionId = targetOSSRegionId;
+		if(targetOSSRegionId != null){
+			putQueryParameter("TargetOSSRegionId", targetOSSRegionId);
 		}
 	}
 

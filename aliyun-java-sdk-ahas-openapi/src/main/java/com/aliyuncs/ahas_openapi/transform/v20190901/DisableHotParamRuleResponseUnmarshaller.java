@@ -33,25 +33,25 @@ public class DisableHotParamRuleResponseUnmarshaller {
 		disableHotParamRuleResponse.setSuccess(_ctx.booleanValue("DisableHotParamRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setAppName(_ctx.stringValue("DisableHotParamRuleResponse.Data.AppName"));
+		data.setParamIdx(_ctx.integerValue("DisableHotParamRuleResponse.Data.ParamIdx"));
+		data.setNamespace(_ctx.stringValue("DisableHotParamRuleResponse.Data.Namespace"));
+		data.setStatDurationSec(_ctx.longValue("DisableHotParamRuleResponse.Data.StatDurationSec"));
 		data.setBurstCount(_ctx.integerValue("DisableHotParamRuleResponse.Data.BurstCount"));
+		data.setRuleId(_ctx.longValue("DisableHotParamRuleResponse.Data.RuleId"));
+		data.setAppName(_ctx.stringValue("DisableHotParamRuleResponse.Data.AppName"));
+		data.setResource(_ctx.stringValue("DisableHotParamRuleResponse.Data.Resource"));
 		data.setControlBehavior(_ctx.integerValue("DisableHotParamRuleResponse.Data.ControlBehavior"));
-		data.setEnable(_ctx.booleanValue("DisableHotParamRuleResponse.Data.Enable"));
 		data.setMaxQueueingTimeMs(_ctx.integerValue("DisableHotParamRuleResponse.Data.MaxQueueingTimeMs"));
 		data.setMetricType(_ctx.integerValue("DisableHotParamRuleResponse.Data.MetricType"));
-		data.setNamespace(_ctx.stringValue("DisableHotParamRuleResponse.Data.Namespace"));
-		data.setParamIdx(_ctx.integerValue("DisableHotParamRuleResponse.Data.ParamIdx"));
-		data.setResource(_ctx.stringValue("DisableHotParamRuleResponse.Data.Resource"));
-		data.setRuleId(_ctx.longValue("DisableHotParamRuleResponse.Data.RuleId"));
-		data.setStatDurationSec(_ctx.longValue("DisableHotParamRuleResponse.Data.StatDurationSec"));
 		data.setThreshold(_ctx.floatValue("DisableHotParamRuleResponse.Data.Threshold"));
+		data.setEnable(_ctx.booleanValue("DisableHotParamRuleResponse.Data.Enable"));
 
 		List<ParamFlowItemListItem> paramFlowItemList = new ArrayList<ParamFlowItemListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DisableHotParamRuleResponse.Data.ParamFlowItemList.Length"); i++) {
 			ParamFlowItemListItem paramFlowItemListItem = new ParamFlowItemListItem();
-			paramFlowItemListItem.setItemType(_ctx.stringValue("DisableHotParamRuleResponse.Data.ParamFlowItemList["+ i +"].ItemType"));
 			paramFlowItemListItem.setItemValue(_ctx.stringValue("DisableHotParamRuleResponse.Data.ParamFlowItemList["+ i +"].ItemValue"));
 			paramFlowItemListItem.setThreshold(_ctx.floatValue("DisableHotParamRuleResponse.Data.ParamFlowItemList["+ i +"].Threshold"));
+			paramFlowItemListItem.setItemType(_ctx.stringValue("DisableHotParamRuleResponse.Data.ParamFlowItemList["+ i +"].ItemType"));
 
 			paramFlowItemList.add(paramFlowItemListItem);
 		}

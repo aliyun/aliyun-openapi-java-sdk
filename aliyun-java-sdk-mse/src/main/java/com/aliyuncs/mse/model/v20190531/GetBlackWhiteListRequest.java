@@ -29,9 +29,9 @@ public class GetBlackWhiteListRequest extends RpcAcsRequest<GetBlackWhiteListRes
 
 	private String type;
 
-	private String resourceType;
-
 	private Boolean isWhite;
+
+	private String resourceType;
 
 	private String acceptLanguage;
 	public GetBlackWhiteListRequest() {
@@ -65,17 +65,6 @@ public class GetBlackWhiteListRequest extends RpcAcsRequest<GetBlackWhiteListRes
 		}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
 	public Boolean getIsWhite() {
 		return this.isWhite;
 	}
@@ -84,6 +73,17 @@ public class GetBlackWhiteListRequest extends RpcAcsRequest<GetBlackWhiteListRes
 		this.isWhite = isWhite;
 		if(isWhite != null){
 			putQueryParameter("IsWhite", isWhite.toString());
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

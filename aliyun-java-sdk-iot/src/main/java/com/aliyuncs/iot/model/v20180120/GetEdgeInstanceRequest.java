@@ -29,7 +29,7 @@ public class GetEdgeInstanceRequest extends RpcAcsRequest<GetEdgeInstanceRespons
 
 	private String instanceId;
 	public GetEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "GetEdgeInstance");
+		super("Iot", "2018-01-20", "GetEdgeInstance", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

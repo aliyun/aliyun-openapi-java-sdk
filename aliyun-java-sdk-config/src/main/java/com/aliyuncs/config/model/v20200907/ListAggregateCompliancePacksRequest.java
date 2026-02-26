@@ -31,9 +31,11 @@ public class ListAggregateCompliancePacksRequest extends RpcAcsRequest<ListAggre
 
 	private Integer pageSize;
 
+	private String tag;
+
 	private String status;
 	public ListAggregateCompliancePacksRequest() {
-		super("Config", "2020-09-07", "ListAggregateCompliancePacks");
+		super("Config", "2020-09-07", "ListAggregateCompliancePacks", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,6 +73,17 @@ public class ListAggregateCompliancePacksRequest extends RpcAcsRequest<ListAggre
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

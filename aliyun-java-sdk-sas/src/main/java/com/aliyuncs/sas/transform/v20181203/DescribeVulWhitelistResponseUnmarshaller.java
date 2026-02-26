@@ -30,6 +30,7 @@ public class DescribeVulWhitelistResponseUnmarshaller {
 		describeVulWhitelistResponse.setCurrentPage(_ctx.integerValue("DescribeVulWhitelistResponse.CurrentPage"));
 		describeVulWhitelistResponse.setPageSize(_ctx.integerValue("DescribeVulWhitelistResponse.PageSize"));
 		describeVulWhitelistResponse.setTotalCount(_ctx.integerValue("DescribeVulWhitelistResponse.TotalCount"));
+		describeVulWhitelistResponse.setCount(_ctx.integerValue("DescribeVulWhitelistResponse.Count"));
 
 		List<VulWhitelist> vulWhitelists = new ArrayList<VulWhitelist>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVulWhitelistResponse.VulWhitelists.Length"); i++) {
@@ -40,6 +41,7 @@ public class DescribeVulWhitelistResponseUnmarshaller {
 			vulWhitelist.setName(_ctx.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].Name"));
 			vulWhitelist.setReason(_ctx.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].Reason"));
 			vulWhitelist.setId(_ctx.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].Id"));
+			vulWhitelist.setWhitelist(_ctx.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].Whitelist"));
 
 			vulWhitelists.add(vulWhitelist);
 		}

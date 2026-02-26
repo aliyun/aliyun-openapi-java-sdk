@@ -31,6 +31,8 @@ public class GetAggregateResourceConfigurationTimelineRequest extends RpcAcsRequ
 
 	private Long startTime;
 
+	private Long resourceAccountId;
+
 	private String nextToken;
 
 	private String resourceId;
@@ -43,7 +45,7 @@ public class GetAggregateResourceConfigurationTimelineRequest extends RpcAcsRequ
 
 	private String region;
 	public GetAggregateResourceConfigurationTimelineRequest() {
-		super("Config", "2020-09-07", "GetAggregateResourceConfigurationTimeline");
+		super("Config", "2020-09-07", "GetAggregateResourceConfigurationTimeline", "config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -81,6 +83,17 @@ public class GetAggregateResourceConfigurationTimelineRequest extends RpcAcsRequ
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Long getResourceAccountId() {
+		return this.resourceAccountId;
+	}
+
+	public void setResourceAccountId(Long resourceAccountId) {
+		this.resourceAccountId = resourceAccountId;
+		if(resourceAccountId != null){
+			putQueryParameter("ResourceAccountId", resourceAccountId.toString());
 		}
 	}
 

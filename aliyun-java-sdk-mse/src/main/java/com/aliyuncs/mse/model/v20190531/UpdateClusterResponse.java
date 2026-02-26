@@ -32,6 +32,8 @@ public class UpdateClusterResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String httpStatusCode;
+
 	public String getMessage() {
 		return this.message;
 	}
@@ -62,6 +64,14 @@ public class UpdateClusterResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	@Override

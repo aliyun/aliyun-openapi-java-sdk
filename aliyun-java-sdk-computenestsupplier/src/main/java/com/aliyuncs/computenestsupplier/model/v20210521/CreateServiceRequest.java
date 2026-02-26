@@ -26,25 +26,39 @@ import com.aliyuncs.computenestsupplier.Endpoint;
 public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 	   
 
-	private String alarmMetadata;
-
-	private String clientToken;
-
 	private String policyNames;
 
-	private Long duration;
+	private String resourceGroupId;
+
+	private String approvalType;
 
 	private Long trialDuration;
 
-	private String shareType;
-
 	private List<Tag> tags;
 
-	private List<RequestTag> requestTags;
+	private String operationMetadata;
+
+	private String deployType;
+
+	private String alarmMetadata;
+
+	private Boolean resellable;
+
+	private String clientToken;
+
+	private String sourceServiceId;
+
+	private String sourceServiceVersion;
+
+	private String licenseMetadata;
+
+	private Long duration;
+
+	private String shareType;
+
+	private String buildParameters;
 
 	private String upgradeMetadata;
-
-	private String saleMetadata;
 
 	private String deployMetadata;
 
@@ -54,13 +68,13 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 
 	private String tenantType;
 
+	private String logMetadata;
+
 	private List<ServiceInfo> serviceInfos;
 
 	private String serviceId;
 
 	private String versionName;
-
-	private String deployType;
 	public CreateServiceRequest() {
 		super("ComputeNestSupplier", "2021-05-21", "CreateService");
 		setMethod(MethodType.POST);
@@ -68,28 +82,6 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getAlarmMetadata() {
-		return this.alarmMetadata;
-	}
-
-	public void setAlarmMetadata(String alarmMetadata) {
-		this.alarmMetadata = alarmMetadata;
-		if(alarmMetadata != null){
-			putQueryParameter("AlarmMetadata", alarmMetadata);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getPolicyNames() {
@@ -103,14 +95,25 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 		}
 	}
 
-	public Long getDuration() {
-		return this.duration;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setDuration(Long duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration.toString());
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getApprovalType() {
+		return this.approvalType;
+	}
+
+	public void setApprovalType(String approvalType) {
+		this.approvalType = approvalType;
+		if(approvalType != null){
+			putQueryParameter("ApprovalType", approvalType);
 		}
 	}
 
@@ -122,17 +125,6 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 		this.trialDuration = trialDuration;
 		if(trialDuration != null){
 			putQueryParameter("TrialDuration", trialDuration.toString());
-		}
-	}
-
-	public String getShareType() {
-		return this.shareType;
-	}
-
-	public void setShareType(String shareType) {
-		this.shareType = shareType;
-		if(shareType != null){
-			putQueryParameter("ShareType", shareType);
 		}
 	}
 
@@ -150,18 +142,125 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 		}	
 	}
 
-	public List<RequestTag> getRequestTags() {
-		return this.requestTags;
+	public String getOperationMetadata() {
+		return this.operationMetadata;
 	}
 
-	public void setRequestTags(List<RequestTag> requestTags) {
-		this.requestTags = requestTags;	
-		if (requestTags != null) {
-			for (int depth1 = 0; depth1 < requestTags.size(); depth1++) {
-				putQueryParameter("RequestTag." + (depth1 + 1) + ".Value" , requestTags.get(depth1).getValue());
-				putQueryParameter("RequestTag." + (depth1 + 1) + ".Key" , requestTags.get(depth1).getKey());
-			}
-		}	
+	public void setOperationMetadata(String operationMetadata) {
+		this.operationMetadata = operationMetadata;
+		if(operationMetadata != null){
+			putQueryParameter("OperationMetadata", operationMetadata);
+		}
+	}
+
+	public String getDeployType() {
+		return this.deployType;
+	}
+
+	public void setDeployType(String deployType) {
+		this.deployType = deployType;
+		if(deployType != null){
+			putQueryParameter("DeployType", deployType);
+		}
+	}
+
+	public String getAlarmMetadata() {
+		return this.alarmMetadata;
+	}
+
+	public void setAlarmMetadata(String alarmMetadata) {
+		this.alarmMetadata = alarmMetadata;
+		if(alarmMetadata != null){
+			putQueryParameter("AlarmMetadata", alarmMetadata);
+		}
+	}
+
+	public Boolean getResellable() {
+		return this.resellable;
+	}
+
+	public void setResellable(Boolean resellable) {
+		this.resellable = resellable;
+		if(resellable != null){
+			putQueryParameter("Resellable", resellable.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSourceServiceId() {
+		return this.sourceServiceId;
+	}
+
+	public void setSourceServiceId(String sourceServiceId) {
+		this.sourceServiceId = sourceServiceId;
+		if(sourceServiceId != null){
+			putQueryParameter("SourceServiceId", sourceServiceId);
+		}
+	}
+
+	public String getSourceServiceVersion() {
+		return this.sourceServiceVersion;
+	}
+
+	public void setSourceServiceVersion(String sourceServiceVersion) {
+		this.sourceServiceVersion = sourceServiceVersion;
+		if(sourceServiceVersion != null){
+			putQueryParameter("SourceServiceVersion", sourceServiceVersion);
+		}
+	}
+
+	public String getLicenseMetadata() {
+		return this.licenseMetadata;
+	}
+
+	public void setLicenseMetadata(String licenseMetadata) {
+		this.licenseMetadata = licenseMetadata;
+		if(licenseMetadata != null){
+			putQueryParameter("LicenseMetadata", licenseMetadata);
+		}
+	}
+
+	public Long getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Long duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getShareType() {
+		return this.shareType;
+	}
+
+	public void setShareType(String shareType) {
+		this.shareType = shareType;
+		if(shareType != null){
+			putQueryParameter("ShareType", shareType);
+		}
+	}
+
+	public String getBuildParameters() {
+		return this.buildParameters;
+	}
+
+	public void setBuildParameters(String buildParameters) {
+		this.buildParameters = buildParameters;
+		if(buildParameters != null){
+			putQueryParameter("BuildParameters", buildParameters);
+		}
 	}
 
 	public String getUpgradeMetadata() {
@@ -172,17 +271,6 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 		this.upgradeMetadata = upgradeMetadata;
 		if(upgradeMetadata != null){
 			putQueryParameter("UpgradeMetadata", upgradeMetadata);
-		}
-	}
-
-	public String getSaleMetadata() {
-		return this.saleMetadata;
-	}
-
-	public void setSaleMetadata(String saleMetadata) {
-		this.saleMetadata = saleMetadata;
-		if(saleMetadata != null){
-			putQueryParameter("SaleMetadata", saleMetadata);
 		}
 	}
 
@@ -230,6 +318,17 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 		}
 	}
 
+	public String getLogMetadata() {
+		return this.logMetadata;
+	}
+
+	public void setLogMetadata(String logMetadata) {
+		this.logMetadata = logMetadata;
+		if(logMetadata != null){
+			putQueryParameter("LogMetadata", logMetadata);
+		}
+	}
+
 	public List<ServiceInfo> getServiceInfos() {
 		return this.serviceInfos;
 	}
@@ -241,7 +340,14 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 				putQueryParameter("ServiceInfo." + (depth1 + 1) + ".ShortDescription" , serviceInfos.get(depth1).getShortDescription());
 				putQueryParameter("ServiceInfo." + (depth1 + 1) + ".Image" , serviceInfos.get(depth1).getImage());
 				putQueryParameter("ServiceInfo." + (depth1 + 1) + ".Name" , serviceInfos.get(depth1).getName());
+				if (serviceInfos.get(depth1).getAgreementss() != null) {
+					for (int depth2 = 0; depth2 < serviceInfos.get(depth1).getAgreementss().size(); depth2++) {
+						putQueryParameter("ServiceInfo." + (depth1 + 1) + ".Agreements." + (depth2 + 1) + ".Name" , serviceInfos.get(depth1).getAgreementss().get(depth2).getName());
+						putQueryParameter("ServiceInfo." + (depth1 + 1) + ".Agreements." + (depth2 + 1) + ".Url" , serviceInfos.get(depth1).getAgreementss().get(depth2).getUrl());
+					}
+				}
 				putQueryParameter("ServiceInfo." + (depth1 + 1) + ".Locale" , serviceInfos.get(depth1).getLocale());
+				putQueryParameter("ServiceInfo." + (depth1 + 1) + ".LongDescriptionUrl" , serviceInfos.get(depth1).getLongDescriptionUrl());
 			}
 		}	
 	}
@@ -268,41 +374,7 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 		}
 	}
 
-	public String getDeployType() {
-		return this.deployType;
-	}
-
-	public void setDeployType(String deployType) {
-		this.deployType = deployType;
-		if(deployType != null){
-			putQueryParameter("DeployType", deployType);
-		}
-	}
-
 	public static class Tag {
-
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-	}
-
-	public static class RequestTag {
 
 		private String value;
 
@@ -333,7 +405,11 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 
 		private String name;
 
+		private List<Agreements> agreementss;
+
 		private String locale;
+
+		private String longDescriptionUrl;
 
 		public String getShortDescription() {
 			return this.shortDescription;
@@ -359,12 +435,51 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 			this.name = name;
 		}
 
+		public List<Agreements> getAgreementss() {
+			return this.agreementss;
+		}
+
+		public void setAgreementss(List<Agreements> agreementss) {
+			this.agreementss = agreementss;
+		}
+
 		public String getLocale() {
 			return this.locale;
 		}
 
 		public void setLocale(String locale) {
 			this.locale = locale;
+		}
+
+		public String getLongDescriptionUrl() {
+			return this.longDescriptionUrl;
+		}
+
+		public void setLongDescriptionUrl(String longDescriptionUrl) {
+			this.longDescriptionUrl = longDescriptionUrl;
+		}
+
+		public static class Agreements {
+
+			private String name;
+
+			private String url;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
 		}
 	}
 

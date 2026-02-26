@@ -32,6 +32,10 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 	private String listenerId;
 
+	private List<Tag> tag;
+
+	private String direction;
+
 	private List<RuleActions> ruleActions;
 
 	private List<RuleConditions> ruleConditions;
@@ -78,6 +82,34 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		this.listenerId = listenerId;
 		if(listenerId != null){
 			putQueryParameter("ListenerId", listenerId);
+		}
+	}
+
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
+				if (tag.get(depth1) != null) {
+					
+						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
+						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
+				}
+			}
+		}	
+	}
+
+	public String getDirection() {
+		return this.direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+		if(direction != null){
+			putQueryParameter("Direction", direction);
 		}
 	}
 
@@ -129,15 +161,46 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 									}
 								}
 						}
+						if (ruleActions.get(depth1).getRemoveHeaderConfig() != null) {
+							
+								putQueryParameter("RuleActions." + (depth1 + 1) + ".RemoveHeaderConfig.Key" , ruleActions.get(depth1).getRemoveHeaderConfig().getKey());
+						}
 						if (ruleActions.get(depth1).getInsertHeaderConfig() != null) {
 							
 								putQueryParameter("RuleActions." + (depth1 + 1) + ".InsertHeaderConfig.ValueType" , ruleActions.get(depth1).getInsertHeaderConfig().getValueType());
+								putQueryParameter("RuleActions." + (depth1 + 1) + ".InsertHeaderConfig.CoverEnabled" , ruleActions.get(depth1).getInsertHeaderConfig().getCoverEnabled());
 								putQueryParameter("RuleActions." + (depth1 + 1) + ".InsertHeaderConfig.Value" , ruleActions.get(depth1).getInsertHeaderConfig().getValue());
 								putQueryParameter("RuleActions." + (depth1 + 1) + ".InsertHeaderConfig.Key" , ruleActions.get(depth1).getInsertHeaderConfig().getKey());
 						}
 						if (ruleActions.get(depth1).getTrafficLimitConfig() != null) {
 							
 								putQueryParameter("RuleActions." + (depth1 + 1) + ".TrafficLimitConfig.QPS" , ruleActions.get(depth1).getTrafficLimitConfig().getQPS());
+								putQueryParameter("RuleActions." + (depth1 + 1) + ".TrafficLimitConfig.PerIpQps" , ruleActions.get(depth1).getTrafficLimitConfig().getPerIpQps());
+						}
+						if (ruleActions.get(depth1).getCorsConfig() != null) {
+							
+								putQueryParameter("RuleActions." + (depth1 + 1) + ".CorsConfig.AllowCredentials" , ruleActions.get(depth1).getCorsConfig().getAllowCredentials());
+								if (ruleActions.get(depth1).getCorsConfig().getAllowOrigin() != null) {
+									for (int depth2 = 0; depth2 < ruleActions.get(depth1).getCorsConfig().getAllowOrigin().size(); depth2++) {
+										putQueryParameter("RuleActions." + (depth1 + 1) + ".CorsConfig.AllowOrigin." + (depth2 + 1) , ruleActions.get(depth1).getCorsConfig().getAllowOrigin().get(depth2));
+									}
+								}
+								putQueryParameter("RuleActions." + (depth1 + 1) + ".CorsConfig.MaxAge" , ruleActions.get(depth1).getCorsConfig().getMaxAge());
+								if (ruleActions.get(depth1).getCorsConfig().getAllowMethods() != null) {
+									for (int depth2 = 0; depth2 < ruleActions.get(depth1).getCorsConfig().getAllowMethods().size(); depth2++) {
+										putQueryParameter("RuleActions." + (depth1 + 1) + ".CorsConfig.AllowMethods." + (depth2 + 1) , ruleActions.get(depth1).getCorsConfig().getAllowMethods().get(depth2));
+									}
+								}
+								if (ruleActions.get(depth1).getCorsConfig().getAllowHeaders() != null) {
+									for (int depth2 = 0; depth2 < ruleActions.get(depth1).getCorsConfig().getAllowHeaders().size(); depth2++) {
+										putQueryParameter("RuleActions." + (depth1 + 1) + ".CorsConfig.AllowHeaders." + (depth2 + 1) , ruleActions.get(depth1).getCorsConfig().getAllowHeaders().get(depth2));
+									}
+								}
+								if (ruleActions.get(depth1).getCorsConfig().getExposeHeaders() != null) {
+									for (int depth2 = 0; depth2 < ruleActions.get(depth1).getCorsConfig().getExposeHeaders().size(); depth2++) {
+										putQueryParameter("RuleActions." + (depth1 + 1) + ".CorsConfig.ExposeHeaders." + (depth2 + 1) , ruleActions.get(depth1).getCorsConfig().getExposeHeaders().get(depth2));
+									}
+								}
 						}
 						if (ruleActions.get(depth1).getRedirectConfig() != null) {
 							
@@ -207,6 +270,14 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 									}
 								}
 						}
+						if (ruleConditions.get(depth1).getResponseStatusCodeConfig() != null) {
+							
+								if (ruleConditions.get(depth1).getResponseStatusCodeConfig().getValues() != null) {
+									for (int depth2 = 0; depth2 < ruleConditions.get(depth1).getResponseStatusCodeConfig().getValues().size(); depth2++) {
+										putQueryParameter("RuleConditions." + (depth1 + 1) + ".ResponseStatusCodeConfig.Values." + (depth2 + 1) , ruleConditions.get(depth1).getResponseStatusCodeConfig().getValues().get(depth2));
+									}
+								}
+						}
 						if (ruleConditions.get(depth1).getPathConfig() != null) {
 							
 								if (ruleConditions.get(depth1).getPathConfig().getValues() != null) {
@@ -237,6 +308,15 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 								}
 								putQueryParameter("RuleConditions." + (depth1 + 1) + ".HeaderConfig.Key" , ruleConditions.get(depth1).getHeaderConfig().getKey());
 						}
+						if (ruleConditions.get(depth1).getResponseHeaderConfig() != null) {
+							
+								if (ruleConditions.get(depth1).getResponseHeaderConfig().getValues() != null) {
+									for (int depth2 = 0; depth2 < ruleConditions.get(depth1).getResponseHeaderConfig().getValues().size(); depth2++) {
+										putQueryParameter("RuleConditions." + (depth1 + 1) + ".ResponseHeaderConfig.Values." + (depth2 + 1) , ruleConditions.get(depth1).getResponseHeaderConfig().getValues().get(depth2));
+									}
+								}
+								putQueryParameter("RuleConditions." + (depth1 + 1) + ".ResponseHeaderConfig.Key" , ruleConditions.get(depth1).getResponseHeaderConfig().getKey());
+						}
 				}
 			}
 		}	
@@ -264,6 +344,29 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		}
 	}
 
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
 	public static class RuleActions {
 
 		private FixedResponseConfig fixedResponseConfig;
@@ -272,9 +375,13 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 		private ForwardGroupConfig forwardGroupConfig;
 
+		private RemoveHeaderConfig removeHeaderConfig;
+
 		private InsertHeaderConfig insertHeaderConfig;
 
 		private TrafficLimitConfig trafficLimitConfig;
+
+		private CorsConfig corsConfig;
 
 		private RedirectConfig redirectConfig;
 
@@ -308,6 +415,14 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 			this.forwardGroupConfig = forwardGroupConfig;
 		}
 
+		public RemoveHeaderConfig getRemoveHeaderConfig() {
+			return this.removeHeaderConfig;
+		}
+
+		public void setRemoveHeaderConfig(RemoveHeaderConfig removeHeaderConfig) {
+			this.removeHeaderConfig = removeHeaderConfig;
+		}
+
 		public InsertHeaderConfig getInsertHeaderConfig() {
 			return this.insertHeaderConfig;
 		}
@@ -322,6 +437,14 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 		public void setTrafficLimitConfig(TrafficLimitConfig trafficLimitConfig) {
 			this.trafficLimitConfig = trafficLimitConfig;
+		}
+
+		public CorsConfig getCorsConfig() {
+			return this.corsConfig;
+		}
+
+		public void setCorsConfig(CorsConfig corsConfig) {
+			this.corsConfig = corsConfig;
 		}
 
 		public RedirectConfig getRedirectConfig() {
@@ -507,9 +630,24 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 			}
 		}
 
+		public static class RemoveHeaderConfig {
+
+			private String key;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+		}
+
 		public static class InsertHeaderConfig {
 
 			private String valueType;
+
+			private Boolean coverEnabled;
 
 			private String value;
 
@@ -521,6 +659,14 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 			public void setValueType(String valueType) {
 				this.valueType = valueType;
+			}
+
+			public Boolean getCoverEnabled() {
+				return this.coverEnabled;
+			}
+
+			public void setCoverEnabled(Boolean coverEnabled) {
+				this.coverEnabled = coverEnabled;
 			}
 
 			public String getValue() {
@@ -544,12 +690,85 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 			private Integer qPS;
 
+			private Integer perIpQps;
+
 			public Integer getQPS() {
 				return this.qPS;
 			}
 
 			public void setQPS(Integer qPS) {
 				this.qPS = qPS;
+			}
+
+			public Integer getPerIpQps() {
+				return this.perIpQps;
+			}
+
+			public void setPerIpQps(Integer perIpQps) {
+				this.perIpQps = perIpQps;
+			}
+		}
+
+		public static class CorsConfig {
+
+			private String allowCredentials;
+
+			private List<String> allowOrigin;
+
+			private Long maxAge;
+
+			private List<String> allowMethods;
+
+			private List<String> allowHeaders;
+
+			private List<String> exposeHeaders;
+
+			public String getAllowCredentials() {
+				return this.allowCredentials;
+			}
+
+			public void setAllowCredentials(String allowCredentials) {
+				this.allowCredentials = allowCredentials;
+			}
+
+			public List<String> getAllowOrigin() {
+				return this.allowOrigin;
+			}
+
+			public void setAllowOrigin(List<String> allowOrigin) {
+				this.allowOrigin = allowOrigin;
+			}
+
+			public Long getMaxAge() {
+				return this.maxAge;
+			}
+
+			public void setMaxAge(Long maxAge) {
+				this.maxAge = maxAge;
+			}
+
+			public List<String> getAllowMethods() {
+				return this.allowMethods;
+			}
+
+			public void setAllowMethods(List<String> allowMethods) {
+				this.allowMethods = allowMethods;
+			}
+
+			public List<String> getAllowHeaders() {
+				return this.allowHeaders;
+			}
+
+			public void setAllowHeaders(List<String> allowHeaders) {
+				this.allowHeaders = allowHeaders;
+			}
+
+			public List<String> getExposeHeaders() {
+				return this.exposeHeaders;
+			}
+
+			public void setExposeHeaders(List<String> exposeHeaders) {
+				this.exposeHeaders = exposeHeaders;
 			}
 		}
 
@@ -660,6 +879,8 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 		private QueryStringConfig queryStringConfig;
 
+		private ResponseStatusCodeConfig responseStatusCodeConfig;
+
 		private PathConfig pathConfig;
 
 		private CookieConfig cookieConfig;
@@ -667,6 +888,8 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		private String type;
 
 		private HeaderConfig headerConfig;
+
+		private ResponseHeaderConfig responseHeaderConfig;
 
 		public MethodConfig getMethodConfig() {
 			return this.methodConfig;
@@ -700,6 +923,14 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 			this.queryStringConfig = queryStringConfig;
 		}
 
+		public ResponseStatusCodeConfig getResponseStatusCodeConfig() {
+			return this.responseStatusCodeConfig;
+		}
+
+		public void setResponseStatusCodeConfig(ResponseStatusCodeConfig responseStatusCodeConfig) {
+			this.responseStatusCodeConfig = responseStatusCodeConfig;
+		}
+
 		public PathConfig getPathConfig() {
 			return this.pathConfig;
 		}
@@ -730,6 +961,14 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 		public void setHeaderConfig(HeaderConfig headerConfig) {
 			this.headerConfig = headerConfig;
+		}
+
+		public ResponseHeaderConfig getResponseHeaderConfig() {
+			return this.responseHeaderConfig;
+		}
+
+		public void setResponseHeaderConfig(ResponseHeaderConfig responseHeaderConfig) {
+			this.responseHeaderConfig = responseHeaderConfig;
 		}
 
 		public static class MethodConfig {
@@ -807,6 +1046,19 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 			}
 		}
 
+		public static class ResponseStatusCodeConfig {
+
+			private List<String> values;
+
+			public List<String> getValues() {
+				return this.values;
+			}
+
+			public void setValues(List<String> values) {
+				this.values = values;
+			}
+		}
+
 		public static class PathConfig {
 
 			private List<String> values;
@@ -857,6 +1109,29 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		}
 
 		public static class HeaderConfig {
+
+			private List<String> values;
+
+			private String key;
+
+			public List<String> getValues() {
+				return this.values;
+			}
+
+			public void setValues(List<String> values) {
+				this.values = values;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+		}
+
+		public static class ResponseHeaderConfig {
 
 			private List<String> values;
 

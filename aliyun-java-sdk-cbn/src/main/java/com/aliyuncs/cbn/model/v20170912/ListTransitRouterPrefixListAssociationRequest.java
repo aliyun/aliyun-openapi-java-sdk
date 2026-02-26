@@ -29,11 +29,15 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 
 	private Integer pageNumber;
 
+	private String nextHopInstanceId;
+
 	private String prefixListId;
 
 	private Integer pageSize;
 
 	private Long ownerUid;
+
+	private String nextHopType;
 
 	private String resourceOwnerAccount;
 
@@ -44,8 +48,12 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 	private String transitRouterId;
 
 	private String transitRouterTableId;
+
+	private String nextHop;
+
+	private String status;
 	public ListTransitRouterPrefixListAssociationRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterPrefixListAssociation");
+		super("Cbn", "2017-09-12", "ListTransitRouterPrefixListAssociation", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -72,6 +80,17 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getNextHopInstanceId() {
+		return this.nextHopInstanceId;
+	}
+
+	public void setNextHopInstanceId(String nextHopInstanceId) {
+		this.nextHopInstanceId = nextHopInstanceId;
+		if(nextHopInstanceId != null){
+			putQueryParameter("NextHopInstanceId", nextHopInstanceId);
 		}
 	}
 
@@ -105,6 +124,17 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 		this.ownerUid = ownerUid;
 		if(ownerUid != null){
 			putQueryParameter("OwnerUid", ownerUid.toString());
+		}
+	}
+
+	public String getNextHopType() {
+		return this.nextHopType;
+	}
+
+	public void setNextHopType(String nextHopType) {
+		this.nextHopType = nextHopType;
+		if(nextHopType != null){
+			putQueryParameter("NextHopType", nextHopType);
 		}
 	}
 
@@ -160,6 +190,28 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 		this.transitRouterTableId = transitRouterTableId;
 		if(transitRouterTableId != null){
 			putQueryParameter("TransitRouterTableId", transitRouterTableId);
+		}
+	}
+
+	public String getNextHop() {
+		return this.nextHop;
+	}
+
+	public void setNextHop(String nextHop) {
+		this.nextHop = nextHop;
+		if(nextHop != null){
+			putQueryParameter("NextHop", nextHop);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

@@ -33,6 +33,8 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 
 	private Integer pageSize;
 
+	private String nodeId;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -47,7 +49,7 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 
 	private String sQLHASH;
 	public DescribeSlowLogRecordsRequest() {
-		super("polardb", "2017-08-01", "DescribeSlowLogRecords");
+		super("polardb", "2017-08-01", "DescribeSlowLogRecords", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -96,6 +98,17 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
 		}
 	}
 

@@ -29,7 +29,7 @@ public class ResizeDbfsRequest extends RpcAcsRequest<ResizeDbfsResponse> {
 
 	private String fsId;
 	public ResizeDbfsRequest() {
-		super("DBFS", "2020-04-18", "ResizeDbfs");
+		super("DBFS", "2020-04-18", "ResizeDbfs", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,10 +32,6 @@ public class GetAudioFileResponse extends AcsResponse {
 
 	private String message;
 
-	private Boolean published;
-
-	private Boolean mainFlow;
-
 	private Data data;
 
 	public Integer getHttpStatusCode() {
@@ -68,22 +64,6 @@ public class GetAudioFileResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Boolean getPublished() {
-		return this.published;
-	}
-
-	public void setPublished(Boolean published) {
-		this.published = published;
-	}
-
-	public Boolean getMainFlow() {
-		return this.mainFlow;
-	}
-
-	public void setMainFlow(Boolean mainFlow) {
-		this.mainFlow = mainFlow;
 	}
 
 	public Data getData() {

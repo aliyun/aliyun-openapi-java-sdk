@@ -28,13 +28,13 @@ public class StartBaselineSecurityCheckRequest extends RpcAcsRequest<StartBaseli
 
 	private Long resourceOwnerId;
 
-	private List<Long> itemIdss;
-
 	private String type;
 
 	private String sourceIp;
 
 	private String lang;
+
+	private List<Long> itemIdss;
 	public StartBaselineSecurityCheckRequest() {
 		super("Sas", "2018-12-03", "StartBaselineSecurityCheck");
 		setMethod(MethodType.POST);
@@ -53,19 +53,6 @@ public class StartBaselineSecurityCheckRequest extends RpcAcsRequest<StartBaseli
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
-	}
-
-	public List<Long> getItemIdss() {
-		return this.itemIdss;
-	}
-
-	public void setItemIdss(List<Long> itemIdss) {
-		this.itemIdss = itemIdss;	
-		if (itemIdss != null) {
-			for (int i = 0; i < itemIdss.size(); i++) {
-				putQueryParameter("ItemIds." + (i + 1) , itemIdss.get(i));
-			}
-		}	
 	}
 
 	public String getType() {
@@ -99,6 +86,19 @@ public class StartBaselineSecurityCheckRequest extends RpcAcsRequest<StartBaseli
 		if(lang != null){
 			putQueryParameter("Lang", lang);
 		}
+	}
+
+	public List<Long> getItemIdss() {
+		return this.itemIdss;
+	}
+
+	public void setItemIdss(List<Long> itemIdss) {
+		this.itemIdss = itemIdss;	
+		if (itemIdss != null) {
+			for (int i = 0; i < itemIdss.size(); i++) {
+				putQueryParameter("ItemIds." + (i + 1) , itemIdss.get(i));
+			}
+		}	
 	}
 
 	@Override

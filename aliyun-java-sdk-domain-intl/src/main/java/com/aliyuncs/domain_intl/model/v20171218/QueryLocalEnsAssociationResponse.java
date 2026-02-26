@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryLocalEnsAssociationResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String address;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getAddress() {
 		return this.address;
@@ -42,6 +34,14 @@ public class QueryLocalEnsAssociationResponse extends AcsResponse {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -24,31 +24,28 @@ import com.aliyuncs.http.MethodType;
 public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryResponse> {
 	   
 
-	private String sourceCIDR;
-
 	private String snatIp;
 
 	private String sourceVSwitchId;
 
+	private Boolean eipAffinity;
+
 	private String sourceNetworkId;
+
+	private String standbySnatIp;
+
+	private String sourceCIDR;
 
 	private String natGatewayId;
 
+	private Integer idleTimeout;
+
 	private String snatEntryName;
+
+	private Boolean ispAffinity;
 	public CreateSnatEntryRequest() {
 		super("Ens", "2017-11-10", "CreateSnatEntry", "ens");
 		setMethod(MethodType.POST);
-	}
-
-	public String getSourceCIDR() {
-		return this.sourceCIDR;
-	}
-
-	public void setSourceCIDR(String sourceCIDR) {
-		this.sourceCIDR = sourceCIDR;
-		if(sourceCIDR != null){
-			putQueryParameter("SourceCIDR", sourceCIDR);
-		}
 	}
 
 	public String getSnatIp() {
@@ -73,6 +70,17 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 		}
 	}
 
+	public Boolean getEipAffinity() {
+		return this.eipAffinity;
+	}
+
+	public void setEipAffinity(Boolean eipAffinity) {
+		this.eipAffinity = eipAffinity;
+		if(eipAffinity != null){
+			putQueryParameter("EipAffinity", eipAffinity.toString());
+		}
+	}
+
 	public String getSourceNetworkId() {
 		return this.sourceNetworkId;
 	}
@@ -81,6 +89,28 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 		this.sourceNetworkId = sourceNetworkId;
 		if(sourceNetworkId != null){
 			putQueryParameter("SourceNetworkId", sourceNetworkId);
+		}
+	}
+
+	public String getStandbySnatIp() {
+		return this.standbySnatIp;
+	}
+
+	public void setStandbySnatIp(String standbySnatIp) {
+		this.standbySnatIp = standbySnatIp;
+		if(standbySnatIp != null){
+			putQueryParameter("StandbySnatIp", standbySnatIp);
+		}
+	}
+
+	public String getSourceCIDR() {
+		return this.sourceCIDR;
+	}
+
+	public void setSourceCIDR(String sourceCIDR) {
+		this.sourceCIDR = sourceCIDR;
+		if(sourceCIDR != null){
+			putQueryParameter("SourceCIDR", sourceCIDR);
 		}
 	}
 
@@ -95,6 +125,17 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 		}
 	}
 
+	public Integer getIdleTimeout() {
+		return this.idleTimeout;
+	}
+
+	public void setIdleTimeout(Integer idleTimeout) {
+		this.idleTimeout = idleTimeout;
+		if(idleTimeout != null){
+			putQueryParameter("IdleTimeout", idleTimeout.toString());
+		}
+	}
+
 	public String getSnatEntryName() {
 		return this.snatEntryName;
 	}
@@ -103,6 +144,17 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 		this.snatEntryName = snatEntryName;
 		if(snatEntryName != null){
 			putQueryParameter("SnatEntryName", snatEntryName);
+		}
+	}
+
+	public Boolean getIspAffinity() {
+		return this.ispAffinity;
+	}
+
+	public void setIspAffinity(Boolean ispAffinity) {
+		this.ispAffinity = ispAffinity;
+		if(ispAffinity != null){
+			putQueryParameter("IspAffinity", ispAffinity.toString());
 		}
 	}
 

@@ -34,13 +34,27 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 
 	private String description;
 
+	private NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig;
+
+	private EnhancedNetwork enhancedNetwork;
+
+	private Boolean sourceDestCheck;
+
 	private String networkInterfaceName;
+
+	private Integer txQueueSize;
+
+	private Boolean deleteOnRelease;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private Integer rxQueueSize;
+
 	private Long ownerId;
+
+	private ConnectionTrackingConfiguration connectionTrackingConfiguration;
 
 	private String networkInterfaceId;
 	public ModifyNetworkInterfaceAttributeRequest() {
@@ -98,6 +112,48 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 		}
 	}
 
+	public NetworkInterfaceTrafficConfig getNetworkInterfaceTrafficConfig() {
+		return this.networkInterfaceTrafficConfig;
+	}
+
+	public void setNetworkInterfaceTrafficConfig(NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig) {
+		this.networkInterfaceTrafficConfig = networkInterfaceTrafficConfig;	
+		if (networkInterfaceTrafficConfig != null) {
+			
+				putQueryParameter("NetworkInterfaceTrafficConfig.NetworkInterfaceTrafficMode" , networkInterfaceTrafficConfig.getNetworkInterfaceTrafficMode());
+				putQueryParameter("NetworkInterfaceTrafficConfig.QueueNumber" , networkInterfaceTrafficConfig.getQueueNumber());
+				putQueryParameter("NetworkInterfaceTrafficConfig.QueuePairNumber" , networkInterfaceTrafficConfig.getQueuePairNumber());
+				putQueryParameter("NetworkInterfaceTrafficConfig.RxQueueSize" , networkInterfaceTrafficConfig.getRxQueueSize());
+				putQueryParameter("NetworkInterfaceTrafficConfig.TxQueueSize" , networkInterfaceTrafficConfig.getTxQueueSize());
+		}	
+	}
+
+	public EnhancedNetwork getEnhancedNetwork() {
+		return this.enhancedNetwork;
+	}
+
+	public void setEnhancedNetwork(EnhancedNetwork enhancedNetwork) {
+		this.enhancedNetwork = enhancedNetwork;	
+		if (enhancedNetwork != null) {
+			
+				putQueryParameter("EnhancedNetwork.EnableSriov" , enhancedNetwork.getEnableSriov());
+				putQueryParameter("EnhancedNetwork.EnableRss" , enhancedNetwork.getEnableRss());
+				putQueryParameter("EnhancedNetwork.VirtualFunctionTotalQueueNumber" , enhancedNetwork.getVirtualFunctionTotalQueueNumber());
+				putQueryParameter("EnhancedNetwork.VirtualFunctionQuantity" , enhancedNetwork.getVirtualFunctionQuantity());
+		}	
+	}
+
+	public Boolean getSourceDestCheck() {
+		return this.sourceDestCheck;
+	}
+
+	public void setSourceDestCheck(Boolean sourceDestCheck) {
+		this.sourceDestCheck = sourceDestCheck;
+		if(sourceDestCheck != null){
+			putQueryParameter("SourceDestCheck", sourceDestCheck.toString());
+		}
+	}
+
 	public String getNetworkInterfaceName() {
 		return this.networkInterfaceName;
 	}
@@ -106,6 +162,28 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 		this.networkInterfaceName = networkInterfaceName;
 		if(networkInterfaceName != null){
 			putQueryParameter("NetworkInterfaceName", networkInterfaceName);
+		}
+	}
+
+	public Integer getTxQueueSize() {
+		return this.txQueueSize;
+	}
+
+	public void setTxQueueSize(Integer txQueueSize) {
+		this.txQueueSize = txQueueSize;
+		if(txQueueSize != null){
+			putQueryParameter("TxQueueSize", txQueueSize.toString());
+		}
+	}
+
+	public Boolean getDeleteOnRelease() {
+		return this.deleteOnRelease;
+	}
+
+	public void setDeleteOnRelease(Boolean deleteOnRelease) {
+		this.deleteOnRelease = deleteOnRelease;
+		if(deleteOnRelease != null){
+			putQueryParameter("DeleteOnRelease", deleteOnRelease.toString());
 		}
 	}
 
@@ -131,6 +209,17 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 		}
 	}
 
+	public Integer getRxQueueSize() {
+		return this.rxQueueSize;
+	}
+
+	public void setRxQueueSize(Integer rxQueueSize) {
+		this.rxQueueSize = rxQueueSize;
+		if(rxQueueSize != null){
+			putQueryParameter("RxQueueSize", rxQueueSize.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -142,6 +231,20 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 		}
 	}
 
+	public ConnectionTrackingConfiguration getConnectionTrackingConfiguration() {
+		return this.connectionTrackingConfiguration;
+	}
+
+	public void setConnectionTrackingConfiguration(ConnectionTrackingConfiguration connectionTrackingConfiguration) {
+		this.connectionTrackingConfiguration = connectionTrackingConfiguration;	
+		if (connectionTrackingConfiguration != null) {
+			
+				putQueryParameter("ConnectionTrackingConfiguration.TcpEstablishedTimeout" , connectionTrackingConfiguration.getTcpEstablishedTimeout());
+				putQueryParameter("ConnectionTrackingConfiguration.TcpClosedAndTimeWaitTimeout" , connectionTrackingConfiguration.getTcpClosedAndTimeWaitTimeout());
+				putQueryParameter("ConnectionTrackingConfiguration.UdpTimeout" , connectionTrackingConfiguration.getUdpTimeout());
+		}	
+	}
+
 	public String getNetworkInterfaceId() {
 		return this.networkInterfaceId;
 	}
@@ -150,6 +253,135 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 		this.networkInterfaceId = networkInterfaceId;
 		if(networkInterfaceId != null){
 			putQueryParameter("NetworkInterfaceId", networkInterfaceId);
+		}
+	}
+
+	public static class NetworkInterfaceTrafficConfig {
+
+		private String networkInterfaceTrafficMode;
+
+		private Integer queueNumber;
+
+		private Integer queuePairNumber;
+
+		private Integer rxQueueSize;
+
+		private Integer txQueueSize;
+
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
+		}
+
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		}
+
+		public Integer getQueueNumber() {
+			return this.queueNumber;
+		}
+
+		public void setQueueNumber(Integer queueNumber) {
+			this.queueNumber = queueNumber;
+		}
+
+		public Integer getQueuePairNumber() {
+			return this.queuePairNumber;
+		}
+
+		public void setQueuePairNumber(Integer queuePairNumber) {
+			this.queuePairNumber = queuePairNumber;
+		}
+
+		public Integer getRxQueueSize() {
+			return this.rxQueueSize;
+		}
+
+		public void setRxQueueSize(Integer rxQueueSize) {
+			this.rxQueueSize = rxQueueSize;
+		}
+
+		public Integer getTxQueueSize() {
+			return this.txQueueSize;
+		}
+
+		public void setTxQueueSize(Integer txQueueSize) {
+			this.txQueueSize = txQueueSize;
+		}
+	}
+
+	public static class EnhancedNetwork {
+
+		private Boolean enableSriov;
+
+		private Boolean enableRss;
+
+		private Integer virtualFunctionTotalQueueNumber;
+
+		private Integer virtualFunctionQuantity;
+
+		public Boolean getEnableSriov() {
+			return this.enableSriov;
+		}
+
+		public void setEnableSriov(Boolean enableSriov) {
+			this.enableSriov = enableSriov;
+		}
+
+		public Boolean getEnableRss() {
+			return this.enableRss;
+		}
+
+		public void setEnableRss(Boolean enableRss) {
+			this.enableRss = enableRss;
+		}
+
+		public Integer getVirtualFunctionTotalQueueNumber() {
+			return this.virtualFunctionTotalQueueNumber;
+		}
+
+		public void setVirtualFunctionTotalQueueNumber(Integer virtualFunctionTotalQueueNumber) {
+			this.virtualFunctionTotalQueueNumber = virtualFunctionTotalQueueNumber;
+		}
+
+		public Integer getVirtualFunctionQuantity() {
+			return this.virtualFunctionQuantity;
+		}
+
+		public void setVirtualFunctionQuantity(Integer virtualFunctionQuantity) {
+			this.virtualFunctionQuantity = virtualFunctionQuantity;
+		}
+	}
+
+	public static class ConnectionTrackingConfiguration {
+
+		private Integer tcpEstablishedTimeout;
+
+		private Integer tcpClosedAndTimeWaitTimeout;
+
+		private Integer udpTimeout;
+
+		public Integer getTcpEstablishedTimeout() {
+			return this.tcpEstablishedTimeout;
+		}
+
+		public void setTcpEstablishedTimeout(Integer tcpEstablishedTimeout) {
+			this.tcpEstablishedTimeout = tcpEstablishedTimeout;
+		}
+
+		public Integer getTcpClosedAndTimeWaitTimeout() {
+			return this.tcpClosedAndTimeWaitTimeout;
+		}
+
+		public void setTcpClosedAndTimeWaitTimeout(Integer tcpClosedAndTimeWaitTimeout) {
+			this.tcpClosedAndTimeWaitTimeout = tcpClosedAndTimeWaitTimeout;
+		}
+
+		public Integer getUdpTimeout() {
+			return this.udpTimeout;
+		}
+
+		public void setUdpTimeout(Integer udpTimeout) {
+			this.udpTimeout = udpTimeout;
 		}
 	}
 

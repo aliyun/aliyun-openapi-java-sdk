@@ -85,6 +85,14 @@ public class ListSecurityPoliciesResponse extends AcsResponse {
 
 		private String securityPolicyStatus;
 
+		private Boolean serviceManagedEnabled;
+
+		private String serviceManagedMode;
+
+		private String createTime;
+
+		private List<Tag> tags;
+
 		private List<String> ciphers;
 
 		private List<String> tLSVersions;
@@ -121,6 +129,38 @@ public class ListSecurityPoliciesResponse extends AcsResponse {
 			this.securityPolicyStatus = securityPolicyStatus;
 		}
 
+		public Boolean getServiceManagedEnabled() {
+			return this.serviceManagedEnabled;
+		}
+
+		public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+			this.serviceManagedEnabled = serviceManagedEnabled;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getCiphers() {
 			return this.ciphers;
 		}
@@ -135,6 +175,29 @@ public class ListSecurityPoliciesResponse extends AcsResponse {
 
 		public void setTLSVersions(List<String> tLSVersions) {
 			this.tLSVersions = tLSVersions;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

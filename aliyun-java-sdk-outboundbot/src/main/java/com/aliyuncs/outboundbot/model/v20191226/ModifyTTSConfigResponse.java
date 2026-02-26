@@ -98,6 +98,8 @@ public class ModifyTTSConfigResponse extends AcsResponse {
 
 		private String scriptId;
 
+		private String pitchRate;
+
 		public String getVoice() {
 			return this.voice;
 		}
@@ -144,6 +146,14 @@ public class ModifyTTSConfigResponse extends AcsResponse {
 
 		public void setScriptId(String scriptId) {
 			this.scriptId = scriptId;
+		}
+
+		public String getPitchRate() {
+			return this.pitchRate;
+		}
+
+		public void setPitchRate(String pitchRate) {
+			this.pitchRate = pitchRate;
 		}
 	}
 

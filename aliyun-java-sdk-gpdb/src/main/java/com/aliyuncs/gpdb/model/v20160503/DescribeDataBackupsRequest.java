@@ -43,7 +43,7 @@ public class DescribeDataBackupsRequest extends RpcAcsRequest<DescribeDataBackup
 
 	private String backupMode;
 	public DescribeDataBackupsRequest() {
-		super("gpdb", "2016-05-03", "DescribeDataBackups");
+		super("gpdb", "2016-05-03", "DescribeDataBackups", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,15 +25,17 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class GetMetaTableOutputRequest extends RpcAcsRequest<GetMetaTableOutputResponse> {
 	   
 
+	private String startDate;
+
+	private Integer pageNumber;
+
 	private String endDate;
 
 	private String tableGuid;
 
 	private Integer pageSize;
 
-	private String startDate;
-
-	private Integer pageNumber;
+	private String taskId;
 	public GetMetaTableOutputRequest() {
 		super("dataworks-public", "2020-05-18", "GetMetaTableOutput");
 		setMethod(MethodType.POST);
@@ -41,6 +43,28 @@ public class GetMetaTableOutputRequest extends RpcAcsRequest<GetMetaTableOutputR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putQueryParameter("StartDate", startDate);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public String getEndDate() {
@@ -76,25 +100,14 @@ public class GetMetaTableOutputRequest extends RpcAcsRequest<GetMetaTableOutputR
 		}
 	}
 
-	public String getStartDate() {
-		return this.startDate;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-		if(startDate != null){
-			putQueryParameter("StartDate", startDate);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 

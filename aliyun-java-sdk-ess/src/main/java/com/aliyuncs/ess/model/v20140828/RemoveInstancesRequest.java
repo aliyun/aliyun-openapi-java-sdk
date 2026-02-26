@@ -16,6 +16,8 @@ package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ess.Endpoint;
 
@@ -28,9 +30,18 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String scalingGroupId;
 
+	@SerializedName("lifecycleHookContext")
+	private LifecycleHookContext lifecycleHookContext;
+
 	private Boolean decreaseDesiredCapacity;
+
+	private Boolean ignoreInvalidInstance;
+
+	private Integer stopInstanceTimeout;
 
 	private String removePolicy;
 
@@ -61,6 +72,17 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
 	public String getScalingGroupId() {
 		return this.scalingGroupId;
 	}
@@ -72,6 +94,17 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 		}
 	}
 
+	public LifecycleHookContext getLifecycleHookContext() {
+		return this.lifecycleHookContext;
+	}
+
+	public void setLifecycleHookContext(LifecycleHookContext lifecycleHookContext) {
+		this.lifecycleHookContext = lifecycleHookContext;	
+		if (lifecycleHookContext != null) {
+			putQueryParameter("LifecycleHookContext" , new Gson().toJson(lifecycleHookContext));
+		}	
+	}
+
 	public Boolean getDecreaseDesiredCapacity() {
 		return this.decreaseDesiredCapacity;
 	}
@@ -80,6 +113,28 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 		this.decreaseDesiredCapacity = decreaseDesiredCapacity;
 		if(decreaseDesiredCapacity != null){
 			putQueryParameter("DecreaseDesiredCapacity", decreaseDesiredCapacity.toString());
+		}
+	}
+
+	public Boolean getIgnoreInvalidInstance() {
+		return this.ignoreInvalidInstance;
+	}
+
+	public void setIgnoreInvalidInstance(Boolean ignoreInvalidInstance) {
+		this.ignoreInvalidInstance = ignoreInvalidInstance;
+		if(ignoreInvalidInstance != null){
+			putQueryParameter("IgnoreInvalidInstance", ignoreInvalidInstance.toString());
+		}
+	}
+
+	public Integer getStopInstanceTimeout() {
+		return this.stopInstanceTimeout;
+	}
+
+	public void setStopInstanceTimeout(Integer stopInstanceTimeout) {
+		this.stopInstanceTimeout = stopInstanceTimeout;
+		if(stopInstanceTimeout != null){
+			putQueryParameter("StopInstanceTimeout", stopInstanceTimeout.toString());
 		}
 	}
 
@@ -138,6 +193,31 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
 			}
 		}	
+	}
+
+	public static class LifecycleHookContext {
+
+		@SerializedName("DisableLifecycleHook")
+		private Boolean disableLifecycleHook;
+
+		@SerializedName("IgnoredLifecycleHookIds")
+		private List<String> ignoredLifecycleHookIds;
+
+		public Boolean getDisableLifecycleHook() {
+			return this.disableLifecycleHook;
+		}
+
+		public void setDisableLifecycleHook(Boolean disableLifecycleHook) {
+			this.disableLifecycleHook = disableLifecycleHook;
+		}
+
+		public List<String> getIgnoredLifecycleHookIds() {
+			return this.ignoredLifecycleHookIds;
+		}
+
+		public void setIgnoredLifecycleHookIds(List<String> ignoredLifecycleHookIds) {
+			this.ignoredLifecycleHookIds = ignoredLifecycleHookIds;
+		}
 	}
 
 	@Override

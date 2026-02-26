@@ -34,8 +34,10 @@ public class CreateJobFileRequest extends RpcAcsRequest<CreateJobFileResponse> {
 	private String clusterId;
 
 	private String content;
+
+	private Boolean async;
 	public CreateJobFileRequest() {
-		super("EHPC", "2018-04-12", "CreateJobFile");
+		super("EHPC", "2018-04-12", "CreateJobFile", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -95,6 +97,17 @@ public class CreateJobFileRequest extends RpcAcsRequest<CreateJobFileResponse> {
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 

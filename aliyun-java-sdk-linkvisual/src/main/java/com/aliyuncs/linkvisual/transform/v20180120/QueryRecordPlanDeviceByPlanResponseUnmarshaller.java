@@ -28,21 +28,21 @@ public class QueryRecordPlanDeviceByPlanResponseUnmarshaller {
 	public static QueryRecordPlanDeviceByPlanResponse unmarshall(QueryRecordPlanDeviceByPlanResponse queryRecordPlanDeviceByPlanResponse, UnmarshallerContext _ctx) {
 		
 		queryRecordPlanDeviceByPlanResponse.setRequestId(_ctx.stringValue("QueryRecordPlanDeviceByPlanResponse.RequestId"));
-		queryRecordPlanDeviceByPlanResponse.setSuccess(_ctx.booleanValue("QueryRecordPlanDeviceByPlanResponse.Success"));
-		queryRecordPlanDeviceByPlanResponse.setErrorMessage(_ctx.stringValue("QueryRecordPlanDeviceByPlanResponse.ErrorMessage"));
 		queryRecordPlanDeviceByPlanResponse.setCode(_ctx.stringValue("QueryRecordPlanDeviceByPlanResponse.Code"));
+		queryRecordPlanDeviceByPlanResponse.setErrorMessage(_ctx.stringValue("QueryRecordPlanDeviceByPlanResponse.ErrorMessage"));
+		queryRecordPlanDeviceByPlanResponse.setSuccess(_ctx.booleanValue("QueryRecordPlanDeviceByPlanResponse.Success"));
 
 		Data data = new Data();
+		data.setPageSize(_ctx.integerValue("QueryRecordPlanDeviceByPlanResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QueryRecordPlanDeviceByPlanResponse.Data.Total"));
 		data.setPageCount(_ctx.integerValue("QueryRecordPlanDeviceByPlanResponse.Data.PageCount"));
 		data.setPage(_ctx.integerValue("QueryRecordPlanDeviceByPlanResponse.Data.Page"));
-		data.setPageSize(_ctx.integerValue("QueryRecordPlanDeviceByPlanResponse.Data.PageSize"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryRecordPlanDeviceByPlanResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setIotId(_ctx.stringValue("QueryRecordPlanDeviceByPlanResponse.Data.List["+ i +"].IotId"));
 			listItem.setStreamType(_ctx.integerValue("QueryRecordPlanDeviceByPlanResponse.Data.List["+ i +"].StreamType"));
+			listItem.setIotId(_ctx.stringValue("QueryRecordPlanDeviceByPlanResponse.Data.List["+ i +"].IotId"));
 
 			list.add(listItem);
 		}

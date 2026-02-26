@@ -47,23 +47,15 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	public static class Region {
 
-		private String regionId;
-
 		private Boolean classicUnavailable;
-
-		private Boolean vpcUnavailable;
 
 		private String regionEndpoint;
 
 		private String localName;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
+		private Boolean vpcUnavailable;
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String regionId;
 
 		public Boolean getClassicUnavailable() {
 			return this.classicUnavailable;
@@ -71,14 +63,6 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public void setClassicUnavailable(Boolean classicUnavailable) {
 			this.classicUnavailable = classicUnavailable;
-		}
-
-		public Boolean getVpcUnavailable() {
-			return this.vpcUnavailable;
-		}
-
-		public void setVpcUnavailable(Boolean vpcUnavailable) {
-			this.vpcUnavailable = vpcUnavailable;
 		}
 
 		public String getRegionEndpoint() {
@@ -95,6 +79,22 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public void setLocalName(String localName) {
 			this.localName = localName;
+		}
+
+		public Boolean getVpcUnavailable() {
+			return this.vpcUnavailable;
+		}
+
+		public void setVpcUnavailable(Boolean vpcUnavailable) {
+			this.vpcUnavailable = vpcUnavailable;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

@@ -47,33 +47,33 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 
 	public static class NodeInfo {
 
-		private String id;
-
-		private String hostName;
-
 		private String status;
-
-		private String version;
-
-		private Boolean createdByEhpc;
-
-		private String addTime;
-
-		private Boolean expired;
-
-		private String expiredTime;
-
-		private String spotStrategy;
-
-		private String lockReason;
-
-		private String imageOwnerAlias;
-
-		private String imageId;
 
 		private Boolean htEnabled;
 
+		private Boolean expired;
+
+		private String imageOwnerAlias;
+
+		private String hostName;
+
+		private String lockReason;
+
 		private String instanceType;
+
+		private String spotStrategy;
+
+		private Boolean createdByEhpc;
+
+		private String version;
+
+		private String expiredTime;
+
+		private String addTime;
+
+		private String imageId;
+
+		private String id;
 
 		private List<String> roles;
 
@@ -81,100 +81,12 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 
 		private UsedResources usedResources;
 
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getHostName() {
-			return this.hostName;
-		}
-
-		public void setHostName(String hostName) {
-			this.hostName = hostName;
-		}
-
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
-		}
-
-		public Boolean getCreatedByEhpc() {
-			return this.createdByEhpc;
-		}
-
-		public void setCreatedByEhpc(Boolean createdByEhpc) {
-			this.createdByEhpc = createdByEhpc;
-		}
-
-		public String getAddTime() {
-			return this.addTime;
-		}
-
-		public void setAddTime(String addTime) {
-			this.addTime = addTime;
-		}
-
-		public Boolean getExpired() {
-			return this.expired;
-		}
-
-		public void setExpired(Boolean expired) {
-			this.expired = expired;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public String getSpotStrategy() {
-			return this.spotStrategy;
-		}
-
-		public void setSpotStrategy(String spotStrategy) {
-			this.spotStrategy = spotStrategy;
-		}
-
-		public String getLockReason() {
-			return this.lockReason;
-		}
-
-		public void setLockReason(String lockReason) {
-			this.lockReason = lockReason;
-		}
-
-		public String getImageOwnerAlias() {
-			return this.imageOwnerAlias;
-		}
-
-		public void setImageOwnerAlias(String imageOwnerAlias) {
-			this.imageOwnerAlias = imageOwnerAlias;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
 		}
 
 		public Boolean getHtEnabled() {
@@ -185,12 +97,100 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 			this.htEnabled = htEnabled;
 		}
 
+		public Boolean getExpired() {
+			return this.expired;
+		}
+
+		public void setExpired(Boolean expired) {
+			this.expired = expired;
+		}
+
+		public String getImageOwnerAlias() {
+			return this.imageOwnerAlias;
+		}
+
+		public void setImageOwnerAlias(String imageOwnerAlias) {
+			this.imageOwnerAlias = imageOwnerAlias;
+		}
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
+
+		public String getLockReason() {
+			return this.lockReason;
+		}
+
+		public void setLockReason(String lockReason) {
+			this.lockReason = lockReason;
+		}
+
 		public String getInstanceType() {
 			return this.instanceType;
 		}
 
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
+		public Boolean getCreatedByEhpc() {
+			return this.createdByEhpc;
+		}
+
+		public void setCreatedByEhpc(Boolean createdByEhpc) {
+			this.createdByEhpc = createdByEhpc;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getAddTime() {
+			return this.addTime;
+		}
+
+		public void setAddTime(String addTime) {
+			this.addTime = addTime;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public List<String> getRoles() {
@@ -219,11 +219,19 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 
 		public static class TotalResources {
 
+			private Integer gpu;
+
 			private Integer cpu;
 
 			private Integer memory;
 
-			private Integer gpu;
+			public Integer getGpu() {
+				return this.gpu;
+			}
+
+			public void setGpu(Integer gpu) {
+				this.gpu = gpu;
+			}
 
 			public Integer getCpu() {
 				return this.cpu;
@@ -239,24 +247,24 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 
 			public void setMemory(Integer memory) {
 				this.memory = memory;
-			}
-
-			public Integer getGpu() {
-				return this.gpu;
-			}
-
-			public void setGpu(Integer gpu) {
-				this.gpu = gpu;
 			}
 		}
 
 		public static class UsedResources {
 
+			private Integer gpu;
+
 			private Integer cpu;
 
 			private Integer memory;
 
-			private Integer gpu;
+			public Integer getGpu() {
+				return this.gpu;
+			}
+
+			public void setGpu(Integer gpu) {
+				this.gpu = gpu;
+			}
 
 			public Integer getCpu() {
 				return this.cpu;
@@ -272,14 +280,6 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 
 			public void setMemory(Integer memory) {
 				this.memory = memory;
-			}
-
-			public Integer getGpu() {
-				return this.gpu;
-			}
-
-			public void setGpu(Integer gpu) {
-				this.gpu = gpu;
 			}
 		}
 	}

@@ -26,7 +26,6 @@ public class GetCampaignResponseUnmarshaller {
 		getCampaignResponse.setRequestId(_ctx.stringValue("GetCampaignResponse.RequestId"));
 		getCampaignResponse.setHttpStatusCode(_ctx.longValue("GetCampaignResponse.HttpStatusCode"));
 		getCampaignResponse.setCode(_ctx.stringValue("GetCampaignResponse.Code"));
-		getCampaignResponse.setSuccess(_ctx.booleanValue("GetCampaignResponse.Success"));
 
 		Data data = new Data();
 		data.setActualEndTime(_ctx.longValue("GetCampaignResponse.Data.ActualEndTime"));
@@ -49,6 +48,9 @@ public class GetCampaignResponseUnmarshaller {
 		data.setSimulation(_ctx.booleanValue("GetCampaignResponse.Data.Simulation"));
 		data.setSimulationParameters(_ctx.stringValue("GetCampaignResponse.Data.SimulationParameters"));
 		data.setCasesUncompletedAfterAttempted(_ctx.longValue("GetCampaignResponse.Data.CasesUncompletedAfterAttempted"));
+		data.setCasesUncompletedAfterAttempt(_ctx.stringValue("GetCampaignResponse.Data.CasesUncompletedAfterAttempt"));
+		data.setCompletionRate(_ctx.floatValue("GetCampaignResponse.Data.CompletionRate"));
+		data.setContactFlowId(_ctx.stringValue("GetCampaignResponse.Data.ContactFlowId"));
 		getCampaignResponse.setData(data);
 	 
 	 	return getCampaignResponse;

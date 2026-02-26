@@ -35,9 +35,11 @@ public class SubscribeBillToOSSRequest extends RpcAcsRequest<SubscribeBillToOSSR
 
 	private String beginBillingCycle;
 
+	private Integer rowLimitPerFile;
+
 	private String multAccountRelSubscribe;
 	public SubscribeBillToOSSRequest() {
-		super("BssOpenApi", "2017-12-14", "SubscribeBillToOSS");
+		super("BssOpenApi", "2017-12-14", "SubscribeBillToOSS", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -97,6 +99,17 @@ public class SubscribeBillToOSSRequest extends RpcAcsRequest<SubscribeBillToOSSR
 		this.beginBillingCycle = beginBillingCycle;
 		if(beginBillingCycle != null){
 			putQueryParameter("BeginBillingCycle", beginBillingCycle);
+		}
+	}
+
+	public Integer getRowLimitPerFile() {
+		return this.rowLimitPerFile;
+	}
+
+	public void setRowLimitPerFile(Integer rowLimitPerFile) {
+		this.rowLimitPerFile = rowLimitPerFile;
+		if(rowLimitPerFile != null){
+			putQueryParameter("RowLimitPerFile", rowLimitPerFile.toString());
 		}
 	}
 

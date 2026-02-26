@@ -27,7 +27,7 @@ public class QueryFinancialAccountInfoRequest extends RpcAcsRequest<QueryFinanci
 
 	private Long userId;
 	public QueryFinancialAccountInfoRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryFinancialAccountInfo");
+		super("BssOpenApi", "2017-12-14", "QueryFinancialAccountInfo", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

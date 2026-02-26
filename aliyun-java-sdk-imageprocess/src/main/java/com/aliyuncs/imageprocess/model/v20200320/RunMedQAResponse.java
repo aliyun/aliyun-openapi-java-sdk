@@ -26,21 +26,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RunMedQAResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,6 +50,14 @@ public class RunMedQAResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -68,24 +68,24 @@ public class RunMedQAResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Map<Object,Object> reports;
+		private String sessionId;
 
 		private String questionType;
 
-		private String answerType;
-
 		private String question;
 
-		private String sessionId;
+		private String answerType;
+
+		private Map<Object,Object> reports;
 
 		private List<String> options;
 
-		public Map<Object,Object> getReports() {
-			return this.reports;
+		public String getSessionId() {
+			return this.sessionId;
 		}
 
-		public void setReports(Map<Object,Object> reports) {
-			this.reports = reports;
+		public void setSessionId(String sessionId) {
+			this.sessionId = sessionId;
 		}
 
 		public String getQuestionType() {
@@ -96,14 +96,6 @@ public class RunMedQAResponse extends AcsResponse {
 			this.questionType = questionType;
 		}
 
-		public String getAnswerType() {
-			return this.answerType;
-		}
-
-		public void setAnswerType(String answerType) {
-			this.answerType = answerType;
-		}
-
 		public String getQuestion() {
 			return this.question;
 		}
@@ -112,12 +104,20 @@ public class RunMedQAResponse extends AcsResponse {
 			this.question = question;
 		}
 
-		public String getSessionId() {
-			return this.sessionId;
+		public String getAnswerType() {
+			return this.answerType;
 		}
 
-		public void setSessionId(String sessionId) {
-			this.sessionId = sessionId;
+		public void setAnswerType(String answerType) {
+			this.answerType = answerType;
+		}
+
+		public Map<Object,Object> getReports() {
+			return this.reports;
+		}
+
+		public void setReports(Map<Object,Object> reports) {
+			this.reports = reports;
 		}
 
 		public List<String> getOptions() {

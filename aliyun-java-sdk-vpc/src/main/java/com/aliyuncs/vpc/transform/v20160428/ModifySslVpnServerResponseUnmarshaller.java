@@ -39,6 +39,9 @@ public class ModifySslVpnServerResponseUnmarshaller {
 		modifySslVpnServerResponse.setEnableMultiFactorAuth(_ctx.booleanValue("ModifySslVpnServerResponse.EnableMultiFactorAuth"));
 		modifySslVpnServerResponse.setClientIpPool(_ctx.stringValue("ModifySslVpnServerResponse.ClientIpPool"));
 		modifySslVpnServerResponse.setProto(_ctx.stringValue("ModifySslVpnServerResponse.Proto"));
+		modifySslVpnServerResponse.setResourceGroupId(_ctx.stringValue("ModifySslVpnServerResponse.ResourceGroupId"));
+		modifySslVpnServerResponse.setIDaaSApplicationId(_ctx.stringValue("ModifySslVpnServerResponse.IDaaSApplicationId"));
+		modifySslVpnServerResponse.setIDaaSInstanceVersion(_ctx.stringValue("ModifySslVpnServerResponse.IDaaSInstanceVersion"));
 	 
 	 	return modifySslVpnServerResponse;
 	}

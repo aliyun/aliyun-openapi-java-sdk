@@ -23,9 +23,9 @@ public class CreateSaslUserResponseUnmarshaller {
 	public static CreateSaslUserResponse unmarshall(CreateSaslUserResponse createSaslUserResponse, UnmarshallerContext _ctx) {
 		
 		createSaslUserResponse.setRequestId(_ctx.stringValue("CreateSaslUserResponse.RequestId"));
-		createSaslUserResponse.setSuccess(_ctx.booleanValue("CreateSaslUserResponse.Success"));
 		createSaslUserResponse.setCode(_ctx.integerValue("CreateSaslUserResponse.Code"));
 		createSaslUserResponse.setMessage(_ctx.stringValue("CreateSaslUserResponse.Message"));
+		createSaslUserResponse.setSuccess(_ctx.booleanValue("CreateSaslUserResponse.Success"));
 	 
 	 	return createSaslUserResponse;
 	}

@@ -15,32 +15,34 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTransferInListRequest extends RpcAcsRequest<QueryTransferInListResponse> {
-	
-	public QueryTransferInListRequest() {
-		super("Domain-intl", "2017-12-18", "QueryTransferInList", "domain");
-	}
+	   
 
 	private Long submissionStartDate;
-
-	private String userClientIp;
 
 	private Long submissionEndDate;
 
 	private String domainName;
+
+	private Integer pageNum;
+
+	private String userClientIp;
 
 	private String simpleTransferInStatus;
 
 	private Integer pageSize;
 
 	private String lang;
-
-	private Integer pageNum;
+	public QueryTransferInListRequest() {
+		super("Domain-intl", "2017-12-18", "QueryTransferInList");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getSubmissionStartDate() {
 		return this.submissionStartDate;
@@ -50,17 +52,6 @@ public class QueryTransferInListRequest extends RpcAcsRequest<QueryTransferInLis
 		this.submissionStartDate = submissionStartDate;
 		if(submissionStartDate != null){
 			putQueryParameter("SubmissionStartDate", submissionStartDate.toString());
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 
@@ -83,6 +74,28 @@ public class QueryTransferInListRequest extends RpcAcsRequest<QueryTransferInLis
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getUserClientIp() {
+		return this.userClientIp;
+	}
+
+	public void setUserClientIp(String userClientIp) {
+		this.userClientIp = userClientIp;
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 
@@ -116,17 +129,6 @@ public class QueryTransferInListRequest extends RpcAcsRequest<QueryTransferInLis
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

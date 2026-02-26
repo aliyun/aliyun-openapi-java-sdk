@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCloudMigrationResultResponse extends AcsResponse {
 
-	private Integer totalSize;
-
-	private String requestId;
-
 	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Integer totalSize;
+
 	private List<Tasks> items;
-
-	public Integer getTotalSize() {
-		return this.totalSize;
-	}
-
-	public void setTotalSize(Integer totalSize) {
-		this.totalSize = totalSize;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getPageNumber() {
 		return this.pageNumber;
@@ -67,6 +51,22 @@ public class DescribeCloudMigrationResultResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalSize() {
+		return this.totalSize;
+	}
+
+	public void setTotalSize(Integer totalSize) {
+		this.totalSize = totalSize;
+	}
+
 	public List<Tasks> getItems() {
 		return this.items;
 	}
@@ -77,39 +77,47 @@ public class DescribeCloudMigrationResultResponse extends AcsResponse {
 
 	public static class Tasks {
 
+		private String detail;
+
 		private String gmtCreated;
 
 		private String gmtModified;
 
-		private Long taskId;
-
-		private String taskName;
-
-		private String status;
-
 		private String migrateStage;
+
+		private String replicationInfo;
+
+		private String replicationState;
+
+		private String sourceAccount;
 
 		private String sourceCategory;
 
 		private String sourceIpAddress;
 
+		private String sourcePassword;
+
 		private Long sourcePort;
 
-		private String sourceAccount;
+		private String status;
 
-		private String sourcePassword;
+		private String switchTime;
 
 		private String targetEip;
 
 		private String targetInstanceName;
 
-		private String replicationState;
+		private Long taskId;
 
-		private String replicationInfo;
+		private String taskName;
 
-		private String detail;
+		public String getDetail() {
+			return this.detail;
+		}
 
-		private String switchTime;
+		public void setDetail(String detail) {
+			this.detail = detail;
+		}
 
 		public String getGmtCreated() {
 			return this.gmtCreated;
@@ -127,36 +135,36 @@ public class DescribeCloudMigrationResultResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public Long getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(Long taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getTaskName() {
-			return this.taskName;
-		}
-
-		public void setTaskName(String taskName) {
-			this.taskName = taskName;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getMigrateStage() {
 			return this.migrateStage;
 		}
 
 		public void setMigrateStage(String migrateStage) {
 			this.migrateStage = migrateStage;
+		}
+
+		public String getReplicationInfo() {
+			return this.replicationInfo;
+		}
+
+		public void setReplicationInfo(String replicationInfo) {
+			this.replicationInfo = replicationInfo;
+		}
+
+		public String getReplicationState() {
+			return this.replicationState;
+		}
+
+		public void setReplicationState(String replicationState) {
+			this.replicationState = replicationState;
+		}
+
+		public String getSourceAccount() {
+			return this.sourceAccount;
+		}
+
+		public void setSourceAccount(String sourceAccount) {
+			this.sourceAccount = sourceAccount;
 		}
 
 		public String getSourceCategory() {
@@ -175,6 +183,14 @@ public class DescribeCloudMigrationResultResponse extends AcsResponse {
 			this.sourceIpAddress = sourceIpAddress;
 		}
 
+		public String getSourcePassword() {
+			return this.sourcePassword;
+		}
+
+		public void setSourcePassword(String sourcePassword) {
+			this.sourcePassword = sourcePassword;
+		}
+
 		public Long getSourcePort() {
 			return this.sourcePort;
 		}
@@ -183,20 +199,20 @@ public class DescribeCloudMigrationResultResponse extends AcsResponse {
 			this.sourcePort = sourcePort;
 		}
 
-		public String getSourceAccount() {
-			return this.sourceAccount;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setSourceAccount(String sourceAccount) {
-			this.sourceAccount = sourceAccount;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getSourcePassword() {
-			return this.sourcePassword;
+		public String getSwitchTime() {
+			return this.switchTime;
 		}
 
-		public void setSourcePassword(String sourcePassword) {
-			this.sourcePassword = sourcePassword;
+		public void setSwitchTime(String switchTime) {
+			this.switchTime = switchTime;
 		}
 
 		public String getTargetEip() {
@@ -215,36 +231,20 @@ public class DescribeCloudMigrationResultResponse extends AcsResponse {
 			this.targetInstanceName = targetInstanceName;
 		}
 
-		public String getReplicationState() {
-			return this.replicationState;
+		public Long getTaskId() {
+			return this.taskId;
 		}
 
-		public void setReplicationState(String replicationState) {
-			this.replicationState = replicationState;
+		public void setTaskId(Long taskId) {
+			this.taskId = taskId;
 		}
 
-		public String getReplicationInfo() {
-			return this.replicationInfo;
+		public String getTaskName() {
+			return this.taskName;
 		}
 
-		public void setReplicationInfo(String replicationInfo) {
-			this.replicationInfo = replicationInfo;
-		}
-
-		public String getDetail() {
-			return this.detail;
-		}
-
-		public void setDetail(String detail) {
-			this.detail = detail;
-		}
-
-		public String getSwitchTime() {
-			return this.switchTime;
-		}
-
-		public void setSwitchTime(String switchTime) {
-			this.switchTime = switchTime;
+		public void setTaskName(String taskName) {
+			this.taskName = taskName;
 		}
 	}
 

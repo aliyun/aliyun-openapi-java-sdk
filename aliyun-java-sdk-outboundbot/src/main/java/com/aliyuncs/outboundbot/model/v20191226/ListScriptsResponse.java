@@ -159,6 +159,24 @@ public class ListScriptsResponse extends AcsResponse {
 
 			private Boolean longWaitEnable;
 
+			private Boolean emotionEnable;
+
+			private Boolean isPreset;
+
+			private String agentKey;
+
+			private Boolean agentLlm;
+
+			private Long agentId;
+
+			private String nluEngine;
+
+			private String nluAccessType;
+
+			private Long createTime;
+
+			private NluProfile nluProfile;
+
 			public String getStatus() {
 				return this.status;
 			}
@@ -277,6 +295,111 @@ public class ListScriptsResponse extends AcsResponse {
 
 			public void setLongWaitEnable(Boolean longWaitEnable) {
 				this.longWaitEnable = longWaitEnable;
+			}
+
+			public Boolean getEmotionEnable() {
+				return this.emotionEnable;
+			}
+
+			public void setEmotionEnable(Boolean emotionEnable) {
+				this.emotionEnable = emotionEnable;
+			}
+
+			public Boolean getIsPreset() {
+				return this.isPreset;
+			}
+
+			public void setIsPreset(Boolean isPreset) {
+				this.isPreset = isPreset;
+			}
+
+			public String getAgentKey() {
+				return this.agentKey;
+			}
+
+			public void setAgentKey(String agentKey) {
+				this.agentKey = agentKey;
+			}
+
+			public Boolean getAgentLlm() {
+				return this.agentLlm;
+			}
+
+			public void setAgentLlm(Boolean agentLlm) {
+				this.agentLlm = agentLlm;
+			}
+
+			public Long getAgentId() {
+				return this.agentId;
+			}
+
+			public void setAgentId(Long agentId) {
+				this.agentId = agentId;
+			}
+
+			public String getNluEngine() {
+				return this.nluEngine;
+			}
+
+			public void setNluEngine(String nluEngine) {
+				this.nluEngine = nluEngine;
+			}
+
+			public String getNluAccessType() {
+				return this.nluAccessType;
+			}
+
+			public void setNluAccessType(String nluAccessType) {
+				this.nluAccessType = nluAccessType;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public NluProfile getNluProfile() {
+				return this.nluProfile;
+			}
+
+			public void setNluProfile(NluProfile nluProfile) {
+				this.nluProfile = nluProfile;
+			}
+
+			public static class NluProfile {
+
+				private String fcFunction;
+
+				private String fcRegion;
+
+				private String fcHttpTriggerUrl;
+
+				public String getFcFunction() {
+					return this.fcFunction;
+				}
+
+				public void setFcFunction(String fcFunction) {
+					this.fcFunction = fcFunction;
+				}
+
+				public String getFcRegion() {
+					return this.fcRegion;
+				}
+
+				public void setFcRegion(String fcRegion) {
+					this.fcRegion = fcRegion;
+				}
+
+				public String getFcHttpTriggerUrl() {
+					return this.fcHttpTriggerUrl;
+				}
+
+				public void setFcHttpTriggerUrl(String fcHttpTriggerUrl) {
+					this.fcHttpTriggerUrl = fcHttpTriggerUrl;
+				}
 			}
 		}
 	}

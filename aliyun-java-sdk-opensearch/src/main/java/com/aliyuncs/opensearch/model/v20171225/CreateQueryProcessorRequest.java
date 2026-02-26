@@ -31,7 +31,7 @@ public class CreateQueryProcessorRequest extends RoaAcsRequest<CreateQueryProces
 
 	private String appGroupIdentity;
 	public CreateQueryProcessorRequest() {
-		super("OpenSearch", "2017-12-25", "CreateQueryProcessor", "opensearch");
+		super("OpenSearch", "2017-12-25", "CreateQueryProcessor");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/query-processors");
 		setMethod(MethodType.POST);
 		try {

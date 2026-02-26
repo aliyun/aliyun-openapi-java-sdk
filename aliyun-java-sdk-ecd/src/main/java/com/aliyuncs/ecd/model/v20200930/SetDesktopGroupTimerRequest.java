@@ -35,7 +35,7 @@ public class SetDesktopGroupTimerRequest extends RpcAcsRequest<SetDesktopGroupTi
 
 	private Boolean force;
 	public SetDesktopGroupTimerRequest() {
-		super("ecd", "2020-09-30", "SetDesktopGroupTimer");
+		super("ecd", "2020-09-30", "SetDesktopGroupTimer", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

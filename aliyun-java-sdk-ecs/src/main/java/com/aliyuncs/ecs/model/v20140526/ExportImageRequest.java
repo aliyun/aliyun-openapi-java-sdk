@@ -33,6 +33,8 @@ public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 
 	private String oSSBucket;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String roleName;
@@ -90,6 +92,17 @@ public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 		this.oSSBucket = oSSBucket;
 		if(oSSBucket != null){
 			putQueryParameter("OSSBucket", oSSBucket);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

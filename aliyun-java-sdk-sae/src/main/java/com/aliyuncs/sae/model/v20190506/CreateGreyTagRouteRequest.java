@@ -33,6 +33,8 @@ public class CreateGreyTagRouteRequest extends RoaAcsRequest<CreateGreyTagRouteR
 
 	private String dubboRules;
 
+	private String albRules;
+
 	private String scRules;
 	public CreateGreyTagRouteRequest() {
 		super("sae", "2019-05-06", "CreateGreyTagRoute", "serverless");
@@ -85,6 +87,17 @@ public class CreateGreyTagRouteRequest extends RoaAcsRequest<CreateGreyTagRouteR
 		this.dubboRules = dubboRules;
 		if(dubboRules != null){
 			putQueryParameter("DubboRules", dubboRules);
+		}
+	}
+
+	public String getAlbRules() {
+		return this.albRules;
+	}
+
+	public void setAlbRules(String albRules) {
+		this.albRules = albRules;
+		if(albRules != null){
+			putQueryParameter("AlbRules", albRules);
 		}
 	}
 

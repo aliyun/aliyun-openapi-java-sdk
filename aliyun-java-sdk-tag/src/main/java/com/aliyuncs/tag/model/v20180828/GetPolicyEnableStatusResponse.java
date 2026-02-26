@@ -47,17 +47,9 @@ public class GetPolicyEnableStatusResponse extends AcsResponse {
 
 	public static class StatusModelsItem {
 
-		private String userType;
-
 		private String status;
 
-		public String getUserType() {
-			return this.userType;
-		}
-
-		public void setUserType(String userType) {
-			this.userType = userType;
-		}
+		private String userType;
 
 		public String getStatus() {
 			return this.status;
@@ -65,6 +57,14 @@ public class GetPolicyEnableStatusResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getUserType() {
+			return this.userType;
+		}
+
+		public void setUserType(String userType) {
+			this.userType = userType;
 		}
 	}
 

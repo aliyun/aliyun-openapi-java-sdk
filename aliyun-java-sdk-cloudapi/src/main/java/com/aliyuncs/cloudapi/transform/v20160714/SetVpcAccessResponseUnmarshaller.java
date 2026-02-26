@@ -23,6 +23,7 @@ public class SetVpcAccessResponseUnmarshaller {
 	public static SetVpcAccessResponse unmarshall(SetVpcAccessResponse setVpcAccessResponse, UnmarshallerContext _ctx) {
 		
 		setVpcAccessResponse.setRequestId(_ctx.stringValue("SetVpcAccessResponse.RequestId"));
+		setVpcAccessResponse.setVpcAccessId(_ctx.stringValue("SetVpcAccessResponse.VpcAccessId"));
 	 
 	 	return setVpcAccessResponse;
 	}

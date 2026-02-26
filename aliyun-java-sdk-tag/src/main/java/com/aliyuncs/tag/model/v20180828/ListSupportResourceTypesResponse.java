@@ -15,6 +15,7 @@
 package com.aliyuncs.tag.model.v20180828;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.tag.transform.v20180828.ListSupportResourceTypesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -25,19 +26,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSupportResourceTypesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<SupportResourceType> supportResourceTypes;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +38,14 @@ public class ListSupportResourceTypesResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<SupportResourceType> getSupportResourceTypes() {
@@ -57,11 +58,21 @@ public class ListSupportResourceTypesResponse extends AcsResponse {
 
 	public static class SupportResourceType {
 
+		private String arnTemplate;
+
 		private String productCode;
 
 		private String resourceType;
 
 		private List<SupportItemsItem> supportItems;
+
+		public String getArnTemplate() {
+			return this.arnTemplate;
+		}
+
+		public void setArnTemplate(String arnTemplate) {
+			this.arnTemplate = arnTemplate;
+		}
 
 		public String getProductCode() {
 			return this.productCode;
@@ -89,9 +100,19 @@ public class ListSupportResourceTypesResponse extends AcsResponse {
 
 		public static class SupportItemsItem {
 
+			private Boolean support;
+
 			private String supportCode;
 
-			private Boolean support;
+			private List<Map<Object,Object>> supportDetails;
+
+			public Boolean getSupport() {
+				return this.support;
+			}
+
+			public void setSupport(Boolean support) {
+				this.support = support;
+			}
 
 			public String getSupportCode() {
 				return this.supportCode;
@@ -101,12 +122,12 @@ public class ListSupportResourceTypesResponse extends AcsResponse {
 				this.supportCode = supportCode;
 			}
 
-			public Boolean getSupport() {
-				return this.support;
+			public List<Map<Object,Object>> getSupportDetails() {
+				return this.supportDetails;
 			}
 
-			public void setSupport(Boolean support) {
-				this.support = support;
+			public void setSupportDetails(List<Map<Object,Object>> supportDetails) {
+				this.supportDetails = supportDetails;
 			}
 		}
 	}

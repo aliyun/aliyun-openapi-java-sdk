@@ -31,9 +31,10 @@ public class GetScriptFileNamesResponseUnmarshaller {
 		List<FileInfos> result = new ArrayList<FileInfos>();
 		for (int i = 0; i < _ctx.lengthValue("GetScriptFileNamesResponse.result.Length"); i++) {
 			FileInfos fileInfos = new FileInfos();
-			fileInfos.setFileName(_ctx.stringValue("GetScriptFileNamesResponse.result["+ i +"].fileName"));
 			fileInfos.setCreateTime(_ctx.stringValue("GetScriptFileNamesResponse.result["+ i +"].createTime"));
+			fileInfos.setFileName(_ctx.stringValue("GetScriptFileNamesResponse.result["+ i +"].fileName"));
 			fileInfos.setModifyTime(_ctx.stringValue("GetScriptFileNamesResponse.result["+ i +"].modifyTime"));
+			fileInfos.setPathName(_ctx.stringValue("GetScriptFileNamesResponse.result["+ i +"].pathName"));
 
 			result.add(fileInfos);
 		}

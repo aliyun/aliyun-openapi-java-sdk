@@ -50,6 +50,16 @@ public class DescribeBruteForceSummaryResponse extends AcsResponse {
 
 		private Integer effectiveCount;
 
+		private String antiBruteForceRuleCount;
+
+		private String customRecordCount;
+
+		private String systemRecordCount;
+
+		private String customEffectiveCount;
+
+		private String systemEffectiveCount;
+
 		public Integer getAllStrategyCount() {
 			return this.allStrategyCount;
 		}
@@ -64,6 +74,46 @@ public class DescribeBruteForceSummaryResponse extends AcsResponse {
 
 		public void setEffectiveCount(Integer effectiveCount) {
 			this.effectiveCount = effectiveCount;
+		}
+
+		public String getAntiBruteForceRuleCount() {
+			return this.antiBruteForceRuleCount;
+		}
+
+		public void setAntiBruteForceRuleCount(String antiBruteForceRuleCount) {
+			this.antiBruteForceRuleCount = antiBruteForceRuleCount;
+		}
+
+		public String getCustomRecordCount() {
+			return this.customRecordCount;
+		}
+
+		public void setCustomRecordCount(String customRecordCount) {
+			this.customRecordCount = customRecordCount;
+		}
+
+		public String getSystemRecordCount() {
+			return this.systemRecordCount;
+		}
+
+		public void setSystemRecordCount(String systemRecordCount) {
+			this.systemRecordCount = systemRecordCount;
+		}
+
+		public String getCustomEffectiveCount() {
+			return this.customEffectiveCount;
+		}
+
+		public void setCustomEffectiveCount(String customEffectiveCount) {
+			this.customEffectiveCount = customEffectiveCount;
+		}
+
+		public String getSystemEffectiveCount() {
+			return this.systemEffectiveCount;
+		}
+
+		public void setSystemEffectiveCount(String systemEffectiveCount) {
+			this.systemEffectiveCount = systemEffectiveCount;
 		}
 	}
 

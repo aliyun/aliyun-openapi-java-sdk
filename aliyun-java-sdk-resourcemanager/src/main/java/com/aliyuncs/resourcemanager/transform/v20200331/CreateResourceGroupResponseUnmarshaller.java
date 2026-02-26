@@ -30,18 +30,18 @@ public class CreateResourceGroupResponseUnmarshaller {
 		createResourceGroupResponse.setRequestId(_ctx.stringValue("CreateResourceGroupResponse.RequestId"));
 
 		ResourceGroup resourceGroup = new ResourceGroup();
-		resourceGroup.setDisplayName(_ctx.stringValue("CreateResourceGroupResponse.ResourceGroup.DisplayName"));
-		resourceGroup.setStatus(_ctx.stringValue("CreateResourceGroupResponse.ResourceGroup.Status"));
 		resourceGroup.setAccountId(_ctx.stringValue("CreateResourceGroupResponse.ResourceGroup.AccountId"));
-		resourceGroup.setName(_ctx.stringValue("CreateResourceGroupResponse.ResourceGroup.Name"));
 		resourceGroup.setCreateDate(_ctx.stringValue("CreateResourceGroupResponse.ResourceGroup.CreateDate"));
+		resourceGroup.setDisplayName(_ctx.stringValue("CreateResourceGroupResponse.ResourceGroup.DisplayName"));
 		resourceGroup.setId(_ctx.stringValue("CreateResourceGroupResponse.ResourceGroup.Id"));
+		resourceGroup.setName(_ctx.stringValue("CreateResourceGroupResponse.ResourceGroup.Name"));
+		resourceGroup.setStatus(_ctx.stringValue("CreateResourceGroupResponse.ResourceGroup.Status"));
 
 		List<RegionStatus> regionStatuses = new ArrayList<RegionStatus>();
 		for (int i = 0; i < _ctx.lengthValue("CreateResourceGroupResponse.ResourceGroup.RegionStatuses.Length"); i++) {
 			RegionStatus regionStatus = new RegionStatus();
-			regionStatus.setStatus(_ctx.stringValue("CreateResourceGroupResponse.ResourceGroup.RegionStatuses["+ i +"].Status"));
 			regionStatus.setRegionId(_ctx.stringValue("CreateResourceGroupResponse.ResourceGroup.RegionStatuses["+ i +"].RegionId"));
+			regionStatus.setStatus(_ctx.stringValue("CreateResourceGroupResponse.ResourceGroup.RegionStatuses["+ i +"].Status"));
 
 			regionStatuses.add(regionStatus);
 		}

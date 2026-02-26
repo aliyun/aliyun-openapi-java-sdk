@@ -36,7 +36,7 @@ public class DeletePortRequest extends RpcAcsRequest<DeletePortResponse> {
 
 	private String frontendPort;
 	public DeletePortRequest() {
-		super("ddoscoo", "2020-01-01", "DeletePort");
+		super("ddoscoo", "2020-01-01", "DeletePort", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

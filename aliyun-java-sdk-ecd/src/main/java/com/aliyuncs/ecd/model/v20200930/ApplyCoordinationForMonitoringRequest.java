@@ -36,7 +36,7 @@ public class ApplyCoordinationForMonitoringRequest extends RpcAcsRequest<ApplyCo
 
 	private String endUserId;
 	public ApplyCoordinationForMonitoringRequest() {
-		super("ecd", "2020-09-30", "ApplyCoordinationForMonitoring");
+		super("ecd", "2020-09-30", "ApplyCoordinationForMonitoring", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

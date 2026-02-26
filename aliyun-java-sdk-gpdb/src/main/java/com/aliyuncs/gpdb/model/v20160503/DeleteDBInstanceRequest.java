@@ -27,11 +27,13 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 
 	private String clientToken;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private Long ownerId;
 	public DeleteDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "DeleteDBInstance");
+		super("gpdb", "2016-05-03", "DeleteDBInstance", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,6 +49,17 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -67,7 +67,7 @@ public class RelateDbForHBaseHaRequest extends RpcAcsRequest<RelateDbForHBaseHaR
 
 	private String haActiveUser;
 	public RelateDbForHBaseHaRequest() {
-		super("HBase", "2019-01-01", "RelateDbForHBaseHa", "hbase");
+		super("HBase", "2019-01-01", "RelateDbForHBaseHa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

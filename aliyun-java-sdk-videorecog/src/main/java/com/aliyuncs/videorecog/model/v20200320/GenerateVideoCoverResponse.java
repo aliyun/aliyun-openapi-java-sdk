@@ -27,6 +27,10 @@ public class GenerateVideoCoverResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String message;
+
+	private String code;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -35,6 +39,22 @@ public class GenerateVideoCoverResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {

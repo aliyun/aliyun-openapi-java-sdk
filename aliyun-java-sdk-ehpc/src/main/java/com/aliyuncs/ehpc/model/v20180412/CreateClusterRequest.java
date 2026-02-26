@@ -28,11 +28,15 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private List<AdditionalVolumes> additionalVolumess;
 
+	private List<AddOns> addOnss;
+
 	private String ecsOrderManagerInstanceType;
 
 	private String keyPairName;
 
 	private String securityGroupName;
+
+	private Boolean withoutNas;
 
 	private String imageOwnerAlias;
 
@@ -52,6 +56,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private Integer systemDiskSize;
 
+	private List<Tag> tags;
+
 	private String computeSpotPriceLimit;
 
 	private Integer autoRenewPeriod;
@@ -66,6 +72,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private List<PostInstallScript> postInstallScripts;
 
+	private List<String> ramNodeTypess;
+
 	private String vSwitchId;
 
 	private String periodUnit;
@@ -74,6 +82,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String autoRenew;
 
+	private String domain;
+
 	private String name;
 
 	private String volumeId;
@@ -81,6 +91,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	private String zoneId;
 
 	private String sccClusterId;
+
+	private String volumeMountOption;
 
 	private String imageId;
 
@@ -104,6 +116,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String systemDiskType;
 
+	private String deploymentSetId;
+
 	private String volumeProtocol;
 
 	private String clientVersion;
@@ -113,6 +127,12 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	private String clusterVersion;
 
 	private Boolean isComputeEss;
+
+	private String ramRoleName;
+
+	private String networkInterfaceTrafficMode;
+
+	private String plugin;
 
 	private List<Application> applications;
 
@@ -124,13 +144,15 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private Boolean haEnable;
 
+	private Boolean withoutAgent;
+
 	private String schedulerType;
 
 	private String volumeMountpoint;
 
 	private String ecsOrderLoginInstanceType;
 	public CreateClusterRequest() {
-		super("EHPC", "2018-04-12", "CreateCluster");
+		super("EHPC", "2018-04-12", "CreateCluster", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -147,6 +169,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		if (additionalVolumess != null) {
 			for (int depth1 = 0; depth1 < additionalVolumess.size(); depth1++) {
 				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".VolumeType" , additionalVolumess.get(depth1).getVolumeType());
+				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".VolumeMountOption" , additionalVolumess.get(depth1).getVolumeMountOption());
 				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".VolumeProtocol" , additionalVolumess.get(depth1).getVolumeProtocol());
 				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".LocalDirectory" , additionalVolumess.get(depth1).getLocalDirectory());
 				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".RemoteDirectory" , additionalVolumess.get(depth1).getRemoteDirectory());
@@ -159,6 +182,25 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".VolumeMountpoint" , additionalVolumess.get(depth1).getVolumeMountpoint());
 				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".Location" , additionalVolumess.get(depth1).getLocation());
 				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".JobQueue" , additionalVolumess.get(depth1).getJobQueue());
+			}
+		}	
+	}
+
+	public List<AddOns> getAddOnss() {
+		return this.addOnss;
+	}
+
+	public void setAddOnss(List<AddOns> addOnss) {
+		this.addOnss = addOnss;	
+		if (addOnss != null) {
+			for (int depth1 = 0; depth1 < addOnss.size(); depth1++) {
+				putQueryParameter("AddOns." + (depth1 + 1) + ".DeployMode" , addOnss.get(depth1).getDeployMode());
+				putQueryParameter("AddOns." + (depth1 + 1) + ".Port" , addOnss.get(depth1).getPort());
+				putQueryParameter("AddOns." + (depth1 + 1) + ".ConfigFile" , addOnss.get(depth1).getConfigFile());
+				putQueryParameter("AddOns." + (depth1 + 1) + ".DefaultStart" , addOnss.get(depth1).getDefaultStart());
+				putQueryParameter("AddOns." + (depth1 + 1) + ".Name" , addOnss.get(depth1).getName());
+				putQueryParameter("AddOns." + (depth1 + 1) + ".DBType" , addOnss.get(depth1).getDBType());
+				putQueryParameter("AddOns." + (depth1 + 1) + ".Version" , addOnss.get(depth1).getVersion());
 			}
 		}	
 	}
@@ -193,6 +235,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.securityGroupName = securityGroupName;
 		if(securityGroupName != null){
 			putQueryParameter("SecurityGroupName", securityGroupName);
+		}
+	}
+
+	public Boolean getWithoutNas() {
+		return this.withoutNas;
+	}
+
+	public void setWithoutNas(Boolean withoutNas) {
+		this.withoutNas = withoutNas;
+		if(withoutNas != null){
+			putQueryParameter("WithoutNas", withoutNas.toString());
 		}
 	}
 
@@ -295,6 +348,20 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getComputeSpotPriceLimit() {
 		return this.computeSpotPriceLimit;
 	}
@@ -375,6 +442,19 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}	
 	}
 
+	public List<String> getRamNodeTypess() {
+		return this.ramNodeTypess;
+	}
+
+	public void setRamNodeTypess(List<String> ramNodeTypess) {
+		this.ramNodeTypess = ramNodeTypess;	
+		if (ramNodeTypess != null) {
+			for (int i = 0; i < ramNodeTypess.size(); i++) {
+				putQueryParameter("RamNodeTypes." + (i + 1) , ramNodeTypess.get(i));
+			}
+		}	
+	}
+
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -419,6 +499,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -460,6 +551,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.sccClusterId = sccClusterId;
 		if(sccClusterId != null){
 			putQueryParameter("SccClusterId", sccClusterId);
+		}
+	}
+
+	public String getVolumeMountOption() {
+		return this.volumeMountOption;
+	}
+
+	public void setVolumeMountOption(String volumeMountOption) {
+		this.volumeMountOption = volumeMountOption;
+		if(volumeMountOption != null){
+			putQueryParameter("VolumeMountOption", volumeMountOption);
 		}
 	}
 
@@ -584,6 +686,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public String getDeploymentSetId() {
+		return this.deploymentSetId;
+	}
+
+	public void setDeploymentSetId(String deploymentSetId) {
+		this.deploymentSetId = deploymentSetId;
+		if(deploymentSetId != null){
+			putQueryParameter("DeploymentSetId", deploymentSetId);
+		}
+	}
+
 	public String getVolumeProtocol() {
 		return this.volumeProtocol;
 	}
@@ -636,6 +749,39 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.isComputeEss = isComputeEss;
 		if(isComputeEss != null){
 			putQueryParameter("IsComputeEss", isComputeEss.toString());
+		}
+	}
+
+	public String getRamRoleName() {
+		return this.ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+		if(ramRoleName != null){
+			putQueryParameter("RamRoleName", ramRoleName);
+		}
+	}
+
+	public String getNetworkInterfaceTrafficMode() {
+		return this.networkInterfaceTrafficMode;
+	}
+
+	public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		if(networkInterfaceTrafficMode != null){
+			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
+		}
+	}
+
+	public String getPlugin() {
+		return this.plugin;
+	}
+
+	public void setPlugin(String plugin) {
+		this.plugin = plugin;
+		if(plugin != null){
+			putQueryParameter("Plugin", plugin);
 		}
 	}
 
@@ -696,6 +842,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public Boolean getWithoutAgent() {
+		return this.withoutAgent;
+	}
+
+	public void setWithoutAgent(Boolean withoutAgent) {
+		this.withoutAgent = withoutAgent;
+		if(withoutAgent != null){
+			putQueryParameter("WithoutAgent", withoutAgent.toString());
+		}
+	}
+
 	public String getSchedulerType() {
 		return this.schedulerType;
 	}
@@ -733,6 +890,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 		private String volumeType;
 
+		private String volumeMountOption;
+
 		private String volumeProtocol;
 
 		private String localDirectory;
@@ -755,6 +914,14 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 		public void setVolumeType(String volumeType) {
 			this.volumeType = volumeType;
+		}
+
+		public String getVolumeMountOption() {
+			return this.volumeMountOption;
+		}
+
+		public void setVolumeMountOption(String volumeMountOption) {
+			this.volumeMountOption = volumeMountOption;
 		}
 
 		public String getVolumeProtocol() {
@@ -832,6 +999,102 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 			public void setName(String name) {
 				this.name = name;
 			}
+		}
+	}
+
+	public static class AddOns {
+
+		private String deployMode;
+
+		private Float port;
+
+		private String configFile;
+
+		private Boolean defaultStart;
+
+		private String name;
+
+		private String dBType;
+
+		private String version;
+
+		public String getDeployMode() {
+			return this.deployMode;
+		}
+
+		public void setDeployMode(String deployMode) {
+			this.deployMode = deployMode;
+		}
+
+		public Float getPort() {
+			return this.port;
+		}
+
+		public void setPort(Float port) {
+			this.port = port;
+		}
+
+		public String getConfigFile() {
+			return this.configFile;
+		}
+
+		public void setConfigFile(String configFile) {
+			this.configFile = configFile;
+		}
+
+		public Boolean getDefaultStart() {
+			return this.defaultStart;
+		}
+
+		public void setDefaultStart(Boolean defaultStart) {
+			this.defaultStart = defaultStart;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDBType() {
+			return this.dBType;
+		}
+
+		public void setDBType(String dBType) {
+			this.dBType = dBType;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

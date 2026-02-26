@@ -47,6 +47,8 @@ public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListRespons
 
 	private String lang;
 
+	private Long resourceDirectoryAccountId;
+
 	private String dealed;
 
 	private Integer currentPage;
@@ -177,6 +179,17 @@ public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListRespons
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Long getResourceDirectoryAccountId() {
+		return this.resourceDirectoryAccountId;
+	}
+
+	public void setResourceDirectoryAccountId(Long resourceDirectoryAccountId) {
+		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
+		if(resourceDirectoryAccountId != null){
+			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId.toString());
 		}
 	}
 

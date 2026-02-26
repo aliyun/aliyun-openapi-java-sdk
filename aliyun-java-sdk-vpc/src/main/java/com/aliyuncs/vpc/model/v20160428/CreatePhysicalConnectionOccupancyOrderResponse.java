@@ -26,12 +26,35 @@ public class CreatePhysicalConnectionOccupancyOrderResponse extends AcsResponse 
 
 	private String requestId;
 
+	private Data data;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String orderId;
+
+		public String getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(String orderId) {
+			this.orderId = orderId;
+		}
 	}
 
 	@Override

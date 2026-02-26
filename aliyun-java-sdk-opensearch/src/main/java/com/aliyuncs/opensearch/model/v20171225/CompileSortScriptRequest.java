@@ -31,7 +31,7 @@ public class CompileSortScriptRequest extends RoaAcsRequest<CompileSortScriptRes
 
 	private String appGroupIdentity;
 	public CompileSortScriptRequest() {
-		super("OpenSearch", "2017-12-25", "CompileSortScript", "opensearch");
+		super("OpenSearch", "2017-12-25", "CompileSortScript");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/actions/compiling");
 		setMethod(MethodType.POST);
 		try {

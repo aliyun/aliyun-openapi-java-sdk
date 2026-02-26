@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListVolumesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<VolumeInfo> volumes;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListVolumesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListVolumesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<VolumeInfo> getVolumes() {
@@ -77,38 +77,30 @@ public class ListVolumesResponse extends AcsResponse {
 
 	public static class VolumeInfo {
 
-		private String regionId;
-
-		private String clusterId;
+		private String volumeId;
 
 		private String clusterName;
 
-		private String volumeId;
+		private String remoteDirectory;
+
+		private String volumeMountpoint;
 
 		private String volumeType;
 
 		private String volumeProtocol;
 
-		private String volumeMountpoint;
+		private String regionId;
 
-		private String remoteDirectory;
+		private String clusterId;
 
 		private List<VolumeInfo1> additionalVolumes;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getVolumeId() {
+			return this.volumeId;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
+		public void setVolumeId(String volumeId) {
+			this.volumeId = volumeId;
 		}
 
 		public String getClusterName() {
@@ -119,12 +111,20 @@ public class ListVolumesResponse extends AcsResponse {
 			this.clusterName = clusterName;
 		}
 
-		public String getVolumeId() {
-			return this.volumeId;
+		public String getRemoteDirectory() {
+			return this.remoteDirectory;
 		}
 
-		public void setVolumeId(String volumeId) {
-			this.volumeId = volumeId;
+		public void setRemoteDirectory(String remoteDirectory) {
+			this.remoteDirectory = remoteDirectory;
+		}
+
+		public String getVolumeMountpoint() {
+			return this.volumeMountpoint;
+		}
+
+		public void setVolumeMountpoint(String volumeMountpoint) {
+			this.volumeMountpoint = volumeMountpoint;
 		}
 
 		public String getVolumeType() {
@@ -143,20 +143,20 @@ public class ListVolumesResponse extends AcsResponse {
 			this.volumeProtocol = volumeProtocol;
 		}
 
-		public String getVolumeMountpoint() {
-			return this.volumeMountpoint;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setVolumeMountpoint(String volumeMountpoint) {
-			this.volumeMountpoint = volumeMountpoint;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
-		public String getRemoteDirectory() {
-			return this.remoteDirectory;
+		public String getClusterId() {
+			return this.clusterId;
 		}
 
-		public void setRemoteDirectory(String remoteDirectory) {
-			this.remoteDirectory = remoteDirectory;
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 
 		public List<VolumeInfo1> getAdditionalVolumes() {
@@ -169,30 +169,30 @@ public class ListVolumesResponse extends AcsResponse {
 
 		public static class VolumeInfo1 {
 
-			private String volumeType;
+			private String jobQueue;
 
 			private String volumeId;
 
-			private String volumeProtocol;
+			private String remoteDirectory;
 
 			private String volumeMountpoint;
 
-			private String remoteDirectory;
+			private String role;
 
 			private String localDirectory;
 
-			private String role;
+			private String volumeType;
 
 			private String location;
 
-			private String jobQueue;
+			private String volumeProtocol;
 
-			public String getVolumeType() {
-				return this.volumeType;
+			public String getJobQueue() {
+				return this.jobQueue;
 			}
 
-			public void setVolumeType(String volumeType) {
-				this.volumeType = volumeType;
+			public void setJobQueue(String jobQueue) {
+				this.jobQueue = jobQueue;
 			}
 
 			public String getVolumeId() {
@@ -203,12 +203,12 @@ public class ListVolumesResponse extends AcsResponse {
 				this.volumeId = volumeId;
 			}
 
-			public String getVolumeProtocol() {
-				return this.volumeProtocol;
+			public String getRemoteDirectory() {
+				return this.remoteDirectory;
 			}
 
-			public void setVolumeProtocol(String volumeProtocol) {
-				this.volumeProtocol = volumeProtocol;
+			public void setRemoteDirectory(String remoteDirectory) {
+				this.remoteDirectory = remoteDirectory;
 			}
 
 			public String getVolumeMountpoint() {
@@ -219,12 +219,12 @@ public class ListVolumesResponse extends AcsResponse {
 				this.volumeMountpoint = volumeMountpoint;
 			}
 
-			public String getRemoteDirectory() {
-				return this.remoteDirectory;
+			public String getRole() {
+				return this.role;
 			}
 
-			public void setRemoteDirectory(String remoteDirectory) {
-				this.remoteDirectory = remoteDirectory;
+			public void setRole(String role) {
+				this.role = role;
 			}
 
 			public String getLocalDirectory() {
@@ -235,12 +235,12 @@ public class ListVolumesResponse extends AcsResponse {
 				this.localDirectory = localDirectory;
 			}
 
-			public String getRole() {
-				return this.role;
+			public String getVolumeType() {
+				return this.volumeType;
 			}
 
-			public void setRole(String role) {
-				this.role = role;
+			public void setVolumeType(String volumeType) {
+				this.volumeType = volumeType;
 			}
 
 			public String getLocation() {
@@ -251,12 +251,12 @@ public class ListVolumesResponse extends AcsResponse {
 				this.location = location;
 			}
 
-			public String getJobQueue() {
-				return this.jobQueue;
+			public String getVolumeProtocol() {
+				return this.volumeProtocol;
 			}
 
-			public void setJobQueue(String jobQueue) {
-				this.jobQueue = jobQueue;
+			public void setVolumeProtocol(String volumeProtocol) {
+				this.volumeProtocol = volumeProtocol;
 			}
 		}
 	}

@@ -27,6 +27,8 @@ public class CreateGlobalDatabaseNetworkRequest extends RpcAcsRequest<CreateGlob
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private String gDNDescription;
@@ -37,9 +39,13 @@ public class CreateGlobalDatabaseNetworkRequest extends RpcAcsRequest<CreateGlob
 
 	private String ownerAccount;
 
+	private Boolean enableGlobalDomainName;
+
 	private Long ownerId;
+
+	private String gDNVersion;
 	public CreateGlobalDatabaseNetworkRequest() {
-		super("polardb", "2017-08-01", "CreateGlobalDatabaseNetwork");
+		super("polardb", "2017-08-01", "CreateGlobalDatabaseNetwork", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,6 +61,17 @@ public class CreateGlobalDatabaseNetworkRequest extends RpcAcsRequest<CreateGlob
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -113,6 +130,17 @@ public class CreateGlobalDatabaseNetworkRequest extends RpcAcsRequest<CreateGlob
 		}
 	}
 
+	public Boolean getEnableGlobalDomainName() {
+		return this.enableGlobalDomainName;
+	}
+
+	public void setEnableGlobalDomainName(Boolean enableGlobalDomainName) {
+		this.enableGlobalDomainName = enableGlobalDomainName;
+		if(enableGlobalDomainName != null){
+			putQueryParameter("EnableGlobalDomainName", enableGlobalDomainName.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -121,6 +149,17 @@ public class CreateGlobalDatabaseNetworkRequest extends RpcAcsRequest<CreateGlob
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getGDNVersion() {
+		return this.gDNVersion;
+	}
+
+	public void setGDNVersion(String gDNVersion) {
+		this.gDNVersion = gDNVersion;
+		if(gDNVersion != null){
+			putQueryParameter("GDNVersion", gDNVersion);
 		}
 	}
 

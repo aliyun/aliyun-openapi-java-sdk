@@ -41,6 +41,7 @@ public class GetPlayInfoResponseUnmarshaller {
 		videoBase.setTitle(_ctx.stringValue("GetPlayInfoResponse.VideoBase.Title"));
 		videoBase.setMediaType(_ctx.stringValue("GetPlayInfoResponse.VideoBase.MediaType"));
 		videoBase.setDanMuURL(_ctx.stringValue("GetPlayInfoResponse.VideoBase.DanMuURL"));
+		videoBase.setStorageClass(_ctx.stringValue("GetPlayInfoResponse.VideoBase.StorageClass"));
 
 		List<Thumbnail> thumbnailList = new ArrayList<Thumbnail>();
 		for (int i = 0; i < _ctx.lengthValue("GetPlayInfoResponse.VideoBase.ThumbnailList.Length"); i++) {
@@ -68,6 +69,7 @@ public class GetPlayInfoResponseUnmarshaller {
 			playInfo.setDefinition(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Definition"));
 			playInfo.setRand(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Rand"));
 			playInfo.setEncryptType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].EncryptType"));
+			playInfo.setEncryptMode(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].EncryptMode"));
 			playInfo.setPreprocessStatus(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].PreprocessStatus"));
 			playInfo.setStreamType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].StreamType"));
 			playInfo.setJobId(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobId"));
@@ -80,6 +82,9 @@ public class GetPlayInfoResponseUnmarshaller {
 			playInfo.setFormat(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Format"));
 			playInfo.setHDRType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].HDRType"));
 			playInfo.setBitDepth(_ctx.integerValue("GetPlayInfoResponse.PlayInfoList["+ i +"].BitDepth"));
+			playInfo.setJobType(_ctx.integerValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobType"));
+			playInfo.setJobExt(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobExt"));
+			playInfo.setCodecName(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].CodecName"));
 
 			playInfoList.add(playInfo);
 		}

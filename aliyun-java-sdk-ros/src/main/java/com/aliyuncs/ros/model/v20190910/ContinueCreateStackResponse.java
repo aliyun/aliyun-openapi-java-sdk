@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ros.model.v20190910;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ros.transform.v20190910.ContinueCreateStackResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +28,8 @@ public class ContinueCreateStackResponse extends AcsResponse {
 	private String requestId;
 
 	private String stackId;
+
+	private DryRunResult dryRunResult;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +45,47 @@ public class ContinueCreateStackResponse extends AcsResponse {
 
 	public void setStackId(String stackId) {
 		this.stackId = stackId;
+	}
+
+	public DryRunResult getDryRunResult() {
+		return this.dryRunResult;
+	}
+
+	public void setDryRunResult(DryRunResult dryRunResult) {
+		this.dryRunResult = dryRunResult;
+	}
+
+	public static class DryRunResult {
+
+		private List<String> parametersAllowedToBeModified;
+
+		private List<String> parametersConditionallyAllowedToBeModified;
+
+		private List<String> parametersNotAllowedToBeModified;
+
+		public List<String> getParametersAllowedToBeModified() {
+			return this.parametersAllowedToBeModified;
+		}
+
+		public void setParametersAllowedToBeModified(List<String> parametersAllowedToBeModified) {
+			this.parametersAllowedToBeModified = parametersAllowedToBeModified;
+		}
+
+		public List<String> getParametersConditionallyAllowedToBeModified() {
+			return this.parametersConditionallyAllowedToBeModified;
+		}
+
+		public void setParametersConditionallyAllowedToBeModified(List<String> parametersConditionallyAllowedToBeModified) {
+			this.parametersConditionallyAllowedToBeModified = parametersConditionallyAllowedToBeModified;
+		}
+
+		public List<String> getParametersNotAllowedToBeModified() {
+			return this.parametersNotAllowedToBeModified;
+		}
+
+		public void setParametersNotAllowedToBeModified(List<String> parametersNotAllowedToBeModified) {
+			this.parametersNotAllowedToBeModified = parametersNotAllowedToBeModified;
+		}
 	}
 
 	@Override

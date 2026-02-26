@@ -24,6 +24,12 @@ import com.aliyuncs.ros.Endpoint;
  */
 public class ListResourceTypesRequest extends RpcAcsRequest<ListResourceTypesResponse> {
 	   
+
+	private String provider;
+
+	private String resourceType;
+
+	private String entityType;
 	public ListResourceTypesRequest() {
 		super("ROS", "2019-09-10", "ListResourceTypes", "ros");
 		setMethod(MethodType.POST);
@@ -31,6 +37,39 @@ public class ListResourceTypesRequest extends RpcAcsRequest<ListResourceTypesRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getProvider() {
+		return this.provider;
+	}
+
+	public void setProvider(String provider) {
+		this.provider = provider;
+		if(provider != null){
+			putQueryParameter("Provider", provider);
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getEntityType() {
+		return this.entityType;
+	}
+
+	public void setEntityType(String entityType) {
+		this.entityType = entityType;
+		if(entityType != null){
+			putQueryParameter("EntityType", entityType);
+		}
 	}
 
 	@Override

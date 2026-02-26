@@ -40,7 +40,7 @@ public class FetchFileRequest extends RpcAcsRequest<FetchFileResponse> {
 
 	private String instanceId;
 	public FetchFileRequest() {
-		super("cloudphone", "2020-12-30", "FetchFile", "cloudphone");
+		super("cloudphone", "2020-12-30", "FetchFile");
 		setMethod(MethodType.POST);
 	}
 

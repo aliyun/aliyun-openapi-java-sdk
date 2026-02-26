@@ -23,14 +23,14 @@ public class GetPtsSceneRunningStatusResponseUnmarshaller {
 	public static GetPtsSceneRunningStatusResponse unmarshall(GetPtsSceneRunningStatusResponse getPtsSceneRunningStatusResponse, UnmarshallerContext _ctx) {
 		
 		getPtsSceneRunningStatusResponse.setRequestId(_ctx.stringValue("GetPtsSceneRunningStatusResponse.RequestId"));
-		getPtsSceneRunningStatusResponse.setSuccess(_ctx.booleanValue("GetPtsSceneRunningStatusResponse.Success"));
-		getPtsSceneRunningStatusResponse.setCode(_ctx.stringValue("GetPtsSceneRunningStatusResponse.Code"));
-		getPtsSceneRunningStatusResponse.setMessage(_ctx.stringValue("GetPtsSceneRunningStatusResponse.Message"));
-		getPtsSceneRunningStatusResponse.setHttpStatusCode(_ctx.integerValue("GetPtsSceneRunningStatusResponse.HttpStatusCode"));
-		getPtsSceneRunningStatusResponse.setSceneName(_ctx.stringValue("GetPtsSceneRunningStatusResponse.SceneName"));
 		getPtsSceneRunningStatusResponse.setStatus(_ctx.stringValue("GetPtsSceneRunningStatusResponse.Status"));
-		getPtsSceneRunningStatusResponse.setCreateTime(_ctx.stringValue("GetPtsSceneRunningStatusResponse.CreateTime"));
 		getPtsSceneRunningStatusResponse.setModifiedTime(_ctx.stringValue("GetPtsSceneRunningStatusResponse.ModifiedTime"));
+		getPtsSceneRunningStatusResponse.setMessage(_ctx.stringValue("GetPtsSceneRunningStatusResponse.Message"));
+		getPtsSceneRunningStatusResponse.setSceneName(_ctx.stringValue("GetPtsSceneRunningStatusResponse.SceneName"));
+		getPtsSceneRunningStatusResponse.setCreateTime(_ctx.stringValue("GetPtsSceneRunningStatusResponse.CreateTime"));
+		getPtsSceneRunningStatusResponse.setHttpStatusCode(_ctx.integerValue("GetPtsSceneRunningStatusResponse.HttpStatusCode"));
+		getPtsSceneRunningStatusResponse.setCode(_ctx.stringValue("GetPtsSceneRunningStatusResponse.Code"));
+		getPtsSceneRunningStatusResponse.setSuccess(_ctx.booleanValue("GetPtsSceneRunningStatusResponse.Success"));
 	 
 	 	return getPtsSceneRunningStatusResponse;
 	}

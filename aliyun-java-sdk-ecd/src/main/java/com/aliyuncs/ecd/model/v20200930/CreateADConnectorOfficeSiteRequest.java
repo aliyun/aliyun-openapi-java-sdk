@@ -54,6 +54,8 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 
 	private String officeSiteName;
 
+	private String backupDns;
+
 	private Boolean mfaEnabled;
 
 	private String domainUserName;
@@ -63,8 +65,10 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 	private String protocolType;
 
 	private List<String> dnsAddresss;
+
+	private String backupDCHostname;
 	public CreateADConnectorOfficeSiteRequest() {
-		super("ecd", "2020-09-30", "CreateADConnectorOfficeSite");
+		super("ecd", "2020-09-30", "CreateADConnectorOfficeSite", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -228,6 +232,17 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 		}
 	}
 
+	public String getBackupDns() {
+		return this.backupDns;
+	}
+
+	public void setBackupDns(String backupDns) {
+		this.backupDns = backupDns;
+		if(backupDns != null){
+			putQueryParameter("BackupDns", backupDns);
+		}
+	}
+
 	public Boolean getMfaEnabled() {
 		return this.mfaEnabled;
 	}
@@ -283,6 +298,17 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 				putQueryParameter("DnsAddress." + (i + 1) , dnsAddresss.get(i));
 			}
 		}	
+	}
+
+	public String getBackupDCHostname() {
+		return this.backupDCHostname;
+	}
+
+	public void setBackupDCHostname(String backupDCHostname) {
+		this.backupDCHostname = backupDCHostname;
+		if(backupDCHostname != null){
+			putQueryParameter("BackupDCHostname", backupDCHostname);
+		}
 	}
 
 	@Override

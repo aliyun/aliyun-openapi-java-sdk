@@ -26,9 +26,9 @@ public class GetCustomTemplateResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String template;
-
 	private String customTemplate;
+
+	private String template;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class GetCustomTemplateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTemplate() {
-		return this.template;
-	}
-
-	public void setTemplate(String template) {
-		this.template = template;
-	}
-
 	public String getCustomTemplate() {
 		return this.customTemplate;
 	}
 
 	public void setCustomTemplate(String customTemplate) {
 		this.customTemplate = customTemplate;
+	}
+
+	public String getTemplate() {
+		return this.template;
+	}
+
+	public void setTemplate(String template) {
+		this.template = template;
 	}
 
 	@Override

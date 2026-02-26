@@ -56,6 +56,8 @@ public class DescribeUserProduceResponse extends AcsResponse {
 
 	private String orderId;
 
+	private String orderInstanceId;
+
 	public Integer getStatus() {
 		return this.status;
 	}
@@ -182,6 +184,14 @@ public class DescribeUserProduceResponse extends AcsResponse {
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
+	}
+
+	public String getOrderInstanceId() {
+		return this.orderInstanceId;
+	}
+
+	public void setOrderInstanceId(String orderInstanceId) {
+		this.orderInstanceId = orderInstanceId;
 	}
 
 	@Override

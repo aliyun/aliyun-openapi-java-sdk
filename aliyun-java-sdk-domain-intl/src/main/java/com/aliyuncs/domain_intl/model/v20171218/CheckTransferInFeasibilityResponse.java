@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckTransferInFeasibilityResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean canTransfer;
-
-	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private String productId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String code;
 
 	public Boolean getCanTransfer() {
 		return this.canTransfer;
@@ -48,14 +40,6 @@ public class CheckTransferInFeasibilityResponse extends AcsResponse {
 
 	public void setCanTransfer(Boolean canTransfer) {
 		this.canTransfer = canTransfer;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -66,12 +50,28 @@ public class CheckTransferInFeasibilityResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getProductId() {
 		return this.productId;
 	}
 
 	public void setProductId(String productId) {
 		this.productId = productId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override

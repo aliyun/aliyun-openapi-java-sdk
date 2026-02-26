@@ -27,7 +27,7 @@ public class StartRemediationRequest extends RpcAcsRequest<StartRemediationRespo
 
 	private String configRuleId;
 	public StartRemediationRequest() {
-		super("Config", "2020-09-07", "StartRemediation");
+		super("Config", "2020-09-07", "StartRemediation", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

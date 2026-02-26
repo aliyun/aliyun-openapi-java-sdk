@@ -34,6 +34,8 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private String networkId;
 
+	private String clientToken;
+
 	private String payType;
 	public CreateLoadBalancerRequest() {
 		super("Ens", "2017-11-10", "CreateLoadBalancer", "ens");
@@ -92,6 +94,17 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		this.networkId = networkId;
 		if(networkId != null){
 			putQueryParameter("NetworkId", networkId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

@@ -1,0 +1,45 @@
+{
+    "current": "AK",
+    "profiles": [
+        {
+            "name": "AK",
+            "mode": "AK",
+            "access_key_id": "access_key_id",
+            "access_key_secret": "access_key_secret"
+        },
+        {
+            "name": "RamRoleArn",
+            "mode": "RamRoleArn",
+            "access_key_id": "access_key_id",
+            "access_key_secret": "access_key_secret",
+            "ram_role_arn": "ram_role_arn",
+            "ram_session_name": "ram_session_name",
+            "expired_seconds": 3600,
+            "sts_region": "cn-hangzhou"
+        },
+        {
+            "name": "EcsRamRole",
+            "mode": "EcsRamRole",
+            "ram_role_name": "ram_role_name"
+        },
+        {
+            "name": "OIDC",
+            "mode": "OIDC",
+            "ram_role_arn": "ram_role_arn",
+            "oidc_token_file": "path/to/oidc/file",
+            "oidc_provider_arn": "oidc_provider_arn",
+            "ram_session_name": "ram_session_name",
+            "expired_seconds": 3600,
+            "sts_region": "cn-hangzhou"
+        },
+        {
+            "name": "ChainableRamRoleArn",
+            "mode": "ChainableRamRoleArn",
+            "source_profile": "AK",
+            "ram_role_arn": "ram_role_arn",
+            "ram_session_name": "ram_session_name",
+            "expired_seconds": 3600,
+            "sts_region": "cn-hangzhou"
+        }
+    ]
+}

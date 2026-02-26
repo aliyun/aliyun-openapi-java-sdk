@@ -27,7 +27,7 @@ public class DescribeIpWhitelistRequest extends RpcAcsRequest<DescribeIpWhitelis
 
 	private String clusterId;
 	public DescribeIpWhitelistRequest() {
-		super("HBase", "2019-01-01", "DescribeIpWhitelist", "hbase");
+		super("HBase", "2019-01-01", "DescribeIpWhitelist");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -45,8 +45,10 @@ public class RegisterTransitRouterMulticastGroupMembersRequest extends RpcAcsReq
 	private List<String> peerTransitRouterMulticastDomainss;
 
 	private Long ownerId;
+
+	private String vpcId;
 	public RegisterTransitRouterMulticastGroupMembersRequest() {
-		super("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupMembers");
+		super("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupMembers", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -165,6 +167,17 @@ public class RegisterTransitRouterMulticastGroupMembersRequest extends RpcAcsReq
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

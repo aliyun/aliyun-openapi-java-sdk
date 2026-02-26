@@ -57,6 +57,19 @@ public class DescribeAffectedMaliciousFileImagesResponseUnmarshaller {
 			affectedMaliciousFileImage.setLevel(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].Level"));
 			affectedMaliciousFileImage.setDownloadUrl(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].DownloadUrl"));
 			affectedMaliciousFileImage.setHighLight(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].HighLight"));
+			affectedMaliciousFileImage.setContainerId(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].ContainerId"));
+			affectedMaliciousFileImage.setImage(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].Image"));
+			affectedMaliciousFileImage.setPod(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].Pod"));
+			affectedMaliciousFileImage.setClusterId(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].ClusterId"));
+			affectedMaliciousFileImage.setClusterName(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].ClusterName"));
+			affectedMaliciousFileImage.setMaliciousSource(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].MaliciousSource"));
+			affectedMaliciousFileImage.setInstanceName(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].InstanceName"));
+			affectedMaliciousFileImage.setInternetIp(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].InternetIp"));
+			affectedMaliciousFileImage.setIntranetIp(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].IntranetIp"));
+			affectedMaliciousFileImage.setTargetId(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].TargetId"));
+			affectedMaliciousFileImage.setTargetName(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].TargetName"));
+			affectedMaliciousFileImage.setTargetType(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].TargetType"));
+			affectedMaliciousFileImage.setUuid(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].Uuid"));
 
 			affectedMaliciousFileImagesResponse.add(affectedMaliciousFileImage);
 		}

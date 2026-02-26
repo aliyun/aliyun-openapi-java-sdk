@@ -15,6 +15,7 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ros.Endpoint;
 
@@ -32,6 +33,8 @@ public class GenerateTemplatePolicyRequest extends RpcAcsRequest<GenerateTemplat
 	private String templateVersion;
 
 	private String templateId;
+
+	private List<String> operationTypess;
 	public GenerateTemplatePolicyRequest() {
 		super("ROS", "2019-09-10", "GenerateTemplatePolicy", "ros");
 		setMethod(MethodType.POST);
@@ -83,6 +86,19 @@ public class GenerateTemplatePolicyRequest extends RpcAcsRequest<GenerateTemplat
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
 		}
+	}
+
+	public List<String> getOperationTypess() {
+		return this.operationTypess;
+	}
+
+	public void setOperationTypess(List<String> operationTypess) {
+		this.operationTypess = operationTypess;	
+		if (operationTypess != null) {
+			for (int i = 0; i < operationTypess.size(); i++) {
+				putQueryParameter("OperationTypes." + (i + 1) , operationTypess.get(i));
+			}
+		}	
 	}
 
 	@Override

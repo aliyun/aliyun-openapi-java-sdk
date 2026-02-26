@@ -26,6 +26,8 @@ import com.aliyuncs.iot.Endpoint;
 public class BindLicenseDeviceRequest extends RpcAcsRequest<BindLicenseDeviceResponse> {
 	   
 
+	private List<String> deviceNameLists;
+
 	private String iotInstanceId;
 
 	private List<String> iotIdLists;
@@ -34,12 +36,25 @@ public class BindLicenseDeviceRequest extends RpcAcsRequest<BindLicenseDeviceRes
 
 	private String licenseCode;
 	public BindLicenseDeviceRequest() {
-		super("Iot", "2018-01-20", "BindLicenseDevice");
+		super("Iot", "2018-01-20", "BindLicenseDevice", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getDeviceNameLists() {
+		return this.deviceNameLists;
+	}
+
+	public void setDeviceNameLists(List<String> deviceNameLists) {
+		this.deviceNameLists = deviceNameLists;	
+		if (deviceNameLists != null) {
+			for (int i = 0; i < deviceNameLists.size(); i++) {
+				putBodyParameter("DeviceNameList." + (i + 1) , deviceNameLists.get(i));
+			}
+		}	
 	}
 
 	public String getIotInstanceId() {
@@ -61,7 +76,7 @@ public class BindLicenseDeviceRequest extends RpcAcsRequest<BindLicenseDeviceRes
 		this.iotIdLists = iotIdLists;	
 		if (iotIdLists != null) {
 			for (int i = 0; i < iotIdLists.size(); i++) {
-				putQueryParameter("IotIdList." + (i + 1) , iotIdLists.get(i));
+				putBodyParameter("IotIdList." + (i + 1) , iotIdLists.get(i));
 			}
 		}	
 	}

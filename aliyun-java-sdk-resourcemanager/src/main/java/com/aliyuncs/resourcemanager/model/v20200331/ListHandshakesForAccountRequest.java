@@ -30,7 +30,7 @@ public class ListHandshakesForAccountRequest extends RpcAcsRequest<ListHandshake
 
 	private Integer pageSize;
 	public ListHandshakesForAccountRequest() {
-		super("ResourceManager", "2020-03-31", "ListHandshakesForAccount");
+		super("ResourceManager", "2020-03-31", "ListHandshakesForAccount", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

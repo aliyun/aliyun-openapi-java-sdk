@@ -27,8 +27,8 @@ public class PhoneNumberEncryptResponseUnmarshaller {
 	public static PhoneNumberEncryptResponse unmarshall(PhoneNumberEncryptResponse phoneNumberEncryptResponse, UnmarshallerContext _ctx) {
 		
 		phoneNumberEncryptResponse.setRequestId(_ctx.stringValue("PhoneNumberEncryptResponse.RequestId"));
-		phoneNumberEncryptResponse.setCode(_ctx.stringValue("PhoneNumberEncryptResponse.Code"));
 		phoneNumberEncryptResponse.setMessage(_ctx.stringValue("PhoneNumberEncryptResponse.Message"));
+		phoneNumberEncryptResponse.setCode(_ctx.stringValue("PhoneNumberEncryptResponse.Code"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("PhoneNumberEncryptResponse.Data.Length"); i++) {

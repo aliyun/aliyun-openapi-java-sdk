@@ -46,6 +46,7 @@ public class GetDatabaseResponseUnmarshaller {
 		database.setEncoding(_ctx.stringValue("GetDatabaseResponse.Database.Encoding"));
 		database.setDbType(_ctx.stringValue("GetDatabaseResponse.Database.DbType"));
 		database.setSearchName(_ctx.stringValue("GetDatabaseResponse.Database.SearchName"));
+		database.setInstanceAlias(_ctx.stringValue("GetDatabaseResponse.Database.InstanceAlias"));
 
 		List<String> ownerIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetDatabaseResponse.Database.OwnerIdList.Length"); i++) {

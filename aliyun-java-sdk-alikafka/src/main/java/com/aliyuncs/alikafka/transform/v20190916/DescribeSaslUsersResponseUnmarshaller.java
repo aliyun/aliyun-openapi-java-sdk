@@ -27,16 +27,17 @@ public class DescribeSaslUsersResponseUnmarshaller {
 	public static DescribeSaslUsersResponse unmarshall(DescribeSaslUsersResponse describeSaslUsersResponse, UnmarshallerContext _ctx) {
 		
 		describeSaslUsersResponse.setRequestId(_ctx.stringValue("DescribeSaslUsersResponse.RequestId"));
-		describeSaslUsersResponse.setSuccess(_ctx.booleanValue("DescribeSaslUsersResponse.Success"));
 		describeSaslUsersResponse.setCode(_ctx.integerValue("DescribeSaslUsersResponse.Code"));
 		describeSaslUsersResponse.setMessage(_ctx.stringValue("DescribeSaslUsersResponse.Message"));
+		describeSaslUsersResponse.setSuccess(_ctx.booleanValue("DescribeSaslUsersResponse.Success"));
 
 		List<SaslUserVO> saslUserList = new ArrayList<SaslUserVO>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSaslUsersResponse.SaslUserList.Length"); i++) {
 			SaslUserVO saslUserVO = new SaslUserVO();
-			saslUserVO.setUsername(_ctx.stringValue("DescribeSaslUsersResponse.SaslUserList["+ i +"].Username"));
-			saslUserVO.setPassword(_ctx.stringValue("DescribeSaslUsersResponse.SaslUserList["+ i +"].Password"));
 			saslUserVO.setType(_ctx.stringValue("DescribeSaslUsersResponse.SaslUserList["+ i +"].Type"));
+			saslUserVO.setPassword(_ctx.stringValue("DescribeSaslUsersResponse.SaslUserList["+ i +"].Password"));
+			saslUserVO.setUsername(_ctx.stringValue("DescribeSaslUsersResponse.SaslUserList["+ i +"].Username"));
+			saslUserVO.setMechanism(_ctx.stringValue("DescribeSaslUsersResponse.SaslUserList["+ i +"].Mechanism"));
 
 			saslUserList.add(saslUserVO);
 		}

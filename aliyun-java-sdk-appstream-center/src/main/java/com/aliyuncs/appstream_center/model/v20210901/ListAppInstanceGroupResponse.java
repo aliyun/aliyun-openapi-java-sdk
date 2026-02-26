@@ -117,6 +117,12 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 
 		private String osType;
 
+		private String resourceStatus;
+
+		private String appPolicyId;
+
+		private String chargeResourceMode;
+
 		private List<AppsItem> apps;
 
 		private List<Node> nodePool;
@@ -283,6 +289,30 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 			this.osType = osType;
 		}
 
+		public String getResourceStatus() {
+			return this.resourceStatus;
+		}
+
+		public void setResourceStatus(String resourceStatus) {
+			this.resourceStatus = resourceStatus;
+		}
+
+		public String getAppPolicyId() {
+			return this.appPolicyId;
+		}
+
+		public void setAppPolicyId(String appPolicyId) {
+			this.appPolicyId = appPolicyId;
+		}
+
+		public String getChargeResourceMode() {
+			return this.chargeResourceMode;
+		}
+
+		public void setChargeResourceMode(String chargeResourceMode) {
+			this.chargeResourceMode = chargeResourceMode;
+		}
+
 		public List<AppsItem> getApps() {
 			return this.apps;
 		}
@@ -313,6 +343,12 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 
 			private String appName;
 
+			private String appVersion;
+
+			private String appVersionName;
+
+			private String appIcon;
+
 			public String getAppId() {
 				return this.appId;
 			}
@@ -327,6 +363,30 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 
 			public void setAppName(String appName) {
 				this.appName = appName;
+			}
+
+			public String getAppVersion() {
+				return this.appVersion;
+			}
+
+			public void setAppVersion(String appVersion) {
+				this.appVersion = appVersion;
+			}
+
+			public String getAppVersionName() {
+				return this.appVersionName;
+			}
+
+			public void setAppVersionName(String appVersionName) {
+				this.appVersionName = appVersionName;
+			}
+
+			public String getAppIcon() {
+				return this.appIcon;
+			}
+
+			public void setAppIcon(String appIcon) {
+				this.appIcon = appIcon;
 			}
 		}
 
@@ -357,6 +417,16 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 			private String scalingUsageThreshold;
 
 			private Integer scalingDownAfterIdleMinutes;
+
+			private String strategyDisableDate;
+
+			private String strategyEnableDate;
+
+			private Boolean warmUp;
+
+			private String nodeTypeName;
+
+			private List<RecurrenceSchedule> recurrenceSchedules;
 
 			public String getNodePoolId() {
 				return this.nodePoolId;
@@ -460,6 +530,112 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 
 			public void setScalingDownAfterIdleMinutes(Integer scalingDownAfterIdleMinutes) {
 				this.scalingDownAfterIdleMinutes = scalingDownAfterIdleMinutes;
+			}
+
+			public String getStrategyDisableDate() {
+				return this.strategyDisableDate;
+			}
+
+			public void setStrategyDisableDate(String strategyDisableDate) {
+				this.strategyDisableDate = strategyDisableDate;
+			}
+
+			public String getStrategyEnableDate() {
+				return this.strategyEnableDate;
+			}
+
+			public void setStrategyEnableDate(String strategyEnableDate) {
+				this.strategyEnableDate = strategyEnableDate;
+			}
+
+			public Boolean getWarmUp() {
+				return this.warmUp;
+			}
+
+			public void setWarmUp(Boolean warmUp) {
+				this.warmUp = warmUp;
+			}
+
+			public String getNodeTypeName() {
+				return this.nodeTypeName;
+			}
+
+			public void setNodeTypeName(String nodeTypeName) {
+				this.nodeTypeName = nodeTypeName;
+			}
+
+			public List<RecurrenceSchedule> getRecurrenceSchedules() {
+				return this.recurrenceSchedules;
+			}
+
+			public void setRecurrenceSchedules(List<RecurrenceSchedule> recurrenceSchedules) {
+				this.recurrenceSchedules = recurrenceSchedules;
+			}
+
+			public static class RecurrenceSchedule {
+
+				private String recurrenceType;
+
+				private List<TimerPeriod> timerPeriods;
+
+				private List<Integer> recurrenceValues;
+
+				public String getRecurrenceType() {
+					return this.recurrenceType;
+				}
+
+				public void setRecurrenceType(String recurrenceType) {
+					this.recurrenceType = recurrenceType;
+				}
+
+				public List<TimerPeriod> getTimerPeriods() {
+					return this.timerPeriods;
+				}
+
+				public void setTimerPeriods(List<TimerPeriod> timerPeriods) {
+					this.timerPeriods = timerPeriods;
+				}
+
+				public List<Integer> getRecurrenceValues() {
+					return this.recurrenceValues;
+				}
+
+				public void setRecurrenceValues(List<Integer> recurrenceValues) {
+					this.recurrenceValues = recurrenceValues;
+				}
+
+				public static class TimerPeriod {
+
+					private Integer amount;
+
+					private String endTime;
+
+					private String startTime;
+
+					public Integer getAmount() {
+						return this.amount;
+					}
+
+					public void setAmount(Integer amount) {
+						this.amount = amount;
+					}
+
+					public String getEndTime() {
+						return this.endTime;
+					}
+
+					public void setEndTime(String endTime) {
+						this.endTime = endTime;
+					}
+
+					public String getStartTime() {
+						return this.startTime;
+					}
+
+					public void setStartTime(String startTime) {
+						this.startTime = startTime;
+					}
+				}
 			}
 		}
 

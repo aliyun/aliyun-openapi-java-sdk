@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribePropertyUserItemRequest extends RpcAcsRequest<DescribePropertyUserItemResponse> {
 	   
 
-	private Integer currentPage;
-
 	private Integer pageSize;
 
-	private String user;
-
 	private Boolean forceFlush;
+
+	private Integer currentPage;
+
+	private String user;
 	public DescribePropertyUserItemRequest() {
 		super("Sas", "2018-12-03", "DescribePropertyUserItem");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class DescribePropertyUserItemRequest extends RpcAcsRequest<DescribePrope
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public Integer getPageSize() {
@@ -63,17 +52,6 @@ public class DescribePropertyUserItemRequest extends RpcAcsRequest<DescribePrope
 		}
 	}
 
-	public String getUser() {
-		return this.user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-		if(user != null){
-			putQueryParameter("User", user);
-		}
-	}
-
 	public Boolean getForceFlush() {
 		return this.forceFlush;
 	}
@@ -82,6 +60,28 @@ public class DescribePropertyUserItemRequest extends RpcAcsRequest<DescribePrope
 		this.forceFlush = forceFlush;
 		if(forceFlush != null){
 			putQueryParameter("ForceFlush", forceFlush.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getUser() {
+		return this.user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+		if(user != null){
+			putQueryParameter("User", user);
 		}
 	}
 

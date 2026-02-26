@@ -26,10 +26,10 @@ public class CreatePolicyResponseUnmarshaller {
 		createPolicyResponse.setRequestId(_ctx.stringValue("CreatePolicyResponse.RequestId"));
 
 		Policy policy = new Policy();
+		policy.setCreateDate(_ctx.stringValue("CreatePolicyResponse.Policy.CreateDate"));
 		policy.setDefaultVersion(_ctx.stringValue("CreatePolicyResponse.Policy.DefaultVersion"));
 		policy.setDescription(_ctx.stringValue("CreatePolicyResponse.Policy.Description"));
 		policy.setPolicyName(_ctx.stringValue("CreatePolicyResponse.Policy.PolicyName"));
-		policy.setCreateDate(_ctx.stringValue("CreatePolicyResponse.Policy.CreateDate"));
 		policy.setPolicyType(_ctx.stringValue("CreatePolicyResponse.Policy.PolicyType"));
 		createPolicyResponse.setPolicy(policy);
 	 

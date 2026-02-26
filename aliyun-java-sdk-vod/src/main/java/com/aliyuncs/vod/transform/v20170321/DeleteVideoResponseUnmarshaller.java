@@ -38,6 +38,12 @@ public class DeleteVideoResponseUnmarshaller {
 			nonExistVideoIds.add(_ctx.stringValue("DeleteVideoResponse.NonExistVideoIds["+ i +"]"));
 		}
 		deleteVideoResponse.setNonExistVideoIds(nonExistVideoIds);
+
+		List<String> nonExistReferenceIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DeleteVideoResponse.NonExistReferenceIds.Length"); i++) {
+			nonExistReferenceIds.add(_ctx.stringValue("DeleteVideoResponse.NonExistReferenceIds["+ i +"]"));
+		}
+		deleteVideoResponse.setNonExistReferenceIds(nonExistReferenceIds);
 	 
 	 	return deleteVideoResponse;
 	}

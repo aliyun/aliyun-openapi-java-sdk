@@ -29,14 +29,14 @@ public class UpgradeBackupClientsResponseUnmarshaller {
 		upgradeBackupClientsResponse.setRequestId(_ctx.stringValue("UpgradeBackupClientsResponse.RequestId"));
 		upgradeBackupClientsResponse.setCode(_ctx.stringValue("UpgradeBackupClientsResponse.Code"));
 		upgradeBackupClientsResponse.setMessage(_ctx.stringValue("UpgradeBackupClientsResponse.Message"));
-		upgradeBackupClientsResponse.setSuccess(_ctx.booleanValue("UpgradeBackupClientsResponse.Success"));
 		upgradeBackupClientsResponse.setTaskId(_ctx.stringValue("UpgradeBackupClientsResponse.TaskId"));
+		upgradeBackupClientsResponse.setSuccess(_ctx.booleanValue("UpgradeBackupClientsResponse.Success"));
 
 		List<InstanceStatusesItem> instanceStatuses = new ArrayList<InstanceStatusesItem>();
 		for (int i = 0; i < _ctx.lengthValue("UpgradeBackupClientsResponse.InstanceStatuses.Length"); i++) {
 			InstanceStatusesItem instanceStatusesItem = new InstanceStatusesItem();
-			instanceStatusesItem.setInstanceId(_ctx.stringValue("UpgradeBackupClientsResponse.InstanceStatuses["+ i +"].InstanceId"));
 			instanceStatusesItem.setValidInstance(_ctx.booleanValue("UpgradeBackupClientsResponse.InstanceStatuses["+ i +"].ValidInstance"));
+			instanceStatusesItem.setInstanceId(_ctx.stringValue("UpgradeBackupClientsResponse.InstanceStatuses["+ i +"].InstanceId"));
 			instanceStatusesItem.setErrorCode(_ctx.stringValue("UpgradeBackupClientsResponse.InstanceStatuses["+ i +"].ErrorCode"));
 
 			instanceStatuses.add(instanceStatusesItem);

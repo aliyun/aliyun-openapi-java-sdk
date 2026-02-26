@@ -24,25 +24,23 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
-	
-	public ListTagResourcesRequest() {
-		super("CloudAPI", "2016-07-14", "ListTagResources", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> resourceIds;
 
 	private String resourceType;
 
-	private String securityToken;
-
 	private String nextToken;
 
 	private List<Tag> tags;
+	public ListTagResourcesRequest() {
+		super("CloudAPI", "2016-07-14", "ListTagResources", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getResourceIds() {
 		return this.resourceIds;
@@ -65,36 +63,6 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

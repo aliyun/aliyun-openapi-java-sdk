@@ -47,6 +47,7 @@ public class DescribeImageSharePermissionResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeImageSharePermissionResponse.Accounts.Length"); i++) {
 			Account account = new Account();
 			account.setAliyunId(_ctx.stringValue("DescribeImageSharePermissionResponse.Accounts["+ i +"].AliyunId"));
+			account.setSharedTime(_ctx.stringValue("DescribeImageSharePermissionResponse.Accounts["+ i +"].SharedTime"));
 
 			accounts.add(account);
 		}

@@ -31,6 +31,8 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private Integer dBInstanceStorage;
 
+	private String optimizedWrites;
+
 	private String engineVersion;
 
 	private String resourceGroupId;
@@ -38,7 +40,27 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 	@SerializedName("serverlessConfiguration")
 	private ServerlessConfiguration serverlessConfiguration;
 
+	private Long ownerId;
+
+	private String dBInstanceClass;
+
+	private String vSwitchId;
+
+	private String promotionCode;
+
+	private String zoneId;
+
+	private String zoneIdSlave1;
+
+	private Boolean autoUseCoupon;
+
+	private String ioAccelerationEnabled;
+
+	private Boolean coldDataEnabled;
+
 	private String effectiveTime;
+
+	private String readOnlyDBInstanceClass;
 
 	private String dBInstanceId;
 
@@ -52,17 +74,19 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String direction;
 
+	private String compressionMode;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
 	private Long usedTime;
 
-	private String dBInstanceClass;
+	private Boolean burstingEnabled;
 
-	private String zoneId;
+	private String targetMinorVersion;
+
+	private Boolean allowMajorVersionUpgrade;
 
 	private String category;
 
@@ -95,6 +119,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.dBInstanceStorage = dBInstanceStorage;
 		if(dBInstanceStorage != null){
 			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
+		}
+	}
+
+	public String getOptimizedWrites() {
+		return this.optimizedWrites;
+	}
+
+	public void setOptimizedWrites(String optimizedWrites) {
+		this.optimizedWrites = optimizedWrites;
+		if(optimizedWrites != null){
+			putQueryParameter("OptimizedWrites", optimizedWrites);
 		}
 	}
 
@@ -131,6 +166,105 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}	
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
+
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getZoneIdSlave1() {
+		return this.zoneIdSlave1;
+	}
+
+	public void setZoneIdSlave1(String zoneIdSlave1) {
+		this.zoneIdSlave1 = zoneIdSlave1;
+		if(zoneIdSlave1 != null){
+			putQueryParameter("ZoneIdSlave1", zoneIdSlave1);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
+		}
+	}
+
+	public String getIoAccelerationEnabled() {
+		return this.ioAccelerationEnabled;
+	}
+
+	public void setIoAccelerationEnabled(String ioAccelerationEnabled) {
+		this.ioAccelerationEnabled = ioAccelerationEnabled;
+		if(ioAccelerationEnabled != null){
+			putQueryParameter("IoAccelerationEnabled", ioAccelerationEnabled);
+		}
+	}
+
+	public Boolean getColdDataEnabled() {
+		return this.coldDataEnabled;
+	}
+
+	public void setColdDataEnabled(Boolean coldDataEnabled) {
+		this.coldDataEnabled = coldDataEnabled;
+		if(coldDataEnabled != null){
+			putQueryParameter("ColdDataEnabled", coldDataEnabled.toString());
+		}
+	}
+
 	public String getEffectiveTime() {
 		return this.effectiveTime;
 	}
@@ -139,6 +273,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.effectiveTime = effectiveTime;
 		if(effectiveTime != null){
 			putQueryParameter("EffectiveTime", effectiveTime);
+		}
+	}
+
+	public String getReadOnlyDBInstanceClass() {
+		return this.readOnlyDBInstanceClass;
+	}
+
+	public void setReadOnlyDBInstanceClass(String readOnlyDBInstanceClass) {
+		this.readOnlyDBInstanceClass = readOnlyDBInstanceClass;
+		if(readOnlyDBInstanceClass != null){
+			putQueryParameter("ReadOnlyDBInstanceClass", readOnlyDBInstanceClass);
 		}
 	}
 
@@ -208,6 +353,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
+	public String getCompressionMode() {
+		return this.compressionMode;
+	}
+
+	public void setCompressionMode(String compressionMode) {
+		this.compressionMode = compressionMode;
+		if(compressionMode != null){
+			putQueryParameter("CompressionMode", compressionMode);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -230,17 +386,6 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public Long getUsedTime() {
 		return this.usedTime;
 	}
@@ -252,25 +397,36 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
-	public String getDBInstanceClass() {
-		return this.dBInstanceClass;
+	public Boolean getBurstingEnabled() {
+		return this.burstingEnabled;
 	}
 
-	public void setDBInstanceClass(String dBInstanceClass) {
-		this.dBInstanceClass = dBInstanceClass;
-		if(dBInstanceClass != null){
-			putQueryParameter("DBInstanceClass", dBInstanceClass);
+	public void setBurstingEnabled(Boolean burstingEnabled) {
+		this.burstingEnabled = burstingEnabled;
+		if(burstingEnabled != null){
+			putQueryParameter("BurstingEnabled", burstingEnabled.toString());
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
+	public String getTargetMinorVersion() {
+		return this.targetMinorVersion;
 	}
 
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setTargetMinorVersion(String targetMinorVersion) {
+		this.targetMinorVersion = targetMinorVersion;
+		if(targetMinorVersion != null){
+			putQueryParameter("TargetMinorVersion", targetMinorVersion);
+		}
+	}
+
+	public Boolean getAllowMajorVersionUpgrade() {
+		return this.allowMajorVersionUpgrade;
+	}
+
+	public void setAllowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
+		this.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
+		if(allowMajorVersionUpgrade != null){
+			putQueryParameter("AllowMajorVersionUpgrade", allowMajorVersionUpgrade.toString());
 		}
 	}
 
@@ -304,6 +460,12 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		@SerializedName("MaxCapacity")
 		private Double maxCapacity;
 
+		@SerializedName("AutoPause")
+		private Boolean autoPause;
+
+		@SerializedName("SwitchForce")
+		private Boolean switchForce;
+
 		public Double getMinCapacity() {
 			return this.minCapacity;
 		}
@@ -318,6 +480,22 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 		public void setMaxCapacity(Double maxCapacity) {
 			this.maxCapacity = maxCapacity;
+		}
+
+		public Boolean getAutoPause() {
+			return this.autoPause;
+		}
+
+		public void setAutoPause(Boolean autoPause) {
+			this.autoPause = autoPause;
+		}
+
+		public Boolean getSwitchForce() {
+			return this.switchForce;
+		}
+
+		public void setSwitchForce(Boolean switchForce) {
+			this.switchForce = switchForce;
 		}
 	}
 

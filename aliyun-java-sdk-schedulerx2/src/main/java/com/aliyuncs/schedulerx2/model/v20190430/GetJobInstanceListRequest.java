@@ -27,13 +27,23 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 
 	private String namespaceSource;
 
-	private String groupId;
+	private Long startTimestamp;
+
+	private Integer pageNum;
+
+	private Long endTimestamp;
 
 	private Long jobId;
 
+	private Integer pageSize;
+
+	private String groupId;
+
 	private String namespace;
+
+	private Integer status;
 	public GetJobInstanceListRequest() {
-		super("schedulerx2", "2019-04-30", "GetJobInstanceList");
+		super("schedulerx2", "2019-04-30", "GetJobInstanceList", "schedulerx2");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,14 +62,36 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public Long getStartTimestamp() {
+		return this.startTimestamp;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
+	public void setStartTimestamp(Long startTimestamp) {
+		this.startTimestamp = startTimestamp;
+		if(startTimestamp != null){
+			putQueryParameter("StartTimestamp", startTimestamp.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Long getEndTimestamp() {
+		return this.endTimestamp;
+	}
+
+	public void setEndTimestamp(Long endTimestamp) {
+		this.endTimestamp = endTimestamp;
+		if(endTimestamp != null){
+			putQueryParameter("EndTimestamp", endTimestamp.toString());
 		}
 	}
 
@@ -74,6 +106,28 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
 	public String getNamespace() {
 		return this.namespace;
 	}
@@ -82,6 +136,17 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
 		}
 	}
 

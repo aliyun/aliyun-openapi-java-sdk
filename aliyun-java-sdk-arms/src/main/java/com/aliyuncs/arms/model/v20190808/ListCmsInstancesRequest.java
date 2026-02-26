@@ -25,6 +25,8 @@ import com.aliyuncs.arms.Endpoint;
 public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesResponse> {
 	   
 
+	private String typeFilter;
+
 	private String clusterId;
 	public ListCmsInstancesRequest() {
 		super("ARMS", "2019-08-08", "ListCmsInstances", "arms");
@@ -33,6 +35,17 @@ public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTypeFilter() {
+		return this.typeFilter;
+	}
+
+	public void setTypeFilter(String typeFilter) {
+		this.typeFilter = typeFilter;
+		if(typeFilter != null){
+			putQueryParameter("TypeFilter", typeFilter);
+		}
 	}
 
 	public String getClusterId() {

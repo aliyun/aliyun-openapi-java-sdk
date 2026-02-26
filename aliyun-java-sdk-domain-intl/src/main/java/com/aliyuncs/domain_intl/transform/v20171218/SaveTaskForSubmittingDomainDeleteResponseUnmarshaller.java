@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveTaskForSubmittingDomainDeleteResponseUnmarshaller {
 
-	public static SaveTaskForSubmittingDomainDeleteResponse unmarshall(SaveTaskForSubmittingDomainDeleteResponse saveTaskForSubmittingDomainDeleteResponse, UnmarshallerContext context) {
+	public static SaveTaskForSubmittingDomainDeleteResponse unmarshall(SaveTaskForSubmittingDomainDeleteResponse saveTaskForSubmittingDomainDeleteResponse, UnmarshallerContext _ctx) {
 		
-		saveTaskForSubmittingDomainDeleteResponse.setRequestId(context.stringValue("SaveTaskForSubmittingDomainDeleteResponse.RequestId"));
-		saveTaskForSubmittingDomainDeleteResponse.setTaskNo(context.stringValue("SaveTaskForSubmittingDomainDeleteResponse.TaskNo"));
+		saveTaskForSubmittingDomainDeleteResponse.setRequestId(_ctx.stringValue("SaveTaskForSubmittingDomainDeleteResponse.RequestId"));
+		saveTaskForSubmittingDomainDeleteResponse.setTaskNo(_ctx.stringValue("SaveTaskForSubmittingDomainDeleteResponse.TaskNo"));
 	 
 	 	return saveTaskForSubmittingDomainDeleteResponse;
 	}

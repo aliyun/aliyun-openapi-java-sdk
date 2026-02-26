@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.CoachCallResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.CoachCallResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.CoachCallResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.CoachCallResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -59,7 +58,6 @@ public class CoachCallResponseUnmarshaller {
 			channelContext.setChannelFlags(_ctx.stringValue("CoachCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
 			channelContext.setSkillGroupId(_ctx.stringValue("CoachCallResponse.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId"));
 			channelContext.setTimestamp(_ctx.longValue("CoachCallResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("CoachCallResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("CoachCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("CoachCallResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("CoachCallResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));
@@ -82,7 +80,6 @@ public class CoachCallResponseUnmarshaller {
 		userContext.setBreakCode(_ctx.stringValue("CoachCallResponse.Data.UserContext.BreakCode"));
 		userContext.setInstanceId(_ctx.stringValue("CoachCallResponse.Data.UserContext.InstanceId"));
 		userContext.setOutboundScenario(_ctx.booleanValue("CoachCallResponse.Data.UserContext.OutboundScenario"));
-		userContext.setUri(_ctx.stringValue("CoachCallResponse.Data.UserContext.Uri"));
 		userContext.setDeviceState(_ctx.stringValue("CoachCallResponse.Data.UserContext.DeviceState"));
 		userContext.setMobile(_ctx.stringValue("CoachCallResponse.Data.UserContext.Mobile"));
 		userContext.setJobId(_ctx.stringValue("CoachCallResponse.Data.UserContext.JobId"));

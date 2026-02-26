@@ -35,7 +35,7 @@ public class DescribeEipMonitorDataResponseUnmarshaller {
 			eipMonitorData.setEipPackets(_ctx.integerValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipPackets"));
 			eipMonitorData.setEipBandwidth(_ctx.integerValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipBandwidth"));
 			eipMonitorData.setTimeStamp(_ctx.stringValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].TimeStamp"));
-			eipMonitorData.setEipFlow(_ctx.integerValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipFlow"));
+			eipMonitorData.setEipFlow(_ctx.longValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipFlow"));
 			eipMonitorData.setEipRX(_ctx.longValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipRX"));
 
 			eipMonitorDatas.add(eipMonitorData);

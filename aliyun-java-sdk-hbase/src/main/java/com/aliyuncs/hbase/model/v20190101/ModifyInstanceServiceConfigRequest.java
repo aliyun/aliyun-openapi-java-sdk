@@ -35,7 +35,7 @@ public class ModifyInstanceServiceConfigRequest extends RpcAcsRequest<ModifyInst
 
 	private String parameters;
 	public ModifyInstanceServiceConfigRequest() {
-		super("HBase", "2019-01-01", "ModifyInstanceServiceConfig", "hbase");
+		super("HBase", "2019-01-01", "ModifyInstanceServiceConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

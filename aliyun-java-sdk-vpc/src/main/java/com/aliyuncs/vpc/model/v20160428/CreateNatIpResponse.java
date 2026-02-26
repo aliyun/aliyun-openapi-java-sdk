@@ -14,6 +14,7 @@
 
 package com.aliyuncs.vpc.model.v20160428;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vpc.transform.v20160428.CreateNatIpResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -29,6 +30,10 @@ public class CreateNatIpResponse extends AcsResponse {
 	private String requestId;
 
 	private String natIpId;
+
+	private String ipv4Prefix;
+
+	private List<NatIp> natIps;
 
 	public String getNatIp() {
 		return this.natIp;
@@ -52,6 +57,55 @@ public class CreateNatIpResponse extends AcsResponse {
 
 	public void setNatIpId(String natIpId) {
 		this.natIpId = natIpId;
+	}
+
+	public String getIpv4Prefix() {
+		return this.ipv4Prefix;
+	}
+
+	public void setIpv4Prefix(String ipv4Prefix) {
+		this.ipv4Prefix = ipv4Prefix;
+	}
+
+	public List<NatIp> getNatIps() {
+		return this.natIps;
+	}
+
+	public void setNatIps(List<NatIp> natIps) {
+		this.natIps = natIps;
+	}
+
+	public static class NatIp {
+
+		private String natIp;
+
+		private String natIpId;
+
+		private String ipv4Prefix;
+
+		public String getNatIp() {
+			return this.natIp;
+		}
+
+		public void setNatIp(String natIp) {
+			this.natIp = natIp;
+		}
+
+		public String getNatIpId() {
+			return this.natIpId;
+		}
+
+		public void setNatIpId(String natIpId) {
+			this.natIpId = natIpId;
+		}
+
+		public String getIpv4Prefix() {
+			return this.ipv4Prefix;
+		}
+
+		public void setIpv4Prefix(String ipv4Prefix) {
+			this.ipv4Prefix = ipv4Prefix;
+		}
 	}
 
 	@Override

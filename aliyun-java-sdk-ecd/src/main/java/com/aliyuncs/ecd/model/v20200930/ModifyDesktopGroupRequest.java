@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -41,6 +42,8 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 
 	private Integer allowBufferCount;
 
+	private List<String> policyGroupIdss;
+
 	private Long idleDisconnectDuration;
 
 	private String desktopGroupId;
@@ -48,6 +51,8 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 	private Integer minDesktopsCount;
 
 	private Integer maxDesktopsCount;
+
+	private String fileSystemId;
 
 	private Integer allowAutoSetup;
 
@@ -57,15 +62,21 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 
 	private String ownBundleId;
 
+	private Long stopDuration;
+
 	private Float ratioThreshold;
 
 	private Long keepDuration;
 
 	private Long connectDuration;
 
+	private Boolean profileFollowSwitch;
+
+	private Integer buyDesktopsCount;
+
 	private String policyGroupId;
 	public ModifyDesktopGroupRequest() {
-		super("ecd", "2020-09-30", "ModifyDesktopGroup");
+		super("ecd", "2020-09-30", "ModifyDesktopGroup", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -161,6 +172,19 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		}
 	}
 
+	public List<String> getPolicyGroupIdss() {
+		return this.policyGroupIdss;
+	}
+
+	public void setPolicyGroupIdss(List<String> policyGroupIdss) {
+		this.policyGroupIdss = policyGroupIdss;	
+		if (policyGroupIdss != null) {
+			for (int i = 0; i < policyGroupIdss.size(); i++) {
+				putQueryParameter("PolicyGroupIds." + (i + 1) , policyGroupIdss.get(i));
+			}
+		}	
+	}
+
 	public Long getIdleDisconnectDuration() {
 		return this.idleDisconnectDuration;
 	}
@@ -202,6 +226,17 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		this.maxDesktopsCount = maxDesktopsCount;
 		if(maxDesktopsCount != null){
 			putQueryParameter("MaxDesktopsCount", maxDesktopsCount.toString());
+		}
+	}
+
+	public String getFileSystemId() {
+		return this.fileSystemId;
+	}
+
+	public void setFileSystemId(String fileSystemId) {
+		this.fileSystemId = fileSystemId;
+		if(fileSystemId != null){
+			putQueryParameter("FileSystemId", fileSystemId);
 		}
 	}
 
@@ -249,6 +284,17 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		}
 	}
 
+	public Long getStopDuration() {
+		return this.stopDuration;
+	}
+
+	public void setStopDuration(Long stopDuration) {
+		this.stopDuration = stopDuration;
+		if(stopDuration != null){
+			putQueryParameter("StopDuration", stopDuration.toString());
+		}
+	}
+
 	public Float getRatioThreshold() {
 		return this.ratioThreshold;
 	}
@@ -279,6 +325,28 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		this.connectDuration = connectDuration;
 		if(connectDuration != null){
 			putQueryParameter("ConnectDuration", connectDuration.toString());
+		}
+	}
+
+	public Boolean getProfileFollowSwitch() {
+		return this.profileFollowSwitch;
+	}
+
+	public void setProfileFollowSwitch(Boolean profileFollowSwitch) {
+		this.profileFollowSwitch = profileFollowSwitch;
+		if(profileFollowSwitch != null){
+			putQueryParameter("ProfileFollowSwitch", profileFollowSwitch.toString());
+		}
+	}
+
+	public Integer getBuyDesktopsCount() {
+		return this.buyDesktopsCount;
+	}
+
+	public void setBuyDesktopsCount(Integer buyDesktopsCount) {
+		this.buyDesktopsCount = buyDesktopsCount;
+		if(buyDesktopsCount != null){
+			putQueryParameter("BuyDesktopsCount", buyDesktopsCount.toString());
 		}
 	}
 

@@ -19,8 +19,11 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway;
+import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway.AccessMode;
 import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway.IpList;
+import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway.IpPrefixListItem;
 import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway.NatGatewayPrivateInfo;
+import com.aliyuncs.vpc.model.v20160428.DescribeNatGatewaysResponse.NatGateway.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -58,6 +61,8 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGateway.setName(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Name"));
 			natGateway.setPrivateLinkEnabled(_ctx.booleanValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].PrivateLinkEnabled"));
 			natGateway.setPrivateLinkMode(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].PrivateLinkMode"));
+			natGateway.setEipBindMode(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].EipBindMode"));
+			natGateway.setEnableSessionLog(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].EnableSessionLog"));
 
 			List<String> forwardTableIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].ForwardTableIds.Length"); j++) {
@@ -94,6 +99,11 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGatewayPrivateInfo.setEniType(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.EniType"));
 			natGateway.setNatGatewayPrivateInfo(natGatewayPrivateInfo);
 
+			AccessMode accessMode = new AccessMode();
+			accessMode.setModeValue(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].AccessMode.ModeValue"));
+			accessMode.setTunnelType(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].AccessMode.TunnelType"));
+			natGateway.setAccessMode(accessMode);
+
 			List<IpList> ipLists = new ArrayList<IpList>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists.Length"); j++) {
 				IpList ipList = new IpList();
@@ -107,6 +117,25 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 				ipLists.add(ipList);
 			}
 			natGateway.setIpLists(ipLists);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			natGateway.setTags(tags);
+
+			List<IpPrefixListItem> ipPrefixList = new ArrayList<IpPrefixListItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpPrefixList.Length"); j++) {
+				IpPrefixListItem ipPrefixListItem = new IpPrefixListItem();
+				ipPrefixListItem.setIpPrefix(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpPrefixList["+ j +"].IpPrefix"));
+
+				ipPrefixList.add(ipPrefixListItem);
+			}
+			natGateway.setIpPrefixList(ipPrefixList);
 
 			natGateways.add(natGateway);
 		}

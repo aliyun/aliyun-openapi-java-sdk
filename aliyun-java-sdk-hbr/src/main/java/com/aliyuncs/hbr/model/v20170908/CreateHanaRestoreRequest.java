@@ -33,8 +33,6 @@ public class CreateHanaRestoreRequest extends RpcAcsRequest<CreateHanaRestoreRes
 
 	private String vaultId;
 
-	private String logPaths;
-
 	private String source;
 
 	private Boolean clearLog;
@@ -48,10 +46,6 @@ public class CreateHanaRestoreRequest extends RpcAcsRequest<CreateHanaRestoreRes
 	private Long backupId;
 
 	private String clusterId;
-
-	private String extraOptions;
-
-	private String token;
 
 	private Boolean useDelta;
 
@@ -116,17 +110,6 @@ public class CreateHanaRestoreRequest extends RpcAcsRequest<CreateHanaRestoreRes
 		this.vaultId = vaultId;
 		if(vaultId != null){
 			putQueryParameter("VaultId", vaultId);
-		}
-	}
-
-	public String getLogPaths() {
-		return this.logPaths;
-	}
-
-	public void setLogPaths(String logPaths) {
-		this.logPaths = logPaths;
-		if(logPaths != null){
-			putQueryParameter("LogPaths", logPaths);
 		}
 	}
 
@@ -204,28 +187,6 @@ public class CreateHanaRestoreRequest extends RpcAcsRequest<CreateHanaRestoreRes
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getExtraOptions() {
-		return this.extraOptions;
-	}
-
-	public void setExtraOptions(String extraOptions) {
-		this.extraOptions = extraOptions;
-		if(extraOptions != null){
-			putQueryParameter("ExtraOptions", extraOptions);
-		}
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
 		}
 	}
 

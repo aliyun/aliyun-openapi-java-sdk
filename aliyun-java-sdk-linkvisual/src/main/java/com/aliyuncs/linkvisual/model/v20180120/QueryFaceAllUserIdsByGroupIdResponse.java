@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryFaceAllUserIdsByGroupIdResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class QueryFaceAllUserIdsByGroupIdResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class QueryFaceAllUserIdsByGroupIdResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,21 +77,13 @@ public class QueryFaceAllUserIdsByGroupIdResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
-
 		private Integer pageSize;
+
+		private Integer total;
 
 		private Integer page;
 
 		private List<ListItem> list;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -99,6 +91,14 @@ public class QueryFaceAllUserIdsByGroupIdResponse extends AcsResponse {
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public Integer getPage() {
@@ -119,20 +119,20 @@ public class QueryFaceAllUserIdsByGroupIdResponse extends AcsResponse {
 
 		public static class ListItem {
 
-			private String userId;
+			private String params;
 
 			private String customUserId;
 
 			private String name;
 
-			private String params;
+			private String userId;
 
-			public String getUserId() {
-				return this.userId;
+			public String getParams() {
+				return this.params;
 			}
 
-			public void setUserId(String userId) {
-				this.userId = userId;
+			public void setParams(String params) {
+				this.params = params;
 			}
 
 			public String getCustomUserId() {
@@ -151,12 +151,12 @@ public class QueryFaceAllUserIdsByGroupIdResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getParams() {
-				return this.params;
+			public String getUserId() {
+				return this.userId;
 			}
 
-			public void setParams(String params) {
-				this.params = params;
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 		}
 	}

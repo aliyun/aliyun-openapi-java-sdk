@@ -33,17 +33,17 @@ public class ListDownStreamBindingsResponseUnmarshaller {
 		listDownStreamBindingsResponse.setSuccess(_ctx.booleanValue("ListDownStreamBindingsResponse.Success"));
 
 		Data data = new Data();
-		data.setNextToken(_ctx.stringValue("ListDownStreamBindingsResponse.Data.NextToken"));
 		data.setMaxResults(_ctx.integerValue("ListDownStreamBindingsResponse.Data.MaxResults"));
+		data.setNextToken(_ctx.stringValue("ListDownStreamBindingsResponse.Data.NextToken"));
 
 		List<BindingVO> bindings = new ArrayList<BindingVO>();
 		for (int i = 0; i < _ctx.lengthValue("ListDownStreamBindingsResponse.Data.Bindings.Length"); i++) {
 			BindingVO bindingVO = new BindingVO();
 			bindingVO.setSourceExchange(_ctx.stringValue("ListDownStreamBindingsResponse.Data.Bindings["+ i +"].SourceExchange"));
-			bindingVO.setDestinationName(_ctx.stringValue("ListDownStreamBindingsResponse.Data.Bindings["+ i +"].DestinationName"));
-			bindingVO.setBindingType(_ctx.stringValue("ListDownStreamBindingsResponse.Data.Bindings["+ i +"].BindingType"));
-			bindingVO.setBindingKey(_ctx.stringValue("ListDownStreamBindingsResponse.Data.Bindings["+ i +"].BindingKey"));
 			bindingVO.setArgument(_ctx.stringValue("ListDownStreamBindingsResponse.Data.Bindings["+ i +"].Argument"));
+			bindingVO.setBindingKey(_ctx.stringValue("ListDownStreamBindingsResponse.Data.Bindings["+ i +"].BindingKey"));
+			bindingVO.setBindingType(_ctx.stringValue("ListDownStreamBindingsResponse.Data.Bindings["+ i +"].BindingType"));
+			bindingVO.setDestinationName(_ctx.stringValue("ListDownStreamBindingsResponse.Data.Bindings["+ i +"].DestinationName"));
 
 			bindings.add(bindingVO);
 		}

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSystemRulesResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
 	private Boolean success;
 
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -57,6 +49,14 @@ public class ListSystemRulesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,22 +77,22 @@ public class ListSystemRulesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalCount;
+		private Integer pageIndex;
 
 		private Integer totalPage;
 
-		private Integer pageIndex;
-
 		private Integer pageSize;
+
+		private Integer totalCount;
 
 		private List<DatasItem> datas;
 
-		public Integer getTotalCount() {
-			return this.totalCount;
+		public Integer getPageIndex() {
+			return this.pageIndex;
 		}
 
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
+		public void setPageIndex(Integer pageIndex) {
+			this.pageIndex = pageIndex;
 		}
 
 		public Integer getTotalPage() {
@@ -103,20 +103,20 @@ public class ListSystemRulesResponse extends AcsResponse {
 			this.totalPage = totalPage;
 		}
 
-		public Integer getPageIndex() {
-			return this.pageIndex;
-		}
-
-		public void setPageIndex(Integer pageIndex) {
-			this.pageIndex = pageIndex;
-		}
-
 		public Integer getPageSize() {
 			return this.pageSize;
 		}
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public List<DatasItem> getDatas() {
@@ -131,6 +131,8 @@ public class ListSystemRulesResponse extends AcsResponse {
 
 			private String appName;
 
+			private String namespace;
+
 			private Integer metricType;
 
 			private Float threshold;
@@ -139,14 +141,20 @@ public class ListSystemRulesResponse extends AcsResponse {
 
 			private Long ruleId;
 
-			private String namespace;
-
 			public String getAppName() {
 				return this.appName;
 			}
 
 			public void setAppName(String appName) {
 				this.appName = appName;
+			}
+
+			public String getNamespace() {
+				return this.namespace;
+			}
+
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
 			}
 
 			public Integer getMetricType() {
@@ -179,14 +187,6 @@ public class ListSystemRulesResponse extends AcsResponse {
 
 			public void setRuleId(Long ruleId) {
 				this.ruleId = ruleId;
-			}
-
-			public String getNamespace() {
-				return this.namespace;
-			}
-
-			public void setNamespace(String namespace) {
-				this.namespace = namespace;
 			}
 		}
 	}

@@ -26,8 +26,8 @@ public class PreviewModelResponseUnmarshaller {
 
 	public static PreviewModelResponse unmarshall(PreviewModelResponse previewModelResponse, UnmarshallerContext _ctx) {
 		
-		previewModelResponse.setRequestId(_ctx.stringValue("PreviewModelResponse.requestId"));
 		previewModelResponse.setTotalCount(_ctx.longValue("PreviewModelResponse.totalCount"));
+		previewModelResponse.setRequestId(_ctx.stringValue("PreviewModelResponse.requestId"));
 
 		List<Map<Object, Object>> result = _ctx.listMapValue("PreviewModelResponse.result");
 		previewModelResponse.setResult(result);

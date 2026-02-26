@@ -89,6 +89,10 @@ public class DescribeBundlesResponse extends AcsResponse {
 
 		private String volumeEncryptionKey;
 
+		private String platform;
+
+		private String imageStatus;
+
 		private List<Disk> disks;
 
 		private DesktopTypeAttribute desktopTypeAttribute;
@@ -219,6 +223,22 @@ public class DescribeBundlesResponse extends AcsResponse {
 
 		public void setVolumeEncryptionKey(String volumeEncryptionKey) {
 			this.volumeEncryptionKey = volumeEncryptionKey;
+		}
+
+		public String getPlatform() {
+			return this.platform;
+		}
+
+		public void setPlatform(String platform) {
+			this.platform = platform;
+		}
+
+		public String getImageStatus() {
+			return this.imageStatus;
+		}
+
+		public void setImageStatus(String imageStatus) {
+			this.imageStatus = imageStatus;
 		}
 
 		public List<Disk> getDisks() {

@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class SwitchVpcRouteToBackUpZoneRequest extends RpcAcsRequest<SwitchVpcRouteToBackUpZoneResponse> {
 	   
 
+	private String greInterfaceId;
+
 	private Boolean dryRun;
 
 	private String clientToken;
@@ -34,6 +36,17 @@ public class SwitchVpcRouteToBackUpZoneRequest extends RpcAcsRequest<SwitchVpcRo
 	public SwitchVpcRouteToBackUpZoneRequest() {
 		super("CCIoTGW", "2021-07-21", "SwitchVpcRouteToBackUpZone");
 		setMethod(MethodType.POST);
+	}
+
+	public String getGreInterfaceId() {
+		return this.greInterfaceId;
+	}
+
+	public void setGreInterfaceId(String greInterfaceId) {
+		this.greInterfaceId = greInterfaceId;
+		if(greInterfaceId != null){
+			putQueryParameter("GreInterfaceId", greInterfaceId);
+		}
 	}
 
 	public Boolean getDryRun() {

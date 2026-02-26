@@ -39,6 +39,7 @@ public class OnsInstanceInServiceListResponseUnmarshaller {
 			instanceVO.setInstanceStatus(_ctx.integerValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceStatus"));
 			instanceVO.setInstanceId(_ctx.stringValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceId"));
 			instanceVO.setInstanceType(_ctx.integerValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceType"));
+			instanceVO.setCreateTime(_ctx.longValue("OnsInstanceInServiceListResponse.Data["+ i +"].CreateTime"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("OnsInstanceInServiceListResponse.Data["+ i +"].Tags.Length"); j++) {

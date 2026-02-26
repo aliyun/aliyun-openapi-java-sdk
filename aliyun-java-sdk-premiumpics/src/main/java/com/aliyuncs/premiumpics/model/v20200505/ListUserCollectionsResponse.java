@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListUserCollectionsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
 
-	private Boolean success;
+	private Integer pageSize;
+
+	private Integer pageNumber;
 
 	private String errorMsg;
 
 	private String errorCode;
 
-	private Integer pageSize;
-
-	private Integer totalCount;
-
-	private Integer pageNumber;
+	private Boolean success;
 
 	private List<Collections> data;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,12 +57,20 @@ public class ListUserCollectionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public String getErrorMsg() {
@@ -73,28 +89,12 @@ public class ListUserCollectionsResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Collections> getData() {
@@ -109,9 +109,11 @@ public class ListUserCollectionsResponse extends AcsResponse {
 
 		private String unitId;
 
+		private String image;
+
 		private String unitName;
 
-		private String image;
+		private String extend;
 
 		public String getUnitId() {
 			return this.unitId;
@@ -119,6 +121,14 @@ public class ListUserCollectionsResponse extends AcsResponse {
 
 		public void setUnitId(String unitId) {
 			this.unitId = unitId;
+		}
+
+		public String getImage() {
+			return this.image;
+		}
+
+		public void setImage(String image) {
+			this.image = image;
 		}
 
 		public String getUnitName() {
@@ -129,12 +139,12 @@ public class ListUserCollectionsResponse extends AcsResponse {
 			this.unitName = unitName;
 		}
 
-		public String getImage() {
-			return this.image;
+		public String getExtend() {
+			return this.extend;
 		}
 
-		public void setImage(String image) {
-			this.image = image;
+		public void setExtend(String extend) {
+			this.extend = extend;
 		}
 	}
 

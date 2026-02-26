@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -39,6 +40,12 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 
 	private String type;
 
+	private String resourceGroupId;
+
+	private String opticalModuleModel;
+
+	private List<Tag> tags;
+
 	private String redundantPhysicalConnectionId;
 
 	private String peerLocation;
@@ -54,6 +61,8 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 	private String lineOperator;
 
 	private String name;
+
+	private List<String> deviceAdvancedCapacitys;
 	public CreatePhysicalConnectionRequest() {
 		super("Vpc", "2016-04-28", "CreatePhysicalConnection", "vpc");
 		setMethod(MethodType.POST);
@@ -138,6 +147,42 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 		if(type != null){
 			putQueryParameter("Type", type);
 		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getOpticalModuleModel() {
+		return this.opticalModuleModel;
+	}
+
+	public void setOpticalModuleModel(String opticalModuleModel) {
+		this.opticalModuleModel = opticalModuleModel;
+		if(opticalModuleModel != null){
+			putQueryParameter("OpticalModuleModel", opticalModuleModel);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getRedundantPhysicalConnectionId() {
@@ -225,6 +270,42 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public List<String> getDeviceAdvancedCapacitys() {
+		return this.deviceAdvancedCapacitys;
+	}
+
+	public void setDeviceAdvancedCapacitys(List<String> deviceAdvancedCapacitys) {
+		this.deviceAdvancedCapacitys = deviceAdvancedCapacitys;	
+		if (deviceAdvancedCapacitys != null) {
+			for (int i = 0; i < deviceAdvancedCapacitys.size(); i++) {
+				putQueryParameter("DeviceAdvancedCapacity." + (i + 1) , deviceAdvancedCapacitys.get(i));
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

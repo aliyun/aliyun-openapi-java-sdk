@@ -27,13 +27,13 @@ public class ListDataServiceApiAuthoritiesRequest extends RpcAcsRequest<ListData
 
 	private String apiNameKeyword;
 
+	private Integer pageNumber;
+
 	private Integer pageSize;
 
 	private Long tenantId;
 
 	private Long projectId;
-
-	private Integer pageNumber;
 	public ListDataServiceApiAuthoritiesRequest() {
 		super("dataworks-public", "2020-05-18", "ListDataServiceApiAuthorities");
 		setMethod(MethodType.POST);
@@ -51,6 +51,17 @@ public class ListDataServiceApiAuthoritiesRequest extends RpcAcsRequest<ListData
 		this.apiNameKeyword = apiNameKeyword;
 		if(apiNameKeyword != null){
 			putBodyParameter("ApiNameKeyword", apiNameKeyword);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -84,17 +95,6 @@ public class ListDataServiceApiAuthoritiesRequest extends RpcAcsRequest<ListData
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

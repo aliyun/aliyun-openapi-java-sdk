@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveDomainLogResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String domainName;
 
+	private String requestId;
+
 	private List<DomainLogDetail> domainLogDetails;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDomainName() {
 		return this.domainName;
@@ -45,6 +37,14 @@ public class DescribeLiveDomainLogResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DomainLogDetail> getDomainLogDetails() {
@@ -89,30 +89,22 @@ public class DescribeLiveDomainLogResponse extends AcsResponse {
 
 		public static class LogInfoDetail {
 
-			private String logName;
-
-			private String logPath;
+			private String endTime;
 
 			private Long logSize;
 
 			private String startTime;
 
-			private String endTime;
+			private String logName;
 
-			public String getLogName() {
-				return this.logName;
+			private String logPath;
+
+			public String getEndTime() {
+				return this.endTime;
 			}
 
-			public void setLogName(String logName) {
-				this.logName = logName;
-			}
-
-			public String getLogPath() {
-				return this.logPath;
-			}
-
-			public void setLogPath(String logPath) {
-				this.logPath = logPath;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
 			}
 
 			public Long getLogSize() {
@@ -131,12 +123,20 @@ public class DescribeLiveDomainLogResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public String getEndTime() {
-				return this.endTime;
+			public String getLogName() {
+				return this.logName;
 			}
 
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
+			public void setLogName(String logName) {
+				this.logName = logName;
+			}
+
+			public String getLogPath() {
+				return this.logPath;
+			}
+
+			public void setLogPath(String logPath) {
+				this.logPath = logPath;
 			}
 		}
 

@@ -29,7 +29,7 @@ public class DescribeSceneDefenseObjectsRequest extends RpcAcsRequest<DescribeSc
 
 	private String policyId;
 	public DescribeSceneDefenseObjectsRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeSceneDefenseObjects");
+		super("ddoscoo", "2020-01-01", "DescribeSceneDefenseObjects", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

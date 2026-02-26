@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDnsGtmInstanceAddressPoolsResponse extends AcsResponse {
 
+	private Integer pageSize;
+
 	private String requestId;
-
-	private Integer totalItems;
-
-	private Integer totalPages;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalPages;
+
+	private Integer totalItems;
 
 	private List<AddrPool> addrPools;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,22 +51,6 @@ public class DescribeDnsGtmInstanceAddressPoolsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalItems() {
-		return this.totalItems;
-	}
-
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
-	}
-
-	public Integer getTotalPages() {
-		return this.totalPages;
-	}
-
-	public void setTotalPages(Integer totalPages) {
-		this.totalPages = totalPages;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +61,20 @@ public class DescribeDnsGtmInstanceAddressPoolsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalPages() {
+		return this.totalPages;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalPages(Integer totalPages) {
+		this.totalPages = totalPages;
+	}
+
+	public Integer getTotalItems() {
+		return this.totalItems;
+	}
+
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
 	}
 
 	public List<AddrPool> getAddrPools() {
@@ -87,50 +87,50 @@ public class DescribeDnsGtmInstanceAddressPoolsResponse extends AcsResponse {
 
 	public static class AddrPool {
 
-		private String addrPoolId;
+		private String type;
 
-		private String createTime;
+		private Long updateTimestamp;
 
-		private Long createTimestamp;
+		private String monitorStatus;
 
 		private String updateTime;
 
-		private Long updateTimestamp;
+		private String createTime;
+
+		private String addrPoolId;
+
+		private String lbaStrategy;
+
+		private String name;
 
 		private Integer addrCount;
 
 		private String monitorConfigId;
 
-		private String monitorStatus;
+		private Long createTimestamp;
 
-		private String name;
-
-		private String type;
-
-		private String lbaStrategy;
-
-		public String getAddrPoolId() {
-			return this.addrPoolId;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setAddrPoolId(String addrPoolId) {
-			this.addrPoolId = addrPoolId;
+		public void setType(String type) {
+			this.type = type;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public Long getUpdateTimestamp() {
+			return this.updateTimestamp;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setUpdateTimestamp(Long updateTimestamp) {
+			this.updateTimestamp = updateTimestamp;
 		}
 
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
+		public String getMonitorStatus() {
+			return this.monitorStatus;
 		}
 
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
+		public void setMonitorStatus(String monitorStatus) {
+			this.monitorStatus = monitorStatus;
 		}
 
 		public String getUpdateTime() {
@@ -141,12 +141,36 @@ public class DescribeDnsGtmInstanceAddressPoolsResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public Long getUpdateTimestamp() {
-			return this.updateTimestamp;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setUpdateTimestamp(Long updateTimestamp) {
-			this.updateTimestamp = updateTimestamp;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getAddrPoolId() {
+			return this.addrPoolId;
+		}
+
+		public void setAddrPoolId(String addrPoolId) {
+			this.addrPoolId = addrPoolId;
+		}
+
+		public String getLbaStrategy() {
+			return this.lbaStrategy;
+		}
+
+		public void setLbaStrategy(String lbaStrategy) {
+			this.lbaStrategy = lbaStrategy;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Integer getAddrCount() {
@@ -165,36 +189,12 @@ public class DescribeDnsGtmInstanceAddressPoolsResponse extends AcsResponse {
 			this.monitorConfigId = monitorConfigId;
 		}
 
-		public String getMonitorStatus() {
-			return this.monitorStatus;
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
 		}
 
-		public void setMonitorStatus(String monitorStatus) {
-			this.monitorStatus = monitorStatus;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getLbaStrategy() {
-			return this.lbaStrategy;
-		}
-
-		public void setLbaStrategy(String lbaStrategy) {
-			this.lbaStrategy = lbaStrategy;
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 	}
 

@@ -29,6 +29,12 @@ public class CreateNacosConfigRequest extends RpcAcsRequest<CreateNacosConfigRes
 
 	private String content;
 
+	private String appName;
+
+	private String namespaceId;
+
+	private String group;
+
 	private String tags;
 
 	private String betaIps;
@@ -37,13 +43,7 @@ public class CreateNacosConfigRequest extends RpcAcsRequest<CreateNacosConfigRes
 
 	private String dataId;
 
-	private String appName;
-
-	private String namespaceId;
-
 	private String acceptLanguage;
-
-	private String group;
 
 	private String desc;
 	public CreateNacosConfigRequest() {
@@ -74,6 +74,39 @@ public class CreateNacosConfigRequest extends RpcAcsRequest<CreateNacosConfigRes
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getGroup() {
+		return this.group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+		if(group != null){
+			putQueryParameter("Group", group);
 		}
 	}
 
@@ -121,28 +154,6 @@ public class CreateNacosConfigRequest extends RpcAcsRequest<CreateNacosConfigRes
 		}
 	}
 
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getNamespaceId() {
-		return this.namespaceId;
-	}
-
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
-		}
-	}
-
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -151,17 +162,6 @@ public class CreateNacosConfigRequest extends RpcAcsRequest<CreateNacosConfigRes
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getGroup() {
-		return this.group;
-	}
-
-	public void setGroup(String group) {
-		this.group = group;
-		if(group != null){
-			putQueryParameter("Group", group);
 		}
 	}
 

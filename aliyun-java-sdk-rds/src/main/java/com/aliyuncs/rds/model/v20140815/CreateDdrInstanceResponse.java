@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDdrInstanceResponse extends AcsResponse {
 
+	private String connectionString;
+
 	private String dBInstanceId;
 
-	private String requestId;
+	private String orderId;
 
 	private String port;
 
-	private String connectionString;
+	private String requestId;
 
-	private String orderId;
+	public String getConnectionString() {
+		return this.connectionString;
+	}
+
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+	}
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -42,12 +50,12 @@ public class CreateDdrInstanceResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	public String getPort() {
@@ -58,20 +66,12 @@ public class CreateDdrInstanceResponse extends AcsResponse {
 		this.port = port;
 	}
 
-	public String getConnectionString() {
-		return this.connectionString;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setConnectionString(String connectionString) {
-		this.connectionString = connectionString;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

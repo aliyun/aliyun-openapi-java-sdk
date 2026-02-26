@@ -35,8 +35,8 @@ public class DescribePdnsOperateLogsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribePdnsOperateLogsResponse.Logs.Length"); i++) {
 			Log log = new Log();
 			log.setOperateTime(_ctx.stringValue("DescribePdnsOperateLogsResponse.Logs["+ i +"].OperateTime"));
-			log.setAction(_ctx.stringValue("DescribePdnsOperateLogsResponse.Logs["+ i +"].Action"));
 			log.setType(_ctx.stringValue("DescribePdnsOperateLogsResponse.Logs["+ i +"].Type"));
+			log.setAction(_ctx.stringValue("DescribePdnsOperateLogsResponse.Logs["+ i +"].Action"));
 			log.setContent(_ctx.stringValue("DescribePdnsOperateLogsResponse.Logs["+ i +"].content"));
 
 			logs.add(log);

@@ -27,6 +27,8 @@ public class ListCategoriesRequest extends RpcAcsRequest<ListCategoriesResponse>
 
 	private Long productId;
 
+	private String language;
+
 	private String name;
 	public ListCategoriesRequest() {
 		super("Workorder", "2021-06-10", "ListCategories");
@@ -45,6 +47,17 @@ public class ListCategoriesRequest extends RpcAcsRequest<ListCategoriesResponse>
 		this.productId = productId;
 		if(productId != null){
 			putBodyParameter("ProductId", productId.toString());
+		}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
 		}
 	}
 

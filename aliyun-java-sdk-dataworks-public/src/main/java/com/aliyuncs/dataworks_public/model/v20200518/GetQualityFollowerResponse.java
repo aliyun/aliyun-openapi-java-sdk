@@ -101,6 +101,10 @@ public class GetQualityFollowerResponse extends AcsResponse {
 
 		private String follower;
 
+		private Long createTime;
+
+		private Long modifyTime;
+
 		public String getFollowerAccountName() {
 			return this.followerAccountName;
 		}
@@ -155,6 +159,22 @@ public class GetQualityFollowerResponse extends AcsResponse {
 
 		public void setFollower(String follower) {
 			this.follower = follower;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(Long modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

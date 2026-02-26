@@ -34,6 +34,8 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 
 	private String strategyJson;
 
+	private List<String> recallCallingNumbers;
+
 	private Long ringingDuration;
 
 	private String scenarioId;
@@ -41,6 +43,8 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 	private String jobGroupStatus;
 
 	private String priority;
+
+	private String flashSmsExtras;
 
 	private List<String> callingNumbers;
 
@@ -104,6 +108,19 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 		}
 	}
 
+	public List<String> getRecallCallingNumbers() {
+		return this.recallCallingNumbers;
+	}
+
+	public void setRecallCallingNumbers(List<String> recallCallingNumbers) {
+		this.recallCallingNumbers = recallCallingNumbers;	
+		if (recallCallingNumbers != null) {
+			for (int i = 0; i < recallCallingNumbers.size(); i++) {
+				putQueryParameter("RecallCallingNumber." + (i + 1) , recallCallingNumbers.get(i));
+			}
+		}	
+	}
+
 	public Long getRingingDuration() {
 		return this.ringingDuration;
 	}
@@ -145,6 +162,17 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 		this.priority = priority;
 		if(priority != null){
 			putQueryParameter("Priority", priority);
+		}
+	}
+
+	public String getFlashSmsExtras() {
+		return this.flashSmsExtras;
+	}
+
+	public void setFlashSmsExtras(String flashSmsExtras) {
+		this.flashSmsExtras = flashSmsExtras;
+		if(flashSmsExtras != null){
+			putQueryParameter("FlashSmsExtras", flashSmsExtras);
 		}
 	}
 

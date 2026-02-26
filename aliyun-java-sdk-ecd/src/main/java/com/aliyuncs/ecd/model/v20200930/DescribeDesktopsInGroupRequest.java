@@ -25,6 +25,8 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribeDesktopsInGroupRequest extends RpcAcsRequest<DescribeDesktopsInGroupResponse> {
 	   
 
+	private Boolean ignoreDeleted;
+
 	private String desktopGroupId;
 
 	private String nextToken;
@@ -33,12 +35,23 @@ public class DescribeDesktopsInGroupRequest extends RpcAcsRequest<DescribeDeskto
 
 	private String payType;
 	public DescribeDesktopsInGroupRequest() {
-		super("ecd", "2020-09-30", "DescribeDesktopsInGroup");
+		super("ecd", "2020-09-30", "DescribeDesktopsInGroup", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getIgnoreDeleted() {
+		return this.ignoreDeleted;
+	}
+
+	public void setIgnoreDeleted(Boolean ignoreDeleted) {
+		this.ignoreDeleted = ignoreDeleted;
+		if(ignoreDeleted != null){
+			putQueryParameter("IgnoreDeleted", ignoreDeleted.toString());
+		}
 	}
 
 	public String getDesktopGroupId() {

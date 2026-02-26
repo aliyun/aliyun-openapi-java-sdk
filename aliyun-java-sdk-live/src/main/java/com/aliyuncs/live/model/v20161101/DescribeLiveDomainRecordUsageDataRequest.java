@@ -34,6 +34,10 @@ public class DescribeLiveDomainRecordUsageDataRequest extends RpcAcsRequest<Desc
 	private String endTime;
 
 	private Long ownerId;
+
+	private String interval;
+
+	private String region;
 	public DescribeLiveDomainRecordUsageDataRequest() {
 		super("live", "2016-11-01", "DescribeLiveDomainRecordUsageData", "live");
 		setMethod(MethodType.POST);
@@ -95,6 +99,28 @@ public class DescribeLiveDomainRecordUsageDataRequest extends RpcAcsRequest<Desc
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 

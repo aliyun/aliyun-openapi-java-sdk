@@ -37,7 +37,13 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 	private String content;
 
+	private String sourceIp;
+
+	private Integer matchType;
+
 	private String lang;
+
+	private Integer supportForm;
 
 	private Integer ruleType;
 
@@ -127,6 +133,28 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		}
 	}
 
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public Integer getMatchType() {
+		return this.matchType;
+	}
+
+	public void setMatchType(Integer matchType) {
+		this.matchType = matchType;
+		if(matchType != null){
+			putQueryParameter("MatchType", matchType.toString());
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -135,6 +163,17 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getSupportForm() {
+		return this.supportForm;
+	}
+
+	public void setSupportForm(Integer supportForm) {
+		this.supportForm = supportForm;
+		if(supportForm != null){
+			putQueryParameter("SupportForm", supportForm.toString());
 		}
 	}
 

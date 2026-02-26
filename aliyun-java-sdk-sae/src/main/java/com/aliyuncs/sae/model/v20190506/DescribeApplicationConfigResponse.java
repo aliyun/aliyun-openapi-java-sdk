@@ -15,6 +15,7 @@
 package com.aliyuncs.sae.model.v20190506;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.sae.transform.v20190506.DescribeApplicationConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -117,6 +118,8 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		private String packageType;
 
+		private String packageRuntimeCustomBuild;
+
 		private String preStop;
 
 		private String packageVersion;
@@ -201,11 +204,41 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		private String acrAssumeRoleArn;
 
+		private String imagePullSecrets;
+
+		private Boolean enableImageAccl;
+
 		private Boolean associateEip;
 
 		private String kafkaConfigs;
 
 		private String programmingLanguage;
+
+		private String pvtzDiscovery;
+
+		private String microRegistration;
+
+		private String nasConfigs;
+
+		private String python;
+
+		private String pythonModules;
+
+		private String dotnet;
+
+		private String mseApplicationName;
+
+		private String saeVersion;
+
+		private String appSource;
+
+		private Map<Object,Object> serviceTags;
+
+		private String microRegistrationConfig;
+
+		private Boolean enableIdle;
+
+		private Boolean enableNewArms;
 
 		private List<ConfigMapMountDescItem> configMapMountDesc;
 
@@ -293,6 +326,14 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		public void setPackageType(String packageType) {
 			this.packageType = packageType;
+		}
+
+		public String getPackageRuntimeCustomBuild() {
+			return this.packageRuntimeCustomBuild;
+		}
+
+		public void setPackageRuntimeCustomBuild(String packageRuntimeCustomBuild) {
+			this.packageRuntimeCustomBuild = packageRuntimeCustomBuild;
 		}
 
 		public String getPreStop() {
@@ -631,6 +672,22 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 			this.acrAssumeRoleArn = acrAssumeRoleArn;
 		}
 
+		public String getImagePullSecrets() {
+			return this.imagePullSecrets;
+		}
+
+		public void setImagePullSecrets(String imagePullSecrets) {
+			this.imagePullSecrets = imagePullSecrets;
+		}
+
+		public Boolean getEnableImageAccl() {
+			return this.enableImageAccl;
+		}
+
+		public void setEnableImageAccl(Boolean enableImageAccl) {
+			this.enableImageAccl = enableImageAccl;
+		}
+
 		public Boolean getAssociateEip() {
 			return this.associateEip;
 		}
@@ -653,6 +710,110 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		public void setProgrammingLanguage(String programmingLanguage) {
 			this.programmingLanguage = programmingLanguage;
+		}
+
+		public String getPvtzDiscovery() {
+			return this.pvtzDiscovery;
+		}
+
+		public void setPvtzDiscovery(String pvtzDiscovery) {
+			this.pvtzDiscovery = pvtzDiscovery;
+		}
+
+		public String getMicroRegistration() {
+			return this.microRegistration;
+		}
+
+		public void setMicroRegistration(String microRegistration) {
+			this.microRegistration = microRegistration;
+		}
+
+		public String getNasConfigs() {
+			return this.nasConfigs;
+		}
+
+		public void setNasConfigs(String nasConfigs) {
+			this.nasConfigs = nasConfigs;
+		}
+
+		public String getPython() {
+			return this.python;
+		}
+
+		public void setPython(String python) {
+			this.python = python;
+		}
+
+		public String getPythonModules() {
+			return this.pythonModules;
+		}
+
+		public void setPythonModules(String pythonModules) {
+			this.pythonModules = pythonModules;
+		}
+
+		public String getDotnet() {
+			return this.dotnet;
+		}
+
+		public void setDotnet(String dotnet) {
+			this.dotnet = dotnet;
+		}
+
+		public String getMseApplicationName() {
+			return this.mseApplicationName;
+		}
+
+		public void setMseApplicationName(String mseApplicationName) {
+			this.mseApplicationName = mseApplicationName;
+		}
+
+		public String getSaeVersion() {
+			return this.saeVersion;
+		}
+
+		public void setSaeVersion(String saeVersion) {
+			this.saeVersion = saeVersion;
+		}
+
+		public String getAppSource() {
+			return this.appSource;
+		}
+
+		public void setAppSource(String appSource) {
+			this.appSource = appSource;
+		}
+
+		public Map<Object,Object> getServiceTags() {
+			return this.serviceTags;
+		}
+
+		public void setServiceTags(Map<Object,Object> serviceTags) {
+			this.serviceTags = serviceTags;
+		}
+
+		public String getMicroRegistrationConfig() {
+			return this.microRegistrationConfig;
+		}
+
+		public void setMicroRegistrationConfig(String microRegistrationConfig) {
+			this.microRegistrationConfig = microRegistrationConfig;
+		}
+
+		public Boolean getEnableIdle() {
+			return this.enableIdle;
+		}
+
+		public void setEnableIdle(Boolean enableIdle) {
+			this.enableIdle = enableIdle;
+		}
+
+		public Boolean getEnableNewArms() {
+			return this.enableNewArms;
+		}
+
+		public void setEnableNewArms(Boolean enableNewArms) {
+			this.enableNewArms = enableNewArms;
 		}
 
 		public List<ConfigMapMountDescItem> getConfigMapMountDesc() {

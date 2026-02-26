@@ -47,17 +47,41 @@ public class DescribeImageGatewayConfigResponse extends AcsResponse {
 
 	public static class Imagegw {
 
+		private String updateDateTime;
+
+		private String imageExpirationTimeout;
+
+		private String mongoDBURI;
+
 		private String defaultImageLocation;
 
 		private Long pullUpdateTimeout;
 
-		private String mongoDBURI;
-
-		private String imageExpirationTimeout;
-
-		private String updateDateTime;
-
 		private List<LocationInfo> locations;
+
+		public String getUpdateDateTime() {
+			return this.updateDateTime;
+		}
+
+		public void setUpdateDateTime(String updateDateTime) {
+			this.updateDateTime = updateDateTime;
+		}
+
+		public String getImageExpirationTimeout() {
+			return this.imageExpirationTimeout;
+		}
+
+		public void setImageExpirationTimeout(String imageExpirationTimeout) {
+			this.imageExpirationTimeout = imageExpirationTimeout;
+		}
+
+		public String getMongoDBURI() {
+			return this.mongoDBURI;
+		}
+
+		public void setMongoDBURI(String mongoDBURI) {
+			this.mongoDBURI = mongoDBURI;
+		}
 
 		public String getDefaultImageLocation() {
 			return this.defaultImageLocation;
@@ -75,30 +99,6 @@ public class DescribeImageGatewayConfigResponse extends AcsResponse {
 			this.pullUpdateTimeout = pullUpdateTimeout;
 		}
 
-		public String getMongoDBURI() {
-			return this.mongoDBURI;
-		}
-
-		public void setMongoDBURI(String mongoDBURI) {
-			this.mongoDBURI = mongoDBURI;
-		}
-
-		public String getImageExpirationTimeout() {
-			return this.imageExpirationTimeout;
-		}
-
-		public void setImageExpirationTimeout(String imageExpirationTimeout) {
-			this.imageExpirationTimeout = imageExpirationTimeout;
-		}
-
-		public String getUpdateDateTime() {
-			return this.updateDateTime;
-		}
-
-		public void setUpdateDateTime(String updateDateTime) {
-			this.updateDateTime = updateDateTime;
-		}
-
 		public List<LocationInfo> getLocations() {
 			return this.locations;
 		}
@@ -109,20 +109,20 @@ public class DescribeImageGatewayConfigResponse extends AcsResponse {
 
 		public static class LocationInfo {
 
-			private String location;
+			private String uRL;
 
 			private String remoteType;
 
+			private String location;
+
 			private String authentication;
 
-			private String uRL;
-
-			public String getLocation() {
-				return this.location;
+			public String getURL() {
+				return this.uRL;
 			}
 
-			public void setLocation(String location) {
-				this.location = location;
+			public void setURL(String uRL) {
+				this.uRL = uRL;
 			}
 
 			public String getRemoteType() {
@@ -133,20 +133,20 @@ public class DescribeImageGatewayConfigResponse extends AcsResponse {
 				this.remoteType = remoteType;
 			}
 
+			public String getLocation() {
+				return this.location;
+			}
+
+			public void setLocation(String location) {
+				this.location = location;
+			}
+
 			public String getAuthentication() {
 				return this.authentication;
 			}
 
 			public void setAuthentication(String authentication) {
 				this.authentication = authentication;
-			}
-
-			public String getURL() {
-				return this.uRL;
-			}
-
-			public void setURL(String uRL) {
-				this.uRL = uRL;
 			}
 		}
 	}

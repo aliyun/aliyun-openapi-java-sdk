@@ -26,7 +26,7 @@ public class BatchPatentAddRequest extends RpcAcsRequest<BatchPatentAddResponse>
 
 	private String applyNumber;
 	public BatchPatentAddRequest() {
-		super("Copyright", "2019-01-23", "BatchPatentAdd");
+		super("Copyright", "2019-01-23", "BatchPatentAdd", "swcopyright");
 		setMethod(MethodType.GET);
 	}
 

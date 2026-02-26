@@ -31,11 +31,11 @@ public class ListSortExpressionsResponseUnmarshaller {
 		List<FirstRankItem> result = new ArrayList<FirstRankItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListSortExpressionsResponse.result.Length"); i++) {
 			FirstRankItem firstRankItem = new FirstRankItem();
-			firstRankItem.setName(_ctx.stringValue("ListSortExpressionsResponse.result["+ i +"].name"));
-			firstRankItem.setDescription(_ctx.stringValue("ListSortExpressionsResponse.result["+ i +"].description"));
-			firstRankItem.setActive(_ctx.booleanValue("ListSortExpressionsResponse.result["+ i +"].active"));
 			firstRankItem.setCreated(_ctx.integerValue("ListSortExpressionsResponse.result["+ i +"].created"));
+			firstRankItem.setActive(_ctx.booleanValue("ListSortExpressionsResponse.result["+ i +"].active"));
+			firstRankItem.setDescription(_ctx.stringValue("ListSortExpressionsResponse.result["+ i +"].description"));
 			firstRankItem.setUpdated(_ctx.integerValue("ListSortExpressionsResponse.result["+ i +"].updated"));
+			firstRankItem.setName(_ctx.stringValue("ListSortExpressionsResponse.result["+ i +"].name"));
 
 			result.add(firstRankItem);
 		}

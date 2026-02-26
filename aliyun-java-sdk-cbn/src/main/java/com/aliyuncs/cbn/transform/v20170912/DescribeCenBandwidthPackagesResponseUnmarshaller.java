@@ -57,6 +57,7 @@ public class DescribeCenBandwidthPackagesResponseUnmarshaller {
 			cenBandwidthPackage.setBusinessStatus(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].BusinessStatus"));
 			cenBandwidthPackage.setName(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Name"));
 			cenBandwidthPackage.setHasReservationData(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].HasReservationData"));
+			cenBandwidthPackage.setServiceType(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ServiceType"));
 
 			List<String> cenIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].CenIds.Length"); j++) {

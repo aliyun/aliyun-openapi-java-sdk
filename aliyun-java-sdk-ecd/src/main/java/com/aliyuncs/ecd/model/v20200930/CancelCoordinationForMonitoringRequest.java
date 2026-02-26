@@ -32,7 +32,7 @@ public class CancelCoordinationForMonitoringRequest extends RpcAcsRequest<Cancel
 
 	private String endUserId;
 	public CancelCoordinationForMonitoringRequest() {
-		super("ecd", "2020-09-30", "CancelCoordinationForMonitoring");
+		super("ecd", "2020-09-30", "CancelCoordinationForMonitoring", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

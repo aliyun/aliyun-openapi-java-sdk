@@ -23,47 +23,54 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class ResetAppSecretRequest extends RpcAcsRequest<ResetAppSecretResponse> {
-	
+	   
+
+	private String newAppSecret;
+
+	private String securityToken;
+
+	private String newAppKey;
+
+	private String appKey;
 	public ResetAppSecretRequest() {
 		super("CloudAPI", "2016-07-14", "ResetAppSecret", "apigateway");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String securityToken;
+	public String getNewAppSecret() {
+		return this.newAppSecret;
+	}
 
-	private String appKey;
+	public void setNewAppSecret(String newAppSecret) {
+		this.newAppSecret = newAppSecret;
+		if(newAppSecret != null){
+			putQueryParameter("NewAppSecret", newAppSecret);
+		}
+	}
 
-	public String getBizSecurityToken() {
+	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
+	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getNewAppKey() {
+		return this.newAppKey;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setNewAppKey(String newAppKey) {
+		this.newAppKey = newAppKey;
+		if(newAppKey != null){
+			putQueryParameter("NewAppKey", newAppKey);
 		}
 	}
 

@@ -97,6 +97,8 @@ public class QueryCashCouponsResponse extends AcsResponse {
 
 		private String balance;
 
+		private String description;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -175,6 +177,14 @@ public class QueryCashCouponsResponse extends AcsResponse {
 
 		public void setBalance(String balance) {
 			this.balance = balance;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 

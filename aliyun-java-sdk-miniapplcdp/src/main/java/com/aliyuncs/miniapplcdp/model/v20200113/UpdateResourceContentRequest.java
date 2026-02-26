@@ -28,6 +28,8 @@ public class UpdateResourceContentRequest extends RpcAcsRequest<UpdateResourceCo
 
 	private String appId;
 
+	private String source;
+
 	private String moduleId;
 
 	private String content;
@@ -55,6 +57,17 @@ public class UpdateResourceContentRequest extends RpcAcsRequest<UpdateResourceCo
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

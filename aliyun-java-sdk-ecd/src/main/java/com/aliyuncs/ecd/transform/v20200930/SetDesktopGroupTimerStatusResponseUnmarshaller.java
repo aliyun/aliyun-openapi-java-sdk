@@ -14,9 +14,6 @@
 
 package com.aliyuncs.ecd.transform.v20200930;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.ecd.model.v20200930.SetDesktopGroupTimerStatusResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -26,13 +23,6 @@ public class SetDesktopGroupTimerStatusResponseUnmarshaller {
 	public static SetDesktopGroupTimerStatusResponse unmarshall(SetDesktopGroupTimerStatusResponse setDesktopGroupTimerStatusResponse, UnmarshallerContext _ctx) {
 		
 		setDesktopGroupTimerStatusResponse.setRequestId(_ctx.stringValue("SetDesktopGroupTimerStatusResponse.RequestId"));
-		setDesktopGroupTimerStatusResponse.setDesktopGroupId(_ctx.stringValue("SetDesktopGroupTimerStatusResponse.DesktopGroupId"));
-
-		List<String> orderIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("SetDesktopGroupTimerStatusResponse.OrderIds.Length"); i++) {
-			orderIds.add(_ctx.stringValue("SetDesktopGroupTimerStatusResponse.OrderIds["+ i +"]"));
-		}
-		setDesktopGroupTimerStatusResponse.setOrderIds(orderIds);
 	 
 	 	return setDesktopGroupTimerStatusResponse;
 	}

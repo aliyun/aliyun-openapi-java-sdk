@@ -59,6 +59,7 @@ public class DescribeSnapshotGroupsResponseUnmarshaller {
 				Snapshot snapshot = new Snapshot();
 				snapshot.setSourceDiskId(_ctx.stringValue("DescribeSnapshotGroupsResponse.SnapshotGroups["+ i +"].Snapshots["+ j +"].SourceDiskId"));
 				snapshot.setProgress(_ctx.stringValue("DescribeSnapshotGroupsResponse.SnapshotGroups["+ i +"].Snapshots["+ j +"].Progress"));
+				snapshot.setAvailable(_ctx.booleanValue("DescribeSnapshotGroupsResponse.SnapshotGroups["+ i +"].Snapshots["+ j +"].Available"));
 				snapshot.setInstantAccessRetentionDays(_ctx.integerValue("DescribeSnapshotGroupsResponse.SnapshotGroups["+ i +"].Snapshots["+ j +"].InstantAccessRetentionDays"));
 				snapshot.setSnapshotId(_ctx.stringValue("DescribeSnapshotGroupsResponse.SnapshotGroups["+ i +"].Snapshots["+ j +"].SnapshotId"));
 				snapshot.setInstantAccess(_ctx.booleanValue("DescribeSnapshotGroupsResponse.SnapshotGroups["+ i +"].Snapshots["+ j +"].InstantAccess"));

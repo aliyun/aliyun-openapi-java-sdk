@@ -23,6 +23,7 @@ public class EnableLoadBalancerAccessLogResponseUnmarshaller {
 	public static EnableLoadBalancerAccessLogResponse unmarshall(EnableLoadBalancerAccessLogResponse enableLoadBalancerAccessLogResponse, UnmarshallerContext _ctx) {
 		
 		enableLoadBalancerAccessLogResponse.setRequestId(_ctx.stringValue("EnableLoadBalancerAccessLogResponse.RequestId"));
+		enableLoadBalancerAccessLogResponse.setJobId(_ctx.stringValue("EnableLoadBalancerAccessLogResponse.JobId"));
 	 
 	 	return enableLoadBalancerAccessLogResponse;
 	}

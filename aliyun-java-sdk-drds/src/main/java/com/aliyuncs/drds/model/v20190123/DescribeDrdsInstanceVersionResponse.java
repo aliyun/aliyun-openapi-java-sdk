@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDrdsInstanceVersionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -44,6 +36,14 @@ public class DescribeDrdsInstanceVersionResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -56,17 +56,9 @@ public class DescribeDrdsInstanceVersionResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String instanceVersion;
-
 		private String newestVersion;
 
-		public String getInstanceVersion() {
-			return this.instanceVersion;
-		}
-
-		public void setInstanceVersion(String instanceVersion) {
-			this.instanceVersion = instanceVersion;
-		}
+		private String instanceVersion;
 
 		public String getNewestVersion() {
 			return this.newestVersion;
@@ -74,6 +66,14 @@ public class DescribeDrdsInstanceVersionResponse extends AcsResponse {
 
 		public void setNewestVersion(String newestVersion) {
 			this.newestVersion = newestVersion;
+		}
+
+		public String getInstanceVersion() {
+			return this.instanceVersion;
+		}
+
+		public void setInstanceVersion(String instanceVersion) {
+			this.instanceVersion = instanceVersion;
 		}
 	}
 

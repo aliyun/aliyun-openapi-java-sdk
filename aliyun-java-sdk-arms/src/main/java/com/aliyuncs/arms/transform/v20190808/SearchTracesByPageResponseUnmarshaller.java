@@ -43,6 +43,7 @@ public class SearchTracesByPageResponseUnmarshaller {
 			traceInfo.setTimestamp(_ctx.longValue("SearchTracesByPageResponse.PageBean.TraceInfos["+ i +"].Timestamp"));
 			traceInfo.setServiceName(_ctx.stringValue("SearchTracesByPageResponse.PageBean.TraceInfos["+ i +"].ServiceName"));
 			traceInfo.setTraceID(_ctx.stringValue("SearchTracesByPageResponse.PageBean.TraceInfos["+ i +"].TraceID"));
+			traceInfo.setSpanID(_ctx.stringValue("SearchTracesByPageResponse.PageBean.TraceInfos["+ i +"].SpanID"));
 
 			traceInfos.add(traceInfo);
 		}

@@ -24,6 +24,8 @@ public class ListPrometheusInstancesResponseUnmarshaller {
 		
 		listPrometheusInstancesResponse.setRequestId(_ctx.stringValue("ListPrometheusInstancesResponse.RequestId"));
 		listPrometheusInstancesResponse.setData(_ctx.stringValue("ListPrometheusInstancesResponse.Data"));
+		listPrometheusInstancesResponse.setCode(_ctx.integerValue("ListPrometheusInstancesResponse.Code"));
+		listPrometheusInstancesResponse.setMessage(_ctx.stringValue("ListPrometheusInstancesResponse.Message"));
 	 
 	 	return listPrometheusInstancesResponse;
 	}

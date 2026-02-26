@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryHBaseHaDBResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Long totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Long totalCount;
 
 	private List<Cluster> clusterList;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class QueryHBaseHaDBResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class QueryHBaseHaDBResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Cluster> getClusterList() {
@@ -77,23 +77,15 @@ public class QueryHBaseHaDBResponse extends AcsResponse {
 
 	public static class Cluster {
 
-		private String haName;
-
 		private String bdsName;
 
 		private String activeName;
 
+		private String haName;
+
 		private String standbyName;
 
 		private List<HaSlbConn> haSlbConnList;
-
-		public String getHaName() {
-			return this.haName;
-		}
-
-		public void setHaName(String haName) {
-			this.haName = haName;
-		}
 
 		public String getBdsName() {
 			return this.bdsName;
@@ -109,6 +101,14 @@ public class QueryHBaseHaDBResponse extends AcsResponse {
 
 		public void setActiveName(String activeName) {
 			this.activeName = activeName;
+		}
+
+		public String getHaName() {
+			return this.haName;
+		}
+
+		public void setHaName(String haName) {
+			this.haName = haName;
 		}
 
 		public String getStandbyName() {
@@ -129,11 +129,19 @@ public class QueryHBaseHaDBResponse extends AcsResponse {
 
 		public static class HaSlbConn {
 
+			private String hbaseType;
+
 			private String slbType;
 
 			private String slbConnAddr;
 
-			private String hbaseType;
+			public String getHbaseType() {
+				return this.hbaseType;
+			}
+
+			public void setHbaseType(String hbaseType) {
+				this.hbaseType = hbaseType;
+			}
 
 			public String getSlbType() {
 				return this.slbType;
@@ -149,14 +157,6 @@ public class QueryHBaseHaDBResponse extends AcsResponse {
 
 			public void setSlbConnAddr(String slbConnAddr) {
 				this.slbConnAddr = slbConnAddr;
-			}
-
-			public String getHbaseType() {
-				return this.hbaseType;
-			}
-
-			public void setHbaseType(String hbaseType) {
-				this.hbaseType = hbaseType;
 			}
 		}
 	}

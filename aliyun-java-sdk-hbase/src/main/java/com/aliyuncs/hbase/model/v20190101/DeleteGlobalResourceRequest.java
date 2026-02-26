@@ -31,7 +31,7 @@ public class DeleteGlobalResourceRequest extends RpcAcsRequest<DeleteGlobalResou
 
 	private String resourceName;
 	public DeleteGlobalResourceRequest() {
-		super("HBase", "2019-01-01", "DeleteGlobalResource", "hbase");
+		super("HBase", "2019-01-01", "DeleteGlobalResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -55,7 +55,7 @@ public class DescribeEipMonitorDataResponse extends AcsResponse {
 
 		private String timeStamp;
 
-		private Integer eipFlow;
+		private Long eipFlow;
 
 		private Long eipRX;
 
@@ -91,11 +91,11 @@ public class DescribeEipMonitorDataResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
-		public Integer getEipFlow() {
+		public Long getEipFlow() {
 			return this.eipFlow;
 		}
 
-		public void setEipFlow(Integer eipFlow) {
+		public void setEipFlow(Long eipFlow) {
 			this.eipFlow = eipFlow;
 		}
 

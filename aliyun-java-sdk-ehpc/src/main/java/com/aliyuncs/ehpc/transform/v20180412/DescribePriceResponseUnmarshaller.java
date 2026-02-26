@@ -32,10 +32,10 @@ public class DescribePriceResponseUnmarshaller {
 		List<PriceInfo> prices = new ArrayList<PriceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.Prices.Length"); i++) {
 			PriceInfo priceInfo = new PriceInfo();
-			priceInfo.setNodeType(_ctx.stringValue("DescribePriceResponse.Prices["+ i +"].NodeType"));
 			priceInfo.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.Prices["+ i +"].OriginalPrice"));
-			priceInfo.setTradePrice(_ctx.floatValue("DescribePriceResponse.Prices["+ i +"].TradePrice"));
+			priceInfo.setNodeType(_ctx.stringValue("DescribePriceResponse.Prices["+ i +"].NodeType"));
 			priceInfo.setCurrency(_ctx.stringValue("DescribePriceResponse.Prices["+ i +"].Currency"));
+			priceInfo.setTradePrice(_ctx.floatValue("DescribePriceResponse.Prices["+ i +"].TradePrice"));
 
 			prices.add(priceInfo);
 		}

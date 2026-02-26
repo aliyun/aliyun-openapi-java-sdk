@@ -26,8 +26,6 @@ public class DescribeScdnDomainCertificateInfoRequest extends RpcAcsRequest<Desc
 	   
 
 	private String domainName;
-
-	private Long ownerId;
 	public DescribeScdnDomainCertificateInfoRequest() {
 		super("scdn", "2017-11-15", "DescribeScdnDomainCertificateInfo");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class DescribeScdnDomainCertificateInfoRequest extends RpcAcsRequest<Desc
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

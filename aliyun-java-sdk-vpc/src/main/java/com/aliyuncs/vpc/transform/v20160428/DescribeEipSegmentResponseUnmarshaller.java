@@ -42,6 +42,7 @@ public class DescribeEipSegmentResponseUnmarshaller {
 			eipSegment.setName(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].Name"));
 			eipSegment.setSegment(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].Segment"));
 			eipSegment.setRegionId(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].RegionId"));
+			eipSegment.setZone(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].Zone"));
 
 			eipSegments.add(eipSegment);
 		}

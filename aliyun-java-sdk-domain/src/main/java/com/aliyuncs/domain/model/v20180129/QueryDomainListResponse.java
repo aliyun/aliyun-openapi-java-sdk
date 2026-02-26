@@ -141,6 +141,16 @@ public class QueryDomainListResponse extends AcsResponse {
 
 		private String domainType;
 
+		private String resourceGroupId;
+
+		private String ccompany;
+
+		private String chgholderStatus;
+
+		private String registrar;
+
+		private List<TagItem> tag;
+
 		public String getDomainAuditStatus() {
 			return this.domainAuditStatus;
 		}
@@ -275,6 +285,69 @@ public class QueryDomainListResponse extends AcsResponse {
 
 		public void setDomainType(String domainType) {
 			this.domainType = domainType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCcompany() {
+			return this.ccompany;
+		}
+
+		public void setCcompany(String ccompany) {
+			this.ccompany = ccompany;
+		}
+
+		public String getChgholderStatus() {
+			return this.chgholderStatus;
+		}
+
+		public void setChgholderStatus(String chgholderStatus) {
+			this.chgholderStatus = chgholderStatus;
+		}
+
+		public String getRegistrar() {
+			return this.registrar;
+		}
+
+		public void setRegistrar(String registrar) {
+			this.registrar = registrar;
+		}
+
+		public List<TagItem> getTag() {
+			return this.tag;
+		}
+
+		public void setTag(List<TagItem> tag) {
+			this.tag = tag;
+		}
+
+		public static class TagItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

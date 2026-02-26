@@ -1,3 +1,67 @@
+2024-02-02 Version: 7.60.0
+- Add UnsubscribeTopic.
+
+2024-01-15 Version: 7.59.0
+- BatchPub Support MQTT5.
+
+2023-09-25 Version: 7.58.0
+- Add Api ResetDeviceTimeline.
+
+2023-09-19 Version: 7.57.0
+- Iot_20180120 TeaDSL SDK.
+
+2023-09-07 Version: 7.56.0
+- Generated 2018-01-20 for `Iot`.
+
+2023-07-13 Version: 7.55.0
+- Iot_20180120 old version sdk.
+
+2023-07-12 Version: 7.54.0
+- Iot_20180120 TeaDSL SDK.
+
+2023-05-11 Version: 7.53.0
+- Pub Support MessageExpiryInterval and Retained.
+
+2023-05-09 Version: 7.52.1
+- Support new api for iot.
+
+2023-03-06 Version: 7.52.0
+- Iot_20180120 TeaDSL SDK.
+
+2023-03-02 Version: 7.51.0
+- Add a API QueryDeviceProvisioning to support query provisioning info for device.
+
+2023-02-10 Version: 7.50.0
+- Support broadcast for FengTian.
+
+2023-01-13 Version: 7.49.0
+- ClearDeviceDesiredProperty open Api.
+
+2023-01-03 Version: 7.48.0
+- Pub Support MessageExpiryInterval and Retained.
+- Rrpc Support ContentType.
+- BatchImportVehicleDevice batch create device by jt808 protocol.
+- BatchCheckVehicleDevice batch check device by jt808 protocol.
+- QueryVehicleDevice query jt808 device information.
+
+2022-12-02 Version: 7.47.0
+- Pub Support PayloadFormatIndicator and ContentType.
+
+2022-12-01 Version: 7.46.0
+- Storage open Api.
+
+2022-10-27 Version: 7.45.0
+- Iot_20180120 Old sdk.
+
+2022-09-16 Version: 7.44.0
+- Iot_20180120 old version sdk.
+
+2022-09-06 Version: 7.43.0
+- Iot_20180120 old version sdk.
+
+2022-08-25 Version: 7.42.0
+- Iot_20180120 Old sdk.
+
 2022-07-11 Version: 7.41.0
 - Add new api for rule.
 

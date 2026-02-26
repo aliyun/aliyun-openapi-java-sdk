@@ -37,7 +37,7 @@ public class DescribeDomainStatusCodeListRequest extends RpcAcsRequest<DescribeD
 
 	private Long interval;
 	public DescribeDomainStatusCodeListRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDomainStatusCodeList");
+		super("ddoscoo", "2020-01-01", "DescribeDomainStatusCodeList", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,9 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String maxResults;
+	private Integer maxResults;
+
+	private String totalCount;
 
 	private List<Service> services;
 
@@ -49,12 +51,20 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
+	}
+
+	public String getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Service> getServices() {
@@ -80,6 +90,14 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 		private String serviceDescription;
 
 		private String privateServiceName;
+
+		private Boolean serviceSupportIPv6;
+
+		private String resourceGroupId;
+
+		private String serviceResourceType;
+
+		private List<TagModel> tags;
 
 		private List<String> zones;
 
@@ -139,12 +157,67 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 			this.privateServiceName = privateServiceName;
 		}
 
+		public Boolean getServiceSupportIPv6() {
+			return this.serviceSupportIPv6;
+		}
+
+		public void setServiceSupportIPv6(Boolean serviceSupportIPv6) {
+			this.serviceSupportIPv6 = serviceSupportIPv6;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getServiceResourceType() {
+			return this.serviceResourceType;
+		}
+
+		public void setServiceResourceType(String serviceResourceType) {
+			this.serviceResourceType = serviceResourceType;
+		}
+
+		public List<TagModel> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagModel> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getZones() {
 			return this.zones;
 		}
 
 		public void setZones(List<String> zones) {
 			this.zones = zones;
+		}
+
+		public static class TagModel {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

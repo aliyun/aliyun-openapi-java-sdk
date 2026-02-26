@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListQuotaReviewTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<ResultItem> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class ListQuotaReviewTasksResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ResultItem> getResult() {
@@ -57,68 +57,68 @@ public class ListQuotaReviewTasksResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private Integer id;
+		private Integer oldDocSize;
 
-		private Integer appGroupId;
+		private Boolean pending;
 
-		private String appGroupName;
+		private String memo;
 
-		private String appGroupType;
+		private Boolean approved;
 
 		private String oldSpec;
 
 		private Integer oldComputeResource;
 
-		private Integer oldDocSize;
-
-		private String newSpec;
-
-		private Integer newComputeResource;
-
-		private Integer newSocSize;
-
-		private String memo;
+		private String appGroupType;
 
 		private Boolean available;
 
-		private Boolean pending;
-
-		private Boolean approved;
-
 		private String gmtCreate;
+
+		private Integer newSocSize;
+
+		private Integer id;
+
+		private Integer appGroupId;
+
+		private Integer newComputeResource;
+
+		private String appGroupName;
 
 		private String gmtModified;
 
-		public Integer getId() {
-			return this.id;
+		private String newSpec;
+
+		public Integer getOldDocSize() {
+			return this.oldDocSize;
 		}
 
-		public void setId(Integer id) {
-			this.id = id;
+		public void setOldDocSize(Integer oldDocSize) {
+			this.oldDocSize = oldDocSize;
 		}
 
-		public Integer getAppGroupId() {
-			return this.appGroupId;
+		public Boolean getPending() {
+			return this.pending;
 		}
 
-		public void setAppGroupId(Integer appGroupId) {
-			this.appGroupId = appGroupId;
+		public void setPending(Boolean pending) {
+			this.pending = pending;
 		}
 
-		public String getAppGroupName() {
-			return this.appGroupName;
+		public String getMemo() {
+			return this.memo;
 		}
 
-		public void setAppGroupName(String appGroupName) {
-			this.appGroupName = appGroupName;
+		public void setMemo(String memo) {
+			this.memo = memo;
 		}
 
-		public String getAppGroupType() {
-			return this.appGroupType;
+		public Boolean getApproved() {
+			return this.approved;
 		}
 
-		public void setAppGroupType(String appGroupType) {
-			this.appGroupType = appGroupType;
+		public void setApproved(Boolean approved) {
+			this.approved = approved;
 		}
 
 		public String getOldSpec() {
@@ -137,44 +137,12 @@ public class ListQuotaReviewTasksResponse extends AcsResponse {
 			this.oldComputeResource = oldComputeResource;
 		}
 
-		public Integer getOldDocSize() {
-			return this.oldDocSize;
+		public String getAppGroupType() {
+			return this.appGroupType;
 		}
 
-		public void setOldDocSize(Integer oldDocSize) {
-			this.oldDocSize = oldDocSize;
-		}
-
-		public String getNewSpec() {
-			return this.newSpec;
-		}
-
-		public void setNewSpec(String newSpec) {
-			this.newSpec = newSpec;
-		}
-
-		public Integer getNewComputeResource() {
-			return this.newComputeResource;
-		}
-
-		public void setNewComputeResource(Integer newComputeResource) {
-			this.newComputeResource = newComputeResource;
-		}
-
-		public Integer getNewSocSize() {
-			return this.newSocSize;
-		}
-
-		public void setNewSocSize(Integer newSocSize) {
-			this.newSocSize = newSocSize;
-		}
-
-		public String getMemo() {
-			return this.memo;
-		}
-
-		public void setMemo(String memo) {
-			this.memo = memo;
+		public void setAppGroupType(String appGroupType) {
+			this.appGroupType = appGroupType;
 		}
 
 		public Boolean getAvailable() {
@@ -185,22 +153,6 @@ public class ListQuotaReviewTasksResponse extends AcsResponse {
 			this.available = available;
 		}
 
-		public Boolean getPending() {
-			return this.pending;
-		}
-
-		public void setPending(Boolean pending) {
-			this.pending = pending;
-		}
-
-		public Boolean getApproved() {
-			return this.approved;
-		}
-
-		public void setApproved(Boolean approved) {
-			this.approved = approved;
-		}
-
 		public String getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -209,12 +161,60 @@ public class ListQuotaReviewTasksResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
+		public Integer getNewSocSize() {
+			return this.newSocSize;
+		}
+
+		public void setNewSocSize(Integer newSocSize) {
+			this.newSocSize = newSocSize;
+		}
+
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
+		public Integer getAppGroupId() {
+			return this.appGroupId;
+		}
+
+		public void setAppGroupId(Integer appGroupId) {
+			this.appGroupId = appGroupId;
+		}
+
+		public Integer getNewComputeResource() {
+			return this.newComputeResource;
+		}
+
+		public void setNewComputeResource(Integer newComputeResource) {
+			this.newComputeResource = newComputeResource;
+		}
+
+		public String getAppGroupName() {
+			return this.appGroupName;
+		}
+
+		public void setAppGroupName(String appGroupName) {
+			this.appGroupName = appGroupName;
+		}
+
 		public String getGmtModified() {
 			return this.gmtModified;
 		}
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public String getNewSpec() {
+			return this.newSpec;
+		}
+
+		public void setNewSpec(String newSpec) {
+			this.newSpec = newSpec;
 		}
 	}
 

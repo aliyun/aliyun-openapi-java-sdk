@@ -32,10 +32,10 @@ public class EditLogicDatabaseRequest extends RpcAcsRequest<EditLogicDatabaseRes
 
 	private Long tid;
 
+	private String alias;
+
 	@SerializedName("databaseIds")
 	private List<Long> databaseIds;
-
-	private String alias;
 	public EditLogicDatabaseRequest() {
 		super("dms-enterprise", "2018-11-01", "EditLogicDatabase", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -67,17 +67,6 @@ public class EditLogicDatabaseRequest extends RpcAcsRequest<EditLogicDatabaseRes
 		}
 	}
 
-	public List<Long> getDatabaseIds() {
-		return this.databaseIds;
-	}
-
-	public void setDatabaseIds(List<Long> databaseIds) {
-		this.databaseIds = databaseIds;	
-		if (databaseIds != null) {
-			putQueryParameter("DatabaseIds" , new Gson().toJson(databaseIds));
-		}	
-	}
-
 	public String getAlias() {
 		return this.alias;
 	}
@@ -87,6 +76,17 @@ public class EditLogicDatabaseRequest extends RpcAcsRequest<EditLogicDatabaseRes
 		if(alias != null){
 			putQueryParameter("Alias", alias);
 		}
+	}
+
+	public List<Long> getDatabaseIds() {
+		return this.databaseIds;
+	}
+
+	public void setDatabaseIds(List<Long> databaseIds) {
+		this.databaseIds = databaseIds;	
+		if (databaseIds != null) {
+			putQueryParameter("DatabaseIds" , new Gson().toJson(databaseIds));
+		}	
 	}
 
 	@Override

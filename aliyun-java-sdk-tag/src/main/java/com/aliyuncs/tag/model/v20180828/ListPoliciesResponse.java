@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPoliciesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<Policy> policyList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class ListPoliciesResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Policy> getPolicyList() {
@@ -57,22 +57,22 @@ public class ListPoliciesResponse extends AcsResponse {
 
 	public static class Policy {
 
-		private String policyName;
+		private String policyContent;
 
 		private String policyDesc;
 
-		private String policyContent;
-
 		private String policyId;
+
+		private String policyName;
 
 		private String userType;
 
-		public String getPolicyName() {
-			return this.policyName;
+		public String getPolicyContent() {
+			return this.policyContent;
 		}
 
-		public void setPolicyName(String policyName) {
-			this.policyName = policyName;
+		public void setPolicyContent(String policyContent) {
+			this.policyContent = policyContent;
 		}
 
 		public String getPolicyDesc() {
@@ -83,20 +83,20 @@ public class ListPoliciesResponse extends AcsResponse {
 			this.policyDesc = policyDesc;
 		}
 
-		public String getPolicyContent() {
-			return this.policyContent;
-		}
-
-		public void setPolicyContent(String policyContent) {
-			this.policyContent = policyContent;
-		}
-
 		public String getPolicyId() {
 			return this.policyId;
 		}
 
 		public void setPolicyId(String policyId) {
 			this.policyId = policyId;
+		}
+
+		public String getPolicyName() {
+			return this.policyName;
+		}
+
+		public void setPolicyName(String policyName) {
+			this.policyName = policyName;
 		}
 
 		public String getUserType() {

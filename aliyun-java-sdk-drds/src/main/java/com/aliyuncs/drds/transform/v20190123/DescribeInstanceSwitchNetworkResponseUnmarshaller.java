@@ -34,17 +34,17 @@ public class DescribeInstanceSwitchNetworkResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceSwitchNetworkResponse.VpcInfos.Length"); i++) {
 			VpcInfo vpcInfo = new VpcInfo();
 			vpcInfo.setVpcId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VpcId"));
-			vpcInfo.setRegionId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].RegionId"));
 			vpcInfo.setVpcName(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VpcName"));
+			vpcInfo.setRegionId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].RegionId"));
 
 			List<VswitchInfo> vswitchInfos = new ArrayList<VswitchInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos.Length"); j++) {
 				VswitchInfo vswitchInfo = new VswitchInfo();
-				vswitchInfo.setVswitchId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].VswitchId"));
 				vswitchInfo.setVpcId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].VpcId"));
-				vswitchInfo.setVswitchName(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].VswitchName"));
-				vswitchInfo.setAzoneId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].AzoneId"));
 				vswitchInfo.setDrdsSupported(_ctx.booleanValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].DrdsSupported"));
+				vswitchInfo.setVswitchId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].VswitchId"));
+				vswitchInfo.setAzoneId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].AzoneId"));
+				vswitchInfo.setVswitchName(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].VswitchName"));
 
 				vswitchInfos.add(vswitchInfo);
 			}

@@ -27,18 +27,18 @@ public class DescribeLiveDomainBpsDataResponseUnmarshaller {
 	public static DescribeLiveDomainBpsDataResponse unmarshall(DescribeLiveDomainBpsDataResponse describeLiveDomainBpsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveDomainBpsDataResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainBpsDataResponse.RequestId"));
-		describeLiveDomainBpsDataResponse.setDomainName(_ctx.stringValue("DescribeLiveDomainBpsDataResponse.DomainName"));
-		describeLiveDomainBpsDataResponse.setStartTime(_ctx.stringValue("DescribeLiveDomainBpsDataResponse.StartTime"));
 		describeLiveDomainBpsDataResponse.setEndTime(_ctx.stringValue("DescribeLiveDomainBpsDataResponse.EndTime"));
+		describeLiveDomainBpsDataResponse.setStartTime(_ctx.stringValue("DescribeLiveDomainBpsDataResponse.StartTime"));
+		describeLiveDomainBpsDataResponse.setDomainName(_ctx.stringValue("DescribeLiveDomainBpsDataResponse.DomainName"));
 		describeLiveDomainBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeLiveDomainBpsDataResponse.DataInterval"));
 
 		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeLiveDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setBpsValue(_ctx.stringValue("DescribeLiveDomainBpsDataResponse.BpsDataPerInterval["+ i +"].BpsValue"));
-			dataModule.setHttpBpsValue(_ctx.stringValue("DescribeLiveDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpBpsValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeLiveDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setHttpsBpsValue(_ctx.stringValue("DescribeLiveDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsBpsValue"));
+			dataModule.setHttpBpsValue(_ctx.stringValue("DescribeLiveDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpBpsValue"));
 
 			bpsDataPerInterval.add(dataModule);
 		}

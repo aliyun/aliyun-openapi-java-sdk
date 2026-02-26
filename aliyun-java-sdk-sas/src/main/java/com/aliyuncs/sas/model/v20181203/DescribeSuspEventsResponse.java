@@ -179,6 +179,12 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		private Long id;
 
+		private String clusterId;
+
+		private String imageUuid;
+
+		private Boolean displaySandboxResult;
+
 		private List<TacticItem> tacticItems;
 
 		private List<QuaraFile> details;
@@ -551,6 +557,30 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getImageUuid() {
+			return this.imageUuid;
+		}
+
+		public void setImageUuid(String imageUuid) {
+			this.imageUuid = imageUuid;
+		}
+
+		public Boolean getDisplaySandboxResult() {
+			return this.displaySandboxResult;
+		}
+
+		public void setDisplaySandboxResult(Boolean displaySandboxResult) {
+			this.displaySandboxResult = displaySandboxResult;
 		}
 
 		public List<TacticItem> getTacticItems() {

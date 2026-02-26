@@ -27,6 +27,10 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 
 	private Long resourceOwnerId;
 
+	private Boolean forced;
+
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private String gDNId;
@@ -39,7 +43,7 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 
 	private Long ownerId;
 	public SwitchOverGlobalDatabaseNetworkRequest() {
-		super("polardb", "2017-08-01", "SwitchOverGlobalDatabaseNetwork");
+		super("polardb", "2017-08-01", "SwitchOverGlobalDatabaseNetwork", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,6 +59,28 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getForced() {
+		return this.forced;
+	}
+
+	public void setForced(Boolean forced) {
+		this.forced = forced;
+		if(forced != null){
+			putQueryParameter("Forced", forced.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

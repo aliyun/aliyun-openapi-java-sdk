@@ -26,7 +26,7 @@ public final class XmlUtils {
         StringReader sr = new StringReader(payload);
         InputSource source = new InputSource(sr);
 
-        Document doc = null;
+        Document doc;
 
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();

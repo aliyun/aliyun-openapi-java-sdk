@@ -24,13 +24,13 @@ public class TransferResourceResponseUnmarshaller {
 	public static TransferResourceResponse unmarshall(TransferResourceResponse transferResourceResponse, UnmarshallerContext _ctx) {
 		
 		transferResourceResponse.setRequestId(_ctx.stringValue("TransferResourceResponse.RequestId"));
-		transferResourceResponse.setSuccess(_ctx.booleanValue("TransferResourceResponse.Success"));
 		transferResourceResponse.setCode(_ctx.stringValue("TransferResourceResponse.Code"));
 		transferResourceResponse.setMessage(_ctx.stringValue("TransferResourceResponse.Message"));
+		transferResourceResponse.setSuccess(_ctx.booleanValue("TransferResourceResponse.Success"));
 
 		Data data = new Data();
-		data.setContent(_ctx.stringValue("TransferResourceResponse.Data.Content"));
 		data.setProcEnv(_ctx.stringValue("TransferResourceResponse.Data.ProcEnv"));
+		data.setContent(_ctx.stringValue("TransferResourceResponse.Data.Content"));
 		transferResourceResponse.setData(data);
 	 
 	 	return transferResourceResponse;

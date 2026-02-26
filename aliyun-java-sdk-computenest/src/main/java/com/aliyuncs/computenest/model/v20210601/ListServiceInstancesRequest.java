@@ -26,20 +26,33 @@ import com.aliyuncs.computenest.Endpoint;
 public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstancesResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String nextToken;
 
-	private List<RequestTag> requestTags;
+	private List<Tag> tags;
 
 	private List<Filter> filters;
 
-	private String maxResults;
+	private Integer maxResults;
 	public ListServiceInstancesRequest() {
-		super("ComputeNest", "2021-06-01", "ListServiceInstances");
+		super("ComputeNest", "2021-06-01", "ListServiceInstances", "computenest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getNextToken() {
@@ -53,16 +66,16 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 		}
 	}
 
-	public List<RequestTag> getRequestTags() {
-		return this.requestTags;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setRequestTags(List<RequestTag> requestTags) {
-		this.requestTags = requestTags;	
-		if (requestTags != null) {
-			for (int depth1 = 0; depth1 < requestTags.size(); depth1++) {
-				putQueryParameter("RequestTag." + (depth1 + 1) + ".Value" , requestTags.get(depth1).getValue());
-				putQueryParameter("RequestTag." + (depth1 + 1) + ".Key" , requestTags.get(depth1).getKey());
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -85,18 +98,18 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 		}	
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults);
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
-	public static class RequestTag {
+	public static class Tag {
 
 		private String value;
 

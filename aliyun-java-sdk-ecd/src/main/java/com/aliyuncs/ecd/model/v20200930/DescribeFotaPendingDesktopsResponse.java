@@ -29,6 +29,10 @@ public class DescribeFotaPendingDesktopsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
+	private String message;
+
 	private List<FotaPendingDesktop> fotaPendingDesktops;
 
 	public String getNextToken() {
@@ -45,6 +49,22 @@ public class DescribeFotaPendingDesktopsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public List<FotaPendingDesktop> getFotaPendingDesktops() {
@@ -66,6 +86,10 @@ public class DescribeFotaPendingDesktopsResponse extends AcsResponse {
 		private String fotaProject;
 
 		private String currentAppVersion;
+
+		private Long status;
+
+		private List<Session> sessions;
 
 		public String getDesktopId() {
 			return this.desktopId;
@@ -105,6 +129,35 @@ public class DescribeFotaPendingDesktopsResponse extends AcsResponse {
 
 		public void setCurrentAppVersion(String currentAppVersion) {
 			this.currentAppVersion = currentAppVersion;
+		}
+
+		public Long getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Long status) {
+			this.status = status;
+		}
+
+		public List<Session> getSessions() {
+			return this.sessions;
+		}
+
+		public void setSessions(List<Session> sessions) {
+			this.sessions = sessions;
+		}
+
+		public static class Session {
+
+			private String endUserId;
+
+			public String getEndUserId() {
+				return this.endUserId;
+			}
+
+			public void setEndUserId(String endUserId) {
+				this.endUserId = endUserId;
+			}
 		}
 	}
 

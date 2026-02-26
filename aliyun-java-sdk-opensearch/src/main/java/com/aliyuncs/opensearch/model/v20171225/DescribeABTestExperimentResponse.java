@@ -46,35 +46,19 @@ public class DescribeABTestExperimentResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String id;
-
-		private String name;
-
 		private Integer created;
-
-		private Integer updated;
-
-		private Boolean online;
 
 		private Integer traffic;
 
+		private Boolean online;
+
+		private String name;
+
+		private Integer updated;
+
+		private String id;
+
 		private Params params;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public Integer getCreated() {
 			return this.created;
@@ -84,12 +68,12 @@ public class DescribeABTestExperimentResponse extends AcsResponse {
 			this.created = created;
 		}
 
-		public Integer getUpdated() {
-			return this.updated;
+		public Integer getTraffic() {
+			return this.traffic;
 		}
 
-		public void setUpdated(Integer updated) {
-			this.updated = updated;
+		public void setTraffic(Integer traffic) {
+			this.traffic = traffic;
 		}
 
 		public Boolean getOnline() {
@@ -100,12 +84,28 @@ public class DescribeABTestExperimentResponse extends AcsResponse {
 			this.online = online;
 		}
 
-		public Integer getTraffic() {
-			return this.traffic;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setTraffic(Integer traffic) {
-			this.traffic = traffic;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getUpdated() {
+			return this.updated;
+		}
+
+		public void setUpdated(Integer updated) {
+			this.updated = updated;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public Params getParams() {

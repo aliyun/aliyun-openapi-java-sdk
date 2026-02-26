@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSentinelAppSumMetricResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
 	private Boolean success;
 
-	private String message;
-
 	private MetricData metricData;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,14 +66,6 @@ public class GetSentinelAppSumMetricResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public MetricData getMetricData() {
 		return this.metricData;
 	}
@@ -76,37 +76,21 @@ public class GetSentinelAppSumMetricResponse extends AcsResponse {
 
 	public static class MetricData {
 
-		private String userId;
-
-		private String namespace;
-
 		private String appName;
 
 		private Float passCount;
 
-		private Float blockCount;
-
-		private Float totalCount;
+		private Long machineCount;
 
 		private Float avgRt;
 
-		private Long machineCount;
+		private String userId;
 
-		public String getUserId() {
-			return this.userId;
-		}
+		private String namespace;
 
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
+		private Float totalCount;
 
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
+		private Float blockCount;
 
 		public String getAppName() {
 			return this.appName;
@@ -124,20 +108,12 @@ public class GetSentinelAppSumMetricResponse extends AcsResponse {
 			this.passCount = passCount;
 		}
 
-		public Float getBlockCount() {
-			return this.blockCount;
+		public Long getMachineCount() {
+			return this.machineCount;
 		}
 
-		public void setBlockCount(Float blockCount) {
-			this.blockCount = blockCount;
-		}
-
-		public Float getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Float totalCount) {
-			this.totalCount = totalCount;
+		public void setMachineCount(Long machineCount) {
+			this.machineCount = machineCount;
 		}
 
 		public Float getAvgRt() {
@@ -148,12 +124,36 @@ public class GetSentinelAppSumMetricResponse extends AcsResponse {
 			this.avgRt = avgRt;
 		}
 
-		public Long getMachineCount() {
-			return this.machineCount;
+		public String getUserId() {
+			return this.userId;
 		}
 
-		public void setMachineCount(Long machineCount) {
-			this.machineCount = machineCount;
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public Float getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Float totalCount) {
+			this.totalCount = totalCount;
+		}
+
+		public Float getBlockCount() {
+			return this.blockCount;
+		}
+
+		public void setBlockCount(Float blockCount) {
+			this.blockCount = blockCount;
 		}
 	}
 

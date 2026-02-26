@@ -91,6 +91,22 @@ public class ListCampaignTrendingReportResponse extends AcsResponse {
 
 		private Long breakAgents;
 
+		private Long statsTime;
+
+		private Long talkingAgents;
+
+		private Long workingAgents;
+
+		private Long breakingAgents;
+
+		private Long outboundScenarioReadyAgents;
+
+		private Long outboundScenarioBreakingAgents;
+
+		private Long outboundScenarioTalkingAgents;
+
+		private Long outboundScenarioWorkingAgents;
+
 		public Long getDatetime() {
 			return this.datetime;
 		}
@@ -145,6 +161,70 @@ public class ListCampaignTrendingReportResponse extends AcsResponse {
 
 		public void setBreakAgents(Long breakAgents) {
 			this.breakAgents = breakAgents;
+		}
+
+		public Long getStatsTime() {
+			return this.statsTime;
+		}
+
+		public void setStatsTime(Long statsTime) {
+			this.statsTime = statsTime;
+		}
+
+		public Long getTalkingAgents() {
+			return this.talkingAgents;
+		}
+
+		public void setTalkingAgents(Long talkingAgents) {
+			this.talkingAgents = talkingAgents;
+		}
+
+		public Long getWorkingAgents() {
+			return this.workingAgents;
+		}
+
+		public void setWorkingAgents(Long workingAgents) {
+			this.workingAgents = workingAgents;
+		}
+
+		public Long getBreakingAgents() {
+			return this.breakingAgents;
+		}
+
+		public void setBreakingAgents(Long breakingAgents) {
+			this.breakingAgents = breakingAgents;
+		}
+
+		public Long getOutboundScenarioReadyAgents() {
+			return this.outboundScenarioReadyAgents;
+		}
+
+		public void setOutboundScenarioReadyAgents(Long outboundScenarioReadyAgents) {
+			this.outboundScenarioReadyAgents = outboundScenarioReadyAgents;
+		}
+
+		public Long getOutboundScenarioBreakingAgents() {
+			return this.outboundScenarioBreakingAgents;
+		}
+
+		public void setOutboundScenarioBreakingAgents(Long outboundScenarioBreakingAgents) {
+			this.outboundScenarioBreakingAgents = outboundScenarioBreakingAgents;
+		}
+
+		public Long getOutboundScenarioTalkingAgents() {
+			return this.outboundScenarioTalkingAgents;
+		}
+
+		public void setOutboundScenarioTalkingAgents(Long outboundScenarioTalkingAgents) {
+			this.outboundScenarioTalkingAgents = outboundScenarioTalkingAgents;
+		}
+
+		public Long getOutboundScenarioWorkingAgents() {
+			return this.outboundScenarioWorkingAgents;
+		}
+
+		public void setOutboundScenarioWorkingAgents(Long outboundScenarioWorkingAgents) {
+			this.outboundScenarioWorkingAgents = outboundScenarioWorkingAgents;
 		}
 	}
 

@@ -25,13 +25,13 @@ import com.aliyuncs.live.Endpoint;
 public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoResourceResponse> {
 	   
 
+	private String imageId;
+
 	private Integer endOffset;
 
 	private String materialId;
 
 	private String vodUrl;
-
-	private String streamId;
 
 	private String casterId;
 
@@ -45,6 +45,8 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 
 	private String locationId;
 
+	private String imageUrl;
+
 	private Integer ptsCallbackInterval;
 
 	private String resourceName;
@@ -57,6 +59,17 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
 	}
 
 	public Integer getEndOffset() {
@@ -89,17 +102,6 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		this.vodUrl = vodUrl;
 		if(vodUrl != null){
 			putQueryParameter("VodUrl", vodUrl);
-		}
-	}
-
-	public String getStreamId() {
-		return this.streamId;
-	}
-
-	public void setStreamId(String streamId) {
-		this.streamId = streamId;
-		if(streamId != null){
-			putQueryParameter("StreamId", streamId);
 		}
 	}
 
@@ -166,6 +168,17 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		this.locationId = locationId;
 		if(locationId != null){
 			putQueryParameter("LocationId", locationId);
+		}
+	}
+
+	public String getImageUrl() {
+		return this.imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+		if(imageUrl != null){
+			putQueryParameter("ImageUrl", imageUrl);
 		}
 	}
 

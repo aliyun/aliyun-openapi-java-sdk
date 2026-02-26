@@ -29,9 +29,9 @@ public class CreateProjectMemberRequest extends RpcAcsRequest<CreateProjectMembe
 
 	private String clientToken;
 
-	private Long projectId;
-
 	private String userId;
+
+	private Long projectId;
 	public CreateProjectMemberRequest() {
 		super("dataworks-public", "2020-05-18", "CreateProjectMember");
 		setMethod(MethodType.POST);
@@ -63,17 +63,6 @@ public class CreateProjectMemberRequest extends RpcAcsRequest<CreateProjectMembe
 		}
 	}
 
-	public Long getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(Long projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putQueryParameter("ProjectId", projectId.toString());
-		}
-	}
-
 	public String getUserId() {
 		return this.userId;
 	}
@@ -82,6 +71,17 @@ public class CreateProjectMemberRequest extends RpcAcsRequest<CreateProjectMembe
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId.toString());
 		}
 	}
 

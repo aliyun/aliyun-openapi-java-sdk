@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterMulticastDomainsResponse;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomain;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomain.Options;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomain.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +40,24 @@ public class ListTransitRouterMulticastDomainsResponseUnmarshaller {
 			transitRouterMulticastDomain.setTransitRouterMulticastDomainName(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].TransitRouterMulticastDomainName"));
 			transitRouterMulticastDomain.setTransitRouterMulticastDomainDescription(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].TransitRouterMulticastDomainDescription"));
 			transitRouterMulticastDomain.setStatus(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Status"));
+			transitRouterMulticastDomain.setTransitRouterId(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].TransitRouterId"));
+			transitRouterMulticastDomain.setRegionId(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].RegionId"));
+			transitRouterMulticastDomain.setCenId(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].CenId"));
+
+			Options options = new Options();
+			options.setIgmpv2Support(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Options.Igmpv2Support"));
+			options.setStrictSourceControl(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Options.StrictSourceControl"));
+			transitRouterMulticastDomain.setOptions(options);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			transitRouterMulticastDomain.setTags(tags);
 
 			transitRouterMulticastDomains.add(transitRouterMulticastDomain);
 		}

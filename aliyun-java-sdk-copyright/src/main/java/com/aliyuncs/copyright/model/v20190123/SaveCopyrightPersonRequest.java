@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class SaveCopyrightPersonRequest extends RpcAcsRequest<SaveCopyrightPersonResponse> {
 	   
 
+	private String contactPerson;
+
 	private String city;
 
 	private String idBackImage;
@@ -68,8 +70,19 @@ public class SaveCopyrightPersonRequest extends RpcAcsRequest<SaveCopyrightPerso
 
 	private Integer useType;
 	public SaveCopyrightPersonRequest() {
-		super("Copyright", "2019-01-23", "SaveCopyrightPerson");
+		super("Copyright", "2019-01-23", "SaveCopyrightPerson", "swcopyright");
 		setMethod(MethodType.POST);
+	}
+
+	public String getContactPerson() {
+		return this.contactPerson;
+	}
+
+	public void setContactPerson(String contactPerson) {
+		this.contactPerson = contactPerson;
+		if(contactPerson != null){
+			putQueryParameter("ContactPerson", contactPerson);
+		}
 	}
 
 	public String getCity() {

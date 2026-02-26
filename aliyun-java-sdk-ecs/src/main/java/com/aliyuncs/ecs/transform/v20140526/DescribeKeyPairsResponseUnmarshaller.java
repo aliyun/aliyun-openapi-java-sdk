@@ -39,6 +39,7 @@ public class DescribeKeyPairsResponseUnmarshaller {
 			keyPair.setKeyPairName(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairName"));
 			keyPair.setKeyPairFingerPrint(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairFingerPrint"));
 			keyPair.setResourceGroupId(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].ResourceGroupId"));
+			keyPair.setPublicKey(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].PublicKey"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags.Length"); j++) {

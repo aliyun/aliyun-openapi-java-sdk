@@ -35,7 +35,7 @@ public class DescribeDBConfigRequest extends RpcAcsRequest<DescribeDBConfigRespo
 
 	private Long ownerId;
 	public DescribeDBConfigRequest() {
-		super("clickhouse", "2019-11-11", "DescribeDBConfig");
+		super("clickhouse", "2019-11-11", "DescribeDBConfig", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

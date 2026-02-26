@@ -27,15 +27,15 @@ public class GetNacosHistoryConfigRequest extends RpcAcsRequest<GetNacosHistoryC
 
 	private String nid;
 
+	private String namespaceId;
+
+	private String group;
+
 	private String instanceId;
 
 	private String dataId;
 
-	private String namespaceId;
-
 	private String acceptLanguage;
-
-	private String group;
 	public GetNacosHistoryConfigRequest() {
 		super("mse", "2019-05-31", "GetNacosHistoryConfig", "mse");
 		setMethod(MethodType.POST);
@@ -53,6 +53,28 @@ public class GetNacosHistoryConfigRequest extends RpcAcsRequest<GetNacosHistoryC
 		this.nid = nid;
 		if(nid != null){
 			putQueryParameter("Nid", nid);
+		}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getGroup() {
+		return this.group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+		if(group != null){
+			putQueryParameter("Group", group);
 		}
 	}
 
@@ -78,17 +100,6 @@ public class GetNacosHistoryConfigRequest extends RpcAcsRequest<GetNacosHistoryC
 		}
 	}
 
-	public String getNamespaceId() {
-		return this.namespaceId;
-	}
-
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
-		}
-	}
-
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -97,17 +108,6 @@ public class GetNacosHistoryConfigRequest extends RpcAcsRequest<GetNacosHistoryC
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getGroup() {
-		return this.group;
-	}
-
-	public void setGroup(String group) {
-		this.group = group;
-		if(group != null){
-			putQueryParameter("Group", group);
 		}
 	}
 

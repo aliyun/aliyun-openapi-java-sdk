@@ -25,6 +25,8 @@ import com.aliyuncs.clickhouse.Endpoint;
 public class ModifyDBClusterConfigRequest extends RpcAcsRequest<ModifyDBClusterConfigResponse> {
 	   
 
+	private String reason;
+
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
@@ -37,12 +39,23 @@ public class ModifyDBClusterConfigRequest extends RpcAcsRequest<ModifyDBClusterC
 
 	private Long ownerId;
 	public ModifyDBClusterConfigRequest() {
-		super("clickhouse", "2019-11-11", "ModifyDBClusterConfig");
+		super("clickhouse", "2019-11-11", "ModifyDBClusterConfig", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getReason() {
+		return this.reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
+		if(reason != null){
+			putQueryParameter("Reason", reason);
+		}
 	}
 
 	public Long getResourceOwnerId() {

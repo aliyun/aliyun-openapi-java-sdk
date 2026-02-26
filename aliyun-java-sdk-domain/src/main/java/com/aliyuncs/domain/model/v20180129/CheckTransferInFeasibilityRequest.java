@@ -33,7 +33,7 @@ public class CheckTransferInFeasibilityRequest extends RpcAcsRequest<CheckTransf
 
 	private String lang;
 	public CheckTransferInFeasibilityRequest() {
-		super("Domain", "2018-01-29", "CheckTransferInFeasibility");
+		super("Domain", "2018-01-29", "CheckTransferInFeasibility", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

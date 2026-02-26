@@ -28,6 +28,11 @@ public class DescribeBruteForceSummaryResponseUnmarshaller {
 		BruteForceSummary bruteForceSummary = new BruteForceSummary();
 		bruteForceSummary.setAllStrategyCount(_ctx.integerValue("DescribeBruteForceSummaryResponse.BruteForceSummary.AllStrategyCount"));
 		bruteForceSummary.setEffectiveCount(_ctx.integerValue("DescribeBruteForceSummaryResponse.BruteForceSummary.EffectiveCount"));
+		bruteForceSummary.setAntiBruteForceRuleCount(_ctx.stringValue("DescribeBruteForceSummaryResponse.BruteForceSummary.AntiBruteForceRuleCount"));
+		bruteForceSummary.setCustomRecordCount(_ctx.stringValue("DescribeBruteForceSummaryResponse.BruteForceSummary.CustomRecordCount"));
+		bruteForceSummary.setSystemRecordCount(_ctx.stringValue("DescribeBruteForceSummaryResponse.BruteForceSummary.SystemRecordCount"));
+		bruteForceSummary.setCustomEffectiveCount(_ctx.stringValue("DescribeBruteForceSummaryResponse.BruteForceSummary.CustomEffectiveCount"));
+		bruteForceSummary.setSystemEffectiveCount(_ctx.stringValue("DescribeBruteForceSummaryResponse.BruteForceSummary.SystemEffectiveCount"));
 		describeBruteForceSummaryResponse.setBruteForceSummary(bruteForceSummary);
 	 
 	 	return describeBruteForceSummaryResponse;

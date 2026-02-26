@@ -24,17 +24,11 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
-	
-	public ModifyAppRequest() {
-		super("CloudAPI", "2016-07-14", "ModifyApp", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String description;
+
+	private String extend;
 
 	private String appName;
 
@@ -43,6 +37,14 @@ public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
 	private Long appId;
 
 	private List<Tag> tags;
+	public ModifyAppRequest() {
+		super("CloudAPI", "2016-07-14", "ModifyApp", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDescription() {
 		return this.description;
@@ -52,6 +54,17 @@ public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getExtend() {
+		return this.extend;
+	}
+
+	public void setExtend(String extend) {
+		this.extend = extend;
+		if(extend != null){
+			putQueryParameter("Extend", extend);
 		}
 	}
 
@@ -66,29 +79,10 @@ public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

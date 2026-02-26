@@ -15,6 +15,9 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -25,6 +28,9 @@ public class DescribeCloudDiskTypesRequest extends RpcAcsRequest<DescribeCloudDi
 	   
 
 	private String ensRegionId;
+
+	@SerializedName("ensRegionIds")
+	private List<String> ensRegionIds;
 	public DescribeCloudDiskTypesRequest() {
 		super("Ens", "2017-11-10", "DescribeCloudDiskTypes", "ens");
 		setMethod(MethodType.GET);
@@ -39,6 +45,17 @@ public class DescribeCloudDiskTypesRequest extends RpcAcsRequest<DescribeCloudDi
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
 		}
+	}
+
+	public List<String> getEnsRegionIds() {
+		return this.ensRegionIds;
+	}
+
+	public void setEnsRegionIds(List<String> ensRegionIds) {
+		this.ensRegionIds = ensRegionIds;	
+		if (ensRegionIds != null) {
+			putQueryParameter("EnsRegionIds" , new Gson().toJson(ensRegionIds));
+		}	
 	}
 
 	@Override

@@ -65,6 +65,8 @@ public class DescribeInstallCodesResponse extends AcsResponse {
 
 		private Integer vendor;
 
+		private String proxyCluster;
+
 		public Boolean getOnlyImage() {
 			return this.onlyImage;
 		}
@@ -135,6 +137,14 @@ public class DescribeInstallCodesResponse extends AcsResponse {
 
 		public void setVendor(Integer vendor) {
 			this.vendor = vendor;
+		}
+
+		public String getProxyCluster() {
+			return this.proxyCluster;
+		}
+
+		public void setProxyCluster(String proxyCluster) {
+			this.proxyCluster = proxyCluster;
 		}
 	}
 

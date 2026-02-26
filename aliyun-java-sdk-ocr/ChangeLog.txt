@@ -1,3 +1,33 @@
+2023-12-20 Version: 1.0.26
+- Update RecognizeBankCard.
+
+2023-12-06 Version: 1.0.25
+- Update RecognizeIdentityCard.
+- Update RecognizeDriverLicense.
+- Update RecognizeDrivingLicense.
+
+2023-07-03 Version: 1.0.24
+- Update TrimDocument.
+- Update RecognizeTakeoutOrder.
+- Update RecognizePassportMRZ.
+- Update RecognizeChinapassport.
+- Update DetectCardScreenshot.
+- Update RecognizeVerificationcode.
+- Update RecognizePoiName.
+- Update RecognizeAccountPage.
+
+2023-02-15 Version: 1.0.23
+- Update RecognizeVideoCharacter.
+
+2022-11-10 Version: 1.0.22
+- Release RecognizeVATInvoice.
+
+2022-10-17 Version: 1.0.21
+- Release RecognizeVATInvoice.
+
+2022-10-14 Version: 1.0.20
+- Release RecognizeVATInvoice.
+
 2022-06-21 Version: 1.0.19
 - Release RecognizeTurkeyIdentityCard RecognizeMalaysiaIdentityCard RecognizeRussiaIdentityCard RecognizeIndonesiaIdentityCard RecognizeUkraineIdentityCard RecognizeVietnamIdentityCard.
 

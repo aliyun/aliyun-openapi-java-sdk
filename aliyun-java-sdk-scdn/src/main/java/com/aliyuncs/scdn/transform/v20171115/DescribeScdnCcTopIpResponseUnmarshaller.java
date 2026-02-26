@@ -33,8 +33,8 @@ public class DescribeScdnCcTopIpResponseUnmarshaller {
 		List<AttackIpDatas> attackIpDataList = new ArrayList<AttackIpDatas>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScdnCcTopIpResponse.AttackIpDataList.Length"); i++) {
 			AttackIpDatas attackIpDatas = new AttackIpDatas();
-			attackIpDatas.setIp(_ctx.stringValue("DescribeScdnCcTopIpResponse.AttackIpDataList["+ i +"].Ip"));
 			attackIpDatas.setAttackCount(_ctx.stringValue("DescribeScdnCcTopIpResponse.AttackIpDataList["+ i +"].AttackCount"));
+			attackIpDatas.setIp(_ctx.stringValue("DescribeScdnCcTopIpResponse.AttackIpDataList["+ i +"].Ip"));
 
 			attackIpDataList.add(attackIpDatas);
 		}

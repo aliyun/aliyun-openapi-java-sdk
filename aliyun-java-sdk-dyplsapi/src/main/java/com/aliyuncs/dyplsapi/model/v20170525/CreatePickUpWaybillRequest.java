@@ -39,6 +39,10 @@ public class CreatePickUpWaybillRequest extends RpcAcsRequest<CreatePickUpWaybil
 
 	private String remark;
 
+	private String appointGotStartTime;
+
+	private String appointGotEndTime;
+
 	private String cpCode;
 
 	private String sendMobile;
@@ -55,11 +59,13 @@ public class CreatePickUpWaybillRequest extends RpcAcsRequest<CreatePickUpWaybil
 	@SerializedName("goodsInfos")
 	private List<GoodsInfos> goodsInfos;
 
+	private Integer bizType;
+
 	private String sendName;
 
 	private String consigneePhone;
 	public CreatePickUpWaybillRequest() {
-		super("Dyplsapi", "2017-05-25", "CreatePickUpWaybill");
+		super("Dyplsapi", "2017-05-25", "CreatePickUpWaybill", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -119,6 +125,28 @@ public class CreatePickUpWaybillRequest extends RpcAcsRequest<CreatePickUpWaybil
 		this.remark = remark;
 		if(remark != null){
 			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getAppointGotStartTime() {
+		return this.appointGotStartTime;
+	}
+
+	public void setAppointGotStartTime(String appointGotStartTime) {
+		this.appointGotStartTime = appointGotStartTime;
+		if(appointGotStartTime != null){
+			putQueryParameter("AppointGotStartTime", appointGotStartTime);
+		}
+	}
+
+	public String getAppointGotEndTime() {
+		return this.appointGotEndTime;
+	}
+
+	public void setAppointGotEndTime(String appointGotEndTime) {
+		this.appointGotEndTime = appointGotEndTime;
+		if(appointGotEndTime != null){
+			putQueryParameter("AppointGotEndTime", appointGotEndTime);
 		}
 	}
 
@@ -197,6 +225,17 @@ public class CreatePickUpWaybillRequest extends RpcAcsRequest<CreatePickUpWaybil
 		if (goodsInfos != null) {
 			putQueryParameter("GoodsInfos" , new Gson().toJson(goodsInfos));
 		}	
+	}
+
+	public Integer getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(Integer bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType.toString());
+		}
 	}
 
 	public String getSendName() {

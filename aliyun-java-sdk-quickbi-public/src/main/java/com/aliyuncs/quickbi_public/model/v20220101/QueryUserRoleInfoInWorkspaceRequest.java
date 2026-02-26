@@ -28,7 +28,7 @@ public class QueryUserRoleInfoInWorkspaceRequest extends RpcAcsRequest<QueryUser
 
 	private String workspaceId;
 	public QueryUserRoleInfoInWorkspaceRequest() {
-		super("quickbi-public", "2022-01-01", "QueryUserRoleInfoInWorkspace", "quickbi");
+		super("quickbi-public", "2022-01-01", "QueryUserRoleInfoInWorkspace", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.facebody.model.v20191230;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.facebody.Endpoint;
 
@@ -25,11 +26,17 @@ import com.aliyuncs.facebody.Endpoint;
 public class MergeImageFaceRequest extends RpcAcsRequest<MergeImageFaceResponse> {
 	   
 
-	private String userId;
+	private List<MergeInfos> mergeInfoss;
+
+	private String watermarkType;
 
 	private String templateId;
 
 	private String imageURL;
+
+	private Boolean addWatermark;
+
+	private String modelVersion;
 	public MergeImageFaceRequest() {
 		super("facebody", "2019-12-30", "MergeImageFace", "facebody");
 		setMethod(MethodType.POST);
@@ -39,14 +46,28 @@ public class MergeImageFaceRequest extends RpcAcsRequest<MergeImageFaceResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public List<MergeInfos> getMergeInfoss() {
+		return this.mergeInfoss;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
+	public void setMergeInfoss(List<MergeInfos> mergeInfoss) {
+		this.mergeInfoss = mergeInfoss;	
+		if (mergeInfoss != null) {
+			for (int depth1 = 0; depth1 < mergeInfoss.size(); depth1++) {
+				putBodyParameter("MergeInfos." + (depth1 + 1) + ".ImageURL" , mergeInfoss.get(depth1).getImageURL());
+				putBodyParameter("MergeInfos." + (depth1 + 1) + ".TemplateFaceID" , mergeInfoss.get(depth1).getTemplateFaceID());
+			}
+		}	
+	}
+
+	public String getWatermarkType() {
+		return this.watermarkType;
+	}
+
+	public void setWatermarkType(String watermarkType) {
+		this.watermarkType = watermarkType;
+		if(watermarkType != null){
+			putBodyParameter("WatermarkType", watermarkType);
 		}
 	}
 
@@ -69,6 +90,51 @@ public class MergeImageFaceRequest extends RpcAcsRequest<MergeImageFaceResponse>
 		this.imageURL = imageURL;
 		if(imageURL != null){
 			putBodyParameter("ImageURL", imageURL);
+		}
+	}
+
+	public Boolean getAddWatermark() {
+		return this.addWatermark;
+	}
+
+	public void setAddWatermark(Boolean addWatermark) {
+		this.addWatermark = addWatermark;
+		if(addWatermark != null){
+			putBodyParameter("AddWatermark", addWatermark.toString());
+		}
+	}
+
+	public String getModelVersion() {
+		return this.modelVersion;
+	}
+
+	public void setModelVersion(String modelVersion) {
+		this.modelVersion = modelVersion;
+		if(modelVersion != null){
+			putBodyParameter("ModelVersion", modelVersion);
+		}
+	}
+
+	public static class MergeInfos {
+
+		private String imageURL;
+
+		private String templateFaceID;
+
+		public String getImageURL() {
+			return this.imageURL;
+		}
+
+		public void setImageURL(String imageURL) {
+			this.imageURL = imageURL;
+		}
+
+		public String getTemplateFaceID() {
+			return this.templateFaceID;
+		}
+
+		public void setTemplateFaceID(String templateFaceID) {
+			this.templateFaceID = templateFaceID;
 		}
 	}
 

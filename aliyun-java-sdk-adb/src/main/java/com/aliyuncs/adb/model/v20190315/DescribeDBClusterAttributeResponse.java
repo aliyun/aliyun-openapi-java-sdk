@@ -127,7 +127,31 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private String kmsId;
 
+		private String innerIp;
+
+		private String innerPort;
+
+		private String diskPerformanceLevel;
+
+		private String elasticIOResourceSize;
+
+		private Boolean diskEncryption;
+
+		private String productVersion;
+
+		private String secondaryZoneId;
+
+		private String secondaryVSwitchId;
+
+		private String reservedNodeSize;
+
+		private Integer reservedNodeCount;
+
+		private String productForm;
+
 		private List<Tag> tags;
+
+		private TaskInfo taskInfo;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -449,12 +473,108 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 			this.kmsId = kmsId;
 		}
 
+		public String getInnerIp() {
+			return this.innerIp;
+		}
+
+		public void setInnerIp(String innerIp) {
+			this.innerIp = innerIp;
+		}
+
+		public String getInnerPort() {
+			return this.innerPort;
+		}
+
+		public void setInnerPort(String innerPort) {
+			this.innerPort = innerPort;
+		}
+
+		public String getDiskPerformanceLevel() {
+			return this.diskPerformanceLevel;
+		}
+
+		public void setDiskPerformanceLevel(String diskPerformanceLevel) {
+			this.diskPerformanceLevel = diskPerformanceLevel;
+		}
+
+		public String getElasticIOResourceSize() {
+			return this.elasticIOResourceSize;
+		}
+
+		public void setElasticIOResourceSize(String elasticIOResourceSize) {
+			this.elasticIOResourceSize = elasticIOResourceSize;
+		}
+
+		public Boolean getDiskEncryption() {
+			return this.diskEncryption;
+		}
+
+		public void setDiskEncryption(Boolean diskEncryption) {
+			this.diskEncryption = diskEncryption;
+		}
+
+		public String getProductVersion() {
+			return this.productVersion;
+		}
+
+		public void setProductVersion(String productVersion) {
+			this.productVersion = productVersion;
+		}
+
+		public String getSecondaryZoneId() {
+			return this.secondaryZoneId;
+		}
+
+		public void setSecondaryZoneId(String secondaryZoneId) {
+			this.secondaryZoneId = secondaryZoneId;
+		}
+
+		public String getSecondaryVSwitchId() {
+			return this.secondaryVSwitchId;
+		}
+
+		public void setSecondaryVSwitchId(String secondaryVSwitchId) {
+			this.secondaryVSwitchId = secondaryVSwitchId;
+		}
+
+		public String getReservedNodeSize() {
+			return this.reservedNodeSize;
+		}
+
+		public void setReservedNodeSize(String reservedNodeSize) {
+			this.reservedNodeSize = reservedNodeSize;
+		}
+
+		public Integer getReservedNodeCount() {
+			return this.reservedNodeCount;
+		}
+
+		public void setReservedNodeCount(Integer reservedNodeCount) {
+			this.reservedNodeCount = reservedNodeCount;
+		}
+
+		public String getProductForm() {
+			return this.productForm;
+		}
+
+		public void setProductForm(String productForm) {
+			this.productForm = productForm;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public TaskInfo getTaskInfo() {
+			return this.taskInfo;
+		}
+
+		public void setTaskInfo(TaskInfo taskInfo) {
+			this.taskInfo = taskInfo;
 		}
 
 		public static class Tag {
@@ -477,6 +597,112 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class TaskInfo {
+
+			private String name;
+
+			private String status;
+
+			private String progress;
+
+			private List<StepListItem> stepList;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getProgress() {
+				return this.progress;
+			}
+
+			public void setProgress(String progress) {
+				this.progress = progress;
+			}
+
+			public List<StepListItem> getStepList() {
+				return this.stepList;
+			}
+
+			public void setStepList(List<StepListItem> stepList) {
+				this.stepList = stepList;
+			}
+
+			public static class StepListItem {
+
+				private String stepName;
+
+				private String stepDesc;
+
+				private String stepStatus;
+
+				private String stepProgress;
+
+				private String startTime;
+
+				private String endTime;
+
+				public String getStepName() {
+					return this.stepName;
+				}
+
+				public void setStepName(String stepName) {
+					this.stepName = stepName;
+				}
+
+				public String getStepDesc() {
+					return this.stepDesc;
+				}
+
+				public void setStepDesc(String stepDesc) {
+					this.stepDesc = stepDesc;
+				}
+
+				public String getStepStatus() {
+					return this.stepStatus;
+				}
+
+				public void setStepStatus(String stepStatus) {
+					this.stepStatus = stepStatus;
+				}
+
+				public String getStepProgress() {
+					return this.stepProgress;
+				}
+
+				public void setStepProgress(String stepProgress) {
+					this.stepProgress = stepProgress;
+				}
+
+				public String getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
+				}
+
+				public String getEndTime() {
+					return this.endTime;
+				}
+
+				public void setEndTime(String endTime) {
+					this.endTime = endTime;
+				}
 			}
 		}
 	}

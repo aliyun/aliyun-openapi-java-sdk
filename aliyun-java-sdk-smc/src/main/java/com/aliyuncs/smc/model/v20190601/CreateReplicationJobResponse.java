@@ -28,6 +28,8 @@ public class CreateReplicationJobResponse extends AcsResponse {
 
 	private String jobId;
 
+	private String orderId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class CreateReplicationJobResponse extends AcsResponse {
 
 	public void setJobId(String jobId) {
 		this.jobId = jobId;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

@@ -44,6 +44,8 @@ public class CreateLoadBalancerHTTPSListenerRequest extends RpcAcsRequest<Create
 
 	private Integer healthCheckInterval;
 
+	private Integer backendServerPort;
+
 	private String description;
 
 	private Integer unhealthyThreshold;
@@ -179,6 +181,17 @@ public class CreateLoadBalancerHTTPSListenerRequest extends RpcAcsRequest<Create
 		this.healthCheckInterval = healthCheckInterval;
 		if(healthCheckInterval != null){
 			putQueryParameter("HealthCheckInterval", healthCheckInterval.toString());
+		}
+	}
+
+	public Integer getBackendServerPort() {
+		return this.backendServerPort;
+	}
+
+	public void setBackendServerPort(Integer backendServerPort) {
+		this.backendServerPort = backendServerPort;
+		if(backendServerPort != null){
+			putQueryParameter("BackendServerPort", backendServerPort.toString());
 		}
 	}
 

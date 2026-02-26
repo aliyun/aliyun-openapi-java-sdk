@@ -28,7 +28,11 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private Long resourceOwnerId;
 
+	private String connectionStringPrefix;
+
 	private String secondaryZoneId;
+
+	private Integer slaveReadOnlyCount;
 
 	private String couponNo;
 
@@ -43,6 +47,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private String securityToken;
 
 	private List<Tag> tags;
+
+	private String globalSecurityGroupIds;
 
 	private String businessInfo;
 
@@ -70,6 +76,12 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String zoneId;
 
+	private Integer replicaCount;
+
+	private String appendonly;
+
+	private String nodeType;
+
 	private String autoUseCoupon;
 
 	private String instanceClass;
@@ -90,13 +102,23 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private Boolean globalInstance;
 
+	private String recoverConfigMode;
+
 	private String token;
 
 	private String globalInstanceId;
 
+	private String paramGroupId;
+
 	private String vpcId;
 
+	private Integer readOnlyCount;
+
 	private String chargeType;
+
+	private Integer slaveReplicaCount;
+
+	private String clusterBackupId;
 	public CreateInstanceRequest() {
 		super("R-kvstore", "2015-01-01", "CreateInstance", "redisa");
 		setMethod(MethodType.POST);
@@ -117,6 +139,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getConnectionStringPrefix() {
+		return this.connectionStringPrefix;
+	}
+
+	public void setConnectionStringPrefix(String connectionStringPrefix) {
+		this.connectionStringPrefix = connectionStringPrefix;
+		if(connectionStringPrefix != null){
+			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+		}
+	}
+
 	public String getSecondaryZoneId() {
 		return this.secondaryZoneId;
 	}
@@ -125,6 +158,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.secondaryZoneId = secondaryZoneId;
 		if(secondaryZoneId != null){
 			putQueryParameter("SecondaryZoneId", secondaryZoneId);
+		}
+	}
+
+	public Integer getSlaveReadOnlyCount() {
+		return this.slaveReadOnlyCount;
+	}
+
+	public void setSlaveReadOnlyCount(Integer slaveReadOnlyCount) {
+		this.slaveReadOnlyCount = slaveReadOnlyCount;
+		if(slaveReadOnlyCount != null){
+			putQueryParameter("SlaveReadOnlyCount", slaveReadOnlyCount.toString());
 		}
 	}
 
@@ -206,6 +250,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getGlobalSecurityGroupIds() {
+		return this.globalSecurityGroupIds;
+	}
+
+	public void setGlobalSecurityGroupIds(String globalSecurityGroupIds) {
+		this.globalSecurityGroupIds = globalSecurityGroupIds;
+		if(globalSecurityGroupIds != null){
+			putQueryParameter("GlobalSecurityGroupIds", globalSecurityGroupIds);
+		}
 	}
 
 	public String getBusinessInfo() {
@@ -351,6 +406,39 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public Integer getReplicaCount() {
+		return this.replicaCount;
+	}
+
+	public void setReplicaCount(Integer replicaCount) {
+		this.replicaCount = replicaCount;
+		if(replicaCount != null){
+			putQueryParameter("ReplicaCount", replicaCount.toString());
+		}
+	}
+
+	public String getAppendonly() {
+		return this.appendonly;
+	}
+
+	public void setAppendonly(String appendonly) {
+		this.appendonly = appendonly;
+		if(appendonly != null){
+			putQueryParameter("Appendonly", appendonly);
+		}
+	}
+
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType);
+		}
+	}
+
 	public String getAutoUseCoupon() {
 		return this.autoUseCoupon;
 	}
@@ -461,6 +549,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getRecoverConfigMode() {
+		return this.recoverConfigMode;
+	}
+
+	public void setRecoverConfigMode(String recoverConfigMode) {
+		this.recoverConfigMode = recoverConfigMode;
+		if(recoverConfigMode != null){
+			putQueryParameter("RecoverConfigMode", recoverConfigMode);
+		}
+	}
+
 	public String getToken() {
 		return this.token;
 	}
@@ -483,6 +582,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getParamGroupId() {
+		return this.paramGroupId;
+	}
+
+	public void setParamGroupId(String paramGroupId) {
+		this.paramGroupId = paramGroupId;
+		if(paramGroupId != null){
+			putQueryParameter("ParamGroupId", paramGroupId);
+		}
+	}
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -494,6 +604,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public Integer getReadOnlyCount() {
+		return this.readOnlyCount;
+	}
+
+	public void setReadOnlyCount(Integer readOnlyCount) {
+		this.readOnlyCount = readOnlyCount;
+		if(readOnlyCount != null){
+			putQueryParameter("ReadOnlyCount", readOnlyCount.toString());
+		}
+	}
+
 	public String getChargeType() {
 		return this.chargeType;
 	}
@@ -502,6 +623,28 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public Integer getSlaveReplicaCount() {
+		return this.slaveReplicaCount;
+	}
+
+	public void setSlaveReplicaCount(Integer slaveReplicaCount) {
+		this.slaveReplicaCount = slaveReplicaCount;
+		if(slaveReplicaCount != null){
+			putQueryParameter("SlaveReplicaCount", slaveReplicaCount.toString());
+		}
+	}
+
+	public String getClusterBackupId() {
+		return this.clusterBackupId;
+	}
+
+	public void setClusterBackupId(String clusterBackupId) {
+		this.clusterBackupId = clusterBackupId;
+		if(clusterBackupId != null){
+			putQueryParameter("ClusterBackupId", clusterBackupId);
 		}
 	}
 

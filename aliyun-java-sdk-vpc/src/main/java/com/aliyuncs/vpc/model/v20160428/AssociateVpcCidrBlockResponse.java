@@ -26,12 +26,32 @@ public class AssociateVpcCidrBlockResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String cidrBlock;
+
+	private String ipVersion;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCidrBlock() {
+		return this.cidrBlock;
+	}
+
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+	}
+
+	public String getIpVersion() {
+		return this.ipVersion;
+	}
+
+	public void setIpVersion(String ipVersion) {
+		this.ipVersion = ipVersion;
 	}
 
 	@Override

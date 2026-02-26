@@ -37,9 +37,9 @@ public class DescribeDomainUsageDataResponseUnmarshaller {
 		List<DataModule> usageDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainUsageDataResponse.UsageDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
+			dataModule.setValue(_ctx.stringValue("DescribeDomainUsageDataResponse.UsageDataPerInterval["+ i +"].Value"));
 			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainUsageDataResponse.UsageDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setPeakTime(_ctx.stringValue("DescribeDomainUsageDataResponse.UsageDataPerInterval["+ i +"].PeakTime"));
-			dataModule.setValue(_ctx.stringValue("DescribeDomainUsageDataResponse.UsageDataPerInterval["+ i +"].Value"));
 			dataModule.setSpecialValue(_ctx.stringValue("DescribeDomainUsageDataResponse.UsageDataPerInterval["+ i +"].SpecialValue"));
 
 			usageDataPerInterval.add(dataModule);

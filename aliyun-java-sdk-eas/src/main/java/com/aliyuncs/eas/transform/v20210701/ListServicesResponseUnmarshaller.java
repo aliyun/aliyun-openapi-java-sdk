@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.eas.model.v20210701.ListServicesResponse;
 import com.aliyuncs.eas.model.v20210701.ListServicesResponse.ServicesItem;
+import com.aliyuncs.eas.model.v20210701.ListServicesResponse.ServicesItem.LabelsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -62,9 +63,25 @@ public class ListServicesResponseUnmarshaller {
 			servicesItem.setUpdateTime(_ctx.stringValue("ListServicesResponse.Services["+ i +"].UpdateTime"));
 			servicesItem.setWeight(_ctx.integerValue("ListServicesResponse.Services["+ i +"].Weight"));
 			servicesItem.setServiceId(_ctx.stringValue("ListServicesResponse.Services["+ i +"].ServiceId"));
+			servicesItem.setServiceUid(_ctx.stringValue("ListServicesResponse.Services["+ i +"].ServiceUid"));
 			servicesItem.setAccessToken(_ctx.stringValue("ListServicesResponse.Services["+ i +"].AccessToken"));
 			servicesItem.setSource(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Source"));
 			servicesItem.setExtraData(_ctx.stringValue("ListServicesResponse.Services["+ i +"].ExtraData"));
+			servicesItem.setRole(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Role"));
+			servicesItem.setRoleAttrs(_ctx.stringValue("ListServicesResponse.Services["+ i +"].RoleAttrs"));
+			servicesItem.setSafetyLock(_ctx.stringValue("ListServicesResponse.Services["+ i +"].SafetyLock"));
+			servicesItem.setSecondaryInternetEndpoint(_ctx.stringValue("ListServicesResponse.Services["+ i +"].SecondaryInternetEndpoint"));
+			servicesItem.setSecondaryIntranetEndpoint(_ctx.stringValue("ListServicesResponse.Services["+ i +"].SecondaryIntranetEndpoint"));
+
+			List<LabelsItem> labels = new ArrayList<LabelsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListServicesResponse.Services["+ i +"].Labels.Length"); j++) {
+				LabelsItem labelsItem = new LabelsItem();
+				labelsItem.setLabelKey(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Labels["+ j +"].LabelKey"));
+				labelsItem.setLabelValue(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Labels["+ j +"].LabelValue"));
+
+				labels.add(labelsItem);
+			}
+			servicesItem.setLabels(labels);
 
 			services.add(servicesItem);
 		}

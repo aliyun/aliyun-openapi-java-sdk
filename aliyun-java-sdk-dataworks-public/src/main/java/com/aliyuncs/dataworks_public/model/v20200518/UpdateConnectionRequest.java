@@ -25,13 +25,13 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class UpdateConnectionRequest extends RpcAcsRequest<UpdateConnectionResponse> {
 	   
 
-	private Integer envType;
-
 	private String description;
 
-	private Long connectionId;
-
 	private String content;
+
+	private Integer envType;
+
+	private Long connectionId;
 
 	private String status;
 	public UpdateConnectionRequest() {
@@ -41,17 +41,6 @@ public class UpdateConnectionRequest extends RpcAcsRequest<UpdateConnectionRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getEnvType() {
-		return this.envType;
-	}
-
-	public void setEnvType(Integer envType) {
-		this.envType = envType;
-		if(envType != null){
-			putQueryParameter("EnvType", envType.toString());
-		}
 	}
 
 	public String getDescription() {
@@ -65,17 +54,6 @@ public class UpdateConnectionRequest extends RpcAcsRequest<UpdateConnectionRespo
 		}
 	}
 
-	public Long getConnectionId() {
-		return this.connectionId;
-	}
-
-	public void setConnectionId(Long connectionId) {
-		this.connectionId = connectionId;
-		if(connectionId != null){
-			putQueryParameter("ConnectionId", connectionId.toString());
-		}
-	}
-
 	public String getContent() {
 		return this.content;
 	}
@@ -84,6 +62,28 @@ public class UpdateConnectionRequest extends RpcAcsRequest<UpdateConnectionRespo
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public Integer getEnvType() {
+		return this.envType;
+	}
+
+	public void setEnvType(Integer envType) {
+		this.envType = envType;
+		if(envType != null){
+			putQueryParameter("EnvType", envType.toString());
+		}
+	}
+
+	public Long getConnectionId() {
+		return this.connectionId;
+	}
+
+	public void setConnectionId(Long connectionId) {
+		this.connectionId = connectionId;
+		if(connectionId != null){
+			putQueryParameter("ConnectionId", connectionId.toString());
 		}
 	}
 

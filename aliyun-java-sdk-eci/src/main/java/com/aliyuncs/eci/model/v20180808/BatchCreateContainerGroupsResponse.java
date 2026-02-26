@@ -15,7 +15,7 @@
 package com.aliyuncs.eci.model.v20180808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eci.transform.v20180808.BatchCreateContainerGroupsUnmarshaller;
+import com.aliyuncs.eci.transform.v20180808.BatchCreateContainerGroupsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 import java.util.List;
@@ -48,7 +48,7 @@ public class BatchCreateContainerGroupsResponse extends AcsResponse{
 
     @Override
     public BatchCreateContainerGroupsResponse getInstance(UnmarshallerContext context) {
-        return BatchCreateContainerGroupsUnmarshaller.unmarshall(this, context);
+        return BatchCreateContainerGroupsResponseUnmarshaller.unmarshall(this, context);
     }
 
     @Override

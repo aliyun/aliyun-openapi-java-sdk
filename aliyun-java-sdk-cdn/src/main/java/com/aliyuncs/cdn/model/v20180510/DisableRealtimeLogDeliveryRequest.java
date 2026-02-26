@@ -25,8 +25,6 @@ import com.aliyuncs.cdn.Endpoint;
 public class DisableRealtimeLogDeliveryRequest extends RpcAcsRequest<DisableRealtimeLogDeliveryResponse> {
 	   
 
-	private Long ownerId;
-
 	private String domain;
 	public DisableRealtimeLogDeliveryRequest() {
 		super("Cdn", "2018-05-10", "DisableRealtimeLogDelivery");
@@ -35,17 +33,6 @@ public class DisableRealtimeLogDeliveryRequest extends RpcAcsRequest<DisableReal
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	public String getDomain() {

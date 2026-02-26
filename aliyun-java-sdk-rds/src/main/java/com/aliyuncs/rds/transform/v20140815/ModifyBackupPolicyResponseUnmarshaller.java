@@ -24,12 +24,12 @@ public class ModifyBackupPolicyResponseUnmarshaller {
 		
 		modifyBackupPolicyResponse.setRequestId(_ctx.stringValue("ModifyBackupPolicyResponse.RequestId"));
 		modifyBackupPolicyResponse.setCompressType(_ctx.stringValue("ModifyBackupPolicyResponse.CompressType"));
-		modifyBackupPolicyResponse.setLocalLogRetentionSpace(_ctx.stringValue("ModifyBackupPolicyResponse.LocalLogRetentionSpace"));
-		modifyBackupPolicyResponse.setLogBackupLocalRetentionNumber(_ctx.integerValue("ModifyBackupPolicyResponse.LogBackupLocalRetentionNumber"));
 		modifyBackupPolicyResponse.setDBInstanceID(_ctx.stringValue("ModifyBackupPolicyResponse.DBInstanceID"));
 		modifyBackupPolicyResponse.setEnableBackupLog(_ctx.stringValue("ModifyBackupPolicyResponse.EnableBackupLog"));
-		modifyBackupPolicyResponse.setLocalLogRetentionHours(_ctx.integerValue("ModifyBackupPolicyResponse.LocalLogRetentionHours"));
 		modifyBackupPolicyResponse.setHighSpaceUsageProtection(_ctx.stringValue("ModifyBackupPolicyResponse.HighSpaceUsageProtection"));
+		modifyBackupPolicyResponse.setLocalLogRetentionHours(_ctx.integerValue("ModifyBackupPolicyResponse.LocalLogRetentionHours"));
+		modifyBackupPolicyResponse.setLocalLogRetentionSpace(_ctx.stringValue("ModifyBackupPolicyResponse.LocalLogRetentionSpace"));
+		modifyBackupPolicyResponse.setLogBackupLocalRetentionNumber(_ctx.integerValue("ModifyBackupPolicyResponse.LogBackupLocalRetentionNumber"));
 	 
 	 	return modifyBackupPolicyResponse;
 	}

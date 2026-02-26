@@ -39,7 +39,7 @@ public class QueryGateVerifyStatisticPublicRequest extends RpcAcsRequest<QueryGa
 
 	private String endDate;
 	public QueryGateVerifyStatisticPublicRequest() {
-		super("Dypnsapi", "2017-05-25", "QueryGateVerifyStatisticPublic");
+		super("Dypnsapi", "2017-05-25", "QueryGateVerifyStatisticPublic", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

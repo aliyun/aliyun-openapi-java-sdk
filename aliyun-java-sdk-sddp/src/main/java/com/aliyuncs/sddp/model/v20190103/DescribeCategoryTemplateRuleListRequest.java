@@ -31,6 +31,8 @@ public class DescribeCategoryTemplateRuleListRequest extends RpcAcsRequest<Descr
 
 	private String lang;
 
+	private Integer featureType;
+
 	private Integer currentPage;
 
 	private Integer status;
@@ -73,6 +75,17 @@ public class DescribeCategoryTemplateRuleListRequest extends RpcAcsRequest<Descr
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

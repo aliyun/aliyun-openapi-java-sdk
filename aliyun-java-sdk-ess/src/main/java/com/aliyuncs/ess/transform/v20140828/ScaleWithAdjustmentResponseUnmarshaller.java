@@ -24,6 +24,7 @@ public class ScaleWithAdjustmentResponseUnmarshaller {
 		
 		scaleWithAdjustmentResponse.setRequestId(_ctx.stringValue("ScaleWithAdjustmentResponse.RequestId"));
 		scaleWithAdjustmentResponse.setScalingActivityId(_ctx.stringValue("ScaleWithAdjustmentResponse.ScalingActivityId"));
+		scaleWithAdjustmentResponse.setActivityType(_ctx.stringValue("ScaleWithAdjustmentResponse.ActivityType"));
 	 
 	 	return scaleWithAdjustmentResponse;
 	}

@@ -30,15 +30,15 @@ public class CreateFreeLockCorrectOrderRequest extends RpcAcsRequest<CreateFreeL
 
 	private Long tid;
 
-	private String attachmentKey;
-
 	@SerializedName("param")
 	private Param param;
 
-	private String comment;
-
 	@SerializedName("relatedUserList")
 	private List<Long> relatedUserList;
+
+	private String attachmentKey;
+
+	private String comment;
 	public CreateFreeLockCorrectOrderRequest() {
 		super("dms-enterprise", "2018-11-01", "CreateFreeLockCorrectOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -59,17 +59,6 @@ public class CreateFreeLockCorrectOrderRequest extends RpcAcsRequest<CreateFreeL
 		}
 	}
 
-	public String getAttachmentKey() {
-		return this.attachmentKey;
-	}
-
-	public void setAttachmentKey(String attachmentKey) {
-		this.attachmentKey = attachmentKey;
-		if(attachmentKey != null){
-			putQueryParameter("AttachmentKey", attachmentKey);
-		}
-	}
-
 	public Param getParam() {
 		return this.param;
 	}
@@ -81,17 +70,6 @@ public class CreateFreeLockCorrectOrderRequest extends RpcAcsRequest<CreateFreeL
 		}	
 	}
 
-	public String getComment() {
-		return this.comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-		if(comment != null){
-			putQueryParameter("Comment", comment);
-		}
-	}
-
 	public List<Long> getRelatedUserList() {
 		return this.relatedUserList;
 	}
@@ -101,6 +79,28 @@ public class CreateFreeLockCorrectOrderRequest extends RpcAcsRequest<CreateFreeL
 		if (relatedUserList != null) {
 			putQueryParameter("RelatedUserList" , new Gson().toJson(relatedUserList));
 		}	
+	}
+
+	public String getAttachmentKey() {
+		return this.attachmentKey;
+	}
+
+	public void setAttachmentKey(String attachmentKey) {
+		this.attachmentKey = attachmentKey;
+		if(attachmentKey != null){
+			putQueryParameter("AttachmentKey", attachmentKey);
+		}
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+		if(comment != null){
+			putQueryParameter("Comment", comment);
+		}
 	}
 
 	public static class Param {

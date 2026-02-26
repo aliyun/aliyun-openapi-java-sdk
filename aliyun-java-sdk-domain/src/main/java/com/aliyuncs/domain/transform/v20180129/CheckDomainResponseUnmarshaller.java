@@ -14,7 +14,11 @@
 
 package com.aliyuncs.domain.transform.v20180129;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.domain.model.v20180129.CheckDomainResponse;
+import com.aliyuncs.domain.model.v20180129.CheckDomainResponse.PriceInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +33,17 @@ public class CheckDomainResponseUnmarshaller {
 		checkDomainResponse.setPremium(_ctx.stringValue("CheckDomainResponse.Premium"));
 		checkDomainResponse.setDynamicCheck(_ctx.booleanValue("CheckDomainResponse.DynamicCheck"));
 		checkDomainResponse.setReason(_ctx.stringValue("CheckDomainResponse.Reason"));
+
+		List<PriceInfo> staticPriceInfo = new ArrayList<PriceInfo>();
+		for (int i = 0; i < _ctx.lengthValue("CheckDomainResponse.StaticPriceInfo.Length"); i++) {
+			PriceInfo priceInfo = new PriceInfo();
+			priceInfo.setAction(_ctx.stringValue("CheckDomainResponse.StaticPriceInfo["+ i +"].action"));
+			priceInfo.setMoney(_ctx.doubleValue("CheckDomainResponse.StaticPriceInfo["+ i +"].money"));
+			priceInfo.setPeriod(_ctx.longValue("CheckDomainResponse.StaticPriceInfo["+ i +"].period"));
+
+			staticPriceInfo.add(priceInfo);
+		}
+		checkDomainResponse.setStaticPriceInfo(staticPriceInfo);
 	 
 	 	return checkDomainResponse;
 	}

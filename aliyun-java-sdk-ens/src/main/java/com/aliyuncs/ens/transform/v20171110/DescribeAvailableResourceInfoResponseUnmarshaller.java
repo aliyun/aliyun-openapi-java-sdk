@@ -67,6 +67,12 @@ public class DescribeAvailableResourceInfoResponseUnmarshaller {
 			}
 			supportResource.setInstanceSpeces(instanceSpeces);
 
+			List<String> isp = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableResourceInfoResponse.SupportResources["+ i +"].Isp.Length"); j++) {
+				isp.add(_ctx.stringValue("DescribeAvailableResourceInfoResponse.SupportResources["+ i +"].Isp["+ j +"]"));
+			}
+			supportResource.setIsp(isp);
+
 			List<EnsRegionId> ensRegionIdsExtends = new ArrayList<EnsRegionId>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableResourceInfoResponse.SupportResources["+ i +"].EnsRegionIdsExtends.Length"); j++) {
 				EnsRegionId ensRegionId = new EnsRegionId();
@@ -75,6 +81,7 @@ public class DescribeAvailableResourceInfoResponseUnmarshaller {
 				ensRegionId.setArea(_ctx.stringValue("DescribeAvailableResourceInfoResponse.SupportResources["+ i +"].EnsRegionIdsExtends["+ j +"].Area"));
 				ensRegionId.setName(_ctx.stringValue("DescribeAvailableResourceInfoResponse.SupportResources["+ i +"].EnsRegionIdsExtends["+ j +"].Name"));
 				ensRegionId.setProvince(_ctx.stringValue("DescribeAvailableResourceInfoResponse.SupportResources["+ i +"].EnsRegionIdsExtends["+ j +"].Province"));
+				ensRegionId.setIsp(_ctx.stringValue("DescribeAvailableResourceInfoResponse.SupportResources["+ i +"].EnsRegionIdsExtends["+ j +"].Isp"));
 
 				ensRegionIdsExtends.add(ensRegionId);
 			}

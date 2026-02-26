@@ -25,9 +25,15 @@ import com.aliyuncs.http.MethodType;
 public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizationRulesResponse> {
 	   
 
+	private String fuzzyDestination;
+
+	private String fuzzyAuthorizationRuleName;
+
 	private List<String> destinationTypes;
 
 	private List<String> destinations;
+
+	private List<String> protocols;
 
 	private List<String> authorizationRuleIdss;
 
@@ -41,12 +47,36 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 
 	private List<String> authorizationRuleNames;
 
+	private List<String> destinationPorts;
+
 	private String ioTCloudConnectorId;
 
 	private Integer maxResults;
 	public ListAuthorizationRulesRequest() {
 		super("IoTCC", "2021-05-13", "ListAuthorizationRules", "IoTCC");
 		setMethod(MethodType.POST);
+	}
+
+	public String getFuzzyDestination() {
+		return this.fuzzyDestination;
+	}
+
+	public void setFuzzyDestination(String fuzzyDestination) {
+		this.fuzzyDestination = fuzzyDestination;
+		if(fuzzyDestination != null){
+			putQueryParameter("FuzzyDestination", fuzzyDestination);
+		}
+	}
+
+	public String getFuzzyAuthorizationRuleName() {
+		return this.fuzzyAuthorizationRuleName;
+	}
+
+	public void setFuzzyAuthorizationRuleName(String fuzzyAuthorizationRuleName) {
+		this.fuzzyAuthorizationRuleName = fuzzyAuthorizationRuleName;
+		if(fuzzyAuthorizationRuleName != null){
+			putQueryParameter("FuzzyAuthorizationRuleName", fuzzyAuthorizationRuleName);
+		}
 	}
 
 	public List<String> getDestinationTypes() {
@@ -71,6 +101,19 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 		if (destinations != null) {
 			for (int i = 0; i < destinations.size(); i++) {
 				putQueryParameter("Destination." + (i + 1) , destinations.get(i));
+			}
+		}	
+	}
+
+	public List<String> getBizProtocols() {
+		return this.protocols;
+	}
+
+	public void setBizProtocols(List<String> protocols) {
+		this.protocols = protocols;	
+		if (protocols != null) {
+			for (int i = 0; i < protocols.size(); i++) {
+				putQueryParameter("Protocol." + (i + 1) , protocols.get(i));
 			}
 		}	
 	}
@@ -145,6 +188,19 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 		if (authorizationRuleNames != null) {
 			for (int i = 0; i < authorizationRuleNames.size(); i++) {
 				putQueryParameter("AuthorizationRuleName." + (i + 1) , authorizationRuleNames.get(i));
+			}
+		}	
+	}
+
+	public List<String> getDestinationPorts() {
+		return this.destinationPorts;
+	}
+
+	public void setDestinationPorts(List<String> destinationPorts) {
+		this.destinationPorts = destinationPorts;	
+		if (destinationPorts != null) {
+			for (int i = 0; i < destinationPorts.size(); i++) {
+				putQueryParameter("DestinationPort." + (i + 1) , destinationPorts.get(i));
 			}
 		}	
 	}

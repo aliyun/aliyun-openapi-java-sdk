@@ -28,7 +28,7 @@ public class ListVpcEndpointZonesResponseUnmarshaller {
 		
 		listVpcEndpointZonesResponse.setRequestId(_ctx.stringValue("ListVpcEndpointZonesResponse.RequestId"));
 		listVpcEndpointZonesResponse.setNextToken(_ctx.stringValue("ListVpcEndpointZonesResponse.NextToken"));
-		listVpcEndpointZonesResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointZonesResponse.MaxResults"));
+		listVpcEndpointZonesResponse.setMaxResults(_ctx.integerValue("ListVpcEndpointZonesResponse.MaxResults"));
 
 		List<Zone> zones = new ArrayList<Zone>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointZonesResponse.Zones.Length"); i++) {
@@ -41,6 +41,9 @@ public class ListVpcEndpointZonesResponseUnmarshaller {
 			zone.setEniId(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].EniId"));
 			zone.setZoneDomain(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].ZoneDomain"));
 			zone.setRegionId(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].RegionId"));
+			zone.setNsiIndex(_ctx.longValue("ListVpcEndpointZonesResponse.Zones["+ i +"].NsiIndex"));
+			zone.setNsiIndexString(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].NsiIndexString"));
+			zone.setZoneIpv6Address(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].ZoneIpv6Address"));
 
 			zones.add(zone);
 		}

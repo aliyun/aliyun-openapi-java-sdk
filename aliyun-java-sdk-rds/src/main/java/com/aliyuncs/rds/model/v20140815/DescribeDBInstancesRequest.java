@@ -63,6 +63,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String expired;
 
+	private Boolean queryAutoRenewal;
+
 	private String engine;
 
 	private String nextToken;
@@ -81,7 +83,11 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String dedicatedHostId;
 
+	private String filter;
+
 	private String vpcId;
+
+	private String category;
 
 	private String payType;
 	public DescribeDBInstancesRequest() {
@@ -302,6 +308,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
+	public Boolean getQueryAutoRenewal() {
+		return this.queryAutoRenewal;
+	}
+
+	public void setQueryAutoRenewal(Boolean queryAutoRenewal) {
+		this.queryAutoRenewal = queryAutoRenewal;
+		if(queryAutoRenewal != null){
+			putQueryParameter("QueryAutoRenewal", queryAutoRenewal.toString());
+		}
+	}
+
 	public String getEngine() {
 		return this.engine;
 	}
@@ -401,6 +418,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("Filter", filter);
+		}
+	}
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -409,6 +437,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 

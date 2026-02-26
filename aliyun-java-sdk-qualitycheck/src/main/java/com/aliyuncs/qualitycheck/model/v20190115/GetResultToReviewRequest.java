@@ -25,6 +25,8 @@ public class GetResultToReviewRequest extends RpcAcsRequest<GetResultToReviewRes
 	   
 
 	private String jsonStr;
+
+	private Long baseMeAgentId;
 	public GetResultToReviewRequest() {
 		super("Qualitycheck", "2019-01-15", "GetResultToReview");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class GetResultToReviewRequest extends RpcAcsRequest<GetResultToReviewRes
 		this.jsonStr = jsonStr;
 		if(jsonStr != null){
 			putQueryParameter("JsonStr", jsonStr);
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

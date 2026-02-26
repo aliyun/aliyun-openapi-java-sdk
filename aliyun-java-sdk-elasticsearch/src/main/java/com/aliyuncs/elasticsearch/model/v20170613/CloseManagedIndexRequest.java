@@ -30,8 +30,6 @@ public class CloseManagedIndexRequest extends RoaAcsRequest<CloseManagedIndexRes
 	private String clientToken;
 
 	private String index;
-
-	private String body;
 	public CloseManagedIndexRequest() {
 		super("elasticsearch", "2017-06-13", "CloseManagedIndex", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/indices/[Index]/close-managed");
@@ -72,17 +70,6 @@ public class CloseManagedIndexRequest extends RoaAcsRequest<CloseManagedIndexRes
 		this.index = index;
 		if(index != null){
 			putPathParameter("Index", index);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

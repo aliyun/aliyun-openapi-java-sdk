@@ -24,33 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAvailableRecoveryTimeResponse extends AcsResponse {
 
-	private String recoveryEndTime;
-
-	private String requestId;
-
 	private Integer crossBackupId;
 
 	private String dBInstanceId;
 
 	private String recoveryBeginTime;
 
+	private String recoveryEndTime;
+
 	private String regionId;
 
-	public String getRecoveryEndTime() {
-		return this.recoveryEndTime;
-	}
-
-	public void setRecoveryEndTime(String recoveryEndTime) {
-		this.recoveryEndTime = recoveryEndTime;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Integer getCrossBackupId() {
 		return this.crossBackupId;
@@ -76,12 +60,28 @@ public class DescribeAvailableRecoveryTimeResponse extends AcsResponse {
 		this.recoveryBeginTime = recoveryBeginTime;
 	}
 
+	public String getRecoveryEndTime() {
+		return this.recoveryEndTime;
+	}
+
+	public void setRecoveryEndTime(String recoveryEndTime) {
+		this.recoveryEndTime = recoveryEndTime;
+	}
+
 	public String getRegionId() {
 		return this.regionId;
 	}
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

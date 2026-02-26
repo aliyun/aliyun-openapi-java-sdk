@@ -34,6 +34,7 @@ public class DescribeInstanceHistoryEventsResponseUnmarshaller {
 		describeInstanceHistoryEventsResponse.setPageSize(_ctx.integerValue("DescribeInstanceHistoryEventsResponse.PageSize"));
 		describeInstanceHistoryEventsResponse.setPageNumber(_ctx.integerValue("DescribeInstanceHistoryEventsResponse.PageNumber"));
 		describeInstanceHistoryEventsResponse.setTotalCount(_ctx.integerValue("DescribeInstanceHistoryEventsResponse.TotalCount"));
+		describeInstanceHistoryEventsResponse.setNextToken(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.NextToken"));
 
 		List<InstanceSystemEventType> instanceSystemEventSet = new ArrayList<InstanceSystemEventType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet.Length"); i++) {
@@ -46,6 +47,7 @@ public class DescribeInstanceHistoryEventsResponseUnmarshaller {
 			instanceSystemEventType.setNotBefore(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].NotBefore"));
 			instanceSystemEventType.setInstanceId(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].InstanceId"));
 			instanceSystemEventType.setReason(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].Reason"));
+			instanceSystemEventType.setReasonCode(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ReasonCode"));
 
 			EventType eventType = new EventType();
 			eventType.setName(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventType.Name"));
@@ -64,6 +66,14 @@ public class DescribeInstanceHistoryEventsResponseUnmarshaller {
 			extendedAttribute.setHostId(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.HostId"));
 			extendedAttribute.setOnlineRepairPolicy(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.OnlineRepairPolicy"));
 			extendedAttribute.setRack(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.Rack"));
+			extendedAttribute.setPunishType(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.PunishType"));
+			extendedAttribute.setPunishDomain(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.PunishDomain"));
+			extendedAttribute.setPunishUrl(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.PunishUrl"));
+			extendedAttribute.setCode(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.Code"));
+			extendedAttribute.setCanAccept(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.CanAccept"));
+			extendedAttribute.setResponseResult(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.ResponseResult"));
+			extendedAttribute.setMetricValue(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.MetricValue"));
+			extendedAttribute.setMetricName(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.MetricName"));
 
 			List<String> migrationOptions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.MigrationOptions.Length"); j++) {

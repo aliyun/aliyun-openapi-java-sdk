@@ -29,6 +29,8 @@ public class DescribeDBClusterNetInfoItemsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean enableSLB;
+
 	private List<NetInfoItem> netInfoItems;
 
 	public String getClusterNetworkType() {
@@ -45,6 +47,14 @@ public class DescribeDBClusterNetInfoItemsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getEnableSLB() {
+		return this.enableSLB;
+	}
+
+	public void setEnableSLB(Boolean enableSLB) {
+		this.enableSLB = enableSLB;
 	}
 
 	public List<NetInfoItem> getNetInfoItems() {
@@ -70,6 +80,10 @@ public class DescribeDBClusterNetInfoItemsResponse extends AcsResponse {
 		private String httpPort;
 
 		private String iPAddress;
+
+		private String httpsPort;
+
+		private String mySQLPort;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -125,6 +139,22 @@ public class DescribeDBClusterNetInfoItemsResponse extends AcsResponse {
 
 		public void setIPAddress(String iPAddress) {
 			this.iPAddress = iPAddress;
+		}
+
+		public String getHttpsPort() {
+			return this.httpsPort;
+		}
+
+		public void setHttpsPort(String httpsPort) {
+			this.httpsPort = httpsPort;
+		}
+
+		public String getMySQLPort() {
+			return this.mySQLPort;
+		}
+
+		public void setMySQLPort(String mySQLPort) {
+			this.mySQLPort = mySQLPort;
 		}
 	}
 

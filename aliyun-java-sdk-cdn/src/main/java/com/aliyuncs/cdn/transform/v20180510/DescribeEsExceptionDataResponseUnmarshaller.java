@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cdn.model.v20180510.DescribeEsExceptionDataResponse;
 import com.aliyuncs.cdn.model.v20180510.DescribeEsExceptionDataResponse.Content;
+import com.aliyuncs.cdn.model.v20180510.DescribeEsExceptionDataResponse.Content.PointsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,9 +40,17 @@ public class DescribeEsExceptionDataResponseUnmarshaller {
 			}
 			content.setColumns(columns);
 
-			List<String> points = new ArrayList<String>();
+			List<PointsItem> points = new ArrayList<PointsItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeEsExceptionDataResponse.Contents["+ i +"].Points.Length"); j++) {
-				points.add(_ctx.stringValue("DescribeEsExceptionDataResponse.Contents["+ i +"].Points["+ j +"]"));
+				PointsItem pointsItem = new PointsItem();
+
+				List<String> points1 = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeEsExceptionDataResponse.Contents["+ i +"].Points["+ j +"].Points.Length"); k++) {
+					points1.add(_ctx.stringValue("DescribeEsExceptionDataResponse.Contents["+ i +"].Points["+ j +"].Points["+ k +"]"));
+				}
+				pointsItem.setPoints1(points1);
+
+				points.add(pointsItem);
 			}
 			content.setPoints(points);
 

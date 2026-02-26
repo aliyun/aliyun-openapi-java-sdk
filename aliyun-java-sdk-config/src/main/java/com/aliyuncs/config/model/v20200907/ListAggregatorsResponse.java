@@ -95,6 +95,10 @@ public class ListAggregatorsResponse extends AcsResponse {
 
 			private String aggregatorId;
 
+			private String folderId;
+
+			private List<TagsItem> tags;
+
 			public Long getAggregatorCreateTimestamp() {
 				return this.aggregatorCreateTimestamp;
 			}
@@ -157,6 +161,45 @@ public class ListAggregatorsResponse extends AcsResponse {
 
 			public void setAggregatorId(String aggregatorId) {
 				this.aggregatorId = aggregatorId;
+			}
+
+			public String getFolderId() {
+				return this.folderId;
+			}
+
+			public void setFolderId(String folderId) {
+				this.folderId = folderId;
+			}
+
+			public List<TagsItem> getTags() {
+				return this.tags;
+			}
+
+			public void setTags(List<TagsItem> tags) {
+				this.tags = tags;
+			}
+
+			public static class TagsItem {
+
+				private String tagKey;
+
+				private String tagValue;
+
+				public String getTagKey() {
+					return this.tagKey;
+				}
+
+				public void setTagKey(String tagKey) {
+					this.tagKey = tagKey;
+				}
+
+				public String getTagValue() {
+					return this.tagValue;
+				}
+
+				public void setTagValue(String tagValue) {
+					this.tagValue = tagValue;
+				}
 			}
 		}
 	}

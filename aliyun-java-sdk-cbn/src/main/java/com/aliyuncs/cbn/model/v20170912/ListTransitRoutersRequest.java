@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -25,13 +26,21 @@ import com.aliyuncs.cbn.Endpoint;
 public class ListTransitRoutersRequest extends RpcAcsRequest<ListTransitRoutersResponse> {
 	   
 
+	private String transitRouterName;
+
 	private Long resourceOwnerId;
 
 	private String cenId;
 
+	private List<FeatureFilter> featureFilters;
+
+	private String type;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private List<Tag> tags;
 
 	private String resourceOwnerAccount;
 
@@ -40,13 +49,26 @@ public class ListTransitRoutersRequest extends RpcAcsRequest<ListTransitRoutersR
 	private Long ownerId;
 
 	private String transitRouterId;
+
+	private String status;
 	public ListTransitRoutersRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouters");
+		super("Cbn", "2017-09-12", "ListTransitRouters", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTransitRouterName() {
+		return this.transitRouterName;
+	}
+
+	public void setTransitRouterName(String transitRouterName) {
+		this.transitRouterName = transitRouterName;
+		if(transitRouterName != null){
+			putQueryParameter("TransitRouterName", transitRouterName);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -71,6 +93,35 @@ public class ListTransitRoutersRequest extends RpcAcsRequest<ListTransitRoutersR
 		}
 	}
 
+	public List<FeatureFilter> getFeatureFilters() {
+		return this.featureFilters;
+	}
+
+	public void setFeatureFilters(List<FeatureFilter> featureFilters) {
+		this.featureFilters = featureFilters;	
+		if (featureFilters != null) {
+			for (int depth1 = 0; depth1 < featureFilters.size(); depth1++) {
+				if (featureFilters.get(depth1).getValues() != null) {
+					for (int i = 0; i < featureFilters.get(depth1).getValues().size(); i++) {
+						putQueryParameter("FeatureFilter." + (depth1 + 1) + ".Value." + (i + 1) , featureFilters.get(depth1).getValues().get(i));
+					}
+				}
+				putQueryParameter("FeatureFilter." + (depth1 + 1) + ".Key" , featureFilters.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -91,6 +142,20 @@ public class ListTransitRoutersRequest extends RpcAcsRequest<ListTransitRoutersR
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -134,6 +199,63 @@ public class ListTransitRoutersRequest extends RpcAcsRequest<ListTransitRoutersR
 		this.transitRouterId = transitRouterId;
 		if(transitRouterId != null){
 			putQueryParameter("TransitRouterId", transitRouterId);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class FeatureFilter {
+
+		private List<String> values;
+
+		private String key;
+
+		public List<String> getValues() {
+			return this.values;
+		}
+
+		public void setValues(List<String> values) {
+			this.values = values;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -23,11 +23,11 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 	public static DescribeBackupPolicyResponse unmarshall(DescribeBackupPolicyResponse describeBackupPolicyResponse, UnmarshallerContext _ctx) {
 		
 		describeBackupPolicyResponse.setRequestId(_ctx.stringValue("DescribeBackupPolicyResponse.RequestId"));
-		describeBackupPolicyResponse.setBackupRetentionPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
-		describeBackupPolicyResponse.setPreferredBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
-		describeBackupPolicyResponse.setPreferredBackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
-		describeBackupPolicyResponse.setPreferredBackupStartTimeUTC(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupStartTimeUTC"));
 		describeBackupPolicyResponse.setPreferredBackupEndTimeUTC(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupEndTimeUTC"));
+		describeBackupPolicyResponse.setBackupRetentionPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
+		describeBackupPolicyResponse.setPreferredBackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
+		describeBackupPolicyResponse.setPreferredBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
+		describeBackupPolicyResponse.setPreferredBackupStartTimeUTC(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupStartTimeUTC"));
 	 
 	 	return describeBackupPolicyResponse;
 	}

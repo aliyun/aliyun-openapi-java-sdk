@@ -41,9 +41,11 @@ public class ListAuthorizationRulesResponseUnmarshaller {
 			authorizationRule.setType(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].Type"));
 			authorizationRule.setSourceCidr(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].SourceCidr"));
 			authorizationRule.setDestinationType(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].DestinationType"));
+			authorizationRule.setBizProtocol(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].Protocol"));
+			authorizationRule.setDestinationPort(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].DestinationPort"));
 			authorizationRule.setDestination(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].Destination"));
 			authorizationRule.setPolicy(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].Policy"));
-			authorizationRule.setDns(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].Dns"));
+			authorizationRule.setDns(_ctx.booleanValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].Dns"));
 			authorizationRule.setCreateTime(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].CreateTime"));
 
 			authorizationRules.add(authorizationRule);

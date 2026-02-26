@@ -89,6 +89,8 @@ public class ListGroupsResponse extends AcsResponse {
 
 		public static class AppGroup {
 
+			private Long appGroupId;
+
 			private String appName;
 
 			private String appKey;
@@ -96,6 +98,20 @@ public class ListGroupsResponse extends AcsResponse {
 			private String description;
 
 			private String groupId;
+
+			private String xattrs;
+
+			private Integer appVersion;
+
+			private String namespace;
+
+			public Long getAppGroupId() {
+				return this.appGroupId;
+			}
+
+			public void setAppGroupId(Long appGroupId) {
+				this.appGroupId = appGroupId;
+			}
 
 			public String getAppName() {
 				return this.appName;
@@ -127,6 +143,30 @@ public class ListGroupsResponse extends AcsResponse {
 
 			public void setGroupId(String groupId) {
 				this.groupId = groupId;
+			}
+
+			public String getXattrs() {
+				return this.xattrs;
+			}
+
+			public void setXattrs(String xattrs) {
+				this.xattrs = xattrs;
+			}
+
+			public Integer getAppVersion() {
+				return this.appVersion;
+			}
+
+			public void setAppVersion(Integer appVersion) {
+				this.appVersion = appVersion;
+			}
+
+			public String getNamespace() {
+				return this.namespace;
+			}
+
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
 			}
 		}
 	}

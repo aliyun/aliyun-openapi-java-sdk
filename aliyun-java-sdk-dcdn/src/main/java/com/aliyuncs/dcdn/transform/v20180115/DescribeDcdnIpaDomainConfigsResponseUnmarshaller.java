@@ -32,9 +32,9 @@ public class DescribeDcdnIpaDomainConfigsResponseUnmarshaller {
 		List<DomainConfig> domainConfigs = new ArrayList<DomainConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnIpaDomainConfigsResponse.DomainConfigs.Length"); i++) {
 			DomainConfig domainConfig = new DomainConfig();
-			domainConfig.setFunctionName(_ctx.stringValue("DescribeDcdnIpaDomainConfigsResponse.DomainConfigs["+ i +"].FunctionName"));
-			domainConfig.setConfigId(_ctx.stringValue("DescribeDcdnIpaDomainConfigsResponse.DomainConfigs["+ i +"].ConfigId"));
 			domainConfig.setStatus(_ctx.stringValue("DescribeDcdnIpaDomainConfigsResponse.DomainConfigs["+ i +"].Status"));
+			domainConfig.setConfigId(_ctx.stringValue("DescribeDcdnIpaDomainConfigsResponse.DomainConfigs["+ i +"].ConfigId"));
+			domainConfig.setFunctionName(_ctx.stringValue("DescribeDcdnIpaDomainConfigsResponse.DomainConfigs["+ i +"].FunctionName"));
 
 			List<FunctionArg> functionArgs = new ArrayList<FunctionArg>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDcdnIpaDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs.Length"); j++) {

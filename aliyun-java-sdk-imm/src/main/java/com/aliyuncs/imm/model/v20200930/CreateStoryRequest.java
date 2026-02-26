@@ -28,32 +28,36 @@ import com.aliyuncs.imm.Endpoint;
 public class CreateStoryRequest extends RpcAcsRequest<CreateStoryResponse> {
 	   
 
-	private Long minFileCount;
-
-	private String projectName;
-
 	private String customLabels;
 
-	private String storyStartTime;
+	@SerializedName("notification")
+	private Notification notification;
+
+	private String projectName;
 
 	private String notifyTopicName;
 
 	private String storyType;
 
-	private String customId;
-
 	@SerializedName("tags")
 	private Map<String,String> tags;
 
-	private String userData;
+	private String storySubType;
 
-	private String notifyEndpoint;
+	private Long minFileCount;
+
+	private String userData;
 
 	private Long maxFileCount;
 
-	private String storySubType;
-
 	private String datasetName;
+
+	private String storyStartTime;
+
+	@SerializedName("address")
+	private Address address;
+
+	private String customId;
 
 	private String storyEndTime;
 
@@ -69,28 +73,6 @@ public class CreateStoryRequest extends RpcAcsRequest<CreateStoryResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getMinFileCount() {
-		return this.minFileCount;
-	}
-
-	public void setMinFileCount(Long minFileCount) {
-		this.minFileCount = minFileCount;
-		if(minFileCount != null){
-			putBodyParameter("MinFileCount", minFileCount.toString());
-		}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putBodyParameter("ProjectName", projectName);
-		}
-	}
-
 	public String getCustomLabels() {
 		return this.customLabels;
 	}
@@ -102,14 +84,25 @@ public class CreateStoryRequest extends RpcAcsRequest<CreateStoryResponse> {
 		}
 	}
 
-	public String getStoryStartTime() {
-		return this.storyStartTime;
+	public Notification getNotification() {
+		return this.notification;
 	}
 
-	public void setStoryStartTime(String storyStartTime) {
-		this.storyStartTime = storyStartTime;
-		if(storyStartTime != null){
-			putBodyParameter("StoryStartTime", storyStartTime);
+	public void setNotification(Notification notification) {
+		this.notification = notification;	
+		if (notification != null) {
+			putQueryParameter("Notification" , new Gson().toJson(notification));
+		}	
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putBodyParameter("ProjectName", projectName);
 		}
 	}
 
@@ -135,17 +128,6 @@ public class CreateStoryRequest extends RpcAcsRequest<CreateStoryResponse> {
 		}
 	}
 
-	public String getCustomId() {
-		return this.customId;
-	}
-
-	public void setCustomId(String customId) {
-		this.customId = customId;
-		if(customId != null){
-			putBodyParameter("CustomId", customId);
-		}
-	}
-
 	public Map<String,String> getTags() {
 		return this.tags;
 	}
@@ -157,6 +139,28 @@ public class CreateStoryRequest extends RpcAcsRequest<CreateStoryResponse> {
 		}	
 	}
 
+	public String getStorySubType() {
+		return this.storySubType;
+	}
+
+	public void setStorySubType(String storySubType) {
+		this.storySubType = storySubType;
+		if(storySubType != null){
+			putBodyParameter("StorySubType", storySubType);
+		}
+	}
+
+	public Long getMinFileCount() {
+		return this.minFileCount;
+	}
+
+	public void setMinFileCount(Long minFileCount) {
+		this.minFileCount = minFileCount;
+		if(minFileCount != null){
+			putBodyParameter("MinFileCount", minFileCount.toString());
+		}
+	}
+
 	public String getUserData() {
 		return this.userData;
 	}
@@ -165,17 +169,6 @@ public class CreateStoryRequest extends RpcAcsRequest<CreateStoryResponse> {
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
-		}
-	}
-
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
-	}
-
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
-		if(notifyEndpoint != null){
-			putBodyParameter("NotifyEndpoint", notifyEndpoint);
 		}
 	}
 
@@ -190,17 +183,6 @@ public class CreateStoryRequest extends RpcAcsRequest<CreateStoryResponse> {
 		}
 	}
 
-	public String getStorySubType() {
-		return this.storySubType;
-	}
-
-	public void setStorySubType(String storySubType) {
-		this.storySubType = storySubType;
-		if(storySubType != null){
-			putBodyParameter("StorySubType", storySubType);
-		}
-	}
-
 	public String getDatasetName() {
 		return this.datasetName;
 	}
@@ -209,6 +191,39 @@ public class CreateStoryRequest extends RpcAcsRequest<CreateStoryResponse> {
 		this.datasetName = datasetName;
 		if(datasetName != null){
 			putBodyParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getStoryStartTime() {
+		return this.storyStartTime;
+	}
+
+	public void setStoryStartTime(String storyStartTime) {
+		this.storyStartTime = storyStartTime;
+		if(storyStartTime != null){
+			putBodyParameter("StoryStartTime", storyStartTime);
+		}
+	}
+
+	public Address getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;	
+		if (address != null) {
+			putBodyParameter("Address" , new Gson().toJson(address));
+		}	
+	}
+
+	public String getCustomId() {
+		return this.customId;
+	}
+
+	public void setCustomId(String customId) {
+		this.customId = customId;
+		if(customId != null){
+			putBodyParameter("CustomId", customId);
 		}
 	}
 
@@ -242,6 +257,150 @@ public class CreateStoryRequest extends RpcAcsRequest<CreateStoryResponse> {
 		this.storyName = storyName;
 		if(storyName != null){
 			putBodyParameter("StoryName", storyName);
+		}
+	}
+
+	public static class Notification {
+
+		@SerializedName("MNS")
+		private MNS mNS;
+
+		@SerializedName("RocketMQ")
+		private RocketMQ rocketMQ;
+
+		public MNS getMNS() {
+			return this.mNS;
+		}
+
+		public void setMNS(MNS mNS) {
+			this.mNS = mNS;
+		}
+
+		public RocketMQ getRocketMQ() {
+			return this.rocketMQ;
+		}
+
+		public void setRocketMQ(RocketMQ rocketMQ) {
+			this.rocketMQ = rocketMQ;
+		}
+
+		public static class MNS {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
+		}
+
+		public static class RocketMQ {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("InstanceId")
+			private String instanceId;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
+		}
+	}
+
+	public static class Address {
+
+		@SerializedName("Country")
+		private String country;
+
+		@SerializedName("Province")
+		private String province;
+
+		@SerializedName("City")
+		private String city;
+
+		@SerializedName("District")
+		private String district;
+
+		@SerializedName("Township")
+		private String township;
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public void setCountry(String country) {
+			this.country = country;
+		}
+
+		public String getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(String province) {
+			this.province = province;
+		}
+
+		public String getCity() {
+			return this.city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
+		}
+
+		public String getDistrict() {
+			return this.district;
+		}
+
+		public void setDistrict(String district) {
+			this.district = district;
+		}
+
+		public String getTownship() {
+			return this.township;
+		}
+
+		public void setTownship(String township) {
+			this.township = township;
 		}
 	}
 

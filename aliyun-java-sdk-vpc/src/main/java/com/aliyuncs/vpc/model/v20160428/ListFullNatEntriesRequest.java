@@ -34,11 +34,15 @@ public class ListFullNatEntriesRequest extends RpcAcsRequest<ListFullNatEntriesR
 
 	private String fullNatEntryId;
 
+	private String natIpPort;
+
 	private String fullNatTableId;
 
 	private String nextToken;
 
 	private List<String> fullNatEntryNamess;
+
+	private String natGatewayId;
 
 	private String resourceOwnerAccount;
 
@@ -47,6 +51,8 @@ public class ListFullNatEntriesRequest extends RpcAcsRequest<ListFullNatEntriesR
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String natIp;
 
 	private Long maxResults;
 	public ListFullNatEntriesRequest() {
@@ -104,6 +110,17 @@ public class ListFullNatEntriesRequest extends RpcAcsRequest<ListFullNatEntriesR
 		}
 	}
 
+	public String getNatIpPort() {
+		return this.natIpPort;
+	}
+
+	public void setNatIpPort(String natIpPort) {
+		this.natIpPort = natIpPort;
+		if(natIpPort != null){
+			putQueryParameter("NatIpPort", natIpPort);
+		}
+	}
+
 	public String getFullNatTableId() {
 		return this.fullNatTableId;
 	}
@@ -137,6 +154,17 @@ public class ListFullNatEntriesRequest extends RpcAcsRequest<ListFullNatEntriesR
 				putQueryParameter("FullNatEntryNames." + (i + 1) , fullNatEntryNamess.get(i));
 			}
 		}	
+	}
+
+	public String getNatGatewayId() {
+		return this.natGatewayId;
+	}
+
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
+		if(natGatewayId != null){
+			putQueryParameter("NatGatewayId", natGatewayId);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -180,6 +208,17 @@ public class ListFullNatEntriesRequest extends RpcAcsRequest<ListFullNatEntriesR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getNatIp() {
+		return this.natIp;
+	}
+
+	public void setNatIp(String natIp) {
+		this.natIp = natIp;
+		if(natIp != null){
+			putQueryParameter("NatIp", natIp);
 		}
 	}
 

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInvocationResultsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<InvocationResult> invocationResults;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListInvocationResultsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListInvocationResultsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<InvocationResult> getInvocationResults() {
@@ -79,17 +79,17 @@ public class ListInvocationResultsResponse extends AcsResponse {
 
 		private Boolean success;
 
+		private String message;
+
+		private String finishedTime;
+
 		private String commandId;
 
 		private String instanceId;
 
 		private String invokeRecordStatus;
 
-		private String finishedTime;
-
 		private Integer exitCode;
-
-		private String message;
 
 		public Boolean getSuccess() {
 			return this.success;
@@ -97,6 +97,22 @@ public class ListInvocationResultsResponse extends AcsResponse {
 
 		public void setSuccess(Boolean success) {
 			this.success = success;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getFinishedTime() {
+			return this.finishedTime;
+		}
+
+		public void setFinishedTime(String finishedTime) {
+			this.finishedTime = finishedTime;
 		}
 
 		public String getCommandId() {
@@ -123,28 +139,12 @@ public class ListInvocationResultsResponse extends AcsResponse {
 			this.invokeRecordStatus = invokeRecordStatus;
 		}
 
-		public String getFinishedTime() {
-			return this.finishedTime;
-		}
-
-		public void setFinishedTime(String finishedTime) {
-			this.finishedTime = finishedTime;
-		}
-
 		public Integer getExitCode() {
 			return this.exitCode;
 		}
 
 		public void setExitCode(Integer exitCode) {
 			this.exitCode = exitCode;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
 		}
 	}
 

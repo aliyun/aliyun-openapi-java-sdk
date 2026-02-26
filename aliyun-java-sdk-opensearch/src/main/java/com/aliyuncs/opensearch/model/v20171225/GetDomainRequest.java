@@ -29,7 +29,7 @@ public class GetDomainRequest extends RoaAcsRequest<GetDomainResponse> {
 
 	private String appGroupIdentity;
 	public GetDomainRequest() {
-		super("OpenSearch", "2017-12-25", "GetDomain", "opensearch");
+		super("OpenSearch", "2017-12-25", "GetDomain");
 		setUriPattern("/v4/openapi/domains/[domainName]");
 		setMethod(MethodType.GET);
 		try {

@@ -33,8 +33,8 @@ public class DescribeDomainTopClientIpVisitResponseUnmarshaller {
 			ClientIp clientIp = new ClientIp();
 			clientIp.setRank(_ctx.integerValue("DescribeDomainTopClientIpVisitResponse.ClientIpList["+ i +"].Rank"));
 			clientIp.setClientIp(_ctx.stringValue("DescribeDomainTopClientIpVisitResponse.ClientIpList["+ i +"].ClientIp"));
-			clientIp.setTraffic(_ctx.longValue("DescribeDomainTopClientIpVisitResponse.ClientIpList["+ i +"].Traffic"));
 			clientIp.setAcc(_ctx.longValue("DescribeDomainTopClientIpVisitResponse.ClientIpList["+ i +"].Acc"));
+			clientIp.setTraffic(_ctx.longValue("DescribeDomainTopClientIpVisitResponse.ClientIpList["+ i +"].Traffic"));
 
 			clientIpList.add(clientIp);
 		}

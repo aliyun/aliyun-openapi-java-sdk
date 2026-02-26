@@ -24,6 +24,9 @@ public class GetAuthTokenResponseUnmarshaller {
 		
 		getAuthTokenResponse.setRequestId(_ctx.stringValue("GetAuthTokenResponse.RequestId"));
 		getAuthTokenResponse.setData(_ctx.stringValue("GetAuthTokenResponse.Data"));
+		getAuthTokenResponse.setCode(_ctx.integerValue("GetAuthTokenResponse.Code"));
+		getAuthTokenResponse.setMessage(_ctx.stringValue("GetAuthTokenResponse.Message"));
+		getAuthTokenResponse.setSuccess(_ctx.booleanValue("GetAuthTokenResponse.Success"));
 	 
 	 	return getAuthTokenResponse;
 	}

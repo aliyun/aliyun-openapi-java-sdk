@@ -27,9 +27,11 @@ public class DeleteQualityEntityRequest extends RpcAcsRequest<DeleteQualityEntit
 
 	private String projectName;
 
+	private Long entityId;
+
 	private String envType;
 
-	private Long entityId;
+	private Long projectId;
 	public DeleteQualityEntityRequest() {
 		super("dataworks-public", "2020-05-18", "DeleteQualityEntity");
 		setMethod(MethodType.POST);
@@ -50,6 +52,17 @@ public class DeleteQualityEntityRequest extends RpcAcsRequest<DeleteQualityEntit
 		}
 	}
 
+	public Long getEntityId() {
+		return this.entityId;
+	}
+
+	public void setEntityId(Long entityId) {
+		this.entityId = entityId;
+		if(entityId != null){
+			putBodyParameter("EntityId", entityId.toString());
+		}
+	}
+
 	public String getEnvType() {
 		return this.envType;
 	}
@@ -61,14 +74,14 @@ public class DeleteQualityEntityRequest extends RpcAcsRequest<DeleteQualityEntit
 		}
 	}
 
-	public Long getEntityId() {
-		return this.entityId;
+	public Long getProjectId() {
+		return this.projectId;
 	}
 
-	public void setEntityId(Long entityId) {
-		this.entityId = entityId;
-		if(entityId != null){
-			putBodyParameter("EntityId", entityId.toString());
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

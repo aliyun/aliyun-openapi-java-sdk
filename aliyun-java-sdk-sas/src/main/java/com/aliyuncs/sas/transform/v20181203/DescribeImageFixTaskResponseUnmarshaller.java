@@ -51,6 +51,7 @@ public class DescribeImageFixTaskResponseUnmarshaller {
 			buildTask.setFixTime(_ctx.stringValue("DescribeImageFixTaskResponse.BuildTasks["+ i +"].FixTime"));
 			buildTask.setFinishTime(_ctx.stringValue("DescribeImageFixTaskResponse.BuildTasks["+ i +"].FinishTime"));
 			buildTask.setStatus(_ctx.integerValue("DescribeImageFixTaskResponse.BuildTasks["+ i +"].Status"));
+			buildTask.setVulAlias(_ctx.stringValue("DescribeImageFixTaskResponse.BuildTasks["+ i +"].VulAlias"));
 
 			buildTasks.add(buildTask);
 		}

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListClustersResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<ClusterInfoSimple> clusters;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListClustersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListClustersResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ClusterInfoSimple> getClusters() {
@@ -77,61 +77,65 @@ public class ListClustersResponse extends AcsResponse {
 
 	public static class ClusterInfoSimple {
 
-		private String id;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private String vSwitchId;
-
 		private String vpcId;
-
-		private String name;
-
-		private String description;
 
 		private String status;
 
-		private String osTag;
+		private String createTime;
+
+		private Boolean isComputeEss;
+
+		private String computeSpotStrategy;
 
 		private String accountType;
+
+		private Integer count;
+
+		private String ehpcVersion;
+
+		private String description;
+
+		private String baseOsTag;
+
+		private String name;
+
+		private String imageId;
+
+		private Float computeSpotPriceLimit;
 
 		private String schedulerType;
 
 		private String deployMode;
 
-		private Integer count;
-
-		private String instanceType;
-
-		private String loginNodes;
-
-		private String createTime;
+		private String nodeSuffix;
 
 		private String imageOwnerAlias;
 
-		private String imageId;
-
-		private String location;
-
-		private String ehpcVersion;
+		private String osTag;
 
 		private String nodePrefix;
 
-		private String nodeSuffix;
+		private String instanceType;
 
-		private String baseOsTag;
+		private String regionId;
 
 		private String instanceChargeType;
 
-		private String computeSpotStrategy;
+		private String vSwitchId;
 
-		private Float computeSpotPriceLimit;
+		private String zoneId;
+
+		private String loginNodes;
+
+		private String id;
+
+		private String location;
 
 		private String clientVersion;
 
-		private Boolean isComputeEss;
+		private String resourceGroupId;
+
+		private Boolean hasPlugin;
 
 		private Managers managers;
 
@@ -141,60 +145,12 @@ public class ListClustersResponse extends AcsResponse {
 
 		private UsedResources usedResources;
 
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
 		public String getVpcId() {
 			return this.vpcId;
 		}
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getStatus() {
@@ -205,12 +161,28 @@ public class ListClustersResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getOsTag() {
-			return this.osTag;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setOsTag(String osTag) {
-			this.osTag = osTag;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Boolean getIsComputeEss() {
+			return this.isComputeEss;
+		}
+
+		public void setIsComputeEss(Boolean isComputeEss) {
+			this.isComputeEss = isComputeEss;
+		}
+
+		public String getComputeSpotStrategy() {
+			return this.computeSpotStrategy;
+		}
+
+		public void setComputeSpotStrategy(String computeSpotStrategy) {
+			this.computeSpotStrategy = computeSpotStrategy;
 		}
 
 		public String getAccountType() {
@@ -219,6 +191,62 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setAccountType(String accountType) {
 			this.accountType = accountType;
+		}
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public void setCount(Integer count) {
+			this.count = count;
+		}
+
+		public String getEhpcVersion() {
+			return this.ehpcVersion;
+		}
+
+		public void setEhpcVersion(String ehpcVersion) {
+			this.ehpcVersion = ehpcVersion;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getBaseOsTag() {
+			return this.baseOsTag;
+		}
+
+		public void setBaseOsTag(String baseOsTag) {
+			this.baseOsTag = baseOsTag;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public Float getComputeSpotPriceLimit() {
+			return this.computeSpotPriceLimit;
+		}
+
+		public void setComputeSpotPriceLimit(Float computeSpotPriceLimit) {
+			this.computeSpotPriceLimit = computeSpotPriceLimit;
 		}
 
 		public String getSchedulerType() {
@@ -237,36 +265,12 @@ public class ListClustersResponse extends AcsResponse {
 			this.deployMode = deployMode;
 		}
 
-		public Integer getCount() {
-			return this.count;
+		public String getNodeSuffix() {
+			return this.nodeSuffix;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getLoginNodes() {
-			return this.loginNodes;
-		}
-
-		public void setLoginNodes(String loginNodes) {
-			this.loginNodes = loginNodes;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setNodeSuffix(String nodeSuffix) {
+			this.nodeSuffix = nodeSuffix;
 		}
 
 		public String getImageOwnerAlias() {
@@ -277,28 +281,12 @@ public class ListClustersResponse extends AcsResponse {
 			this.imageOwnerAlias = imageOwnerAlias;
 		}
 
-		public String getImageId() {
-			return this.imageId;
+		public String getOsTag() {
+			return this.osTag;
 		}
 
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getLocation() {
-			return this.location;
-		}
-
-		public void setLocation(String location) {
-			this.location = location;
-		}
-
-		public String getEhpcVersion() {
-			return this.ehpcVersion;
-		}
-
-		public void setEhpcVersion(String ehpcVersion) {
-			this.ehpcVersion = ehpcVersion;
+		public void setOsTag(String osTag) {
+			this.osTag = osTag;
 		}
 
 		public String getNodePrefix() {
@@ -309,20 +297,20 @@ public class ListClustersResponse extends AcsResponse {
 			this.nodePrefix = nodePrefix;
 		}
 
-		public String getNodeSuffix() {
-			return this.nodeSuffix;
+		public String getInstanceType() {
+			return this.instanceType;
 		}
 
-		public void setNodeSuffix(String nodeSuffix) {
-			this.nodeSuffix = nodeSuffix;
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
-		public String getBaseOsTag() {
-			return this.baseOsTag;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setBaseOsTag(String baseOsTag) {
-			this.baseOsTag = baseOsTag;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getInstanceChargeType() {
@@ -333,20 +321,44 @@ public class ListClustersResponse extends AcsResponse {
 			this.instanceChargeType = instanceChargeType;
 		}
 
-		public String getComputeSpotStrategy() {
-			return this.computeSpotStrategy;
+		public String getVSwitchId() {
+			return this.vSwitchId;
 		}
 
-		public void setComputeSpotStrategy(String computeSpotStrategy) {
-			this.computeSpotStrategy = computeSpotStrategy;
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
 		}
 
-		public Float getComputeSpotPriceLimit() {
-			return this.computeSpotPriceLimit;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setComputeSpotPriceLimit(Float computeSpotPriceLimit) {
-			this.computeSpotPriceLimit = computeSpotPriceLimit;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getLoginNodes() {
+			return this.loginNodes;
+		}
+
+		public void setLoginNodes(String loginNodes) {
+			this.loginNodes = loginNodes;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
 		}
 
 		public String getClientVersion() {
@@ -357,12 +369,20 @@ public class ListClustersResponse extends AcsResponse {
 			this.clientVersion = clientVersion;
 		}
 
-		public Boolean getIsComputeEss() {
-			return this.isComputeEss;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setIsComputeEss(Boolean isComputeEss) {
-			this.isComputeEss = isComputeEss;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Boolean getHasPlugin() {
+			return this.hasPlugin;
+		}
+
+		public void setHasPlugin(Boolean hasPlugin) {
+			this.hasPlugin = hasPlugin;
 		}
 
 		public Managers getManagers() {
@@ -399,15 +419,39 @@ public class ListClustersResponse extends AcsResponse {
 
 		public static class Managers {
 
+			private Integer operatingCount;
+
+			private Integer exceptionCount;
+
+			private Integer stoppedCount;
+
 			private Integer total;
 
 			private Integer normalCount;
 
-			private Integer operatingCount;
+			public Integer getOperatingCount() {
+				return this.operatingCount;
+			}
 
-			private Integer stoppedCount;
+			public void setOperatingCount(Integer operatingCount) {
+				this.operatingCount = operatingCount;
+			}
 
-			private Integer exceptionCount;
+			public Integer getExceptionCount() {
+				return this.exceptionCount;
+			}
+
+			public void setExceptionCount(Integer exceptionCount) {
+				this.exceptionCount = exceptionCount;
+			}
+
+			public Integer getStoppedCount() {
+				return this.stoppedCount;
+			}
+
+			public void setStoppedCount(Integer stoppedCount) {
+				this.stoppedCount = stoppedCount;
+			}
 
 			public Integer getTotal() {
 				return this.total;
@@ -423,44 +467,44 @@ public class ListClustersResponse extends AcsResponse {
 
 			public void setNormalCount(Integer normalCount) {
 				this.normalCount = normalCount;
-			}
-
-			public Integer getOperatingCount() {
-				return this.operatingCount;
-			}
-
-			public void setOperatingCount(Integer operatingCount) {
-				this.operatingCount = operatingCount;
-			}
-
-			public Integer getStoppedCount() {
-				return this.stoppedCount;
-			}
-
-			public void setStoppedCount(Integer stoppedCount) {
-				this.stoppedCount = stoppedCount;
-			}
-
-			public Integer getExceptionCount() {
-				return this.exceptionCount;
-			}
-
-			public void setExceptionCount(Integer exceptionCount) {
-				this.exceptionCount = exceptionCount;
 			}
 		}
 
 		public static class Computes {
 
+			private Integer operatingCount;
+
+			private Integer exceptionCount;
+
+			private Integer stoppedCount;
+
 			private Integer total;
 
 			private Integer normalCount;
 
-			private Integer operatingCount;
+			public Integer getOperatingCount() {
+				return this.operatingCount;
+			}
 
-			private Integer stoppedCount;
+			public void setOperatingCount(Integer operatingCount) {
+				this.operatingCount = operatingCount;
+			}
 
-			private Integer exceptionCount;
+			public Integer getExceptionCount() {
+				return this.exceptionCount;
+			}
+
+			public void setExceptionCount(Integer exceptionCount) {
+				this.exceptionCount = exceptionCount;
+			}
+
+			public Integer getStoppedCount() {
+				return this.stoppedCount;
+			}
+
+			public void setStoppedCount(Integer stoppedCount) {
+				this.stoppedCount = stoppedCount;
+			}
 
 			public Integer getTotal() {
 				return this.total;
@@ -477,39 +521,23 @@ public class ListClustersResponse extends AcsResponse {
 			public void setNormalCount(Integer normalCount) {
 				this.normalCount = normalCount;
 			}
-
-			public Integer getOperatingCount() {
-				return this.operatingCount;
-			}
-
-			public void setOperatingCount(Integer operatingCount) {
-				this.operatingCount = operatingCount;
-			}
-
-			public Integer getStoppedCount() {
-				return this.stoppedCount;
-			}
-
-			public void setStoppedCount(Integer stoppedCount) {
-				this.stoppedCount = stoppedCount;
-			}
-
-			public Integer getExceptionCount() {
-				return this.exceptionCount;
-			}
-
-			public void setExceptionCount(Integer exceptionCount) {
-				this.exceptionCount = exceptionCount;
-			}
 		}
 
 		public static class TotalResources {
+
+			private Integer gpu;
 
 			private Integer cpu;
 
 			private Integer memory;
 
-			private Integer gpu;
+			public Integer getGpu() {
+				return this.gpu;
+			}
+
+			public void setGpu(Integer gpu) {
+				this.gpu = gpu;
+			}
 
 			public Integer getCpu() {
 				return this.cpu;
@@ -525,24 +553,24 @@ public class ListClustersResponse extends AcsResponse {
 
 			public void setMemory(Integer memory) {
 				this.memory = memory;
-			}
-
-			public Integer getGpu() {
-				return this.gpu;
-			}
-
-			public void setGpu(Integer gpu) {
-				this.gpu = gpu;
 			}
 		}
 
 		public static class UsedResources {
 
+			private Integer gpu;
+
 			private Integer cpu;
 
 			private Integer memory;
 
-			private Integer gpu;
+			public Integer getGpu() {
+				return this.gpu;
+			}
+
+			public void setGpu(Integer gpu) {
+				this.gpu = gpu;
+			}
 
 			public Integer getCpu() {
 				return this.cpu;
@@ -558,14 +586,6 @@ public class ListClustersResponse extends AcsResponse {
 
 			public void setMemory(Integer memory) {
 				this.memory = memory;
-			}
-
-			public Integer getGpu() {
-				return this.gpu;
-			}
-
-			public void setGpu(Integer gpu) {
-				this.gpu = gpu;
 			}
 		}
 	}

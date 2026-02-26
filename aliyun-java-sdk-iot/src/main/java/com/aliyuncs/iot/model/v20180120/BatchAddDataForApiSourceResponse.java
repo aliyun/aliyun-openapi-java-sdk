@@ -14,7 +14,6 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.iot.transform.v20180120.BatchAddDataForApiSourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,8 +31,6 @@ public class BatchAddDataForApiSourceResponse extends AcsResponse {
 	private String code;
 
 	private String errorMessage;
-
-	private Map<Object,Object> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,14 +62,6 @@ public class BatchAddDataForApiSourceResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
-	}
-
-	public Map<Object,Object> getData() {
-		return this.data;
-	}
-
-	public void setData(Map<Object,Object> data) {
-		this.data = data;
 	}
 
 	@Override

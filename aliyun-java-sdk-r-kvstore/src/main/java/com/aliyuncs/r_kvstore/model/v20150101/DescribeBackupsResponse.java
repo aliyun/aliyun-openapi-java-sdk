@@ -33,7 +33,15 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
+	private Long fullStorageSize;
+
+	private Long logStorageSize;
+
+	private Long freeSize;
+
 	private List<Backup> backups;
+
+	private AccessDeniedDetail accessDeniedDetail;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,12 +75,44 @@ public class DescribeBackupsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
+	public Long getFullStorageSize() {
+		return this.fullStorageSize;
+	}
+
+	public void setFullStorageSize(Long fullStorageSize) {
+		this.fullStorageSize = fullStorageSize;
+	}
+
+	public Long getLogStorageSize() {
+		return this.logStorageSize;
+	}
+
+	public void setLogStorageSize(Long logStorageSize) {
+		this.logStorageSize = logStorageSize;
+	}
+
+	public Long getFreeSize() {
+		return this.freeSize;
+	}
+
+	public void setFreeSize(Long freeSize) {
+		this.freeSize = freeSize;
+	}
+
 	public List<Backup> getBackups() {
 		return this.backups;
 	}
 
 	public void setBackups(List<Backup> backups) {
 		this.backups = backups;
+	}
+
+	public AccessDeniedDetail getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(AccessDeniedDetail accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public static class Backup {
@@ -89,7 +129,7 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String backupEndTime;
 
-		private Integer backupId;
+		private Long backupId;
 
 		private String backupDBNames;
 
@@ -102,6 +142,12 @@ public class DescribeBackupsResponse extends AcsResponse {
 		private String backupMode;
 
 		private String backupMethod;
+
+		private Long backupJobID;
+
+		private String recoverConfigMode;
+
+		private String expectExpireTime;
 
 		public String getBackupStatus() {
 			return this.backupStatus;
@@ -151,11 +197,11 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupEndTime = backupEndTime;
 		}
 
-		public Integer getBackupId() {
+		public Long getBackupId() {
 			return this.backupId;
 		}
 
-		public void setBackupId(Integer backupId) {
+		public void setBackupId(Long backupId) {
 			this.backupId = backupId;
 		}
 
@@ -205,6 +251,103 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupMethod(String backupMethod) {
 			this.backupMethod = backupMethod;
+		}
+
+		public Long getBackupJobID() {
+			return this.backupJobID;
+		}
+
+		public void setBackupJobID(Long backupJobID) {
+			this.backupJobID = backupJobID;
+		}
+
+		public String getRecoverConfigMode() {
+			return this.recoverConfigMode;
+		}
+
+		public void setRecoverConfigMode(String recoverConfigMode) {
+			this.recoverConfigMode = recoverConfigMode;
+		}
+
+		public String getExpectExpireTime() {
+			return this.expectExpireTime;
+		}
+
+		public void setExpectExpireTime(String expectExpireTime) {
+			this.expectExpireTime = expectExpireTime;
+		}
+	}
+
+	public static class AccessDeniedDetail {
+
+		private String authAction;
+
+		private String authPrincipalDisplayName;
+
+		private String authPrincipalOwnerId;
+
+		private String authPrincipalType;
+
+		private String encodedDiagnosticMessage;
+
+		private String noPermissionType;
+
+		private String policyType;
+
+		public String getAuthAction() {
+			return this.authAction;
+		}
+
+		public void setAuthAction(String authAction) {
+			this.authAction = authAction;
+		}
+
+		public String getAuthPrincipalDisplayName() {
+			return this.authPrincipalDisplayName;
+		}
+
+		public void setAuthPrincipalDisplayName(String authPrincipalDisplayName) {
+			this.authPrincipalDisplayName = authPrincipalDisplayName;
+		}
+
+		public String getAuthPrincipalOwnerId() {
+			return this.authPrincipalOwnerId;
+		}
+
+		public void setAuthPrincipalOwnerId(String authPrincipalOwnerId) {
+			this.authPrincipalOwnerId = authPrincipalOwnerId;
+		}
+
+		public String getAuthPrincipalType() {
+			return this.authPrincipalType;
+		}
+
+		public void setAuthPrincipalType(String authPrincipalType) {
+			this.authPrincipalType = authPrincipalType;
+		}
+
+		public String getEncodedDiagnosticMessage() {
+			return this.encodedDiagnosticMessage;
+		}
+
+		public void setEncodedDiagnosticMessage(String encodedDiagnosticMessage) {
+			this.encodedDiagnosticMessage = encodedDiagnosticMessage;
+		}
+
+		public String getNoPermissionType() {
+			return this.noPermissionType;
+		}
+
+		public void setNoPermissionType(String noPermissionType) {
+			this.noPermissionType = noPermissionType;
+		}
+
+		public String getPolicyType() {
+			return this.policyType;
+		}
+
+		public void setPolicyType(String policyType) {
+			this.policyType = policyType;
 		}
 	}
 

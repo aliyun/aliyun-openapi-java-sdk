@@ -1,3 +1,150 @@
+2025-09-15 Version: 6.1.13
+- Add SqlMode for GetDataServicePublishedApi and ListDataServicePublishedApi.
+
+2025-04-27 Version: 6.1.12
+- Generated 2020-05-18 for `dataworks-public`.
+
+2025-04-07 Version: 6.1.11
+- Generated 2020-05-18 for `dataworks-public`.
+
+2025-03-27 Version: 6.1.10
+- Generated 2020-05-18 for `dataworks-public`.
+
+2025-02-20 Version: 6.1.9
+- Generated 2020-05-18 for `dataworks-public`.
+
+2025-01-23 Version: 6.1.8
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-11-21 Version: 6.1.7
+- Support CreateDISyncTask with large param.
+
+2024-10-17 Version: 5.1.11
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-09-29 Version: 5.1.10
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-09-18 Version: 5.1.9
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-09-03 Version: 5.1.8
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-09-03 Version: 5.1.7
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-07-31 Version: 5.1.6
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-06-18 Version: 5.1.5
+- Add TaskSetting in GetQualityRule response.
+
+2024-06-07 Version: 5.1.4
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-06-07 Version: 5.1.3
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-06-04 Version: 5.1.2
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-02-28 Version: 5.1.1
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-02-28 Version: 4.2.17
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-02-28 Version: 1.1.33
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-01-22 Version: 5.1.0
+- Modify type of data quality resource id from Integer to Long.
+
+2023-12-11 Version: 5.0.0
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-12-08 Version: 4.2.16
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-11-16 Version: 4.2.15
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-09-25 Version: 4.2.14
+- Support DIJob and DIAlarmRule related APIs.
+
+2023-08-16 Version: 4.2.13
+- Generated 2018-06-01 for `dataworks-public`.
+
+2023-07-17 Version: 4.2.12
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-06-12 Version: 4.2.11
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-06-09 Version: 4.2.10
+- Generated 2020-05-18, 2018-06-01 for `dataworks-public`.
+
+2023-06-08 Version: 4.2.9
+- Generated 2020-05-18, 2018-06-01 for `dataworks-public`.
+
+2023-06-05 Version: 4.2.8
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-03-31 Version: 4.2.7
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-03-08 Version: 4.2.6
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-03-07 Version: 4.2.5
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-03-07 Version: 4.2.4
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-03-02 Version: 4.2.3
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-03-02 Version: 4.2.2
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-02-09 Version: 4.2.1
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-01-13 Version: 4.2.0
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-01-05 Version: 4.1.6
+- Generated 2020-05-18 for `dataworks-public`.
+
+2022-12-23 Version: 4.1.5
+- Generated 2020-05-18 for `dataworks-public`.
+
+2022-12-22 Version: 4.1.4
+- Generated 2020-05-18 for `dataworks-public`.
+
+2022-12-16 Version: 4.1.3
+- Generated 2020-05-18 for `dataworks-public`.
+
+2022-12-02 Version: 4.1.2
+- Generated 2020-05-18 for `dataworks-public`.
+
+2022-12-02 Version: 4.1.1
+- Generated 2020-05-18 for `dataworks-public`.
+
+2022-11-16 Version: 4.1.0
+- Generated 2020-05-18 for `dataworks-public`.
+
+2022-10-13 Version: 3.4.23
+- Generated 2020-05-18 for `dataworks-public`.
+
+2022-08-31 Version: 3.4.22
+- Generated 2020-05-18 for `dataworks-public`.
+
+2022-08-16 Version: 3.4.21
+- Generated 2020-05-18 for `dataworks-public`.
+
 2022-08-11 Version: 3.4.20
 - Generated 2020-05-18 for `dataworks-public`.
 

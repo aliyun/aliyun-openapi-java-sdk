@@ -31,9 +31,9 @@ public class GetConfigRuleSummaryByRiskLevelResponseUnmarshaller {
 		List<Data> configRuleSummaries = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("GetConfigRuleSummaryByRiskLevelResponse.ConfigRuleSummaries.Length"); i++) {
 			Data data = new Data();
-			data.setRiskLevel(_ctx.integerValue("GetConfigRuleSummaryByRiskLevelResponse.ConfigRuleSummaries["+ i +"].RiskLevel"));
 			data.setCompliantCount(_ctx.integerValue("GetConfigRuleSummaryByRiskLevelResponse.ConfigRuleSummaries["+ i +"].CompliantCount"));
 			data.setNonCompliantCount(_ctx.integerValue("GetConfigRuleSummaryByRiskLevelResponse.ConfigRuleSummaries["+ i +"].NonCompliantCount"));
+			data.setRiskLevel(_ctx.integerValue("GetConfigRuleSummaryByRiskLevelResponse.ConfigRuleSummaries["+ i +"].RiskLevel"));
 
 			configRuleSummaries.add(data);
 		}

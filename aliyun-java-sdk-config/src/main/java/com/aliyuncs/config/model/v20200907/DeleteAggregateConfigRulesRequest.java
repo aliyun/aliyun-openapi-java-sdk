@@ -29,7 +29,7 @@ public class DeleteAggregateConfigRulesRequest extends RpcAcsRequest<DeleteAggre
 
 	private String aggregatorId;
 	public DeleteAggregateConfigRulesRequest() {
-		super("Config", "2020-09-07", "DeleteAggregateConfigRules");
+		super("Config", "2020-09-07", "DeleteAggregateConfigRules", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

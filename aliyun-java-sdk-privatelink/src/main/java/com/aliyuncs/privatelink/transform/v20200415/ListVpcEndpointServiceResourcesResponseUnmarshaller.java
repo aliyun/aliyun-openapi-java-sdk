@@ -28,7 +28,7 @@ public class ListVpcEndpointServiceResourcesResponseUnmarshaller {
 		
 		listVpcEndpointServiceResourcesResponse.setRequestId(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.RequestId"));
 		listVpcEndpointServiceResourcesResponse.setNextToken(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.NextToken"));
-		listVpcEndpointServiceResourcesResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.MaxResults"));
+		listVpcEndpointServiceResourcesResponse.setMaxResults(_ctx.integerValue("ListVpcEndpointServiceResourcesResponse.MaxResults"));
 
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointServiceResourcesResponse.Resources.Length"); i++) {
@@ -44,6 +44,7 @@ public class ListVpcEndpointServiceResourcesResponseUnmarshaller {
 			resource.setRelatedDeprecatedEndpointCount(_ctx.longValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].RelatedDeprecatedEndpointCount"));
 			resource.setAutoAllocatedEnabled(_ctx.booleanValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].AutoAllocatedEnabled"));
 			resource.setStatusInfo(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].StatusInfo"));
+			resource.setResourceSupportIPv6(_ctx.booleanValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].ResourceSupportIPv6"));
 
 			resources.add(resource);
 		}

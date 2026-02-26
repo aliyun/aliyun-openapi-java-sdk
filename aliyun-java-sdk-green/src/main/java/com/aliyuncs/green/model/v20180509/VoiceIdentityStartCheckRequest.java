@@ -27,7 +27,7 @@ public class VoiceIdentityStartCheckRequest extends RoaAcsRequest<VoiceIdentityS
 
 	private String clientInfo;
 	public VoiceIdentityStartCheckRequest() {
-		super("Green", "2018-05-09", "VoiceIdentityStartCheck", "green");
+		super("Green", "2018-05-09", "VoiceIdentityStartCheck");
 		setUriPattern("/green/voice/auth/start/check");
 		setMethod(MethodType.POST);
 		try {

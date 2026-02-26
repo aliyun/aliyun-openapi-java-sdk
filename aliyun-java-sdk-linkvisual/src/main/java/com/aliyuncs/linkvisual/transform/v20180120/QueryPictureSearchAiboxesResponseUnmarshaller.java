@@ -28,21 +28,21 @@ public class QueryPictureSearchAiboxesResponseUnmarshaller {
 	public static QueryPictureSearchAiboxesResponse unmarshall(QueryPictureSearchAiboxesResponse queryPictureSearchAiboxesResponse, UnmarshallerContext _ctx) {
 		
 		queryPictureSearchAiboxesResponse.setRequestId(_ctx.stringValue("QueryPictureSearchAiboxesResponse.RequestId"));
-		queryPictureSearchAiboxesResponse.setSuccess(_ctx.booleanValue("QueryPictureSearchAiboxesResponse.Success"));
 		queryPictureSearchAiboxesResponse.setCode(_ctx.stringValue("QueryPictureSearchAiboxesResponse.Code"));
 		queryPictureSearchAiboxesResponse.setErrorMessage(_ctx.stringValue("QueryPictureSearchAiboxesResponse.ErrorMessage"));
+		queryPictureSearchAiboxesResponse.setSuccess(_ctx.booleanValue("QueryPictureSearchAiboxesResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryPictureSearchAiboxesResponse.Data.Total"));
-		data.setPageCount(_ctx.integerValue("QueryPictureSearchAiboxesResponse.Data.PageCount"));
 		data.setCurrentPage(_ctx.integerValue("QueryPictureSearchAiboxesResponse.Data.CurrentPage"));
 		data.setPageSize(_ctx.integerValue("QueryPictureSearchAiboxesResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryPictureSearchAiboxesResponse.Data.Total"));
+		data.setPageCount(_ctx.integerValue("QueryPictureSearchAiboxesResponse.Data.PageCount"));
 
 		List<SearchData> pageData = new ArrayList<SearchData>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPictureSearchAiboxesResponse.Data.PageData.Length"); i++) {
 			SearchData searchData = new SearchData();
-			searchData.setIotId(_ctx.stringValue("QueryPictureSearchAiboxesResponse.Data.PageData["+ i +"].IotId"));
 			searchData.setNickName(_ctx.stringValue("QueryPictureSearchAiboxesResponse.Data.PageData["+ i +"].NickName"));
+			searchData.setIotId(_ctx.stringValue("QueryPictureSearchAiboxesResponse.Data.PageData["+ i +"].IotId"));
 
 			pageData.add(searchData);
 		}

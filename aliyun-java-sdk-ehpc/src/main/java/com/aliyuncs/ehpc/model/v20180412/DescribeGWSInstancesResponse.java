@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGWSInstancesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<InstanceInfo> instances;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeGWSInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeGWSInstancesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<InstanceInfo> getInstances() {
@@ -77,49 +77,25 @@ public class DescribeGWSInstancesResponse extends AcsResponse {
 
 	public static class InstanceInfo {
 
-		private String clusterId;
-
-		private String instanceId;
-
-		private String instanceType;
-
 		private String status;
-
-		private String createTime;
-
-		private String expireTime;
 
 		private String workMode;
 
+		private String expireTime;
+
+		private String createTime;
+
+		private String instanceId;
+
 		private String name;
+
+		private String instanceType;
 
 		private String userName;
 
+		private String clusterId;
+
 		private List<AppInfo> appList;
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -127,22 +103,6 @@ public class DescribeGWSInstancesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
 		}
 
 		public String getWorkMode() {
@@ -153,6 +113,30 @@ public class DescribeGWSInstancesResponse extends AcsResponse {
 			this.workMode = workMode;
 		}
 
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public String getName() {
 			return this.name;
 		}
@@ -161,12 +145,28 @@ public class DescribeGWSInstancesResponse extends AcsResponse {
 			this.name = name;
 		}
 
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
 		public String getUserName() {
 			return this.userName;
 		}
 
 		public void setUserName(String userName) {
 			this.userName = userName;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 
 		public List<AppInfo> getAppList() {
@@ -181,9 +181,9 @@ public class DescribeGWSInstancesResponse extends AcsResponse {
 
 			private String appName;
 
-			private String appPath;
-
 			private String appArgs;
+
+			private String appPath;
 
 			public String getAppName() {
 				return this.appName;
@@ -193,20 +193,20 @@ public class DescribeGWSInstancesResponse extends AcsResponse {
 				this.appName = appName;
 			}
 
-			public String getAppPath() {
-				return this.appPath;
-			}
-
-			public void setAppPath(String appPath) {
-				this.appPath = appPath;
-			}
-
 			public String getAppArgs() {
 				return this.appArgs;
 			}
 
 			public void setAppArgs(String appArgs) {
 				this.appArgs = appArgs;
+			}
+
+			public String getAppPath() {
+				return this.appPath;
+			}
+
+			public void setAppPath(String appPath) {
+				this.appPath = appPath;
 			}
 		}
 	}

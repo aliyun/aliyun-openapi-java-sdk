@@ -56,6 +56,12 @@ public class DescribeVersionConfigResponseUnmarshaller {
 		describeVersionConfigResponse.setUserDefinedAlarms(_ctx.integerValue("DescribeVersionConfigResponse.UserDefinedAlarms"));
 		describeVersionConfigResponse.setOpenTime(_ctx.longValue("DescribeVersionConfigResponse.OpenTime"));
 		describeVersionConfigResponse.setIsNewContainerVersion(_ctx.booleanValue("DescribeVersionConfigResponse.IsNewContainerVersion"));
+		describeVersionConfigResponse.setIsNewMultiVersion(_ctx.booleanValue("DescribeVersionConfigResponse.IsNewMultiVersion"));
+		describeVersionConfigResponse.setThreatAnalysisCapacity(_ctx.longValue("DescribeVersionConfigResponse.ThreatAnalysisCapacity"));
+		describeVersionConfigResponse.setCspmCapacity(_ctx.longValue("DescribeVersionConfigResponse.CspmCapacity"));
+		describeVersionConfigResponse.setVulFixCapacity(_ctx.longValue("DescribeVersionConfigResponse.VulFixCapacity"));
+		describeVersionConfigResponse.setRaspCapacity(_ctx.longValue("DescribeVersionConfigResponse.RaspCapacity"));
+		describeVersionConfigResponse.setAgentlessCapacity(_ctx.longValue("DescribeVersionConfigResponse.AgentlessCapacity"));
 	 
 	 	return describeVersionConfigResponse;
 	}

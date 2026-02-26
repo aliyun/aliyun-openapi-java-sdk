@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeToutiaoLivePublishResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String description;
 
+	private String requestId;
+
 	private List<ContentItem> content;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDescription() {
 		return this.description;
@@ -45,6 +37,14 @@ public class DescribeToutiaoLivePublishResponse extends AcsResponse {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ContentItem> getContent() {
@@ -57,7 +57,17 @@ public class DescribeToutiaoLivePublishResponse extends AcsResponse {
 
 	public static class ContentItem {
 
+		private String domain;
+
+		private String streamName;
+
 		private String app;
+
+		private Float fps;
+
+		private Float flr;
+
+		private Long timestamp;
 
 		private Float bitrate;
 
@@ -65,15 +75,21 @@ public class DescribeToutiaoLivePublishResponse extends AcsResponse {
 
 		private String cdnName;
 
-		private String domain;
+		public String getDomain() {
+			return this.domain;
+		}
 
-		private Float flr;
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
 
-		private Float fps;
+		public String getStreamName() {
+			return this.streamName;
+		}
 
-		private String streamName;
-
-		private Long timestamp;
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
+		}
 
 		public String getApp() {
 			return this.app;
@@ -81,6 +97,30 @@ public class DescribeToutiaoLivePublishResponse extends AcsResponse {
 
 		public void setApp(String app) {
 			this.app = app;
+		}
+
+		public Float getFps() {
+			return this.fps;
+		}
+
+		public void setFps(Float fps) {
+			this.fps = fps;
+		}
+
+		public Float getFlr() {
+			return this.flr;
+		}
+
+		public void setFlr(Float flr) {
+			this.flr = flr;
+		}
+
+		public Long getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
 		}
 
 		public Float getBitrate() {
@@ -105,46 +145,6 @@ public class DescribeToutiaoLivePublishResponse extends AcsResponse {
 
 		public void setCdnName(String cdnName) {
 			this.cdnName = cdnName;
-		}
-
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
-
-		public Float getFlr() {
-			return this.flr;
-		}
-
-		public void setFlr(Float flr) {
-			this.flr = flr;
-		}
-
-		public Float getFps() {
-			return this.fps;
-		}
-
-		public void setFps(Float fps) {
-			this.fps = fps;
-		}
-
-		public String getStreamName() {
-			return this.streamName;
-		}
-
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
-		}
-
-		public Long getTimestamp() {
-			return this.timestamp;
-		}
-
-		public void setTimestamp(Long timestamp) {
-			this.timestamp = timestamp;
 		}
 	}
 

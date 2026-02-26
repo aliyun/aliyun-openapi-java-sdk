@@ -15,6 +15,7 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -26,13 +27,17 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	private String ensRegionId;
 
-	private String instanceType;
+	private List<Tag> tags;
+
+	private String instanceBillingCycle;
 
 	private String vSwitchId;
 
 	private String name;
 
 	private String networkId;
+
+	private String instanceType;
 	public CreateNatGatewayRequest() {
 		super("Ens", "2017-11-10", "CreateNatGateway", "ens");
 		setMethod(MethodType.POST);
@@ -49,14 +54,28 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getInstanceBillingCycle() {
+		return this.instanceBillingCycle;
+	}
+
+	public void setInstanceBillingCycle(String instanceBillingCycle) {
+		this.instanceBillingCycle = instanceBillingCycle;
+		if(instanceBillingCycle != null){
+			putQueryParameter("InstanceBillingCycle", instanceBillingCycle);
 		}
 	}
 
@@ -90,6 +109,40 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		this.networkId = networkId;
 		if(networkId != null){
 			putQueryParameter("NetworkId", networkId);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

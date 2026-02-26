@@ -14,7 +14,11 @@
 
 package com.aliyuncs.cdn.transform.v20180510;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.cdn.model.v20180510.SetCdnDomainStagingConfigResponse;
+import com.aliyuncs.cdn.model.v20180510.SetCdnDomainStagingConfigResponse.DomainConfigModel;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,6 +27,17 @@ public class SetCdnDomainStagingConfigResponseUnmarshaller {
 	public static SetCdnDomainStagingConfigResponse unmarshall(SetCdnDomainStagingConfigResponse setCdnDomainStagingConfigResponse, UnmarshallerContext _ctx) {
 		
 		setCdnDomainStagingConfigResponse.setRequestId(_ctx.stringValue("SetCdnDomainStagingConfigResponse.RequestId"));
+
+		List<DomainConfigModel> domainConfigList = new ArrayList<DomainConfigModel>();
+		for (int i = 0; i < _ctx.lengthValue("SetCdnDomainStagingConfigResponse.DomainConfigList.Length"); i++) {
+			DomainConfigModel domainConfigModel = new DomainConfigModel();
+			domainConfigModel.setConfigId(_ctx.longValue("SetCdnDomainStagingConfigResponse.DomainConfigList["+ i +"].ConfigId"));
+			domainConfigModel.setDomainName(_ctx.stringValue("SetCdnDomainStagingConfigResponse.DomainConfigList["+ i +"].DomainName"));
+			domainConfigModel.setFunctionName(_ctx.stringValue("SetCdnDomainStagingConfigResponse.DomainConfigList["+ i +"].FunctionName"));
+
+			domainConfigList.add(domainConfigModel);
+		}
+		setCdnDomainStagingConfigResponse.setDomainConfigList(domainConfigList);
 	 
 	 	return setCdnDomainStagingConfigResponse;
 	}

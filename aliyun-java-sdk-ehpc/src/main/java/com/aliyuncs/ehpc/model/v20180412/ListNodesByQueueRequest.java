@@ -31,9 +31,11 @@ public class ListNodesByQueueRequest extends RpcAcsRequest<ListNodesByQueueRespo
 
 	private Integer pageNumber;
 
+	private Boolean async;
+
 	private Integer pageSize;
 	public ListNodesByQueueRequest() {
-		super("EHPC", "2018-04-12", "ListNodesByQueue");
+		super("EHPC", "2018-04-12", "ListNodesByQueue", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,6 +73,17 @@ public class ListNodesByQueueRequest extends RpcAcsRequest<ListNodesByQueueRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 

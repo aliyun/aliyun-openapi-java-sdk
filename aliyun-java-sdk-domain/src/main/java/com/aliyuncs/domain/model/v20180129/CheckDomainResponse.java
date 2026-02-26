@@ -14,6 +14,7 @@
 
 package com.aliyuncs.domain.model.v20180129;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.domain.transform.v20180129.CheckDomainResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -37,6 +38,8 @@ public class CheckDomainResponse extends AcsResponse {
 	private Boolean dynamicCheck;
 
 	private String reason;
+
+	private List<PriceInfo> staticPriceInfo;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -92,6 +95,47 @@ public class CheckDomainResponse extends AcsResponse {
 
 	public void setReason(String reason) {
 		this.reason = reason;
+	}
+
+	public List<PriceInfo> getStaticPriceInfo() {
+		return this.staticPriceInfo;
+	}
+
+	public void setStaticPriceInfo(List<PriceInfo> staticPriceInfo) {
+		this.staticPriceInfo = staticPriceInfo;
+	}
+
+	public static class PriceInfo {
+
+		private String action;
+
+		private Double money;
+
+		private Long period;
+
+		public String getAction() {
+			return this.action;
+		}
+
+		public void setAction(String action) {
+			this.action = action;
+		}
+
+		public Double getMoney() {
+			return this.money;
+		}
+
+		public void setMoney(Double money) {
+			this.money = money;
+		}
+
+		public Long getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(Long period) {
+			this.period = period;
+		}
 	}
 
 	@Override

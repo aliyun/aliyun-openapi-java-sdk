@@ -24,48 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeFlowResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String name;
-
-	private String description;
+	private String type;
 
 	private String definition;
 
-	private String id;
-
-	private String type;
-
 	private String roleArn;
+
+	private String requestId;
+
+	private String description;
+
+	private String externalStorageLocation;
+
+	private String name;
 
 	private String createdTime;
 
 	private String lastModifiedTime;
 
-	private String externalStorageLocation;
+	private String id;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String executionMode;
+
+	public String getType() {
+		return this.type;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getDefinition() {
@@ -76,28 +62,44 @@ public class DescribeFlowResponse extends AcsResponse {
 		this.definition = definition;
 	}
 
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
 	public String getRoleArn() {
 		return this.roleArn;
 	}
 
 	public void setRoleArn(String roleArn) {
 		this.roleArn = roleArn;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getExternalStorageLocation() {
+		return this.externalStorageLocation;
+	}
+
+	public void setExternalStorageLocation(String externalStorageLocation) {
+		this.externalStorageLocation = externalStorageLocation;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getCreatedTime() {
@@ -116,12 +118,20 @@ public class DescribeFlowResponse extends AcsResponse {
 		this.lastModifiedTime = lastModifiedTime;
 	}
 
-	public String getExternalStorageLocation() {
-		return this.externalStorageLocation;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setExternalStorageLocation(String externalStorageLocation) {
-		this.externalStorageLocation = externalStorageLocation;
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getExecutionMode() {
+		return this.executionMode;
+	}
+
+	public void setExecutionMode(String executionMode) {
+		this.executionMode = executionMode;
 	}
 
 	@Override

@@ -27,6 +27,8 @@ public class UpdateLiveStreamMonitorRequest extends RpcAcsRequest<UpdateLiveStre
 
 	private String monitorId;
 
+	private String monitorConfig;
+
 	private String monitorName;
 
 	private String stream;
@@ -37,9 +39,13 @@ public class UpdateLiveStreamMonitorRequest extends RpcAcsRequest<UpdateLiveStre
 
 	private String inputList;
 
+	private String dingTalkWebHookUrl;
+
 	private Long ownerId;
 
 	private String domain;
+
+	private String callbackUrl;
 	public UpdateLiveStreamMonitorRequest() {
 		super("live", "2016-11-01", "UpdateLiveStreamMonitor", "live");
 		setMethod(MethodType.POST);
@@ -57,6 +63,17 @@ public class UpdateLiveStreamMonitorRequest extends RpcAcsRequest<UpdateLiveStre
 		this.monitorId = monitorId;
 		if(monitorId != null){
 			putQueryParameter("MonitorId", monitorId);
+		}
+	}
+
+	public String getMonitorConfig() {
+		return this.monitorConfig;
+	}
+
+	public void setMonitorConfig(String monitorConfig) {
+		this.monitorConfig = monitorConfig;
+		if(monitorConfig != null){
+			putQueryParameter("MonitorConfig", monitorConfig);
 		}
 	}
 
@@ -115,6 +132,17 @@ public class UpdateLiveStreamMonitorRequest extends RpcAcsRequest<UpdateLiveStre
 		}
 	}
 
+	public String getDingTalkWebHookUrl() {
+		return this.dingTalkWebHookUrl;
+	}
+
+	public void setDingTalkWebHookUrl(String dingTalkWebHookUrl) {
+		this.dingTalkWebHookUrl = dingTalkWebHookUrl;
+		if(dingTalkWebHookUrl != null){
+			putQueryParameter("DingTalkWebHookUrl", dingTalkWebHookUrl);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -134,6 +162,17 @@ public class UpdateLiveStreamMonitorRequest extends RpcAcsRequest<UpdateLiveStre
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public String getCallbackUrl() {
+		return this.callbackUrl;
+	}
+
+	public void setCallbackUrl(String callbackUrl) {
+		this.callbackUrl = callbackUrl;
+		if(callbackUrl != null){
+			putQueryParameter("CallbackUrl", callbackUrl);
 		}
 	}
 

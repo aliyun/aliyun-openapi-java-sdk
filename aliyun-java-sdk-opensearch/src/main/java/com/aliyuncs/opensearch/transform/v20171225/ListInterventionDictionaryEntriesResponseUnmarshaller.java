@@ -28,18 +28,18 @@ public class ListInterventionDictionaryEntriesResponseUnmarshaller {
 
 	public static ListInterventionDictionaryEntriesResponse unmarshall(ListInterventionDictionaryEntriesResponse listInterventionDictionaryEntriesResponse, UnmarshallerContext _ctx) {
 		
-		listInterventionDictionaryEntriesResponse.setRequestId(_ctx.stringValue("ListInterventionDictionaryEntriesResponse.requestId"));
 		listInterventionDictionaryEntriesResponse.setTotalCount(_ctx.integerValue("ListInterventionDictionaryEntriesResponse.totalCount"));
+		listInterventionDictionaryEntriesResponse.setRequestId(_ctx.stringValue("ListInterventionDictionaryEntriesResponse.requestId"));
 
 		List<WordItem> result = new ArrayList<WordItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInterventionDictionaryEntriesResponse.result.Length"); i++) {
 			WordItem wordItem = new WordItem();
 			wordItem.setCmd(_ctx.stringValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].cmd"));
-			wordItem.setWord(_ctx.stringValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].word"));
 			wordItem.setCreated(_ctx.longValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].created"));
-			wordItem.setUpdated(_ctx.longValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].updated"));
-			wordItem.setStatus(_ctx.stringValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].status"));
+			wordItem.setWord(_ctx.stringValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].word"));
 			wordItem.setRelevance(_ctx.mapValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].relevance"));
+			wordItem.setStatus(_ctx.stringValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].status"));
+			wordItem.setUpdated(_ctx.longValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].updated"));
 
 			List<Token> tokens = new ArrayList<Token>();
 			for (int j = 0; j < _ctx.lengthValue("ListInterventionDictionaryEntriesResponse.result["+ i +"].tokens.Length"); j++) {

@@ -38,6 +38,8 @@ public class SearchTracesByPageRequest extends RpcAcsRequest<SearchTracesByPageR
 
 	private Integer pageNumber;
 
+	private Boolean isError;
+
 	private List<Tags> tagss;
 
 	private String serviceIp;
@@ -121,6 +123,17 @@ public class SearchTracesByPageRequest extends RpcAcsRequest<SearchTracesByPageR
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Boolean getIsError() {
+		return this.isError;
+	}
+
+	public void setIsError(Boolean isError) {
+		this.isError = isError;
+		if(isError != null){
+			putQueryParameter("IsError", isError.toString());
 		}
 	}
 

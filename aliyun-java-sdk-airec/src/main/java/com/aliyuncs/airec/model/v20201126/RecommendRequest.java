@@ -33,6 +33,8 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 
 	private String userId;
 
+	private String filter;
+
 	private String serviceType;
 
 	private String instanceId;
@@ -42,6 +44,8 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 	private String imei;
 
 	private Boolean rankOpen;
+
+	private String strategy;
 
 	private String items;
 
@@ -100,6 +104,17 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 		}
 	}
 
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("filter", filter);
+		}
+	}
+
 	public String getServiceType() {
 		return this.serviceType;
 	}
@@ -152,6 +167,17 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 		this.rankOpen = rankOpen;
 		if(rankOpen != null){
 			putQueryParameter("rankOpen", rankOpen.toString());
+		}
+	}
+
+	public String getStrategy() {
+		return this.strategy;
+	}
+
+	public void setStrategy(String strategy) {
+		this.strategy = strategy;
+		if(strategy != null){
+			putQueryParameter("strategy", strategy);
 		}
 	}
 

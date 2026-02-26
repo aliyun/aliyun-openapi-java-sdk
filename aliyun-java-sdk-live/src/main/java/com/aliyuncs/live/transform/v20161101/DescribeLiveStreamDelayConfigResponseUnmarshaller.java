@@ -28,18 +28,18 @@ public class DescribeLiveStreamDelayConfigResponseUnmarshaller {
 		describeLiveStreamDelayConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamDelayConfigResponse.RequestId"));
 
 		LiveStreamHlsDelayConfig liveStreamHlsDelayConfig = new LiveStreamHlsDelayConfig();
-		liveStreamHlsDelayConfig.setLevel(_ctx.stringValue("DescribeLiveStreamDelayConfigResponse.LiveStreamHlsDelayConfig.Level"));
 		liveStreamHlsDelayConfig.setDelay(_ctx.integerValue("DescribeLiveStreamDelayConfigResponse.LiveStreamHlsDelayConfig.Delay"));
+		liveStreamHlsDelayConfig.setLevel(_ctx.stringValue("DescribeLiveStreamDelayConfigResponse.LiveStreamHlsDelayConfig.Level"));
 		describeLiveStreamDelayConfigResponse.setLiveStreamHlsDelayConfig(liveStreamHlsDelayConfig);
 
 		LiveStreamFlvDelayConfig liveStreamFlvDelayConfig = new LiveStreamFlvDelayConfig();
-		liveStreamFlvDelayConfig.setLevel(_ctx.stringValue("DescribeLiveStreamDelayConfigResponse.LiveStreamFlvDelayConfig.Level"));
 		liveStreamFlvDelayConfig.setDelay(_ctx.integerValue("DescribeLiveStreamDelayConfigResponse.LiveStreamFlvDelayConfig.Delay"));
+		liveStreamFlvDelayConfig.setLevel(_ctx.stringValue("DescribeLiveStreamDelayConfigResponse.LiveStreamFlvDelayConfig.Level"));
 		describeLiveStreamDelayConfigResponse.setLiveStreamFlvDelayConfig(liveStreamFlvDelayConfig);
 
 		LiveStreamRtmpDelayConfig liveStreamRtmpDelayConfig = new LiveStreamRtmpDelayConfig();
-		liveStreamRtmpDelayConfig.setLevel(_ctx.stringValue("DescribeLiveStreamDelayConfigResponse.LiveStreamRtmpDelayConfig.Level"));
 		liveStreamRtmpDelayConfig.setDelay(_ctx.integerValue("DescribeLiveStreamDelayConfigResponse.LiveStreamRtmpDelayConfig.Delay"));
+		liveStreamRtmpDelayConfig.setLevel(_ctx.stringValue("DescribeLiveStreamDelayConfigResponse.LiveStreamRtmpDelayConfig.Level"));
 		describeLiveStreamDelayConfigResponse.setLiveStreamRtmpDelayConfig(liveStreamRtmpDelayConfig);
 	 
 	 	return describeLiveStreamDelayConfigResponse;

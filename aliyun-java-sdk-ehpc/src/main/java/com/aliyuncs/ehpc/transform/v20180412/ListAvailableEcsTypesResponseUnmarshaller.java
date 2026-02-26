@@ -33,23 +33,23 @@ public class ListAvailableEcsTypesResponseUnmarshaller {
 		List<InstanceTypeFamilyInfo> instanceTypeFamilies = new ArrayList<InstanceTypeFamilyInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies.Length"); i++) {
 			InstanceTypeFamilyInfo instanceTypeFamilyInfo = new InstanceTypeFamilyInfo();
-			instanceTypeFamilyInfo.setInstanceTypeFamilyId(_ctx.stringValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].InstanceTypeFamilyId"));
 			instanceTypeFamilyInfo.setGeneration(_ctx.stringValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Generation"));
+			instanceTypeFamilyInfo.setInstanceTypeFamilyId(_ctx.stringValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].InstanceTypeFamilyId"));
 
 			List<TypesInfo> types = new ArrayList<TypesInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types.Length"); j++) {
 				TypesInfo typesInfo = new TypesInfo();
-				typesInfo.setCpuCoreCount(_ctx.integerValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].CpuCoreCount"));
-				typesInfo.setMemorySize(_ctx.integerValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].MemorySize"));
-				typesInfo.setGPUAmount(_ctx.integerValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].GPUAmount"));
+				typesInfo.setStatus(_ctx.stringValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].Status"));
+				typesInfo.setInstanceTypeId(_ctx.stringValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstanceTypeId"));
 				typesInfo.setInstanceBandwidthRx(_ctx.integerValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstanceBandwidthRx"));
+				typesInfo.setGPUSpec(_ctx.stringValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].GPUSpec"));
+				typesInfo.setInstanceBandwidthTx(_ctx.integerValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstanceBandwidthTx"));
 				typesInfo.setInstancePpsRx(_ctx.integerValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstancePpsRx"));
 				typesInfo.setInstancePpsTx(_ctx.integerValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstancePpsTx"));
+				typesInfo.setGPUAmount(_ctx.integerValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].GPUAmount"));
+				typesInfo.setCpuCoreCount(_ctx.integerValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].CpuCoreCount"));
+				typesInfo.setMemorySize(_ctx.integerValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].MemorySize"));
 				typesInfo.setEniQuantity(_ctx.integerValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].EniQuantity"));
-				typesInfo.setInstanceBandwidthTx(_ctx.integerValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstanceBandwidthTx"));
-				typesInfo.setInstanceTypeId(_ctx.stringValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstanceTypeId"));
-				typesInfo.setGPUSpec(_ctx.stringValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].GPUSpec"));
-				typesInfo.setStatus(_ctx.stringValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].Status"));
 
 				List<String> zoneIds = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].ZoneIds.Length"); k++) {

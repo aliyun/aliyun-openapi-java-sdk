@@ -37,7 +37,7 @@ public class CreateRestorePlanRequest extends RpcAcsRequest<CreateRestorePlanRes
 
 	private String targetClusterId;
 	public CreateRestorePlanRequest() {
-		super("HBase", "2019-01-01", "CreateRestorePlan", "hbase");
+		super("HBase", "2019-01-01", "CreateRestorePlan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

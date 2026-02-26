@@ -43,7 +43,7 @@ public class GetResourcePackagePriceRequest extends RpcAcsRequest<GetResourcePac
 
 	private String orderType;
 	public GetResourcePackagePriceRequest() {
-		super("BssOpenApi", "2017-12-14", "GetResourcePackagePrice");
+		super("BssOpenApi", "2017-12-14", "GetResourcePackagePrice", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

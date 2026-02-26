@@ -32,9 +32,9 @@ public class ListInstalledSoftwareResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListInstalledSoftwareResponse.SoftwareList.Length"); i++) {
 			SoftwareListItem softwareListItem = new SoftwareListItem();
 			softwareListItem.setSoftwareId(_ctx.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareId"));
-			softwareListItem.setSoftwareName(_ctx.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareName"));
-			softwareListItem.setSoftwareVersion(_ctx.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareVersion"));
 			softwareListItem.setSoftwareStatus(_ctx.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareStatus"));
+			softwareListItem.setSoftwareVersion(_ctx.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareVersion"));
+			softwareListItem.setSoftwareName(_ctx.stringValue("ListInstalledSoftwareResponse.SoftwareList["+ i +"].SoftwareName"));
 
 			softwareList.add(softwareListItem);
 		}

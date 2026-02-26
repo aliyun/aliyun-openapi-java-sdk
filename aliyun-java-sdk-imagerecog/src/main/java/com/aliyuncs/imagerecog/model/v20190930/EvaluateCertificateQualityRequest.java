@@ -29,7 +29,7 @@ public class EvaluateCertificateQualityRequest extends RpcAcsRequest<EvaluateCer
 
 	private String imageURL;
 	public EvaluateCertificateQualityRequest() {
-		super("imagerecog", "2019-09-30", "EvaluateCertificateQuality", "imagerecog");
+		super("imagerecog", "2019-09-30", "EvaluateCertificateQuality");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

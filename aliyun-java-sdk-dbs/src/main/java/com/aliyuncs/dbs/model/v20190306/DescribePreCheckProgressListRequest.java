@@ -29,11 +29,11 @@ public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribeP
 
 	private String backupPlanId;
 
-	private String ownerId;
-
 	private String restoreTaskId;
+
+	private String ownerId;
 	public DescribePreCheckProgressListRequest() {
-		super("Dbs", "2019-03-06", "DescribePreCheckProgressList");
+		super("Dbs", "2019-03-06", "DescribePreCheckProgressList", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,17 +63,6 @@ public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribeP
 		}
 	}
 
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
 	public String getRestoreTaskId() {
 		return this.restoreTaskId;
 	}
@@ -82,6 +71,17 @@ public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribeP
 		this.restoreTaskId = restoreTaskId;
 		if(restoreTaskId != null){
 			putQueryParameter("RestoreTaskId", restoreTaskId);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

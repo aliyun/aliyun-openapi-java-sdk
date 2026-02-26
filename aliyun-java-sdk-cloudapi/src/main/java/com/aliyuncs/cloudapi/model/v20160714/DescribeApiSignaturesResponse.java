@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeApiSignaturesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<ApiSignatureItem> apiSignatures;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeApiSignaturesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeApiSignaturesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ApiSignatureItem> getApiSignatures() {
@@ -77,15 +77,23 @@ public class DescribeApiSignaturesResponse extends AcsResponse {
 
 	public static class ApiSignatureItem {
 
-		private String apiId;
+		private String boundTime;
 
-		private String apiName;
+		private String apiId;
 
 		private String signatureId;
 
 		private String signatureName;
 
-		private String boundTime;
+		private String apiName;
+
+		public String getBoundTime() {
+			return this.boundTime;
+		}
+
+		public void setBoundTime(String boundTime) {
+			this.boundTime = boundTime;
+		}
 
 		public String getApiId() {
 			return this.apiId;
@@ -93,14 +101,6 @@ public class DescribeApiSignaturesResponse extends AcsResponse {
 
 		public void setApiId(String apiId) {
 			this.apiId = apiId;
-		}
-
-		public String getApiName() {
-			return this.apiName;
-		}
-
-		public void setApiName(String apiName) {
-			this.apiName = apiName;
 		}
 
 		public String getSignatureId() {
@@ -119,12 +119,12 @@ public class DescribeApiSignaturesResponse extends AcsResponse {
 			this.signatureName = signatureName;
 		}
 
-		public String getBoundTime() {
-			return this.boundTime;
+		public String getApiName() {
+			return this.apiName;
 		}
 
-		public void setBoundTime(String boundTime) {
-			this.boundTime = boundTime;
+		public void setApiName(String apiName) {
+			this.apiName = apiName;
 		}
 	}
 

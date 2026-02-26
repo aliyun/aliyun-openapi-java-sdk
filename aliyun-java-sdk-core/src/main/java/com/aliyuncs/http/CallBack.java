@@ -2,9 +2,6 @@ package com.aliyuncs.http;
 
 /**
  * 用于异步调用时的回调逻辑
- *
- * @author VK.Gao
- * @date 2017/03/02
  */
 public interface CallBack {
 

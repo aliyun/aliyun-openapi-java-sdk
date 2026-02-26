@@ -31,7 +31,7 @@ public class DescribeDomainTopAttackListRequest extends RpcAcsRequest<DescribeDo
 
 	private String resourceGroupId;
 	public DescribeDomainTopAttackListRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDomainTopAttackList");
+		super("ddoscoo", "2020-01-01", "DescribeDomainTopAttackList", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

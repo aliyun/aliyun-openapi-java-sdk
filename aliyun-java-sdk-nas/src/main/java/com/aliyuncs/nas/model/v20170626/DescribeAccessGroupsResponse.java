@@ -89,6 +89,10 @@ public class DescribeAccessGroupsResponse extends AcsResponse {
 
 		private Integer mountTargetCount;
 
+		private String fileSystemType;
+
+		private String regionId;
+
 		private List<Tag> tags;
 
 		public String getAccessGroupName() {
@@ -137,6 +141,22 @@ public class DescribeAccessGroupsResponse extends AcsResponse {
 
 		public void setMountTargetCount(Integer mountTargetCount) {
 			this.mountTargetCount = mountTargetCount;
+		}
+
+		public String getFileSystemType() {
+			return this.fileSystemType;
+		}
+
+		public void setFileSystemType(String fileSystemType) {
+			this.fileSystemType = fileSystemType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<Tag> getTags() {

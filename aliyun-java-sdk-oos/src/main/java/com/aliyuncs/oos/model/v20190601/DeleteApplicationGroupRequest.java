@@ -25,6 +25,8 @@ import com.aliyuncs.oos.Endpoint;
 public class DeleteApplicationGroupRequest extends RpcAcsRequest<DeleteApplicationGroupResponse> {
 	   
 
+	private Boolean retainResource;
+
 	private String applicationName;
 
 	private String name;
@@ -35,6 +37,17 @@ public class DeleteApplicationGroupRequest extends RpcAcsRequest<DeleteApplicati
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getRetainResource() {
+		return this.retainResource;
+	}
+
+	public void setRetainResource(Boolean retainResource) {
+		this.retainResource = retainResource;
+		if(retainResource != null){
+			putQueryParameter("RetainResource", retainResource.toString());
+		}
 	}
 
 	public String getApplicationName() {

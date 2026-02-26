@@ -56,7 +56,7 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings("deprecation")
     @Test
-    public void testConstructor() throws ClientException, IOException {
+    public void testConstructor() throws ClientException {
         DefaultAcsClient client = new DefaultAcsClient();
         Assert.assertTrue(DefaultProfile.getProfile() == client.getProfile());
         client = new DefaultAcsClient("cn-test");
@@ -70,7 +70,7 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings("deprecation")
     @Test
-    public void testConstructorWithProfile() throws ClientException, IOException {
+    public void testConstructorWithProfile() {
         Credential credential = mock(Credential.class);
         when(credential.getSecurityToken()).thenReturn(null);
         DefaultProfile profile = mock(DefaultProfile.class);
@@ -82,16 +82,27 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings("deprecation")
     @Test
-    public void testConstructorWithProfileAndCredentials() throws ClientException, IOException {
+    public void testConstructorWithProfileAndCredentials() {
         DefaultProfile profile = mock(DefaultProfile.class);
         LegacyCredentials legacyCredentials = new LegacyCredentials(new Credential());
         DefaultAcsClient client = new DefaultAcsClient(profile, legacyCredentials);
         Assert.assertTrue(profile == client.getProfile());
     }
 
+    @Test
+    public void testConstructorWithProfileAndCredentialsProvider() throws NoSuchFieldException, IllegalAccessException {
+        DefaultProfile profile = mock(DefaultProfile.class);
+        STSAssumeRoleSessionCredentialsProvider provider = mock(STSAssumeRoleSessionCredentialsProvider.class);
+        when(profile.getCredentialsProvider()).thenReturn(provider);
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+        Field field = client.getClass().getDeclaredField("credentialsProvider");
+        field.setAccessible(true);
+        Assert.assertTrue(field.get(client) instanceof STSAssumeRoleSessionCredentialsProvider);
+    }
+
     @SuppressWarnings("deprecation")
     @Test
-    public void testGetSetHttpClient() throws ClientException, IOException {
+    public void testGetSetHttpClient() {
         Credential credential = mock(Credential.class);
         when(credential.getSecurityToken()).thenReturn(null);
         DefaultProfile profile = mock(DefaultProfile.class);
@@ -123,9 +134,9 @@ public class DefaultAcsClientTest {
         DefaultProfile profile = mock(DefaultProfile.class);
         when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
-        Assert.assertTrue(3 == client.getMaxRetryNumber());
+        Assert.assertEquals(3, client.getMaxRetryNumber());
         client.setMaxRetryNumber(1);
-        Assert.assertTrue(1 == client.getMaxRetryNumber());
+        Assert.assertEquals(1, client.getMaxRetryNumber());
     }
 
     @SuppressWarnings("deprecation")
@@ -162,7 +173,7 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings("deprecation")
     private DefaultAcsClient initDefaultAcsClient() throws NoSuchFieldException, SecurityException,
-            IllegalArgumentException, IllegalAccessException, ClientException {
+            IllegalArgumentException, IllegalAccessException {
         Credential credential = mock(Credential.class);
         when(credential.getSecurityToken()).thenReturn(null);
         DefaultProfile profile = mock(DefaultProfile.class);
@@ -182,7 +193,7 @@ public class DefaultAcsClientTest {
     }
 
     private DefaultAcsClient initDefaultAcsClientWithLogger(Logger logger) throws NoSuchFieldException, SecurityException,
-            IllegalArgumentException, IllegalAccessException, ClientException {
+            IllegalArgumentException, IllegalAccessException {
         Credential credential = mock(Credential.class);
         when(credential.getSecurityToken()).thenReturn(null);
         DefaultProfile profile = mock(DefaultProfile.class);
@@ -242,7 +253,7 @@ public class DefaultAcsClientTest {
 
     @Test
     public void testRestoreSSLCertificate() throws NoSuchFieldException, SecurityException, IllegalArgumentException,
-            IllegalAccessException, ClientException {
+            IllegalAccessException {
         DefaultAcsClient client = initDefaultAcsClient();
         client.restoreSSLCertificate();
         client.ignoreSSLCertificate();
@@ -252,7 +263,7 @@ public class DefaultAcsClientTest {
 
     @Test
     public void testSignature() throws NoSuchFieldException, SecurityException, IllegalArgumentException,
-            IllegalAccessException, ClientException {
+            IllegalAccessException {
         DefaultAcsClient client = initDefaultAcsClient();
         client.setSignatureVersion(SignatureVersion.V3);
         client.setSignatureAlgorithm(SignatureAlgorithm.ACS3_HMAC_SHA256);
@@ -262,7 +273,7 @@ public class DefaultAcsClientTest {
 
     @Test
     public void testRetryPolicy() throws NoSuchFieldException, SecurityException, IllegalArgumentException,
-            IllegalAccessException, ClientException {
+            IllegalAccessException {
         DefaultAcsClient client = initDefaultAcsClient();
         client.setSysRetryPolicy(RetryPolicy.defaultRetryPolicy(true));
         Assert.assertTrue(3 == client.getSysRetryPolicy().maxNumberOfRetries());
@@ -363,7 +374,7 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings({"unchecked", "rawtypes"})
     @Test
-    public void testGetAcsResponseNoProfile() throws ClientException, IOException, IllegalArgumentException,
+    public void testGetAcsResponseNoProfile() throws ClientException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
         DefaultAcsClient client = initDefaultAcsClient();
         Field clientProfile = client.getClass().getDeclaredField("clientProfile");
@@ -377,7 +388,7 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings({"deprecation", "unchecked", "rawtypes"})
     @Test
-    public void testReadResponseUnmarshaller() throws ClientException, IOException, IllegalArgumentException,
+    public void testReadResponseUnmarshaller() throws ClientException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
         Credential credential = mock(Credential.class);
         when(credential.getSecurityToken()).thenReturn(null);
@@ -474,8 +485,8 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
-    public void testDoActionEndpointTestabilityException() throws ClientException, IOException,
-            IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
+    public void testDoActionEndpointTestabilityException1() throws ClientException,
+            IllegalArgumentException, SecurityException {
         Credential credential = mock(Credential.class);
         when(credential.getSecurityToken()).thenReturn(null);
         DefaultProfile profile = mock(DefaultProfile.class);
@@ -492,10 +503,16 @@ public class DefaultAcsClientTest {
     }
 
     @Test
-    public void doActionTest() throws ClientException {
-        System.setProperty("alibabacloud.accessKeyId", "test");
-        System.setProperty("alibabacloud.accessKeyIdSecret", "test");
-        DefaultAcsClient client = new DefaultAcsClient("test");
+    public void testDoActionEndpointTestabilityException2() throws ClientException,
+            IllegalArgumentException, SecurityException {
+        Credential credential = mock(Credential.class);
+        when(credential.getSecurityToken()).thenReturn(null);
+        when(credential.getAccessKeyId()).thenReturn("test");
+        when(credential.getAccessSecret()).thenReturn("test");
+        DefaultProfile profile = mock(DefaultProfile.class);
+        when(profile.getCredential()).thenReturn(credential);
+        when(profile.getRegionId()).thenReturn("test");
+        DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
         String endPoint = "endpoint-test.exception.com";
@@ -504,22 +521,32 @@ public class DefaultAcsClientTest {
         thrown.expect(ClientException.class);
         thrown.expectMessage(ErrorCodeConstant.SDK_ENDPOINT_TESTABILITY + " : " + endPoint);
         client.doAction(request);
+    }
 
+    @Test
+    public void testDoAction() throws ClientException, NoSuchFieldException, IllegalAccessException, IOException {
+        DefaultAcsClient client = initDefaultAcsClient();
+        AcsRequest request = initRequest(DescribeEndpointsResponse.class);
         HttpResponse response = mock(HttpResponse.class);
-        AcsRequest req = mock(AcsRequest.class);
-        Mockito.doReturn(response).when(client).doAction(req);
-        when(response.isSuccess()).thenReturn(false);
-        when(response.getHttpContentType()).thenReturn(FormatType.XML);
-        when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "500", "ServerException", ""));
+        Mockito.doReturn(new ProductDomain("test", "test")).when(request).getSysProductDomain();
+        Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
+        when(response.isSuccess()).thenReturn(true);
+        when(response.getStatus()).thenReturn(200);
+        when(response.getHttpContentType()).thenReturn(FormatType.JSON);
+        when(response.getHttpContentString()).thenReturn("{\"RequestId\": \"123\"}");
         HttpResponse resp = client.doAction(request);
         Assert.assertNotNull(resp);
-        Assert.assertEquals(500, resp.getStatus());
-        when(response.isSuccess()).thenReturn(true);
-        when(response.getHttpContentType()).thenReturn(FormatType.XML);
-        when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "200", "Succeed", ""));
-        resp = client.doAction(request);
-        Assert.assertNotNull(resp);
         Assert.assertEquals(200, resp.getStatus());
+        Assert.assertEquals("{\"RequestId\": \"123\"}", resp.getHttpContentString());
+
+        when(response.isSuccess()).thenReturn(false);
+        when(response.getStatus()).thenReturn(500);
+        when(response.getHttpContentType()).thenReturn(FormatType.XML);
+        when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "500", "ServerException", ""));
+        client.doAction(request);
+        Assert.assertNotNull(resp);
+        Assert.assertEquals(500, resp.getStatus());
+        Assert.assertEquals("<Error><RequestId></RequestId><HostId></HostId><Code>500</Code><Message><![CDATA[ServerException]]></Message><Recommend><![CDATA[]]></Recommend></Error>", resp.getHttpContentString());
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
@@ -606,8 +633,8 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
-    public void testGetCommonResponseServerException() throws ClientException, IOException, IllegalArgumentException,
-            IllegalAccessException, NoSuchFieldException, SecurityException {
+    public void testGetCommonResponseServerException() throws ClientException, IllegalArgumentException,
+            SecurityException {
         Credential credential = mock(Credential.class);
         when(credential.getSecurityToken()).thenReturn(null);
         DefaultProfile profile = mock(DefaultProfile.class);
@@ -629,8 +656,8 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
-    public void testGetCommonResponseClientException() throws ClientException, IOException, IllegalArgumentException,
-            IllegalAccessException, NoSuchFieldException, SecurityException {
+    public void testGetCommonResponseClientException() throws ClientException, IllegalArgumentException,
+            SecurityException {
         Credential credential = mock(Credential.class);
         when(credential.getSecurityToken()).thenReturn(null);
         DefaultProfile profile = mock(DefaultProfile.class);
@@ -827,7 +854,7 @@ public class DefaultAcsClientTest {
     }
 
     @Test
-    public void doActionWithProxyTest() throws ClientException {
+    public void doActionWithProxyTest() {
         HttpClientConfig config = new HttpClientConfig();
         config.setCompatibleMode(true);
         DefaultProfile profile = DefaultProfile.getProfile("test", "test", "test");
@@ -910,7 +937,7 @@ public class DefaultAcsClientTest {
     }
 
     private Tracer initTracer() {
-        Tracer tracer = new Tracer() {
+        return new Tracer() {
             ScopeManager scopeManager = new ThreadLocalScopeManager();
 
             @Override
@@ -949,6 +976,5 @@ public class DefaultAcsClientTest {
 
             }
         };
-        return tracer;
     }
 }

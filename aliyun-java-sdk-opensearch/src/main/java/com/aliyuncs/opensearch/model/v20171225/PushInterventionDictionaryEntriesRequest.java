@@ -27,7 +27,7 @@ public class PushInterventionDictionaryEntriesRequest extends RoaAcsRequest<Push
 
 	private String name;
 	public PushInterventionDictionaryEntriesRequest() {
-		super("OpenSearch", "2017-12-25", "PushInterventionDictionaryEntries", "opensearch");
+		super("OpenSearch", "2017-12-25", "PushInterventionDictionaryEntries");
 		setUriPattern("/v4/openapi/intervention-dictionaries/[name]/entries/actions/bulk");
 		setMethod(MethodType.POST);
 		try {

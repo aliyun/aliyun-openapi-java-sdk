@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryFaceVideoTemplateResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class QueryFaceVideoTemplateResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -67,7 +67,17 @@ public class QueryFaceVideoTemplateResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long total;
+
 		private List<ElementsItem> elements;
+
+		public Long getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Long total) {
+			this.total = total;
+		}
 
 		public List<ElementsItem> getElements() {
 			return this.elements;
@@ -79,31 +89,17 @@ public class QueryFaceVideoTemplateResponse extends AcsResponse {
 
 		public static class ElementsItem {
 
-			private String templateURL;
-
-			private String userId;
-
 			private String createTime;
 
 			private String updateTime;
 
+			private String userId;
+
 			private String templateId;
 
-			public String getTemplateURL() {
-				return this.templateURL;
-			}
+			private String templateURL;
 
-			public void setTemplateURL(String templateURL) {
-				this.templateURL = templateURL;
-			}
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
+			private List<FaceInfosItem> faceInfos;
 
 			public String getCreateTime() {
 				return this.createTime;
@@ -121,12 +117,59 @@ public class QueryFaceVideoTemplateResponse extends AcsResponse {
 				this.updateTime = updateTime;
 			}
 
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
 			public String getTemplateId() {
 				return this.templateId;
 			}
 
 			public void setTemplateId(String templateId) {
 				this.templateId = templateId;
+			}
+
+			public String getTemplateURL() {
+				return this.templateURL;
+			}
+
+			public void setTemplateURL(String templateURL) {
+				this.templateURL = templateURL;
+			}
+
+			public List<FaceInfosItem> getFaceInfos() {
+				return this.faceInfos;
+			}
+
+			public void setFaceInfos(List<FaceInfosItem> faceInfos) {
+				this.faceInfos = faceInfos;
+			}
+
+			public static class FaceInfosItem {
+
+				private String templateFaceID;
+
+				private String templateFaceURL;
+
+				public String getTemplateFaceID() {
+					return this.templateFaceID;
+				}
+
+				public void setTemplateFaceID(String templateFaceID) {
+					this.templateFaceID = templateFaceID;
+				}
+
+				public String getTemplateFaceURL() {
+					return this.templateFaceURL;
+				}
+
+				public void setTemplateFaceURL(String templateFaceURL) {
+					this.templateFaceURL = templateFaceURL;
+				}
 			}
 		}
 	}

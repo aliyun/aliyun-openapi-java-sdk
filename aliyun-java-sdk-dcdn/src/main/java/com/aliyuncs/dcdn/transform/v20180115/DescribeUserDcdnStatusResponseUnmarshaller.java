@@ -23,10 +23,10 @@ public class DescribeUserDcdnStatusResponseUnmarshaller {
 	public static DescribeUserDcdnStatusResponse unmarshall(DescribeUserDcdnStatusResponse describeUserDcdnStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeUserDcdnStatusResponse.setRequestId(_ctx.stringValue("DescribeUserDcdnStatusResponse.RequestId"));
-		describeUserDcdnStatusResponse.setEnabled(_ctx.booleanValue("DescribeUserDcdnStatusResponse.Enabled"));
-		describeUserDcdnStatusResponse.setOnService(_ctx.booleanValue("DescribeUserDcdnStatusResponse.OnService"));
 		describeUserDcdnStatusResponse.setInDebt(_ctx.booleanValue("DescribeUserDcdnStatusResponse.InDebt"));
+		describeUserDcdnStatusResponse.setOnService(_ctx.booleanValue("DescribeUserDcdnStatusResponse.OnService"));
 		describeUserDcdnStatusResponse.setInDebtOverdue(_ctx.booleanValue("DescribeUserDcdnStatusResponse.InDebtOverdue"));
+		describeUserDcdnStatusResponse.setEnabled(_ctx.booleanValue("DescribeUserDcdnStatusResponse.Enabled"));
 	 
 	 	return describeUserDcdnStatusResponse;
 	}

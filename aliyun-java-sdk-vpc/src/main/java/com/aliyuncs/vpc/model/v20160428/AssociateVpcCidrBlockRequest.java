@@ -27,6 +27,10 @@ public class AssociateVpcCidrBlockRequest extends RpcAcsRequest<AssociateVpcCidr
 
 	private Long resourceOwnerId;
 
+	private String ipamPoolId;
+
+	private Integer ipv6CidrMask;
+
 	private String ipv6Isp;
 
 	private String ipVersion;
@@ -38,6 +42,8 @@ public class AssociateVpcCidrBlockRequest extends RpcAcsRequest<AssociateVpcCidr
 	private Long ownerId;
 
 	private String iPv6CidrBlock;
+
+	private Integer secondaryCidrMask;
 
 	private String secondaryCidrBlock;
 
@@ -59,6 +65,28 @@ public class AssociateVpcCidrBlockRequest extends RpcAcsRequest<AssociateVpcCidr
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getIpamPoolId() {
+		return this.ipamPoolId;
+	}
+
+	public void setIpamPoolId(String ipamPoolId) {
+		this.ipamPoolId = ipamPoolId;
+		if(ipamPoolId != null){
+			putQueryParameter("IpamPoolId", ipamPoolId);
+		}
+	}
+
+	public Integer getIpv6CidrMask() {
+		return this.ipv6CidrMask;
+	}
+
+	public void setIpv6CidrMask(Integer ipv6CidrMask) {
+		this.ipv6CidrMask = ipv6CidrMask;
+		if(ipv6CidrMask != null){
+			putQueryParameter("Ipv6CidrMask", ipv6CidrMask.toString());
 		}
 	}
 
@@ -125,6 +153,17 @@ public class AssociateVpcCidrBlockRequest extends RpcAcsRequest<AssociateVpcCidr
 		this.iPv6CidrBlock = iPv6CidrBlock;
 		if(iPv6CidrBlock != null){
 			putQueryParameter("IPv6CidrBlock", iPv6CidrBlock);
+		}
+	}
+
+	public Integer getSecondaryCidrMask() {
+		return this.secondaryCidrMask;
+	}
+
+	public void setSecondaryCidrMask(Integer secondaryCidrMask) {
+		this.secondaryCidrMask = secondaryCidrMask;
+		if(secondaryCidrMask != null){
+			putQueryParameter("SecondaryCidrMask", secondaryCidrMask.toString());
 		}
 	}
 

@@ -29,7 +29,7 @@ public class ListUnionMediaIndustryRequest extends RpcAcsRequest<ListUnionMediaI
 
 	private String channelId;
 	public ListUnionMediaIndustryRequest() {
-		super("UniMkt", "2018-12-12", "ListUnionMediaIndustry", "1.0.0");
+		super("UniMkt", "2018-12-12", "ListUnionMediaIndustry");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

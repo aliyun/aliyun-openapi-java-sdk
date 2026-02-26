@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.swas_open.model.v20200601.ListDisksResponse;
 import com.aliyuncs.swas_open.model.v20200601.ListDisksResponse.Disk;
+import com.aliyuncs.swas_open.model.v20200601.ListDisksResponse.Disk.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,23 +28,37 @@ public class ListDisksResponseUnmarshaller {
 	public static ListDisksResponse unmarshall(ListDisksResponse listDisksResponse, UnmarshallerContext _ctx) {
 		
 		listDisksResponse.setRequestId(_ctx.stringValue("ListDisksResponse.RequestId"));
-		listDisksResponse.setPageNumber(_ctx.integerValue("ListDisksResponse.PageNumber"));
-		listDisksResponse.setPageSize(_ctx.integerValue("ListDisksResponse.PageSize"));
 		listDisksResponse.setTotalCount(_ctx.integerValue("ListDisksResponse.TotalCount"));
+		listDisksResponse.setPageSize(_ctx.integerValue("ListDisksResponse.PageSize"));
+		listDisksResponse.setPageNumber(_ctx.integerValue("ListDisksResponse.PageNumber"));
 
 		List<Disk> disks = new ArrayList<Disk>();
 		for (int i = 0; i < _ctx.lengthValue("ListDisksResponse.Disks.Length"); i++) {
 			Disk disk = new Disk();
-			disk.setDiskId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskId"));
-			disk.setRegionId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].RegionId"));
-			disk.setDiskName(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskName"));
-			disk.setDiskType(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskType"));
-			disk.setSize(_ctx.integerValue("ListDisksResponse.Disks["+ i +"].Size"));
-			disk.setStatus(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Status"));
-			disk.setInstanceId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].InstanceId"));
 			disk.setCreationTime(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].CreationTime"));
-			disk.setDiskChargeType(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskChargeType"));
+			disk.setStatus(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Status"));
 			disk.setDevice(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Device"));
+			disk.setSize(_ctx.integerValue("ListDisksResponse.Disks["+ i +"].Size"));
+			disk.setDiskName(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskName"));
+			disk.setDiskChargeType(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskChargeType"));
+			disk.setDiskType(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskType"));
+			disk.setCategory(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Category"));
+			disk.setDiskId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskId"));
+			disk.setInstanceId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].InstanceId"));
+			disk.setRegionId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].RegionId"));
+			disk.setRemark(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Remark"));
+			disk.setInstanceName(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].InstanceName"));
+			disk.setResourceGroupId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListDisksResponse.Disks["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			disk.setTags(tags);
 
 			disks.add(disk);
 		}

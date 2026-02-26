@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OperationSuspEventsResponse extends AcsResponse {
 
+	private Boolean success;
+
 	private String requestId;
 
 	private String accessCode;
 
-	private Boolean success;
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class OperationSuspEventsResponse extends AcsResponse {
 
 	public void setAccessCode(String accessCode) {
 		this.accessCode = accessCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	@Override

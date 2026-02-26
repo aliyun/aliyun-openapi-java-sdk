@@ -33,7 +33,7 @@ public class InquiryPriceRefundInstanceRequest extends RpcAcsRequest<InquiryPric
 
 	private String instanceId;
 	public InquiryPriceRefundInstanceRequest() {
-		super("BssOpenApi", "2017-12-14", "InquiryPriceRefundInstance");
+		super("BssOpenApi", "2017-12-14", "InquiryPriceRefundInstance", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

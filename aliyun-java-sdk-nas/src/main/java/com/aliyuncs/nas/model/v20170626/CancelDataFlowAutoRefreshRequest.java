@@ -35,7 +35,7 @@ public class CancelDataFlowAutoRefreshRequest extends RpcAcsRequest<CancelDataFl
 
 	private String dataFlowId;
 	public CancelDataFlowAutoRefreshRequest() {
-		super("NAS", "2017-06-26", "CancelDataFlowAutoRefresh", "NAS");
+		super("NAS", "2017-06-26", "CancelDataFlowAutoRefresh", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

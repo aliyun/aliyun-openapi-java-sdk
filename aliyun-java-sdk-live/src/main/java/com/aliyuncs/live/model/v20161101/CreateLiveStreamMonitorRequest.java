@@ -25,6 +25,8 @@ import com.aliyuncs.live.Endpoint;
 public class CreateLiveStreamMonitorRequest extends RpcAcsRequest<CreateLiveStreamMonitorResponse> {
 	   
 
+	private String monitorConfig;
+
 	private String monitorName;
 
 	private String stream;
@@ -35,9 +37,13 @@ public class CreateLiveStreamMonitorRequest extends RpcAcsRequest<CreateLiveStre
 
 	private String inputList;
 
+	private String dingTalkWebHookUrl;
+
 	private Long ownerId;
 
 	private String domain;
+
+	private String callbackUrl;
 	public CreateLiveStreamMonitorRequest() {
 		super("live", "2016-11-01", "CreateLiveStreamMonitor", "live");
 		setMethod(MethodType.POST);
@@ -45,6 +51,17 @@ public class CreateLiveStreamMonitorRequest extends RpcAcsRequest<CreateLiveStre
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMonitorConfig() {
+		return this.monitorConfig;
+	}
+
+	public void setMonitorConfig(String monitorConfig) {
+		this.monitorConfig = monitorConfig;
+		if(monitorConfig != null){
+			putQueryParameter("MonitorConfig", monitorConfig);
+		}
 	}
 
 	public String getMonitorName() {
@@ -102,6 +119,17 @@ public class CreateLiveStreamMonitorRequest extends RpcAcsRequest<CreateLiveStre
 		}
 	}
 
+	public String getDingTalkWebHookUrl() {
+		return this.dingTalkWebHookUrl;
+	}
+
+	public void setDingTalkWebHookUrl(String dingTalkWebHookUrl) {
+		this.dingTalkWebHookUrl = dingTalkWebHookUrl;
+		if(dingTalkWebHookUrl != null){
+			putQueryParameter("DingTalkWebHookUrl", dingTalkWebHookUrl);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -121,6 +149,17 @@ public class CreateLiveStreamMonitorRequest extends RpcAcsRequest<CreateLiveStre
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public String getCallbackUrl() {
+		return this.callbackUrl;
+	}
+
+	public void setCallbackUrl(String callbackUrl) {
+		this.callbackUrl = callbackUrl;
+		if(callbackUrl != null){
+			putQueryParameter("CallbackUrl", callbackUrl);
 		}
 	}
 

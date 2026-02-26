@@ -31,7 +31,7 @@ public class GenerateAggregateConfigRulesReportRequest extends RpcAcsRequest<Gen
 
 	private String aggregatorId;
 	public GenerateAggregateConfigRulesReportRequest() {
-		super("Config", "2020-09-07", "GenerateAggregateConfigRulesReport");
+		super("Config", "2020-09-07", "GenerateAggregateConfigRulesReport", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,9 +27,9 @@ public class DescribeOssDownloadsResponse extends AcsResponse {
 
 	private String dBInstanceId;
 
-	private String requestId;
-
 	private String migrateTaskId;
+
+	private String requestId;
 
 	private List<OssDownload> items;
 
@@ -41,20 +41,20 @@ public class DescribeOssDownloadsResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMigrateTaskId() {
 		return this.migrateTaskId;
 	}
 
 	public void setMigrateTaskId(String migrateTaskId) {
 		this.migrateTaskId = migrateTaskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<OssDownload> getItems() {
@@ -67,44 +67,28 @@ public class DescribeOssDownloadsResponse extends AcsResponse {
 
 	public static class OssDownload {
 
-		private String endTime;
-
-		private String status;
-
-		private String description;
+		private String backupMode;
 
 		private String createTime;
 
-		private String backupMode;
+		private String description;
 
-		private String isAvailable;
+		private String endTime;
 
 		private String fileName;
 
 		private String fileSize;
 
-		public String getEndTime() {
-			return this.endTime;
+		private String isAvailable;
+
+		private String status;
+
+		public String getBackupMode() {
+			return this.backupMode;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setBackupMode(String backupMode) {
+			this.backupMode = backupMode;
 		}
 
 		public String getCreateTime() {
@@ -115,20 +99,20 @@ public class DescribeOssDownloadsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getBackupMode() {
-			return this.backupMode;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setBackupMode(String backupMode) {
-			this.backupMode = backupMode;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
-		public String getIsAvailable() {
-			return this.isAvailable;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setIsAvailable(String isAvailable) {
-			this.isAvailable = isAvailable;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getFileName() {
@@ -145,6 +129,22 @@ public class DescribeOssDownloadsResponse extends AcsResponse {
 
 		public void setFileSize(String fileSize) {
 			this.fileSize = fileSize;
+		}
+
+		public String getIsAvailable() {
+			return this.isAvailable;
+		}
+
+		public void setIsAvailable(String isAvailable) {
+			this.isAvailable = isAvailable;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

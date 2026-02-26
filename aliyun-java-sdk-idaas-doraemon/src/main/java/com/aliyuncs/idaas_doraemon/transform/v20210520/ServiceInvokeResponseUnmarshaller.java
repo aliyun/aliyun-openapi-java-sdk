@@ -28,6 +28,7 @@ public class ServiceInvokeResponseUnmarshaller {
 		serviceInvokeResponse.setCode(_ctx.stringValue("ServiceInvokeResponse.Code"));
 		serviceInvokeResponse.setSuccess(_ctx.booleanValue("ServiceInvokeResponse.Success"));
 		serviceInvokeResponse.setIdToken(_ctx.stringValue("ServiceInvokeResponse.IdToken"));
+		serviceInvokeResponse.setEventId(_ctx.stringValue("ServiceInvokeResponse.EventId"));
 	 
 	 	return serviceInvokeResponse;
 	}

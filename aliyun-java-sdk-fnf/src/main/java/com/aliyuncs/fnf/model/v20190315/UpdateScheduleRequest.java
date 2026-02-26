@@ -25,17 +25,15 @@ import com.aliyuncs.fnf.Endpoint;
 public class UpdateScheduleRequest extends RpcAcsRequest<UpdateScheduleResponse> {
 	   
 
-	private String scheduleName;
-
 	private String cronExpression;
+
+	private String description;
+
+	private String scheduleName;
 
 	private String payload;
 
-	private String requestId;
-
 	private Boolean enable;
-
-	private String description;
 
 	private String flowName;
 	public UpdateScheduleRequest() {
@@ -47,17 +45,6 @@ public class UpdateScheduleRequest extends RpcAcsRequest<UpdateScheduleResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getScheduleName() {
-		return this.scheduleName;
-	}
-
-	public void setScheduleName(String scheduleName) {
-		this.scheduleName = scheduleName;
-		if(scheduleName != null){
-			putBodyParameter("ScheduleName", scheduleName);
-		}
-	}
-
 	public String getCronExpression() {
 		return this.cronExpression;
 	}
@@ -66,6 +53,28 @@ public class UpdateScheduleRequest extends RpcAcsRequest<UpdateScheduleResponse>
 		this.cronExpression = cronExpression;
 		if(cronExpression != null){
 			putBodyParameter("CronExpression", cronExpression);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
+		}
+	}
+
+	public String getScheduleName() {
+		return this.scheduleName;
+	}
+
+	public void setScheduleName(String scheduleName) {
+		this.scheduleName = scheduleName;
+		if(scheduleName != null){
+			putBodyParameter("ScheduleName", scheduleName);
 		}
 	}
 
@@ -80,17 +89,6 @@ public class UpdateScheduleRequest extends RpcAcsRequest<UpdateScheduleResponse>
 		}
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
-		}
-	}
-
 	public Boolean getEnable() {
 		return this.enable;
 	}
@@ -99,17 +97,6 @@ public class UpdateScheduleRequest extends RpcAcsRequest<UpdateScheduleResponse>
 		this.enable = enable;
 		if(enable != null){
 			putBodyParameter("Enable", enable.toString());
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putBodyParameter("Description", description);
 		}
 	}
 

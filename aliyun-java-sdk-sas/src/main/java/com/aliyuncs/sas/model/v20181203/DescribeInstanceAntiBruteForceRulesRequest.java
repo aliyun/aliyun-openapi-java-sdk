@@ -30,7 +30,11 @@ public class DescribeInstanceAntiBruteForceRulesRequest extends RpcAcsRequest<De
 
 	private String sourceIp;
 
+	private Integer pageSize;
+
 	private List<String> uuidLists;
+
+	private Integer currentPage;
 	public DescribeInstanceAntiBruteForceRulesRequest() {
 		super("Sas", "2018-12-03", "DescribeInstanceAntiBruteForceRules");
 		setMethod(MethodType.POST);
@@ -62,6 +66,17 @@ public class DescribeInstanceAntiBruteForceRulesRequest extends RpcAcsRequest<De
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public List<String> getUuidLists() {
 		return this.uuidLists;
 	}
@@ -73,6 +88,17 @@ public class DescribeInstanceAntiBruteForceRulesRequest extends RpcAcsRequest<De
 				putQueryParameter("UuidList." + (i + 1) , uuidLists.get(i));
 			}
 		}	
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
 	}
 
 	@Override

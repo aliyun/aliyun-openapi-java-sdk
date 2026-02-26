@@ -35,6 +35,8 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 
 	private Boolean publishVpc;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -44,6 +46,8 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 	private String vpnGatewayId;
 
 	private Long ownerId;
+
+	private Integer priority;
 
 	private String routeDest;
 
@@ -114,6 +118,17 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 		}
 	}
 
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -166,6 +181,17 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(Integer priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority.toString());
 		}
 	}
 

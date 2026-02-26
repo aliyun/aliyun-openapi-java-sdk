@@ -27,6 +27,12 @@ public class ListRemediationsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long pageNumber;
+
+	private Long pageSize;
+
+	private String totalCount;
+
 	private List<Remediation> remediations;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class ListRemediationsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public String getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Remediation> getRemediations() {

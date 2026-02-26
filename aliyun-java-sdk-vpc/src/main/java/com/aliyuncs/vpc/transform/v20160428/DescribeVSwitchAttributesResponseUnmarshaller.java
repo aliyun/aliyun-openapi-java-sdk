@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vpc.model.v20160428.DescribeVSwitchAttributesResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVSwitchAttributesResponse.CloudResourceSetType;
 import com.aliyuncs.vpc.model.v20160428.DescribeVSwitchAttributesResponse.RouteTable;
+import com.aliyuncs.vpc.model.v20160428.DescribeVSwitchAttributesResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +44,7 @@ public class DescribeVSwitchAttributesResponseUnmarshaller {
 		describeVSwitchAttributesResponse.setIpv6CidrBlock(_ctx.stringValue("DescribeVSwitchAttributesResponse.Ipv6CidrBlock"));
 		describeVSwitchAttributesResponse.setVSwitchName(_ctx.stringValue("DescribeVSwitchAttributesResponse.VSwitchName"));
 		describeVSwitchAttributesResponse.setShareType(_ctx.stringValue("DescribeVSwitchAttributesResponse.ShareType"));
+		describeVSwitchAttributesResponse.setEnabledIpv6(_ctx.booleanValue("DescribeVSwitchAttributesResponse.EnabledIpv6"));
 
 		RouteTable routeTable = new RouteTable();
 		routeTable.setRouteTableId(_ctx.stringValue("DescribeVSwitchAttributesResponse.RouteTable.RouteTableId"));
@@ -58,6 +60,16 @@ public class DescribeVSwitchAttributesResponseUnmarshaller {
 			cloudResources.add(cloudResourceSetType);
 		}
 		describeVSwitchAttributesResponse.setCloudResources(cloudResources);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeVSwitchAttributesResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("DescribeVSwitchAttributesResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("DescribeVSwitchAttributesResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		describeVSwitchAttributesResponse.setTags(tags);
 	 
 	 	return describeVSwitchAttributesResponse;
 	}

@@ -25,17 +25,17 @@ import com.aliyuncs.mse.Endpoint;
 public class DeleteNacosConfigRequest extends RpcAcsRequest<DeleteNacosConfigResponse> {
 	   
 
-	private String instanceId;
-
-	private String dataId;
-
 	private String namespaceId;
-
-	private String acceptLanguage;
 
 	private Boolean beta;
 
 	private String group;
+
+	private String instanceId;
+
+	private String dataId;
+
+	private String acceptLanguage;
 	public DeleteNacosConfigRequest() {
 		super("mse", "2019-05-31", "DeleteNacosConfig", "mse");
 		setMethod(MethodType.POST);
@@ -43,6 +43,39 @@ public class DeleteNacosConfigRequest extends RpcAcsRequest<DeleteNacosConfigRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public Boolean getBeta() {
+		return this.beta;
+	}
+
+	public void setBeta(Boolean beta) {
+		this.beta = beta;
+		if(beta != null){
+			putQueryParameter("Beta", beta.toString());
+		}
+	}
+
+	public String getGroup() {
+		return this.group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+		if(group != null){
+			putQueryParameter("Group", group);
+		}
 	}
 
 	public String getInstanceId() {
@@ -67,17 +100,6 @@ public class DeleteNacosConfigRequest extends RpcAcsRequest<DeleteNacosConfigRes
 		}
 	}
 
-	public String getNamespaceId() {
-		return this.namespaceId;
-	}
-
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
-		}
-	}
-
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -86,28 +108,6 @@ public class DeleteNacosConfigRequest extends RpcAcsRequest<DeleteNacosConfigRes
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public Boolean getBeta() {
-		return this.beta;
-	}
-
-	public void setBeta(Boolean beta) {
-		this.beta = beta;
-		if(beta != null){
-			putQueryParameter("Beta", beta.toString());
-		}
-	}
-
-	public String getGroup() {
-		return this.group;
-	}
-
-	public void setGroup(String group) {
-		this.group = group;
-		if(group != null){
-			putQueryParameter("Group", group);
 		}
 	}
 

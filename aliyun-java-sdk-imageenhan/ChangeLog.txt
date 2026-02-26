@@ -1,3 +1,24 @@
+2023-02-17 Version: 1.1.12
+- Release GenerateSuperResolutionImage.
+
+2023-02-09 Version: 1.1.11
+- Release GenerateSuperResolutionImage.
+
+2023-02-03 Version: 1.1.10
+- Release GenerateImageWithText GenerateImageWithTextAndImage.
+
+2022-12-14 Version: 1.1.9
+- Update MakeSuperResolutionImage.
+
+2022-12-09 Version: 1.1.8
+- Update MakeSuperResolutionImage.
+
+2022-10-17 Version: 1.1.7
+- Update MakeSuperResolutionImage.
+
+2022-09-29 Version: 1.1.6
+- Update MakeSuperResolutionImage.
+
 2022-06-20 Version: 1.1.5
 - Update MakeSuperResolutionImage.
 

@@ -33,7 +33,7 @@ public class CreateGlobalResourceRequest extends RpcAcsRequest<CreateGlobalResou
 
 	private String resourceName;
 	public CreateGlobalResourceRequest() {
-		super("HBase", "2019-01-01", "CreateGlobalResource", "hbase");
+		super("HBase", "2019-01-01", "CreateGlobalResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

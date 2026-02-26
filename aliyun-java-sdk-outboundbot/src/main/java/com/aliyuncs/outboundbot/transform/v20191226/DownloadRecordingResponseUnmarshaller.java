@@ -32,6 +32,7 @@ public class DownloadRecordingResponseUnmarshaller {
 		DownloadParams downloadParams = new DownloadParams();
 		downloadParams.setSignatureUrl(_ctx.stringValue("DownloadRecordingResponse.DownloadParams.SignatureUrl"));
 		downloadParams.setFileName(_ctx.stringValue("DownloadRecordingResponse.DownloadParams.FileName"));
+		downloadParams.setVoiceSliceRecordingListJson(_ctx.stringValue("DownloadRecordingResponse.DownloadParams.VoiceSliceRecordingListJson"));
 		downloadRecordingResponse.setDownloadParams(downloadParams);
 	 
 	 	return downloadRecordingResponse;

@@ -1,0 +1,9 @@
+2024-09-20 Version: 1.0.2
+- Receive Semi Instance version.
+
+2024-07-04 Version: 1.0.1
+- Receive Semi Instance Heartbeat for monitor.
+
+2024-03-27 Version: 1.0.0
+- Get Semi Instance Latest License For  Renew.
+

@@ -49,7 +49,15 @@ public class DescribeEIURangeResponse extends AcsResponse {
 
 		private String defaultValue;
 
+		private String minValue;
+
+		private String maxValue;
+
+		private String step;
+
 		private List<Long> eIURange;
+
+		private List<String> storageResourceRange;
 
 		public String getDefaultValue() {
 			return this.defaultValue;
@@ -59,12 +67,44 @@ public class DescribeEIURangeResponse extends AcsResponse {
 			this.defaultValue = defaultValue;
 		}
 
+		public String getMinValue() {
+			return this.minValue;
+		}
+
+		public void setMinValue(String minValue) {
+			this.minValue = minValue;
+		}
+
+		public String getMaxValue() {
+			return this.maxValue;
+		}
+
+		public void setMaxValue(String maxValue) {
+			this.maxValue = maxValue;
+		}
+
+		public String getStep() {
+			return this.step;
+		}
+
+		public void setStep(String step) {
+			this.step = step;
+		}
+
 		public List<Long> getEIURange() {
 			return this.eIURange;
 		}
 
 		public void setEIURange(List<Long> eIURange) {
 			this.eIURange = eIURange;
+		}
+
+		public List<String> getStorageResourceRange() {
+			return this.storageResourceRange;
+		}
+
+		public void setStorageResourceRange(List<String> storageResourceRange) {
+			this.storageResourceRange = storageResourceRange;
 		}
 	}
 

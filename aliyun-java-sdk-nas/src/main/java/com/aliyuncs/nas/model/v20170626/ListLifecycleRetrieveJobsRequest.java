@@ -27,13 +27,15 @@ public class ListLifecycleRetrieveJobsRequest extends RpcAcsRequest<ListLifecycl
 
 	private Integer pageNumber;
 
+	private String storageType;
+
 	private Integer pageSize;
 
 	private String fileSystemId;
 
 	private String status;
 	public ListLifecycleRetrieveJobsRequest() {
-		super("NAS", "2017-06-26", "ListLifecycleRetrieveJobs", "NAS");
+		super("NAS", "2017-06-26", "ListLifecycleRetrieveJobs", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,6 +51,17 @@ public class ListLifecycleRetrieveJobsRequest extends RpcAcsRequest<ListLifecycl
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
 		}
 	}
 

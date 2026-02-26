@@ -27,16 +27,16 @@ public class DescribeCdnUserBillPredictionResponseUnmarshaller {
 	public static DescribeCdnUserBillPredictionResponse unmarshall(DescribeCdnUserBillPredictionResponse describeCdnUserBillPredictionResponse, UnmarshallerContext _ctx) {
 		
 		describeCdnUserBillPredictionResponse.setRequestId(_ctx.stringValue("DescribeCdnUserBillPredictionResponse.RequestId"));
-		describeCdnUserBillPredictionResponse.setStartTime(_ctx.stringValue("DescribeCdnUserBillPredictionResponse.StartTime"));
 		describeCdnUserBillPredictionResponse.setEndTime(_ctx.stringValue("DescribeCdnUserBillPredictionResponse.EndTime"));
+		describeCdnUserBillPredictionResponse.setStartTime(_ctx.stringValue("DescribeCdnUserBillPredictionResponse.StartTime"));
 		describeCdnUserBillPredictionResponse.setBillType(_ctx.stringValue("DescribeCdnUserBillPredictionResponse.BillType"));
 
 		List<BillPredictionDataItem> billPredictionData = new ArrayList<BillPredictionDataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCdnUserBillPredictionResponse.BillPredictionData.Length"); i++) {
 			BillPredictionDataItem billPredictionDataItem = new BillPredictionDataItem();
 			billPredictionDataItem.setValue(_ctx.floatValue("DescribeCdnUserBillPredictionResponse.BillPredictionData["+ i +"].Value"));
-			billPredictionDataItem.setArea(_ctx.stringValue("DescribeCdnUserBillPredictionResponse.BillPredictionData["+ i +"].Area"));
 			billPredictionDataItem.setTimeStp(_ctx.stringValue("DescribeCdnUserBillPredictionResponse.BillPredictionData["+ i +"].TimeStp"));
+			billPredictionDataItem.setArea(_ctx.stringValue("DescribeCdnUserBillPredictionResponse.BillPredictionData["+ i +"].Area"));
 
 			billPredictionData.add(billPredictionDataItem);
 		}

@@ -28,6 +28,10 @@ public class ListPrometheusInstancesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer code;
+
+	private String message;
+
 	public String getData() {
 		return this.data;
 	}
@@ -42,6 +46,22 @@ public class ListPrometheusInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

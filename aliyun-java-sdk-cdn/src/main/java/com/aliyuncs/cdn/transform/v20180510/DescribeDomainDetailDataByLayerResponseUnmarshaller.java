@@ -31,17 +31,17 @@ public class DescribeDomainDetailDataByLayerResponseUnmarshaller {
 		List<DataModule> data = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainDetailDataByLayerResponse.Data.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].TimeStamp"));
-			dataModule.setDomainName(_ctx.stringValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].DomainName"));
-			dataModule.setBps(_ctx.floatValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].Bps"));
-			dataModule.setQps(_ctx.floatValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].Qps"));
 			dataModule.setTraf(_ctx.longValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].Traf"));
+			dataModule.setQps(_ctx.floatValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].Qps"));
+			dataModule.setIpv6Qps(_ctx.floatValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].Ipv6Qps"));
+			dataModule.setIpv6Bps(_ctx.floatValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].Ipv6Bps"));
 			dataModule.setAcc(_ctx.longValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].Acc"));
 			dataModule.setIpv6Traf(_ctx.longValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].Ipv6Traf"));
-			dataModule.setIpv6Bps(_ctx.floatValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].Ipv6Bps"));
 			dataModule.setIpv6Acc(_ctx.longValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].Ipv6Acc"));
-			dataModule.setIpv6Qps(_ctx.floatValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].Ipv6Qps"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].TimeStamp"));
 			dataModule.setHttpCode(_ctx.stringValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].HttpCode"));
+			dataModule.setBps(_ctx.floatValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].Bps"));
+			dataModule.setDomainName(_ctx.stringValue("DescribeDomainDetailDataByLayerResponse.Data["+ i +"].DomainName"));
 
 			data.add(dataModule);
 		}

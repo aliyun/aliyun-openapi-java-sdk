@@ -23,9 +23,9 @@ public class StopDebugPtsSceneResponseUnmarshaller {
 	public static StopDebugPtsSceneResponse unmarshall(StopDebugPtsSceneResponse stopDebugPtsSceneResponse, UnmarshallerContext _ctx) {
 		
 		stopDebugPtsSceneResponse.setRequestId(_ctx.stringValue("StopDebugPtsSceneResponse.RequestId"));
-		stopDebugPtsSceneResponse.setCode(_ctx.stringValue("StopDebugPtsSceneResponse.Code"));
 		stopDebugPtsSceneResponse.setMessage(_ctx.stringValue("StopDebugPtsSceneResponse.Message"));
 		stopDebugPtsSceneResponse.setHttpStatusCode(_ctx.integerValue("StopDebugPtsSceneResponse.HttpStatusCode"));
+		stopDebugPtsSceneResponse.setCode(_ctx.stringValue("StopDebugPtsSceneResponse.Code"));
 		stopDebugPtsSceneResponse.setSuccess(_ctx.booleanValue("StopDebugPtsSceneResponse.Success"));
 	 
 	 	return stopDebugPtsSceneResponse;

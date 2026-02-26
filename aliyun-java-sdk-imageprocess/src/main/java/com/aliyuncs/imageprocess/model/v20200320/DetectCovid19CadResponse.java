@@ -26,6 +26,10 @@ public class DetectCovid19CadResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
+	private String message;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -34,6 +38,22 @@ public class DetectCovid19CadResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -46,23 +66,15 @@ public class DetectCovid19CadResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String newProbability;
-
 		private String normalProbability;
 
-		private String otherProbability;
+		private String newProbability;
 
 		private String lesionRatio;
 
+		private String otherProbability;
+
 		private String mask;
-
-		public String getNewProbability() {
-			return this.newProbability;
-		}
-
-		public void setNewProbability(String newProbability) {
-			this.newProbability = newProbability;
-		}
 
 		public String getNormalProbability() {
 			return this.normalProbability;
@@ -72,12 +84,12 @@ public class DetectCovid19CadResponse extends AcsResponse {
 			this.normalProbability = normalProbability;
 		}
 
-		public String getOtherProbability() {
-			return this.otherProbability;
+		public String getNewProbability() {
+			return this.newProbability;
 		}
 
-		public void setOtherProbability(String otherProbability) {
-			this.otherProbability = otherProbability;
+		public void setNewProbability(String newProbability) {
+			this.newProbability = newProbability;
 		}
 
 		public String getLesionRatio() {
@@ -86,6 +98,14 @@ public class DetectCovid19CadResponse extends AcsResponse {
 
 		public void setLesionRatio(String lesionRatio) {
 			this.lesionRatio = lesionRatio;
+		}
+
+		public String getOtherProbability() {
+			return this.otherProbability;
+		}
+
+		public void setOtherProbability(String otherProbability) {
+			this.otherProbability = otherProbability;
 		}
 
 		public String getMask() {

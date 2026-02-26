@@ -26,13 +26,13 @@ import com.aliyuncs.kms.Endpoint;
 public class CertificatePublicKeyVerifyRequest extends RpcAcsRequest<CertificatePublicKeyVerifyResponse> {
 	   
 
-	private String signatureValue;
-
 	private String messageType;
 
 	private String certificateId;
 
 	private String message;
+
+	private String signatureValue;
 
 	private String algorithm;
 	public CertificatePublicKeyVerifyRequest() {
@@ -43,17 +43,6 @@ public class CertificatePublicKeyVerifyRequest extends RpcAcsRequest<Certificate
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSignatureValue() {
-		return this.signatureValue;
-	}
-
-	public void setSignatureValue(String signatureValue) {
-		this.signatureValue = signatureValue;
-		if(signatureValue != null){
-			putQueryParameter("SignatureValue", signatureValue);
-		}
 	}
 
 	public String getMessageType() {
@@ -86,6 +75,17 @@ public class CertificatePublicKeyVerifyRequest extends RpcAcsRequest<Certificate
 		this.message = message;
 		if(message != null){
 			putQueryParameter("Message", message);
+		}
+	}
+
+	public String getSignatureValue() {
+		return this.signatureValue;
+	}
+
+	public void setSignatureValue(String signatureValue) {
+		this.signatureValue = signatureValue;
+		if(signatureValue != null){
+			putQueryParameter("SignatureValue", signatureValue);
 		}
 	}
 

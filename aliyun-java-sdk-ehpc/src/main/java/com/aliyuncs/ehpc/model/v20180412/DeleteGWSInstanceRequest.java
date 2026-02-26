@@ -27,7 +27,7 @@ public class DeleteGWSInstanceRequest extends RpcAcsRequest<DeleteGWSInstanceRes
 
 	private String instanceId;
 	public DeleteGWSInstanceRequest() {
-		super("EHPC", "2018-04-12", "DeleteGWSInstance");
+		super("EHPC", "2018-04-12", "DeleteGWSInstance", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

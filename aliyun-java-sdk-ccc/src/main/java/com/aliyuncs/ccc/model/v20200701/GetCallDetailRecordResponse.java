@@ -121,6 +121,8 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 		private String earlyMediaState;
 
+		private String releaseReason;
+
 		private List<AgentEventsItem> agentEvents;
 
 		private List<IvrEventsItem> ivrEvents;
@@ -303,6 +305,14 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 		public void setEarlyMediaState(String earlyMediaState) {
 			this.earlyMediaState = earlyMediaState;
+		}
+
+		public String getReleaseReason() {
+			return this.releaseReason;
+		}
+
+		public void setReleaseReason(String releaseReason) {
+			this.releaseReason = releaseReason;
 		}
 
 		public List<AgentEventsItem> getAgentEvents() {

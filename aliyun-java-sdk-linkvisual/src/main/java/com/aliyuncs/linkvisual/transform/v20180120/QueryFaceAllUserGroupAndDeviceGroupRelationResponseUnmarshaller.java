@@ -28,23 +28,23 @@ public class QueryFaceAllUserGroupAndDeviceGroupRelationResponseUnmarshaller {
 	public static QueryFaceAllUserGroupAndDeviceGroupRelationResponse unmarshall(QueryFaceAllUserGroupAndDeviceGroupRelationResponse queryFaceAllUserGroupAndDeviceGroupRelationResponse, UnmarshallerContext _ctx) {
 		
 		queryFaceAllUserGroupAndDeviceGroupRelationResponse.setRequestId(_ctx.stringValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.RequestId"));
-		queryFaceAllUserGroupAndDeviceGroupRelationResponse.setSuccess(_ctx.booleanValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Success"));
-		queryFaceAllUserGroupAndDeviceGroupRelationResponse.setErrorMessage(_ctx.stringValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.ErrorMessage"));
 		queryFaceAllUserGroupAndDeviceGroupRelationResponse.setCode(_ctx.stringValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Code"));
+		queryFaceAllUserGroupAndDeviceGroupRelationResponse.setErrorMessage(_ctx.stringValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.ErrorMessage"));
+		queryFaceAllUserGroupAndDeviceGroupRelationResponse.setSuccess(_ctx.booleanValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Data.Total"));
 		data.setPageSize(_ctx.integerValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Data.Total"));
 		data.setPage(_ctx.integerValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Data.Page"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setControlId(_ctx.stringValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Data.List["+ i +"].ControlId"));
-			listItem.setUserGroupId(_ctx.stringValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Data.List["+ i +"].UserGroupId"));
 			listItem.setDeviceGroupId(_ctx.stringValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Data.List["+ i +"].DeviceGroupId"));
-			listItem.setControlType(_ctx.stringValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Data.List["+ i +"].ControlType"));
+			listItem.setControlId(_ctx.stringValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Data.List["+ i +"].ControlId"));
 			listItem.setModifiedTime(_ctx.stringValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Data.List["+ i +"].ModifiedTime"));
+			listItem.setControlType(_ctx.stringValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Data.List["+ i +"].ControlType"));
+			listItem.setUserGroupId(_ctx.stringValue("QueryFaceAllUserGroupAndDeviceGroupRelationResponse.Data.List["+ i +"].UserGroupId"));
 
 			list.add(listItem);
 		}

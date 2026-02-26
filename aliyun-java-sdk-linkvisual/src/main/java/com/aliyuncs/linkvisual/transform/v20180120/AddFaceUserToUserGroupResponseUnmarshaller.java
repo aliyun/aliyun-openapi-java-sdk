@@ -23,9 +23,9 @@ public class AddFaceUserToUserGroupResponseUnmarshaller {
 	public static AddFaceUserToUserGroupResponse unmarshall(AddFaceUserToUserGroupResponse addFaceUserToUserGroupResponse, UnmarshallerContext _ctx) {
 		
 		addFaceUserToUserGroupResponse.setRequestId(_ctx.stringValue("AddFaceUserToUserGroupResponse.RequestId"));
-		addFaceUserToUserGroupResponse.setSuccess(_ctx.booleanValue("AddFaceUserToUserGroupResponse.Success"));
 		addFaceUserToUserGroupResponse.setCode(_ctx.stringValue("AddFaceUserToUserGroupResponse.Code"));
 		addFaceUserToUserGroupResponse.setErrorMessage(_ctx.stringValue("AddFaceUserToUserGroupResponse.ErrorMessage"));
+		addFaceUserToUserGroupResponse.setSuccess(_ctx.booleanValue("AddFaceUserToUserGroupResponse.Success"));
 	 
 	 	return addFaceUserToUserGroupResponse;
 	}

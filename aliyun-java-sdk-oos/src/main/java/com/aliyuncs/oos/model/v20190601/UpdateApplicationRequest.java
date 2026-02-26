@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import java.util.Map;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
@@ -29,6 +30,11 @@ public class UpdateApplicationRequest extends RpcAcsRequest<UpdateApplicationRes
 	   
 
 	private String description;
+
+	@SerializedName("alarmConfig")
+	private AlarmConfig alarmConfig;
+
+	private Boolean deleteAlarmRulesBeforeUpdate;
 
 	@SerializedName("tags")
 	private Map<String,String> tags;
@@ -54,6 +60,28 @@ public class UpdateApplicationRequest extends RpcAcsRequest<UpdateApplicationRes
 		}
 	}
 
+	public AlarmConfig getAlarmConfig() {
+		return this.alarmConfig;
+	}
+
+	public void setAlarmConfig(AlarmConfig alarmConfig) {
+		this.alarmConfig = alarmConfig;	
+		if (alarmConfig != null) {
+			putQueryParameter("AlarmConfig" , new Gson().toJson(alarmConfig));
+		}	
+	}
+
+	public Boolean getDeleteAlarmRulesBeforeUpdate() {
+		return this.deleteAlarmRulesBeforeUpdate;
+	}
+
+	public void setDeleteAlarmRulesBeforeUpdate(Boolean deleteAlarmRulesBeforeUpdate) {
+		this.deleteAlarmRulesBeforeUpdate = deleteAlarmRulesBeforeUpdate;
+		if(deleteAlarmRulesBeforeUpdate != null){
+			putQueryParameter("DeleteAlarmRulesBeforeUpdate", deleteAlarmRulesBeforeUpdate.toString());
+		}
+	}
+
 	public Map<String,String> getTags() {
 		return this.tags;
 	}
@@ -73,6 +101,42 @@ public class UpdateApplicationRequest extends RpcAcsRequest<UpdateApplicationRes
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public static class AlarmConfig {
+
+		@SerializedName("TemplateIds")
+		private List<String> templateIds;
+
+		@SerializedName("ContactGroups")
+		private List<String> contactGroups;
+
+		@SerializedName("HealthCheckUrl")
+		private String healthCheckUrl;
+
+		public List<String> getTemplateIds() {
+			return this.templateIds;
+		}
+
+		public void setTemplateIds(List<String> templateIds) {
+			this.templateIds = templateIds;
+		}
+
+		public List<String> getContactGroups() {
+			return this.contactGroups;
+		}
+
+		public void setContactGroups(List<String> contactGroups) {
+			this.contactGroups = contactGroups;
+		}
+
+		public String getHealthCheckUrl() {
+			return this.healthCheckUrl;
+		}
+
+		public void setHealthCheckUrl(String healthCheckUrl) {
+			this.healthCheckUrl = healthCheckUrl;
 		}
 	}
 

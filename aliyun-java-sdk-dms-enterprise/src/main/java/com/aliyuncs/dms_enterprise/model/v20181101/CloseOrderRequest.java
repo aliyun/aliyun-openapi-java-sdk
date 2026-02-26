@@ -25,11 +25,11 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class CloseOrderRequest extends RpcAcsRequest<CloseOrderResponse> {
 	   
 
+	private Long tid;
+
 	private Long orderId;
 
 	private String closeReason;
-
-	private Long tid;
 	public CloseOrderRequest() {
 		super("dms-enterprise", "2018-11-01", "CloseOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class CloseOrderRequest extends RpcAcsRequest<CloseOrderResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
 	}
 
 	public Long getOrderId() {
@@ -58,17 +69,6 @@ public class CloseOrderRequest extends RpcAcsRequest<CloseOrderResponse> {
 		this.closeReason = closeReason;
 		if(closeReason != null){
 			putQueryParameter("CloseReason", closeReason);
-		}
-	}
-
-	public Long getTid() {
-		return this.tid;
-	}
-
-	public void setTid(Long tid) {
-		this.tid = tid;
-		if(tid != null){
-			putQueryParameter("Tid", tid.toString());
 		}
 	}
 

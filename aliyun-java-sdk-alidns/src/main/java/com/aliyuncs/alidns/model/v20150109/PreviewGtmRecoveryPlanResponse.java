@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PreviewGtmRecoveryPlanResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItems;
-
-	private Integer totalPages;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
+	private Integer totalPages;
+
+	private Integer totalItems;
+
 	private List<Preview> previews;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,12 +53,12 @@ public class PreviewGtmRecoveryPlanResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalItems() {
-		return this.totalItems;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getTotalPages() {
@@ -61,20 +69,12 @@ public class PreviewGtmRecoveryPlanResponse extends AcsResponse {
 		this.totalPages = totalPages;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalItems() {
+		return this.totalItems;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
 	}
 
 	public List<Preview> getPreviews() {

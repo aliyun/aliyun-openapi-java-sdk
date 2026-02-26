@@ -1,3 +1,6 @@
+2022-09-19 Version: 1.0.4
+- Supportn quotas for DescribeNetworkQuotas.
+
 2020-12-04 Version: 1.0.3
 - Supported ListIpGeolocations for user.
 

@@ -29,7 +29,11 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 
 	private String securityToken;
 
+	private Boolean l2Preload;
+
 	private String area;
+
+	private String withHeader;
 
 	private Long ownerId;
 	public PushObjectCacheRequest() {
@@ -63,6 +67,17 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 		}
 	}
 
+	public Boolean getL2Preload() {
+		return this.l2Preload;
+	}
+
+	public void setL2Preload(Boolean l2Preload) {
+		this.l2Preload = l2Preload;
+		if(l2Preload != null){
+			putQueryParameter("L2Preload", l2Preload.toString());
+		}
+	}
+
 	public String getArea() {
 		return this.area;
 	}
@@ -71,6 +86,17 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 		this.area = area;
 		if(area != null){
 			putQueryParameter("Area", area);
+		}
+	}
+
+	public String getWithHeader() {
+		return this.withHeader;
+	}
+
+	public void setWithHeader(String withHeader) {
+		this.withHeader = withHeader;
+		if(withHeader != null){
+			putQueryParameter("WithHeader", withHeader);
 		}
 	}
 

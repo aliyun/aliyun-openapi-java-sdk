@@ -37,7 +37,7 @@ public class GetAuthorizationUrlRequest extends RpcAcsRequest<GetAuthorizationUr
 
 	private String endDate;
 	public GetAuthorizationUrlRequest() {
-		super("Dypnsapi", "2017-05-25", "GetAuthorizationUrl");
+		super("Dypnsapi", "2017-05-25", "GetAuthorizationUrl", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

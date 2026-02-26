@@ -15,6 +15,9 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.adb.Endpoint;
 
@@ -32,6 +35,9 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 	private String accountDescription;
 
 	private String accountName;
+
+	@SerializedName("tag")
+	private List<Tag> tag;
 
 	private String resourceOwnerAccount;
 
@@ -95,6 +101,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			putQueryParameter("Tag" , new Gson().toJson(tag));
+		}	
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -147,6 +164,31 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.accountPassword = accountPassword;
 		if(accountPassword != null){
 			putQueryParameter("AccountPassword", accountPassword);
+		}
+	}
+
+	public static class Tag {
+
+		@SerializedName("Value")
+		private String value;
+
+		@SerializedName("Key")
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

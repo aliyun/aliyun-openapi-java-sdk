@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetServiceLinkedRoleResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String accountId;
 
-	private String regionId;
+	private String requestId;
 
 	private Boolean dbfsLinkedRole;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String regionId;
 
 	public String getAccountId() {
 		return this.accountId;
@@ -48,12 +40,12 @@ public class GetServiceLinkedRoleResponse extends AcsResponse {
 		this.accountId = accountId;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getDbfsLinkedRole() {
@@ -62,6 +54,14 @@ public class GetServiceLinkedRoleResponse extends AcsResponse {
 
 	public void setDbfsLinkedRole(Boolean dbfsLinkedRole) {
 		this.dbfsLinkedRole = dbfsLinkedRole;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	@Override

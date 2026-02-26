@@ -23,10 +23,10 @@ public class DeleteUserCollectionResponseUnmarshaller {
 	public static DeleteUserCollectionResponse unmarshall(DeleteUserCollectionResponse deleteUserCollectionResponse, UnmarshallerContext _ctx) {
 		
 		deleteUserCollectionResponse.setRequestId(_ctx.stringValue("DeleteUserCollectionResponse.RequestId"));
-		deleteUserCollectionResponse.setSuccess(_ctx.booleanValue("DeleteUserCollectionResponse.Success"));
 		deleteUserCollectionResponse.setStatus(_ctx.booleanValue("DeleteUserCollectionResponse.Status"));
-		deleteUserCollectionResponse.setErrorCode(_ctx.stringValue("DeleteUserCollectionResponse.ErrorCode"));
 		deleteUserCollectionResponse.setErrorMsg(_ctx.stringValue("DeleteUserCollectionResponse.ErrorMsg"));
+		deleteUserCollectionResponse.setErrorCode(_ctx.stringValue("DeleteUserCollectionResponse.ErrorCode"));
+		deleteUserCollectionResponse.setSuccess(_ctx.booleanValue("DeleteUserCollectionResponse.Success"));
 	 
 	 	return deleteUserCollectionResponse;
 	}

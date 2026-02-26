@@ -25,8 +25,6 @@ import com.aliyuncs.live.Endpoint;
 public class DescribeLiveDomainLimitRequest extends RpcAcsRequest<DescribeLiveDomainLimitResponse> {
 	   
 
-	private String liveapiRequestFrom;
-
 	private String domainName;
 
 	private Long ownerId;
@@ -37,17 +35,6 @@ public class DescribeLiveDomainLimitRequest extends RpcAcsRequest<DescribeLiveDo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getLiveapiRequestFrom() {
-		return this.liveapiRequestFrom;
-	}
-
-	public void setLiveapiRequestFrom(String liveapiRequestFrom) {
-		this.liveapiRequestFrom = liveapiRequestFrom;
-		if(liveapiRequestFrom != null){
-			putQueryParameter("LiveapiRequestFrom", liveapiRequestFrom);
-		}
 	}
 
 	public String getDomainName() {

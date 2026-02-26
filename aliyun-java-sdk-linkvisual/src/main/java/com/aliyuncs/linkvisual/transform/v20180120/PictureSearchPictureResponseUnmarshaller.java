@@ -28,26 +28,26 @@ public class PictureSearchPictureResponseUnmarshaller {
 	public static PictureSearchPictureResponse unmarshall(PictureSearchPictureResponse pictureSearchPictureResponse, UnmarshallerContext _ctx) {
 		
 		pictureSearchPictureResponse.setRequestId(_ctx.stringValue("PictureSearchPictureResponse.RequestId"));
-		pictureSearchPictureResponse.setSuccess(_ctx.booleanValue("PictureSearchPictureResponse.Success"));
 		pictureSearchPictureResponse.setCode(_ctx.stringValue("PictureSearchPictureResponse.Code"));
 		pictureSearchPictureResponse.setErrorMessage(_ctx.stringValue("PictureSearchPictureResponse.ErrorMessage"));
+		pictureSearchPictureResponse.setSuccess(_ctx.booleanValue("PictureSearchPictureResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("PictureSearchPictureResponse.Data.Total"));
-		data.setPageCount(_ctx.integerValue("PictureSearchPictureResponse.Data.PageCount"));
 		data.setCurrentPage(_ctx.integerValue("PictureSearchPictureResponse.Data.CurrentPage"));
 		data.setPageSize(_ctx.integerValue("PictureSearchPictureResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("PictureSearchPictureResponse.Data.Total"));
+		data.setPageCount(_ctx.integerValue("PictureSearchPictureResponse.Data.PageCount"));
 
 		List<SearchData> pageData = new ArrayList<SearchData>();
 		for (int i = 0; i < _ctx.lengthValue("PictureSearchPictureResponse.Data.PageData.Length"); i++) {
 			SearchData searchData = new SearchData();
-			searchData.setVectorId(_ctx.stringValue("PictureSearchPictureResponse.Data.PageData["+ i +"].VectorId"));
-			searchData.setEventTime(_ctx.longValue("PictureSearchPictureResponse.Data.PageData["+ i +"].EventTime"));
-			searchData.setThreshold(_ctx.floatValue("PictureSearchPictureResponse.Data.PageData["+ i +"].Threshold"));
 			searchData.setPicUrl(_ctx.stringValue("PictureSearchPictureResponse.Data.PageData["+ i +"].PicUrl"));
-			searchData.setIotId(_ctx.stringValue("PictureSearchPictureResponse.Data.PageData["+ i +"].IotId"));
+			searchData.setEventTime(_ctx.longValue("PictureSearchPictureResponse.Data.PageData["+ i +"].EventTime"));
 			searchData.setGatewayIotId(_ctx.stringValue("PictureSearchPictureResponse.Data.PageData["+ i +"].GatewayIotId"));
+			searchData.setVectorId(_ctx.stringValue("PictureSearchPictureResponse.Data.PageData["+ i +"].VectorId"));
+			searchData.setThreshold(_ctx.floatValue("PictureSearchPictureResponse.Data.PageData["+ i +"].Threshold"));
 			searchData.setVectorType(_ctx.integerValue("PictureSearchPictureResponse.Data.PageData["+ i +"].VectorType"));
+			searchData.setIotId(_ctx.stringValue("PictureSearchPictureResponse.Data.PageData["+ i +"].IotId"));
 
 			pageData.add(searchData);
 		}

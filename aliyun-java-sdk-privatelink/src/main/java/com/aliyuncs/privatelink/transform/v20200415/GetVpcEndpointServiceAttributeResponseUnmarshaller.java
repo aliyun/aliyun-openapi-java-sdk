@@ -49,6 +49,8 @@ public class GetVpcEndpointServiceAttributeResponseUnmarshaller {
 		getVpcEndpointServiceAttributeResponse.setPrivateServiceDomainVerifyName(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.PrivateServiceDomainVerifyName"));
 		getVpcEndpointServiceAttributeResponse.setPrivateServiceDomainVerifyValue(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.PrivateServiceDomainVerifyValue"));
 		getVpcEndpointServiceAttributeResponse.setPrivateServiceName(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.PrivateServiceName"));
+		getVpcEndpointServiceAttributeResponse.setServiceSupportIPv6(_ctx.booleanValue("GetVpcEndpointServiceAttributeResponse.ServiceSupportIPv6"));
+		getVpcEndpointServiceAttributeResponse.setResourceGroupId(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ResourceGroupId"));
 
 		List<String> zones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetVpcEndpointServiceAttributeResponse.Zones.Length"); i++) {

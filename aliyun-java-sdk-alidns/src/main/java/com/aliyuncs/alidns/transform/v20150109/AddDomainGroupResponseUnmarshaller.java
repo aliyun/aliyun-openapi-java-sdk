@@ -23,8 +23,8 @@ public class AddDomainGroupResponseUnmarshaller {
 	public static AddDomainGroupResponse unmarshall(AddDomainGroupResponse addDomainGroupResponse, UnmarshallerContext _ctx) {
 		
 		addDomainGroupResponse.setRequestId(_ctx.stringValue("AddDomainGroupResponse.RequestId"));
-		addDomainGroupResponse.setGroupId(_ctx.stringValue("AddDomainGroupResponse.GroupId"));
 		addDomainGroupResponse.setGroupName(_ctx.stringValue("AddDomainGroupResponse.GroupName"));
+		addDomainGroupResponse.setGroupId(_ctx.stringValue("AddDomainGroupResponse.GroupId"));
 	 
 	 	return addDomainGroupResponse;
 	}

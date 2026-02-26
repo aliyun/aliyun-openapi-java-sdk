@@ -25,6 +25,8 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class ListChatbotInstancesRequest extends RpcAcsRequest<ListChatbotInstancesResponse> {
 	   
 
+	private String agentKey;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
@@ -35,6 +37,17 @@ public class ListChatbotInstancesRequest extends RpcAcsRequest<ListChatbotInstan
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAgentKey() {
+		return this.agentKey;
+	}
+
+	public void setAgentKey(String agentKey) {
+		this.agentKey = agentKey;
+		if(agentKey != null){
+			putQueryParameter("AgentKey", agentKey);
+		}
 	}
 
 	public Integer getPageNumber() {

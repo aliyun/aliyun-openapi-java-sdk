@@ -25,17 +25,15 @@ import com.aliyuncs.scdn.Endpoint;
 public class DescribeScdnCcTopIpRequest extends RpcAcsRequest<DescribeScdnCcTopIpResponse> {
 	   
 
-	private String startTime;
-
-	private String pageNumber;
+	private String domainName;
 
 	private String pageSize;
 
-	private String domainName;
-
 	private String endTime;
 
-	private Long ownerId;
+	private String startTime;
+
+	private String pageNumber;
 	public DescribeScdnCcTopIpRequest() {
 		super("scdn", "2017-11-15", "DescribeScdnCcTopIp");
 		setMethod(MethodType.GET);
@@ -43,6 +41,39 @@ public class DescribeScdnCcTopIpRequest extends RpcAcsRequest<DescribeScdnCcTopI
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public String getStartTime() {
@@ -64,50 +95,6 @@ public class DescribeScdnCcTopIpRequest extends RpcAcsRequest<DescribeScdnCcTopI
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber);
-		}
-	}
-
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

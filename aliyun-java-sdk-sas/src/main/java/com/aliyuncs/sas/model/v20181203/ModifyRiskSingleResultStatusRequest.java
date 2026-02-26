@@ -30,11 +30,11 @@ public class ModifyRiskSingleResultStatusRequest extends RpcAcsRequest<ModifyRis
 
 	private String sourceIp;
 
-	private List<String> idss;
-
 	private String lang;
 
 	private Long taskId;
+
+	private List<String> idss;
 
 	private String status;
 	public ModifyRiskSingleResultStatusRequest() {
@@ -68,19 +68,6 @@ public class ModifyRiskSingleResultStatusRequest extends RpcAcsRequest<ModifyRis
 		}
 	}
 
-	public List<String> getIdss() {
-		return this.idss;
-	}
-
-	public void setIdss(List<String> idss) {
-		this.idss = idss;	
-		if (idss != null) {
-			for (int i = 0; i < idss.size(); i++) {
-				putQueryParameter("Ids." + (i + 1) , idss.get(i));
-			}
-		}	
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -101,6 +88,19 @@ public class ModifyRiskSingleResultStatusRequest extends RpcAcsRequest<ModifyRis
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId.toString());
 		}
+	}
+
+	public List<String> getIdss() {
+		return this.idss;
+	}
+
+	public void setIdss(List<String> idss) {
+		this.idss = idss;	
+		if (idss != null) {
+			for (int i = 0; i < idss.size(); i++) {
+				putQueryParameter("Ids." + (i + 1) , idss.get(i));
+			}
+		}	
 	}
 
 	public String getStatus() {

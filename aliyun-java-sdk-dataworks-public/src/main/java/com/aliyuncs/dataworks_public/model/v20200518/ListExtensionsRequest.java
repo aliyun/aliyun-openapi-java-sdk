@@ -30,7 +30,7 @@ public class ListExtensionsRequest extends RpcAcsRequest<ListExtensionsResponse>
 	private Integer pageNumber;
 	public ListExtensionsRequest() {
 		super("dataworks-public", "2020-05-18", "ListExtensions");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

@@ -27,7 +27,7 @@ public class RecognizeFoodRequest extends RpcAcsRequest<RecognizeFoodResponse> {
 
 	private String imageURL;
 	public RecognizeFoodRequest() {
-		super("imagerecog", "2019-09-30", "RecognizeFood", "imagerecog");
+		super("imagerecog", "2019-09-30", "RecognizeFood");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

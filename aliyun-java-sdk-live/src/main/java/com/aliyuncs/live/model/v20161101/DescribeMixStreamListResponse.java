@@ -57,39 +57,23 @@ public class DescribeMixStreamListResponse extends AcsResponse {
 
 	public static class MixStreamInfo {
 
-		private String mixstreamId;
-
-		private String domainName;
-
 		private String appName;
 
-		private String streamName;
-
-		private String layoutId;
-
-		private Integer inputStreamNumber;
-
-		private String mixStreamTemplate;
+		private String domainName;
 
 		private String gmtCreate;
 
 		private String gmtModified;
 
-		public String getMixstreamId() {
-			return this.mixstreamId;
-		}
+		private Integer inputStreamNumber;
 
-		public void setMixstreamId(String mixstreamId) {
-			this.mixstreamId = mixstreamId;
-		}
+		private String layoutId;
 
-		public String getDomainName() {
-			return this.domainName;
-		}
+		private String mixStreamTemplate;
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
+		private String mixstreamId;
+
+		private String streamName;
 
 		public String getAppName() {
 			return this.appName;
@@ -99,36 +83,12 @@ public class DescribeMixStreamListResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public String getStreamName() {
-			return this.streamName;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
-		}
-
-		public String getLayoutId() {
-			return this.layoutId;
-		}
-
-		public void setLayoutId(String layoutId) {
-			this.layoutId = layoutId;
-		}
-
-		public Integer getInputStreamNumber() {
-			return this.inputStreamNumber;
-		}
-
-		public void setInputStreamNumber(Integer inputStreamNumber) {
-			this.inputStreamNumber = inputStreamNumber;
-		}
-
-		public String getMixStreamTemplate() {
-			return this.mixStreamTemplate;
-		}
-
-		public void setMixStreamTemplate(String mixStreamTemplate) {
-			this.mixStreamTemplate = mixStreamTemplate;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getGmtCreate() {
@@ -145,6 +105,46 @@ public class DescribeMixStreamListResponse extends AcsResponse {
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public Integer getInputStreamNumber() {
+			return this.inputStreamNumber;
+		}
+
+		public void setInputStreamNumber(Integer inputStreamNumber) {
+			this.inputStreamNumber = inputStreamNumber;
+		}
+
+		public String getLayoutId() {
+			return this.layoutId;
+		}
+
+		public void setLayoutId(String layoutId) {
+			this.layoutId = layoutId;
+		}
+
+		public String getMixStreamTemplate() {
+			return this.mixStreamTemplate;
+		}
+
+		public void setMixStreamTemplate(String mixStreamTemplate) {
+			this.mixStreamTemplate = mixStreamTemplate;
+		}
+
+		public String getMixstreamId() {
+			return this.mixstreamId;
+		}
+
+		public void setMixstreamId(String mixstreamId) {
+			this.mixstreamId = mixstreamId;
+		}
+
+		public String getStreamName() {
+			return this.streamName;
+		}
+
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
 		}
 	}
 

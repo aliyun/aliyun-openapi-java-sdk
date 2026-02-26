@@ -27,25 +27,25 @@ public class DescribeDeletedInstancesResponseUnmarshaller {
 	public static DescribeDeletedInstancesResponse unmarshall(DescribeDeletedInstancesResponse describeDeletedInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeDeletedInstancesResponse.setRequestId(_ctx.stringValue("DescribeDeletedInstancesResponse.RequestId"));
-		describeDeletedInstancesResponse.setTotalCount(_ctx.longValue("DescribeDeletedInstancesResponse.TotalCount"));
-		describeDeletedInstancesResponse.setPageNumber(_ctx.integerValue("DescribeDeletedInstancesResponse.PageNumber"));
 		describeDeletedInstancesResponse.setPageSize(_ctx.integerValue("DescribeDeletedInstancesResponse.PageSize"));
+		describeDeletedInstancesResponse.setPageNumber(_ctx.integerValue("DescribeDeletedInstancesResponse.PageNumber"));
+		describeDeletedInstancesResponse.setTotalCount(_ctx.longValue("DescribeDeletedInstancesResponse.TotalCount"));
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDeletedInstancesResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setInstanceId(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].InstanceId"));
-			instance.setInstanceName(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].InstanceName"));
 			instance.setStatus(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].Status"));
+			instance.setInstanceId(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].InstanceId"));
+			instance.setRegionId(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].RegionId"));
+			instance.setParentId(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].ParentId"));
+			instance.setClusterType(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].ClusterType"));
+			instance.setInstanceName(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].InstanceName"));
+			instance.setZoneId(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].ZoneId"));
+			instance.setDeleteTime(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].DeleteTime"));
+			instance.setModuleStackVersion(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].ModuleStackVersion"));
 			instance.setMajorVersion(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].MajorVersion"));
 			instance.setEngine(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].Engine"));
-			instance.setRegionId(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].RegionId"));
-			instance.setZoneId(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].ZoneId"));
 			instance.setCreatedTime(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].CreatedTime"));
-			instance.setDeleteTime(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].DeleteTime"));
-			instance.setClusterType(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].ClusterType"));
-			instance.setModuleStackVersion(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].ModuleStackVersion"));
-			instance.setParentId(_ctx.stringValue("DescribeDeletedInstancesResponse.Instances["+ i +"].ParentId"));
 
 			instances.add(instance);
 		}

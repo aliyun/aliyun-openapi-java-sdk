@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTrafficControlsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<TrafficControl> trafficControls;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeTrafficControlsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeTrafficControlsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<TrafficControl> getTrafficControls() {
@@ -77,40 +77,48 @@ public class DescribeTrafficControlsResponse extends AcsResponse {
 
 	public static class TrafficControl {
 
-		private String trafficControlId;
+		private Integer userDefault;
 
-		private String trafficControlName;
+		private Integer apiDefault;
+
+		private String modifiedTime;
 
 		private String description;
 
 		private String trafficControlUnit;
 
-		private Integer apiDefault;
-
-		private Integer userDefault;
+		private String trafficControlName;
 
 		private Integer appDefault;
 
-		private String createdTime;
+		private String trafficControlId;
 
-		private String modifiedTime;
+		private String createdTime;
 
 		private List<SpecialPolicy> specialPolicies;
 
-		public String getTrafficControlId() {
-			return this.trafficControlId;
+		public Integer getUserDefault() {
+			return this.userDefault;
 		}
 
-		public void setTrafficControlId(String trafficControlId) {
-			this.trafficControlId = trafficControlId;
+		public void setUserDefault(Integer userDefault) {
+			this.userDefault = userDefault;
 		}
 
-		public String getTrafficControlName() {
-			return this.trafficControlName;
+		public Integer getApiDefault() {
+			return this.apiDefault;
 		}
 
-		public void setTrafficControlName(String trafficControlName) {
-			this.trafficControlName = trafficControlName;
+		public void setApiDefault(Integer apiDefault) {
+			this.apiDefault = apiDefault;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
 		}
 
 		public String getDescription() {
@@ -129,20 +137,12 @@ public class DescribeTrafficControlsResponse extends AcsResponse {
 			this.trafficControlUnit = trafficControlUnit;
 		}
 
-		public Integer getApiDefault() {
-			return this.apiDefault;
+		public String getTrafficControlName() {
+			return this.trafficControlName;
 		}
 
-		public void setApiDefault(Integer apiDefault) {
-			this.apiDefault = apiDefault;
-		}
-
-		public Integer getUserDefault() {
-			return this.userDefault;
-		}
-
-		public void setUserDefault(Integer userDefault) {
-			this.userDefault = userDefault;
+		public void setTrafficControlName(String trafficControlName) {
+			this.trafficControlName = trafficControlName;
 		}
 
 		public Integer getAppDefault() {
@@ -153,20 +153,20 @@ public class DescribeTrafficControlsResponse extends AcsResponse {
 			this.appDefault = appDefault;
 		}
 
+		public String getTrafficControlId() {
+			return this.trafficControlId;
+		}
+
+		public void setTrafficControlId(String trafficControlId) {
+			this.trafficControlId = trafficControlId;
+		}
+
 		public String getCreatedTime() {
 			return this.createdTime;
 		}
 
 		public void setCreatedTime(String createdTime) {
 			this.createdTime = createdTime;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
 		}
 
 		public List<SpecialPolicy> getSpecialPolicies() {
@@ -201,17 +201,9 @@ public class DescribeTrafficControlsResponse extends AcsResponse {
 
 			public static class Special {
 
-				private String specialKey;
-
 				private Integer trafficValue;
 
-				public String getSpecialKey() {
-					return this.specialKey;
-				}
-
-				public void setSpecialKey(String specialKey) {
-					this.specialKey = specialKey;
-				}
+				private String specialKey;
 
 				public Integer getTrafficValue() {
 					return this.trafficValue;
@@ -219,6 +211,14 @@ public class DescribeTrafficControlsResponse extends AcsResponse {
 
 				public void setTrafficValue(Integer trafficValue) {
 					this.trafficValue = trafficValue;
+				}
+
+				public String getSpecialKey() {
+					return this.specialKey;
+				}
+
+				public void setSpecialKey(String specialKey) {
+					this.specialKey = specialKey;
 				}
 			}
 		}

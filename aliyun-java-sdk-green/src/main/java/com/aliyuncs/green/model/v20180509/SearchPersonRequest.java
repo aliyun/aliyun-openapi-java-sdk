@@ -27,7 +27,7 @@ public class SearchPersonRequest extends RoaAcsRequest<SearchPersonResponse> {
 
 	private String clientInfo;
 	public SearchPersonRequest() {
-		super("Green", "2018-05-09", "SearchPerson", "green");
+		super("Green", "2018-05-09", "SearchPerson");
 		setUriPattern("/green/sface/search");
 		setMethod(MethodType.POST);
 		try {

@@ -23,6 +23,7 @@ public class DescribeClusterUserKubeconfigResponseUnmarshaller {
 	public static DescribeClusterUserKubeconfigResponse unmarshall(DescribeClusterUserKubeconfigResponse describeClusterUserKubeconfigResponse, UnmarshallerContext _ctx) {
 		
 		describeClusterUserKubeconfigResponse.setConfig(_ctx.stringValue("DescribeClusterUserKubeconfigResponse.config"));
+		describeClusterUserKubeconfigResponse.setExpiration(_ctx.stringValue("DescribeClusterUserKubeconfigResponse.expiration"));
 	 
 	 	return describeClusterUserKubeconfigResponse;
 	}

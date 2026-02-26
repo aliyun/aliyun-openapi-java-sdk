@@ -27,9 +27,9 @@ public class DescribeModifyPGHbaConfigLogResponse extends AcsResponse {
 
 	private String dBInstanceId;
 
-	private String requestId;
-
 	private Integer logItemCount;
+
+	private String requestId;
 
 	private List<HbaLogItem> hbaLogItems;
 
@@ -41,20 +41,20 @@ public class DescribeModifyPGHbaConfigLogResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getLogItemCount() {
 		return this.logItemCount;
 	}
 
 	public void setLogItemCount(Integer logItemCount) {
 		this.logItemCount = logItemCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<HbaLogItem> getHbaLogItems() {
@@ -69,13 +69,13 @@ public class DescribeModifyPGHbaConfigLogResponse extends AcsResponse {
 
 		private String modifyStatus;
 
-		private String statusReason;
-
 		private String modifyTime;
 
-		private List<HbaItem> beforeHbaItems;
+		private String statusReason;
 
 		private List<HbaItem> afterHbaItems;
+
+		private List<HbaItem> beforeHbaItems;
 
 		public String getModifyStatus() {
 			return this.modifyStatus;
@@ -83,14 +83,6 @@ public class DescribeModifyPGHbaConfigLogResponse extends AcsResponse {
 
 		public void setModifyStatus(String modifyStatus) {
 			this.modifyStatus = modifyStatus;
-		}
-
-		public String getStatusReason() {
-			return this.statusReason;
-		}
-
-		public void setStatusReason(String statusReason) {
-			this.statusReason = statusReason;
 		}
 
 		public String getModifyTime() {
@@ -101,12 +93,12 @@ public class DescribeModifyPGHbaConfigLogResponse extends AcsResponse {
 			this.modifyTime = modifyTime;
 		}
 
-		public List<HbaItem> getBeforeHbaItems() {
-			return this.beforeHbaItems;
+		public String getStatusReason() {
+			return this.statusReason;
 		}
 
-		public void setBeforeHbaItems(List<HbaItem> beforeHbaItems) {
-			this.beforeHbaItems = beforeHbaItems;
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
 		}
 
 		public List<HbaItem> getAfterHbaItems() {
@@ -117,38 +109,38 @@ public class DescribeModifyPGHbaConfigLogResponse extends AcsResponse {
 			this.afterHbaItems = afterHbaItems;
 		}
 
+		public List<HbaItem> getBeforeHbaItems() {
+			return this.beforeHbaItems;
+		}
+
+		public void setBeforeHbaItems(List<HbaItem> beforeHbaItems) {
+			this.beforeHbaItems = beforeHbaItems;
+		}
+
 		public static class HbaItem {
-
-			private String type;
-
-			private String mask;
-
-			private String database;
-
-			private Integer priorityId;
 
 			private String address;
 
-			private String option;
+			private String database;
+
+			private String mask;
 
 			private String method;
 
+			private String option;
+
+			private Integer priorityId;
+
+			private String type;
+
 			private String user;
 
-			public String getType() {
-				return this.type;
+			public String getAddress() {
+				return this.address;
 			}
 
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public String getMask() {
-				return this.mask;
-			}
-
-			public void setMask(String mask) {
-				this.mask = mask;
+			public void setAddress(String address) {
+				this.address = address;
 			}
 
 			public String getDatabase() {
@@ -159,20 +151,20 @@ public class DescribeModifyPGHbaConfigLogResponse extends AcsResponse {
 				this.database = database;
 			}
 
-			public Integer getPriorityId() {
-				return this.priorityId;
+			public String getMask() {
+				return this.mask;
 			}
 
-			public void setPriorityId(Integer priorityId) {
-				this.priorityId = priorityId;
+			public void setMask(String mask) {
+				this.mask = mask;
 			}
 
-			public String getAddress() {
-				return this.address;
+			public String getBizMethod() {
+				return this.method;
 			}
 
-			public void setAddress(String address) {
-				this.address = address;
+			public void setBizMethod(String method) {
+				this.method = method;
 			}
 
 			public String getOption() {
@@ -183,12 +175,20 @@ public class DescribeModifyPGHbaConfigLogResponse extends AcsResponse {
 				this.option = option;
 			}
 
-			public String getBizMethod() {
-				return this.method;
+			public Integer getPriorityId() {
+				return this.priorityId;
 			}
 
-			public void setBizMethod(String method) {
-				this.method = method;
+			public void setPriorityId(Integer priorityId) {
+				this.priorityId = priorityId;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getUser() {

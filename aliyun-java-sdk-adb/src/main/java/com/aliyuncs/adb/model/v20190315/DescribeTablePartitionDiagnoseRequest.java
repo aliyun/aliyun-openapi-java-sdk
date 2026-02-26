@@ -27,10 +27,6 @@ public class DescribeTablePartitionDiagnoseRequest extends RpcAcsRequest<Describ
 
 	private Long resourceOwnerId;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -38,6 +34,14 @@ public class DescribeTablePartitionDiagnoseRequest extends RpcAcsRequest<Describ
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String lang;
+
+	private String order;
 	public DescribeTablePartitionDiagnoseRequest() {
 		super("adb", "2019-03-15", "DescribeTablePartitionDiagnose", "ads");
 		setMethod(MethodType.POST);
@@ -55,28 +59,6 @@ public class DescribeTablePartitionDiagnoseRequest extends RpcAcsRequest<Describ
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -121,6 +103,50 @@ public class DescribeTablePartitionDiagnoseRequest extends RpcAcsRequest<Describ
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 

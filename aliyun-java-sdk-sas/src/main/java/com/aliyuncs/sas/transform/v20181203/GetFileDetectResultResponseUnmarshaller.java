@@ -35,6 +35,8 @@ public class GetFileDetectResultResponseUnmarshaller {
 			result.setResult(_ctx.integerValue("GetFileDetectResultResponse.ResultList["+ i +"].Result"));
 			result.setScore(_ctx.integerValue("GetFileDetectResultResponse.ResultList["+ i +"].Score"));
 			result.setVirusType(_ctx.stringValue("GetFileDetectResultResponse.ResultList["+ i +"].VirusType"));
+			result.setCode(_ctx.stringValue("GetFileDetectResultResponse.ResultList["+ i +"].Code"));
+			result.setMessage(_ctx.stringValue("GetFileDetectResultResponse.ResultList["+ i +"].Message"));
 			result.setExt(_ctx.stringValue("GetFileDetectResultResponse.ResultList["+ i +"].Ext"));
 
 			resultList.add(result);

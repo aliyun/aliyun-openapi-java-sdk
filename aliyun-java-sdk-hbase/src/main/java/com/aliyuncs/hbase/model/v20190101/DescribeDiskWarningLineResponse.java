@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDiskWarningLineResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String warningLine;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getWarningLine() {
 		return this.warningLine;
@@ -42,6 +34,14 @@ public class DescribeDiskWarningLineResponse extends AcsResponse {
 
 	public void setWarningLine(String warningLine) {
 		this.warningLine = warningLine;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -47,7 +47,7 @@ public class CreateSpeechRequest extends RpcAcsRequest<CreateSpeechResponse> {
 
 	private Integer speechRate;
 	public CreateSpeechRequest() {
-		super("Iot", "2018-01-20", "CreateSpeech");
+		super("Iot", "2018-01-20", "CreateSpeech", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class ModifyHealthCheckConfigRequest extends RpcAcsRequest<ModifyHealthCh
 
 	private String forwardProtocol;
 	public ModifyHealthCheckConfigRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyHealthCheckConfig");
+		super("ddoscoo", "2020-01-01", "ModifyHealthCheckConfig", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

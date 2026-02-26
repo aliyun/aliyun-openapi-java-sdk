@@ -33,11 +33,11 @@ public class DescribeClusterConnectionResponseUnmarshaller {
 	public static DescribeClusterConnectionResponse unmarshall(DescribeClusterConnectionResponse describeClusterConnectionResponse, UnmarshallerContext _ctx) {
 		
 		describeClusterConnectionResponse.setRequestId(_ctx.stringValue("DescribeClusterConnectionResponse.RequestId"));
-		describeClusterConnectionResponse.setNetType(_ctx.stringValue("DescribeClusterConnectionResponse.NetType"));
 		describeClusterConnectionResponse.setVpcId(_ctx.stringValue("DescribeClusterConnectionResponse.VpcId"));
 		describeClusterConnectionResponse.setVSwitchId(_ctx.stringValue("DescribeClusterConnectionResponse.VSwitchId"));
-		describeClusterConnectionResponse.setDbType(_ctx.stringValue("DescribeClusterConnectionResponse.DbType"));
 		describeClusterConnectionResponse.setIsMultimod(_ctx.stringValue("DescribeClusterConnectionResponse.IsMultimod"));
+		describeClusterConnectionResponse.setDbType(_ctx.stringValue("DescribeClusterConnectionResponse.DbType"));
+		describeClusterConnectionResponse.setNetType(_ctx.stringValue("DescribeClusterConnectionResponse.NetType"));
 
 		UiProxyConnAddrInfo uiProxyConnAddrInfo = new UiProxyConnAddrInfo();
 		uiProxyConnAddrInfo.setConnAddr(_ctx.stringValue("DescribeClusterConnectionResponse.UiProxyConnAddrInfo.ConnAddr"));

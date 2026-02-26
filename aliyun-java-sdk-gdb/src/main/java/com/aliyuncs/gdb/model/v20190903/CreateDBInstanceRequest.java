@@ -31,6 +31,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String dBInstanceCategory;
 
+	private String resourceGroupId;
+
 	private String dBNodeStorageType;
 
 	private String dBInstanceDescription;
@@ -105,6 +107,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBInstanceCategory = dBInstanceCategory;
 		if(dBInstanceCategory != null){
 			putQueryParameter("DBInstanceCategory", dBInstanceCategory);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

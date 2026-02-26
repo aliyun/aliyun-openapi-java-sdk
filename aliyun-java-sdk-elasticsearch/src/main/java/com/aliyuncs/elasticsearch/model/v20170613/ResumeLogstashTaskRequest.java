@@ -28,8 +28,6 @@ public class ResumeLogstashTaskRequest extends RoaAcsRequest<ResumeLogstashTaskR
 	private String instanceId;
 
 	private String clientToken;
-
-	private String body;
 	public ResumeLogstashTaskRequest() {
 		super("elasticsearch", "2017-06-13", "ResumeLogstashTask", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/actions/resume");
@@ -59,17 +57,6 @@ public class ResumeLogstashTaskRequest extends RoaAcsRequest<ResumeLogstashTaskR
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

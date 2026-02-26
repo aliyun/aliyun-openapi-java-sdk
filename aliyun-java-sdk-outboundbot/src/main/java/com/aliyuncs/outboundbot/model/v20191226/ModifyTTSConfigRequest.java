@@ -38,6 +38,8 @@ public class ModifyTTSConfigRequest extends RpcAcsRequest<ModifyTTSConfigRespons
 	private String appKey;
 
 	private String speechRate;
+
+	private String pitchRate;
 	public ModifyTTSConfigRequest() {
 		super("OutboundBot", "2019-12-26", "ModifyTTSConfig", "outboundbot");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class ModifyTTSConfigRequest extends RpcAcsRequest<ModifyTTSConfigRespons
 		this.speechRate = speechRate;
 		if(speechRate != null){
 			putQueryParameter("SpeechRate", speechRate);
+		}
+	}
+
+	public String getPitchRate() {
+		return this.pitchRate;
+	}
+
+	public void setPitchRate(String pitchRate) {
+		this.pitchRate = pitchRate;
+		if(pitchRate != null){
+			putQueryParameter("PitchRate", pitchRate);
 		}
 	}
 

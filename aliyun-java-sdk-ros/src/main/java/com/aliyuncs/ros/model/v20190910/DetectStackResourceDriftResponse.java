@@ -25,40 +25,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DetectStackResourceDriftResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String driftDetectionTime;
+	private String logicalResourceId;
 
 	private String resourceDriftStatus;
 
-	private String stackId;
-
-	private String resourceType;
+	private String requestId;
 
 	private String physicalResourceId;
 
-	private String logicalResourceId;
+	private String expectedProperties;
+
+	private String driftDetectionTime;
+
+	private String resourceType;
 
 	private String actualProperties;
 
-	private String expectedProperties;
+	private String stackId;
 
 	private List<PropertyDifference> propertyDifferences;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getLogicalResourceId() {
+		return this.logicalResourceId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDriftDetectionTime() {
-		return this.driftDetectionTime;
-	}
-
-	public void setDriftDetectionTime(String driftDetectionTime) {
-		this.driftDetectionTime = driftDetectionTime;
+	public void setLogicalResourceId(String logicalResourceId) {
+		this.logicalResourceId = logicalResourceId;
 	}
 
 	public String getResourceDriftStatus() {
@@ -69,20 +61,12 @@ public class DetectStackResourceDriftResponse extends AcsResponse {
 		this.resourceDriftStatus = resourceDriftStatus;
 	}
 
-	public String getStackId() {
-		return this.stackId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setStackId(String stackId) {
-		this.stackId = stackId;
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getPhysicalResourceId() {
@@ -93,12 +77,28 @@ public class DetectStackResourceDriftResponse extends AcsResponse {
 		this.physicalResourceId = physicalResourceId;
 	}
 
-	public String getLogicalResourceId() {
-		return this.logicalResourceId;
+	public String getExpectedProperties() {
+		return this.expectedProperties;
 	}
 
-	public void setLogicalResourceId(String logicalResourceId) {
-		this.logicalResourceId = logicalResourceId;
+	public void setExpectedProperties(String expectedProperties) {
+		this.expectedProperties = expectedProperties;
+	}
+
+	public String getDriftDetectionTime() {
+		return this.driftDetectionTime;
+	}
+
+	public void setDriftDetectionTime(String driftDetectionTime) {
+		this.driftDetectionTime = driftDetectionTime;
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
 	}
 
 	public String getActualProperties() {
@@ -109,12 +109,12 @@ public class DetectStackResourceDriftResponse extends AcsResponse {
 		this.actualProperties = actualProperties;
 	}
 
-	public String getExpectedProperties() {
-		return this.expectedProperties;
+	public String getStackId() {
+		return this.stackId;
 	}
 
-	public void setExpectedProperties(String expectedProperties) {
-		this.expectedProperties = expectedProperties;
+	public void setStackId(String stackId) {
+		this.stackId = stackId;
 	}
 
 	public List<PropertyDifference> getPropertyDifferences() {
@@ -127,21 +127,13 @@ public class DetectStackResourceDriftResponse extends AcsResponse {
 
 	public static class PropertyDifference {
 
-		private String propertyPath;
-
 		private String actualValue;
-
-		private String expectedValue;
 
 		private String differenceType;
 
-		public String getPropertyPath() {
-			return this.propertyPath;
-		}
+		private String propertyPath;
 
-		public void setPropertyPath(String propertyPath) {
-			this.propertyPath = propertyPath;
-		}
+		private String expectedValue;
 
 		public String getActualValue() {
 			return this.actualValue;
@@ -151,20 +143,28 @@ public class DetectStackResourceDriftResponse extends AcsResponse {
 			this.actualValue = actualValue;
 		}
 
-		public String getExpectedValue() {
-			return this.expectedValue;
-		}
-
-		public void setExpectedValue(String expectedValue) {
-			this.expectedValue = expectedValue;
-		}
-
 		public String getDifferenceType() {
 			return this.differenceType;
 		}
 
 		public void setDifferenceType(String differenceType) {
 			this.differenceType = differenceType;
+		}
+
+		public String getPropertyPath() {
+			return this.propertyPath;
+		}
+
+		public void setPropertyPath(String propertyPath) {
+			this.propertyPath = propertyPath;
+		}
+
+		public String getExpectedValue() {
+			return this.expectedValue;
+		}
+
+		public void setExpectedValue(String expectedValue) {
+			this.expectedValue = expectedValue;
 		}
 	}
 

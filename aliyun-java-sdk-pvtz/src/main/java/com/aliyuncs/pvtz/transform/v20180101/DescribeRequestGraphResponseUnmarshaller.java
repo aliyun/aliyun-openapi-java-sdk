@@ -32,8 +32,8 @@ public class DescribeRequestGraphResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeRequestGraphResponse.RequestDetails.Length"); i++) {
 			ZoneRequestTop zoneRequestTop = new ZoneRequestTop();
 			zoneRequestTop.setTime(_ctx.stringValue("DescribeRequestGraphResponse.RequestDetails["+ i +"].Time"));
-			zoneRequestTop.setTimestamp(_ctx.longValue("DescribeRequestGraphResponse.RequestDetails["+ i +"].Timestamp"));
 			zoneRequestTop.setRequestCount(_ctx.longValue("DescribeRequestGraphResponse.RequestDetails["+ i +"].RequestCount"));
+			zoneRequestTop.setTimestamp(_ctx.longValue("DescribeRequestGraphResponse.RequestDetails["+ i +"].Timestamp"));
 
 			requestDetails.add(zoneRequestTop);
 		}

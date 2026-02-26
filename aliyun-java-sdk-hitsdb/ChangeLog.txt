@@ -1,3 +1,42 @@
+2024-05-15 Version: 3.1.16
+- Add LtsSpec and LtsNum parameter in CreateLindormInstance API.
+
+2024-01-16 Version: 3.1.15
+- Update Tea.
+
+2023-12-12 Version: 3.1.14
+- CreateLindormInstance api support auto renew
+
+2023-11-29 Version: 3.1.13
+- SwitchLSQLV3MySQLService
+
+2023-11-23 Version: 3.1.12
+- Generated 2020-06-15 for `hitsdb`.
+
+2023-11-22 Version: 3.1.11
+- Lindorm open api.
+
+2023-08-15 Version: 3.0.11
+- Update endpoints.
+
+2023-06-28 Version: 3.0.10
+- Update Lindorm SDK.
+
+2023-03-07 Version: 3.0.9
+- Lindorm open api.
+
+2022-11-15 Version: 3.0.8
+- Add renew and modify instance pay type api.
+
+2022-10-19 Version: 3.0.7
+- Update Lindorm OpenAPI.
+
+2022-08-16 Version: 3.0.6
+- Update Lindorm OpenAPI.
+
+2022-08-15 Version: 3.0.5
+- update Lindorm OpenAPI.
+
 2022-04-06 Version: 3.0.4
 - Add ListTagResources api.
 - Add TagResources api.

@@ -23,8 +23,8 @@ public class PushExperimentTaskResponseUnmarshaller {
 	public static PushExperimentTaskResponse unmarshall(PushExperimentTaskResponse pushExperimentTaskResponse, UnmarshallerContext _ctx) {
 		
 		pushExperimentTaskResponse.setRequestId(_ctx.stringValue("PushExperimentTaskResponse.RequestId"));
-		pushExperimentTaskResponse.setCode(_ctx.stringValue("PushExperimentTaskResponse.Code"));
 		pushExperimentTaskResponse.setMessage(_ctx.stringValue("PushExperimentTaskResponse.Message"));
+		pushExperimentTaskResponse.setCode(_ctx.stringValue("PushExperimentTaskResponse.Code"));
 		pushExperimentTaskResponse.setSuccess(_ctx.booleanValue("PushExperimentTaskResponse.Success"));
 	 
 	 	return pushExperimentTaskResponse;

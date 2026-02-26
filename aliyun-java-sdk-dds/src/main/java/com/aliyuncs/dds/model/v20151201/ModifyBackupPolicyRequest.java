@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -26,7 +27,15 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
+	private Integer crossLogRetentionValue;
+
+	private String srcRegion;
+
+	private String crossRetentionType;
+
+	private String backupInterval;
+
+	private String instanceType;
 
 	private String dBInstanceId;
 
@@ -34,20 +43,44 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String preferredBackupPeriod;
 
+	private Integer backupRetentionPolicyOnClusterDeletion;
+
+	private String destRegion;
+
 	private String resourceOwnerAccount;
+
+	private String crossBackupType;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
+	private String snapshotBackupType;
+
 	private String preferredBackupTime;
 
 	private Long backupRetentionPeriod;
 
+	private Long highFrequencyBackupRetention;
+
+	private Integer enableCrossLogBackup;
+
+	private String crossBackupPeriod;
+
+	private Integer crossRetentionValue;
+
+	private String crossLogRetentionType;
+
 	private Long logBackupRetentionPeriod;
+
+	private Boolean preserveOneEachHour;
 	public ModifyBackupPolicyRequest() {
 		super("Dds", "2015-12-01", "ModifyBackupPolicy", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -61,14 +94,58 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public Integer getCrossLogRetentionValue() {
+		return this.crossLogRetentionValue;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setCrossLogRetentionValue(Integer crossLogRetentionValue) {
+		this.crossLogRetentionValue = crossLogRetentionValue;
+		if(crossLogRetentionValue != null){
+			putQueryParameter("CrossLogRetentionValue", crossLogRetentionValue.toString());
+		}
+	}
+
+	public String getSrcRegion() {
+		return this.srcRegion;
+	}
+
+	public void setSrcRegion(String srcRegion) {
+		this.srcRegion = srcRegion;
+		if(srcRegion != null){
+			putQueryParameter("SrcRegion", srcRegion);
+		}
+	}
+
+	public String getCrossRetentionType() {
+		return this.crossRetentionType;
+	}
+
+	public void setCrossRetentionType(String crossRetentionType) {
+		this.crossRetentionType = crossRetentionType;
+		if(crossRetentionType != null){
+			putQueryParameter("CrossRetentionType", crossRetentionType);
+		}
+	}
+
+	public String getBackupInterval() {
+		return this.backupInterval;
+	}
+
+	public void setBackupInterval(String backupInterval) {
+		this.backupInterval = backupInterval;
+		if(backupInterval != null){
+			putQueryParameter("BackupInterval", backupInterval);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 
@@ -105,6 +182,28 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
+	public Integer getBackupRetentionPolicyOnClusterDeletion() {
+		return this.backupRetentionPolicyOnClusterDeletion;
+	}
+
+	public void setBackupRetentionPolicyOnClusterDeletion(Integer backupRetentionPolicyOnClusterDeletion) {
+		this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
+		if(backupRetentionPolicyOnClusterDeletion != null){
+			putQueryParameter("BackupRetentionPolicyOnClusterDeletion", backupRetentionPolicyOnClusterDeletion.toString());
+		}
+	}
+
+	public String getDestRegion() {
+		return this.destRegion;
+	}
+
+	public void setDestRegion(String destRegion) {
+		this.destRegion = destRegion;
+		if(destRegion != null){
+			putQueryParameter("DestRegion", destRegion);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -113,6 +212,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getCrossBackupType() {
+		return this.crossBackupType;
+	}
+
+	public void setCrossBackupType(String crossBackupType) {
+		this.crossBackupType = crossBackupType;
+		if(crossBackupType != null){
+			putQueryParameter("CrossBackupType", crossBackupType);
 		}
 	}
 
@@ -138,6 +248,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
+	public String getSnapshotBackupType() {
+		return this.snapshotBackupType;
+	}
+
+	public void setSnapshotBackupType(String snapshotBackupType) {
+		this.snapshotBackupType = snapshotBackupType;
+		if(snapshotBackupType != null){
+			putQueryParameter("SnapshotBackupType", snapshotBackupType);
+		}
+	}
+
 	public String getPreferredBackupTime() {
 		return this.preferredBackupTime;
 	}
@@ -160,6 +281,61 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
+	public Long getHighFrequencyBackupRetention() {
+		return this.highFrequencyBackupRetention;
+	}
+
+	public void setHighFrequencyBackupRetention(Long highFrequencyBackupRetention) {
+		this.highFrequencyBackupRetention = highFrequencyBackupRetention;
+		if(highFrequencyBackupRetention != null){
+			putQueryParameter("HighFrequencyBackupRetention", highFrequencyBackupRetention.toString());
+		}
+	}
+
+	public Integer getEnableCrossLogBackup() {
+		return this.enableCrossLogBackup;
+	}
+
+	public void setEnableCrossLogBackup(Integer enableCrossLogBackup) {
+		this.enableCrossLogBackup = enableCrossLogBackup;
+		if(enableCrossLogBackup != null){
+			putQueryParameter("EnableCrossLogBackup", enableCrossLogBackup.toString());
+		}
+	}
+
+	public String getCrossBackupPeriod() {
+		return this.crossBackupPeriod;
+	}
+
+	public void setCrossBackupPeriod(String crossBackupPeriod) {
+		this.crossBackupPeriod = crossBackupPeriod;
+		if(crossBackupPeriod != null){
+			putQueryParameter("CrossBackupPeriod", crossBackupPeriod);
+		}
+	}
+
+	public Integer getCrossRetentionValue() {
+		return this.crossRetentionValue;
+	}
+
+	public void setCrossRetentionValue(Integer crossRetentionValue) {
+		this.crossRetentionValue = crossRetentionValue;
+		if(crossRetentionValue != null){
+			putQueryParameter("CrossRetentionValue", crossRetentionValue.toString());
+		}
+	}
+
+	public String getCrossLogRetentionType() {
+		return this.crossLogRetentionType;
+	}
+
+	public void setCrossLogRetentionType(String crossLogRetentionType) {
+		this.crossLogRetentionType = crossLogRetentionType;
+		if(crossLogRetentionType != null){
+			putQueryParameter("CrossLogRetentionType", crossLogRetentionType);
+		}
+	}
+
 	public Long getLogBackupRetentionPeriod() {
 		return this.logBackupRetentionPeriod;
 	}
@@ -168,6 +344,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
 		if(logBackupRetentionPeriod != null){
 			putQueryParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod.toString());
+		}
+	}
+
+	public Boolean getPreserveOneEachHour() {
+		return this.preserveOneEachHour;
+	}
+
+	public void setPreserveOneEachHour(Boolean preserveOneEachHour) {
+		this.preserveOneEachHour = preserveOneEachHour;
+		if(preserveOneEachHour != null){
+			putQueryParameter("PreserveOneEachHour", preserveOneEachHour.toString());
 		}
 	}
 

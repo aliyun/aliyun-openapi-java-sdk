@@ -29,7 +29,7 @@ public class DescribeHealthStatusRequest extends RpcAcsRequest<DescribeHealthSta
 
 	private String key;
 	public DescribeHealthStatusRequest() {
-		super("gpdb", "2016-05-03", "DescribeHealthStatus");
+		super("gpdb", "2016-05-03", "DescribeHealthStatus", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

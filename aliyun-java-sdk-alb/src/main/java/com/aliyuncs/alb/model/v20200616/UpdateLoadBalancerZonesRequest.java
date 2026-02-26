@@ -75,7 +75,10 @@ public class UpdateLoadBalancerZonesRequest extends RpcAcsRequest<UpdateLoadBala
 				if (zoneMappings.get(depth1) != null) {
 					
 						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".VSwitchId" , zoneMappings.get(depth1).getVSwitchId());
+						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".EipType" , zoneMappings.get(depth1).getEipType());
 						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".ZoneId" , zoneMappings.get(depth1).getZoneId());
+						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".AllocationId" , zoneMappings.get(depth1).getAllocationId());
+						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".IntranetAddress" , zoneMappings.get(depth1).getIntranetAddress());
 				}
 			}
 		}	
@@ -96,7 +99,13 @@ public class UpdateLoadBalancerZonesRequest extends RpcAcsRequest<UpdateLoadBala
 
 		private String vSwitchId;
 
+		private String eipType;
+
 		private String zoneId;
+
+		private String allocationId;
+
+		private String intranetAddress;
 
 		public String getVSwitchId() {
 			return this.vSwitchId;
@@ -106,12 +115,36 @@ public class UpdateLoadBalancerZonesRequest extends RpcAcsRequest<UpdateLoadBala
 			this.vSwitchId = vSwitchId;
 		}
 
+		public String getEipType() {
+			return this.eipType;
+		}
+
+		public void setEipType(String eipType) {
+			this.eipType = eipType;
+		}
+
 		public String getZoneId() {
 			return this.zoneId;
 		}
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+
+		public String getAllocationId() {
+			return this.allocationId;
+		}
+
+		public void setAllocationId(String allocationId) {
+			this.allocationId = allocationId;
+		}
+
+		public String getIntranetAddress() {
+			return this.intranetAddress;
+		}
+
+		public void setIntranetAddress(String intranetAddress) {
+			this.intranetAddress = intranetAddress;
 		}
 	}
 

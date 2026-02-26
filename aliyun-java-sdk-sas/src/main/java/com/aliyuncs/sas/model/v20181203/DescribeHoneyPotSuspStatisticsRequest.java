@@ -27,9 +27,11 @@ public class DescribeHoneyPotSuspStatisticsRequest extends RpcAcsRequest<Describ
 
 	private Integer statisticsDays;
 
-	private String statisticsKeyType;
-
 	private String from;
+
+	private String lang;
+
+	private String statisticsKeyType;
 	public DescribeHoneyPotSuspStatisticsRequest() {
 		super("Sas", "2018-12-03", "DescribeHoneyPotSuspStatistics");
 		setMethod(MethodType.POST);
@@ -50,17 +52,6 @@ public class DescribeHoneyPotSuspStatisticsRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public String getStatisticsKeyType() {
-		return this.statisticsKeyType;
-	}
-
-	public void setStatisticsKeyType(String statisticsKeyType) {
-		this.statisticsKeyType = statisticsKeyType;
-		if(statisticsKeyType != null){
-			putQueryParameter("StatisticsKeyType", statisticsKeyType);
-		}
-	}
-
 	public String getFrom() {
 		return this.from;
 	}
@@ -69,6 +60,28 @@ public class DescribeHoneyPotSuspStatisticsRequest extends RpcAcsRequest<Describ
 		this.from = from;
 		if(from != null){
 			putQueryParameter("From", from);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getStatisticsKeyType() {
+		return this.statisticsKeyType;
+	}
+
+	public void setStatisticsKeyType(String statisticsKeyType) {
+		this.statisticsKeyType = statisticsKeyType;
+		if(statisticsKeyType != null){
+			putQueryParameter("StatisticsKeyType", statisticsKeyType);
 		}
 	}
 

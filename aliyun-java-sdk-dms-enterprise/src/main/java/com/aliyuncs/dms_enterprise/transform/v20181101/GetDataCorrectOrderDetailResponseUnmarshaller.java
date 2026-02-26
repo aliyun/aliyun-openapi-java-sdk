@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.aliyuncs.dms_enterprise.model.v20181101.GetDataCorrectOrderDetailResponse;
 import com.aliyuncs.dms_enterprise.model.v20181101.GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail;
+import com.aliyuncs.dms_enterprise.model.v20181101.GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail;
+import com.aliyuncs.dms_enterprise.model.v20181101.GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.CronExtConfig;
+import com.aliyuncs.dms_enterprise.model.v20181101.GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.ImportExtConfig;
 import com.aliyuncs.dms_enterprise.model.v20181101.GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.Database;
 import com.aliyuncs.dms_enterprise.model.v20181101.GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail;
 import com.aliyuncs.dms_enterprise.model.v20181101.GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.TaskCheckDO;
@@ -51,6 +54,33 @@ public class GetDataCorrectOrderDetailResponseUnmarshaller {
 		orderDetail.setSqlType(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.SqlType"));
 		orderDetail.setIgnoreAffectRowsReason(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.IgnoreAffectRowsReason"));
 		dataCorrectOrderDetail.setOrderDetail(orderDetail);
+
+		ConfigDetail configDetail = new ConfigDetail();
+		configDetail.setDetailType(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.DetailType"));
+		configDetail.setFileType(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.FileType"));
+		configDetail.setCsvTableName(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.CsvTableName"));
+		configDetail.setFileEncoding(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.FileEncoding"));
+		configDetail.setCron(_ctx.booleanValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.Cron"));
+		configDetail.setCronCallTimes(_ctx.integerValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.CronCallTimes"));
+		configDetail.setCronFormat(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.CronFormat"));
+		configDetail.setDuration(_ctx.integerValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.Duration"));
+		configDetail.setCronStatus(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.CronStatus"));
+		configDetail.setCronLastCallStartTime(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.CronLastCallStartTime"));
+		configDetail.setCronNextCallTime(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.CronNextCallTime"));
+		configDetail.setCurrentTaskId(_ctx.longValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.CurrentTaskId"));
+
+		ImportExtConfig importExtConfig = new ImportExtConfig();
+		importExtConfig.setInsertType(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.ImportExtConfig.InsertType"));
+		importExtConfig.setCsvFirstRowIsColumnDef(_ctx.booleanValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.ImportExtConfig.CsvFirstRowIsColumnDef"));
+		importExtConfig.setIgnoreError(_ctx.booleanValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.ImportExtConfig.IgnoreError"));
+		importExtConfig.setImportMode(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.ImportExtConfig.ImportMode"));
+		configDetail.setImportExtConfig(importExtConfig);
+
+		CronExtConfig cronExtConfig = new CronExtConfig();
+		cronExtConfig.setOptimizeTableAfterEveryClearTimes(_ctx.integerValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.CronExtConfig.OptimizeTableAfterEveryClearTimes"));
+		cronExtConfig.setCurrentClearTaskCount(_ctx.integerValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ConfigDetail.CronExtConfig.CurrentClearTaskCount"));
+		configDetail.setCronExtConfig(cronExtConfig);
+		dataCorrectOrderDetail.setConfigDetail(configDetail);
 
 		List<TaskCheckDO> preCheckDetail = new ArrayList<TaskCheckDO>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.PreCheckDetail.Length"); i++) {

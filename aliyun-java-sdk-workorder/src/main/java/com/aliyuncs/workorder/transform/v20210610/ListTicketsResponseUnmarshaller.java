@@ -28,18 +28,18 @@ public class ListTicketsResponseUnmarshaller {
 	public static ListTicketsResponse unmarshall(ListTicketsResponse listTicketsResponse, UnmarshallerContext _ctx) {
 		
 		listTicketsResponse.setRequestId(_ctx.stringValue("ListTicketsResponse.RequestId"));
+		listTicketsResponse.setSuccess(_ctx.booleanValue("ListTicketsResponse.Success"));
 		listTicketsResponse.setCode(_ctx.integerValue("ListTicketsResponse.Code"));
 		listTicketsResponse.setMessage(_ctx.stringValue("ListTicketsResponse.Message"));
 		listTicketsResponse.setPageNumber(_ctx.integerValue("ListTicketsResponse.PageNumber"));
 		listTicketsResponse.setPageSize(_ctx.integerValue("ListTicketsResponse.PageSize"));
 		listTicketsResponse.setTotalCount(_ctx.longValue("ListTicketsResponse.TotalCount"));
-		listTicketsResponse.setSuccess(_ctx.booleanValue("ListTicketsResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListTicketsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setTitle(_ctx.stringValue("ListTicketsResponse.Data["+ i +"].Title"));
 			dataItem.setTicketId(_ctx.stringValue("ListTicketsResponse.Data["+ i +"].TicketId"));
+			dataItem.setTitle(_ctx.stringValue("ListTicketsResponse.Data["+ i +"].Title"));
 
 			Status status = new Status();
 			status.setLabel(_ctx.stringValue("ListTicketsResponse.Data["+ i +"].Status.Label"));

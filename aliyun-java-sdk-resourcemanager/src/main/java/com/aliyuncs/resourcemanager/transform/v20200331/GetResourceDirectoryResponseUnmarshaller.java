@@ -26,15 +26,15 @@ public class GetResourceDirectoryResponseUnmarshaller {
 		getResourceDirectoryResponse.setRequestId(_ctx.stringValue("GetResourceDirectoryResponse.RequestId"));
 
 		ResourceDirectory resourceDirectory = new ResourceDirectory();
-		resourceDirectory.setRootFolderId(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.RootFolderId"));
-		resourceDirectory.setResourceDirectoryId(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.ResourceDirectoryId"));
+		resourceDirectory.setControlPolicyStatus(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.ControlPolicyStatus"));
 		resourceDirectory.setCreateTime(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.CreateTime"));
+		resourceDirectory.setIdentityInformation(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.IdentityInformation"));
 		resourceDirectory.setMasterAccountId(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.MasterAccountId"));
 		resourceDirectory.setMasterAccountName(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.MasterAccountName"));
-		resourceDirectory.setScpStatus(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.ScpStatus"));
-		resourceDirectory.setControlPolicyStatus(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.ControlPolicyStatus"));
 		resourceDirectory.setMemberDeletionStatus(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.MemberDeletionStatus"));
-		resourceDirectory.setIdentityInformation(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.IdentityInformation"));
+		resourceDirectory.setResourceDirectoryId(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.ResourceDirectoryId"));
+		resourceDirectory.setRootFolderId(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.RootFolderId"));
+		resourceDirectory.setScpStatus(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.ScpStatus"));
 		getResourceDirectoryResponse.setResourceDirectory(resourceDirectory);
 	 
 	 	return getResourceDirectoryResponse;

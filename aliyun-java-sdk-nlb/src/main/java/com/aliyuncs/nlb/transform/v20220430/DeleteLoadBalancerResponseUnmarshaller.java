@@ -1,0 +1,36 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.nlb.transform.v20220430;
+
+import com.aliyuncs.nlb.model.v20220430.DeleteLoadBalancerResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+
+public class DeleteLoadBalancerResponseUnmarshaller {
+
+	public static DeleteLoadBalancerResponse unmarshall(DeleteLoadBalancerResponse deleteLoadBalancerResponse, UnmarshallerContext _ctx) {
+		
+		deleteLoadBalancerResponse.setRequestId(_ctx.stringValue("DeleteLoadBalancerResponse.RequestId"));
+		deleteLoadBalancerResponse.setSuccess(_ctx.booleanValue("DeleteLoadBalancerResponse.Success"));
+		deleteLoadBalancerResponse.setCode(_ctx.stringValue("DeleteLoadBalancerResponse.Code"));
+		deleteLoadBalancerResponse.setMessage(_ctx.stringValue("DeleteLoadBalancerResponse.Message"));
+		deleteLoadBalancerResponse.setHttpStatusCode(_ctx.integerValue("DeleteLoadBalancerResponse.HttpStatusCode"));
+		deleteLoadBalancerResponse.setDynamicCode(_ctx.stringValue("DeleteLoadBalancerResponse.DynamicCode"));
+		deleteLoadBalancerResponse.setDynamicMessage(_ctx.stringValue("DeleteLoadBalancerResponse.DynamicMessage"));
+		deleteLoadBalancerResponse.setJobId(_ctx.stringValue("DeleteLoadBalancerResponse.JobId"));
+	 
+	 	return deleteLoadBalancerResponse;
+	}
+}

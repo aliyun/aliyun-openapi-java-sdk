@@ -64,9 +64,9 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
     public void setSpotResource(SpotAvailableResource spotResource) {
         this.spotResource = spotResource;
         if (null != spotResource) {
-            putQueryParameter("SpotAvailableResource.SpotStrategy", spotResource.getSpotStrategy());
-            putQueryParameter("SpotAvailableResource.SpotPriceLimit", spotResource.getSpotPriceLimit());
-            putQueryParameter("SpotAvailableResource.SpotDuration", spotResource.getSpotDuration());
+            putQueryParameter("SpotResource.SpotStrategy", spotResource.getSpotStrategy());
+            putQueryParameter("SpotResource.SpotPriceLimit", spotResource.getSpotPriceLimit());
+            putQueryParameter("SpotResource.SpotDuration", spotResource.getSpotDuration());
         }
     }
 

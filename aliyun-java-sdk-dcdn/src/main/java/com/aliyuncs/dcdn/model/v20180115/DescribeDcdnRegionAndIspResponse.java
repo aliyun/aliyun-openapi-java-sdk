@@ -57,17 +57,9 @@ public class DescribeDcdnRegionAndIspResponse extends AcsResponse {
 
 	public static class Region {
 
-		private String nameZh;
-
 		private String nameEn;
 
-		public String getNameZh() {
-			return this.nameZh;
-		}
-
-		public void setNameZh(String nameZh) {
-			this.nameZh = nameZh;
-		}
+		private String nameZh;
 
 		public String getNameEn() {
 			return this.nameEn;
@@ -75,22 +67,22 @@ public class DescribeDcdnRegionAndIspResponse extends AcsResponse {
 
 		public void setNameEn(String nameEn) {
 			this.nameEn = nameEn;
+		}
+
+		public String getNameZh() {
+			return this.nameZh;
+		}
+
+		public void setNameZh(String nameZh) {
+			this.nameZh = nameZh;
 		}
 	}
 
 	public static class Isp {
 
-		private String nameZh;
-
 		private String nameEn;
 
-		public String getNameZh() {
-			return this.nameZh;
-		}
-
-		public void setNameZh(String nameZh) {
-			this.nameZh = nameZh;
-		}
+		private String nameZh;
 
 		public String getNameEn() {
 			return this.nameEn;
@@ -98,6 +90,14 @@ public class DescribeDcdnRegionAndIspResponse extends AcsResponse {
 
 		public void setNameEn(String nameEn) {
 			this.nameEn = nameEn;
+		}
+
+		public String getNameZh() {
+			return this.nameZh;
+		}
+
+		public void setNameZh(String nameZh) {
+			this.nameZh = nameZh;
 		}
 	}
 

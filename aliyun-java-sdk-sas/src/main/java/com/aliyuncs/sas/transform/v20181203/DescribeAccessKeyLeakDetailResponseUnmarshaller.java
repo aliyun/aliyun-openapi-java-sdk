@@ -42,6 +42,8 @@ public class DescribeAccessKeyLeakDetailResponseUnmarshaller {
 		describeAccessKeyLeakDetailResponse.setCode(_ctx.stringValue("DescribeAccessKeyLeakDetailResponse.Code"));
 		describeAccessKeyLeakDetailResponse.setGmtCreate(_ctx.stringValue("DescribeAccessKeyLeakDetailResponse.GmtCreate"));
 		describeAccessKeyLeakDetailResponse.setGithubRepoUrl(_ctx.stringValue("DescribeAccessKeyLeakDetailResponse.GithubRepoUrl"));
+		describeAccessKeyLeakDetailResponse.setTokenValid(_ctx.integerValue("DescribeAccessKeyLeakDetailResponse.TokenValid"));
+		describeAccessKeyLeakDetailResponse.setWhitelistTime(_ctx.longValue("DescribeAccessKeyLeakDetailResponse.WhitelistTime"));
 	 
 	 	return describeAccessKeyLeakDetailResponse;
 	}

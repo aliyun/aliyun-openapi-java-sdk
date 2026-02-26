@@ -57,6 +57,8 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 
 	private String privateLinkMode;
 
+	private Boolean enableSessionLog;
+
 	private List<IpListItem> ipList;
 
 	private ForwardTable forwardTable;
@@ -70,6 +72,10 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 	private PrivateInfo privateInfo;
 
 	private DeletionProtectionInfo deletionProtectionInfo;
+
+	private LogDelivery logDelivery;
+
+	private AccessMode accessMode;
 
 	public String getVpcId() {
 		return this.vpcId;
@@ -199,6 +205,14 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 		this.privateLinkMode = privateLinkMode;
 	}
 
+	public Boolean getEnableSessionLog() {
+		return this.enableSessionLog;
+	}
+
+	public void setEnableSessionLog(Boolean enableSessionLog) {
+		this.enableSessionLog = enableSessionLog;
+	}
+
 	public List<IpListItem> getIpList() {
 		return this.ipList;
 	}
@@ -253,6 +267,22 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 
 	public void setDeletionProtectionInfo(DeletionProtectionInfo deletionProtectionInfo) {
 		this.deletionProtectionInfo = deletionProtectionInfo;
+	}
+
+	public LogDelivery getLogDelivery() {
+		return this.logDelivery;
+	}
+
+	public void setLogDelivery(LogDelivery logDelivery) {
+		this.logDelivery = logDelivery;
+	}
+
+	public AccessMode getAccessMode() {
+		return this.accessMode;
+	}
+
+	public void setAccessMode(AccessMode accessMode) {
+		this.accessMode = accessMode;
 	}
 
 	public static class IpListItem {
@@ -463,6 +493,72 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 
 		public void setEnabled(Boolean enabled) {
 			this.enabled = enabled;
+		}
+	}
+
+	public static class LogDelivery {
+
+		private String logDeliveryType;
+
+		private String logDestination;
+
+		private String deliveryStatus;
+
+		private String deliverLogsErrorMessage;
+
+		public String getLogDeliveryType() {
+			return this.logDeliveryType;
+		}
+
+		public void setLogDeliveryType(String logDeliveryType) {
+			this.logDeliveryType = logDeliveryType;
+		}
+
+		public String getLogDestination() {
+			return this.logDestination;
+		}
+
+		public void setLogDestination(String logDestination) {
+			this.logDestination = logDestination;
+		}
+
+		public String getDeliveryStatus() {
+			return this.deliveryStatus;
+		}
+
+		public void setDeliveryStatus(String deliveryStatus) {
+			this.deliveryStatus = deliveryStatus;
+		}
+
+		public String getDeliverLogsErrorMessage() {
+			return this.deliverLogsErrorMessage;
+		}
+
+		public void setDeliverLogsErrorMessage(String deliverLogsErrorMessage) {
+			this.deliverLogsErrorMessage = deliverLogsErrorMessage;
+		}
+	}
+
+	public static class AccessMode {
+
+		private String modeValue;
+
+		private String tunnelType;
+
+		public String getModeValue() {
+			return this.modeValue;
+		}
+
+		public void setModeValue(String modeValue) {
+			this.modeValue = modeValue;
+		}
+
+		public String getTunnelType() {
+			return this.tunnelType;
+		}
+
+		public void setTunnelType(String tunnelType) {
+			this.tunnelType = tunnelType;
 		}
 	}
 

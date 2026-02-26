@@ -27,7 +27,7 @@ public class RemoveInterventionDictionaryRequest extends RoaAcsRequest<RemoveInt
 
 	private String name;
 	public RemoveInterventionDictionaryRequest() {
-		super("OpenSearch", "2017-12-25", "RemoveInterventionDictionary", "opensearch");
+		super("OpenSearch", "2017-12-25", "RemoveInterventionDictionary");
 		setUriPattern("/v4/openapi/intervention-dictionaries/[name]");
 		setMethod(MethodType.DELETE);
 		try {

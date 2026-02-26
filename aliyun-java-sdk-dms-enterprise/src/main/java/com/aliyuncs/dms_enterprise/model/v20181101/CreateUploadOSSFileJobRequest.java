@@ -27,9 +27,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class CreateUploadOSSFileJobRequest extends RpcAcsRequest<CreateUploadOSSFileJobResponse> {
 	   
 
-	private String fileSource;
-
 	private Long tid;
+
+	private String fileSource;
 
 	private String fileName;
 
@@ -44,17 +44,6 @@ public class CreateUploadOSSFileJobRequest extends RpcAcsRequest<CreateUploadOSS
 		} catch (Exception e) {}
 	}
 
-	public String getFileSource() {
-		return this.fileSource;
-	}
-
-	public void setFileSource(String fileSource) {
-		this.fileSource = fileSource;
-		if(fileSource != null){
-			putQueryParameter("FileSource", fileSource);
-		}
-	}
-
 	public Long getTid() {
 		return this.tid;
 	}
@@ -63,6 +52,17 @@ public class CreateUploadOSSFileJobRequest extends RpcAcsRequest<CreateUploadOSS
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getFileSource() {
+		return this.fileSource;
+	}
+
+	public void setFileSource(String fileSource) {
+		this.fileSource = fileSource;
+		if(fileSource != null){
+			putQueryParameter("FileSource", fileSource);
 		}
 	}
 

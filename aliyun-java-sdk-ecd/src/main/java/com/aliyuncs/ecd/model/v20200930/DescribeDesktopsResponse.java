@@ -157,13 +157,41 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		private String sessionType;
 
+		private String snapshotPolicyId;
+
+		private String snapshotPolicyName;
+
+		private Integer bindAmount;
+
+		private Boolean hibernationOptionsConfigured;
+
+		private Boolean supportHibernation;
+
+		private Boolean hibernationBeta;
+
+		private String subPayType;
+
+		private String gpuInstanceGroupId;
+
+		private String qosRuleId;
+
 		private List<Disk> disks;
 
 		private List<Tag> tags;
 
 		private List<Session> sessions;
 
+		private List<DesktopDuration> desktopDurationList;
+
+		private List<ResourceGroup> resourceGroups;
+
 		private List<String> endUserIds;
+
+		private List<String> managementFlags;
+
+		private List<String> policyGroupIdList;
+
+		private List<String> policyGroupNameList;
 
 		private FotaUpdate fotaUpdate;
 
@@ -527,6 +555,78 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.sessionType = sessionType;
 		}
 
+		public String getSnapshotPolicyId() {
+			return this.snapshotPolicyId;
+		}
+
+		public void setSnapshotPolicyId(String snapshotPolicyId) {
+			this.snapshotPolicyId = snapshotPolicyId;
+		}
+
+		public String getSnapshotPolicyName() {
+			return this.snapshotPolicyName;
+		}
+
+		public void setSnapshotPolicyName(String snapshotPolicyName) {
+			this.snapshotPolicyName = snapshotPolicyName;
+		}
+
+		public Integer getBindAmount() {
+			return this.bindAmount;
+		}
+
+		public void setBindAmount(Integer bindAmount) {
+			this.bindAmount = bindAmount;
+		}
+
+		public Boolean getHibernationOptionsConfigured() {
+			return this.hibernationOptionsConfigured;
+		}
+
+		public void setHibernationOptionsConfigured(Boolean hibernationOptionsConfigured) {
+			this.hibernationOptionsConfigured = hibernationOptionsConfigured;
+		}
+
+		public Boolean getSupportHibernation() {
+			return this.supportHibernation;
+		}
+
+		public void setSupportHibernation(Boolean supportHibernation) {
+			this.supportHibernation = supportHibernation;
+		}
+
+		public Boolean getHibernationBeta() {
+			return this.hibernationBeta;
+		}
+
+		public void setHibernationBeta(Boolean hibernationBeta) {
+			this.hibernationBeta = hibernationBeta;
+		}
+
+		public String getSubPayType() {
+			return this.subPayType;
+		}
+
+		public void setSubPayType(String subPayType) {
+			this.subPayType = subPayType;
+		}
+
+		public String getGpuInstanceGroupId() {
+			return this.gpuInstanceGroupId;
+		}
+
+		public void setGpuInstanceGroupId(String gpuInstanceGroupId) {
+			this.gpuInstanceGroupId = gpuInstanceGroupId;
+		}
+
+		public String getQosRuleId() {
+			return this.qosRuleId;
+		}
+
+		public void setQosRuleId(String qosRuleId) {
+			this.qosRuleId = qosRuleId;
+		}
+
 		public List<Disk> getDisks() {
 			return this.disks;
 		}
@@ -551,12 +651,52 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.sessions = sessions;
 		}
 
+		public List<DesktopDuration> getDesktopDurationList() {
+			return this.desktopDurationList;
+		}
+
+		public void setDesktopDurationList(List<DesktopDuration> desktopDurationList) {
+			this.desktopDurationList = desktopDurationList;
+		}
+
+		public List<ResourceGroup> getResourceGroups() {
+			return this.resourceGroups;
+		}
+
+		public void setResourceGroups(List<ResourceGroup> resourceGroups) {
+			this.resourceGroups = resourceGroups;
+		}
+
 		public List<String> getEndUserIds() {
 			return this.endUserIds;
 		}
 
 		public void setEndUserIds(List<String> endUserIds) {
 			this.endUserIds = endUserIds;
+		}
+
+		public List<String> getManagementFlags() {
+			return this.managementFlags;
+		}
+
+		public void setManagementFlags(List<String> managementFlags) {
+			this.managementFlags = managementFlags;
+		}
+
+		public List<String> getPolicyGroupIdList() {
+			return this.policyGroupIdList;
+		}
+
+		public void setPolicyGroupIdList(List<String> policyGroupIdList) {
+			this.policyGroupIdList = policyGroupIdList;
+		}
+
+		public List<String> getPolicyGroupNameList() {
+			return this.policyGroupNameList;
+		}
+
+		public void setPolicyGroupNameList(List<String> policyGroupNameList) {
+			this.policyGroupNameList = policyGroupNameList;
 		}
 
 		public FotaUpdate getFotaUpdate() {
@@ -666,6 +806,152 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			}
 		}
 
+		public static class DesktopDuration {
+
+			private String packageId;
+
+			private String packageCreationTime;
+
+			private String packageExpiredTime;
+
+			private Long usedDuration;
+
+			private Long totalDuration;
+
+			private String packageStatus;
+
+			private String packageType;
+
+			private String periodStartTime;
+
+			private String periodEndTime;
+
+			private Float postPaidLimitFee;
+
+			private String packageUsedUpStrategy;
+
+			private String orderInstanceId;
+
+			public String getPackageId() {
+				return this.packageId;
+			}
+
+			public void setPackageId(String packageId) {
+				this.packageId = packageId;
+			}
+
+			public String getPackageCreationTime() {
+				return this.packageCreationTime;
+			}
+
+			public void setPackageCreationTime(String packageCreationTime) {
+				this.packageCreationTime = packageCreationTime;
+			}
+
+			public String getPackageExpiredTime() {
+				return this.packageExpiredTime;
+			}
+
+			public void setPackageExpiredTime(String packageExpiredTime) {
+				this.packageExpiredTime = packageExpiredTime;
+			}
+
+			public Long getUsedDuration() {
+				return this.usedDuration;
+			}
+
+			public void setUsedDuration(Long usedDuration) {
+				this.usedDuration = usedDuration;
+			}
+
+			public Long getTotalDuration() {
+				return this.totalDuration;
+			}
+
+			public void setTotalDuration(Long totalDuration) {
+				this.totalDuration = totalDuration;
+			}
+
+			public String getPackageStatus() {
+				return this.packageStatus;
+			}
+
+			public void setPackageStatus(String packageStatus) {
+				this.packageStatus = packageStatus;
+			}
+
+			public String getPackageType() {
+				return this.packageType;
+			}
+
+			public void setPackageType(String packageType) {
+				this.packageType = packageType;
+			}
+
+			public String getPeriodStartTime() {
+				return this.periodStartTime;
+			}
+
+			public void setPeriodStartTime(String periodStartTime) {
+				this.periodStartTime = periodStartTime;
+			}
+
+			public String getPeriodEndTime() {
+				return this.periodEndTime;
+			}
+
+			public void setPeriodEndTime(String periodEndTime) {
+				this.periodEndTime = periodEndTime;
+			}
+
+			public Float getPostPaidLimitFee() {
+				return this.postPaidLimitFee;
+			}
+
+			public void setPostPaidLimitFee(Float postPaidLimitFee) {
+				this.postPaidLimitFee = postPaidLimitFee;
+			}
+
+			public String getPackageUsedUpStrategy() {
+				return this.packageUsedUpStrategy;
+			}
+
+			public void setPackageUsedUpStrategy(String packageUsedUpStrategy) {
+				this.packageUsedUpStrategy = packageUsedUpStrategy;
+			}
+
+			public String getOrderInstanceId() {
+				return this.orderInstanceId;
+			}
+
+			public void setOrderInstanceId(String orderInstanceId) {
+				this.orderInstanceId = orderInstanceId;
+			}
+		}
+
+		public static class ResourceGroup {
+
+			private String name;
+
+			private String id;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+		}
+
 		public static class FotaUpdate {
 
 			private String currentAppVersion;
@@ -675,6 +961,10 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			private String releaseNote;
 
 			private Long size;
+
+			private String releaseNoteEn;
+
+			private String releaseNoteJp;
 
 			public String getCurrentAppVersion() {
 				return this.currentAppVersion;
@@ -706,6 +996,22 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 			public void setSize(Long size) {
 				this.size = size;
+			}
+
+			public String getReleaseNoteEn() {
+				return this.releaseNoteEn;
+			}
+
+			public void setReleaseNoteEn(String releaseNoteEn) {
+				this.releaseNoteEn = releaseNoteEn;
+			}
+
+			public String getReleaseNoteJp() {
+				return this.releaseNoteJp;
+			}
+
+			public void setReleaseNoteJp(String releaseNoteJp) {
+				this.releaseNoteJp = releaseNoteJp;
 			}
 		}
 	}

@@ -29,6 +29,8 @@ public class GetStackRequest extends RpcAcsRequest<GetStackResponse> {
 
 	private String stackId;
 
+	private String logOption;
+
 	private String showResourceProgress;
 
 	private String outputOption;
@@ -60,6 +62,17 @@ public class GetStackRequest extends RpcAcsRequest<GetStackResponse> {
 		this.stackId = stackId;
 		if(stackId != null){
 			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public String getLogOption() {
+		return this.logOption;
+	}
+
+	public void setLogOption(String logOption) {
+		this.logOption = logOption;
+		if(logOption != null){
+			putQueryParameter("LogOption", logOption);
 		}
 	}
 

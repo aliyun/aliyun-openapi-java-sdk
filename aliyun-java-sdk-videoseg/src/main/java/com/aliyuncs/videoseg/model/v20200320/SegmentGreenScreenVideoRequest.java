@@ -27,7 +27,7 @@ public class SegmentGreenScreenVideoRequest extends RpcAcsRequest<SegmentGreenSc
 
 	private String videoURL;
 	public SegmentGreenScreenVideoRequest() {
-		super("videoseg", "2020-03-20", "SegmentGreenScreenVideo", "videoseg");
+		super("videoseg", "2020-03-20", "SegmentGreenScreenVideo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,6 +1,7 @@
 package com.aliyuncs.auth;
 
 import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.utils.AuthUtils;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -30,11 +31,29 @@ public class InstanceProfileCredentialsProviderTest {
     }
 
     @Test
+    public void builderTest() {
+        AuthUtils.disableECSMetaData(true);
+        try {
+            InstanceProfileCredentialsProvider.builder()
+                    .roleName("test")
+                    .readTimeout(2000)
+                    .connectionTimeout(2000)
+                    .disableIMDSv1(false)
+                    .build();
+            Assert.fail();
+        } catch (IllegalArgumentException e) {
+            Assert.assertEquals("IMDS credentials is disabled.",
+                    e.getMessage());
+        }
+        AuthUtils.disableECSMetaData(false);
+    }
+
+    @Test
     public void withFetcherTest() {
         final String roleName = "roleName";
         InstanceProfileCredentialsProvider provider = new InstanceProfileCredentialsProvider(roleName);
         ECSMetadataServiceCredentialsFetcher fetcher = mock(ECSMetadataServiceCredentialsFetcher.class);
-        doAnswer(new Answer() {
+        doAnswer(new Answer<Object>() {
             @Override
             public Object answer(InvocationOnMock invocationOnMock) {
                 String roleNameAgru = invocationOnMock.getArgument(0, String.class);

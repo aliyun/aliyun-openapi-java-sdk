@@ -35,6 +35,7 @@ public class ListFpShotFilesResponseUnmarshaller {
 			FpShotFile fpShotFile = new FpShotFile();
 			fpShotFile.setPrimaryKey(_ctx.stringValue("ListFpShotFilesResponse.FpShotFileList["+ i +"].PrimaryKey"));
 			fpShotFile.setFileId(_ctx.stringValue("ListFpShotFilesResponse.FpShotFileList["+ i +"].FileId"));
+			fpShotFile.setStoreTime(_ctx.stringValue("ListFpShotFilesResponse.FpShotFileList["+ i +"].StoreTime"));
 
 			InputFile inputFile = new InputFile();
 			inputFile.setObject(_ctx.stringValue("ListFpShotFilesResponse.FpShotFileList["+ i +"].InputFile.Object"));

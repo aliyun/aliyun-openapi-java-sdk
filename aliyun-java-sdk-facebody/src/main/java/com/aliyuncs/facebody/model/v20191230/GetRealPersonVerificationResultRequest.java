@@ -25,8 +25,6 @@ import com.aliyuncs.facebody.Endpoint;
 public class GetRealPersonVerificationResultRequest extends RpcAcsRequest<GetRealPersonVerificationResultResponse> {
 	   
 
-	private String materialHash;
-
 	private String verificationToken;
 	public GetRealPersonVerificationResultRequest() {
 		super("facebody", "2019-12-30", "GetRealPersonVerificationResult", "facebody");
@@ -35,17 +33,6 @@ public class GetRealPersonVerificationResultRequest extends RpcAcsRequest<GetRea
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMaterialHash() {
-		return this.materialHash;
-	}
-
-	public void setMaterialHash(String materialHash) {
-		this.materialHash = materialHash;
-		if(materialHash != null){
-			putBodyParameter("MaterialHash", materialHash);
-		}
 	}
 
 	public String getVerificationToken() {

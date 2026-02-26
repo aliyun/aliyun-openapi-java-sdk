@@ -29,7 +29,7 @@ public class AllocatePublicNetworkAddressRequest extends RpcAcsRequest<AllocateP
 
 	private String clusterId;
 	public AllocatePublicNetworkAddressRequest() {
-		super("HBase", "2019-01-01", "AllocatePublicNetworkAddress", "hbase");
+		super("HBase", "2019-01-01", "AllocatePublicNetworkAddress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

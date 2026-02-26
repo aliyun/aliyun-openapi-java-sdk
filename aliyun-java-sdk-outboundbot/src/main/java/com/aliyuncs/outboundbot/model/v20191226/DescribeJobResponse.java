@@ -470,6 +470,12 @@ public class DescribeJobResponse extends AcsResponse {
 
 			private Long ringingDuration;
 
+			private String sipCode;
+
+			private Long realRingingDuration;
+
+			private Long sipDuration;
+
 			private List<ConversationDetail> conversation;
 
 			private Contact3 contact3;
@@ -600,6 +606,30 @@ public class DescribeJobResponse extends AcsResponse {
 
 			public void setRingingDuration(Long ringingDuration) {
 				this.ringingDuration = ringingDuration;
+			}
+
+			public String getSipCode() {
+				return this.sipCode;
+			}
+
+			public void setSipCode(String sipCode) {
+				this.sipCode = sipCode;
+			}
+
+			public Long getRealRingingDuration() {
+				return this.realRingingDuration;
+			}
+
+			public void setRealRingingDuration(Long realRingingDuration) {
+				this.realRingingDuration = realRingingDuration;
+			}
+
+			public Long getSipDuration() {
+				return this.sipDuration;
+			}
+
+			public void setSipDuration(Long sipDuration) {
+				this.sipDuration = sipDuration;
 			}
 
 			public List<ConversationDetail> getConversation() {

@@ -32,16 +32,16 @@ public class DescribeBackupSetsResponseUnmarshaller {
 		List<BackupSet> backupSets = new ArrayList<BackupSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupSetsResponse.BackupSets.Length"); i++) {
 			BackupSet backupSet = new BackupSet();
-			backupSet.setId(_ctx.stringValue("DescribeBackupSetsResponse.BackupSets["+ i +"].Id"));
-			backupSet.setBackupStartTime(_ctx.longValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupStartTime"));
-			backupSet.setBackupEndTime(_ctx.longValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupEndTime"));
-			backupSet.setBackupMode(_ctx.stringValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupMode"));
-			backupSet.setBackupLevel(_ctx.stringValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupLevel"));
-			backupSet.setBackupType(_ctx.stringValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupType"));
-			backupSet.setStatus(_ctx.longValue("DescribeBackupSetsResponse.BackupSets["+ i +"].Status"));
 			backupSet.setEnableRecovery(_ctx.booleanValue("DescribeBackupSetsResponse.BackupSets["+ i +"].EnableRecovery"));
-			backupSet.setBackupTotalSize(_ctx.stringValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupTotalSize"));
+			backupSet.setStatus(_ctx.longValue("DescribeBackupSetsResponse.BackupSets["+ i +"].Status"));
 			backupSet.setBackupConsitentTime(_ctx.stringValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupConsitentTime"));
+			backupSet.setBackupType(_ctx.stringValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupType"));
+			backupSet.setBackupStartTime(_ctx.longValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupStartTime"));
+			backupSet.setBackupLevel(_ctx.stringValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupLevel"));
+			backupSet.setBackupMode(_ctx.stringValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupMode"));
+			backupSet.setBackupEndTime(_ctx.longValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupEndTime"));
+			backupSet.setId(_ctx.stringValue("DescribeBackupSetsResponse.BackupSets["+ i +"].Id"));
+			backupSet.setBackupTotalSize(_ctx.stringValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupTotalSize"));
 
 			List<String> backupDbs = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupSetsResponse.BackupSets["+ i +"].BackupDbs.Length"); j++) {

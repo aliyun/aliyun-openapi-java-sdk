@@ -65,6 +65,8 @@ public class ListAggregateConfigDeliveryChannelsResponse extends AcsResponse {
 
 		private String description;
 
+		private Boolean compliantSnapshot;
+
 		private Boolean configurationSnapshot;
 
 		private Boolean configurationItemChangeNotification;
@@ -74,6 +76,8 @@ public class ListAggregateConfigDeliveryChannelsResponse extends AcsResponse {
 		private String aggregatorId;
 
 		private Long accountId;
+
+		private String deliverySnapshotTime;
 
 		public Integer getStatus() {
 			return this.status;
@@ -147,6 +151,14 @@ public class ListAggregateConfigDeliveryChannelsResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public Boolean getCompliantSnapshot() {
+			return this.compliantSnapshot;
+		}
+
+		public void setCompliantSnapshot(Boolean compliantSnapshot) {
+			this.compliantSnapshot = compliantSnapshot;
+		}
+
 		public Boolean getConfigurationSnapshot() {
 			return this.configurationSnapshot;
 		}
@@ -185,6 +197,14 @@ public class ListAggregateConfigDeliveryChannelsResponse extends AcsResponse {
 
 		public void setAccountId(Long accountId) {
 			this.accountId = accountId;
+		}
+
+		public String getDeliverySnapshotTime() {
+			return this.deliverySnapshotTime;
+		}
+
+		public void setDeliverySnapshotTime(String deliverySnapshotTime) {
+			this.deliverySnapshotTime = deliverySnapshotTime;
 		}
 	}
 

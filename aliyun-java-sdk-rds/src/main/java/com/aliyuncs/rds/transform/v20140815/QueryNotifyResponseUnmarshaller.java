@@ -30,25 +30,25 @@ public class QueryNotifyResponseUnmarshaller {
 		queryNotifyResponse.setRequestId(_ctx.stringValue("QueryNotifyResponse.RequestId"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("QueryNotifyResponse.Data.PageSize"));
 		data.setPageNumber(_ctx.integerValue("QueryNotifyResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.integerValue("QueryNotifyResponse.Data.PageSize"));
 		data.setTotalRecordCount(_ctx.integerValue("QueryNotifyResponse.Data.TotalRecordCount"));
 
 		List<NotifyItemListItem> notifyItemList = new ArrayList<NotifyItemListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryNotifyResponse.Data.NotifyItemList.Length"); i++) {
 			NotifyItemListItem notifyItemListItem = new NotifyItemListItem();
-			notifyItemListItem.setId(_ctx.longValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].Id"));
-			notifyItemListItem.setGmtCreated(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].GmtCreated"));
-			notifyItemListItem.setGmtModified(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].GmtModified"));
 			notifyItemListItem.setAliUid(_ctx.longValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].AliUid"));
-			notifyItemListItem.setIdempotentId(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].IdempotentId"));
-			notifyItemListItem.setIdempotentCount(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].IdempotentCount"));
-			notifyItemListItem.setType(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].Type"));
-			notifyItemListItem.setLevel(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].Level"));
-			notifyItemListItem.setTemplateName(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].TemplateName"));
-			notifyItemListItem.setNotifyElement(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].NotifyElement"));
 			notifyItemListItem.setConfirmFlag(_ctx.booleanValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].ConfirmFlag"));
 			notifyItemListItem.setConfirmor(_ctx.longValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].Confirmor"));
+			notifyItemListItem.setGmtCreated(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].GmtCreated"));
+			notifyItemListItem.setGmtModified(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].GmtModified"));
+			notifyItemListItem.setId(_ctx.longValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].Id"));
+			notifyItemListItem.setIdempotentCount(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].IdempotentCount"));
+			notifyItemListItem.setIdempotentId(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].IdempotentId"));
+			notifyItemListItem.setLevel(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].Level"));
+			notifyItemListItem.setNotifyElement(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].NotifyElement"));
+			notifyItemListItem.setTemplateName(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].TemplateName"));
+			notifyItemListItem.setType(_ctx.stringValue("QueryNotifyResponse.Data.NotifyItemList["+ i +"].Type"));
 
 			notifyItemList.add(notifyItemListItem);
 		}

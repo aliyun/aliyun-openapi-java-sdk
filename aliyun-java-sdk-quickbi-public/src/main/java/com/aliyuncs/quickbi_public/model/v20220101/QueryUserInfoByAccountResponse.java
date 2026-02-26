@@ -14,6 +14,7 @@
 
 package com.aliyuncs.quickbi_public.model.v20220101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.quickbi_public.transform.v20220101.QueryUserInfoByAccountResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryUserInfoByAccountResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +37,14 @@ public class QueryUserInfoByAccountResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -56,55 +57,25 @@ public class QueryUserInfoByAccountResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer userType;
-
-		private String email;
-
-		private String userId;
-
-		private Boolean authAdminUser;
-
 		private String accountId;
-
-		private String nickName;
-
-		private Boolean adminUser;
-
-		private String phone;
 
 		private String accountName;
 
-		public Integer getUserType() {
-			return this.userType;
-		}
+		private Boolean adminUser;
 
-		public void setUserType(Integer userType) {
-			this.userType = userType;
-		}
+		private Boolean authAdminUser;
 
-		public String getEmail() {
-			return this.email;
-		}
+		private String email;
 
-		public void setEmail(String email) {
-			this.email = email;
-		}
+		private String nickName;
 
-		public String getUserId() {
-			return this.userId;
-		}
+		private String phone;
 
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
+		private String userId;
 
-		public Boolean getAuthAdminUser() {
-			return this.authAdminUser;
-		}
+		private Integer userType;
 
-		public void setAuthAdminUser(Boolean authAdminUser) {
-			this.authAdminUser = authAdminUser;
-		}
+		private List<Long> roleIdList;
 
 		public String getAccountId() {
 			return this.accountId;
@@ -114,12 +85,12 @@ public class QueryUserInfoByAccountResponse extends AcsResponse {
 			this.accountId = accountId;
 		}
 
-		public String getNickName() {
-			return this.nickName;
+		public String getAccountName() {
+			return this.accountName;
 		}
 
-		public void setNickName(String nickName) {
-			this.nickName = nickName;
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 
 		public Boolean getAdminUser() {
@@ -130,6 +101,30 @@ public class QueryUserInfoByAccountResponse extends AcsResponse {
 			this.adminUser = adminUser;
 		}
 
+		public Boolean getAuthAdminUser() {
+			return this.authAdminUser;
+		}
+
+		public void setAuthAdminUser(Boolean authAdminUser) {
+			this.authAdminUser = authAdminUser;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getNickName() {
+			return this.nickName;
+		}
+
+		public void setNickName(String nickName) {
+			this.nickName = nickName;
+		}
+
 		public String getPhone() {
 			return this.phone;
 		}
@@ -138,12 +133,28 @@ public class QueryUserInfoByAccountResponse extends AcsResponse {
 			this.phone = phone;
 		}
 
-		public String getAccountName() {
-			return this.accountName;
+		public String getUserId() {
+			return this.userId;
 		}
 
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public Integer getUserType() {
+			return this.userType;
+		}
+
+		public void setUserType(Integer userType) {
+			this.userType = userType;
+		}
+
+		public List<Long> getRoleIdList() {
+			return this.roleIdList;
+		}
+
+		public void setRoleIdList(List<Long> roleIdList) {
+			this.roleIdList = roleIdList;
 		}
 	}
 

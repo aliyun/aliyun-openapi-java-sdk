@@ -33,6 +33,8 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 
 	private Long totalCount;
 
+	private String nextToken;
+
 	private List<Invocation> invocations;
 
 	public Long getPageSize() {
@@ -65,6 +67,14 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<Invocation> getInvocations() {
@@ -104,6 +114,8 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 		private String overwrite;
 
 		private List<InvokeInstance> invokeInstances;
+
+		private List<Tag> tags;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -217,6 +229,14 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 			this.invokeInstances = invokeInstances;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public static class InvokeInstance {
 
 			private String creationTime;
@@ -297,6 +317,29 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

@@ -29,21 +29,21 @@ public class ListPSMemberDataTypeCodeResponseUnmarshaller {
 		
 		listPSMemberDataTypeCodeResponse.setRequestId(_ctx.stringValue("ListPSMemberDataTypeCodeResponse.RequestId"));
 		listPSMemberDataTypeCodeResponse.setCode(_ctx.integerValue("ListPSMemberDataTypeCodeResponse.Code"));
-		listPSMemberDataTypeCodeResponse.setSuccess(_ctx.booleanValue("ListPSMemberDataTypeCodeResponse.Success"));
 		listPSMemberDataTypeCodeResponse.setMessage(_ctx.stringValue("ListPSMemberDataTypeCodeResponse.Message"));
+		listPSMemberDataTypeCodeResponse.setSuccess(_ctx.booleanValue("ListPSMemberDataTypeCodeResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("ListPSMemberDataTypeCodeResponse.Data.Total"));
 		data.setNum(_ctx.integerValue("ListPSMemberDataTypeCodeResponse.Data.Num"));
+		data.setTotal(_ctx.integerValue("ListPSMemberDataTypeCodeResponse.Data.Total"));
 		data.setSize(_ctx.integerValue("ListPSMemberDataTypeCodeResponse.Data.Size"));
 
 		List<MemberInfo> pageData = new ArrayList<MemberInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListPSMemberDataTypeCodeResponse.Data.PageData.Length"); i++) {
 			MemberInfo memberInfo = new MemberInfo();
 			memberInfo.setMemberId(_ctx.stringValue("ListPSMemberDataTypeCodeResponse.Data.PageData["+ i +"].MemberId"));
+			memberInfo.setDataTypeCode(_ctx.stringValue("ListPSMemberDataTypeCodeResponse.Data.PageData["+ i +"].DataTypeCode"));
 			memberInfo.setMemberName(_ctx.stringValue("ListPSMemberDataTypeCodeResponse.Data.PageData["+ i +"].MemberName"));
 			memberInfo.setMemberUid(_ctx.stringValue("ListPSMemberDataTypeCodeResponse.Data.PageData["+ i +"].MemberUid"));
-			memberInfo.setDataTypeCode(_ctx.stringValue("ListPSMemberDataTypeCodeResponse.Data.PageData["+ i +"].DataTypeCode"));
 
 			pageData.add(memberInfo);
 		}

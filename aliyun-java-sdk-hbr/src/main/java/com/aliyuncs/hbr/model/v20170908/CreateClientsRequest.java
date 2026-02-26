@@ -26,15 +26,13 @@ import com.aliyuncs.hbr.Endpoint;
 public class CreateClientsRequest extends RpcAcsRequest<CreateClientsResponse> {
 	   
 
-	private String clientType;
-
 	private String vaultId;
 
 	private String clientInfo;
 
-	private String token;
-
 	private String alertSetting;
+
+	private String resourceGroupId;
 
 	private Boolean useHttps;
 	public CreateClientsRequest() {
@@ -45,17 +43,6 @@ public class CreateClientsRequest extends RpcAcsRequest<CreateClientsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientType() {
-		return this.clientType;
-	}
-
-	public void setClientType(String clientType) {
-		this.clientType = clientType;
-		if(clientType != null){
-			putQueryParameter("ClientType", clientType);
-		}
 	}
 
 	public String getVaultId() {
@@ -80,17 +67,6 @@ public class CreateClientsRequest extends RpcAcsRequest<CreateClientsResponse> {
 		}
 	}
 
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
-		}
-	}
-
 	public String getAlertSetting() {
 		return this.alertSetting;
 	}
@@ -99,6 +75,17 @@ public class CreateClientsRequest extends RpcAcsRequest<CreateClientsResponse> {
 		this.alertSetting = alertSetting;
 		if(alertSetting != null){
 			putQueryParameter("AlertSetting", alertSetting);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

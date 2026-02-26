@@ -46,11 +46,25 @@ public class ListServiceSourceResponseUnmarshaller {
 			sources.setGmtCreate(_ctx.stringValue("ListServiceSourceResponse.Data["+ i +"].GmtCreate"));
 			sources.setGmtModified(_ctx.stringValue("ListServiceSourceResponse.Data["+ i +"].GmtModified"));
 			sources.setSourceUniqueId(_ctx.stringValue("ListServiceSourceResponse.Data["+ i +"].SourceUniqueId"));
+			sources.setGatewayUniqueId(_ctx.stringValue("ListServiceSourceResponse.Data["+ i +"].GatewayUniqueId"));
+
+			List<String> groupList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListServiceSourceResponse.Data["+ i +"].GroupList.Length"); j++) {
+				groupList.add(_ctx.stringValue("ListServiceSourceResponse.Data["+ i +"].GroupList["+ j +"]"));
+			}
+			sources.setGroupList(groupList);
+
+			List<String> pathList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListServiceSourceResponse.Data["+ i +"].PathList.Length"); j++) {
+				pathList.add(_ctx.stringValue("ListServiceSourceResponse.Data["+ i +"].PathList["+ j +"]"));
+			}
+			sources.setPathList(pathList);
 
 			IngressOptions ingressOptions = new IngressOptions();
 			ingressOptions.setEnableIngress(_ctx.booleanValue("ListServiceSourceResponse.Data["+ i +"].IngressOptions.EnableIngress"));
 			ingressOptions.setIngressClass(_ctx.stringValue("ListServiceSourceResponse.Data["+ i +"].IngressOptions.IngressClass"));
 			ingressOptions.setWatchNamespace(_ctx.stringValue("ListServiceSourceResponse.Data["+ i +"].IngressOptions.WatchNamespace"));
+			ingressOptions.setEnableStatus(_ctx.booleanValue("ListServiceSourceResponse.Data["+ i +"].IngressOptions.EnableStatus"));
 			sources.setIngressOptions(ingressOptions);
 
 			data.add(sources);

@@ -30,6 +30,10 @@ public class ListAppsRequest extends RpcAcsRequest<ListAppsResponse> {
 
 	private String description;
 
+	private String appStatus;
+
+	private String customParentId;
+
 	private String source;
 
 	private String mainModuleId;
@@ -76,6 +80,28 @@ public class ListAppsRequest extends RpcAcsRequest<ListAppsResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getAppStatus() {
+		return this.appStatus;
+	}
+
+	public void setAppStatus(String appStatus) {
+		this.appStatus = appStatus;
+		if(appStatus != null){
+			putQueryParameter("AppStatus", appStatus);
+		}
+	}
+
+	public String getCustomParentId() {
+		return this.customParentId;
+	}
+
+	public void setCustomParentId(String customParentId) {
+		this.customParentId = customParentId;
+		if(customParentId != null){
+			putQueryParameter("CustomParentId", customParentId);
 		}
 	}
 

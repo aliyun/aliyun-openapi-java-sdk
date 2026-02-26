@@ -31,6 +31,8 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 
 	private String securityToken;
 
+	private String sourceBiz;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -77,6 +79,17 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getSourceBiz() {
+		return this.sourceBiz;
+	}
+
+	public void setSourceBiz(String sourceBiz) {
+		this.sourceBiz = sourceBiz;
+		if(sourceBiz != null){
+			putQueryParameter("SourceBiz", sourceBiz);
 		}
 	}
 

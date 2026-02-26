@@ -24,8 +24,12 @@ public class ChainedEndpointResolver implements EndpointResolver {
         }
 
         if (!productCodeValid) {
+            String fmt = "No endpoint for product '%s'.\n" +
+                    "Please check the product code, or set an endpoint for your request explicitly.\n" +
+                    "See https://api.alibabacloud.com/product/%s\n";
+
             throw new ClientException(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR,
-                    String.format(ErrorMessageConstant.ENDPOINT_NO_PRODUCT, request.productCode));
+                    String.format(fmt, request.productCode, request.productCode));
         }
     }
 
@@ -70,9 +74,16 @@ public class ChainedEndpointResolver implements EndpointResolver {
 
         checkProductCode(request);
         checkRegionId(request);
-
-        throw new ClientException(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR,
-                String.format(ErrorMessageConstant.ENDPOINT_NO_REGION, request.regionId, request.productCode,
-                        getAvailableRegionsHint(request.productCode)));
+        String fmt = "No endpoint in the region '%s' for product '%s'.\n" +
+                "You can set an endpoint for your request explicitly.%s\n" +
+                "See https://api.alibabacloud.com/product/%s";
+        String message = String.format(
+                fmt,
+                request.regionId,
+                request.productCode,
+                getAvailableRegionsHint(request.productCode),
+                request.productCode
+        );
+        throw new ClientException(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, message);
     }
 }

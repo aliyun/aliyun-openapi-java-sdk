@@ -26,11 +26,13 @@ import com.aliyuncs.kms.Endpoint;
 public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 	   
 
-	private String encryptionContext;
+	private String dryRun;
 
 	private String keyId;
 
 	private String plaintext;
+
+	private String encryptionContext;
 	public EncryptRequest() {
 		super("Kms", "2016-01-20", "Encrypt", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -41,14 +43,14 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getEncryptionContext() {
-		return this.encryptionContext;
+	public String getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setEncryptionContext(String encryptionContext) {
-		this.encryptionContext = encryptionContext;
-		if(encryptionContext != null){
-			putQueryParameter("EncryptionContext", encryptionContext);
+	public void setDryRun(String dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun);
 		}
 	}
 
@@ -71,6 +73,17 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 		this.plaintext = plaintext;
 		if(plaintext != null){
 			putQueryParameter("Plaintext", plaintext);
+		}
+	}
+
+	public String getEncryptionContext() {
+		return this.encryptionContext;
+	}
+
+	public void setEncryptionContext(String encryptionContext) {
+		this.encryptionContext = encryptionContext;
+		if(encryptionContext != null){
+			putQueryParameter("EncryptionContext", encryptionContext);
 		}
 	}
 

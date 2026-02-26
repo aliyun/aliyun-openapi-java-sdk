@@ -39,7 +39,7 @@ public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<Alloc
 
 	private String port;
 	public AllocateInstancePublicConnectionRequest() {
-		super("gpdb", "2016-05-03", "AllocateInstancePublicConnection");
+		super("gpdb", "2016-05-03", "AllocateInstancePublicConnection", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

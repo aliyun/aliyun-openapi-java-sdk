@@ -32,6 +32,8 @@ public class CreateSyntheticTaskRequest extends RpcAcsRequest<CreateSyntheticTas
 
 	private String intervalType;
 
+	private Boolean updateTask;
+
 	private String taskName;
 
 	@SerializedName("monitorList")
@@ -48,6 +50,15 @@ public class CreateSyntheticTaskRequest extends RpcAcsRequest<CreateSyntheticTas
 
 	@SerializedName("extendInterval")
 	private ExtendInterval extendInterval;
+
+	@SerializedName("navigation")
+	private Navigation navigation;
+
+	@SerializedName("download")
+	private Download download;
+
+	@SerializedName("protocol")
+	private Protocol protocol;
 
 	@SerializedName("net")
 	private Net net;
@@ -79,6 +90,17 @@ public class CreateSyntheticTaskRequest extends RpcAcsRequest<CreateSyntheticTas
 		this.intervalType = intervalType;
 		if(intervalType != null){
 			putQueryParameter("IntervalType", intervalType);
+		}
+	}
+
+	public Boolean getUpdateTask() {
+		return this.updateTask;
+	}
+
+	public void setUpdateTask(Boolean updateTask) {
+		this.updateTask = updateTask;
+		if(updateTask != null){
+			putQueryParameter("UpdateTask", updateTask.toString());
 		}
 	}
 
@@ -156,6 +178,39 @@ public class CreateSyntheticTaskRequest extends RpcAcsRequest<CreateSyntheticTas
 		this.extendInterval = extendInterval;	
 		if (extendInterval != null) {
 			putQueryParameter("ExtendInterval" , new Gson().toJson(extendInterval));
+		}	
+	}
+
+	public Navigation getNavigation() {
+		return this.navigation;
+	}
+
+	public void setNavigation(Navigation navigation) {
+		this.navigation = navigation;	
+		if (navigation != null) {
+			putQueryParameter("Navigation" , new Gson().toJson(navigation));
+		}	
+	}
+
+	public Download getDownload() {
+		return this.download;
+	}
+
+	public void setDownload(Download download) {
+		this.download = download;	
+		if (download != null) {
+			putQueryParameter("Download" , new Gson().toJson(download));
+		}	
+	}
+
+	public Protocol getBizProtocol() {
+		return this.protocol;
+	}
+
+	public void setBizProtocol(Protocol protocol) {
+		this.protocol = protocol;	
+		if (protocol != null) {
+			putQueryParameter("Protocol" , new Gson().toJson(protocol));
 		}	
 	}
 
@@ -413,13 +468,769 @@ public class CreateSyntheticTaskRequest extends RpcAcsRequest<CreateSyntheticTas
 		}
 	}
 
+	public static class Navigation {
+
+		@SerializedName("ExecuteActiveX")
+		private Long executeActiveX;
+
+		@SerializedName("NavCustomHostIp")
+		private String navCustomHostIp;
+
+		@SerializedName("NavReturnElement")
+		private Long navReturnElement;
+
+		@SerializedName("QUICVersion")
+		private Long qUICVersion;
+
+		@SerializedName("SlowElementThreshold")
+		private Double slowElementThreshold;
+
+		@SerializedName("WaitCompletionTime")
+		private Double waitCompletionTime;
+
+		@SerializedName("QUICDomain")
+		private String qUICDomain;
+
+		@SerializedName("NavCustomHeaderContent")
+		private String navCustomHeaderContent;
+
+		@SerializedName("ResponseHeader")
+		private Long responseHeader;
+
+		@SerializedName("VerifyStringWhiteList")
+		private String verifyStringWhiteList;
+
+		@SerializedName("MonitorTimeout")
+		private String monitorTimeout;
+
+		@SerializedName("FilterInvalidIP")
+		private Long filterInvalidIP;
+
+		@SerializedName("FlowHijackLogo")
+		private String flowHijackLogo;
+
+		@SerializedName("NavDisableCache")
+		private Long navDisableCache;
+
+		@SerializedName("ElementBlacklist")
+		private String elementBlacklist;
+
+		@SerializedName("FlowHijackJumpTimes")
+		private Long flowHijackJumpTimes;
+
+		@SerializedName("ExecuteScript")
+		private Long executeScript;
+
+		@SerializedName("NavDisableCompression")
+		private String navDisableCompression;
+
+		@SerializedName("DNSHijackWhiteList")
+		private String dNSHijackWhiteList;
+
+		@SerializedName("ProcessName")
+		private String processName;
+
+		@SerializedName("VerifyStringBlacklist")
+		private String verifyStringBlacklist;
+
+		@SerializedName("NavAutomaticScrolling")
+		private String navAutomaticScrolling;
+
+		@SerializedName("NavRedirection")
+		private Long navRedirection;
+
+		@SerializedName("NavCustomHeader")
+		private String navCustomHeader;
+
+		@SerializedName("ExecuteApplication")
+		private Long executeApplication;
+
+		@SerializedName("NavCustomHost")
+		private Long navCustomHost;
+
+		@SerializedName("NavIgnoreCertificateError")
+		private Long navIgnoreCertificateError;
+
+		@SerializedName("PageTamper")
+		private String pageTamper;
+
+		@SerializedName("RequestHeader")
+		private Long requestHeader;
+
+		public Long getExecuteActiveX() {
+			return this.executeActiveX;
+		}
+
+		public void setExecuteActiveX(Long executeActiveX) {
+			this.executeActiveX = executeActiveX;
+		}
+
+		public String getNavCustomHostIp() {
+			return this.navCustomHostIp;
+		}
+
+		public void setNavCustomHostIp(String navCustomHostIp) {
+			this.navCustomHostIp = navCustomHostIp;
+		}
+
+		public Long getNavReturnElement() {
+			return this.navReturnElement;
+		}
+
+		public void setNavReturnElement(Long navReturnElement) {
+			this.navReturnElement = navReturnElement;
+		}
+
+		public Long getQUICVersion() {
+			return this.qUICVersion;
+		}
+
+		public void setQUICVersion(Long qUICVersion) {
+			this.qUICVersion = qUICVersion;
+		}
+
+		public Double getSlowElementThreshold() {
+			return this.slowElementThreshold;
+		}
+
+		public void setSlowElementThreshold(Double slowElementThreshold) {
+			this.slowElementThreshold = slowElementThreshold;
+		}
+
+		public Double getWaitCompletionTime() {
+			return this.waitCompletionTime;
+		}
+
+		public void setWaitCompletionTime(Double waitCompletionTime) {
+			this.waitCompletionTime = waitCompletionTime;
+		}
+
+		public String getQUICDomain() {
+			return this.qUICDomain;
+		}
+
+		public void setQUICDomain(String qUICDomain) {
+			this.qUICDomain = qUICDomain;
+		}
+
+		public String getNavCustomHeaderContent() {
+			return this.navCustomHeaderContent;
+		}
+
+		public void setNavCustomHeaderContent(String navCustomHeaderContent) {
+			this.navCustomHeaderContent = navCustomHeaderContent;
+		}
+
+		public Long getResponseHeader() {
+			return this.responseHeader;
+		}
+
+		public void setResponseHeader(Long responseHeader) {
+			this.responseHeader = responseHeader;
+		}
+
+		public String getVerifyStringWhiteList() {
+			return this.verifyStringWhiteList;
+		}
+
+		public void setVerifyStringWhiteList(String verifyStringWhiteList) {
+			this.verifyStringWhiteList = verifyStringWhiteList;
+		}
+
+		public String getMonitorTimeout() {
+			return this.monitorTimeout;
+		}
+
+		public void setMonitorTimeout(String monitorTimeout) {
+			this.monitorTimeout = monitorTimeout;
+		}
+
+		public Long getFilterInvalidIP() {
+			return this.filterInvalidIP;
+		}
+
+		public void setFilterInvalidIP(Long filterInvalidIP) {
+			this.filterInvalidIP = filterInvalidIP;
+		}
+
+		public String getFlowHijackLogo() {
+			return this.flowHijackLogo;
+		}
+
+		public void setFlowHijackLogo(String flowHijackLogo) {
+			this.flowHijackLogo = flowHijackLogo;
+		}
+
+		public Long getNavDisableCache() {
+			return this.navDisableCache;
+		}
+
+		public void setNavDisableCache(Long navDisableCache) {
+			this.navDisableCache = navDisableCache;
+		}
+
+		public String getElementBlacklist() {
+			return this.elementBlacklist;
+		}
+
+		public void setElementBlacklist(String elementBlacklist) {
+			this.elementBlacklist = elementBlacklist;
+		}
+
+		public Long getFlowHijackJumpTimes() {
+			return this.flowHijackJumpTimes;
+		}
+
+		public void setFlowHijackJumpTimes(Long flowHijackJumpTimes) {
+			this.flowHijackJumpTimes = flowHijackJumpTimes;
+		}
+
+		public Long getExecuteScript() {
+			return this.executeScript;
+		}
+
+		public void setExecuteScript(Long executeScript) {
+			this.executeScript = executeScript;
+		}
+
+		public String getNavDisableCompression() {
+			return this.navDisableCompression;
+		}
+
+		public void setNavDisableCompression(String navDisableCompression) {
+			this.navDisableCompression = navDisableCompression;
+		}
+
+		public String getDNSHijackWhiteList() {
+			return this.dNSHijackWhiteList;
+		}
+
+		public void setDNSHijackWhiteList(String dNSHijackWhiteList) {
+			this.dNSHijackWhiteList = dNSHijackWhiteList;
+		}
+
+		public String getProcessName() {
+			return this.processName;
+		}
+
+		public void setProcessName(String processName) {
+			this.processName = processName;
+		}
+
+		public String getVerifyStringBlacklist() {
+			return this.verifyStringBlacklist;
+		}
+
+		public void setVerifyStringBlacklist(String verifyStringBlacklist) {
+			this.verifyStringBlacklist = verifyStringBlacklist;
+		}
+
+		public String getNavAutomaticScrolling() {
+			return this.navAutomaticScrolling;
+		}
+
+		public void setNavAutomaticScrolling(String navAutomaticScrolling) {
+			this.navAutomaticScrolling = navAutomaticScrolling;
+		}
+
+		public Long getNavRedirection() {
+			return this.navRedirection;
+		}
+
+		public void setNavRedirection(Long navRedirection) {
+			this.navRedirection = navRedirection;
+		}
+
+		public String getNavCustomHeader() {
+			return this.navCustomHeader;
+		}
+
+		public void setNavCustomHeader(String navCustomHeader) {
+			this.navCustomHeader = navCustomHeader;
+		}
+
+		public Long getExecuteApplication() {
+			return this.executeApplication;
+		}
+
+		public void setExecuteApplication(Long executeApplication) {
+			this.executeApplication = executeApplication;
+		}
+
+		public Long getNavCustomHost() {
+			return this.navCustomHost;
+		}
+
+		public void setNavCustomHost(Long navCustomHost) {
+			this.navCustomHost = navCustomHost;
+		}
+
+		public Long getNavIgnoreCertificateError() {
+			return this.navIgnoreCertificateError;
+		}
+
+		public void setNavIgnoreCertificateError(Long navIgnoreCertificateError) {
+			this.navIgnoreCertificateError = navIgnoreCertificateError;
+		}
+
+		public String getPageTamper() {
+			return this.pageTamper;
+		}
+
+		public void setPageTamper(String pageTamper) {
+			this.pageTamper = pageTamper;
+		}
+
+		public Long getRequestHeader() {
+			return this.requestHeader;
+		}
+
+		public void setRequestHeader(Long requestHeader) {
+			this.requestHeader = requestHeader;
+		}
+	}
+
+	public static class Download {
+
+		@SerializedName("DownloadIgnoreCertificateError")
+		private String downloadIgnoreCertificateError;
+
+		@SerializedName("DownloadCustomHost")
+		private Long downloadCustomHost;
+
+		@SerializedName("ConnectionTimeout")
+		private Double connectionTimeout;
+
+		@SerializedName("DownloadKernel")
+		private Long downloadKernel;
+
+		@SerializedName("WhiteList")
+		private String whiteList;
+
+		@SerializedName("DownloadRedirection")
+		private Long downloadRedirection;
+
+		@SerializedName("MonitorTimeout")
+		private Long monitorTimeout;
+
+		@SerializedName("ValidateKeywords")
+		private String validateKeywords;
+
+		@SerializedName("DownloadTransmissionSize")
+		private Long downloadTransmissionSize;
+
+		@SerializedName("QuickProtocol")
+		private String quickProtocol;
+
+		@SerializedName("DownloadCustomHeaderContent")
+		private String downloadCustomHeaderContent;
+
+		@SerializedName("VerifyWay")
+		private Long verifyWay;
+
+		@SerializedName("DownloadCustomHostIp")
+		private String downloadCustomHostIp;
+
+		public String getDownloadIgnoreCertificateError() {
+			return this.downloadIgnoreCertificateError;
+		}
+
+		public void setDownloadIgnoreCertificateError(String downloadIgnoreCertificateError) {
+			this.downloadIgnoreCertificateError = downloadIgnoreCertificateError;
+		}
+
+		public Long getDownloadCustomHost() {
+			return this.downloadCustomHost;
+		}
+
+		public void setDownloadCustomHost(Long downloadCustomHost) {
+			this.downloadCustomHost = downloadCustomHost;
+		}
+
+		public Double getConnectionTimeout() {
+			return this.connectionTimeout;
+		}
+
+		public void setConnectionTimeout(Double connectionTimeout) {
+			this.connectionTimeout = connectionTimeout;
+		}
+
+		public Long getDownloadKernel() {
+			return this.downloadKernel;
+		}
+
+		public void setDownloadKernel(Long downloadKernel) {
+			this.downloadKernel = downloadKernel;
+		}
+
+		public String getWhiteList() {
+			return this.whiteList;
+		}
+
+		public void setWhiteList(String whiteList) {
+			this.whiteList = whiteList;
+		}
+
+		public Long getDownloadRedirection() {
+			return this.downloadRedirection;
+		}
+
+		public void setDownloadRedirection(Long downloadRedirection) {
+			this.downloadRedirection = downloadRedirection;
+		}
+
+		public Long getMonitorTimeout() {
+			return this.monitorTimeout;
+		}
+
+		public void setMonitorTimeout(Long monitorTimeout) {
+			this.monitorTimeout = monitorTimeout;
+		}
+
+		public String getValidateKeywords() {
+			return this.validateKeywords;
+		}
+
+		public void setValidateKeywords(String validateKeywords) {
+			this.validateKeywords = validateKeywords;
+		}
+
+		public Long getDownloadTransmissionSize() {
+			return this.downloadTransmissionSize;
+		}
+
+		public void setDownloadTransmissionSize(Long downloadTransmissionSize) {
+			this.downloadTransmissionSize = downloadTransmissionSize;
+		}
+
+		public String getQuickProtocol() {
+			return this.quickProtocol;
+		}
+
+		public void setQuickProtocol(String quickProtocol) {
+			this.quickProtocol = quickProtocol;
+		}
+
+		public String getDownloadCustomHeaderContent() {
+			return this.downloadCustomHeaderContent;
+		}
+
+		public void setDownloadCustomHeaderContent(String downloadCustomHeaderContent) {
+			this.downloadCustomHeaderContent = downloadCustomHeaderContent;
+		}
+
+		public Long getVerifyWay() {
+			return this.verifyWay;
+		}
+
+		public void setVerifyWay(Long verifyWay) {
+			this.verifyWay = verifyWay;
+		}
+
+		public String getDownloadCustomHostIp() {
+			return this.downloadCustomHostIp;
+		}
+
+		public void setDownloadCustomHostIp(String downloadCustomHostIp) {
+			this.downloadCustomHostIp = downloadCustomHostIp;
+		}
+	}
+
+	public static class Protocol {
+
+		@SerializedName("ReceivedDataSize")
+		private Long receivedDataSize;
+
+		@SerializedName("ProtocolMonitorTimeout")
+		private String protocolMonitorTimeout;
+
+		@SerializedName("RequestContent")
+		private RequestContent requestContent;
+
+		@SerializedName("ProtocolConnectionTime")
+		private Long protocolConnectionTime;
+
+		@SerializedName("CharacterEncoding")
+		private Long characterEncoding;
+
+		@SerializedName("VerifyContent")
+		private String verifyContent;
+
+		@SerializedName("CustomHost")
+		private Long customHost;
+
+		@SerializedName("ProtocolConnectionTimeout")
+		private Double protocolConnectionTimeout;
+
+		@SerializedName("CustomHostIp")
+		private String customHostIp;
+
+		@SerializedName("VerifyWay")
+		private Long verifyWay;
+
+		public Long getReceivedDataSize() {
+			return this.receivedDataSize;
+		}
+
+		public void setReceivedDataSize(Long receivedDataSize) {
+			this.receivedDataSize = receivedDataSize;
+		}
+
+		public String getProtocolMonitorTimeout() {
+			return this.protocolMonitorTimeout;
+		}
+
+		public void setProtocolMonitorTimeout(String protocolMonitorTimeout) {
+			this.protocolMonitorTimeout = protocolMonitorTimeout;
+		}
+
+		public RequestContent getRequestContent() {
+			return this.requestContent;
+		}
+
+		public void setRequestContent(RequestContent requestContent) {
+			this.requestContent = requestContent;
+		}
+
+		public Long getProtocolConnectionTime() {
+			return this.protocolConnectionTime;
+		}
+
+		public void setProtocolConnectionTime(Long protocolConnectionTime) {
+			this.protocolConnectionTime = protocolConnectionTime;
+		}
+
+		public Long getCharacterEncoding() {
+			return this.characterEncoding;
+		}
+
+		public void setCharacterEncoding(Long characterEncoding) {
+			this.characterEncoding = characterEncoding;
+		}
+
+		public String getVerifyContent() {
+			return this.verifyContent;
+		}
+
+		public void setVerifyContent(String verifyContent) {
+			this.verifyContent = verifyContent;
+		}
+
+		public Long getCustomHost() {
+			return this.customHost;
+		}
+
+		public void setCustomHost(Long customHost) {
+			this.customHost = customHost;
+		}
+
+		public Double getProtocolConnectionTimeout() {
+			return this.protocolConnectionTimeout;
+		}
+
+		public void setProtocolConnectionTimeout(Double protocolConnectionTimeout) {
+			this.protocolConnectionTimeout = protocolConnectionTimeout;
+		}
+
+		public String getCustomHostIp() {
+			return this.customHostIp;
+		}
+
+		public void setCustomHostIp(String customHostIp) {
+			this.customHostIp = customHostIp;
+		}
+
+		public Long getVerifyWay() {
+			return this.verifyWay;
+		}
+
+		public void setVerifyWay(Long verifyWay) {
+			this.verifyWay = verifyWay;
+		}
+
+		public static class RequestContent {
+
+			@SerializedName("Method")
+			private String method;
+
+			@SerializedName("Header")
+			private List<HeaderItem> header;
+
+			@SerializedName("Body")
+			private Body body;
+
+			public String getBizMethod() {
+				return this.method;
+			}
+
+			public void setBizMethod(String method) {
+				this.method = method;
+			}
+
+			public List<HeaderItem> getHeader() {
+				return this.header;
+			}
+
+			public void setHeader(List<HeaderItem> header) {
+				this.header = header;
+			}
+
+			public Body getBody() {
+				return this.body;
+			}
+
+			public void setBody(Body body) {
+				this.body = body;
+			}
+
+			public static class HeaderItem {
+
+				@SerializedName("Value")
+				private String value;
+
+				@SerializedName("Key")
+				private String key;
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+			}
+
+			public static class Body {
+
+				@SerializedName("Mode")
+				private String mode;
+
+				@SerializedName("Raw")
+				private String raw;
+
+				@SerializedName("UrlEncoding")
+				private List<UrlEncodingItem> urlEncoding;
+
+				@SerializedName("Language")
+				private String language;
+
+				@SerializedName("FormData")
+				private List<FormDataItem> formData;
+
+				public String getMode() {
+					return this.mode;
+				}
+
+				public void setMode(String mode) {
+					this.mode = mode;
+				}
+
+				public String getRaw() {
+					return this.raw;
+				}
+
+				public void setRaw(String raw) {
+					this.raw = raw;
+				}
+
+				public List<UrlEncodingItem> getUrlEncoding() {
+					return this.urlEncoding;
+				}
+
+				public void setUrlEncoding(List<UrlEncodingItem> urlEncoding) {
+					this.urlEncoding = urlEncoding;
+				}
+
+				public String getLanguage() {
+					return this.language;
+				}
+
+				public void setLanguage(String language) {
+					this.language = language;
+				}
+
+				public List<FormDataItem> getFormData() {
+					return this.formData;
+				}
+
+				public void setFormData(List<FormDataItem> formData) {
+					this.formData = formData;
+				}
+
+				public static class UrlEncodingItem {
+
+					@SerializedName("Value")
+					private String value;
+
+					@SerializedName("Key")
+					private String key;
+
+					public String getValue() {
+						return this.value;
+					}
+
+					public void setValue(String value) {
+						this.value = value;
+					}
+
+					public String getKey() {
+						return this.key;
+					}
+
+					public void setKey(String key) {
+						this.key = key;
+					}
+				}
+
+				public static class FormDataItem {
+
+					@SerializedName("Value")
+					private String value;
+
+					@SerializedName("Key")
+					private String key;
+
+					public String getValue() {
+						return this.value;
+					}
+
+					public void setValue(String value) {
+						this.value = value;
+					}
+
+					public String getKey() {
+						return this.key;
+					}
+
+					public void setKey(String key) {
+						this.key = key;
+					}
+				}
+			}
+		}
+	}
+
 	public static class Net {
+
+		@SerializedName("NetICMPTimeout")
+		private Long netICMPTimeout;
 
 		@SerializedName("NetTraceRouteTimeout")
 		private Long netTraceRouteTimeout;
 
 		@SerializedName("NetICMPActive")
 		private Long netICMPActive;
+
+		@SerializedName("NetICMPDataCut")
+		private Long netICMPDataCut;
 
 		@SerializedName("NetICMPNum")
 		private Long netICMPNum;
@@ -460,6 +1271,14 @@ public class CreateSyntheticTaskRequest extends RpcAcsRequest<CreateSyntheticTas
 		@SerializedName("NetICMPSize")
 		private Long netICMPSize;
 
+		public Long getNetICMPTimeout() {
+			return this.netICMPTimeout;
+		}
+
+		public void setNetICMPTimeout(Long netICMPTimeout) {
+			this.netICMPTimeout = netICMPTimeout;
+		}
+
 		public Long getNetTraceRouteTimeout() {
 			return this.netTraceRouteTimeout;
 		}
@@ -474,6 +1293,14 @@ public class CreateSyntheticTaskRequest extends RpcAcsRequest<CreateSyntheticTas
 
 		public void setNetICMPActive(Long netICMPActive) {
 			this.netICMPActive = netICMPActive;
+		}
+
+		public Long getNetICMPDataCut() {
+			return this.netICMPDataCut;
+		}
+
+		public void setNetICMPDataCut(Long netICMPDataCut) {
+			this.netICMPDataCut = netICMPDataCut;
 		}
 
 		public Long getNetICMPNum() {

@@ -29,13 +29,15 @@ public class UpdateAcceleratorRequest extends RpcAcsRequest<UpdateAcceleratorRes
 
 	private String clientToken;
 
-	private String name;
-
 	private String description;
 
-	private String acceleratorId;
+	private Boolean autoUseCoupon;
 
 	private String spec;
+
+	private String name;
+
+	private String acceleratorId;
 	public UpdateAcceleratorRequest() {
 		super("Ga", "2019-11-20", "UpdateAccelerator", "gaplus");
 		setMethod(MethodType.POST);
@@ -67,17 +69,6 @@ public class UpdateAcceleratorRequest extends RpcAcsRequest<UpdateAcceleratorRes
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -89,14 +80,14 @@ public class UpdateAcceleratorRequest extends RpcAcsRequest<UpdateAcceleratorRes
 		}
 	}
 
-	public String getAcceleratorId() {
-		return this.acceleratorId;
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
 	}
 
-	public void setAcceleratorId(String acceleratorId) {
-		this.acceleratorId = acceleratorId;
-		if(acceleratorId != null){
-			putQueryParameter("AcceleratorId", acceleratorId);
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 
@@ -108,6 +99,28 @@ public class UpdateAcceleratorRequest extends RpcAcsRequest<UpdateAcceleratorRes
 		this.spec = spec;
 		if(spec != null){
 			putQueryParameter("Spec", spec);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getAcceleratorId() {
+		return this.acceleratorId;
+	}
+
+	public void setAcceleratorId(String acceleratorId) {
+		this.acceleratorId = acceleratorId;
+		if(acceleratorId != null){
+			putQueryParameter("AcceleratorId", acceleratorId);
 		}
 	}
 

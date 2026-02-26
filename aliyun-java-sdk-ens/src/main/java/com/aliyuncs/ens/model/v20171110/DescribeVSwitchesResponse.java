@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVSwitchesResponse extends AcsResponse {
 
-	private Integer pageSize;
-
 	private String requestId;
+
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
@@ -35,20 +35,20 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 	private List<VSwitch> vSwitches;
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {

@@ -27,21 +27,21 @@ public class QueryServicePackAndPriceResponseUnmarshaller {
 	public static QueryServicePackAndPriceResponse unmarshall(QueryServicePackAndPriceResponse queryServicePackAndPriceResponse, UnmarshallerContext _ctx) {
 		
 		queryServicePackAndPriceResponse.setRequestId(_ctx.stringValue("QueryServicePackAndPriceResponse.RequestId"));
-		queryServicePackAndPriceResponse.setRegionId(_ctx.stringValue("QueryServicePackAndPriceResponse.RegionId"));
+		queryServicePackAndPriceResponse.setOriginalAmount(_ctx.integerValue("QueryServicePackAndPriceResponse.OriginalAmount"));
+		queryServicePackAndPriceResponse.setDiscountPrice(_ctx.floatValue("QueryServicePackAndPriceResponse.DiscountPrice"));
 		queryServicePackAndPriceResponse.setTradePrice(_ctx.floatValue("QueryServicePackAndPriceResponse.TradePrice"));
 		queryServicePackAndPriceResponse.setOriginalPrice(_ctx.floatValue("QueryServicePackAndPriceResponse.OriginalPrice"));
-		queryServicePackAndPriceResponse.setDiscountPrice(_ctx.floatValue("QueryServicePackAndPriceResponse.DiscountPrice"));
-		queryServicePackAndPriceResponse.setCurrency(_ctx.stringValue("QueryServicePackAndPriceResponse.Currency"));
-		queryServicePackAndPriceResponse.setOriginalAmount(_ctx.integerValue("QueryServicePackAndPriceResponse.OriginalAmount"));
 		queryServicePackAndPriceResponse.setChargeAmount(_ctx.integerValue("QueryServicePackAndPriceResponse.ChargeAmount"));
+		queryServicePackAndPriceResponse.setCurrency(_ctx.stringValue("QueryServicePackAndPriceResponse.Currency"));
+		queryServicePackAndPriceResponse.setRegionId(_ctx.stringValue("QueryServicePackAndPriceResponse.RegionId"));
 
 		List<ServicePackInfo> servicePack = new ArrayList<ServicePackInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryServicePackAndPriceResponse.ServicePack.Length"); i++) {
 			ServicePackInfo servicePackInfo = new ServicePackInfo();
-			servicePackInfo.setInstanceName(_ctx.stringValue("QueryServicePackAndPriceResponse.ServicePack["+ i +"].InstanceName"));
+			servicePackInfo.setEndTime(_ctx.integerValue("QueryServicePackAndPriceResponse.ServicePack["+ i +"].EndTime"));
 			servicePackInfo.setCapacity(_ctx.integerValue("QueryServicePackAndPriceResponse.ServicePack["+ i +"].Capacity"));
 			servicePackInfo.setStartTime(_ctx.integerValue("QueryServicePackAndPriceResponse.ServicePack["+ i +"].StartTime"));
-			servicePackInfo.setEndTime(_ctx.integerValue("QueryServicePackAndPriceResponse.ServicePack["+ i +"].EndTime"));
+			servicePackInfo.setInstanceName(_ctx.stringValue("QueryServicePackAndPriceResponse.ServicePack["+ i +"].InstanceName"));
 
 			servicePack.add(servicePackInfo);
 		}

@@ -27,15 +27,15 @@ public class CloneNacosConfigRequest extends RpcAcsRequest<CloneNacosConfigRespo
 
 	private String targetNamespaceId;
 
+	private String originNamespaceId;
+
+	private String policy;
+
 	private String instanceId;
 
 	private String acceptLanguage;
 
 	private String ids;
-
-	private String originNamespaceId;
-
-	private String policy;
 	public CloneNacosConfigRequest() {
 		super("mse", "2019-05-31", "CloneNacosConfig", "mse");
 		setMethod(MethodType.POST);
@@ -53,6 +53,28 @@ public class CloneNacosConfigRequest extends RpcAcsRequest<CloneNacosConfigRespo
 		this.targetNamespaceId = targetNamespaceId;
 		if(targetNamespaceId != null){
 			putQueryParameter("TargetNamespaceId", targetNamespaceId);
+		}
+	}
+
+	public String getOriginNamespaceId() {
+		return this.originNamespaceId;
+	}
+
+	public void setOriginNamespaceId(String originNamespaceId) {
+		this.originNamespaceId = originNamespaceId;
+		if(originNamespaceId != null){
+			putQueryParameter("OriginNamespaceId", originNamespaceId);
+		}
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
 		}
 	}
 
@@ -86,28 +108,6 @@ public class CloneNacosConfigRequest extends RpcAcsRequest<CloneNacosConfigRespo
 		this.ids = ids;
 		if(ids != null){
 			putQueryParameter("Ids", ids);
-		}
-	}
-
-	public String getOriginNamespaceId() {
-		return this.originNamespaceId;
-	}
-
-	public void setOriginNamespaceId(String originNamespaceId) {
-		this.originNamespaceId = originNamespaceId;
-		if(originNamespaceId != null){
-			putQueryParameter("OriginNamespaceId", originNamespaceId);
-		}
-	}
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
 		}
 	}
 

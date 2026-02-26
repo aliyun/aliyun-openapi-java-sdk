@@ -25,11 +25,11 @@ import com.aliyuncs.vod.Endpoint;
 public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppPolicyFromIdentityResponse> {
 	   
 
-	private String identityType;
-
 	private String policyNames;
 
 	private String identityName;
+
+	private String identityType;
 
 	private String appId;
 	public DetachAppPolicyFromIdentityRequest() {
@@ -39,17 +39,6 @@ public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppP
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getIdentityType() {
-		return this.identityType;
-	}
-
-	public void setIdentityType(String identityType) {
-		this.identityType = identityType;
-		if(identityType != null){
-			putQueryParameter("IdentityType", identityType);
-		}
 	}
 
 	public String getPolicyNames() {
@@ -71,6 +60,17 @@ public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppP
 		this.identityName = identityName;
 		if(identityName != null){
 			putQueryParameter("IdentityName", identityName);
+		}
+	}
+
+	public String getIdentityType() {
+		return this.identityType;
+	}
+
+	public void setIdentityType(String identityType) {
+		this.identityType = identityType;
+		if(identityType != null){
+			putQueryParameter("IdentityType", identityType);
 		}
 	}
 

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.videoenhan.model.v20200320;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.videoenhan.transform.v20200320.AddFaceVideoTemplateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddFaceVideoTemplateResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private Date date;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,6 +49,14 @@ public class AddFaceVideoTemplateResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Date getDate() {
 		return this.date;
 	}
@@ -68,12 +69,55 @@ public class AddFaceVideoTemplateResponse extends AcsResponse {
 
 		private String templateId;
 
+		private String transResult;
+
+		private List<FaceInfosItem> faceInfos;
+
 		public String getTemplateId() {
 			return this.templateId;
 		}
 
 		public void setTemplateId(String templateId) {
 			this.templateId = templateId;
+		}
+
+		public String getTransResult() {
+			return this.transResult;
+		}
+
+		public void setTransResult(String transResult) {
+			this.transResult = transResult;
+		}
+
+		public List<FaceInfosItem> getFaceInfos() {
+			return this.faceInfos;
+		}
+
+		public void setFaceInfos(List<FaceInfosItem> faceInfos) {
+			this.faceInfos = faceInfos;
+		}
+
+		public static class FaceInfosItem {
+
+			private String templateFaceID;
+
+			private String templateFaceURL;
+
+			public String getTemplateFaceID() {
+				return this.templateFaceID;
+			}
+
+			public void setTemplateFaceID(String templateFaceID) {
+				this.templateFaceID = templateFaceID;
+			}
+
+			public String getTemplateFaceURL() {
+				return this.templateFaceURL;
+			}
+
+			public void setTemplateFaceURL(String templateFaceURL) {
+				this.templateFaceURL = templateFaceURL;
+			}
 		}
 	}
 

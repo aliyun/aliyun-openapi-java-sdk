@@ -27,13 +27,7 @@ public class ListAnsInstancesRequest extends RpcAcsRequest<ListAnsInstancesRespo
 
 	private String clusterName;
 
-	private String clusterId;
-
 	private Integer pageNum;
-
-	private String groupName;
-
-	private String instanceId;
 
 	private String namespaceId;
 
@@ -41,9 +35,15 @@ public class ListAnsInstancesRequest extends RpcAcsRequest<ListAnsInstancesRespo
 
 	private Integer pageSize;
 
-	private String acceptLanguage;
-
 	private String serviceName;
+
+	private String clusterId;
+
+	private String groupName;
+
+	private String instanceId;
+
+	private String acceptLanguage;
 	public ListAnsInstancesRequest() {
 		super("mse", "2019-05-31", "ListAnsInstances", "mse");
 		setMethod(MethodType.GET);
@@ -64,17 +64,6 @@ public class ListAnsInstancesRequest extends RpcAcsRequest<ListAnsInstancesRespo
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -83,28 +72,6 @@ public class ListAnsInstancesRequest extends RpcAcsRequest<ListAnsInstancesRespo
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -141,17 +108,6 @@ public class ListAnsInstancesRequest extends RpcAcsRequest<ListAnsInstancesRespo
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public String getServiceName() {
 		return this.serviceName;
 	}
@@ -160,6 +116,50 @@ public class ListAnsInstancesRequest extends RpcAcsRequest<ListAnsInstancesRespo
 		this.serviceName = serviceName;
 		if(serviceName != null){
 			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

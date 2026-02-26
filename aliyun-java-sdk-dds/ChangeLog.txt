@@ -1,3 +1,78 @@
+2025-12-29 Version: 3.7.26
+- Generated 2015-12-01 for `Dds`.
+
+2025-11-03 Version: 3.7.25
+- Generated 2015-12-01 for `Dds`.
+
+2025-07-31 Version: 3.7.23
+- Generated 2015-12-01 for `Dds`.
+
+2025-04-08 Version: 3.7.22
+- Generated 2015-12-01 for `Dds`.
+
+2024-11-05 Version: 3.7.21
+- Generated 2015-12-01 for `Dds`.
+
+2024-08-28 Version: 3.7.20
+- Generated 2015-12-01 for `Dds`.
+
+2024-08-01 Version: 3.7.19
+- Generated 2015-12-01 for `Dds`.
+
+2024-05-24 Version: 3.7.18
+- Generated 2015-12-01 for `Dds`.
+
+2024-03-08 Version: 3.7.17
+- Generated 2015-12-01 for `Dds`.
+
+2023-10-20 Version: 3.7.16
+- Update by SDK platform.
+
+2023-09-18 Version: 3.7.15
+- Update by SDK platform.
+
+2023-09-11 Version: 3.7.14
+- Update by SDK platform.
+
+2023-08-17 Version: 3.7.13
+- Update by SDK platform.
+
+2023-08-01 Version: 3.7.12
+- Update by SDK platform.
+
+2023-06-28 Version: 3.7.11
+- Update by SDK platform.
+
+2023-06-13 Version: 3.7.10
+- Update by SDK platform.
+
+2023-03-31 Version: 3.7.9
+- Update by SDK platform.
+
+2023-03-17 Version: 3.7.8
+- Update by SDK platform.
+
+2023-02-17 Version: 3.7.7
+- Update by SDK platform.
+
+2023-02-16 Version: 3.7.6
+- Update by SDK platform.
+
+2023-02-02 Version: 3.7.5
+- Update by SDK platform.
+
+2022-12-29 Version: 3.7.4
+- Update by SDK platform.
+
+2022-10-19 Version: 3.7.3
+- Update by SDK platform.
+
+2022-10-08 Version: 3.7.2
+- Update by SDK platform.
+
+2022-09-27 Version: 3.7.1
+- Update by SDK platform.
+
 2022-05-24 Version: 3.7.0
 - Fix endpoint for new regionId.
 

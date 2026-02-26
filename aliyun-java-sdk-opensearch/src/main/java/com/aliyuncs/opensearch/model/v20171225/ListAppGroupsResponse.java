@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAppGroupsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<ResultItem> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class ListAppGroupsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ResultItem> getResult() {
@@ -57,70 +57,64 @@ public class ListAppGroupsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String id;
-
-		private String name;
+		private Integer created;
 
 		private String currentVersion;
 
-		private Integer switchedTime;
+		private Integer pendingSecondRankAlgoDeploymentId;
+
+		private String lockMode;
+
+		private Integer updated;
+
+		private String id;
+
+		private String chargeType;
+
+		private Integer hasPendingQuotaReviewTask;
+
+		private Integer secondRankAlgoDeploymentId;
+
+		private String name;
+
+		private String instanceId;
+
+		private String processingOrderId;
 
 		private Integer chargingWay;
 
 		private String type;
 
+		private String status;
+
 		private String projectId;
 
-		private String chargeType;
-
-		private String expireOn;
-
-		private String instanceId;
+		private Integer switchedTime;
 
 		private String commodityCode;
 
-		private String processingOrderId;
+		private String expireOn;
 
-		private Integer firstRankAlgoDeploymentId;
-
-		private Integer secondRankAlgoDeploymentId;
-
-		private Integer pendingSecondRankAlgoDeploymentId;
+		private String domain;
 
 		private String description;
+
+		private Integer firstRankAlgoDeploymentId;
 
 		private Integer produced;
 
 		private Integer lockedByExpiration;
 
-		private Integer hasPendingQuotaReviewTask;
-
-		private Integer created;
-
-		private Integer updated;
-
-		private String status;
-
-		private String lockMode;
-
-		private String domain;
+		private List<TagsItem> tags;
 
 		private Quota quota;
 
-		public String getId() {
-			return this.id;
+		public Integer getCreated() {
+			return this.created;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setCreated(Integer created) {
+			this.created = created;
 		}
 
 		public String getCurrentVersion() {
@@ -131,12 +125,84 @@ public class ListAppGroupsResponse extends AcsResponse {
 			this.currentVersion = currentVersion;
 		}
 
-		public Integer getSwitchedTime() {
-			return this.switchedTime;
+		public Integer getPendingSecondRankAlgoDeploymentId() {
+			return this.pendingSecondRankAlgoDeploymentId;
 		}
 
-		public void setSwitchedTime(Integer switchedTime) {
-			this.switchedTime = switchedTime;
+		public void setPendingSecondRankAlgoDeploymentId(Integer pendingSecondRankAlgoDeploymentId) {
+			this.pendingSecondRankAlgoDeploymentId = pendingSecondRankAlgoDeploymentId;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
+		}
+
+		public Integer getUpdated() {
+			return this.updated;
+		}
+
+		public void setUpdated(Integer updated) {
+			this.updated = updated;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public Integer getHasPendingQuotaReviewTask() {
+			return this.hasPendingQuotaReviewTask;
+		}
+
+		public void setHasPendingQuotaReviewTask(Integer hasPendingQuotaReviewTask) {
+			this.hasPendingQuotaReviewTask = hasPendingQuotaReviewTask;
+		}
+
+		public Integer getSecondRankAlgoDeploymentId() {
+			return this.secondRankAlgoDeploymentId;
+		}
+
+		public void setSecondRankAlgoDeploymentId(Integer secondRankAlgoDeploymentId) {
+			this.secondRankAlgoDeploymentId = secondRankAlgoDeploymentId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getProcessingOrderId() {
+			return this.processingOrderId;
+		}
+
+		public void setProcessingOrderId(String processingOrderId) {
+			this.processingOrderId = processingOrderId;
 		}
 
 		public Integer getChargingWay() {
@@ -155,6 +221,14 @@ public class ListAppGroupsResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public String getProjectId() {
 			return this.projectId;
 		}
@@ -163,28 +237,12 @@ public class ListAppGroupsResponse extends AcsResponse {
 			this.projectId = projectId;
 		}
 
-		public String getChargeType() {
-			return this.chargeType;
+		public Integer getSwitchedTime() {
+			return this.switchedTime;
 		}
 
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getExpireOn() {
-			return this.expireOn;
-		}
-
-		public void setExpireOn(String expireOn) {
-			this.expireOn = expireOn;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setSwitchedTime(Integer switchedTime) {
+			this.switchedTime = switchedTime;
 		}
 
 		public String getCommodityCode() {
@@ -195,36 +253,20 @@ public class ListAppGroupsResponse extends AcsResponse {
 			this.commodityCode = commodityCode;
 		}
 
-		public String getProcessingOrderId() {
-			return this.processingOrderId;
+		public String getExpireOn() {
+			return this.expireOn;
 		}
 
-		public void setProcessingOrderId(String processingOrderId) {
-			this.processingOrderId = processingOrderId;
+		public void setExpireOn(String expireOn) {
+			this.expireOn = expireOn;
 		}
 
-		public Integer getFirstRankAlgoDeploymentId() {
-			return this.firstRankAlgoDeploymentId;
+		public String getDomain() {
+			return this.domain;
 		}
 
-		public void setFirstRankAlgoDeploymentId(Integer firstRankAlgoDeploymentId) {
-			this.firstRankAlgoDeploymentId = firstRankAlgoDeploymentId;
-		}
-
-		public Integer getSecondRankAlgoDeploymentId() {
-			return this.secondRankAlgoDeploymentId;
-		}
-
-		public void setSecondRankAlgoDeploymentId(Integer secondRankAlgoDeploymentId) {
-			this.secondRankAlgoDeploymentId = secondRankAlgoDeploymentId;
-		}
-
-		public Integer getPendingSecondRankAlgoDeploymentId() {
-			return this.pendingSecondRankAlgoDeploymentId;
-		}
-
-		public void setPendingSecondRankAlgoDeploymentId(Integer pendingSecondRankAlgoDeploymentId) {
-			this.pendingSecondRankAlgoDeploymentId = pendingSecondRankAlgoDeploymentId;
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 
 		public String getDescription() {
@@ -233,6 +275,14 @@ public class ListAppGroupsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public Integer getFirstRankAlgoDeploymentId() {
+			return this.firstRankAlgoDeploymentId;
+		}
+
+		public void setFirstRankAlgoDeploymentId(Integer firstRankAlgoDeploymentId) {
+			this.firstRankAlgoDeploymentId = firstRankAlgoDeploymentId;
 		}
 
 		public Integer getProduced() {
@@ -251,52 +301,12 @@ public class ListAppGroupsResponse extends AcsResponse {
 			this.lockedByExpiration = lockedByExpiration;
 		}
 
-		public Integer getHasPendingQuotaReviewTask() {
-			return this.hasPendingQuotaReviewTask;
+		public List<TagsItem> getTags() {
+			return this.tags;
 		}
 
-		public void setHasPendingQuotaReviewTask(Integer hasPendingQuotaReviewTask) {
-			this.hasPendingQuotaReviewTask = hasPendingQuotaReviewTask;
-		}
-
-		public Integer getCreated() {
-			return this.created;
-		}
-
-		public void setCreated(Integer created) {
-			this.created = created;
-		}
-
-		public Integer getUpdated() {
-			return this.updated;
-		}
-
-		public void setUpdated(Integer updated) {
-			this.updated = updated;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getLockMode() {
-			return this.lockMode;
-		}
-
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
-		}
-
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
 		}
 
 		public Quota getQuota() {
@@ -307,13 +317,44 @@ public class ListAppGroupsResponse extends AcsResponse {
 			this.quota = quota;
 		}
 
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
 		public static class Quota {
+
+			private String spec;
 
 			private Integer docSize;
 
 			private Integer computeResource;
 
-			private String spec;
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
 
 			public Integer getDocSize() {
 				return this.docSize;
@@ -329,14 +370,6 @@ public class ListAppGroupsResponse extends AcsResponse {
 
 			public void setComputeResource(Integer computeResource) {
 				this.computeResource = computeResource;
-			}
-
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
 			}
 		}
 	}

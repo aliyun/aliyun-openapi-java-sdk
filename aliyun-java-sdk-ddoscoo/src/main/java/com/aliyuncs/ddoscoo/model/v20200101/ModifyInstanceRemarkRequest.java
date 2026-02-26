@@ -29,7 +29,7 @@ public class ModifyInstanceRemarkRequest extends RpcAcsRequest<ModifyInstanceRem
 
 	private String instanceId;
 	public ModifyInstanceRemarkRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyInstanceRemark");
+		super("ddoscoo", "2020-01-01", "ModifyInstanceRemark", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

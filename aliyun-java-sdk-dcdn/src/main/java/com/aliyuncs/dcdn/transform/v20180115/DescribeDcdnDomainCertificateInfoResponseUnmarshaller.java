@@ -31,16 +31,16 @@ public class DescribeDcdnDomainCertificateInfoResponseUnmarshaller {
 		List<CertInfo> certInfos = new ArrayList<CertInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos.Length"); i++) {
 			CertInfo certInfo = new CertInfo();
-			certInfo.setDomainName(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].DomainName"));
-			certInfo.setCertName(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].CertName"));
-			certInfo.setCertDomainName(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].CertDomainName"));
-			certInfo.setCertExpireTime(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].CertExpireTime"));
-			certInfo.setCertLife(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].CertLife"));
-			certInfo.setCertOrg(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].CertOrg"));
-			certInfo.setCertType(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].CertType"));
-			certInfo.setSSLProtocol(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].SSLProtocol"));
 			certInfo.setStatus(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].Status"));
+			certInfo.setCertLife(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].CertLife"));
+			certInfo.setCertExpireTime(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].CertExpireTime"));
 			certInfo.setSSLPub(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].SSLPub"));
+			certInfo.setSSLProtocol(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].SSLProtocol"));
+			certInfo.setCertType(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].CertType"));
+			certInfo.setCertDomainName(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].CertDomainName"));
+			certInfo.setCertName(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].CertName"));
+			certInfo.setCertOrg(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].CertOrg"));
+			certInfo.setDomainName(_ctx.stringValue("DescribeDcdnDomainCertificateInfoResponse.CertInfos["+ i +"].DomainName"));
 
 			certInfos.add(certInfo);
 		}

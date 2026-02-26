@@ -25,11 +25,11 @@ import com.aliyuncs.ahas_openapi.Endpoint;
 public class GetExperimentTaskRequest extends RpcAcsRequest<GetExperimentTaskResponse> {
 	   
 
+	private String ahasRegionId;
+
 	private String nameSpace;
 
 	private String experimentTaskId;
-
-	private String ahasRegionId;
 	public GetExperimentTaskRequest() {
 		super("ahas-openapi", "2019-09-01", "GetExperimentTask", "ahas");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class GetExperimentTaskRequest extends RpcAcsRequest<GetExperimentTaskRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
+		}
 	}
 
 	public String getNameSpace() {
@@ -58,17 +69,6 @@ public class GetExperimentTaskRequest extends RpcAcsRequest<GetExperimentTaskRes
 		this.experimentTaskId = experimentTaskId;
 		if(experimentTaskId != null){
 			putQueryParameter("ExperimentTaskId", experimentTaskId);
-		}
-	}
-
-	public String getAhasRegionId() {
-		return this.ahasRegionId;
-	}
-
-	public void setAhasRegionId(String ahasRegionId) {
-		this.ahasRegionId = ahasRegionId;
-		if(ahasRegionId != null){
-			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

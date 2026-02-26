@@ -28,29 +28,29 @@ public class DescribeGWSInstancesResponseUnmarshaller {
 	public static DescribeGWSInstancesResponse unmarshall(DescribeGWSInstancesResponse describeGWSInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeGWSInstancesResponse.setRequestId(_ctx.stringValue("DescribeGWSInstancesResponse.RequestId"));
-		describeGWSInstancesResponse.setTotalCount(_ctx.integerValue("DescribeGWSInstancesResponse.TotalCount"));
-		describeGWSInstancesResponse.setPageNumber(_ctx.integerValue("DescribeGWSInstancesResponse.PageNumber"));
 		describeGWSInstancesResponse.setPageSize(_ctx.integerValue("DescribeGWSInstancesResponse.PageSize"));
+		describeGWSInstancesResponse.setPageNumber(_ctx.integerValue("DescribeGWSInstancesResponse.PageNumber"));
+		describeGWSInstancesResponse.setTotalCount(_ctx.integerValue("DescribeGWSInstancesResponse.TotalCount"));
 
 		List<InstanceInfo> instances = new ArrayList<InstanceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGWSInstancesResponse.Instances.Length"); i++) {
 			InstanceInfo instanceInfo = new InstanceInfo();
-			instanceInfo.setClusterId(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].ClusterId"));
-			instanceInfo.setInstanceId(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].InstanceId"));
-			instanceInfo.setInstanceType(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].InstanceType"));
 			instanceInfo.setStatus(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].Status"));
-			instanceInfo.setCreateTime(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].CreateTime"));
-			instanceInfo.setExpireTime(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].ExpireTime"));
 			instanceInfo.setWorkMode(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].WorkMode"));
+			instanceInfo.setExpireTime(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].ExpireTime"));
+			instanceInfo.setCreateTime(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].CreateTime"));
+			instanceInfo.setInstanceId(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].InstanceId"));
 			instanceInfo.setName(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].Name"));
+			instanceInfo.setInstanceType(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].InstanceType"));
 			instanceInfo.setUserName(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].UserName"));
+			instanceInfo.setClusterId(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].ClusterId"));
 
 			List<AppInfo> appList = new ArrayList<AppInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGWSInstancesResponse.Instances["+ i +"].AppList.Length"); j++) {
 				AppInfo appInfo = new AppInfo();
 				appInfo.setAppName(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].AppList["+ j +"].AppName"));
-				appInfo.setAppPath(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].AppList["+ j +"].AppPath"));
 				appInfo.setAppArgs(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].AppList["+ j +"].AppArgs"));
+				appInfo.setAppPath(_ctx.stringValue("DescribeGWSInstancesResponse.Instances["+ i +"].AppList["+ j +"].AppPath"));
 
 				appList.add(appInfo);
 			}

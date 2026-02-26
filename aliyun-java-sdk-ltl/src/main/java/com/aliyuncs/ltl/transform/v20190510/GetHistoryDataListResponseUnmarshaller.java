@@ -28,8 +28,8 @@ public class GetHistoryDataListResponseUnmarshaller {
 		
 		getHistoryDataListResponse.setRequestId(_ctx.stringValue("GetHistoryDataListResponse.RequestId"));
 		getHistoryDataListResponse.setCode(_ctx.integerValue("GetHistoryDataListResponse.Code"));
-		getHistoryDataListResponse.setSuccess(_ctx.booleanValue("GetHistoryDataListResponse.Success"));
 		getHistoryDataListResponse.setMessage(_ctx.stringValue("GetHistoryDataListResponse.Message"));
+		getHistoryDataListResponse.setSuccess(_ctx.booleanValue("GetHistoryDataListResponse.Success"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("GetHistoryDataListResponse.Data");
 		getHistoryDataListResponse.setData(data);

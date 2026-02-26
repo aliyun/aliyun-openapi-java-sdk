@@ -27,7 +27,11 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 
 	private String notifyReqAuth;
 
+	private String exceptionNotifyUrl;
+
 	private String notifyUrl;
+
+	private String switchNotifyUrl;
 
 	private String domainName;
 
@@ -54,6 +58,17 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		}
 	}
 
+	public String getExceptionNotifyUrl() {
+		return this.exceptionNotifyUrl;
+	}
+
+	public void setExceptionNotifyUrl(String exceptionNotifyUrl) {
+		this.exceptionNotifyUrl = exceptionNotifyUrl;
+		if(exceptionNotifyUrl != null){
+			putQueryParameter("ExceptionNotifyUrl", exceptionNotifyUrl);
+		}
+	}
+
 	public String getNotifyUrl() {
 		return this.notifyUrl;
 	}
@@ -62,6 +77,17 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		this.notifyUrl = notifyUrl;
 		if(notifyUrl != null){
 			putQueryParameter("NotifyUrl", notifyUrl);
+		}
+	}
+
+	public String getSwitchNotifyUrl() {
+		return this.switchNotifyUrl;
+	}
+
+	public void setSwitchNotifyUrl(String switchNotifyUrl) {
+		this.switchNotifyUrl = switchNotifyUrl;
+		if(switchNotifyUrl != null){
+			putQueryParameter("SwitchNotifyUrl", switchNotifyUrl);
 		}
 	}
 

@@ -70,6 +70,10 @@ public class UpdateIntegrationResponse extends AcsResponse {
 
 		private String liveness;
 
+		private String initiativeRecoverField;
+
+		private String initiativeRecoverValue;
+
 		private List<Long> stat;
 
 		private List<Map<Object,Object>> fieldRedefineRules;
@@ -162,6 +166,22 @@ public class UpdateIntegrationResponse extends AcsResponse {
 
 		public void setLiveness(String liveness) {
 			this.liveness = liveness;
+		}
+
+		public String getInitiativeRecoverField() {
+			return this.initiativeRecoverField;
+		}
+
+		public void setInitiativeRecoverField(String initiativeRecoverField) {
+			this.initiativeRecoverField = initiativeRecoverField;
+		}
+
+		public String getInitiativeRecoverValue() {
+			return this.initiativeRecoverValue;
+		}
+
+		public void setInitiativeRecoverValue(String initiativeRecoverValue) {
+			this.initiativeRecoverValue = initiativeRecoverValue;
 		}
 
 		public List<Long> getStat() {

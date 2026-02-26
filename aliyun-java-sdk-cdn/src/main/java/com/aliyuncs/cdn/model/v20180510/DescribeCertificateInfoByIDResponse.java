@@ -47,34 +47,26 @@ public class DescribeCertificateInfoByIDResponse extends AcsResponse {
 
 	public static class CertInfo {
 
-		private String certId;
-
-		private String certName;
+		private String certExpireTime;
 
 		private String createTime;
 
-		private String httpsCrt;
-
 		private String certType;
 
-		private String certExpireTime;
+		private String certName;
+
+		private String certId;
 
 		private String domainList;
 
-		public String getCertId() {
-			return this.certId;
+		private String httpsCrt;
+
+		public String getCertExpireTime() {
+			return this.certExpireTime;
 		}
 
-		public void setCertId(String certId) {
-			this.certId = certId;
-		}
-
-		public String getCertName() {
-			return this.certName;
-		}
-
-		public void setCertName(String certName) {
-			this.certName = certName;
+		public void setCertExpireTime(String certExpireTime) {
+			this.certExpireTime = certExpireTime;
 		}
 
 		public String getCreateTime() {
@@ -85,14 +77,6 @@ public class DescribeCertificateInfoByIDResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getHttpsCrt() {
-			return this.httpsCrt;
-		}
-
-		public void setHttpsCrt(String httpsCrt) {
-			this.httpsCrt = httpsCrt;
-		}
-
 		public String getCertType() {
 			return this.certType;
 		}
@@ -101,12 +85,20 @@ public class DescribeCertificateInfoByIDResponse extends AcsResponse {
 			this.certType = certType;
 		}
 
-		public String getCertExpireTime() {
-			return this.certExpireTime;
+		public String getCertName() {
+			return this.certName;
 		}
 
-		public void setCertExpireTime(String certExpireTime) {
-			this.certExpireTime = certExpireTime;
+		public void setCertName(String certName) {
+			this.certName = certName;
+		}
+
+		public String getCertId() {
+			return this.certId;
+		}
+
+		public void setCertId(String certId) {
+			this.certId = certId;
 		}
 
 		public String getDomainList() {
@@ -115,6 +107,14 @@ public class DescribeCertificateInfoByIDResponse extends AcsResponse {
 
 		public void setDomainList(String domainList) {
 			this.domainList = domainList;
+		}
+
+		public String getHttpsCrt() {
+			return this.httpsCrt;
+		}
+
+		public void setHttpsCrt(String httpsCrt) {
+			this.httpsCrt = httpsCrt;
 		}
 	}
 

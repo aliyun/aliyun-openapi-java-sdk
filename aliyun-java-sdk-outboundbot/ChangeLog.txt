@@ -1,3 +1,24 @@
+2025-11-26 Version: 1.6.6
+- Generated 2019-12-26 for `OutboundBot`.
+
+2025-03-27 Version: 1.6.5
+- Support AgentProfile APIS.
+
+2024-12-02 Version: 1.6.4
+- Supported FlashSms apis.
+
+2024-08-29 Version: 1.6.3
+- Supported FlashSms apis.
+
+2023-01-31 Version: 1.6.2
+- Supported new features for outbound.
+
+2023-01-13 Version: 1.6.1
+- Supported new features for outbound.
+
+2022-08-18 Version: 1.6.0
+- Supported new features for outbound.
+
 2022-06-24 Version: 1.5.0
 - Supported new features for outbound.
 

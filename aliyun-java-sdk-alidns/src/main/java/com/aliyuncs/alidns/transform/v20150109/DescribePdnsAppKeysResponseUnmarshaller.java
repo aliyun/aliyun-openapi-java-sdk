@@ -31,9 +31,9 @@ public class DescribePdnsAppKeysResponseUnmarshaller {
 		List<AppKey> appKeys = new ArrayList<AppKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePdnsAppKeysResponse.AppKeys.Length"); i++) {
 			AppKey appKey = new AppKey();
-			appKey.setState(_ctx.stringValue("DescribePdnsAppKeysResponse.AppKeys["+ i +"].State"));
 			appKey.setAppKeyId(_ctx.stringValue("DescribePdnsAppKeysResponse.AppKeys["+ i +"].AppKeyId"));
 			appKey.setCreateDate(_ctx.stringValue("DescribePdnsAppKeysResponse.AppKeys["+ i +"].CreateDate"));
+			appKey.setState(_ctx.stringValue("DescribePdnsAppKeysResponse.AppKeys["+ i +"].State"));
 
 			appKeys.add(appKey);
 		}

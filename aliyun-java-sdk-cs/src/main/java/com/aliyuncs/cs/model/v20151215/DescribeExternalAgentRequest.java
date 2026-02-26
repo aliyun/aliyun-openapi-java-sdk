@@ -25,6 +25,8 @@ import com.aliyuncs.cs.Endpoint;
 public class DescribeExternalAgentRequest extends RoaAcsRequest<DescribeExternalAgentResponse> {
 	   
 
+	private String privateIpAddress;
+
 	private String clusterId;
 	public DescribeExternalAgentRequest() {
 		super("CS", "2015-12-15", "DescribeExternalAgent");
@@ -34,6 +36,17 @@ public class DescribeExternalAgentRequest extends RoaAcsRequest<DescribeExternal
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
 	}
 
 	public String getClusterId() {

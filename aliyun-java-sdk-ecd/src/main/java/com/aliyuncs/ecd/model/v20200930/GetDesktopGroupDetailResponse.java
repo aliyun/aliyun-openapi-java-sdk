@@ -125,7 +125,27 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 		private Long version;
 
+		private Long stopDuration;
+
+		private Boolean profileFollowSwitch;
+
+		private String nasFileSystemID;
+
+		private String nasFileSystemName;
+
+		private String timingStrategyInfo;
+
+		private Integer buyDesktopsCount;
+
+		private String imageId;
+
 		private List<TimerInfo> timerInfos;
+
+		private List<ScaleTimerInfo> scaleTimerInfos;
+
+		private List<String> policyGroupIds;
+
+		private List<String> policyGroupNames;
 
 		public Integer getStatus() {
 			return this.status;
@@ -439,12 +459,92 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 			this.version = version;
 		}
 
+		public Long getStopDuration() {
+			return this.stopDuration;
+		}
+
+		public void setStopDuration(Long stopDuration) {
+			this.stopDuration = stopDuration;
+		}
+
+		public Boolean getProfileFollowSwitch() {
+			return this.profileFollowSwitch;
+		}
+
+		public void setProfileFollowSwitch(Boolean profileFollowSwitch) {
+			this.profileFollowSwitch = profileFollowSwitch;
+		}
+
+		public String getNasFileSystemID() {
+			return this.nasFileSystemID;
+		}
+
+		public void setNasFileSystemID(String nasFileSystemID) {
+			this.nasFileSystemID = nasFileSystemID;
+		}
+
+		public String getNasFileSystemName() {
+			return this.nasFileSystemName;
+		}
+
+		public void setNasFileSystemName(String nasFileSystemName) {
+			this.nasFileSystemName = nasFileSystemName;
+		}
+
+		public String getTimingStrategyInfo() {
+			return this.timingStrategyInfo;
+		}
+
+		public void setTimingStrategyInfo(String timingStrategyInfo) {
+			this.timingStrategyInfo = timingStrategyInfo;
+		}
+
+		public Integer getBuyDesktopsCount() {
+			return this.buyDesktopsCount;
+		}
+
+		public void setBuyDesktopsCount(Integer buyDesktopsCount) {
+			this.buyDesktopsCount = buyDesktopsCount;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
 		public List<TimerInfo> getTimerInfos() {
 			return this.timerInfos;
 		}
 
 		public void setTimerInfos(List<TimerInfo> timerInfos) {
 			this.timerInfos = timerInfos;
+		}
+
+		public List<ScaleTimerInfo> getScaleTimerInfos() {
+			return this.scaleTimerInfos;
+		}
+
+		public void setScaleTimerInfos(List<ScaleTimerInfo> scaleTimerInfos) {
+			this.scaleTimerInfos = scaleTimerInfos;
+		}
+
+		public List<String> getPolicyGroupIds() {
+			return this.policyGroupIds;
+		}
+
+		public void setPolicyGroupIds(List<String> policyGroupIds) {
+			this.policyGroupIds = policyGroupIds;
+		}
+
+		public List<String> getPolicyGroupNames() {
+			return this.policyGroupNames;
+		}
+
+		public void setPolicyGroupNames(List<String> policyGroupNames) {
+			this.policyGroupNames = policyGroupNames;
 		}
 
 		public static class TimerInfo {
@@ -487,6 +587,89 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 			public void setForced(Boolean forced) {
 				this.forced = forced;
+			}
+		}
+
+		public static class ScaleTimerInfo {
+
+			private String type;
+
+			private String cron;
+
+			private Integer loadPolicy;
+
+			private Integer buyResAmount;
+
+			private Integer minResAmount;
+
+			private Integer maxResAmount;
+
+			private Long keepDuration;
+
+			private Float ratioThreshold;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getCron() {
+				return this.cron;
+			}
+
+			public void setCron(String cron) {
+				this.cron = cron;
+			}
+
+			public Integer getLoadPolicy() {
+				return this.loadPolicy;
+			}
+
+			public void setLoadPolicy(Integer loadPolicy) {
+				this.loadPolicy = loadPolicy;
+			}
+
+			public Integer getBuyResAmount() {
+				return this.buyResAmount;
+			}
+
+			public void setBuyResAmount(Integer buyResAmount) {
+				this.buyResAmount = buyResAmount;
+			}
+
+			public Integer getMinResAmount() {
+				return this.minResAmount;
+			}
+
+			public void setMinResAmount(Integer minResAmount) {
+				this.minResAmount = minResAmount;
+			}
+
+			public Integer getMaxResAmount() {
+				return this.maxResAmount;
+			}
+
+			public void setMaxResAmount(Integer maxResAmount) {
+				this.maxResAmount = maxResAmount;
+			}
+
+			public Long getKeepDuration() {
+				return this.keepDuration;
+			}
+
+			public void setKeepDuration(Long keepDuration) {
+				this.keepDuration = keepDuration;
+			}
+
+			public Float getRatioThreshold() {
+				return this.ratioThreshold;
+			}
+
+			public void setRatioThreshold(Float ratioThreshold) {
+				this.ratioThreshold = ratioThreshold;
 			}
 		}
 	}

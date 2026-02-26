@@ -38,6 +38,12 @@ public class DeleteMezzaninesResponseUnmarshaller {
 			nonExistVideoIds.add(_ctx.stringValue("DeleteMezzaninesResponse.NonExistVideoIds["+ i +"]"));
 		}
 		deleteMezzaninesResponse.setNonExistVideoIds(nonExistVideoIds);
+
+		List<String> nonExistReferenceIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DeleteMezzaninesResponse.NonExistReferenceIds.Length"); i++) {
+			nonExistReferenceIds.add(_ctx.stringValue("DeleteMezzaninesResponse.NonExistReferenceIds["+ i +"]"));
+		}
+		deleteMezzaninesResponse.setNonExistReferenceIds(nonExistReferenceIds);
 	 
 	 	return deleteMezzaninesResponse;
 	}

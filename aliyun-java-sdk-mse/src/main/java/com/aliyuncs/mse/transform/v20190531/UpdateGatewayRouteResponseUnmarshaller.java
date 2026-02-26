@@ -28,6 +28,7 @@ public class UpdateGatewayRouteResponseUnmarshaller {
 		updateGatewayRouteResponse.setCode(_ctx.integerValue("UpdateGatewayRouteResponse.Code"));
 		updateGatewayRouteResponse.setSuccess(_ctx.booleanValue("UpdateGatewayRouteResponse.Success"));
 		updateGatewayRouteResponse.setData(_ctx.longValue("UpdateGatewayRouteResponse.Data"));
+		updateGatewayRouteResponse.setErrorCode(_ctx.stringValue("UpdateGatewayRouteResponse.ErrorCode"));
 	 
 	 	return updateGatewayRouteResponse;
 	}

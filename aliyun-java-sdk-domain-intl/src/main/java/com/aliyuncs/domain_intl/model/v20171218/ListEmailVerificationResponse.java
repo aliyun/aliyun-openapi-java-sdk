@@ -25,36 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListEmailVerificationResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
+	private Boolean prePage;
 
 	private Integer currentPageNum;
 
-	private Integer totalPageNum;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Boolean prePage;
+	private Integer totalPageNum;
+
+	private Integer totalItemNum;
 
 	private Boolean nextPage;
 
 	private List<EmailVerification> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getPrePage() {
+		return this.prePage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
+	public void setPrePage(Boolean prePage) {
+		this.prePage = prePage;
 	}
 
 	public Integer getCurrentPageNum() {
@@ -65,12 +57,12 @@ public class ListEmailVerificationResponse extends AcsResponse {
 		this.currentPageNum = currentPageNum;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -81,12 +73,20 @@ public class ListEmailVerificationResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Boolean getPrePage() {
-		return this.prePage;
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
 	}
 
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
+	}
+
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public Boolean getNextPage() {
@@ -107,40 +107,32 @@ public class ListEmailVerificationResponse extends AcsResponse {
 
 	public static class EmailVerification {
 
-		private String gmtCreate;
-
-		private String gmtModified;
+		private String verificationTime;
 
 		private String email;
 
-		private String userId;
-
 		private String emailVerificationNo;
 
-		private String tokenSendTime;
+		private String userId;
+
+		private String gmtCreate;
 
 		private Integer verificationStatus;
 
-		private String verificationTime;
+		private String tokenSendTime;
 
 		private String sendIp;
 
+		private String gmtModified;
+
 		private String confirmIp;
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getVerificationTime() {
+			return this.verificationTime;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setVerificationTime(String verificationTime) {
+			this.verificationTime = verificationTime;
 		}
 
 		public String getEmail() {
@@ -151,14 +143,6 @@ public class ListEmailVerificationResponse extends AcsResponse {
 			this.email = email;
 		}
 
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
 		public String getEmailVerificationNo() {
 			return this.emailVerificationNo;
 		}
@@ -167,12 +151,20 @@ public class ListEmailVerificationResponse extends AcsResponse {
 			this.emailVerificationNo = emailVerificationNo;
 		}
 
-		public String getTokenSendTime() {
-			return this.tokenSendTime;
+		public String getUserId() {
+			return this.userId;
 		}
 
-		public void setTokenSendTime(String tokenSendTime) {
-			this.tokenSendTime = tokenSendTime;
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public Integer getVerificationStatus() {
@@ -183,12 +175,12 @@ public class ListEmailVerificationResponse extends AcsResponse {
 			this.verificationStatus = verificationStatus;
 		}
 
-		public String getVerificationTime() {
-			return this.verificationTime;
+		public String getTokenSendTime() {
+			return this.tokenSendTime;
 		}
 
-		public void setVerificationTime(String verificationTime) {
-			this.verificationTime = verificationTime;
+		public void setTokenSendTime(String tokenSendTime) {
+			this.tokenSendTime = tokenSendTime;
 		}
 
 		public String getSendIp() {
@@ -197,6 +189,14 @@ public class ListEmailVerificationResponse extends AcsResponse {
 
 		public void setSendIp(String sendIp) {
 			this.sendIp = sendIp;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getConfirmIp() {

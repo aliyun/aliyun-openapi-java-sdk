@@ -28,16 +28,16 @@ public class DescribeDomainMultiUsageDataResponseUnmarshaller {
 	public static DescribeDomainMultiUsageDataResponse unmarshall(DescribeDomainMultiUsageDataResponse describeDomainMultiUsageDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainMultiUsageDataResponse.setRequestId(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.RequestId"));
-		describeDomainMultiUsageDataResponse.setStartTime(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.StartTime"));
 		describeDomainMultiUsageDataResponse.setEndTime(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.EndTime"));
+		describeDomainMultiUsageDataResponse.setStartTime(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.StartTime"));
 
 		List<RequestDataModule> requestPerInterval = new ArrayList<RequestDataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainMultiUsageDataResponse.RequestPerInterval.Length"); i++) {
 			RequestDataModule requestDataModule = new RequestDataModule();
+			requestDataModule.setType(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.RequestPerInterval["+ i +"].Type"));
 			requestDataModule.setTimeStamp(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.RequestPerInterval["+ i +"].TimeStamp"));
 			requestDataModule.setDomain(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.RequestPerInterval["+ i +"].Domain"));
 			requestDataModule.setRequest(_ctx.longValue("DescribeDomainMultiUsageDataResponse.RequestPerInterval["+ i +"].Request"));
-			requestDataModule.setType(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.RequestPerInterval["+ i +"].Type"));
 
 			requestPerInterval.add(requestDataModule);
 		}
@@ -46,11 +46,11 @@ public class DescribeDomainMultiUsageDataResponseUnmarshaller {
 		List<TrafficDataModule> trafficPerInterval = new ArrayList<TrafficDataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainMultiUsageDataResponse.TrafficPerInterval.Length"); i++) {
 			TrafficDataModule trafficDataModule = new TrafficDataModule();
-			trafficDataModule.setTimeStamp(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.TrafficPerInterval["+ i +"].TimeStamp"));
-			trafficDataModule.setDomain(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.TrafficPerInterval["+ i +"].Domain"));
-			trafficDataModule.setBps(_ctx.floatValue("DescribeDomainMultiUsageDataResponse.TrafficPerInterval["+ i +"].Bps"));
 			trafficDataModule.setType(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.TrafficPerInterval["+ i +"].Type"));
+			trafficDataModule.setDomain(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.TrafficPerInterval["+ i +"].Domain"));
+			trafficDataModule.setTimeStamp(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.TrafficPerInterval["+ i +"].TimeStamp"));
 			trafficDataModule.setArea(_ctx.stringValue("DescribeDomainMultiUsageDataResponse.TrafficPerInterval["+ i +"].Area"));
+			trafficDataModule.setBps(_ctx.floatValue("DescribeDomainMultiUsageDataResponse.TrafficPerInterval["+ i +"].Bps"));
 
 			trafficPerInterval.add(trafficDataModule);
 		}

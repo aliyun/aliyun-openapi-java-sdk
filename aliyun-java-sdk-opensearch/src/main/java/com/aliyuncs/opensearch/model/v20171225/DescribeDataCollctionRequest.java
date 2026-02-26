@@ -29,7 +29,7 @@ public class DescribeDataCollctionRequest extends RoaAcsRequest<DescribeDataColl
 
 	private String appGroupIdentity;
 	public DescribeDataCollctionRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeDataCollction", "opensearch");
+		super("OpenSearch", "2017-12-25", "DescribeDataCollction");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/data-collections/[dataCollectionIdentity]");
 		setMethod(MethodType.GET);
 		try {

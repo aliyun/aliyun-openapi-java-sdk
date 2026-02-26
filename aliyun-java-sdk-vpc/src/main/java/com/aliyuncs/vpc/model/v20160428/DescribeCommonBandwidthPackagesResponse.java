@@ -119,7 +119,13 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 		private String hasReservationData;
 
+		private String bizType;
+
+		private String zone;
+
 		private List<PublicIpAddresse> publicIpAddresses;
+
+		private List<Tag> tags;
 
 		private List<String> securityProtectionTypes;
 
@@ -291,12 +297,36 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 			this.hasReservationData = hasReservationData;
 		}
 
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
+		}
+
+		public String getZone() {
+			return this.zone;
+		}
+
+		public void setZone(String zone) {
+			this.zone = zone;
+		}
+
 		public List<PublicIpAddresse> getPublicIpAddresses() {
 			return this.publicIpAddresses;
 		}
 
 		public void setPublicIpAddresses(List<PublicIpAddresse> publicIpAddresses) {
 			this.publicIpAddresses = publicIpAddresses;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public List<String> getSecurityProtectionTypes() {
@@ -337,6 +367,29 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 			public void setBandwidthPackageIpRelationStatus(String bandwidthPackageIpRelationStatus) {
 				this.bandwidthPackageIpRelationStatus = bandwidthPackageIpRelationStatus;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

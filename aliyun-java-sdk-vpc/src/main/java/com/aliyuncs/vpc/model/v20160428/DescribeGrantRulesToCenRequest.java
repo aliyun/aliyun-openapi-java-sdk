@@ -29,7 +29,11 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 
 	private String clientToken;
 
+	private Integer pageNumber;
+
 	private String resourceGroupId;
+
+	private Integer pageSize;
 
 	private String instanceType;
 
@@ -71,6 +75,17 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -79,6 +94,17 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -25,63 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 
-	private String endTime;
-
-	private String startTime;
-
-	private String requestId;
-
-	private Integer pageRecordCount;
-
-	private Integer totalRecordCount;
-
 	private String dBInstanceId;
+
+	private String endTime;
 
 	private Integer pageNumber;
 
+	private Integer pageRecordCount;
+
 	private String regionId;
 
+	private String requestId;
+
+	private String startTime;
+
+	private Integer totalRecordCount;
+
 	private List<Item> items;
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
-
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -89,6 +49,14 @@ public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public Integer getPageNumber() {
@@ -99,12 +67,44 @@ public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
+
 	public String getRegionId() {
 		return this.regionId;
 	}
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<Item> getItems() {
@@ -117,57 +117,25 @@ public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String logBeginTime;
-
-		private String linkExpiredTime;
-
-		private String crossIntranetDownloadLink;
-
-		private String logFileName;
-
 		private String crossBackupRegion;
 
 		private String crossDownloadLink;
+
+		private String crossIntranetDownloadLink;
+
+		private Integer crossLogBackupId;
 
 		private Long crossLogBackupSize;
 
 		private Integer instanceId;
 
-		private Integer crossLogBackupId;
+		private String linkExpiredTime;
+
+		private String logBeginTime;
 
 		private String logEndTime;
 
-		public String getLogBeginTime() {
-			return this.logBeginTime;
-		}
-
-		public void setLogBeginTime(String logBeginTime) {
-			this.logBeginTime = logBeginTime;
-		}
-
-		public String getLinkExpiredTime() {
-			return this.linkExpiredTime;
-		}
-
-		public void setLinkExpiredTime(String linkExpiredTime) {
-			this.linkExpiredTime = linkExpiredTime;
-		}
-
-		public String getCrossIntranetDownloadLink() {
-			return this.crossIntranetDownloadLink;
-		}
-
-		public void setCrossIntranetDownloadLink(String crossIntranetDownloadLink) {
-			this.crossIntranetDownloadLink = crossIntranetDownloadLink;
-		}
-
-		public String getLogFileName() {
-			return this.logFileName;
-		}
-
-		public void setLogFileName(String logFileName) {
-			this.logFileName = logFileName;
-		}
+		private String logFileName;
 
 		public String getCrossBackupRegion() {
 			return this.crossBackupRegion;
@@ -183,6 +151,22 @@ public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 
 		public void setCrossDownloadLink(String crossDownloadLink) {
 			this.crossDownloadLink = crossDownloadLink;
+		}
+
+		public String getCrossIntranetDownloadLink() {
+			return this.crossIntranetDownloadLink;
+		}
+
+		public void setCrossIntranetDownloadLink(String crossIntranetDownloadLink) {
+			this.crossIntranetDownloadLink = crossIntranetDownloadLink;
+		}
+
+		public Integer getCrossLogBackupId() {
+			return this.crossLogBackupId;
+		}
+
+		public void setCrossLogBackupId(Integer crossLogBackupId) {
+			this.crossLogBackupId = crossLogBackupId;
 		}
 
 		public Long getCrossLogBackupSize() {
@@ -201,12 +185,20 @@ public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public Integer getCrossLogBackupId() {
-			return this.crossLogBackupId;
+		public String getLinkExpiredTime() {
+			return this.linkExpiredTime;
 		}
 
-		public void setCrossLogBackupId(Integer crossLogBackupId) {
-			this.crossLogBackupId = crossLogBackupId;
+		public void setLinkExpiredTime(String linkExpiredTime) {
+			this.linkExpiredTime = linkExpiredTime;
+		}
+
+		public String getLogBeginTime() {
+			return this.logBeginTime;
+		}
+
+		public void setLogBeginTime(String logBeginTime) {
+			this.logBeginTime = logBeginTime;
 		}
 
 		public String getLogEndTime() {
@@ -215,6 +207,14 @@ public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 
 		public void setLogEndTime(String logEndTime) {
 			this.logEndTime = logEndTime;
+		}
+
+		public String getLogFileName() {
+			return this.logFileName;
+		}
+
+		public void setLogFileName(String logFileName) {
+			this.logFileName = logFileName;
 		}
 	}
 

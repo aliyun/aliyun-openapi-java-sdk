@@ -32,9 +32,9 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 		describeRenewalPriceResponse.setRequestId(_ctx.stringValue("DescribeRenewalPriceResponse.RequestId"));
 
 		PriceInfo priceInfo = new PriceInfo();
-		priceInfo.setOriginalPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.OriginalPrice"));
-		priceInfo.setDiscountPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.DiscountPrice"));
 		priceInfo.setCurrency(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Currency"));
+		priceInfo.setDiscountPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.DiscountPrice"));
+		priceInfo.setOriginalPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.OriginalPrice"));
 		priceInfo.setTradePrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.TradePrice"));
 
 		List<String> ruleIds = new ArrayList<String>();
@@ -52,10 +52,10 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 		List<Coupon> coupons = new ArrayList<Coupon>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Coupons.Length"); i++) {
 			Coupon coupon = new Coupon();
-			coupon.setIsSelected(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].IsSelected"));
 			coupon.setCouponNo(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].CouponNo"));
-			coupon.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].Name"));
 			coupon.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].Description"));
+			coupon.setIsSelected(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].IsSelected"));
+			coupon.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].Name"));
 
 			coupons.add(coupon);
 		}
@@ -65,8 +65,8 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setName(_ctx.stringValue("DescribeRenewalPriceResponse.Rules["+ i +"].Name"));
 			rule.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.Rules["+ i +"].Description"));
+			rule.setName(_ctx.stringValue("DescribeRenewalPriceResponse.Rules["+ i +"].Name"));
 			rule.setRuleId(_ctx.longValue("DescribeRenewalPriceResponse.Rules["+ i +"].RuleId"));
 
 			rules.add(rule);

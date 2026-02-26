@@ -31,7 +31,7 @@ public class SaveTaskForSubmittingDomainDeleteRequest extends RpcAcsRequest<Save
 
 	private String lang;
 	public SaveTaskForSubmittingDomainDeleteRequest() {
-		super("Domain", "2018-01-29", "SaveTaskForSubmittingDomainDelete");
+		super("Domain", "2018-01-29", "SaveTaskForSubmittingDomainDelete", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

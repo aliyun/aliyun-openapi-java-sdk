@@ -51,6 +51,8 @@ public class AssignPrivateIpAddressesResponse extends AcsResponse {
 
 		private List<String> privateIpSet;
 
+		private List<String> ipv4PrefixSet;
+
 		public String getNetworkInterfaceId() {
 			return this.networkInterfaceId;
 		}
@@ -65,6 +67,14 @@ public class AssignPrivateIpAddressesResponse extends AcsResponse {
 
 		public void setPrivateIpSet(List<String> privateIpSet) {
 			this.privateIpSet = privateIpSet;
+		}
+
+		public List<String> getIpv4PrefixSet() {
+			return this.ipv4PrefixSet;
+		}
+
+		public void setIpv4PrefixSet(List<String> ipv4PrefixSet) {
+			this.ipv4PrefixSet = ipv4PrefixSet;
 		}
 	}
 

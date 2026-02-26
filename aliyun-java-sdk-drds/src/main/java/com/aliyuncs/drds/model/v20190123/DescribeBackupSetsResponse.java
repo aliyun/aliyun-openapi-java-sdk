@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupSetsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<BackupSet> backupSets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeBackupSetsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<BackupSet> getBackupSets() {
@@ -57,74 +57,34 @@ public class DescribeBackupSetsResponse extends AcsResponse {
 
 	public static class BackupSet {
 
-		private String id;
-
-		private Long backupStartTime;
-
-		private Long backupEndTime;
-
-		private String backupMode;
-
-		private String backupLevel;
-
-		private String backupType;
+		private Boolean enableRecovery;
 
 		private Long status;
 
-		private Boolean enableRecovery;
+		private String backupConsitentTime;
+
+		private String backupType;
+
+		private Long backupStartTime;
+
+		private String backupLevel;
+
+		private String backupMode;
+
+		private Long backupEndTime;
+
+		private String id;
 
 		private String backupTotalSize;
 
-		private String backupConsitentTime;
-
 		private List<String> backupDbs;
 
-		public String getId() {
-			return this.id;
+		public Boolean getEnableRecovery() {
+			return this.enableRecovery;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public Long getBackupStartTime() {
-			return this.backupStartTime;
-		}
-
-		public void setBackupStartTime(Long backupStartTime) {
-			this.backupStartTime = backupStartTime;
-		}
-
-		public Long getBackupEndTime() {
-			return this.backupEndTime;
-		}
-
-		public void setBackupEndTime(Long backupEndTime) {
-			this.backupEndTime = backupEndTime;
-		}
-
-		public String getBackupMode() {
-			return this.backupMode;
-		}
-
-		public void setBackupMode(String backupMode) {
-			this.backupMode = backupMode;
-		}
-
-		public String getBackupLevel() {
-			return this.backupLevel;
-		}
-
-		public void setBackupLevel(String backupLevel) {
-			this.backupLevel = backupLevel;
-		}
-
-		public String getBackupType() {
-			return this.backupType;
-		}
-
-		public void setBackupType(String backupType) {
-			this.backupType = backupType;
+		public void setEnableRecovery(Boolean enableRecovery) {
+			this.enableRecovery = enableRecovery;
 		}
 
 		public Long getStatus() {
@@ -135,12 +95,60 @@ public class DescribeBackupSetsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Boolean getEnableRecovery() {
-			return this.enableRecovery;
+		public String getBackupConsitentTime() {
+			return this.backupConsitentTime;
 		}
 
-		public void setEnableRecovery(Boolean enableRecovery) {
-			this.enableRecovery = enableRecovery;
+		public void setBackupConsitentTime(String backupConsitentTime) {
+			this.backupConsitentTime = backupConsitentTime;
+		}
+
+		public String getBackupType() {
+			return this.backupType;
+		}
+
+		public void setBackupType(String backupType) {
+			this.backupType = backupType;
+		}
+
+		public Long getBackupStartTime() {
+			return this.backupStartTime;
+		}
+
+		public void setBackupStartTime(Long backupStartTime) {
+			this.backupStartTime = backupStartTime;
+		}
+
+		public String getBackupLevel() {
+			return this.backupLevel;
+		}
+
+		public void setBackupLevel(String backupLevel) {
+			this.backupLevel = backupLevel;
+		}
+
+		public String getBackupMode() {
+			return this.backupMode;
+		}
+
+		public void setBackupMode(String backupMode) {
+			this.backupMode = backupMode;
+		}
+
+		public Long getBackupEndTime() {
+			return this.backupEndTime;
+		}
+
+		public void setBackupEndTime(Long backupEndTime) {
+			this.backupEndTime = backupEndTime;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public String getBackupTotalSize() {
@@ -149,14 +157,6 @@ public class DescribeBackupSetsResponse extends AcsResponse {
 
 		public void setBackupTotalSize(String backupTotalSize) {
 			this.backupTotalSize = backupTotalSize;
-		}
-
-		public String getBackupConsitentTime() {
-			return this.backupConsitentTime;
-		}
-
-		public void setBackupConsitentTime(String backupConsitentTime) {
-			this.backupConsitentTime = backupConsitentTime;
 		}
 
 		public List<String> getBackupDbs() {

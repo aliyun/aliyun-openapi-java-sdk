@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDownloadImageInfoResponse extends AcsResponse {
 
-	private String requestId;
+	private String authorizationUrl;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMsg;
 
-	private String errorCode;
-
 	private String imageUrl;
 
-	private String authorizationUrl;
+	private String errorCode;
+
+	private Boolean success;
+
+	public String getAuthorizationUrl() {
+		return this.authorizationUrl;
+	}
+
+	public void setAuthorizationUrl(String authorizationUrl) {
+		this.authorizationUrl = authorizationUrl;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,14 +50,6 @@ public class DescribeDownloadImageInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMsg() {
@@ -60,14 +60,6 @@ public class DescribeDownloadImageInfoResponse extends AcsResponse {
 		this.errorMsg = errorMsg;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
 	public String getImageUrl() {
 		return this.imageUrl;
 	}
@@ -76,12 +68,20 @@ public class DescribeDownloadImageInfoResponse extends AcsResponse {
 		this.imageUrl = imageUrl;
 	}
 
-	public String getAuthorizationUrl() {
-		return this.authorizationUrl;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setAuthorizationUrl(String authorizationUrl) {
-		this.authorizationUrl = authorizationUrl;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

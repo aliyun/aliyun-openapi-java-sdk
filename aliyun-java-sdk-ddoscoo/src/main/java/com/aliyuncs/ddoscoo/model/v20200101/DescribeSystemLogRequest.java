@@ -37,7 +37,7 @@ public class DescribeSystemLogRequest extends RpcAcsRequest<DescribeSystemLogRes
 
 	private Integer entityType;
 	public DescribeSystemLogRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeSystemLog");
+		super("ddoscoo", "2020-01-01", "DescribeSystemLog", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

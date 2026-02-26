@@ -93,6 +93,8 @@ public class DescribeContactGroupsResponse extends AcsResponse {
 
 			private String contactGroupName;
 
+			private Long armsContactGroupId;
+
 			private List<ContactsItem> contacts;
 
 			public Float getContactGroupId() {
@@ -109,6 +111,14 @@ public class DescribeContactGroupsResponse extends AcsResponse {
 
 			public void setContactGroupName(String contactGroupName) {
 				this.contactGroupName = contactGroupName;
+			}
+
+			public Long getArmsContactGroupId() {
+				return this.armsContactGroupId;
+			}
+
+			public void setArmsContactGroupId(Long armsContactGroupId) {
+				this.armsContactGroupId = armsContactGroupId;
 			}
 
 			public List<ContactsItem> getContacts() {
@@ -128,6 +138,12 @@ public class DescribeContactGroupsResponse extends AcsResponse {
 				private String phone;
 
 				private String email;
+
+				private Long armsContactId;
+
+				private String webhook;
+
+				private String dingRobotUrl;
 
 				public Float getContactId() {
 					return this.contactId;
@@ -159,6 +175,30 @@ public class DescribeContactGroupsResponse extends AcsResponse {
 
 				public void setEmail(String email) {
 					this.email = email;
+				}
+
+				public Long getArmsContactId() {
+					return this.armsContactId;
+				}
+
+				public void setArmsContactId(Long armsContactId) {
+					this.armsContactId = armsContactId;
+				}
+
+				public String getWebhook() {
+					return this.webhook;
+				}
+
+				public void setWebhook(String webhook) {
+					this.webhook = webhook;
+				}
+
+				public String getDingRobotUrl() {
+					return this.dingRobotUrl;
+				}
+
+				public void setDingRobotUrl(String dingRobotUrl) {
+					this.dingRobotUrl = dingRobotUrl;
 				}
 			}
 		}

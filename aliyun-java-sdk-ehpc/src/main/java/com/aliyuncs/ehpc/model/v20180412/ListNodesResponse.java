@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListNodesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<NodeInfo> nodes;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListNodesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListNodesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<NodeInfo> getNodes() {
@@ -77,49 +77,51 @@ public class ListNodesResponse extends AcsResponse {
 
 	public static class NodeInfo {
 
-		private String id;
-
-		private String regionId;
-
-		private String hostName;
-
-		private String ipAddress;
+		private String vpcId;
 
 		private String status;
 
-		private String version;
-
-		private Boolean createdByEhpc;
-
-		private String addTime;
+		private Boolean htEnabled;
 
 		private Boolean expired;
 
-		private String expiredTime;
-
-		private String spotStrategy;
+		private String imageOwnerAlias;
 
 		private String lockReason;
 
-		private String imageOwnerAlias;
+		private String hostName;
+
+		private String instanceType;
+
+		private String publicIpAddress;
+
+		private String spotStrategy;
+
+		private Boolean createdByEhpc;
+
+		private String regionId;
+
+		private String vSwitchId;
+
+		private String ipAddress;
+
+		private String expiredTime;
+
+		private String version;
+
+		private String zoneId;
+
+		private String addTime;
 
 		private String imageId;
 
 		private String location;
 
+		private String id;
+
 		private String createMode;
 
-		private String vpcId;
-
-		private String zoneId;
-
-		private String vSwitchId;
-
-		private Boolean htEnabled;
-
-		private String publicIpAddress;
-
-		private String instanceType;
+		private String stateInSched;
 
 		private List<String> roles;
 
@@ -127,36 +129,12 @@ public class ListNodesResponse extends AcsResponse {
 
 		private UsedResources usedResources;
 
-		public String getId() {
-			return this.id;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getHostName() {
-			return this.hostName;
-		}
-
-		public void setHostName(String hostName) {
-			this.hostName = hostName;
-		}
-
-		public String getIpAddress() {
-			return this.ipAddress;
-		}
-
-		public void setIpAddress(String ipAddress) {
-			this.ipAddress = ipAddress;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getStatus() {
@@ -167,28 +145,12 @@ public class ListNodesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getVersion() {
-			return this.version;
+		public Boolean getHtEnabled() {
+			return this.htEnabled;
 		}
 
-		public void setVersion(String version) {
-			this.version = version;
-		}
-
-		public Boolean getCreatedByEhpc() {
-			return this.createdByEhpc;
-		}
-
-		public void setCreatedByEhpc(Boolean createdByEhpc) {
-			this.createdByEhpc = createdByEhpc;
-		}
-
-		public String getAddTime() {
-			return this.addTime;
-		}
-
-		public void setAddTime(String addTime) {
-			this.addTime = addTime;
+		public void setHtEnabled(Boolean htEnabled) {
+			this.htEnabled = htEnabled;
 		}
 
 		public Boolean getExpired() {
@@ -199,20 +161,12 @@ public class ListNodesResponse extends AcsResponse {
 			this.expired = expired;
 		}
 
-		public String getExpiredTime() {
-			return this.expiredTime;
+		public String getImageOwnerAlias() {
+			return this.imageOwnerAlias;
 		}
 
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public String getSpotStrategy() {
-			return this.spotStrategy;
-		}
-
-		public void setSpotStrategy(String spotStrategy) {
-			this.spotStrategy = spotStrategy;
+		public void setImageOwnerAlias(String imageOwnerAlias) {
+			this.imageOwnerAlias = imageOwnerAlias;
 		}
 
 		public String getLockReason() {
@@ -223,12 +177,100 @@ public class ListNodesResponse extends AcsResponse {
 			this.lockReason = lockReason;
 		}
 
-		public String getImageOwnerAlias() {
-			return this.imageOwnerAlias;
+		public String getHostName() {
+			return this.hostName;
 		}
 
-		public void setImageOwnerAlias(String imageOwnerAlias) {
-			this.imageOwnerAlias = imageOwnerAlias;
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getPublicIpAddress() {
+			return this.publicIpAddress;
+		}
+
+		public void setPublicIpAddress(String publicIpAddress) {
+			this.publicIpAddress = publicIpAddress;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
+		public Boolean getCreatedByEhpc() {
+			return this.createdByEhpc;
+		}
+
+		public void setCreatedByEhpc(Boolean createdByEhpc) {
+			this.createdByEhpc = createdByEhpc;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getIpAddress() {
+			return this.ipAddress;
+		}
+
+		public void setIpAddress(String ipAddress) {
+			this.ipAddress = ipAddress;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getAddTime() {
+			return this.addTime;
+		}
+
+		public void setAddTime(String addTime) {
+			this.addTime = addTime;
 		}
 
 		public String getImageId() {
@@ -247,6 +289,14 @@ public class ListNodesResponse extends AcsResponse {
 			this.location = location;
 		}
 
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
 		public String getCreateMode() {
 			return this.createMode;
 		}
@@ -255,52 +305,12 @@ public class ListNodesResponse extends AcsResponse {
 			this.createMode = createMode;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getStateInSched() {
+			return this.stateInSched;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public Boolean getHtEnabled() {
-			return this.htEnabled;
-		}
-
-		public void setHtEnabled(Boolean htEnabled) {
-			this.htEnabled = htEnabled;
-		}
-
-		public String getPublicIpAddress() {
-			return this.publicIpAddress;
-		}
-
-		public void setPublicIpAddress(String publicIpAddress) {
-			this.publicIpAddress = publicIpAddress;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
+		public void setStateInSched(String stateInSched) {
+			this.stateInSched = stateInSched;
 		}
 
 		public List<String> getRoles() {
@@ -329,11 +339,19 @@ public class ListNodesResponse extends AcsResponse {
 
 		public static class TotalResources {
 
+			private Integer gpu;
+
 			private Integer cpu;
 
 			private Integer memory;
 
-			private Integer gpu;
+			public Integer getGpu() {
+				return this.gpu;
+			}
+
+			public void setGpu(Integer gpu) {
+				this.gpu = gpu;
+			}
 
 			public Integer getCpu() {
 				return this.cpu;
@@ -349,24 +367,24 @@ public class ListNodesResponse extends AcsResponse {
 
 			public void setMemory(Integer memory) {
 				this.memory = memory;
-			}
-
-			public Integer getGpu() {
-				return this.gpu;
-			}
-
-			public void setGpu(Integer gpu) {
-				this.gpu = gpu;
 			}
 		}
 
 		public static class UsedResources {
 
+			private Integer gpu;
+
 			private Integer cpu;
 
 			private Integer memory;
 
-			private Integer gpu;
+			public Integer getGpu() {
+				return this.gpu;
+			}
+
+			public void setGpu(Integer gpu) {
+				this.gpu = gpu;
+			}
 
 			public Integer getCpu() {
 				return this.cpu;
@@ -382,14 +400,6 @@ public class ListNodesResponse extends AcsResponse {
 
 			public void setMemory(Integer memory) {
 				this.memory = memory;
-			}
-
-			public Integer getGpu() {
-				return this.gpu;
-			}
-
-			public void setGpu(Integer gpu) {
-				this.gpu = gpu;
 			}
 		}
 	}

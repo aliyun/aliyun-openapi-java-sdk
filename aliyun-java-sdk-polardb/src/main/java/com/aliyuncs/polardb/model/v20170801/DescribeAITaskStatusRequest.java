@@ -35,7 +35,7 @@ public class DescribeAITaskStatusRequest extends RpcAcsRequest<DescribeAITaskSta
 
 	private Long ownerId;
 	public DescribeAITaskStatusRequest() {
-		super("polardb", "2017-08-01", "DescribeAITaskStatus");
+		super("polardb", "2017-08-01", "DescribeAITaskStatus", "polardb");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

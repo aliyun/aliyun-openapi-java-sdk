@@ -139,6 +139,8 @@ public class ListDoNotCallNumbersResponse extends AcsResponse {
 
 			private String creator;
 
+			private Long createdTime;
+
 			public String getNumber() {
 				return this.number;
 			}
@@ -177,6 +179,14 @@ public class ListDoNotCallNumbersResponse extends AcsResponse {
 
 			public void setCreator(String creator) {
 				this.creator = creator;
+			}
+
+			public Long getCreatedTime() {
+				return this.createdTime;
+			}
+
+			public void setCreatedTime(Long createdTime) {
+				this.createdTime = createdTime;
 			}
 		}
 	}

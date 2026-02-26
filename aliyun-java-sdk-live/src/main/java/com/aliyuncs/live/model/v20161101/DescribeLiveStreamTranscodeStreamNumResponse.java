@@ -14,6 +14,7 @@
 
 package com.aliyuncs.live.model.v20161101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.live.transform.v20161101.DescribeLiveStreamTranscodeStreamNumResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,39 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamTranscodeStreamNumResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Long total;
-
-	private Long transcodedNumber;
-
 	private Long untranscodeNumber;
 
 	private Long lazyTranscodedNumber;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private Long transcodedNumber;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
-	public Long getTotal() {
-		return this.total;
-	}
+	private Long total;
 
-	public void setTotal(Long total) {
-		this.total = total;
-	}
-
-	public Long getTranscodedNumber() {
-		return this.transcodedNumber;
-	}
-
-	public void setTranscodedNumber(Long transcodedNumber) {
-		this.transcodedNumber = transcodedNumber;
-	}
+	private List<Transcode_details> transcodeStreamCountDetails;
 
 	public Long getUntranscodeNumber() {
 		return this.untranscodeNumber;
@@ -74,8 +53,68 @@ public class DescribeLiveStreamTranscodeStreamNumResponse extends AcsResponse {
 		this.lazyTranscodedNumber = lazyTranscodedNumber;
 	}
 
+	public Long getTranscodedNumber() {
+		return this.transcodedNumber;
+	}
+
+	public void setTranscodedNumber(Long transcodedNumber) {
+		this.transcodedNumber = transcodedNumber;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Long total) {
+		this.total = total;
+	}
+
+	public List<Transcode_details> getTranscodeStreamCountDetails() {
+		return this.transcodeStreamCountDetails;
+	}
+
+	public void setTranscodeStreamCountDetails(List<Transcode_details> transcodeStreamCountDetails) {
+		this.transcodeStreamCountDetails = transcodeStreamCountDetails;
+	}
+
+	public static class Transcode_details {
+
+		private String template;
+
+		private Integer count;
+
+		public String getTemplate() {
+			return this.template;
+		}
+
+		public void setTemplate(String template) {
+			this.template = template;
+		}
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public void setCount(Integer count) {
+			this.count = count;
+		}
+	}
+
 	@Override
 	public DescribeLiveStreamTranscodeStreamNumResponse getInstance(UnmarshallerContext context) {
 		return	DescribeLiveStreamTranscodeStreamNumResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

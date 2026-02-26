@@ -71,6 +71,8 @@ public class CreateAuthorizationRulesRequest extends RpcAcsRequest<CreateAuthori
 				putQueryParameter("AuthorizationRules." + (depth1 + 1) + ".Description" , authorizationRuless.get(depth1).getDescription());
 				putQueryParameter("AuthorizationRules." + (depth1 + 1) + ".SourceCidr" , authorizationRuless.get(depth1).getSourceCidr());
 				putQueryParameter("AuthorizationRules." + (depth1 + 1) + ".DestinationType" , authorizationRuless.get(depth1).getDestinationType());
+				putQueryParameter("AuthorizationRules." + (depth1 + 1) + ".DestinationPort" , authorizationRuless.get(depth1).getDestinationPort());
+				putQueryParameter("AuthorizationRules." + (depth1 + 1) + ".Protocol" , authorizationRuless.get(depth1).getBizProtocol());
 				putQueryParameter("AuthorizationRules." + (depth1 + 1) + ".Destination" , authorizationRuless.get(depth1).getDestination());
 				putQueryParameter("AuthorizationRules." + (depth1 + 1) + ".Policy" , authorizationRuless.get(depth1).getPolicy());
 			}
@@ -97,6 +99,10 @@ public class CreateAuthorizationRulesRequest extends RpcAcsRequest<CreateAuthori
 		private String sourceCidr;
 
 		private String destinationType;
+
+		private String destinationPort;
+
+		private String protocol;
 
 		private String destination;
 
@@ -132,6 +138,22 @@ public class CreateAuthorizationRulesRequest extends RpcAcsRequest<CreateAuthori
 
 		public void setDestinationType(String destinationType) {
 			this.destinationType = destinationType;
+		}
+
+		public String getDestinationPort() {
+			return this.destinationPort;
+		}
+
+		public void setDestinationPort(String destinationPort) {
+			this.destinationPort = destinationPort;
+		}
+
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
 		}
 
 		public String getDestination() {

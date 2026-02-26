@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLifecycleHooksResponse extends AcsResponse {
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String requestId;
+	private Integer totalCount;
 
 	private List<LifecycleHook> lifecycleHooks;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeLifecycleHooksResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<LifecycleHook> getLifecycleHooks() {
@@ -77,15 +77,11 @@ public class DescribeLifecycleHooksResponse extends AcsResponse {
 
 	public static class LifecycleHook {
 
-		private String scalingGroupId;
+		private String defaultResult;
 
 		private String lifecycleHookId;
 
 		private String lifecycleHookName;
-
-		private String defaultResult;
-
-		private Integer heartbeatTimeout;
 
 		private String lifecycleTransition;
 
@@ -93,12 +89,18 @@ public class DescribeLifecycleHooksResponse extends AcsResponse {
 
 		private String notificationArn;
 
-		public String getScalingGroupId() {
-			return this.scalingGroupId;
+		private Integer heartbeatTimeout;
+
+		private String scalingGroupId;
+
+		private String lifecycleHookStatus;
+
+		public String getDefaultResult() {
+			return this.defaultResult;
 		}
 
-		public void setScalingGroupId(String scalingGroupId) {
-			this.scalingGroupId = scalingGroupId;
+		public void setDefaultResult(String defaultResult) {
+			this.defaultResult = defaultResult;
 		}
 
 		public String getLifecycleHookId() {
@@ -115,22 +117,6 @@ public class DescribeLifecycleHooksResponse extends AcsResponse {
 
 		public void setLifecycleHookName(String lifecycleHookName) {
 			this.lifecycleHookName = lifecycleHookName;
-		}
-
-		public String getDefaultResult() {
-			return this.defaultResult;
-		}
-
-		public void setDefaultResult(String defaultResult) {
-			this.defaultResult = defaultResult;
-		}
-
-		public Integer getHeartbeatTimeout() {
-			return this.heartbeatTimeout;
-		}
-
-		public void setHeartbeatTimeout(Integer heartbeatTimeout) {
-			this.heartbeatTimeout = heartbeatTimeout;
 		}
 
 		public String getLifecycleTransition() {
@@ -155,6 +141,30 @@ public class DescribeLifecycleHooksResponse extends AcsResponse {
 
 		public void setNotificationArn(String notificationArn) {
 			this.notificationArn = notificationArn;
+		}
+
+		public Integer getHeartbeatTimeout() {
+			return this.heartbeatTimeout;
+		}
+
+		public void setHeartbeatTimeout(Integer heartbeatTimeout) {
+			this.heartbeatTimeout = heartbeatTimeout;
+		}
+
+		public String getScalingGroupId() {
+			return this.scalingGroupId;
+		}
+
+		public void setScalingGroupId(String scalingGroupId) {
+			this.scalingGroupId = scalingGroupId;
+		}
+
+		public String getLifecycleHookStatus() {
+			return this.lifecycleHookStatus;
+		}
+
+		public void setLifecycleHookStatus(String lifecycleHookStatus) {
+			this.lifecycleHookStatus = lifecycleHookStatus;
 		}
 	}
 

@@ -30,12 +30,21 @@ public class DescribeEIURangeResponseUnmarshaller {
 
 		EIUInfo eIUInfo = new EIUInfo();
 		eIUInfo.setDefaultValue(_ctx.stringValue("DescribeEIURangeResponse.EIUInfo.DefaultValue"));
+		eIUInfo.setMinValue(_ctx.stringValue("DescribeEIURangeResponse.EIUInfo.MinValue"));
+		eIUInfo.setMaxValue(_ctx.stringValue("DescribeEIURangeResponse.EIUInfo.MaxValue"));
+		eIUInfo.setStep(_ctx.stringValue("DescribeEIURangeResponse.EIUInfo.Step"));
 
 		List<Long> eIURange = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEIURangeResponse.EIUInfo.EIURange.Length"); i++) {
 			eIURange.add(_ctx.longValue("DescribeEIURangeResponse.EIUInfo.EIURange["+ i +"]"));
 		}
 		eIUInfo.setEIURange(eIURange);
+
+		List<String> storageResourceRange = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeEIURangeResponse.EIUInfo.StorageResourceRange.Length"); i++) {
+			storageResourceRange.add(_ctx.stringValue("DescribeEIURangeResponse.EIUInfo.StorageResourceRange["+ i +"]"));
+		}
+		eIUInfo.setStorageResourceRange(storageResourceRange);
 		describeEIURangeResponse.setEIUInfo(eIUInfo);
 	 
 	 	return describeEIURangeResponse;

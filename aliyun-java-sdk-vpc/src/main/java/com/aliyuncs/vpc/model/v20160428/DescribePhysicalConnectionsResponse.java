@@ -145,6 +145,16 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 		private String expectSpec;
 
+		private String resourceGroupId;
+
+		private String adDetailLocation;
+
+		private String qosId;
+
+		private String opticalModuleModel;
+
+		private List<TagsItem> tags;
+
 		public String getType() {
 			return this.type;
 		}
@@ -415,6 +425,69 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 		public void setExpectSpec(String expectSpec) {
 			this.expectSpec = expectSpec;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getAdDetailLocation() {
+			return this.adDetailLocation;
+		}
+
+		public void setAdDetailLocation(String adDetailLocation) {
+			this.adDetailLocation = adDetailLocation;
+		}
+
+		public String getQosId() {
+			return this.qosId;
+		}
+
+		public void setQosId(String qosId) {
+			this.qosId = qosId;
+		}
+
+		public String getOpticalModuleModel() {
+			return this.opticalModuleModel;
+		}
+
+		public void setOpticalModuleModel(String opticalModuleModel) {
+			this.opticalModuleModel = opticalModuleModel;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

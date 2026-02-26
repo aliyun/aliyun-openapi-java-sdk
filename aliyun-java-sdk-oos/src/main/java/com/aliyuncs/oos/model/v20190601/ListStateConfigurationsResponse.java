@@ -28,6 +28,8 @@ public class ListStateConfigurationsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String nextToken;
+
 	private List<StateConfiguration> stateConfigurations;
 
 	public String getRequestId() {
@@ -36,6 +38,14 @@ public class ListStateConfigurationsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<StateConfiguration> getStateConfigurations() {

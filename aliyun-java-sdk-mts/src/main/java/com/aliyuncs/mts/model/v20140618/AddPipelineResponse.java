@@ -62,6 +62,8 @@ public class AddPipelineResponse extends AcsResponse {
 
 		private NotifyConfig notifyConfig;
 
+		private ExtendConfig extendConfig;
+
 		public String getSpeed() {
 			return this.speed;
 		}
@@ -126,6 +128,14 @@ public class AddPipelineResponse extends AcsResponse {
 			this.notifyConfig = notifyConfig;
 		}
 
+		public ExtendConfig getExtendConfig() {
+			return this.extendConfig;
+		}
+
+		public void setExtendConfig(ExtendConfig extendConfig) {
+			this.extendConfig = extendConfig;
+		}
+
 		public static class NotifyConfig {
 
 			private String mqTopic;
@@ -166,6 +176,39 @@ public class AddPipelineResponse extends AcsResponse {
 
 			public void setTopic(String topic) {
 				this.topic = topic;
+			}
+		}
+
+		public static class ExtendConfig {
+
+			private Boolean isBoostNew;
+
+			private Integer maxMultiSpeed;
+
+			private String multiSpeedDowngradePolicy;
+
+			public Boolean getIsBoostNew() {
+				return this.isBoostNew;
+			}
+
+			public void setIsBoostNew(Boolean isBoostNew) {
+				this.isBoostNew = isBoostNew;
+			}
+
+			public Integer getMaxMultiSpeed() {
+				return this.maxMultiSpeed;
+			}
+
+			public void setMaxMultiSpeed(Integer maxMultiSpeed) {
+				this.maxMultiSpeed = maxMultiSpeed;
+			}
+
+			public String getMultiSpeedDowngradePolicy() {
+				return this.multiSpeedDowngradePolicy;
+			}
+
+			public void setMultiSpeedDowngradePolicy(String multiSpeedDowngradePolicy) {
+				this.multiSpeedDowngradePolicy = multiSpeedDowngradePolicy;
 			}
 		}
 	}

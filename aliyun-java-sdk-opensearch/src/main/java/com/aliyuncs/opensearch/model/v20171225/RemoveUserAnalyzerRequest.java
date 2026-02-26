@@ -27,7 +27,7 @@ public class RemoveUserAnalyzerRequest extends RoaAcsRequest<RemoveUserAnalyzerR
 
 	private String name;
 	public RemoveUserAnalyzerRequest() {
-		super("OpenSearch", "2017-12-25", "RemoveUserAnalyzer", "opensearch");
+		super("OpenSearch", "2017-12-25", "RemoveUserAnalyzer");
 		setUriPattern("/v4/openapi/user-analyzers/[name]");
 		setMethod(MethodType.DELETE);
 		try {

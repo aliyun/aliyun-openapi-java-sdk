@@ -31,12 +31,14 @@ public class ListImagesResponseUnmarshaller {
 		List<OsInfo> osTags = new ArrayList<OsInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListImagesResponse.OsTags.Length"); i++) {
 			OsInfo osInfo = new OsInfo();
-			osInfo.setOsTag(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].OsTag"));
-			osInfo.setPlatform(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].Platform"));
 			osInfo.setVersion(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].Version"));
-			osInfo.setArchitecture(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].Architecture"));
 			osInfo.setBaseOsTag(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].BaseOsTag"));
+			osInfo.setPlatform(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].Platform"));
+			osInfo.setOsTag(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].OsTag"));
 			osInfo.setImageId(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].ImageId"));
+			osInfo.setArchitecture(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].Architecture"));
+			osInfo.setOSName(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].OSName"));
+			osInfo.setOSNameEn(_ctx.stringValue("ListImagesResponse.OsTags["+ i +"].OSNameEn"));
 
 			osTags.add(osInfo);
 		}

@@ -42,9 +42,15 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupDownloadURL(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDownloadURL"));
 			backup.setBackupMode(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMode"));
 			backup.setBackupEndTime(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupEndTime"));
-			backup.setBackupId(_ctx.integerValue("DescribeBackupsResponse.Backups["+ i +"].BackupId"));
+			backup.setBackupId(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupId"));
 			backup.setBackupDBNames(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDBNames"));
 			backup.setBackupMethod(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMethod"));
+			backup.setBackupJobId(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupJobId"));
+			backup.setBackupName(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupName"));
+			backup.setBackupScale(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupScale"));
+			backup.setIsAvail(_ctx.booleanValue("DescribeBackupsResponse.Backups["+ i +"].IsAvail"));
+			backup.setEngineVersion(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].EngineVersion"));
+			backup.setBackupExpireTime(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupExpireTime"));
 
 			backups.add(backup);
 		}

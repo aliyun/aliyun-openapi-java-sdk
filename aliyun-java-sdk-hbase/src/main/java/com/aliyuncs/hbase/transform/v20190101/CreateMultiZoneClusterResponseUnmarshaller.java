@@ -23,8 +23,8 @@ public class CreateMultiZoneClusterResponseUnmarshaller {
 	public static CreateMultiZoneClusterResponse unmarshall(CreateMultiZoneClusterResponse createMultiZoneClusterResponse, UnmarshallerContext _ctx) {
 		
 		createMultiZoneClusterResponse.setRequestId(_ctx.stringValue("CreateMultiZoneClusterResponse.RequestId"));
-		createMultiZoneClusterResponse.setClusterId(_ctx.stringValue("CreateMultiZoneClusterResponse.ClusterId"));
 		createMultiZoneClusterResponse.setOrderId(_ctx.stringValue("CreateMultiZoneClusterResponse.OrderId"));
+		createMultiZoneClusterResponse.setClusterId(_ctx.stringValue("CreateMultiZoneClusterResponse.ClusterId"));
 	 
 	 	return createMultiZoneClusterResponse;
 	}

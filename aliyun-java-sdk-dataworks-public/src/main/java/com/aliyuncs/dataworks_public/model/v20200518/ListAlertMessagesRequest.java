@@ -35,6 +35,8 @@ public class ListAlertMessagesRequest extends RpcAcsRequest<ListAlertMessagesRes
 
 	private Integer pageNumber;
 
+	private Long baselineId;
+
 	private Long remindId;
 
 	private Integer pageSize;
@@ -101,6 +103,17 @@ public class ListAlertMessagesRequest extends RpcAcsRequest<ListAlertMessagesRes
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getBaselineId() {
+		return this.baselineId;
+	}
+
+	public void setBaselineId(Long baselineId) {
+		this.baselineId = baselineId;
+		if(baselineId != null){
+			putBodyParameter("BaselineId", baselineId.toString());
 		}
 	}
 

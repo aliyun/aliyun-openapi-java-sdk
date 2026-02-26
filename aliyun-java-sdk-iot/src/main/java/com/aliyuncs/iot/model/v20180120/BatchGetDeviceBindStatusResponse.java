@@ -81,6 +81,8 @@ public class BatchGetDeviceBindStatusResponse extends AcsResponse {
 
 		private Integer bindStatus;
 
+		private String instanceId;
+
 		public String getIotId() {
 			return this.iotId;
 		}
@@ -95,6 +97,14 @@ public class BatchGetDeviceBindStatusResponse extends AcsResponse {
 
 		public void setBindStatus(Integer bindStatus) {
 			this.bindStatus = bindStatus;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

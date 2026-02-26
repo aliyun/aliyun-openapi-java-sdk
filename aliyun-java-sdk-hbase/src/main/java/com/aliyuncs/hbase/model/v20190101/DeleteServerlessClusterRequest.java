@@ -29,7 +29,7 @@ public class DeleteServerlessClusterRequest extends RpcAcsRequest<DeleteServerle
 
 	private String zoneId;
 	public DeleteServerlessClusterRequest() {
-		super("HBase", "2019-01-01", "DeleteServerlessCluster", "hbase");
+		super("HBase", "2019-01-01", "DeleteServerlessCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

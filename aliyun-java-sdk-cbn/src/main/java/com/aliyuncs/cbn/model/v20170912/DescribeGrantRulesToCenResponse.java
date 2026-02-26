@@ -27,6 +27,12 @@ public class DescribeGrantRulesToCenResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long totalCount;
+
+	private Long maxResults;
+
+	private String nextToken;
+
 	private List<GrantRule> grantRules;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class DescribeGrantRulesToCenResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Long getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Long maxResults) {
+		this.maxResults = maxResults;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<GrantRule> getGrantRules() {
@@ -58,6 +88,10 @@ public class DescribeGrantRulesToCenResponse extends AcsResponse {
 		private String cenId;
 
 		private String orderType;
+
+		private Long cenOwnerId;
+
+		private Long createTime;
 
 		public String getChildInstanceType() {
 			return this.childInstanceType;
@@ -105,6 +139,22 @@ public class DescribeGrantRulesToCenResponse extends AcsResponse {
 
 		public void setOrderType(String orderType) {
 			this.orderType = orderType;
+		}
+
+		public Long getCenOwnerId() {
+			return this.cenOwnerId;
+		}
+
+		public void setCenOwnerId(Long cenOwnerId) {
+			this.cenOwnerId = cenOwnerId;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 	}
 

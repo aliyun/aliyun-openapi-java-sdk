@@ -123,6 +123,8 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 		private Integer vlanId;
 
+		private String vbrName;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -305,6 +307,14 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 		public void setVlanId(Integer vlanId) {
 			this.vlanId = vlanId;
+		}
+
+		public String getVbrName() {
+			return this.vbrName;
+		}
+
+		public void setVbrName(String vbrName) {
+			this.vbrName = vbrName;
 		}
 	}
 

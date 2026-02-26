@@ -31,7 +31,7 @@ public class TransformClientIdRequest extends RpcAcsRequest<TransformClientIdRes
 
 	private String iotInstanceId;
 	public TransformClientIdRequest() {
-		super("Iot", "2018-01-20", "TransformClientId");
+		super("Iot", "2018-01-20", "TransformClientId", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

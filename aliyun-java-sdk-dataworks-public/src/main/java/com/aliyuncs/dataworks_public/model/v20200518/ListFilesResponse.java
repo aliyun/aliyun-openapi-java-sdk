@@ -171,6 +171,8 @@ public class ListFilesResponse extends AcsResponse {
 
 			private Long nodeId;
 
+			private String absoluteFolderPath;
+
 			public Integer getCommitStatus() {
 				return this.commitStatus;
 			}
@@ -337,6 +339,14 @@ public class ListFilesResponse extends AcsResponse {
 
 			public void setNodeId(Long nodeId) {
 				this.nodeId = nodeId;
+			}
+
+			public String getAbsoluteFolderPath() {
+				return this.absoluteFolderPath;
+			}
+
+			public void setAbsoluteFolderPath(String absoluteFolderPath) {
+				this.absoluteFolderPath = absoluteFolderPath;
 			}
 		}
 	}

@@ -30,19 +30,19 @@ public class DescribeHanaDatabasesResponseUnmarshaller {
 		describeHanaDatabasesResponse.setSuccess(_ctx.booleanValue("DescribeHanaDatabasesResponse.Success"));
 		describeHanaDatabasesResponse.setCode(_ctx.stringValue("DescribeHanaDatabasesResponse.Code"));
 		describeHanaDatabasesResponse.setMessage(_ctx.stringValue("DescribeHanaDatabasesResponse.Message"));
-		describeHanaDatabasesResponse.setTotalCount(_ctx.longValue("DescribeHanaDatabasesResponse.TotalCount"));
-		describeHanaDatabasesResponse.setPageSize(_ctx.integerValue("DescribeHanaDatabasesResponse.PageSize"));
 		describeHanaDatabasesResponse.setPageNumber(_ctx.integerValue("DescribeHanaDatabasesResponse.PageNumber"));
+		describeHanaDatabasesResponse.setPageSize(_ctx.integerValue("DescribeHanaDatabasesResponse.PageSize"));
+		describeHanaDatabasesResponse.setTotalCount(_ctx.longValue("DescribeHanaDatabasesResponse.TotalCount"));
 
 		List<HanaDatabase> hanaDatabases = new ArrayList<HanaDatabase>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHanaDatabasesResponse.HanaDatabases.Length"); i++) {
 			HanaDatabase hanaDatabase = new HanaDatabase();
-			hanaDatabase.setDatabaseName(_ctx.stringValue("DescribeHanaDatabasesResponse.HanaDatabases["+ i +"].DatabaseName"));
 			hanaDatabase.setHost(_ctx.stringValue("DescribeHanaDatabasesResponse.HanaDatabases["+ i +"].Host"));
-			hanaDatabase.setServiceName(_ctx.stringValue("DescribeHanaDatabasesResponse.HanaDatabases["+ i +"].ServiceName"));
-			hanaDatabase.setDetail(_ctx.stringValue("DescribeHanaDatabasesResponse.HanaDatabases["+ i +"].Detail"));
-			hanaDatabase.setActiveStatus(_ctx.stringValue("DescribeHanaDatabasesResponse.HanaDatabases["+ i +"].ActiveStatus"));
 			hanaDatabase.setSqlPort(_ctx.integerValue("DescribeHanaDatabasesResponse.HanaDatabases["+ i +"].SqlPort"));
+			hanaDatabase.setDatabaseName(_ctx.stringValue("DescribeHanaDatabasesResponse.HanaDatabases["+ i +"].DatabaseName"));
+			hanaDatabase.setServiceName(_ctx.stringValue("DescribeHanaDatabasesResponse.HanaDatabases["+ i +"].ServiceName"));
+			hanaDatabase.setActiveStatus(_ctx.stringValue("DescribeHanaDatabasesResponse.HanaDatabases["+ i +"].ActiveStatus"));
+			hanaDatabase.setDetail(_ctx.stringValue("DescribeHanaDatabasesResponse.HanaDatabases["+ i +"].Detail"));
 
 			hanaDatabases.add(hanaDatabase);
 		}

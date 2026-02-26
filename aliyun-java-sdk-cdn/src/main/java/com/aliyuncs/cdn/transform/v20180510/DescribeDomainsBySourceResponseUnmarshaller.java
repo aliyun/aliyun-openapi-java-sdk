@@ -44,12 +44,12 @@ public class DescribeDomainsBySourceResponseUnmarshaller {
 			List<DomainInfo> domainInfos = new ArrayList<DomainInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos.Length"); j++) {
 				DomainInfo domainInfo = new DomainInfo();
-				domainInfo.setDomainName(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].DomainName"));
-				domainInfo.setDomainCname(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].DomainCname"));
-				domainInfo.setCreateTime(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].CreateTime"));
-				domainInfo.setUpdateTime(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].UpdateTime"));
 				domainInfo.setStatus(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].Status"));
+				domainInfo.setUpdateTime(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].UpdateTime"));
+				domainInfo.setCreateTime(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].CreateTime"));
+				domainInfo.setDomainCname(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].DomainCname"));
 				domainInfo.setCdnType(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].CdnType"));
+				domainInfo.setDomainName(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].DomainName"));
 
 				domainInfos.add(domainInfo);
 			}

@@ -30,11 +30,9 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 
 	private List<String> resourceIds;
 
-	private Long ownerId;
+	private List<String> tagKeys;
 
 	private String resourceType;
-
-	private List<String> tagKeys;
 	public UntagResourcesRequest() {
 		super("Cdn", "2018-05-10", "UntagResources");
 		setMethod(MethodType.POST);
@@ -68,28 +66,6 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		}	
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
 	public List<String> getTagKeys() {
 		return this.tagKeys;
 	}
@@ -101,6 +77,17 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
 			}
 		}	
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
 	}
 
 	@Override

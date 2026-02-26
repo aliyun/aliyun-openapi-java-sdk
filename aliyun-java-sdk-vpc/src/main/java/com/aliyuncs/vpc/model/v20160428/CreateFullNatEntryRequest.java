@@ -33,6 +33,8 @@ public class CreateFullNatEntryRequest extends RpcAcsRequest<CreateFullNatEntryR
 
 	private String clientToken;
 
+	private String accessDomain;
+
 	private String natIpPort;
 
 	private String fullNatTableId;
@@ -104,6 +106,17 @@ public class CreateFullNatEntryRequest extends RpcAcsRequest<CreateFullNatEntryR
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getAccessDomain() {
+		return this.accessDomain;
+	}
+
+	public void setAccessDomain(String accessDomain) {
+		this.accessDomain = accessDomain;
+		if(accessDomain != null){
+			putQueryParameter("AccessDomain", accessDomain);
 		}
 	}
 

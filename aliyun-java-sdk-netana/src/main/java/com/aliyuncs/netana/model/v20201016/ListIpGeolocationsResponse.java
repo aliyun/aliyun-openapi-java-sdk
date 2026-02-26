@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListIpGeolocationsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
+
+	private String requestId;
 
 	private Integer totalCount;
 
@@ -35,20 +35,20 @@ public class ListIpGeolocationsResponse extends AcsResponse {
 
 	private List<IpGeolocationModel> ipGeolocationModels;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalCount() {
@@ -77,29 +77,13 @@ public class ListIpGeolocationsResponse extends AcsResponse {
 
 	public static class IpGeolocationModel {
 
-		private String ipv4Prefix;
-
-		private String countryCode;
-
 		private String cityCode;
 
 		private String resourcePoolName;
 
-		public String getIpv4Prefix() {
-			return this.ipv4Prefix;
-		}
+		private String countryCode;
 
-		public void setIpv4Prefix(String ipv4Prefix) {
-			this.ipv4Prefix = ipv4Prefix;
-		}
-
-		public String getCountryCode() {
-			return this.countryCode;
-		}
-
-		public void setCountryCode(String countryCode) {
-			this.countryCode = countryCode;
-		}
+		private String ipv4Prefix;
 
 		public String getCityCode() {
 			return this.cityCode;
@@ -115,6 +99,22 @@ public class ListIpGeolocationsResponse extends AcsResponse {
 
 		public void setResourcePoolName(String resourcePoolName) {
 			this.resourcePoolName = resourcePoolName;
+		}
+
+		public String getCountryCode() {
+			return this.countryCode;
+		}
+
+		public void setCountryCode(String countryCode) {
+			this.countryCode = countryCode;
+		}
+
+		public String getIpv4Prefix() {
+			return this.ipv4Prefix;
+		}
+
+		public void setIpv4Prefix(String ipv4Prefix) {
+			this.ipv4Prefix = ipv4Prefix;
 		}
 	}
 

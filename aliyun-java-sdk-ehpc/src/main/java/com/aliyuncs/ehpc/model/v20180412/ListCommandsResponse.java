@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCommandsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<Command> commands;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListCommandsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListCommandsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Command> getCommands() {
@@ -77,13 +77,21 @@ public class ListCommandsResponse extends AcsResponse {
 
 	public static class Command {
 
-		private String commandId;
+		private String timeout;
 
-		private String commandContent;
+		private String commandId;
 
 		private String workingDir;
 
-		private String timeout;
+		private String commandContent;
+
+		public String getTimeout() {
+			return this.timeout;
+		}
+
+		public void setTimeout(String timeout) {
+			this.timeout = timeout;
+		}
 
 		public String getCommandId() {
 			return this.commandId;
@@ -91,14 +99,6 @@ public class ListCommandsResponse extends AcsResponse {
 
 		public void setCommandId(String commandId) {
 			this.commandId = commandId;
-		}
-
-		public String getCommandContent() {
-			return this.commandContent;
-		}
-
-		public void setCommandContent(String commandContent) {
-			this.commandContent = commandContent;
 		}
 
 		public String getWorkingDir() {
@@ -109,12 +109,12 @@ public class ListCommandsResponse extends AcsResponse {
 			this.workingDir = workingDir;
 		}
 
-		public String getTimeout() {
-			return this.timeout;
+		public String getCommandContent() {
+			return this.commandContent;
 		}
 
-		public void setTimeout(String timeout) {
-			this.timeout = timeout;
+		public void setCommandContent(String commandContent) {
+			this.commandContent = commandContent;
 		}
 	}
 

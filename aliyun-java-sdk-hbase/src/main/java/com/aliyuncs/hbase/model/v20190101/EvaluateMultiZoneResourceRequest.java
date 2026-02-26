@@ -79,7 +79,7 @@ public class EvaluateMultiZoneResourceRequest extends RpcAcsRequest<EvaluateMult
 
 	private String arbiterVSwitchId;
 	public EvaluateMultiZoneResourceRequest() {
-		super("HBase", "2019-01-01", "EvaluateMultiZoneResource", "hbase");
+		super("HBase", "2019-01-01", "EvaluateMultiZoneResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

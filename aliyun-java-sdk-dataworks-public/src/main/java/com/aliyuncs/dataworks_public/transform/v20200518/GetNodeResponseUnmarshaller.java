@@ -33,6 +33,7 @@ public class GetNodeResponseUnmarshaller {
 		data.setSchedulerType(_ctx.stringValue("GetNodeResponse.Data.SchedulerType"));
 		data.setRepeatInterval(_ctx.longValue("GetNodeResponse.Data.RepeatInterval"));
 		data.setRepeatability(_ctx.stringValue("GetNodeResponse.Data.Repeatability"));
+		data.setRepeatMode(_ctx.integerValue("GetNodeResponse.Data.RepeatMode"));
 		data.setProjectId(_ctx.longValue("GetNodeResponse.Data.ProjectId"));
 		data.setProgramType(_ctx.stringValue("GetNodeResponse.Data.ProgramType"));
 		data.setPriority(_ctx.integerValue("GetNodeResponse.Data.Priority"));
@@ -49,6 +50,13 @@ public class GetNodeResponseUnmarshaller {
 		data.setDqcDescription(_ctx.stringValue("GetNodeResponse.Data.DqcDescription"));
 		data.setCronExpress(_ctx.stringValue("GetNodeResponse.Data.CronExpress"));
 		data.setNodeId(_ctx.longValue("GetNodeResponse.Data.NodeId"));
+		data.setResGroupIdentifier(_ctx.stringValue("GetNodeResponse.Data.ResGroupIdentifier"));
+		data.setFileType(_ctx.integerValue("GetNodeResponse.Data.FileType"));
+		data.setFileId(_ctx.longValue("GetNodeResponse.Data.FileId"));
+		data.setFileVersion(_ctx.integerValue("GetNodeResponse.Data.FileVersion"));
+		data.setDeployDate(_ctx.longValue("GetNodeResponse.Data.DeployDate"));
+		data.setCreateTime(_ctx.longValue("GetNodeResponse.Data.CreateTime"));
+		data.setModifyTime(_ctx.longValue("GetNodeResponse.Data.ModifyTime"));
 		getNodeResponse.setData(data);
 	 
 	 	return getNodeResponse;

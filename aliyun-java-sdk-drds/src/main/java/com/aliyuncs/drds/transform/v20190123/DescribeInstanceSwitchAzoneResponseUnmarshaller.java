@@ -31,8 +31,8 @@ public class DescribeInstanceSwitchAzoneResponseUnmarshaller {
 
 		Result result = new Result();
 		result.setOriginAzoneId(_ctx.stringValue("DescribeInstanceSwitchAzoneResponse.Result.OriginAzoneId"));
-		result.setRegionId(_ctx.stringValue("DescribeInstanceSwitchAzoneResponse.Result.RegionId"));
 		result.setSwitchAble(_ctx.booleanValue("DescribeInstanceSwitchAzoneResponse.Result.SwitchAble"));
+		result.setRegionId(_ctx.stringValue("DescribeInstanceSwitchAzoneResponse.Result.RegionId"));
 
 		List<String> targetAzones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceSwitchAzoneResponse.Result.TargetAzones.Length"); i++) {

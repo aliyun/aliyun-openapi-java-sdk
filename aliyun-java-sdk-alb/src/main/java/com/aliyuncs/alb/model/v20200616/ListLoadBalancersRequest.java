@@ -30,11 +30,15 @@ public class ListLoadBalancersRequest extends RpcAcsRequest<ListLoadBalancersRes
 
 	private List<String> loadBalancerIds;
 
+	private String addressIpVersion;
+
 	private String resourceGroupId;
 
 	private String nextToken;
 
 	private String loadBalancerBussinessStatus;
+
+	private String dNSName;
 
 	private String addressType;
 
@@ -47,6 +51,8 @@ public class ListLoadBalancersRequest extends RpcAcsRequest<ListLoadBalancersRes
 	private Integer maxResults;
 
 	private String zoneId;
+
+	private String ipv6AddressType;
 
 	private String payType;
 	public ListLoadBalancersRequest() {
@@ -84,6 +90,17 @@ public class ListLoadBalancersRequest extends RpcAcsRequest<ListLoadBalancersRes
 		}	
 	}
 
+	public String getAddressIpVersion() {
+		return this.addressIpVersion;
+	}
+
+	public void setAddressIpVersion(String addressIpVersion) {
+		this.addressIpVersion = addressIpVersion;
+		if(addressIpVersion != null){
+			putQueryParameter("AddressIpVersion", addressIpVersion);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -114,6 +131,17 @@ public class ListLoadBalancersRequest extends RpcAcsRequest<ListLoadBalancersRes
 		this.loadBalancerBussinessStatus = loadBalancerBussinessStatus;
 		if(loadBalancerBussinessStatus != null){
 			putQueryParameter("LoadBalancerBussinessStatus", loadBalancerBussinessStatus);
+		}
+	}
+
+	public String getDNSName() {
+		return this.dNSName;
+	}
+
+	public void setDNSName(String dNSName) {
+		this.dNSName = dNSName;
+		if(dNSName != null){
+			putQueryParameter("DNSName", dNSName);
 		}
 	}
 
@@ -188,6 +216,17 @@ public class ListLoadBalancersRequest extends RpcAcsRequest<ListLoadBalancersRes
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getIpv6AddressType() {
+		return this.ipv6AddressType;
+	}
+
+	public void setIpv6AddressType(String ipv6AddressType) {
+		this.ipv6AddressType = ipv6AddressType;
+		if(ipv6AddressType != null){
+			putQueryParameter("Ipv6AddressType", ipv6AddressType);
 		}
 	}
 

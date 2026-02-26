@@ -42,12 +42,15 @@ public class DescribeEnsRouteEntryListResponseUnmarshaller {
 			routeEntry.setDestinationCidrBlock(_ctx.stringValue("DescribeEnsRouteEntryListResponse.RouteEntrys["+ i +"].DestinationCidrBlock"));
 			routeEntry.setRouteEntryId(_ctx.stringValue("DescribeEnsRouteEntryListResponse.RouteEntrys["+ i +"].RouteEntryId"));
 			routeEntry.setRouteTableId(_ctx.stringValue("DescribeEnsRouteEntryListResponse.RouteEntrys["+ i +"].RouteTableId"));
+			routeEntry.setSourceCidrBlock(_ctx.stringValue("DescribeEnsRouteEntryListResponse.RouteEntrys["+ i +"].SourceCidrBlock"));
+			routeEntry.setCreationTime(_ctx.stringValue("DescribeEnsRouteEntryListResponse.RouteEntrys["+ i +"].CreationTime"));
 
 			List<NextHop> nextHops = new ArrayList<NextHop>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeEnsRouteEntryListResponse.RouteEntrys["+ i +"].NextHops.Length"); j++) {
 				NextHop nextHop = new NextHop();
 				nextHop.setNextHopId(_ctx.stringValue("DescribeEnsRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].NextHopId"));
 				nextHop.setNextHopType(_ctx.stringValue("DescribeEnsRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].NextHopType"));
+				nextHop.setNextHopName(_ctx.stringValue("DescribeEnsRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].NextHopName"));
 
 				nextHops.add(nextHop);
 			}

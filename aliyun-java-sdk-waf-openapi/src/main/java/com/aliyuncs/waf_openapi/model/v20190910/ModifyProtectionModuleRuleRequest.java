@@ -29,6 +29,8 @@ public class ModifyProtectionModuleRuleRequest extends RpcAcsRequest<ModifyProte
 
 	private Long lockVersion;
 
+	private String resourceGroupId;
+
 	private String defenseType;
 
 	private String instanceId;
@@ -64,6 +66,17 @@ public class ModifyProtectionModuleRuleRequest extends RpcAcsRequest<ModifyProte
 		this.lockVersion = lockVersion;
 		if(lockVersion != null){
 			putQueryParameter("LockVersion", lockVersion.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

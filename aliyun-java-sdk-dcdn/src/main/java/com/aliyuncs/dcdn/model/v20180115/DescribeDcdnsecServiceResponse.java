@@ -25,52 +25,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnsecServiceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String instanceId;
-
-	private String internetChargeType;
+	private String endTime;
 
 	private String startTime;
 
-	private String endTime;
-
-	private String changingChargeType;
-
 	private String changingAffectTime;
-
-	private String version;
-
-	private String flowType;
-
-	private String requestType;
 
 	private String domainNum;
 
+	private String changingChargeType;
+
+	private String requestId;
+
+	private String version;
+
+	private String requestType;
+
+	private String flowType;
+
+	private String internetChargeType;
+
+	private String instanceId;
+
 	private List<LockReason> operationLocks;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getStartTime() {
@@ -81,12 +65,20 @@ public class DescribeDcdnsecServiceResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getChangingAffectTime() {
+		return this.changingAffectTime;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setChangingAffectTime(String changingAffectTime) {
+		this.changingAffectTime = changingAffectTime;
+	}
+
+	public String getDomainNum() {
+		return this.domainNum;
+	}
+
+	public void setDomainNum(String domainNum) {
+		this.domainNum = domainNum;
 	}
 
 	public String getChangingChargeType() {
@@ -97,12 +89,12 @@ public class DescribeDcdnsecServiceResponse extends AcsResponse {
 		this.changingChargeType = changingChargeType;
 	}
 
-	public String getChangingAffectTime() {
-		return this.changingAffectTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setChangingAffectTime(String changingAffectTime) {
-		this.changingAffectTime = changingAffectTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getVersion() {
@@ -113,14 +105,6 @@ public class DescribeDcdnsecServiceResponse extends AcsResponse {
 		this.version = version;
 	}
 
-	public String getFlowType() {
-		return this.flowType;
-	}
-
-	public void setFlowType(String flowType) {
-		this.flowType = flowType;
-	}
-
 	public String getRequestType() {
 		return this.requestType;
 	}
@@ -129,12 +113,28 @@ public class DescribeDcdnsecServiceResponse extends AcsResponse {
 		this.requestType = requestType;
 	}
 
-	public String getDomainNum() {
-		return this.domainNum;
+	public String getFlowType() {
+		return this.flowType;
 	}
 
-	public void setDomainNum(String domainNum) {
-		this.domainNum = domainNum;
+	public void setFlowType(String flowType) {
+		this.flowType = flowType;
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public List<LockReason> getOperationLocks() {

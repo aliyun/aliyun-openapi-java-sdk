@@ -59,17 +59,17 @@ public class DescribeCasterChannelsResponse extends AcsResponse {
 
 		private String channelId;
 
-		private String resourceId;
+		private String faceBeauty;
 
-		private String streamUrl;
+		private Integer inputType;
+
+		private String resourceId;
 
 		private String rtmpUrl;
 
 		private String rtsUrl;
 
-		private Integer inputType;
-
-		private String faceBeauty;
+		private String streamUrl;
 
 		public String getChannelId() {
 			return this.channelId;
@@ -79,20 +79,28 @@ public class DescribeCasterChannelsResponse extends AcsResponse {
 			this.channelId = channelId;
 		}
 
+		public String getFaceBeauty() {
+			return this.faceBeauty;
+		}
+
+		public void setFaceBeauty(String faceBeauty) {
+			this.faceBeauty = faceBeauty;
+		}
+
+		public Integer getInputType() {
+			return this.inputType;
+		}
+
+		public void setInputType(Integer inputType) {
+			this.inputType = inputType;
+		}
+
 		public String getResourceId() {
 			return this.resourceId;
 		}
 
 		public void setResourceId(String resourceId) {
 			this.resourceId = resourceId;
-		}
-
-		public String getStreamUrl() {
-			return this.streamUrl;
-		}
-
-		public void setStreamUrl(String streamUrl) {
-			this.streamUrl = streamUrl;
 		}
 
 		public String getRtmpUrl() {
@@ -111,20 +119,12 @@ public class DescribeCasterChannelsResponse extends AcsResponse {
 			this.rtsUrl = rtsUrl;
 		}
 
-		public Integer getInputType() {
-			return this.inputType;
+		public String getStreamUrl() {
+			return this.streamUrl;
 		}
 
-		public void setInputType(Integer inputType) {
-			this.inputType = inputType;
-		}
-
-		public String getFaceBeauty() {
-			return this.faceBeauty;
-		}
-
-		public void setFaceBeauty(String faceBeauty) {
-			this.faceBeauty = faceBeauty;
+		public void setStreamUrl(String streamUrl) {
+			this.streamUrl = streamUrl;
 		}
 	}
 

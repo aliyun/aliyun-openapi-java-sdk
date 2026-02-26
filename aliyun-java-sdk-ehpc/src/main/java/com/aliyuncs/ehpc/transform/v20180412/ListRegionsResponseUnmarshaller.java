@@ -31,8 +31,8 @@ public class ListRegionsResponseUnmarshaller {
 		List<RegionInfo> regions = new ArrayList<RegionInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListRegionsResponse.Regions.Length"); i++) {
 			RegionInfo regionInfo = new RegionInfo();
-			regionInfo.setRegionId(_ctx.stringValue("ListRegionsResponse.Regions["+ i +"].RegionId"));
 			regionInfo.setLocalName(_ctx.stringValue("ListRegionsResponse.Regions["+ i +"].LocalName"));
+			regionInfo.setRegionId(_ctx.stringValue("ListRegionsResponse.Regions["+ i +"].RegionId"));
 
 			regions.add(regionInfo);
 		}

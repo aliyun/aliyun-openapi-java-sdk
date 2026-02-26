@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.rds.model.v20140815.DescribeParameterGroupResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeParameterGroupResponse.ParameterGroup;
 import com.aliyuncs.rds.model.v20140815.DescribeParameterGroupResponse.ParameterGroup.ParameterDetail;
+import com.aliyuncs.rds.model.v20140815.DescribeParameterGroupResponse.RelatedCustinsInfoItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,16 +33,16 @@ public class DescribeParameterGroupResponseUnmarshaller {
 		List<ParameterGroup> paramGroup = new ArrayList<ParameterGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParameterGroupResponse.ParamGroup.Length"); i++) {
 			ParameterGroup parameterGroup = new ParameterGroup();
-			parameterGroup.setUpdateTime(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].UpdateTime"));
-			parameterGroup.setParameterGroupDesc(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupDesc"));
 			parameterGroup.setCreateTime(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].CreateTime"));
+			parameterGroup.setEngine(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].Engine"));
+			parameterGroup.setEngineVersion(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].EngineVersion"));
 			parameterGroup.setForceRestart(_ctx.integerValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ForceRestart"));
+			parameterGroup.setParamCounts(_ctx.integerValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParamCounts"));
+			parameterGroup.setParameterGroupDesc(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupDesc"));
 			parameterGroup.setParameterGroupId(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupId"));
 			parameterGroup.setParameterGroupName(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupName"));
-			parameterGroup.setEngine(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].Engine"));
-			parameterGroup.setParamCounts(_ctx.integerValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParamCounts"));
-			parameterGroup.setEngineVersion(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].EngineVersion"));
 			parameterGroup.setParameterGroupType(_ctx.integerValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupType"));
+			parameterGroup.setUpdateTime(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].UpdateTime"));
 
 			List<ParameterDetail> paramDetail = new ArrayList<ParameterDetail>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParamDetail.Length"); j++) {
@@ -56,6 +57,16 @@ public class DescribeParameterGroupResponseUnmarshaller {
 			paramGroup.add(parameterGroup);
 		}
 		describeParameterGroupResponse.setParamGroup(paramGroup);
+
+		List<RelatedCustinsInfoItem> relatedCustinsInfo = new ArrayList<RelatedCustinsInfoItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeParameterGroupResponse.RelatedCustinsInfo.Length"); i++) {
+			RelatedCustinsInfoItem relatedCustinsInfoItem = new RelatedCustinsInfoItem();
+			relatedCustinsInfoItem.setAppliedTime(_ctx.stringValue("DescribeParameterGroupResponse.RelatedCustinsInfo["+ i +"].AppliedTime"));
+			relatedCustinsInfoItem.setDBInstanceName(_ctx.stringValue("DescribeParameterGroupResponse.RelatedCustinsInfo["+ i +"].DBInstanceName"));
+
+			relatedCustinsInfo.add(relatedCustinsInfoItem);
+		}
+		describeParameterGroupResponse.setRelatedCustinsInfo(relatedCustinsInfo);
 	 
 	 	return describeParameterGroupResponse;
 	}

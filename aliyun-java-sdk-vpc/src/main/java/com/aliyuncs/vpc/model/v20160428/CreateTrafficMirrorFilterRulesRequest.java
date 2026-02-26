@@ -85,6 +85,7 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 				putQueryParameter("IngressRules." + (depth1 + 1) + ".Action" , ingressRuless.get(depth1).getAction());
 				putQueryParameter("IngressRules." + (depth1 + 1) + ".SourceCidrBlock" , ingressRuless.get(depth1).getSourceCidrBlock());
 				putQueryParameter("IngressRules." + (depth1 + 1) + ".Protocol" , ingressRuless.get(depth1).getBizProtocol());
+				putQueryParameter("IngressRules." + (depth1 + 1) + ".IpVersion" , ingressRuless.get(depth1).getIpVersion());
 				putQueryParameter("IngressRules." + (depth1 + 1) + ".DestinationPortRange" , ingressRuless.get(depth1).getDestinationPortRange());
 				putQueryParameter("IngressRules." + (depth1 + 1) + ".Priority" , ingressRuless.get(depth1).getPriority());
 				putQueryParameter("IngressRules." + (depth1 + 1) + ".DestinationCidrBlock" , ingressRuless.get(depth1).getDestinationCidrBlock());
@@ -104,6 +105,7 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 				putQueryParameter("EgressRules." + (depth1 + 1) + ".Action" , egressRuless.get(depth1).getAction());
 				putQueryParameter("EgressRules." + (depth1 + 1) + ".SourceCidrBlock" , egressRuless.get(depth1).getSourceCidrBlock());
 				putQueryParameter("EgressRules." + (depth1 + 1) + ".Protocol" , egressRuless.get(depth1).getBizProtocol());
+				putQueryParameter("EgressRules." + (depth1 + 1) + ".IpVersion" , egressRuless.get(depth1).getIpVersion());
 				putQueryParameter("EgressRules." + (depth1 + 1) + ".DestinationPortRange" , egressRuless.get(depth1).getDestinationPortRange());
 				putQueryParameter("EgressRules." + (depth1 + 1) + ".Priority" , egressRuless.get(depth1).getPriority());
 				putQueryParameter("EgressRules." + (depth1 + 1) + ".DestinationCidrBlock" , egressRuless.get(depth1).getDestinationCidrBlock());
@@ -175,6 +177,8 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 
 		private String protocol;
 
+		private String ipVersion;
+
 		private String destinationPortRange;
 
 		private Integer priority;
@@ -205,6 +209,14 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 
 		public void setBizProtocol(String protocol) {
 			this.protocol = protocol;
+		}
+
+		public String getIpVersion() {
+			return this.ipVersion;
+		}
+
+		public void setIpVersion(String ipVersion) {
+			this.ipVersion = ipVersion;
 		}
 
 		public String getDestinationPortRange() {
@@ -248,6 +260,8 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 
 		private String protocol;
 
+		private String ipVersion;
+
 		private String destinationPortRange;
 
 		private Integer priority;
@@ -278,6 +292,14 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 
 		public void setBizProtocol(String protocol) {
 			this.protocol = protocol;
+		}
+
+		public String getIpVersion() {
+			return this.ipVersion;
+		}
+
+		public void setIpVersion(String ipVersion) {
+			this.ipVersion = ipVersion;
 		}
 
 		public String getDestinationPortRange() {

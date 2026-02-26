@@ -29,9 +29,17 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 
 	private Integer importance;
 
+	private String nextToken;
+
 	private Integer pageSize;
 
 	private String logicalExp;
+
+	private String lang;
+
+	private Long resourceDirectoryAccountId;
+
+	private Boolean useNextToken;
 
 	private Integer currentPage;
 
@@ -69,6 +77,17 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -88,6 +107,39 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 		this.logicalExp = logicalExp;
 		if(logicalExp != null){
 			putQueryParameter("LogicalExp", logicalExp);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Long getResourceDirectoryAccountId() {
+		return this.resourceDirectoryAccountId;
+	}
+
+	public void setResourceDirectoryAccountId(Long resourceDirectoryAccountId) {
+		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
+		if(resourceDirectoryAccountId != null){
+			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId.toString());
+		}
+	}
+
+	public Boolean getUseNextToken() {
+		return this.useNextToken;
+	}
+
+	public void setUseNextToken(Boolean useNextToken) {
+		this.useNextToken = useNextToken;
+		if(useNextToken != null){
+			putQueryParameter("UseNextToken", useNextToken.toString());
 		}
 	}
 

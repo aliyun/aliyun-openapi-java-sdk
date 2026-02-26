@@ -27,7 +27,7 @@ public class DetectFaceRequest extends RoaAcsRequest<DetectFaceResponse> {
 
 	private String clientInfo;
 	public DetectFaceRequest() {
-		super("Green", "2018-05-09", "DetectFace", "green");
+		super("Green", "2018-05-09", "DetectFace");
 		setUriPattern("/green/face/detect");
 		setMethod(MethodType.POST);
 		try {

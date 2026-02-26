@@ -29,12 +29,12 @@ import com.aliyuncs.imm.Endpoint;
 public class UpdateFileMetaRequest extends RpcAcsRequest<UpdateFileMetaResponse> {
 	   
 
-	private String projectName;
-
 	@SerializedName("file")
 	private File file;
 
 	private String datasetName;
+
+	private String projectName;
 	public UpdateFileMetaRequest() {
 		super("imm", "2020-09-30", "UpdateFileMeta", "imm");
 		setMethod(MethodType.POST);
@@ -42,17 +42,6 @@ public class UpdateFileMetaRequest extends RpcAcsRequest<UpdateFileMetaResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
 	}
 
 	public File getFile() {
@@ -74,6 +63,17 @@ public class UpdateFileMetaRequest extends RpcAcsRequest<UpdateFileMetaResponse>
 		this.datasetName = datasetName;
 		if(datasetName != null){
 			putQueryParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 

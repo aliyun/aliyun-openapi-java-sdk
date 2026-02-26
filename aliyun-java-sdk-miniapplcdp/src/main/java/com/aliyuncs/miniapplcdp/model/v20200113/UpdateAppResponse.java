@@ -14,6 +14,7 @@
 
 package com.aliyuncs.miniapplcdp.model.v20200113;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.miniapplcdp.transform.v20200113.UpdateAppResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -71,6 +72,8 @@ public class UpdateAppResponse extends AcsResponse {
 		private String appStatus;
 
 		private String appType;
+
+		private List<CategoryItem> categories;
 
 		public String getAppId() {
 			return this.appId;
@@ -174,6 +177,47 @@ public class UpdateAppResponse extends AcsResponse {
 
 		public void setAppType(String appType) {
 			this.appType = appType;
+		}
+
+		public List<CategoryItem> getCategories() {
+			return this.categories;
+		}
+
+		public void setCategories(List<CategoryItem> categories) {
+			this.categories = categories;
+		}
+
+		public static class CategoryItem {
+
+			private String categoryId;
+
+			private String categoryName;
+
+			private String parentCategoryId;
+
+			public String getCategoryId() {
+				return this.categoryId;
+			}
+
+			public void setCategoryId(String categoryId) {
+				this.categoryId = categoryId;
+			}
+
+			public String getCategoryName() {
+				return this.categoryName;
+			}
+
+			public void setCategoryName(String categoryName) {
+				this.categoryName = categoryName;
+			}
+
+			public String getParentCategoryId() {
+				return this.parentCategoryId;
+			}
+
+			public void setParentCategoryId(String parentCategoryId) {
+				this.parentCategoryId = parentCategoryId;
+			}
 		}
 	}
 

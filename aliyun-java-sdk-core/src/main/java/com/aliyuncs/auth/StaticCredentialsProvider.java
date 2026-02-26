@@ -15,9 +15,11 @@ public class StaticCredentialsProvider implements AlibabaCloudCredentialsProvide
         Credential credential = clientProfile.getCredential();
         if (credential == null) {
             this.credentials = new AnonymousCredentials();
-        }else if (null != credential.getSecurityToken()) {
-            this.credentials = new BasicSessionCredentials(credential.getAccessKeyId(), credential
-                    .getAccessSecret(), credential.getSecurityToken());
+        } else if (null != credential.getSecurityToken()) {
+            this.credentials = new BasicSessionCredentials(
+                credential.getAccessKeyId(), 
+                credential.getAccessSecret(),
+                credential.getSecurityToken());
         } else {
             this.credentials = new LegacyCredentials(credential);
         }

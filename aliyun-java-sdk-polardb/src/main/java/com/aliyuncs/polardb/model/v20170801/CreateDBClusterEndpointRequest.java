@@ -31,9 +31,13 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 
 	private String clientToken;
 
+	private String polarSccWaitTimeout;
+
 	private String readWriteMode;
 
 	private String endpointType;
+
+	private String polarSccTimeoutAction;
 
 	private String resourceOwnerAccount;
 
@@ -47,9 +51,13 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 
 	private Long ownerId;
 
+	private String polarFsInstanceId;
+
 	private String nodes;
+
+	private String sccMode;
 	public CreateDBClusterEndpointRequest() {
-		super("polardb", "2017-08-01", "CreateDBClusterEndpoint");
+		super("polardb", "2017-08-01", "CreateDBClusterEndpoint", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -90,6 +98,17 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		}
 	}
 
+	public String getPolarSccWaitTimeout() {
+		return this.polarSccWaitTimeout;
+	}
+
+	public void setPolarSccWaitTimeout(String polarSccWaitTimeout) {
+		this.polarSccWaitTimeout = polarSccWaitTimeout;
+		if(polarSccWaitTimeout != null){
+			putQueryParameter("PolarSccWaitTimeout", polarSccWaitTimeout);
+		}
+	}
+
 	public String getReadWriteMode() {
 		return this.readWriteMode;
 	}
@@ -109,6 +128,17 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		this.endpointType = endpointType;
 		if(endpointType != null){
 			putQueryParameter("EndpointType", endpointType);
+		}
+	}
+
+	public String getPolarSccTimeoutAction() {
+		return this.polarSccTimeoutAction;
+	}
+
+	public void setPolarSccTimeoutAction(String polarSccTimeoutAction) {
+		this.polarSccTimeoutAction = polarSccTimeoutAction;
+		if(polarSccTimeoutAction != null){
+			putQueryParameter("PolarSccTimeoutAction", polarSccTimeoutAction);
 		}
 	}
 
@@ -178,6 +208,17 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		}
 	}
 
+	public String getPolarFsInstanceId() {
+		return this.polarFsInstanceId;
+	}
+
+	public void setPolarFsInstanceId(String polarFsInstanceId) {
+		this.polarFsInstanceId = polarFsInstanceId;
+		if(polarFsInstanceId != null){
+			putQueryParameter("PolarFsInstanceId", polarFsInstanceId);
+		}
+	}
+
 	public String getNodes() {
 		return this.nodes;
 	}
@@ -186,6 +227,17 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		this.nodes = nodes;
 		if(nodes != null){
 			putQueryParameter("Nodes", nodes);
+		}
+	}
+
+	public String getSccMode() {
+		return this.sccMode;
+	}
+
+	public void setSccMode(String sccMode) {
+		this.sccMode = sccMode;
+		if(sccMode != null){
+			putQueryParameter("SccMode", sccMode);
 		}
 	}
 

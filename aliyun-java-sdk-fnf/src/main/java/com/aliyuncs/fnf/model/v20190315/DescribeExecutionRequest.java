@@ -29,8 +29,6 @@ public class DescribeExecutionRequest extends RpcAcsRequest<DescribeExecutionRes
 
 	private Integer waitTimeSeconds;
 
-	private String requestId;
-
 	private String flowName;
 	public DescribeExecutionRequest() {
 		super("fnf", "2019-03-15", "DescribeExecution", "fnf");
@@ -60,17 +58,6 @@ public class DescribeExecutionRequest extends RpcAcsRequest<DescribeExecutionRes
 		this.waitTimeSeconds = waitTimeSeconds;
 		if(waitTimeSeconds != null){
 			putQueryParameter("WaitTimeSeconds", waitTimeSeconds.toString());
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 

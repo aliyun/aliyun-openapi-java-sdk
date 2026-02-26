@@ -23,8 +23,8 @@ public class CheckExperimentRunnableResponseUnmarshaller {
 	public static CheckExperimentRunnableResponse unmarshall(CheckExperimentRunnableResponse checkExperimentRunnableResponse, UnmarshallerContext _ctx) {
 		
 		checkExperimentRunnableResponse.setRequestId(_ctx.stringValue("CheckExperimentRunnableResponse.RequestId"));
-		checkExperimentRunnableResponse.setCode(_ctx.stringValue("CheckExperimentRunnableResponse.Code"));
 		checkExperimentRunnableResponse.setMessage(_ctx.stringValue("CheckExperimentRunnableResponse.Message"));
+		checkExperimentRunnableResponse.setCode(_ctx.stringValue("CheckExperimentRunnableResponse.Code"));
 		checkExperimentRunnableResponse.setSuccess(_ctx.booleanValue("CheckExperimentRunnableResponse.Success"));
 	 
 	 	return checkExperimentRunnableResponse;

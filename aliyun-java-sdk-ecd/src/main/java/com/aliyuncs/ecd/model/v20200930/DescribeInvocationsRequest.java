@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -27,11 +28,15 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 
 	private String invokeStatus;
 
+	private List<String> desktopIdss;
+
 	private Boolean includeOutput;
 
 	private String nextToken;
 
 	private String contentEncoding;
+
+	private String endUserId;
 
 	private String desktopId;
 
@@ -40,8 +45,10 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 	private String commandType;
 
 	private Integer maxResults;
+
+	private Boolean includeInvokeDesktops;
 	public DescribeInvocationsRequest() {
-		super("ecd", "2020-09-30", "DescribeInvocations");
+		super("ecd", "2020-09-30", "DescribeInvocations", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +65,19 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		if(invokeStatus != null){
 			putQueryParameter("InvokeStatus", invokeStatus);
 		}
+	}
+
+	public List<String> getDesktopIdss() {
+		return this.desktopIdss;
+	}
+
+	public void setDesktopIdss(List<String> desktopIdss) {
+		this.desktopIdss = desktopIdss;	
+		if (desktopIdss != null) {
+			for (int i = 0; i < desktopIdss.size(); i++) {
+				putQueryParameter("DesktopIds." + (i + 1) , desktopIdss.get(i));
+			}
+		}	
 	}
 
 	public Boolean getIncludeOutput() {
@@ -90,6 +110,17 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		this.contentEncoding = contentEncoding;
 		if(contentEncoding != null){
 			putQueryParameter("ContentEncoding", contentEncoding);
+		}
+	}
+
+	public String getEndUserId() {
+		return this.endUserId;
+	}
+
+	public void setEndUserId(String endUserId) {
+		this.endUserId = endUserId;
+		if(endUserId != null){
+			putQueryParameter("EndUserId", endUserId);
 		}
 	}
 
@@ -134,6 +165,17 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public Boolean getIncludeInvokeDesktops() {
+		return this.includeInvokeDesktops;
+	}
+
+	public void setIncludeInvokeDesktops(Boolean includeInvokeDesktops) {
+		this.includeInvokeDesktops = includeInvokeDesktops;
+		if(includeInvokeDesktops != null){
+			putQueryParameter("IncludeInvokeDesktops", includeInvokeDesktops.toString());
 		}
 	}
 

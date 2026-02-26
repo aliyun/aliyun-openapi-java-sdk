@@ -85,7 +85,6 @@ public class ErrorHandlingTest extends BaseTest {
         HttpResponse httpResponse = this.client.doAction(textScanRequest);
         String body = new String(httpResponse.getHttpContent(), "UTF-8");
         Map<String, Object> resultMap = gson.fromJson(body, Map.class);
-
         Assert.assertEquals("OK", resultMap.get("msg"));
         Assert.assertEquals(200.0, resultMap.get("code"));
     }

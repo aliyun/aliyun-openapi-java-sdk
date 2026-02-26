@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTasksResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<TaskInfo> tasks;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListTasksResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListTasksResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<TaskInfo> getTasks() {
@@ -77,30 +77,30 @@ public class ListTasksResponse extends AcsResponse {
 
 	public static class TaskInfo {
 
-		private String taskId;
+		private String status;
 
 		private String taskType;
 
-		private String clusterId;
-
-		private String request;
-
-		private String status;
+		private Integer totalSteps;
 
 		private Integer currentStep;
-
-		private Integer totalSteps;
 
 		private String result;
 
 		private String errors;
 
-		public String getTaskId() {
-			return this.taskId;
+		private String taskId;
+
+		private String request;
+
+		private String clusterId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getTaskType() {
@@ -111,28 +111,12 @@ public class ListTasksResponse extends AcsResponse {
 			this.taskType = taskType;
 		}
 
-		public String getClusterId() {
-			return this.clusterId;
+		public Integer getTotalSteps() {
+			return this.totalSteps;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getRequest() {
-			return this.request;
-		}
-
-		public void setRequest(String request) {
-			this.request = request;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setTotalSteps(Integer totalSteps) {
+			this.totalSteps = totalSteps;
 		}
 
 		public Integer getCurrentStep() {
@@ -141,14 +125,6 @@ public class ListTasksResponse extends AcsResponse {
 
 		public void setCurrentStep(Integer currentStep) {
 			this.currentStep = currentStep;
-		}
-
-		public Integer getTotalSteps() {
-			return this.totalSteps;
-		}
-
-		public void setTotalSteps(Integer totalSteps) {
-			this.totalSteps = totalSteps;
 		}
 
 		public String getResult() {
@@ -165,6 +141,30 @@ public class ListTasksResponse extends AcsResponse {
 
 		public void setErrors(String errors) {
 			this.errors = errors;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+
+		public String getRequest() {
+			return this.request;
+		}
+
+		public void setRequest(String request) {
+			this.request = request;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 	}
 

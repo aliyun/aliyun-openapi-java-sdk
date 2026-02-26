@@ -47,32 +47,24 @@ public class CreateABTestSceneResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String id;
-
-		private String name;
+		private Integer created;
 
 		private Integer status;
 
-		private Integer created;
-
 		private Integer updated;
+
+		private String name;
+
+		private String id;
 
 		private List<String> values;
 
-		public String getId() {
-			return this.id;
+		public Integer getCreated() {
+			return this.created;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setCreated(Integer created) {
+			this.created = created;
 		}
 
 		public Integer getStatus() {
@@ -83,20 +75,28 @@ public class CreateABTestSceneResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Integer getCreated() {
-			return this.created;
-		}
-
-		public void setCreated(Integer created) {
-			this.created = created;
-		}
-
 		public Integer getUpdated() {
 			return this.updated;
 		}
 
 		public void setUpdated(Integer updated) {
 			this.updated = updated;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public List<String> getValues() {

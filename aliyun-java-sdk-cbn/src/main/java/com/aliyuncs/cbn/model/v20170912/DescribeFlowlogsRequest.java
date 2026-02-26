@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -37,6 +38,8 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 
 	private Integer pageSize;
 
+	private List<Tag> tags;
+
 	private String projectName;
 
 	private String logStoreName;
@@ -47,13 +50,21 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 
 	private Long ownerId;
 
+	private String transitRouterId;
+
+	private String transitRouterAttachmentId;
+
+	private String flowLogVersion;
+
+	private Integer interval;
+
 	private String flowLogId;
 
 	private String flowLogName;
 
 	private String status;
 	public DescribeFlowlogsRequest() {
-		super("Cbn", "2017-09-12", "DescribeFlowlogs");
+		super("Cbn", "2017-09-12", "DescribeFlowlogs", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -127,6 +138,20 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getProjectName() {
 		return this.projectName;
 	}
@@ -182,6 +207,50 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 		}
 	}
 
+	public String getTransitRouterId() {
+		return this.transitRouterId;
+	}
+
+	public void setTransitRouterId(String transitRouterId) {
+		this.transitRouterId = transitRouterId;
+		if(transitRouterId != null){
+			putQueryParameter("TransitRouterId", transitRouterId);
+		}
+	}
+
+	public String getTransitRouterAttachmentId() {
+		return this.transitRouterAttachmentId;
+	}
+
+	public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
+		this.transitRouterAttachmentId = transitRouterAttachmentId;
+		if(transitRouterAttachmentId != null){
+			putQueryParameter("TransitRouterAttachmentId", transitRouterAttachmentId);
+		}
+	}
+
+	public String getFlowLogVersion() {
+		return this.flowLogVersion;
+	}
+
+	public void setFlowLogVersion(String flowLogVersion) {
+		this.flowLogVersion = flowLogVersion;
+		if(flowLogVersion != null){
+			putQueryParameter("FlowLogVersion", flowLogVersion);
+		}
+	}
+
+	public Integer getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Integer interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
+		}
+	}
+
 	public String getFlowLogId() {
 		return this.flowLogId;
 	}
@@ -212,6 +281,29 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -27,13 +27,13 @@ public class ListMigrationsRequest extends RpcAcsRequest<ListMigrationsResponse>
 
 	private String owner;
 
+	private Integer pageNumber;
+
 	private Integer pageSize;
 
 	private String migrationType;
 
 	private Long projectId;
-
-	private Integer pageNumber;
 	public ListMigrationsRequest() {
 		super("dataworks-public", "2020-05-18", "ListMigrations");
 		setMethod(MethodType.POST);
@@ -51,6 +51,17 @@ public class ListMigrationsRequest extends RpcAcsRequest<ListMigrationsResponse>
 		this.owner = owner;
 		if(owner != null){
 			putBodyParameter("Owner", owner);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putBodyParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -84,17 +95,6 @@ public class ListMigrationsRequest extends RpcAcsRequest<ListMigrationsResponse>
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putBodyParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

@@ -27,16 +27,16 @@ public class DescribeTableListByTypeResponseUnmarshaller {
 	public static DescribeTableListByTypeResponse unmarshall(DescribeTableListByTypeResponse describeTableListByTypeResponse, UnmarshallerContext _ctx) {
 		
 		describeTableListByTypeResponse.setRequestId(_ctx.stringValue("DescribeTableListByTypeResponse.RequestId"));
-		describeTableListByTypeResponse.setSuccess(_ctx.booleanValue("DescribeTableListByTypeResponse.Success"));
-		describeTableListByTypeResponse.setPageNumber(_ctx.integerValue("DescribeTableListByTypeResponse.PageNumber"));
 		describeTableListByTypeResponse.setPageSize(_ctx.integerValue("DescribeTableListByTypeResponse.PageSize"));
+		describeTableListByTypeResponse.setPageNumber(_ctx.integerValue("DescribeTableListByTypeResponse.PageNumber"));
 		describeTableListByTypeResponse.setTotal(_ctx.integerValue("DescribeTableListByTypeResponse.Total"));
+		describeTableListByTypeResponse.setSuccess(_ctx.booleanValue("DescribeTableListByTypeResponse.Success"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTableListByTypeResponse.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setTableName(_ctx.stringValue("DescribeTableListByTypeResponse.List["+ i +"].TableName"));
 			listItem.setProperty(_ctx.stringValue("DescribeTableListByTypeResponse.List["+ i +"].Property"));
+			listItem.setTableName(_ctx.stringValue("DescribeTableListByTypeResponse.List["+ i +"].TableName"));
 
 			list.add(listItem);
 		}

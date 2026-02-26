@@ -34,20 +34,20 @@ public class DescribeTasksResponseUnmarshaller {
 		List<TaskProgressInfo> items = new ArrayList<TaskProgressInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTasksResponse.Items.Length"); i++) {
 			TaskProgressInfo taskProgressInfo = new TaskProgressInfo();
-			taskProgressInfo.setStatus(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].Status"));
+			taskProgressInfo.setBeginTime(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].BeginTime"));
+			taskProgressInfo.setCurrentStepName(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].CurrentStepName"));
+			taskProgressInfo.setDBName(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].DBName"));
+			taskProgressInfo.setExpectedFinishTime(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].ExpectedFinishTime"));
 			taskProgressInfo.setFinishTime(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].FinishTime"));
 			taskProgressInfo.setProgress(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].Progress"));
-			taskProgressInfo.setStepsInfo(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].StepsInfo"));
-			taskProgressInfo.setBeginTime(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].BeginTime"));
-			taskProgressInfo.setExpectedFinishTime(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].ExpectedFinishTime"));
-			taskProgressInfo.setTaskErrorCode(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorCode"));
-			taskProgressInfo.setCurrentStepName(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].CurrentStepName"));
 			taskProgressInfo.setProgressInfo(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].ProgressInfo"));
-			taskProgressInfo.setStepProgressInfo(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].StepProgressInfo"));
-			taskProgressInfo.setTaskErrorMessage(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorMessage"));
-			taskProgressInfo.setTaskAction(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskAction"));
 			taskProgressInfo.setRemain(_ctx.integerValue("DescribeTasksResponse.Items["+ i +"].Remain"));
-			taskProgressInfo.setDBName(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].DBName"));
+			taskProgressInfo.setStatus(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].Status"));
+			taskProgressInfo.setStepProgressInfo(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].StepProgressInfo"));
+			taskProgressInfo.setStepsInfo(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].StepsInfo"));
+			taskProgressInfo.setTaskAction(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskAction"));
+			taskProgressInfo.setTaskErrorCode(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorCode"));
+			taskProgressInfo.setTaskErrorMessage(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorMessage"));
 			taskProgressInfo.setTaskId(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskId"));
 
 			items.add(taskProgressInfo);

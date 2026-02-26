@@ -1,0 +1,60 @@
+2025-11-17 Version: 1.0.18
+- Add sub-feature entity support.
+
+2025-07-24 Version: 1.0.17
+- Update GetInstance and ListInstances.
+
+2025-07-17 Version: 1.0.16
+- Update GetInstance and ListInstances.
+
+2024-12-18 Version: 1.0.15
+- Add Support Real time mock table.
+
+2024-12-02 Version: 1.0.14
+- Add LabelPriorityLevel in UpdateModelFeature API.
+
+2024-09-04 Version: 1.0.13
+- Add RealTimePartitionCountValue in ExportTranSetTable API.
+- Add LabelPriorityLevel in CreateModelFeature API
+
+2024-07-12 Version: 1.0.12
+- Add RealTimeIterateInterval parameter in ExportTranSetTable API.
+
+2024-06-11 Version: 1.0.11
+- Add ListFeatureViewOnlineFeatures API.
+
+2024-03-25 Version: 1.0.10
+- Add FeatureDB Datasource.
+
+2024-03-21 Version: 1.0.9
+- Add Region in host.
+
+2024-02-02 Version: 1.0.8
+- Add FG apis in ModelFeature.
+- Add type output in ListProjectFeatureViews.
+
+2024-01-29 Version: 1.0.7
+- Add FG apis in ModelFeature.
+
+2023-11-23 Version: 1.0.6
+- Add RelatedModelFeatures in GetLabelTable.
+- Delete DatasourceId, Name in UpdateLabelTable.
+
+2023-09-13 Version: 1.0.5
+- Add value, values, startValue, endValue in ExportModelFeatureTrainingSetTable.
+
+2023-09-08 Version: 1.0.4
+- Add eventTime, equal in ExportModelFeatureTrainingSetTable.
+
+2023-09-08 Version: 1.0.3
+- Add taskId in WriteFeatureViewTable.
+
+2023-09-04 Version: 1.0.2
+- Add request parameter Name in ListFeatureViews.
+
+2023-08-30 Version: 1.0.1
+- ListProjects allows workspaceId empty.
+
+2023-08-29 Version: 1.0.0
+Update api ListInstances.
+

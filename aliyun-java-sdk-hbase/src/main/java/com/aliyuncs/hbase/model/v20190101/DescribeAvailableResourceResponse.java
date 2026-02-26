@@ -47,21 +47,13 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 	public static class AvailableZone {
 
-		private String regionId;
-
 		private String zoneId;
+
+		private String regionId;
 
 		private List<SupportedEngine> supportedEngines;
 
 		private List<MasterResource> masterResources;
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
 
 		public String getZoneId() {
 			return this.zoneId;
@@ -69,6 +61,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<SupportedEngine> getSupportedEngines() {
@@ -221,9 +221,9 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 								private Integer maxSize;
 
-								private Integer minSize;
-
 								private Integer stepSize;
+
+								private Integer minSize;
 
 								public Integer getMaxSize() {
 									return this.maxSize;
@@ -233,14 +233,6 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 									this.maxSize = maxSize;
 								}
 
-								public Integer getMinSize() {
-									return this.minSize;
-								}
-
-								public void setMinSize(Integer minSize) {
-									this.minSize = minSize;
-								}
-
 								public Integer getStepSize() {
 									return this.stepSize;
 								}
@@ -248,21 +240,21 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 								public void setStepSize(Integer stepSize) {
 									this.stepSize = stepSize;
 								}
+
+								public Integer getMinSize() {
+									return this.minSize;
+								}
+
+								public void setMinSize(Integer minSize) {
+									this.minSize = minSize;
+								}
 							}
 
 							public static class InstanceTypeDetail {
 
-								private Integer cpu;
-
 								private Integer mem;
 
-								public Integer getCpu() {
-									return this.cpu;
-								}
-
-								public void setCpu(Integer cpu) {
-									this.cpu = cpu;
-								}
+								private Integer cpu;
 
 								public Integer getMem() {
 									return this.mem;
@@ -270,6 +262,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 								public void setMem(Integer mem) {
 									this.mem = mem;
+								}
+
+								public Integer getCpu() {
+									return this.cpu;
+								}
+
+								public void setCpu(Integer cpu) {
+									this.cpu = cpu;
 								}
 							}
 						}
@@ -302,17 +302,9 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 			public static class InstanceTypeDetail1 {
 
-				private Integer cpu;
-
 				private Integer mem;
 
-				public Integer getCpu() {
-					return this.cpu;
-				}
-
-				public void setCpu(Integer cpu) {
-					this.cpu = cpu;
-				}
+				private Integer cpu;
 
 				public Integer getMem() {
 					return this.mem;
@@ -320,6 +312,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 				public void setMem(Integer mem) {
 					this.mem = mem;
+				}
+
+				public Integer getCpu() {
+					return this.cpu;
+				}
+
+				public void setCpu(Integer cpu) {
+					this.cpu = cpu;
 				}
 			}
 		}

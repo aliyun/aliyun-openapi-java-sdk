@@ -27,16 +27,16 @@ public class DescribeDcdnDomainRealTimeSrcTrafficDataResponseUnmarshaller {
 	public static DescribeDcdnDomainRealTimeSrcTrafficDataResponse unmarshall(DescribeDcdnDomainRealTimeSrcTrafficDataResponse describeDcdnDomainRealTimeSrcTrafficDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnDomainRealTimeSrcTrafficDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainRealTimeSrcTrafficDataResponse.RequestId"));
-		describeDcdnDomainRealTimeSrcTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainRealTimeSrcTrafficDataResponse.DomainName"));
-		describeDcdnDomainRealTimeSrcTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainRealTimeSrcTrafficDataResponse.StartTime"));
 		describeDcdnDomainRealTimeSrcTrafficDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainRealTimeSrcTrafficDataResponse.EndTime"));
+		describeDcdnDomainRealTimeSrcTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainRealTimeSrcTrafficDataResponse.StartTime"));
+		describeDcdnDomainRealTimeSrcTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainRealTimeSrcTrafficDataResponse.DomainName"));
 		describeDcdnDomainRealTimeSrcTrafficDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainRealTimeSrcTrafficDataResponse.DataInterval"));
 
 		List<DataModule> realTimeSrcTrafficDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainRealTimeSrcTrafficDataResponse.RealTimeSrcTrafficDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainRealTimeSrcTrafficDataResponse.RealTimeSrcTrafficDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(_ctx.stringValue("DescribeDcdnDomainRealTimeSrcTrafficDataResponse.RealTimeSrcTrafficDataPerInterval["+ i +"].Value"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainRealTimeSrcTrafficDataResponse.RealTimeSrcTrafficDataPerInterval["+ i +"].TimeStamp"));
 
 			realTimeSrcTrafficDataPerInterval.add(dataModule);
 		}

@@ -15,6 +15,9 @@
 package com.aliyuncs.dataworks_public.model.v20200518;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dataworks_public.Endpoint;
 
@@ -26,6 +29,11 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 	   
 
 	private String bizExtKey;
+
+	@SerializedName("tags")
+	private List<Tags> tags;
+
+	private String resourceManagerResourceGroupId;
 
 	private Integer resourceGroupType;
 
@@ -50,6 +58,28 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 		}
 	}
 
+	public List<Tags> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tags> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			putQueryParameter("Tags" , new Gson().toJson(tags));
+		}	
+	}
+
+	public String getResourceManagerResourceGroupId() {
+		return this.resourceManagerResourceGroupId;
+	}
+
+	public void setResourceManagerResourceGroupId(String resourceManagerResourceGroupId) {
+		this.resourceManagerResourceGroupId = resourceManagerResourceGroupId;
+		if(resourceManagerResourceGroupId != null){
+			putQueryParameter("ResourceManagerResourceGroupId", resourceManagerResourceGroupId);
+		}
+	}
+
 	public Integer getResourceGroupType() {
 		return this.resourceGroupType;
 	}
@@ -69,6 +99,31 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public static class Tags {
+
+		@SerializedName("Value")
+		private String value;
+
+		@SerializedName("Key")
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

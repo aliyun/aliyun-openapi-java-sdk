@@ -24,12 +24,14 @@ public class QueryLiveStreamingResponseUnmarshaller {
 	public static QueryLiveStreamingResponse unmarshall(QueryLiveStreamingResponse queryLiveStreamingResponse, UnmarshallerContext _ctx) {
 		
 		queryLiveStreamingResponse.setRequestId(_ctx.stringValue("QueryLiveStreamingResponse.RequestId"));
-		queryLiveStreamingResponse.setSuccess(_ctx.booleanValue("QueryLiveStreamingResponse.Success"));
-		queryLiveStreamingResponse.setErrorMessage(_ctx.stringValue("QueryLiveStreamingResponse.ErrorMessage"));
 		queryLiveStreamingResponse.setCode(_ctx.stringValue("QueryLiveStreamingResponse.Code"));
+		queryLiveStreamingResponse.setErrorMessage(_ctx.stringValue("QueryLiveStreamingResponse.ErrorMessage"));
+		queryLiveStreamingResponse.setSuccess(_ctx.booleanValue("QueryLiveStreamingResponse.Success"));
 
 		Data data = new Data();
 		data.setPath(_ctx.stringValue("QueryLiveStreamingResponse.Data.Path"));
+		data.setRelayDecryptKey(_ctx.stringValue("QueryLiveStreamingResponse.Data.RelayDecryptKey"));
+		data.setStunInfo(_ctx.stringValue("QueryLiveStreamingResponse.Data.StunInfo"));
 		data.setDecryptKey(_ctx.stringValue("QueryLiveStreamingResponse.Data.DecryptKey"));
 		queryLiveStreamingResponse.setData(data);
 	 

@@ -26,7 +26,7 @@ public class DeleteCopyrightPersonRequest extends RpcAcsRequest<DeleteCopyrightP
 
 	private Long personId;
 	public DeleteCopyrightPersonRequest() {
-		super("Copyright", "2019-01-23", "DeleteCopyrightPerson");
+		super("Copyright", "2019-01-23", "DeleteCopyrightPerson", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

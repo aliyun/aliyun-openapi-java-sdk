@@ -43,11 +43,15 @@ public class CreateBgpGroupRequest extends RpcAcsRequest<CreateBgpGroupResponse>
 
 	private String ownerAccount;
 
+	private Integer routeQuota;
+
 	private Long ownerId;
 
 	private String routerId;
 
 	private String name;
+
+	private Long localAsn;
 	public CreateBgpGroupRequest() {
 		super("Vpc", "2016-04-28", "CreateBgpGroup", "vpc");
 		setMethod(MethodType.POST);
@@ -156,6 +160,17 @@ public class CreateBgpGroupRequest extends RpcAcsRequest<CreateBgpGroupResponse>
 		}
 	}
 
+	public Integer getRouteQuota() {
+		return this.routeQuota;
+	}
+
+	public void setRouteQuota(Integer routeQuota) {
+		this.routeQuota = routeQuota;
+		if(routeQuota != null){
+			putQueryParameter("RouteQuota", routeQuota.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -186,6 +201,17 @@ public class CreateBgpGroupRequest extends RpcAcsRequest<CreateBgpGroupResponse>
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getLocalAsn() {
+		return this.localAsn;
+	}
+
+	public void setLocalAsn(Long localAsn) {
+		this.localAsn = localAsn;
+		if(localAsn != null){
+			putQueryParameter("LocalAsn", localAsn.toString());
 		}
 	}
 

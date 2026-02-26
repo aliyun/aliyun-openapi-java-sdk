@@ -29,6 +29,8 @@ public class CreateCertificateRequest extends RpcAcsRequest<CreateCertificateRes
 
 	private String privateKey;
 
+	private String resourceGroupId;
+
 	private String instanceId;
 
 	private String domain;
@@ -62,6 +64,17 @@ public class CreateCertificateRequest extends RpcAcsRequest<CreateCertificateRes
 		this.privateKey = privateKey;
 		if(privateKey != null){
 			putQueryParameter("PrivateKey", privateKey);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

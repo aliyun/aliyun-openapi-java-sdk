@@ -27,8 +27,6 @@ public class GetAudioFileResponseUnmarshaller {
 		getAudioFileResponse.setHttpStatusCode(_ctx.integerValue("GetAudioFileResponse.HttpStatusCode"));
 		getAudioFileResponse.setCode(_ctx.stringValue("GetAudioFileResponse.Code"));
 		getAudioFileResponse.setMessage(_ctx.stringValue("GetAudioFileResponse.Message"));
-		getAudioFileResponse.setPublished(_ctx.booleanValue("GetAudioFileResponse.Published"));
-		getAudioFileResponse.setMainFlow(_ctx.booleanValue("GetAudioFileResponse.MainFlow"));
 
 		Data data = new Data();
 		data.setAudioFileName(_ctx.stringValue("GetAudioFileResponse.Data.AudioFileName"));

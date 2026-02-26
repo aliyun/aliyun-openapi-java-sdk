@@ -25,23 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainNsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean allAliDns;
+
+	private String requestId;
 
 	private Boolean includeAliDns;
 
-	private List<String> dnsServers;
+	private String detectFailedReasonCode;
 
 	private List<String> expectDnsServers;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private List<String> dnsServers;
 
 	public Boolean getAllAliDns() {
 		return this.allAliDns;
@@ -49,6 +43,14 @@ public class DescribeDomainNsResponse extends AcsResponse {
 
 	public void setAllAliDns(Boolean allAliDns) {
 		this.allAliDns = allAliDns;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getIncludeAliDns() {
@@ -59,12 +61,12 @@ public class DescribeDomainNsResponse extends AcsResponse {
 		this.includeAliDns = includeAliDns;
 	}
 
-	public List<String> getDnsServers() {
-		return this.dnsServers;
+	public String getDetectFailedReasonCode() {
+		return this.detectFailedReasonCode;
 	}
 
-	public void setDnsServers(List<String> dnsServers) {
-		this.dnsServers = dnsServers;
+	public void setDetectFailedReasonCode(String detectFailedReasonCode) {
+		this.detectFailedReasonCode = detectFailedReasonCode;
 	}
 
 	public List<String> getExpectDnsServers() {
@@ -73,6 +75,14 @@ public class DescribeDomainNsResponse extends AcsResponse {
 
 	public void setExpectDnsServers(List<String> expectDnsServers) {
 		this.expectDnsServers = expectDnsServers;
+	}
+
+	public List<String> getDnsServers() {
+		return this.dnsServers;
+	}
+
+	public void setDnsServers(List<String> dnsServers) {
+		this.dnsServers = dnsServers;
 	}
 
 	@Override

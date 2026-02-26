@@ -39,7 +39,7 @@ public class GetTotalPublicUrlRequest extends RpcAcsRequest<GetTotalPublicUrlRes
 
 	private String partnerKey;
 	public GetTotalPublicUrlRequest() {
-		super("Dyplsapi", "2017-05-25", "GetTotalPublicUrl");
+		super("Dyplsapi", "2017-05-25", "GetTotalPublicUrl", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

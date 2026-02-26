@@ -25,9 +25,9 @@ import com.aliyuncs.vpc.Endpoint;
 public class UpdateVirtualPhysicalConnectionRequest extends RpcAcsRequest<UpdateVirtualPhysicalConnectionResponse> {
 	   
 
-	private Boolean dryRun;
-
 	private Long vlanId;
+
+	private Boolean dryRun;
 
 	private String token;
 
@@ -43,17 +43,6 @@ public class UpdateVirtualPhysicalConnectionRequest extends RpcAcsRequest<Update
 		} catch (Exception e) {}
 	}
 
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
-		}
-	}
-
 	public Long getVlanId() {
 		return this.vlanId;
 	}
@@ -62,6 +51,17 @@ public class UpdateVirtualPhysicalConnectionRequest extends RpcAcsRequest<Update
 		this.vlanId = vlanId;
 		if(vlanId != null){
 			putQueryParameter("VlanId", vlanId.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

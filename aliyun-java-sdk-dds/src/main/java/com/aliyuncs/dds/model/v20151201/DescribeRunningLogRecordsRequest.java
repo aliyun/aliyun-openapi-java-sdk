@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -32,9 +33,9 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 
 	private Integer pageNumber;
 
-	private String resourceGroupId;
+	private String queryKeywords;
 
-	private String securityToken;
+	private String resourceGroupId;
 
 	private Integer pageSize;
 
@@ -52,12 +53,18 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 
 	private Long ownerId;
 
+	private String logicalOperator;
+
 	private String dBName;
 
 	private String orderType;
 	public DescribeRunningLogRecordsRequest() {
 		super("Dds", "2015-12-01", "DescribeRunningLogRecords", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -104,6 +111,17 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		}
 	}
 
+	public String getQueryKeywords() {
+		return this.queryKeywords;
+	}
+
+	public void setQueryKeywords(String queryKeywords) {
+		this.queryKeywords = queryKeywords;
+		if(queryKeywords != null){
+			putQueryParameter("QueryKeywords", queryKeywords);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -112,17 +130,6 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -211,6 +218,17 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLogicalOperator() {
+		return this.logicalOperator;
+	}
+
+	public void setLogicalOperator(String logicalOperator) {
+		this.logicalOperator = logicalOperator;
+		if(logicalOperator != null){
+			putQueryParameter("LogicalOperator", logicalOperator);
 		}
 	}
 

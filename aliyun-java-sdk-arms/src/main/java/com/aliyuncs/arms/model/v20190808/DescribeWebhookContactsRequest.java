@@ -25,9 +25,11 @@ import com.aliyuncs.arms.Endpoint;
 public class DescribeWebhookContactsRequest extends RpcAcsRequest<DescribeWebhookContactsResponse> {
 	   
 
-	private Long size;
-
 	private String webhookName;
+
+	private String contactIds;
+
+	private Long size;
 
 	private Long page;
 	public DescribeWebhookContactsRequest() {
@@ -39,17 +41,6 @@ public class DescribeWebhookContactsRequest extends RpcAcsRequest<DescribeWebhoo
 		} catch (Exception e) {}
 	}
 
-	public Long getSize() {
-		return this.size;
-	}
-
-	public void setSize(Long size) {
-		this.size = size;
-		if(size != null){
-			putQueryParameter("Size", size.toString());
-		}
-	}
-
 	public String getWebhookName() {
 		return this.webhookName;
 	}
@@ -58,6 +49,28 @@ public class DescribeWebhookContactsRequest extends RpcAcsRequest<DescribeWebhoo
 		this.webhookName = webhookName;
 		if(webhookName != null){
 			putQueryParameter("WebhookName", webhookName);
+		}
+	}
+
+	public String getContactIds() {
+		return this.contactIds;
+	}
+
+	public void setContactIds(String contactIds) {
+		this.contactIds = contactIds;
+		if(contactIds != null){
+			putQueryParameter("ContactIds", contactIds);
+		}
+	}
+
+	public Long getSize() {
+		return this.size;
+	}
+
+	public void setSize(Long size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("Size", size.toString());
 		}
 	}
 

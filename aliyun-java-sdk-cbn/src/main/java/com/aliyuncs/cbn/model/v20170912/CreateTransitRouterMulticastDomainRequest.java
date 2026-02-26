@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -35,6 +36,10 @@ public class CreateTransitRouterMulticastDomainRequest extends RpcAcsRequest<Cre
 
 	private String transitRouterMulticastDomainName;
 
+	private Options options;
+
+	private List<Tag> tags;
+
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
@@ -45,7 +50,7 @@ public class CreateTransitRouterMulticastDomainRequest extends RpcAcsRequest<Cre
 
 	private String transitRouterId;
 	public CreateTransitRouterMulticastDomainRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterMulticastDomain");
+		super("Cbn", "2017-09-12", "CreateTransitRouterMulticastDomain", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -108,6 +113,33 @@ public class CreateTransitRouterMulticastDomainRequest extends RpcAcsRequest<Cre
 		}
 	}
 
+	public Options getOptions() {
+		return this.options;
+	}
+
+	public void setOptions(Options options) {
+		this.options = options;	
+		if (options != null) {
+			
+				putQueryParameter("Options.StrictSourceControl" , options.getStrictSourceControl());
+				putQueryParameter("Options.Igmpv2Support" , options.getIgmpv2Support());
+		}	
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public Boolean getDryRun() {
 		return this.dryRun;
 	}
@@ -160,6 +192,52 @@ public class CreateTransitRouterMulticastDomainRequest extends RpcAcsRequest<Cre
 		this.transitRouterId = transitRouterId;
 		if(transitRouterId != null){
 			putQueryParameter("TransitRouterId", transitRouterId);
+		}
+	}
+
+	public static class Options {
+
+		private String strictSourceControl;
+
+		private String igmpv2Support;
+
+		public String getStrictSourceControl() {
+			return this.strictSourceControl;
+		}
+
+		public void setStrictSourceControl(String strictSourceControl) {
+			this.strictSourceControl = strictSourceControl;
+		}
+
+		public String getIgmpv2Support() {
+			return this.igmpv2Support;
+		}
+
+		public void setIgmpv2Support(String igmpv2Support) {
+			this.igmpv2Support = igmpv2Support;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

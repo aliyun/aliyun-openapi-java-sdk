@@ -41,7 +41,11 @@ public class ModifySslVpnServerRequest extends RpcAcsRequest<ModifySslVpnServerR
 
 	private String cipher;
 
+	private String iDaaSApplicationId;
+
 	private String clientIpPool;
+
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -153,6 +157,17 @@ public class ModifySslVpnServerRequest extends RpcAcsRequest<ModifySslVpnServerR
 		}
 	}
 
+	public String getIDaaSApplicationId() {
+		return this.iDaaSApplicationId;
+	}
+
+	public void setIDaaSApplicationId(String iDaaSApplicationId) {
+		this.iDaaSApplicationId = iDaaSApplicationId;
+		if(iDaaSApplicationId != null){
+			putQueryParameter("IDaaSApplicationId", iDaaSApplicationId);
+		}
+	}
+
 	public String getClientIpPool() {
 		return this.clientIpPool;
 	}
@@ -161,6 +176,17 @@ public class ModifySslVpnServerRequest extends RpcAcsRequest<ModifySslVpnServerR
 		this.clientIpPool = clientIpPool;
 		if(clientIpPool != null){
 			putQueryParameter("ClientIpPool", clientIpPool);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

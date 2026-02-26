@@ -23,10 +23,10 @@ public class DescribeDomainRealtimeLogDeliveryResponseUnmarshaller {
 	public static DescribeDomainRealtimeLogDeliveryResponse unmarshall(DescribeDomainRealtimeLogDeliveryResponse describeDomainRealtimeLogDeliveryResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainRealtimeLogDeliveryResponse.setRequestId(_ctx.stringValue("DescribeDomainRealtimeLogDeliveryResponse.RequestId"));
+		describeDomainRealtimeLogDeliveryResponse.setStatus(_ctx.stringValue("DescribeDomainRealtimeLogDeliveryResponse.Status"));
+		describeDomainRealtimeLogDeliveryResponse.setLogstore(_ctx.stringValue("DescribeDomainRealtimeLogDeliveryResponse.Logstore"));
 		describeDomainRealtimeLogDeliveryResponse.setProject(_ctx.stringValue("DescribeDomainRealtimeLogDeliveryResponse.Project"));
 		describeDomainRealtimeLogDeliveryResponse.setRegion(_ctx.stringValue("DescribeDomainRealtimeLogDeliveryResponse.Region"));
-		describeDomainRealtimeLogDeliveryResponse.setLogstore(_ctx.stringValue("DescribeDomainRealtimeLogDeliveryResponse.Logstore"));
-		describeDomainRealtimeLogDeliveryResponse.setStatus(_ctx.stringValue("DescribeDomainRealtimeLogDeliveryResponse.Status"));
 	 
 	 	return describeDomainRealtimeLogDeliveryResponse;
 	}

@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-dm</artifactId>
   <packaging>jar</packaging>
-  <version>3.3.1</version>
+  <version>3.3.2</version>
   <name>aliyun-java-sdk-dm</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -45,13 +45,12 @@ http://www.aliyun.com</description>
 		  <scope>test</scope>
 	  </dependency>
   </dependencies>
-	<licenses>
-		<license>
-			<name></name>
-			<url></url>
-			<distribution></distribution>
-		</license>
-	</licenses>
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
 	<scm>
 		<url></url>
 		<connection></connection>

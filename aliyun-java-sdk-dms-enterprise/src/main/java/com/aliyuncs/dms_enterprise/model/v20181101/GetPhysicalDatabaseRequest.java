@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetPhysicalDatabaseRequest extends RpcAcsRequest<GetPhysicalDatabaseResponse> {
 	   
 
-	private Long dbId;
-
 	private Long tid;
+
+	private Long dbId;
 	public GetPhysicalDatabaseRequest() {
 		super("dms-enterprise", "2018-11-01", "GetPhysicalDatabase", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class GetPhysicalDatabaseRequest extends RpcAcsRequest<GetPhysicalDatabas
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getDbId() {
-		return this.dbId;
-	}
-
-	public void setDbId(Long dbId) {
-		this.dbId = dbId;
-		if(dbId != null){
-			putQueryParameter("DbId", dbId.toString());
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class GetPhysicalDatabaseRequest extends RpcAcsRequest<GetPhysicalDatabas
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getDbId() {
+		return this.dbId;
+	}
+
+	public void setDbId(Long dbId) {
+		this.dbId = dbId;
+		if(dbId != null){
+			putQueryParameter("DbId", dbId.toString());
 		}
 	}
 

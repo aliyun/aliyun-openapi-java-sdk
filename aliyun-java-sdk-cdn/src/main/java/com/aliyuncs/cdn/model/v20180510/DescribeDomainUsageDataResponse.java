@@ -107,13 +107,21 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
+		private String value;
+
 		private String timeStamp;
 
 		private String peakTime;
 
-		private String value;
-
 		private String specialValue;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -129,14 +137,6 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 
 		public void setPeakTime(String peakTime) {
 			this.peakTime = peakTime;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
 		}
 
 		public String getSpecialValue() {

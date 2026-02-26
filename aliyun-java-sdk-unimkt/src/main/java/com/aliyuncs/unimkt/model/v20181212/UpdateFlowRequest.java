@@ -43,7 +43,7 @@ public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
 
 	private String flow;
 	public UpdateFlowRequest() {
-		super("UniMkt", "2018-12-12", "UpdateFlow", "1.0.0");
+		super("UniMkt", "2018-12-12", "UpdateFlow");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

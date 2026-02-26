@@ -26,7 +26,7 @@ public class GetSerialNumberImageRequest extends RpcAcsRequest<GetSerialNumberIm
 
 	private String serialNumber;
 	public GetSerialNumberImageRequest() {
-		super("Copyright", "2019-01-23", "GetSerialNumberImage");
+		super("Copyright", "2019-01-23", "GetSerialNumberImage", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

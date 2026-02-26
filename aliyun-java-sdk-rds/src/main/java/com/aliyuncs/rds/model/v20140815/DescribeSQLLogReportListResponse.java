@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSQLLogReportListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
 	private Integer totalRecordCount;
 
 	private List<Item> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -57,6 +49,14 @@ public class DescribeSQLLogReportListResponse extends AcsResponse {
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -109,18 +109,18 @@ public class DescribeSQLLogReportListResponse extends AcsResponse {
 
 		public static class LatencyTopNItem {
 
-			private String sQLText;
+			private Long avgLatency;
 
 			private Long sQLExecuteTimes;
 
-			private Long avgLatency;
+			private String sQLText;
 
-			public String getSQLText() {
-				return this.sQLText;
+			public Long getAvgLatency() {
+				return this.avgLatency;
 			}
 
-			public void setSQLText(String sQLText) {
-				this.sQLText = sQLText;
+			public void setAvgLatency(Long avgLatency) {
+				this.avgLatency = avgLatency;
 			}
 
 			public Long getSQLExecuteTimes() {
@@ -131,12 +131,12 @@ public class DescribeSQLLogReportListResponse extends AcsResponse {
 				this.sQLExecuteTimes = sQLExecuteTimes;
 			}
 
-			public Long getAvgLatency() {
-				return this.avgLatency;
+			public String getSQLText() {
+				return this.sQLText;
 			}
 
-			public void setAvgLatency(Long avgLatency) {
-				this.avgLatency = avgLatency;
+			public void setSQLText(String sQLText) {
+				this.sQLText = sQLText;
 			}
 		}
 

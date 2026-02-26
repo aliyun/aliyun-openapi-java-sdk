@@ -31,6 +31,8 @@ public class CloneAppRequest extends RpcAcsRequest<CloneAppResponse> {
 	private String icon;
 
 	private String description;
+
+	private String source;
 	public CloneAppRequest() {
 		super("miniapplcdp", "2020-01-13", "CloneApp");
 		setMethod(MethodType.POST);
@@ -77,6 +79,17 @@ public class CloneAppRequest extends RpcAcsRequest<CloneAppResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

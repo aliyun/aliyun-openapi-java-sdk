@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnDomainBpsDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String startTime;
-
-	private String endTime;
-
 	private String dataInterval;
 
 	private List<DataModule> bpsDataPerInterval;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeDcdnDomainBpsDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public String getDataInterval() {
@@ -89,15 +89,15 @@ public class DescribeDcdnDomainBpsDataResponse extends AcsResponse {
 
 		private String timeStamp;
 
-		private Float bps;
+		private Float staticHttpsBps;
 
-		private Float dynamicHttpBps;
+		private Float bps;
 
 		private Float dynamicHttpsBps;
 
-		private Float staticHttpBps;
+		private Float dynamicHttpBps;
 
-		private Float staticHttpsBps;
+		private Float staticHttpBps;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -105,6 +105,14 @@ public class DescribeDcdnDomainBpsDataResponse extends AcsResponse {
 
 		public void setTimeStamp(String timeStamp) {
 			this.timeStamp = timeStamp;
+		}
+
+		public Float getStaticHttpsBps() {
+			return this.staticHttpsBps;
+		}
+
+		public void setStaticHttpsBps(Float staticHttpsBps) {
+			this.staticHttpsBps = staticHttpsBps;
 		}
 
 		public Float getBps() {
@@ -115,14 +123,6 @@ public class DescribeDcdnDomainBpsDataResponse extends AcsResponse {
 			this.bps = bps;
 		}
 
-		public Float getDynamicHttpBps() {
-			return this.dynamicHttpBps;
-		}
-
-		public void setDynamicHttpBps(Float dynamicHttpBps) {
-			this.dynamicHttpBps = dynamicHttpBps;
-		}
-
 		public Float getDynamicHttpsBps() {
 			return this.dynamicHttpsBps;
 		}
@@ -131,20 +131,20 @@ public class DescribeDcdnDomainBpsDataResponse extends AcsResponse {
 			this.dynamicHttpsBps = dynamicHttpsBps;
 		}
 
+		public Float getDynamicHttpBps() {
+			return this.dynamicHttpBps;
+		}
+
+		public void setDynamicHttpBps(Float dynamicHttpBps) {
+			this.dynamicHttpBps = dynamicHttpBps;
+		}
+
 		public Float getStaticHttpBps() {
 			return this.staticHttpBps;
 		}
 
 		public void setStaticHttpBps(Float staticHttpBps) {
 			this.staticHttpBps = staticHttpBps;
-		}
-
-		public Float getStaticHttpsBps() {
-			return this.staticHttpsBps;
-		}
-
-		public void setStaticHttpsBps(Float staticHttpsBps) {
-			this.staticHttpsBps = staticHttpsBps;
 		}
 	}
 

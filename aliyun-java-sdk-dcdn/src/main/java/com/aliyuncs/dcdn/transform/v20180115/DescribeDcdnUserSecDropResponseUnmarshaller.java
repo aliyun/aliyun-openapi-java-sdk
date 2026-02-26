@@ -23,8 +23,8 @@ public class DescribeDcdnUserSecDropResponseUnmarshaller {
 	public static DescribeDcdnUserSecDropResponse unmarshall(DescribeDcdnUserSecDropResponse describeDcdnUserSecDropResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnUserSecDropResponse.setRequestId(_ctx.stringValue("DescribeDcdnUserSecDropResponse.RequestId"));
-		describeDcdnUserSecDropResponse.setDrops(_ctx.integerValue("DescribeDcdnUserSecDropResponse.Drops"));
 		describeDcdnUserSecDropResponse.setMsg(_ctx.stringValue("DescribeDcdnUserSecDropResponse.Msg"));
+		describeDcdnUserSecDropResponse.setDrops(_ctx.integerValue("DescribeDcdnUserSecDropResponse.Drops"));
 		describeDcdnUserSecDropResponse.setUuidStr(_ctx.stringValue("DescribeDcdnUserSecDropResponse.UuidStr"));
 	 
 	 	return describeDcdnUserSecDropResponse;

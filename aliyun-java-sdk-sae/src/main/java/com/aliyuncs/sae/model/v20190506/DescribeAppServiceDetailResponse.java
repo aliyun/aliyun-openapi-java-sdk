@@ -106,6 +106,8 @@ public class DescribeAppServiceDetailResponse extends AcsResponse {
 
 		private String serviceType;
 
+		private String serviceProtocol;
+
 		private String edasAppName;
 
 		private Map<Object,Object> metadata;
@@ -115,6 +117,10 @@ public class DescribeAppServiceDetailResponse extends AcsResponse {
 		private String dubboApplicationName;
 
 		private List<Method> methods;
+
+		private List<Long> servicePorts;
+
+		private List<String> serviceTags;
 
 		public String getGroup() {
 			return this.group;
@@ -146,6 +152,14 @@ public class DescribeAppServiceDetailResponse extends AcsResponse {
 
 		public void setServiceType(String serviceType) {
 			this.serviceType = serviceType;
+		}
+
+		public String getServiceProtocol() {
+			return this.serviceProtocol;
+		}
+
+		public void setServiceProtocol(String serviceProtocol) {
+			this.serviceProtocol = serviceProtocol;
 		}
 
 		public String getEdasAppName() {
@@ -186,6 +200,22 @@ public class DescribeAppServiceDetailResponse extends AcsResponse {
 
 		public void setMethods(List<Method> methods) {
 			this.methods = methods;
+		}
+
+		public List<Long> getServicePorts() {
+			return this.servicePorts;
+		}
+
+		public void setServicePorts(List<Long> servicePorts) {
+			this.servicePorts = servicePorts;
+		}
+
+		public List<String> getServiceTags() {
+			return this.serviceTags;
+		}
+
+		public void setServiceTags(List<String> serviceTags) {
+			this.serviceTags = serviceTags;
 		}
 
 		public static class Method {

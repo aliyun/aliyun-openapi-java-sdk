@@ -57,23 +57,47 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 	public static class Scene {
 
+		private String layoutId;
+
+		private String outputType;
+
+		private String rtsUrl;
+
 		private String sceneId;
 
 		private String sceneName;
 
-		private String outputType;
-
-		private String layoutId;
+		private Integer status;
 
 		private String streamUrl;
-
-		private String rtsUrl;
-
-		private Integer status;
 
 		private List<StreamInfo> streamInfos;
 
 		private List<String> componentIds;
+
+		public String getLayoutId() {
+			return this.layoutId;
+		}
+
+		public void setLayoutId(String layoutId) {
+			this.layoutId = layoutId;
+		}
+
+		public String getOutputType() {
+			return this.outputType;
+		}
+
+		public void setOutputType(String outputType) {
+			this.outputType = outputType;
+		}
+
+		public String getRtsUrl() {
+			return this.rtsUrl;
+		}
+
+		public void setRtsUrl(String rtsUrl) {
+			this.rtsUrl = rtsUrl;
+		}
 
 		public String getSceneId() {
 			return this.sceneId;
@@ -91,20 +115,12 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 			this.sceneName = sceneName;
 		}
 
-		public String getOutputType() {
-			return this.outputType;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setOutputType(String outputType) {
-			this.outputType = outputType;
-		}
-
-		public String getLayoutId() {
-			return this.layoutId;
-		}
-
-		public void setLayoutId(String layoutId) {
-			this.layoutId = layoutId;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getStreamUrl() {
@@ -113,22 +129,6 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 		public void setStreamUrl(String streamUrl) {
 			this.streamUrl = streamUrl;
-		}
-
-		public String getRtsUrl() {
-			return this.rtsUrl;
-		}
-
-		public void setRtsUrl(String rtsUrl) {
-			this.rtsUrl = rtsUrl;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
 		}
 
 		public List<StreamInfo> getStreamInfos() {
@@ -149,11 +149,19 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 		public static class StreamInfo {
 
+			private String outputStreamUrl;
+
 			private String transcodeConfig;
 
 			private String videoFormat;
 
-			private String outputStreamUrl;
+			public String getOutputStreamUrl() {
+				return this.outputStreamUrl;
+			}
+
+			public void setOutputStreamUrl(String outputStreamUrl) {
+				this.outputStreamUrl = outputStreamUrl;
+			}
 
 			public String getTranscodeConfig() {
 				return this.transcodeConfig;
@@ -169,14 +177,6 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 			public void setVideoFormat(String videoFormat) {
 				this.videoFormat = videoFormat;
-			}
-
-			public String getOutputStreamUrl() {
-				return this.outputStreamUrl;
-			}
-
-			public void setOutputStreamUrl(String outputStreamUrl) {
-				this.outputStreamUrl = outputStreamUrl;
 			}
 		}
 	}

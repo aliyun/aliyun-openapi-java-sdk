@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScalingRulesResponse extends AcsResponse {
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String requestId;
+	private Integer totalCount;
 
 	private List<ScalingRule> scalingRules;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ScalingRule> getScalingRules() {
@@ -77,92 +77,68 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 	public static class ScalingRule {
 
-		private String scalingRuleId;
-
-		private String scalingGroupId;
-
-		private String scalingRuleName;
-
-		private Integer cooldown;
-
-		private Integer minAdjustmentMagnitude;
+		private String metricName;
 
 		private String adjustmentType;
 
-		private Integer adjustmentValue;
-
-		private Integer minSize;
-
-		private Integer maxSize;
-
-		private String scalingRuleAri;
-
-		private String scalingRuleType;
+		private Integer initialMaxSize;
 
 		private Integer estimatedInstanceWarmup;
-
-		private String metricName;
-
-		private Float targetValue;
-
-		private Boolean disableScaleIn;
-
-		private Integer scaleInEvaluationCount;
 
 		private Integer scaleOutEvaluationCount;
 
 		private String predictiveScalingMode;
 
-		private String predictiveValueBehavior;
+		private Integer minAdjustmentMagnitude;
 
-		private Integer predictiveValueBuffer;
+		private String scalingRuleAri;
 
 		private Integer predictiveTaskBufferTime;
 
-		private Integer initialMaxSize;
+		private Integer minSize;
+
+		private String scalingGroupId;
+
+		private String predictiveValueBehavior;
+
+		private Float targetValue;
+
+		private Integer cooldown;
+
+		private Integer maxSize;
+
+		private Integer predictiveValueBuffer;
+
+		private String scalingRuleType;
+
+		private Integer adjustmentValue;
+
+		private Integer scaleInEvaluationCount;
+
+		private Boolean disableScaleIn;
+
+		private String scalingRuleName;
+
+		private String scalingRuleId;
+
+		private String metricType;
+
+		private String hybridMonitorNamespace;
 
 		private List<Alarm> alarms;
 
 		private List<StepAdjustment> stepAdjustments;
 
-		public String getScalingRuleId() {
-			return this.scalingRuleId;
+		private List<AlarmDimension> alarmDimensions;
+
+		private List<HybridMetric> hybridMetrics;
+
+		public String getMetricName() {
+			return this.metricName;
 		}
 
-		public void setScalingRuleId(String scalingRuleId) {
-			this.scalingRuleId = scalingRuleId;
-		}
-
-		public String getScalingGroupId() {
-			return this.scalingGroupId;
-		}
-
-		public void setScalingGroupId(String scalingGroupId) {
-			this.scalingGroupId = scalingGroupId;
-		}
-
-		public String getScalingRuleName() {
-			return this.scalingRuleName;
-		}
-
-		public void setScalingRuleName(String scalingRuleName) {
-			this.scalingRuleName = scalingRuleName;
-		}
-
-		public Integer getCooldown() {
-			return this.cooldown;
-		}
-
-		public void setCooldown(Integer cooldown) {
-			this.cooldown = cooldown;
-		}
-
-		public Integer getMinAdjustmentMagnitude() {
-			return this.minAdjustmentMagnitude;
-		}
-
-		public void setMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
-			this.minAdjustmentMagnitude = minAdjustmentMagnitude;
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
 		}
 
 		public String getAdjustmentType() {
@@ -173,44 +149,12 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 			this.adjustmentType = adjustmentType;
 		}
 
-		public Integer getAdjustmentValue() {
-			return this.adjustmentValue;
+		public Integer getInitialMaxSize() {
+			return this.initialMaxSize;
 		}
 
-		public void setAdjustmentValue(Integer adjustmentValue) {
-			this.adjustmentValue = adjustmentValue;
-		}
-
-		public Integer getMinSize() {
-			return this.minSize;
-		}
-
-		public void setMinSize(Integer minSize) {
-			this.minSize = minSize;
-		}
-
-		public Integer getMaxSize() {
-			return this.maxSize;
-		}
-
-		public void setMaxSize(Integer maxSize) {
-			this.maxSize = maxSize;
-		}
-
-		public String getScalingRuleAri() {
-			return this.scalingRuleAri;
-		}
-
-		public void setScalingRuleAri(String scalingRuleAri) {
-			this.scalingRuleAri = scalingRuleAri;
-		}
-
-		public String getScalingRuleType() {
-			return this.scalingRuleType;
-		}
-
-		public void setScalingRuleType(String scalingRuleType) {
-			this.scalingRuleType = scalingRuleType;
+		public void setInitialMaxSize(Integer initialMaxSize) {
+			this.initialMaxSize = initialMaxSize;
 		}
 
 		public Integer getEstimatedInstanceWarmup() {
@@ -219,38 +163,6 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 		public void setEstimatedInstanceWarmup(Integer estimatedInstanceWarmup) {
 			this.estimatedInstanceWarmup = estimatedInstanceWarmup;
-		}
-
-		public String getMetricName() {
-			return this.metricName;
-		}
-
-		public void setMetricName(String metricName) {
-			this.metricName = metricName;
-		}
-
-		public Float getTargetValue() {
-			return this.targetValue;
-		}
-
-		public void setTargetValue(Float targetValue) {
-			this.targetValue = targetValue;
-		}
-
-		public Boolean getDisableScaleIn() {
-			return this.disableScaleIn;
-		}
-
-		public void setDisableScaleIn(Boolean disableScaleIn) {
-			this.disableScaleIn = disableScaleIn;
-		}
-
-		public Integer getScaleInEvaluationCount() {
-			return this.scaleInEvaluationCount;
-		}
-
-		public void setScaleInEvaluationCount(Integer scaleInEvaluationCount) {
-			this.scaleInEvaluationCount = scaleInEvaluationCount;
 		}
 
 		public Integer getScaleOutEvaluationCount() {
@@ -269,20 +181,20 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 			this.predictiveScalingMode = predictiveScalingMode;
 		}
 
-		public String getPredictiveValueBehavior() {
-			return this.predictiveValueBehavior;
+		public Integer getMinAdjustmentMagnitude() {
+			return this.minAdjustmentMagnitude;
 		}
 
-		public void setPredictiveValueBehavior(String predictiveValueBehavior) {
-			this.predictiveValueBehavior = predictiveValueBehavior;
+		public void setMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
+			this.minAdjustmentMagnitude = minAdjustmentMagnitude;
 		}
 
-		public Integer getPredictiveValueBuffer() {
-			return this.predictiveValueBuffer;
+		public String getScalingRuleAri() {
+			return this.scalingRuleAri;
 		}
 
-		public void setPredictiveValueBuffer(Integer predictiveValueBuffer) {
-			this.predictiveValueBuffer = predictiveValueBuffer;
+		public void setScalingRuleAri(String scalingRuleAri) {
+			this.scalingRuleAri = scalingRuleAri;
 		}
 
 		public Integer getPredictiveTaskBufferTime() {
@@ -293,12 +205,124 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 			this.predictiveTaskBufferTime = predictiveTaskBufferTime;
 		}
 
-		public Integer getInitialMaxSize() {
-			return this.initialMaxSize;
+		public Integer getMinSize() {
+			return this.minSize;
 		}
 
-		public void setInitialMaxSize(Integer initialMaxSize) {
-			this.initialMaxSize = initialMaxSize;
+		public void setMinSize(Integer minSize) {
+			this.minSize = minSize;
+		}
+
+		public String getScalingGroupId() {
+			return this.scalingGroupId;
+		}
+
+		public void setScalingGroupId(String scalingGroupId) {
+			this.scalingGroupId = scalingGroupId;
+		}
+
+		public String getPredictiveValueBehavior() {
+			return this.predictiveValueBehavior;
+		}
+
+		public void setPredictiveValueBehavior(String predictiveValueBehavior) {
+			this.predictiveValueBehavior = predictiveValueBehavior;
+		}
+
+		public Float getTargetValue() {
+			return this.targetValue;
+		}
+
+		public void setTargetValue(Float targetValue) {
+			this.targetValue = targetValue;
+		}
+
+		public Integer getCooldown() {
+			return this.cooldown;
+		}
+
+		public void setCooldown(Integer cooldown) {
+			this.cooldown = cooldown;
+		}
+
+		public Integer getMaxSize() {
+			return this.maxSize;
+		}
+
+		public void setMaxSize(Integer maxSize) {
+			this.maxSize = maxSize;
+		}
+
+		public Integer getPredictiveValueBuffer() {
+			return this.predictiveValueBuffer;
+		}
+
+		public void setPredictiveValueBuffer(Integer predictiveValueBuffer) {
+			this.predictiveValueBuffer = predictiveValueBuffer;
+		}
+
+		public String getScalingRuleType() {
+			return this.scalingRuleType;
+		}
+
+		public void setScalingRuleType(String scalingRuleType) {
+			this.scalingRuleType = scalingRuleType;
+		}
+
+		public Integer getAdjustmentValue() {
+			return this.adjustmentValue;
+		}
+
+		public void setAdjustmentValue(Integer adjustmentValue) {
+			this.adjustmentValue = adjustmentValue;
+		}
+
+		public Integer getScaleInEvaluationCount() {
+			return this.scaleInEvaluationCount;
+		}
+
+		public void setScaleInEvaluationCount(Integer scaleInEvaluationCount) {
+			this.scaleInEvaluationCount = scaleInEvaluationCount;
+		}
+
+		public Boolean getDisableScaleIn() {
+			return this.disableScaleIn;
+		}
+
+		public void setDisableScaleIn(Boolean disableScaleIn) {
+			this.disableScaleIn = disableScaleIn;
+		}
+
+		public String getScalingRuleName() {
+			return this.scalingRuleName;
+		}
+
+		public void setScalingRuleName(String scalingRuleName) {
+			this.scalingRuleName = scalingRuleName;
+		}
+
+		public String getScalingRuleId() {
+			return this.scalingRuleId;
+		}
+
+		public void setScalingRuleId(String scalingRuleId) {
+			this.scalingRuleId = scalingRuleId;
+		}
+
+		public String getMetricType() {
+			return this.metricType;
+		}
+
+		public void setMetricType(String metricType) {
+			this.metricType = metricType;
+		}
+
+		public String getHybridMonitorNamespace() {
+			return this.hybridMonitorNamespace;
+		}
+
+		public void setHybridMonitorNamespace(String hybridMonitorNamespace) {
+			this.hybridMonitorNamespace = hybridMonitorNamespace;
 		}
 
 		public List<Alarm> getAlarms() {
@@ -317,33 +341,41 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 			this.stepAdjustments = stepAdjustments;
 		}
 
-		public static class Alarm {
+		public List<AlarmDimension> getAlarmDimensions() {
+			return this.alarmDimensions;
+		}
 
-			private String alarmTaskName;
+		public void setAlarmDimensions(List<AlarmDimension> alarmDimensions) {
+			this.alarmDimensions = alarmDimensions;
+		}
+
+		public List<HybridMetric> getHybridMetrics() {
+			return this.hybridMetrics;
+		}
+
+		public void setHybridMetrics(List<HybridMetric> hybridMetrics) {
+			this.hybridMetrics = hybridMetrics;
+		}
+
+		public static class Alarm {
 
 			private String alarmTaskId;
 
 			private String comparisonOperator;
 
-			private String statistics;
-
 			private String metricName;
-
-			private Float threshold;
 
 			private Integer evaluationCount;
 
+			private String alarmTaskName;
+
 			private String metricType;
 
+			private Float threshold;
+
+			private String statistics;
+
 			private List<Dimension> dimensions;
-
-			public String getAlarmTaskName() {
-				return this.alarmTaskName;
-			}
-
-			public void setAlarmTaskName(String alarmTaskName) {
-				this.alarmTaskName = alarmTaskName;
-			}
 
 			public String getAlarmTaskId() {
 				return this.alarmTaskId;
@@ -361,28 +393,12 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 				this.comparisonOperator = comparisonOperator;
 			}
 
-			public String getStatistics() {
-				return this.statistics;
-			}
-
-			public void setStatistics(String statistics) {
-				this.statistics = statistics;
-			}
-
 			public String getMetricName() {
 				return this.metricName;
 			}
 
 			public void setMetricName(String metricName) {
 				this.metricName = metricName;
-			}
-
-			public Float getThreshold() {
-				return this.threshold;
-			}
-
-			public void setThreshold(Float threshold) {
-				this.threshold = threshold;
 			}
 
 			public Integer getEvaluationCount() {
@@ -393,12 +409,36 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 				this.evaluationCount = evaluationCount;
 			}
 
+			public String getAlarmTaskName() {
+				return this.alarmTaskName;
+			}
+
+			public void setAlarmTaskName(String alarmTaskName) {
+				this.alarmTaskName = alarmTaskName;
+			}
+
 			public String getMetricType() {
 				return this.metricType;
 			}
 
 			public void setMetricType(String metricType) {
 				this.metricType = metricType;
+			}
+
+			public Float getThreshold() {
+				return this.threshold;
+			}
+
+			public void setThreshold(Float threshold) {
+				this.threshold = threshold;
+			}
+
+			public String getStatistics() {
+				return this.statistics;
+			}
+
+			public void setStatistics(String statistics) {
+				this.statistics = statistics;
 			}
 
 			public List<Dimension> getDimensions() {
@@ -435,19 +475,11 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 		public static class StepAdjustment {
 
-			private Float metricIntervalLowerBound;
-
 			private Float metricIntervalUpperBound;
 
 			private Integer scalingAdjustment;
 
-			public Float getMetricIntervalLowerBound() {
-				return this.metricIntervalLowerBound;
-			}
-
-			public void setMetricIntervalLowerBound(Float metricIntervalLowerBound) {
-				this.metricIntervalLowerBound = metricIntervalLowerBound;
-			}
+			private Float metricIntervalLowerBound;
 
 			public Float getMetricIntervalUpperBound() {
 				return this.metricIntervalUpperBound;
@@ -463,6 +495,113 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 			public void setScalingAdjustment(Integer scalingAdjustment) {
 				this.scalingAdjustment = scalingAdjustment;
+			}
+
+			public Float getMetricIntervalLowerBound() {
+				return this.metricIntervalLowerBound;
+			}
+
+			public void setMetricIntervalLowerBound(Float metricIntervalLowerBound) {
+				this.metricIntervalLowerBound = metricIntervalLowerBound;
+			}
+		}
+
+		public static class AlarmDimension {
+
+			private String dimensionKey;
+
+			private String dimensionValue;
+
+			public String getDimensionKey() {
+				return this.dimensionKey;
+			}
+
+			public void setDimensionKey(String dimensionKey) {
+				this.dimensionKey = dimensionKey;
+			}
+
+			public String getDimensionValue() {
+				return this.dimensionValue;
+			}
+
+			public void setDimensionValue(String dimensionValue) {
+				this.dimensionValue = dimensionValue;
+			}
+		}
+
+		public static class HybridMetric {
+
+			private String id;
+
+			private String expression;
+
+			private String metricName;
+
+			private String statistic;
+
+			private List<Dimension2> dimensions1;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getExpression() {
+				return this.expression;
+			}
+
+			public void setExpression(String expression) {
+				this.expression = expression;
+			}
+
+			public String getMetricName() {
+				return this.metricName;
+			}
+
+			public void setMetricName(String metricName) {
+				this.metricName = metricName;
+			}
+
+			public String getStatistic() {
+				return this.statistic;
+			}
+
+			public void setStatistic(String statistic) {
+				this.statistic = statistic;
+			}
+
+			public List<Dimension2> getDimensions1() {
+				return this.dimensions1;
+			}
+
+			public void setDimensions1(List<Dimension2> dimensions1) {
+				this.dimensions1 = dimensions1;
+			}
+
+			public static class Dimension2 {
+
+				private String dimensionKey;
+
+				private String dimensionValue;
+
+				public String getDimensionKey() {
+					return this.dimensionKey;
+				}
+
+				public void setDimensionKey(String dimensionKey) {
+					this.dimensionKey = dimensionKey;
+				}
+
+				public String getDimensionValue() {
+					return this.dimensionValue;
+				}
+
+				public void setDimensionValue(String dimensionValue) {
+					this.dimensionValue = dimensionValue;
+				}
 			}
 		}
 	}

@@ -95,6 +95,8 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
 		private String externalIp;
 
+		private String natGatewayId;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -165,6 +167,14 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
 		public void setExternalIp(String externalIp) {
 			this.externalIp = externalIp;
+		}
+
+		public String getNatGatewayId() {
+			return this.natGatewayId;
+		}
+
+		public void setNatGatewayId(String natGatewayId) {
+			this.natGatewayId = natGatewayId;
 		}
 	}
 

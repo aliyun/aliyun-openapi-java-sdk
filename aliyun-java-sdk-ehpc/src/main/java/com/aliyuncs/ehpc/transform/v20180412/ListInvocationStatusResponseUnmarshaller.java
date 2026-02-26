@@ -33,8 +33,8 @@ public class ListInvocationStatusResponseUnmarshaller {
 		List<InvokeInstance> invokeInstances = new ArrayList<InvokeInstance>();
 		for (int i = 0; i < _ctx.lengthValue("ListInvocationStatusResponse.InvokeInstances.Length"); i++) {
 			InvokeInstance invokeInstance = new InvokeInstance();
-			invokeInstance.setInstanceId(_ctx.stringValue("ListInvocationStatusResponse.InvokeInstances["+ i +"].InstanceId"));
 			invokeInstance.setInstanceInvokeStatus(_ctx.stringValue("ListInvocationStatusResponse.InvokeInstances["+ i +"].InstanceInvokeStatus"));
+			invokeInstance.setInstanceId(_ctx.stringValue("ListInvocationStatusResponse.InvokeInstances["+ i +"].InstanceId"));
 
 			invokeInstances.add(invokeInstance);
 		}

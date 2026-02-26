@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScdnDomainQpsDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String startTime;
-
-	private String endTime;
-
 	private String dataInterval;
 
 	private List<DataModule> qpsDataPerInterval;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeScdnDomainQpsDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public String getDataInterval() {
@@ -87,26 +87,26 @@ public class DescribeScdnDomainQpsDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
+		private String httpsAccValue;
 
 		private String qpsValue;
 
+		private String accValue;
+
 		private String httpQpsValue;
+
+		private String timeStamp;
 
 		private String httpsQpsValue;
 
-		private String accValue;
-
 		private String httpAccValue;
 
-		private String httpsAccValue;
-
-		public String getTimeStamp() {
-			return this.timeStamp;
+		public String getHttpsAccValue() {
+			return this.httpsAccValue;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
+		public void setHttpsAccValue(String httpsAccValue) {
+			this.httpsAccValue = httpsAccValue;
 		}
 
 		public String getQpsValue() {
@@ -117,12 +117,28 @@ public class DescribeScdnDomainQpsDataResponse extends AcsResponse {
 			this.qpsValue = qpsValue;
 		}
 
+		public String getAccValue() {
+			return this.accValue;
+		}
+
+		public void setAccValue(String accValue) {
+			this.accValue = accValue;
+		}
+
 		public String getHttpQpsValue() {
 			return this.httpQpsValue;
 		}
 
 		public void setHttpQpsValue(String httpQpsValue) {
 			this.httpQpsValue = httpQpsValue;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 
 		public String getHttpsQpsValue() {
@@ -133,28 +149,12 @@ public class DescribeScdnDomainQpsDataResponse extends AcsResponse {
 			this.httpsQpsValue = httpsQpsValue;
 		}
 
-		public String getAccValue() {
-			return this.accValue;
-		}
-
-		public void setAccValue(String accValue) {
-			this.accValue = accValue;
-		}
-
 		public String getHttpAccValue() {
 			return this.httpAccValue;
 		}
 
 		public void setHttpAccValue(String httpAccValue) {
 			this.httpAccValue = httpAccValue;
-		}
-
-		public String getHttpsAccValue() {
-			return this.httpsAccValue;
-		}
-
-		public void setHttpsAccValue(String httpsAccValue) {
-			this.httpsAccValue = httpsAccValue;
 		}
 	}
 

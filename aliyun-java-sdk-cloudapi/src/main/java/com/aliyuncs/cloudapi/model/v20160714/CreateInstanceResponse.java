@@ -24,16 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateInstanceResponse extends AcsResponse {
 
-	private String requestId;
+	private Boolean tagStatus;
 
 	private String instanceId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String requestId;
+
+	public Boolean getTagStatus() {
+		return this.tagStatus;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTagStatus(Boolean tagStatus) {
+		this.tagStatus = tagStatus;
 	}
 
 	public String getInstanceId() {
@@ -42,6 +44,14 @@ public class CreateInstanceResponse extends AcsResponse {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

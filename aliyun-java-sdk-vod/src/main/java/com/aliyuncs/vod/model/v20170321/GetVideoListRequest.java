@@ -25,6 +25,8 @@ import com.aliyuncs.vod.Endpoint;
 public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 	   
 
+	private String referenceIds;
+
 	private String startTime;
 
 	private String storageLocation;
@@ -47,6 +49,17 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getReferenceIds() {
+		return this.referenceIds;
+	}
+
+	public void setReferenceIds(String referenceIds) {
+		this.referenceIds = referenceIds;
+		if(referenceIds != null){
+			putQueryParameter("ReferenceIds", referenceIds);
+		}
 	}
 
 	public String getStartTime() {

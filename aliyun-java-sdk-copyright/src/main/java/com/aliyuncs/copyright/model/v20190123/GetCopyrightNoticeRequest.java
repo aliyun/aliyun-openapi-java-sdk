@@ -28,7 +28,7 @@ public class GetCopyrightNoticeRequest extends RpcAcsRequest<GetCopyrightNoticeR
 
 	private String fileId;
 	public GetCopyrightNoticeRequest() {
-		super("Copyright", "2019-01-23", "GetCopyrightNotice");
+		super("Copyright", "2019-01-23", "GetCopyrightNotice", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

@@ -26,10 +26,6 @@ public class DescribeIpInfoRequest extends RpcAcsRequest<DescribeIpInfoResponse>
 	   
 
 	private String iP;
-
-	private Long ownerId;
-
-	private String securityToken;
 	public DescribeIpInfoRequest() {
 		super("Cdn", "2018-05-10", "DescribeIpInfo");
 		setMethod(MethodType.POST);
@@ -47,28 +43,6 @@ public class DescribeIpInfoRequest extends RpcAcsRequest<DescribeIpInfoResponse>
 		this.iP = iP;
 		if(iP != null){
 			putQueryParameter("IP", iP);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

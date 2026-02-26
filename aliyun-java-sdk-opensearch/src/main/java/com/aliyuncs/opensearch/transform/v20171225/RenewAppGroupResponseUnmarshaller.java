@@ -23,6 +23,7 @@ public class RenewAppGroupResponseUnmarshaller {
 	public static RenewAppGroupResponse unmarshall(RenewAppGroupResponse renewAppGroupResponse, UnmarshallerContext _ctx) {
 		
 		renewAppGroupResponse.setRequestId(_ctx.stringValue("RenewAppGroupResponse.requestId"));
+		renewAppGroupResponse.setResult(_ctx.booleanValue("RenewAppGroupResponse.result"));
 	 
 	 	return renewAppGroupResponse;
 	}

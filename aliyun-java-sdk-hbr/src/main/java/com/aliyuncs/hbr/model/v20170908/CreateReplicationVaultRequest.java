@@ -31,7 +31,7 @@ public class CreateReplicationVaultRequest extends RpcAcsRequest<CreateReplicati
 
 	private String vaultName;
 
-	private String token;
+	private String redundancyType;
 
 	private String replicationSourceRegionId;
 
@@ -80,14 +80,14 @@ public class CreateReplicationVaultRequest extends RpcAcsRequest<CreateReplicati
 		}
 	}
 
-	public String getToken() {
-		return this.token;
+	public String getRedundancyType() {
+		return this.redundancyType;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
+	public void setRedundancyType(String redundancyType) {
+		this.redundancyType = redundancyType;
+		if(redundancyType != null){
+			putQueryParameter("RedundancyType", redundancyType);
 		}
 	}
 

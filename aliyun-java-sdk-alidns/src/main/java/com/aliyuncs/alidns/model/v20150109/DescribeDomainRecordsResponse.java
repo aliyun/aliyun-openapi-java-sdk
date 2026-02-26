@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<Record> domainRecords;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeDomainRecordsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Record> getDomainRecords() {
@@ -77,52 +77,36 @@ public class DescribeDomainRecordsResponse extends AcsResponse {
 
 	public static class Record {
 
-		private String domainName;
-
-		private String recordId;
-
-		private String rR;
+		private String status;
 
 		private String type;
 
-		private String value;
+		private String remark;
 
 		private Long tTL;
 
+		private String recordId;
+
 		private Long priority;
 
-		private String line;
+		private String rR;
 
-		private String status;
-
-		private Boolean locked;
+		private String domainName;
 
 		private Integer weight;
 
-		private String remark;
+		private String value;
 
-		public String getDomainName() {
-			return this.domainName;
+		private String line;
+
+		private Boolean locked;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getRecordId() {
-			return this.recordId;
-		}
-
-		public void setRecordId(String recordId) {
-			this.recordId = recordId;
-		}
-
-		public String getRR() {
-			return this.rR;
-		}
-
-		public void setRR(String rR) {
-			this.rR = rR;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getType() {
@@ -133,12 +117,12 @@ public class DescribeDomainRecordsResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getValue() {
-			return this.value;
+		public String getRemark() {
+			return this.remark;
 		}
 
-		public void setValue(String value) {
-			this.value = value;
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 
 		public Long getTTL() {
@@ -149,6 +133,14 @@ public class DescribeDomainRecordsResponse extends AcsResponse {
 			this.tTL = tTL;
 		}
 
+		public String getRecordId() {
+			return this.recordId;
+		}
+
+		public void setRecordId(String recordId) {
+			this.recordId = recordId;
+		}
+
 		public Long getPriority() {
 			return this.priority;
 		}
@@ -157,28 +149,20 @@ public class DescribeDomainRecordsResponse extends AcsResponse {
 			this.priority = priority;
 		}
 
-		public String getLine() {
-			return this.line;
+		public String getRR() {
+			return this.rR;
 		}
 
-		public void setLine(String line) {
-			this.line = line;
+		public void setRR(String rR) {
+			this.rR = rR;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Boolean getLocked() {
-			return this.locked;
-		}
-
-		public void setLocked(Boolean locked) {
-			this.locked = locked;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public Integer getWeight() {
@@ -189,12 +173,28 @@ public class DescribeDomainRecordsResponse extends AcsResponse {
 			this.weight = weight;
 		}
 
-		public String getRemark() {
-			return this.remark;
+		public String getValue() {
+			return this.value;
 		}
 
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getLine() {
+			return this.line;
+		}
+
+		public void setLine(String line) {
+			this.line = line;
+		}
+
+		public Boolean getLocked() {
+			return this.locked;
+		}
+
+		public void setLocked(Boolean locked) {
+			this.locked = locked;
 		}
 	}
 

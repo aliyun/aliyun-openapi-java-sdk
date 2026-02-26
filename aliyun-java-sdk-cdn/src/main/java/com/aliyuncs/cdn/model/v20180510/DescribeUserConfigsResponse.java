@@ -68,11 +68,19 @@ public class DescribeUserConfigsResponse extends AcsResponse {
 
 		public static class OssLogConfig {
 
+			private String prefix;
+
 			private String enable;
 
 			private String bucket;
 
-			private String prefix;
+			public String getPrefix() {
+				return this.prefix;
+			}
+
+			public void setPrefix(String prefix) {
+				this.prefix = prefix;
+			}
 
 			public String getEnable() {
 				return this.enable;
@@ -88,14 +96,6 @@ public class DescribeUserConfigsResponse extends AcsResponse {
 
 			public void setBucket(String bucket) {
 				this.bucket = bucket;
-			}
-
-			public String getPrefix() {
-				return this.prefix;
-			}
-
-			public void setPrefix(String prefix) {
-				this.prefix = prefix;
 			}
 		}
 

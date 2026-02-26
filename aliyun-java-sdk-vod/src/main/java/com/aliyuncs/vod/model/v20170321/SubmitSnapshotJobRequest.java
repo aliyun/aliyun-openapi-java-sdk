@@ -15,6 +15,9 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vod.Endpoint;
 
@@ -31,6 +34,9 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 
 	private String spriteSnapshotConfig;
 
+	@SerializedName("specifiedOffsetTimes")
+	private List<Long> specifiedOffsetTimes;
+
 	private String snapshotTemplateId;
 
 	private String height;
@@ -38,6 +44,8 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 	private Long count;
 
 	private String videoId;
+
+	private String referenceId;
 
 	private String width;
 
@@ -84,6 +92,17 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 		}
 	}
 
+	public List<Long> getSpecifiedOffsetTimes() {
+		return this.specifiedOffsetTimes;
+	}
+
+	public void setSpecifiedOffsetTimes(List<Long> specifiedOffsetTimes) {
+		this.specifiedOffsetTimes = specifiedOffsetTimes;	
+		if (specifiedOffsetTimes != null) {
+			putQueryParameter("SpecifiedOffsetTimes" , new Gson().toJson(specifiedOffsetTimes));
+		}	
+	}
+
 	public String getSnapshotTemplateId() {
 		return this.snapshotTemplateId;
 	}
@@ -125,6 +144,17 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public String getReferenceId() {
+		return this.referenceId;
+	}
+
+	public void setReferenceId(String referenceId) {
+		this.referenceId = referenceId;
+		if(referenceId != null){
+			putQueryParameter("ReferenceId", referenceId);
 		}
 	}
 

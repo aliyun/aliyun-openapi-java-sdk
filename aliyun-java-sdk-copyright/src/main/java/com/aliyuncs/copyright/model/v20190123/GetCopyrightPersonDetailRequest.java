@@ -28,7 +28,7 @@ public class GetCopyrightPersonDetailRequest extends RpcAcsRequest<GetCopyrightP
 
 	private Integer personId;
 	public GetCopyrightPersonDetailRequest() {
-		super("Copyright", "2019-01-23", "GetCopyrightPersonDetail");
+		super("Copyright", "2019-01-23", "GetCopyrightPersonDetail", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

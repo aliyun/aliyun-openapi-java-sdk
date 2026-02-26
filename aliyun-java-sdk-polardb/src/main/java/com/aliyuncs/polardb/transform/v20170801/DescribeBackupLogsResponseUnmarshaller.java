@@ -42,6 +42,7 @@ public class DescribeBackupLogsResponseUnmarshaller {
 			backupLog.setDownloadLink(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].DownloadLink"));
 			backupLog.setBackupLogSize(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].BackupLogSize"));
 			backupLog.setBackupLogName(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].BackupLogName"));
+			backupLog.setDBInstanceName(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].DBInstanceName"));
 
 			items.add(backupLog);
 		}

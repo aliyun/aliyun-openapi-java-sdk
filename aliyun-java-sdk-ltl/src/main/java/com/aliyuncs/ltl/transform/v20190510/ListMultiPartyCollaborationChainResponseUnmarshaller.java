@@ -29,21 +29,21 @@ public class ListMultiPartyCollaborationChainResponseUnmarshaller {
 		
 		listMultiPartyCollaborationChainResponse.setRequestId(_ctx.stringValue("ListMultiPartyCollaborationChainResponse.RequestId"));
 		listMultiPartyCollaborationChainResponse.setCode(_ctx.integerValue("ListMultiPartyCollaborationChainResponse.Code"));
-		listMultiPartyCollaborationChainResponse.setSuccess(_ctx.booleanValue("ListMultiPartyCollaborationChainResponse.Success"));
 		listMultiPartyCollaborationChainResponse.setMessage(_ctx.stringValue("ListMultiPartyCollaborationChainResponse.Message"));
+		listMultiPartyCollaborationChainResponse.setSuccess(_ctx.booleanValue("ListMultiPartyCollaborationChainResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("ListMultiPartyCollaborationChainResponse.Data.Total"));
 		data.setNum(_ctx.integerValue("ListMultiPartyCollaborationChainResponse.Data.Num"));
+		data.setTotal(_ctx.integerValue("ListMultiPartyCollaborationChainResponse.Data.Total"));
 		data.setSize(_ctx.integerValue("ListMultiPartyCollaborationChainResponse.Data.Size"));
 
 		List<MultiPartyCollaborationChainInfo> pageData = new ArrayList<MultiPartyCollaborationChainInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListMultiPartyCollaborationChainResponse.Data.PageData.Length"); i++) {
 			MultiPartyCollaborationChainInfo multiPartyCollaborationChainInfo = new MultiPartyCollaborationChainInfo();
-			multiPartyCollaborationChainInfo.setBizChainId(_ctx.stringValue("ListMultiPartyCollaborationChainResponse.Data.PageData["+ i +"].BizChainId"));
 			multiPartyCollaborationChainInfo.setName(_ctx.stringValue("ListMultiPartyCollaborationChainResponse.Data.PageData["+ i +"].Name"));
 			multiPartyCollaborationChainInfo.setRemark(_ctx.stringValue("ListMultiPartyCollaborationChainResponse.Data.PageData["+ i +"].Remark"));
 			multiPartyCollaborationChainInfo.setRoleType(_ctx.stringValue("ListMultiPartyCollaborationChainResponse.Data.PageData["+ i +"].RoleType"));
+			multiPartyCollaborationChainInfo.setBizChainId(_ctx.stringValue("ListMultiPartyCollaborationChainResponse.Data.PageData["+ i +"].BizChainId"));
 
 			pageData.add(multiPartyCollaborationChainInfo);
 		}

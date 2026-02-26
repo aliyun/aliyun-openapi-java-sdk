@@ -1,3 +1,73 @@
+2024-05-17 Version: 1.0.19
+- Update CalculateMemberLevel API
+
+2024-05-15 Version: 1.0.18
+- Add CalculateMemberLevel API
+
+2024-05-15 Version: 1.0.17
+- Add CalculateMemberLevel API
+
+2024-01-23 Version: 1.0.16
+- Update AddMemberBasicInfo API timeout
+
+2024-01-10 Version: 1.0.15
+-Update QueryMemberBasicInfo
+
+2023-12-23 Version: 1.0.14
+-Update batchOrderPop
+
+2023-12-23 Version: 1.0.13
+-Update batchOrderPop
+
+2023-12-22 Version: 1.0.12
+-Update batchOrderPop
+
+2023-12-22 Version: 1.0.11
+-Update batchOrderPop
+
+2023-12-22 Version: 1.0.10
+- Generated 2023-04-17 for `retailadvqa`.
+
+2023-12-20 Version: 1.0.9
+- Generated 2023-04-17 for `retailadvqa`.
+
+2023-08-04 Version: 1.0.8
+- Update queryMemberBasicInfo API.
+- Update member point change API.
+- Update addMemberBasicInfo API.
+
+2023-07-31 Version: 1.0.7
+- Update queryMemberBasicInfo API.
+- Update member behavior API.
+- Update member point change API.
+- Update addMemberBasicInfo API.
+- Update syncCardInfo API.
+- Add MemberAccountDetailPageQuery API
+
+2023-07-24 Version: 1.0.6
+- Add queryMemberBasicInfo API.
+- Add member behavior API.
+- Add member point change API.
+- Update addMemberBasicInfo API.
+
+2023-06-01 Version: 1.0.5
+Update syncCardInfo params.
+
+2023-05-30 Version: 1.0.4
+Update syncCardInfo params.
+
+2023-05-25 Version: 1.0.3
+- Generated 2023-04-17 for `retailadvqa`.
+
+2023-05-19 Version: 1.0.2
+- Generated 2023-04-17 for `retailadvqa`.
+
+2023-05-12 Version: 1.0.1
+- Generated 2023-04-17 for `retailadvqa`.
+
+2023-04-23 Version: 1.0.0
+- Generated 2023-04-17 for `retailadvqa`.
+
 2022-05-07 Version: 1.8.1
 - Test.
 

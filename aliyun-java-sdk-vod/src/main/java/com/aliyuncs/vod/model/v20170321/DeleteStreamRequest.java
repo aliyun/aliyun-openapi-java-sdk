@@ -27,6 +27,8 @@ public class DeleteStreamRequest extends RpcAcsRequest<DeleteStreamResponse> {
 
 	private String videoId;
 
+	private String referenceId;
+
 	private String jobIds;
 	public DeleteStreamRequest() {
 		super("vod", "2017-03-21", "DeleteStream", "vod");
@@ -45,6 +47,17 @@ public class DeleteStreamRequest extends RpcAcsRequest<DeleteStreamResponse> {
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public String getReferenceId() {
+		return this.referenceId;
+	}
+
+	public void setReferenceId(String referenceId) {
+		this.referenceId = referenceId;
+		if(referenceId != null){
+			putQueryParameter("ReferenceId", referenceId);
 		}
 	}
 

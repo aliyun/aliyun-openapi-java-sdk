@@ -26,8 +26,6 @@ public class DescribeDomainCustomLogConfigRequest extends RpcAcsRequest<Describe
 	   
 
 	private String domainName;
-
-	private Long ownerId;
 	public DescribeDomainCustomLogConfigRequest() {
 		super("Cdn", "2018-05-10", "DescribeDomainCustomLogConfig");
 		setMethod(MethodType.GET);
@@ -45,17 +43,6 @@ public class DescribeDomainCustomLogConfigRequest extends RpcAcsRequest<Describe
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

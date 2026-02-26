@@ -25,6 +25,8 @@ public class UnAssociateEnsEipAddressRequest extends RpcAcsRequest<UnAssociateEn
 	   
 
 	private String allocationId;
+
+	private Boolean force;
 	public UnAssociateEnsEipAddressRequest() {
 		super("Ens", "2017-11-10", "UnAssociateEnsEipAddress", "ens");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class UnAssociateEnsEipAddressRequest extends RpcAcsRequest<UnAssociateEn
 		this.allocationId = allocationId;
 		if(allocationId != null){
 			putQueryParameter("AllocationId", allocationId);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

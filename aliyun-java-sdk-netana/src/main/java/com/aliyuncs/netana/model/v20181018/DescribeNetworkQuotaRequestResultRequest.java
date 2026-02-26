@@ -15,32 +15,39 @@
 package com.aliyuncs.netana.model.v20181018;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.netana.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeNetworkQuotaRequestResultRequest extends RpcAcsRequest<DescribeNetworkQuotaRequestResultResponse> {
-	
-	public DescribeNetworkQuotaRequestResultRequest() {
-		super("Netana", "2018-10-18", "DescribeNetworkQuotaRequestResult", "Netana");
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private String product;
 
 	private String quotaPublicityName;
 
 	private String quotaRequestId;
 
+	private Integer pageSize;
+
+	private String product;
+
 	private String resourceOwnerAccount;
 
-	private String pageNo;
-
-	private String pageSize;
-
 	private String resourceType;
+
+	private Integer pageNo;
+	public DescribeNetworkQuotaRequestResultRequest() {
+		super("Netana", "2018-10-18", "DescribeNetworkQuotaRequestResult", "netana");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,36 +57,6 @@ public class DescribeNetworkQuotaRequestResultRequest extends RpcAcsRequest<Desc
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getBizProduct() {
-		return this.product;
-	}
-
-	public void setBizProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizProduct instead of this.
-	 */
-	@Deprecated
-	public String getProduct() {
-		return this.product;
-	}
-
-	/**
-	 * @deprecated use setBizProduct instead of this.
-	 */
-	@Deprecated
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
 		}
 	}
 
@@ -105,6 +82,28 @@ public class DescribeNetworkQuotaRequestResultRequest extends RpcAcsRequest<Desc
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getProduct() {
+		return this.product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("Product", product);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -116,28 +115,6 @@ public class DescribeNetworkQuotaRequestResultRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(String pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo);
-		}
-	}
-
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
 	public String getResourceType() {
 		return this.resourceType;
 	}
@@ -146,6 +123,17 @@ public class DescribeNetworkQuotaRequestResultRequest extends RpcAcsRequest<Desc
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 

@@ -49,9 +49,9 @@ public class DescribeRealtimeDeliveryAccResponse extends AcsResponse {
 
 		private String timeStamp;
 
-		private Integer successNum;
-
 		private Integer failedNum;
+
+		private Integer successNum;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -61,20 +61,20 @@ public class DescribeRealtimeDeliveryAccResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
-		public Integer getSuccessNum() {
-			return this.successNum;
-		}
-
-		public void setSuccessNum(Integer successNum) {
-			this.successNum = successNum;
-		}
-
 		public Integer getFailedNum() {
 			return this.failedNum;
 		}
 
 		public void setFailedNum(Integer failedNum) {
 			this.failedNum = failedNum;
+		}
+
+		public Integer getSuccessNum() {
+			return this.successNum;
+		}
+
+		public void setSuccessNum(Integer successNum) {
+			this.successNum = successNum;
 		}
 	}
 

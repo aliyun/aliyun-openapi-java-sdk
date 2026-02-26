@@ -27,9 +27,27 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 
 	private Long resourceOwnerId;
 
-	private Integer phoenixCoreNum;
+	private String logSpec;
 
-	private String phoenixCoreSpec;
+	private String securityToken;
+
+	private Integer tsdbNum;
+
+	private Integer solrNum;
+
+	private Long ownerId;
+
+	private Integer lindormNum;
+
+	private Integer ltsCoreNum;
+
+	private String instanceId;
+
+	private Integer streamNum;
+
+	private Integer logSingleStorage;
+
+	private String zoneId;
 
 	private String upgradeType;
 
@@ -37,17 +55,15 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 
 	private String filestoreSpec;
 
-	private String securityToken;
-
-	private Integer tsdbNum;
-
 	private String lindormSpec;
-
-	private Integer solrNum;
 
 	private Integer coldStorage;
 
+	private Integer logNum;
+
 	private String solrSpec;
+
+	private Integer coreSingleStorage;
 
 	private String resourceOwnerAccount;
 
@@ -55,23 +71,11 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 
 	private Integer filestoreNum;
 
-	private Long ownerId;
-
-	private Integer lindormNum;
-
-	private String coreSpec;
-
-	private Integer coreNum;
-
-	private Integer ltsCoreNum;
-
-	private String instanceId;
+	private String streamSpec;
 
 	private String ltsCoreSpec;
 
 	private Integer clusterStorage;
-
-	private String zoneId;
 	public UpgradeLindormInstanceRequest() {
 		super("hitsdb", "2020-06-15", "UpgradeLindormInstance", "hitsdb");
 		setMethod(MethodType.POST);
@@ -92,25 +96,124 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 		}
 	}
 
-	public Integer getPhoenixCoreNum() {
-		return this.phoenixCoreNum;
+	public String getLogSpec() {
+		return this.logSpec;
 	}
 
-	public void setPhoenixCoreNum(Integer phoenixCoreNum) {
-		this.phoenixCoreNum = phoenixCoreNum;
-		if(phoenixCoreNum != null){
-			putQueryParameter("PhoenixCoreNum", phoenixCoreNum.toString());
+	public void setLogSpec(String logSpec) {
+		this.logSpec = logSpec;
+		if(logSpec != null){
+			putQueryParameter("LogSpec", logSpec);
 		}
 	}
 
-	public String getPhoenixCoreSpec() {
-		return this.phoenixCoreSpec;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setPhoenixCoreSpec(String phoenixCoreSpec) {
-		this.phoenixCoreSpec = phoenixCoreSpec;
-		if(phoenixCoreSpec != null){
-			putQueryParameter("PhoenixCoreSpec", phoenixCoreSpec);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Integer getTsdbNum() {
+		return this.tsdbNum;
+	}
+
+	public void setTsdbNum(Integer tsdbNum) {
+		this.tsdbNum = tsdbNum;
+		if(tsdbNum != null){
+			putQueryParameter("TsdbNum", tsdbNum.toString());
+		}
+	}
+
+	public Integer getSolrNum() {
+		return this.solrNum;
+	}
+
+	public void setSolrNum(Integer solrNum) {
+		this.solrNum = solrNum;
+		if(solrNum != null){
+			putQueryParameter("SolrNum", solrNum.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getLindormNum() {
+		return this.lindormNum;
+	}
+
+	public void setLindormNum(Integer lindormNum) {
+		this.lindormNum = lindormNum;
+		if(lindormNum != null){
+			putQueryParameter("LindormNum", lindormNum.toString());
+		}
+	}
+
+	public Integer getLtsCoreNum() {
+		return this.ltsCoreNum;
+	}
+
+	public void setLtsCoreNum(Integer ltsCoreNum) {
+		this.ltsCoreNum = ltsCoreNum;
+		if(ltsCoreNum != null){
+			putQueryParameter("LtsCoreNum", ltsCoreNum.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getStreamNum() {
+		return this.streamNum;
+	}
+
+	public void setStreamNum(Integer streamNum) {
+		this.streamNum = streamNum;
+		if(streamNum != null){
+			putQueryParameter("StreamNum", streamNum.toString());
+		}
+	}
+
+	public Integer getLogSingleStorage() {
+		return this.logSingleStorage;
+	}
+
+	public void setLogSingleStorage(Integer logSingleStorage) {
+		this.logSingleStorage = logSingleStorage;
+		if(logSingleStorage != null){
+			putQueryParameter("LogSingleStorage", logSingleStorage.toString());
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
@@ -147,28 +250,6 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Integer getTsdbNum() {
-		return this.tsdbNum;
-	}
-
-	public void setTsdbNum(Integer tsdbNum) {
-		this.tsdbNum = tsdbNum;
-		if(tsdbNum != null){
-			putQueryParameter("TsdbNum", tsdbNum.toString());
-		}
-	}
-
 	public String getLindormSpec() {
 		return this.lindormSpec;
 	}
@@ -177,17 +258,6 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 		this.lindormSpec = lindormSpec;
 		if(lindormSpec != null){
 			putQueryParameter("LindormSpec", lindormSpec);
-		}
-	}
-
-	public Integer getSolrNum() {
-		return this.solrNum;
-	}
-
-	public void setSolrNum(Integer solrNum) {
-		this.solrNum = solrNum;
-		if(solrNum != null){
-			putQueryParameter("SolrNum", solrNum.toString());
 		}
 	}
 
@@ -202,6 +272,17 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 		}
 	}
 
+	public Integer getLogNum() {
+		return this.logNum;
+	}
+
+	public void setLogNum(Integer logNum) {
+		this.logNum = logNum;
+		if(logNum != null){
+			putQueryParameter("LogNum", logNum.toString());
+		}
+	}
+
 	public String getSolrSpec() {
 		return this.solrSpec;
 	}
@@ -210,6 +291,17 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 		this.solrSpec = solrSpec;
 		if(solrSpec != null){
 			putQueryParameter("SolrSpec", solrSpec);
+		}
+	}
+
+	public Integer getCoreSingleStorage() {
+		return this.coreSingleStorage;
+	}
+
+	public void setCoreSingleStorage(Integer coreSingleStorage) {
+		this.coreSingleStorage = coreSingleStorage;
+		if(coreSingleStorage != null){
+			putQueryParameter("CoreSingleStorage", coreSingleStorage.toString());
 		}
 	}
 
@@ -246,69 +338,14 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getStreamSpec() {
+		return this.streamSpec;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getLindormNum() {
-		return this.lindormNum;
-	}
-
-	public void setLindormNum(Integer lindormNum) {
-		this.lindormNum = lindormNum;
-		if(lindormNum != null){
-			putQueryParameter("LindormNum", lindormNum.toString());
-		}
-	}
-
-	public String getCoreSpec() {
-		return this.coreSpec;
-	}
-
-	public void setCoreSpec(String coreSpec) {
-		this.coreSpec = coreSpec;
-		if(coreSpec != null){
-			putQueryParameter("CoreSpec", coreSpec);
-		}
-	}
-
-	public Integer getCoreNum() {
-		return this.coreNum;
-	}
-
-	public void setCoreNum(Integer coreNum) {
-		this.coreNum = coreNum;
-		if(coreNum != null){
-			putQueryParameter("CoreNum", coreNum.toString());
-		}
-	}
-
-	public Integer getLtsCoreNum() {
-		return this.ltsCoreNum;
-	}
-
-	public void setLtsCoreNum(Integer ltsCoreNum) {
-		this.ltsCoreNum = ltsCoreNum;
-		if(ltsCoreNum != null){
-			putQueryParameter("LtsCoreNum", ltsCoreNum.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setStreamSpec(String streamSpec) {
+		this.streamSpec = streamSpec;
+		if(streamSpec != null){
+			putQueryParameter("StreamSpec", streamSpec);
 		}
 	}
 
@@ -331,17 +368,6 @@ public class UpgradeLindormInstanceRequest extends RpcAcsRequest<UpgradeLindormI
 		this.clusterStorage = clusterStorage;
 		if(clusterStorage != null){
 			putQueryParameter("ClusterStorage", clusterStorage.toString());
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

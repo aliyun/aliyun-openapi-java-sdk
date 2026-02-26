@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.DescribeCastersResponse;
 import com.aliyuncs.live.model.v20161101.DescribeCastersResponse.Caster;
+import com.aliyuncs.live.model.v20161101.DescribeCastersResponse.Caster.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,20 +33,32 @@ public class DescribeCastersResponseUnmarshaller {
 		List<Caster> casterList = new ArrayList<Caster>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCastersResponse.CasterList.Length"); i++) {
 			Caster caster = new Caster();
-			caster.setStatus(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].Status"));
-			caster.setNormType(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].NormType"));
 			caster.setCasterId(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterId"));
 			caster.setCasterName(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterName"));
-			caster.setCreateTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CreateTime"));
-			caster.setStartTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].StartTime"));
-			caster.setPurchaseTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].PurchaseTime"));
-			caster.setExpireTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ExpireTime"));
-			caster.setChargeType(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ChargeType"));
 			caster.setCasterTemplate(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterTemplate"));
 			caster.setChannelEnable(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].ChannelEnable"));
-			caster.setLastModified(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].LastModified"));
+			caster.setChargeType(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ChargeType"));
+			caster.setCreateTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CreateTime"));
 			caster.setDuration(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].Duration"));
+			caster.setExpireTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ExpireTime"));
+			caster.setLastModified(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].LastModified"));
+			caster.setNormType(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].NormType"));
+			caster.setPurchaseTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].PurchaseTime"));
 			caster.setRoomId(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].RoomId"));
+			caster.setStartTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].StartTime"));
+			caster.setStatus(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].Status"));
+			caster.setClientTokenId(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ClientTokenId"));
+			caster.setResourceGroupId(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCastersResponse.CasterList["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			caster.setTags(tags);
 
 			casterList.add(caster);
 		}

@@ -53,7 +53,11 @@ public class DescribeAnycastEipAddressResponse extends AcsResponse {
 
 	private Long aliUid;
 
+	private String resourceGroupId;
+
 	private List<AnycastEipBindInfo> anycastEipBindInfoList;
+
+	private List<Tag> tags;
 
 	public String getStatus() {
 		return this.status;
@@ -167,12 +171,28 @@ public class DescribeAnycastEipAddressResponse extends AcsResponse {
 		this.aliUid = aliUid;
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
 	public List<AnycastEipBindInfo> getAnycastEipBindInfoList() {
 		return this.anycastEipBindInfoList;
 	}
 
 	public void setAnycastEipBindInfoList(List<AnycastEipBindInfo> anycastEipBindInfoList) {
 		this.anycastEipBindInfoList = anycastEipBindInfoList;
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
 	}
 
 	public static class AnycastEipBindInfo {
@@ -268,6 +288,29 @@ public class DescribeAnycastEipAddressResponse extends AcsResponse {
 			public void setPopLocation(String popLocation) {
 				this.popLocation = popLocation;
 			}
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

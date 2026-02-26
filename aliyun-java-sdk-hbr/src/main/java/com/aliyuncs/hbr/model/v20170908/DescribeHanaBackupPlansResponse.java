@@ -33,11 +33,11 @@ public class DescribeHanaBackupPlansResponse extends AcsResponse {
 
 	private String message;
 
-	private Long totalCount;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Long totalCount;
 
 	private List<HanaBackupPlan> hanaBackupPlans;
 
@@ -73,12 +73,12 @@ public class DescribeHanaBackupPlansResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +89,12 @@ public class DescribeHanaBackupPlansResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<HanaBackupPlan> getHanaBackupPlans() {
@@ -107,54 +107,30 @@ public class DescribeHanaBackupPlansResponse extends AcsResponse {
 
 	public static class HanaBackupPlan {
 
-		private String planId;
-
-		private String planName;
-
-		private String backupType;
-
-		private String databaseName;
+		private String vaultId;
 
 		private String backupPrefix;
 
 		private String schedule;
 
+		private String databaseName;
+
+		private String backupType;
+
 		private Boolean disabled;
 
-		private String vaultId;
+		private String planId;
 
 		private String clusterId;
 
-		public String getPlanId() {
-			return this.planId;
+		private String planName;
+
+		public String getVaultId() {
+			return this.vaultId;
 		}
 
-		public void setPlanId(String planId) {
-			this.planId = planId;
-		}
-
-		public String getPlanName() {
-			return this.planName;
-		}
-
-		public void setPlanName(String planName) {
-			this.planName = planName;
-		}
-
-		public String getBackupType() {
-			return this.backupType;
-		}
-
-		public void setBackupType(String backupType) {
-			this.backupType = backupType;
-		}
-
-		public String getDatabaseName() {
-			return this.databaseName;
-		}
-
-		public void setDatabaseName(String databaseName) {
-			this.databaseName = databaseName;
+		public void setVaultId(String vaultId) {
+			this.vaultId = vaultId;
 		}
 
 		public String getBackupPrefix() {
@@ -173,6 +149,22 @@ public class DescribeHanaBackupPlansResponse extends AcsResponse {
 			this.schedule = schedule;
 		}
 
+		public String getDatabaseName() {
+			return this.databaseName;
+		}
+
+		public void setDatabaseName(String databaseName) {
+			this.databaseName = databaseName;
+		}
+
+		public String getBackupType() {
+			return this.backupType;
+		}
+
+		public void setBackupType(String backupType) {
+			this.backupType = backupType;
+		}
+
 		public Boolean getDisabled() {
 			return this.disabled;
 		}
@@ -181,12 +173,12 @@ public class DescribeHanaBackupPlansResponse extends AcsResponse {
 			this.disabled = disabled;
 		}
 
-		public String getVaultId() {
-			return this.vaultId;
+		public String getPlanId() {
+			return this.planId;
 		}
 
-		public void setVaultId(String vaultId) {
-			this.vaultId = vaultId;
+		public void setPlanId(String planId) {
+			this.planId = planId;
 		}
 
 		public String getClusterId() {
@@ -195,6 +187,14 @@ public class DescribeHanaBackupPlansResponse extends AcsResponse {
 
 		public void setClusterId(String clusterId) {
 			this.clusterId = clusterId;
+		}
+
+		public String getPlanName() {
+			return this.planName;
+		}
+
+		public void setPlanName(String planName) {
+			this.planName = planName;
 		}
 	}
 

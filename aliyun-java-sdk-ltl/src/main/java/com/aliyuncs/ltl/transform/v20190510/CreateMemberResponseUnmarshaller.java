@@ -24,9 +24,9 @@ public class CreateMemberResponseUnmarshaller {
 		
 		createMemberResponse.setRequestId(_ctx.stringValue("CreateMemberResponse.RequestId"));
 		createMemberResponse.setCode(_ctx.integerValue("CreateMemberResponse.Code"));
-		createMemberResponse.setSuccess(_ctx.booleanValue("CreateMemberResponse.Success"));
 		createMemberResponse.setMessage(_ctx.stringValue("CreateMemberResponse.Message"));
 		createMemberResponse.setData(_ctx.stringValue("CreateMemberResponse.Data"));
+		createMemberResponse.setSuccess(_ctx.booleanValue("CreateMemberResponse.Success"));
 	 
 	 	return createMemberResponse;
 	}

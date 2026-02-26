@@ -123,6 +123,8 @@ public class ListClusterMembersResponse extends AcsResponse {
 
 			private String clusterId;
 
+			private String privateIp;
+
 			public Integer getStatus() {
 				return this.status;
 			}
@@ -177,6 +179,14 @@ public class ListClusterMembersResponse extends AcsResponse {
 
 			public void setClusterId(String clusterId) {
 				this.clusterId = clusterId;
+			}
+
+			public String getPrivateIp() {
+				return this.privateIp;
+			}
+
+			public void setPrivateIp(String privateIp) {
+				this.privateIp = privateIp;
 			}
 		}
 	}

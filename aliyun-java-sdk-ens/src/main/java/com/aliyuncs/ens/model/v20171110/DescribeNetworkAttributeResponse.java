@@ -43,9 +43,27 @@ public class DescribeNetworkAttributeResponse extends AcsResponse {
 
 	private String routerTableId;
 
+	private String networkAclId;
+
+	private String routeTableId;
+
+	private String gatewayRouteTableId;
+
 	private List<CloudResourceSetType> cloudResources;
 
 	private List<String> vSwitchIds;
+
+	private List<String> instanceIds;
+
+	private List<String> routeTableIds;
+
+	private List<String> networkInterfaceIds;
+
+	private List<String> loadBalancerIds;
+
+	private List<String> natGatewayIds;
+
+	private List<String> haVipIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -119,6 +137,30 @@ public class DescribeNetworkAttributeResponse extends AcsResponse {
 		this.routerTableId = routerTableId;
 	}
 
+	public String getNetworkAclId() {
+		return this.networkAclId;
+	}
+
+	public void setNetworkAclId(String networkAclId) {
+		this.networkAclId = networkAclId;
+	}
+
+	public String getRouteTableId() {
+		return this.routeTableId;
+	}
+
+	public void setRouteTableId(String routeTableId) {
+		this.routeTableId = routeTableId;
+	}
+
+	public String getGatewayRouteTableId() {
+		return this.gatewayRouteTableId;
+	}
+
+	public void setGatewayRouteTableId(String gatewayRouteTableId) {
+		this.gatewayRouteTableId = gatewayRouteTableId;
+	}
+
 	public List<CloudResourceSetType> getCloudResources() {
 		return this.cloudResources;
 	}
@@ -133,6 +175,54 @@ public class DescribeNetworkAttributeResponse extends AcsResponse {
 
 	public void setVSwitchIds(List<String> vSwitchIds) {
 		this.vSwitchIds = vSwitchIds;
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;
+	}
+
+	public List<String> getRouteTableIds() {
+		return this.routeTableIds;
+	}
+
+	public void setRouteTableIds(List<String> routeTableIds) {
+		this.routeTableIds = routeTableIds;
+	}
+
+	public List<String> getNetworkInterfaceIds() {
+		return this.networkInterfaceIds;
+	}
+
+	public void setNetworkInterfaceIds(List<String> networkInterfaceIds) {
+		this.networkInterfaceIds = networkInterfaceIds;
+	}
+
+	public List<String> getLoadBalancerIds() {
+		return this.loadBalancerIds;
+	}
+
+	public void setLoadBalancerIds(List<String> loadBalancerIds) {
+		this.loadBalancerIds = loadBalancerIds;
+	}
+
+	public List<String> getNatGatewayIds() {
+		return this.natGatewayIds;
+	}
+
+	public void setNatGatewayIds(List<String> natGatewayIds) {
+		this.natGatewayIds = natGatewayIds;
+	}
+
+	public List<String> getHaVipIds() {
+		return this.haVipIds;
+	}
+
+	public void setHaVipIds(List<String> haVipIds) {
+		this.haVipIds = haVipIds;
 	}
 
 	public static class CloudResourceSetType {

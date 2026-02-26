@@ -53,7 +53,7 @@ public class HttpUtil {
             StringBuilder debugString = new StringBuilder();
 
             String sysUrl = request.getSysUrl();
-            URL url = null;
+            URL url;
             try {
                 url = new URL(sysUrl);
                 debugString.append("> " + request.getSysMethod() + " " + url.getProtocol().toUpperCase() + "/1.1\n> ");

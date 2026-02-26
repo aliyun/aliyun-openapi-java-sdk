@@ -24,21 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryRegistrantProfileRealNameVerificationInfoResponse extends AcsResponse {
 
-	private String requestId;
+	private String identityCredentialType;
 
-	private String submissionDate;
+	private String requestId;
 
 	private String modificationDate;
 
 	private String identityCredential;
 
-	private Long registrantProfileId;
+	private String submissionDate;
 
 	private String identityCredentialNo;
 
-	private String identityCredentialType;
+	private Long registrantProfileId;
 
 	private String identityCredentialUrl;
+
+	public String getIdentityCredentialType() {
+		return this.identityCredentialType;
+	}
+
+	public void setIdentityCredentialType(String identityCredentialType) {
+		this.identityCredentialType = identityCredentialType;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,14 +54,6 @@ public class QueryRegistrantProfileRealNameVerificationInfoResponse extends AcsR
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getSubmissionDate() {
-		return this.submissionDate;
-	}
-
-	public void setSubmissionDate(String submissionDate) {
-		this.submissionDate = submissionDate;
 	}
 
 	public String getModificationDate() {
@@ -72,12 +72,12 @@ public class QueryRegistrantProfileRealNameVerificationInfoResponse extends AcsR
 		this.identityCredential = identityCredential;
 	}
 
-	public Long getRegistrantProfileId() {
-		return this.registrantProfileId;
+	public String getSubmissionDate() {
+		return this.submissionDate;
 	}
 
-	public void setRegistrantProfileId(Long registrantProfileId) {
-		this.registrantProfileId = registrantProfileId;
+	public void setSubmissionDate(String submissionDate) {
+		this.submissionDate = submissionDate;
 	}
 
 	public String getIdentityCredentialNo() {
@@ -88,12 +88,12 @@ public class QueryRegistrantProfileRealNameVerificationInfoResponse extends AcsR
 		this.identityCredentialNo = identityCredentialNo;
 	}
 
-	public String getIdentityCredentialType() {
-		return this.identityCredentialType;
+	public Long getRegistrantProfileId() {
+		return this.registrantProfileId;
 	}
 
-	public void setIdentityCredentialType(String identityCredentialType) {
-		this.identityCredentialType = identityCredentialType;
+	public void setRegistrantProfileId(Long registrantProfileId) {
+		this.registrantProfileId = registrantProfileId;
 	}
 
 	public String getIdentityCredentialUrl() {

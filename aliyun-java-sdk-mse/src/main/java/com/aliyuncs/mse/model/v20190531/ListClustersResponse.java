@@ -15,6 +15,7 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.mse.transform.v20190531.ListClustersResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -152,6 +153,10 @@ public class ListClustersResponse extends AcsResponse {
 		private String clusterName;
 
 		private String mseVersion;
+
+		private Map<Object,Object> tags;
+
+		private String resourceGroupId;
 
 		public String getEndDate() {
 			return this.endDate;
@@ -295,6 +300,22 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setMseVersion(String mseVersion) {
 			this.mseVersion = mseVersion;
+		}
+
+		public Map<Object,Object> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

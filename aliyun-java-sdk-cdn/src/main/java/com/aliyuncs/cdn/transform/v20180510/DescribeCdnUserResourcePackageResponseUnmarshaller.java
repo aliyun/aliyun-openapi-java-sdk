@@ -31,15 +31,15 @@ public class DescribeCdnUserResourcePackageResponseUnmarshaller {
 		List<ResourcePackageInfo> resourcePackageInfos = new ArrayList<ResourcePackageInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos.Length"); i++) {
 			ResourcePackageInfo resourcePackageInfo = new ResourcePackageInfo();
+			resourcePackageInfo.setEndTime(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].EndTime"));
+			resourcePackageInfo.setStatus(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].Status"));
+			resourcePackageInfo.setDisplayName(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].DisplayName"));
+			resourcePackageInfo.setStartTime(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].StartTime"));
+			resourcePackageInfo.setCommodityCode(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].CommodityCode"));
 			resourcePackageInfo.setCurrCapacity(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].CurrCapacity"));
 			resourcePackageInfo.setInitCapacity(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].InitCapacity"));
-			resourcePackageInfo.setCommodityCode(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].CommodityCode"));
-			resourcePackageInfo.setDisplayName(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].DisplayName"));
-			resourcePackageInfo.setTemplateName(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].TemplateName"));
 			resourcePackageInfo.setInstanceId(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].InstanceId"));
-			resourcePackageInfo.setStatus(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].Status"));
-			resourcePackageInfo.setStartTime(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].StartTime"));
-			resourcePackageInfo.setEndTime(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].EndTime"));
+			resourcePackageInfo.setTemplateName(_ctx.stringValue("DescribeCdnUserResourcePackageResponse.ResourcePackageInfos["+ i +"].TemplateName"));
 
 			resourcePackageInfos.add(resourcePackageInfo);
 		}

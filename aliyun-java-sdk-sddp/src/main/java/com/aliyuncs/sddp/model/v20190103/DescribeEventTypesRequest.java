@@ -27,6 +27,8 @@ public class DescribeEventTypesRequest extends RpcAcsRequest<DescribeEventTypesR
 
 	private Integer resourceId;
 
+	private Integer featureType;
+
 	private Long parentTypeId;
 
 	private String lang;
@@ -49,6 +51,17 @@ public class DescribeEventTypesRequest extends RpcAcsRequest<DescribeEventTypesR
 		this.resourceId = resourceId;
 		if(resourceId != null){
 			putQueryParameter("ResourceId", resourceId.toString());
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

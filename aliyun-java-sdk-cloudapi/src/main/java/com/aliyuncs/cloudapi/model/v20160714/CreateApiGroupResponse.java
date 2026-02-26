@@ -24,21 +24,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateApiGroupResponse extends AcsResponse {
 
+	private Boolean tagStatus;
+
+	private String basePath;
+
 	private String requestId;
-
-	private String groupId;
-
-	private String groupName;
-
-	private String subDomain;
 
 	private String description;
 
+	private String groupName;
+
+	private String groupId;
+
 	private String instanceId;
+
+	private String subDomain;
 
 	private String instanceType;
 
-	private Boolean tagStatus;
+	public Boolean getTagStatus() {
+		return this.tagStatus;
+	}
+
+	public void setTagStatus(Boolean tagStatus) {
+		this.tagStatus = tagStatus;
+	}
+
+	public String getBasePath() {
+		return this.basePath;
+	}
+
+	public void setBasePath(String basePath) {
+		this.basePath = basePath;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,30 +64,6 @@ public class CreateApiGroupResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
-
-	public String getSubDomain() {
-		return this.subDomain;
-	}
-
-	public void setSubDomain(String subDomain) {
-		this.subDomain = subDomain;
 	}
 
 	public String getDescription() {
@@ -80,6 +74,22 @@ public class CreateApiGroupResponse extends AcsResponse {
 		this.description = description;
 	}
 
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -88,20 +98,20 @@ public class CreateApiGroupResponse extends AcsResponse {
 		this.instanceId = instanceId;
 	}
 
+	public String getSubDomain() {
+		return this.subDomain;
+	}
+
+	public void setSubDomain(String subDomain) {
+		this.subDomain = subDomain;
+	}
+
 	public String getInstanceType() {
 		return this.instanceType;
 	}
 
 	public void setInstanceType(String instanceType) {
 		this.instanceType = instanceType;
-	}
-
-	public Boolean getTagStatus() {
-		return this.tagStatus;
-	}
-
-	public void setTagStatus(Boolean tagStatus) {
-		this.tagStatus = tagStatus;
 	}
 
 	@Override

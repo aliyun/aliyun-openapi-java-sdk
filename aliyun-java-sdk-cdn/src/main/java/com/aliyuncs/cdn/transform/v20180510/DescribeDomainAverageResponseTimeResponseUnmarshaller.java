@@ -27,16 +27,16 @@ public class DescribeDomainAverageResponseTimeResponseUnmarshaller {
 	public static DescribeDomainAverageResponseTimeResponse unmarshall(DescribeDomainAverageResponseTimeResponse describeDomainAverageResponseTimeResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainAverageResponseTimeResponse.setRequestId(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.RequestId"));
-		describeDomainAverageResponseTimeResponse.setDomainName(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.DomainName"));
-		describeDomainAverageResponseTimeResponse.setStartTime(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.StartTime"));
 		describeDomainAverageResponseTimeResponse.setEndTime(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.EndTime"));
+		describeDomainAverageResponseTimeResponse.setStartTime(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.StartTime"));
+		describeDomainAverageResponseTimeResponse.setDomainName(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.DomainName"));
 		describeDomainAverageResponseTimeResponse.setDataInterval(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.DataInterval"));
 
 		List<DataModule> avgRTPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainAverageResponseTimeResponse.AvgRTPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.AvgRTPerInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.AvgRTPerInterval["+ i +"].Value"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.AvgRTPerInterval["+ i +"].TimeStamp"));
 
 			avgRTPerInterval.add(dataModule);
 		}

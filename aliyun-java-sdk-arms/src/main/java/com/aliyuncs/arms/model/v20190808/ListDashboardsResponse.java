@@ -27,6 +27,12 @@ public class ListDashboardsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String prometheusServiceOpened;
+
+	private String environmentId;
+
+	private String grafanaServiceOpened;
+
 	private List<DashboardVosItem> dashboardVos;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class ListDashboardsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getPrometheusServiceOpened() {
+		return this.prometheusServiceOpened;
+	}
+
+	public void setPrometheusServiceOpened(String prometheusServiceOpened) {
+		this.prometheusServiceOpened = prometheusServiceOpened;
+	}
+
+	public String getEnvironmentId() {
+		return this.environmentId;
+	}
+
+	public void setEnvironmentId(String environmentId) {
+		this.environmentId = environmentId;
+	}
+
+	public String getGrafanaServiceOpened() {
+		return this.grafanaServiceOpened;
+	}
+
+	public void setGrafanaServiceOpened(String grafanaServiceOpened) {
+		this.grafanaServiceOpened = grafanaServiceOpened;
 	}
 
 	public List<DashboardVosItem> getDashboardVos() {

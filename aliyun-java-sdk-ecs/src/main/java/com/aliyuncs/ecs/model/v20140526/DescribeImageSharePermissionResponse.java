@@ -122,12 +122,22 @@ public class DescribeImageSharePermissionResponse extends AcsResponse {
 
 		private String aliyunId;
 
+		private String sharedTime;
+
 		public String getAliyunId() {
 			return this.aliyunId;
 		}
 
 		public void setAliyunId(String aliyunId) {
 			this.aliyunId = aliyunId;
+		}
+
+		public String getSharedTime() {
+			return this.sharedTime;
+		}
+
+		public void setSharedTime(String sharedTime) {
+			this.sharedTime = sharedTime;
 		}
 	}
 

@@ -121,11 +121,7 @@ public class ListUnassignedNumbersResponse extends AcsResponse {
 
 			private String number;
 
-			private Boolean active;
-
 			private String city;
-
-			private Boolean usage;
 
 			private String province;
 
@@ -137,28 +133,12 @@ public class ListUnassignedNumbersResponse extends AcsResponse {
 				this.number = number;
 			}
 
-			public Boolean getActive() {
-				return this.active;
-			}
-
-			public void setActive(Boolean active) {
-				this.active = active;
-			}
-
 			public String getCity() {
 				return this.city;
 			}
 
 			public void setCity(String city) {
 				this.city = city;
-			}
-
-			public Boolean getUsage() {
-				return this.usage;
-			}
-
-			public void setUsage(Boolean usage) {
-				this.usage = usage;
 			}
 
 			public String getProvince() {

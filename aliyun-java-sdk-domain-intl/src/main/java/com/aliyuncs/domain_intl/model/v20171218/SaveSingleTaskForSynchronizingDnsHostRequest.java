@@ -15,22 +15,24 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveSingleTaskForSynchronizingDnsHostRequest extends RpcAcsRequest<SaveSingleTaskForSynchronizingDnsHostResponse> {
-	
-	public SaveSingleTaskForSynchronizingDnsHostRequest() {
-		super("Domain-intl", "2017-12-18", "SaveSingleTaskForSynchronizingDnsHost", "domain");
-	}
+	   
 
 	private String instanceId;
 
 	private String userClientIp;
 
 	private String lang;
+	public SaveSingleTaskForSynchronizingDnsHostRequest() {
+		super("Domain-intl", "2017-12-18", "SaveSingleTaskForSynchronizingDnsHost");
+		setMethod(MethodType.POST);
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

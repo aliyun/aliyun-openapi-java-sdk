@@ -31,7 +31,7 @@ public class DescribeWebAccessLogDispatchStatusRequest extends RpcAcsRequest<Des
 
 	private Integer pageSize;
 	public DescribeWebAccessLogDispatchStatusRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeWebAccessLogDispatchStatus");
+		super("ddoscoo", "2020-01-01", "DescribeWebAccessLogDispatchStatus", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

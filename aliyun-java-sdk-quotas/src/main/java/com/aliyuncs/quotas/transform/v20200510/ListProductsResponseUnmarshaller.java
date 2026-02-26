@@ -34,15 +34,16 @@ public class ListProductsResponseUnmarshaller {
 		List<ProductInfos> productInfo = new ArrayList<ProductInfos>();
 		for (int i = 0; i < _ctx.lengthValue("ListProductsResponse.ProductInfo.Length"); i++) {
 			ProductInfos productInfos = new ProductInfos();
-			productInfos.setSecondCategoryNameEn(_ctx.stringValue("ListProductsResponse.ProductInfo["+ i +"].SecondCategoryNameEn"));
-			productInfos.setDynamic(_ctx.booleanValue("ListProductsResponse.ProductInfo["+ i +"].Dynamic"));
-			productInfos.setCommonQuotaSupport(_ctx.stringValue("ListProductsResponse.ProductInfo["+ i +"].CommonQuotaSupport"));
 			productInfos.setProductName(_ctx.stringValue("ListProductsResponse.ProductInfo["+ i +"].ProductName"));
-			productInfos.setProductCode(_ctx.stringValue("ListProductsResponse.ProductInfo["+ i +"].ProductCode"));
-			productInfos.setSecondCategoryName(_ctx.stringValue("ListProductsResponse.ProductInfo["+ i +"].SecondCategoryName"));
-			productInfos.setFlowControlSupport(_ctx.stringValue("ListProductsResponse.ProductInfo["+ i +"].FlowControlSupport"));
 			productInfos.setSecondCategoryId(_ctx.longValue("ListProductsResponse.ProductInfo["+ i +"].SecondCategoryId"));
 			productInfos.setProductNameEn(_ctx.stringValue("ListProductsResponse.ProductInfo["+ i +"].ProductNameEn"));
+			productInfos.setDynamic(_ctx.booleanValue("ListProductsResponse.ProductInfo["+ i +"].Dynamic"));
+			productInfos.setSecondCategoryNameEn(_ctx.stringValue("ListProductsResponse.ProductInfo["+ i +"].SecondCategoryNameEn"));
+			productInfos.setSecondCategoryName(_ctx.stringValue("ListProductsResponse.ProductInfo["+ i +"].SecondCategoryName"));
+			productInfos.setProductCode(_ctx.stringValue("ListProductsResponse.ProductInfo["+ i +"].ProductCode"));
+			productInfos.setFlowControlSupport(_ctx.stringValue("ListProductsResponse.ProductInfo["+ i +"].FlowControlSupport"));
+			productInfos.setCommonQuotaSupport(_ctx.stringValue("ListProductsResponse.ProductInfo["+ i +"].CommonQuotaSupport"));
+			productInfos.setWhiteListLabelQuotaSupport(_ctx.stringValue("ListProductsResponse.ProductInfo["+ i +"].WhiteListLabelQuotaSupport"));
 
 			productInfo.add(productInfos);
 		}

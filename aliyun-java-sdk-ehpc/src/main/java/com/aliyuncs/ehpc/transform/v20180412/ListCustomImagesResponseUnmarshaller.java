@@ -33,31 +33,31 @@ public class ListCustomImagesResponseUnmarshaller {
 		List<ImageInfo> images = new ArrayList<ImageInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListCustomImagesResponse.Images.Length"); i++) {
 			ImageInfo imageInfo = new ImageInfo();
-			imageInfo.setUid(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].Uid"));
-			imageInfo.setImageId(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].ImageId"));
-			imageInfo.setImageName(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].ImageName"));
-			imageInfo.setImageOwnerAlias(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].ImageOwnerAlias"));
-			imageInfo.setDescription(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].Description"));
 			imageInfo.setStatus(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].Status"));
-			imageInfo.setProductCode(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].ProductCode"));
+			imageInfo.setPostInstallScript(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].PostInstallScript"));
+			imageInfo.setDescription(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].Description"));
+			imageInfo.setSize(_ctx.integerValue("ListCustomImagesResponse.Images["+ i +"].Size"));
+			imageInfo.setImageOwnerAlias(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].ImageOwnerAlias"));
+			imageInfo.setImageName(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].ImageName"));
 			imageInfo.setSkuCode(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].SkuCode"));
 			imageInfo.setPricingCycle(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].PricingCycle"));
-			imageInfo.setPostInstallScript(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].PostInstallScript"));
-			imageInfo.setSize(_ctx.integerValue("ListCustomImagesResponse.Images["+ i +"].Size"));
+			imageInfo.setImageId(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].ImageId"));
+			imageInfo.setProductCode(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].ProductCode"));
+			imageInfo.setUid(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].Uid"));
 
 			BaseOsTag baseOsTag = new BaseOsTag();
-			baseOsTag.setOsTag(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.OsTag"));
 			baseOsTag.setPlatform(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.Platform"));
+			baseOsTag.setOsTag(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.OsTag"));
 			baseOsTag.setVersion(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.Version"));
 			baseOsTag.setArchitecture(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.Architecture"));
 			imageInfo.setBaseOsTag(baseOsTag);
 
 			OsTag osTag = new OsTag();
-			osTag.setOsTag(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].OsTag.OsTag"));
-			osTag.setBaseOsTag(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].OsTag.BaseOsTag"));
 			osTag.setPlatform(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].OsTag.Platform"));
+			osTag.setOsTag(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].OsTag.OsTag"));
 			osTag.setVersion(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].OsTag.Version"));
 			osTag.setArchitecture(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].OsTag.Architecture"));
+			osTag.setBaseOsTag(_ctx.stringValue("ListCustomImagesResponse.Images["+ i +"].OsTag.BaseOsTag"));
 			imageInfo.setOsTag(osTag);
 
 			images.add(imageInfo);

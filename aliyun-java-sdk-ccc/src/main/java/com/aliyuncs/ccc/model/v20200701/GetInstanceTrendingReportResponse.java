@@ -81,6 +81,8 @@ public class GetInstanceTrendingReportResponse extends AcsResponse {
 
 		private List<OutboundItem> outbound;
 
+		private List<OverallItem> overall;
+
 		public List<InboundItem> getInbound() {
 			return this.inbound;
 		}
@@ -95,6 +97,14 @@ public class GetInstanceTrendingReportResponse extends AcsResponse {
 
 		public void setOutbound(List<OutboundItem> outbound) {
 			this.outbound = outbound;
+		}
+
+		public List<OverallItem> getOverall() {
+			return this.overall;
+		}
+
+		public void setOverall(List<OverallItem> overall) {
+			this.overall = overall;
 		}
 
 		public static class InboundItem {
@@ -200,6 +210,29 @@ public class GetInstanceTrendingReportResponse extends AcsResponse {
 
 			public void setTotalCalls(Long totalCalls) {
 				this.totalCalls = totalCalls;
+			}
+		}
+
+		public static class OverallItem {
+
+			private Long statsTime;
+
+			private Long maxLoggedInAgents;
+
+			public Long getStatsTime() {
+				return this.statsTime;
+			}
+
+			public void setStatsTime(Long statsTime) {
+				this.statsTime = statsTime;
+			}
+
+			public Long getMaxLoggedInAgents() {
+				return this.maxLoggedInAgents;
+			}
+
+			public void setMaxLoggedInAgents(Long maxLoggedInAgents) {
+				this.maxLoggedInAgents = maxLoggedInAgents;
 			}
 		}
 	}

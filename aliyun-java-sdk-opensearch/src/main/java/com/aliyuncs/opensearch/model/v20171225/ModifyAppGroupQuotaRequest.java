@@ -27,7 +27,7 @@ public class ModifyAppGroupQuotaRequest extends RoaAcsRequest<ModifyAppGroupQuot
 
 	private String appGroupIdentity;
 	public ModifyAppGroupQuotaRequest() {
-		super("OpenSearch", "2017-12-25", "ModifyAppGroupQuota", "opensearch");
+		super("OpenSearch", "2017-12-25", "ModifyAppGroupQuota");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/quota");
 		setMethod(MethodType.PUT);
 		try {

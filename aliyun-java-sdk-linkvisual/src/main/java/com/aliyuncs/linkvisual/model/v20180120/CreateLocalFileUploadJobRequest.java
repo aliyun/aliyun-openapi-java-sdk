@@ -57,33 +57,41 @@ public class CreateLocalFileUploadJobRequest extends RpcAcsRequest<CreateLocalFi
 		this.timeSlots = timeSlots;	
 		if (timeSlots != null) {
 			for (int depth1 = 0; depth1 < timeSlots.size(); depth1++) {
-				putQueryParameter("TimeSlot." + (depth1 + 1) + ".IotId" , timeSlots.get(depth1).getIotId());
+				putQueryParameter("TimeSlot." + (depth1 + 1) + ".EndTime" , timeSlots.get(depth1).getEndTime());
+				putQueryParameter("TimeSlot." + (depth1 + 1) + ".StartTime" , timeSlots.get(depth1).getStartTime());
 				putQueryParameter("TimeSlot." + (depth1 + 1) + ".ProductKey" , timeSlots.get(depth1).getProductKey());
 				putQueryParameter("TimeSlot." + (depth1 + 1) + ".DeviceName" , timeSlots.get(depth1).getDeviceName());
-				putQueryParameter("TimeSlot." + (depth1 + 1) + ".StartTime" , timeSlots.get(depth1).getStartTime());
-				putQueryParameter("TimeSlot." + (depth1 + 1) + ".EndTime" , timeSlots.get(depth1).getEndTime());
+				putQueryParameter("TimeSlot." + (depth1 + 1) + ".IotId" , timeSlots.get(depth1).getIotId());
 			}
 		}	
 	}
 
 	public static class TimeSlot {
 
-		private String iotId;
+		private Integer endTime;
+
+		private Integer startTime;
 
 		private String productKey;
 
 		private String deviceName;
 
-		private Integer startTime;
+		private String iotId;
 
-		private Integer endTime;
-
-		public String getIotId() {
-			return this.iotId;
+		public Integer getEndTime() {
+			return this.endTime;
 		}
 
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
+		public void setEndTime(Integer endTime) {
+			this.endTime = endTime;
+		}
+
+		public Integer getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Integer startTime) {
+			this.startTime = startTime;
 		}
 
 		public String getProductKey() {
@@ -102,20 +110,12 @@ public class CreateLocalFileUploadJobRequest extends RpcAcsRequest<CreateLocalFi
 			this.deviceName = deviceName;
 		}
 
-		public Integer getStartTime() {
-			return this.startTime;
+		public String getIotId() {
+			return this.iotId;
 		}
 
-		public void setStartTime(Integer startTime) {
-			this.startTime = startTime;
-		}
-
-		public Integer getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(Integer endTime) {
-			this.endTime = endTime;
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 	}
 

@@ -29,7 +29,7 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 
 	private String clusterId;
 	public DeleteInstanceRequest() {
-		super("HBase", "2019-01-01", "DeleteInstance", "hbase");
+		super("HBase", "2019-01-01", "DeleteInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

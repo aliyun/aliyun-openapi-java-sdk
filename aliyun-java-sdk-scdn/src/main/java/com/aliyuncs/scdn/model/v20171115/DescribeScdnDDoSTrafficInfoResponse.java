@@ -29,13 +29,13 @@ public class DescribeScdnDDoSTrafficInfoResponse extends AcsResponse {
 
 	private List<TimeScope> timeScopes;
 
-	private List<String> bpsDrops;
-
-	private List<String> bpsTotals;
-
 	private List<String> ppsTotals;
 
 	private List<String> ppsDrops;
+
+	private List<String> bpsDrops;
+
+	private List<String> bpsTotals;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,22 +53,6 @@ public class DescribeScdnDDoSTrafficInfoResponse extends AcsResponse {
 		this.timeScopes = timeScopes;
 	}
 
-	public List<String> getBpsDrops() {
-		return this.bpsDrops;
-	}
-
-	public void setBpsDrops(List<String> bpsDrops) {
-		this.bpsDrops = bpsDrops;
-	}
-
-	public List<String> getBpsTotals() {
-		return this.bpsTotals;
-	}
-
-	public void setBpsTotals(List<String> bpsTotals) {
-		this.bpsTotals = bpsTotals;
-	}
-
 	public List<String> getPpsTotals() {
 		return this.ppsTotals;
 	}
@@ -83,6 +67,22 @@ public class DescribeScdnDDoSTrafficInfoResponse extends AcsResponse {
 
 	public void setPpsDrops(List<String> ppsDrops) {
 		this.ppsDrops = ppsDrops;
+	}
+
+	public List<String> getBpsDrops() {
+		return this.bpsDrops;
+	}
+
+	public void setBpsDrops(List<String> bpsDrops) {
+		this.bpsDrops = bpsDrops;
+	}
+
+	public List<String> getBpsTotals() {
+		return this.bpsTotals;
+	}
+
+	public void setBpsTotals(List<String> bpsTotals) {
+		this.bpsTotals = bpsTotals;
 	}
 
 	public static class TimeScope {

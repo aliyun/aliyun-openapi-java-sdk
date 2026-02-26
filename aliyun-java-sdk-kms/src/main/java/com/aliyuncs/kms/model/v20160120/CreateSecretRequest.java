@@ -28,27 +28,29 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 
 	private String secretType;
 
+	private String description;
+
+	private String rotationInterval;
+
+	private Boolean enableAutomaticRotation;
+
+	private String encryptionKeyId;
+
+	private String tags;
+
+	private String extendedConfig;
+
 	private String versionId;
 
 	private String dKMSInstanceId;
 
 	private String secretData;
 
-	private String description;
-
-	private String rotationInterval;
-
 	private String secretName;
-
-	private Boolean enableAutomaticRotation;
-
-	private String encryptionKeyId;
 
 	private String secretDataType;
 
-	private String tags;
-
-	private String extendedConfig;
+	private String policy;
 	public CreateSecretRequest() {
 		super("Kms", "2016-01-20", "CreateSecret", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -67,6 +69,72 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 		this.secretType = secretType;
 		if(secretType != null){
 			putQueryParameter("SecretType", secretType);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getRotationInterval() {
+		return this.rotationInterval;
+	}
+
+	public void setRotationInterval(String rotationInterval) {
+		this.rotationInterval = rotationInterval;
+		if(rotationInterval != null){
+			putQueryParameter("RotationInterval", rotationInterval);
+		}
+	}
+
+	public Boolean getEnableAutomaticRotation() {
+		return this.enableAutomaticRotation;
+	}
+
+	public void setEnableAutomaticRotation(Boolean enableAutomaticRotation) {
+		this.enableAutomaticRotation = enableAutomaticRotation;
+		if(enableAutomaticRotation != null){
+			putQueryParameter("EnableAutomaticRotation", enableAutomaticRotation.toString());
+		}
+	}
+
+	public String getEncryptionKeyId() {
+		return this.encryptionKeyId;
+	}
+
+	public void setEncryptionKeyId(String encryptionKeyId) {
+		this.encryptionKeyId = encryptionKeyId;
+		if(encryptionKeyId != null){
+			putQueryParameter("EncryptionKeyId", encryptionKeyId);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getExtendedConfig() {
+		return this.extendedConfig;
+	}
+
+	public void setExtendedConfig(String extendedConfig) {
+		this.extendedConfig = extendedConfig;
+		if(extendedConfig != null){
+			putQueryParameter("ExtendedConfig", extendedConfig);
 		}
 	}
 
@@ -103,28 +171,6 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getRotationInterval() {
-		return this.rotationInterval;
-	}
-
-	public void setRotationInterval(String rotationInterval) {
-		this.rotationInterval = rotationInterval;
-		if(rotationInterval != null){
-			putQueryParameter("RotationInterval", rotationInterval);
-		}
-	}
-
 	public String getSecretName() {
 		return this.secretName;
 	}
@@ -133,28 +179,6 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 		this.secretName = secretName;
 		if(secretName != null){
 			putQueryParameter("SecretName", secretName);
-		}
-	}
-
-	public Boolean getEnableAutomaticRotation() {
-		return this.enableAutomaticRotation;
-	}
-
-	public void setEnableAutomaticRotation(Boolean enableAutomaticRotation) {
-		this.enableAutomaticRotation = enableAutomaticRotation;
-		if(enableAutomaticRotation != null){
-			putQueryParameter("EnableAutomaticRotation", enableAutomaticRotation.toString());
-		}
-	}
-
-	public String getEncryptionKeyId() {
-		return this.encryptionKeyId;
-	}
-
-	public void setEncryptionKeyId(String encryptionKeyId) {
-		this.encryptionKeyId = encryptionKeyId;
-		if(encryptionKeyId != null){
-			putQueryParameter("EncryptionKeyId", encryptionKeyId);
 		}
 	}
 
@@ -169,25 +193,14 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
+	public String getPolicy() {
+		return this.policy;
 	}
 
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
-	}
-
-	public String getExtendedConfig() {
-		return this.extendedConfig;
-	}
-
-	public void setExtendedConfig(String extendedConfig) {
-		this.extendedConfig = extendedConfig;
-		if(extendedConfig != null){
-			putQueryParameter("ExtendedConfig", extendedConfig);
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
 		}
 	}
 

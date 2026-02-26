@@ -31,7 +31,7 @@ public class DisableBackupLogRequest extends RpcAcsRequest<DisableBackupLogRespo
 
 	private String ownerId;
 	public DisableBackupLogRequest() {
-		super("Dbs", "2019-03-06", "DisableBackupLog");
+		super("Dbs", "2019-03-06", "DisableBackupLog", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

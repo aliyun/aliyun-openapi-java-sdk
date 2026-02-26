@@ -29,11 +29,17 @@ public class CreateAclRequest extends RpcAcsRequest<CreateAclResponse> {
 
 	private String aclResourceType;
 
+	private String host;
+
+	private String aclOperationTypes;
+
 	private String aclOperationType;
 
 	private String aclResourceName;
 
 	private String instanceId;
+
+	private String aclPermissionType;
 
 	private String username;
 	public CreateAclRequest() {
@@ -67,6 +73,28 @@ public class CreateAclRequest extends RpcAcsRequest<CreateAclResponse> {
 		}
 	}
 
+	public String getHost() {
+		return this.host;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
+		if(host != null){
+			putQueryParameter("Host", host);
+		}
+	}
+
+	public String getAclOperationTypes() {
+		return this.aclOperationTypes;
+	}
+
+	public void setAclOperationTypes(String aclOperationTypes) {
+		this.aclOperationTypes = aclOperationTypes;
+		if(aclOperationTypes != null){
+			putQueryParameter("AclOperationTypes", aclOperationTypes);
+		}
+	}
+
 	public String getAclOperationType() {
 		return this.aclOperationType;
 	}
@@ -97,6 +125,17 @@ public class CreateAclRequest extends RpcAcsRequest<CreateAclResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAclPermissionType() {
+		return this.aclPermissionType;
+	}
+
+	public void setAclPermissionType(String aclPermissionType) {
+		this.aclPermissionType = aclPermissionType;
+		if(aclPermissionType != null){
+			putQueryParameter("AclPermissionType", aclPermissionType);
 		}
 	}
 

@@ -26,11 +26,11 @@ public class GetSortScriptResponseUnmarshaller {
 		getSortScriptResponse.setRequestId(_ctx.stringValue("GetSortScriptResponse.requestId"));
 
 		Result result = new Result();
-		result.setType(_ctx.stringValue("GetSortScriptResponse.result.type"));
 		result.setScope(_ctx.stringValue("GetSortScriptResponse.result.scope"));
-		result.setStatus(_ctx.stringValue("GetSortScriptResponse.result.status"));
 		result.setCreateTime(_ctx.stringValue("GetSortScriptResponse.result.createTime"));
+		result.setStatus(_ctx.stringValue("GetSortScriptResponse.result.status"));
 		result.setModifyTime(_ctx.stringValue("GetSortScriptResponse.result.modifyTime"));
+		result.setType(_ctx.stringValue("GetSortScriptResponse.result.type"));
 		getSortScriptResponse.setResult(result);
 	 
 	 	return getSortScriptResponse;

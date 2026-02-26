@@ -26,6 +26,7 @@ public class ListTransitRouterAvailableResourceResponseUnmarshaller {
 	public static ListTransitRouterAvailableResourceResponse unmarshall(ListTransitRouterAvailableResourceResponse listTransitRouterAvailableResourceResponse, UnmarshallerContext _ctx) {
 		
 		listTransitRouterAvailableResourceResponse.setRequestId(_ctx.stringValue("ListTransitRouterAvailableResourceResponse.RequestId"));
+		listTransitRouterAvailableResourceResponse.setSupportMulticast(_ctx.booleanValue("ListTransitRouterAvailableResourceResponse.SupportMulticast"));
 
 		List<String> slaveZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListTransitRouterAvailableResourceResponse.SlaveZones.Length"); i++) {
@@ -38,6 +39,12 @@ public class ListTransitRouterAvailableResourceResponseUnmarshaller {
 			masterZones.add(_ctx.stringValue("ListTransitRouterAvailableResourceResponse.MasterZones["+ i +"]"));
 		}
 		listTransitRouterAvailableResourceResponse.setMasterZones(masterZones);
+
+		List<String> availableZones = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ListTransitRouterAvailableResourceResponse.AvailableZones.Length"); i++) {
+			availableZones.add(_ctx.stringValue("ListTransitRouterAvailableResourceResponse.AvailableZones["+ i +"]"));
+		}
+		listTransitRouterAvailableResourceResponse.setAvailableZones(availableZones);
 	 
 	 	return listTransitRouterAvailableResourceResponse;
 	}

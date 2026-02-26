@@ -1,3 +1,61 @@
+2025-12-17 Version: 2.20.25
+更改上海金融云和深圳的域名
+
+2025-08-28 Version: 2.20.24
+- Generated 2015-01-01 for `R-kvstore`.
+
+2025-07-30 Version: 2.20.23
+- Backup OpenAPI update.
+
+2025-07-25 Version: 2.20.22
+- Backup OpenAPI update.
+
+2024-08-28 Version: 2.20.21
+- DescibePrice add ShardCount parameters.
+
+2024-08-05 Version: 2.20.20
+- DescibePrice add ShardCount parameters.
+
+2024-05-06 Version: 2.20.19
+- Update OpenAPI DescribeBackups BackupId and BackupJobID from int32 to int64.
+
+2024-04-07 Version: 2.20.18
+- Generated 2015-01-01 for `R-kvstore`.
+
+2024-01-18 Version: 2.20.17
+- Add DescribeClusterBackupList OpenAPI.
+
+2023-09-15 Version: 2.20.16
+- Update us-east-1 us-west-1 endpoint.
+
+2023-09-15 Version: 2.20.15
+- Update Sdk.
+
+2023-09-12 Version: 2.20.14
+- Update Sdk.
+
+2023-09-05 Version: 2.20.13
+- Update Sdk.
+
+2023-07-06 Version: 2.20.12
+- Update Sdk.
+- Add ForceTrans parameters to ModifyInstanceSpec, ModifyInstanceCapacity, DeleteShardingNode,AddShardingNode.
+
+2023-06-29 Version: 2.20.11
+- Update Sdk.
+
+2023-06-26 Version: 2.20.10
+- Update Sdk.
+
+2023-03-17 Version: 2.20.9
+- DescribeIntranetAttribute add HasPrePaidBandWidthOrderRunning return.
+
+2023-02-01 Version: 2.20.8
+- CreateTairInstance support dryrun.
+
+2022-11-18 Version: 2.20.7
+- Update python sdk.
+
 2022-05-11 Version: 2.20.6
 - Update by sdk platform.
 

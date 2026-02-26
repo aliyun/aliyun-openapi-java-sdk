@@ -129,6 +129,8 @@ public class DescribeWebPreciseAccessRuleResponse extends AcsResponse {
 
 				private String headerName;
 
+				private List<String> contentList;
+
 				public String getMatchMethod() {
 					return this.matchMethod;
 				}
@@ -159,6 +161,14 @@ public class DescribeWebPreciseAccessRuleResponse extends AcsResponse {
 
 				public void setHeaderName(String headerName) {
 					this.headerName = headerName;
+				}
+
+				public List<String> getContentList() {
+					return this.contentList;
+				}
+
+				public void setContentList(List<String> contentList) {
+					this.contentList = contentList;
 				}
 			}
 		}

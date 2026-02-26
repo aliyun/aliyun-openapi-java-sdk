@@ -22,6 +22,7 @@ import com.aliyuncs.unimkt.model.v20181212.ListTasksResponse.Data;
 import com.aliyuncs.unimkt.model.v20181212.ListTasksResponse.Data.EffectMarketingTask;
 import com.aliyuncs.unimkt.model.v20181212.ListTasksResponse.Data.EffectMarketingTask.ActualBankRegisterVO;
 import com.aliyuncs.unimkt.model.v20181212.ListTasksResponse.Data.EffectMarketingTask.PredictBankRegisterVO;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -85,6 +86,8 @@ public class ListTasksResponseUnmarshaller {
 			effectMarketingTask.setPredictInfo(_ctx.stringValue("ListTasksResponse.Data.List["+ i +"].PredictInfo"));
 			effectMarketingTask.setActualInfo(_ctx.stringValue("ListTasksResponse.Data.List["+ i +"].ActualInfo"));
 			effectMarketingTask.setCurrencyType(_ctx.longValue("ListTasksResponse.Data.List["+ i +"].CurrencyType"));
+			effectMarketingTask.setPredictCommonSceneVO(_ctx.mapValue("ListTasksResponse.Data.List["+ i +"].PredictCommonSceneVO"));
+			effectMarketingTask.setActualCommonSceneVO(_ctx.mapValue("ListTasksResponse.Data.List["+ i +"].ActualCommonSceneVO"));
 
 			PredictBankRegisterVO predictBankRegisterVO = new PredictBankRegisterVO();
 			predictBankRegisterVO.setInComingPartsNumber(_ctx.longValue("ListTasksResponse.Data.List["+ i +"].PredictBankRegisterVO.InComingPartsNumber"));

@@ -48,6 +48,8 @@ public class DescribeBenchmarkTaskResponse extends AcsResponse {
 
 	private String message;
 
+	private String endpoint;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -142,6 +144,14 @@ public class DescribeBenchmarkTaskResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getEndpoint() {
+		return this.endpoint;
+	}
+
+	public void setEndpoint(String endpoint) {
+		this.endpoint = endpoint;
 	}
 
 	@Override

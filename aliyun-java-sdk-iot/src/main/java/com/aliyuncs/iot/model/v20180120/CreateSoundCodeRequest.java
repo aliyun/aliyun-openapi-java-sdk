@@ -35,7 +35,7 @@ public class CreateSoundCodeRequest extends RpcAcsRequest<CreateSoundCodeRespons
 
 	private String openType;
 	public CreateSoundCodeRequest() {
-		super("Iot", "2018-01-20", "CreateSoundCode");
+		super("Iot", "2018-01-20", "CreateSoundCode", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

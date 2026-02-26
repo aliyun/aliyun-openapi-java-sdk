@@ -32,7 +32,7 @@ public class BatchCheckImportDeviceRequest extends RpcAcsRequest<BatchCheckImpor
 
 	private List<DeviceList> deviceLists;
 	public BatchCheckImportDeviceRequest() {
-		super("Iot", "2018-01-20", "BatchCheckImportDevice");
+		super("Iot", "2018-01-20", "BatchCheckImportDevice", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -70,9 +70,9 @@ public class BatchCheckImportDeviceRequest extends RpcAcsRequest<BatchCheckImpor
 		this.deviceLists = deviceLists;	
 		if (deviceLists != null) {
 			for (int depth1 = 0; depth1 < deviceLists.size(); depth1++) {
-				putQueryParameter("DeviceList." + (depth1 + 1) + ".DeviceSecret" , deviceLists.get(depth1).getDeviceSecret());
-				putQueryParameter("DeviceList." + (depth1 + 1) + ".DeviceName" , deviceLists.get(depth1).getDeviceName());
-				putQueryParameter("DeviceList." + (depth1 + 1) + ".Sn" , deviceLists.get(depth1).getSn());
+				putBodyParameter("DeviceList." + (depth1 + 1) + ".DeviceSecret" , deviceLists.get(depth1).getDeviceSecret());
+				putBodyParameter("DeviceList." + (depth1 + 1) + ".DeviceName" , deviceLists.get(depth1).getDeviceName());
+				putBodyParameter("DeviceList." + (depth1 + 1) + ".Sn" , deviceLists.get(depth1).getSn());
 			}
 		}	
 	}

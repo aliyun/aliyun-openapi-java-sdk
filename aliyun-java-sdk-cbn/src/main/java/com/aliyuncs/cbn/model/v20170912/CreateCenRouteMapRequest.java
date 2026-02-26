@@ -32,6 +32,8 @@ public class CreateCenRouteMapRequest extends RpcAcsRequest<CreateCenRouteMapRes
 
 	private String mapResult;
 
+	private List<String> destinationRegionIdss;
+
 	private Integer nextPriority;
 
 	private List<String> destinationCidrBlockss;
@@ -92,7 +94,7 @@ public class CreateCenRouteMapRequest extends RpcAcsRequest<CreateCenRouteMapRes
 
 	private String cenRegionId;
 	public CreateCenRouteMapRequest() {
-		super("Cbn", "2017-09-12", "CreateCenRouteMap");
+		super("Cbn", "2017-09-12", "CreateCenRouteMap", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -131,6 +133,19 @@ public class CreateCenRouteMapRequest extends RpcAcsRequest<CreateCenRouteMapRes
 		if(mapResult != null){
 			putQueryParameter("MapResult", mapResult);
 		}
+	}
+
+	public List<String> getDestinationRegionIdss() {
+		return this.destinationRegionIdss;
+	}
+
+	public void setDestinationRegionIdss(List<String> destinationRegionIdss) {
+		this.destinationRegionIdss = destinationRegionIdss;	
+		if (destinationRegionIdss != null) {
+			for (int i = 0; i < destinationRegionIdss.size(); i++) {
+				putQueryParameter("DestinationRegionIds." + (i + 1) , destinationRegionIdss.get(i));
+			}
+		}	
 	}
 
 	public Integer getNextPriority() {

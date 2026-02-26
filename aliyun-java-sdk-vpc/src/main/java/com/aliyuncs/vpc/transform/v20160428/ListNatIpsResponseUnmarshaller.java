@@ -36,6 +36,7 @@ public class ListNatIpsResponseUnmarshaller {
 			NatIp natIp = new NatIp();
 			natIp.setIsDefault(_ctx.booleanValue("ListNatIpsResponse.NatIps["+ i +"].IsDefault"));
 			natIp.setNatIp(_ctx.stringValue("ListNatIpsResponse.NatIps["+ i +"].NatIp"));
+			natIp.setIpv4Prefix(_ctx.stringValue("ListNatIpsResponse.NatIps["+ i +"].Ipv4Prefix"));
 			natIp.setNatIpCidr(_ctx.stringValue("ListNatIpsResponse.NatIps["+ i +"].NatIpCidr"));
 			natIp.setNatIpId(_ctx.stringValue("ListNatIpsResponse.NatIps["+ i +"].NatIpId"));
 			natIp.setNatIpDescription(_ctx.stringValue("ListNatIpsResponse.NatIps["+ i +"].NatIpDescription"));

@@ -31,7 +31,7 @@ public class ListQuotaReviewTasksRequest extends RoaAcsRequest<ListQuotaReviewTa
 
 	private Integer pageNumber;
 	public ListQuotaReviewTasksRequest() {
-		super("OpenSearch", "2017-12-25", "ListQuotaReviewTasks", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListQuotaReviewTasks");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/quota-review-tasks");
 		setMethod(MethodType.GET);
 		try {

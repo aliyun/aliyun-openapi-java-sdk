@@ -15,6 +15,7 @@
 package com.aliyuncs.alb.model.v20200616;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.alb.Endpoint;
 
@@ -30,6 +31,8 @@ public class CreateAclRequest extends RpcAcsRequest<CreateAclResponse> {
 	private String clientToken;
 
 	private String resourceGroupId;
+
+	private List<Tag> tag;
 
 	private Boolean dryRun;
 	public CreateAclRequest() {
@@ -74,6 +77,23 @@ public class CreateAclRequest extends RpcAcsRequest<CreateAclResponse> {
 		}
 	}
 
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
+				if (tag.get(depth1) != null) {
+					
+						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
+						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
+				}
+			}
+		}	
+	}
+
 	public Boolean getDryRun() {
 		return this.dryRun;
 	}
@@ -82,6 +102,29 @@ public class CreateAclRequest extends RpcAcsRequest<CreateAclResponse> {
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

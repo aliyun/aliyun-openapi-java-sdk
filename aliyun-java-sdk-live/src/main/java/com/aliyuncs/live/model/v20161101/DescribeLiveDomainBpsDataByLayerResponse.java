@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveDomainBpsDataByLayerResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dataInterval;
 
+	private String requestId;
+
 	private List<DataModule> bpsDataInterval;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDataInterval() {
 		return this.dataInterval;
@@ -45,6 +37,14 @@ public class DescribeLiveDomainBpsDataByLayerResponse extends AcsResponse {
 
 	public void setDataInterval(String dataInterval) {
 		this.dataInterval = dataInterval;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DataModule> getBpsDataInterval() {
@@ -59,9 +59,9 @@ public class DescribeLiveDomainBpsDataByLayerResponse extends AcsResponse {
 
 		private String timeStamp;
 
-		private String value;
-
 		private String trafficValue;
+
+		private String value;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -71,20 +71,20 @@ public class DescribeLiveDomainBpsDataByLayerResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
 		public String getTrafficValue() {
 			return this.trafficValue;
 		}
 
 		public void setTrafficValue(String trafficValue) {
 			this.trafficValue = trafficValue;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

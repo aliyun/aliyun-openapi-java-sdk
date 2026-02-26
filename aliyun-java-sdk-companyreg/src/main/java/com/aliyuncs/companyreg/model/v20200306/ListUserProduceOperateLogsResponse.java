@@ -111,6 +111,8 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 
 		private String bizType;
 
+		private String note;
+
 		public Long getOperateTime() {
 			return this.operateTime;
 		}
@@ -165,6 +167,14 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 
 		public void setBizType(String bizType) {
 			this.bizType = bizType;
+		}
+
+		public String getNote() {
+			return this.note;
+		}
+
+		public void setNote(String note) {
+			this.note = note;
 		}
 	}
 

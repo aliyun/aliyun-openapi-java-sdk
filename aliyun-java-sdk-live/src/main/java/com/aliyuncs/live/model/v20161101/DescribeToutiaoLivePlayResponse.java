@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeToutiaoLivePlayResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String description;
 
+	private String requestId;
+
 	private List<ContentItem> content;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDescription() {
 		return this.description;
@@ -45,6 +37,14 @@ public class DescribeToutiaoLivePlayResponse extends AcsResponse {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ContentItem> getContent() {
@@ -57,26 +57,26 @@ public class DescribeToutiaoLivePlayResponse extends AcsResponse {
 
 	public static class ContentItem {
 
-		private String app;
+		private String domain;
 
 		private Float bandwidth;
 
-		private String cdnName;
+		private String streamName;
 
-		private String domain;
+		private String app;
 
 		private Long playNum;
 
-		private String streamName;
-
 		private Long timestamp;
 
-		public String getApp() {
-			return this.app;
+		private String cdnName;
+
+		public String getDomain() {
+			return this.domain;
 		}
 
-		public void setApp(String app) {
-			this.app = app;
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 
 		public Float getBandwidth() {
@@ -87,20 +87,20 @@ public class DescribeToutiaoLivePlayResponse extends AcsResponse {
 			this.bandwidth = bandwidth;
 		}
 
-		public String getCdnName() {
-			return this.cdnName;
+		public String getStreamName() {
+			return this.streamName;
 		}
 
-		public void setCdnName(String cdnName) {
-			this.cdnName = cdnName;
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
 		}
 
-		public String getDomain() {
-			return this.domain;
+		public String getApp() {
+			return this.app;
 		}
 
-		public void setDomain(String domain) {
-			this.domain = domain;
+		public void setApp(String app) {
+			this.app = app;
 		}
 
 		public Long getPlayNum() {
@@ -111,20 +111,20 @@ public class DescribeToutiaoLivePlayResponse extends AcsResponse {
 			this.playNum = playNum;
 		}
 
-		public String getStreamName() {
-			return this.streamName;
-		}
-
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
-		}
-
 		public Long getTimestamp() {
 			return this.timestamp;
 		}
 
 		public void setTimestamp(Long timestamp) {
 			this.timestamp = timestamp;
+		}
+
+		public String getCdnName() {
+			return this.cdnName;
+		}
+
+		public void setCdnName(String cdnName) {
+			this.cdnName = cdnName;
 		}
 	}
 

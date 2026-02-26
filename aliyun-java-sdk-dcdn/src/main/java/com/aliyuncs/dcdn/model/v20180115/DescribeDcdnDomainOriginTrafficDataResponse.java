@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnDomainOriginTrafficDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String startTime;
-
-	private String endTime;
-
 	private String dataInterval;
 
 	private List<DataModule> originTrafficDataPerInterval;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeDcdnDomainOriginTrafficDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public String getDataInterval() {
@@ -87,24 +87,32 @@ public class DescribeDcdnDomainOriginTrafficDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
-
-		private Float originTraffic;
-
 		private Float dynamicHttpOriginTraffic;
-
-		private Float dynamicHttpsOriginTraffic;
-
-		private Float staticHttpOriginTraffic;
 
 		private Float staticHttpsOriginTraffic;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
+		private Float originTraffic;
+
+		private Float staticHttpOriginTraffic;
+
+		private Float dynamicHttpsOriginTraffic;
+
+		private String timeStamp;
+
+		public Float getDynamicHttpOriginTraffic() {
+			return this.dynamicHttpOriginTraffic;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
+		public void setDynamicHttpOriginTraffic(Float dynamicHttpOriginTraffic) {
+			this.dynamicHttpOriginTraffic = dynamicHttpOriginTraffic;
+		}
+
+		public Float getStaticHttpsOriginTraffic() {
+			return this.staticHttpsOriginTraffic;
+		}
+
+		public void setStaticHttpsOriginTraffic(Float staticHttpsOriginTraffic) {
+			this.staticHttpsOriginTraffic = staticHttpsOriginTraffic;
 		}
 
 		public Float getOriginTraffic() {
@@ -115,12 +123,12 @@ public class DescribeDcdnDomainOriginTrafficDataResponse extends AcsResponse {
 			this.originTraffic = originTraffic;
 		}
 
-		public Float getDynamicHttpOriginTraffic() {
-			return this.dynamicHttpOriginTraffic;
+		public Float getStaticHttpOriginTraffic() {
+			return this.staticHttpOriginTraffic;
 		}
 
-		public void setDynamicHttpOriginTraffic(Float dynamicHttpOriginTraffic) {
-			this.dynamicHttpOriginTraffic = dynamicHttpOriginTraffic;
+		public void setStaticHttpOriginTraffic(Float staticHttpOriginTraffic) {
+			this.staticHttpOriginTraffic = staticHttpOriginTraffic;
 		}
 
 		public Float getDynamicHttpsOriginTraffic() {
@@ -131,20 +139,12 @@ public class DescribeDcdnDomainOriginTrafficDataResponse extends AcsResponse {
 			this.dynamicHttpsOriginTraffic = dynamicHttpsOriginTraffic;
 		}
 
-		public Float getStaticHttpOriginTraffic() {
-			return this.staticHttpOriginTraffic;
+		public String getTimeStamp() {
+			return this.timeStamp;
 		}
 
-		public void setStaticHttpOriginTraffic(Float staticHttpOriginTraffic) {
-			this.staticHttpOriginTraffic = staticHttpOriginTraffic;
-		}
-
-		public Float getStaticHttpsOriginTraffic() {
-			return this.staticHttpsOriginTraffic;
-		}
-
-		public void setStaticHttpsOriginTraffic(Float staticHttpsOriginTraffic) {
-			this.staticHttpsOriginTraffic = staticHttpsOriginTraffic;
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

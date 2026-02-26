@@ -59,15 +59,39 @@ public class SearchImageResponse extends AcsResponse {
 
 		public static class MatchListItem {
 
+			private String imageUrl;
+
+			private String entityId;
+
+			private Float score;
+
 			private String dataId;
 
 			private String extraData;
 
-			private String entityId;
+			public String getImageUrl() {
+				return this.imageUrl;
+			}
 
-			private String imageUrl;
+			public void setImageUrl(String imageUrl) {
+				this.imageUrl = imageUrl;
+			}
 
-			private Float score;
+			public String getEntityId() {
+				return this.entityId;
+			}
+
+			public void setEntityId(String entityId) {
+				this.entityId = entityId;
+			}
+
+			public Float getScore() {
+				return this.score;
+			}
+
+			public void setScore(Float score) {
+				this.score = score;
+			}
 
 			public String getDataId() {
 				return this.dataId;
@@ -83,30 +107,6 @@ public class SearchImageResponse extends AcsResponse {
 
 			public void setExtraData(String extraData) {
 				this.extraData = extraData;
-			}
-
-			public String getEntityId() {
-				return this.entityId;
-			}
-
-			public void setEntityId(String entityId) {
-				this.entityId = entityId;
-			}
-
-			public String getImageUrl() {
-				return this.imageUrl;
-			}
-
-			public void setImageUrl(String imageUrl) {
-				this.imageUrl = imageUrl;
-			}
-
-			public Float getScore() {
-				return this.score;
-			}
-
-			public void setScore(Float score) {
-				this.score = score;
 			}
 		}
 	}

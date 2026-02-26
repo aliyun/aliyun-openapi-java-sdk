@@ -25,11 +25,15 @@ import com.aliyuncs.videoenhan.Endpoint;
 public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse> {
 	   
 
-	private String postURL;
-
 	private String referenceURL;
 
+	private String watermarkType;
+
+	private Boolean enhance;
+
 	private String videoURL;
+
+	private Boolean addWatermark;
 	public MergeVideoFaceRequest() {
 		super("videoenhan", "2020-03-20", "MergeVideoFace", "videoenhan");
 		setMethod(MethodType.POST);
@@ -37,17 +41,6 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getPostURL() {
-		return this.postURL;
-	}
-
-	public void setPostURL(String postURL) {
-		this.postURL = postURL;
-		if(postURL != null){
-			putBodyParameter("PostURL", postURL);
-		}
 	}
 
 	public String getReferenceURL() {
@@ -61,6 +54,28 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 		}
 	}
 
+	public String getWatermarkType() {
+		return this.watermarkType;
+	}
+
+	public void setWatermarkType(String watermarkType) {
+		this.watermarkType = watermarkType;
+		if(watermarkType != null){
+			putBodyParameter("WatermarkType", watermarkType);
+		}
+	}
+
+	public Boolean getEnhance() {
+		return this.enhance;
+	}
+
+	public void setEnhance(Boolean enhance) {
+		this.enhance = enhance;
+		if(enhance != null){
+			putBodyParameter("Enhance", enhance.toString());
+		}
+	}
+
 	public String getVideoURL() {
 		return this.videoURL;
 	}
@@ -69,6 +84,17 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 		this.videoURL = videoURL;
 		if(videoURL != null){
 			putBodyParameter("VideoURL", videoURL);
+		}
+	}
+
+	public Boolean getAddWatermark() {
+		return this.addWatermark;
+	}
+
+	public void setAddWatermark(Boolean addWatermark) {
+		this.addWatermark = addWatermark;
+		if(addWatermark != null){
+			putBodyParameter("AddWatermark", addWatermark.toString());
 		}
 	}
 

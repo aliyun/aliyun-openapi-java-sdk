@@ -19,7 +19,10 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterVpcAttachmentsResponse;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachment;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachment.Options;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachment.Tag;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachment.ZoneMapping;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,7 +49,17 @@ public class ListTransitRouterVpcAttachmentsResponseUnmarshaller {
 			transitRouterAttachment.setVpcRegionId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].VpcRegionId"));
 			transitRouterAttachment.setTransitRouterAttachmentName(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName"));
 			transitRouterAttachment.setServiceMode(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ServiceMode"));
+			transitRouterAttachment.setAutoPublishRouteEnabled(_ctx.booleanValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].AutoPublishRouteEnabled"));
 			transitRouterAttachment.setChargeType(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ChargeType"));
+			transitRouterAttachment.setOrderType(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].OrderType"));
+			transitRouterAttachment.setManagedService(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ManagedService"));
+			transitRouterAttachment.setTransitRouterVPCAttachmentOptions(_ctx.mapValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterVPCAttachmentOptions"));
+			transitRouterAttachment.setCenId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].CenId"));
+
+			Options options = new Options();
+			options.setIpv6Support(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].Options.Ipv6Support"));
+			options.setApplianceModeSupport(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].Options.ApplianceModeSupport"));
+			transitRouterAttachment.setOptions(options);
 
 			List<ZoneMapping> zoneMappings = new ArrayList<ZoneMapping>();
 			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ZoneMappings.Length"); j++) {
@@ -58,6 +71,16 @@ public class ListTransitRouterVpcAttachmentsResponseUnmarshaller {
 				zoneMappings.add(zoneMapping);
 			}
 			transitRouterAttachment.setZoneMappings(zoneMappings);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			transitRouterAttachment.setTags(tags);
 
 			transitRouterAttachments.add(transitRouterAttachment);
 		}

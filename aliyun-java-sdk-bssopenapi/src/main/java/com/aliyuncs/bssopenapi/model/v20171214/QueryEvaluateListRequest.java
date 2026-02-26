@@ -54,7 +54,7 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 
 	private String startBizTime;
 	public QueryEvaluateListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryEvaluateList");
+		super("BssOpenApi", "2017-12-14", "QueryEvaluateList", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

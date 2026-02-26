@@ -30,6 +30,8 @@ public class TempModifyDBNodeRequest extends RpcAcsRequest<TempModifyDBNodeRespo
 
 	private String clientToken;
 
+	private Boolean autoUseCoupon;
+
 	private String restoreTime;
 
 	private String resourceOwnerAccount;
@@ -42,11 +44,13 @@ public class TempModifyDBNodeRequest extends RpcAcsRequest<TempModifyDBNodeRespo
 
 	private Long ownerId;
 
+	private String promotionCode;
+
 	private String modifyType;
 
 	private List<DBNode> dBNodes;
 	public TempModifyDBNodeRequest() {
-		super("polardb", "2017-08-01", "TempModifyDBNode");
+		super("polardb", "2017-08-01", "TempModifyDBNode", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,6 +77,17 @@ public class TempModifyDBNodeRequest extends RpcAcsRequest<TempModifyDBNodeRespo
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 
@@ -139,6 +154,17 @@ public class TempModifyDBNodeRequest extends RpcAcsRequest<TempModifyDBNodeRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPromotionCode() {
+		return this.promotionCode;
+	}
+
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+		if(promotionCode != null){
+			putQueryParameter("PromotionCode", promotionCode);
 		}
 	}
 

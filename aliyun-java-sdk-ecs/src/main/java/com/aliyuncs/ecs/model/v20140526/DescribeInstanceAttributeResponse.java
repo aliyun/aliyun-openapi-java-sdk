@@ -75,6 +75,10 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	private String creditSpecification;
 
+	private Boolean enableJumboFrame;
+
+	private Boolean enableNetworkEncryption;
+
 	private List<LockReason> operationLocks;
 
 	private List<String> securityGroupIds;
@@ -88,6 +92,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 	private EipAddress eipAddress;
 
 	private DedicatedHostAttribute dedicatedHostAttribute;
+
+	private NetworkOptions networkOptions;
 
 	public String getStatus() {
 		return this.status;
@@ -289,6 +295,22 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 		this.creditSpecification = creditSpecification;
 	}
 
+	public Boolean getEnableJumboFrame() {
+		return this.enableJumboFrame;
+	}
+
+	public void setEnableJumboFrame(Boolean enableJumboFrame) {
+		this.enableJumboFrame = enableJumboFrame;
+	}
+
+	public Boolean getEnableNetworkEncryption() {
+		return this.enableNetworkEncryption;
+	}
+
+	public void setEnableNetworkEncryption(Boolean enableNetworkEncryption) {
+		this.enableNetworkEncryption = enableNetworkEncryption;
+	}
+
 	public List<LockReason> getOperationLocks() {
 		return this.operationLocks;
 	}
@@ -343,6 +365,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	public void setDedicatedHostAttribute(DedicatedHostAttribute dedicatedHostAttribute) {
 		this.dedicatedHostAttribute = dedicatedHostAttribute;
+	}
+
+	public NetworkOptions getNetworkOptions() {
+		return this.networkOptions;
+	}
+
+	public void setNetworkOptions(NetworkOptions networkOptions) {
+		this.networkOptions = networkOptions;
 	}
 
 	public static class LockReason {
@@ -464,6 +494,39 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setDedicatedHostId(String dedicatedHostId) {
 			this.dedicatedHostId = dedicatedHostId;
+		}
+	}
+
+	public static class NetworkOptions {
+
+		private Boolean enableJumboFrame;
+
+		private Boolean enableNetworkEncryption;
+
+		private String bandwidthWeighting;
+
+		public Boolean getEnableJumboFrame() {
+			return this.enableJumboFrame;
+		}
+
+		public void setEnableJumboFrame(Boolean enableJumboFrame) {
+			this.enableJumboFrame = enableJumboFrame;
+		}
+
+		public Boolean getEnableNetworkEncryption() {
+			return this.enableNetworkEncryption;
+		}
+
+		public void setEnableNetworkEncryption(Boolean enableNetworkEncryption) {
+			this.enableNetworkEncryption = enableNetworkEncryption;
+		}
+
+		public String getBandwidthWeighting() {
+			return this.bandwidthWeighting;
+		}
+
+		public void setBandwidthWeighting(String bandwidthWeighting) {
+			this.bandwidthWeighting = bandwidthWeighting;
 		}
 	}
 

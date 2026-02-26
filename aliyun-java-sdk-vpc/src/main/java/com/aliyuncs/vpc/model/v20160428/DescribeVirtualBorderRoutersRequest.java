@@ -30,11 +30,17 @@ public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeV
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
+
+	private Boolean includeCrossAccountVbr;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+
+	private List<Tags> tagss;
 
 	private List<Filter> filters;
 	public DescribeVirtualBorderRoutersRequest() {
@@ -68,6 +74,17 @@ public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeV
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -76,6 +93,17 @@ public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeV
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Boolean getIncludeCrossAccountVbr() {
+		return this.includeCrossAccountVbr;
+	}
+
+	public void setIncludeCrossAccountVbr(Boolean includeCrossAccountVbr) {
+		this.includeCrossAccountVbr = includeCrossAccountVbr;
+		if(includeCrossAccountVbr != null){
+			putQueryParameter("IncludeCrossAccountVbr", includeCrossAccountVbr.toString());
 		}
 	}
 
@@ -101,6 +129,20 @@ public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeV
 		}
 	}
 
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public List<Filter> getFilters() {
 		return this.filters;
 	}
@@ -117,6 +159,29 @@ public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeV
 				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	public static class Filter {

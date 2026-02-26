@@ -81,8 +81,14 @@ public class AddCasesRequest extends RpcAcsRequest<AddCasesResponse> {
 		@SerializedName("CustomVariables")
 		private String customVariables;
 
+		@SerializedName("Caller")
+		private String caller;
+
 		@SerializedName("PhoneNumber")
 		private String phoneNumber;
+
+		@SerializedName("MaskedCallee")
+		private String maskedCallee;
 
 		@SerializedName("ReferenceId")
 		private String referenceId;
@@ -95,12 +101,28 @@ public class AddCasesRequest extends RpcAcsRequest<AddCasesResponse> {
 			this.customVariables = customVariables;
 		}
 
+		public String getCaller() {
+			return this.caller;
+		}
+
+		public void setCaller(String caller) {
+			this.caller = caller;
+		}
+
 		public String getPhoneNumber() {
 			return this.phoneNumber;
 		}
 
 		public void setPhoneNumber(String phoneNumber) {
 			this.phoneNumber = phoneNumber;
+		}
+
+		public String getMaskedCallee() {
+			return this.maskedCallee;
+		}
+
+		public void setMaskedCallee(String maskedCallee) {
+			this.maskedCallee = maskedCallee;
 		}
 
 		public String getReferenceId() {

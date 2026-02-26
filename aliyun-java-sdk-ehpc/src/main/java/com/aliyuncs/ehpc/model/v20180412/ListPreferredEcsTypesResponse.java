@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPreferredEcsTypesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean supportSpotInstance;
 
+	private String requestId;
+
 	private List<SeriesInfo> series;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSupportSpotInstance() {
 		return this.supportSpotInstance;
@@ -45,6 +37,14 @@ public class ListPreferredEcsTypesResponse extends AcsResponse {
 
 	public void setSupportSpotInstance(Boolean supportSpotInstance) {
 		this.supportSpotInstance = supportSpotInstance;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<SeriesInfo> getSeries() {
@@ -57,19 +57,11 @@ public class ListPreferredEcsTypesResponse extends AcsResponse {
 
 	public static class SeriesInfo {
 
-		private String seriesId;
-
 		private String seriesName;
 
+		private String seriesId;
+
 		private Roles roles;
-
-		public String getSeriesId() {
-			return this.seriesId;
-		}
-
-		public void setSeriesId(String seriesId) {
-			this.seriesId = seriesId;
-		}
 
 		public String getSeriesName() {
 			return this.seriesName;
@@ -77,6 +69,14 @@ public class ListPreferredEcsTypesResponse extends AcsResponse {
 
 		public void setSeriesName(String seriesName) {
 			this.seriesName = seriesName;
+		}
+
+		public String getSeriesId() {
+			return this.seriesId;
+		}
+
+		public void setSeriesId(String seriesId) {
+			this.seriesId = seriesId;
 		}
 
 		public Roles getRoles() {

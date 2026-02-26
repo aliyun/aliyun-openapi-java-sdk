@@ -24,10 +24,12 @@ public class ChangeVideoSizeResponseUnmarshaller {
 	public static ChangeVideoSizeResponse unmarshall(ChangeVideoSizeResponse changeVideoSizeResponse, UnmarshallerContext _ctx) {
 		
 		changeVideoSizeResponse.setRequestId(_ctx.stringValue("ChangeVideoSizeResponse.RequestId"));
+		changeVideoSizeResponse.setCode(_ctx.stringValue("ChangeVideoSizeResponse.Code"));
+		changeVideoSizeResponse.setMessage(_ctx.stringValue("ChangeVideoSizeResponse.Message"));
 
 		Data data = new Data();
-		data.setVideoUrl(_ctx.stringValue("ChangeVideoSizeResponse.Data.VideoUrl"));
 		data.setVideoCoverUrl(_ctx.stringValue("ChangeVideoSizeResponse.Data.VideoCoverUrl"));
+		data.setVideoUrl(_ctx.stringValue("ChangeVideoSizeResponse.Data.VideoUrl"));
 		changeVideoSizeResponse.setData(data);
 	 
 	 	return changeVideoSizeResponse;

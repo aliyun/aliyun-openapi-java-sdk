@@ -24,6 +24,7 @@ public class GenerateExecutionPolicyResponseUnmarshaller {
 		
 		generateExecutionPolicyResponse.setRequestId(_ctx.stringValue("GenerateExecutionPolicyResponse.RequestId"));
 		generateExecutionPolicyResponse.setPolicy(_ctx.stringValue("GenerateExecutionPolicyResponse.Policy"));
+		generateExecutionPolicyResponse.setMissingPolicy(_ctx.stringValue("GenerateExecutionPolicyResponse.MissingPolicy"));
 	 
 	 	return generateExecutionPolicyResponse;
 	}

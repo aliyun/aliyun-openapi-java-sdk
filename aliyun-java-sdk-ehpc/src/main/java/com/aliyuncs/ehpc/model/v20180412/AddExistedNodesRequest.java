@@ -30,15 +30,13 @@ public class AddExistedNodesRequest extends RpcAcsRequest<AddExistedNodesRespons
 
 	private List<Instance> instances;
 
-	private String clientToken;
-
 	private String clusterId;
 
 	private String jobQueue;
 
 	private String imageOwnerAlias;
 	public AddExistedNodesRequest() {
-		super("EHPC", "2018-04-12", "AddExistedNodes");
+		super("EHPC", "2018-04-12", "AddExistedNodes", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,17 +66,6 @@ public class AddExistedNodesRequest extends RpcAcsRequest<AddExistedNodesRespons
 				putQueryParameter("Instance." + (depth1 + 1) + ".Id" , instances.get(depth1).getId());
 			}
 		}	
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getClusterId() {

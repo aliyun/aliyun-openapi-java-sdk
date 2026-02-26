@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDNSSLBSubDomainsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<SlbSubDomain> slbSubDomains;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeDNSSLBSubDomainsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<SlbSubDomain> getSlbSubDomains() {
@@ -77,22 +77,22 @@ public class DescribeDNSSLBSubDomainsResponse extends AcsResponse {
 
 	public static class SlbSubDomain {
 
-		private String subDomain;
+		private String type;
 
 		private Long recordCount;
 
 		private Boolean open;
 
-		private String type;
+		private String subDomain;
 
 		private List<LineAlgorithm> lineAlgorithms;
 
-		public String getSubDomain() {
-			return this.subDomain;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setSubDomain(String subDomain) {
-			this.subDomain = subDomain;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public Long getRecordCount() {
@@ -111,12 +111,12 @@ public class DescribeDNSSLBSubDomainsResponse extends AcsResponse {
 			this.open = open;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getSubDomain() {
+			return this.subDomain;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setSubDomain(String subDomain) {
+			this.subDomain = subDomain;
 		}
 
 		public List<LineAlgorithm> getLineAlgorithms() {

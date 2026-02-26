@@ -25,6 +25,8 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWarningsResponse> {
 	   
 
+	private String containerName;
+
 	private String uuid;
 
 	private String checkType;
@@ -40,6 +42,8 @@ public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWar
 	private Integer currentPage;
 
 	private Long riskId;
+
+	private Integer riskStatus;
 	public DescribeCheckWarningsRequest() {
 		super("Sas", "2018-12-03", "DescribeCheckWarnings");
 		setMethod(MethodType.POST);
@@ -47,6 +51,17 @@ public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWar
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getContainerName() {
+		return this.containerName;
+	}
+
+	public void setContainerName(String containerName) {
+		this.containerName = containerName;
+		if(containerName != null){
+			putQueryParameter("ContainerName", containerName);
+		}
 	}
 
 	public String getUuid() {
@@ -134,6 +149,17 @@ public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWar
 		this.riskId = riskId;
 		if(riskId != null){
 			putQueryParameter("RiskId", riskId.toString());
+		}
+	}
+
+	public Integer getRiskStatus() {
+		return this.riskStatus;
+	}
+
+	public void setRiskStatus(Integer riskStatus) {
+		this.riskStatus = riskStatus;
+		if(riskStatus != null){
+			putQueryParameter("RiskStatus", riskStatus.toString());
 		}
 	}
 

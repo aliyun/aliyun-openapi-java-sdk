@@ -15,24 +15,37 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CheckTransferInFeasibilityRequest extends RpcAcsRequest<CheckTransferInFeasibilityResponse> {
-	
-	public CheckTransferInFeasibilityRequest() {
-		super("Domain-intl", "2017-12-18", "CheckTransferInFeasibility", "domain");
-	}
+	   
+
+	private String domainName;
 
 	private String transferAuthorizationCode;
 
 	private String userClientIp;
 
-	private String domainName;
-
 	private String lang;
+	public CheckTransferInFeasibilityRequest() {
+		super("Domain-intl", "2017-12-18", "CheckTransferInFeasibility");
+		setMethod(MethodType.POST);
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
 
 	public String getTransferAuthorizationCode() {
 		return this.transferAuthorizationCode;
@@ -53,17 +66,6 @@ public class CheckTransferInFeasibilityRequest extends RpcAcsRequest<CheckTransf
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 

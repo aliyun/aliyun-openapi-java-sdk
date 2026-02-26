@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnDomainRegionDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
 	private String dataInterval;
 
-	private String startTime;
-
-	private String endTime;
-
 	private List<RegionProportionData> value;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,22 +77,6 @@ public class DescribeDcdnDomainRegionDataResponse extends AcsResponse {
 		this.dataInterval = dataInterval;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
 	public List<RegionProportionData> getValue() {
 		return this.value;
 	}
@@ -87,75 +87,27 @@ public class DescribeDcdnDomainRegionDataResponse extends AcsResponse {
 
 	public static class RegionProportionData {
 
-		private String region;
-
-		private String proportion;
-
-		private String regionEname;
-
-		private String avgObjectSize;
-
-		private String avgResponseTime;
-
-		private String bps;
-
 		private String qps;
-
-		private String avgResponseRate;
-
-		private String totalBytes;
-
-		private String bytesProportion;
 
 		private String totalQuery;
 
-		public String getRegion() {
-			return this.region;
-		}
+		private String totalBytes;
 
-		public void setRegion(String region) {
-			this.region = region;
-		}
+		private String regionEname;
 
-		public String getProportion() {
-			return this.proportion;
-		}
+		private String region;
 
-		public void setProportion(String proportion) {
-			this.proportion = proportion;
-		}
+		private String avgResponseRate;
 
-		public String getRegionEname() {
-			return this.regionEname;
-		}
+		private String avgResponseTime;
 
-		public void setRegionEname(String regionEname) {
-			this.regionEname = regionEname;
-		}
+		private String proportion;
 
-		public String getAvgObjectSize() {
-			return this.avgObjectSize;
-		}
+		private String avgObjectSize;
 
-		public void setAvgObjectSize(String avgObjectSize) {
-			this.avgObjectSize = avgObjectSize;
-		}
+		private String bps;
 
-		public String getAvgResponseTime() {
-			return this.avgResponseTime;
-		}
-
-		public void setAvgResponseTime(String avgResponseTime) {
-			this.avgResponseTime = avgResponseTime;
-		}
-
-		public String getBps() {
-			return this.bps;
-		}
-
-		public void setBps(String bps) {
-			this.bps = bps;
-		}
+		private String bytesProportion;
 
 		public String getQps() {
 			return this.qps;
@@ -165,12 +117,12 @@ public class DescribeDcdnDomainRegionDataResponse extends AcsResponse {
 			this.qps = qps;
 		}
 
-		public String getAvgResponseRate() {
-			return this.avgResponseRate;
+		public String getTotalQuery() {
+			return this.totalQuery;
 		}
 
-		public void setAvgResponseRate(String avgResponseRate) {
-			this.avgResponseRate = avgResponseRate;
+		public void setTotalQuery(String totalQuery) {
+			this.totalQuery = totalQuery;
 		}
 
 		public String getTotalBytes() {
@@ -181,20 +133,68 @@ public class DescribeDcdnDomainRegionDataResponse extends AcsResponse {
 			this.totalBytes = totalBytes;
 		}
 
+		public String getRegionEname() {
+			return this.regionEname;
+		}
+
+		public void setRegionEname(String regionEname) {
+			this.regionEname = regionEname;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getAvgResponseRate() {
+			return this.avgResponseRate;
+		}
+
+		public void setAvgResponseRate(String avgResponseRate) {
+			this.avgResponseRate = avgResponseRate;
+		}
+
+		public String getAvgResponseTime() {
+			return this.avgResponseTime;
+		}
+
+		public void setAvgResponseTime(String avgResponseTime) {
+			this.avgResponseTime = avgResponseTime;
+		}
+
+		public String getProportion() {
+			return this.proportion;
+		}
+
+		public void setProportion(String proportion) {
+			this.proportion = proportion;
+		}
+
+		public String getAvgObjectSize() {
+			return this.avgObjectSize;
+		}
+
+		public void setAvgObjectSize(String avgObjectSize) {
+			this.avgObjectSize = avgObjectSize;
+		}
+
+		public String getBps() {
+			return this.bps;
+		}
+
+		public void setBps(String bps) {
+			this.bps = bps;
+		}
+
 		public String getBytesProportion() {
 			return this.bytesProportion;
 		}
 
 		public void setBytesProportion(String bytesProportion) {
 			this.bytesProportion = bytesProportion;
-		}
-
-		public String getTotalQuery() {
-			return this.totalQuery;
-		}
-
-		public void setTotalQuery(String totalQuery) {
-			this.totalQuery = totalQuery;
 		}
 	}
 

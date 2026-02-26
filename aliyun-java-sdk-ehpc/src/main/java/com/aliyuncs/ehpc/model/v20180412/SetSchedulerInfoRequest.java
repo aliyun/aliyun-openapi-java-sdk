@@ -34,7 +34,7 @@ public class SetSchedulerInfoRequest extends RpcAcsRequest<SetSchedulerInfoRespo
 
 	private List<PbsInfo> pbsInfos;
 	public SetSchedulerInfoRequest() {
-		super("EHPC", "2018-04-12", "SetSchedulerInfo");
+		super("EHPC", "2018-04-12", "SetSchedulerInfo", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -89,8 +89,16 @@ public class SetSchedulerInfoRequest extends RpcAcsRequest<SetSchedulerInfoRespo
 		if (pbsInfos != null) {
 			for (int depth1 = 0; depth1 < pbsInfos.size(); depth1++) {
 				putQueryParameter("PbsInfo." + (depth1 + 1) + ".SchedInterval" , pbsInfos.get(depth1).getSchedInterval());
+				putQueryParameter("PbsInfo." + (depth1 + 1) + ".SchedMaxJobs" , pbsInfos.get(depth1).getSchedMaxJobs());
+				if (pbsInfos.get(depth1).getAclLimits() != null) {
+					for (int depth2 = 0; depth2 < pbsInfos.get(depth1).getAclLimits().size(); depth2++) {
+						putQueryParameter("PbsInfo." + (depth1 + 1) + ".AclLimit." + (depth2 + 1) + ".AclUsers" , pbsInfos.get(depth1).getAclLimits().get(depth2).getAclUsers());
+						putQueryParameter("PbsInfo." + (depth1 + 1) + ".AclLimit." + (depth2 + 1) + ".Queue" , pbsInfos.get(depth1).getAclLimits().get(depth2).getQueue());
+					}
+				}
 				if (pbsInfos.get(depth1).getResourceLimits() != null) {
 					for (int depth2 = 0; depth2 < pbsInfos.get(depth1).getResourceLimits().size(); depth2++) {
+						putQueryParameter("PbsInfo." + (depth1 + 1) + ".ResourceLimit." + (depth2 + 1) + ".MaxJobs" , pbsInfos.get(depth1).getResourceLimits().get(depth2).getMaxJobs());
 						putQueryParameter("PbsInfo." + (depth1 + 1) + ".ResourceLimit." + (depth2 + 1) + ".Nodes" , pbsInfos.get(depth1).getResourceLimits().get(depth2).getNodes());
 						putQueryParameter("PbsInfo." + (depth1 + 1) + ".ResourceLimit." + (depth2 + 1) + ".Mem" , pbsInfos.get(depth1).getResourceLimits().get(depth2).getMem());
 						putQueryParameter("PbsInfo." + (depth1 + 1) + ".ResourceLimit." + (depth2 + 1) + ".Cpus" , pbsInfos.get(depth1).getResourceLimits().get(depth2).getCpus());
@@ -98,12 +106,7 @@ public class SetSchedulerInfoRequest extends RpcAcsRequest<SetSchedulerInfoRespo
 						putQueryParameter("PbsInfo." + (depth1 + 1) + ".ResourceLimit." + (depth2 + 1) + ".Queue" , pbsInfos.get(depth1).getResourceLimits().get(depth2).getQueue());
 					}
 				}
-				if (pbsInfos.get(depth1).getAclLimits() != null) {
-					for (int depth2 = 0; depth2 < pbsInfos.get(depth1).getAclLimits().size(); depth2++) {
-						putQueryParameter("PbsInfo." + (depth1 + 1) + ".AclLimit." + (depth2 + 1) + ".AclUsers" , pbsInfos.get(depth1).getAclLimits().get(depth2).getAclUsers());
-						putQueryParameter("PbsInfo." + (depth1 + 1) + ".AclLimit." + (depth2 + 1) + ".Queue" , pbsInfos.get(depth1).getAclLimits().get(depth2).getQueue());
-					}
-				}
+				putQueryParameter("PbsInfo." + (depth1 + 1) + ".SchedMaxQueuedJobs" , pbsInfos.get(depth1).getSchedMaxQueuedJobs());
 				putQueryParameter("PbsInfo." + (depth1 + 1) + ".JobHistoryDuration" , pbsInfos.get(depth1).getJobHistoryDuration());
 			}
 		}	
@@ -149,9 +152,13 @@ public class SetSchedulerInfoRequest extends RpcAcsRequest<SetSchedulerInfoRespo
 
 		private Integer schedInterval;
 
-		private List<ResourceLimit> resourceLimits;
+		private Integer schedMaxJobs;
 
 		private List<AclLimit> aclLimits;
+
+		private List<ResourceLimit> resourceLimits;
+
+		private Integer schedMaxQueuedJobs;
 
 		private Integer jobHistoryDuration;
 
@@ -163,12 +170,12 @@ public class SetSchedulerInfoRequest extends RpcAcsRequest<SetSchedulerInfoRespo
 			this.schedInterval = schedInterval;
 		}
 
-		public List<ResourceLimit> getResourceLimits() {
-			return this.resourceLimits;
+		public Integer getSchedMaxJobs() {
+			return this.schedMaxJobs;
 		}
 
-		public void setResourceLimits(List<ResourceLimit> resourceLimits) {
-			this.resourceLimits = resourceLimits;
+		public void setSchedMaxJobs(Integer schedMaxJobs) {
+			this.schedMaxJobs = schedMaxJobs;
 		}
 
 		public List<AclLimit> getAclLimits() {
@@ -179,6 +186,22 @@ public class SetSchedulerInfoRequest extends RpcAcsRequest<SetSchedulerInfoRespo
 			this.aclLimits = aclLimits;
 		}
 
+		public List<ResourceLimit> getResourceLimits() {
+			return this.resourceLimits;
+		}
+
+		public void setResourceLimits(List<ResourceLimit> resourceLimits) {
+			this.resourceLimits = resourceLimits;
+		}
+
+		public Integer getSchedMaxQueuedJobs() {
+			return this.schedMaxQueuedJobs;
+		}
+
+		public void setSchedMaxQueuedJobs(Integer schedMaxQueuedJobs) {
+			this.schedMaxQueuedJobs = schedMaxQueuedJobs;
+		}
+
 		public Integer getJobHistoryDuration() {
 			return this.jobHistoryDuration;
 		}
@@ -187,7 +210,32 @@ public class SetSchedulerInfoRequest extends RpcAcsRequest<SetSchedulerInfoRespo
 			this.jobHistoryDuration = jobHistoryDuration;
 		}
 
+		public static class AclLimit {
+
+			private String aclUsers;
+
+			private String queue;
+
+			public String getAclUsers() {
+				return this.aclUsers;
+			}
+
+			public void setAclUsers(String aclUsers) {
+				this.aclUsers = aclUsers;
+			}
+
+			public String getQueue() {
+				return this.queue;
+			}
+
+			public void setQueue(String queue) {
+				this.queue = queue;
+			}
+		}
+
 		public static class ResourceLimit {
+
+			private Integer maxJobs;
 
 			private Integer nodes;
 
@@ -198,6 +246,14 @@ public class SetSchedulerInfoRequest extends RpcAcsRequest<SetSchedulerInfoRespo
 			private String user;
 
 			private String queue;
+
+			public Integer getMaxJobs() {
+				return this.maxJobs;
+			}
+
+			public void setMaxJobs(Integer maxJobs) {
+				this.maxJobs = maxJobs;
+			}
 
 			public Integer getNodes() {
 				return this.nodes;
@@ -229,29 +285,6 @@ public class SetSchedulerInfoRequest extends RpcAcsRequest<SetSchedulerInfoRespo
 
 			public void setUser(String user) {
 				this.user = user;
-			}
-
-			public String getQueue() {
-				return this.queue;
-			}
-
-			public void setQueue(String queue) {
-				this.queue = queue;
-			}
-		}
-
-		public static class AclLimit {
-
-			private String aclUsers;
-
-			private String queue;
-
-			public String getAclUsers() {
-				return this.aclUsers;
-			}
-
-			public void setAclUsers(String aclUsers) {
-				this.aclUsers = aclUsers;
 			}
 
 			public String getQueue() {

@@ -31,16 +31,16 @@ public class StartPlaylistResponseUnmarshaller {
 		startPlaylistResponse.setProgramId(_ctx.stringValue("StartPlaylistResponse.ProgramId"));
 
 		StreamInfo streamInfo = new StreamInfo();
-		streamInfo.setDomainName(_ctx.stringValue("StartPlaylistResponse.StreamInfo.DomainName"));
 		streamInfo.setAppName(_ctx.stringValue("StartPlaylistResponse.StreamInfo.AppName"));
+		streamInfo.setDomainName(_ctx.stringValue("StartPlaylistResponse.StreamInfo.DomainName"));
 		streamInfo.setStreamName(_ctx.stringValue("StartPlaylistResponse.StreamInfo.StreamName"));
 
 		List<Stream> streams = new ArrayList<Stream>();
 		for (int i = 0; i < _ctx.lengthValue("StartPlaylistResponse.StreamInfo.Streams.Length"); i++) {
 			Stream stream = new Stream();
 			stream.setPullFlvUrl(_ctx.stringValue("StartPlaylistResponse.StreamInfo.Streams["+ i +"].PullFlvUrl"));
-			stream.setPullRtmpUrl(_ctx.stringValue("StartPlaylistResponse.StreamInfo.Streams["+ i +"].PullRtmpUrl"));
 			stream.setPullM3U8Url(_ctx.stringValue("StartPlaylistResponse.StreamInfo.Streams["+ i +"].PullM3U8Url"));
+			stream.setPullRtmpUrl(_ctx.stringValue("StartPlaylistResponse.StreamInfo.Streams["+ i +"].PullRtmpUrl"));
 			stream.setQuality(_ctx.stringValue("StartPlaylistResponse.StreamInfo.Streams["+ i +"].Quality"));
 
 			streams.add(stream);

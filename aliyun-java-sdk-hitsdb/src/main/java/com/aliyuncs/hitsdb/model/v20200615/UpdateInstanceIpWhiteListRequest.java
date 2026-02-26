@@ -27,6 +27,8 @@ public class UpdateInstanceIpWhiteListRequest extends RpcAcsRequest<UpdateInstan
 
 	private Long resourceOwnerId;
 
+	private Boolean delete;
+
 	private String securityToken;
 
 	private String resourceOwnerAccount;
@@ -57,6 +59,17 @@ public class UpdateInstanceIpWhiteListRequest extends RpcAcsRequest<UpdateInstan
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getDelete() {
+		return this.delete;
+	}
+
+	public void setDelete(Boolean delete) {
+		this.delete = delete;
+		if(delete != null){
+			putQueryParameter("Delete", delete.toString());
 		}
 	}
 

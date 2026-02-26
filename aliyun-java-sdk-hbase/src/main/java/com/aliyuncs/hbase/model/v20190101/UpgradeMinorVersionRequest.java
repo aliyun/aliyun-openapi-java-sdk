@@ -29,7 +29,7 @@ public class UpgradeMinorVersionRequest extends RpcAcsRequest<UpgradeMinorVersio
 
 	private String clusterId;
 	public UpgradeMinorVersionRequest() {
-		super("HBase", "2019-01-01", "UpgradeMinorVersion", "hbase");
+		super("HBase", "2019-01-01", "UpgradeMinorVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

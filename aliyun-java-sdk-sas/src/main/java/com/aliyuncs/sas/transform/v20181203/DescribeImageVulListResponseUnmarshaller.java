@@ -55,6 +55,20 @@ public class DescribeImageVulListResponseUnmarshaller {
 			vulRecord.setName(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].Name"));
 			vulRecord.setLevel(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].Level"));
 			vulRecord.setCanFix(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].CanFix"));
+			vulRecord.setClusterId(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].ClusterId"));
+			vulRecord.setClusterName(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].ClusterName"));
+			vulRecord.setPod(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].Pod"));
+			vulRecord.setNamespace(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].Namespace"));
+			vulRecord.setImage(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].Image"));
+			vulRecord.setContainerId(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].ContainerId"));
+			vulRecord.setInternetIp(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].InternetIp"));
+			vulRecord.setIntranetIp(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].IntranetIp"));
+			vulRecord.setInstanceName(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].InstanceName"));
+			vulRecord.setTargetId(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].TargetId"));
+			vulRecord.setTargetName(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].TargetName"));
+			vulRecord.setMaliciousSource(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].MaliciousSource"));
+			vulRecord.setTargetType(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].TargetType"));
+			vulRecord.setScanTime(_ctx.longValue("DescribeImageVulListResponse.VulRecords["+ i +"].ScanTime"));
 
 			List<String> layers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImageVulListResponse.VulRecords["+ i +"].Layers.Length"); j++) {

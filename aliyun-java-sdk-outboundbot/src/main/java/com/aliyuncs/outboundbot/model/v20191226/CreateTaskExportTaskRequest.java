@@ -59,6 +59,8 @@ public class CreateTaskExportTaskRequest extends RpcAcsRequest<CreateTaskExportT
 
 	private Boolean hasReachedEndOfFlow;
 
+	private String callingNumber;
+
 	private String instanceId;
 
 	private Long recordingDurationGte;
@@ -269,6 +271,17 @@ public class CreateTaskExportTaskRequest extends RpcAcsRequest<CreateTaskExportT
 		this.hasReachedEndOfFlow = hasReachedEndOfFlow;
 		if(hasReachedEndOfFlow != null){
 			putQueryParameter("HasReachedEndOfFlow", hasReachedEndOfFlow.toString());
+		}
+	}
+
+	public String getCallingNumber() {
+		return this.callingNumber;
+	}
+
+	public void setCallingNumber(String callingNumber) {
+		this.callingNumber = callingNumber;
+		if(callingNumber != null){
+			putQueryParameter("CallingNumber", callingNumber);
 		}
 	}
 

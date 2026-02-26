@@ -36,7 +36,7 @@ public class DeleteTagResourcesRequest extends RpcAcsRequest<DeleteTagResourcesR
 
 	private List<String> resourceIdss;
 	public DeleteTagResourcesRequest() {
-		super("ddoscoo", "2020-01-01", "DeleteTagResources");
+		super("ddoscoo", "2020-01-01", "DeleteTagResources", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

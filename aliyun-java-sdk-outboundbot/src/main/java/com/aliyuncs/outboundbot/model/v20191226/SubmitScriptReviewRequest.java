@@ -30,6 +30,8 @@ public class SubmitScriptReviewRequest extends RpcAcsRequest<SubmitScriptReviewR
 	private String scriptId;
 
 	private String instanceId;
+
+	private String from;
 	public SubmitScriptReviewRequest() {
 		super("OutboundBot", "2019-12-26", "SubmitScriptReview", "outboundbot");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class SubmitScriptReviewRequest extends RpcAcsRequest<SubmitScriptReviewR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
 		}
 	}
 

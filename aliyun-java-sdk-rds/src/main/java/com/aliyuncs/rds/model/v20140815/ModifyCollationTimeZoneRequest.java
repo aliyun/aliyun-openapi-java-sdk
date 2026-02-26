@@ -27,15 +27,15 @@ public class ModifyCollationTimeZoneRequest extends RpcAcsRequest<ModifyCollatio
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String timezone;
-
-	private Long ownerId;
 
 	private String dBInstanceId;
 
 	private String collation;
+
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
 	public ModifyCollationTimeZoneRequest() {
 		super("Rds", "2014-08-15", "ModifyCollationTimeZone", "rds");
 		setMethod(MethodType.POST);
@@ -56,17 +56,6 @@ public class ModifyCollationTimeZoneRequest extends RpcAcsRequest<ModifyCollatio
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getTimezone() {
 		return this.timezone;
 	}
@@ -75,17 +64,6 @@ public class ModifyCollationTimeZoneRequest extends RpcAcsRequest<ModifyCollatio
 		this.timezone = timezone;
 		if(timezone != null){
 			putQueryParameter("Timezone", timezone);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -108,6 +86,28 @@ public class ModifyCollationTimeZoneRequest extends RpcAcsRequest<ModifyCollatio
 		this.collation = collation;
 		if(collation != null){
 			putQueryParameter("Collation", collation);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

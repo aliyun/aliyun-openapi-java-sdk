@@ -46,6 +46,7 @@ public class GetPhysicalDatabaseResponseUnmarshaller {
 		database.setEncoding(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.Encoding"));
 		database.setDbType(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.DbType"));
 		database.setSearchName(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.SearchName"));
+		database.setInstanceAlias(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.InstanceAlias"));
 
 		List<String> ownerIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetPhysicalDatabaseResponse.Database.OwnerIdList.Length"); i++) {

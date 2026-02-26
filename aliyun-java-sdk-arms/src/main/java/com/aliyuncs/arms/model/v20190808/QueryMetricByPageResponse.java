@@ -84,6 +84,8 @@ public class QueryMetricByPageResponse extends AcsResponse {
 
 		private Integer page;
 
+		private Boolean completed;
+
 		private List<Map<Object,Object>> items;
 
 		public Integer getPageSize() {
@@ -108,6 +110,14 @@ public class QueryMetricByPageResponse extends AcsResponse {
 
 		public void setPage(Integer page) {
 			this.page = page;
+		}
+
+		public Boolean getCompleted() {
+			return this.completed;
+		}
+
+		public void setCompleted(Boolean completed) {
+			this.completed = completed;
 		}
 
 		public List<Map<Object,Object>> getItems() {

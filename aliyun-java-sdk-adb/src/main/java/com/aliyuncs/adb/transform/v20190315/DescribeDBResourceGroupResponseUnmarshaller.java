@@ -27,6 +27,7 @@ public class DescribeDBResourceGroupResponseUnmarshaller {
 	public static DescribeDBResourceGroupResponse unmarshall(DescribeDBResourceGroupResponse describeDBResourceGroupResponse, UnmarshallerContext _ctx) {
 		
 		describeDBResourceGroupResponse.setRequestId(_ctx.stringValue("DescribeDBResourceGroupResponse.RequestId"));
+		describeDBResourceGroupResponse.setDBClusterId(_ctx.stringValue("DescribeDBResourceGroupResponse.DBClusterId"));
 
 		List<PoolInfo> groupsInfo = new ArrayList<PoolInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBResourceGroupResponse.GroupsInfo.Length"); i++) {
@@ -37,6 +38,12 @@ public class DescribeDBResourceGroupResponseUnmarshaller {
 			poolInfo.setCreateTime(_ctx.stringValue("DescribeDBResourceGroupResponse.GroupsInfo["+ i +"].CreateTime"));
 			poolInfo.setGroupUsers(_ctx.stringValue("DescribeDBResourceGroupResponse.GroupsInfo["+ i +"].GroupUsers"));
 			poolInfo.setNodeNum(_ctx.integerValue("DescribeDBResourceGroupResponse.GroupsInfo["+ i +"].NodeNum"));
+
+			List<String> groupUserList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBResourceGroupResponse.GroupsInfo["+ i +"].GroupUserList.Length"); j++) {
+				groupUserList.add(_ctx.stringValue("DescribeDBResourceGroupResponse.GroupsInfo["+ i +"].GroupUserList["+ j +"]"));
+			}
+			poolInfo.setGroupUserList(groupUserList);
 
 			groupsInfo.add(poolInfo);
 		}

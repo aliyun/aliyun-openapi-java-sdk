@@ -99,6 +99,18 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		private String taskAction;
 
+		private String resourceId;
+
+		private String source;
+
+		private String failedReason;
+
+		private String taskGroupId;
+
+		private String failedCode;
+
+		private List<String> resourceIds;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -145,6 +157,54 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		public void setTaskAction(String taskAction) {
 			this.taskAction = taskAction;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public String getFailedReason() {
+			return this.failedReason;
+		}
+
+		public void setFailedReason(String failedReason) {
+			this.failedReason = failedReason;
+		}
+
+		public String getTaskGroupId() {
+			return this.taskGroupId;
+		}
+
+		public void setTaskGroupId(String taskGroupId) {
+			this.taskGroupId = taskGroupId;
+		}
+
+		public String getFailedCode() {
+			return this.failedCode;
+		}
+
+		public void setFailedCode(String failedCode) {
+			this.failedCode = failedCode;
+		}
+
+		public List<String> getResourceIds() {
+			return this.resourceIds;
+		}
+
+		public void setResourceIds(List<String> resourceIds) {
+			this.resourceIds = resourceIds;
 		}
 	}
 

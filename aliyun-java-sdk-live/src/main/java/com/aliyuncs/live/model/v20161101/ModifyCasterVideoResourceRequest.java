@@ -25,6 +25,8 @@ import com.aliyuncs.live.Endpoint;
 public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCasterVideoResourceResponse> {
 	   
 
+	private String imageId;
+
 	private Integer endOffset;
 
 	private String materialId;
@@ -41,6 +43,8 @@ public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCaster
 
 	private String liveStreamUrl;
 
+	private String imageUrl;
+
 	private Integer ptsCallbackInterval;
 
 	private String resourceName;
@@ -53,6 +57,17 @@ public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCaster
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
 	}
 
 	public Integer getEndOffset() {
@@ -140,6 +155,17 @@ public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCaster
 		this.liveStreamUrl = liveStreamUrl;
 		if(liveStreamUrl != null){
 			putQueryParameter("LiveStreamUrl", liveStreamUrl);
+		}
+	}
+
+	public String getImageUrl() {
+		return this.imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+		if(imageUrl != null){
+			putQueryParameter("ImageUrl", imageUrl);
 		}
 	}
 

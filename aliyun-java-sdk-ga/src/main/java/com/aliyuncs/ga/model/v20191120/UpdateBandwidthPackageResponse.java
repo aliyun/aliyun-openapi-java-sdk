@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateBandwidthPackageResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String bandwidthPackage;
-
-	private String name;
 
 	private String description;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String name;
 
 	public String getBandwidthPackage() {
 		return this.bandwidthPackage;
@@ -48,20 +40,28 @@ public class UpdateBandwidthPackageResponse extends AcsResponse {
 		this.bandwidthPackage = bandwidthPackage;
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override

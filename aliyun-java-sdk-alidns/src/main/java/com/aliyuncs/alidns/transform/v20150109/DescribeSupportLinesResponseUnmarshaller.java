@@ -31,10 +31,10 @@ public class DescribeSupportLinesResponseUnmarshaller {
 		List<RecordLine> recordLines = new ArrayList<RecordLine>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSupportLinesResponse.RecordLines.Length"); i++) {
 			RecordLine recordLine = new RecordLine();
-			recordLine.setLineCode(_ctx.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].LineCode"));
 			recordLine.setFatherCode(_ctx.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].FatherCode"));
-			recordLine.setLineName(_ctx.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].LineName"));
 			recordLine.setLineDisplayName(_ctx.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].LineDisplayName"));
+			recordLine.setLineCode(_ctx.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].LineCode"));
+			recordLine.setLineName(_ctx.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].LineName"));
 
 			recordLines.add(recordLine);
 		}

@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeSecurityGroupAttributeResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeSecurityGroupAttributeResponse.Permission;
+import com.aliyuncs.ecs.model.v20140526.DescribeSecurityGroupAttributeResponse.ReferencedInfo;
+import com.aliyuncs.ecs.model.v20140526.DescribeSecurityGroupAttributeResponse.ReferencedInfo.ReferencedPrefixListInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,10 +35,31 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 		describeSecurityGroupAttributeResponse.setSecurityGroupId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.SecurityGroupId"));
 		describeSecurityGroupAttributeResponse.setSecurityGroupName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.SecurityGroupName"));
 		describeSecurityGroupAttributeResponse.setRegionId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.RegionId"));
+		describeSecurityGroupAttributeResponse.setNextToken(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.NextToken"));
+
+		List<String> snapshotPolicyIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityGroupAttributeResponse.SnapshotPolicyIds.Length"); i++) {
+			snapshotPolicyIds.add(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.SnapshotPolicyIds["+ i +"]"));
+		}
+		describeSecurityGroupAttributeResponse.setSnapshotPolicyIds(snapshotPolicyIds);
+
+		ReferencedInfo referencedInfo = new ReferencedInfo();
+
+		List<ReferencedPrefixListInfo> referencedPrefixListInfos = new ArrayList<ReferencedPrefixListInfo>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityGroupAttributeResponse.ReferencedInfo.ReferencedPrefixListInfos.Length"); i++) {
+			ReferencedPrefixListInfo referencedPrefixListInfo = new ReferencedPrefixListInfo();
+			referencedPrefixListInfo.setPrefixListId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.ReferencedInfo.ReferencedPrefixListInfos["+ i +"].PrefixListId"));
+			referencedPrefixListInfo.setProductProvider(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.ReferencedInfo.ReferencedPrefixListInfos["+ i +"].ProductProvider"));
+
+			referencedPrefixListInfos.add(referencedPrefixListInfo);
+		}
+		referencedInfo.setReferencedPrefixListInfos(referencedPrefixListInfos);
+		describeSecurityGroupAttributeResponse.setReferencedInfo(referencedInfo);
 
 		List<Permission> permissions = new ArrayList<Permission>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityGroupAttributeResponse.Permissions.Length"); i++) {
 			Permission permission = new Permission();
+			permission.setSecurityGroupRuleId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SecurityGroupRuleId"));
 			permission.setDirection(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Direction"));
 			permission.setSourceGroupId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupId"));
 			permission.setDestGroupOwnerAccount(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupOwnerAccount"));
@@ -60,6 +83,8 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 			permission.setSourceGroupOwnerAccount(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupOwnerAccount"));
 			permission.setSourceGroupName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupName"));
 			permission.setSourcePortRange(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourcePortRange"));
+			permission.setPortRangeListId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].PortRangeListId"));
+			permission.setPortRangeListName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].PortRangeListName"));
 
 			permissions.add(permission);
 		}

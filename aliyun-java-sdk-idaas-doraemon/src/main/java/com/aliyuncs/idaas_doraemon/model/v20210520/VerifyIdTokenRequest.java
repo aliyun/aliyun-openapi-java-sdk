@@ -29,7 +29,7 @@ public class VerifyIdTokenRequest extends RpcAcsRequest<VerifyIdTokenResponse> {
 
 	private String applicationExternalId;
 	public VerifyIdTokenRequest() {
-		super("idaas-doraemon", "2021-05-20", "VerifyIdToken");
+		super("idaas-doraemon", "2021-05-20", "VerifyIdToken", "idaasauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

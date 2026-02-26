@@ -16,6 +16,8 @@ package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import java.util.Map;
+import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ros.Endpoint;
 
@@ -32,7 +34,13 @@ public class CreateStackGroupRequest extends RpcAcsRequest<CreateStackGroupRespo
 
 	private String stackGroupName;
 
+	private Map<Object,Object> autoDeployment;
+
+	private String permissionModel;
+
 	private String templateId;
+
+	private List<Tags> tagss;
 
 	private List<Parameters> parameterss;
 
@@ -45,6 +53,8 @@ public class CreateStackGroupRequest extends RpcAcsRequest<CreateStackGroupRespo
 	private String executionRoleName;
 
 	private String templateURL;
+
+	private List<String> capabilitiess;
 
 	private String administrationRoleName;
 	public CreateStackGroupRequest() {
@@ -89,6 +99,28 @@ public class CreateStackGroupRequest extends RpcAcsRequest<CreateStackGroupRespo
 		}
 	}
 
+	public Map<Object,Object> getAutoDeployment() {
+		return this.autoDeployment;
+	}
+
+	public void setAutoDeployment(Map<Object,Object> autoDeployment) {
+		this.autoDeployment = autoDeployment;
+		if(autoDeployment != null){
+			putQueryParameter("AutoDeployment", new Gson().toJson(autoDeployment));
+		}
+	}
+
+	public String getPermissionModel() {
+		return this.permissionModel;
+	}
+
+	public void setPermissionModel(String permissionModel) {
+		this.permissionModel = permissionModel;
+		if(permissionModel != null){
+			putQueryParameter("PermissionModel", permissionModel);
+		}
+	}
+
 	public String getTemplateId() {
 		return this.templateId;
 	}
@@ -98,6 +130,20 @@ public class CreateStackGroupRequest extends RpcAcsRequest<CreateStackGroupRespo
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
 		}
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public List<Parameters> getParameterss() {
@@ -132,7 +178,7 @@ public class CreateStackGroupRequest extends RpcAcsRequest<CreateStackGroupRespo
 	public void setTemplateBody(String templateBody) {
 		this.templateBody = templateBody;
 		if(templateBody != null){
-			putQueryParameter("TemplateBody", templateBody);
+			putBodyParameter("TemplateBody", templateBody);
 		}
 	}
 
@@ -169,6 +215,19 @@ public class CreateStackGroupRequest extends RpcAcsRequest<CreateStackGroupRespo
 		}
 	}
 
+	public List<String> getCapabilitiess() {
+		return this.capabilitiess;
+	}
+
+	public void setCapabilitiess(List<String> capabilitiess) {
+		this.capabilitiess = capabilitiess;	
+		if (capabilitiess != null) {
+			for (int i = 0; i < capabilitiess.size(); i++) {
+				putQueryParameter("Capabilities." + (i + 1) , capabilitiess.get(i));
+			}
+		}	
+	}
+
 	public String getAdministrationRoleName() {
 		return this.administrationRoleName;
 	}
@@ -177,6 +236,29 @@ public class CreateStackGroupRequest extends RpcAcsRequest<CreateStackGroupRespo
 		this.administrationRoleName = administrationRoleName;
 		if(administrationRoleName != null){
 			putQueryParameter("AdministrationRoleName", administrationRoleName);
+		}
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

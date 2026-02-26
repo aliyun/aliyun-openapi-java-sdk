@@ -27,7 +27,7 @@ public class ListHBaseInstancesRequest extends RpcAcsRequest<ListHBaseInstancesR
 
 	private String vpcId;
 	public ListHBaseInstancesRequest() {
-		super("HBase", "2019-01-01", "ListHBaseInstances", "hbase");
+		super("HBase", "2019-01-01", "ListHBaseInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -28,8 +28,10 @@ public class GetAggregateCompliancePackRequest extends RpcAcsRequest<GetAggregat
 	private String aggregatorId;
 
 	private String compliancePackId;
+
+	private String tag;
 	public GetAggregateCompliancePackRequest() {
-		super("Config", "2020-09-07", "GetAggregateCompliancePack");
+		super("Config", "2020-09-07", "GetAggregateCompliancePack", "config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class GetAggregateCompliancePackRequest extends RpcAcsRequest<GetAggregat
 		this.compliancePackId = compliancePackId;
 		if(compliancePackId != null){
 			putQueryParameter("CompliancePackId", compliancePackId);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

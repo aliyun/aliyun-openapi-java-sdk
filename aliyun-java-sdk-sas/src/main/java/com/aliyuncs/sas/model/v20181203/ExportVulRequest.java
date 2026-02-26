@@ -31,19 +31,19 @@ public class ExportVulRequest extends RpcAcsRequest<ExportVulResponse> {
 
 	private String vpcInstanceIds;
 
-	private String lang;
-
 	private String groupId;
 
-	private String dealed;
-
 	private String aliasName;
-
-	private String searchTags;
 
 	private String necessity;
 
 	private String uuids;
+
+	private String lang;
+
+	private String dealed;
+
+	private String searchTags;
 	public ExportVulRequest() {
 		super("Sas", "2018-12-03", "ExportVul");
 		setMethod(MethodType.POST);
@@ -86,17 +86,6 @@ public class ExportVulRequest extends RpcAcsRequest<ExportVulResponse> {
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -108,17 +97,6 @@ public class ExportVulRequest extends RpcAcsRequest<ExportVulResponse> {
 		}
 	}
 
-	public String getDealed() {
-		return this.dealed;
-	}
-
-	public void setDealed(String dealed) {
-		this.dealed = dealed;
-		if(dealed != null){
-			putQueryParameter("Dealed", dealed);
-		}
-	}
-
 	public String getAliasName() {
 		return this.aliasName;
 	}
@@ -127,17 +105,6 @@ public class ExportVulRequest extends RpcAcsRequest<ExportVulResponse> {
 		this.aliasName = aliasName;
 		if(aliasName != null){
 			putQueryParameter("AliasName", aliasName);
-		}
-	}
-
-	public String getSearchTags() {
-		return this.searchTags;
-	}
-
-	public void setSearchTags(String searchTags) {
-		this.searchTags = searchTags;
-		if(searchTags != null){
-			putQueryParameter("SearchTags", searchTags);
 		}
 	}
 
@@ -160,6 +127,39 @@ public class ExportVulRequest extends RpcAcsRequest<ExportVulResponse> {
 		this.uuids = uuids;
 		if(uuids != null){
 			putQueryParameter("Uuids", uuids);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getDealed() {
+		return this.dealed;
+	}
+
+	public void setDealed(String dealed) {
+		this.dealed = dealed;
+		if(dealed != null){
+			putQueryParameter("Dealed", dealed);
+		}
+	}
+
+	public String getSearchTags() {
+		return this.searchTags;
+	}
+
+	public void setSearchTags(String searchTags) {
+		this.searchTags = searchTags;
+		if(searchTags != null){
+			putQueryParameter("SearchTags", searchTags);
 		}
 	}
 

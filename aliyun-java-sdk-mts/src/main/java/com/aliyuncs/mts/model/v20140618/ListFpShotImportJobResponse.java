@@ -79,6 +79,8 @@ public class ListFpShotImportJobResponse extends AcsResponse {
 
 		private String input;
 
+		private String processMessage;
+
 		public String getId() {
 			return this.id;
 		}
@@ -165,6 +167,14 @@ public class ListFpShotImportJobResponse extends AcsResponse {
 
 		public void setInput(String input) {
 			this.input = input;
+		}
+
+		public String getProcessMessage() {
+			return this.processMessage;
+		}
+
+		public void setProcessMessage(String processMessage) {
+			this.processMessage = processMessage;
 		}
 	}
 

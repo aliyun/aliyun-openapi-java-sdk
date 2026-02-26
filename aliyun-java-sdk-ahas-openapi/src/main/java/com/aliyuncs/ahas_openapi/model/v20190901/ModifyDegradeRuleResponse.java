@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyDegradeRuleResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
 	private Boolean success;
 
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -56,6 +48,14 @@ public class ModifyDegradeRuleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -76,31 +76,87 @@ public class ModifyDegradeRuleResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer slowRtMs;
+
+		private Integer halfOpenRecoveryStepNum;
+
+		private String namespace;
+
+		private Integer statDurationMs;
+
+		private Long ruleId;
+
+		private Integer strategy;
+
+		private String resource;
+
 		private String appName;
+
+		private Integer halfOpenBaseAmountPerStep;
+
+		private Integer recoveryTimeoutMs;
+
+		private Integer minRequestAmount;
 
 		private Float threshold;
 
 		private Boolean enable;
 
-		private Integer strategy;
+		public Integer getSlowRtMs() {
+			return this.slowRtMs;
+		}
 
-		private Integer halfOpenBaseAmountPerStep;
+		public void setSlowRtMs(Integer slowRtMs) {
+			this.slowRtMs = slowRtMs;
+		}
 
-		private Integer halfOpenRecoveryStepNum;
+		public Integer getHalfOpenRecoveryStepNum() {
+			return this.halfOpenRecoveryStepNum;
+		}
 
-		private Long ruleId;
+		public void setHalfOpenRecoveryStepNum(Integer halfOpenRecoveryStepNum) {
+			this.halfOpenRecoveryStepNum = halfOpenRecoveryStepNum;
+		}
 
-		private Integer minRequestAmount;
+		public String getNamespace() {
+			return this.namespace;
+		}
 
-		private String namespace;
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
 
-		private String resource;
+		public Integer getStatDurationMs() {
+			return this.statDurationMs;
+		}
 
-		private Integer slowRtMs;
+		public void setStatDurationMs(Integer statDurationMs) {
+			this.statDurationMs = statDurationMs;
+		}
 
-		private Integer statDurationMs;
+		public Long getRuleId() {
+			return this.ruleId;
+		}
 
-		private Integer recoveryTimeoutMs;
+		public void setRuleId(Long ruleId) {
+			this.ruleId = ruleId;
+		}
+
+		public Integer getStrategy() {
+			return this.strategy;
+		}
+
+		public void setStrategy(Integer strategy) {
+			this.strategy = strategy;
+		}
+
+		public String getResource() {
+			return this.resource;
+		}
+
+		public void setResource(String resource) {
+			this.resource = resource;
+		}
 
 		public String getAppName() {
 			return this.appName;
@@ -108,6 +164,30 @@ public class ModifyDegradeRuleResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
+		}
+
+		public Integer getHalfOpenBaseAmountPerStep() {
+			return this.halfOpenBaseAmountPerStep;
+		}
+
+		public void setHalfOpenBaseAmountPerStep(Integer halfOpenBaseAmountPerStep) {
+			this.halfOpenBaseAmountPerStep = halfOpenBaseAmountPerStep;
+		}
+
+		public Integer getRecoveryTimeoutMs() {
+			return this.recoveryTimeoutMs;
+		}
+
+		public void setRecoveryTimeoutMs(Integer recoveryTimeoutMs) {
+			this.recoveryTimeoutMs = recoveryTimeoutMs;
+		}
+
+		public Integer getMinRequestAmount() {
+			return this.minRequestAmount;
+		}
+
+		public void setMinRequestAmount(Integer minRequestAmount) {
+			this.minRequestAmount = minRequestAmount;
 		}
 
 		public Float getThreshold() {
@@ -124,86 +204,6 @@ public class ModifyDegradeRuleResponse extends AcsResponse {
 
 		public void setEnable(Boolean enable) {
 			this.enable = enable;
-		}
-
-		public Integer getStrategy() {
-			return this.strategy;
-		}
-
-		public void setStrategy(Integer strategy) {
-			this.strategy = strategy;
-		}
-
-		public Integer getHalfOpenBaseAmountPerStep() {
-			return this.halfOpenBaseAmountPerStep;
-		}
-
-		public void setHalfOpenBaseAmountPerStep(Integer halfOpenBaseAmountPerStep) {
-			this.halfOpenBaseAmountPerStep = halfOpenBaseAmountPerStep;
-		}
-
-		public Integer getHalfOpenRecoveryStepNum() {
-			return this.halfOpenRecoveryStepNum;
-		}
-
-		public void setHalfOpenRecoveryStepNum(Integer halfOpenRecoveryStepNum) {
-			this.halfOpenRecoveryStepNum = halfOpenRecoveryStepNum;
-		}
-
-		public Long getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(Long ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public Integer getMinRequestAmount() {
-			return this.minRequestAmount;
-		}
-
-		public void setMinRequestAmount(Integer minRequestAmount) {
-			this.minRequestAmount = minRequestAmount;
-		}
-
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
-
-		public String getResource() {
-			return this.resource;
-		}
-
-		public void setResource(String resource) {
-			this.resource = resource;
-		}
-
-		public Integer getSlowRtMs() {
-			return this.slowRtMs;
-		}
-
-		public void setSlowRtMs(Integer slowRtMs) {
-			this.slowRtMs = slowRtMs;
-		}
-
-		public Integer getStatDurationMs() {
-			return this.statDurationMs;
-		}
-
-		public void setStatDurationMs(Integer statDurationMs) {
-			this.statDurationMs = statDurationMs;
-		}
-
-		public Integer getRecoveryTimeoutMs() {
-			return this.recoveryTimeoutMs;
-		}
-
-		public void setRecoveryTimeoutMs(Integer recoveryTimeoutMs) {
-			this.recoveryTimeoutMs = recoveryTimeoutMs;
 		}
 	}
 

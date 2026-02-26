@@ -35,7 +35,7 @@ public class DescribePhoneNumberAnalysisRequest extends RpcAcsRequest<DescribePh
 
 	private Long ownerId;
 
-	private Integer numberType;
+	private Long numberType;
 
 	private String authCode;
 
@@ -104,11 +104,11 @@ public class DescribePhoneNumberAnalysisRequest extends RpcAcsRequest<DescribePh
 		}
 	}
 
-	public Integer getNumberType() {
+	public Long getNumberType() {
 		return this.numberType;
 	}
 
-	public void setNumberType(Integer numberType) {
+	public void setNumberType(Long numberType) {
 		this.numberType = numberType;
 		if(numberType != null){
 			putQueryParameter("NumberType", numberType.toString());

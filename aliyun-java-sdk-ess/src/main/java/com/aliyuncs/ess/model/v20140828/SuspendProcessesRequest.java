@@ -30,7 +30,7 @@ public class SuspendProcessesRequest extends RpcAcsRequest<SuspendProcessesRespo
 
 	private String scalingGroupId;
 
-	private List<String> processes;
+	private List<String> processs;
 
 	private String resourceOwnerAccount;
 
@@ -66,15 +66,15 @@ public class SuspendProcessesRequest extends RpcAcsRequest<SuspendProcessesRespo
 		}
 	}
 
-	public List<String> getProcesses() {
-		return this.processes;
+	public List<String> getProcesss() {
+		return this.processs;
 	}
 
-	public void setProcesses(List<String> processes) {
-		this.processes = processes;	
-		if (processes != null) {
-			for (int i = 0; i < processes.size(); i++) {
-				putQueryParameter("Process." + (i + 1) , processes.get(i));
+	public void setProcesss(List<String> processs) {
+		this.processs = processs;	
+		if (processs != null) {
+			for (int i = 0; i < processs.size(); i++) {
+				putQueryParameter("Process." + (i + 1) , processs.get(i));
 			}
 		}	
 	}

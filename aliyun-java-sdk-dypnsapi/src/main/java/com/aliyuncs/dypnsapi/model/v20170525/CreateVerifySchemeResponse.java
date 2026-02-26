@@ -24,21 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVerifySchemeResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
+	private Long httpStatusCode;
+
+	private String code;
+
+	private Boolean success;
+
 	private GateVerifySchemeDTO gateVerifySchemeDTO;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -54,6 +50,30 @@ public class CreateVerifySchemeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public GateVerifySchemeDTO getGateVerifySchemeDTO() {
@@ -80,5 +100,10 @@ public class CreateVerifySchemeResponse extends AcsResponse {
 	@Override
 	public CreateVerifySchemeResponse getInstance(UnmarshallerContext context) {
 		return	CreateVerifySchemeResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

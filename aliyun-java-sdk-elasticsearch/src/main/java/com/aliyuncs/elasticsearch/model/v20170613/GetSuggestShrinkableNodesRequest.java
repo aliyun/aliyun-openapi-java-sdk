@@ -32,8 +32,6 @@ public class GetSuggestShrinkableNodesRequest extends RoaAcsRequest<GetSuggestSh
 	private String nodeType;
 
 	private Integer count;
-
-	private String body;
 	public GetSuggestShrinkableNodesRequest() {
 		super("elasticsearch", "2017-06-13", "GetSuggestShrinkableNodes", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/suggest-shrinkable-nodes");
@@ -85,17 +83,6 @@ public class GetSuggestShrinkableNodesRequest extends RoaAcsRequest<GetSuggestSh
 		this.count = count;
 		if(count != null){
 			putQueryParameter("count", count.toString());
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

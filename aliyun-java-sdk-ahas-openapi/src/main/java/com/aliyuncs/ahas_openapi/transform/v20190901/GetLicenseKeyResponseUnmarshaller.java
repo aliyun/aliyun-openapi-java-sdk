@@ -23,9 +23,9 @@ public class GetLicenseKeyResponseUnmarshaller {
 	public static GetLicenseKeyResponse unmarshall(GetLicenseKeyResponse getLicenseKeyResponse, UnmarshallerContext _ctx) {
 		
 		getLicenseKeyResponse.setRequestId(_ctx.stringValue("GetLicenseKeyResponse.RequestId"));
-		getLicenseKeyResponse.setCode(_ctx.stringValue("GetLicenseKeyResponse.Code"));
-		getLicenseKeyResponse.setData(_ctx.stringValue("GetLicenseKeyResponse.Data"));
 		getLicenseKeyResponse.setMessage(_ctx.stringValue("GetLicenseKeyResponse.Message"));
+		getLicenseKeyResponse.setData(_ctx.stringValue("GetLicenseKeyResponse.Data"));
+		getLicenseKeyResponse.setCode(_ctx.stringValue("GetLicenseKeyResponse.Code"));
 		getLicenseKeyResponse.setSuccess(_ctx.booleanValue("GetLicenseKeyResponse.Success"));
 	 
 	 	return getLicenseKeyResponse;

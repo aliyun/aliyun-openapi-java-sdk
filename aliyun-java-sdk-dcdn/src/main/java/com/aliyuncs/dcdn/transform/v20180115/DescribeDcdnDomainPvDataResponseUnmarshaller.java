@@ -27,9 +27,9 @@ public class DescribeDcdnDomainPvDataResponseUnmarshaller {
 	public static DescribeDcdnDomainPvDataResponse unmarshall(DescribeDcdnDomainPvDataResponse describeDcdnDomainPvDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnDomainPvDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.RequestId"));
-		describeDcdnDomainPvDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.DomainName"));
-		describeDcdnDomainPvDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.StartTime"));
 		describeDcdnDomainPvDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.EndTime"));
+		describeDcdnDomainPvDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.StartTime"));
+		describeDcdnDomainPvDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.DomainName"));
 		describeDcdnDomainPvDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.DataInterval"));
 
 		List<UsageData> pvDataInterval = new ArrayList<UsageData>();

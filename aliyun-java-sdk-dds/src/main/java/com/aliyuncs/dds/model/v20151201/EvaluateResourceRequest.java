@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -30,11 +31,11 @@ public class EvaluateResourceRequest extends RpcAcsRequest<EvaluateResourceRespo
 
 	private String engineVersion;
 
+	private String storage;
+
 	private String shardsInfo;
 
 	private String replicationFactor;
-
-	private String securityToken;
 
 	private String engine;
 
@@ -52,6 +53,10 @@ public class EvaluateResourceRequest extends RpcAcsRequest<EvaluateResourceRespo
 	public EvaluateResourceRequest() {
 		super("Dds", "2015-12-01", "EvaluateResource", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -87,6 +92,17 @@ public class EvaluateResourceRequest extends RpcAcsRequest<EvaluateResourceRespo
 		}
 	}
 
+	public String getStorage() {
+		return this.storage;
+	}
+
+	public void setStorage(String storage) {
+		this.storage = storage;
+		if(storage != null){
+			putQueryParameter("Storage", storage);
+		}
+	}
+
 	public String getShardsInfo() {
 		return this.shardsInfo;
 	}
@@ -106,17 +122,6 @@ public class EvaluateResourceRequest extends RpcAcsRequest<EvaluateResourceRespo
 		this.replicationFactor = replicationFactor;
 		if(replicationFactor != null){
 			putQueryParameter("ReplicationFactor", replicationFactor);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -84,6 +84,12 @@ public class CreateTrainTaskResponse extends AcsResponse {
 
 		private String trainMode;
 
+		private Long relyOnTaskId;
+
+		private String relyOnTaskName;
+
+		private String advancedParameters;
+
 		private String trainStatus;
 
 		private Long modelId;
@@ -160,6 +166,30 @@ public class CreateTrainTaskResponse extends AcsResponse {
 
 		public void setTrainMode(String trainMode) {
 			this.trainMode = trainMode;
+		}
+
+		public Long getRelyOnTaskId() {
+			return this.relyOnTaskId;
+		}
+
+		public void setRelyOnTaskId(Long relyOnTaskId) {
+			this.relyOnTaskId = relyOnTaskId;
+		}
+
+		public String getRelyOnTaskName() {
+			return this.relyOnTaskName;
+		}
+
+		public void setRelyOnTaskName(String relyOnTaskName) {
+			this.relyOnTaskName = relyOnTaskName;
+		}
+
+		public String getAdvancedParameters() {
+			return this.advancedParameters;
+		}
+
+		public void setAdvancedParameters(String advancedParameters) {
+			this.advancedParameters = advancedParameters;
 		}
 
 		public String getTrainStatus() {

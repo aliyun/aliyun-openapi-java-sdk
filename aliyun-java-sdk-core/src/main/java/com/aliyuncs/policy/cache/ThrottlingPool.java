@@ -18,7 +18,7 @@ public class ThrottlingPool {
         ThrottlingPool.remove(key);
         if (data != null) {
             if (expire >= 0) {
-                Future future = executor.schedule(new Runnable() {
+                Future<?> future = executor.schedule(new Runnable() {
                     @Override
                     public void run() {
                         synchronized (ThrottlingPool.class) {
@@ -50,7 +50,7 @@ public class ThrottlingPool {
     public synchronized static Object remove(String key) {
         Entity entity = map.remove(key);
         if (entity == null) return null;
-        Future future = entity.getFuture();
+        Future<?> future = entity.getFuture();
         if (future != null) future.cancel(true);
         return entity.getValue();
     }
@@ -62,7 +62,7 @@ public class ThrottlingPool {
     public synchronized static void clear() {
         for (Entity entity : map.values()) {
             if (entity != null) {
-                Future future = entity.getFuture();
+                Future<?> future = entity.getFuture();
                 if (future != null) future.cancel(true);
             }
         }
@@ -76,9 +76,9 @@ public class ThrottlingPool {
     private static class Entity {
         private Object value;
         private int expire;
-        private Future future;
+        private Future<?> future;
 
-        public Entity(Object value, int expire, Future future) {
+        public Entity(Object value, int expire, Future<?> future) {
             this.value = value;
             this.expire = expire;
             this.future = future;
@@ -92,7 +92,7 @@ public class ThrottlingPool {
             return expire;
         }
 
-        public Future getFuture() {
+        public Future<?> getFuture() {
             return future;
         }
     }

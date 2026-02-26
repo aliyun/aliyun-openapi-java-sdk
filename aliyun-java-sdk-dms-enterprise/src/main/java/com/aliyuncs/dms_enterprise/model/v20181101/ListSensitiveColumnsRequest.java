@@ -25,23 +25,23 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListSensitiveColumnsRequest extends RpcAcsRequest<ListSensitiveColumnsResponse> {
 	   
 
-	private String schemaName;
-
-	private String columnName;
-
 	private Long tid;
 
 	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String tableName;
+
+	private String schemaName;
+
+	private String columnName;
 
 	private String securityLevel;
 
 	private Long dbId;
 
-	private Integer pageSize;
-
 	private Boolean logic;
-
-	private String tableName;
 	public ListSensitiveColumnsRequest() {
 		super("dms-enterprise", "2018-11-01", "ListSensitiveColumns", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -49,28 +49,6 @@ public class ListSensitiveColumnsRequest extends RpcAcsRequest<ListSensitiveColu
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSchemaName() {
-		return this.schemaName;
-	}
-
-	public void setSchemaName(String schemaName) {
-		this.schemaName = schemaName;
-		if(schemaName != null){
-			putQueryParameter("SchemaName", schemaName);
-		}
-	}
-
-	public String getColumnName() {
-		return this.columnName;
-	}
-
-	public void setColumnName(String columnName) {
-		this.columnName = columnName;
-		if(columnName != null){
-			putQueryParameter("ColumnName", columnName);
-		}
 	}
 
 	public Long getTid() {
@@ -92,6 +70,50 @@ public class ListSensitiveColumnsRequest extends RpcAcsRequest<ListSensitiveColu
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
+		}
+	}
+
+	public String getSchemaName() {
+		return this.schemaName;
+	}
+
+	public void setSchemaName(String schemaName) {
+		this.schemaName = schemaName;
+		if(schemaName != null){
+			putQueryParameter("SchemaName", schemaName);
+		}
+	}
+
+	public String getColumnName() {
+		return this.columnName;
+	}
+
+	public void setColumnName(String columnName) {
+		this.columnName = columnName;
+		if(columnName != null){
+			putQueryParameter("ColumnName", columnName);
 		}
 	}
 
@@ -117,17 +139,6 @@ public class ListSensitiveColumnsRequest extends RpcAcsRequest<ListSensitiveColu
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Boolean getLogic() {
 		return this.logic;
 	}
@@ -136,17 +147,6 @@ public class ListSensitiveColumnsRequest extends RpcAcsRequest<ListSensitiveColu
 		this.logic = logic;
 		if(logic != null){
 			putQueryParameter("Logic", logic.toString());
-		}
-	}
-
-	public String getTableName() {
-		return this.tableName;
-	}
-
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-		if(tableName != null){
-			putQueryParameter("TableName", tableName);
 		}
 	}
 

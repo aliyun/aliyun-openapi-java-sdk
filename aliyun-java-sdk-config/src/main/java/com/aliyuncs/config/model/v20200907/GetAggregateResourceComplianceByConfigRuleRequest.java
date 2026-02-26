@@ -31,9 +31,11 @@ public class GetAggregateResourceComplianceByConfigRuleRequest extends RpcAcsReq
 
 	private String aggregatorId;
 
+	private Long resourceAccountId;
+
 	private String complianceType;
 	public GetAggregateResourceComplianceByConfigRuleRequest() {
-		super("Config", "2020-09-07", "GetAggregateResourceComplianceByConfigRule");
+		super("Config", "2020-09-07", "GetAggregateResourceComplianceByConfigRule", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,6 +73,17 @@ public class GetAggregateResourceComplianceByConfigRuleRequest extends RpcAcsReq
 		this.aggregatorId = aggregatorId;
 		if(aggregatorId != null){
 			putQueryParameter("AggregatorId", aggregatorId);
+		}
+	}
+
+	public Long getResourceAccountId() {
+		return this.resourceAccountId;
+	}
+
+	public void setResourceAccountId(Long resourceAccountId) {
+		this.resourceAccountId = resourceAccountId;
+		if(resourceAccountId != null){
+			putQueryParameter("ResourceAccountId", resourceAccountId.toString());
 		}
 	}
 

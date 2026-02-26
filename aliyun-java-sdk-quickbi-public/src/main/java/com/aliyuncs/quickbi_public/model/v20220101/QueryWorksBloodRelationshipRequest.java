@@ -26,7 +26,7 @@ public class QueryWorksBloodRelationshipRequest extends RpcAcsRequest<QueryWorks
 
 	private String worksId;
 	public QueryWorksBloodRelationshipRequest() {
-		super("quickbi-public", "2022-01-01", "QueryWorksBloodRelationship", "quickbi");
+		super("quickbi-public", "2022-01-01", "QueryWorksBloodRelationship", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

@@ -115,6 +115,8 @@ public class GetServiceProvidersPageResponse extends AcsResponse {
 
 			private String port;
 
+			private String iannotations;
+
 			private String serializeType;
 
 			public String getTimeout() {
@@ -139,6 +141,14 @@ public class GetServiceProvidersPageResponse extends AcsResponse {
 
 			public void setPort(String port) {
 				this.port = port;
+			}
+
+			public String getIannotations() {
+				return this.iannotations;
+			}
+
+			public void setIannotations(String iannotations) {
+				this.iannotations = iannotations;
 			}
 
 			public String getSerializeType() {

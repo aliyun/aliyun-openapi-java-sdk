@@ -24,8 +24,6 @@ import com.aliyuncs.cdn.Endpoint;
  */
 public class DescribeUserCertificateExpireCountRequest extends RpcAcsRequest<DescribeUserCertificateExpireCountResponse> {
 	   
-
-	private Long ownerId;
 	public DescribeUserCertificateExpireCountRequest() {
 		super("Cdn", "2018-05-10", "DescribeUserCertificateExpireCount");
 		setMethod(MethodType.POST);
@@ -33,17 +31,6 @@ public class DescribeUserCertificateExpireCountRequest extends RpcAcsRequest<Des
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	@Override

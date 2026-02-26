@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.miniapplcdp.model.v20200113.ListResourcesResponse;
 import com.aliyuncs.miniapplcdp.model.v20200113.ListResourcesResponse.Data;
 import com.aliyuncs.miniapplcdp.model.v20200113.ListResourcesResponse.Data.ResourceItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,7 +35,6 @@ public class ListResourcesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListResourcesResponse.Data.Items.Length"); i++) {
 			ResourceItem resourceItem = new ResourceItem();
 			resourceItem.setAppId(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].AppId"));
-			resourceItem.setContent(_ctx.mapValue("ListResourcesResponse.Data.Items["+ i +"].Content"));
 			resourceItem.setCreateTime(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].CreateTime"));
 			resourceItem.setDescription(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].Description"));
 			resourceItem.setModifiedTime(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].ModifiedTime"));
@@ -46,6 +44,7 @@ public class ListResourcesResponseUnmarshaller {
 			resourceItem.setRevision(_ctx.integerValue("ListResourcesResponse.Data.Items["+ i +"].Revision"));
 			resourceItem.setSchemaVersion(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].SchemaVersion"));
 			resourceItem.setResourceType(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].ResourceType"));
+			resourceItem.setResourceDigest(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].ResourceDigest"));
 
 			items.add(resourceItem);
 		}

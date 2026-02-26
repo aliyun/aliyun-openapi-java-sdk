@@ -33,11 +33,15 @@ public class AssociateWebCertRequest extends RpcAcsRequest<AssociateWebCertRespo
 
 	private String key;
 
+	private String certRegion;
+
 	private String certName;
+
+	private String certIdentifier;
 
 	private String domain;
 	public AssociateWebCertRequest() {
-		super("ddoscoo", "2020-01-01", "AssociateWebCert");
+		super("ddoscoo", "2020-01-01", "AssociateWebCert", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,7 +56,7 @@ public class AssociateWebCertRequest extends RpcAcsRequest<AssociateWebCertRespo
 	public void setCert(String cert) {
 		this.cert = cert;
 		if(cert != null){
-			putQueryParameter("Cert", cert);
+			putBodyParameter("Cert", cert);
 		}
 	}
 
@@ -63,7 +67,7 @@ public class AssociateWebCertRequest extends RpcAcsRequest<AssociateWebCertRespo
 	public void setCertId(Integer certId) {
 		this.certId = certId;
 		if(certId != null){
-			putQueryParameter("CertId", certId.toString());
+			putBodyParameter("CertId", certId.toString());
 		}
 	}
 
@@ -85,7 +89,18 @@ public class AssociateWebCertRequest extends RpcAcsRequest<AssociateWebCertRespo
 	public void setKey(String key) {
 		this.key = key;
 		if(key != null){
-			putQueryParameter("Key", key);
+			putBodyParameter("Key", key);
+		}
+	}
+
+	public String getCertRegion() {
+		return this.certRegion;
+	}
+
+	public void setCertRegion(String certRegion) {
+		this.certRegion = certRegion;
+		if(certRegion != null){
+			putBodyParameter("CertRegion", certRegion);
 		}
 	}
 
@@ -96,7 +111,18 @@ public class AssociateWebCertRequest extends RpcAcsRequest<AssociateWebCertRespo
 	public void setCertName(String certName) {
 		this.certName = certName;
 		if(certName != null){
-			putQueryParameter("CertName", certName);
+			putBodyParameter("CertName", certName);
+		}
+	}
+
+	public String getCertIdentifier() {
+		return this.certIdentifier;
+	}
+
+	public void setCertIdentifier(String certIdentifier) {
+		this.certIdentifier = certIdentifier;
+		if(certIdentifier != null){
+			putBodyParameter("CertIdentifier", certIdentifier);
 		}
 	}
 
@@ -107,7 +133,7 @@ public class AssociateWebCertRequest extends RpcAcsRequest<AssociateWebCertRespo
 	public void setDomain(String domain) {
 		this.domain = domain;
 		if(domain != null){
-			putQueryParameter("Domain", domain);
+			putBodyParameter("Domain", domain);
 		}
 	}
 

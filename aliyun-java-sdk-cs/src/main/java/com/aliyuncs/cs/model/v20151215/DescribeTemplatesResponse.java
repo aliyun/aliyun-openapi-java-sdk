@@ -25,15 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTemplatesResponse extends AcsResponse {
 
-	private List<TemplatesItem> templates;
+	private List<Template> templates;
 
 	private Page_info page_info;
 
-	public List<TemplatesItem> getTemplates() {
+	public List<Template> getTemplates() {
 		return this.templates;
 	}
 
-	public void setTemplates(List<TemplatesItem> templates) {
+	public void setTemplates(List<Template> templates) {
 		this.templates = templates;
 	}
 
@@ -45,40 +45,42 @@ public class DescribeTemplatesResponse extends AcsResponse {
 		this.page_info = page_info;
 	}
 
-	public static class TemplatesItem {
+	public static class Template {
 
-		private String template;
+		private String acl;
 
-		private String created;
+		private String id;
 
 		private String name;
 
 		private String description;
 
+		private String tags;
+
+		private String template;
+
 		private String template_type;
 
-		private String id;
-
-		private String acl;
+		private String created;
 
 		private String updated;
 
-		private String tags;
+		private String template_with_hist_id;
 
-		public String getTemplate() {
-			return this.template;
+		public String getAcl() {
+			return this.acl;
 		}
 
-		public void setTemplate(String template) {
-			this.template = template;
+		public void setAcl(String acl) {
+			this.acl = acl;
 		}
 
-		public String getCreated() {
-			return this.created;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setCreated(String created) {
-			this.created = created;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public String getName() {
@@ -97,6 +99,22 @@ public class DescribeTemplatesResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
+		}
+
+		public String getTemplate() {
+			return this.template;
+		}
+
+		public void setTemplate(String template) {
+			this.template = template;
+		}
+
 		public String getTemplate_type() {
 			return this.template_type;
 		}
@@ -105,20 +123,12 @@ public class DescribeTemplatesResponse extends AcsResponse {
 			this.template_type = template_type;
 		}
 
-		public String getId() {
-			return this.id;
+		public String getCreated() {
+			return this.created;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getAcl() {
-			return this.acl;
-		}
-
-		public void setAcl(String acl) {
-			this.acl = acl;
+		public void setCreated(String created) {
+			this.created = created;
 		}
 
 		public String getUpdated() {
@@ -129,12 +139,12 @@ public class DescribeTemplatesResponse extends AcsResponse {
 			this.updated = updated;
 		}
 
-		public String getTags() {
-			return this.tags;
+		public String getTemplate_with_hist_id() {
+			return this.template_with_hist_id;
 		}
 
-		public void setTags(String tags) {
-			this.tags = tags;
+		public void setTemplate_with_hist_id(String template_with_hist_id) {
+			this.template_with_hist_id = template_with_hist_id;
 		}
 	}
 
@@ -142,9 +152,9 @@ public class DescribeTemplatesResponse extends AcsResponse {
 
 		private Long page_number;
 
-		private Long total_count;
-
 		private Long page_size;
+
+		private Long total_count;
 
 		public Long getPage_number() {
 			return this.page_number;
@@ -154,14 +164,6 @@ public class DescribeTemplatesResponse extends AcsResponse {
 			this.page_number = page_number;
 		}
 
-		public Long getTotal_count() {
-			return this.total_count;
-		}
-
-		public void setTotal_count(Long total_count) {
-			this.total_count = total_count;
-		}
-
 		public Long getPage_size() {
 			return this.page_size;
 		}
@@ -169,10 +171,23 @@ public class DescribeTemplatesResponse extends AcsResponse {
 		public void setPage_size(Long page_size) {
 			this.page_size = page_size;
 		}
+
+		public Long getTotal_count() {
+			return this.total_count;
+		}
+
+		public void setTotal_count(Long total_count) {
+			this.total_count = total_count;
+		}
 	}
 
 	@Override
 	public DescribeTemplatesResponse getInstance(UnmarshallerContext context) {
 		return	DescribeTemplatesResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

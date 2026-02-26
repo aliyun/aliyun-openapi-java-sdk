@@ -77,7 +77,17 @@ public class DescribeMaskingRulesResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String ruleVersion;
+
 		private List<String> ruleList;
+
+		public String getRuleVersion() {
+			return this.ruleVersion;
+		}
+
+		public void setRuleVersion(String ruleVersion) {
+			this.ruleVersion = ruleVersion;
+		}
 
 		public List<String> getRuleList() {
 			return this.ruleList;

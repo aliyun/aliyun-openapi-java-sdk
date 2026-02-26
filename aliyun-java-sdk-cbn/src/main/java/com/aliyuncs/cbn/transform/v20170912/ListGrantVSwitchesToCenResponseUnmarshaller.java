@@ -37,6 +37,7 @@ public class ListGrantVSwitchesToCenResponseUnmarshaller {
 			vSwitch.setVpcId(_ctx.stringValue("ListGrantVSwitchesToCenResponse.VSwitches["+ i +"].VpcId"));
 			vSwitch.setZoneId(_ctx.stringValue("ListGrantVSwitchesToCenResponse.VSwitches["+ i +"].ZoneId"));
 			vSwitch.setVSwitchId(_ctx.stringValue("ListGrantVSwitchesToCenResponse.VSwitches["+ i +"].VSwitchId"));
+			vSwitch.setVSwitchName(_ctx.stringValue("ListGrantVSwitchesToCenResponse.VSwitches["+ i +"].VSwitchName"));
 
 			vSwitches.add(vSwitch);
 		}

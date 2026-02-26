@@ -61,13 +61,13 @@ public class SegmentHairResponse extends AcsResponse {
 
 			private String imageURL;
 
-			private Integer x;
-
-			private Integer y;
-
 			private Integer width;
 
 			private Integer height;
+
+			private Integer y;
+
+			private Integer x;
 
 			public String getImageURL() {
 				return this.imageURL;
@@ -75,22 +75,6 @@ public class SegmentHairResponse extends AcsResponse {
 
 			public void setImageURL(String imageURL) {
 				this.imageURL = imageURL;
-			}
-
-			public Integer getX() {
-				return this.x;
-			}
-
-			public void setX(Integer x) {
-				this.x = x;
-			}
-
-			public Integer getY() {
-				return this.y;
-			}
-
-			public void setY(Integer y) {
-				this.y = y;
 			}
 
 			public Integer getWidth() {
@@ -107,6 +91,22 @@ public class SegmentHairResponse extends AcsResponse {
 
 			public void setHeight(Integer height) {
 				this.height = height;
+			}
+
+			public Integer getY() {
+				return this.y;
+			}
+
+			public void setY(Integer y) {
+				this.y = y;
+			}
+
+			public Integer getX() {
+				return this.x;
+			}
+
+			public void setX(Integer x) {
+				this.x = x;
 			}
 		}
 	}

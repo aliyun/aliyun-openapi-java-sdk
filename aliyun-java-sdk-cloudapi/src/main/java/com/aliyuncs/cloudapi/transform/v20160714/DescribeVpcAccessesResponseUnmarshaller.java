@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cloudapi.model.v20160714.DescribeVpcAccessesResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeVpcAccessesResponse.VpcAccessAttribute;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeVpcAccessesResponse.VpcAccessAttribute.TagInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,19 +28,32 @@ public class DescribeVpcAccessesResponseUnmarshaller {
 	public static DescribeVpcAccessesResponse unmarshall(DescribeVpcAccessesResponse describeVpcAccessesResponse, UnmarshallerContext _ctx) {
 		
 		describeVpcAccessesResponse.setRequestId(_ctx.stringValue("DescribeVpcAccessesResponse.RequestId"));
-		describeVpcAccessesResponse.setTotalCount(_ctx.integerValue("DescribeVpcAccessesResponse.TotalCount"));
-		describeVpcAccessesResponse.setPageSize(_ctx.integerValue("DescribeVpcAccessesResponse.PageSize"));
 		describeVpcAccessesResponse.setPageNumber(_ctx.integerValue("DescribeVpcAccessesResponse.PageNumber"));
+		describeVpcAccessesResponse.setPageSize(_ctx.integerValue("DescribeVpcAccessesResponse.PageSize"));
+		describeVpcAccessesResponse.setTotalCount(_ctx.integerValue("DescribeVpcAccessesResponse.TotalCount"));
 
 		List<VpcAccessAttribute> vpcAccessAttributes = new ArrayList<VpcAccessAttribute>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAccessesResponse.VpcAccessAttributes.Length"); i++) {
 			VpcAccessAttribute vpcAccessAttribute = new VpcAccessAttribute();
 			vpcAccessAttribute.setVpcId(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].VpcId"));
+			vpcAccessAttribute.setDescription(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].Description"));
 			vpcAccessAttribute.setInstanceId(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].InstanceId"));
-			vpcAccessAttribute.setCreatedTime(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].CreatedTime"));
 			vpcAccessAttribute.setPort(_ctx.integerValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].Port"));
-			vpcAccessAttribute.setRegionId(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].RegionId"));
 			vpcAccessAttribute.setName(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].Name"));
+			vpcAccessAttribute.setCreatedTime(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].CreatedTime"));
+			vpcAccessAttribute.setRegionId(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].RegionId"));
+			vpcAccessAttribute.setVpcAccessId(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].VpcAccessId"));
+			vpcAccessAttribute.setVpcTargetHostName(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].VpcTargetHostName"));
+
+			List<TagInfo> tags = new ArrayList<TagInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].Tags.Length"); j++) {
+				TagInfo tagInfo = new TagInfo();
+				tagInfo.setKey(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].Tags["+ j +"].Key"));
+				tagInfo.setValue(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagInfo);
+			}
+			vpcAccessAttribute.setTags(tags);
 
 			vpcAccessAttributes.add(vpcAccessAttribute);
 		}

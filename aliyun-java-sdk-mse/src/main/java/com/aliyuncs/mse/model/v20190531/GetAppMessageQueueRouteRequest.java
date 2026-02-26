@@ -25,7 +25,11 @@ import com.aliyuncs.mse.Endpoint;
 public class GetAppMessageQueueRouteRequest extends RpcAcsRequest<GetAppMessageQueueRouteResponse> {
 	   
 
+	private String appName;
+
 	private String appId;
+
+	private String namespace;
 
 	private String acceptLanguage;
 
@@ -39,6 +43,17 @@ public class GetAppMessageQueueRouteRequest extends RpcAcsRequest<GetAppMessageQ
 		} catch (Exception e) {}
 	}
 
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -47,6 +62,17 @@ public class GetAppMessageQueueRouteRequest extends RpcAcsRequest<GetAppMessageQ
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

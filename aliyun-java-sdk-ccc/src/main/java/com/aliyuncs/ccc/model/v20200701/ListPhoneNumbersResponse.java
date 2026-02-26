@@ -33,10 +33,6 @@ public class ListPhoneNumbersResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
 	private Data data;
 
 	public Integer getHttpStatusCode() {
@@ -69,22 +65,6 @@ public class ListPhoneNumbersResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public Data getData() {

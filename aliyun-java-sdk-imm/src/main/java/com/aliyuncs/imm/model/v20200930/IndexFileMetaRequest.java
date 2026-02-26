@@ -29,16 +29,15 @@ import com.aliyuncs.imm.Endpoint;
 public class IndexFileMetaRequest extends RpcAcsRequest<IndexFileMetaResponse> {
 	   
 
-	private String projectName;
+	@SerializedName("notification")
+	private Notification notification;
 
 	@SerializedName("file")
 	private File file;
 
-	private String notifyTopicName;
-
-	private String notifyEndpoint;
-
 	private String datasetName;
+
+	private String projectName;
 	public IndexFileMetaRequest() {
 		super("imm", "2020-09-30", "IndexFileMeta", "imm");
 		setMethod(MethodType.POST);
@@ -48,15 +47,15 @@ public class IndexFileMetaRequest extends RpcAcsRequest<IndexFileMetaResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
+	public Notification getNotification() {
+		return this.notification;
 	}
 
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
+	public void setNotification(Notification notification) {
+		this.notification = notification;	
+		if (notification != null) {
+			putQueryParameter("Notification" , new Gson().toJson(notification));
+		}	
 	}
 
 	public File getFile() {
@@ -70,28 +69,6 @@ public class IndexFileMetaRequest extends RpcAcsRequest<IndexFileMetaResponse> {
 		}	
 	}
 
-	public String getNotifyTopicName() {
-		return this.notifyTopicName;
-	}
-
-	public void setNotifyTopicName(String notifyTopicName) {
-		this.notifyTopicName = notifyTopicName;
-		if(notifyTopicName != null){
-			putQueryParameter("NotifyTopicName", notifyTopicName);
-		}
-	}
-
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
-	}
-
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
-		if(notifyEndpoint != null){
-			putQueryParameter("NotifyEndpoint", notifyEndpoint);
-		}
-	}
-
 	public String getDatasetName() {
 		return this.datasetName;
 	}
@@ -100,6 +77,103 @@ public class IndexFileMetaRequest extends RpcAcsRequest<IndexFileMetaResponse> {
 		this.datasetName = datasetName;
 		if(datasetName != null){
 			putQueryParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
+		}
+	}
+
+	public static class Notification {
+
+		@SerializedName("MNS")
+		private MNS mNS;
+
+		@SerializedName("RocketMQ")
+		private RocketMQ rocketMQ;
+
+		public MNS getMNS() {
+			return this.mNS;
+		}
+
+		public void setMNS(MNS mNS) {
+			this.mNS = mNS;
+		}
+
+		public RocketMQ getRocketMQ() {
+			return this.rocketMQ;
+		}
+
+		public void setRocketMQ(RocketMQ rocketMQ) {
+			this.rocketMQ = rocketMQ;
+		}
+
+		public static class MNS {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
+		}
+
+		public static class RocketMQ {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("InstanceId")
+			private String instanceId;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
 		}
 	}
 

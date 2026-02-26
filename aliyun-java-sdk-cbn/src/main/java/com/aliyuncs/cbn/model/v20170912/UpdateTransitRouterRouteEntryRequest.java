@@ -43,7 +43,7 @@ public class UpdateTransitRouterRouteEntryRequest extends RpcAcsRequest<UpdateTr
 
 	private String transitRouterRouteEntryName;
 	public UpdateTransitRouterRouteEntryRequest() {
-		super("Cbn", "2017-09-12", "UpdateTransitRouterRouteEntry");
+		super("Cbn", "2017-09-12", "UpdateTransitRouterRouteEntry", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

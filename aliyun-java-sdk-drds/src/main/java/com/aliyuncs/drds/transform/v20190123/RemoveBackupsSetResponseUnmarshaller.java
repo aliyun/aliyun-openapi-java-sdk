@@ -23,8 +23,8 @@ public class RemoveBackupsSetResponseUnmarshaller {
 	public static RemoveBackupsSetResponse unmarshall(RemoveBackupsSetResponse removeBackupsSetResponse, UnmarshallerContext _ctx) {
 		
 		removeBackupsSetResponse.setRequestId(_ctx.stringValue("RemoveBackupsSetResponse.RequestId"));
-		removeBackupsSetResponse.setSuccess(_ctx.booleanValue("RemoveBackupsSetResponse.Success"));
 		removeBackupsSetResponse.setResult(_ctx.stringValue("RemoveBackupsSetResponse.Result"));
+		removeBackupsSetResponse.setSuccess(_ctx.booleanValue("RemoveBackupsSetResponse.Success"));
 	 
 	 	return removeBackupsSetResponse;
 	}

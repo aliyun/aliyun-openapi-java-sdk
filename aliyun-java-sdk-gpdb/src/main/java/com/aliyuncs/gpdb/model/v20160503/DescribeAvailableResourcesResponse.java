@@ -119,6 +119,8 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 				private String storageType;
 
+				private String category;
+
 				private NodeCount nodeCount;
 
 				private StorageSize storageSize;
@@ -153,6 +155,14 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 				public void setStorageType(String storageType) {
 					this.storageType = storageType;
+				}
+
+				public String getCategory() {
+					return this.category;
+				}
+
+				public void setCategory(String category) {
+					this.category = category;
 				}
 
 				public NodeCount getNodeCount() {

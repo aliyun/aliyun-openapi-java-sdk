@@ -27,13 +27,13 @@ public class DescribeInstanceKeywordsRequest extends RpcAcsRequest<DescribeInsta
 
 	private Long resourceOwnerId;
 
+	private String key;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String key;
 	public DescribeInstanceKeywordsRequest() {
 		super("Rds", "2014-08-15", "DescribeInstanceKeywords", "rds");
 		setMethod(MethodType.POST);
@@ -51,6 +51,17 @@ public class DescribeInstanceKeywordsRequest extends RpcAcsRequest<DescribeInsta
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getKey() {
+		return this.key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+		if(key != null){
+			putQueryParameter("Key", key);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class DescribeInstanceKeywordsRequest extends RpcAcsRequest<DescribeInsta
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getKey() {
-		return this.key;
-	}
-
-	public void setKey(String key) {
-		this.key = key;
-		if(key != null){
-			putQueryParameter("Key", key);
 		}
 	}
 

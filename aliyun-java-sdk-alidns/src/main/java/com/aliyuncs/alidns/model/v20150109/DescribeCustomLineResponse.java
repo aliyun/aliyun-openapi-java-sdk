@@ -27,19 +27,19 @@ public class DescribeCustomLineResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long id;
-
-	private String name;
-
 	private String domainName;
 
 	private String createTime;
 
-	private Long createTimestamp;
+	private Long id;
 
 	private String ipSegments;
 
 	private String code;
+
+	private Long createTimestamp;
+
+	private String name;
 
 	private List<IpSegment> ipSegmentList;
 
@@ -49,22 +49,6 @@ public class DescribeCustomLineResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getDomainName() {
@@ -83,12 +67,12 @@ public class DescribeCustomLineResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public Long getCreateTimestamp() {
-		return this.createTimestamp;
+	public Long getId() {
+		return this.id;
 	}
 
-	public void setCreateTimestamp(Long createTimestamp) {
-		this.createTimestamp = createTimestamp;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getIpSegments() {
@@ -107,6 +91,22 @@ public class DescribeCustomLineResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public Long getCreateTimestamp() {
+		return this.createTimestamp;
+	}
+
+	public void setCreateTimestamp(Long createTimestamp) {
+		this.createTimestamp = createTimestamp;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public List<IpSegment> getIpSegmentList() {
 		return this.ipSegmentList;
 	}
@@ -117,18 +117,18 @@ public class DescribeCustomLineResponse extends AcsResponse {
 
 	public static class IpSegment {
 
-		private String name;
+		private String endIp;
 
 		private String startIp;
 
-		private String endIp;
+		private String name;
 
-		public String getName() {
-			return this.name;
+		public String getEndIp() {
+			return this.endIp;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setEndIp(String endIp) {
+			this.endIp = endIp;
 		}
 
 		public String getStartIp() {
@@ -139,12 +139,12 @@ public class DescribeCustomLineResponse extends AcsResponse {
 			this.startIp = startIp;
 		}
 
-		public String getEndIp() {
-			return this.endIp;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setEndIp(String endIp) {
-			this.endIp = endIp;
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

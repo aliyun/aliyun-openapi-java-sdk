@@ -27,6 +27,7 @@ public class CreateVpcGatewayEndpointResponseUnmarshaller {
 		createVpcGatewayEndpointResponse.setServiceName(_ctx.stringValue("CreateVpcGatewayEndpointResponse.ServiceName"));
 		createVpcGatewayEndpointResponse.setEndpointName(_ctx.stringValue("CreateVpcGatewayEndpointResponse.EndpointName"));
 		createVpcGatewayEndpointResponse.setCreationTime(_ctx.stringValue("CreateVpcGatewayEndpointResponse.CreationTime"));
+		createVpcGatewayEndpointResponse.setResourceGroupId(_ctx.stringValue("CreateVpcGatewayEndpointResponse.ResourceGroupId"));
 	 
 	 	return createVpcGatewayEndpointResponse;
 	}

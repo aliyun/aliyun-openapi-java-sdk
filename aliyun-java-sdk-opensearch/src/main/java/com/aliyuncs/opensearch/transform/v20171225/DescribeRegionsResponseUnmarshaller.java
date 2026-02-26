@@ -31,9 +31,9 @@ public class DescribeRegionsResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
+			resultItem.setEndpoint(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].endpoint"));
 			resultItem.setRegionId(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].regionId"));
 			resultItem.setLocalName(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].localName"));
-			resultItem.setEndpoint(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].endpoint"));
 			resultItem.setConsoleUrl(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].consoleUrl"));
 
 			result.add(resultItem);

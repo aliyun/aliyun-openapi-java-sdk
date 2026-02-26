@@ -28,6 +28,8 @@ public class DescribeConfigurationPriceRequest extends RoaAcsRequest<DescribeCon
 	private Integer memory;
 
 	private Integer cpu;
+
+	private String workload;
 	public DescribeConfigurationPriceRequest() {
 		super("sae", "2019-05-06", "DescribeConfigurationPrice", "serverless");
 		setUriPattern("/pop/v1/paas/configurationPrice");
@@ -57,6 +59,17 @@ public class DescribeConfigurationPriceRequest extends RoaAcsRequest<DescribeCon
 		this.cpu = cpu;
 		if(cpu != null){
 			putQueryParameter("Cpu", cpu.toString());
+		}
+	}
+
+	public String getWorkload() {
+		return this.workload;
+	}
+
+	public void setWorkload(String workload) {
+		this.workload = workload;
+		if(workload != null){
+			putQueryParameter("Workload", workload);
 		}
 	}
 

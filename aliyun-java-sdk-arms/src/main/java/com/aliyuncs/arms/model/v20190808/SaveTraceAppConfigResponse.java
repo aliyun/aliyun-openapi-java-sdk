@@ -28,6 +28,12 @@ public class SaveTraceAppConfigResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String message;
+
+	private Long code;
+
+	private Boolean success;
+
 	public String getData() {
 		return this.data;
 	}
@@ -42,6 +48,30 @@ public class SaveTraceAppConfigResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Long getCode() {
+		return this.code;
+	}
+
+	public void setCode(Long code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

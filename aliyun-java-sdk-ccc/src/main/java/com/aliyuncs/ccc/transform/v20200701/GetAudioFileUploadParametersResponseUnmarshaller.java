@@ -27,7 +27,6 @@ public class GetAudioFileUploadParametersResponseUnmarshaller {
 		getAudioFileUploadParametersResponse.setHttpStatusCode(_ctx.integerValue("GetAudioFileUploadParametersResponse.HttpStatusCode"));
 		getAudioFileUploadParametersResponse.setCode(_ctx.stringValue("GetAudioFileUploadParametersResponse.Code"));
 		getAudioFileUploadParametersResponse.setMessage(_ctx.stringValue("GetAudioFileUploadParametersResponse.Message"));
-		getAudioFileUploadParametersResponse.setSuccess(_ctx.booleanValue("GetAudioFileUploadParametersResponse.Success"));
 
 		Data data = new Data();
 		data.setFilePath(_ctx.stringValue("GetAudioFileUploadParametersResponse.Data.FilePath"));

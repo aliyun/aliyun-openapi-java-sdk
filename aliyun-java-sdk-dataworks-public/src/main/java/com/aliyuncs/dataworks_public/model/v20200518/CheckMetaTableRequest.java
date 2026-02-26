@@ -27,11 +27,11 @@ public class CheckMetaTableRequest extends RpcAcsRequest<CheckMetaTableResponse>
 
 	private String dataSourceType;
 
+	private String clusterId;
+
 	private String tableGuid;
 
 	private String databaseName;
-
-	private String clusterId;
 
 	private String tableName;
 	public CheckMetaTableRequest() {
@@ -54,6 +54,17 @@ public class CheckMetaTableRequest extends RpcAcsRequest<CheckMetaTableResponse>
 		}
 	}
 
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
 	public String getTableGuid() {
 		return this.tableGuid;
 	}
@@ -73,17 +84,6 @@ public class CheckMetaTableRequest extends RpcAcsRequest<CheckMetaTableResponse>
 		this.databaseName = databaseName;
 		if(databaseName != null){
 			putQueryParameter("DatabaseName", databaseName);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

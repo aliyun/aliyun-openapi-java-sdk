@@ -29,19 +29,19 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 	private Long tid;
 
-	private String instanceState;
-
 	private Integer pageNumber;
-
-	private String netType;
-
-	private String dbType;
 
 	private String envType;
 
 	private String instanceSource;
 
 	private Integer pageSize;
+
+	private String instanceState;
+
+	private String netType;
+
+	private String dbType;
 	public ListInstancesRequest() {
 		super("dms-enterprise", "2018-11-01", "ListInstances", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -73,17 +73,6 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		}
 	}
 
-	public String getInstanceState() {
-		return this.instanceState;
-	}
-
-	public void setInstanceState(String instanceState) {
-		this.instanceState = instanceState;
-		if(instanceState != null){
-			putQueryParameter("InstanceState", instanceState);
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -92,28 +81,6 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getNetType() {
-		return this.netType;
-	}
-
-	public void setNetType(String netType) {
-		this.netType = netType;
-		if(netType != null){
-			putQueryParameter("NetType", netType);
-		}
-	}
-
-	public String getDbType() {
-		return this.dbType;
-	}
-
-	public void setDbType(String dbType) {
-		this.dbType = dbType;
-		if(dbType != null){
-			putQueryParameter("DbType", dbType);
 		}
 	}
 
@@ -147,6 +114,39 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getInstanceState() {
+		return this.instanceState;
+	}
+
+	public void setInstanceState(String instanceState) {
+		this.instanceState = instanceState;
+		if(instanceState != null){
+			putQueryParameter("InstanceState", instanceState);
+		}
+	}
+
+	public String getNetType() {
+		return this.netType;
+	}
+
+	public void setNetType(String netType) {
+		this.netType = netType;
+		if(netType != null){
+			putQueryParameter("NetType", netType);
+		}
+	}
+
+	public String getDbType() {
+		return this.dbType;
+	}
+
+	public void setDbType(String dbType) {
+		this.dbType = dbType;
+		if(dbType != null){
+			putQueryParameter("DbType", dbType);
 		}
 	}
 

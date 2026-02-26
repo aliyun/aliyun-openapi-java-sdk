@@ -57,23 +57,15 @@ public class QueryUserListResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer totalPages;
-
 		private Integer pageNum;
 
 		private Integer pageSize;
 
 		private Integer totalNum;
 
+		private Integer totalPages;
+
 		private List<DataItem> data;
-
-		public Integer getTotalPages() {
-			return this.totalPages;
-		}
-
-		public void setTotalPages(Integer totalPages) {
-			this.totalPages = totalPages;
-		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -99,6 +91,14 @@ public class QueryUserListResponse extends AcsResponse {
 			this.totalNum = totalNum;
 		}
 
+		public Integer getTotalPages() {
+			return this.totalPages;
+		}
+
+		public void setTotalPages(Integer totalPages) {
+			this.totalPages = totalPages;
+		}
+
 		public List<DataItem> getData() {
 			return this.data;
 		}
@@ -109,55 +109,31 @@ public class QueryUserListResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private Integer userType;
-
-			private String email;
-
-			private String userId;
-
-			private Boolean authAdminUser;
-
 			private String accountId;
-
-			private String nickName;
-
-			private Boolean adminUser;
-
-			private String phone;
 
 			private String accountName;
 
-			public Integer getUserType() {
-				return this.userType;
-			}
+			private Boolean adminUser;
 
-			public void setUserType(Integer userType) {
-				this.userType = userType;
-			}
+			private Boolean authAdminUser;
 
-			public String getEmail() {
-				return this.email;
-			}
+			private String email;
 
-			public void setEmail(String email) {
-				this.email = email;
-			}
+			private Long joinedDate;
 
-			public String getUserId() {
-				return this.userId;
-			}
+			private Long lastLoginTime;
 
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
+			private String nickName;
 
-			public Boolean getAuthAdminUser() {
-				return this.authAdminUser;
-			}
+			private String phone;
 
-			public void setAuthAdminUser(Boolean authAdminUser) {
-				this.authAdminUser = authAdminUser;
-			}
+			private String userId;
+
+			private Integer userType;
+
+			private Boolean isDeleted;
+
+			private List<Long> roleIdList;
 
 			public String getAccountId() {
 				return this.accountId;
@@ -167,12 +143,12 @@ public class QueryUserListResponse extends AcsResponse {
 				this.accountId = accountId;
 			}
 
-			public String getNickName() {
-				return this.nickName;
+			public String getAccountName() {
+				return this.accountName;
 			}
 
-			public void setNickName(String nickName) {
-				this.nickName = nickName;
+			public void setAccountName(String accountName) {
+				this.accountName = accountName;
 			}
 
 			public Boolean getAdminUser() {
@@ -183,6 +159,46 @@ public class QueryUserListResponse extends AcsResponse {
 				this.adminUser = adminUser;
 			}
 
+			public Boolean getAuthAdminUser() {
+				return this.authAdminUser;
+			}
+
+			public void setAuthAdminUser(Boolean authAdminUser) {
+				this.authAdminUser = authAdminUser;
+			}
+
+			public String getEmail() {
+				return this.email;
+			}
+
+			public void setEmail(String email) {
+				this.email = email;
+			}
+
+			public Long getJoinedDate() {
+				return this.joinedDate;
+			}
+
+			public void setJoinedDate(Long joinedDate) {
+				this.joinedDate = joinedDate;
+			}
+
+			public Long getLastLoginTime() {
+				return this.lastLoginTime;
+			}
+
+			public void setLastLoginTime(Long lastLoginTime) {
+				this.lastLoginTime = lastLoginTime;
+			}
+
+			public String getNickName() {
+				return this.nickName;
+			}
+
+			public void setNickName(String nickName) {
+				this.nickName = nickName;
+			}
+
 			public String getPhone() {
 				return this.phone;
 			}
@@ -191,12 +207,36 @@ public class QueryUserListResponse extends AcsResponse {
 				this.phone = phone;
 			}
 
-			public String getAccountName() {
-				return this.accountName;
+			public String getUserId() {
+				return this.userId;
 			}
 
-			public void setAccountName(String accountName) {
-				this.accountName = accountName;
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public Integer getUserType() {
+				return this.userType;
+			}
+
+			public void setUserType(Integer userType) {
+				this.userType = userType;
+			}
+
+			public Boolean getIsDeleted() {
+				return this.isDeleted;
+			}
+
+			public void setIsDeleted(Boolean isDeleted) {
+				this.isDeleted = isDeleted;
+			}
+
+			public List<Long> getRoleIdList() {
+				return this.roleIdList;
+			}
+
+			public void setRoleIdList(List<Long> roleIdList) {
+				this.roleIdList = roleIdList;
 			}
 		}
 	}

@@ -33,6 +33,8 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 
 	private String arrayRequest;
 
+	private String unzipCmd;
+
 	private String packagePath;
 
 	private String mem;
@@ -51,15 +53,19 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 
 	private Integer gpu;
 
+	private Boolean withUnzipCmd;
+
 	private Integer node;
 
 	private Integer task;
+
+	private String inputFileUrl;
 
 	private String name;
 
 	private String queue;
 	public CreateJobTemplateRequest() {
-		super("EHPC", "2018-04-12", "CreateJobTemplate");
+		super("EHPC", "2018-04-12", "CreateJobTemplate", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -108,6 +114,17 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 		this.arrayRequest = arrayRequest;
 		if(arrayRequest != null){
 			putQueryParameter("ArrayRequest", arrayRequest);
+		}
+	}
+
+	public String getUnzipCmd() {
+		return this.unzipCmd;
+	}
+
+	public void setUnzipCmd(String unzipCmd) {
+		this.unzipCmd = unzipCmd;
+		if(unzipCmd != null){
+			putQueryParameter("UnzipCmd", unzipCmd);
 		}
 	}
 
@@ -210,6 +227,17 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 		}
 	}
 
+	public Boolean getWithUnzipCmd() {
+		return this.withUnzipCmd;
+	}
+
+	public void setWithUnzipCmd(Boolean withUnzipCmd) {
+		this.withUnzipCmd = withUnzipCmd;
+		if(withUnzipCmd != null){
+			putQueryParameter("WithUnzipCmd", withUnzipCmd.toString());
+		}
+	}
+
 	public Integer getNode() {
 		return this.node;
 	}
@@ -229,6 +257,17 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 		this.task = task;
 		if(task != null){
 			putQueryParameter("Task", task.toString());
+		}
+	}
+
+	public String getInputFileUrl() {
+		return this.inputFileUrl;
+	}
+
+	public void setInputFileUrl(String inputFileUrl) {
+		this.inputFileUrl = inputFileUrl;
+		if(inputFileUrl != null){
+			putQueryParameter("InputFileUrl", inputFileUrl);
 		}
 	}
 

@@ -34,6 +34,8 @@ public class ListApplicationsRequest extends RpcAcsRequest<ListApplicationsRespo
 	private String name;
 
 	private Integer maxResults;
+
+	private String applicationType;
 	public ListApplicationsRequest() {
 		super("oos", "2019-06-01", "ListApplications", "oos");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class ListApplicationsRequest extends RpcAcsRequest<ListApplicationsRespo
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getApplicationType() {
+		return this.applicationType;
+	}
+
+	public void setApplicationType(String applicationType) {
+		this.applicationType = applicationType;
+		if(applicationType != null){
+			putQueryParameter("ApplicationType", applicationType);
 		}
 	}
 

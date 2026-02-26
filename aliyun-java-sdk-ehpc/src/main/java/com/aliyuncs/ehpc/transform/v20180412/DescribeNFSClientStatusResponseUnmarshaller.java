@@ -27,9 +27,9 @@ public class DescribeNFSClientStatusResponseUnmarshaller {
 		describeNFSClientStatusResponse.setStatus(_ctx.stringValue("DescribeNFSClientStatusResponse.Status"));
 
 		Result result = new Result();
+		result.setOutput(_ctx.stringValue("DescribeNFSClientStatusResponse.Result.Output"));
 		result.setInvokeRecordStatus(_ctx.stringValue("DescribeNFSClientStatusResponse.Result.InvokeRecordStatus"));
 		result.setExitCode(_ctx.integerValue("DescribeNFSClientStatusResponse.Result.ExitCode"));
-		result.setOutput(_ctx.stringValue("DescribeNFSClientStatusResponse.Result.Output"));
 		describeNFSClientStatusResponse.setResult(result);
 	 
 	 	return describeNFSClientStatusResponse;

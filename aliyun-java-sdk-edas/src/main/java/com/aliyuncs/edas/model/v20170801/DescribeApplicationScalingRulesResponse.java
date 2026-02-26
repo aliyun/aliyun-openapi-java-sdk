@@ -131,6 +131,8 @@ public class DescribeApplicationScalingRulesResponse extends AcsResponse {
 
 			private Trigger trigger;
 
+			private Behaviour behaviour;
+
 			public Long getUpdateTime() {
 				return this.updateTime;
 			}
@@ -217,6 +219,14 @@ public class DescribeApplicationScalingRulesResponse extends AcsResponse {
 
 			public void setTrigger(Trigger trigger) {
 				this.trigger = trigger;
+			}
+
+			public Behaviour getBehaviour() {
+				return this.behaviour;
+			}
+
+			public void setBehaviour(Behaviour behaviour) {
+				this.behaviour = behaviour;
 			}
 
 			public static class Metric {
@@ -337,6 +347,161 @@ public class DescribeApplicationScalingRulesResponse extends AcsResponse {
 
 					public void setName(String name) {
 						this.name = name;
+					}
+				}
+			}
+
+			public static class Behaviour {
+
+				private ScaleUp scaleUp;
+
+				private ScaleDown scaleDown;
+
+				public ScaleUp getScaleUp() {
+					return this.scaleUp;
+				}
+
+				public void setScaleUp(ScaleUp scaleUp) {
+					this.scaleUp = scaleUp;
+				}
+
+				public ScaleDown getScaleDown() {
+					return this.scaleDown;
+				}
+
+				public void setScaleDown(ScaleDown scaleDown) {
+					this.scaleDown = scaleDown;
+				}
+
+				public static class ScaleUp {
+
+					private Integer stabilizationWindowSeconds;
+
+					private String selectPolicy;
+
+					private List<Policy> policies;
+
+					public Integer getStabilizationWindowSeconds() {
+						return this.stabilizationWindowSeconds;
+					}
+
+					public void setStabilizationWindowSeconds(Integer stabilizationWindowSeconds) {
+						this.stabilizationWindowSeconds = stabilizationWindowSeconds;
+					}
+
+					public String getSelectPolicy() {
+						return this.selectPolicy;
+					}
+
+					public void setSelectPolicy(String selectPolicy) {
+						this.selectPolicy = selectPolicy;
+					}
+
+					public List<Policy> getPolicies() {
+						return this.policies;
+					}
+
+					public void setPolicies(List<Policy> policies) {
+						this.policies = policies;
+					}
+
+					public static class Policy {
+
+						private Integer periodSeconds;
+
+						private String type;
+
+						private String value;
+
+						public Integer getPeriodSeconds() {
+							return this.periodSeconds;
+						}
+
+						public void setPeriodSeconds(Integer periodSeconds) {
+							this.periodSeconds = periodSeconds;
+						}
+
+						public String getType() {
+							return this.type;
+						}
+
+						public void setType(String type) {
+							this.type = type;
+						}
+
+						public String getValue() {
+							return this.value;
+						}
+
+						public void setValue(String value) {
+							this.value = value;
+						}
+					}
+				}
+
+				public static class ScaleDown {
+
+					private Integer stabilizationWindowSeconds;
+
+					private String selectPolicy;
+
+					private List<Policy4> policies3;
+
+					public Integer getStabilizationWindowSeconds() {
+						return this.stabilizationWindowSeconds;
+					}
+
+					public void setStabilizationWindowSeconds(Integer stabilizationWindowSeconds) {
+						this.stabilizationWindowSeconds = stabilizationWindowSeconds;
+					}
+
+					public String getSelectPolicy() {
+						return this.selectPolicy;
+					}
+
+					public void setSelectPolicy(String selectPolicy) {
+						this.selectPolicy = selectPolicy;
+					}
+
+					public List<Policy4> getPolicies3() {
+						return this.policies3;
+					}
+
+					public void setPolicies3(List<Policy4> policies3) {
+						this.policies3 = policies3;
+					}
+
+					public static class Policy4 {
+
+						private Integer periodSeconds;
+
+						private String type;
+
+						private String value;
+
+						public Integer getPeriodSeconds() {
+							return this.periodSeconds;
+						}
+
+						public void setPeriodSeconds(Integer periodSeconds) {
+							this.periodSeconds = periodSeconds;
+						}
+
+						public String getType() {
+							return this.type;
+						}
+
+						public void setType(String type) {
+							this.type = type;
+						}
+
+						public String getValue() {
+							return this.value;
+						}
+
+						public void setValue(String value) {
+							this.value = value;
+						}
 					}
 				}
 			}

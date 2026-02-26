@@ -25,11 +25,11 @@ import com.aliyuncs.vpc.Endpoint;
 public class CreateNatIpRequest extends RpcAcsRequest<CreateNatIpResponse> {
 	   
 
-	private String natIpCidrId;
-
 	private Long resourceOwnerId;
 
 	private String natIpName;
+
+	private String ipv4Prefix;
 
 	private String clientToken;
 
@@ -47,6 +47,8 @@ public class CreateNatIpRequest extends RpcAcsRequest<CreateNatIpResponse> {
 
 	private String natIpCidr;
 
+	private Integer ipv4PrefixCount;
+
 	private String natIp;
 	public CreateNatIpRequest() {
 		super("Vpc", "2016-04-28", "CreateNatIp", "vpc");
@@ -55,17 +57,6 @@ public class CreateNatIpRequest extends RpcAcsRequest<CreateNatIpResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getNatIpCidrId() {
-		return this.natIpCidrId;
-	}
-
-	public void setNatIpCidrId(String natIpCidrId) {
-		this.natIpCidrId = natIpCidrId;
-		if(natIpCidrId != null){
-			putQueryParameter("NatIpCidrId", natIpCidrId);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -87,6 +78,17 @@ public class CreateNatIpRequest extends RpcAcsRequest<CreateNatIpResponse> {
 		this.natIpName = natIpName;
 		if(natIpName != null){
 			putQueryParameter("NatIpName", natIpName);
+		}
+	}
+
+	public String getIpv4Prefix() {
+		return this.ipv4Prefix;
+	}
+
+	public void setIpv4Prefix(String ipv4Prefix) {
+		this.ipv4Prefix = ipv4Prefix;
+		if(ipv4Prefix != null){
+			putQueryParameter("Ipv4Prefix", ipv4Prefix);
 		}
 	}
 
@@ -175,6 +177,17 @@ public class CreateNatIpRequest extends RpcAcsRequest<CreateNatIpResponse> {
 		this.natIpCidr = natIpCidr;
 		if(natIpCidr != null){
 			putQueryParameter("NatIpCidr", natIpCidr);
+		}
+	}
+
+	public Integer getIpv4PrefixCount() {
+		return this.ipv4PrefixCount;
+	}
+
+	public void setIpv4PrefixCount(Integer ipv4PrefixCount) {
+		this.ipv4PrefixCount = ipv4PrefixCount;
+		if(ipv4PrefixCount != null){
+			putQueryParameter("Ipv4PrefixCount", ipv4PrefixCount.toString());
 		}
 	}
 

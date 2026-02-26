@@ -29,7 +29,7 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 
 	private String dbName;
 	public DeleteImageRequest() {
-		super("imgsearch", "2020-03-20", "DeleteImage", "imgsearch");
+		super("imgsearch", "2020-03-20", "DeleteImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

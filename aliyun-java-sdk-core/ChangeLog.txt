@@ -1,4 +1,47 @@
-﻿2022-08-04 Version:4.6.1
+﻿2025-12-16 Version:4.7.8
+1.Update dependencies.
+
+2025-11-11 Version:4.7.7
+1.Resolve exception and remove ini4j.
+
+2025-06-10 Version:4.7.6
+1.Support IDToken.
+
+2025-04-18 Version:4.7.5
+1.Support StsToken mode in cli profile.
+
+2025-04-11 Version:4.7.4
+1.Improve credentials providers in profile.
+
+2024-12-04 Version:4.7.3
+1.Improve all credentials providers.
+2.Support CLI credentials provider.
+2.Support URI credentials provider.
+3.Support ALIBABA_CLOUD_IMDSV1_DISABLED for imds v1 disabled and ALIBABA_CLOUD_ECS_METADATA_DISABLED for imds disabled.
+
+2024-09-27 Version:4.7.2
+1.Remove ini4j && improve ini config file parsing.
+
+2024-07-22 Version:4.7.1
+1, Support custom location service.
+
+2024-07-08 Version:4.7.0
+1, Support OIDC credentials provider.
+2, Add OIDC credentials provider into default credentials provider chain.
+3, Cleanup some imports.
+
+2023-09-06 Version:4.6.4
+1, Improve the design of nonce
+
+2022-11-23 Version:4.6.3
+1, Support access denied detail in AcsError.
+2, Add header `x-sdk-throttling-control` when throttling control enable
+
+2022-09-13 Version:4.6.2
+1, Update endpoints.
+2, Fix CompatibleUrlConnClient npe
+
+2022-08-04 Version:4.6.1
 1, Fix v3 signature without path && update signer name
 2, Support patch(http method)
 3, Support payload for delete(http method)

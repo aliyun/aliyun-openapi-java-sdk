@@ -29,23 +29,31 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 
 	private String type;
 
+	private String containerFieldName;
+
+	private String groupId;
+
+	private String aliasName;
+
+	private String necessity;
+
+	private String uuids;
+
+	private String targetType;
+
 	private Integer pageSize;
 
 	private String lang;
 
-	private String groupId;
+	private Long resourceDirectoryAccountId;
+
+	private String assetType;
 
 	private String dealed;
 
 	private Integer currentPage;
 
-	private String aliasName;
-
 	private String searchTags;
-
-	private String necessity;
-
-	private String uuids;
 	public DescribeGroupedVulRequest() {
 		super("Sas", "2018-12-03", "DescribeGroupedVul");
 		setMethod(MethodType.POST);
@@ -77,6 +85,72 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		}
 	}
 
+	public String getContainerFieldName() {
+		return this.containerFieldName;
+	}
+
+	public void setContainerFieldName(String containerFieldName) {
+		this.containerFieldName = containerFieldName;
+		if(containerFieldName != null){
+			putQueryParameter("ContainerFieldName", containerFieldName);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getAliasName() {
+		return this.aliasName;
+	}
+
+	public void setAliasName(String aliasName) {
+		this.aliasName = aliasName;
+		if(aliasName != null){
+			putQueryParameter("AliasName", aliasName);
+		}
+	}
+
+	public String getNecessity() {
+		return this.necessity;
+	}
+
+	public void setNecessity(String necessity) {
+		this.necessity = necessity;
+		if(necessity != null){
+			putQueryParameter("Necessity", necessity);
+		}
+	}
+
+	public String getUuids() {
+		return this.uuids;
+	}
+
+	public void setUuids(String uuids) {
+		this.uuids = uuids;
+		if(uuids != null){
+			putQueryParameter("Uuids", uuids);
+		}
+	}
+
+	public String getTargetType() {
+		return this.targetType;
+	}
+
+	public void setTargetType(String targetType) {
+		this.targetType = targetType;
+		if(targetType != null){
+			putQueryParameter("TargetType", targetType);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -99,14 +173,25 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public Long getResourceDirectoryAccountId() {
+		return this.resourceDirectoryAccountId;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
+	public void setResourceDirectoryAccountId(Long resourceDirectoryAccountId) {
+		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
+		if(resourceDirectoryAccountId != null){
+			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId.toString());
+		}
+	}
+
+	public String getAssetType() {
+		return this.assetType;
+	}
+
+	public void setAssetType(String assetType) {
+		this.assetType = assetType;
+		if(assetType != null){
+			putQueryParameter("AssetType", assetType);
 		}
 	}
 
@@ -132,17 +217,6 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		}
 	}
 
-	public String getAliasName() {
-		return this.aliasName;
-	}
-
-	public void setAliasName(String aliasName) {
-		this.aliasName = aliasName;
-		if(aliasName != null){
-			putQueryParameter("AliasName", aliasName);
-		}
-	}
-
 	public String getSearchTags() {
 		return this.searchTags;
 	}
@@ -151,28 +225,6 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		this.searchTags = searchTags;
 		if(searchTags != null){
 			putQueryParameter("SearchTags", searchTags);
-		}
-	}
-
-	public String getNecessity() {
-		return this.necessity;
-	}
-
-	public void setNecessity(String necessity) {
-		this.necessity = necessity;
-		if(necessity != null){
-			putQueryParameter("Necessity", necessity);
-		}
-	}
-
-	public String getUuids() {
-		return this.uuids;
-	}
-
-	public void setUuids(String uuids) {
-		this.uuids = uuids;
-		if(uuids != null){
-			putQueryParameter("Uuids", uuids);
 		}
 	}
 

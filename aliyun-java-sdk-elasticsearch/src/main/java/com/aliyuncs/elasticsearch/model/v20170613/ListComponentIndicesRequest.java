@@ -32,8 +32,6 @@ public class ListComponentIndicesRequest extends RoaAcsRequest<ListComponentIndi
 	private String name;
 
 	private Integer page;
-
-	private String body;
 	public ListComponentIndicesRequest() {
 		super("elasticsearch", "2017-06-13", "ListComponentIndices", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/component-index");
@@ -85,17 +83,6 @@ public class ListComponentIndicesRequest extends RoaAcsRequest<ListComponentIndi
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

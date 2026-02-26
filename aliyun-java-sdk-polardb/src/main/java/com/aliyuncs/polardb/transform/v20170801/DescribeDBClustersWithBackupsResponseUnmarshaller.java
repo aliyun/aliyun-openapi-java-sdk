@@ -53,6 +53,8 @@ public class DescribeDBClustersWithBackupsResponseUnmarshaller {
 			dBCluster.setDBClusterDescription(_ctx.stringValue("DescribeDBClustersWithBackupsResponse.Items["+ i +"].DBClusterDescription"));
 			dBCluster.setZoneId(_ctx.stringValue("DescribeDBClustersWithBackupsResponse.Items["+ i +"].ZoneId"));
 			dBCluster.setEngine(_ctx.stringValue("DescribeDBClustersWithBackupsResponse.Items["+ i +"].Engine"));
+			dBCluster.setCategory(_ctx.stringValue("DescribeDBClustersWithBackupsResponse.Items["+ i +"].Category"));
+			dBCluster.setCnClass(_ctx.stringValue("DescribeDBClustersWithBackupsResponse.Items["+ i +"].CnClass"));
 
 			items.add(dBCluster);
 		}

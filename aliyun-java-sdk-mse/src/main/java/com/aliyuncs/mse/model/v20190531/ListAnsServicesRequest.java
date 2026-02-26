@@ -25,42 +25,44 @@ import com.aliyuncs.mse.Endpoint;
 public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesResponse> {
 	   
 
-	private String clusterId;
+	private String clusterName;
 
 	private Integer pageNum;
-
-	private String groupName;
-
-	private String hasIpCount;
-
-	private String instanceId;
 
 	private String namespaceId;
 
 	private String requestPars;
 
+	private String groupName;
+
+	private String instanceId;
+
 	private Integer pageSize;
 
-	private String acceptLanguage;
-
 	private String serviceName;
+
+	private String clusterId;
+
+	private String hasIpCount;
+
+	private String acceptLanguage;
 	public ListAnsServicesRequest() {
 		super("mse", "2019-05-31", "ListAnsServices", "mse");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getClusterName() {
+		return this.clusterName;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setClusterName(String clusterName) {
+		this.clusterName = clusterName;
+		if(clusterName != null){
+			putQueryParameter("ClusterName", clusterName);
 		}
 	}
 
@@ -72,39 +74,6 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
-		}
-	}
-
-	public String getHasIpCount() {
-		return this.hasIpCount;
-	}
-
-	public void setHasIpCount(String hasIpCount) {
-		this.hasIpCount = hasIpCount;
-		if(hasIpCount != null){
-			putQueryParameter("HasIpCount", hasIpCount);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -130,6 +99,28 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 		}
 	}
 
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -141,17 +132,6 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public String getServiceName() {
 		return this.serviceName;
 	}
@@ -160,6 +140,39 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 		this.serviceName = serviceName;
 		if(serviceName != null){
 			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getHasIpCount() {
+		return this.hasIpCount;
+	}
+
+	public void setHasIpCount(String hasIpCount) {
+		this.hasIpCount = hasIpCount;
+		if(hasIpCount != null){
+			putQueryParameter("HasIpCount", hasIpCount);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

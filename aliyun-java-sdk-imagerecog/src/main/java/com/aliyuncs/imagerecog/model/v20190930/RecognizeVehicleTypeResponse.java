@@ -69,17 +69,9 @@ public class RecognizeVehicleTypeResponse extends AcsResponse {
 
 		public static class Element {
 
-			private String name;
-
 			private Float score;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public Float getScore() {
 				return this.score;
@@ -87,6 +79,14 @@ public class RecognizeVehicleTypeResponse extends AcsResponse {
 
 			public void setScore(Float score) {
 				this.score = score;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

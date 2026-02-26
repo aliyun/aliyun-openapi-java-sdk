@@ -26,11 +26,11 @@ public class RemoveInterventionDictionaryResponseUnmarshaller {
 		removeInterventionDictionaryResponse.setRequestId(_ctx.stringValue("RemoveInterventionDictionaryResponse.requestId"));
 
 		Result result = new Result();
-		result.setName(_ctx.stringValue("RemoveInterventionDictionaryResponse.result.name"));
-		result.setType(_ctx.stringValue("RemoveInterventionDictionaryResponse.result.type"));
-		result.setAnalyzer(_ctx.stringValue("RemoveInterventionDictionaryResponse.result.analyzer"));
 		result.setCreated(_ctx.stringValue("RemoveInterventionDictionaryResponse.result.created"));
+		result.setAnalyzer(_ctx.stringValue("RemoveInterventionDictionaryResponse.result.analyzer"));
 		result.setUpdated(_ctx.stringValue("RemoveInterventionDictionaryResponse.result.updated"));
+		result.setType(_ctx.stringValue("RemoveInterventionDictionaryResponse.result.type"));
+		result.setName(_ctx.stringValue("RemoveInterventionDictionaryResponse.result.name"));
 		removeInterventionDictionaryResponse.setResult(result);
 	 
 	 	return removeInterventionDictionaryResponse;

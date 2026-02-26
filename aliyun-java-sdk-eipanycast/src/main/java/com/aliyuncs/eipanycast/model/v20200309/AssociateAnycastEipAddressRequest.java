@@ -44,7 +44,7 @@ public class AssociateAnycastEipAddressRequest extends RpcAcsRequest<AssociateAn
 
 	private String bindInstanceId;
 	public AssociateAnycastEipAddressRequest() {
-		super("Eipanycast", "2020-03-09", "AssociateAnycastEipAddress");
+		super("Eipanycast", "2020-03-09", "AssociateAnycastEipAddress", "eipanycast");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

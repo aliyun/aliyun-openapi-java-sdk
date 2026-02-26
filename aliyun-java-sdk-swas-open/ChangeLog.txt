@@ -1,3 +1,60 @@
+2025-12-29 Version: 1.8.17
+- SDK update.
+
+2025-04-17 Version: 1.8.16
+- Generated 2020-06-01 for `SWAS-OPEN`.
+
+2025-03-25 Version: 1.8.15
+- Generated 2020-06-01 for `SWAS-OPEN`.
+
+2025-02-11 Version: 1.8.14
+- Generated 2020-06-01 for `SWAS-OPEN`.
+
+2024-08-12 Version: 1.8.13
+- Generated 2020-06-01 for `SWAS-OPEN`.
+
+2024-07-16 Version: 1.8.12
+- Generated 2020-06-01 for `SWAS-OPEN`.
+
+2024-06-17 Version: 1.8.11
+- Generated 2020-06-01 for `SWAS-OPEN`.
+
+2024-05-22 Version: 1.8.10
+- Generated 2020-06-01 for `SWAS-OPEN`.
+
+2024-03-13 Version: 1.8.9
+- Generated 2020-06-01 for `SWAS-OPEN`.
+
+2023-10-11 Version: 1.8.8
+- Generated 2020-06-01 for `SWAS-OPEN`.
+
+2023-09-25 Version: 1.8.7
+- Add new apis.
+
+2023-08-30 Version: 1.8.6
+- Add new apis.
+
+2023-07-19 Version: 1.8.5
+- Add new apis.
+
+2023-06-07 Version: 1.8.4
+- Add new apis.
+
+2023-03-02 Version: 1.8.3
+- Add new apis.
+- DescribeDatabaseInstances.
+- StartDatabaseInstance.
+- StopDatabaseInstance.
+- RetartDatabaseInstance.
+- ResetDatabaseAccountPassword.
+- AllocatePublicConnection.
+- ReleasePublicConnection.
+- DescribeDatabaseInstanceMetricData.
+- DescribeDatabaseSlowLogRecords.
+- DescribeDatabaseErrorLogs.
+- DescribeDatabaseInstanceParameters.
+- ModifyDatabaseInstanceParameter.
+
 2020-08-05 Version: 1.8.2
 - Add action.
 

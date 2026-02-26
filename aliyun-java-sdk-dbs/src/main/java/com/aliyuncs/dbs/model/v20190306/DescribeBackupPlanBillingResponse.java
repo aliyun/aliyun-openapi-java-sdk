@@ -114,8 +114,6 @@ public class DescribeBackupPlanBillingResponse extends AcsResponse {
 
 		private Long usedIncrementBytes;
 
-		private String resourceGroupId;
-
 		public Long getBuyCreateTimestamp() {
 			return this.buyCreateTimestamp;
 		}
@@ -226,14 +224,6 @@ public class DescribeBackupPlanBillingResponse extends AcsResponse {
 
 		public void setUsedIncrementBytes(Long usedIncrementBytes) {
 			this.usedIncrementBytes = usedIncrementBytes;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

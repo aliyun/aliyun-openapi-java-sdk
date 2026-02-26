@@ -27,11 +27,11 @@ public class DescribeDcdnDomainConfigsRequest extends RpcAcsRequest<DescribeDcdn
 
 	private String functionNames;
 
+	private String securityToken;
+
 	private String domainName;
 
 	private Long ownerId;
-
-	private String securityToken;
 
 	private String configId;
 	public DescribeDcdnDomainConfigsRequest() {
@@ -54,6 +54,17 @@ public class DescribeDcdnDomainConfigsRequest extends RpcAcsRequest<DescribeDcdn
 		}
 	}
 
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -73,17 +84,6 @@ public class DescribeDcdnDomainConfigsRequest extends RpcAcsRequest<DescribeDcdn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -87,6 +87,8 @@ public class DescribeIpv6AddressesResponse extends AcsResponse {
 
 		private String ipv6AddressName;
 
+		private String ipv6AddressDescription;
+
 		private String associatedInstanceType;
 
 		private String associatedInstanceId;
@@ -95,6 +97,8 @@ public class DescribeIpv6AddressesResponse extends AcsResponse {
 
 		private String ipv6Address;
 
+		private String addressType;
+
 		private String ipv6Isp;
 
 		private String vSwitchId;
@@ -102,6 +106,12 @@ public class DescribeIpv6AddressesResponse extends AcsResponse {
 		private String ipv6GatewayId;
 
 		private Integer realBandwidth;
+
+		private String resourceGroupId;
+
+		private Integer serviceManaged;
+
+		private List<Tag> tags;
 
 		private Ipv6InternetBandwidth ipv6InternetBandwidth;
 
@@ -145,6 +155,14 @@ public class DescribeIpv6AddressesResponse extends AcsResponse {
 			this.ipv6AddressName = ipv6AddressName;
 		}
 
+		public String getIpv6AddressDescription() {
+			return this.ipv6AddressDescription;
+		}
+
+		public void setIpv6AddressDescription(String ipv6AddressDescription) {
+			this.ipv6AddressDescription = ipv6AddressDescription;
+		}
+
 		public String getAssociatedInstanceType() {
 			return this.associatedInstanceType;
 		}
@@ -175,6 +193,14 @@ public class DescribeIpv6AddressesResponse extends AcsResponse {
 
 		public void setIpv6Address(String ipv6Address) {
 			this.ipv6Address = ipv6Address;
+		}
+
+		public String getAddressType() {
+			return this.addressType;
+		}
+
+		public void setAddressType(String addressType) {
+			this.addressType = addressType;
 		}
 
 		public String getIpv6Isp() {
@@ -209,12 +235,59 @@ public class DescribeIpv6AddressesResponse extends AcsResponse {
 			this.realBandwidth = realBandwidth;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Integer getServiceManaged() {
+			return this.serviceManaged;
+		}
+
+		public void setServiceManaged(Integer serviceManaged) {
+			this.serviceManaged = serviceManaged;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public Ipv6InternetBandwidth getIpv6InternetBandwidth() {
 			return this.ipv6InternetBandwidth;
 		}
 
 		public void setIpv6InternetBandwidth(Ipv6InternetBandwidth ipv6InternetBandwidth) {
 			this.ipv6InternetBandwidth = ipv6InternetBandwidth;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 
 		public static class Ipv6InternetBandwidth {
@@ -228,6 +301,16 @@ public class DescribeIpv6AddressesResponse extends AcsResponse {
 			private String ipv6InternetBandwidthId;
 
 			private String instanceChargeType;
+
+			private Boolean hasReservationData;
+
+			private String reservationInternetChargeType;
+
+			private String reservationOrderType;
+
+			private String reservationActiveTime;
+
+			private Long reservationBandwidth;
 
 			public String getInternetChargeType() {
 				return this.internetChargeType;
@@ -267,6 +350,46 @@ public class DescribeIpv6AddressesResponse extends AcsResponse {
 
 			public void setInstanceChargeType(String instanceChargeType) {
 				this.instanceChargeType = instanceChargeType;
+			}
+
+			public Boolean getHasReservationData() {
+				return this.hasReservationData;
+			}
+
+			public void setHasReservationData(Boolean hasReservationData) {
+				this.hasReservationData = hasReservationData;
+			}
+
+			public String getReservationInternetChargeType() {
+				return this.reservationInternetChargeType;
+			}
+
+			public void setReservationInternetChargeType(String reservationInternetChargeType) {
+				this.reservationInternetChargeType = reservationInternetChargeType;
+			}
+
+			public String getReservationOrderType() {
+				return this.reservationOrderType;
+			}
+
+			public void setReservationOrderType(String reservationOrderType) {
+				this.reservationOrderType = reservationOrderType;
+			}
+
+			public String getReservationActiveTime() {
+				return this.reservationActiveTime;
+			}
+
+			public void setReservationActiveTime(String reservationActiveTime) {
+				this.reservationActiveTime = reservationActiveTime;
+			}
+
+			public Long getReservationBandwidth() {
+				return this.reservationBandwidth;
+			}
+
+			public void setReservationBandwidth(Long reservationBandwidth) {
+				this.reservationBandwidth = reservationBandwidth;
 			}
 		}
 	}

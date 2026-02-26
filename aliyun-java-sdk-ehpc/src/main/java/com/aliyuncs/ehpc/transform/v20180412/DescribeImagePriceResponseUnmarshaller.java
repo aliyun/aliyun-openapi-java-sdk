@@ -23,11 +23,11 @@ public class DescribeImagePriceResponseUnmarshaller {
 	public static DescribeImagePriceResponse unmarshall(DescribeImagePriceResponse describeImagePriceResponse, UnmarshallerContext _ctx) {
 		
 		describeImagePriceResponse.setRequestId(_ctx.stringValue("DescribeImagePriceResponse.RequestId"));
-		describeImagePriceResponse.setImageId(_ctx.stringValue("DescribeImagePriceResponse.ImageId"));
-		describeImagePriceResponse.setDiscountPrice(_ctx.floatValue("DescribeImagePriceResponse.DiscountPrice"));
-		describeImagePriceResponse.setOriginalPrice(_ctx.floatValue("DescribeImagePriceResponse.OriginalPrice"));
-		describeImagePriceResponse.setTradePrice(_ctx.floatValue("DescribeImagePriceResponse.TradePrice"));
 		describeImagePriceResponse.setAmount(_ctx.integerValue("DescribeImagePriceResponse.Amount"));
+		describeImagePriceResponse.setDiscountPrice(_ctx.floatValue("DescribeImagePriceResponse.DiscountPrice"));
+		describeImagePriceResponse.setTradePrice(_ctx.floatValue("DescribeImagePriceResponse.TradePrice"));
+		describeImagePriceResponse.setOriginalPrice(_ctx.floatValue("DescribeImagePriceResponse.OriginalPrice"));
+		describeImagePriceResponse.setImageId(_ctx.stringValue("DescribeImagePriceResponse.ImageId"));
 	 
 	 	return describeImagePriceResponse;
 	}

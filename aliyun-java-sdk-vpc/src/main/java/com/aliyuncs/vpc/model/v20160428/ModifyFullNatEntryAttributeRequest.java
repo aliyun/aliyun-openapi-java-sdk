@@ -33,6 +33,8 @@ public class ModifyFullNatEntryAttributeRequest extends RpcAcsRequest<ModifyFull
 
 	private String clientToken;
 
+	private String accessDomain;
+
 	private String fullNatEntryId;
 
 	private String natIpPort;
@@ -106,6 +108,17 @@ public class ModifyFullNatEntryAttributeRequest extends RpcAcsRequest<ModifyFull
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getAccessDomain() {
+		return this.accessDomain;
+	}
+
+	public void setAccessDomain(String accessDomain) {
+		this.accessDomain = accessDomain;
+		if(accessDomain != null){
+			putQueryParameter("AccessDomain", accessDomain);
 		}
 	}
 

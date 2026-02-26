@@ -35,6 +35,12 @@ public class ListInstancesResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Integer totalCount;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
 	private List<Instance> instances;
 
 	public Integer getHttpStatusCode() {
@@ -77,6 +83,30 @@ public class ListInstancesResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	public List<Instance> getInstances() {
 		return this.instances;
 	}
@@ -112,6 +142,8 @@ public class ListInstancesResponse extends AcsResponse {
 		private String creatorName;
 
 		private Integer maxConcurrentConversation;
+
+		private Boolean isPreset;
 
 		private List<ResourceTag> resourceTags;
 
@@ -221,6 +253,14 @@ public class ListInstancesResponse extends AcsResponse {
 			this.maxConcurrentConversation = maxConcurrentConversation;
 		}
 
+		public Boolean getIsPreset() {
+			return this.isPreset;
+		}
+
+		public void setIsPreset(Boolean isPreset) {
+			this.isPreset = isPreset;
+		}
+
 		public List<ResourceTag> getResourceTags() {
 			return this.resourceTags;
 		}
@@ -268,6 +308,8 @@ public class ListInstancesResponse extends AcsResponse {
 
 			private String endpoint;
 
+			private String agentId;
+
 			public String getAccessKey() {
 				return this.accessKey;
 			}
@@ -290,6 +332,14 @@ public class ListInstancesResponse extends AcsResponse {
 
 			public void setEndpoint(String endpoint) {
 				this.endpoint = endpoint;
+			}
+
+			public String getAgentId() {
+				return this.agentId;
+			}
+
+			public void setAgentId(String agentId) {
+				this.agentId = agentId;
 			}
 		}
 	}

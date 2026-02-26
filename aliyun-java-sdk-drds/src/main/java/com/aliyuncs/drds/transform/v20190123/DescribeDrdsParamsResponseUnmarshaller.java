@@ -32,18 +32,18 @@ public class DescribeDrdsParamsResponseUnmarshaller {
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsParamsResponse.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setParamName(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamName"));
-			listItem.setParamEnglishName(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamEnglishName"));
-			listItem.setParamVariableName(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamVariableName"));
-			listItem.setParamDesc(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamDesc"));
-			listItem.setParamValue(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamValue"));
-			listItem.setDbName(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].DbName"));
 			listItem.setParamDefaultValue(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamDefaultValue"));
-			listItem.setParamRanges(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamRanges"));
 			listItem.setParamLevel(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamLevel"));
+			listItem.setParamName(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamName"));
 			listItem.setParamType(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamType"));
+			listItem.setParamValue(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamValue"));
 			listItem.setNeedRestart(_ctx.booleanValue("DescribeDrdsParamsResponse.List["+ i +"].NeedRestart"));
+			listItem.setParamRanges(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamRanges"));
 			listItem.setUserVisible(_ctx.booleanValue("DescribeDrdsParamsResponse.List["+ i +"].UserVisible"));
+			listItem.setDbName(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].DbName"));
+			listItem.setParamEnglishName(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamEnglishName"));
+			listItem.setParamDesc(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamDesc"));
+			listItem.setParamVariableName(_ctx.stringValue("DescribeDrdsParamsResponse.List["+ i +"].ParamVariableName"));
 
 			list.add(listItem);
 		}

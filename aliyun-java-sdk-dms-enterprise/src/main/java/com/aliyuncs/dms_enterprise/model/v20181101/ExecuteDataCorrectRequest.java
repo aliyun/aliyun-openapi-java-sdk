@@ -27,11 +27,13 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ExecuteDataCorrectRequest extends RpcAcsRequest<ExecuteDataCorrectResponse> {
 	   
 
-	private Long orderId;
-
 	private String tid;
 
 	private Map<Object,Object> actionDetail;
+
+	private Long orderId;
+
+	private String realLoginUserUid;
 	public ExecuteDataCorrectRequest() {
 		super("dms-enterprise", "2018-11-01", "ExecuteDataCorrect", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -39,17 +41,6 @@ public class ExecuteDataCorrectRequest extends RpcAcsRequest<ExecuteDataCorrectR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId.toString());
-		}
 	}
 
 	public String getTid() {
@@ -71,6 +62,28 @@ public class ExecuteDataCorrectRequest extends RpcAcsRequest<ExecuteDataCorrectR
 		this.actionDetail = actionDetail;
 		if(actionDetail != null){
 			putQueryParameter("ActionDetail", new Gson().toJson(actionDetail));
+		}
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId.toString());
+		}
+	}
+
+	public String getRealLoginUserUid() {
+		return this.realLoginUserUid;
+	}
+
+	public void setRealLoginUserUid(String realLoginUserUid) {
+		this.realLoginUserUid = realLoginUserUid;
+		if(realLoginUserUid != null){
+			putQueryParameter("RealLoginUserUid", realLoginUserUid);
 		}
 	}
 

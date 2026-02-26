@@ -37,6 +37,7 @@ public class ListTaskFlowInstanceResponseUnmarshaller {
 			DAGInstance dAGInstance = new DAGInstance();
 			dAGInstance.setId(_ctx.longValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].Id"));
 			dAGInstance.setBusinessTime(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].BusinessTime"));
+			dAGInstance.setStartTime(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].startTime"));
 			dAGInstance.setEndTime(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].EndTime"));
 			dAGInstance.setDagId(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].DagId"));
 			dAGInstance.setTriggerType(_ctx.integerValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].TriggerType"));
@@ -45,6 +46,7 @@ public class ListTaskFlowInstanceResponseUnmarshaller {
 			dAGInstance.setHistoryDagId(_ctx.longValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].HistoryDagId"));
 			dAGInstance.setDagName(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].DagName"));
 			dAGInstance.setOwnerName(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].OwnerName"));
+			dAGInstance.setDagVersion(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].DagVersion"));
 
 			dAGInstanceList.add(dAGInstance);
 		}

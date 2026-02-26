@@ -27,28 +27,28 @@ public class DescribeGtmAccessStrategyResponseUnmarshaller {
 	public static DescribeGtmAccessStrategyResponse unmarshall(DescribeGtmAccessStrategyResponse describeGtmAccessStrategyResponse, UnmarshallerContext _ctx) {
 		
 		describeGtmAccessStrategyResponse.setRequestId(_ctx.stringValue("DescribeGtmAccessStrategyResponse.RequestId"));
-		describeGtmAccessStrategyResponse.setStrategyId(_ctx.stringValue("DescribeGtmAccessStrategyResponse.StrategyId"));
-		describeGtmAccessStrategyResponse.setStrategyName(_ctx.stringValue("DescribeGtmAccessStrategyResponse.StrategyName"));
-		describeGtmAccessStrategyResponse.setDefultAddrPoolId(_ctx.stringValue("DescribeGtmAccessStrategyResponse.DefultAddrPoolId"));
-		describeGtmAccessStrategyResponse.setDefaultAddrPoolName(_ctx.stringValue("DescribeGtmAccessStrategyResponse.DefaultAddrPoolName"));
-		describeGtmAccessStrategyResponse.setFailoverAddrPoolId(_ctx.stringValue("DescribeGtmAccessStrategyResponse.FailoverAddrPoolId"));
-		describeGtmAccessStrategyResponse.setFailoverAddrPoolName(_ctx.stringValue("DescribeGtmAccessStrategyResponse.FailoverAddrPoolName"));
-		describeGtmAccessStrategyResponse.setStrategyMode(_ctx.stringValue("DescribeGtmAccessStrategyResponse.StrategyMode"));
-		describeGtmAccessStrategyResponse.setAccessMode(_ctx.stringValue("DescribeGtmAccessStrategyResponse.AccessMode"));
-		describeGtmAccessStrategyResponse.setAccessStatus(_ctx.stringValue("DescribeGtmAccessStrategyResponse.AccessStatus"));
 		describeGtmAccessStrategyResponse.setInstanceId(_ctx.stringValue("DescribeGtmAccessStrategyResponse.InstanceId"));
+		describeGtmAccessStrategyResponse.setStrategyId(_ctx.stringValue("DescribeGtmAccessStrategyResponse.StrategyId"));
 		describeGtmAccessStrategyResponse.setDefaultAddrPoolStatus(_ctx.stringValue("DescribeGtmAccessStrategyResponse.DefaultAddrPoolStatus"));
-		describeGtmAccessStrategyResponse.setFailoverAddrPoolStatus(_ctx.stringValue("DescribeGtmAccessStrategyResponse.FailoverAddrPoolStatus"));
+		describeGtmAccessStrategyResponse.setFailoverAddrPoolId(_ctx.stringValue("DescribeGtmAccessStrategyResponse.FailoverAddrPoolId"));
+		describeGtmAccessStrategyResponse.setAccessStatus(_ctx.stringValue("DescribeGtmAccessStrategyResponse.AccessStatus"));
 		describeGtmAccessStrategyResponse.setDefaultAddrPoolMonitorStatus(_ctx.stringValue("DescribeGtmAccessStrategyResponse.DefaultAddrPoolMonitorStatus"));
+		describeGtmAccessStrategyResponse.setDefaultAddrPoolName(_ctx.stringValue("DescribeGtmAccessStrategyResponse.DefaultAddrPoolName"));
+		describeGtmAccessStrategyResponse.setDefultAddrPoolId(_ctx.stringValue("DescribeGtmAccessStrategyResponse.DefultAddrPoolId"));
+		describeGtmAccessStrategyResponse.setStrategyName(_ctx.stringValue("DescribeGtmAccessStrategyResponse.StrategyName"));
+		describeGtmAccessStrategyResponse.setFailoverAddrPoolStatus(_ctx.stringValue("DescribeGtmAccessStrategyResponse.FailoverAddrPoolStatus"));
+		describeGtmAccessStrategyResponse.setAccessMode(_ctx.stringValue("DescribeGtmAccessStrategyResponse.AccessMode"));
+		describeGtmAccessStrategyResponse.setStrategyMode(_ctx.stringValue("DescribeGtmAccessStrategyResponse.StrategyMode"));
 		describeGtmAccessStrategyResponse.setFailoverAddrPoolMonitorStatus(_ctx.stringValue("DescribeGtmAccessStrategyResponse.FailoverAddrPoolMonitorStatus"));
+		describeGtmAccessStrategyResponse.setFailoverAddrPoolName(_ctx.stringValue("DescribeGtmAccessStrategyResponse.FailoverAddrPoolName"));
 
 		List<Line> lines = new ArrayList<Line>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGtmAccessStrategyResponse.Lines.Length"); i++) {
 			Line line = new Line();
+			line.setGroupName(_ctx.stringValue("DescribeGtmAccessStrategyResponse.Lines["+ i +"].GroupName"));
 			line.setLineCode(_ctx.stringValue("DescribeGtmAccessStrategyResponse.Lines["+ i +"].LineCode"));
 			line.setLineName(_ctx.stringValue("DescribeGtmAccessStrategyResponse.Lines["+ i +"].LineName"));
 			line.setGroupCode(_ctx.stringValue("DescribeGtmAccessStrategyResponse.Lines["+ i +"].GroupCode"));
-			line.setGroupName(_ctx.stringValue("DescribeGtmAccessStrategyResponse.Lines["+ i +"].GroupName"));
 
 			lines.add(line);
 		}

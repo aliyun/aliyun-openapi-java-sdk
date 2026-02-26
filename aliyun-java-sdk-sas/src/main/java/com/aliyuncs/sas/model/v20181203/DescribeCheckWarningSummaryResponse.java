@@ -113,6 +113,8 @@ public class DescribeCheckWarningSummaryResponse extends AcsResponse {
 
 		private Boolean databaseRisk;
 
+		private Boolean containerRisk;
+
 		public Integer getLowWarningCount() {
 			return this.lowWarningCount;
 		}
@@ -215,6 +217,14 @@ public class DescribeCheckWarningSummaryResponse extends AcsResponse {
 
 		public void setDatabaseRisk(Boolean databaseRisk) {
 			this.databaseRisk = databaseRisk;
+		}
+
+		public Boolean getContainerRisk() {
+			return this.containerRisk;
+		}
+
+		public void setContainerRisk(Boolean containerRisk) {
+			this.containerRisk = containerRisk;
 		}
 	}
 

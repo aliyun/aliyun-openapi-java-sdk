@@ -29,7 +29,11 @@ public class DescribeLiveStreamWatermarksRequest extends RpcAcsRequest<DescribeL
 
 	private Integer pageSize;
 
+	private String keyWord;
+
 	private Long ownerId;
+
+	private String domain;
 	public DescribeLiveStreamWatermarksRequest() {
 		super("live", "2016-11-01", "DescribeLiveStreamWatermarks", "live");
 		setMethod(MethodType.POST);
@@ -61,6 +65,17 @@ public class DescribeLiveStreamWatermarksRequest extends RpcAcsRequest<DescribeL
 		}
 	}
 
+	public String getKeyWord() {
+		return this.keyWord;
+	}
+
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+		if(keyWord != null){
+			putQueryParameter("KeyWord", keyWord);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -69,6 +84,17 @@ public class DescribeLiveStreamWatermarksRequest extends RpcAcsRequest<DescribeL
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
 		}
 	}
 

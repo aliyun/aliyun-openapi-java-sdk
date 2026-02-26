@@ -51,6 +51,7 @@ public class ListDoNotCallNumbersResponseUnmarshaller {
 			blockedNumber.setRemark(_ctx.stringValue("ListDoNotCallNumbersResponse.Data.List["+ i +"].Remark"));
 			blockedNumber.setCreateTime(_ctx.longValue("ListDoNotCallNumbersResponse.Data.List["+ i +"].CreateTime"));
 			blockedNumber.setCreator(_ctx.stringValue("ListDoNotCallNumbersResponse.Data.List["+ i +"].Creator"));
+			blockedNumber.setCreatedTime(_ctx.longValue("ListDoNotCallNumbersResponse.Data.List["+ i +"].CreatedTime"));
 
 			list.add(blockedNumber);
 		}

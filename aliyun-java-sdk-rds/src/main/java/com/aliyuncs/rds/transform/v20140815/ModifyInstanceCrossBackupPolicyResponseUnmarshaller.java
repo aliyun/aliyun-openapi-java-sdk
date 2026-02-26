@@ -23,17 +23,17 @@ public class ModifyInstanceCrossBackupPolicyResponseUnmarshaller {
 	public static ModifyInstanceCrossBackupPolicyResponse unmarshall(ModifyInstanceCrossBackupPolicyResponse modifyInstanceCrossBackupPolicyResponse, UnmarshallerContext _ctx) {
 		
 		modifyInstanceCrossBackupPolicyResponse.setRequestId(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.RequestId"));
-		modifyInstanceCrossBackupPolicyResponse.setStorageOwner(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.StorageOwner"));
 		modifyInstanceCrossBackupPolicyResponse.setBackupEnabled(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.BackupEnabled"));
-		modifyInstanceCrossBackupPolicyResponse.setStorageType(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.StorageType"));
-		modifyInstanceCrossBackupPolicyResponse.setRegionId(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.RegionId"));
-		modifyInstanceCrossBackupPolicyResponse.setLogBackupEnabled(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.LogBackupEnabled"));
-		modifyInstanceCrossBackupPolicyResponse.setRetentType(_ctx.integerValue("ModifyInstanceCrossBackupPolicyResponse.RetentType"));
-		modifyInstanceCrossBackupPolicyResponse.setEndpoint(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.Endpoint"));
 		modifyInstanceCrossBackupPolicyResponse.setCrossBackupRegion(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.CrossBackupRegion"));
 		modifyInstanceCrossBackupPolicyResponse.setCrossBackupType(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.CrossBackupType"));
-		modifyInstanceCrossBackupPolicyResponse.setRetention(_ctx.integerValue("ModifyInstanceCrossBackupPolicyResponse.Retention"));
 		modifyInstanceCrossBackupPolicyResponse.setDBInstanceId(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.DBInstanceId"));
+		modifyInstanceCrossBackupPolicyResponse.setEndpoint(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.Endpoint"));
+		modifyInstanceCrossBackupPolicyResponse.setLogBackupEnabled(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.LogBackupEnabled"));
+		modifyInstanceCrossBackupPolicyResponse.setRegionId(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.RegionId"));
+		modifyInstanceCrossBackupPolicyResponse.setRetentType(_ctx.integerValue("ModifyInstanceCrossBackupPolicyResponse.RetentType"));
+		modifyInstanceCrossBackupPolicyResponse.setRetention(_ctx.integerValue("ModifyInstanceCrossBackupPolicyResponse.Retention"));
+		modifyInstanceCrossBackupPolicyResponse.setStorageOwner(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.StorageOwner"));
+		modifyInstanceCrossBackupPolicyResponse.setStorageType(_ctx.stringValue("ModifyInstanceCrossBackupPolicyResponse.StorageType"));
 	 
 	 	return modifyInstanceCrossBackupPolicyResponse;
 	}

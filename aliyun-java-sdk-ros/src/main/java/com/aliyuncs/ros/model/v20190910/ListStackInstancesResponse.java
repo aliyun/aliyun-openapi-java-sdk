@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListStackInstancesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<StackInstance> stackInstances;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListStackInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListStackInstancesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<StackInstance> getStackInstances() {
@@ -77,30 +77,32 @@ public class ListStackInstancesResponse extends AcsResponse {
 
 	public static class StackInstance {
 
-		private String stackGroupName;
+		private String status;
 
 		private String stackGroupId;
 
 		private String stackId;
 
+		private String driftDetectionTime;
+
+		private String stackDriftStatus;
+
+		private String statusReason;
+
+		private String stackGroupName;
+
 		private String accountId;
 
 		private String regionId;
 
-		private String status;
+		private String rdFolderId;
 
-		private String statusReason;
-
-		private String stackDriftStatus;
-
-		private String driftDetectionTime;
-
-		public String getStackGroupName() {
-			return this.stackGroupName;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setStackGroupName(String stackGroupName) {
-			this.stackGroupName = stackGroupName;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getStackGroupId() {
@@ -119,6 +121,38 @@ public class ListStackInstancesResponse extends AcsResponse {
 			this.stackId = stackId;
 		}
 
+		public String getDriftDetectionTime() {
+			return this.driftDetectionTime;
+		}
+
+		public void setDriftDetectionTime(String driftDetectionTime) {
+			this.driftDetectionTime = driftDetectionTime;
+		}
+
+		public String getStackDriftStatus() {
+			return this.stackDriftStatus;
+		}
+
+		public void setStackDriftStatus(String stackDriftStatus) {
+			this.stackDriftStatus = stackDriftStatus;
+		}
+
+		public String getStatusReason() {
+			return this.statusReason;
+		}
+
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
+		}
+
+		public String getStackGroupName() {
+			return this.stackGroupName;
+		}
+
+		public void setStackGroupName(String stackGroupName) {
+			this.stackGroupName = stackGroupName;
+		}
+
 		public String getAccountId() {
 			return this.accountId;
 		}
@@ -135,36 +169,12 @@ public class ListStackInstancesResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getRdFolderId() {
+			return this.rdFolderId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getStatusReason() {
-			return this.statusReason;
-		}
-
-		public void setStatusReason(String statusReason) {
-			this.statusReason = statusReason;
-		}
-
-		public String getStackDriftStatus() {
-			return this.stackDriftStatus;
-		}
-
-		public void setStackDriftStatus(String stackDriftStatus) {
-			this.stackDriftStatus = stackDriftStatus;
-		}
-
-		public String getDriftDetectionTime() {
-			return this.driftDetectionTime;
-		}
-
-		public void setDriftDetectionTime(String driftDetectionTime) {
-			this.driftDetectionTime = driftDetectionTime;
+		public void setRdFolderId(String rdFolderId) {
+			this.rdFolderId = rdFolderId;
 		}
 	}
 

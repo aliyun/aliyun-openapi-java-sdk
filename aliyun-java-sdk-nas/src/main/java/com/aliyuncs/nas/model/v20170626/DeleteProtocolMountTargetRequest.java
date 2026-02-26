@@ -35,7 +35,7 @@ public class DeleteProtocolMountTargetRequest extends RpcAcsRequest<DeleteProtoc
 
 	private String exportId;
 	public DeleteProtocolMountTargetRequest() {
-		super("NAS", "2017-06-26", "DeleteProtocolMountTarget", "NAS");
+		super("NAS", "2017-06-26", "DeleteProtocolMountTarget", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

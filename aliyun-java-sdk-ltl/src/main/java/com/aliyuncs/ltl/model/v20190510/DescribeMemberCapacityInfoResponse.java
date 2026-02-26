@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMemberCapacityInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
-
-	private Boolean success;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<MemberCapacityInfo> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -51,20 +43,28 @@ public class DescribeMemberCapacityInfoResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<MemberCapacityInfo> getData() {
@@ -77,15 +77,23 @@ public class DescribeMemberCapacityInfoResponse extends AcsResponse {
 
 	public static class MemberCapacityInfo {
 
+		private String usedCapacity;
+
 		private String memberId;
 
 		private String memberName;
 
+		private String usedCount;
+
 		private String memberUid;
 
-		private String usedCapacity;
+		public String getUsedCapacity() {
+			return this.usedCapacity;
+		}
 
-		private String usedCount;
+		public void setUsedCapacity(String usedCapacity) {
+			this.usedCapacity = usedCapacity;
+		}
 
 		public String getMemberId() {
 			return this.memberId;
@@ -103,28 +111,20 @@ public class DescribeMemberCapacityInfoResponse extends AcsResponse {
 			this.memberName = memberName;
 		}
 
-		public String getMemberUid() {
-			return this.memberUid;
-		}
-
-		public void setMemberUid(String memberUid) {
-			this.memberUid = memberUid;
-		}
-
-		public String getUsedCapacity() {
-			return this.usedCapacity;
-		}
-
-		public void setUsedCapacity(String usedCapacity) {
-			this.usedCapacity = usedCapacity;
-		}
-
 		public String getUsedCount() {
 			return this.usedCount;
 		}
 
 		public void setUsedCount(String usedCount) {
 			this.usedCount = usedCount;
+		}
+
+		public String getMemberUid() {
+			return this.memberUid;
+		}
+
+		public void setMemberUid(String memberUid) {
+			this.memberUid = memberUid;
 		}
 	}
 

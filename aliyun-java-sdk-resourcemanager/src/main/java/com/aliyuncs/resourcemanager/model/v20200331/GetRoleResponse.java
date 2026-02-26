@@ -46,27 +46,35 @@ public class GetRoleResponse extends AcsResponse {
 
 	public static class Role {
 
+		private String arn;
+
 		private String assumeRolePolicyDocument;
+
+		private String createDate;
+
+		private String description;
+
+		private Boolean isServiceLinkedRole;
+
+		private Long maxSessionDuration;
+
+		private String roleId;
+
+		private String roleName;
 
 		private String rolePrincipalName;
 
 		private String updateDate;
 
-		private String description;
-
-		private Long maxSessionDuration;
-
-		private String roleName;
-
-		private String createDate;
-
-		private String roleId;
-
-		private String arn;
-
-		private Boolean isServiceLinkedRole;
-
 		private LatestDeletionTask latestDeletionTask;
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
+		}
 
 		public String getAssumeRolePolicyDocument() {
 			return this.assumeRolePolicyDocument;
@@ -74,6 +82,54 @@ public class GetRoleResponse extends AcsResponse {
 
 		public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
 			this.assumeRolePolicyDocument = assumeRolePolicyDocument;
+		}
+
+		public String getCreateDate() {
+			return this.createDate;
+		}
+
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Boolean getIsServiceLinkedRole() {
+			return this.isServiceLinkedRole;
+		}
+
+		public void setIsServiceLinkedRole(Boolean isServiceLinkedRole) {
+			this.isServiceLinkedRole = isServiceLinkedRole;
+		}
+
+		public Long getMaxSessionDuration() {
+			return this.maxSessionDuration;
+		}
+
+		public void setMaxSessionDuration(Long maxSessionDuration) {
+			this.maxSessionDuration = maxSessionDuration;
+		}
+
+		public String getRoleId() {
+			return this.roleId;
+		}
+
+		public void setRoleId(String roleId) {
+			this.roleId = roleId;
+		}
+
+		public String getRoleName() {
+			return this.roleName;
+		}
+
+		public void setRoleName(String roleName) {
+			this.roleName = roleName;
 		}
 
 		public String getRolePrincipalName() {
@@ -92,62 +148,6 @@ public class GetRoleResponse extends AcsResponse {
 			this.updateDate = updateDate;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Long getMaxSessionDuration() {
-			return this.maxSessionDuration;
-		}
-
-		public void setMaxSessionDuration(Long maxSessionDuration) {
-			this.maxSessionDuration = maxSessionDuration;
-		}
-
-		public String getRoleName() {
-			return this.roleName;
-		}
-
-		public void setRoleName(String roleName) {
-			this.roleName = roleName;
-		}
-
-		public String getCreateDate() {
-			return this.createDate;
-		}
-
-		public void setCreateDate(String createDate) {
-			this.createDate = createDate;
-		}
-
-		public String getRoleId() {
-			return this.roleId;
-		}
-
-		public void setRoleId(String roleId) {
-			this.roleId = roleId;
-		}
-
-		public String getArn() {
-			return this.arn;
-		}
-
-		public void setArn(String arn) {
-			this.arn = arn;
-		}
-
-		public Boolean getIsServiceLinkedRole() {
-			return this.isServiceLinkedRole;
-		}
-
-		public void setIsServiceLinkedRole(Boolean isServiceLinkedRole) {
-			this.isServiceLinkedRole = isServiceLinkedRole;
-		}
-
 		public LatestDeletionTask getLatestDeletionTask() {
 			return this.latestDeletionTask;
 		}
@@ -158,17 +158,9 @@ public class GetRoleResponse extends AcsResponse {
 
 		public static class LatestDeletionTask {
 
-			private String deletionTaskId;
-
 			private String createDate;
 
-			public String getDeletionTaskId() {
-				return this.deletionTaskId;
-			}
-
-			public void setDeletionTaskId(String deletionTaskId) {
-				this.deletionTaskId = deletionTaskId;
-			}
+			private String deletionTaskId;
 
 			public String getCreateDate() {
 				return this.createDate;
@@ -176,6 +168,14 @@ public class GetRoleResponse extends AcsResponse {
 
 			public void setCreateDate(String createDate) {
 				this.createDate = createDate;
+			}
+
+			public String getDeletionTaskId() {
+				return this.deletionTaskId;
+			}
+
+			public void setDeletionTaskId(String deletionTaskId) {
+				this.deletionTaskId = deletionTaskId;
 			}
 		}
 	}

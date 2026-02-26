@@ -1,3 +1,79 @@
+2026-01-14 Version: 2.1.22
+- Add some APIs.
+
+2025-12-04 Version: 2.1.21
+- Add some APIs.
+
+2025-11-17 Version: 2.1.20
+- Add some APIs.
+
+2025-09-11 Version: 2.1.19
+- Add some APIs.
+
+2025-08-11 Version: 2.1.18
+- Add QueryDashboardNl2sql, QueryLastAccelerationEngineJob APIs.
+
+2025-07-14 Version: 2.1.17
+- Add QueryReadableResourcesListByUserIdV2 API.
+
+2025-07-03 Version: 2.1.16
+- QueryAuditLog API add request parameters.
+
+2025-05-28 Version: 2.1.15
+- Add api request parameters and error code.
+
+2025-04-14 Version: 2.1.14
+- Add SmartqQueryAbility api request parameters.
+
+2025-03-17 Version: 2.1.13
+- Generated 2022-01-01 for `quickbi-public`.
+
+2024-12-30 Version: 2.1.12
+- Add SmartQ APIs.
+- Add GetDataSourceConnectionInfo, QueryDatasetList APIs.
+
+2024-11-26 Version: 2.1.11
+- Add SmartqQueryAbility api.
+
+2024-10-10 Version: 2.1.10
+- Add ManualRunMailTask, GetMailTaskStatus and GetWorksEmbedList apis.
+
+2024-09-18 Version: 2.1.9
+- Add API Ram meta.
+
+2024-08-07 Version: 2.1.8
+- Add QueryData, ModifyCopilotEmbedConfig, QueryCopilotEmbedConfig and QueryDataRange APIs.
+
+2024-06-28 Version: 2.1.7
+- Add QueryAuditLog, QueryApprovalInfo, DataSourceBlood, DataSetBlood and QueryDataServiceList APIs.
+- QueryUserInfoByAccount API updates error code.
+
+2024-05-22 Version: 2.1.6
+- Add CreateTicket4Copilot API.
+- QueryDatasetList and QueryDatasetInfo APIs add response parameters.
+
+2024-03-19 Version: 2.1.5
+- Add QueryWorkspaceRoleConfig, ListWorkspaceRoleUsers, ListWorkspaceRoles, QueryOrganizationRoleConfig, ListOrganizationRoleUsers and ListOrganizationRoles APIs.
+
+2024-02-27 Version: 2.1.4
+- AllotDatasetAccelerationTask API add error code.
+- QueryUserInfoByAccount, QueryUserInfoByUserId, AddUser, UpdateUser, and QueryUserList APIs add query or response parameters.
+
+2023-06-20 Version: 2.1.3
+- Add QueryCubePerformance, QueryComponentPerformance, QueryCubeOptimization, and QueryReportPerformance APIs.
+- Update error code description.
+
+2023-05-11 Version: 2.1.2
+- Add AllotDatasetAccelerationTask API.
+- Update error code description.
+
+2022-09-08 Version: 2.1.1
+- Add API BatchAddFeishuUsers.
+
+2022-09-08 Version: 2.1.0
+- Update API Error Code And Some Parameters Checks.
+- Update API CreateTicket QPS.
+
 2022-07-04 Version: 2.0.2
 - Add API QueryEmbeddedStaus.
 

@@ -27,6 +27,12 @@ public class ListRemediationTemplatesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long pageNumber;
+
+	private Long pageSize;
+
+	private String totalCount;
+
 	private List<RemediationTemplate> remediationTemplates;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class ListRemediationTemplatesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public String getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<RemediationTemplate> getRemediationTemplates() {
@@ -56,6 +86,8 @@ public class ListRemediationTemplatesResponse extends AcsResponse {
 		private String templateName;
 
 		private String templateDefinition;
+
+		private String templateDescription;
 
 		public String getCompulsoryParameters() {
 			return this.compulsoryParameters;
@@ -95,6 +127,14 @@ public class ListRemediationTemplatesResponse extends AcsResponse {
 
 		public void setTemplateDefinition(String templateDefinition) {
 			this.templateDefinition = templateDefinition;
+		}
+
+		public String getTemplateDescription() {
+			return this.templateDescription;
+		}
+
+		public void setTemplateDescription(String templateDescription) {
+			this.templateDescription = templateDescription;
 		}
 	}
 

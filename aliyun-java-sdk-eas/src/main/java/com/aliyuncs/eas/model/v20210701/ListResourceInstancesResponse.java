@@ -91,9 +91,13 @@ public class ListResourceInstancesResponse extends AcsResponse {
 
 		private String instanceMemory;
 
+		private Integer instanceSystemDiskSize;
+
+		private String instanceGpuMemory;
+
 		private Float instanceUsedCpu;
 
-		private Integer instanceUsedGpu;
+		private Float instanceUsedGpu;
 
 		private String instanceUsedMemory;
 
@@ -106,6 +110,18 @@ public class ListResourceInstancesResponse extends AcsResponse {
 		private String expiredTime;
 
 		private Boolean autoRenewal;
+
+		private String arch;
+
+		private String region;
+
+		private String zone;
+
+		private String resourceId;
+
+		private String instanceTenantIp;
+
+		private String instanceUsedGpuMemory;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -163,6 +179,22 @@ public class ListResourceInstancesResponse extends AcsResponse {
 			this.instanceMemory = instanceMemory;
 		}
 
+		public Integer getInstanceSystemDiskSize() {
+			return this.instanceSystemDiskSize;
+		}
+
+		public void setInstanceSystemDiskSize(Integer instanceSystemDiskSize) {
+			this.instanceSystemDiskSize = instanceSystemDiskSize;
+		}
+
+		public String getInstanceGpuMemory() {
+			return this.instanceGpuMemory;
+		}
+
+		public void setInstanceGpuMemory(String instanceGpuMemory) {
+			this.instanceGpuMemory = instanceGpuMemory;
+		}
+
 		public Float getInstanceUsedCpu() {
 			return this.instanceUsedCpu;
 		}
@@ -171,11 +203,11 @@ public class ListResourceInstancesResponse extends AcsResponse {
 			this.instanceUsedCpu = instanceUsedCpu;
 		}
 
-		public Integer getInstanceUsedGpu() {
+		public Float getInstanceUsedGpu() {
 			return this.instanceUsedGpu;
 		}
 
-		public void setInstanceUsedGpu(Integer instanceUsedGpu) {
+		public void setInstanceUsedGpu(Float instanceUsedGpu) {
 			this.instanceUsedGpu = instanceUsedGpu;
 		}
 
@@ -225,6 +257,54 @@ public class ListResourceInstancesResponse extends AcsResponse {
 
 		public void setAutoRenewal(Boolean autoRenewal) {
 			this.autoRenewal = autoRenewal;
+		}
+
+		public String getArch() {
+			return this.arch;
+		}
+
+		public void setArch(String arch) {
+			this.arch = arch;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getZone() {
+			return this.zone;
+		}
+
+		public void setZone(String zone) {
+			this.zone = zone;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
+		public String getInstanceTenantIp() {
+			return this.instanceTenantIp;
+		}
+
+		public void setInstanceTenantIp(String instanceTenantIp) {
+			this.instanceTenantIp = instanceTenantIp;
+		}
+
+		public String getInstanceUsedGpuMemory() {
+			return this.instanceUsedGpuMemory;
+		}
+
+		public void setInstanceUsedGpuMemory(String instanceUsedGpuMemory) {
+			this.instanceUsedGpuMemory = instanceUsedGpuMemory;
 		}
 	}
 

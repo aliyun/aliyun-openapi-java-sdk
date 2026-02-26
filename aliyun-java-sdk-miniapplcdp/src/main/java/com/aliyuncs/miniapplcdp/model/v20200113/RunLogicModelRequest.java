@@ -28,6 +28,8 @@ public class RunLogicModelRequest extends RpcAcsRequest<RunLogicModelResponse> {
 
 	private String commitId;
 
+	private String source;
+
 	private String schemaVersion;
 
 	private String content;
@@ -63,6 +65,17 @@ public class RunLogicModelRequest extends RpcAcsRequest<RunLogicModelResponse> {
 		this.commitId = commitId;
 		if(commitId != null){
 			putQueryParameter("CommitId", commitId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

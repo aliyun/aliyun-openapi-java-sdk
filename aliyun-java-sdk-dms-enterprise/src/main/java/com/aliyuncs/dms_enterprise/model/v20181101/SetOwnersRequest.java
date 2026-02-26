@@ -25,11 +25,11 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class SetOwnersRequest extends RpcAcsRequest<SetOwnersResponse> {
 	   
 
-	private String resourceId;
-
 	private String ownerIds;
 
 	private Long tid;
+
+	private String resourceId;
 
 	private String ownerType;
 	public SetOwnersRequest() {
@@ -39,17 +39,6 @@ public class SetOwnersRequest extends RpcAcsRequest<SetOwnersResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getResourceId() {
-		return this.resourceId;
-	}
-
-	public void setResourceId(String resourceId) {
-		this.resourceId = resourceId;
-		if(resourceId != null){
-			putQueryParameter("ResourceId", resourceId);
-		}
 	}
 
 	public String getOwnerIds() {
@@ -71,6 +60,17 @@ public class SetOwnersRequest extends RpcAcsRequest<SetOwnersResponse> {
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
 		}
 	}
 

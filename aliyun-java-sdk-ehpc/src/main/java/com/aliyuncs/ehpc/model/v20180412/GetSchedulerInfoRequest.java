@@ -30,7 +30,7 @@ public class GetSchedulerInfoRequest extends RpcAcsRequest<GetSchedulerInfoRespo
 
 	private List<Scheduler> schedulers;
 	public GetSchedulerInfoRequest() {
-		super("EHPC", "2018-04-12", "GetSchedulerInfo");
+		super("EHPC", "2018-04-12", "GetSchedulerInfo", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

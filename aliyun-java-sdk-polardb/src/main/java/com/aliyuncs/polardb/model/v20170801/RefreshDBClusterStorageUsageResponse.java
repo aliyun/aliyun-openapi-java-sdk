@@ -26,42 +26,12 @@ public class RefreshDBClusterStorageUsageResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String usedStorage;
-
-	private String dBClusterId;
-
-	private String usedStorageModified;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getUsedStorage() {
-		return this.usedStorage;
-	}
-
-	public void setUsedStorage(String usedStorage) {
-		this.usedStorage = usedStorage;
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-	}
-
-	public String getUsedStorageModified() {
-		return this.usedStorageModified;
-	}
-
-	public void setUsedStorageModified(String usedStorageModified) {
-		this.usedStorageModified = usedStorageModified;
 	}
 
 	@Override

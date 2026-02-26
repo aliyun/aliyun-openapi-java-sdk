@@ -27,7 +27,7 @@ public class DescribeLayer4RulePolicyRequest extends RpcAcsRequest<DescribeLayer
 
 	private String listeners;
 	public DescribeLayer4RulePolicyRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeLayer4RulePolicy");
+		super("ddoscoo", "2020-01-01", "DescribeLayer4RulePolicy", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

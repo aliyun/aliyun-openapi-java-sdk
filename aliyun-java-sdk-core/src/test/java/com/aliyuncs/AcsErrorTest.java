@@ -35,6 +35,22 @@ public class AcsErrorTest {
         Assert.assertEquals("Error.Message", acsError.getErrorMessage());
         Assert.assertEquals("Error.description", acsError.getErrorDescription());
         Assert.assertEquals(200, acsError.getStatusCode());
+
+        map.put("Error.AccessDeniedDetail", "{}");
+        context.setResponseMap(map);
+        acsError.getInstance(context);
+        Map<String, Object> accessDeniedDetail = acsError.getAccessDeniedDetail();
+        Assert.assertEquals(0, accessDeniedDetail.size());
+        Assert.assertEquals(200, acsError.getStatusCode());
+        map.put("Error.AccessDeniedDetail.AuthAction", "ram:ListUsers");
+        map.put("Error.AccessDeniedDetail.UserId", "123");
+        context.setResponseMap(map);
+        acsError.getInstance(context);
+        accessDeniedDetail = acsError.getAccessDeniedDetail();
+        Assert.assertEquals(2, accessDeniedDetail.size());
+        Assert.assertEquals("ram:ListUsers", accessDeniedDetail.get("AuthAction"));
+        Assert.assertEquals("123", accessDeniedDetail.get("UserId"));
+        Assert.assertEquals(200, acsError.getStatusCode());
     }
 
     @Test
@@ -54,6 +70,16 @@ public class AcsErrorTest {
         Assert.assertEquals("Error.message", acsError.getErrorMessage());
         Assert.assertEquals("Error.Description", acsError.getErrorDescription());
         Assert.assertEquals(200, acsError.getStatusCode());
+
+        map.put("Error.AccessDeniedDetail.AuthAction", "ram:ListUsers");
+        map.put("Error.AccessDeniedDetail.UserId", "123");
+        context.setHttpStatus(200);
+        context.setResponseMap(map);
+        AcsErrorUnmarshaller.unmarshall(acsError, context);
+        Map<String, Object> accessDeniedDetail = acsError.getAccessDeniedDetail();
+        Assert.assertEquals(2, accessDeniedDetail.size());
+        Assert.assertEquals("ram:ListUsers", accessDeniedDetail.get("AuthAction"));
+        Assert.assertEquals("123", accessDeniedDetail.get("UserId"));
 
         AcsErrorUnmarshaller unmarshaller = new AcsErrorUnmarshaller();
         Assert.assertTrue(unmarshaller instanceof AcsErrorUnmarshaller);

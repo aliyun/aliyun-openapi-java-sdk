@@ -33,7 +33,7 @@ public class ModifyNetworkRuleAttributeRequest extends RpcAcsRequest<ModifyNetwo
 
 	private String config;
 	public ModifyNetworkRuleAttributeRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyNetworkRuleAttribute");
+		super("ddoscoo", "2020-01-01", "ModifyNetworkRuleAttribute", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

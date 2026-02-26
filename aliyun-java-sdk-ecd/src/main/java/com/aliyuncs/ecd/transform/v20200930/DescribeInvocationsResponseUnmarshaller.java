@@ -39,6 +39,8 @@ public class DescribeInvocationsResponseUnmarshaller {
 			invocation.setInvocationStatus(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvocationStatus"));
 			invocation.setCreationTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CreationTime"));
 			invocation.setEndUserId(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].EndUserId"));
+			invocation.setInvokeDesktopCount(_ctx.integerValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktopCount"));
+			invocation.setInvokeDesktopSucceedCount(_ctx.integerValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktopSucceedCount"));
 
 			List<InvokeDesktop> invokeDesktops = new ArrayList<InvokeDesktop>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops.Length"); j++) {
@@ -56,6 +58,7 @@ public class DescribeInvocationsResponseUnmarshaller {
 				invokeDesktop.setExitCode(_ctx.longValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].ExitCode"));
 				invokeDesktop.setErrorCode(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].ErrorCode"));
 				invokeDesktop.setErrorInfo(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].ErrorInfo"));
+				invokeDesktop.setDesktopName(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].DesktopName"));
 
 				invokeDesktops.add(invokeDesktop);
 			}

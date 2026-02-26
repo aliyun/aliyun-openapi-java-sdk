@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUserCertificateExpireCountResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer expireWithin30DaysCount;
 
+	private String requestId;
+
 	private Integer expiredCount;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getExpireWithin30DaysCount() {
 		return this.expireWithin30DaysCount;
@@ -44,6 +36,14 @@ public class DescribeUserCertificateExpireCountResponse extends AcsResponse {
 
 	public void setExpireWithin30DaysCount(Integer expireWithin30DaysCount) {
 		this.expireWithin30DaysCount = expireWithin30DaysCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getExpiredCount() {

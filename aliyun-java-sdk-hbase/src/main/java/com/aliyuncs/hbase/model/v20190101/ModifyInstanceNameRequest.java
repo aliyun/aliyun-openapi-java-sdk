@@ -33,7 +33,7 @@ public class ModifyInstanceNameRequest extends RpcAcsRequest<ModifyInstanceNameR
 
 	private String zoneId;
 	public ModifyInstanceNameRequest() {
-		super("HBase", "2019-01-01", "ModifyInstanceName", "hbase");
+		super("HBase", "2019-01-01", "ModifyInstanceName");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

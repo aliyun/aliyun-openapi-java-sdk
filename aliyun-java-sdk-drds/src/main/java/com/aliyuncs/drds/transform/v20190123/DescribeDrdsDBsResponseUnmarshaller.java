@@ -27,19 +27,19 @@ public class DescribeDrdsDBsResponseUnmarshaller {
 	public static DescribeDrdsDBsResponse unmarshall(DescribeDrdsDBsResponse describeDrdsDBsResponse, UnmarshallerContext _ctx) {
 		
 		describeDrdsDBsResponse.setRequestId(_ctx.stringValue("DescribeDrdsDBsResponse.RequestId"));
-		describeDrdsDBsResponse.setSuccess(_ctx.booleanValue("DescribeDrdsDBsResponse.Success"));
-		describeDrdsDBsResponse.setPageNumber(_ctx.stringValue("DescribeDrdsDBsResponse.PageNumber"));
 		describeDrdsDBsResponse.setPageSize(_ctx.stringValue("DescribeDrdsDBsResponse.PageSize"));
+		describeDrdsDBsResponse.setPageNumber(_ctx.stringValue("DescribeDrdsDBsResponse.PageNumber"));
 		describeDrdsDBsResponse.setTotal(_ctx.stringValue("DescribeDrdsDBsResponse.Total"));
+		describeDrdsDBsResponse.setSuccess(_ctx.booleanValue("DescribeDrdsDBsResponse.Success"));
 
 		List<Db> data = new ArrayList<Db>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsDBsResponse.Data.Length"); i++) {
 			Db db = new Db();
-			db.setDbName(_ctx.stringValue("DescribeDrdsDBsResponse.Data["+ i +"].DbName"));
 			db.setStatus(_ctx.stringValue("DescribeDrdsDBsResponse.Data["+ i +"].Status"));
+			db.setDbName(_ctx.stringValue("DescribeDrdsDBsResponse.Data["+ i +"].DbName"));
+			db.setSchema(_ctx.stringValue("DescribeDrdsDBsResponse.Data["+ i +"].Schema"));
 			db.setCreateTime(_ctx.stringValue("DescribeDrdsDBsResponse.Data["+ i +"].CreateTime"));
 			db.setMode(_ctx.stringValue("DescribeDrdsDBsResponse.Data["+ i +"].Mode"));
-			db.setSchema(_ctx.stringValue("DescribeDrdsDBsResponse.Data["+ i +"].Schema"));
 			db.setDbInstType(_ctx.stringValue("DescribeDrdsDBsResponse.Data["+ i +"].DbInstType"));
 
 			data.add(db);

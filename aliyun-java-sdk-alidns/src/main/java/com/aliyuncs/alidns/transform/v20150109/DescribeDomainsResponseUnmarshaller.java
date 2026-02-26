@@ -29,30 +29,30 @@ public class DescribeDomainsResponseUnmarshaller {
 		
 		describeDomainsResponse.setRequestId(_ctx.stringValue("DescribeDomainsResponse.RequestId"));
 		describeDomainsResponse.setTotalCount(_ctx.longValue("DescribeDomainsResponse.TotalCount"));
-		describeDomainsResponse.setPageNumber(_ctx.longValue("DescribeDomainsResponse.PageNumber"));
 		describeDomainsResponse.setPageSize(_ctx.longValue("DescribeDomainsResponse.PageSize"));
+		describeDomainsResponse.setPageNumber(_ctx.longValue("DescribeDomainsResponse.PageNumber"));
 
 		List<Domain> domains = new ArrayList<Domain>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainsResponse.Domains.Length"); i++) {
 			Domain domain = new Domain();
-			domain.setDomainId(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].DomainId"));
-			domain.setDomainName(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].DomainName"));
-			domain.setPunyCode(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].PunyCode"));
-			domain.setAliDomain(_ctx.booleanValue("DescribeDomainsResponse.Domains["+ i +"].AliDomain"));
-			domain.setRecordCount(_ctx.longValue("DescribeDomainsResponse.Domains["+ i +"].RecordCount"));
-			domain.setRegistrantEmail(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].RegistrantEmail"));
 			domain.setRemark(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].Remark"));
+			domain.setCreateTime(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].CreateTime"));
+			domain.setRecordCount(_ctx.longValue("DescribeDomainsResponse.Domains["+ i +"].RecordCount"));
+			domain.setInstanceId(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].InstanceId"));
+			domain.setDomainName(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].DomainName"));
+			domain.setDomainId(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].DomainId"));
+			domain.setAliDomain(_ctx.booleanValue("DescribeDomainsResponse.Domains["+ i +"].AliDomain"));
 			domain.setGroupId(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].GroupId"));
 			domain.setGroupName(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].GroupName"));
-			domain.setInstanceId(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].InstanceId"));
-			domain.setVersionCode(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].VersionCode"));
-			domain.setVersionName(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].VersionName"));
+			domain.setResourceGroupId(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].ResourceGroupId"));
 			domain.setInstanceEndTime(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].InstanceEndTime"));
 			domain.setInstanceExpired(_ctx.booleanValue("DescribeDomainsResponse.Domains["+ i +"].InstanceExpired"));
-			domain.setStarmark(_ctx.booleanValue("DescribeDomainsResponse.Domains["+ i +"].Starmark"));
-			domain.setCreateTime(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].CreateTime"));
+			domain.setVersionName(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].VersionName"));
+			domain.setVersionCode(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].VersionCode"));
+			domain.setPunyCode(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].PunyCode"));
+			domain.setRegistrantEmail(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].RegistrantEmail"));
 			domain.setCreateTimestamp(_ctx.longValue("DescribeDomainsResponse.Domains["+ i +"].CreateTimestamp"));
-			domain.setResourceGroupId(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].ResourceGroupId"));
+			domain.setStarmark(_ctx.booleanValue("DescribeDomainsResponse.Domains["+ i +"].Starmark"));
 
 			List<String> dnsServers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDomainsResponse.Domains["+ i +"].DnsServers.Length"); j++) {

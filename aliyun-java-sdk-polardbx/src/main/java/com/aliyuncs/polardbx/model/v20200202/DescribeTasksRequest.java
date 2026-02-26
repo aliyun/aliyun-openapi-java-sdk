@@ -42,10 +42,6 @@ public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 	private String endTime;
 
 	private Long ownerId;
-
-	private String taskAction;
-
-	private String status;
 	public DescribeTasksRequest() {
 		super("polardbx", "2020-02-02", "DescribeTasks", "polardbx");
 		setMethod(MethodType.POST);
@@ -151,28 +147,6 @@ public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTaskAction() {
-		return this.taskAction;
-	}
-
-	public void setTaskAction(String taskAction) {
-		this.taskAction = taskAction;
-		if(taskAction != null){
-			putQueryParameter("TaskAction", taskAction);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
 		}
 	}
 

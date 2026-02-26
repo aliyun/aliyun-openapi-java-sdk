@@ -2,7 +2,6 @@ package com.aliyuncs.profile;
 
 import com.aliyuncs.auth.*;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
-import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpClientConfig;
 import com.aliyuncs.utils.ParameterHelper;
@@ -16,6 +15,7 @@ public class DefaultProfile implements IClientProfile {
     private String regionId = null;
     private FormatType acceptFormat = null;
     private ICredentialProvider icredential = null;
+    private volatile AlibabaCloudCredentialsProvider credentialsProvider = null;
     private Credential credential;
     private String certPath;
     private HttpClientConfig httpClientConfig = HttpClientConfig.getDefault();
@@ -24,6 +24,8 @@ public class DefaultProfile implements IClientProfile {
     private Logger logger;
     private String logFormat = DEFAULT_LOG_FORMAT;
     private boolean isCloseTrace = false;
+    private String locationServiceEndpoint = null;
+    private String locationServiceApiVersion = null;
 
     private DefaultProfile() {
     }
@@ -49,14 +51,17 @@ public class DefaultProfile implements IClientProfile {
         return profile;
     }
 
+    /**
+     * @deprecated : Use DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider) instead of this
+     */
+    @Deprecated
     public synchronized static DefaultProfile getProfile(String regionId, ICredentialProvider icredential) {
         profile = new DefaultProfile(regionId, icredential);
         return profile;
     }
 
     public synchronized static DefaultProfile getProfile(String regionId, String accessKeyId, String secret) {
-        Credential creden = new Credential(accessKeyId, secret);
-        profile = new DefaultProfile(regionId, creden);
+        profile = new DefaultProfile(regionId, new Credential(accessKeyId, secret));
         return profile;
     }
 
@@ -72,16 +77,15 @@ public class DefaultProfile implements IClientProfile {
     }
 
     /**
-     * @Deprecated : Use addEndpoint(String regionId, String product, String endpoint) instead of this
+     * @deprecated : Use addEndpoint(String regionId, String product, String endpoint) instead of this
      */
     @Deprecated
-    public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain)
-            throws ClientException {
+    public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain) {
         addEndpoint(endpointName, regionId, product, domain, true);
     }
 
     /**
-     * @Deprecated : Use addEndpoint(String regionId, String product, String endpoint) instead of this
+     * @deprecated : Use addEndpoint(String regionId, String product, String endpoint) instead of this
      */
     @Deprecated
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain,
@@ -106,6 +110,11 @@ public class DefaultProfile implements IClientProfile {
     }
 
     @Override
+    public AlibabaCloudCredentialsProvider getCredentialsProvider() {
+        return credentialsProvider;
+    }
+
+    @Override
     public synchronized Credential getCredential() {
         if (null == credential && null != icredential) {
             credential = icredential.fresh();
@@ -119,12 +128,17 @@ public class DefaultProfile implements IClientProfile {
         return null;
     }
 
+
+    /**
+     * @deprecated : Use DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider) instead of this
+     */
     @Override
+    @Deprecated
     public void setCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider) {
-        if (credential != null) {
-            return;
+        if (credential == null) {
+            credential = new CredentialsBackupCompatibilityAdaptor(credentialsProvider);
         }
-        credential = new CredentialsBackupCompatibilityAdaptor(credentialsProvider);
+        this.credentialsProvider = credentialsProvider;
     }
 
     @Override
@@ -204,5 +218,25 @@ public class DefaultProfile implements IClientProfile {
     @Override
     public void setCloseTrace(boolean closeTrace) {
         isCloseTrace = closeTrace;
+    }
+
+    @Override
+    public String getLocationServiceEndpoint() {
+        return locationServiceEndpoint;
+    }
+
+    @Override
+    public void setLocationServiceEndpoint(String locationServiceEndpoint) {
+        this.locationServiceEndpoint = locationServiceEndpoint;
+    }
+
+    @Override
+    public String getLocationServiceApiVersion() {
+        return locationServiceApiVersion;
+    }
+
+    @Override
+    public void setLocationServiceApiVersion(String locationServiceApiVersion) {
+        this.locationServiceApiVersion = locationServiceApiVersion;
     }
 }

@@ -113,6 +113,10 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		private String cenStatus;
 
+		private Boolean enabledIpv6;
+
+		private String dnsHostnameStatus;
+
 		private List<Tag> tags;
 
 		private List<Ipv6CidrBlock> ipv6CidrBlocks;
@@ -269,6 +273,22 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		public void setCenStatus(String cenStatus) {
 			this.cenStatus = cenStatus;
+		}
+
+		public Boolean getEnabledIpv6() {
+			return this.enabledIpv6;
+		}
+
+		public void setEnabledIpv6(Boolean enabledIpv6) {
+			this.enabledIpv6 = enabledIpv6;
+		}
+
+		public String getDnsHostnameStatus() {
+			return this.dnsHostnameStatus;
+		}
+
+		public void setDnsHostnameStatus(String dnsHostnameStatus) {
+			this.dnsHostnameStatus = dnsHostnameStatus;
 		}
 
 		public List<Tag> getTags() {

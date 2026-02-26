@@ -34,7 +34,7 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String orderType;
 	public DescribePriceRequest() {
-		super("EHPC", "2018-04-12", "DescribePrice");
+		super("EHPC", "2018-04-12", "DescribePrice", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +53,15 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 				putQueryParameter("Commodities." + (depth1 + 1) + ".Amount" , commoditiess.get(depth1).getAmount());
 				putQueryParameter("Commodities." + (depth1 + 1) + ".Period" , commoditiess.get(depth1).getPeriod());
 				putQueryParameter("Commodities." + (depth1 + 1) + ".NodeType" , commoditiess.get(depth1).getNodeType());
+				if (commoditiess.get(depth1).getDataDiskss() != null) {
+					for (int depth2 = 0; depth2 < commoditiess.get(depth1).getDataDiskss().size(); depth2++) {
+						putQueryParameter("Commodities." + (depth1 + 1) + ".DataDisks." + (depth2 + 1) + ".size" , commoditiess.get(depth1).getDataDiskss().get(depth2).getSize());
+						putQueryParameter("Commodities." + (depth1 + 1) + ".DataDisks." + (depth2 + 1) + ".encrypted" , commoditiess.get(depth1).getDataDiskss().get(depth2).getEncrypted());
+						putQueryParameter("Commodities." + (depth1 + 1) + ".DataDisks." + (depth2 + 1) + ".performanceLevel" , commoditiess.get(depth1).getDataDiskss().get(depth2).getPerformanceLevel());
+						putQueryParameter("Commodities." + (depth1 + 1) + ".DataDisks." + (depth2 + 1) + ".category" , commoditiess.get(depth1).getDataDiskss().get(depth2).getCategory());
+						putQueryParameter("Commodities." + (depth1 + 1) + ".DataDisks." + (depth2 + 1) + ".deleteWithInstance" , commoditiess.get(depth1).getDataDiskss().get(depth2).getDeleteWithInstance());
+					}
+				}
 				putQueryParameter("Commodities." + (depth1 + 1) + ".SystemDiskCategory" , commoditiess.get(depth1).getSystemDiskCategory());
 				putQueryParameter("Commodities." + (depth1 + 1) + ".InternetChargeType" , commoditiess.get(depth1).getInternetChargeType());
 				putQueryParameter("Commodities." + (depth1 + 1) + ".SystemDiskPerformanceLevel" , commoditiess.get(depth1).getSystemDiskPerformanceLevel());
@@ -105,6 +114,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 		private String nodeType;
 
+		private List<DataDisks> dataDiskss;
+
 		private String systemDiskCategory;
 
 		private String internetChargeType;
@@ -141,6 +152,14 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 		public void setNodeType(String nodeType) {
 			this.nodeType = nodeType;
+		}
+
+		public List<DataDisks> getDataDiskss() {
+			return this.dataDiskss;
+		}
+
+		public void setDataDiskss(List<DataDisks> dataDiskss) {
+			this.dataDiskss = dataDiskss;
 		}
 
 		public String getSystemDiskCategory() {
@@ -197,6 +216,59 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 		public void setNetworkType(String networkType) {
 			this.networkType = networkType;
+		}
+
+		public static class DataDisks {
+
+			private Integer size;
+
+			private Boolean encrypted;
+
+			private String performanceLevel;
+
+			private String category;
+
+			private Boolean deleteWithInstance;
+
+			public Integer getSize() {
+				return this.size;
+			}
+
+			public void setSize(Integer size) {
+				this.size = size;
+			}
+
+			public Boolean getEncrypted() {
+				return this.encrypted;
+			}
+
+			public void setEncrypted(Boolean encrypted) {
+				this.encrypted = encrypted;
+			}
+
+			public String getPerformanceLevel() {
+				return this.performanceLevel;
+			}
+
+			public void setPerformanceLevel(String performanceLevel) {
+				this.performanceLevel = performanceLevel;
+			}
+
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
+			}
+
+			public Boolean getDeleteWithInstance() {
+				return this.deleteWithInstance;
+			}
+
+			public void setDeleteWithInstance(Boolean deleteWithInstance) {
+				this.deleteWithInstance = deleteWithInstance;
+			}
 		}
 	}
 

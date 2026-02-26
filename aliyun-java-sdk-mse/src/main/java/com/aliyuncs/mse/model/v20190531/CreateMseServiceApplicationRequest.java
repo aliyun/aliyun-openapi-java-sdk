@@ -35,6 +35,8 @@ public class CreateMseServiceApplicationRequest extends RpcAcsRequest<CreateMseS
 
 	private String switchEnable;
 
+	private String mseVersion;
+
 	private String acceptLanguage;
 
 	private String sentinelEnable;
@@ -101,6 +103,17 @@ public class CreateMseServiceApplicationRequest extends RpcAcsRequest<CreateMseS
 		this.switchEnable = switchEnable;
 		if(switchEnable != null){
 			putQueryParameter("SwitchEnable", switchEnable);
+		}
+	}
+
+	public String getMseVersion() {
+		return this.mseVersion;
+	}
+
+	public void setMseVersion(String mseVersion) {
+		this.mseVersion = mseVersion;
+		if(mseVersion != null){
+			putQueryParameter("MseVersion", mseVersion);
 		}
 	}
 

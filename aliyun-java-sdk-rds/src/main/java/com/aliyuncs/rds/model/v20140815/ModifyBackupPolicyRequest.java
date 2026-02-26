@@ -27,17 +27,31 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private Long resourceOwnerId;
 
+	private Integer backupPriority;
+
+	private String backupLog;
+
+	private String highSpaceUsageProtection;
+
+	private Boolean enableIncrementDataBackup;
+
+	private String localLogRetentionSpace;
+
+	private Long ownerId;
+
+	private String archiveBackupKeepPolicy;
+
+	private String backupRetentionPeriod;
+
+	private String backupMethod;
+
 	private String localLogRetentionHours;
 
 	private String logBackupFrequency;
 
 	private Integer archiveBackupKeepCount;
 
-	private String backupLog;
-
 	private String backupInterval;
-
-	private String highSpaceUsageProtection;
 
 	private Integer logBackupLocalRetentionNumber;
 
@@ -57,17 +71,7 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String compressType;
 
-	private String localLogRetentionSpace;
-
-	private Long ownerId;
-
-	private String archiveBackupKeepPolicy;
-
 	private String preferredBackupTime;
-
-	private String backupRetentionPeriod;
-
-	private String backupMethod;
 
 	private String archiveBackupRetentionPeriod;
 
@@ -91,6 +95,105 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getBackupPriority() {
+		return this.backupPriority;
+	}
+
+	public void setBackupPriority(Integer backupPriority) {
+		this.backupPriority = backupPriority;
+		if(backupPriority != null){
+			putQueryParameter("BackupPriority", backupPriority.toString());
+		}
+	}
+
+	public String getBackupLog() {
+		return this.backupLog;
+	}
+
+	public void setBackupLog(String backupLog) {
+		this.backupLog = backupLog;
+		if(backupLog != null){
+			putQueryParameter("BackupLog", backupLog);
+		}
+	}
+
+	public String getHighSpaceUsageProtection() {
+		return this.highSpaceUsageProtection;
+	}
+
+	public void setHighSpaceUsageProtection(String highSpaceUsageProtection) {
+		this.highSpaceUsageProtection = highSpaceUsageProtection;
+		if(highSpaceUsageProtection != null){
+			putQueryParameter("HighSpaceUsageProtection", highSpaceUsageProtection);
+		}
+	}
+
+	public Boolean getEnableIncrementDataBackup() {
+		return this.enableIncrementDataBackup;
+	}
+
+	public void setEnableIncrementDataBackup(Boolean enableIncrementDataBackup) {
+		this.enableIncrementDataBackup = enableIncrementDataBackup;
+		if(enableIncrementDataBackup != null){
+			putQueryParameter("EnableIncrementDataBackup", enableIncrementDataBackup.toString());
+		}
+	}
+
+	public String getLocalLogRetentionSpace() {
+		return this.localLogRetentionSpace;
+	}
+
+	public void setLocalLogRetentionSpace(String localLogRetentionSpace) {
+		this.localLogRetentionSpace = localLogRetentionSpace;
+		if(localLogRetentionSpace != null){
+			putQueryParameter("LocalLogRetentionSpace", localLogRetentionSpace);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getArchiveBackupKeepPolicy() {
+		return this.archiveBackupKeepPolicy;
+	}
+
+	public void setArchiveBackupKeepPolicy(String archiveBackupKeepPolicy) {
+		this.archiveBackupKeepPolicy = archiveBackupKeepPolicy;
+		if(archiveBackupKeepPolicy != null){
+			putQueryParameter("ArchiveBackupKeepPolicy", archiveBackupKeepPolicy);
+		}
+	}
+
+	public String getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
+	}
+
+	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
+		if(backupRetentionPeriod != null){
+			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
+		}
+	}
+
+	public String getBackupMethod() {
+		return this.backupMethod;
+	}
+
+	public void setBackupMethod(String backupMethod) {
+		this.backupMethod = backupMethod;
+		if(backupMethod != null){
+			putQueryParameter("BackupMethod", backupMethod);
 		}
 	}
 
@@ -127,17 +230,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public String getBackupLog() {
-		return this.backupLog;
-	}
-
-	public void setBackupLog(String backupLog) {
-		this.backupLog = backupLog;
-		if(backupLog != null){
-			putQueryParameter("BackupLog", backupLog);
-		}
-	}
-
 	public String getBackupInterval() {
 		return this.backupInterval;
 	}
@@ -146,17 +238,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.backupInterval = backupInterval;
 		if(backupInterval != null){
 			putQueryParameter("BackupInterval", backupInterval);
-		}
-	}
-
-	public String getHighSpaceUsageProtection() {
-		return this.highSpaceUsageProtection;
-	}
-
-	public void setHighSpaceUsageProtection(String highSpaceUsageProtection) {
-		this.highSpaceUsageProtection = highSpaceUsageProtection;
-		if(highSpaceUsageProtection != null){
-			putQueryParameter("HighSpaceUsageProtection", highSpaceUsageProtection);
 		}
 	}
 
@@ -259,39 +340,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public String getLocalLogRetentionSpace() {
-		return this.localLogRetentionSpace;
-	}
-
-	public void setLocalLogRetentionSpace(String localLogRetentionSpace) {
-		this.localLogRetentionSpace = localLogRetentionSpace;
-		if(localLogRetentionSpace != null){
-			putQueryParameter("LocalLogRetentionSpace", localLogRetentionSpace);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getArchiveBackupKeepPolicy() {
-		return this.archiveBackupKeepPolicy;
-	}
-
-	public void setArchiveBackupKeepPolicy(String archiveBackupKeepPolicy) {
-		this.archiveBackupKeepPolicy = archiveBackupKeepPolicy;
-		if(archiveBackupKeepPolicy != null){
-			putQueryParameter("ArchiveBackupKeepPolicy", archiveBackupKeepPolicy);
-		}
-	}
-
 	public String getPreferredBackupTime() {
 		return this.preferredBackupTime;
 	}
@@ -300,28 +348,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.preferredBackupTime = preferredBackupTime;
 		if(preferredBackupTime != null){
 			putQueryParameter("PreferredBackupTime", preferredBackupTime);
-		}
-	}
-
-	public String getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
-
-	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-		if(backupRetentionPeriod != null){
-			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
-		}
-	}
-
-	public String getBackupMethod() {
-		return this.backupMethod;
-	}
-
-	public void setBackupMethod(String backupMethod) {
-		this.backupMethod = backupMethod;
-		if(backupMethod != null){
-			putQueryParameter("BackupMethod", backupMethod);
 		}
 	}
 

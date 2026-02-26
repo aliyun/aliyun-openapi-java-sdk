@@ -1,3 +1,33 @@
+2023-07-20 Version: 2.1.17
+- Support new api about model training.
+- Change GenerateVideoPlaylist and LiveTranscoding to private.
+- Remove DeleteBinding Cleanup params.
+
+2023-07-05 Version: 2.1.16
+- Hidden ResumeBinding and StopBinding API.
+- Hide DRM api.
+- Support DocumentText.
+- Support ListAttachment.
+- Modify CreateTrigger and CreateBatch request Notification params.
+
+2023-05-12 Version: 2.1.15
+- Remove password in CreateFileCompressionTask.
+
+2023-05-11 Version: 2.1.14
+- Add RequestDefinition.
+- Hide  endpoint.
+- Fix width and height.
+
+2023-05-09 Version: 2.1.13
+- Remove PresetReference struct.
+
+2023-04-23 Version: 2.1.12
+- Change parameter name to InputFile.
+
+2023-04-04 Version: 2.1.11
+- Update GenerateVideoPlaylist.
+- Support car detection, text extraction APIs.
+
 2022-07-21 Version: 1.24.0
 - Add Body Detection and Image Splicing API.
 

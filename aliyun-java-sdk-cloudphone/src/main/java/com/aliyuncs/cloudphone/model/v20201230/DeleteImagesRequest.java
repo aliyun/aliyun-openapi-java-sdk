@@ -37,7 +37,7 @@ public class DeleteImagesRequest extends RpcAcsRequest<DeleteImagesResponse> {
 
 	private Boolean force;
 	public DeleteImagesRequest() {
-		super("cloudphone", "2020-12-30", "DeleteImages", "cloudphone");
+		super("cloudphone", "2020-12-30", "DeleteImages");
 		setMethod(MethodType.POST);
 	}
 

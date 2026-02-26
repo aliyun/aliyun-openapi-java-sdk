@@ -33,7 +33,7 @@ public class SaveSingleTaskForDeletingDSRecordRequest extends RpcAcsRequest<Save
 
 	private String lang;
 	public SaveSingleTaskForDeletingDSRecordRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForDeletingDSRecord");
+		super("Domain", "2018-01-29", "SaveSingleTaskForDeletingDSRecord", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

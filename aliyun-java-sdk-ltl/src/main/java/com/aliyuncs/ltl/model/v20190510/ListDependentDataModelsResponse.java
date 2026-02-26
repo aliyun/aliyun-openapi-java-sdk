@@ -77,17 +77,9 @@ public class ListDependentDataModelsResponse extends AcsResponse {
 
 	public static class DataModelInfo {
 
-		private String dataModelCode;
-
 		private String dataModelName;
 
-		public String getDataModelCode() {
-			return this.dataModelCode;
-		}
-
-		public void setDataModelCode(String dataModelCode) {
-			this.dataModelCode = dataModelCode;
-		}
+		private String dataModelCode;
 
 		public String getDataModelName() {
 			return this.dataModelName;
@@ -95,6 +87,14 @@ public class ListDependentDataModelsResponse extends AcsResponse {
 
 		public void setDataModelName(String dataModelName) {
 			this.dataModelName = dataModelName;
+		}
+
+		public String getDataModelCode() {
+			return this.dataModelCode;
+		}
+
+		public void setDataModelCode(String dataModelCode) {
+			this.dataModelCode = dataModelCode;
 		}
 	}
 

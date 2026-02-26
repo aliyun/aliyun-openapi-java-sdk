@@ -37,6 +37,8 @@ public class QueryDeviceVodUrlByTimeRequest extends RpcAcsRequest<QueryDeviceVod
 
 	private Boolean shouldEncrypt;
 
+	private Boolean enableStun;
+
 	private Integer endTime;
 
 	private Integer beginTime;
@@ -120,6 +122,17 @@ public class QueryDeviceVodUrlByTimeRequest extends RpcAcsRequest<QueryDeviceVod
 		this.shouldEncrypt = shouldEncrypt;
 		if(shouldEncrypt != null){
 			putQueryParameter("ShouldEncrypt", shouldEncrypt.toString());
+		}
+	}
+
+	public Boolean getEnableStun() {
+		return this.enableStun;
+	}
+
+	public void setEnableStun(Boolean enableStun) {
+		this.enableStun = enableStun;
+		if(enableStun != null){
+			putQueryParameter("EnableStun", enableStun.toString());
 		}
 	}
 

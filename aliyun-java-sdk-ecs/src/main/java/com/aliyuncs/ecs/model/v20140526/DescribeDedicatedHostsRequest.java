@@ -30,11 +30,15 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 
 	private Long resourceOwnerId;
 
+	private String socketDetails;
+
 	private Integer pageNumber;
 
 	private String resourceGroupId;
 
 	private String lockReason;
+
+	private String nextToken;
 
 	private Integer pageSize;
 
@@ -50,9 +54,13 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 
 	private String ownerAccount;
 
+	private Boolean queryInventory;
+
 	private Long ownerId;
 
 	private String zoneId;
+
+	private Integer maxResults;
 
 	private String status;
 	public DescribeDedicatedHostsRequest() {
@@ -86,6 +94,17 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		}
 	}
 
+	public String getSocketDetails() {
+		return this.socketDetails;
+	}
+
+	public void setSocketDetails(String socketDetails) {
+		this.socketDetails = socketDetails;
+		if(socketDetails != null){
+			putQueryParameter("SocketDetails", socketDetails);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -116,6 +135,17 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		this.lockReason = lockReason;
 		if(lockReason != null){
 			putQueryParameter("LockReason", lockReason);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -199,6 +229,17 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		}
 	}
 
+	public Boolean getQueryInventory() {
+		return this.queryInventory;
+	}
+
+	public void setQueryInventory(Boolean queryInventory) {
+		this.queryInventory = queryInventory;
+		if(queryInventory != null){
+			putQueryParameter("QueryInventory", queryInventory.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -218,6 +259,17 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

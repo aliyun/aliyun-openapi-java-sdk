@@ -28,4 +28,9 @@ public class UpdateTemplateResponse extends AcsResponse {
 	public UpdateTemplateResponse getInstance(UnmarshallerContext context) {
 		return	UpdateTemplateResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

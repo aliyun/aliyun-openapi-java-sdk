@@ -25,11 +25,9 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeCdnDeletedDomainsRequest extends RpcAcsRequest<DescribeCdnDeletedDomainsResponse> {
 	   
 
-	private Integer pageNumber;
-
 	private Integer pageSize;
 
-	private Long ownerId;
+	private Integer pageNumber;
 	public DescribeCdnDeletedDomainsRequest() {
 		super("Cdn", "2018-05-10", "DescribeCdnDeletedDomains");
 		setMethod(MethodType.POST);
@@ -37,17 +35,6 @@ public class DescribeCdnDeletedDomainsRequest extends RpcAcsRequest<DescribeCdnD
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public Integer getPageSize() {
@@ -61,14 +48,14 @@ public class DescribeCdnDeletedDomainsRequest extends RpcAcsRequest<DescribeCdnD
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

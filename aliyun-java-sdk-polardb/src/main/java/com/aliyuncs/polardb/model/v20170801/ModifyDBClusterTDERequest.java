@@ -37,13 +37,15 @@ public class ModifyDBClusterTDERequest extends RpcAcsRequest<ModifyDBClusterTDER
 
 	private Long ownerId;
 
+	private String enableAutomaticRotation;
+
 	private String roleArn;
 
 	private String encryptNewTables;
 
 	private String tDEStatus;
 	public ModifyDBClusterTDERequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterTDE");
+		super("polardb", "2017-08-01", "ModifyDBClusterTDE", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -114,6 +116,17 @@ public class ModifyDBClusterTDERequest extends RpcAcsRequest<ModifyDBClusterTDER
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getEnableAutomaticRotation() {
+		return this.enableAutomaticRotation;
+	}
+
+	public void setEnableAutomaticRotation(String enableAutomaticRotation) {
+		this.enableAutomaticRotation = enableAutomaticRotation;
+		if(enableAutomaticRotation != null){
+			putQueryParameter("EnableAutomaticRotation", enableAutomaticRotation);
 		}
 	}
 

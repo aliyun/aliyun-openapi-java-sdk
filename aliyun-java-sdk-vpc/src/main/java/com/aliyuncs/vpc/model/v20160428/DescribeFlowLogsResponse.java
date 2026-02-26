@@ -113,6 +113,26 @@ public class DescribeFlowLogsResponse extends AcsResponse {
 
 		private Integer aggregationInterval;
 
+		private String serviceType;
+
+		private String resourceGroupId;
+
+		private String flowLogDeliverStatus;
+
+		private String flowLogDeliverErrorMessage;
+
+		private String ipVersion;
+
+		private String trafficAnalyzerId;
+
+		private Boolean enableTrafficAnalyze;
+
+		private Boolean enableLogDelivery;
+
+		private List<Tag> tags;
+
+		private List<String> trafficPath;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -215,6 +235,109 @@ public class DescribeFlowLogsResponse extends AcsResponse {
 
 		public void setAggregationInterval(Integer aggregationInterval) {
 			this.aggregationInterval = aggregationInterval;
+		}
+
+		public String getServiceType() {
+			return this.serviceType;
+		}
+
+		public void setServiceType(String serviceType) {
+			this.serviceType = serviceType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getFlowLogDeliverStatus() {
+			return this.flowLogDeliverStatus;
+		}
+
+		public void setFlowLogDeliverStatus(String flowLogDeliverStatus) {
+			this.flowLogDeliverStatus = flowLogDeliverStatus;
+		}
+
+		public String getFlowLogDeliverErrorMessage() {
+			return this.flowLogDeliverErrorMessage;
+		}
+
+		public void setFlowLogDeliverErrorMessage(String flowLogDeliverErrorMessage) {
+			this.flowLogDeliverErrorMessage = flowLogDeliverErrorMessage;
+		}
+
+		public String getIpVersion() {
+			return this.ipVersion;
+		}
+
+		public void setIpVersion(String ipVersion) {
+			this.ipVersion = ipVersion;
+		}
+
+		public String getTrafficAnalyzerId() {
+			return this.trafficAnalyzerId;
+		}
+
+		public void setTrafficAnalyzerId(String trafficAnalyzerId) {
+			this.trafficAnalyzerId = trafficAnalyzerId;
+		}
+
+		public Boolean getEnableTrafficAnalyze() {
+			return this.enableTrafficAnalyze;
+		}
+
+		public void setEnableTrafficAnalyze(Boolean enableTrafficAnalyze) {
+			this.enableTrafficAnalyze = enableTrafficAnalyze;
+		}
+
+		public Boolean getEnableLogDelivery() {
+			return this.enableLogDelivery;
+		}
+
+		public void setEnableLogDelivery(Boolean enableLogDelivery) {
+			this.enableLogDelivery = enableLogDelivery;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public List<String> getTrafficPath() {
+			return this.trafficPath;
+		}
+
+		public void setTrafficPath(List<String> trafficPath) {
+			this.trafficPath = trafficPath;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

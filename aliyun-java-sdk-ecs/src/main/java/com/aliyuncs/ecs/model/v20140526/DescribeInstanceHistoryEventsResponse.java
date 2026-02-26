@@ -33,6 +33,8 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
+	private String nextToken;
+
 	private List<InstanceSystemEventType> instanceSystemEventSet;
 
 	public Integer getPageSize() {
@@ -67,6 +69,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
 	public List<InstanceSystemEventType> getInstanceSystemEventSet() {
 		return this.instanceSystemEventSet;
 	}
@@ -92,6 +102,8 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 		private String instanceId;
 
 		private String reason;
+
+		private String reasonCode;
 
 		private EventType eventType;
 
@@ -161,6 +173,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 		public void setReason(String reason) {
 			this.reason = reason;
+		}
+
+		public String getReasonCode() {
+			return this.reasonCode;
+		}
+
+		public void setReasonCode(String reasonCode) {
+			this.reasonCode = reasonCode;
 		}
 
 		public EventType getEventType() {
@@ -247,6 +267,22 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			private String rack;
 
+			private String punishType;
+
+			private String punishDomain;
+
+			private String punishUrl;
+
+			private String code;
+
+			private String canAccept;
+
+			private String responseResult;
+
+			private String metricValue;
+
+			private String metricName;
+
 			private List<InactiveDisk> inactiveDisks;
 
 			private List<String> migrationOptions;
@@ -297,6 +333,70 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			public void setRack(String rack) {
 				this.rack = rack;
+			}
+
+			public String getPunishType() {
+				return this.punishType;
+			}
+
+			public void setPunishType(String punishType) {
+				this.punishType = punishType;
+			}
+
+			public String getPunishDomain() {
+				return this.punishDomain;
+			}
+
+			public void setPunishDomain(String punishDomain) {
+				this.punishDomain = punishDomain;
+			}
+
+			public String getPunishUrl() {
+				return this.punishUrl;
+			}
+
+			public void setPunishUrl(String punishUrl) {
+				this.punishUrl = punishUrl;
+			}
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
+			}
+
+			public String getCanAccept() {
+				return this.canAccept;
+			}
+
+			public void setCanAccept(String canAccept) {
+				this.canAccept = canAccept;
+			}
+
+			public String getResponseResult() {
+				return this.responseResult;
+			}
+
+			public void setResponseResult(String responseResult) {
+				this.responseResult = responseResult;
+			}
+
+			public String getMetricValue() {
+				return this.metricValue;
+			}
+
+			public void setMetricValue(String metricValue) {
+				this.metricValue = metricValue;
+			}
+
+			public String getMetricName() {
+				return this.metricName;
+			}
+
+			public void setMetricName(String metricName) {
+				this.metricName = metricName;
 			}
 
 			public List<InactiveDisk> getInactiveDisks() {

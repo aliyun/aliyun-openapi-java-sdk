@@ -27,9 +27,9 @@ public class DescribeDingTalkRequest extends RpcAcsRequest<DescribeDingTalkRespo
 
 	private String ruleActionName;
 
-	private Integer currentPage;
-
 	private Integer pageSize;
+
+	private Integer currentPage;
 	public DescribeDingTalkRequest() {
 		super("Sas", "2018-12-03", "DescribeDingTalk");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class DescribeDingTalkRequest extends RpcAcsRequest<DescribeDingTalkRespo
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -69,6 +58,17 @@ public class DescribeDingTalkRequest extends RpcAcsRequest<DescribeDingTalkRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

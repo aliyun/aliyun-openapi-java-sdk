@@ -40,6 +40,8 @@ public class SubmitMediaInfoJobRequest extends RpcAcsRequest<SubmitMediaInfoJobR
 	private String input;
 
 	private Boolean async;
+
+	private String config;
 	public SubmitMediaInfoJobRequest() {
 		super("Mts", "2014-06-18", "SubmitMediaInfoJob", "mts");
 		setMethod(MethodType.POST);
@@ -134,6 +136,17 @@ public class SubmitMediaInfoJobRequest extends RpcAcsRequest<SubmitMediaInfoJobR
 		this.async = async;
 		if(async != null){
 			putQueryParameter("Async", async.toString());
+		}
+	}
+
+	public String getConfig() {
+		return this.config;
+	}
+
+	public void setConfig(String config) {
+		this.config = config;
+		if(config != null){
+			putQueryParameter("Config", config);
 		}
 	}
 

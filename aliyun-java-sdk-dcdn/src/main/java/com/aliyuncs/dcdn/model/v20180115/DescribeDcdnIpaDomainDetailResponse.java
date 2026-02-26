@@ -47,36 +47,38 @@ public class DescribeDcdnIpaDomainDetailResponse extends AcsResponse {
 
 	public static class DomainDetail {
 
-		private String gmtCreated;
+		private String sSLPub;
 
 		private String gmtModified;
 
-		private String domainStatus;
-
-		private String cname;
-
 		private String domainName;
+
+		private String gmtCreated;
 
 		private String description;
 
 		private String sSLProtocol;
 
-		private String sSLPub;
-
-		private String scope;
+		private String resourceGroupId;
 
 		private String certName;
 
-		private String resourceGroupId;
+		private String domainStatus;
+
+		private String cname;
+
+		private String scope;
+
+		private String tenantID;
 
 		private List<Source> sources;
 
-		public String getGmtCreated() {
-			return this.gmtCreated;
+		public String getSSLPub() {
+			return this.sSLPub;
 		}
 
-		public void setGmtCreated(String gmtCreated) {
-			this.gmtCreated = gmtCreated;
+		public void setSSLPub(String sSLPub) {
+			this.sSLPub = sSLPub;
 		}
 
 		public String getGmtModified() {
@@ -87,28 +89,20 @@ public class DescribeDcdnIpaDomainDetailResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public String getDomainStatus() {
-			return this.domainStatus;
-		}
-
-		public void setDomainStatus(String domainStatus) {
-			this.domainStatus = domainStatus;
-		}
-
-		public String getCname() {
-			return this.cname;
-		}
-
-		public void setCname(String cname) {
-			this.cname = cname;
-		}
-
 		public String getDomainName() {
 			return this.domainName;
 		}
 
 		public void setDomainName(String domainName) {
 			this.domainName = domainName;
+		}
+
+		public String getGmtCreated() {
+			return this.gmtCreated;
+		}
+
+		public void setGmtCreated(String gmtCreated) {
+			this.gmtCreated = gmtCreated;
 		}
 
 		public String getDescription() {
@@ -127,20 +121,12 @@ public class DescribeDcdnIpaDomainDetailResponse extends AcsResponse {
 			this.sSLProtocol = sSLProtocol;
 		}
 
-		public String getSSLPub() {
-			return this.sSLPub;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setSSLPub(String sSLPub) {
-			this.sSLPub = sSLPub;
-		}
-
-		public String getScope() {
-			return this.scope;
-		}
-
-		public void setScope(String scope) {
-			this.scope = scope;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getCertName() {
@@ -151,12 +137,36 @@ public class DescribeDcdnIpaDomainDetailResponse extends AcsResponse {
 			this.certName = certName;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getDomainStatus() {
+			return this.domainStatus;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setDomainStatus(String domainStatus) {
+			this.domainStatus = domainStatus;
+		}
+
+		public String getCname() {
+			return this.cname;
+		}
+
+		public void setCname(String cname) {
+			this.cname = cname;
+		}
+
+		public String getScope() {
+			return this.scope;
+		}
+
+		public void setScope(String scope) {
+			this.scope = scope;
+		}
+
+		public String getTenantID() {
+			return this.tenantID;
+		}
+
+		public void setTenantID(String tenantID) {
+			this.tenantID = tenantID;
 		}
 
 		public List<Source> getSources() {
@@ -169,25 +179,17 @@ public class DescribeDcdnIpaDomainDetailResponse extends AcsResponse {
 
 		public static class Source {
 
-			private String content;
-
 			private String type;
 
-			private Integer port;
+			private String weight;
 
 			private String enabled;
 
 			private String priority;
 
-			private String weight;
+			private Integer port;
 
-			public String getContent() {
-				return this.content;
-			}
-
-			public void setContent(String content) {
-				this.content = content;
-			}
+			private String content;
 
 			public String getType() {
 				return this.type;
@@ -197,12 +199,12 @@ public class DescribeDcdnIpaDomainDetailResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public Integer getPort() {
-				return this.port;
+			public String getWeight() {
+				return this.weight;
 			}
 
-			public void setPort(Integer port) {
-				this.port = port;
+			public void setWeight(String weight) {
+				this.weight = weight;
 			}
 
 			public String getEnabled() {
@@ -221,12 +223,20 @@ public class DescribeDcdnIpaDomainDetailResponse extends AcsResponse {
 				this.priority = priority;
 			}
 
-			public String getWeight() {
-				return this.weight;
+			public Integer getPort() {
+				return this.port;
 			}
 
-			public void setWeight(String weight) {
-				this.weight = weight;
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
 			}
 		}
 	}

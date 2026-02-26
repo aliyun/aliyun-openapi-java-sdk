@@ -27,15 +27,15 @@ public class CreateBusinessRequest extends RpcAcsRequest<CreateBusinessResponse>
 
 	private String owner;
 
-	private String businessName;
-
 	private String description;
+
+	private String projectIdentifier;
+
+	private String businessName;
 
 	private Long projectId;
 
 	private String useType;
-
-	private String projectIdentifier;
 	public CreateBusinessRequest() {
 		super("dataworks-public", "2020-05-18", "CreateBusiness");
 		setMethod(MethodType.POST);
@@ -56,17 +56,6 @@ public class CreateBusinessRequest extends RpcAcsRequest<CreateBusinessResponse>
 		}
 	}
 
-	public String getBusinessName() {
-		return this.businessName;
-	}
-
-	public void setBusinessName(String businessName) {
-		this.businessName = businessName;
-		if(businessName != null){
-			putBodyParameter("BusinessName", businessName);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -75,6 +64,28 @@ public class CreateBusinessRequest extends RpcAcsRequest<CreateBusinessResponse>
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
+		}
+	}
+
+	public String getProjectIdentifier() {
+		return this.projectIdentifier;
+	}
+
+	public void setProjectIdentifier(String projectIdentifier) {
+		this.projectIdentifier = projectIdentifier;
+		if(projectIdentifier != null){
+			putBodyParameter("ProjectIdentifier", projectIdentifier);
+		}
+	}
+
+	public String getBusinessName() {
+		return this.businessName;
+	}
+
+	public void setBusinessName(String businessName) {
+		this.businessName = businessName;
+		if(businessName != null){
+			putBodyParameter("BusinessName", businessName);
 		}
 	}
 
@@ -97,17 +108,6 @@ public class CreateBusinessRequest extends RpcAcsRequest<CreateBusinessResponse>
 		this.useType = useType;
 		if(useType != null){
 			putBodyParameter("UseType", useType);
-		}
-	}
-
-	public String getProjectIdentifier() {
-		return this.projectIdentifier;
-	}
-
-	public void setProjectIdentifier(String projectIdentifier) {
-		this.projectIdentifier = projectIdentifier;
-		if(projectIdentifier != null){
-			putBodyParameter("ProjectIdentifier", projectIdentifier);
 		}
 	}
 

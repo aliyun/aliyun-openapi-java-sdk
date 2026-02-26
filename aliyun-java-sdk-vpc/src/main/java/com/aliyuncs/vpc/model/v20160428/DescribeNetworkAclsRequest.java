@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -39,11 +40,15 @@ public class DescribeNetworkAclsRequest extends RpcAcsRequest<DescribeNetworkAcl
 
 	private String resourceOwnerAccount;
 
+	private String ownerAccount;
+
 	private String networkAclName;
 
 	private Long ownerId;
 
 	private String resourceType;
+
+	private List<Tags> tagss;
 
 	private String vpcId;
 	public DescribeNetworkAclsRequest() {
@@ -132,6 +137,17 @@ public class DescribeNetworkAclsRequest extends RpcAcsRequest<DescribeNetworkAcl
 		}
 	}
 
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public String getNetworkAclName() {
 		return this.networkAclName;
 	}
@@ -165,6 +181,20 @@ public class DescribeNetworkAclsRequest extends RpcAcsRequest<DescribeNetworkAcl
 		}
 	}
 
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -173,6 +203,29 @@ public class DescribeNetworkAclsRequest extends RpcAcsRequest<DescribeNetworkAcl
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public static class Tags {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

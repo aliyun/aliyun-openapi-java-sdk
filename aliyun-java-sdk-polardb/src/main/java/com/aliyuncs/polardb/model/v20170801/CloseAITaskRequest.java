@@ -35,7 +35,7 @@ public class CloseAITaskRequest extends RpcAcsRequest<CloseAITaskResponse> {
 
 	private Long ownerId;
 	public CloseAITaskRequest() {
-		super("polardb", "2017-08-01", "CloseAITask");
+		super("polardb", "2017-08-01", "CloseAITask", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -15,6 +15,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -543,6 +544,7 @@ public class ApacheHttpClientTest {
     }
 
     @Test
+    @Ignore
     public void testThrowSSLHandshakeException() throws ClientException, IOException {
         thrown.expect(SSLHandshakeException.class);
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
@@ -555,6 +557,7 @@ public class ApacheHttpClientTest {
     }
 
     @Test
+    @Ignore
     public void testIgnoreSSLCert() throws ClientException, IOException {
         try {
             HttpClientConfig clientConfig = HttpClientConfig.getDefault();

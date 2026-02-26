@@ -23,19 +23,20 @@ public class DescribeLimitationResponseUnmarshaller {
 	public static DescribeLimitationResponse unmarshall(DescribeLimitationResponse describeLimitationResponse, UnmarshallerContext _ctx) {
 		
 		describeLimitationResponse.setRequestId(_ctx.stringValue("DescribeLimitationResponse.RequestId"));
-		describeLimitationResponse.setMaxNumberOfScalingGroups(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfScalingGroups"));
-		describeLimitationResponse.setMaxNumberOfScalingConfigurations(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfScalingConfigurations"));
-		describeLimitationResponse.setMaxNumberOfScalingRules(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfScalingRules"));
 		describeLimitationResponse.setMaxNumberOfScheduledTasks(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfScheduledTasks"));
-		describeLimitationResponse.setMaxNumberOfScalingInstances(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfScalingInstances"));
-		describeLimitationResponse.setMaxNumberOfDBInstances(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfDBInstances"));
 		describeLimitationResponse.setMaxNumberOfLoadBalancers(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfLoadBalancers"));
-		describeLimitationResponse.setMaxNumberOfMinSize(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfMinSize"));
 		describeLimitationResponse.setMaxNumberOfMaxSize(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfMaxSize"));
-		describeLimitationResponse.setMaxNumberOfVServerGroups(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfVServerGroups"));
-		describeLimitationResponse.setMaxNumberOfLifecycleHooks(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfLifecycleHooks"));
-		describeLimitationResponse.setMaxNumberOfNotificationConfigurations(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfNotificationConfigurations"));
 		describeLimitationResponse.setMaxNumberOfAlbServerGroup(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfAlbServerGroup"));
+		describeLimitationResponse.setMaxNumberOfNlbServerGroup(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfNlbServerGroup"));
+		describeLimitationResponse.setMaxNumberOfDBInstances(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfDBInstances"));
+		describeLimitationResponse.setMaxNumberOfScalingConfigurations(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfScalingConfigurations"));
+		describeLimitationResponse.setMaxNumberOfMinSize(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfMinSize"));
+		describeLimitationResponse.setMaxNumberOfLifecycleHooks(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfLifecycleHooks"));
+		describeLimitationResponse.setMaxNumberOfScalingInstances(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfScalingInstances"));
+		describeLimitationResponse.setMaxNumberOfScalingGroups(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfScalingGroups"));
+		describeLimitationResponse.setMaxNumberOfNotificationConfigurations(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfNotificationConfigurations"));
+		describeLimitationResponse.setMaxNumberOfVServerGroups(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfVServerGroups"));
+		describeLimitationResponse.setMaxNumberOfScalingRules(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfScalingRules"));
 	 
 	 	return describeLimitationResponse;
 	}

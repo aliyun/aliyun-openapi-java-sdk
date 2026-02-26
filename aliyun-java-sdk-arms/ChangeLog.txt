@@ -1,3 +1,61 @@
+2025-03-13 Version: 10.0.3
+- Update version No.
+- Add InstallManagedPrometheus extra Param vcExtraInfo.
+
+2025-03-13 Version: 2.8.39
+- Update version No.
+- Add InstallManagedPrometheus extra Param vcExtraInfo.
+
+2024-12-27 Version: 2.8.38
+- Fix CreateAlertRule response  type of AlertId.
+
+2024-08-15 Version: 2.8.37
+- Support effective time for CreateOrUpdateSilencePolicy interface.
+- Fix spelling errors in the field SupportAuthTypes.
+
+2024-08-05 Version: 2.8.36
+- Offline remote write related APIs.
+- Mark the managedPrometheus related APIs as deprecated.
+
+2024-04-29 Version: 2.8.35
+- Generated 2019-08-08 for `ARMS`.
+
+2023-05-26 Version: 2.8.34
+- Add solution to response for GetAlerts Api.
+
+2023-03-28 Version: 2.8.33
+- Support duration compare type options for CreateOrUpdateAlertRule interface.
+
+2023-03-14 Version: 2.8.31
+- Fix SearchTracesByPage,add isError
+
+2023-03-10 Version: 2.8.30
+- Fixed bugs for getClusterAllUrl pop interface.
+
+2023-03-03 Version: 2.8.29
+- Fixed bugs for getClusterAllUrl pop interface.
+
+2023-02-24 Version: 2.8.28
+- Add cn-fuzhou region.
+
+2023-01-03 Version: 2.8.27
+- Update TraceApp and RetcodeApp related APIs.
+
+2023-01-03 Version: 2.8.26
+- Update TraceApp and RetcodeApp related APIs.
+
+2022-11-16 Version: 2.8.25
+- Modify ListRetcodeApps.
+
+2022-10-09 Version: 2.8.24
+- Modify ListRetcodeApps.
+
+2022-09-05 Version: 2.8.23
+- Update sdk.
+
+2022-09-02 Version: 2.8.22
+- Add SyncRecordingRules api.
+
 2022-07-29 Version: 2.8.21
 - Add AddPrometheusInstance api.
 

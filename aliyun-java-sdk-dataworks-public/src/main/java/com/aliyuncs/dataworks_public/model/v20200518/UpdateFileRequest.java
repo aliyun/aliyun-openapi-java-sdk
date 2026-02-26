@@ -27,11 +27,15 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 
 	private String outputList;
 
+	private String imageId;
+
 	private String dependentNodeIdList;
 
 	private String content;
 
 	private String projectIdentifier;
+
+	private Integer timeout;
 
 	private Boolean startImmediately;
 
@@ -51,6 +55,8 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 
 	private String inputList;
 
+	private Boolean applyScheduleImmediately;
+
 	private String rerunMode;
 
 	private String connectionName;
@@ -64,6 +70,8 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 	private Integer autoRerunTimes;
 
 	private String cronExpress;
+
+	private Boolean ignoreParentSkipRunningProperty;
 
 	private Long endEffectDate;
 
@@ -102,6 +110,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		}
 	}
 
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putBodyParameter("ImageId", imageId);
+		}
+	}
+
 	public String getDependentNodeIdList() {
 		return this.dependentNodeIdList;
 	}
@@ -132,6 +151,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		this.projectIdentifier = projectIdentifier;
 		if(projectIdentifier != null){
 			putBodyParameter("ProjectIdentifier", projectIdentifier);
+		}
+	}
+
+	public Integer getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Integer timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putBodyParameter("Timeout", timeout.toString());
 		}
 	}
 
@@ -234,6 +264,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		}
 	}
 
+	public Boolean getApplyScheduleImmediately() {
+		return this.applyScheduleImmediately;
+	}
+
+	public void setApplyScheduleImmediately(Boolean applyScheduleImmediately) {
+		this.applyScheduleImmediately = applyScheduleImmediately;
+		if(applyScheduleImmediately != null){
+			putBodyParameter("ApplyScheduleImmediately", applyScheduleImmediately.toString());
+		}
+	}
+
 	public String getRerunMode() {
 		return this.rerunMode;
 	}
@@ -308,6 +349,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		this.cronExpress = cronExpress;
 		if(cronExpress != null){
 			putBodyParameter("CronExpress", cronExpress);
+		}
+	}
+
+	public Boolean getIgnoreParentSkipRunningProperty() {
+		return this.ignoreParentSkipRunningProperty;
+	}
+
+	public void setIgnoreParentSkipRunningProperty(Boolean ignoreParentSkipRunningProperty) {
+		this.ignoreParentSkipRunningProperty = ignoreParentSkipRunningProperty;
+		if(ignoreParentSkipRunningProperty != null){
+			putBodyParameter("IgnoreParentSkipRunningProperty", ignoreParentSkipRunningProperty.toString());
 		}
 	}
 

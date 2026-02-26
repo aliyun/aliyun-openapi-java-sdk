@@ -32,9 +32,11 @@ public class GetAggregateResourceCountsGroupByRegionRequest extends RpcAcsReques
 	private String resourceType;
 
 	private String folderId;
+
+	private Long resourceAccountId;
 	public GetAggregateResourceCountsGroupByRegionRequest() {
-		super("Config", "2020-09-07", "GetAggregateResourceCountsGroupByRegion");
-		setMethod(MethodType.GET);
+		super("Config", "2020-09-07", "GetAggregateResourceCountsGroupByRegion", "config");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -82,6 +84,17 @@ public class GetAggregateResourceCountsGroupByRegionRequest extends RpcAcsReques
 		this.folderId = folderId;
 		if(folderId != null){
 			putQueryParameter("FolderId", folderId);
+		}
+	}
+
+	public Long getResourceAccountId() {
+		return this.resourceAccountId;
+	}
+
+	public void setResourceAccountId(Long resourceAccountId) {
+		this.resourceAccountId = resourceAccountId;
+		if(resourceAccountId != null){
+			putQueryParameter("ResourceAccountId", resourceAccountId.toString());
 		}
 	}
 

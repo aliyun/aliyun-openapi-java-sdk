@@ -33,6 +33,7 @@ public class ObtainApplicationClientSecretResponseUnmarshaller {
 		applicationClientSecret.setClientSecret(_ctx.stringValue("ObtainApplicationClientSecretResponse.ApplicationClientSecret.ClientSecret"));
 		applicationClientSecret.setStatus(_ctx.stringValue("ObtainApplicationClientSecretResponse.ApplicationClientSecret.Status"));
 		applicationClientSecret.setLastUsedTime(_ctx.longValue("ObtainApplicationClientSecretResponse.ApplicationClientSecret.LastUsedTime"));
+		applicationClientSecret.setExpirationTime(_ctx.longValue("ObtainApplicationClientSecretResponse.ApplicationClientSecret.ExpirationTime"));
 		obtainApplicationClientSecretResponse.setApplicationClientSecret(applicationClientSecret);
 	 
 	 	return obtainApplicationClientSecretResponse;

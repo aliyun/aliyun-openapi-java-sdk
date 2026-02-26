@@ -27,7 +27,7 @@ public class WebpageSyncScanRequest extends RoaAcsRequest<WebpageSyncScanRespons
 
 	private String clientInfo;
 	public WebpageSyncScanRequest() {
-		super("Green", "2018-05-09", "WebpageSyncScan", "green");
+		super("Green", "2018-05-09", "WebpageSyncScan");
 		setUriPattern("/green/webpage/scan");
 		setMethod(MethodType.POST);
 		try {

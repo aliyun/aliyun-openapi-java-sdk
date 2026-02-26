@@ -30,11 +30,11 @@ public class CreateQueryProcessorResponseUnmarshaller {
 		createQueryProcessorResponse.setRequestId(_ctx.stringValue("CreateQueryProcessorResponse.requestId"));
 
 		Result result = new Result();
-		result.setName(_ctx.stringValue("CreateQueryProcessorResponse.result.name"));
-		result.setActive(_ctx.booleanValue("CreateQueryProcessorResponse.result.active"));
-		result.setDomain(_ctx.stringValue("CreateQueryProcessorResponse.result.domain"));
 		result.setCreated(_ctx.integerValue("CreateQueryProcessorResponse.result.created"));
+		result.setActive(_ctx.booleanValue("CreateQueryProcessorResponse.result.active"));
 		result.setUpdated(_ctx.integerValue("CreateQueryProcessorResponse.result.updated"));
+		result.setName(_ctx.stringValue("CreateQueryProcessorResponse.result.name"));
+		result.setDomain(_ctx.stringValue("CreateQueryProcessorResponse.result.domain"));
 
 		List<String> indexes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("CreateQueryProcessorResponse.result.indexes.Length"); i++) {

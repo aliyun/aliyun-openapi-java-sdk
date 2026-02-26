@@ -23,9 +23,9 @@ public class DeleteTopicResponseUnmarshaller {
 	public static DeleteTopicResponse unmarshall(DeleteTopicResponse deleteTopicResponse, UnmarshallerContext _ctx) {
 		
 		deleteTopicResponse.setRequestId(_ctx.stringValue("DeleteTopicResponse.RequestId"));
-		deleteTopicResponse.setSuccess(_ctx.booleanValue("DeleteTopicResponse.Success"));
 		deleteTopicResponse.setCode(_ctx.integerValue("DeleteTopicResponse.Code"));
 		deleteTopicResponse.setMessage(_ctx.stringValue("DeleteTopicResponse.Message"));
+		deleteTopicResponse.setSuccess(_ctx.booleanValue("DeleteTopicResponse.Success"));
 	 
 	 	return deleteTopicResponse;
 	}

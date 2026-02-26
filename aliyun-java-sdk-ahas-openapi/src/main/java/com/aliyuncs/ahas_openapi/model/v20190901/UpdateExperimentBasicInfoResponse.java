@@ -26,13 +26,13 @@ public class UpdateExperimentBasicInfoResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer httpStatusCode;
-
 	private String requestId;
 
-	private Boolean success;
+	private Integer httpStatusCode;
 
 	private String code;
+
+	private Boolean success;
 
 	public String getMessage() {
 		return this.message;
@@ -40,14 +40,6 @@ public class UpdateExperimentBasicInfoResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getRequestId() {
@@ -58,12 +50,12 @@ public class UpdateExperimentBasicInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -72,6 +64,14 @@ public class UpdateExperimentBasicInfoResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

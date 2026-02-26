@@ -19,8 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.arms.model.v20190808.ListIntegrationResponse;
 import com.aliyuncs.arms.model.v20190808.ListIntegrationResponse.PageInfo;
-import com.aliyuncs.arms.model.v20190808.ListIntegrationResponse.PageInfo.Integrations;
-import com.aliyuncs.arms.model.v20190808.ListIntegrationResponse.PageInfo.Integrations.IntegrationDetail;
+import com.aliyuncs.arms.model.v20190808.ListIntegrationResponse.PageInfo.IntegrationsItem;
+import com.aliyuncs.arms.model.v20190808.ListIntegrationResponse.PageInfo.IntegrationsItem.IntegrationDetail;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -36,40 +36,42 @@ public class ListIntegrationResponseUnmarshaller {
 		pageInfo.setSize(_ctx.longValue("ListIntegrationResponse.PageInfo.Size"));
 		pageInfo.setPage(_ctx.longValue("ListIntegrationResponse.PageInfo.Page"));
 
-		List<Integrations> iintegrations = new ArrayList<Integrations>();
-		for (int i = 0; i < _ctx.lengthValue("ListIntegrationResponse.PageInfo.Iintegrations.Length"); i++) {
-			Integrations integrations = new Integrations();
-			integrations.setIntegrationId(_ctx.longValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].IntegrationId"));
-			integrations.setIntegrationName(_ctx.stringValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].IntegrationName"));
-			integrations.setIntegrationProductType(_ctx.stringValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].IntegrationProductType"));
-			integrations.setApiEndpoint(_ctx.stringValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].ApiEndpoint"));
-			integrations.setShortToken(_ctx.stringValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].ShortToken"));
-			integrations.setState(_ctx.booleanValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].State"));
-			integrations.setLiveness(_ctx.stringValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].Liveness"));
-			integrations.setCreateTime(_ctx.stringValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].CreateTime"));
+		List<IntegrationsItem> integrations = new ArrayList<IntegrationsItem>();
+		for (int i = 0; i < _ctx.lengthValue("ListIntegrationResponse.PageInfo.Integrations.Length"); i++) {
+			IntegrationsItem integrationsItem = new IntegrationsItem();
+			integrationsItem.setIntegrationId(_ctx.longValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].IntegrationId"));
+			integrationsItem.setIntegrationName(_ctx.stringValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].IntegrationName"));
+			integrationsItem.setIntegrationProductType(_ctx.stringValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].IntegrationProductType"));
+			integrationsItem.setApiEndpoint(_ctx.stringValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].ApiEndpoint"));
+			integrationsItem.setShortToken(_ctx.stringValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].ShortToken"));
+			integrationsItem.setState(_ctx.booleanValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].State"));
+			integrationsItem.setLiveness(_ctx.stringValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].Liveness"));
+			integrationsItem.setCreateTime(_ctx.stringValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].CreateTime"));
 
 			IntegrationDetail integrationDetail = new IntegrationDetail();
-			integrationDetail.setDescription(_ctx.stringValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].IntegrationDetail.Description"));
-			integrationDetail.setDuplicateKey(_ctx.stringValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].IntegrationDetail.DuplicateKey"));
-			integrationDetail.setAutoRecover(_ctx.booleanValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].IntegrationDetail.AutoRecover"));
-			integrationDetail.setRecoverTime(_ctx.longValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].IntegrationDetail.RecoverTime"));
+			integrationDetail.setDescription(_ctx.stringValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].IntegrationDetail.Description"));
+			integrationDetail.setDuplicateKey(_ctx.stringValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].IntegrationDetail.DuplicateKey"));
+			integrationDetail.setAutoRecover(_ctx.booleanValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].IntegrationDetail.AutoRecover"));
+			integrationDetail.setRecoverTime(_ctx.longValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].IntegrationDetail.RecoverTime"));
+			integrationDetail.setInitiativeRecoverField(_ctx.stringValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].IntegrationDetail.InitiativeRecoverField"));
+			integrationDetail.setInitiativeRecoverValue(_ctx.stringValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].IntegrationDetail.InitiativeRecoverValue"));
 
 			List<Long> stat = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].IntegrationDetail.Stat.Length"); j++) {
-				stat.add(_ctx.longValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].IntegrationDetail.Stat["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].IntegrationDetail.Stat.Length"); j++) {
+				stat.add(_ctx.longValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].IntegrationDetail.Stat["+ j +"]"));
 			}
 			integrationDetail.setStat(stat);
 
-			List<Map<Object, Object>> fieldRedefineRules = _ctx.listMapValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].IntegrationDetail.FieldRedefineRules");
+			List<Map<Object, Object>> fieldRedefineRules = _ctx.listMapValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].IntegrationDetail.FieldRedefineRules");
 			integrationDetail.setFieldRedefineRules(fieldRedefineRules);
 
-			List<Map<Object, Object>> extendedFieldRedefineRules = _ctx.listMapValue("ListIntegrationResponse.PageInfo.Iintegrations["+ i +"].IntegrationDetail.ExtendedFieldRedefineRules");
+			List<Map<Object, Object>> extendedFieldRedefineRules = _ctx.listMapValue("ListIntegrationResponse.PageInfo.Integrations["+ i +"].IntegrationDetail.ExtendedFieldRedefineRules");
 			integrationDetail.setExtendedFieldRedefineRules(extendedFieldRedefineRules);
-			integrations.setIntegrationDetail(integrationDetail);
+			integrationsItem.setIntegrationDetail(integrationDetail);
 
-			iintegrations.add(integrations);
+			integrations.add(integrationsItem);
 		}
-		pageInfo.setIintegrations(iintegrations);
+		pageInfo.setIntegrations(integrations);
 		listIntegrationResponse.setPageInfo(pageInfo);
 	 
 	 	return listIntegrationResponse;

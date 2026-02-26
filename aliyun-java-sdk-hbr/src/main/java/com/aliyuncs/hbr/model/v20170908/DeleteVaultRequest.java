@@ -15,7 +15,6 @@
 package com.aliyuncs.hbr.model.v20170908;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hbr.Endpoint;
 
@@ -29,9 +28,10 @@ public class DeleteVaultRequest extends RpcAcsRequest<DeleteVaultResponse> {
 	private String vaultId;
 
 	private String token;
+
+	private String resourceGroupId;
 	public DeleteVaultRequest() {
 		super("hbr", "2017-09-08", "DeleteVault", "hbr");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +58,17 @@ public class DeleteVaultRequest extends RpcAcsRequest<DeleteVaultResponse> {
 		this.token = token;
 		if(token != null){
 			putQueryParameter("Token", token);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

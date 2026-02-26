@@ -77,15 +77,7 @@ public class DescribeScdnUserDomainsResponse extends AcsResponse {
 
 	public static class PageData {
 
-		private String domainName;
-
-		private String cname;
-
-		private String domainStatus;
-
 		private String gmtCreated;
-
-		private String gmtModified;
 
 		private String description;
 
@@ -95,31 +87,15 @@ public class DescribeScdnUserDomainsResponse extends AcsResponse {
 
 		private String sandbox;
 
+		private String domainStatus;
+
+		private String cname;
+
+		private String gmtModified;
+
+		private String domainName;
+
 		private List<Source> sources;
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getCname() {
-			return this.cname;
-		}
-
-		public void setCname(String cname) {
-			this.cname = cname;
-		}
-
-		public String getDomainStatus() {
-			return this.domainStatus;
-		}
-
-		public void setDomainStatus(String domainStatus) {
-			this.domainStatus = domainStatus;
-		}
 
 		public String getGmtCreated() {
 			return this.gmtCreated;
@@ -127,14 +103,6 @@ public class DescribeScdnUserDomainsResponse extends AcsResponse {
 
 		public void setGmtCreated(String gmtCreated) {
 			this.gmtCreated = gmtCreated;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
 		}
 
 		public String getDescription() {
@@ -169,6 +137,38 @@ public class DescribeScdnUserDomainsResponse extends AcsResponse {
 			this.sandbox = sandbox;
 		}
 
+		public String getDomainStatus() {
+			return this.domainStatus;
+		}
+
+		public void setDomainStatus(String domainStatus) {
+			this.domainStatus = domainStatus;
+		}
+
+		public String getCname() {
+			return this.cname;
+		}
+
+		public void setCname(String cname) {
+			this.cname = cname;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
 		public List<Source> getSources() {
 			return this.sources;
 		}
@@ -181,11 +181,11 @@ public class DescribeScdnUserDomainsResponse extends AcsResponse {
 
 			private String type;
 
-			private String content;
+			private String priority;
 
 			private Integer port;
 
-			private String priority;
+			private String content;
 
 			public String getType() {
 				return this.type;
@@ -195,12 +195,12 @@ public class DescribeScdnUserDomainsResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public String getContent() {
-				return this.content;
+			public String getPriority() {
+				return this.priority;
 			}
 
-			public void setContent(String content) {
-				this.content = content;
+			public void setPriority(String priority) {
+				this.priority = priority;
 			}
 
 			public Integer getPort() {
@@ -211,12 +211,12 @@ public class DescribeScdnUserDomainsResponse extends AcsResponse {
 				this.port = port;
 			}
 
-			public String getPriority() {
-				return this.priority;
+			public String getContent() {
+				return this.content;
 			}
 
-			public void setPriority(String priority) {
-				this.priority = priority;
+			public void setContent(String content) {
+				this.content = content;
 			}
 		}
 	}

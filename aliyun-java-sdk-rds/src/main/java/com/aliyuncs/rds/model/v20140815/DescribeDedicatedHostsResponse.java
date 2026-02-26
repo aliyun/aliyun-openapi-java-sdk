@@ -57,92 +57,68 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 	public static class DedicatedHostsItem {
 
-		private String hostType;
-
-		private String hostStorage;
-
-		private String memoryUsed;
-
-		private String dedicatedHostGroupId;
+		private String accountName;
 
 		private String allocationStatus;
 
-		private String storageUsed;
-
-		private String dedicatedHostId;
-
-		private String memAllocationRatio;
-
-		private String createdTime;
-
-		private String iPAddress;
-
-		private String hostStatus;
-
-		private String hostName;
-
-		private String hostCPU;
-
-		private String instanceNumber;
-
-		private String openPermission;
-
-		private String cpuUsed;
-
-		private String vPCId;
-
-		private String hostClass;
-
-		private String endTime;
-
-		private String vSwitchId;
+		private String bastionInstanceId;
 
 		private String cPUAllocationRatio;
 
-		private String zoneId;
+		private String cpuUsed;
 
-		private String imageCategory;
+		private String createdTime;
 
-		private String engine;
+		private String dedicatedHostGroupId;
+
+		private String dedicatedHostId;
 
 		private String diskAllocationRatio;
 
+		private String endTime;
+
+		private String engine;
+
+		private String hostCPU;
+
+		private String hostClass;
+
 		private String hostMem;
 
-		private String bastionInstanceId;
+		private String hostName;
 
-		private String accountName;
+		private String hostStatus;
 
-		public String getHostType() {
-			return this.hostType;
+		private String hostStorage;
+
+		private String hostType;
+
+		private String iPAddress;
+
+		private String imageCategory;
+
+		private String instanceNumber;
+
+		private String memAllocationRatio;
+
+		private String memoryUsed;
+
+		private String openPermission;
+
+		private String storageUsed;
+
+		private String vPCId;
+
+		private String vSwitchId;
+
+		private String zoneId;
+
+		public String getAccountName() {
+			return this.accountName;
 		}
 
-		public void setHostType(String hostType) {
-			this.hostType = hostType;
-		}
-
-		public String getHostStorage() {
-			return this.hostStorage;
-		}
-
-		public void setHostStorage(String hostStorage) {
-			this.hostStorage = hostStorage;
-		}
-
-		public String getMemoryUsed() {
-			return this.memoryUsed;
-		}
-
-		public void setMemoryUsed(String memoryUsed) {
-			this.memoryUsed = memoryUsed;
-		}
-
-		public String getDedicatedHostGroupId() {
-			return this.dedicatedHostGroupId;
-		}
-
-		public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
-			this.dedicatedHostGroupId = dedicatedHostGroupId;
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 
 		public String getAllocationStatus() {
@@ -153,124 +129,12 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 			this.allocationStatus = allocationStatus;
 		}
 
-		public String getStorageUsed() {
-			return this.storageUsed;
+		public String getBastionInstanceId() {
+			return this.bastionInstanceId;
 		}
 
-		public void setStorageUsed(String storageUsed) {
-			this.storageUsed = storageUsed;
-		}
-
-		public String getDedicatedHostId() {
-			return this.dedicatedHostId;
-		}
-
-		public void setDedicatedHostId(String dedicatedHostId) {
-			this.dedicatedHostId = dedicatedHostId;
-		}
-
-		public String getMemAllocationRatio() {
-			return this.memAllocationRatio;
-		}
-
-		public void setMemAllocationRatio(String memAllocationRatio) {
-			this.memAllocationRatio = memAllocationRatio;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public String getIPAddress() {
-			return this.iPAddress;
-		}
-
-		public void setIPAddress(String iPAddress) {
-			this.iPAddress = iPAddress;
-		}
-
-		public String getHostStatus() {
-			return this.hostStatus;
-		}
-
-		public void setHostStatus(String hostStatus) {
-			this.hostStatus = hostStatus;
-		}
-
-		public String getHostName() {
-			return this.hostName;
-		}
-
-		public void setHostName(String hostName) {
-			this.hostName = hostName;
-		}
-
-		public String getHostCPU() {
-			return this.hostCPU;
-		}
-
-		public void setHostCPU(String hostCPU) {
-			this.hostCPU = hostCPU;
-		}
-
-		public String getInstanceNumber() {
-			return this.instanceNumber;
-		}
-
-		public void setInstanceNumber(String instanceNumber) {
-			this.instanceNumber = instanceNumber;
-		}
-
-		public String getOpenPermission() {
-			return this.openPermission;
-		}
-
-		public void setOpenPermission(String openPermission) {
-			this.openPermission = openPermission;
-		}
-
-		public String getCpuUsed() {
-			return this.cpuUsed;
-		}
-
-		public void setCpuUsed(String cpuUsed) {
-			this.cpuUsed = cpuUsed;
-		}
-
-		public String getVPCId() {
-			return this.vPCId;
-		}
-
-		public void setVPCId(String vPCId) {
-			this.vPCId = vPCId;
-		}
-
-		public String getHostClass() {
-			return this.hostClass;
-		}
-
-		public void setHostClass(String hostClass) {
-			this.hostClass = hostClass;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
+		public void setBastionInstanceId(String bastionInstanceId) {
+			this.bastionInstanceId = bastionInstanceId;
 		}
 
 		public String getCPUAllocationRatio() {
@@ -281,28 +145,36 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 			this.cPUAllocationRatio = cPUAllocationRatio;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public String getCpuUsed() {
+			return this.cpuUsed;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setCpuUsed(String cpuUsed) {
+			this.cpuUsed = cpuUsed;
 		}
 
-		public String getImageCategory() {
-			return this.imageCategory;
+		public String getCreatedTime() {
+			return this.createdTime;
 		}
 
-		public void setImageCategory(String imageCategory) {
-			this.imageCategory = imageCategory;
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
 		}
 
-		public String getEngine() {
-			return this.engine;
+		public String getDedicatedHostGroupId() {
+			return this.dedicatedHostGroupId;
 		}
 
-		public void setEngine(String engine) {
-			this.engine = engine;
+		public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+			this.dedicatedHostGroupId = dedicatedHostGroupId;
+		}
+
+		public String getDedicatedHostId() {
+			return this.dedicatedHostId;
+		}
+
+		public void setDedicatedHostId(String dedicatedHostId) {
+			this.dedicatedHostId = dedicatedHostId;
 		}
 
 		public String getDiskAllocationRatio() {
@@ -313,6 +185,38 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 			this.diskAllocationRatio = diskAllocationRatio;
 		}
 
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public String getHostCPU() {
+			return this.hostCPU;
+		}
+
+		public void setHostCPU(String hostCPU) {
+			this.hostCPU = hostCPU;
+		}
+
+		public String getHostClass() {
+			return this.hostClass;
+		}
+
+		public void setHostClass(String hostClass) {
+			this.hostClass = hostClass;
+		}
+
 		public String getHostMem() {
 			return this.hostMem;
 		}
@@ -321,20 +225,116 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 			this.hostMem = hostMem;
 		}
 
-		public String getBastionInstanceId() {
-			return this.bastionInstanceId;
+		public String getHostName() {
+			return this.hostName;
 		}
 
-		public void setBastionInstanceId(String bastionInstanceId) {
-			this.bastionInstanceId = bastionInstanceId;
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
 		}
 
-		public String getAccountName() {
-			return this.accountName;
+		public String getHostStatus() {
+			return this.hostStatus;
 		}
 
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
+		public void setHostStatus(String hostStatus) {
+			this.hostStatus = hostStatus;
+		}
+
+		public String getHostStorage() {
+			return this.hostStorage;
+		}
+
+		public void setHostStorage(String hostStorage) {
+			this.hostStorage = hostStorage;
+		}
+
+		public String getHostType() {
+			return this.hostType;
+		}
+
+		public void setHostType(String hostType) {
+			this.hostType = hostType;
+		}
+
+		public String getIPAddress() {
+			return this.iPAddress;
+		}
+
+		public void setIPAddress(String iPAddress) {
+			this.iPAddress = iPAddress;
+		}
+
+		public String getImageCategory() {
+			return this.imageCategory;
+		}
+
+		public void setImageCategory(String imageCategory) {
+			this.imageCategory = imageCategory;
+		}
+
+		public String getInstanceNumber() {
+			return this.instanceNumber;
+		}
+
+		public void setInstanceNumber(String instanceNumber) {
+			this.instanceNumber = instanceNumber;
+		}
+
+		public String getMemAllocationRatio() {
+			return this.memAllocationRatio;
+		}
+
+		public void setMemAllocationRatio(String memAllocationRatio) {
+			this.memAllocationRatio = memAllocationRatio;
+		}
+
+		public String getMemoryUsed() {
+			return this.memoryUsed;
+		}
+
+		public void setMemoryUsed(String memoryUsed) {
+			this.memoryUsed = memoryUsed;
+		}
+
+		public String getOpenPermission() {
+			return this.openPermission;
+		}
+
+		public void setOpenPermission(String openPermission) {
+			this.openPermission = openPermission;
+		}
+
+		public String getStorageUsed() {
+			return this.storageUsed;
+		}
+
+		public void setStorageUsed(String storageUsed) {
+			this.storageUsed = storageUsed;
+		}
+
+		public String getVPCId() {
+			return this.vPCId;
+		}
+
+		public void setVPCId(String vPCId) {
+			this.vPCId = vPCId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 	}
 

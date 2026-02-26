@@ -27,7 +27,7 @@ public class GetVisualServiceStatusRequest extends RpcAcsRequest<GetVisualServic
 
 	private String clusterId;
 	public GetVisualServiceStatusRequest() {
-		super("EHPC", "2018-04-12", "GetVisualServiceStatus");
+		super("EHPC", "2018-04-12", "GetVisualServiceStatus", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

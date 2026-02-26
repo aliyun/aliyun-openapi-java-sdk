@@ -47,21 +47,13 @@ public class DescribeSupportLinesResponse extends AcsResponse {
 
 	public static class RecordLine {
 
-		private String lineCode;
-
 		private String fatherCode;
-
-		private String lineName;
 
 		private String lineDisplayName;
 
-		public String getLineCode() {
-			return this.lineCode;
-		}
+		private String lineCode;
 
-		public void setLineCode(String lineCode) {
-			this.lineCode = lineCode;
-		}
+		private String lineName;
 
 		public String getFatherCode() {
 			return this.fatherCode;
@@ -71,20 +63,28 @@ public class DescribeSupportLinesResponse extends AcsResponse {
 			this.fatherCode = fatherCode;
 		}
 
-		public String getLineName() {
-			return this.lineName;
-		}
-
-		public void setLineName(String lineName) {
-			this.lineName = lineName;
-		}
-
 		public String getLineDisplayName() {
 			return this.lineDisplayName;
 		}
 
 		public void setLineDisplayName(String lineDisplayName) {
 			this.lineDisplayName = lineDisplayName;
+		}
+
+		public String getLineCode() {
+			return this.lineCode;
+		}
+
+		public void setLineCode(String lineCode) {
+			this.lineCode = lineCode;
+		}
+
+		public String getLineName() {
+			return this.lineName;
+		}
+
+		public void setLineName(String lineName) {
+			this.lineName = lineName;
 		}
 	}
 

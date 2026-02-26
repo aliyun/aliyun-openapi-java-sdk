@@ -76,6 +76,8 @@ public class GetManagedRuleResponse extends AcsResponse {
 
 		private Long createTimestamp;
 
+		private String useCases;
+
 		private List<SourceDetailsItem> sourceDetails;
 
 		private List<String> labels;
@@ -194,6 +196,14 @@ public class GetManagedRuleResponse extends AcsResponse {
 
 		public void setCreateTimestamp(Long createTimestamp) {
 			this.createTimestamp = createTimestamp;
+		}
+
+		public String getUseCases() {
+			return this.useCases;
+		}
+
+		public void setUseCases(String useCases) {
+			this.useCases = useCases;
 		}
 
 		public List<SourceDetailsItem> getSourceDetails() {

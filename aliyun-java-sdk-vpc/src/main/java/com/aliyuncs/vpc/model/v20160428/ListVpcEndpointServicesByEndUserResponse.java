@@ -31,6 +31,8 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 
 	private Long maxResults;
 
+	private String totalCount;
+
 	private List<Service> services;
 
 	public String getRequestId() {
@@ -55,6 +57,14 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 
 	public void setMaxResults(Long maxResults) {
 		this.maxResults = maxResults;
+	}
+
+	public String getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Service> getServices() {

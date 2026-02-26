@@ -25,15 +25,15 @@ public class DescribeResourceInfoResponseUnmarshaller {
 		
 		describeResourceInfoResponse.setRequestId(_ctx.stringValue("DescribeResourceInfoResponse.RequestId"));
 		describeResourceInfoResponse.setCode(_ctx.integerValue("DescribeResourceInfoResponse.Code"));
-		describeResourceInfoResponse.setSuccess(_ctx.booleanValue("DescribeResourceInfoResponse.Success"));
 		describeResourceInfoResponse.setMessage(_ctx.stringValue("DescribeResourceInfoResponse.Message"));
+		describeResourceInfoResponse.setSuccess(_ctx.booleanValue("DescribeResourceInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setAuthorizeType(_ctx.stringValue("DescribeResourceInfoResponse.Data.AuthorizeType"));
-		data.setRegion(_ctx.stringValue("DescribeResourceInfoResponse.Data.Region"));
 		data.setStatus(_ctx.stringValue("DescribeResourceInfoResponse.Data.Status"));
 		data.setEffectiveTime(_ctx.longValue("DescribeResourceInfoResponse.Data.EffectiveTime"));
+		data.setAuthorizeType(_ctx.stringValue("DescribeResourceInfoResponse.Data.AuthorizeType"));
 		data.setExpiredTime(_ctx.longValue("DescribeResourceInfoResponse.Data.ExpiredTime"));
+		data.setRegion(_ctx.stringValue("DescribeResourceInfoResponse.Data.Region"));
 		describeResourceInfoResponse.setData(data);
 	 
 	 	return describeResourceInfoResponse;

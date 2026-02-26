@@ -142,6 +142,8 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
         private Integer ephemeralStorage;
 
+        private String computeCategory;
+
         public String getContainerGroupId() {
             return this.containerGroupId;
         }
@@ -324,6 +326,14 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
         public void setEphemeralStorage(Integer ephemeralStorage) {
             this.ephemeralStorage = ephemeralStorage;
+        }
+
+        public String getComputeCategory() {
+            return computeCategory;
+        }
+
+        public void setComputeCategory(String computeCategory) {
+            this.computeCategory = computeCategory;
         }
 
         public String getInstanceType() {
@@ -766,6 +776,8 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
                 private String mountPropagation;
 
+                private String subPath;
+
                 public String getMountPath() {
                     return this.mountPath;
                 }
@@ -798,6 +810,13 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
                     this.mountPropagation = mountPropagation;
                 }
 
+                public String getSubPath() {
+                    return this.subPath;
+                }
+
+                public void setSubPath(String subPath) {
+                    this.subPath = subPath;
+                }
             }
 
             public static class Port {
@@ -1175,6 +1194,10 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
             private String flexVolumeOptions;
 
+            private String emptyDirVolumeMedium;
+
+            private String emptyDirVolumeSizeLimit;
+
             private List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths;
 
             public String getType() {
@@ -1191,6 +1214,22 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
             public void setName(String name) {
                 this.name = name;
+            }
+
+            public String getEmptyDirVolumeMedium() {
+                return emptyDirVolumeMedium;
+            }
+
+            public void setEmptyDirVolumeMedium(String emptyDirVolumeMedium) {
+                this.emptyDirVolumeMedium = emptyDirVolumeMedium;
+            }
+
+            public String getEmptyDirVolumeSizeLimit() {
+                return emptyDirVolumeSizeLimit;
+            }
+
+            public void setEmptyDirVolumeSizeLimit(String emptyDirVolumeSizeLimit) {
+                this.emptyDirVolumeSizeLimit = emptyDirVolumeSizeLimit;
             }
 
             public String getNFSVolumePath() {

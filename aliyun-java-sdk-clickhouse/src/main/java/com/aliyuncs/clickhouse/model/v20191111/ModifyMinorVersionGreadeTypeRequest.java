@@ -37,7 +37,7 @@ public class ModifyMinorVersionGreadeTypeRequest extends RpcAcsRequest<ModifyMin
 
 	private Boolean maintainAutoType;
 	public ModifyMinorVersionGreadeTypeRequest() {
-		super("clickhouse", "2019-11-11", "ModifyMinorVersionGreadeType");
+		super("clickhouse", "2019-11-11", "ModifyMinorVersionGreadeType", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

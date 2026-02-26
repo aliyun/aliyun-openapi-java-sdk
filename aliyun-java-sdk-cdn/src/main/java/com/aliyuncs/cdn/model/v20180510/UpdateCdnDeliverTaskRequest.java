@@ -27,17 +27,15 @@ public class UpdateCdnDeliverTaskRequest extends RpcAcsRequest<UpdateCdnDeliverT
 
 	private String reports;
 
-	private String deliver;
-
-	private Long deliverId;
-
-	private String domainName;
-
-	private Long ownerId;
-
 	private String schedule;
 
 	private String name;
+
+	private String domainName;
+
+	private String deliver;
+
+	private Long deliverId;
 	public UpdateCdnDeliverTaskRequest() {
 		super("Cdn", "2018-05-10", "UpdateCdnDeliverTask");
 		setMethod(MethodType.POST);
@@ -55,50 +53,6 @@ public class UpdateCdnDeliverTaskRequest extends RpcAcsRequest<UpdateCdnDeliverT
 		this.reports = reports;
 		if(reports != null){
 			putBodyParameter("Reports", reports);
-		}
-	}
-
-	public String getDeliver() {
-		return this.deliver;
-	}
-
-	public void setDeliver(String deliver) {
-		this.deliver = deliver;
-		if(deliver != null){
-			putBodyParameter("Deliver", deliver);
-		}
-	}
-
-	public Long getDeliverId() {
-		return this.deliverId;
-	}
-
-	public void setDeliverId(Long deliverId) {
-		this.deliverId = deliverId;
-		if(deliverId != null){
-			putBodyParameter("DeliverId", deliverId.toString());
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putBodyParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -121,6 +75,39 @@ public class UpdateCdnDeliverTaskRequest extends RpcAcsRequest<UpdateCdnDeliverT
 		this.name = name;
 		if(name != null){
 			putBodyParameter("Name", name);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putBodyParameter("DomainName", domainName);
+		}
+	}
+
+	public String getDeliver() {
+		return this.deliver;
+	}
+
+	public void setDeliver(String deliver) {
+		this.deliver = deliver;
+		if(deliver != null){
+			putBodyParameter("Deliver", deliver);
+		}
+	}
+
+	public Long getDeliverId() {
+		return this.deliverId;
+	}
+
+	public void setDeliverId(Long deliverId) {
+		this.deliverId = deliverId;
+		if(deliverId != null){
+			putBodyParameter("DeliverId", deliverId.toString());
 		}
 	}
 

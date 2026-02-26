@@ -35,7 +35,7 @@ public class CreateOTAModuleRequest extends RpcAcsRequest<CreateOTAModuleRespons
 
 	private String desc;
 	public CreateOTAModuleRequest() {
-		super("Iot", "2018-01-20", "CreateOTAModule");
+		super("Iot", "2018-01-20", "CreateOTAModule", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class SetOfficeSiteSsoStatusRequest extends RpcAcsRequest<SetOfficeSiteSs
 
 	private Boolean enableSso;
 	public SetOfficeSiteSsoStatusRequest() {
-		super("ecd", "2020-09-30", "SetOfficeSiteSsoStatus");
+		super("ecd", "2020-09-30", "SetOfficeSiteSsoStatus", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

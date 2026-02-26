@@ -17,6 +17,7 @@ package com.aliyuncs.dds.model.v20151201;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -27,33 +28,31 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private String secondaryZoneId;
 
 	private String engineVersion;
 
 	private String networkType;
 
+	private String srcRegion;
+
 	private List<ReplicaSet> replicaSets;
 
-	private String storageEngine;
+	private String storageType;
 
 	private String resourceGroupId;
 
-	private String securityToken;
-
-	private String engine;
-
 	private String dBInstanceDescription;
+
+	private List<Tag> tags;
+
+	private String globalSecurityGroupIds;
 
 	private Integer period;
 
-	private String restoreTime;
+	private String backupId;
 
-	private String resourceOwnerAccount;
-
-	private String srcDBInstanceId;
-
-	private String ownerAccount;
+	private String encryptionKey;
 
 	private List<ConfigServer> configServers;
 
@@ -65,13 +64,37 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private List<Mongos> mongoss;
 
-	private String accountPassword;
+	private Long provisionedIops;
 
 	private String autoRenew;
 
-	private String vpcId;
-
 	private String zoneId;
+
+	private String clientToken;
+
+	private String storageEngine;
+
+	private String engine;
+
+	private String hiddenZoneId;
+
+	private String restoreTime;
+
+	private String destRegion;
+
+	private String resourceOwnerAccount;
+
+	private String srcDBInstanceId;
+
+	private String ownerAccount;
+
+	private String restoreType;
+
+	private String accountPassword;
+
+	private Boolean encrypted;
+
+	private String vpcId;
 
 	private String protocolType;
 
@@ -79,6 +102,10 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 	public CreateShardingDBInstanceRequest() {
 		super("Dds", "2015-12-01", "CreateShardingDBInstance", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -92,14 +119,14 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getSecondaryZoneId() {
+		return this.secondaryZoneId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setSecondaryZoneId(String secondaryZoneId) {
+		this.secondaryZoneId = secondaryZoneId;
+		if(secondaryZoneId != null){
+			putQueryParameter("SecondaryZoneId", secondaryZoneId);
 		}
 	}
 
@@ -125,6 +152,17 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}
 	}
 
+	public String getSrcRegion() {
+		return this.srcRegion;
+	}
+
+	public void setSrcRegion(String srcRegion) {
+		this.srcRegion = srcRegion;
+		if(srcRegion != null){
+			putQueryParameter("SrcRegion", srcRegion);
+		}
+	}
+
 	public List<ReplicaSet> getReplicaSets() {
 		return this.replicaSets;
 	}
@@ -140,14 +178,14 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}	
 	}
 
-	public String getStorageEngine() {
-		return this.storageEngine;
+	public String getStorageType() {
+		return this.storageType;
 	}
 
-	public void setStorageEngine(String storageEngine) {
-		this.storageEngine = storageEngine;
-		if(storageEngine != null){
-			putQueryParameter("StorageEngine", storageEngine);
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
 		}
 	}
 
@@ -162,28 +200,6 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
-		}
-	}
-
 	public String getDBInstanceDescription() {
 		return this.dBInstanceDescription;
 	}
@@ -192,6 +208,31 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.dBInstanceDescription = dBInstanceDescription;
 		if(dBInstanceDescription != null){
 			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getGlobalSecurityGroupIds() {
+		return this.globalSecurityGroupIds;
+	}
+
+	public void setGlobalSecurityGroupIds(String globalSecurityGroupIds) {
+		this.globalSecurityGroupIds = globalSecurityGroupIds;
+		if(globalSecurityGroupIds != null){
+			putQueryParameter("GlobalSecurityGroupIds", globalSecurityGroupIds);
 		}
 	}
 
@@ -206,47 +247,25 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}
 	}
 
-	public String getRestoreTime() {
-		return this.restoreTime;
+	public String getBackupId() {
+		return this.backupId;
 	}
 
-	public void setRestoreTime(String restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime);
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
+		if(backupId != null){
+			putQueryParameter("BackupId", backupId);
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getEncryptionKey() {
+		return this.encryptionKey;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getSrcDBInstanceId() {
-		return this.srcDBInstanceId;
-	}
-
-	public void setSrcDBInstanceId(String srcDBInstanceId) {
-		this.srcDBInstanceId = srcDBInstanceId;
-		if(srcDBInstanceId != null){
-			putQueryParameter("SrcDBInstanceId", srcDBInstanceId);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
 		}
 	}
 
@@ -310,14 +329,14 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}	
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
+	public Long getProvisionedIops() {
+		return this.provisionedIops;
 	}
 
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
+	public void setProvisionedIops(Long provisionedIops) {
+		this.provisionedIops = provisionedIops;
+		if(provisionedIops != null){
+			putQueryParameter("ProvisionedIops", provisionedIops.toString());
 		}
 	}
 
@@ -332,17 +351,6 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -351,6 +359,149 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getStorageEngine() {
+		return this.storageEngine;
+	}
+
+	public void setStorageEngine(String storageEngine) {
+		this.storageEngine = storageEngine;
+		if(storageEngine != null){
+			putQueryParameter("StorageEngine", storageEngine);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getHiddenZoneId() {
+		return this.hiddenZoneId;
+	}
+
+	public void setHiddenZoneId(String hiddenZoneId) {
+		this.hiddenZoneId = hiddenZoneId;
+		if(hiddenZoneId != null){
+			putQueryParameter("HiddenZoneId", hiddenZoneId);
+		}
+	}
+
+	public String getRestoreTime() {
+		return this.restoreTime;
+	}
+
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
+		}
+	}
+
+	public String getDestRegion() {
+		return this.destRegion;
+	}
+
+	public void setDestRegion(String destRegion) {
+		this.destRegion = destRegion;
+		if(destRegion != null){
+			putQueryParameter("DestRegion", destRegion);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getSrcDBInstanceId() {
+		return this.srcDBInstanceId;
+	}
+
+	public void setSrcDBInstanceId(String srcDBInstanceId) {
+		this.srcDBInstanceId = srcDBInstanceId;
+		if(srcDBInstanceId != null){
+			putQueryParameter("SrcDBInstanceId", srcDBInstanceId);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getRestoreType() {
+		return this.restoreType;
+	}
+
+	public void setRestoreType(String restoreType) {
+		this.restoreType = restoreType;
+		if(restoreType != null){
+			putQueryParameter("RestoreType", restoreType);
+		}
+	}
+
+	public String getAccountPassword() {
+		return this.accountPassword;
+	}
+
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		if(accountPassword != null){
+			putQueryParameter("AccountPassword", accountPassword);
+		}
+	}
+
+	public Boolean getEncrypted() {
+		return this.encrypted;
+	}
+
+	public void setEncrypted(Boolean encrypted) {
+		this.encrypted = encrypted;
+		if(encrypted != null){
+			putQueryParameter("Encrypted", encrypted.toString());
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
@@ -406,6 +557,29 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 		public void set_Class(String _class) {
 			this._class = _class;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

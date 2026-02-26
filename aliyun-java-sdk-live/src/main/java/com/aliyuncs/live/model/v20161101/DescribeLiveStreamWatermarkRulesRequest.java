@@ -30,6 +30,8 @@ public class DescribeLiveStreamWatermarkRulesRequest extends RpcAcsRequest<Descr
 	private Integer pageSize;
 
 	private Long ownerId;
+
+	private String domain;
 	public DescribeLiveStreamWatermarkRulesRequest() {
 		super("live", "2016-11-01", "DescribeLiveStreamWatermarkRules", "live");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class DescribeLiveStreamWatermarkRulesRequest extends RpcAcsRequest<Descr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
 		}
 	}
 

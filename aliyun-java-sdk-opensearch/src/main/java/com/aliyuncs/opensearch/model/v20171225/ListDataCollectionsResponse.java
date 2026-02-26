@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDataCollectionsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<ResultItem> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class ListDataCollectionsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ResultItem> getResult() {
@@ -57,54 +57,30 @@ public class ListDataCollectionsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String id;
-
-		private String name;
-
-		private String type;
-
-		private Integer status;
+		private Integer created;
 
 		private String dataCollectionType;
 
+		private String type;
+
 		private String industryName;
 
-		private Integer created;
+		private Integer status;
 
 		private Integer updated;
 
+		private String name;
+
 		private String sundialId;
 
-		public String getId() {
-			return this.id;
+		private String id;
+
+		public Integer getCreated() {
+			return this.created;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setCreated(Integer created) {
+			this.created = created;
 		}
 
 		public String getDataCollectionType() {
@@ -115,6 +91,14 @@ public class ListDataCollectionsResponse extends AcsResponse {
 			this.dataCollectionType = dataCollectionType;
 		}
 
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
 		public String getIndustryName() {
 			return this.industryName;
 		}
@@ -123,12 +107,12 @@ public class ListDataCollectionsResponse extends AcsResponse {
 			this.industryName = industryName;
 		}
 
-		public Integer getCreated() {
-			return this.created;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setCreated(Integer created) {
-			this.created = created;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Integer getUpdated() {
@@ -139,12 +123,28 @@ public class ListDataCollectionsResponse extends AcsResponse {
 			this.updated = updated;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public String getSundialId() {
 			return this.sundialId;
 		}
 
 		public void setSundialId(String sundialId) {
 			this.sundialId = sundialId;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

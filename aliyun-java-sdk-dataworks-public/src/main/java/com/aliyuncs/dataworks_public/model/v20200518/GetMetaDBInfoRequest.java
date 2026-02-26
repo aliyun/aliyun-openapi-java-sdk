@@ -27,9 +27,9 @@ public class GetMetaDBInfoRequest extends RpcAcsRequest<GetMetaDBInfoResponse> {
 
 	private String dataSourceType;
 
-	private String databaseName;
-
 	private String clusterId;
+
+	private String databaseName;
 
 	private String appGuid;
 	public GetMetaDBInfoRequest() {
@@ -52,17 +52,6 @@ public class GetMetaDBInfoRequest extends RpcAcsRequest<GetMetaDBInfoResponse> {
 		}
 	}
 
-	public String getDatabaseName() {
-		return this.databaseName;
-	}
-
-	public void setDatabaseName(String databaseName) {
-		this.databaseName = databaseName;
-		if(databaseName != null){
-			putQueryParameter("DatabaseName", databaseName);
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -71,6 +60,17 @@ public class GetMetaDBInfoRequest extends RpcAcsRequest<GetMetaDBInfoResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getDatabaseName() {
+		return this.databaseName;
+	}
+
+	public void setDatabaseName(String databaseName) {
+		this.databaseName = databaseName;
+		if(databaseName != null){
+			putQueryParameter("DatabaseName", databaseName);
 		}
 	}
 

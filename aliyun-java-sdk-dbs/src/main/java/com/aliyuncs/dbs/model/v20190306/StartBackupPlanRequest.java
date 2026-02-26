@@ -31,7 +31,7 @@ public class StartBackupPlanRequest extends RpcAcsRequest<StartBackupPlanRespons
 
 	private String ownerId;
 	public StartBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "StartBackupPlan");
+		super("Dbs", "2019-03-06", "StartBackupPlan", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ActiveCaCertificateRequest extends RpcAcsRequest<ActiveCaCertificat
 
 	private String mqttInstanceId;
 	public ActiveCaCertificateRequest() {
-		super("OnsMqtt", "2020-04-20", "ActiveCaCertificate");
+		super("OnsMqtt", "2020-04-20", "ActiveCaCertificate", "onsmqtt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

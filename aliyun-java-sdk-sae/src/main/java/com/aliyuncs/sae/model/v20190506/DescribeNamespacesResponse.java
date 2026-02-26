@@ -155,6 +155,8 @@ public class DescribeNamespacesResponse extends AcsResponse {
 
 			private String regionId;
 
+			private String nameSpaceShortId;
+
 			public String getNamespaceDescription() {
 				return this.namespaceDescription;
 			}
@@ -217,6 +219,14 @@ public class DescribeNamespacesResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
+			}
+
+			public String getNameSpaceShortId() {
+				return this.nameSpaceShortId;
+			}
+
+			public void setNameSpaceShortId(String nameSpaceShortId) {
+				this.nameSpaceShortId = nameSpaceShortId;
 			}
 		}
 	}

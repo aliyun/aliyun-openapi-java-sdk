@@ -47,25 +47,17 @@ public class CalculateDBInstanceWeightResponse extends AcsResponse {
 
 	public static class DBInstanceWeight {
 
-		private String readonlyInstanceSQLDelayedTime;
-
 		private String availability;
-
-		private String weight;
-
-		private String dBInstanceType;
 
 		private String dBInstanceId;
 
+		private String dBInstanceType;
+
+		private String readonlyInstanceSQLDelayedTime;
+
 		private String role;
 
-		public String getReadonlyInstanceSQLDelayedTime() {
-			return this.readonlyInstanceSQLDelayedTime;
-		}
-
-		public void setReadonlyInstanceSQLDelayedTime(String readonlyInstanceSQLDelayedTime) {
-			this.readonlyInstanceSQLDelayedTime = readonlyInstanceSQLDelayedTime;
-		}
+		private String weight;
 
 		public String getAvailability() {
 			return this.availability;
@@ -73,22 +65,6 @@ public class CalculateDBInstanceWeightResponse extends AcsResponse {
 
 		public void setAvailability(String availability) {
 			this.availability = availability;
-		}
-
-		public String getWeight() {
-			return this.weight;
-		}
-
-		public void setWeight(String weight) {
-			this.weight = weight;
-		}
-
-		public String getDBInstanceType() {
-			return this.dBInstanceType;
-		}
-
-		public void setDBInstanceType(String dBInstanceType) {
-			this.dBInstanceType = dBInstanceType;
 		}
 
 		public String getDBInstanceId() {
@@ -99,12 +75,36 @@ public class CalculateDBInstanceWeightResponse extends AcsResponse {
 			this.dBInstanceId = dBInstanceId;
 		}
 
+		public String getDBInstanceType() {
+			return this.dBInstanceType;
+		}
+
+		public void setDBInstanceType(String dBInstanceType) {
+			this.dBInstanceType = dBInstanceType;
+		}
+
+		public String getReadonlyInstanceSQLDelayedTime() {
+			return this.readonlyInstanceSQLDelayedTime;
+		}
+
+		public void setReadonlyInstanceSQLDelayedTime(String readonlyInstanceSQLDelayedTime) {
+			this.readonlyInstanceSQLDelayedTime = readonlyInstanceSQLDelayedTime;
+		}
+
 		public String getRole() {
 			return this.role;
 		}
 
 		public void setRole(String role) {
 			this.role = role;
+		}
+
+		public String getWeight() {
+			return this.weight;
+		}
+
+		public void setWeight(String weight) {
+			this.weight = weight;
 		}
 	}
 

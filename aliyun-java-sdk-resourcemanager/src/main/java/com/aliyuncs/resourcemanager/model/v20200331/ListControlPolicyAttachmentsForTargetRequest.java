@@ -30,7 +30,7 @@ public class ListControlPolicyAttachmentsForTargetRequest extends RpcAcsRequest<
 
 	private String language;
 	public ListControlPolicyAttachmentsForTargetRequest() {
-		super("ResourceManager", "2020-03-31", "ListControlPolicyAttachmentsForTarget");
+		super("ResourceManager", "2020-03-31", "ListControlPolicyAttachmentsForTarget", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

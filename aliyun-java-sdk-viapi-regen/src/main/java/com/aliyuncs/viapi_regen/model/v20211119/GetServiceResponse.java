@@ -76,7 +76,7 @@ public class GetServiceResponse extends AcsResponse {
 
 		private String status;
 
-		private String curlExample;
+		private String serviceId;
 
 		private String inputParams;
 
@@ -87,6 +87,8 @@ public class GetServiceResponse extends AcsResponse {
 		private String inputExample;
 
 		private String outputExample;
+
+		private DataReflowInfo dataReflowInfo;
 
 		public Long getId() {
 			return this.id;
@@ -128,12 +130,12 @@ public class GetServiceResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getCurlExample() {
-			return this.curlExample;
+		public String getServiceId() {
+			return this.serviceId;
 		}
 
-		public void setCurlExample(String curlExample) {
-			this.curlExample = curlExample;
+		public void setServiceId(String serviceId) {
+			this.serviceId = serviceId;
 		}
 
 		public String getInputParams() {
@@ -174,6 +176,57 @@ public class GetServiceResponse extends AcsResponse {
 
 		public void setOutputExample(String outputExample) {
 			this.outputExample = outputExample;
+		}
+
+		public DataReflowInfo getDataReflowInfo() {
+			return this.dataReflowInfo;
+		}
+
+		public void setDataReflowInfo(DataReflowInfo dataReflowInfo) {
+			this.dataReflowInfo = dataReflowInfo;
+		}
+
+		public static class DataReflowInfo {
+
+			private Long dataReflowCount;
+
+			private Long dataReflowRate;
+
+			private String dataReflowOssPath;
+
+			private Boolean enableDataReflowFlag;
+
+			public Long getDataReflowCount() {
+				return this.dataReflowCount;
+			}
+
+			public void setDataReflowCount(Long dataReflowCount) {
+				this.dataReflowCount = dataReflowCount;
+			}
+
+			public Long getDataReflowRate() {
+				return this.dataReflowRate;
+			}
+
+			public void setDataReflowRate(Long dataReflowRate) {
+				this.dataReflowRate = dataReflowRate;
+			}
+
+			public String getDataReflowOssPath() {
+				return this.dataReflowOssPath;
+			}
+
+			public void setDataReflowOssPath(String dataReflowOssPath) {
+				this.dataReflowOssPath = dataReflowOssPath;
+			}
+
+			public Boolean getEnableDataReflowFlag() {
+				return this.enableDataReflowFlag;
+			}
+
+			public void setEnableDataReflowFlag(Boolean enableDataReflowFlag) {
+				this.enableDataReflowFlag = enableDataReflowFlag;
+			}
 		}
 	}
 

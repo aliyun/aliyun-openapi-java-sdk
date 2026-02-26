@@ -31,9 +31,9 @@ public class GetCloudMetricProfilingResponseUnmarshaller {
 		List<SvgInfo> svgUrls = new ArrayList<SvgInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetCloudMetricProfilingResponse.SvgUrls.Length"); i++) {
 			SvgInfo svgInfo = new SvgInfo();
-			svgInfo.setName(_ctx.stringValue("GetCloudMetricProfilingResponse.SvgUrls["+ i +"].Name"));
 			svgInfo.setType(_ctx.stringValue("GetCloudMetricProfilingResponse.SvgUrls["+ i +"].Type"));
 			svgInfo.setUrl(_ctx.stringValue("GetCloudMetricProfilingResponse.SvgUrls["+ i +"].Url"));
+			svgInfo.setName(_ctx.stringValue("GetCloudMetricProfilingResponse.SvgUrls["+ i +"].Name"));
 			svgInfo.setSize(_ctx.integerValue("GetCloudMetricProfilingResponse.SvgUrls["+ i +"].Size"));
 
 			svgUrls.add(svgInfo);

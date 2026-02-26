@@ -14,7 +14,11 @@
 
 package com.aliyuncs.cs.transform.v20151215;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.cs.model.v20151215.DescribeWorkflowsResponse;
+import com.aliyuncs.cs.model.v20151215.DescribeWorkflowsResponse.Job;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -22,6 +26,17 @@ public class DescribeWorkflowsResponseUnmarshaller {
 
 	public static DescribeWorkflowsResponse unmarshall(DescribeWorkflowsResponse describeWorkflowsResponse, UnmarshallerContext _ctx) {
 		
+
+		List<Job> jobs = new ArrayList<Job>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeWorkflowsResponse.jobs.Length"); i++) {
+			Job job = new Job();
+			job.setCluster_id(_ctx.stringValue("DescribeWorkflowsResponse.jobs["+ i +"].cluster_id"));
+			job.setJob_name(_ctx.stringValue("DescribeWorkflowsResponse.jobs["+ i +"].job_name"));
+			job.setCreate_time(_ctx.stringValue("DescribeWorkflowsResponse.jobs["+ i +"].create_time"));
+
+			jobs.add(job);
+		}
+		describeWorkflowsResponse.setJobs(jobs);
 	 
 	 	return describeWorkflowsResponse;
 	}

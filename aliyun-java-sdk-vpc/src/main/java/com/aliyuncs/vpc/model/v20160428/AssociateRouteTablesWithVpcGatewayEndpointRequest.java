@@ -28,13 +28,13 @@ public class AssociateRouteTablesWithVpcGatewayEndpointRequest extends RpcAcsReq
 
 	private Long resourceOwnerId;
 
-	private Boolean dryRun;
-
 	private String clientToken;
 
-	private String resourceOwnerAccount;
-
 	private String endpointId;
+
+	private Boolean dryRun;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
@@ -61,17 +61,6 @@ public class AssociateRouteTablesWithVpcGatewayEndpointRequest extends RpcAcsReq
 		}
 	}
 
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -83,17 +72,6 @@ public class AssociateRouteTablesWithVpcGatewayEndpointRequest extends RpcAcsReq
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getEndpointId() {
 		return this.endpointId;
 	}
@@ -102,6 +80,28 @@ public class AssociateRouteTablesWithVpcGatewayEndpointRequest extends RpcAcsReq
 		this.endpointId = endpointId;
 		if(endpointId != null){
 			putQueryParameter("EndpointId", endpointId);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

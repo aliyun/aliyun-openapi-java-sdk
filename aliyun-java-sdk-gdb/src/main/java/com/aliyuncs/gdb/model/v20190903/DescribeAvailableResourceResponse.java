@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAvailableResourceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String regionId;
 
+	private String requestId;
+
 	private List<AvailableZone> availableZoneList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getRegionId() {
 		return this.regionId;
@@ -45,6 +37,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<AvailableZone> getAvailableZoneList() {
@@ -155,11 +155,19 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 					public static class StorageSize {
 
+						private Integer step;
+
 						private Integer max;
 
 						private Integer min;
 
-						private Integer step;
+						public Integer getStep() {
+							return this.step;
+						}
+
+						public void setStep(Integer step) {
+							this.step = step;
+						}
 
 						public Integer getMax() {
 							return this.max;
@@ -175,14 +183,6 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 						public void setMin(Integer min) {
 							this.min = min;
-						}
-
-						public Integer getStep() {
-							return this.step;
-						}
-
-						public void setStep(Integer step) {
-							this.step = step;
 						}
 					}
 				}

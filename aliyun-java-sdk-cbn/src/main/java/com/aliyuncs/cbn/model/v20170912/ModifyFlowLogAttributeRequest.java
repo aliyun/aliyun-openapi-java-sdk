@@ -39,11 +39,13 @@ public class ModifyFlowLogAttributeRequest extends RpcAcsRequest<ModifyFlowLogAt
 
 	private Long ownerId;
 
+	private Long interval;
+
 	private String flowLogId;
 
 	private String flowLogName;
 	public ModifyFlowLogAttributeRequest() {
-		super("Cbn", "2017-09-12", "ModifyFlowLogAttribute");
+		super("Cbn", "2017-09-12", "ModifyFlowLogAttribute", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -125,6 +127,17 @@ public class ModifyFlowLogAttributeRequest extends RpcAcsRequest<ModifyFlowLogAt
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Long interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
 		}
 	}
 

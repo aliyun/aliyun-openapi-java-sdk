@@ -1,0 +1,36 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.eflo.transform.v20220530;
+
+import com.aliyuncs.eflo.model.v20220530.CreateErAttachmentResponse;
+import com.aliyuncs.eflo.model.v20220530.CreateErAttachmentResponse.Content;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+
+public class CreateErAttachmentResponseUnmarshaller {
+
+	public static CreateErAttachmentResponse unmarshall(CreateErAttachmentResponse createErAttachmentResponse, UnmarshallerContext _ctx) {
+		
+		createErAttachmentResponse.setRequestId(_ctx.stringValue("CreateErAttachmentResponse.RequestId"));
+		createErAttachmentResponse.setCode(_ctx.integerValue("CreateErAttachmentResponse.Code"));
+		createErAttachmentResponse.setMessage(_ctx.stringValue("CreateErAttachmentResponse.Message"));
+
+		Content content = new Content();
+		content.setErAttachmentId(_ctx.stringValue("CreateErAttachmentResponse.Content.ErAttachmentId"));
+		createErAttachmentResponse.setContent(content);
+	 
+	 	return createErAttachmentResponse;
+	}
+}

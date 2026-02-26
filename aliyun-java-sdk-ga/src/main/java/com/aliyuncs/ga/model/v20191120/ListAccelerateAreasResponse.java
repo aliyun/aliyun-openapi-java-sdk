@@ -47,19 +47,11 @@ public class ListAccelerateAreasResponse extends AcsResponse {
 
 	public static class AreasItem {
 
-		private String areaId;
-
 		private String localName;
 
+		private String areaId;
+
 		private List<RegionListItem> regionList;
-
-		public String getAreaId() {
-			return this.areaId;
-		}
-
-		public void setAreaId(String areaId) {
-			this.areaId = areaId;
-		}
 
 		public String getLocalName() {
 			return this.localName;
@@ -67,6 +59,14 @@ public class ListAccelerateAreasResponse extends AcsResponse {
 
 		public void setLocalName(String localName) {
 			this.localName = localName;
+		}
+
+		public String getAreaId() {
+			return this.areaId;
+		}
+
+		public void setAreaId(String areaId) {
+			this.areaId = areaId;
 		}
 
 		public List<RegionListItem> getRegionList() {
@@ -79,17 +79,9 @@ public class ListAccelerateAreasResponse extends AcsResponse {
 
 		public static class RegionListItem {
 
-			private String regionId;
-
 			private String localName;
 
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
+			private String regionId;
 
 			public String getLocalName() {
 				return this.localName;
@@ -97,6 +89,14 @@ public class ListAccelerateAreasResponse extends AcsResponse {
 
 			public void setLocalName(String localName) {
 				this.localName = localName;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 	}

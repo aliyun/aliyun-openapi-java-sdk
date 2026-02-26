@@ -42,6 +42,10 @@ public class DescribeEncryptionKeyResponse extends AcsResponse {
 
 	private String creator;
 
+	private String encryptionName;
+
+	private String roleArn;
+
 	public String getDeleteDate() {
 		return this.deleteDate;
 	}
@@ -112,6 +116,22 @@ public class DescribeEncryptionKeyResponse extends AcsResponse {
 
 	public void setCreator(String creator) {
 		this.creator = creator;
+	}
+
+	public String getEncryptionName() {
+		return this.encryptionName;
+	}
+
+	public void setEncryptionName(String encryptionName) {
+		this.encryptionName = encryptionName;
+	}
+
+	public String getRoleArn() {
+		return this.roleArn;
+	}
+
+	public void setRoleArn(String roleArn) {
+		this.roleArn = roleArn;
 	}
 
 	@Override

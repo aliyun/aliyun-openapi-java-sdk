@@ -141,8 +141,8 @@ public class ModifyPGHbaConfigRequest extends RpcAcsRequest<ModifyPGHbaConfigRes
 				putQueryParameter("HbaItem." + (depth1 + 1) + ".Type" , hbaItems.get(depth1).getType());
 				putQueryParameter("HbaItem." + (depth1 + 1) + ".User" , hbaItems.get(depth1).getUser());
 				putQueryParameter("HbaItem." + (depth1 + 1) + ".Mask" , hbaItems.get(depth1).getMask());
-				putQueryParameter("HbaItem." + (depth1 + 1) + ".PriorityId" , hbaItems.get(depth1).getPriorityId());
 				putQueryParameter("HbaItem." + (depth1 + 1) + ".Option" , hbaItems.get(depth1).getOption());
+				putQueryParameter("HbaItem." + (depth1 + 1) + ".PriorityId" , hbaItems.get(depth1).getPriorityId());
 			}
 		}	
 	}
@@ -161,9 +161,9 @@ public class ModifyPGHbaConfigRequest extends RpcAcsRequest<ModifyPGHbaConfigRes
 
 		private String mask;
 
-		private Integer priorityId;
-
 		private String option;
+
+		private Integer priorityId;
 
 		public String getDatabase() {
 			return this.database;
@@ -213,20 +213,20 @@ public class ModifyPGHbaConfigRequest extends RpcAcsRequest<ModifyPGHbaConfigRes
 			this.mask = mask;
 		}
 
-		public Integer getPriorityId() {
-			return this.priorityId;
-		}
-
-		public void setPriorityId(Integer priorityId) {
-			this.priorityId = priorityId;
-		}
-
 		public String getOption() {
 			return this.option;
 		}
 
 		public void setOption(String option) {
 			this.option = option;
+		}
+
+		public Integer getPriorityId() {
+			return this.priorityId;
+		}
+
+		public void setPriorityId(Integer priorityId) {
+			this.priorityId = priorityId;
 		}
 	}
 

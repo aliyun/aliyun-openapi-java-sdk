@@ -27,7 +27,7 @@ public class ListInterventionDictionaryRelatedEntitiesRequest extends RoaAcsRequ
 
 	private String name;
 	public ListInterventionDictionaryRelatedEntitiesRequest() {
-		super("OpenSearch", "2017-12-25", "ListInterventionDictionaryRelatedEntities", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListInterventionDictionaryRelatedEntities");
 		setUriPattern("/v4/openapi/intervention-dictionaries/[name]/related");
 		setMethod(MethodType.GET);
 		try {

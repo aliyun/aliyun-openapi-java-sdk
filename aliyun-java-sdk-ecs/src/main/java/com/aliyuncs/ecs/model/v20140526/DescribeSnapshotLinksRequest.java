@@ -29,6 +29,8 @@ public class DescribeSnapshotLinksRequest extends RpcAcsRequest<DescribeSnapshot
 
 	private Integer pageNumber;
 
+	private String nextToken;
+
 	private Integer pageSize;
 
 	private String diskIds;
@@ -42,6 +44,8 @@ public class DescribeSnapshotLinksRequest extends RpcAcsRequest<DescribeSnapshot
 	private Long ownerId;
 
 	private String instanceId;
+
+	private Integer maxResults;
 	public DescribeSnapshotLinksRequest() {
 		super("Ecs", "2014-05-26", "DescribeSnapshotLinks", "ecs");
 		setMethod(MethodType.POST);
@@ -70,6 +74,17 @@ public class DescribeSnapshotLinksRequest extends RpcAcsRequest<DescribeSnapshot
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -147,6 +162,17 @@ public class DescribeSnapshotLinksRequest extends RpcAcsRequest<DescribeSnapshot
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

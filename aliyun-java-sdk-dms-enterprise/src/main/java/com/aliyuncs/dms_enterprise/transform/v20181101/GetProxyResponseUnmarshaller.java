@@ -37,6 +37,7 @@ public class GetProxyResponseUnmarshaller {
 		getProxyResponse.setHttpsPort(_ctx.integerValue("GetProxyResponse.HttpsPort"));
 		getProxyResponse.setProtocolType(_ctx.stringValue("GetProxyResponse.ProtocolType"));
 		getProxyResponse.setProtocolPort(_ctx.integerValue("GetProxyResponse.ProtocolPort"));
+		getProxyResponse.setRegionId(_ctx.stringValue("GetProxyResponse.RegionId"));
 	 
 	 	return getProxyResponse;
 	}

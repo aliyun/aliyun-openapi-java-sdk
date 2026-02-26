@@ -28,6 +28,8 @@ public class SaveBaseStrategyPeriodRequest extends RpcAcsRequest<SaveBaseStrateg
 
 	private Integer strategyLevel;
 
+	private Boolean onlyWorkdays;
+
 	private String entryId;
 
 	private Boolean onlyWeekdays;
@@ -52,6 +54,17 @@ public class SaveBaseStrategyPeriodRequest extends RpcAcsRequest<SaveBaseStrateg
 		this.strategyLevel = strategyLevel;
 		if(strategyLevel != null){
 			putQueryParameter("StrategyLevel", strategyLevel.toString());
+		}
+	}
+
+	public Boolean getOnlyWorkdays() {
+		return this.onlyWorkdays;
+	}
+
+	public void setOnlyWorkdays(Boolean onlyWorkdays) {
+		this.onlyWorkdays = onlyWorkdays;
+		if(onlyWorkdays != null){
+			putQueryParameter("OnlyWorkdays", onlyWorkdays.toString());
 		}
 	}
 

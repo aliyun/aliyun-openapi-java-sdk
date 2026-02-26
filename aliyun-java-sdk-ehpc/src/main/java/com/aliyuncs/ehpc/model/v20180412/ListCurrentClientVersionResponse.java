@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCurrentClientVersionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String clientVersion;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getClientVersion() {
 		return this.clientVersion;
@@ -42,6 +34,14 @@ public class ListCurrentClientVersionResponse extends AcsResponse {
 
 	public void setClientVersion(String clientVersion) {
 		this.clientVersion = clientVersion;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

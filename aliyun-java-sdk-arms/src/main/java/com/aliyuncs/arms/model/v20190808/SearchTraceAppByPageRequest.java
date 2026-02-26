@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -25,11 +26,15 @@ import com.aliyuncs.arms.Endpoint;
 public class SearchTraceAppByPageRequest extends RpcAcsRequest<SearchTraceAppByPageResponse> {
 	   
 
+	private Integer pageNumber;
+
+	private List<Tags> tagss;
+
+	private String resourceGroupId;
+
 	private String traceAppName;
 
 	private Integer pageSize;
-
-	private Integer pageNumber;
 	public SearchTraceAppByPageRequest() {
 		super("ARMS", "2019-08-08", "SearchTraceAppByPage", "arms");
 		setMethod(MethodType.POST);
@@ -37,6 +42,42 @@ public class SearchTraceAppByPageRequest extends RpcAcsRequest<SearchTraceAppByP
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getTraceAppName() {
@@ -61,14 +102,26 @@ public class SearchTraceAppByPageRequest extends RpcAcsRequest<SearchTraceAppByP
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
+	public static class Tags {
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

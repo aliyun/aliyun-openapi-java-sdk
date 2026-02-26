@@ -32,8 +32,8 @@ public class ValidateShardTaskResponseUnmarshaller {
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ValidateShardTaskResponse.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setItem(_ctx.stringValue("ValidateShardTaskResponse.List["+ i +"].Item"));
 			listItem.setResult(_ctx.integerValue("ValidateShardTaskResponse.List["+ i +"].Result"));
+			listItem.setItem(_ctx.stringValue("ValidateShardTaskResponse.List["+ i +"].Item"));
 
 			list.add(listItem);
 		}

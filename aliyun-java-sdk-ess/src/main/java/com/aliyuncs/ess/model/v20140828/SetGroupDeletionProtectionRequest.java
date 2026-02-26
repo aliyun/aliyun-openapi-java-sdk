@@ -25,9 +25,9 @@ import com.aliyuncs.ess.Endpoint;
 public class SetGroupDeletionProtectionRequest extends RpcAcsRequest<SetGroupDeletionProtectionResponse> {
 	   
 
-	private String resourceOwnerAccount;
-
 	private String scalingGroupId;
+
+	private String resourceOwnerAccount;
 
 	private Boolean groupDeletionProtection;
 
@@ -41,17 +41,6 @@ public class SetGroupDeletionProtectionRequest extends RpcAcsRequest<SetGroupDel
 		} catch (Exception e) {}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getScalingGroupId() {
 		return this.scalingGroupId;
 	}
@@ -60,6 +49,17 @@ public class SetGroupDeletionProtectionRequest extends RpcAcsRequest<SetGroupDel
 		this.scalingGroupId = scalingGroupId;
 		if(scalingGroupId != null){
 			putQueryParameter("ScalingGroupId", scalingGroupId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

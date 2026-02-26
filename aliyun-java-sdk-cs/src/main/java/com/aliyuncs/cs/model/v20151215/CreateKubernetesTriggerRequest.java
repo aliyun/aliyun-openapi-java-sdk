@@ -24,12 +24,6 @@ import com.aliyuncs.cs.Endpoint;
  */
 public class CreateKubernetesTriggerRequest extends RoaAcsRequest<CreateKubernetesTriggerResponse> {
 	   
-
-	private String clusterId;
-
-	private String type;
-
-	private String projectId;
 	public CreateKubernetesTriggerRequest() {
 		super("CS", "2015-12-15", "CreateKubernetesTrigger");
 		setUriPattern("/triggers");
@@ -38,39 +32,6 @@ public class CreateKubernetesTriggerRequest extends RoaAcsRequest<CreateKubernet
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type);
-		}
-	}
-
-	public String getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(String projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putBodyParameter("ProjectId", projectId);
-		}
 	}
 
 	@Override

@@ -47,30 +47,38 @@ public class CreateServiceLinkedRoleResponse extends AcsResponse {
 
 	public static class RoleItem {
 
-		private String roleName;
+		private String assumeRolePolicyDocument;
+
+		private String rolePrincipalName;
 
 		private String description;
 
-		private String assumeRolePolicyDocument;
+		private Boolean latestDeletionTask;
 
-		private String arn;
+		private String roleName;
 
 		private String createDate;
 
 		private String roleId;
 
-		private String rolePrincipalName;
+		private String arn;
 
 		private Boolean isServiceLinkedRole;
 
-		private Boolean latestDeletionTask;
-
-		public String getRoleName() {
-			return this.roleName;
+		public String getAssumeRolePolicyDocument() {
+			return this.assumeRolePolicyDocument;
 		}
 
-		public void setRoleName(String roleName) {
-			this.roleName = roleName;
+		public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
+			this.assumeRolePolicyDocument = assumeRolePolicyDocument;
+		}
+
+		public String getRolePrincipalName() {
+			return this.rolePrincipalName;
+		}
+
+		public void setRolePrincipalName(String rolePrincipalName) {
+			this.rolePrincipalName = rolePrincipalName;
 		}
 
 		public String getDescription() {
@@ -81,20 +89,20 @@ public class CreateServiceLinkedRoleResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getAssumeRolePolicyDocument() {
-			return this.assumeRolePolicyDocument;
+		public Boolean getLatestDeletionTask() {
+			return this.latestDeletionTask;
 		}
 
-		public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
-			this.assumeRolePolicyDocument = assumeRolePolicyDocument;
+		public void setLatestDeletionTask(Boolean latestDeletionTask) {
+			this.latestDeletionTask = latestDeletionTask;
 		}
 
-		public String getArn() {
-			return this.arn;
+		public String getRoleName() {
+			return this.roleName;
 		}
 
-		public void setArn(String arn) {
-			this.arn = arn;
+		public void setRoleName(String roleName) {
+			this.roleName = roleName;
 		}
 
 		public String getCreateDate() {
@@ -113,12 +121,12 @@ public class CreateServiceLinkedRoleResponse extends AcsResponse {
 			this.roleId = roleId;
 		}
 
-		public String getRolePrincipalName() {
-			return this.rolePrincipalName;
+		public String getArn() {
+			return this.arn;
 		}
 
-		public void setRolePrincipalName(String rolePrincipalName) {
-			this.rolePrincipalName = rolePrincipalName;
+		public void setArn(String arn) {
+			this.arn = arn;
 		}
 
 		public Boolean getIsServiceLinkedRole() {
@@ -127,14 +135,6 @@ public class CreateServiceLinkedRoleResponse extends AcsResponse {
 
 		public void setIsServiceLinkedRole(Boolean isServiceLinkedRole) {
 			this.isServiceLinkedRole = isServiceLinkedRole;
-		}
-
-		public Boolean getLatestDeletionTask() {
-			return this.latestDeletionTask;
-		}
-
-		public void setLatestDeletionTask(Boolean latestDeletionTask) {
-			this.latestDeletionTask = latestDeletionTask;
 		}
 	}
 

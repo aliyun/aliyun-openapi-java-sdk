@@ -44,6 +44,9 @@ public class ListWirelessCloudConnectorsResponseUnmarshaller {
 			wirelessCloudConnector.setDataPackageType(_ctx.stringValue("ListWirelessCloudConnectorsResponse.WirelessCloudConnectors["+ i +"].DataPackageType"));
 			wirelessCloudConnector.setCardCount(_ctx.stringValue("ListWirelessCloudConnectorsResponse.WirelessCloudConnectors["+ i +"].CardCount"));
 			wirelessCloudConnector.setCreateTime(_ctx.stringValue("ListWirelessCloudConnectorsResponse.WirelessCloudConnectors["+ i +"].CreateTime"));
+			wirelessCloudConnector.setBusinessType(_ctx.stringValue("ListWirelessCloudConnectorsResponse.WirelessCloudConnectors["+ i +"].BusinessType"));
+			wirelessCloudConnector.setServiceType(_ctx.stringValue("ListWirelessCloudConnectorsResponse.WirelessCloudConnectors["+ i +"].ServiceType"));
+			wirelessCloudConnector.setWirelessCloudConnectorGroupId(_ctx.stringValue("ListWirelessCloudConnectorsResponse.WirelessCloudConnectors["+ i +"].WirelessCloudConnectorGroupId"));
 
 			wirelessCloudConnectors.add(wirelessCloudConnector);
 		}

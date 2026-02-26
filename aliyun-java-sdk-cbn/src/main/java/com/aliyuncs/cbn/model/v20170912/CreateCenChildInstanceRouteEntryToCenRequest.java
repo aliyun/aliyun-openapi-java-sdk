@@ -47,7 +47,7 @@ public class CreateCenChildInstanceRouteEntryToCenRequest extends RpcAcsRequest<
 
 	private Long childInstanceAliUid;
 	public CreateCenChildInstanceRouteEntryToCenRequest() {
-		super("Cbn", "2017-09-12", "CreateCenChildInstanceRouteEntryToCen");
+		super("Cbn", "2017-09-12", "CreateCenChildInstanceRouteEntryToCen", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

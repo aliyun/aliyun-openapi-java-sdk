@@ -83,6 +83,8 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 
 		private String keyPairName;
 
+		private String keyPairId;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -105,6 +107,14 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 
 		public void setKeyPairName(String keyPairName) {
 			this.keyPairName = keyPairName;
+		}
+
+		public String getKeyPairId() {
+			return this.keyPairId;
+		}
+
+		public void setKeyPairId(String keyPairId) {
+			this.keyPairId = keyPairId;
 		}
 	}
 

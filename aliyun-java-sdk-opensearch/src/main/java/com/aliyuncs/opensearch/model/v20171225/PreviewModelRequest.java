@@ -31,7 +31,7 @@ public class PreviewModelRequest extends RoaAcsRequest<PreviewModelResponse> {
 
 	private String appGroupIdentity;
 	public PreviewModelRequest() {
-		super("OpenSearch", "2017-12-25", "PreviewModel", "opensearch");
+		super("OpenSearch", "2017-12-25", "PreviewModel");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/preview");
 		setMethod(MethodType.GET);
 		try {

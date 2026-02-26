@@ -27,11 +27,13 @@ public class GenerateAggregateCompliancePackReportRequest extends RpcAcsRequest<
 
 	private String clientToken;
 
+	private Boolean multiFiles;
+
 	private String aggregatorId;
 
 	private String compliancePackId;
 	public GenerateAggregateCompliancePackReportRequest() {
-		super("Config", "2020-09-07", "GenerateAggregateCompliancePackReport");
+		super("Config", "2020-09-07", "GenerateAggregateCompliancePackReport", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,6 +49,17 @@ public class GenerateAggregateCompliancePackReportRequest extends RpcAcsRequest<
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getMultiFiles() {
+		return this.multiFiles;
+	}
+
+	public void setMultiFiles(Boolean multiFiles) {
+		this.multiFiles = multiFiles;
+		if(multiFiles != null){
+			putBodyParameter("MultiFiles", multiFiles.toString());
 		}
 	}
 

@@ -26,15 +26,15 @@ public class DescribeSecondRankResponseUnmarshaller {
 		describeSecondRankResponse.setRequestId(_ctx.stringValue("DescribeSecondRankResponse.requestId"));
 
 		Result result = new Result();
-		result.setId(_ctx.stringValue("DescribeSecondRankResponse.result.id"));
-		result.setName(_ctx.stringValue("DescribeSecondRankResponse.result.name"));
-		result.setMeta(_ctx.stringValue("DescribeSecondRankResponse.result.meta"));
-		result.setActive(_ctx.booleanValue("DescribeSecondRankResponse.result.active"));
-		result.setDescription(_ctx.stringValue("DescribeSecondRankResponse.result.description"));
 		result.setCreated(_ctx.integerValue("DescribeSecondRankResponse.result.created"));
-		result.setUpdated(_ctx.integerValue("DescribeSecondRankResponse.result.updated"));
+		result.setActive(_ctx.booleanValue("DescribeSecondRankResponse.result.active"));
 		result.setIsDefault(_ctx.stringValue("DescribeSecondRankResponse.result.isDefault"));
 		result.setIsSys(_ctx.stringValue("DescribeSecondRankResponse.result.isSys"));
+		result.setDescription(_ctx.stringValue("DescribeSecondRankResponse.result.description"));
+		result.setUpdated(_ctx.integerValue("DescribeSecondRankResponse.result.updated"));
+		result.setName(_ctx.stringValue("DescribeSecondRankResponse.result.name"));
+		result.setMeta(_ctx.stringValue("DescribeSecondRankResponse.result.meta"));
+		result.setId(_ctx.stringValue("DescribeSecondRankResponse.result.id"));
 		describeSecondRankResponse.setResult(result);
 	 
 	 	return describeSecondRankResponse;

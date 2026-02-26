@@ -35,7 +35,7 @@ public class ListOfficeSiteUsersRequest extends RpcAcsRequest<ListOfficeSiteUser
 
 	private Integer maxResults;
 	public ListOfficeSiteUsersRequest() {
-		super("ecd", "2020-09-30", "ListOfficeSiteUsers");
+		super("ecd", "2020-09-30", "ListOfficeSiteUsers", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

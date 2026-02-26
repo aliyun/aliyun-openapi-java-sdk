@@ -33,7 +33,7 @@ public class ReplaceEdgeInstanceGatewayRequest extends RpcAcsRequest<ReplaceEdge
 
 	private String currentGatewayId;
 	public ReplaceEdgeInstanceGatewayRequest() {
-		super("Iot", "2018-01-20", "ReplaceEdgeInstanceGateway");
+		super("Iot", "2018-01-20", "ReplaceEdgeInstanceGateway", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

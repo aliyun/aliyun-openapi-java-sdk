@@ -25,6 +25,8 @@ public class CreateSkillGroupConfigRequest extends RpcAcsRequest<CreateSkillGrou
 	   
 
 	private String jsonStr;
+
+	private Long baseMeAgentId;
 	public CreateSkillGroupConfigRequest() {
 		super("Qualitycheck", "2019-01-15", "CreateSkillGroupConfig");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class CreateSkillGroupConfigRequest extends RpcAcsRequest<CreateSkillGrou
 		this.jsonStr = jsonStr;
 		if(jsonStr != null){
 			putQueryParameter("JsonStr", jsonStr);
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

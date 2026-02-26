@@ -28,19 +28,37 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private Long resourceOwnerId;
 
-	private Boolean recyclable;
-
-	private Integer networkInterfaceQueueNumber;
-
-	private String description;
-
 	private Boolean deletionProtection;
-
-	private String userData;
 
 	private String password;
 
 	private String hostName;
+
+	private String cpuOptionsTopologyType;
+
+	private Integer cpuOptionsCore;
+
+	private Long ownerId;
+
+	private String instanceId;
+
+	private String instanceName;
+
+	private Boolean recyclable;
+
+	private Integer networkInterfaceQueueNumber;
+
+	private Boolean enableNetworkEncryption;
+
+	private String description;
+
+	private Integer cpuOptionsThreadsPerCore;
+
+	private String userData;
+
+	private PrivateDnsNameOptions privateDnsNameOptions;
+
+	private Boolean enableJumboFrame;
 
 	private String resourceOwnerAccount;
 
@@ -48,13 +66,7 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private String creditSpecification;
 
-	private Long ownerId;
-
 	private List<String> securityGroupIdss;
-
-	private String instanceId;
-
-	private String instanceName;
 
 	private RemoteConnectionOptions remoteConnectionOptions;
 	public ModifyInstanceAttributeRequest() {
@@ -74,6 +86,94 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(Boolean deletionProtection) {
+		this.deletionProtection = deletionProtection;
+		if(deletionProtection != null){
+			putQueryParameter("DeletionProtection", deletionProtection.toString());
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
+		}
+	}
+
+	public String getCpuOptionsTopologyType() {
+		return this.cpuOptionsTopologyType;
+	}
+
+	public void setCpuOptionsTopologyType(String cpuOptionsTopologyType) {
+		this.cpuOptionsTopologyType = cpuOptionsTopologyType;
+		if(cpuOptionsTopologyType != null){
+			putQueryParameter("CpuOptions.TopologyType", cpuOptionsTopologyType);
+		}
+	}
+
+	public Integer getCpuOptionsCore() {
+		return this.cpuOptionsCore;
+	}
+
+	public void setCpuOptionsCore(Integer cpuOptionsCore) {
+		this.cpuOptionsCore = cpuOptionsCore;
+		if(cpuOptionsCore != null){
+			putQueryParameter("CpuOptions.Core", cpuOptionsCore.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
 		}
 	}
 
@@ -99,6 +199,17 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		}
 	}
 
+	public Boolean getEnableNetworkEncryption() {
+		return this.enableNetworkEncryption;
+	}
+
+	public void setEnableNetworkEncryption(Boolean enableNetworkEncryption) {
+		this.enableNetworkEncryption = enableNetworkEncryption;
+		if(enableNetworkEncryption != null){
+			putQueryParameter("EnableNetworkEncryption", enableNetworkEncryption.toString());
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -110,14 +221,14 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		}
 	}
 
-	public Boolean getDeletionProtection() {
-		return this.deletionProtection;
+	public Integer getCpuOptionsThreadsPerCore() {
+		return this.cpuOptionsThreadsPerCore;
 	}
 
-	public void setDeletionProtection(Boolean deletionProtection) {
-		this.deletionProtection = deletionProtection;
-		if(deletionProtection != null){
-			putQueryParameter("DeletionProtection", deletionProtection.toString());
+	public void setCpuOptionsThreadsPerCore(Integer cpuOptionsThreadsPerCore) {
+		this.cpuOptionsThreadsPerCore = cpuOptionsThreadsPerCore;
+		if(cpuOptionsThreadsPerCore != null){
+			putQueryParameter("CpuOptions.ThreadsPerCore", cpuOptionsThreadsPerCore.toString());
 		}
 	}
 
@@ -132,25 +243,30 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		}
 	}
 
-	public String getPassword() {
-		return this.password;
+	public PrivateDnsNameOptions getPrivateDnsNameOptions() {
+		return this.privateDnsNameOptions;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putQueryParameter("Password", password);
-		}
+	public void setPrivateDnsNameOptions(PrivateDnsNameOptions privateDnsNameOptions) {
+		this.privateDnsNameOptions = privateDnsNameOptions;	
+		if (privateDnsNameOptions != null) {
+			
+				putQueryParameter("PrivateDnsNameOptions.HostnameType" , privateDnsNameOptions.getHostnameType());
+				putQueryParameter("PrivateDnsNameOptions.EnableInstanceIdDnsARecord" , privateDnsNameOptions.getEnableInstanceIdDnsARecord());
+				putQueryParameter("PrivateDnsNameOptions.EnableInstanceIdDnsAAAARecord" , privateDnsNameOptions.getEnableInstanceIdDnsAAAARecord());
+				putQueryParameter("PrivateDnsNameOptions.EnableIpDnsARecord" , privateDnsNameOptions.getEnableIpDnsARecord());
+				putQueryParameter("PrivateDnsNameOptions.EnableIpDnsPtrRecord" , privateDnsNameOptions.getEnableIpDnsPtrRecord());
+		}	
 	}
 
-	public String getHostName() {
-		return this.hostName;
+	public Boolean getEnableJumboFrame() {
+		return this.enableJumboFrame;
 	}
 
-	public void setHostName(String hostName) {
-		this.hostName = hostName;
-		if(hostName != null){
-			putQueryParameter("HostName", hostName);
+	public void setEnableJumboFrame(Boolean enableJumboFrame) {
+		this.enableJumboFrame = enableJumboFrame;
+		if(enableJumboFrame != null){
+			putQueryParameter("EnableJumboFrame", enableJumboFrame.toString());
 		}
 	}
 
@@ -187,17 +303,6 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public List<String> getSecurityGroupIdss() {
 		return this.securityGroupIdss;
 	}
@@ -211,28 +316,6 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		}	
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
 	public RemoteConnectionOptions getRemoteConnectionOptions() {
 		return this.remoteConnectionOptions;
 	}
@@ -244,6 +327,59 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 				putQueryParameter("RemoteConnectionOptions.Password" , remoteConnectionOptions.getPassword());
 				putQueryParameter("RemoteConnectionOptions.Type" , remoteConnectionOptions.getType());
 		}	
+	}
+
+	public static class PrivateDnsNameOptions {
+
+		private String hostnameType;
+
+		private Boolean enableInstanceIdDnsARecord;
+
+		private Boolean enableInstanceIdDnsAAAARecord;
+
+		private Boolean enableIpDnsARecord;
+
+		private Boolean enableIpDnsPtrRecord;
+
+		public String getHostnameType() {
+			return this.hostnameType;
+		}
+
+		public void setHostnameType(String hostnameType) {
+			this.hostnameType = hostnameType;
+		}
+
+		public Boolean getEnableInstanceIdDnsARecord() {
+			return this.enableInstanceIdDnsARecord;
+		}
+
+		public void setEnableInstanceIdDnsARecord(Boolean enableInstanceIdDnsARecord) {
+			this.enableInstanceIdDnsARecord = enableInstanceIdDnsARecord;
+		}
+
+		public Boolean getEnableInstanceIdDnsAAAARecord() {
+			return this.enableInstanceIdDnsAAAARecord;
+		}
+
+		public void setEnableInstanceIdDnsAAAARecord(Boolean enableInstanceIdDnsAAAARecord) {
+			this.enableInstanceIdDnsAAAARecord = enableInstanceIdDnsAAAARecord;
+		}
+
+		public Boolean getEnableIpDnsARecord() {
+			return this.enableIpDnsARecord;
+		}
+
+		public void setEnableIpDnsARecord(Boolean enableIpDnsARecord) {
+			this.enableIpDnsARecord = enableIpDnsARecord;
+		}
+
+		public Boolean getEnableIpDnsPtrRecord() {
+			return this.enableIpDnsPtrRecord;
+		}
+
+		public void setEnableIpDnsPtrRecord(Boolean enableIpDnsPtrRecord) {
+			this.enableIpDnsPtrRecord = enableIpDnsPtrRecord;
+		}
 	}
 
 	public static class RemoteConnectionOptions {

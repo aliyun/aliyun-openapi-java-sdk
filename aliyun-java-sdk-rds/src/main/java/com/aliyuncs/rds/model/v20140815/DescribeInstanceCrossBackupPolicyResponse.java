@@ -24,89 +24,49 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceCrossBackupPolicyResponse extends AcsResponse {
 
-	private String relServiceId;
-
-	private String logBackupEnabledTime;
-
-	private String dBInstanceStatusDesc;
-
-	private String storageOwner;
-
-	private String relService;
-
 	private String backupEnabled;
 
-	private String storageType;
+	private String backupEnabledTime;
+
+	private String crossBackupRegion;
+
+	private String crossBackupType;
+
+	private String dBInstanceDescription;
+
+	private String dBInstanceId;
 
 	private String dBInstanceStatus;
 
-	private String lockMode;
+	private String dBInstanceStatusDesc;
+
+	private String endpoint;
+
+	private String engine;
 
 	private String engineVersion;
 
-	private String regionId;
+	private String lockMode;
 
 	private String logBackupEnabled;
+
+	private String logBackupEnabledTime;
+
+	private String regionId;
+
+	private String relService;
+
+	private String relServiceId;
 
 	private String requestId;
 
 	private Integer retentType;
 
-	private String endpoint;
-
 	private Integer retention;
 
-	private String crossBackupType;
+	private String storageOwner;
 
-	private String crossBackupRegion;
-
-	private String dBInstanceId;
-
-	private String engine;
-
-	private String backupEnabledTime;
-
-	private String dBInstanceDescription;
-
-	public String getRelServiceId() {
-		return this.relServiceId;
-	}
-
-	public void setRelServiceId(String relServiceId) {
-		this.relServiceId = relServiceId;
-	}
-
-	public String getLogBackupEnabledTime() {
-		return this.logBackupEnabledTime;
-	}
-
-	public void setLogBackupEnabledTime(String logBackupEnabledTime) {
-		this.logBackupEnabledTime = logBackupEnabledTime;
-	}
-
-	public String getDBInstanceStatusDesc() {
-		return this.dBInstanceStatusDesc;
-	}
-
-	public void setDBInstanceStatusDesc(String dBInstanceStatusDesc) {
-		this.dBInstanceStatusDesc = dBInstanceStatusDesc;
-	}
-
-	public String getStorageOwner() {
-		return this.storageOwner;
-	}
-
-	public void setStorageOwner(String storageOwner) {
-		this.storageOwner = storageOwner;
-	}
-
-	public String getRelService() {
-		return this.relService;
-	}
-
-	public void setRelService(String relService) {
-		this.relService = relService;
-	}
+	private String storageType;
 
 	public String getBackupEnabled() {
 		return this.backupEnabled;
@@ -116,12 +76,44 @@ public class DescribeInstanceCrossBackupPolicyResponse extends AcsResponse {
 		this.backupEnabled = backupEnabled;
 	}
 
-	public String getStorageType() {
-		return this.storageType;
+	public String getBackupEnabledTime() {
+		return this.backupEnabledTime;
 	}
 
-	public void setStorageType(String storageType) {
-		this.storageType = storageType;
+	public void setBackupEnabledTime(String backupEnabledTime) {
+		this.backupEnabledTime = backupEnabledTime;
+	}
+
+	public String getCrossBackupRegion() {
+		return this.crossBackupRegion;
+	}
+
+	public void setCrossBackupRegion(String crossBackupRegion) {
+		this.crossBackupRegion = crossBackupRegion;
+	}
+
+	public String getCrossBackupType() {
+		return this.crossBackupType;
+	}
+
+	public void setCrossBackupType(String crossBackupType) {
+		this.crossBackupType = crossBackupType;
+	}
+
+	public String getDBInstanceDescription() {
+		return this.dBInstanceDescription;
+	}
+
+	public void setDBInstanceDescription(String dBInstanceDescription) {
+		this.dBInstanceDescription = dBInstanceDescription;
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
 	}
 
 	public String getDBInstanceStatus() {
@@ -132,12 +124,28 @@ public class DescribeInstanceCrossBackupPolicyResponse extends AcsResponse {
 		this.dBInstanceStatus = dBInstanceStatus;
 	}
 
-	public String getLockMode() {
-		return this.lockMode;
+	public String getDBInstanceStatusDesc() {
+		return this.dBInstanceStatusDesc;
 	}
 
-	public void setLockMode(String lockMode) {
-		this.lockMode = lockMode;
+	public void setDBInstanceStatusDesc(String dBInstanceStatusDesc) {
+		this.dBInstanceStatusDesc = dBInstanceStatusDesc;
+	}
+
+	public String getEndpoint() {
+		return this.endpoint;
+	}
+
+	public void setEndpoint(String endpoint) {
+		this.endpoint = endpoint;
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
 	}
 
 	public String getEngineVersion() {
@@ -148,12 +156,12 @@ public class DescribeInstanceCrossBackupPolicyResponse extends AcsResponse {
 		this.engineVersion = engineVersion;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
+	public String getLockMode() {
+		return this.lockMode;
 	}
 
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
+	public void setLockMode(String lockMode) {
+		this.lockMode = lockMode;
 	}
 
 	public String getLogBackupEnabled() {
@@ -162,6 +170,38 @@ public class DescribeInstanceCrossBackupPolicyResponse extends AcsResponse {
 
 	public void setLogBackupEnabled(String logBackupEnabled) {
 		this.logBackupEnabled = logBackupEnabled;
+	}
+
+	public String getLogBackupEnabledTime() {
+		return this.logBackupEnabledTime;
+	}
+
+	public void setLogBackupEnabledTime(String logBackupEnabledTime) {
+		this.logBackupEnabledTime = logBackupEnabledTime;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getRelService() {
+		return this.relService;
+	}
+
+	public void setRelService(String relService) {
+		this.relService = relService;
+	}
+
+	public String getRelServiceId() {
+		return this.relServiceId;
+	}
+
+	public void setRelServiceId(String relServiceId) {
+		this.relServiceId = relServiceId;
 	}
 
 	public String getRequestId() {
@@ -180,14 +220,6 @@ public class DescribeInstanceCrossBackupPolicyResponse extends AcsResponse {
 		this.retentType = retentType;
 	}
 
-	public String getEndpoint() {
-		return this.endpoint;
-	}
-
-	public void setEndpoint(String endpoint) {
-		this.endpoint = endpoint;
-	}
-
 	public Integer getRetention() {
 		return this.retention;
 	}
@@ -196,52 +228,20 @@ public class DescribeInstanceCrossBackupPolicyResponse extends AcsResponse {
 		this.retention = retention;
 	}
 
-	public String getCrossBackupType() {
-		return this.crossBackupType;
+	public String getStorageOwner() {
+		return this.storageOwner;
 	}
 
-	public void setCrossBackupType(String crossBackupType) {
-		this.crossBackupType = crossBackupType;
+	public void setStorageOwner(String storageOwner) {
+		this.storageOwner = storageOwner;
 	}
 
-	public String getCrossBackupRegion() {
-		return this.crossBackupRegion;
+	public String getStorageType() {
+		return this.storageType;
 	}
 
-	public void setCrossBackupRegion(String crossBackupRegion) {
-		this.crossBackupRegion = crossBackupRegion;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
-
-	public String getBackupEnabledTime() {
-		return this.backupEnabledTime;
-	}
-
-	public void setBackupEnabledTime(String backupEnabledTime) {
-		this.backupEnabledTime = backupEnabledTime;
-	}
-
-	public String getDBInstanceDescription() {
-		return this.dBInstanceDescription;
-	}
-
-	public void setDBInstanceDescription(String dBInstanceDescription) {
-		this.dBInstanceDescription = dBInstanceDescription;
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
 	}
 
 	@Override

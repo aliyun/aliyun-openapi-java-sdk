@@ -99,6 +99,12 @@ public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 
 		private String transitRouterAttachmentName;
 
+		private String cenId;
+
+		private String orderType;
+
+		private List<Tag> tags;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -185,6 +191,53 @@ public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 
 		public void setTransitRouterAttachmentName(String transitRouterAttachmentName) {
 			this.transitRouterAttachmentName = transitRouterAttachmentName;
+		}
+
+		public String getCenId() {
+			return this.cenId;
+		}
+
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
+		}
+
+		public String getOrderType() {
+			return this.orderType;
+		}
+
+		public void setOrderType(String orderType) {
+			this.orderType = orderType;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

@@ -28,7 +28,7 @@ public class ListPatentUserSearchCompanyRequest extends RpcAcsRequest<ListPatent
 
 	private Integer limit;
 	public ListPatentUserSearchCompanyRequest() {
-		super("Copyright", "2019-01-23", "ListPatentUserSearchCompany");
+		super("Copyright", "2019-01-23", "ListPatentUserSearchCompany", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

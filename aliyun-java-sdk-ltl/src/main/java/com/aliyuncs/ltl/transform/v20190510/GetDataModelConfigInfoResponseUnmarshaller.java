@@ -23,10 +23,10 @@ public class GetDataModelConfigInfoResponseUnmarshaller {
 	public static GetDataModelConfigInfoResponse unmarshall(GetDataModelConfigInfoResponse getDataModelConfigInfoResponse, UnmarshallerContext _ctx) {
 		
 		getDataModelConfigInfoResponse.setRequestId(_ctx.stringValue("GetDataModelConfigInfoResponse.RequestId"));
-		getDataModelConfigInfoResponse.setData(_ctx.stringValue("GetDataModelConfigInfoResponse.Data"));
 		getDataModelConfigInfoResponse.setCode(_ctx.integerValue("GetDataModelConfigInfoResponse.Code"));
-		getDataModelConfigInfoResponse.setSuccess(_ctx.booleanValue("GetDataModelConfigInfoResponse.Success"));
 		getDataModelConfigInfoResponse.setMessage(_ctx.stringValue("GetDataModelConfigInfoResponse.Message"));
+		getDataModelConfigInfoResponse.setData(_ctx.stringValue("GetDataModelConfigInfoResponse.Data"));
+		getDataModelConfigInfoResponse.setSuccess(_ctx.booleanValue("GetDataModelConfigInfoResponse.Success"));
 	 
 	 	return getDataModelConfigInfoResponse;
 	}

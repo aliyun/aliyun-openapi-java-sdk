@@ -41,7 +41,7 @@ public class ReplaceTransitRouterRouteTableAssociationRequest extends RpcAcsRequ
 
 	private String transitRouterAttachmentId;
 	public ReplaceTransitRouterRouteTableAssociationRequest() {
-		super("Cbn", "2017-09-12", "ReplaceTransitRouterRouteTableAssociation");
+		super("Cbn", "2017-09-12", "ReplaceTransitRouterRouteTableAssociation", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

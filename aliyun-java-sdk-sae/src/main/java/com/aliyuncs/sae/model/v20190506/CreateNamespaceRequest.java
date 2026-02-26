@@ -29,7 +29,11 @@ public class CreateNamespaceRequest extends RoaAcsRequest<CreateNamespaceRespons
 
 	private String namespaceDescription;
 
+	private Boolean enableMicroRegistration;
+
 	private String namespaceId;
+
+	private String nameSpaceShortId;
 	public CreateNamespaceRequest() {
 		super("sae", "2019-05-06", "CreateNamespace", "serverless");
 		setUriPattern("/pop/v1/paas/namespace");
@@ -62,6 +66,17 @@ public class CreateNamespaceRequest extends RoaAcsRequest<CreateNamespaceRespons
 		}
 	}
 
+	public Boolean getEnableMicroRegistration() {
+		return this.enableMicroRegistration;
+	}
+
+	public void setEnableMicroRegistration(Boolean enableMicroRegistration) {
+		this.enableMicroRegistration = enableMicroRegistration;
+		if(enableMicroRegistration != null){
+			putQueryParameter("EnableMicroRegistration", enableMicroRegistration.toString());
+		}
+	}
+
 	public String getNamespaceId() {
 		return this.namespaceId;
 	}
@@ -70,6 +85,17 @@ public class CreateNamespaceRequest extends RoaAcsRequest<CreateNamespaceRespons
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getNameSpaceShortId() {
+		return this.nameSpaceShortId;
+	}
+
+	public void setNameSpaceShortId(String nameSpaceShortId) {
+		this.nameSpaceShortId = nameSpaceShortId;
+		if(nameSpaceShortId != null){
+			putQueryParameter("NameSpaceShortId", nameSpaceShortId);
 		}
 	}
 

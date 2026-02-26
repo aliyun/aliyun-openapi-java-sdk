@@ -31,7 +31,7 @@ public class AttachAggregateConfigRuleToCompliancePackRequest extends RpcAcsRequ
 
 	private String compliancePackId;
 	public AttachAggregateConfigRuleToCompliancePackRequest() {
-		super("Config", "2020-09-07", "AttachAggregateConfigRuleToCompliancePack");
+		super("Config", "2020-09-07", "AttachAggregateConfigRuleToCompliancePack", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -71,6 +71,8 @@ public class ListApplicationClientSecretsResponse extends AcsResponse {
 
 		private Long lastUsedTime;
 
+		private Long expirationTime;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -125,6 +127,14 @@ public class ListApplicationClientSecretsResponse extends AcsResponse {
 
 		public void setLastUsedTime(Long lastUsedTime) {
 			this.lastUsedTime = lastUsedTime;
+		}
+
+		public Long getExpirationTime() {
+			return this.expirationTime;
+		}
+
+		public void setExpirationTime(Long expirationTime) {
+			this.expirationTime = expirationTime;
 		}
 	}
 

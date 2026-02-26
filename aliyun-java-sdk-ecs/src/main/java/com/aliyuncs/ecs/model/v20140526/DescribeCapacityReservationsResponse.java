@@ -105,6 +105,12 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 		private String startTimeType;
 
+		private String savingPlanId;
+
+		private String reservedInstanceId;
+
+		private String capacityReservationOwnerId;
+
 		private List<AllocatedResource> allocatedResources;
 
 		private List<Tag> tags;
@@ -221,6 +227,30 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 			this.startTimeType = startTimeType;
 		}
 
+		public String getSavingPlanId() {
+			return this.savingPlanId;
+		}
+
+		public void setSavingPlanId(String savingPlanId) {
+			this.savingPlanId = savingPlanId;
+		}
+
+		public String getReservedInstanceId() {
+			return this.reservedInstanceId;
+		}
+
+		public void setReservedInstanceId(String reservedInstanceId) {
+			this.reservedInstanceId = reservedInstanceId;
+		}
+
+		public String getCapacityReservationOwnerId() {
+			return this.capacityReservationOwnerId;
+		}
+
+		public void setCapacityReservationOwnerId(String capacityReservationOwnerId) {
+			this.capacityReservationOwnerId = capacityReservationOwnerId;
+		}
+
 		public List<AllocatedResource> getAllocatedResources() {
 			return this.allocatedResources;
 		}
@@ -243,9 +273,13 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 			private Integer totalAmount;
 
+			private Integer availableAmount;
+
 			private String zoneId;
 
 			private String instanceType;
+
+			private List<CapacityReservationUsage> capacityReservationUsages;
 
 			public Integer getUsedAmount() {
 				return this.usedAmount;
@@ -263,6 +297,14 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 				this.totalAmount = totalAmount;
 			}
 
+			public Integer getAvailableAmount() {
+				return this.availableAmount;
+			}
+
+			public void setAvailableAmount(Integer availableAmount) {
+				this.availableAmount = availableAmount;
+			}
+
 			public String getZoneId() {
 				return this.zoneId;
 			}
@@ -277,6 +319,47 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 			public void setInstanceType(String instanceType) {
 				this.instanceType = instanceType;
+			}
+
+			public List<CapacityReservationUsage> getCapacityReservationUsages() {
+				return this.capacityReservationUsages;
+			}
+
+			public void setCapacityReservationUsages(List<CapacityReservationUsage> capacityReservationUsages) {
+				this.capacityReservationUsages = capacityReservationUsages;
+			}
+
+			public static class CapacityReservationUsage {
+
+				private String accountId;
+
+				private String serviceName;
+
+				private Integer usedAmount;
+
+				public String getAccountId() {
+					return this.accountId;
+				}
+
+				public void setAccountId(String accountId) {
+					this.accountId = accountId;
+				}
+
+				public String getServiceName() {
+					return this.serviceName;
+				}
+
+				public void setServiceName(String serviceName) {
+					this.serviceName = serviceName;
+				}
+
+				public Integer getUsedAmount() {
+					return this.usedAmount;
+				}
+
+				public void setUsedAmount(Integer usedAmount) {
+					this.usedAmount = usedAmount;
+				}
 			}
 		}
 

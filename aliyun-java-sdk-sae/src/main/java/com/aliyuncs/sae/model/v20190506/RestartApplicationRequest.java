@@ -30,6 +30,8 @@ public class RestartApplicationRequest extends RoaAcsRequest<RestartApplicationR
 	private String appId;
 
 	private Integer minReadyInstanceRatio;
+
+	private Boolean autoEnableApplicationScalingRule;
 	public RestartApplicationRequest() {
 		super("sae", "2019-05-06", "RestartApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/restartApplication");
@@ -70,6 +72,17 @@ public class RestartApplicationRequest extends RoaAcsRequest<RestartApplicationR
 		this.minReadyInstanceRatio = minReadyInstanceRatio;
 		if(minReadyInstanceRatio != null){
 			putQueryParameter("MinReadyInstanceRatio", minReadyInstanceRatio.toString());
+		}
+	}
+
+	public Boolean getAutoEnableApplicationScalingRule() {
+		return this.autoEnableApplicationScalingRule;
+	}
+
+	public void setAutoEnableApplicationScalingRule(Boolean autoEnableApplicationScalingRule) {
+		this.autoEnableApplicationScalingRule = autoEnableApplicationScalingRule;
+		if(autoEnableApplicationScalingRule != null){
+			putQueryParameter("AutoEnableApplicationScalingRule", autoEnableApplicationScalingRule.toString());
 		}
 	}
 

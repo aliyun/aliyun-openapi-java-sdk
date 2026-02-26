@@ -25,6 +25,8 @@ import com.aliyuncs.arms.Endpoint;
 public class ListPrometheusInstancesRequest extends RpcAcsRequest<ListPrometheusInstancesResponse> {
 	   
 
+	private String clusterType;
+
 	private Boolean showGlobalView;
 	public ListPrometheusInstancesRequest() {
 		super("ARMS", "2019-08-08", "ListPrometheusInstances", "arms");
@@ -33,6 +35,17 @@ public class ListPrometheusInstancesRequest extends RpcAcsRequest<ListPrometheus
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClusterType() {
+		return this.clusterType;
+	}
+
+	public void setClusterType(String clusterType) {
+		this.clusterType = clusterType;
+		if(clusterType != null){
+			putQueryParameter("ClusterType", clusterType);
+		}
 	}
 
 	public Boolean getShowGlobalView() {

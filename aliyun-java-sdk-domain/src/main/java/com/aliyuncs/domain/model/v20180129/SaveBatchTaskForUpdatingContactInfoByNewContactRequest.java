@@ -70,7 +70,7 @@ public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends RpcA
 
 	private String registrantName;
 	public SaveBatchTaskForUpdatingContactInfoByNewContactRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByNewContact");
+		super("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByNewContact", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

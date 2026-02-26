@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAutoRenewAttributeResponse extends AcsResponse {
 
-	private Integer totalRecordCount;
+	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
 	private String requestId;
 
-	private Integer pageNumber;
+	private Integer totalRecordCount;
 
 	private List<AutoRenewAttribute> items;
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageRecordCount() {
@@ -59,12 +59,12 @@ public class DescribeAutoRenewAttributeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<AutoRenewAttribute> getItems() {
@@ -77,17 +77,25 @@ public class DescribeAutoRenewAttributeResponse extends AcsResponse {
 
 	public static class AutoRenewAttribute {
 
-		private String dBClusterId;
+		private Boolean autoRenewEnabled;
 
-		private String periodUnit;
+		private String dBClusterId;
 
 		private Integer duration;
 
-		private String renewalStatus;
-
-		private Boolean autoRenewEnabled;
+		private String periodUnit;
 
 		private String regionId;
+
+		private String renewalStatus;
+
+		public Boolean getAutoRenewEnabled() {
+			return this.autoRenewEnabled;
+		}
+
+		public void setAutoRenewEnabled(Boolean autoRenewEnabled) {
+			this.autoRenewEnabled = autoRenewEnabled;
+		}
 
 		public String getDBClusterId() {
 			return this.dBClusterId;
@@ -95,14 +103,6 @@ public class DescribeAutoRenewAttributeResponse extends AcsResponse {
 
 		public void setDBClusterId(String dBClusterId) {
 			this.dBClusterId = dBClusterId;
-		}
-
-		public String getPeriodUnit() {
-			return this.periodUnit;
-		}
-
-		public void setPeriodUnit(String periodUnit) {
-			this.periodUnit = periodUnit;
 		}
 
 		public Integer getDuration() {
@@ -113,20 +113,12 @@ public class DescribeAutoRenewAttributeResponse extends AcsResponse {
 			this.duration = duration;
 		}
 
-		public String getRenewalStatus() {
-			return this.renewalStatus;
+		public String getPeriodUnit() {
+			return this.periodUnit;
 		}
 
-		public void setRenewalStatus(String renewalStatus) {
-			this.renewalStatus = renewalStatus;
-		}
-
-		public Boolean getAutoRenewEnabled() {
-			return this.autoRenewEnabled;
-		}
-
-		public void setAutoRenewEnabled(Boolean autoRenewEnabled) {
-			this.autoRenewEnabled = autoRenewEnabled;
+		public void setPeriodUnit(String periodUnit) {
+			this.periodUnit = periodUnit;
 		}
 
 		public String getRegionId() {
@@ -135,6 +127,14 @@ public class DescribeAutoRenewAttributeResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getRenewalStatus() {
+			return this.renewalStatus;
+		}
+
+		public void setRenewalStatus(String renewalStatus) {
+			this.renewalStatus = renewalStatus;
 		}
 	}
 

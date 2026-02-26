@@ -23,6 +23,7 @@ public class CreateInstanceResponseUnmarshaller {
 	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
 		
 		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
+		createInstanceResponse.setTagStatus(_ctx.booleanValue("CreateInstanceResponse.TagStatus"));
 		createInstanceResponse.setInstanceId(_ctx.stringValue("CreateInstanceResponse.InstanceId"));
 	 
 	 	return createInstanceResponse;

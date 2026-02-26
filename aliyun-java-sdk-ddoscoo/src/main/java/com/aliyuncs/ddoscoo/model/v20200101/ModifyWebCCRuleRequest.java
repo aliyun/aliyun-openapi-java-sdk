@@ -43,7 +43,7 @@ public class ModifyWebCCRuleRequest extends RpcAcsRequest<ModifyWebCCRuleRespons
 
 	private Integer interval;
 	public ModifyWebCCRuleRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebCCRule");
+		super("ddoscoo", "2020-01-01", "ModifyWebCCRule", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

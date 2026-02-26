@@ -37,18 +37,20 @@ public class QueryWorksBloodRelationshipResponseUnmarshaller {
 			item.setComponentName(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].ComponentName"));
 			item.setComponentType(_ctx.integerValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].ComponentType"));
 			item.setComponentTypeName(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].ComponentTypeName"));
+			item.setComponentTypeCnName(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].ComponentTypeCnName"));
 			item.setDatasetId(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].DatasetId"));
 
 			List<QueryParam> queryParams = new ArrayList<QueryParam>();
 			for (int j = 0; j < _ctx.lengthValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams.Length"); j++) {
 				QueryParam queryParam = new QueryParam();
-				queryParam.setUid(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].Uid"));
-				queryParam.setPathId(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].PathId"));
+				queryParam.setAreaId(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].AreaId"));
+				queryParam.setAreaName(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].AreaName"));
 				queryParam.setCaption(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].Caption"));
 				queryParam.setDataType(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].DataType"));
 				queryParam.setIsMeasure(_ctx.booleanValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].IsMeasure"));
-				queryParam.setAreaId(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].AreaId"));
-				queryParam.setAreaName(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].AreaName"));
+				queryParam.setPathId(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].PathId"));
+				queryParam.setUid(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].Uid"));
+				queryParam.setExpression(_ctx.stringValue("QueryWorksBloodRelationshipResponse.Result["+ i +"].QueryParams["+ j +"].Expression"));
 
 				queryParams.add(queryParam);
 			}

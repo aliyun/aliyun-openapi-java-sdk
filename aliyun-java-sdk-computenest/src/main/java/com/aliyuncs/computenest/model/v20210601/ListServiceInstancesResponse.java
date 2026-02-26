@@ -31,7 +31,7 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private String maxResults;
+	private Integer maxResults;
 
 	private List<ServiceInstance> serviceInstances;
 
@@ -59,11 +59,11 @@ public class ListServiceInstancesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 
@@ -76,6 +76,8 @@ public class ListServiceInstancesResponse extends AcsResponse {
 	}
 
 	public static class ServiceInstance {
+
+		private String name;
 
 		private String status;
 
@@ -105,7 +107,33 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		private Boolean enableInstanceOps;
 
+		private String source;
+
+		private String endTime;
+
+		private String serviceType;
+
+		private String payType;
+
+		private String marketInstanceId;
+
+		private String resourceGroupId;
+
+		private String bizStatus;
+
+		private String orderId;
+
+		private List<Tag> tags;
+
 		private Service service;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 
 		public String getStatus() {
 			return this.status;
@@ -219,12 +247,107 @@ public class ListServiceInstancesResponse extends AcsResponse {
 			this.enableInstanceOps = enableInstanceOps;
 		}
 
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getServiceType() {
+			return this.serviceType;
+		}
+
+		public void setServiceType(String serviceType) {
+			this.serviceType = serviceType;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public String getMarketInstanceId() {
+			return this.marketInstanceId;
+		}
+
+		public void setMarketInstanceId(String marketInstanceId) {
+			this.marketInstanceId = marketInstanceId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getBizStatus() {
+			return this.bizStatus;
+		}
+
+		public void setBizStatus(String bizStatus) {
+			this.bizStatus = bizStatus;
+		}
+
+		public String getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(String orderId) {
+			this.orderId = orderId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public Service getService() {
 			return this.service;
 		}
 
 		public void setService(Service service) {
 			this.service = service;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 
 		public static class Service {
@@ -245,7 +368,11 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 			private String supplierName;
 
+			private String versionName;
+
 			private List<ServiceInfo> serviceInfos;
+
+			private Commodity commodity;
 
 			public String getStatus() {
 				return this.status;
@@ -311,12 +438,28 @@ public class ListServiceInstancesResponse extends AcsResponse {
 				this.supplierName = supplierName;
 			}
 
+			public String getVersionName() {
+				return this.versionName;
+			}
+
+			public void setVersionName(String versionName) {
+				this.versionName = versionName;
+			}
+
 			public List<ServiceInfo> getServiceInfos() {
 				return this.serviceInfos;
 			}
 
 			public void setServiceInfos(List<ServiceInfo> serviceInfos) {
 				this.serviceInfos = serviceInfos;
+			}
+
+			public Commodity getCommodity() {
+				return this.commodity;
+			}
+
+			public void setCommodity(Commodity commodity) {
+				this.commodity = commodity;
 			}
 
 			public static class ServiceInfo {
@@ -359,6 +502,29 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 				public void setShortDescription(String shortDescription) {
 					this.shortDescription = shortDescription;
+				}
+			}
+
+			public static class Commodity {
+
+				private String saasBoostMetadata;
+
+				private String type;
+
+				public String getSaasBoostMetadata() {
+					return this.saasBoostMetadata;
+				}
+
+				public void setSaasBoostMetadata(String saasBoostMetadata) {
+					this.saasBoostMetadata = saasBoostMetadata;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
 				}
 			}
 		}

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.quotas.model.v20200510.ListProductQuotaDimensionsResponse;
 import com.aliyuncs.quotas.model.v20200510.ListProductQuotaDimensionsResponse.QuotaDimensionsItem;
 import com.aliyuncs.quotas.model.v20200510.ListProductQuotaDimensionsResponse.QuotaDimensionsItem.DimensionValueDetailItem;
+import com.aliyuncs.quotas.model.v20200510.ListProductQuotaDimensionsResponse.QuotaDimensionsItem.DimensionValueDetailItem.DependentDimension;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,15 +36,9 @@ public class ListProductQuotaDimensionsResponseUnmarshaller {
 		List<QuotaDimensionsItem> quotaDimensions = new ArrayList<QuotaDimensionsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListProductQuotaDimensionsResponse.QuotaDimensions.Length"); i++) {
 			QuotaDimensionsItem quotaDimensionsItem = new QuotaDimensionsItem();
+			quotaDimensionsItem.setRequisite(_ctx.booleanValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].Requisite"));
 			quotaDimensionsItem.setDimensionKey(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionKey"));
 			quotaDimensionsItem.setName(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].Name"));
-			quotaDimensionsItem.setRequisite(_ctx.booleanValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].Requisite"));
-
-			List<String> dimensionValues = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValues.Length"); j++) {
-				dimensionValues.add(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValues["+ j +"]"));
-			}
-			quotaDimensionsItem.setDimensionValues(dimensionValues);
 
 			List<String> dependentDimensions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DependentDimensions.Length"); j++) {
@@ -51,11 +46,27 @@ public class ListProductQuotaDimensionsResponseUnmarshaller {
 			}
 			quotaDimensionsItem.setDependentDimensions(dependentDimensions);
 
+			List<String> dimensionValues = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValues.Length"); j++) {
+				dimensionValues.add(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValues["+ j +"]"));
+			}
+			quotaDimensionsItem.setDimensionValues(dimensionValues);
+
 			List<DimensionValueDetailItem> dimensionValueDetail = new ArrayList<DimensionValueDetailItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail.Length"); j++) {
 				DimensionValueDetailItem dimensionValueDetailItem = new DimensionValueDetailItem();
-				dimensionValueDetailItem.setValue(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Value"));
 				dimensionValueDetailItem.setName(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Name"));
+				dimensionValueDetailItem.setValue(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Value"));
+
+				List<DependentDimension> dependentDimensions1 = new ArrayList<DependentDimension>();
+				for (int k = 0; k < _ctx.lengthValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].DependentDimensions.Length"); k++) {
+					DependentDimension dependentDimension = new DependentDimension();
+					dependentDimension.setKey(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].DependentDimensions["+ k +"].Key"));
+					dependentDimension.setValue(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].DependentDimensions["+ k +"].Value"));
+
+					dependentDimensions1.add(dependentDimension);
+				}
+				dimensionValueDetailItem.setDependentDimensions1(dependentDimensions1);
 
 				dimensionValueDetail.add(dimensionValueDetailItem);
 			}

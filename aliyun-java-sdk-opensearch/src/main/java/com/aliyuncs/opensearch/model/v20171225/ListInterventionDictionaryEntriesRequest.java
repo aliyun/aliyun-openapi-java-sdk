@@ -33,7 +33,7 @@ public class ListInterventionDictionaryEntriesRequest extends RoaAcsRequest<List
 
 	private Integer pageNumber;
 	public ListInterventionDictionaryEntriesRequest() {
-		super("OpenSearch", "2017-12-25", "ListInterventionDictionaryEntries", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListInterventionDictionaryEntries");
 		setUriPattern("/v4/openapi/intervention-dictionaries/[name]/entries");
 		setMethod(MethodType.GET);
 		try {

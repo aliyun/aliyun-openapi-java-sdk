@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSQLLogRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
 	private Long totalRecordCount;
 
 	private List<SQLRecord> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -57,6 +49,14 @@ public class DescribeSQLLogRecordsResponse extends AcsResponse {
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getTotalRecordCount() {
@@ -77,44 +77,28 @@ public class DescribeSQLLogRecordsResponse extends AcsResponse {
 
 	public static class SQLRecord {
 
-		private String hostAddress;
-
-		private String sQLText;
-
-		private Long returnRowCounts;
+		private String accountName;
 
 		private String dBName;
 
 		private String executeTime;
 
+		private String hostAddress;
+
+		private Long returnRowCounts;
+
+		private String sQLText;
+
 		private String threadID;
 
 		private Long totalExecutionTimes;
 
-		private String accountName;
-
-		public String getHostAddress() {
-			return this.hostAddress;
+		public String getAccountName() {
+			return this.accountName;
 		}
 
-		public void setHostAddress(String hostAddress) {
-			this.hostAddress = hostAddress;
-		}
-
-		public String getSQLText() {
-			return this.sQLText;
-		}
-
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
-		}
-
-		public Long getReturnRowCounts() {
-			return this.returnRowCounts;
-		}
-
-		public void setReturnRowCounts(Long returnRowCounts) {
-			this.returnRowCounts = returnRowCounts;
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 
 		public String getDBName() {
@@ -133,6 +117,30 @@ public class DescribeSQLLogRecordsResponse extends AcsResponse {
 			this.executeTime = executeTime;
 		}
 
+		public String getHostAddress() {
+			return this.hostAddress;
+		}
+
+		public void setHostAddress(String hostAddress) {
+			this.hostAddress = hostAddress;
+		}
+
+		public Long getReturnRowCounts() {
+			return this.returnRowCounts;
+		}
+
+		public void setReturnRowCounts(Long returnRowCounts) {
+			this.returnRowCounts = returnRowCounts;
+		}
+
+		public String getSQLText() {
+			return this.sQLText;
+		}
+
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
+		}
+
 		public String getThreadID() {
 			return this.threadID;
 		}
@@ -147,14 +155,6 @@ public class DescribeSQLLogRecordsResponse extends AcsResponse {
 
 		public void setTotalExecutionTimes(Long totalExecutionTimes) {
 			this.totalExecutionTimes = totalExecutionTimes;
-		}
-
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
 		}
 	}
 

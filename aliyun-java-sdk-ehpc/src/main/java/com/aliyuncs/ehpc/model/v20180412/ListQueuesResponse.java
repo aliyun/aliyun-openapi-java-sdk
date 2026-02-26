@@ -47,25 +47,47 @@ public class ListQueuesResponse extends AcsResponse {
 
 	public static class QueueInfo {
 
+		private String type;
+
+		private String hostNamePrefix;
+
 		private String queueName;
 
-		private String type;
+		private Boolean enableAutoGrow;
 
 		private String resourceGroupId;
 
-		private String hostNamePrefix;
+		private String imageId;
 
 		private String hostNameSuffix;
 
 		private String spotStrategy;
 
-		private String imageId;
+		private String deploymentSetId;
 
-		private Boolean enableAutoGrow;
+		private Boolean useESS;
+
+		private String networkInterfaceTrafficMode;
 
 		private List<Instance> spotInstanceTypes;
 
 		private List<String> computeInstanceType;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getHostNamePrefix() {
+			return this.hostNamePrefix;
+		}
+
+		public void setHostNamePrefix(String hostNamePrefix) {
+			this.hostNamePrefix = hostNamePrefix;
+		}
 
 		public String getQueueName() {
 			return this.queueName;
@@ -75,12 +97,12 @@ public class ListQueuesResponse extends AcsResponse {
 			this.queueName = queueName;
 		}
 
-		public String getType() {
-			return this.type;
+		public Boolean getEnableAutoGrow() {
+			return this.enableAutoGrow;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setEnableAutoGrow(Boolean enableAutoGrow) {
+			this.enableAutoGrow = enableAutoGrow;
 		}
 
 		public String getResourceGroupId() {
@@ -91,12 +113,12 @@ public class ListQueuesResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getHostNamePrefix() {
-			return this.hostNamePrefix;
+		public String getImageId() {
+			return this.imageId;
 		}
 
-		public void setHostNamePrefix(String hostNamePrefix) {
-			this.hostNamePrefix = hostNamePrefix;
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 
 		public String getHostNameSuffix() {
@@ -115,20 +137,28 @@ public class ListQueuesResponse extends AcsResponse {
 			this.spotStrategy = spotStrategy;
 		}
 
-		public String getImageId() {
-			return this.imageId;
+		public String getDeploymentSetId() {
+			return this.deploymentSetId;
 		}
 
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
+		public void setDeploymentSetId(String deploymentSetId) {
+			this.deploymentSetId = deploymentSetId;
 		}
 
-		public Boolean getEnableAutoGrow() {
-			return this.enableAutoGrow;
+		public Boolean getUseESS() {
+			return this.useESS;
 		}
 
-		public void setEnableAutoGrow(Boolean enableAutoGrow) {
-			this.enableAutoGrow = enableAutoGrow;
+		public void setUseESS(Boolean useESS) {
+			this.useESS = useESS;
+		}
+
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
+		}
+
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
 		}
 
 		public List<Instance> getSpotInstanceTypes() {

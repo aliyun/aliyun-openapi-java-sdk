@@ -27,6 +27,9 @@ public class ListRemediationTemplatesResponseUnmarshaller {
 	public static ListRemediationTemplatesResponse unmarshall(ListRemediationTemplatesResponse listRemediationTemplatesResponse, UnmarshallerContext _ctx) {
 		
 		listRemediationTemplatesResponse.setRequestId(_ctx.stringValue("ListRemediationTemplatesResponse.RequestId"));
+		listRemediationTemplatesResponse.setPageNumber(_ctx.longValue("ListRemediationTemplatesResponse.PageNumber"));
+		listRemediationTemplatesResponse.setPageSize(_ctx.longValue("ListRemediationTemplatesResponse.PageSize"));
+		listRemediationTemplatesResponse.setTotalCount(_ctx.stringValue("ListRemediationTemplatesResponse.TotalCount"));
 
 		List<RemediationTemplate> remediationTemplates = new ArrayList<RemediationTemplate>();
 		for (int i = 0; i < _ctx.lengthValue("ListRemediationTemplatesResponse.RemediationTemplates.Length"); i++) {
@@ -36,6 +39,7 @@ public class ListRemediationTemplatesResponseUnmarshaller {
 			remediationTemplate.setTemplateIdentifier(_ctx.stringValue("ListRemediationTemplatesResponse.RemediationTemplates["+ i +"].TemplateIdentifier"));
 			remediationTemplate.setTemplateName(_ctx.stringValue("ListRemediationTemplatesResponse.RemediationTemplates["+ i +"].TemplateName"));
 			remediationTemplate.setTemplateDefinition(_ctx.stringValue("ListRemediationTemplatesResponse.RemediationTemplates["+ i +"].TemplateDefinition"));
+			remediationTemplate.setTemplateDescription(_ctx.stringValue("ListRemediationTemplatesResponse.RemediationTemplates["+ i +"].TemplateDescription"));
 
 			remediationTemplates.add(remediationTemplate);
 		}

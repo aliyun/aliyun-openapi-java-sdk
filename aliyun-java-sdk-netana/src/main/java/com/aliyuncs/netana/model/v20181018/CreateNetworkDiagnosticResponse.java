@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateNetworkDiagnosticResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
 	private String tpl;
 
+	private String requestId;
+
 	private String params;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -54,6 +46,14 @@ public class CreateNetworkDiagnosticResponse extends AcsResponse {
 
 	public void setTpl(String tpl) {
 		this.tpl = tpl;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getParams() {

@@ -27,7 +27,7 @@ public class VoiceIdentityUnregisterRequest extends RoaAcsRequest<VoiceIdentityU
 
 	private String clientInfo;
 	public VoiceIdentityUnregisterRequest() {
-		super("Green", "2018-05-09", "VoiceIdentityUnregister", "green");
+		super("Green", "2018-05-09", "VoiceIdentityUnregister");
 		setUriPattern("/green/voice/auth/unregister");
 		setMethod(MethodType.POST);
 		try {

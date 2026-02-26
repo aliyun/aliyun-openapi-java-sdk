@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupPolicyResponse extends AcsResponse {
 
-	private String requestId;
+	private String preferredBackupEndTimeUTC;
 
 	private String backupRetentionPeriod;
 
-	private String preferredBackupTime;
+	private String requestId;
 
 	private String preferredBackupPeriod;
 
+	private String preferredBackupTime;
+
 	private String preferredBackupStartTimeUTC;
 
-	private String preferredBackupEndTimeUTC;
-
-	public String getRequestId() {
-		return this.requestId;
+	public String getPreferredBackupEndTimeUTC() {
+		return this.preferredBackupEndTimeUTC;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPreferredBackupEndTimeUTC(String preferredBackupEndTimeUTC) {
+		this.preferredBackupEndTimeUTC = preferredBackupEndTimeUTC;
 	}
 
 	public String getBackupRetentionPeriod() {
@@ -52,12 +52,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.backupRetentionPeriod = backupRetentionPeriod;
 	}
 
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getPreferredBackupPeriod() {
@@ -68,20 +68,20 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.preferredBackupPeriod = preferredBackupPeriod;
 	}
 
+	public String getPreferredBackupTime() {
+		return this.preferredBackupTime;
+	}
+
+	public void setPreferredBackupTime(String preferredBackupTime) {
+		this.preferredBackupTime = preferredBackupTime;
+	}
+
 	public String getPreferredBackupStartTimeUTC() {
 		return this.preferredBackupStartTimeUTC;
 	}
 
 	public void setPreferredBackupStartTimeUTC(String preferredBackupStartTimeUTC) {
 		this.preferredBackupStartTimeUTC = preferredBackupStartTimeUTC;
-	}
-
-	public String getPreferredBackupEndTimeUTC() {
-		return this.preferredBackupEndTimeUTC;
-	}
-
-	public void setPreferredBackupEndTimeUTC(String preferredBackupEndTimeUTC) {
-		this.preferredBackupEndTimeUTC = preferredBackupEndTimeUTC;
 	}
 
 	@Override

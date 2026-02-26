@@ -25,13 +25,13 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class ListDataServiceApplicationsRequest extends RpcAcsRequest<ListDataServiceApplicationsResponse> {
 	   
 
+	private Integer pageNumber;
+
 	private Integer pageSize;
 
 	private Long tenantId;
 
 	private String projectIdList;
-
-	private Integer pageNumber;
 	public ListDataServiceApplicationsRequest() {
 		super("dataworks-public", "2020-05-18", "ListDataServiceApplications");
 		setMethod(MethodType.POST);
@@ -39,6 +39,17 @@ public class ListDataServiceApplicationsRequest extends RpcAcsRequest<ListDataSe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putBodyParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public Integer getPageSize() {
@@ -71,17 +82,6 @@ public class ListDataServiceApplicationsRequest extends RpcAcsRequest<ListDataSe
 		this.projectIdList = projectIdList;
 		if(projectIdList != null){
 			putBodyParameter("ProjectIdList", projectIdList);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putBodyParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

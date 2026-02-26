@@ -28,9 +28,9 @@ public class DescribeDiagnosticMetricsRequest extends RpcAcsRequest<DescribeDiag
 
 	private List<String> metricIdss;
 
-	private String resourceType;
-
 	private String nextToken;
+
+	private String resourceType;
 
 	private Integer maxResults;
 	public DescribeDiagnosticMetricsRequest() {
@@ -55,17 +55,6 @@ public class DescribeDiagnosticMetricsRequest extends RpcAcsRequest<DescribeDiag
 		}	
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -74,6 +63,17 @@ public class DescribeDiagnosticMetricsRequest extends RpcAcsRequest<DescribeDiag
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

@@ -28,8 +28,8 @@ public class DescribeHotDbListResponseUnmarshaller {
 	public static DescribeHotDbListResponse unmarshall(DescribeHotDbListResponse describeHotDbListResponse, UnmarshallerContext _ctx) {
 		
 		describeHotDbListResponse.setRequestId(_ctx.stringValue("DescribeHotDbListResponse.RequestId"));
-		describeHotDbListResponse.setSuccess(_ctx.booleanValue("DescribeHotDbListResponse.Success"));
 		describeHotDbListResponse.setMsg(_ctx.stringValue("DescribeHotDbListResponse.Msg"));
+		describeHotDbListResponse.setSuccess(_ctx.booleanValue("DescribeHotDbListResponse.Success"));
 
 		Data data = new Data();
 		data.setRandomCode(_ctx.stringValue("DescribeHotDbListResponse.Data.RandomCode"));

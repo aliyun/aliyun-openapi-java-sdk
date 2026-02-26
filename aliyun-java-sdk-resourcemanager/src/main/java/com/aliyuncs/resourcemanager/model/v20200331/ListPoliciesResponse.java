@@ -25,30 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPoliciesResponse extends AcsResponse {
 
-	private Integer totalCount;
-
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private String requestId;
+
+	private Integer totalCount;
 
 	private List<Policy> policies;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +51,20 @@ public class ListPoliciesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Policy> getPolicies() {
@@ -77,19 +77,35 @@ public class ListPoliciesResponse extends AcsResponse {
 
 	public static class Policy {
 
+		private Integer attachmentCount;
+
+		private String createDate;
+
 		private String defaultVersion;
 
 		private String description;
 
-		private String updateDate;
-
-		private Integer attachmentCount;
-
 		private String policyName;
 
-		private String createDate;
-
 		private String policyType;
+
+		private String updateDate;
+
+		public Integer getAttachmentCount() {
+			return this.attachmentCount;
+		}
+
+		public void setAttachmentCount(Integer attachmentCount) {
+			this.attachmentCount = attachmentCount;
+		}
+
+		public String getCreateDate() {
+			return this.createDate;
+		}
+
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
+		}
 
 		public String getDefaultVersion() {
 			return this.defaultVersion;
@@ -107,22 +123,6 @@ public class ListPoliciesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getUpdateDate() {
-			return this.updateDate;
-		}
-
-		public void setUpdateDate(String updateDate) {
-			this.updateDate = updateDate;
-		}
-
-		public Integer getAttachmentCount() {
-			return this.attachmentCount;
-		}
-
-		public void setAttachmentCount(Integer attachmentCount) {
-			this.attachmentCount = attachmentCount;
-		}
-
 		public String getPolicyName() {
 			return this.policyName;
 		}
@@ -131,20 +131,20 @@ public class ListPoliciesResponse extends AcsResponse {
 			this.policyName = policyName;
 		}
 
-		public String getCreateDate() {
-			return this.createDate;
-		}
-
-		public void setCreateDate(String createDate) {
-			this.createDate = createDate;
-		}
-
 		public String getPolicyType() {
 			return this.policyType;
 		}
 
 		public void setPolicyType(String policyType) {
 			this.policyType = policyType;
+		}
+
+		public String getUpdateDate() {
+			return this.updateDate;
+		}
+
+		public void setUpdateDate(String updateDate) {
+			this.updateDate = updateDate;
 		}
 	}
 

@@ -25,29 +25,18 @@ import com.aliyuncs.market.Endpoint;
 public class PauseProjectRequest extends RpcAcsRequest<PauseProjectResponse> {
 	   
 
-	private String instanceId;
-
 	private String remark;
+
+	private String instanceId;
 
 	private Long nodeId;
 	public PauseProjectRequest() {
-		super("Market", "2015-11-01", "PauseProject");
+		super("Market", "2015-11-01", "PauseProject", "yunmarket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getRemark() {
@@ -58,6 +47,17 @@ public class PauseProjectRequest extends RpcAcsRequest<PauseProjectResponse> {
 		this.remark = remark;
 		if(remark != null){
 			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

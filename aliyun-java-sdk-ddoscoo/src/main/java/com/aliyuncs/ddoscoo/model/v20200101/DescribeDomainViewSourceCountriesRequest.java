@@ -33,7 +33,7 @@ public class DescribeDomainViewSourceCountriesRequest extends RpcAcsRequest<Desc
 
 	private String domain;
 	public DescribeDomainViewSourceCountriesRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDomainViewSourceCountries");
+		super("ddoscoo", "2020-01-01", "DescribeDomainViewSourceCountries", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

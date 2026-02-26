@@ -93,6 +93,10 @@ public class ListAggregateConfigRuleEvaluationResultsResponse extends AcsRespons
 
 			private Boolean remediationEnabled;
 
+			private String evaluationId;
+
+			private Long lastNonCompliantRecordTimestamp;
+
 			private EvaluationResultIdentifier evaluationResultIdentifier;
 
 			public Integer getRiskLevel() {
@@ -151,6 +155,22 @@ public class ListAggregateConfigRuleEvaluationResultsResponse extends AcsRespons
 				this.remediationEnabled = remediationEnabled;
 			}
 
+			public String getEvaluationId() {
+				return this.evaluationId;
+			}
+
+			public void setEvaluationId(String evaluationId) {
+				this.evaluationId = evaluationId;
+			}
+
+			public Long getLastNonCompliantRecordTimestamp() {
+				return this.lastNonCompliantRecordTimestamp;
+			}
+
+			public void setLastNonCompliantRecordTimestamp(Long lastNonCompliantRecordTimestamp) {
+				this.lastNonCompliantRecordTimestamp = lastNonCompliantRecordTimestamp;
+			}
+
 			public EvaluationResultIdentifier getEvaluationResultIdentifier() {
 				return this.evaluationResultIdentifier;
 			}
@@ -191,7 +211,7 @@ public class ListAggregateConfigRuleEvaluationResultsResponse extends AcsRespons
 
 					private String configRuleName;
 
-					private String resourceId;
+					private String resourceGroupId;
 
 					private String configRuleId;
 
@@ -202,6 +222,8 @@ public class ListAggregateConfigRuleEvaluationResultsResponse extends AcsRespons
 					private String compliancePackId;
 
 					private String ignoreDate;
+
+					private String resourceId;
 
 					public Long getResourceOwnerId() {
 						return this.resourceOwnerId;
@@ -235,12 +257,12 @@ public class ListAggregateConfigRuleEvaluationResultsResponse extends AcsRespons
 						this.configRuleName = configRuleName;
 					}
 
-					public String getResourceId() {
-						return this.resourceId;
+					public String getResourceGroupId() {
+						return this.resourceGroupId;
 					}
 
-					public void setResourceId(String resourceId) {
-						this.resourceId = resourceId;
+					public void setResourceGroupId(String resourceGroupId) {
+						this.resourceGroupId = resourceGroupId;
 					}
 
 					public String getConfigRuleId() {
@@ -281,6 +303,14 @@ public class ListAggregateConfigRuleEvaluationResultsResponse extends AcsRespons
 
 					public void setIgnoreDate(String ignoreDate) {
 						this.ignoreDate = ignoreDate;
+					}
+
+					public String getResourceId() {
+						return this.resourceId;
+					}
+
+					public void setResourceId(String resourceId) {
+						this.resourceId = resourceId;
 					}
 				}
 			}

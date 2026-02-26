@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class VerifyMobileResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private GateVerifyResultDTO gateVerifyResultDTO;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class VerifyMobileResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public GateVerifyResultDTO getGateVerifyResultDTO() {
 		return this.gateVerifyResultDTO;
 	}
@@ -66,17 +66,9 @@ public class VerifyMobileResponse extends AcsResponse {
 
 	public static class GateVerifyResultDTO {
 
-		private String verifyId;
-
 		private String verifyResult;
 
-		public String getVerifyId() {
-			return this.verifyId;
-		}
-
-		public void setVerifyId(String verifyId) {
-			this.verifyId = verifyId;
-		}
+		private String verifyId;
 
 		public String getVerifyResult() {
 			return this.verifyResult;
@@ -84,6 +76,14 @@ public class VerifyMobileResponse extends AcsResponse {
 
 		public void setVerifyResult(String verifyResult) {
 			this.verifyResult = verifyResult;
+		}
+
+		public String getVerifyId() {
+			return this.verifyId;
+		}
+
+		public void setVerifyId(String verifyId) {
+			this.verifyId = verifyId;
 		}
 	}
 

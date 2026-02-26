@@ -119,6 +119,8 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 		private List<String> callingNumbers;
 
+		private List<String> recallCallingNumbers;
+
 		private ExportProgress exportProgress;
 
 		private Progress progress;
@@ -128,6 +130,8 @@ public class DescribeJobGroupResponse extends AcsResponse {
 		private RecallStrategy recallStrategy;
 
 		private Result result;
+
+		private FlashSmsExtras flashSmsExtras;
 
 		public Long getCreationTime() {
 			return this.creationTime;
@@ -257,6 +261,14 @@ public class DescribeJobGroupResponse extends AcsResponse {
 			this.callingNumbers = callingNumbers;
 		}
 
+		public List<String> getRecallCallingNumbers() {
+			return this.recallCallingNumbers;
+		}
+
+		public void setRecallCallingNumbers(List<String> recallCallingNumbers) {
+			this.recallCallingNumbers = recallCallingNumbers;
+		}
+
 		public ExportProgress getExportProgress() {
 			return this.exportProgress;
 		}
@@ -295,6 +307,14 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 		public void setResult(Result result) {
 			this.result = result;
+		}
+
+		public FlashSmsExtras getFlashSmsExtras() {
+			return this.flashSmsExtras;
+		}
+
+		public void setFlashSmsExtras(FlashSmsExtras flashSmsExtras) {
+			this.flashSmsExtras = flashSmsExtras;
 		}
 
 		public static class ExportProgress {
@@ -514,6 +534,8 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 			private String repeatBy;
 
+			private Boolean repeatable;
+
 			private List<TimeFrame> workingTime;
 
 			private List<String> repeatDays;
@@ -620,6 +642,14 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 			public void setRepeatBy(String repeatBy) {
 				this.repeatBy = repeatBy;
+			}
+
+			public Boolean getRepeatable() {
+				return this.repeatable;
+			}
+
+			public void setRepeatable(Boolean repeatable) {
+				this.repeatable = repeatable;
 			}
 
 			public List<TimeFrame> getWorkingTime() {
@@ -745,6 +775,29 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 			public void setUnrecognizedNum(Integer unrecognizedNum) {
 				this.unrecognizedNum = unrecognizedNum;
+			}
+		}
+
+		public static class FlashSmsExtras {
+
+			private String configId;
+
+			private String templateId;
+
+			public String getConfigId() {
+				return this.configId;
+			}
+
+			public void setConfigId(String configId) {
+				this.configId = configId;
+			}
+
+			public String getTemplateId() {
+				return this.templateId;
+			}
+
+			public void setTemplateId(String templateId) {
+				this.templateId = templateId;
 			}
 		}
 	}

@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddUserCollectionResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private Boolean status;
-
-	private String errorCode;
 
 	private String errorMsg;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String errorCode;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean success;
 
 	public Boolean getStatus() {
 		return this.status;
@@ -56,6 +40,22 @@ public class AddUserCollectionResponse extends AcsResponse {
 
 	public void setStatus(Boolean status) {
 		this.status = status;
+	}
+
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorCode() {
@@ -66,12 +66,12 @@ public class AddUserCollectionResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

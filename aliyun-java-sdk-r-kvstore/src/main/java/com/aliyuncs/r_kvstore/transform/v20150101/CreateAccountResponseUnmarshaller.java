@@ -25,6 +25,7 @@ public class CreateAccountResponseUnmarshaller {
 		createAccountResponse.setRequestId(_ctx.stringValue("CreateAccountResponse.RequestId"));
 		createAccountResponse.setInstanceId(_ctx.stringValue("CreateAccountResponse.InstanceId"));
 		createAccountResponse.setAcountName(_ctx.stringValue("CreateAccountResponse.AcountName"));
+		createAccountResponse.setAccountName(_ctx.stringValue("CreateAccountResponse.AccountName"));
 	 
 	 	return createAccountResponse;
 	}

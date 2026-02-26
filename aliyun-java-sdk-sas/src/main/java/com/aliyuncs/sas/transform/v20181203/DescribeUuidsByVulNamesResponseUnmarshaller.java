@@ -27,6 +27,7 @@ public class DescribeUuidsByVulNamesResponseUnmarshaller {
 	public static DescribeUuidsByVulNamesResponse unmarshall(DescribeUuidsByVulNamesResponse describeUuidsByVulNamesResponse, UnmarshallerContext _ctx) {
 		
 		describeUuidsByVulNamesResponse.setRequestId(_ctx.stringValue("DescribeUuidsByVulNamesResponse.RequestId"));
+		describeUuidsByVulNamesResponse.setVulCount(_ctx.integerValue("DescribeUuidsByVulNamesResponse.VulCount"));
 
 		List<MachineInfoStatistic> machineInfoStatistics = new ArrayList<MachineInfoStatistic>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUuidsByVulNamesResponse.MachineInfoStatistics.Length"); i++) {

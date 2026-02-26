@@ -25,11 +25,15 @@ import com.aliyuncs.ccc.Endpoint;
 public class ListAudioFilesRequest extends RpcAcsRequest<ListAudioFilesResponse> {
 	   
 
+	private String usage;
+
 	private Integer pageNumber;
 
 	private String instanceId;
 
 	private Integer pageSize;
+
+	private String status;
 	public ListAudioFilesRequest() {
 		super("CCC", "2020-07-01", "ListAudioFiles", "CCC");
 		setMethod(MethodType.POST);
@@ -37,6 +41,17 @@ public class ListAudioFilesRequest extends RpcAcsRequest<ListAudioFilesResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getUsage() {
+		return this.usage;
+	}
+
+	public void setUsage(String usage) {
+		this.usage = usage;
+		if(usage != null){
+			putQueryParameter("Usage", usage);
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -69,6 +84,17 @@ public class ListAudioFilesRequest extends RpcAcsRequest<ListAudioFilesResponse>
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

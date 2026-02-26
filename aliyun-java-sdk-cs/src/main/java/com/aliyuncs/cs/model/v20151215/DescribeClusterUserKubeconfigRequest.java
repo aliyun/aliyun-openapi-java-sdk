@@ -27,6 +27,8 @@ public class DescribeClusterUserKubeconfigRequest extends RoaAcsRequest<Describe
 
 	private Boolean privateIpAddress;
 
+	private Long temporaryDurationMinutes;
+
 	private String clusterId;
 	public DescribeClusterUserKubeconfigRequest() {
 		super("CS", "2015-12-15", "DescribeClusterUserKubeconfig");
@@ -46,6 +48,17 @@ public class DescribeClusterUserKubeconfigRequest extends RoaAcsRequest<Describe
 		this.privateIpAddress = privateIpAddress;
 		if(privateIpAddress != null){
 			putQueryParameter("PrivateIpAddress", privateIpAddress.toString());
+		}
+	}
+
+	public Long getTemporaryDurationMinutes() {
+		return this.temporaryDurationMinutes;
+	}
+
+	public void setTemporaryDurationMinutes(Long temporaryDurationMinutes) {
+		this.temporaryDurationMinutes = temporaryDurationMinutes;
+		if(temporaryDurationMinutes != null){
+			putQueryParameter("TemporaryDurationMinutes", temporaryDurationMinutes.toString());
 		}
 	}
 

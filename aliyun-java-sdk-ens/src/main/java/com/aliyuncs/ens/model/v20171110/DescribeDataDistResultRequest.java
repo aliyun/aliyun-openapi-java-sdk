@@ -15,6 +15,9 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -33,6 +36,9 @@ public class DescribeDataDistResultRequest extends RpcAcsRequest<DescribeDataDis
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	@SerializedName("ensRegionIds")
+	private List<String> ensRegionIds;
 
 	private String minDate;
 
@@ -97,6 +103,17 @@ public class DescribeDataDistResultRequest extends RpcAcsRequest<DescribeDataDis
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public List<String> getEnsRegionIds() {
+		return this.ensRegionIds;
+	}
+
+	public void setEnsRegionIds(List<String> ensRegionIds) {
+		this.ensRegionIds = ensRegionIds;	
+		if (ensRegionIds != null) {
+			putQueryParameter("EnsRegionIds" , new Gson().toJson(ensRegionIds));
+		}	
 	}
 
 	public String getMinDate() {

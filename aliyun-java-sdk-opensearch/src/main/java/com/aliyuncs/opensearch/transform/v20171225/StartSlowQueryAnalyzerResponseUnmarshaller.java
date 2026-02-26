@@ -23,8 +23,8 @@ public class StartSlowQueryAnalyzerResponseUnmarshaller {
 
 	public static StartSlowQueryAnalyzerResponse unmarshall(StartSlowQueryAnalyzerResponse startSlowQueryAnalyzerResponse, UnmarshallerContext _ctx) {
 		
-		startSlowQueryAnalyzerResponse.setRequestId(_ctx.stringValue("StartSlowQueryAnalyzerResponse.requestId"));
 		startSlowQueryAnalyzerResponse.setResult(_ctx.mapValue("StartSlowQueryAnalyzerResponse.result"));
+		startSlowQueryAnalyzerResponse.setRequestId(_ctx.stringValue("StartSlowQueryAnalyzerResponse.requestId"));
 	 
 	 	return startSlowQueryAnalyzerResponse;
 	}

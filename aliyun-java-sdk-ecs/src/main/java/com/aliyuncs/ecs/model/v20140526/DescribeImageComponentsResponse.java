@@ -95,7 +95,11 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 
 		private String owner;
 
+		private String componentVersion;
+
 		private List<Tag> tags;
+
+		private List<Parameter> parameters;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -169,12 +173,28 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
+		public String getComponentVersion() {
+			return this.componentVersion;
+		}
+
+		public void setComponentVersion(String componentVersion) {
+			this.componentVersion = componentVersion;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<Parameter> getParameters() {
+			return this.parameters;
+		}
+
+		public void setParameters(List<Parameter> parameters) {
+			this.parameters = parameters;
 		}
 
 		public static class Tag {
@@ -197,6 +217,39 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+		}
+
+		public static class Parameter {
+
+			private String name;
+
+			private String type;
+
+			private String defaultValue;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getDefaultValue() {
+				return this.defaultValue;
+			}
+
+			public void setDefaultValue(String defaultValue) {
+				this.defaultValue = defaultValue;
 			}
 		}
 	}

@@ -28,27 +28,17 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private String description;
-
 	private String startTime;
 
 	private String resourceGroupId;
 
 	private String privatePoolOptionsMatchCriteria;
 
-	private List<String> instanceTypes;
-
 	private List<Tag> tags;
 
+	private Integer autoRenewPeriod;
+
 	private Integer period;
-
-	private String resourceOwnerAccount;
-
-	private String privatePoolOptionsName;
-
-	private String ownerAccount;
 
 	private String assuranceTimes;
 
@@ -58,9 +48,25 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 
 	private String periodUnit;
 
+	private Boolean autoRenew;
+
 	private List<String> zoneIds;
 
 	private Integer instanceAmount;
+
+	private String clientToken;
+
+	private String description;
+
+	private List<String> instanceTypes;
+
+	private String resourceOwnerAccount;
+
+	private String privatePoolOptionsName;
+
+	private String ownerAccount;
+
+	private List<RecurrenceRules> recurrenceRuless;
 	public CreateElasticityAssuranceRequest() {
 		super("Ecs", "2014-05-26", "CreateElasticityAssurance", "ecs");
 		setMethod(MethodType.POST);
@@ -78,28 +84,6 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 
@@ -136,19 +120,6 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 		}
 	}
 
-	public List<String> getInstanceTypes() {
-		return this.instanceTypes;
-	}
-
-	public void setInstanceTypes(List<String> instanceTypes) {
-		this.instanceTypes = instanceTypes;	
-		if (instanceTypes != null) {
-			for (int i = 0; i < instanceTypes.size(); i++) {
-				putQueryParameter("InstanceType." + (i + 1) , instanceTypes.get(i));
-			}
-		}	
-	}
-
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -157,10 +128,21 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public Integer getAutoRenewPeriod() {
+		return this.autoRenewPeriod;
+	}
+
+	public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+		this.autoRenewPeriod = autoRenewPeriod;
+		if(autoRenewPeriod != null){
+			putQueryParameter("AutoRenewPeriod", autoRenewPeriod.toString());
+		}
 	}
 
 	public Integer getPeriod() {
@@ -171,39 +153,6 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getPrivatePoolOptionsName() {
-		return this.privatePoolOptionsName;
-	}
-
-	public void setPrivatePoolOptionsName(String privatePoolOptionsName) {
-		this.privatePoolOptionsName = privatePoolOptionsName;
-		if(privatePoolOptionsName != null){
-			putQueryParameter("PrivatePoolOptions.Name", privatePoolOptionsName);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -251,6 +200,17 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 		}
 	}
 
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
+		}
+	}
+
 	public List<String> getZoneIds() {
 		return this.zoneIds;
 	}
@@ -275,11 +235,103 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public List<String> getInstanceTypes() {
+		return this.instanceTypes;
+	}
+
+	public void setInstanceTypes(List<String> instanceTypes) {
+		this.instanceTypes = instanceTypes;	
+		if (instanceTypes != null) {
+			for (int i = 0; i < instanceTypes.size(); i++) {
+				putQueryParameter("InstanceType." + (i + 1) , instanceTypes.get(i));
+			}
+		}	
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getPrivatePoolOptionsName() {
+		return this.privatePoolOptionsName;
+	}
+
+	public void setPrivatePoolOptionsName(String privatePoolOptionsName) {
+		this.privatePoolOptionsName = privatePoolOptionsName;
+		if(privatePoolOptionsName != null){
+			putQueryParameter("PrivatePoolOptions.Name", privatePoolOptionsName);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public List<RecurrenceRules> getRecurrenceRuless() {
+		return this.recurrenceRuless;
+	}
+
+	public void setRecurrenceRuless(List<RecurrenceRules> recurrenceRuless) {
+		this.recurrenceRuless = recurrenceRuless;	
+		if (recurrenceRuless != null) {
+			for (int depth1 = 0; depth1 < recurrenceRuless.size(); depth1++) {
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".StartHour" , recurrenceRuless.get(depth1).getStartHour());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceType" , recurrenceRuless.get(depth1).getRecurrenceType());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".EndHour" , recurrenceRuless.get(depth1).getEndHour());
+				putQueryParameter("RecurrenceRules." + (depth1 + 1) + ".RecurrenceValue" , recurrenceRuless.get(depth1).getRecurrenceValue());
+			}
+		}	
+	}
+
 	public static class Tag {
+
+		private String value;
 
 		private String key;
 
-		private String value;
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 
 		public String getKey() {
 			return this.key;
@@ -288,13 +340,48 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 		public void setKey(String key) {
 			this.key = key;
 		}
+	}
 
-		public String getValue() {
-			return this.value;
+	public static class RecurrenceRules {
+
+		private Integer startHour;
+
+		private String recurrenceType;
+
+		private Integer endHour;
+
+		private String recurrenceValue;
+
+		public Integer getStartHour() {
+			return this.startHour;
 		}
 
-		public void setValue(String value) {
-			this.value = value;
+		public void setStartHour(Integer startHour) {
+			this.startHour = startHour;
+		}
+
+		public String getRecurrenceType() {
+			return this.recurrenceType;
+		}
+
+		public void setRecurrenceType(String recurrenceType) {
+			this.recurrenceType = recurrenceType;
+		}
+
+		public Integer getEndHour() {
+			return this.endHour;
+		}
+
+		public void setEndHour(Integer endHour) {
+			this.endHour = endHour;
+		}
+
+		public String getRecurrenceValue() {
+			return this.recurrenceValue;
+		}
+
+		public void setRecurrenceValue(String recurrenceValue) {
+			this.recurrenceValue = recurrenceValue;
 		}
 	}
 

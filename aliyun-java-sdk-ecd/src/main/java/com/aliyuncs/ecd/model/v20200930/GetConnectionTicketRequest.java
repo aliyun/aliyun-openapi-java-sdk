@@ -29,6 +29,8 @@ public class GetConnectionTicketRequest extends RpcAcsRequest<GetConnectionTicke
 
 	private String uuid;
 
+	private String commandContent;
+
 	private String password;
 
 	private String endUserId;
@@ -41,7 +43,7 @@ public class GetConnectionTicketRequest extends RpcAcsRequest<GetConnectionTicke
 
 	private Long ownerId;
 	public GetConnectionTicketRequest() {
-		super("ecd", "2020-09-30", "GetConnectionTicket");
+		super("ecd", "2020-09-30", "GetConnectionTicket", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,6 +70,17 @@ public class GetConnectionTicketRequest extends RpcAcsRequest<GetConnectionTicke
 		this.uuid = uuid;
 		if(uuid != null){
 			putQueryParameter("Uuid", uuid);
+		}
+	}
+
+	public String getCommandContent() {
+		return this.commandContent;
+	}
+
+	public void setCommandContent(String commandContent) {
+		this.commandContent = commandContent;
+		if(commandContent != null){
+			putQueryParameter("CommandContent", commandContent);
 		}
 	}
 

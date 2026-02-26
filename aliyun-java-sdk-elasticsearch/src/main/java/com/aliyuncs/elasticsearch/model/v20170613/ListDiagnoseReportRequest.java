@@ -29,9 +29,9 @@ public class ListDiagnoseReportRequest extends RoaAcsRequest<ListDiagnoseReportR
 
 	private Integer size;
 
-	private Integer endTime;
+	private Long endTime;
 
-	private Integer startTime;
+	private Long startTime;
 
 	private Integer page;
 
@@ -40,8 +40,6 @@ public class ListDiagnoseReportRequest extends RoaAcsRequest<ListDiagnoseReportR
 	private String trigger;
 
 	private String lang;
-
-	private String body;
 	public ListDiagnoseReportRequest() {
 		super("elasticsearch", "2017-06-13", "ListDiagnoseReport", "elasticsearch");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/reports");
@@ -74,22 +72,22 @@ public class ListDiagnoseReportRequest extends RoaAcsRequest<ListDiagnoseReportR
 		}
 	}
 
-	public Integer getEndTime() {
+	public Long getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(Integer endTime) {
+	public void setEndTime(Long endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("endTime", endTime.toString());
 		}
 	}
 
-	public Integer getStartTime() {
+	public Long getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(Integer startTime) {
+	public void setStartTime(Long startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("startTime", startTime.toString());
@@ -137,17 +135,6 @@ public class ListDiagnoseReportRequest extends RoaAcsRequest<ListDiagnoseReportR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("lang", lang);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

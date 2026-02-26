@@ -27,11 +27,9 @@ public class ListTagResourcesRequest extends RoaAcsRequest<ListTagResourcesRespo
 
 	private String resource_type;
 
+	private String region_id;
+
 	private String next_token;
-
-	private String resource_ids;
-
-	private String tags;
 	public ListTagResourcesRequest() {
 		super("CS", "2015-12-15", "ListTagResources");
 		setUriPattern("/tags");
@@ -53,6 +51,17 @@ public class ListTagResourcesRequest extends RoaAcsRequest<ListTagResourcesRespo
 		}
 	}
 
+	public String getRegion_id() {
+		return this.region_id;
+	}
+
+	public void setRegion_id(String region_id) {
+		this.region_id = region_id;
+		if(region_id != null){
+			putQueryParameter("region_id", region_id);
+		}
+	}
+
 	public String getNext_token() {
 		return this.next_token;
 	}
@@ -61,28 +70,6 @@ public class ListTagResourcesRequest extends RoaAcsRequest<ListTagResourcesRespo
 		this.next_token = next_token;
 		if(next_token != null){
 			putQueryParameter("next_token", next_token);
-		}
-	}
-
-	public String getResource_ids() {
-		return this.resource_ids;
-	}
-
-	public void setResource_ids(String resource_ids) {
-		this.resource_ids = resource_ids;
-		if(resource_ids != null){
-			putQueryParameter("resource_ids", resource_ids);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("tags", tags);
 		}
 	}
 

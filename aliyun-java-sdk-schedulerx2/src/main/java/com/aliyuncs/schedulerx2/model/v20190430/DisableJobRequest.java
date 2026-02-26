@@ -33,7 +33,7 @@ public class DisableJobRequest extends RpcAcsRequest<DisableJobResponse> {
 
 	private String namespace;
 	public DisableJobRequest() {
-		super("schedulerx2", "2019-04-30", "DisableJob");
+		super("schedulerx2", "2019-04-30", "DisableJob", "schedulerx2");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

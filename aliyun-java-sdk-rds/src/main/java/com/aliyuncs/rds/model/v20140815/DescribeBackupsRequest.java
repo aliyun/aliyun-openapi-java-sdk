@@ -35,6 +35,8 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private String dBInstanceId;
 
+	private String backupType;
+
 	private String backupId;
 
 	private String endTime;
@@ -103,6 +105,17 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getBackupType() {
+		return this.backupType;
+	}
+
+	public void setBackupType(String backupType) {
+		this.backupType = backupType;
+		if(backupType != null){
+			putQueryParameter("BackupType", backupType);
 		}
 	}
 

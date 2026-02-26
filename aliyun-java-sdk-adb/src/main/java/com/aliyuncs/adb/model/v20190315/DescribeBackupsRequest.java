@@ -33,6 +33,10 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private Integer pageSize;
 
+	private String crossUid;
+
+	private String crossRole;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -94,6 +98,28 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getCrossUid() {
+		return this.crossUid;
+	}
+
+	public void setCrossUid(String crossUid) {
+		this.crossUid = crossUid;
+		if(crossUid != null){
+			putQueryParameter("CrossUid", crossUid);
+		}
+	}
+
+	public String getCrossRole() {
+		return this.crossRole;
+	}
+
+	public void setCrossRole(String crossRole) {
+		this.crossRole = crossRole;
+		if(crossRole != null){
+			putQueryParameter("CrossRole", crossRole);
 		}
 	}
 

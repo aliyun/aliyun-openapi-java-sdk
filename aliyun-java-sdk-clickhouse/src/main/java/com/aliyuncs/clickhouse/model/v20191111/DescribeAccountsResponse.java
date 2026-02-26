@@ -85,6 +85,8 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private String accountName;
 
+		private String configType;
+
 		public String getAccountStatus() {
 			return this.accountStatus;
 		}
@@ -115,6 +117,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountName(String accountName) {
 			this.accountName = accountName;
+		}
+
+		public String getConfigType() {
+			return this.configType;
+		}
+
+		public void setConfigType(String configType) {
+			this.configType = configType;
 		}
 	}
 

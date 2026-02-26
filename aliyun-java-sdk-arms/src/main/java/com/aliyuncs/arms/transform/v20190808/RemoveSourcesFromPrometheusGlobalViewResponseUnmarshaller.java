@@ -24,6 +24,8 @@ public class RemoveSourcesFromPrometheusGlobalViewResponseUnmarshaller {
 	public static RemoveSourcesFromPrometheusGlobalViewResponse unmarshall(RemoveSourcesFromPrometheusGlobalViewResponse removeSourcesFromPrometheusGlobalViewResponse, UnmarshallerContext _ctx) {
 		
 		removeSourcesFromPrometheusGlobalViewResponse.setRequestId(_ctx.stringValue("RemoveSourcesFromPrometheusGlobalViewResponse.RequestId"));
+		removeSourcesFromPrometheusGlobalViewResponse.setMessage(_ctx.stringValue("RemoveSourcesFromPrometheusGlobalViewResponse.Message"));
+		removeSourcesFromPrometheusGlobalViewResponse.setCode(_ctx.integerValue("RemoveSourcesFromPrometheusGlobalViewResponse.Code"));
 
 		Data data = new Data();
 		data.setSuccess(_ctx.booleanValue("RemoveSourcesFromPrometheusGlobalViewResponse.Data.Success"));

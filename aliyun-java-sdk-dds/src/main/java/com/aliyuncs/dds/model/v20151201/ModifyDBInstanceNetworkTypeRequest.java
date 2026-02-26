@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -27,8 +28,6 @@ public class ModifyDBInstanceNetworkTypeRequest extends RpcAcsRequest<ModifyDBIn
 	private Long resourceOwnerId;
 
 	private String networkType;
-
-	private String securityToken;
 
 	private Integer classicExpiredDays;
 
@@ -45,9 +44,15 @@ public class ModifyDBInstanceNetworkTypeRequest extends RpcAcsRequest<ModifyDBIn
 	private String retainClassic;
 
 	private String vpcId;
+
+	private String zoneId;
 	public ModifyDBInstanceNetworkTypeRequest() {
 		super("Dds", "2015-12-01", "ModifyDBInstanceNetworkType", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -69,17 +74,6 @@ public class ModifyDBInstanceNetworkTypeRequest extends RpcAcsRequest<ModifyDBIn
 		this.networkType = networkType;
 		if(networkType != null){
 			putQueryParameter("NetworkType", networkType);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -168,6 +162,17 @@ public class ModifyDBInstanceNetworkTypeRequest extends RpcAcsRequest<ModifyDBIn
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

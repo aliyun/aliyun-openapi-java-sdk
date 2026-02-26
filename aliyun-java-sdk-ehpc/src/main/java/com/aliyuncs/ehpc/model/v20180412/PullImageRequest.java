@@ -33,7 +33,7 @@ public class PullImageRequest extends RpcAcsRequest<PullImageResponse> {
 
 	private String imageTag;
 	public PullImageRequest() {
-		super("EHPC", "2018-04-12", "PullImage");
+		super("EHPC", "2018-04-12", "PullImage", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

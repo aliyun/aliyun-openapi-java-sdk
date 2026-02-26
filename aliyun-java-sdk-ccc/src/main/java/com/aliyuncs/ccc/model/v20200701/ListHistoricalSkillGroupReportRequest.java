@@ -36,6 +36,8 @@ public class ListHistoricalSkillGroupReportRequest extends RpcAcsRequest<ListHis
 	private String instanceId;
 
 	private Integer pageSize;
+
+	private String mediaType;
 	public ListHistoricalSkillGroupReportRequest() {
 		super("CCC", "2020-07-01", "ListHistoricalSkillGroupReport", "CCC");
 		setMethod(MethodType.POST);
@@ -108,6 +110,17 @@ public class ListHistoricalSkillGroupReportRequest extends RpcAcsRequest<ListHis
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getMediaType() {
+		return this.mediaType;
+	}
+
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+		if(mediaType != null){
+			putQueryParameter("MediaType", mediaType);
 		}
 	}
 

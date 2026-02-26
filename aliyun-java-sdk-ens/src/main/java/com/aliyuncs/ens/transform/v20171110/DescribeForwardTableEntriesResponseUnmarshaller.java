@@ -44,6 +44,11 @@ public class DescribeForwardTableEntriesResponseUnmarshaller {
 			forwardTableEntry.setStatus(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].Status"));
 			forwardTableEntry.setIpProtocol(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].IpProtocol"));
 			forwardTableEntry.setHealthCheckPort(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].HealthCheckPort"));
+			forwardTableEntry.setStandbyExternalIp(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].StandbyExternalIp"));
+			forwardTableEntry.setStandbyStatus(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].StandbyStatus"));
+			forwardTableEntry.setExternalIpIsp(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ExternalIpIsp"));
+			forwardTableEntry.setStandbyExternalIpIsp(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].StandbyExternalIpIsp"));
+			forwardTableEntry.setStandbyEnsRegionId(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].StandbyEnsRegionId"));
 
 			forwardTableEntries.add(forwardTableEntry);
 		}

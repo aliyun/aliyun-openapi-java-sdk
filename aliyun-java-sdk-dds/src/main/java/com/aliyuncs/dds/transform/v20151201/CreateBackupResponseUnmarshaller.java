@@ -24,6 +24,7 @@ public class CreateBackupResponseUnmarshaller {
 		
 		createBackupResponse.setRequestId(_ctx.stringValue("CreateBackupResponse.RequestId"));
 		createBackupResponse.setBackupId(_ctx.stringValue("CreateBackupResponse.BackupId"));
+		createBackupResponse.setBackupJobId(_ctx.stringValue("CreateBackupResponse.BackupJobId"));
 	 
 	 	return createBackupResponse;
 	}

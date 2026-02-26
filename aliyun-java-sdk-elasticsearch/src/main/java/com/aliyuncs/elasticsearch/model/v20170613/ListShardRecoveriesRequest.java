@@ -28,8 +28,6 @@ public class ListShardRecoveriesRequest extends RoaAcsRequest<ListShardRecoverie
 	private Boolean activeOnly;
 
 	private String instanceId;
-
-	private String body;
 	public ListShardRecoveriesRequest() {
 		super("elasticsearch", "2017-06-13", "ListShardRecoveries", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/cat-recovery");
@@ -59,17 +57,6 @@ public class ListShardRecoveriesRequest extends RoaAcsRequest<ListShardRecoverie
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

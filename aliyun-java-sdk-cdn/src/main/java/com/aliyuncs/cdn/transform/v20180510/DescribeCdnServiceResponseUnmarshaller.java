@@ -27,11 +27,11 @@ public class DescribeCdnServiceResponseUnmarshaller {
 	public static DescribeCdnServiceResponse unmarshall(DescribeCdnServiceResponse describeCdnServiceResponse, UnmarshallerContext _ctx) {
 		
 		describeCdnServiceResponse.setRequestId(_ctx.stringValue("DescribeCdnServiceResponse.RequestId"));
-		describeCdnServiceResponse.setInstanceId(_ctx.stringValue("DescribeCdnServiceResponse.InstanceId"));
-		describeCdnServiceResponse.setInternetChargeType(_ctx.stringValue("DescribeCdnServiceResponse.InternetChargeType"));
-		describeCdnServiceResponse.setOpeningTime(_ctx.stringValue("DescribeCdnServiceResponse.OpeningTime"));
-		describeCdnServiceResponse.setChangingChargeType(_ctx.stringValue("DescribeCdnServiceResponse.ChangingChargeType"));
 		describeCdnServiceResponse.setChangingAffectTime(_ctx.stringValue("DescribeCdnServiceResponse.ChangingAffectTime"));
+		describeCdnServiceResponse.setChangingChargeType(_ctx.stringValue("DescribeCdnServiceResponse.ChangingChargeType"));
+		describeCdnServiceResponse.setOpeningTime(_ctx.stringValue("DescribeCdnServiceResponse.OpeningTime"));
+		describeCdnServiceResponse.setInternetChargeType(_ctx.stringValue("DescribeCdnServiceResponse.InternetChargeType"));
+		describeCdnServiceResponse.setInstanceId(_ctx.stringValue("DescribeCdnServiceResponse.InstanceId"));
 
 		List<LockReason> operationLocks = new ArrayList<LockReason>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCdnServiceResponse.OperationLocks.Length"); i++) {

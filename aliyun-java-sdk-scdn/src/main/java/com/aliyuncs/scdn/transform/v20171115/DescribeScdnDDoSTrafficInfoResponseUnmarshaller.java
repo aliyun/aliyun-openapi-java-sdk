@@ -28,18 +28,6 @@ public class DescribeScdnDDoSTrafficInfoResponseUnmarshaller {
 		
 		describeScdnDDoSTrafficInfoResponse.setRequestId(_ctx.stringValue("DescribeScdnDDoSTrafficInfoResponse.RequestId"));
 
-		List<String> bpsDrops = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDDoSTrafficInfoResponse.BpsDrops.Length"); i++) {
-			bpsDrops.add(_ctx.stringValue("DescribeScdnDDoSTrafficInfoResponse.BpsDrops["+ i +"]"));
-		}
-		describeScdnDDoSTrafficInfoResponse.setBpsDrops(bpsDrops);
-
-		List<String> bpsTotals = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDDoSTrafficInfoResponse.BpsTotals.Length"); i++) {
-			bpsTotals.add(_ctx.stringValue("DescribeScdnDDoSTrafficInfoResponse.BpsTotals["+ i +"]"));
-		}
-		describeScdnDDoSTrafficInfoResponse.setBpsTotals(bpsTotals);
-
 		List<String> ppsTotals = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDDoSTrafficInfoResponse.PpsTotals.Length"); i++) {
 			ppsTotals.add(_ctx.stringValue("DescribeScdnDDoSTrafficInfoResponse.PpsTotals["+ i +"]"));
@@ -51,6 +39,18 @@ public class DescribeScdnDDoSTrafficInfoResponseUnmarshaller {
 			ppsDrops.add(_ctx.stringValue("DescribeScdnDDoSTrafficInfoResponse.PpsDrops["+ i +"]"));
 		}
 		describeScdnDDoSTrafficInfoResponse.setPpsDrops(ppsDrops);
+
+		List<String> bpsDrops = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDDoSTrafficInfoResponse.BpsDrops.Length"); i++) {
+			bpsDrops.add(_ctx.stringValue("DescribeScdnDDoSTrafficInfoResponse.BpsDrops["+ i +"]"));
+		}
+		describeScdnDDoSTrafficInfoResponse.setBpsDrops(bpsDrops);
+
+		List<String> bpsTotals = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDDoSTrafficInfoResponse.BpsTotals.Length"); i++) {
+			bpsTotals.add(_ctx.stringValue("DescribeScdnDDoSTrafficInfoResponse.BpsTotals["+ i +"]"));
+		}
+		describeScdnDDoSTrafficInfoResponse.setBpsTotals(bpsTotals);
 
 		List<TimeScope> timeScopes = new ArrayList<TimeScope>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDDoSTrafficInfoResponse.TimeScopes.Length"); i++) {

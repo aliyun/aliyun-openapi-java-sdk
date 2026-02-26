@@ -32,7 +32,7 @@ public class SavePatentContactRequest extends RpcAcsRequest<SavePatentContactRes
 
 	private String email;
 	public SavePatentContactRequest() {
-		super("Copyright", "2019-01-23", "SavePatentContact");
+		super("Copyright", "2019-01-23", "SavePatentContact", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

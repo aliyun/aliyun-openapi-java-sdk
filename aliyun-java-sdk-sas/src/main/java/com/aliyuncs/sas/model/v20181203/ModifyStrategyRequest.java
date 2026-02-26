@@ -25,7 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class ModifyStrategyRequest extends RpcAcsRequest<ModifyStrategyResponse> {
 	   
 
+	private String targetType;
+
 	private String cycleDays;
+
+	private String startTime;
 
 	private String riskSubTypeName;
 
@@ -34,6 +38,8 @@ public class ModifyStrategyRequest extends RpcAcsRequest<ModifyStrategyResponse>
 	private String id;
 
 	private String riskCustomParams;
+
+	private String endTime;
 
 	private String customType;
 
@@ -49,6 +55,17 @@ public class ModifyStrategyRequest extends RpcAcsRequest<ModifyStrategyResponse>
 		} catch (Exception e) {}
 	}
 
+	public String getTargetType() {
+		return this.targetType;
+	}
+
+	public void setTargetType(String targetType) {
+		this.targetType = targetType;
+		if(targetType != null){
+			putQueryParameter("TargetType", targetType);
+		}
+	}
+
 	public String getCycleDays() {
 		return this.cycleDays;
 	}
@@ -57,6 +74,17 @@ public class ModifyStrategyRequest extends RpcAcsRequest<ModifyStrategyResponse>
 		this.cycleDays = cycleDays;
 		if(cycleDays != null){
 			putQueryParameter("CycleDays", cycleDays);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -101,6 +129,17 @@ public class ModifyStrategyRequest extends RpcAcsRequest<ModifyStrategyResponse>
 		this.riskCustomParams = riskCustomParams;
 		if(riskCustomParams != null){
 			putQueryParameter("RiskCustomParams", riskCustomParams);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 

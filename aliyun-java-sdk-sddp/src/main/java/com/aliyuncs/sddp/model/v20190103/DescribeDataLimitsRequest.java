@@ -45,6 +45,8 @@ public class DescribeDataLimitsRequest extends RpcAcsRequest<DescribeDataLimitsR
 
 	private Integer auditStatus;
 
+	private Integer featureType;
+
 	private Long endTime;
 
 	private Integer currentPage;
@@ -166,6 +168,17 @@ public class DescribeDataLimitsRequest extends RpcAcsRequest<DescribeDataLimitsR
 		this.auditStatus = auditStatus;
 		if(auditStatus != null){
 			putQueryParameter("AuditStatus", auditStatus.toString());
+		}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

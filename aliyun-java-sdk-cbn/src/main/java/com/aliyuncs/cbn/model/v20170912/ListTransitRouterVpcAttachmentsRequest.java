@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -31,6 +32,8 @@ public class ListTransitRouterVpcAttachmentsRequest extends RpcAcsRequest<ListTr
 
 	private String nextToken;
 
+	private List<Tag> tags;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -41,9 +44,15 @@ public class ListTransitRouterVpcAttachmentsRequest extends RpcAcsRequest<ListTr
 
 	private String transitRouterAttachmentId;
 
+	private String vpcId;
+
 	private Integer maxResults;
+
+	private String orderType;
+
+	private String status;
 	public ListTransitRouterVpcAttachmentsRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterVpcAttachments");
+		super("Cbn", "2017-09-12", "ListTransitRouterVpcAttachments", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +91,20 @@ public class ListTransitRouterVpcAttachmentsRequest extends RpcAcsRequest<ListTr
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -139,6 +162,17 @@ public class ListTransitRouterVpcAttachmentsRequest extends RpcAcsRequest<ListTr
 		}
 	}
 
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
 	public Integer getMaxResults() {
 		return this.maxResults;
 	}
@@ -147,6 +181,51 @@ public class ListTransitRouterVpcAttachmentsRequest extends RpcAcsRequest<ListTr
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

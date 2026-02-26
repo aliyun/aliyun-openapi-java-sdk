@@ -15,24 +15,22 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTaskDetailHistoryRequest extends RpcAcsRequest<QueryTaskDetailHistoryResponse> {
-	
-	public QueryTaskDetailHistoryRequest() {
-		super("Domain-intl", "2017-12-18", "QueryTaskDetailHistory", "domain");
-	}
+	   
+
+	private String domainName;
 
 	private Integer taskStatus;
 
 	private String userClientIp;
 
 	private String taskNo;
-
-	private String domainName;
 
 	private Integer pageSize;
 
@@ -41,6 +39,21 @@ public class QueryTaskDetailHistoryRequest extends RpcAcsRequest<QueryTaskDetail
 	private String lang;
 
 	private String domainNameCursor;
+	public QueryTaskDetailHistoryRequest() {
+		super("Domain-intl", "2017-12-18", "QueryTaskDetailHistory");
+		setMethod(MethodType.POST);
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
 
 	public Integer getTaskStatus() {
 		return this.taskStatus;
@@ -72,17 +85,6 @@ public class QueryTaskDetailHistoryRequest extends RpcAcsRequest<QueryTaskDetail
 		this.taskNo = taskNo;
 		if(taskNo != null){
 			putQueryParameter("TaskNo", taskNo);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 

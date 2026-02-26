@@ -25,11 +25,15 @@ import com.aliyuncs.arms.Endpoint;
 public class ListNotificationPoliciesRequest extends RpcAcsRequest<ListNotificationPoliciesResponse> {
 	   
 
+	private Boolean isDetail;
+
+	private Boolean directedMode;
+
 	private Long size;
 
 	private String name;
 
-	private Boolean isDetail;
+	private String ids;
 
 	private Long page;
 	public ListNotificationPoliciesRequest() {
@@ -39,6 +43,28 @@ public class ListNotificationPoliciesRequest extends RpcAcsRequest<ListNotificat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getIsDetail() {
+		return this.isDetail;
+	}
+
+	public void setIsDetail(Boolean isDetail) {
+		this.isDetail = isDetail;
+		if(isDetail != null){
+			putQueryParameter("IsDetail", isDetail.toString());
+		}
+	}
+
+	public Boolean getDirectedMode() {
+		return this.directedMode;
+	}
+
+	public void setDirectedMode(Boolean directedMode) {
+		this.directedMode = directedMode;
+		if(directedMode != null){
+			putQueryParameter("DirectedMode", directedMode.toString());
+		}
 	}
 
 	public Long getSize() {
@@ -63,14 +89,14 @@ public class ListNotificationPoliciesRequest extends RpcAcsRequest<ListNotificat
 		}
 	}
 
-	public Boolean getIsDetail() {
-		return this.isDetail;
+	public String getIds() {
+		return this.ids;
 	}
 
-	public void setIsDetail(Boolean isDetail) {
-		this.isDetail = isDetail;
-		if(isDetail != null){
-			putQueryParameter("IsDetail", isDetail.toString());
+	public void setIds(String ids) {
+		this.ids = ids;
+		if(ids != null){
+			putQueryParameter("Ids", ids);
 		}
 	}
 

@@ -27,6 +27,8 @@ public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
 
 	private Long resourceOwnerId;
 
+	private String securityToken;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -34,8 +36,6 @@ public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
 	private Long ownerId;
 
 	private String instanceId;
-
-	private String securityToken;
 	public FlushInstanceRequest() {
 		super("R-kvstore", "2015-01-01", "FlushInstance", "redisa");
 		setMethod(MethodType.POST);
@@ -53,6 +53,17 @@ public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -97,17 +108,6 @@ public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

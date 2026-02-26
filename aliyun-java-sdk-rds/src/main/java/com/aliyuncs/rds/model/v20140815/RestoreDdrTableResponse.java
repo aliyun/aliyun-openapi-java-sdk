@@ -24,7 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RestoreDdrTableResponse extends AcsResponse {
 
+	private String dBInstanceId;
+
 	private String requestId;
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;

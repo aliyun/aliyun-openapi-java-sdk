@@ -27,11 +27,19 @@ public class GetChatappTemplateDetailRequest extends RpcAcsRequest<GetChatappTem
 
 	private String language;
 
-	private Long ownerId;
+	private String custWabaId;
+
+	private String templateType;
+
+	private String templateName;
+
+	private String isvCode;
+
+	private String custSpaceId;
 
 	private String templateCode;
 	public GetChatappTemplateDetailRequest() {
-		super("cams", "2020-06-06", "GetChatappTemplateDetail");
+		super("cams", "2020-06-06", "GetChatappTemplateDetail", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,14 +58,58 @@ public class GetChatappTemplateDetailRequest extends RpcAcsRequest<GetChatappTem
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getCustWabaId() {
+		return this.custWabaId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setCustWabaId(String custWabaId) {
+		this.custWabaId = custWabaId;
+		if(custWabaId != null){
+			putQueryParameter("CustWabaId", custWabaId);
+		}
+	}
+
+	public String getTemplateType() {
+		return this.templateType;
+	}
+
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
+		}
+	}
+
+	public String getTemplateName() {
+		return this.templateName;
+	}
+
+	public void setTemplateName(String templateName) {
+		this.templateName = templateName;
+		if(templateName != null){
+			putQueryParameter("TemplateName", templateName);
+		}
+	}
+
+	public String getIsvCode() {
+		return this.isvCode;
+	}
+
+	public void setIsvCode(String isvCode) {
+		this.isvCode = isvCode;
+		if(isvCode != null){
+			putQueryParameter("IsvCode", isvCode);
+		}
+	}
+
+	public String getCustSpaceId() {
+		return this.custSpaceId;
+	}
+
+	public void setCustSpaceId(String custSpaceId) {
+		this.custSpaceId = custSpaceId;
+		if(custSpaceId != null){
+			putQueryParameter("CustSpaceId", custSpaceId);
 		}
 	}
 

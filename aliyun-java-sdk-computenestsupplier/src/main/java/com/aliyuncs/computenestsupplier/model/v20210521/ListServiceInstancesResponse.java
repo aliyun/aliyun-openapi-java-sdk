@@ -31,7 +31,7 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String maxResults;
+	private Integer maxResults;
 
 	private List<ServiceInstance> serviceInstances;
 
@@ -59,11 +59,11 @@ public class ListServiceInstancesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 
@@ -80,6 +80,8 @@ public class ListServiceInstancesResponse extends AcsResponse {
 		private String status;
 
 		private String updateTime;
+
+		private String name;
 
 		private String serviceInstanceId;
 
@@ -109,6 +111,14 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		private String serviceType;
 
+		private String payType;
+
+		private Boolean isOperated;
+
+		private String resourceGroupId;
+
+		private String bizStatus;
+
 		private List<Tag> tags;
 
 		private Service service;
@@ -127,6 +137,14 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getServiceInstanceId() {
@@ -241,6 +259,38 @@ public class ListServiceInstancesResponse extends AcsResponse {
 			this.serviceType = serviceType;
 		}
 
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public Boolean getIsOperated() {
+			return this.isOperated;
+		}
+
+		public void setIsOperated(Boolean isOperated) {
+			this.isOperated = isOperated;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getBizStatus() {
+			return this.bizStatus;
+		}
+
+		public void setBizStatus(String bizStatus) {
+			this.bizStatus = bizStatus;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -301,6 +351,10 @@ public class ListServiceInstancesResponse extends AcsResponse {
 			private String versionName;
 
 			private String deployMetadata;
+
+			private Boolean enablePrivateVpcConnection;
+
+			private String sourceSupplierName;
 
 			private List<ServiceInfo> serviceInfos;
 
@@ -382,6 +436,22 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 			public void setDeployMetadata(String deployMetadata) {
 				this.deployMetadata = deployMetadata;
+			}
+
+			public Boolean getEnablePrivateVpcConnection() {
+				return this.enablePrivateVpcConnection;
+			}
+
+			public void setEnablePrivateVpcConnection(Boolean enablePrivateVpcConnection) {
+				this.enablePrivateVpcConnection = enablePrivateVpcConnection;
+			}
+
+			public String getSourceSupplierName() {
+				return this.sourceSupplierName;
+			}
+
+			public void setSourceSupplierName(String sourceSupplierName) {
+				this.sourceSupplierName = sourceSupplierName;
 			}
 
 			public List<ServiceInfo> getServiceInfos() {

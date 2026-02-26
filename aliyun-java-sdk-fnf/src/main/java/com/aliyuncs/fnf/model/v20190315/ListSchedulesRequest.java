@@ -27,8 +27,6 @@ public class ListSchedulesRequest extends RpcAcsRequest<ListSchedulesResponse> {
 
 	private String nextToken;
 
-	private String requestId;
-
 	private Integer limit;
 
 	private String flowName;
@@ -49,17 +47,6 @@ public class ListSchedulesRequest extends RpcAcsRequest<ListSchedulesResponse> {
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 

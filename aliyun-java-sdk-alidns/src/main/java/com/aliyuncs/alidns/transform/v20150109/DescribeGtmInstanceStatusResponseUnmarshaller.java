@@ -23,12 +23,12 @@ public class DescribeGtmInstanceStatusResponseUnmarshaller {
 	public static DescribeGtmInstanceStatusResponse unmarshall(DescribeGtmInstanceStatusResponse describeGtmInstanceStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeGtmInstanceStatusResponse.setRequestId(_ctx.stringValue("DescribeGtmInstanceStatusResponse.RequestId"));
+		describeGtmInstanceStatusResponse.setStatus(_ctx.stringValue("DescribeGtmInstanceStatusResponse.Status"));
+		describeGtmInstanceStatusResponse.setStrategyNotAvailableNum(_ctx.integerValue("DescribeGtmInstanceStatusResponse.StrategyNotAvailableNum"));
+		describeGtmInstanceStatusResponse.setSwitchToFailoverStrategyNum(_ctx.integerValue("DescribeGtmInstanceStatusResponse.SwitchToFailoverStrategyNum"));
+		describeGtmInstanceStatusResponse.setStatusReason(_ctx.stringValue("DescribeGtmInstanceStatusResponse.StatusReason"));
 		describeGtmInstanceStatusResponse.setAddrNotAvailableNum(_ctx.integerValue("DescribeGtmInstanceStatusResponse.AddrNotAvailableNum"));
 		describeGtmInstanceStatusResponse.setAddrPoolNotAvailableNum(_ctx.integerValue("DescribeGtmInstanceStatusResponse.AddrPoolNotAvailableNum"));
-		describeGtmInstanceStatusResponse.setSwitchToFailoverStrategyNum(_ctx.integerValue("DescribeGtmInstanceStatusResponse.SwitchToFailoverStrategyNum"));
-		describeGtmInstanceStatusResponse.setStrategyNotAvailableNum(_ctx.integerValue("DescribeGtmInstanceStatusResponse.StrategyNotAvailableNum"));
-		describeGtmInstanceStatusResponse.setStatus(_ctx.stringValue("DescribeGtmInstanceStatusResponse.Status"));
-		describeGtmInstanceStatusResponse.setStatusReason(_ctx.stringValue("DescribeGtmInstanceStatusResponse.StatusReason"));
 	 
 	 	return describeGtmInstanceStatusResponse;
 	}

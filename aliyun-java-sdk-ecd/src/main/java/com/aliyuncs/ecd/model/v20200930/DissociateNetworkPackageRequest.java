@@ -27,7 +27,7 @@ public class DissociateNetworkPackageRequest extends RpcAcsRequest<DissociateNet
 
 	private String networkPackageId;
 	public DissociateNetworkPackageRequest() {
-		super("ecd", "2020-09-30", "DissociateNetworkPackage");
+		super("ecd", "2020-09-30", "DissociateNetworkPackage", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

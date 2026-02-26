@@ -39,7 +39,7 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 
 	private String accountPassword;
 	public ResetAccountPasswordRequest() {
-		super("clickhouse", "2019-11-11", "ResetAccountPassword");
+		super("clickhouse", "2019-11-11", "ResetAccountPassword", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

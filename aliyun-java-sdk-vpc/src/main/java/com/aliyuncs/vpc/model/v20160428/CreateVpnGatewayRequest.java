@@ -33,6 +33,8 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 
 	private String networkType;
 
+	private String resourceGroupId;
+
 	private String instanceChargeType;
 
 	private Integer period;
@@ -44,6 +46,8 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 	private Integer bandwidth;
 
 	private String ownerAccount;
+
+	private String disasterRecoveryVSwitchId;
 
 	private Long ownerId;
 
@@ -111,6 +115,17 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getInstanceChargeType() {
 		return this.instanceChargeType;
 	}
@@ -174,6 +189,17 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDisasterRecoveryVSwitchId() {
+		return this.disasterRecoveryVSwitchId;
+	}
+
+	public void setDisasterRecoveryVSwitchId(String disasterRecoveryVSwitchId) {
+		this.disasterRecoveryVSwitchId = disasterRecoveryVSwitchId;
+		if(disasterRecoveryVSwitchId != null){
+			putQueryParameter("DisasterRecoveryVSwitchId", disasterRecoveryVSwitchId);
 		}
 	}
 

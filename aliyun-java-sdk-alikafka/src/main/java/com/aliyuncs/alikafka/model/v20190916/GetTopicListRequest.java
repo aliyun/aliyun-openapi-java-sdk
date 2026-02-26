@@ -25,11 +25,13 @@ import com.aliyuncs.alikafka.Endpoint;
 public class GetTopicListRequest extends RpcAcsRequest<GetTopicListResponse> {
 	   
 
+	private String pageSize;
+
 	private String currentPage;
 
 	private String instanceId;
 
-	private String pageSize;
+	private String topic;
 	public GetTopicListRequest() {
 		super("alikafka", "2019-09-16", "GetTopicList", "alikafka");
 		setMethod(MethodType.POST);
@@ -37,6 +39,17 @@ public class GetTopicListRequest extends RpcAcsRequest<GetTopicListResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
+		}
 	}
 
 	public String getCurrentPage() {
@@ -61,14 +74,14 @@ public class GetTopicListRequest extends RpcAcsRequest<GetTopicListResponse> {
 		}
 	}
 
-	public String getPageSize() {
-		return this.pageSize;
+	public String getTopic() {
+		return this.topic;
 	}
 
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
+	public void setTopic(String topic) {
+		this.topic = topic;
+		if(topic != null){
+			putQueryParameter("Topic", topic);
 		}
 	}
 

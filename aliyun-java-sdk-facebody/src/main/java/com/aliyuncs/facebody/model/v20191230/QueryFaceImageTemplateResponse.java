@@ -67,7 +67,17 @@ public class QueryFaceImageTemplateResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long total;
+
 		private List<ElementsItem> elements;
+
+		public Long getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Long total) {
+			this.total = total;
+		}
 
 		public List<ElementsItem> getElements() {
 			return this.elements;
@@ -88,6 +98,8 @@ public class QueryFaceImageTemplateResponse extends AcsResponse {
 			private String templateId;
 
 			private String templateURL;
+
+			private List<FaceInfosItem> faceInfos;
 
 			public String getCreateTime() {
 				return this.createTime;
@@ -127,6 +139,80 @@ public class QueryFaceImageTemplateResponse extends AcsResponse {
 
 			public void setTemplateURL(String templateURL) {
 				this.templateURL = templateURL;
+			}
+
+			public List<FaceInfosItem> getFaceInfos() {
+				return this.faceInfos;
+			}
+
+			public void setFaceInfos(List<FaceInfosItem> faceInfos) {
+				this.faceInfos = faceInfos;
+			}
+
+			public static class FaceInfosItem {
+
+				private String templateFaceID;
+
+				private FaceRect faceRect;
+
+				public String getTemplateFaceID() {
+					return this.templateFaceID;
+				}
+
+				public void setTemplateFaceID(String templateFaceID) {
+					this.templateFaceID = templateFaceID;
+				}
+
+				public FaceRect getFaceRect() {
+					return this.faceRect;
+				}
+
+				public void setFaceRect(FaceRect faceRect) {
+					this.faceRect = faceRect;
+				}
+
+				public static class FaceRect {
+
+					private String x;
+
+					private String y;
+
+					private String height;
+
+					private String width;
+
+					public String getX() {
+						return this.x;
+					}
+
+					public void setX(String x) {
+						this.x = x;
+					}
+
+					public String getY() {
+						return this.y;
+					}
+
+					public void setY(String y) {
+						this.y = y;
+					}
+
+					public String getHeight() {
+						return this.height;
+					}
+
+					public void setHeight(String height) {
+						this.height = height;
+					}
+
+					public String getWidth() {
+						return this.width;
+					}
+
+					public void setWidth(String width) {
+						this.width = width;
+					}
+				}
 			}
 		}
 	}

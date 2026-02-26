@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -27,6 +28,8 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 
 	private Long resourceOwnerId;
 
+	private List<String> networkInterfaceIds;
+
 	private String sourceCIDR;
 
 	private String snatIp;
@@ -38,6 +41,8 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 	private Integer pageSize;
 
 	private String snatEntryId;
+
+	private String natGatewayId;
 
 	private String resourceOwnerAccount;
 
@@ -66,6 +71,19 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public List<String> getNetworkInterfaceIds() {
+		return this.networkInterfaceIds;
+	}
+
+	public void setNetworkInterfaceIds(List<String> networkInterfaceIds) {
+		this.networkInterfaceIds = networkInterfaceIds;	
+		if (networkInterfaceIds != null) {
+			for (int depth1 = 0; depth1 < networkInterfaceIds.size(); depth1++) {
+				putQueryParameter("NetworkInterfaceIds." + (depth1 + 1) , networkInterfaceIds.get(depth1));
+			}
+		}	
 	}
 
 	public String getSourceCIDR() {
@@ -131,6 +149,17 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 		this.snatEntryId = snatEntryId;
 		if(snatEntryId != null){
 			putQueryParameter("SnatEntryId", snatEntryId);
+		}
+	}
+
+	public String getNatGatewayId() {
+		return this.natGatewayId;
+	}
+
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
+		if(natGatewayId != null){
+			putQueryParameter("NatGatewayId", natGatewayId);
 		}
 	}
 

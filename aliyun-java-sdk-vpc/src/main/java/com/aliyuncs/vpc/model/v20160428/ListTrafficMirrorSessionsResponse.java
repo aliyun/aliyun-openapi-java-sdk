@@ -91,6 +91,14 @@ public class ListTrafficMirrorSessionsResponse extends AcsResponse {
 
 		private String trafficMirrorSessionName;
 
+		private String resourceGroupId;
+
+		private String creationTime;
+
+		private Integer trafficMirrorSourceTruncateMode;
+
+		private List<Tag> tags;
+
 		private List<String> trafficMirrorSourceIds;
 
 		public String getTrafficMirrorTargetId() {
@@ -189,12 +197,67 @@ public class ListTrafficMirrorSessionsResponse extends AcsResponse {
 			this.trafficMirrorSessionName = trafficMirrorSessionName;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public Integer getTrafficMirrorSourceTruncateMode() {
+			return this.trafficMirrorSourceTruncateMode;
+		}
+
+		public void setTrafficMirrorSourceTruncateMode(Integer trafficMirrorSourceTruncateMode) {
+			this.trafficMirrorSourceTruncateMode = trafficMirrorSourceTruncateMode;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getTrafficMirrorSourceIds() {
 			return this.trafficMirrorSourceIds;
 		}
 
 		public void setTrafficMirrorSourceIds(List<String> trafficMirrorSourceIds) {
 			this.trafficMirrorSourceIds = trafficMirrorSourceIds;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

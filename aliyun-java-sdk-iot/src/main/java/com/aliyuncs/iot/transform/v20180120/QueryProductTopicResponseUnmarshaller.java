@@ -39,6 +39,8 @@ public class QueryProductTopicResponseUnmarshaller {
 			productTopicInfo.setOperation(_ctx.stringValue("QueryProductTopicResponse.Data["+ i +"].Operation"));
 			productTopicInfo.setDesc(_ctx.stringValue("QueryProductTopicResponse.Data["+ i +"].Desc"));
 			productTopicInfo.setId(_ctx.stringValue("QueryProductTopicResponse.Data["+ i +"].Id"));
+			productTopicInfo.setEnableProxySubscribe(_ctx.booleanValue("QueryProductTopicResponse.Data["+ i +"].EnableProxySubscribe"));
+			productTopicInfo.setCodec(_ctx.stringValue("QueryProductTopicResponse.Data["+ i +"].Codec"));
 
 			data.add(productTopicInfo);
 		}

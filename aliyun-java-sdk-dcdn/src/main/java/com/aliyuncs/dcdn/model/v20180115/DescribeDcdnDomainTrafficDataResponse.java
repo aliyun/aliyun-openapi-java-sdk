@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnDomainTrafficDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String startTime;
-
-	private String endTime;
-
 	private String dataInterval;
 
 	private List<DataModule> trafficDataPerInterval;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeDcdnDomainTrafficDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public String getDataInterval() {
@@ -87,24 +87,32 @@ public class DescribeDcdnDomainTrafficDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
+		private Float staticHttpTraffic;
+
+		private Float dynamicHttpsTraffic;
 
 		private Float traffic;
 
 		private Float dynamicHttpTraffic;
 
-		private Float dynamicHttpsTraffic;
-
-		private Float staticHttpTraffic;
+		private String timeStamp;
 
 		private Float staticHttpsTraffic;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
+		public Float getStaticHttpTraffic() {
+			return this.staticHttpTraffic;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
+		public void setStaticHttpTraffic(Float staticHttpTraffic) {
+			this.staticHttpTraffic = staticHttpTraffic;
+		}
+
+		public Float getDynamicHttpsTraffic() {
+			return this.dynamicHttpsTraffic;
+		}
+
+		public void setDynamicHttpsTraffic(Float dynamicHttpsTraffic) {
+			this.dynamicHttpsTraffic = dynamicHttpsTraffic;
 		}
 
 		public Float getTraffic() {
@@ -123,20 +131,12 @@ public class DescribeDcdnDomainTrafficDataResponse extends AcsResponse {
 			this.dynamicHttpTraffic = dynamicHttpTraffic;
 		}
 
-		public Float getDynamicHttpsTraffic() {
-			return this.dynamicHttpsTraffic;
+		public String getTimeStamp() {
+			return this.timeStamp;
 		}
 
-		public void setDynamicHttpsTraffic(Float dynamicHttpsTraffic) {
-			this.dynamicHttpsTraffic = dynamicHttpsTraffic;
-		}
-
-		public Float getStaticHttpTraffic() {
-			return this.staticHttpTraffic;
-		}
-
-		public void setStaticHttpTraffic(Float staticHttpTraffic) {
-			this.staticHttpTraffic = staticHttpTraffic;
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 
 		public Float getStaticHttpsTraffic() {

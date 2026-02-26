@@ -32,6 +32,8 @@ public class CreateVpcEndpointServiceResponseUnmarshaller {
 		createVpcEndpointServiceResponse.setZoneAffinityEnabled(_ctx.booleanValue("CreateVpcEndpointServiceResponse.ZoneAffinityEnabled"));
 		createVpcEndpointServiceResponse.setAutoAcceptEnabled(_ctx.booleanValue("CreateVpcEndpointServiceResponse.AutoAcceptEnabled"));
 		createVpcEndpointServiceResponse.setServiceId(_ctx.stringValue("CreateVpcEndpointServiceResponse.ServiceId"));
+		createVpcEndpointServiceResponse.setServiceSupportIPv6(_ctx.booleanValue("CreateVpcEndpointServiceResponse.ServiceSupportIPv6"));
+		createVpcEndpointServiceResponse.setResourceGroupId(_ctx.stringValue("CreateVpcEndpointServiceResponse.ResourceGroupId"));
 	 
 	 	return createVpcEndpointServiceResponse;
 	}

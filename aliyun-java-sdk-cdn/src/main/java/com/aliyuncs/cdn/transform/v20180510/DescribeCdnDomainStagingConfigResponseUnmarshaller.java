@@ -28,13 +28,15 @@ public class DescribeCdnDomainStagingConfigResponseUnmarshaller {
 	public static DescribeCdnDomainStagingConfigResponse unmarshall(DescribeCdnDomainStagingConfigResponse describeCdnDomainStagingConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeCdnDomainStagingConfigResponse.setRequestId(_ctx.stringValue("DescribeCdnDomainStagingConfigResponse.RequestId"));
+		describeCdnDomainStagingConfigResponse.setDomainName(_ctx.stringValue("DescribeCdnDomainStagingConfigResponse.DomainName"));
 
 		List<DomainConfig> domainConfigs = new ArrayList<DomainConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCdnDomainStagingConfigResponse.DomainConfigs.Length"); i++) {
 			DomainConfig domainConfig = new DomainConfig();
-			domainConfig.setFunctionName(_ctx.stringValue("DescribeCdnDomainStagingConfigResponse.DomainConfigs["+ i +"].FunctionName"));
-			domainConfig.setConfigId(_ctx.stringValue("DescribeCdnDomainStagingConfigResponse.DomainConfigs["+ i +"].ConfigId"));
 			domainConfig.setStatus(_ctx.stringValue("DescribeCdnDomainStagingConfigResponse.DomainConfigs["+ i +"].Status"));
+			domainConfig.setParentId(_ctx.stringValue("DescribeCdnDomainStagingConfigResponse.DomainConfigs["+ i +"].ParentId"));
+			domainConfig.setConfigId(_ctx.stringValue("DescribeCdnDomainStagingConfigResponse.DomainConfigs["+ i +"].ConfigId"));
+			domainConfig.setFunctionName(_ctx.stringValue("DescribeCdnDomainStagingConfigResponse.DomainConfigs["+ i +"].FunctionName"));
 
 			List<FunctionArg> functionArgs = new ArrayList<FunctionArg>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCdnDomainStagingConfigResponse.DomainConfigs["+ i +"].FunctionArgs.Length"); j++) {

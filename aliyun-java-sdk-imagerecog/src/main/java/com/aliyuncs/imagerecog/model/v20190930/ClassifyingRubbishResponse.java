@@ -69,21 +69,13 @@ public class ClassifyingRubbishResponse extends AcsResponse {
 
 		public static class Element {
 
-			private String category;
-
 			private Float categoryScore;
 
 			private String rubbish;
 
 			private Float rubbishScore;
 
-			public String getCategory() {
-				return this.category;
-			}
-
-			public void setCategory(String category) {
-				this.category = category;
-			}
+			private String category;
 
 			public Float getCategoryScore() {
 				return this.categoryScore;
@@ -107,6 +99,14 @@ public class ClassifyingRubbishResponse extends AcsResponse {
 
 			public void setRubbishScore(Float rubbishScore) {
 				this.rubbishScore = rubbishScore;
+			}
+
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
 			}
 		}
 	}

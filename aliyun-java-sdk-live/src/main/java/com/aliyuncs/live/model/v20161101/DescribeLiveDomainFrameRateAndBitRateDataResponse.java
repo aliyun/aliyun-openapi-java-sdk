@@ -47,29 +47,13 @@ public class DescribeLiveDomainFrameRateAndBitRateDataResponse extends AcsRespon
 
 	public static class FrameRateAndBitRateInfo {
 
-		private Float audioFrameRate;
-
-		private Float bitRate;
-
 		private Float videoFrameRate;
 
 		private String streamUrl;
 
-		public Float getAudioFrameRate() {
-			return this.audioFrameRate;
-		}
+		private Float audioFrameRate;
 
-		public void setAudioFrameRate(Float audioFrameRate) {
-			this.audioFrameRate = audioFrameRate;
-		}
-
-		public Float getBitRate() {
-			return this.bitRate;
-		}
-
-		public void setBitRate(Float bitRate) {
-			this.bitRate = bitRate;
-		}
+		private Float bitRate;
 
 		public Float getVideoFrameRate() {
 			return this.videoFrameRate;
@@ -85,6 +69,22 @@ public class DescribeLiveDomainFrameRateAndBitRateDataResponse extends AcsRespon
 
 		public void setStreamUrl(String streamUrl) {
 			this.streamUrl = streamUrl;
+		}
+
+		public Float getAudioFrameRate() {
+			return this.audioFrameRate;
+		}
+
+		public void setAudioFrameRate(Float audioFrameRate) {
+			this.audioFrameRate = audioFrameRate;
+		}
+
+		public Float getBitRate() {
+			return this.bitRate;
+		}
+
+		public void setBitRate(Float bitRate) {
+			this.bitRate = bitRate;
 		}
 	}
 

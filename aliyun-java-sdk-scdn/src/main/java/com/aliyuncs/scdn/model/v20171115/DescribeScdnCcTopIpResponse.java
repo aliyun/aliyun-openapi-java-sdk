@@ -67,17 +67,9 @@ public class DescribeScdnCcTopIpResponse extends AcsResponse {
 
 	public static class AttackIpDatas {
 
-		private String ip;
-
 		private String attackCount;
 
-		public String getIp() {
-			return this.ip;
-		}
-
-		public void setIp(String ip) {
-			this.ip = ip;
-		}
+		private String ip;
 
 		public String getAttackCount() {
 			return this.attackCount;
@@ -85,6 +77,14 @@ public class DescribeScdnCcTopIpResponse extends AcsResponse {
 
 		public void setAttackCount(String attackCount) {
 			this.attackCount = attackCount;
+		}
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
 		}
 	}
 

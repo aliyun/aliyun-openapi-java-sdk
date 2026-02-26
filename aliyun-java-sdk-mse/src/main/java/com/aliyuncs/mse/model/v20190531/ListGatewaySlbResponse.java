@@ -107,6 +107,22 @@ public class ListGatewaySlbResponse extends AcsResponse {
 
 		private String statusDesc;
 
+		private String vServerGroupId;
+
+		private Integer httpPort;
+
+		private Integer httpsPort;
+
+		private Integer serviceWeight;
+
+		private Boolean editEnable;
+
+		private String httpsVServerGroupId;
+
+		private String vsMetaInfo;
+
+		private List<Service> vServiceList;
+
 		public String getId() {
 			return this.id;
 		}
@@ -185,6 +201,113 @@ public class ListGatewaySlbResponse extends AcsResponse {
 
 		public void setStatusDesc(String statusDesc) {
 			this.statusDesc = statusDesc;
+		}
+
+		public String getVServerGroupId() {
+			return this.vServerGroupId;
+		}
+
+		public void setVServerGroupId(String vServerGroupId) {
+			this.vServerGroupId = vServerGroupId;
+		}
+
+		public Integer getHttpPort() {
+			return this.httpPort;
+		}
+
+		public void setHttpPort(Integer httpPort) {
+			this.httpPort = httpPort;
+		}
+
+		public Integer getHttpsPort() {
+			return this.httpsPort;
+		}
+
+		public void setHttpsPort(Integer httpsPort) {
+			this.httpsPort = httpsPort;
+		}
+
+		public Integer getServiceWeight() {
+			return this.serviceWeight;
+		}
+
+		public void setServiceWeight(Integer serviceWeight) {
+			this.serviceWeight = serviceWeight;
+		}
+
+		public Boolean getEditEnable() {
+			return this.editEnable;
+		}
+
+		public void setEditEnable(Boolean editEnable) {
+			this.editEnable = editEnable;
+		}
+
+		public String getHttpsVServerGroupId() {
+			return this.httpsVServerGroupId;
+		}
+
+		public void setHttpsVServerGroupId(String httpsVServerGroupId) {
+			this.httpsVServerGroupId = httpsVServerGroupId;
+		}
+
+		public String getVsMetaInfo() {
+			return this.vsMetaInfo;
+		}
+
+		public void setVsMetaInfo(String vsMetaInfo) {
+			this.vsMetaInfo = vsMetaInfo;
+		}
+
+		public List<Service> getVServiceList() {
+			return this.vServiceList;
+		}
+
+		public void setVServiceList(List<Service> vServiceList) {
+			this.vServiceList = vServiceList;
+		}
+
+		public static class Service {
+
+			private String port;
+
+			private String protocol;
+
+			private String vServerGroupId;
+
+			private String vServerGroupName;
+
+			public String getPort() {
+				return this.port;
+			}
+
+			public void setPort(String port) {
+				this.port = port;
+			}
+
+			public String getBizProtocol() {
+				return this.protocol;
+			}
+
+			public void setBizProtocol(String protocol) {
+				this.protocol = protocol;
+			}
+
+			public String getVServerGroupId() {
+				return this.vServerGroupId;
+			}
+
+			public void setVServerGroupId(String vServerGroupId) {
+				this.vServerGroupId = vServerGroupId;
+			}
+
+			public String getVServerGroupName() {
+				return this.vServerGroupName;
+			}
+
+			public void setVServerGroupName(String vServerGroupName) {
+				this.vServerGroupName = vServerGroupName;
+			}
 		}
 	}
 

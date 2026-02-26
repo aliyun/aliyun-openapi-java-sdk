@@ -24,6 +24,9 @@ public class SaveTraceAppConfigResponseUnmarshaller {
 		
 		saveTraceAppConfigResponse.setRequestId(_ctx.stringValue("SaveTraceAppConfigResponse.RequestId"));
 		saveTraceAppConfigResponse.setData(_ctx.stringValue("SaveTraceAppConfigResponse.Data"));
+		saveTraceAppConfigResponse.setMessage(_ctx.stringValue("SaveTraceAppConfigResponse.Message"));
+		saveTraceAppConfigResponse.setCode(_ctx.longValue("SaveTraceAppConfigResponse.Code"));
+		saveTraceAppConfigResponse.setSuccess(_ctx.booleanValue("SaveTraceAppConfigResponse.Success"));
 	 
 	 	return saveTraceAppConfigResponse;
 	}

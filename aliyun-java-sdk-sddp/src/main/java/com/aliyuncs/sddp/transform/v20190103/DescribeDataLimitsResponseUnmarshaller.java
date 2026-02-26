@@ -74,6 +74,19 @@ public class DescribeDataLimitsResponseUnmarshaller {
 			dataLimit.setProcessStatus(_ctx.integerValue("DescribeDataLimitsResponse.Items["+ i +"].ProcessStatus"));
 			dataLimit.setId(_ctx.longValue("DescribeDataLimitsResponse.Items["+ i +"].Id"));
 			dataLimit.setEnable(_ctx.integerValue("DescribeDataLimitsResponse.Items["+ i +"].Enable"));
+			dataLimit.setVpcId(_ctx.stringValue("DescribeDataLimitsResponse.Items["+ i +"].VpcId"));
+
+			List<String> securityGroupIdList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDataLimitsResponse.Items["+ i +"].SecurityGroupIdList.Length"); j++) {
+				securityGroupIdList.add(_ctx.stringValue("DescribeDataLimitsResponse.Items["+ i +"].SecurityGroupIdList["+ j +"]"));
+			}
+			dataLimit.setSecurityGroupIdList(securityGroupIdList);
+
+			List<String> vSwitchIdList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDataLimitsResponse.Items["+ i +"].VSwitchIdList.Length"); j++) {
+				vSwitchIdList.add(_ctx.stringValue("DescribeDataLimitsResponse.Items["+ i +"].VSwitchIdList["+ j +"]"));
+			}
+			dataLimit.setVSwitchIdList(vSwitchIdList);
 
 			items.add(dataLimit);
 		}

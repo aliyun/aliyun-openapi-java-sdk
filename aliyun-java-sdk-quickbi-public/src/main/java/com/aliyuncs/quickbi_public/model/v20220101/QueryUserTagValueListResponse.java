@@ -57,18 +57,18 @@ public class QueryUserTagValueListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String tagValue;
+		private String tagId;
 
 		private String tagName;
 
-		private String tagId;
+		private String tagValue;
 
-		public String getTagValue() {
-			return this.tagValue;
+		public String getTagId() {
+			return this.tagId;
 		}
 
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
+		public void setTagId(String tagId) {
+			this.tagId = tagId;
 		}
 
 		public String getTagName() {
@@ -79,12 +79,12 @@ public class QueryUserTagValueListResponse extends AcsResponse {
 			this.tagName = tagName;
 		}
 
-		public String getTagId() {
-			return this.tagId;
+		public String getTagValue() {
+			return this.tagValue;
 		}
 
-		public void setTagId(String tagId) {
-			this.tagId = tagId;
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 	}
 

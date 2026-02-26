@@ -25,28 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainPathDataResponse extends AcsResponse {
 
-	private String domainName;
+	private String endTime;
 
 	private String startTime;
-
-	private String endTime;
 
 	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private String dataInterval;
-
 	private Integer totalCount;
+
+	private String domainName;
+
+	private String dataInterval;
 
 	private List<UsageData> pathDataPerInterval;
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getStartTime() {
@@ -55,14 +55,6 @@ public class DescribeDomainPathDataResponse extends AcsResponse {
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public Integer getPageSize() {
@@ -81,20 +73,28 @@ public class DescribeDomainPathDataResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getDataInterval() {
-		return this.dataInterval;
-	}
-
-	public void setDataInterval(String dataInterval) {
-		this.dataInterval = dataInterval;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
+
+	public String getDataInterval() {
+		return this.dataInterval;
+	}
+
+	public void setDataInterval(String dataInterval) {
+		this.dataInterval = dataInterval;
 	}
 
 	public List<UsageData> getPathDataPerInterval() {
@@ -107,29 +107,13 @@ public class DescribeDomainPathDataResponse extends AcsResponse {
 
 	public static class UsageData {
 
-		private Integer traffic;
-
-		private Integer acc;
-
 		private String path;
 
 		private String time;
 
-		public Integer getTraffic() {
-			return this.traffic;
-		}
+		private Integer acc;
 
-		public void setTraffic(Integer traffic) {
-			this.traffic = traffic;
-		}
-
-		public Integer getAcc() {
-			return this.acc;
-		}
-
-		public void setAcc(Integer acc) {
-			this.acc = acc;
-		}
+		private Integer traffic;
 
 		public String getPath() {
 			return this.path;
@@ -145,6 +129,22 @@ public class DescribeDomainPathDataResponse extends AcsResponse {
 
 		public void setTime(String time) {
 			this.time = time;
+		}
+
+		public Integer getAcc() {
+			return this.acc;
+		}
+
+		public void setAcc(Integer acc) {
+			this.acc = acc;
+		}
+
+		public Integer getTraffic() {
+			return this.traffic;
+		}
+
+		public void setTraffic(Integer traffic) {
+			this.traffic = traffic;
 		}
 	}
 

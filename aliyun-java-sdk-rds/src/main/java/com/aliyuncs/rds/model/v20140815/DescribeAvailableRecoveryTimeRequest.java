@@ -27,6 +27,10 @@ public class DescribeAvailableRecoveryTimeRequest extends RpcAcsRequest<Describe
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
+	private String dBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
@@ -49,6 +53,28 @@ public class DescribeAvailableRecoveryTimeRequest extends RpcAcsRequest<Describe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

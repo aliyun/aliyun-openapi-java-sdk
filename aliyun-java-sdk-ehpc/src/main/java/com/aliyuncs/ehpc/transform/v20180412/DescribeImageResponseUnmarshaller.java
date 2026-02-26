@@ -26,13 +26,13 @@ public class DescribeImageResponseUnmarshaller {
 		describeImageResponse.setRequestId(_ctx.stringValue("DescribeImageResponse.RequestId"));
 
 		ImageInfo imageInfo = new ImageInfo();
-		imageInfo.setSystem(_ctx.stringValue("DescribeImageResponse.ImageInfo.System"));
 		imageInfo.setType(_ctx.stringValue("DescribeImageResponse.ImageInfo.Type"));
 		imageInfo.setStatus(_ctx.stringValue("DescribeImageResponse.ImageInfo.Status"));
-		imageInfo.setImageId(_ctx.stringValue("DescribeImageResponse.ImageInfo.ImageId"));
 		imageInfo.setUpdateDateTime(_ctx.stringValue("DescribeImageResponse.ImageInfo.UpdateDateTime"));
 		imageInfo.setRepository(_ctx.stringValue("DescribeImageResponse.ImageInfo.Repository"));
 		imageInfo.setTag(_ctx.stringValue("DescribeImageResponse.ImageInfo.Tag"));
+		imageInfo.setSystem(_ctx.stringValue("DescribeImageResponse.ImageInfo.System"));
+		imageInfo.setImageId(_ctx.stringValue("DescribeImageResponse.ImageInfo.ImageId"));
 		describeImageResponse.setImageInfo(imageInfo);
 	 
 	 	return describeImageResponse;

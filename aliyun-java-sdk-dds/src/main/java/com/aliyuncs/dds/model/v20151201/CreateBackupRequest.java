@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -26,8 +27,6 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
-
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -37,9 +36,15 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 	private Long ownerId;
 
 	private String backupMethod;
+
+	private Long backupRetentionPeriod;
 	public CreateBackupRequest() {
 		super("Dds", "2015-12-01", "CreateBackup", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -50,17 +55,6 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -116,6 +110,17 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 		this.backupMethod = backupMethod;
 		if(backupMethod != null){
 			putQueryParameter("BackupMethod", backupMethod);
+		}
+	}
+
+	public Long getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
+	}
+
+	public void setBackupRetentionPeriod(Long backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
+		if(backupRetentionPeriod != null){
+			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod.toString());
 		}
 	}
 

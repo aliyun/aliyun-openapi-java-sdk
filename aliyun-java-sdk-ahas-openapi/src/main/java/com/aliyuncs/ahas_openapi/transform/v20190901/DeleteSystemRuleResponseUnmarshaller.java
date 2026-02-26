@@ -24,8 +24,8 @@ public class DeleteSystemRuleResponseUnmarshaller {
 	public static DeleteSystemRuleResponse unmarshall(DeleteSystemRuleResponse deleteSystemRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteSystemRuleResponse.setRequestId(_ctx.stringValue("DeleteSystemRuleResponse.RequestId"));
-		deleteSystemRuleResponse.setCode(_ctx.stringValue("DeleteSystemRuleResponse.Code"));
 		deleteSystemRuleResponse.setMessage(_ctx.stringValue("DeleteSystemRuleResponse.Message"));
+		deleteSystemRuleResponse.setCode(_ctx.stringValue("DeleteSystemRuleResponse.Code"));
 		deleteSystemRuleResponse.setSuccess(_ctx.booleanValue("DeleteSystemRuleResponse.Success"));
 
 		Data data = new Data();

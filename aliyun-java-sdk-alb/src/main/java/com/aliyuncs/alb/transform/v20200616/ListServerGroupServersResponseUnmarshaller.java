@@ -42,6 +42,7 @@ public class ListServerGroupServersResponseUnmarshaller {
 			backendServer.setStatus(_ctx.stringValue("ListServerGroupServersResponse.Servers["+ i +"].Status"));
 			backendServer.setWeight(_ctx.integerValue("ListServerGroupServersResponse.Servers["+ i +"].Weight"));
 			backendServer.setServerGroupId(_ctx.stringValue("ListServerGroupServersResponse.Servers["+ i +"].ServerGroupId"));
+			backendServer.setRemoteIpEnabled(_ctx.booleanValue("ListServerGroupServersResponse.Servers["+ i +"].RemoteIpEnabled"));
 
 			servers.add(backendServer);
 		}

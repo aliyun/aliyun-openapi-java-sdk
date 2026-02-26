@@ -1,3 +1,33 @@
+2024-12-13 Version: 2.0.45
+- Update DescribeApiMetering API.
+
+2024-11-26 Version: 2.0.44
+- Update DescribeApiMetering API.
+
+2024-11-26 Version: 2.0.43
+- Update DescribeApiMetering API.
+
+2024-07-29 Version: 2.0.42
+- Update DescribeApiMetering API.
+
+2023-06-20 Version: 2.0.41
+- Add DistributionProducts API.
+
+2023-06-10 Version: 2.0.40
+- Add DistributionProducts API.
+
+2023-05-29 Version: 2.0.39
+- Add DistributionProducts API.
+
+2023-02-22 Version: 2.0.38
+- Add CrossAccountVerifyToken API.
+
+2023-02-21 Version: 2.0.37
+- Add CrossAccountVerifyToken API.
+
+2022-11-23 Version: 2.0.36
+- Add Support for autoRenew.
+
 2022-02-08 Version: 2.0.35
 - CreateRate, DescribeRate add packageVersion, customerLabels column.
 

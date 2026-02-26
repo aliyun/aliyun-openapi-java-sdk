@@ -38,7 +38,7 @@ public class RecognizeGeneralTextRequest extends RpcAcsRequest<RecognizeGeneralT
 
 	private String type;
 	public RecognizeGeneralTextRequest() {
-		super("Copyright", "2019-01-23", "RecognizeGeneralText");
+		super("Copyright", "2019-01-23", "RecognizeGeneralText", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

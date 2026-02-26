@@ -31,10 +31,10 @@ public class DescribeUpBpsPeakOfLineResponseUnmarshaller {
 		List<DescribeUpBpsPeakOfLine> describeUpBpsPeakOfLines = new ArrayList<DescribeUpBpsPeakOfLine>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines.Length"); i++) {
 			DescribeUpBpsPeakOfLine describeUpBpsPeakOfLine = new DescribeUpBpsPeakOfLine();
-			describeUpBpsPeakOfLine.setBandWidth(_ctx.floatValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].BandWidth"));
-			describeUpBpsPeakOfLine.setPeakTime(_ctx.stringValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].PeakTime"));
 			describeUpBpsPeakOfLine.setQueryTime(_ctx.stringValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].QueryTime"));
 			describeUpBpsPeakOfLine.setStatName(_ctx.stringValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].StatName"));
+			describeUpBpsPeakOfLine.setBandWidth(_ctx.floatValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].BandWidth"));
+			describeUpBpsPeakOfLine.setPeakTime(_ctx.stringValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].PeakTime"));
 
 			describeUpBpsPeakOfLines.add(describeUpBpsPeakOfLine);
 		}

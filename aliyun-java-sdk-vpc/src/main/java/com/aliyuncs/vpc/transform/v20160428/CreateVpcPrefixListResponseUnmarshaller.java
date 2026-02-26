@@ -24,6 +24,7 @@ public class CreateVpcPrefixListResponseUnmarshaller {
 		
 		createVpcPrefixListResponse.setRequestId(_ctx.stringValue("CreateVpcPrefixListResponse.RequestId"));
 		createVpcPrefixListResponse.setPrefixListId(_ctx.stringValue("CreateVpcPrefixListResponse.PrefixListId"));
+		createVpcPrefixListResponse.setResourceGroupId(_ctx.stringValue("CreateVpcPrefixListResponse.ResourceGroupId"));
 	 
 	 	return createVpcPrefixListResponse;
 	}

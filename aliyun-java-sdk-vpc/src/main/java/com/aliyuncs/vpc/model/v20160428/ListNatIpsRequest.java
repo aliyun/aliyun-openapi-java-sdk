@@ -30,6 +30,8 @@ public class ListNatIpsRequest extends RpcAcsRequest<ListNatIpsResponse> {
 
 	private String natIpStatus;
 
+	private String ipv4Prefix;
+
 	private List<String> natIpNames;
 
 	private String clientToken;
@@ -51,6 +53,8 @@ public class ListNatIpsRequest extends RpcAcsRequest<ListNatIpsResponse> {
 	private String natIpCidr;
 
 	private String maxResults;
+
+	private String ipOrigin;
 	public ListNatIpsRequest() {
 		super("Vpc", "2016-04-28", "ListNatIps", "vpc");
 		setMethod(MethodType.POST);
@@ -79,6 +83,17 @@ public class ListNatIpsRequest extends RpcAcsRequest<ListNatIpsResponse> {
 		this.natIpStatus = natIpStatus;
 		if(natIpStatus != null){
 			putQueryParameter("NatIpStatus", natIpStatus);
+		}
+	}
+
+	public String getIpv4Prefix() {
+		return this.ipv4Prefix;
+	}
+
+	public void setIpv4Prefix(String ipv4Prefix) {
+		this.ipv4Prefix = ipv4Prefix;
+		if(ipv4Prefix != null){
+			putQueryParameter("Ipv4Prefix", ipv4Prefix);
 		}
 	}
 
@@ -204,6 +219,17 @@ public class ListNatIpsRequest extends RpcAcsRequest<ListNatIpsResponse> {
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults);
+		}
+	}
+
+	public String getIpOrigin() {
+		return this.ipOrigin;
+	}
+
+	public void setIpOrigin(String ipOrigin) {
+		this.ipOrigin = ipOrigin;
+		if(ipOrigin != null){
+			putQueryParameter("IpOrigin", ipOrigin);
 		}
 	}
 

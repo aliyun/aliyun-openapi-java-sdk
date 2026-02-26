@@ -113,6 +113,8 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 		private List<ReviewHistory> reviewHistoryList;
 
+		private List<ReviewTypeIdListItem> reviewTypeIdList;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -257,6 +259,14 @@ public class GetResultToReviewResponse extends AcsResponse {
 			this.reviewHistoryList = reviewHistoryList;
 		}
 
+		public List<ReviewTypeIdListItem> getReviewTypeIdList() {
+			return this.reviewTypeIdList;
+		}
+
+		public void setReviewTypeIdList(List<ReviewTypeIdListItem> reviewTypeIdList) {
+			this.reviewTypeIdList = reviewTypeIdList;
+		}
+
 		public static class Dialogue {
 
 			private String words;
@@ -278,6 +288,8 @@ public class GetResultToReviewResponse extends AcsResponse {
 			private Integer silenceDuration;
 
 			private String hourMinSec;
+
+			private Long beginTimeMs;
 
 			public String getWords() {
 				return this.words;
@@ -357,6 +369,14 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 			public void setHourMinSec(String hourMinSec) {
 				this.hourMinSec = hourMinSec;
+			}
+
+			public Long getBeginTimeMs() {
+				return this.beginTimeMs;
+			}
+
+			public void setBeginTimeMs(Long beginTimeMs) {
+				this.beginTimeMs = beginTimeMs;
 			}
 		}
 
@@ -470,6 +490,10 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 			private Long rid;
 
+			private Integer machineHitResult;
+
+			private Integer reviewHitResult;
+
 			private List<ConditionHitInfo> conditionHitInfoList;
 
 			private List<ComplainHistoriesItem> complainHistories;
@@ -564,6 +588,22 @@ public class GetResultToReviewResponse extends AcsResponse {
 				this.rid = rid;
 			}
 
+			public Integer getMachineHitResult() {
+				return this.machineHitResult;
+			}
+
+			public void setMachineHitResult(Integer machineHitResult) {
+				this.machineHitResult = machineHitResult;
+			}
+
+			public Integer getReviewHitResult() {
+				return this.reviewHitResult;
+			}
+
+			public void setReviewHitResult(Integer reviewHitResult) {
+				this.reviewHitResult = reviewHitResult;
+			}
+
 			public List<ConditionHitInfo> getConditionHitInfoList() {
 				return this.conditionHitInfoList;
 			}
@@ -636,6 +676,8 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 					private String customizeCode;
 
+					private Boolean isMatch;
+
 					public Integer getFrom() {
 						return this.from;
 					}
@@ -690,6 +732,14 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 					public void setCustomizeCode(String customizeCode) {
 						this.customizeCode = customizeCode;
+					}
+
+					public Boolean getIsMatch() {
+						return this.isMatch;
+					}
+
+					public void setIsMatch(Boolean isMatch) {
+						this.isMatch = isMatch;
 					}
 				}
 
@@ -1006,6 +1056,16 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 			private Integer oldScore;
 
+			private String reviewManagerType;
+
+			private Long time;
+
+			private String comments;
+
+			private Long operator;
+
+			private List<ReviewRightRuleItem> reviewRightRule;
+
 			public Integer getType() {
 				return this.type;
 			}
@@ -1060,6 +1120,92 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 			public void setOldScore(Integer oldScore) {
 				this.oldScore = oldScore;
+			}
+
+			public String getReviewManagerType() {
+				return this.reviewManagerType;
+			}
+
+			public void setReviewManagerType(String reviewManagerType) {
+				this.reviewManagerType = reviewManagerType;
+			}
+
+			public Long getTime() {
+				return this.time;
+			}
+
+			public void setTime(Long time) {
+				this.time = time;
+			}
+
+			public String getComments() {
+				return this.comments;
+			}
+
+			public void setComments(String comments) {
+				this.comments = comments;
+			}
+
+			public Long getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(Long operator) {
+				this.operator = operator;
+			}
+
+			public List<ReviewRightRuleItem> getReviewRightRule() {
+				return this.reviewRightRule;
+			}
+
+			public void setReviewRightRule(List<ReviewRightRuleItem> reviewRightRule) {
+				this.reviewRightRule = reviewRightRule;
+			}
+
+			public static class ReviewRightRuleItem {
+
+				private String ruleName;
+
+				private Long rid;
+
+				public String getRuleName() {
+					return this.ruleName;
+				}
+
+				public void setRuleName(String ruleName) {
+					this.ruleName = ruleName;
+				}
+
+				public Long getRid() {
+					return this.rid;
+				}
+
+				public void setRid(Long rid) {
+					this.rid = rid;
+				}
+			}
+		}
+
+		public static class ReviewTypeIdListItem {
+
+			private Long reviewTypeId;
+
+			private List<Long> reviewKeyIdList;
+
+			public Long getReviewTypeId() {
+				return this.reviewTypeId;
+			}
+
+			public void setReviewTypeId(Long reviewTypeId) {
+				this.reviewTypeId = reviewTypeId;
+			}
+
+			public List<Long> getReviewKeyIdList() {
+				return this.reviewKeyIdList;
+			}
+
+			public void setReviewKeyIdList(List<Long> reviewKeyIdList) {
+				this.reviewKeyIdList = reviewKeyIdList;
 			}
 		}
 	}

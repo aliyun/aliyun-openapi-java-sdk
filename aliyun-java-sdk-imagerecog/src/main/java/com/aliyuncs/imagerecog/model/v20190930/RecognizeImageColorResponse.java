@@ -61,9 +61,9 @@ public class RecognizeImageColorResponse extends AcsResponse {
 
 			private String color;
 
-			private String label;
-
 			private Float percentage;
+
+			private String label;
 
 			public String getColor() {
 				return this.color;
@@ -73,20 +73,20 @@ public class RecognizeImageColorResponse extends AcsResponse {
 				this.color = color;
 			}
 
-			public String getLabel() {
-				return this.label;
-			}
-
-			public void setLabel(String label) {
-				this.label = label;
-			}
-
 			public Float getPercentage() {
 				return this.percentage;
 			}
 
 			public void setPercentage(Float percentage) {
 				this.percentage = percentage;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
 			}
 		}
 	}

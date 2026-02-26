@@ -33,7 +33,7 @@ public class ModifyWebPreciseAccessRuleRequest extends RpcAcsRequest<ModifyWebPr
 
 	private String domain;
 	public ModifyWebPreciseAccessRuleRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebPreciseAccessRule");
+		super("ddoscoo", "2020-01-01", "ModifyWebPreciseAccessRule", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

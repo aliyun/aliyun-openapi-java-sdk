@@ -25,6 +25,12 @@ import com.aliyuncs.cs.Endpoint;
 public class DescribeAddonsRequest extends RoaAcsRequest<DescribeAddonsResponse> {
 	   
 
+	private String cluster_version;
+
+	private String cluster_spec;
+
+	private String cluster_profile;
+
 	private String cluster_type;
 
 	private String region;
@@ -36,6 +42,39 @@ public class DescribeAddonsRequest extends RoaAcsRequest<DescribeAddonsResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCluster_version() {
+		return this.cluster_version;
+	}
+
+	public void setCluster_version(String cluster_version) {
+		this.cluster_version = cluster_version;
+		if(cluster_version != null){
+			putQueryParameter("cluster_version", cluster_version);
+		}
+	}
+
+	public String getCluster_spec() {
+		return this.cluster_spec;
+	}
+
+	public void setCluster_spec(String cluster_spec) {
+		this.cluster_spec = cluster_spec;
+		if(cluster_spec != null){
+			putQueryParameter("cluster_spec", cluster_spec);
+		}
+	}
+
+	public String getCluster_profile() {
+		return this.cluster_profile;
+	}
+
+	public void setCluster_profile(String cluster_profile) {
+		this.cluster_profile = cluster_profile;
+		if(cluster_profile != null){
+			putQueryParameter("cluster_profile", cluster_profile);
+		}
 	}
 
 	public String getCluster_type() {

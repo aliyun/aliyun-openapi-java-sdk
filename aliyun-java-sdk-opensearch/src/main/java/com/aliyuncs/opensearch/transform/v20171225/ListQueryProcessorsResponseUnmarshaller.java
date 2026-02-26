@@ -32,11 +32,11 @@ public class ListQueryProcessorsResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListQueryProcessorsResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setName(_ctx.stringValue("ListQueryProcessorsResponse.result["+ i +"].name"));
-			resultItem.setActive(_ctx.booleanValue("ListQueryProcessorsResponse.result["+ i +"].active"));
-			resultItem.setDomain(_ctx.stringValue("ListQueryProcessorsResponse.result["+ i +"].domain"));
 			resultItem.setCreated(_ctx.integerValue("ListQueryProcessorsResponse.result["+ i +"].created"));
+			resultItem.setActive(_ctx.booleanValue("ListQueryProcessorsResponse.result["+ i +"].active"));
 			resultItem.setUpdated(_ctx.integerValue("ListQueryProcessorsResponse.result["+ i +"].updated"));
+			resultItem.setName(_ctx.stringValue("ListQueryProcessorsResponse.result["+ i +"].name"));
+			resultItem.setDomain(_ctx.stringValue("ListQueryProcessorsResponse.result["+ i +"].domain"));
 
 			List<String> indexes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListQueryProcessorsResponse.result["+ i +"].indexes.Length"); j++) {

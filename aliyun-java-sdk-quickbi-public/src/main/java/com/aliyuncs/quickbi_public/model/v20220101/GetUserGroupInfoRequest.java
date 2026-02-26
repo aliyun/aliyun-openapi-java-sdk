@@ -26,7 +26,7 @@ public class GetUserGroupInfoRequest extends RpcAcsRequest<GetUserGroupInfoRespo
 
 	private String keyword;
 	public GetUserGroupInfoRequest() {
-		super("quickbi-public", "2022-01-01", "GetUserGroupInfo", "quickbi");
+		super("quickbi-public", "2022-01-01", "GetUserGroupInfo", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

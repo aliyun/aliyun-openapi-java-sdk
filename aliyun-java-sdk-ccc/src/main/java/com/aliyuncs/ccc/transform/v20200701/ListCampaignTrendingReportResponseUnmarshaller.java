@@ -41,6 +41,14 @@ public class ListCampaignTrendingReportResponseUnmarshaller {
 			trendingList.setWorkAgents(_ctx.longValue("ListCampaignTrendingReportResponse.Data["+ i +"].WorkAgents"));
 			trendingList.setLoggedInAgents(_ctx.longValue("ListCampaignTrendingReportResponse.Data["+ i +"].LoggedInAgents"));
 			trendingList.setBreakAgents(_ctx.longValue("ListCampaignTrendingReportResponse.Data["+ i +"].BreakAgents"));
+			trendingList.setStatsTime(_ctx.longValue("ListCampaignTrendingReportResponse.Data["+ i +"].StatsTime"));
+			trendingList.setTalkingAgents(_ctx.longValue("ListCampaignTrendingReportResponse.Data["+ i +"].TalkingAgents"));
+			trendingList.setWorkingAgents(_ctx.longValue("ListCampaignTrendingReportResponse.Data["+ i +"].WorkingAgents"));
+			trendingList.setBreakingAgents(_ctx.longValue("ListCampaignTrendingReportResponse.Data["+ i +"].BreakingAgents"));
+			trendingList.setOutboundScenarioReadyAgents(_ctx.longValue("ListCampaignTrendingReportResponse.Data["+ i +"].OutboundScenarioReadyAgents"));
+			trendingList.setOutboundScenarioBreakingAgents(_ctx.longValue("ListCampaignTrendingReportResponse.Data["+ i +"].OutboundScenarioBreakingAgents"));
+			trendingList.setOutboundScenarioTalkingAgents(_ctx.longValue("ListCampaignTrendingReportResponse.Data["+ i +"].OutboundScenarioTalkingAgents"));
+			trendingList.setOutboundScenarioWorkingAgents(_ctx.longValue("ListCampaignTrendingReportResponse.Data["+ i +"].OutboundScenarioWorkingAgents"));
 
 			data.add(trendingList);
 		}

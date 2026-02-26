@@ -25,9 +25,11 @@ import com.aliyuncs.vod.Endpoint;
 public class ListAppInfoRequest extends RpcAcsRequest<ListAppInfoResponse> {
 	   
 
-	private Integer pageNo;
+	private String resourceGroupId;
 
 	private Integer pageSize;
+
+	private Integer pageNo;
 
 	private String status;
 	public ListAppInfoRequest() {
@@ -39,14 +41,14 @@ public class ListAppInfoRequest extends RpcAcsRequest<ListAppInfoResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Integer getPageNo() {
-		return this.pageNo;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -58,6 +60,17 @@ public class ListAppInfoRequest extends RpcAcsRequest<ListAppInfoResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 

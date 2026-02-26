@@ -15,6 +15,7 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mse.Endpoint;
 
@@ -25,33 +26,26 @@ import com.aliyuncs.mse.Endpoint;
 public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 	   
 
-	private String clusterAliasName;
-
 	private Integer pageNum;
+
+	private String resourceGroupId;
 
 	private String requestPars;
 
 	private Integer pageSize;
 
+	private List<Tag> tags;
+
+	private String clusterAliasName;
+
 	private String acceptLanguage;
 	public ListClustersRequest() {
 		super("mse", "2019-05-31", "ListClusters", "mse");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClusterAliasName() {
-		return this.clusterAliasName;
-	}
-
-	public void setClusterAliasName(String clusterAliasName) {
-		this.clusterAliasName = clusterAliasName;
-		if(clusterAliasName != null){
-			putQueryParameter("ClusterAliasName", clusterAliasName);
-		}
 	}
 
 	public Integer getPageNum() {
@@ -62,6 +56,17 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -87,6 +92,31 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getClusterAliasName() {
+		return this.clusterAliasName;
+	}
+
+	public void setClusterAliasName(String clusterAliasName) {
+		this.clusterAliasName = clusterAliasName;
+		if(clusterAliasName != null){
+			putQueryParameter("ClusterAliasName", clusterAliasName);
+		}
+	}
+
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -95,6 +125,29 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

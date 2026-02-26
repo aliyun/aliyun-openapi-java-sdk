@@ -52,6 +52,7 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Propagate" , tags.get(depth1).getPropagate());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
@@ -106,9 +107,19 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 
 	public static class Tag {
 
+		private Boolean propagate;
+
 		private String value;
 
 		private String key;
+
+		public Boolean getPropagate() {
+			return this.propagate;
+		}
+
+		public void setPropagate(Boolean propagate) {
+			this.propagate = propagate;
+		}
 
 		public String getValue() {
 			return this.value;

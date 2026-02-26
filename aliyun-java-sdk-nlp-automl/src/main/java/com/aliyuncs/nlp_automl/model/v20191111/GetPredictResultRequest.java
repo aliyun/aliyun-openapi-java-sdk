@@ -35,7 +35,7 @@ public class GetPredictResultRequest extends RpcAcsRequest<GetPredictResultRespo
 
 	private String modelVersion;
 	public GetPredictResultRequest() {
-		super("nlp-automl", "2019-11-11", "GetPredictResult", "nlpautoml");
+		super("nlp-automl", "2019-11-11", "GetPredictResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

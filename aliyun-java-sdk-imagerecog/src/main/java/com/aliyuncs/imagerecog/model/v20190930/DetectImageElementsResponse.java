@@ -61,15 +61,15 @@ public class DetectImageElementsResponse extends AcsResponse {
 
 			private String type;
 
-			private Integer x;
-
-			private Integer y;
-
 			private Integer width;
 
 			private Integer height;
 
+			private Integer y;
+
 			private Float score;
+
+			private Integer x;
 
 			public String getType() {
 				return this.type;
@@ -77,22 +77,6 @@ public class DetectImageElementsResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
-			}
-
-			public Integer getX() {
-				return this.x;
-			}
-
-			public void setX(Integer x) {
-				this.x = x;
-			}
-
-			public Integer getY() {
-				return this.y;
-			}
-
-			public void setY(Integer y) {
-				this.y = y;
 			}
 
 			public Integer getWidth() {
@@ -111,12 +95,28 @@ public class DetectImageElementsResponse extends AcsResponse {
 				this.height = height;
 			}
 
+			public Integer getY() {
+				return this.y;
+			}
+
+			public void setY(Integer y) {
+				this.y = y;
+			}
+
 			public Float getScore() {
 				return this.score;
 			}
 
 			public void setScore(Float score) {
 				this.score = score;
+			}
+
+			public Integer getX() {
+				return this.x;
+			}
+
+			public void setX(Integer x) {
+				this.x = x;
 			}
 		}
 	}

@@ -15,22 +15,24 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class LookupTmchNoticeRequest extends RpcAcsRequest<LookupTmchNoticeResponse> {
-	
-	public LookupTmchNoticeRequest() {
-		super("Domain-intl", "2017-12-18", "LookupTmchNotice", "domain");
-	}
+	   
 
 	private String claimKey;
 
 	private String userClientIp;
 
 	private String lang;
+	public LookupTmchNoticeRequest() {
+		super("Domain-intl", "2017-12-18", "LookupTmchNotice");
+		setMethod(MethodType.POST);
+	}
 
 	public String getClaimKey() {
 		return this.claimKey;

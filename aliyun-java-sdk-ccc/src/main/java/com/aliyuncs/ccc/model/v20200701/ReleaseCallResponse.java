@@ -15,7 +15,6 @@
 package com.aliyuncs.ccc.model.v20200701;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20200701.ReleaseCallResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -162,8 +161,6 @@ public class ReleaseCallResponse extends AcsResponse {
 
 				private Long timestamp;
 
-				private Map<Object,Object> associatedData;
-
 				private String releaseReason;
 
 				private String callType;
@@ -175,6 +172,8 @@ public class ReleaseCallResponse extends AcsResponse {
 				private String originator;
 
 				private String userExtension;
+
+				private String channelVariables;
 
 				public String getReleaseInitiator() {
 					return this.releaseInitiator;
@@ -214,14 +213,6 @@ public class ReleaseCallResponse extends AcsResponse {
 
 				public void setTimestamp(Long timestamp) {
 					this.timestamp = timestamp;
-				}
-
-				public Map<Object,Object> getAssociatedData() {
-					return this.associatedData;
-				}
-
-				public void setAssociatedData(Map<Object,Object> associatedData) {
-					this.associatedData = associatedData;
 				}
 
 				public String getReleaseReason() {
@@ -270,6 +261,14 @@ public class ReleaseCallResponse extends AcsResponse {
 
 				public void setUserExtension(String userExtension) {
 					this.userExtension = userExtension;
+				}
+
+				public String getChannelVariables() {
+					return this.channelVariables;
+				}
+
+				public void setChannelVariables(String channelVariables) {
+					this.channelVariables = channelVariables;
 				}
 			}
 		}

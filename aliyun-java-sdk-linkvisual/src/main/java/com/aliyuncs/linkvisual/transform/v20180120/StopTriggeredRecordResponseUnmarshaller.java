@@ -23,9 +23,9 @@ public class StopTriggeredRecordResponseUnmarshaller {
 	public static StopTriggeredRecordResponse unmarshall(StopTriggeredRecordResponse stopTriggeredRecordResponse, UnmarshallerContext _ctx) {
 		
 		stopTriggeredRecordResponse.setRequestId(_ctx.stringValue("StopTriggeredRecordResponse.RequestId"));
-		stopTriggeredRecordResponse.setSuccess(_ctx.booleanValue("StopTriggeredRecordResponse.Success"));
-		stopTriggeredRecordResponse.setErrorMessage(_ctx.stringValue("StopTriggeredRecordResponse.ErrorMessage"));
 		stopTriggeredRecordResponse.setCode(_ctx.stringValue("StopTriggeredRecordResponse.Code"));
+		stopTriggeredRecordResponse.setErrorMessage(_ctx.stringValue("StopTriggeredRecordResponse.ErrorMessage"));
+		stopTriggeredRecordResponse.setSuccess(_ctx.booleanValue("StopTriggeredRecordResponse.Success"));
 	 
 	 	return stopTriggeredRecordResponse;
 	}

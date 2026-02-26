@@ -24,9 +24,9 @@ public class AddFaceUserGroupAndDeviceGroupRelationResponseUnmarshaller {
 	public static AddFaceUserGroupAndDeviceGroupRelationResponse unmarshall(AddFaceUserGroupAndDeviceGroupRelationResponse addFaceUserGroupAndDeviceGroupRelationResponse, UnmarshallerContext _ctx) {
 		
 		addFaceUserGroupAndDeviceGroupRelationResponse.setRequestId(_ctx.stringValue("AddFaceUserGroupAndDeviceGroupRelationResponse.RequestId"));
-		addFaceUserGroupAndDeviceGroupRelationResponse.setSuccess(_ctx.booleanValue("AddFaceUserGroupAndDeviceGroupRelationResponse.Success"));
-		addFaceUserGroupAndDeviceGroupRelationResponse.setErrorMessage(_ctx.stringValue("AddFaceUserGroupAndDeviceGroupRelationResponse.ErrorMessage"));
 		addFaceUserGroupAndDeviceGroupRelationResponse.setCode(_ctx.stringValue("AddFaceUserGroupAndDeviceGroupRelationResponse.Code"));
+		addFaceUserGroupAndDeviceGroupRelationResponse.setErrorMessage(_ctx.stringValue("AddFaceUserGroupAndDeviceGroupRelationResponse.ErrorMessage"));
+		addFaceUserGroupAndDeviceGroupRelationResponse.setSuccess(_ctx.booleanValue("AddFaceUserGroupAndDeviceGroupRelationResponse.Success"));
 
 		Data data = new Data();
 		data.setControlId(_ctx.stringValue("AddFaceUserGroupAndDeviceGroupRelationResponse.Data.ControlId"));

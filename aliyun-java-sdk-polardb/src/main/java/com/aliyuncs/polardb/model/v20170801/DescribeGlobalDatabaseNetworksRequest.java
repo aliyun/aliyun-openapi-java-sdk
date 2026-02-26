@@ -29,6 +29,10 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
+	private String filterRegion;
+
 	private String securityToken;
 
 	private String gDNId;
@@ -45,7 +49,7 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 
 	private Long ownerId;
 	public DescribeGlobalDatabaseNetworksRequest() {
-		super("polardb", "2017-08-01", "DescribeGlobalDatabaseNetworks");
+		super("polardb", "2017-08-01", "DescribeGlobalDatabaseNetworks", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -72,6 +76,28 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getFilterRegion() {
+		return this.filterRegion;
+	}
+
+	public void setFilterRegion(String filterRegion) {
+		this.filterRegion = filterRegion;
+		if(filterRegion != null){
+			putQueryParameter("FilterRegion", filterRegion);
 		}
 	}
 

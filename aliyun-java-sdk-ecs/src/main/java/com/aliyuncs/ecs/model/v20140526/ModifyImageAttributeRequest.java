@@ -39,6 +39,8 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 
 	private String licenseType;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -99,6 +101,7 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		if (features != null) {
 			
 				putQueryParameter("Features.NvmeSupport" , features.getNvmeSupport());
+				putQueryParameter("Features.ImdsSupport" , features.getImdsSupport());
 		}	
 	}
 
@@ -132,6 +135,17 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		this.licenseType = licenseType;
 		if(licenseType != null){
 			putQueryParameter("LicenseType", licenseType);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -194,12 +208,22 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 
 		private String nvmeSupport;
 
+		private String imdsSupport;
+
 		public String getNvmeSupport() {
 			return this.nvmeSupport;
 		}
 
 		public void setNvmeSupport(String nvmeSupport) {
 			this.nvmeSupport = nvmeSupport;
+		}
+
+		public String getImdsSupport() {
+			return this.imdsSupport;
+		}
+
+		public void setImdsSupport(String imdsSupport) {
+			this.imdsSupport = imdsSupport;
 		}
 	}
 

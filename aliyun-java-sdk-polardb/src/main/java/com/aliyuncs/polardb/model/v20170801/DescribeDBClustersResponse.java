@@ -79,6 +79,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private String vswitchId;
+
 		private String expireTime;
 
 		private String expired;
@@ -90,6 +92,10 @@ public class DescribeDBClustersResponse extends AcsResponse {
 		private String payType;
 
 		private String storagePayType;
+
+		private String serverlessType;
+
+		private String strictConsistency;
 
 		private String dBNodeClass;
 
@@ -109,7 +115,9 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
-		private Long storageUsed;
+		private Long searchStorageUsed;
+
+		private Long searchCompressStorageUsed;
 
 		private Long storageSpace;
 
@@ -123,6 +131,40 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String category;
 
+		private String aiType;
+
+		private String cpuCores;
+
+		private String memorySize;
+
+		private String remoteMemorySize;
+
+		private String cpuArch;
+
+		private String deployUnit;
+
+		private String storageType;
+
+		private String hotStandbyCluster;
+
+		private String engineMigrationStatus;
+
+		private Integer cnNodeCount;
+
+		private Integer dnNodeCount;
+
+		private String cnClass;
+
+		private String dnClass;
+
+		private String cloudInstanceIp;
+
+		private String subCategory;
+
+		private Long storageUsed;
+
+		private Long compressStorageUsed;
+
 		private List<Tag> tags;
 
 		private List<DBNode> dBNodes;
@@ -133,6 +175,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getVswitchId() {
+			return this.vswitchId;
+		}
+
+		public void setVswitchId(String vswitchId) {
+			this.vswitchId = vswitchId;
 		}
 
 		public String getExpireTime() {
@@ -181,6 +231,22 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setStoragePayType(String storagePayType) {
 			this.storagePayType = storagePayType;
+		}
+
+		public String getServerlessType() {
+			return this.serverlessType;
+		}
+
+		public void setServerlessType(String serverlessType) {
+			this.serverlessType = serverlessType;
+		}
+
+		public String getStrictConsistency() {
+			return this.strictConsistency;
+		}
+
+		public void setStrictConsistency(String strictConsistency) {
+			this.strictConsistency = strictConsistency;
 		}
 
 		public String getDBNodeClass() {
@@ -255,12 +321,20 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public Long getStorageUsed() {
-			return this.storageUsed;
+		public Long getSearchStorageUsed() {
+			return this.searchStorageUsed;
 		}
 
-		public void setStorageUsed(Long storageUsed) {
-			this.storageUsed = storageUsed;
+		public void setSearchStorageUsed(Long searchStorageUsed) {
+			this.searchStorageUsed = searchStorageUsed;
+		}
+
+		public Long getSearchCompressStorageUsed() {
+			return this.searchCompressStorageUsed;
+		}
+
+		public void setSearchCompressStorageUsed(Long searchCompressStorageUsed) {
+			this.searchCompressStorageUsed = searchCompressStorageUsed;
 		}
 
 		public Long getStorageSpace() {
@@ -309,6 +383,142 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public String getAiType() {
+			return this.aiType;
+		}
+
+		public void setAiType(String aiType) {
+			this.aiType = aiType;
+		}
+
+		public String getCpuCores() {
+			return this.cpuCores;
+		}
+
+		public void setCpuCores(String cpuCores) {
+			this.cpuCores = cpuCores;
+		}
+
+		public String getMemorySize() {
+			return this.memorySize;
+		}
+
+		public void setMemorySize(String memorySize) {
+			this.memorySize = memorySize;
+		}
+
+		public String getRemoteMemorySize() {
+			return this.remoteMemorySize;
+		}
+
+		public void setRemoteMemorySize(String remoteMemorySize) {
+			this.remoteMemorySize = remoteMemorySize;
+		}
+
+		public String getCpuArch() {
+			return this.cpuArch;
+		}
+
+		public void setCpuArch(String cpuArch) {
+			this.cpuArch = cpuArch;
+		}
+
+		public String getDeployUnit() {
+			return this.deployUnit;
+		}
+
+		public void setDeployUnit(String deployUnit) {
+			this.deployUnit = deployUnit;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getHotStandbyCluster() {
+			return this.hotStandbyCluster;
+		}
+
+		public void setHotStandbyCluster(String hotStandbyCluster) {
+			this.hotStandbyCluster = hotStandbyCluster;
+		}
+
+		public String getEngineMigrationStatus() {
+			return this.engineMigrationStatus;
+		}
+
+		public void setEngineMigrationStatus(String engineMigrationStatus) {
+			this.engineMigrationStatus = engineMigrationStatus;
+		}
+
+		public Integer getCnNodeCount() {
+			return this.cnNodeCount;
+		}
+
+		public void setCnNodeCount(Integer cnNodeCount) {
+			this.cnNodeCount = cnNodeCount;
+		}
+
+		public Integer getDnNodeCount() {
+			return this.dnNodeCount;
+		}
+
+		public void setDnNodeCount(Integer dnNodeCount) {
+			this.dnNodeCount = dnNodeCount;
+		}
+
+		public String getCnClass() {
+			return this.cnClass;
+		}
+
+		public void setCnClass(String cnClass) {
+			this.cnClass = cnClass;
+		}
+
+		public String getDnClass() {
+			return this.dnClass;
+		}
+
+		public void setDnClass(String dnClass) {
+			this.dnClass = dnClass;
+		}
+
+		public String getCloudInstanceIp() {
+			return this.cloudInstanceIp;
+		}
+
+		public void setCloudInstanceIp(String cloudInstanceIp) {
+			this.cloudInstanceIp = cloudInstanceIp;
+		}
+
+		public String getSubCategory() {
+			return this.subCategory;
+		}
+
+		public void setSubCategory(String subCategory) {
+			this.subCategory = subCategory;
+		}
+
+		public Long getStorageUsed() {
+			return this.storageUsed;
+		}
+
+		public void setStorageUsed(Long storageUsed) {
+			this.storageUsed = storageUsed;
+		}
+
+		public Long getCompressStorageUsed() {
+			return this.compressStorageUsed;
+		}
+
+		public void setCompressStorageUsed(Long compressStorageUsed) {
+			this.compressStorageUsed = compressStorageUsed;
 		}
 
 		public List<Tag> getTags() {
@@ -362,6 +572,12 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 			private String regionId;
 
+			private String serverless;
+
+			private String imciSwitch;
+
+			private String hotReplicaMode;
+
 			public String getDBNodeClass() {
 				return this.dBNodeClass;
 			}
@@ -400,6 +616,30 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
+			}
+
+			public String getServerless() {
+				return this.serverless;
+			}
+
+			public void setServerless(String serverless) {
+				this.serverless = serverless;
+			}
+
+			public String getImciSwitch() {
+				return this.imciSwitch;
+			}
+
+			public void setImciSwitch(String imciSwitch) {
+				this.imciSwitch = imciSwitch;
+			}
+
+			public String getHotReplicaMode() {
+				return this.hotReplicaMode;
+			}
+
+			public void setHotReplicaMode(String hotReplicaMode) {
+				this.hotReplicaMode = hotReplicaMode;
 			}
 		}
 	}

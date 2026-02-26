@@ -27,22 +27,22 @@ public class DetectStackResourceDriftResponseUnmarshaller {
 	public static DetectStackResourceDriftResponse unmarshall(DetectStackResourceDriftResponse detectStackResourceDriftResponse, UnmarshallerContext _ctx) {
 		
 		detectStackResourceDriftResponse.setRequestId(_ctx.stringValue("DetectStackResourceDriftResponse.RequestId"));
-		detectStackResourceDriftResponse.setDriftDetectionTime(_ctx.stringValue("DetectStackResourceDriftResponse.DriftDetectionTime"));
-		detectStackResourceDriftResponse.setResourceDriftStatus(_ctx.stringValue("DetectStackResourceDriftResponse.ResourceDriftStatus"));
-		detectStackResourceDriftResponse.setStackId(_ctx.stringValue("DetectStackResourceDriftResponse.StackId"));
-		detectStackResourceDriftResponse.setResourceType(_ctx.stringValue("DetectStackResourceDriftResponse.ResourceType"));
-		detectStackResourceDriftResponse.setPhysicalResourceId(_ctx.stringValue("DetectStackResourceDriftResponse.PhysicalResourceId"));
 		detectStackResourceDriftResponse.setLogicalResourceId(_ctx.stringValue("DetectStackResourceDriftResponse.LogicalResourceId"));
-		detectStackResourceDriftResponse.setActualProperties(_ctx.stringValue("DetectStackResourceDriftResponse.ActualProperties"));
+		detectStackResourceDriftResponse.setResourceDriftStatus(_ctx.stringValue("DetectStackResourceDriftResponse.ResourceDriftStatus"));
+		detectStackResourceDriftResponse.setPhysicalResourceId(_ctx.stringValue("DetectStackResourceDriftResponse.PhysicalResourceId"));
 		detectStackResourceDriftResponse.setExpectedProperties(_ctx.stringValue("DetectStackResourceDriftResponse.ExpectedProperties"));
+		detectStackResourceDriftResponse.setDriftDetectionTime(_ctx.stringValue("DetectStackResourceDriftResponse.DriftDetectionTime"));
+		detectStackResourceDriftResponse.setResourceType(_ctx.stringValue("DetectStackResourceDriftResponse.ResourceType"));
+		detectStackResourceDriftResponse.setActualProperties(_ctx.stringValue("DetectStackResourceDriftResponse.ActualProperties"));
+		detectStackResourceDriftResponse.setStackId(_ctx.stringValue("DetectStackResourceDriftResponse.StackId"));
 
 		List<PropertyDifference> propertyDifferences = new ArrayList<PropertyDifference>();
 		for (int i = 0; i < _ctx.lengthValue("DetectStackResourceDriftResponse.PropertyDifferences.Length"); i++) {
 			PropertyDifference propertyDifference = new PropertyDifference();
-			propertyDifference.setPropertyPath(_ctx.stringValue("DetectStackResourceDriftResponse.PropertyDifferences["+ i +"].PropertyPath"));
 			propertyDifference.setActualValue(_ctx.stringValue("DetectStackResourceDriftResponse.PropertyDifferences["+ i +"].ActualValue"));
-			propertyDifference.setExpectedValue(_ctx.stringValue("DetectStackResourceDriftResponse.PropertyDifferences["+ i +"].ExpectedValue"));
 			propertyDifference.setDifferenceType(_ctx.stringValue("DetectStackResourceDriftResponse.PropertyDifferences["+ i +"].DifferenceType"));
+			propertyDifference.setPropertyPath(_ctx.stringValue("DetectStackResourceDriftResponse.PropertyDifferences["+ i +"].PropertyPath"));
+			propertyDifference.setExpectedValue(_ctx.stringValue("DetectStackResourceDriftResponse.PropertyDifferences["+ i +"].ExpectedValue"));
 
 			propertyDifferences.add(propertyDifference);
 		}

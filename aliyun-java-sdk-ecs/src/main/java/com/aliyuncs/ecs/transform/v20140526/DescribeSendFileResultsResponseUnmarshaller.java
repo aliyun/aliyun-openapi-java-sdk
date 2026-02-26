@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeSendFileResultsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeSendFileResultsResponse.Invocation;
 import com.aliyuncs.ecs.model.v20140526.DescribeSendFileResultsResponse.Invocation.InvokeInstance;
+import com.aliyuncs.ecs.model.v20140526.DescribeSendFileResultsResponse.Invocation.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,6 +32,7 @@ public class DescribeSendFileResultsResponseUnmarshaller {
 		describeSendFileResultsResponse.setPageSize(_ctx.longValue("DescribeSendFileResultsResponse.PageSize"));
 		describeSendFileResultsResponse.setPageNumber(_ctx.longValue("DescribeSendFileResultsResponse.PageNumber"));
 		describeSendFileResultsResponse.setTotalCount(_ctx.longValue("DescribeSendFileResultsResponse.TotalCount"));
+		describeSendFileResultsResponse.setNextToken(_ctx.stringValue("DescribeSendFileResultsResponse.NextToken"));
 
 		List<Invocation> invocations = new ArrayList<Invocation>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSendFileResultsResponse.Invocations.Length"); i++) {
@@ -64,6 +66,16 @@ public class DescribeSendFileResultsResponseUnmarshaller {
 				invokeInstances.add(invokeInstance);
 			}
 			invocation.setInvokeInstances(invokeInstances);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSendFileResultsResponse.Invocations["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeSendFileResultsResponse.Invocations["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeSendFileResultsResponse.Invocations["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			invocation.setTags(tags);
 
 			invocations.add(invocation);
 		}

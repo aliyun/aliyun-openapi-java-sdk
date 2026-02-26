@@ -48,6 +48,7 @@ public class SearchAlertContactResponseUnmarshaller {
 			contact.setSystemNoc(_ctx.booleanValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].SystemNoc"));
 			contact.setContent(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].Content"));
 			contact.setPhone(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].Phone"));
+			contact.setResourceGroupId(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].ResourceGroupId"));
 
 			contacts.add(contact);
 		}

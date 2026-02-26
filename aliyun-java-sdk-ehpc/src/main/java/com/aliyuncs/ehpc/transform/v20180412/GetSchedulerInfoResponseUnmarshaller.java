@@ -31,8 +31,8 @@ public class GetSchedulerInfoResponseUnmarshaller {
 		List<SchedInfoItem> schedInfo = new ArrayList<SchedInfoItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetSchedulerInfoResponse.SchedInfo.Length"); i++) {
 			SchedInfoItem schedInfoItem = new SchedInfoItem();
-			schedInfoItem.setSchedName(_ctx.stringValue("GetSchedulerInfoResponse.SchedInfo["+ i +"].SchedName"));
 			schedInfoItem.setConfiguration(_ctx.stringValue("GetSchedulerInfoResponse.SchedInfo["+ i +"].Configuration"));
+			schedInfoItem.setSchedName(_ctx.stringValue("GetSchedulerInfoResponse.SchedInfo["+ i +"].SchedName"));
 
 			schedInfo.add(schedInfoItem);
 		}

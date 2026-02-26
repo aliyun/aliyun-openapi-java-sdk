@@ -33,11 +33,11 @@ public class DescribeHanaInstancesResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<Hana> hanas;
 
@@ -73,12 +73,12 @@ public class DescribeHanaInstancesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +89,12 @@ public class DescribeHanaInstancesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Hana> getHanas() {
@@ -107,52 +107,40 @@ public class DescribeHanaInstancesResponse extends AcsResponse {
 
 	public static class Hana {
 
-		private String clusterId;
-
-		private String hanaName;
-
-		private String vaultId;
+		private Long status;
 
 		private String host;
 
-		private Integer instanceNumber;
-
-		private String userName;
+		private String vaultId;
 
 		private Boolean useSsl;
 
-		private Boolean validateCertificate;
+		private String hanaName;
 
-		private String alertSetting;
+		private Integer instanceNumber;
+
+		private Boolean validateCertificate;
 
 		private String contactId;
 
-		private Long status;
+		private String alertSetting;
+
+		private String userName;
 
 		private String statusMessage;
 
-		public String getClusterId() {
-			return this.clusterId;
+		private String clusterId;
+
+		private String resourceGroupId;
+
+		private List<Tag> tags;
+
+		public Long getStatus() {
+			return this.status;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getHanaName() {
-			return this.hanaName;
-		}
-
-		public void setHanaName(String hanaName) {
-			this.hanaName = hanaName;
-		}
-
-		public String getVaultId() {
-			return this.vaultId;
-		}
-
-		public void setVaultId(String vaultId) {
-			this.vaultId = vaultId;
+		public void setStatus(Long status) {
+			this.status = status;
 		}
 
 		public String getHost() {
@@ -163,20 +151,12 @@ public class DescribeHanaInstancesResponse extends AcsResponse {
 			this.host = host;
 		}
 
-		public Integer getInstanceNumber() {
-			return this.instanceNumber;
+		public String getVaultId() {
+			return this.vaultId;
 		}
 
-		public void setInstanceNumber(Integer instanceNumber) {
-			this.instanceNumber = instanceNumber;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
+		public void setVaultId(String vaultId) {
+			this.vaultId = vaultId;
 		}
 
 		public Boolean getUseSsl() {
@@ -187,20 +167,28 @@ public class DescribeHanaInstancesResponse extends AcsResponse {
 			this.useSsl = useSsl;
 		}
 
+		public String getHanaName() {
+			return this.hanaName;
+		}
+
+		public void setHanaName(String hanaName) {
+			this.hanaName = hanaName;
+		}
+
+		public Integer getInstanceNumber() {
+			return this.instanceNumber;
+		}
+
+		public void setInstanceNumber(Integer instanceNumber) {
+			this.instanceNumber = instanceNumber;
+		}
+
 		public Boolean getValidateCertificate() {
 			return this.validateCertificate;
 		}
 
 		public void setValidateCertificate(Boolean validateCertificate) {
 			this.validateCertificate = validateCertificate;
-		}
-
-		public String getAlertSetting() {
-			return this.alertSetting;
-		}
-
-		public void setAlertSetting(String alertSetting) {
-			this.alertSetting = alertSetting;
 		}
 
 		public String getContactId() {
@@ -211,12 +199,20 @@ public class DescribeHanaInstancesResponse extends AcsResponse {
 			this.contactId = contactId;
 		}
 
-		public Long getStatus() {
-			return this.status;
+		public String getAlertSetting() {
+			return this.alertSetting;
 		}
 
-		public void setStatus(Long status) {
-			this.status = status;
+		public void setAlertSetting(String alertSetting) {
+			this.alertSetting = alertSetting;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 
 		public String getStatusMessage() {
@@ -225,6 +221,53 @@ public class DescribeHanaInstancesResponse extends AcsResponse {
 
 		public void setStatusMessage(String statusMessage) {
 			this.statusMessage = statusMessage;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

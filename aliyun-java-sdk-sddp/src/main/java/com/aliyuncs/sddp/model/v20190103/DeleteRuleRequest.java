@@ -25,6 +25,10 @@ import com.aliyuncs.sddp.Endpoint;
 public class DeleteRuleRequest extends RpcAcsRequest<DeleteRuleResponse> {
 	   
 
+	private Integer featureType;
+
+	private String sourceIp;
+
 	private Long id;
 
 	private String lang;
@@ -35,6 +39,28 @@ public class DeleteRuleRequest extends RpcAcsRequest<DeleteRuleResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
+		}
 	}
 
 	public Long getId() {

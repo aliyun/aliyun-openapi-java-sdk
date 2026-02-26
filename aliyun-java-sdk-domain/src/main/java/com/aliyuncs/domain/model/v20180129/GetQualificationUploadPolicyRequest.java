@@ -29,7 +29,7 @@ public class GetQualificationUploadPolicyRequest extends RpcAcsRequest<GetQualif
 
 	private String lang;
 	public GetQualificationUploadPolicyRequest() {
-		super("Domain", "2018-01-29", "GetQualificationUploadPolicy");
+		super("Domain", "2018-01-29", "GetQualificationUploadPolicy", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

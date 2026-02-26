@@ -38,6 +38,32 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private Integer logBackupRetentionPeriod;
 
+	private String snapshotBackupType;
+
+	private Integer backupInterval;
+
+	private String highFrequencyBackupRetention;
+
+	private Integer backupRetentionPolicyOnClusterDeletion;
+
+	private String srcRegion;
+
+	private String destRegion;
+
+	private String crossRetentionType;
+
+	private Integer crossRetentionValue;
+
+	private String crossBackupPeriod;
+
+	private Integer enableCrossLogBackup;
+
+	private String crossLogRetentionType;
+
+	private Integer crossLogRetentionValue;
+
+	private Boolean preserveOneEachHour;
+
 	public String getPreferredBackupPeriod() {
 		return this.preferredBackupPeriod;
 	}
@@ -92,6 +118,110 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
 		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
+	}
+
+	public String getSnapshotBackupType() {
+		return this.snapshotBackupType;
+	}
+
+	public void setSnapshotBackupType(String snapshotBackupType) {
+		this.snapshotBackupType = snapshotBackupType;
+	}
+
+	public Integer getBackupInterval() {
+		return this.backupInterval;
+	}
+
+	public void setBackupInterval(Integer backupInterval) {
+		this.backupInterval = backupInterval;
+	}
+
+	public String getHighFrequencyBackupRetention() {
+		return this.highFrequencyBackupRetention;
+	}
+
+	public void setHighFrequencyBackupRetention(String highFrequencyBackupRetention) {
+		this.highFrequencyBackupRetention = highFrequencyBackupRetention;
+	}
+
+	public Integer getBackupRetentionPolicyOnClusterDeletion() {
+		return this.backupRetentionPolicyOnClusterDeletion;
+	}
+
+	public void setBackupRetentionPolicyOnClusterDeletion(Integer backupRetentionPolicyOnClusterDeletion) {
+		this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
+	}
+
+	public String getSrcRegion() {
+		return this.srcRegion;
+	}
+
+	public void setSrcRegion(String srcRegion) {
+		this.srcRegion = srcRegion;
+	}
+
+	public String getDestRegion() {
+		return this.destRegion;
+	}
+
+	public void setDestRegion(String destRegion) {
+		this.destRegion = destRegion;
+	}
+
+	public String getCrossRetentionType() {
+		return this.crossRetentionType;
+	}
+
+	public void setCrossRetentionType(String crossRetentionType) {
+		this.crossRetentionType = crossRetentionType;
+	}
+
+	public Integer getCrossRetentionValue() {
+		return this.crossRetentionValue;
+	}
+
+	public void setCrossRetentionValue(Integer crossRetentionValue) {
+		this.crossRetentionValue = crossRetentionValue;
+	}
+
+	public String getCrossBackupPeriod() {
+		return this.crossBackupPeriod;
+	}
+
+	public void setCrossBackupPeriod(String crossBackupPeriod) {
+		this.crossBackupPeriod = crossBackupPeriod;
+	}
+
+	public Integer getEnableCrossLogBackup() {
+		return this.enableCrossLogBackup;
+	}
+
+	public void setEnableCrossLogBackup(Integer enableCrossLogBackup) {
+		this.enableCrossLogBackup = enableCrossLogBackup;
+	}
+
+	public String getCrossLogRetentionType() {
+		return this.crossLogRetentionType;
+	}
+
+	public void setCrossLogRetentionType(String crossLogRetentionType) {
+		this.crossLogRetentionType = crossLogRetentionType;
+	}
+
+	public Integer getCrossLogRetentionValue() {
+		return this.crossLogRetentionValue;
+	}
+
+	public void setCrossLogRetentionValue(Integer crossLogRetentionValue) {
+		this.crossLogRetentionValue = crossLogRetentionValue;
+	}
+
+	public Boolean getPreserveOneEachHour() {
+		return this.preserveOneEachHour;
+	}
+
+	public void setPreserveOneEachHour(Boolean preserveOneEachHour) {
+		this.preserveOneEachHour = preserveOneEachHour;
 	}
 
 	@Override

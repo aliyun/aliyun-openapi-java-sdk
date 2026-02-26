@@ -31,12 +31,12 @@ public class ListLiveRealtimeLogDeliveryResponseUnmarshaller {
 		List<RealtimeLogDeliveryInfo> content = new ArrayList<RealtimeLogDeliveryInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListLiveRealtimeLogDeliveryResponse.Content.Length"); i++) {
 			RealtimeLogDeliveryInfo realtimeLogDeliveryInfo = new RealtimeLogDeliveryInfo();
-			realtimeLogDeliveryInfo.setProject(_ctx.stringValue("ListLiveRealtimeLogDeliveryResponse.Content["+ i +"].Project"));
-			realtimeLogDeliveryInfo.setLogstore(_ctx.stringValue("ListLiveRealtimeLogDeliveryResponse.Content["+ i +"].Logstore"));
-			realtimeLogDeliveryInfo.setRegion(_ctx.stringValue("ListLiveRealtimeLogDeliveryResponse.Content["+ i +"].Region"));
-			realtimeLogDeliveryInfo.setDomainName(_ctx.stringValue("ListLiveRealtimeLogDeliveryResponse.Content["+ i +"].DomainName"));
-			realtimeLogDeliveryInfo.setDmId(_ctx.integerValue("ListLiveRealtimeLogDeliveryResponse.Content["+ i +"].DmId"));
 			realtimeLogDeliveryInfo.setStatus(_ctx.stringValue("ListLiveRealtimeLogDeliveryResponse.Content["+ i +"].Status"));
+			realtimeLogDeliveryInfo.setDmId(_ctx.integerValue("ListLiveRealtimeLogDeliveryResponse.Content["+ i +"].DmId"));
+			realtimeLogDeliveryInfo.setRegion(_ctx.stringValue("ListLiveRealtimeLogDeliveryResponse.Content["+ i +"].Region"));
+			realtimeLogDeliveryInfo.setLogstore(_ctx.stringValue("ListLiveRealtimeLogDeliveryResponse.Content["+ i +"].Logstore"));
+			realtimeLogDeliveryInfo.setProject(_ctx.stringValue("ListLiveRealtimeLogDeliveryResponse.Content["+ i +"].Project"));
+			realtimeLogDeliveryInfo.setDomainName(_ctx.stringValue("ListLiveRealtimeLogDeliveryResponse.Content["+ i +"].DomainName"));
 
 			content.add(realtimeLogDeliveryInfo);
 		}

@@ -28,6 +28,8 @@ public class ListIpsecServersRequest extends RpcAcsRequest<ListIpsecServersRespo
 
 	private String vpnGatewayId;
 
+	private String resourceGroupId;
+
 	private String nextToken;
 
 	private String ipsecServerName;
@@ -52,6 +54,17 @@ public class ListIpsecServersRequest extends RpcAcsRequest<ListIpsecServersRespo
 		this.vpnGatewayId = vpnGatewayId;
 		if(vpnGatewayId != null){
 			putQueryParameter("VpnGatewayId", vpnGatewayId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

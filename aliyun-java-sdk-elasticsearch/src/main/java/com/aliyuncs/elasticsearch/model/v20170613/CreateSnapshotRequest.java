@@ -25,11 +25,11 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class CreateSnapshotRequest extends RoaAcsRequest<CreateSnapshotResponse> {
 	   
 
-	private String instanceId;
-
 	private String clientToken;
 
 	private String body;
+
+	private String instanceId;
 	public CreateSnapshotRequest() {
 		super("elasticsearch", "2017-06-13", "CreateSnapshot", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/snapshots");
@@ -38,17 +38,6 @@ public class CreateSnapshotRequest extends RoaAcsRequest<CreateSnapshotResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putPathParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getClientToken() {
@@ -70,6 +59,17 @@ public class CreateSnapshotRequest extends RoaAcsRequest<CreateSnapshotResponse>
 		this.body = body;
 		if(body != null){
 			putBodyParameter("body", body);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putPathParameter("InstanceId", instanceId);
 		}
 	}
 

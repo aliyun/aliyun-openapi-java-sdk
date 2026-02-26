@@ -38,6 +38,8 @@ public class DescribeVodDomainUsageDataRequest extends RpcAcsRequest<DescribeVod
 	private Long ownerId;
 
 	private String field;
+
+	private String interval;
 	public DescribeVodDomainUsageDataRequest() {
 		super("vod", "2017-03-21", "DescribeVodDomainUsageData", "vod");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class DescribeVodDomainUsageDataRequest extends RpcAcsRequest<DescribeVod
 		this.field = field;
 		if(field != null){
 			putQueryParameter("Field", field);
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 

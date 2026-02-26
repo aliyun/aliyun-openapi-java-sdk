@@ -25,7 +25,7 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribeKmsKeysRequest extends RpcAcsRequest<DescribeKmsKeysResponse> {
 	   
 	public DescribeKmsKeysRequest() {
-		super("ecd", "2020-09-30", "DescribeKmsKeys");
+		super("ecd", "2020-09-30", "DescribeKmsKeys", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

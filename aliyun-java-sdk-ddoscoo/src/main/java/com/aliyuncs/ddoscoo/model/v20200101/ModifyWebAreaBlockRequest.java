@@ -32,7 +32,7 @@ public class ModifyWebAreaBlockRequest extends RpcAcsRequest<ModifyWebAreaBlockR
 
 	private String domain;
 	public ModifyWebAreaBlockRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebAreaBlock");
+		super("ddoscoo", "2020-01-01", "ModifyWebAreaBlock", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

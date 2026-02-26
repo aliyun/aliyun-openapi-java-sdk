@@ -23,9 +23,9 @@ public class DescribeCustomLogConfigResponseUnmarshaller {
 	public static DescribeCustomLogConfigResponse unmarshall(DescribeCustomLogConfigResponse describeCustomLogConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeCustomLogConfigResponse.setRequestId(_ctx.stringValue("DescribeCustomLogConfigResponse.RequestId"));
+		describeCustomLogConfigResponse.setTag(_ctx.stringValue("DescribeCustomLogConfigResponse.Tag"));
 		describeCustomLogConfigResponse.setRemark(_ctx.stringValue("DescribeCustomLogConfigResponse.Remark"));
 		describeCustomLogConfigResponse.setSample(_ctx.stringValue("DescribeCustomLogConfigResponse.Sample"));
-		describeCustomLogConfigResponse.setTag(_ctx.stringValue("DescribeCustomLogConfigResponse.Tag"));
 	 
 	 	return describeCustomLogConfigResponse;
 	}

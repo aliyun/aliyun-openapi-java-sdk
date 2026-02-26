@@ -23,6 +23,8 @@ public class AssociateVpcCidrBlockResponseUnmarshaller {
 	public static AssociateVpcCidrBlockResponse unmarshall(AssociateVpcCidrBlockResponse associateVpcCidrBlockResponse, UnmarshallerContext _ctx) {
 		
 		associateVpcCidrBlockResponse.setRequestId(_ctx.stringValue("AssociateVpcCidrBlockResponse.RequestId"));
+		associateVpcCidrBlockResponse.setCidrBlock(_ctx.stringValue("AssociateVpcCidrBlockResponse.CidrBlock"));
+		associateVpcCidrBlockResponse.setIpVersion(_ctx.stringValue("AssociateVpcCidrBlockResponse.IpVersion"));
 	 
 	 	return associateVpcCidrBlockResponse;
 	}

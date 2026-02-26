@@ -131,6 +131,8 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			private String env;
 
+			private String envFrom;
+
 			private List<ComponentsItem> components;
 
 			public String getEnv() {
@@ -139,6 +141,14 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setEnv(String env) {
 				this.env = env;
+			}
+
+			public String getEnvFrom() {
+				return this.envFrom;
+			}
+
+			public void setEnvFrom(String envFrom) {
+				this.envFrom = envFrom;
 			}
 
 			public List<ComponentsItem> getComponents() {
@@ -297,6 +307,32 @@ public class GetK8sApplicationResponse extends AcsResponse {
 			private String developType;
 
 			private String slbInfo;
+
+			private String annotations;
+
+			private String labels;
+
+			private String limitEphemeralStorage;
+
+			private String requestEphemeralStorage;
+
+			private Boolean enableEmptyPushReject;
+
+			private Boolean enableLosslessRule;
+
+			private Boolean losslessRuleAligned;
+
+			private Integer losslessRuleDelayTime;
+
+			private Integer losslessRuleFuncType;
+
+			private Boolean losslessRuleRelated;
+
+			private Integer losslessRuleWarmupTime;
+
+			private String featureAnnotations;
+
+			private String workloadType;
 
 			private List<Env> envList;
 
@@ -462,6 +498,110 @@ public class GetK8sApplicationResponse extends AcsResponse {
 				this.slbInfo = slbInfo;
 			}
 
+			public String getAnnotations() {
+				return this.annotations;
+			}
+
+			public void setAnnotations(String annotations) {
+				this.annotations = annotations;
+			}
+
+			public String getLabels() {
+				return this.labels;
+			}
+
+			public void setLabels(String labels) {
+				this.labels = labels;
+			}
+
+			public String getLimitEphemeralStorage() {
+				return this.limitEphemeralStorage;
+			}
+
+			public void setLimitEphemeralStorage(String limitEphemeralStorage) {
+				this.limitEphemeralStorage = limitEphemeralStorage;
+			}
+
+			public String getRequestEphemeralStorage() {
+				return this.requestEphemeralStorage;
+			}
+
+			public void setRequestEphemeralStorage(String requestEphemeralStorage) {
+				this.requestEphemeralStorage = requestEphemeralStorage;
+			}
+
+			public Boolean getEnableEmptyPushReject() {
+				return this.enableEmptyPushReject;
+			}
+
+			public void setEnableEmptyPushReject(Boolean enableEmptyPushReject) {
+				this.enableEmptyPushReject = enableEmptyPushReject;
+			}
+
+			public Boolean getEnableLosslessRule() {
+				return this.enableLosslessRule;
+			}
+
+			public void setEnableLosslessRule(Boolean enableLosslessRule) {
+				this.enableLosslessRule = enableLosslessRule;
+			}
+
+			public Boolean getLosslessRuleAligned() {
+				return this.losslessRuleAligned;
+			}
+
+			public void setLosslessRuleAligned(Boolean losslessRuleAligned) {
+				this.losslessRuleAligned = losslessRuleAligned;
+			}
+
+			public Integer getLosslessRuleDelayTime() {
+				return this.losslessRuleDelayTime;
+			}
+
+			public void setLosslessRuleDelayTime(Integer losslessRuleDelayTime) {
+				this.losslessRuleDelayTime = losslessRuleDelayTime;
+			}
+
+			public Integer getLosslessRuleFuncType() {
+				return this.losslessRuleFuncType;
+			}
+
+			public void setLosslessRuleFuncType(Integer losslessRuleFuncType) {
+				this.losslessRuleFuncType = losslessRuleFuncType;
+			}
+
+			public Boolean getLosslessRuleRelated() {
+				return this.losslessRuleRelated;
+			}
+
+			public void setLosslessRuleRelated(Boolean losslessRuleRelated) {
+				this.losslessRuleRelated = losslessRuleRelated;
+			}
+
+			public Integer getLosslessRuleWarmupTime() {
+				return this.losslessRuleWarmupTime;
+			}
+
+			public void setLosslessRuleWarmupTime(Integer losslessRuleWarmupTime) {
+				this.losslessRuleWarmupTime = losslessRuleWarmupTime;
+			}
+
+			public String getFeatureAnnotations() {
+				return this.featureAnnotations;
+			}
+
+			public void setFeatureAnnotations(String featureAnnotations) {
+				this.featureAnnotations = featureAnnotations;
+			}
+
+			public String getWorkloadType() {
+				return this.workloadType;
+			}
+
+			public void setWorkloadType(String workloadType) {
+				this.workloadType = workloadType;
+			}
+
 			public List<Env> getEnvList() {
 				return this.envList;
 			}
@@ -537,6 +677,8 @@ public class GetK8sApplicationResponse extends AcsResponse {
 			private String affinity;
 
 			private String tolerations;
+
+			private String userBaseImageUrl;
 
 			public String getPostStart() {
 				return this.postStart;
@@ -672,6 +814,14 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setTolerations(String tolerations) {
 				this.tolerations = tolerations;
+			}
+
+			public String getUserBaseImageUrl() {
+				return this.userBaseImageUrl;
+			}
+
+			public void setUserBaseImageUrl(String userBaseImageUrl) {
+				this.userBaseImageUrl = userBaseImageUrl;
 			}
 		}
 

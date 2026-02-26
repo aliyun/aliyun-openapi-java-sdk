@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMPCoSResourceInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
-
-	private Boolean success;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -51,20 +43,28 @@ public class DescribeMPCoSResourceInfoResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,15 +77,23 @@ public class DescribeMPCoSResourceInfoResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long phaseGroupQuota;
+
 		private Long memberQuota;
 
 		private Long usedMember;
 
-		private Long phaseGroupQuota;
-
 		private Long usedPhaseGroup;
 
 		private List<PhaseQuotaInfo> phaseQuotaInfoList;
+
+		public Long getPhaseGroupQuota() {
+			return this.phaseGroupQuota;
+		}
+
+		public void setPhaseGroupQuota(Long phaseGroupQuota) {
+			this.phaseGroupQuota = phaseGroupQuota;
+		}
 
 		public Long getMemberQuota() {
 			return this.memberQuota;
@@ -101,14 +109,6 @@ public class DescribeMPCoSResourceInfoResponse extends AcsResponse {
 
 		public void setUsedMember(Long usedMember) {
 			this.usedMember = usedMember;
-		}
-
-		public Long getPhaseGroupQuota() {
-			return this.phaseGroupQuota;
-		}
-
-		public void setPhaseGroupQuota(Long phaseGroupQuota) {
-			this.phaseGroupQuota = phaseGroupQuota;
 		}
 
 		public Long getUsedPhaseGroup() {

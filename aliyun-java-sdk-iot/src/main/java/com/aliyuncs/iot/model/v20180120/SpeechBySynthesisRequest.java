@@ -45,7 +45,7 @@ public class SpeechBySynthesisRequest extends RpcAcsRequest<SpeechBySynthesisRes
 
 	private Integer speechRate;
 	public SpeechBySynthesisRequest() {
-		super("Iot", "2018-01-20", "SpeechBySynthesis");
+		super("Iot", "2018-01-20", "SpeechBySynthesis", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

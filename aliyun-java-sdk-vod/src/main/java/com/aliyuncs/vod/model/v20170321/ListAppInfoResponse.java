@@ -71,6 +71,12 @@ public class ListAppInfoResponse extends AcsResponse {
 
 		private String modificationTime;
 
+		private String regionId;
+
+		private String resourceGroupId;
+
+		private List<Tag> tags;
+
 		public String getType() {
 			return this.type;
 		}
@@ -125,6 +131,53 @@ public class ListAppInfoResponse extends AcsResponse {
 
 		public void setModificationTime(String modificationTime) {
 			this.modificationTime = modificationTime;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

@@ -31,7 +31,7 @@ public class CreateABTestExperimentRequest extends RoaAcsRequest<CreateABTestExp
 
 	private String appGroupIdentity;
 	public CreateABTestExperimentRequest() {
-		super("OpenSearch", "2017-12-25", "CreateABTestExperiment", "opensearch");
+		super("OpenSearch", "2017-12-25", "CreateABTestExperiment");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/experiments");
 		setMethod(MethodType.POST);
 		try {

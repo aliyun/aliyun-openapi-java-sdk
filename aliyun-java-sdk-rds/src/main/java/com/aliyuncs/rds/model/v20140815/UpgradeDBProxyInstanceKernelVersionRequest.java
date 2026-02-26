@@ -27,15 +27,17 @@ public class UpgradeDBProxyInstanceKernelVersionRequest extends RpcAcsRequest<Up
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceId;
+
+	private String switchTime;
+
 	private String resourceOwnerAccount;
+
+	private String dBProxyEngineType;
 
 	private Long ownerId;
 
 	private String upgradeTime;
-
-	private String dBInstanceId;
-
-	private String switchTime;
 	public UpgradeDBProxyInstanceKernelVersionRequest() {
 		super("Rds", "2014-08-15", "UpgradeDBProxyInstanceKernelVersion", "rds");
 		setMethod(MethodType.POST);
@@ -53,39 +55,6 @@ public class UpgradeDBProxyInstanceKernelVersionRequest extends RpcAcsRequest<Up
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getUpgradeTime() {
-		return this.upgradeTime;
-	}
-
-	public void setUpgradeTime(String upgradeTime) {
-		this.upgradeTime = upgradeTime;
-		if(upgradeTime != null){
-			putQueryParameter("UpgradeTime", upgradeTime);
 		}
 	}
 
@@ -108,6 +77,50 @@ public class UpgradeDBProxyInstanceKernelVersionRequest extends RpcAcsRequest<Up
 		this.switchTime = switchTime;
 		if(switchTime != null){
 			putQueryParameter("SwitchTime", switchTime);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
+		if(dBProxyEngineType != null){
+			putQueryParameter("DBProxyEngineType", dBProxyEngineType);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getUpgradeTime() {
+		return this.upgradeTime;
+	}
+
+	public void setUpgradeTime(String upgradeTime) {
+		this.upgradeTime = upgradeTime;
+		if(upgradeTime != null){
+			putQueryParameter("UpgradeTime", upgradeTime);
 		}
 	}
 

@@ -27,7 +27,7 @@ public class ReleaseInstanceRequest extends RpcAcsRequest<ReleaseInstanceRespons
 
 	private String instanceId;
 	public ReleaseInstanceRequest() {
-		super("ddoscoo", "2020-01-01", "ReleaseInstance");
+		super("ddoscoo", "2020-01-01", "ReleaseInstance", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

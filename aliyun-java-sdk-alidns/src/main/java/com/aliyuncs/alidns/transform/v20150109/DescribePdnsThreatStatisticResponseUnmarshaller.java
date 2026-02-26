@@ -31,12 +31,12 @@ public class DescribePdnsThreatStatisticResponseUnmarshaller {
 		List<StatisticItem> data = new ArrayList<StatisticItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePdnsThreatStatisticResponse.Data.Length"); i++) {
 			StatisticItem statisticItem = new StatisticItem();
-			statisticItem.setUdpTotalCount(_ctx.longValue("DescribePdnsThreatStatisticResponse.Data["+ i +"].UdpTotalCount"));
 			statisticItem.setTotalCount(_ctx.longValue("DescribePdnsThreatStatisticResponse.Data["+ i +"].TotalCount"));
-			statisticItem.setThreatLevel(_ctx.stringValue("DescribePdnsThreatStatisticResponse.Data["+ i +"].ThreatLevel"));
-			statisticItem.setThreatType(_ctx.stringValue("DescribePdnsThreatStatisticResponse.Data["+ i +"].ThreatType"));
 			statisticItem.setTimestamp(_ctx.longValue("DescribePdnsThreatStatisticResponse.Data["+ i +"].Timestamp"));
+			statisticItem.setThreatType(_ctx.stringValue("DescribePdnsThreatStatisticResponse.Data["+ i +"].ThreatType"));
+			statisticItem.setThreatLevel(_ctx.stringValue("DescribePdnsThreatStatisticResponse.Data["+ i +"].ThreatLevel"));
 			statisticItem.setDohTotalCount(_ctx.longValue("DescribePdnsThreatStatisticResponse.Data["+ i +"].DohTotalCount"));
+			statisticItem.setUdpTotalCount(_ctx.longValue("DescribePdnsThreatStatisticResponse.Data["+ i +"].UdpTotalCount"));
 
 			data.add(statisticItem);
 		}

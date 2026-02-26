@@ -44,7 +44,7 @@ public class CreateAuthenticatorRegistrationRequest extends RpcAcsRequest<Create
 
 	private String userName;
 	public CreateAuthenticatorRegistrationRequest() {
-		super("idaas-doraemon", "2021-05-20", "CreateAuthenticatorRegistration");
+		super("idaas-doraemon", "2021-05-20", "CreateAuthenticatorRegistration", "idaasauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -29,6 +29,8 @@ public class HandleSimilarSecurityEventsRequest extends RpcAcsRequest<HandleSimi
 
 	private Long resourceOwnerId;
 
+	private String remark;
+
 	private String sourceIp;
 
 	private String operationCode;
@@ -64,6 +66,17 @@ public class HandleSimilarSecurityEventsRequest extends RpcAcsRequest<HandleSimi
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 

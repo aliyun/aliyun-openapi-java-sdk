@@ -31,6 +31,12 @@ public class CompletePhysicalConnectionLOARequest extends RpcAcsRequest<Complete
 
 	private String clientToken;
 
+	private String lineSPContactInfo;
+
+	private Boolean finishWork;
+
+	private String lineServiceProvider;
+
 	private String lineLabel;
 
 	private String resourceOwnerAccount;
@@ -79,6 +85,39 @@ public class CompletePhysicalConnectionLOARequest extends RpcAcsRequest<Complete
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getLineSPContactInfo() {
+		return this.lineSPContactInfo;
+	}
+
+	public void setLineSPContactInfo(String lineSPContactInfo) {
+		this.lineSPContactInfo = lineSPContactInfo;
+		if(lineSPContactInfo != null){
+			putQueryParameter("LineSPContactInfo", lineSPContactInfo);
+		}
+	}
+
+	public Boolean getFinishWork() {
+		return this.finishWork;
+	}
+
+	public void setFinishWork(Boolean finishWork) {
+		this.finishWork = finishWork;
+		if(finishWork != null){
+			putQueryParameter("FinishWork", finishWork.toString());
+		}
+	}
+
+	public String getLineServiceProvider() {
+		return this.lineServiceProvider;
+	}
+
+	public void setLineServiceProvider(String lineServiceProvider) {
+		this.lineServiceProvider = lineServiceProvider;
+		if(lineServiceProvider != null){
+			putQueryParameter("LineServiceProvider", lineServiceProvider);
 		}
 	}
 

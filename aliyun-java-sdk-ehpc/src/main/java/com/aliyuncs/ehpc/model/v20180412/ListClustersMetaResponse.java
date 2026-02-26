@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListClustersMetaResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<ClusterInfoSimple> clusters;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListClustersMetaResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListClustersMetaResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ClusterInfoSimple> getClusters() {
@@ -77,53 +77,33 @@ public class ListClustersMetaResponse extends AcsResponse {
 
 	public static class ClusterInfoSimple {
 
-		private String id;
-
-		private String name;
-
-		private String description;
-
 		private String status;
 
-		private String location;
-
-		private String osTag;
-
-		private String clientVersion;
-
-		private String accountType;
+		private String vpcId;
 
 		private String schedulerType;
-
-		private String vpcId;
 
 		private String deployMode;
 
 		private Boolean isComputeEss;
 
-		public String getId() {
-			return this.id;
-		}
+		private String osTag;
 
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String accountType;
 
-		public String getName() {
-			return this.name;
-		}
+		private String description;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String name;
 
-		public String getDescription() {
-			return this.description;
-		}
+		private String id;
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
+		private String location;
+
+		private String clientVersion;
+
+		private Boolean hasPlugin;
+
+		private String ehpcVersion;
 
 		public String getStatus() {
 			return this.status;
@@ -133,36 +113,12 @@ public class ListClustersMetaResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getLocation() {
-			return this.location;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setLocation(String location) {
-			this.location = location;
-		}
-
-		public String getOsTag() {
-			return this.osTag;
-		}
-
-		public void setOsTag(String osTag) {
-			this.osTag = osTag;
-		}
-
-		public String getClientVersion() {
-			return this.clientVersion;
-		}
-
-		public void setClientVersion(String clientVersion) {
-			this.clientVersion = clientVersion;
-		}
-
-		public String getAccountType() {
-			return this.accountType;
-		}
-
-		public void setAccountType(String accountType) {
-			this.accountType = accountType;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getSchedulerType() {
@@ -171,14 +127,6 @@ public class ListClustersMetaResponse extends AcsResponse {
 
 		public void setSchedulerType(String schedulerType) {
 			this.schedulerType = schedulerType;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
 		}
 
 		public String getDeployMode() {
@@ -195,6 +143,78 @@ public class ListClustersMetaResponse extends AcsResponse {
 
 		public void setIsComputeEss(Boolean isComputeEss) {
 			this.isComputeEss = isComputeEss;
+		}
+
+		public String getOsTag() {
+			return this.osTag;
+		}
+
+		public void setOsTag(String osTag) {
+			this.osTag = osTag;
+		}
+
+		public String getAccountType() {
+			return this.accountType;
+		}
+
+		public void setAccountType(String accountType) {
+			this.accountType = accountType;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
+		public String getClientVersion() {
+			return this.clientVersion;
+		}
+
+		public void setClientVersion(String clientVersion) {
+			this.clientVersion = clientVersion;
+		}
+
+		public Boolean getHasPlugin() {
+			return this.hasPlugin;
+		}
+
+		public void setHasPlugin(Boolean hasPlugin) {
+			this.hasPlugin = hasPlugin;
+		}
+
+		public String getEhpcVersion() {
+			return this.ehpcVersion;
+		}
+
+		public void setEhpcVersion(String ehpcVersion) {
+			this.ehpcVersion = ehpcVersion;
 		}
 	}
 

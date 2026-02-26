@@ -26,12 +26,12 @@ public class DescribeFCTriggerResponseUnmarshaller {
 		describeFCTriggerResponse.setRequestId(_ctx.stringValue("DescribeFCTriggerResponse.RequestId"));
 
 		FCTrigger fCTrigger = new FCTrigger();
-		fCTrigger.setEventMetaName(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.EventMetaName"));
-		fCTrigger.setEventMetaVersion(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.EventMetaVersion"));
 		fCTrigger.setTriggerARN(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.TriggerARN"));
 		fCTrigger.setRoleARN(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.RoleARN"));
 		fCTrigger.setSourceArn(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.SourceArn"));
 		fCTrigger.setNotes(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.Notes"));
+		fCTrigger.setEventMetaName(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.EventMetaName"));
+		fCTrigger.setEventMetaVersion(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.EventMetaVersion"));
 		describeFCTriggerResponse.setFCTrigger(fCTrigger);
 	 
 	 	return describeFCTriggerResponse;

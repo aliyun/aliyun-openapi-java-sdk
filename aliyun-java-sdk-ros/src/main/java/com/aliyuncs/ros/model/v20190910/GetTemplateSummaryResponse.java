@@ -26,27 +26,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTemplateSummaryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String description;
 
-	private Map<Object,Object> metadata;
+	private String requestId;
 
 	private String version;
 
-	private List<ResourceIdentifierSummary> resourceIdentifierSummaries;
+	private Map<Object,Object> metadata;
 
-	private List<Map<Object,Object>> parameters;
+	private List<ResourceIdentifierSummary> resourceIdentifierSummaries;
 
 	private List<String> resourceTypes;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private List<Map<Object,Object>> parameters;
 
 	public String getDescription() {
 		return this.description;
@@ -56,12 +48,12 @@ public class GetTemplateSummaryResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public Map<Object,Object> getMetadata() {
-		return this.metadata;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMetadata(Map<Object,Object> metadata) {
-		this.metadata = metadata;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getVersion() {
@@ -72,6 +64,14 @@ public class GetTemplateSummaryResponse extends AcsResponse {
 		this.version = version;
 	}
 
+	public Map<Object,Object> getMetadata() {
+		return this.metadata;
+	}
+
+	public void setMetadata(Map<Object,Object> metadata) {
+		this.metadata = metadata;
+	}
+
 	public List<ResourceIdentifierSummary> getResourceIdentifierSummaries() {
 		return this.resourceIdentifierSummaries;
 	}
@@ -80,20 +80,20 @@ public class GetTemplateSummaryResponse extends AcsResponse {
 		this.resourceIdentifierSummaries = resourceIdentifierSummaries;
 	}
 
-	public List<Map<Object,Object>> getParameters() {
-		return this.parameters;
-	}
-
-	public void setParameters(List<Map<Object,Object>> parameters) {
-		this.parameters = parameters;
-	}
-
 	public List<String> getResourceTypes() {
 		return this.resourceTypes;
 	}
 
 	public void setResourceTypes(List<String> resourceTypes) {
 		this.resourceTypes = resourceTypes;
+	}
+
+	public List<Map<Object,Object>> getParameters() {
+		return this.parameters;
+	}
+
+	public void setParameters(List<Map<Object,Object>> parameters) {
+		this.parameters = parameters;
 	}
 
 	public static class ResourceIdentifierSummary {

@@ -32,14 +32,14 @@ public class ListAccelerateAreasResponseUnmarshaller {
 		List<AreasItem> areas = new ArrayList<AreasItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAccelerateAreasResponse.Areas.Length"); i++) {
 			AreasItem areasItem = new AreasItem();
-			areasItem.setAreaId(_ctx.stringValue("ListAccelerateAreasResponse.Areas["+ i +"].AreaId"));
 			areasItem.setLocalName(_ctx.stringValue("ListAccelerateAreasResponse.Areas["+ i +"].LocalName"));
+			areasItem.setAreaId(_ctx.stringValue("ListAccelerateAreasResponse.Areas["+ i +"].AreaId"));
 
 			List<RegionListItem> regionList = new ArrayList<RegionListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListAccelerateAreasResponse.Areas["+ i +"].RegionList.Length"); j++) {
 				RegionListItem regionListItem = new RegionListItem();
-				regionListItem.setRegionId(_ctx.stringValue("ListAccelerateAreasResponse.Areas["+ i +"].RegionList["+ j +"].RegionId"));
 				regionListItem.setLocalName(_ctx.stringValue("ListAccelerateAreasResponse.Areas["+ i +"].RegionList["+ j +"].LocalName"));
+				regionListItem.setRegionId(_ctx.stringValue("ListAccelerateAreasResponse.Areas["+ i +"].RegionList["+ j +"].RegionId"));
 
 				regionList.add(regionListItem);
 			}

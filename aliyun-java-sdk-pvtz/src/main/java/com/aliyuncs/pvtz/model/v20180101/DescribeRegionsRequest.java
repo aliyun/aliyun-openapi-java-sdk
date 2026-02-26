@@ -25,6 +25,10 @@ import com.aliyuncs.pvtz.Endpoint;
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	   
 
+	private String vpcType;
+
+	private String scene;
+
 	private Long authorizedUserId;
 
 	private String userClientIp;
@@ -39,6 +43,28 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getVpcType() {
+		return this.vpcType;
+	}
+
+	public void setVpcType(String vpcType) {
+		this.vpcType = vpcType;
+		if(vpcType != null){
+			putQueryParameter("VpcType", vpcType);
+		}
+	}
+
+	public String getScene() {
+		return this.scene;
+	}
+
+	public void setScene(String scene) {
+		this.scene = scene;
+		if(scene != null){
+			putQueryParameter("Scene", scene);
+		}
 	}
 
 	public Long getAuthorizedUserId() {

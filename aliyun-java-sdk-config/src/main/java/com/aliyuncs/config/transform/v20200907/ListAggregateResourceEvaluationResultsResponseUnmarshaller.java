@@ -45,6 +45,8 @@ public class ListAggregateResourceEvaluationResultsResponseUnmarshaller {
 			evaluationResult.setConfigRuleInvokedTimestamp(_ctx.longValue("ListAggregateResourceEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].ConfigRuleInvokedTimestamp"));
 			evaluationResult.setInvokingEventMessageType(_ctx.stringValue("ListAggregateResourceEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].InvokingEventMessageType"));
 			evaluationResult.setRemediationEnabled(_ctx.booleanValue("ListAggregateResourceEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].RemediationEnabled"));
+			evaluationResult.setEvaluationId(_ctx.stringValue("ListAggregateResourceEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationId"));
+			evaluationResult.setLastNonCompliantRecordTimestamp(_ctx.longValue("ListAggregateResourceEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].LastNonCompliantRecordTimestamp"));
 
 			EvaluationResultIdentifier evaluationResultIdentifier = new EvaluationResultIdentifier();
 			evaluationResultIdentifier.setOrderingTimestamp(_ctx.longValue("ListAggregateResourceEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.OrderingTimestamp"));

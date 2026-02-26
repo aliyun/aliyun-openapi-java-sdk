@@ -29,7 +29,7 @@ public class GetSpMetadataRequest extends RpcAcsRequest<GetSpMetadataResponse> {
 
 	private String directoryId;
 	public GetSpMetadataRequest() {
-		super("ecd", "2020-09-30", "GetSpMetadata");
+		super("ecd", "2020-09-30", "GetSpMetadata", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

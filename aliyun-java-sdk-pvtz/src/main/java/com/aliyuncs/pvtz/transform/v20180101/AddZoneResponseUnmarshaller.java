@@ -23,9 +23,9 @@ public class AddZoneResponseUnmarshaller {
 	public static AddZoneResponse unmarshall(AddZoneResponse addZoneResponse, UnmarshallerContext _ctx) {
 		
 		addZoneResponse.setRequestId(_ctx.stringValue("AddZoneResponse.RequestId"));
-		addZoneResponse.setSuccess(_ctx.booleanValue("AddZoneResponse.Success"));
-		addZoneResponse.setZoneId(_ctx.stringValue("AddZoneResponse.ZoneId"));
 		addZoneResponse.setZoneName(_ctx.stringValue("AddZoneResponse.ZoneName"));
+		addZoneResponse.setZoneId(_ctx.stringValue("AddZoneResponse.ZoneId"));
+		addZoneResponse.setSuccess(_ctx.booleanValue("AddZoneResponse.Success"));
 	 
 	 	return addZoneResponse;
 	}

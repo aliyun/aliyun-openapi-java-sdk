@@ -24,6 +24,8 @@ public class GetPrometheusGlobalViewResponseUnmarshaller {
 		
 		getPrometheusGlobalViewResponse.setRequestId(_ctx.stringValue("GetPrometheusGlobalViewResponse.RequestId"));
 		getPrometheusGlobalViewResponse.setData(_ctx.stringValue("GetPrometheusGlobalViewResponse.Data"));
+		getPrometheusGlobalViewResponse.setCode(_ctx.integerValue("GetPrometheusGlobalViewResponse.Code"));
+		getPrometheusGlobalViewResponse.setMessage(_ctx.stringValue("GetPrometheusGlobalViewResponse.Message"));
 	 
 	 	return getPrometheusGlobalViewResponse;
 	}

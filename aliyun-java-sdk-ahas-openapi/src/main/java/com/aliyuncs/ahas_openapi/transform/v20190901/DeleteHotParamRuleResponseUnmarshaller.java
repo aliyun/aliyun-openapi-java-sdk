@@ -24,8 +24,8 @@ public class DeleteHotParamRuleResponseUnmarshaller {
 	public static DeleteHotParamRuleResponse unmarshall(DeleteHotParamRuleResponse deleteHotParamRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteHotParamRuleResponse.setRequestId(_ctx.stringValue("DeleteHotParamRuleResponse.RequestId"));
-		deleteHotParamRuleResponse.setCode(_ctx.stringValue("DeleteHotParamRuleResponse.Code"));
 		deleteHotParamRuleResponse.setMessage(_ctx.stringValue("DeleteHotParamRuleResponse.Message"));
+		deleteHotParamRuleResponse.setCode(_ctx.stringValue("DeleteHotParamRuleResponse.Code"));
 		deleteHotParamRuleResponse.setSuccess(_ctx.booleanValue("DeleteHotParamRuleResponse.Success"));
 
 		Data data = new Data();

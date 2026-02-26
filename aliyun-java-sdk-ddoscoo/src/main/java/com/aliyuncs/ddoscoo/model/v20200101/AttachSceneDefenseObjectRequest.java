@@ -31,7 +31,7 @@ public class AttachSceneDefenseObjectRequest extends RpcAcsRequest<AttachSceneDe
 
 	private String objectType;
 	public AttachSceneDefenseObjectRequest() {
-		super("ddoscoo", "2020-01-01", "AttachSceneDefenseObject");
+		super("ddoscoo", "2020-01-01", "AttachSceneDefenseObject", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

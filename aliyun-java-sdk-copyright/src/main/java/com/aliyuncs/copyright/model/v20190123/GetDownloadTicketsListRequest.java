@@ -26,7 +26,7 @@ public class GetDownloadTicketsListRequest extends RpcAcsRequest<GetDownloadTick
 
 	private String type;
 	public GetDownloadTicketsListRequest() {
-		super("Copyright", "2019-01-23", "GetDownloadTicketsList");
+		super("Copyright", "2019-01-23", "GetDownloadTicketsList", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

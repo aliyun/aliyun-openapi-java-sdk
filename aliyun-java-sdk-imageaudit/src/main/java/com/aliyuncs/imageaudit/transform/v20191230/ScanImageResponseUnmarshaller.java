@@ -41,17 +41,17 @@ public class ScanImageResponseUnmarshaller {
 		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("ScanImageResponse.Data.Results.Length"); i++) {
 			Result result = new Result();
-			result.setTaskId(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].TaskId"));
-			result.setDataId(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].DataId"));
 			result.setImageURL(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].ImageURL"));
+			result.setDataId(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].DataId"));
+			result.setTaskId(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].TaskId"));
 
 			List<SubResult> subResults = new ArrayList<SubResult>();
 			for (int j = 0; j < _ctx.lengthValue("ScanImageResponse.Data.Results["+ i +"].SubResults.Length"); j++) {
 				SubResult subResult = new SubResult();
 				subResult.setSuggestion(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].Suggestion"));
-				subResult.setRate(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].Rate"));
 				subResult.setLabel(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].Label"));
 				subResult.setScene(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].Scene"));
+				subResult.setRate(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].Rate"));
 
 				List<String> oCRDataList = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].OCRDataList.Length"); k++) {
@@ -59,30 +59,20 @@ public class ScanImageResponseUnmarshaller {
 				}
 				subResult.setOCRDataList(oCRDataList);
 
-				List<Frame> frames = new ArrayList<Frame>();
-				for (int k = 0; k < _ctx.lengthValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].Frames.Length"); k++) {
-					Frame frame = new Frame();
-					frame.setRate(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].Frames["+ k +"].Rate"));
-					frame.setURL(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].Frames["+ k +"].URL"));
-
-					frames.add(frame);
-				}
-				subResult.setFrames(frames);
-
 				List<SfaceData> sfaceDataList = new ArrayList<SfaceData>();
 				for (int k = 0; k < _ctx.lengthValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList.Length"); k++) {
 					SfaceData sfaceData = new SfaceData();
-					sfaceData.setX(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList["+ k +"].X"));
-					sfaceData.setY(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList["+ k +"].Y"));
-					sfaceData.setHeight(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList["+ k +"].Height"));
 					sfaceData.setWidth(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList["+ k +"].Width"));
+					sfaceData.setHeight(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList["+ k +"].Height"));
+					sfaceData.setY(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList["+ k +"].Y"));
+					sfaceData.setX(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList["+ k +"].X"));
 
 					List<Face> faces = new ArrayList<Face>();
 					for (int l = 0; l < _ctx.lengthValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList["+ k +"].Faces.Length"); l++) {
 						Face face = new Face();
-						face.setRate(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList["+ k +"].Faces["+ l +"].Rate"));
-						face.setId(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList["+ k +"].Faces["+ l +"].Id"));
 						face.setName(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList["+ k +"].Faces["+ l +"].Name"));
+						face.setId(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList["+ k +"].Faces["+ l +"].Id"));
+						face.setRate(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].SfaceDataList["+ k +"].Faces["+ l +"].Rate"));
 
 						faces.add(face);
 					}
@@ -101,31 +91,41 @@ public class ScanImageResponseUnmarshaller {
 				}
 				subResult.setHintWordsInfoList(hintWordsInfoList);
 
-				List<LogoData> logoDataList = new ArrayList<LogoData>();
-				for (int k = 0; k < _ctx.lengthValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList.Length"); k++) {
-					LogoData logoData = new LogoData();
-					logoData.setType(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList["+ k +"].Type"));
-					logoData.setX(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList["+ k +"].X"));
-					logoData.setY(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList["+ k +"].Y"));
-					logoData.setHeight(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList["+ k +"].Height"));
-					logoData.setWidth(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList["+ k +"].Width"));
-					logoData.setName(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList["+ k +"].Name"));
-
-					logoDataList.add(logoData);
-				}
-				subResult.setLogoDataList(logoDataList);
-
 				List<ProgramCodeData> programCodeDataList = new ArrayList<ProgramCodeData>();
 				for (int k = 0; k < _ctx.lengthValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].ProgramCodeDataList.Length"); k++) {
 					ProgramCodeData programCodeData = new ProgramCodeData();
-					programCodeData.setX(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].ProgramCodeDataList["+ k +"].X"));
-					programCodeData.setY(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].ProgramCodeDataList["+ k +"].Y"));
-					programCodeData.setHeight(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].ProgramCodeDataList["+ k +"].Height"));
 					programCodeData.setWidth(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].ProgramCodeDataList["+ k +"].Width"));
+					programCodeData.setHeight(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].ProgramCodeDataList["+ k +"].Height"));
+					programCodeData.setY(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].ProgramCodeDataList["+ k +"].Y"));
+					programCodeData.setX(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].ProgramCodeDataList["+ k +"].X"));
 
 					programCodeDataList.add(programCodeData);
 				}
 				subResult.setProgramCodeDataList(programCodeDataList);
+
+				List<Frame> frames = new ArrayList<Frame>();
+				for (int k = 0; k < _ctx.lengthValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].Frames.Length"); k++) {
+					Frame frame = new Frame();
+					frame.setURL(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].Frames["+ k +"].URL"));
+					frame.setRate(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].Frames["+ k +"].Rate"));
+
+					frames.add(frame);
+				}
+				subResult.setFrames(frames);
+
+				List<LogoData> logoDataList = new ArrayList<LogoData>();
+				for (int k = 0; k < _ctx.lengthValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList.Length"); k++) {
+					LogoData logoData = new LogoData();
+					logoData.setType(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList["+ k +"].Type"));
+					logoData.setWidth(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList["+ k +"].Width"));
+					logoData.setHeight(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList["+ k +"].Height"));
+					logoData.setY(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList["+ k +"].Y"));
+					logoData.setName(_ctx.stringValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList["+ k +"].Name"));
+					logoData.setX(_ctx.floatValue("ScanImageResponse.Data.Results["+ i +"].SubResults["+ j +"].LogoDataList["+ k +"].X"));
+
+					logoDataList.add(logoData);
+				}
+				subResult.setLogoDataList(logoDataList);
 
 				subResults.add(subResult);
 			}

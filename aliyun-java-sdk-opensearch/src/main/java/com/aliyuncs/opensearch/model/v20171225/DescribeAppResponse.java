@@ -48,25 +48,25 @@ public class DescribeAppResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String id;
+		private Integer created;
+
+		private String clusterName;
+
+		private Boolean autoSwitch;
+
+		private Integer algoDeploymentId;
+
+		private String type;
 
 		private String description;
 
 		private String status;
 
-		private String type;
-
-		private String clusterName;
-
-		private Integer algoDeploymentId;
-
-		private Integer created;
-
-		private Boolean autoSwitch;
+		private Map<Object,Object> schema;
 
 		private Integer progressPercent;
 
-		private Map<Object,Object> schema;
+		private String id;
 
 		private List<String> fetchFields;
 
@@ -74,12 +74,44 @@ public class DescribeAppResponse extends AcsResponse {
 
 		private Domain domain;
 
-		public String getId() {
-			return this.id;
+		public Integer getCreated() {
+			return this.created;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setCreated(Integer created) {
+			this.created = created;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public Boolean getAutoSwitch() {
+			return this.autoSwitch;
+		}
+
+		public void setAutoSwitch(Boolean autoSwitch) {
+			this.autoSwitch = autoSwitch;
+		}
+
+		public Integer getAlgoDeploymentId() {
+			return this.algoDeploymentId;
+		}
+
+		public void setAlgoDeploymentId(Integer algoDeploymentId) {
+			this.algoDeploymentId = algoDeploymentId;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getDescription() {
@@ -98,44 +130,12 @@ public class DescribeAppResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getType() {
-			return this.type;
+		public Map<Object,Object> getSchema() {
+			return this.schema;
 		}
 
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getClusterName() {
-			return this.clusterName;
-		}
-
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
-		}
-
-		public Integer getAlgoDeploymentId() {
-			return this.algoDeploymentId;
-		}
-
-		public void setAlgoDeploymentId(Integer algoDeploymentId) {
-			this.algoDeploymentId = algoDeploymentId;
-		}
-
-		public Integer getCreated() {
-			return this.created;
-		}
-
-		public void setCreated(Integer created) {
-			this.created = created;
-		}
-
-		public Boolean getAutoSwitch() {
-			return this.autoSwitch;
-		}
-
-		public void setAutoSwitch(Boolean autoSwitch) {
-			this.autoSwitch = autoSwitch;
+		public void setSchema(Map<Object,Object> schema) {
+			this.schema = schema;
 		}
 
 		public Integer getProgressPercent() {
@@ -146,12 +146,12 @@ public class DescribeAppResponse extends AcsResponse {
 			this.progressPercent = progressPercent;
 		}
 
-		public Map<Object,Object> getSchema() {
-			return this.schema;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setSchema(Map<Object,Object> schema) {
-			this.schema = schema;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public List<String> getFetchFields() {
@@ -180,13 +180,29 @@ public class DescribeAppResponse extends AcsResponse {
 
 		public static class Quota {
 
+			private String spec;
+
+			private Integer qps;
+
 			private Integer docSize;
 
 			private Integer computeResource;
 
-			private Integer qps;
+			public String getSpec() {
+				return this.spec;
+			}
 
-			private String spec;
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
+
+			public Integer getQps() {
+				return this.qps;
+			}
+
+			public void setQps(Integer qps) {
+				this.qps = qps;
+			}
 
 			public Integer getDocSize() {
 				return this.docSize;
@@ -203,39 +219,15 @@ public class DescribeAppResponse extends AcsResponse {
 			public void setComputeResource(Integer computeResource) {
 				this.computeResource = computeResource;
 			}
-
-			public Integer getQps() {
-				return this.qps;
-			}
-
-			public void setQps(Integer qps) {
-				this.qps = qps;
-			}
-
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
-			}
 		}
 
 		public static class Domain {
 
-			private String name;
-
 			private String category;
 
+			private String name;
+
 			private Functions functions;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
 
 			public String getCategory() {
 				return this.category;
@@ -243,6 +235,14 @@ public class DescribeAppResponse extends AcsResponse {
 
 			public void setCategory(String category) {
 				this.category = category;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public Functions getFunctions() {
@@ -255,11 +255,19 @@ public class DescribeAppResponse extends AcsResponse {
 
 			public static class Functions {
 
+				private List<String> service;
+
 				private List<String> qp;
 
 				private List<String> algo;
 
-				private List<String> service;
+				public List<String> getService() {
+					return this.service;
+				}
+
+				public void setService(List<String> service) {
+					this.service = service;
+				}
 
 				public List<String> getQp() {
 					return this.qp;
@@ -275,14 +283,6 @@ public class DescribeAppResponse extends AcsResponse {
 
 				public void setAlgo(List<String> algo) {
 					this.algo = algo;
-				}
-
-				public List<String> getService() {
-					return this.service;
-				}
-
-				public void setService(List<String> service) {
-					this.service = service;
 				}
 			}
 		}

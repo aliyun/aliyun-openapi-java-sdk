@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddPlaylistItemsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String programId;
 
+	private String requestId;
+
 	private Items items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getProgramId() {
 		return this.programId;
@@ -45,6 +37,14 @@ public class AddPlaylistItemsResponse extends AcsResponse {
 
 	public void setProgramId(String programId) {
 		this.programId = programId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Items getItems() {
@@ -57,17 +57,9 @@ public class AddPlaylistItemsResponse extends AcsResponse {
 
 	public static class Items {
 
-		private List<SuccessItem> successItems;
-
 		private List<FailedItem> failedItems;
 
-		public List<SuccessItem> getSuccessItems() {
-			return this.successItems;
-		}
-
-		public void setSuccessItems(List<SuccessItem> successItems) {
-			this.successItems = successItems;
-		}
+		private List<SuccessItem> successItems;
 
 		public List<FailedItem> getFailedItems() {
 			return this.failedItems;
@@ -77,7 +69,15 @@ public class AddPlaylistItemsResponse extends AcsResponse {
 			this.failedItems = failedItems;
 		}
 
-		public static class SuccessItem {
+		public List<SuccessItem> getSuccessItems() {
+			return this.successItems;
+		}
+
+		public void setSuccessItems(List<SuccessItem> successItems) {
+			this.successItems = successItems;
+		}
+
+		public static class FailedItem {
 
 			private String itemId;
 
@@ -100,7 +100,7 @@ public class AddPlaylistItemsResponse extends AcsResponse {
 			}
 		}
 
-		public static class FailedItem {
+		public static class SuccessItem {
 
 			private String itemId;
 

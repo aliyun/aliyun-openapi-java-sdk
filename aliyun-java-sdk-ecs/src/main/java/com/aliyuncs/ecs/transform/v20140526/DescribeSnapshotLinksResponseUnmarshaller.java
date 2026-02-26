@@ -27,6 +27,7 @@ public class DescribeSnapshotLinksResponseUnmarshaller {
 	public static DescribeSnapshotLinksResponse unmarshall(DescribeSnapshotLinksResponse describeSnapshotLinksResponse, UnmarshallerContext _ctx) {
 		
 		describeSnapshotLinksResponse.setRequestId(_ctx.stringValue("DescribeSnapshotLinksResponse.RequestId"));
+		describeSnapshotLinksResponse.setNextToken(_ctx.stringValue("DescribeSnapshotLinksResponse.NextToken"));
 		describeSnapshotLinksResponse.setPageSize(_ctx.integerValue("DescribeSnapshotLinksResponse.PageSize"));
 		describeSnapshotLinksResponse.setPageNumber(_ctx.integerValue("DescribeSnapshotLinksResponse.PageNumber"));
 		describeSnapshotLinksResponse.setTotalCount(_ctx.integerValue("DescribeSnapshotLinksResponse.TotalCount"));

@@ -26,23 +26,34 @@ import com.aliyuncs.resourcemanager.Endpoint;
 public class DetachPolicyRequest extends RpcAcsRequest<DetachPolicyResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String policyType;
 
 	private String principalType;
-
-	private String resourceGroupId;
 
 	private String policyName;
 
 	private String principalName;
 	public DetachPolicyRequest() {
-		super("ResourceManager", "2020-03-31", "DetachPolicy");
+		super("ResourceManager", "2020-03-31", "DetachPolicy", "resourcemanager");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getPolicyType() {
@@ -64,17 +75,6 @@ public class DetachPolicyRequest extends RpcAcsRequest<DetachPolicyResponse> {
 		this.principalType = principalType;
 		if(principalType != null){
 			putQueryParameter("PrincipalType", principalType);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

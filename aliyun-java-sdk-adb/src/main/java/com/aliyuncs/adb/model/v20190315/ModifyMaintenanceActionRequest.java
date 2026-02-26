@@ -27,6 +27,8 @@ public class ModifyMaintenanceActionRequest extends RpcAcsRequest<ModifyMaintena
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String switchTime;
 
 	private String resourceOwnerAccount;
@@ -53,6 +55,17 @@ public class ModifyMaintenanceActionRequest extends RpcAcsRequest<ModifyMaintena
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

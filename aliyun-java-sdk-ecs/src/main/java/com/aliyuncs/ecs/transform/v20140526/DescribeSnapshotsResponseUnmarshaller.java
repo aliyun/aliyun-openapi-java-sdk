@@ -40,6 +40,7 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setCreationTime(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].CreationTime"));
 			snapshot.setProgress(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Progress"));
 			snapshot.setInstantAccess(_ctx.booleanValue("DescribeSnapshotsResponse.Snapshots["+ i +"].InstantAccess"));
+			snapshot.setAvailable(_ctx.booleanValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Available"));
 			snapshot.setRemainTime(_ctx.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].RemainTime"));
 			snapshot.setSourceDiskSize(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskSize"));
 			snapshot.setRetentionDays(_ctx.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].RetentionDays"));
@@ -54,6 +55,7 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setInstantAccessRetentionDays(_ctx.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].InstantAccessRetentionDays"));
 			snapshot.setDescription(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Description"));
 			snapshot.setSnapshotId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
+			snapshot.setRegionId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].RegionId"));
 			snapshot.setResourceGroupId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].ResourceGroupId"));
 			snapshot.setCategory(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Category"));
 			snapshot.setKMSKeyId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].KMSKeyId"));
@@ -61,6 +63,7 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setProductCode(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].ProductCode"));
 			snapshot.setSourceSnapshotId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceSnapshotId"));
 			snapshot.setSourceRegionId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceRegionId"));
+			snapshot.setSnapshotLinkId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotLinkId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Tags.Length"); j++) {

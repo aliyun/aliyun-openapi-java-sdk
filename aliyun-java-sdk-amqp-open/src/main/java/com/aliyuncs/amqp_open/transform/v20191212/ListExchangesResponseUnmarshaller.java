@@ -31,18 +31,18 @@ public class ListExchangesResponseUnmarshaller {
 		listExchangesResponse.setRequestId(_ctx.stringValue("ListExchangesResponse.RequestId"));
 
 		Data data = new Data();
-		data.setNextToken(_ctx.stringValue("ListExchangesResponse.Data.NextToken"));
 		data.setMaxResults(_ctx.integerValue("ListExchangesResponse.Data.MaxResults"));
+		data.setNextToken(_ctx.stringValue("ListExchangesResponse.Data.NextToken"));
 
 		List<ExchangeVO> exchanges = new ArrayList<ExchangeVO>();
 		for (int i = 0; i < _ctx.lengthValue("ListExchangesResponse.Data.Exchanges.Length"); i++) {
 			ExchangeVO exchangeVO = new ExchangeVO();
-			exchangeVO.setName(_ctx.stringValue("ListExchangesResponse.Data.Exchanges["+ i +"].Name"));
-			exchangeVO.setVHostName(_ctx.stringValue("ListExchangesResponse.Data.Exchanges["+ i +"].VHostName"));
-			exchangeVO.setExchangeType(_ctx.stringValue("ListExchangesResponse.Data.Exchanges["+ i +"].ExchangeType"));
 			exchangeVO.setAutoDeleteState(_ctx.booleanValue("ListExchangesResponse.Data.Exchanges["+ i +"].AutoDeleteState"));
-			exchangeVO.setAttributes(_ctx.mapValue("ListExchangesResponse.Data.Exchanges["+ i +"].Attributes"));
 			exchangeVO.setCreateTime(_ctx.longValue("ListExchangesResponse.Data.Exchanges["+ i +"].CreateTime"));
+			exchangeVO.setAttributes(_ctx.mapValue("ListExchangesResponse.Data.Exchanges["+ i +"].Attributes"));
+			exchangeVO.setVHostName(_ctx.stringValue("ListExchangesResponse.Data.Exchanges["+ i +"].VHostName"));
+			exchangeVO.setName(_ctx.stringValue("ListExchangesResponse.Data.Exchanges["+ i +"].Name"));
+			exchangeVO.setExchangeType(_ctx.stringValue("ListExchangesResponse.Data.Exchanges["+ i +"].ExchangeType"));
 
 			exchanges.add(exchangeVO);
 		}

@@ -57,17 +57,33 @@ public class DescribeBackupSummaryResponse extends AcsResponse {
 
 	public static class Incr {
 
+		private String status;
+
+		private String speed;
+
 		private String pos;
 
 		private String queueLogNum;
 
-		private String speed;
-
-		private String status;
+		private String backupLogSize;
 
 		private String runningLogNum;
 
-		private String backupLogSize;
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getSpeed() {
+			return this.speed;
+		}
+
+		public void setSpeed(String speed) {
+			this.speed = speed;
+		}
 
 		public String getPos() {
 			return this.pos;
@@ -85,20 +101,12 @@ public class DescribeBackupSummaryResponse extends AcsResponse {
 			this.queueLogNum = queueLogNum;
 		}
 
-		public String getSpeed() {
-			return this.speed;
+		public String getBackupLogSize() {
+			return this.backupLogSize;
 		}
 
-		public void setSpeed(String speed) {
-			this.speed = speed;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setBackupLogSize(String backupLogSize) {
+			this.backupLogSize = backupLogSize;
 		}
 
 		public String getRunningLogNum() {
@@ -108,27 +116,19 @@ public class DescribeBackupSummaryResponse extends AcsResponse {
 		public void setRunningLogNum(String runningLogNum) {
 			this.runningLogNum = runningLogNum;
 		}
-
-		public String getBackupLogSize() {
-			return this.backupLogSize;
-		}
-
-		public void setBackupLogSize(String backupLogSize) {
-			this.backupLogSize = backupLogSize;
-		}
 	}
 
 	public static class Full {
 
 		private String hasMore;
 
-		private String nextFullBackupDate;
+		private Integer pageSize;
 
 		private Integer pageNumber;
 
-		private Integer pageSize;
-
 		private Integer total;
+
+		private String nextFullBackupDate;
 
 		private List<Record> records;
 
@@ -140,12 +140,12 @@ public class DescribeBackupSummaryResponse extends AcsResponse {
 			this.hasMore = hasMore;
 		}
 
-		public String getNextFullBackupDate() {
-			return this.nextFullBackupDate;
+		public Integer getPageSize() {
+			return this.pageSize;
 		}
 
-		public void setNextFullBackupDate(String nextFullBackupDate) {
-			this.nextFullBackupDate = nextFullBackupDate;
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
 		public Integer getPageNumber() {
@@ -156,20 +156,20 @@ public class DescribeBackupSummaryResponse extends AcsResponse {
 			this.pageNumber = pageNumber;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public Integer getTotal() {
 			return this.total;
 		}
 
 		public void setTotal(Integer total) {
 			this.total = total;
+		}
+
+		public String getNextFullBackupDate() {
+			return this.nextFullBackupDate;
+		}
+
+		public void setNextFullBackupDate(String nextFullBackupDate) {
+			this.nextFullBackupDate = nextFullBackupDate;
 		}
 
 		public List<Record> getRecords() {
@@ -182,26 +182,26 @@ public class DescribeBackupSummaryResponse extends AcsResponse {
 
 		public static class Record {
 
-			private String recordId;
+			private String status;
 
 			private String finishTime;
 
 			private String process;
 
-			private String createTime;
-
 			private String dataSize;
 
 			private String speed;
 
-			private String status;
+			private String recordId;
 
-			public String getRecordId() {
-				return this.recordId;
+			private String createTime;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setRecordId(String recordId) {
-				this.recordId = recordId;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getFinishTime() {
@@ -220,14 +220,6 @@ public class DescribeBackupSummaryResponse extends AcsResponse {
 				this.process = process;
 			}
 
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
 			public String getDataSize() {
 				return this.dataSize;
 			}
@@ -244,12 +236,20 @@ public class DescribeBackupSummaryResponse extends AcsResponse {
 				this.speed = speed;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getRecordId() {
+				return this.recordId;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setRecordId(String recordId) {
+				this.recordId = recordId;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
 			}
 		}
 	}

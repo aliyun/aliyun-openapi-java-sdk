@@ -28,7 +28,7 @@ public class DescribePolicyRequest extends RpcAcsRequest<DescribePolicyResponse>
 
 	private String bizType;
 	public DescribePolicyRequest() {
-		super("Copyright", "2019-01-23", "DescribePolicy");
+		super("Copyright", "2019-01-23", "DescribePolicy", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

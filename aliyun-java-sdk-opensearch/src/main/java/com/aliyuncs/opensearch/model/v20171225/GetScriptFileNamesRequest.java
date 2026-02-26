@@ -31,7 +31,7 @@ public class GetScriptFileNamesRequest extends RoaAcsRequest<GetScriptFileNamesR
 
 	private String appGroupIdentity;
 	public GetScriptFileNamesRequest() {
-		super("OpenSearch", "2017-12-25", "GetScriptFileNames", "opensearch");
+		super("OpenSearch", "2017-12-25", "GetScriptFileNames");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/file-names");
 		setMethod(MethodType.GET);
 		try {

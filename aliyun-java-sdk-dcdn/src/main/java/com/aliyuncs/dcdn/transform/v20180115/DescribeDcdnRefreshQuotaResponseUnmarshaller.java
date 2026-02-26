@@ -23,16 +23,16 @@ public class DescribeDcdnRefreshQuotaResponseUnmarshaller {
 	public static DescribeDcdnRefreshQuotaResponse unmarshall(DescribeDcdnRefreshQuotaResponse describeDcdnRefreshQuotaResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnRefreshQuotaResponse.setRequestId(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.RequestId"));
-		describeDcdnRefreshQuotaResponse.setUrlQuota(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.UrlQuota"));
-		describeDcdnRefreshQuotaResponse.setDirQuota(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.DirQuota"));
-		describeDcdnRefreshQuotaResponse.setUrlRemain(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.UrlRemain"));
-		describeDcdnRefreshQuotaResponse.setDirRemain(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.DirRemain"));
-		describeDcdnRefreshQuotaResponse.setPreloadQuota(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.PreloadQuota"));
 		describeDcdnRefreshQuotaResponse.setBlockQuota(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.BlockQuota"));
-		describeDcdnRefreshQuotaResponse.setPreloadRemain(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.PreloadRemain"));
-		describeDcdnRefreshQuotaResponse.setBlockRemain(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.BlockRemain"));
-		describeDcdnRefreshQuotaResponse.setRegexQuota(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.RegexQuota"));
 		describeDcdnRefreshQuotaResponse.setRegexRemain(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.RegexRemain"));
+		describeDcdnRefreshQuotaResponse.setBlockRemain(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.BlockRemain"));
+		describeDcdnRefreshQuotaResponse.setPreloadRemain(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.PreloadRemain"));
+		describeDcdnRefreshQuotaResponse.setDirRemain(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.DirRemain"));
+		describeDcdnRefreshQuotaResponse.setUrlRemain(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.UrlRemain"));
+		describeDcdnRefreshQuotaResponse.setDirQuota(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.DirQuota"));
+		describeDcdnRefreshQuotaResponse.setUrlQuota(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.UrlQuota"));
+		describeDcdnRefreshQuotaResponse.setPreloadQuota(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.PreloadQuota"));
+		describeDcdnRefreshQuotaResponse.setRegexQuota(_ctx.stringValue("DescribeDcdnRefreshQuotaResponse.RegexQuota"));
 	 
 	 	return describeDcdnRefreshQuotaResponse;
 	}

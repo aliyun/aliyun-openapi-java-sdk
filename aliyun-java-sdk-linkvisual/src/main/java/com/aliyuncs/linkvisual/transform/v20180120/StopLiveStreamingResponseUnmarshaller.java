@@ -23,9 +23,9 @@ public class StopLiveStreamingResponseUnmarshaller {
 	public static StopLiveStreamingResponse unmarshall(StopLiveStreamingResponse stopLiveStreamingResponse, UnmarshallerContext _ctx) {
 		
 		stopLiveStreamingResponse.setRequestId(_ctx.stringValue("StopLiveStreamingResponse.RequestId"));
-		stopLiveStreamingResponse.setSuccess(_ctx.booleanValue("StopLiveStreamingResponse.Success"));
-		stopLiveStreamingResponse.setErrorMessage(_ctx.stringValue("StopLiveStreamingResponse.ErrorMessage"));
 		stopLiveStreamingResponse.setCode(_ctx.stringValue("StopLiveStreamingResponse.Code"));
+		stopLiveStreamingResponse.setErrorMessage(_ctx.stringValue("StopLiveStreamingResponse.ErrorMessage"));
+		stopLiveStreamingResponse.setSuccess(_ctx.booleanValue("StopLiveStreamingResponse.Success"));
 	 
 	 	return stopLiveStreamingResponse;
 	}

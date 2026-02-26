@@ -24,13 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAITaskStatusResponse extends AcsResponse {
 
+	private String dBClusterId;
+
 	private String requestId;
 
 	private String status;
 
-	private String dBClusterId;
-
 	private String statusName;
+
+	private String accountName;
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,20 +58,20 @@ public class DescribeAITaskStatusResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-	}
-
 	public String getStatusName() {
 		return this.statusName;
 	}
 
 	public void setStatusName(String statusName) {
 		this.statusName = statusName;
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
 	}
 
 	@Override

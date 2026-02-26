@@ -25,9 +25,9 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class UpdateTableThemeRequest extends RpcAcsRequest<UpdateTableThemeResponse> {
 	   
 
-	private String name;
-
 	private Long themeId;
+
+	private String name;
 
 	private Long projectId;
 	public UpdateTableThemeRequest() {
@@ -39,17 +39,6 @@ public class UpdateTableThemeRequest extends RpcAcsRequest<UpdateTableThemeRespo
 		} catch (Exception e) {}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public Long getThemeId() {
 		return this.themeId;
 	}
@@ -58,6 +47,17 @@ public class UpdateTableThemeRequest extends RpcAcsRequest<UpdateTableThemeRespo
 		this.themeId = themeId;
 		if(themeId != null){
 			putQueryParameter("ThemeId", themeId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

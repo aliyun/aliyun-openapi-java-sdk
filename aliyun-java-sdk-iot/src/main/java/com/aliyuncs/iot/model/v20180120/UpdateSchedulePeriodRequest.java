@@ -37,7 +37,7 @@ public class UpdateSchedulePeriodRequest extends RpcAcsRequest<UpdateSchedulePer
 
 	private String soundCodeContent;
 	public UpdateSchedulePeriodRequest() {
-		super("Iot", "2018-01-20", "UpdateSchedulePeriod");
+		super("Iot", "2018-01-20", "UpdateSchedulePeriod", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

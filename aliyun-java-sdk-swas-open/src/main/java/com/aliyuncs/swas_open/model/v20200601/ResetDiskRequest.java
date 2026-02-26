@@ -30,7 +30,7 @@ public class ResetDiskRequest extends RpcAcsRequest<ResetDiskResponse> {
 
 	private String diskId;
 	public ResetDiskRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ResetDisk");
+		super("SWAS-OPEN", "2020-06-01", "ResetDisk", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 

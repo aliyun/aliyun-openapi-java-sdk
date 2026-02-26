@@ -93,6 +93,8 @@ public class DescribeEipSegmentResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String zone;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -155,6 +157,14 @@ public class DescribeEipSegmentResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getZone() {
+			return this.zone;
+		}
+
+		public void setZone(String zone) {
+			this.zone = zone;
 		}
 	}
 

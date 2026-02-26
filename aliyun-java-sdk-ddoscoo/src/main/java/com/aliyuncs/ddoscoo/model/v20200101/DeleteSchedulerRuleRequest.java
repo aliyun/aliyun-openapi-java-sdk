@@ -29,7 +29,7 @@ public class DeleteSchedulerRuleRequest extends RpcAcsRequest<DeleteSchedulerRul
 
 	private String resourceGroupId;
 	public DeleteSchedulerRuleRequest() {
-		super("ddoscoo", "2020-01-01", "DeleteSchedulerRule");
+		super("ddoscoo", "2020-01-01", "DeleteSchedulerRule", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

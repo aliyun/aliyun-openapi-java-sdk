@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeShardTaskInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -44,6 +36,14 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -56,10 +56,6 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String sourceTableName;
-
-		private String targetTableName;
-
 		private String status;
 
 		private String stage;
@@ -67,6 +63,10 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 		private String progress;
 
 		private String expired;
+
+		private String targetTableName;
+
+		private String sourceTableName;
 
 		private Full full;
 
@@ -77,22 +77,6 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 		private Review review;
 
 		private Increment increment;
-
-		public String getSourceTableName() {
-			return this.sourceTableName;
-		}
-
-		public void setSourceTableName(String sourceTableName) {
-			this.sourceTableName = sourceTableName;
-		}
-
-		public String getTargetTableName() {
-			return this.targetTableName;
-		}
-
-		public void setTargetTableName(String targetTableName) {
-			this.targetTableName = targetTableName;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -124,6 +108,22 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 
 		public void setExpired(String expired) {
 			this.expired = expired;
+		}
+
+		public String getTargetTableName() {
+			return this.targetTableName;
+		}
+
+		public void setTargetTableName(String targetTableName) {
+			this.targetTableName = targetTableName;
+		}
+
+		public String getSourceTableName() {
+			return this.sourceTableName;
+		}
+
+		public void setSourceTableName(String sourceTableName) {
+			this.sourceTableName = sourceTableName;
 		}
 
 		public Full getFull() {
@@ -168,22 +168,22 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 
 		public static class Full {
 
-			private Integer expired;
+			private String startTime;
 
 			private Integer progress;
 
-			private Integer total;
-
 			private Integer tps;
 
-			private String startTime;
+			private Integer total;
 
-			public Integer getExpired() {
-				return this.expired;
+			private Integer expired;
+
+			public String getStartTime() {
+				return this.startTime;
 			}
 
-			public void setExpired(Integer expired) {
-				this.expired = expired;
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
 			}
 
 			public Integer getProgress() {
@@ -194,14 +194,6 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 				this.progress = progress;
 			}
 
-			public Integer getTotal() {
-				return this.total;
-			}
-
-			public void setTotal(Integer total) {
-				this.total = total;
-			}
-
 			public Integer getTps() {
 				return this.tps;
 			}
@@ -210,33 +202,41 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 				this.tps = tps;
 			}
 
-			public String getStartTime() {
-				return this.startTime;
+			public Integer getTotal() {
+				return this.total;
 			}
 
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
+			public void setTotal(Integer total) {
+				this.total = total;
+			}
+
+			public Integer getExpired() {
+				return this.expired;
+			}
+
+			public void setExpired(Integer expired) {
+				this.expired = expired;
 			}
 		}
 
 		public static class FullCheck {
 
-			private Integer expired;
+			private String startTime;
 
 			private Integer progress;
 
-			private Integer total;
-
 			private Integer tps;
 
-			private String startTime;
+			private Integer total;
 
-			public Integer getExpired() {
-				return this.expired;
+			private Integer expired;
+
+			public String getStartTime() {
+				return this.startTime;
 			}
 
-			public void setExpired(Integer expired) {
-				this.expired = expired;
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
 			}
 
 			public Integer getProgress() {
@@ -247,14 +247,6 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 				this.progress = progress;
 			}
 
-			public Integer getTotal() {
-				return this.total;
-			}
-
-			public void setTotal(Integer total) {
-				this.total = total;
-			}
-
 			public Integer getTps() {
 				return this.tps;
 			}
@@ -263,33 +255,41 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 				this.tps = tps;
 			}
 
-			public String getStartTime() {
-				return this.startTime;
+			public Integer getTotal() {
+				return this.total;
 			}
 
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
+			public void setTotal(Integer total) {
+				this.total = total;
+			}
+
+			public Integer getExpired() {
+				return this.expired;
+			}
+
+			public void setExpired(Integer expired) {
+				this.expired = expired;
 			}
 		}
 
 		public static class FullRevise {
 
-			private Integer expired;
+			private String startTime;
 
 			private Integer progress;
 
-			private Integer total;
-
 			private Integer tps;
 
-			private String startTime;
+			private Integer total;
 
-			public Integer getExpired() {
-				return this.expired;
+			private Integer expired;
+
+			public String getStartTime() {
+				return this.startTime;
 			}
 
-			public void setExpired(Integer expired) {
-				this.expired = expired;
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
 			}
 
 			public Integer getProgress() {
@@ -300,14 +300,6 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 				this.progress = progress;
 			}
 
-			public Integer getTotal() {
-				return this.total;
-			}
-
-			public void setTotal(Integer total) {
-				this.total = total;
-			}
-
 			public Integer getTps() {
 				return this.tps;
 			}
@@ -316,33 +308,41 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 				this.tps = tps;
 			}
 
-			public String getStartTime() {
-				return this.startTime;
+			public Integer getTotal() {
+				return this.total;
 			}
 
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
+			public void setTotal(Integer total) {
+				this.total = total;
+			}
+
+			public Integer getExpired() {
+				return this.expired;
+			}
+
+			public void setExpired(Integer expired) {
+				this.expired = expired;
 			}
 		}
 
 		public static class Review {
 
-			private Integer expired;
+			private String startTime;
 
 			private Integer progress;
 
-			private Integer total;
-
 			private Integer tps;
 
-			private String startTime;
+			private Integer total;
 
-			public Integer getExpired() {
-				return this.expired;
+			private Integer expired;
+
+			public String getStartTime() {
+				return this.startTime;
 			}
 
-			public void setExpired(Integer expired) {
-				this.expired = expired;
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
 			}
 
 			public Integer getProgress() {
@@ -353,14 +353,6 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 				this.progress = progress;
 			}
 
-			public Integer getTotal() {
-				return this.total;
-			}
-
-			public void setTotal(Integer total) {
-				this.total = total;
-			}
-
 			public Integer getTps() {
 				return this.tps;
 			}
@@ -369,12 +361,20 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 				this.tps = tps;
 			}
 
-			public String getStartTime() {
-				return this.startTime;
+			public Integer getTotal() {
+				return this.total;
 			}
 
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
+			public void setTotal(Integer total) {
+				this.total = total;
+			}
+
+			public Integer getExpired() {
+				return this.expired;
+			}
+
+			public void setExpired(Integer expired) {
+				this.expired = expired;
 			}
 		}
 
@@ -382,9 +382,9 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 
 			private Integer delay;
 
-			private Integer tps;
-
 			private String startTime;
+
+			private Integer tps;
 
 			public Integer getDelay() {
 				return this.delay;
@@ -394,20 +394,20 @@ public class DescribeShardTaskInfoResponse extends AcsResponse {
 				this.delay = delay;
 			}
 
-			public Integer getTps() {
-				return this.tps;
-			}
-
-			public void setTps(Integer tps) {
-				this.tps = tps;
-			}
-
 			public String getStartTime() {
 				return this.startTime;
 			}
 
 			public void setStartTime(String startTime) {
 				this.startTime = startTime;
+			}
+
+			public Integer getTps() {
+				return this.tps;
+			}
+
+			public void setTps(Integer tps) {
+				this.tps = tps;
 			}
 		}
 	}

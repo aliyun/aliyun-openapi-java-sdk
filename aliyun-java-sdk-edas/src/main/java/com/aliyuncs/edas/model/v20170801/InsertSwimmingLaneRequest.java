@@ -33,7 +33,7 @@ public class InsertSwimmingLaneRequest extends RoaAcsRequest<InsertSwimmingLaneR
 
 	private Boolean enableRules;
 
-	private Integer groupId;
+	private Long groupId;
 
 	private String name;
 
@@ -92,11 +92,11 @@ public class InsertSwimmingLaneRequest extends RoaAcsRequest<InsertSwimmingLaneR
 		}
 	}
 
-	public Integer getGroupId() {
+	public Long getGroupId() {
 		return this.groupId;
 	}
 
-	public void setGroupId(Integer groupId) {
+	public void setGroupId(Long groupId) {
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId.toString());

@@ -26,9 +26,11 @@ public class UpdateResourceInfoRequest extends RpcAcsRequest<UpdateResourceInfoR
 
 	private String resourceId;
 
-	private String appId;
-
 	private String description;
+
+	private String source;
+
+	private String appId;
 
 	private String resourceName;
 
@@ -49,17 +51,6 @@ public class UpdateResourceInfoRequest extends RpcAcsRequest<UpdateResourceInfoR
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -68,6 +59,28 @@ public class UpdateResourceInfoRequest extends RpcAcsRequest<UpdateResourceInfoR
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

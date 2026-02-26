@@ -23,15 +23,7 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
-	
-	public ModifyApiRequest() {
-		super("CloudAPI", "2016-07-14", "ModifyApi", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String webSocketApiType;
 
@@ -42,6 +34,8 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	private String description;
 
 	private Boolean disableInternet;
+
+	private String backendId;
 
 	private String constantParameters;
 
@@ -77,6 +71,8 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 
 	private String resultSample;
 
+	private Boolean backendEnable;
+
 	private Boolean forceNonceCheck;
 
 	private String requestConfig;
@@ -84,6 +80,14 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	private String resultBodyModel;
 
 	private String apiId;
+	public ModifyApiRequest() {
+		super("CloudAPI", "2016-07-14", "ModifyApi", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getWebSocketApiType() {
 		return this.webSocketApiType;
@@ -103,7 +107,7 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	public void setErrorCodeSamples(String errorCodeSamples) {
 		this.errorCodeSamples = errorCodeSamples;
 		if(errorCodeSamples != null){
-			putQueryParameter("ErrorCodeSamples", errorCodeSamples);
+			putBodyParameter("ErrorCodeSamples", errorCodeSamples);
 		}
 	}
 
@@ -140,6 +144,17 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 		}
 	}
 
+	public String getBackendId() {
+		return this.backendId;
+	}
+
+	public void setBackendId(String backendId) {
+		this.backendId = backendId;
+		if(backendId != null){
+			putQueryParameter("BackendId", backendId);
+		}
+	}
+
 	public String getConstantParameters() {
 		return this.constantParameters;
 	}
@@ -147,7 +162,7 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	public void setConstantParameters(String constantParameters) {
 		this.constantParameters = constantParameters;
 		if(constantParameters != null){
-			putQueryParameter("ConstantParameters", constantParameters);
+			putBodyParameter("ConstantParameters", constantParameters);
 		}
 	}
 
@@ -180,7 +195,7 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	public void setServiceParameters(String serviceParameters) {
 		this.serviceParameters = serviceParameters;
 		if(serviceParameters != null){
-			putQueryParameter("ServiceParameters", serviceParameters);
+			putBodyParameter("ServiceParameters", serviceParameters);
 		}
 	}
 
@@ -191,7 +206,7 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	public void setFailResultSample(String failResultSample) {
 		this.failResultSample = failResultSample;
 		if(failResultSample != null){
-			putQueryParameter("FailResultSample", failResultSample);
+			putBodyParameter("FailResultSample", failResultSample);
 		}
 	}
 
@@ -202,7 +217,7 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	public void setSystemParameters(String systemParameters) {
 		this.systemParameters = systemParameters;
 		if(systemParameters != null){
-			putQueryParameter("SystemParameters", systemParameters);
+			putBodyParameter("SystemParameters", systemParameters);
 		}
 	}
 
@@ -213,33 +228,14 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	public void setServiceParametersMap(String serviceParametersMap) {
 		this.serviceParametersMap = serviceParametersMap;
 		if(serviceParametersMap != null){
-			putQueryParameter("ServiceParametersMap", serviceParametersMap);
+			putBodyParameter("ServiceParametersMap", serviceParametersMap);
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -265,7 +261,7 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	public void setRequestParameters(String requestParameters) {
 		this.requestParameters = requestParameters;
 		if(requestParameters != null){
-			putQueryParameter("RequestParameters", requestParameters);
+			putBodyParameter("RequestParameters", requestParameters);
 		}
 	}
 
@@ -276,7 +272,7 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	public void setResultDescriptions(String resultDescriptions) {
 		this.resultDescriptions = resultDescriptions;
 		if(resultDescriptions != null){
-			putQueryParameter("ResultDescriptions", resultDescriptions);
+			putBodyParameter("ResultDescriptions", resultDescriptions);
 		}
 	}
 
@@ -342,7 +338,18 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	public void setResultSample(String resultSample) {
 		this.resultSample = resultSample;
 		if(resultSample != null){
-			putQueryParameter("ResultSample", resultSample);
+			putBodyParameter("ResultSample", resultSample);
+		}
+	}
+
+	public Boolean getBackendEnable() {
+		return this.backendEnable;
+	}
+
+	public void setBackendEnable(Boolean backendEnable) {
+		this.backendEnable = backendEnable;
+		if(backendEnable != null){
+			putQueryParameter("BackendEnable", backendEnable.toString());
 		}
 	}
 

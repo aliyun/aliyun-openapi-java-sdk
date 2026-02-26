@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ram.model.v20150501.ListPoliciesResponse;
 import com.aliyuncs.ram.model.v20150501.ListPoliciesResponse.Policy;
+import com.aliyuncs.ram.model.v20150501.ListPoliciesResponse.Policy.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +41,16 @@ public class ListPoliciesResponseUnmarshaller {
 			policy.setPolicyName(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].PolicyName"));
 			policy.setCreateDate(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].CreateDate"));
 			policy.setPolicyType(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].PolicyType"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListPoliciesResponse.Policies["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			policy.setTags(tags);
 
 			policies.add(policy);
 		}

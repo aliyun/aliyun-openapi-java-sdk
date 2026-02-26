@@ -25,40 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDrdsSlowSqlsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private Integer total;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String requestId;
+
+	private Integer total;
+
+	private Boolean success;
 
 	private List<Item> items;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +53,28 @@ public class DescribeDrdsSlowSqlsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Item> getItems() {
@@ -87,22 +87,30 @@ public class DescribeDrdsSlowSqlsResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String schema;
-
-		private String sql;
-
 		private Long sendTime;
-
-		private Long responseTime;
 
 		private String host;
 
-		public String getSchema() {
-			return this.schema;
+		private String sql;
+
+		private Long responseTime;
+
+		private String schema;
+
+		public Long getSendTime() {
+			return this.sendTime;
 		}
 
-		public void setSchema(String schema) {
-			this.schema = schema;
+		public void setSendTime(Long sendTime) {
+			this.sendTime = sendTime;
+		}
+
+		public String getHost() {
+			return this.host;
+		}
+
+		public void setHost(String host) {
+			this.host = host;
 		}
 
 		public String getSql() {
@@ -113,14 +121,6 @@ public class DescribeDrdsSlowSqlsResponse extends AcsResponse {
 			this.sql = sql;
 		}
 
-		public Long getSendTime() {
-			return this.sendTime;
-		}
-
-		public void setSendTime(Long sendTime) {
-			this.sendTime = sendTime;
-		}
-
 		public Long getResponseTime() {
 			return this.responseTime;
 		}
@@ -129,12 +129,12 @@ public class DescribeDrdsSlowSqlsResponse extends AcsResponse {
 			this.responseTime = responseTime;
 		}
 
-		public String getHost() {
-			return this.host;
+		public String getSchema() {
+			return this.schema;
 		}
 
-		public void setHost(String host) {
-			this.host = host;
+		public void setSchema(String schema) {
+			this.schema = schema;
 		}
 	}
 

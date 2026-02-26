@@ -27,7 +27,7 @@ public class VideoAsyncScanResultsRequest extends RoaAcsRequest<VideoAsyncScanRe
 
 	private String clientInfo;
 	public VideoAsyncScanResultsRequest() {
-		super("Green", "2018-05-09", "VideoAsyncScanResults", "green");
+		super("Green", "2018-05-09", "VideoAsyncScanResults");
 		setUriPattern("/green/video/results");
 		setMethod(MethodType.POST);
 		try {

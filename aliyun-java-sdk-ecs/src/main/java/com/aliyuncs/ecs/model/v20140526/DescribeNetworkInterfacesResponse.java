@@ -125,9 +125,17 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		private Integer queueNumber;
 
+		private Boolean deleteOnRelease;
+
+		private Boolean sourceDestCheck;
+
 		private List<PrivateIpSet> privateIpSets;
 
 		private List<Ipv6Set> ipv6Sets;
+
+		private List<Ipv4PrefixSet> ipv4PrefixSets;
+
+		private List<Ipv6PrefixSet> ipv6PrefixSets;
 
 		private List<Tag> tags;
 
@@ -289,6 +297,22 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 			this.queueNumber = queueNumber;
 		}
 
+		public Boolean getDeleteOnRelease() {
+			return this.deleteOnRelease;
+		}
+
+		public void setDeleteOnRelease(Boolean deleteOnRelease) {
+			this.deleteOnRelease = deleteOnRelease;
+		}
+
+		public Boolean getSourceDestCheck() {
+			return this.sourceDestCheck;
+		}
+
+		public void setSourceDestCheck(Boolean sourceDestCheck) {
+			this.sourceDestCheck = sourceDestCheck;
+		}
+
 		public List<PrivateIpSet> getPrivateIpSets() {
 			return this.privateIpSets;
 		}
@@ -303,6 +327,22 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		public void setIpv6Sets(List<Ipv6Set> ipv6Sets) {
 			this.ipv6Sets = ipv6Sets;
+		}
+
+		public List<Ipv4PrefixSet> getIpv4PrefixSets() {
+			return this.ipv4PrefixSets;
+		}
+
+		public void setIpv4PrefixSets(List<Ipv4PrefixSet> ipv4PrefixSets) {
+			this.ipv4PrefixSets = ipv4PrefixSets;
+		}
+
+		public List<Ipv6PrefixSet> getIpv6PrefixSets() {
+			return this.ipv6PrefixSets;
+		}
+
+		public void setIpv6PrefixSets(List<Ipv6PrefixSet> ipv6PrefixSets) {
+			this.ipv6PrefixSets = ipv6PrefixSets;
 		}
 
 		public List<Tag> getTags() {
@@ -343,6 +383,8 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 			private Boolean primary;
 
+			private String privateDnsName;
+
 			private AssociatedPublicIp1 associatedPublicIp1;
 
 			public String getPrivateIpAddress() {
@@ -359,6 +401,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 			public void setPrimary(Boolean primary) {
 				this.primary = primary;
+			}
+
+			public String getPrivateDnsName() {
+				return this.privateDnsName;
+			}
+
+			public void setPrivateDnsName(String privateDnsName) {
+				this.privateDnsName = privateDnsName;
 			}
 
 			public AssociatedPublicIp1 getAssociatedPublicIp1() {
@@ -403,6 +453,32 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 			public void setIpv6Address(String ipv6Address) {
 				this.ipv6Address = ipv6Address;
+			}
+		}
+
+		public static class Ipv4PrefixSet {
+
+			private String ipv4Prefix;
+
+			public String getIpv4Prefix() {
+				return this.ipv4Prefix;
+			}
+
+			public void setIpv4Prefix(String ipv4Prefix) {
+				this.ipv4Prefix = ipv4Prefix;
+			}
+		}
+
+		public static class Ipv6PrefixSet {
+
+			private String ipv6Prefix;
+
+			public String getIpv6Prefix() {
+				return this.ipv6Prefix;
+			}
+
+			public void setIpv6Prefix(String ipv6Prefix) {
+				this.ipv6Prefix = ipv6Prefix;
 			}
 		}
 
@@ -460,6 +536,8 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 			private String trunkNetworkInterfaceId;
 
+			private Integer networkCardIndex;
+
 			public Integer getDeviceIndex() {
 				return this.deviceIndex;
 			}
@@ -482,6 +560,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 			public void setTrunkNetworkInterfaceId(String trunkNetworkInterfaceId) {
 				this.trunkNetworkInterfaceId = trunkNetworkInterfaceId;
+			}
+
+			public Integer getNetworkCardIndex() {
+				return this.networkCardIndex;
+			}
+
+			public void setNetworkCardIndex(Integer networkCardIndex) {
+				this.networkCardIndex = networkCardIndex;
 			}
 		}
 	}

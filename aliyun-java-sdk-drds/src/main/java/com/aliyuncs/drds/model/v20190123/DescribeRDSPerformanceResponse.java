@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRDSPerformanceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<PartialPerformanceData> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeRDSPerformanceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<PartialPerformanceData> getData() {
@@ -59,11 +59,11 @@ public class DescribeRDSPerformanceResponse extends AcsResponse {
 
 		private String key;
 
+		private String nodeName;
+
 		private String unit;
 
 		private Integer nodeNum;
-
-		private String nodeName;
 
 		private List<PerformanceValue> values;
 
@@ -73,6 +73,14 @@ public class DescribeRDSPerformanceResponse extends AcsResponse {
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+
+		public String getNodeName() {
+			return this.nodeName;
+		}
+
+		public void setNodeName(String nodeName) {
+			this.nodeName = nodeName;
 		}
 
 		public String getUnit() {
@@ -91,14 +99,6 @@ public class DescribeRDSPerformanceResponse extends AcsResponse {
 			this.nodeNum = nodeNum;
 		}
 
-		public String getNodeName() {
-			return this.nodeName;
-		}
-
-		public void setNodeName(String nodeName) {
-			this.nodeName = nodeName;
-		}
-
 		public List<PerformanceValue> getValues() {
 			return this.values;
 		}
@@ -109,17 +109,9 @@ public class DescribeRDSPerformanceResponse extends AcsResponse {
 
 		public static class PerformanceValue {
 
-			private String value;
-
 			private Long date;
 
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
+			private String value;
 
 			public Long getDate() {
 				return this.date;
@@ -127,6 +119,14 @@ public class DescribeRDSPerformanceResponse extends AcsResponse {
 
 			public void setDate(Long date) {
 				this.date = date;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

@@ -70,11 +70,17 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 
 		private String resourceTypesScope;
 
+		private String excludeRegionIdsScope;
+
 		private String regionIdsScope;
 
 		private String excludeResourceIdsScope;
 
+		private String resourceIdsScope;
+
 		private String resourceGroupIdsScope;
+
+		private String excludeResourceGroupIdsScope;
 
 		private String tagKeyScope;
 
@@ -90,7 +96,21 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 
 		private String excludeAccountIdsScope;
 
+		private String resourceNameScope;
+
 		private Long accountId;
+
+		private String serviceChannel;
+
+		private String extendContent;
+
+		private String accountIdsScope;
+
+		private List<TagsScopeItem> tagsScope;
+
+		private List<ExcludeTagsScopeItem> excludeTagsScope;
+
+		private List<TagsItem> tags;
 
 		private Source source;
 
@@ -192,6 +212,14 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 			this.resourceTypesScope = resourceTypesScope;
 		}
 
+		public String getExcludeRegionIdsScope() {
+			return this.excludeRegionIdsScope;
+		}
+
+		public void setExcludeRegionIdsScope(String excludeRegionIdsScope) {
+			this.excludeRegionIdsScope = excludeRegionIdsScope;
+		}
+
 		public String getRegionIdsScope() {
 			return this.regionIdsScope;
 		}
@@ -208,12 +236,28 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 			this.excludeResourceIdsScope = excludeResourceIdsScope;
 		}
 
+		public String getResourceIdsScope() {
+			return this.resourceIdsScope;
+		}
+
+		public void setResourceIdsScope(String resourceIdsScope) {
+			this.resourceIdsScope = resourceIdsScope;
+		}
+
 		public String getResourceGroupIdsScope() {
 			return this.resourceGroupIdsScope;
 		}
 
 		public void setResourceGroupIdsScope(String resourceGroupIdsScope) {
 			this.resourceGroupIdsScope = resourceGroupIdsScope;
+		}
+
+		public String getExcludeResourceGroupIdsScope() {
+			return this.excludeResourceGroupIdsScope;
+		}
+
+		public void setExcludeResourceGroupIdsScope(String excludeResourceGroupIdsScope) {
+			this.excludeResourceGroupIdsScope = excludeResourceGroupIdsScope;
 		}
 
 		public String getTagKeyScope() {
@@ -272,12 +316,68 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 			this.excludeAccountIdsScope = excludeAccountIdsScope;
 		}
 
+		public String getResourceNameScope() {
+			return this.resourceNameScope;
+		}
+
+		public void setResourceNameScope(String resourceNameScope) {
+			this.resourceNameScope = resourceNameScope;
+		}
+
 		public Long getAccountId() {
 			return this.accountId;
 		}
 
 		public void setAccountId(Long accountId) {
 			this.accountId = accountId;
+		}
+
+		public String getServiceChannel() {
+			return this.serviceChannel;
+		}
+
+		public void setServiceChannel(String serviceChannel) {
+			this.serviceChannel = serviceChannel;
+		}
+
+		public String getExtendContent() {
+			return this.extendContent;
+		}
+
+		public void setExtendContent(String extendContent) {
+			this.extendContent = extendContent;
+		}
+
+		public String getAccountIdsScope() {
+			return this.accountIdsScope;
+		}
+
+		public void setAccountIdsScope(String accountIdsScope) {
+			this.accountIdsScope = accountIdsScope;
+		}
+
+		public List<TagsScopeItem> getTagsScope() {
+			return this.tagsScope;
+		}
+
+		public void setTagsScope(List<TagsScopeItem> tagsScope) {
+			this.tagsScope = tagsScope;
+		}
+
+		public List<ExcludeTagsScopeItem> getExcludeTagsScope() {
+			return this.excludeTagsScope;
+		}
+
+		public void setExcludeTagsScope(List<ExcludeTagsScopeItem> excludeTagsScope) {
+			this.excludeTagsScope = excludeTagsScope;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
 		}
 
 		public Source getSource() {
@@ -328,11 +428,82 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 			this.compliance = compliance;
 		}
 
+		public static class TagsScopeItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+
+		public static class ExcludeTagsScopeItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+
+		public static class TagsItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+
 		public static class Source {
 
 			private String owner;
 
 			private String identifier;
+
+			private String conditions;
 
 			private List<SourceDetailsItem> sourceDetails;
 
@@ -352,6 +523,14 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 
 			public void setIdentifier(String identifier) {
 				this.identifier = identifier;
+			}
+
+			public String getConditions() {
+				return this.conditions;
+			}
+
+			public void setConditions(String conditions) {
+				this.conditions = conditions;
 			}
 
 			public List<SourceDetailsItem> getSourceDetails() {

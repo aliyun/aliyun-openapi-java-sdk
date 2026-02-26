@@ -56,11 +56,19 @@ public class DescribeNFSClientStatusResponse extends AcsResponse {
 
 	public static class Result {
 
+		private String output;
+
 		private String invokeRecordStatus;
 
 		private Integer exitCode;
 
-		private String output;
+		public String getOutput() {
+			return this.output;
+		}
+
+		public void setOutput(String output) {
+			this.output = output;
+		}
 
 		public String getInvokeRecordStatus() {
 			return this.invokeRecordStatus;
@@ -76,14 +84,6 @@ public class DescribeNFSClientStatusResponse extends AcsResponse {
 
 		public void setExitCode(Integer exitCode) {
 			this.exitCode = exitCode;
-		}
-
-		public String getOutput() {
-			return this.output;
-		}
-
-		public void setOutput(String output) {
-			this.output = output;
 		}
 	}
 

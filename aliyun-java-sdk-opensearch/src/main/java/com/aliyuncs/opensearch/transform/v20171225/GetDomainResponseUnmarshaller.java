@@ -23,8 +23,8 @@ public class GetDomainResponseUnmarshaller {
 
 	public static GetDomainResponse unmarshall(GetDomainResponse getDomainResponse, UnmarshallerContext _ctx) {
 		
-		getDomainResponse.setRequestId(_ctx.stringValue("GetDomainResponse.requestId"));
 		getDomainResponse.setResult(_ctx.mapValue("GetDomainResponse.result"));
+		getDomainResponse.setRequestId(_ctx.stringValue("GetDomainResponse.requestId"));
 	 
 	 	return getDomainResponse;
 	}

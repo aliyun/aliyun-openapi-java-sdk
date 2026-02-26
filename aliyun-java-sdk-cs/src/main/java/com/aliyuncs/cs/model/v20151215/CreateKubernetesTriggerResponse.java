@@ -24,13 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateKubernetesTriggerResponse extends AcsResponse {
 
+	private String id;
+
 	private String cluster_id;
 
 	private String project_id;
 
+	private String type;
+
 	private String action;
 
-	private String id;
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getCluster_id() {
 		return this.cluster_id;
@@ -48,20 +58,20 @@ public class CreateKubernetesTriggerResponse extends AcsResponse {
 		this.project_id = project_id;
 	}
 
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	public String getAction() {
 		return this.action;
 	}
 
 	public void setAction(String action) {
 		this.action = action;
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	@Override

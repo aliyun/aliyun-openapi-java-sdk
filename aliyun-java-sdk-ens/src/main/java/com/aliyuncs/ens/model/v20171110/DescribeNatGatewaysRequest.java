@@ -15,6 +15,7 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -37,6 +38,10 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 	private Integer pageSize;
 
 	private String natGatewayId;
+
+	private List<String> ensRegionIds;
+
+	private List<String> natGatewayIds;
 	public DescribeNatGatewaysRequest() {
 		super("Ens", "2017-11-10", "DescribeNatGateways", "ens");
 		setMethod(MethodType.GET);
@@ -117,6 +122,32 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		if(natGatewayId != null){
 			putQueryParameter("NatGatewayId", natGatewayId);
 		}
+	}
+
+	public List<String> getEnsRegionIds() {
+		return this.ensRegionIds;
+	}
+
+	public void setEnsRegionIds(List<String> ensRegionIds) {
+		this.ensRegionIds = ensRegionIds;	
+		if (ensRegionIds != null) {
+			for (int depth1 = 0; depth1 < ensRegionIds.size(); depth1++) {
+				putQueryParameter("EnsRegionIds." + (depth1 + 1) , ensRegionIds.get(depth1));
+			}
+		}	
+	}
+
+	public List<String> getNatGatewayIds() {
+		return this.natGatewayIds;
+	}
+
+	public void setNatGatewayIds(List<String> natGatewayIds) {
+		this.natGatewayIds = natGatewayIds;	
+		if (natGatewayIds != null) {
+			for (int depth1 = 0; depth1 < natGatewayIds.size(); depth1++) {
+				putQueryParameter("NatGatewayIds." + (depth1 + 1) , natGatewayIds.get(depth1));
+			}
+		}	
 	}
 
 	@Override

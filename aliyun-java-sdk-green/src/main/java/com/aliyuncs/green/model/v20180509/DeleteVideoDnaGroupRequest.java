@@ -27,7 +27,7 @@ public class DeleteVideoDnaGroupRequest extends RoaAcsRequest<DeleteVideoDnaGrou
 
 	private String clientInfo;
 	public DeleteVideoDnaGroupRequest() {
-		super("Green", "2018-05-09", "DeleteVideoDnaGroup", "green");
+		super("Green", "2018-05-09", "DeleteVideoDnaGroup");
 		setUriPattern("/green/video/dna/group/delete");
 		setMethod(MethodType.POST);
 		try {

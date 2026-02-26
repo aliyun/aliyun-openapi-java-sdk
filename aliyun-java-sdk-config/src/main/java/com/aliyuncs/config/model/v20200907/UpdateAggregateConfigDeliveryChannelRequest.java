@@ -41,7 +41,11 @@ public class UpdateAggregateConfigDeliveryChannelRequest extends RpcAcsRequest<U
 
 	private Boolean configurationItemChangeNotification;
 
+	private Boolean compliantSnapshot;
+
 	private String deliveryChannelName;
+
+	private String deliverySnapshotTime;
 
 	private String deliveryChannelId;
 
@@ -49,7 +53,7 @@ public class UpdateAggregateConfigDeliveryChannelRequest extends RpcAcsRequest<U
 
 	private Long status;
 	public UpdateAggregateConfigDeliveryChannelRequest() {
-		super("Config", "2020-09-07", "UpdateAggregateConfigDeliveryChannel");
+		super("Config", "2020-09-07", "UpdateAggregateConfigDeliveryChannel", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -145,6 +149,17 @@ public class UpdateAggregateConfigDeliveryChannelRequest extends RpcAcsRequest<U
 		}
 	}
 
+	public Boolean getCompliantSnapshot() {
+		return this.compliantSnapshot;
+	}
+
+	public void setCompliantSnapshot(Boolean compliantSnapshot) {
+		this.compliantSnapshot = compliantSnapshot;
+		if(compliantSnapshot != null){
+			putQueryParameter("CompliantSnapshot", compliantSnapshot.toString());
+		}
+	}
+
 	public String getDeliveryChannelName() {
 		return this.deliveryChannelName;
 	}
@@ -153,6 +168,17 @@ public class UpdateAggregateConfigDeliveryChannelRequest extends RpcAcsRequest<U
 		this.deliveryChannelName = deliveryChannelName;
 		if(deliveryChannelName != null){
 			putQueryParameter("DeliveryChannelName", deliveryChannelName);
+		}
+	}
+
+	public String getDeliverySnapshotTime() {
+		return this.deliverySnapshotTime;
+	}
+
+	public void setDeliverySnapshotTime(String deliverySnapshotTime) {
+		this.deliverySnapshotTime = deliverySnapshotTime;
+		if(deliverySnapshotTime != null){
+			putQueryParameter("DeliverySnapshotTime", deliverySnapshotTime);
 		}
 	}
 

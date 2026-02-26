@@ -29,8 +29,6 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 
 	private String instanceCategory;
 
-	private String body;
-
 	private String tags;
 
 	private String resourceGroupId;
@@ -77,17 +75,6 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 		this.instanceCategory = instanceCategory;
 		if(instanceCategory != null){
 			putQueryParameter("instanceCategory", instanceCategory);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

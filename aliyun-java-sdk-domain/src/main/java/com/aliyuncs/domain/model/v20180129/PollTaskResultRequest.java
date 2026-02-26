@@ -41,7 +41,7 @@ public class PollTaskResultRequest extends RpcAcsRequest<PollTaskResultResponse>
 
 	private String lang;
 	public PollTaskResultRequest() {
-		super("Domain", "2018-01-29", "PollTaskResult");
+		super("Domain", "2018-01-29", "PollTaskResult", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

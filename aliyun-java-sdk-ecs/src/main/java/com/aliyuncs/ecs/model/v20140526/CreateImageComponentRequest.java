@@ -34,6 +34,8 @@ public class CreateImageComponentRequest extends RpcAcsRequest<CreateImageCompon
 
 	private String systemType;
 
+	private String componentVersion;
+
 	private String content;
 
 	private String resourceGroupId;
@@ -99,6 +101,17 @@ public class CreateImageComponentRequest extends RpcAcsRequest<CreateImageCompon
 		this.systemType = systemType;
 		if(systemType != null){
 			putQueryParameter("SystemType", systemType);
+		}
+	}
+
+	public String getComponentVersion() {
+		return this.componentVersion;
+	}
+
+	public void setComponentVersion(String componentVersion) {
+		this.componentVersion = componentVersion;
+		if(componentVersion != null){
+			putQueryParameter("ComponentVersion", componentVersion);
 		}
 	}
 

@@ -28,17 +28,17 @@ public class DescribeMemberCapacityInfoResponseUnmarshaller {
 		
 		describeMemberCapacityInfoResponse.setRequestId(_ctx.stringValue("DescribeMemberCapacityInfoResponse.RequestId"));
 		describeMemberCapacityInfoResponse.setCode(_ctx.integerValue("DescribeMemberCapacityInfoResponse.Code"));
-		describeMemberCapacityInfoResponse.setSuccess(_ctx.booleanValue("DescribeMemberCapacityInfoResponse.Success"));
 		describeMemberCapacityInfoResponse.setMessage(_ctx.stringValue("DescribeMemberCapacityInfoResponse.Message"));
+		describeMemberCapacityInfoResponse.setSuccess(_ctx.booleanValue("DescribeMemberCapacityInfoResponse.Success"));
 
 		List<MemberCapacityInfo> data = new ArrayList<MemberCapacityInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMemberCapacityInfoResponse.Data.Length"); i++) {
 			MemberCapacityInfo memberCapacityInfo = new MemberCapacityInfo();
+			memberCapacityInfo.setUsedCapacity(_ctx.stringValue("DescribeMemberCapacityInfoResponse.Data["+ i +"].UsedCapacity"));
 			memberCapacityInfo.setMemberId(_ctx.stringValue("DescribeMemberCapacityInfoResponse.Data["+ i +"].MemberId"));
 			memberCapacityInfo.setMemberName(_ctx.stringValue("DescribeMemberCapacityInfoResponse.Data["+ i +"].MemberName"));
-			memberCapacityInfo.setMemberUid(_ctx.stringValue("DescribeMemberCapacityInfoResponse.Data["+ i +"].MemberUid"));
-			memberCapacityInfo.setUsedCapacity(_ctx.stringValue("DescribeMemberCapacityInfoResponse.Data["+ i +"].UsedCapacity"));
 			memberCapacityInfo.setUsedCount(_ctx.stringValue("DescribeMemberCapacityInfoResponse.Data["+ i +"].UsedCount"));
+			memberCapacityInfo.setMemberUid(_ctx.stringValue("DescribeMemberCapacityInfoResponse.Data["+ i +"].MemberUid"));
 
 			data.add(memberCapacityInfo);
 		}

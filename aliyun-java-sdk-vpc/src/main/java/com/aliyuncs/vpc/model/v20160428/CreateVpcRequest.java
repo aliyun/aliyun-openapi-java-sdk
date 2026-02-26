@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -33,15 +34,25 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 
 	private String description;
 
+	private Integer ipv4CidrMask;
+
 	private String vpcName;
 
 	private String resourceGroupId;
+
+	private Integer ipv6CidrMask;
+
+	private String ipv4IpamPoolId;
 
 	private String ipv6Isp;
 
 	private String userCidr;
 
+	private List<Tag> tags;
+
 	private Boolean dryRun;
+
+	private Boolean enableDnsHostname;
 
 	private String resourceOwnerAccount;
 
@@ -50,6 +61,8 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 	private Long ownerId;
 
 	private String ipv6CidrBlock;
+
+	private String ipv6IpamPoolId;
 
 	private String cidrBlock;
 	public CreateVpcRequest() {
@@ -105,6 +118,17 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		}
 	}
 
+	public Integer getIpv4CidrMask() {
+		return this.ipv4CidrMask;
+	}
+
+	public void setIpv4CidrMask(Integer ipv4CidrMask) {
+		this.ipv4CidrMask = ipv4CidrMask;
+		if(ipv4CidrMask != null){
+			putQueryParameter("Ipv4CidrMask", ipv4CidrMask.toString());
+		}
+	}
+
 	public String getVpcName() {
 		return this.vpcName;
 	}
@@ -124,6 +148,28 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Integer getIpv6CidrMask() {
+		return this.ipv6CidrMask;
+	}
+
+	public void setIpv6CidrMask(Integer ipv6CidrMask) {
+		this.ipv6CidrMask = ipv6CidrMask;
+		if(ipv6CidrMask != null){
+			putQueryParameter("Ipv6CidrMask", ipv6CidrMask.toString());
+		}
+	}
+
+	public String getIpv4IpamPoolId() {
+		return this.ipv4IpamPoolId;
+	}
+
+	public void setIpv4IpamPoolId(String ipv4IpamPoolId) {
+		this.ipv4IpamPoolId = ipv4IpamPoolId;
+		if(ipv4IpamPoolId != null){
+			putQueryParameter("Ipv4IpamPoolId", ipv4IpamPoolId);
 		}
 	}
 
@@ -149,6 +195,20 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public Boolean getDryRun() {
 		return this.dryRun;
 	}
@@ -157,6 +217,17 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public Boolean getEnableDnsHostname() {
+		return this.enableDnsHostname;
+	}
+
+	public void setEnableDnsHostname(Boolean enableDnsHostname) {
+		this.enableDnsHostname = enableDnsHostname;
+		if(enableDnsHostname != null){
+			putQueryParameter("EnableDnsHostname", enableDnsHostname.toString());
 		}
 	}
 
@@ -204,6 +275,17 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		}
 	}
 
+	public String getIpv6IpamPoolId() {
+		return this.ipv6IpamPoolId;
+	}
+
+	public void setIpv6IpamPoolId(String ipv6IpamPoolId) {
+		this.ipv6IpamPoolId = ipv6IpamPoolId;
+		if(ipv6IpamPoolId != null){
+			putQueryParameter("Ipv6IpamPoolId", ipv6IpamPoolId);
+		}
+	}
+
 	public String getCidrBlock() {
 		return this.cidrBlock;
 	}
@@ -212,6 +294,29 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		this.cidrBlock = cidrBlock;
 		if(cidrBlock != null){
 			putQueryParameter("CidrBlock", cidrBlock);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

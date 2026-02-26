@@ -29,9 +29,17 @@ public class DescribeComputeResourceRequest extends RpcAcsRequest<DescribeComput
 
 	private String resourceOwnerAccount;
 
+	private String dBClusterId;
+
 	private String ownerAccount;
 
+	private String dBClusterVersion;
+
 	private Long ownerId;
+
+	private String zoneId;
+
+	private Boolean migrate;
 	public DescribeComputeResourceRequest() {
 		super("adb", "2019-03-15", "DescribeComputeResource", "ads");
 		setMethod(MethodType.POST);
@@ -63,6 +71,17 @@ public class DescribeComputeResourceRequest extends RpcAcsRequest<DescribeComput
 		}
 	}
 
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -74,6 +93,17 @@ public class DescribeComputeResourceRequest extends RpcAcsRequest<DescribeComput
 		}
 	}
 
+	public String getDBClusterVersion() {
+		return this.dBClusterVersion;
+	}
+
+	public void setDBClusterVersion(String dBClusterVersion) {
+		this.dBClusterVersion = dBClusterVersion;
+		if(dBClusterVersion != null){
+			putQueryParameter("DBClusterVersion", dBClusterVersion);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -82,6 +112,28 @@ public class DescribeComputeResourceRequest extends RpcAcsRequest<DescribeComput
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Boolean getMigrate() {
+		return this.migrate;
+	}
+
+	public void setMigrate(Boolean migrate) {
+		this.migrate = migrate;
+		if(migrate != null){
+			putQueryParameter("Migrate", migrate.toString());
 		}
 	}
 

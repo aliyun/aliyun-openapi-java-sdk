@@ -25,9 +25,7 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 	   
 
-	private String module;
-
-	private String endTime;
+	private String userNick;
 
 	private String startTime;
 
@@ -36,6 +34,12 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private String module;
+
+	private String endTime;
+
+	private String databaseName;
 	public GetOpLogRequest() {
 		super("dms-enterprise", "2018-11-01", "GetOpLog", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -45,25 +49,14 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getModule() {
-		return this.module;
+	public String getUserNick() {
+		return this.userNick;
 	}
 
-	public void setModule(String module) {
-		this.module = module;
-		if(module != null){
-			putQueryParameter("Module", module);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+	public void setUserNick(String userNick) {
+		this.userNick = userNick;
+		if(userNick != null){
+			putQueryParameter("UserNick", userNick);
 		}
 	}
 
@@ -108,6 +101,39 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getModule() {
+		return this.module;
+	}
+
+	public void setModule(String module) {
+		this.module = module;
+		if(module != null){
+			putQueryParameter("Module", module);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getDatabaseName() {
+		return this.databaseName;
+	}
+
+	public void setDatabaseName(String databaseName) {
+		this.databaseName = databaseName;
+		if(databaseName != null){
+			putQueryParameter("DatabaseName", databaseName);
 		}
 	}
 

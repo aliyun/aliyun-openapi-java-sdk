@@ -15,6 +15,7 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
@@ -37,6 +38,9 @@ public class UpdateServiceSourceRequest extends RpcAcsRequest<UpdateServiceSourc
 	private String type;
 
 	private Long id;
+
+	@SerializedName("pathList")
+	private List<String> pathList;
 
 	private Long gatewayId;
 
@@ -109,6 +113,17 @@ public class UpdateServiceSourceRequest extends RpcAcsRequest<UpdateServiceSourc
 		}
 	}
 
+	public List<String> getPathList() {
+		return this.pathList;
+	}
+
+	public void setPathList(List<String> pathList) {
+		this.pathList = pathList;	
+		if (pathList != null) {
+			putQueryParameter("PathList" , new Gson().toJson(pathList));
+		}	
+	}
+
 	public Long getGatewayId() {
 		return this.gatewayId;
 	}
@@ -155,6 +170,9 @@ public class UpdateServiceSourceRequest extends RpcAcsRequest<UpdateServiceSourc
 
 	public static class IngressOptionsRequest {
 
+		@SerializedName("EnableStatus")
+		private Boolean enableStatus;
+
 		@SerializedName("EnableIngress")
 		private Boolean enableIngress;
 
@@ -163,6 +181,14 @@ public class UpdateServiceSourceRequest extends RpcAcsRequest<UpdateServiceSourc
 
 		@SerializedName("IngressClass")
 		private String ingressClass;
+
+		public Boolean getEnableStatus() {
+			return this.enableStatus;
+		}
+
+		public void setEnableStatus(Boolean enableStatus) {
+			this.enableStatus = enableStatus;
+		}
 
 		public Boolean getEnableIngress() {
 			return this.enableIngress;

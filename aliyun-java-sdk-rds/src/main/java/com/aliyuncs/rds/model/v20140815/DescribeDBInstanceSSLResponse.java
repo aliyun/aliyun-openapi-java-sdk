@@ -24,98 +24,54 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceSSLResponse extends AcsResponse {
 
-	private String serverCert;
-
-	private String clientCACertExpireTime;
-
-	private String requireUpdateItem;
-
-	private String serverCAUrl;
-
-	private String requireUpdate;
-
-	private String clientCertRevocationList;
-
-	private String sSLExpireTime;
+	private String aCL;
 
 	private String cAType;
 
-	private String sSLCreateTime;
+	private String clientCACert;
 
-	private String replicationACL;
+	private String clientCACertExpireTime;
 
-	private String aCL;
-
-	private String requestId;
-
-	private String lastModifyStatus;
-
-	private String sSLEnabled;
+	private String clientCertRevocationList;
 
 	private String connectionString;
 
-	private String requireUpdateReason;
+	private String forceEncryption;
 
-	private String clientCACert;
-
-	private String serverKey;
+	private String lastModifyStatus;
 
 	private String modifyStatusReason;
 
-	public String getServerCert() {
-		return this.serverCert;
+	private String replicationACL;
+
+	private String requestId;
+
+	private String requireUpdate;
+
+	private String requireUpdateItem;
+
+	private String requireUpdateReason;
+
+	private String sSLCreateTime;
+
+	private String sSLEnabled;
+
+	private String sSLExpireTime;
+
+	private String serverCAUrl;
+
+	private String serverCert;
+
+	private String serverKey;
+
+	private String tlsVersion;
+
+	public String getACL() {
+		return this.aCL;
 	}
 
-	public void setServerCert(String serverCert) {
-		this.serverCert = serverCert;
-	}
-
-	public String getClientCACertExpireTime() {
-		return this.clientCACertExpireTime;
-	}
-
-	public void setClientCACertExpireTime(String clientCACertExpireTime) {
-		this.clientCACertExpireTime = clientCACertExpireTime;
-	}
-
-	public String getRequireUpdateItem() {
-		return this.requireUpdateItem;
-	}
-
-	public void setRequireUpdateItem(String requireUpdateItem) {
-		this.requireUpdateItem = requireUpdateItem;
-	}
-
-	public String getServerCAUrl() {
-		return this.serverCAUrl;
-	}
-
-	public void setServerCAUrl(String serverCAUrl) {
-		this.serverCAUrl = serverCAUrl;
-	}
-
-	public String getRequireUpdate() {
-		return this.requireUpdate;
-	}
-
-	public void setRequireUpdate(String requireUpdate) {
-		this.requireUpdate = requireUpdate;
-	}
-
-	public String getClientCertRevocationList() {
-		return this.clientCertRevocationList;
-	}
-
-	public void setClientCertRevocationList(String clientCertRevocationList) {
-		this.clientCertRevocationList = clientCertRevocationList;
-	}
-
-	public String getSSLExpireTime() {
-		return this.sSLExpireTime;
-	}
-
-	public void setSSLExpireTime(String sSLExpireTime) {
-		this.sSLExpireTime = sSLExpireTime;
+	public void setACL(String aCL) {
+		this.aCL = aCL;
 	}
 
 	public String getCAType() {
@@ -126,52 +82,28 @@ public class DescribeDBInstanceSSLResponse extends AcsResponse {
 		this.cAType = cAType;
 	}
 
-	public String getSSLCreateTime() {
-		return this.sSLCreateTime;
+	public String getClientCACert() {
+		return this.clientCACert;
 	}
 
-	public void setSSLCreateTime(String sSLCreateTime) {
-		this.sSLCreateTime = sSLCreateTime;
+	public void setClientCACert(String clientCACert) {
+		this.clientCACert = clientCACert;
 	}
 
-	public String getReplicationACL() {
-		return this.replicationACL;
+	public String getClientCACertExpireTime() {
+		return this.clientCACertExpireTime;
 	}
 
-	public void setReplicationACL(String replicationACL) {
-		this.replicationACL = replicationACL;
+	public void setClientCACertExpireTime(String clientCACertExpireTime) {
+		this.clientCACertExpireTime = clientCACertExpireTime;
 	}
 
-	public String getACL() {
-		return this.aCL;
+	public String getClientCertRevocationList() {
+		return this.clientCertRevocationList;
 	}
 
-	public void setACL(String aCL) {
-		this.aCL = aCL;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getLastModifyStatus() {
-		return this.lastModifyStatus;
-	}
-
-	public void setLastModifyStatus(String lastModifyStatus) {
-		this.lastModifyStatus = lastModifyStatus;
-	}
-
-	public String getSSLEnabled() {
-		return this.sSLEnabled;
-	}
-
-	public void setSSLEnabled(String sSLEnabled) {
-		this.sSLEnabled = sSLEnabled;
+	public void setClientCertRevocationList(String clientCertRevocationList) {
+		this.clientCertRevocationList = clientCertRevocationList;
 	}
 
 	public String getConnectionString() {
@@ -182,6 +114,62 @@ public class DescribeDBInstanceSSLResponse extends AcsResponse {
 		this.connectionString = connectionString;
 	}
 
+	public String getForceEncryption() {
+		return this.forceEncryption;
+	}
+
+	public void setForceEncryption(String forceEncryption) {
+		this.forceEncryption = forceEncryption;
+	}
+
+	public String getLastModifyStatus() {
+		return this.lastModifyStatus;
+	}
+
+	public void setLastModifyStatus(String lastModifyStatus) {
+		this.lastModifyStatus = lastModifyStatus;
+	}
+
+	public String getModifyStatusReason() {
+		return this.modifyStatusReason;
+	}
+
+	public void setModifyStatusReason(String modifyStatusReason) {
+		this.modifyStatusReason = modifyStatusReason;
+	}
+
+	public String getReplicationACL() {
+		return this.replicationACL;
+	}
+
+	public void setReplicationACL(String replicationACL) {
+		this.replicationACL = replicationACL;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getRequireUpdate() {
+		return this.requireUpdate;
+	}
+
+	public void setRequireUpdate(String requireUpdate) {
+		this.requireUpdate = requireUpdate;
+	}
+
+	public String getRequireUpdateItem() {
+		return this.requireUpdateItem;
+	}
+
+	public void setRequireUpdateItem(String requireUpdateItem) {
+		this.requireUpdateItem = requireUpdateItem;
+	}
+
 	public String getRequireUpdateReason() {
 		return this.requireUpdateReason;
 	}
@@ -190,12 +178,44 @@ public class DescribeDBInstanceSSLResponse extends AcsResponse {
 		this.requireUpdateReason = requireUpdateReason;
 	}
 
-	public String getClientCACert() {
-		return this.clientCACert;
+	public String getSSLCreateTime() {
+		return this.sSLCreateTime;
 	}
 
-	public void setClientCACert(String clientCACert) {
-		this.clientCACert = clientCACert;
+	public void setSSLCreateTime(String sSLCreateTime) {
+		this.sSLCreateTime = sSLCreateTime;
+	}
+
+	public String getSSLEnabled() {
+		return this.sSLEnabled;
+	}
+
+	public void setSSLEnabled(String sSLEnabled) {
+		this.sSLEnabled = sSLEnabled;
+	}
+
+	public String getSSLExpireTime() {
+		return this.sSLExpireTime;
+	}
+
+	public void setSSLExpireTime(String sSLExpireTime) {
+		this.sSLExpireTime = sSLExpireTime;
+	}
+
+	public String getServerCAUrl() {
+		return this.serverCAUrl;
+	}
+
+	public void setServerCAUrl(String serverCAUrl) {
+		this.serverCAUrl = serverCAUrl;
+	}
+
+	public String getServerCert() {
+		return this.serverCert;
+	}
+
+	public void setServerCert(String serverCert) {
+		this.serverCert = serverCert;
 	}
 
 	public String getServerKey() {
@@ -206,12 +226,12 @@ public class DescribeDBInstanceSSLResponse extends AcsResponse {
 		this.serverKey = serverKey;
 	}
 
-	public String getModifyStatusReason() {
-		return this.modifyStatusReason;
+	public String getTlsVersion() {
+		return this.tlsVersion;
 	}
 
-	public void setModifyStatusReason(String modifyStatusReason) {
-		this.modifyStatusReason = modifyStatusReason;
+	public void setTlsVersion(String tlsVersion) {
+		this.tlsVersion = tlsVersion;
 	}
 
 	@Override

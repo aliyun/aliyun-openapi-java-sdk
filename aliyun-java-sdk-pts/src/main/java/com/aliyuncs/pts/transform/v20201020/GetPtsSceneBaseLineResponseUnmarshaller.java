@@ -29,40 +29,40 @@ public class GetPtsSceneBaseLineResponseUnmarshaller {
 	public static GetPtsSceneBaseLineResponse unmarshall(GetPtsSceneBaseLineResponse getPtsSceneBaseLineResponse, UnmarshallerContext _ctx) {
 		
 		getPtsSceneBaseLineResponse.setRequestId(_ctx.stringValue("GetPtsSceneBaseLineResponse.RequestId"));
-		getPtsSceneBaseLineResponse.setSuccess(_ctx.booleanValue("GetPtsSceneBaseLineResponse.Success"));
-		getPtsSceneBaseLineResponse.setCode(_ctx.stringValue("GetPtsSceneBaseLineResponse.Code"));
+		getPtsSceneBaseLineResponse.setSceneId(_ctx.stringValue("GetPtsSceneBaseLineResponse.SceneId"));
 		getPtsSceneBaseLineResponse.setMessage(_ctx.stringValue("GetPtsSceneBaseLineResponse.Message"));
 		getPtsSceneBaseLineResponse.setHttpStatusCode(_ctx.integerValue("GetPtsSceneBaseLineResponse.HttpStatusCode"));
-		getPtsSceneBaseLineResponse.setSceneId(_ctx.stringValue("GetPtsSceneBaseLineResponse.SceneId"));
+		getPtsSceneBaseLineResponse.setCode(_ctx.stringValue("GetPtsSceneBaseLineResponse.Code"));
+		getPtsSceneBaseLineResponse.setSuccess(_ctx.booleanValue("GetPtsSceneBaseLineResponse.Success"));
 
 		Baseline baseline = new Baseline();
 		baseline.setName(_ctx.stringValue("GetPtsSceneBaseLineResponse.Baseline.Name"));
 
 		SceneBaseline sceneBaseline = new SceneBaseline();
-		sceneBaseline.setAvgTps(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.SceneBaseline.AvgTps"));
+		sceneBaseline.setFailCountBiz(_ctx.longValue("GetPtsSceneBaseLineResponse.Baseline.SceneBaseline.FailCountBiz"));
+		sceneBaseline.setSuccessRateBiz(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.SceneBaseline.SuccessRateBiz"));
 		sceneBaseline.setAvgRt(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.SceneBaseline.AvgRt"));
-		sceneBaseline.setSeg90Rt(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.SceneBaseline.Seg90Rt"));
+		sceneBaseline.setFailCountReq(_ctx.longValue("GetPtsSceneBaseLineResponse.Baseline.SceneBaseline.FailCountReq"));
+		sceneBaseline.setAvgTps(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.SceneBaseline.AvgTps"));
 		sceneBaseline.setSeg99Rt(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.SceneBaseline.Seg99Rt"));
 		sceneBaseline.setSuccessRateReq(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.SceneBaseline.SuccessRateReq"));
-		sceneBaseline.setSuccessRateBiz(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.SceneBaseline.SuccessRateBiz"));
-		sceneBaseline.setFailCountReq(_ctx.longValue("GetPtsSceneBaseLineResponse.Baseline.SceneBaseline.FailCountReq"));
-		sceneBaseline.setFailCountBiz(_ctx.longValue("GetPtsSceneBaseLineResponse.Baseline.SceneBaseline.FailCountBiz"));
+		sceneBaseline.setSeg90Rt(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.SceneBaseline.Seg90Rt"));
 		baseline.setSceneBaseline(sceneBaseline);
 
 		List<ChainBaselineData> apiBaselines = new ArrayList<ChainBaselineData>();
 		for (int i = 0; i < _ctx.lengthValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines.Length"); i++) {
 			ChainBaselineData chainBaselineData = new ChainBaselineData();
-			chainBaselineData.setAvgTps(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].AvgTps"));
-			chainBaselineData.setAvgRt(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].AvgRt"));
-			chainBaselineData.setSeg90Rt(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].Seg90Rt"));
-			chainBaselineData.setSeg99Rt(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].Seg99Rt"));
-			chainBaselineData.setSuccessRateReq(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].SuccessRateReq"));
-			chainBaselineData.setSuccessRateBiz(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].SuccessRateBiz"));
-			chainBaselineData.setFailCountReq(_ctx.longValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].FailCountReq"));
 			chainBaselineData.setFailCountBiz(_ctx.longValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].FailCountBiz"));
+			chainBaselineData.setAvgTps(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].AvgTps"));
 			chainBaselineData.setMinRt(_ctx.integerValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].MinRt"));
+			chainBaselineData.setSeg99Rt(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].Seg99Rt"));
 			chainBaselineData.setMaxRt(_ctx.integerValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].MaxRt"));
+			chainBaselineData.setSeg90Rt(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].Seg90Rt"));
+			chainBaselineData.setSuccessRateBiz(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].SuccessRateBiz"));
+			chainBaselineData.setAvgRt(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].AvgRt"));
+			chainBaselineData.setFailCountReq(_ctx.longValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].FailCountReq"));
 			chainBaselineData.setName(_ctx.stringValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].Name"));
+			chainBaselineData.setSuccessRateReq(_ctx.floatValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].SuccessRateReq"));
 			chainBaselineData.setId(_ctx.longValue("GetPtsSceneBaseLineResponse.Baseline.ApiBaselines["+ i +"].Id"));
 
 			apiBaselines.add(chainBaselineData);

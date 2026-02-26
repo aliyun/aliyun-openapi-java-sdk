@@ -1,3 +1,39 @@
+2024-09-24 Version: 1.22.17
+- Generated 2019-05-06 for `sae`.
+
+2024-09-24 Version: 1.22.16
+- Generated 2019-05-06 for `sae`.
+
+2024-04-22 Version: 1.22.15
+- Generated 2019-05-06 for `sae`.
+
+2023-03-10 Version: 1.22.14
+- Support Create Namespace Without Micro Service Registration.
+
+2023-03-01 Version: 1.22.13
+- Fix getMetric api.
+
+2023-02-15 Version: 1.22.10
+- Add execjob api.
+
+2023-02-08 Version: 1.22.9
+- Add metric api.
+
+2023-01-04 Version: 1.22.7
+- Update deployApplication request parameters.
+
+2022-12-19 Version: 1.22.6
+- Fixed ApplicationScalingRule related api response struct.
+
+2022-12-05 Version: 1.22.5
+- Add support for secret.
+
+2022-12-05 Version: 1.22.4
+- Add support for secret.
+
+2022-11-29 Version: 1.22.0
+- Add python zip.
+
 2022-05-16 Version: 1.20.1
 - Support UpdateApplicationVswitches and DescribeComponents.
 

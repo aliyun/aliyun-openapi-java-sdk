@@ -123,6 +123,10 @@ public class DescribeDiagnosisRecordsResponse extends AcsResponse {
 
 		private Integer totalStages;
 
+		private String patternId;
+
+		private List<QueryPropertiesItem> queryProperties;
+
 		public String getSQL() {
 			return this.sQL;
 		}
@@ -305,6 +309,45 @@ public class DescribeDiagnosisRecordsResponse extends AcsResponse {
 
 		public void setTotalStages(Integer totalStages) {
 			this.totalStages = totalStages;
+		}
+
+		public String getPatternId() {
+			return this.patternId;
+		}
+
+		public void setPatternId(String patternId) {
+			this.patternId = patternId;
+		}
+
+		public List<QueryPropertiesItem> getQueryProperties() {
+			return this.queryProperties;
+		}
+
+		public void setQueryProperties(List<QueryPropertiesItem> queryProperties) {
+			this.queryProperties = queryProperties;
+		}
+
+		public static class QueryPropertiesItem {
+
+			private String name;
+
+			private String value;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

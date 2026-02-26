@@ -20,6 +20,11 @@ import java.util.List;
 import com.aliyuncs.edas.model.v20170801.DescribeApplicationScalingRulesResponse;
 import com.aliyuncs.edas.model.v20170801.DescribeApplicationScalingRulesResponse.AppScalingRules;
 import com.aliyuncs.edas.model.v20170801.DescribeApplicationScalingRulesResponse.AppScalingRules.Rule;
+import com.aliyuncs.edas.model.v20170801.DescribeApplicationScalingRulesResponse.AppScalingRules.Rule.Behaviour;
+import com.aliyuncs.edas.model.v20170801.DescribeApplicationScalingRulesResponse.AppScalingRules.Rule.Behaviour.ScaleDown;
+import com.aliyuncs.edas.model.v20170801.DescribeApplicationScalingRulesResponse.AppScalingRules.Rule.Behaviour.ScaleDown.Policy4;
+import com.aliyuncs.edas.model.v20170801.DescribeApplicationScalingRulesResponse.AppScalingRules.Rule.Behaviour.ScaleUp;
+import com.aliyuncs.edas.model.v20170801.DescribeApplicationScalingRulesResponse.AppScalingRules.Rule.Behaviour.ScaleUp.Policy;
 import com.aliyuncs.edas.model.v20170801.DescribeApplicationScalingRulesResponse.AppScalingRules.Rule.Metric;
 import com.aliyuncs.edas.model.v20170801.DescribeApplicationScalingRulesResponse.AppScalingRules.Rule.Metric.Metric1;
 import com.aliyuncs.edas.model.v20170801.DescribeApplicationScalingRulesResponse.AppScalingRules.Rule.Trigger;
@@ -83,6 +88,41 @@ public class DescribeApplicationScalingRulesResponseUnmarshaller {
 			}
 			trigger.setTriggers(triggers);
 			rule.setTrigger(trigger);
+
+			Behaviour behaviour = new Behaviour();
+
+			ScaleUp scaleUp = new ScaleUp();
+			scaleUp.setStabilizationWindowSeconds(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Behaviour.ScaleUp.StabilizationWindowSeconds"));
+			scaleUp.setSelectPolicy(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Behaviour.ScaleUp.SelectPolicy"));
+
+			List<Policy> policies = new ArrayList<Policy>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Behaviour.ScaleUp.Policies.Length"); j++) {
+				Policy policy = new Policy();
+				policy.setPeriodSeconds(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Behaviour.ScaleUp.Policies["+ j +"].PeriodSeconds"));
+				policy.setType(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Behaviour.ScaleUp.Policies["+ j +"].Type"));
+				policy.setValue(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Behaviour.ScaleUp.Policies["+ j +"].Value"));
+
+				policies.add(policy);
+			}
+			scaleUp.setPolicies(policies);
+			behaviour.setScaleUp(scaleUp);
+
+			ScaleDown scaleDown = new ScaleDown();
+			scaleDown.setStabilizationWindowSeconds(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Behaviour.ScaleDown.StabilizationWindowSeconds"));
+			scaleDown.setSelectPolicy(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Behaviour.ScaleDown.SelectPolicy"));
+
+			List<Policy4> policies3 = new ArrayList<Policy4>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Behaviour.ScaleDown.Policies.Length"); j++) {
+				Policy4 policy4 = new Policy4();
+				policy4.setPeriodSeconds(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Behaviour.ScaleDown.Policies["+ j +"].PeriodSeconds"));
+				policy4.setType(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Behaviour.ScaleDown.Policies["+ j +"].Type"));
+				policy4.setValue(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Behaviour.ScaleDown.Policies["+ j +"].Value"));
+
+				policies3.add(policy4);
+			}
+			scaleDown.setPolicies3(policies3);
+			behaviour.setScaleDown(scaleDown);
+			rule.setBehaviour(behaviour);
 
 			result.add(rule);
 		}

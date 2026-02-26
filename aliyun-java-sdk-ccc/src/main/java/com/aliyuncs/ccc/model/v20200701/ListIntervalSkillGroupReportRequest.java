@@ -34,6 +34,8 @@ public class ListIntervalSkillGroupReportRequest extends RpcAcsRequest<ListInter
 	private String skillGroupId;
 
 	private String interval;
+
+	private String mediaType;
 	public ListIntervalSkillGroupReportRequest() {
 		super("CCC", "2020-07-01", "ListIntervalSkillGroupReport", "CCC");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class ListIntervalSkillGroupReportRequest extends RpcAcsRequest<ListInter
 		this.interval = interval;
 		if(interval != null){
 			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getMediaType() {
+		return this.mediaType;
+	}
+
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+		if(mediaType != null){
+			putQueryParameter("MediaType", mediaType);
 		}
 	}
 

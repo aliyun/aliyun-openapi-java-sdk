@@ -37,7 +37,7 @@ public class ModifyDBConfigRequest extends RpcAcsRequest<ModifyDBConfigResponse>
 
 	private String config;
 	public ModifyDBConfigRequest() {
-		super("clickhouse", "2019-11-11", "ModifyDBConfig");
+		super("clickhouse", "2019-11-11", "ModifyDBConfig", "service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

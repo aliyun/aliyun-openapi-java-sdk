@@ -27,7 +27,7 @@ public class DescribeColdStorageRequest extends RpcAcsRequest<DescribeColdStorag
 
 	private String clusterId;
 	public DescribeColdStorageRequest() {
-		super("HBase", "2019-01-01", "DescribeColdStorage", "hbase");
+		super("HBase", "2019-01-01", "DescribeColdStorage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

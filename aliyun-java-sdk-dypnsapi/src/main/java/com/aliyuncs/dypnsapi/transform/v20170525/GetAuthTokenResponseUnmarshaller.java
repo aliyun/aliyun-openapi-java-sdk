@@ -28,8 +28,8 @@ public class GetAuthTokenResponseUnmarshaller {
 		getAuthTokenResponse.setMessage(_ctx.stringValue("GetAuthTokenResponse.Message"));
 
 		TokenInfo tokenInfo = new TokenInfo();
-		tokenInfo.setJwtToken(_ctx.stringValue("GetAuthTokenResponse.TokenInfo.JwtToken"));
 		tokenInfo.setAccessToken(_ctx.stringValue("GetAuthTokenResponse.TokenInfo.AccessToken"));
+		tokenInfo.setJwtToken(_ctx.stringValue("GetAuthTokenResponse.TokenInfo.JwtToken"));
 		getAuthTokenResponse.setTokenInfo(tokenInfo);
 	 
 	 	return getAuthTokenResponse;

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.DescribeImageSharePermissionResponse;
+import com.aliyuncs.ens.model.v20171110.DescribeImageSharePermissionResponse.Account;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,9 +32,12 @@ public class DescribeImageSharePermissionResponseUnmarshaller {
 		describeImageSharePermissionResponse.setPageNumber(_ctx.integerValue("DescribeImageSharePermissionResponse.PageNumber"));
 		describeImageSharePermissionResponse.setImageId(_ctx.stringValue("DescribeImageSharePermissionResponse.ImageId"));
 
-		List<String> accounts = new ArrayList<String>();
+		List<Account> accounts = new ArrayList<Account>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeImageSharePermissionResponse.Accounts.Length"); i++) {
-			accounts.add(_ctx.stringValue("DescribeImageSharePermissionResponse.Accounts["+ i +"]"));
+			Account account = new Account();
+			account.setAliyunUid(_ctx.stringValue("DescribeImageSharePermissionResponse.Accounts["+ i +"].AliyunUid"));
+
+			accounts.add(account);
 		}
 		describeImageSharePermissionResponse.setAccounts(accounts);
 	 

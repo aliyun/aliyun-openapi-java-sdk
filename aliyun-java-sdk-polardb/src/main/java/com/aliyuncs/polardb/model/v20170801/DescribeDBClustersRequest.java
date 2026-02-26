@@ -32,11 +32,21 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 
 	private String dBClusterStatus;
 
+	private String connectionString;
+
+	private Integer recentExpirationInterval;
+
+	private String describeType;
+
 	private Integer pageNumber;
 
 	private String dBNodeIds;
 
 	private String resourceGroupId;
+
+	private Integer recentCreationInterval;
+
+	private Boolean expired;
 
 	private Integer pageSize;
 
@@ -50,11 +60,13 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 
 	private String dBType;
 
+	private String dBVersion;
+
 	private String payType;
 
 	private String dBClusterIds;
 	public DescribeDBClustersRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusters");
+		super("polardb", "2017-08-01", "DescribeDBClusters", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -95,6 +107,39 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		}
 	}
 
+	public String getConnectionString() {
+		return this.connectionString;
+	}
+
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+		if(connectionString != null){
+			putQueryParameter("ConnectionString", connectionString);
+		}
+	}
+
+	public Integer getRecentExpirationInterval() {
+		return this.recentExpirationInterval;
+	}
+
+	public void setRecentExpirationInterval(Integer recentExpirationInterval) {
+		this.recentExpirationInterval = recentExpirationInterval;
+		if(recentExpirationInterval != null){
+			putQueryParameter("RecentExpirationInterval", recentExpirationInterval.toString());
+		}
+	}
+
+	public String getDescribeType() {
+		return this.describeType;
+	}
+
+	public void setDescribeType(String describeType) {
+		this.describeType = describeType;
+		if(describeType != null){
+			putQueryParameter("DescribeType", describeType);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -125,6 +170,28 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Integer getRecentCreationInterval() {
+		return this.recentCreationInterval;
+	}
+
+	public void setRecentCreationInterval(Integer recentCreationInterval) {
+		this.recentCreationInterval = recentCreationInterval;
+		if(recentCreationInterval != null){
+			putQueryParameter("RecentCreationInterval", recentCreationInterval.toString());
+		}
+	}
+
+	public Boolean getExpired() {
+		return this.expired;
+	}
+
+	public void setExpired(Boolean expired) {
+		this.expired = expired;
+		if(expired != null){
+			putQueryParameter("Expired", expired.toString());
 		}
 	}
 
@@ -194,6 +261,17 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		this.dBType = dBType;
 		if(dBType != null){
 			putQueryParameter("DBType", dBType);
+		}
+	}
+
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
+		if(dBVersion != null){
+			putQueryParameter("DBVersion", dBVersion);
 		}
 	}
 

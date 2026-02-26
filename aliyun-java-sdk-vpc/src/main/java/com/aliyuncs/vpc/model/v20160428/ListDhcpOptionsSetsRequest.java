@@ -28,6 +28,8 @@ public class ListDhcpOptionsSetsRequest extends RpcAcsRequest<ListDhcpOptionsSet
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String nextToken;
 
 	private List<String> dhcpOptionsSetIds;
@@ -39,6 +41,8 @@ public class ListDhcpOptionsSetsRequest extends RpcAcsRequest<ListDhcpOptionsSet
 	private String domainName;
 
 	private Long ownerId;
+
+	private List<Tags> tagss;
 
 	private String dhcpOptionsSetName;
 
@@ -60,6 +64,17 @@ public class ListDhcpOptionsSetsRequest extends RpcAcsRequest<ListDhcpOptionsSet
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -131,6 +146,20 @@ public class ListDhcpOptionsSetsRequest extends RpcAcsRequest<ListDhcpOptionsSet
 		}
 	}
 
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public String getDhcpOptionsSetName() {
 		return this.dhcpOptionsSetName;
 	}
@@ -150,6 +179,29 @@ public class ListDhcpOptionsSetsRequest extends RpcAcsRequest<ListDhcpOptionsSet
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public static class Tags {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

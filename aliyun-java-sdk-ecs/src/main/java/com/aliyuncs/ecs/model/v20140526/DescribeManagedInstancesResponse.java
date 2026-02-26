@@ -33,6 +33,8 @@ public class DescribeManagedInstancesResponse extends AcsResponse {
 
 	private Long totalCount;
 
+	private String nextToken;
+
 	private List<Instance> instances;
 
 	public Long getPageSize() {
@@ -65,6 +67,14 @@ public class DescribeManagedInstancesResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<Instance> getInstances() {
@@ -104,6 +114,10 @@ public class DescribeManagedInstancesResponse extends AcsResponse {
 		private Long invocationCount;
 
 		private String machineId;
+
+		private String resourceGroupId;
+
+		private List<Tag> tags;
 
 		public String getLastInvokedTime() {
 			return this.lastInvokedTime;
@@ -215,6 +229,45 @@ public class DescribeManagedInstancesResponse extends AcsResponse {
 
 		public void setMachineId(String machineId) {
 			this.machineId = machineId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

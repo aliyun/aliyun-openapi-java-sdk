@@ -26,19 +26,23 @@ import com.aliyuncs.rds.Endpoint;
 public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceResponse> {
 	   
 
-	private String dBList;
-
-	private String centralDBInstanceId;
-
-	private String centralRdsDtsAdminPassword;
-
 	private String description;
 
 	private String centralRdsDtsAdminAccount;
 
 	private String centralRegionId;
 
+	private String resourceGroupId;
+
+	private List<Tag> tags;
+
 	private List<UnitNode> unitNodes;
+
+	private String dBList;
+
+	private String centralDBInstanceId;
+
+	private String centralRdsDtsAdminPassword;
 	public CreateGADInstanceRequest() {
 		super("Rds", "2014-08-15", "CreateGADInstance", "rds");
 		setMethod(MethodType.POST);
@@ -46,39 +50,6 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDBList() {
-		return this.dBList;
-	}
-
-	public void setDBList(String dBList) {
-		this.dBList = dBList;
-		if(dBList != null){
-			putQueryParameter("DBList", dBList);
-		}
-	}
-
-	public String getCentralDBInstanceId() {
-		return this.centralDBInstanceId;
-	}
-
-	public void setCentralDBInstanceId(String centralDBInstanceId) {
-		this.centralDBInstanceId = centralDBInstanceId;
-		if(centralDBInstanceId != null){
-			putQueryParameter("CentralDBInstanceId", centralDBInstanceId);
-		}
-	}
-
-	public String getCentralRdsDtsAdminPassword() {
-		return this.centralRdsDtsAdminPassword;
-	}
-
-	public void setCentralRdsDtsAdminPassword(String centralRdsDtsAdminPassword) {
-		this.centralRdsDtsAdminPassword = centralRdsDtsAdminPassword;
-		if(centralRdsDtsAdminPassword != null){
-			putQueryParameter("CentralRdsDtsAdminPassword", centralRdsDtsAdminPassword);
-		}
 	}
 
 	public String getDescription() {
@@ -114,6 +85,31 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public List<UnitNode> getUnitNodes() {
 		return this.unitNodes;
 	}
@@ -129,16 +125,73 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".DbInstanceClass" , unitNodes.get(depth1).getDbInstanceClass());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".SecurityIPList" , unitNodes.get(depth1).getSecurityIPList());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".VSwitchID" , unitNodes.get(depth1).getVSwitchID());
-				putQueryParameter("UnitNode." + (depth1 + 1) + ".RegionID" , unitNodes.get(depth1).getRegionID());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".Engine" , unitNodes.get(depth1).getEngine());
+				putQueryParameter("UnitNode." + (depth1 + 1) + ".RegionID" , unitNodes.get(depth1).getRegionID());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".DtsInstanceClass" , unitNodes.get(depth1).getDtsInstanceClass());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".VpcID" , unitNodes.get(depth1).getVpcID());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".ZoneID" , unitNodes.get(depth1).getZoneID());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".DBInstanceDescription" , unitNodes.get(depth1).getDBInstanceDescription());
-				putQueryParameter("UnitNode." + (depth1 + 1) + ".PayType" , unitNodes.get(depth1).getPayType());
+				putQueryParameter("UnitNode." + (depth1 + 1) + ".DBInstanceStorageType" , unitNodes.get(depth1).getDBInstanceStorageType());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".DtsConflict" , unitNodes.get(depth1).getDtsConflict());
+				putQueryParameter("UnitNode." + (depth1 + 1) + ".PayType" , unitNodes.get(depth1).getPayType());
 			}
 		}	
+	}
+
+	public String getDBList() {
+		return this.dBList;
+	}
+
+	public void setDBList(String dBList) {
+		this.dBList = dBList;
+		if(dBList != null){
+			putQueryParameter("DBList", dBList);
+		}
+	}
+
+	public String getCentralDBInstanceId() {
+		return this.centralDBInstanceId;
+	}
+
+	public void setCentralDBInstanceId(String centralDBInstanceId) {
+		this.centralDBInstanceId = centralDBInstanceId;
+		if(centralDBInstanceId != null){
+			putQueryParameter("CentralDBInstanceId", centralDBInstanceId);
+		}
+	}
+
+	public String getCentralRdsDtsAdminPassword() {
+		return this.centralRdsDtsAdminPassword;
+	}
+
+	public void setCentralRdsDtsAdminPassword(String centralRdsDtsAdminPassword) {
+		this.centralRdsDtsAdminPassword = centralRdsDtsAdminPassword;
+		if(centralRdsDtsAdminPassword != null){
+			putQueryParameter("CentralRdsDtsAdminPassword", centralRdsDtsAdminPassword);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	public static class UnitNode {
@@ -157,9 +210,9 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 
 		private String vSwitchID;
 
-		private String regionID;
-
 		private String engine;
+
+		private String regionID;
 
 		private String dtsInstanceClass;
 
@@ -169,9 +222,11 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 
 		private String dBInstanceDescription;
 
-		private String payType;
+		private String dBInstanceStorageType;
 
 		private String dtsConflict;
+
+		private String payType;
 
 		public Long getDBInstanceStorage() {
 			return this.dBInstanceStorage;
@@ -229,20 +284,20 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 			this.vSwitchID = vSwitchID;
 		}
 
-		public String getRegionID() {
-			return this.regionID;
-		}
-
-		public void setRegionID(String regionID) {
-			this.regionID = regionID;
-		}
-
 		public String getEngine() {
 			return this.engine;
 		}
 
 		public void setEngine(String engine) {
 			this.engine = engine;
+		}
+
+		public String getRegionID() {
+			return this.regionID;
+		}
+
+		public void setRegionID(String regionID) {
+			this.regionID = regionID;
 		}
 
 		public String getDtsInstanceClass() {
@@ -277,12 +332,12 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 			this.dBInstanceDescription = dBInstanceDescription;
 		}
 
-		public String getPayType() {
-			return this.payType;
+		public String getDBInstanceStorageType() {
+			return this.dBInstanceStorageType;
 		}
 
-		public void setPayType(String payType) {
-			this.payType = payType;
+		public void setDBInstanceStorageType(String dBInstanceStorageType) {
+			this.dBInstanceStorageType = dBInstanceStorageType;
 		}
 
 		public String getDtsConflict() {
@@ -291,6 +346,14 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 
 		public void setDtsConflict(String dtsConflict) {
 			this.dtsConflict = dtsConflict;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
 		}
 	}
 

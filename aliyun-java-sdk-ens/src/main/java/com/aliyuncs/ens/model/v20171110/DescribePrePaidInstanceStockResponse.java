@@ -40,6 +40,8 @@ public class DescribePrePaidInstanceStockResponse extends AcsResponse {
 
 	private Integer systemDiskSize;
 
+	private String resourceGap;
+
 	public Integer getAvaliableCount() {
 		return this.avaliableCount;
 	}
@@ -102,6 +104,14 @@ public class DescribePrePaidInstanceStockResponse extends AcsResponse {
 
 	public void setSystemDiskSize(Integer systemDiskSize) {
 		this.systemDiskSize = systemDiskSize;
+	}
+
+	public String getResourceGap() {
+		return this.resourceGap;
+	}
+
+	public void setResourceGap(String resourceGap) {
+		this.resourceGap = resourceGap;
 	}
 
 	@Override

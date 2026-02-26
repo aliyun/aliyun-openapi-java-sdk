@@ -79,6 +79,8 @@ public class QueryBatchRegisterDeviceStatusResponse extends AcsResponse {
 
 		private String status;
 
+		private List<InvalidDetailListItem> invalidDetailList;
+
 		private List<String> validList;
 
 		private List<String> invalidList;
@@ -89,6 +91,14 @@ public class QueryBatchRegisterDeviceStatusResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public List<InvalidDetailListItem> getInvalidDetailList() {
+			return this.invalidDetailList;
+		}
+
+		public void setInvalidDetailList(List<InvalidDetailListItem> invalidDetailList) {
+			this.invalidDetailList = invalidDetailList;
 		}
 
 		public List<String> getValidList() {
@@ -105,6 +115,39 @@ public class QueryBatchRegisterDeviceStatusResponse extends AcsResponse {
 
 		public void setInvalidList(List<String> invalidList) {
 			this.invalidList = invalidList;
+		}
+
+		public static class InvalidDetailListItem {
+
+			private String deviceName;
+
+			private String errorMsg;
+
+			private String nickName;
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
+			}
+
+			public String getErrorMsg() {
+				return this.errorMsg;
+			}
+
+			public void setErrorMsg(String errorMsg) {
+				this.errorMsg = errorMsg;
+			}
+
+			public String getNickName() {
+				return this.nickName;
+			}
+
+			public void setNickName(String nickName) {
+				this.nickName = nickName;
+			}
 		}
 	}
 

@@ -25,6 +25,10 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ChangeColumnSecLevelRequest extends RpcAcsRequest<ChangeColumnSecLevelResponse> {
 	   
 
+	private Long tid;
+
+	private String tableName;
+
 	private String schemaName;
 
 	private Boolean isLogic;
@@ -33,11 +37,7 @@ public class ChangeColumnSecLevelRequest extends RpcAcsRequest<ChangeColumnSecLe
 
 	private String columnName;
 
-	private Long tid;
-
 	private Long dbId;
-
-	private String tableName;
 	public ChangeColumnSecLevelRequest() {
 		super("dms-enterprise", "2018-11-01", "ChangeColumnSecLevel", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -45,6 +45,28 @@ public class ChangeColumnSecLevelRequest extends RpcAcsRequest<ChangeColumnSecLe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
+		}
 	}
 
 	public String getSchemaName() {
@@ -91,17 +113,6 @@ public class ChangeColumnSecLevelRequest extends RpcAcsRequest<ChangeColumnSecLe
 		}
 	}
 
-	public Long getTid() {
-		return this.tid;
-	}
-
-	public void setTid(Long tid) {
-		this.tid = tid;
-		if(tid != null){
-			putQueryParameter("Tid", tid.toString());
-		}
-	}
-
 	public Long getDbId() {
 		return this.dbId;
 	}
@@ -110,17 +121,6 @@ public class ChangeColumnSecLevelRequest extends RpcAcsRequest<ChangeColumnSecLe
 		this.dbId = dbId;
 		if(dbId != null){
 			putQueryParameter("DbId", dbId.toString());
-		}
-	}
-
-	public String getTableName() {
-		return this.tableName;
-	}
-
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-		if(tableName != null){
-			putQueryParameter("TableName", tableName);
 		}
 	}
 

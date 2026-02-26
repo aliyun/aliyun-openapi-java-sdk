@@ -23,11 +23,11 @@ public class DescribeDcdnIpInfoResponseUnmarshaller {
 	public static DescribeDcdnIpInfoResponse unmarshall(DescribeDcdnIpInfoResponse describeDcdnIpInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnIpInfoResponse.setRequestId(_ctx.stringValue("DescribeDcdnIpInfoResponse.RequestId"));
+		describeDcdnIpInfoResponse.setRegionEname(_ctx.stringValue("DescribeDcdnIpInfoResponse.RegionEname"));
+		describeDcdnIpInfoResponse.setRegion(_ctx.stringValue("DescribeDcdnIpInfoResponse.Region"));
+		describeDcdnIpInfoResponse.setIspEname(_ctx.stringValue("DescribeDcdnIpInfoResponse.IspEname"));
 		describeDcdnIpInfoResponse.setDcdnIp(_ctx.stringValue("DescribeDcdnIpInfoResponse.DcdnIp"));
 		describeDcdnIpInfoResponse.setISP(_ctx.stringValue("DescribeDcdnIpInfoResponse.ISP"));
-		describeDcdnIpInfoResponse.setIspEname(_ctx.stringValue("DescribeDcdnIpInfoResponse.IspEname"));
-		describeDcdnIpInfoResponse.setRegion(_ctx.stringValue("DescribeDcdnIpInfoResponse.Region"));
-		describeDcdnIpInfoResponse.setRegionEname(_ctx.stringValue("DescribeDcdnIpInfoResponse.RegionEname"));
 	 
 	 	return describeDcdnIpInfoResponse;
 	}

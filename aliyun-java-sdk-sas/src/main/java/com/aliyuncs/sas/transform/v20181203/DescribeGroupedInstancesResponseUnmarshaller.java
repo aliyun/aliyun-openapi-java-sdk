@@ -46,6 +46,8 @@ public class DescribeGroupedInstancesResponseUnmarshaller {
 			instance.setFieldId(_ctx.longValue("DescribeGroupedInstancesResponse.Instances["+ i +"].FieldId"));
 			instance.setRiskInstanceCount(_ctx.stringValue("DescribeGroupedInstancesResponse.Instances["+ i +"].RiskInstanceCount"));
 			instance.setGroupFlag(_ctx.integerValue("DescribeGroupedInstancesResponse.Instances["+ i +"].GroupFlag"));
+			instance.setAuthVersionCheckCount(_ctx.integerValue("DescribeGroupedInstancesResponse.Instances["+ i +"].AuthVersionCheckCount"));
+			instance.setOs(_ctx.stringValue("DescribeGroupedInstancesResponse.Instances["+ i +"].Os"));
 
 			List<String> groupPath = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGroupedInstancesResponse.Instances["+ i +"].GroupPath.Length"); j++) {

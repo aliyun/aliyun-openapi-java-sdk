@@ -28,6 +28,8 @@ public class AllocateAnycastEipAddressResponse extends AcsResponse {
 
 	private String anycastId;
 
+	private String resourceGroupId;
+
 	private String orderId;
 
 	public String getRequestId() {
@@ -44,6 +46,14 @@ public class AllocateAnycastEipAddressResponse extends AcsResponse {
 
 	public void setAnycastId(String anycastId) {
 		this.anycastId = anycastId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public String getOrderId() {

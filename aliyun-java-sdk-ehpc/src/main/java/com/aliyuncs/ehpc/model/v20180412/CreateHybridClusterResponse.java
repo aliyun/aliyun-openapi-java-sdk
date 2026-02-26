@@ -26,9 +26,9 @@ public class CreateHybridClusterResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String clusterId;
-
 	private String taskId;
+
+	private String clusterId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class CreateHybridClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-	}
-
 	public String getTaskId() {
 		return this.taskId;
 	}
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
 	}
 
 	@Override

@@ -26,30 +26,19 @@ import com.aliyuncs.http.MethodType;
 public class ModifyAppInstanceGroupAttributeRequest extends RpcAcsRequest<ModifyAppInstanceGroupAttributeResponse> {
 	   
 
+	private String productType;
+
+	private Integer sessionTimeout;
+
 	@SerializedName("nodePool")
 	private NodePool nodePool;
 
-	private String productType;
-
 	private String appInstanceGroupName;
-
-	private Integer sessionTimeout;
 
 	private String appInstanceGroupId;
 	public ModifyAppInstanceGroupAttributeRequest() {
 		super("appstream-center", "2021-09-01", "ModifyAppInstanceGroupAttribute");
 		setMethod(MethodType.POST);
-	}
-
-	public NodePool getNodePool() {
-		return this.nodePool;
-	}
-
-	public void setNodePool(NodePool nodePool) {
-		this.nodePool = nodePool;	
-		if (nodePool != null) {
-			putQueryParameter("NodePool" , new Gson().toJson(nodePool));
-		}	
 	}
 
 	public String getProductType() {
@@ -63,17 +52,6 @@ public class ModifyAppInstanceGroupAttributeRequest extends RpcAcsRequest<Modify
 		}
 	}
 
-	public String getAppInstanceGroupName() {
-		return this.appInstanceGroupName;
-	}
-
-	public void setAppInstanceGroupName(String appInstanceGroupName) {
-		this.appInstanceGroupName = appInstanceGroupName;
-		if(appInstanceGroupName != null){
-			putQueryParameter("AppInstanceGroupName", appInstanceGroupName);
-		}
-	}
-
 	public Integer getSessionTimeout() {
 		return this.sessionTimeout;
 	}
@@ -82,6 +60,28 @@ public class ModifyAppInstanceGroupAttributeRequest extends RpcAcsRequest<Modify
 		this.sessionTimeout = sessionTimeout;
 		if(sessionTimeout != null){
 			putQueryParameter("SessionTimeout", sessionTimeout.toString());
+		}
+	}
+
+	public NodePool getNodePool() {
+		return this.nodePool;
+	}
+
+	public void setNodePool(NodePool nodePool) {
+		this.nodePool = nodePool;	
+		if (nodePool != null) {
+			putQueryParameter("NodePool" , new Gson().toJson(nodePool));
+		}	
+	}
+
+	public String getAppInstanceGroupName() {
+		return this.appInstanceGroupName;
+	}
+
+	public void setAppInstanceGroupName(String appInstanceGroupName) {
+		this.appInstanceGroupName = appInstanceGroupName;
+		if(appInstanceGroupName != null){
+			putQueryParameter("AppInstanceGroupName", appInstanceGroupName);
 		}
 	}
 

@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeAlarmEventDetailRequest extends RpcAcsRequest<DescribeAlarmEventDetailResponse> {
 	   
 
-	private String alarmUniqueInfo;
-
 	private String sourceIp;
 
 	private String from;
 
 	private String lang;
+
+	private String alarmUniqueInfo;
 	public DescribeAlarmEventDetailRequest() {
 		super("Sas", "2018-12-03", "DescribeAlarmEventDetail");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class DescribeAlarmEventDetailRequest extends RpcAcsRequest<DescribeAlarm
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getAlarmUniqueInfo() {
-		return this.alarmUniqueInfo;
-	}
-
-	public void setAlarmUniqueInfo(String alarmUniqueInfo) {
-		this.alarmUniqueInfo = alarmUniqueInfo;
-		if(alarmUniqueInfo != null){
-			putQueryParameter("AlarmUniqueInfo", alarmUniqueInfo);
-		}
 	}
 
 	public String getSourceIp() {
@@ -82,6 +71,17 @@ public class DescribeAlarmEventDetailRequest extends RpcAcsRequest<DescribeAlarm
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getAlarmUniqueInfo() {
+		return this.alarmUniqueInfo;
+	}
+
+	public void setAlarmUniqueInfo(String alarmUniqueInfo) {
+		this.alarmUniqueInfo = alarmUniqueInfo;
+		if(alarmUniqueInfo != null){
+			putQueryParameter("AlarmUniqueInfo", alarmUniqueInfo);
 		}
 	}
 

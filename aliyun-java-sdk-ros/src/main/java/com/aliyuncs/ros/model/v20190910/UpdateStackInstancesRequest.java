@@ -30,6 +30,8 @@ public class UpdateStackInstancesRequest extends RpcAcsRequest<UpdateStackInstan
 
 	private String clientToken;
 
+	private Map<Object,Object> deploymentTargets;
+
 	private Long timeoutInMinutes;
 
 	private String stackGroupName;
@@ -60,6 +62,17 @@ public class UpdateStackInstancesRequest extends RpcAcsRequest<UpdateStackInstan
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Map<Object,Object> getDeploymentTargets() {
+		return this.deploymentTargets;
+	}
+
+	public void setDeploymentTargets(Map<Object,Object> deploymentTargets) {
+		this.deploymentTargets = deploymentTargets;
+		if(deploymentTargets != null){
+			putQueryParameter("DeploymentTargets", new Gson().toJson(deploymentTargets));
 		}
 	}
 

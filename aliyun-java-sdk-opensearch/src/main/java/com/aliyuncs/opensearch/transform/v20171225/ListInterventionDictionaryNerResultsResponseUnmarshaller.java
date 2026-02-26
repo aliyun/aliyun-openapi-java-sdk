@@ -32,9 +32,9 @@ public class ListInterventionDictionaryNerResultsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListInterventionDictionaryNerResultsResponse.result.Length"); i++) {
 			NerItem nerItem = new NerItem();
 			nerItem.setTag(_ctx.stringValue("ListInterventionDictionaryNerResultsResponse.result["+ i +"].tag"));
-			nerItem.setTagLabel(_ctx.stringValue("ListInterventionDictionaryNerResultsResponse.result["+ i +"].tagLabel"));
 			nerItem.setToken(_ctx.stringValue("ListInterventionDictionaryNerResultsResponse.result["+ i +"].token"));
 			nerItem.setOrder(_ctx.integerValue("ListInterventionDictionaryNerResultsResponse.result["+ i +"].order"));
+			nerItem.setTagLabel(_ctx.stringValue("ListInterventionDictionaryNerResultsResponse.result["+ i +"].tagLabel"));
 
 			result.add(nerItem);
 		}

@@ -25,13 +25,13 @@ import com.aliyuncs.ess.Endpoint;
 public class DeleteScalingRuleRequest extends RpcAcsRequest<DeleteScalingRuleResponse> {
 	   
 
+	private String scalingRuleId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String scalingRuleId;
 	public DeleteScalingRuleRequest() {
 		super("Ess", "2014-08-28", "DeleteScalingRule", "ess");
 		setMethod(MethodType.POST);
@@ -39,6 +39,17 @@ public class DeleteScalingRuleRequest extends RpcAcsRequest<DeleteScalingRuleRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getScalingRuleId() {
+		return this.scalingRuleId;
+	}
+
+	public void setScalingRuleId(String scalingRuleId) {
+		this.scalingRuleId = scalingRuleId;
+		if(scalingRuleId != null){
+			putQueryParameter("ScalingRuleId", scalingRuleId);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -71,17 +82,6 @@ public class DeleteScalingRuleRequest extends RpcAcsRequest<DeleteScalingRuleRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getScalingRuleId() {
-		return this.scalingRuleId;
-	}
-
-	public void setScalingRuleId(String scalingRuleId) {
-		this.scalingRuleId = scalingRuleId;
-		if(scalingRuleId != null){
-			putQueryParameter("ScalingRuleId", scalingRuleId);
 		}
 	}
 

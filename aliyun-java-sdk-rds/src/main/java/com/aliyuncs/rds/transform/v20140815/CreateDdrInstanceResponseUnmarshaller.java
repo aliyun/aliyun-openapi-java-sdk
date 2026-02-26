@@ -23,10 +23,10 @@ public class CreateDdrInstanceResponseUnmarshaller {
 	public static CreateDdrInstanceResponse unmarshall(CreateDdrInstanceResponse createDdrInstanceResponse, UnmarshallerContext _ctx) {
 		
 		createDdrInstanceResponse.setRequestId(_ctx.stringValue("CreateDdrInstanceResponse.RequestId"));
-		createDdrInstanceResponse.setDBInstanceId(_ctx.stringValue("CreateDdrInstanceResponse.DBInstanceId"));
-		createDdrInstanceResponse.setPort(_ctx.stringValue("CreateDdrInstanceResponse.Port"));
 		createDdrInstanceResponse.setConnectionString(_ctx.stringValue("CreateDdrInstanceResponse.ConnectionString"));
+		createDdrInstanceResponse.setDBInstanceId(_ctx.stringValue("CreateDdrInstanceResponse.DBInstanceId"));
 		createDdrInstanceResponse.setOrderId(_ctx.stringValue("CreateDdrInstanceResponse.OrderId"));
+		createDdrInstanceResponse.setPort(_ctx.stringValue("CreateDdrInstanceResponse.Port"));
 	 
 	 	return createDdrInstanceResponse;
 	}

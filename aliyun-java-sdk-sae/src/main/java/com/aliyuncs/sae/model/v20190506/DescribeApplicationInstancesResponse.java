@@ -163,6 +163,8 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 			private Long finishTimeStamp;
 
+			private Boolean debugStatus;
+
 			public Long getCreateTimeStamp() {
 				return this.createTimeStamp;
 			}
@@ -257,6 +259,14 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 			public void setFinishTimeStamp(Long finishTimeStamp) {
 				this.finishTimeStamp = finishTimeStamp;
+			}
+
+			public Boolean getDebugStatus() {
+				return this.debugStatus;
+			}
+
+			public void setDebugStatus(Boolean debugStatus) {
+				this.debugStatus = debugStatus;
 			}
 		}
 	}

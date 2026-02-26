@@ -102,6 +102,8 @@ public class GetDataExportOrderDetailResponse extends AcsResponse {
 
 			private String jobStatus;
 
+			private Long jobId;
+
 			public Long getPreCheckId() {
 				return this.preCheckId;
 			}
@@ -116,6 +118,14 @@ public class GetDataExportOrderDetailResponse extends AcsResponse {
 
 			public void setJobStatus(String jobStatus) {
 				this.jobStatus = jobStatus;
+			}
+
+			public Long getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(Long jobId) {
+				this.jobId = jobId;
 			}
 		}
 

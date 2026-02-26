@@ -27,7 +27,7 @@ public class TaggingAdImageRequest extends RpcAcsRequest<TaggingAdImageResponse>
 
 	private String imageURL;
 	public TaggingAdImageRequest() {
-		super("imagerecog", "2019-09-30", "TaggingAdImage", "imagerecog");
+		super("imagerecog", "2019-09-30", "TaggingAdImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

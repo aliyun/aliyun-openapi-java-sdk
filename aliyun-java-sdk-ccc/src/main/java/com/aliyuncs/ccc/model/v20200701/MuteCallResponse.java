@@ -15,7 +15,6 @@
 package com.aliyuncs.ccc.model.v20200701;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20200701.MuteCallResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -166,8 +165,6 @@ public class MuteCallResponse extends AcsResponse {
 
 				private Long timestamp;
 
-				private Map<Object,Object> associatedData;
-
 				private String releaseReason;
 
 				private String callType;
@@ -179,6 +176,8 @@ public class MuteCallResponse extends AcsResponse {
 				private String userExtension;
 
 				private String originator;
+
+				private String skillGroupId;
 
 				public Integer getIndex() {
 					return this.index;
@@ -236,14 +235,6 @@ public class MuteCallResponse extends AcsResponse {
 					this.timestamp = timestamp;
 				}
 
-				public Map<Object,Object> getAssociatedData() {
-					return this.associatedData;
-				}
-
-				public void setAssociatedData(Map<Object,Object> associatedData) {
-					this.associatedData = associatedData;
-				}
-
 				public String getReleaseReason() {
 					return this.releaseReason;
 				}
@@ -290,6 +281,14 @@ public class MuteCallResponse extends AcsResponse {
 
 				public void setOriginator(String originator) {
 					this.originator = originator;
+				}
+
+				public String getSkillGroupId() {
+					return this.skillGroupId;
+				}
+
+				public void setSkillGroupId(String skillGroupId) {
+					this.skillGroupId = skillGroupId;
 				}
 			}
 		}

@@ -31,8 +31,8 @@ public class CheckDevicesResponseUnmarshaller {
 		List<DeviceCheckInfo> deviceCheckInfos = new ArrayList<DeviceCheckInfo>();
 		for (int i = 0; i < _ctx.lengthValue("CheckDevicesResponse.DeviceCheckInfos.Length"); i++) {
 			DeviceCheckInfo deviceCheckInfo = new DeviceCheckInfo();
-			deviceCheckInfo.setDeviceId(_ctx.stringValue("CheckDevicesResponse.DeviceCheckInfos["+ i +"].DeviceId"));
 			deviceCheckInfo.setAvailable(_ctx.booleanValue("CheckDevicesResponse.DeviceCheckInfos["+ i +"].Available"));
+			deviceCheckInfo.setDeviceId(_ctx.stringValue("CheckDevicesResponse.DeviceCheckInfos["+ i +"].DeviceId"));
 
 			deviceCheckInfos.add(deviceCheckInfo);
 		}

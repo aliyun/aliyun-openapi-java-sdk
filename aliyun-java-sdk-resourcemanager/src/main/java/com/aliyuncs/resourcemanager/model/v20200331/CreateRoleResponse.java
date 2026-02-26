@@ -46,21 +46,29 @@ public class CreateRoleResponse extends AcsResponse {
 
 	public static class Role {
 
+		private String arn;
+
 		private String assumeRolePolicyDocument;
 
-		private String rolePrincipalName;
+		private String createDate;
 
 		private String description;
 
 		private Long maxSessionDuration;
 
+		private String roleId;
+
 		private String roleName;
 
-		private String createDate;
+		private String rolePrincipalName;
 
-		private String arn;
+		public String getArn() {
+			return this.arn;
+		}
 
-		private String roleId;
+		public void setArn(String arn) {
+			this.arn = arn;
+		}
 
 		public String getAssumeRolePolicyDocument() {
 			return this.assumeRolePolicyDocument;
@@ -70,12 +78,12 @@ public class CreateRoleResponse extends AcsResponse {
 			this.assumeRolePolicyDocument = assumeRolePolicyDocument;
 		}
 
-		public String getRolePrincipalName() {
-			return this.rolePrincipalName;
+		public String getCreateDate() {
+			return this.createDate;
 		}
 
-		public void setRolePrincipalName(String rolePrincipalName) {
-			this.rolePrincipalName = rolePrincipalName;
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
 		}
 
 		public String getDescription() {
@@ -94,6 +102,14 @@ public class CreateRoleResponse extends AcsResponse {
 			this.maxSessionDuration = maxSessionDuration;
 		}
 
+		public String getRoleId() {
+			return this.roleId;
+		}
+
+		public void setRoleId(String roleId) {
+			this.roleId = roleId;
+		}
+
 		public String getRoleName() {
 			return this.roleName;
 		}
@@ -102,28 +118,12 @@ public class CreateRoleResponse extends AcsResponse {
 			this.roleName = roleName;
 		}
 
-		public String getCreateDate() {
-			return this.createDate;
+		public String getRolePrincipalName() {
+			return this.rolePrincipalName;
 		}
 
-		public void setCreateDate(String createDate) {
-			this.createDate = createDate;
-		}
-
-		public String getArn() {
-			return this.arn;
-		}
-
-		public void setArn(String arn) {
-			this.arn = arn;
-		}
-
-		public String getRoleId() {
-			return this.roleId;
-		}
-
-		public void setRoleId(String roleId) {
-			this.roleId = roleId;
+		public void setRolePrincipalName(String rolePrincipalName) {
+			this.rolePrincipalName = rolePrincipalName;
 		}
 	}
 

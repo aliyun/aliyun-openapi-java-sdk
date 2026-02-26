@@ -36,7 +36,7 @@ public class AddCopyrightFilesRequest extends RpcAcsRequest<AddCopyrightFilesRes
 
 	private String swtype;
 	public AddCopyrightFilesRequest() {
-		super("Copyright", "2019-01-23", "AddCopyrightFiles");
+		super("Copyright", "2019-01-23", "AddCopyrightFiles", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

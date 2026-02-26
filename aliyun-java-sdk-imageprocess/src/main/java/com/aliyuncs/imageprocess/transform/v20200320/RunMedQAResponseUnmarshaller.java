@@ -28,15 +28,15 @@ public class RunMedQAResponseUnmarshaller {
 	public static RunMedQAResponse unmarshall(RunMedQAResponse runMedQAResponse, UnmarshallerContext _ctx) {
 		
 		runMedQAResponse.setRequestId(_ctx.stringValue("RunMedQAResponse.RequestId"));
-		runMedQAResponse.setMessage(_ctx.stringValue("RunMedQAResponse.Message"));
 		runMedQAResponse.setCode(_ctx.stringValue("RunMedQAResponse.Code"));
+		runMedQAResponse.setMessage(_ctx.stringValue("RunMedQAResponse.Message"));
 
 		Data data = new Data();
-		data.setReports(_ctx.mapValue("RunMedQAResponse.Data.Reports"));
-		data.setQuestionType(_ctx.stringValue("RunMedQAResponse.Data.QuestionType"));
-		data.setAnswerType(_ctx.stringValue("RunMedQAResponse.Data.AnswerType"));
-		data.setQuestion(_ctx.stringValue("RunMedQAResponse.Data.Question"));
 		data.setSessionId(_ctx.stringValue("RunMedQAResponse.Data.SessionId"));
+		data.setQuestionType(_ctx.stringValue("RunMedQAResponse.Data.QuestionType"));
+		data.setQuestion(_ctx.stringValue("RunMedQAResponse.Data.Question"));
+		data.setAnswerType(_ctx.stringValue("RunMedQAResponse.Data.AnswerType"));
+		data.setReports(_ctx.mapValue("RunMedQAResponse.Data.Reports"));
 
 		List<String> options = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("RunMedQAResponse.Data.Options.Length"); i++) {

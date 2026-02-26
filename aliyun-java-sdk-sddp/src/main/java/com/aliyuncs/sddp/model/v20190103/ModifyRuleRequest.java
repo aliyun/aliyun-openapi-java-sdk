@@ -35,9 +35,13 @@ public class ModifyRuleRequest extends RpcAcsRequest<ModifyRuleResponse> {
 
 	private String content;
 
+	private Integer matchType;
+
 	private Long id;
 
 	private String lang;
+
+	private Integer supportForm;
 
 	private Integer ruleType;
 
@@ -108,6 +112,17 @@ public class ModifyRuleRequest extends RpcAcsRequest<ModifyRuleResponse> {
 		}
 	}
 
+	public Integer getMatchType() {
+		return this.matchType;
+	}
+
+	public void setMatchType(Integer matchType) {
+		this.matchType = matchType;
+		if(matchType != null){
+			putQueryParameter("MatchType", matchType.toString());
+		}
+	}
+
 	public Long getId() {
 		return this.id;
 	}
@@ -127,6 +142,17 @@ public class ModifyRuleRequest extends RpcAcsRequest<ModifyRuleResponse> {
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getSupportForm() {
+		return this.supportForm;
+	}
+
+	public void setSupportForm(Integer supportForm) {
+		this.supportForm = supportForm;
+		if(supportForm != null){
+			putQueryParameter("SupportForm", supportForm.toString());
 		}
 	}
 

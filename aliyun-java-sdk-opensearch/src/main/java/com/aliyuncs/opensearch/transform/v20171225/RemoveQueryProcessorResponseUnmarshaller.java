@@ -22,8 +22,8 @@ public class RemoveQueryProcessorResponseUnmarshaller {
 
 	public static RemoveQueryProcessorResponse unmarshall(RemoveQueryProcessorResponse removeQueryProcessorResponse, UnmarshallerContext _ctx) {
 		
-		removeQueryProcessorResponse.setRequestId(_ctx.stringValue("RemoveQueryProcessorResponse.requestId"));
 		removeQueryProcessorResponse.setResult(_ctx.stringValue("RemoveQueryProcessorResponse.result"));
+		removeQueryProcessorResponse.setRequestId(_ctx.stringValue("RemoveQueryProcessorResponse.requestId"));
 	 
 	 	return removeQueryProcessorResponse;
 	}

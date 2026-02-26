@@ -36,9 +36,13 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String nextToken;
 
-	private String fotaChannel;
+	private String imageName;
 
 	private String imageType;
+
+	private String fotaVersion;
+
+	private String sessionType;
 
 	private String osType;
 
@@ -50,7 +54,7 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String gpuDriverVersion;
 	public DescribeImagesRequest() {
-		super("ecd", "2020-09-30", "DescribeImages");
+		super("ecd", "2020-09-30", "DescribeImages", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -115,14 +119,14 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
-	public String getFotaChannel() {
-		return this.fotaChannel;
+	public String getImageName() {
+		return this.imageName;
 	}
 
-	public void setFotaChannel(String fotaChannel) {
-		this.fotaChannel = fotaChannel;
-		if(fotaChannel != null){
-			putQueryParameter("FotaChannel", fotaChannel);
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+		if(imageName != null){
+			putQueryParameter("ImageName", imageName);
 		}
 	}
 
@@ -134,6 +138,28 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.imageType = imageType;
 		if(imageType != null){
 			putQueryParameter("ImageType", imageType);
+		}
+	}
+
+	public String getFotaVersion() {
+		return this.fotaVersion;
+	}
+
+	public void setFotaVersion(String fotaVersion) {
+		this.fotaVersion = fotaVersion;
+		if(fotaVersion != null){
+			putQueryParameter("FotaVersion", fotaVersion);
+		}
+	}
+
+	public String getSessionType() {
+		return this.sessionType;
+	}
+
+	public void setSessionType(String sessionType) {
+		this.sessionType = sessionType;
+		if(sessionType != null){
+			putQueryParameter("SessionType", sessionType);
 		}
 	}
 

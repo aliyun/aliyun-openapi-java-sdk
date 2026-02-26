@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.outboundbot.model.v20191226.DescribeDialogueNodeStatisticsResponse;
+import com.aliyuncs.outboundbot.model.v20191226.DescribeDialogueNodeStatisticsResponse.HangUpDialogueNodesItem;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNode;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -50,6 +51,18 @@ public class DescribeDialogueNodeStatisticsResponseUnmarshaller {
 			noAnswerDialogueNodes.add(noAnswerDialogueNode);
 		}
 		describeDialogueNodeStatisticsResponse.setNoAnswerDialogueNodes(noAnswerDialogueNodes);
+
+		List<HangUpDialogueNodesItem> hangUpDialogueNodes = new ArrayList<HangUpDialogueNodesItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDialogueNodeStatisticsResponse.HangUpDialogueNodes.Length"); i++) {
+			HangUpDialogueNodesItem hangUpDialogueNodesItem = new HangUpDialogueNodesItem();
+			hangUpDialogueNodesItem.setHangUpNum(_ctx.integerValue("DescribeDialogueNodeStatisticsResponse.HangUpDialogueNodes["+ i +"].HangUpNum"));
+			hangUpDialogueNodesItem.setNodeId(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.HangUpDialogueNodes["+ i +"].NodeId"));
+			hangUpDialogueNodesItem.setNodeName(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.HangUpDialogueNodes["+ i +"].NodeName"));
+			hangUpDialogueNodesItem.setRateDisplay(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.HangUpDialogueNodes["+ i +"].RateDisplay"));
+
+			hangUpDialogueNodes.add(hangUpDialogueNodesItem);
+		}
+		describeDialogueNodeStatisticsResponse.setHangUpDialogueNodes(hangUpDialogueNodes);
 	 
 	 	return describeDialogueNodeStatisticsResponse;
 	}

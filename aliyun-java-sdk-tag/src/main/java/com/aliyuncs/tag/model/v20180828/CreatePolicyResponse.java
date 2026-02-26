@@ -28,6 +28,8 @@ public class CreatePolicyResponse extends AcsResponse {
 
 	private String policyId;
 
+	private String policyName;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class CreatePolicyResponse extends AcsResponse {
 
 	public void setPolicyId(String policyId) {
 		this.policyId = policyId;
+	}
+
+	public String getPolicyName() {
+		return this.policyName;
+	}
+
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
 	}
 
 	@Override

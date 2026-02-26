@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeLogicInstanceTopologyResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeLogicInstanceTopologyResponse.NodeInfo;
+import com.aliyuncs.r_kvstore.model.v20150101.DescribeLogicInstanceTopologyResponse.NodeInfo1;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,14 +43,15 @@ public class DescribeLogicInstanceTopologyResponseUnmarshaller {
 		}
 		describeLogicInstanceTopologyResponse.setRedisProxyList(redisProxyList);
 
-		List<NodeInfo> redisShardList = new ArrayList<NodeInfo>();
+		List<NodeInfo1> redisShardList = new ArrayList<NodeInfo1>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLogicInstanceTopologyResponse.RedisShardList.Length"); i++) {
-			NodeInfo nodeInfo1 = new NodeInfo();
+			NodeInfo1 nodeInfo1 = new NodeInfo1();
 			nodeInfo1.setCapacity(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].Capacity"));
 			nodeInfo1.setConnection(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].Connection"));
 			nodeInfo1.setNodeType(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].NodeType"));
 			nodeInfo1.setBandwidth(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].Bandwidth"));
 			nodeInfo1.setNodeId(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].NodeId"));
+			nodeInfo1.setSubInstanceType(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].SubInstanceType"));
 
 			redisShardList.add(nodeInfo1);
 		}

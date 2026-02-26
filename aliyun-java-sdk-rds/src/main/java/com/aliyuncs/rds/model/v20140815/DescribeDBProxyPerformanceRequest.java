@@ -33,9 +33,13 @@ public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBP
 
 	private String dBInstanceId;
 
+	private String dimension;
+
 	private String resourceOwnerAccount;
 
 	private String endTime;
+
+	private String dBProxyEngineType;
 
 	private Long ownerId;
 
@@ -93,6 +97,17 @@ public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBP
 		}
 	}
 
+	public String getDimension() {
+		return this.dimension;
+	}
+
+	public void setDimension(String dimension) {
+		this.dimension = dimension;
+		if(dimension != null){
+			putQueryParameter("Dimension", dimension);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -112,6 +127,17 @@ public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBP
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
+		if(dBProxyEngineType != null){
+			putQueryParameter("DBProxyEngineType", dBProxyEngineType);
 		}
 	}
 

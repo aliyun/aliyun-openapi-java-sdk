@@ -15,30 +15,65 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryChangeLogListRequest extends RpcAcsRequest<QueryChangeLogListResponse> {
-	
-	public QueryChangeLogListRequest() {
-		super("Domain-intl", "2017-12-18", "QueryChangeLogList", "domain");
-	}
+	   
+
+	private String domainName;
+
+	private Integer pageNum;
+
+	private Long startDate;
 
 	private Long endDate;
 
 	private String userClientIp;
 
-	private String domainName;
-
 	private Integer pageSize;
 
 	private String lang;
+	public QueryChangeLogListRequest() {
+		super("Domain-intl", "2017-12-18", "QueryChangeLogList");
+		setMethod(MethodType.POST);
+	}
 
-	private Integer pageNum;
+	public String getDomainName() {
+		return this.domainName;
+	}
 
-	private Long startDate;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Long getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(Long startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putQueryParameter("StartDate", startDate.toString());
+		}
+	}
 
 	public Long getEndDate() {
 		return this.endDate;
@@ -62,17 +97,6 @@ public class QueryChangeLogListRequest extends RpcAcsRequest<QueryChangeLogListR
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -92,28 +116,6 @@ public class QueryChangeLogListRequest extends RpcAcsRequest<QueryChangeLogListR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public Long getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(Long startDate) {
-		this.startDate = startDate;
-		if(startDate != null){
-			putQueryParameter("StartDate", startDate.toString());
 		}
 	}
 

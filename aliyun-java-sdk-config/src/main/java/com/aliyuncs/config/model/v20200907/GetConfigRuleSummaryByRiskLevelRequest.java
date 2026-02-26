@@ -25,8 +25,8 @@ import com.aliyuncs.config.Endpoint;
 public class GetConfigRuleSummaryByRiskLevelRequest extends RpcAcsRequest<GetConfigRuleSummaryByRiskLevelResponse> {
 	   
 	public GetConfigRuleSummaryByRiskLevelRequest() {
-		super("Config", "2020-09-07", "GetConfigRuleSummaryByRiskLevel");
-		setMethod(MethodType.GET);
+		super("Config", "2020-09-07", "GetConfigRuleSummaryByRiskLevel", "config");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

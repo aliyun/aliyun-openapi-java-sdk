@@ -15,6 +15,9 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mse.Endpoint;
 
@@ -29,11 +32,7 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 
 	private Boolean enableXtrace;
 
-	private String xtraceRatio;
-
 	private Integer replica;
-
-	private String vSwitchId2;
 
 	private Boolean enableHardwareAcceleration;
 
@@ -41,9 +40,13 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 
 	private String spec;
 
+	private String resourceGroupId;
+
+	private String requestPars;
+
 	private Boolean enterpriseSecurityGroup;
 
-	private String vpc;
+	private List<Tag> tags;
 
 	private String vSwitchId;
 
@@ -51,9 +54,20 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 
 	private String name;
 
+	private String region;
+
+	@SerializedName("zoneInfo")
+	private List<ZoneInfo> zoneInfo;
+
+	private String xtraceRatio;
+
+	private String vSwitchId2;
+
+	private String vpc;
+
 	private String acceptLanguage;
 
-	private String region;
+	private String chargeType;
 	public AddGatewayRequest() {
 		super("mse", "2019-05-31", "AddGateway", "mse");
 		setMethod(MethodType.POST);
@@ -85,17 +99,6 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
-	public String getXtraceRatio() {
-		return this.xtraceRatio;
-	}
-
-	public void setXtraceRatio(String xtraceRatio) {
-		this.xtraceRatio = xtraceRatio;
-		if(xtraceRatio != null){
-			putQueryParameter("XtraceRatio", xtraceRatio);
-		}
-	}
-
 	public Integer getReplica() {
 		return this.replica;
 	}
@@ -104,17 +107,6 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		this.replica = replica;
 		if(replica != null){
 			putQueryParameter("Replica", replica.toString());
-		}
-	}
-
-	public String getVSwitchId2() {
-		return this.vSwitchId2;
-	}
-
-	public void setVSwitchId2(String vSwitchId2) {
-		this.vSwitchId2 = vSwitchId2;
-		if(vSwitchId2 != null){
-			putQueryParameter("VSwitchId2", vSwitchId2);
 		}
 	}
 
@@ -151,6 +143,28 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
 	public Boolean getEnterpriseSecurityGroup() {
 		return this.enterpriseSecurityGroup;
 	}
@@ -162,15 +176,18 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
-	public String getVpc() {
-		return this.vpc;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setVpc(String vpc) {
-		this.vpc = vpc;
-		if(vpc != null){
-			putQueryParameter("Vpc", vpc);
-		}
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getVSwitchId() {
@@ -206,6 +223,61 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
+	public List<ZoneInfo> getZoneInfo() {
+		return this.zoneInfo;
+	}
+
+	public void setZoneInfo(List<ZoneInfo> zoneInfo) {
+		this.zoneInfo = zoneInfo;	
+		if (zoneInfo != null) {
+			putQueryParameter("ZoneInfo" , new Gson().toJson(zoneInfo));
+		}	
+	}
+
+	public String getXtraceRatio() {
+		return this.xtraceRatio;
+	}
+
+	public void setXtraceRatio(String xtraceRatio) {
+		this.xtraceRatio = xtraceRatio;
+		if(xtraceRatio != null){
+			putQueryParameter("XtraceRatio", xtraceRatio);
+		}
+	}
+
+	public String getVSwitchId2() {
+		return this.vSwitchId2;
+	}
+
+	public void setVSwitchId2(String vSwitchId2) {
+		this.vSwitchId2 = vSwitchId2;
+		if(vSwitchId2 != null){
+			putQueryParameter("VSwitchId2", vSwitchId2);
+		}
+	}
+
+	public String getVpc() {
+		return this.vpc;
+	}
+
+	public void setVpc(String vpc) {
+		this.vpc = vpc;
+		if(vpc != null){
+			putQueryParameter("Vpc", vpc);
+		}
+	}
+
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -217,14 +289,62 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
-	public String getRegion() {
-		return this.region;
+	public String getChargeType() {
+		return this.chargeType;
 	}
 
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
+	public static class ZoneInfo {
+
+		@SerializedName("VSwitchId")
+		private String vSwitchId;
+
+		@SerializedName("ZoneId")
+		private String zoneId;
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 	}
 

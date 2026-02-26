@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StartPlaylistResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String programId;
 
+	private String requestId;
+
 	private StreamInfo streamInfo;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getProgramId() {
 		return this.programId;
@@ -45,6 +37,14 @@ public class StartPlaylistResponse extends AcsResponse {
 
 	public void setProgramId(String programId) {
 		this.programId = programId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public StreamInfo getStreamInfo() {
@@ -57,21 +57,13 @@ public class StartPlaylistResponse extends AcsResponse {
 
 	public static class StreamInfo {
 
-		private String domainName;
-
 		private String appName;
+
+		private String domainName;
 
 		private String streamName;
 
 		private List<Stream> streams;
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
 
 		public String getAppName() {
 			return this.appName;
@@ -79,6 +71,14 @@ public class StartPlaylistResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getStreamName() {
@@ -101,9 +101,9 @@ public class StartPlaylistResponse extends AcsResponse {
 
 			private String pullFlvUrl;
 
-			private String pullRtmpUrl;
-
 			private String pullM3U8Url;
+
+			private String pullRtmpUrl;
 
 			private String quality;
 
@@ -115,20 +115,20 @@ public class StartPlaylistResponse extends AcsResponse {
 				this.pullFlvUrl = pullFlvUrl;
 			}
 
-			public String getPullRtmpUrl() {
-				return this.pullRtmpUrl;
-			}
-
-			public void setPullRtmpUrl(String pullRtmpUrl) {
-				this.pullRtmpUrl = pullRtmpUrl;
-			}
-
 			public String getPullM3U8Url() {
 				return this.pullM3U8Url;
 			}
 
 			public void setPullM3U8Url(String pullM3U8Url) {
 				this.pullM3U8Url = pullM3U8Url;
+			}
+
+			public String getPullRtmpUrl() {
+				return this.pullRtmpUrl;
+			}
+
+			public void setPullRtmpUrl(String pullRtmpUrl) {
+				this.pullRtmpUrl = pullRtmpUrl;
 			}
 
 			public String getQuality() {

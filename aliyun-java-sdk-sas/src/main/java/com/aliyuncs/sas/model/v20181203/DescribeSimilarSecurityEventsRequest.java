@@ -27,8 +27,6 @@ public class DescribeSimilarSecurityEventsRequest extends RpcAcsRequest<Describe
 
 	private Long resourceOwnerId;
 
-	private Integer currentPage;
-
 	private String sourceIp;
 
 	private Integer pageSize;
@@ -36,6 +34,8 @@ public class DescribeSimilarSecurityEventsRequest extends RpcAcsRequest<Describe
 	private String lang;
 
 	private Long taskId;
+
+	private Integer currentPage;
 	public DescribeSimilarSecurityEventsRequest() {
 		super("Sas", "2018-12-03", "DescribeSimilarSecurityEvents");
 		setMethod(MethodType.POST);
@@ -53,17 +53,6 @@ public class DescribeSimilarSecurityEventsRequest extends RpcAcsRequest<Describe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -108,6 +97,17 @@ public class DescribeSimilarSecurityEventsRequest extends RpcAcsRequest<Describe
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

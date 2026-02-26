@@ -27,22 +27,22 @@ public class ListTasksResponseUnmarshaller {
 	public static ListTasksResponse unmarshall(ListTasksResponse listTasksResponse, UnmarshallerContext _ctx) {
 		
 		listTasksResponse.setRequestId(_ctx.stringValue("ListTasksResponse.RequestId"));
-		listTasksResponse.setTotalCount(_ctx.integerValue("ListTasksResponse.TotalCount"));
-		listTasksResponse.setPageNumber(_ctx.integerValue("ListTasksResponse.PageNumber"));
 		listTasksResponse.setPageSize(_ctx.integerValue("ListTasksResponse.PageSize"));
+		listTasksResponse.setPageNumber(_ctx.integerValue("ListTasksResponse.PageNumber"));
+		listTasksResponse.setTotalCount(_ctx.integerValue("ListTasksResponse.TotalCount"));
 
 		List<TaskInfo> tasks = new ArrayList<TaskInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListTasksResponse.Tasks.Length"); i++) {
 			TaskInfo taskInfo = new TaskInfo();
-			taskInfo.setTaskId(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].TaskId"));
-			taskInfo.setTaskType(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].TaskType"));
-			taskInfo.setClusterId(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].ClusterId"));
-			taskInfo.setRequest(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].Request"));
 			taskInfo.setStatus(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].Status"));
-			taskInfo.setCurrentStep(_ctx.integerValue("ListTasksResponse.Tasks["+ i +"].CurrentStep"));
+			taskInfo.setTaskType(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].TaskType"));
 			taskInfo.setTotalSteps(_ctx.integerValue("ListTasksResponse.Tasks["+ i +"].TotalSteps"));
+			taskInfo.setCurrentStep(_ctx.integerValue("ListTasksResponse.Tasks["+ i +"].CurrentStep"));
 			taskInfo.setResult(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].Result"));
 			taskInfo.setErrors(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].Errors"));
+			taskInfo.setTaskId(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].TaskId"));
+			taskInfo.setRequest(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].Request"));
+			taskInfo.setClusterId(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].ClusterId"));
 
 			tasks.add(taskInfo);
 		}

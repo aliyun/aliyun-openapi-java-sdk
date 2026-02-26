@@ -107,6 +107,10 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 
 		private String id;
 
+		private Long fileCategoryCode;
+
+		private String fileCategoryName;
+
 		private List<Rule> ruleList;
 
 		public Long getInstanceId() {
@@ -227,6 +231,22 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public Long getFileCategoryCode() {
+			return this.fileCategoryCode;
+		}
+
+		public void setFileCategoryCode(Long fileCategoryCode) {
+			this.fileCategoryCode = fileCategoryCode;
+		}
+
+		public String getFileCategoryName() {
+			return this.fileCategoryName;
+		}
+
+		public void setFileCategoryName(String fileCategoryName) {
+			this.fileCategoryName = fileCategoryName;
 		}
 
 		public List<Rule> getRuleList() {

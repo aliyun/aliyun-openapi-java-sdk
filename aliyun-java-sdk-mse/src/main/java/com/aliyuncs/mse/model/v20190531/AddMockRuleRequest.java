@@ -27,13 +27,17 @@ public class AddMockRuleRequest extends RpcAcsRequest<AddMockRuleResponse> {
 
 	private String extraJson;
 
-	private String providerAppId;
-
 	private String source;
 
 	private Boolean enable;
 
 	private String scMockItems;
+
+	private String name;
+
+	private String region;
+
+	private String providerAppId;
 
 	private String providerAppName;
 
@@ -41,13 +45,9 @@ public class AddMockRuleRequest extends RpcAcsRequest<AddMockRuleResponse> {
 
 	private String dubboMockItems;
 
-	private String name;
-
 	private String acceptLanguage;
 
 	private Long mockType;
-
-	private String region;
 	public AddMockRuleRequest() {
 		super("mse", "2019-05-31", "AddMockRule", "mse");
 		setMethod(MethodType.POST);
@@ -65,17 +65,6 @@ public class AddMockRuleRequest extends RpcAcsRequest<AddMockRuleResponse> {
 		this.extraJson = extraJson;
 		if(extraJson != null){
 			putQueryParameter("ExtraJson", extraJson);
-		}
-	}
-
-	public String getProviderAppId() {
-		return this.providerAppId;
-	}
-
-	public void setProviderAppId(String providerAppId) {
-		this.providerAppId = providerAppId;
-		if(providerAppId != null){
-			putQueryParameter("ProviderAppId", providerAppId);
 		}
 	}
 
@@ -112,6 +101,39 @@ public class AddMockRuleRequest extends RpcAcsRequest<AddMockRuleResponse> {
 		}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
+	public String getProviderAppId() {
+		return this.providerAppId;
+	}
+
+	public void setProviderAppId(String providerAppId) {
+		this.providerAppId = providerAppId;
+		if(providerAppId != null){
+			putQueryParameter("ProviderAppId", providerAppId);
+		}
+	}
+
 	public String getProviderAppName() {
 		return this.providerAppName;
 	}
@@ -145,17 +167,6 @@ public class AddMockRuleRequest extends RpcAcsRequest<AddMockRuleResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -175,17 +186,6 @@ public class AddMockRuleRequest extends RpcAcsRequest<AddMockRuleResponse> {
 		this.mockType = mockType;
 		if(mockType != null){
 			putQueryParameter("MockType", mockType.toString());
-		}
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
 		}
 	}
 

@@ -16,6 +16,7 @@ package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dds.Endpoint;
 
 /**
  * @author auto create
@@ -34,8 +35,6 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 
 	private String database;
 
-	private String securityToken;
-
 	private Integer pageSize;
 
 	private String dBInstanceId;
@@ -50,6 +49,8 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 
 	private Long ownerId;
 
+	private String logicalOperator;
+
 	private String form;
 
 	private String user;
@@ -58,6 +59,10 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 	public DescribeAuditRecordsRequest() {
 		super("Dds", "2015-12-01", "DescribeAuditRecords", "dds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -112,17 +117,6 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 		this.database = database;
 		if(database != null){
 			putQueryParameter("Database", database);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -200,6 +194,17 @@ public class DescribeAuditRecordsRequest extends RpcAcsRequest<DescribeAuditReco
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLogicalOperator() {
+		return this.logicalOperator;
+	}
+
+	public void setLogicalOperator(String logicalOperator) {
+		this.logicalOperator = logicalOperator;
+		if(logicalOperator != null){
+			putQueryParameter("LogicalOperator", logicalOperator);
 		}
 	}
 

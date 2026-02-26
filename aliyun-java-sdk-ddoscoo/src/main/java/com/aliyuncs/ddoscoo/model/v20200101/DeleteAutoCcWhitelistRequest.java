@@ -29,7 +29,7 @@ public class DeleteAutoCcWhitelistRequest extends RpcAcsRequest<DeleteAutoCcWhit
 
 	private String instanceId;
 	public DeleteAutoCcWhitelistRequest() {
-		super("ddoscoo", "2020-01-01", "DeleteAutoCcWhitelist");
+		super("ddoscoo", "2020-01-01", "DeleteAutoCcWhitelist", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

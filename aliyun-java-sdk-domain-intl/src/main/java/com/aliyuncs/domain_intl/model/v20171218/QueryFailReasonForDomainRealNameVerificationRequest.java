@@ -15,24 +15,37 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryFailReasonForDomainRealNameVerificationRequest extends RpcAcsRequest<QueryFailReasonForDomainRealNameVerificationResponse> {
-	
-	public QueryFailReasonForDomainRealNameVerificationRequest() {
-		super("Domain-intl", "2017-12-18", "QueryFailReasonForDomainRealNameVerification", "domain");
-	}
+	   
+
+	private String domainName;
 
 	private String realNameVerificationAction;
 
 	private String userClientIp;
 
-	private String domainName;
-
 	private String lang;
+	public QueryFailReasonForDomainRealNameVerificationRequest() {
+		super("Domain-intl", "2017-12-18", "QueryFailReasonForDomainRealNameVerification");
+		setMethod(MethodType.POST);
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
 
 	public String getRealNameVerificationAction() {
 		return this.realNameVerificationAction;
@@ -53,17 +66,6 @@ public class QueryFailReasonForDomainRealNameVerificationRequest extends RpcAcsR
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 

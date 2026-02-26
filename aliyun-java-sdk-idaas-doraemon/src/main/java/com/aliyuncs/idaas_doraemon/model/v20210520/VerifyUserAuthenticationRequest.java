@@ -50,7 +50,7 @@ public class VerifyUserAuthenticationRequest extends RpcAcsRequest<VerifyUserAut
 
 	private String applicationExternalId;
 	public VerifyUserAuthenticationRequest() {
-		super("idaas-doraemon", "2021-05-20", "VerifyUserAuthentication");
+		super("idaas-doraemon", "2021-05-20", "VerifyUserAuthentication", "idaasauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

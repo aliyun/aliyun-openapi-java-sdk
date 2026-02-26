@@ -25,6 +25,8 @@ import com.aliyuncs.ccc.Endpoint;
 public class ModifyAudioFileRequest extends RpcAcsRequest<ModifyAudioFileResponse> {
 	   
 
+	private String usage;
+
 	private String ossFileKey;
 
 	private String instanceId;
@@ -41,6 +43,17 @@ public class ModifyAudioFileRequest extends RpcAcsRequest<ModifyAudioFileRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getUsage() {
+		return this.usage;
+	}
+
+	public void setUsage(String usage) {
+		this.usage = usage;
+		if(usage != null){
+			putQueryParameter("Usage", usage);
+		}
 	}
 
 	public String getOssFileKey() {

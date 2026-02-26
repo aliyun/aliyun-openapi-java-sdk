@@ -36,6 +36,8 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 	private Long ownerId;
 
 	private String instanceId;
+
+	private String netType;
 	public DescribeDBInstanceNetInfoRequest() {
 		super("R-kvstore", "2015-01-01", "DescribeDBInstanceNetInfo", "redisa");
 		setMethod(MethodType.POST);
@@ -108,6 +110,17 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getNetType() {
+		return this.netType;
+	}
+
+	public void setNetType(String netType) {
+		this.netType = netType;
+		if(netType != null){
+			putQueryParameter("NetType", netType);
 		}
 	}
 

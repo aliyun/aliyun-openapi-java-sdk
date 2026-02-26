@@ -34,7 +34,13 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 
 	private Float desireValue;
 
+	private String effectiveTime;
+
 	private String quotaCategory;
+
+	private String expireTime;
+
+	private String envLanguage;
 
 	private Integer noticeType;
 
@@ -94,6 +100,17 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 		}
 	}
 
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putBodyParameter("EffectiveTime", effectiveTime);
+		}
+	}
+
 	public String getQuotaCategory() {
 		return this.quotaCategory;
 	}
@@ -102,6 +119,28 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 		this.quotaCategory = quotaCategory;
 		if(quotaCategory != null){
 			putBodyParameter("QuotaCategory", quotaCategory);
+		}
+	}
+
+	public String getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(String expireTime) {
+		this.expireTime = expireTime;
+		if(expireTime != null){
+			putBodyParameter("ExpireTime", expireTime);
+		}
+	}
+
+	public String getEnvLanguage() {
+		return this.envLanguage;
+	}
+
+	public void setEnvLanguage(String envLanguage) {
+		this.envLanguage = envLanguage;
+		if(envLanguage != null){
+			putBodyParameter("EnvLanguage", envLanguage);
 		}
 	}
 

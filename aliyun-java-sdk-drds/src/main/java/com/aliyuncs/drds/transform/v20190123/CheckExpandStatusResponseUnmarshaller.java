@@ -27,8 +27,8 @@ public class CheckExpandStatusResponseUnmarshaller {
 		checkExpandStatusResponse.setSuccess(_ctx.booleanValue("CheckExpandStatusResponse.Success"));
 
 		Data data = new Data();
-		data.setIsActive(_ctx.booleanValue("CheckExpandStatusResponse.Data.IsActive"));
 		data.setMsg(_ctx.stringValue("CheckExpandStatusResponse.Data.Msg"));
+		data.setIsActive(_ctx.booleanValue("CheckExpandStatusResponse.Data.IsActive"));
 		checkExpandStatusResponse.setData(data);
 	 
 	 	return checkExpandStatusResponse;

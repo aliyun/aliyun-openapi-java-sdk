@@ -33,6 +33,9 @@ public class DescribeFaceVerifyResponseUnmarshaller {
 		resultObject.setIdentityInfo(_ctx.stringValue("DescribeFaceVerifyResponse.ResultObject.IdentityInfo"));
 		resultObject.setDeviceToken(_ctx.stringValue("DescribeFaceVerifyResponse.ResultObject.DeviceToken"));
 		resultObject.setPassed(_ctx.stringValue("DescribeFaceVerifyResponse.ResultObject.Passed"));
+		resultObject.setDeviceRisk(_ctx.stringValue("DescribeFaceVerifyResponse.ResultObject.DeviceRisk"));
+		resultObject.setSuccess(_ctx.stringValue("DescribeFaceVerifyResponse.ResultObject.Success"));
+		resultObject.setUserInfo(_ctx.stringValue("DescribeFaceVerifyResponse.ResultObject.UserInfo"));
 		describeFaceVerifyResponse.setResultObject(resultObject);
 	 
 	 	return describeFaceVerifyResponse;

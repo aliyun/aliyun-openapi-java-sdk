@@ -25,7 +25,11 @@ import com.aliyuncs.das.Endpoint;
 public class GetRequestDiagnosisResultRequest extends RpcAcsRequest<GetRequestDiagnosisResultResponse> {
 	   
 
+	private String sqlId;
+
 	private String messageId;
+
+	private String source;
 
 	private String instanceId;
 
@@ -39,6 +43,17 @@ public class GetRequestDiagnosisResultRequest extends RpcAcsRequest<GetRequestDi
 		} catch (Exception e) {}
 	}
 
+	public String getSqlId() {
+		return this.sqlId;
+	}
+
+	public void setSqlId(String sqlId) {
+		this.sqlId = sqlId;
+		if(sqlId != null){
+			putQueryParameter("SqlId", sqlId);
+		}
+	}
+
 	public String getMessageId() {
 		return this.messageId;
 	}
@@ -47,6 +62,17 @@ public class GetRequestDiagnosisResultRequest extends RpcAcsRequest<GetRequestDi
 		this.messageId = messageId;
 		if(messageId != null){
 			putQueryParameter("MessageId", messageId);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

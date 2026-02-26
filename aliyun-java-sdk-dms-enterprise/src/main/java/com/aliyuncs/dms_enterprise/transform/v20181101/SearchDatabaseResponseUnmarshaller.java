@@ -48,6 +48,7 @@ public class SearchDatabaseResponseUnmarshaller {
 			searchDatabase.setDbType(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].DbType"));
 			searchDatabase.setSearchName(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].SearchName"));
 			searchDatabase.setAlias(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].Alias"));
+			searchDatabase.setCatalogName(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].CatalogName"));
 
 			List<String> ownerIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].OwnerIdList.Length"); j++) {

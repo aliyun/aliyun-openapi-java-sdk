@@ -35,6 +35,8 @@ public class DescribeVodStorageDataRequest extends RpcAcsRequest<DescribeVodStor
 
 	private Long ownerId;
 
+	private String appId;
+
 	private String region;
 	public DescribeVodStorageDataRequest() {
 		super("vod", "2017-03-21", "DescribeVodStorageData", "vod");
@@ -97,6 +99,17 @@ public class DescribeVodStorageDataRequest extends RpcAcsRequest<DescribeVodStor
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

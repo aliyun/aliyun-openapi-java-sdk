@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnBgpBpsDataResponse extends AcsResponse {
 
-	private String requestId;
+	private String endTime;
 
 	private String startTime;
 
-	private String endTime;
+	private String requestId;
 
 	private List<BgpData> bgpDataInterval;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getStartTime() {
@@ -49,12 +49,12 @@ public class DescribeDcdnBgpBpsDataResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<BgpData> getBgpDataInterval() {
@@ -67,19 +67,11 @@ public class DescribeDcdnBgpBpsDataResponse extends AcsResponse {
 
 	public static class BgpData {
 
-		private Float in;
-
 		private Float out;
 
+		private Float in;
+
 		private String timeStamp;
-
-		public Float getIn() {
-			return this.in;
-		}
-
-		public void setIn(Float in) {
-			this.in = in;
-		}
 
 		public Float getOut() {
 			return this.out;
@@ -87,6 +79,14 @@ public class DescribeDcdnBgpBpsDataResponse extends AcsResponse {
 
 		public void setOut(Float out) {
 			this.out = out;
+		}
+
+		public Float getIn() {
+			return this.in;
+		}
+
+		public void setIn(Float in) {
+			this.in = in;
 		}
 
 		public String getTimeStamp() {

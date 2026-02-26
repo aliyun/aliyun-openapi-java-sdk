@@ -28,7 +28,11 @@ public class GetPatentPlanDetailListRequest extends RpcAcsRequest<GetPatentPlanD
 
 	private String type;
 
+	private Integer pageNum;
+
 	private String patentStatus;
+
+	private String pageSize;
 
 	private String keyword;
 
@@ -50,7 +54,7 @@ public class GetPatentPlanDetailListRequest extends RpcAcsRequest<GetPatentPlanD
 
 	private Boolean patentDiscard;
 	public GetPatentPlanDetailListRequest() {
-		super("Copyright", "2019-01-23", "GetPatentPlanDetailList");
+		super("Copyright", "2019-01-23", "GetPatentPlanDetailList", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 
@@ -76,6 +80,17 @@ public class GetPatentPlanDetailListRequest extends RpcAcsRequest<GetPatentPlanD
 		}
 	}
 
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
 	public String getPatentStatus() {
 		return this.patentStatus;
 	}
@@ -84,6 +99,17 @@ public class GetPatentPlanDetailListRequest extends RpcAcsRequest<GetPatentPlanD
 		this.patentStatus = patentStatus;
 		if(patentStatus != null){
 			putQueryParameter("PatentStatus", patentStatus);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
 		}
 	}
 

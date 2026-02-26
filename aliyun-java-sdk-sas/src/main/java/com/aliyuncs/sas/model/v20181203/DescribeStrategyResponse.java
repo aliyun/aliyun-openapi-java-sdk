@@ -71,6 +71,10 @@ public class DescribeStrategyResponse extends AcsResponse {
 
 		private Integer id;
 
+		private String startTime;
+
+		private String endTime;
+
 		private List<ConfigTarget> configTargets;
 
 		public Integer getType() {
@@ -167,6 +171,22 @@ public class DescribeStrategyResponse extends AcsResponse {
 
 		public void setId(Integer id) {
 			this.id = id;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public List<ConfigTarget> getConfigTargets() {

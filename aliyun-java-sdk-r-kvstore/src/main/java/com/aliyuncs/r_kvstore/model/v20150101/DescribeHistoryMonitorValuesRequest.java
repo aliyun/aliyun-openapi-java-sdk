@@ -27,7 +27,11 @@ public class DescribeHistoryMonitorValuesRequest extends RpcAcsRequest<DescribeH
 
 	private Long resourceOwnerId;
 
+	private String nodeRole;
+
 	private String startTime;
+
+	private String type;
 
 	private String securityToken;
 
@@ -66,6 +70,17 @@ public class DescribeHistoryMonitorValuesRequest extends RpcAcsRequest<DescribeH
 		}
 	}
 
+	public String getNodeRole() {
+		return this.nodeRole;
+	}
+
+	public void setNodeRole(String nodeRole) {
+		this.nodeRole = nodeRole;
+		if(nodeRole != null){
+			putQueryParameter("NodeRole", nodeRole);
+		}
+	}
+
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -74,6 +89,17 @@ public class DescribeHistoryMonitorValuesRequest extends RpcAcsRequest<DescribeH
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

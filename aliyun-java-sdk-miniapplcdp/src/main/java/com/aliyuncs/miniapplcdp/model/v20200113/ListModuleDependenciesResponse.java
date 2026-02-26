@@ -79,6 +79,8 @@ public class ListModuleDependenciesResponse extends AcsResponse {
 
 			private String version;
 
+			private String origin;
+
 			public String getCommitId() {
 				return this.commitId;
 			}
@@ -157,6 +159,14 @@ public class ListModuleDependenciesResponse extends AcsResponse {
 
 			public void setVersion(String version) {
 				this.version = version;
+			}
+
+			public String getOrigin() {
+				return this.origin;
+			}
+
+			public void setOrigin(String origin) {
+				this.origin = origin;
 			}
 		}
 	}

@@ -28,26 +28,26 @@ import com.aliyuncs.imm.Endpoint;
 public class SimpleQueryRequest extends RpcAcsRequest<SimpleQueryResponse> {
 	   
 
-	private String projectName;
-
-	@SerializedName("withFields")
-	private List<String> withFields;
-
 	private String nextToken;
+
+	private String datasetName;
+
+	private String order;
+
+	private String projectName;
 
 	@SerializedName("query")
 	private Query query;
 
-	private Integer maxResults;
-
-	private String datasetName;
-
 	private String sort;
+
+	@SerializedName("withFields")
+	private List<String> withFields;
+
+	private Integer maxResults;
 
 	@SerializedName("aggregations")
 	private List<Aggregations> aggregations;
-
-	private String order;
 	public SimpleQueryRequest() {
 		super("imm", "2020-09-30", "SimpleQuery", "imm");
 		setMethod(MethodType.POST);
@@ -55,28 +55,6 @@ public class SimpleQueryRequest extends RpcAcsRequest<SimpleQueryResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
-	public List<String> getWithFields() {
-		return this.withFields;
-	}
-
-	public void setWithFields(List<String> withFields) {
-		this.withFields = withFields;	
-		if (withFields != null) {
-			putQueryParameter("WithFields" , new Gson().toJson(withFields));
-		}	
 	}
 
 	public String getNextToken() {
@@ -87,28 +65,6 @@ public class SimpleQueryRequest extends RpcAcsRequest<SimpleQueryResponse> {
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public Query getQuery() {
-		return this.query;
-	}
-
-	public void setQuery(Query query) {
-		this.query = query;	
-		if (query != null) {
-			putQueryParameter("Query" , new Gson().toJson(query));
-		}	
-	}
-
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
@@ -123,6 +79,39 @@ public class SimpleQueryRequest extends RpcAcsRequest<SimpleQueryResponse> {
 		}
 	}
 
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
+		}
+	}
+
+	public Query getQuery() {
+		return this.query;
+	}
+
+	public void setQuery(Query query) {
+		this.query = query;	
+		if (query != null) {
+			putQueryParameter("Query" , new Gson().toJson(query));
+		}	
+	}
+
 	public String getSort() {
 		return this.sort;
 	}
@@ -131,6 +120,28 @@ public class SimpleQueryRequest extends RpcAcsRequest<SimpleQueryResponse> {
 		this.sort = sort;
 		if(sort != null){
 			putQueryParameter("Sort", sort);
+		}
+	}
+
+	public List<String> getWithFields() {
+		return this.withFields;
+	}
+
+	public void setWithFields(List<String> withFields) {
+		this.withFields = withFields;	
+		if (withFields != null) {
+			putQueryParameter("WithFields" , new Gson().toJson(withFields));
+		}	
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
@@ -143,17 +154,6 @@ public class SimpleQueryRequest extends RpcAcsRequest<SimpleQueryResponse> {
 		if (aggregations != null) {
 			putQueryParameter("Aggregations" , new Gson().toJson(aggregations));
 		}	
-	}
-
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		if(order != null){
-			putQueryParameter("Order", order);
-		}
 	}
 
 	public static class Query {

@@ -24,7 +24,11 @@ import com.aliyuncs.http.MethodType;
 public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstanceAttributeResponse> {
 	   
 
+	private String userData;
+
 	private String password;
+
+	private String hostName;
 
 	private String instanceId;
 
@@ -32,6 +36,17 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 	public ModifyInstanceAttributeRequest() {
 		super("Ens", "2017-11-10", "ModifyInstanceAttribute", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
 	}
 
 	public String getPassword() {
@@ -42,6 +57,17 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		this.password = password;
 		if(password != null){
 			putQueryParameter("Password", password);
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
 		}
 	}
 

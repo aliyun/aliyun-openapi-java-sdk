@@ -39,7 +39,13 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	private String regionId;
 
+	private String nextToken;
+
 	private List<Permission> permissions;
+
+	private List<String> snapshotPolicyIds;
+
+	private ReferencedInfo referencedInfo;
 
 	public String getVpcId() {
 		return this.vpcId;
@@ -97,6 +103,14 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 		this.regionId = regionId;
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
 	public List<Permission> getPermissions() {
 		return this.permissions;
 	}
@@ -105,7 +119,25 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 		this.permissions = permissions;
 	}
 
+	public List<String> getSnapshotPolicyIds() {
+		return this.snapshotPolicyIds;
+	}
+
+	public void setSnapshotPolicyIds(List<String> snapshotPolicyIds) {
+		this.snapshotPolicyIds = snapshotPolicyIds;
+	}
+
+	public ReferencedInfo getReferencedInfo() {
+		return this.referencedInfo;
+	}
+
+	public void setReferencedInfo(ReferencedInfo referencedInfo) {
+		this.referencedInfo = referencedInfo;
+	}
+
 	public static class Permission {
+
+		private String securityGroupRuleId;
 
 		private String direction;
 
@@ -152,6 +184,18 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 		private String sourceGroupName;
 
 		private String sourcePortRange;
+
+		private String portRangeListId;
+
+		private String portRangeListName;
+
+		public String getSecurityGroupRuleId() {
+			return this.securityGroupRuleId;
+		}
+
+		public void setSecurityGroupRuleId(String securityGroupRuleId) {
+			this.securityGroupRuleId = securityGroupRuleId;
+		}
 
 		public String getDirection() {
 			return this.direction;
@@ -335,6 +379,58 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		public void setSourcePortRange(String sourcePortRange) {
 			this.sourcePortRange = sourcePortRange;
+		}
+
+		public String getPortRangeListId() {
+			return this.portRangeListId;
+		}
+
+		public void setPortRangeListId(String portRangeListId) {
+			this.portRangeListId = portRangeListId;
+		}
+
+		public String getPortRangeListName() {
+			return this.portRangeListName;
+		}
+
+		public void setPortRangeListName(String portRangeListName) {
+			this.portRangeListName = portRangeListName;
+		}
+	}
+
+	public static class ReferencedInfo {
+
+		private List<ReferencedPrefixListInfo> referencedPrefixListInfos;
+
+		public List<ReferencedPrefixListInfo> getReferencedPrefixListInfos() {
+			return this.referencedPrefixListInfos;
+		}
+
+		public void setReferencedPrefixListInfos(List<ReferencedPrefixListInfo> referencedPrefixListInfos) {
+			this.referencedPrefixListInfos = referencedPrefixListInfos;
+		}
+
+		public static class ReferencedPrefixListInfo {
+
+			private String prefixListId;
+
+			private String productProvider;
+
+			public String getPrefixListId() {
+				return this.prefixListId;
+			}
+
+			public void setPrefixListId(String prefixListId) {
+				this.prefixListId = prefixListId;
+			}
+
+			public String getProductProvider() {
+				return this.productProvider;
+			}
+
+			public void setProductProvider(String productProvider) {
+				this.productProvider = productProvider;
+			}
 		}
 	}
 

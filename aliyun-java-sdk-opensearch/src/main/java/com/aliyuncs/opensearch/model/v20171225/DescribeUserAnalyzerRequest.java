@@ -29,7 +29,7 @@ public class DescribeUserAnalyzerRequest extends RoaAcsRequest<DescribeUserAnaly
 
 	private String name;
 	public DescribeUserAnalyzerRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeUserAnalyzer", "opensearch");
+		super("OpenSearch", "2017-12-25", "DescribeUserAnalyzer");
 		setUriPattern("/v4/openapi/user-analyzers/[name]");
 		setMethod(MethodType.GET);
 		try {

@@ -59,6 +59,8 @@ public class ListInsightsEventsResponse extends AcsResponse {
 
 		private Long date;
 
+		private String problemId;
+
 		public String getTitle() {
 			return this.title;
 		}
@@ -105,6 +107,14 @@ public class ListInsightsEventsResponse extends AcsResponse {
 
 		public void setDate(Long date) {
 			this.date = date;
+		}
+
+		public String getProblemId() {
+			return this.problemId;
+		}
+
+		public void setProblemId(String problemId) {
+			this.problemId = problemId;
 		}
 	}
 

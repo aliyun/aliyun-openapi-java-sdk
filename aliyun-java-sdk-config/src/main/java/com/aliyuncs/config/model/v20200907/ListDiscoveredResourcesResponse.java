@@ -47,21 +47,13 @@ public class ListDiscoveredResourcesResponse extends AcsResponse {
 
 	public static class DiscoveredResourceProfiles {
 
-		private String nextToken;
-
 		private Integer maxResults;
+
+		private String nextToken;
 
 		private Integer totalCount;
 
 		private List<DiscoveredResourceProfile> discoveredResourceProfileList;
-
-		public String getNextToken() {
-			return this.nextToken;
-		}
-
-		public void setNextToken(String nextToken) {
-			this.nextToken = nextToken;
-		}
 
 		public Integer getMaxResults() {
 			return this.maxResults;
@@ -69,6 +61,14 @@ public class ListDiscoveredResourcesResponse extends AcsResponse {
 
 		public void setMaxResults(Integer maxResults) {
 			this.maxResults = maxResults;
+		}
+
+		public String getNextToken() {
+			return this.nextToken;
+		}
+
+		public void setNextToken(String nextToken) {
+			this.nextToken = nextToken;
 		}
 
 		public Integer getTotalCount() {
@@ -89,30 +89,48 @@ public class ListDiscoveredResourcesResponse extends AcsResponse {
 
 		public static class DiscoveredResourceProfile {
 
-			private String resourceType;
+			private Long accountId;
+
+			private String availabilityZone;
 
 			private String region;
 
 			private Long resourceCreationTime;
 
-			private String tags;
-
-			private Long accountId;
+			private Integer resourceDeleted;
 
 			private String resourceId;
 
 			private String resourceName;
 
-			private Integer resourceDeleted;
-
 			private String resourceStatus;
 
-			public String getResourceType() {
-				return this.resourceType;
+			private String resourceType;
+
+			private String tags;
+
+			private Long updateTime;
+
+			private Long version;
+
+			private String vpcId;
+
+			private String vSwitchId;
+
+			public Long getAccountId() {
+				return this.accountId;
 			}
 
-			public void setResourceType(String resourceType) {
-				this.resourceType = resourceType;
+			public void setAccountId(Long accountId) {
+				this.accountId = accountId;
+			}
+
+			public String getAvailabilityZone() {
+				return this.availabilityZone;
+			}
+
+			public void setAvailabilityZone(String availabilityZone) {
+				this.availabilityZone = availabilityZone;
 			}
 
 			public String getRegion() {
@@ -131,20 +149,12 @@ public class ListDiscoveredResourcesResponse extends AcsResponse {
 				this.resourceCreationTime = resourceCreationTime;
 			}
 
-			public String getTags() {
-				return this.tags;
+			public Integer getResourceDeleted() {
+				return this.resourceDeleted;
 			}
 
-			public void setTags(String tags) {
-				this.tags = tags;
-			}
-
-			public Long getAccountId() {
-				return this.accountId;
-			}
-
-			public void setAccountId(Long accountId) {
-				this.accountId = accountId;
+			public void setResourceDeleted(Integer resourceDeleted) {
+				this.resourceDeleted = resourceDeleted;
 			}
 
 			public String getResourceId() {
@@ -163,20 +173,60 @@ public class ListDiscoveredResourcesResponse extends AcsResponse {
 				this.resourceName = resourceName;
 			}
 
-			public Integer getResourceDeleted() {
-				return this.resourceDeleted;
-			}
-
-			public void setResourceDeleted(Integer resourceDeleted) {
-				this.resourceDeleted = resourceDeleted;
-			}
-
 			public String getResourceStatus() {
 				return this.resourceStatus;
 			}
 
 			public void setResourceStatus(String resourceStatus) {
 				this.resourceStatus = resourceStatus;
+			}
+
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
+			}
+
+			public String getTags() {
+				return this.tags;
+			}
+
+			public void setTags(String tags) {
+				this.tags = tags;
+			}
+
+			public Long getUpdateTime() {
+				return this.updateTime;
+			}
+
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
+			}
+
+			public Long getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(Long version) {
+				this.version = version;
+			}
+
+			public String getVpcId() {
+				return this.vpcId;
+			}
+
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
 			}
 		}
 	}

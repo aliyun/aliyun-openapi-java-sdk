@@ -89,7 +89,7 @@ public class GetAlertRulesResponse extends AcsResponse {
 
 		public static class AlertRulesItem {
 
-			private Float alertId;
+			private Long alertId;
 
 			private String alertName;
 
@@ -127,9 +127,13 @@ public class GetAlertRulesResponse extends AcsResponse {
 
 			private String message;
 
+			private String durationCompareType;
+
 			private List<LabelsItem> labels;
 
 			private List<AnnotationsItem> annotations;
+
+			private List<TagsItem> tags;
 
 			private List<String> pids;
 
@@ -137,11 +141,11 @@ public class GetAlertRulesResponse extends AcsResponse {
 
 			private Filters filters;
 
-			public Float getAlertId() {
+			public Long getAlertId() {
 				return this.alertId;
 			}
 
-			public void setAlertId(Float alertId) {
+			public void setAlertId(Long alertId) {
 				this.alertId = alertId;
 			}
 
@@ -289,6 +293,14 @@ public class GetAlertRulesResponse extends AcsResponse {
 				this.message = message;
 			}
 
+			public String getDurationCompareType() {
+				return this.durationCompareType;
+			}
+
+			public void setDurationCompareType(String durationCompareType) {
+				this.durationCompareType = durationCompareType;
+			}
+
 			public List<LabelsItem> getLabels() {
 				return this.labels;
 			}
@@ -303,6 +315,14 @@ public class GetAlertRulesResponse extends AcsResponse {
 
 			public void setAnnotations(List<AnnotationsItem> annotations) {
 				this.annotations = annotations;
+			}
+
+			public List<TagsItem> getTags() {
+				return this.tags;
+			}
+
+			public void setTags(List<TagsItem> tags) {
+				this.tags = tags;
 			}
 
 			public List<String> getPids() {
@@ -375,6 +395,29 @@ public class GetAlertRulesResponse extends AcsResponse {
 				}
 			}
 
+			public static class TagsItem {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
 			public static class AlertRuleContent {
 
 				private String condition;
@@ -399,7 +442,7 @@ public class GetAlertRulesResponse extends AcsResponse {
 
 				public static class AlertRuleItemsItem {
 
-					private Float n;
+					private Long n;
 
 					private String metricKey;
 
@@ -409,11 +452,11 @@ public class GetAlertRulesResponse extends AcsResponse {
 
 					private String value;
 
-					public Float getN() {
+					public Long getN() {
 						return this.n;
 					}
 
-					public void setN(Float n) {
+					public void setN(Long n) {
 						this.n = n;
 					}
 

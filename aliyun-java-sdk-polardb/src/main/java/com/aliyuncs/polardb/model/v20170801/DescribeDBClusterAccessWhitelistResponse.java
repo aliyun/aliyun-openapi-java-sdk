@@ -27,9 +27,9 @@ public class DescribeDBClusterAccessWhitelistResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DBClusterIPArray> items;
-
 	private List<DBClusterSecurityGroup> dBClusterSecurityGroups;
+
+	private List<DBClusterIPArray> items;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,6 +37,14 @@ public class DescribeDBClusterAccessWhitelistResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<DBClusterSecurityGroup> getDBClusterSecurityGroups() {
+		return this.dBClusterSecurityGroups;
+	}
+
+	public void setDBClusterSecurityGroups(List<DBClusterSecurityGroup> dBClusterSecurityGroups) {
+		this.dBClusterSecurityGroups = dBClusterSecurityGroups;
 	}
 
 	public List<DBClusterIPArray> getItems() {
@@ -47,12 +55,27 @@ public class DescribeDBClusterAccessWhitelistResponse extends AcsResponse {
 		this.items = items;
 	}
 
-	public List<DBClusterSecurityGroup> getDBClusterSecurityGroups() {
-		return this.dBClusterSecurityGroups;
-	}
+	public static class DBClusterSecurityGroup {
 
-	public void setDBClusterSecurityGroups(List<DBClusterSecurityGroup> dBClusterSecurityGroups) {
-		this.dBClusterSecurityGroups = dBClusterSecurityGroups;
+		private String securityGroupId;
+
+		private String securityGroupName;
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getSecurityGroupName() {
+			return this.securityGroupName;
+		}
+
+		public void setSecurityGroupName(String securityGroupName) {
+			this.securityGroupName = securityGroupName;
+		}
 	}
 
 	public static class DBClusterIPArray {
@@ -85,29 +108,6 @@ public class DescribeDBClusterAccessWhitelistResponse extends AcsResponse {
 
 		public void setSecurityIps(String securityIps) {
 			this.securityIps = securityIps;
-		}
-	}
-
-	public static class DBClusterSecurityGroup {
-
-		private String securityGroupId;
-
-		private String securityGroupName;
-
-		public String getSecurityGroupId() {
-			return this.securityGroupId;
-		}
-
-		public void setSecurityGroupId(String securityGroupId) {
-			this.securityGroupId = securityGroupId;
-		}
-
-		public String getSecurityGroupName() {
-			return this.securityGroupName;
-		}
-
-		public void setSecurityGroupName(String securityGroupName) {
-			this.securityGroupName = securityGroupName;
 		}
 	}
 

@@ -28,6 +28,8 @@ public class SetLoadBalancerHTTPListenerAttributeRequest extends RpcAcsRequest<S
 
 	private String healthCheckURI;
 
+	private String xForwardedFor;
+
 	private String healthCheck;
 
 	private String healthCheckMethod;
@@ -79,6 +81,17 @@ public class SetLoadBalancerHTTPListenerAttributeRequest extends RpcAcsRequest<S
 		this.healthCheckURI = healthCheckURI;
 		if(healthCheckURI != null){
 			putQueryParameter("HealthCheckURI", healthCheckURI);
+		}
+	}
+
+	public String getXForwardedFor() {
+		return this.xForwardedFor;
+	}
+
+	public void setXForwardedFor(String xForwardedFor) {
+		this.xForwardedFor = xForwardedFor;
+		if(xForwardedFor != null){
+			putQueryParameter("XForwardedFor", xForwardedFor);
 		}
 	}
 

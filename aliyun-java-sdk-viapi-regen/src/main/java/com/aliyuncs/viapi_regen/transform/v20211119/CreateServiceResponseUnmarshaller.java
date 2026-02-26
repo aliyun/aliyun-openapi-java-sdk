@@ -33,6 +33,8 @@ public class CreateServiceResponseUnmarshaller {
 		data.setServiceName(_ctx.stringValue("CreateServiceResponse.Data.ServiceName"));
 		data.setServiceDescription(_ctx.stringValue("CreateServiceResponse.Data.ServiceDescription"));
 		data.setStatus(_ctx.stringValue("CreateServiceResponse.Data.Status"));
+		data.setAuthorizationType(_ctx.stringValue("CreateServiceResponse.Data.AuthorizationType"));
+		data.setAuthorizedAccount(_ctx.stringValue("CreateServiceResponse.Data.AuthorizedAccount"));
 		createServiceResponse.setData(data);
 	 
 	 	return createServiceResponse;

@@ -132,6 +132,10 @@ public class GetQualityRuleResponse extends AcsResponse {
 
 		private Long id;
 
+		private Boolean openSwitch;
+
+		private String taskSetting;
+
 		public Integer getBlockType() {
 			return this.blockType;
 		}
@@ -314,6 +318,22 @@ public class GetQualityRuleResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public Boolean getOpenSwitch() {
+			return this.openSwitch;
+		}
+
+		public void setOpenSwitch(Boolean openSwitch) {
+			this.openSwitch = openSwitch;
+		}
+
+		public String getTaskSetting() {
+			return this.taskSetting;
+		}
+
+		public void setTaskSetting(String taskSetting) {
+			this.taskSetting = taskSetting;
 		}
 	}
 

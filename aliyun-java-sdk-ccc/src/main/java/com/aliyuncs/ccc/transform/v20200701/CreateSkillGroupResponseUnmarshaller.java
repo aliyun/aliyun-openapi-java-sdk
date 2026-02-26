@@ -33,6 +33,7 @@ public class CreateSkillGroupResponseUnmarshaller {
 		data.setDescription(_ctx.stringValue("CreateSkillGroupResponse.Data.Description"));
 		data.setName(_ctx.stringValue("CreateSkillGroupResponse.Data.Name"));
 		data.setSkillGroupId(_ctx.stringValue("CreateSkillGroupResponse.Data.SkillGroupId"));
+		data.setMediaType(_ctx.stringValue("CreateSkillGroupResponse.Data.MediaType"));
 		createSkillGroupResponse.setData(data);
 	 
 	 	return createSkillGroupResponse;

@@ -25,6 +25,8 @@ import com.aliyuncs.arms.Endpoint;
 public class SetRetcodeShareStatusRequest extends RpcAcsRequest<SetRetcodeShareStatusResponse> {
 	   
 
+	private String appName;
+
 	private String pid;
 
 	private Boolean status;
@@ -35,6 +37,17 @@ public class SetRetcodeShareStatusRequest extends RpcAcsRequest<SetRetcodeShareS
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getPid() {

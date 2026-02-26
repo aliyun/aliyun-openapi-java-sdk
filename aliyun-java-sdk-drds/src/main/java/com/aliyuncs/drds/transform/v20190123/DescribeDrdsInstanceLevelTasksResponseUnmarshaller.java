@@ -32,17 +32,17 @@ public class DescribeDrdsInstanceLevelTasksResponseUnmarshaller {
 		List<Task> tasks = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsInstanceLevelTasksResponse.Tasks.Length"); i++) {
 			Task task = new Task();
-			task.setTaskName(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskName"));
-			task.setGmtCreate(_ctx.longValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].GmtCreate"));
 			task.setTaskType(_ctx.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskType"));
-			task.setTargetId(_ctx.longValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TargetId"));
-			task.setTaskStatus(_ctx.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskStatus"));
-			task.setProgress(_ctx.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].Progress"));
-			task.setProgressDescription(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].ProgressDescription"));
 			task.setTaskPhase(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskPhase"));
-			task.setErrMsg(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].ErrMsg"));
-			task.setShowProgress(_ctx.booleanValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].ShowProgress"));
+			task.setProgress(_ctx.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].Progress"));
 			task.setAllowCancel(_ctx.booleanValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].AllowCancel"));
+			task.setTaskStatus(_ctx.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskStatus"));
+			task.setShowProgress(_ctx.booleanValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].ShowProgress"));
+			task.setTaskName(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskName"));
+			task.setProgressDescription(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].ProgressDescription"));
+			task.setGmtCreate(_ctx.longValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].GmtCreate"));
+			task.setTargetId(_ctx.longValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TargetId"));
+			task.setErrMsg(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].ErrMsg"));
 
 			tasks.add(task);
 		}

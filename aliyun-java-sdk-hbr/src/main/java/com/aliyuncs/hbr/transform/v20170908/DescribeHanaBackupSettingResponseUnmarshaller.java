@@ -24,19 +24,19 @@ public class DescribeHanaBackupSettingResponseUnmarshaller {
 	public static DescribeHanaBackupSettingResponse unmarshall(DescribeHanaBackupSettingResponse describeHanaBackupSettingResponse, UnmarshallerContext _ctx) {
 		
 		describeHanaBackupSettingResponse.setRequestId(_ctx.stringValue("DescribeHanaBackupSettingResponse.RequestId"));
-		describeHanaBackupSettingResponse.setSuccess(_ctx.booleanValue("DescribeHanaBackupSettingResponse.Success"));
 		describeHanaBackupSettingResponse.setCode(_ctx.stringValue("DescribeHanaBackupSettingResponse.Code"));
 		describeHanaBackupSettingResponse.setMessage(_ctx.stringValue("DescribeHanaBackupSettingResponse.Message"));
+		describeHanaBackupSettingResponse.setSuccess(_ctx.booleanValue("DescribeHanaBackupSettingResponse.Success"));
 
 		HanaBackupSetting hanaBackupSetting = new HanaBackupSetting();
 		hanaBackupSetting.setDatabaseName(_ctx.stringValue("DescribeHanaBackupSettingResponse.HanaBackupSetting.DatabaseName"));
-		hanaBackupSetting.setEnableAutoLogBackup(_ctx.booleanValue("DescribeHanaBackupSettingResponse.HanaBackupSetting.EnableAutoLogBackup"));
-		hanaBackupSetting.setDataBackupParameterFile(_ctx.stringValue("DescribeHanaBackupSettingResponse.HanaBackupSetting.DataBackupParameterFile"));
-		hanaBackupSetting.setLogBackupParameterFile(_ctx.stringValue("DescribeHanaBackupSettingResponse.HanaBackupSetting.LogBackupParameterFile"));
 		hanaBackupSetting.setLogBackupUsingBackint(_ctx.booleanValue("DescribeHanaBackupSettingResponse.HanaBackupSetting.LogBackupUsingBackint"));
-		hanaBackupSetting.setLogBackupTimeout(_ctx.longValue("DescribeHanaBackupSettingResponse.HanaBackupSetting.LogBackupTimeout"));
-		hanaBackupSetting.setCatalogBackupUsingBackint(_ctx.booleanValue("DescribeHanaBackupSettingResponse.HanaBackupSetting.CatalogBackupUsingBackint"));
 		hanaBackupSetting.setCatalogBackupParameterFile(_ctx.stringValue("DescribeHanaBackupSettingResponse.HanaBackupSetting.CatalogBackupParameterFile"));
+		hanaBackupSetting.setCatalogBackupUsingBackint(_ctx.booleanValue("DescribeHanaBackupSettingResponse.HanaBackupSetting.CatalogBackupUsingBackint"));
+		hanaBackupSetting.setDataBackupParameterFile(_ctx.stringValue("DescribeHanaBackupSettingResponse.HanaBackupSetting.DataBackupParameterFile"));
+		hanaBackupSetting.setLogBackupTimeout(_ctx.longValue("DescribeHanaBackupSettingResponse.HanaBackupSetting.LogBackupTimeout"));
+		hanaBackupSetting.setEnableAutoLogBackup(_ctx.booleanValue("DescribeHanaBackupSettingResponse.HanaBackupSetting.EnableAutoLogBackup"));
+		hanaBackupSetting.setLogBackupParameterFile(_ctx.stringValue("DescribeHanaBackupSettingResponse.HanaBackupSetting.LogBackupParameterFile"));
 		describeHanaBackupSettingResponse.setHanaBackupSetting(hanaBackupSetting);
 	 
 	 	return describeHanaBackupSettingResponse;

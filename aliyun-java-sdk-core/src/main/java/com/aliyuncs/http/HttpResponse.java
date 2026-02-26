@@ -1,8 +1,5 @@
 package com.aliyuncs.http;
 
-import lombok.ToString;
-
-@ToString(callSuper = true)
 public class HttpResponse extends HttpMessage {
 
     private int status;

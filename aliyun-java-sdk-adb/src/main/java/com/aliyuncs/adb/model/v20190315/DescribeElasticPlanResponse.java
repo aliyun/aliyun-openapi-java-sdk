@@ -51,6 +51,8 @@ public class DescribeElasticPlanResponse extends AcsResponse {
 
 		private String weeklyRepeat;
 
+		private String monthlyRepeat;
+
 		private String startTime;
 
 		private String resourcePoolName;
@@ -64,6 +66,10 @@ public class DescribeElasticPlanResponse extends AcsResponse {
 		private String endDay;
 
 		private String planName;
+
+		private String elasticPlanType;
+
+		private String elasticPlanWorkerSpec;
 
 		public String getEndTime() {
 			return this.endTime;
@@ -79,6 +85,14 @@ public class DescribeElasticPlanResponse extends AcsResponse {
 
 		public void setWeeklyRepeat(String weeklyRepeat) {
 			this.weeklyRepeat = weeklyRepeat;
+		}
+
+		public String getMonthlyRepeat() {
+			return this.monthlyRepeat;
+		}
+
+		public void setMonthlyRepeat(String monthlyRepeat) {
+			this.monthlyRepeat = monthlyRepeat;
 		}
 
 		public String getStartTime() {
@@ -135,6 +149,22 @@ public class DescribeElasticPlanResponse extends AcsResponse {
 
 		public void setPlanName(String planName) {
 			this.planName = planName;
+		}
+
+		public String getElasticPlanType() {
+			return this.elasticPlanType;
+		}
+
+		public void setElasticPlanType(String elasticPlanType) {
+			this.elasticPlanType = elasticPlanType;
+		}
+
+		public String getElasticPlanWorkerSpec() {
+			return this.elasticPlanWorkerSpec;
+		}
+
+		public void setElasticPlanWorkerSpec(String elasticPlanWorkerSpec) {
+			this.elasticPlanWorkerSpec = elasticPlanWorkerSpec;
 		}
 	}
 

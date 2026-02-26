@@ -37,7 +37,7 @@ public class DescribeGWSInstancesRequest extends RpcAcsRequest<DescribeGWSInstan
 
 	private String userName;
 	public DescribeGWSInstancesRequest() {
-		super("EHPC", "2018-04-12", "DescribeGWSInstances");
+		super("EHPC", "2018-04-12", "DescribeGWSInstances", "ehs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

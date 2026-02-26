@@ -15,6 +15,7 @@
 package com.aliyuncs.pvtz.model.v20180101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.pvtz.Endpoint;
 
@@ -33,11 +34,17 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 
 	private Integer pageSize;
 
+	private List<ResourceTag> resourceTags;
+
 	private String lang;
 
 	private String keyword;
 
+	private List<String> zoneTags;
+
 	private String searchMode;
+
+	private String zoneType;
 
 	private String queryRegionId;
 	public DescribeZonesRequest() {
@@ -93,6 +100,20 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		}
 	}
 
+	public List<ResourceTag> getResourceTags() {
+		return this.resourceTags;
+	}
+
+	public void setResourceTags(List<ResourceTag> resourceTags) {
+		this.resourceTags = resourceTags;	
+		if (resourceTags != null) {
+			for (int depth1 = 0; depth1 < resourceTags.size(); depth1++) {
+				putQueryParameter("ResourceTag." + (depth1 + 1) + ".Value" , resourceTags.get(depth1).getValue());
+				putQueryParameter("ResourceTag." + (depth1 + 1) + ".Key" , resourceTags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -115,6 +136,19 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		}
 	}
 
+	public List<String> getZoneTags() {
+		return this.zoneTags;
+	}
+
+	public void setZoneTags(List<String> zoneTags) {
+		this.zoneTags = zoneTags;	
+		if (zoneTags != null) {
+			for (int i = 0; i < zoneTags.size(); i++) {
+				putQueryParameter("ZoneTag." + (i + 1) , zoneTags.get(i));
+			}
+		}	
+	}
+
 	public String getSearchMode() {
 		return this.searchMode;
 	}
@@ -126,6 +160,17 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		}
 	}
 
+	public String getZoneType() {
+		return this.zoneType;
+	}
+
+	public void setZoneType(String zoneType) {
+		this.zoneType = zoneType;
+		if(zoneType != null){
+			putQueryParameter("ZoneType", zoneType);
+		}
+	}
+
 	public String getQueryRegionId() {
 		return this.queryRegionId;
 	}
@@ -134,6 +179,29 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		this.queryRegionId = queryRegionId;
 		if(queryRegionId != null){
 			putQueryParameter("QueryRegionId", queryRegionId);
+		}
+	}
+
+	public static class ResourceTag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

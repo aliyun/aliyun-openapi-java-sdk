@@ -104,8 +104,6 @@ public class ListCommitsResponse extends AcsResponse {
 
 			private String modelDataPath;
 
-			private Map<Object,Object> modelDigest;
-
 			private String modifiedTime;
 
 			private String moduleId;
@@ -121,6 +119,10 @@ public class ListCommitsResponse extends AcsResponse {
 			private String schemaVersion;
 
 			private String commitType;
+
+			private Map<Object,Object> modelDigest;
+
+			private String commitDigest;
 
 			public String getAppId() {
 				return this.appId;
@@ -176,14 +178,6 @@ public class ListCommitsResponse extends AcsResponse {
 
 			public void setModelDataPath(String modelDataPath) {
 				this.modelDataPath = modelDataPath;
-			}
-
-			public Map<Object,Object> getModelDigest() {
-				return this.modelDigest;
-			}
-
-			public void setModelDigest(Map<Object,Object> modelDigest) {
-				this.modelDigest = modelDigest;
 			}
 
 			public String getModifiedTime() {
@@ -248,6 +242,22 @@ public class ListCommitsResponse extends AcsResponse {
 
 			public void setCommitType(String commitType) {
 				this.commitType = commitType;
+			}
+
+			public Map<Object,Object> getModelDigest() {
+				return this.modelDigest;
+			}
+
+			public void setModelDigest(Map<Object,Object> modelDigest) {
+				this.modelDigest = modelDigest;
+			}
+
+			public String getCommitDigest() {
+				return this.commitDigest;
+			}
+
+			public void setCommitDigest(String commitDigest) {
+				this.commitDigest = commitDigest;
 			}
 		}
 	}

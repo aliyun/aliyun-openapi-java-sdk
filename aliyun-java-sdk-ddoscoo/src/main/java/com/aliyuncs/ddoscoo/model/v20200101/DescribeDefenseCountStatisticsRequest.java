@@ -27,7 +27,7 @@ public class DescribeDefenseCountStatisticsRequest extends RpcAcsRequest<Describ
 
 	private String resourceGroupId;
 	public DescribeDefenseCountStatisticsRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDefenseCountStatistics");
+		super("ddoscoo", "2020-01-01", "DescribeDefenseCountStatistics", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

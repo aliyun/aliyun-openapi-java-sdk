@@ -50,6 +50,7 @@ public class DescribeRouteTableListResponseUnmarshaller {
 			routerTableListType.setResourceGroupId(_ctx.stringValue("DescribeRouteTableListResponse.RouterTableList["+ i +"].ResourceGroupId"));
 			routerTableListType.setRouterType(_ctx.stringValue("DescribeRouteTableListResponse.RouterTableList["+ i +"].RouterType"));
 			routerTableListType.setRouteTableName(_ctx.stringValue("DescribeRouteTableListResponse.RouterTableList["+ i +"].RouteTableName"));
+			routerTableListType.setRoutePropagationEnable(_ctx.booleanValue("DescribeRouteTableListResponse.RouterTableList["+ i +"].RoutePropagationEnable"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRouteTableListResponse.RouterTableList["+ i +"].VSwitchIds.Length"); j++) {

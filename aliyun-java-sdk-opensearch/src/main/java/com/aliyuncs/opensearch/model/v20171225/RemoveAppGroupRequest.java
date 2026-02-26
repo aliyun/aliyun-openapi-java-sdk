@@ -27,7 +27,7 @@ public class RemoveAppGroupRequest extends RoaAcsRequest<RemoveAppGroupResponse>
 
 	private String appGroupIdentity;
 	public RemoveAppGroupRequest() {
-		super("OpenSearch", "2017-12-25", "RemoveAppGroup", "opensearch");
+		super("OpenSearch", "2017-12-25", "RemoveAppGroup");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]");
 		setMethod(MethodType.DELETE);
 		try {

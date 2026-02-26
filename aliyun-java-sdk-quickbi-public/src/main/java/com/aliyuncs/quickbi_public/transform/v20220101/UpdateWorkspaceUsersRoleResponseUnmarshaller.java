@@ -30,8 +30,8 @@ public class UpdateWorkspaceUsersRoleResponseUnmarshaller {
 		Result result = new Result();
 		result.setFailure(_ctx.integerValue("UpdateWorkspaceUsersRoleResponse.Result.Failure"));
 		result.setFailureDetail(_ctx.mapValue("UpdateWorkspaceUsersRoleResponse.Result.FailureDetail"));
-		result.setTotal(_ctx.integerValue("UpdateWorkspaceUsersRoleResponse.Result.Total"));
 		result.setSuccess(_ctx.integerValue("UpdateWorkspaceUsersRoleResponse.Result.Success"));
+		result.setTotal(_ctx.integerValue("UpdateWorkspaceUsersRoleResponse.Result.Total"));
 		updateWorkspaceUsersRoleResponse.setResult(result);
 	 
 	 	return updateWorkspaceUsersRoleResponse;

@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGWSClusterPolicyResponse extends AcsResponse {
 
-	private String requestId;
+	private String watermark;
 
 	private String clipboard;
 
-	private String usbRedirect;
+	private String requestId;
 
-	private String watermark;
+	private String usbRedirect;
 
 	private String localDrive;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getWatermark() {
+		return this.watermark;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setWatermark(String watermark) {
+		this.watermark = watermark;
 	}
 
 	public String getClipboard() {
@@ -50,20 +50,20 @@ public class DescribeGWSClusterPolicyResponse extends AcsResponse {
 		this.clipboard = clipboard;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getUsbRedirect() {
 		return this.usbRedirect;
 	}
 
 	public void setUsbRedirect(String usbRedirect) {
 		this.usbRedirect = usbRedirect;
-	}
-
-	public String getWatermark() {
-		return this.watermark;
-	}
-
-	public void setWatermark(String watermark) {
-		this.watermark = watermark;
 	}
 
 	public String getLocalDrive() {

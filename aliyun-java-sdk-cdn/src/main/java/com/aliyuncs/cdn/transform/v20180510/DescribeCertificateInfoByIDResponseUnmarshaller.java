@@ -31,13 +31,13 @@ public class DescribeCertificateInfoByIDResponseUnmarshaller {
 		List<CertInfo> certInfos = new ArrayList<CertInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCertificateInfoByIDResponse.CertInfos.Length"); i++) {
 			CertInfo certInfo = new CertInfo();
-			certInfo.setCertId(_ctx.stringValue("DescribeCertificateInfoByIDResponse.CertInfos["+ i +"].CertId"));
-			certInfo.setCertName(_ctx.stringValue("DescribeCertificateInfoByIDResponse.CertInfos["+ i +"].CertName"));
-			certInfo.setCreateTime(_ctx.stringValue("DescribeCertificateInfoByIDResponse.CertInfos["+ i +"].CreateTime"));
-			certInfo.setHttpsCrt(_ctx.stringValue("DescribeCertificateInfoByIDResponse.CertInfos["+ i +"].HttpsCrt"));
-			certInfo.setCertType(_ctx.stringValue("DescribeCertificateInfoByIDResponse.CertInfos["+ i +"].CertType"));
 			certInfo.setCertExpireTime(_ctx.stringValue("DescribeCertificateInfoByIDResponse.CertInfos["+ i +"].CertExpireTime"));
+			certInfo.setCreateTime(_ctx.stringValue("DescribeCertificateInfoByIDResponse.CertInfos["+ i +"].CreateTime"));
+			certInfo.setCertType(_ctx.stringValue("DescribeCertificateInfoByIDResponse.CertInfos["+ i +"].CertType"));
+			certInfo.setCertName(_ctx.stringValue("DescribeCertificateInfoByIDResponse.CertInfos["+ i +"].CertName"));
+			certInfo.setCertId(_ctx.stringValue("DescribeCertificateInfoByIDResponse.CertInfos["+ i +"].CertId"));
 			certInfo.setDomainList(_ctx.stringValue("DescribeCertificateInfoByIDResponse.CertInfos["+ i +"].DomainList"));
+			certInfo.setHttpsCrt(_ctx.stringValue("DescribeCertificateInfoByIDResponse.CertInfos["+ i +"].HttpsCrt"));
 
 			certInfos.add(certInfo);
 		}

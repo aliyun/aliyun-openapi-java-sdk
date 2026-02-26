@@ -31,7 +31,7 @@ public class ModifyWebCacheCustomRuleRequest extends RpcAcsRequest<ModifyWebCach
 
 	private String domain;
 	public ModifyWebCacheCustomRuleRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebCacheCustomRule");
+		super("ddoscoo", "2020-01-01", "ModifyWebCacheCustomRule", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

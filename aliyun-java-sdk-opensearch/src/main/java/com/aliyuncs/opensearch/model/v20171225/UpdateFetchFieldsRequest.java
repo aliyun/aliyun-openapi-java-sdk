@@ -31,7 +31,7 @@ public class UpdateFetchFieldsRequest extends RoaAcsRequest<UpdateFetchFieldsRes
 
 	private String appGroupIdentity;
 	public UpdateFetchFieldsRequest() {
-		super("OpenSearch", "2017-12-25", "UpdateFetchFields", "opensearch");
+		super("OpenSearch", "2017-12-25", "UpdateFetchFields");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/fetch-fields");
 		setMethod(MethodType.PUT);
 		try {

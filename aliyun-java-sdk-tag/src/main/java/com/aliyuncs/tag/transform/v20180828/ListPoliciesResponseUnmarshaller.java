@@ -32,10 +32,10 @@ public class ListPoliciesResponseUnmarshaller {
 		List<Policy> policyList = new ArrayList<Policy>();
 		for (int i = 0; i < _ctx.lengthValue("ListPoliciesResponse.PolicyList.Length"); i++) {
 			Policy policy = new Policy();
-			policy.setPolicyName(_ctx.stringValue("ListPoliciesResponse.PolicyList["+ i +"].PolicyName"));
-			policy.setPolicyDesc(_ctx.stringValue("ListPoliciesResponse.PolicyList["+ i +"].PolicyDesc"));
 			policy.setPolicyContent(_ctx.stringValue("ListPoliciesResponse.PolicyList["+ i +"].PolicyContent"));
+			policy.setPolicyDesc(_ctx.stringValue("ListPoliciesResponse.PolicyList["+ i +"].PolicyDesc"));
 			policy.setPolicyId(_ctx.stringValue("ListPoliciesResponse.PolicyList["+ i +"].PolicyId"));
+			policy.setPolicyName(_ctx.stringValue("ListPoliciesResponse.PolicyList["+ i +"].PolicyName"));
 			policy.setUserType(_ctx.stringValue("ListPoliciesResponse.PolicyList["+ i +"].UserType"));
 
 			policyList.add(policy);

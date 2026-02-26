@@ -27,7 +27,7 @@ public class DescribeSlsOpenStatusRequest extends RpcAcsRequest<DescribeSlsOpenS
 
 	private String resourceGroupId;
 	public DescribeSlsOpenStatusRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeSlsOpenStatus");
+		super("ddoscoo", "2020-01-01", "DescribeSlsOpenStatus", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

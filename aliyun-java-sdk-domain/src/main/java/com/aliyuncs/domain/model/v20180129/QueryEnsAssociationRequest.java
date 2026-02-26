@@ -31,7 +31,7 @@ public class QueryEnsAssociationRequest extends RpcAcsRequest<QueryEnsAssociatio
 
 	private String lang;
 	public QueryEnsAssociationRequest() {
-		super("Domain", "2018-01-29", "QueryEnsAssociation");
+		super("Domain", "2018-01-29", "QueryEnsAssociation", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

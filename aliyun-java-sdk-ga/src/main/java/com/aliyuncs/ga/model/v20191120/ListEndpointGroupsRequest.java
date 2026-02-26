@@ -15,6 +15,7 @@
 package com.aliyuncs.ga.model.v20191120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ga.Endpoint;
 
@@ -25,13 +26,21 @@ import com.aliyuncs.ga.Endpoint;
 public class ListEndpointGroupsRequest extends RpcAcsRequest<ListEndpointGroupsResponse> {
 	   
 
+	private Integer pageNumber;
+
 	private String listenerId;
+
+	private String endpointGroupType;
+
+	private String accessLogSwitch;
 
 	private Integer pageSize;
 
 	private String acceleratorId;
 
-	private Integer pageNumber;
+	private List<Tag> tags;
+
+	private String endpointGroupId;
 	public ListEndpointGroupsRequest() {
 		super("Ga", "2019-11-20", "ListEndpointGroups", "gaplus");
 		setMethod(MethodType.POST);
@@ -39,6 +48,17 @@ public class ListEndpointGroupsRequest extends RpcAcsRequest<ListEndpointGroupsR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public String getListenerId() {
@@ -49,6 +69,28 @@ public class ListEndpointGroupsRequest extends RpcAcsRequest<ListEndpointGroupsR
 		this.listenerId = listenerId;
 		if(listenerId != null){
 			putQueryParameter("ListenerId", listenerId);
+		}
+	}
+
+	public String getEndpointGroupType() {
+		return this.endpointGroupType;
+	}
+
+	public void setEndpointGroupType(String endpointGroupType) {
+		this.endpointGroupType = endpointGroupType;
+		if(endpointGroupType != null){
+			putQueryParameter("EndpointGroupType", endpointGroupType);
+		}
+	}
+
+	public String getAccessLogSwitch() {
+		return this.accessLogSwitch;
+	}
+
+	public void setAccessLogSwitch(String accessLogSwitch) {
+		this.accessLogSwitch = accessLogSwitch;
+		if(accessLogSwitch != null){
+			putQueryParameter("AccessLogSwitch", accessLogSwitch);
 		}
 	}
 
@@ -74,14 +116,51 @@ public class ListEndpointGroupsRequest extends RpcAcsRequest<ListEndpointGroupsR
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
+	}
+
+	public String getEndpointGroupId() {
+		return this.endpointGroupId;
+	}
+
+	public void setEndpointGroupId(String endpointGroupId) {
+		this.endpointGroupId = endpointGroupId;
+		if(endpointGroupId != null){
+			putQueryParameter("EndpointGroupId", endpointGroupId);
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

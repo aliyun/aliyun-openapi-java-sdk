@@ -47,25 +47,17 @@ public class DescribePdnsThreatStatisticResponse extends AcsResponse {
 
 	public static class StatisticItem {
 
-		private Long udpTotalCount;
-
 		private Long totalCount;
-
-		private String threatLevel;
-
-		private String threatType;
 
 		private Long timestamp;
 
+		private String threatType;
+
+		private String threatLevel;
+
 		private Long dohTotalCount;
 
-		public Long getUdpTotalCount() {
-			return this.udpTotalCount;
-		}
-
-		public void setUdpTotalCount(Long udpTotalCount) {
-			this.udpTotalCount = udpTotalCount;
-		}
+		private Long udpTotalCount;
 
 		public Long getTotalCount() {
 			return this.totalCount;
@@ -73,22 +65,6 @@ public class DescribePdnsThreatStatisticResponse extends AcsResponse {
 
 		public void setTotalCount(Long totalCount) {
 			this.totalCount = totalCount;
-		}
-
-		public String getThreatLevel() {
-			return this.threatLevel;
-		}
-
-		public void setThreatLevel(String threatLevel) {
-			this.threatLevel = threatLevel;
-		}
-
-		public String getThreatType() {
-			return this.threatType;
-		}
-
-		public void setThreatType(String threatType) {
-			this.threatType = threatType;
 		}
 
 		public Long getTimestamp() {
@@ -99,12 +75,36 @@ public class DescribePdnsThreatStatisticResponse extends AcsResponse {
 			this.timestamp = timestamp;
 		}
 
+		public String getThreatType() {
+			return this.threatType;
+		}
+
+		public void setThreatType(String threatType) {
+			this.threatType = threatType;
+		}
+
+		public String getThreatLevel() {
+			return this.threatLevel;
+		}
+
+		public void setThreatLevel(String threatLevel) {
+			this.threatLevel = threatLevel;
+		}
+
 		public Long getDohTotalCount() {
 			return this.dohTotalCount;
 		}
 
 		public void setDohTotalCount(Long dohTotalCount) {
 			this.dohTotalCount = dohTotalCount;
+		}
+
+		public Long getUdpTotalCount() {
+			return this.udpTotalCount;
+		}
+
+		public void setUdpTotalCount(Long udpTotalCount) {
+			this.udpTotalCount = udpTotalCount;
 		}
 	}
 

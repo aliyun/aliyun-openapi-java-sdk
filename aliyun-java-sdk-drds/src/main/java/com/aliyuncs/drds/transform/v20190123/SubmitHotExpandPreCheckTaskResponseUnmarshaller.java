@@ -23,9 +23,9 @@ public class SubmitHotExpandPreCheckTaskResponseUnmarshaller {
 	public static SubmitHotExpandPreCheckTaskResponse unmarshall(SubmitHotExpandPreCheckTaskResponse submitHotExpandPreCheckTaskResponse, UnmarshallerContext _ctx) {
 		
 		submitHotExpandPreCheckTaskResponse.setRequestId(_ctx.stringValue("SubmitHotExpandPreCheckTaskResponse.RequestId"));
-		submitHotExpandPreCheckTaskResponse.setSuccess(_ctx.booleanValue("SubmitHotExpandPreCheckTaskResponse.Success"));
 		submitHotExpandPreCheckTaskResponse.setMsg(_ctx.stringValue("SubmitHotExpandPreCheckTaskResponse.Msg"));
 		submitHotExpandPreCheckTaskResponse.setTaskId(_ctx.longValue("SubmitHotExpandPreCheckTaskResponse.TaskId"));
+		submitHotExpandPreCheckTaskResponse.setSuccess(_ctx.booleanValue("SubmitHotExpandPreCheckTaskResponse.Success"));
 	 
 	 	return submitHotExpandPreCheckTaskResponse;
 	}

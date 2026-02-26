@@ -29,7 +29,7 @@ public class DescribeDBClusterNodeRequest extends RpcAcsRequest<DescribeDBCluste
 
 	private String dBInstanceId;
 	public DescribeDBClusterNodeRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBClusterNode");
+		super("gpdb", "2016-05-03", "DescribeDBClusterNode", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

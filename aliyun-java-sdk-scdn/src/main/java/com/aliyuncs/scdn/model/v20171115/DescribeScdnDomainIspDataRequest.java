@@ -25,13 +25,11 @@ import com.aliyuncs.scdn.Endpoint;
 public class DescribeScdnDomainIspDataRequest extends RpcAcsRequest<DescribeScdnDomainIspDataResponse> {
 	   
 
-	private String startTime;
-
 	private String domainName;
 
 	private String endTime;
 
-	private Long ownerId;
+	private String startTime;
 	public DescribeScdnDomainIspDataRequest() {
 		super("scdn", "2017-11-15", "DescribeScdnDomainIspData");
 		setMethod(MethodType.POST);
@@ -39,17 +37,6 @@ public class DescribeScdnDomainIspDataRequest extends RpcAcsRequest<DescribeScdn
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
 	}
 
 	public String getDomainName() {
@@ -74,14 +61,14 @@ public class DescribeScdnDomainIspDataRequest extends RpcAcsRequest<DescribeScdn
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 

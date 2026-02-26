@@ -69,6 +69,7 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 			listener.setDescription(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocols["+ i +"].Description"));
 			listener.setListenerForward(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocols["+ i +"].ListenerForward"));
 			listener.setForwardPort(_ctx.integerValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocols["+ i +"].ForwardPort"));
+			listener.setBackendServerPort(_ctx.integerValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocols["+ i +"].BackendServerPort"));
 
 			listenerPortsAndProtocols.add(listener);
 		}

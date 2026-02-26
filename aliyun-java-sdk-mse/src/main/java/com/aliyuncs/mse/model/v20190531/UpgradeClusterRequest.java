@@ -25,11 +25,11 @@ import com.aliyuncs.mse.Endpoint;
 public class UpgradeClusterRequest extends RpcAcsRequest<UpgradeClusterResponse> {
 	   
 
+	private String requestPars;
+
 	private String upgradeVersion;
 
 	private String instanceId;
-
-	private String requestPars;
 
 	private String acceptLanguage;
 	public UpgradeClusterRequest() {
@@ -39,6 +39,17 @@ public class UpgradeClusterRequest extends RpcAcsRequest<UpgradeClusterResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
+		}
 	}
 
 	public String getUpgradeVersion() {
@@ -60,17 +71,6 @@ public class UpgradeClusterRequest extends RpcAcsRequest<UpgradeClusterResponse>
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

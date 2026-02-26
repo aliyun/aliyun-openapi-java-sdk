@@ -79,6 +79,14 @@ public class DescribeDomainResponse extends AcsResponse {
 
 		private Integer connectionTime;
 
+		private Boolean retry;
+
+		private Boolean keepalive;
+
+		private Integer keepaliveRequests;
+
+		private Integer keepaliveTimeout;
+
 		private List<LogHeader> logHeaders;
 
 		private List<CloudNativeInstancesItem> cloudNativeInstances;
@@ -221,6 +229,38 @@ public class DescribeDomainResponse extends AcsResponse {
 			this.connectionTime = connectionTime;
 		}
 
+		public Boolean getRetry() {
+			return this.retry;
+		}
+
+		public void setRetry(Boolean retry) {
+			this.retry = retry;
+		}
+
+		public Boolean getKeepalive() {
+			return this.keepalive;
+		}
+
+		public void setKeepalive(Boolean keepalive) {
+			this.keepalive = keepalive;
+		}
+
+		public Integer getKeepaliveRequests() {
+			return this.keepaliveRequests;
+		}
+
+		public void setKeepaliveRequests(Integer keepaliveRequests) {
+			this.keepaliveRequests = keepaliveRequests;
+		}
+
+		public Integer getKeepaliveTimeout() {
+			return this.keepaliveTimeout;
+		}
+
+		public void setKeepaliveTimeout(Integer keepaliveTimeout) {
+			this.keepaliveTimeout = keepaliveTimeout;
+		}
+
 		public List<LogHeader> getLogHeaders() {
 			return this.logHeaders;
 		}
@@ -308,9 +348,9 @@ public class DescribeDomainResponse extends AcsResponse {
 
 			private String instanceId;
 
-			private String iPAddressList;
-
 			private List<ProtocolPortConfigsItem> protocolPortConfigs;
+
+			private List<String> iPAddressList;
 
 			public String getRedirectionTypeName() {
 				return this.redirectionTypeName;
@@ -336,14 +376,6 @@ public class DescribeDomainResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public String getIPAddressList() {
-				return this.iPAddressList;
-			}
-
-			public void setIPAddressList(String iPAddressList) {
-				this.iPAddressList = iPAddressList;
-			}
-
 			public List<ProtocolPortConfigsItem> getProtocolPortConfigs() {
 				return this.protocolPortConfigs;
 			}
@@ -352,19 +384,19 @@ public class DescribeDomainResponse extends AcsResponse {
 				this.protocolPortConfigs = protocolPortConfigs;
 			}
 
-			public static class ProtocolPortConfigsItem {
+			public List<String> getIPAddressList() {
+				return this.iPAddressList;
+			}
 
-				private String ports;
+			public void setIPAddressList(List<String> iPAddressList) {
+				this.iPAddressList = iPAddressList;
+			}
+
+			public static class ProtocolPortConfigsItem {
 
 				private String protocol;
 
-				public String getPorts() {
-					return this.ports;
-				}
-
-				public void setPorts(String ports) {
-					this.ports = ports;
-				}
+				private List<Integer> ports;
 
 				public String getBizProtocol() {
 					return this.protocol;
@@ -372,6 +404,14 @@ public class DescribeDomainResponse extends AcsResponse {
 
 				public void setBizProtocol(String protocol) {
 					this.protocol = protocol;
+				}
+
+				public List<Integer> getPorts() {
+					return this.ports;
+				}
+
+				public void setPorts(List<Integer> ports) {
+					this.ports = ports;
 				}
 			}
 		}

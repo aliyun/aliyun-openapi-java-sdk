@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class TransferResourceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class TransferResourceResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,17 +76,9 @@ public class TransferResourceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String content;
-
 		private String procEnv;
 
-		public String getContent() {
-			return this.content;
-		}
-
-		public void setContent(String content) {
-			this.content = content;
-		}
+		private String content;
 
 		public String getProcEnv() {
 			return this.procEnv;
@@ -94,6 +86,14 @@ public class TransferResourceResponse extends AcsResponse {
 
 		public void setProcEnv(String procEnv) {
 			this.procEnv = procEnv;
+		}
+
+		public String getContent() {
+			return this.content;
+		}
+
+		public void setContent(String content) {
+			this.content = content;
 		}
 	}
 

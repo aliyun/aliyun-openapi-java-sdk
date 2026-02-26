@@ -31,7 +31,7 @@ public class ResetQualificationVerificationRequest extends RpcAcsRequest<ResetQu
 
 	private String lang;
 	public ResetQualificationVerificationRequest() {
-		super("Domain", "2018-01-29", "ResetQualificationVerification");
+		super("Domain", "2018-01-29", "ResetQualificationVerification", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

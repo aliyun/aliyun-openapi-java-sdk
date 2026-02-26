@@ -119,6 +119,8 @@ public class GetNodeChildrenResponse extends AcsResponse {
 
 			private Long nodeId;
 
+			private String stepType;
+
 			public String getSchedulerType() {
 				return this.schedulerType;
 			}
@@ -197,6 +199,14 @@ public class GetNodeChildrenResponse extends AcsResponse {
 
 			public void setNodeId(Long nodeId) {
 				this.nodeId = nodeId;
+			}
+
+			public String getStepType() {
+				return this.stepType;
+			}
+
+			public void setStepType(String stepType) {
+				this.stepType = stepType;
 			}
 		}
 	}

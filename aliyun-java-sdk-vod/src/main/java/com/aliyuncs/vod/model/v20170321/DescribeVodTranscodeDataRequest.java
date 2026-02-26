@@ -35,6 +35,8 @@ public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTr
 
 	private Long ownerId;
 
+	private String appId;
+
 	private String interval;
 
 	private String region;
@@ -99,6 +101,17 @@ public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

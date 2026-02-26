@@ -27,9 +27,15 @@ import com.aliyuncs.http.MethodType;
 public class CreateAppInstanceGroupRequest extends RpcAcsRequest<CreateAppInstanceGroupResponse> {
 	   
 
+	@SerializedName("runtimePolicy")
+	private RuntimePolicy runtimePolicy;
+
 	private String bizRegionId;
 
 	private String productType;
+
+	@SerializedName("network")
+	private Network network;
 
 	private Integer sessionTimeout;
 
@@ -39,6 +45,8 @@ public class CreateAppInstanceGroupRequest extends RpcAcsRequest<CreateAppInstan
 
 	@SerializedName("userInfo")
 	private UserInfo userInfo;
+
+	private String preOpenAppId;
 
 	private Integer period;
 
@@ -63,6 +71,17 @@ public class CreateAppInstanceGroupRequest extends RpcAcsRequest<CreateAppInstan
 		setMethod(MethodType.POST);
 	}
 
+	public RuntimePolicy getRuntimePolicy() {
+		return this.runtimePolicy;
+	}
+
+	public void setRuntimePolicy(RuntimePolicy runtimePolicy) {
+		this.runtimePolicy = runtimePolicy;	
+		if (runtimePolicy != null) {
+			putBodyParameter("RuntimePolicy" , new Gson().toJson(runtimePolicy));
+		}	
+	}
+
 	public String getBizRegionId() {
 		return this.bizRegionId;
 	}
@@ -83,6 +102,17 @@ public class CreateAppInstanceGroupRequest extends RpcAcsRequest<CreateAppInstan
 		if(productType != null){
 			putBodyParameter("ProductType", productType);
 		}
+	}
+
+	public Network getNetwork() {
+		return this.network;
+	}
+
+	public void setNetwork(Network network) {
+		this.network = network;	
+		if (network != null) {
+			putBodyParameter("Network" , new Gson().toJson(network));
+		}	
 	}
 
 	public Integer getSessionTimeout() {
@@ -127,6 +157,17 @@ public class CreateAppInstanceGroupRequest extends RpcAcsRequest<CreateAppInstan
 		if (userInfo != null) {
 			putBodyParameter("UserInfo" , new Gson().toJson(userInfo));
 		}	
+	}
+
+	public String getPreOpenAppId() {
+		return this.preOpenAppId;
+	}
+
+	public void setPreOpenAppId(String preOpenAppId) {
+		this.preOpenAppId = preOpenAppId;
+		if(preOpenAppId != null){
+			putBodyParameter("PreOpenAppId", preOpenAppId);
+		}
 	}
 
 	public Integer getPeriod() {
@@ -230,6 +271,81 @@ public class CreateAppInstanceGroupRequest extends RpcAcsRequest<CreateAppInstan
 		}
 	}
 
+	public static class RuntimePolicy {
+
+		@SerializedName("SessionType")
+		private String sessionType;
+
+		@SerializedName("DebugMode")
+		private String debugMode;
+
+		public String getSessionType() {
+			return this.sessionType;
+		}
+
+		public void setSessionType(String sessionType) {
+			this.sessionType = sessionType;
+		}
+
+		public String getDebugMode() {
+			return this.debugMode;
+		}
+
+		public void setDebugMode(String debugMode) {
+			this.debugMode = debugMode;
+		}
+	}
+
+	public static class Network {
+
+		@SerializedName("Routes")
+		private List<RoutesItem> routes;
+
+		@SerializedName("StrategyType")
+		private String strategyType;
+
+		public List<RoutesItem> getRoutes() {
+			return this.routes;
+		}
+
+		public void setRoutes(List<RoutesItem> routes) {
+			this.routes = routes;
+		}
+
+		public String getStrategyType() {
+			return this.strategyType;
+		}
+
+		public void setStrategyType(String strategyType) {
+			this.strategyType = strategyType;
+		}
+
+		public static class RoutesItem {
+
+			@SerializedName("Mode")
+			private String mode;
+
+			@SerializedName("Destination")
+			private String destination;
+
+			public String getMode() {
+				return this.mode;
+			}
+
+			public void setMode(String mode) {
+				this.mode = mode;
+			}
+
+			public String getDestination() {
+				return this.destination;
+			}
+
+			public void setDestination(String destination) {
+				this.destination = destination;
+			}
+		}
+	}
+
 	public static class UserInfo {
 
 		@SerializedName("Type")
@@ -246,11 +362,17 @@ public class CreateAppInstanceGroupRequest extends RpcAcsRequest<CreateAppInstan
 
 	public static class NodePool {
 
+		@SerializedName("RecurrenceSchedules")
+		private List<RecurrenceSchedulesItem> recurrenceSchedules;
+
 		@SerializedName("NodeAmount")
 		private Integer nodeAmount;
 
 		@SerializedName("ScalingStep")
 		private Integer scalingStep;
+
+		@SerializedName("StrategyDisableDate")
+		private String strategyDisableDate;
 
 		@SerializedName("NodeInstanceType")
 		private String nodeInstanceType;
@@ -264,11 +386,25 @@ public class CreateAppInstanceGroupRequest extends RpcAcsRequest<CreateAppInstan
 		@SerializedName("MaxScalingAmount")
 		private Integer maxScalingAmount;
 
+		@SerializedName("WarmUp")
+		private Boolean warmUp;
+
 		@SerializedName("ScalingUsageThreshold")
 		private String scalingUsageThreshold;
 
 		@SerializedName("NodeCapacity")
 		private Integer nodeCapacity;
+
+		@SerializedName("StrategyEnableDate")
+		private String strategyEnableDate;
+
+		public List<RecurrenceSchedulesItem> getRecurrenceSchedules() {
+			return this.recurrenceSchedules;
+		}
+
+		public void setRecurrenceSchedules(List<RecurrenceSchedulesItem> recurrenceSchedules) {
+			this.recurrenceSchedules = recurrenceSchedules;
+		}
 
 		public Integer getNodeAmount() {
 			return this.nodeAmount;
@@ -284,6 +420,14 @@ public class CreateAppInstanceGroupRequest extends RpcAcsRequest<CreateAppInstan
 
 		public void setScalingStep(Integer scalingStep) {
 			this.scalingStep = scalingStep;
+		}
+
+		public String getStrategyDisableDate() {
+			return this.strategyDisableDate;
+		}
+
+		public void setStrategyDisableDate(String strategyDisableDate) {
+			this.strategyDisableDate = strategyDisableDate;
 		}
 
 		public String getNodeInstanceType() {
@@ -318,6 +462,14 @@ public class CreateAppInstanceGroupRequest extends RpcAcsRequest<CreateAppInstan
 			this.maxScalingAmount = maxScalingAmount;
 		}
 
+		public Boolean getWarmUp() {
+			return this.warmUp;
+		}
+
+		public void setWarmUp(Boolean warmUp) {
+			this.warmUp = warmUp;
+		}
+
 		public String getScalingUsageThreshold() {
 			return this.scalingUsageThreshold;
 		}
@@ -332,6 +484,86 @@ public class CreateAppInstanceGroupRequest extends RpcAcsRequest<CreateAppInstan
 
 		public void setNodeCapacity(Integer nodeCapacity) {
 			this.nodeCapacity = nodeCapacity;
+		}
+
+		public String getStrategyEnableDate() {
+			return this.strategyEnableDate;
+		}
+
+		public void setStrategyEnableDate(String strategyEnableDate) {
+			this.strategyEnableDate = strategyEnableDate;
+		}
+
+		public static class RecurrenceSchedulesItem {
+
+			@SerializedName("RecurrenceValues")
+			private List<Integer> recurrenceValues;
+
+			@SerializedName("RecurrenceType")
+			private String recurrenceType;
+
+			@SerializedName("TimerPeriods")
+			private List<TimerPeriodsItem> timerPeriods;
+
+			public List<Integer> getRecurrenceValues() {
+				return this.recurrenceValues;
+			}
+
+			public void setRecurrenceValues(List<Integer> recurrenceValues) {
+				this.recurrenceValues = recurrenceValues;
+			}
+
+			public String getRecurrenceType() {
+				return this.recurrenceType;
+			}
+
+			public void setRecurrenceType(String recurrenceType) {
+				this.recurrenceType = recurrenceType;
+			}
+
+			public List<TimerPeriodsItem> getTimerPeriods() {
+				return this.timerPeriods;
+			}
+
+			public void setTimerPeriods(List<TimerPeriodsItem> timerPeriods) {
+				this.timerPeriods = timerPeriods;
+			}
+
+			public static class TimerPeriodsItem {
+
+				@SerializedName("Amount")
+				private Integer amount;
+
+				@SerializedName("EndTime")
+				private String endTime;
+
+				@SerializedName("StartTime")
+				private String startTime;
+
+				public Integer getAmount() {
+					return this.amount;
+				}
+
+				public void setAmount(Integer amount) {
+					this.amount = amount;
+				}
+
+				public String getEndTime() {
+					return this.endTime;
+				}
+
+				public void setEndTime(String endTime) {
+					this.endTime = endTime;
+				}
+
+				public String getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
+				}
+			}
 		}
 	}
 

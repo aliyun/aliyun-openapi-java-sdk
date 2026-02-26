@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -41,6 +42,8 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 
 	private String peerIpv6GatewayIp;
 
+	private String resourceGroupId;
+
 	private String peeringSubnetMask;
 
 	private String localGatewayIp;
@@ -54,6 +57,8 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private List<Tags> tagss;
 
 	private String physicalConnectionId;
 
@@ -159,6 +164,17 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getPeeringSubnetMask() {
 		return this.peeringSubnetMask;
 	}
@@ -236,6 +252,20 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		}
 	}
 
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getPhysicalConnectionId() {
 		return this.physicalConnectionId;
 	}
@@ -277,6 +307,29 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		this.vbrOwnerId = vbrOwnerId;
 		if(vbrOwnerId != null){
 			putQueryParameter("VbrOwnerId", vbrOwnerId.toString());
+		}
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

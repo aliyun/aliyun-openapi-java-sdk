@@ -25,7 +25,7 @@ import com.aliyuncs.opensearch.Endpoint;
 public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
 	   
 	public DescribeRegionsRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeRegions", "opensearch");
+		super("OpenSearch", "2017-12-25", "DescribeRegions");
 		setUriPattern("/v4/openapi/regions");
 		setMethod(MethodType.GET);
 		try {

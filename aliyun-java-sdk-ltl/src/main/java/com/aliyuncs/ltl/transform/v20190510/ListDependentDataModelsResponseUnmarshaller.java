@@ -34,8 +34,8 @@ public class ListDependentDataModelsResponseUnmarshaller {
 		List<DataModelInfo> data = new ArrayList<DataModelInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListDependentDataModelsResponse.Data.Length"); i++) {
 			DataModelInfo dataModelInfo = new DataModelInfo();
-			dataModelInfo.setDataModelCode(_ctx.stringValue("ListDependentDataModelsResponse.Data["+ i +"].DataModelCode"));
 			dataModelInfo.setDataModelName(_ctx.stringValue("ListDependentDataModelsResponse.Data["+ i +"].DataModelName"));
+			dataModelInfo.setDataModelCode(_ctx.stringValue("ListDependentDataModelsResponse.Data["+ i +"].DataModelCode"));
 
 			data.add(dataModelInfo);
 		}

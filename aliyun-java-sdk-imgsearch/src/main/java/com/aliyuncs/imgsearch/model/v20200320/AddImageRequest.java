@@ -33,7 +33,7 @@ public class AddImageRequest extends RpcAcsRequest<AddImageResponse> {
 
 	private String extraData;
 	public AddImageRequest() {
-		super("imgsearch", "2020-03-20", "AddImage", "imgsearch");
+		super("imgsearch", "2020-03-20", "AddImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -21,6 +21,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.DedicatedHostAttribute;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.EipAddress;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.LockReason;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.NetworkOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.VpcAttributes;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -54,6 +55,8 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		describeInstanceAttributeResponse.setZoneId(_ctx.stringValue("DescribeInstanceAttributeResponse.ZoneId"));
 		describeInstanceAttributeResponse.setInternetChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.InternetChargeType"));
 		describeInstanceAttributeResponse.setCreditSpecification(_ctx.stringValue("DescribeInstanceAttributeResponse.CreditSpecification"));
+		describeInstanceAttributeResponse.setEnableJumboFrame(_ctx.booleanValue("DescribeInstanceAttributeResponse.EnableJumboFrame"));
+		describeInstanceAttributeResponse.setEnableNetworkEncryption(_ctx.booleanValue("DescribeInstanceAttributeResponse.EnableNetworkEncryption"));
 
 		List<String> securityGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAttributeResponse.SecurityGroupIds.Length"); i++) {
@@ -96,6 +99,12 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		dedicatedHostAttribute.setDedicatedHostName(_ctx.stringValue("DescribeInstanceAttributeResponse.DedicatedHostAttribute.DedicatedHostName"));
 		dedicatedHostAttribute.setDedicatedHostId(_ctx.stringValue("DescribeInstanceAttributeResponse.DedicatedHostAttribute.DedicatedHostId"));
 		describeInstanceAttributeResponse.setDedicatedHostAttribute(dedicatedHostAttribute);
+
+		NetworkOptions networkOptions = new NetworkOptions();
+		networkOptions.setEnableJumboFrame(_ctx.booleanValue("DescribeInstanceAttributeResponse.NetworkOptions.EnableJumboFrame"));
+		networkOptions.setEnableNetworkEncryption(_ctx.booleanValue("DescribeInstanceAttributeResponse.NetworkOptions.EnableNetworkEncryption"));
+		networkOptions.setBandwidthWeighting(_ctx.stringValue("DescribeInstanceAttributeResponse.NetworkOptions.BandwidthWeighting"));
+		describeInstanceAttributeResponse.setNetworkOptions(networkOptions);
 
 		List<LockReason> operationLocks = new ArrayList<LockReason>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAttributeResponse.OperationLocks.Length"); i++) {

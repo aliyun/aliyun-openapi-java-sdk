@@ -40,6 +40,8 @@ public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 
 	private String description;
 
+	private String source;
+
 	private String schemaVersion;
 
 	private String content;
@@ -143,6 +145,17 @@ public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 

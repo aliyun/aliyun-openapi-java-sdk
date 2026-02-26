@@ -27,7 +27,7 @@ public class GetDesktopGroupDetailRequest extends RpcAcsRequest<GetDesktopGroupD
 
 	private String desktopGroupId;
 	public GetDesktopGroupDetailRequest() {
-		super("ecd", "2020-09-30", "GetDesktopGroupDetail");
+		super("ecd", "2020-09-30", "GetDesktopGroupDetail", "gwsecd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

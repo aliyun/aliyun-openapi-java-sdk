@@ -159,6 +159,8 @@ public class ListJobGroupsAsyncResponse extends AcsResponse {
 
 		private String modifyTime;
 
+		private Integer minConcurrency;
+
 		private Strategy strategy;
 
 		private Progress progress;
@@ -251,6 +253,14 @@ public class ListJobGroupsAsyncResponse extends AcsResponse {
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public Integer getMinConcurrency() {
+			return this.minConcurrency;
+		}
+
+		public void setMinConcurrency(Integer minConcurrency) {
+			this.minConcurrency = minConcurrency;
 		}
 
 		public Strategy getStrategy() {

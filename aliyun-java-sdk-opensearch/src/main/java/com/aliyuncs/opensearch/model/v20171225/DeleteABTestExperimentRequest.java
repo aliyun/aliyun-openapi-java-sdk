@@ -33,7 +33,7 @@ public class DeleteABTestExperimentRequest extends RoaAcsRequest<DeleteABTestExp
 
 	private String appGroupIdentity;
 	public DeleteABTestExperimentRequest() {
-		super("OpenSearch", "2017-12-25", "DeleteABTestExperiment", "opensearch");
+		super("OpenSearch", "2017-12-25", "DeleteABTestExperiment");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/experiments/[experimentId]");
 		setMethod(MethodType.DELETE);
 		try {

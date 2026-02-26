@@ -48,6 +48,7 @@ public class DescribeDataFlowsResponseUnmarshaller {
 			dataFlow.setFsetDescription(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].FsetDescription"));
 			dataFlow.setAutoRefreshInterval(_ctx.longValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].AutoRefreshInterval"));
 			dataFlow.setAutoRefreshPolicy(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].AutoRefreshPolicy"));
+			dataFlow.setSourceStoragePath(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].SourceStoragePath"));
 
 			List<AutoRefreshItem> autoRefresh = new ArrayList<AutoRefreshItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].AutoRefresh.Length"); j++) {

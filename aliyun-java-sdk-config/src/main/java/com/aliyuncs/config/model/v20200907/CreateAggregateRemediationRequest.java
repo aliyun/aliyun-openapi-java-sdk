@@ -41,7 +41,7 @@ public class CreateAggregateRemediationRequest extends RpcAcsRequest<CreateAggre
 
 	private String invokeType;
 	public CreateAggregateRemediationRequest() {
-		super("Config", "2020-09-07", "CreateAggregateRemediation");
+		super("Config", "2020-09-07", "CreateAggregateRemediation", "config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

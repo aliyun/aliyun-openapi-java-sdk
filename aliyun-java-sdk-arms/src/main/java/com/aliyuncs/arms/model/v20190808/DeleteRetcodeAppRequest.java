@@ -25,7 +25,11 @@ import com.aliyuncs.arms.Endpoint;
 public class DeleteRetcodeAppRequest extends RpcAcsRequest<DeleteRetcodeAppResponse> {
 	   
 
+	private String appName;
+
 	private String appId;
+
+	private String pid;
 	public DeleteRetcodeAppRequest() {
 		super("ARMS", "2019-08-08", "DeleteRetcodeApp", "arms");
 		setMethod(MethodType.POST);
@@ -33,6 +37,17 @@ public class DeleteRetcodeAppRequest extends RpcAcsRequest<DeleteRetcodeAppRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getAppId() {
@@ -43,6 +58,17 @@ public class DeleteRetcodeAppRequest extends RpcAcsRequest<DeleteRetcodeAppRespo
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getPid() {
+		return this.pid;
+	}
+
+	public void setPid(String pid) {
+		this.pid = pid;
+		if(pid != null){
+			putQueryParameter("Pid", pid);
 		}
 	}
 

@@ -47,19 +47,11 @@ public class DescribeDBInstanceAccessWhiteListResponse extends AcsResponse {
 
 	public static class DBInstanceIPArray {
 
-		private String dBInstanceIPArrayName;
-
 		private String dBInstanceIPArrayAttribute;
 
+		private String dBInstanceIPArrayName;
+
 		private String securityIps;
-
-		public String getDBInstanceIPArrayName() {
-			return this.dBInstanceIPArrayName;
-		}
-
-		public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
-			this.dBInstanceIPArrayName = dBInstanceIPArrayName;
-		}
 
 		public String getDBInstanceIPArrayAttribute() {
 			return this.dBInstanceIPArrayAttribute;
@@ -67,6 +59,14 @@ public class DescribeDBInstanceAccessWhiteListResponse extends AcsResponse {
 
 		public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
 			this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
+		}
+
+		public String getDBInstanceIPArrayName() {
+			return this.dBInstanceIPArrayName;
+		}
+
+		public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
+			this.dBInstanceIPArrayName = dBInstanceIPArrayName;
 		}
 
 		public String getSecurityIps() {

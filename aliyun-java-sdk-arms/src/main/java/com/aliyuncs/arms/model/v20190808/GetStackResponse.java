@@ -61,6 +61,8 @@ public class GetStackResponse extends AcsResponse {
 
 		private String serviceName;
 
+		private String callCount;
+
 		private ExtInfo extInfo;
 
 		public Long getStartTime() {
@@ -117,6 +119,14 @@ public class GetStackResponse extends AcsResponse {
 
 		public void setServiceName(String serviceName) {
 			this.serviceName = serviceName;
+		}
+
+		public String getCallCount() {
+			return this.callCount;
+		}
+
+		public void setCallCount(String callCount) {
+			this.callCount = callCount;
 		}
 
 		public ExtInfo getExtInfo() {
