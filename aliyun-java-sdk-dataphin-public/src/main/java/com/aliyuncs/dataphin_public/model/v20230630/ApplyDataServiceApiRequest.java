@@ -78,17 +78,29 @@ public class ApplyDataServiceApiRequest extends RpcAcsRequest<ApplyDataServiceAp
 		@SerializedName("Reason")
 		private String reason;
 
+		@SerializedName("ApplyProd")
+		private Boolean applyProd;
+
+		@SerializedName("ApplyDev")
+		private Boolean applyDev;
+
 		@SerializedName("AppId")
 		private Integer appId;
 
 		@SerializedName("ExpireDate")
 		private String expireDate;
 
+		@SerializedName("AuthTypes")
+		private List<String> authTypes;
+
 		@SerializedName("ProdFieldList")
 		private List<ProdFieldListItem> prodFieldList;
 
 		@SerializedName("ApiId")
 		private Long apiId;
+
+		@SerializedName("ApplyType")
+		private String applyType;
 
 		@SerializedName("DevFieldList")
 		private List<DevFieldListItem> devFieldList;
@@ -99,6 +111,22 @@ public class ApplyDataServiceApiRequest extends RpcAcsRequest<ApplyDataServiceAp
 
 		public void setReason(String reason) {
 			this.reason = reason;
+		}
+
+		public Boolean getApplyProd() {
+			return this.applyProd;
+		}
+
+		public void setApplyProd(Boolean applyProd) {
+			this.applyProd = applyProd;
+		}
+
+		public Boolean getApplyDev() {
+			return this.applyDev;
+		}
+
+		public void setApplyDev(Boolean applyDev) {
+			this.applyDev = applyDev;
 		}
 
 		public Integer getAppId() {
@@ -117,6 +145,14 @@ public class ApplyDataServiceApiRequest extends RpcAcsRequest<ApplyDataServiceAp
 			this.expireDate = expireDate;
 		}
 
+		public List<String> getAuthTypes() {
+			return this.authTypes;
+		}
+
+		public void setAuthTypes(List<String> authTypes) {
+			this.authTypes = authTypes;
+		}
+
 		public List<ProdFieldListItem> getProdFieldList() {
 			return this.prodFieldList;
 		}
@@ -131,6 +167,14 @@ public class ApplyDataServiceApiRequest extends RpcAcsRequest<ApplyDataServiceAp
 
 		public void setApiId(Long apiId) {
 			this.apiId = apiId;
+		}
+
+		public String getApplyType() {
+			return this.applyType;
+		}
+
+		public void setApplyType(String applyType) {
+			this.applyType = applyType;
 		}
 
 		public List<DevFieldListItem> getDevFieldList() {

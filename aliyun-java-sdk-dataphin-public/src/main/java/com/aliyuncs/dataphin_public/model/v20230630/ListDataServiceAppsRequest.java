@@ -24,15 +24,15 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ListAuthorizedDataServiceApiDetailsRequest extends RpcAcsRequest<ListAuthorizedDataServiceApiDetailsResponse> {
+public class ListDataServiceAppsRequest extends RpcAcsRequest<ListDataServiceAppsResponse> {
 	   
 
 	private Long opTenantId;
 
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
-	public ListAuthorizedDataServiceApiDetailsRequest() {
-		super("dataphin-public", "2023-06-30", "ListAuthorizedDataServiceApiDetails");
+	public ListDataServiceAppsRequest() {
+		super("dataphin-public", "2023-06-30", "ListDataServiceApps");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -61,17 +61,25 @@ public class ListAuthorizedDataServiceApiDetailsRequest extends RpcAcsRequest<Li
 
 	public static class ListQuery {
 
+		@SerializedName("PageNo")
+		private Integer pageNo;
+
 		@SerializedName("PageSize")
 		private Integer pageSize;
 
-		@SerializedName("AppKeyStr")
-		private String appKeyStr;
+		@SerializedName("Keyword")
+		private String keyword;
 
-		@SerializedName("AppKey")
-		private Long appKey;
+		@SerializedName("AppGroupId")
+		private Integer appGroupId;
 
-		@SerializedName("Page")
-		private Integer page;
+		public Integer getPageNo() {
+			return this.pageNo;
+		}
+
+		public void setPageNo(Integer pageNo) {
+			this.pageNo = pageNo;
+		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -81,34 +89,26 @@ public class ListAuthorizedDataServiceApiDetailsRequest extends RpcAcsRequest<Li
 			this.pageSize = pageSize;
 		}
 
-		public String getAppKeyStr() {
-			return this.appKeyStr;
+		public String getKeyword() {
+			return this.keyword;
 		}
 
-		public void setAppKeyStr(String appKeyStr) {
-			this.appKeyStr = appKeyStr;
+		public void setKeyword(String keyword) {
+			this.keyword = keyword;
 		}
 
-		public Long getAppKey() {
-			return this.appKey;
+		public Integer getAppGroupId() {
+			return this.appGroupId;
 		}
 
-		public void setAppKey(Long appKey) {
-			this.appKey = appKey;
-		}
-
-		public Integer getPage() {
-			return this.page;
-		}
-
-		public void setPage(Integer page) {
-			this.page = page;
+		public void setAppGroupId(Integer appGroupId) {
+			this.appGroupId = appGroupId;
 		}
 	}
 
 	@Override
-	public Class<ListAuthorizedDataServiceApiDetailsResponse> getResponseClass() {
-		return ListAuthorizedDataServiceApiDetailsResponse.class;
+	public Class<ListDataServiceAppsResponse> getResponseClass() {
+		return ListDataServiceAppsResponse.class;
 	}
 
 }

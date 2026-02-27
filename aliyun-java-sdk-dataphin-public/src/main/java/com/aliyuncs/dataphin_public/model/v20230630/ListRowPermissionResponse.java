@@ -254,6 +254,8 @@ public class ListRowPermissionResponse extends AcsResponse {
 
 			public static class RulesItem {
 
+				private Long id;
+
 				private String ruleName;
 
 				private String scopeType;
@@ -265,6 +267,14 @@ public class ListRowPermissionResponse extends AcsResponse {
 				private List<ExpressionsItem> expressions;
 
 				private List<UserMappingListItem> userMappingList;
+
+				public Long getId() {
+					return this.id;
+				}
+
+				public void setId(Long id) {
+					this.id = id;
+				}
 
 				public String getRuleName() {
 					return this.ruleName;

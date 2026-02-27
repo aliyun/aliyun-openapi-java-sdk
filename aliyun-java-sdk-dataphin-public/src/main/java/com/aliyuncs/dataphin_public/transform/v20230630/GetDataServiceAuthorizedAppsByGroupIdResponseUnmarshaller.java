@@ -35,9 +35,10 @@ public class GetDataServiceAuthorizedAppsByGroupIdResponseUnmarshaller {
 		List<AppInfo> appInfoList = new ArrayList<AppInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataServiceAuthorizedAppsByGroupIdResponse.AppInfoList.Length"); i++) {
 			AppInfo appInfo = new AppInfo();
-			appInfo.setAppKey(_ctx.longValue("GetDataServiceAuthorizedAppsByGroupIdResponse.AppInfoList["+ i +"].AppKey"));
 			appInfo.setId(_ctx.integerValue("GetDataServiceAuthorizedAppsByGroupIdResponse.AppInfoList["+ i +"].Id"));
 			appInfo.setName(_ctx.stringValue("GetDataServiceAuthorizedAppsByGroupIdResponse.AppInfoList["+ i +"].Name"));
+			appInfo.setAppKey(_ctx.longValue("GetDataServiceAuthorizedAppsByGroupIdResponse.AppInfoList["+ i +"].AppKey"));
+			appInfo.setAppKeyStr(_ctx.stringValue("GetDataServiceAuthorizedAppsByGroupIdResponse.AppInfoList["+ i +"].AppKeyStr"));
 
 			appInfoList.add(appInfo);
 		}

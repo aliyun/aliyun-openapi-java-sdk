@@ -68,6 +68,7 @@ public class ListRowPermissionResponseUnmarshaller {
 			List<RulesItem> rules = new ArrayList<RulesItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListRowPermissionResponse.PageResult.Data["+ i +"].Rules.Length"); j++) {
 				RulesItem rulesItem = new RulesItem();
+				rulesItem.setId(_ctx.longValue("ListRowPermissionResponse.PageResult.Data["+ i +"].Rules["+ j +"].Id"));
 				rulesItem.setRuleName(_ctx.stringValue("ListRowPermissionResponse.PageResult.Data["+ i +"].Rules["+ j +"].RuleName"));
 				rulesItem.setScopeType(_ctx.stringValue("ListRowPermissionResponse.PageResult.Data["+ i +"].Rules["+ j +"].ScopeType"));
 				rulesItem.setIsDelete(_ctx.booleanValue("ListRowPermissionResponse.PageResult.Data["+ i +"].Rules["+ j +"].IsDelete"));

@@ -191,6 +191,8 @@ public class ListApiByAppResponse extends AcsResponse {
 
 			private List<PublicParamListItem> publicParamList;
 
+			private List<String> authTypes;
+
 			private RegisterApi registerApi;
 
 			public Long getId() {
@@ -519,6 +521,14 @@ public class ListApiByAppResponse extends AcsResponse {
 
 			public void setPublicParamList(List<PublicParamListItem> publicParamList) {
 				this.publicParamList = publicParamList;
+			}
+
+			public List<String> getAuthTypes() {
+				return this.authTypes;
+			}
+
+			public void setAuthTypes(List<String> authTypes) {
+				this.authTypes = authTypes;
 			}
 
 			public RegisterApi getRegisterApi() {

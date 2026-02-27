@@ -16,14 +16,14 @@ package com.aliyuncs.dataphin_public.model.v20230630;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dataphin_public.transform.v20230630.GetDataServiceAuthorizedAppsByGroupIdResponseUnmarshaller;
+import com.aliyuncs.dataphin_public.transform.v20230630.GetRowPermissionByTableGuidsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDataServiceAuthorizedAppsByGroupIdResponse extends AcsResponse {
+public class GetRowPermissionByTableGuidsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class GetDataServiceAuthorizedAppsByGroupIdResponse extends AcsResponse {
 
 	private String message;
 
-	private List<AppInfo> appInfoList;
+	private List<DataItem> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -77,60 +77,50 @@ public class GetDataServiceAuthorizedAppsByGroupIdResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<AppInfo> getAppInfoList() {
-		return this.appInfoList;
+	public List<DataItem> getData() {
+		return this.data;
 	}
 
-	public void setAppInfoList(List<AppInfo> appInfoList) {
-		this.appInfoList = appInfoList;
+	public void setData(List<DataItem> data) {
+		this.data = data;
 	}
 
-	public static class AppInfo {
+	public static class DataItem {
 
-		private Integer id;
+		private String rowPermissionId;
 
-		private String name;
+		private String rowPermissionName;
 
-		private Long appKey;
+		private String rowPermissionDesc;
 
-		private String appKeyStr;
-
-		public Integer getId() {
-			return this.id;
+		public String getRowPermissionId() {
+			return this.rowPermissionId;
 		}
 
-		public void setId(Integer id) {
-			this.id = id;
+		public void setRowPermissionId(String rowPermissionId) {
+			this.rowPermissionId = rowPermissionId;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getRowPermissionName() {
+			return this.rowPermissionName;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setRowPermissionName(String rowPermissionName) {
+			this.rowPermissionName = rowPermissionName;
 		}
 
-		public Long getAppKey() {
-			return this.appKey;
+		public String getRowPermissionDesc() {
+			return this.rowPermissionDesc;
 		}
 
-		public void setAppKey(Long appKey) {
-			this.appKey = appKey;
-		}
-
-		public String getAppKeyStr() {
-			return this.appKeyStr;
-		}
-
-		public void setAppKeyStr(String appKeyStr) {
-			this.appKeyStr = appKeyStr;
+		public void setRowPermissionDesc(String rowPermissionDesc) {
+			this.rowPermissionDesc = rowPermissionDesc;
 		}
 	}
 
 	@Override
-	public GetDataServiceAuthorizedAppsByGroupIdResponse getInstance(UnmarshallerContext context) {
-		return	GetDataServiceAuthorizedAppsByGroupIdResponseUnmarshaller.unmarshall(this, context);
+	public GetRowPermissionByTableGuidsResponse getInstance(UnmarshallerContext context) {
+		return	GetRowPermissionByTableGuidsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

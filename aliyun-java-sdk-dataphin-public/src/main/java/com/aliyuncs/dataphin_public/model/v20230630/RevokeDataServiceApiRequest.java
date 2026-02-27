@@ -80,8 +80,20 @@ public class RevokeDataServiceApiRequest extends RpcAcsRequest<RevokeDataService
 		@SerializedName("AppId")
 		private Integer appId;
 
+		@SerializedName("Env")
+		private String env;
+
+		@SerializedName("UserId")
+		private String userId;
+
 		@SerializedName("ApiId")
 		private Long apiId;
+
+		@SerializedName("AuthType")
+		private String authType;
+
+		@SerializedName("GranteeType")
+		private String granteeType;
 
 		public String getReason() {
 			return this.reason;
@@ -99,12 +111,44 @@ public class RevokeDataServiceApiRequest extends RpcAcsRequest<RevokeDataService
 			this.appId = appId;
 		}
 
+		public String getEnv() {
+			return this.env;
+		}
+
+		public void setEnv(String env) {
+			this.env = env;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
 		public Long getApiId() {
 			return this.apiId;
 		}
 
 		public void setApiId(Long apiId) {
 			this.apiId = apiId;
+		}
+
+		public String getAuthType() {
+			return this.authType;
+		}
+
+		public void setAuthType(String authType) {
+			this.authType = authType;
+		}
+
+		public String getGranteeType() {
+			return this.granteeType;
+		}
+
+		public void setGranteeType(String granteeType) {
+			this.granteeType = granteeType;
 		}
 	}
 

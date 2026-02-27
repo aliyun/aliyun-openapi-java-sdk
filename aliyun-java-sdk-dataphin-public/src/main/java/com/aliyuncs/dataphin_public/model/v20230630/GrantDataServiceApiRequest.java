@@ -90,14 +90,23 @@ public class GrantDataServiceApiRequest extends RpcAcsRequest<GrantDataServiceAp
 		@SerializedName("ExpireDate")
 		private String expireDate;
 
+		@SerializedName("AuthTypes")
+		private List<String> authTypes;
+
 		@SerializedName("ProdFieldList")
 		private List<ProdFieldListItem> prodFieldList;
+
+		@SerializedName("UserId")
+		private String userId;
 
 		@SerializedName("ApiId")
 		private Long apiId;
 
 		@SerializedName("DevFieldList")
 		private List<DevFieldListItem> devFieldList;
+
+		@SerializedName("GranteeType")
+		private String granteeType;
 
 		public String getReason() {
 			return this.reason;
@@ -139,12 +148,28 @@ public class GrantDataServiceApiRequest extends RpcAcsRequest<GrantDataServiceAp
 			this.expireDate = expireDate;
 		}
 
+		public List<String> getAuthTypes() {
+			return this.authTypes;
+		}
+
+		public void setAuthTypes(List<String> authTypes) {
+			this.authTypes = authTypes;
+		}
+
 		public List<ProdFieldListItem> getProdFieldList() {
 			return this.prodFieldList;
 		}
 
 		public void setProdFieldList(List<ProdFieldListItem> prodFieldList) {
 			this.prodFieldList = prodFieldList;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
 		public Long getApiId() {
@@ -161,6 +186,14 @@ public class GrantDataServiceApiRequest extends RpcAcsRequest<GrantDataServiceAp
 
 		public void setDevFieldList(List<DevFieldListItem> devFieldList) {
 			this.devFieldList = devFieldList;
+		}
+
+		public String getGranteeType() {
+			return this.granteeType;
+		}
+
+		public void setGranteeType(String granteeType) {
+			this.granteeType = granteeType;
 		}
 
 		public static class ProdFieldListItem {

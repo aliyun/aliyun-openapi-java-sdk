@@ -64,6 +64,9 @@ public class ListApiByAppRequest extends RpcAcsRequest<ListApiByAppResponse> {
 		@SerializedName("PageSize")
 		private Integer pageSize;
 
+		@SerializedName("AppKeyStr")
+		private String appKeyStr;
+
 		@SerializedName("AppKey")
 		private Long appKey;
 
@@ -79,6 +82,14 @@ public class ListApiByAppRequest extends RpcAcsRequest<ListApiByAppResponse> {
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public String getAppKeyStr() {
+			return this.appKeyStr;
+		}
+
+		public void setAppKeyStr(String appKeyStr) {
+			this.appKeyStr = appKeyStr;
 		}
 
 		public Long getAppKey() {

@@ -14,28 +14,27 @@
 
 package com.aliyuncs.dataphin_public.model.v20230630;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dataphin_public.transform.v20230630.GetDataServiceAuthorizedAppsByGroupIdResponseUnmarshaller;
+import com.aliyuncs.dataphin_public.transform.v20230630.ResetDataServiceAppSecretResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDataServiceAuthorizedAppsByGroupIdResponse extends AcsResponse {
+public class ResetDataServiceAppSecretResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
-	private List<AppInfo> appInfoList;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,12 +44,12 @@ public class GetDataServiceAuthorizedAppsByGroupIdResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,68 +68,48 @@ public class GetDataServiceAuthorizedAppsByGroupIdResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
-	public List<AppInfo> getAppInfoList() {
-		return this.appInfoList;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setAppInfoList(List<AppInfo> appInfoList) {
-		this.appInfoList = appInfoList;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public static class AppInfo {
+	public static class Data {
 
-		private Integer id;
+		private String appKey;
 
-		private String name;
+		private String appSecret;
 
-		private Long appKey;
-
-		private String appKeyStr;
-
-		public Integer getId() {
-			return this.id;
-		}
-
-		public void setId(Integer id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Long getAppKey() {
+		public String getAppKey() {
 			return this.appKey;
 		}
 
-		public void setAppKey(Long appKey) {
+		public void setAppKey(String appKey) {
 			this.appKey = appKey;
 		}
 
-		public String getAppKeyStr() {
-			return this.appKeyStr;
+		public String getAppSecret() {
+			return this.appSecret;
 		}
 
-		public void setAppKeyStr(String appKeyStr) {
-			this.appKeyStr = appKeyStr;
+		public void setAppSecret(String appSecret) {
+			this.appSecret = appSecret;
 		}
 	}
 
 	@Override
-	public GetDataServiceAuthorizedAppsByGroupIdResponse getInstance(UnmarshallerContext context) {
-		return	GetDataServiceAuthorizedAppsByGroupIdResponseUnmarshaller.unmarshall(this, context);
+	public ResetDataServiceAppSecretResponse getInstance(UnmarshallerContext context) {
+		return	ResetDataServiceAppSecretResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -86,6 +86,9 @@ public class ListDataServiceApiCallsRequest extends RpcAcsRequest<ListDataServic
 		@SerializedName("PageSize")
 		private Integer pageSize;
 
+		@SerializedName("AppKeyStr")
+		private String appKeyStr;
+
 		@SerializedName("EndTime")
 		private String endTime;
 
@@ -131,6 +134,14 @@ public class ListDataServiceApiCallsRequest extends RpcAcsRequest<ListDataServic
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public String getAppKeyStr() {
+			return this.appKeyStr;
+		}
+
+		public void setAppKeyStr(String appKeyStr) {
+			this.appKeyStr = appKeyStr;
 		}
 
 		public String getEndTime() {

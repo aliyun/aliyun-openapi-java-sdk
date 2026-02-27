@@ -101,8 +101,14 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 		@SerializedName("ApiGroupName")
 		private String apiGroupName;
 
+		@SerializedName("RowPermissionIds")
+		private List<Long> rowPermissionIds;
+
 		@SerializedName("BizProtocol")
 		private List<Integer> bizProtocol;
+
+		@SerializedName("ReturnSqlSwitch")
+		private Boolean returnSqlSwitch;
 
 		@SerializedName("CustomUpdateRate")
 		private String customUpdateRate;
@@ -112,6 +118,9 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 
 		@SerializedName("ApiGroupId")
 		private Long apiGroupId;
+
+		@SerializedName("DmlConfig")
+		private DmlConfig dmlConfig;
 
 		public Integer getUpdateRate() {
 			return this.updateRate;
@@ -217,12 +226,28 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 			this.apiGroupName = apiGroupName;
 		}
 
+		public List<Long> getRowPermissionIds() {
+			return this.rowPermissionIds;
+		}
+
+		public void setRowPermissionIds(List<Long> rowPermissionIds) {
+			this.rowPermissionIds = rowPermissionIds;
+		}
+
 		public List<Integer> getBizProtocol() {
 			return this.bizProtocol;
 		}
 
 		public void setBizProtocol(List<Integer> bizProtocol) {
 			this.bizProtocol = bizProtocol;
+		}
+
+		public Boolean getReturnSqlSwitch() {
+			return this.returnSqlSwitch;
+		}
+
+		public void setReturnSqlSwitch(Boolean returnSqlSwitch) {
+			this.returnSqlSwitch = returnSqlSwitch;
 		}
 
 		public String getCustomUpdateRate() {
@@ -247,6 +272,14 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 
 		public void setApiGroupId(Long apiGroupId) {
 			this.apiGroupId = apiGroupId;
+		}
+
+		public DmlConfig getDmlConfig() {
+			return this.dmlConfig;
+		}
+
+		public void setDmlConfig(DmlConfig dmlConfig) {
+			this.dmlConfig = dmlConfig;
 		}
 
 		public static class ScriptDetails {
@@ -341,6 +374,9 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 
 			public static class ScriptResponseParametersItem {
 
+				@SerializedName("ParameterLocation")
+				private String parameterLocation;
+
 				@SerializedName("ParameterDataType")
 				private String parameterDataType;
 
@@ -352,6 +388,14 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 
 				@SerializedName("ExampleValue")
 				private String exampleValue;
+
+				public String getParameterLocation() {
+					return this.parameterLocation;
+				}
+
+				public void setParameterLocation(String parameterLocation) {
+					this.parameterLocation = parameterLocation;
+				}
 
 				public String getParameterDataType() {
 					return this.parameterDataType;
@@ -397,6 +441,9 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 				@SerializedName("ParameterDataType")
 				private String parameterDataType;
 
+				@SerializedName("DefaultValue")
+				private String defaultValue;
+
 				@SerializedName("ParameterName")
 				private String parameterName;
 
@@ -430,6 +477,14 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 					this.parameterDataType = parameterDataType;
 				}
 
+				public String getDefaultValue() {
+					return this.defaultValue;
+				}
+
+				public void setDefaultValue(String defaultValue) {
+					this.defaultValue = defaultValue;
+				}
+
 				public String getParameterName() {
 					return this.parameterName;
 				}
@@ -453,6 +508,75 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 				public void setExampleValue(String exampleValue) {
 					this.exampleValue = exampleValue;
 				}
+			}
+		}
+
+		public static class DmlConfig {
+
+			@SerializedName("ErrorHandlingType")
+			private Integer errorHandlingType;
+
+			@SerializedName("ParallelNum")
+			private Integer parallelNum;
+
+			@SerializedName("MaxInputDataSize")
+			private Integer maxInputDataSize;
+
+			@SerializedName("BatchInputDataSize")
+			private Integer batchInputDataSize;
+
+			@SerializedName("DataVolumeType")
+			private Integer dataVolumeType;
+
+			@SerializedName("TransactionType")
+			private Integer transactionType;
+
+			public Integer getErrorHandlingType() {
+				return this.errorHandlingType;
+			}
+
+			public void setErrorHandlingType(Integer errorHandlingType) {
+				this.errorHandlingType = errorHandlingType;
+			}
+
+			public Integer getParallelNum() {
+				return this.parallelNum;
+			}
+
+			public void setParallelNum(Integer parallelNum) {
+				this.parallelNum = parallelNum;
+			}
+
+			public Integer getMaxInputDataSize() {
+				return this.maxInputDataSize;
+			}
+
+			public void setMaxInputDataSize(Integer maxInputDataSize) {
+				this.maxInputDataSize = maxInputDataSize;
+			}
+
+			public Integer getBatchInputDataSize() {
+				return this.batchInputDataSize;
+			}
+
+			public void setBatchInputDataSize(Integer batchInputDataSize) {
+				this.batchInputDataSize = batchInputDataSize;
+			}
+
+			public Integer getDataVolumeType() {
+				return this.dataVolumeType;
+			}
+
+			public void setDataVolumeType(Integer dataVolumeType) {
+				this.dataVolumeType = dataVolumeType;
+			}
+
+			public Integer getTransactionType() {
+				return this.transactionType;
+			}
+
+			public void setTransactionType(Integer transactionType) {
+				this.transactionType = transactionType;
 			}
 		}
 	}

@@ -85,6 +85,12 @@ public class ListApiByAppResponseUnmarshaller {
 			dataServiceApiDetailList.setVersion(_ctx.stringValue("ListApiByAppResponse.ListResult.Data["+ i +"].Version"));
 			dataServiceApiDetailList.setIsPagedQuery(_ctx.longValue("ListApiByAppResponse.ListResult.Data["+ i +"].IsPagedQuery"));
 
+			List<String> authTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListApiByAppResponse.ListResult.Data["+ i +"].AuthTypes.Length"); j++) {
+				authTypes.add(_ctx.stringValue("ListApiByAppResponse.ListResult.Data["+ i +"].AuthTypes["+ j +"]"));
+			}
+			dataServiceApiDetailList.setAuthTypes(authTypes);
+
 			RegisterApi registerApi = new RegisterApi();
 			registerApi.setApiId(_ctx.longValue("ListApiByAppResponse.ListResult.Data["+ i +"].RegisterApi.ApiId"));
 			registerApi.setModelType(_ctx.longValue("ListApiByAppResponse.ListResult.Data["+ i +"].RegisterApi.ModelType"));

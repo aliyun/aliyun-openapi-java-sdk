@@ -189,6 +189,8 @@ public class ListRowPermissionByUserIdResponse extends AcsResponse {
 
 				private Integer status;
 
+				private Long id;
+
 				private List<ExpressionsItem> expressions;
 
 				private List<UserMappingListItem> userMappingList;
@@ -223,6 +225,14 @@ public class ListRowPermissionByUserIdResponse extends AcsResponse {
 
 				public void setStatus(Integer status) {
 					this.status = status;
+				}
+
+				public Long getId() {
+					return this.id;
+				}
+
+				public void setId(Long id) {
+					this.id = id;
 				}
 
 				public List<ExpressionsItem> getExpressions() {

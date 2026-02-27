@@ -57,6 +57,7 @@ public class ListRowPermissionByUserIdResponseUnmarshaller {
 				rulesItem.setScopeType(_ctx.stringValue("ListRowPermissionByUserIdResponse.PageResult.Data["+ i +"].Rules["+ j +"].ScopeType"));
 				rulesItem.setIsDelete(_ctx.booleanValue("ListRowPermissionByUserIdResponse.PageResult.Data["+ i +"].Rules["+ j +"].IsDelete"));
 				rulesItem.setStatus(_ctx.integerValue("ListRowPermissionByUserIdResponse.PageResult.Data["+ i +"].Rules["+ j +"].Status"));
+				rulesItem.setId(_ctx.longValue("ListRowPermissionByUserIdResponse.PageResult.Data["+ i +"].Rules["+ j +"].Id"));
 
 				List<ExpressionsItem> expressions = new ArrayList<ExpressionsItem>();
 				for (int k = 0; k < _ctx.lengthValue("ListRowPermissionByUserIdResponse.PageResult.Data["+ i +"].Rules["+ j +"].Expressions.Length"); k++) {
