@@ -1,3 +1,6 @@
+2026-03-12 Version: 1.0.19
+- Add strean feature view export.
+
 2025-11-17 Version: 1.0.18
 - Add sub-feature entity support.
 

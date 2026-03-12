@@ -34,6 +34,7 @@ public class GetLLMConfigResponseUnmarshaller {
 		getLLMConfigResponse.setGmtModifiedTime(_ctx.stringValue("GetLLMConfigResponse.GmtModifiedTime"));
 		getLLMConfigResponse.setBatchSize(_ctx.integerValue("GetLLMConfigResponse.BatchSize"));
 		getLLMConfigResponse.setWorkspaceId(_ctx.stringValue("GetLLMConfigResponse.WorkspaceId"));
+		getLLMConfigResponse.setEmbeddingDimension(_ctx.integerValue("GetLLMConfigResponse.EmbeddingDimension"));
 	 
 	 	return getLLMConfigResponse;
 	}

@@ -101,6 +101,8 @@ public class ListLLMConfigsResponse extends AcsResponse {
 
 		private String workspaceId;
 
+		private Integer embeddingDimension;
+
 		public String getLLMConfigId() {
 			return this.lLMConfigId;
 		}
@@ -195,6 +197,14 @@ public class ListLLMConfigsResponse extends AcsResponse {
 
 		public void setWorkspaceId(String workspaceId) {
 			this.workspaceId = workspaceId;
+		}
+
+		public Integer getEmbeddingDimension() {
+			return this.embeddingDimension;
+		}
+
+		public void setEmbeddingDimension(Integer embeddingDimension) {
+			this.embeddingDimension = embeddingDimension;
 		}
 	}
 
