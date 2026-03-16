@@ -25,7 +25,11 @@ import com.aliyuncs.eds_user.Endpoint;
 public class ModifyGroupRequest extends RpcAcsRequest<ModifyGroupResponse> {
 	   
 
+	private String businessChannel;
+
 	private String groupId;
+
+	private String description;
 
 	private String newGroupName;
 	public ModifyGroupRequest() {
@@ -37,6 +41,17 @@ public class ModifyGroupRequest extends RpcAcsRequest<ModifyGroupResponse> {
 		} catch (Exception e) {}
 	}
 
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
+		}
+	}
+
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -45,6 +60,17 @@ public class ModifyGroupRequest extends RpcAcsRequest<ModifyGroupResponse> {
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 

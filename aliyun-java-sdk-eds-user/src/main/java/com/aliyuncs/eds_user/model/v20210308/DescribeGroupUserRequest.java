@@ -25,9 +25,17 @@ import com.aliyuncs.eds_user.Endpoint;
 public class DescribeGroupUserRequest extends RpcAcsRequest<DescribeGroupUserResponse> {
 	   
 
+	private String businessChannel;
+
 	private String groupId;
 
 	private String bizType;
+
+	private String filter;
+
+	private String nextToken;
+
+	private Integer maxResults;
 
 	private String solutionId;
 	public DescribeGroupUserRequest() {
@@ -37,6 +45,17 @@ public class DescribeGroupUserRequest extends RpcAcsRequest<DescribeGroupUserRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
+		}
 	}
 
 	public String getGroupId() {
@@ -58,6 +77,39 @@ public class DescribeGroupUserRequest extends RpcAcsRequest<DescribeGroupUserRes
 		this.bizType = bizType;
 		if(bizType != null){
 			putQueryParameter("BizType", bizType);
+		}
+	}
+
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("Filter", filter);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

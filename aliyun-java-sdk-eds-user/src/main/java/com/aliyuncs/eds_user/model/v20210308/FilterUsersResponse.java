@@ -87,11 +87,15 @@ public class FilterUsersResponse extends AcsResponse {
 
 		private Integer passwordExpireRestDays;
 
+		private String userPrincipalName;
+
 		private List<UserSetPropertiesModelsItem> userSetPropertiesModels;
 
 		private List<OrgListItem> orgList;
 
 		private List<IdpInfo> supportLoginIdps;
+
+		private List<GroupsItem> groups;
 
 		private ExternalInfo externalInfo;
 
@@ -215,6 +219,14 @@ public class FilterUsersResponse extends AcsResponse {
 			this.passwordExpireRestDays = passwordExpireRestDays;
 		}
 
+		public String getUserPrincipalName() {
+			return this.userPrincipalName;
+		}
+
+		public void setUserPrincipalName(String userPrincipalName) {
+			this.userPrincipalName = userPrincipalName;
+		}
+
 		public List<UserSetPropertiesModelsItem> getUserSetPropertiesModels() {
 			return this.userSetPropertiesModels;
 		}
@@ -237,6 +249,14 @@ public class FilterUsersResponse extends AcsResponse {
 
 		public void setSupportLoginIdps(List<IdpInfo> supportLoginIdps) {
 			this.supportLoginIdps = supportLoginIdps;
+		}
+
+		public List<GroupsItem> getGroups() {
+			return this.groups;
+		}
+
+		public void setGroups(List<GroupsItem> groups) {
+			this.groups = groups;
 		}
 
 		public ExternalInfo getExternalInfo() {
@@ -386,6 +406,29 @@ public class FilterUsersResponse extends AcsResponse {
 
 			public void setIdpName(String idpName) {
 				this.idpName = idpName;
+			}
+		}
+
+		public static class GroupsItem {
+
+			private String groupId;
+
+			private String groupName;
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public String getGroupName() {
+				return this.groupName;
+			}
+
+			public void setGroupName(String groupName) {
+				this.groupName = groupName;
 			}
 		}
 

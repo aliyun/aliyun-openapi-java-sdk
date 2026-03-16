@@ -26,9 +26,13 @@ import com.aliyuncs.eds_user.Endpoint;
 public class DescribeMfaDevicesRequest extends RpcAcsRequest<DescribeMfaDevicesResponse> {
 	   
 
+	private String businessChannel;
+
 	private List<String> endUserIdss;
 
 	private List<String> serialNumberss;
+
+	private String filter;
 
 	private String adDomain;
 
@@ -42,6 +46,17 @@ public class DescribeMfaDevicesRequest extends RpcAcsRequest<DescribeMfaDevicesR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
+		}
 	}
 
 	public List<String> getEndUserIdss() {
@@ -68,6 +83,17 @@ public class DescribeMfaDevicesRequest extends RpcAcsRequest<DescribeMfaDevicesR
 				putQueryParameter("SerialNumbers." + (i + 1) , serialNumberss.get(i));
 			}
 		}	
+	}
+
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("Filter", filter);
+		}
 	}
 
 	public String getAdDomain() {

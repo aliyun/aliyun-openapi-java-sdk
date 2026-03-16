@@ -27,6 +27,8 @@ public class SetUserPropertyValueRequest extends RpcAcsRequest<SetUserPropertyVa
 
 	private Long propertyValueId;
 
+	private String businessChannel;
+
 	private Long userId;
 
 	private Long propertyId;
@@ -49,6 +51,17 @@ public class SetUserPropertyValueRequest extends RpcAcsRequest<SetUserPropertyVa
 		this.propertyValueId = propertyValueId;
 		if(propertyValueId != null){
 			putBodyParameter("PropertyValueId", propertyValueId.toString());
+		}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putBodyParameter("BusinessChannel", businessChannel);
 		}
 	}
 

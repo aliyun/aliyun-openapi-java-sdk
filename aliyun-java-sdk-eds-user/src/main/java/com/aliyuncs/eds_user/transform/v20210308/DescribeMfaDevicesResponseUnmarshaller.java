@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.eds_user.model.v20210308.DescribeMfaDevicesResponse;
 import com.aliyuncs.eds_user.model.v20210308.DescribeMfaDevicesResponse.Data;
+import com.aliyuncs.eds_user.model.v20210308.DescribeMfaDevicesResponse.Data.AdUser;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,13 @@ public class DescribeMfaDevicesResponseUnmarshaller {
 			data.setSerialNumber(_ctx.stringValue("DescribeMfaDevicesResponse.MfaDevices["+ i +"].SerialNumber"));
 			data.setStatus(_ctx.stringValue("DescribeMfaDevicesResponse.MfaDevices["+ i +"].Status"));
 			data.setDeviceType(_ctx.stringValue("DescribeMfaDevicesResponse.MfaDevices["+ i +"].DeviceType"));
+
+			AdUser adUser = new AdUser();
+			adUser.setEndUser(_ctx.stringValue("DescribeMfaDevicesResponse.MfaDevices["+ i +"].AdUser.EndUser"));
+			adUser.setDisplayName(_ctx.stringValue("DescribeMfaDevicesResponse.MfaDevices["+ i +"].AdUser.DisplayName"));
+			adUser.setDisplayNameNew(_ctx.stringValue("DescribeMfaDevicesResponse.MfaDevices["+ i +"].AdUser.DisplayNameNew"));
+			adUser.setUserPrincipalName(_ctx.stringValue("DescribeMfaDevicesResponse.MfaDevices["+ i +"].AdUser.UserPrincipalName"));
+			data.setAdUser(adUser);
 
 			mfaDevices.add(data);
 		}

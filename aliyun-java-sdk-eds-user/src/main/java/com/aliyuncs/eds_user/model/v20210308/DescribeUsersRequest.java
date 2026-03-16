@@ -29,11 +29,15 @@ import com.aliyuncs.eds_user.Endpoint;
 public class DescribeUsersRequest extends RpcAcsRequest<DescribeUsersResponse> {
 	   
 
+	private String businessChannel;
+
 	private Boolean isQueryAllSubOrgs;
 
 	private List<String> endUserIdss;
 
 	private List<String> excludeEndUserIdss;
+
+	private String filterMap;
 
 	private String nextToken;
 
@@ -55,6 +59,8 @@ public class DescribeUsersRequest extends RpcAcsRequest<DescribeUsersResponse> {
 
 	private Long maxResults;
 
+	private String excludeGroupId;
+
 	@SerializedName("showExtras")
 	private Map<String,Object> showExtras;
 
@@ -66,6 +72,17 @@ public class DescribeUsersRequest extends RpcAcsRequest<DescribeUsersResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
+		}
 	}
 
 	public Boolean getIsQueryAllSubOrgs() {
@@ -103,6 +120,17 @@ public class DescribeUsersRequest extends RpcAcsRequest<DescribeUsersResponse> {
 				putBodyParameter("ExcludeEndUserIds." + (i + 1) , excludeEndUserIdss.get(i));
 			}
 		}	
+	}
+
+	public String getFilterMap() {
+		return this.filterMap;
+	}
+
+	public void setFilterMap(String filterMap) {
+		this.filterMap = filterMap;
+		if(filterMap != null){
+			putQueryParameter("FilterMap", filterMap);
+		}
 	}
 
 	public String getNextToken() {
@@ -167,7 +195,7 @@ public class DescribeUsersRequest extends RpcAcsRequest<DescribeUsersResponse> {
 	public void setFilterWithAssignedResource(Map<String,String> filterWithAssignedResource) {
 		this.filterWithAssignedResource = filterWithAssignedResource;	
 		if (filterWithAssignedResource != null) {
-			putQueryParameter("FilterWithAssignedResource" , new Gson().toJson(filterWithAssignedResource));
+			putBodyParameter("FilterWithAssignedResource" , new Gson().toJson(filterWithAssignedResource));
 		}	
 	}
 
@@ -204,6 +232,17 @@ public class DescribeUsersRequest extends RpcAcsRequest<DescribeUsersResponse> {
 		}
 	}
 
+	public String getExcludeGroupId() {
+		return this.excludeGroupId;
+	}
+
+	public void setExcludeGroupId(String excludeGroupId) {
+		this.excludeGroupId = excludeGroupId;
+		if(excludeGroupId != null){
+			putBodyParameter("ExcludeGroupId", excludeGroupId);
+		}
+	}
+
 	public Map<String,Object> getShowExtras() {
 		return this.showExtras;
 	}
@@ -222,7 +261,7 @@ public class DescribeUsersRequest extends RpcAcsRequest<DescribeUsersResponse> {
 	public void setStatus(Integer status) {
 		this.status = status;
 		if(status != null){
-			putQueryParameter("Status", status.toString());
+			putBodyParameter("Status", status.toString());
 		}
 	}
 

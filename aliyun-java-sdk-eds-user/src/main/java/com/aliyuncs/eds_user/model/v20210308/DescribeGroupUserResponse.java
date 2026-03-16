@@ -27,6 +27,8 @@ public class DescribeGroupUserResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String nextToken;
+
 	private List<Group> groups;
 
 	private List<User> users;
@@ -37,6 +39,14 @@ public class DescribeGroupUserResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<Group> getGroups() {
@@ -108,6 +118,8 @@ public class DescribeGroupUserResponse extends AcsResponse {
 
 		private String gmtCreated;
 
+		private String remark;
+
 		public String getEndUserId() {
 			return this.endUserId;
 		}
@@ -178,6 +190,14 @@ public class DescribeGroupUserResponse extends AcsResponse {
 
 		public void setGmtCreated(String gmtCreated) {
 			this.gmtCreated = gmtCreated;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 	}
 

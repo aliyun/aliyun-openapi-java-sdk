@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse;
 import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse.Data;
 import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse.Data.ExternalInfo;
+import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse.Data.GroupsItem;
 import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse.Data.IdpInfo;
 import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse.Data.OrgListItem;
 import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse.Data.UserSetPropertiesModelsItem;
@@ -52,6 +53,7 @@ public class FilterUsersResponseUnmarshaller {
 			data.setAutoLockTime(_ctx.stringValue("FilterUsersResponse.Users["+ i +"].AutoLockTime"));
 			data.setPasswordExpireDays(_ctx.integerValue("FilterUsersResponse.Users["+ i +"].PasswordExpireDays"));
 			data.setPasswordExpireRestDays(_ctx.integerValue("FilterUsersResponse.Users["+ i +"].PasswordExpireRestDays"));
+			data.setUserPrincipalName(_ctx.stringValue("FilterUsersResponse.Users["+ i +"].UserPrincipalName"));
 
 			ExternalInfo externalInfo = new ExternalInfo();
 			externalInfo.setExternalName(_ctx.stringValue("FilterUsersResponse.Users["+ i +"].ExternalInfo.ExternalName"));
@@ -101,6 +103,16 @@ public class FilterUsersResponseUnmarshaller {
 				supportLoginIdps.add(idpInfo);
 			}
 			data.setSupportLoginIdps(supportLoginIdps);
+
+			List<GroupsItem> groups = new ArrayList<GroupsItem>();
+			for (int j = 0; j < _ctx.lengthValue("FilterUsersResponse.Users["+ i +"].Groups.Length"); j++) {
+				GroupsItem groupsItem = new GroupsItem();
+				groupsItem.setGroupId(_ctx.stringValue("FilterUsersResponse.Users["+ i +"].Groups["+ j +"].GroupId"));
+				groupsItem.setGroupName(_ctx.stringValue("FilterUsersResponse.Users["+ i +"].Groups["+ j +"].GroupName"));
+
+				groups.add(groupsItem);
+			}
+			data.setGroups(groups);
 
 			users.add(data);
 		}

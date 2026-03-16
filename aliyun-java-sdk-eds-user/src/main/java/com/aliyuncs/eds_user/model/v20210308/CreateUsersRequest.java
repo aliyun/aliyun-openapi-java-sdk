@@ -26,6 +26,8 @@ import com.aliyuncs.eds_user.Endpoint;
 public class CreateUsersRequest extends RpcAcsRequest<CreateUsersResponse> {
 	   
 
+	private String businessChannel;
+
 	private String autoLockTime;
 
 	private Boolean isLocalAdmin;
@@ -42,6 +44,17 @@ public class CreateUsersRequest extends RpcAcsRequest<CreateUsersResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
+		}
 	}
 
 	public String getAutoLockTime() {
@@ -74,6 +87,11 @@ public class CreateUsersRequest extends RpcAcsRequest<CreateUsersResponse> {
 		this.userss = userss;	
 		if (userss != null) {
 			for (int depth1 = 0; depth1 < userss.size(); depth1++) {
+				if (userss.get(depth1).getGroupIdLists() != null) {
+					for (int i = 0; i < userss.get(depth1).getGroupIdLists().size(); i++) {
+						putBodyParameter("Users." + (depth1 + 1) + ".GroupIdList." + (i + 1) , userss.get(depth1).getGroupIdLists().get(i));
+					}
+				}
 				putBodyParameter("Users." + (depth1 + 1) + ".Password" , userss.get(depth1).getPassword());
 				putBodyParameter("Users." + (depth1 + 1) + ".RealNickName" , userss.get(depth1).getRealNickName());
 				putBodyParameter("Users." + (depth1 + 1) + ".Phone" , userss.get(depth1).getPhone());
@@ -110,6 +128,8 @@ public class CreateUsersRequest extends RpcAcsRequest<CreateUsersResponse> {
 
 	public static class Users {
 
+		private List<String> groupIdLists;
+
 		private String password;
 
 		private String realNickName;
@@ -125,6 +145,14 @@ public class CreateUsersRequest extends RpcAcsRequest<CreateUsersResponse> {
 		private String email;
 
 		private String orgId;
+
+		public List<String> getGroupIdLists() {
+			return this.groupIdLists;
+		}
+
+		public void setGroupIdLists(List<String> groupIdLists) {
+			this.groupIdLists = groupIdLists;
+		}
 
 		public String getPassword() {
 			return this.password;

@@ -25,6 +25,8 @@ import com.aliyuncs.eds_user.Endpoint;
 public class DescribeOrgsRequest extends RpcAcsRequest<DescribeOrgsResponse> {
 	   
 
+	private String businessChannel;
+
 	private String orgName;
 
 	private String nextToken;
@@ -32,6 +34,8 @@ public class DescribeOrgsRequest extends RpcAcsRequest<DescribeOrgsResponse> {
 	private String parentOrgId;
 
 	private Long maxResults;
+
+	private String showExtras;
 	public DescribeOrgsRequest() {
 		super("eds-user", "2021-03-08", "DescribeOrgs", "eds-user");
 		setMethod(MethodType.POST);
@@ -39,6 +43,17 @@ public class DescribeOrgsRequest extends RpcAcsRequest<DescribeOrgsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
+		}
 	}
 
 	public String getOrgName() {
@@ -82,6 +97,17 @@ public class DescribeOrgsRequest extends RpcAcsRequest<DescribeOrgsResponse> {
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getShowExtras() {
+		return this.showExtras;
+	}
+
+	public void setShowExtras(String showExtras) {
+		this.showExtras = showExtras;
+		if(showExtras != null){
+			putQueryParameter("ShowExtras", showExtras);
 		}
 	}
 

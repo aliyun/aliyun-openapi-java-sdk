@@ -35,6 +35,7 @@ public class DescribeOrgsResponseUnmarshaller {
 			data.setOrgName(_ctx.stringValue("DescribeOrgsResponse.Orgs["+ i +"].OrgName"));
 			data.setOrgId(_ctx.stringValue("DescribeOrgsResponse.Orgs["+ i +"].OrgId"));
 			data.setParentOrgId(_ctx.stringValue("DescribeOrgsResponse.Orgs["+ i +"].ParentOrgId"));
+			data.setOrgNamePath(_ctx.stringValue("DescribeOrgsResponse.Orgs["+ i +"].OrgNamePath"));
 
 			orgs.add(data);
 		}

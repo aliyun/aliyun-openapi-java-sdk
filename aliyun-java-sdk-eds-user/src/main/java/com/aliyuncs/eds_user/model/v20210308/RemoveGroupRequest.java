@@ -15,6 +15,7 @@
 package com.aliyuncs.eds_user.model.v20210308;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.eds_user.Endpoint;
 
@@ -25,7 +26,11 @@ import com.aliyuncs.eds_user.Endpoint;
 public class RemoveGroupRequest extends RpcAcsRequest<RemoveGroupResponse> {
 	   
 
+	private String businessChannel;
+
 	private String groupId;
+
+	private List<String> groupIds;
 	public RemoveGroupRequest() {
 		super("eds-user", "2021-03-08", "RemoveGroup", "eds-user");
 		setMethod(MethodType.POST);
@@ -33,6 +38,17 @@ public class RemoveGroupRequest extends RpcAcsRequest<RemoveGroupResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
+		}
 	}
 
 	public String getGroupId() {
@@ -44,6 +60,19 @@ public class RemoveGroupRequest extends RpcAcsRequest<RemoveGroupResponse> {
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
 		}
+	}
+
+	public List<String> getGroupIds() {
+		return this.groupIds;
+	}
+
+	public void setGroupIds(List<String> groupIds) {
+		this.groupIds = groupIds;	
+		if (groupIds != null) {
+			for (int depth1 = 0; depth1 < groupIds.size(); depth1++) {
+				putQueryParameter("GroupIds." + (depth1 + 1) , groupIds.get(depth1));
+			}
+		}	
 	}
 
 	@Override

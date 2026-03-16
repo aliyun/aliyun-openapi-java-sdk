@@ -25,6 +25,8 @@ import com.aliyuncs.eds_user.Endpoint;
 public class LockMfaDeviceRequest extends RpcAcsRequest<LockMfaDeviceResponse> {
 	   
 
+	private String businessChannel;
+
 	private String serialNumber;
 
 	private String adDomain;
@@ -35,6 +37,17 @@ public class LockMfaDeviceRequest extends RpcAcsRequest<LockMfaDeviceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
+		}
 	}
 
 	public String getSerialNumber() {

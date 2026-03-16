@@ -27,6 +27,8 @@ public class CreateResourceGroupRequest extends RpcAcsRequest<CreateResourceGrou
 
 	private String resourceGroupName;
 
+	private String businessChannel;
+
 	private String platform;
 
 	private Long isResourceGroupWithOfficeSite;
@@ -47,6 +49,17 @@ public class CreateResourceGroupRequest extends RpcAcsRequest<CreateResourceGrou
 		this.resourceGroupName = resourceGroupName;
 		if(resourceGroupName != null){
 			putQueryParameter("ResourceGroupName", resourceGroupName);
+		}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
 		}
 	}
 

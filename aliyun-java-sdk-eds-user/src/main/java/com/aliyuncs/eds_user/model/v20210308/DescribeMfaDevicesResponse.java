@@ -75,6 +75,8 @@ public class DescribeMfaDevicesResponse extends AcsResponse {
 
 		private String deviceType;
 
+		private AdUser adUser;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -145,6 +147,57 @@ public class DescribeMfaDevicesResponse extends AcsResponse {
 
 		public void setDeviceType(String deviceType) {
 			this.deviceType = deviceType;
+		}
+
+		public AdUser getAdUser() {
+			return this.adUser;
+		}
+
+		public void setAdUser(AdUser adUser) {
+			this.adUser = adUser;
+		}
+
+		public static class AdUser {
+
+			private String endUser;
+
+			private String displayName;
+
+			private String displayNameNew;
+
+			private String userPrincipalName;
+
+			public String getEndUser() {
+				return this.endUser;
+			}
+
+			public void setEndUser(String endUser) {
+				this.endUser = endUser;
+			}
+
+			public String getDisplayName() {
+				return this.displayName;
+			}
+
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
+			}
+
+			public String getDisplayNameNew() {
+				return this.displayNameNew;
+			}
+
+			public void setDisplayNameNew(String displayNameNew) {
+				this.displayNameNew = displayNameNew;
+			}
+
+			public String getUserPrincipalName() {
+				return this.userPrincipalName;
+			}
+
+			public void setUserPrincipalName(String userPrincipalName) {
+				this.userPrincipalName = userPrincipalName;
+			}
 		}
 	}
 

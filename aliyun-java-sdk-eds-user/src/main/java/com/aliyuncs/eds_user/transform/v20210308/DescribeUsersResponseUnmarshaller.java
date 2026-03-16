@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse;
 import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse.Data;
+import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse.Data.DomainInfo;
 import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse.Data.Extras;
 import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse.Data.Group;
 import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse.Data.Org;
@@ -53,10 +54,20 @@ public class DescribeUsersResponseUnmarshaller {
 			data.setRealNickName(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].RealNickName"));
 			data.setJobNumber(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].JobNumber"));
 			data.setExternalName(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].ExternalName"));
+			data.setUserPrincipalName(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].UserPrincipalName"));
+			data.setEnableAdminAccess(_ctx.booleanValue("DescribeUsersResponse.Users["+ i +"].EnableAdminAccess"));
+			data.setPasswordExpireDays(_ctx.integerValue("DescribeUsersResponse.Users["+ i +"].PasswordExpireDays"));
+			data.setPasswordExpireRestDays(_ctx.integerValue("DescribeUsersResponse.Users["+ i +"].PasswordExpireRestDays"));
 
 			Extras extras = new Extras();
 			extras.setAssignedResourceCount(_ctx.mapValue("DescribeUsersResponse.Users["+ i +"].Extras.AssignedResourceCount"));
 			data.setExtras(extras);
+
+			DomainInfo domainInfo = new DomainInfo();
+			domainInfo.setDomainType(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].DomainInfo.DomainType"));
+			domainInfo.setDomainName(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].DomainInfo.DomainName"));
+			domainInfo.setUserPrincipalName(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].DomainInfo.UserPrincipalName"));
+			data.setDomainInfo(domainInfo);
 
 			List<Group> groups = new ArrayList<Group>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeUsersResponse.Users["+ i +"].Groups.Length"); j++) {

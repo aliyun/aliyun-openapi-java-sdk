@@ -27,6 +27,8 @@ public class CheckUsedPropertyValueRequest extends RpcAcsRequest<CheckUsedProper
 
 	private Long propertyValueId;
 
+	private String businessChannel;
+
 	private Long propertyId;
 	public CheckUsedPropertyValueRequest() {
 		super("eds-user", "2021-03-08", "CheckUsedPropertyValue", "eds-user");
@@ -45,6 +47,17 @@ public class CheckUsedPropertyValueRequest extends RpcAcsRequest<CheckUsedProper
 		this.propertyValueId = propertyValueId;
 		if(propertyValueId != null){
 			putQueryParameter("PropertyValueId", propertyValueId.toString());
+		}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
 		}
 	}
 

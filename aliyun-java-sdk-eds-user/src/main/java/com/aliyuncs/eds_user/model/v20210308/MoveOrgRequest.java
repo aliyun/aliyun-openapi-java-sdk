@@ -27,6 +27,8 @@ public class MoveOrgRequest extends RpcAcsRequest<MoveOrgResponse> {
 
 	private String newParentOrgId;
 
+	private String businessChannel;
+
 	private String orgId;
 	public MoveOrgRequest() {
 		super("eds-user", "2021-03-08", "MoveOrg", "eds-user");
@@ -45,6 +47,17 @@ public class MoveOrgRequest extends RpcAcsRequest<MoveOrgResponse> {
 		this.newParentOrgId = newParentOrgId;
 		if(newParentOrgId != null){
 			putBodyParameter("NewParentOrgId", newParentOrgId);
+		}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putBodyParameter("BusinessChannel", businessChannel);
 		}
 	}
 

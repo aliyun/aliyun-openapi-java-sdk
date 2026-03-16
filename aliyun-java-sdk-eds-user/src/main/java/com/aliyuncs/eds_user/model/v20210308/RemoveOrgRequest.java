@@ -25,6 +25,8 @@ import com.aliyuncs.eds_user.Endpoint;
 public class RemoveOrgRequest extends RpcAcsRequest<RemoveOrgResponse> {
 	   
 
+	private String businessChannel;
+
 	private String orgId;
 	public RemoveOrgRequest() {
 		super("eds-user", "2021-03-08", "RemoveOrg", "eds-user");
@@ -33,6 +35,17 @@ public class RemoveOrgRequest extends RpcAcsRequest<RemoveOrgResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putBodyParameter("BusinessChannel", businessChannel);
+		}
 	}
 
 	public String getOrgId() {

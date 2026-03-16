@@ -28,6 +28,7 @@ public class DescribeGroupUserResponseUnmarshaller {
 	public static DescribeGroupUserResponse unmarshall(DescribeGroupUserResponse describeGroupUserResponse, UnmarshallerContext _ctx) {
 		
 		describeGroupUserResponse.setRequestId(_ctx.stringValue("DescribeGroupUserResponse.RequestId"));
+		describeGroupUserResponse.setNextToken(_ctx.stringValue("DescribeGroupUserResponse.NextToken"));
 
 		List<Group> groups = new ArrayList<Group>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGroupUserResponse.Groups.Length"); i++) {
@@ -52,6 +53,7 @@ public class DescribeGroupUserResponseUnmarshaller {
 			user.setJobNumber(_ctx.stringValue("DescribeGroupUserResponse.Users["+ i +"].JobNumber"));
 			user.setGmtJoinGroup(_ctx.stringValue("DescribeGroupUserResponse.Users["+ i +"].GmtJoinGroup"));
 			user.setGmtCreated(_ctx.stringValue("DescribeGroupUserResponse.Users["+ i +"].GmtCreated"));
+			user.setRemark(_ctx.stringValue("DescribeGroupUserResponse.Users["+ i +"].Remark"));
 
 			users.add(user);
 		}

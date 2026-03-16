@@ -90,6 +90,14 @@ public class DescribeUsersResponse extends AcsResponse {
 
 		private String externalName;
 
+		private String userPrincipalName;
+
+		private Boolean enableAdminAccess;
+
+		private Integer passwordExpireDays;
+
+		private Integer passwordExpireRestDays;
+
 		private List<Group> groups;
 
 		private List<Org> orgs;
@@ -97,6 +105,8 @@ public class DescribeUsersResponse extends AcsResponse {
 		private List<Property> properties;
 
 		private Extras extras;
+
+		private DomainInfo domainInfo;
 
 		public Long getId() {
 			return this.id;
@@ -226,6 +236,38 @@ public class DescribeUsersResponse extends AcsResponse {
 			this.externalName = externalName;
 		}
 
+		public String getUserPrincipalName() {
+			return this.userPrincipalName;
+		}
+
+		public void setUserPrincipalName(String userPrincipalName) {
+			this.userPrincipalName = userPrincipalName;
+		}
+
+		public Boolean getEnableAdminAccess() {
+			return this.enableAdminAccess;
+		}
+
+		public void setEnableAdminAccess(Boolean enableAdminAccess) {
+			this.enableAdminAccess = enableAdminAccess;
+		}
+
+		public Integer getPasswordExpireDays() {
+			return this.passwordExpireDays;
+		}
+
+		public void setPasswordExpireDays(Integer passwordExpireDays) {
+			this.passwordExpireDays = passwordExpireDays;
+		}
+
+		public Integer getPasswordExpireRestDays() {
+			return this.passwordExpireRestDays;
+		}
+
+		public void setPasswordExpireRestDays(Integer passwordExpireRestDays) {
+			this.passwordExpireRestDays = passwordExpireRestDays;
+		}
+
 		public List<Group> getGroups() {
 			return this.groups;
 		}
@@ -256,6 +298,14 @@ public class DescribeUsersResponse extends AcsResponse {
 
 		public void setExtras(Extras extras) {
 			this.extras = extras;
+		}
+
+		public DomainInfo getDomainInfo() {
+			return this.domainInfo;
+		}
+
+		public void setDomainInfo(DomainInfo domainInfo) {
+			this.domainInfo = domainInfo;
 		}
 
 		public static class Group {
@@ -347,6 +397,39 @@ public class DescribeUsersResponse extends AcsResponse {
 
 			public void setAssignedResourceCount(Map<Object,Object> assignedResourceCount) {
 				this.assignedResourceCount = assignedResourceCount;
+			}
+		}
+
+		public static class DomainInfo {
+
+			private String domainType;
+
+			private String domainName;
+
+			private String userPrincipalName;
+
+			public String getDomainType() {
+				return this.domainType;
+			}
+
+			public void setDomainType(String domainType) {
+				this.domainType = domainType;
+			}
+
+			public String getDomainName() {
+				return this.domainName;
+			}
+
+			public void setDomainName(String domainName) {
+				this.domainName = domainName;
+			}
+
+			public String getUserPrincipalName() {
+				return this.userPrincipalName;
+			}
+
+			public void setUserPrincipalName(String userPrincipalName) {
+				this.userPrincipalName = userPrincipalName;
 			}
 		}
 	}

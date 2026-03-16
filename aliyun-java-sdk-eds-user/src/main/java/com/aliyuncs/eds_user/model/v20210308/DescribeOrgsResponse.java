@@ -63,6 +63,8 @@ public class DescribeOrgsResponse extends AcsResponse {
 
 		private String parentOrgId;
 
+		private String orgNamePath;
+
 		public String getOrgName() {
 			return this.orgName;
 		}
@@ -85,6 +87,14 @@ public class DescribeOrgsResponse extends AcsResponse {
 
 		public void setParentOrgId(String parentOrgId) {
 			this.parentOrgId = parentOrgId;
+		}
+
+		public String getOrgNamePath() {
+			return this.orgNamePath;
+		}
+
+		public void setOrgNamePath(String orgNamePath) {
+			this.orgNamePath = orgNamePath;
 		}
 	}
 

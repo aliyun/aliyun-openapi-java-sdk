@@ -26,6 +26,8 @@ import com.aliyuncs.eds_user.Endpoint;
 public class DeleteResourceGroupRequest extends RpcAcsRequest<DeleteResourceGroupResponse> {
 	   
 
+	private String businessChannel;
+
 	private String resourceGroupId;
 
 	private List<String> resourceGroupIds;
@@ -36,6 +38,17 @@ public class DeleteResourceGroupRequest extends RpcAcsRequest<DeleteResourceGrou
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
+		}
 	}
 
 	public String getResourceGroupId() {

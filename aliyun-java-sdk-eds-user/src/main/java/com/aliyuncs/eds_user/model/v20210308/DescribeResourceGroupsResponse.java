@@ -67,6 +67,8 @@ public class DescribeResourceGroupsResponse extends AcsResponse {
 
 		private String createTime;
 
+		private String aliyunResourceGroupId;
+
 		private List<Policy> policies;
 
 		private List<Timer> timers;
@@ -111,6 +113,14 @@ public class DescribeResourceGroupsResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getAliyunResourceGroupId() {
+			return this.aliyunResourceGroupId;
+		}
+
+		public void setAliyunResourceGroupId(String aliyunResourceGroupId) {
+			this.aliyunResourceGroupId = aliyunResourceGroupId;
 		}
 
 		public List<Policy> getPolicies() {

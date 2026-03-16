@@ -28,6 +28,10 @@ public class DescribeResourceGroupsRequest extends RpcAcsRequest<DescribeResourc
 
 	private String resourceGroupName;
 
+	private String businessChannel;
+
+	private List<String> aliyunResourceGroupIds;
+
 	private Long needContainResourceGroupWithOfficeSite;
 
 	private Integer pageNumber;
@@ -55,6 +59,30 @@ public class DescribeResourceGroupsRequest extends RpcAcsRequest<DescribeResourc
 		if(resourceGroupName != null){
 			putQueryParameter("ResourceGroupName", resourceGroupName);
 		}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
+		}
+	}
+
+	public List<String> getAliyunResourceGroupIds() {
+		return this.aliyunResourceGroupIds;
+	}
+
+	public void setAliyunResourceGroupIds(List<String> aliyunResourceGroupIds) {
+		this.aliyunResourceGroupIds = aliyunResourceGroupIds;	
+		if (aliyunResourceGroupIds != null) {
+			for (int depth1 = 0; depth1 < aliyunResourceGroupIds.size(); depth1++) {
+				putQueryParameter("AliyunResourceGroupIds." + (depth1 + 1) , aliyunResourceGroupIds.get(depth1));
+			}
+		}	
 	}
 
 	public Long getNeedContainResourceGroupWithOfficeSite() {

@@ -16,6 +16,7 @@ package com.aliyuncs.eds_user.model.v20210308;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import java.util.Map;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
@@ -28,12 +29,17 @@ import com.aliyuncs.eds_user.Endpoint;
 public class FilterUsersRequest extends RpcAcsRequest<FilterUsersResponse> {
 	   
 
+	private String businessChannel;
+
 	private Boolean isQueryAllSubOrgs;
 
 	@SerializedName("orderParam")
 	private OrderParam orderParam;
 
 	private List<String> excludeEndUserIdss;
+
+	@SerializedName("filterMap")
+	private Map<String,String> filterMap;
 
 	private String nextToken;
 
@@ -46,6 +52,8 @@ public class FilterUsersRequest extends RpcAcsRequest<FilterUsersResponse> {
 	private Boolean includeOrgInfo;
 
 	private Boolean includeDesktopGroupCount;
+
+	private List<String> includeEndUserIdss;
 
 	private String orgId;
 
@@ -65,6 +73,17 @@ public class FilterUsersRequest extends RpcAcsRequest<FilterUsersResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
+		}
 	}
 
 	public Boolean getIsQueryAllSubOrgs() {
@@ -99,6 +118,17 @@ public class FilterUsersRequest extends RpcAcsRequest<FilterUsersResponse> {
 			for (int i = 0; i < excludeEndUserIdss.size(); i++) {
 				putQueryParameter("ExcludeEndUserIds." + (i + 1) , excludeEndUserIdss.get(i));
 			}
+		}	
+	}
+
+	public Map<String,String> getFilterMap() {
+		return this.filterMap;
+	}
+
+	public void setFilterMap(Map<String,String> filterMap) {
+		this.filterMap = filterMap;	
+		if (filterMap != null) {
+			putQueryParameter("FilterMap" , new Gson().toJson(filterMap));
 		}	
 	}
 
@@ -169,6 +199,19 @@ public class FilterUsersRequest extends RpcAcsRequest<FilterUsersResponse> {
 		if(includeDesktopGroupCount != null){
 			putQueryParameter("IncludeDesktopGroupCount", includeDesktopGroupCount.toString());
 		}
+	}
+
+	public List<String> getIncludeEndUserIdss() {
+		return this.includeEndUserIdss;
+	}
+
+	public void setIncludeEndUserIdss(List<String> includeEndUserIdss) {
+		this.includeEndUserIdss = includeEndUserIdss;	
+		if (includeEndUserIdss != null) {
+			for (int i = 0; i < includeEndUserIdss.size(); i++) {
+				putQueryParameter("IncludeEndUserIds." + (i + 1) , includeEndUserIdss.get(i));
+			}
+		}	
 	}
 
 	public String getOrgId() {

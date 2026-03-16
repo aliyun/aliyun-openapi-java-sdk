@@ -40,6 +40,7 @@ public class DescribeResourceGroupsResponseUnmarshaller {
 			resourceGroupItem.setResourceCount(_ctx.stringValue("DescribeResourceGroupsResponse.ResourceGroup["+ i +"].ResourceCount"));
 			resourceGroupItem.setAuthCount(_ctx.stringValue("DescribeResourceGroupsResponse.ResourceGroup["+ i +"].AuthCount"));
 			resourceGroupItem.setCreateTime(_ctx.stringValue("DescribeResourceGroupsResponse.ResourceGroup["+ i +"].CreateTime"));
+			resourceGroupItem.setAliyunResourceGroupId(_ctx.stringValue("DescribeResourceGroupsResponse.ResourceGroup["+ i +"].AliyunResourceGroupId"));
 
 			List<Policy> policies = new ArrayList<Policy>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeResourceGroupsResponse.ResourceGroup["+ i +"].Policies.Length"); j++) {

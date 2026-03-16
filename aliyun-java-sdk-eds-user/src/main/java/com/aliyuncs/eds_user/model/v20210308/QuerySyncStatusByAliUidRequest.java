@@ -24,6 +24,8 @@ import com.aliyuncs.eds_user.Endpoint;
  */
 public class QuerySyncStatusByAliUidRequest extends RpcAcsRequest<QuerySyncStatusByAliUidResponse> {
 	   
+
+	private String businessChannel;
 	public QuerySyncStatusByAliUidRequest() {
 		super("eds-user", "2021-03-08", "QuerySyncStatusByAliUid", "eds-user");
 		setMethod(MethodType.POST);
@@ -31,6 +33,17 @@ public class QuerySyncStatusByAliUidRequest extends RpcAcsRequest<QuerySyncStatu
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBusinessChannel() {
+		return this.businessChannel;
+	}
+
+	public void setBusinessChannel(String businessChannel) {
+		this.businessChannel = businessChannel;
+		if(businessChannel != null){
+			putQueryParameter("BusinessChannel", businessChannel);
+		}
 	}
 
 	@Override
