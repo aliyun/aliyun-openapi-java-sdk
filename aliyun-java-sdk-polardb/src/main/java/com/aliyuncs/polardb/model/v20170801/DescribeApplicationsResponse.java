@@ -107,6 +107,8 @@ public class DescribeApplicationsResponse extends AcsResponse {
 
 		private List<Endpoint> endpoints;
 
+		private List<Tag> tags;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -227,6 +229,14 @@ public class DescribeApplicationsResponse extends AcsResponse {
 			this.endpoints = endpoints;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public static class Endpoint {
 
 			private String iP;
@@ -257,6 +267,29 @@ public class DescribeApplicationsResponse extends AcsResponse {
 
 			public void setNetType(String netType) {
 				this.netType = netType;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

@@ -207,42 +207,50 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public static class AdvancedDataPolicy {
 
-		private Boolean onlyPreserveOneEachHour;
+		private String policyId;
+
+		private String retentionType;
 
 		private String retentionValue;
 
-		private String bakType;
+		private String filterType;
 
 		private String filterKey;
 
 		private String filterValue;
 
-		private String destType;
-
-		private String filterType;
+		private String srcType;
 
 		private String srcRegion;
 
-		private Boolean autoCreated;
-
-		private String srcType;
-
-		private Boolean onlyPreserveOneEachDay;
-
-		private String dumpAction;
-
-		private String policyId;
+		private String destType;
 
 		private String destRegion;
 
-		private String retentionType;
+		private String dumpAction;
 
-		public Boolean getOnlyPreserveOneEachHour() {
-			return this.onlyPreserveOneEachHour;
+		private Boolean autoCreated;
+
+		private Boolean onlyPreserveOneEachHour;
+
+		private Boolean onlyPreserveOneEachDay;
+
+		private String bakType;
+
+		public String getPolicyId() {
+			return this.policyId;
 		}
 
-		public void setOnlyPreserveOneEachHour(Boolean onlyPreserveOneEachHour) {
-			this.onlyPreserveOneEachHour = onlyPreserveOneEachHour;
+		public void setPolicyId(String policyId) {
+			this.policyId = policyId;
+		}
+
+		public String getRetentionType() {
+			return this.retentionType;
+		}
+
+		public void setRetentionType(String retentionType) {
+			this.retentionType = retentionType;
 		}
 
 		public String getRetentionValue() {
@@ -253,12 +261,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 			this.retentionValue = retentionValue;
 		}
 
-		public String getBakType() {
-			return this.bakType;
+		public String getFilterType() {
+			return this.filterType;
 		}
 
-		public void setBakType(String bakType) {
-			this.bakType = bakType;
+		public void setFilterType(String filterType) {
+			this.filterType = filterType;
 		}
 
 		public String getFilterKey() {
@@ -277,20 +285,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 			this.filterValue = filterValue;
 		}
 
-		public String getDestType() {
-			return this.destType;
+		public String getSrcType() {
+			return this.srcType;
 		}
 
-		public void setDestType(String destType) {
-			this.destType = destType;
-		}
-
-		public String getFilterType() {
-			return this.filterType;
-		}
-
-		public void setFilterType(String filterType) {
-			this.filterType = filterType;
+		public void setSrcType(String srcType) {
+			this.srcType = srcType;
 		}
 
 		public String getSrcRegion() {
@@ -301,44 +301,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 			this.srcRegion = srcRegion;
 		}
 
-		public Boolean getAutoCreated() {
-			return this.autoCreated;
+		public String getDestType() {
+			return this.destType;
 		}
 
-		public void setAutoCreated(Boolean autoCreated) {
-			this.autoCreated = autoCreated;
-		}
-
-		public String getSrcType() {
-			return this.srcType;
-		}
-
-		public void setSrcType(String srcType) {
-			this.srcType = srcType;
-		}
-
-		public Boolean getOnlyPreserveOneEachDay() {
-			return this.onlyPreserveOneEachDay;
-		}
-
-		public void setOnlyPreserveOneEachDay(Boolean onlyPreserveOneEachDay) {
-			this.onlyPreserveOneEachDay = onlyPreserveOneEachDay;
-		}
-
-		public String getDumpAction() {
-			return this.dumpAction;
-		}
-
-		public void setDumpAction(String dumpAction) {
-			this.dumpAction = dumpAction;
-		}
-
-		public String getPolicyId() {
-			return this.policyId;
-		}
-
-		public void setPolicyId(String policyId) {
-			this.policyId = policyId;
+		public void setDestType(String destType) {
+			this.destType = destType;
 		}
 
 		public String getDestRegion() {
@@ -349,12 +317,44 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 			this.destRegion = destRegion;
 		}
 
-		public String getRetentionType() {
-			return this.retentionType;
+		public String getDumpAction() {
+			return this.dumpAction;
 		}
 
-		public void setRetentionType(String retentionType) {
-			this.retentionType = retentionType;
+		public void setDumpAction(String dumpAction) {
+			this.dumpAction = dumpAction;
+		}
+
+		public Boolean getAutoCreated() {
+			return this.autoCreated;
+		}
+
+		public void setAutoCreated(Boolean autoCreated) {
+			this.autoCreated = autoCreated;
+		}
+
+		public Boolean getOnlyPreserveOneEachHour() {
+			return this.onlyPreserveOneEachHour;
+		}
+
+		public void setOnlyPreserveOneEachHour(Boolean onlyPreserveOneEachHour) {
+			this.onlyPreserveOneEachHour = onlyPreserveOneEachHour;
+		}
+
+		public Boolean getOnlyPreserveOneEachDay() {
+			return this.onlyPreserveOneEachDay;
+		}
+
+		public void setOnlyPreserveOneEachDay(Boolean onlyPreserveOneEachDay) {
+			this.onlyPreserveOneEachDay = onlyPreserveOneEachDay;
+		}
+
+		public String getBakType() {
+			return this.bakType;
+		}
+
+		public void setBakType(String bakType) {
+			this.bakType = bakType;
 		}
 	}
 

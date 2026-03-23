@@ -47,6 +47,7 @@ public class DescribeDBClusterEndpointsResponseUnmarshaller {
 			dBEndpoint.setConsistLevelControlVersion(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].ConsistLevelControlVersion"));
 			dBEndpoint.setDBEndpointCreateTime(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].DBEndpointCreateTime"));
 			dBEndpoint.setDBEndpointStatus(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].DBEndpointStatus"));
+			dBEndpoint.setServiceName(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].ServiceName"));
 
 			List<Address> addressItems = new ArrayList<Address>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems.Length"); j++) {

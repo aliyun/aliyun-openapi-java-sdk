@@ -31,6 +31,8 @@ public class ModifyDBClusterAndNodesParametersRequest extends RpcAcsRequest<Modi
 
 	private String dBNodeIds;
 
+	private Boolean clearBinlog;
+
 	private String parameterGroupId;
 
 	private String resourceOwnerAccount;
@@ -87,6 +89,17 @@ public class ModifyDBClusterAndNodesParametersRequest extends RpcAcsRequest<Modi
 		this.dBNodeIds = dBNodeIds;
 		if(dBNodeIds != null){
 			putQueryParameter("DBNodeIds", dBNodeIds);
+		}
+	}
+
+	public Boolean getClearBinlog() {
+		return this.clearBinlog;
+	}
+
+	public void setClearBinlog(Boolean clearBinlog) {
+		this.clearBinlog = clearBinlog;
+		if(clearBinlog != null){
+			putQueryParameter("ClearBinlog", clearBinlog.toString());
 		}
 	}
 

@@ -27,6 +27,8 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 
 	private Long resourceOwnerId;
 
+	private String cloudProvider;
+
 	private String backupRetentionPolicyOnClusterDeletion;
 
 	private String resourceOwnerAccount;
@@ -53,6 +55,17 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCloudProvider() {
+		return this.cloudProvider;
+	}
+
+	public void setCloudProvider(String cloudProvider) {
+		this.cloudProvider = cloudProvider;
+		if(cloudProvider != null){
+			putQueryParameter("CloudProvider", cloudProvider);
 		}
 	}
 

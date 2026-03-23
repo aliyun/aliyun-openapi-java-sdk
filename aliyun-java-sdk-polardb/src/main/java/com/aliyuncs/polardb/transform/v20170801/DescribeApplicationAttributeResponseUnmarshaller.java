@@ -23,6 +23,7 @@ import com.aliyuncs.polardb.model.v20170801.DescribeApplicationAttributeResponse
 import com.aliyuncs.polardb.model.v20170801.DescribeApplicationAttributeResponse.Component.SecurityIPArray4;
 import com.aliyuncs.polardb.model.v20170801.DescribeApplicationAttributeResponse.Component.Topology;
 import com.aliyuncs.polardb.model.v20170801.DescribeApplicationAttributeResponse.Endpoint;
+import com.aliyuncs.polardb.model.v20170801.DescribeApplicationAttributeResponse.MemApplicationAttribute;
 import com.aliyuncs.polardb.model.v20170801.DescribeApplicationAttributeResponse.SecurityGroup;
 import com.aliyuncs.polardb.model.v20170801.DescribeApplicationAttributeResponse.SecurityIPArray;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -55,6 +56,18 @@ public class DescribeApplicationAttributeResponseUnmarshaller {
 		describeApplicationAttributeResponse.setPolarFSInstanceId(_ctx.stringValue("DescribeApplicationAttributeResponse.PolarFSInstanceId"));
 		describeApplicationAttributeResponse.setServerlessType(_ctx.stringValue("DescribeApplicationAttributeResponse.ServerlessType"));
 		describeApplicationAttributeResponse.setCategory(_ctx.stringValue("DescribeApplicationAttributeResponse.Category"));
+		describeApplicationAttributeResponse.setMinorVersion(_ctx.stringValue("DescribeApplicationAttributeResponse.MinorVersion"));
+		describeApplicationAttributeResponse.setLatestVersion(_ctx.stringValue("DescribeApplicationAttributeResponse.LatestVersion"));
+		describeApplicationAttributeResponse.setIsLatestVersion(_ctx.booleanValue("DescribeApplicationAttributeResponse.IsLatestVersion"));
+
+		MemApplicationAttribute memApplicationAttribute = new MemApplicationAttribute();
+		memApplicationAttribute.setLlmModelName(_ctx.stringValue("DescribeApplicationAttributeResponse.MemApplicationAttribute.LlmModelName"));
+		memApplicationAttribute.setEmbedderModelName(_ctx.stringValue("DescribeApplicationAttributeResponse.MemApplicationAttribute.EmbedderModelName"));
+		memApplicationAttribute.setRerankerModelName(_ctx.stringValue("DescribeApplicationAttributeResponse.MemApplicationAttribute.RerankerModelName"));
+		memApplicationAttribute.setProjectName(_ctx.stringValue("DescribeApplicationAttributeResponse.MemApplicationAttribute.ProjectName"));
+		memApplicationAttribute.setDbName(_ctx.stringValue("DescribeApplicationAttributeResponse.MemApplicationAttribute.DbName"));
+		memApplicationAttribute.setUserName(_ctx.stringValue("DescribeApplicationAttributeResponse.MemApplicationAttribute.UserName"));
+		describeApplicationAttributeResponse.setMemApplicationAttribute(memApplicationAttribute);
 
 		List<SecurityGroup> securityGroups = new ArrayList<SecurityGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationAttributeResponse.SecurityGroups.Length"); i++) {

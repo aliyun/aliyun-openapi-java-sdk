@@ -26,6 +26,10 @@ public class DescribeUserEncryptionKeyListResponseUnmarshaller {
 	public static DescribeUserEncryptionKeyListResponse unmarshall(DescribeUserEncryptionKeyListResponse describeUserEncryptionKeyListResponse, UnmarshallerContext _ctx) {
 		
 		describeUserEncryptionKeyListResponse.setRequestId(_ctx.stringValue("DescribeUserEncryptionKeyListResponse.RequestId"));
+		describeUserEncryptionKeyListResponse.setTotalRecordCount(_ctx.integerValue("DescribeUserEncryptionKeyListResponse.TotalRecordCount"));
+		describeUserEncryptionKeyListResponse.setPageRecordCount(_ctx.integerValue("DescribeUserEncryptionKeyListResponse.PageRecordCount"));
+		describeUserEncryptionKeyListResponse.setPageNumber(_ctx.integerValue("DescribeUserEncryptionKeyListResponse.PageNumber"));
+		describeUserEncryptionKeyListResponse.setPageSize(_ctx.integerValue("DescribeUserEncryptionKeyListResponse.PageSize"));
 		describeUserEncryptionKeyListResponse.setDBClusterId(_ctx.stringValue("DescribeUserEncryptionKeyListResponse.DBClusterId"));
 
 		List<String> keyList = new ArrayList<String>();

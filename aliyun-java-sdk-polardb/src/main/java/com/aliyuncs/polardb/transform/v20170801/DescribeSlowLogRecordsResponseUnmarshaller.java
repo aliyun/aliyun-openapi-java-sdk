@@ -47,6 +47,7 @@ public class DescribeSlowLogRecordsResponseUnmarshaller {
 			sQLSlowRecord.setReturnRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
 			sQLSlowRecord.setSQLHash(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].SQLHash"));
 			sQLSlowRecord.setSQLText(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].SQLText"));
+			sQLSlowRecord.setLockTimeMS(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].LockTimeMS"));
 
 			items.add(sQLSlowRecord);
 		}

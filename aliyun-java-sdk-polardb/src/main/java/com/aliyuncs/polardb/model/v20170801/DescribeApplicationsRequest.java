@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
@@ -29,6 +30,10 @@ public class DescribeApplicationsRequest extends RpcAcsRequest<DescribeApplicati
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private List<Tag> tags;
+
+	private String applicationTypes;
 
 	private String dBClusterId;
 
@@ -65,6 +70,31 @@ public class DescribeApplicationsRequest extends RpcAcsRequest<DescribeApplicati
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getApplicationTypes() {
+		return this.applicationTypes;
+	}
+
+	public void setApplicationTypes(String applicationTypes) {
+		this.applicationTypes = applicationTypes;
+		if(applicationTypes != null){
+			putQueryParameter("ApplicationTypes", applicationTypes);
+		}
+	}
+
 	public String getDBClusterId() {
 		return this.dBClusterId;
 	}
@@ -84,6 +114,29 @@ public class DescribeApplicationsRequest extends RpcAcsRequest<DescribeApplicati
 		this.applicationIds = applicationIds;
 		if(applicationIds != null){
 			putQueryParameter("ApplicationIds", applicationIds);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

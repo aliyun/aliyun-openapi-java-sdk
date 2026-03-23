@@ -75,6 +75,10 @@ public class DescribeAIDBClusterAttributeResponse extends AcsResponse {
 
 	private String ecsSecurityGroupId;
 
+	private String modelType;
+
+	private String apiKey;
+
 	private List<DBNode> dBNodes;
 
 	private List<VolumesItem> volumes;
@@ -279,6 +283,22 @@ public class DescribeAIDBClusterAttributeResponse extends AcsResponse {
 
 	public void setEcsSecurityGroupId(String ecsSecurityGroupId) {
 		this.ecsSecurityGroupId = ecsSecurityGroupId;
+	}
+
+	public String getModelType() {
+		return this.modelType;
+	}
+
+	public void setModelType(String modelType) {
+		this.modelType = modelType;
+	}
+
+	public String getApiKey() {
+		return this.apiKey;
+	}
+
+	public void setApiKey(String apiKey) {
+		this.apiKey = apiKey;
 	}
 
 	public List<DBNode> getDBNodes() {

@@ -87,21 +87,29 @@ public class DescribeLogBackupPolicyResponse extends AcsResponse {
 
 	public static class AdvancedLogPolicy {
 
-		private String logRetentionType;
-
-		private String destType;
-
-		private String srcRegion;
-
-		private Integer enableLogBackup;
-
-		private String srcType;
-
 		private String policyId;
+
+		private String logRetentionType;
 
 		private String logRetentionValue;
 
+		private String srcType;
+
+		private String destType;
+
+		private Integer enableLogBackup;
+
+		private String srcRegion;
+
 		private String destRegion;
+
+		public String getPolicyId() {
+			return this.policyId;
+		}
+
+		public void setPolicyId(String policyId) {
+			this.policyId = policyId;
+		}
 
 		public String getLogRetentionType() {
 			return this.logRetentionType;
@@ -111,28 +119,12 @@ public class DescribeLogBackupPolicyResponse extends AcsResponse {
 			this.logRetentionType = logRetentionType;
 		}
 
-		public String getDestType() {
-			return this.destType;
+		public String getLogRetentionValue() {
+			return this.logRetentionValue;
 		}
 
-		public void setDestType(String destType) {
-			this.destType = destType;
-		}
-
-		public String getSrcRegion() {
-			return this.srcRegion;
-		}
-
-		public void setSrcRegion(String srcRegion) {
-			this.srcRegion = srcRegion;
-		}
-
-		public Integer getEnableLogBackup() {
-			return this.enableLogBackup;
-		}
-
-		public void setEnableLogBackup(Integer enableLogBackup) {
-			this.enableLogBackup = enableLogBackup;
+		public void setLogRetentionValue(String logRetentionValue) {
+			this.logRetentionValue = logRetentionValue;
 		}
 
 		public String getSrcType() {
@@ -143,20 +135,28 @@ public class DescribeLogBackupPolicyResponse extends AcsResponse {
 			this.srcType = srcType;
 		}
 
-		public String getPolicyId() {
-			return this.policyId;
+		public String getDestType() {
+			return this.destType;
 		}
 
-		public void setPolicyId(String policyId) {
-			this.policyId = policyId;
+		public void setDestType(String destType) {
+			this.destType = destType;
 		}
 
-		public String getLogRetentionValue() {
-			return this.logRetentionValue;
+		public Integer getEnableLogBackup() {
+			return this.enableLogBackup;
 		}
 
-		public void setLogRetentionValue(String logRetentionValue) {
-			this.logRetentionValue = logRetentionValue;
+		public void setEnableLogBackup(Integer enableLogBackup) {
+			this.enableLogBackup = enableLogBackup;
+		}
+
+		public String getSrcRegion() {
+			return this.srcRegion;
+		}
+
+		public void setSrcRegion(String srcRegion) {
+			this.srcRegion = srcRegion;
 		}
 
 		public String getDestRegion() {

@@ -173,7 +173,7 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private Integer dnNodeCount;
 
-	private String documentDB;
+	private String multiMaster;
 
 	private String backupDowngradeLevel;
 
@@ -190,6 +190,10 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 	private Long compressStorageUsed;
 
 	private String dBClusterStatus;
+
+	private Boolean isEmpOn;
+
+	private String documentDB;
 
 	private List<DBNode> dBNodes;
 
@@ -789,12 +793,12 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.dnNodeCount = dnNodeCount;
 	}
 
-	public String getDocumentDB() {
-		return this.documentDB;
+	public String getMultiMaster() {
+		return this.multiMaster;
 	}
 
-	public void setDocumentDB(String documentDB) {
-		this.documentDB = documentDB;
+	public void setMultiMaster(String multiMaster) {
+		this.multiMaster = multiMaster;
 	}
 
 	public String getBackupDowngradeLevel() {
@@ -859,6 +863,22 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setDBClusterStatus(String dBClusterStatus) {
 		this.dBClusterStatus = dBClusterStatus;
+	}
+
+	public Boolean getIsEmpOn() {
+		return this.isEmpOn;
+	}
+
+	public void setIsEmpOn(Boolean isEmpOn) {
+		this.isEmpOn = isEmpOn;
+	}
+
+	public String getDocumentDB() {
+		return this.documentDB;
+	}
+
+	public void setDocumentDB(String documentDB) {
+		this.documentDB = documentDB;
 	}
 
 	public List<DBNode> getDBNodes() {

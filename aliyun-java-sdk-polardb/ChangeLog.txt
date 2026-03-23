@@ -1,3 +1,6 @@
+2026-03-23 Version: 1.8.60
+- Update SDK.
+
 2025-12-10 Version: 1.8.58
 - Generated 2017-08-01 for `polardb`.
 

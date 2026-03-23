@@ -35,13 +35,13 @@ public class DescribeLogBackupPolicyResponseUnmarshaller {
 		List<AdvancedLogPolicy> advancedLogPolicies = new ArrayList<AdvancedLogPolicy>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies.Length"); i++) {
 			AdvancedLogPolicy advancedLogPolicy = new AdvancedLogPolicy();
-			advancedLogPolicy.setLogRetentionType(_ctx.stringValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies["+ i +"].LogRetentionType"));
-			advancedLogPolicy.setDestType(_ctx.stringValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies["+ i +"].DestType"));
-			advancedLogPolicy.setSrcRegion(_ctx.stringValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies["+ i +"].SrcRegion"));
-			advancedLogPolicy.setEnableLogBackup(_ctx.integerValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies["+ i +"].EnableLogBackup"));
-			advancedLogPolicy.setSrcType(_ctx.stringValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies["+ i +"].SrcType"));
 			advancedLogPolicy.setPolicyId(_ctx.stringValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies["+ i +"].PolicyId"));
+			advancedLogPolicy.setLogRetentionType(_ctx.stringValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies["+ i +"].LogRetentionType"));
 			advancedLogPolicy.setLogRetentionValue(_ctx.stringValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies["+ i +"].LogRetentionValue"));
+			advancedLogPolicy.setSrcType(_ctx.stringValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies["+ i +"].SrcType"));
+			advancedLogPolicy.setDestType(_ctx.stringValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies["+ i +"].DestType"));
+			advancedLogPolicy.setEnableLogBackup(_ctx.integerValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies["+ i +"].EnableLogBackup"));
+			advancedLogPolicy.setSrcRegion(_ctx.stringValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies["+ i +"].SrcRegion"));
 			advancedLogPolicy.setDestRegion(_ctx.stringValue("DescribeLogBackupPolicyResponse.AdvancedLogPolicies["+ i +"].DestRegion"));
 
 			advancedLogPolicies.add(advancedLogPolicy);

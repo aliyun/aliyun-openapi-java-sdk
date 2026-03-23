@@ -71,6 +71,7 @@ public class DescribeAIDBClustersResponseUnmarshaller {
 			dBCluster.setAiNodeType(_ctx.stringValue("DescribeAIDBClustersResponse.Items["+ i +"].AiNodeType"));
 			dBCluster.setVswitchId(_ctx.stringValue("DescribeAIDBClustersResponse.Items["+ i +"].VswitchId"));
 			dBCluster.setRelativeDBClusterId(_ctx.stringValue("DescribeAIDBClustersResponse.Items["+ i +"].RelativeDBClusterId"));
+			dBCluster.setModelType(_ctx.stringValue("DescribeAIDBClustersResponse.Items["+ i +"].ModelType"));
 
 			List<String> connAddrs = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAIDBClustersResponse.Items["+ i +"].ConnAddrs.Length"); j++) {

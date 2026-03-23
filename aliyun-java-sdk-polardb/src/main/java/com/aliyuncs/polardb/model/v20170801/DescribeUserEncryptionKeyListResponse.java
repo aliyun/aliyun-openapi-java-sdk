@@ -27,6 +27,14 @@ public class DescribeUserEncryptionKeyListResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer totalRecordCount;
+
+	private Integer pageRecordCount;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
 	private String dBClusterId;
 
 	private List<String> keyList;
@@ -37,6 +45,38 @@ public class DescribeUserEncryptionKeyListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public String getDBClusterId() {

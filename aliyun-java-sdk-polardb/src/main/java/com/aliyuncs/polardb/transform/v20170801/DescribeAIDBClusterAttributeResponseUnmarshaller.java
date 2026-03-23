@@ -55,6 +55,8 @@ public class DescribeAIDBClusterAttributeResponseUnmarshaller {
 		describeAIDBClusterAttributeResponse.setPublicIp(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.PublicIp"));
 		describeAIDBClusterAttributeResponse.setKVCacheInstanceId(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.KVCacheInstanceId"));
 		describeAIDBClusterAttributeResponse.setEcsSecurityGroupId(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.EcsSecurityGroupId"));
+		describeAIDBClusterAttributeResponse.setModelType(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.ModelType"));
+		describeAIDBClusterAttributeResponse.setApiKey(_ctx.stringValue("DescribeAIDBClusterAttributeResponse.ApiKey"));
 
 		List<DBNode> dBNodes = new ArrayList<DBNode>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAIDBClusterAttributeResponse.DBNodes.Length"); i++) {

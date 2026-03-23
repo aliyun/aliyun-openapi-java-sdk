@@ -47,21 +47,21 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		List<AdvancedDataPolicy> advancedDataPolicies = new ArrayList<AdvancedDataPolicy>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupPolicyResponse.AdvancedDataPolicies.Length"); i++) {
 			AdvancedDataPolicy advancedDataPolicy = new AdvancedDataPolicy();
-			advancedDataPolicy.setOnlyPreserveOneEachHour(_ctx.booleanValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].OnlyPreserveOneEachHour"));
+			advancedDataPolicy.setPolicyId(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].PolicyId"));
+			advancedDataPolicy.setRetentionType(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].RetentionType"));
 			advancedDataPolicy.setRetentionValue(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].RetentionValue"));
-			advancedDataPolicy.setBakType(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].BakType"));
+			advancedDataPolicy.setFilterType(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].FilterType"));
 			advancedDataPolicy.setFilterKey(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].FilterKey"));
 			advancedDataPolicy.setFilterValue(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].FilterValue"));
-			advancedDataPolicy.setDestType(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].DestType"));
-			advancedDataPolicy.setFilterType(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].FilterType"));
-			advancedDataPolicy.setSrcRegion(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].SrcRegion"));
-			advancedDataPolicy.setAutoCreated(_ctx.booleanValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].AutoCreated"));
 			advancedDataPolicy.setSrcType(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].SrcType"));
-			advancedDataPolicy.setOnlyPreserveOneEachDay(_ctx.booleanValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].OnlyPreserveOneEachDay"));
-			advancedDataPolicy.setDumpAction(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].DumpAction"));
-			advancedDataPolicy.setPolicyId(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].PolicyId"));
+			advancedDataPolicy.setSrcRegion(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].SrcRegion"));
+			advancedDataPolicy.setDestType(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].DestType"));
 			advancedDataPolicy.setDestRegion(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].DestRegion"));
-			advancedDataPolicy.setRetentionType(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].RetentionType"));
+			advancedDataPolicy.setDumpAction(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].DumpAction"));
+			advancedDataPolicy.setAutoCreated(_ctx.booleanValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].AutoCreated"));
+			advancedDataPolicy.setOnlyPreserveOneEachHour(_ctx.booleanValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].OnlyPreserveOneEachHour"));
+			advancedDataPolicy.setOnlyPreserveOneEachDay(_ctx.booleanValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].OnlyPreserveOneEachDay"));
+			advancedDataPolicy.setBakType(_ctx.stringValue("DescribeBackupPolicyResponse.AdvancedDataPolicies["+ i +"].BakType"));
 
 			advancedDataPolicies.add(advancedDataPolicy);
 		}

@@ -173,6 +173,8 @@ public class DescribeAIDBClustersResponse extends AcsResponse {
 
 		private String relativeDBClusterId;
 
+		private String modelType;
+
 		private List<Tag> tags;
 
 		private List<String> connAddrs;
@@ -439,6 +441,14 @@ public class DescribeAIDBClustersResponse extends AcsResponse {
 
 		public void setRelativeDBClusterId(String relativeDBClusterId) {
 			this.relativeDBClusterId = relativeDBClusterId;
+		}
+
+		public String getModelType() {
+			return this.modelType;
+		}
+
+		public void setModelType(String modelType) {
+			this.modelType = modelType;
 		}
 
 		public List<Tag> getTags() {

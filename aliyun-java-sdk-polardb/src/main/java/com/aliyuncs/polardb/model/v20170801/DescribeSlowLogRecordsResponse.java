@@ -119,6 +119,8 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		private String sQLText;
 
+		private Long lockTimeMS;
+
 		public String getDBName() {
 			return this.dBName;
 		}
@@ -205,6 +207,14 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		public void setSQLText(String sQLText) {
 			this.sQLText = sQLText;
+		}
+
+		public Long getLockTimeMS() {
+			return this.lockTimeMS;
+		}
+
+		public void setLockTimeMS(Long lockTimeMS) {
+			this.lockTimeMS = lockTimeMS;
 		}
 	}
 

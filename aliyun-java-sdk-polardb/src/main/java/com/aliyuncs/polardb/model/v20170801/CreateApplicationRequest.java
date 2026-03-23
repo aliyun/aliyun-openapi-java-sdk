@@ -29,41 +29,62 @@ import com.aliyuncs.polardb.Endpoint;
 public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationResponse> {
 	   
 
-	@SerializedName("components")
-	private List<Components> components;
+	private Boolean autoAllocatePublicEip;
 
-	private String description;
-
-	private Boolean autoUseCoupon;
+	private String modelName;
 
 	private String resourceGroupId;
 
-	private String architecture;
+	private String modelBaseUrl;
 
 	private String period;
 
-	@SerializedName("endpoints")
-	private List<Endpoints> endpoints;
+	private String modelApiKey;
 
 	private Boolean dryRun;
 
 	private String dBClusterId;
 
-	private String usedTime;
-
 	private String vSwitchId;
-
-	private String polarFSInstanceId;
 
 	private Boolean autoRenew;
 
 	private String promotionCode;
 
-	private String vpcId;
-
 	private String zoneId;
 
 	private String applicationType;
+
+	@SerializedName("components")
+	private List<Components> components;
+
+	private String securityGroupId;
+
+	private String description;
+
+	private Boolean autoUseCoupon;
+
+	private String modelApi;
+
+	private Boolean autoCreatePolarFs;
+
+	private String aIDBClusterId;
+
+	private String architecture;
+
+	@SerializedName("endpoints")
+	private List<Endpoints> endpoints;
+
+	@SerializedName("memApplicationSpec")
+	private MemApplicationSpec memApplicationSpec;
+
+	private String modelFrom;
+
+	private String usedTime;
+
+	private String polarFSInstanceId;
+
+	private String vpcId;
 
 	private String payType;
 	public CreateApplicationRequest() {
@@ -76,36 +97,25 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		} catch (Exception e) {}
 	}
 
-	public List<Components> getComponents() {
-		return this.components;
+	public Boolean getAutoAllocatePublicEip() {
+		return this.autoAllocatePublicEip;
 	}
 
-	public void setComponents(List<Components> components) {
-		this.components = components;	
-		if (components != null) {
-			putQueryParameter("Components" , new Gson().toJson(components));
-		}	
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setAutoAllocatePublicEip(Boolean autoAllocatePublicEip) {
+		this.autoAllocatePublicEip = autoAllocatePublicEip;
+		if(autoAllocatePublicEip != null){
+			putQueryParameter("AutoAllocatePublicEip", autoAllocatePublicEip.toString());
 		}
 	}
 
-	public Boolean getAutoUseCoupon() {
-		return this.autoUseCoupon;
+	public String getModelName() {
+		return this.modelName;
 	}
 
-	public void setAutoUseCoupon(Boolean autoUseCoupon) {
-		this.autoUseCoupon = autoUseCoupon;
-		if(autoUseCoupon != null){
-			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
+		if(modelName != null){
+			putQueryParameter("ModelName", modelName);
 		}
 	}
 
@@ -120,14 +130,14 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getArchitecture() {
-		return this.architecture;
+	public String getModelBaseUrl() {
+		return this.modelBaseUrl;
 	}
 
-	public void setArchitecture(String architecture) {
-		this.architecture = architecture;
-		if(architecture != null){
-			putQueryParameter("Architecture", architecture);
+	public void setModelBaseUrl(String modelBaseUrl) {
+		this.modelBaseUrl = modelBaseUrl;
+		if(modelBaseUrl != null){
+			putQueryParameter("ModelBaseUrl", modelBaseUrl);
 		}
 	}
 
@@ -142,15 +152,15 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public List<Endpoints> getEndpoints() {
-		return this.endpoints;
+	public String getModelApiKey() {
+		return this.modelApiKey;
 	}
 
-	public void setEndpoints(List<Endpoints> endpoints) {
-		this.endpoints = endpoints;	
-		if (endpoints != null) {
-			putQueryParameter("Endpoints" , new Gson().toJson(endpoints));
-		}	
+	public void setModelApiKey(String modelApiKey) {
+		this.modelApiKey = modelApiKey;
+		if(modelApiKey != null){
+			putQueryParameter("ModelApiKey", modelApiKey);
+		}
 	}
 
 	public Boolean getDryRun() {
@@ -175,17 +185,6 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getUsedTime() {
-		return this.usedTime;
-	}
-
-	public void setUsedTime(String usedTime) {
-		this.usedTime = usedTime;
-		if(usedTime != null){
-			putQueryParameter("UsedTime", usedTime);
-		}
-	}
-
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -194,17 +193,6 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
-	public String getPolarFSInstanceId() {
-		return this.polarFSInstanceId;
-	}
-
-	public void setPolarFSInstanceId(String polarFSInstanceId) {
-		this.polarFSInstanceId = polarFSInstanceId;
-		if(polarFSInstanceId != null){
-			putQueryParameter("PolarFSInstanceId", polarFSInstanceId);
 		}
 	}
 
@@ -230,17 +218,6 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -260,6 +237,160 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.applicationType = applicationType;
 		if(applicationType != null){
 			putQueryParameter("ApplicationType", applicationType);
+		}
+	}
+
+	public List<Components> getComponents() {
+		return this.components;
+	}
+
+	public void setComponents(List<Components> components) {
+		this.components = components;	
+		if (components != null) {
+			putQueryParameter("Components" , new Gson().toJson(components));
+		}	
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
+		}
+	}
+
+	public String getModelApi() {
+		return this.modelApi;
+	}
+
+	public void setModelApi(String modelApi) {
+		this.modelApi = modelApi;
+		if(modelApi != null){
+			putQueryParameter("ModelApi", modelApi);
+		}
+	}
+
+	public Boolean getAutoCreatePolarFs() {
+		return this.autoCreatePolarFs;
+	}
+
+	public void setAutoCreatePolarFs(Boolean autoCreatePolarFs) {
+		this.autoCreatePolarFs = autoCreatePolarFs;
+		if(autoCreatePolarFs != null){
+			putQueryParameter("AutoCreatePolarFs", autoCreatePolarFs.toString());
+		}
+	}
+
+	public String getAIDBClusterId() {
+		return this.aIDBClusterId;
+	}
+
+	public void setAIDBClusterId(String aIDBClusterId) {
+		this.aIDBClusterId = aIDBClusterId;
+		if(aIDBClusterId != null){
+			putQueryParameter("AIDBClusterId", aIDBClusterId);
+		}
+	}
+
+	public String getArchitecture() {
+		return this.architecture;
+	}
+
+	public void setArchitecture(String architecture) {
+		this.architecture = architecture;
+		if(architecture != null){
+			putQueryParameter("Architecture", architecture);
+		}
+	}
+
+	public List<Endpoints> getEndpoints() {
+		return this.endpoints;
+	}
+
+	public void setEndpoints(List<Endpoints> endpoints) {
+		this.endpoints = endpoints;	
+		if (endpoints != null) {
+			putQueryParameter("Endpoints" , new Gson().toJson(endpoints));
+		}	
+	}
+
+	public MemApplicationSpec getMemApplicationSpec() {
+		return this.memApplicationSpec;
+	}
+
+	public void setMemApplicationSpec(MemApplicationSpec memApplicationSpec) {
+		this.memApplicationSpec = memApplicationSpec;	
+		if (memApplicationSpec != null) {
+			putQueryParameter("MemApplicationSpec" , new Gson().toJson(memApplicationSpec));
+		}	
+	}
+
+	public String getModelFrom() {
+		return this.modelFrom;
+	}
+
+	public void setModelFrom(String modelFrom) {
+		this.modelFrom = modelFrom;
+		if(modelFrom != null){
+			putQueryParameter("ModelFrom", modelFrom);
+		}
+	}
+
+	public String getUsedTime() {
+		return this.usedTime;
+	}
+
+	public void setUsedTime(String usedTime) {
+		this.usedTime = usedTime;
+		if(usedTime != null){
+			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
+	public String getPolarFSInstanceId() {
+		return this.polarFSInstanceId;
+	}
+
+	public void setPolarFSInstanceId(String polarFSInstanceId) {
+		this.polarFSInstanceId = polarFSInstanceId;
+		if(polarFSInstanceId != null){
+			putQueryParameter("PolarFSInstanceId", polarFSInstanceId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
@@ -442,6 +573,130 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+	}
+
+	public static class MemApplicationSpec {
+
+		@SerializedName("ProjectName")
+		private String projectName;
+
+		@SerializedName("DbName")
+		private String dbName;
+
+		@SerializedName("DbPassword")
+		private String dbPassword;
+
+		@SerializedName("GraphLlmModel")
+		private String graphLlmModel;
+
+		@SerializedName("LlmModel")
+		private String llmModel;
+
+		@SerializedName("EmbedderModelDimension")
+		private Integer embedderModelDimension;
+
+		@SerializedName("DbUser")
+		private String dbUser;
+
+		@SerializedName("Shard")
+		private Integer shard;
+
+		@SerializedName("EmbedderModel")
+		private String embedderModel;
+
+		@SerializedName("RerankerModel")
+		private String rerankerModel;
+
+		@SerializedName("EngineType")
+		private String engineType;
+
+		public String getProjectName() {
+			return this.projectName;
+		}
+
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
+		}
+
+		public String getDbName() {
+			return this.dbName;
+		}
+
+		public void setDbName(String dbName) {
+			this.dbName = dbName;
+		}
+
+		public String getDbPassword() {
+			return this.dbPassword;
+		}
+
+		public void setDbPassword(String dbPassword) {
+			this.dbPassword = dbPassword;
+		}
+
+		public String getGraphLlmModel() {
+			return this.graphLlmModel;
+		}
+
+		public void setGraphLlmModel(String graphLlmModel) {
+			this.graphLlmModel = graphLlmModel;
+		}
+
+		public String getLlmModel() {
+			return this.llmModel;
+		}
+
+		public void setLlmModel(String llmModel) {
+			this.llmModel = llmModel;
+		}
+
+		public Integer getEmbedderModelDimension() {
+			return this.embedderModelDimension;
+		}
+
+		public void setEmbedderModelDimension(Integer embedderModelDimension) {
+			this.embedderModelDimension = embedderModelDimension;
+		}
+
+		public String getDbUser() {
+			return this.dbUser;
+		}
+
+		public void setDbUser(String dbUser) {
+			this.dbUser = dbUser;
+		}
+
+		public Integer getShard() {
+			return this.shard;
+		}
+
+		public void setShard(Integer shard) {
+			this.shard = shard;
+		}
+
+		public String getEmbedderModel() {
+			return this.embedderModel;
+		}
+
+		public void setEmbedderModel(String embedderModel) {
+			this.embedderModel = embedderModel;
+		}
+
+		public String getRerankerModel() {
+			return this.rerankerModel;
+		}
+
+		public void setRerankerModel(String rerankerModel) {
+			this.rerankerModel = rerankerModel;
+		}
+
+		public String getEngineType() {
+			return this.engineType;
+		}
+
+		public void setEngineType(String engineType) {
+			this.engineType = engineType;
 		}
 	}
 

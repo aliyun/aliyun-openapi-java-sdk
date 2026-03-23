@@ -102,7 +102,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setImperceptibleSwitch(_ctx.stringValue("DescribeDBClusterAttributeResponse.ImperceptibleSwitch"));
 		describeDBClusterAttributeResponse.setCnNodeCount(_ctx.integerValue("DescribeDBClusterAttributeResponse.CnNodeCount"));
 		describeDBClusterAttributeResponse.setDnNodeCount(_ctx.integerValue("DescribeDBClusterAttributeResponse.DnNodeCount"));
-		describeDBClusterAttributeResponse.setDocumentDB(_ctx.stringValue("DescribeDBClusterAttributeResponse.DocumentDB"));
+		describeDBClusterAttributeResponse.setMultiMaster(_ctx.stringValue("DescribeDBClusterAttributeResponse.MultiMaster"));
 		describeDBClusterAttributeResponse.setBackupDowngradeLevel(_ctx.stringValue("DescribeDBClusterAttributeResponse.BackupDowngradeLevel"));
 		describeDBClusterAttributeResponse.setRelativeAICluster(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelativeAICluster"));
 		describeDBClusterAttributeResponse.setDynamoDB(_ctx.stringValue("DescribeDBClusterAttributeResponse.DynamoDB"));
@@ -111,6 +111,8 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setStorageUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.StorageUsed"));
 		describeDBClusterAttributeResponse.setCompressStorageUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.CompressStorageUsed"));
 		describeDBClusterAttributeResponse.setDBClusterStatus(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBClusterStatus"));
+		describeDBClusterAttributeResponse.setIsEmpOn(_ctx.booleanValue("DescribeDBClusterAttributeResponse.IsEmpOn"));
+		describeDBClusterAttributeResponse.setDocumentDB(_ctx.stringValue("DescribeDBClusterAttributeResponse.DocumentDB"));
 
 		RelatedAPInstance relatedAPInstance = new RelatedAPInstance();
 		relatedAPInstance.setName(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.Name"));

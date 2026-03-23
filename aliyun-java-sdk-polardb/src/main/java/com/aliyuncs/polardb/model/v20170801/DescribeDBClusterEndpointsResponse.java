@@ -77,6 +77,8 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		private String dBEndpointStatus;
 
+		private String serviceName;
+
 		private List<Address> addressItems;
 
 		public String getNodes() {
@@ -197,6 +199,14 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		public void setDBEndpointStatus(String dBEndpointStatus) {
 			this.dBEndpointStatus = dBEndpointStatus;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
 		}
 
 		public List<Address> getAddressItems() {

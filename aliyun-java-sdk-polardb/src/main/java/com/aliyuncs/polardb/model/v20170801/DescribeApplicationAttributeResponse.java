@@ -71,6 +71,12 @@ public class DescribeApplicationAttributeResponse extends AcsResponse {
 
 	private String category;
 
+	private String minorVersion;
+
+	private String latestVersion;
+
+	private Boolean isLatestVersion;
+
 	private List<SecurityGroup> securityGroups;
 
 	private List<SecurityIPArray> securityIPArrays;
@@ -78,6 +84,8 @@ public class DescribeApplicationAttributeResponse extends AcsResponse {
 	private List<Component> components;
 
 	private List<Endpoint> endpoints;
+
+	private MemApplicationAttribute memApplicationAttribute;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -263,6 +271,30 @@ public class DescribeApplicationAttributeResponse extends AcsResponse {
 		this.category = category;
 	}
 
+	public String getMinorVersion() {
+		return this.minorVersion;
+	}
+
+	public void setMinorVersion(String minorVersion) {
+		this.minorVersion = minorVersion;
+	}
+
+	public String getLatestVersion() {
+		return this.latestVersion;
+	}
+
+	public void setLatestVersion(String latestVersion) {
+		this.latestVersion = latestVersion;
+	}
+
+	public Boolean getIsLatestVersion() {
+		return this.isLatestVersion;
+	}
+
+	public void setIsLatestVersion(Boolean isLatestVersion) {
+		this.isLatestVersion = isLatestVersion;
+	}
+
 	public List<SecurityGroup> getSecurityGroups() {
 		return this.securityGroups;
 	}
@@ -293,6 +325,14 @@ public class DescribeApplicationAttributeResponse extends AcsResponse {
 
 	public void setEndpoints(List<Endpoint> endpoints) {
 		this.endpoints = endpoints;
+	}
+
+	public MemApplicationAttribute getMemApplicationAttribute() {
+		return this.memApplicationAttribute;
+	}
+
+	public void setMemApplicationAttribute(MemApplicationAttribute memApplicationAttribute) {
+		this.memApplicationAttribute = memApplicationAttribute;
 	}
 
 	public static class SecurityGroup {
@@ -693,6 +733,69 @@ public class DescribeApplicationAttributeResponse extends AcsResponse {
 
 		public void setNetType(String netType) {
 			this.netType = netType;
+		}
+	}
+
+	public static class MemApplicationAttribute {
+
+		private String llmModelName;
+
+		private String embedderModelName;
+
+		private String rerankerModelName;
+
+		private String projectName;
+
+		private String dbName;
+
+		private String userName;
+
+		public String getLlmModelName() {
+			return this.llmModelName;
+		}
+
+		public void setLlmModelName(String llmModelName) {
+			this.llmModelName = llmModelName;
+		}
+
+		public String getEmbedderModelName() {
+			return this.embedderModelName;
+		}
+
+		public void setEmbedderModelName(String embedderModelName) {
+			this.embedderModelName = embedderModelName;
+		}
+
+		public String getRerankerModelName() {
+			return this.rerankerModelName;
+		}
+
+		public void setRerankerModelName(String rerankerModelName) {
+			this.rerankerModelName = rerankerModelName;
+		}
+
+		public String getProjectName() {
+			return this.projectName;
+		}
+
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
+		}
+
+		public String getDbName() {
+			return this.dbName;
+		}
+
+		public void setDbName(String dbName) {
+			this.dbName = dbName;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 	}
 

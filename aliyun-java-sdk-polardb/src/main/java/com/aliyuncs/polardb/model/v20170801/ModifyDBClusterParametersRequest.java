@@ -29,6 +29,8 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 
 	private String plannedEndTime;
 
+	private Boolean clearBinlog;
+
 	private String parameterGroupId;
 
 	private String resourceOwnerAccount;
@@ -72,6 +74,17 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 		this.plannedEndTime = plannedEndTime;
 		if(plannedEndTime != null){
 			putQueryParameter("PlannedEndTime", plannedEndTime);
+		}
+	}
+
+	public Boolean getClearBinlog() {
+		return this.clearBinlog;
+	}
+
+	public void setClearBinlog(Boolean clearBinlog) {
+		this.clearBinlog = clearBinlog;
+		if(clearBinlog != null){
+			putQueryParameter("ClearBinlog", clearBinlog.toString());
 		}
 	}
 

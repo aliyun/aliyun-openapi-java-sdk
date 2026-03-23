@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.polardb.model.v20170801.DescribeApplicationsResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeApplicationsResponse.Applications;
 import com.aliyuncs.polardb.model.v20170801.DescribeApplicationsResponse.Applications.Endpoint;
+import com.aliyuncs.polardb.model.v20170801.DescribeApplicationsResponse.Applications.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -60,6 +61,16 @@ public class DescribeApplicationsResponseUnmarshaller {
 				endpoints.add(endpoint);
 			}
 			applications.setEndpoints(endpoints);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeApplicationsResponse.Items["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeApplicationsResponse.Items["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeApplicationsResponse.Items["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			applications.setTags(tags);
 
 			items.add(applications);
 		}

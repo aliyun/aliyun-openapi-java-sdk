@@ -310,17 +310,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		@SerializedName("DumpAction")
 		private String dumpAction;
 
-		@SerializedName("OnlyPreserveOneEachHour")
-		private Boolean onlyPreserveOneEachHour;
-
 		@SerializedName("SrcRegion")
 		private String srcRegion;
 
-		@SerializedName("FilterType")
-		private String filterType;
+		@SerializedName("OnlyPreserveOneEachHour")
+		private Boolean onlyPreserveOneEachHour;
 
 		@SerializedName("RetentionType")
 		private String retentionType;
+
+		@SerializedName("FilterType")
+		private String filterType;
 
 		@SerializedName("FilterKey")
 		private String filterKey;
@@ -398,14 +398,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 			this.dumpAction = dumpAction;
 		}
 
-		public Boolean getOnlyPreserveOneEachHour() {
-			return this.onlyPreserveOneEachHour;
-		}
-
-		public void setOnlyPreserveOneEachHour(Boolean onlyPreserveOneEachHour) {
-			this.onlyPreserveOneEachHour = onlyPreserveOneEachHour;
-		}
-
 		public String getSrcRegion() {
 			return this.srcRegion;
 		}
@@ -414,12 +406,12 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 			this.srcRegion = srcRegion;
 		}
 
-		public String getFilterType() {
-			return this.filterType;
+		public Boolean getOnlyPreserveOneEachHour() {
+			return this.onlyPreserveOneEachHour;
 		}
 
-		public void setFilterType(String filterType) {
-			this.filterType = filterType;
+		public void setOnlyPreserveOneEachHour(Boolean onlyPreserveOneEachHour) {
+			this.onlyPreserveOneEachHour = onlyPreserveOneEachHour;
 		}
 
 		public String getRetentionType() {
@@ -428,6 +420,14 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 		public void setRetentionType(String retentionType) {
 			this.retentionType = retentionType;
+		}
+
+		public String getFilterType() {
+			return this.filterType;
+		}
+
+		public void setFilterType(String filterType) {
+			this.filterType = filterType;
 		}
 
 		public String getFilterKey() {
