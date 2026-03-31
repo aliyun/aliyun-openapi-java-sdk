@@ -26,17 +26,17 @@ import com.aliyuncs.hbr.Endpoint;
 public class UpdateHanaBackupSettingRequest extends RpcAcsRequest<UpdateHanaBackupSettingResponse> {
 	   
 
-	private String logBackupParameterFile;
-
 	private String vaultId;
+
+	private Boolean enableAutoLogBackup;
+
+	private String logBackupParameterFile;
 
 	private Long logBackupTimeout;
 
 	private String dataBackupParameterFile;
 
 	private String clusterId;
-
-	private Boolean enableAutoLogBackup;
 
 	private Boolean logBackupUsingBackint;
 
@@ -55,17 +55,6 @@ public class UpdateHanaBackupSettingRequest extends RpcAcsRequest<UpdateHanaBack
 		} catch (Exception e) {}
 	}
 
-	public String getLogBackupParameterFile() {
-		return this.logBackupParameterFile;
-	}
-
-	public void setLogBackupParameterFile(String logBackupParameterFile) {
-		this.logBackupParameterFile = logBackupParameterFile;
-		if(logBackupParameterFile != null){
-			putQueryParameter("LogBackupParameterFile", logBackupParameterFile);
-		}
-	}
-
 	public String getVaultId() {
 		return this.vaultId;
 	}
@@ -74,6 +63,28 @@ public class UpdateHanaBackupSettingRequest extends RpcAcsRequest<UpdateHanaBack
 		this.vaultId = vaultId;
 		if(vaultId != null){
 			putQueryParameter("VaultId", vaultId);
+		}
+	}
+
+	public Boolean getEnableAutoLogBackup() {
+		return this.enableAutoLogBackup;
+	}
+
+	public void setEnableAutoLogBackup(Boolean enableAutoLogBackup) {
+		this.enableAutoLogBackup = enableAutoLogBackup;
+		if(enableAutoLogBackup != null){
+			putQueryParameter("EnableAutoLogBackup", enableAutoLogBackup.toString());
+		}
+	}
+
+	public String getLogBackupParameterFile() {
+		return this.logBackupParameterFile;
+	}
+
+	public void setLogBackupParameterFile(String logBackupParameterFile) {
+		this.logBackupParameterFile = logBackupParameterFile;
+		if(logBackupParameterFile != null){
+			putQueryParameter("LogBackupParameterFile", logBackupParameterFile);
 		}
 	}
 
@@ -107,17 +118,6 @@ public class UpdateHanaBackupSettingRequest extends RpcAcsRequest<UpdateHanaBack
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
-	public Boolean getEnableAutoLogBackup() {
-		return this.enableAutoLogBackup;
-	}
-
-	public void setEnableAutoLogBackup(Boolean enableAutoLogBackup) {
-		this.enableAutoLogBackup = enableAutoLogBackup;
-		if(enableAutoLogBackup != null){
-			putQueryParameter("EnableAutoLogBackup", enableAutoLogBackup.toString());
 		}
 	}
 

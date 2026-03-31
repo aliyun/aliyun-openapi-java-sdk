@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.hbr.model.v20170908.DescribeBackupPlansResponse;
 import com.aliyuncs.hbr.model.v20170908.DescribeBackupPlansResponse.BackupPlan;
+import com.aliyuncs.hbr.model.v20170908.DescribeBackupPlansResponse.BackupPlan.HitTag;
 import com.aliyuncs.hbr.model.v20170908.DescribeBackupPlansResponse.BackupPlan.OtsDetail;
 import com.aliyuncs.hbr.model.v20170908.DescribeBackupPlansResponse.BackupPlan.Resource;
 import com.aliyuncs.hbr.model.v20170908.DescribeBackupPlansResponse.BackupPlan.Rule;
@@ -75,6 +76,12 @@ public class DescribeBackupPlansResponseUnmarshaller {
 			backupPlan.setDestDataSourceId(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].DestDataSourceId"));
 			backupPlan.setDestDataSourceDetail(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].DestDataSourceDetail"));
 			backupPlan.setChangeListPath(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].ChangeListPath"));
+			backupPlan.setLatestExecuteJobId(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].LatestExecuteJobId"));
+			backupPlan.setLatestFinishJobId(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].LatestFinishJobId"));
+			backupPlan.setDoDetect(_ctx.booleanValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].DoDetect"));
+			backupPlan.setSyncMode(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].SyncMode"));
+			backupPlan.setCreatedByTag(_ctx.booleanValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].CreatedByTag"));
+			backupPlan.setBusinessStatus(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].BusinessStatus"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].Paths.Length"); j++) {
@@ -125,6 +132,17 @@ public class DescribeBackupPlansResponseUnmarshaller {
 				resources.add(resource);
 			}
 			backupPlan.setResources(resources);
+
+			List<HitTag> hitTags = new ArrayList<HitTag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].HitTags.Length"); j++) {
+				HitTag hitTag = new HitTag();
+				hitTag.setKey(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].HitTags["+ j +"].Key"));
+				hitTag.setValue(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].HitTags["+ j +"].Value"));
+				hitTag.setOperator(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].HitTags["+ j +"].Operator"));
+
+				hitTags.add(hitTag);
+			}
+			backupPlan.setHitTags(hitTags);
 
 			backupPlans.add(backupPlan);
 		}

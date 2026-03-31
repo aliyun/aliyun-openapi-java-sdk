@@ -27,6 +27,8 @@ public class CancelBackupJobRequest extends RpcAcsRequest<CancelBackupJobRespons
 
 	private String vaultId;
 
+	private String edition;
+
 	private String jobId;
 	public CancelBackupJobRequest() {
 		super("hbr", "2017-09-08", "CancelBackupJob", "hbr");
@@ -45,6 +47,17 @@ public class CancelBackupJobRequest extends RpcAcsRequest<CancelBackupJobRespons
 		this.vaultId = vaultId;
 		if(vaultId != null){
 			putQueryParameter("VaultId", vaultId);
+		}
+	}
+
+	public String getEdition() {
+		return this.edition;
+	}
+
+	public void setEdition(String edition) {
+		this.edition = edition;
+		if(edition != null){
+			putQueryParameter("Edition", edition);
 		}
 	}
 

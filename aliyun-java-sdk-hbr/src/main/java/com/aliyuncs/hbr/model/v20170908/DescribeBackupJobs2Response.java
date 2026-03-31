@@ -218,6 +218,12 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 		private Long actualFiles;
 
+		private String retryJobId;
+
+		private String retryForJobId;
+
+		private String triggerMode;
+
 		private List<Source> sources;
 
 		private List<String> paths;
@@ -630,6 +636,30 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 			this.actualFiles = actualFiles;
 		}
 
+		public String getRetryJobId() {
+			return this.retryJobId;
+		}
+
+		public void setRetryJobId(String retryJobId) {
+			this.retryJobId = retryJobId;
+		}
+
+		public String getRetryForJobId() {
+			return this.retryForJobId;
+		}
+
+		public void setRetryForJobId(String retryForJobId) {
+			this.retryForJobId = retryForJobId;
+		}
+
+		public String getTriggerMode() {
+			return this.triggerMode;
+		}
+
+		public void setTriggerMode(String triggerMode) {
+			this.triggerMode = triggerMode;
+		}
+
 		public List<Source> getSources() {
 			return this.sources;
 		}
@@ -790,6 +820,8 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 			private String nativeSnapshotStatus;
 
 			private Map<Object,Object> instanceInfos;
+
+			private Boolean immutable;
 
 			private List<String> diskHbrSnapshotIdList;
 
@@ -1069,6 +1101,14 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 			public void setInstanceInfos(Map<Object,Object> instanceInfos) {
 				this.instanceInfos = instanceInfos;
+			}
+
+			public Boolean getImmutable() {
+				return this.immutable;
+			}
+
+			public void setImmutable(Boolean immutable) {
+				this.immutable = immutable;
 			}
 
 			public List<String> getDiskHbrSnapshotIdList() {

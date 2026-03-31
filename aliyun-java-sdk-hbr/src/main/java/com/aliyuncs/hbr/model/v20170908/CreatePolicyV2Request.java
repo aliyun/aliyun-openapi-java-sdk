@@ -28,6 +28,8 @@ import com.aliyuncs.hbr.Endpoint;
 public class CreatePolicyV2Request extends RpcAcsRequest<CreatePolicyV2Response> {
 	   
 
+	private String policyType;
+
 	@SerializedName("rules")
 	private List<Rules> rules;
 
@@ -41,6 +43,17 @@ public class CreatePolicyV2Request extends RpcAcsRequest<CreatePolicyV2Response>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPolicyType() {
+		return this.policyType;
+	}
+
+	public void setPolicyType(String policyType) {
+		this.policyType = policyType;
+		if(policyType != null){
+			putBodyParameter("PolicyType", policyType);
+		}
 	}
 
 	public List<Rules> getRules() {
@@ -87,6 +100,9 @@ public class CreatePolicyV2Request extends RpcAcsRequest<CreatePolicyV2Response>
 		@SerializedName("RuleType")
 		private String ruleType;
 
+		@SerializedName("DataSourceFilters")
+		private List<DataSourceFiltersItem> dataSourceFilters;
+
 		@SerializedName("ReplicationVaultId")
 		private String replicationVaultId;
 
@@ -105,6 +121,9 @@ public class CreatePolicyV2Request extends RpcAcsRequest<CreatePolicyV2Response>
 		@SerializedName("Schedule")
 		private String schedule;
 
+		@SerializedName("Immutable")
+		private Boolean immutable;
+
 		@SerializedName("Continuous")
 		private Boolean continuous;
 
@@ -114,11 +133,17 @@ public class CreatePolicyV2Request extends RpcAcsRequest<CreatePolicyV2Response>
 		@SerializedName("Selector")
 		private Selector selector;
 
+		@SerializedName("DoDetect")
+		private Boolean doDetect;
+
 		@SerializedName("BackupType")
 		private String backupType;
 
 		@SerializedName("Retention")
 		private Long retention;
+
+		@SerializedName("TagFilters")
+		private List<TagFiltersItem> tagFilters;
 
 		public String getArchiveVaultId() {
 			return this.archiveVaultId;
@@ -142,6 +167,14 @@ public class CreatePolicyV2Request extends RpcAcsRequest<CreatePolicyV2Response>
 
 		public void setRuleType(String ruleType) {
 			this.ruleType = ruleType;
+		}
+
+		public List<DataSourceFiltersItem> getDataSourceFilters() {
+			return this.dataSourceFilters;
+		}
+
+		public void setDataSourceFilters(List<DataSourceFiltersItem> dataSourceFilters) {
+			this.dataSourceFilters = dataSourceFilters;
 		}
 
 		public String getReplicationVaultId() {
@@ -192,6 +225,14 @@ public class CreatePolicyV2Request extends RpcAcsRequest<CreatePolicyV2Response>
 			this.schedule = schedule;
 		}
 
+		public Boolean getImmutable() {
+			return this.immutable;
+		}
+
+		public void setImmutable(Boolean immutable) {
+			this.immutable = immutable;
+		}
+
 		public Boolean getContinuous() {
 			return this.continuous;
 		}
@@ -216,6 +257,14 @@ public class CreatePolicyV2Request extends RpcAcsRequest<CreatePolicyV2Response>
 			this.selector = selector;
 		}
 
+		public Boolean getDoDetect() {
+			return this.doDetect;
+		}
+
+		public void setDoDetect(Boolean doDetect) {
+			this.doDetect = doDetect;
+		}
+
 		public String getBackupType() {
 			return this.backupType;
 		}
@@ -230,6 +279,72 @@ public class CreatePolicyV2Request extends RpcAcsRequest<CreatePolicyV2Response>
 
 		public void setRetention(Long retention) {
 			this.retention = retention;
+		}
+
+		public List<TagFiltersItem> getTagFilters() {
+			return this.tagFilters;
+		}
+
+		public void setTagFilters(List<TagFiltersItem> tagFilters) {
+			this.tagFilters = tagFilters;
+		}
+
+		public static class DataSourceFiltersItem {
+
+			@SerializedName("DataSourceIds")
+			private List<String> dataSourceIds;
+
+			@SerializedName("CrossAccountType")
+			private String crossAccountType;
+
+			@SerializedName("SourceType")
+			private String sourceType;
+
+			@SerializedName("CrossAccountRoleName")
+			private String crossAccountRoleName;
+
+			@SerializedName("CrossAccountUserId")
+			private String crossAccountUserId;
+
+			public List<String> getDataSourceIds() {
+				return this.dataSourceIds;
+			}
+
+			public void setDataSourceIds(List<String> dataSourceIds) {
+				this.dataSourceIds = dataSourceIds;
+			}
+
+			public String getCrossAccountType() {
+				return this.crossAccountType;
+			}
+
+			public void setCrossAccountType(String crossAccountType) {
+				this.crossAccountType = crossAccountType;
+			}
+
+			public String getSourceType() {
+				return this.sourceType;
+			}
+
+			public void setSourceType(String sourceType) {
+				this.sourceType = sourceType;
+			}
+
+			public String getCrossAccountRoleName() {
+				return this.crossAccountRoleName;
+			}
+
+			public void setCrossAccountRoleName(String crossAccountRoleName) {
+				this.crossAccountRoleName = crossAccountRoleName;
+			}
+
+			public String getCrossAccountUserId() {
+				return this.crossAccountUserId;
+			}
+
+			public void setCrossAccountUserId(String crossAccountUserId) {
+				this.crossAccountUserId = crossAccountUserId;
+			}
 		}
 
 		public static class RetentionRulesItem {
@@ -290,6 +405,42 @@ public class CreatePolicyV2Request extends RpcAcsRequest<CreatePolicyV2Response>
 
 			public void setKey(String key) {
 				this.key = key;
+			}
+		}
+
+		public static class TagFiltersItem {
+
+			@SerializedName("Value")
+			private String value;
+
+			@SerializedName("Key")
+			private String key;
+
+			@SerializedName("Operator")
+			private String operator;
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(String operator) {
+				this.operator = operator;
 			}
 		}
 	}

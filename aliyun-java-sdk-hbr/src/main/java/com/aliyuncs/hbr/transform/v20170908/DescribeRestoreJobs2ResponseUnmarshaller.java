@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.aliyuncs.hbr.model.v20170908.DescribeRestoreJobs2Response;
 import com.aliyuncs.hbr.model.v20170908.DescribeRestoreJobs2Response.RestoreJob;
+import com.aliyuncs.hbr.model.v20170908.DescribeRestoreJobs2Response.RestoreJob.FileDetection;
+import com.aliyuncs.hbr.model.v20170908.DescribeRestoreJobs2Response.RestoreJob.FileDetectionRestoreOptions;
+import com.aliyuncs.hbr.model.v20170908.DescribeRestoreJobs2Response.RestoreJob.FileDetectionRestoreOptions.FileDetectionRiskFile;
 import com.aliyuncs.hbr.model.v20170908.DescribeRestoreJobs2Response.RestoreJob.OtsDetail;
 import com.aliyuncs.hbr.model.v20170908.DescribeRestoreJobs2Response.RestoreJob.Report;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -48,7 +51,7 @@ public class DescribeRestoreJobs2ResponseUnmarshaller {
 			restoreJob.setUdmDetail(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].UdmDetail"));
 			restoreJob.setSourceType(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].SourceType"));
 			restoreJob.setOptions(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].Options"));
-			restoreJob.setTargetInstanceId(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].TargetInstanceId"));
+			restoreJob.setSourceInstanceId(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].SourceInstanceId"));
 			restoreJob.setRestoreType(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].RestoreType"));
 			restoreJob.setTargetCreateTime(_ctx.longValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].TargetCreateTime"));
 			restoreJob.setItemsDone(_ctx.longValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].ItemsDone"));
@@ -85,6 +88,7 @@ public class DescribeRestoreJobs2ResponseUnmarshaller {
 			restoreJob.setMeteringBytesTotal(_ctx.longValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].MeteringBytesTotal"));
 			restoreJob.setStorageClass(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].StorageClass"));
 			restoreJob.setFailbackDetail(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].FailbackDetail"));
+			restoreJob.setTargetInstanceId(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].TargetInstanceId"));
 
 			OtsDetail otsDetail = new OtsDetail();
 			otsDetail.setBatchChannelCount(_ctx.integerValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].OtsDetail.BatchChannelCount"));
@@ -98,6 +102,34 @@ public class DescribeRestoreJobs2ResponseUnmarshaller {
 			report.setSkippedFiles(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].Report.SkippedFiles"));
 			report.setReportTaskStatus(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].Report.ReportTaskStatus"));
 			restoreJob.setReport(report);
+
+			FileDetectionRestoreOptions fileDetectionRestoreOptions = new FileDetectionRestoreOptions();
+			fileDetectionRestoreOptions.setFileDetectionRestorePolicy(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].FileDetectionRestoreOptions.FileDetectionRestorePolicy"));
+			fileDetectionRestoreOptions.setRiskFileRestorePolicy(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].FileDetectionRestoreOptions.RiskFileRestorePolicy"));
+
+			List<FileDetectionRiskFile> fileDetectionRiskFiles = new ArrayList<FileDetectionRiskFile>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].FileDetectionRestoreOptions.FileDetectionRiskFiles.Length"); j++) {
+				FileDetectionRiskFile fileDetectionRiskFile = new FileDetectionRiskFile();
+				fileDetectionRiskFile.setFileName(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].FileDetectionRestoreOptions.FileDetectionRiskFiles["+ j +"].FileName"));
+				fileDetectionRiskFile.setRiskLevel(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].FileDetectionRestoreOptions.FileDetectionRiskFiles["+ j +"].RiskLevel"));
+				fileDetectionRiskFile.setEventName(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].FileDetectionRestoreOptions.FileDetectionRiskFiles["+ j +"].EventName"));
+
+				fileDetectionRiskFiles.add(fileDetectionRiskFile);
+			}
+			fileDetectionRestoreOptions.setFileDetectionRiskFiles(fileDetectionRiskFiles);
+			restoreJob.setFileDetectionRestoreOptions(fileDetectionRestoreOptions);
+
+			List<FileDetection> fileDetections = new ArrayList<FileDetection>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].FileDetections.Length"); j++) {
+				FileDetection fileDetection = new FileDetection();
+				fileDetection.setClean(_ctx.booleanValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].FileDetections["+ j +"].Clean"));
+				fileDetection.setSnapshotId(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].FileDetections["+ j +"].SnapshotId"));
+				fileDetection.setSnapshotCompleteTime(_ctx.longValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].FileDetections["+ j +"].SnapshotCompleteTime"));
+				fileDetection.setSnapshotHash(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].FileDetections["+ j +"].SnapshotHash"));
+
+				fileDetections.add(fileDetection);
+			}
+			restoreJob.setFileDetections(fileDetections);
 
 			restoreJobs.add(restoreJob);
 		}

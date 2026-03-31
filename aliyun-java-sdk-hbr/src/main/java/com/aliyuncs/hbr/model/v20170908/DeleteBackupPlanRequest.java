@@ -27,6 +27,10 @@ public class DeleteBackupPlanRequest extends RpcAcsRequest<DeleteBackupPlanRespo
 
 	private String vaultId;
 
+	private String edition;
+
+	private Boolean requireNoRunningJobs;
+
 	private String planId;
 
 	private String sourceType;
@@ -47,6 +51,28 @@ public class DeleteBackupPlanRequest extends RpcAcsRequest<DeleteBackupPlanRespo
 		this.vaultId = vaultId;
 		if(vaultId != null){
 			putQueryParameter("VaultId", vaultId);
+		}
+	}
+
+	public String getEdition() {
+		return this.edition;
+	}
+
+	public void setEdition(String edition) {
+		this.edition = edition;
+		if(edition != null){
+			putQueryParameter("Edition", edition);
+		}
+	}
+
+	public Boolean getRequireNoRunningJobs() {
+		return this.requireNoRunningJobs;
+	}
+
+	public void setRequireNoRunningJobs(Boolean requireNoRunningJobs) {
+		this.requireNoRunningJobs = requireNoRunningJobs;
+		if(requireNoRunningJobs != null){
+			putQueryParameter("RequireNoRunningJobs", requireNoRunningJobs.toString());
 		}
 	}
 

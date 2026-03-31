@@ -133,6 +133,12 @@ public class DescribeHanaInstancesResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String crossAccountType;
+
+		private Long crossAccountUserId;
+
+		private String crossAccountRoleName;
+
 		private List<Tag> tags;
 
 		public Long getStatus() {
@@ -237,6 +243,30 @@ public class DescribeHanaInstancesResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCrossAccountType() {
+			return this.crossAccountType;
+		}
+
+		public void setCrossAccountType(String crossAccountType) {
+			this.crossAccountType = crossAccountType;
+		}
+
+		public Long getCrossAccountUserId() {
+			return this.crossAccountUserId;
+		}
+
+		public void setCrossAccountUserId(Long crossAccountUserId) {
+			this.crossAccountUserId = crossAccountUserId;
+		}
+
+		public String getCrossAccountRoleName() {
+			return this.crossAccountRoleName;
+		}
+
+		public void setCrossAccountRoleName(String crossAccountRoleName) {
+			this.crossAccountRoleName = crossAccountRoleName;
 		}
 
 		public List<Tag> getTags() {

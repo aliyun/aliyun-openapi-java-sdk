@@ -29,9 +29,9 @@ import com.aliyuncs.hbr.Endpoint;
 public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindingResponse> {
 	   
 
-	private String policyId;
+	private String source;
 
-	private String dataSourceId;
+	private String policyId;
 
 	private String policyBindingDescription;
 
@@ -39,8 +39,16 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 
 	private Boolean disabled;
 
+	private String exclude;
+
 	@SerializedName("advancedOptions")
 	private AdvancedOptions advancedOptions;
+
+	private String include;
+
+	private String speedLimit;
+
+	private String dataSourceId;
 	public UpdatePolicyBindingRequest() {
 		super("hbr", "2017-09-08", "UpdatePolicyBinding", "hbr");
 		setMethod(MethodType.POST);
@@ -48,6 +56,17 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
 	}
 
 	public String getPolicyId() {
@@ -58,17 +77,6 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 		this.policyId = policyId;
 		if(policyId != null){
 			putBodyParameter("PolicyId", policyId);
-		}
-	}
-
-	public String getDataSourceId() {
-		return this.dataSourceId;
-	}
-
-	public void setDataSourceId(String dataSourceId) {
-		this.dataSourceId = dataSourceId;
-		if(dataSourceId != null){
-			putBodyParameter("DataSourceId", dataSourceId);
 		}
 	}
 
@@ -105,6 +113,17 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 		}
 	}
 
+	public String getExclude() {
+		return this.exclude;
+	}
+
+	public void setExclude(String exclude) {
+		this.exclude = exclude;
+		if(exclude != null){
+			putQueryParameter("Exclude", exclude);
+		}
+	}
+
 	public AdvancedOptions getAdvancedOptions() {
 		return this.advancedOptions;
 	}
@@ -114,6 +133,39 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 		if (advancedOptions != null) {
 			putQueryParameter("AdvancedOptions" , new Gson().toJson(advancedOptions));
 		}	
+	}
+
+	public String getInclude() {
+		return this.include;
+	}
+
+	public void setInclude(String include) {
+		this.include = include;
+		if(include != null){
+			putQueryParameter("Include", include);
+		}
+	}
+
+	public String getSpeedLimit() {
+		return this.speedLimit;
+	}
+
+	public void setSpeedLimit(String speedLimit) {
+		this.speedLimit = speedLimit;
+		if(speedLimit != null){
+			putQueryParameter("SpeedLimit", speedLimit);
+		}
+	}
+
+	public String getDataSourceId() {
+		return this.dataSourceId;
+	}
+
+	public void setDataSourceId(String dataSourceId) {
+		this.dataSourceId = dataSourceId;
+		if(dataSourceId != null){
+			putBodyParameter("DataSourceId", dataSourceId);
+		}
 	}
 
 	public static class AdvancedOptions {
@@ -338,6 +390,9 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 			@SerializedName("InventoryId")
 			private String inventoryId;
 
+			@SerializedName("IgnoreArchiveObject")
+			private Boolean ignoreArchiveObject;
+
 			public String getInventoryCleanupPolicy() {
 				return this.inventoryCleanupPolicy;
 			}
@@ -352,6 +407,14 @@ public class UpdatePolicyBindingRequest extends RpcAcsRequest<UpdatePolicyBindin
 
 			public void setInventoryId(String inventoryId) {
 				this.inventoryId = inventoryId;
+			}
+
+			public Boolean getIgnoreArchiveObject() {
+				return this.ignoreArchiveObject;
+			}
+
+			public void setIgnoreArchiveObject(Boolean ignoreArchiveObject) {
+				this.ignoreArchiveObject = ignoreArchiveObject;
 			}
 		}
 

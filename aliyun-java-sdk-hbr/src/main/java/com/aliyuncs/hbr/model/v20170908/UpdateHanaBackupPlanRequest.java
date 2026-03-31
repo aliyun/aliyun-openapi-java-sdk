@@ -28,15 +28,15 @@ public class UpdateHanaBackupPlanRequest extends RpcAcsRequest<UpdateHanaBackupP
 
 	private String vaultId;
 
+	private String resourceGroupId;
+
+	private String planName;
+
 	private String clusterId;
 
 	private String schedule;
 
-	private String resourceGroupId;
-
 	private String backupPrefix;
-
-	private String planName;
 
 	private String planId;
 	public UpdateHanaBackupPlanRequest() {
@@ -57,6 +57,28 @@ public class UpdateHanaBackupPlanRequest extends RpcAcsRequest<UpdateHanaBackupP
 		this.vaultId = vaultId;
 		if(vaultId != null){
 			putQueryParameter("VaultId", vaultId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getPlanName() {
+		return this.planName;
+	}
+
+	public void setPlanName(String planName) {
+		this.planName = planName;
+		if(planName != null){
+			putQueryParameter("PlanName", planName);
 		}
 	}
 
@@ -82,17 +104,6 @@ public class UpdateHanaBackupPlanRequest extends RpcAcsRequest<UpdateHanaBackupP
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
 	public String getBackupPrefix() {
 		return this.backupPrefix;
 	}
@@ -101,17 +112,6 @@ public class UpdateHanaBackupPlanRequest extends RpcAcsRequest<UpdateHanaBackupP
 		this.backupPrefix = backupPrefix;
 		if(backupPrefix != null){
 			putQueryParameter("BackupPrefix", backupPrefix);
-		}
-	}
-
-	public String getPlanName() {
-		return this.planName;
-	}
-
-	public void setPlanName(String planName) {
-		this.planName = planName;
-		if(planName != null){
-			putQueryParameter("PlanName", planName);
 		}
 	}
 

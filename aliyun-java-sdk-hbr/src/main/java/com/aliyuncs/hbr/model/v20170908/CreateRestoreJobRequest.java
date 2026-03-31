@@ -27,10 +27,6 @@ import com.aliyuncs.hbr.Endpoint;
 public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobResponse> {
 	   
 
-	private String targetPrefix;
-
-	private String snapshotId;
-
 	private Long targetCreateTime;
 
 	private String vaultId;
@@ -38,10 +34,6 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 	private String crossAccountType;
 
 	private String crossAccountRoleName;
-
-	private String snapshotHash;
-
-	private Long targetTime;
 
 	private String targetInstanceName;
 
@@ -51,6 +43,26 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 
 	private String exclude;
 
+	private String udmDetail;
+
+	private String targetTableName;
+
+	private Boolean initiatedByAck;
+
+	private String failbackDetail;
+
+	private String targetPath;
+
+	private String targetPrefix;
+
+	private String snapshotId;
+
+	private String edition;
+
+	private String snapshotHash;
+
+	private Long targetTime;
+
 	private String targetContainer;
 
 	private String targetBucket;
@@ -59,12 +71,6 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 
 	private String include;
 
-	private String udmDetail;
-
-	private String targetTableName;
-
-	private Boolean initiatedByAck;
-
 	private String restoreType;
 
 	private String targetInstanceId;
@@ -72,11 +78,7 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 	@SerializedName("otsDetail")
 	private OtsDetail otsDetail;
 
-	private String failbackDetail;
-
 	private String targetFileSystemId;
-
-	private String targetPath;
 
 	private Long crossAccountUserId;
 
@@ -88,28 +90,6 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTargetPrefix() {
-		return this.targetPrefix;
-	}
-
-	public void setTargetPrefix(String targetPrefix) {
-		this.targetPrefix = targetPrefix;
-		if(targetPrefix != null){
-			putQueryParameter("TargetPrefix", targetPrefix);
-		}
-	}
-
-	public String getSnapshotId() {
-		return this.snapshotId;
-	}
-
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
-		if(snapshotId != null){
-			putQueryParameter("SnapshotId", snapshotId);
-		}
 	}
 
 	public Long getTargetCreateTime() {
@@ -153,28 +133,6 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		this.crossAccountRoleName = crossAccountRoleName;
 		if(crossAccountRoleName != null){
 			putQueryParameter("CrossAccountRoleName", crossAccountRoleName);
-		}
-	}
-
-	public String getSnapshotHash() {
-		return this.snapshotHash;
-	}
-
-	public void setSnapshotHash(String snapshotHash) {
-		this.snapshotHash = snapshotHash;
-		if(snapshotHash != null){
-			putQueryParameter("SnapshotHash", snapshotHash);
-		}
-	}
-
-	public Long getTargetTime() {
-		return this.targetTime;
-	}
-
-	public void setTargetTime(Long targetTime) {
-		this.targetTime = targetTime;
-		if(targetTime != null){
-			putQueryParameter("TargetTime", targetTime.toString());
 		}
 	}
 
@@ -222,6 +180,116 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		}
 	}
 
+	public String getUdmDetail() {
+		return this.udmDetail;
+	}
+
+	public void setUdmDetail(String udmDetail) {
+		this.udmDetail = udmDetail;
+		if(udmDetail != null){
+			putQueryParameter("UdmDetail", udmDetail);
+		}
+	}
+
+	public String getTargetTableName() {
+		return this.targetTableName;
+	}
+
+	public void setTargetTableName(String targetTableName) {
+		this.targetTableName = targetTableName;
+		if(targetTableName != null){
+			putQueryParameter("TargetTableName", targetTableName);
+		}
+	}
+
+	public Boolean getInitiatedByAck() {
+		return this.initiatedByAck;
+	}
+
+	public void setInitiatedByAck(Boolean initiatedByAck) {
+		this.initiatedByAck = initiatedByAck;
+		if(initiatedByAck != null){
+			putQueryParameter("InitiatedByAck", initiatedByAck.toString());
+		}
+	}
+
+	public String getFailbackDetail() {
+		return this.failbackDetail;
+	}
+
+	public void setFailbackDetail(String failbackDetail) {
+		this.failbackDetail = failbackDetail;
+		if(failbackDetail != null){
+			putQueryParameter("FailbackDetail", failbackDetail);
+		}
+	}
+
+	public String getTargetPath() {
+		return this.targetPath;
+	}
+
+	public void setTargetPath(String targetPath) {
+		this.targetPath = targetPath;
+		if(targetPath != null){
+			putBodyParameter("TargetPath", targetPath);
+		}
+	}
+
+	public String getTargetPrefix() {
+		return this.targetPrefix;
+	}
+
+	public void setTargetPrefix(String targetPrefix) {
+		this.targetPrefix = targetPrefix;
+		if(targetPrefix != null){
+			putQueryParameter("TargetPrefix", targetPrefix);
+		}
+	}
+
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
+		}
+	}
+
+	public String getEdition() {
+		return this.edition;
+	}
+
+	public void setEdition(String edition) {
+		this.edition = edition;
+		if(edition != null){
+			putQueryParameter("Edition", edition);
+		}
+	}
+
+	public String getSnapshotHash() {
+		return this.snapshotHash;
+	}
+
+	public void setSnapshotHash(String snapshotHash) {
+		this.snapshotHash = snapshotHash;
+		if(snapshotHash != null){
+			putQueryParameter("SnapshotHash", snapshotHash);
+		}
+	}
+
+	public Long getTargetTime() {
+		return this.targetTime;
+	}
+
+	public void setTargetTime(Long targetTime) {
+		this.targetTime = targetTime;
+		if(targetTime != null){
+			putQueryParameter("TargetTime", targetTime.toString());
+		}
+	}
+
 	public String getTargetContainer() {
 		return this.targetContainer;
 	}
@@ -266,39 +334,6 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		}
 	}
 
-	public String getUdmDetail() {
-		return this.udmDetail;
-	}
-
-	public void setUdmDetail(String udmDetail) {
-		this.udmDetail = udmDetail;
-		if(udmDetail != null){
-			putQueryParameter("UdmDetail", udmDetail);
-		}
-	}
-
-	public String getTargetTableName() {
-		return this.targetTableName;
-	}
-
-	public void setTargetTableName(String targetTableName) {
-		this.targetTableName = targetTableName;
-		if(targetTableName != null){
-			putQueryParameter("TargetTableName", targetTableName);
-		}
-	}
-
-	public Boolean getInitiatedByAck() {
-		return this.initiatedByAck;
-	}
-
-	public void setInitiatedByAck(Boolean initiatedByAck) {
-		this.initiatedByAck = initiatedByAck;
-		if(initiatedByAck != null){
-			putQueryParameter("InitiatedByAck", initiatedByAck.toString());
-		}
-	}
-
 	public String getRestoreType() {
 		return this.restoreType;
 	}
@@ -332,17 +367,6 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		}	
 	}
 
-	public String getFailbackDetail() {
-		return this.failbackDetail;
-	}
-
-	public void setFailbackDetail(String failbackDetail) {
-		this.failbackDetail = failbackDetail;
-		if(failbackDetail != null){
-			putQueryParameter("FailbackDetail", failbackDetail);
-		}
-	}
-
 	public String getTargetFileSystemId() {
 		return this.targetFileSystemId;
 	}
@@ -351,17 +375,6 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		this.targetFileSystemId = targetFileSystemId;
 		if(targetFileSystemId != null){
 			putQueryParameter("TargetFileSystemId", targetFileSystemId);
-		}
-	}
-
-	public String getTargetPath() {
-		return this.targetPath;
-	}
-
-	public void setTargetPath(String targetPath) {
-		this.targetPath = targetPath;
-		if(targetPath != null){
-			putBodyParameter("TargetPath", targetPath);
 		}
 	}
 

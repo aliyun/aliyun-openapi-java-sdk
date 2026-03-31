@@ -33,6 +33,8 @@ public class UpdateVaultRequest extends RpcAcsRequest<UpdateVaultResponse> {
 	private String vaultName;
 
 	private String resourceGroupId;
+
+	private Boolean wormEnabled;
 	public UpdateVaultRequest() {
 		super("hbr", "2017-09-08", "UpdateVault", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -84,6 +86,17 @@ public class UpdateVaultRequest extends RpcAcsRequest<UpdateVaultResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Boolean getWormEnabled() {
+		return this.wormEnabled;
+	}
+
+	public void setWormEnabled(Boolean wormEnabled) {
+		this.wormEnabled = wormEnabled;
+		if(wormEnabled != null){
+			putQueryParameter("WormEnabled", wormEnabled.toString());
 		}
 	}
 

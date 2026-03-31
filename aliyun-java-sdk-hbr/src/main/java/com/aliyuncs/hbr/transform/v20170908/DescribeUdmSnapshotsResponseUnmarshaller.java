@@ -64,6 +64,11 @@ public class DescribeUdmSnapshotsResponseUnmarshaller {
 			snapshot.setInstanceGroupId(_ctx.stringValue("DescribeUdmSnapshotsResponse.Snapshots["+ i +"].InstanceGroupId"));
 			snapshot.setAdvancedRetentionType(_ctx.stringValue("DescribeUdmSnapshotsResponse.Snapshots["+ i +"].AdvancedRetentionType"));
 			snapshot.setExpireTime(_ctx.longValue("DescribeUdmSnapshotsResponse.Snapshots["+ i +"].ExpireTime"));
+			snapshot.setImmutable(_ctx.booleanValue("DescribeUdmSnapshotsResponse.Snapshots["+ i +"].Immutable"));
+			snapshot.setCanBeDeleted(_ctx.booleanValue("DescribeUdmSnapshotsResponse.Snapshots["+ i +"].CanBeDeleted"));
+			snapshot.setArchiveStatus(_ctx.stringValue("DescribeUdmSnapshotsResponse.Snapshots["+ i +"].ArchiveStatus"));
+			snapshot.setArchiveErrorMessage(_ctx.stringValue("DescribeUdmSnapshotsResponse.Snapshots["+ i +"].ArchiveErrorMessage"));
+			snapshot.setArchiveTriggerTime(_ctx.longValue("DescribeUdmSnapshotsResponse.Snapshots["+ i +"].ArchiveTriggerTime"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeUdmSnapshotsResponse.Snapshots["+ i +"].Paths.Length"); j++) {
@@ -106,6 +111,12 @@ public class DescribeUdmSnapshotsResponseUnmarshaller {
 				nativeSnapshotIdList.add(_ctx.stringValue("DescribeUdmSnapshotsResponse.Snapshots["+ i +"].Detail.NativeSnapshotIdList["+ j +"]"));
 			}
 			detail.setNativeSnapshotIdList(nativeSnapshotIdList);
+
+			List<String> nativeDiskIdList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeUdmSnapshotsResponse.Snapshots["+ i +"].Detail.NativeDiskIdList.Length"); j++) {
+				nativeDiskIdList.add(_ctx.stringValue("DescribeUdmSnapshotsResponse.Snapshots["+ i +"].Detail.NativeDiskIdList["+ j +"]"));
+			}
+			detail.setNativeDiskIdList(nativeDiskIdList);
 			snapshot.setDetail(detail);
 
 			snapshots.add(snapshot);

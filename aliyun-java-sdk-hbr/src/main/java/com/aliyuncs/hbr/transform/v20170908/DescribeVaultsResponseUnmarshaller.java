@@ -77,12 +77,24 @@ public class DescribeVaultsResponseUnmarshaller {
 			vault.setArchiveStorageSize(_ctx.longValue("DescribeVaultsResponse.Vaults["+ i +"].ArchiveStorageSize"));
 			vault.setArchiveBytesDone(_ctx.longValue("DescribeVaultsResponse.Vaults["+ i +"].ArchiveBytesDone"));
 			vault.setReplicationSourceVault(_ctx.booleanValue("DescribeVaultsResponse.Vaults["+ i +"].ReplicationSourceVault"));
+			vault.setReplicationTargetRegionId(_ctx.stringValue("DescribeVaultsResponse.Vaults["+ i +"].ReplicationTargetRegionId"));
+			vault.setVaultOwnerId(_ctx.longValue("DescribeVaultsResponse.Vaults["+ i +"].VaultOwnerId"));
+			vault.setReplicationTargetVaultId(_ctx.stringValue("DescribeVaultsResponse.Vaults["+ i +"].ReplicationTargetVaultId"));
+			vault.setReplicationSourceOwnerId(_ctx.longValue("DescribeVaultsResponse.Vaults["+ i +"].ReplicationSourceOwnerId"));
+			vault.setReplicationTargetOwnerId(_ctx.longValue("DescribeVaultsResponse.Vaults["+ i +"].ReplicationTargetOwnerId"));
+			vault.setReplicationStatus(_ctx.stringValue("DescribeVaultsResponse.Vaults["+ i +"].ReplicationStatus"));
 
 			List<String> sourceTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVaultsResponse.Vaults["+ i +"].SourceTypes.Length"); j++) {
 				sourceTypes.add(_ctx.stringValue("DescribeVaultsResponse.Vaults["+ i +"].SourceTypes["+ j +"]"));
 			}
 			vault.setSourceTypes(sourceTypes);
+
+			List<Long> rsTargetAccountIds = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeVaultsResponse.Vaults["+ i +"].RsTargetAccountIds.Length"); j++) {
+				rsTargetAccountIds.add(_ctx.longValue("DescribeVaultsResponse.Vaults["+ i +"].RsTargetAccountIds["+ j +"]"));
+			}
+			vault.setRsTargetAccountIds(rsTargetAccountIds);
 
 			ReplicationProgress replicationProgress = new ReplicationProgress();
 			replicationProgress.setHistoricalReplicationProgress(_ctx.integerValue("DescribeVaultsResponse.Vaults["+ i +"].ReplicationProgress.HistoricalReplicationProgress"));
@@ -103,6 +115,8 @@ public class DescribeVaultsResponseUnmarshaller {
 			backupPlanStatistics.setEcsHana(_ctx.integerValue("DescribeVaultsResponse.Vaults["+ i +"].BackupPlanStatistics.EcsHana"));
 			backupPlanStatistics.setLocalVm(_ctx.integerValue("DescribeVaultsResponse.Vaults["+ i +"].BackupPlanStatistics.LocalVm"));
 			backupPlanStatistics.setOts(_ctx.integerValue("DescribeVaultsResponse.Vaults["+ i +"].BackupPlanStatistics.Ots"));
+			backupPlanStatistics.setArchive(_ctx.integerValue("DescribeVaultsResponse.Vaults["+ i +"].BackupPlanStatistics.Archive"));
+			backupPlanStatistics.setCommonFileSystem(_ctx.integerValue("DescribeVaultsResponse.Vaults["+ i +"].BackupPlanStatistics.CommonFileSystem"));
 			vault.setBackupPlanStatistics(backupPlanStatistics);
 
 			TrialInfo trialInfo = new TrialInfo();

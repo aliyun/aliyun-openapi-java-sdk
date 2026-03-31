@@ -420,6 +420,9 @@ public class CreatePolicyBindingsRequest extends RpcAcsRequest<CreatePolicyBindi
 				@SerializedName("InventoryId")
 				private String inventoryId;
 
+				@SerializedName("IgnoreArchiveObject")
+				private Boolean ignoreArchiveObject;
+
 				public String getInventoryCleanupPolicy() {
 					return this.inventoryCleanupPolicy;
 				}
@@ -434,6 +437,14 @@ public class CreatePolicyBindingsRequest extends RpcAcsRequest<CreatePolicyBindi
 
 				public void setInventoryId(String inventoryId) {
 					this.inventoryId = inventoryId;
+				}
+
+				public Boolean getIgnoreArchiveObject() {
+					return this.ignoreArchiveObject;
+				}
+
+				public void setIgnoreArchiveObject(Boolean ignoreArchiveObject) {
+					this.ignoreArchiveObject = ignoreArchiveObject;
 				}
 			}
 

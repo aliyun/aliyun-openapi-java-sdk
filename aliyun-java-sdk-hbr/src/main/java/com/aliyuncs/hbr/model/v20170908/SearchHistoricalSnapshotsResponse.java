@@ -185,6 +185,28 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 
 		private String exclude;
 
+		private String detectionStatus;
+
+		private Boolean fullyDetection;
+
+		private Long lastDetectionStartTime;
+
+		private Long lastDetectionCompleteTime;
+
+		private Long toDetectFiles;
+
+		private Long detectFiles;
+
+		private Long lowRiskFiles;
+
+		private Long mediumRiskFiles;
+
+		private Long highRiskFiles;
+
+		private Boolean reportRiskFile;
+
+		private Long protectedDataSize;
+
 		private List<String> paths;
 
 		public String getStatus() {
@@ -497,6 +519,94 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 
 		public void setExclude(String exclude) {
 			this.exclude = exclude;
+		}
+
+		public String getDetectionStatus() {
+			return this.detectionStatus;
+		}
+
+		public void setDetectionStatus(String detectionStatus) {
+			this.detectionStatus = detectionStatus;
+		}
+
+		public Boolean getFullyDetection() {
+			return this.fullyDetection;
+		}
+
+		public void setFullyDetection(Boolean fullyDetection) {
+			this.fullyDetection = fullyDetection;
+		}
+
+		public Long getLastDetectionStartTime() {
+			return this.lastDetectionStartTime;
+		}
+
+		public void setLastDetectionStartTime(Long lastDetectionStartTime) {
+			this.lastDetectionStartTime = lastDetectionStartTime;
+		}
+
+		public Long getLastDetectionCompleteTime() {
+			return this.lastDetectionCompleteTime;
+		}
+
+		public void setLastDetectionCompleteTime(Long lastDetectionCompleteTime) {
+			this.lastDetectionCompleteTime = lastDetectionCompleteTime;
+		}
+
+		public Long getToDetectFiles() {
+			return this.toDetectFiles;
+		}
+
+		public void setToDetectFiles(Long toDetectFiles) {
+			this.toDetectFiles = toDetectFiles;
+		}
+
+		public Long getDetectFiles() {
+			return this.detectFiles;
+		}
+
+		public void setDetectFiles(Long detectFiles) {
+			this.detectFiles = detectFiles;
+		}
+
+		public Long getLowRiskFiles() {
+			return this.lowRiskFiles;
+		}
+
+		public void setLowRiskFiles(Long lowRiskFiles) {
+			this.lowRiskFiles = lowRiskFiles;
+		}
+
+		public Long getMediumRiskFiles() {
+			return this.mediumRiskFiles;
+		}
+
+		public void setMediumRiskFiles(Long mediumRiskFiles) {
+			this.mediumRiskFiles = mediumRiskFiles;
+		}
+
+		public Long getHighRiskFiles() {
+			return this.highRiskFiles;
+		}
+
+		public void setHighRiskFiles(Long highRiskFiles) {
+			this.highRiskFiles = highRiskFiles;
+		}
+
+		public Boolean getReportRiskFile() {
+			return this.reportRiskFile;
+		}
+
+		public void setReportRiskFile(Boolean reportRiskFile) {
+			this.reportRiskFile = reportRiskFile;
+		}
+
+		public Long getProtectedDataSize() {
+			return this.protectedDataSize;
+		}
+
+		public void setProtectedDataSize(Long protectedDataSize) {
+			this.protectedDataSize = protectedDataSize;
 		}
 
 		public List<String> getPaths() {

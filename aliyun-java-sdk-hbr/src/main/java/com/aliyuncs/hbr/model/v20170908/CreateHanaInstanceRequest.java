@@ -29,6 +29,10 @@ public class CreateHanaInstanceRequest extends RpcAcsRequest<CreateHanaInstanceR
 
 	private String vaultId;
 
+	private String crossAccountType;
+
+	private String crossAccountRoleName;
+
 	private Boolean useSsl;
 
 	private String sid;
@@ -46,6 +50,8 @@ public class CreateHanaInstanceRequest extends RpcAcsRequest<CreateHanaInstanceR
 	private String ecsInstanceId;
 
 	private Integer instanceNumber;
+
+	private Long crossAccountUserId;
 
 	private String userName;
 	public CreateHanaInstanceRequest() {
@@ -76,6 +82,28 @@ public class CreateHanaInstanceRequest extends RpcAcsRequest<CreateHanaInstanceR
 		this.vaultId = vaultId;
 		if(vaultId != null){
 			putQueryParameter("VaultId", vaultId);
+		}
+	}
+
+	public String getCrossAccountType() {
+		return this.crossAccountType;
+	}
+
+	public void setCrossAccountType(String crossAccountType) {
+		this.crossAccountType = crossAccountType;
+		if(crossAccountType != null){
+			putQueryParameter("CrossAccountType", crossAccountType);
+		}
+	}
+
+	public String getCrossAccountRoleName() {
+		return this.crossAccountRoleName;
+	}
+
+	public void setCrossAccountRoleName(String crossAccountRoleName) {
+		this.crossAccountRoleName = crossAccountRoleName;
+		if(crossAccountRoleName != null){
+			putQueryParameter("CrossAccountRoleName", crossAccountRoleName);
 		}
 	}
 
@@ -175,6 +203,17 @@ public class CreateHanaInstanceRequest extends RpcAcsRequest<CreateHanaInstanceR
 		this.instanceNumber = instanceNumber;
 		if(instanceNumber != null){
 			putQueryParameter("InstanceNumber", instanceNumber.toString());
+		}
+	}
+
+	public Long getCrossAccountUserId() {
+		return this.crossAccountUserId;
+	}
+
+	public void setCrossAccountUserId(Long crossAccountUserId) {
+		this.crossAccountUserId = crossAccountUserId;
+		if(crossAccountUserId != null){
+			putQueryParameter("CrossAccountUserId", crossAccountUserId.toString());
 		}
 	}
 

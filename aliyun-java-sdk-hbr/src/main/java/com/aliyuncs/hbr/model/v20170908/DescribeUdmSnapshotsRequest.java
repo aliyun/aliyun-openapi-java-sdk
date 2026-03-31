@@ -29,17 +29,17 @@ public class DescribeUdmSnapshotsRequest extends RpcAcsRequest<DescribeUdmSnapsh
 
 	private List<Object> snapshotIds;
 
-	private Long endTime;
-
 	private Long startTime;
 
 	private String jobId;
 
-	private String instanceId;
-
 	private String sourceType;
 
 	private String diskId;
+
+	private Long endTime;
+
+	private String instanceId;
 
 	private String udmRegionId;
 	public DescribeUdmSnapshotsRequest() {
@@ -59,17 +59,6 @@ public class DescribeUdmSnapshotsRequest extends RpcAcsRequest<DescribeUdmSnapsh
 		this.snapshotIds = snapshotIds;
 		if(snapshotIds != null){
 			putBodyParameter("SnapshotIds", new Gson().toJson(snapshotIds));
-		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -95,17 +84,6 @@ public class DescribeUdmSnapshotsRequest extends RpcAcsRequest<DescribeUdmSnapsh
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getSourceType() {
 		return this.sourceType;
 	}
@@ -125,6 +103,28 @@ public class DescribeUdmSnapshotsRequest extends RpcAcsRequest<DescribeUdmSnapsh
 		this.diskId = diskId;
 		if(diskId != null){
 			putQueryParameter("DiskId", diskId);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

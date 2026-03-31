@@ -31,13 +31,17 @@ public class CreateReplicationVaultRequest extends RpcAcsRequest<CreateReplicati
 
 	private String vaultName;
 
-	private String redundancyType;
+	private String encryptType;
 
 	private String replicationSourceRegionId;
 
 	private String vaultRegionId;
 
+	private String redundancyType;
+
 	private String vaultStorageClass;
+
+	private String kmsKeyId;
 	public CreateReplicationVaultRequest() {
 		super("hbr", "2017-09-08", "CreateReplicationVault", "hbr");
 		setMethod(MethodType.POST);
@@ -80,14 +84,14 @@ public class CreateReplicationVaultRequest extends RpcAcsRequest<CreateReplicati
 		}
 	}
 
-	public String getRedundancyType() {
-		return this.redundancyType;
+	public String getEncryptType() {
+		return this.encryptType;
 	}
 
-	public void setRedundancyType(String redundancyType) {
-		this.redundancyType = redundancyType;
-		if(redundancyType != null){
-			putQueryParameter("RedundancyType", redundancyType);
+	public void setEncryptType(String encryptType) {
+		this.encryptType = encryptType;
+		if(encryptType != null){
+			putQueryParameter("EncryptType", encryptType);
 		}
 	}
 
@@ -113,6 +117,17 @@ public class CreateReplicationVaultRequest extends RpcAcsRequest<CreateReplicati
 		}
 	}
 
+	public String getRedundancyType() {
+		return this.redundancyType;
+	}
+
+	public void setRedundancyType(String redundancyType) {
+		this.redundancyType = redundancyType;
+		if(redundancyType != null){
+			putQueryParameter("RedundancyType", redundancyType);
+		}
+	}
+
 	public String getVaultStorageClass() {
 		return this.vaultStorageClass;
 	}
@@ -121,6 +136,17 @@ public class CreateReplicationVaultRequest extends RpcAcsRequest<CreateReplicati
 		this.vaultStorageClass = vaultStorageClass;
 		if(vaultStorageClass != null){
 			putQueryParameter("VaultStorageClass", vaultStorageClass);
+		}
+	}
+
+	public String getKmsKeyId() {
+		return this.kmsKeyId;
+	}
+
+	public void setKmsKeyId(String kmsKeyId) {
+		this.kmsKeyId = kmsKeyId;
+		if(kmsKeyId != null){
+			putQueryParameter("KmsKeyId", kmsKeyId);
 		}
 	}
 

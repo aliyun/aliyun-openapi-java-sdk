@@ -27,6 +27,8 @@ public class EnableBackupPlanRequest extends RpcAcsRequest<EnableBackupPlanRespo
 
 	private String vaultId;
 
+	private String edition;
+
 	private String planId;
 
 	private String sourceType;
@@ -47,6 +49,17 @@ public class EnableBackupPlanRequest extends RpcAcsRequest<EnableBackupPlanRespo
 		this.vaultId = vaultId;
 		if(vaultId != null){
 			putQueryParameter("VaultId", vaultId);
+		}
+	}
+
+	public String getEdition() {
+		return this.edition;
+	}
+
+	public void setEdition(String edition) {
+		this.edition = edition;
+		if(edition != null){
+			putQueryParameter("Edition", edition);
 		}
 	}
 

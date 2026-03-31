@@ -173,6 +173,8 @@ public class DescribeClientsResponse extends AcsResponse {
 
 		private String clusterId;
 
+		private Long heartBeatTime;
+
 		private List<Tag> tags;
 
 		private List<String> publicIpAddresses;
@@ -445,6 +447,14 @@ public class DescribeClientsResponse extends AcsResponse {
 
 		public void setClusterId(String clusterId) {
 			this.clusterId = clusterId;
+		}
+
+		public Long getHeartBeatTime() {
+			return this.heartBeatTime;
+		}
+
+		public void setHeartBeatTime(Long heartBeatTime) {
+			this.heartBeatTime = heartBeatTime;
 		}
 
 		public List<Tag> getTags() {

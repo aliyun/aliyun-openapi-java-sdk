@@ -25,6 +25,7 @@ import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.Adva
 import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.AdvancedOptions.FileDetail;
 import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.AdvancedOptions.OssDetail;
 import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.AdvancedOptions.UdmDetail;
+import com.aliyuncs.hbr.model.v20170908.DescribePolicyBindingsResponse.Data.HitTag;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -59,6 +60,7 @@ public class DescribePolicyBindingsResponseUnmarshaller {
 			data.setCrossAccountType(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].CrossAccountType"));
 			data.setCrossAccountUserId(_ctx.longValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].CrossAccountUserId"));
 			data.setCrossAccountRoleName(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].CrossAccountRoleName"));
+			data.setCreatedByTag(_ctx.booleanValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].CreatedByTag"));
 
 			AdvancedOptions advancedOptions = new AdvancedOptions();
 
@@ -95,6 +97,7 @@ public class DescribePolicyBindingsResponseUnmarshaller {
 			OssDetail ossDetail = new OssDetail();
 			ossDetail.setInventoryId(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.OssDetail.InventoryId"));
 			ossDetail.setInventoryCleanupPolicy(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.OssDetail.InventoryCleanupPolicy"));
+			ossDetail.setIgnoreArchiveObject(_ctx.booleanValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.OssDetail.IgnoreArchiveObject"));
 			advancedOptions.setOssDetail(ossDetail);
 
 			FileDetail fileDetail = new FileDetail();
@@ -114,6 +117,17 @@ public class DescribePolicyBindingsResponseUnmarshaller {
 			commonFileSystemDetail.setFetchSliceSize(_ctx.longValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].AdvancedOptions.CommonFileSystemDetail.FetchSliceSize"));
 			advancedOptions.setCommonFileSystemDetail(commonFileSystemDetail);
 			data.setAdvancedOptions(advancedOptions);
+
+			List<HitTag> hitTags = new ArrayList<HitTag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].HitTags.Length"); j++) {
+				HitTag hitTag = new HitTag();
+				hitTag.setKey(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].HitTags["+ j +"].Key"));
+				hitTag.setValue(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].HitTags["+ j +"].Value"));
+				hitTag.setOperator(_ctx.stringValue("DescribePolicyBindingsResponse.PolicyBindings["+ i +"].HitTags["+ j +"].Operator"));
+
+				hitTags.add(hitTag);
+			}
+			data.setHitTags(hitTags);
 
 			policyBindings.add(data);
 		}

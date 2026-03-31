@@ -34,7 +34,6 @@ public class DescribeRegionsResponseUnmarshaller {
 		List<Region> regions = new ArrayList<Region>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
 			Region region = new Region();
-			region.setVaultCount(_ctx.integerValue("DescribeRegionsResponse.Regions["+ i +"].VaultCount"));
 			region.setLocalName(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].LocalName"));
 			region.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
 

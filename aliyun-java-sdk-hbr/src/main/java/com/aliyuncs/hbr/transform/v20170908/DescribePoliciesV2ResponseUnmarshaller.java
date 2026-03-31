@@ -20,8 +20,10 @@ import java.util.List;
 import com.aliyuncs.hbr.model.v20170908.DescribePoliciesV2Response;
 import com.aliyuncs.hbr.model.v20170908.DescribePoliciesV2Response.Policy;
 import com.aliyuncs.hbr.model.v20170908.DescribePoliciesV2Response.Policy.Rule;
+import com.aliyuncs.hbr.model.v20170908.DescribePoliciesV2Response.Policy.Rule.DataSourceFilter;
 import com.aliyuncs.hbr.model.v20170908.DescribePoliciesV2Response.Policy.Rule.RetentionRule;
 import com.aliyuncs.hbr.model.v20170908.DescribePoliciesV2Response.Policy.Rule.Selector;
+import com.aliyuncs.hbr.model.v20170908.DescribePoliciesV2Response.Policy.Rule.TagFilter;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +49,8 @@ public class DescribePoliciesV2ResponseUnmarshaller {
 			policy.setPolicyDescription(_ctx.stringValue("DescribePoliciesV2Response.Policies["+ i +"].PolicyDescription"));
 			policy.setPolicyBindingCount(_ctx.longValue("DescribePoliciesV2Response.Policies["+ i +"].PolicyBindingCount"));
 			policy.setRecommendVersion(_ctx.integerValue("DescribePoliciesV2Response.Policies["+ i +"].RecommendVersion"));
+			policy.setPolicyType(_ctx.stringValue("DescribePoliciesV2Response.Policies["+ i +"].PolicyType"));
+			policy.setBusinessStatus(_ctx.stringValue("DescribePoliciesV2Response.Policies["+ i +"].BusinessStatus"));
 
 			List<Rule> rules = new ArrayList<Rule>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePoliciesV2Response.Policies["+ i +"].Rules.Length"); j++) {
@@ -64,6 +68,8 @@ public class DescribePoliciesV2ResponseUnmarshaller {
 				rule.setArchiveDays(_ctx.longValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].ArchiveDays"));
 				rule.setColdArchiveDays(_ctx.longValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].ColdArchiveDays"));
 				rule.setKeepLatestSnapshots(_ctx.longValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].KeepLatestSnapshots"));
+				rule.setDoDetect(_ctx.booleanValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].DoDetect"));
+				rule.setImmutable(_ctx.booleanValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].Immutable"));
 
 				Selector selector = new Selector();
 				selector.setKey(_ctx.stringValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].Selector.Key"));
@@ -81,6 +87,35 @@ public class DescribePoliciesV2ResponseUnmarshaller {
 					retentionRules.add(retentionRule);
 				}
 				rule.setRetentionRules(retentionRules);
+
+				List<DataSourceFilter> dataSourceFilters = new ArrayList<DataSourceFilter>();
+				for (int k = 0; k < _ctx.lengthValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].DataSourceFilters.Length"); k++) {
+					DataSourceFilter dataSourceFilter = new DataSourceFilter();
+					dataSourceFilter.setSourceType(_ctx.stringValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].DataSourceFilters["+ k +"].SourceType"));
+					dataSourceFilter.setCrossAccountType(_ctx.stringValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].DataSourceFilters["+ k +"].CrossAccountType"));
+					dataSourceFilter.setCrossAccountUserId(_ctx.longValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].DataSourceFilters["+ k +"].CrossAccountUserId"));
+					dataSourceFilter.setCrossAccountRoleName(_ctx.stringValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].DataSourceFilters["+ k +"].CrossAccountRoleName"));
+
+					List<String> dataSourceIds = new ArrayList<String>();
+					for (int l = 0; l < _ctx.lengthValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].DataSourceFilters["+ k +"].DataSourceIds.Length"); l++) {
+						dataSourceIds.add(_ctx.stringValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].DataSourceFilters["+ k +"].DataSourceIds["+ l +"]"));
+					}
+					dataSourceFilter.setDataSourceIds(dataSourceIds);
+
+					dataSourceFilters.add(dataSourceFilter);
+				}
+				rule.setDataSourceFilters(dataSourceFilters);
+
+				List<TagFilter> tagFilters = new ArrayList<TagFilter>();
+				for (int k = 0; k < _ctx.lengthValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].TagFilters.Length"); k++) {
+					TagFilter tagFilter = new TagFilter();
+					tagFilter.setKey(_ctx.stringValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].TagFilters["+ k +"].Key"));
+					tagFilter.setValue(_ctx.stringValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].TagFilters["+ k +"].Value"));
+					tagFilter.setOperator(_ctx.stringValue("DescribePoliciesV2Response.Policies["+ i +"].Rules["+ j +"].TagFilters["+ k +"].Operator"));
+
+					tagFilters.add(tagFilter);
+				}
+				rule.setTagFilters(tagFilters);
 
 				rules.add(rule);
 			}

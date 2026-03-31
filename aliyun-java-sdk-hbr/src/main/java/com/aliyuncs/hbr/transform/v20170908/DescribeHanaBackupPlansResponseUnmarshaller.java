@@ -46,6 +46,7 @@ public class DescribeHanaBackupPlansResponseUnmarshaller {
 			hanaBackupPlan.setPlanId(_ctx.stringValue("DescribeHanaBackupPlansResponse.HanaBackupPlans["+ i +"].PlanId"));
 			hanaBackupPlan.setClusterId(_ctx.stringValue("DescribeHanaBackupPlansResponse.HanaBackupPlans["+ i +"].ClusterId"));
 			hanaBackupPlan.setPlanName(_ctx.stringValue("DescribeHanaBackupPlansResponse.HanaBackupPlans["+ i +"].PlanName"));
+			hanaBackupPlan.setBusinessStatus(_ctx.stringValue("DescribeHanaBackupPlansResponse.HanaBackupPlans["+ i +"].BusinessStatus"));
 
 			hanaBackupPlans.add(hanaBackupPlan);
 		}

@@ -22,36 +22,21 @@ import com.aliyuncs.hbr.Endpoint;
  * @author auto create
  * @version 
  */
-public class AttachNasFileSystemRequest extends RpcAcsRequest<AttachNasFileSystemResponse> {
+public class DeleteCrossAccountRequest extends RpcAcsRequest<DeleteCrossAccountResponse> {
 	   
-
-	private String createTime;
 
 	private String crossAccountType;
 
 	private String crossAccountRoleName;
 
 	private Long crossAccountUserId;
-
-	private String fileSystemId;
-	public AttachNasFileSystemRequest() {
-		super("hbr", "2017-09-08", "AttachNasFileSystem", "hbr");
+	public DeleteCrossAccountRequest() {
+		super("hbr", "2017-09-08", "DeleteCrossAccount", "hbr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-		if(createTime != null){
-			putQueryParameter("CreateTime", createTime);
-		}
 	}
 
 	public String getCrossAccountType() {
@@ -87,20 +72,9 @@ public class AttachNasFileSystemRequest extends RpcAcsRequest<AttachNasFileSyste
 		}
 	}
 
-	public String getFileSystemId() {
-		return this.fileSystemId;
-	}
-
-	public void setFileSystemId(String fileSystemId) {
-		this.fileSystemId = fileSystemId;
-		if(fileSystemId != null){
-			putQueryParameter("FileSystemId", fileSystemId);
-		}
-	}
-
 	@Override
-	public Class<AttachNasFileSystemResponse> getResponseClass() {
-		return AttachNasFileSystemResponse.class;
+	public Class<DeleteCrossAccountResponse> getResponseClass() {
+		return DeleteCrossAccountResponse.class;
 	}
 
 }

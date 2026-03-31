@@ -138,6 +138,10 @@ public class DescribePolicyBindingsResponse extends AcsResponse {
 
 		private String crossAccountRoleName;
 
+		private Boolean createdByTag;
+
+		private List<HitTag> hitTags;
+
 		private AdvancedOptions advancedOptions;
 
 		public Long getCreatedTime() {
@@ -260,12 +264,61 @@ public class DescribePolicyBindingsResponse extends AcsResponse {
 			this.crossAccountRoleName = crossAccountRoleName;
 		}
 
+		public Boolean getCreatedByTag() {
+			return this.createdByTag;
+		}
+
+		public void setCreatedByTag(Boolean createdByTag) {
+			this.createdByTag = createdByTag;
+		}
+
+		public List<HitTag> getHitTags() {
+			return this.hitTags;
+		}
+
+		public void setHitTags(List<HitTag> hitTags) {
+			this.hitTags = hitTags;
+		}
+
 		public AdvancedOptions getAdvancedOptions() {
 			return this.advancedOptions;
 		}
 
 		public void setAdvancedOptions(AdvancedOptions advancedOptions) {
 			this.advancedOptions = advancedOptions;
+		}
+
+		public static class HitTag {
+
+			private String key;
+
+			private String value;
+
+			private String operator;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(String operator) {
+				this.operator = operator;
+			}
 		}
 
 		public static class AdvancedOptions {
@@ -499,6 +552,8 @@ public class DescribePolicyBindingsResponse extends AcsResponse {
 
 				private String inventoryCleanupPolicy;
 
+				private Boolean ignoreArchiveObject;
+
 				public String getInventoryId() {
 					return this.inventoryId;
 				}
@@ -513,6 +568,14 @@ public class DescribePolicyBindingsResponse extends AcsResponse {
 
 				public void setInventoryCleanupPolicy(String inventoryCleanupPolicy) {
 					this.inventoryCleanupPolicy = inventoryCleanupPolicy;
+				}
+
+				public Boolean getIgnoreArchiveObject() {
+					return this.ignoreArchiveObject;
+				}
+
+				public void setIgnoreArchiveObject(Boolean ignoreArchiveObject) {
+					this.ignoreArchiveObject = ignoreArchiveObject;
 				}
 			}
 

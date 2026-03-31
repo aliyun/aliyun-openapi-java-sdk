@@ -1,3 +1,6 @@
+2026-03-31 Version: 1.2.12
+- Support Resource Sharing.
+
 2024-01-25 Version: 1.2.11
 - Release parameter Detail in CreateBackupJob.
 

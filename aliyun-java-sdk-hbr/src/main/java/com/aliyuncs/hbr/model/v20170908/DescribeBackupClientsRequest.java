@@ -45,6 +45,8 @@ public class DescribeBackupClientsRequest extends RpcAcsRequest<DescribeBackupCl
 
 	private String clusterId;
 
+	private List<Filters> filterss;
+
 	@SerializedName("instanceIds")
 	private List<String> instanceIds;
 
@@ -149,6 +151,24 @@ public class DescribeBackupClientsRequest extends RpcAcsRequest<DescribeBackupCl
 		}
 	}
 
+	public List<Filters> getFilterss() {
+		return this.filterss;
+	}
+
+	public void setFilterss(List<Filters> filterss) {
+		this.filterss = filterss;	
+		if (filterss != null) {
+			for (int depth1 = 0; depth1 < filterss.size(); depth1++) {
+				if (filterss.get(depth1).getValuess() != null) {
+					for (int i = 0; i < filterss.get(depth1).getValuess().size(); i++) {
+						putQueryParameter("Filters." + (depth1 + 1) + ".Values." + (i + 1) , filterss.get(depth1).getValuess().get(i));
+					}
+				}
+				putQueryParameter("Filters." + (depth1 + 1) + ".Key" , filterss.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public List<String> getInstanceIds() {
 		return this.instanceIds;
 	}
@@ -183,6 +203,29 @@ public class DescribeBackupClientsRequest extends RpcAcsRequest<DescribeBackupCl
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
+	public static class Filters {
+
+		private List<String> valuess;
+
+		private String key;
+
+		public List<String> getValuess() {
+			return this.valuess;
+		}
+
+		public void setValuess(List<String> valuess) {
+			this.valuess = valuess;
 		}
 
 		public String getKey() {

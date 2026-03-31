@@ -28,6 +28,8 @@ public class DescribeVaultsRequest extends RpcAcsRequest<DescribeVaultsResponse>
 
 	private String vaultId;
 
+	private String vaultName;
+
 	private Integer pageNumber;
 
 	private String resourceGroupId;
@@ -40,7 +42,11 @@ public class DescribeVaultsRequest extends RpcAcsRequest<DescribeVaultsResponse>
 
 	private List<Tag> tags;
 
+	private Boolean replication;
+
 	private String status;
+
+	private Long vaultOwnerId;
 	public DescribeVaultsRequest() {
 		super("hbr", "2017-09-08", "DescribeVaults", "hbr");
 		setMethod(MethodType.POST);
@@ -58,6 +64,17 @@ public class DescribeVaultsRequest extends RpcAcsRequest<DescribeVaultsResponse>
 		this.vaultId = vaultId;
 		if(vaultId != null){
 			putQueryParameter("VaultId", vaultId);
+		}
+	}
+
+	public String getVaultName() {
+		return this.vaultName;
+	}
+
+	public void setVaultName(String vaultName) {
+		this.vaultName = vaultName;
+		if(vaultName != null){
+			putQueryParameter("VaultName", vaultName);
 		}
 	}
 
@@ -130,6 +147,17 @@ public class DescribeVaultsRequest extends RpcAcsRequest<DescribeVaultsResponse>
 		}	
 	}
 
+	public Boolean getReplication() {
+		return this.replication;
+	}
+
+	public void setReplication(Boolean replication) {
+		this.replication = replication;
+		if(replication != null){
+			putQueryParameter("Replication", replication.toString());
+		}
+	}
+
 	public String getStatus() {
 		return this.status;
 	}
@@ -138,6 +166,17 @@ public class DescribeVaultsRequest extends RpcAcsRequest<DescribeVaultsResponse>
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public Long getVaultOwnerId() {
+		return this.vaultOwnerId;
+	}
+
+	public void setVaultOwnerId(Long vaultOwnerId) {
+		this.vaultOwnerId = vaultOwnerId;
+		if(vaultOwnerId != null){
+			putQueryParameter("VaultOwnerId", vaultOwnerId.toString());
 		}
 	}
 

@@ -28,21 +28,21 @@ public class DescribeHanaRestoresRequest extends RpcAcsRequest<DescribeHanaResto
 
 	private String vaultId;
 
-	private Long backupId;
-
 	private String restoreStatus;
-
-	private String restoreId;
-
-	private String clusterId;
 
 	private Integer pageNumber;
 
 	private String resourceGroupId;
 
-	private String databaseName;
-
 	private Integer pageSize;
+
+	private Long backupId;
+
+	private String restoreId;
+
+	private String clusterId;
+
+	private String databaseName;
 	public DescribeHanaRestoresRequest() {
 		super("hbr", "2017-09-08", "DescribeHanaRestores", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -64,17 +64,6 @@ public class DescribeHanaRestoresRequest extends RpcAcsRequest<DescribeHanaResto
 		}
 	}
 
-	public Long getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(Long backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId.toString());
-		}
-	}
-
 	public String getRestoreStatus() {
 		return this.restoreStatus;
 	}
@@ -83,28 +72,6 @@ public class DescribeHanaRestoresRequest extends RpcAcsRequest<DescribeHanaResto
 		this.restoreStatus = restoreStatus;
 		if(restoreStatus != null){
 			putQueryParameter("RestoreStatus", restoreStatus);
-		}
-	}
-
-	public String getRestoreId() {
-		return this.restoreId;
-	}
-
-	public void setRestoreId(String restoreId) {
-		this.restoreId = restoreId;
-		if(restoreId != null){
-			putQueryParameter("RestoreId", restoreId);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -130,17 +97,6 @@ public class DescribeHanaRestoresRequest extends RpcAcsRequest<DescribeHanaResto
 		}
 	}
 
-	public String getDatabaseName() {
-		return this.databaseName;
-	}
-
-	public void setDatabaseName(String databaseName) {
-		this.databaseName = databaseName;
-		if(databaseName != null){
-			putQueryParameter("DatabaseName", databaseName);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -149,6 +105,50 @@ public class DescribeHanaRestoresRequest extends RpcAcsRequest<DescribeHanaResto
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getBackupId() {
+		return this.backupId;
+	}
+
+	public void setBackupId(Long backupId) {
+		this.backupId = backupId;
+		if(backupId != null){
+			putQueryParameter("BackupId", backupId.toString());
+		}
+	}
+
+	public String getRestoreId() {
+		return this.restoreId;
+	}
+
+	public void setRestoreId(String restoreId) {
+		this.restoreId = restoreId;
+		if(restoreId != null){
+			putQueryParameter("RestoreId", restoreId);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getDatabaseName() {
+		return this.databaseName;
+	}
+
+	public void setDatabaseName(String databaseName) {
+		this.databaseName = databaseName;
+		if(databaseName != null){
+			putQueryParameter("DatabaseName", databaseName);
 		}
 	}
 

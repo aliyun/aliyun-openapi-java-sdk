@@ -121,6 +121,10 @@ public class DescribePoliciesV2Response extends AcsResponse {
 
 		private Integer recommendVersion;
 
+		private String policyType;
+
+		private String businessStatus;
+
 		private List<Rule> rules;
 
 		public Long getCreatedTime() {
@@ -179,6 +183,22 @@ public class DescribePoliciesV2Response extends AcsResponse {
 			this.recommendVersion = recommendVersion;
 		}
 
+		public String getPolicyType() {
+			return this.policyType;
+		}
+
+		public void setPolicyType(String policyType) {
+			this.policyType = policyType;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
+		}
+
 		public List<Rule> getRules() {
 			return this.rules;
 		}
@@ -215,7 +235,15 @@ public class DescribePoliciesV2Response extends AcsResponse {
 
 			private Long keepLatestSnapshots;
 
+			private Boolean doDetect;
+
+			private Boolean immutable;
+
 			private List<RetentionRule> retentionRules;
+
+			private List<DataSourceFilter> dataSourceFilters;
+
+			private List<TagFilter> tagFilters;
 
 			private Selector selector;
 
@@ -323,12 +351,44 @@ public class DescribePoliciesV2Response extends AcsResponse {
 				this.keepLatestSnapshots = keepLatestSnapshots;
 			}
 
+			public Boolean getDoDetect() {
+				return this.doDetect;
+			}
+
+			public void setDoDetect(Boolean doDetect) {
+				this.doDetect = doDetect;
+			}
+
+			public Boolean getImmutable() {
+				return this.immutable;
+			}
+
+			public void setImmutable(Boolean immutable) {
+				this.immutable = immutable;
+			}
+
 			public List<RetentionRule> getRetentionRules() {
 				return this.retentionRules;
 			}
 
 			public void setRetentionRules(List<RetentionRule> retentionRules) {
 				this.retentionRules = retentionRules;
+			}
+
+			public List<DataSourceFilter> getDataSourceFilters() {
+				return this.dataSourceFilters;
+			}
+
+			public void setDataSourceFilters(List<DataSourceFilter> dataSourceFilters) {
+				this.dataSourceFilters = dataSourceFilters;
+			}
+
+			public List<TagFilter> getTagFilters() {
+				return this.tagFilters;
+			}
+
+			public void setTagFilters(List<TagFilter> tagFilters) {
+				this.tagFilters = tagFilters;
 			}
 
 			public Selector getSelector() {
@@ -379,6 +439,92 @@ public class DescribePoliciesV2Response extends AcsResponse {
 
 				public void setActiveTime(Long activeTime) {
 					this.activeTime = activeTime;
+				}
+			}
+
+			public static class DataSourceFilter {
+
+				private String sourceType;
+
+				private String crossAccountType;
+
+				private Long crossAccountUserId;
+
+				private String crossAccountRoleName;
+
+				private List<String> dataSourceIds;
+
+				public String getSourceType() {
+					return this.sourceType;
+				}
+
+				public void setSourceType(String sourceType) {
+					this.sourceType = sourceType;
+				}
+
+				public String getCrossAccountType() {
+					return this.crossAccountType;
+				}
+
+				public void setCrossAccountType(String crossAccountType) {
+					this.crossAccountType = crossAccountType;
+				}
+
+				public Long getCrossAccountUserId() {
+					return this.crossAccountUserId;
+				}
+
+				public void setCrossAccountUserId(Long crossAccountUserId) {
+					this.crossAccountUserId = crossAccountUserId;
+				}
+
+				public String getCrossAccountRoleName() {
+					return this.crossAccountRoleName;
+				}
+
+				public void setCrossAccountRoleName(String crossAccountRoleName) {
+					this.crossAccountRoleName = crossAccountRoleName;
+				}
+
+				public List<String> getDataSourceIds() {
+					return this.dataSourceIds;
+				}
+
+				public void setDataSourceIds(List<String> dataSourceIds) {
+					this.dataSourceIds = dataSourceIds;
+				}
+			}
+
+			public static class TagFilter {
+
+				private String key;
+
+				private String value;
+
+				private String operator;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+
+				public String getOperator() {
+					return this.operator;
+				}
+
+				public void setOperator(String operator) {
+					this.operator = operator;
 				}
 			}
 

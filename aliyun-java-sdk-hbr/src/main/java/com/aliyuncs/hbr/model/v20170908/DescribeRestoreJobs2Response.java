@@ -125,7 +125,7 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 
 		private String options;
 
-		private String targetInstanceId;
+		private String sourceInstanceId;
 
 		private String restoreType;
 
@@ -199,9 +199,15 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 
 		private String failbackDetail;
 
+		private String targetInstanceId;
+
+		private List<FileDetection> fileDetections;
+
 		private OtsDetail otsDetail;
 
 		private Report report;
+
+		private FileDetectionRestoreOptions fileDetectionRestoreOptions;
 
 		public String getSnapshotHash() {
 			return this.snapshotHash;
@@ -275,12 +281,12 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 			this.options = options;
 		}
 
-		public String getTargetInstanceId() {
-			return this.targetInstanceId;
+		public String getSourceInstanceId() {
+			return this.sourceInstanceId;
 		}
 
-		public void setTargetInstanceId(String targetInstanceId) {
-			this.targetInstanceId = targetInstanceId;
+		public void setSourceInstanceId(String sourceInstanceId) {
+			this.sourceInstanceId = sourceInstanceId;
 		}
 
 		public String getRestoreType() {
@@ -571,6 +577,22 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 			this.failbackDetail = failbackDetail;
 		}
 
+		public String getTargetInstanceId() {
+			return this.targetInstanceId;
+		}
+
+		public void setTargetInstanceId(String targetInstanceId) {
+			this.targetInstanceId = targetInstanceId;
+		}
+
+		public List<FileDetection> getFileDetections() {
+			return this.fileDetections;
+		}
+
+		public void setFileDetections(List<FileDetection> fileDetections) {
+			this.fileDetections = fileDetections;
+		}
+
 		public OtsDetail getOtsDetail() {
 			return this.otsDetail;
 		}
@@ -585,6 +607,57 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 
 		public void setReport(Report report) {
 			this.report = report;
+		}
+
+		public FileDetectionRestoreOptions getFileDetectionRestoreOptions() {
+			return this.fileDetectionRestoreOptions;
+		}
+
+		public void setFileDetectionRestoreOptions(FileDetectionRestoreOptions fileDetectionRestoreOptions) {
+			this.fileDetectionRestoreOptions = fileDetectionRestoreOptions;
+		}
+
+		public static class FileDetection {
+
+			private Boolean clean;
+
+			private String snapshotId;
+
+			private Long snapshotCompleteTime;
+
+			private String snapshotHash;
+
+			public Boolean getClean() {
+				return this.clean;
+			}
+
+			public void setClean(Boolean clean) {
+				this.clean = clean;
+			}
+
+			public String getSnapshotId() {
+				return this.snapshotId;
+			}
+
+			public void setSnapshotId(String snapshotId) {
+				this.snapshotId = snapshotId;
+			}
+
+			public Long getSnapshotCompleteTime() {
+				return this.snapshotCompleteTime;
+			}
+
+			public void setSnapshotCompleteTime(Long snapshotCompleteTime) {
+				this.snapshotCompleteTime = snapshotCompleteTime;
+			}
+
+			public String getSnapshotHash() {
+				return this.snapshotHash;
+			}
+
+			public void setSnapshotHash(String snapshotHash) {
+				this.snapshotHash = snapshotHash;
+			}
 		}
 
 		public static class OtsDetail {
@@ -660,6 +733,82 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 
 			public void setReportTaskStatus(String reportTaskStatus) {
 				this.reportTaskStatus = reportTaskStatus;
+			}
+		}
+
+		public static class FileDetectionRestoreOptions {
+
+			private Object toDetectSnapshotIds;
+
+			private String fileDetectionRestorePolicy;
+
+			private String riskFileRestorePolicy;
+
+			private List<FileDetectionRiskFile> fileDetectionRiskFiles;
+
+			public Object getToDetectSnapshotIds() {
+				return this.toDetectSnapshotIds;
+			}
+
+			public void setToDetectSnapshotIds(Object toDetectSnapshotIds) {
+				this.toDetectSnapshotIds = toDetectSnapshotIds;
+			}
+
+			public String getFileDetectionRestorePolicy() {
+				return this.fileDetectionRestorePolicy;
+			}
+
+			public void setFileDetectionRestorePolicy(String fileDetectionRestorePolicy) {
+				this.fileDetectionRestorePolicy = fileDetectionRestorePolicy;
+			}
+
+			public String getRiskFileRestorePolicy() {
+				return this.riskFileRestorePolicy;
+			}
+
+			public void setRiskFileRestorePolicy(String riskFileRestorePolicy) {
+				this.riskFileRestorePolicy = riskFileRestorePolicy;
+			}
+
+			public List<FileDetectionRiskFile> getFileDetectionRiskFiles() {
+				return this.fileDetectionRiskFiles;
+			}
+
+			public void setFileDetectionRiskFiles(List<FileDetectionRiskFile> fileDetectionRiskFiles) {
+				this.fileDetectionRiskFiles = fileDetectionRiskFiles;
+			}
+
+			public static class FileDetectionRiskFile {
+
+				private String fileName;
+
+				private String riskLevel;
+
+				private String eventName;
+
+				public String getFileName() {
+					return this.fileName;
+				}
+
+				public void setFileName(String fileName) {
+					this.fileName = fileName;
+				}
+
+				public String getRiskLevel() {
+					return this.riskLevel;
+				}
+
+				public void setRiskLevel(String riskLevel) {
+					this.riskLevel = riskLevel;
+				}
+
+				public String getEventName() {
+					return this.eventName;
+				}
+
+				public void setEventName(String eventName) {
+					this.eventName = eventName;
+				}
 			}
 		}
 	}

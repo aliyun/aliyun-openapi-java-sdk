@@ -77,19 +77,9 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	public static class Region {
 
-		private Integer vaultCount;
-
 		private String localName;
 
 		private String regionId;
-
-		public Integer getVaultCount() {
-			return this.vaultCount;
-		}
-
-		public void setVaultCount(Integer vaultCount) {
-			this.vaultCount = vaultCount;
-		}
 
 		public String getLocalName() {
 			return this.localName;

@@ -32,11 +32,11 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 
 	private String vaultId;
 
+	private String sourceType;
+
 	private String token;
 
 	private String instanceId;
-
-	private String sourceType;
 
 	private Boolean force;
 	public DeleteSnapshotRequest() {
@@ -82,6 +82,17 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 		}
 	}
 
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
 	public String getToken() {
 		return this.token;
 	}
@@ -101,17 +112,6 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getSourceType() {
-		return this.sourceType;
-	}
-
-	public void setSourceType(String sourceType) {
-		this.sourceType = sourceType;
-		if(sourceType != null){
-			putQueryParameter("SourceType", sourceType);
 		}
 	}
 

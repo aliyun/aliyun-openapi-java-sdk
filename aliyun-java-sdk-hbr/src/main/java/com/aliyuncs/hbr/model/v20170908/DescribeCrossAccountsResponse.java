@@ -121,6 +121,8 @@ public class DescribeCrossAccountsResponse extends AcsResponse {
 
 		private Long updatedTime;
 
+		private String crossAccountType;
+
 		public Long getOwnerId() {
 			return this.ownerId;
 		}
@@ -175,6 +177,14 @@ public class DescribeCrossAccountsResponse extends AcsResponse {
 
 		public void setUpdatedTime(Long updatedTime) {
 			this.updatedTime = updatedTime;
+		}
+
+		public String getCrossAccountType() {
+			return this.crossAccountType;
+		}
+
+		public void setCrossAccountType(String crossAccountType) {
+			this.crossAccountType = crossAccountType;
 		}
 	}
 

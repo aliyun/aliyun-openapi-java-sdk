@@ -71,6 +71,7 @@ public class DescribeClientsResponseUnmarshaller {
 			client.setGatewayInnerIp(_ctx.stringValue("DescribeClientsResponse.Clients["+ i +"].GatewayInnerIp"));
 			client.setClientVersion(_ctx.stringValue("DescribeClientsResponse.Clients["+ i +"].ClientVersion"));
 			client.setClusterId(_ctx.stringValue("DescribeClientsResponse.Clients["+ i +"].ClusterId"));
+			client.setHeartBeatTime(_ctx.longValue("DescribeClientsResponse.Clients["+ i +"].HeartBeatTime"));
 
 			List<String> publicIpAddresses = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeClientsResponse.Clients["+ i +"].PublicIpAddresses.Length"); j++) {

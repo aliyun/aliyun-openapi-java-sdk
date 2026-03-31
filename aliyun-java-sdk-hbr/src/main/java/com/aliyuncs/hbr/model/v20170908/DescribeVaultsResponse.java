@@ -177,9 +177,23 @@ public class DescribeVaultsResponse extends AcsResponse {
 
 		private Boolean replicationSourceVault;
 
+		private String replicationTargetRegionId;
+
+		private Long vaultOwnerId;
+
+		private String replicationTargetVaultId;
+
+		private Long replicationSourceOwnerId;
+
+		private Long replicationTargetOwnerId;
+
+		private String replicationStatus;
+
 		private List<Tag> tags;
 
 		private List<String> sourceTypes;
+
+		private List<Long> rsTargetAccountIds;
 
 		private ReplicationProgress replicationProgress;
 
@@ -469,6 +483,54 @@ public class DescribeVaultsResponse extends AcsResponse {
 			this.replicationSourceVault = replicationSourceVault;
 		}
 
+		public String getReplicationTargetRegionId() {
+			return this.replicationTargetRegionId;
+		}
+
+		public void setReplicationTargetRegionId(String replicationTargetRegionId) {
+			this.replicationTargetRegionId = replicationTargetRegionId;
+		}
+
+		public Long getVaultOwnerId() {
+			return this.vaultOwnerId;
+		}
+
+		public void setVaultOwnerId(Long vaultOwnerId) {
+			this.vaultOwnerId = vaultOwnerId;
+		}
+
+		public String getReplicationTargetVaultId() {
+			return this.replicationTargetVaultId;
+		}
+
+		public void setReplicationTargetVaultId(String replicationTargetVaultId) {
+			this.replicationTargetVaultId = replicationTargetVaultId;
+		}
+
+		public Long getReplicationSourceOwnerId() {
+			return this.replicationSourceOwnerId;
+		}
+
+		public void setReplicationSourceOwnerId(Long replicationSourceOwnerId) {
+			this.replicationSourceOwnerId = replicationSourceOwnerId;
+		}
+
+		public Long getReplicationTargetOwnerId() {
+			return this.replicationTargetOwnerId;
+		}
+
+		public void setReplicationTargetOwnerId(Long replicationTargetOwnerId) {
+			this.replicationTargetOwnerId = replicationTargetOwnerId;
+		}
+
+		public String getReplicationStatus() {
+			return this.replicationStatus;
+		}
+
+		public void setReplicationStatus(String replicationStatus) {
+			this.replicationStatus = replicationStatus;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -483,6 +545,14 @@ public class DescribeVaultsResponse extends AcsResponse {
 
 		public void setSourceTypes(List<String> sourceTypes) {
 			this.sourceTypes = sourceTypes;
+		}
+
+		public List<Long> getRsTargetAccountIds() {
+			return this.rsTargetAccountIds;
+		}
+
+		public void setRsTargetAccountIds(List<Long> rsTargetAccountIds) {
+			this.rsTargetAccountIds = rsTargetAccountIds;
 		}
 
 		public ReplicationProgress getReplicationProgress() {
@@ -591,6 +661,10 @@ public class DescribeVaultsResponse extends AcsResponse {
 
 			private Integer ots;
 
+			private Integer archive;
+
+			private Integer commonFileSystem;
+
 			public Integer getOracle() {
 				return this.oracle;
 			}
@@ -693,6 +767,22 @@ public class DescribeVaultsResponse extends AcsResponse {
 
 			public void setOts(Integer ots) {
 				this.ots = ots;
+			}
+
+			public Integer getArchive() {
+				return this.archive;
+			}
+
+			public void setArchive(Integer archive) {
+				this.archive = archive;
+			}
+
+			public Integer getCommonFileSystem() {
+				return this.commonFileSystem;
+			}
+
+			public void setCommonFileSystem(Integer commonFileSystem) {
+				this.commonFileSystem = commonFileSystem;
 			}
 		}
 

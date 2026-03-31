@@ -60,9 +60,13 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 
 	private String detail;
 
+	private String edition;
+
 	private List<Rule> rules;
 
 	private String planName;
+
+	private Boolean disabled;
 
 	private Long retention;
 
@@ -74,6 +78,8 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 
 	private String destSourceType;
 
+	private String clusterId;
+
 	private Long keepLatestSnapshots;
 
 	private String destDataSourceDetail;
@@ -82,6 +88,8 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 
 	@SerializedName("otsDetail")
 	private OtsDetail otsDetail;
+
+	private String dataSourceId;
 
 	private Long crossAccountUserId;
 
@@ -273,6 +281,17 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
+	public String getEdition() {
+		return this.edition;
+	}
+
+	public void setEdition(String edition) {
+		this.edition = edition;
+		if(edition != null){
+			putQueryParameter("Edition", edition);
+		}
+	}
+
 	public List<Rule> getRules() {
 		return this.rules;
 	}
@@ -301,6 +320,17 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		this.planName = planName;
 		if(planName != null){
 			putQueryParameter("PlanName", planName);
+		}
+	}
+
+	public Boolean getDisabled() {
+		return this.disabled;
+	}
+
+	public void setDisabled(Boolean disabled) {
+		this.disabled = disabled;
+		if(disabled != null){
+			putQueryParameter("Disabled", disabled.toString());
 		}
 	}
 
@@ -359,6 +389,17 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
 	public Long getKeepLatestSnapshots() {
 		return this.keepLatestSnapshots;
 	}
@@ -401,6 +442,17 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		if (otsDetail != null) {
 			putBodyParameter("OtsDetail" , new Gson().toJson(otsDetail));
 		}	
+	}
+
+	public String getDataSourceId() {
+		return this.dataSourceId;
+	}
+
+	public void setDataSourceId(String dataSourceId) {
+		this.dataSourceId = dataSourceId;
+		if(dataSourceId != null){
+			putBodyParameter("DataSourceId", dataSourceId);
+		}
 	}
 
 	public Long getCrossAccountUserId() {

@@ -175,9 +175,23 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 
 		private String changeListPath;
 
+		private String latestExecuteJobId;
+
+		private String latestFinishJobId;
+
+		private Boolean doDetect;
+
+		private String syncMode;
+
+		private Boolean createdByTag;
+
+		private String businessStatus;
+
 		private List<Rule> rules;
 
 		private List<Resource> resources;
+
+		private List<HitTag> hitTags;
 
 		private List<String> paths;
 
@@ -457,6 +471,54 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 			this.changeListPath = changeListPath;
 		}
 
+		public String getLatestExecuteJobId() {
+			return this.latestExecuteJobId;
+		}
+
+		public void setLatestExecuteJobId(String latestExecuteJobId) {
+			this.latestExecuteJobId = latestExecuteJobId;
+		}
+
+		public String getLatestFinishJobId() {
+			return this.latestFinishJobId;
+		}
+
+		public void setLatestFinishJobId(String latestFinishJobId) {
+			this.latestFinishJobId = latestFinishJobId;
+		}
+
+		public Boolean getDoDetect() {
+			return this.doDetect;
+		}
+
+		public void setDoDetect(Boolean doDetect) {
+			this.doDetect = doDetect;
+		}
+
+		public String getSyncMode() {
+			return this.syncMode;
+		}
+
+		public void setSyncMode(String syncMode) {
+			this.syncMode = syncMode;
+		}
+
+		public Boolean getCreatedByTag() {
+			return this.createdByTag;
+		}
+
+		public void setCreatedByTag(Boolean createdByTag) {
+			this.createdByTag = createdByTag;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
+		}
+
 		public List<Rule> getRules() {
 			return this.rules;
 		}
@@ -471,6 +533,14 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 
 		public void setResources(List<Resource> resources) {
 			this.resources = resources;
+		}
+
+		public List<HitTag> getHitTags() {
+			return this.hitTags;
+		}
+
+		public void setHitTags(List<HitTag> hitTags) {
+			this.hitTags = hitTags;
 		}
 
 		public List<String> getPaths() {
@@ -620,6 +690,39 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 
 			public void setExtra(String extra) {
 				this.extra = extra;
+			}
+		}
+
+		public static class HitTag {
+
+			private String key;
+
+			private String value;
+
+			private String operator;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(String operator) {
+				this.operator = operator;
 			}
 		}
 

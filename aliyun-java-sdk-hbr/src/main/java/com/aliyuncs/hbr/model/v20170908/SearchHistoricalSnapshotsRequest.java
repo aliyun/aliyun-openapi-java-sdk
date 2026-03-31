@@ -31,6 +31,8 @@ public class SearchHistoricalSnapshotsRequest extends RpcAcsRequest<SearchHistor
 	@SerializedName("query")
 	private List<Object> query;
 
+	private String edition;
+
 	private String nextToken;
 
 	private Integer limit;
@@ -58,6 +60,17 @@ public class SearchHistoricalSnapshotsRequest extends RpcAcsRequest<SearchHistor
 		if (query != null) {
 			putQueryParameter("Query" , new Gson().toJson(query));
 		}	
+	}
+
+	public String getEdition() {
+		return this.edition;
+	}
+
+	public void setEdition(String edition) {
+		this.edition = edition;
+		if(edition != null){
+			putQueryParameter("Edition", edition);
+		}
 	}
 
 	public String getNextToken() {

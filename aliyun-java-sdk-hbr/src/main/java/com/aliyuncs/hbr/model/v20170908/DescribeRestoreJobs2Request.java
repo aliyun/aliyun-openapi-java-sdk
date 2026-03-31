@@ -26,6 +26,8 @@ import com.aliyuncs.hbr.Endpoint;
 public class DescribeRestoreJobs2Request extends RpcAcsRequest<DescribeRestoreJobs2Response> {
 	   
 
+	private String edition;
+
 	private List<Filters> filterss;
 
 	private Integer pageNumber;
@@ -40,6 +42,17 @@ public class DescribeRestoreJobs2Request extends RpcAcsRequest<DescribeRestoreJo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getEdition() {
+		return this.edition;
+	}
+
+	public void setEdition(String edition) {
+		this.edition = edition;
+		if(edition != null){
+			putQueryParameter("Edition", edition);
+		}
 	}
 
 	public List<Filters> getFilterss() {

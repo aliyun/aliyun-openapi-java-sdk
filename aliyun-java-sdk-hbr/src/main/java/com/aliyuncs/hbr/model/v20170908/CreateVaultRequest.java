@@ -35,6 +35,10 @@ public class CreateVaultRequest extends RpcAcsRequest<CreateVaultResponse> {
 
 	private String vaultType;
 
+	private Boolean wormEnabled;
+
+	private Boolean replication;
+
 	private String vaultStorageClass;
 
 	private String kmsKeyId;
@@ -99,6 +103,28 @@ public class CreateVaultRequest extends RpcAcsRequest<CreateVaultResponse> {
 		this.vaultType = vaultType;
 		if(vaultType != null){
 			putQueryParameter("VaultType", vaultType);
+		}
+	}
+
+	public Boolean getWormEnabled() {
+		return this.wormEnabled;
+	}
+
+	public void setWormEnabled(Boolean wormEnabled) {
+		this.wormEnabled = wormEnabled;
+		if(wormEnabled != null){
+			putQueryParameter("WormEnabled", wormEnabled.toString());
+		}
+	}
+
+	public Boolean getReplication() {
+		return this.replication;
+	}
+
+	public void setReplication(Boolean replication) {
+		this.replication = replication;
+		if(replication != null){
+			putQueryParameter("Replication", replication.toString());
 		}
 	}
 

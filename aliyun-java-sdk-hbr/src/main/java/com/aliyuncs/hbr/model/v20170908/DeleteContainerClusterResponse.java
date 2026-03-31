@@ -15,22 +15,20 @@
 package com.aliyuncs.hbr.model.v20170908;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.hbr.transform.v20170908.AttachNasFileSystemResponseUnmarshaller;
+import com.aliyuncs.hbr.transform.v20170908.DeleteContainerClusterResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AttachNasFileSystemResponse extends AcsResponse {
+public class DeleteContainerClusterResponse extends AcsResponse {
 
 	private String code;
 
 	private String message;
 
 	private String requestId;
-
-	private String taskId;
 
 	private Boolean success;
 
@@ -58,14 +56,6 @@ public class AttachNasFileSystemResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -75,7 +65,12 @@ public class AttachNasFileSystemResponse extends AcsResponse {
 	}
 
 	@Override
-	public AttachNasFileSystemResponse getInstance(UnmarshallerContext context) {
-		return	AttachNasFileSystemResponseUnmarshaller.unmarshall(this, context);
+	public DeleteContainerClusterResponse getInstance(UnmarshallerContext context) {
+		return	DeleteContainerClusterResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

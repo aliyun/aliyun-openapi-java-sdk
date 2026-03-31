@@ -28,6 +28,8 @@ public class CancelRestoreJobRequest extends RpcAcsRequest<CancelRestoreJobRespo
 	private String vaultId;
 
 	private String restoreId;
+
+	private String edition;
 	public CancelRestoreJobRequest() {
 		super("hbr", "2017-09-08", "CancelRestoreJob", "hbr");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class CancelRestoreJobRequest extends RpcAcsRequest<CancelRestoreJobRespo
 		this.restoreId = restoreId;
 		if(restoreId != null){
 			putQueryParameter("RestoreId", restoreId);
+		}
+	}
+
+	public String getEdition() {
+		return this.edition;
+	}
+
+	public void setEdition(String edition) {
+		this.edition = edition;
+		if(edition != null){
+			putQueryParameter("Edition", edition);
 		}
 	}
 

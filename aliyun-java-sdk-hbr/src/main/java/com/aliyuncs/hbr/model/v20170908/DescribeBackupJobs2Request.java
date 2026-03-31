@@ -28,6 +28,8 @@ public class DescribeBackupJobs2Request extends RpcAcsRequest<DescribeBackupJobs
 
 	private String sortDirection;
 
+	private String edition;
+
 	private List<Filters> filterss;
 
 	private Integer pageNumber;
@@ -52,6 +54,17 @@ public class DescribeBackupJobs2Request extends RpcAcsRequest<DescribeBackupJobs
 		this.sortDirection = sortDirection;
 		if(sortDirection != null){
 			putQueryParameter("SortDirection", sortDirection);
+		}
+	}
+
+	public String getEdition() {
+		return this.edition;
+	}
+
+	public void setEdition(String edition) {
+		this.edition = edition;
+		if(edition != null){
+			putQueryParameter("Edition", edition);
 		}
 	}
 

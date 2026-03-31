@@ -142,6 +142,16 @@ public class DescribeUdmSnapshotsResponse extends AcsResponse {
 
 		private Long expireTime;
 
+		private Boolean immutable;
+
+		private Boolean canBeDeleted;
+
+		private String archiveStatus;
+
+		private String archiveErrorMessage;
+
+		private Long archiveTriggerTime;
+
 		private List<String> paths;
 
 		private Detail detail;
@@ -362,6 +372,46 @@ public class DescribeUdmSnapshotsResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
+		public Boolean getImmutable() {
+			return this.immutable;
+		}
+
+		public void setImmutable(Boolean immutable) {
+			this.immutable = immutable;
+		}
+
+		public Boolean getCanBeDeleted() {
+			return this.canBeDeleted;
+		}
+
+		public void setCanBeDeleted(Boolean canBeDeleted) {
+			this.canBeDeleted = canBeDeleted;
+		}
+
+		public String getArchiveStatus() {
+			return this.archiveStatus;
+		}
+
+		public void setArchiveStatus(String archiveStatus) {
+			this.archiveStatus = archiveStatus;
+		}
+
+		public String getArchiveErrorMessage() {
+			return this.archiveErrorMessage;
+		}
+
+		public void setArchiveErrorMessage(String archiveErrorMessage) {
+			this.archiveErrorMessage = archiveErrorMessage;
+		}
+
+		public Long getArchiveTriggerTime() {
+			return this.archiveTriggerTime;
+		}
+
+		public void setArchiveTriggerTime(Long archiveTriggerTime) {
+			this.archiveTriggerTime = archiveTriggerTime;
+		}
+
 		public List<String> getPaths() {
 			return this.paths;
 		}
@@ -427,6 +477,8 @@ public class DescribeUdmSnapshotsResponse extends AcsResponse {
 			private List<String> diskIdList;
 
 			private List<String> nativeSnapshotIdList;
+
+			private List<String> nativeDiskIdList;
 
 			public String getDiskDevName() {
 				return this.diskDevName;
@@ -618,6 +670,14 @@ public class DescribeUdmSnapshotsResponse extends AcsResponse {
 
 			public void setNativeSnapshotIdList(List<String> nativeSnapshotIdList) {
 				this.nativeSnapshotIdList = nativeSnapshotIdList;
+			}
+
+			public List<String> getNativeDiskIdList() {
+				return this.nativeDiskIdList;
+			}
+
+			public void setNativeDiskIdList(List<String> nativeDiskIdList) {
+				this.nativeDiskIdList = nativeDiskIdList;
 			}
 		}
 	}

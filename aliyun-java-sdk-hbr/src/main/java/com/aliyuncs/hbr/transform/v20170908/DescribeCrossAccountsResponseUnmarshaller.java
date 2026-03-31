@@ -44,6 +44,7 @@ public class DescribeCrossAccountsResponseUnmarshaller {
 			crossAccount.setId(_ctx.longValue("DescribeCrossAccountsResponse.CrossAccounts["+ i +"].Id"));
 			crossAccount.setCreatedTime(_ctx.longValue("DescribeCrossAccountsResponse.CrossAccounts["+ i +"].CreatedTime"));
 			crossAccount.setUpdatedTime(_ctx.longValue("DescribeCrossAccountsResponse.CrossAccounts["+ i +"].UpdatedTime"));
+			crossAccount.setCrossAccountType(_ctx.stringValue("DescribeCrossAccountsResponse.CrossAccounts["+ i +"].CrossAccountType"));
 
 			crossAccounts.add(crossAccount);
 		}

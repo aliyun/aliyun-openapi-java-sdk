@@ -32,6 +32,8 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 
 	private String prefix;
 
+	private String edition;
+
 	private List<Rule> rules;
 
 	private List<String> paths;
@@ -92,6 +94,17 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 		this.prefix = prefix;
 		if(prefix != null){
 			putQueryParameter("Prefix", prefix);
+		}
+	}
+
+	public String getEdition() {
+		return this.edition;
+	}
+
+	public void setEdition(String edition) {
+		this.edition = edition;
+		if(edition != null){
+			putQueryParameter("Edition", edition);
 		}
 	}
 

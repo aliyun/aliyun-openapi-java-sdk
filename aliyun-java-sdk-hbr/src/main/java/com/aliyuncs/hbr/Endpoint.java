@@ -22,7 +22,6 @@ public class Endpoint {
             put("cn-shanghai-internal-test-1", "hbr.aliyuncs.com");
             put("cn-beijing-gov-1", "hbr.aliyuncs.com");
             put("cn-shenzhen-su18-b01", "hbr.aliyuncs.com");
-            put("cn-wulanchabu", "hbr.aliyuncs.com");
             put("cn-shanghai-inner", "hbr.aliyuncs.com");
             put("cn-shenzhen-st4-d01", "hbr.aliyuncs.com");
             put("cn-haidian-cm12-c01", "hbr.aliyuncs.com");
@@ -40,7 +39,6 @@ public class Endpoint {
             put("cn-hangzhou-internal-test-1", "hbr.aliyuncs.com");
             put("eu-west-1-oxs", "hbr.aliyuncs.com");
             put("cn-zhangbei-na61-b01", "hbr.aliyuncs.com");
-            put("cn-beijing-finance-1", "hbr.aliyuncs.com");
             put("cn-hangzhou-internal-test-3", "hbr.aliyuncs.com");
             put("cn-hangzhou-internal-test-2", "hbr.aliyuncs.com");
             put("cn-hangzhou-test-306", "hbr.aliyuncs.com");

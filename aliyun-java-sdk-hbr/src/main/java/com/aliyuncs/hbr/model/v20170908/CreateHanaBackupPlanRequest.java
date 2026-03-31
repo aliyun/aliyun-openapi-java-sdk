@@ -28,19 +28,19 @@ public class CreateHanaBackupPlanRequest extends RpcAcsRequest<CreateHanaBackupP
 
 	private String vaultId;
 
-	private String clusterId;
-
-	private String schedule;
-
 	private String resourceGroupId;
-
-	private String backupPrefix;
-
-	private String databaseName;
 
 	private String planName;
 
 	private String backupType;
+
+	private String clusterId;
+
+	private String schedule;
+
+	private String backupPrefix;
+
+	private String databaseName;
 	public CreateHanaBackupPlanRequest() {
 		super("hbr", "2017-09-08", "CreateHanaBackupPlan", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -59,6 +59,39 @@ public class CreateHanaBackupPlanRequest extends RpcAcsRequest<CreateHanaBackupP
 		this.vaultId = vaultId;
 		if(vaultId != null){
 			putQueryParameter("VaultId", vaultId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getPlanName() {
+		return this.planName;
+	}
+
+	public void setPlanName(String planName) {
+		this.planName = planName;
+		if(planName != null){
+			putQueryParameter("PlanName", planName);
+		}
+	}
+
+	public String getBackupType() {
+		return this.backupType;
+	}
+
+	public void setBackupType(String backupType) {
+		this.backupType = backupType;
+		if(backupType != null){
+			putQueryParameter("BackupType", backupType);
 		}
 	}
 
@@ -84,17 +117,6 @@ public class CreateHanaBackupPlanRequest extends RpcAcsRequest<CreateHanaBackupP
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
 	public String getBackupPrefix() {
 		return this.backupPrefix;
 	}
@@ -114,28 +136,6 @@ public class CreateHanaBackupPlanRequest extends RpcAcsRequest<CreateHanaBackupP
 		this.databaseName = databaseName;
 		if(databaseName != null){
 			putQueryParameter("DatabaseName", databaseName);
-		}
-	}
-
-	public String getPlanName() {
-		return this.planName;
-	}
-
-	public void setPlanName(String planName) {
-		this.planName = planName;
-		if(planName != null){
-			putQueryParameter("PlanName", planName);
-		}
-	}
-
-	public String getBackupType() {
-		return this.backupType;
-	}
-
-	public void setBackupType(String backupType) {
-		this.backupType = backupType;
-		if(backupType != null){
-			putQueryParameter("BackupType", backupType);
 		}
 	}
 

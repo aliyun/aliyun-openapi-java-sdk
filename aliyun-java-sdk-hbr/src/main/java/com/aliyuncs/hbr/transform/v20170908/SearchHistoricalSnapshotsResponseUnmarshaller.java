@@ -76,6 +76,17 @@ public class SearchHistoricalSnapshotsResponseUnmarshaller {
 			snapshot.setUseCommonNas(_ctx.booleanValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].UseCommonNas"));
 			snapshot.setInclude(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Include"));
 			snapshot.setExclude(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Exclude"));
+			snapshot.setDetectionStatus(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].DetectionStatus"));
+			snapshot.setFullyDetection(_ctx.booleanValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].FullyDetection"));
+			snapshot.setLastDetectionStartTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].LastDetectionStartTime"));
+			snapshot.setLastDetectionCompleteTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].LastDetectionCompleteTime"));
+			snapshot.setToDetectFiles(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ToDetectFiles"));
+			snapshot.setDetectFiles(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].DetectFiles"));
+			snapshot.setLowRiskFiles(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].LowRiskFiles"));
+			snapshot.setMediumRiskFiles(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].MediumRiskFiles"));
+			snapshot.setHighRiskFiles(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].HighRiskFiles"));
+			snapshot.setReportRiskFile(_ctx.booleanValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ReportRiskFile"));
+			snapshot.setProtectedDataSize(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ProtectedDataSize"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Paths.Length"); j++) {

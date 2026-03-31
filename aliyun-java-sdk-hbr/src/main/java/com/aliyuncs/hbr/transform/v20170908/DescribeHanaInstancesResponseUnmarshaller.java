@@ -51,6 +51,9 @@ public class DescribeHanaInstancesResponseUnmarshaller {
 			hana.setStatusMessage(_ctx.stringValue("DescribeHanaInstancesResponse.Hanas["+ i +"].StatusMessage"));
 			hana.setClusterId(_ctx.stringValue("DescribeHanaInstancesResponse.Hanas["+ i +"].ClusterId"));
 			hana.setResourceGroupId(_ctx.stringValue("DescribeHanaInstancesResponse.Hanas["+ i +"].ResourceGroupId"));
+			hana.setCrossAccountType(_ctx.stringValue("DescribeHanaInstancesResponse.Hanas["+ i +"].CrossAccountType"));
+			hana.setCrossAccountUserId(_ctx.longValue("DescribeHanaInstancesResponse.Hanas["+ i +"].CrossAccountUserId"));
+			hana.setCrossAccountRoleName(_ctx.stringValue("DescribeHanaInstancesResponse.Hanas["+ i +"].CrossAccountRoleName"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeHanaInstancesResponse.Hanas["+ i +"].Tags.Length"); j++) {

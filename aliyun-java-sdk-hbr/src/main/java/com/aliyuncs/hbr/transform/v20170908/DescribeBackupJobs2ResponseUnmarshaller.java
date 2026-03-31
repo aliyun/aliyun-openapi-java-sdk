@@ -94,6 +94,9 @@ public class DescribeBackupJobs2ResponseUnmarshaller {
 			backupJob.setFilesTotal(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].FilesTotal"));
 			backupJob.setFilesDone(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].FilesDone"));
 			backupJob.setActualFiles(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ActualFiles"));
+			backupJob.setRetryJobId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].RetryJobId"));
+			backupJob.setRetryForJobId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].RetryForJobId"));
+			backupJob.setTriggerMode(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].TriggerMode"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Paths.Length"); j++) {
@@ -136,6 +139,7 @@ public class DescribeBackupJobs2ResponseUnmarshaller {
 			detail.setSystemDisk(_ctx.booleanValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Detail.SystemDisk"));
 			detail.setNativeSnapshotStatus(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Detail.NativeSnapshotStatus"));
 			detail.setInstanceInfos(_ctx.mapValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Detail.InstanceInfos"));
+			detail.setImmutable(_ctx.booleanValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Detail.Immutable"));
 
 			List<String> diskHbrSnapshotIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Detail.DiskHbrSnapshotIdList.Length"); j++) {

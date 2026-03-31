@@ -30,17 +30,17 @@ public class DescribeOtsTableSnapshotsRequest extends RpcAcsRequest<DescribeOtsT
 
 	private List<String> snapshotIds;
 
-	private Long endTime;
-
 	private String crossAccountRoleName;
 
 	private Long startTime;
 
-	private List<OtsInstances> otsInstances;
-
 	private String nextToken;
 
 	private Integer limit;
+
+	private Long endTime;
+
+	private List<OtsInstances> otsInstances;
 
 	private Long crossAccountUserId;
 	public DescribeOtsTableSnapshotsRequest() {
@@ -76,17 +76,6 @@ public class DescribeOtsTableSnapshotsRequest extends RpcAcsRequest<DescribeOtsT
 		}	
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putBodyParameter("EndTime", endTime.toString());
-		}
-	}
-
 	public String getCrossAccountRoleName() {
 		return this.crossAccountRoleName;
 	}
@@ -109,27 +98,6 @@ public class DescribeOtsTableSnapshotsRequest extends RpcAcsRequest<DescribeOtsT
 		}
 	}
 
-	public List<OtsInstances> getOtsInstances() {
-		return this.otsInstances;
-	}
-
-	public void setOtsInstances(List<OtsInstances> otsInstances) {
-		this.otsInstances = otsInstances;	
-		if (otsInstances != null) {
-			for (int depth1 = 0; depth1 < otsInstances.size(); depth1++) {
-				if (otsInstances.get(depth1) != null) {
-					
-						putBodyParameter("OtsInstances." + (depth1 + 1) + ".InstanceName" , otsInstances.get(depth1).getInstanceName());
-						if (otsInstances.get(depth1).getTableNames() != null) {
-							for (int depth2 = 0; depth2 < otsInstances.get(depth1).getTableNames().size(); depth2++) {
-								putBodyParameter("OtsInstances." + (depth1 + 1) + ".TableNames." + (depth2 + 1) , otsInstances.get(depth1).getTableNames().get(depth2));
-							}
-						}
-				}
-			}
-		}	
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -150,6 +118,38 @@ public class DescribeOtsTableSnapshotsRequest extends RpcAcsRequest<DescribeOtsT
 		if(limit != null){
 			putBodyParameter("Limit", limit.toString());
 		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public List<OtsInstances> getOtsInstances() {
+		return this.otsInstances;
+	}
+
+	public void setOtsInstances(List<OtsInstances> otsInstances) {
+		this.otsInstances = otsInstances;	
+		if (otsInstances != null) {
+			for (int depth1 = 0; depth1 < otsInstances.size(); depth1++) {
+				if (otsInstances.get(depth1) != null) {
+					
+						putBodyParameter("OtsInstances." + (depth1 + 1) + ".InstanceName" , otsInstances.get(depth1).getInstanceName());
+						if (otsInstances.get(depth1).getTableNames() != null) {
+							for (int depth2 = 0; depth2 < otsInstances.get(depth1).getTableNames().size(); depth2++) {
+								putBodyParameter("OtsInstances." + (depth1 + 1) + ".TableNames." + (depth2 + 1) , otsInstances.get(depth1).getTableNames().get(depth2));
+							}
+						}
+				}
+			}
+		}	
 	}
 
 	public Long getCrossAccountUserId() {

@@ -30,11 +30,17 @@ public class CreateClientsRequest extends RpcAcsRequest<CreateClientsResponse> {
 
 	private String clientInfo;
 
+	private String crossAccountType;
+
+	private String crossAccountRoleName;
+
 	private String alertSetting;
 
 	private String resourceGroupId;
 
 	private Boolean useHttps;
+
+	private Long crossAccountUserId;
 	public CreateClientsRequest() {
 		super("hbr", "2017-09-08", "CreateClients", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -64,6 +70,28 @@ public class CreateClientsRequest extends RpcAcsRequest<CreateClientsResponse> {
 		this.clientInfo = clientInfo;
 		if(clientInfo != null){
 			putQueryParameter("ClientInfo", clientInfo);
+		}
+	}
+
+	public String getCrossAccountType() {
+		return this.crossAccountType;
+	}
+
+	public void setCrossAccountType(String crossAccountType) {
+		this.crossAccountType = crossAccountType;
+		if(crossAccountType != null){
+			putQueryParameter("CrossAccountType", crossAccountType);
+		}
+	}
+
+	public String getCrossAccountRoleName() {
+		return this.crossAccountRoleName;
+	}
+
+	public void setCrossAccountRoleName(String crossAccountRoleName) {
+		this.crossAccountRoleName = crossAccountRoleName;
+		if(crossAccountRoleName != null){
+			putQueryParameter("CrossAccountRoleName", crossAccountRoleName);
 		}
 	}
 
@@ -97,6 +125,17 @@ public class CreateClientsRequest extends RpcAcsRequest<CreateClientsResponse> {
 		this.useHttps = useHttps;
 		if(useHttps != null){
 			putQueryParameter("UseHttps", useHttps.toString());
+		}
+	}
+
+	public Long getCrossAccountUserId() {
+		return this.crossAccountUserId;
+	}
+
+	public void setCrossAccountUserId(Long crossAccountUserId) {
+		this.crossAccountUserId = crossAccountUserId;
+		if(crossAccountUserId != null){
+			putQueryParameter("CrossAccountUserId", crossAccountUserId.toString());
 		}
 	}
 

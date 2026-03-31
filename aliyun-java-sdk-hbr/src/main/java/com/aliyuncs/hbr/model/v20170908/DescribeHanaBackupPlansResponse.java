@@ -125,6 +125,8 @@ public class DescribeHanaBackupPlansResponse extends AcsResponse {
 
 		private String planName;
 
+		private String businessStatus;
+
 		public String getVaultId() {
 			return this.vaultId;
 		}
@@ -195,6 +197,14 @@ public class DescribeHanaBackupPlansResponse extends AcsResponse {
 
 		public void setPlanName(String planName) {
 			this.planName = planName;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
 		}
 	}
 

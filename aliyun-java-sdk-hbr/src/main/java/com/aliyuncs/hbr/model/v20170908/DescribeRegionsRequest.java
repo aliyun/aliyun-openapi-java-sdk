@@ -24,8 +24,6 @@ import com.aliyuncs.hbr.Endpoint;
  */
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	   
-
-	private Boolean needVaultCount;
 	public DescribeRegionsRequest() {
 		super("hbr", "2017-09-08", "DescribeRegions", "hbr");
 		setMethod(MethodType.POST);
@@ -33,17 +31,6 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getNeedVaultCount() {
-		return this.needVaultCount;
-	}
-
-	public void setNeedVaultCount(Boolean needVaultCount) {
-		this.needVaultCount = needVaultCount;
-		if(needVaultCount != null){
-			putQueryParameter("NeedVaultCount", needVaultCount.toString());
-		}
 	}
 
 	@Override
