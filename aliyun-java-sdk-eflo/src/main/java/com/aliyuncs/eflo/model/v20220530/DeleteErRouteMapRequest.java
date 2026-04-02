@@ -27,6 +27,8 @@ public class DeleteErRouteMapRequest extends RpcAcsRequest<DeleteErRouteMapRespo
 
 	private String erId;
 
+	private String erRouteMapId;
+
 	private List<String> erRouteMapIdss;
 	public DeleteErRouteMapRequest() {
 		super("eflo", "2022-05-30", "DeleteErRouteMap", "eflo");
@@ -41,6 +43,17 @@ public class DeleteErRouteMapRequest extends RpcAcsRequest<DeleteErRouteMapRespo
 		this.erId = erId;
 		if(erId != null){
 			putBodyParameter("ErId", erId);
+		}
+	}
+
+	public String getErRouteMapId() {
+		return this.erRouteMapId;
+	}
+
+	public void setErRouteMapId(String erRouteMapId) {
+		this.erRouteMapId = erRouteMapId;
+		if(erRouteMapId != null){
+			putBodyParameter("ErRouteMapId", erRouteMapId);
 		}
 	}
 

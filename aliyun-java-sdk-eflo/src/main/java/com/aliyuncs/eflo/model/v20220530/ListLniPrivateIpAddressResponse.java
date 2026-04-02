@@ -31,6 +31,8 @@ public class ListLniPrivateIpAddressResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String accessDeniedDetail;
+
 	private Content content;
 
 	public Integer getCode() {
@@ -57,6 +59,14 @@ public class ListLniPrivateIpAddressResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
+	}
+
 	public Content getContent() {
 		return this.content;
 	}
@@ -69,6 +79,8 @@ public class ListLniPrivateIpAddressResponse extends AcsResponse {
 
 		private Long total;
 
+		private String resourceGroupId;
+
 		private List<DataItem> data;
 
 		public Long getTotal() {
@@ -77,6 +89,14 @@ public class ListLniPrivateIpAddressResponse extends AcsResponse {
 
 		public void setTotal(Long total) {
 			this.total = total;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<DataItem> getData() {
@@ -106,6 +126,8 @@ public class ListLniPrivateIpAddressResponse extends AcsResponse {
 			private String description;
 
 			private String message;
+
+			private String resourceGroupId;
 
 			public String getRegionId() {
 				return this.regionId;
@@ -177,6 +199,14 @@ public class ListLniPrivateIpAddressResponse extends AcsResponse {
 
 			public void setMessage(String message) {
 				this.message = message;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 		}
 	}

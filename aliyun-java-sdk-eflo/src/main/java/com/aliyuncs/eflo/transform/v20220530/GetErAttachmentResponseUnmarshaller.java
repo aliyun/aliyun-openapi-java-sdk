@@ -26,6 +26,7 @@ public class GetErAttachmentResponseUnmarshaller {
 		getErAttachmentResponse.setRequestId(_ctx.stringValue("GetErAttachmentResponse.RequestId"));
 		getErAttachmentResponse.setCode(_ctx.integerValue("GetErAttachmentResponse.Code"));
 		getErAttachmentResponse.setMessage(_ctx.stringValue("GetErAttachmentResponse.Message"));
+		getErAttachmentResponse.setAccessDeniedDetail(_ctx.stringValue("GetErAttachmentResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setCreateTime(_ctx.stringValue("GetErAttachmentResponse.Content.CreateTime"));

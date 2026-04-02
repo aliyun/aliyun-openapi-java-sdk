@@ -30,6 +30,8 @@ public class GetLeniPrivateIpAddressResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String accessDeniedDetail;
+
 	private Content content;
 
 	public Integer getCode() {
@@ -54,6 +56,14 @@ public class GetLeniPrivateIpAddressResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public Content getContent() {
@@ -83,6 +93,8 @@ public class GetLeniPrivateIpAddressResponse extends AcsResponse {
 		private String description;
 
 		private String message;
+
+		private String resourceGroupId;
 
 		public String getElasticNetworkInterfaceId() {
 			return this.elasticNetworkInterfaceId;
@@ -154,6 +166,14 @@ public class GetLeniPrivateIpAddressResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

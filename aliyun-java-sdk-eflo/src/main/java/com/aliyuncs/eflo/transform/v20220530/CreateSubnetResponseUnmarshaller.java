@@ -26,6 +26,7 @@ public class CreateSubnetResponseUnmarshaller {
 		createSubnetResponse.setRequestId(_ctx.stringValue("CreateSubnetResponse.RequestId"));
 		createSubnetResponse.setCode(_ctx.integerValue("CreateSubnetResponse.Code"));
 		createSubnetResponse.setMessage(_ctx.stringValue("CreateSubnetResponse.Message"));
+		createSubnetResponse.setAccessDeniedDetail(_ctx.stringValue("CreateSubnetResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setSubnetId(_ctx.stringValue("CreateSubnetResponse.Content.SubnetId"));

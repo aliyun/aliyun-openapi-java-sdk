@@ -26,6 +26,7 @@ public class CreateVccResponseUnmarshaller {
 		createVccResponse.setRequestId(_ctx.stringValue("CreateVccResponse.RequestId"));
 		createVccResponse.setCode(_ctx.integerValue("CreateVccResponse.Code"));
 		createVccResponse.setMessage(_ctx.stringValue("CreateVccResponse.Message"));
+		createVccResponse.setAccessDeniedDetail(_ctx.stringValue("CreateVccResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setVccId(_ctx.stringValue("CreateVccResponse.Content.VccId"));

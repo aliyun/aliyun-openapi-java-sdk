@@ -26,6 +26,7 @@ public class UpdateLeniPrivateIpAddressResponseUnmarshaller {
 		updateLeniPrivateIpAddressResponse.setRequestId(_ctx.stringValue("UpdateLeniPrivateIpAddressResponse.RequestId"));
 		updateLeniPrivateIpAddressResponse.setCode(_ctx.integerValue("UpdateLeniPrivateIpAddressResponse.Code"));
 		updateLeniPrivateIpAddressResponse.setMessage(_ctx.stringValue("UpdateLeniPrivateIpAddressResponse.Message"));
+		updateLeniPrivateIpAddressResponse.setAccessDeniedDetail(_ctx.stringValue("UpdateLeniPrivateIpAddressResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setElasticNetworkInterfaceId(_ctx.stringValue("UpdateLeniPrivateIpAddressResponse.Content.ElasticNetworkInterfaceId"));

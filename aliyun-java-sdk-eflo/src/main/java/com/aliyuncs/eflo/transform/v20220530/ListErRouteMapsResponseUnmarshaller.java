@@ -30,6 +30,7 @@ public class ListErRouteMapsResponseUnmarshaller {
 		listErRouteMapsResponse.setRequestId(_ctx.stringValue("ListErRouteMapsResponse.RequestId"));
 		listErRouteMapsResponse.setCode(_ctx.integerValue("ListErRouteMapsResponse.Code"));
 		listErRouteMapsResponse.setMessage(_ctx.stringValue("ListErRouteMapsResponse.Message"));
+		listErRouteMapsResponse.setAccessDeniedDetail(_ctx.stringValue("ListErRouteMapsResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setTotal(_ctx.longValue("ListErRouteMapsResponse.Content.Total"));

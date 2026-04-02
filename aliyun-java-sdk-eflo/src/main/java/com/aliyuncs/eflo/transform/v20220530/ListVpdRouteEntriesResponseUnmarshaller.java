@@ -30,6 +30,7 @@ public class ListVpdRouteEntriesResponseUnmarshaller {
 		listVpdRouteEntriesResponse.setRequestId(_ctx.stringValue("ListVpdRouteEntriesResponse.RequestId"));
 		listVpdRouteEntriesResponse.setCode(_ctx.integerValue("ListVpdRouteEntriesResponse.Code"));
 		listVpdRouteEntriesResponse.setMessage(_ctx.stringValue("ListVpdRouteEntriesResponse.Message"));
+		listVpdRouteEntriesResponse.setAccessDeniedDetail(_ctx.stringValue("ListVpdRouteEntriesResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setTotal(_ctx.longValue("ListVpdRouteEntriesResponse.Content.Total"));

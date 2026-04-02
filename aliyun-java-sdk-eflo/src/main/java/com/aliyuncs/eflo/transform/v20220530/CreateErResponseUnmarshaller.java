@@ -26,6 +26,7 @@ public class CreateErResponseUnmarshaller {
 		createErResponse.setRequestId(_ctx.stringValue("CreateErResponse.RequestId"));
 		createErResponse.setCode(_ctx.integerValue("CreateErResponse.Code"));
 		createErResponse.setMessage(_ctx.stringValue("CreateErResponse.Message"));
+		createErResponse.setAccessDeniedDetail(_ctx.stringValue("CreateErResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setErId(_ctx.stringValue("CreateErResponse.Content.ErId"));

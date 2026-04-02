@@ -22,6 +22,7 @@ import com.aliyuncs.eflo.model.v20220530.GetErResponse.Content;
 import com.aliyuncs.eflo.model.v20220530.GetErResponse.Content.ErAttachment;
 import com.aliyuncs.eflo.model.v20220530.GetErResponse.Content.ErRouteEntry;
 import com.aliyuncs.eflo.model.v20220530.GetErResponse.Content.ErRouteMap;
+import com.aliyuncs.eflo.model.v20220530.GetErResponse.Content.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,6 +33,7 @@ public class GetErResponseUnmarshaller {
 		getErResponse.setRequestId(_ctx.stringValue("GetErResponse.RequestId"));
 		getErResponse.setCode(_ctx.integerValue("GetErResponse.Code"));
 		getErResponse.setMessage(_ctx.stringValue("GetErResponse.Message"));
+		getErResponse.setAccessDeniedDetail(_ctx.stringValue("GetErResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setCreateTime(_ctx.stringValue("GetErResponse.Content.CreateTime"));
@@ -49,22 +51,22 @@ public class GetErResponseUnmarshaller {
 		List<ErAttachment> erAttachments = new ArrayList<ErAttachment>();
 		for (int i = 0; i < _ctx.lengthValue("GetErResponse.Content.ErAttachments.Length"); i++) {
 			ErAttachment erAttachment = new ErAttachment();
+			erAttachment.setStatus(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].Status"));
+			erAttachment.setMessage(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].Message"));
+			erAttachment.setResourceGroupId(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].ResourceGroupId"));
+			erAttachment.setInstanceId(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].InstanceId"));
 			erAttachment.setCreateTime(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].CreateTime"));
 			erAttachment.setGmtModified(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].GmtModified"));
-			erAttachment.setMessage(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].Message"));
-			erAttachment.setStatus(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].Status"));
-			erAttachment.setRegionId(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].RegionId"));
+			erAttachment.setErId(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].ErId"));
+			erAttachment.setAcross(_ctx.booleanValue("GetErResponse.Content.ErAttachments["+ i +"].Across"));
+			erAttachment.setInstanceName(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].InstanceName"));
 			erAttachment.setTenantId(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].TenantId"));
+			erAttachment.setResourceTenantId(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].ResourceTenantId"));
+			erAttachment.setAutoReceiveAllRoute(_ctx.booleanValue("GetErResponse.Content.ErAttachments["+ i +"].AutoReceiveAllRoute"));
 			erAttachment.setErAttachmentName(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].ErAttachmentName"));
 			erAttachment.setErAttachmentId(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].ErAttachmentId"));
-			erAttachment.setErId(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].ErId"));
+			erAttachment.setRegionId(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].RegionId"));
 			erAttachment.setInstanceType(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].InstanceType"));
-			erAttachment.setInstanceId(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].InstanceId"));
-			erAttachment.setInstanceName(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].InstanceName"));
-			erAttachment.setAutoReceiveAllRoute(_ctx.booleanValue("GetErResponse.Content.ErAttachments["+ i +"].AutoReceiveAllRoute"));
-			erAttachment.setAcross(_ctx.booleanValue("GetErResponse.Content.ErAttachments["+ i +"].Across"));
-			erAttachment.setResourceTenantId(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].ResourceTenantId"));
-			erAttachment.setResourceGroupId(_ctx.stringValue("GetErResponse.Content.ErAttachments["+ i +"].ResourceGroupId"));
 
 			erAttachments.add(erAttachment);
 		}
@@ -73,28 +75,28 @@ public class GetErResponseUnmarshaller {
 		List<ErRouteMap> erRouteMaps = new ArrayList<ErRouteMap>();
 		for (int i = 0; i < _ctx.lengthValue("GetErResponse.Content.ErRouteMaps.Length"); i++) {
 			ErRouteMap erRouteMap = new ErRouteMap();
-			erRouteMap.setRegionId(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].RegionId"));
-			erRouteMap.setTenantId(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].TenantId"));
+			erRouteMap.setStatus(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].Status"));
+			erRouteMap.setTransmissionInstanceType(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].TransmissionInstanceType"));
+			erRouteMap.setAction(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].Action"));
+			erRouteMap.setDescription(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].Description"));
+			erRouteMap.setReceptionInstanceType(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ReceptionInstanceType"));
+			erRouteMap.setMessage(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].Message"));
+			erRouteMap.setErRouteMapName(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ErRouteMapName"));
+			erRouteMap.setReceptionInstanceId(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ReceptionInstanceId"));
+			erRouteMap.setResourceGroupId(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ResourceGroupId"));
 			erRouteMap.setCreateTime(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].CreateTime"));
 			erRouteMap.setGmtModified(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].GmtModified"));
-			erRouteMap.setMessage(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].Message"));
-			erRouteMap.setStatus(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].Status"));
-			erRouteMap.setErRouteMapId(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ErRouteMapId"));
 			erRouteMap.setErId(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ErId"));
-			erRouteMap.setRouteMapNum(_ctx.integerValue("GetErResponse.Content.ErRouteMaps["+ i +"].RouteMapNum"));
-			erRouteMap.setDescription(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].Description"));
-			erRouteMap.setDestinationCidrBlock(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].DestinationCidrBlock"));
 			erRouteMap.setTransmissionInstanceName(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].TransmissionInstanceName"));
-			erRouteMap.setTransmissionInstanceId(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].TransmissionInstanceId"));
-			erRouteMap.setTransmissionInstanceType(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].TransmissionInstanceType"));
-			erRouteMap.setReceptionInstanceName(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ReceptionInstanceName"));
-			erRouteMap.setReceptionInstanceId(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ReceptionInstanceId"));
-			erRouteMap.setReceptionInstanceType(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ReceptionInstanceType"));
-			erRouteMap.setAction(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].Action"));
-			erRouteMap.setTransmissionInstanceOwner(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].TransmissionInstanceOwner"));
+			erRouteMap.setDestinationCidrBlock(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].DestinationCidrBlock"));
 			erRouteMap.setReceptionInstanceOwner(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ReceptionInstanceOwner"));
-			erRouteMap.setResourceGroupId(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ResourceGroupId"));
-			erRouteMap.setErRouteMapName(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ErRouteMapName"));
+			erRouteMap.setTenantId(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].TenantId"));
+			erRouteMap.setReceptionInstanceName(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ReceptionInstanceName"));
+			erRouteMap.setErRouteMapId(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].ErRouteMapId"));
+			erRouteMap.setTransmissionInstanceOwner(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].TransmissionInstanceOwner"));
+			erRouteMap.setRegionId(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].RegionId"));
+			erRouteMap.setTransmissionInstanceId(_ctx.stringValue("GetErResponse.Content.ErRouteMaps["+ i +"].TransmissionInstanceId"));
+			erRouteMap.setRouteMapNum(_ctx.integerValue("GetErResponse.Content.ErRouteMaps["+ i +"].RouteMapNum"));
 
 			erRouteMaps.add(erRouteMap);
 		}
@@ -103,22 +105,32 @@ public class GetErResponseUnmarshaller {
 		List<ErRouteEntry> erRouteEntrys = new ArrayList<ErRouteEntry>();
 		for (int i = 0; i < _ctx.lengthValue("GetErResponse.Content.ErRouteEntrys.Length"); i++) {
 			ErRouteEntry erRouteEntry = new ErRouteEntry();
-			erRouteEntry.setErId(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].ErId"));
+			erRouteEntry.setStatus(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].Status"));
+			erRouteEntry.setNextHopType(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].NextHopType"));
 			erRouteEntry.setTenantId(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].TenantId"));
 			erRouteEntry.setResourceTenantId(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].ResourceTenantId"));
-			erRouteEntry.setRegionId(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].RegionId"));
-			erRouteEntry.setErRouteEntryId(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].ErRouteEntryId"));
-			erRouteEntry.setDestinationCidrBlock(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].DestinationCidrBlock"));
-			erRouteEntry.setNextHopType(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].NextHopType"));
-			erRouteEntry.setNextHopId(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].NextHopId"));
 			erRouteEntry.setRouteType(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].RouteType"));
-			erRouteEntry.setStatus(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].Status"));
-			erRouteEntry.setGmtModified(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].GmtModified"));
+			erRouteEntry.setErRouteEntryId(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].ErRouteEntryId"));
 			erRouteEntry.setResourceGroupId(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].ResourceGroupId"));
+			erRouteEntry.setNextHopId(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].NextHopId"));
+			erRouteEntry.setGmtModified(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].GmtModified"));
+			erRouteEntry.setErId(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].ErId"));
+			erRouteEntry.setRegionId(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].RegionId"));
+			erRouteEntry.setDestinationCidrBlock(_ctx.stringValue("GetErResponse.Content.ErRouteEntrys["+ i +"].DestinationCidrBlock"));
 
 			erRouteEntrys.add(erRouteEntry);
 		}
 		content.setErRouteEntrys(erRouteEntrys);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetErResponse.Content.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("GetErResponse.Content.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("GetErResponse.Content.Tags["+ i +"].TagValue"));
+
+			tags.add(tag);
+		}
+		content.setTags(tags);
 		getErResponse.setContent(content);
 	 
 	 	return getErResponse;

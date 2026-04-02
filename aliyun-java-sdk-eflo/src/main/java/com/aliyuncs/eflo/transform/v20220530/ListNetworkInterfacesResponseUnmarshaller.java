@@ -22,6 +22,7 @@ import com.aliyuncs.eflo.model.v20220530.ListNetworkInterfacesResponse.Content;
 import com.aliyuncs.eflo.model.v20220530.ListNetworkInterfacesResponse.Content.DataItem;
 import com.aliyuncs.eflo.model.v20220530.ListNetworkInterfacesResponse.Content.DataItem.PrivateIpAddressMacGroupItem;
 import com.aliyuncs.eflo.model.v20220530.ListNetworkInterfacesResponse.Content.DataItem.SubnetBaseInfo;
+import com.aliyuncs.eflo.model.v20220530.ListNetworkInterfacesResponse.Content.DataItem.Tag;
 import com.aliyuncs.eflo.model.v20220530.ListNetworkInterfacesResponse.Content.DataItem.VpdBaseInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -33,6 +34,7 @@ public class ListNetworkInterfacesResponseUnmarshaller {
 		listNetworkInterfacesResponse.setRequestId(_ctx.stringValue("ListNetworkInterfacesResponse.RequestId"));
 		listNetworkInterfacesResponse.setCode(_ctx.integerValue("ListNetworkInterfacesResponse.Code"));
 		listNetworkInterfacesResponse.setMessage(_ctx.stringValue("ListNetworkInterfacesResponse.Message"));
+		listNetworkInterfacesResponse.setAccessDeniedDetail(_ctx.stringValue("ListNetworkInterfacesResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setTotal(_ctx.longValue("ListNetworkInterfacesResponse.Content.Total"));
@@ -53,6 +55,7 @@ public class ListNetworkInterfacesResponseUnmarshaller {
 			dataItem.setQuota(_ctx.integerValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].Quota"));
 			dataItem.setNcType(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].NcType"));
 			dataItem.setNetworkInterfaceName(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].NetworkInterfaceName"));
+			dataItem.setResourceGroupId(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].ResourceGroupId"));
 
 			List<String> ethernet = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].Ethernet.Length"); j++) {
@@ -87,6 +90,16 @@ public class ListNetworkInterfacesResponseUnmarshaller {
 				privateIpAddressMacGroup.add(privateIpAddressMacGroupItem);
 			}
 			dataItem.setPrivateIpAddressMacGroup(privateIpAddressMacGroup);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			dataItem.setTags(tags);
 
 			data.add(dataItem);
 		}

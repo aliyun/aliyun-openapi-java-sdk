@@ -26,6 +26,7 @@ public class GetVccGrantRuleResponseUnmarshaller {
 		getVccGrantRuleResponse.setRequestId(_ctx.stringValue("GetVccGrantRuleResponse.RequestId"));
 		getVccGrantRuleResponse.setCode(_ctx.integerValue("GetVccGrantRuleResponse.Code"));
 		getVccGrantRuleResponse.setMessage(_ctx.stringValue("GetVccGrantRuleResponse.Message"));
+		getVccGrantRuleResponse.setAccessDeniedDetail(_ctx.stringValue("GetVccGrantRuleResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setRegionId(_ctx.stringValue("GetVccGrantRuleResponse.Content.RegionId"));

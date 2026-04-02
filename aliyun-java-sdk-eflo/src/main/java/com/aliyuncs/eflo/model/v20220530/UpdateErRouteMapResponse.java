@@ -33,6 +33,8 @@ public class UpdateErRouteMapResponse extends AcsResponse {
 
 	private Map<Object,Object> content;
 
+	private String accessDeniedDetail;
+
 	public Integer getCode() {
 		return this.code;
 	}
@@ -63,6 +65,14 @@ public class UpdateErRouteMapResponse extends AcsResponse {
 
 	public void setContent(Map<Object,Object> content) {
 		this.content = content;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	@Override

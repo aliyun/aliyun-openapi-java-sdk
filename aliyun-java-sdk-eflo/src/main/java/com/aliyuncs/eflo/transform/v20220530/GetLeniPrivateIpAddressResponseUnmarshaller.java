@@ -26,6 +26,7 @@ public class GetLeniPrivateIpAddressResponseUnmarshaller {
 		getLeniPrivateIpAddressResponse.setRequestId(_ctx.stringValue("GetLeniPrivateIpAddressResponse.RequestId"));
 		getLeniPrivateIpAddressResponse.setCode(_ctx.integerValue("GetLeniPrivateIpAddressResponse.Code"));
 		getLeniPrivateIpAddressResponse.setMessage(_ctx.stringValue("GetLeniPrivateIpAddressResponse.Message"));
+		getLeniPrivateIpAddressResponse.setAccessDeniedDetail(_ctx.stringValue("GetLeniPrivateIpAddressResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setElasticNetworkInterfaceId(_ctx.stringValue("GetLeniPrivateIpAddressResponse.Content.ElasticNetworkInterfaceId"));
@@ -37,6 +38,7 @@ public class GetLeniPrivateIpAddressResponseUnmarshaller {
 		content.setStatus(_ctx.stringValue("GetLeniPrivateIpAddressResponse.Content.Status"));
 		content.setDescription(_ctx.stringValue("GetLeniPrivateIpAddressResponse.Content.Description"));
 		content.setMessage(_ctx.stringValue("GetLeniPrivateIpAddressResponse.Content.Message"));
+		content.setResourceGroupId(_ctx.stringValue("GetLeniPrivateIpAddressResponse.Content.ResourceGroupId"));
 		getLeniPrivateIpAddressResponse.setContent(content);
 	 
 	 	return getLeniPrivateIpAddressResponse;

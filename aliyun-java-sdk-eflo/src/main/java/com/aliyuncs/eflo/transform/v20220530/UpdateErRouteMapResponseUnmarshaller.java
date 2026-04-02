@@ -27,6 +27,7 @@ public class UpdateErRouteMapResponseUnmarshaller {
 		updateErRouteMapResponse.setCode(_ctx.integerValue("UpdateErRouteMapResponse.Code"));
 		updateErRouteMapResponse.setMessage(_ctx.stringValue("UpdateErRouteMapResponse.Message"));
 		updateErRouteMapResponse.setContent(_ctx.mapValue("UpdateErRouteMapResponse.Content"));
+		updateErRouteMapResponse.setAccessDeniedDetail(_ctx.stringValue("UpdateErRouteMapResponse.AccessDeniedDetail"));
 	 
 	 	return updateErRouteMapResponse;
 	}

@@ -26,6 +26,7 @@ public class CreateErAttachmentResponseUnmarshaller {
 		createErAttachmentResponse.setRequestId(_ctx.stringValue("CreateErAttachmentResponse.RequestId"));
 		createErAttachmentResponse.setCode(_ctx.integerValue("CreateErAttachmentResponse.Code"));
 		createErAttachmentResponse.setMessage(_ctx.stringValue("CreateErAttachmentResponse.Message"));
+		createErAttachmentResponse.setAccessDeniedDetail(_ctx.stringValue("CreateErAttachmentResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setErAttachmentId(_ctx.stringValue("CreateErAttachmentResponse.Content.ErAttachmentId"));

@@ -30,6 +30,7 @@ public class GetFabricTopologyResponseUnmarshaller {
 		getFabricTopologyResponse.setRequestId(_ctx.stringValue("GetFabricTopologyResponse.RequestId"));
 		getFabricTopologyResponse.setCode(_ctx.integerValue("GetFabricTopologyResponse.Code"));
 		getFabricTopologyResponse.setMessage(_ctx.stringValue("GetFabricTopologyResponse.Message"));
+		getFabricTopologyResponse.setAccessDeniedDetail(_ctx.stringValue("GetFabricTopologyResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setRegionId(_ctx.stringValue("GetFabricTopologyResponse.Content.RegionId"));

@@ -26,6 +26,7 @@ public class UpdateVccResponseUnmarshaller {
 		updateVccResponse.setRequestId(_ctx.stringValue("UpdateVccResponse.RequestId"));
 		updateVccResponse.setCode(_ctx.integerValue("UpdateVccResponse.Code"));
 		updateVccResponse.setMessage(_ctx.stringValue("UpdateVccResponse.Message"));
+		updateVccResponse.setAccessDeniedDetail(_ctx.stringValue("UpdateVccResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setVccId(_ctx.stringValue("UpdateVccResponse.Content.VccId"));

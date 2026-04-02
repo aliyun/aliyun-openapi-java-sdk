@@ -26,6 +26,7 @@ public class InitializeVccResponseUnmarshaller {
 		initializeVccResponse.setRequestId(_ctx.stringValue("InitializeVccResponse.RequestId"));
 		initializeVccResponse.setCode(_ctx.integerValue("InitializeVccResponse.Code"));
 		initializeVccResponse.setMessage(_ctx.stringValue("InitializeVccResponse.Message"));
+		initializeVccResponse.setAccessDeniedDetail(_ctx.stringValue("InitializeVccResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setRoleName(_ctx.stringValue("InitializeVccResponse.Content.RoleName"));

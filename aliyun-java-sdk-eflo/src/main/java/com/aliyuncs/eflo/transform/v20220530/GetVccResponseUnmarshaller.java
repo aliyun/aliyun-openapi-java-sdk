@@ -37,6 +37,7 @@ public class GetVccResponseUnmarshaller {
 		getVccResponse.setRequestId(_ctx.stringValue("GetVccResponse.RequestId"));
 		getVccResponse.setCode(_ctx.integerValue("GetVccResponse.Code"));
 		getVccResponse.setMessage(_ctx.stringValue("GetVccResponse.Message"));
+		getVccResponse.setAccessDeniedDetail(_ctx.stringValue("GetVccResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setTenantId(_ctx.stringValue("GetVccResponse.Content.TenantId"));
@@ -70,6 +71,7 @@ public class GetVccResponseUnmarshaller {
 		content.setConnectionType(_ctx.stringValue("GetVccResponse.Content.ConnectionType"));
 		content.setCenOwnerId(_ctx.stringValue("GetVccResponse.Content.CenOwnerId"));
 		content.setBgpAsn(_ctx.stringValue("GetVccResponse.Content.BgpAsn"));
+		content.setBandwidth(_ctx.integerValue("GetVccResponse.Content.Bandwidth"));
 
 		VpdBaseInfo vpdBaseInfo = new VpdBaseInfo();
 		vpdBaseInfo.setVpdId(_ctx.stringValue("GetVccResponse.Content.VpdBaseInfo.VpdId"));

@@ -30,6 +30,7 @@ public class ListErAttachmentsResponseUnmarshaller {
 		listErAttachmentsResponse.setRequestId(_ctx.stringValue("ListErAttachmentsResponse.RequestId"));
 		listErAttachmentsResponse.setCode(_ctx.integerValue("ListErAttachmentsResponse.Code"));
 		listErAttachmentsResponse.setMessage(_ctx.stringValue("ListErAttachmentsResponse.Message"));
+		listErAttachmentsResponse.setAccessDeniedDetail(_ctx.stringValue("ListErAttachmentsResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setTotal(_ctx.longValue("ListErAttachmentsResponse.Content.Total"));

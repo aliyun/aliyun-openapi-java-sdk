@@ -30,6 +30,7 @@ public class ListVccFlowInfosResponseUnmarshaller {
 		listVccFlowInfosResponse.setRequestId(_ctx.stringValue("ListVccFlowInfosResponse.RequestId"));
 		listVccFlowInfosResponse.setCode(_ctx.integerValue("ListVccFlowInfosResponse.Code"));
 		listVccFlowInfosResponse.setMessage(_ctx.stringValue("ListVccFlowInfosResponse.Message"));
+		listVccFlowInfosResponse.setAccessDeniedDetail(_ctx.stringValue("ListVccFlowInfosResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setTotal(_ctx.longValue("ListVccFlowInfosResponse.Content.Total"));

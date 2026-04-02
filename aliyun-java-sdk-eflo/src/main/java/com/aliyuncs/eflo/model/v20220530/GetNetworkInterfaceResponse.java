@@ -31,6 +31,8 @@ public class GetNetworkInterfaceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String accessDeniedDetail;
+
 	private Content content;
 
 	public Integer getCode() {
@@ -55,6 +57,14 @@ public class GetNetworkInterfaceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public Content getContent() {
@@ -93,7 +103,11 @@ public class GetNetworkInterfaceResponse extends AcsResponse {
 
 		private String networkInterfaceName;
 
+		private String resourceGroupId;
+
 		private List<PrivateIpAddressMacGroupItem> privateIpAddressMacGroup;
+
+		private List<Tag> tags;
 
 		private List<String> ethernet;
 
@@ -205,12 +219,28 @@ public class GetNetworkInterfaceResponse extends AcsResponse {
 			this.networkInterfaceName = networkInterfaceName;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<PrivateIpAddressMacGroupItem> getPrivateIpAddressMacGroup() {
 			return this.privateIpAddressMacGroup;
 		}
 
 		public void setPrivateIpAddressMacGroup(List<PrivateIpAddressMacGroupItem> privateIpAddressMacGroup) {
 			this.privateIpAddressMacGroup = privateIpAddressMacGroup;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public List<String> getEthernet() {
@@ -297,6 +327,29 @@ public class GetNetworkInterfaceResponse extends AcsResponse {
 
 			public void setMessage(String message) {
 				this.message = message;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 

@@ -26,6 +26,7 @@ public class CreateElasticNetworkInterfaceResponseUnmarshaller {
 		createElasticNetworkInterfaceResponse.setRequestId(_ctx.stringValue("CreateElasticNetworkInterfaceResponse.RequestId"));
 		createElasticNetworkInterfaceResponse.setCode(_ctx.integerValue("CreateElasticNetworkInterfaceResponse.Code"));
 		createElasticNetworkInterfaceResponse.setMessage(_ctx.stringValue("CreateElasticNetworkInterfaceResponse.Message"));
+		createElasticNetworkInterfaceResponse.setAccessDeniedDetail(_ctx.stringValue("CreateElasticNetworkInterfaceResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setNodeId(_ctx.stringValue("CreateElasticNetworkInterfaceResponse.Content.NodeId"));

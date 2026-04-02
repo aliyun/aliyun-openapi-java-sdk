@@ -26,13 +26,13 @@ public class ListVccFlowInfosRequest extends RpcAcsRequest<ListVccFlowInfosRespo
 
 	private Long from;
 
-	private Long to;
-
 	private String vccId;
 
 	private String metricName;
 
 	private String direction;
+
+	private Long to;
 	public ListVccFlowInfosRequest() {
 		super("eflo", "2022-05-30", "ListVccFlowInfos", "eflo");
 		setMethod(MethodType.POST);
@@ -46,17 +46,6 @@ public class ListVccFlowInfosRequest extends RpcAcsRequest<ListVccFlowInfosRespo
 		this.from = from;
 		if(from != null){
 			putBodyParameter("From", from.toString());
-		}
-	}
-
-	public Long getTo() {
-		return this.to;
-	}
-
-	public void setTo(Long to) {
-		this.to = to;
-		if(to != null){
-			putBodyParameter("To", to.toString());
 		}
 	}
 
@@ -90,6 +79,17 @@ public class ListVccFlowInfosRequest extends RpcAcsRequest<ListVccFlowInfosRespo
 		this.direction = direction;
 		if(direction != null){
 			putBodyParameter("Direction", direction);
+		}
+	}
+
+	public Long getTo() {
+		return this.to;
+	}
+
+	public void setTo(Long to) {
+		this.to = to;
+		if(to != null){
+			putBodyParameter("To", to.toString());
 		}
 	}
 

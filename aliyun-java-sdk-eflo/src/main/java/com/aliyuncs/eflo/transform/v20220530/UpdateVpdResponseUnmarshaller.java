@@ -26,6 +26,7 @@ public class UpdateVpdResponseUnmarshaller {
 		updateVpdResponse.setRequestId(_ctx.stringValue("UpdateVpdResponse.RequestId"));
 		updateVpdResponse.setCode(_ctx.integerValue("UpdateVpdResponse.Code"));
 		updateVpdResponse.setMessage(_ctx.stringValue("UpdateVpdResponse.Message"));
+		updateVpdResponse.setAccessDeniedDetail(_ctx.stringValue("UpdateVpdResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setVpdId(_ctx.stringValue("UpdateVpdResponse.Content.VpdId"));

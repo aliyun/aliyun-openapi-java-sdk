@@ -30,9 +30,11 @@ public class ListLeniPrivateIpAddressesResponseUnmarshaller {
 		listLeniPrivateIpAddressesResponse.setRequestId(_ctx.stringValue("ListLeniPrivateIpAddressesResponse.RequestId"));
 		listLeniPrivateIpAddressesResponse.setCode(_ctx.integerValue("ListLeniPrivateIpAddressesResponse.Code"));
 		listLeniPrivateIpAddressesResponse.setMessage(_ctx.stringValue("ListLeniPrivateIpAddressesResponse.Message"));
+		listLeniPrivateIpAddressesResponse.setAccessDeniedDetail(_ctx.stringValue("ListLeniPrivateIpAddressesResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setTotal(_ctx.longValue("ListLeniPrivateIpAddressesResponse.Content.Total"));
+		content.setResourceGroupId(_ctx.stringValue("ListLeniPrivateIpAddressesResponse.Content.ResourceGroupId"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListLeniPrivateIpAddressesResponse.Content.Data.Length"); i++) {
@@ -46,6 +48,7 @@ public class ListLeniPrivateIpAddressesResponseUnmarshaller {
 			dataItem.setStatus(_ctx.stringValue("ListLeniPrivateIpAddressesResponse.Content.Data["+ i +"].Status"));
 			dataItem.setDescription(_ctx.stringValue("ListLeniPrivateIpAddressesResponse.Content.Data["+ i +"].Description"));
 			dataItem.setMessage(_ctx.stringValue("ListLeniPrivateIpAddressesResponse.Content.Data["+ i +"].Message"));
+			dataItem.setResourceGroupId(_ctx.stringValue("ListLeniPrivateIpAddressesResponse.Content.Data["+ i +"].ResourceGroupId"));
 
 			data.add(dataItem);
 		}

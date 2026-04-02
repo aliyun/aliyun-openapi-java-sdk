@@ -26,6 +26,7 @@ public class GetLniPrivateIpAddressResponseUnmarshaller {
 		getLniPrivateIpAddressResponse.setRequestId(_ctx.stringValue("GetLniPrivateIpAddressResponse.RequestId"));
 		getLniPrivateIpAddressResponse.setCode(_ctx.integerValue("GetLniPrivateIpAddressResponse.Code"));
 		getLniPrivateIpAddressResponse.setMessage(_ctx.stringValue("GetLniPrivateIpAddressResponse.Message"));
+		getLniPrivateIpAddressResponse.setAccessDeniedDetail(_ctx.stringValue("GetLniPrivateIpAddressResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setRegionId(_ctx.stringValue("GetLniPrivateIpAddressResponse.Content.RegionId"));
@@ -37,6 +38,8 @@ public class GetLniPrivateIpAddressResponseUnmarshaller {
 		content.setStatus(_ctx.stringValue("GetLniPrivateIpAddressResponse.Content.Status"));
 		content.setDescription(_ctx.stringValue("GetLniPrivateIpAddressResponse.Content.Description"));
 		content.setMessage(_ctx.stringValue("GetLniPrivateIpAddressResponse.Content.Message"));
+		content.setSubnetId(_ctx.stringValue("GetLniPrivateIpAddressResponse.Content.SubnetId"));
+		content.setResourceGroupId(_ctx.stringValue("GetLniPrivateIpAddressResponse.Content.ResourceGroupId"));
 		getLniPrivateIpAddressResponse.setContent(content);
 	 
 	 	return getLniPrivateIpAddressResponse;

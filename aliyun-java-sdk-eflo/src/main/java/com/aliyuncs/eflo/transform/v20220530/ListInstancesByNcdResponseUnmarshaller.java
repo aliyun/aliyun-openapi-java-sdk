@@ -30,6 +30,7 @@ public class ListInstancesByNcdResponseUnmarshaller {
 		listInstancesByNcdResponse.setRequestId(_ctx.stringValue("ListInstancesByNcdResponse.RequestId"));
 		listInstancesByNcdResponse.setCode(_ctx.integerValue("ListInstancesByNcdResponse.Code"));
 		listInstancesByNcdResponse.setMessage(_ctx.stringValue("ListInstancesByNcdResponse.Message"));
+		listInstancesByNcdResponse.setAccessDeniedDetail(_ctx.stringValue("ListInstancesByNcdResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setMaxNcd(_ctx.integerValue("ListInstancesByNcdResponse.Content.MaxNcd"));

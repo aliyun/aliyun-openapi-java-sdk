@@ -30,6 +30,7 @@ public class ListVccGrantRulesResponseUnmarshaller {
 		listVccGrantRulesResponse.setRequestId(_ctx.stringValue("ListVccGrantRulesResponse.RequestId"));
 		listVccGrantRulesResponse.setCode(_ctx.integerValue("ListVccGrantRulesResponse.Code"));
 		listVccGrantRulesResponse.setMessage(_ctx.stringValue("ListVccGrantRulesResponse.Message"));
+		listVccGrantRulesResponse.setAccessDeniedDetail(_ctx.stringValue("ListVccGrantRulesResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setTotal(_ctx.longValue("ListVccGrantRulesResponse.Content.Total"));

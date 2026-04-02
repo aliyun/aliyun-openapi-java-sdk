@@ -29,6 +29,7 @@ public class CreateVpdResponseUnmarshaller {
 		createVpdResponse.setRequestId(_ctx.stringValue("CreateVpdResponse.RequestId"));
 		createVpdResponse.setCode(_ctx.integerValue("CreateVpdResponse.Code"));
 		createVpdResponse.setMessage(_ctx.stringValue("CreateVpdResponse.Message"));
+		createVpdResponse.setAccessDeniedDetail(_ctx.stringValue("CreateVpdResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setVpdId(_ctx.stringValue("CreateVpdResponse.Content.VpdId"));

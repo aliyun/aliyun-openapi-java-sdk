@@ -28,6 +28,8 @@ public class ListLniPrivateIpAddressRequest extends RpcAcsRequest<ListLniPrivate
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private String ip;
@@ -61,6 +63,17 @@ public class ListLniPrivateIpAddressRequest extends RpcAcsRequest<ListLniPrivate
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

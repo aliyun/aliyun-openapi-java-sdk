@@ -26,6 +26,7 @@ public class GetVccRouteEntryResponseUnmarshaller {
 		getVccRouteEntryResponse.setRequestId(_ctx.stringValue("GetVccRouteEntryResponse.RequestId"));
 		getVccRouteEntryResponse.setCode(_ctx.integerValue("GetVccRouteEntryResponse.Code"));
 		getVccRouteEntryResponse.setMessage(_ctx.stringValue("GetVccRouteEntryResponse.Message"));
+		getVccRouteEntryResponse.setAccessDeniedDetail(_ctx.stringValue("GetVccRouteEntryResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setRegionId(_ctx.stringValue("GetVccRouteEntryResponse.Content.RegionId"));

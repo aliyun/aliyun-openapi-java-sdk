@@ -15,6 +15,7 @@
 package com.aliyuncs.eflo.model.v20220530;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -33,6 +34,8 @@ public class ListErsRequest extends RpcAcsRequest<ListErsResponse> {
 	private Integer pageSize;
 
 	private String instanceType;
+
+	private List<Tag> tags;
 
 	private String erId;
 
@@ -101,6 +104,20 @@ public class ListErsRequest extends RpcAcsRequest<ListErsResponse> {
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putBodyParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putBodyParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getErId() {
 		return this.erId;
 	}
@@ -142,6 +159,29 @@ public class ListErsRequest extends RpcAcsRequest<ListErsResponse> {
 		this.enablePage = enablePage;
 		if(enablePage != null){
 			putBodyParameter("EnablePage", enablePage.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

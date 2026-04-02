@@ -26,6 +26,7 @@ public class AssociateVpdCidrBlockResponseUnmarshaller {
 		associateVpdCidrBlockResponse.setRequestId(_ctx.stringValue("AssociateVpdCidrBlockResponse.RequestId"));
 		associateVpdCidrBlockResponse.setCode(_ctx.integerValue("AssociateVpdCidrBlockResponse.Code"));
 		associateVpdCidrBlockResponse.setMessage(_ctx.stringValue("AssociateVpdCidrBlockResponse.Message"));
+		associateVpdCidrBlockResponse.setAccessDeniedDetail(_ctx.stringValue("AssociateVpdCidrBlockResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setVpdId(_ctx.stringValue("AssociateVpdCidrBlockResponse.Content.VpdId"));

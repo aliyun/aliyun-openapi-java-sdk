@@ -26,6 +26,7 @@ public class UnAssignPrivateIpAddressResponseUnmarshaller {
 		unAssignPrivateIpAddressResponse.setRequestId(_ctx.stringValue("UnAssignPrivateIpAddressResponse.RequestId"));
 		unAssignPrivateIpAddressResponse.setCode(_ctx.integerValue("UnAssignPrivateIpAddressResponse.Code"));
 		unAssignPrivateIpAddressResponse.setMessage(_ctx.stringValue("UnAssignPrivateIpAddressResponse.Message"));
+		unAssignPrivateIpAddressResponse.setAccessDeniedDetail(_ctx.stringValue("UnAssignPrivateIpAddressResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setNetworkInterfaceId(_ctx.stringValue("UnAssignPrivateIpAddressResponse.Content.NetworkInterfaceId"));

@@ -26,6 +26,7 @@ public class AssignLeniPrivateIpAddressResponseUnmarshaller {
 		assignLeniPrivateIpAddressResponse.setRequestId(_ctx.stringValue("AssignLeniPrivateIpAddressResponse.RequestId"));
 		assignLeniPrivateIpAddressResponse.setCode(_ctx.integerValue("AssignLeniPrivateIpAddressResponse.Code"));
 		assignLeniPrivateIpAddressResponse.setMessage(_ctx.stringValue("AssignLeniPrivateIpAddressResponse.Message"));
+		assignLeniPrivateIpAddressResponse.setAccessDeniedDetail(_ctx.stringValue("AssignLeniPrivateIpAddressResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setIpName(_ctx.stringValue("AssignLeniPrivateIpAddressResponse.Content.IpName"));

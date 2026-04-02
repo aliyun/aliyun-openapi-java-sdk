@@ -26,6 +26,7 @@ public class DeleteElasticNetworkInterfaceResponseUnmarshaller {
 		deleteElasticNetworkInterfaceResponse.setRequestId(_ctx.stringValue("DeleteElasticNetworkInterfaceResponse.RequestId"));
 		deleteElasticNetworkInterfaceResponse.setCode(_ctx.integerValue("DeleteElasticNetworkInterfaceResponse.Code"));
 		deleteElasticNetworkInterfaceResponse.setMessage(_ctx.stringValue("DeleteElasticNetworkInterfaceResponse.Message"));
+		deleteElasticNetworkInterfaceResponse.setAccessDeniedDetail(_ctx.stringValue("DeleteElasticNetworkInterfaceResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setNodeId(_ctx.stringValue("DeleteElasticNetworkInterfaceResponse.Content.NodeId"));

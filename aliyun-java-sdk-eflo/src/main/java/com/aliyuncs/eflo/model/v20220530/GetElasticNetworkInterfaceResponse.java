@@ -31,6 +31,8 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String accessDeniedDetail;
+
 	private Content content;
 
 	public Integer getCode() {
@@ -55,6 +57,14 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public Content getContent() {
@@ -99,9 +109,13 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 
 		private String description;
 
+		private String resourceGroupId;
+
 		private String securityGroupId;
 
 		private Boolean enableJumboFrame;
+
+		private List<Tag> tags;
 
 		private List<PrivateIpAddress> privateIpAddresses;
 
@@ -235,6 +249,14 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public String getSecurityGroupId() {
 			return this.securityGroupId;
 		}
@@ -249,6 +271,14 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 
 		public void setEnableJumboFrame(Boolean enableJumboFrame) {
 			this.enableJumboFrame = enableJumboFrame;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public List<PrivateIpAddress> getPrivateIpAddresses() {
@@ -267,25 +297,56 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 			this.ipv6Addresses = ipv6Addresses;
 		}
 
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+
 		public static class PrivateIpAddress {
+
+			private String status;
 
 			private String elasticNetworkInterfaceId;
 
-			private String regionId;
-
 			private String gmtCreate;
-
-			private String gmtModified;
 
 			private String ipName;
 
 			private String privateIpAddress;
 
-			private String status;
-
 			private String description;
 
 			private String message;
+
+			private String gmtModified;
+
+			private String regionId;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 
 			public String getElasticNetworkInterfaceId() {
 				return this.elasticNetworkInterfaceId;
@@ -295,28 +356,12 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 				this.elasticNetworkInterfaceId = elasticNetworkInterfaceId;
 			}
 
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
 			public String getGmtCreate() {
 				return this.gmtCreate;
 			}
 
 			public void setGmtCreate(String gmtCreate) {
 				this.gmtCreate = gmtCreate;
-			}
-
-			public String getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
 			}
 
 			public String getIpName() {
@@ -335,14 +380,6 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 				this.privateIpAddress = privateIpAddress;
 			}
 
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
 			public String getDescription() {
 				return this.description;
 			}
@@ -358,27 +395,51 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 			public void setMessage(String message) {
 				this.message = message;
 			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
 		}
 
 		public static class Ipv6Addresse {
+
+			private String status;
 
 			private String elasticNetworkInterfaceId;
 
 			private String ipName;
 
-			private String ipv6Address;
-
-			private String status;
+			private String gmtCreate;
 
 			private String description;
 
 			private String message;
 
+			private String gmtModified;
+
 			private String regionId;
 
-			private String gmtCreate;
+			private String ipv6Address;
 
-			private String gmtModified;
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 
 			public String getElasticNetworkInterfaceId() {
 				return this.elasticNetworkInterfaceId;
@@ -396,20 +457,12 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 				this.ipName = ipName;
 			}
 
-			public String getIpv6Address() {
-				return this.ipv6Address;
+			public String getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setIpv6Address(String ipv6Address) {
-				this.ipv6Address = ipv6Address;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 
 			public String getDescription() {
@@ -428,6 +481,14 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 				this.message = message;
 			}
 
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
 			public String getRegionId() {
 				return this.regionId;
 			}
@@ -436,20 +497,12 @@ public class GetElasticNetworkInterfaceResponse extends AcsResponse {
 				this.regionId = regionId;
 			}
 
-			public String getGmtCreate() {
-				return this.gmtCreate;
+			public String getIpv6Address() {
+				return this.ipv6Address;
 			}
 
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
+			public void setIpv6Address(String ipv6Address) {
+				this.ipv6Address = ipv6Address;
 			}
 		}
 	}

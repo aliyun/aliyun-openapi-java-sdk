@@ -31,6 +31,8 @@ public class ListErsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String accessDeniedDetail;
+
 	private Content content;
 
 	public Integer getCode() {
@@ -55,6 +57,14 @@ public class ListErsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public Content getContent() {
@@ -89,31 +99,73 @@ public class ListErsResponse extends AcsResponse {
 
 		public static class DataItem {
 
+			private String status;
+
+			private Long connections;
+
+			private String description;
+
+			private String message;
+
+			private String resourceGroupId;
+
 			private String createTime;
 
 			private String gmtModified;
 
-			private String message;
-
 			private String erId;
-
-			private String regionId;
-
-			private String tenantId;
-
-			private String status;
-
-			private String erName;
-
-			private String masterZoneId;
-
-			private String description;
-
-			private Long connections;
 
 			private Long routeMaps;
 
-			private String resourceGroupId;
+			private String erName;
+
+			private String tenantId;
+
+			private String regionId;
+
+			private String masterZoneId;
+
+			private List<Tag> tags;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Long getConnections() {
+				return this.connections;
+			}
+
+			public void setConnections(Long connections) {
+				this.connections = connections;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
+			}
 
 			public String getCreateTime() {
 				return this.createTime;
@@ -131,76 +183,12 @@ public class ListErsResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public String getMessage() {
-				return this.message;
-			}
-
-			public void setMessage(String message) {
-				this.message = message;
-			}
-
 			public String getErId() {
 				return this.erId;
 			}
 
 			public void setErId(String erId) {
 				this.erId = erId;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getTenantId() {
-				return this.tenantId;
-			}
-
-			public void setTenantId(String tenantId) {
-				this.tenantId = tenantId;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getErName() {
-				return this.erName;
-			}
-
-			public void setErName(String erName) {
-				this.erName = erName;
-			}
-
-			public String getMasterZoneId() {
-				return this.masterZoneId;
-			}
-
-			public void setMasterZoneId(String masterZoneId) {
-				this.masterZoneId = masterZoneId;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public Long getConnections() {
-				return this.connections;
-			}
-
-			public void setConnections(Long connections) {
-				this.connections = connections;
 			}
 
 			public Long getRouteMaps() {
@@ -211,12 +199,67 @@ public class ListErsResponse extends AcsResponse {
 				this.routeMaps = routeMaps;
 			}
 
-			public String getResourceGroupId() {
-				return this.resourceGroupId;
+			public String getErName() {
+				return this.erName;
 			}
 
-			public void setResourceGroupId(String resourceGroupId) {
-				this.resourceGroupId = resourceGroupId;
+			public void setErName(String erName) {
+				this.erName = erName;
+			}
+
+			public String getTenantId() {
+				return this.tenantId;
+			}
+
+			public void setTenantId(String tenantId) {
+				this.tenantId = tenantId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getMasterZoneId() {
+				return this.masterZoneId;
+			}
+
+			public void setMasterZoneId(String masterZoneId) {
+				this.masterZoneId = masterZoneId;
+			}
+
+			public List<Tag> getTags() {
+				return this.tags;
+			}
+
+			public void setTags(List<Tag> tags) {
+				this.tags = tags;
+			}
+
+			public static class Tag {
+
+				private String tagKey;
+
+				private String tagValue;
+
+				public String getTagKey() {
+					return this.tagKey;
+				}
+
+				public void setTagKey(String tagKey) {
+					this.tagKey = tagKey;
+				}
+
+				public String getTagValue() {
+					return this.tagValue;
+				}
+
+				public void setTagValue(String tagValue) {
+					this.tagValue = tagValue;
+				}
 			}
 		}
 	}

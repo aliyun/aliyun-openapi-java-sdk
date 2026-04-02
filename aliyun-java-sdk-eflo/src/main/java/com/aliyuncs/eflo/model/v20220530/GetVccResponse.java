@@ -31,6 +31,8 @@ public class GetVccResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String accessDeniedDetail;
+
 	private Content content;
 
 	public Integer getCode() {
@@ -55,6 +57,14 @@ public class GetVccResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public Content getContent() {
@@ -128,6 +138,8 @@ public class GetVccResponse extends AcsResponse {
 		private String cenOwnerId;
 
 		private String bgpAsn;
+
+		private Integer bandwidth;
 
 		private List<ErInfo> erInfos;
 
@@ -387,6 +399,14 @@ public class GetVccResponse extends AcsResponse {
 
 		public void setBgpAsn(String bgpAsn) {
 			this.bgpAsn = bgpAsn;
+		}
+
+		public Integer getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
 		}
 
 		public List<ErInfo> getErInfos() {

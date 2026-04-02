@@ -32,6 +32,7 @@ public class ListSubnetsResponseUnmarshaller {
 		listSubnetsResponse.setRequestId(_ctx.stringValue("ListSubnetsResponse.RequestId"));
 		listSubnetsResponse.setCode(_ctx.integerValue("ListSubnetsResponse.Code"));
 		listSubnetsResponse.setMessage(_ctx.stringValue("ListSubnetsResponse.Message"));
+		listSubnetsResponse.setAccessDeniedDetail(_ctx.stringValue("ListSubnetsResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setTotal(_ctx.longValue("ListSubnetsResponse.Content.Total"));

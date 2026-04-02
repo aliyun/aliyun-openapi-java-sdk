@@ -1,3 +1,6 @@
+2026-04-02 Version: 1.0.17
+- Support RdmaIpBlocks.
+
 2024-12-24 Version: 1.0.16
 - Supported Jumbo for HDENI and LENI.
 

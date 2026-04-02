@@ -26,6 +26,7 @@ public class GetVpdGrantRuleResponseUnmarshaller {
 		getVpdGrantRuleResponse.setRequestId(_ctx.stringValue("GetVpdGrantRuleResponse.RequestId"));
 		getVpdGrantRuleResponse.setCode(_ctx.integerValue("GetVpdGrantRuleResponse.Code"));
 		getVpdGrantRuleResponse.setMessage(_ctx.stringValue("GetVpdGrantRuleResponse.Message"));
+		getVpdGrantRuleResponse.setAccessDeniedDetail(_ctx.stringValue("GetVpdGrantRuleResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setRegionId(_ctx.stringValue("GetVpdGrantRuleResponse.Content.RegionId"));

@@ -27,6 +27,7 @@ public class UpdateErAttachmentResponseUnmarshaller {
 		updateErAttachmentResponse.setCode(_ctx.integerValue("UpdateErAttachmentResponse.Code"));
 		updateErAttachmentResponse.setMessage(_ctx.stringValue("UpdateErAttachmentResponse.Message"));
 		updateErAttachmentResponse.setContent(_ctx.mapValue("UpdateErAttachmentResponse.Content"));
+		updateErAttachmentResponse.setAccessDeniedDetail(_ctx.stringValue("UpdateErAttachmentResponse.AccessDeniedDetail"));
 	 
 	 	return updateErAttachmentResponse;
 	}

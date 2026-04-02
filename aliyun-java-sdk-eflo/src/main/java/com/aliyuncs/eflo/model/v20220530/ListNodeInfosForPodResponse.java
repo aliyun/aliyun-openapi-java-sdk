@@ -31,6 +31,8 @@ public class ListNodeInfosForPodResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String accessDeniedDetail;
+
 	private List<ContentItem> content;
 
 	public Integer getCode() {
@@ -55,6 +57,14 @@ public class ListNodeInfosForPodResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public List<ContentItem> getContent() {

@@ -26,6 +26,7 @@ public class QueryInstanceNcdResponseUnmarshaller {
 		queryInstanceNcdResponse.setRequestId(_ctx.stringValue("QueryInstanceNcdResponse.RequestId"));
 		queryInstanceNcdResponse.setCode(_ctx.integerValue("QueryInstanceNcdResponse.Code"));
 		queryInstanceNcdResponse.setMessage(_ctx.stringValue("QueryInstanceNcdResponse.Message"));
+		queryInstanceNcdResponse.setAccessDeniedDetail(_ctx.stringValue("QueryInstanceNcdResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setNcd(_ctx.integerValue("QueryInstanceNcdResponse.Content.Ncd"));

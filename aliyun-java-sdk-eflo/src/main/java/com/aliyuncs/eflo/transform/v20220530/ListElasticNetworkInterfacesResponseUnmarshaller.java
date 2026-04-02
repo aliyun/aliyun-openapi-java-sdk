@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.eflo.model.v20220530.ListElasticNetworkInterfacesResponse;
 import com.aliyuncs.eflo.model.v20220530.ListElasticNetworkInterfacesResponse.Content;
 import com.aliyuncs.eflo.model.v20220530.ListElasticNetworkInterfacesResponse.Content.DataItem;
+import com.aliyuncs.eflo.model.v20220530.ListElasticNetworkInterfacesResponse.Content.DataItem.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,6 +31,7 @@ public class ListElasticNetworkInterfacesResponseUnmarshaller {
 		listElasticNetworkInterfacesResponse.setRequestId(_ctx.stringValue("ListElasticNetworkInterfacesResponse.RequestId"));
 		listElasticNetworkInterfacesResponse.setCode(_ctx.integerValue("ListElasticNetworkInterfacesResponse.Code"));
 		listElasticNetworkInterfacesResponse.setMessage(_ctx.stringValue("ListElasticNetworkInterfacesResponse.Message"));
+		listElasticNetworkInterfacesResponse.setAccessDeniedDetail(_ctx.stringValue("ListElasticNetworkInterfacesResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setTotal(_ctx.longValue("ListElasticNetworkInterfacesResponse.Content.Total"));
@@ -54,6 +56,17 @@ public class ListElasticNetworkInterfacesResponseUnmarshaller {
 			dataItem.setGmtModified(_ctx.stringValue("ListElasticNetworkInterfacesResponse.Content.Data["+ i +"].GmtModified"));
 			dataItem.setDescription(_ctx.stringValue("ListElasticNetworkInterfacesResponse.Content.Data["+ i +"].Description"));
 			dataItem.setSecurityGroupId(_ctx.stringValue("ListElasticNetworkInterfacesResponse.Content.Data["+ i +"].SecurityGroupId"));
+			dataItem.setResourceGroupId(_ctx.stringValue("ListElasticNetworkInterfacesResponse.Content.Data["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListElasticNetworkInterfacesResponse.Content.Data["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("ListElasticNetworkInterfacesResponse.Content.Data["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("ListElasticNetworkInterfacesResponse.Content.Data["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			dataItem.setTags(tags);
 
 			data.add(dataItem);
 		}

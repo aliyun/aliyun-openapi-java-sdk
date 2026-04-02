@@ -26,6 +26,7 @@ public class UpdateSubnetResponseUnmarshaller {
 		updateSubnetResponse.setRequestId(_ctx.stringValue("UpdateSubnetResponse.RequestId"));
 		updateSubnetResponse.setCode(_ctx.integerValue("UpdateSubnetResponse.Code"));
 		updateSubnetResponse.setMessage(_ctx.stringValue("UpdateSubnetResponse.Message"));
+		updateSubnetResponse.setAccessDeniedDetail(_ctx.stringValue("UpdateSubnetResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setSubnetId(_ctx.stringValue("UpdateSubnetResponse.Content.SubnetId"));

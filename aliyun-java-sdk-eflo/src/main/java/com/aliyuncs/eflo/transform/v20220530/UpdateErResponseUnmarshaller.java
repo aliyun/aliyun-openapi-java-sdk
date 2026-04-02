@@ -27,6 +27,7 @@ public class UpdateErResponseUnmarshaller {
 		updateErResponse.setCode(_ctx.integerValue("UpdateErResponse.Code"));
 		updateErResponse.setMessage(_ctx.stringValue("UpdateErResponse.Message"));
 		updateErResponse.setContent(_ctx.mapValue("UpdateErResponse.Content"));
+		updateErResponse.setAccessDeniedDetail(_ctx.stringValue("UpdateErResponse.AccessDeniedDetail"));
 	 
 	 	return updateErResponse;
 	}

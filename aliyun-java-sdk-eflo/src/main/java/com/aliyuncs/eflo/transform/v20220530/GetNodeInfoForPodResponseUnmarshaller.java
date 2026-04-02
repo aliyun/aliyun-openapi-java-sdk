@@ -29,6 +29,7 @@ public class GetNodeInfoForPodResponseUnmarshaller {
 		getNodeInfoForPodResponse.setRequestId(_ctx.stringValue("GetNodeInfoForPodResponse.RequestId"));
 		getNodeInfoForPodResponse.setCode(_ctx.integerValue("GetNodeInfoForPodResponse.Code"));
 		getNodeInfoForPodResponse.setMessage(_ctx.stringValue("GetNodeInfoForPodResponse.Message"));
+		getNodeInfoForPodResponse.setAccessDeniedDetail(_ctx.stringValue("GetNodeInfoForPodResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setRegionId(_ctx.stringValue("GetNodeInfoForPodResponse.Content.RegionId"));
@@ -40,6 +41,9 @@ public class GetNodeInfoForPodResponseUnmarshaller {
 		content.setLniSipQuota(_ctx.integerValue("GetNodeInfoForPodResponse.Content.LniSipQuota"));
 		content.setLeniSipQuota(_ctx.integerValue("GetNodeInfoForPodResponse.Content.LeniSipQuota"));
 		content.setHdeniQuota(_ctx.integerValue("GetNodeInfoForPodResponse.Content.HdeniQuota"));
+		content.setLeniIpv6SipQuota(_ctx.integerValue("GetNodeInfoForPodResponse.Content.LeniIpv6SipQuota"));
+		content.setHdeniSipQuota(_ctx.integerValue("GetNodeInfoForPodResponse.Content.HdeniSipQuota"));
+		content.setHdeniIpv6SipQuota(_ctx.integerValue("GetNodeInfoForPodResponse.Content.HdeniIpv6SipQuota"));
 
 		List<String> vSwitches = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetNodeInfoForPodResponse.Content.VSwitches.Length"); i++) {

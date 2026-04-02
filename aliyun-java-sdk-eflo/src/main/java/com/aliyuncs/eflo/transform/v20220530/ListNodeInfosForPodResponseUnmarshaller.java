@@ -29,6 +29,7 @@ public class ListNodeInfosForPodResponseUnmarshaller {
 		listNodeInfosForPodResponse.setRequestId(_ctx.stringValue("ListNodeInfosForPodResponse.RequestId"));
 		listNodeInfosForPodResponse.setCode(_ctx.integerValue("ListNodeInfosForPodResponse.Code"));
 		listNodeInfosForPodResponse.setMessage(_ctx.stringValue("ListNodeInfosForPodResponse.Message"));
+		listNodeInfosForPodResponse.setAccessDeniedDetail(_ctx.stringValue("ListNodeInfosForPodResponse.AccessDeniedDetail"));
 
 		List<ContentItem> content = new ArrayList<ContentItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListNodeInfosForPodResponse.Content.Length"); i++) {

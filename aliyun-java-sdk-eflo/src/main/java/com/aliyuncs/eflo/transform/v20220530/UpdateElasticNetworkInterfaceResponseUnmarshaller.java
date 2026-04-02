@@ -26,6 +26,7 @@ public class UpdateElasticNetworkInterfaceResponseUnmarshaller {
 		updateElasticNetworkInterfaceResponse.setRequestId(_ctx.stringValue("UpdateElasticNetworkInterfaceResponse.RequestId"));
 		updateElasticNetworkInterfaceResponse.setCode(_ctx.integerValue("UpdateElasticNetworkInterfaceResponse.Code"));
 		updateElasticNetworkInterfaceResponse.setMessage(_ctx.stringValue("UpdateElasticNetworkInterfaceResponse.Message"));
+		updateElasticNetworkInterfaceResponse.setAccessDeniedDetail(_ctx.stringValue("UpdateElasticNetworkInterfaceResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setNodeId(_ctx.stringValue("UpdateElasticNetworkInterfaceResponse.Content.NodeId"));

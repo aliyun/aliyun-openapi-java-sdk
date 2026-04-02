@@ -15,6 +15,7 @@
 package com.aliyuncs.eflo.model.v20220530;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -26,11 +27,13 @@ public class CreateErRequest extends RpcAcsRequest<CreateErResponse> {
 
 	private String description;
 
-	private String erName;
-
 	private String masterZoneId;
 
 	private String resourceGroupId;
+
+	private List<Tag> tags;
+
+	private String erName;
 	public CreateErRequest() {
 		super("eflo", "2022-05-30", "CreateEr", "eflo");
 		setMethod(MethodType.POST);
@@ -44,17 +47,6 @@ public class CreateErRequest extends RpcAcsRequest<CreateErResponse> {
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
-		}
-	}
-
-	public String getErName() {
-		return this.erName;
-	}
-
-	public void setErName(String erName) {
-		this.erName = erName;
-		if(erName != null){
-			putBodyParameter("ErName", erName);
 		}
 	}
 
@@ -77,6 +69,54 @@ public class CreateErRequest extends RpcAcsRequest<CreateErResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putBodyParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putBodyParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putBodyParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getErName() {
+		return this.erName;
+	}
+
+	public void setErName(String erName) {
+		this.erName = erName;
+		if(erName != null){
+			putBodyParameter("ErName", erName);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

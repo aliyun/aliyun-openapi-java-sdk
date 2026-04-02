@@ -33,6 +33,7 @@ public class ListVccsResponseUnmarshaller {
 		listVccsResponse.setRequestId(_ctx.stringValue("ListVccsResponse.RequestId"));
 		listVccsResponse.setCode(_ctx.integerValue("ListVccsResponse.Code"));
 		listVccsResponse.setMessage(_ctx.stringValue("ListVccsResponse.Message"));
+		listVccsResponse.setAccessDeniedDetail(_ctx.stringValue("ListVccsResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setTotal(_ctx.longValue("ListVccsResponse.Content.Total"));

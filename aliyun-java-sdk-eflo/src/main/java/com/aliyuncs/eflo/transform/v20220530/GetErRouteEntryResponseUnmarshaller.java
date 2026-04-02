@@ -26,6 +26,7 @@ public class GetErRouteEntryResponseUnmarshaller {
 		getErRouteEntryResponse.setRequestId(_ctx.stringValue("GetErRouteEntryResponse.RequestId"));
 		getErRouteEntryResponse.setCode(_ctx.integerValue("GetErRouteEntryResponse.Code"));
 		getErRouteEntryResponse.setMessage(_ctx.stringValue("GetErRouteEntryResponse.Message"));
+		getErRouteEntryResponse.setAccessDeniedDetail(_ctx.stringValue("GetErRouteEntryResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setRegionId(_ctx.stringValue("GetErRouteEntryResponse.Content.RegionId"));

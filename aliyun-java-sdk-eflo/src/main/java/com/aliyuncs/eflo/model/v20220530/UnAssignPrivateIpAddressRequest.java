@@ -24,9 +24,9 @@ import com.aliyuncs.http.MethodType;
 public class UnAssignPrivateIpAddressRequest extends RpcAcsRequest<UnAssignPrivateIpAddressResponse> {
 	   
 
-	private String subnetId;
-
 	private String clientToken;
+
+	private String subnetId;
 
 	private String privateIpAddress;
 
@@ -38,17 +38,6 @@ public class UnAssignPrivateIpAddressRequest extends RpcAcsRequest<UnAssignPriva
 		setMethod(MethodType.POST);
 	}
 
-	public String getSubnetId() {
-		return this.subnetId;
-	}
-
-	public void setSubnetId(String subnetId) {
-		this.subnetId = subnetId;
-		if(subnetId != null){
-			putBodyParameter("SubnetId", subnetId);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -57,6 +46,17 @@ public class UnAssignPrivateIpAddressRequest extends RpcAcsRequest<UnAssignPriva
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSubnetId() {
+		return this.subnetId;
+	}
+
+	public void setSubnetId(String subnetId) {
+		this.subnetId = subnetId;
+		if(subnetId != null){
+			putBodyParameter("SubnetId", subnetId);
 		}
 	}
 

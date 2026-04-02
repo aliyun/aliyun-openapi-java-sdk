@@ -31,6 +31,8 @@ public class GetNodeInfoForPodResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String accessDeniedDetail;
+
 	private Content content;
 
 	public Integer getCode() {
@@ -55,6 +57,14 @@ public class GetNodeInfoForPodResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public Content getContent() {
@@ -84,6 +94,12 @@ public class GetNodeInfoForPodResponse extends AcsResponse {
 		private Integer leniSipQuota;
 
 		private Integer hdeniQuota;
+
+		private Integer leniIpv6SipQuota;
+
+		private Integer hdeniSipQuota;
+
+		private Integer hdeniIpv6SipQuota;
 
 		private List<String> vSwitches;
 
@@ -157,6 +173,30 @@ public class GetNodeInfoForPodResponse extends AcsResponse {
 
 		public void setHdeniQuota(Integer hdeniQuota) {
 			this.hdeniQuota = hdeniQuota;
+		}
+
+		public Integer getLeniIpv6SipQuota() {
+			return this.leniIpv6SipQuota;
+		}
+
+		public void setLeniIpv6SipQuota(Integer leniIpv6SipQuota) {
+			this.leniIpv6SipQuota = leniIpv6SipQuota;
+		}
+
+		public Integer getHdeniSipQuota() {
+			return this.hdeniSipQuota;
+		}
+
+		public void setHdeniSipQuota(Integer hdeniSipQuota) {
+			this.hdeniSipQuota = hdeniSipQuota;
+		}
+
+		public Integer getHdeniIpv6SipQuota() {
+			return this.hdeniIpv6SipQuota;
+		}
+
+		public void setHdeniIpv6SipQuota(Integer hdeniIpv6SipQuota) {
+			this.hdeniIpv6SipQuota = hdeniIpv6SipQuota;
 		}
 
 		public List<String> getVSwitches() {

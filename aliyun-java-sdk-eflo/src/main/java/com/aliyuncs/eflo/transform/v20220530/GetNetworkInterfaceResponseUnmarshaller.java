@@ -21,6 +21,7 @@ import com.aliyuncs.eflo.model.v20220530.GetNetworkInterfaceResponse;
 import com.aliyuncs.eflo.model.v20220530.GetNetworkInterfaceResponse.Content;
 import com.aliyuncs.eflo.model.v20220530.GetNetworkInterfaceResponse.Content.PrivateIpAddressMacGroupItem;
 import com.aliyuncs.eflo.model.v20220530.GetNetworkInterfaceResponse.Content.SubnetBaseInfo;
+import com.aliyuncs.eflo.model.v20220530.GetNetworkInterfaceResponse.Content.Tag;
 import com.aliyuncs.eflo.model.v20220530.GetNetworkInterfaceResponse.Content.VpdBaseInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -32,6 +33,7 @@ public class GetNetworkInterfaceResponseUnmarshaller {
 		getNetworkInterfaceResponse.setRequestId(_ctx.stringValue("GetNetworkInterfaceResponse.RequestId"));
 		getNetworkInterfaceResponse.setCode(_ctx.integerValue("GetNetworkInterfaceResponse.Code"));
 		getNetworkInterfaceResponse.setMessage(_ctx.stringValue("GetNetworkInterfaceResponse.Message"));
+		getNetworkInterfaceResponse.setAccessDeniedDetail(_ctx.stringValue("GetNetworkInterfaceResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setTenantId(_ctx.stringValue("GetNetworkInterfaceResponse.Content.TenantId"));
@@ -47,6 +49,7 @@ public class GetNetworkInterfaceResponseUnmarshaller {
 		content.setQuota(_ctx.integerValue("GetNetworkInterfaceResponse.Content.Quota"));
 		content.setNcType(_ctx.stringValue("GetNetworkInterfaceResponse.Content.NcType"));
 		content.setNetworkInterfaceName(_ctx.stringValue("GetNetworkInterfaceResponse.Content.NetworkInterfaceName"));
+		content.setResourceGroupId(_ctx.stringValue("GetNetworkInterfaceResponse.Content.ResourceGroupId"));
 
 		List<String> ethernet = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetNetworkInterfaceResponse.Content.Ethernet.Length"); i++) {
@@ -81,6 +84,16 @@ public class GetNetworkInterfaceResponseUnmarshaller {
 			privateIpAddressMacGroup.add(privateIpAddressMacGroupItem);
 		}
 		content.setPrivateIpAddressMacGroup(privateIpAddressMacGroup);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetNetworkInterfaceResponse.Content.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("GetNetworkInterfaceResponse.Content.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("GetNetworkInterfaceResponse.Content.Tags["+ i +"].TagValue"));
+
+			tags.add(tag);
+		}
+		content.setTags(tags);
 		getNetworkInterfaceResponse.setContent(content);
 	 
 	 	return getNetworkInterfaceResponse;

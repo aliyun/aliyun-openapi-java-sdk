@@ -28,11 +28,11 @@ public class GetVccRequest extends RpcAcsRequest<GetVccResponse> {
 
 	private Integer pageNumber;
 
-	private Boolean enablePage;
-
 	private Integer pageSize;
 
 	private String vccId;
+
+	private Boolean enablePage;
 	public GetVccRequest() {
 		super("eflo", "2022-05-30", "GetVcc", "eflo");
 		setMethod(MethodType.POST);
@@ -60,17 +60,6 @@ public class GetVccRequest extends RpcAcsRequest<GetVccResponse> {
 		}
 	}
 
-	public Boolean getEnablePage() {
-		return this.enablePage;
-	}
-
-	public void setEnablePage(Boolean enablePage) {
-		this.enablePage = enablePage;
-		if(enablePage != null){
-			putBodyParameter("EnablePage", enablePage.toString());
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -90,6 +79,17 @@ public class GetVccRequest extends RpcAcsRequest<GetVccResponse> {
 		this.vccId = vccId;
 		if(vccId != null){
 			putBodyParameter("VccId", vccId);
+		}
+	}
+
+	public Boolean getEnablePage() {
+		return this.enablePage;
+	}
+
+	public void setEnablePage(Boolean enablePage) {
+		this.enablePage = enablePage;
+		if(enablePage != null){
+			putBodyParameter("EnablePage", enablePage.toString());
 		}
 	}
 

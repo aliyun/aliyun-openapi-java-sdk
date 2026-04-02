@@ -31,6 +31,7 @@ public class GetSubnetResponseUnmarshaller {
 		getSubnetResponse.setRequestId(_ctx.stringValue("GetSubnetResponse.RequestId"));
 		getSubnetResponse.setCode(_ctx.integerValue("GetSubnetResponse.Code"));
 		getSubnetResponse.setMessage(_ctx.stringValue("GetSubnetResponse.Message"));
+		getSubnetResponse.setAccessDeniedDetail(_ctx.stringValue("GetSubnetResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setCreateTime(_ctx.stringValue("GetSubnetResponse.Content.CreateTime"));

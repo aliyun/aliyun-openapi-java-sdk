@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.eflo.model.v20220530.ListErsResponse;
 import com.aliyuncs.eflo.model.v20220530.ListErsResponse.Content;
 import com.aliyuncs.eflo.model.v20220530.ListErsResponse.Content.DataItem;
+import com.aliyuncs.eflo.model.v20220530.ListErsResponse.Content.DataItem.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,6 +31,7 @@ public class ListErsResponseUnmarshaller {
 		listErsResponse.setRequestId(_ctx.stringValue("ListErsResponse.RequestId"));
 		listErsResponse.setCode(_ctx.integerValue("ListErsResponse.Code"));
 		listErsResponse.setMessage(_ctx.stringValue("ListErsResponse.Message"));
+		listErsResponse.setAccessDeniedDetail(_ctx.stringValue("ListErsResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setTotal(_ctx.longValue("ListErsResponse.Content.Total"));
@@ -37,19 +39,29 @@ public class ListErsResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListErsResponse.Content.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setStatus(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].Status"));
+			dataItem.setConnections(_ctx.longValue("ListErsResponse.Content.Data["+ i +"].Connections"));
+			dataItem.setDescription(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].Description"));
+			dataItem.setMessage(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].Message"));
+			dataItem.setResourceGroupId(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].ResourceGroupId"));
 			dataItem.setCreateTime(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].CreateTime"));
 			dataItem.setGmtModified(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].GmtModified"));
-			dataItem.setMessage(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].Message"));
 			dataItem.setErId(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].ErId"));
-			dataItem.setRegionId(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].RegionId"));
-			dataItem.setTenantId(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].TenantId"));
-			dataItem.setStatus(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].Status"));
-			dataItem.setErName(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].ErName"));
-			dataItem.setMasterZoneId(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].MasterZoneId"));
-			dataItem.setDescription(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].Description"));
-			dataItem.setConnections(_ctx.longValue("ListErsResponse.Content.Data["+ i +"].Connections"));
 			dataItem.setRouteMaps(_ctx.longValue("ListErsResponse.Content.Data["+ i +"].RouteMaps"));
-			dataItem.setResourceGroupId(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].ResourceGroupId"));
+			dataItem.setErName(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].ErName"));
+			dataItem.setTenantId(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].TenantId"));
+			dataItem.setRegionId(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].RegionId"));
+			dataItem.setMasterZoneId(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].MasterZoneId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListErsResponse.Content.Data["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("ListErsResponse.Content.Data["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			dataItem.setTags(tags);
 
 			data.add(dataItem);
 		}

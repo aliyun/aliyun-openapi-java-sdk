@@ -26,6 +26,7 @@ public class DescribeSlrResponseUnmarshaller {
 		describeSlrResponse.setRequestId(_ctx.stringValue("DescribeSlrResponse.RequestId"));
 		describeSlrResponse.setCode(_ctx.integerValue("DescribeSlrResponse.Code"));
 		describeSlrResponse.setMessage(_ctx.stringValue("DescribeSlrResponse.Message"));
+		describeSlrResponse.setAccessDeniedDetail(_ctx.stringValue("DescribeSlrResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setHasRole(_ctx.booleanValue("DescribeSlrResponse.Content.HasRole"));

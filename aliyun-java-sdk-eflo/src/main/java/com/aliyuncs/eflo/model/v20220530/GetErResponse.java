@@ -31,6 +31,8 @@ public class GetErResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String accessDeniedDetail;
+
 	private Content content;
 
 	public Integer getCode() {
@@ -55,6 +57,14 @@ public class GetErResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public Content getContent() {
@@ -94,6 +104,8 @@ public class GetErResponse extends AcsResponse {
 		private List<ErRouteMap> erRouteMaps;
 
 		private List<ErRouteEntry> erRouteEntrys;
+
+		private List<Tag> tags;
 
 		public String getCreateTime() {
 			return this.createTime;
@@ -207,39 +219,79 @@ public class GetErResponse extends AcsResponse {
 			this.erRouteEntrys = erRouteEntrys;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public static class ErAttachment {
+
+			private String status;
+
+			private String message;
+
+			private String resourceGroupId;
+
+			private String instanceId;
 
 			private String createTime;
 
 			private String gmtModified;
 
-			private String message;
+			private String erId;
 
-			private String status;
+			private Boolean across;
 
-			private String regionId;
+			private String instanceName;
 
 			private String tenantId;
+
+			private String resourceTenantId;
+
+			private Boolean autoReceiveAllRoute;
 
 			private String erAttachmentName;
 
 			private String erAttachmentId;
 
-			private String erId;
+			private String regionId;
 
 			private String instanceType;
 
-			private String instanceId;
+			public String getStatus() {
+				return this.status;
+			}
 
-			private String instanceName;
+			public void setStatus(String status) {
+				this.status = status;
+			}
 
-			private Boolean autoReceiveAllRoute;
+			public String getMessage() {
+				return this.message;
+			}
 
-			private Boolean across;
+			public void setMessage(String message) {
+				this.message = message;
+			}
 
-			private String resourceTenantId;
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
 
-			private String resourceGroupId;
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
 
 			public String getCreateTime() {
 				return this.createTime;
@@ -257,28 +309,28 @@ public class GetErResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public String getMessage() {
-				return this.message;
+			public String getErId() {
+				return this.erId;
 			}
 
-			public void setMessage(String message) {
-				this.message = message;
+			public void setErId(String erId) {
+				this.erId = erId;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public Boolean getAcross() {
+				return this.across;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setAcross(Boolean across) {
+				this.across = across;
 			}
 
-			public String getRegionId() {
-				return this.regionId;
+			public String getInstanceName() {
+				return this.instanceName;
 			}
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
+			public void setInstanceName(String instanceName) {
+				this.instanceName = instanceName;
 			}
 
 			public String getTenantId() {
@@ -287,6 +339,22 @@ public class GetErResponse extends AcsResponse {
 
 			public void setTenantId(String tenantId) {
 				this.tenantId = tenantId;
+			}
+
+			public String getResourceTenantId() {
+				return this.resourceTenantId;
+			}
+
+			public void setResourceTenantId(String resourceTenantId) {
+				this.resourceTenantId = resourceTenantId;
+			}
+
+			public Boolean getAutoReceiveAllRoute() {
+				return this.autoReceiveAllRoute;
+			}
+
+			public void setAutoReceiveAllRoute(Boolean autoReceiveAllRoute) {
+				this.autoReceiveAllRoute = autoReceiveAllRoute;
 			}
 
 			public String getErAttachmentName() {
@@ -305,12 +373,12 @@ public class GetErResponse extends AcsResponse {
 				this.erAttachmentId = erAttachmentId;
 			}
 
-			public String getErId() {
-				return this.erId;
+			public String getRegionId() {
+				return this.regionId;
 			}
 
-			public void setErId(String erId) {
-				this.erId = erId;
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 
 			public String getInstanceType() {
@@ -320,45 +388,116 @@ public class GetErResponse extends AcsResponse {
 			public void setInstanceType(String instanceType) {
 				this.instanceType = instanceType;
 			}
+		}
 
-			public String getInstanceId() {
-				return this.instanceId;
+		public static class ErRouteMap {
+
+			private String status;
+
+			private String transmissionInstanceType;
+
+			private String action;
+
+			private String description;
+
+			private String receptionInstanceType;
+
+			private String message;
+
+			private String erRouteMapName;
+
+			private String receptionInstanceId;
+
+			private String resourceGroupId;
+
+			private String createTime;
+
+			private String gmtModified;
+
+			private String erId;
+
+			private String transmissionInstanceName;
+
+			private String destinationCidrBlock;
+
+			private String receptionInstanceOwner;
+
+			private String tenantId;
+
+			private String receptionInstanceName;
+
+			private String erRouteMapId;
+
+			private String transmissionInstanceOwner;
+
+			private String regionId;
+
+			private String transmissionInstanceId;
+
+			private Integer routeMapNum;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
-			public String getInstanceName() {
-				return this.instanceName;
+			public String getTransmissionInstanceType() {
+				return this.transmissionInstanceType;
 			}
 
-			public void setInstanceName(String instanceName) {
-				this.instanceName = instanceName;
+			public void setTransmissionInstanceType(String transmissionInstanceType) {
+				this.transmissionInstanceType = transmissionInstanceType;
 			}
 
-			public Boolean getAutoReceiveAllRoute() {
-				return this.autoReceiveAllRoute;
+			public String getAction() {
+				return this.action;
 			}
 
-			public void setAutoReceiveAllRoute(Boolean autoReceiveAllRoute) {
-				this.autoReceiveAllRoute = autoReceiveAllRoute;
+			public void setAction(String action) {
+				this.action = action;
 			}
 
-			public Boolean getAcross() {
-				return this.across;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setAcross(Boolean across) {
-				this.across = across;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
-			public String getResourceTenantId() {
-				return this.resourceTenantId;
+			public String getReceptionInstanceType() {
+				return this.receptionInstanceType;
 			}
 
-			public void setResourceTenantId(String resourceTenantId) {
-				this.resourceTenantId = resourceTenantId;
+			public void setReceptionInstanceType(String receptionInstanceType) {
+				this.receptionInstanceType = receptionInstanceType;
+			}
+
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
+			}
+
+			public String getErRouteMapName() {
+				return this.erRouteMapName;
+			}
+
+			public void setErRouteMapName(String erRouteMapName) {
+				this.erRouteMapName = erRouteMapName;
+			}
+
+			public String getReceptionInstanceId() {
+				return this.receptionInstanceId;
+			}
+
+			public void setReceptionInstanceId(String receptionInstanceId) {
+				this.receptionInstanceId = receptionInstanceId;
 			}
 
 			public String getResourceGroupId() {
@@ -367,69 +506,6 @@ public class GetErResponse extends AcsResponse {
 
 			public void setResourceGroupId(String resourceGroupId) {
 				this.resourceGroupId = resourceGroupId;
-			}
-		}
-
-		public static class ErRouteMap {
-
-			private String regionId;
-
-			private String tenantId;
-
-			private String createTime;
-
-			private String gmtModified;
-
-			private String message;
-
-			private String status;
-
-			private String erRouteMapId;
-
-			private String erId;
-
-			private Integer routeMapNum;
-
-			private String description;
-
-			private String destinationCidrBlock;
-
-			private String transmissionInstanceName;
-
-			private String transmissionInstanceId;
-
-			private String transmissionInstanceType;
-
-			private String receptionInstanceName;
-
-			private String receptionInstanceId;
-
-			private String receptionInstanceType;
-
-			private String action;
-
-			private String transmissionInstanceOwner;
-
-			private String receptionInstanceOwner;
-
-			private String resourceGroupId;
-
-			private String erRouteMapName;
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getTenantId() {
-				return this.tenantId;
-			}
-
-			public void setTenantId(String tenantId) {
-				this.tenantId = tenantId;
 			}
 
 			public String getCreateTime() {
@@ -448,60 +524,12 @@ public class GetErResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public String getMessage() {
-				return this.message;
-			}
-
-			public void setMessage(String message) {
-				this.message = message;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getErRouteMapId() {
-				return this.erRouteMapId;
-			}
-
-			public void setErRouteMapId(String erRouteMapId) {
-				this.erRouteMapId = erRouteMapId;
-			}
-
 			public String getErId() {
 				return this.erId;
 			}
 
 			public void setErId(String erId) {
 				this.erId = erId;
-			}
-
-			public Integer getRouteMapNum() {
-				return this.routeMapNum;
-			}
-
-			public void setRouteMapNum(Integer routeMapNum) {
-				this.routeMapNum = routeMapNum;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getDestinationCidrBlock() {
-				return this.destinationCidrBlock;
-			}
-
-			public void setDestinationCidrBlock(String destinationCidrBlock) {
-				this.destinationCidrBlock = destinationCidrBlock;
 			}
 
 			public String getTransmissionInstanceName() {
@@ -512,60 +540,12 @@ public class GetErResponse extends AcsResponse {
 				this.transmissionInstanceName = transmissionInstanceName;
 			}
 
-			public String getTransmissionInstanceId() {
-				return this.transmissionInstanceId;
+			public String getDestinationCidrBlock() {
+				return this.destinationCidrBlock;
 			}
 
-			public void setTransmissionInstanceId(String transmissionInstanceId) {
-				this.transmissionInstanceId = transmissionInstanceId;
-			}
-
-			public String getTransmissionInstanceType() {
-				return this.transmissionInstanceType;
-			}
-
-			public void setTransmissionInstanceType(String transmissionInstanceType) {
-				this.transmissionInstanceType = transmissionInstanceType;
-			}
-
-			public String getReceptionInstanceName() {
-				return this.receptionInstanceName;
-			}
-
-			public void setReceptionInstanceName(String receptionInstanceName) {
-				this.receptionInstanceName = receptionInstanceName;
-			}
-
-			public String getReceptionInstanceId() {
-				return this.receptionInstanceId;
-			}
-
-			public void setReceptionInstanceId(String receptionInstanceId) {
-				this.receptionInstanceId = receptionInstanceId;
-			}
-
-			public String getReceptionInstanceType() {
-				return this.receptionInstanceType;
-			}
-
-			public void setReceptionInstanceType(String receptionInstanceType) {
-				this.receptionInstanceType = receptionInstanceType;
-			}
-
-			public String getAction() {
-				return this.action;
-			}
-
-			public void setAction(String action) {
-				this.action = action;
-			}
-
-			public String getTransmissionInstanceOwner() {
-				return this.transmissionInstanceOwner;
-			}
-
-			public void setTransmissionInstanceOwner(String transmissionInstanceOwner) {
-				this.transmissionInstanceOwner = transmissionInstanceOwner;
+			public void setDestinationCidrBlock(String destinationCidrBlock) {
+				this.destinationCidrBlock = destinationCidrBlock;
 			}
 
 			public String getReceptionInstanceOwner() {
@@ -576,55 +556,103 @@ public class GetErResponse extends AcsResponse {
 				this.receptionInstanceOwner = receptionInstanceOwner;
 			}
 
-			public String getResourceGroupId() {
-				return this.resourceGroupId;
+			public String getTenantId() {
+				return this.tenantId;
 			}
 
-			public void setResourceGroupId(String resourceGroupId) {
-				this.resourceGroupId = resourceGroupId;
+			public void setTenantId(String tenantId) {
+				this.tenantId = tenantId;
 			}
 
-			public String getErRouteMapName() {
-				return this.erRouteMapName;
+			public String getReceptionInstanceName() {
+				return this.receptionInstanceName;
 			}
 
-			public void setErRouteMapName(String erRouteMapName) {
-				this.erRouteMapName = erRouteMapName;
+			public void setReceptionInstanceName(String receptionInstanceName) {
+				this.receptionInstanceName = receptionInstanceName;
+			}
+
+			public String getErRouteMapId() {
+				return this.erRouteMapId;
+			}
+
+			public void setErRouteMapId(String erRouteMapId) {
+				this.erRouteMapId = erRouteMapId;
+			}
+
+			public String getTransmissionInstanceOwner() {
+				return this.transmissionInstanceOwner;
+			}
+
+			public void setTransmissionInstanceOwner(String transmissionInstanceOwner) {
+				this.transmissionInstanceOwner = transmissionInstanceOwner;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getTransmissionInstanceId() {
+				return this.transmissionInstanceId;
+			}
+
+			public void setTransmissionInstanceId(String transmissionInstanceId) {
+				this.transmissionInstanceId = transmissionInstanceId;
+			}
+
+			public Integer getRouteMapNum() {
+				return this.routeMapNum;
+			}
+
+			public void setRouteMapNum(Integer routeMapNum) {
+				this.routeMapNum = routeMapNum;
 			}
 		}
 
 		public static class ErRouteEntry {
 
-			private String erId;
+			private String status;
+
+			private String nextHopType;
 
 			private String tenantId;
 
 			private String resourceTenantId;
 
-			private String regionId;
+			private String routeType;
 
 			private String erRouteEntryId;
 
-			private String destinationCidrBlock;
-
-			private String nextHopType;
+			private String resourceGroupId;
 
 			private String nextHopId;
 
-			private String routeType;
-
-			private String status;
-
 			private String gmtModified;
 
-			private String resourceGroupId;
+			private String erId;
 
-			public String getErId() {
-				return this.erId;
+			private String regionId;
+
+			private String destinationCidrBlock;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setErId(String erId) {
-				this.erId = erId;
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getNextHopType() {
+				return this.nextHopType;
+			}
+
+			public void setNextHopType(String nextHopType) {
+				this.nextHopType = nextHopType;
 			}
 
 			public String getTenantId() {
@@ -643,12 +671,12 @@ public class GetErResponse extends AcsResponse {
 				this.resourceTenantId = resourceTenantId;
 			}
 
-			public String getRegionId() {
-				return this.regionId;
+			public String getRouteType() {
+				return this.routeType;
 			}
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
+			public void setRouteType(String routeType) {
+				this.routeType = routeType;
 			}
 
 			public String getErRouteEntryId() {
@@ -659,20 +687,12 @@ public class GetErResponse extends AcsResponse {
 				this.erRouteEntryId = erRouteEntryId;
 			}
 
-			public String getDestinationCidrBlock() {
-				return this.destinationCidrBlock;
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
 			}
 
-			public void setDestinationCidrBlock(String destinationCidrBlock) {
-				this.destinationCidrBlock = destinationCidrBlock;
-			}
-
-			public String getNextHopType() {
-				return this.nextHopType;
-			}
-
-			public void setNextHopType(String nextHopType) {
-				this.nextHopType = nextHopType;
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 
 			public String getNextHopId() {
@@ -683,22 +703,6 @@ public class GetErResponse extends AcsResponse {
 				this.nextHopId = nextHopId;
 			}
 
-			public String getRouteType() {
-				return this.routeType;
-			}
-
-			public void setRouteType(String routeType) {
-				this.routeType = routeType;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
 			public String getGmtModified() {
 				return this.gmtModified;
 			}
@@ -707,12 +711,51 @@ public class GetErResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public String getResourceGroupId() {
-				return this.resourceGroupId;
+			public String getErId() {
+				return this.erId;
 			}
 
-			public void setResourceGroupId(String resourceGroupId) {
-				this.resourceGroupId = resourceGroupId;
+			public void setErId(String erId) {
+				this.erId = erId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getDestinationCidrBlock() {
+				return this.destinationCidrBlock;
+			}
+
+			public void setDestinationCidrBlock(String destinationCidrBlock) {
+				this.destinationCidrBlock = destinationCidrBlock;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

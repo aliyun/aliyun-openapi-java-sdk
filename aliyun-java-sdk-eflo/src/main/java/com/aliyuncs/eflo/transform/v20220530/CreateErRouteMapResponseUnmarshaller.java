@@ -26,6 +26,7 @@ public class CreateErRouteMapResponseUnmarshaller {
 		createErRouteMapResponse.setRequestId(_ctx.stringValue("CreateErRouteMapResponse.RequestId"));
 		createErRouteMapResponse.setCode(_ctx.integerValue("CreateErRouteMapResponse.Code"));
 		createErRouteMapResponse.setMessage(_ctx.stringValue("CreateErRouteMapResponse.Message"));
+		createErRouteMapResponse.setAccessDeniedDetail(_ctx.stringValue("CreateErRouteMapResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setErRouteMapId(_ctx.stringValue("CreateErRouteMapResponse.Content.ErRouteMapId"));

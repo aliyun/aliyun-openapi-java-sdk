@@ -26,6 +26,7 @@ public class CreateVccRouteEntryResponseUnmarshaller {
 		createVccRouteEntryResponse.setRequestId(_ctx.stringValue("CreateVccRouteEntryResponse.RequestId"));
 		createVccRouteEntryResponse.setCode(_ctx.integerValue("CreateVccRouteEntryResponse.Code"));
 		createVccRouteEntryResponse.setMessage(_ctx.stringValue("CreateVccRouteEntryResponse.Message"));
+		createVccRouteEntryResponse.setAccessDeniedDetail(_ctx.stringValue("CreateVccRouteEntryResponse.AccessDeniedDetail"));
 
 		Content content = new Content();
 		content.setVccRouteEntryId(_ctx.stringValue("CreateVccRouteEntryResponse.Content.VccRouteEntryId"));
