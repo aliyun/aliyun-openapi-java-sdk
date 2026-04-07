@@ -1,3 +1,6 @@
+2026-04-07 Version: 3.2.32
+- Open apis about enhanced vpn gateway.
+
 2026-02-04 Version: 3.2.31
 - Delete NAT BandwidthPackage API.
 - FNAT DOMAIN SUPPORT.

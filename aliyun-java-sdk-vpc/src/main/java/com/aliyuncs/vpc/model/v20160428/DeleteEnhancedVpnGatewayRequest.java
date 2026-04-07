@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -22,25 +23,39 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class AssociateVpnGatewayWithCertificateRequest extends RpcAcsRequest<AssociateVpnGatewayWithCertificateResponse> {
+public class DeleteEnhancedVpnGatewayRequest extends RpcAcsRequest<DeleteEnhancedVpnGatewayResponse> {
 	   
+
+	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String certificateType;
+	private String resourceOwnerAccount;
 
-	private Boolean dryRun;
-
-	private String certificateId;
+	private String ownerAccount;
 
 	private String vpnGatewayId;
-	public AssociateVpnGatewayWithCertificateRequest() {
-		super("Vpc", "2016-04-28", "AssociateVpnGatewayWithCertificate", "vpc");
+
+	private Long ownerId;
+	public DeleteEnhancedVpnGatewayRequest() {
+		super("Vpc", "2016-04-28", "DeleteEnhancedVpnGateway", "vpc");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getClientToken() {
@@ -54,36 +69,25 @@ public class AssociateVpnGatewayWithCertificateRequest extends RpcAcsRequest<Ass
 		}
 	}
 
-	public String getCertificateType() {
-		return this.certificateType;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setCertificateType(String certificateType) {
-		this.certificateType = certificateType;
-		if(certificateType != null){
-			putQueryParameter("CertificateType", certificateType);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
-	public Boolean getDryRun() {
-		return this.dryRun;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
-		}
-	}
-
-	public String getCertificateId() {
-		return this.certificateId;
-	}
-
-	public void setCertificateId(String certificateId) {
-		this.certificateId = certificateId;
-		if(certificateId != null){
-			putQueryParameter("CertificateId", certificateId);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -98,9 +102,20 @@ public class AssociateVpnGatewayWithCertificateRequest extends RpcAcsRequest<Ass
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	@Override
-	public Class<AssociateVpnGatewayWithCertificateResponse> getResponseClass() {
-		return AssociateVpnGatewayWithCertificateResponse.class;
+	public Class<DeleteEnhancedVpnGatewayResponse> getResponseClass() {
+		return DeleteEnhancedVpnGatewayResponse.class;
 	}
 
 }

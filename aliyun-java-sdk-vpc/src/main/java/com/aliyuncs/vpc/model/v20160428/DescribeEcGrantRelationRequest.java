@@ -25,15 +25,15 @@ import com.aliyuncs.vpc.Endpoint;
 public class DescribeEcGrantRelationRequest extends RpcAcsRequest<DescribeEcGrantRelationResponse> {
 	   
 
-	private String vbrRegionNo;
-
 	private Long pageNumber;
-
-	private String instanceId;
 
 	private Long pageSize;
 
 	private String instanceType;
+
+	private String vbrRegionNo;
+
+	private String instanceId;
 	public DescribeEcGrantRelationRequest() {
 		super("Vpc", "2016-04-28", "DescribeEcGrantRelation", "vpc");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class DescribeEcGrantRelationRequest extends RpcAcsRequest<DescribeEcGran
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getVbrRegionNo() {
-		return this.vbrRegionNo;
-	}
-
-	public void setVbrRegionNo(String vbrRegionNo) {
-		this.vbrRegionNo = vbrRegionNo;
-		if(vbrRegionNo != null){
-			putQueryParameter("VbrRegionNo", vbrRegionNo);
-		}
 	}
 
 	public Long getPageNumber() {
@@ -62,17 +51,6 @@ public class DescribeEcGrantRelationRequest extends RpcAcsRequest<DescribeEcGran
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -95,6 +73,28 @@ public class DescribeEcGrantRelationRequest extends RpcAcsRequest<DescribeEcGran
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getVbrRegionNo() {
+		return this.vbrRegionNo;
+	}
+
+	public void setVbrRegionNo(String vbrRegionNo) {
+		this.vbrRegionNo = vbrRegionNo;
+		if(vbrRegionNo != null){
+			putQueryParameter("VbrRegionNo", vbrRegionNo);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

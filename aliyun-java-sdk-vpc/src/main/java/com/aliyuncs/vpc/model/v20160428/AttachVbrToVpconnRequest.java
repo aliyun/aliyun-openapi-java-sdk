@@ -25,11 +25,11 @@ import com.aliyuncs.vpc.Endpoint;
 public class AttachVbrToVpconnRequest extends RpcAcsRequest<AttachVbrToVpconnResponse> {
 	   
 
-	private Boolean dryRun;
-
 	private String vpconnId;
 
 	private String vbrId;
+
+	private Boolean dryRun;
 
 	private String token;
 	public AttachVbrToVpconnRequest() {
@@ -39,17 +39,6 @@ public class AttachVbrToVpconnRequest extends RpcAcsRequest<AttachVbrToVpconnRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
-		}
 	}
 
 	public String getVpconnId() {
@@ -71,6 +60,17 @@ public class AttachVbrToVpconnRequest extends RpcAcsRequest<AttachVbrToVpconnRes
 		this.vbrId = vbrId;
 		if(vbrId != null){
 			putQueryParameter("VbrId", vbrId);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

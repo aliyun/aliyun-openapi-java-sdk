@@ -25,15 +25,15 @@ import com.aliyuncs.vpc.Endpoint;
 public class DissociateVpnGatewayWithCertificateRequest extends RpcAcsRequest<DissociateVpnGatewayWithCertificateResponse> {
 	   
 
-	private Boolean dryRun;
-
 	private String clientToken;
+
+	private String certificateType;
+
+	private Boolean dryRun;
 
 	private String certificateId;
 
 	private String vpnGatewayId;
-
-	private String certificateType;
 	public DissociateVpnGatewayWithCertificateRequest() {
 		super("Vpc", "2016-04-28", "DissociateVpnGatewayWithCertificate", "vpc");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class DissociateVpnGatewayWithCertificateRequest extends RpcAcsRequest<Di
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
-		}
 	}
 
 	public String getClientToken() {
@@ -62,6 +51,28 @@ public class DissociateVpnGatewayWithCertificateRequest extends RpcAcsRequest<Di
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getCertificateType() {
+		return this.certificateType;
+	}
+
+	public void setCertificateType(String certificateType) {
+		this.certificateType = certificateType;
+		if(certificateType != null){
+			putQueryParameter("CertificateType", certificateType);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -84,17 +95,6 @@ public class DissociateVpnGatewayWithCertificateRequest extends RpcAcsRequest<Di
 		this.vpnGatewayId = vpnGatewayId;
 		if(vpnGatewayId != null){
 			putQueryParameter("VpnGatewayId", vpnGatewayId);
-		}
-	}
-
-	public String getCertificateType() {
-		return this.certificateType;
-	}
-
-	public void setCertificateType(String certificateType) {
-		this.certificateType = certificateType;
-		if(certificateType != null){
-			putQueryParameter("CertificateType", certificateType);
 		}
 	}
 

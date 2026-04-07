@@ -26,13 +26,13 @@ import com.aliyuncs.vpc.Endpoint;
 public class GrantInstanceToVbrRequest extends RpcAcsRequest<GrantInstanceToVbrResponse> {
 	   
 
-	private Long vbrOwnerUid;
-
-	private String vbrRegionNo;
-
 	private List<String> vbrInstanceIds;
 
 	private String grantType;
+
+	private Long vbrOwnerUid;
+
+	private String vbrRegionNo;
 
 	private String instanceId;
 	public GrantInstanceToVbrRequest() {
@@ -42,28 +42,6 @@ public class GrantInstanceToVbrRequest extends RpcAcsRequest<GrantInstanceToVbrR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getVbrOwnerUid() {
-		return this.vbrOwnerUid;
-	}
-
-	public void setVbrOwnerUid(Long vbrOwnerUid) {
-		this.vbrOwnerUid = vbrOwnerUid;
-		if(vbrOwnerUid != null){
-			putQueryParameter("VbrOwnerUid", vbrOwnerUid.toString());
-		}
-	}
-
-	public String getVbrRegionNo() {
-		return this.vbrRegionNo;
-	}
-
-	public void setVbrRegionNo(String vbrRegionNo) {
-		this.vbrRegionNo = vbrRegionNo;
-		if(vbrRegionNo != null){
-			putQueryParameter("VbrRegionNo", vbrRegionNo);
-		}
 	}
 
 	public List<String> getVbrInstanceIds() {
@@ -92,6 +70,28 @@ public class GrantInstanceToVbrRequest extends RpcAcsRequest<GrantInstanceToVbrR
 		this.grantType = grantType;
 		if(grantType != null){
 			putQueryParameter("GrantType", grantType);
+		}
+	}
+
+	public Long getVbrOwnerUid() {
+		return this.vbrOwnerUid;
+	}
+
+	public void setVbrOwnerUid(Long vbrOwnerUid) {
+		this.vbrOwnerUid = vbrOwnerUid;
+		if(vbrOwnerUid != null){
+			putQueryParameter("VbrOwnerUid", vbrOwnerUid.toString());
+		}
+	}
+
+	public String getVbrRegionNo() {
+		return this.vbrRegionNo;
+	}
+
+	public void setVbrRegionNo(String vbrRegionNo) {
+		this.vbrRegionNo = vbrRegionNo;
+		if(vbrRegionNo != null){
+			putQueryParameter("VbrRegionNo", vbrRegionNo);
 		}
 	}
 

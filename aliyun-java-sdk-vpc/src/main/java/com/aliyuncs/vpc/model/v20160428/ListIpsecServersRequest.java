@@ -26,11 +26,11 @@ import com.aliyuncs.vpc.Endpoint;
 public class ListIpsecServersRequest extends RpcAcsRequest<ListIpsecServersResponse> {
 	   
 
-	private String vpnGatewayId;
-
 	private String resourceGroupId;
 
 	private String nextToken;
+
+	private String vpnGatewayId;
 
 	private String ipsecServerName;
 
@@ -44,17 +44,6 @@ public class ListIpsecServersRequest extends RpcAcsRequest<ListIpsecServersRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getVpnGatewayId() {
-		return this.vpnGatewayId;
-	}
-
-	public void setVpnGatewayId(String vpnGatewayId) {
-		this.vpnGatewayId = vpnGatewayId;
-		if(vpnGatewayId != null){
-			putQueryParameter("VpnGatewayId", vpnGatewayId);
-		}
 	}
 
 	public String getResourceGroupId() {
@@ -76,6 +65,17 @@ public class ListIpsecServersRequest extends RpcAcsRequest<ListIpsecServersRespo
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getVpnGatewayId() {
+		return this.vpnGatewayId;
+	}
+
+	public void setVpnGatewayId(String vpnGatewayId) {
+		this.vpnGatewayId = vpnGatewayId;
+		if(vpnGatewayId != null){
+			putQueryParameter("VpnGatewayId", vpnGatewayId);
 		}
 	}
 

@@ -28,13 +28,13 @@ public class DescribeGrantRulesToEcrRequest extends RpcAcsRequest<DescribeGrantR
 
 	private Long pageNumber;
 
-	private List<Tags> tagss;
-
 	private String resourceGroupId;
 
-	private String instanceId;
-
 	private Long pageSize;
+
+	private List<Tags> tagss;
+
+	private String instanceId;
 	public DescribeGrantRulesToEcrRequest() {
 		super("Vpc", "2016-04-28", "DescribeGrantRulesToEcr", "vpc");
 		setMethod(MethodType.POST);
@@ -55,6 +55,28 @@ public class DescribeGrantRulesToEcrRequest extends RpcAcsRequest<DescribeGrantR
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public List<Tags> getTagss() {
 		return this.tagss;
 	}
@@ -69,17 +91,6 @@ public class DescribeGrantRulesToEcrRequest extends RpcAcsRequest<DescribeGrantR
 		}	
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -88,17 +99,6 @@ public class DescribeGrantRulesToEcrRequest extends RpcAcsRequest<DescribeGrantR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

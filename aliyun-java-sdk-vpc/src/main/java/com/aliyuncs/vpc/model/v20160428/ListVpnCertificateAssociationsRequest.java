@@ -26,13 +26,13 @@ import com.aliyuncs.vpc.Endpoint;
 public class ListVpnCertificateAssociationsRequest extends RpcAcsRequest<ListVpnCertificateAssociationsResponse> {
 	   
 
-	private List<String> certificateIds;
-
-	private List<String> vpnGatewayIds;
-
 	private String certificateType;
 
 	private String nextToken;
+
+	private List<String> certificateIds;
+
+	private List<String> vpnGatewayIds;
 
 	private Integer maxResults;
 	public ListVpnCertificateAssociationsRequest() {
@@ -42,6 +42,28 @@ public class ListVpnCertificateAssociationsRequest extends RpcAcsRequest<ListVpn
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCertificateType() {
+		return this.certificateType;
+	}
+
+	public void setCertificateType(String certificateType) {
+		this.certificateType = certificateType;
+		if(certificateType != null){
+			putQueryParameter("CertificateType", certificateType);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
 	}
 
 	public List<String> getCertificateIds() {
@@ -68,28 +90,6 @@ public class ListVpnCertificateAssociationsRequest extends RpcAcsRequest<ListVpn
 				putQueryParameter("VpnGatewayId." + (i + 1) , vpnGatewayIds.get(i));
 			}
 		}	
-	}
-
-	public String getCertificateType() {
-		return this.certificateType;
-	}
-
-	public void setCertificateType(String certificateType) {
-		this.certificateType = certificateType;
-		if(certificateType != null){
-			putQueryParameter("CertificateType", certificateType);
-		}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
 	}
 
 	public Integer getMaxResults() {
