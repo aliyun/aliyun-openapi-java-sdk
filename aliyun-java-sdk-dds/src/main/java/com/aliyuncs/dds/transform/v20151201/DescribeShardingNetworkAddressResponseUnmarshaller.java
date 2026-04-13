@@ -28,6 +28,7 @@ public class DescribeShardingNetworkAddressResponseUnmarshaller {
 	public static DescribeShardingNetworkAddressResponse unmarshall(DescribeShardingNetworkAddressResponse describeShardingNetworkAddressResponse, UnmarshallerContext _ctx) {
 		
 		describeShardingNetworkAddressResponse.setRequestId(_ctx.stringValue("DescribeShardingNetworkAddressResponse.RequestId"));
+		describeShardingNetworkAddressResponse.setConnectionStringSuffix(_ctx.stringValue("DescribeShardingNetworkAddressResponse.ConnectionStringSuffix"));
 
 		List<CompatibleConnection> compatibleConnections = new ArrayList<CompatibleConnection>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeShardingNetworkAddressResponse.CompatibleConnections.Length"); i++) {

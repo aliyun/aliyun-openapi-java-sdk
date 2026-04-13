@@ -27,6 +27,8 @@ public class DescribeShardingNetworkAddressResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String connectionStringSuffix;
+
 	private List<CompatibleConnection> compatibleConnections;
 
 	private List<NetworkAddress> networkAddresses;
@@ -37,6 +39,14 @@ public class DescribeShardingNetworkAddressResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getConnectionStringSuffix() {
+		return this.connectionStringSuffix;
+	}
+
+	public void setConnectionStringSuffix(String connectionStringSuffix) {
+		this.connectionStringSuffix = connectionStringSuffix;
 	}
 
 	public List<CompatibleConnection> getCompatibleConnections() {

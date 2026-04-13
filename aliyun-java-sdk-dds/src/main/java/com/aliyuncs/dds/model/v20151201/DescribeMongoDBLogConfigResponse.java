@@ -48,6 +48,10 @@ public class DescribeMongoDBLogConfigResponse extends AcsResponse {
 
 	private Long preserveStorageForStandard;
 
+	private Long hotTtlForV2Standard;
+
+	private Long ttlForV2Standard;
+
 	public String getUserProjectName() {
 		return this.userProjectName;
 	}
@@ -142,6 +146,22 @@ public class DescribeMongoDBLogConfigResponse extends AcsResponse {
 
 	public void setPreserveStorageForStandard(Long preserveStorageForStandard) {
 		this.preserveStorageForStandard = preserveStorageForStandard;
+	}
+
+	public Long getHotTtlForV2Standard() {
+		return this.hotTtlForV2Standard;
+	}
+
+	public void setHotTtlForV2Standard(Long hotTtlForV2Standard) {
+		this.hotTtlForV2Standard = hotTtlForV2Standard;
+	}
+
+	public Long getTtlForV2Standard() {
+		return this.ttlForV2Standard;
+	}
+
+	public void setTtlForV2Standard(Long ttlForV2Standard) {
+		this.ttlForV2Standard = ttlForV2Standard;
 	}
 
 	@Override

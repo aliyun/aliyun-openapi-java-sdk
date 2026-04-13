@@ -23,6 +23,7 @@ public class ModifyDBInstanceConnectionStringResponseUnmarshaller {
 	public static ModifyDBInstanceConnectionStringResponse unmarshall(ModifyDBInstanceConnectionStringResponse modifyDBInstanceConnectionStringResponse, UnmarshallerContext _ctx) {
 		
 		modifyDBInstanceConnectionStringResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceConnectionStringResponse.RequestId"));
+		modifyDBInstanceConnectionStringResponse.setModifiedConnectionString(_ctx.stringValue("ModifyDBInstanceConnectionStringResponse.ModifiedConnectionString"));
 	 
 	 	return modifyDBInstanceConnectionStringResponse;
 	}

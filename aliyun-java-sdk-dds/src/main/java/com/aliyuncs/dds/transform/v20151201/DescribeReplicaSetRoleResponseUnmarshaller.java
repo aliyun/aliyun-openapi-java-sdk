@@ -28,6 +28,7 @@ public class DescribeReplicaSetRoleResponseUnmarshaller {
 		
 		describeReplicaSetRoleResponse.setRequestId(_ctx.stringValue("DescribeReplicaSetRoleResponse.RequestId"));
 		describeReplicaSetRoleResponse.setDBInstanceId(_ctx.stringValue("DescribeReplicaSetRoleResponse.DBInstanceId"));
+		describeReplicaSetRoleResponse.setConnectionStringSuffix(_ctx.stringValue("DescribeReplicaSetRoleResponse.ConnectionStringSuffix"));
 
 		List<ReplicaSet> replicaSets = new ArrayList<ReplicaSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeReplicaSetRoleResponse.ReplicaSets.Length"); i++) {

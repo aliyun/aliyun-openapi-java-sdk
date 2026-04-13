@@ -22,34 +22,38 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<ModifyDBInstanceConnectionStringResponse> {
+public class DescribeBinlogFilesRequest extends RpcAcsRequest<DescribeBinlogFilesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String networkType;
+	private String binlogId;
+
+	private String startTime;
+
+	private String srcRegion;
+
+	private Long pageNumber;
+
+	private String resourceGroupId;
+
+	private Long pageSize;
 
 	private String dBInstanceId;
 
 	private String nodeId;
 
+	private String destRegion;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Integer newPort;
-
-	private String newConnectionString;
+	private String endTime;
 
 	private Long ownerId;
-
-	private String currentConnectionString;
-
-	private Boolean portModifyOnly;
-
-	private Boolean forceModifySuffix;
-	public ModifyDBInstanceConnectionStringRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceConnectionString", "dds");
+	public DescribeBinlogFilesRequest() {
+		super("Dds", "2015-12-01", "DescribeBinlogFiles", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,14 +72,69 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		}
 	}
 
-	public String getNetworkType() {
-		return this.networkType;
+	public String getBinlogId() {
+		return this.binlogId;
 	}
 
-	public void setNetworkType(String networkType) {
-		this.networkType = networkType;
-		if(networkType != null){
-			putQueryParameter("NetworkType", networkType);
+	public void setBinlogId(String binlogId) {
+		this.binlogId = binlogId;
+		if(binlogId != null){
+			putQueryParameter("BinlogId", binlogId);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getSrcRegion() {
+		return this.srcRegion;
+	}
+
+	public void setSrcRegion(String srcRegion) {
+		this.srcRegion = srcRegion;
+		if(srcRegion != null){
+			putQueryParameter("SrcRegion", srcRegion);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -101,6 +160,17 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		}
 	}
 
+	public String getDestRegion() {
+		return this.destRegion;
+	}
+
+	public void setDestRegion(String destRegion) {
+		this.destRegion = destRegion;
+		if(destRegion != null){
+			putQueryParameter("DestRegion", destRegion);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -123,25 +193,14 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		}
 	}
 
-	public Integer getNewPort() {
-		return this.newPort;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setNewPort(Integer newPort) {
-		this.newPort = newPort;
-		if(newPort != null){
-			putQueryParameter("NewPort", newPort.toString());
-		}
-	}
-
-	public String getNewConnectionString() {
-		return this.newConnectionString;
-	}
-
-	public void setNewConnectionString(String newConnectionString) {
-		this.newConnectionString = newConnectionString;
-		if(newConnectionString != null){
-			putQueryParameter("NewConnectionString", newConnectionString);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -156,42 +215,9 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		}
 	}
 
-	public String getCurrentConnectionString() {
-		return this.currentConnectionString;
-	}
-
-	public void setCurrentConnectionString(String currentConnectionString) {
-		this.currentConnectionString = currentConnectionString;
-		if(currentConnectionString != null){
-			putQueryParameter("CurrentConnectionString", currentConnectionString);
-		}
-	}
-
-	public Boolean getPortModifyOnly() {
-		return this.portModifyOnly;
-	}
-
-	public void setPortModifyOnly(Boolean portModifyOnly) {
-		this.portModifyOnly = portModifyOnly;
-		if(portModifyOnly != null){
-			putQueryParameter("PortModifyOnly", portModifyOnly.toString());
-		}
-	}
-
-	public Boolean getForceModifySuffix() {
-		return this.forceModifySuffix;
-	}
-
-	public void setForceModifySuffix(Boolean forceModifySuffix) {
-		this.forceModifySuffix = forceModifySuffix;
-		if(forceModifySuffix != null){
-			putQueryParameter("ForceModifySuffix", forceModifySuffix.toString());
-		}
-	}
-
 	@Override
-	public Class<ModifyDBInstanceConnectionStringResponse> getResponseClass() {
-		return ModifyDBInstanceConnectionStringResponse.class;
+	public Class<DescribeBinlogFilesResponse> getResponseClass() {
+		return DescribeBinlogFilesResponse.class;
 	}
 
 }

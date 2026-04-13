@@ -107,6 +107,8 @@ public class DescribePriceResponseUnmarshaller {
 			coupon.setPriceBreakReduceValue(_ctx.doubleValue("DescribePriceResponse.Order.Coupons["+ i +"].PriceBreakReduceValue"));
 			coupon.setOptionCode(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].OptionCode"));
 			coupon.setActivityCategory(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].ActivityCategory"));
+			coupon.setEffective(_ctx.booleanValue("DescribePriceResponse.Order.Coupons["+ i +"].Effective"));
+			coupon.setActivityExtInfo(_ctx.mapValue("DescribePriceResponse.Order.Coupons["+ i +"].ActivityExtInfo"));
 
 			List<Long> promotionRuleIdList6 = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.Order.Coupons["+ i +"].PromotionRuleIdList.Length"); j++) {

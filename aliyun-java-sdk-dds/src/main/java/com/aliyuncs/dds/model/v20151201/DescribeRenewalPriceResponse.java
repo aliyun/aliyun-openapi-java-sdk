@@ -15,6 +15,7 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dds.transform.v20151201.DescribeRenewalPriceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -223,6 +224,10 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 			private String name;
 
+			private Boolean effective;
+
+			private Map<Object,Object> activityExtInfo;
+
 			public String getDescription() {
 				return this.description;
 			}
@@ -253,6 +258,22 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public Boolean getEffective() {
+				return this.effective;
+			}
+
+			public void setEffective(Boolean effective) {
+				this.effective = effective;
+			}
+
+			public Map<Object,Object> getActivityExtInfo() {
+				return this.activityExtInfo;
+			}
+
+			public void setActivityExtInfo(Map<Object,Object> activityExtInfo) {
+				this.activityExtInfo = activityExtInfo;
 			}
 		}
 	}

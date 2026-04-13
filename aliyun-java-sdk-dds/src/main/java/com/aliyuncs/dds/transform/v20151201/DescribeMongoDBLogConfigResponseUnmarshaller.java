@@ -34,6 +34,8 @@ public class DescribeMongoDBLogConfigResponseUnmarshaller {
 		describeMongoDBLogConfigResponse.setTtlForStandard(_ctx.longValue("DescribeMongoDBLogConfigResponse.TtlForStandard"));
 		describeMongoDBLogConfigResponse.setUsedStorageForStandard(_ctx.longValue("DescribeMongoDBLogConfigResponse.UsedStorageForStandard"));
 		describeMongoDBLogConfigResponse.setPreserveStorageForStandard(_ctx.longValue("DescribeMongoDBLogConfigResponse.PreserveStorageForStandard"));
+		describeMongoDBLogConfigResponse.setHotTtlForV2Standard(_ctx.longValue("DescribeMongoDBLogConfigResponse.HotTtlForV2Standard"));
+		describeMongoDBLogConfigResponse.setTtlForV2Standard(_ctx.longValue("DescribeMongoDBLogConfigResponse.TtlForV2Standard"));
 	 
 	 	return describeMongoDBLogConfigResponse;
 	}

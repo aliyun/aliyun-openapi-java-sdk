@@ -29,6 +29,8 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 
 	private String dBInstanceId;
 
+	private String connectionStringSuffix;
+
 	private List<ReplicaSet> replicaSets;
 
 	public String getRequestId() {
@@ -45,6 +47,14 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getConnectionStringSuffix() {
+		return this.connectionStringSuffix;
+	}
+
+	public void setConnectionStringSuffix(String connectionStringSuffix) {
+		this.connectionStringSuffix = connectionStringSuffix;
 	}
 
 	public List<ReplicaSet> getReplicaSets() {

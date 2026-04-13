@@ -1232,6 +1232,10 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private String activityCategory;
 
+			private Boolean effective;
+
+			private Map<Object,Object> activityExtInfo;
+
 			private List<Long> promotionRuleIdList6;
 
 			private List<String> targetArticleItemCodes7;
@@ -1322,6 +1326,22 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setActivityCategory(String activityCategory) {
 				this.activityCategory = activityCategory;
+			}
+
+			public Boolean getEffective() {
+				return this.effective;
+			}
+
+			public void setEffective(Boolean effective) {
+				this.effective = effective;
+			}
+
+			public Map<Object,Object> getActivityExtInfo() {
+				return this.activityExtInfo;
+			}
+
+			public void setActivityExtInfo(Map<Object,Object> activityExtInfo) {
+				this.activityExtInfo = activityExtInfo;
 			}
 
 			public List<Long> getPromotionRuleIdList6() {

@@ -29,6 +29,8 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 
 	private Integer storagePeriod;
 
+	private Integer hotStoragePeriod;
+
 	private String auditLogSwitchSource;
 
 	private String dBInstanceId;
@@ -70,6 +72,17 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 		this.storagePeriod = storagePeriod;
 		if(storagePeriod != null){
 			putQueryParameter("StoragePeriod", storagePeriod.toString());
+		}
+	}
+
+	public Integer getHotStoragePeriod() {
+		return this.hotStoragePeriod;
+	}
+
+	public void setHotStoragePeriod(Integer hotStoragePeriod) {
+		this.hotStoragePeriod = hotStoragePeriod;
+		if(hotStoragePeriod != null){
+			putQueryParameter("HotStoragePeriod", hotStoragePeriod.toString());
 		}
 	}
 

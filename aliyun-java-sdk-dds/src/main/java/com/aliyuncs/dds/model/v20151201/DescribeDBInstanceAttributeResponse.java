@@ -153,6 +153,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private Integer searchNodeCount;
 
+		private Boolean coldDataEnabled;
+
 		private List<ReplicaSet> replicaSets;
 
 		private List<Tag> tags;
@@ -587,6 +589,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setSearchNodeCount(Integer searchNodeCount) {
 			this.searchNodeCount = searchNodeCount;
+		}
+
+		public Boolean getColdDataEnabled() {
+			return this.coldDataEnabled;
+		}
+
+		public void setColdDataEnabled(Boolean coldDataEnabled) {
+			this.coldDataEnabled = coldDataEnabled;
 		}
 
 		public List<ReplicaSet> getReplicaSets() {

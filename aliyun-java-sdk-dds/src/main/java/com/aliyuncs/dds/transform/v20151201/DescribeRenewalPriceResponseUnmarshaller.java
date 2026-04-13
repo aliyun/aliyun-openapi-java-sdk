@@ -22,6 +22,7 @@ import com.aliyuncs.dds.model.v20151201.DescribeRenewalPriceResponse.Order;
 import com.aliyuncs.dds.model.v20151201.DescribeRenewalPriceResponse.Order.Coupon;
 import com.aliyuncs.dds.model.v20151201.DescribeRenewalPriceResponse.Rule;
 import com.aliyuncs.dds.model.v20151201.DescribeRenewalPriceResponse.SubOrder;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +51,8 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 			coupon.setIsSelected(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].IsSelected"));
 			coupon.setCouponNo(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].CouponNo"));
 			coupon.setName(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].Name"));
+			coupon.setEffective(_ctx.booleanValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].Effective"));
+			coupon.setActivityExtInfo(_ctx.mapValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].ActivityExtInfo"));
 
 			coupons.add(coupon);
 		}
