@@ -23,6 +23,7 @@ public class UpdateInstanceIpWhiteListResponseUnmarshaller {
 	public static UpdateInstanceIpWhiteListResponse unmarshall(UpdateInstanceIpWhiteListResponse updateInstanceIpWhiteListResponse, UnmarshallerContext _ctx) {
 		
 		updateInstanceIpWhiteListResponse.setRequestId(_ctx.stringValue("UpdateInstanceIpWhiteListResponse.RequestId"));
+		updateInstanceIpWhiteListResponse.setAccessDeniedDetail(_ctx.stringValue("UpdateInstanceIpWhiteListResponse.AccessDeniedDetail"));
 	 
 	 	return updateInstanceIpWhiteListResponse;
 	}

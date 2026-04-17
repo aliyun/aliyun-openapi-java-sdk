@@ -15,16 +15,18 @@
 package com.aliyuncs.hitsdb.model.v20200615;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.hitsdb.transform.v20200615.CreateLdpsNamespaceResponseUnmarshaller;
+import com.aliyuncs.hitsdb.transform.v20200615.UpdateLindormV2InstanceParameterResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateLdpsNamespaceResponse extends AcsResponse {
+public class UpdateLindormV2InstanceParameterResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String accessDeniedDetail;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +36,17 @@ public class CreateLdpsNamespaceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
+	}
+
 	@Override
-	public CreateLdpsNamespaceResponse getInstance(UnmarshallerContext context) {
-		return	CreateLdpsNamespaceResponseUnmarshaller.unmarshall(this, context);
+	public UpdateLindormV2InstanceParameterResponse getInstance(UnmarshallerContext context) {
+		return	UpdateLindormV2InstanceParameterResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

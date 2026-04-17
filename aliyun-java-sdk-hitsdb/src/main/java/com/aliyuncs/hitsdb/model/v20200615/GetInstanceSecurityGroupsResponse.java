@@ -29,6 +29,8 @@ public class GetInstanceSecurityGroupsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String accessDeniedDetail;
+
 	private List<String> securityGroups;
 
 	public String getInstanceId() {
@@ -45,6 +47,14 @@ public class GetInstanceSecurityGroupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public List<String> getSecurityGroups() {

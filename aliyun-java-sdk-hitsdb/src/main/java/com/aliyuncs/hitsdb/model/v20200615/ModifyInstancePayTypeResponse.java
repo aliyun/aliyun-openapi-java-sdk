@@ -30,6 +30,8 @@ public class ModifyInstancePayTypeResponse extends AcsResponse {
 
 	private String instanceId;
 
+	private String accessDeniedDetail;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,6 +54,14 @@ public class ModifyInstancePayTypeResponse extends AcsResponse {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	@Override

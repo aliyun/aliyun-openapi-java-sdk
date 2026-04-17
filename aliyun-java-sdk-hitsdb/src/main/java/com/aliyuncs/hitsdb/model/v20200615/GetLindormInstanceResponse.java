@@ -39,6 +39,8 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private Boolean enableKms;
 
+	private Boolean enableStoreTDE;
+
 	private Boolean enableML;
 
 	private String diskUsage;
@@ -48,6 +50,8 @@ public class GetLindormInstanceResponse extends AcsResponse {
 	private String requestId;
 
 	private Integer coldStorage;
+
+	private Integer archiveStorage;
 
 	private Long expiredMilliseconds;
 
@@ -139,9 +143,13 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private Integer logSingleStorage;
 
-	private String archVersion;
+	private String backupInstance;
 
 	private Boolean enableLsqlVersionV3;
+
+	private Boolean enableLProxy;
+
+	private String archVersion;
 
 	private List<Engine> engineList;
 
@@ -201,6 +209,14 @@ public class GetLindormInstanceResponse extends AcsResponse {
 		this.enableKms = enableKms;
 	}
 
+	public Boolean getEnableStoreTDE() {
+		return this.enableStoreTDE;
+	}
+
+	public void setEnableStoreTDE(Boolean enableStoreTDE) {
+		this.enableStoreTDE = enableStoreTDE;
+	}
+
 	public Boolean getEnableML() {
 		return this.enableML;
 	}
@@ -239,6 +255,14 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public void setColdStorage(Integer coldStorage) {
 		this.coldStorage = coldStorage;
+	}
+
+	public Integer getArchiveStorage() {
+		return this.archiveStorage;
+	}
+
+	public void setArchiveStorage(Integer archiveStorage) {
+		this.archiveStorage = archiveStorage;
 	}
 
 	public Long getExpiredMilliseconds() {
@@ -601,12 +625,12 @@ public class GetLindormInstanceResponse extends AcsResponse {
 		this.logSingleStorage = logSingleStorage;
 	}
 
-	public String getArchVersion() {
-		return this.archVersion;
+	public String getBackupInstance() {
+		return this.backupInstance;
 	}
 
-	public void setArchVersion(String archVersion) {
-		this.archVersion = archVersion;
+	public void setBackupInstance(String backupInstance) {
+		this.backupInstance = backupInstance;
 	}
 
 	public Boolean getEnableLsqlVersionV3() {
@@ -615,6 +639,22 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public void setEnableLsqlVersionV3(Boolean enableLsqlVersionV3) {
 		this.enableLsqlVersionV3 = enableLsqlVersionV3;
+	}
+
+	public Boolean getEnableLProxy() {
+		return this.enableLProxy;
+	}
+
+	public void setEnableLProxy(Boolean enableLProxy) {
+		this.enableLProxy = enableLProxy;
+	}
+
+	public String getArchVersion() {
+		return this.archVersion;
+	}
+
+	public void setArchVersion(String archVersion) {
+		this.archVersion = archVersion;
 	}
 
 	public List<Engine> getEngineList() {
@@ -635,11 +675,19 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 		private String engine;
 
+		private String specification;
+
 		private String memorySize;
 
 		private Boolean isLastVersion;
 
 		private String latestVersion;
+
+		private String primaryCoreCount;
+
+		private String standbyCoreCount;
+
+		private String arbiterCoreCount;
 
 		public String getVersion() {
 			return this.version;
@@ -673,6 +721,14 @@ public class GetLindormInstanceResponse extends AcsResponse {
 			this.engine = engine;
 		}
 
+		public String getSpecification() {
+			return this.specification;
+		}
+
+		public void setSpecification(String specification) {
+			this.specification = specification;
+		}
+
 		public String getMemorySize() {
 			return this.memorySize;
 		}
@@ -695,6 +751,30 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 		public void setLatestVersion(String latestVersion) {
 			this.latestVersion = latestVersion;
+		}
+
+		public String getPrimaryCoreCount() {
+			return this.primaryCoreCount;
+		}
+
+		public void setPrimaryCoreCount(String primaryCoreCount) {
+			this.primaryCoreCount = primaryCoreCount;
+		}
+
+		public String getStandbyCoreCount() {
+			return this.standbyCoreCount;
+		}
+
+		public void setStandbyCoreCount(String standbyCoreCount) {
+			this.standbyCoreCount = standbyCoreCount;
+		}
+
+		public String getArbiterCoreCount() {
+			return this.arbiterCoreCount;
+		}
+
+		public void setArbiterCoreCount(String arbiterCoreCount) {
+			this.arbiterCoreCount = arbiterCoreCount;
 		}
 	}
 

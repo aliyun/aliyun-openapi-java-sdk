@@ -23,6 +23,7 @@ public class OpenComputeEngineResponseUnmarshaller {
 	public static OpenComputeEngineResponse unmarshall(OpenComputeEngineResponse openComputeEngineResponse, UnmarshallerContext _ctx) {
 		
 		openComputeEngineResponse.setRequestId(_ctx.stringValue("OpenComputeEngineResponse.RequestId"));
+		openComputeEngineResponse.setAccessDeniedDetail(_ctx.stringValue("OpenComputeEngineResponse.AccessDeniedDetail"));
 	 
 	 	return openComputeEngineResponse;
 	}

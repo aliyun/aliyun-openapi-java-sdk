@@ -24,6 +24,7 @@ public class GetClientSourceIpResponseUnmarshaller {
 		
 		getClientSourceIpResponse.setRequestId(_ctx.stringValue("GetClientSourceIpResponse.RequestId"));
 		getClientSourceIpResponse.setClientIp(_ctx.stringValue("GetClientSourceIpResponse.ClientIp"));
+		getClientSourceIpResponse.setAccessDeniedDetail(_ctx.stringValue("GetClientSourceIpResponse.AccessDeniedDetail"));
 	 
 	 	return getClientSourceIpResponse;
 	}

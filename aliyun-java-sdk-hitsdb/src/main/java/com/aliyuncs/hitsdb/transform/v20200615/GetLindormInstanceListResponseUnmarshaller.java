@@ -57,6 +57,9 @@ public class GetLindormInstanceListResponseUnmarshaller {
 			lindormInstanceSummary.setEnableMessage(_ctx.booleanValue("GetLindormInstanceListResponse.InstanceList["+ i +"].EnableMessage"));
 			lindormInstanceSummary.setEnableVector(_ctx.booleanValue("GetLindormInstanceListResponse.InstanceList["+ i +"].EnableVector"));
 			lindormInstanceSummary.setEnableLts(_ctx.booleanValue("GetLindormInstanceListResponse.InstanceList["+ i +"].EnableLts"));
+			lindormInstanceSummary.setEnableColumn(_ctx.booleanValue("GetLindormInstanceListResponse.InstanceList["+ i +"].EnableColumn"));
+			lindormInstanceSummary.setEnableRow(_ctx.booleanValue("GetLindormInstanceListResponse.InstanceList["+ i +"].EnableRow"));
+			lindormInstanceSummary.setCreateErrorCode(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].CreateErrorCode"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("GetLindormInstanceListResponse.InstanceList["+ i +"].Tags.Length"); j++) {

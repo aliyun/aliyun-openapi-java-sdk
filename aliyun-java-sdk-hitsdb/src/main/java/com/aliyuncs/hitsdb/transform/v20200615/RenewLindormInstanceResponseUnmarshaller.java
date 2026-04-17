@@ -25,6 +25,7 @@ public class RenewLindormInstanceResponseUnmarshaller {
 		renewLindormInstanceResponse.setRequestId(_ctx.stringValue("RenewLindormInstanceResponse.RequestId"));
 		renewLindormInstanceResponse.setInstanceId(_ctx.stringValue("RenewLindormInstanceResponse.InstanceId"));
 		renewLindormInstanceResponse.setOrderId(_ctx.longValue("RenewLindormInstanceResponse.OrderId"));
+		renewLindormInstanceResponse.setAccessDeniedDetail(_ctx.stringValue("RenewLindormInstanceResponse.AccessDeniedDetail"));
 	 
 	 	return renewLindormInstanceResponse;
 	}

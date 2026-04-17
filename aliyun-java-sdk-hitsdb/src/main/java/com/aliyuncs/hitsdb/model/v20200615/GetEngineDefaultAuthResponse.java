@@ -29,6 +29,8 @@ public class GetEngineDefaultAuthResponse extends AcsResponse {
 
 	private String instanceId;
 
+	private String accessDeniedDetail;
+
 	private List<AuthInfo> authInfos;
 
 	public String getRequestId() {
@@ -45,6 +47,14 @@ public class GetEngineDefaultAuthResponse extends AcsResponse {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public List<AuthInfo> getAuthInfos() {

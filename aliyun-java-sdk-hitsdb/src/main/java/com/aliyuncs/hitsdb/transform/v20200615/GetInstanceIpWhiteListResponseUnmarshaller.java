@@ -28,6 +28,7 @@ public class GetInstanceIpWhiteListResponseUnmarshaller {
 		
 		getInstanceIpWhiteListResponse.setRequestId(_ctx.stringValue("GetInstanceIpWhiteListResponse.RequestId"));
 		getInstanceIpWhiteListResponse.setInstanceId(_ctx.stringValue("GetInstanceIpWhiteListResponse.InstanceId"));
+		getInstanceIpWhiteListResponse.setAccessDeniedDetail(_ctx.stringValue("GetInstanceIpWhiteListResponse.AccessDeniedDetail"));
 
 		List<String> ipList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceIpWhiteListResponse.IpList.Length"); i++) {

@@ -1,3 +1,6 @@
+2026-04-17 Version: 3.1.17
+- Suport Api for User management.
+
 2024-05-15 Version: 3.1.16
 - Add LtsSpec and LtsNum parameter in CreateLindormInstance API.
 

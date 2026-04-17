@@ -121,6 +121,12 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 
 		private Boolean enableLts;
 
+		private Boolean enableColumn;
+
+		private Boolean enableRow;
+
+		private String createErrorCode;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -297,6 +303,30 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 
 		public void setEnableLts(Boolean enableLts) {
 			this.enableLts = enableLts;
+		}
+
+		public Boolean getEnableColumn() {
+			return this.enableColumn;
+		}
+
+		public void setEnableColumn(Boolean enableColumn) {
+			this.enableColumn = enableColumn;
+		}
+
+		public Boolean getEnableRow() {
+			return this.enableRow;
+		}
+
+		public void setEnableRow(Boolean enableRow) {
+			this.enableRow = enableRow;
+		}
+
+		public String getCreateErrorCode() {
+			return this.createErrorCode;
+		}
+
+		public void setCreateErrorCode(String createErrorCode) {
+			this.createErrorCode = createErrorCode;
 		}
 
 		public List<Tag> getTags() {

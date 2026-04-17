@@ -23,6 +23,7 @@ public class DeleteLdpsComputeGroupResponseUnmarshaller {
 	public static DeleteLdpsComputeGroupResponse unmarshall(DeleteLdpsComputeGroupResponse deleteLdpsComputeGroupResponse, UnmarshallerContext _ctx) {
 		
 		deleteLdpsComputeGroupResponse.setRequestId(_ctx.stringValue("DeleteLdpsComputeGroupResponse.RequestId"));
+		deleteLdpsComputeGroupResponse.setAccessDeniedDetail(_ctx.stringValue("DeleteLdpsComputeGroupResponse.AccessDeniedDetail"));
 	 
 	 	return deleteLdpsComputeGroupResponse;
 	}

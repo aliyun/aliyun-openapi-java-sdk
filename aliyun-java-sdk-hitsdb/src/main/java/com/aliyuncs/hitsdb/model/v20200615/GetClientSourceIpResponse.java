@@ -28,6 +28,8 @@ public class GetClientSourceIpResponse extends AcsResponse {
 
 	private String clientIp;
 
+	private String accessDeniedDetail;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class GetClientSourceIpResponse extends AcsResponse {
 
 	public void setClientIp(String clientIp) {
 		this.clientIp = clientIp;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	@Override

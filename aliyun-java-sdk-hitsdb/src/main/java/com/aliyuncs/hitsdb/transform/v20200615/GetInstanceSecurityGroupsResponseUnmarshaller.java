@@ -27,6 +27,7 @@ public class GetInstanceSecurityGroupsResponseUnmarshaller {
 		
 		getInstanceSecurityGroupsResponse.setRequestId(_ctx.stringValue("GetInstanceSecurityGroupsResponse.RequestId"));
 		getInstanceSecurityGroupsResponse.setInstanceId(_ctx.stringValue("GetInstanceSecurityGroupsResponse.InstanceId"));
+		getInstanceSecurityGroupsResponse.setAccessDeniedDetail(_ctx.stringValue("GetInstanceSecurityGroupsResponse.AccessDeniedDetail"));
 
 		List<String> securityGroups = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceSecurityGroupsResponse.SecurityGroups.Length"); i++) {

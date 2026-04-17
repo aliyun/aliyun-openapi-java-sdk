@@ -34,10 +34,12 @@ public class GetLindormInstanceResponseUnmarshaller {
 		getLindormInstanceResponse.setNetworkType(_ctx.stringValue("GetLindormInstanceResponse.NetworkType"));
 		getLindormInstanceResponse.setServiceType(_ctx.stringValue("GetLindormInstanceResponse.ServiceType"));
 		getLindormInstanceResponse.setEnableKms(_ctx.booleanValue("GetLindormInstanceResponse.EnableKms"));
+		getLindormInstanceResponse.setEnableStoreTDE(_ctx.booleanValue("GetLindormInstanceResponse.EnableStoreTDE"));
 		getLindormInstanceResponse.setEnableML(_ctx.booleanValue("GetLindormInstanceResponse.EnableML"));
 		getLindormInstanceResponse.setDiskUsage(_ctx.stringValue("GetLindormInstanceResponse.DiskUsage"));
 		getLindormInstanceResponse.setDiskCategory(_ctx.stringValue("GetLindormInstanceResponse.DiskCategory"));
 		getLindormInstanceResponse.setColdStorage(_ctx.integerValue("GetLindormInstanceResponse.ColdStorage"));
+		getLindormInstanceResponse.setArchiveStorage(_ctx.integerValue("GetLindormInstanceResponse.ArchiveStorage"));
 		getLindormInstanceResponse.setExpiredMilliseconds(_ctx.longValue("GetLindormInstanceResponse.ExpiredMilliseconds"));
 		getLindormInstanceResponse.setEngineType(_ctx.integerValue("GetLindormInstanceResponse.EngineType"));
 		getLindormInstanceResponse.setExpireTime(_ctx.stringValue("GetLindormInstanceResponse.ExpireTime"));
@@ -83,8 +85,10 @@ public class GetLindormInstanceResponseUnmarshaller {
 		getLindormInstanceResponse.setLogSpec(_ctx.stringValue("GetLindormInstanceResponse.LogSpec"));
 		getLindormInstanceResponse.setLogNum(_ctx.integerValue("GetLindormInstanceResponse.LogNum"));
 		getLindormInstanceResponse.setLogSingleStorage(_ctx.integerValue("GetLindormInstanceResponse.LogSingleStorage"));
-		getLindormInstanceResponse.setArchVersion(_ctx.stringValue("GetLindormInstanceResponse.ArchVersion"));
+		getLindormInstanceResponse.setBackupInstance(_ctx.stringValue("GetLindormInstanceResponse.BackupInstance"));
 		getLindormInstanceResponse.setEnableLsqlVersionV3(_ctx.booleanValue("GetLindormInstanceResponse.EnableLsqlVersionV3"));
+		getLindormInstanceResponse.setEnableLProxy(_ctx.booleanValue("GetLindormInstanceResponse.EnableLProxy"));
+		getLindormInstanceResponse.setArchVersion(_ctx.stringValue("GetLindormInstanceResponse.ArchVersion"));
 
 		List<Engine> engineList = new ArrayList<Engine>();
 		for (int i = 0; i < _ctx.lengthValue("GetLindormInstanceResponse.EngineList.Length"); i++) {
@@ -93,9 +97,13 @@ public class GetLindormInstanceResponseUnmarshaller {
 			engine.setCpuCount(_ctx.stringValue("GetLindormInstanceResponse.EngineList["+ i +"].CpuCount"));
 			engine.setCoreCount(_ctx.stringValue("GetLindormInstanceResponse.EngineList["+ i +"].CoreCount"));
 			engine.setEngine(_ctx.stringValue("GetLindormInstanceResponse.EngineList["+ i +"].Engine"));
+			engine.setSpecification(_ctx.stringValue("GetLindormInstanceResponse.EngineList["+ i +"].Specification"));
 			engine.setMemorySize(_ctx.stringValue("GetLindormInstanceResponse.EngineList["+ i +"].MemorySize"));
 			engine.setIsLastVersion(_ctx.booleanValue("GetLindormInstanceResponse.EngineList["+ i +"].IsLastVersion"));
 			engine.setLatestVersion(_ctx.stringValue("GetLindormInstanceResponse.EngineList["+ i +"].LatestVersion"));
+			engine.setPrimaryCoreCount(_ctx.stringValue("GetLindormInstanceResponse.EngineList["+ i +"].PrimaryCoreCount"));
+			engine.setStandbyCoreCount(_ctx.stringValue("GetLindormInstanceResponse.EngineList["+ i +"].StandbyCoreCount"));
+			engine.setArbiterCoreCount(_ctx.stringValue("GetLindormInstanceResponse.EngineList["+ i +"].ArbiterCoreCount"));
 
 			engineList.add(engine);
 		}

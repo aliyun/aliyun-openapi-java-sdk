@@ -23,6 +23,7 @@ public class OpenComputePreCheckResponseUnmarshaller {
 	public static OpenComputePreCheckResponse unmarshall(OpenComputePreCheckResponse openComputePreCheckResponse, UnmarshallerContext _ctx) {
 		
 		openComputePreCheckResponse.setRequestId(_ctx.stringValue("OpenComputePreCheckResponse.RequestId"));
+		openComputePreCheckResponse.setAccessDeniedDetail(_ctx.stringValue("OpenComputePreCheckResponse.AccessDeniedDetail"));
 	 
 	 	return openComputePreCheckResponse;
 	}

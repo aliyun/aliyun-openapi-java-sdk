@@ -23,6 +23,7 @@ public class RestartLdpsComputeGroupResponseUnmarshaller {
 	public static RestartLdpsComputeGroupResponse unmarshall(RestartLdpsComputeGroupResponse restartLdpsComputeGroupResponse, UnmarshallerContext _ctx) {
 		
 		restartLdpsComputeGroupResponse.setRequestId(_ctx.stringValue("RestartLdpsComputeGroupResponse.RequestId"));
+		restartLdpsComputeGroupResponse.setAccessDeniedDetail(_ctx.stringValue("RestartLdpsComputeGroupResponse.AccessDeniedDetail"));
 	 
 	 	return restartLdpsComputeGroupResponse;
 	}

@@ -29,6 +29,7 @@ public class GetLindormInstanceEngineListResponseUnmarshaller {
 		
 		getLindormInstanceEngineListResponse.setRequestId(_ctx.stringValue("GetLindormInstanceEngineListResponse.RequestId"));
 		getLindormInstanceEngineListResponse.setInstanceId(_ctx.stringValue("GetLindormInstanceEngineListResponse.InstanceId"));
+		getLindormInstanceEngineListResponse.setAccessDeniedDetail(_ctx.stringValue("GetLindormInstanceEngineListResponse.AccessDeniedDetail"));
 
 		List<EngineInfo> engineList = new ArrayList<EngineInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetLindormInstanceEngineListResponse.EngineList.Length"); i++) {

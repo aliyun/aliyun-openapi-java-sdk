@@ -25,6 +25,7 @@ public class CreateLindormInstanceResponseUnmarshaller {
 		createLindormInstanceResponse.setRequestId(_ctx.stringValue("CreateLindormInstanceResponse.RequestId"));
 		createLindormInstanceResponse.setInstanceId(_ctx.stringValue("CreateLindormInstanceResponse.InstanceId"));
 		createLindormInstanceResponse.setOrderId(_ctx.longValue("CreateLindormInstanceResponse.OrderId"));
+		createLindormInstanceResponse.setAccessDeniedDetail(_ctx.stringValue("CreateLindormInstanceResponse.AccessDeniedDetail"));
 	 
 	 	return createLindormInstanceResponse;
 	}

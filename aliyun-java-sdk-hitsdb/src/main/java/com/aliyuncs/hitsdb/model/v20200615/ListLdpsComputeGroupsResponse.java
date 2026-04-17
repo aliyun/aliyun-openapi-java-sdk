@@ -28,6 +28,8 @@ public class ListLdpsComputeGroupsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String accessDeniedDetail;
+
 	private List<ComputeGroup> groupList;
 
 	public String getRequestId() {
@@ -36,6 +38,14 @@ public class ListLdpsComputeGroupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public List<ComputeGroup> getGroupList() {
@@ -52,6 +62,18 @@ public class ListLdpsComputeGroupsResponse extends AcsResponse {
 
 		private Map<Object,Object> properties;
 
+		private Boolean isDefault;
+
+		private String state;
+
+		private String exceptionInfo;
+
+		private String rayVpcWebUIAddr;
+
+		private String webUI;
+
+		private String rayInteractiveAccessAddr;
+
 		public String getGroupName() {
 			return this.groupName;
 		}
@@ -66,6 +88,54 @@ public class ListLdpsComputeGroupsResponse extends AcsResponse {
 
 		public void setProperties(Map<Object,Object> properties) {
 			this.properties = properties;
+		}
+
+		public Boolean getIsDefault() {
+			return this.isDefault;
+		}
+
+		public void setIsDefault(Boolean isDefault) {
+			this.isDefault = isDefault;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getExceptionInfo() {
+			return this.exceptionInfo;
+		}
+
+		public void setExceptionInfo(String exceptionInfo) {
+			this.exceptionInfo = exceptionInfo;
+		}
+
+		public String getRayVpcWebUIAddr() {
+			return this.rayVpcWebUIAddr;
+		}
+
+		public void setRayVpcWebUIAddr(String rayVpcWebUIAddr) {
+			this.rayVpcWebUIAddr = rayVpcWebUIAddr;
+		}
+
+		public String getWebUI() {
+			return this.webUI;
+		}
+
+		public void setWebUI(String webUI) {
+			this.webUI = webUI;
+		}
+
+		public String getRayInteractiveAccessAddr() {
+			return this.rayInteractiveAccessAddr;
+		}
+
+		public void setRayInteractiveAccessAddr(String rayInteractiveAccessAddr) {
+			this.rayInteractiveAccessAddr = rayInteractiveAccessAddr;
 		}
 	}
 

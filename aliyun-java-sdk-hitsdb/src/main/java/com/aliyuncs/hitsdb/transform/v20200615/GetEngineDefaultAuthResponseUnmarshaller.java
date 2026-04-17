@@ -28,6 +28,7 @@ public class GetEngineDefaultAuthResponseUnmarshaller {
 		
 		getEngineDefaultAuthResponse.setRequestId(_ctx.stringValue("GetEngineDefaultAuthResponse.RequestId"));
 		getEngineDefaultAuthResponse.setInstanceId(_ctx.stringValue("GetEngineDefaultAuthResponse.InstanceId"));
+		getEngineDefaultAuthResponse.setAccessDeniedDetail(_ctx.stringValue("GetEngineDefaultAuthResponse.AccessDeniedDetail"));
 
 		List<AuthInfo> authInfos = new ArrayList<AuthInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetEngineDefaultAuthResponse.AuthInfos.Length"); i++) {

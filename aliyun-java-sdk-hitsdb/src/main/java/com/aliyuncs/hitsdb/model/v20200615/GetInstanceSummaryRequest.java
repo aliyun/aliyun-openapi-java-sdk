@@ -22,7 +22,7 @@ import com.aliyuncs.hitsdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateLdpsNamespaceRequest extends RpcAcsRequest<CreateLdpsNamespaceResponse> {
+public class GetInstanceSummaryRequest extends RpcAcsRequest<GetInstanceSummaryResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -34,12 +34,8 @@ public class CreateLdpsNamespaceRequest extends RpcAcsRequest<CreateLdpsNamespac
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String instanceId;
-
-	private String namespace;
-	public CreateLdpsNamespaceRequest() {
-		super("hitsdb", "2020-06-15", "CreateLdpsNamespace", "hitsdb");
+	public GetInstanceSummaryRequest() {
+		super("hitsdb", "2020-06-15", "GetInstanceSummary", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -102,31 +98,9 @@ public class CreateLdpsNamespaceRequest extends RpcAcsRequest<CreateLdpsNamespac
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
 	@Override
-	public Class<CreateLdpsNamespaceResponse> getResponseClass() {
-		return CreateLdpsNamespaceResponse.class;
+	public Class<GetInstanceSummaryResponse> getResponseClass() {
+		return GetInstanceSummaryResponse.class;
 	}
 
 }

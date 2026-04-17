@@ -25,6 +25,7 @@ public class ModifyInstancePayTypeResponseUnmarshaller {
 		modifyInstancePayTypeResponse.setRequestId(_ctx.stringValue("ModifyInstancePayTypeResponse.RequestId"));
 		modifyInstancePayTypeResponse.setOrderId(_ctx.longValue("ModifyInstancePayTypeResponse.OrderId"));
 		modifyInstancePayTypeResponse.setInstanceId(_ctx.stringValue("ModifyInstancePayTypeResponse.InstanceId"));
+		modifyInstancePayTypeResponse.setAccessDeniedDetail(_ctx.stringValue("ModifyInstancePayTypeResponse.AccessDeniedDetail"));
 	 
 	 	return modifyInstancePayTypeResponse;
 	}

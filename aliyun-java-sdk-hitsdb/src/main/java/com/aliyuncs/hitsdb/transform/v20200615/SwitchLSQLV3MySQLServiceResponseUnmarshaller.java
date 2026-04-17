@@ -23,6 +23,7 @@ public class SwitchLSQLV3MySQLServiceResponseUnmarshaller {
 	public static SwitchLSQLV3MySQLServiceResponse unmarshall(SwitchLSQLV3MySQLServiceResponse switchLSQLV3MySQLServiceResponse, UnmarshallerContext _ctx) {
 		
 		switchLSQLV3MySQLServiceResponse.setRequestId(_ctx.stringValue("SwitchLSQLV3MySQLServiceResponse.RequestId"));
+		switchLSQLV3MySQLServiceResponse.setAccessDeniedDetail(_ctx.stringValue("SwitchLSQLV3MySQLServiceResponse.AccessDeniedDetail"));
 	 
 	 	return switchLSQLV3MySQLServiceResponse;
 	}

@@ -29,6 +29,8 @@ public class GetInstanceIpWhiteListResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String accessDeniedDetail;
+
 	private List<GroupListItem> groupList;
 
 	private List<String> ipList;
@@ -47,6 +49,14 @@ public class GetInstanceIpWhiteListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(String accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public List<GroupListItem> getGroupList() {

@@ -14,16 +14,16 @@
 
 package com.aliyuncs.hitsdb.transform.v20200615;
 
-import com.aliyuncs.hitsdb.model.v20200615.CreateLdpsNamespaceResponse;
+import com.aliyuncs.hitsdb.model.v20200615.ModifyLindormV2InstanceSecurityGroupsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateLdpsNamespaceResponseUnmarshaller {
+public class ModifyLindormV2InstanceSecurityGroupsResponseUnmarshaller {
 
-	public static CreateLdpsNamespaceResponse unmarshall(CreateLdpsNamespaceResponse createLdpsNamespaceResponse, UnmarshallerContext _ctx) {
+	public static ModifyLindormV2InstanceSecurityGroupsResponse unmarshall(ModifyLindormV2InstanceSecurityGroupsResponse modifyLindormV2InstanceSecurityGroupsResponse, UnmarshallerContext _ctx) {
 		
-		createLdpsNamespaceResponse.setRequestId(_ctx.stringValue("CreateLdpsNamespaceResponse.RequestId"));
+		modifyLindormV2InstanceSecurityGroupsResponse.setRequestId(_ctx.stringValue("ModifyLindormV2InstanceSecurityGroupsResponse.RequestId"));
 	 
-	 	return createLdpsNamespaceResponse;
+	 	return modifyLindormV2InstanceSecurityGroupsResponse;
 	}
 }

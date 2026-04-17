@@ -28,12 +28,19 @@ public class ListLdpsComputeGroupsResponseUnmarshaller {
 	public static ListLdpsComputeGroupsResponse unmarshall(ListLdpsComputeGroupsResponse listLdpsComputeGroupsResponse, UnmarshallerContext _ctx) {
 		
 		listLdpsComputeGroupsResponse.setRequestId(_ctx.stringValue("ListLdpsComputeGroupsResponse.RequestId"));
+		listLdpsComputeGroupsResponse.setAccessDeniedDetail(_ctx.stringValue("ListLdpsComputeGroupsResponse.AccessDeniedDetail"));
 
 		List<ComputeGroup> groupList = new ArrayList<ComputeGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListLdpsComputeGroupsResponse.GroupList.Length"); i++) {
 			ComputeGroup computeGroup = new ComputeGroup();
 			computeGroup.setGroupName(_ctx.stringValue("ListLdpsComputeGroupsResponse.GroupList["+ i +"].GroupName"));
 			computeGroup.setProperties(_ctx.mapValue("ListLdpsComputeGroupsResponse.GroupList["+ i +"].Properties"));
+			computeGroup.setIsDefault(_ctx.booleanValue("ListLdpsComputeGroupsResponse.GroupList["+ i +"].IsDefault"));
+			computeGroup.setState(_ctx.stringValue("ListLdpsComputeGroupsResponse.GroupList["+ i +"].State"));
+			computeGroup.setExceptionInfo(_ctx.stringValue("ListLdpsComputeGroupsResponse.GroupList["+ i +"].ExceptionInfo"));
+			computeGroup.setRayVpcWebUIAddr(_ctx.stringValue("ListLdpsComputeGroupsResponse.GroupList["+ i +"].RayVpcWebUIAddr"));
+			computeGroup.setWebUI(_ctx.stringValue("ListLdpsComputeGroupsResponse.GroupList["+ i +"].WebUI"));
+			computeGroup.setRayInteractiveAccessAddr(_ctx.stringValue("ListLdpsComputeGroupsResponse.GroupList["+ i +"].RayInteractiveAccessAddr"));
 
 			groupList.add(computeGroup);
 		}

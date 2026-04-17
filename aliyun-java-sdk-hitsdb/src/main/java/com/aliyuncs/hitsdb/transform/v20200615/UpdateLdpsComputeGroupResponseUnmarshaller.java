@@ -23,6 +23,7 @@ public class UpdateLdpsComputeGroupResponseUnmarshaller {
 	public static UpdateLdpsComputeGroupResponse unmarshall(UpdateLdpsComputeGroupResponse updateLdpsComputeGroupResponse, UnmarshallerContext _ctx) {
 		
 		updateLdpsComputeGroupResponse.setRequestId(_ctx.stringValue("UpdateLdpsComputeGroupResponse.RequestId"));
+		updateLdpsComputeGroupResponse.setAccessDeniedDetail(_ctx.stringValue("UpdateLdpsComputeGroupResponse.AccessDeniedDetail"));
 	 
 	 	return updateLdpsComputeGroupResponse;
 	}
