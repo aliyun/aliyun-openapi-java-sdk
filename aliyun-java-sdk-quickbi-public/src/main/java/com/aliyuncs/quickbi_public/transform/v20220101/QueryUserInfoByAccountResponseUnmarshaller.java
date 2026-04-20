@@ -45,6 +45,12 @@ public class QueryUserInfoByAccountResponseUnmarshaller {
 			roleIdList.add(_ctx.longValue("QueryUserInfoByAccountResponse.Result.RoleIdList["+ i +"]"));
 		}
 		result.setRoleIdList(roleIdList);
+
+		List<String> copilotModules = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("QueryUserInfoByAccountResponse.Result.CopilotModules.Length"); i++) {
+			copilotModules.add(_ctx.stringValue("QueryUserInfoByAccountResponse.Result.CopilotModules["+ i +"]"));
+		}
+		result.setCopilotModules(copilotModules);
 		queryUserInfoByAccountResponse.setResult(result);
 	 
 	 	return queryUserInfoByAccountResponse;

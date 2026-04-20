@@ -44,6 +44,12 @@ public class AddUserResponseUnmarshaller {
 			roleIdList.add(_ctx.longValue("AddUserResponse.Result.RoleIdList["+ i +"]"));
 		}
 		result.setRoleIdList(roleIdList);
+
+		List<String> copilotModules = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("AddUserResponse.Result.CopilotModules.Length"); i++) {
+			copilotModules.add(_ctx.stringValue("AddUserResponse.Result.CopilotModules["+ i +"]"));
+		}
+		result.setCopilotModules(copilotModules);
 		addUserResponse.setResult(result);
 	 
 	 	return addUserResponse;

@@ -75,6 +75,8 @@ public class AddUserResponse extends AcsResponse {
 
 		private List<Long> roleIdList;
 
+		private List<String> copilotModules;
+
 		public String getAccountName() {
 			return this.accountName;
 		}
@@ -145,6 +147,14 @@ public class AddUserResponse extends AcsResponse {
 
 		public void setRoleIdList(List<Long> roleIdList) {
 			this.roleIdList = roleIdList;
+		}
+
+		public List<String> getCopilotModules() {
+			return this.copilotModules;
+		}
+
+		public void setCopilotModules(List<String> copilotModules) {
+			this.copilotModules = copilotModules;
 		}
 	}
 

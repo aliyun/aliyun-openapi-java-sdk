@@ -58,6 +58,12 @@ public class QueryUserListResponseUnmarshaller {
 			}
 			dataItem.setRoleIdList(roleIdList);
 
+			List<String> copilotModules = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("QueryUserListResponse.Result.Data["+ i +"].CopilotModules.Length"); j++) {
+				copilotModules.add(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].CopilotModules["+ j +"]"));
+			}
+			dataItem.setCopilotModules(copilotModules);
+
 			data.add(dataItem);
 		}
 		result.setData(data);

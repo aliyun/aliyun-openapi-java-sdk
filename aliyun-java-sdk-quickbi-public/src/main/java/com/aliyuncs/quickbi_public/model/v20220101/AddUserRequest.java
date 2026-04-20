@@ -26,6 +26,8 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 
 	private Boolean adminUser;
 
+	private String copilotModules;
+
 	private String accountId;
 
 	private String roleIds;
@@ -50,6 +52,17 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 		this.adminUser = adminUser;
 		if(adminUser != null){
 			putQueryParameter("AdminUser", adminUser.toString());
+		}
+	}
+
+	public String getCopilotModules() {
+		return this.copilotModules;
+	}
+
+	public void setCopilotModules(String copilotModules) {
+		this.copilotModules = copilotModules;
+		if(copilotModules != null){
+			putQueryParameter("CopilotModules", copilotModules);
 		}
 	}
 
