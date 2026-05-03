@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.eds_user.model.v20210308.DescribeOrgsResponse;
 import com.aliyuncs.eds_user.model.v20210308.DescribeOrgsResponse.Data;
+import com.aliyuncs.eds_user.model.v20210308.DescribeOrgsResponse.Data.ResourcePolicyListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,6 +37,16 @@ public class DescribeOrgsResponseUnmarshaller {
 			data.setOrgId(_ctx.stringValue("DescribeOrgsResponse.Orgs["+ i +"].OrgId"));
 			data.setParentOrgId(_ctx.stringValue("DescribeOrgsResponse.Orgs["+ i +"].ParentOrgId"));
 			data.setOrgNamePath(_ctx.stringValue("DescribeOrgsResponse.Orgs["+ i +"].OrgNamePath"));
+
+			List<ResourcePolicyListItem> resourcePolicyList = new ArrayList<ResourcePolicyListItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeOrgsResponse.Orgs["+ i +"].ResourcePolicyList.Length"); j++) {
+				ResourcePolicyListItem resourcePolicyListItem = new ResourcePolicyListItem();
+				resourcePolicyListItem.setPolicyId(_ctx.stringValue("DescribeOrgsResponse.Orgs["+ i +"].ResourcePolicyList["+ j +"].PolicyId"));
+				resourcePolicyListItem.setPolicyName(_ctx.stringValue("DescribeOrgsResponse.Orgs["+ i +"].ResourcePolicyList["+ j +"].PolicyName"));
+
+				resourcePolicyList.add(resourcePolicyListItem);
+			}
+			data.setResourcePolicyList(resourcePolicyList);
 
 			orgs.add(data);
 		}

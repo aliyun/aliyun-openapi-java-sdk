@@ -21,6 +21,7 @@ import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse;
 import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse.Data;
 import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse.Data.DomainInfo;
 import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse.Data.Extras;
+import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse.Data.Extras.ResourcePolicyListItem;
 import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse.Data.Group;
 import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse.Data.Org;
 import com.aliyuncs.eds_user.model.v20210308.DescribeUsersResponse.Data.Property;
@@ -61,6 +62,16 @@ public class DescribeUsersResponseUnmarshaller {
 
 			Extras extras = new Extras();
 			extras.setAssignedResourceCount(_ctx.mapValue("DescribeUsersResponse.Users["+ i +"].Extras.AssignedResourceCount"));
+
+			List<ResourcePolicyListItem> resourcePolicyList = new ArrayList<ResourcePolicyListItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeUsersResponse.Users["+ i +"].Extras.ResourcePolicyList.Length"); j++) {
+				ResourcePolicyListItem resourcePolicyListItem = new ResourcePolicyListItem();
+				resourcePolicyListItem.setPolicyId(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].Extras.ResourcePolicyList["+ j +"].PolicyId"));
+				resourcePolicyListItem.setPolicyName(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].Extras.ResourcePolicyList["+ j +"].PolicyName"));
+
+				resourcePolicyList.add(resourcePolicyListItem);
+			}
+			extras.setResourcePolicyList(resourcePolicyList);
 			data.setExtras(extras);
 
 			DomainInfo domainInfo = new DomainInfo();

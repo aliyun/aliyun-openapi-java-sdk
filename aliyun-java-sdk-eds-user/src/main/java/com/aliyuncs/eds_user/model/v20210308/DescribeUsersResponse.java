@@ -391,12 +391,45 @@ public class DescribeUsersResponse extends AcsResponse {
 
 			private Map<Object,Object> assignedResourceCount;
 
+			private List<ResourcePolicyListItem> resourcePolicyList;
+
 			public Map<Object,Object> getAssignedResourceCount() {
 				return this.assignedResourceCount;
 			}
 
 			public void setAssignedResourceCount(Map<Object,Object> assignedResourceCount) {
 				this.assignedResourceCount = assignedResourceCount;
+			}
+
+			public List<ResourcePolicyListItem> getResourcePolicyList() {
+				return this.resourcePolicyList;
+			}
+
+			public void setResourcePolicyList(List<ResourcePolicyListItem> resourcePolicyList) {
+				this.resourcePolicyList = resourcePolicyList;
+			}
+
+			public static class ResourcePolicyListItem {
+
+				private String policyId;
+
+				private String policyName;
+
+				public String getPolicyId() {
+					return this.policyId;
+				}
+
+				public void setPolicyId(String policyId) {
+					this.policyId = policyId;
+				}
+
+				public String getPolicyName() {
+					return this.policyName;
+				}
+
+				public void setPolicyName(String policyName) {
+					this.policyName = policyName;
+				}
 			}
 		}
 

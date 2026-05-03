@@ -29,6 +29,8 @@ public class CreateResourceGroupRequest extends RpcAcsRequest<CreateResourceGrou
 
 	private String businessChannel;
 
+	private Boolean enableAliyunResourceGroup;
+
 	private String platform;
 
 	private Long isResourceGroupWithOfficeSite;
@@ -60,6 +62,17 @@ public class CreateResourceGroupRequest extends RpcAcsRequest<CreateResourceGrou
 		this.businessChannel = businessChannel;
 		if(businessChannel != null){
 			putQueryParameter("BusinessChannel", businessChannel);
+		}
+	}
+
+	public Boolean getEnableAliyunResourceGroup() {
+		return this.enableAliyunResourceGroup;
+	}
+
+	public void setEnableAliyunResourceGroup(Boolean enableAliyunResourceGroup) {
+		this.enableAliyunResourceGroup = enableAliyunResourceGroup;
+		if(enableAliyunResourceGroup != null){
+			putQueryParameter("EnableAliyunResourceGroup", enableAliyunResourceGroup.toString());
 		}
 	}
 

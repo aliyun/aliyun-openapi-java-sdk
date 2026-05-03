@@ -23,6 +23,7 @@ import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse.Data.ExternalIn
 import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse.Data.GroupsItem;
 import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse.Data.IdpInfo;
 import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse.Data.OrgListItem;
+import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse.Data.ResourcePolicyListItem;
 import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse.Data.UserSetPropertiesModelsItem;
 import com.aliyuncs.eds_user.model.v20210308.FilterUsersResponse.Data.UserSetPropertiesModelsItem.PropertyValuesItem;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -113,6 +114,16 @@ public class FilterUsersResponseUnmarshaller {
 				groups.add(groupsItem);
 			}
 			data.setGroups(groups);
+
+			List<ResourcePolicyListItem> resourcePolicyList = new ArrayList<ResourcePolicyListItem>();
+			for (int j = 0; j < _ctx.lengthValue("FilterUsersResponse.Users["+ i +"].ResourcePolicyList.Length"); j++) {
+				ResourcePolicyListItem resourcePolicyListItem = new ResourcePolicyListItem();
+				resourcePolicyListItem.setPolicyId(_ctx.stringValue("FilterUsersResponse.Users["+ i +"].ResourcePolicyList["+ j +"].PolicyId"));
+				resourcePolicyListItem.setPolicyName(_ctx.stringValue("FilterUsersResponse.Users["+ i +"].ResourcePolicyList["+ j +"].PolicyName"));
+
+				resourcePolicyList.add(resourcePolicyListItem);
+			}
+			data.setResourcePolicyList(resourcePolicyList);
 
 			users.add(data);
 		}

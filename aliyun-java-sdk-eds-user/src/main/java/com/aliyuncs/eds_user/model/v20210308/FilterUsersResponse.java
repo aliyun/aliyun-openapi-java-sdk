@@ -97,6 +97,8 @@ public class FilterUsersResponse extends AcsResponse {
 
 		private List<GroupsItem> groups;
 
+		private List<ResourcePolicyListItem> resourcePolicyList;
+
 		private ExternalInfo externalInfo;
 
 		public Long getId() {
@@ -257,6 +259,14 @@ public class FilterUsersResponse extends AcsResponse {
 
 		public void setGroups(List<GroupsItem> groups) {
 			this.groups = groups;
+		}
+
+		public List<ResourcePolicyListItem> getResourcePolicyList() {
+			return this.resourcePolicyList;
+		}
+
+		public void setResourcePolicyList(List<ResourcePolicyListItem> resourcePolicyList) {
+			this.resourcePolicyList = resourcePolicyList;
 		}
 
 		public ExternalInfo getExternalInfo() {
@@ -429,6 +439,29 @@ public class FilterUsersResponse extends AcsResponse {
 
 			public void setGroupName(String groupName) {
 				this.groupName = groupName;
+			}
+		}
+
+		public static class ResourcePolicyListItem {
+
+			private String policyId;
+
+			private String policyName;
+
+			public String getPolicyId() {
+				return this.policyId;
+			}
+
+			public void setPolicyId(String policyId) {
+				this.policyId = policyId;
+			}
+
+			public String getPolicyName() {
+				return this.policyName;
+			}
+
+			public void setPolicyName(String policyName) {
+				this.policyName = policyName;
 			}
 		}
 

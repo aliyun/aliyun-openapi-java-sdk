@@ -65,6 +65,8 @@ public class DescribeOrgsResponse extends AcsResponse {
 
 		private String orgNamePath;
 
+		private List<ResourcePolicyListItem> resourcePolicyList;
+
 		public String getOrgName() {
 			return this.orgName;
 		}
@@ -95,6 +97,37 @@ public class DescribeOrgsResponse extends AcsResponse {
 
 		public void setOrgNamePath(String orgNamePath) {
 			this.orgNamePath = orgNamePath;
+		}
+
+		public List<ResourcePolicyListItem> getResourcePolicyList() {
+			return this.resourcePolicyList;
+		}
+
+		public void setResourcePolicyList(List<ResourcePolicyListItem> resourcePolicyList) {
+			this.resourcePolicyList = resourcePolicyList;
+		}
+
+		public static class ResourcePolicyListItem {
+
+			private String policyId;
+
+			private String policyName;
+
+			public String getPolicyId() {
+				return this.policyId;
+			}
+
+			public void setPolicyId(String policyId) {
+				this.policyId = policyId;
+			}
+
+			public String getPolicyName() {
+				return this.policyName;
+			}
+
+			public void setPolicyName(String policyName) {
+				this.policyName = policyName;
+			}
 		}
 	}
 

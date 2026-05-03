@@ -65,6 +65,8 @@ public class FilterUsersRequest extends RpcAcsRequest<FilterUsersResponse> {
 
 	private Long maxResults;
 
+	private Map<String,String> showExtras;
+
 	private Integer status;
 	public FilterUsersRequest() {
 		super("eds-user", "2021-03-08", "FilterUsers", "eds-user");
@@ -270,6 +272,19 @@ public class FilterUsersRequest extends RpcAcsRequest<FilterUsersResponse> {
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
 		}
+	}
+
+	public Map<String,String> getShowExtras() {
+		return this.showExtras;
+	}
+
+	public void setShowExtras(Map<String,String> showExtras) {
+		this.showExtras = showExtras;	
+		if (showExtras != null) {
+			for (String key1: showExtras.keySet() ) {
+				putQueryParameter("ShowExtras.#" + key1.length() + "#" + key1 , showExtras.get(key1));
+			}
+		}	
 	}
 
 	public Integer getStatus() {

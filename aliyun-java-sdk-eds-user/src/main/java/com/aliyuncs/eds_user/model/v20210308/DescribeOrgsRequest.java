@@ -15,6 +15,7 @@
 package com.aliyuncs.eds_user.model.v20210308;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.eds_user.Endpoint;
 
@@ -26,6 +27,8 @@ public class DescribeOrgsRequest extends RpcAcsRequest<DescribeOrgsResponse> {
 	   
 
 	private String businessChannel;
+
+	private List<String> includeOrgIds;
 
 	private String orgName;
 
@@ -54,6 +57,19 @@ public class DescribeOrgsRequest extends RpcAcsRequest<DescribeOrgsResponse> {
 		if(businessChannel != null){
 			putQueryParameter("BusinessChannel", businessChannel);
 		}
+	}
+
+	public List<String> getIncludeOrgIds() {
+		return this.includeOrgIds;
+	}
+
+	public void setIncludeOrgIds(List<String> includeOrgIds) {
+		this.includeOrgIds = includeOrgIds;	
+		if (includeOrgIds != null) {
+			for (int depth1 = 0; depth1 < includeOrgIds.size(); depth1++) {
+				putQueryParameter("IncludeOrgIds." + (depth1 + 1) , includeOrgIds.get(depth1));
+			}
+		}	
 	}
 
 	public String getOrgName() {
