@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ess.model.v20140828;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ess.transform.v20140828.RemoveInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +28,8 @@ public class RemoveInstancesResponse extends AcsResponse {
 	private String scalingActivityId;
 
 	private String requestId;
+
+	private List<IgnoredInstance> ignoredInstances;
 
 	public String getScalingActivityId() {
 		return this.scalingActivityId;
@@ -42,6 +45,47 @@ public class RemoveInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<IgnoredInstance> getIgnoredInstances() {
+		return this.ignoredInstances;
+	}
+
+	public void setIgnoredInstances(List<IgnoredInstance> ignoredInstances) {
+		this.ignoredInstances = ignoredInstances;
+	}
+
+	public static class IgnoredInstance {
+
+		private String instanceId;
+
+		private String code;
+
+		private String message;
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
 	}
 
 	@Override

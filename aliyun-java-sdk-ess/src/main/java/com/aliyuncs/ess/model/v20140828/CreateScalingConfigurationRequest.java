@@ -581,6 +581,7 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 			for (int depth1 = 0; depth1 < networkInterfacess.size(); depth1++) {
 				putQueryParameter("NetworkInterfaces." + (depth1 + 1) + ".Ipv6AddressCount" , networkInterfacess.get(depth1).getIpv6AddressCount());
 				putQueryParameter("NetworkInterfaces." + (depth1 + 1) + ".InstanceType" , networkInterfacess.get(depth1).getInstanceType());
+				putQueryParameter("NetworkInterfaces." + (depth1 + 1) + ".SecondaryPrivateIpAddressCount" , networkInterfacess.get(depth1).getSecondaryPrivateIpAddressCount());
 				if (networkInterfacess.get(depth1).getSecurityGroupIdss() != null) {
 					for (int i = 0; i < networkInterfacess.get(depth1).getSecurityGroupIdss().size(); i++) {
 						putQueryParameter("NetworkInterfaces." + (depth1 + 1) + ".SecurityGroupIds." + (i + 1) , networkInterfacess.get(depth1).getSecurityGroupIdss().get(i));
@@ -755,6 +756,15 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.resourcePoolOptions = resourcePoolOptions;	
 		if (resourcePoolOptions != null) {
 			
+				if (resourcePoolOptions.getPrivatePoolTags() != null) {
+					for (int depth1 = 0; depth1 < resourcePoolOptions.getPrivatePoolTags().size(); depth1++) {
+						if (resourcePoolOptions.getPrivatePoolTags().get(depth1) != null) {
+							
+								putQueryParameter("ResourcePoolOptions.PrivatePoolTags." + (depth1 + 1) + ".Value" , resourcePoolOptions.getPrivatePoolTags().get(depth1).getValue());
+								putQueryParameter("ResourcePoolOptions.PrivatePoolTags." + (depth1 + 1) + ".Key" , resourcePoolOptions.getPrivatePoolTags().get(depth1).getKey());
+						}
+					}
+				}
 				putQueryParameter("ResourcePoolOptions.Strategy" , resourcePoolOptions.getStrategy());
 				if (resourcePoolOptions.getPrivatePoolIds() != null) {
 					for (int depth1 = 0; depth1 < resourcePoolOptions.getPrivatePoolIds().size(); depth1++) {
@@ -1372,6 +1382,8 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 		private String instanceType;
 
+		private Integer secondaryPrivateIpAddressCount;
+
 		private List<String> securityGroupIdss;
 
 		private String networkInterfaceTrafficMode;
@@ -1390,6 +1402,14 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
+		}
+
+		public Integer getSecondaryPrivateIpAddressCount() {
+			return this.secondaryPrivateIpAddressCount;
+		}
+
+		public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
+			this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
 		}
 
 		public List<String> getSecurityGroupIdss() {
@@ -1411,9 +1431,19 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	public static class ResourcePoolOptions {
 
+		private List<PrivatePoolTagsItem> privatePoolTags;
+
 		private String strategy;
 
 		private List<String> privatePoolIds;
+
+		public List<PrivatePoolTagsItem> getPrivatePoolTags() {
+			return this.privatePoolTags;
+		}
+
+		public void setPrivatePoolTags(List<PrivatePoolTagsItem> privatePoolTags) {
+			this.privatePoolTags = privatePoolTags;
+		}
 
 		public String getStrategy() {
 			return this.strategy;
@@ -1429,6 +1459,29 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 		public void setPrivatePoolIds(List<String> privatePoolIds) {
 			this.privatePoolIds = privatePoolIds;
+		}
+
+		public static class PrivatePoolTagsItem {
+
+			private String value;
+
+			private String key;
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
 		}
 	}
 

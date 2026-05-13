@@ -23,24 +23,18 @@ import com.aliyuncs.ess.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateNotificationConfigurationRequest extends RpcAcsRequest<CreateNotificationConfigurationResponse> {
+public class ModifyAlertConfigurationRequest extends RpcAcsRequest<ModifyAlertConfigurationResponse> {
 	   
 
 	private String scalingGroupId;
 
-	private String timeZone;
-
-	private String messageEncoding;
-
-	private String notificationArn;
+	private List<String> scaleStatuss;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
-
-	private List<String> notificationTypes;
-	public CreateNotificationConfigurationRequest() {
-		super("Ess", "2014-08-28", "CreateNotificationConfiguration", "ess");
+	public ModifyAlertConfigurationRequest() {
+		super("Ess", "2014-08-28", "ModifyAlertConfiguration", "ess");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,37 +53,17 @@ public class CreateNotificationConfigurationRequest extends RpcAcsRequest<Create
 		}
 	}
 
-	public String getTimeZone() {
-		return this.timeZone;
+	public List<String> getScaleStatuss() {
+		return this.scaleStatuss;
 	}
 
-	public void setTimeZone(String timeZone) {
-		this.timeZone = timeZone;
-		if(timeZone != null){
-			putQueryParameter("TimeZone", timeZone);
-		}
-	}
-
-	public String getMessageEncoding() {
-		return this.messageEncoding;
-	}
-
-	public void setMessageEncoding(String messageEncoding) {
-		this.messageEncoding = messageEncoding;
-		if(messageEncoding != null){
-			putQueryParameter("MessageEncoding", messageEncoding);
-		}
-	}
-
-	public String getNotificationArn() {
-		return this.notificationArn;
-	}
-
-	public void setNotificationArn(String notificationArn) {
-		this.notificationArn = notificationArn;
-		if(notificationArn != null){
-			putQueryParameter("NotificationArn", notificationArn);
-		}
+	public void setScaleStatuss(List<String> scaleStatuss) {
+		this.scaleStatuss = scaleStatuss;	
+		if (scaleStatuss != null) {
+			for (int i = 0; i < scaleStatuss.size(); i++) {
+				putQueryParameter("ScaleStatus." + (i + 1) , scaleStatuss.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -114,22 +88,9 @@ public class CreateNotificationConfigurationRequest extends RpcAcsRequest<Create
 		}
 	}
 
-	public List<String> getNotificationTypes() {
-		return this.notificationTypes;
-	}
-
-	public void setNotificationTypes(List<String> notificationTypes) {
-		this.notificationTypes = notificationTypes;	
-		if (notificationTypes != null) {
-			for (int i = 0; i < notificationTypes.size(); i++) {
-				putQueryParameter("NotificationType." + (i + 1) , notificationTypes.get(i));
-			}
-		}	
-	}
-
 	@Override
-	public Class<CreateNotificationConfigurationResponse> getResponseClass() {
-		return CreateNotificationConfigurationResponse.class;
+	public Class<ModifyAlertConfigurationResponse> getResponseClass() {
+		return ModifyAlertConfigurationResponse.class;
 	}
 
 }

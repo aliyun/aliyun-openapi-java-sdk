@@ -203,6 +203,9 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 		@SerializedName("IgnoredLifecycleHookIds")
 		private List<String> ignoredLifecycleHookIds;
 
+		@SerializedName("LifecycleHookResult")
+		private String lifecycleHookResult;
+
 		public Boolean getDisableLifecycleHook() {
 			return this.disableLifecycleHook;
 		}
@@ -217,6 +220,14 @@ public class RemoveInstancesRequest extends RpcAcsRequest<RemoveInstancesRespons
 
 		public void setIgnoredLifecycleHookIds(List<String> ignoredLifecycleHookIds) {
 			this.ignoredLifecycleHookIds = ignoredLifecycleHookIds;
+		}
+
+		public String getLifecycleHookResult() {
+			return this.lifecycleHookResult;
+		}
+
+		public void setLifecycleHookResult(String lifecycleHookResult) {
+			this.lifecycleHookResult = lifecycleHookResult;
 		}
 	}
 

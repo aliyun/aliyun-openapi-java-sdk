@@ -19,11 +19,13 @@ import java.util.List;
 
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration;
+import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.CpuOptions;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.CustomPriority;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.DataDisk;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.InstancePatternInfo;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.NetworkInterface;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.ResourcePoolOptions;
+import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.ResourcePoolOptions.PrivatePoolTag;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.SchedulerOptions;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.SecurityOptions;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.SpotPriceModel;
@@ -144,7 +146,21 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 				privatePoolIds.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ResourcePoolOptions.PrivatePoolIds["+ j +"]"));
 			}
 			resourcePoolOptions.setPrivatePoolIds(privatePoolIds);
+
+			List<PrivatePoolTag> privatePoolTags = new ArrayList<PrivatePoolTag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ResourcePoolOptions.PrivatePoolTags.Length"); j++) {
+				PrivatePoolTag privatePoolTag = new PrivatePoolTag();
+				privatePoolTag.setKey(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ResourcePoolOptions.PrivatePoolTags["+ j +"].Key"));
+				privatePoolTag.setValue(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ResourcePoolOptions.PrivatePoolTags["+ j +"].Value"));
+
+				privatePoolTags.add(privatePoolTag);
+			}
+			resourcePoolOptions.setPrivatePoolTags(privatePoolTags);
 			scalingConfiguration.setResourcePoolOptions(resourcePoolOptions);
+
+			CpuOptions cpuOptions = new CpuOptions();
+			cpuOptions.setNestedVirtualization(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].CpuOptions.NestedVirtualization"));
+			scalingConfiguration.setCpuOptions(cpuOptions);
 
 			List<DataDisk> dataDisks = new ArrayList<DataDisk>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks.Length"); j++) {
@@ -275,6 +291,7 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 				networkInterface.setInstanceType(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].InstanceType"));
 				networkInterface.setNetworkInterfaceTrafficMode(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].NetworkInterfaceTrafficMode"));
 				networkInterface.setIpv6AddressCount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].Ipv6AddressCount"));
+				networkInterface.setSecondaryPrivateIpAddressCount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].SecondaryPrivateIpAddressCount"));
 
 				List<String> securityGroupIds1 = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].SecurityGroupIds.Length"); k++) {

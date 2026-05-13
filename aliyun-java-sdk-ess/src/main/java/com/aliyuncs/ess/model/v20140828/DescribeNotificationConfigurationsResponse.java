@@ -53,6 +53,8 @@ public class DescribeNotificationConfigurationsResponse extends AcsResponse {
 
 		private String timeZone;
 
+		private String messageEncoding;
+
 		private List<String> notificationTypes;
 
 		public String getNotificationArn() {
@@ -77,6 +79,14 @@ public class DescribeNotificationConfigurationsResponse extends AcsResponse {
 
 		public void setTimeZone(String timeZone) {
 			this.timeZone = timeZone;
+		}
+
+		public String getMessageEncoding() {
+			return this.messageEncoding;
+		}
+
+		public void setMessageEncoding(String messageEncoding) {
+			this.messageEncoding = messageEncoding;
 		}
 
 		public List<String> getNotificationTypes() {

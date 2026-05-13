@@ -43,6 +43,7 @@ public class DescribeElasticStrengthResponseUnmarshaller {
 			resourcePool.setCode(_ctx.stringValue("DescribeElasticStrengthResponse.ResourcePools["+ i +"].Code"));
 			resourcePool.setMsg(_ctx.stringValue("DescribeElasticStrengthResponse.ResourcePools["+ i +"].Msg"));
 			resourcePool.setStatus(_ctx.stringValue("DescribeElasticStrengthResponse.ResourcePools["+ i +"].Status"));
+			resourcePool.setElasticStrength(_ctx.stringValue("DescribeElasticStrengthResponse.ResourcePools["+ i +"].ElasticStrength"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeElasticStrengthResponse.ResourcePools["+ i +"].VSwitchIds.Length"); j++) {
@@ -77,6 +78,7 @@ public class DescribeElasticStrengthResponseUnmarshaller {
 				resourcePool2.setCode(_ctx.stringValue("DescribeElasticStrengthResponse.ElasticStrengthModels["+ i +"].ResourcePools["+ j +"].Code"));
 				resourcePool2.setMsg(_ctx.stringValue("DescribeElasticStrengthResponse.ElasticStrengthModels["+ i +"].ResourcePools["+ j +"].Msg"));
 				resourcePool2.setStatus(_ctx.stringValue("DescribeElasticStrengthResponse.ElasticStrengthModels["+ i +"].ResourcePools["+ j +"].Status"));
+				resourcePool2.setElasticStrength(_ctx.stringValue("DescribeElasticStrengthResponse.ElasticStrengthModels["+ i +"].ResourcePools["+ j +"].ElasticStrength"));
 
 				List<String> vSwitchIds3 = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeElasticStrengthResponse.ElasticStrengthModels["+ i +"].ResourcePools["+ j +"].VSwitchIds.Length"); k++) {

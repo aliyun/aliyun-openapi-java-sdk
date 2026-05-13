@@ -15,7 +15,7 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ess.Endpoint;
 
@@ -23,29 +23,37 @@ import com.aliyuncs.ess.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateNotificationConfigurationRequest extends RpcAcsRequest<CreateNotificationConfigurationResponse> {
+public class ResumeInstanceRefreshRequest extends RpcAcsRequest<ResumeInstanceRefreshResponse> {
 	   
+
+	private Long resourceOwnerId;
 
 	private String scalingGroupId;
 
-	private String timeZone;
-
-	private String messageEncoding;
-
-	private String notificationArn;
+	private String instanceRefreshTaskId;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
-
-	private List<String> notificationTypes;
-	public CreateNotificationConfigurationRequest() {
-		super("Ess", "2014-08-28", "CreateNotificationConfiguration", "ess");
+	public ResumeInstanceRefreshRequest() {
+		super("Ess", "2014-08-28", "ResumeInstanceRefresh", "ess");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getScalingGroupId() {
@@ -59,36 +67,14 @@ public class CreateNotificationConfigurationRequest extends RpcAcsRequest<Create
 		}
 	}
 
-	public String getTimeZone() {
-		return this.timeZone;
+	public String getInstanceRefreshTaskId() {
+		return this.instanceRefreshTaskId;
 	}
 
-	public void setTimeZone(String timeZone) {
-		this.timeZone = timeZone;
-		if(timeZone != null){
-			putQueryParameter("TimeZone", timeZone);
-		}
-	}
-
-	public String getMessageEncoding() {
-		return this.messageEncoding;
-	}
-
-	public void setMessageEncoding(String messageEncoding) {
-		this.messageEncoding = messageEncoding;
-		if(messageEncoding != null){
-			putQueryParameter("MessageEncoding", messageEncoding);
-		}
-	}
-
-	public String getNotificationArn() {
-		return this.notificationArn;
-	}
-
-	public void setNotificationArn(String notificationArn) {
-		this.notificationArn = notificationArn;
-		if(notificationArn != null){
-			putQueryParameter("NotificationArn", notificationArn);
+	public void setInstanceRefreshTaskId(String instanceRefreshTaskId) {
+		this.instanceRefreshTaskId = instanceRefreshTaskId;
+		if(instanceRefreshTaskId != null){
+			putQueryParameter("InstanceRefreshTaskId", instanceRefreshTaskId);
 		}
 	}
 
@@ -114,22 +100,9 @@ public class CreateNotificationConfigurationRequest extends RpcAcsRequest<Create
 		}
 	}
 
-	public List<String> getNotificationTypes() {
-		return this.notificationTypes;
-	}
-
-	public void setNotificationTypes(List<String> notificationTypes) {
-		this.notificationTypes = notificationTypes;	
-		if (notificationTypes != null) {
-			for (int i = 0; i < notificationTypes.size(); i++) {
-				putQueryParameter("NotificationType." + (i + 1) , notificationTypes.get(i));
-			}
-		}	
-	}
-
 	@Override
-	public Class<CreateNotificationConfigurationResponse> getResponseClass() {
-		return CreateNotificationConfigurationResponse.class;
+	public Class<ResumeInstanceRefreshResponse> getResponseClass() {
+		return ResumeInstanceRefreshResponse.class;
 	}
 
 }

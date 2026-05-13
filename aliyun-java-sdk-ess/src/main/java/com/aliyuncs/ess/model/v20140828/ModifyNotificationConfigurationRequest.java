@@ -30,6 +30,8 @@ public class ModifyNotificationConfigurationRequest extends RpcAcsRequest<Modify
 
 	private String timeZone;
 
+	private String messageEncoding;
+
 	private String notificationArn;
 
 	private String resourceOwnerAccount;
@@ -65,6 +67,17 @@ public class ModifyNotificationConfigurationRequest extends RpcAcsRequest<Modify
 		this.timeZone = timeZone;
 		if(timeZone != null){
 			putQueryParameter("TimeZone", timeZone);
+		}
+	}
+
+	public String getMessageEncoding() {
+		return this.messageEncoding;
+	}
+
+	public void setMessageEncoding(String messageEncoding) {
+		this.messageEncoding = messageEncoding;
+		if(messageEncoding != null){
+			putQueryParameter("MessageEncoding", messageEncoding);
 		}
 	}
 

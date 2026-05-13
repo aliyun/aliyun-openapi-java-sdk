@@ -46,6 +46,8 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 	private Integer defaultCooldown;
 
+	private Boolean autoRebalance;
+
 	private List<String> healthCheckTypess;
 
 	private String containerGroupId;
@@ -89,6 +91,8 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 	private Integer onDemandBaseCapacity;
 
 	private Integer onDemandPercentageAboveBaseCapacity;
+
+	private String balanceMode;
 
 	private String spotAllocationStrategy;
 
@@ -241,6 +245,17 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		this.defaultCooldown = defaultCooldown;
 		if(defaultCooldown != null){
 			putQueryParameter("DefaultCooldown", defaultCooldown.toString());
+		}
+	}
+
+	public Boolean getAutoRebalance() {
+		return this.autoRebalance;
+	}
+
+	public void setAutoRebalance(Boolean autoRebalance) {
+		this.autoRebalance = autoRebalance;
+		if(autoRebalance != null){
+			putQueryParameter("AutoRebalance", autoRebalance.toString());
 		}
 	}
 
@@ -513,6 +528,17 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
 		if(onDemandPercentageAboveBaseCapacity != null){
 			putQueryParameter("OnDemandPercentageAboveBaseCapacity", onDemandPercentageAboveBaseCapacity.toString());
+		}
+	}
+
+	public String getBalanceMode() {
+		return this.balanceMode;
+	}
+
+	public void setBalanceMode(String balanceMode) {
+		this.balanceMode = balanceMode;
+		if(balanceMode != null){
+			putQueryParameter("BalanceMode", balanceMode);
 		}
 	}
 

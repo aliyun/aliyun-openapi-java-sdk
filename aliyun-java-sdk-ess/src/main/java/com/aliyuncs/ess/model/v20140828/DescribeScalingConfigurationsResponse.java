@@ -223,6 +223,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private ResourcePoolOptions resourcePoolOptions;
 
+		private CpuOptions cpuOptions;
+
 		public String getDeploymentSetId() {
 			return this.deploymentSetId;
 		}
@@ -807,6 +809,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.resourcePoolOptions = resourcePoolOptions;
 		}
 
+		public CpuOptions getCpuOptions() {
+			return this.cpuOptions;
+		}
+
+		public void setCpuOptions(CpuOptions cpuOptions) {
+			this.cpuOptions = cpuOptions;
+		}
+
 		public static class DataDisk {
 
 			private String performanceLevel;
@@ -1260,6 +1270,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			private Integer ipv6AddressCount;
 
+			private Integer secondaryPrivateIpAddressCount;
+
 			private List<String> securityGroupIds1;
 
 			public String getInstanceType() {
@@ -1284,6 +1296,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			public void setIpv6AddressCount(Integer ipv6AddressCount) {
 				this.ipv6AddressCount = ipv6AddressCount;
+			}
+
+			public Integer getSecondaryPrivateIpAddressCount() {
+				return this.secondaryPrivateIpAddressCount;
+			}
+
+			public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
+				this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
 			}
 
 			public List<String> getSecurityGroupIds1() {
@@ -1325,6 +1345,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			private String strategy;
 
+			private List<PrivatePoolTag> privatePoolTags;
+
 			private List<String> privatePoolIds;
 
 			public String getStrategy() {
@@ -1335,12 +1357,56 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 				this.strategy = strategy;
 			}
 
+			public List<PrivatePoolTag> getPrivatePoolTags() {
+				return this.privatePoolTags;
+			}
+
+			public void setPrivatePoolTags(List<PrivatePoolTag> privatePoolTags) {
+				this.privatePoolTags = privatePoolTags;
+			}
+
 			public List<String> getPrivatePoolIds() {
 				return this.privatePoolIds;
 			}
 
 			public void setPrivatePoolIds(List<String> privatePoolIds) {
 				this.privatePoolIds = privatePoolIds;
+			}
+
+			public static class PrivatePoolTag {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+		}
+
+		public static class CpuOptions {
+
+			private String nestedVirtualization;
+
+			public String getNestedVirtualization() {
+				return this.nestedVirtualization;
+			}
+
+			public void setNestedVirtualization(String nestedVirtualization) {
+				this.nestedVirtualization = nestedVirtualization;
 			}
 		}
 	}

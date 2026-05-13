@@ -51,6 +51,8 @@ public class ScaleWithAdjustmentRequest extends RpcAcsRequest<ScaleWithAdjustmen
 	private Long ownerId;
 
 	private Integer minAdjustmentMagnitude;
+
+	private String executionMode;
 	public ScaleWithAdjustmentRequest() {
 		super("Ess", "2014-08-28", "ScaleWithAdjustment", "ess");
 		setMethod(MethodType.POST);
@@ -181,6 +183,17 @@ public class ScaleWithAdjustmentRequest extends RpcAcsRequest<ScaleWithAdjustmen
 		}
 	}
 
+	public String getExecutionMode() {
+		return this.executionMode;
+	}
+
+	public void setExecutionMode(String executionMode) {
+		this.executionMode = executionMode;
+		if(executionMode != null){
+			putQueryParameter("ExecutionMode", executionMode);
+		}
+	}
+
 	public static class LifecycleHookContext {
 
 		@SerializedName("DisableLifecycleHook")
@@ -188,6 +201,9 @@ public class ScaleWithAdjustmentRequest extends RpcAcsRequest<ScaleWithAdjustmen
 
 		@SerializedName("IgnoredLifecycleHookIds")
 		private List<String> ignoredLifecycleHookIds;
+
+		@SerializedName("LifecycleHookResult")
+		private String lifecycleHookResult;
 
 		public Boolean getDisableLifecycleHook() {
 			return this.disableLifecycleHook;
@@ -204,12 +220,26 @@ public class ScaleWithAdjustmentRequest extends RpcAcsRequest<ScaleWithAdjustmen
 		public void setIgnoredLifecycleHookIds(List<String> ignoredLifecycleHookIds) {
 			this.ignoredLifecycleHookIds = ignoredLifecycleHookIds;
 		}
+
+		public String getLifecycleHookResult() {
+			return this.lifecycleHookResult;
+		}
+
+		public void setLifecycleHookResult(String lifecycleHookResult) {
+			this.lifecycleHookResult = lifecycleHookResult;
+		}
 	}
 
 	public static class Overrides {
 
+		@SerializedName("UserData")
+		private String userData;
+
 		@SerializedName("Memory")
 		private Float memory;
+
+		@SerializedName("DataDisks")
+		private List<DataDisksItem> dataDisks;
 
 		@SerializedName("ContainerOverride")
 		private List<ContainerOverrideItem> containerOverride;
@@ -220,12 +250,28 @@ public class ScaleWithAdjustmentRequest extends RpcAcsRequest<ScaleWithAdjustmen
 		@SerializedName("CustomLimitPriorities")
 		private List<CustomLimitPrioritiesItem> customLimitPriorities;
 
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
+		}
+
 		public Float getMemory() {
 			return this.memory;
 		}
 
 		public void setMemory(Float memory) {
 			this.memory = memory;
+		}
+
+		public List<DataDisksItem> getDataDisks() {
+			return this.dataDisks;
+		}
+
+		public void setDataDisks(List<DataDisksItem> dataDisks) {
+			this.dataDisks = dataDisks;
 		}
 
 		public List<ContainerOverrideItem> getContainerOverride() {
@@ -250,6 +296,163 @@ public class ScaleWithAdjustmentRequest extends RpcAcsRequest<ScaleWithAdjustmen
 
 		public void setCustomLimitPriorities(List<CustomLimitPrioritiesItem> customLimitPriorities) {
 			this.customLimitPriorities = customLimitPriorities;
+		}
+
+		public static class DataDisksItem {
+
+			@SerializedName("SnapshotId")
+			private String snapshotId;
+
+			@SerializedName("PerformanceLevel")
+			private String performanceLevel;
+
+			@SerializedName("AutoSnapshotPolicyId")
+			private String autoSnapshotPolicyId;
+
+			@SerializedName("Description")
+			private String description;
+
+			@SerializedName("BurstingEnabled")
+			private Boolean burstingEnabled;
+
+			@SerializedName("DiskName")
+			private String diskName;
+
+			@SerializedName("ProvisionedIops")
+			private Long provisionedIops;
+
+			@SerializedName("Encrypted")
+			private String encrypted;
+
+			@SerializedName("Size")
+			private Integer size;
+
+			@SerializedName("Categories")
+			private List<String> categories;
+
+			@SerializedName("Category")
+			private String category;
+
+			@SerializedName("KMSKeyId")
+			private String kMSKeyId;
+
+			@SerializedName("Device")
+			private String device;
+
+			@SerializedName("DeleteWithInstance")
+			private Boolean deleteWithInstance;
+
+			public String getSnapshotId() {
+				return this.snapshotId;
+			}
+
+			public void setSnapshotId(String snapshotId) {
+				this.snapshotId = snapshotId;
+			}
+
+			public String getPerformanceLevel() {
+				return this.performanceLevel;
+			}
+
+			public void setPerformanceLevel(String performanceLevel) {
+				this.performanceLevel = performanceLevel;
+			}
+
+			public String getAutoSnapshotPolicyId() {
+				return this.autoSnapshotPolicyId;
+			}
+
+			public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+				this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public Boolean getBurstingEnabled() {
+				return this.burstingEnabled;
+			}
+
+			public void setBurstingEnabled(Boolean burstingEnabled) {
+				this.burstingEnabled = burstingEnabled;
+			}
+
+			public String getDiskName() {
+				return this.diskName;
+			}
+
+			public void setDiskName(String diskName) {
+				this.diskName = diskName;
+			}
+
+			public Long getProvisionedIops() {
+				return this.provisionedIops;
+			}
+
+			public void setProvisionedIops(Long provisionedIops) {
+				this.provisionedIops = provisionedIops;
+			}
+
+			public String getEncrypted() {
+				return this.encrypted;
+			}
+
+			public void setEncrypted(String encrypted) {
+				this.encrypted = encrypted;
+			}
+
+			public Integer getSize() {
+				return this.size;
+			}
+
+			public void setSize(Integer size) {
+				this.size = size;
+			}
+
+			public List<String> getCategories() {
+				return this.categories;
+			}
+
+			public void setCategories(List<String> categories) {
+				this.categories = categories;
+			}
+
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
+			}
+
+			public String getKMSKeyId() {
+				return this.kMSKeyId;
+			}
+
+			public void setKMSKeyId(String kMSKeyId) {
+				this.kMSKeyId = kMSKeyId;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
+			}
+
+			public Boolean getDeleteWithInstance() {
+				return this.deleteWithInstance;
+			}
+
+			public void setDeleteWithInstance(Boolean deleteWithInstance) {
+				this.deleteWithInstance = deleteWithInstance;
+			}
 		}
 
 		public static class ContainerOverrideItem {

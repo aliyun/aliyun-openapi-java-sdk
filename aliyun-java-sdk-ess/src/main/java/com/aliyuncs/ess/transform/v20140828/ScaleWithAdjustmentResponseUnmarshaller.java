@@ -14,7 +14,12 @@
 
 package com.aliyuncs.ess.transform.v20140828;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ess.model.v20140828.ScaleWithAdjustmentResponse;
+import com.aliyuncs.ess.model.v20140828.ScaleWithAdjustmentResponse.PlanResult;
+import com.aliyuncs.ess.model.v20140828.ScaleWithAdjustmentResponse.PlanResult.ResourceAllocationModels;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,6 +30,22 @@ public class ScaleWithAdjustmentResponseUnmarshaller {
 		scaleWithAdjustmentResponse.setRequestId(_ctx.stringValue("ScaleWithAdjustmentResponse.RequestId"));
 		scaleWithAdjustmentResponse.setScalingActivityId(_ctx.stringValue("ScaleWithAdjustmentResponse.ScalingActivityId"));
 		scaleWithAdjustmentResponse.setActivityType(_ctx.stringValue("ScaleWithAdjustmentResponse.ActivityType"));
+
+		PlanResult planResult = new PlanResult();
+
+		List<ResourceAllocationModels> resourceAllocations = new ArrayList<ResourceAllocationModels>();
+		for (int i = 0; i < _ctx.lengthValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations.Length"); i++) {
+			ResourceAllocationModels resourceAllocationModels = new ResourceAllocationModels();
+			resourceAllocationModels.setZoneId(_ctx.stringValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations["+ i +"].ZoneId"));
+			resourceAllocationModels.setInstanceType(_ctx.stringValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations["+ i +"].InstanceType"));
+			resourceAllocationModels.setSpotStrategy(_ctx.stringValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations["+ i +"].SpotStrategy"));
+			resourceAllocationModels.setAmount(_ctx.integerValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations["+ i +"].Amount"));
+			resourceAllocationModels.setInstanceChargeType(_ctx.stringValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations["+ i +"].InstanceChargeType"));
+
+			resourceAllocations.add(resourceAllocationModels);
+		}
+		planResult.setResourceAllocations(resourceAllocations);
+		scaleWithAdjustmentResponse.setPlanResult(planResult);
 	 
 	 	return scaleWithAdjustmentResponse;
 	}

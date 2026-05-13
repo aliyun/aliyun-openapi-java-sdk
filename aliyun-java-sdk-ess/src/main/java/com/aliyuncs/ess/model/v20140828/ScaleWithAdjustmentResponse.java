@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ess.model.v20140828;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ess.transform.v20140828.ScaleWithAdjustmentResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -29,6 +30,8 @@ public class ScaleWithAdjustmentResponse extends AcsResponse {
 	private String requestId;
 
 	private String activityType;
+
+	private PlanResult planResult;
 
 	public String getScalingActivityId() {
 		return this.scalingActivityId;
@@ -52,6 +55,80 @@ public class ScaleWithAdjustmentResponse extends AcsResponse {
 
 	public void setActivityType(String activityType) {
 		this.activityType = activityType;
+	}
+
+	public PlanResult getPlanResult() {
+		return this.planResult;
+	}
+
+	public void setPlanResult(PlanResult planResult) {
+		this.planResult = planResult;
+	}
+
+	public static class PlanResult {
+
+		private List<ResourceAllocationModels> resourceAllocations;
+
+		public List<ResourceAllocationModels> getResourceAllocations() {
+			return this.resourceAllocations;
+		}
+
+		public void setResourceAllocations(List<ResourceAllocationModels> resourceAllocations) {
+			this.resourceAllocations = resourceAllocations;
+		}
+
+		public static class ResourceAllocationModels {
+
+			private String zoneId;
+
+			private String instanceType;
+
+			private String spotStrategy;
+
+			private Integer amount;
+
+			private String instanceChargeType;
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public String getSpotStrategy() {
+				return this.spotStrategy;
+			}
+
+			public void setSpotStrategy(String spotStrategy) {
+				this.spotStrategy = spotStrategy;
+			}
+
+			public Integer getAmount() {
+				return this.amount;
+			}
+
+			public void setAmount(Integer amount) {
+				this.amount = amount;
+			}
+
+			public String getInstanceChargeType() {
+				return this.instanceChargeType;
+			}
+
+			public void setInstanceChargeType(String instanceChargeType) {
+				this.instanceChargeType = instanceChargeType;
+			}
+		}
 	}
 
 	@Override

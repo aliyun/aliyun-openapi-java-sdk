@@ -94,6 +94,8 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 			scalingGroup.setEnableDesiredCapacity(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].EnableDesiredCapacity"));
 			scalingGroup.setSpotCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SpotCapacity"));
 			scalingGroup.setStopInstanceTimeout(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].StopInstanceTimeout"));
+			scalingGroup.setBalanceMode(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].BalanceMode"));
+			scalingGroup.setAutoRebalance(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AutoRebalance"));
 
 			List<String> removalPolicies = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RemovalPolicies.Length"); j++) {

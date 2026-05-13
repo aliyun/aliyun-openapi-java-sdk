@@ -179,6 +179,10 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private Integer stopInstanceTimeout;
 
+		private String balanceMode;
+
+		private Boolean autoRebalance;
+
 		private List<VServerGroup> vServerGroups;
 
 		private List<LaunchTemplateOverride> launchTemplateOverrides;
@@ -613,6 +617,22 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setStopInstanceTimeout(Integer stopInstanceTimeout) {
 			this.stopInstanceTimeout = stopInstanceTimeout;
+		}
+
+		public String getBalanceMode() {
+			return this.balanceMode;
+		}
+
+		public void setBalanceMode(String balanceMode) {
+			this.balanceMode = balanceMode;
+		}
+
+		public Boolean getAutoRebalance() {
+			return this.autoRebalance;
+		}
+
+		public void setAutoRebalance(Boolean autoRebalance) {
+			this.autoRebalance = autoRebalance;
 		}
 
 		public List<VServerGroup> getVServerGroups() {

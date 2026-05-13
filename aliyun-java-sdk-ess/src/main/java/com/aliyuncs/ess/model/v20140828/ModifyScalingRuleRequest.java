@@ -44,6 +44,8 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 
 	private String hybridMonitorNamespace;
 
+	private AlarmOptions alarmOptions;
+
 	private Integer cooldown;
 
 	private String predictiveValueBehavior;
@@ -190,6 +192,18 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		if(hybridMonitorNamespace != null){
 			putQueryParameter("HybridMonitorNamespace", hybridMonitorNamespace);
 		}
+	}
+
+	public AlarmOptions getAlarmOptions() {
+		return this.alarmOptions;
+	}
+
+	public void setAlarmOptions(AlarmOptions alarmOptions) {
+		this.alarmOptions = alarmOptions;	
+		if (alarmOptions != null) {
+			
+				putQueryParameter("AlarmOptions.Period" , alarmOptions.getPeriod());
+		}	
 	}
 
 	public Integer getCooldown() {
@@ -443,6 +457,19 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 
 		public void setScalingAdjustment(Integer scalingAdjustment) {
 			this.scalingAdjustment = scalingAdjustment;
+		}
+	}
+
+	public static class AlarmOptions {
+
+		private Integer period;
+
+		public Integer getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(Integer period) {
+			this.period = period;
 		}
 	}
 

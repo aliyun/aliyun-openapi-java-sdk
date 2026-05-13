@@ -375,6 +375,8 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 			private String statistics;
 
+			private Integer period;
+
 			private List<Dimension> dimensions;
 
 			public String getAlarmTaskId() {
@@ -439,6 +441,14 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 			public void setStatistics(String statistics) {
 				this.statistics = statistics;
+			}
+
+			public Integer getPeriod() {
+				return this.period;
+			}
+
+			public void setPeriod(Integer period) {
+				this.period = period;
 			}
 
 			public List<Dimension> getDimensions() {

@@ -89,6 +89,8 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 
 		private String status;
 
+		private String elasticStrength;
+
 		private List<String> vSwitchIds;
 
 		private InventoryHealth inventoryHealth;
@@ -139,6 +141,14 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getElasticStrength() {
+			return this.elasticStrength;
+		}
+
+		public void setElasticStrength(String elasticStrength) {
+			this.elasticStrength = elasticStrength;
 		}
 
 		public List<String> getVSwitchIds() {
@@ -257,6 +267,8 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 
 			private String status;
 
+			private String elasticStrength;
+
 			private List<String> vSwitchIds3;
 
 			private InventoryHealth4 inventoryHealth4;
@@ -307,6 +319,14 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getElasticStrength() {
+				return this.elasticStrength;
+			}
+
+			public void setElasticStrength(String elasticStrength) {
+				this.elasticStrength = elasticStrength;
 			}
 
 			public List<String> getVSwitchIds3() {

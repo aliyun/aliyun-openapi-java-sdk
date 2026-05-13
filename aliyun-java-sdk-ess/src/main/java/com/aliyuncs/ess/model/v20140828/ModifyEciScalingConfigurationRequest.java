@@ -106,6 +106,8 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 
 	private List<ImageRegistryCredential> imageRegistryCredentials;
 
+	private Boolean override;
+
 	private String resourceOwnerAccount;
 
 	private String restartPolicy;
@@ -769,6 +771,17 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".UserName" , imageRegistryCredentials.get(depth1).getUserName());
 			}
 		}	
+	}
+
+	public Boolean getOverride() {
+		return this.override;
+	}
+
+	public void setOverride(Boolean override) {
+		this.override = override;
+		if(override != null){
+			putQueryParameter("Override", override.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
