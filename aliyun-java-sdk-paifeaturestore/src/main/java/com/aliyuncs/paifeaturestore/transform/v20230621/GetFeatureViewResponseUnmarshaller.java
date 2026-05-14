@@ -81,6 +81,7 @@ public class GetFeatureViewResponseUnmarshaller {
 					InputItem inputItem = new InputItem();
 					inputItem.setName(_ctx.stringValue("GetFeatureViewResponse.Fields["+ i +"].Transform["+ j +"].Input["+ k +"].Name"));
 					inputItem.setType(_ctx.stringValue("GetFeatureViewResponse.Fields["+ i +"].Transform["+ j +"].Input["+ k +"].Type"));
+					inputItem.setModality(_ctx.stringValue("GetFeatureViewResponse.Fields["+ i +"].Transform["+ j +"].Input["+ k +"].Modality"));
 
 					input.add(inputItem);
 				}

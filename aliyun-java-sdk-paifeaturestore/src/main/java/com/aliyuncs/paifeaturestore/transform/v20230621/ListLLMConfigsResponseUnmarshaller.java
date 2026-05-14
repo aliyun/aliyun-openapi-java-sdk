@@ -47,6 +47,8 @@ public class ListLLMConfigsResponseUnmarshaller {
 			llmConfigsItem.setBatchSize(_ctx.integerValue("ListLLMConfigsResponse.LLMConfigs["+ i +"].BatchSize"));
 			llmConfigsItem.setWorkspaceId(_ctx.stringValue("ListLLMConfigsResponse.LLMConfigs["+ i +"].WorkspaceId"));
 			llmConfigsItem.setEmbeddingDimension(_ctx.integerValue("ListLLMConfigsResponse.LLMConfigs["+ i +"].EmbeddingDimension"));
+			llmConfigsItem.setModelType(_ctx.stringValue("ListLLMConfigsResponse.LLMConfigs["+ i +"].ModelType"));
+			llmConfigsItem.setEnableFusion(_ctx.booleanValue("ListLLMConfigsResponse.LLMConfigs["+ i +"].EnableFusion"));
 
 			lLMConfigs.add(llmConfigsItem);
 		}

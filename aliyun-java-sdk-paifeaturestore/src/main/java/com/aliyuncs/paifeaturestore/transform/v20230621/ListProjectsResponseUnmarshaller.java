@@ -48,6 +48,7 @@ public class ListProjectsResponseUnmarshaller {
 			projectsItem.setOwner(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].Owner"));
 			projectsItem.setGmtCreateTime(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].GmtCreateTime"));
 			projectsItem.setGmtModifiedTime(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].GmtModifiedTime"));
+			projectsItem.setWorkspaceId(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].WorkspaceId"));
 
 			projects.add(projectsItem);
 		}

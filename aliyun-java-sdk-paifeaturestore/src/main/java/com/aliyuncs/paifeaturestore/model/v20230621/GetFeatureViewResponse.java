@@ -355,6 +355,8 @@ public class GetFeatureViewResponse extends AcsResponse {
 
 				private String type;
 
+				private String modality;
+
 				public String getName() {
 					return this.name;
 				}
@@ -369,6 +371,14 @@ public class GetFeatureViewResponse extends AcsResponse {
 
 				public void setType(String type) {
 					this.type = type;
+				}
+
+				public String getModality() {
+					return this.modality;
+				}
+
+				public void setModality(String modality) {
+					this.modality = modality;
 				}
 			}
 		}

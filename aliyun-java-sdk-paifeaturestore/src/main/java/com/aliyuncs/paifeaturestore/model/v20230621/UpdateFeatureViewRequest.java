@@ -15,26 +15,37 @@
 package com.aliyuncs.paifeaturestore.model.v20230621;
 
 import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListFeatureViewOnlineFeaturesRequest extends RoaAcsRequest<ListFeatureViewOnlineFeaturesResponse> {
+public class UpdateFeatureViewRequest extends RoaAcsRequest<UpdateFeatureViewResponse> {
 	   
+
+	private String body;
 
 	private String instanceId;
 
-	private String joinIds;
-
 	private String featureViewId;
+	public UpdateFeatureViewRequest() {
+		super("PaiFeatureStore", "2023-06-21", "UpdateFeatureView");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v1/instances/[InstanceId]/featureviews/[FeatureViewId]");
+		setMethod(MethodType.PUT);
+	}
 
-	private String config;
-	public ListFeatureViewOnlineFeaturesRequest() {
-		super("PaiFeatureStore", "2023-06-21", "ListFeatureViewOnlineFeatures");
-		setUriPattern("/api/v1/instances/[InstanceId]/featureviews/[FeatureViewId]/onlinefeatures");
-		setMethod(MethodType.GET);
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
+		}
 	}
 
 	public String getInstanceId() {
@@ -45,17 +56,6 @@ public class ListFeatureViewOnlineFeaturesRequest extends RoaAcsRequest<ListFeat
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getJoinIds() {
-		return this.joinIds;
-	}
-
-	public void setJoinIds(String joinIds) {
-		this.joinIds = joinIds;
-		if(joinIds != null){
-			putQueryParameter("JoinIds", joinIds);
 		}
 	}
 
@@ -70,20 +70,9 @@ public class ListFeatureViewOnlineFeaturesRequest extends RoaAcsRequest<ListFeat
 		}
 	}
 
-	public String getConfig() {
-		return this.config;
-	}
-
-	public void setConfig(String config) {
-		this.config = config;
-		if(config != null){
-			putQueryParameter("Config", config);
-		}
-	}
-
 	@Override
-	public Class<ListFeatureViewOnlineFeaturesResponse> getResponseClass() {
-		return ListFeatureViewOnlineFeaturesResponse.class;
+	public Class<UpdateFeatureViewResponse> getResponseClass() {
+		return UpdateFeatureViewResponse.class;
 	}
 
 }

@@ -50,6 +50,10 @@ public class GetLLMConfigResponse extends AcsResponse {
 
 	private Integer embeddingDimension;
 
+	private String modelType;
+
+	private Boolean enableFusion;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -152,6 +156,22 @@ public class GetLLMConfigResponse extends AcsResponse {
 
 	public void setEmbeddingDimension(Integer embeddingDimension) {
 		this.embeddingDimension = embeddingDimension;
+	}
+
+	public String getModelType() {
+		return this.modelType;
+	}
+
+	public void setModelType(String modelType) {
+		this.modelType = modelType;
+	}
+
+	public Boolean getEnableFusion() {
+		return this.enableFusion;
+	}
+
+	public void setEnableFusion(Boolean enableFusion) {
+		this.enableFusion = enableFusion;
 	}
 
 	@Override

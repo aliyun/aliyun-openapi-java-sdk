@@ -35,6 +35,8 @@ public class GetLLMConfigResponseUnmarshaller {
 		getLLMConfigResponse.setBatchSize(_ctx.integerValue("GetLLMConfigResponse.BatchSize"));
 		getLLMConfigResponse.setWorkspaceId(_ctx.stringValue("GetLLMConfigResponse.WorkspaceId"));
 		getLLMConfigResponse.setEmbeddingDimension(_ctx.integerValue("GetLLMConfigResponse.EmbeddingDimension"));
+		getLLMConfigResponse.setModelType(_ctx.stringValue("GetLLMConfigResponse.ModelType"));
+		getLLMConfigResponse.setEnableFusion(_ctx.booleanValue("GetLLMConfigResponse.EnableFusion"));
 	 
 	 	return getLLMConfigResponse;
 	}

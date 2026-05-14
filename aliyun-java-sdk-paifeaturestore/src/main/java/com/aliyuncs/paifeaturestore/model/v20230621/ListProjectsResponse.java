@@ -89,6 +89,8 @@ public class ListProjectsResponse extends AcsResponse {
 
 		private String gmtModifiedTime;
 
+		private String workspaceId;
+
 		public String getProjectId() {
 			return this.projectId;
 		}
@@ -215,6 +217,14 @@ public class ListProjectsResponse extends AcsResponse {
 
 		public void setGmtModifiedTime(String gmtModifiedTime) {
 			this.gmtModifiedTime = gmtModifiedTime;
+		}
+
+		public String getWorkspaceId() {
+			return this.workspaceId;
+		}
+
+		public void setWorkspaceId(String workspaceId) {
+			this.workspaceId = workspaceId;
 		}
 	}
 

@@ -38,6 +38,7 @@ public class GetProjectResponseUnmarshaller {
 		getProjectResponse.setOwner(_ctx.stringValue("GetProjectResponse.Owner"));
 		getProjectResponse.setGmtCreateTime(_ctx.stringValue("GetProjectResponse.GmtCreateTime"));
 		getProjectResponse.setGmtModifiedTime(_ctx.stringValue("GetProjectResponse.GmtModifiedTime"));
+		getProjectResponse.setWorkspaceId(_ctx.stringValue("GetProjectResponse.WorkspaceId"));
 	 
 	 	return getProjectResponse;
 	}
