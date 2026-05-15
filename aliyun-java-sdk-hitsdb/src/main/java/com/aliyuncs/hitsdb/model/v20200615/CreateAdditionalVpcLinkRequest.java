@@ -26,9 +26,13 @@ import com.aliyuncs.hitsdb.Endpoint;
 public class CreateAdditionalVpcLinkRequest extends RpcAcsRequest<CreateAdditionalVpcLinkResponse> {
 	   
 
+	private String additionalAliBid;
+
 	private String additionalVpcId;
 
 	private String securityToken;
+
+	private String additionalAliUid;
 
 	private String additionalVswitchId;
 
@@ -41,6 +45,17 @@ public class CreateAdditionalVpcLinkRequest extends RpcAcsRequest<CreateAddition
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAdditionalAliBid() {
+		return this.additionalAliBid;
+	}
+
+	public void setAdditionalAliBid(String additionalAliBid) {
+		this.additionalAliBid = additionalAliBid;
+		if(additionalAliBid != null){
+			putQueryParameter("AdditionalAliBid", additionalAliBid);
+		}
 	}
 
 	public String getAdditionalVpcId() {
@@ -62,6 +77,17 @@ public class CreateAdditionalVpcLinkRequest extends RpcAcsRequest<CreateAddition
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getAdditionalAliUid() {
+		return this.additionalAliUid;
+	}
+
+	public void setAdditionalAliUid(String additionalAliUid) {
+		this.additionalAliUid = additionalAliUid;
+		if(additionalAliUid != null){
+			putQueryParameter("AdditionalAliUid", additionalAliUid);
 		}
 	}
 
