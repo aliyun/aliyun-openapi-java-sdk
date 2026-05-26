@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.onsmqtt.model.v20200420.ListGroupIdResponse;
 import com.aliyuncs.onsmqtt.model.v20200420.ListGroupIdResponse.MqttGroupIdDo;
+import com.aliyuncs.onsmqtt.model.v20200420.ListGroupIdResponse.MqttGroupIdDo.TagResourceDTO;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,6 +37,16 @@ public class ListGroupIdResponseUnmarshaller {
 			mqttGroupIdDo.setIndependentNaming(_ctx.booleanValue("ListGroupIdResponse.Data["+ i +"].IndependentNaming"));
 			mqttGroupIdDo.setGroupId(_ctx.stringValue("ListGroupIdResponse.Data["+ i +"].GroupId"));
 			mqttGroupIdDo.setCreateTime(_ctx.longValue("ListGroupIdResponse.Data["+ i +"].CreateTime"));
+
+			List<TagResourceDTO> tags = new ArrayList<TagResourceDTO>();
+			for (int j = 0; j < _ctx.lengthValue("ListGroupIdResponse.Data["+ i +"].Tags.Length"); j++) {
+				TagResourceDTO tagResourceDTO = new TagResourceDTO();
+				tagResourceDTO.setTagKey(_ctx.stringValue("ListGroupIdResponse.Data["+ i +"].Tags["+ j +"].TagKey"));
+				tagResourceDTO.setTagValue(_ctx.stringValue("ListGroupIdResponse.Data["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tagResourceDTO);
+			}
+			mqttGroupIdDo.setTags(tags);
 
 			data.add(mqttGroupIdDo);
 		}

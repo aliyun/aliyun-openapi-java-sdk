@@ -15,6 +15,7 @@
 package com.aliyuncs.onsmqtt.model.v20200420;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.onsmqtt.Endpoint;
 
@@ -26,6 +27,8 @@ public class ListGroupIdRequest extends RpcAcsRequest<ListGroupIdResponse> {
 	   
 
 	private String instanceId;
+
+	private List<Tag> tags;
 	public ListGroupIdRequest() {
 		super("OnsMqtt", "2020-04-20", "ListGroupId", "onsmqtt");
 		setMethod(MethodType.POST);
@@ -43,6 +46,43 @@ public class ListGroupIdRequest extends RpcAcsRequest<ListGroupIdResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

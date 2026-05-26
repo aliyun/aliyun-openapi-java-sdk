@@ -57,6 +57,8 @@ public class ListGroupIdResponse extends AcsResponse {
 
 		private Long createTime;
 
+		private List<TagResourceDTO> tags;
+
 		public Long getUpdateTime() {
 			return this.updateTime;
 		}
@@ -95,6 +97,37 @@ public class ListGroupIdResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public List<TagResourceDTO> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagResourceDTO> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagResourceDTO {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 
