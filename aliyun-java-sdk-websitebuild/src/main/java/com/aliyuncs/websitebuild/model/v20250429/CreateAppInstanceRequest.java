@@ -30,6 +30,10 @@ public class CreateAppInstanceRequest extends RpcAcsRequest<CreateAppInstanceRes
 
 	private String clientToken;
 
+	private String description;
+
+	private String createAction;
+
 	private Integer duration;
 
 	private String resourceGroupId;
@@ -40,12 +44,16 @@ public class CreateAppInstanceRequest extends RpcAcsRequest<CreateAppInstanceRes
 
 	private Integer quantity;
 
+	private String version;
+
 	@SerializedName("tags")
 	private List<Tags> tags;
 
 	private String extend;
 
 	private Boolean autoRenew;
+
+	private String name;
 
 	private String applicationType;
 
@@ -66,6 +74,28 @@ public class CreateAppInstanceRequest extends RpcAcsRequest<CreateAppInstanceRes
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getCreateAction() {
+		return this.createAction;
+	}
+
+	public void setCreateAction(String createAction) {
+		this.createAction = createAction;
+		if(createAction != null){
+			putQueryParameter("CreateAction", createAction);
 		}
 	}
 
@@ -124,6 +154,17 @@ public class CreateAppInstanceRequest extends RpcAcsRequest<CreateAppInstanceRes
 		}
 	}
 
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+		if(version != null){
+			putQueryParameter("Version", version);
+		}
+	}
+
 	public List<Tags> getTags() {
 		return this.tags;
 	}
@@ -154,6 +195,17 @@ public class CreateAppInstanceRequest extends RpcAcsRequest<CreateAppInstanceRes
 		this.autoRenew = autoRenew;
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

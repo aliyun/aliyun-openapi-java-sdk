@@ -21,10 +21,12 @@ import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.AiStaffListItem;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.AppOperationAddress;
-import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.AppOperationAddress.ActionsItem3;
+import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.AppOperationAddress.ActionsItem4;
+import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.AppOperationAddress.DashboardActionsItem5;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.AppServiceListItem;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.AppServiceListItem.OperationAddress;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.AppServiceListItem.OperationAddress.ActionsItem;
+import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.AppServiceListItem.OperationAddress.DashboardActionsItem;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.AppServiceListItem.Profile1;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.PartnerDetail;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstancesResponse.DataItem.PartnerDetail.BindData;
@@ -54,6 +56,7 @@ public class ListAppInstancesResponseUnmarshaller {
 		listAppInstancesResponse.setAppName(_ctx.stringValue("ListAppInstancesResponse.AppName"));
 		listAppInstancesResponse.setNextToken(_ctx.stringValue("ListAppInstancesResponse.NextToken"));
 		listAppInstancesResponse.setMaxResults(_ctx.integerValue("ListAppInstancesResponse.MaxResults"));
+		listAppInstancesResponse.setStartPosition(_ctx.stringValue("ListAppInstancesResponse.StartPosition"));
 
 		List<String> errorArgs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppInstancesResponse.ErrorArgs.Length"); i++) {
@@ -108,21 +111,42 @@ public class ListAppInstancesResponseUnmarshaller {
 			profile.setOrdTime(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].Profile.OrdTime"));
 			profile.setSource(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].Profile.Source"));
 			profile.setInstanceId(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].Profile.InstanceId"));
+			profile.setPreviewUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].Profile.PreviewUrl"));
 			dataItem.setProfile(profile);
 
 			AppOperationAddress appOperationAddress = new AppOperationAddress();
+			appOperationAddress.setAppPublishUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.AppPublishUrl"));
+			appOperationAddress.setRenewBuyUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.RenewBuyUrl"));
+			appOperationAddress.setUpgradeBuyUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.UpgradeBuyUrl"));
+			appOperationAddress.setServerDeliveryUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.ServerDeliveryUrl"));
+			appOperationAddress.setInstanceLoginUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.InstanceLoginUrl"));
+			appOperationAddress.setDesignUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.DesignUrl"));
+			appOperationAddress.setAiDesignUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.AiDesignUrl"));
+			appOperationAddress.setAiCustomerConfigUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.AiCustomerConfigUrl"));
 
-			List<ActionsItem3> actions2 = new ArrayList<ActionsItem3>();
+			List<ActionsItem4> actions2 = new ArrayList<ActionsItem4>();
 			for (int j = 0; j < _ctx.lengthValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.Actions.Length"); j++) {
-				ActionsItem3 actionsItem3 = new ActionsItem3();
-				actionsItem3.setActionKey(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.Actions["+ j +"].ActionKey"));
-				actionsItem3.setActionText(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.Actions["+ j +"].ActionText"));
-				actionsItem3.setHref(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.Actions["+ j +"].Href"));
-				actionsItem3.setEnable(_ctx.booleanValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.Actions["+ j +"].Enable"));
+				ActionsItem4 actionsItem4 = new ActionsItem4();
+				actionsItem4.setActionKey(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.Actions["+ j +"].ActionKey"));
+				actionsItem4.setActionText(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.Actions["+ j +"].ActionText"));
+				actionsItem4.setHref(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.Actions["+ j +"].Href"));
+				actionsItem4.setEnable(_ctx.booleanValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.Actions["+ j +"].Enable"));
 
-				actions2.add(actionsItem3);
+				actions2.add(actionsItem4);
 			}
 			appOperationAddress.setActions2(actions2);
+
+			List<DashboardActionsItem5> dashboardActions3 = new ArrayList<DashboardActionsItem5>();
+			for (int j = 0; j < _ctx.lengthValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.DashboardActions.Length"); j++) {
+				DashboardActionsItem5 dashboardActionsItem5 = new DashboardActionsItem5();
+				dashboardActionsItem5.setActionKey(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.DashboardActions["+ j +"].ActionKey"));
+				dashboardActionsItem5.setActionText(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.DashboardActions["+ j +"].ActionText"));
+				dashboardActionsItem5.setHref(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.DashboardActions["+ j +"].Href"));
+				dashboardActionsItem5.setEnable(_ctx.booleanValue("ListAppInstancesResponse.Data["+ i +"].AppOperationAddress.DashboardActions["+ j +"].Enable"));
+
+				dashboardActions3.add(dashboardActionsItem5);
+			}
+			appOperationAddress.setDashboardActions3(dashboardActions3);
 			dataItem.setAppOperationAddress(appOperationAddress);
 
 			PartnerDetail partnerDetail = new PartnerDetail();
@@ -182,6 +206,14 @@ public class ListAppInstancesResponseUnmarshaller {
 				appServiceListItem.setProfile1(profile1);
 
 				OperationAddress operationAddress = new OperationAddress();
+				operationAddress.setAppPublishUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.AppPublishUrl"));
+				operationAddress.setRenewBuyUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.RenewBuyUrl"));
+				operationAddress.setUpgradeBuyUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.UpgradeBuyUrl"));
+				operationAddress.setServerDeliveryUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.ServerDeliveryUrl"));
+				operationAddress.setInstanceLoginUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.InstanceLoginUrl"));
+				operationAddress.setDesignUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.DesignUrl"));
+				operationAddress.setAiDesignUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.AiDesignUrl"));
+				operationAddress.setAiCustomerConfigUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.AiCustomerConfigUrl"));
 
 				List<ActionsItem> actions = new ArrayList<ActionsItem>();
 				for (int k = 0; k < _ctx.lengthValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.Actions.Length"); k++) {
@@ -194,6 +226,18 @@ public class ListAppInstancesResponseUnmarshaller {
 					actions.add(actionsItem);
 				}
 				operationAddress.setActions(actions);
+
+				List<DashboardActionsItem> dashboardActions = new ArrayList<DashboardActionsItem>();
+				for (int k = 0; k < _ctx.lengthValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.DashboardActions.Length"); k++) {
+					DashboardActionsItem dashboardActionsItem = new DashboardActionsItem();
+					dashboardActionsItem.setActionKey(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.DashboardActions["+ k +"].ActionKey"));
+					dashboardActionsItem.setActionText(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.DashboardActions["+ k +"].ActionText"));
+					dashboardActionsItem.setHref(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.DashboardActions["+ k +"].Href"));
+					dashboardActionsItem.setEnable(_ctx.booleanValue("ListAppInstancesResponse.Data["+ i +"].AppServiceList["+ j +"].OperationAddress.DashboardActions["+ k +"].Enable"));
+
+					dashboardActions.add(dashboardActionsItem);
+				}
+				operationAddress.setDashboardActions(dashboardActions);
 				appServiceListItem.setOperationAddress(operationAddress);
 
 				appServiceList.add(appServiceListItem);

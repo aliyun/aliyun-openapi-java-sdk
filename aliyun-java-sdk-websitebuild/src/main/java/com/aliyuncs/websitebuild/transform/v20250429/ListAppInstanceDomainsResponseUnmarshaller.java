@@ -22,6 +22,7 @@ import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.DataItem;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.DataItem.Certificate;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.DataItem.Ownership;
+import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.DataItem.Qualification;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.DataItem.Resolution;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.DataItem.Resolution.DnsRecord1;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.DataItem.Verification;
@@ -29,10 +30,11 @@ import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.Next;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.Next.Certificate4;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.Next.Ownership5;
+import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.Next.Qualification6;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.Next.Resolution3;
-import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.Next.Resolution3.DnsRecord7;
+import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.Next.Resolution3.DnsRecord8;
 import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.Next.Verification2;
-import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.Next.Verification2.DnsRecord6;
+import com.aliyuncs.websitebuild.model.v20250429.ListAppInstanceDomainsResponse.Module.Next.Verification2.DnsRecord7;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -76,22 +78,22 @@ public class ListAppInstanceDomainsResponseUnmarshaller {
 		verification2.setVerificationStatus(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Verification.VerificationStatus"));
 		verification2.setErrorMsg(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Verification.ErrorMsg"));
 
-		DnsRecord6 dnsRecord6 = new DnsRecord6();
-		dnsRecord6.setRecordType(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Verification.DnsRecord.RecordType"));
-		dnsRecord6.setHost(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Verification.DnsRecord.Host"));
-		dnsRecord6.setValue(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Verification.DnsRecord.Value"));
-		verification2.setDnsRecord6(dnsRecord6);
+		DnsRecord7 dnsRecord7 = new DnsRecord7();
+		dnsRecord7.setRecordType(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Verification.DnsRecord.RecordType"));
+		dnsRecord7.setHost(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Verification.DnsRecord.Host"));
+		dnsRecord7.setValue(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Verification.DnsRecord.Value"));
+		verification2.setDnsRecord7(dnsRecord7);
 		next.setVerification2(verification2);
 
 		Resolution3 resolution3 = new Resolution3();
 		resolution3.setResolutionStatus(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Resolution.ResolutionStatus"));
 		resolution3.setErrorMsg(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Resolution.ErrorMsg"));
 
-		DnsRecord7 dnsRecord7 = new DnsRecord7();
-		dnsRecord7.setRecordType(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Resolution.DnsRecord.RecordType"));
-		dnsRecord7.setHost(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Resolution.DnsRecord.Host"));
-		dnsRecord7.setValue(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Resolution.DnsRecord.Value"));
-		resolution3.setDnsRecord7(dnsRecord7);
+		DnsRecord8 dnsRecord8 = new DnsRecord8();
+		dnsRecord8.setRecordType(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Resolution.DnsRecord.RecordType"));
+		dnsRecord8.setHost(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Resolution.DnsRecord.Host"));
+		dnsRecord8.setValue(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Resolution.DnsRecord.Value"));
+		resolution3.setDnsRecord8(dnsRecord8);
 		next.setResolution3(resolution3);
 
 		Certificate4 certificate4 = new Certificate4();
@@ -105,6 +107,12 @@ public class ListAppInstanceDomainsResponseUnmarshaller {
 		ownership5.setAccount(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Ownership.Account"));
 		ownership5.setProvider(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Ownership.Provider"));
 		next.setOwnership5(ownership5);
+
+		Qualification6 qualification6 = new Qualification6();
+		qualification6.setIcpSiteRecordNumber(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Qualification.IcpSiteRecordNumber"));
+		qualification6.setIcpRecordNumber(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Qualification.IcpRecordNumber"));
+		qualification6.setPoliceRecordNumber(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Next.Qualification.PoliceRecordNumber"));
+		next.setQualification6(qualification6);
 		module.setNext(next);
 
 		List<DataItem> data = new ArrayList<DataItem>();
@@ -149,6 +157,12 @@ public class ListAppInstanceDomainsResponseUnmarshaller {
 			ownership.setProvider(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Data["+ i +"].Ownership.Provider"));
 			ownership.setRootDomain(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Data["+ i +"].Ownership.RootDomain"));
 			dataItem.setOwnership(ownership);
+
+			Qualification qualification = new Qualification();
+			qualification.setIcpSiteRecordNumber(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Data["+ i +"].Qualification.IcpSiteRecordNumber"));
+			qualification.setIcpRecordNumber(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Data["+ i +"].Qualification.IcpRecordNumber"));
+			qualification.setPoliceRecordNumber(_ctx.stringValue("ListAppInstanceDomainsResponse.Module.Data["+ i +"].Qualification.PoliceRecordNumber"));
+			dataItem.setQualification(qualification);
 
 			data.add(dataItem);
 		}

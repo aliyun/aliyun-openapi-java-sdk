@@ -1,0 +1,64 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.websitebuild.model.v20250429;
+
+import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class RollbackAppCodeSnapshotRequest extends RpcAcsRequest<RollbackAppCodeSnapshotResponse> {
+	   
+
+	private Integer targetLogicalNumber;
+
+	private String siteId;
+	public RollbackAppCodeSnapshotRequest() {
+		super("WebsiteBuild", "2025-04-29", "RollbackAppCodeSnapshot");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+	}
+
+	public Integer getTargetLogicalNumber() {
+		return this.targetLogicalNumber;
+	}
+
+	public void setTargetLogicalNumber(Integer targetLogicalNumber) {
+		this.targetLogicalNumber = targetLogicalNumber;
+		if(targetLogicalNumber != null){
+			putQueryParameter("TargetLogicalNumber", targetLogicalNumber.toString());
+		}
+	}
+
+	public String getSiteId() {
+		return this.siteId;
+	}
+
+	public void setSiteId(String siteId) {
+		this.siteId = siteId;
+		if(siteId != null){
+			putQueryParameter("SiteId", siteId);
+		}
+	}
+
+	@Override
+	public Class<RollbackAppCodeSnapshotResponse> getResponseClass() {
+		return RollbackAppCodeSnapshotResponse.class;
+	}
+
+}

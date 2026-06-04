@@ -737,7 +737,89 @@ public class GetAppInstanceResponse extends AcsResponse {
 
 			public static class OperationAddress {
 
+				private String appPublishUrl;
+
+				private String renewBuyUrl;
+
+				private String upgradeBuyUrl;
+
+				private String serverDeliveryUrl;
+
+				private String instanceLoginUrl;
+
+				private String designUrl;
+
+				private String aiDesignUrl;
+
+				private String aiCustomerConfigUrl;
+
 				private List<ActionsItem> actions;
+
+				private List<DashboardActionsItem> dashboardActions;
+
+				public String getAppPublishUrl() {
+					return this.appPublishUrl;
+				}
+
+				public void setAppPublishUrl(String appPublishUrl) {
+					this.appPublishUrl = appPublishUrl;
+				}
+
+				public String getRenewBuyUrl() {
+					return this.renewBuyUrl;
+				}
+
+				public void setRenewBuyUrl(String renewBuyUrl) {
+					this.renewBuyUrl = renewBuyUrl;
+				}
+
+				public String getUpgradeBuyUrl() {
+					return this.upgradeBuyUrl;
+				}
+
+				public void setUpgradeBuyUrl(String upgradeBuyUrl) {
+					this.upgradeBuyUrl = upgradeBuyUrl;
+				}
+
+				public String getServerDeliveryUrl() {
+					return this.serverDeliveryUrl;
+				}
+
+				public void setServerDeliveryUrl(String serverDeliveryUrl) {
+					this.serverDeliveryUrl = serverDeliveryUrl;
+				}
+
+				public String getInstanceLoginUrl() {
+					return this.instanceLoginUrl;
+				}
+
+				public void setInstanceLoginUrl(String instanceLoginUrl) {
+					this.instanceLoginUrl = instanceLoginUrl;
+				}
+
+				public String getDesignUrl() {
+					return this.designUrl;
+				}
+
+				public void setDesignUrl(String designUrl) {
+					this.designUrl = designUrl;
+				}
+
+				public String getAiDesignUrl() {
+					return this.aiDesignUrl;
+				}
+
+				public void setAiDesignUrl(String aiDesignUrl) {
+					this.aiDesignUrl = aiDesignUrl;
+				}
+
+				public String getAiCustomerConfigUrl() {
+					return this.aiCustomerConfigUrl;
+				}
+
+				public void setAiCustomerConfigUrl(String aiCustomerConfigUrl) {
+					this.aiCustomerConfigUrl = aiCustomerConfigUrl;
+				}
 
 				public List<ActionsItem> getActions() {
 					return this.actions;
@@ -747,7 +829,58 @@ public class GetAppInstanceResponse extends AcsResponse {
 					this.actions = actions;
 				}
 
+				public List<DashboardActionsItem> getDashboardActions() {
+					return this.dashboardActions;
+				}
+
+				public void setDashboardActions(List<DashboardActionsItem> dashboardActions) {
+					this.dashboardActions = dashboardActions;
+				}
+
 				public static class ActionsItem {
+
+					private String actionKey;
+
+					private String actionText;
+
+					private String href;
+
+					private Boolean enable;
+
+					public String getActionKey() {
+						return this.actionKey;
+					}
+
+					public void setActionKey(String actionKey) {
+						this.actionKey = actionKey;
+					}
+
+					public String getActionText() {
+						return this.actionText;
+					}
+
+					public void setActionText(String actionText) {
+						this.actionText = actionText;
+					}
+
+					public String getHref() {
+						return this.href;
+					}
+
+					public void setHref(String href) {
+						this.href = href;
+					}
+
+					public Boolean getEnable() {
+						return this.enable;
+					}
+
+					public void setEnable(Boolean enable) {
+						this.enable = enable;
+					}
+				}
+
+				public static class DashboardActionsItem {
 
 					private String actionKey;
 
@@ -848,6 +981,8 @@ public class GetAppInstanceResponse extends AcsResponse {
 			private String source;
 
 			private String instanceId;
+
+			private String previewUrl;
 
 			public String getCommodityCode() {
 				return this.commodityCode;
@@ -976,21 +1111,162 @@ public class GetAppInstanceResponse extends AcsResponse {
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
 			}
+
+			public String getPreviewUrl() {
+				return this.previewUrl;
+			}
+
+			public void setPreviewUrl(String previewUrl) {
+				this.previewUrl = previewUrl;
+			}
 		}
 
 		public static class AppOperationAddress {
 
-			private List<ActionsItem3> actions2;
+			private String appPublishUrl;
 
-			public List<ActionsItem3> getActions2() {
+			private String renewBuyUrl;
+
+			private String upgradeBuyUrl;
+
+			private String serverDeliveryUrl;
+
+			private String instanceLoginUrl;
+
+			private String designUrl;
+
+			private String aiDesignUrl;
+
+			private String aiCustomerConfigUrl;
+
+			private List<ActionsItem4> actions2;
+
+			private List<DashboardActionsItem5> dashboardActions3;
+
+			public String getAppPublishUrl() {
+				return this.appPublishUrl;
+			}
+
+			public void setAppPublishUrl(String appPublishUrl) {
+				this.appPublishUrl = appPublishUrl;
+			}
+
+			public String getRenewBuyUrl() {
+				return this.renewBuyUrl;
+			}
+
+			public void setRenewBuyUrl(String renewBuyUrl) {
+				this.renewBuyUrl = renewBuyUrl;
+			}
+
+			public String getUpgradeBuyUrl() {
+				return this.upgradeBuyUrl;
+			}
+
+			public void setUpgradeBuyUrl(String upgradeBuyUrl) {
+				this.upgradeBuyUrl = upgradeBuyUrl;
+			}
+
+			public String getServerDeliveryUrl() {
+				return this.serverDeliveryUrl;
+			}
+
+			public void setServerDeliveryUrl(String serverDeliveryUrl) {
+				this.serverDeliveryUrl = serverDeliveryUrl;
+			}
+
+			public String getInstanceLoginUrl() {
+				return this.instanceLoginUrl;
+			}
+
+			public void setInstanceLoginUrl(String instanceLoginUrl) {
+				this.instanceLoginUrl = instanceLoginUrl;
+			}
+
+			public String getDesignUrl() {
+				return this.designUrl;
+			}
+
+			public void setDesignUrl(String designUrl) {
+				this.designUrl = designUrl;
+			}
+
+			public String getAiDesignUrl() {
+				return this.aiDesignUrl;
+			}
+
+			public void setAiDesignUrl(String aiDesignUrl) {
+				this.aiDesignUrl = aiDesignUrl;
+			}
+
+			public String getAiCustomerConfigUrl() {
+				return this.aiCustomerConfigUrl;
+			}
+
+			public void setAiCustomerConfigUrl(String aiCustomerConfigUrl) {
+				this.aiCustomerConfigUrl = aiCustomerConfigUrl;
+			}
+
+			public List<ActionsItem4> getActions2() {
 				return this.actions2;
 			}
 
-			public void setActions2(List<ActionsItem3> actions2) {
+			public void setActions2(List<ActionsItem4> actions2) {
 				this.actions2 = actions2;
 			}
 
-			public static class ActionsItem3 {
+			public List<DashboardActionsItem5> getDashboardActions3() {
+				return this.dashboardActions3;
+			}
+
+			public void setDashboardActions3(List<DashboardActionsItem5> dashboardActions3) {
+				this.dashboardActions3 = dashboardActions3;
+			}
+
+			public static class ActionsItem4 {
+
+				private String actionKey;
+
+				private String actionText;
+
+				private String href;
+
+				private Boolean enable;
+
+				public String getActionKey() {
+					return this.actionKey;
+				}
+
+				public void setActionKey(String actionKey) {
+					this.actionKey = actionKey;
+				}
+
+				public String getActionText() {
+					return this.actionText;
+				}
+
+				public void setActionText(String actionText) {
+					this.actionText = actionText;
+				}
+
+				public String getHref() {
+					return this.href;
+				}
+
+				public void setHref(String href) {
+					this.href = href;
+				}
+
+				public Boolean getEnable() {
+					return this.enable;
+				}
+
+				public void setEnable(Boolean enable) {
+					this.enable = enable;
+				}
+			}
+
+			public static class DashboardActionsItem5 {
 
 				private String actionKey;
 

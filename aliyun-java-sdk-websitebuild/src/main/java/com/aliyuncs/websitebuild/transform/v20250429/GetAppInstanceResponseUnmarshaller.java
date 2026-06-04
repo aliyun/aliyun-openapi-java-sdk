@@ -21,10 +21,12 @@ import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse;
 import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module;
 import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.AiStaffListItem;
 import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.AppOperationAddress;
-import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.AppOperationAddress.ActionsItem3;
+import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.AppOperationAddress.ActionsItem4;
+import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.AppOperationAddress.DashboardActionsItem5;
 import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.AppServiceListItem;
 import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.AppServiceListItem.OperationAddress;
 import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.AppServiceListItem.OperationAddress.ActionsItem;
+import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.AppServiceListItem.OperationAddress.DashboardActionsItem;
 import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.AppServiceListItem.Profile1;
 import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.PartnerDetail;
 import com.aliyuncs.websitebuild.model.v20250429.GetAppInstanceResponse.Module.PartnerDetail.BindData;
@@ -98,21 +100,42 @@ public class GetAppInstanceResponseUnmarshaller {
 		profile.setOrdTime(_ctx.stringValue("GetAppInstanceResponse.Module.Profile.OrdTime"));
 		profile.setSource(_ctx.stringValue("GetAppInstanceResponse.Module.Profile.Source"));
 		profile.setInstanceId(_ctx.stringValue("GetAppInstanceResponse.Module.Profile.InstanceId"));
+		profile.setPreviewUrl(_ctx.stringValue("GetAppInstanceResponse.Module.Profile.PreviewUrl"));
 		module.setProfile(profile);
 
 		AppOperationAddress appOperationAddress = new AppOperationAddress();
+		appOperationAddress.setAppPublishUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.AppPublishUrl"));
+		appOperationAddress.setRenewBuyUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.RenewBuyUrl"));
+		appOperationAddress.setUpgradeBuyUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.UpgradeBuyUrl"));
+		appOperationAddress.setServerDeliveryUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.ServerDeliveryUrl"));
+		appOperationAddress.setInstanceLoginUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.InstanceLoginUrl"));
+		appOperationAddress.setDesignUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.DesignUrl"));
+		appOperationAddress.setAiDesignUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.AiDesignUrl"));
+		appOperationAddress.setAiCustomerConfigUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.AiCustomerConfigUrl"));
 
-		List<ActionsItem3> actions2 = new ArrayList<ActionsItem3>();
+		List<ActionsItem4> actions2 = new ArrayList<ActionsItem4>();
 		for (int i = 0; i < _ctx.lengthValue("GetAppInstanceResponse.Module.AppOperationAddress.Actions.Length"); i++) {
-			ActionsItem3 actionsItem3 = new ActionsItem3();
-			actionsItem3.setActionKey(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.Actions["+ i +"].ActionKey"));
-			actionsItem3.setActionText(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.Actions["+ i +"].ActionText"));
-			actionsItem3.setHref(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.Actions["+ i +"].Href"));
-			actionsItem3.setEnable(_ctx.booleanValue("GetAppInstanceResponse.Module.AppOperationAddress.Actions["+ i +"].Enable"));
+			ActionsItem4 actionsItem4 = new ActionsItem4();
+			actionsItem4.setActionKey(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.Actions["+ i +"].ActionKey"));
+			actionsItem4.setActionText(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.Actions["+ i +"].ActionText"));
+			actionsItem4.setHref(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.Actions["+ i +"].Href"));
+			actionsItem4.setEnable(_ctx.booleanValue("GetAppInstanceResponse.Module.AppOperationAddress.Actions["+ i +"].Enable"));
 
-			actions2.add(actionsItem3);
+			actions2.add(actionsItem4);
 		}
 		appOperationAddress.setActions2(actions2);
+
+		List<DashboardActionsItem5> dashboardActions3 = new ArrayList<DashboardActionsItem5>();
+		for (int i = 0; i < _ctx.lengthValue("GetAppInstanceResponse.Module.AppOperationAddress.DashboardActions.Length"); i++) {
+			DashboardActionsItem5 dashboardActionsItem5 = new DashboardActionsItem5();
+			dashboardActionsItem5.setActionKey(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.DashboardActions["+ i +"].ActionKey"));
+			dashboardActionsItem5.setActionText(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.DashboardActions["+ i +"].ActionText"));
+			dashboardActionsItem5.setHref(_ctx.stringValue("GetAppInstanceResponse.Module.AppOperationAddress.DashboardActions["+ i +"].Href"));
+			dashboardActionsItem5.setEnable(_ctx.booleanValue("GetAppInstanceResponse.Module.AppOperationAddress.DashboardActions["+ i +"].Enable"));
+
+			dashboardActions3.add(dashboardActionsItem5);
+		}
+		appOperationAddress.setDashboardActions3(dashboardActions3);
 		module.setAppOperationAddress(appOperationAddress);
 
 		PartnerDetail partnerDetail = new PartnerDetail();
@@ -172,6 +195,14 @@ public class GetAppInstanceResponseUnmarshaller {
 			appServiceListItem.setProfile1(profile1);
 
 			OperationAddress operationAddress = new OperationAddress();
+			operationAddress.setAppPublishUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.AppPublishUrl"));
+			operationAddress.setRenewBuyUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.RenewBuyUrl"));
+			operationAddress.setUpgradeBuyUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.UpgradeBuyUrl"));
+			operationAddress.setServerDeliveryUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.ServerDeliveryUrl"));
+			operationAddress.setInstanceLoginUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.InstanceLoginUrl"));
+			operationAddress.setDesignUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.DesignUrl"));
+			operationAddress.setAiDesignUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.AiDesignUrl"));
+			operationAddress.setAiCustomerConfigUrl(_ctx.stringValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.AiCustomerConfigUrl"));
 
 			List<ActionsItem> actions = new ArrayList<ActionsItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.Actions.Length"); j++) {
@@ -184,6 +215,18 @@ public class GetAppInstanceResponseUnmarshaller {
 				actions.add(actionsItem);
 			}
 			operationAddress.setActions(actions);
+
+			List<DashboardActionsItem> dashboardActions = new ArrayList<DashboardActionsItem>();
+			for (int j = 0; j < _ctx.lengthValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.DashboardActions.Length"); j++) {
+				DashboardActionsItem dashboardActionsItem = new DashboardActionsItem();
+				dashboardActionsItem.setActionKey(_ctx.stringValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.DashboardActions["+ j +"].ActionKey"));
+				dashboardActionsItem.setActionText(_ctx.stringValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.DashboardActions["+ j +"].ActionText"));
+				dashboardActionsItem.setHref(_ctx.stringValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.DashboardActions["+ j +"].Href"));
+				dashboardActionsItem.setEnable(_ctx.booleanValue("GetAppInstanceResponse.Module.AppServiceList["+ i +"].OperationAddress.DashboardActions["+ j +"].Enable"));
+
+				dashboardActions.add(dashboardActionsItem);
+			}
+			operationAddress.setDashboardActions(dashboardActions);
 			appServiceListItem.setOperationAddress(operationAddress);
 
 			appServiceList.add(appServiceListItem);

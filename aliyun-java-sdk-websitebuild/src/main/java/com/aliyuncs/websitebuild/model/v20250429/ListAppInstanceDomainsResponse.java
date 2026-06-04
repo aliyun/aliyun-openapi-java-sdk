@@ -263,6 +263,8 @@ public class ListAppInstanceDomainsResponse extends AcsResponse {
 
 			private Ownership ownership;
 
+			private Qualification qualification;
+
 			public String getDomainName() {
 				return this.domainName;
 			}
@@ -317,6 +319,14 @@ public class ListAppInstanceDomainsResponse extends AcsResponse {
 
 			public void setOwnership(Ownership ownership) {
 				this.ownership = ownership;
+			}
+
+			public Qualification getQualification() {
+				return this.qualification;
+			}
+
+			public void setQualification(Qualification qualification) {
+				this.qualification = qualification;
 			}
 
 			public static class Verification {
@@ -536,6 +546,39 @@ public class ListAppInstanceDomainsResponse extends AcsResponse {
 					this.rootDomain = rootDomain;
 				}
 			}
+
+			public static class Qualification {
+
+				private String icpSiteRecordNumber;
+
+				private String icpRecordNumber;
+
+				private String policeRecordNumber;
+
+				public String getIcpSiteRecordNumber() {
+					return this.icpSiteRecordNumber;
+				}
+
+				public void setIcpSiteRecordNumber(String icpSiteRecordNumber) {
+					this.icpSiteRecordNumber = icpSiteRecordNumber;
+				}
+
+				public String getIcpRecordNumber() {
+					return this.icpRecordNumber;
+				}
+
+				public void setIcpRecordNumber(String icpRecordNumber) {
+					this.icpRecordNumber = icpRecordNumber;
+				}
+
+				public String getPoliceRecordNumber() {
+					return this.policeRecordNumber;
+				}
+
+				public void setPoliceRecordNumber(String policeRecordNumber) {
+					this.policeRecordNumber = policeRecordNumber;
+				}
+			}
 		}
 
 		public static class Next {
@@ -553,6 +596,8 @@ public class ListAppInstanceDomainsResponse extends AcsResponse {
 			private Certificate4 certificate4;
 
 			private Ownership5 ownership5;
+
+			private Qualification6 qualification6;
 
 			public String getDomainName() {
 				return this.domainName;
@@ -610,13 +655,21 @@ public class ListAppInstanceDomainsResponse extends AcsResponse {
 				this.ownership5 = ownership5;
 			}
 
+			public Qualification6 getQualification6() {
+				return this.qualification6;
+			}
+
+			public void setQualification6(Qualification6 qualification6) {
+				this.qualification6 = qualification6;
+			}
+
 			public static class Verification2 {
 
 				private String verificationStatus;
 
 				private String errorMsg;
 
-				private DnsRecord6 dnsRecord6;
+				private DnsRecord7 dnsRecord7;
 
 				public String getVerificationStatus() {
 					return this.verificationStatus;
@@ -634,15 +687,15 @@ public class ListAppInstanceDomainsResponse extends AcsResponse {
 					this.errorMsg = errorMsg;
 				}
 
-				public DnsRecord6 getDnsRecord6() {
-					return this.dnsRecord6;
+				public DnsRecord7 getDnsRecord7() {
+					return this.dnsRecord7;
 				}
 
-				public void setDnsRecord6(DnsRecord6 dnsRecord6) {
-					this.dnsRecord6 = dnsRecord6;
+				public void setDnsRecord7(DnsRecord7 dnsRecord7) {
+					this.dnsRecord7 = dnsRecord7;
 				}
 
-				public static class DnsRecord6 {
+				public static class DnsRecord7 {
 
 					private String recordType;
 
@@ -682,7 +735,7 @@ public class ListAppInstanceDomainsResponse extends AcsResponse {
 
 				private String errorMsg;
 
-				private DnsRecord7 dnsRecord7;
+				private DnsRecord8 dnsRecord8;
 
 				public String getResolutionStatus() {
 					return this.resolutionStatus;
@@ -700,15 +753,15 @@ public class ListAppInstanceDomainsResponse extends AcsResponse {
 					this.errorMsg = errorMsg;
 				}
 
-				public DnsRecord7 getDnsRecord7() {
-					return this.dnsRecord7;
+				public DnsRecord8 getDnsRecord8() {
+					return this.dnsRecord8;
 				}
 
-				public void setDnsRecord7(DnsRecord7 dnsRecord7) {
-					this.dnsRecord7 = dnsRecord7;
+				public void setDnsRecord8(DnsRecord8 dnsRecord8) {
+					this.dnsRecord8 = dnsRecord8;
 				}
 
-				public static class DnsRecord7 {
+				public static class DnsRecord8 {
 
 					private String recordType;
 
@@ -805,6 +858,39 @@ public class ListAppInstanceDomainsResponse extends AcsResponse {
 
 				public void setProvider(String provider) {
 					this.provider = provider;
+				}
+			}
+
+			public static class Qualification6 {
+
+				private String icpSiteRecordNumber;
+
+				private String icpRecordNumber;
+
+				private String policeRecordNumber;
+
+				public String getIcpSiteRecordNumber() {
+					return this.icpSiteRecordNumber;
+				}
+
+				public void setIcpSiteRecordNumber(String icpSiteRecordNumber) {
+					this.icpSiteRecordNumber = icpSiteRecordNumber;
+				}
+
+				public String getIcpRecordNumber() {
+					return this.icpRecordNumber;
+				}
+
+				public void setIcpRecordNumber(String icpRecordNumber) {
+					this.icpRecordNumber = icpRecordNumber;
+				}
+
+				public String getPoliceRecordNumber() {
+					return this.policeRecordNumber;
+				}
+
+				public void setPoliceRecordNumber(String policeRecordNumber) {
+					this.policeRecordNumber = policeRecordNumber;
 				}
 			}
 		}

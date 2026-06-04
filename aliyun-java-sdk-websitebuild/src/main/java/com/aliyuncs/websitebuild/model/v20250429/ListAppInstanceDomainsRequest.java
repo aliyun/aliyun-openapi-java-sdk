@@ -29,11 +29,13 @@ public class ListAppInstanceDomainsRequest extends RpcAcsRequest<ListAppInstance
 
 	private String orderColumn;
 
+	private String domainKeyword;
+
 	private String nextToken;
 
-	private String bizId;
-
 	private Integer pageSize;
+
+	private String bizId;
 
 	private Integer maxResults;
 
@@ -66,6 +68,17 @@ public class ListAppInstanceDomainsRequest extends RpcAcsRequest<ListAppInstance
 		}
 	}
 
+	public String getDomainKeyword() {
+		return this.domainKeyword;
+	}
+
+	public void setDomainKeyword(String domainKeyword) {
+		this.domainKeyword = domainKeyword;
+		if(domainKeyword != null){
+			putQueryParameter("DomainKeyword", domainKeyword);
+		}
+	}
+
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -77,17 +90,6 @@ public class ListAppInstanceDomainsRequest extends RpcAcsRequest<ListAppInstance
 		}
 	}
 
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -96,6 +98,17 @@ public class ListAppInstanceDomainsRequest extends RpcAcsRequest<ListAppInstance
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 
