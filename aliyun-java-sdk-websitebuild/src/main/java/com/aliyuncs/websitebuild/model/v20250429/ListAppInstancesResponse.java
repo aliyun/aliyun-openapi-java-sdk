@@ -1074,6 +1074,10 @@ public class ListAppInstancesResponse extends AcsResponse {
 
 			private String previewUrl;
 
+			private String chatbiTaskId;
+
+			private String chatbiTaskStatus;
+
 			public String getCommodityCode() {
 				return this.commodityCode;
 			}
@@ -1208,6 +1212,22 @@ public class ListAppInstancesResponse extends AcsResponse {
 
 			public void setPreviewUrl(String previewUrl) {
 				this.previewUrl = previewUrl;
+			}
+
+			public String getChatbiTaskId() {
+				return this.chatbiTaskId;
+			}
+
+			public void setChatbiTaskId(String chatbiTaskId) {
+				this.chatbiTaskId = chatbiTaskId;
+			}
+
+			public String getChatbiTaskStatus() {
+				return this.chatbiTaskStatus;
+			}
+
+			public void setChatbiTaskStatus(String chatbiTaskStatus) {
+				this.chatbiTaskStatus = chatbiTaskStatus;
 			}
 		}
 

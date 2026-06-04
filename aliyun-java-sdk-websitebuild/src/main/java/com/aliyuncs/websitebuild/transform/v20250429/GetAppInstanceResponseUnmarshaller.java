@@ -101,6 +101,8 @@ public class GetAppInstanceResponseUnmarshaller {
 		profile.setSource(_ctx.stringValue("GetAppInstanceResponse.Module.Profile.Source"));
 		profile.setInstanceId(_ctx.stringValue("GetAppInstanceResponse.Module.Profile.InstanceId"));
 		profile.setPreviewUrl(_ctx.stringValue("GetAppInstanceResponse.Module.Profile.PreviewUrl"));
+		profile.setChatbiTaskId(_ctx.stringValue("GetAppInstanceResponse.Module.Profile.chatbiTaskId"));
+		profile.setChatbiTaskStatus(_ctx.stringValue("GetAppInstanceResponse.Module.Profile.chatbiTaskStatus"));
 		module.setProfile(profile);
 
 		AppOperationAddress appOperationAddress = new AppOperationAddress();

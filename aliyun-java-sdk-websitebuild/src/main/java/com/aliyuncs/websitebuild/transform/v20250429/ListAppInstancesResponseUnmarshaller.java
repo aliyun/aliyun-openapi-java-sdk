@@ -112,6 +112,8 @@ public class ListAppInstancesResponseUnmarshaller {
 			profile.setSource(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].Profile.Source"));
 			profile.setInstanceId(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].Profile.InstanceId"));
 			profile.setPreviewUrl(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].Profile.PreviewUrl"));
+			profile.setChatbiTaskId(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].Profile.chatbiTaskId"));
+			profile.setChatbiTaskStatus(_ctx.stringValue("ListAppInstancesResponse.Data["+ i +"].Profile.chatbiTaskStatus"));
 			dataItem.setProfile(profile);
 
 			AppOperationAddress appOperationAddress = new AppOperationAddress();
