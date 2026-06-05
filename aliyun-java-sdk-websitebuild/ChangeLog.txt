@@ -1,3 +1,6 @@
+2026-06-05 Version: 1.0.19
+- support for llm api-key for partner
+
 2026-06-04 Version: 1.0.18
 - support for llm api-key for partner
 
