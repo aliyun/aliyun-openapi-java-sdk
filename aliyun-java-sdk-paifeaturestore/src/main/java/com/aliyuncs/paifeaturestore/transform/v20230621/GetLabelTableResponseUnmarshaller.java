@@ -47,6 +47,7 @@ public class GetLabelTableResponseUnmarshaller {
 			Field field = new Field();
 			field.setName(_ctx.stringValue("GetLabelTableResponse.Fields["+ i +"].Name"));
 			field.setType(_ctx.stringValue("GetLabelTableResponse.Fields["+ i +"].Type"));
+			field.setAlignedEntityName(_ctx.stringValue("GetLabelTableResponse.Fields["+ i +"].AlignedEntityName"));
 
 			List<String> attributes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetLabelTableResponse.Fields["+ i +"].Attributes.Length"); j++) {

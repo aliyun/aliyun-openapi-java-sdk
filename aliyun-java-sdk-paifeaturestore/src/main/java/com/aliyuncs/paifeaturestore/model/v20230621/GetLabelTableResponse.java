@@ -141,6 +141,8 @@ public class GetLabelTableResponse extends AcsResponse {
 
 		private String type;
 
+		private String alignedEntityName;
+
 		private List<String> attributes;
 
 		public String getName() {
@@ -157,6 +159,14 @@ public class GetLabelTableResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getAlignedEntityName() {
+			return this.alignedEntityName;
+		}
+
+		public void setAlignedEntityName(String alignedEntityName) {
+			this.alignedEntityName = alignedEntityName;
 		}
 
 		public List<String> getAttributes() {

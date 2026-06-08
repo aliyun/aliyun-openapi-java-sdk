@@ -1,3 +1,7 @@
+2026-06-08 Version: 1.0.21
+- Add WorkspaceId output for ListProjects and GetProject.
+- Add Config input for ListFeatureViewOnlineFeatures.
+
 2026-05-14 Version: 1.0.20
 - Add WorkspaceId output for ListProjects and GetProject.
 - Add Config input for ListFeatureViewOnlineFeatures.
