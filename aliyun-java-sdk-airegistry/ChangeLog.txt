@@ -1,0 +1,3 @@
+2026-06-11 Version: 1.0.0
+- Generated 2026-03-17 for `AIRegistry`.
+
