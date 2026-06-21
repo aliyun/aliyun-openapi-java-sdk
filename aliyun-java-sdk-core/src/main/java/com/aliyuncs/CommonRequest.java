@@ -509,30 +509,6 @@ public class CommonRequest {
         return pathParameters;
     }
 
-    public void setSysAccept(FormatType type) {
-        this.accept = type;
-    }
-
-    public FormatType getSysAccept() {
-        return this.accept;
-    }
-
-    public SignatureVersion getSysSignatureVersion() {
-        return signatureVersion;
-    }
-
-    public void setSysSignatureVersion(SignatureVersion signatureVersion) {
-        this.signatureVersion = signatureVersion;
-    }
-
-    public SignatureAlgorithm getSysSignatureAlgorithm() {
-        return signatureAlgorithm;
-    }
-
-    public void setSysSignatureAlgorithm(SignatureAlgorithm signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
-    }
-
     public RetryPolicy getSysRetryPolicy() {
         return this.retryPolicy;
     }
