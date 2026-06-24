@@ -39,7 +39,13 @@ public class DefaultEndpointResolver implements EndpointResolver {
         }
 
         String locationServiceEndpoint = profile.getLocationServiceEndpoint();
+        if (StringUtils.isEmpty(locationServiceEndpoint)) {
+            locationServiceEndpoint = System.getenv("ALIBABA_CLOUD_LOCATION_SERVICE_ENDPOINT");
+        }
         String locationServiceApiVersion = profile.getLocationServiceApiVersion();
+        if (StringUtils.isEmpty(locationServiceApiVersion)) {
+            locationServiceApiVersion = System.getenv("ALIBABA_CLOUD_LOCATION_SERVICE_API_VERSION");
+        }
         if (!StringUtils.isEmpty(locationServiceEndpoint) && !StringUtils.isEmpty(locationServiceApiVersion)) {
             resolverChain.add(new LocationServiceEndpointResolver(client,
                     locationServiceEndpoint,
