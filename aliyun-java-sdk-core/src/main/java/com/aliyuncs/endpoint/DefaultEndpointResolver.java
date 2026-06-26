@@ -46,16 +46,20 @@ public class DefaultEndpointResolver implements EndpointResolver {
         if (StringUtils.isEmpty(locationServiceApiVersion)) {
             locationServiceApiVersion = System.getenv("ALIBABA_CLOUD_LOCATION_SERVICE_API_VERSION");
         }
-        if (!StringUtils.isEmpty(locationServiceEndpoint) && !StringUtils.isEmpty(locationServiceApiVersion)) {
-            resolverChain.add(new LocationServiceEndpointResolver(client,
-                    locationServiceEndpoint,
-                    locationServiceApiVersion));
-        } else if (profile.isUsingInternalLocationService()) {
-            resolverChain.add(new LocationServiceEndpointResolver(client,
-                    "location-inner.aliyuncs.com",
-                    "2015-12-25"));
-        } else {
-            resolverChain.add(new LocationServiceEndpointResolver(client));
+        boolean locationServiceDisabled = Boolean.parseBoolean(
+                System.getenv("ALIBABA_CLOUD_LOCATION_SERVICE_DISABLED"));
+        if (!locationServiceDisabled) {
+            if (!StringUtils.isEmpty(locationServiceEndpoint) && !StringUtils.isEmpty(locationServiceApiVersion)) {
+                resolverChain.add(new LocationServiceEndpointResolver(client,
+                        locationServiceEndpoint,
+                        locationServiceApiVersion));
+            } else if (profile.isUsingInternalLocationService()) {
+                resolverChain.add(new LocationServiceEndpointResolver(client,
+                        "location-inner.aliyuncs.com",
+                        "2015-12-25"));
+            } else {
+                resolverChain.add(new LocationServiceEndpointResolver(client));
+            }
         }
 
         insideEndpointResolver = new ChainedEndpointResolver(resolverChain);
