@@ -1,4 +1,7 @@
-﻿2026-06-24 Version:4.7.9
+﻿2026-06-26 Version:4.7.10
+1.Support env to disable location request.
+
+2026-06-24 Version:4.7.9
 1.Support env for location service.
 
 2025-12-16 Version:4.7.8
