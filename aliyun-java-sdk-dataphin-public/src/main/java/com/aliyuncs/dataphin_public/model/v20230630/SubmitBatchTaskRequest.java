@@ -77,6 +77,9 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 		@SerializedName("NodeStatus")
 		private Integer nodeStatus;
 
+		@SerializedName("CodeTemplateVersion")
+		private Integer codeTemplateVersion;
+
 		@SerializedName("ParamList")
 		private List<ParamListItem> paramList;
 
@@ -85,6 +88,9 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 
 		@SerializedName("Priority")
 		private Integer priority;
+
+		@SerializedName("OfflineCodeTemplateId")
+		private String offlineCodeTemplateId;
 
 		@SerializedName("CustomScheduleConfig")
 		private CustomScheduleConfig customScheduleConfig;
@@ -112,6 +118,9 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 
 		@SerializedName("PythonModuleList")
 		private List<String> pythonModuleList;
+
+		@SerializedName("OfflineCodeTemplateParams")
+		private List<OfflineCodeTemplateParamsItem> offlineCodeTemplateParams;
 
 		public List<String> getNodeOutputNameList() {
 			return this.nodeOutputNameList;
@@ -153,6 +162,14 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 			this.nodeStatus = nodeStatus;
 		}
 
+		public Integer getCodeTemplateVersion() {
+			return this.codeTemplateVersion;
+		}
+
+		public void setCodeTemplateVersion(Integer codeTemplateVersion) {
+			this.codeTemplateVersion = codeTemplateVersion;
+		}
+
 		public List<ParamListItem> getParamList() {
 			return this.paramList;
 		}
@@ -175,6 +192,14 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 
 		public void setPriority(Integer priority) {
 			this.priority = priority;
+		}
+
+		public String getOfflineCodeTemplateId() {
+			return this.offlineCodeTemplateId;
+		}
+
+		public void setOfflineCodeTemplateId(String offlineCodeTemplateId) {
+			this.offlineCodeTemplateId = offlineCodeTemplateId;
 		}
 
 		public CustomScheduleConfig getCustomScheduleConfig() {
@@ -247,6 +272,14 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 
 		public void setPythonModuleList(List<String> pythonModuleList) {
 			this.pythonModuleList = pythonModuleList;
+		}
+
+		public List<OfflineCodeTemplateParamsItem> getOfflineCodeTemplateParams() {
+			return this.offlineCodeTemplateParams;
+		}
+
+		public void setOfflineCodeTemplateParams(List<OfflineCodeTemplateParamsItem> offlineCodeTemplateParams) {
+			this.offlineCodeTemplateParams = offlineCodeTemplateParams;
 		}
 
 		public static class SparkClientInfo {
@@ -470,6 +503,53 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 
 			public void setStartTime(String startTime) {
 				this.startTime = startTime;
+			}
+		}
+
+		public static class OfflineCodeTemplateParamsItem {
+
+			@SerializedName("Description")
+			private String description;
+
+			@SerializedName("EncryptEnabled")
+			private Boolean encryptEnabled;
+
+			@SerializedName("Value")
+			private String value;
+
+			@SerializedName("Key")
+			private String key;
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public Boolean getEncryptEnabled() {
+				return this.encryptEnabled;
+			}
+
+			public void setEncryptEnabled(Boolean encryptEnabled) {
+				this.encryptEnabled = encryptEnabled;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}
