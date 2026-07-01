@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupHistoryResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistory;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistory.ActivityDetail;
+import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistory.ActivityDetail.ErrorMessage;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +46,34 @@ public class DescribeAutoProvisioningGroupHistoryResponseUnmarshaller {
 				ActivityDetail activityDetail = new ActivityDetail();
 				activityDetail.setStatus(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].Status"));
 				activityDetail.setDetail(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].Detail"));
+
+				List<String> createdInstanceIds = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].CreatedInstanceIds.Length"); k++) {
+					createdInstanceIds.add(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].CreatedInstanceIds["+ k +"]"));
+				}
+				activityDetail.setCreatedInstanceIds(createdInstanceIds);
+
+				List<String> destroyedInstanceIds = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].DestroyedInstanceIds.Length"); k++) {
+					destroyedInstanceIds.add(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].DestroyedInstanceIds["+ k +"]"));
+				}
+				activityDetail.setDestroyedInstanceIds(destroyedInstanceIds);
+
+				List<ErrorMessage> errorMessages = new ArrayList<ErrorMessage>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].ErrorMessages.Length"); k++) {
+					ErrorMessage errorMessage = new ErrorMessage();
+					errorMessage.setCode(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].ErrorMessages["+ k +"].Code"));
+					errorMessage.setMessage(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].ErrorMessages["+ k +"].Message"));
+
+					List<String> failedInstanceIds = new ArrayList<String>();
+					for (int l = 0; l < _ctx.lengthValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].ErrorMessages["+ k +"].FailedInstanceIds.Length"); l++) {
+						failedInstanceIds.add(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].ErrorMessages["+ k +"].FailedInstanceIds["+ l +"]"));
+					}
+					errorMessage.setFailedInstanceIds(failedInstanceIds);
+
+					errorMessages.add(errorMessage);
+				}
+				activityDetail.setErrorMessages(errorMessages);
 
 				activityDetails.add(activityDetail);
 			}

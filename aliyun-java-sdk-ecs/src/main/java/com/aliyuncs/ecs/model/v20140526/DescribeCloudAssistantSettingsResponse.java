@@ -33,6 +33,8 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 
 	private AgentUpgradeConfig agentUpgradeConfig;
 
+	private ResourceUsageConfig resourceUsageConfig;
+
 	private SessionManagerConfig sessionManagerConfig;
 
 	public String getRequestId() {
@@ -65,6 +67,14 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 
 	public void setAgentUpgradeConfig(AgentUpgradeConfig agentUpgradeConfig) {
 		this.agentUpgradeConfig = agentUpgradeConfig;
+	}
+
+	public ResourceUsageConfig getResourceUsageConfig() {
+		return this.resourceUsageConfig;
+	}
+
+	public void setResourceUsageConfig(ResourceUsageConfig resourceUsageConfig) {
+		this.resourceUsageConfig = resourceUsageConfig;
 	}
 
 	public SessionManagerConfig getSessionManagerConfig() {
@@ -197,6 +207,10 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 
 		private String timeZone;
 
+		private Boolean bootstrapUpgrade;
+
+		private Boolean disableUpgrade;
+
 		private List<String> allowedUpgradeWindows;
 
 		public Boolean getEnabled() {
@@ -215,12 +229,91 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 			this.timeZone = timeZone;
 		}
 
+		public Boolean getBootstrapUpgrade() {
+			return this.bootstrapUpgrade;
+		}
+
+		public void setBootstrapUpgrade(Boolean bootstrapUpgrade) {
+			this.bootstrapUpgrade = bootstrapUpgrade;
+		}
+
+		public Boolean getDisableUpgrade() {
+			return this.disableUpgrade;
+		}
+
+		public void setDisableUpgrade(Boolean disableUpgrade) {
+			this.disableUpgrade = disableUpgrade;
+		}
+
 		public List<String> getAllowedUpgradeWindows() {
 			return this.allowedUpgradeWindows;
 		}
 
 		public void setAllowedUpgradeWindows(List<String> allowedUpgradeWindows) {
 			this.allowedUpgradeWindows = allowedUpgradeWindows;
+		}
+	}
+
+	public static class ResourceUsageConfig {
+
+		private Integer cpuLimit;
+
+		private String memoryLimit;
+
+		private Integer overloadLimit;
+
+		private Integer logFileCountLimit;
+
+		private String logSizeLimit;
+
+		private Boolean keepScriptFile;
+
+		public Integer getCpuLimit() {
+			return this.cpuLimit;
+		}
+
+		public void setCpuLimit(Integer cpuLimit) {
+			this.cpuLimit = cpuLimit;
+		}
+
+		public String getMemoryLimit() {
+			return this.memoryLimit;
+		}
+
+		public void setMemoryLimit(String memoryLimit) {
+			this.memoryLimit = memoryLimit;
+		}
+
+		public Integer getOverloadLimit() {
+			return this.overloadLimit;
+		}
+
+		public void setOverloadLimit(Integer overloadLimit) {
+			this.overloadLimit = overloadLimit;
+		}
+
+		public Integer getLogFileCountLimit() {
+			return this.logFileCountLimit;
+		}
+
+		public void setLogFileCountLimit(Integer logFileCountLimit) {
+			this.logFileCountLimit = logFileCountLimit;
+		}
+
+		public String getLogSizeLimit() {
+			return this.logSizeLimit;
+		}
+
+		public void setLogSizeLimit(String logSizeLimit) {
+			this.logSizeLimit = logSizeLimit;
+		}
+
+		public Boolean getKeepScriptFile() {
+			return this.keepScriptFile;
+		}
+
+		public void setKeepScriptFile(Boolean keepScriptFile) {
+			this.keepScriptFile = keepScriptFile;
 		}
 	}
 

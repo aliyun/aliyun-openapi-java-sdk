@@ -40,6 +40,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private Long ownerId;
 
+	private CpuOptions cpuOptions;
+
 	private String instanceId;
 
 	private String instanceName;
@@ -153,6 +155,21 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public CpuOptions getCpuOptions() {
+		return this.cpuOptions;
+	}
+
+	public void setCpuOptions(CpuOptions cpuOptions) {
+		this.cpuOptions = cpuOptions;	
+		if (cpuOptions != null) {
+			
+				putQueryParameter("CpuOptions.NestedVirtualization" , cpuOptions.getNestedVirtualization());
+				putQueryParameter("CpuOptions.EnableVRDT" , cpuOptions.getEnableVRDT());
+				putQueryParameter("CpuOptions.EnableVISST" , cpuOptions.getEnableVISST());
+				putQueryParameter("CpuOptions.TurboMode" , cpuOptions.getTurboMode());
+		}	
 	}
 
 	public String getInstanceId() {
@@ -327,6 +344,49 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 				putQueryParameter("RemoteConnectionOptions.Password" , remoteConnectionOptions.getPassword());
 				putQueryParameter("RemoteConnectionOptions.Type" , remoteConnectionOptions.getType());
 		}	
+	}
+
+	public static class CpuOptions {
+
+		private String nestedVirtualization;
+
+		private Boolean enableVRDT;
+
+		private Boolean enableVISST;
+
+		private String turboMode;
+
+		public String getNestedVirtualization() {
+			return this.nestedVirtualization;
+		}
+
+		public void setNestedVirtualization(String nestedVirtualization) {
+			this.nestedVirtualization = nestedVirtualization;
+		}
+
+		public Boolean getEnableVRDT() {
+			return this.enableVRDT;
+		}
+
+		public void setEnableVRDT(Boolean enableVRDT) {
+			this.enableVRDT = enableVRDT;
+		}
+
+		public Boolean getEnableVISST() {
+			return this.enableVISST;
+		}
+
+		public void setEnableVISST(Boolean enableVISST) {
+			this.enableVISST = enableVISST;
+		}
+
+		public String getTurboMode() {
+			return this.turboMode;
+		}
+
+		public void setTurboMode(String turboMode) {
+			this.turboMode = turboMode;
+		}
 	}
 
 	public static class PrivateDnsNameOptions {

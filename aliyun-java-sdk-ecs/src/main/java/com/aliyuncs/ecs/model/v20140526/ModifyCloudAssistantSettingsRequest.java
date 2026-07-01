@@ -49,6 +49,9 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	@SerializedName("resourceUsageConfig")
+	private ResourceUsageConfig resourceUsageConfig;
 	public ModifyCloudAssistantSettingsRequest() {
 		super("Ecs", "2014-05-26", "ModifyCloudAssistantSettings", "ecs");
 		setMethod(MethodType.POST);
@@ -157,6 +160,17 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 		}
 	}
 
+	public ResourceUsageConfig getResourceUsageConfig() {
+		return this.resourceUsageConfig;
+	}
+
+	public void setResourceUsageConfig(ResourceUsageConfig resourceUsageConfig) {
+		this.resourceUsageConfig = resourceUsageConfig;	
+		if (resourceUsageConfig != null) {
+			putQueryParameter("ResourceUsageConfig" , new Gson().toJson(resourceUsageConfig));
+		}	
+	}
+
 	public static class AgentUpgradeConfig {
 
 		@SerializedName("Enabled")
@@ -167,6 +181,12 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 
 		@SerializedName("TimeZone")
 		private String timeZone;
+
+		@SerializedName("BootstrapUpgrade")
+		private Boolean bootstrapUpgrade;
+
+		@SerializedName("DisableUpgrade")
+		private Boolean disableUpgrade;
 
 		public Boolean getEnabled() {
 			return this.enabled;
@@ -190,6 +210,22 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 
 		public void setTimeZone(String timeZone) {
 			this.timeZone = timeZone;
+		}
+
+		public Boolean getBootstrapUpgrade() {
+			return this.bootstrapUpgrade;
+		}
+
+		public void setBootstrapUpgrade(Boolean bootstrapUpgrade) {
+			this.bootstrapUpgrade = bootstrapUpgrade;
+		}
+
+		public Boolean getDisableUpgrade() {
+			return this.disableUpgrade;
+		}
+
+		public void setDisableUpgrade(Boolean disableUpgrade) {
+			this.disableUpgrade = disableUpgrade;
 		}
 	}
 
@@ -309,6 +345,75 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 
 		public void setLogstoreName(String logstoreName) {
 			this.logstoreName = logstoreName;
+		}
+	}
+
+	public static class ResourceUsageConfig {
+
+		@SerializedName("CpuLimit")
+		private Integer cpuLimit;
+
+		@SerializedName("MemoryLimit")
+		private String memoryLimit;
+
+		@SerializedName("OverloadLimit")
+		private Integer overloadLimit;
+
+		@SerializedName("LogFileCountLimit")
+		private Integer logFileCountLimit;
+
+		@SerializedName("LogSizeLimit")
+		private String logSizeLimit;
+
+		@SerializedName("KeepScriptFile")
+		private Boolean keepScriptFile;
+
+		public Integer getCpuLimit() {
+			return this.cpuLimit;
+		}
+
+		public void setCpuLimit(Integer cpuLimit) {
+			this.cpuLimit = cpuLimit;
+		}
+
+		public String getMemoryLimit() {
+			return this.memoryLimit;
+		}
+
+		public void setMemoryLimit(String memoryLimit) {
+			this.memoryLimit = memoryLimit;
+		}
+
+		public Integer getOverloadLimit() {
+			return this.overloadLimit;
+		}
+
+		public void setOverloadLimit(Integer overloadLimit) {
+			this.overloadLimit = overloadLimit;
+		}
+
+		public Integer getLogFileCountLimit() {
+			return this.logFileCountLimit;
+		}
+
+		public void setLogFileCountLimit(Integer logFileCountLimit) {
+			this.logFileCountLimit = logFileCountLimit;
+		}
+
+		public String getLogSizeLimit() {
+			return this.logSizeLimit;
+		}
+
+		public void setLogSizeLimit(String logSizeLimit) {
+			this.logSizeLimit = logSizeLimit;
+		}
+
+		public Boolean getKeepScriptFile() {
+			return this.keepScriptFile;
+		}
+
+		public void setKeepScriptFile(Boolean keepScriptFile) {
+			this.keepScriptFile = keepScriptFile;
 		}
 	}
 

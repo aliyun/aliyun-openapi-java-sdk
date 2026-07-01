@@ -55,6 +55,8 @@ public class DescribeDiagnosticReportAttributesResponseUnmarshaller {
 				issue.setSeverity(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].Severity"));
 				issue.setAdditional(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].Additional"));
 				issue.setOccurrenceTime(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].OccurrenceTime"));
+				issue.setRepairStatus(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].RepairStatus"));
+				issue.setRepairable(_ctx.booleanValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].Repairable"));
 
 				issues.add(issue);
 			}

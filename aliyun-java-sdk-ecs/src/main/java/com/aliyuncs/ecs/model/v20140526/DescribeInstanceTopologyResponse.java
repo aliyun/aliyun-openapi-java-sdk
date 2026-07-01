@@ -51,6 +51,8 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private List<String> networkNodes;
+
 		public String getHostId() {
 			return this.hostId;
 		}
@@ -65,6 +67,14 @@ public class DescribeInstanceTopologyResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public List<String> getNetworkNodes() {
+			return this.networkNodes;
+		}
+
+		public void setNetworkNodes(List<String> networkNodes) {
+			this.networkNodes = networkNodes;
 		}
 	}
 

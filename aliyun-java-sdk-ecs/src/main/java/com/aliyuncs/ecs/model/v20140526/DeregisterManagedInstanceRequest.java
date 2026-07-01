@@ -27,6 +27,8 @@ public class DeregisterManagedInstanceRequest extends RpcAcsRequest<DeregisterMa
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -51,6 +53,17 @@ public class DeregisterManagedInstanceRequest extends RpcAcsRequest<DeregisterMa
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

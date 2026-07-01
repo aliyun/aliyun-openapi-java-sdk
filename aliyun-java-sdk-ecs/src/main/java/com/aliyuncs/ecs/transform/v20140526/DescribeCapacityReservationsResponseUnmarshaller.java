@@ -54,6 +54,8 @@ public class DescribeCapacityReservationsResponseUnmarshaller {
 			capacityReservationItem.setSavingPlanId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].SavingPlanId"));
 			capacityReservationItem.setReservedInstanceId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].ReservedInstanceId"));
 			capacityReservationItem.setCapacityReservationOwnerId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].CapacityReservationOwnerId"));
+			capacityReservationItem.setDeliveryTime(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].DeliveryTime"));
+			capacityReservationItem.setUnlockedTime(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].UnlockedTime"));
 
 			List<AllocatedResource> allocatedResources = new ArrayList<AllocatedResource>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources.Length"); j++) {
@@ -61,6 +63,8 @@ public class DescribeCapacityReservationsResponseUnmarshaller {
 				allocatedResource.setUsedAmount(_ctx.integerValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].UsedAmount"));
 				allocatedResource.setTotalAmount(_ctx.integerValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].TotalAmount"));
 				allocatedResource.setAvailableAmount(_ctx.integerValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].AvailableAmount"));
+				allocatedResource.setFailedAmount(_ctx.integerValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].FailedAmount"));
+				allocatedResource.setLockedAmount(_ctx.integerValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].LockedAmount"));
 				allocatedResource.setZoneId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].zoneId"));
 				allocatedResource.setInstanceType(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].InstanceType"));
 

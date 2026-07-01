@@ -63,6 +63,7 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setProductCode(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].ProductCode"));
 			snapshot.setSourceSnapshotId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceSnapshotId"));
 			snapshot.setSourceRegionId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceRegionId"));
+			snapshot.setFullSnapshotSizeInBytes(_ctx.longValue("DescribeSnapshotsResponse.Snapshots["+ i +"].FullSnapshotSizeInBytes"));
 			snapshot.setSnapshotLinkId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotLinkId"));
 
 			List<Tag> tags = new ArrayList<Tag>();

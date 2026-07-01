@@ -43,6 +43,8 @@ public class DescribeImagePipelineExecutionsResponseUnmarshaller {
 			imagePipelineExecutionSet.setMessage(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].Message"));
 			imagePipelineExecutionSet.setImageId(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ImageId"));
 			imagePipelineExecutionSet.setExecutionId(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ExecutionId"));
+			imagePipelineExecutionSet.setErrorCode(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ErrorCode"));
+			imagePipelineExecutionSet.setErrorInfo(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ErrorInfo"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].Tags.Length"); j++) {

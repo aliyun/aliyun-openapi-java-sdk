@@ -52,6 +52,8 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 
 	private String instanceType;
 
+	private String instanceChargeType;
+
 	private String resourceOwnerAccount;
 
 	private String privatePoolOptionsName;
@@ -120,8 +122,8 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 			}
 		}	
 	}
@@ -216,6 +218,17 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 		}
 	}
 
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -262,17 +275,9 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 
 	public static class Tag {
 
-		private String value;
-
 		private String key;
 
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
+		private String value;
 
 		public String getKey() {
 			return this.key;
@@ -280,6 +285,14 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

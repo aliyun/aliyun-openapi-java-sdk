@@ -341,6 +341,10 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			private String ossOutputStatus;
 
+			private String ossOutputErrorCode;
+
+			private String ossOutputErrorInfo;
+
 			private String finishTime;
 
 			private String output;
@@ -439,6 +443,22 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			public void setOssOutputStatus(String ossOutputStatus) {
 				this.ossOutputStatus = ossOutputStatus;
+			}
+
+			public String getOssOutputErrorCode() {
+				return this.ossOutputErrorCode;
+			}
+
+			public void setOssOutputErrorCode(String ossOutputErrorCode) {
+				this.ossOutputErrorCode = ossOutputErrorCode;
+			}
+
+			public String getOssOutputErrorInfo() {
+				return this.ossOutputErrorInfo;
+			}
+
+			public void setOssOutputErrorInfo(String ossOutputErrorInfo) {
+				this.ossOutputErrorInfo = ossOutputErrorInfo;
 			}
 
 			public String getFinishTime() {

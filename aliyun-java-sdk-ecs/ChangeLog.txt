@@ -1,3 +1,6 @@
+2026-07-01 Version: 5.11.27
+- Add ModifySystemEventAttribute.
+
 2026-01-20 Version: 5.11.26
 - Generated 2014-05-26 for `Ecs`.
 

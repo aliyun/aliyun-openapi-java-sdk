@@ -275,6 +275,10 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 			private Integer availableAmount;
 
+			private Integer failedAmount;
+
+			private Integer lockedAmount;
+
 			private String zoneId;
 
 			private String instanceType;
@@ -303,6 +307,22 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 			public void setAvailableAmount(Integer availableAmount) {
 				this.availableAmount = availableAmount;
+			}
+
+			public Integer getFailedAmount() {
+				return this.failedAmount;
+			}
+
+			public void setFailedAmount(Integer failedAmount) {
+				this.failedAmount = failedAmount;
+			}
+
+			public Integer getLockedAmount() {
+				return this.lockedAmount;
+			}
+
+			public void setLockedAmount(Integer lockedAmount) {
+				this.lockedAmount = lockedAmount;
 			}
 
 			public String getZoneId() {

@@ -109,6 +109,10 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 		private Integer instanceAmount;
 
+		private String type;
+
+		private Long affinity;
+
 		private List<Capacity> capacities;
 
 		private List<String> instanceIds;
@@ -199,6 +203,22 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 		public void setInstanceAmount(Integer instanceAmount) {
 			this.instanceAmount = instanceAmount;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public Long getAffinity() {
+			return this.affinity;
+		}
+
+		public void setAffinity(Long affinity) {
+			this.affinity = affinity;
 		}
 
 		public List<Capacity> getCapacities() {

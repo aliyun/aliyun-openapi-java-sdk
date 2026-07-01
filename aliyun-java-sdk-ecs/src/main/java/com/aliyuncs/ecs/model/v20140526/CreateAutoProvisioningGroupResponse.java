@@ -69,6 +69,8 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 
 		private Integer amount;
 
+		private String candidateEvaluateLevel;
+
 		private List<String> instanceIds;
 
 		public String getZoneId() {
@@ -117,6 +119,14 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 
 		public void setAmount(Integer amount) {
 			this.amount = amount;
+		}
+
+		public String getCandidateEvaluateLevel() {
+			return this.candidateEvaluateLevel;
+		}
+
+		public void setCandidateEvaluateLevel(String candidateEvaluateLevel) {
+			this.candidateEvaluateLevel = candidateEvaluateLevel;
 		}
 
 		public List<String> getInstanceIds() {

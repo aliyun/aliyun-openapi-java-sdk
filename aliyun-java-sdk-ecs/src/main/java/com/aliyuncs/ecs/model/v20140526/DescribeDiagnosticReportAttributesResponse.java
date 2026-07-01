@@ -217,6 +217,10 @@ public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 
 			private String occurrenceTime;
 
+			private String repairStatus;
+
+			private Boolean repairable;
+
 			public String getIssueId() {
 				return this.issueId;
 			}
@@ -247,6 +251,22 @@ public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 
 			public void setOccurrenceTime(String occurrenceTime) {
 				this.occurrenceTime = occurrenceTime;
+			}
+
+			public String getRepairStatus() {
+				return this.repairStatus;
+			}
+
+			public void setRepairStatus(String repairStatus) {
+				this.repairStatus = repairStatus;
+			}
+
+			public Boolean getRepairable() {
+				return this.repairable;
+			}
+
+			public void setRepairable(Boolean repairable) {
+				this.repairable = repairable;
 			}
 		}
 	}

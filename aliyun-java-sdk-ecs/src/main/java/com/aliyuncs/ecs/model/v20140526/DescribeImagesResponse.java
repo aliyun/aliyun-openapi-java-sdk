@@ -145,6 +145,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String licenseType;
 
+		private Boolean usable;
+
 		private List<DiskDeviceMapping> diskDeviceMappings;
 
 		private List<Tag> tags;
@@ -383,6 +385,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setLicenseType(String licenseType) {
 			this.licenseType = licenseType;
+		}
+
+		public Boolean getUsable() {
+			return this.usable;
+		}
+
+		public void setUsable(Boolean usable) {
+			this.usable = usable;
 		}
 
 		public List<DiskDeviceMapping> getDiskDeviceMappings() {

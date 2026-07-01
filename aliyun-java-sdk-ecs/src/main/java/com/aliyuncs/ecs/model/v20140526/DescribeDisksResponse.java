@@ -175,6 +175,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private Integer throughputWrite;
 
+		private String sourceDiskId;
+
 		private List<OperationLock> operationLocks;
 
 		private List<MountInstance> mountInstances;
@@ -184,6 +186,8 @@ public class DescribeDisksResponse extends AcsResponse {
 		private List<Attachment> attachments;
 
 		private Placement placement;
+
+		private DataSource dataSource;
 
 		public String getSerialNumber() {
 			return this.serialNumber;
@@ -537,6 +541,14 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.throughputWrite = throughputWrite;
 		}
 
+		public String getSourceDiskId() {
+			return this.sourceDiskId;
+		}
+
+		public void setSourceDiskId(String sourceDiskId) {
+			this.sourceDiskId = sourceDiskId;
+		}
+
 		public List<OperationLock> getOperationLocks() {
 			return this.operationLocks;
 		}
@@ -575,6 +587,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setPlacement(Placement placement) {
 			this.placement = placement;
+		}
+
+		public DataSource getDataSource() {
+			return this.dataSource;
+		}
+
+		public void setDataSource(DataSource dataSource) {
+			this.dataSource = dataSource;
 		}
 
 		public static class OperationLock {
@@ -749,6 +769,29 @@ public class DescribeDisksResponse extends AcsResponse {
 
 			public void setZoneIds(String zoneIds) {
 				this.zoneIds = zoneIds;
+			}
+		}
+
+		public static class DataSource {
+
+			private String id;
+
+			private String type;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 		}
 	}

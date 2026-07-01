@@ -28,7 +28,17 @@ public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<Desc
 
 	private Long resourceOwnerId;
 
+	private String imageId;
+
+	private String iSP;
+
+	private Integer internetMaxBandwidthOut;
+
+	private String startTime;
+
 	private String systemDiskCategory;
+
+	private SystemDisk systemDisk;
 
 	private String instanceType;
 
@@ -36,11 +46,15 @@ public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<Desc
 
 	private String ownerAccount;
 
+	private String endTime;
+
 	private Long ownerId;
 
 	private List<DataDisk> dataDisks;
 
 	private String instanceId;
+
+	private String internetChargeType;
 	public DescribeInstanceModificationPriceRequest() {
 		super("Ecs", "2014-05-26", "DescribeInstanceModificationPrice", "ecs");
 		setMethod(MethodType.POST);
@@ -61,6 +75,50 @@ public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<Desc
 		}
 	}
 
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getISP() {
+		return this.iSP;
+	}
+
+	public void setISP(String iSP) {
+		this.iSP = iSP;
+		if(iSP != null){
+			putQueryParameter("ISP", iSP);
+		}
+	}
+
+	public Integer getInternetMaxBandwidthOut() {
+		return this.internetMaxBandwidthOut;
+	}
+
+	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
+		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+		if(internetMaxBandwidthOut != null){
+			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
 	public String getSystemDiskCategory() {
 		return this.systemDiskCategory;
 	}
@@ -70,6 +128,20 @@ public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<Desc
 		if(systemDiskCategory != null){
 			putQueryParameter("SystemDisk.Category", systemDiskCategory);
 		}
+	}
+
+	public SystemDisk getSystemDisk() {
+		return this.systemDisk;
+	}
+
+	public void setSystemDisk(SystemDisk systemDisk) {
+		this.systemDisk = systemDisk;	
+		if (systemDisk != null) {
+			
+				putQueryParameter("SystemDisk.Category" , systemDisk.getCategory());
+				putQueryParameter("SystemDisk.PerformanceLevel" , systemDisk.getPerformanceLevel());
+				putQueryParameter("SystemDisk.Size" , systemDisk.getSize());
+		}	
 	}
 
 	public String getInstanceType() {
@@ -105,6 +177,17 @@ public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<Desc
 		}
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,6 +210,7 @@ public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<Desc
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskId" , dataDisks.get(depth1).getDiskId());
 			}
 		}	
 	}
@@ -142,6 +226,50 @@ public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<Desc
 		}
 	}
 
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public static class SystemDisk {
+
+		private String category;
+
+		private String performanceLevel;
+
+		private Integer size;
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
+		}
+
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public void setSize(Integer size) {
+			this.size = size;
+		}
+	}
+
 	public static class DataDisk {
 
 		private String performanceLevel;
@@ -149,6 +277,8 @@ public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<Desc
 		private Integer size;
 
 		private String category;
+
+		private String diskId;
 
 		public String getPerformanceLevel() {
 			return this.performanceLevel;
@@ -172,6 +302,14 @@ public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<Desc
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public String getDiskId() {
+			return this.diskId;
+		}
+
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
 		}
 	}
 

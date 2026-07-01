@@ -1101,7 +1101,9 @@ public class DescribePriceResponse extends AcsResponse {
 
 				private Float tradePrice;
 
-				private List<Coupon10> coupons9;
+				private List<Promotion11> promotions9;
+
+				private List<Coupon12> coupons10;
 
 				public String getCurrency() {
 					return this.currency;
@@ -1135,15 +1137,66 @@ public class DescribePriceResponse extends AcsResponse {
 					this.tradePrice = tradePrice;
 				}
 
-				public List<Coupon10> getCoupons9() {
-					return this.coupons9;
+				public List<Promotion11> getPromotions9() {
+					return this.promotions9;
 				}
 
-				public void setCoupons9(List<Coupon10> coupons9) {
-					this.coupons9 = coupons9;
+				public void setPromotions9(List<Promotion11> promotions9) {
+					this.promotions9 = promotions9;
 				}
 
-				public static class Coupon10 {
+				public List<Coupon12> getCoupons10() {
+					return this.coupons10;
+				}
+
+				public void setCoupons10(List<Coupon12> coupons10) {
+					this.coupons10 = coupons10;
+				}
+
+				public static class Promotion11 {
+
+					private Long ruleId;
+
+					private String name;
+
+					private Float discountOff;
+
+					private String type;
+
+					public Long getRuleId() {
+						return this.ruleId;
+					}
+
+					public void setRuleId(Long ruleId) {
+						this.ruleId = ruleId;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public Float getDiscountOff() {
+						return this.discountOff;
+					}
+
+					public void setDiscountOff(Float discountOff) {
+						this.discountOff = discountOff;
+					}
+
+					public String getType() {
+						return this.type;
+					}
+
+					public void setType(String type) {
+						this.type = type;
+					}
+				}
+
+				public static class Coupon12 {
 
 					private String couponNo;
 
@@ -1159,9 +1212,9 @@ public class DescribePriceResponse extends AcsResponse {
 
 					private Boolean effective;
 
-					private List<Long> ruleIds11;
+					private List<Long> ruleIds13;
 
-					private AdditionalInfo12 additionalInfo12;
+					private AdditionalInfo14 additionalInfo14;
 
 					public String getCouponNo() {
 						return this.couponNo;
@@ -1219,23 +1272,23 @@ public class DescribePriceResponse extends AcsResponse {
 						this.effective = effective;
 					}
 
-					public List<Long> getRuleIds11() {
-						return this.ruleIds11;
+					public List<Long> getRuleIds13() {
+						return this.ruleIds13;
 					}
 
-					public void setRuleIds11(List<Long> ruleIds11) {
-						this.ruleIds11 = ruleIds11;
+					public void setRuleIds13(List<Long> ruleIds13) {
+						this.ruleIds13 = ruleIds13;
 					}
 
-					public AdditionalInfo12 getAdditionalInfo12() {
-						return this.additionalInfo12;
+					public AdditionalInfo14 getAdditionalInfo14() {
+						return this.additionalInfo14;
 					}
 
-					public void setAdditionalInfo12(AdditionalInfo12 additionalInfo12) {
-						this.additionalInfo12 = additionalInfo12;
+					public void setAdditionalInfo14(AdditionalInfo14 additionalInfo14) {
+						this.additionalInfo14 = additionalInfo14;
 					}
 
-					public static class AdditionalInfo12 {
+					public static class AdditionalInfo14 {
 
 						private String couponType;
 

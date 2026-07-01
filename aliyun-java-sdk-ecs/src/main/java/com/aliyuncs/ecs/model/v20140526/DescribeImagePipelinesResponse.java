@@ -368,6 +368,8 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 			private Features features;
 
+			private DockerOptions dockerOptions;
+
 			public String getArchitecture() {
 				return this.architecture;
 			}
@@ -472,6 +474,14 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 				this.features = features;
 			}
 
+			public DockerOptions getDockerOptions() {
+				return this.dockerOptions;
+			}
+
+			public void setDockerOptions(DockerOptions dockerOptions) {
+				this.dockerOptions = dockerOptions;
+			}
+
 			public static class DiskDeviceMapping {
 
 				private String oSSBucket;
@@ -558,6 +568,29 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 				public void setImdsSupport(String imdsSupport) {
 					this.imdsSupport = imdsSupport;
+				}
+			}
+
+			public static class DockerOptions {
+
+				private String image;
+
+				private Integer imageSize;
+
+				public String getImage() {
+					return this.image;
+				}
+
+				public void setImage(String image) {
+					this.image = image;
+				}
+
+				public Integer getImageSize() {
+					return this.imageSize;
+				}
+
+				public void setImageSize(Integer imageSize) {
+					this.imageSize = imageSize;
 				}
 			}
 		}

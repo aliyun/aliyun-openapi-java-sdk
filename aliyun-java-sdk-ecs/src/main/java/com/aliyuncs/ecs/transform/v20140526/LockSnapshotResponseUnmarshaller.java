@@ -27,6 +27,7 @@ public class LockSnapshotResponseUnmarshaller {
 
 		LockedSnapshotInfo lockedSnapshotInfo = new LockedSnapshotInfo();
 		lockedSnapshotInfo.setSnapshotId(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.SnapshotId"));
+		lockedSnapshotInfo.setLockMode(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.LockMode"));
 		lockedSnapshotInfo.setLockStatus(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.LockStatus"));
 		lockedSnapshotInfo.setLockCreationTime(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.LockCreationTime"));
 		lockedSnapshotInfo.setCoolOffPeriod(_ctx.integerValue("LockSnapshotResponse.LockedSnapshotInfo.CoolOffPeriod"));

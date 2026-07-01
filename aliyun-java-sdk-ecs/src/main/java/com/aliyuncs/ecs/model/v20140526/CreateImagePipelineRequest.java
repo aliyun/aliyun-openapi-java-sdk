@@ -290,6 +290,11 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 				putQueryParameter("ImportImageOptions.ImageName" , importImageOptions.getImageName());
 				putQueryParameter("ImportImageOptions.Description" , importImageOptions.getDescription());
 				putQueryParameter("ImportImageOptions.RoleName" , importImageOptions.getRoleName());
+				if (importImageOptions.getDockerOptions() != null) {
+					
+						putQueryParameter("ImportImageOptions.DockerOptions.Image" , importImageOptions.getDockerOptions().getImage());
+						putQueryParameter("ImportImageOptions.DockerOptions.ImageSize" , importImageOptions.getDockerOptions().getImageSize());
+				}
 				if (importImageOptions.getImportImageTags() != null) {
 					for (int depth1 = 0; depth1 < importImageOptions.getImportImageTags().size(); depth1++) {
 						if (importImageOptions.getImportImageTags().get(depth1) != null) {
@@ -628,6 +633,8 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 		private String roleName;
 
+		private DockerOptions dockerOptions;
+
 		private List<ImportImageTagsItem> importImageTags;
 
 		public String getArchitecture() {
@@ -726,6 +733,14 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 			this.roleName = roleName;
 		}
 
+		public DockerOptions getDockerOptions() {
+			return this.dockerOptions;
+		}
+
+		public void setDockerOptions(DockerOptions dockerOptions) {
+			this.dockerOptions = dockerOptions;
+		}
+
 		public List<ImportImageTagsItem> getImportImageTags() {
 			return this.importImageTags;
 		}
@@ -797,6 +812,29 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 			public void setImdsSupport(String imdsSupport) {
 				this.imdsSupport = imdsSupport;
+			}
+		}
+
+		public static class DockerOptions {
+
+			private String image;
+
+			private Integer imageSize;
+
+			public String getImage() {
+				return this.image;
+			}
+
+			public void setImage(String image) {
+				this.image = image;
+			}
+
+			public Integer getImageSize() {
+				return this.imageSize;
+			}
+
+			public void setImageSize(Integer imageSize) {
+				this.imageSize = imageSize;
 			}
 		}
 

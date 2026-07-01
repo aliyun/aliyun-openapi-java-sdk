@@ -59,6 +59,8 @@ public class DescribeLockedSnapshotsResponse extends AcsResponse {
 
 		private String snapshotId;
 
+		private String lockMode;
+
 		private String lockStatus;
 
 		private String lockCreationTime;
@@ -79,6 +81,14 @@ public class DescribeLockedSnapshotsResponse extends AcsResponse {
 
 		public void setSnapshotId(String snapshotId) {
 			this.snapshotId = snapshotId;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
 		}
 
 		public String getLockStatus() {

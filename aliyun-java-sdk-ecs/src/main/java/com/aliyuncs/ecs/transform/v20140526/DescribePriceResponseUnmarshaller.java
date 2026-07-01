@@ -34,8 +34,9 @@ import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.Price.Pr
 import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.PriceWarning;
 import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.RelatedPrice;
 import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice;
-import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupon10;
-import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupon10.AdditionalInfo12;
+import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupon12;
+import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupon12.AdditionalInfo14;
+import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotion11;
 import com.aliyuncs.ecs.model.v20140526.DescribePriceResponse.PriceInfo.Rule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -227,38 +228,50 @@ public class DescribePriceResponseUnmarshaller {
 		marketplaceImagePrice.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.DiscountPrice"));
 		marketplaceImagePrice.setTradePrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.TradePrice"));
 
-		List<Coupon10> coupons9 = new ArrayList<Coupon10>();
-		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons.Length"); i++) {
-			Coupon10 coupon10 = new Coupon10();
-			coupon10.setCouponNo(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].CouponNo"));
-			coupon10.setDiscountOff(_ctx.floatValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].DiscountOff"));
-			coupon10.setDescription(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].Description"));
-			coupon10.setIsSelected(_ctx.booleanValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].IsSelected"));
-			coupon10.setOptionCode(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].OptionCode"));
-			coupon10.setName(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].Name"));
-			coupon10.setEffective(_ctx.booleanValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].Effective"));
+		List<Promotion11> promotions9 = new ArrayList<Promotion11>();
+		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions.Length"); i++) {
+			Promotion11 promotion11 = new Promotion11();
+			promotion11.setRuleId(_ctx.longValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions["+ i +"].RuleId"));
+			promotion11.setName(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions["+ i +"].Name"));
+			promotion11.setDiscountOff(_ctx.floatValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions["+ i +"].DiscountOff"));
+			promotion11.setType(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions["+ i +"].Type"));
 
-			List<Long> ruleIds11 = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].RuleIds.Length"); j++) {
-				ruleIds11.add(_ctx.longValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].RuleIds["+ j +"]"));
-			}
-			coupon10.setRuleIds11(ruleIds11);
-
-			AdditionalInfo12 additionalInfo12 = new AdditionalInfo12();
-			additionalInfo12.setCouponType(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.CouponType"));
-			additionalInfo12.setAvailableAmount(_ctx.doubleValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.AvailableAmount"));
-			additionalInfo12.setUpperLimitAmount(_ctx.doubleValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.UpperLimitAmount"));
-			additionalInfo12.setStartTime(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.StartTime"));
-			additionalInfo12.setEndTime(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.EndTime"));
-			additionalInfo12.setIneffectiveReason(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.IneffectiveReason"));
-			additionalInfo12.setDiscountRate(_ctx.doubleValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.DiscountRate"));
-			additionalInfo12.setCertainAmount(_ctx.doubleValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.CertainAmount"));
-			additionalInfo12.setVoucherTotalAmount(_ctx.doubleValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.VoucherTotalAmount"));
-			coupon10.setAdditionalInfo12(additionalInfo12);
-
-			coupons9.add(coupon10);
+			promotions9.add(promotion11);
 		}
-		marketplaceImagePrice.setCoupons9(coupons9);
+		marketplaceImagePrice.setPromotions9(promotions9);
+
+		List<Coupon12> coupons10 = new ArrayList<Coupon12>();
+		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons.Length"); i++) {
+			Coupon12 coupon12 = new Coupon12();
+			coupon12.setCouponNo(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].CouponNo"));
+			coupon12.setDiscountOff(_ctx.floatValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].DiscountOff"));
+			coupon12.setDescription(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].Description"));
+			coupon12.setIsSelected(_ctx.booleanValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].IsSelected"));
+			coupon12.setOptionCode(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].OptionCode"));
+			coupon12.setName(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].Name"));
+			coupon12.setEffective(_ctx.booleanValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].Effective"));
+
+			List<Long> ruleIds13 = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].RuleIds.Length"); j++) {
+				ruleIds13.add(_ctx.longValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].RuleIds["+ j +"]"));
+			}
+			coupon12.setRuleIds13(ruleIds13);
+
+			AdditionalInfo14 additionalInfo14 = new AdditionalInfo14();
+			additionalInfo14.setCouponType(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.CouponType"));
+			additionalInfo14.setAvailableAmount(_ctx.doubleValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.AvailableAmount"));
+			additionalInfo14.setUpperLimitAmount(_ctx.doubleValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.UpperLimitAmount"));
+			additionalInfo14.setStartTime(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.StartTime"));
+			additionalInfo14.setEndTime(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.EndTime"));
+			additionalInfo14.setIneffectiveReason(_ctx.stringValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.IneffectiveReason"));
+			additionalInfo14.setDiscountRate(_ctx.doubleValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.DiscountRate"));
+			additionalInfo14.setCertainAmount(_ctx.doubleValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.CertainAmount"));
+			additionalInfo14.setVoucherTotalAmount(_ctx.doubleValue("DescribePriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.VoucherTotalAmount"));
+			coupon12.setAdditionalInfo14(additionalInfo14);
+
+			coupons10.add(coupon12);
+		}
+		marketplaceImagePrice.setCoupons10(coupons10);
 		relatedPrice.setMarketplaceImagePrice(marketplaceImagePrice);
 		priceInfo.setRelatedPrice(relatedPrice);
 

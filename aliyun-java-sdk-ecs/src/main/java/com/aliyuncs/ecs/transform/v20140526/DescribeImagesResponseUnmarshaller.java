@@ -69,6 +69,7 @@ public class DescribeImagesResponseUnmarshaller {
 			image.setLoginAsNonRootSupported(_ctx.booleanValue("DescribeImagesResponse.Images["+ i +"].LoginAsNonRootSupported"));
 			image.setSupplierName(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].SupplierName"));
 			image.setLicenseType(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].LicenseType"));
+			image.setUsable(_ctx.booleanValue("DescribeImagesResponse.Images["+ i +"].Usable"));
 
 			DetectionOptions detectionOptions = new DetectionOptions();
 			detectionOptions.setStatus(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].DetectionOptions.Status"));

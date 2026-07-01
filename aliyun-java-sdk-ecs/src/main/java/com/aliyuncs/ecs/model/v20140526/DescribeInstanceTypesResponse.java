@@ -586,6 +586,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 			private Boolean hyperThreadingAdjustable;
 
+			private String nestedVirtualizationSupport;
+
 			private List<String> supportedTopologyTypes;
 
 			public Integer getThreadsPerCore() {
@@ -618,6 +620,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 			public void setHyperThreadingAdjustable(Boolean hyperThreadingAdjustable) {
 				this.hyperThreadingAdjustable = hyperThreadingAdjustable;
+			}
+
+			public String getNestedVirtualizationSupport() {
+				return this.nestedVirtualizationSupport;
+			}
+
+			public void setNestedVirtualizationSupport(String nestedVirtualizationSupport) {
+				this.nestedVirtualizationSupport = nestedVirtualizationSupport;
 			}
 
 			public List<String> getSupportedTopologyTypes() {
@@ -668,15 +678,23 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 				public static class WeightingInfo {
 
+					private String name;
+
 					private Long vpcBandwidth;
-
-					private Long ebsBurstBandwidth;
-
-					private Long ebsBandwidth;
 
 					private Long vpcBurstBandwidth;
 
-					private String name;
+					private Long ebsBandwidth;
+
+					private Long ebsBurstBandwidth;
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
 
 					public Long getVpcBandwidth() {
 						return this.vpcBandwidth;
@@ -684,22 +702,6 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 					public void setVpcBandwidth(Long vpcBandwidth) {
 						this.vpcBandwidth = vpcBandwidth;
-					}
-
-					public Long getEbsBurstBandwidth() {
-						return this.ebsBurstBandwidth;
-					}
-
-					public void setEbsBurstBandwidth(Long ebsBurstBandwidth) {
-						this.ebsBurstBandwidth = ebsBurstBandwidth;
-					}
-
-					public Long getEbsBandwidth() {
-						return this.ebsBandwidth;
-					}
-
-					public void setEbsBandwidth(Long ebsBandwidth) {
-						this.ebsBandwidth = ebsBandwidth;
 					}
 
 					public Long getVpcBurstBandwidth() {
@@ -710,12 +712,20 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 						this.vpcBurstBandwidth = vpcBurstBandwidth;
 					}
 
-					public String getName() {
-						return this.name;
+					public Long getEbsBandwidth() {
+						return this.ebsBandwidth;
 					}
 
-					public void setName(String name) {
-						this.name = name;
+					public void setEbsBandwidth(Long ebsBandwidth) {
+						this.ebsBandwidth = ebsBandwidth;
+					}
+
+					public Long getEbsBurstBandwidth() {
+						return this.ebsBurstBandwidth;
+					}
+
+					public void setEbsBurstBandwidth(Long ebsBurstBandwidth) {
+						this.ebsBurstBandwidth = ebsBurstBandwidth;
 					}
 				}
 			}

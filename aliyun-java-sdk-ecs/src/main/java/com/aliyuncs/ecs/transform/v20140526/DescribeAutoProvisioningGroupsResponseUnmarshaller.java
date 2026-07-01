@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroup;
+import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroup.CandidateOptions;
+import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroup.CapacitySpecification;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroup.LaunchTemplateConfig;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroup.PayAsYouGoOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroup.SpotOptions;
@@ -56,6 +58,12 @@ public class DescribeAutoProvisioningGroupsResponseUnmarshaller {
 			autoProvisioningGroup.setExcessCapacityTerminationPolicy(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].ExcessCapacityTerminationPolicy"));
 			autoProvisioningGroup.setResourceGroupId(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].ResourceGroupId"));
 
+			List<String> suspendedProcesses = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].SuspendedProcesses.Length"); j++) {
+				suspendedProcesses.add(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].SuspendedProcesses["+ j +"]"));
+			}
+			autoProvisioningGroup.setSuspendedProcesses(suspendedProcesses);
+
 			SpotOptions spotOptions = new SpotOptions();
 			spotOptions.setInstancePoolsToUseCount(_ctx.integerValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].SpotOptions.InstancePoolsToUseCount"));
 			spotOptions.setAllocationStrategy(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].SpotOptions.AllocationStrategy"));
@@ -72,6 +80,17 @@ public class DescribeAutoProvisioningGroupsResponseUnmarshaller {
 			targetCapacitySpecification.setDefaultTargetCapacityType(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].TargetCapacitySpecification.DefaultTargetCapacityType"));
 			targetCapacitySpecification.setTotalTargetCapacity(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].TargetCapacitySpecification.TotalTargetCapacity"));
 			autoProvisioningGroup.setTargetCapacitySpecification(targetCapacitySpecification);
+
+			CandidateOptions candidateOptions = new CandidateOptions();
+			candidateOptions.setTimeoutMinutes(_ctx.integerValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].CandidateOptions.TimeoutMinutes"));
+			autoProvisioningGroup.setCandidateOptions(candidateOptions);
+
+			CapacitySpecification capacitySpecification = new CapacitySpecification();
+			capacitySpecification.setPayAsYouGoCapacity(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].CapacitySpecification.PayAsYouGoCapacity"));
+			capacitySpecification.setPrePaidCapacity(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].CapacitySpecification.PrePaidCapacity"));
+			capacitySpecification.setSpotCapacity(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].CapacitySpecification.SpotCapacity"));
+			capacitySpecification.setTotalCapacity(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].CapacitySpecification.TotalCapacity"));
+			autoProvisioningGroup.setCapacitySpecification(capacitySpecification);
 
 			List<LaunchTemplateConfig> launchTemplateConfigs = new ArrayList<LaunchTemplateConfig>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].LaunchTemplateConfigs.Length"); j++) {

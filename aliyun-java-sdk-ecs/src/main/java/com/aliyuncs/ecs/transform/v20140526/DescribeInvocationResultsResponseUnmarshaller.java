@@ -51,6 +51,8 @@ public class DescribeInvocationResultsResponseUnmarshaller {
 			invocationResult.setFinishedTime(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].FinishedTime"));
 			invocationResult.setOssOutputUri(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].OssOutputUri"));
 			invocationResult.setOssOutputStatus(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].OssOutputStatus"));
+			invocationResult.setOssOutputErrorCode(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].OssOutputErrorCode"));
+			invocationResult.setOssOutputErrorInfo(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].OssOutputErrorInfo"));
 			invocationResult.setUsername(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].Username"));
 			invocationResult.setContainerId(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].ContainerId"));
 			invocationResult.setContainerName(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].ContainerName"));

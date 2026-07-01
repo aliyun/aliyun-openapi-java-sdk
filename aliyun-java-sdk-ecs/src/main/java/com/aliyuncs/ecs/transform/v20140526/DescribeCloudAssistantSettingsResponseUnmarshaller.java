@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeCloudAssistantSettingsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeCloudAssistantSettingsResponse.AgentUpgradeConfig;
 import com.aliyuncs.ecs.model.v20140526.DescribeCloudAssistantSettingsResponse.OssDeliveryConfig;
+import com.aliyuncs.ecs.model.v20140526.DescribeCloudAssistantSettingsResponse.ResourceUsageConfig;
 import com.aliyuncs.ecs.model.v20140526.DescribeCloudAssistantSettingsResponse.SessionManagerConfig;
 import com.aliyuncs.ecs.model.v20140526.DescribeCloudAssistantSettingsResponse.SlsDeliveryConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -34,6 +35,8 @@ public class DescribeCloudAssistantSettingsResponseUnmarshaller {
 		AgentUpgradeConfig agentUpgradeConfig = new AgentUpgradeConfig();
 		agentUpgradeConfig.setEnabled(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.AgentUpgradeConfig.Enabled"));
 		agentUpgradeConfig.setTimeZone(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.AgentUpgradeConfig.TimeZone"));
+		agentUpgradeConfig.setBootstrapUpgrade(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.AgentUpgradeConfig.BootstrapUpgrade"));
+		agentUpgradeConfig.setDisableUpgrade(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.AgentUpgradeConfig.DisableUpgrade"));
 
 		List<String> allowedUpgradeWindows = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudAssistantSettingsResponse.AgentUpgradeConfig.AllowedUpgradeWindows.Length"); i++) {
@@ -41,6 +44,15 @@ public class DescribeCloudAssistantSettingsResponseUnmarshaller {
 		}
 		agentUpgradeConfig.setAllowedUpgradeWindows(allowedUpgradeWindows);
 		describeCloudAssistantSettingsResponse.setAgentUpgradeConfig(agentUpgradeConfig);
+
+		ResourceUsageConfig resourceUsageConfig = new ResourceUsageConfig();
+		resourceUsageConfig.setCpuLimit(_ctx.integerValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.CpuLimit"));
+		resourceUsageConfig.setMemoryLimit(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.MemoryLimit"));
+		resourceUsageConfig.setOverloadLimit(_ctx.integerValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.OverloadLimit"));
+		resourceUsageConfig.setLogFileCountLimit(_ctx.integerValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.LogFileCountLimit"));
+		resourceUsageConfig.setLogSizeLimit(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.LogSizeLimit"));
+		resourceUsageConfig.setKeepScriptFile(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.KeepScriptFile"));
+		describeCloudAssistantSettingsResponse.setResourceUsageConfig(resourceUsageConfig);
 
 		SessionManagerConfig sessionManagerConfig = new SessionManagerConfig();
 		sessionManagerConfig.setSessionManagerEnabled(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.SessionManagerConfig.SessionManagerEnabled"));

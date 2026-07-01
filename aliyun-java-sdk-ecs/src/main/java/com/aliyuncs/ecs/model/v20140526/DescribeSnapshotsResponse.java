@@ -141,6 +141,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String sourceRegionId;
 
+		private Long fullSnapshotSizeInBytes;
+
 		private String snapshotLinkId;
 
 		private List<Tag> tags;
@@ -359,6 +361,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setSourceRegionId(String sourceRegionId) {
 			this.sourceRegionId = sourceRegionId;
+		}
+
+		public Long getFullSnapshotSizeInBytes() {
+			return this.fullSnapshotSizeInBytes;
+		}
+
+		public void setFullSnapshotSizeInBytes(Long fullSnapshotSizeInBytes) {
+			this.fullSnapshotSizeInBytes = fullSnapshotSizeInBytes;
 		}
 
 		public String getSnapshotLinkId() {

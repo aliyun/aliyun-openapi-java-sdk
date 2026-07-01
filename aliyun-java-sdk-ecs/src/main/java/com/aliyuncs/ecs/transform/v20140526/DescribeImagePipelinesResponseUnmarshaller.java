@@ -25,6 +25,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipe
 import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.ImageOptions.ImageTag;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.ImportImageOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.ImportImageOptions.DiskDeviceMapping;
+import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.ImportImageOptions.DockerOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.ImportImageOptions.Features;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.ImportImageOptions.ImportImageTag;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagePipelinesResponse.ImagePipelineSet.Tag;
@@ -90,6 +91,11 @@ public class DescribeImagePipelinesResponseUnmarshaller {
 			features.setNvmeSupport(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.Features.NvmeSupport"));
 			features.setImdsSupport(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.Features.ImdsSupport"));
 			importImageOptions.setFeatures(features);
+
+			DockerOptions dockerOptions = new DockerOptions();
+			dockerOptions.setImage(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.DockerOptions.Image"));
+			dockerOptions.setImageSize(_ctx.integerValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.DockerOptions.ImageSize"));
+			importImageOptions.setDockerOptions(dockerOptions);
 
 			List<DiskDeviceMapping> diskDeviceMappings = new ArrayList<DiskDeviceMapping>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImportImageOptions.DiskDeviceMappings.Length"); j++) {

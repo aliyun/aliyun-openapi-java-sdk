@@ -74,6 +74,7 @@ public class DescribeInstanceHistoryEventsResponseUnmarshaller {
 			extendedAttribute.setResponseResult(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.ResponseResult"));
 			extendedAttribute.setMetricValue(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.MetricValue"));
 			extendedAttribute.setMetricName(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.MetricName"));
+			extendedAttribute.setInitialNotBefore(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InitialNotBefore"));
 
 			List<String> migrationOptions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.MigrationOptions.Length"); j++) {

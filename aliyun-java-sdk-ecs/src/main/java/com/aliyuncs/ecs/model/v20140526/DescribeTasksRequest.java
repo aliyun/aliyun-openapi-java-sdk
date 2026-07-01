@@ -46,6 +46,8 @@ public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 
 	private Long ownerId;
 
+	private String taskGroupId;
+
 	private String taskAction;
 
 	private List<String> resourceIdss;
@@ -165,6 +167,17 @@ public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTaskGroupId() {
+		return this.taskGroupId;
+	}
+
+	public void setTaskGroupId(String taskGroupId) {
+		this.taskGroupId = taskGroupId;
+		if(taskGroupId != null){
+			putQueryParameter("TaskGroupId", taskGroupId);
 		}
 	}
 

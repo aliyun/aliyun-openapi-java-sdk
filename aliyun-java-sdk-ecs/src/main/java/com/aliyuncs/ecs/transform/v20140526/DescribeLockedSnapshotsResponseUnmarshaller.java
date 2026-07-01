@@ -33,6 +33,7 @@ public class DescribeLockedSnapshotsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo.Length"); i++) {
 			LockedSnapshotInfo lockedSnapshotInfo = new LockedSnapshotInfo();
 			lockedSnapshotInfo.setSnapshotId(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].SnapshotId"));
+			lockedSnapshotInfo.setLockMode(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].LockMode"));
 			lockedSnapshotInfo.setLockStatus(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].LockStatus"));
 			lockedSnapshotInfo.setLockCreationTime(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].LockCreationTime"));
 			lockedSnapshotInfo.setCoolOffPeriod(_ctx.integerValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].CoolOffPeriod"));

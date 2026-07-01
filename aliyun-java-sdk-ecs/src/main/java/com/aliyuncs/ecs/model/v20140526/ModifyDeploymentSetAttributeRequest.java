@@ -38,6 +38,8 @@ public class ModifyDeploymentSetAttributeRequest extends RpcAcsRequest<ModifyDep
 	private String deploymentSetName;
 
 	private Long ownerId;
+
+	private Long affinity;
 	public ModifyDeploymentSetAttributeRequest() {
 		super("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute", "ecs");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class ModifyDeploymentSetAttributeRequest extends RpcAcsRequest<ModifyDep
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getAffinity() {
+		return this.affinity;
+	}
+
+	public void setAffinity(Long affinity) {
+		this.affinity = affinity;
+		if(affinity != null){
+			putQueryParameter("Affinity", affinity.toString());
 		}
 	}
 

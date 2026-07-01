@@ -111,6 +111,10 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 		private String capacityReservationOwnerId;
 
+		private String deliveryTime;
+
+		private String unlockedTime;
+
 		private List<AllocatedResource> allocatedResources;
 
 		private List<Tag> tags;
@@ -251,6 +255,22 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 			this.capacityReservationOwnerId = capacityReservationOwnerId;
 		}
 
+		public String getDeliveryTime() {
+			return this.deliveryTime;
+		}
+
+		public void setDeliveryTime(String deliveryTime) {
+			this.deliveryTime = deliveryTime;
+		}
+
+		public String getUnlockedTime() {
+			return this.unlockedTime;
+		}
+
+		public void setUnlockedTime(String unlockedTime) {
+			this.unlockedTime = unlockedTime;
+		}
+
 		public List<AllocatedResource> getAllocatedResources() {
 			return this.allocatedResources;
 		}
@@ -274,6 +294,10 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 			private Integer totalAmount;
 
 			private Integer availableAmount;
+
+			private Integer failedAmount;
+
+			private Integer lockedAmount;
 
 			private String zoneId;
 
@@ -303,6 +327,22 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 			public void setAvailableAmount(Integer availableAmount) {
 				this.availableAmount = availableAmount;
+			}
+
+			public Integer getFailedAmount() {
+				return this.failedAmount;
+			}
+
+			public void setFailedAmount(Integer failedAmount) {
+				this.failedAmount = failedAmount;
+			}
+
+			public Integer getLockedAmount() {
+				return this.lockedAmount;
+			}
+
+			public void setLockedAmount(Integer lockedAmount) {
+				this.lockedAmount = lockedAmount;
 			}
 
 			public String getZoneId() {

@@ -133,6 +133,12 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 
 			private String detail;
 
+			private List<ErrorMessage> errorMessages;
+
+			private List<String> createdInstanceIds;
+
+			private List<String> destroyedInstanceIds;
+
 			public String getStatus() {
 				return this.status;
 			}
@@ -147,6 +153,63 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 
 			public void setDetail(String detail) {
 				this.detail = detail;
+			}
+
+			public List<ErrorMessage> getErrorMessages() {
+				return this.errorMessages;
+			}
+
+			public void setErrorMessages(List<ErrorMessage> errorMessages) {
+				this.errorMessages = errorMessages;
+			}
+
+			public List<String> getCreatedInstanceIds() {
+				return this.createdInstanceIds;
+			}
+
+			public void setCreatedInstanceIds(List<String> createdInstanceIds) {
+				this.createdInstanceIds = createdInstanceIds;
+			}
+
+			public List<String> getDestroyedInstanceIds() {
+				return this.destroyedInstanceIds;
+			}
+
+			public void setDestroyedInstanceIds(List<String> destroyedInstanceIds) {
+				this.destroyedInstanceIds = destroyedInstanceIds;
+			}
+
+			public static class ErrorMessage {
+
+				private String code;
+
+				private String message;
+
+				private List<String> failedInstanceIds;
+
+				public String getCode() {
+					return this.code;
+				}
+
+				public void setCode(String code) {
+					this.code = code;
+				}
+
+				public String getMessage() {
+					return this.message;
+				}
+
+				public void setMessage(String message) {
+					this.message = message;
+				}
+
+				public List<String> getFailedInstanceIds() {
+					return this.failedInstanceIds;
+				}
+
+				public void setFailedInstanceIds(List<String> failedInstanceIds) {
+					this.failedInstanceIds = failedInstanceIds;
+				}
 			}
 		}
 	}

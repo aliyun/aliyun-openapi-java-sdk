@@ -47,6 +47,8 @@ public class DescribeDeploymentSetsResponseUnmarshaller {
 			deploymentSet.setGranularity(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Granularity"));
 			deploymentSet.setDeploymentSetName(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentSetName"));
 			deploymentSet.setInstanceAmount(_ctx.integerValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].InstanceAmount"));
+			deploymentSet.setType(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Type"));
+			deploymentSet.setAffinity(_ctx.longValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Affinity"));
 
 			List<String> instanceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].InstanceIds.Length"); j++) {

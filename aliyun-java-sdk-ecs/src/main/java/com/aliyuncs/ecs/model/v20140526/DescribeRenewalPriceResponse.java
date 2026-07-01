@@ -53,6 +53,8 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 		private PriceWarning priceWarning;
 
+		private RelatedPrice relatedPrice;
+
 		public List<Rule> getRules() {
 			return this.rules;
 		}
@@ -75,6 +77,14 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 		public void setPriceWarning(PriceWarning priceWarning) {
 			this.priceWarning = priceWarning;
+		}
+
+		public RelatedPrice getRelatedPrice() {
+			return this.relatedPrice;
+		}
+
+		public void setRelatedPrice(RelatedPrice relatedPrice) {
+			this.relatedPrice = relatedPrice;
 		}
 
 		public static class Rule {
@@ -1076,6 +1086,311 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 			public void setCode(String code) {
 				this.code = code;
+			}
+		}
+
+		public static class RelatedPrice {
+
+			private MarketplaceImagePrice marketplaceImagePrice;
+
+			public MarketplaceImagePrice getMarketplaceImagePrice() {
+				return this.marketplaceImagePrice;
+			}
+
+			public void setMarketplaceImagePrice(MarketplaceImagePrice marketplaceImagePrice) {
+				this.marketplaceImagePrice = marketplaceImagePrice;
+			}
+
+			public static class MarketplaceImagePrice {
+
+				private String currency;
+
+				private Float originalPrice;
+
+				private Float discountPrice;
+
+				private Float tradePrice;
+
+				private List<Promotion11> promotions9;
+
+				private List<Coupon12> coupons10;
+
+				public String getCurrency() {
+					return this.currency;
+				}
+
+				public void setCurrency(String currency) {
+					this.currency = currency;
+				}
+
+				public Float getOriginalPrice() {
+					return this.originalPrice;
+				}
+
+				public void setOriginalPrice(Float originalPrice) {
+					this.originalPrice = originalPrice;
+				}
+
+				public Float getDiscountPrice() {
+					return this.discountPrice;
+				}
+
+				public void setDiscountPrice(Float discountPrice) {
+					this.discountPrice = discountPrice;
+				}
+
+				public Float getTradePrice() {
+					return this.tradePrice;
+				}
+
+				public void setTradePrice(Float tradePrice) {
+					this.tradePrice = tradePrice;
+				}
+
+				public List<Promotion11> getPromotions9() {
+					return this.promotions9;
+				}
+
+				public void setPromotions9(List<Promotion11> promotions9) {
+					this.promotions9 = promotions9;
+				}
+
+				public List<Coupon12> getCoupons10() {
+					return this.coupons10;
+				}
+
+				public void setCoupons10(List<Coupon12> coupons10) {
+					this.coupons10 = coupons10;
+				}
+
+				public static class Promotion11 {
+
+					private Long ruleId;
+
+					private String name;
+
+					private Float discountOff;
+
+					private String type;
+
+					public Long getRuleId() {
+						return this.ruleId;
+					}
+
+					public void setRuleId(Long ruleId) {
+						this.ruleId = ruleId;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public Float getDiscountOff() {
+						return this.discountOff;
+					}
+
+					public void setDiscountOff(Float discountOff) {
+						this.discountOff = discountOff;
+					}
+
+					public String getType() {
+						return this.type;
+					}
+
+					public void setType(String type) {
+						this.type = type;
+					}
+				}
+
+				public static class Coupon12 {
+
+					private String couponNo;
+
+					private Float discountOff;
+
+					private String description;
+
+					private Boolean isSelected;
+
+					private String optionCode;
+
+					private String name;
+
+					private Boolean effective;
+
+					private List<Long> ruleIds13;
+
+					private AdditionalInfo14 additionalInfo14;
+
+					public String getCouponNo() {
+						return this.couponNo;
+					}
+
+					public void setCouponNo(String couponNo) {
+						this.couponNo = couponNo;
+					}
+
+					public Float getDiscountOff() {
+						return this.discountOff;
+					}
+
+					public void setDiscountOff(Float discountOff) {
+						this.discountOff = discountOff;
+					}
+
+					public String getDescription() {
+						return this.description;
+					}
+
+					public void setDescription(String description) {
+						this.description = description;
+					}
+
+					public Boolean getIsSelected() {
+						return this.isSelected;
+					}
+
+					public void setIsSelected(Boolean isSelected) {
+						this.isSelected = isSelected;
+					}
+
+					public String getOptionCode() {
+						return this.optionCode;
+					}
+
+					public void setOptionCode(String optionCode) {
+						this.optionCode = optionCode;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public Boolean getEffective() {
+						return this.effective;
+					}
+
+					public void setEffective(Boolean effective) {
+						this.effective = effective;
+					}
+
+					public List<Long> getRuleIds13() {
+						return this.ruleIds13;
+					}
+
+					public void setRuleIds13(List<Long> ruleIds13) {
+						this.ruleIds13 = ruleIds13;
+					}
+
+					public AdditionalInfo14 getAdditionalInfo14() {
+						return this.additionalInfo14;
+					}
+
+					public void setAdditionalInfo14(AdditionalInfo14 additionalInfo14) {
+						this.additionalInfo14 = additionalInfo14;
+					}
+
+					public static class AdditionalInfo14 {
+
+						private String couponType;
+
+						private Double availableAmount;
+
+						private Double upperLimitAmount;
+
+						private String startTime;
+
+						private String endTime;
+
+						private String ineffectiveReason;
+
+						private Double discountRate;
+
+						private Double certainAmount;
+
+						private Double voucherTotalAmount;
+
+						public String getCouponType() {
+							return this.couponType;
+						}
+
+						public void setCouponType(String couponType) {
+							this.couponType = couponType;
+						}
+
+						public Double getAvailableAmount() {
+							return this.availableAmount;
+						}
+
+						public void setAvailableAmount(Double availableAmount) {
+							this.availableAmount = availableAmount;
+						}
+
+						public Double getUpperLimitAmount() {
+							return this.upperLimitAmount;
+						}
+
+						public void setUpperLimitAmount(Double upperLimitAmount) {
+							this.upperLimitAmount = upperLimitAmount;
+						}
+
+						public String getStartTime() {
+							return this.startTime;
+						}
+
+						public void setStartTime(String startTime) {
+							this.startTime = startTime;
+						}
+
+						public String getEndTime() {
+							return this.endTime;
+						}
+
+						public void setEndTime(String endTime) {
+							this.endTime = endTime;
+						}
+
+						public String getIneffectiveReason() {
+							return this.ineffectiveReason;
+						}
+
+						public void setIneffectiveReason(String ineffectiveReason) {
+							this.ineffectiveReason = ineffectiveReason;
+						}
+
+						public Double getDiscountRate() {
+							return this.discountRate;
+						}
+
+						public void setDiscountRate(Double discountRate) {
+							this.discountRate = discountRate;
+						}
+
+						public Double getCertainAmount() {
+							return this.certainAmount;
+						}
+
+						public void setCertainAmount(Double certainAmount) {
+							this.certainAmount = certainAmount;
+						}
+
+						public Double getVoucherTotalAmount() {
+							return this.voucherTotalAmount;
+						}
+
+						public void setVoucherTotalAmount(Double voucherTotalAmount) {
+							this.voucherTotalAmount = voucherTotalAmount;
+						}
+					}
+				}
 			}
 		}
 	}

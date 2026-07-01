@@ -40,6 +40,8 @@ public class DescribeAutoProvisioningGroupsRequest extends RpcAcsRequest<Describ
 
 	private String resourceOwnerAccount;
 
+	private List<String> autoProvisioningGroupTypess;
+
 	private String ownerAccount;
 
 	private Long ownerId;
@@ -136,6 +138,19 @@ public class DescribeAutoProvisioningGroupsRequest extends RpcAcsRequest<Describ
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
+	}
+
+	public List<String> getAutoProvisioningGroupTypess() {
+		return this.autoProvisioningGroupTypess;
+	}
+
+	public void setAutoProvisioningGroupTypess(List<String> autoProvisioningGroupTypess) {
+		this.autoProvisioningGroupTypess = autoProvisioningGroupTypess;	
+		if (autoProvisioningGroupTypess != null) {
+			for (int i = 0; i < autoProvisioningGroupTypess.size(); i++) {
+				putQueryParameter("AutoProvisioningGroupTypes." + (i + 1) , autoProvisioningGroupTypess.get(i));
+			}
+		}	
 	}
 
 	public String getOwnerAccount() {

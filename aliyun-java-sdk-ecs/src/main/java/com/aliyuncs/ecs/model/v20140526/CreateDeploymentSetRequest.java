@@ -31,6 +31,8 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 
 	private String description;
 
+	private String type;
+
 	private Long groupCount;
 
 	private String resourceOwnerAccount;
@@ -48,6 +50,8 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 	private String domain;
 
 	private String strategy;
+
+	private Long affinity;
 	public CreateDeploymentSetRequest() {
 		super("Ecs", "2014-05-26", "CreateDeploymentSet", "ecs");
 		setMethod(MethodType.POST);
@@ -87,6 +91,17 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
@@ -186,6 +201,17 @@ public class CreateDeploymentSetRequest extends RpcAcsRequest<CreateDeploymentSe
 		this.strategy = strategy;
 		if(strategy != null){
 			putQueryParameter("Strategy", strategy);
+		}
+	}
+
+	public Long getAffinity() {
+		return this.affinity;
+	}
+
+	public void setAffinity(Long affinity) {
+		this.affinity = affinity;
+		if(affinity != null){
+			putQueryParameter("Affinity", affinity.toString());
 		}
 	}
 

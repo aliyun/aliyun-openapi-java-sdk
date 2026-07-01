@@ -113,11 +113,17 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
 		private List<Tag> tags;
 
+		private List<String> suspendedProcesses;
+
 		private SpotOptions spotOptions;
 
 		private PayAsYouGoOptions payAsYouGoOptions;
 
 		private TargetCapacitySpecification targetCapacitySpecification;
+
+		private CandidateOptions candidateOptions;
+
+		private CapacitySpecification capacitySpecification;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -263,6 +269,14 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public List<String> getSuspendedProcesses() {
+			return this.suspendedProcesses;
+		}
+
+		public void setSuspendedProcesses(List<String> suspendedProcesses) {
+			this.suspendedProcesses = suspendedProcesses;
+		}
+
 		public SpotOptions getSpotOptions() {
 			return this.spotOptions;
 		}
@@ -285,6 +299,22 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
 		public void setTargetCapacitySpecification(TargetCapacitySpecification targetCapacitySpecification) {
 			this.targetCapacitySpecification = targetCapacitySpecification;
+		}
+
+		public CandidateOptions getCandidateOptions() {
+			return this.candidateOptions;
+		}
+
+		public void setCandidateOptions(CandidateOptions candidateOptions) {
+			this.candidateOptions = candidateOptions;
+		}
+
+		public CapacitySpecification getCapacitySpecification() {
+			return this.capacitySpecification;
+		}
+
+		public void setCapacitySpecification(CapacitySpecification capacitySpecification) {
+			this.capacitySpecification = capacitySpecification;
 		}
 
 		public static class LaunchTemplateConfig {
@@ -449,6 +479,62 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
 			public void setTotalTargetCapacity(Float totalTargetCapacity) {
 				this.totalTargetCapacity = totalTargetCapacity;
+			}
+		}
+
+		public static class CandidateOptions {
+
+			private Integer timeoutMinutes;
+
+			public Integer getTimeoutMinutes() {
+				return this.timeoutMinutes;
+			}
+
+			public void setTimeoutMinutes(Integer timeoutMinutes) {
+				this.timeoutMinutes = timeoutMinutes;
+			}
+		}
+
+		public static class CapacitySpecification {
+
+			private Float payAsYouGoCapacity;
+
+			private Float prePaidCapacity;
+
+			private Float spotCapacity;
+
+			private Float totalCapacity;
+
+			public Float getPayAsYouGoCapacity() {
+				return this.payAsYouGoCapacity;
+			}
+
+			public void setPayAsYouGoCapacity(Float payAsYouGoCapacity) {
+				this.payAsYouGoCapacity = payAsYouGoCapacity;
+			}
+
+			public Float getPrePaidCapacity() {
+				return this.prePaidCapacity;
+			}
+
+			public void setPrePaidCapacity(Float prePaidCapacity) {
+				this.prePaidCapacity = prePaidCapacity;
+			}
+
+			public Float getSpotCapacity() {
+				return this.spotCapacity;
+			}
+
+			public void setSpotCapacity(Float spotCapacity) {
+				this.spotCapacity = spotCapacity;
+			}
+
+			public Float getTotalCapacity() {
+				return this.totalCapacity;
+			}
+
+			public void setTotalCapacity(Float totalCapacity) {
+				this.totalCapacity = totalCapacity;
 			}
 		}
 	}

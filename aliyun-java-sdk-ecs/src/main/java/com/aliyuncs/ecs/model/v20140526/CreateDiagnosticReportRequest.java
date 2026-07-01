@@ -15,6 +15,9 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -32,6 +35,9 @@ public class CreateDiagnosticReportRequest extends RpcAcsRequest<CreateDiagnosti
 	private String resourceId;
 
 	private String endTime;
+
+	@SerializedName("additionalOptions")
+	private Map<String,String> additionalOptions;
 	public CreateDiagnosticReportRequest() {
 		super("Ecs", "2014-05-26", "CreateDiagnosticReport", "ecs");
 		setMethod(MethodType.POST);
@@ -83,6 +89,17 @@ public class CreateDiagnosticReportRequest extends RpcAcsRequest<CreateDiagnosti
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
 		}
+	}
+
+	public Map<String,String> getAdditionalOptions() {
+		return this.additionalOptions;
+	}
+
+	public void setAdditionalOptions(Map<String,String> additionalOptions) {
+		this.additionalOptions = additionalOptions;	
+		if (additionalOptions != null) {
+			putQueryParameter("AdditionalOptions" , new Gson().toJson(additionalOptions));
+		}	
 	}
 
 	@Override

@@ -115,6 +115,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 	@SerializedName("resourcePoolOptions")
 	private ResourcePoolOptions resourcePoolOptions;
 
+	private CandidateOptions candidateOptions;
+
 	private Boolean terminateInstances;
 
 	private String launchConfigurationSystemDiskName;
@@ -712,6 +714,19 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.resourcePoolOptions = resourcePoolOptions;	
 		if (resourcePoolOptions != null) {
 			putQueryParameter("ResourcePoolOptions" , new Gson().toJson(resourcePoolOptions));
+		}	
+	}
+
+	public CandidateOptions getCandidateOptions() {
+		return this.candidateOptions;
+	}
+
+	public void setCandidateOptions(CandidateOptions candidateOptions) {
+		this.candidateOptions = candidateOptions;	
+		if (candidateOptions != null) {
+			
+				putQueryParameter("CandidateOptions.TimeoutMinutes" , candidateOptions.getTimeoutMinutes());
+				putQueryParameter("CandidateOptions.Evaluate" , candidateOptions.getEvaluate());
 		}	
 	}
 
@@ -1527,6 +1542,29 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setPrivatePoolIds(List<String> privatePoolIds) {
 			this.privatePoolIds = privatePoolIds;
+		}
+	}
+
+	public static class CandidateOptions {
+
+		private Integer timeoutMinutes;
+
+		private Boolean evaluate;
+
+		public Integer getTimeoutMinutes() {
+			return this.timeoutMinutes;
+		}
+
+		public void setTimeoutMinutes(Integer timeoutMinutes) {
+			this.timeoutMinutes = timeoutMinutes;
+		}
+
+		public Boolean getEvaluate() {
+			return this.evaluate;
+		}
+
+		public void setEvaluate(Boolean evaluate) {
+			this.evaluate = evaluate;
 		}
 	}
 

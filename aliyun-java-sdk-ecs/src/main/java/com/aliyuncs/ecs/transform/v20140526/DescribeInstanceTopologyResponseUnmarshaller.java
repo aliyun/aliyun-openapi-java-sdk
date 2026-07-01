@@ -34,6 +34,12 @@ public class DescribeInstanceTopologyResponseUnmarshaller {
 			topology.setHostId(_ctx.stringValue("DescribeInstanceTopologyResponse.Topologys["+ i +"].HostId"));
 			topology.setInstanceId(_ctx.stringValue("DescribeInstanceTopologyResponse.Topologys["+ i +"].InstanceId"));
 
+			List<String> networkNodes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTopologyResponse.Topologys["+ i +"].NetworkNodes.Length"); j++) {
+				networkNodes.add(_ctx.stringValue("DescribeInstanceTopologyResponse.Topologys["+ i +"].NetworkNodes["+ j +"]"));
+			}
+			topology.setNetworkNodes(networkNodes);
+
 			topologys.add(topology);
 		}
 		describeInstanceTopologyResponse.setTopologys(topologys);

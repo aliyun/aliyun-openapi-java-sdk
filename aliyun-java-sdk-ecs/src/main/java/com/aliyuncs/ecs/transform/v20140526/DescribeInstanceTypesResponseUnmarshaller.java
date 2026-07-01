@@ -96,6 +96,7 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			cpuOptions.setCore(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.Core"));
 			cpuOptions.setCoreFactor(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.CoreFactor"));
 			cpuOptions.setHyperThreadingAdjustable(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.HyperThreadingAdjustable"));
+			cpuOptions.setNestedVirtualizationSupport(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.NestedVirtualizationSupport"));
 
 			List<String> supportedTopologyTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.SupportedTopologyTypes.Length"); j++) {
@@ -115,11 +116,11 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			List<WeightingInfo> weightingInfos = new ArrayList<WeightingInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos.Length"); j++) {
 				WeightingInfo weightingInfo = new WeightingInfo();
-				weightingInfo.setVpcBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].VpcBandwidth"));
-				weightingInfo.setEbsBurstBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].EbsBurstBandwidth"));
-				weightingInfo.setEbsBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].EbsBandwidth"));
-				weightingInfo.setVpcBurstBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].VpcBurstBandwidth"));
 				weightingInfo.setName(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].Name"));
+				weightingInfo.setVpcBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].VpcBandwidth"));
+				weightingInfo.setVpcBurstBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].VpcBurstBandwidth"));
+				weightingInfo.setEbsBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].EbsBandwidth"));
+				weightingInfo.setEbsBurstBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].EbsBurstBandwidth"));
 
 				weightingInfos.add(weightingInfo);
 			}

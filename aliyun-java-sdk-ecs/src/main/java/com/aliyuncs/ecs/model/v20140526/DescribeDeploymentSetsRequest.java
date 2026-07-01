@@ -29,6 +29,8 @@ public class DescribeDeploymentSetsRequest extends RpcAcsRequest<DescribeDeploym
 
 	private String networkType;
 
+	private String type;
+
 	private Integer pageNumber;
 
 	private String deploymentSetIds;
@@ -76,6 +78,17 @@ public class DescribeDeploymentSetsRequest extends RpcAcsRequest<DescribeDeploym
 		this.networkType = networkType;
 		if(networkType != null){
 			putQueryParameter("NetworkType", networkType);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

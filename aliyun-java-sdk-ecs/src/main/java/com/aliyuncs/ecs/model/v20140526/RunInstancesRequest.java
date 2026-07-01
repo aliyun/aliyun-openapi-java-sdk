@@ -64,6 +64,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String privateIpAddress;
 
+	private CpuOptions cpuOptions;
+
 	private String periodUnit;
 
 	private Boolean autoRenew;
@@ -424,6 +426,21 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		if(privateIpAddress != null){
 			putQueryParameter("PrivateIpAddress", privateIpAddress);
 		}
+	}
+
+	public CpuOptions getCpuOptions() {
+		return this.cpuOptions;
+	}
+
+	public void setCpuOptions(CpuOptions cpuOptions) {
+		this.cpuOptions = cpuOptions;	
+		if (cpuOptions != null) {
+			
+				putQueryParameter("CpuOptions.TurboMode" , cpuOptions.getTurboMode());
+				putQueryParameter("CpuOptions.EnableVISST" , cpuOptions.getEnableVISST());
+				putQueryParameter("CpuOptions.EnableVRDT" , cpuOptions.getEnableVRDT());
+				putQueryParameter("CpuOptions.NestedVirtualization" , cpuOptions.getNestedVirtualization());
+		}	
 	}
 
 	public String getPeriodUnit() {
@@ -1324,6 +1341,49 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
 			this.loginAsNonRoot = loginAsNonRoot;
+		}
+	}
+
+	public static class CpuOptions {
+
+		private String turboMode;
+
+		private Boolean enableVISST;
+
+		private Boolean enableVRDT;
+
+		private String nestedVirtualization;
+
+		public String getTurboMode() {
+			return this.turboMode;
+		}
+
+		public void setTurboMode(String turboMode) {
+			this.turboMode = turboMode;
+		}
+
+		public Boolean getEnableVISST() {
+			return this.enableVISST;
+		}
+
+		public void setEnableVISST(Boolean enableVISST) {
+			this.enableVISST = enableVISST;
+		}
+
+		public Boolean getEnableVRDT() {
+			return this.enableVRDT;
+		}
+
+		public void setEnableVRDT(Boolean enableVRDT) {
+			this.enableVRDT = enableVRDT;
+		}
+
+		public String getNestedVirtualization() {
+			return this.nestedVirtualization;
+		}
+
+		public void setNestedVirtualization(String nestedVirtualization) {
+			this.nestedVirtualization = nestedVirtualization;
 		}
 	}
 

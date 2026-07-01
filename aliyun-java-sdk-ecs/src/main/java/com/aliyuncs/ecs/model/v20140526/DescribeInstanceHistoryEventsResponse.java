@@ -283,6 +283,8 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			private String metricName;
 
+			private String initialNotBefore;
+
 			private List<InactiveDisk> inactiveDisks;
 
 			private List<String> migrationOptions;
@@ -397,6 +399,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			public void setMetricName(String metricName) {
 				this.metricName = metricName;
+			}
+
+			public String getInitialNotBefore() {
+				return this.initialNotBefore;
+			}
+
+			public void setInitialNotBefore(String initialNotBefore) {
+				this.initialNotBefore = initialNotBefore;
 			}
 
 			public List<InactiveDisk> getInactiveDisks() {

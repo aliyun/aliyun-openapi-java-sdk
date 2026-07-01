@@ -93,6 +93,10 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
 		private String executionId;
 
+		private String errorCode;
+
+		private String errorInfo;
+
 		private List<Tag> tags;
 
 		public String getCreationTime() {
@@ -157,6 +161,22 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
 		public void setExecutionId(String executionId) {
 			this.executionId = executionId;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getErrorInfo() {
+			return this.errorInfo;
+		}
+
+		public void setErrorInfo(String errorInfo) {
+			this.errorInfo = errorInfo;
 		}
 
 		public List<Tag> getTags() {
