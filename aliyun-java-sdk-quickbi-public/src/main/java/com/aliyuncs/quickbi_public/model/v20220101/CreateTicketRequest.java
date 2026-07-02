@@ -108,7 +108,7 @@ public class CreateTicketRequest extends RpcAcsRequest<CreateTicketResponse> {
 	public void setGlobalParam(String globalParam) {
 		this.globalParam = globalParam;
 		if(globalParam != null){
-			putQueryParameter("GlobalParam", globalParam);
+			putBodyParameter("GlobalParam", globalParam);
 		}
 	}
 

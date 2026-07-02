@@ -27,6 +27,8 @@ public class CreateCubeBySqlRequest extends RpcAcsRequest<CreateCubeBySqlRespons
 
 	private String dsId;
 
+	private String placeholders;
+
 	private String caption;
 
 	private String userId;
@@ -48,6 +50,17 @@ public class CreateCubeBySqlRequest extends RpcAcsRequest<CreateCubeBySqlRespons
 		this.dsId = dsId;
 		if(dsId != null){
 			putQueryParameter("DsId", dsId);
+		}
+	}
+
+	public String getPlaceholders() {
+		return this.placeholders;
+	}
+
+	public void setPlaceholders(String placeholders) {
+		this.placeholders = placeholders;
+		if(placeholders != null){
+			putBodyParameter("Placeholders", placeholders);
 		}
 	}
 

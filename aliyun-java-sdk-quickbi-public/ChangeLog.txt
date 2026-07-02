@@ -1,3 +1,6 @@
+2026-07-02 Version: 2.1.25
+- Add and update some APIs.
+
 2026-06-11 Version: 2.1.24
 - Add and update some APIs.
 
