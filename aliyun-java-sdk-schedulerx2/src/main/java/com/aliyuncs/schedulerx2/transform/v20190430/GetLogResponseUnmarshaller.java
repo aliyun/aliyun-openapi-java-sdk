@@ -27,9 +27,9 @@ public class GetLogResponseUnmarshaller {
 	public static GetLogResponse unmarshall(GetLogResponse getLogResponse, UnmarshallerContext _ctx) {
 		
 		getLogResponse.setRequestId(_ctx.stringValue("GetLogResponse.RequestId"));
+		getLogResponse.setMessage(_ctx.stringValue("GetLogResponse.Message"));
 		getLogResponse.setCode(_ctx.integerValue("GetLogResponse.Code"));
 		getLogResponse.setSuccess(_ctx.booleanValue("GetLogResponse.Success"));
-		getLogResponse.setMessage(_ctx.stringValue("GetLogResponse.Message"));
 
 		Data data = new Data();
 

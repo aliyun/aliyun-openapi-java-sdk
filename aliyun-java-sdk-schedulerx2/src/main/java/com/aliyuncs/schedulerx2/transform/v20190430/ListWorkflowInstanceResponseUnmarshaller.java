@@ -28,22 +28,22 @@ public class ListWorkflowInstanceResponseUnmarshaller {
 	public static ListWorkflowInstanceResponse unmarshall(ListWorkflowInstanceResponse listWorkflowInstanceResponse, UnmarshallerContext _ctx) {
 		
 		listWorkflowInstanceResponse.setRequestId(_ctx.stringValue("ListWorkflowInstanceResponse.RequestId"));
+		listWorkflowInstanceResponse.setMessage(_ctx.stringValue("ListWorkflowInstanceResponse.Message"));
 		listWorkflowInstanceResponse.setCode(_ctx.integerValue("ListWorkflowInstanceResponse.Code"));
 		listWorkflowInstanceResponse.setSuccess(_ctx.booleanValue("ListWorkflowInstanceResponse.Success"));
-		listWorkflowInstanceResponse.setMessage(_ctx.stringValue("ListWorkflowInstanceResponse.Message"));
 
 		Data data = new Data();
 
 		List<WfInstanceInfosItem> wfInstanceInfos = new ArrayList<WfInstanceInfosItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListWorkflowInstanceResponse.Data.WfInstanceInfos.Length"); i++) {
 			WfInstanceInfosItem wfInstanceInfosItem = new WfInstanceInfosItem();
-			wfInstanceInfosItem.setWfInstanceId(_ctx.longValue("ListWorkflowInstanceResponse.Data.WfInstanceInfos["+ i +"].WfInstanceId"));
-			wfInstanceInfosItem.setWorkflowId(_ctx.longValue("ListWorkflowInstanceResponse.Data.WfInstanceInfos["+ i +"].WorkflowId"));
 			wfInstanceInfosItem.setStatus(_ctx.integerValue("ListWorkflowInstanceResponse.Data.WfInstanceInfos["+ i +"].Status"));
-			wfInstanceInfosItem.setStartTime(_ctx.stringValue("ListWorkflowInstanceResponse.Data.WfInstanceInfos["+ i +"].StartTime"));
 			wfInstanceInfosItem.setEndTime(_ctx.stringValue("ListWorkflowInstanceResponse.Data.WfInstanceInfos["+ i +"].EndTime"));
 			wfInstanceInfosItem.setScheduleTime(_ctx.stringValue("ListWorkflowInstanceResponse.Data.WfInstanceInfos["+ i +"].ScheduleTime"));
+			wfInstanceInfosItem.setStartTime(_ctx.stringValue("ListWorkflowInstanceResponse.Data.WfInstanceInfos["+ i +"].StartTime"));
 			wfInstanceInfosItem.setDataTime(_ctx.stringValue("ListWorkflowInstanceResponse.Data.WfInstanceInfos["+ i +"].DataTime"));
+			wfInstanceInfosItem.setWfInstanceId(_ctx.longValue("ListWorkflowInstanceResponse.Data.WfInstanceInfos["+ i +"].WfInstanceId"));
+			wfInstanceInfosItem.setWorkflowId(_ctx.longValue("ListWorkflowInstanceResponse.Data.WfInstanceInfos["+ i +"].WorkflowId"));
 
 			wfInstanceInfos.add(wfInstanceInfosItem);
 		}

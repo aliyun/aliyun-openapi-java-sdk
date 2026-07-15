@@ -30,53 +30,53 @@ public class ReadSchedulerxDesignateDetailResponseUnmarshaller {
 	public static ReadSchedulerxDesignateDetailResponse unmarshall(ReadSchedulerxDesignateDetailResponse readSchedulerxDesignateDetailResponse, UnmarshallerContext _ctx) {
 		
 		readSchedulerxDesignateDetailResponse.setRequestId(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.RequestId"));
-		readSchedulerxDesignateDetailResponse.setCode(_ctx.integerValue("ReadSchedulerxDesignateDetailResponse.Code"));
 		readSchedulerxDesignateDetailResponse.setMessage(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.Message"));
+		readSchedulerxDesignateDetailResponse.setCode(_ctx.integerValue("ReadSchedulerxDesignateDetailResponse.Code"));
 		readSchedulerxDesignateDetailResponse.setSuccess(_ctx.booleanValue("ReadSchedulerxDesignateDetailResponse.Success"));
+
+		AccessDeniedDetail accessDeniedDetail = new AccessDeniedDetail();
+		accessDeniedDetail.setPolicyType(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.PolicyType"));
+		accessDeniedDetail.setAuthPrincipalOwnerId(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.AuthPrincipalOwnerId"));
+		accessDeniedDetail.setEncodedDiagnosticMessage(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.EncodedDiagnosticMessage"));
+		accessDeniedDetail.setAuthPrincipalType(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.AuthPrincipalType"));
+		accessDeniedDetail.setAuthPrincipalDisplayName(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.AuthPrincipalDisplayName"));
+		accessDeniedDetail.setNoPermissionType(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.NoPermissionType"));
+		accessDeniedDetail.setAuthAction(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.AuthAction"));
+		readSchedulerxDesignateDetailResponse.setAccessDeniedDetail(accessDeniedDetail);
 
 		Data data = new Data();
 
 		List<DesignateDetailVo> designateDetailVos = new ArrayList<DesignateDetailVo>();
 		for (int i = 0; i < _ctx.lengthValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos.Length"); i++) {
 			DesignateDetailVo designateDetailVo = new DesignateDetailVo();
-			designateDetailVo.setOffline(_ctx.booleanValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Offline"));
-			designateDetailVo.setSize(_ctx.integerValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Size"));
-			designateDetailVo.setStarter(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Starter"));
-			designateDetailVo.setBusy(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Busy"));
 			designateDetailVo.setChecked(_ctx.booleanValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Checked"));
 			designateDetailVo.setVersion(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Version"));
+			designateDetailVo.setSize(_ctx.integerValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Size"));
+			designateDetailVo.setBusy(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Busy"));
+			designateDetailVo.setOffline(_ctx.booleanValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Offline"));
+			designateDetailVo.setStarter(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Starter"));
 			designateDetailVo.setKey(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Key"));
 
 			Metrics metrics = new Metrics();
+			metrics.setSharePoolAvailableSize(_ctx.integerValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.SharePoolAvailableSize"));
+			metrics.setHeap1Usage(_ctx.doubleValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.Heap1Usage"));
+			metrics.setDiskUsage(_ctx.doubleValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.DiskUsage"));
+			metrics.setCpuProcessors(_ctx.integerValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.CpuProcessors"));
+			metrics.setHeap1Used(_ctx.doubleValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.Heap1Used"));
 			metrics.setCpuLoad1(_ctx.doubleValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.CpuLoad1"));
 			metrics.setCpuLoad5(_ctx.doubleValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.CpuLoad5"));
-			metrics.setCpuProcessors(_ctx.integerValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.CpuProcessors"));
-			metrics.setHeap1Usage(_ctx.doubleValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.Heap1Usage"));
-			metrics.setHeap5Usage(_ctx.doubleValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.Heap5Usage"));
-			metrics.setHeap1Used(_ctx.doubleValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.Heap1Used"));
+			metrics.setExecCount(_ctx.longValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.ExecCount"));
+			metrics.setSharePoolQueueSize(_ctx.integerValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.SharePoolQueueSize"));
 			metrics.setHeapMax(_ctx.integerValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.HeapMax"));
-			metrics.setDiskUsage(_ctx.doubleValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.DiskUsage"));
 			metrics.setDiskUsed(_ctx.integerValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.DiskUsed"));
 			metrics.setDiskMax(_ctx.integerValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.DiskMax"));
-			metrics.setSharePoolQueueSize(_ctx.integerValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.SharePoolQueueSize"));
-			metrics.setSharePoolAvailableSize(_ctx.integerValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.SharePoolAvailableSize"));
-			metrics.setExecCount(_ctx.longValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.ExecCount"));
+			metrics.setHeap5Usage(_ctx.doubleValue("ReadSchedulerxDesignateDetailResponse.Data.DesignateDetailVos["+ i +"].Metrics.Heap5Usage"));
 			designateDetailVo.setMetrics(metrics);
 
 			designateDetailVos.add(designateDetailVo);
 		}
 		data.setDesignateDetailVos(designateDetailVos);
 		readSchedulerxDesignateDetailResponse.setData(data);
-
-		AccessDeniedDetail accessDeniedDetail = new AccessDeniedDetail();
-		accessDeniedDetail.setAuthAction(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.AuthAction"));
-		accessDeniedDetail.setAuthPrincipalDisplayName(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.AuthPrincipalDisplayName"));
-		accessDeniedDetail.setAuthPrincipalOwnerId(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.AuthPrincipalOwnerId"));
-		accessDeniedDetail.setAuthPrincipalType(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.AuthPrincipalType"));
-		accessDeniedDetail.setEncodedDiagnosticMessage(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.EncodedDiagnosticMessage"));
-		accessDeniedDetail.setNoPermissionType(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.NoPermissionType"));
-		accessDeniedDetail.setPolicyType(_ctx.stringValue("ReadSchedulerxDesignateDetailResponse.AccessDeniedDetail.PolicyType"));
-		readSchedulerxDesignateDetailResponse.setAccessDeniedDetail(accessDeniedDetail);
 	 
 	 	return readSchedulerxDesignateDetailResponse;
 	}

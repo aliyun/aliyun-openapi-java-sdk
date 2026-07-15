@@ -28,13 +28,13 @@ public class ExecuteWorkflowRequest extends RpcAcsRequest<ExecuteWorkflowRespons
 
 	private String namespaceSource;
 
-	private String groupId;
-
-	private String namespace;
-
 	private Long workflowId;
 
 	private String instanceParameters;
+
+	private String groupId;
+
+	private String namespace;
 	public ExecuteWorkflowRequest() {
 		super("schedulerx2", "2019-04-30", "ExecuteWorkflow", "schedulerx2");
 		setProtocol(ProtocolType.HTTPS);
@@ -53,28 +53,6 @@ public class ExecuteWorkflowRequest extends RpcAcsRequest<ExecuteWorkflowRespons
 		this.namespaceSource = namespaceSource;
 		if(namespaceSource != null){
 			putQueryParameter("NamespaceSource", namespaceSource);
-		}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
 		}
 	}
 
@@ -97,6 +75,28 @@ public class ExecuteWorkflowRequest extends RpcAcsRequest<ExecuteWorkflowRespons
 		this.instanceParameters = instanceParameters;
 		if(instanceParameters != null){
 			putQueryParameter("InstanceParameters", instanceParameters);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

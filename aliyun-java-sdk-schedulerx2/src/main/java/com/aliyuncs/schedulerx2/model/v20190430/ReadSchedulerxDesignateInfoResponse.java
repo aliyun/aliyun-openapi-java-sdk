@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ReadSchedulerxDesignateInfoResponse extends AcsResponse {
 
-	private Integer code;
-
 	private String message;
 
 	private String requestId;
 
-	private Boolean success;
+	private Integer code;
 
-	private Data data;
+	private Boolean success;
 
 	private AccessDeniedDetail accessDeniedDetail;
 
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
+	private Data data;
 
 	public String getMessage() {
 		return this.message;
@@ -61,12 +53,28 @@ public class ReadSchedulerxDesignateInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public AccessDeniedDetail getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(AccessDeniedDetail accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public Data getData() {
@@ -77,12 +85,77 @@ public class ReadSchedulerxDesignateInfoResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public AccessDeniedDetail getAccessDeniedDetail() {
-		return this.accessDeniedDetail;
-	}
+	public static class AccessDeniedDetail {
 
-	public void setAccessDeniedDetail(AccessDeniedDetail accessDeniedDetail) {
-		this.accessDeniedDetail = accessDeniedDetail;
+		private String policyType;
+
+		private String authPrincipalOwnerId;
+
+		private String encodedDiagnosticMessage;
+
+		private String authPrincipalType;
+
+		private String authPrincipalDisplayName;
+
+		private String noPermissionType;
+
+		private String authAction;
+
+		public String getPolicyType() {
+			return this.policyType;
+		}
+
+		public void setPolicyType(String policyType) {
+			this.policyType = policyType;
+		}
+
+		public String getAuthPrincipalOwnerId() {
+			return this.authPrincipalOwnerId;
+		}
+
+		public void setAuthPrincipalOwnerId(String authPrincipalOwnerId) {
+			this.authPrincipalOwnerId = authPrincipalOwnerId;
+		}
+
+		public String getEncodedDiagnosticMessage() {
+			return this.encodedDiagnosticMessage;
+		}
+
+		public void setEncodedDiagnosticMessage(String encodedDiagnosticMessage) {
+			this.encodedDiagnosticMessage = encodedDiagnosticMessage;
+		}
+
+		public String getAuthPrincipalType() {
+			return this.authPrincipalType;
+		}
+
+		public void setAuthPrincipalType(String authPrincipalType) {
+			this.authPrincipalType = authPrincipalType;
+		}
+
+		public String getAuthPrincipalDisplayName() {
+			return this.authPrincipalDisplayName;
+		}
+
+		public void setAuthPrincipalDisplayName(String authPrincipalDisplayName) {
+			this.authPrincipalDisplayName = authPrincipalDisplayName;
+		}
+
+		public String getNoPermissionType() {
+			return this.noPermissionType;
+		}
+
+		public void setNoPermissionType(String noPermissionType) {
+			this.noPermissionType = noPermissionType;
+		}
+
+		public String getAuthAction() {
+			return this.authAction;
+		}
+
+		public void setAuthAction(String authAction) {
+			this.authAction = authAction;
+		}
 	}
 
 	public static class Data {
@@ -331,79 +404,6 @@ public class ReadSchedulerxDesignateInfoResponse extends AcsResponse {
 					this.heap5Usage = heap5Usage;
 				}
 			}
-		}
-	}
-
-	public static class AccessDeniedDetail {
-
-		private String authAction;
-
-		private String authPrincipalDisplayName;
-
-		private String authPrincipalOwnerId;
-
-		private String authPrincipalType;
-
-		private String encodedDiagnosticMessage;
-
-		private String noPermissionType;
-
-		private String policyType;
-
-		public String getAuthAction() {
-			return this.authAction;
-		}
-
-		public void setAuthAction(String authAction) {
-			this.authAction = authAction;
-		}
-
-		public String getAuthPrincipalDisplayName() {
-			return this.authPrincipalDisplayName;
-		}
-
-		public void setAuthPrincipalDisplayName(String authPrincipalDisplayName) {
-			this.authPrincipalDisplayName = authPrincipalDisplayName;
-		}
-
-		public String getAuthPrincipalOwnerId() {
-			return this.authPrincipalOwnerId;
-		}
-
-		public void setAuthPrincipalOwnerId(String authPrincipalOwnerId) {
-			this.authPrincipalOwnerId = authPrincipalOwnerId;
-		}
-
-		public String getAuthPrincipalType() {
-			return this.authPrincipalType;
-		}
-
-		public void setAuthPrincipalType(String authPrincipalType) {
-			this.authPrincipalType = authPrincipalType;
-		}
-
-		public String getEncodedDiagnosticMessage() {
-			return this.encodedDiagnosticMessage;
-		}
-
-		public void setEncodedDiagnosticMessage(String encodedDiagnosticMessage) {
-			this.encodedDiagnosticMessage = encodedDiagnosticMessage;
-		}
-
-		public String getNoPermissionType() {
-			return this.noPermissionType;
-		}
-
-		public void setNoPermissionType(String noPermissionType) {
-			this.noPermissionType = noPermissionType;
-		}
-
-		public String getPolicyType() {
-			return this.policyType;
-		}
-
-		public void setPolicyType(String policyType) {
-			this.policyType = policyType;
 		}
 	}
 

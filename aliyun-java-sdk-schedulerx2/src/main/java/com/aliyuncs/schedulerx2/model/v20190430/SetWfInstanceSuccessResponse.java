@@ -26,11 +26,11 @@ public class SetWfInstanceSuccessResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String message;
+
 	private Integer code;
 
 	private Boolean success;
-
-	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,6 +38,14 @@ public class SetWfInstanceSuccessResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getCode() {
@@ -54,14 +62,6 @@ public class SetWfInstanceSuccessResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	@Override

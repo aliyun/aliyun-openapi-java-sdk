@@ -26,11 +26,11 @@ public class CreateWorkflowResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String message;
+
 	private String code;
 
 	private Boolean success;
-
-	private String message;
 
 	private Data data;
 
@@ -40,6 +40,14 @@ public class CreateWorkflowResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -56,14 +64,6 @@ public class CreateWorkflowResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Data getData() {

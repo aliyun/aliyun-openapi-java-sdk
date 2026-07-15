@@ -27,13 +27,13 @@ public class GetJobInfoRequest extends RpcAcsRequest<GetJobInfoResponse> {
 
 	private String namespaceSource;
 
-	private String groupId;
-
 	private Long jobId;
 
-	private String namespace;
-
 	private String jobName;
+
+	private String groupId;
+
+	private String namespace;
 	public GetJobInfoRequest() {
 		super("schedulerx2", "2019-04-30", "GetJobInfo", "schedulerx2");
 		setMethod(MethodType.GET);
@@ -54,17 +54,6 @@ public class GetJobInfoRequest extends RpcAcsRequest<GetJobInfoResponse> {
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
 	public Long getJobId() {
 		return this.jobId;
 	}
@@ -76,17 +65,6 @@ public class GetJobInfoRequest extends RpcAcsRequest<GetJobInfoResponse> {
 		}
 	}
 
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
 	public String getJobName() {
 		return this.jobName;
 	}
@@ -95,6 +73,28 @@ public class GetJobInfoRequest extends RpcAcsRequest<GetJobInfoResponse> {
 		this.jobName = jobName;
 		if(jobName != null){
 			putQueryParameter("JobName", jobName);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

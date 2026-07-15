@@ -31,50 +31,50 @@ public class GetWorkflowInstanceResponseUnmarshaller {
 	public static GetWorkflowInstanceResponse unmarshall(GetWorkflowInstanceResponse getWorkflowInstanceResponse, UnmarshallerContext _ctx) {
 		
 		getWorkflowInstanceResponse.setRequestId(_ctx.stringValue("GetWorkflowInstanceResponse.RequestId"));
+		getWorkflowInstanceResponse.setMessage(_ctx.stringValue("GetWorkflowInstanceResponse.Message"));
 		getWorkflowInstanceResponse.setCode(_ctx.integerValue("GetWorkflowInstanceResponse.Code"));
 		getWorkflowInstanceResponse.setSuccess(_ctx.booleanValue("GetWorkflowInstanceResponse.Success"));
-		getWorkflowInstanceResponse.setMessage(_ctx.stringValue("GetWorkflowInstanceResponse.Message"));
 
 		Data data = new Data();
 
 		WfInstanceInfo wfInstanceInfo = new WfInstanceInfo();
 		wfInstanceInfo.setStatus(_ctx.integerValue("GetWorkflowInstanceResponse.Data.WfInstanceInfo.Status"));
-		wfInstanceInfo.setStartTime(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceInfo.StartTime"));
 		wfInstanceInfo.setEndTime(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceInfo.EndTime"));
 		wfInstanceInfo.setScheduleTime(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceInfo.ScheduleTime"));
+		wfInstanceInfo.setStartTime(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceInfo.StartTime"));
 		wfInstanceInfo.setDataTime(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceInfo.DataTime"));
 		data.setWfInstanceInfo(wfInstanceInfo);
 
 		WfInstanceDag wfInstanceDag = new WfInstanceDag();
 
-		List<Node> nodes = new ArrayList<Node>();
-		for (int i = 0; i < _ctx.lengthValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes.Length"); i++) {
-			Node node = new Node();
-			node.setJobInstanceId(_ctx.longValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].JobInstanceId"));
-			node.setJobId(_ctx.longValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].JobId"));
-			node.setStartTime(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].StartTime"));
-			node.setEndTime(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].EndTime"));
-			node.setScheduleTime(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].ScheduleTime"));
-			node.setDataTime(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].DataTime"));
-			node.setWorkAddr(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].WorkAddr"));
-			node.setResult(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].Result"));
-			node.setAttempt(_ctx.integerValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].Attempt"));
-			node.setStatus(_ctx.integerValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].Status"));
-			node.setJobName(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].JobName"));
-
-			nodes.add(node);
-		}
-		wfInstanceDag.setNodes(nodes);
-
 		List<Edge> edges = new ArrayList<Edge>();
 		for (int i = 0; i < _ctx.lengthValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Edges.Length"); i++) {
 			Edge edge = new Edge();
-			edge.setSource(_ctx.longValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Edges["+ i +"].Source"));
 			edge.setTarget(_ctx.longValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Edges["+ i +"].Target"));
+			edge.setSource(_ctx.longValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Edges["+ i +"].Source"));
 
 			edges.add(edge);
 		}
 		wfInstanceDag.setEdges(edges);
+
+		List<Node> nodes = new ArrayList<Node>();
+		for (int i = 0; i < _ctx.lengthValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes.Length"); i++) {
+			Node node = new Node();
+			node.setStatus(_ctx.integerValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].Status"));
+			node.setEndTime(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].EndTime"));
+			node.setScheduleTime(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].ScheduleTime"));
+			node.setAttempt(_ctx.integerValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].Attempt"));
+			node.setJobInstanceId(_ctx.longValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].JobInstanceId"));
+			node.setWorkAddr(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].WorkAddr"));
+			node.setStartTime(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].StartTime"));
+			node.setJobName(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].JobName"));
+			node.setDataTime(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].DataTime"));
+			node.setJobId(_ctx.longValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].JobId"));
+			node.setResult(_ctx.stringValue("GetWorkflowInstanceResponse.Data.WfInstanceDag.Nodes["+ i +"].Result"));
+
+			nodes.add(node);
+		}
+		wfInstanceDag.setNodes(nodes);
 		data.setWfInstanceDag(wfInstanceDag);
 		getWorkflowInstanceResponse.setData(data);
 	 

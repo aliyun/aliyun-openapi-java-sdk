@@ -30,6 +30,8 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 
 	private Integer failTimes;
 
+	private Long startTime;
+
 	private Integer consumerSize;
 
 	private String groupId;
@@ -125,6 +127,17 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		this.failTimes = failTimes;
 		if(failTimes != null){
 			putBodyParameter("FailTimes", failTimes.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putBodyParameter("StartTime", startTime.toString());
 		}
 	}
 

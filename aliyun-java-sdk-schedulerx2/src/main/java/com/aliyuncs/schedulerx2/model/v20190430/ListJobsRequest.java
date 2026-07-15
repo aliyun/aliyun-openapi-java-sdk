@@ -27,11 +27,15 @@ public class ListJobsRequest extends RpcAcsRequest<ListJobsResponse> {
 
 	private String namespaceSource;
 
+	private Integer pageNum;
+
+	private Integer pageSize;
+
+	private String jobName;
+
 	private String groupId;
 
 	private String namespace;
-
-	private String jobName;
 
 	private String status;
 	public ListJobsRequest() {
@@ -54,6 +58,39 @@ public class ListJobsRequest extends RpcAcsRequest<ListJobsResponse> {
 		}
 	}
 
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getJobName() {
+		return this.jobName;
+	}
+
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+		if(jobName != null){
+			putQueryParameter("JobName", jobName);
+		}
+	}
+
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -73,17 +110,6 @@ public class ListJobsRequest extends RpcAcsRequest<ListJobsResponse> {
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
-		}
-	}
-
-	public String getJobName() {
-		return this.jobName;
-	}
-
-	public void setJobName(String jobName) {
-		this.jobName = jobName;
-		if(jobName != null){
-			putQueryParameter("JobName", jobName);
 		}
 	}
 

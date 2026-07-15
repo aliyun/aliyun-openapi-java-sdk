@@ -30,9 +30,19 @@ public class ReadSchedulerxDesignateInfoResponseUnmarshaller {
 	public static ReadSchedulerxDesignateInfoResponse unmarshall(ReadSchedulerxDesignateInfoResponse readSchedulerxDesignateInfoResponse, UnmarshallerContext _ctx) {
 		
 		readSchedulerxDesignateInfoResponse.setRequestId(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.RequestId"));
-		readSchedulerxDesignateInfoResponse.setCode(_ctx.integerValue("ReadSchedulerxDesignateInfoResponse.Code"));
 		readSchedulerxDesignateInfoResponse.setMessage(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.Message"));
+		readSchedulerxDesignateInfoResponse.setCode(_ctx.integerValue("ReadSchedulerxDesignateInfoResponse.Code"));
 		readSchedulerxDesignateInfoResponse.setSuccess(_ctx.booleanValue("ReadSchedulerxDesignateInfoResponse.Success"));
+
+		AccessDeniedDetail accessDeniedDetail = new AccessDeniedDetail();
+		accessDeniedDetail.setPolicyType(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.PolicyType"));
+		accessDeniedDetail.setAuthPrincipalOwnerId(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.AuthPrincipalOwnerId"));
+		accessDeniedDetail.setEncodedDiagnosticMessage(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.EncodedDiagnosticMessage"));
+		accessDeniedDetail.setAuthPrincipalType(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.AuthPrincipalType"));
+		accessDeniedDetail.setAuthPrincipalDisplayName(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.AuthPrincipalDisplayName"));
+		accessDeniedDetail.setNoPermissionType(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.NoPermissionType"));
+		accessDeniedDetail.setAuthAction(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.AuthAction"));
+		readSchedulerxDesignateInfoResponse.setAccessDeniedDetail(accessDeniedDetail);
 
 		Data data = new Data();
 		data.setDesignateType(_ctx.integerValue("ReadSchedulerxDesignateInfoResponse.Data.DesignateType"));
@@ -69,16 +79,6 @@ public class ReadSchedulerxDesignateInfoResponseUnmarshaller {
 		}
 		data.setDesignateDetailVos(designateDetailVos);
 		readSchedulerxDesignateInfoResponse.setData(data);
-
-		AccessDeniedDetail accessDeniedDetail = new AccessDeniedDetail();
-		accessDeniedDetail.setAuthAction(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.AuthAction"));
-		accessDeniedDetail.setAuthPrincipalDisplayName(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.AuthPrincipalDisplayName"));
-		accessDeniedDetail.setAuthPrincipalOwnerId(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.AuthPrincipalOwnerId"));
-		accessDeniedDetail.setAuthPrincipalType(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.AuthPrincipalType"));
-		accessDeniedDetail.setEncodedDiagnosticMessage(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.EncodedDiagnosticMessage"));
-		accessDeniedDetail.setNoPermissionType(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.NoPermissionType"));
-		accessDeniedDetail.setPolicyType(_ctx.stringValue("ReadSchedulerxDesignateInfoResponse.AccessDeniedDetail.PolicyType"));
-		readSchedulerxDesignateInfoResponse.setAccessDeniedDetail(accessDeniedDetail);
 	 
 	 	return readSchedulerxDesignateInfoResponse;
 	}

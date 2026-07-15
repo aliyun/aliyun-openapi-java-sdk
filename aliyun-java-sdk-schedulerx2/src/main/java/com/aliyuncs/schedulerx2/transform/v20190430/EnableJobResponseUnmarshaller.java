@@ -23,8 +23,8 @@ public class EnableJobResponseUnmarshaller {
 	public static EnableJobResponse unmarshall(EnableJobResponse enableJobResponse, UnmarshallerContext _ctx) {
 		
 		enableJobResponse.setRequestId(_ctx.stringValue("EnableJobResponse.RequestId"));
-		enableJobResponse.setCode(_ctx.integerValue("EnableJobResponse.Code"));
 		enableJobResponse.setMessage(_ctx.stringValue("EnableJobResponse.Message"));
+		enableJobResponse.setCode(_ctx.integerValue("EnableJobResponse.Code"));
 		enableJobResponse.setSuccess(_ctx.booleanValue("EnableJobResponse.Success"));
 	 
 	 	return enableJobResponse;

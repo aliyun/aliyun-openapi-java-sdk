@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ReadSchedulerxDesignateDetailResponse extends AcsResponse {
 
-	private Integer code;
-
 	private String message;
 
 	private String requestId;
 
-	private Boolean success;
+	private Integer code;
 
-	private Data data;
+	private Boolean success;
 
 	private AccessDeniedDetail accessDeniedDetail;
 
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
+	private Data data;
 
 	public String getMessage() {
 		return this.message;
@@ -61,12 +53,28 @@ public class ReadSchedulerxDesignateDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public AccessDeniedDetail getAccessDeniedDetail() {
+		return this.accessDeniedDetail;
+	}
+
+	public void setAccessDeniedDetail(AccessDeniedDetail accessDeniedDetail) {
+		this.accessDeniedDetail = accessDeniedDetail;
 	}
 
 	public Data getData() {
@@ -77,12 +85,77 @@ public class ReadSchedulerxDesignateDetailResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public AccessDeniedDetail getAccessDeniedDetail() {
-		return this.accessDeniedDetail;
-	}
+	public static class AccessDeniedDetail {
 
-	public void setAccessDeniedDetail(AccessDeniedDetail accessDeniedDetail) {
-		this.accessDeniedDetail = accessDeniedDetail;
+		private String policyType;
+
+		private String authPrincipalOwnerId;
+
+		private String encodedDiagnosticMessage;
+
+		private String authPrincipalType;
+
+		private String authPrincipalDisplayName;
+
+		private String noPermissionType;
+
+		private String authAction;
+
+		public String getPolicyType() {
+			return this.policyType;
+		}
+
+		public void setPolicyType(String policyType) {
+			this.policyType = policyType;
+		}
+
+		public String getAuthPrincipalOwnerId() {
+			return this.authPrincipalOwnerId;
+		}
+
+		public void setAuthPrincipalOwnerId(String authPrincipalOwnerId) {
+			this.authPrincipalOwnerId = authPrincipalOwnerId;
+		}
+
+		public String getEncodedDiagnosticMessage() {
+			return this.encodedDiagnosticMessage;
+		}
+
+		public void setEncodedDiagnosticMessage(String encodedDiagnosticMessage) {
+			this.encodedDiagnosticMessage = encodedDiagnosticMessage;
+		}
+
+		public String getAuthPrincipalType() {
+			return this.authPrincipalType;
+		}
+
+		public void setAuthPrincipalType(String authPrincipalType) {
+			this.authPrincipalType = authPrincipalType;
+		}
+
+		public String getAuthPrincipalDisplayName() {
+			return this.authPrincipalDisplayName;
+		}
+
+		public void setAuthPrincipalDisplayName(String authPrincipalDisplayName) {
+			this.authPrincipalDisplayName = authPrincipalDisplayName;
+		}
+
+		public String getNoPermissionType() {
+			return this.noPermissionType;
+		}
+
+		public void setNoPermissionType(String noPermissionType) {
+			this.noPermissionType = noPermissionType;
+		}
+
+		public String getAuthAction() {
+			return this.authAction;
+		}
+
+		public void setAuthAction(String authAction) {
+			this.authAction = authAction;
+		}
 	}
 
 	public static class Data {
@@ -99,53 +172,21 @@ public class ReadSchedulerxDesignateDetailResponse extends AcsResponse {
 
 		public static class DesignateDetailVo {
 
-			private Boolean offline;
-
-			private Integer size;
-
-			private String starter;
-
-			private String busy;
-
 			private Boolean checked;
 
 			private String version;
 
+			private Integer size;
+
+			private String busy;
+
+			private Boolean offline;
+
+			private String starter;
+
 			private String key;
 
 			private Metrics metrics;
-
-			public Boolean getOffline() {
-				return this.offline;
-			}
-
-			public void setOffline(Boolean offline) {
-				this.offline = offline;
-			}
-
-			public Integer getSize() {
-				return this.size;
-			}
-
-			public void setSize(Integer size) {
-				this.size = size;
-			}
-
-			public String getStarter() {
-				return this.starter;
-			}
-
-			public void setStarter(String starter) {
-				this.starter = starter;
-			}
-
-			public String getBusy() {
-				return this.busy;
-			}
-
-			public void setBusy(String busy) {
-				this.busy = busy;
-			}
 
 			public Boolean getChecked() {
 				return this.checked;
@@ -161,6 +202,38 @@ public class ReadSchedulerxDesignateDetailResponse extends AcsResponse {
 
 			public void setVersion(String version) {
 				this.version = version;
+			}
+
+			public Integer getSize() {
+				return this.size;
+			}
+
+			public void setSize(Integer size) {
+				this.size = size;
+			}
+
+			public String getBusy() {
+				return this.busy;
+			}
+
+			public void setBusy(String busy) {
+				this.busy = busy;
+			}
+
+			public Boolean getOffline() {
+				return this.offline;
+			}
+
+			public void setOffline(Boolean offline) {
+				this.offline = offline;
+			}
+
+			public String getStarter() {
+				return this.starter;
+			}
+
+			public void setStarter(String starter) {
+				this.starter = starter;
 			}
 
 			public String getKey() {
@@ -181,31 +254,71 @@ public class ReadSchedulerxDesignateDetailResponse extends AcsResponse {
 
 			public static class Metrics {
 
+				private Integer sharePoolAvailableSize;
+
+				private Double heap1Usage;
+
+				private Double diskUsage;
+
+				private Integer cpuProcessors;
+
+				private Double heap1Used;
+
 				private Double cpuLoad1;
 
 				private Double cpuLoad5;
 
-				private Integer cpuProcessors;
+				private Long execCount;
 
-				private Double heap1Usage;
-
-				private Double heap5Usage;
-
-				private Double heap1Used;
+				private Integer sharePoolQueueSize;
 
 				private Integer heapMax;
-
-				private Double diskUsage;
 
 				private Integer diskUsed;
 
 				private Integer diskMax;
 
-				private Integer sharePoolQueueSize;
+				private Double heap5Usage;
 
-				private Integer sharePoolAvailableSize;
+				public Integer getSharePoolAvailableSize() {
+					return this.sharePoolAvailableSize;
+				}
 
-				private Long execCount;
+				public void setSharePoolAvailableSize(Integer sharePoolAvailableSize) {
+					this.sharePoolAvailableSize = sharePoolAvailableSize;
+				}
+
+				public Double getHeap1Usage() {
+					return this.heap1Usage;
+				}
+
+				public void setHeap1Usage(Double heap1Usage) {
+					this.heap1Usage = heap1Usage;
+				}
+
+				public Double getDiskUsage() {
+					return this.diskUsage;
+				}
+
+				public void setDiskUsage(Double diskUsage) {
+					this.diskUsage = diskUsage;
+				}
+
+				public Integer getCpuProcessors() {
+					return this.cpuProcessors;
+				}
+
+				public void setCpuProcessors(Integer cpuProcessors) {
+					this.cpuProcessors = cpuProcessors;
+				}
+
+				public Double getHeap1Used() {
+					return this.heap1Used;
+				}
+
+				public void setHeap1Used(Double heap1Used) {
+					this.heap1Used = heap1Used;
+				}
 
 				public Double getCpuLoad1() {
 					return this.cpuLoad1;
@@ -223,36 +336,20 @@ public class ReadSchedulerxDesignateDetailResponse extends AcsResponse {
 					this.cpuLoad5 = cpuLoad5;
 				}
 
-				public Integer getCpuProcessors() {
-					return this.cpuProcessors;
+				public Long getExecCount() {
+					return this.execCount;
 				}
 
-				public void setCpuProcessors(Integer cpuProcessors) {
-					this.cpuProcessors = cpuProcessors;
+				public void setExecCount(Long execCount) {
+					this.execCount = execCount;
 				}
 
-				public Double getHeap1Usage() {
-					return this.heap1Usage;
+				public Integer getSharePoolQueueSize() {
+					return this.sharePoolQueueSize;
 				}
 
-				public void setHeap1Usage(Double heap1Usage) {
-					this.heap1Usage = heap1Usage;
-				}
-
-				public Double getHeap5Usage() {
-					return this.heap5Usage;
-				}
-
-				public void setHeap5Usage(Double heap5Usage) {
-					this.heap5Usage = heap5Usage;
-				}
-
-				public Double getHeap1Used() {
-					return this.heap1Used;
-				}
-
-				public void setHeap1Used(Double heap1Used) {
-					this.heap1Used = heap1Used;
+				public void setSharePoolQueueSize(Integer sharePoolQueueSize) {
+					this.sharePoolQueueSize = sharePoolQueueSize;
 				}
 
 				public Integer getHeapMax() {
@@ -261,14 +358,6 @@ public class ReadSchedulerxDesignateDetailResponse extends AcsResponse {
 
 				public void setHeapMax(Integer heapMax) {
 					this.heapMax = heapMax;
-				}
-
-				public Double getDiskUsage() {
-					return this.diskUsage;
-				}
-
-				public void setDiskUsage(Double diskUsage) {
-					this.diskUsage = diskUsage;
 				}
 
 				public Integer getDiskUsed() {
@@ -287,103 +376,14 @@ public class ReadSchedulerxDesignateDetailResponse extends AcsResponse {
 					this.diskMax = diskMax;
 				}
 
-				public Integer getSharePoolQueueSize() {
-					return this.sharePoolQueueSize;
+				public Double getHeap5Usage() {
+					return this.heap5Usage;
 				}
 
-				public void setSharePoolQueueSize(Integer sharePoolQueueSize) {
-					this.sharePoolQueueSize = sharePoolQueueSize;
-				}
-
-				public Integer getSharePoolAvailableSize() {
-					return this.sharePoolAvailableSize;
-				}
-
-				public void setSharePoolAvailableSize(Integer sharePoolAvailableSize) {
-					this.sharePoolAvailableSize = sharePoolAvailableSize;
-				}
-
-				public Long getExecCount() {
-					return this.execCount;
-				}
-
-				public void setExecCount(Long execCount) {
-					this.execCount = execCount;
+				public void setHeap5Usage(Double heap5Usage) {
+					this.heap5Usage = heap5Usage;
 				}
 			}
-		}
-	}
-
-	public static class AccessDeniedDetail {
-
-		private String authAction;
-
-		private String authPrincipalDisplayName;
-
-		private String authPrincipalOwnerId;
-
-		private String authPrincipalType;
-
-		private String encodedDiagnosticMessage;
-
-		private String noPermissionType;
-
-		private String policyType;
-
-		public String getAuthAction() {
-			return this.authAction;
-		}
-
-		public void setAuthAction(String authAction) {
-			this.authAction = authAction;
-		}
-
-		public String getAuthPrincipalDisplayName() {
-			return this.authPrincipalDisplayName;
-		}
-
-		public void setAuthPrincipalDisplayName(String authPrincipalDisplayName) {
-			this.authPrincipalDisplayName = authPrincipalDisplayName;
-		}
-
-		public String getAuthPrincipalOwnerId() {
-			return this.authPrincipalOwnerId;
-		}
-
-		public void setAuthPrincipalOwnerId(String authPrincipalOwnerId) {
-			this.authPrincipalOwnerId = authPrincipalOwnerId;
-		}
-
-		public String getAuthPrincipalType() {
-			return this.authPrincipalType;
-		}
-
-		public void setAuthPrincipalType(String authPrincipalType) {
-			this.authPrincipalType = authPrincipalType;
-		}
-
-		public String getEncodedDiagnosticMessage() {
-			return this.encodedDiagnosticMessage;
-		}
-
-		public void setEncodedDiagnosticMessage(String encodedDiagnosticMessage) {
-			this.encodedDiagnosticMessage = encodedDiagnosticMessage;
-		}
-
-		public String getNoPermissionType() {
-			return this.noPermissionType;
-		}
-
-		public void setNoPermissionType(String noPermissionType) {
-			this.noPermissionType = noPermissionType;
-		}
-
-		public String getPolicyType() {
-			return this.policyType;
-		}
-
-		public void setPolicyType(String policyType) {
-			this.policyType = policyType;
 		}
 	}
 

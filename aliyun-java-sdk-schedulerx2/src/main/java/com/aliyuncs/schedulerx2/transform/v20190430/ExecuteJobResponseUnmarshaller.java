@@ -24,8 +24,8 @@ public class ExecuteJobResponseUnmarshaller {
 	public static ExecuteJobResponse unmarshall(ExecuteJobResponse executeJobResponse, UnmarshallerContext _ctx) {
 		
 		executeJobResponse.setRequestId(_ctx.stringValue("ExecuteJobResponse.RequestId"));
-		executeJobResponse.setCode(_ctx.integerValue("ExecuteJobResponse.Code"));
 		executeJobResponse.setMessage(_ctx.stringValue("ExecuteJobResponse.Message"));
+		executeJobResponse.setCode(_ctx.integerValue("ExecuteJobResponse.Code"));
 		executeJobResponse.setSuccess(_ctx.booleanValue("ExecuteJobResponse.Success"));
 
 		Data data = new Data();

@@ -26,9 +26,9 @@ public class UpdateNamespaceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer code;
-
 	private String message;
+
+	private Integer code;
 
 	private Boolean success;
 
@@ -40,20 +40,20 @@ public class UpdateNamespaceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {

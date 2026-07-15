@@ -23,8 +23,8 @@ public class DeleteJobResponseUnmarshaller {
 	public static DeleteJobResponse unmarshall(DeleteJobResponse deleteJobResponse, UnmarshallerContext _ctx) {
 		
 		deleteJobResponse.setRequestId(_ctx.stringValue("DeleteJobResponse.RequestId"));
-		deleteJobResponse.setCode(_ctx.integerValue("DeleteJobResponse.Code"));
 		deleteJobResponse.setMessage(_ctx.stringValue("DeleteJobResponse.Message"));
+		deleteJobResponse.setCode(_ctx.integerValue("DeleteJobResponse.Code"));
 		deleteJobResponse.setSuccess(_ctx.booleanValue("DeleteJobResponse.Success"));
 	 
 	 	return deleteJobResponse;

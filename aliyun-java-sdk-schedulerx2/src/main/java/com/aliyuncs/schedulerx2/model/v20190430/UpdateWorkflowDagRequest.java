@@ -25,15 +25,15 @@ import com.aliyuncs.schedulerx2.Endpoint;
 public class UpdateWorkflowDagRequest extends RpcAcsRequest<UpdateWorkflowDagResponse> {
 	   
 
-	private String dagJson;
-
 	private String namespaceSource;
+
+	private String workflowId;
+
+	private String dagJson;
 
 	private String groupId;
 
 	private String namespace;
-
-	private String workflowId;
 	public UpdateWorkflowDagRequest() {
 		super("schedulerx2", "2019-04-30", "UpdateWorkflowDag", "schedulerx2");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class UpdateWorkflowDagRequest extends RpcAcsRequest<UpdateWorkflowDagRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDagJson() {
-		return this.dagJson;
-	}
-
-	public void setDagJson(String dagJson) {
-		this.dagJson = dagJson;
-		if(dagJson != null){
-			putBodyParameter("DagJson", dagJson);
-		}
 	}
 
 	public String getNamespaceSource() {
@@ -62,6 +51,28 @@ public class UpdateWorkflowDagRequest extends RpcAcsRequest<UpdateWorkflowDagRes
 		this.namespaceSource = namespaceSource;
 		if(namespaceSource != null){
 			putBodyParameter("NamespaceSource", namespaceSource);
+		}
+	}
+
+	public String getWorkflowId() {
+		return this.workflowId;
+	}
+
+	public void setWorkflowId(String workflowId) {
+		this.workflowId = workflowId;
+		if(workflowId != null){
+			putBodyParameter("WorkflowId", workflowId);
+		}
+	}
+
+	public String getDagJson() {
+		return this.dagJson;
+	}
+
+	public void setDagJson(String dagJson) {
+		this.dagJson = dagJson;
+		if(dagJson != null){
+			putBodyParameter("DagJson", dagJson);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class UpdateWorkflowDagRequest extends RpcAcsRequest<UpdateWorkflowDagRes
 		this.namespace = namespace;
 		if(namespace != null){
 			putBodyParameter("Namespace", namespace);
-		}
-	}
-
-	public String getWorkflowId() {
-		return this.workflowId;
-	}
-
-	public void setWorkflowId(String workflowId) {
-		this.workflowId = workflowId;
-		if(workflowId != null){
-			putBodyParameter("WorkflowId", workflowId);
 		}
 	}
 

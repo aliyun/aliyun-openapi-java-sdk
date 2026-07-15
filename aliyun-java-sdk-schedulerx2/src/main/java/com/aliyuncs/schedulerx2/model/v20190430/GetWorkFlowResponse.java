@@ -27,9 +27,9 @@ public class GetWorkFlowResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer code;
-
 	private String message;
+
+	private Integer code;
 
 	private Boolean success;
 
@@ -43,20 +43,20 @@ public class GetWorkFlowResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,17 +77,9 @@ public class GetWorkFlowResponse extends AcsResponse {
 
 	public static class Data {
 
-		private WorkFlowInfo workFlowInfo;
-
 		private WorkFlowNodeInfo workFlowNodeInfo;
 
-		public WorkFlowInfo getWorkFlowInfo() {
-			return this.workFlowInfo;
-		}
-
-		public void setWorkFlowInfo(WorkFlowInfo workFlowInfo) {
-			this.workFlowInfo = workFlowInfo;
-		}
+		private WorkFlowInfo workFlowInfo;
 
 		public WorkFlowNodeInfo getWorkFlowNodeInfo() {
 			return this.workFlowNodeInfo;
@@ -97,112 +89,19 @@ public class GetWorkFlowResponse extends AcsResponse {
 			this.workFlowNodeInfo = workFlowNodeInfo;
 		}
 
-		public static class WorkFlowInfo {
+		public WorkFlowInfo getWorkFlowInfo() {
+			return this.workFlowInfo;
+		}
 
-			private Long workflowId;
-
-			private String name;
-
-			private String description;
-
-			private String status;
-
-			private String timeType;
-
-			private String timeExpression;
-
-			private String groupId;
-
-			private String namespace;
-
-			private String maxConcurrency;
-
-			public Long getWorkflowId() {
-				return this.workflowId;
-			}
-
-			public void setWorkflowId(Long workflowId) {
-				this.workflowId = workflowId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getTimeType() {
-				return this.timeType;
-			}
-
-			public void setTimeType(String timeType) {
-				this.timeType = timeType;
-			}
-
-			public String getTimeExpression() {
-				return this.timeExpression;
-			}
-
-			public void setTimeExpression(String timeExpression) {
-				this.timeExpression = timeExpression;
-			}
-
-			public String getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
-			}
-
-			public String getNamespace() {
-				return this.namespace;
-			}
-
-			public void setNamespace(String namespace) {
-				this.namespace = namespace;
-			}
-
-			public String getMaxConcurrency() {
-				return this.maxConcurrency;
-			}
-
-			public void setMaxConcurrency(String maxConcurrency) {
-				this.maxConcurrency = maxConcurrency;
-			}
+		public void setWorkFlowInfo(WorkFlowInfo workFlowInfo) {
+			this.workFlowInfo = workFlowInfo;
 		}
 
 		public static class WorkFlowNodeInfo {
 
-			private List<Node> nodes;
-
 			private List<Edge> edges;
 
-			public List<Node> getNodes() {
-				return this.nodes;
-			}
-
-			public void setNodes(List<Node> nodes) {
-				this.nodes = nodes;
-			}
+			private List<Node> nodes;
 
 			public List<Edge> getEdges() {
 				return this.edges;
@@ -212,20 +111,51 @@ public class GetWorkFlowResponse extends AcsResponse {
 				this.edges = edges;
 			}
 
+			public List<Node> getNodes() {
+				return this.nodes;
+			}
+
+			public void setNodes(List<Node> nodes) {
+				this.nodes = nodes;
+			}
+
+			public static class Edge {
+
+				private Long target;
+
+				private Long source;
+
+				public Long getTarget() {
+					return this.target;
+				}
+
+				public void setTarget(Long target) {
+					this.target = target;
+				}
+
+				public Long getSource() {
+					return this.source;
+				}
+
+				public void setSource(Long source) {
+					this.source = source;
+				}
+			}
+
 			public static class Node {
-
-				private Long id;
-
-				private String label;
 
 				private Integer status;
 
-				public Long getId() {
-					return this.id;
+				private String label;
+
+				private Long id;
+
+				public Integer getStatus() {
+					return this.status;
 				}
 
-				public void setId(Long id) {
-					this.id = id;
+				public void setStatus(Integer status) {
+					this.status = status;
 				}
 
 				public String getLabel() {
@@ -236,36 +166,106 @@ public class GetWorkFlowResponse extends AcsResponse {
 					this.label = label;
 				}
 
-				public Integer getStatus() {
-					return this.status;
+				public Long getId() {
+					return this.id;
 				}
 
-				public void setStatus(Integer status) {
-					this.status = status;
+				public void setId(Long id) {
+					this.id = id;
 				}
 			}
+		}
 
-			public static class Edge {
+		public static class WorkFlowInfo {
 
-				private Long source;
+			private String status;
 
-				private Long target;
+			private String description;
 
-				public Long getSource() {
-					return this.source;
-				}
+			private String maxConcurrency;
 
-				public void setSource(Long source) {
-					this.source = source;
-				}
+			private String timeExpression;
 
-				public Long getTarget() {
-					return this.target;
-				}
+			private Long workflowId;
 
-				public void setTarget(Long target) {
-					this.target = target;
-				}
+			private String namespace;
+
+			private String name;
+
+			private String timeType;
+
+			private String groupId;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getMaxConcurrency() {
+				return this.maxConcurrency;
+			}
+
+			public void setMaxConcurrency(String maxConcurrency) {
+				this.maxConcurrency = maxConcurrency;
+			}
+
+			public String getTimeExpression() {
+				return this.timeExpression;
+			}
+
+			public void setTimeExpression(String timeExpression) {
+				this.timeExpression = timeExpression;
+			}
+
+			public Long getWorkflowId() {
+				return this.workflowId;
+			}
+
+			public void setWorkflowId(Long workflowId) {
+				this.workflowId = workflowId;
+			}
+
+			public String getNamespace() {
+				return this.namespace;
+			}
+
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getTimeType() {
+				return this.timeType;
+			}
+
+			public void setTimeType(String timeType) {
+				this.timeType = timeType;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
 			}
 		}
 	}

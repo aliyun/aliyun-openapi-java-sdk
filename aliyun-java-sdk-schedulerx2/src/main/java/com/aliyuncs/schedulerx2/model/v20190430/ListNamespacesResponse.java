@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListNamespacesResponse extends AcsResponse {
 
-	private Integer code;
-
 	private String message;
 
 	private String requestId;
 
+	private Integer code;
+
 	private Boolean success;
 
 	private Data data;
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -57,6 +49,14 @@ public class ListNamespacesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -89,18 +89,18 @@ public class ListNamespacesResponse extends AcsResponse {
 
 		public static class Namespace {
 
-			private String name;
+			private String uId;
 
 			private String description;
 
-			private String uId;
+			private String name;
 
-			public String getName() {
-				return this.name;
+			public String getUId() {
+				return this.uId;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setUId(String uId) {
+				this.uId = uId;
 			}
 
 			public String getDescription() {
@@ -111,12 +111,12 @@ public class ListNamespacesResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getUId() {
-				return this.uId;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setUId(String uId) {
-				this.uId = uId;
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

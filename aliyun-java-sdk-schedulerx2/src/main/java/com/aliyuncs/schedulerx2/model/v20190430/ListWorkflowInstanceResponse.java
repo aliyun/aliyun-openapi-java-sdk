@@ -27,11 +27,11 @@ public class ListWorkflowInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String message;
+
 	private Integer code;
 
 	private Boolean success;
-
-	private String message;
 
 	private Data data;
 
@@ -41,6 +41,14 @@ public class ListWorkflowInstanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getCode() {
@@ -57,14 +65,6 @@ public class ListWorkflowInstanceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Data getData() {
@@ -89,35 +89,19 @@ public class ListWorkflowInstanceResponse extends AcsResponse {
 
 		public static class WfInstanceInfosItem {
 
-			private Long wfInstanceId;
-
-			private Long workflowId;
-
 			private Integer status;
-
-			private String startTime;
 
 			private String endTime;
 
 			private String scheduleTime;
 
+			private String startTime;
+
 			private String dataTime;
 
-			public Long getWfInstanceId() {
-				return this.wfInstanceId;
-			}
+			private Long wfInstanceId;
 
-			public void setWfInstanceId(Long wfInstanceId) {
-				this.wfInstanceId = wfInstanceId;
-			}
-
-			public Long getWorkflowId() {
-				return this.workflowId;
-			}
-
-			public void setWorkflowId(Long workflowId) {
-				this.workflowId = workflowId;
-			}
+			private Long workflowId;
 
 			public Integer getStatus() {
 				return this.status;
@@ -125,14 +109,6 @@ public class ListWorkflowInstanceResponse extends AcsResponse {
 
 			public void setStatus(Integer status) {
 				this.status = status;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
 			}
 
 			public String getEndTime() {
@@ -151,12 +127,36 @@ public class ListWorkflowInstanceResponse extends AcsResponse {
 				this.scheduleTime = scheduleTime;
 			}
 
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
 			public String getDataTime() {
 				return this.dataTime;
 			}
 
 			public void setDataTime(String dataTime) {
 				this.dataTime = dataTime;
+			}
+
+			public Long getWfInstanceId() {
+				return this.wfInstanceId;
+			}
+
+			public void setWfInstanceId(Long wfInstanceId) {
+				this.wfInstanceId = wfInstanceId;
+			}
+
+			public Long getWorkflowId() {
+				return this.workflowId;
+			}
+
+			public void setWorkflowId(Long workflowId) {
+				this.workflowId = workflowId;
 			}
 		}
 	}

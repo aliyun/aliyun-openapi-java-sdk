@@ -23,8 +23,8 @@ public class UpdateJobResponseUnmarshaller {
 	public static UpdateJobResponse unmarshall(UpdateJobResponse updateJobResponse, UnmarshallerContext _ctx) {
 		
 		updateJobResponse.setRequestId(_ctx.stringValue("UpdateJobResponse.RequestId"));
-		updateJobResponse.setCode(_ctx.integerValue("UpdateJobResponse.Code"));
 		updateJobResponse.setMessage(_ctx.stringValue("UpdateJobResponse.Message"));
+		updateJobResponse.setCode(_ctx.integerValue("UpdateJobResponse.Code"));
 		updateJobResponse.setSuccess(_ctx.booleanValue("UpdateJobResponse.Success"));
 	 
 	 	return updateJobResponse;

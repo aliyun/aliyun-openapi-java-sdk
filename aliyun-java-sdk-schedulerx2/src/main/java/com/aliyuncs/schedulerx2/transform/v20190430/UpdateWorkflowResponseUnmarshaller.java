@@ -23,9 +23,9 @@ public class UpdateWorkflowResponseUnmarshaller {
 	public static UpdateWorkflowResponse unmarshall(UpdateWorkflowResponse updateWorkflowResponse, UnmarshallerContext _ctx) {
 		
 		updateWorkflowResponse.setRequestId(_ctx.stringValue("UpdateWorkflowResponse.RequestId"));
+		updateWorkflowResponse.setMessage(_ctx.stringValue("UpdateWorkflowResponse.Message"));
 		updateWorkflowResponse.setCode(_ctx.integerValue("UpdateWorkflowResponse.Code"));
 		updateWorkflowResponse.setSuccess(_ctx.booleanValue("UpdateWorkflowResponse.Success"));
-		updateWorkflowResponse.setMessage(_ctx.stringValue("UpdateWorkflowResponse.Message"));
 	 
 	 	return updateWorkflowResponse;
 	}

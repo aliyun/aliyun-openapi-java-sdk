@@ -23,8 +23,8 @@ public class BatchEnableJobsResponseUnmarshaller {
 	public static BatchEnableJobsResponse unmarshall(BatchEnableJobsResponse batchEnableJobsResponse, UnmarshallerContext _ctx) {
 		
 		batchEnableJobsResponse.setRequestId(_ctx.stringValue("BatchEnableJobsResponse.RequestId"));
-		batchEnableJobsResponse.setCode(_ctx.integerValue("BatchEnableJobsResponse.Code"));
 		batchEnableJobsResponse.setMessage(_ctx.stringValue("BatchEnableJobsResponse.Message"));
+		batchEnableJobsResponse.setCode(_ctx.integerValue("BatchEnableJobsResponse.Code"));
 		batchEnableJobsResponse.setSuccess(_ctx.booleanValue("BatchEnableJobsResponse.Success"));
 	 
 	 	return batchEnableJobsResponse;

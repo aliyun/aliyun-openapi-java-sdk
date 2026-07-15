@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetJobInfoResponse extends AcsResponse {
 
-	private Integer code;
-
 	private String message;
 
 	private String requestId;
 
+	private Integer code;
+
 	private Boolean success;
 
 	private Data data;
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -57,6 +49,14 @@ public class GetJobInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -89,47 +89,39 @@ public class GetJobInfoResponse extends AcsResponse {
 
 		public static class JobConfigInfo {
 
-			private Long jobId;
-
 			private Integer status;
+
+			private Integer maxAttempt;
 
 			private String parameters;
 
 			private String description;
 
-			private String executeMode;
+			private String jarUrl;
 
 			private String maxConcurrency;
 
 			private String name;
 
-			private Integer maxAttempt;
+			private String jobType;
 
 			private String content;
 
-			private String jarUrl;
-
 			private String className;
-
-			private String jobType;
 
 			private Integer attemptInterval;
 
-			private String xAttrs;
+			private String executeMode;
 
-			private MapTaskXAttrs mapTaskXAttrs;
+			private Long jobId;
+
+			private String xAttrs;
 
 			private TimeConfig timeConfig;
 
+			private MapTaskXAttrs mapTaskXAttrs;
+
 			private JobMonitorInfo jobMonitorInfo;
-
-			public Long getJobId() {
-				return this.jobId;
-			}
-
-			public void setJobId(Long jobId) {
-				this.jobId = jobId;
-			}
 
 			public Integer getStatus() {
 				return this.status;
@@ -137,6 +129,14 @@ public class GetJobInfoResponse extends AcsResponse {
 
 			public void setStatus(Integer status) {
 				this.status = status;
+			}
+
+			public Integer getMaxAttempt() {
+				return this.maxAttempt;
+			}
+
+			public void setMaxAttempt(Integer maxAttempt) {
+				this.maxAttempt = maxAttempt;
 			}
 
 			public String getParameters() {
@@ -155,12 +155,12 @@ public class GetJobInfoResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getExecuteMode() {
-				return this.executeMode;
+			public String getJarUrl() {
+				return this.jarUrl;
 			}
 
-			public void setExecuteMode(String executeMode) {
-				this.executeMode = executeMode;
+			public void setJarUrl(String jarUrl) {
+				this.jarUrl = jarUrl;
 			}
 
 			public String getMaxConcurrency() {
@@ -179,12 +179,12 @@ public class GetJobInfoResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public Integer getMaxAttempt() {
-				return this.maxAttempt;
+			public String getJobType() {
+				return this.jobType;
 			}
 
-			public void setMaxAttempt(Integer maxAttempt) {
-				this.maxAttempt = maxAttempt;
+			public void setJobType(String jobType) {
+				this.jobType = jobType;
 			}
 
 			public String getContent() {
@@ -195,28 +195,12 @@ public class GetJobInfoResponse extends AcsResponse {
 				this.content = content;
 			}
 
-			public String getJarUrl() {
-				return this.jarUrl;
-			}
-
-			public void setJarUrl(String jarUrl) {
-				this.jarUrl = jarUrl;
-			}
-
 			public String getClassName() {
 				return this.className;
 			}
 
 			public void setClassName(String className) {
 				this.className = className;
-			}
-
-			public String getJobType() {
-				return this.jobType;
-			}
-
-			public void setJobType(String jobType) {
-				this.jobType = jobType;
 			}
 
 			public Integer getAttemptInterval() {
@@ -227,20 +211,28 @@ public class GetJobInfoResponse extends AcsResponse {
 				this.attemptInterval = attemptInterval;
 			}
 
+			public String getExecuteMode() {
+				return this.executeMode;
+			}
+
+			public void setExecuteMode(String executeMode) {
+				this.executeMode = executeMode;
+			}
+
+			public Long getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(Long jobId) {
+				this.jobId = jobId;
+			}
+
 			public String getXAttrs() {
 				return this.xAttrs;
 			}
 
 			public void setXAttrs(String xAttrs) {
 				this.xAttrs = xAttrs;
-			}
-
-			public MapTaskXAttrs getMapTaskXAttrs() {
-				return this.mapTaskXAttrs;
-			}
-
-			public void setMapTaskXAttrs(MapTaskXAttrs mapTaskXAttrs) {
-				this.mapTaskXAttrs = mapTaskXAttrs;
 			}
 
 			public TimeConfig getTimeConfig() {
@@ -251,6 +243,14 @@ public class GetJobInfoResponse extends AcsResponse {
 				this.timeConfig = timeConfig;
 			}
 
+			public MapTaskXAttrs getMapTaskXAttrs() {
+				return this.mapTaskXAttrs;
+			}
+
+			public void setMapTaskXAttrs(MapTaskXAttrs mapTaskXAttrs) {
+				this.mapTaskXAttrs = mapTaskXAttrs;
+			}
+
 			public JobMonitorInfo getJobMonitorInfo() {
 				return this.jobMonitorInfo;
 			}
@@ -259,13 +259,52 @@ public class GetJobInfoResponse extends AcsResponse {
 				this.jobMonitorInfo = jobMonitorInfo;
 			}
 
+			public static class TimeConfig {
+
+				private String calendar;
+
+				private String timeExpression;
+
+				private Integer dataOffset;
+
+				private Integer timeType;
+
+				public String getCalendar() {
+					return this.calendar;
+				}
+
+				public void setCalendar(String calendar) {
+					this.calendar = calendar;
+				}
+
+				public String getTimeExpression() {
+					return this.timeExpression;
+				}
+
+				public void setTimeExpression(String timeExpression) {
+					this.timeExpression = timeExpression;
+				}
+
+				public Integer getDataOffset() {
+					return this.dataOffset;
+				}
+
+				public void setDataOffset(Integer dataOffset) {
+					this.dataOffset = dataOffset;
+				}
+
+				public Integer getTimeType() {
+					return this.timeType;
+				}
+
+				public void setTimeType(Integer timeType) {
+					this.timeType = timeType;
+				}
+			}
+
 			public static class MapTaskXAttrs {
 
-				private Integer taskMaxAttempt;
-
 				private Integer taskAttemptInterval;
-
-				private Integer consumerSize;
 
 				private Integer queueSize;
 
@@ -273,13 +312,9 @@ public class GetJobInfoResponse extends AcsResponse {
 
 				private Integer pageSize;
 
-				public Integer getTaskMaxAttempt() {
-					return this.taskMaxAttempt;
-				}
+				private Integer taskMaxAttempt;
 
-				public void setTaskMaxAttempt(Integer taskMaxAttempt) {
-					this.taskMaxAttempt = taskMaxAttempt;
-				}
+				private Integer consumerSize;
 
 				public Integer getTaskAttemptInterval() {
 					return this.taskAttemptInterval;
@@ -287,14 +322,6 @@ public class GetJobInfoResponse extends AcsResponse {
 
 				public void setTaskAttemptInterval(Integer taskAttemptInterval) {
 					this.taskAttemptInterval = taskAttemptInterval;
-				}
-
-				public Integer getConsumerSize() {
-					return this.consumerSize;
-				}
-
-				public void setConsumerSize(Integer consumerSize) {
-					this.consumerSize = consumerSize;
 				}
 
 				public Integer getQueueSize() {
@@ -320,48 +347,21 @@ public class GetJobInfoResponse extends AcsResponse {
 				public void setPageSize(Integer pageSize) {
 					this.pageSize = pageSize;
 				}
-			}
 
-			public static class TimeConfig {
-
-				private String calendar;
-
-				private Integer timeType;
-
-				private Integer dataOffset;
-
-				private String timeExpression;
-
-				public String getCalendar() {
-					return this.calendar;
+				public Integer getTaskMaxAttempt() {
+					return this.taskMaxAttempt;
 				}
 
-				public void setCalendar(String calendar) {
-					this.calendar = calendar;
+				public void setTaskMaxAttempt(Integer taskMaxAttempt) {
+					this.taskMaxAttempt = taskMaxAttempt;
 				}
 
-				public Integer getTimeType() {
-					return this.timeType;
+				public Integer getConsumerSize() {
+					return this.consumerSize;
 				}
 
-				public void setTimeType(Integer timeType) {
-					this.timeType = timeType;
-				}
-
-				public Integer getDataOffset() {
-					return this.dataOffset;
-				}
-
-				public void setDataOffset(Integer dataOffset) {
-					this.dataOffset = dataOffset;
-				}
-
-				public String getTimeExpression() {
-					return this.timeExpression;
-				}
-
-				public void setTimeExpression(String timeExpression) {
-					this.timeExpression = timeExpression;
+				public void setConsumerSize(Integer consumerSize) {
+					this.consumerSize = consumerSize;
 				}
 			}
 
@@ -389,21 +389,13 @@ public class GetJobInfoResponse extends AcsResponse {
 
 				public static class ContactInfoItem {
 
-					private String userPhone;
-
 					private String userName;
+
+					private String userPhone;
 
 					private String userMail;
 
 					private String ding;
-
-					public String getUserPhone() {
-						return this.userPhone;
-					}
-
-					public void setUserPhone(String userPhone) {
-						this.userPhone = userPhone;
-					}
 
 					public String getUserName() {
 						return this.userName;
@@ -411,6 +403,14 @@ public class GetJobInfoResponse extends AcsResponse {
 
 					public void setUserName(String userName) {
 						this.userName = userName;
+					}
+
+					public String getUserPhone() {
+						return this.userPhone;
+					}
+
+					public void setUserPhone(String userPhone) {
+						this.userPhone = userPhone;
 					}
 
 					public String getUserMail() {
@@ -432,17 +432,25 @@ public class GetJobInfoResponse extends AcsResponse {
 
 				public static class MonitorConfig {
 
+					private Boolean timeoutEnable;
+
 					private Long timeout;
+
+					private Boolean missWorkerEnable;
+
+					private Boolean failEnable;
 
 					private String sendChannel;
 
 					private Boolean timeoutKillEnable;
 
-					private Boolean timeoutEnable;
+					public Boolean getTimeoutEnable() {
+						return this.timeoutEnable;
+					}
 
-					private Boolean failEnable;
-
-					private Boolean missWorkerEnable;
+					public void setTimeoutEnable(Boolean timeoutEnable) {
+						this.timeoutEnable = timeoutEnable;
+					}
 
 					public Long getTimeout() {
 						return this.timeout;
@@ -450,6 +458,22 @@ public class GetJobInfoResponse extends AcsResponse {
 
 					public void setTimeout(Long timeout) {
 						this.timeout = timeout;
+					}
+
+					public Boolean getMissWorkerEnable() {
+						return this.missWorkerEnable;
+					}
+
+					public void setMissWorkerEnable(Boolean missWorkerEnable) {
+						this.missWorkerEnable = missWorkerEnable;
+					}
+
+					public Boolean getFailEnable() {
+						return this.failEnable;
+					}
+
+					public void setFailEnable(Boolean failEnable) {
+						this.failEnable = failEnable;
 					}
 
 					public String getSendChannel() {
@@ -466,30 +490,6 @@ public class GetJobInfoResponse extends AcsResponse {
 
 					public void setTimeoutKillEnable(Boolean timeoutKillEnable) {
 						this.timeoutKillEnable = timeoutKillEnable;
-					}
-
-					public Boolean getTimeoutEnable() {
-						return this.timeoutEnable;
-					}
-
-					public void setTimeoutEnable(Boolean timeoutEnable) {
-						this.timeoutEnable = timeoutEnable;
-					}
-
-					public Boolean getFailEnable() {
-						return this.failEnable;
-					}
-
-					public void setFailEnable(Boolean failEnable) {
-						this.failEnable = failEnable;
-					}
-
-					public Boolean getMissWorkerEnable() {
-						return this.missWorkerEnable;
-					}
-
-					public void setMissWorkerEnable(Boolean missWorkerEnable) {
-						this.missWorkerEnable = missWorkerEnable;
 					}
 				}
 			}

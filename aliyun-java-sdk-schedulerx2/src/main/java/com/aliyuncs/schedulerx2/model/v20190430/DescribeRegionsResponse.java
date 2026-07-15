@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRegionsResponse extends AcsResponse {
 
-	private Integer code;
-
 	private String message;
 
 	private String requestId;
 
+	private Integer code;
+
 	private Boolean success;
 
 	private List<Region> regions;
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -57,6 +49,14 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,11 +77,19 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	public static class Region {
 
+		private String regionId;
+
 		private String regionEndpoint;
 
 		private String localName;
 
-		private String regionId;
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
 
 		public String getRegionEndpoint() {
 			return this.regionEndpoint;
@@ -97,14 +105,6 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public void setLocalName(String localName) {
 			this.localName = localName;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
 		}
 	}
 

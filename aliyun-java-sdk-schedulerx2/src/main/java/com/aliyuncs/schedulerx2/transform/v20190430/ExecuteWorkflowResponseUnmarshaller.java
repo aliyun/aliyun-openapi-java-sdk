@@ -24,8 +24,8 @@ public class ExecuteWorkflowResponseUnmarshaller {
 	public static ExecuteWorkflowResponse unmarshall(ExecuteWorkflowResponse executeWorkflowResponse, UnmarshallerContext _ctx) {
 		
 		executeWorkflowResponse.setRequestId(_ctx.stringValue("ExecuteWorkflowResponse.RequestId"));
-		executeWorkflowResponse.setCode(_ctx.integerValue("ExecuteWorkflowResponse.Code"));
 		executeWorkflowResponse.setMessage(_ctx.stringValue("ExecuteWorkflowResponse.Message"));
+		executeWorkflowResponse.setCode(_ctx.integerValue("ExecuteWorkflowResponse.Code"));
 		executeWorkflowResponse.setSuccess(_ctx.booleanValue("ExecuteWorkflowResponse.Success"));
 
 		Data data = new Data();

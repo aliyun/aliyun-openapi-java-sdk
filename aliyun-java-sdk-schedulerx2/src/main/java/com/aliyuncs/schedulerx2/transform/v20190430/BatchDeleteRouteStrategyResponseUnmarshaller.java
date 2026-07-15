@@ -23,8 +23,8 @@ public class BatchDeleteRouteStrategyResponseUnmarshaller {
 	public static BatchDeleteRouteStrategyResponse unmarshall(BatchDeleteRouteStrategyResponse batchDeleteRouteStrategyResponse, UnmarshallerContext _ctx) {
 		
 		batchDeleteRouteStrategyResponse.setRequestId(_ctx.stringValue("BatchDeleteRouteStrategyResponse.RequestId"));
-		batchDeleteRouteStrategyResponse.setCode(_ctx.integerValue("BatchDeleteRouteStrategyResponse.Code"));
 		batchDeleteRouteStrategyResponse.setMessage(_ctx.stringValue("BatchDeleteRouteStrategyResponse.Message"));
+		batchDeleteRouteStrategyResponse.setCode(_ctx.integerValue("BatchDeleteRouteStrategyResponse.Code"));
 		batchDeleteRouteStrategyResponse.setSuccess(_ctx.booleanValue("BatchDeleteRouteStrategyResponse.Success"));
 	 
 	 	return batchDeleteRouteStrategyResponse;

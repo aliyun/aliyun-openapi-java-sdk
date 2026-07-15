@@ -23,8 +23,8 @@ public class UpdateAppGroupResponseUnmarshaller {
 	public static UpdateAppGroupResponse unmarshall(UpdateAppGroupResponse updateAppGroupResponse, UnmarshallerContext _ctx) {
 		
 		updateAppGroupResponse.setRequestId(_ctx.stringValue("UpdateAppGroupResponse.RequestId"));
-		updateAppGroupResponse.setCode(_ctx.integerValue("UpdateAppGroupResponse.Code"));
 		updateAppGroupResponse.setMessage(_ctx.stringValue("UpdateAppGroupResponse.Message"));
+		updateAppGroupResponse.setCode(_ctx.integerValue("UpdateAppGroupResponse.Code"));
 		updateAppGroupResponse.setSuccess(_ctx.booleanValue("UpdateAppGroupResponse.Success"));
 	 
 	 	return updateAppGroupResponse;

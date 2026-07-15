@@ -28,11 +28,11 @@ public class ReadSchedulerxDesignateDetailRequest extends RpcAcsRequest<ReadSche
 
 	private String namespaceSource;
 
-	private String groupId;
-
 	private Integer designateType;
 
 	private Long jobId;
+
+	private String groupId;
 
 	private String namespace;
 	public ReadSchedulerxDesignateDetailRequest() {
@@ -56,17 +56,6 @@ public class ReadSchedulerxDesignateDetailRequest extends RpcAcsRequest<ReadSche
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
 	public Integer getDesignateType() {
 		return this.designateType;
 	}
@@ -86,6 +75,17 @@ public class ReadSchedulerxDesignateDetailRequest extends RpcAcsRequest<ReadSche
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

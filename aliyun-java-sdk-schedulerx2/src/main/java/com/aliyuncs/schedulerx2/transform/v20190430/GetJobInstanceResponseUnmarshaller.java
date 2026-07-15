@@ -25,29 +25,29 @@ public class GetJobInstanceResponseUnmarshaller {
 	public static GetJobInstanceResponse unmarshall(GetJobInstanceResponse getJobInstanceResponse, UnmarshallerContext _ctx) {
 		
 		getJobInstanceResponse.setRequestId(_ctx.stringValue("GetJobInstanceResponse.RequestId"));
-		getJobInstanceResponse.setCode(_ctx.integerValue("GetJobInstanceResponse.Code"));
 		getJobInstanceResponse.setMessage(_ctx.stringValue("GetJobInstanceResponse.Message"));
+		getJobInstanceResponse.setCode(_ctx.integerValue("GetJobInstanceResponse.Code"));
 		getJobInstanceResponse.setSuccess(_ctx.booleanValue("GetJobInstanceResponse.Success"));
 
 		Data data = new Data();
 
 		JobInstanceDetail jobInstanceDetail = new JobInstanceDetail();
 		jobInstanceDetail.setStatus(_ctx.integerValue("GetJobInstanceResponse.Data.JobInstanceDetail.Status"));
-		jobInstanceDetail.setProgress(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.Progress"));
-		jobInstanceDetail.setResult(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.Result"));
-		jobInstanceDetail.setInstanceId(_ctx.longValue("GetJobInstanceResponse.Data.JobInstanceDetail.InstanceId"));
-		jobInstanceDetail.setTimeType(_ctx.integerValue("GetJobInstanceResponse.Data.JobInstanceDetail.TimeType"));
 		jobInstanceDetail.setTriggerType(_ctx.integerValue("GetJobInstanceResponse.Data.JobInstanceDetail.TriggerType"));
-		jobInstanceDetail.setEndTime(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.EndTime"));
-		jobInstanceDetail.setStartTime(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.StartTime"));
-		jobInstanceDetail.setExecutor(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.Executor"));
-		jobInstanceDetail.setJobId(_ctx.longValue("GetJobInstanceResponse.Data.JobInstanceDetail.JobId"));
-		jobInstanceDetail.setScheduleTime(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.ScheduleTime"));
-		jobInstanceDetail.setDataTime(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.DataTime"));
-		jobInstanceDetail.setWorkAddr(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.WorkAddr"));
+		jobInstanceDetail.setProgress(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.Progress"));
 		jobInstanceDetail.setParameters(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.Parameters"));
+		jobInstanceDetail.setEndTime(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.EndTime"));
+		jobInstanceDetail.setInstanceId(_ctx.longValue("GetJobInstanceResponse.Data.JobInstanceDetail.InstanceId"));
+		jobInstanceDetail.setWorkAddr(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.WorkAddr"));
+		jobInstanceDetail.setStartTime(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.StartTime"));
 		jobInstanceDetail.setJobName(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.JobName"));
+		jobInstanceDetail.setDataTime(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.DataTime"));
+		jobInstanceDetail.setResult(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.Result"));
+		jobInstanceDetail.setTimeType(_ctx.integerValue("GetJobInstanceResponse.Data.JobInstanceDetail.TimeType"));
+		jobInstanceDetail.setExecutor(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.Executor"));
+		jobInstanceDetail.setScheduleTime(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.ScheduleTime"));
 		jobInstanceDetail.setTraceId(_ctx.stringValue("GetJobInstanceResponse.Data.JobInstanceDetail.TraceId"));
+		jobInstanceDetail.setJobId(_ctx.longValue("GetJobInstanceResponse.Data.JobInstanceDetail.JobId"));
 		data.setJobInstanceDetail(jobInstanceDetail);
 		getJobInstanceResponse.setData(data);
 	 

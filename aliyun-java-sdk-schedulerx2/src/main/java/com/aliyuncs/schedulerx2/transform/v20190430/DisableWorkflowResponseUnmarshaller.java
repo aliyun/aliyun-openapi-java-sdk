@@ -23,8 +23,8 @@ public class DisableWorkflowResponseUnmarshaller {
 	public static DisableWorkflowResponse unmarshall(DisableWorkflowResponse disableWorkflowResponse, UnmarshallerContext _ctx) {
 		
 		disableWorkflowResponse.setRequestId(_ctx.stringValue("DisableWorkflowResponse.RequestId"));
-		disableWorkflowResponse.setCode(_ctx.integerValue("DisableWorkflowResponse.Code"));
 		disableWorkflowResponse.setMessage(_ctx.stringValue("DisableWorkflowResponse.Message"));
+		disableWorkflowResponse.setCode(_ctx.integerValue("DisableWorkflowResponse.Code"));
 		disableWorkflowResponse.setSuccess(_ctx.booleanValue("DisableWorkflowResponse.Success"));
 	 
 	 	return disableWorkflowResponse;

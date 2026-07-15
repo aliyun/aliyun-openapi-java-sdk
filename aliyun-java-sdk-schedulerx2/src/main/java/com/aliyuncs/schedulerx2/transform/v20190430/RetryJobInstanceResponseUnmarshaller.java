@@ -23,9 +23,9 @@ public class RetryJobInstanceResponseUnmarshaller {
 	public static RetryJobInstanceResponse unmarshall(RetryJobInstanceResponse retryJobInstanceResponse, UnmarshallerContext _ctx) {
 		
 		retryJobInstanceResponse.setRequestId(_ctx.stringValue("RetryJobInstanceResponse.RequestId"));
+		retryJobInstanceResponse.setMessage(_ctx.stringValue("RetryJobInstanceResponse.Message"));
 		retryJobInstanceResponse.setCode(_ctx.integerValue("RetryJobInstanceResponse.Code"));
 		retryJobInstanceResponse.setSuccess(_ctx.booleanValue("RetryJobInstanceResponse.Success"));
-		retryJobInstanceResponse.setMessage(_ctx.stringValue("RetryJobInstanceResponse.Message"));
 	 
 	 	return retryJobInstanceResponse;
 	}

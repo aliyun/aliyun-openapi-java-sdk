@@ -34,6 +34,8 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 
 	private String description;
 
+	private String notificationPolicyName;
+
 	private String appName;
 
 	private String monitorContactsJson;
@@ -104,6 +106,17 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getNotificationPolicyName() {
+		return this.notificationPolicyName;
+	}
+
+	public void setNotificationPolicyName(String notificationPolicyName) {
+		this.notificationPolicyName = notificationPolicyName;
+		if(notificationPolicyName != null){
+			putQueryParameter("NotificationPolicyName", notificationPolicyName);
 		}
 	}
 

@@ -23,8 +23,8 @@ public class DeleteAppGroupResponseUnmarshaller {
 	public static DeleteAppGroupResponse unmarshall(DeleteAppGroupResponse deleteAppGroupResponse, UnmarshallerContext _ctx) {
 		
 		deleteAppGroupResponse.setRequestId(_ctx.stringValue("DeleteAppGroupResponse.RequestId"));
-		deleteAppGroupResponse.setCode(_ctx.integerValue("DeleteAppGroupResponse.Code"));
 		deleteAppGroupResponse.setMessage(_ctx.stringValue("DeleteAppGroupResponse.Message"));
+		deleteAppGroupResponse.setCode(_ctx.integerValue("DeleteAppGroupResponse.Code"));
 		deleteAppGroupResponse.setSuccess(_ctx.booleanValue("DeleteAppGroupResponse.Success"));
 	 
 	 	return deleteAppGroupResponse;

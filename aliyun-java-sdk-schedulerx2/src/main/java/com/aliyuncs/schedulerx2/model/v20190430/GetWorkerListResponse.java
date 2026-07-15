@@ -27,9 +27,9 @@ public class GetWorkerListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer code;
-
 	private String message;
+
+	private Integer code;
 
 	private Boolean success;
 
@@ -43,20 +43,20 @@ public class GetWorkerListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -89,17 +89,25 @@ public class GetWorkerListResponse extends AcsResponse {
 
 		public static class WorkerInfo {
 
+			private String version;
+
 			private String ip;
 
 			private Integer port;
 
-			private String workerAddress;
-
 			private String label;
 
-			private String version;
+			private String workerAddress;
 
 			private String starter;
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
 
 			public String getIp() {
 				return this.ip;
@@ -117,14 +125,6 @@ public class GetWorkerListResponse extends AcsResponse {
 				this.port = port;
 			}
 
-			public String getWorkerAddress() {
-				return this.workerAddress;
-			}
-
-			public void setWorkerAddress(String workerAddress) {
-				this.workerAddress = workerAddress;
-			}
-
 			public String getLabel() {
 				return this.label;
 			}
@@ -133,12 +133,12 @@ public class GetWorkerListResponse extends AcsResponse {
 				this.label = label;
 			}
 
-			public String getVersion() {
-				return this.version;
+			public String getWorkerAddress() {
+				return this.workerAddress;
 			}
 
-			public void setVersion(String version) {
-				this.version = version;
+			public void setWorkerAddress(String workerAddress) {
+				this.workerAddress = workerAddress;
 			}
 
 			public String getStarter() {

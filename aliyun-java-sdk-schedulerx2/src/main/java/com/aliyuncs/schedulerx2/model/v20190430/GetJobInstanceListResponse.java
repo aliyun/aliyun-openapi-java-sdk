@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetJobInstanceListResponse extends AcsResponse {
 
-	private Integer code;
-
 	private String message;
 
 	private String requestId;
 
+	private Integer code;
+
 	private Boolean success;
 
 	private Data data;
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -57,6 +49,14 @@ public class GetJobInstanceListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -91,29 +91,29 @@ public class GetJobInstanceListResponse extends AcsResponse {
 
 			private Integer status;
 
-			private String progress;
-
-			private String result;
-
-			private Long instanceId;
-
-			private Integer timeType;
-
 			private Integer triggerType;
+
+			private String progress;
 
 			private String endTime;
 
+			private Long instanceId;
+
+			private String workAddr;
+
 			private String startTime;
-
-			private String executor;
-
-			private Long jobId;
-
-			private String scheduleTime;
 
 			private String dataTime;
 
-			private String workAddr;
+			private String result;
+
+			private Integer timeType;
+
+			private String executor;
+
+			private String scheduleTime;
+
+			private Long jobId;
 
 			public Integer getStatus() {
 				return this.status;
@@ -121,38 +121,6 @@ public class GetJobInstanceListResponse extends AcsResponse {
 
 			public void setStatus(Integer status) {
 				this.status = status;
-			}
-
-			public String getProgress() {
-				return this.progress;
-			}
-
-			public void setProgress(String progress) {
-				this.progress = progress;
-			}
-
-			public String getResult() {
-				return this.result;
-			}
-
-			public void setResult(String result) {
-				this.result = result;
-			}
-
-			public Long getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(Long instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public Integer getTimeType() {
-				return this.timeType;
-			}
-
-			public void setTimeType(Integer timeType) {
-				this.timeType = timeType;
 			}
 
 			public Integer getTriggerType() {
@@ -163,12 +131,36 @@ public class GetJobInstanceListResponse extends AcsResponse {
 				this.triggerType = triggerType;
 			}
 
+			public String getProgress() {
+				return this.progress;
+			}
+
+			public void setProgress(String progress) {
+				this.progress = progress;
+			}
+
 			public String getEndTime() {
 				return this.endTime;
 			}
 
 			public void setEndTime(String endTime) {
 				this.endTime = endTime;
+			}
+
+			public Long getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(Long instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getWorkAddr() {
+				return this.workAddr;
+			}
+
+			public void setWorkAddr(String workAddr) {
+				this.workAddr = workAddr;
 			}
 
 			public String getStartTime() {
@@ -179,20 +171,36 @@ public class GetJobInstanceListResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
+			public String getDataTime() {
+				return this.dataTime;
+			}
+
+			public void setDataTime(String dataTime) {
+				this.dataTime = dataTime;
+			}
+
+			public String getResult() {
+				return this.result;
+			}
+
+			public void setResult(String result) {
+				this.result = result;
+			}
+
+			public Integer getTimeType() {
+				return this.timeType;
+			}
+
+			public void setTimeType(Integer timeType) {
+				this.timeType = timeType;
+			}
+
 			public String getExecutor() {
 				return this.executor;
 			}
 
 			public void setExecutor(String executor) {
 				this.executor = executor;
-			}
-
-			public Long getJobId() {
-				return this.jobId;
-			}
-
-			public void setJobId(Long jobId) {
-				this.jobId = jobId;
 			}
 
 			public String getScheduleTime() {
@@ -203,20 +211,12 @@ public class GetJobInstanceListResponse extends AcsResponse {
 				this.scheduleTime = scheduleTime;
 			}
 
-			public String getDataTime() {
-				return this.dataTime;
+			public Long getJobId() {
+				return this.jobId;
 			}
 
-			public void setDataTime(String dataTime) {
-				this.dataTime = dataTime;
-			}
-
-			public String getWorkAddr() {
-				return this.workAddr;
-			}
-
-			public void setWorkAddr(String workAddr) {
-				this.workAddr = workAddr;
+			public void setJobId(Long jobId) {
+				this.jobId = jobId;
 			}
 		}
 	}

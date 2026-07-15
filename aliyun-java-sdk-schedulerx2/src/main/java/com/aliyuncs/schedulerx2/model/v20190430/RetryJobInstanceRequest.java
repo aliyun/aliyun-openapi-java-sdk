@@ -27,9 +27,9 @@ public class RetryJobInstanceRequest extends RpcAcsRequest<RetryJobInstanceRespo
 
 	private String namespaceSource;
 
-	private String groupId;
-
 	private Long jobId;
+
+	private String groupId;
 
 	private String namespace;
 
@@ -54,17 +54,6 @@ public class RetryJobInstanceRequest extends RpcAcsRequest<RetryJobInstanceRespo
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
 	public Long getJobId() {
 		return this.jobId;
 	}
@@ -73,6 +62,17 @@ public class RetryJobInstanceRequest extends RpcAcsRequest<RetryJobInstanceRespo
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

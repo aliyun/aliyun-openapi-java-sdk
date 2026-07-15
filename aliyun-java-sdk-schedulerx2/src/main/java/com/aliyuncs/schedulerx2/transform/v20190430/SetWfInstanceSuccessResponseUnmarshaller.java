@@ -23,9 +23,9 @@ public class SetWfInstanceSuccessResponseUnmarshaller {
 	public static SetWfInstanceSuccessResponse unmarshall(SetWfInstanceSuccessResponse setWfInstanceSuccessResponse, UnmarshallerContext _ctx) {
 		
 		setWfInstanceSuccessResponse.setRequestId(_ctx.stringValue("SetWfInstanceSuccessResponse.RequestId"));
+		setWfInstanceSuccessResponse.setMessage(_ctx.stringValue("SetWfInstanceSuccessResponse.Message"));
 		setWfInstanceSuccessResponse.setCode(_ctx.integerValue("SetWfInstanceSuccessResponse.Code"));
 		setWfInstanceSuccessResponse.setSuccess(_ctx.booleanValue("SetWfInstanceSuccessResponse.Success"));
-		setWfInstanceSuccessResponse.setMessage(_ctx.stringValue("SetWfInstanceSuccessResponse.Message"));
 	 
 	 	return setWfInstanceSuccessResponse;
 	}

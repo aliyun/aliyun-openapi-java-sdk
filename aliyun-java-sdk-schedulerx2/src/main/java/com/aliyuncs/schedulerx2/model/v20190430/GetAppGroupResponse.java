@@ -26,9 +26,9 @@ public class GetAppGroupResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer code;
-
 	private String message;
+
+	private Integer code;
 
 	private Boolean success;
 
@@ -42,20 +42,20 @@ public class GetAppGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -76,25 +76,25 @@ public class GetAppGroupResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String appName;
-
 		private String description;
-
-		private Integer maxJobs;
-
-		private String groupId;
-
-		private String alarmJson;
-
-		private String metricsThresholdJson;
-
-		private String monitorConfigJson;
-
-		private Integer maxConcurrency;
 
 		private Integer curJobs;
 
-		private Integer runningInstanceNum;
+		private Integer maxConcurrency;
+
+		private String monitorContactsJson;
+
+		private Boolean enableLog;
+
+		private String namespace;
+
+		private String appName;
+
+		private String groupId;
+
+		private String appVersion;
+
+		private String monitorConfigJson;
 
 		private Integer readyInstanceNum;
 
@@ -102,21 +102,17 @@ public class GetAppGroupResponse extends AcsResponse {
 
 		private String appKey;
 
+		private String metricsThresholdJson;
+
+		private String notificationPolicyName;
+
+		private Integer runningInstanceNum;
+
 		private String xattrs;
 
-		private String appVersion;
+		private Integer maxJobs;
 
-		private String namespace;
-
-		private String monitorContactsJson;
-
-		public String getAppName() {
-			return this.appName;
-		}
-
-		public void setAppName(String appName) {
-			this.appName = appName;
-		}
+		private String alarmJson;
 
 		public String getDescription() {
 			return this.description;
@@ -124,54 +120,6 @@ public class GetAppGroupResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public Integer getMaxJobs() {
-			return this.maxJobs;
-		}
-
-		public void setMaxJobs(Integer maxJobs) {
-			this.maxJobs = maxJobs;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getAlarmJson() {
-			return this.alarmJson;
-		}
-
-		public void setAlarmJson(String alarmJson) {
-			this.alarmJson = alarmJson;
-		}
-
-		public String getMetricsThresholdJson() {
-			return this.metricsThresholdJson;
-		}
-
-		public void setMetricsThresholdJson(String metricsThresholdJson) {
-			this.metricsThresholdJson = metricsThresholdJson;
-		}
-
-		public String getMonitorConfigJson() {
-			return this.monitorConfigJson;
-		}
-
-		public void setMonitorConfigJson(String monitorConfigJson) {
-			this.monitorConfigJson = monitorConfigJson;
-		}
-
-		public Integer getMaxConcurrency() {
-			return this.maxConcurrency;
-		}
-
-		public void setMaxConcurrency(Integer maxConcurrency) {
-			this.maxConcurrency = maxConcurrency;
 		}
 
 		public Integer getCurJobs() {
@@ -182,12 +130,68 @@ public class GetAppGroupResponse extends AcsResponse {
 			this.curJobs = curJobs;
 		}
 
-		public Integer getRunningInstanceNum() {
-			return this.runningInstanceNum;
+		public Integer getMaxConcurrency() {
+			return this.maxConcurrency;
 		}
 
-		public void setRunningInstanceNum(Integer runningInstanceNum) {
-			this.runningInstanceNum = runningInstanceNum;
+		public void setMaxConcurrency(Integer maxConcurrency) {
+			this.maxConcurrency = maxConcurrency;
+		}
+
+		public String getMonitorContactsJson() {
+			return this.monitorContactsJson;
+		}
+
+		public void setMonitorContactsJson(String monitorContactsJson) {
+			this.monitorContactsJson = monitorContactsJson;
+		}
+
+		public Boolean getEnableLog() {
+			return this.enableLog;
+		}
+
+		public void setEnableLog(Boolean enableLog) {
+			this.enableLog = enableLog;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getAppVersion() {
+			return this.appVersion;
+		}
+
+		public void setAppVersion(String appVersion) {
+			this.appVersion = appVersion;
+		}
+
+		public String getMonitorConfigJson() {
+			return this.monitorConfigJson;
+		}
+
+		public void setMonitorConfigJson(String monitorConfigJson) {
+			this.monitorConfigJson = monitorConfigJson;
 		}
 
 		public Integer getReadyInstanceNum() {
@@ -214,6 +218,30 @@ public class GetAppGroupResponse extends AcsResponse {
 			this.appKey = appKey;
 		}
 
+		public String getMetricsThresholdJson() {
+			return this.metricsThresholdJson;
+		}
+
+		public void setMetricsThresholdJson(String metricsThresholdJson) {
+			this.metricsThresholdJson = metricsThresholdJson;
+		}
+
+		public String getNotificationPolicyName() {
+			return this.notificationPolicyName;
+		}
+
+		public void setNotificationPolicyName(String notificationPolicyName) {
+			this.notificationPolicyName = notificationPolicyName;
+		}
+
+		public Integer getRunningInstanceNum() {
+			return this.runningInstanceNum;
+		}
+
+		public void setRunningInstanceNum(Integer runningInstanceNum) {
+			this.runningInstanceNum = runningInstanceNum;
+		}
+
 		public String getXattrs() {
 			return this.xattrs;
 		}
@@ -222,28 +250,20 @@ public class GetAppGroupResponse extends AcsResponse {
 			this.xattrs = xattrs;
 		}
 
-		public String getAppVersion() {
-			return this.appVersion;
+		public Integer getMaxJobs() {
+			return this.maxJobs;
 		}
 
-		public void setAppVersion(String appVersion) {
-			this.appVersion = appVersion;
+		public void setMaxJobs(Integer maxJobs) {
+			this.maxJobs = maxJobs;
 		}
 
-		public String getNamespace() {
-			return this.namespace;
+		public String getAlarmJson() {
+			return this.alarmJson;
 		}
 
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
-
-		public String getMonitorContactsJson() {
-			return this.monitorContactsJson;
-		}
-
-		public void setMonitorContactsJson(String monitorContactsJson) {
-			this.monitorContactsJson = monitorContactsJson;
+		public void setAlarmJson(String alarmJson) {
+			this.alarmJson = alarmJson;
 		}
 	}
 

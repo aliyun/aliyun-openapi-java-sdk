@@ -28,8 +28,8 @@ public class GetWorkerListResponseUnmarshaller {
 	public static GetWorkerListResponse unmarshall(GetWorkerListResponse getWorkerListResponse, UnmarshallerContext _ctx) {
 		
 		getWorkerListResponse.setRequestId(_ctx.stringValue("GetWorkerListResponse.RequestId"));
-		getWorkerListResponse.setCode(_ctx.integerValue("GetWorkerListResponse.Code"));
 		getWorkerListResponse.setMessage(_ctx.stringValue("GetWorkerListResponse.Message"));
+		getWorkerListResponse.setCode(_ctx.integerValue("GetWorkerListResponse.Code"));
 		getWorkerListResponse.setSuccess(_ctx.booleanValue("GetWorkerListResponse.Success"));
 
 		Data data = new Data();
@@ -37,11 +37,11 @@ public class GetWorkerListResponseUnmarshaller {
 		List<WorkerInfo> workerInfos = new ArrayList<WorkerInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetWorkerListResponse.Data.WorkerInfos.Length"); i++) {
 			WorkerInfo workerInfo = new WorkerInfo();
+			workerInfo.setVersion(_ctx.stringValue("GetWorkerListResponse.Data.WorkerInfos["+ i +"].Version"));
 			workerInfo.setIp(_ctx.stringValue("GetWorkerListResponse.Data.WorkerInfos["+ i +"].Ip"));
 			workerInfo.setPort(_ctx.integerValue("GetWorkerListResponse.Data.WorkerInfos["+ i +"].Port"));
-			workerInfo.setWorkerAddress(_ctx.stringValue("GetWorkerListResponse.Data.WorkerInfos["+ i +"].WorkerAddress"));
 			workerInfo.setLabel(_ctx.stringValue("GetWorkerListResponse.Data.WorkerInfos["+ i +"].Label"));
-			workerInfo.setVersion(_ctx.stringValue("GetWorkerListResponse.Data.WorkerInfos["+ i +"].Version"));
+			workerInfo.setWorkerAddress(_ctx.stringValue("GetWorkerListResponse.Data.WorkerInfos["+ i +"].WorkerAddress"));
 			workerInfo.setStarter(_ctx.stringValue("GetWorkerListResponse.Data.WorkerInfos["+ i +"].Starter"));
 
 			workerInfos.add(workerInfo);

@@ -27,13 +27,13 @@ public class SetWfInstanceSuccessRequest extends RpcAcsRequest<SetWfInstanceSucc
 
 	private String namespaceSource;
 
-	private String groupId;
-
 	private Long wfInstanceId;
 
-	private String namespace;
-
 	private Long workflowId;
+
+	private String groupId;
+
+	private String namespace;
 	public SetWfInstanceSuccessRequest() {
 		super("schedulerx2", "2019-04-30", "SetWfInstanceSuccess", "schedulerx2");
 		setMethod(MethodType.POST);
@@ -54,17 +54,6 @@ public class SetWfInstanceSuccessRequest extends RpcAcsRequest<SetWfInstanceSucc
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
 	public Long getWfInstanceId() {
 		return this.wfInstanceId;
 	}
@@ -76,17 +65,6 @@ public class SetWfInstanceSuccessRequest extends RpcAcsRequest<SetWfInstanceSucc
 		}
 	}
 
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
 	public Long getWorkflowId() {
 		return this.workflowId;
 	}
@@ -95,6 +73,28 @@ public class SetWfInstanceSuccessRequest extends RpcAcsRequest<SetWfInstanceSucc
 		this.workflowId = workflowId;
 		if(workflowId != null){
 			putQueryParameter("WorkflowId", workflowId.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

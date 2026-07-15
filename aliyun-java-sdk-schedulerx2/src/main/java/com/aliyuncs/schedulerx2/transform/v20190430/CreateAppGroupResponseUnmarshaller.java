@@ -24,8 +24,8 @@ public class CreateAppGroupResponseUnmarshaller {
 	public static CreateAppGroupResponse unmarshall(CreateAppGroupResponse createAppGroupResponse, UnmarshallerContext _ctx) {
 		
 		createAppGroupResponse.setRequestId(_ctx.stringValue("CreateAppGroupResponse.RequestId"));
-		createAppGroupResponse.setCode(_ctx.integerValue("CreateAppGroupResponse.Code"));
 		createAppGroupResponse.setMessage(_ctx.stringValue("CreateAppGroupResponse.Message"));
+		createAppGroupResponse.setCode(_ctx.integerValue("CreateAppGroupResponse.Code"));
 		createAppGroupResponse.setSuccess(_ctx.booleanValue("CreateAppGroupResponse.Success"));
 
 		Data data = new Data();

@@ -31,47 +31,47 @@ public class GetWorkFlowResponseUnmarshaller {
 	public static GetWorkFlowResponse unmarshall(GetWorkFlowResponse getWorkFlowResponse, UnmarshallerContext _ctx) {
 		
 		getWorkFlowResponse.setRequestId(_ctx.stringValue("GetWorkFlowResponse.RequestId"));
-		getWorkFlowResponse.setCode(_ctx.integerValue("GetWorkFlowResponse.Code"));
 		getWorkFlowResponse.setMessage(_ctx.stringValue("GetWorkFlowResponse.Message"));
+		getWorkFlowResponse.setCode(_ctx.integerValue("GetWorkFlowResponse.Code"));
 		getWorkFlowResponse.setSuccess(_ctx.booleanValue("GetWorkFlowResponse.Success"));
 
 		Data data = new Data();
 
-		WorkFlowInfo workFlowInfo = new WorkFlowInfo();
-		workFlowInfo.setWorkflowId(_ctx.longValue("GetWorkFlowResponse.Data.WorkFlowInfo.WorkflowId"));
-		workFlowInfo.setName(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.Name"));
-		workFlowInfo.setDescription(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.Description"));
-		workFlowInfo.setStatus(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.Status"));
-		workFlowInfo.setTimeType(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.TimeType"));
-		workFlowInfo.setTimeExpression(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.TimeExpression"));
-		workFlowInfo.setGroupId(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.GroupId"));
-		workFlowInfo.setNamespace(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.Namespace"));
-		workFlowInfo.setMaxConcurrency(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.MaxConcurrency"));
-		data.setWorkFlowInfo(workFlowInfo);
-
 		WorkFlowNodeInfo workFlowNodeInfo = new WorkFlowNodeInfo();
-
-		List<Node> nodes = new ArrayList<Node>();
-		for (int i = 0; i < _ctx.lengthValue("GetWorkFlowResponse.Data.WorkFlowNodeInfo.Nodes.Length"); i++) {
-			Node node = new Node();
-			node.setId(_ctx.longValue("GetWorkFlowResponse.Data.WorkFlowNodeInfo.Nodes["+ i +"].Id"));
-			node.setLabel(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowNodeInfo.Nodes["+ i +"].Label"));
-			node.setStatus(_ctx.integerValue("GetWorkFlowResponse.Data.WorkFlowNodeInfo.Nodes["+ i +"].Status"));
-
-			nodes.add(node);
-		}
-		workFlowNodeInfo.setNodes(nodes);
 
 		List<Edge> edges = new ArrayList<Edge>();
 		for (int i = 0; i < _ctx.lengthValue("GetWorkFlowResponse.Data.WorkFlowNodeInfo.Edges.Length"); i++) {
 			Edge edge = new Edge();
-			edge.setSource(_ctx.longValue("GetWorkFlowResponse.Data.WorkFlowNodeInfo.Edges["+ i +"].Source"));
 			edge.setTarget(_ctx.longValue("GetWorkFlowResponse.Data.WorkFlowNodeInfo.Edges["+ i +"].Target"));
+			edge.setSource(_ctx.longValue("GetWorkFlowResponse.Data.WorkFlowNodeInfo.Edges["+ i +"].Source"));
 
 			edges.add(edge);
 		}
 		workFlowNodeInfo.setEdges(edges);
+
+		List<Node> nodes = new ArrayList<Node>();
+		for (int i = 0; i < _ctx.lengthValue("GetWorkFlowResponse.Data.WorkFlowNodeInfo.Nodes.Length"); i++) {
+			Node node = new Node();
+			node.setStatus(_ctx.integerValue("GetWorkFlowResponse.Data.WorkFlowNodeInfo.Nodes["+ i +"].Status"));
+			node.setLabel(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowNodeInfo.Nodes["+ i +"].Label"));
+			node.setId(_ctx.longValue("GetWorkFlowResponse.Data.WorkFlowNodeInfo.Nodes["+ i +"].Id"));
+
+			nodes.add(node);
+		}
+		workFlowNodeInfo.setNodes(nodes);
 		data.setWorkFlowNodeInfo(workFlowNodeInfo);
+
+		WorkFlowInfo workFlowInfo = new WorkFlowInfo();
+		workFlowInfo.setStatus(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.Status"));
+		workFlowInfo.setDescription(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.Description"));
+		workFlowInfo.setMaxConcurrency(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.MaxConcurrency"));
+		workFlowInfo.setTimeExpression(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.TimeExpression"));
+		workFlowInfo.setWorkflowId(_ctx.longValue("GetWorkFlowResponse.Data.WorkFlowInfo.WorkflowId"));
+		workFlowInfo.setNamespace(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.Namespace"));
+		workFlowInfo.setName(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.Name"));
+		workFlowInfo.setTimeType(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.TimeType"));
+		workFlowInfo.setGroupId(_ctx.stringValue("GetWorkFlowResponse.Data.WorkFlowInfo.GroupId"));
+		data.setWorkFlowInfo(workFlowInfo);
 		getWorkFlowResponse.setData(data);
 	 
 	 	return getWorkFlowResponse;

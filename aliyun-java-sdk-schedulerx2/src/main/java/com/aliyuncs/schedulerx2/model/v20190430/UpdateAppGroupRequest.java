@@ -27,6 +27,8 @@ public class UpdateAppGroupRequest extends RpcAcsRequest<UpdateAppGroupResponse>
 
 	private String description;
 
+	private String notificationPolicyName;
+
 	private String monitorContactsJson;
 
 	private String groupId;
@@ -36,6 +38,8 @@ public class UpdateAppGroupRequest extends RpcAcsRequest<UpdateAppGroupResponse>
 	private String monitorConfigJson;
 
 	private String namespace;
+
+	private Boolean enableLog;
 
 	private Integer maxConcurrency;
 	public UpdateAppGroupRequest() {
@@ -55,6 +59,17 @@ public class UpdateAppGroupRequest extends RpcAcsRequest<UpdateAppGroupResponse>
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getNotificationPolicyName() {
+		return this.notificationPolicyName;
+	}
+
+	public void setNotificationPolicyName(String notificationPolicyName) {
+		this.notificationPolicyName = notificationPolicyName;
+		if(notificationPolicyName != null){
+			putQueryParameter("NotificationPolicyName", notificationPolicyName);
 		}
 	}
 
@@ -110,6 +125,17 @@ public class UpdateAppGroupRequest extends RpcAcsRequest<UpdateAppGroupResponse>
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public Boolean getEnableLog() {
+		return this.enableLog;
+	}
+
+	public void setEnableLog(Boolean enableLog) {
+		this.enableLog = enableLog;
+		if(enableLog != null){
+			putQueryParameter("EnableLog", enableLog.toString());
 		}
 	}
 

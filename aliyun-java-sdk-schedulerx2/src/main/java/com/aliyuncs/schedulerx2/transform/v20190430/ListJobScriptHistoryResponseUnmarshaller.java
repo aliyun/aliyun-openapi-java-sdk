@@ -28,8 +28,8 @@ public class ListJobScriptHistoryResponseUnmarshaller {
 	public static ListJobScriptHistoryResponse unmarshall(ListJobScriptHistoryResponse listJobScriptHistoryResponse, UnmarshallerContext _ctx) {
 		
 		listJobScriptHistoryResponse.setRequestId(_ctx.stringValue("ListJobScriptHistoryResponse.RequestId"));
-		listJobScriptHistoryResponse.setCode(_ctx.integerValue("ListJobScriptHistoryResponse.Code"));
 		listJobScriptHistoryResponse.setMessage(_ctx.stringValue("ListJobScriptHistoryResponse.Message"));
+		listJobScriptHistoryResponse.setCode(_ctx.integerValue("ListJobScriptHistoryResponse.Code"));
 		listJobScriptHistoryResponse.setSuccess(_ctx.booleanValue("ListJobScriptHistoryResponse.Success"));
 
 		Data data = new Data();
@@ -37,10 +37,10 @@ public class ListJobScriptHistoryResponseUnmarshaller {
 		List<JobScriptHistoryInfo> jobScriptHistoryInfos = new ArrayList<JobScriptHistoryInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListJobScriptHistoryResponse.Data.JobScriptHistoryInfos.Length"); i++) {
 			JobScriptHistoryInfo jobScriptHistoryInfo = new JobScriptHistoryInfo();
+			jobScriptHistoryInfo.setScriptContent(_ctx.stringValue("ListJobScriptHistoryResponse.Data.JobScriptHistoryInfos["+ i +"].ScriptContent"));
+			jobScriptHistoryInfo.setCreateTime(_ctx.stringValue("ListJobScriptHistoryResponse.Data.JobScriptHistoryInfos["+ i +"].CreateTime"));
 			jobScriptHistoryInfo.setVersionesDescription(_ctx.stringValue("ListJobScriptHistoryResponse.Data.JobScriptHistoryInfos["+ i +"].VersionesDescription"));
 			jobScriptHistoryInfo.setCreator(_ctx.stringValue("ListJobScriptHistoryResponse.Data.JobScriptHistoryInfos["+ i +"].Creator"));
-			jobScriptHistoryInfo.setCreateTime(_ctx.stringValue("ListJobScriptHistoryResponse.Data.JobScriptHistoryInfos["+ i +"].CreateTime"));
-			jobScriptHistoryInfo.setScriptContent(_ctx.stringValue("ListJobScriptHistoryResponse.Data.JobScriptHistoryInfos["+ i +"].ScriptContent"));
 
 			jobScriptHistoryInfos.add(jobScriptHistoryInfo);
 		}

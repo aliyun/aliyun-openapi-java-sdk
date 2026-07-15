@@ -23,9 +23,9 @@ public class SetJobInstanceSuccessResponseUnmarshaller {
 	public static SetJobInstanceSuccessResponse unmarshall(SetJobInstanceSuccessResponse setJobInstanceSuccessResponse, UnmarshallerContext _ctx) {
 		
 		setJobInstanceSuccessResponse.setRequestId(_ctx.stringValue("SetJobInstanceSuccessResponse.RequestId"));
+		setJobInstanceSuccessResponse.setMessage(_ctx.stringValue("SetJobInstanceSuccessResponse.Message"));
 		setJobInstanceSuccessResponse.setCode(_ctx.integerValue("SetJobInstanceSuccessResponse.Code"));
 		setJobInstanceSuccessResponse.setSuccess(_ctx.booleanValue("SetJobInstanceSuccessResponse.Success"));
-		setJobInstanceSuccessResponse.setMessage(_ctx.stringValue("SetJobInstanceSuccessResponse.Message"));
 	 
 	 	return setJobInstanceSuccessResponse;
 	}

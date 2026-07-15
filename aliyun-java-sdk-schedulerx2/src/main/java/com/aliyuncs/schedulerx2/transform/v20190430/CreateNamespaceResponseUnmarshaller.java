@@ -24,8 +24,8 @@ public class CreateNamespaceResponseUnmarshaller {
 	public static CreateNamespaceResponse unmarshall(CreateNamespaceResponse createNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		createNamespaceResponse.setRequestId(_ctx.stringValue("CreateNamespaceResponse.RequestId"));
-		createNamespaceResponse.setCode(_ctx.integerValue("CreateNamespaceResponse.Code"));
 		createNamespaceResponse.setMessage(_ctx.stringValue("CreateNamespaceResponse.Message"));
+		createNamespaceResponse.setCode(_ctx.integerValue("CreateNamespaceResponse.Code"));
 		createNamespaceResponse.setSuccess(_ctx.booleanValue("CreateNamespaceResponse.Success"));
 
 		Data data = new Data();

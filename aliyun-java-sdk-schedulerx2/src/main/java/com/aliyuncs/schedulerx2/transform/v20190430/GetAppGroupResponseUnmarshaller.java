@@ -24,28 +24,30 @@ public class GetAppGroupResponseUnmarshaller {
 	public static GetAppGroupResponse unmarshall(GetAppGroupResponse getAppGroupResponse, UnmarshallerContext _ctx) {
 		
 		getAppGroupResponse.setRequestId(_ctx.stringValue("GetAppGroupResponse.RequestId"));
-		getAppGroupResponse.setCode(_ctx.integerValue("GetAppGroupResponse.Code"));
 		getAppGroupResponse.setMessage(_ctx.stringValue("GetAppGroupResponse.Message"));
+		getAppGroupResponse.setCode(_ctx.integerValue("GetAppGroupResponse.Code"));
 		getAppGroupResponse.setSuccess(_ctx.booleanValue("GetAppGroupResponse.Success"));
 
 		Data data = new Data();
-		data.setAppName(_ctx.stringValue("GetAppGroupResponse.Data.AppName"));
 		data.setDescription(_ctx.stringValue("GetAppGroupResponse.Data.Description"));
-		data.setMaxJobs(_ctx.integerValue("GetAppGroupResponse.Data.MaxJobs"));
-		data.setGroupId(_ctx.stringValue("GetAppGroupResponse.Data.GroupId"));
-		data.setAlarmJson(_ctx.stringValue("GetAppGroupResponse.Data.AlarmJson"));
-		data.setMetricsThresholdJson(_ctx.stringValue("GetAppGroupResponse.Data.MetricsThresholdJson"));
-		data.setMonitorConfigJson(_ctx.stringValue("GetAppGroupResponse.Data.MonitorConfigJson"));
-		data.setMaxConcurrency(_ctx.integerValue("GetAppGroupResponse.Data.MaxConcurrency"));
 		data.setCurJobs(_ctx.integerValue("GetAppGroupResponse.Data.CurJobs"));
-		data.setRunningInstanceNum(_ctx.integerValue("GetAppGroupResponse.Data.RunningInstanceNum"));
+		data.setMaxConcurrency(_ctx.integerValue("GetAppGroupResponse.Data.MaxConcurrency"));
+		data.setMonitorContactsJson(_ctx.stringValue("GetAppGroupResponse.Data.MonitorContactsJson"));
+		data.setEnableLog(_ctx.booleanValue("GetAppGroupResponse.Data.EnableLog"));
+		data.setNamespace(_ctx.stringValue("GetAppGroupResponse.Data.Namespace"));
+		data.setAppName(_ctx.stringValue("GetAppGroupResponse.Data.AppName"));
+		data.setGroupId(_ctx.stringValue("GetAppGroupResponse.Data.GroupId"));
+		data.setAppVersion(_ctx.stringValue("GetAppGroupResponse.Data.AppVersion"));
+		data.setMonitorConfigJson(_ctx.stringValue("GetAppGroupResponse.Data.MonitorConfigJson"));
 		data.setReadyInstanceNum(_ctx.integerValue("GetAppGroupResponse.Data.ReadyInstanceNum"));
 		data.setAppGroupId(_ctx.longValue("GetAppGroupResponse.Data.AppGroupId"));
 		data.setAppKey(_ctx.stringValue("GetAppGroupResponse.Data.AppKey"));
+		data.setMetricsThresholdJson(_ctx.stringValue("GetAppGroupResponse.Data.MetricsThresholdJson"));
+		data.setNotificationPolicyName(_ctx.stringValue("GetAppGroupResponse.Data.NotificationPolicyName"));
+		data.setRunningInstanceNum(_ctx.integerValue("GetAppGroupResponse.Data.RunningInstanceNum"));
 		data.setXattrs(_ctx.stringValue("GetAppGroupResponse.Data.Xattrs"));
-		data.setAppVersion(_ctx.stringValue("GetAppGroupResponse.Data.AppVersion"));
-		data.setNamespace(_ctx.stringValue("GetAppGroupResponse.Data.Namespace"));
-		data.setMonitorContactsJson(_ctx.stringValue("GetAppGroupResponse.Data.MonitorContactsJson"));
+		data.setMaxJobs(_ctx.integerValue("GetAppGroupResponse.Data.MaxJobs"));
+		data.setAlarmJson(_ctx.stringValue("GetAppGroupResponse.Data.AlarmJson"));
 		getAppGroupResponse.setData(data);
 	 
 	 	return getAppGroupResponse;

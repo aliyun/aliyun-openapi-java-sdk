@@ -26,13 +26,13 @@ public class GetOverviewResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer code;
-
-	private Boolean success;
-
 	private String message;
 
 	private String data;
+
+	private Integer code;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,22 +40,6 @@ public class GetOverviewResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -72,6 +56,22 @@ public class GetOverviewResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

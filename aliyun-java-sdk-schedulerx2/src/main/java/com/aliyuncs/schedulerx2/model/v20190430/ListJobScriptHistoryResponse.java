@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListJobScriptHistoryResponse extends AcsResponse {
 
-	private Integer code;
-
 	private String message;
 
 	private String requestId;
 
+	private Integer code;
+
 	private Boolean success;
 
 	private Data data;
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -57,6 +49,14 @@ public class ListJobScriptHistoryResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -89,13 +89,29 @@ public class ListJobScriptHistoryResponse extends AcsResponse {
 
 		public static class JobScriptHistoryInfo {
 
+			private String scriptContent;
+
+			private String createTime;
+
 			private String versionesDescription;
 
 			private String creator;
 
-			private String createTime;
+			public String getScriptContent() {
+				return this.scriptContent;
+			}
 
-			private String scriptContent;
+			public void setScriptContent(String scriptContent) {
+				this.scriptContent = scriptContent;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
 
 			public String getVersionesDescription() {
 				return this.versionesDescription;
@@ -111,22 +127,6 @@ public class ListJobScriptHistoryResponse extends AcsResponse {
 
 			public void setCreator(String creator) {
 				this.creator = creator;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getScriptContent() {
-				return this.scriptContent;
-			}
-
-			public void setScriptContent(String scriptContent) {
-				this.scriptContent = scriptContent;
 			}
 		}
 	}

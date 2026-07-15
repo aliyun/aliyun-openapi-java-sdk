@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListGroupsResponse extends AcsResponse {
 
-	private Integer code;
-
 	private String message;
 
 	private String requestId;
 
+	private Integer code;
+
 	private Boolean success;
 
 	private Data data;
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -57,6 +49,14 @@ public class ListGroupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -89,44 +89,30 @@ public class ListGroupsResponse extends AcsResponse {
 
 		public static class AppGroup {
 
-			private Long appGroupId;
-
-			private String appName;
-
-			private String appKey;
+			private Integer appVersion;
 
 			private String description;
 
-			private String groupId;
+			private Long appGroupId;
+
+			private String appKey;
+
+			private Boolean enableLog;
 
 			private String xattrs;
 
-			private Integer appVersion;
-
 			private String namespace;
 
-			public Long getAppGroupId() {
-				return this.appGroupId;
+			private String appName;
+
+			private String groupId;
+
+			public Integer getAppVersion() {
+				return this.appVersion;
 			}
 
-			public void setAppGroupId(Long appGroupId) {
-				this.appGroupId = appGroupId;
-			}
-
-			public String getAppName() {
-				return this.appName;
-			}
-
-			public void setAppName(String appName) {
-				this.appName = appName;
-			}
-
-			public String getAppKey() {
-				return this.appKey;
-			}
-
-			public void setAppKey(String appKey) {
-				this.appKey = appKey;
+			public void setAppVersion(Integer appVersion) {
+				this.appVersion = appVersion;
 			}
 
 			public String getDescription() {
@@ -137,12 +123,28 @@ public class ListGroupsResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getGroupId() {
-				return this.groupId;
+			public Long getAppGroupId() {
+				return this.appGroupId;
 			}
 
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
+			public void setAppGroupId(Long appGroupId) {
+				this.appGroupId = appGroupId;
+			}
+
+			public String getAppKey() {
+				return this.appKey;
+			}
+
+			public void setAppKey(String appKey) {
+				this.appKey = appKey;
+			}
+
+			public Boolean getEnableLog() {
+				return this.enableLog;
+			}
+
+			public void setEnableLog(Boolean enableLog) {
+				this.enableLog = enableLog;
 			}
 
 			public String getXattrs() {
@@ -153,20 +155,28 @@ public class ListGroupsResponse extends AcsResponse {
 				this.xattrs = xattrs;
 			}
 
-			public Integer getAppVersion() {
-				return this.appVersion;
-			}
-
-			public void setAppVersion(Integer appVersion) {
-				this.appVersion = appVersion;
-			}
-
 			public String getNamespace() {
 				return this.namespace;
 			}
 
 			public void setNamespace(String namespace) {
 				this.namespace = namespace;
+			}
+
+			public String getAppName() {
+				return this.appName;
+			}
+
+			public void setAppName(String appName) {
+				this.appName = appName;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
 			}
 		}
 	}

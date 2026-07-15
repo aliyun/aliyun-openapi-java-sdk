@@ -28,8 +28,8 @@ public class ListNamespacesResponseUnmarshaller {
 	public static ListNamespacesResponse unmarshall(ListNamespacesResponse listNamespacesResponse, UnmarshallerContext _ctx) {
 		
 		listNamespacesResponse.setRequestId(_ctx.stringValue("ListNamespacesResponse.RequestId"));
-		listNamespacesResponse.setCode(_ctx.integerValue("ListNamespacesResponse.Code"));
 		listNamespacesResponse.setMessage(_ctx.stringValue("ListNamespacesResponse.Message"));
+		listNamespacesResponse.setCode(_ctx.integerValue("ListNamespacesResponse.Code"));
 		listNamespacesResponse.setSuccess(_ctx.booleanValue("ListNamespacesResponse.Success"));
 
 		Data data = new Data();
@@ -37,9 +37,9 @@ public class ListNamespacesResponseUnmarshaller {
 		List<Namespace> namespaces = new ArrayList<Namespace>();
 		for (int i = 0; i < _ctx.lengthValue("ListNamespacesResponse.Data.Namespaces.Length"); i++) {
 			Namespace namespace = new Namespace();
-			namespace.setName(_ctx.stringValue("ListNamespacesResponse.Data.Namespaces["+ i +"].Name"));
-			namespace.setDescription(_ctx.stringValue("ListNamespacesResponse.Data.Namespaces["+ i +"].Description"));
 			namespace.setUId(_ctx.stringValue("ListNamespacesResponse.Data.Namespaces["+ i +"].UId"));
+			namespace.setDescription(_ctx.stringValue("ListNamespacesResponse.Data.Namespaces["+ i +"].Description"));
+			namespace.setName(_ctx.stringValue("ListNamespacesResponse.Data.Namespaces["+ i +"].Name"));
 
 			namespaces.add(namespace);
 		}

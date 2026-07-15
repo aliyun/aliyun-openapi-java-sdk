@@ -23,8 +23,8 @@ public class DeleteRouteStrategyResponseUnmarshaller {
 	public static DeleteRouteStrategyResponse unmarshall(DeleteRouteStrategyResponse deleteRouteStrategyResponse, UnmarshallerContext _ctx) {
 		
 		deleteRouteStrategyResponse.setRequestId(_ctx.stringValue("DeleteRouteStrategyResponse.RequestId"));
-		deleteRouteStrategyResponse.setCode(_ctx.integerValue("DeleteRouteStrategyResponse.Code"));
 		deleteRouteStrategyResponse.setMessage(_ctx.stringValue("DeleteRouteStrategyResponse.Message"));
+		deleteRouteStrategyResponse.setCode(_ctx.integerValue("DeleteRouteStrategyResponse.Code"));
 		deleteRouteStrategyResponse.setSuccess(_ctx.booleanValue("DeleteRouteStrategyResponse.Success"));
 	 
 	 	return deleteRouteStrategyResponse;

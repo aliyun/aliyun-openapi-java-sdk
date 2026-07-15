@@ -28,9 +28,9 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 
 	private String namespaceSource;
 
-	private String groupId;
-
 	private Long jobId;
+
+	private String groupId;
 
 	private Long instanceId;
 
@@ -56,17 +56,6 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
 	public Long getJobId() {
 		return this.jobId;
 	}
@@ -75,6 +64,17 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

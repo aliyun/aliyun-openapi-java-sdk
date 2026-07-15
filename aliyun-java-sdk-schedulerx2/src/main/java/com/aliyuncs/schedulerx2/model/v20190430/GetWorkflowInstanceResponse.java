@@ -27,11 +27,11 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String message;
+
 	private Integer code;
 
 	private Boolean success;
-
-	private String message;
 
 	private Data data;
 
@@ -41,6 +41,14 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getCode() {
@@ -57,14 +65,6 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Data getData() {
@@ -101,11 +101,11 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 
 			private Integer status;
 
-			private String startTime;
-
 			private String endTime;
 
 			private String scheduleTime;
+
+			private String startTime;
 
 			private String dataTime;
 
@@ -115,14 +115,6 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 
 			public void setStatus(Integer status) {
 				this.status = status;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
 			}
 
 			public String getEndTime() {
@@ -141,6 +133,14 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 				this.scheduleTime = scheduleTime;
 			}
 
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
 			public String getDataTime() {
 				return this.dataTime;
 			}
@@ -152,17 +152,9 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 
 		public static class WfInstanceDag {
 
-			private List<Node> nodes;
-
 			private List<Edge> edges;
 
-			public List<Node> getNodes() {
-				return this.nodes;
-			}
-
-			public void setNodes(List<Node> nodes) {
-				this.nodes = nodes;
-			}
+			private List<Node> nodes;
 
 			public List<Edge> getEdges() {
 				return this.edges;
@@ -172,52 +164,67 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 				this.edges = edges;
 			}
 
+			public List<Node> getNodes() {
+				return this.nodes;
+			}
+
+			public void setNodes(List<Node> nodes) {
+				this.nodes = nodes;
+			}
+
+			public static class Edge {
+
+				private Long target;
+
+				private Long source;
+
+				public Long getTarget() {
+					return this.target;
+				}
+
+				public void setTarget(Long target) {
+					this.target = target;
+				}
+
+				public Long getSource() {
+					return this.source;
+				}
+
+				public void setSource(Long source) {
+					this.source = source;
+				}
+			}
+
 			public static class Node {
 
-				private Long jobInstanceId;
-
-				private Long jobId;
-
-				private String startTime;
+				private Integer status;
 
 				private String endTime;
 
 				private String scheduleTime;
 
-				private String dataTime;
+				private Integer attempt;
+
+				private Long jobInstanceId;
 
 				private String workAddr;
 
-				private String result;
-
-				private Integer attempt;
-
-				private Integer status;
+				private String startTime;
 
 				private String jobName;
 
-				public Long getJobInstanceId() {
-					return this.jobInstanceId;
+				private String dataTime;
+
+				private Long jobId;
+
+				private String result;
+
+				public Integer getStatus() {
+					return this.status;
 				}
 
-				public void setJobInstanceId(Long jobInstanceId) {
-					this.jobInstanceId = jobInstanceId;
-				}
-
-				public Long getJobId() {
-					return this.jobId;
-				}
-
-				public void setJobId(Long jobId) {
-					this.jobId = jobId;
-				}
-
-				public String getStartTime() {
-					return this.startTime;
-				}
-
-				public void setStartTime(String startTime) {
-					this.startTime = startTime;
+				public void setStatus(Integer status) {
+					this.status = status;
 				}
 
 				public String getEndTime() {
@@ -236,12 +243,20 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 					this.scheduleTime = scheduleTime;
 				}
 
-				public String getDataTime() {
-					return this.dataTime;
+				public Integer getAttempt() {
+					return this.attempt;
 				}
 
-				public void setDataTime(String dataTime) {
-					this.dataTime = dataTime;
+				public void setAttempt(Integer attempt) {
+					this.attempt = attempt;
+				}
+
+				public Long getJobInstanceId() {
+					return this.jobInstanceId;
+				}
+
+				public void setJobInstanceId(Long jobInstanceId) {
+					this.jobInstanceId = jobInstanceId;
 				}
 
 				public String getWorkAddr() {
@@ -252,28 +267,12 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 					this.workAddr = workAddr;
 				}
 
-				public String getResult() {
-					return this.result;
+				public String getStartTime() {
+					return this.startTime;
 				}
 
-				public void setResult(String result) {
-					this.result = result;
-				}
-
-				public Integer getAttempt() {
-					return this.attempt;
-				}
-
-				public void setAttempt(Integer attempt) {
-					this.attempt = attempt;
-				}
-
-				public Integer getStatus() {
-					return this.status;
-				}
-
-				public void setStatus(Integer status) {
-					this.status = status;
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
 				}
 
 				public String getJobName() {
@@ -283,28 +282,29 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 				public void setJobName(String jobName) {
 					this.jobName = jobName;
 				}
-			}
 
-			public static class Edge {
-
-				private Long source;
-
-				private Long target;
-
-				public Long getSource() {
-					return this.source;
+				public String getDataTime() {
+					return this.dataTime;
 				}
 
-				public void setSource(Long source) {
-					this.source = source;
+				public void setDataTime(String dataTime) {
+					this.dataTime = dataTime;
 				}
 
-				public Long getTarget() {
-					return this.target;
+				public Long getJobId() {
+					return this.jobId;
 				}
 
-				public void setTarget(Long target) {
-					this.target = target;
+				public void setJobId(Long jobId) {
+					this.jobId = jobId;
+				}
+
+				public String getResult() {
+					return this.result;
+				}
+
+				public void setResult(String result) {
+					this.result = result;
 				}
 			}
 		}

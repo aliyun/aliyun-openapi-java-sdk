@@ -24,8 +24,8 @@ public class CreateRouteStrategyResponseUnmarshaller {
 	public static CreateRouteStrategyResponse unmarshall(CreateRouteStrategyResponse createRouteStrategyResponse, UnmarshallerContext _ctx) {
 		
 		createRouteStrategyResponse.setRequestId(_ctx.stringValue("CreateRouteStrategyResponse.RequestId"));
-		createRouteStrategyResponse.setCode(_ctx.integerValue("CreateRouteStrategyResponse.Code"));
 		createRouteStrategyResponse.setMessage(_ctx.stringValue("CreateRouteStrategyResponse.Message"));
+		createRouteStrategyResponse.setCode(_ctx.integerValue("CreateRouteStrategyResponse.Code"));
 		createRouteStrategyResponse.setSuccess(_ctx.booleanValue("CreateRouteStrategyResponse.Success"));
 
 		Data data = new Data();
