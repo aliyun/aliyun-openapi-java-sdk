@@ -27,27 +27,27 @@ public class DescribeScheduledTasksResponseUnmarshaller {
 	public static DescribeScheduledTasksResponse unmarshall(DescribeScheduledTasksResponse describeScheduledTasksResponse, UnmarshallerContext _ctx) {
 		
 		describeScheduledTasksResponse.setRequestId(_ctx.stringValue("DescribeScheduledTasksResponse.RequestId"));
-		describeScheduledTasksResponse.setPageNumber(_ctx.integerValue("DescribeScheduledTasksResponse.PageNumber"));
-		describeScheduledTasksResponse.setPageSize(_ctx.integerValue("DescribeScheduledTasksResponse.PageSize"));
 		describeScheduledTasksResponse.setTotalCount(_ctx.integerValue("DescribeScheduledTasksResponse.TotalCount"));
+		describeScheduledTasksResponse.setPageSize(_ctx.integerValue("DescribeScheduledTasksResponse.PageSize"));
+		describeScheduledTasksResponse.setPageNumber(_ctx.integerValue("DescribeScheduledTasksResponse.PageNumber"));
 
 		List<ScheduledTask> scheduledTasks = new ArrayList<ScheduledTask>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScheduledTasksResponse.ScheduledTasks.Length"); i++) {
 			ScheduledTask scheduledTask = new ScheduledTask();
-			scheduledTask.setTaskEnabled(_ctx.booleanValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].TaskEnabled"));
-			scheduledTask.setRecurrenceValue(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].RecurrenceValue"));
-			scheduledTask.setRecurrenceType(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].RecurrenceType"));
-			scheduledTask.setMaxValue(_ctx.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].MaxValue"));
-			scheduledTask.setScheduledTaskName(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScheduledTaskName"));
-			scheduledTask.setRecurrenceEndTime(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].RecurrenceEndTime"));
-			scheduledTask.setDesiredCapacity(_ctx.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].DesiredCapacity"));
-			scheduledTask.setScheduledTaskId(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScheduledTaskId"));
-			scheduledTask.setMinValue(_ctx.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].MinValue"));
-			scheduledTask.setScalingGroupId(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScalingGroupId"));
-			scheduledTask.setLaunchExpirationTime(_ctx.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].LaunchExpirationTime"));
 			scheduledTask.setDescription(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].Description"));
-			scheduledTask.setScheduledAction(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScheduledAction"));
 			scheduledTask.setLaunchTime(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].LaunchTime"));
+			scheduledTask.setScheduledTaskId(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScheduledTaskId"));
+			scheduledTask.setScalingGroupId(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScalingGroupId"));
+			scheduledTask.setRecurrenceType(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].RecurrenceType"));
+			scheduledTask.setScheduledTaskName(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScheduledTaskName"));
+			scheduledTask.setDesiredCapacity(_ctx.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].DesiredCapacity"));
+			scheduledTask.setMaxValue(_ctx.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].MaxValue"));
+			scheduledTask.setLaunchExpirationTime(_ctx.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].LaunchExpirationTime"));
+			scheduledTask.setMinValue(_ctx.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].MinValue"));
+			scheduledTask.setScheduledAction(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].ScheduledAction"));
+			scheduledTask.setRecurrenceValue(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].RecurrenceValue"));
+			scheduledTask.setRecurrenceEndTime(_ctx.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].RecurrenceEndTime"));
+			scheduledTask.setTaskEnabled(_ctx.booleanValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].TaskEnabled"));
 
 			scheduledTasks.add(scheduledTask);
 		}

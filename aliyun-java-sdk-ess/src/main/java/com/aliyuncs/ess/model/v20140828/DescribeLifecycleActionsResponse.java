@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLifecycleActionsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String nextToken;
 
 	private String requestId;
 
-	private Integer totalCount;
-
 	private Integer maxResults;
 
 	private List<LifecycleAction> lifecycleActions;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -49,14 +57,6 @@ public class DescribeLifecycleActionsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getMaxResults() {
@@ -77,31 +77,15 @@ public class DescribeLifecycleActionsResponse extends AcsResponse {
 
 	public static class LifecycleAction {
 
-		private String lifecycleHookId;
-
-		private String lifecycleActionToken;
-
 		private String lifecycleActionStatus;
 
 		private String lifecycleActionResult;
 
+		private String lifecycleActionToken;
+
+		private String lifecycleHookId;
+
 		private List<String> instanceIds;
-
-		public String getLifecycleHookId() {
-			return this.lifecycleHookId;
-		}
-
-		public void setLifecycleHookId(String lifecycleHookId) {
-			this.lifecycleHookId = lifecycleHookId;
-		}
-
-		public String getLifecycleActionToken() {
-			return this.lifecycleActionToken;
-		}
-
-		public void setLifecycleActionToken(String lifecycleActionToken) {
-			this.lifecycleActionToken = lifecycleActionToken;
-		}
 
 		public String getLifecycleActionStatus() {
 			return this.lifecycleActionStatus;
@@ -117,6 +101,22 @@ public class DescribeLifecycleActionsResponse extends AcsResponse {
 
 		public void setLifecycleActionResult(String lifecycleActionResult) {
 			this.lifecycleActionResult = lifecycleActionResult;
+		}
+
+		public String getLifecycleActionToken() {
+			return this.lifecycleActionToken;
+		}
+
+		public void setLifecycleActionToken(String lifecycleActionToken) {
+			this.lifecycleActionToken = lifecycleActionToken;
+		}
+
+		public String getLifecycleHookId() {
+			return this.lifecycleHookId;
+		}
+
+		public void setLifecycleHookId(String lifecycleHookId) {
+			this.lifecycleHookId = lifecycleHookId;
 		}
 
 		public List<String> getInstanceIds() {

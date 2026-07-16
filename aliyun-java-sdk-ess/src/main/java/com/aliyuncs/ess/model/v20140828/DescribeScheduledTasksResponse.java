@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScheduledTasksResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<ScheduledTask> scheduledTasks;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ScheduledTask> getScheduledTasks() {
@@ -77,88 +77,48 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 
 	public static class ScheduledTask {
 
-		private Boolean taskEnabled;
-
-		private String recurrenceValue;
-
-		private String recurrenceType;
-
-		private Integer maxValue;
-
-		private String scheduledTaskName;
-
-		private String recurrenceEndTime;
-
-		private Integer desiredCapacity;
-
-		private String scheduledTaskId;
-
-		private Integer minValue;
-
-		private String scalingGroupId;
-
-		private Integer launchExpirationTime;
-
 		private String description;
-
-		private String scheduledAction;
 
 		private String launchTime;
 
-		public Boolean getTaskEnabled() {
-			return this.taskEnabled;
+		private String scheduledTaskId;
+
+		private String scalingGroupId;
+
+		private String recurrenceType;
+
+		private String scheduledTaskName;
+
+		private Integer desiredCapacity;
+
+		private Integer maxValue;
+
+		private Integer launchExpirationTime;
+
+		private Integer minValue;
+
+		private String scheduledAction;
+
+		private String recurrenceValue;
+
+		private String recurrenceEndTime;
+
+		private Boolean taskEnabled;
+
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setTaskEnabled(Boolean taskEnabled) {
-			this.taskEnabled = taskEnabled;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
-		public String getRecurrenceValue() {
-			return this.recurrenceValue;
+		public String getLaunchTime() {
+			return this.launchTime;
 		}
 
-		public void setRecurrenceValue(String recurrenceValue) {
-			this.recurrenceValue = recurrenceValue;
-		}
-
-		public String getRecurrenceType() {
-			return this.recurrenceType;
-		}
-
-		public void setRecurrenceType(String recurrenceType) {
-			this.recurrenceType = recurrenceType;
-		}
-
-		public Integer getMaxValue() {
-			return this.maxValue;
-		}
-
-		public void setMaxValue(Integer maxValue) {
-			this.maxValue = maxValue;
-		}
-
-		public String getScheduledTaskName() {
-			return this.scheduledTaskName;
-		}
-
-		public void setScheduledTaskName(String scheduledTaskName) {
-			this.scheduledTaskName = scheduledTaskName;
-		}
-
-		public String getRecurrenceEndTime() {
-			return this.recurrenceEndTime;
-		}
-
-		public void setRecurrenceEndTime(String recurrenceEndTime) {
-			this.recurrenceEndTime = recurrenceEndTime;
-		}
-
-		public Integer getDesiredCapacity() {
-			return this.desiredCapacity;
-		}
-
-		public void setDesiredCapacity(Integer desiredCapacity) {
-			this.desiredCapacity = desiredCapacity;
+		public void setLaunchTime(String launchTime) {
+			this.launchTime = launchTime;
 		}
 
 		public String getScheduledTaskId() {
@@ -169,20 +129,44 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 			this.scheduledTaskId = scheduledTaskId;
 		}
 
-		public Integer getMinValue() {
-			return this.minValue;
-		}
-
-		public void setMinValue(Integer minValue) {
-			this.minValue = minValue;
-		}
-
 		public String getScalingGroupId() {
 			return this.scalingGroupId;
 		}
 
 		public void setScalingGroupId(String scalingGroupId) {
 			this.scalingGroupId = scalingGroupId;
+		}
+
+		public String getRecurrenceType() {
+			return this.recurrenceType;
+		}
+
+		public void setRecurrenceType(String recurrenceType) {
+			this.recurrenceType = recurrenceType;
+		}
+
+		public String getScheduledTaskName() {
+			return this.scheduledTaskName;
+		}
+
+		public void setScheduledTaskName(String scheduledTaskName) {
+			this.scheduledTaskName = scheduledTaskName;
+		}
+
+		public Integer getDesiredCapacity() {
+			return this.desiredCapacity;
+		}
+
+		public void setDesiredCapacity(Integer desiredCapacity) {
+			this.desiredCapacity = desiredCapacity;
+		}
+
+		public Integer getMaxValue() {
+			return this.maxValue;
+		}
+
+		public void setMaxValue(Integer maxValue) {
+			this.maxValue = maxValue;
 		}
 
 		public Integer getLaunchExpirationTime() {
@@ -193,12 +177,12 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 			this.launchExpirationTime = launchExpirationTime;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public Integer getMinValue() {
+			return this.minValue;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setMinValue(Integer minValue) {
+			this.minValue = minValue;
 		}
 
 		public String getScheduledAction() {
@@ -209,12 +193,28 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 			this.scheduledAction = scheduledAction;
 		}
 
-		public String getLaunchTime() {
-			return this.launchTime;
+		public String getRecurrenceValue() {
+			return this.recurrenceValue;
 		}
 
-		public void setLaunchTime(String launchTime) {
-			this.launchTime = launchTime;
+		public void setRecurrenceValue(String recurrenceValue) {
+			this.recurrenceValue = recurrenceValue;
+		}
+
+		public String getRecurrenceEndTime() {
+			return this.recurrenceEndTime;
+		}
+
+		public void setRecurrenceEndTime(String recurrenceEndTime) {
+			this.recurrenceEndTime = recurrenceEndTime;
+		}
+
+		public Boolean getTaskEnabled() {
+			return this.taskEnabled;
+		}
+
+		public void setTaskEnabled(Boolean taskEnabled) {
+			this.taskEnabled = taskEnabled;
 		}
 	}
 

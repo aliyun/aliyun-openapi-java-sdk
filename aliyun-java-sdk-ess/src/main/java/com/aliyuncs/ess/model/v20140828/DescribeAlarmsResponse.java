@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAlarmsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<Alarm> alarmList;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeAlarmsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<Alarm> getAlarmList() {
 		return this.alarmList;
 	}
@@ -77,95 +77,47 @@ public class DescribeAlarmsResponse extends AcsResponse {
 
 	public static class Alarm {
 
-		private String alarmTaskId;
-
-		private String metricName;
-
-		private Integer evaluationCount;
-
-		private String state;
-
-		private Integer period;
-
-		private String scalingGroupId;
-
 		private String comparisonOperator;
-
-		private String effective;
 
 		private String description;
 
+		private String promQL;
+
+		private String scalingGroupId;
+
 		private String metricType;
 
-		private String name;
+		private Integer evaluationCount;
 
-		private Float threshold;
-
-		private Boolean enable;
+		private Integer period;
 
 		private String statistics;
 
+		private String effective;
+
+		private String name;
+
+		private String metricName;
+
 		private String expressionsLogicOperator;
+
+		private String state;
 
 		private String hybridMonitorNamespace;
 
-		private String promQL;
+		private Boolean enable;
+
+		private String alarmTaskId;
+
+		private Float threshold;
 
 		private List<Dimension> dimensions;
 
-		private List<Expression> expressions;
-
 		private List<HybridMetric> hybridMetrics;
 
+		private List<Expression> expressions;
+
 		private List<String> alarmActions;
-
-		public String getAlarmTaskId() {
-			return this.alarmTaskId;
-		}
-
-		public void setAlarmTaskId(String alarmTaskId) {
-			this.alarmTaskId = alarmTaskId;
-		}
-
-		public String getMetricName() {
-			return this.metricName;
-		}
-
-		public void setMetricName(String metricName) {
-			this.metricName = metricName;
-		}
-
-		public Integer getEvaluationCount() {
-			return this.evaluationCount;
-		}
-
-		public void setEvaluationCount(Integer evaluationCount) {
-			this.evaluationCount = evaluationCount;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public Integer getPeriod() {
-			return this.period;
-		}
-
-		public void setPeriod(Integer period) {
-			this.period = period;
-		}
-
-		public String getScalingGroupId() {
-			return this.scalingGroupId;
-		}
-
-		public void setScalingGroupId(String scalingGroupId) {
-			this.scalingGroupId = scalingGroupId;
-		}
 
 		public String getComparisonOperator() {
 			return this.comparisonOperator;
@@ -173,14 +125,6 @@ public class DescribeAlarmsResponse extends AcsResponse {
 
 		public void setComparisonOperator(String comparisonOperator) {
 			this.comparisonOperator = comparisonOperator;
-		}
-
-		public String getEffective() {
-			return this.effective;
-		}
-
-		public void setEffective(String effective) {
-			this.effective = effective;
 		}
 
 		public String getDescription() {
@@ -191,6 +135,22 @@ public class DescribeAlarmsResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getPromQL() {
+			return this.promQL;
+		}
+
+		public void setPromQL(String promQL) {
+			this.promQL = promQL;
+		}
+
+		public String getScalingGroupId() {
+			return this.scalingGroupId;
+		}
+
+		public void setScalingGroupId(String scalingGroupId) {
+			this.scalingGroupId = scalingGroupId;
+		}
+
 		public String getMetricType() {
 			return this.metricType;
 		}
@@ -199,28 +159,20 @@ public class DescribeAlarmsResponse extends AcsResponse {
 			this.metricType = metricType;
 		}
 
-		public String getName() {
-			return this.name;
+		public Integer getEvaluationCount() {
+			return this.evaluationCount;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setEvaluationCount(Integer evaluationCount) {
+			this.evaluationCount = evaluationCount;
 		}
 
-		public Float getThreshold() {
-			return this.threshold;
+		public Integer getPeriod() {
+			return this.period;
 		}
 
-		public void setThreshold(Float threshold) {
-			this.threshold = threshold;
-		}
-
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
+		public void setPeriod(Integer period) {
+			this.period = period;
 		}
 
 		public String getStatistics() {
@@ -231,12 +183,44 @@ public class DescribeAlarmsResponse extends AcsResponse {
 			this.statistics = statistics;
 		}
 
+		public String getEffective() {
+			return this.effective;
+		}
+
+		public void setEffective(String effective) {
+			this.effective = effective;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getMetricName() {
+			return this.metricName;
+		}
+
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
+		}
+
 		public String getExpressionsLogicOperator() {
 			return this.expressionsLogicOperator;
 		}
 
 		public void setExpressionsLogicOperator(String expressionsLogicOperator) {
 			this.expressionsLogicOperator = expressionsLogicOperator;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public String getHybridMonitorNamespace() {
@@ -247,12 +231,28 @@ public class DescribeAlarmsResponse extends AcsResponse {
 			this.hybridMonitorNamespace = hybridMonitorNamespace;
 		}
 
-		public String getPromQL() {
-			return this.promQL;
+		public Boolean getEnable() {
+			return this.enable;
 		}
 
-		public void setPromQL(String promQL) {
-			this.promQL = promQL;
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
+		}
+
+		public String getAlarmTaskId() {
+			return this.alarmTaskId;
+		}
+
+		public void setAlarmTaskId(String alarmTaskId) {
+			this.alarmTaskId = alarmTaskId;
+		}
+
+		public Float getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(Float threshold) {
+			this.threshold = threshold;
 		}
 
 		public List<Dimension> getDimensions() {
@@ -263,20 +263,20 @@ public class DescribeAlarmsResponse extends AcsResponse {
 			this.dimensions = dimensions;
 		}
 
-		public List<Expression> getExpressions() {
-			return this.expressions;
-		}
-
-		public void setExpressions(List<Expression> expressions) {
-			this.expressions = expressions;
-		}
-
 		public List<HybridMetric> getHybridMetrics() {
 			return this.hybridMetrics;
 		}
 
 		public void setHybridMetrics(List<HybridMetric> hybridMetrics) {
 			this.hybridMetrics = hybridMetrics;
+		}
+
+		public List<Expression> getExpressions() {
+			return this.expressions;
+		}
+
+		public void setExpressions(List<Expression> expressions) {
+			this.expressions = expressions;
 		}
 
 		public List<String> getAlarmActions() {
@@ -289,9 +289,17 @@ public class DescribeAlarmsResponse extends AcsResponse {
 
 		public static class Dimension {
 
+			private String dimensionValue;
+
 			private String dimensionKey;
 
-			private String dimensionValue;
+			public String getDimensionValue() {
+				return this.dimensionValue;
+			}
+
+			public void setDimensionValue(String dimensionValue) {
+				this.dimensionValue = dimensionValue;
+			}
 
 			public String getDimensionKey() {
 				return this.dimensionKey;
@@ -300,13 +308,81 @@ public class DescribeAlarmsResponse extends AcsResponse {
 			public void setDimensionKey(String dimensionKey) {
 				this.dimensionKey = dimensionKey;
 			}
+		}
 
-			public String getDimensionValue() {
-				return this.dimensionValue;
+		public static class HybridMetric {
+
+			private String metricName;
+
+			private String statistic;
+
+			private String expression;
+
+			private String id;
+
+			private List<Dimension2> dimensions1;
+
+			public String getMetricName() {
+				return this.metricName;
 			}
 
-			public void setDimensionValue(String dimensionValue) {
-				this.dimensionValue = dimensionValue;
+			public void setMetricName(String metricName) {
+				this.metricName = metricName;
+			}
+
+			public String getStatistic() {
+				return this.statistic;
+			}
+
+			public void setStatistic(String statistic) {
+				this.statistic = statistic;
+			}
+
+			public String getExpression() {
+				return this.expression;
+			}
+
+			public void setExpression(String expression) {
+				this.expression = expression;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public List<Dimension2> getDimensions1() {
+				return this.dimensions1;
+			}
+
+			public void setDimensions1(List<Dimension2> dimensions1) {
+				this.dimensions1 = dimensions1;
+			}
+
+			public static class Dimension2 {
+
+				private String dimensionValue;
+
+				private String dimensionKey;
+
+				public String getDimensionValue() {
+					return this.dimensionValue;
+				}
+
+				public void setDimensionValue(String dimensionValue) {
+					this.dimensionValue = dimensionValue;
+				}
+
+				public String getDimensionKey() {
+					return this.dimensionKey;
+				}
+
+				public void setDimensionKey(String dimensionKey) {
+					this.dimensionKey = dimensionKey;
+				}
 			}
 		}
 
@@ -360,82 +436,6 @@ public class DescribeAlarmsResponse extends AcsResponse {
 
 			public void setThreshold(Float threshold) {
 				this.threshold = threshold;
-			}
-		}
-
-		public static class HybridMetric {
-
-			private String id;
-
-			private String expression;
-
-			private String metricName;
-
-			private String statistic;
-
-			private List<Dimension2> dimensions1;
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getExpression() {
-				return this.expression;
-			}
-
-			public void setExpression(String expression) {
-				this.expression = expression;
-			}
-
-			public String getMetricName() {
-				return this.metricName;
-			}
-
-			public void setMetricName(String metricName) {
-				this.metricName = metricName;
-			}
-
-			public String getStatistic() {
-				return this.statistic;
-			}
-
-			public void setStatistic(String statistic) {
-				this.statistic = statistic;
-			}
-
-			public List<Dimension2> getDimensions1() {
-				return this.dimensions1;
-			}
-
-			public void setDimensions1(List<Dimension2> dimensions1) {
-				this.dimensions1 = dimensions1;
-			}
-
-			public static class Dimension2 {
-
-				private String dimensionKey;
-
-				private String dimensionValue;
-
-				public String getDimensionKey() {
-					return this.dimensionKey;
-				}
-
-				public void setDimensionKey(String dimensionKey) {
-					this.dimensionKey = dimensionKey;
-				}
-
-				public String getDimensionValue() {
-					return this.dimensionValue;
-				}
-
-				public void setDimensionValue(String dimensionValue) {
-					this.dimensionValue = dimensionValue;
-				}
 			}
 		}
 	}

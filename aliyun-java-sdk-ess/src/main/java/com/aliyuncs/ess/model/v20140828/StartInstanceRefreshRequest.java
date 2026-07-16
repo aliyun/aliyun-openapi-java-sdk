@@ -46,6 +46,8 @@ public class StartInstanceRefreshRequest extends RpcAcsRequest<StartInstanceRefr
 	private Long ownerId;
 
 	private Integer checkpointPauseTime;
+
+	private String strategy;
 	public StartInstanceRefreshRequest() {
 		super("Ess", "2014-08-28", "StartInstanceRefresh", "ess");
 		setProtocol(ProtocolType.HTTPS);
@@ -109,7 +111,6 @@ public class StartInstanceRefreshRequest extends RpcAcsRequest<StartInstanceRefr
 		if (desiredConfiguration != null) {
 			
 				putQueryParameter("DesiredConfiguration.ScalingConfigurationId" , desiredConfiguration.getScalingConfigurationId());
-				putQueryParameter("DesiredConfiguration.ImageId" , desiredConfiguration.getImageId());
 				if (desiredConfiguration.getLaunchTemplateOverrides() != null) {
 					for (int depth1 = 0; depth1 < desiredConfiguration.getLaunchTemplateOverrides().size(); depth1++) {
 						if (desiredConfiguration.getLaunchTemplateOverrides().get(depth1) != null) {
@@ -118,6 +119,7 @@ public class StartInstanceRefreshRequest extends RpcAcsRequest<StartInstanceRefr
 						}
 					}
 				}
+				putQueryParameter("DesiredConfiguration.ImageId" , desiredConfiguration.getImageId());
 				putQueryParameter("DesiredConfiguration.LaunchTemplateId" , desiredConfiguration.getLaunchTemplateId());
 				if (desiredConfiguration.getContainers() != null) {
 					for (int depth1 = 0; depth1 < desiredConfiguration.getContainers().size(); depth1++) {
@@ -209,13 +211,24 @@ public class StartInstanceRefreshRequest extends RpcAcsRequest<StartInstanceRefr
 		}
 	}
 
+	public String getStrategy() {
+		return this.strategy;
+	}
+
+	public void setStrategy(String strategy) {
+		this.strategy = strategy;
+		if(strategy != null){
+			putQueryParameter("Strategy", strategy);
+		}
+	}
+
 	public static class DesiredConfiguration {
 
 		private String scalingConfigurationId;
 
-		private String imageId;
-
 		private List<LaunchTemplateOverridesItem> launchTemplateOverrides;
+
+		private String imageId;
 
 		private String launchTemplateId;
 
@@ -231,20 +244,20 @@ public class StartInstanceRefreshRequest extends RpcAcsRequest<StartInstanceRefr
 			this.scalingConfigurationId = scalingConfigurationId;
 		}
 
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
 		public List<LaunchTemplateOverridesItem> getLaunchTemplateOverrides() {
 			return this.launchTemplateOverrides;
 		}
 
 		public void setLaunchTemplateOverrides(List<LaunchTemplateOverridesItem> launchTemplateOverrides) {
 			this.launchTemplateOverrides = launchTemplateOverrides;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 
 		public String getLaunchTemplateId() {

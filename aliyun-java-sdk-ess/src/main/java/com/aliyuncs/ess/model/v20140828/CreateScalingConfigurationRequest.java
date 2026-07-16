@@ -128,6 +128,8 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String instanceType;
 
+	private String secondaryEniVSwitchConstraint;
+
 	private Map<Object,Object> schedulerOptions;
 
 	private String deploymentSetId;
@@ -512,9 +514,9 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 				}
 				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".Memory" , instancePatternInfos.get(depth1).getMemory());
 				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MaximumCpuCoreCount" , instancePatternInfos.get(depth1).getMaximumCpuCoreCount());
-				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MaxPrice" , instancePatternInfos.get(depth1).getMaxPrice());
-				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumGpuAmount" , instancePatternInfos.get(depth1).getMinimumGpuAmount());
 				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MaximumGpuAmount" , instancePatternInfos.get(depth1).getMaximumGpuAmount());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumGpuAmount" , instancePatternInfos.get(depth1).getMinimumGpuAmount());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MaxPrice" , instancePatternInfos.get(depth1).getMaxPrice());
 				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MaximumMemorySize" , instancePatternInfos.get(depth1).getMaximumMemorySize());
 				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumInitialCredit" , instancePatternInfos.get(depth1).getMinimumInitialCredit());
 				if (instancePatternInfos.get(depth1).getExcludedInstanceTypes() != null) {
@@ -524,12 +526,12 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 				}
 				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumEniIpv6AddressQuantity" , instancePatternInfos.get(depth1).getMinimumEniIpv6AddressQuantity());
 				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumEniPrivateIpAddressQuantity" , instancePatternInfos.get(depth1).getMinimumEniPrivateIpAddressQuantity());
-				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".BurstablePerformance" , instancePatternInfos.get(depth1).getBurstablePerformance());
 				if (instancePatternInfos.get(depth1).getPhysicalProcessorModelss() != null) {
 					for (int i = 0; i < instancePatternInfos.get(depth1).getPhysicalProcessorModelss().size(); i++) {
 						putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".PhysicalProcessorModels." + (i + 1) , instancePatternInfos.get(depth1).getPhysicalProcessorModelss().get(i));
 					}
 				}
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".BurstablePerformance" , instancePatternInfos.get(depth1).getBurstablePerformance());
 				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MinimumCpuCoreCount" , instancePatternInfos.get(depth1).getMinimumCpuCoreCount());
 				if (instancePatternInfos.get(depth1).getGpuSpecss() != null) {
 					for (int i = 0; i < instancePatternInfos.get(depth1).getGpuSpecss().size(); i++) {
@@ -580,6 +582,11 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		if (networkInterfacess != null) {
 			for (int depth1 = 0; depth1 < networkInterfacess.size(); depth1++) {
 				putQueryParameter("NetworkInterfaces." + (depth1 + 1) + ".Ipv6AddressCount" , networkInterfacess.get(depth1).getIpv6AddressCount());
+				if (networkInterfacess.get(depth1).getVSwitchIdss() != null) {
+					for (int i = 0; i < networkInterfacess.get(depth1).getVSwitchIdss().size(); i++) {
+						putQueryParameter("NetworkInterfaces." + (depth1 + 1) + ".VSwitchIds." + (i + 1) , networkInterfacess.get(depth1).getVSwitchIdss().get(i));
+					}
+				}
 				putQueryParameter("NetworkInterfaces." + (depth1 + 1) + ".InstanceType" , networkInterfacess.get(depth1).getInstanceType());
 				putQueryParameter("NetworkInterfaces." + (depth1 + 1) + ".SecondaryPrivateIpAddressCount" , networkInterfacess.get(depth1).getSecondaryPrivateIpAddressCount());
 				if (networkInterfacess.get(depth1).getSecurityGroupIdss() != null) {
@@ -815,6 +822,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getSecondaryEniVSwitchConstraint() {
+		return this.secondaryEniVSwitchConstraint;
+	}
+
+	public void setSecondaryEniVSwitchConstraint(String secondaryEniVSwitchConstraint) {
+		this.secondaryEniVSwitchConstraint = secondaryEniVSwitchConstraint;
+		if(secondaryEniVSwitchConstraint != null){
+			putQueryParameter("SecondaryEniVSwitchConstraint", secondaryEniVSwitchConstraint);
 		}
 	}
 
@@ -1151,11 +1169,11 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 		private Integer maximumCpuCoreCount;
 
-		private Float maxPrice;
+		private Integer maximumGpuAmount;
 
 		private Integer minimumGpuAmount;
 
-		private Integer maximumGpuAmount;
+		private Float maxPrice;
 
 		private Float maximumMemorySize;
 
@@ -1167,9 +1185,9 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 		private Integer minimumEniPrivateIpAddressQuantity;
 
-		private String burstablePerformance;
-
 		private List<String> physicalProcessorModelss;
+
+		private String burstablePerformance;
 
 		private Integer minimumCpuCoreCount;
 
@@ -1215,12 +1233,12 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 			this.maximumCpuCoreCount = maximumCpuCoreCount;
 		}
 
-		public Float getMaxPrice() {
-			return this.maxPrice;
+		public Integer getMaximumGpuAmount() {
+			return this.maximumGpuAmount;
 		}
 
-		public void setMaxPrice(Float maxPrice) {
-			this.maxPrice = maxPrice;
+		public void setMaximumGpuAmount(Integer maximumGpuAmount) {
+			this.maximumGpuAmount = maximumGpuAmount;
 		}
 
 		public Integer getMinimumGpuAmount() {
@@ -1231,12 +1249,12 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 			this.minimumGpuAmount = minimumGpuAmount;
 		}
 
-		public Integer getMaximumGpuAmount() {
-			return this.maximumGpuAmount;
+		public Float getMaxPrice() {
+			return this.maxPrice;
 		}
 
-		public void setMaximumGpuAmount(Integer maximumGpuAmount) {
-			this.maximumGpuAmount = maximumGpuAmount;
+		public void setMaxPrice(Float maxPrice) {
+			this.maxPrice = maxPrice;
 		}
 
 		public Float getMaximumMemorySize() {
@@ -1279,20 +1297,20 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 			this.minimumEniPrivateIpAddressQuantity = minimumEniPrivateIpAddressQuantity;
 		}
 
-		public String getBurstablePerformance() {
-			return this.burstablePerformance;
-		}
-
-		public void setBurstablePerformance(String burstablePerformance) {
-			this.burstablePerformance = burstablePerformance;
-		}
-
 		public List<String> getPhysicalProcessorModelss() {
 			return this.physicalProcessorModelss;
 		}
 
 		public void setPhysicalProcessorModelss(List<String> physicalProcessorModelss) {
 			this.physicalProcessorModelss = physicalProcessorModelss;
+		}
+
+		public String getBurstablePerformance() {
+			return this.burstablePerformance;
+		}
+
+		public void setBurstablePerformance(String burstablePerformance) {
+			this.burstablePerformance = burstablePerformance;
 		}
 
 		public Integer getMinimumCpuCoreCount() {
@@ -1380,6 +1398,8 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 		private Integer ipv6AddressCount;
 
+		private List<String> vSwitchIdss;
+
 		private String instanceType;
 
 		private Integer secondaryPrivateIpAddressCount;
@@ -1394,6 +1414,14 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 		public void setIpv6AddressCount(Integer ipv6AddressCount) {
 			this.ipv6AddressCount = ipv6AddressCount;
+		}
+
+		public List<String> getVSwitchIdss() {
+			return this.vSwitchIdss;
+		}
+
+		public void setVSwitchIdss(List<String> vSwitchIdss) {
+			this.vSwitchIdss = vSwitchIdss;
 		}
 
 		public String getInstanceType() {

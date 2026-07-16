@@ -244,11 +244,11 @@ public class ScaleWithAdjustmentRequest extends RpcAcsRequest<ScaleWithAdjustmen
 		@SerializedName("ContainerOverride")
 		private List<ContainerOverrideItem> containerOverride;
 
-		@SerializedName("Cpu")
-		private Float cpu;
-
 		@SerializedName("CustomLimitPriorities")
 		private List<CustomLimitPrioritiesItem> customLimitPriorities;
+
+		@SerializedName("Cpu")
+		private Float cpu;
 
 		public String getUserData() {
 			return this.userData;
@@ -282,20 +282,20 @@ public class ScaleWithAdjustmentRequest extends RpcAcsRequest<ScaleWithAdjustmen
 			this.containerOverride = containerOverride;
 		}
 
-		public Float getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(Float cpu) {
-			this.cpu = cpu;
-		}
-
 		public List<CustomLimitPrioritiesItem> getCustomLimitPriorities() {
 			return this.customLimitPriorities;
 		}
 
 		public void setCustomLimitPriorities(List<CustomLimitPrioritiesItem> customLimitPriorities) {
 			this.customLimitPriorities = customLimitPriorities;
+		}
+
+		public Float getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Float cpu) {
+			this.cpu = cpu;
 		}
 
 		public static class DataDisksItem {

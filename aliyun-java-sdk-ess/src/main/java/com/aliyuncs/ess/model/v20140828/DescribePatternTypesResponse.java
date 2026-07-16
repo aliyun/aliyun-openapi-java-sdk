@@ -47,30 +47,22 @@ public class DescribePatternTypesResponse extends AcsResponse {
 
 	public static class PatternType {
 
-		private String instanceType;
-
-		private String instanceFamilyLevel;
+		private Integer cores;
 
 		private String instanceTypeFamily;
 
-		private Integer cores;
-
 		private Float memory;
 
-		public String getInstanceType() {
-			return this.instanceType;
+		private String instanceFamilyLevel;
+
+		private String instanceType;
+
+		public Integer getCores() {
+			return this.cores;
 		}
 
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getInstanceFamilyLevel() {
-			return this.instanceFamilyLevel;
-		}
-
-		public void setInstanceFamilyLevel(String instanceFamilyLevel) {
-			this.instanceFamilyLevel = instanceFamilyLevel;
+		public void setCores(Integer cores) {
+			this.cores = cores;
 		}
 
 		public String getInstanceTypeFamily() {
@@ -81,20 +73,28 @@ public class DescribePatternTypesResponse extends AcsResponse {
 			this.instanceTypeFamily = instanceTypeFamily;
 		}
 
-		public Integer getCores() {
-			return this.cores;
-		}
-
-		public void setCores(Integer cores) {
-			this.cores = cores;
-		}
-
 		public Float getMemory() {
 			return this.memory;
 		}
 
 		public void setMemory(Float memory) {
 			this.memory = memory;
+		}
+
+		public String getInstanceFamilyLevel() {
+			return this.instanceFamilyLevel;
+		}
+
+		public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+			this.instanceFamilyLevel = instanceFamilyLevel;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 	}
 

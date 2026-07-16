@@ -47,15 +47,23 @@ public class DescribeNotificationConfigurationsResponse extends AcsResponse {
 
 	public static class NotificationConfigurationModel {
 
+		private String timeZone;
+
 		private String notificationArn;
 
 		private String scalingGroupId;
 
-		private String timeZone;
-
 		private String messageEncoding;
 
 		private List<String> notificationTypes;
+
+		public String getTimeZone() {
+			return this.timeZone;
+		}
+
+		public void setTimeZone(String timeZone) {
+			this.timeZone = timeZone;
+		}
 
 		public String getNotificationArn() {
 			return this.notificationArn;
@@ -71,14 +79,6 @@ public class DescribeNotificationConfigurationsResponse extends AcsResponse {
 
 		public void setScalingGroupId(String scalingGroupId) {
 			this.scalingGroupId = scalingGroupId;
-		}
-
-		public String getTimeZone() {
-			return this.timeZone;
-		}
-
-		public void setTimeZone(String timeZone) {
-			this.timeZone = timeZone;
 		}
 
 		public String getMessageEncoding() {

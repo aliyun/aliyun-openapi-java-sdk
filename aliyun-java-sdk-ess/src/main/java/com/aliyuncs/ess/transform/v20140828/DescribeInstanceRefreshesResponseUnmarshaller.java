@@ -32,32 +32,33 @@ public class DescribeInstanceRefreshesResponseUnmarshaller {
 	public static DescribeInstanceRefreshesResponse unmarshall(DescribeInstanceRefreshesResponse describeInstanceRefreshesResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceRefreshesResponse.setRequestId(_ctx.stringValue("DescribeInstanceRefreshesResponse.RequestId"));
+		describeInstanceRefreshesResponse.setTotalCount(_ctx.integerValue("DescribeInstanceRefreshesResponse.TotalCount"));
 		describeInstanceRefreshesResponse.setNextToken(_ctx.stringValue("DescribeInstanceRefreshesResponse.NextToken"));
 		describeInstanceRefreshesResponse.setMaxResults(_ctx.integerValue("DescribeInstanceRefreshesResponse.MaxResults"));
-		describeInstanceRefreshesResponse.setTotalCount(_ctx.integerValue("DescribeInstanceRefreshesResponse.TotalCount"));
 
 		List<InstanceRefreshTask> instanceRefreshTasks = new ArrayList<InstanceRefreshTask>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks.Length"); i++) {
 			InstanceRefreshTask instanceRefreshTask = new InstanceRefreshTask();
 			instanceRefreshTask.setInstanceRefreshTaskId(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].InstanceRefreshTaskId"));
-			instanceRefreshTask.setScalingGroupId(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].ScalingGroupId"));
-			instanceRefreshTask.setRegionId(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].RegionId"));
-			instanceRefreshTask.setEndTime(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].EndTime"));
-			instanceRefreshTask.setStartTime(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].StartTime"));
 			instanceRefreshTask.setStatus(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].Status"));
-			instanceRefreshTask.setDetail(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].Detail"));
-			instanceRefreshTask.setMinHealthyPercentage(_ctx.integerValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].MinHealthyPercentage"));
-			instanceRefreshTask.setMaxHealthyPercentage(_ctx.integerValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].MaxHealthyPercentage"));
-			instanceRefreshTask.setFinishedUpdateCapacity(_ctx.integerValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].FinishedUpdateCapacity"));
+			instanceRefreshTask.setEndTime(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].EndTime"));
 			instanceRefreshTask.setTotalNeedUpdateCapacity(_ctx.integerValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].TotalNeedUpdateCapacity"));
+			instanceRefreshTask.setScalingGroupId(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].ScalingGroupId"));
+			instanceRefreshTask.setStartTime(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].StartTime"));
+			instanceRefreshTask.setMinHealthyPercentage(_ctx.integerValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].MinHealthyPercentage"));
 			instanceRefreshTask.setSkipMatching(_ctx.booleanValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].SkipMatching"));
+			instanceRefreshTask.setFinishedUpdateCapacity(_ctx.integerValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].FinishedUpdateCapacity"));
+			instanceRefreshTask.setStrategy(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].Strategy"));
 			instanceRefreshTask.setCheckpointPauseTime(_ctx.integerValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].CheckpointPauseTime"));
+			instanceRefreshTask.setRegionId(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].RegionId"));
+			instanceRefreshTask.setMaxHealthyPercentage(_ctx.integerValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].MaxHealthyPercentage"));
+			instanceRefreshTask.setDetail(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].Detail"));
 
 			DesiredConfiguration desiredConfiguration = new DesiredConfiguration();
 			desiredConfiguration.setImageId(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.ImageId"));
-			desiredConfiguration.setScalingConfigurationId(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.ScalingConfigurationId"));
-			desiredConfiguration.setLaunchTemplateId(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.LaunchTemplateId"));
 			desiredConfiguration.setLaunchTemplateVersion(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.LaunchTemplateVersion"));
+			desiredConfiguration.setLaunchTemplateId(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.LaunchTemplateId"));
+			desiredConfiguration.setScalingConfigurationId(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.ScalingConfigurationId"));
 
 			List<LaunchTemplateOverride> launchTemplateOverrides = new ArrayList<LaunchTemplateOverride>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.LaunchTemplateOverrides.Length"); j++) {
@@ -71,14 +72,8 @@ public class DescribeInstanceRefreshesResponseUnmarshaller {
 			List<Container> containers = new ArrayList<Container>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers.Length"); j++) {
 				Container container = new Container();
-				container.setName(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].Name"));
 				container.setImage(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].Image"));
-
-				List<String> commands = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].Commands.Length"); k++) {
-					commands.add(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].Commands["+ k +"]"));
-				}
-				container.setCommands(commands);
+				container.setName(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].Name"));
 
 				List<String> args = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].Args.Length"); k++) {
@@ -86,12 +81,18 @@ public class DescribeInstanceRefreshesResponseUnmarshaller {
 				}
 				container.setArgs(args);
 
+				List<String> commands = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].Commands.Length"); k++) {
+					commands.add(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].Commands["+ k +"]"));
+				}
+				container.setCommands(commands);
+
 				List<EnvironmentVar> environmentVars = new ArrayList<EnvironmentVar>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].EnvironmentVars.Length"); k++) {
 					EnvironmentVar environmentVar = new EnvironmentVar();
-					environmentVar.setKey(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].EnvironmentVars["+ k +"].Key"));
-					environmentVar.setValue(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].EnvironmentVars["+ k +"].Value"));
 					environmentVar.setFieldRefFieldPath(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].EnvironmentVars["+ k +"].FieldRefFieldPath"));
+					environmentVar.setValue(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].EnvironmentVars["+ k +"].Value"));
+					environmentVar.setKey(_ctx.stringValue("DescribeInstanceRefreshesResponse.InstanceRefreshTasks["+ i +"].DesiredConfiguration.Containers["+ j +"].EnvironmentVars["+ k +"].Key"));
 
 					environmentVars.add(environmentVar);
 				}

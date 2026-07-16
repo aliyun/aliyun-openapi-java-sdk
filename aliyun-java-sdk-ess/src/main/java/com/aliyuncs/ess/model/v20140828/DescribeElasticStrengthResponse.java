@@ -27,9 +27,9 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Double totalStrength;
-
 	private String elasticStrength;
+
+	private Double totalStrength;
 
 	private List<ResourcePool> resourcePools;
 
@@ -43,20 +43,20 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Double getTotalStrength() {
-		return this.totalStrength;
-	}
-
-	public void setTotalStrength(Double totalStrength) {
-		this.totalStrength = totalStrength;
-	}
-
 	public String getElasticStrength() {
 		return this.elasticStrength;
 	}
 
 	public void setElasticStrength(String elasticStrength) {
 		this.elasticStrength = elasticStrength;
+	}
+
+	public Double getTotalStrength() {
+		return this.totalStrength;
+	}
+
+	public void setTotalStrength(Double totalStrength) {
+		this.totalStrength = totalStrength;
 	}
 
 	public List<ResourcePool> getResourcePools() {
@@ -77,55 +77,23 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 
 	public static class ResourcePool {
 
-		private Double strength;
-
-		private String instanceType;
-
-		private String zoneId;
-
-		private String code;
-
 		private String msg;
 
 		private String status;
 
+		private String zoneId;
+
 		private String elasticStrength;
+
+		private String instanceType;
+
+		private String code;
+
+		private Double strength;
 
 		private List<String> vSwitchIds;
 
 		private InventoryHealth inventoryHealth;
-
-		public Double getStrength() {
-			return this.strength;
-		}
-
-		public void setStrength(Double strength) {
-			this.strength = strength;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
 
 		public String getMsg() {
 			return this.msg;
@@ -143,12 +111,44 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
 		public String getElasticStrength() {
 			return this.elasticStrength;
 		}
 
 		public void setElasticStrength(String elasticStrength) {
 			this.elasticStrength = elasticStrength;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public Double getStrength() {
+			return this.strength;
+		}
+
+		public void setStrength(Double strength) {
+			this.strength = strength;
 		}
 
 		public List<String> getVSwitchIds() {
@@ -171,9 +171,9 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 
 			private Integer healthScore;
 
-			private Integer adequacyScore;
-
 			private Integer supplyScore;
+
+			private Integer adequacyScore;
 
 			private Integer hotScore;
 
@@ -185,20 +185,20 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 				this.healthScore = healthScore;
 			}
 
-			public Integer getAdequacyScore() {
-				return this.adequacyScore;
-			}
-
-			public void setAdequacyScore(Integer adequacyScore) {
-				this.adequacyScore = adequacyScore;
-			}
-
 			public Integer getSupplyScore() {
 				return this.supplyScore;
 			}
 
 			public void setSupplyScore(Integer supplyScore) {
 				this.supplyScore = supplyScore;
+			}
+
+			public Integer getAdequacyScore() {
+				return this.adequacyScore;
+			}
+
+			public void setAdequacyScore(Integer adequacyScore) {
+				this.adequacyScore = adequacyScore;
 			}
 
 			public Integer getHotScore() {
@@ -255,55 +255,23 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 
 		public static class ResourcePool2 {
 
-			private String instanceType;
-
-			private Double strength;
-
-			private String zoneId;
-
-			private String code;
-
 			private String msg;
 
 			private String status;
 
+			private String zoneId;
+
 			private String elasticStrength;
+
+			private String instanceType;
+
+			private String code;
+
+			private Double strength;
 
 			private List<String> vSwitchIds3;
 
 			private InventoryHealth4 inventoryHealth4;
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
-			}
-
-			public Double getStrength() {
-				return this.strength;
-			}
-
-			public void setStrength(Double strength) {
-				this.strength = strength;
-			}
-
-			public String getZoneId() {
-				return this.zoneId;
-			}
-
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
-			}
-
-			public String getCode() {
-				return this.code;
-			}
-
-			public void setCode(String code) {
-				this.code = code;
-			}
 
 			public String getMsg() {
 				return this.msg;
@@ -321,12 +289,44 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 				this.status = status;
 			}
 
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
 			public String getElasticStrength() {
 				return this.elasticStrength;
 			}
 
 			public void setElasticStrength(String elasticStrength) {
 				this.elasticStrength = elasticStrength;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
+			}
+
+			public Double getStrength() {
+				return this.strength;
+			}
+
+			public void setStrength(Double strength) {
+				this.strength = strength;
 			}
 
 			public List<String> getVSwitchIds3() {
@@ -349,9 +349,9 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 
 				private Integer healthScore;
 
-				private Integer adequacyScore;
-
 				private Integer supplyScore;
+
+				private Integer adequacyScore;
 
 				private Integer hotScore;
 
@@ -363,20 +363,20 @@ public class DescribeElasticStrengthResponse extends AcsResponse {
 					this.healthScore = healthScore;
 				}
 
-				public Integer getAdequacyScore() {
-					return this.adequacyScore;
-				}
-
-				public void setAdequacyScore(Integer adequacyScore) {
-					this.adequacyScore = adequacyScore;
-				}
-
 				public Integer getSupplyScore() {
 					return this.supplyScore;
 				}
 
 				public void setSupplyScore(Integer supplyScore) {
 					this.supplyScore = supplyScore;
+				}
+
+				public Integer getAdequacyScore() {
+					return this.adequacyScore;
+				}
+
+				public void setAdequacyScore(Integer adequacyScore) {
+					this.adequacyScore = adequacyScore;
 				}
 
 				public Integer getHotScore() {

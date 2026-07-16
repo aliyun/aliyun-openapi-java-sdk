@@ -27,22 +27,22 @@ public class DescribeLifecycleHooksResponseUnmarshaller {
 	public static DescribeLifecycleHooksResponse unmarshall(DescribeLifecycleHooksResponse describeLifecycleHooksResponse, UnmarshallerContext _ctx) {
 		
 		describeLifecycleHooksResponse.setRequestId(_ctx.stringValue("DescribeLifecycleHooksResponse.RequestId"));
-		describeLifecycleHooksResponse.setPageNumber(_ctx.integerValue("DescribeLifecycleHooksResponse.PageNumber"));
-		describeLifecycleHooksResponse.setPageSize(_ctx.integerValue("DescribeLifecycleHooksResponse.PageSize"));
 		describeLifecycleHooksResponse.setTotalCount(_ctx.integerValue("DescribeLifecycleHooksResponse.TotalCount"));
+		describeLifecycleHooksResponse.setPageSize(_ctx.integerValue("DescribeLifecycleHooksResponse.PageSize"));
+		describeLifecycleHooksResponse.setPageNumber(_ctx.integerValue("DescribeLifecycleHooksResponse.PageNumber"));
 
 		List<LifecycleHook> lifecycleHooks = new ArrayList<LifecycleHook>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLifecycleHooksResponse.LifecycleHooks.Length"); i++) {
 			LifecycleHook lifecycleHook = new LifecycleHook();
+			lifecycleHook.setLifecycleHookStatus(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].LifecycleHookStatus"));
+			lifecycleHook.setLifecycleHookName(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].LifecycleHookName"));
+			lifecycleHook.setNotificationArn(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].NotificationArn"));
+			lifecycleHook.setLifecycleTransition(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].LifecycleTransition"));
+			lifecycleHook.setScalingGroupId(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].ScalingGroupId"));
+			lifecycleHook.setHeartbeatTimeout(_ctx.integerValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].HeartbeatTimeout"));
+			lifecycleHook.setNotificationMetadata(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].NotificationMetadata"));
 			lifecycleHook.setDefaultResult(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].DefaultResult"));
 			lifecycleHook.setLifecycleHookId(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].LifecycleHookId"));
-			lifecycleHook.setLifecycleHookName(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].LifecycleHookName"));
-			lifecycleHook.setLifecycleTransition(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].LifecycleTransition"));
-			lifecycleHook.setNotificationMetadata(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].NotificationMetadata"));
-			lifecycleHook.setNotificationArn(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].NotificationArn"));
-			lifecycleHook.setHeartbeatTimeout(_ctx.integerValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].HeartbeatTimeout"));
-			lifecycleHook.setScalingGroupId(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].ScalingGroupId"));
-			lifecycleHook.setLifecycleHookStatus(_ctx.stringValue("DescribeLifecycleHooksResponse.LifecycleHooks["+ i +"].LifecycleHookStatus"));
 
 			lifecycleHooks.add(lifecycleHook);
 		}

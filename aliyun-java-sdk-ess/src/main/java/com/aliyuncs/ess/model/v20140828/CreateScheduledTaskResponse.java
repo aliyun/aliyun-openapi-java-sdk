@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateScheduledTaskResponse extends AcsResponse {
 
-	private String scheduledTaskId;
-
 	private String requestId;
 
-	public String getScheduledTaskId() {
-		return this.scheduledTaskId;
-	}
-
-	public void setScheduledTaskId(String scheduledTaskId) {
-		this.scheduledTaskId = scheduledTaskId;
-	}
+	private String scheduledTaskId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class CreateScheduledTaskResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getScheduledTaskId() {
+		return this.scheduledTaskId;
+	}
+
+	public void setScheduledTaskId(String scheduledTaskId) {
+		this.scheduledTaskId = scheduledTaskId;
 	}
 
 	@Override

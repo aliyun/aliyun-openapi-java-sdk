@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScalingActivitiesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<ScalingActivity> scalingActivities;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ScalingActivity> getScalingActivities() {
@@ -77,37 +77,45 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 
 	public static class ScalingActivity {
 
-		private Integer progress;
-
 		private Integer scalingInstanceNumber;
 
-		private String attachedCapacity;
-
-		private String totalCapacity;
-
-		private String scalingGroupId;
-
-		private String autoCreatedCapacity;
+		private String description;
 
 		private String endTime;
 
-		private String startTime;
+		private String triggerSourceType;
 
-		private String description;
+		private String activityMetadata;
+
+		private String autoCreatedCapacity;
 
 		private String statusCode;
 
 		private String cause;
 
+		private String totalCapacity;
+
+		private String instanceRefreshTaskId;
+
+		private Integer progress;
+
+		private String attachedCapacity;
+
 		private String scalingActivityId;
 
-		private String statusMessage;
+		private String scalingGroupId;
 
-		private Integer createdCapacity;
+		private String startTime;
 
 		private Integer destroyedCapacity;
 
+		private String triggerSourceId;
+
+		private String statusMessage;
+
 		private Integer startedCapacity;
+
+		private Integer createdCapacity;
 
 		private Integer stoppedCapacity;
 
@@ -117,33 +125,17 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 
 		private String detail;
 
-		private String triggerSourceType;
-
-		private String triggerSourceId;
-
-		private String activityMetadata;
-
-		private String instanceRefreshTaskId;
-
 		private List<ErrorMessagesItem> errorMessages;
 
-		private List<String> createdInstances;
+		private List<String> stoppedInstances;
 
 		private List<String> destroyedInstances;
 
 		private List<String> startedInstances;
 
-		private List<String> stoppedInstances;
+		private List<String> createdInstances;
 
 		private LifecycleHookContext lifecycleHookContext;
-
-		public Integer getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(Integer progress) {
-			this.progress = progress;
-		}
 
 		public Integer getScalingInstanceNumber() {
 			return this.scalingInstanceNumber;
@@ -153,36 +145,12 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 			this.scalingInstanceNumber = scalingInstanceNumber;
 		}
 
-		public String getAttachedCapacity() {
-			return this.attachedCapacity;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setAttachedCapacity(String attachedCapacity) {
-			this.attachedCapacity = attachedCapacity;
-		}
-
-		public String getTotalCapacity() {
-			return this.totalCapacity;
-		}
-
-		public void setTotalCapacity(String totalCapacity) {
-			this.totalCapacity = totalCapacity;
-		}
-
-		public String getScalingGroupId() {
-			return this.scalingGroupId;
-		}
-
-		public void setScalingGroupId(String scalingGroupId) {
-			this.scalingGroupId = scalingGroupId;
-		}
-
-		public String getAutoCreatedCapacity() {
-			return this.autoCreatedCapacity;
-		}
-
-		public void setAutoCreatedCapacity(String autoCreatedCapacity) {
-			this.autoCreatedCapacity = autoCreatedCapacity;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getEndTime() {
@@ -193,20 +161,28 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public String getTriggerSourceType() {
+			return this.triggerSourceType;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setTriggerSourceType(String triggerSourceType) {
+			this.triggerSourceType = triggerSourceType;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getActivityMetadata() {
+			return this.activityMetadata;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setActivityMetadata(String activityMetadata) {
+			this.activityMetadata = activityMetadata;
+		}
+
+		public String getAutoCreatedCapacity() {
+			return this.autoCreatedCapacity;
+		}
+
+		public void setAutoCreatedCapacity(String autoCreatedCapacity) {
+			this.autoCreatedCapacity = autoCreatedCapacity;
 		}
 
 		public String getStatusCode() {
@@ -225,6 +201,38 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 			this.cause = cause;
 		}
 
+		public String getTotalCapacity() {
+			return this.totalCapacity;
+		}
+
+		public void setTotalCapacity(String totalCapacity) {
+			this.totalCapacity = totalCapacity;
+		}
+
+		public String getInstanceRefreshTaskId() {
+			return this.instanceRefreshTaskId;
+		}
+
+		public void setInstanceRefreshTaskId(String instanceRefreshTaskId) {
+			this.instanceRefreshTaskId = instanceRefreshTaskId;
+		}
+
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
+		}
+
+		public String getAttachedCapacity() {
+			return this.attachedCapacity;
+		}
+
+		public void setAttachedCapacity(String attachedCapacity) {
+			this.attachedCapacity = attachedCapacity;
+		}
+
 		public String getScalingActivityId() {
 			return this.scalingActivityId;
 		}
@@ -233,20 +241,20 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 			this.scalingActivityId = scalingActivityId;
 		}
 
-		public String getStatusMessage() {
-			return this.statusMessage;
+		public String getScalingGroupId() {
+			return this.scalingGroupId;
 		}
 
-		public void setStatusMessage(String statusMessage) {
-			this.statusMessage = statusMessage;
+		public void setScalingGroupId(String scalingGroupId) {
+			this.scalingGroupId = scalingGroupId;
 		}
 
-		public Integer getCreatedCapacity() {
-			return this.createdCapacity;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setCreatedCapacity(Integer createdCapacity) {
-			this.createdCapacity = createdCapacity;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public Integer getDestroyedCapacity() {
@@ -257,12 +265,36 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 			this.destroyedCapacity = destroyedCapacity;
 		}
 
+		public String getTriggerSourceId() {
+			return this.triggerSourceId;
+		}
+
+		public void setTriggerSourceId(String triggerSourceId) {
+			this.triggerSourceId = triggerSourceId;
+		}
+
+		public String getStatusMessage() {
+			return this.statusMessage;
+		}
+
+		public void setStatusMessage(String statusMessage) {
+			this.statusMessage = statusMessage;
+		}
+
 		public Integer getStartedCapacity() {
 			return this.startedCapacity;
 		}
 
 		public void setStartedCapacity(Integer startedCapacity) {
 			this.startedCapacity = startedCapacity;
+		}
+
+		public Integer getCreatedCapacity() {
+			return this.createdCapacity;
+		}
+
+		public void setCreatedCapacity(Integer createdCapacity) {
+			this.createdCapacity = createdCapacity;
 		}
 
 		public Integer getStoppedCapacity() {
@@ -297,38 +329,6 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 			this.detail = detail;
 		}
 
-		public String getTriggerSourceType() {
-			return this.triggerSourceType;
-		}
-
-		public void setTriggerSourceType(String triggerSourceType) {
-			this.triggerSourceType = triggerSourceType;
-		}
-
-		public String getTriggerSourceId() {
-			return this.triggerSourceId;
-		}
-
-		public void setTriggerSourceId(String triggerSourceId) {
-			this.triggerSourceId = triggerSourceId;
-		}
-
-		public String getActivityMetadata() {
-			return this.activityMetadata;
-		}
-
-		public void setActivityMetadata(String activityMetadata) {
-			this.activityMetadata = activityMetadata;
-		}
-
-		public String getInstanceRefreshTaskId() {
-			return this.instanceRefreshTaskId;
-		}
-
-		public void setInstanceRefreshTaskId(String instanceRefreshTaskId) {
-			this.instanceRefreshTaskId = instanceRefreshTaskId;
-		}
-
 		public List<ErrorMessagesItem> getErrorMessages() {
 			return this.errorMessages;
 		}
@@ -337,12 +337,12 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 			this.errorMessages = errorMessages;
 		}
 
-		public List<String> getCreatedInstances() {
-			return this.createdInstances;
+		public List<String> getStoppedInstances() {
+			return this.stoppedInstances;
 		}
 
-		public void setCreatedInstances(List<String> createdInstances) {
-			this.createdInstances = createdInstances;
+		public void setStoppedInstances(List<String> stoppedInstances) {
+			this.stoppedInstances = stoppedInstances;
 		}
 
 		public List<String> getDestroyedInstances() {
@@ -361,12 +361,12 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 			this.startedInstances = startedInstances;
 		}
 
-		public List<String> getStoppedInstances() {
-			return this.stoppedInstances;
+		public List<String> getCreatedInstances() {
+			return this.createdInstances;
 		}
 
-		public void setStoppedInstances(List<String> stoppedInstances) {
-			this.stoppedInstances = stoppedInstances;
+		public void setCreatedInstances(List<String> createdInstances) {
+			this.createdInstances = createdInstances;
 		}
 
 		public LifecycleHookContext getLifecycleHookContext() {
@@ -381,9 +381,9 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 
 			private String description;
 
-			private String code;
-
 			private String message;
+
+			private String code;
 
 			private List<String> failedInstanceIds;
 
@@ -395,20 +395,20 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getCode() {
-				return this.code;
-			}
-
-			public void setCode(String code) {
-				this.code = code;
-			}
-
 			public String getMessage() {
 				return this.message;
 			}
 
 			public void setMessage(String message) {
 				this.message = message;
+			}
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
 			}
 
 			public List<String> getFailedInstanceIds() {

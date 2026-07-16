@@ -1,3 +1,6 @@
+2026-07-16 Version: 1.0.4
+- Generated 2014-08-28 for `Ess`.
+
 2026-05-13 Version: 1.0.3
 - Generated 2014-08-28 for `Ess`.
 

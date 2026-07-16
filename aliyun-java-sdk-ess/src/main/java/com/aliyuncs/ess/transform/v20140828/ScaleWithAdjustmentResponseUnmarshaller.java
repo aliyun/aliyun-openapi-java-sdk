@@ -37,10 +37,10 @@ public class ScaleWithAdjustmentResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations.Length"); i++) {
 			ResourceAllocationModels resourceAllocationModels = new ResourceAllocationModels();
 			resourceAllocationModels.setZoneId(_ctx.stringValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations["+ i +"].ZoneId"));
+			resourceAllocationModels.setInstanceChargeType(_ctx.stringValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations["+ i +"].InstanceChargeType"));
+			resourceAllocationModels.setAmount(_ctx.integerValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations["+ i +"].Amount"));
 			resourceAllocationModels.setInstanceType(_ctx.stringValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations["+ i +"].InstanceType"));
 			resourceAllocationModels.setSpotStrategy(_ctx.stringValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations["+ i +"].SpotStrategy"));
-			resourceAllocationModels.setAmount(_ctx.integerValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations["+ i +"].Amount"));
-			resourceAllocationModels.setInstanceChargeType(_ctx.stringValue("ScaleWithAdjustmentResponse.PlanResult.ResourceAllocations["+ i +"].InstanceChargeType"));
 
 			resourceAllocations.add(resourceAllocationModels);
 		}

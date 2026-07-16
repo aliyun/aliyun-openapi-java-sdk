@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceRefreshesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
 
 	private String nextToken;
 
 	private Integer maxResults;
 
-	private Integer totalCount;
-
 	private List<InstanceRefreshTask> instanceRefreshTasks;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<InstanceRefreshTask> getInstanceRefreshTasks() {
 		return this.instanceRefreshTasks;
 	}
@@ -79,29 +79,31 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 
 		private String instanceRefreshTaskId;
 
-		private String scalingGroupId;
-
-		private String regionId;
+		private String status;
 
 		private String endTime;
 
+		private Integer totalNeedUpdateCapacity;
+
+		private String scalingGroupId;
+
 		private String startTime;
-
-		private String status;
-
-		private String detail;
 
 		private Integer minHealthyPercentage;
 
-		private Integer maxHealthyPercentage;
+		private Boolean skipMatching;
 
 		private Integer finishedUpdateCapacity;
 
-		private Integer totalNeedUpdateCapacity;
-
-		private Boolean skipMatching;
+		private String strategy;
 
 		private Integer checkpointPauseTime;
+
+		private String regionId;
+
+		private Integer maxHealthyPercentage;
+
+		private String detail;
 
 		private List<Checkpoint> checkpoints;
 
@@ -115,20 +117,12 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 			this.instanceRefreshTaskId = instanceRefreshTaskId;
 		}
 
-		public String getScalingGroupId() {
-			return this.scalingGroupId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setScalingGroupId(String scalingGroupId) {
-			this.scalingGroupId = scalingGroupId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getEndTime() {
@@ -139,28 +133,28 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
+		public Integer getTotalNeedUpdateCapacity() {
+			return this.totalNeedUpdateCapacity;
+		}
+
+		public void setTotalNeedUpdateCapacity(Integer totalNeedUpdateCapacity) {
+			this.totalNeedUpdateCapacity = totalNeedUpdateCapacity;
+		}
+
+		public String getScalingGroupId() {
+			return this.scalingGroupId;
+		}
+
+		public void setScalingGroupId(String scalingGroupId) {
+			this.scalingGroupId = scalingGroupId;
+		}
+
 		public String getStartTime() {
 			return this.startTime;
 		}
 
 		public void setStartTime(String startTime) {
 			this.startTime = startTime;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getDetail() {
-			return this.detail;
-		}
-
-		public void setDetail(String detail) {
-			this.detail = detail;
 		}
 
 		public Integer getMinHealthyPercentage() {
@@ -171,12 +165,12 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 			this.minHealthyPercentage = minHealthyPercentage;
 		}
 
-		public Integer getMaxHealthyPercentage() {
-			return this.maxHealthyPercentage;
+		public Boolean getSkipMatching() {
+			return this.skipMatching;
 		}
 
-		public void setMaxHealthyPercentage(Integer maxHealthyPercentage) {
-			this.maxHealthyPercentage = maxHealthyPercentage;
+		public void setSkipMatching(Boolean skipMatching) {
+			this.skipMatching = skipMatching;
 		}
 
 		public Integer getFinishedUpdateCapacity() {
@@ -187,20 +181,12 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 			this.finishedUpdateCapacity = finishedUpdateCapacity;
 		}
 
-		public Integer getTotalNeedUpdateCapacity() {
-			return this.totalNeedUpdateCapacity;
+		public String getStrategy() {
+			return this.strategy;
 		}
 
-		public void setTotalNeedUpdateCapacity(Integer totalNeedUpdateCapacity) {
-			this.totalNeedUpdateCapacity = totalNeedUpdateCapacity;
-		}
-
-		public Boolean getSkipMatching() {
-			return this.skipMatching;
-		}
-
-		public void setSkipMatching(Boolean skipMatching) {
-			this.skipMatching = skipMatching;
+		public void setStrategy(String strategy) {
+			this.strategy = strategy;
 		}
 
 		public Integer getCheckpointPauseTime() {
@@ -209,6 +195,30 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 
 		public void setCheckpointPauseTime(Integer checkpointPauseTime) {
 			this.checkpointPauseTime = checkpointPauseTime;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Integer getMaxHealthyPercentage() {
+			return this.maxHealthyPercentage;
+		}
+
+		public void setMaxHealthyPercentage(Integer maxHealthyPercentage) {
+			this.maxHealthyPercentage = maxHealthyPercentage;
+		}
+
+		public String getDetail() {
+			return this.detail;
+		}
+
+		public void setDetail(String detail) {
+			this.detail = detail;
 		}
 
 		public List<Checkpoint> getCheckpoints() {
@@ -244,11 +254,11 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 
 			private String imageId;
 
-			private String scalingConfigurationId;
+			private String launchTemplateVersion;
 
 			private String launchTemplateId;
 
-			private String launchTemplateVersion;
+			private String scalingConfigurationId;
 
 			private List<LaunchTemplateOverride> launchTemplateOverrides;
 
@@ -262,12 +272,12 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 				this.imageId = imageId;
 			}
 
-			public String getScalingConfigurationId() {
-				return this.scalingConfigurationId;
+			public String getLaunchTemplateVersion() {
+				return this.launchTemplateVersion;
 			}
 
-			public void setScalingConfigurationId(String scalingConfigurationId) {
-				this.scalingConfigurationId = scalingConfigurationId;
+			public void setLaunchTemplateVersion(String launchTemplateVersion) {
+				this.launchTemplateVersion = launchTemplateVersion;
 			}
 
 			public String getLaunchTemplateId() {
@@ -278,12 +288,12 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 				this.launchTemplateId = launchTemplateId;
 			}
 
-			public String getLaunchTemplateVersion() {
-				return this.launchTemplateVersion;
+			public String getScalingConfigurationId() {
+				return this.scalingConfigurationId;
 			}
 
-			public void setLaunchTemplateVersion(String launchTemplateVersion) {
-				this.launchTemplateVersion = launchTemplateVersion;
+			public void setScalingConfigurationId(String scalingConfigurationId) {
+				this.scalingConfigurationId = scalingConfigurationId;
 			}
 
 			public List<LaunchTemplateOverride> getLaunchTemplateOverrides() {
@@ -317,23 +327,15 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 
 			public static class Container {
 
-				private String name;
-
 				private String image;
+
+				private String name;
 
 				private List<EnvironmentVar> environmentVars;
 
-				private List<String> commands;
-
 				private List<String> args;
 
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
+				private List<String> commands;
 
 				public String getImage() {
 					return this.image;
@@ -341,6 +343,14 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 
 				public void setImage(String image) {
 					this.image = image;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 
 				public List<EnvironmentVar> getEnvironmentVars() {
@@ -351,14 +361,6 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 					this.environmentVars = environmentVars;
 				}
 
-				public List<String> getCommands() {
-					return this.commands;
-				}
-
-				public void setCommands(List<String> commands) {
-					this.commands = commands;
-				}
-
 				public List<String> getArgs() {
 					return this.args;
 				}
@@ -367,20 +369,28 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 					this.args = args;
 				}
 
+				public List<String> getCommands() {
+					return this.commands;
+				}
+
+				public void setCommands(List<String> commands) {
+					this.commands = commands;
+				}
+
 				public static class EnvironmentVar {
-
-					private String key;
-
-					private String value;
 
 					private String fieldRefFieldPath;
 
-					public String getKey() {
-						return this.key;
+					private String value;
+
+					private String key;
+
+					public String getFieldRefFieldPath() {
+						return this.fieldRefFieldPath;
 					}
 
-					public void setKey(String key) {
-						this.key = key;
+					public void setFieldRefFieldPath(String fieldRefFieldPath) {
+						this.fieldRefFieldPath = fieldRefFieldPath;
 					}
 
 					public String getValue() {
@@ -391,12 +401,12 @@ public class DescribeInstanceRefreshesResponse extends AcsResponse {
 						this.value = value;
 					}
 
-					public String getFieldRefFieldPath() {
-						return this.fieldRefFieldPath;
+					public String getKey() {
+						return this.key;
 					}
 
-					public void setFieldRefFieldPath(String fieldRefFieldPath) {
-						this.fieldRefFieldPath = fieldRefFieldPath;
+					public void setKey(String key) {
+						this.key = key;
 					}
 				}
 			}

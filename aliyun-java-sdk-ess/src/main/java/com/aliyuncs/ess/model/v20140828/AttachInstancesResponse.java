@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AttachInstancesResponse extends AcsResponse {
 
-	private String scalingActivityId;
-
 	private String requestId;
 
-	public String getScalingActivityId() {
-		return this.scalingActivityId;
-	}
-
-	public void setScalingActivityId(String scalingActivityId) {
-		this.scalingActivityId = scalingActivityId;
-	}
+	private String scalingActivityId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class AttachInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getScalingActivityId() {
+		return this.scalingActivityId;
+	}
+
+	public void setScalingActivityId(String scalingActivityId) {
+		this.scalingActivityId = scalingActivityId;
 	}
 
 	@Override

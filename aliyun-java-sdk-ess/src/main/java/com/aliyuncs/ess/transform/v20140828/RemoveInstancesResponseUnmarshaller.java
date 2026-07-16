@@ -32,9 +32,9 @@ public class RemoveInstancesResponseUnmarshaller {
 		List<IgnoredInstance> ignoredInstances = new ArrayList<IgnoredInstance>();
 		for (int i = 0; i < _ctx.lengthValue("RemoveInstancesResponse.IgnoredInstances.Length"); i++) {
 			IgnoredInstance ignoredInstance = new IgnoredInstance();
+			ignoredInstance.setMessage(_ctx.stringValue("RemoveInstancesResponse.IgnoredInstances["+ i +"].Message"));
 			ignoredInstance.setInstanceId(_ctx.stringValue("RemoveInstancesResponse.IgnoredInstances["+ i +"].InstanceId"));
 			ignoredInstance.setCode(_ctx.stringValue("RemoveInstancesResponse.IgnoredInstances["+ i +"].Code"));
-			ignoredInstance.setMessage(_ctx.stringValue("RemoveInstancesResponse.IgnoredInstances["+ i +"].Message"));
 
 			ignoredInstances.add(ignoredInstance);
 		}

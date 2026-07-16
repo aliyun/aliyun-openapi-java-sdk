@@ -31,11 +31,11 @@ public class DescribePatternTypesResponseUnmarshaller {
 		List<PatternType> patternTypes = new ArrayList<PatternType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePatternTypesResponse.PatternTypes.Length"); i++) {
 			PatternType patternType = new PatternType();
-			patternType.setInstanceType(_ctx.stringValue("DescribePatternTypesResponse.PatternTypes["+ i +"].InstanceType"));
-			patternType.setInstanceFamilyLevel(_ctx.stringValue("DescribePatternTypesResponse.PatternTypes["+ i +"].InstanceFamilyLevel"));
-			patternType.setInstanceTypeFamily(_ctx.stringValue("DescribePatternTypesResponse.PatternTypes["+ i +"].InstanceTypeFamily"));
 			patternType.setCores(_ctx.integerValue("DescribePatternTypesResponse.PatternTypes["+ i +"].Cores"));
+			patternType.setInstanceTypeFamily(_ctx.stringValue("DescribePatternTypesResponse.PatternTypes["+ i +"].InstanceTypeFamily"));
 			patternType.setMemory(_ctx.floatValue("DescribePatternTypesResponse.PatternTypes["+ i +"].Memory"));
+			patternType.setInstanceFamilyLevel(_ctx.stringValue("DescribePatternTypesResponse.PatternTypes["+ i +"].InstanceFamilyLevel"));
+			patternType.setInstanceType(_ctx.stringValue("DescribePatternTypesResponse.PatternTypes["+ i +"].InstanceType"));
 
 			patternTypes.add(patternType);
 		}

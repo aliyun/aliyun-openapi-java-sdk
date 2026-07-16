@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ScaleWithAdjustmentResponse extends AcsResponse {
 
-	private String scalingActivityId;
-
 	private String requestId;
+
+	private String scalingActivityId;
 
 	private String activityType;
 
 	private PlanResult planResult;
-
-	public String getScalingActivityId() {
-		return this.scalingActivityId;
-	}
-
-	public void setScalingActivityId(String scalingActivityId) {
-		this.scalingActivityId = scalingActivityId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +39,14 @@ public class ScaleWithAdjustmentResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getScalingActivityId() {
+		return this.scalingActivityId;
+	}
+
+	public void setScalingActivityId(String scalingActivityId) {
+		this.scalingActivityId = scalingActivityId;
 	}
 
 	public String getActivityType() {
@@ -81,13 +81,13 @@ public class ScaleWithAdjustmentResponse extends AcsResponse {
 
 			private String zoneId;
 
-			private String instanceType;
-
-			private String spotStrategy;
+			private String instanceChargeType;
 
 			private Integer amount;
 
-			private String instanceChargeType;
+			private String instanceType;
+
+			private String spotStrategy;
 
 			public String getZoneId() {
 				return this.zoneId;
@@ -95,6 +95,22 @@ public class ScaleWithAdjustmentResponse extends AcsResponse {
 
 			public void setZoneId(String zoneId) {
 				this.zoneId = zoneId;
+			}
+
+			public String getInstanceChargeType() {
+				return this.instanceChargeType;
+			}
+
+			public void setInstanceChargeType(String instanceChargeType) {
+				this.instanceChargeType = instanceChargeType;
+			}
+
+			public Integer getAmount() {
+				return this.amount;
+			}
+
+			public void setAmount(Integer amount) {
+				this.amount = amount;
 			}
 
 			public String getInstanceType() {
@@ -111,22 +127,6 @@ public class ScaleWithAdjustmentResponse extends AcsResponse {
 
 			public void setSpotStrategy(String spotStrategy) {
 				this.spotStrategy = spotStrategy;
-			}
-
-			public Integer getAmount() {
-				return this.amount;
-			}
-
-			public void setAmount(Integer amount) {
-				this.amount = amount;
-			}
-
-			public String getInstanceChargeType() {
-				return this.instanceChargeType;
-			}
-
-			public void setInstanceChargeType(String instanceChargeType) {
-				this.instanceChargeType = instanceChargeType;
 			}
 		}
 	}

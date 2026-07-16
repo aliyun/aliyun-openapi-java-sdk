@@ -36,66 +36,66 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 	public static DescribeScalingGroupsResponse unmarshall(DescribeScalingGroupsResponse describeScalingGroupsResponse, UnmarshallerContext _ctx) {
 		
 		describeScalingGroupsResponse.setRequestId(_ctx.stringValue("DescribeScalingGroupsResponse.RequestId"));
-		describeScalingGroupsResponse.setPageNumber(_ctx.integerValue("DescribeScalingGroupsResponse.PageNumber"));
-		describeScalingGroupsResponse.setPageSize(_ctx.integerValue("DescribeScalingGroupsResponse.PageSize"));
 		describeScalingGroupsResponse.setTotalCount(_ctx.integerValue("DescribeScalingGroupsResponse.TotalCount"));
+		describeScalingGroupsResponse.setPageSize(_ctx.integerValue("DescribeScalingGroupsResponse.PageSize"));
+		describeScalingGroupsResponse.setPageNumber(_ctx.integerValue("DescribeScalingGroupsResponse.PageNumber"));
 
 		List<ScalingGroup> scalingGroups = new ArrayList<ScalingGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups.Length"); i++) {
 			ScalingGroup scalingGroup = new ScalingGroup();
-			scalingGroup.setVpcId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VpcId"));
-			scalingGroup.setCreationTime(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CreationTime"));
-			scalingGroup.setTotalInstanceCount(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].TotalInstanceCount"));
-			scalingGroup.setScalingGroupName(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScalingGroupName"));
-			scalingGroup.setWeighted(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].Weighted"));
-			scalingGroup.setSpotInstancePools(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SpotInstancePools"));
-			scalingGroup.setStoppedCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].StoppedCapacity"));
-			scalingGroup.setOnDemandPercentageAboveBaseCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].OnDemandPercentageAboveBaseCapacity"));
-			scalingGroup.setModificationTime(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ModificationTime"));
-			scalingGroup.setMinSize(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].MinSize"));
-			scalingGroup.setScalingGroupId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScalingGroupId"));
-			scalingGroup.setCompensateWithOnDemand(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CompensateWithOnDemand"));
-			scalingGroup.setScalingPolicy(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScalingPolicy"));
-			scalingGroup.setRemovingWaitCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RemovingWaitCapacity"));
-			scalingGroup.setActiveCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ActiveCapacity"));
-			scalingGroup.setOnDemandBaseCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].OnDemandBaseCapacity"));
-			scalingGroup.setProtectedCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ProtectedCapacity"));
-			scalingGroup.setHealthCheckType(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].HealthCheckType"));
-			scalingGroup.setLifecycleState(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LifecycleState"));
-			scalingGroup.setGroupDeletionProtection(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].GroupDeletionProtection"));
-			scalingGroup.setActiveScalingConfigurationId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ActiveScalingConfigurationId"));
-			scalingGroup.setGroupType(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].GroupType"));
-			scalingGroup.setMultiAZPolicy(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].MultiAZPolicy"));
-			scalingGroup.setRemovingCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RemovingCapacity"));
-			scalingGroup.setPendingWaitCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].PendingWaitCapacity"));
-			scalingGroup.setStandbyCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].StandbyCapacity"));
-			scalingGroup.setCurrentHostName(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CurrentHostName"));
-			scalingGroup.setPendingCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].PendingCapacity"));
-			scalingGroup.setLaunchTemplateId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateId"));
-			scalingGroup.setTotalCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].TotalCapacity"));
-			scalingGroup.setDesiredCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DesiredCapacity"));
 			scalingGroup.setSpotInstanceRemedy(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SpotInstanceRemedy"));
-			scalingGroup.setLaunchTemplateVersion(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateVersion"));
-			scalingGroup.setRegionId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RegionId"));
+			scalingGroup.setResourceGroupId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ResourceGroupId"));
+			scalingGroup.setActiveScalingConfigurationId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ActiveScalingConfigurationId"));
+			scalingGroup.setDesiredCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DesiredCapacity"));
+			scalingGroup.setOnDemandBaseCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].OnDemandBaseCapacity"));
+			scalingGroup.setRemovingCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RemovingCapacity"));
+			scalingGroup.setScalingGroupId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScalingGroupId"));
+			scalingGroup.setPendingCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].PendingCapacity"));
 			scalingGroup.setVSwitchId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VSwitchId"));
-			scalingGroup.setMaxSize(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].MaxSize"));
+			scalingGroup.setSpotInstancePools(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SpotInstancePools"));
+			scalingGroup.setLaunchTemplateId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateId"));
+			scalingGroup.setCustomPolicyARN(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CustomPolicyARN"));
+			scalingGroup.setSpotCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SpotCapacity"));
+			scalingGroup.setScalingGroupName(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScalingGroupName"));
 			scalingGroup.setScaleOutAmountCheck(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScaleOutAmountCheck"));
 			scalingGroup.setDefaultCooldown(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DefaultCooldown"));
-			scalingGroup.setSystemSuspended(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SystemSuspended"));
-			scalingGroup.setIsElasticStrengthInAlarm(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].IsElasticStrengthInAlarm"));
-			scalingGroup.setMonitorGroupId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].MonitorGroupId"));
-			scalingGroup.setAzBalance(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AzBalance"));
-			scalingGroup.setAllocationStrategy(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AllocationStrategy"));
-			scalingGroup.setSpotAllocationStrategy(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SpotAllocationStrategy"));
-			scalingGroup.setMaxInstanceLifetime(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].MaxInstanceLifetime"));
-			scalingGroup.setCustomPolicyARN(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CustomPolicyARN"));
-			scalingGroup.setInitCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].InitCapacity"));
-			scalingGroup.setResourceGroupId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ResourceGroupId"));
-			scalingGroup.setEnableDesiredCapacity(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].EnableDesiredCapacity"));
-			scalingGroup.setSpotCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SpotCapacity"));
-			scalingGroup.setStopInstanceTimeout(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].StopInstanceTimeout"));
-			scalingGroup.setBalanceMode(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].BalanceMode"));
+			scalingGroup.setVpcId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VpcId"));
+			scalingGroup.setGroupType(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].GroupType"));
+			scalingGroup.setCreationTime(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CreationTime"));
+			scalingGroup.setLaunchTemplateVersion(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateVersion"));
+			scalingGroup.setMultiAZPolicy(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].MultiAZPolicy"));
+			scalingGroup.setStoppedCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].StoppedCapacity"));
+			scalingGroup.setCurrentHostName(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CurrentHostName"));
+			scalingGroup.setHealthCheckType(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].HealthCheckType"));
 			scalingGroup.setAutoRebalance(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AutoRebalance"));
+			scalingGroup.setCompensateWithOnDemand(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CompensateWithOnDemand"));
+			scalingGroup.setOnDemandPercentageAboveBaseCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].OnDemandPercentageAboveBaseCapacity"));
+			scalingGroup.setModificationTime(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ModificationTime"));
+			scalingGroup.setLifecycleState(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LifecycleState"));
+			scalingGroup.setTotalInstanceCount(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].TotalInstanceCount"));
+			scalingGroup.setAllocationStrategy(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AllocationStrategy"));
+			scalingGroup.setWeighted(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].Weighted"));
+			scalingGroup.setInitCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].InitCapacity"));
+			scalingGroup.setPendingWaitCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].PendingWaitCapacity"));
+			scalingGroup.setTotalCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].TotalCapacity"));
+			scalingGroup.setRemovingWaitCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RemovingWaitCapacity"));
+			scalingGroup.setIsElasticStrengthInAlarm(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].IsElasticStrengthInAlarm"));
+			scalingGroup.setSpotAllocationStrategy(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SpotAllocationStrategy"));
+			scalingGroup.setProtectedCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ProtectedCapacity"));
+			scalingGroup.setStandbyCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].StandbyCapacity"));
+			scalingGroup.setScalingPolicy(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScalingPolicy"));
+			scalingGroup.setGroupDeletionProtection(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].GroupDeletionProtection"));
+			scalingGroup.setMaxSize(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].MaxSize"));
+			scalingGroup.setEnableDesiredCapacity(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].EnableDesiredCapacity"));
+			scalingGroup.setMinSize(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].MinSize"));
+			scalingGroup.setActiveCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ActiveCapacity"));
+			scalingGroup.setAzBalance(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AzBalance"));
+			scalingGroup.setBalanceMode(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].BalanceMode"));
+			scalingGroup.setSystemSuspended(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SystemSuspended"));
+			scalingGroup.setMonitorGroupId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].MonitorGroupId"));
+			scalingGroup.setRegionId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RegionId"));
+			scalingGroup.setMaxInstanceLifetime(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].MaxInstanceLifetime"));
+			scalingGroup.setStopInstanceTimeout(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].StopInstanceTimeout"));
 
 			List<String> removalPolicies = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].RemovalPolicies.Length"); j++) {
@@ -103,17 +103,11 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 			}
 			scalingGroup.setRemovalPolicies(removalPolicies);
 
-			List<String> dBInstanceIds = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DBInstanceIds.Length"); j++) {
-				dBInstanceIds.add(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DBInstanceIds["+ j +"]"));
+			List<String> suspendedProcesses = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SuspendedProcesses.Length"); j++) {
+				suspendedProcesses.add(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SuspendedProcesses["+ j +"]"));
 			}
-			scalingGroup.setDBInstanceIds(dBInstanceIds);
-
-			List<String> loadBalancerIds = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LoadBalancerIds.Length"); j++) {
-				loadBalancerIds.add(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LoadBalancerIds["+ j +"]"));
-			}
-			scalingGroup.setLoadBalancerIds(loadBalancerIds);
+			scalingGroup.setSuspendedProcesses(suspendedProcesses);
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VSwitchIds.Length"); j++) {
@@ -121,11 +115,17 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 			}
 			scalingGroup.setVSwitchIds(vSwitchIds);
 
-			List<String> suspendedProcesses = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SuspendedProcesses.Length"); j++) {
-				suspendedProcesses.add(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SuspendedProcesses["+ j +"]"));
+			List<String> loadBalancerIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LoadBalancerIds.Length"); j++) {
+				loadBalancerIds.add(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LoadBalancerIds["+ j +"]"));
 			}
-			scalingGroup.setSuspendedProcesses(suspendedProcesses);
+			scalingGroup.setLoadBalancerIds(loadBalancerIds);
+
+			List<String> dBInstanceIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DBInstanceIds.Length"); j++) {
+				dBInstanceIds.add(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DBInstanceIds["+ j +"]"));
+			}
+			scalingGroup.setDBInstanceIds(dBInstanceIds);
 
 			List<String> healthCheckTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].HealthCheckTypes.Length"); j++) {
@@ -135,65 +135,56 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 
 			CapacityOptions capacityOptions = new CapacityOptions();
 			capacityOptions.setOnDemandBaseCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CapacityOptions.OnDemandBaseCapacity"));
-			capacityOptions.setOnDemandPercentageAboveBaseCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CapacityOptions.OnDemandPercentageAboveBaseCapacity"));
 			capacityOptions.setCompensateWithOnDemand(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CapacityOptions.CompensateWithOnDemand"));
+			capacityOptions.setOnDemandPercentageAboveBaseCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CapacityOptions.OnDemandPercentageAboveBaseCapacity"));
 			capacityOptions.setSpotAutoReplaceOnDemand(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CapacityOptions.SpotAutoReplaceOnDemand"));
 			capacityOptions.setPriceComparisonMode(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CapacityOptions.PriceComparisonMode"));
 			scalingGroup.setCapacityOptions(capacityOptions);
 
-			List<VServerGroup> vServerGroups = new ArrayList<VServerGroup>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups.Length"); j++) {
-				VServerGroup vServerGroup = new VServerGroup();
-				vServerGroup.setLoadBalancerId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].LoadBalancerId"));
+			List<ServerGroup> serverGroups = new ArrayList<ServerGroup>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ServerGroups.Length"); j++) {
+				ServerGroup serverGroup = new ServerGroup();
+				serverGroup.setType(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ServerGroups["+ j +"].Type"));
+				serverGroup.setPort(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ServerGroups["+ j +"].Port"));
+				serverGroup.setServerGroupId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ServerGroups["+ j +"].ServerGroupId"));
+				serverGroup.setWeight(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ServerGroups["+ j +"].Weight"));
 
-				List<VServerGroupAttribute> vServerGroupAttributes = new ArrayList<VServerGroupAttribute>();
-				for (int k = 0; k < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes.Length"); k++) {
-					VServerGroupAttribute vServerGroupAttribute = new VServerGroupAttribute();
-					vServerGroupAttribute.setVServerGroupId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes["+ k +"].VServerGroupId"));
-					vServerGroupAttribute.setWeight(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes["+ k +"].Weight"));
-					vServerGroupAttribute.setPort(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes["+ k +"].Port"));
-
-					vServerGroupAttributes.add(vServerGroupAttribute);
-				}
-				vServerGroup.setVServerGroupAttributes(vServerGroupAttributes);
-
-				vServerGroups.add(vServerGroup);
+				serverGroups.add(serverGroup);
 			}
-			scalingGroup.setVServerGroups(vServerGroups);
-
-			List<LaunchTemplateOverride> launchTemplateOverrides = new ArrayList<LaunchTemplateOverride>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateOverrides.Length"); j++) {
-				LaunchTemplateOverride launchTemplateOverride = new LaunchTemplateOverride();
-				launchTemplateOverride.setWeightedCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateOverrides["+ j +"].WeightedCapacity"));
-				launchTemplateOverride.setInstanceType(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateOverrides["+ j +"].InstanceType"));
-				launchTemplateOverride.setSpotPriceLimit(_ctx.floatValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateOverrides["+ j +"].SpotPriceLimit"));
-
-				launchTemplateOverrides.add(launchTemplateOverride);
-			}
-			scalingGroup.setLaunchTemplateOverrides(launchTemplateOverrides);
+			scalingGroup.setServerGroups(serverGroups);
 
 			List<AlbServerGroup> albServerGroups = new ArrayList<AlbServerGroup>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AlbServerGroups.Length"); j++) {
 				AlbServerGroup albServerGroup = new AlbServerGroup();
 				albServerGroup.setAlbServerGroupId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AlbServerGroups["+ j +"].AlbServerGroupId"));
-				albServerGroup.setWeight(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AlbServerGroups["+ j +"].Weight"));
 				albServerGroup.setPort(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AlbServerGroups["+ j +"].Port"));
+				albServerGroup.setWeight(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AlbServerGroups["+ j +"].Weight"));
 
 				albServerGroups.add(albServerGroup);
 			}
 			scalingGroup.setAlbServerGroups(albServerGroups);
 
-			List<ServerGroup> serverGroups = new ArrayList<ServerGroup>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ServerGroups.Length"); j++) {
-				ServerGroup serverGroup = new ServerGroup();
-				serverGroup.setServerGroupId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ServerGroups["+ j +"].ServerGroupId"));
-				serverGroup.setType(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ServerGroups["+ j +"].Type"));
-				serverGroup.setWeight(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ServerGroups["+ j +"].Weight"));
-				serverGroup.setPort(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ServerGroups["+ j +"].Port"));
+			List<LaunchTemplateOverride> launchTemplateOverrides = new ArrayList<LaunchTemplateOverride>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateOverrides.Length"); j++) {
+				LaunchTemplateOverride launchTemplateOverride = new LaunchTemplateOverride();
+				launchTemplateOverride.setWeightedCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateOverrides["+ j +"].WeightedCapacity"));
+				launchTemplateOverride.setSpotPriceLimit(_ctx.floatValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateOverrides["+ j +"].SpotPriceLimit"));
+				launchTemplateOverride.setInstanceType(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateOverrides["+ j +"].InstanceType"));
 
-				serverGroups.add(serverGroup);
+				launchTemplateOverrides.add(launchTemplateOverride);
 			}
-			scalingGroup.setServerGroups(serverGroups);
+			scalingGroup.setLaunchTemplateOverrides(launchTemplateOverrides);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setPropagate(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].Tags["+ j +"].Propagate"));
+				tag.setTagValue(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			scalingGroup.setTags(tags);
 
 			List<LoadBalancerConfig> loadBalancerConfigs = new ArrayList<LoadBalancerConfig>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LoadBalancerConfigs.Length"); j++) {
@@ -205,22 +196,31 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 			}
 			scalingGroup.setLoadBalancerConfigs(loadBalancerConfigs);
 
-			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].Tags.Length"); j++) {
-				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].Tags["+ j +"].TagKey"));
-				tag.setTagValue(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].Tags["+ j +"].TagValue"));
-				tag.setPropagate(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].Tags["+ j +"].Propagate"));
+			List<VServerGroup> vServerGroups = new ArrayList<VServerGroup>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups.Length"); j++) {
+				VServerGroup vServerGroup = new VServerGroup();
+				vServerGroup.setLoadBalancerId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].LoadBalancerId"));
 
-				tags.add(tag);
+				List<VServerGroupAttribute> vServerGroupAttributes = new ArrayList<VServerGroupAttribute>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes.Length"); k++) {
+					VServerGroupAttribute vServerGroupAttribute = new VServerGroupAttribute();
+					vServerGroupAttribute.setVServerGroupId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes["+ k +"].VServerGroupId"));
+					vServerGroupAttribute.setPort(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes["+ k +"].Port"));
+					vServerGroupAttribute.setWeight(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes["+ k +"].Weight"));
+
+					vServerGroupAttributes.add(vServerGroupAttribute);
+				}
+				vServerGroup.setVServerGroupAttributes(vServerGroupAttributes);
+
+				vServerGroups.add(vServerGroup);
 			}
-			scalingGroup.setTags(tags);
+			scalingGroup.setVServerGroups(vServerGroups);
 
 			List<DBInstance> dBInstances = new ArrayList<DBInstance>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DBInstances.Length"); j++) {
 				DBInstance dBInstance = new DBInstance();
-				dBInstance.setDBInstanceId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DBInstances["+ j +"].DBInstanceId"));
 				dBInstance.setType(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DBInstances["+ j +"].Type"));
+				dBInstance.setDBInstanceId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DBInstances["+ j +"].DBInstanceId"));
 
 				List<String> securityGroupIds = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DBInstances["+ j +"].SecurityGroupIds.Length"); k++) {

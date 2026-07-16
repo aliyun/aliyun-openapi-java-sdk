@@ -38,79 +38,74 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 	public static DescribeScalingConfigurationsResponse unmarshall(DescribeScalingConfigurationsResponse describeScalingConfigurationsResponse, UnmarshallerContext _ctx) {
 		
 		describeScalingConfigurationsResponse.setRequestId(_ctx.stringValue("DescribeScalingConfigurationsResponse.RequestId"));
-		describeScalingConfigurationsResponse.setPageNumber(_ctx.integerValue("DescribeScalingConfigurationsResponse.PageNumber"));
-		describeScalingConfigurationsResponse.setPageSize(_ctx.integerValue("DescribeScalingConfigurationsResponse.PageSize"));
 		describeScalingConfigurationsResponse.setTotalCount(_ctx.integerValue("DescribeScalingConfigurationsResponse.TotalCount"));
+		describeScalingConfigurationsResponse.setPageSize(_ctx.integerValue("DescribeScalingConfigurationsResponse.PageSize"));
+		describeScalingConfigurationsResponse.setPageNumber(_ctx.integerValue("DescribeScalingConfigurationsResponse.PageNumber"));
 
 		List<ScalingConfiguration> scalingConfigurations = new ArrayList<ScalingConfiguration>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations.Length"); i++) {
 			ScalingConfiguration scalingConfiguration = new ScalingConfiguration();
-			scalingConfiguration.setDeploymentSetId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DeploymentSetId"));
-			scalingConfiguration.setCreationTime(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].CreationTime"));
 			scalingConfiguration.setScalingConfigurationName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ScalingConfigurationName"));
+			scalingConfiguration.setDedicatedHostId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DedicatedHostId"));
+			scalingConfiguration.setResourceGroupId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ResourceGroupId"));
 			scalingConfiguration.setSystemDiskDescription(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskDescription"));
-			scalingConfiguration.setKeyPairName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].KeyPairName"));
-			scalingConfiguration.setSecurityGroupId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityGroupId"));
-			scalingConfiguration.setPrivatePoolOptionsId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].PrivatePoolOptions.Id"));
-			scalingConfiguration.setSystemDiskAutoSnapshotPolicyId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskAutoSnapshotPolicyId"));
-			scalingConfiguration.setSpotStrategy(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotStrategy"));
+			scalingConfiguration.setMemory(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Memory"));
+			scalingConfiguration.setSystemDiskBurstingEnabled(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDisk.BurstingEnabled"));
+			scalingConfiguration.setCpu(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Cpu"));
+			scalingConfiguration.setRamRoleName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].RamRoleName"));
+			scalingConfiguration.setSystemDiskProvisionedIops(_ctx.longValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDisk.ProvisionedIops"));
+			scalingConfiguration.setSystemDiskPerformanceLevel(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskPerformanceLevel"));
+			scalingConfiguration.setSystemDiskEncryptAlgorithm(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDisk.EncryptAlgorithm"));
+			scalingConfiguration.setImageId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageId"));
+			scalingConfiguration.setSystemDiskEncrypted(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDisk.Encrypted"));
+			scalingConfiguration.setStorageSetId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].StorageSetId"));
+			scalingConfiguration.setHostName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].HostName"));
+			scalingConfiguration.setLoadBalancerWeight(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].LoadBalancerWeight"));
 			scalingConfiguration.setScalingGroupId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ScalingGroupId"));
+			scalingConfiguration.setImageFamily(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageFamily"));
+			scalingConfiguration.setDeletionProtection(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DeletionProtection"));
+			scalingConfiguration.setHttpEndpoint(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].HttpEndpoint"));
+			scalingConfiguration.setInternetChargeType(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InternetChargeType"));
+			scalingConfiguration.setDeploymentSetId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DeploymentSetId"));
+			scalingConfiguration.setInstanceName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceName"));
+			scalingConfiguration.setSpotInterruptionBehavior(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotInterruptionBehavior"));
+			scalingConfiguration.setInternetMaxBandwidthOut(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InternetMaxBandwidthOut"));
+			scalingConfiguration.setCreationTime(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].CreationTime"));
 			scalingConfiguration.setAffinity(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Affinity"));
+			scalingConfiguration.setPrivatePoolOptionsMatchCriteria(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].PrivatePoolOptions.MatchCriteria"));
+			scalingConfiguration.setScalingConfigurationId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ScalingConfigurationId"));
+			scalingConfiguration.setSecurityEnhancementStrategy(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityEnhancementStrategy"));
+			scalingConfiguration.setDedicatedHostClusterId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DedicatedHostClusterId"));
 			scalingConfiguration.setTenancy(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Tenancy"));
+			scalingConfiguration.setImageOwnerAlias(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageOwnerAlias"));
 			scalingConfiguration.setSystemDiskSize(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskSize"));
-			scalingConfiguration.setIpv6AddressCount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Ipv6AddressCount"));
+			scalingConfiguration.setUserData(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].UserData"));
 			scalingConfiguration.setSpotDuration(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotDuration"));
 			scalingConfiguration.setLifecycleState(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].LifecycleState"));
-			scalingConfiguration.setInstanceName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceName"));
-			scalingConfiguration.setSecurityEnhancementStrategy(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityEnhancementStrategy"));
-			scalingConfiguration.setUserData(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].UserData"));
-			scalingConfiguration.setPrivatePoolOptionsMatchCriteria(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].PrivatePoolOptions.MatchCriteria"));
-			scalingConfiguration.setDedicatedHostId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DedicatedHostId"));
-			scalingConfiguration.setInstanceGeneration(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceGeneration"));
-			scalingConfiguration.setHpcClusterId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].HpcClusterId"));
-			scalingConfiguration.setPasswordInherit(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].PasswordInherit"));
-			scalingConfiguration.setMemory(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Memory"));
-			scalingConfiguration.setImageId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageId"));
-			scalingConfiguration.setImageFamily(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageFamily"));
-			scalingConfiguration.setImageOwnerAlias(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageOwnerAlias"));
-			scalingConfiguration.setLoadBalancerWeight(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].LoadBalancerWeight"));
-			scalingConfiguration.setSystemDiskCategory(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskCategory"));
-			scalingConfiguration.setHostName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].HostName"));
-			scalingConfiguration.setSystemDiskName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskName"));
-			scalingConfiguration.setInternetMaxBandwidthOut(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InternetMaxBandwidthOut"));
-			scalingConfiguration.setInternetMaxBandwidthIn(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InternetMaxBandwidthIn"));
-			scalingConfiguration.setInstanceType(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceType"));
-			scalingConfiguration.setInstanceDescription(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceDescription"));
-			scalingConfiguration.setIoOptimized(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].IoOptimized"));
-			scalingConfiguration.setRamRoleName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].RamRoleName"));
-			scalingConfiguration.setSystemDiskPerformanceLevel(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskPerformanceLevel"));
-			scalingConfiguration.setCpu(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Cpu"));
-			scalingConfiguration.setResourceGroupId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ResourceGroupId"));
-			scalingConfiguration.setZoneId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ZoneId"));
-			scalingConfiguration.setInternetChargeType(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InternetChargeType"));
-			scalingConfiguration.setImageName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageName"));
-			scalingConfiguration.setScalingConfigurationId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ScalingConfigurationId"));
-			scalingConfiguration.setCreditSpecification(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].CreditSpecification"));
-			scalingConfiguration.setSpotInterruptionBehavior(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotInterruptionBehavior"));
-			scalingConfiguration.setSystemDiskEncrypted(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDisk.Encrypted"));
-			scalingConfiguration.setSystemDiskKMSKeyId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDisk.KMSKeyId"));
-			scalingConfiguration.setSystemDiskEncryptAlgorithm(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDisk.EncryptAlgorithm"));
-			scalingConfiguration.setSystemDiskProvisionedIops(_ctx.longValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDisk.ProvisionedIops"));
-			scalingConfiguration.setSystemDiskBurstingEnabled(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDisk.BurstingEnabled"));
-			scalingConfiguration.setImageOptionsLoginAsNonRoot(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageOptions.LoginAsNonRoot"));
-			scalingConfiguration.setDeletionProtection(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DeletionProtection"));
-			scalingConfiguration.setStorageSetId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].StorageSetId"));
 			scalingConfiguration.setStorageSetPartitionNumber(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].StorageSetPartitionNumber"));
-			scalingConfiguration.setDedicatedHostClusterId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DedicatedHostClusterId"));
+			scalingConfiguration.setSystemDiskAutoSnapshotPolicyId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskAutoSnapshotPolicyId"));
+			scalingConfiguration.setSystemDiskName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskName"));
+			scalingConfiguration.setIpv6AddressCount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Ipv6AddressCount"));
+			scalingConfiguration.setImageOptionsLoginAsNonRoot(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageOptions.LoginAsNonRoot"));
+			scalingConfiguration.setInstanceType(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceType"));
+			scalingConfiguration.setSpotStrategy(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotStrategy"));
+			scalingConfiguration.setPasswordInherit(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].PasswordInherit"));
+			scalingConfiguration.setSecondaryEniVSwitchConstraint(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecondaryEniVSwitchConstraint"));
+			scalingConfiguration.setKeyPairName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].KeyPairName"));
+			scalingConfiguration.setIoOptimized(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].IoOptimized"));
+			scalingConfiguration.setSystemDiskKMSKeyId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDisk.KMSKeyId"));
+			scalingConfiguration.setZoneId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ZoneId"));
+			scalingConfiguration.setHpcClusterId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].HpcClusterId"));
 			scalingConfiguration.setPasswordSetted(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].PasswordSetted"));
-			scalingConfiguration.setHttpEndpoint(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].HttpEndpoint"));
+			scalingConfiguration.setSecurityGroupId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityGroupId"));
+			scalingConfiguration.setPrivatePoolOptionsId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].PrivatePoolOptions.Id"));
+			scalingConfiguration.setSystemDiskCategory(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskCategory"));
+			scalingConfiguration.setImageName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ImageName"));
 			scalingConfiguration.setHttpTokens(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].HttpTokens"));
-
-			List<String> systemDiskCategories = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskCategories.Length"); j++) {
-				systemDiskCategories.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskCategories["+ j +"]"));
-			}
-			scalingConfiguration.setSystemDiskCategories(systemDiskCategories);
+			scalingConfiguration.setInternetMaxBandwidthIn(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InternetMaxBandwidthIn"));
+			scalingConfiguration.setInstanceGeneration(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceGeneration"));
+			scalingConfiguration.setInstanceDescription(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceDescription"));
+			scalingConfiguration.setCreditSpecification(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].CreditSpecification"));
 
 			List<String> weightedCapacities = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].WeightedCapacities.Length"); j++) {
@@ -118,25 +113,35 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			}
 			scalingConfiguration.setWeightedCapacities(weightedCapacities);
 
-			List<String> instanceTypes = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceTypes.Length"); j++) {
-				instanceTypes.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceTypes["+ j +"]"));
-			}
-			scalingConfiguration.setInstanceTypes(instanceTypes);
-
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityGroupIds.Length"); j++) {
 				securityGroupIds.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityGroupIds["+ j +"]"));
 			}
 			scalingConfiguration.setSecurityGroupIds(securityGroupIds);
 
-			SchedulerOptions schedulerOptions = new SchedulerOptions();
-			schedulerOptions.setManagedPrivateSpaceId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SchedulerOptions.ManagedPrivateSpaceId"));
-			scalingConfiguration.setSchedulerOptions(schedulerOptions);
+			List<String> systemDiskCategories = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskCategories.Length"); j++) {
+				systemDiskCategories.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskCategories["+ j +"]"));
+			}
+			scalingConfiguration.setSystemDiskCategories(systemDiskCategories);
+
+			List<String> instanceTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceTypes.Length"); j++) {
+				instanceTypes.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceTypes["+ j +"]"));
+			}
+			scalingConfiguration.setInstanceTypes(instanceTypes);
+
+			CpuOptions cpuOptions = new CpuOptions();
+			cpuOptions.setNestedVirtualization(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].CpuOptions.NestedVirtualization"));
+			scalingConfiguration.setCpuOptions(cpuOptions);
 
 			SecurityOptions securityOptions = new SecurityOptions();
 			securityOptions.setConfidentialComputingMode(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityOptions.ConfidentialComputingMode"));
 			scalingConfiguration.setSecurityOptions(securityOptions);
+
+			SchedulerOptions schedulerOptions = new SchedulerOptions();
+			schedulerOptions.setManagedPrivateSpaceId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SchedulerOptions.ManagedPrivateSpaceId"));
+			scalingConfiguration.setSchedulerOptions(schedulerOptions);
 
 			ResourcePoolOptions resourcePoolOptions = new ResourcePoolOptions();
 			resourcePoolOptions.setStrategy(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ResourcePoolOptions.Strategy"));
@@ -150,34 +155,30 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			List<PrivatePoolTag> privatePoolTags = new ArrayList<PrivatePoolTag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ResourcePoolOptions.PrivatePoolTags.Length"); j++) {
 				PrivatePoolTag privatePoolTag = new PrivatePoolTag();
-				privatePoolTag.setKey(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ResourcePoolOptions.PrivatePoolTags["+ j +"].Key"));
 				privatePoolTag.setValue(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ResourcePoolOptions.PrivatePoolTags["+ j +"].Value"));
+				privatePoolTag.setKey(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ResourcePoolOptions.PrivatePoolTags["+ j +"].Key"));
 
 				privatePoolTags.add(privatePoolTag);
 			}
 			resourcePoolOptions.setPrivatePoolTags(privatePoolTags);
 			scalingConfiguration.setResourcePoolOptions(resourcePoolOptions);
 
-			CpuOptions cpuOptions = new CpuOptions();
-			cpuOptions.setNestedVirtualization(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].CpuOptions.NestedVirtualization"));
-			scalingConfiguration.setCpuOptions(cpuOptions);
-
 			List<DataDisk> dataDisks = new ArrayList<DataDisk>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks.Length"); j++) {
 				DataDisk dataDisk = new DataDisk();
-				dataDisk.setPerformanceLevel(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].PerformanceLevel"));
+				dataDisk.setBurstingEnabled(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].BurstingEnabled"));
 				dataDisk.setDescription(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Description"));
-				dataDisk.setSnapshotId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].SnapshotId"));
-				dataDisk.setDevice(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Device"));
-				dataDisk.setSize(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Size"));
-				dataDisk.setDiskName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].DiskName"));
-				dataDisk.setAutoSnapshotPolicyId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].AutoSnapshotPolicyId"));
 				dataDisk.setCategory(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Category"));
 				dataDisk.setKMSKeyId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].KMSKeyId"));
-				dataDisk.setDeleteWithInstance(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].DeleteWithInstance"));
+				dataDisk.setPerformanceLevel(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].PerformanceLevel"));
+				dataDisk.setDevice(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Device"));
+				dataDisk.setSize(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Size"));
 				dataDisk.setEncrypted(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Encrypted"));
+				dataDisk.setDeleteWithInstance(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].DeleteWithInstance"));
+				dataDisk.setAutoSnapshotPolicyId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].AutoSnapshotPolicyId"));
+				dataDisk.setDiskName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].DiskName"));
 				dataDisk.setProvisionedIops(_ctx.longValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].ProvisionedIops"));
-				dataDisk.setBurstingEnabled(_ctx.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].BurstingEnabled"));
+				dataDisk.setSnapshotId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].SnapshotId"));
 
 				List<String> categories = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Categories.Length"); k++) {
@@ -192,48 +193,38 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setKey(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Tags["+ j +"].Key"));
 				tag.setValue(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Tags["+ j +"].Key"));
 
 				tags.add(tag);
 			}
 			scalingConfiguration.setTags(tags);
 
-			List<SpotPriceModel> spotPriceLimit = new ArrayList<SpotPriceModel>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotPriceLimit.Length"); j++) {
-				SpotPriceModel spotPriceModel = new SpotPriceModel();
-				spotPriceModel.setInstanceType(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotPriceLimit["+ j +"].InstanceType"));
-				spotPriceModel.setPriceLimit(_ctx.floatValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotPriceLimit["+ j +"].PriceLimit"));
-
-				spotPriceLimit.add(spotPriceModel);
-			}
-			scalingConfiguration.setSpotPriceLimit(spotPriceLimit);
-
 			List<InstancePatternInfo> instancePatternInfos = new ArrayList<InstancePatternInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos.Length"); j++) {
 				InstancePatternInfo instancePatternInfo = new InstancePatternInfo();
-				instancePatternInfo.setMaxPrice(_ctx.floatValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MaxPrice"));
-				instancePatternInfo.setCores(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].Cores"));
 				instancePatternInfo.setMemory(_ctx.floatValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].Memory"));
-				instancePatternInfo.setInstanceFamilyLevel(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].InstanceFamilyLevel"));
-				instancePatternInfo.setBurstablePerformance(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].BurstablePerformance"));
+				instancePatternInfo.setMinimumEniQuantity(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumEniQuantity"));
+				instancePatternInfo.setMinimumBaselineCredit(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumBaselineCredit"));
+				instancePatternInfo.setMaximumMemorySize(_ctx.floatValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MaximumMemorySize"));
+				instancePatternInfo.setCores(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].Cores"));
 				instancePatternInfo.setMinimumCpuCoreCount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumCpuCoreCount"));
 				instancePatternInfo.setMaximumCpuCoreCount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MaximumCpuCoreCount"));
-				instancePatternInfo.setMinimumEniQuantity(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumEniQuantity"));
 				instancePatternInfo.setMinimumEniPrivateIpAddressQuantity(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumEniPrivateIpAddressQuantity"));
-				instancePatternInfo.setMinimumEniIpv6AddressQuantity(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumEniIpv6AddressQuantity"));
-				instancePatternInfo.setMinimumInitialCredit(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumInitialCredit"));
-				instancePatternInfo.setMinimumBaselineCredit(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumBaselineCredit"));
-				instancePatternInfo.setMinimumMemorySize(_ctx.floatValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumMemorySize"));
-				instancePatternInfo.setMaximumMemorySize(_ctx.floatValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MaximumMemorySize"));
-				instancePatternInfo.setMinimumGpuAmount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumGpuAmount"));
+				instancePatternInfo.setInstanceFamilyLevel(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].InstanceFamilyLevel"));
 				instancePatternInfo.setMaximumGpuAmount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MaximumGpuAmount"));
+				instancePatternInfo.setMinimumMemorySize(_ctx.floatValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumMemorySize"));
+				instancePatternInfo.setMinimumEniIpv6AddressQuantity(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumEniIpv6AddressQuantity"));
+				instancePatternInfo.setMinimumGpuAmount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumGpuAmount"));
+				instancePatternInfo.setMaxPrice(_ctx.floatValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MaxPrice"));
+				instancePatternInfo.setBurstablePerformance(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].BurstablePerformance"));
+				instancePatternInfo.setMinimumInitialCredit(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MinimumInitialCredit"));
 
-				List<String> architectures = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].Architectures.Length"); k++) {
-					architectures.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].Architectures["+ k +"]"));
+				List<String> physicalProcessorModels = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].PhysicalProcessorModels.Length"); k++) {
+					physicalProcessorModels.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].PhysicalProcessorModels["+ k +"]"));
 				}
-				instancePatternInfo.setArchitectures(architectures);
+				instancePatternInfo.setPhysicalProcessorModels(physicalProcessorModels);
 
 				List<String> excludedInstanceTypes = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].ExcludedInstanceTypes.Length"); k++) {
@@ -241,11 +232,11 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 				}
 				instancePatternInfo.setExcludedInstanceTypes(excludedInstanceTypes);
 
-				List<String> instanceTypeFamilies = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].InstanceTypeFamilies.Length"); k++) {
-					instanceTypeFamilies.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].InstanceTypeFamilies["+ k +"]"));
+				List<String> cpuArchitectures = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].CpuArchitectures.Length"); k++) {
+					cpuArchitectures.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].CpuArchitectures["+ k +"]"));
 				}
-				instancePatternInfo.setInstanceTypeFamilies(instanceTypeFamilies);
+				instancePatternInfo.setCpuArchitectures(cpuArchitectures);
 
 				List<String> gpuSpecs = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].GpuSpecs.Length"); k++) {
@@ -259,17 +250,17 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 				}
 				instancePatternInfo.setInstanceCategories(instanceCategories);
 
-				List<String> cpuArchitectures = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].CpuArchitectures.Length"); k++) {
-					cpuArchitectures.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].CpuArchitectures["+ k +"]"));
+				List<String> instanceTypeFamilies = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].InstanceTypeFamilies.Length"); k++) {
+					instanceTypeFamilies.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].InstanceTypeFamilies["+ k +"]"));
 				}
-				instancePatternInfo.setCpuArchitectures(cpuArchitectures);
+				instancePatternInfo.setInstanceTypeFamilies(instanceTypeFamilies);
 
-				List<String> physicalProcessorModels = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].PhysicalProcessorModels.Length"); k++) {
-					physicalProcessorModels.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].PhysicalProcessorModels["+ k +"]"));
+				List<String> architectures = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].Architectures.Length"); k++) {
+					architectures.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].Architectures["+ k +"]"));
 				}
-				instancePatternInfo.setPhysicalProcessorModels(physicalProcessorModels);
+				instancePatternInfo.setArchitectures(architectures);
 
 				instancePatternInfos.add(instancePatternInfo);
 			}
@@ -288,10 +279,16 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			List<NetworkInterface> networkInterfaces = new ArrayList<NetworkInterface>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces.Length"); j++) {
 				NetworkInterface networkInterface = new NetworkInterface();
-				networkInterface.setInstanceType(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].InstanceType"));
 				networkInterface.setNetworkInterfaceTrafficMode(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].NetworkInterfaceTrafficMode"));
-				networkInterface.setIpv6AddressCount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].Ipv6AddressCount"));
 				networkInterface.setSecondaryPrivateIpAddressCount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].SecondaryPrivateIpAddressCount"));
+				networkInterface.setIpv6AddressCount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].Ipv6AddressCount"));
+				networkInterface.setInstanceType(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].InstanceType"));
+
+				List<String> vSwitchIds = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].VSwitchIds.Length"); k++) {
+					vSwitchIds.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].VSwitchIds["+ k +"]"));
+				}
+				networkInterface.setVSwitchIds(vSwitchIds);
 
 				List<String> securityGroupIds1 = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].NetworkInterfaces["+ j +"].SecurityGroupIds.Length"); k++) {
@@ -302,6 +299,16 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 				networkInterfaces.add(networkInterface);
 			}
 			scalingConfiguration.setNetworkInterfaces(networkInterfaces);
+
+			List<SpotPriceModel> spotPriceLimit = new ArrayList<SpotPriceModel>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotPriceLimit.Length"); j++) {
+				SpotPriceModel spotPriceModel = new SpotPriceModel();
+				spotPriceModel.setPriceLimit(_ctx.floatValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotPriceLimit["+ j +"].PriceLimit"));
+				spotPriceModel.setInstanceType(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotPriceLimit["+ j +"].InstanceType"));
+
+				spotPriceLimit.add(spotPriceModel);
+			}
+			scalingConfiguration.setSpotPriceLimit(spotPriceLimit);
 
 			scalingConfigurations.add(scalingConfiguration);
 		}

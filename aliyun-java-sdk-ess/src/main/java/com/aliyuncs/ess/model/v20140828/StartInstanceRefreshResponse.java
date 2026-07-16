@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StartInstanceRefreshResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String instanceRefreshTaskId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getInstanceRefreshTaskId() {
 		return this.instanceRefreshTaskId;
@@ -42,6 +34,14 @@ public class StartInstanceRefreshResponse extends AcsResponse {
 
 	public void setInstanceRefreshTaskId(String instanceRefreshTaskId) {
 		this.instanceRefreshTaskId = instanceRefreshTaskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

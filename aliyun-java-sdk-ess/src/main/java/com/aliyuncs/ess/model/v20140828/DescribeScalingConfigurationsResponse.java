@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<ScalingConfiguration> scalingConfigurations;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ScalingConfiguration> getScalingConfigurations() {
@@ -77,131 +77,131 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 	public static class ScalingConfiguration {
 
-		private String deploymentSetId;
-
-		private String creationTime;
-
 		private String scalingConfigurationName;
+
+		private String dedicatedHostId;
+
+		private String resourceGroupId;
 
 		private String systemDiskDescription;
 
-		private String keyPairName;
+		private Integer memory;
 
-		private String securityGroupId;
+		private Boolean systemDiskBurstingEnabled;
 
-		private String privatePoolOptionsId;
+		private Integer cpu;
 
-		private String systemDiskAutoSnapshotPolicyId;
+		private String ramRoleName;
 
-		private String spotStrategy;
+		private Long systemDiskProvisionedIops;
+
+		private String systemDiskPerformanceLevel;
+
+		private String systemDiskEncryptAlgorithm;
+
+		private String imageId;
+
+		private Boolean systemDiskEncrypted;
+
+		private String storageSetId;
+
+		private String hostName;
+
+		private Integer loadBalancerWeight;
 
 		private String scalingGroupId;
 
+		private String imageFamily;
+
+		private Boolean deletionProtection;
+
+		private String httpEndpoint;
+
+		private String internetChargeType;
+
+		private String deploymentSetId;
+
+		private String instanceName;
+
+		private String spotInterruptionBehavior;
+
+		private Integer internetMaxBandwidthOut;
+
+		private String creationTime;
+
 		private String affinity;
+
+		private String privatePoolOptionsMatchCriteria;
+
+		private String scalingConfigurationId;
+
+		private String securityEnhancementStrategy;
+
+		private String dedicatedHostClusterId;
 
 		private String tenancy;
 
+		private String imageOwnerAlias;
+
 		private Integer systemDiskSize;
 
-		private Integer ipv6AddressCount;
+		private String userData;
 
 		private Integer spotDuration;
 
 		private String lifecycleState;
 
-		private String instanceName;
+		private Integer storageSetPartitionNumber;
 
-		private String securityEnhancementStrategy;
-
-		private String userData;
-
-		private String privatePoolOptionsMatchCriteria;
-
-		private String dedicatedHostId;
-
-		private String instanceGeneration;
-
-		private String hpcClusterId;
-
-		private Boolean passwordInherit;
-
-		private Integer memory;
-
-		private String imageId;
-
-		private String imageFamily;
-
-		private String imageOwnerAlias;
-
-		private Integer loadBalancerWeight;
-
-		private String systemDiskCategory;
-
-		private String hostName;
+		private String systemDiskAutoSnapshotPolicyId;
 
 		private String systemDiskName;
 
-		private Integer internetMaxBandwidthOut;
-
-		private Integer internetMaxBandwidthIn;
-
-		private String instanceType;
-
-		private String instanceDescription;
-
-		private String ioOptimized;
-
-		private String ramRoleName;
-
-		private String systemDiskPerformanceLevel;
-
-		private Integer cpu;
-
-		private String resourceGroupId;
-
-		private String zoneId;
-
-		private String internetChargeType;
-
-		private String imageName;
-
-		private String scalingConfigurationId;
-
-		private String creditSpecification;
-
-		private String spotInterruptionBehavior;
-
-		private Boolean systemDiskEncrypted;
-
-		private String systemDiskKMSKeyId;
-
-		private String systemDiskEncryptAlgorithm;
-
-		private Long systemDiskProvisionedIops;
-
-		private Boolean systemDiskBurstingEnabled;
+		private Integer ipv6AddressCount;
 
 		private Boolean imageOptionsLoginAsNonRoot;
 
-		private Boolean deletionProtection;
+		private String instanceType;
 
-		private String storageSetId;
+		private String spotStrategy;
 
-		private Integer storageSetPartitionNumber;
+		private Boolean passwordInherit;
 
-		private String dedicatedHostClusterId;
+		private String secondaryEniVSwitchConstraint;
+
+		private String keyPairName;
+
+		private String ioOptimized;
+
+		private String systemDiskKMSKeyId;
+
+		private String zoneId;
+
+		private String hpcClusterId;
 
 		private Boolean passwordSetted;
 
-		private String httpEndpoint;
+		private String securityGroupId;
+
+		private String privatePoolOptionsId;
+
+		private String systemDiskCategory;
+
+		private String imageName;
 
 		private String httpTokens;
+
+		private Integer internetMaxBandwidthIn;
+
+		private String instanceGeneration;
+
+		private String instanceDescription;
+
+		private String creditSpecification;
 
 		private List<DataDisk> dataDisks;
 
 		private List<Tag> tags;
-
-		private List<SpotPriceModel> spotPriceLimit;
 
 		private List<InstancePatternInfo> instancePatternInfos;
 
@@ -209,37 +209,23 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private List<NetworkInterface> networkInterfaces;
 
-		private List<String> systemDiskCategories;
+		private List<SpotPriceModel> spotPriceLimit;
 
 		private List<String> weightedCapacities;
 
-		private List<String> instanceTypes;
-
 		private List<String> securityGroupIds;
 
-		private SchedulerOptions schedulerOptions;
+		private List<String> systemDiskCategories;
 
-		private SecurityOptions securityOptions;
-
-		private ResourcePoolOptions resourcePoolOptions;
+		private List<String> instanceTypes;
 
 		private CpuOptions cpuOptions;
 
-		public String getDeploymentSetId() {
-			return this.deploymentSetId;
-		}
+		private SecurityOptions securityOptions;
 
-		public void setDeploymentSetId(String deploymentSetId) {
-			this.deploymentSetId = deploymentSetId;
-		}
+		private SchedulerOptions schedulerOptions;
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
+		private ResourcePoolOptions resourcePoolOptions;
 
 		public String getScalingConfigurationName() {
 			return this.scalingConfigurationName;
@@ -247,6 +233,22 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setScalingConfigurationName(String scalingConfigurationName) {
 			this.scalingConfigurationName = scalingConfigurationName;
+		}
+
+		public String getDedicatedHostId() {
+			return this.dedicatedHostId;
+		}
+
+		public void setDedicatedHostId(String dedicatedHostId) {
+			this.dedicatedHostId = dedicatedHostId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getSystemDiskDescription() {
@@ -257,44 +259,100 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.systemDiskDescription = systemDiskDescription;
 		}
 
-		public String getKeyPairName() {
-			return this.keyPairName;
+		public Integer getMemory() {
+			return this.memory;
 		}
 
-		public void setKeyPairName(String keyPairName) {
-			this.keyPairName = keyPairName;
+		public void setMemory(Integer memory) {
+			this.memory = memory;
 		}
 
-		public String getSecurityGroupId() {
-			return this.securityGroupId;
+		public Boolean getSystemDiskBurstingEnabled() {
+			return this.systemDiskBurstingEnabled;
 		}
 
-		public void setSecurityGroupId(String securityGroupId) {
-			this.securityGroupId = securityGroupId;
+		public void setSystemDiskBurstingEnabled(Boolean systemDiskBurstingEnabled) {
+			this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
 		}
 
-		public String getPrivatePoolOptionsId() {
-			return this.privatePoolOptionsId;
+		public Integer getCpu() {
+			return this.cpu;
 		}
 
-		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
-			this.privatePoolOptionsId = privatePoolOptionsId;
+		public void setCpu(Integer cpu) {
+			this.cpu = cpu;
 		}
 
-		public String getSystemDiskAutoSnapshotPolicyId() {
-			return this.systemDiskAutoSnapshotPolicyId;
+		public String getRamRoleName() {
+			return this.ramRoleName;
 		}
 
-		public void setSystemDiskAutoSnapshotPolicyId(String systemDiskAutoSnapshotPolicyId) {
-			this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
+		public void setRamRoleName(String ramRoleName) {
+			this.ramRoleName = ramRoleName;
 		}
 
-		public String getSpotStrategy() {
-			return this.spotStrategy;
+		public Long getSystemDiskProvisionedIops() {
+			return this.systemDiskProvisionedIops;
 		}
 
-		public void setSpotStrategy(String spotStrategy) {
-			this.spotStrategy = spotStrategy;
+		public void setSystemDiskProvisionedIops(Long systemDiskProvisionedIops) {
+			this.systemDiskProvisionedIops = systemDiskProvisionedIops;
+		}
+
+		public String getSystemDiskPerformanceLevel() {
+			return this.systemDiskPerformanceLevel;
+		}
+
+		public void setSystemDiskPerformanceLevel(String systemDiskPerformanceLevel) {
+			this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+		}
+
+		public String getSystemDiskEncryptAlgorithm() {
+			return this.systemDiskEncryptAlgorithm;
+		}
+
+		public void setSystemDiskEncryptAlgorithm(String systemDiskEncryptAlgorithm) {
+			this.systemDiskEncryptAlgorithm = systemDiskEncryptAlgorithm;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public Boolean getSystemDiskEncrypted() {
+			return this.systemDiskEncrypted;
+		}
+
+		public void setSystemDiskEncrypted(Boolean systemDiskEncrypted) {
+			this.systemDiskEncrypted = systemDiskEncrypted;
+		}
+
+		public String getStorageSetId() {
+			return this.storageSetId;
+		}
+
+		public void setStorageSetId(String storageSetId) {
+			this.storageSetId = storageSetId;
+		}
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
+
+		public Integer getLoadBalancerWeight() {
+			return this.loadBalancerWeight;
+		}
+
+		public void setLoadBalancerWeight(Integer loadBalancerWeight) {
+			this.loadBalancerWeight = loadBalancerWeight;
 		}
 
 		public String getScalingGroupId() {
@@ -305,12 +363,116 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.scalingGroupId = scalingGroupId;
 		}
 
+		public String getImageFamily() {
+			return this.imageFamily;
+		}
+
+		public void setImageFamily(String imageFamily) {
+			this.imageFamily = imageFamily;
+		}
+
+		public Boolean getDeletionProtection() {
+			return this.deletionProtection;
+		}
+
+		public void setDeletionProtection(Boolean deletionProtection) {
+			this.deletionProtection = deletionProtection;
+		}
+
+		public String getHttpEndpoint() {
+			return this.httpEndpoint;
+		}
+
+		public void setHttpEndpoint(String httpEndpoint) {
+			this.httpEndpoint = httpEndpoint;
+		}
+
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
+		}
+
+		public String getDeploymentSetId() {
+			return this.deploymentSetId;
+		}
+
+		public void setDeploymentSetId(String deploymentSetId) {
+			this.deploymentSetId = deploymentSetId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getSpotInterruptionBehavior() {
+			return this.spotInterruptionBehavior;
+		}
+
+		public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
+			this.spotInterruptionBehavior = spotInterruptionBehavior;
+		}
+
+		public Integer getInternetMaxBandwidthOut() {
+			return this.internetMaxBandwidthOut;
+		}
+
+		public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
+			this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
 		public String getAffinity() {
 			return this.affinity;
 		}
 
 		public void setAffinity(String affinity) {
 			this.affinity = affinity;
+		}
+
+		public String getPrivatePoolOptionsMatchCriteria() {
+			return this.privatePoolOptionsMatchCriteria;
+		}
+
+		public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
+			this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
+		}
+
+		public String getScalingConfigurationId() {
+			return this.scalingConfigurationId;
+		}
+
+		public void setScalingConfigurationId(String scalingConfigurationId) {
+			this.scalingConfigurationId = scalingConfigurationId;
+		}
+
+		public String getSecurityEnhancementStrategy() {
+			return this.securityEnhancementStrategy;
+		}
+
+		public void setSecurityEnhancementStrategy(String securityEnhancementStrategy) {
+			this.securityEnhancementStrategy = securityEnhancementStrategy;
+		}
+
+		public String getDedicatedHostClusterId() {
+			return this.dedicatedHostClusterId;
+		}
+
+		public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
+			this.dedicatedHostClusterId = dedicatedHostClusterId;
 		}
 
 		public String getTenancy() {
@@ -321,6 +483,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.tenancy = tenancy;
 		}
 
+		public String getImageOwnerAlias() {
+			return this.imageOwnerAlias;
+		}
+
+		public void setImageOwnerAlias(String imageOwnerAlias) {
+			this.imageOwnerAlias = imageOwnerAlias;
+		}
+
 		public Integer getSystemDiskSize() {
 			return this.systemDiskSize;
 		}
@@ -329,12 +499,12 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.systemDiskSize = systemDiskSize;
 		}
 
-		public Integer getIpv6AddressCount() {
-			return this.ipv6AddressCount;
+		public String getUserData() {
+			return this.userData;
 		}
 
-		public void setIpv6AddressCount(Integer ipv6AddressCount) {
-			this.ipv6AddressCount = ipv6AddressCount;
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public Integer getSpotDuration() {
@@ -353,124 +523,20 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.lifecycleState = lifecycleState;
 		}
 
-		public String getInstanceName() {
-			return this.instanceName;
+		public Integer getStorageSetPartitionNumber() {
+			return this.storageSetPartitionNumber;
 		}
 
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setStorageSetPartitionNumber(Integer storageSetPartitionNumber) {
+			this.storageSetPartitionNumber = storageSetPartitionNumber;
 		}
 
-		public String getSecurityEnhancementStrategy() {
-			return this.securityEnhancementStrategy;
+		public String getSystemDiskAutoSnapshotPolicyId() {
+			return this.systemDiskAutoSnapshotPolicyId;
 		}
 
-		public void setSecurityEnhancementStrategy(String securityEnhancementStrategy) {
-			this.securityEnhancementStrategy = securityEnhancementStrategy;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPrivatePoolOptionsMatchCriteria() {
-			return this.privatePoolOptionsMatchCriteria;
-		}
-
-		public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
-			this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
-		}
-
-		public String getDedicatedHostId() {
-			return this.dedicatedHostId;
-		}
-
-		public void setDedicatedHostId(String dedicatedHostId) {
-			this.dedicatedHostId = dedicatedHostId;
-		}
-
-		public String getInstanceGeneration() {
-			return this.instanceGeneration;
-		}
-
-		public void setInstanceGeneration(String instanceGeneration) {
-			this.instanceGeneration = instanceGeneration;
-		}
-
-		public String getHpcClusterId() {
-			return this.hpcClusterId;
-		}
-
-		public void setHpcClusterId(String hpcClusterId) {
-			this.hpcClusterId = hpcClusterId;
-		}
-
-		public Boolean getPasswordInherit() {
-			return this.passwordInherit;
-		}
-
-		public void setPasswordInherit(Boolean passwordInherit) {
-			this.passwordInherit = passwordInherit;
-		}
-
-		public Integer getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Integer memory) {
-			this.memory = memory;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getImageFamily() {
-			return this.imageFamily;
-		}
-
-		public void setImageFamily(String imageFamily) {
-			this.imageFamily = imageFamily;
-		}
-
-		public String getImageOwnerAlias() {
-			return this.imageOwnerAlias;
-		}
-
-		public void setImageOwnerAlias(String imageOwnerAlias) {
-			this.imageOwnerAlias = imageOwnerAlias;
-		}
-
-		public Integer getLoadBalancerWeight() {
-			return this.loadBalancerWeight;
-		}
-
-		public void setLoadBalancerWeight(Integer loadBalancerWeight) {
-			this.loadBalancerWeight = loadBalancerWeight;
-		}
-
-		public String getSystemDiskCategory() {
-			return this.systemDiskCategory;
-		}
-
-		public void setSystemDiskCategory(String systemDiskCategory) {
-			this.systemDiskCategory = systemDiskCategory;
-		}
-
-		public String getHostName() {
-			return this.hostName;
-		}
-
-		public void setHostName(String hostName) {
-			this.hostName = hostName;
+		public void setSystemDiskAutoSnapshotPolicyId(String systemDiskAutoSnapshotPolicyId) {
+			this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
 		}
 
 		public String getSystemDiskName() {
@@ -481,164 +547,12 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.systemDiskName = systemDiskName;
 		}
 
-		public Integer getInternetMaxBandwidthOut() {
-			return this.internetMaxBandwidthOut;
+		public Integer getIpv6AddressCount() {
+			return this.ipv6AddressCount;
 		}
 
-		public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
-			this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		}
-
-		public Integer getInternetMaxBandwidthIn() {
-			return this.internetMaxBandwidthIn;
-		}
-
-		public void setInternetMaxBandwidthIn(Integer internetMaxBandwidthIn) {
-			this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getInstanceDescription() {
-			return this.instanceDescription;
-		}
-
-		public void setInstanceDescription(String instanceDescription) {
-			this.instanceDescription = instanceDescription;
-		}
-
-		public String getIoOptimized() {
-			return this.ioOptimized;
-		}
-
-		public void setIoOptimized(String ioOptimized) {
-			this.ioOptimized = ioOptimized;
-		}
-
-		public String getRamRoleName() {
-			return this.ramRoleName;
-		}
-
-		public void setRamRoleName(String ramRoleName) {
-			this.ramRoleName = ramRoleName;
-		}
-
-		public String getSystemDiskPerformanceLevel() {
-			return this.systemDiskPerformanceLevel;
-		}
-
-		public void setSystemDiskPerformanceLevel(String systemDiskPerformanceLevel) {
-			this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
-		}
-
-		public Integer getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(Integer cpu) {
-			this.cpu = cpu;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getInternetChargeType() {
-			return this.internetChargeType;
-		}
-
-		public void setInternetChargeType(String internetChargeType) {
-			this.internetChargeType = internetChargeType;
-		}
-
-		public String getImageName() {
-			return this.imageName;
-		}
-
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
-		}
-
-		public String getScalingConfigurationId() {
-			return this.scalingConfigurationId;
-		}
-
-		public void setScalingConfigurationId(String scalingConfigurationId) {
-			this.scalingConfigurationId = scalingConfigurationId;
-		}
-
-		public String getCreditSpecification() {
-			return this.creditSpecification;
-		}
-
-		public void setCreditSpecification(String creditSpecification) {
-			this.creditSpecification = creditSpecification;
-		}
-
-		public String getSpotInterruptionBehavior() {
-			return this.spotInterruptionBehavior;
-		}
-
-		public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
-			this.spotInterruptionBehavior = spotInterruptionBehavior;
-		}
-
-		public Boolean getSystemDiskEncrypted() {
-			return this.systemDiskEncrypted;
-		}
-
-		public void setSystemDiskEncrypted(Boolean systemDiskEncrypted) {
-			this.systemDiskEncrypted = systemDiskEncrypted;
-		}
-
-		public String getSystemDiskKMSKeyId() {
-			return this.systemDiskKMSKeyId;
-		}
-
-		public void setSystemDiskKMSKeyId(String systemDiskKMSKeyId) {
-			this.systemDiskKMSKeyId = systemDiskKMSKeyId;
-		}
-
-		public String getSystemDiskEncryptAlgorithm() {
-			return this.systemDiskEncryptAlgorithm;
-		}
-
-		public void setSystemDiskEncryptAlgorithm(String systemDiskEncryptAlgorithm) {
-			this.systemDiskEncryptAlgorithm = systemDiskEncryptAlgorithm;
-		}
-
-		public Long getSystemDiskProvisionedIops() {
-			return this.systemDiskProvisionedIops;
-		}
-
-		public void setSystemDiskProvisionedIops(Long systemDiskProvisionedIops) {
-			this.systemDiskProvisionedIops = systemDiskProvisionedIops;
-		}
-
-		public Boolean getSystemDiskBurstingEnabled() {
-			return this.systemDiskBurstingEnabled;
-		}
-
-		public void setSystemDiskBurstingEnabled(Boolean systemDiskBurstingEnabled) {
-			this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
+		public void setIpv6AddressCount(Integer ipv6AddressCount) {
+			this.ipv6AddressCount = ipv6AddressCount;
 		}
 
 		public Boolean getImageOptionsLoginAsNonRoot() {
@@ -649,36 +563,76 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.imageOptionsLoginAsNonRoot = imageOptionsLoginAsNonRoot;
 		}
 
-		public Boolean getDeletionProtection() {
-			return this.deletionProtection;
+		public String getInstanceType() {
+			return this.instanceType;
 		}
 
-		public void setDeletionProtection(Boolean deletionProtection) {
-			this.deletionProtection = deletionProtection;
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
-		public String getStorageSetId() {
-			return this.storageSetId;
+		public String getSpotStrategy() {
+			return this.spotStrategy;
 		}
 
-		public void setStorageSetId(String storageSetId) {
-			this.storageSetId = storageSetId;
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
 		}
 
-		public Integer getStorageSetPartitionNumber() {
-			return this.storageSetPartitionNumber;
+		public Boolean getPasswordInherit() {
+			return this.passwordInherit;
 		}
 
-		public void setStorageSetPartitionNumber(Integer storageSetPartitionNumber) {
-			this.storageSetPartitionNumber = storageSetPartitionNumber;
+		public void setPasswordInherit(Boolean passwordInherit) {
+			this.passwordInherit = passwordInherit;
 		}
 
-		public String getDedicatedHostClusterId() {
-			return this.dedicatedHostClusterId;
+		public String getSecondaryEniVSwitchConstraint() {
+			return this.secondaryEniVSwitchConstraint;
 		}
 
-		public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
-			this.dedicatedHostClusterId = dedicatedHostClusterId;
+		public void setSecondaryEniVSwitchConstraint(String secondaryEniVSwitchConstraint) {
+			this.secondaryEniVSwitchConstraint = secondaryEniVSwitchConstraint;
+		}
+
+		public String getKeyPairName() {
+			return this.keyPairName;
+		}
+
+		public void setKeyPairName(String keyPairName) {
+			this.keyPairName = keyPairName;
+		}
+
+		public String getIoOptimized() {
+			return this.ioOptimized;
+		}
+
+		public void setIoOptimized(String ioOptimized) {
+			this.ioOptimized = ioOptimized;
+		}
+
+		public String getSystemDiskKMSKeyId() {
+			return this.systemDiskKMSKeyId;
+		}
+
+		public void setSystemDiskKMSKeyId(String systemDiskKMSKeyId) {
+			this.systemDiskKMSKeyId = systemDiskKMSKeyId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getHpcClusterId() {
+			return this.hpcClusterId;
+		}
+
+		public void setHpcClusterId(String hpcClusterId) {
+			this.hpcClusterId = hpcClusterId;
 		}
 
 		public Boolean getPasswordSetted() {
@@ -689,12 +643,36 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.passwordSetted = passwordSetted;
 		}
 
-		public String getHttpEndpoint() {
-			return this.httpEndpoint;
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
 		}
 
-		public void setHttpEndpoint(String httpEndpoint) {
-			this.httpEndpoint = httpEndpoint;
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getPrivatePoolOptionsId() {
+			return this.privatePoolOptionsId;
+		}
+
+		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+			this.privatePoolOptionsId = privatePoolOptionsId;
+		}
+
+		public String getSystemDiskCategory() {
+			return this.systemDiskCategory;
+		}
+
+		public void setSystemDiskCategory(String systemDiskCategory) {
+			this.systemDiskCategory = systemDiskCategory;
+		}
+
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
 		}
 
 		public String getHttpTokens() {
@@ -703,6 +681,38 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setHttpTokens(String httpTokens) {
 			this.httpTokens = httpTokens;
+		}
+
+		public Integer getInternetMaxBandwidthIn() {
+			return this.internetMaxBandwidthIn;
+		}
+
+		public void setInternetMaxBandwidthIn(Integer internetMaxBandwidthIn) {
+			this.internetMaxBandwidthIn = internetMaxBandwidthIn;
+		}
+
+		public String getInstanceGeneration() {
+			return this.instanceGeneration;
+		}
+
+		public void setInstanceGeneration(String instanceGeneration) {
+			this.instanceGeneration = instanceGeneration;
+		}
+
+		public String getInstanceDescription() {
+			return this.instanceDescription;
+		}
+
+		public void setInstanceDescription(String instanceDescription) {
+			this.instanceDescription = instanceDescription;
+		}
+
+		public String getCreditSpecification() {
+			return this.creditSpecification;
+		}
+
+		public void setCreditSpecification(String creditSpecification) {
+			this.creditSpecification = creditSpecification;
 		}
 
 		public List<DataDisk> getDataDisks() {
@@ -719,14 +729,6 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
-		}
-
-		public List<SpotPriceModel> getSpotPriceLimit() {
-			return this.spotPriceLimit;
-		}
-
-		public void setSpotPriceLimit(List<SpotPriceModel> spotPriceLimit) {
-			this.spotPriceLimit = spotPriceLimit;
 		}
 
 		public List<InstancePatternInfo> getInstancePatternInfos() {
@@ -753,12 +755,12 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.networkInterfaces = networkInterfaces;
 		}
 
-		public List<String> getSystemDiskCategories() {
-			return this.systemDiskCategories;
+		public List<SpotPriceModel> getSpotPriceLimit() {
+			return this.spotPriceLimit;
 		}
 
-		public void setSystemDiskCategories(List<String> systemDiskCategories) {
-			this.systemDiskCategories = systemDiskCategories;
+		public void setSpotPriceLimit(List<SpotPriceModel> spotPriceLimit) {
+			this.spotPriceLimit = spotPriceLimit;
 		}
 
 		public List<String> getWeightedCapacities() {
@@ -769,14 +771,6 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.weightedCapacities = weightedCapacities;
 		}
 
-		public List<String> getInstanceTypes() {
-			return this.instanceTypes;
-		}
-
-		public void setInstanceTypes(List<String> instanceTypes) {
-			this.instanceTypes = instanceTypes;
-		}
-
 		public List<String> getSecurityGroupIds() {
 			return this.securityGroupIds;
 		}
@@ -785,28 +779,20 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.securityGroupIds = securityGroupIds;
 		}
 
-		public SchedulerOptions getSchedulerOptions() {
-			return this.schedulerOptions;
+		public List<String> getSystemDiskCategories() {
+			return this.systemDiskCategories;
 		}
 
-		public void setSchedulerOptions(SchedulerOptions schedulerOptions) {
-			this.schedulerOptions = schedulerOptions;
+		public void setSystemDiskCategories(List<String> systemDiskCategories) {
+			this.systemDiskCategories = systemDiskCategories;
 		}
 
-		public SecurityOptions getSecurityOptions() {
-			return this.securityOptions;
+		public List<String> getInstanceTypes() {
+			return this.instanceTypes;
 		}
 
-		public void setSecurityOptions(SecurityOptions securityOptions) {
-			this.securityOptions = securityOptions;
-		}
-
-		public ResourcePoolOptions getResourcePoolOptions() {
-			return this.resourcePoolOptions;
-		}
-
-		public void setResourcePoolOptions(ResourcePoolOptions resourcePoolOptions) {
-			this.resourcePoolOptions = resourcePoolOptions;
+		public void setInstanceTypes(List<String> instanceTypes) {
+			this.instanceTypes = instanceTypes;
 		}
 
 		public CpuOptions getCpuOptions() {
@@ -817,42 +803,66 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.cpuOptions = cpuOptions;
 		}
 
+		public SecurityOptions getSecurityOptions() {
+			return this.securityOptions;
+		}
+
+		public void setSecurityOptions(SecurityOptions securityOptions) {
+			this.securityOptions = securityOptions;
+		}
+
+		public SchedulerOptions getSchedulerOptions() {
+			return this.schedulerOptions;
+		}
+
+		public void setSchedulerOptions(SchedulerOptions schedulerOptions) {
+			this.schedulerOptions = schedulerOptions;
+		}
+
+		public ResourcePoolOptions getResourcePoolOptions() {
+			return this.resourcePoolOptions;
+		}
+
+		public void setResourcePoolOptions(ResourcePoolOptions resourcePoolOptions) {
+			this.resourcePoolOptions = resourcePoolOptions;
+		}
+
 		public static class DataDisk {
 
-			private String performanceLevel;
+			private Boolean burstingEnabled;
 
 			private String description;
-
-			private String snapshotId;
-
-			private String device;
-
-			private Integer size;
-
-			private String diskName;
-
-			private String autoSnapshotPolicyId;
 
 			private String category;
 
 			private String kMSKeyId;
 
-			private Boolean deleteWithInstance;
+			private String performanceLevel;
+
+			private String device;
+
+			private Integer size;
 
 			private String encrypted;
 
+			private Boolean deleteWithInstance;
+
+			private String autoSnapshotPolicyId;
+
+			private String diskName;
+
 			private Long provisionedIops;
 
-			private Boolean burstingEnabled;
+			private String snapshotId;
 
 			private List<String> categories;
 
-			public String getPerformanceLevel() {
-				return this.performanceLevel;
+			public Boolean getBurstingEnabled() {
+				return this.burstingEnabled;
 			}
 
-			public void setPerformanceLevel(String performanceLevel) {
-				this.performanceLevel = performanceLevel;
+			public void setBurstingEnabled(Boolean burstingEnabled) {
+				this.burstingEnabled = burstingEnabled;
 			}
 
 			public String getDescription() {
@@ -861,46 +871,6 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
-			}
-
-			public String getSnapshotId() {
-				return this.snapshotId;
-			}
-
-			public void setSnapshotId(String snapshotId) {
-				this.snapshotId = snapshotId;
-			}
-
-			public String getDevice() {
-				return this.device;
-			}
-
-			public void setDevice(String device) {
-				this.device = device;
-			}
-
-			public Integer getSize() {
-				return this.size;
-			}
-
-			public void setSize(Integer size) {
-				this.size = size;
-			}
-
-			public String getDiskName() {
-				return this.diskName;
-			}
-
-			public void setDiskName(String diskName) {
-				this.diskName = diskName;
-			}
-
-			public String getAutoSnapshotPolicyId() {
-				return this.autoSnapshotPolicyId;
-			}
-
-			public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
-				this.autoSnapshotPolicyId = autoSnapshotPolicyId;
 			}
 
 			public String getCategory() {
@@ -919,12 +889,28 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 				this.kMSKeyId = kMSKeyId;
 			}
 
-			public Boolean getDeleteWithInstance() {
-				return this.deleteWithInstance;
+			public String getPerformanceLevel() {
+				return this.performanceLevel;
 			}
 
-			public void setDeleteWithInstance(Boolean deleteWithInstance) {
-				this.deleteWithInstance = deleteWithInstance;
+			public void setPerformanceLevel(String performanceLevel) {
+				this.performanceLevel = performanceLevel;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
+			}
+
+			public Integer getSize() {
+				return this.size;
+			}
+
+			public void setSize(Integer size) {
+				this.size = size;
 			}
 
 			public String getEncrypted() {
@@ -935,6 +921,30 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 				this.encrypted = encrypted;
 			}
 
+			public Boolean getDeleteWithInstance() {
+				return this.deleteWithInstance;
+			}
+
+			public void setDeleteWithInstance(Boolean deleteWithInstance) {
+				this.deleteWithInstance = deleteWithInstance;
+			}
+
+			public String getAutoSnapshotPolicyId() {
+				return this.autoSnapshotPolicyId;
+			}
+
+			public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+				this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+			}
+
+			public String getDiskName() {
+				return this.diskName;
+			}
+
+			public void setDiskName(String diskName) {
+				this.diskName = diskName;
+			}
+
 			public Long getProvisionedIops() {
 				return this.provisionedIops;
 			}
@@ -943,12 +953,12 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 				this.provisionedIops = provisionedIops;
 			}
 
-			public Boolean getBurstingEnabled() {
-				return this.burstingEnabled;
+			public String getSnapshotId() {
+				return this.snapshotId;
 			}
 
-			public void setBurstingEnabled(Boolean burstingEnabled) {
-				this.burstingEnabled = burstingEnabled;
+			public void setSnapshotId(String snapshotId) {
+				this.snapshotId = snapshotId;
 			}
 
 			public List<String> getCategories() {
@@ -962,17 +972,9 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -981,94 +983,63 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			public void setValue(String value) {
 				this.value = value;
 			}
-		}
 
-		public static class SpotPriceModel {
-
-			private String instanceType;
-
-			private Float priceLimit;
-
-			public String getInstanceType() {
-				return this.instanceType;
+			public String getKey() {
+				return this.key;
 			}
 
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
-			}
-
-			public Float getPriceLimit() {
-				return this.priceLimit;
-			}
-
-			public void setPriceLimit(Float priceLimit) {
-				this.priceLimit = priceLimit;
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 
 		public static class InstancePatternInfo {
 
-			private Float maxPrice;
-
-			private Integer cores;
-
 			private Float memory;
 
-			private String instanceFamilyLevel;
+			private Integer minimumEniQuantity;
 
-			private String burstablePerformance;
+			private Integer minimumBaselineCredit;
+
+			private Float maximumMemorySize;
+
+			private Integer cores;
 
 			private Integer minimumCpuCoreCount;
 
 			private Integer maximumCpuCoreCount;
 
-			private Integer minimumEniQuantity;
-
 			private Integer minimumEniPrivateIpAddressQuantity;
 
-			private Integer minimumEniIpv6AddressQuantity;
-
-			private Integer minimumInitialCredit;
-
-			private Integer minimumBaselineCredit;
-
-			private Float minimumMemorySize;
-
-			private Float maximumMemorySize;
-
-			private Integer minimumGpuAmount;
+			private String instanceFamilyLevel;
 
 			private Integer maximumGpuAmount;
 
-			private List<String> architectures;
+			private Float minimumMemorySize;
+
+			private Integer minimumEniIpv6AddressQuantity;
+
+			private Integer minimumGpuAmount;
+
+			private Float maxPrice;
+
+			private String burstablePerformance;
+
+			private Integer minimumInitialCredit;
+
+			private List<String> physicalProcessorModels;
 
 			private List<String> excludedInstanceTypes;
 
-			private List<String> instanceTypeFamilies;
+			private List<String> cpuArchitectures;
 
 			private List<String> gpuSpecs;
 
 			private List<String> instanceCategories;
 
-			private List<String> cpuArchitectures;
+			private List<String> instanceTypeFamilies;
 
-			private List<String> physicalProcessorModels;
-
-			public Float getMaxPrice() {
-				return this.maxPrice;
-			}
-
-			public void setMaxPrice(Float maxPrice) {
-				this.maxPrice = maxPrice;
-			}
-
-			public Integer getCores() {
-				return this.cores;
-			}
-
-			public void setCores(Integer cores) {
-				this.cores = cores;
-			}
+			private List<String> architectures;
 
 			public Float getMemory() {
 				return this.memory;
@@ -1078,20 +1049,36 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 				this.memory = memory;
 			}
 
-			public String getInstanceFamilyLevel() {
-				return this.instanceFamilyLevel;
+			public Integer getMinimumEniQuantity() {
+				return this.minimumEniQuantity;
 			}
 
-			public void setInstanceFamilyLevel(String instanceFamilyLevel) {
-				this.instanceFamilyLevel = instanceFamilyLevel;
+			public void setMinimumEniQuantity(Integer minimumEniQuantity) {
+				this.minimumEniQuantity = minimumEniQuantity;
 			}
 
-			public String getBurstablePerformance() {
-				return this.burstablePerformance;
+			public Integer getMinimumBaselineCredit() {
+				return this.minimumBaselineCredit;
 			}
 
-			public void setBurstablePerformance(String burstablePerformance) {
-				this.burstablePerformance = burstablePerformance;
+			public void setMinimumBaselineCredit(Integer minimumBaselineCredit) {
+				this.minimumBaselineCredit = minimumBaselineCredit;
+			}
+
+			public Float getMaximumMemorySize() {
+				return this.maximumMemorySize;
+			}
+
+			public void setMaximumMemorySize(Float maximumMemorySize) {
+				this.maximumMemorySize = maximumMemorySize;
+			}
+
+			public Integer getCores() {
+				return this.cores;
+			}
+
+			public void setCores(Integer cores) {
+				this.cores = cores;
 			}
 
 			public Integer getMinimumCpuCoreCount() {
@@ -1110,14 +1097,6 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 				this.maximumCpuCoreCount = maximumCpuCoreCount;
 			}
 
-			public Integer getMinimumEniQuantity() {
-				return this.minimumEniQuantity;
-			}
-
-			public void setMinimumEniQuantity(Integer minimumEniQuantity) {
-				this.minimumEniQuantity = minimumEniQuantity;
-			}
-
 			public Integer getMinimumEniPrivateIpAddressQuantity() {
 				return this.minimumEniPrivateIpAddressQuantity;
 			}
@@ -1126,52 +1105,12 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 				this.minimumEniPrivateIpAddressQuantity = minimumEniPrivateIpAddressQuantity;
 			}
 
-			public Integer getMinimumEniIpv6AddressQuantity() {
-				return this.minimumEniIpv6AddressQuantity;
+			public String getInstanceFamilyLevel() {
+				return this.instanceFamilyLevel;
 			}
 
-			public void setMinimumEniIpv6AddressQuantity(Integer minimumEniIpv6AddressQuantity) {
-				this.minimumEniIpv6AddressQuantity = minimumEniIpv6AddressQuantity;
-			}
-
-			public Integer getMinimumInitialCredit() {
-				return this.minimumInitialCredit;
-			}
-
-			public void setMinimumInitialCredit(Integer minimumInitialCredit) {
-				this.minimumInitialCredit = minimumInitialCredit;
-			}
-
-			public Integer getMinimumBaselineCredit() {
-				return this.minimumBaselineCredit;
-			}
-
-			public void setMinimumBaselineCredit(Integer minimumBaselineCredit) {
-				this.minimumBaselineCredit = minimumBaselineCredit;
-			}
-
-			public Float getMinimumMemorySize() {
-				return this.minimumMemorySize;
-			}
-
-			public void setMinimumMemorySize(Float minimumMemorySize) {
-				this.minimumMemorySize = minimumMemorySize;
-			}
-
-			public Float getMaximumMemorySize() {
-				return this.maximumMemorySize;
-			}
-
-			public void setMaximumMemorySize(Float maximumMemorySize) {
-				this.maximumMemorySize = maximumMemorySize;
-			}
-
-			public Integer getMinimumGpuAmount() {
-				return this.minimumGpuAmount;
-			}
-
-			public void setMinimumGpuAmount(Integer minimumGpuAmount) {
-				this.minimumGpuAmount = minimumGpuAmount;
+			public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+				this.instanceFamilyLevel = instanceFamilyLevel;
 			}
 
 			public Integer getMaximumGpuAmount() {
@@ -1182,12 +1121,60 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 				this.maximumGpuAmount = maximumGpuAmount;
 			}
 
-			public List<String> getArchitectures() {
-				return this.architectures;
+			public Float getMinimumMemorySize() {
+				return this.minimumMemorySize;
 			}
 
-			public void setArchitectures(List<String> architectures) {
-				this.architectures = architectures;
+			public void setMinimumMemorySize(Float minimumMemorySize) {
+				this.minimumMemorySize = minimumMemorySize;
+			}
+
+			public Integer getMinimumEniIpv6AddressQuantity() {
+				return this.minimumEniIpv6AddressQuantity;
+			}
+
+			public void setMinimumEniIpv6AddressQuantity(Integer minimumEniIpv6AddressQuantity) {
+				this.minimumEniIpv6AddressQuantity = minimumEniIpv6AddressQuantity;
+			}
+
+			public Integer getMinimumGpuAmount() {
+				return this.minimumGpuAmount;
+			}
+
+			public void setMinimumGpuAmount(Integer minimumGpuAmount) {
+				this.minimumGpuAmount = minimumGpuAmount;
+			}
+
+			public Float getMaxPrice() {
+				return this.maxPrice;
+			}
+
+			public void setMaxPrice(Float maxPrice) {
+				this.maxPrice = maxPrice;
+			}
+
+			public String getBurstablePerformance() {
+				return this.burstablePerformance;
+			}
+
+			public void setBurstablePerformance(String burstablePerformance) {
+				this.burstablePerformance = burstablePerformance;
+			}
+
+			public Integer getMinimumInitialCredit() {
+				return this.minimumInitialCredit;
+			}
+
+			public void setMinimumInitialCredit(Integer minimumInitialCredit) {
+				this.minimumInitialCredit = minimumInitialCredit;
+			}
+
+			public List<String> getPhysicalProcessorModels() {
+				return this.physicalProcessorModels;
+			}
+
+			public void setPhysicalProcessorModels(List<String> physicalProcessorModels) {
+				this.physicalProcessorModels = physicalProcessorModels;
 			}
 
 			public List<String> getExcludedInstanceTypes() {
@@ -1198,12 +1185,12 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 				this.excludedInstanceTypes = excludedInstanceTypes;
 			}
 
-			public List<String> getInstanceTypeFamilies() {
-				return this.instanceTypeFamilies;
+			public List<String> getCpuArchitectures() {
+				return this.cpuArchitectures;
 			}
 
-			public void setInstanceTypeFamilies(List<String> instanceTypeFamilies) {
-				this.instanceTypeFamilies = instanceTypeFamilies;
+			public void setCpuArchitectures(List<String> cpuArchitectures) {
+				this.cpuArchitectures = cpuArchitectures;
 			}
 
 			public List<String> getGpuSpecs() {
@@ -1222,20 +1209,20 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 				this.instanceCategories = instanceCategories;
 			}
 
-			public List<String> getCpuArchitectures() {
-				return this.cpuArchitectures;
+			public List<String> getInstanceTypeFamilies() {
+				return this.instanceTypeFamilies;
 			}
 
-			public void setCpuArchitectures(List<String> cpuArchitectures) {
-				this.cpuArchitectures = cpuArchitectures;
+			public void setInstanceTypeFamilies(List<String> instanceTypeFamilies) {
+				this.instanceTypeFamilies = instanceTypeFamilies;
 			}
 
-			public List<String> getPhysicalProcessorModels() {
-				return this.physicalProcessorModels;
+			public List<String> getArchitectures() {
+				return this.architectures;
 			}
 
-			public void setPhysicalProcessorModels(List<String> physicalProcessorModels) {
-				this.physicalProcessorModels = physicalProcessorModels;
+			public void setArchitectures(List<String> architectures) {
+				this.architectures = architectures;
 			}
 		}
 
@@ -1264,23 +1251,17 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public static class NetworkInterface {
 
-			private String instanceType;
-
 			private String networkInterfaceTrafficMode;
-
-			private Integer ipv6AddressCount;
 
 			private Integer secondaryPrivateIpAddressCount;
 
+			private Integer ipv6AddressCount;
+
+			private String instanceType;
+
+			private List<String> vSwitchIds;
+
 			private List<String> securityGroupIds1;
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
-			}
 
 			public String getNetworkInterfaceTrafficMode() {
 				return this.networkInterfaceTrafficMode;
@@ -1288,6 +1269,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
 				this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+			}
+
+			public Integer getSecondaryPrivateIpAddressCount() {
+				return this.secondaryPrivateIpAddressCount;
+			}
+
+			public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
+				this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
 			}
 
 			public Integer getIpv6AddressCount() {
@@ -1298,12 +1287,20 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 				this.ipv6AddressCount = ipv6AddressCount;
 			}
 
-			public Integer getSecondaryPrivateIpAddressCount() {
-				return this.secondaryPrivateIpAddressCount;
+			public String getInstanceType() {
+				return this.instanceType;
 			}
 
-			public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
-				this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public List<String> getVSwitchIds() {
+				return this.vSwitchIds;
+			}
+
+			public void setVSwitchIds(List<String> vSwitchIds) {
+				this.vSwitchIds = vSwitchIds;
 			}
 
 			public List<String> getSecurityGroupIds1() {
@@ -1315,16 +1312,39 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			}
 		}
 
-		public static class SchedulerOptions {
+		public static class SpotPriceModel {
 
-			private String managedPrivateSpaceId;
+			private Float priceLimit;
 
-			public String getManagedPrivateSpaceId() {
-				return this.managedPrivateSpaceId;
+			private String instanceType;
+
+			public Float getPriceLimit() {
+				return this.priceLimit;
 			}
 
-			public void setManagedPrivateSpaceId(String managedPrivateSpaceId) {
-				this.managedPrivateSpaceId = managedPrivateSpaceId;
+			public void setPriceLimit(Float priceLimit) {
+				this.priceLimit = priceLimit;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+		}
+
+		public static class CpuOptions {
+
+			private String nestedVirtualization;
+
+			public String getNestedVirtualization() {
+				return this.nestedVirtualization;
+			}
+
+			public void setNestedVirtualization(String nestedVirtualization) {
+				this.nestedVirtualization = nestedVirtualization;
 			}
 		}
 
@@ -1338,6 +1358,19 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			public void setConfidentialComputingMode(String confidentialComputingMode) {
 				this.confidentialComputingMode = confidentialComputingMode;
+			}
+		}
+
+		public static class SchedulerOptions {
+
+			private String managedPrivateSpaceId;
+
+			public String getManagedPrivateSpaceId() {
+				return this.managedPrivateSpaceId;
+			}
+
+			public void setManagedPrivateSpaceId(String managedPrivateSpaceId) {
+				this.managedPrivateSpaceId = managedPrivateSpaceId;
 			}
 		}
 
@@ -1375,17 +1408,9 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			public static class PrivatePoolTag {
 
-				private String key;
-
 				private String value;
 
-				public String getKey() {
-					return this.key;
-				}
-
-				public void setKey(String key) {
-					this.key = key;
-				}
+				private String key;
 
 				public String getValue() {
 					return this.value;
@@ -1394,19 +1419,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 				public void setValue(String value) {
 					this.value = value;
 				}
-			}
-		}
 
-		public static class CpuOptions {
+				public String getKey() {
+					return this.key;
+				}
 
-			private String nestedVirtualization;
-
-			public String getNestedVirtualization() {
-				return this.nestedVirtualization;
-			}
-
-			public void setNestedVirtualization(String nestedVirtualization) {
-				this.nestedVirtualization = nestedVirtualization;
+				public void setKey(String key) {
+					this.key = key;
+				}
 			}
 		}
 	}

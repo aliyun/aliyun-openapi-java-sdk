@@ -158,8 +158,8 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPath" , containers.get(depth1).getVolumeMounts().get(depth2).getMountPath());
 						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".ReadOnly" , containers.get(depth1).getVolumeMounts().get(depth2).getReadOnly());
 						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPropagation" , containers.get(depth1).getVolumeMounts().get(depth2).getMountPropagation());
-						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".Name" , containers.get(depth1).getVolumeMounts().get(depth2).getName());
 						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".SubPath" , containers.get(depth1).getVolumeMounts().get(depth2).getSubPath());
+						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".Name" , containers.get(depth1).getVolumeMounts().get(depth2).getName());
 					}
 				}
 				putQueryParameter("Container." + (depth1 + 1) + ".Image" , containers.get(depth1).getImage());
@@ -173,8 +173,8 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 				putQueryParameter("Container." + (depth1 + 1) + ".Gpu" , containers.get(depth1).getGpu());
 				putQueryParameter("Container." + (depth1 + 1) + ".StdinOnce" , containers.get(depth1).getStdinOnce());
 				putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePostStartHandlerTcpSocketHost" , containers.get(depth1).getLifecyclePostStartHandlerTcpSocketHost());
-				putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.SuccessThreshold" , containers.get(depth1).getLivenessProbeSuccessThreshold());
 				putQueryParameter("Container." + (depth1 + 1) + ".SecurityContext.RunAsUser" , containers.get(depth1).getSecurityContextRunAsUser());
+				putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.SuccessThreshold" , containers.get(depth1).getLivenessProbeSuccessThreshold());
 				putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.PeriodSeconds" , containers.get(depth1).getLivenessProbePeriodSeconds());
 				putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.InitialDelaySeconds" , containers.get(depth1).getLivenessProbeInitialDelaySeconds());
 				if (containers.get(depth1).getPorts() != null) {
@@ -198,8 +198,8 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 						putQueryParameter("Container." + (depth1 + 1) + ".Arg." + (i + 1) , containers.get(depth1).getArgs().get(i));
 					}
 				}
-				putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.SuccessThreshold" , containers.get(depth1).getReadinessProbeSuccessThreshold());
 				putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePostStartHandlerHttpGetPath" , containers.get(depth1).getLifecyclePostStartHandlerHttpGetPath());
+				putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.SuccessThreshold" , containers.get(depth1).getReadinessProbeSuccessThreshold());
 				if (containers.get(depth1).getLifecyclePreStopHandlerExecs() != null) {
 					for (int i = 0; i < containers.get(depth1).getLifecyclePreStopHandlerExecs().size(); i++) {
 						putQueryParameter("Container." + (depth1 + 1) + ".LifecyclePreStopHandlerExec." + (i + 1) , containers.get(depth1).getLifecyclePreStopHandlerExecs().get(i));
@@ -239,8 +239,8 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 				putQueryParameter("Container." + (depth1 + 1) + ".Tty" , containers.get(depth1).getTty());
 				putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.FailureThreshold" , containers.get(depth1).getLivenessProbeFailureThreshold());
 				putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.TimeoutSeconds" , containers.get(depth1).getReadinessProbeTimeoutSeconds());
-				putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.TcpSocket.Port" , containers.get(depth1).getReadinessProbeTcpSocketPort());
 				putQueryParameter("Container." + (depth1 + 1) + ".LivenessProbe.HttpGet.Scheme" , containers.get(depth1).getLivenessProbeHttpGetScheme());
+				putQueryParameter("Container." + (depth1 + 1) + ".ReadinessProbe.TcpSocket.Port" , containers.get(depth1).getReadinessProbeTcpSocketPort());
 			}
 		}	
 	}
@@ -685,6 +685,12 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 		if (initContainers != null) {
 			for (int depth1 = 0; depth1 < initContainers.size(); depth1++) {
 				putQueryParameter("InitContainer." + (depth1 + 1) + ".Image" , initContainers.get(depth1).getImage());
+				putQueryParameter("InitContainer." + (depth1 + 1) + ".Memory" , initContainers.get(depth1).getMemory());
+				if (initContainers.get(depth1).getSecurityContextCapabilityAdds() != null) {
+					for (int i = 0; i < initContainers.get(depth1).getSecurityContextCapabilityAdds().size(); i++) {
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".SecurityContext.Capability.Add." + (i + 1) , initContainers.get(depth1).getSecurityContextCapabilityAdds().get(i));
+					}
+				}
 				if (initContainers.get(depth1).getInitContainerEnvironmentVars() != null) {
 					for (int depth2 = 0; depth2 < initContainers.get(depth1).getInitContainerEnvironmentVars().size(); depth2++) {
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".InitContainerEnvironmentVar." + (depth2 + 1) + ".FieldRef.FieldPath" , initContainers.get(depth1).getInitContainerEnvironmentVars().get(depth2).getFieldRefFieldPath());
@@ -692,12 +698,6 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".InitContainerEnvironmentVar." + (depth2 + 1) + ".Key" , initContainers.get(depth1).getInitContainerEnvironmentVars().get(depth2).getKey());
 					}
 				}
-				if (initContainers.get(depth1).getSecurityContextCapabilityAdds() != null) {
-					for (int i = 0; i < initContainers.get(depth1).getSecurityContextCapabilityAdds().size(); i++) {
-						putQueryParameter("InitContainer." + (depth1 + 1) + ".SecurityContext.Capability.Add." + (i + 1) , initContainers.get(depth1).getSecurityContextCapabilityAdds().get(i));
-					}
-				}
-				putQueryParameter("InitContainer." + (depth1 + 1) + ".Memory" , initContainers.get(depth1).getMemory());
 				putQueryParameter("InitContainer." + (depth1 + 1) + ".WorkingDir" , initContainers.get(depth1).getWorkingDir());
 				putQueryParameter("InitContainer." + (depth1 + 1) + ".Cpu" , initContainers.get(depth1).getCpu());
 				putQueryParameter("InitContainer." + (depth1 + 1) + ".Gpu" , initContainers.get(depth1).getGpu());
@@ -725,8 +725,8 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".InitContainerVolumeMount." + (depth2 + 1) + ".MountPath" , initContainers.get(depth1).getInitContainerVolumeMounts().get(depth2).getMountPath());
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".InitContainerVolumeMount." + (depth2 + 1) + ".ReadOnly" , initContainers.get(depth1).getInitContainerVolumeMounts().get(depth2).getReadOnly());
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".InitContainerVolumeMount." + (depth2 + 1) + ".MountPropagation" , initContainers.get(depth1).getInitContainerVolumeMounts().get(depth2).getMountPropagation());
-						putQueryParameter("InitContainer." + (depth1 + 1) + ".InitContainerVolumeMount." + (depth2 + 1) + ".Name" , initContainers.get(depth1).getInitContainerVolumeMounts().get(depth2).getName());
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".InitContainerVolumeMount." + (depth2 + 1) + ".SubPath" , initContainers.get(depth1).getInitContainerVolumeMounts().get(depth2).getSubPath());
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".InitContainerVolumeMount." + (depth2 + 1) + ".Name" , initContainers.get(depth1).getInitContainerVolumeMounts().get(depth2).getName());
 					}
 				}
 				putQueryParameter("InitContainer." + (depth1 + 1) + ".SecurityContext.ReadOnlyRootFilesystem" , initContainers.get(depth1).getSecurityContextReadOnlyRootFilesystem());
@@ -924,9 +924,9 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 
 		private String lifecyclePostStartHandlerTcpSocketHost;
 
-		private Integer livenessProbeSuccessThreshold;
-
 		private Long securityContextRunAsUser;
+
+		private Integer livenessProbeSuccessThreshold;
 
 		private Integer livenessProbePeriodSeconds;
 
@@ -956,9 +956,9 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 
 		private List<String> args;
 
-		private Integer readinessProbeSuccessThreshold;
-
 		private String lifecyclePostStartHandlerHttpGetPath;
+
+		private Integer readinessProbeSuccessThreshold;
 
 		private List<String> lifecyclePreStopHandlerExecs;
 
@@ -994,9 +994,9 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 
 		private Integer readinessProbeTimeoutSeconds;
 
-		private Integer readinessProbeTcpSocketPort;
-
 		private String livenessProbeHttpGetScheme;
+
+		private Integer readinessProbeTcpSocketPort;
 
 		public Boolean getStdin() {
 			return this.stdin;
@@ -1118,20 +1118,20 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 			this.lifecyclePostStartHandlerTcpSocketHost = lifecyclePostStartHandlerTcpSocketHost;
 		}
 
-		public Integer getLivenessProbeSuccessThreshold() {
-			return this.livenessProbeSuccessThreshold;
-		}
-
-		public void setLivenessProbeSuccessThreshold(Integer livenessProbeSuccessThreshold) {
-			this.livenessProbeSuccessThreshold = livenessProbeSuccessThreshold;
-		}
-
 		public Long getSecurityContextRunAsUser() {
 			return this.securityContextRunAsUser;
 		}
 
 		public void setSecurityContextRunAsUser(Long securityContextRunAsUser) {
 			this.securityContextRunAsUser = securityContextRunAsUser;
+		}
+
+		public Integer getLivenessProbeSuccessThreshold() {
+			return this.livenessProbeSuccessThreshold;
+		}
+
+		public void setLivenessProbeSuccessThreshold(Integer livenessProbeSuccessThreshold) {
+			this.livenessProbeSuccessThreshold = livenessProbeSuccessThreshold;
 		}
 
 		public Integer getLivenessProbePeriodSeconds() {
@@ -1246,20 +1246,20 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 			this.args = args;
 		}
 
-		public Integer getReadinessProbeSuccessThreshold() {
-			return this.readinessProbeSuccessThreshold;
-		}
-
-		public void setReadinessProbeSuccessThreshold(Integer readinessProbeSuccessThreshold) {
-			this.readinessProbeSuccessThreshold = readinessProbeSuccessThreshold;
-		}
-
 		public String getLifecyclePostStartHandlerHttpGetPath() {
 			return this.lifecyclePostStartHandlerHttpGetPath;
 		}
 
 		public void setLifecyclePostStartHandlerHttpGetPath(String lifecyclePostStartHandlerHttpGetPath) {
 			this.lifecyclePostStartHandlerHttpGetPath = lifecyclePostStartHandlerHttpGetPath;
+		}
+
+		public Integer getReadinessProbeSuccessThreshold() {
+			return this.readinessProbeSuccessThreshold;
+		}
+
+		public void setReadinessProbeSuccessThreshold(Integer readinessProbeSuccessThreshold) {
+			this.readinessProbeSuccessThreshold = readinessProbeSuccessThreshold;
 		}
 
 		public List<String> getLifecyclePreStopHandlerExecs() {
@@ -1398,20 +1398,20 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 			this.readinessProbeTimeoutSeconds = readinessProbeTimeoutSeconds;
 		}
 
-		public Integer getReadinessProbeTcpSocketPort() {
-			return this.readinessProbeTcpSocketPort;
-		}
-
-		public void setReadinessProbeTcpSocketPort(Integer readinessProbeTcpSocketPort) {
-			this.readinessProbeTcpSocketPort = readinessProbeTcpSocketPort;
-		}
-
 		public String getLivenessProbeHttpGetScheme() {
 			return this.livenessProbeHttpGetScheme;
 		}
 
 		public void setLivenessProbeHttpGetScheme(String livenessProbeHttpGetScheme) {
 			this.livenessProbeHttpGetScheme = livenessProbeHttpGetScheme;
+		}
+
+		public Integer getReadinessProbeTcpSocketPort() {
+			return this.readinessProbeTcpSocketPort;
+		}
+
+		public void setReadinessProbeTcpSocketPort(Integer readinessProbeTcpSocketPort) {
+			this.readinessProbeTcpSocketPort = readinessProbeTcpSocketPort;
 		}
 
 		public static class VolumeMount {
@@ -1422,9 +1422,9 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 
 			private String mountPropagation;
 
-			private String name;
-
 			private String subPath;
+
+			private String name;
 
 			public String getMountPath() {
 				return this.mountPath;
@@ -1450,20 +1450,20 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 				this.mountPropagation = mountPropagation;
 			}
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
 			public String getSubPath() {
 				return this.subPath;
 			}
 
 			public void setSubPath(String subPath) {
 				this.subPath = subPath;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 
@@ -1826,11 +1826,11 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 
 		private String image;
 
-		private List<InitContainerEnvironmentVar> initContainerEnvironmentVars;
+		private Float memory;
 
 		private List<String> securityContextCapabilityAdds;
 
-		private Float memory;
+		private List<InitContainerEnvironmentVar> initContainerEnvironmentVars;
 
 		private String workingDir;
 
@@ -1862,12 +1862,12 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 			this.image = image;
 		}
 
-		public List<InitContainerEnvironmentVar> getInitContainerEnvironmentVars() {
-			return this.initContainerEnvironmentVars;
+		public Float getMemory() {
+			return this.memory;
 		}
 
-		public void setInitContainerEnvironmentVars(List<InitContainerEnvironmentVar> initContainerEnvironmentVars) {
-			this.initContainerEnvironmentVars = initContainerEnvironmentVars;
+		public void setMemory(Float memory) {
+			this.memory = memory;
 		}
 
 		public List<String> getSecurityContextCapabilityAdds() {
@@ -1878,12 +1878,12 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 			this.securityContextCapabilityAdds = securityContextCapabilityAdds;
 		}
 
-		public Float getMemory() {
-			return this.memory;
+		public List<InitContainerEnvironmentVar> getInitContainerEnvironmentVars() {
+			return this.initContainerEnvironmentVars;
 		}
 
-		public void setMemory(Float memory) {
-			this.memory = memory;
+		public void setInitContainerEnvironmentVars(List<InitContainerEnvironmentVar> initContainerEnvironmentVars) {
+			this.initContainerEnvironmentVars = initContainerEnvironmentVars;
 		}
 
 		public String getWorkingDir() {
@@ -2038,9 +2038,9 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 
 			private String mountPropagation;
 
-			private String name;
-
 			private String subPath;
+
+			private String name;
 
 			public String getMountPath() {
 				return this.mountPath;
@@ -2066,20 +2066,20 @@ public class ModifyEciScalingConfigurationRequest extends RpcAcsRequest<ModifyEc
 				this.mountPropagation = mountPropagation;
 			}
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
 			public String getSubPath() {
 				return this.subPath;
 			}
 
 			public void setSubPath(String subPath) {
 				this.subPath = subPath;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

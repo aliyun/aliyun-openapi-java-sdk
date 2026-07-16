@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RemoveInstancesResponse extends AcsResponse {
 
-	private String scalingActivityId;
-
 	private String requestId;
 
+	private String scalingActivityId;
+
 	private List<IgnoredInstance> ignoredInstances;
-
-	public String getScalingActivityId() {
-		return this.scalingActivityId;
-	}
-
-	public void setScalingActivityId(String scalingActivityId) {
-		this.scalingActivityId = scalingActivityId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class RemoveInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getScalingActivityId() {
+		return this.scalingActivityId;
+	}
+
+	public void setScalingActivityId(String scalingActivityId) {
+		this.scalingActivityId = scalingActivityId;
 	}
 
 	public List<IgnoredInstance> getIgnoredInstances() {
@@ -57,11 +57,19 @@ public class RemoveInstancesResponse extends AcsResponse {
 
 	public static class IgnoredInstance {
 
+		private String message;
+
 		private String instanceId;
 
 		private String code;
 
-		private String message;
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -77,14 +85,6 @@ public class RemoveInstancesResponse extends AcsResponse {
 
 		public void setCode(String code) {
 			this.code = code;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
 		}
 	}
 

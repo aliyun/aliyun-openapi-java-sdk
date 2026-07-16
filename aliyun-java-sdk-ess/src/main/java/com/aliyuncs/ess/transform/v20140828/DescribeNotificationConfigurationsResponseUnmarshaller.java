@@ -31,9 +31,9 @@ public class DescribeNotificationConfigurationsResponseUnmarshaller {
 		List<NotificationConfigurationModel> notificationConfigurationModels = new ArrayList<NotificationConfigurationModel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels.Length"); i++) {
 			NotificationConfigurationModel notificationConfigurationModel = new NotificationConfigurationModel();
+			notificationConfigurationModel.setTimeZone(_ctx.stringValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels["+ i +"].TimeZone"));
 			notificationConfigurationModel.setNotificationArn(_ctx.stringValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels["+ i +"].NotificationArn"));
 			notificationConfigurationModel.setScalingGroupId(_ctx.stringValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels["+ i +"].ScalingGroupId"));
-			notificationConfigurationModel.setTimeZone(_ctx.stringValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels["+ i +"].TimeZone"));
 			notificationConfigurationModel.setMessageEncoding(_ctx.stringValue("DescribeNotificationConfigurationsResponse.NotificationConfigurationModels["+ i +"].MessageEncoding"));
 
 			List<String> notificationTypes = new ArrayList<String>();

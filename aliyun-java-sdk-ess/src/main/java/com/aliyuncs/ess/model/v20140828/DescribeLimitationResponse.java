@@ -24,107 +24,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLimitationResponse extends AcsResponse {
 
-	private Integer maxNumberOfScheduledTasks;
-
-	private Integer maxNumberOfLoadBalancers;
-
-	private Integer maxNumberOfMaxSize;
-
-	private Integer maxNumberOfAlbServerGroup;
-
-	private Integer maxNumberOfNlbServerGroup;
-
-	private Integer maxNumberOfDBInstances;
-
-	private Integer maxNumberOfScalingConfigurations;
-
-	private Integer maxNumberOfMinSize;
-
-	private Integer maxNumberOfLifecycleHooks;
-
 	private Integer maxNumberOfScalingInstances;
-
-	private Integer maxNumberOfScalingGroups;
 
 	private String requestId;
 
-	private Integer maxNumberOfNotificationConfigurations;
+	private Integer maxNumberOfScheduledTasks;
 
 	private Integer maxNumberOfVServerGroups;
 
+	private Integer maxNumberOfLoadBalancers;
+
+	private Integer maxNumberOfAlbServerGroup;
+
+	private Integer maxNumberOfMinSize;
+
+	private Integer maxNumberOfScalingGroups;
+
+	private Integer maxNumberOfNotificationConfigurations;
+
+	private Integer maxNumberOfMaxSize;
+
+	private Integer maxNumberOfDBInstances;
+
+	private Integer maxNumberOfLifecycleHooks;
+
 	private Integer maxNumberOfScalingRules;
 
-	public Integer getMaxNumberOfScheduledTasks() {
-		return this.maxNumberOfScheduledTasks;
-	}
+	private Integer maxNumberOfNlbServerGroup;
 
-	public void setMaxNumberOfScheduledTasks(Integer maxNumberOfScheduledTasks) {
-		this.maxNumberOfScheduledTasks = maxNumberOfScheduledTasks;
-	}
-
-	public Integer getMaxNumberOfLoadBalancers() {
-		return this.maxNumberOfLoadBalancers;
-	}
-
-	public void setMaxNumberOfLoadBalancers(Integer maxNumberOfLoadBalancers) {
-		this.maxNumberOfLoadBalancers = maxNumberOfLoadBalancers;
-	}
-
-	public Integer getMaxNumberOfMaxSize() {
-		return this.maxNumberOfMaxSize;
-	}
-
-	public void setMaxNumberOfMaxSize(Integer maxNumberOfMaxSize) {
-		this.maxNumberOfMaxSize = maxNumberOfMaxSize;
-	}
-
-	public Integer getMaxNumberOfAlbServerGroup() {
-		return this.maxNumberOfAlbServerGroup;
-	}
-
-	public void setMaxNumberOfAlbServerGroup(Integer maxNumberOfAlbServerGroup) {
-		this.maxNumberOfAlbServerGroup = maxNumberOfAlbServerGroup;
-	}
-
-	public Integer getMaxNumberOfNlbServerGroup() {
-		return this.maxNumberOfNlbServerGroup;
-	}
-
-	public void setMaxNumberOfNlbServerGroup(Integer maxNumberOfNlbServerGroup) {
-		this.maxNumberOfNlbServerGroup = maxNumberOfNlbServerGroup;
-	}
-
-	public Integer getMaxNumberOfDBInstances() {
-		return this.maxNumberOfDBInstances;
-	}
-
-	public void setMaxNumberOfDBInstances(Integer maxNumberOfDBInstances) {
-		this.maxNumberOfDBInstances = maxNumberOfDBInstances;
-	}
-
-	public Integer getMaxNumberOfScalingConfigurations() {
-		return this.maxNumberOfScalingConfigurations;
-	}
-
-	public void setMaxNumberOfScalingConfigurations(Integer maxNumberOfScalingConfigurations) {
-		this.maxNumberOfScalingConfigurations = maxNumberOfScalingConfigurations;
-	}
-
-	public Integer getMaxNumberOfMinSize() {
-		return this.maxNumberOfMinSize;
-	}
-
-	public void setMaxNumberOfMinSize(Integer maxNumberOfMinSize) {
-		this.maxNumberOfMinSize = maxNumberOfMinSize;
-	}
-
-	public Integer getMaxNumberOfLifecycleHooks() {
-		return this.maxNumberOfLifecycleHooks;
-	}
-
-	public void setMaxNumberOfLifecycleHooks(Integer maxNumberOfLifecycleHooks) {
-		this.maxNumberOfLifecycleHooks = maxNumberOfLifecycleHooks;
-	}
+	private Integer maxNumberOfScalingConfigurations;
 
 	public Integer getMaxNumberOfScalingInstances() {
 		return this.maxNumberOfScalingInstances;
@@ -132,14 +60,6 @@ public class DescribeLimitationResponse extends AcsResponse {
 
 	public void setMaxNumberOfScalingInstances(Integer maxNumberOfScalingInstances) {
 		this.maxNumberOfScalingInstances = maxNumberOfScalingInstances;
-	}
-
-	public Integer getMaxNumberOfScalingGroups() {
-		return this.maxNumberOfScalingGroups;
-	}
-
-	public void setMaxNumberOfScalingGroups(Integer maxNumberOfScalingGroups) {
-		this.maxNumberOfScalingGroups = maxNumberOfScalingGroups;
 	}
 
 	public String getRequestId() {
@@ -150,12 +70,12 @@ public class DescribeLimitationResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getMaxNumberOfNotificationConfigurations() {
-		return this.maxNumberOfNotificationConfigurations;
+	public Integer getMaxNumberOfScheduledTasks() {
+		return this.maxNumberOfScheduledTasks;
 	}
 
-	public void setMaxNumberOfNotificationConfigurations(Integer maxNumberOfNotificationConfigurations) {
-		this.maxNumberOfNotificationConfigurations = maxNumberOfNotificationConfigurations;
+	public void setMaxNumberOfScheduledTasks(Integer maxNumberOfScheduledTasks) {
+		this.maxNumberOfScheduledTasks = maxNumberOfScheduledTasks;
 	}
 
 	public Integer getMaxNumberOfVServerGroups() {
@@ -166,12 +86,92 @@ public class DescribeLimitationResponse extends AcsResponse {
 		this.maxNumberOfVServerGroups = maxNumberOfVServerGroups;
 	}
 
+	public Integer getMaxNumberOfLoadBalancers() {
+		return this.maxNumberOfLoadBalancers;
+	}
+
+	public void setMaxNumberOfLoadBalancers(Integer maxNumberOfLoadBalancers) {
+		this.maxNumberOfLoadBalancers = maxNumberOfLoadBalancers;
+	}
+
+	public Integer getMaxNumberOfAlbServerGroup() {
+		return this.maxNumberOfAlbServerGroup;
+	}
+
+	public void setMaxNumberOfAlbServerGroup(Integer maxNumberOfAlbServerGroup) {
+		this.maxNumberOfAlbServerGroup = maxNumberOfAlbServerGroup;
+	}
+
+	public Integer getMaxNumberOfMinSize() {
+		return this.maxNumberOfMinSize;
+	}
+
+	public void setMaxNumberOfMinSize(Integer maxNumberOfMinSize) {
+		this.maxNumberOfMinSize = maxNumberOfMinSize;
+	}
+
+	public Integer getMaxNumberOfScalingGroups() {
+		return this.maxNumberOfScalingGroups;
+	}
+
+	public void setMaxNumberOfScalingGroups(Integer maxNumberOfScalingGroups) {
+		this.maxNumberOfScalingGroups = maxNumberOfScalingGroups;
+	}
+
+	public Integer getMaxNumberOfNotificationConfigurations() {
+		return this.maxNumberOfNotificationConfigurations;
+	}
+
+	public void setMaxNumberOfNotificationConfigurations(Integer maxNumberOfNotificationConfigurations) {
+		this.maxNumberOfNotificationConfigurations = maxNumberOfNotificationConfigurations;
+	}
+
+	public Integer getMaxNumberOfMaxSize() {
+		return this.maxNumberOfMaxSize;
+	}
+
+	public void setMaxNumberOfMaxSize(Integer maxNumberOfMaxSize) {
+		this.maxNumberOfMaxSize = maxNumberOfMaxSize;
+	}
+
+	public Integer getMaxNumberOfDBInstances() {
+		return this.maxNumberOfDBInstances;
+	}
+
+	public void setMaxNumberOfDBInstances(Integer maxNumberOfDBInstances) {
+		this.maxNumberOfDBInstances = maxNumberOfDBInstances;
+	}
+
+	public Integer getMaxNumberOfLifecycleHooks() {
+		return this.maxNumberOfLifecycleHooks;
+	}
+
+	public void setMaxNumberOfLifecycleHooks(Integer maxNumberOfLifecycleHooks) {
+		this.maxNumberOfLifecycleHooks = maxNumberOfLifecycleHooks;
+	}
+
 	public Integer getMaxNumberOfScalingRules() {
 		return this.maxNumberOfScalingRules;
 	}
 
 	public void setMaxNumberOfScalingRules(Integer maxNumberOfScalingRules) {
 		this.maxNumberOfScalingRules = maxNumberOfScalingRules;
+	}
+
+	public Integer getMaxNumberOfNlbServerGroup() {
+		return this.maxNumberOfNlbServerGroup;
+	}
+
+	public void setMaxNumberOfNlbServerGroup(Integer maxNumberOfNlbServerGroup) {
+		this.maxNumberOfNlbServerGroup = maxNumberOfNlbServerGroup;
+	}
+
+	public Integer getMaxNumberOfScalingConfigurations() {
+		return this.maxNumberOfScalingConfigurations;
+	}
+
+	public void setMaxNumberOfScalingConfigurations(Integer maxNumberOfScalingConfigurations) {
+		this.maxNumberOfScalingConfigurations = maxNumberOfScalingConfigurations;
 	}
 
 	@Override
