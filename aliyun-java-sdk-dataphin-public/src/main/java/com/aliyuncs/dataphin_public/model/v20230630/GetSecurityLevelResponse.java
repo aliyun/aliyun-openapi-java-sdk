@@ -27,13 +27,13 @@ public class GetSecurityLevelResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private SecurityLevelInfo securityLevelInfo;
 
@@ -45,12 +45,12 @@ public class GetSecurityLevelResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetSecurityLevelResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public SecurityLevelInfo getSecurityLevelInfo() {
@@ -87,23 +87,15 @@ public class GetSecurityLevelResponse extends AcsResponse {
 
 	public static class SecurityLevelInfo {
 
-		private String name;
-
 		private String abbreviation;
 
 		private String description;
 
 		private Long index;
 
+		private String name;
+
 		private List<Long> relatedClassifyIdList;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getAbbreviation() {
 			return this.abbreviation;
@@ -127,6 +119,14 @@ public class GetSecurityLevelResponse extends AcsResponse {
 
 		public void setIndex(Long index) {
 			this.index = index;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<Long> getRelatedClassifyIdList() {

@@ -29,10 +29,10 @@ public class ParseBatchTaskDependencyResponseUnmarshaller {
 	public static ParseBatchTaskDependencyResponse unmarshall(ParseBatchTaskDependencyResponse parseBatchTaskDependencyResponse, UnmarshallerContext _ctx) {
 		
 		parseBatchTaskDependencyResponse.setRequestId(_ctx.stringValue("ParseBatchTaskDependencyResponse.RequestId"));
-		parseBatchTaskDependencyResponse.setSuccess(_ctx.booleanValue("ParseBatchTaskDependencyResponse.Success"));
+		parseBatchTaskDependencyResponse.setMessage(_ctx.stringValue("ParseBatchTaskDependencyResponse.Message"));
 		parseBatchTaskDependencyResponse.setHttpStatusCode(_ctx.integerValue("ParseBatchTaskDependencyResponse.HttpStatusCode"));
 		parseBatchTaskDependencyResponse.setCode(_ctx.stringValue("ParseBatchTaskDependencyResponse.Code"));
-		parseBatchTaskDependencyResponse.setMessage(_ctx.stringValue("ParseBatchTaskDependencyResponse.Message"));
+		parseBatchTaskDependencyResponse.setSuccess(_ctx.booleanValue("ParseBatchTaskDependencyResponse.Success"));
 
 		ParseResult parseResult = new ParseResult();
 
@@ -45,11 +45,11 @@ public class ParseBatchTaskDependencyResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("ParseBatchTaskDependencyResponse.ParseResult.DependNodeList["+ i +"].ScheduleNodeInfoList.Length"); j++) {
 				NodeInfo nodeInfo = new NodeInfo();
 				nodeInfo.setTableName(_ctx.stringValue("ParseBatchTaskDependencyResponse.ParseResult.DependNodeList["+ i +"].ScheduleNodeInfoList["+ j +"].TableName"));
-				nodeInfo.setOutputName(_ctx.stringValue("ParseBatchTaskDependencyResponse.ParseResult.DependNodeList["+ i +"].ScheduleNodeInfoList["+ j +"].OutputName"));
 				nodeInfo.setOwnerUserId(_ctx.stringValue("ParseBatchTaskDependencyResponse.ParseResult.DependNodeList["+ i +"].ScheduleNodeInfoList["+ j +"].OwnerUserId"));
 				nodeInfo.setOwnerName(_ctx.stringValue("ParseBatchTaskDependencyResponse.ParseResult.DependNodeList["+ i +"].ScheduleNodeInfoList["+ j +"].OwnerName"));
-				nodeInfo.setNodeId(_ctx.stringValue("ParseBatchTaskDependencyResponse.ParseResult.DependNodeList["+ i +"].ScheduleNodeInfoList["+ j +"].NodeId"));
 				nodeInfo.setNodeName(_ctx.stringValue("ParseBatchTaskDependencyResponse.ParseResult.DependNodeList["+ i +"].ScheduleNodeInfoList["+ j +"].NodeName"));
+				nodeInfo.setNodeId(_ctx.stringValue("ParseBatchTaskDependencyResponse.ParseResult.DependNodeList["+ i +"].ScheduleNodeInfoList["+ j +"].NodeId"));
+				nodeInfo.setOutputName(_ctx.stringValue("ParseBatchTaskDependencyResponse.ParseResult.DependNodeList["+ i +"].ScheduleNodeInfoList["+ j +"].OutputName"));
 
 				List<String> fieldList = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("ParseBatchTaskDependencyResponse.ParseResult.DependNodeList["+ i +"].ScheduleNodeInfoList["+ j +"].FieldList.Length"); k++) {

@@ -23,10 +23,10 @@ public class UpdateStandardLookupTableResponseUnmarshaller {
 	public static UpdateStandardLookupTableResponse unmarshall(UpdateStandardLookupTableResponse updateStandardLookupTableResponse, UnmarshallerContext _ctx) {
 		
 		updateStandardLookupTableResponse.setRequestId(_ctx.stringValue("UpdateStandardLookupTableResponse.RequestId"));
-		updateStandardLookupTableResponse.setSuccess(_ctx.booleanValue("UpdateStandardLookupTableResponse.Success"));
+		updateStandardLookupTableResponse.setMessage(_ctx.stringValue("UpdateStandardLookupTableResponse.Message"));
 		updateStandardLookupTableResponse.setHttpStatusCode(_ctx.integerValue("UpdateStandardLookupTableResponse.HttpStatusCode"));
 		updateStandardLookupTableResponse.setCode(_ctx.stringValue("UpdateStandardLookupTableResponse.Code"));
-		updateStandardLookupTableResponse.setMessage(_ctx.stringValue("UpdateStandardLookupTableResponse.Message"));
+		updateStandardLookupTableResponse.setSuccess(_ctx.booleanValue("UpdateStandardLookupTableResponse.Success"));
 	 
 	 	return updateStandardLookupTableResponse;
 	}

@@ -24,10 +24,10 @@ public class OfflineBatchTaskResponseUnmarshaller {
 	public static OfflineBatchTaskResponse unmarshall(OfflineBatchTaskResponse offlineBatchTaskResponse, UnmarshallerContext _ctx) {
 		
 		offlineBatchTaskResponse.setRequestId(_ctx.stringValue("OfflineBatchTaskResponse.RequestId"));
-		offlineBatchTaskResponse.setSuccess(_ctx.booleanValue("OfflineBatchTaskResponse.Success"));
+		offlineBatchTaskResponse.setMessage(_ctx.stringValue("OfflineBatchTaskResponse.Message"));
 		offlineBatchTaskResponse.setHttpStatusCode(_ctx.integerValue("OfflineBatchTaskResponse.HttpStatusCode"));
 		offlineBatchTaskResponse.setCode(_ctx.stringValue("OfflineBatchTaskResponse.Code"));
-		offlineBatchTaskResponse.setMessage(_ctx.stringValue("OfflineBatchTaskResponse.Message"));
+		offlineBatchTaskResponse.setSuccess(_ctx.booleanValue("OfflineBatchTaskResponse.Success"));
 
 		OfflineResult offlineResult = new OfflineResult();
 		offlineResult.setPublishObjectId(_ctx.longValue("OfflineBatchTaskResponse.OfflineResult.PublishObjectId"));

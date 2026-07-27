@@ -27,18 +27,18 @@ public class ListNodeDownStreamResponseUnmarshaller {
 	public static ListNodeDownStreamResponse unmarshall(ListNodeDownStreamResponse listNodeDownStreamResponse, UnmarshallerContext _ctx) {
 		
 		listNodeDownStreamResponse.setRequestId(_ctx.stringValue("ListNodeDownStreamResponse.RequestId"));
-		listNodeDownStreamResponse.setSuccess(_ctx.booleanValue("ListNodeDownStreamResponse.Success"));
+		listNodeDownStreamResponse.setMessage(_ctx.stringValue("ListNodeDownStreamResponse.Message"));
 		listNodeDownStreamResponse.setHttpStatusCode(_ctx.integerValue("ListNodeDownStreamResponse.HttpStatusCode"));
 		listNodeDownStreamResponse.setCode(_ctx.stringValue("ListNodeDownStreamResponse.Code"));
-		listNodeDownStreamResponse.setMessage(_ctx.stringValue("ListNodeDownStreamResponse.Message"));
+		listNodeDownStreamResponse.setSuccess(_ctx.booleanValue("ListNodeDownStreamResponse.Success"));
 
 		List<NodeInfo> nodeInfoList = new ArrayList<NodeInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListNodeDownStreamResponse.NodeInfoList.Length"); i++) {
 			NodeInfo nodeInfo = new NodeInfo();
-			nodeInfo.setId(_ctx.stringValue("ListNodeDownStreamResponse.NodeInfoList["+ i +"].Id"));
-			nodeInfo.setName(_ctx.stringValue("ListNodeDownStreamResponse.NodeInfoList["+ i +"].Name"));
 			nodeInfo.setType(_ctx.stringValue("ListNodeDownStreamResponse.NodeInfoList["+ i +"].Type"));
+			nodeInfo.setId(_ctx.stringValue("ListNodeDownStreamResponse.NodeInfoList["+ i +"].Id"));
 			nodeInfo.setDepth(_ctx.integerValue("ListNodeDownStreamResponse.NodeInfoList["+ i +"].Depth"));
+			nodeInfo.setName(_ctx.stringValue("ListNodeDownStreamResponse.NodeInfoList["+ i +"].Name"));
 
 			List<String> fieldIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListNodeDownStreamResponse.NodeInfoList["+ i +"].FieldIdList.Length"); j++) {

@@ -71,11 +71,11 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 		@SerializedName("Strength")
 		private String strength;
 
-		@SerializedName("CatalogList")
-		private List<String> catalogList;
-
 		@SerializedName("FormPropertyList")
 		private List<FormPropertyListItem> formPropertyList;
+
+		@SerializedName("CatalogList")
+		private List<String> catalogList;
 
 		@SerializedName("TemplateType")
 		private String templateType;
@@ -122,20 +122,20 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 			this.strength = strength;
 		}
 
-		public List<String> getCatalogList() {
-			return this.catalogList;
-		}
-
-		public void setCatalogList(List<String> catalogList) {
-			this.catalogList = catalogList;
-		}
-
 		public List<FormPropertyListItem> getFormPropertyList() {
 			return this.formPropertyList;
 		}
 
 		public void setFormPropertyList(List<FormPropertyListItem> formPropertyList) {
 			this.formPropertyList = formPropertyList;
+		}
+
+		public List<String> getCatalogList() {
+			return this.catalogList;
+		}
+
+		public void setCatalogList(List<String> catalogList) {
+			this.catalogList = catalogList;
 		}
 
 		public String getTemplateType() {
@@ -325,11 +325,11 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 
 			public static class AttributeInfo {
 
-				@SerializedName("Name")
-				private String name;
-
 				@SerializedName("ValueConfig")
 				private ValueConfig valueConfig;
+
+				@SerializedName("Name")
+				private String name;
 
 				@SerializedName("Description")
 				private String description;
@@ -337,22 +337,14 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 				@SerializedName("Id")
 				private Long id;
 
-				@SerializedName("Enabled")
-				private Boolean enabled;
-
 				@SerializedName("Required")
 				private Boolean required;
 
+				@SerializedName("Enabled")
+				private Boolean enabled;
+
 				@SerializedName("Searchable")
 				private Boolean searchable;
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
 
 				public ValueConfig getValueConfig() {
 					return this.valueConfig;
@@ -360,6 +352,14 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 
 				public void setValueConfig(ValueConfig valueConfig) {
 					this.valueConfig = valueConfig;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 
 				public String getDescription() {
@@ -378,20 +378,20 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 					this.id = id;
 				}
 
-				public Boolean getEnabled() {
-					return this.enabled;
-				}
-
-				public void setEnabled(Boolean enabled) {
-					this.enabled = enabled;
-				}
-
 				public Boolean getRequired() {
 					return this.required;
 				}
 
 				public void setRequired(Boolean required) {
 					this.required = required;
+				}
+
+				public Boolean getEnabled() {
+					return this.enabled;
+				}
+
+				public void setEnabled(Boolean enabled) {
+					this.enabled = enabled;
 				}
 
 				public Boolean getSearchable() {
@@ -467,11 +467,11 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 						@SerializedName("ValueList")
 						private List<String> valueList;
 
-						@SerializedName("IncludeMinValue")
-						private Boolean includeMinValue;
-
 						@SerializedName("IncludeMaxValue")
 						private Boolean includeMaxValue;
+
+						@SerializedName("IncludeMinValue")
+						private Boolean includeMinValue;
 
 						@SerializedName("MinValue")
 						private String minValue;
@@ -492,20 +492,20 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 							this.valueList = valueList;
 						}
 
-						public Boolean getIncludeMinValue() {
-							return this.includeMinValue;
-						}
-
-						public void setIncludeMinValue(Boolean includeMinValue) {
-							this.includeMinValue = includeMinValue;
-						}
-
 						public Boolean getIncludeMaxValue() {
 							return this.includeMaxValue;
 						}
 
 						public void setIncludeMaxValue(Boolean includeMaxValue) {
 							this.includeMaxValue = includeMaxValue;
+						}
+
+						public Boolean getIncludeMinValue() {
+							return this.includeMinValue;
+						}
+
+						public void setIncludeMinValue(Boolean includeMinValue) {
+							this.includeMinValue = includeMinValue;
 						}
 
 						public String getMinValue() {
@@ -527,11 +527,11 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 				@SerializedName("ValueList")
 				private List<String> valueList;
 
-				@SerializedName("IncludeMinValue")
-				private Boolean includeMinValue;
-
 				@SerializedName("IncludeMaxValue")
 				private Boolean includeMaxValue;
+
+				@SerializedName("IncludeMinValue")
+				private Boolean includeMinValue;
 
 				@SerializedName("MinValue")
 				private String minValue;
@@ -552,20 +552,20 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 					this.valueList = valueList;
 				}
 
-				public Boolean getIncludeMinValue() {
-					return this.includeMinValue;
-				}
-
-				public void setIncludeMinValue(Boolean includeMinValue) {
-					this.includeMinValue = includeMinValue;
-				}
-
 				public Boolean getIncludeMaxValue() {
 					return this.includeMaxValue;
 				}
 
 				public void setIncludeMaxValue(Boolean includeMaxValue) {
 					this.includeMaxValue = includeMaxValue;
+				}
+
+				public Boolean getIncludeMinValue() {
+					return this.includeMinValue;
+				}
+
+				public void setIncludeMinValue(Boolean includeMinValue) {
+					this.includeMinValue = includeMinValue;
 				}
 
 				public String getMinValue() {

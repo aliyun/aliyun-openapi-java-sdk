@@ -23,11 +23,11 @@ public class CreateStandardWordRootResponseUnmarshaller {
 	public static CreateStandardWordRootResponse unmarshall(CreateStandardWordRootResponse createStandardWordRootResponse, UnmarshallerContext _ctx) {
 		
 		createStandardWordRootResponse.setRequestId(_ctx.stringValue("CreateStandardWordRootResponse.RequestId"));
-		createStandardWordRootResponse.setSuccess(_ctx.booleanValue("CreateStandardWordRootResponse.Success"));
-		createStandardWordRootResponse.setHttpStatusCode(_ctx.integerValue("CreateStandardWordRootResponse.HttpStatusCode"));
-		createStandardWordRootResponse.setCode(_ctx.stringValue("CreateStandardWordRootResponse.Code"));
 		createStandardWordRootResponse.setMessage(_ctx.stringValue("CreateStandardWordRootResponse.Message"));
+		createStandardWordRootResponse.setHttpStatusCode(_ctx.integerValue("CreateStandardWordRootResponse.HttpStatusCode"));
 		createStandardWordRootResponse.setData(_ctx.stringValue("CreateStandardWordRootResponse.Data"));
+		createStandardWordRootResponse.setCode(_ctx.stringValue("CreateStandardWordRootResponse.Code"));
+		createStandardWordRootResponse.setSuccess(_ctx.booleanValue("CreateStandardWordRootResponse.Success"));
 	 
 	 	return createStandardWordRootResponse;
 	}

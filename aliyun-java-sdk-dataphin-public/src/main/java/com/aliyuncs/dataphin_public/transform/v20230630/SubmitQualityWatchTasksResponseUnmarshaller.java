@@ -27,10 +27,10 @@ public class SubmitQualityWatchTasksResponseUnmarshaller {
 	public static SubmitQualityWatchTasksResponse unmarshall(SubmitQualityWatchTasksResponse submitQualityWatchTasksResponse, UnmarshallerContext _ctx) {
 		
 		submitQualityWatchTasksResponse.setRequestId(_ctx.stringValue("SubmitQualityWatchTasksResponse.RequestId"));
-		submitQualityWatchTasksResponse.setSuccess(_ctx.booleanValue("SubmitQualityWatchTasksResponse.Success"));
+		submitQualityWatchTasksResponse.setMessage(_ctx.stringValue("SubmitQualityWatchTasksResponse.Message"));
 		submitQualityWatchTasksResponse.setHttpStatusCode(_ctx.integerValue("SubmitQualityWatchTasksResponse.HttpStatusCode"));
 		submitQualityWatchTasksResponse.setCode(_ctx.stringValue("SubmitQualityWatchTasksResponse.Code"));
-		submitQualityWatchTasksResponse.setMessage(_ctx.stringValue("SubmitQualityWatchTasksResponse.Message"));
+		submitQualityWatchTasksResponse.setSuccess(_ctx.booleanValue("SubmitQualityWatchTasksResponse.Success"));
 
 		SubmitResult submitResult = new SubmitResult();
 

@@ -24,19 +24,19 @@ public class GetAdHocFileResponseUnmarshaller {
 	public static GetAdHocFileResponse unmarshall(GetAdHocFileResponse getAdHocFileResponse, UnmarshallerContext _ctx) {
 		
 		getAdHocFileResponse.setRequestId(_ctx.stringValue("GetAdHocFileResponse.RequestId"));
-		getAdHocFileResponse.setSuccess(_ctx.booleanValue("GetAdHocFileResponse.Success"));
+		getAdHocFileResponse.setMessage(_ctx.stringValue("GetAdHocFileResponse.Message"));
 		getAdHocFileResponse.setHttpStatusCode(_ctx.integerValue("GetAdHocFileResponse.HttpStatusCode"));
 		getAdHocFileResponse.setCode(_ctx.stringValue("GetAdHocFileResponse.Code"));
-		getAdHocFileResponse.setMessage(_ctx.stringValue("GetAdHocFileResponse.Message"));
+		getAdHocFileResponse.setSuccess(_ctx.booleanValue("GetAdHocFileResponse.Success"));
 
 		FileInfo fileInfo = new FileInfo();
-		fileInfo.setId(_ctx.longValue("GetAdHocFileResponse.FileInfo.Id"));
-		fileInfo.setName(_ctx.stringValue("GetAdHocFileResponse.FileInfo.Name"));
-		fileInfo.setProjectId(_ctx.longValue("GetAdHocFileResponse.FileInfo.ProjectId"));
-		fileInfo.setDirectory(_ctx.stringValue("GetAdHocFileResponse.FileInfo.Directory"));
-		fileInfo.setContent(_ctx.stringValue("GetAdHocFileResponse.FileInfo.Content"));
-		fileInfo.setCreator(_ctx.stringValue("GetAdHocFileResponse.FileInfo.Creator"));
 		fileInfo.setLastModifier(_ctx.stringValue("GetAdHocFileResponse.FileInfo.LastModifier"));
+		fileInfo.setContent(_ctx.stringValue("GetAdHocFileResponse.FileInfo.Content"));
+		fileInfo.setProjectId(_ctx.longValue("GetAdHocFileResponse.FileInfo.ProjectId"));
+		fileInfo.setId(_ctx.longValue("GetAdHocFileResponse.FileInfo.Id"));
+		fileInfo.setCreator(_ctx.stringValue("GetAdHocFileResponse.FileInfo.Creator"));
+		fileInfo.setName(_ctx.stringValue("GetAdHocFileResponse.FileInfo.Name"));
+		fileInfo.setDirectory(_ctx.stringValue("GetAdHocFileResponse.FileInfo.Directory"));
 		getAdHocFileResponse.setFileInfo(fileInfo);
 	 
 	 	return getAdHocFileResponse;

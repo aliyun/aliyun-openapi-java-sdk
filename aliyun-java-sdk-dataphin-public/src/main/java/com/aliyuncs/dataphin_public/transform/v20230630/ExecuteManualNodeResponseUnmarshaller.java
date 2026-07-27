@@ -23,11 +23,11 @@ public class ExecuteManualNodeResponseUnmarshaller {
 	public static ExecuteManualNodeResponse unmarshall(ExecuteManualNodeResponse executeManualNodeResponse, UnmarshallerContext _ctx) {
 		
 		executeManualNodeResponse.setRequestId(_ctx.stringValue("ExecuteManualNodeResponse.RequestId"));
-		executeManualNodeResponse.setSuccess(_ctx.booleanValue("ExecuteManualNodeResponse.Success"));
+		executeManualNodeResponse.setFlowId(_ctx.stringValue("ExecuteManualNodeResponse.FlowId"));
+		executeManualNodeResponse.setMessage(_ctx.stringValue("ExecuteManualNodeResponse.Message"));
 		executeManualNodeResponse.setHttpStatusCode(_ctx.integerValue("ExecuteManualNodeResponse.HttpStatusCode"));
 		executeManualNodeResponse.setCode(_ctx.stringValue("ExecuteManualNodeResponse.Code"));
-		executeManualNodeResponse.setMessage(_ctx.stringValue("ExecuteManualNodeResponse.Message"));
-		executeManualNodeResponse.setFlowId(_ctx.stringValue("ExecuteManualNodeResponse.FlowId"));
+		executeManualNodeResponse.setSuccess(_ctx.booleanValue("ExecuteManualNodeResponse.Success"));
 	 
 	 	return executeManualNodeResponse;
 	}

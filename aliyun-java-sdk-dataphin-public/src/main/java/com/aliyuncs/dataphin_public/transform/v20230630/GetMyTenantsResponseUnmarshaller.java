@@ -27,24 +27,24 @@ public class GetMyTenantsResponseUnmarshaller {
 	public static GetMyTenantsResponse unmarshall(GetMyTenantsResponse getMyTenantsResponse, UnmarshallerContext _ctx) {
 		
 		getMyTenantsResponse.setRequestId(_ctx.stringValue("GetMyTenantsResponse.RequestId"));
-		getMyTenantsResponse.setSuccess(_ctx.booleanValue("GetMyTenantsResponse.Success"));
+		getMyTenantsResponse.setMessage(_ctx.stringValue("GetMyTenantsResponse.Message"));
 		getMyTenantsResponse.setHttpStatusCode(_ctx.integerValue("GetMyTenantsResponse.HttpStatusCode"));
 		getMyTenantsResponse.setCode(_ctx.stringValue("GetMyTenantsResponse.Code"));
-		getMyTenantsResponse.setMessage(_ctx.stringValue("GetMyTenantsResponse.Message"));
+		getMyTenantsResponse.setSuccess(_ctx.booleanValue("GetMyTenantsResponse.Success"));
 
 		List<TenantInfo> tenantList = new ArrayList<TenantInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetMyTenantsResponse.TenantList.Length"); i++) {
 			TenantInfo tenantInfo = new TenantInfo();
-			tenantInfo.setId(_ctx.longValue("GetMyTenantsResponse.TenantList["+ i +"].Id"));
-			tenantInfo.setName(_ctx.stringValue("GetMyTenantsResponse.TenantList["+ i +"].Name"));
-			tenantInfo.setOwnerId(_ctx.stringValue("GetMyTenantsResponse.TenantList["+ i +"].OwnerId"));
 			tenantInfo.setDescription(_ctx.stringValue("GetMyTenantsResponse.TenantList["+ i +"].Description"));
-			tenantInfo.setDeleted(_ctx.booleanValue("GetMyTenantsResponse.TenantList["+ i +"].Deleted"));
-			tenantInfo.setDeleteTime(_ctx.longValue("GetMyTenantsResponse.TenantList["+ i +"].DeleteTime"));
-			tenantInfo.setTitleType(_ctx.stringValue("GetMyTenantsResponse.TenantList["+ i +"].TitleType"));
+			tenantInfo.setOwnerId(_ctx.stringValue("GetMyTenantsResponse.TenantList["+ i +"].OwnerId"));
 			tenantInfo.setOpsTenant(_ctx.booleanValue("GetMyTenantsResponse.TenantList["+ i +"].OpsTenant"));
 			tenantInfo.setResourceLimited(_ctx.booleanValue("GetMyTenantsResponse.TenantList["+ i +"].ResourceLimited"));
+			tenantInfo.setDeleteTime(_ctx.longValue("GetMyTenantsResponse.TenantList["+ i +"].DeleteTime"));
+			tenantInfo.setTitleType(_ctx.stringValue("GetMyTenantsResponse.TenantList["+ i +"].TitleType"));
 			tenantInfo.setVisible(_ctx.booleanValue("GetMyTenantsResponse.TenantList["+ i +"].Visible"));
+			tenantInfo.setId(_ctx.longValue("GetMyTenantsResponse.TenantList["+ i +"].Id"));
+			tenantInfo.setDeleted(_ctx.booleanValue("GetMyTenantsResponse.TenantList["+ i +"].Deleted"));
+			tenantInfo.setName(_ctx.stringValue("GetMyTenantsResponse.TenantList["+ i +"].Name"));
 
 			List<String> tenantTypeList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetMyTenantsResponse.TenantList["+ i +"].TenantTypeList.Length"); j++) {

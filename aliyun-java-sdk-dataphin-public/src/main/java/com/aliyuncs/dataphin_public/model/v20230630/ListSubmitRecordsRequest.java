@@ -98,11 +98,11 @@ public class ListSubmitRecordsRequest extends RpcAcsRequest<ListSubmitRecordsRes
 			@SerializedName("SubmitEndTime")
 			private String submitEndTime;
 
-			@SerializedName("ProjectIdList")
-			private List<Long> projectIdList;
-
 			@SerializedName("SubmitterList")
 			private List<String> submitterList;
+
+			@SerializedName("ProjectIdList")
+			private List<Long> projectIdList;
 
 			@SerializedName("Page")
 			private Integer page;
@@ -139,20 +139,20 @@ public class ListSubmitRecordsRequest extends RpcAcsRequest<ListSubmitRecordsRes
 				this.submitEndTime = submitEndTime;
 			}
 
-			public List<Long> getProjectIdList() {
-				return this.projectIdList;
-			}
-
-			public void setProjectIdList(List<Long> projectIdList) {
-				this.projectIdList = projectIdList;
-			}
-
 			public List<String> getSubmitterList() {
 				return this.submitterList;
 			}
 
 			public void setSubmitterList(List<String> submitterList) {
 				this.submitterList = submitterList;
+			}
+
+			public List<Long> getProjectIdList() {
+				return this.projectIdList;
+			}
+
+			public void setProjectIdList(List<Long> projectIdList) {
+				this.projectIdList = projectIdList;
 			}
 
 			public Integer getPage() {

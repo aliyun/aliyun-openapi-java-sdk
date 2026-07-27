@@ -23,11 +23,11 @@ public class DeleteRowPermissionResponseUnmarshaller {
 	public static DeleteRowPermissionResponse unmarshall(DeleteRowPermissionResponse deleteRowPermissionResponse, UnmarshallerContext _ctx) {
 		
 		deleteRowPermissionResponse.setRequestId(_ctx.stringValue("DeleteRowPermissionResponse.RequestId"));
-		deleteRowPermissionResponse.setSuccess(_ctx.booleanValue("DeleteRowPermissionResponse.Success"));
-		deleteRowPermissionResponse.setHttpStatusCode(_ctx.integerValue("DeleteRowPermissionResponse.HttpStatusCode"));
-		deleteRowPermissionResponse.setCode(_ctx.stringValue("DeleteRowPermissionResponse.Code"));
 		deleteRowPermissionResponse.setMessage(_ctx.stringValue("DeleteRowPermissionResponse.Message"));
+		deleteRowPermissionResponse.setHttpStatusCode(_ctx.integerValue("DeleteRowPermissionResponse.HttpStatusCode"));
 		deleteRowPermissionResponse.setData(_ctx.booleanValue("DeleteRowPermissionResponse.Data"));
+		deleteRowPermissionResponse.setCode(_ctx.stringValue("DeleteRowPermissionResponse.Code"));
+		deleteRowPermissionResponse.setSuccess(_ctx.booleanValue("DeleteRowPermissionResponse.Success"));
 	 
 	 	return deleteRowPermissionResponse;
 	}

@@ -23,10 +23,10 @@ public class OnlineBizEntityResponseUnmarshaller {
 	public static OnlineBizEntityResponse unmarshall(OnlineBizEntityResponse onlineBizEntityResponse, UnmarshallerContext _ctx) {
 		
 		onlineBizEntityResponse.setRequestId(_ctx.stringValue("OnlineBizEntityResponse.RequestId"));
-		onlineBizEntityResponse.setSuccess(_ctx.booleanValue("OnlineBizEntityResponse.Success"));
+		onlineBizEntityResponse.setMessage(_ctx.stringValue("OnlineBizEntityResponse.Message"));
 		onlineBizEntityResponse.setHttpStatusCode(_ctx.integerValue("OnlineBizEntityResponse.HttpStatusCode"));
 		onlineBizEntityResponse.setCode(_ctx.stringValue("OnlineBizEntityResponse.Code"));
-		onlineBizEntityResponse.setMessage(_ctx.stringValue("OnlineBizEntityResponse.Message"));
+		onlineBizEntityResponse.setSuccess(_ctx.booleanValue("OnlineBizEntityResponse.Success"));
 	 
 	 	return onlineBizEntityResponse;
 	}

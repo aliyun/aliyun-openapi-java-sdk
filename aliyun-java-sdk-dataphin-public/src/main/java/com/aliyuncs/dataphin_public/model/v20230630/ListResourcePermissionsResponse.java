@@ -27,13 +27,13 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -45,12 +45,12 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -109,25 +109,17 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 
 		public static class ResourcePermissionRecord {
 
-			private String recordId;
-
 			private String authScope;
+
+			private String recordId;
 
 			private List<PermissionPeriod> permissionPeriodList;
 
 			private ResourceInfo resourceInfo;
 
-			private TargetAccount targetAccount;
-
 			private Period period;
 
-			public String getRecordId() {
-				return this.recordId;
-			}
-
-			public void setRecordId(String recordId) {
-				this.recordId = recordId;
-			}
+			private TargetAccount targetAccount;
 
 			public String getAuthScope() {
 				return this.authScope;
@@ -135,6 +127,14 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 
 			public void setAuthScope(String authScope) {
 				this.authScope = authScope;
+			}
+
+			public String getRecordId() {
+				return this.recordId;
+			}
+
+			public void setRecordId(String recordId) {
+				this.recordId = recordId;
 			}
 
 			public List<PermissionPeriod> getPermissionPeriodList() {
@@ -153,20 +153,20 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 				this.resourceInfo = resourceInfo;
 			}
 
-			public TargetAccount getTargetAccount() {
-				return this.targetAccount;
-			}
-
-			public void setTargetAccount(TargetAccount targetAccount) {
-				this.targetAccount = targetAccount;
-			}
-
 			public Period getPeriod() {
 				return this.period;
 			}
 
 			public void setPeriod(Period period) {
 				this.period = period;
+			}
+
+			public TargetAccount getTargetAccount() {
+				return this.targetAccount;
+			}
+
+			public void setTargetAccount(TargetAccount targetAccount) {
+				this.targetAccount = targetAccount;
 			}
 
 			public static class PermissionPeriod {
@@ -217,34 +217,26 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 
 			public static class ResourceInfo {
 
-				private String id;
-
-				private String name;
+				private String type;
 
 				private String displayName;
 
-				private String type;
+				private String id;
 
 				private String env;
+
+				private String name;
 
 				private BizUnitInfo bizUnitInfo;
 
 				private ProjectInfo projectInfo;
 
-				public String getId() {
-					return this.id;
+				public String getType() {
+					return this.type;
 				}
 
-				public void setId(String id) {
-					this.id = id;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
+				public void setType(String type) {
+					this.type = type;
 				}
 
 				public String getDisplayName() {
@@ -255,12 +247,12 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 					this.displayName = displayName;
 				}
 
-				public String getType() {
-					return this.type;
+				public String getId() {
+					return this.id;
 				}
 
-				public void setType(String type) {
-					this.type = type;
+				public void setId(String id) {
+					this.id = id;
 				}
 
 				public String getEnv() {
@@ -269,6 +261,14 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 
 				public void setEnv(String env) {
 					this.env = env;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 
 				public BizUnitInfo getBizUnitInfo() {
@@ -289,13 +289,21 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 
 				public static class BizUnitInfo {
 
+					private String displayName;
+
 					private String id;
+
+					private String env;
 
 					private String name;
 
-					private String displayName;
+					public String getDisplayName() {
+						return this.displayName;
+					}
 
-					private String env;
+					public void setDisplayName(String displayName) {
+						this.displayName = displayName;
+					}
 
 					public String getId() {
 						return this.id;
@@ -305,6 +313,14 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 						this.id = id;
 					}
 
+					public String getEnv() {
+						return this.env;
+					}
+
+					public void setEnv(String env) {
+						this.env = env;
+					}
+
 					public String getName() {
 						return this.name;
 					}
@@ -312,6 +328,17 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 					public void setName(String name) {
 						this.name = name;
 					}
+				}
+
+				public static class ProjectInfo {
+
+					private String displayName;
+
+					private Long id;
+
+					private String env;
+
+					private String name;
 
 					public String getDisplayName() {
 						return this.displayName;
@@ -320,25 +347,6 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 					public void setDisplayName(String displayName) {
 						this.displayName = displayName;
 					}
-
-					public String getEnv() {
-						return this.env;
-					}
-
-					public void setEnv(String env) {
-						this.env = env;
-					}
-				}
-
-				public static class ProjectInfo {
-
-					private Long id;
-
-					private String name;
-
-					private String displayName;
-
-					private String env;
 
 					public Long getId() {
 						return this.id;
@@ -348,22 +356,6 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 						this.id = id;
 					}
 
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
-
-					public String getDisplayName() {
-						return this.displayName;
-					}
-
-					public void setDisplayName(String displayName) {
-						this.displayName = displayName;
-					}
-
 					public String getEnv() {
 						return this.env;
 					}
@@ -371,39 +363,14 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 					public void setEnv(String env) {
 						this.env = env;
 					}
-				}
-			}
 
-			public static class TargetAccount {
+					public String getName() {
+						return this.name;
+					}
 
-				private String id;
-
-				private String name;
-
-				private String type;
-
-				public String getId() {
-					return this.id;
-				}
-
-				public void setId(String id) {
-					this.id = id;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public String getType() {
-					return this.type;
-				}
-
-				public void setType(String type) {
-					this.type = type;
+					public void setName(String name) {
+						this.name = name;
+					}
 				}
 			}
 
@@ -427,6 +394,39 @@ public class ListResourcePermissionsResponse extends AcsResponse {
 
 				public void setEndTime(String endTime) {
 					this.endTime = endTime;
+				}
+			}
+
+			public static class TargetAccount {
+
+				private String type;
+
+				private String id;
+
+				private String name;
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 			}
 		}

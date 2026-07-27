@@ -27,24 +27,24 @@ public class GetOperationRecordByIdResponseUnmarshaller {
 	public static GetOperationRecordByIdResponse unmarshall(GetOperationRecordByIdResponse getOperationRecordByIdResponse, UnmarshallerContext _ctx) {
 		
 		getOperationRecordByIdResponse.setRequestId(_ctx.stringValue("GetOperationRecordByIdResponse.RequestId"));
-		getOperationRecordByIdResponse.setSuccess(_ctx.booleanValue("GetOperationRecordByIdResponse.Success"));
+		getOperationRecordByIdResponse.setMessage(_ctx.stringValue("GetOperationRecordByIdResponse.Message"));
 		getOperationRecordByIdResponse.setHttpStatusCode(_ctx.integerValue("GetOperationRecordByIdResponse.HttpStatusCode"));
 		getOperationRecordByIdResponse.setCode(_ctx.stringValue("GetOperationRecordByIdResponse.Code"));
-		getOperationRecordByIdResponse.setMessage(_ctx.stringValue("GetOperationRecordByIdResponse.Message"));
+		getOperationRecordByIdResponse.setSuccess(_ctx.booleanValue("GetOperationRecordByIdResponse.Success"));
 
 		OperationLogDTO operationLogDTO = new OperationLogDTO();
-		operationLogDTO.setId(_ctx.longValue("GetOperationRecordByIdResponse.OperationLogDTO.Id"));
+		operationLogDTO.setStatus(_ctx.integerValue("GetOperationRecordByIdResponse.OperationLogDTO.Status"));
+		operationLogDTO.setRunner(_ctx.stringValue("GetOperationRecordByIdResponse.OperationLogDTO.Runner"));
+		operationLogDTO.setOperationId(_ctx.longValue("GetOperationRecordByIdResponse.OperationLogDTO.OperationId"));
+		operationLogDTO.setProjectId(_ctx.longValue("GetOperationRecordByIdResponse.OperationLogDTO.ProjectId"));
+		operationLogDTO.setBeginTime(_ctx.stringValue("GetOperationRecordByIdResponse.OperationLogDTO.BeginTime"));
+		operationLogDTO.setDuration(_ctx.longValue("GetOperationRecordByIdResponse.OperationLogDTO.Duration"));
 		operationLogDTO.setName(_ctx.stringValue("GetOperationRecordByIdResponse.OperationLogDTO.Name"));
 		operationLogDTO.setObjectType(_ctx.stringValue("GetOperationRecordByIdResponse.OperationLogDTO.ObjectType"));
-		operationLogDTO.setCodeType(_ctx.integerValue("GetOperationRecordByIdResponse.OperationLogDTO.CodeType"));
-		operationLogDTO.setStatus(_ctx.integerValue("GetOperationRecordByIdResponse.OperationLogDTO.Status"));
-		operationLogDTO.setBeginTime(_ctx.stringValue("GetOperationRecordByIdResponse.OperationLogDTO.BeginTime"));
-		operationLogDTO.setRunner(_ctx.stringValue("GetOperationRecordByIdResponse.OperationLogDTO.Runner"));
-		operationLogDTO.setRunnerName(_ctx.stringValue("GetOperationRecordByIdResponse.OperationLogDTO.RunnerName"));
-		operationLogDTO.setProjectId(_ctx.longValue("GetOperationRecordByIdResponse.OperationLogDTO.ProjectId"));
 		operationLogDTO.setTenantId(_ctx.longValue("GetOperationRecordByIdResponse.OperationLogDTO.TenantId"));
-		operationLogDTO.setOperationId(_ctx.longValue("GetOperationRecordByIdResponse.OperationLogDTO.OperationId"));
-		operationLogDTO.setDuration(_ctx.longValue("GetOperationRecordByIdResponse.OperationLogDTO.Duration"));
+		operationLogDTO.setCodeType(_ctx.integerValue("GetOperationRecordByIdResponse.OperationLogDTO.CodeType"));
+		operationLogDTO.setId(_ctx.longValue("GetOperationRecordByIdResponse.OperationLogDTO.Id"));
+		operationLogDTO.setRunnerName(_ctx.stringValue("GetOperationRecordByIdResponse.OperationLogDTO.RunnerName"));
 
 		List<String> relationTables = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetOperationRecordByIdResponse.OperationLogDTO.RelationTables.Length"); i++) {

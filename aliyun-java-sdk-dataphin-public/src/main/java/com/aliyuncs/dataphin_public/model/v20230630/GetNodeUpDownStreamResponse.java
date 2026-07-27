@@ -27,13 +27,13 @@ public class GetNodeUpDownStreamResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private NodeDagInfo nodeDagInfo;
 
@@ -45,12 +45,12 @@ public class GetNodeUpDownStreamResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetNodeUpDownStreamResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public NodeDagInfo getNodeDagInfo() {
@@ -87,19 +87,11 @@ public class GetNodeUpDownStreamResponse extends AcsResponse {
 
 	public static class NodeDagInfo {
 
-		private List<NodeInfo> startNodeList;
-
 		private List<NodeInfo> upStreamNodeList;
 
 		private List<NodeInfo> downStreamNodeList;
 
-		public List<NodeInfo> getStartNodeList() {
-			return this.startNodeList;
-		}
-
-		public void setStartNodeList(List<NodeInfo> startNodeList) {
-			this.startNodeList = startNodeList;
-		}
+		private List<NodeInfo> startNodeList;
 
 		public List<NodeInfo> getUpStreamNodeList() {
 			return this.upStreamNodeList;
@@ -117,15 +109,31 @@ public class GetNodeUpDownStreamResponse extends AcsResponse {
 			this.downStreamNodeList = downStreamNodeList;
 		}
 
+		public List<NodeInfo> getStartNodeList() {
+			return this.startNodeList;
+		}
+
+		public void setStartNodeList(List<NodeInfo> startNodeList) {
+			this.startNodeList = startNodeList;
+		}
+
 		public static class NodeInfo {
+
+			private String type;
 
 			private String id;
 
 			private String name;
 
-			private String type;
-
 			private List<String> fieldIdList;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
 
 			public String getId() {
 				return this.id;
@@ -141,14 +149,6 @@ public class GetNodeUpDownStreamResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
 			}
 
 			public List<String> getFieldIdList() {

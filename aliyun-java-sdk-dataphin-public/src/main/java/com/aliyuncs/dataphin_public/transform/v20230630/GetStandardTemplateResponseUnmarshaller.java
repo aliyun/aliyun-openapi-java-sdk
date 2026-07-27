@@ -44,26 +44,21 @@ public class GetStandardTemplateResponseUnmarshaller {
 	public static GetStandardTemplateResponse unmarshall(GetStandardTemplateResponse getStandardTemplateResponse, UnmarshallerContext _ctx) {
 		
 		getStandardTemplateResponse.setRequestId(_ctx.stringValue("GetStandardTemplateResponse.RequestId"));
-		getStandardTemplateResponse.setSuccess(_ctx.booleanValue("GetStandardTemplateResponse.Success"));
+		getStandardTemplateResponse.setMessage(_ctx.stringValue("GetStandardTemplateResponse.Message"));
 		getStandardTemplateResponse.setHttpStatusCode(_ctx.integerValue("GetStandardTemplateResponse.HttpStatusCode"));
 		getStandardTemplateResponse.setCode(_ctx.stringValue("GetStandardTemplateResponse.Code"));
-		getStandardTemplateResponse.setMessage(_ctx.stringValue("GetStandardTemplateResponse.Message"));
+		getStandardTemplateResponse.setSuccess(_ctx.booleanValue("GetStandardTemplateResponse.Success"));
 
 		TemplateInfo templateInfo = new TemplateInfo();
-		templateInfo.setId(_ctx.longValue("GetStandardTemplateResponse.TemplateInfo.Id"));
-		templateInfo.setTemplateFrom(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.TemplateFrom"));
 		templateInfo.setUniqueId(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.UniqueId"));
-		templateInfo.setVersion(_ctx.integerValue("GetStandardTemplateResponse.TemplateInfo.Version"));
-		templateInfo.setName(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.Name"));
-		templateInfo.setCode(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.Code"));
+		templateInfo.setModifyTime(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.ModifyTime"));
 		templateInfo.setDescription(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.Description"));
 		templateInfo.setCreateTime(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.CreateTime"));
-		templateInfo.setModifyTime(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.ModifyTime"));
-
-		Creator creator = new Creator();
-		creator.setId(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.Creator.Id"));
-		creator.setName(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.Creator.Name"));
-		templateInfo.setCreator(creator);
+		templateInfo.setCode(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.Code"));
+		templateInfo.setName(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.Name"));
+		templateInfo.setVersion(_ctx.integerValue("GetStandardTemplateResponse.TemplateInfo.Version"));
+		templateInfo.setId(_ctx.longValue("GetStandardTemplateResponse.TemplateInfo.Id"));
+		templateInfo.setTemplateFrom(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.TemplateFrom"));
 
 		LastModifier lastModifier = new LastModifier();
 		lastModifier.setId(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.LastModifier.Id"));
@@ -75,49 +70,13 @@ public class GetStandardTemplateResponseUnmarshaller {
 		List<Attribute> attributeList = new ArrayList<Attribute>();
 		for (int i = 0; i < _ctx.lengthValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList.Length"); i++) {
 			Attribute attribute = new Attribute();
-			attribute.setName(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].Name"));
-			attribute.setCode(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].Code"));
 			attribute.setType(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].Type"));
-			attribute.setRequired(_ctx.booleanValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].Required"));
-			attribute.setEnableMonitorConfig(_ctx.booleanValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].EnableMonitorConfig"));
 			attribute.setDescription(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].Description"));
+			attribute.setRequired(_ctx.booleanValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].Required"));
 			attribute.setId(_ctx.longValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].Id"));
-
-			ValueConfig valueConfig = new ValueConfig();
-			valueConfig.setType(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.Type"));
-			valueConfig.setDataType(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.DataType"));
-			valueConfig.setLength(_ctx.integerValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.Length"));
-			valueConfig.setDefaultValue(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.DefaultValue"));
-
-			ValueRange valueRange = new ValueRange();
-			valueRange.setValueConstraint(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.ValueConstraint"));
-			valueRange.setDataphinAttributeType(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.DataphinAttributeType"));
-
-			List<String> valueList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.ValueList.Length"); j++) {
-				valueList.add(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.ValueList["+ j +"]"));
-			}
-			valueRange.setValueList(valueList);
-
-			MinMaxValueConfig minMaxValueConfig = new MinMaxValueConfig();
-			minMaxValueConfig.setMinValue(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.MinMaxValueConfig.MinValue"));
-			minMaxValueConfig.setIncludeMinValue(_ctx.booleanValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.MinMaxValueConfig.IncludeMinValue"));
-			minMaxValueConfig.setMaxValue(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.MinMaxValueConfig.MaxValue"));
-			minMaxValueConfig.setIncludeMaxValue(_ctx.booleanValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.MinMaxValueConfig.IncludeMaxValue"));
-			valueRange.setMinMaxValueConfig(minMaxValueConfig);
-
-			LookupTableReference lookupTableReference = new LookupTableReference();
-			lookupTableReference.setLookupTableId(_ctx.longValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.LookupTableReference.LookupTableId"));
-			lookupTableReference.setColumn(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.LookupTableReference.Column"));
-			valueRange.setLookupTableReference(lookupTableReference);
-			valueConfig.setValueRange(valueRange);
-			attribute.setValueConfig(valueConfig);
-
-			MonitorConfig monitorConfig = new MonitorConfig();
-			monitorConfig.setType(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].MonitorConfig.Type"));
-			monitorConfig.setColumnName(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].MonitorConfig.ColumnName"));
-			monitorConfig.setIsCaseSensitive(_ctx.booleanValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].MonitorConfig.IsCaseSensitive"));
-			attribute.setMonitorConfig(monitorConfig);
+			attribute.setCode(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].Code"));
+			attribute.setEnableMonitorConfig(_ctx.booleanValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].EnableMonitorConfig"));
+			attribute.setName(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].Name"));
 
 			RefAttribute refAttribute = new RefAttribute();
 			refAttribute.setAttributeId(_ctx.longValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].RefAttribute.AttributeId"));
@@ -126,16 +85,57 @@ public class GetStandardTemplateResponseUnmarshaller {
 			attributeFromInfo.setAttributeFrom(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].RefAttribute.AttributeFromInfo.AttributeFrom"));
 
 			StandardReference standardReference = new StandardReference();
-			standardReference.setStandardId(_ctx.longValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].RefAttribute.AttributeFromInfo.StandardReference.StandardId"));
 			standardReference.setVersion(_ctx.integerValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].RefAttribute.AttributeFromInfo.StandardReference.Version"));
+			standardReference.setStandardId(_ctx.longValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].RefAttribute.AttributeFromInfo.StandardReference.StandardId"));
 			attributeFromInfo.setStandardReference(standardReference);
 			refAttribute.setAttributeFromInfo(attributeFromInfo);
 			attribute.setRefAttribute(refAttribute);
+
+			ValueConfig valueConfig = new ValueConfig();
+			valueConfig.setDefaultValue(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.DefaultValue"));
+			valueConfig.setType(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.Type"));
+			valueConfig.setLength(_ctx.integerValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.Length"));
+			valueConfig.setDataType(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.DataType"));
+
+			ValueRange valueRange = new ValueRange();
+			valueRange.setDataphinAttributeType(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.DataphinAttributeType"));
+			valueRange.setValueConstraint(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.ValueConstraint"));
+
+			List<String> valueList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.ValueList.Length"); j++) {
+				valueList.add(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.ValueList["+ j +"]"));
+			}
+			valueRange.setValueList(valueList);
+
+			LookupTableReference lookupTableReference = new LookupTableReference();
+			lookupTableReference.setLookupTableId(_ctx.longValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.LookupTableReference.LookupTableId"));
+			lookupTableReference.setColumn(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.LookupTableReference.Column"));
+			valueRange.setLookupTableReference(lookupTableReference);
+
+			MinMaxValueConfig minMaxValueConfig = new MinMaxValueConfig();
+			minMaxValueConfig.setIncludeMaxValue(_ctx.booleanValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.MinMaxValueConfig.IncludeMaxValue"));
+			minMaxValueConfig.setMinValue(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.MinMaxValueConfig.MinValue"));
+			minMaxValueConfig.setMaxValue(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.MinMaxValueConfig.MaxValue"));
+			minMaxValueConfig.setIncludeMinValue(_ctx.booleanValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].ValueConfig.ValueRange.MinMaxValueConfig.IncludeMinValue"));
+			valueRange.setMinMaxValueConfig(minMaxValueConfig);
+			valueConfig.setValueRange(valueRange);
+			attribute.setValueConfig(valueConfig);
+
+			MonitorConfig monitorConfig = new MonitorConfig();
+			monitorConfig.setColumnName(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].MonitorConfig.ColumnName"));
+			monitorConfig.setType(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].MonitorConfig.Type"));
+			monitorConfig.setIsCaseSensitive(_ctx.booleanValue("GetStandardTemplateResponse.TemplateInfo.AttributesConfig.AttributeList["+ i +"].MonitorConfig.IsCaseSensitive"));
+			attribute.setMonitorConfig(monitorConfig);
 
 			attributeList.add(attribute);
 		}
 		attributesConfig.setAttributeList(attributeList);
 		templateInfo.setAttributesConfig(attributesConfig);
+
+		Creator creator = new Creator();
+		creator.setId(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.Creator.Id"));
+		creator.setName(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.Creator.Name"));
+		templateInfo.setCreator(creator);
 
 		CodeRuleConfig codeRuleConfig = new CodeRuleConfig();
 		codeRuleConfig.setGenerateType(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.CodeRuleConfig.GenerateType"));
@@ -146,15 +146,15 @@ public class GetStandardTemplateResponseUnmarshaller {
 		List<CodeRule> codeRuleList = new ArrayList<CodeRule>();
 		for (int i = 0; i < _ctx.lengthValue("GetStandardTemplateResponse.TemplateInfo.CodeRuleConfig.AutoConfig.CodeRuleList.Length"); i++) {
 			CodeRule codeRule = new CodeRule();
-			codeRule.setIndex(_ctx.integerValue("GetStandardTemplateResponse.TemplateInfo.CodeRuleConfig.AutoConfig.CodeRuleList["+ i +"].Index"));
 			codeRule.setType(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.CodeRuleConfig.AutoConfig.CodeRuleList["+ i +"].Type"));
 			codeRule.setValue(_ctx.stringValue("GetStandardTemplateResponse.TemplateInfo.CodeRuleConfig.AutoConfig.CodeRuleList["+ i +"].Value"));
+			codeRule.setIndex(_ctx.integerValue("GetStandardTemplateResponse.TemplateInfo.CodeRuleConfig.AutoConfig.CodeRuleList["+ i +"].Index"));
 
 			AutoIncrementSequenceConfig autoIncrementSequenceConfig = new AutoIncrementSequenceConfig();
 			autoIncrementSequenceConfig.setDigit(_ctx.integerValue("GetStandardTemplateResponse.TemplateInfo.CodeRuleConfig.AutoConfig.CodeRuleList["+ i +"].AutoIncrementSequenceConfig.Digit"));
+			autoIncrementSequenceConfig.setNeedPaddingZero(_ctx.booleanValue("GetStandardTemplateResponse.TemplateInfo.CodeRuleConfig.AutoConfig.CodeRuleList["+ i +"].AutoIncrementSequenceConfig.NeedPaddingZero"));
 			autoIncrementSequenceConfig.setStartValue(_ctx.longValue("GetStandardTemplateResponse.TemplateInfo.CodeRuleConfig.AutoConfig.CodeRuleList["+ i +"].AutoIncrementSequenceConfig.StartValue"));
 			autoIncrementSequenceConfig.setStep(_ctx.integerValue("GetStandardTemplateResponse.TemplateInfo.CodeRuleConfig.AutoConfig.CodeRuleList["+ i +"].AutoIncrementSequenceConfig.Step"));
-			autoIncrementSequenceConfig.setNeedPaddingZero(_ctx.booleanValue("GetStandardTemplateResponse.TemplateInfo.CodeRuleConfig.AutoConfig.CodeRuleList["+ i +"].AutoIncrementSequenceConfig.NeedPaddingZero"));
 			codeRule.setAutoIncrementSequenceConfig(autoIncrementSequenceConfig);
 
 			codeRuleList.add(codeRule);

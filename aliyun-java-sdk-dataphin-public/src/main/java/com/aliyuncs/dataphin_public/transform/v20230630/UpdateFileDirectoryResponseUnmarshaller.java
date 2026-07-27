@@ -23,10 +23,10 @@ public class UpdateFileDirectoryResponseUnmarshaller {
 	public static UpdateFileDirectoryResponse unmarshall(UpdateFileDirectoryResponse updateFileDirectoryResponse, UnmarshallerContext _ctx) {
 		
 		updateFileDirectoryResponse.setRequestId(_ctx.stringValue("UpdateFileDirectoryResponse.RequestId"));
-		updateFileDirectoryResponse.setSuccess(_ctx.booleanValue("UpdateFileDirectoryResponse.Success"));
+		updateFileDirectoryResponse.setMessage(_ctx.stringValue("UpdateFileDirectoryResponse.Message"));
 		updateFileDirectoryResponse.setHttpStatusCode(_ctx.integerValue("UpdateFileDirectoryResponse.HttpStatusCode"));
 		updateFileDirectoryResponse.setCode(_ctx.stringValue("UpdateFileDirectoryResponse.Code"));
-		updateFileDirectoryResponse.setMessage(_ctx.stringValue("UpdateFileDirectoryResponse.Message"));
+		updateFileDirectoryResponse.setSuccess(_ctx.booleanValue("UpdateFileDirectoryResponse.Success"));
 	 
 	 	return updateFileDirectoryResponse;
 	}

@@ -24,10 +24,10 @@ public class GetProjectProduceUserResponseUnmarshaller {
 	public static GetProjectProduceUserResponse unmarshall(GetProjectProduceUserResponse getProjectProduceUserResponse, UnmarshallerContext _ctx) {
 		
 		getProjectProduceUserResponse.setRequestId(_ctx.stringValue("GetProjectProduceUserResponse.RequestId"));
-		getProjectProduceUserResponse.setSuccess(_ctx.booleanValue("GetProjectProduceUserResponse.Success"));
+		getProjectProduceUserResponse.setMessage(_ctx.stringValue("GetProjectProduceUserResponse.Message"));
 		getProjectProduceUserResponse.setHttpStatusCode(_ctx.integerValue("GetProjectProduceUserResponse.HttpStatusCode"));
 		getProjectProduceUserResponse.setCode(_ctx.stringValue("GetProjectProduceUserResponse.Code"));
-		getProjectProduceUserResponse.setMessage(_ctx.stringValue("GetProjectProduceUserResponse.Message"));
+		getProjectProduceUserResponse.setSuccess(_ctx.booleanValue("GetProjectProduceUserResponse.Success"));
 
 		User user = new User();
 		user.setId(_ctx.stringValue("GetProjectProduceUserResponse.User.Id"));

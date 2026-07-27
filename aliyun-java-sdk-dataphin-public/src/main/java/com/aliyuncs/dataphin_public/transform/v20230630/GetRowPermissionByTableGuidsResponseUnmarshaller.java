@@ -27,17 +27,17 @@ public class GetRowPermissionByTableGuidsResponseUnmarshaller {
 	public static GetRowPermissionByTableGuidsResponse unmarshall(GetRowPermissionByTableGuidsResponse getRowPermissionByTableGuidsResponse, UnmarshallerContext _ctx) {
 		
 		getRowPermissionByTableGuidsResponse.setRequestId(_ctx.stringValue("GetRowPermissionByTableGuidsResponse.RequestId"));
-		getRowPermissionByTableGuidsResponse.setSuccess(_ctx.booleanValue("GetRowPermissionByTableGuidsResponse.Success"));
+		getRowPermissionByTableGuidsResponse.setMessage(_ctx.stringValue("GetRowPermissionByTableGuidsResponse.Message"));
 		getRowPermissionByTableGuidsResponse.setHttpStatusCode(_ctx.integerValue("GetRowPermissionByTableGuidsResponse.HttpStatusCode"));
 		getRowPermissionByTableGuidsResponse.setCode(_ctx.stringValue("GetRowPermissionByTableGuidsResponse.Code"));
-		getRowPermissionByTableGuidsResponse.setMessage(_ctx.stringValue("GetRowPermissionByTableGuidsResponse.Message"));
+		getRowPermissionByTableGuidsResponse.setSuccess(_ctx.booleanValue("GetRowPermissionByTableGuidsResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetRowPermissionByTableGuidsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setRowPermissionDesc(_ctx.stringValue("GetRowPermissionByTableGuidsResponse.Data["+ i +"].RowPermissionDesc"));
 			dataItem.setRowPermissionId(_ctx.stringValue("GetRowPermissionByTableGuidsResponse.Data["+ i +"].RowPermissionId"));
 			dataItem.setRowPermissionName(_ctx.stringValue("GetRowPermissionByTableGuidsResponse.Data["+ i +"].RowPermissionName"));
-			dataItem.setRowPermissionDesc(_ctx.stringValue("GetRowPermissionByTableGuidsResponse.Data["+ i +"].RowPermissionDesc"));
 
 			data.add(dataItem);
 		}

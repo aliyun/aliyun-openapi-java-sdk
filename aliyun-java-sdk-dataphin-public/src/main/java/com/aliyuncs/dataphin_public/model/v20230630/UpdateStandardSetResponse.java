@@ -26,13 +26,13 @@ public class UpdateStandardSetResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,12 +42,12 @@ public class UpdateStandardSetResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -66,12 +66,12 @@ public class UpdateStandardSetResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

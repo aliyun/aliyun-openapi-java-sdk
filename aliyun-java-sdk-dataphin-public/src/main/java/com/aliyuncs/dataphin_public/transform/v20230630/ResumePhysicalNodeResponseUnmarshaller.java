@@ -27,16 +27,16 @@ public class ResumePhysicalNodeResponseUnmarshaller {
 	public static ResumePhysicalNodeResponse unmarshall(ResumePhysicalNodeResponse resumePhysicalNodeResponse, UnmarshallerContext _ctx) {
 		
 		resumePhysicalNodeResponse.setRequestId(_ctx.stringValue("ResumePhysicalNodeResponse.RequestId"));
-		resumePhysicalNodeResponse.setSuccess(_ctx.booleanValue("ResumePhysicalNodeResponse.Success"));
+		resumePhysicalNodeResponse.setMessage(_ctx.stringValue("ResumePhysicalNodeResponse.Message"));
 		resumePhysicalNodeResponse.setHttpStatusCode(_ctx.integerValue("ResumePhysicalNodeResponse.HttpStatusCode"));
 		resumePhysicalNodeResponse.setCode(_ctx.stringValue("ResumePhysicalNodeResponse.Code"));
-		resumePhysicalNodeResponse.setMessage(_ctx.stringValue("ResumePhysicalNodeResponse.Message"));
+		resumePhysicalNodeResponse.setSuccess(_ctx.booleanValue("ResumePhysicalNodeResponse.Success"));
 
 		List<NodeOperateResult> nodeOperateResultList = new ArrayList<NodeOperateResult>();
 		for (int i = 0; i < _ctx.lengthValue("ResumePhysicalNodeResponse.NodeOperateResultList.Length"); i++) {
 			NodeOperateResult nodeOperateResult = new NodeOperateResult();
-			nodeOperateResult.setNodeId(_ctx.stringValue("ResumePhysicalNodeResponse.NodeOperateResultList["+ i +"].NodeId"));
 			nodeOperateResult.setStatus(_ctx.stringValue("ResumePhysicalNodeResponse.NodeOperateResultList["+ i +"].Status"));
+			nodeOperateResult.setNodeId(_ctx.stringValue("ResumePhysicalNodeResponse.NodeOperateResultList["+ i +"].NodeId"));
 			nodeOperateResult.setErrorMessage(_ctx.stringValue("ResumePhysicalNodeResponse.NodeOperateResultList["+ i +"].ErrorMessage"));
 
 			nodeOperateResultList.add(nodeOperateResult);

@@ -27,13 +27,13 @@ public class GetUsersResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<User> userList;
 
@@ -45,12 +45,12 @@ public class GetUsersResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetUsersResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<User> getUserList() {
@@ -87,51 +87,43 @@ public class GetUsersResponse extends AcsResponse {
 
 	public static class User {
 
-		private String id;
-
 		private String parentId;
+
+		private String whiteIp;
 
 		private String sourceType;
 
 		private String sourceId;
 
-		private String name;
+		private String feiShuRobot;
 
-		private String displayName;
-
-		private String displayNameWithoutStatus;
-
-		private String accountName;
-
-		private String realName;
+		private Long gmtModified;
 
 		private String nickName;
 
-		private Long gmtCreate;
-
 		private String mobilePhone;
+
+		private String name;
+
+		private Long gmtCreate;
 
 		private String mail;
 
 		private String dingNumber;
 
-		private String weChatRobot;
-
-		private String feiShuRobot;
+		private String displayName;
 
 		private String enableWhiteIp;
 
-		private String whiteIp;
+		private String id;
 
-		private Long gmtModified;
+		private String realName;
 
-		public String getId() {
-			return this.id;
-		}
+		private String displayNameWithoutStatus;
 
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String accountName;
+
+		private String weChatRobot;
 
 		public String getParentId() {
 			return this.parentId;
@@ -139,6 +131,14 @@ public class GetUsersResponse extends AcsResponse {
 
 		public void setParentId(String parentId) {
 			this.parentId = parentId;
+		}
+
+		public String getWhiteIp() {
+			return this.whiteIp;
+		}
+
+		public void setWhiteIp(String whiteIp) {
+			this.whiteIp = whiteIp;
 		}
 
 		public String getSourceType() {
@@ -157,44 +157,20 @@ public class GetUsersResponse extends AcsResponse {
 			this.sourceId = sourceId;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getFeiShuRobot() {
+			return this.feiShuRobot;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setFeiShuRobot(String feiShuRobot) {
+			this.feiShuRobot = feiShuRobot;
 		}
 
-		public String getDisplayName() {
-			return this.displayName;
+		public Long getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
-		public String getDisplayNameWithoutStatus() {
-			return this.displayNameWithoutStatus;
-		}
-
-		public void setDisplayNameWithoutStatus(String displayNameWithoutStatus) {
-			this.displayNameWithoutStatus = displayNameWithoutStatus;
-		}
-
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
-
-		public String getRealName() {
-			return this.realName;
-		}
-
-		public void setRealName(String realName) {
-			this.realName = realName;
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getNickName() {
@@ -205,20 +181,28 @@ public class GetUsersResponse extends AcsResponse {
 			this.nickName = nickName;
 		}
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
 		public String getMobilePhone() {
 			return this.mobilePhone;
 		}
 
 		public void setMobilePhone(String mobilePhone) {
 			this.mobilePhone = mobilePhone;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public String getMail() {
@@ -237,20 +221,12 @@ public class GetUsersResponse extends AcsResponse {
 			this.dingNumber = dingNumber;
 		}
 
-		public String getWeChatRobot() {
-			return this.weChatRobot;
+		public String getDisplayName() {
+			return this.displayName;
 		}
 
-		public void setWeChatRobot(String weChatRobot) {
-			this.weChatRobot = weChatRobot;
-		}
-
-		public String getFeiShuRobot() {
-			return this.feiShuRobot;
-		}
-
-		public void setFeiShuRobot(String feiShuRobot) {
-			this.feiShuRobot = feiShuRobot;
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
 		}
 
 		public String getEnableWhiteIp() {
@@ -261,20 +237,44 @@ public class GetUsersResponse extends AcsResponse {
 			this.enableWhiteIp = enableWhiteIp;
 		}
 
-		public String getWhiteIp() {
-			return this.whiteIp;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setWhiteIp(String whiteIp) {
-			this.whiteIp = whiteIp;
+		public void setId(String id) {
+			this.id = id;
 		}
 
-		public Long getGmtModified() {
-			return this.gmtModified;
+		public String getRealName() {
+			return this.realName;
 		}
 
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setRealName(String realName) {
+			this.realName = realName;
+		}
+
+		public String getDisplayNameWithoutStatus() {
+			return this.displayNameWithoutStatus;
+		}
+
+		public void setDisplayNameWithoutStatus(String displayNameWithoutStatus) {
+			this.displayNameWithoutStatus = displayNameWithoutStatus;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
+		}
+
+		public String getWeChatRobot() {
+			return this.weChatRobot;
+		}
+
+		public void setWeChatRobot(String weChatRobot) {
+			this.weChatRobot = weChatRobot;
 		}
 	}
 

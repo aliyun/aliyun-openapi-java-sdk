@@ -27,13 +27,13 @@ public class GetPhysicalInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Instance instance;
 
@@ -45,12 +45,12 @@ public class GetPhysicalInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetPhysicalInstanceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Instance getInstance() {
@@ -87,13 +87,7 @@ public class GetPhysicalInstanceResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String id;
-
-		private String bizDate;
-
 		private String dueTime;
-
-		private Long startExecuteTime;
 
 		private Long endExecuteTime;
 
@@ -101,27 +95,17 @@ public class GetPhysicalInstanceResponse extends AcsResponse {
 
 		private Integer index;
 
+		private String id;
+
+		private String bizDate;
+
 		private String extendInfo;
+
+		private Long startExecuteTime;
 
 		private List<String> statusList;
 
 		private NodeInfo nodeInfo;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getBizDate() {
-			return this.bizDate;
-		}
-
-		public void setBizDate(String bizDate) {
-			this.bizDate = bizDate;
-		}
 
 		public String getDueTime() {
 			return this.dueTime;
@@ -129,14 +113,6 @@ public class GetPhysicalInstanceResponse extends AcsResponse {
 
 		public void setDueTime(String dueTime) {
 			this.dueTime = dueTime;
-		}
-
-		public Long getStartExecuteTime() {
-			return this.startExecuteTime;
-		}
-
-		public void setStartExecuteTime(Long startExecuteTime) {
-			this.startExecuteTime = startExecuteTime;
 		}
 
 		public Long getEndExecuteTime() {
@@ -163,12 +139,36 @@ public class GetPhysicalInstanceResponse extends AcsResponse {
 			this.index = index;
 		}
 
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getBizDate() {
+			return this.bizDate;
+		}
+
+		public void setBizDate(String bizDate) {
+			this.bizDate = bizDate;
+		}
+
 		public String getExtendInfo() {
 			return this.extendInfo;
 		}
 
 		public void setExtendInfo(String extendInfo) {
 			this.extendInfo = extendInfo;
+		}
+
+		public Long getStartExecuteTime() {
+			return this.startExecuteTime;
+		}
+
+		public void setStartExecuteTime(Long startExecuteTime) {
+			this.startExecuteTime = startExecuteTime;
 		}
 
 		public List<String> getStatusList() {
@@ -189,83 +189,43 @@ public class GetPhysicalInstanceResponse extends AcsResponse {
 
 		public static class NodeInfo {
 
-			private String id;
-
-			private String from;
-
-			private String type;
-
-			private String name;
-
-			private String subDetailType;
-
 			private String description;
-
-			private Boolean dryRun;
-
-			private Boolean schedulePaused;
-
-			private Boolean hasProd;
-
-			private Boolean hasDev;
-
-			private String bizUnitName;
 
 			private String createTime;
 
+			private Boolean dryRun;
+
+			private String from;
+
+			private String subDetailType;
+
+			private String name;
+
+			private Boolean hasProd;
+
+			private String type;
+
+			private Boolean hasDev;
+
+			private Boolean schedulePaused;
+
 			private String lastModifiedTime;
+
+			private String bizUnitName;
+
+			private String id;
 
 			private List<User> ownerList;
 
-			private List<String> priorityList;
+			private List<String> schedulePeriodList;
 
 			private List<String> resourceGroupList;
 
-			private List<String> schedulePeriodList;
+			private List<String> priorityList;
 
 			private Creator creator;
 
 			private Modifier modifier;
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getFrom() {
-				return this.from;
-			}
-
-			public void setFrom(String from) {
-				this.from = from;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getSubDetailType() {
-				return this.subDetailType;
-			}
-
-			public void setSubDetailType(String subDetailType) {
-				this.subDetailType = subDetailType;
-			}
 
 			public String getDescription() {
 				return this.description;
@@ -273,46 +233,6 @@ public class GetPhysicalInstanceResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
-			}
-
-			public Boolean getDryRun() {
-				return this.dryRun;
-			}
-
-			public void setDryRun(Boolean dryRun) {
-				this.dryRun = dryRun;
-			}
-
-			public Boolean getSchedulePaused() {
-				return this.schedulePaused;
-			}
-
-			public void setSchedulePaused(Boolean schedulePaused) {
-				this.schedulePaused = schedulePaused;
-			}
-
-			public Boolean getHasProd() {
-				return this.hasProd;
-			}
-
-			public void setHasProd(Boolean hasProd) {
-				this.hasProd = hasProd;
-			}
-
-			public Boolean getHasDev() {
-				return this.hasDev;
-			}
-
-			public void setHasDev(Boolean hasDev) {
-				this.hasDev = hasDev;
-			}
-
-			public String getBizUnitName() {
-				return this.bizUnitName;
-			}
-
-			public void setBizUnitName(String bizUnitName) {
-				this.bizUnitName = bizUnitName;
 			}
 
 			public String getCreateTime() {
@@ -323,12 +243,92 @@ public class GetPhysicalInstanceResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
+			public Boolean getDryRun() {
+				return this.dryRun;
+			}
+
+			public void setDryRun(Boolean dryRun) {
+				this.dryRun = dryRun;
+			}
+
+			public String getFrom() {
+				return this.from;
+			}
+
+			public void setFrom(String from) {
+				this.from = from;
+			}
+
+			public String getSubDetailType() {
+				return this.subDetailType;
+			}
+
+			public void setSubDetailType(String subDetailType) {
+				this.subDetailType = subDetailType;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Boolean getHasProd() {
+				return this.hasProd;
+			}
+
+			public void setHasProd(Boolean hasProd) {
+				this.hasProd = hasProd;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public Boolean getHasDev() {
+				return this.hasDev;
+			}
+
+			public void setHasDev(Boolean hasDev) {
+				this.hasDev = hasDev;
+			}
+
+			public Boolean getSchedulePaused() {
+				return this.schedulePaused;
+			}
+
+			public void setSchedulePaused(Boolean schedulePaused) {
+				this.schedulePaused = schedulePaused;
+			}
+
 			public String getLastModifiedTime() {
 				return this.lastModifiedTime;
 			}
 
 			public void setLastModifiedTime(String lastModifiedTime) {
 				this.lastModifiedTime = lastModifiedTime;
+			}
+
+			public String getBizUnitName() {
+				return this.bizUnitName;
+			}
+
+			public void setBizUnitName(String bizUnitName) {
+				this.bizUnitName = bizUnitName;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
 			}
 
 			public List<User> getOwnerList() {
@@ -339,12 +339,12 @@ public class GetPhysicalInstanceResponse extends AcsResponse {
 				this.ownerList = ownerList;
 			}
 
-			public List<String> getPriorityList() {
-				return this.priorityList;
+			public List<String> getSchedulePeriodList() {
+				return this.schedulePeriodList;
 			}
 
-			public void setPriorityList(List<String> priorityList) {
-				this.priorityList = priorityList;
+			public void setSchedulePeriodList(List<String> schedulePeriodList) {
+				this.schedulePeriodList = schedulePeriodList;
 			}
 
 			public List<String> getResourceGroupList() {
@@ -355,12 +355,12 @@ public class GetPhysicalInstanceResponse extends AcsResponse {
 				this.resourceGroupList = resourceGroupList;
 			}
 
-			public List<String> getSchedulePeriodList() {
-				return this.schedulePeriodList;
+			public List<String> getPriorityList() {
+				return this.priorityList;
 			}
 
-			public void setSchedulePeriodList(List<String> schedulePeriodList) {
-				this.schedulePeriodList = schedulePeriodList;
+			public void setPriorityList(List<String> priorityList) {
+				this.priorityList = priorityList;
 			}
 
 			public Creator getCreator() {

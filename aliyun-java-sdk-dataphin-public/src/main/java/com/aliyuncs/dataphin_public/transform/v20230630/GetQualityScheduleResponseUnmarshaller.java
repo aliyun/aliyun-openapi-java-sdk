@@ -27,28 +27,28 @@ public class GetQualityScheduleResponseUnmarshaller {
 	public static GetQualityScheduleResponse unmarshall(GetQualityScheduleResponse getQualityScheduleResponse, UnmarshallerContext _ctx) {
 		
 		getQualityScheduleResponse.setRequestId(_ctx.stringValue("GetQualityScheduleResponse.RequestId"));
-		getQualityScheduleResponse.setSuccess(_ctx.booleanValue("GetQualityScheduleResponse.Success"));
+		getQualityScheduleResponse.setMessage(_ctx.stringValue("GetQualityScheduleResponse.Message"));
 		getQualityScheduleResponse.setHttpStatusCode(_ctx.integerValue("GetQualityScheduleResponse.HttpStatusCode"));
 		getQualityScheduleResponse.setCode(_ctx.stringValue("GetQualityScheduleResponse.Code"));
-		getQualityScheduleResponse.setMessage(_ctx.stringValue("GetQualityScheduleResponse.Message"));
+		getQualityScheduleResponse.setSuccess(_ctx.booleanValue("GetQualityScheduleResponse.Success"));
 
 		QualityScheduleInfo qualityScheduleInfo = new QualityScheduleInfo();
-		qualityScheduleInfo.setWatchId(_ctx.longValue("GetQualityScheduleResponse.QualityScheduleInfo.WatchId"));
-		qualityScheduleInfo.setId(_ctx.longValue("GetQualityScheduleResponse.QualityScheduleInfo.Id"));
-		qualityScheduleInfo.setName(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.Name"));
-		qualityScheduleInfo.setIsRefByRule(_ctx.booleanValue("GetQualityScheduleResponse.QualityScheduleInfo.IsRefByRule"));
-		qualityScheduleInfo.setType(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.Type"));
-		qualityScheduleInfo.setPartitionType(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.PartitionType"));
-		qualityScheduleInfo.setPartitionExpression(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.PartitionExpression"));
 		qualityScheduleInfo.setTriggerType(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.TriggerType"));
-		qualityScheduleInfo.setStaticTaskTriggerType(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.StaticTaskTriggerType"));
-		qualityScheduleInfo.setPeriodScheduleIntervalType(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.PeriodScheduleIntervalType"));
-		qualityScheduleInfo.setCronExpression(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.CronExpression"));
-		qualityScheduleInfo.setValidatePartitionType(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.ValidatePartitionType"));
-		qualityScheduleInfo.setCreator(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.Creator"));
-		qualityScheduleInfo.setModifier(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.Modifier"));
-		qualityScheduleInfo.setCreateTime(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.CreateTime"));
 		qualityScheduleInfo.setModifyTime(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.ModifyTime"));
+		qualityScheduleInfo.setCreateTime(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.CreateTime"));
+		qualityScheduleInfo.setCreator(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.Creator"));
+		qualityScheduleInfo.setPartitionType(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.PartitionType"));
+		qualityScheduleInfo.setValidatePartitionType(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.ValidatePartitionType"));
+		qualityScheduleInfo.setName(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.Name"));
+		qualityScheduleInfo.setType(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.Type"));
+		qualityScheduleInfo.setPartitionExpression(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.PartitionExpression"));
+		qualityScheduleInfo.setPeriodScheduleIntervalType(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.PeriodScheduleIntervalType"));
+		qualityScheduleInfo.setId(_ctx.longValue("GetQualityScheduleResponse.QualityScheduleInfo.Id"));
+		qualityScheduleInfo.setCronExpression(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.CronExpression"));
+		qualityScheduleInfo.setStaticTaskTriggerType(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.StaticTaskTriggerType"));
+		qualityScheduleInfo.setModifier(_ctx.stringValue("GetQualityScheduleResponse.QualityScheduleInfo.Modifier"));
+		qualityScheduleInfo.setIsRefByRule(_ctx.booleanValue("GetQualityScheduleResponse.QualityScheduleInfo.IsRefByRule"));
+		qualityScheduleInfo.setWatchId(_ctx.longValue("GetQualityScheduleResponse.QualityScheduleInfo.WatchId"));
 
 		List<String> triggerNodeList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityScheduleResponse.QualityScheduleInfo.TriggerNodeList.Length"); i++) {

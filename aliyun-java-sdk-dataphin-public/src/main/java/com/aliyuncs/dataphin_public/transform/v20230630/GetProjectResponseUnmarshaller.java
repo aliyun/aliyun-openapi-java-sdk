@@ -28,30 +28,30 @@ public class GetProjectResponseUnmarshaller {
 	public static GetProjectResponse unmarshall(GetProjectResponse getProjectResponse, UnmarshallerContext _ctx) {
 		
 		getProjectResponse.setRequestId(_ctx.stringValue("GetProjectResponse.RequestId"));
-		getProjectResponse.setSuccess(_ctx.booleanValue("GetProjectResponse.Success"));
+		getProjectResponse.setMessage(_ctx.stringValue("GetProjectResponse.Message"));
 		getProjectResponse.setHttpStatusCode(_ctx.integerValue("GetProjectResponse.HttpStatusCode"));
 		getProjectResponse.setCode(_ctx.stringValue("GetProjectResponse.Code"));
-		getProjectResponse.setMessage(_ctx.stringValue("GetProjectResponse.Message"));
+		getProjectResponse.setSuccess(_ctx.booleanValue("GetProjectResponse.Success"));
 
 		ProjectInfo projectInfo = new ProjectInfo();
-		projectInfo.setBizUnitId(_ctx.longValue("GetProjectResponse.ProjectInfo.BizUnitId"));
-		projectInfo.setBizUnitDisplayName(_ctx.stringValue("GetProjectResponse.ProjectInfo.BizUnitDisplayName"));
-		projectInfo.setComputeSourceId(_ctx.longValue("GetProjectResponse.ProjectInfo.ComputeSourceId"));
-		projectInfo.setComputeSourceName(_ctx.stringValue("GetProjectResponse.ProjectInfo.ComputeSourceName"));
-		projectInfo.setStreamComputeSourceId(_ctx.longValue("GetProjectResponse.ProjectInfo.StreamComputeSourceId"));
-		projectInfo.setStreamComputeSourceName(_ctx.stringValue("GetProjectResponse.ProjectInfo.StreamComputeSourceName"));
-		projectInfo.setNameSpaceTag(_ctx.stringValue("GetProjectResponse.ProjectInfo.NameSpaceTag"));
-		projectInfo.setEnv(_ctx.stringValue("GetProjectResponse.ProjectInfo.Env"));
-		projectInfo.setMode(_ctx.stringValue("GetProjectResponse.ProjectInfo.Mode"));
-		projectInfo.setType(_ctx.stringValue("GetProjectResponse.ProjectInfo.Type"));
-		projectInfo.setId(_ctx.longValue("GetProjectResponse.ProjectInfo.Id"));
-		projectInfo.setName(_ctx.stringValue("GetProjectResponse.ProjectInfo.Name"));
-		projectInfo.setDisplayName(_ctx.stringValue("GetProjectResponse.ProjectInfo.DisplayName"));
-		projectInfo.setDescription(_ctx.stringValue("GetProjectResponse.ProjectInfo.Description"));
-		projectInfo.setGmtCreate(_ctx.stringValue("GetProjectResponse.ProjectInfo.GmtCreate"));
-		projectInfo.setGmtModified(_ctx.stringValue("GetProjectResponse.ProjectInfo.GmtModified"));
 		projectInfo.setOwner(_ctx.stringValue("GetProjectResponse.ProjectInfo.Owner"));
 		projectInfo.setOwnerName(_ctx.stringValue("GetProjectResponse.ProjectInfo.OwnerName"));
+		projectInfo.setDescription(_ctx.stringValue("GetProjectResponse.ProjectInfo.Description"));
+		projectInfo.setStreamComputeSourceId(_ctx.longValue("GetProjectResponse.ProjectInfo.StreamComputeSourceId"));
+		projectInfo.setMode(_ctx.stringValue("GetProjectResponse.ProjectInfo.Mode"));
+		projectInfo.setGmtModified(_ctx.stringValue("GetProjectResponse.ProjectInfo.GmtModified"));
+		projectInfo.setEnv(_ctx.stringValue("GetProjectResponse.ProjectInfo.Env"));
+		projectInfo.setComputeSourceName(_ctx.stringValue("GetProjectResponse.ProjectInfo.ComputeSourceName"));
+		projectInfo.setNameSpaceTag(_ctx.stringValue("GetProjectResponse.ProjectInfo.NameSpaceTag"));
+		projectInfo.setName(_ctx.stringValue("GetProjectResponse.ProjectInfo.Name"));
+		projectInfo.setBizUnitId(_ctx.longValue("GetProjectResponse.ProjectInfo.BizUnitId"));
+		projectInfo.setType(_ctx.stringValue("GetProjectResponse.ProjectInfo.Type"));
+		projectInfo.setGmtCreate(_ctx.stringValue("GetProjectResponse.ProjectInfo.GmtCreate"));
+		projectInfo.setBizUnitDisplayName(_ctx.stringValue("GetProjectResponse.ProjectInfo.BizUnitDisplayName"));
+		projectInfo.setDisplayName(_ctx.stringValue("GetProjectResponse.ProjectInfo.DisplayName"));
+		projectInfo.setStreamComputeSourceName(_ctx.stringValue("GetProjectResponse.ProjectInfo.StreamComputeSourceName"));
+		projectInfo.setComputeSourceId(_ctx.longValue("GetProjectResponse.ProjectInfo.ComputeSourceId"));
+		projectInfo.setId(_ctx.longValue("GetProjectResponse.ProjectInfo.Id"));
 
 		List<WhiteList> whiteLists = new ArrayList<WhiteList>();
 		for (int i = 0; i < _ctx.lengthValue("GetProjectResponse.ProjectInfo.WhiteLists.Length"); i++) {

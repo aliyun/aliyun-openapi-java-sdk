@@ -23,11 +23,11 @@ public class FixDataResponseUnmarshaller {
 	public static FixDataResponse unmarshall(FixDataResponse fixDataResponse, UnmarshallerContext _ctx) {
 		
 		fixDataResponse.setRequestId(_ctx.stringValue("FixDataResponse.RequestId"));
-		fixDataResponse.setSuccess(_ctx.booleanValue("FixDataResponse.Success"));
-		fixDataResponse.setHttpStatusCode(_ctx.integerValue("FixDataResponse.HttpStatusCode"));
-		fixDataResponse.setCode(_ctx.stringValue("FixDataResponse.Code"));
 		fixDataResponse.setMessage(_ctx.stringValue("FixDataResponse.Message"));
 		fixDataResponse.setSubmitId(_ctx.stringValue("FixDataResponse.SubmitId"));
+		fixDataResponse.setHttpStatusCode(_ctx.integerValue("FixDataResponse.HttpStatusCode"));
+		fixDataResponse.setCode(_ctx.stringValue("FixDataResponse.Code"));
+		fixDataResponse.setSuccess(_ctx.booleanValue("FixDataResponse.Success"));
 	 
 	 	return fixDataResponse;
 	}

@@ -61,22 +61,14 @@ public class DeleteSecurityClassifyRequest extends RpcAcsRequest<DeleteSecurityC
 
 	public static class DeleteCommand {
 
-		@SerializedName("Name")
-		private String name;
-
 		@SerializedName("ParentPath")
 		private String parentPath;
 
+		@SerializedName("Name")
+		private String name;
+
 		@SerializedName("Id")
 		private Long id;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getParentPath() {
 			return this.parentPath;
@@ -84,6 +76,14 @@ public class DeleteSecurityClassifyRequest extends RpcAcsRequest<DeleteSecurityC
 
 		public void setParentPath(String parentPath) {
 			this.parentPath = parentPath;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Long getId() {

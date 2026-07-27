@@ -24,19 +24,19 @@ public class GetSecurityClassifyResponseUnmarshaller {
 	public static GetSecurityClassifyResponse unmarshall(GetSecurityClassifyResponse getSecurityClassifyResponse, UnmarshallerContext _ctx) {
 		
 		getSecurityClassifyResponse.setRequestId(_ctx.stringValue("GetSecurityClassifyResponse.RequestId"));
-		getSecurityClassifyResponse.setSuccess(_ctx.booleanValue("GetSecurityClassifyResponse.Success"));
+		getSecurityClassifyResponse.setMessage(_ctx.stringValue("GetSecurityClassifyResponse.Message"));
 		getSecurityClassifyResponse.setHttpStatusCode(_ctx.integerValue("GetSecurityClassifyResponse.HttpStatusCode"));
 		getSecurityClassifyResponse.setCode(_ctx.stringValue("GetSecurityClassifyResponse.Code"));
-		getSecurityClassifyResponse.setMessage(_ctx.stringValue("GetSecurityClassifyResponse.Message"));
+		getSecurityClassifyResponse.setSuccess(_ctx.booleanValue("GetSecurityClassifyResponse.Success"));
 
 		SecurityClassifyInfo securityClassifyInfo = new SecurityClassifyInfo();
-		securityClassifyInfo.setId(_ctx.longValue("GetSecurityClassifyResponse.SecurityClassifyInfo.Id"));
-		securityClassifyInfo.setName(_ctx.stringValue("GetSecurityClassifyResponse.SecurityClassifyInfo.Name"));
 		securityClassifyInfo.setAbbreviation(_ctx.stringValue("GetSecurityClassifyResponse.SecurityClassifyInfo.Abbreviation"));
 		securityClassifyInfo.setPath(_ctx.stringValue("GetSecurityClassifyResponse.SecurityClassifyInfo.Path"));
-		securityClassifyInfo.setLevelIndex(_ctx.longValue("GetSecurityClassifyResponse.SecurityClassifyInfo.LevelIndex"));
-		securityClassifyInfo.setLevelName(_ctx.stringValue("GetSecurityClassifyResponse.SecurityClassifyInfo.LevelName"));
 		securityClassifyInfo.setLevelAbbreviation(_ctx.stringValue("GetSecurityClassifyResponse.SecurityClassifyInfo.LevelAbbreviation"));
+		securityClassifyInfo.setLevelName(_ctx.stringValue("GetSecurityClassifyResponse.SecurityClassifyInfo.LevelName"));
+		securityClassifyInfo.setId(_ctx.longValue("GetSecurityClassifyResponse.SecurityClassifyInfo.Id"));
+		securityClassifyInfo.setName(_ctx.stringValue("GetSecurityClassifyResponse.SecurityClassifyInfo.Name"));
+		securityClassifyInfo.setLevelIndex(_ctx.longValue("GetSecurityClassifyResponse.SecurityClassifyInfo.LevelIndex"));
 		getSecurityClassifyResponse.setSecurityClassifyInfo(securityClassifyInfo);
 	 
 	 	return getSecurityClassifyResponse;

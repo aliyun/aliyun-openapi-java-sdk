@@ -27,13 +27,13 @@ public class GetInstanceDownStreamResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<InstanceRelation> instanceRelationList;
 
@@ -45,12 +45,12 @@ public class GetInstanceDownStreamResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetInstanceDownStreamResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<InstanceRelation> getInstanceRelationList() {
@@ -89,11 +89,11 @@ public class GetInstanceDownStreamResponse extends AcsResponse {
 
 		private String selectStatus;
 
+		private Integer downStreamDepth;
+
 		private String selectStatusCause;
 
 		private String runStatus;
-
-		private Integer downStreamDepth;
 
 		private String extendInfo;
 
@@ -107,6 +107,14 @@ public class GetInstanceDownStreamResponse extends AcsResponse {
 
 		public void setSelectStatus(String selectStatus) {
 			this.selectStatus = selectStatus;
+		}
+
+		public Integer getDownStreamDepth() {
+			return this.downStreamDepth;
+		}
+
+		public void setDownStreamDepth(Integer downStreamDepth) {
+			this.downStreamDepth = downStreamDepth;
 		}
 
 		public String getSelectStatusCause() {
@@ -123,14 +131,6 @@ public class GetInstanceDownStreamResponse extends AcsResponse {
 
 		public void setRunStatus(String runStatus) {
 			this.runStatus = runStatus;
-		}
-
-		public Integer getDownStreamDepth() {
-			return this.downStreamDepth;
-		}
-
-		public void setDownStreamDepth(Integer downStreamDepth) {
-			this.downStreamDepth = downStreamDepth;
 		}
 
 		public String getExtendInfo() {
@@ -161,9 +161,9 @@ public class GetInstanceDownStreamResponse extends AcsResponse {
 
 			private String selectStatus;
 
-			private String fieldInstanceId;
-
 			private String runStatus;
+
+			private String fieldInstanceId;
 
 			public String getSelectStatus() {
 				return this.selectStatus;
@@ -173,14 +173,6 @@ public class GetInstanceDownStreamResponse extends AcsResponse {
 				this.selectStatus = selectStatus;
 			}
 
-			public String getFieldInstanceId() {
-				return this.fieldInstanceId;
-			}
-
-			public void setFieldInstanceId(String fieldInstanceId) {
-				this.fieldInstanceId = fieldInstanceId;
-			}
-
 			public String getRunStatus() {
 				return this.runStatus;
 			}
@@ -188,15 +180,31 @@ public class GetInstanceDownStreamResponse extends AcsResponse {
 			public void setRunStatus(String runStatus) {
 				this.runStatus = runStatus;
 			}
+
+			public String getFieldInstanceId() {
+				return this.fieldInstanceId;
+			}
+
+			public void setFieldInstanceId(String fieldInstanceId) {
+				this.fieldInstanceId = fieldInstanceId;
+			}
 		}
 
 		public static class InstanceInfo {
+
+			private String type;
 
 			private String id;
 
 			private String name;
 
-			private String type;
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
 
 			public String getId() {
 				return this.id;
@@ -212,14 +220,6 @@ public class GetInstanceDownStreamResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
 			}
 		}
 	}

@@ -68,14 +68,14 @@ public class RevokeResourcePermissionRequest extends RpcAcsRequest<RevokeResourc
 		@SerializedName("OperateList")
 		private List<String> operateList;
 
-		@SerializedName("ResourceType")
-		private String resourceType;
-
 		@SerializedName("ResourceList")
 		private List<ResourceListItem> resourceList;
 
 		@SerializedName("UserId")
 		private String userId;
+
+		@SerializedName("ResourceType")
+		private String resourceType;
 
 		public String getReason() {
 			return this.reason;
@@ -93,14 +93,6 @@ public class RevokeResourcePermissionRequest extends RpcAcsRequest<RevokeResourc
 			this.operateList = operateList;
 		}
 
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
 		public List<ResourceListItem> getResourceList() {
 			return this.resourceList;
 		}
@@ -115,6 +107,14 @@ public class RevokeResourcePermissionRequest extends RpcAcsRequest<RevokeResourc
 
 		public void setUserId(String userId) {
 			this.userId = userId;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public static class ResourceListItem {

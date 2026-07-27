@@ -65,11 +65,11 @@ public class DeleteStandardValidMappingRequest extends RpcAcsRequest<DeleteStand
 		@SerializedName("GuidList")
 		private List<String> guidList;
 
-		@SerializedName("StandardId")
-		private Long standardId;
-
 		@SerializedName("BelongGuidList")
 		private List<String> belongGuidList;
+
+		@SerializedName("StandardId")
+		private Long standardId;
 
 		public List<String> getGuidList() {
 			return this.guidList;
@@ -79,20 +79,20 @@ public class DeleteStandardValidMappingRequest extends RpcAcsRequest<DeleteStand
 			this.guidList = guidList;
 		}
 
-		public Long getStandardId() {
-			return this.standardId;
-		}
-
-		public void setStandardId(Long standardId) {
-			this.standardId = standardId;
-		}
-
 		public List<String> getBelongGuidList() {
 			return this.belongGuidList;
 		}
 
 		public void setBelongGuidList(List<String> belongGuidList) {
 			this.belongGuidList = belongGuidList;
+		}
+
+		public Long getStandardId() {
+			return this.standardId;
+		}
+
+		public void setStandardId(Long standardId) {
+			this.standardId = standardId;
 		}
 	}
 

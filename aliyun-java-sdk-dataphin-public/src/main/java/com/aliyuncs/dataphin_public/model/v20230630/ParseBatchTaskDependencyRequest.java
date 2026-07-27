@@ -61,20 +61,20 @@ public class ParseBatchTaskDependencyRequest extends RpcAcsRequest<ParseBatchTas
 
 	public static class ParseCommand {
 
-		@SerializedName("IncludeAllInputTables")
-		private Boolean includeAllInputTables;
-
 		@SerializedName("NeedQueryLineages")
 		private Boolean needQueryLineages;
+
+		@SerializedName("IncludeAllInputTables")
+		private Boolean includeAllInputTables;
 
 		@SerializedName("Code")
 		private String code;
 
-		@SerializedName("DataSourceId")
-		private Long dataSourceId;
-
 		@SerializedName("DataSourceSchema")
 		private String dataSourceSchema;
+
+		@SerializedName("DataSourceId")
+		private Long dataSourceId;
 
 		@SerializedName("DataSourceCatalog")
 		private String dataSourceCatalog;
@@ -85,20 +85,20 @@ public class ParseBatchTaskDependencyRequest extends RpcAcsRequest<ParseBatchTas
 		@SerializedName("OperatorType")
 		private String operatorType;
 
-		public Boolean getIncludeAllInputTables() {
-			return this.includeAllInputTables;
-		}
-
-		public void setIncludeAllInputTables(Boolean includeAllInputTables) {
-			this.includeAllInputTables = includeAllInputTables;
-		}
-
 		public Boolean getNeedQueryLineages() {
 			return this.needQueryLineages;
 		}
 
 		public void setNeedQueryLineages(Boolean needQueryLineages) {
 			this.needQueryLineages = needQueryLineages;
+		}
+
+		public Boolean getIncludeAllInputTables() {
+			return this.includeAllInputTables;
+		}
+
+		public void setIncludeAllInputTables(Boolean includeAllInputTables) {
+			this.includeAllInputTables = includeAllInputTables;
 		}
 
 		public String getCode() {
@@ -109,20 +109,20 @@ public class ParseBatchTaskDependencyRequest extends RpcAcsRequest<ParseBatchTas
 			this.code = code;
 		}
 
-		public Long getDataSourceId() {
-			return this.dataSourceId;
-		}
-
-		public void setDataSourceId(Long dataSourceId) {
-			this.dataSourceId = dataSourceId;
-		}
-
 		public String getDataSourceSchema() {
 			return this.dataSourceSchema;
 		}
 
 		public void setDataSourceSchema(String dataSourceSchema) {
 			this.dataSourceSchema = dataSourceSchema;
+		}
+
+		public Long getDataSourceId() {
+			return this.dataSourceId;
+		}
+
+		public void setDataSourceId(Long dataSourceId) {
+			this.dataSourceId = dataSourceId;
 		}
 
 		public String getDataSourceCatalog() {

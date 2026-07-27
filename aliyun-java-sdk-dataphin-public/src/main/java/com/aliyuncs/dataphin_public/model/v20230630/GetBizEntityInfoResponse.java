@@ -27,13 +27,13 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private BizEntityInfo bizEntityInfo;
 
@@ -45,12 +45,12 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public BizEntityInfo getBizEntityInfo() {
@@ -87,23 +87,15 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 
 	public static class BizEntityInfo {
 
-		private String type;
-
 		private Long dataDomainId;
 
 		private Long bizUnitId;
 
-		private BizObject bizObject;
+		private String type;
 
 		private BizProcess bizProcess;
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
+		private BizObject bizObject;
 
 		public Long getDataDomainId() {
 			return this.dataDomainId;
@@ -121,12 +113,12 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 			this.bizUnitId = bizUnitId;
 		}
 
-		public BizObject getBizObject() {
-			return this.bizObject;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setBizObject(BizObject bizObject) {
-			this.bizObject = bizObject;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public BizProcess getBizProcess() {
@@ -137,86 +129,62 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 			this.bizProcess = bizProcess;
 		}
 
-		public static class BizObject {
+		public BizObject getBizObject() {
+			return this.bizObject;
+		}
 
-			private Long id;
+		public void setBizObject(BizObject bizObject) {
+			this.bizObject = bizObject;
+		}
 
-			private String name;
-
-			private String displayName;
-
-			private String description;
-
-			private String ownerUserId;
-
-			private String ownerName;
-
-			private String type;
-
-			private Long parentId;
-
-			private String gmtCreate;
-
-			private String gmtModified;
-
-			private String lastModifier;
-
-			private String lastModifierName;
-
-			private Integer refDimTableCount;
-
-			private Integer refSummaryTableCount;
-
-			private String onlineStatus;
+		public static class BizProcess {
 
 			private String status;
 
+			private String ownerName;
+
+			private String lastModifier;
+
+			private String description;
+
+			private String gmtModified;
+
+			private String onlineStatus;
+
 			private String approvalId;
+
+			private String lastModifierName;
 
 			private String approvalStatus;
 
+			private String name;
+
+			private String ownerUserId;
+
+			private String type;
+
+			private String gmtCreate;
+
+			private Boolean hasDependent;
+
+			private String displayName;
+
+			private Integer refFactTableCount;
+
+			private Long id;
+
+			private List<Long> bizEventEntityIdList;
+
 			private List<Long> refBizEntityIdList;
 
-			private List<Long> childBizEntityIdList;
+			private List<Long> preBizProcessIdList;
 
-			public Long getId() {
-				return this.id;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getDisplayName() {
-				return this.displayName;
-			}
-
-			public void setDisplayName(String displayName) {
-				this.displayName = displayName;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getOwnerUserId() {
-				return this.ownerUserId;
-			}
-
-			public void setOwnerUserId(String ownerUserId) {
-				this.ownerUserId = ownerUserId;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getOwnerName() {
@@ -227,38 +195,6 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 				this.ownerName = ownerName;
 			}
 
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public Long getParentId() {
-				return this.parentId;
-			}
-
-			public void setParentId(Long parentId) {
-				this.parentId = parentId;
-			}
-
-			public String getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
 			public String getLastModifier() {
 				return this.lastModifier;
 			}
@@ -267,28 +203,20 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 				this.lastModifier = lastModifier;
 			}
 
-			public String getLastModifierName() {
-				return this.lastModifierName;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setLastModifierName(String lastModifierName) {
-				this.lastModifierName = lastModifierName;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
-			public Integer getRefDimTableCount() {
-				return this.refDimTableCount;
+			public String getGmtModified() {
+				return this.gmtModified;
 			}
 
-			public void setRefDimTableCount(Integer refDimTableCount) {
-				this.refDimTableCount = refDimTableCount;
-			}
-
-			public Integer getRefSummaryTableCount() {
-				return this.refSummaryTableCount;
-			}
-
-			public void setRefSummaryTableCount(Integer refSummaryTableCount) {
-				this.refSummaryTableCount = refSummaryTableCount;
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
 			}
 
 			public String getOnlineStatus() {
@@ -299,20 +227,20 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 				this.onlineStatus = onlineStatus;
 			}
 
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
 			public String getApprovalId() {
 				return this.approvalId;
 			}
 
 			public void setApprovalId(String approvalId) {
 				this.approvalId = approvalId;
+			}
+
+			public String getLastModifierName() {
+				return this.lastModifierName;
+			}
+
+			public void setLastModifierName(String lastModifierName) {
+				this.lastModifierName = lastModifierName;
 			}
 
 			public String getApprovalStatus() {
@@ -323,73 +251,6 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 				this.approvalStatus = approvalStatus;
 			}
 
-			public List<Long> getRefBizEntityIdList() {
-				return this.refBizEntityIdList;
-			}
-
-			public void setRefBizEntityIdList(List<Long> refBizEntityIdList) {
-				this.refBizEntityIdList = refBizEntityIdList;
-			}
-
-			public List<Long> getChildBizEntityIdList() {
-				return this.childBizEntityIdList;
-			}
-
-			public void setChildBizEntityIdList(List<Long> childBizEntityIdList) {
-				this.childBizEntityIdList = childBizEntityIdList;
-			}
-		}
-
-		public static class BizProcess {
-
-			private Long id;
-
-			private String name;
-
-			private String displayName;
-
-			private String description;
-
-			private String ownerUserId;
-
-			private String ownerName;
-
-			private String type;
-
-			private String gmtCreate;
-
-			private String gmtModified;
-
-			private String lastModifier;
-
-			private String lastModifierName;
-
-			private Boolean hasDependent;
-
-			private String onlineStatus;
-
-			private String status;
-
-			private String approvalId;
-
-			private String approvalStatus;
-
-			private Integer refFactTableCount;
-
-			private List<Long> refBizEntityIdList1;
-
-			private List<Long> bizEventEntityIdList;
-
-			private List<Long> preBizProcessIdList;
-
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
-
 			public String getName() {
 				return this.name;
 			}
@@ -398,36 +259,12 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getDisplayName() {
-				return this.displayName;
-			}
-
-			public void setDisplayName(String displayName) {
-				this.displayName = displayName;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
 			public String getOwnerUserId() {
 				return this.ownerUserId;
 			}
 
 			public void setOwnerUserId(String ownerUserId) {
 				this.ownerUserId = ownerUserId;
-			}
-
-			public String getOwnerName() {
-				return this.ownerName;
-			}
-
-			public void setOwnerName(String ownerName) {
-				this.ownerName = ownerName;
 			}
 
 			public String getType() {
@@ -444,30 +281,6 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 
 			public void setGmtCreate(String gmtCreate) {
 				this.gmtCreate = gmtCreate;
-			}
-
-			public String getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public String getLastModifier() {
-				return this.lastModifier;
-			}
-
-			public void setLastModifier(String lastModifier) {
-				this.lastModifier = lastModifier;
-			}
-
-			public String getLastModifierName() {
-				return this.lastModifierName;
-			}
-
-			public void setLastModifierName(String lastModifierName) {
-				this.lastModifierName = lastModifierName;
 			}
 
 			public Boolean getHasDependent() {
@@ -478,36 +291,12 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 				this.hasDependent = hasDependent;
 			}
 
-			public String getOnlineStatus() {
-				return this.onlineStatus;
+			public String getDisplayName() {
+				return this.displayName;
 			}
 
-			public void setOnlineStatus(String onlineStatus) {
-				this.onlineStatus = onlineStatus;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getApprovalId() {
-				return this.approvalId;
-			}
-
-			public void setApprovalId(String approvalId) {
-				this.approvalId = approvalId;
-			}
-
-			public String getApprovalStatus() {
-				return this.approvalStatus;
-			}
-
-			public void setApprovalStatus(String approvalStatus) {
-				this.approvalStatus = approvalStatus;
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
 			}
 
 			public Integer getRefFactTableCount() {
@@ -518,12 +307,12 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 				this.refFactTableCount = refFactTableCount;
 			}
 
-			public List<Long> getRefBizEntityIdList1() {
-				return this.refBizEntityIdList1;
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setRefBizEntityIdList1(List<Long> refBizEntityIdList1) {
-				this.refBizEntityIdList1 = refBizEntityIdList1;
+			public void setId(Long id) {
+				this.id = id;
 			}
 
 			public List<Long> getBizEventEntityIdList() {
@@ -534,12 +323,223 @@ public class GetBizEntityInfoResponse extends AcsResponse {
 				this.bizEventEntityIdList = bizEventEntityIdList;
 			}
 
+			public List<Long> getRefBizEntityIdList() {
+				return this.refBizEntityIdList;
+			}
+
+			public void setRefBizEntityIdList(List<Long> refBizEntityIdList) {
+				this.refBizEntityIdList = refBizEntityIdList;
+			}
+
 			public List<Long> getPreBizProcessIdList() {
 				return this.preBizProcessIdList;
 			}
 
 			public void setPreBizProcessIdList(List<Long> preBizProcessIdList) {
 				this.preBizProcessIdList = preBizProcessIdList;
+			}
+		}
+
+		public static class BizObject {
+
+			private Long parentId;
+
+			private String status;
+
+			private String ownerName;
+
+			private String lastModifier;
+
+			private String description;
+
+			private String gmtModified;
+
+			private String onlineStatus;
+
+			private String approvalId;
+
+			private String lastModifierName;
+
+			private Integer refSummaryTableCount;
+
+			private String approvalStatus;
+
+			private String name;
+
+			private String ownerUserId;
+
+			private String type;
+
+			private String gmtCreate;
+
+			private String displayName;
+
+			private Integer refDimTableCount;
+
+			private Long id;
+
+			private List<Long> childBizEntityIdList;
+
+			private List<Long> refBizEntityIdList1;
+
+			public Long getParentId() {
+				return this.parentId;
+			}
+
+			public void setParentId(Long parentId) {
+				this.parentId = parentId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getOwnerName() {
+				return this.ownerName;
+			}
+
+			public void setOwnerName(String ownerName) {
+				this.ownerName = ownerName;
+			}
+
+			public String getLastModifier() {
+				return this.lastModifier;
+			}
+
+			public void setLastModifier(String lastModifier) {
+				this.lastModifier = lastModifier;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public String getOnlineStatus() {
+				return this.onlineStatus;
+			}
+
+			public void setOnlineStatus(String onlineStatus) {
+				this.onlineStatus = onlineStatus;
+			}
+
+			public String getApprovalId() {
+				return this.approvalId;
+			}
+
+			public void setApprovalId(String approvalId) {
+				this.approvalId = approvalId;
+			}
+
+			public String getLastModifierName() {
+				return this.lastModifierName;
+			}
+
+			public void setLastModifierName(String lastModifierName) {
+				this.lastModifierName = lastModifierName;
+			}
+
+			public Integer getRefSummaryTableCount() {
+				return this.refSummaryTableCount;
+			}
+
+			public void setRefSummaryTableCount(Integer refSummaryTableCount) {
+				this.refSummaryTableCount = refSummaryTableCount;
+			}
+
+			public String getApprovalStatus() {
+				return this.approvalStatus;
+			}
+
+			public void setApprovalStatus(String approvalStatus) {
+				this.approvalStatus = approvalStatus;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getOwnerUserId() {
+				return this.ownerUserId;
+			}
+
+			public void setOwnerUserId(String ownerUserId) {
+				this.ownerUserId = ownerUserId;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getDisplayName() {
+				return this.displayName;
+			}
+
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
+			}
+
+			public Integer getRefDimTableCount() {
+				return this.refDimTableCount;
+			}
+
+			public void setRefDimTableCount(Integer refDimTableCount) {
+				this.refDimTableCount = refDimTableCount;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public List<Long> getChildBizEntityIdList() {
+				return this.childBizEntityIdList;
+			}
+
+			public void setChildBizEntityIdList(List<Long> childBizEntityIdList) {
+				this.childBizEntityIdList = childBizEntityIdList;
+			}
+
+			public List<Long> getRefBizEntityIdList1() {
+				return this.refBizEntityIdList1;
+			}
+
+			public void setRefBizEntityIdList1(List<Long> refBizEntityIdList1) {
+				this.refBizEntityIdList1 = refBizEntityIdList1;
 			}
 		}
 	}

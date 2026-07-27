@@ -27,13 +27,13 @@ public class GetSupplementDagrunResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<DagrunInfo> dagrunList;
 
@@ -45,12 +45,12 @@ public class GetSupplementDagrunResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetSupplementDagrunResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DagrunInfo> getDagrunList() {
@@ -87,19 +87,51 @@ public class GetSupplementDagrunResponse extends AcsResponse {
 
 	public static class DagrunInfo {
 
+		private String status;
+
+		private String supplementId;
+
+		private Long endExecuteTime;
+
+		private String duration;
+
 		private String id;
 
 		private String bizDate;
 
-		private String status;
-
 		private Long startExecuteTime;
 
-		private Long endExecuteTime;
+		public String getStatus() {
+			return this.status;
+		}
 
-		private String supplementId;
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
-		private String duration;
+		public String getSupplementId() {
+			return this.supplementId;
+		}
+
+		public void setSupplementId(String supplementId) {
+			this.supplementId = supplementId;
+		}
+
+		public Long getEndExecuteTime() {
+			return this.endExecuteTime;
+		}
+
+		public void setEndExecuteTime(Long endExecuteTime) {
+			this.endExecuteTime = endExecuteTime;
+		}
+
+		public String getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(String duration) {
+			this.duration = duration;
+		}
 
 		public String getId() {
 			return this.id;
@@ -117,44 +149,12 @@ public class GetSupplementDagrunResponse extends AcsResponse {
 			this.bizDate = bizDate;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public Long getStartExecuteTime() {
 			return this.startExecuteTime;
 		}
 
 		public void setStartExecuteTime(Long startExecuteTime) {
 			this.startExecuteTime = startExecuteTime;
-		}
-
-		public Long getEndExecuteTime() {
-			return this.endExecuteTime;
-		}
-
-		public void setEndExecuteTime(Long endExecuteTime) {
-			this.endExecuteTime = endExecuteTime;
-		}
-
-		public String getSupplementId() {
-			return this.supplementId;
-		}
-
-		public void setSupplementId(String supplementId) {
-			this.supplementId = supplementId;
-		}
-
-		public String getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(String duration) {
-			this.duration = duration;
 		}
 	}
 

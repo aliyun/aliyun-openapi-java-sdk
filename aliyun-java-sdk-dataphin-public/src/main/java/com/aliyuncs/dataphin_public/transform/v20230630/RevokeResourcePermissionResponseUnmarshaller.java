@@ -23,10 +23,10 @@ public class RevokeResourcePermissionResponseUnmarshaller {
 	public static RevokeResourcePermissionResponse unmarshall(RevokeResourcePermissionResponse revokeResourcePermissionResponse, UnmarshallerContext _ctx) {
 		
 		revokeResourcePermissionResponse.setRequestId(_ctx.stringValue("RevokeResourcePermissionResponse.RequestId"));
-		revokeResourcePermissionResponse.setSuccess(_ctx.booleanValue("RevokeResourcePermissionResponse.Success"));
+		revokeResourcePermissionResponse.setMessage(_ctx.stringValue("RevokeResourcePermissionResponse.Message"));
 		revokeResourcePermissionResponse.setHttpStatusCode(_ctx.integerValue("RevokeResourcePermissionResponse.HttpStatusCode"));
 		revokeResourcePermissionResponse.setCode(_ctx.stringValue("RevokeResourcePermissionResponse.Code"));
-		revokeResourcePermissionResponse.setMessage(_ctx.stringValue("RevokeResourcePermissionResponse.Message"));
+		revokeResourcePermissionResponse.setSuccess(_ctx.booleanValue("RevokeResourcePermissionResponse.Success"));
 	 
 	 	return revokeResourcePermissionResponse;
 	}

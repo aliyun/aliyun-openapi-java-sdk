@@ -24,14 +24,14 @@ public class DeleteBizMetricResponseUnmarshaller {
 	public static DeleteBizMetricResponse unmarshall(DeleteBizMetricResponse deleteBizMetricResponse, UnmarshallerContext _ctx) {
 		
 		deleteBizMetricResponse.setRequestId(_ctx.stringValue("DeleteBizMetricResponse.RequestId"));
-		deleteBizMetricResponse.setSuccess(_ctx.booleanValue("DeleteBizMetricResponse.Success"));
+		deleteBizMetricResponse.setMessage(_ctx.stringValue("DeleteBizMetricResponse.Message"));
 		deleteBizMetricResponse.setHttpStatusCode(_ctx.integerValue("DeleteBizMetricResponse.HttpStatusCode"));
 		deleteBizMetricResponse.setCode(_ctx.stringValue("DeleteBizMetricResponse.Code"));
-		deleteBizMetricResponse.setMessage(_ctx.stringValue("DeleteBizMetricResponse.Message"));
+		deleteBizMetricResponse.setSuccess(_ctx.booleanValue("DeleteBizMetricResponse.Success"));
 
 		Data data = new Data();
-		data.setSuccess(_ctx.booleanValue("DeleteBizMetricResponse.Data.Success"));
 		data.setMessage(_ctx.stringValue("DeleteBizMetricResponse.Data.Message"));
+		data.setSuccess(_ctx.booleanValue("DeleteBizMetricResponse.Data.Success"));
 		deleteBizMetricResponse.setData(data);
 	 
 	 	return deleteBizMetricResponse;

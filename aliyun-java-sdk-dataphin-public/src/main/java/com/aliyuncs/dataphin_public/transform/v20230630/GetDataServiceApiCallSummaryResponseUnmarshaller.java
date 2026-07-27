@@ -24,18 +24,18 @@ public class GetDataServiceApiCallSummaryResponseUnmarshaller {
 	public static GetDataServiceApiCallSummaryResponse unmarshall(GetDataServiceApiCallSummaryResponse getDataServiceApiCallSummaryResponse, UnmarshallerContext _ctx) {
 		
 		getDataServiceApiCallSummaryResponse.setRequestId(_ctx.stringValue("GetDataServiceApiCallSummaryResponse.RequestId"));
-		getDataServiceApiCallSummaryResponse.setSuccess(_ctx.booleanValue("GetDataServiceApiCallSummaryResponse.Success"));
+		getDataServiceApiCallSummaryResponse.setMessage(_ctx.stringValue("GetDataServiceApiCallSummaryResponse.Message"));
 		getDataServiceApiCallSummaryResponse.setHttpStatusCode(_ctx.integerValue("GetDataServiceApiCallSummaryResponse.HttpStatusCode"));
 		getDataServiceApiCallSummaryResponse.setCode(_ctx.stringValue("GetDataServiceApiCallSummaryResponse.Code"));
-		getDataServiceApiCallSummaryResponse.setMessage(_ctx.stringValue("GetDataServiceApiCallSummaryResponse.Message"));
+		getDataServiceApiCallSummaryResponse.setSuccess(_ctx.booleanValue("GetDataServiceApiCallSummaryResponse.Success"));
 
 		Data data = new Data();
+		data.setErrorApiCount(_ctx.longValue("GetDataServiceApiCallSummaryResponse.Data.ErrorApiCount"));
+		data.setOfflineRate(_ctx.doubleValue("GetDataServiceApiCallSummaryResponse.Data.OfflineRate"));
+		data.setErrorAppCount(_ctx.longValue("GetDataServiceApiCallSummaryResponse.Data.ErrorAppCount"));
 		data.setCallCount(_ctx.longValue("GetDataServiceApiCallSummaryResponse.Data.CallCount"));
 		data.setErrorCount(_ctx.longValue("GetDataServiceApiCallSummaryResponse.Data.ErrorCount"));
 		data.setErrorRate(_ctx.doubleValue("GetDataServiceApiCallSummaryResponse.Data.ErrorRate"));
-		data.setOfflineRate(_ctx.doubleValue("GetDataServiceApiCallSummaryResponse.Data.OfflineRate"));
-		data.setErrorApiCount(_ctx.longValue("GetDataServiceApiCallSummaryResponse.Data.ErrorApiCount"));
-		data.setErrorAppCount(_ctx.longValue("GetDataServiceApiCallSummaryResponse.Data.ErrorAppCount"));
 		getDataServiceApiCallSummaryResponse.setData(data);
 	 
 	 	return getDataServiceApiCallSummaryResponse;

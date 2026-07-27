@@ -26,13 +26,13 @@ public class GetPhysicalNodeByOutputNameResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private NodeInfo nodeInfo;
 
@@ -44,12 +44,12 @@ public class GetPhysicalNodeByOutputNameResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class GetPhysicalNodeByOutputNameResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public NodeInfo getNodeInfo() {
@@ -86,66 +86,42 @@ public class GetPhysicalNodeByOutputNameResponse extends AcsResponse {
 
 	public static class NodeInfo {
 
-		private String id;
-
-		private String name;
-
-		private String description;
-
-		private String operatorType;
+		private String status;
 
 		private String scheduleType;
+
+		private String description;
 
 		private String priority;
 
 		private Long createTime;
 
-		private Long lastModifiedTime;
-
-		private String status;
-
 		private String triggerConfig;
 
 		private String from;
 
-		private ProjectInfo projectInfo;
+		private String operatorType;
 
-		private Creator creator;
+		private String name;
+
+		private Long lastModifiedTime;
+
+		private String id;
 
 		private Owner owner;
 
+		private Creator creator;
+
+		private ProjectInfo projectInfo;
+
 		private Modifier modifier;
 
-		public String getId() {
-			return this.id;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getOperatorType() {
-			return this.operatorType;
-		}
-
-		public void setOperatorType(String operatorType) {
-			this.operatorType = operatorType;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getScheduleType() {
@@ -154,6 +130,14 @@ public class GetPhysicalNodeByOutputNameResponse extends AcsResponse {
 
 		public void setScheduleType(String scheduleType) {
 			this.scheduleType = scheduleType;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getPriority() {
@@ -172,22 +156,6 @@ public class GetPhysicalNodeByOutputNameResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getLastModifiedTime() {
-			return this.lastModifiedTime;
-		}
-
-		public void setLastModifiedTime(Long lastModifiedTime) {
-			this.lastModifiedTime = lastModifiedTime;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getTriggerConfig() {
 			return this.triggerConfig;
 		}
@@ -204,20 +172,36 @@ public class GetPhysicalNodeByOutputNameResponse extends AcsResponse {
 			this.from = from;
 		}
 
-		public ProjectInfo getProjectInfo() {
-			return this.projectInfo;
+		public String getOperatorType() {
+			return this.operatorType;
 		}
 
-		public void setProjectInfo(ProjectInfo projectInfo) {
-			this.projectInfo = projectInfo;
+		public void setOperatorType(String operatorType) {
+			this.operatorType = operatorType;
 		}
 
-		public Creator getCreator() {
-			return this.creator;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setCreator(Creator creator) {
-			this.creator = creator;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getLastModifiedTime() {
+			return this.lastModifiedTime;
+		}
+
+		public void setLastModifiedTime(Long lastModifiedTime) {
+			this.lastModifiedTime = lastModifiedTime;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public Owner getOwner() {
@@ -228,6 +212,22 @@ public class GetPhysicalNodeByOutputNameResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
+		public Creator getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(Creator creator) {
+			this.creator = creator;
+		}
+
+		public ProjectInfo getProjectInfo() {
+			return this.projectInfo;
+		}
+
+		public void setProjectInfo(ProjectInfo projectInfo) {
+			this.projectInfo = projectInfo;
+		}
+
 		public Modifier getModifier() {
 			return this.modifier;
 		}
@@ -236,7 +236,7 @@ public class GetPhysicalNodeByOutputNameResponse extends AcsResponse {
 			this.modifier = modifier;
 		}
 
-		public static class ProjectInfo {
+		public static class Owner {
 
 			private String id;
 
@@ -282,7 +282,7 @@ public class GetPhysicalNodeByOutputNameResponse extends AcsResponse {
 			}
 		}
 
-		public static class Owner {
+		public static class ProjectInfo {
 
 			private String id;
 

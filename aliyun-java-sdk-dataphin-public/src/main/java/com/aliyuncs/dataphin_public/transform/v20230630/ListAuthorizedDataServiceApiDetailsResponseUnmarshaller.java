@@ -30,10 +30,10 @@ public class ListAuthorizedDataServiceApiDetailsResponseUnmarshaller {
 	public static ListAuthorizedDataServiceApiDetailsResponse unmarshall(ListAuthorizedDataServiceApiDetailsResponse listAuthorizedDataServiceApiDetailsResponse, UnmarshallerContext _ctx) {
 		
 		listAuthorizedDataServiceApiDetailsResponse.setRequestId(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.RequestId"));
-		listAuthorizedDataServiceApiDetailsResponse.setSuccess(_ctx.booleanValue("ListAuthorizedDataServiceApiDetailsResponse.Success"));
+		listAuthorizedDataServiceApiDetailsResponse.setMessage(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Message"));
 		listAuthorizedDataServiceApiDetailsResponse.setHttpStatusCode(_ctx.integerValue("ListAuthorizedDataServiceApiDetailsResponse.HttpStatusCode"));
 		listAuthorizedDataServiceApiDetailsResponse.setCode(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Code"));
-		listAuthorizedDataServiceApiDetailsResponse.setMessage(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Message"));
+		listAuthorizedDataServiceApiDetailsResponse.setSuccess(_ctx.booleanValue("ListAuthorizedDataServiceApiDetailsResponse.Success"));
 
 		Result result = new Result();
 		result.setTotalCount(_ctx.longValue("ListAuthorizedDataServiceApiDetailsResponse.Result.TotalCount"));
@@ -41,40 +41,40 @@ public class ListAuthorizedDataServiceApiDetailsResponseUnmarshaller {
 		List<ApiAuthDetail> data = new ArrayList<ApiAuthDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data.Length"); i++) {
 			ApiAuthDetail apiAuthDetail = new ApiAuthDetail();
-			apiAuthDetail.setApiId(_ctx.longValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].ApiId"));
-			apiAuthDetail.setApiName(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].ApiName"));
-			apiAuthDetail.setAppId(_ctx.longValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AppId"));
-			apiAuthDetail.setProjectId(_ctx.longValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].ProjectId"));
 			apiAuthDetail.setDescription(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].Description"));
-			apiAuthDetail.setDevAuthPeriod(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].DevAuthPeriod"));
+			apiAuthDetail.setAppId(_ctx.longValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AppId"));
+			apiAuthDetail.setApiName(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].ApiName"));
+			apiAuthDetail.setProjectId(_ctx.longValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].ProjectId"));
 			apiAuthDetail.setProdAuthPeriod(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].ProdAuthPeriod"));
 			apiAuthDetail.setAuthType(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthType"));
-
-			List<DevReturnParameters> authorizedDevReturnParameters = new ArrayList<DevReturnParameters>();
-			for (int j = 0; j < _ctx.lengthValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedDevReturnParameters.Length"); j++) {
-				DevReturnParameters devReturnParameters = new DevReturnParameters();
-				devReturnParameters.setParameterName(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedDevReturnParameters["+ j +"].ParameterName"));
-				devReturnParameters.setParameterDataType(_ctx.integerValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedDevReturnParameters["+ j +"].ParameterDataType"));
-				devReturnParameters.setParameterDescription(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedDevReturnParameters["+ j +"].ParameterDescription"));
-				devReturnParameters.setExampleValue(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedDevReturnParameters["+ j +"].ExampleValue"));
-				devReturnParameters.setIsAuthorized(_ctx.integerValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedDevReturnParameters["+ j +"].IsAuthorized"));
-
-				authorizedDevReturnParameters.add(devReturnParameters);
-			}
-			apiAuthDetail.setAuthorizedDevReturnParameters(authorizedDevReturnParameters);
+			apiAuthDetail.setApiId(_ctx.longValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].ApiId"));
+			apiAuthDetail.setDevAuthPeriod(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].DevAuthPeriod"));
 
 			List<ProdReturnParameters> authorizedProdReturnParameters = new ArrayList<ProdReturnParameters>();
 			for (int j = 0; j < _ctx.lengthValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedProdReturnParameters.Length"); j++) {
 				ProdReturnParameters prodReturnParameters = new ProdReturnParameters();
-				prodReturnParameters.setParameterName(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedProdReturnParameters["+ j +"].ParameterName"));
-				prodReturnParameters.setParameterDataType(_ctx.integerValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedProdReturnParameters["+ j +"].ParameterDataType"));
-				prodReturnParameters.setParameterDescription(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedProdReturnParameters["+ j +"].ParameterDescription"));
 				prodReturnParameters.setExampleValue(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedProdReturnParameters["+ j +"].ExampleValue"));
 				prodReturnParameters.setIsAuthorized(_ctx.integerValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedProdReturnParameters["+ j +"].IsAuthorized"));
+				prodReturnParameters.setParameterDataType(_ctx.integerValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedProdReturnParameters["+ j +"].ParameterDataType"));
+				prodReturnParameters.setParameterName(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedProdReturnParameters["+ j +"].ParameterName"));
+				prodReturnParameters.setParameterDescription(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedProdReturnParameters["+ j +"].ParameterDescription"));
 
 				authorizedProdReturnParameters.add(prodReturnParameters);
 			}
 			apiAuthDetail.setAuthorizedProdReturnParameters(authorizedProdReturnParameters);
+
+			List<DevReturnParameters> authorizedDevReturnParameters = new ArrayList<DevReturnParameters>();
+			for (int j = 0; j < _ctx.lengthValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedDevReturnParameters.Length"); j++) {
+				DevReturnParameters devReturnParameters = new DevReturnParameters();
+				devReturnParameters.setExampleValue(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedDevReturnParameters["+ j +"].ExampleValue"));
+				devReturnParameters.setIsAuthorized(_ctx.integerValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedDevReturnParameters["+ j +"].IsAuthorized"));
+				devReturnParameters.setParameterDataType(_ctx.integerValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedDevReturnParameters["+ j +"].ParameterDataType"));
+				devReturnParameters.setParameterName(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedDevReturnParameters["+ j +"].ParameterName"));
+				devReturnParameters.setParameterDescription(_ctx.stringValue("ListAuthorizedDataServiceApiDetailsResponse.Result.Data["+ i +"].AuthorizedDevReturnParameters["+ j +"].ParameterDescription"));
+
+				authorizedDevReturnParameters.add(devReturnParameters);
+			}
+			apiAuthDetail.setAuthorizedDevReturnParameters(authorizedDevReturnParameters);
 
 			data.add(apiAuthDetail);
 		}

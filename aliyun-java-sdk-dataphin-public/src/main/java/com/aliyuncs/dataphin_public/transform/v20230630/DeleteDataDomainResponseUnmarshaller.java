@@ -23,10 +23,10 @@ public class DeleteDataDomainResponseUnmarshaller {
 	public static DeleteDataDomainResponse unmarshall(DeleteDataDomainResponse deleteDataDomainResponse, UnmarshallerContext _ctx) {
 		
 		deleteDataDomainResponse.setRequestId(_ctx.stringValue("DeleteDataDomainResponse.RequestId"));
-		deleteDataDomainResponse.setSuccess(_ctx.booleanValue("DeleteDataDomainResponse.Success"));
+		deleteDataDomainResponse.setMessage(_ctx.stringValue("DeleteDataDomainResponse.Message"));
 		deleteDataDomainResponse.setHttpStatusCode(_ctx.integerValue("DeleteDataDomainResponse.HttpStatusCode"));
 		deleteDataDomainResponse.setCode(_ctx.stringValue("DeleteDataDomainResponse.Code"));
-		deleteDataDomainResponse.setMessage(_ctx.stringValue("DeleteDataDomainResponse.Message"));
+		deleteDataDomainResponse.setSuccess(_ctx.booleanValue("DeleteDataDomainResponse.Success"));
 	 
 	 	return deleteDataDomainResponse;
 	}

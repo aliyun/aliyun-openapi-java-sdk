@@ -27,13 +27,13 @@ public class GetSparkLocalClientInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<SparkLocalClientInfo> data;
 
@@ -45,12 +45,12 @@ public class GetSparkLocalClientInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetSparkLocalClientInfoResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<SparkLocalClientInfo> getData() {
@@ -89,11 +89,11 @@ public class GetSparkLocalClientInfoResponse extends AcsResponse {
 
 		private String clientName;
 
+		private Boolean editable;
+
 		private String clientFileResourceName;
 
 		private String clientFileResourceId;
-
-		private Boolean editable;
 
 		public String getClientName() {
 			return this.clientName;
@@ -101,6 +101,14 @@ public class GetSparkLocalClientInfoResponse extends AcsResponse {
 
 		public void setClientName(String clientName) {
 			this.clientName = clientName;
+		}
+
+		public Boolean getEditable() {
+			return this.editable;
+		}
+
+		public void setEditable(Boolean editable) {
+			this.editable = editable;
 		}
 
 		public String getClientFileResourceName() {
@@ -117,14 +125,6 @@ public class GetSparkLocalClientInfoResponse extends AcsResponse {
 
 		public void setClientFileResourceId(String clientFileResourceId) {
 			this.clientFileResourceId = clientFileResourceId;
-		}
-
-		public Boolean getEditable() {
-			return this.editable;
-		}
-
-		public void setEditable(Boolean editable) {
-			this.editable = editable;
 		}
 	}
 

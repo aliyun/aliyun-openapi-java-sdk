@@ -23,10 +23,10 @@ public class DeleteStandardLookupTableResponseUnmarshaller {
 	public static DeleteStandardLookupTableResponse unmarshall(DeleteStandardLookupTableResponse deleteStandardLookupTableResponse, UnmarshallerContext _ctx) {
 		
 		deleteStandardLookupTableResponse.setRequestId(_ctx.stringValue("DeleteStandardLookupTableResponse.RequestId"));
-		deleteStandardLookupTableResponse.setSuccess(_ctx.booleanValue("DeleteStandardLookupTableResponse.Success"));
+		deleteStandardLookupTableResponse.setMessage(_ctx.stringValue("DeleteStandardLookupTableResponse.Message"));
 		deleteStandardLookupTableResponse.setHttpStatusCode(_ctx.integerValue("DeleteStandardLookupTableResponse.HttpStatusCode"));
 		deleteStandardLookupTableResponse.setCode(_ctx.stringValue("DeleteStandardLookupTableResponse.Code"));
-		deleteStandardLookupTableResponse.setMessage(_ctx.stringValue("DeleteStandardLookupTableResponse.Message"));
+		deleteStandardLookupTableResponse.setSuccess(_ctx.booleanValue("DeleteStandardLookupTableResponse.Success"));
 	 
 	 	return deleteStandardLookupTableResponse;
 	}

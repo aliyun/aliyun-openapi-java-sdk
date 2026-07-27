@@ -24,25 +24,25 @@ public class GetResourceByVersionResponseUnmarshaller {
 	public static GetResourceByVersionResponse unmarshall(GetResourceByVersionResponse getResourceByVersionResponse, UnmarshallerContext _ctx) {
 		
 		getResourceByVersionResponse.setRequestId(_ctx.stringValue("GetResourceByVersionResponse.RequestId"));
-		getResourceByVersionResponse.setSuccess(_ctx.booleanValue("GetResourceByVersionResponse.Success"));
+		getResourceByVersionResponse.setMessage(_ctx.stringValue("GetResourceByVersionResponse.Message"));
 		getResourceByVersionResponse.setHttpStatusCode(_ctx.integerValue("GetResourceByVersionResponse.HttpStatusCode"));
 		getResourceByVersionResponse.setCode(_ctx.stringValue("GetResourceByVersionResponse.Code"));
-		getResourceByVersionResponse.setMessage(_ctx.stringValue("GetResourceByVersionResponse.Message"));
+		getResourceByVersionResponse.setSuccess(_ctx.booleanValue("GetResourceByVersionResponse.Success"));
 
 		ResourceInfo resourceInfo = new ResourceInfo();
-		resourceInfo.setId(_ctx.longValue("GetResourceByVersionResponse.ResourceInfo.Id"));
-		resourceInfo.setName(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.Name"));
-		resourceInfo.setProjectId(_ctx.longValue("GetResourceByVersionResponse.ResourceInfo.ProjectId"));
-		resourceInfo.setResourceType(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.ResourceType"));
-		resourceInfo.setDirectory(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.Directory"));
-		resourceInfo.setStorageAddress(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.StorageAddress"));
-		resourceInfo.setSize(_ctx.longValue("GetResourceByVersionResponse.ResourceInfo.Size"));
-		resourceInfo.setDescription(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.Description"));
-		resourceInfo.setGmtCreate(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.GmtCreate"));
-		resourceInfo.setGmtModified(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.GmtModified"));
-		resourceInfo.setComputeEngineType(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.ComputeEngineType"));
-		resourceInfo.setCreator(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.Creator"));
 		resourceInfo.setLastModifier(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.LastModifier"));
+		resourceInfo.setDescription(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.Description"));
+		resourceInfo.setSize(_ctx.longValue("GetResourceByVersionResponse.ResourceInfo.Size"));
+		resourceInfo.setProjectId(_ctx.longValue("GetResourceByVersionResponse.ResourceInfo.ProjectId"));
+		resourceInfo.setGmtModified(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.GmtModified"));
+		resourceInfo.setResourceType(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.ResourceType"));
+		resourceInfo.setCreator(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.Creator"));
+		resourceInfo.setName(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.Name"));
+		resourceInfo.setStorageAddress(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.StorageAddress"));
+		resourceInfo.setGmtCreate(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.GmtCreate"));
+		resourceInfo.setComputeEngineType(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.ComputeEngineType"));
+		resourceInfo.setId(_ctx.longValue("GetResourceByVersionResponse.ResourceInfo.Id"));
+		resourceInfo.setDirectory(_ctx.stringValue("GetResourceByVersionResponse.ResourceInfo.Directory"));
 		getResourceByVersionResponse.setResourceInfo(resourceInfo);
 	 
 	 	return getResourceByVersionResponse;

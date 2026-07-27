@@ -29,10 +29,10 @@ public class GetAccountByRowPermissionIdResponseUnmarshaller {
 	public static GetAccountByRowPermissionIdResponse unmarshall(GetAccountByRowPermissionIdResponse getAccountByRowPermissionIdResponse, UnmarshallerContext _ctx) {
 		
 		getAccountByRowPermissionIdResponse.setRequestId(_ctx.stringValue("GetAccountByRowPermissionIdResponse.RequestId"));
-		getAccountByRowPermissionIdResponse.setSuccess(_ctx.booleanValue("GetAccountByRowPermissionIdResponse.Success"));
+		getAccountByRowPermissionIdResponse.setMessage(_ctx.stringValue("GetAccountByRowPermissionIdResponse.Message"));
 		getAccountByRowPermissionIdResponse.setHttpStatusCode(_ctx.integerValue("GetAccountByRowPermissionIdResponse.HttpStatusCode"));
 		getAccountByRowPermissionIdResponse.setCode(_ctx.stringValue("GetAccountByRowPermissionIdResponse.Code"));
-		getAccountByRowPermissionIdResponse.setMessage(_ctx.stringValue("GetAccountByRowPermissionIdResponse.Message"));
+		getAccountByRowPermissionIdResponse.setSuccess(_ctx.booleanValue("GetAccountByRowPermissionIdResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAccountByRowPermissionIdResponse.Data.Length"); i++) {

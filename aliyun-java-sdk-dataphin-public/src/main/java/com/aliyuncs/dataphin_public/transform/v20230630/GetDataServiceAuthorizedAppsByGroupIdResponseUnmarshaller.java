@@ -27,18 +27,18 @@ public class GetDataServiceAuthorizedAppsByGroupIdResponseUnmarshaller {
 	public static GetDataServiceAuthorizedAppsByGroupIdResponse unmarshall(GetDataServiceAuthorizedAppsByGroupIdResponse getDataServiceAuthorizedAppsByGroupIdResponse, UnmarshallerContext _ctx) {
 		
 		getDataServiceAuthorizedAppsByGroupIdResponse.setRequestId(_ctx.stringValue("GetDataServiceAuthorizedAppsByGroupIdResponse.RequestId"));
-		getDataServiceAuthorizedAppsByGroupIdResponse.setSuccess(_ctx.booleanValue("GetDataServiceAuthorizedAppsByGroupIdResponse.Success"));
+		getDataServiceAuthorizedAppsByGroupIdResponse.setMessage(_ctx.stringValue("GetDataServiceAuthorizedAppsByGroupIdResponse.Message"));
 		getDataServiceAuthorizedAppsByGroupIdResponse.setHttpStatusCode(_ctx.integerValue("GetDataServiceAuthorizedAppsByGroupIdResponse.HttpStatusCode"));
 		getDataServiceAuthorizedAppsByGroupIdResponse.setCode(_ctx.stringValue("GetDataServiceAuthorizedAppsByGroupIdResponse.Code"));
-		getDataServiceAuthorizedAppsByGroupIdResponse.setMessage(_ctx.stringValue("GetDataServiceAuthorizedAppsByGroupIdResponse.Message"));
+		getDataServiceAuthorizedAppsByGroupIdResponse.setSuccess(_ctx.booleanValue("GetDataServiceAuthorizedAppsByGroupIdResponse.Success"));
 
 		List<AppInfo> appInfoList = new ArrayList<AppInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataServiceAuthorizedAppsByGroupIdResponse.AppInfoList.Length"); i++) {
 			AppInfo appInfo = new AppInfo();
+			appInfo.setAppKeyStr(_ctx.stringValue("GetDataServiceAuthorizedAppsByGroupIdResponse.AppInfoList["+ i +"].AppKeyStr"));
+			appInfo.setAppKey(_ctx.longValue("GetDataServiceAuthorizedAppsByGroupIdResponse.AppInfoList["+ i +"].AppKey"));
 			appInfo.setId(_ctx.integerValue("GetDataServiceAuthorizedAppsByGroupIdResponse.AppInfoList["+ i +"].Id"));
 			appInfo.setName(_ctx.stringValue("GetDataServiceAuthorizedAppsByGroupIdResponse.AppInfoList["+ i +"].Name"));
-			appInfo.setAppKey(_ctx.longValue("GetDataServiceAuthorizedAppsByGroupIdResponse.AppInfoList["+ i +"].AppKey"));
-			appInfo.setAppKeyStr(_ctx.stringValue("GetDataServiceAuthorizedAppsByGroupIdResponse.AppInfoList["+ i +"].AppKeyStr"));
 
 			appInfoList.add(appInfo);
 		}

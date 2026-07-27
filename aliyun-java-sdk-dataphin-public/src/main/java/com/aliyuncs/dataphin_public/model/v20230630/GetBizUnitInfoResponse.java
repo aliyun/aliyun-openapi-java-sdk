@@ -27,13 +27,13 @@ public class GetBizUnitInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private BizUnitInfo bizUnitInfo;
 
@@ -45,12 +45,12 @@ public class GetBizUnitInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetBizUnitInfoResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public BizUnitInfo getBizUnitInfo() {
@@ -87,35 +87,35 @@ public class GetBizUnitInfoResponse extends AcsResponse {
 
 	public static class BizUnitInfo {
 
-		private Long id;
-
-		private String name;
-
-		private String displayName;
-
-		private String description;
-
-		private String ownerUserId;
-
 		private String ownerName;
-
-		private String gmtCreate;
-
-		private String gmtModified;
 
 		private String lastModifier;
 
-		private String lastModifierName;
-
-		private String icon;
+		private String description;
 
 		private String mode;
 
-		private Integer dataDomainCount;
+		private String gmtModified;
 
 		private Integer bizObjectCount;
 
+		private String lastModifierName;
+
+		private String name;
+
+		private String ownerUserId;
+
+		private String gmtCreate;
+
+		private Integer dataDomainCount;
+
+		private String displayName;
+
 		private Integer bizProcessCount;
+
+		private Long id;
+
+		private String icon;
 
 		private List<EnvName> envList;
 
@@ -125,68 +125,12 @@ public class GetBizUnitInfoResponse extends AcsResponse {
 
 		private List<User> dataLeaderList;
 
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDisplayName() {
-			return this.displayName;
-		}
-
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getOwnerUserId() {
-			return this.ownerUserId;
-		}
-
-		public void setOwnerUserId(String ownerUserId) {
-			this.ownerUserId = ownerUserId;
-		}
-
 		public String getOwnerName() {
 			return this.ownerName;
 		}
 
 		public void setOwnerName(String ownerName) {
 			this.ownerName = ownerName;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
 		}
 
 		public String getLastModifier() {
@@ -197,20 +141,12 @@ public class GetBizUnitInfoResponse extends AcsResponse {
 			this.lastModifier = lastModifier;
 		}
 
-		public String getLastModifierName() {
-			return this.lastModifierName;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setLastModifierName(String lastModifierName) {
-			this.lastModifierName = lastModifierName;
-		}
-
-		public String getIcon() {
-			return this.icon;
-		}
-
-		public void setIcon(String icon) {
-			this.icon = icon;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getMode() {
@@ -221,12 +157,12 @@ public class GetBizUnitInfoResponse extends AcsResponse {
 			this.mode = mode;
 		}
 
-		public Integer getDataDomainCount() {
-			return this.dataDomainCount;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setDataDomainCount(Integer dataDomainCount) {
-			this.dataDomainCount = dataDomainCount;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public Integer getBizObjectCount() {
@@ -237,12 +173,76 @@ public class GetBizUnitInfoResponse extends AcsResponse {
 			this.bizObjectCount = bizObjectCount;
 		}
 
+		public String getLastModifierName() {
+			return this.lastModifierName;
+		}
+
+		public void setLastModifierName(String lastModifierName) {
+			this.lastModifierName = lastModifierName;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getOwnerUserId() {
+			return this.ownerUserId;
+		}
+
+		public void setOwnerUserId(String ownerUserId) {
+			this.ownerUserId = ownerUserId;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public Integer getDataDomainCount() {
+			return this.dataDomainCount;
+		}
+
+		public void setDataDomainCount(Integer dataDomainCount) {
+			this.dataDomainCount = dataDomainCount;
+		}
+
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
 		public Integer getBizProcessCount() {
 			return this.bizProcessCount;
 		}
 
 		public void setBizProcessCount(Integer bizProcessCount) {
 			this.bizProcessCount = bizProcessCount;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getIcon() {
+			return this.icon;
+		}
+
+		public void setIcon(String icon) {
+			this.icon = icon;
 		}
 
 		public List<EnvName> getEnvList() {
@@ -279,11 +279,19 @@ public class GetBizUnitInfoResponse extends AcsResponse {
 
 		public static class EnvName {
 
+			private String displayName;
+
 			private String envName;
 
 			private String name;
 
-			private String displayName;
+			public String getDisplayName() {
+				return this.displayName;
+			}
+
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
+			}
 
 			public String getEnvName() {
 				return this.envName;
@@ -299,14 +307,6 @@ public class GetBizUnitInfoResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
-			}
-
-			public String getDisplayName() {
-				return this.displayName;
-			}
-
-			public void setDisplayName(String displayName) {
-				this.displayName = displayName;
 			}
 		}
 

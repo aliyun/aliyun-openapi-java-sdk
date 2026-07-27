@@ -27,19 +27,19 @@ public class GetPhysicalNodeOperationLogResponseUnmarshaller {
 	public static GetPhysicalNodeOperationLogResponse unmarshall(GetPhysicalNodeOperationLogResponse getPhysicalNodeOperationLogResponse, UnmarshallerContext _ctx) {
 		
 		getPhysicalNodeOperationLogResponse.setRequestId(_ctx.stringValue("GetPhysicalNodeOperationLogResponse.RequestId"));
-		getPhysicalNodeOperationLogResponse.setSuccess(_ctx.booleanValue("GetPhysicalNodeOperationLogResponse.Success"));
+		getPhysicalNodeOperationLogResponse.setMessage(_ctx.stringValue("GetPhysicalNodeOperationLogResponse.Message"));
 		getPhysicalNodeOperationLogResponse.setHttpStatusCode(_ctx.integerValue("GetPhysicalNodeOperationLogResponse.HttpStatusCode"));
 		getPhysicalNodeOperationLogResponse.setCode(_ctx.stringValue("GetPhysicalNodeOperationLogResponse.Code"));
-		getPhysicalNodeOperationLogResponse.setMessage(_ctx.stringValue("GetPhysicalNodeOperationLogResponse.Message"));
+		getPhysicalNodeOperationLogResponse.setSuccess(_ctx.booleanValue("GetPhysicalNodeOperationLogResponse.Success"));
 
 		List<OperationLog> operationLogList = new ArrayList<OperationLog>();
 		for (int i = 0; i < _ctx.lengthValue("GetPhysicalNodeOperationLogResponse.OperationLogList.Length"); i++) {
 			OperationLog operationLog = new OperationLog();
 			operationLog.setContext(_ctx.stringValue("GetPhysicalNodeOperationLogResponse.OperationLogList["+ i +"].Context"));
-			operationLog.setOperationType(_ctx.stringValue("GetPhysicalNodeOperationLogResponse.OperationLogList["+ i +"].OperationType"));
 			operationLog.setOperator(_ctx.stringValue("GetPhysicalNodeOperationLogResponse.OperationLogList["+ i +"].Operator"));
-			operationLog.setOperationTime(_ctx.stringValue("GetPhysicalNodeOperationLogResponse.OperationLogList["+ i +"].OperationTime"));
 			operationLog.setOperatorName(_ctx.stringValue("GetPhysicalNodeOperationLogResponse.OperationLogList["+ i +"].OperatorName"));
+			operationLog.setOperationType(_ctx.stringValue("GetPhysicalNodeOperationLogResponse.OperationLogList["+ i +"].OperationType"));
+			operationLog.setOperationTime(_ctx.stringValue("GetPhysicalNodeOperationLogResponse.OperationLogList["+ i +"].OperationTime"));
 
 			operationLogList.add(operationLog);
 		}

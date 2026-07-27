@@ -32,10 +32,10 @@ public class ListNodesResponseUnmarshaller {
 	public static ListNodesResponse unmarshall(ListNodesResponse listNodesResponse, UnmarshallerContext _ctx) {
 		
 		listNodesResponse.setRequestId(_ctx.stringValue("ListNodesResponse.RequestId"));
-		listNodesResponse.setSuccess(_ctx.booleanValue("ListNodesResponse.Success"));
+		listNodesResponse.setMessage(_ctx.stringValue("ListNodesResponse.Message"));
 		listNodesResponse.setHttpStatusCode(_ctx.integerValue("ListNodesResponse.HttpStatusCode"));
 		listNodesResponse.setCode(_ctx.stringValue("ListNodesResponse.Code"));
-		listNodesResponse.setMessage(_ctx.stringValue("ListNodesResponse.Message"));
+		listNodesResponse.setSuccess(_ctx.booleanValue("ListNodesResponse.Success"));
 
 		PageResult pageResult = new PageResult();
 		pageResult.setTotalCount(_ctx.integerValue("ListNodesResponse.PageResult.TotalCount"));
@@ -58,17 +58,17 @@ public class ListNodesResponseUnmarshaller {
 			nodeInfo.setId(_ctx.stringValue("ListNodesResponse.PageResult.NodeList["+ i +"].Id"));
 			nodeInfo.setExtendInfo(_ctx.stringValue("ListNodesResponse.PageResult.NodeList["+ i +"].ExtendInfo"));
 
-			List<String> priorityList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListNodesResponse.PageResult.NodeList["+ i +"].PriorityList.Length"); j++) {
-				priorityList.add(_ctx.stringValue("ListNodesResponse.PageResult.NodeList["+ i +"].PriorityList["+ j +"]"));
-			}
-			nodeInfo.setPriorityList(priorityList);
-
 			List<String> schedulePeriodList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListNodesResponse.PageResult.NodeList["+ i +"].SchedulePeriodList.Length"); j++) {
 				schedulePeriodList.add(_ctx.stringValue("ListNodesResponse.PageResult.NodeList["+ i +"].SchedulePeriodList["+ j +"]"));
 			}
 			nodeInfo.setSchedulePeriodList(schedulePeriodList);
+
+			List<String> priorityList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListNodesResponse.PageResult.NodeList["+ i +"].PriorityList.Length"); j++) {
+				priorityList.add(_ctx.stringValue("ListNodesResponse.PageResult.NodeList["+ i +"].PriorityList["+ j +"]"));
+			}
+			nodeInfo.setPriorityList(priorityList);
 
 			Creator creator = new Creator();
 			creator.setId(_ctx.stringValue("ListNodesResponse.PageResult.NodeList["+ i +"].Creator.Id"));

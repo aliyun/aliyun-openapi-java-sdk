@@ -27,25 +27,25 @@ public class ListFilesResponseUnmarshaller {
 	public static ListFilesResponse unmarshall(ListFilesResponse listFilesResponse, UnmarshallerContext _ctx) {
 		
 		listFilesResponse.setRequestId(_ctx.stringValue("ListFilesResponse.RequestId"));
-		listFilesResponse.setSuccess(_ctx.booleanValue("ListFilesResponse.Success"));
+		listFilesResponse.setMessage(_ctx.stringValue("ListFilesResponse.Message"));
 		listFilesResponse.setHttpStatusCode(_ctx.integerValue("ListFilesResponse.HttpStatusCode"));
 		listFilesResponse.setCode(_ctx.stringValue("ListFilesResponse.Code"));
-		listFilesResponse.setMessage(_ctx.stringValue("ListFilesResponse.Message"));
+		listFilesResponse.setSuccess(_ctx.booleanValue("ListFilesResponse.Success"));
 
 		List<File> fileList = new ArrayList<File>();
 		for (int i = 0; i < _ctx.lengthValue("ListFilesResponse.FileList.Length"); i++) {
 			File file = new File();
-			file.setId(_ctx.longValue("ListFilesResponse.FileList["+ i +"].Id"));
-			file.setName(_ctx.stringValue("ListFilesResponse.FileList["+ i +"].Name"));
-			file.setProjectId(_ctx.longValue("ListFilesResponse.FileList["+ i +"].ProjectId"));
+			file.setGmtCreate(_ctx.longValue("ListFilesResponse.FileList["+ i +"].GmtCreate"));
+			file.setLastModifier(_ctx.stringValue("ListFilesResponse.FileList["+ i +"].LastModifier"));
 			file.setCategory(_ctx.stringValue("ListFilesResponse.FileList["+ i +"].Category"));
 			file.setFileType(_ctx.stringValue("ListFilesResponse.FileList["+ i +"].FileType"));
-			file.setDirectory(_ctx.stringValue("ListFilesResponse.FileList["+ i +"].Directory"));
 			file.setContent(_ctx.stringValue("ListFilesResponse.FileList["+ i +"].Content"));
-			file.setGmtCreate(_ctx.longValue("ListFilesResponse.FileList["+ i +"].GmtCreate"));
+			file.setProjectId(_ctx.longValue("ListFilesResponse.FileList["+ i +"].ProjectId"));
 			file.setGmtModified(_ctx.longValue("ListFilesResponse.FileList["+ i +"].GmtModified"));
+			file.setId(_ctx.longValue("ListFilesResponse.FileList["+ i +"].Id"));
 			file.setCreator(_ctx.stringValue("ListFilesResponse.FileList["+ i +"].Creator"));
-			file.setLastModifier(_ctx.stringValue("ListFilesResponse.FileList["+ i +"].LastModifier"));
+			file.setName(_ctx.stringValue("ListFilesResponse.FileList["+ i +"].Name"));
+			file.setDirectory(_ctx.stringValue("ListFilesResponse.FileList["+ i +"].Directory"));
 
 			fileList.add(file);
 		}

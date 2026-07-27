@@ -26,13 +26,13 @@ public class CreateDataSourceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private CreateResult createResult;
 
@@ -44,12 +44,12 @@ public class CreateDataSourceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class CreateDataSourceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public CreateResult getCreateResult() {
@@ -86,17 +86,9 @@ public class CreateDataSourceResponse extends AcsResponse {
 
 	public static class CreateResult {
 
-		private Long devDataSourceId;
-
 		private Long prodDataSourceId;
 
-		public Long getDevDataSourceId() {
-			return this.devDataSourceId;
-		}
-
-		public void setDevDataSourceId(Long devDataSourceId) {
-			this.devDataSourceId = devDataSourceId;
-		}
+		private Long devDataSourceId;
 
 		public Long getProdDataSourceId() {
 			return this.prodDataSourceId;
@@ -104,6 +96,14 @@ public class CreateDataSourceResponse extends AcsResponse {
 
 		public void setProdDataSourceId(Long prodDataSourceId) {
 			this.prodDataSourceId = prodDataSourceId;
+		}
+
+		public Long getDevDataSourceId() {
+			return this.devDataSourceId;
+		}
+
+		public void setDevDataSourceId(Long devDataSourceId) {
+			this.devDataSourceId = devDataSourceId;
 		}
 	}
 

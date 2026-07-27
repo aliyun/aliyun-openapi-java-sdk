@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ExecuteManualNodeResponse extends AcsResponse {
 
+	private String flowId;
+
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
-	private String flowId;
+	public String getFlowId() {
+		return this.flowId;
+	}
+
+	public void setFlowId(String flowId) {
+		this.flowId = flowId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,12 +52,12 @@ public class ExecuteManualNodeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,20 +76,12 @@ public class ExecuteManualNodeResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getFlowId() {
-		return this.flowId;
-	}
-
-	public void setFlowId(String flowId) {
-		this.flowId = flowId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

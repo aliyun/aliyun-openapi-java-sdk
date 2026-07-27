@@ -23,10 +23,10 @@ public class UpdateAdHocFileResponseUnmarshaller {
 	public static UpdateAdHocFileResponse unmarshall(UpdateAdHocFileResponse updateAdHocFileResponse, UnmarshallerContext _ctx) {
 		
 		updateAdHocFileResponse.setRequestId(_ctx.stringValue("UpdateAdHocFileResponse.RequestId"));
-		updateAdHocFileResponse.setSuccess(_ctx.booleanValue("UpdateAdHocFileResponse.Success"));
+		updateAdHocFileResponse.setMessage(_ctx.stringValue("UpdateAdHocFileResponse.Message"));
 		updateAdHocFileResponse.setHttpStatusCode(_ctx.integerValue("UpdateAdHocFileResponse.HttpStatusCode"));
 		updateAdHocFileResponse.setCode(_ctx.stringValue("UpdateAdHocFileResponse.Code"));
-		updateAdHocFileResponse.setMessage(_ctx.stringValue("UpdateAdHocFileResponse.Message"));
+		updateAdHocFileResponse.setSuccess(_ctx.booleanValue("UpdateAdHocFileResponse.Success"));
 	 
 	 	return updateAdHocFileResponse;
 	}

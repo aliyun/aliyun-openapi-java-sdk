@@ -23,11 +23,11 @@ public class TransferOwnershipForAllObjectResponseUnmarshaller {
 	public static TransferOwnershipForAllObjectResponse unmarshall(TransferOwnershipForAllObjectResponse transferOwnershipForAllObjectResponse, UnmarshallerContext _ctx) {
 		
 		transferOwnershipForAllObjectResponse.setRequestId(_ctx.stringValue("TransferOwnershipForAllObjectResponse.RequestId"));
-		transferOwnershipForAllObjectResponse.setSuccess(_ctx.booleanValue("TransferOwnershipForAllObjectResponse.Success"));
-		transferOwnershipForAllObjectResponse.setHttpStatusCode(_ctx.integerValue("TransferOwnershipForAllObjectResponse.HttpStatusCode"));
-		transferOwnershipForAllObjectResponse.setCode(_ctx.stringValue("TransferOwnershipForAllObjectResponse.Code"));
 		transferOwnershipForAllObjectResponse.setMessage(_ctx.stringValue("TransferOwnershipForAllObjectResponse.Message"));
+		transferOwnershipForAllObjectResponse.setHttpStatusCode(_ctx.integerValue("TransferOwnershipForAllObjectResponse.HttpStatusCode"));
 		transferOwnershipForAllObjectResponse.setData(_ctx.longValue("TransferOwnershipForAllObjectResponse.Data"));
+		transferOwnershipForAllObjectResponse.setCode(_ctx.stringValue("TransferOwnershipForAllObjectResponse.Code"));
+		transferOwnershipForAllObjectResponse.setSuccess(_ctx.booleanValue("TransferOwnershipForAllObjectResponse.Success"));
 	 
 	 	return transferOwnershipForAllObjectResponse;
 	}

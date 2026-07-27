@@ -26,10 +26,10 @@ public class GetQueueEngineVersionByEnvResponseUnmarshaller {
 	public static GetQueueEngineVersionByEnvResponse unmarshall(GetQueueEngineVersionByEnvResponse getQueueEngineVersionByEnvResponse, UnmarshallerContext _ctx) {
 		
 		getQueueEngineVersionByEnvResponse.setRequestId(_ctx.stringValue("GetQueueEngineVersionByEnvResponse.RequestId"));
-		getQueueEngineVersionByEnvResponse.setSuccess(_ctx.booleanValue("GetQueueEngineVersionByEnvResponse.Success"));
+		getQueueEngineVersionByEnvResponse.setMessage(_ctx.stringValue("GetQueueEngineVersionByEnvResponse.Message"));
 		getQueueEngineVersionByEnvResponse.setHttpStatusCode(_ctx.integerValue("GetQueueEngineVersionByEnvResponse.HttpStatusCode"));
 		getQueueEngineVersionByEnvResponse.setCode(_ctx.stringValue("GetQueueEngineVersionByEnvResponse.Code"));
-		getQueueEngineVersionByEnvResponse.setMessage(_ctx.stringValue("GetQueueEngineVersionByEnvResponse.Message"));
+		getQueueEngineVersionByEnvResponse.setSuccess(_ctx.booleanValue("GetQueueEngineVersionByEnvResponse.Success"));
 
 		List<String> data = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetQueueEngineVersionByEnvResponse.Data.Length"); i++) {

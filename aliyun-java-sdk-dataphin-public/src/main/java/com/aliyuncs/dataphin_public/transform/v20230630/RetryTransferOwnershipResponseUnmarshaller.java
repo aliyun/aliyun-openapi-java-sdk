@@ -23,11 +23,11 @@ public class RetryTransferOwnershipResponseUnmarshaller {
 	public static RetryTransferOwnershipResponse unmarshall(RetryTransferOwnershipResponse retryTransferOwnershipResponse, UnmarshallerContext _ctx) {
 		
 		retryTransferOwnershipResponse.setRequestId(_ctx.stringValue("RetryTransferOwnershipResponse.RequestId"));
-		retryTransferOwnershipResponse.setSuccess(_ctx.booleanValue("RetryTransferOwnershipResponse.Success"));
-		retryTransferOwnershipResponse.setHttpStatusCode(_ctx.integerValue("RetryTransferOwnershipResponse.HttpStatusCode"));
-		retryTransferOwnershipResponse.setCode(_ctx.stringValue("RetryTransferOwnershipResponse.Code"));
 		retryTransferOwnershipResponse.setMessage(_ctx.stringValue("RetryTransferOwnershipResponse.Message"));
+		retryTransferOwnershipResponse.setHttpStatusCode(_ctx.integerValue("RetryTransferOwnershipResponse.HttpStatusCode"));
 		retryTransferOwnershipResponse.setData(_ctx.longValue("RetryTransferOwnershipResponse.Data"));
+		retryTransferOwnershipResponse.setCode(_ctx.stringValue("RetryTransferOwnershipResponse.Code"));
+		retryTransferOwnershipResponse.setSuccess(_ctx.booleanValue("RetryTransferOwnershipResponse.Success"));
 	 
 	 	return retryTransferOwnershipResponse;
 	}

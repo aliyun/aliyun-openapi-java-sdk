@@ -78,11 +78,11 @@ public class OperateInstanceRequest extends RpcAcsRequest<OperateInstanceRespons
 		@SerializedName("InstanceIdList")
 		private List<InstanceIdListItem> instanceIdList;
 
-		@SerializedName("Operation")
-		private String operation;
-
 		@SerializedName("ProjectId")
 		private Long projectId;
+
+		@SerializedName("Operation")
+		private String operation;
 
 		public List<InstanceIdListItem> getInstanceIdList() {
 			return this.instanceIdList;
@@ -92,20 +92,20 @@ public class OperateInstanceRequest extends RpcAcsRequest<OperateInstanceRespons
 			this.instanceIdList = instanceIdList;
 		}
 
-		public String getOperation() {
-			return this.operation;
-		}
-
-		public void setOperation(String operation) {
-			this.operation = operation;
-		}
-
 		public Long getProjectId() {
 			return this.projectId;
 		}
 
 		public void setProjectId(Long projectId) {
 			this.projectId = projectId;
+		}
+
+		public String getOperation() {
+			return this.operation;
+		}
+
+		public void setOperation(String operation) {
+			this.operation = operation;
 		}
 
 		public static class InstanceIdListItem {

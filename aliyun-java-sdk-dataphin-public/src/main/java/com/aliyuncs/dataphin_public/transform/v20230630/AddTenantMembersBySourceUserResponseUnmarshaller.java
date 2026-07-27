@@ -23,11 +23,11 @@ public class AddTenantMembersBySourceUserResponseUnmarshaller {
 	public static AddTenantMembersBySourceUserResponse unmarshall(AddTenantMembersBySourceUserResponse addTenantMembersBySourceUserResponse, UnmarshallerContext _ctx) {
 		
 		addTenantMembersBySourceUserResponse.setRequestId(_ctx.stringValue("AddTenantMembersBySourceUserResponse.RequestId"));
-		addTenantMembersBySourceUserResponse.setSuccess(_ctx.booleanValue("AddTenantMembersBySourceUserResponse.Success"));
-		addTenantMembersBySourceUserResponse.setHttpStatusCode(_ctx.integerValue("AddTenantMembersBySourceUserResponse.HttpStatusCode"));
-		addTenantMembersBySourceUserResponse.setCode(_ctx.stringValue("AddTenantMembersBySourceUserResponse.Code"));
 		addTenantMembersBySourceUserResponse.setMessage(_ctx.stringValue("AddTenantMembersBySourceUserResponse.Message"));
+		addTenantMembersBySourceUserResponse.setHttpStatusCode(_ctx.integerValue("AddTenantMembersBySourceUserResponse.HttpStatusCode"));
 		addTenantMembersBySourceUserResponse.setData(_ctx.booleanValue("AddTenantMembersBySourceUserResponse.Data"));
+		addTenantMembersBySourceUserResponse.setCode(_ctx.stringValue("AddTenantMembersBySourceUserResponse.Code"));
+		addTenantMembersBySourceUserResponse.setSuccess(_ctx.booleanValue("AddTenantMembersBySourceUserResponse.Success"));
 	 
 	 	return addTenantMembersBySourceUserResponse;
 	}

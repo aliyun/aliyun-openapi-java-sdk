@@ -27,10 +27,10 @@ public class GetDataServiceAppsByGroupIdResponseUnmarshaller {
 	public static GetDataServiceAppsByGroupIdResponse unmarshall(GetDataServiceAppsByGroupIdResponse getDataServiceAppsByGroupIdResponse, UnmarshallerContext _ctx) {
 		
 		getDataServiceAppsByGroupIdResponse.setRequestId(_ctx.stringValue("GetDataServiceAppsByGroupIdResponse.RequestId"));
-		getDataServiceAppsByGroupIdResponse.setSuccess(_ctx.booleanValue("GetDataServiceAppsByGroupIdResponse.Success"));
+		getDataServiceAppsByGroupIdResponse.setMessage(_ctx.stringValue("GetDataServiceAppsByGroupIdResponse.Message"));
 		getDataServiceAppsByGroupIdResponse.setHttpStatusCode(_ctx.integerValue("GetDataServiceAppsByGroupIdResponse.HttpStatusCode"));
 		getDataServiceAppsByGroupIdResponse.setCode(_ctx.stringValue("GetDataServiceAppsByGroupIdResponse.Code"));
-		getDataServiceAppsByGroupIdResponse.setMessage(_ctx.stringValue("GetDataServiceAppsByGroupIdResponse.Message"));
+		getDataServiceAppsByGroupIdResponse.setSuccess(_ctx.booleanValue("GetDataServiceAppsByGroupIdResponse.Success"));
 
 		List<AppInfo> appInfoList = new ArrayList<AppInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataServiceAppsByGroupIdResponse.AppInfoList.Length"); i++) {

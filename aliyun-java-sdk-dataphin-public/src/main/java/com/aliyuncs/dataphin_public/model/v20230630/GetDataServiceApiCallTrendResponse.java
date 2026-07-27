@@ -27,13 +27,13 @@ public class GetDataServiceApiCallTrendResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -45,12 +45,12 @@ public class GetDataServiceApiCallTrendResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetDataServiceApiCallTrendResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -87,17 +87,9 @@ public class GetDataServiceApiCallTrendResponse extends AcsResponse {
 
 	public static class Data {
 
-		private List<CallErrorTrend> callErrorTrendList;
-
 		private List<CallErrorImpactTrend> callErrorImpactTrendList;
 
-		public List<CallErrorTrend> getCallErrorTrendList() {
-			return this.callErrorTrendList;
-		}
-
-		public void setCallErrorTrendList(List<CallErrorTrend> callErrorTrendList) {
-			this.callErrorTrendList = callErrorTrendList;
-		}
+		private List<CallErrorTrend> callErrorTrendList;
 
 		public List<CallErrorImpactTrend> getCallErrorImpactTrendList() {
 			return this.callErrorImpactTrendList;
@@ -107,37 +99,12 @@ public class GetDataServiceApiCallTrendResponse extends AcsResponse {
 			this.callErrorImpactTrendList = callErrorImpactTrendList;
 		}
 
-		public static class CallErrorTrend {
+		public List<CallErrorTrend> getCallErrorTrendList() {
+			return this.callErrorTrendList;
+		}
 
-			private String minute;
-
-			private Long callCount;
-
-			private Long errorCount;
-
-			public String getMinute() {
-				return this.minute;
-			}
-
-			public void setMinute(String minute) {
-				this.minute = minute;
-			}
-
-			public Long getCallCount() {
-				return this.callCount;
-			}
-
-			public void setCallCount(Long callCount) {
-				this.callCount = callCount;
-			}
-
-			public Long getErrorCount() {
-				return this.errorCount;
-			}
-
-			public void setErrorCount(Long errorCount) {
-				this.errorCount = errorCount;
-			}
+		public void setCallErrorTrendList(List<CallErrorTrend> callErrorTrendList) {
+			this.callErrorTrendList = callErrorTrendList;
 		}
 
 		public static class CallErrorImpactTrend {
@@ -180,6 +147,39 @@ public class GetDataServiceApiCallTrendResponse extends AcsResponse {
 
 			public void setApiIdList(List<Long> apiIdList) {
 				this.apiIdList = apiIdList;
+			}
+		}
+
+		public static class CallErrorTrend {
+
+			private String minute;
+
+			private Long callCount;
+
+			private Long errorCount;
+
+			public String getMinute() {
+				return this.minute;
+			}
+
+			public void setMinute(String minute) {
+				this.minute = minute;
+			}
+
+			public Long getCallCount() {
+				return this.callCount;
+			}
+
+			public void setCallCount(Long callCount) {
+				this.callCount = callCount;
+			}
+
+			public Long getErrorCount() {
+				return this.errorCount;
+			}
+
+			public void setErrorCount(Long errorCount) {
+				this.errorCount = errorCount;
 			}
 		}
 	}

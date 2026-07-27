@@ -68,11 +68,11 @@ public class CreateSecurityClassifyRequest extends RpcAcsRequest<CreateSecurityC
 		@SerializedName("AdvancedConditionList")
 		private List<AdvancedConditionListItem> advancedConditionList;
 
-		@SerializedName("Name")
-		private String name;
-
 		@SerializedName("ParentPath")
 		private String parentPath;
+
+		@SerializedName("Name")
+		private String name;
 
 		@SerializedName("Description")
 		private String description;
@@ -80,11 +80,11 @@ public class CreateSecurityClassifyRequest extends RpcAcsRequest<CreateSecurityC
 		@SerializedName("Abbreviation")
 		private String abbreviation;
 
-		@SerializedName("LevelName")
-		private String levelName;
-
 		@SerializedName("Priority")
 		private Integer priority;
+
+		@SerializedName("LevelName")
+		private String levelName;
 
 		@SerializedName("Status")
 		private String status;
@@ -105,20 +105,20 @@ public class CreateSecurityClassifyRequest extends RpcAcsRequest<CreateSecurityC
 			this.advancedConditionList = advancedConditionList;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getParentPath() {
 			return this.parentPath;
 		}
 
 		public void setParentPath(String parentPath) {
 			this.parentPath = parentPath;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getDescription() {
@@ -137,20 +137,20 @@ public class CreateSecurityClassifyRequest extends RpcAcsRequest<CreateSecurityC
 			this.abbreviation = abbreviation;
 		}
 
-		public String getLevelName() {
-			return this.levelName;
-		}
-
-		public void setLevelName(String levelName) {
-			this.levelName = levelName;
-		}
-
 		public Integer getPriority() {
 			return this.priority;
 		}
 
 		public void setPriority(Integer priority) {
 			this.priority = priority;
+		}
+
+		public String getLevelName() {
+			return this.levelName;
+		}
+
+		public void setLevelName(String levelName) {
+			this.levelName = levelName;
 		}
 
 		public String getStatus() {
@@ -166,11 +166,11 @@ public class CreateSecurityClassifyRequest extends RpcAcsRequest<CreateSecurityC
 			@SerializedName("Operate")
 			private String operate;
 
-			@SerializedName("Property")
-			private String property;
-
 			@SerializedName("ValueList")
 			private List<String> valueList;
+
+			@SerializedName("Property")
+			private String property;
 
 			@SerializedName("OptionList")
 			private List<OptionListItem> optionList;
@@ -192,20 +192,20 @@ public class CreateSecurityClassifyRequest extends RpcAcsRequest<CreateSecurityC
 				this.operate = operate;
 			}
 
-			public String getProperty() {
-				return this.property;
-			}
-
-			public void setProperty(String property) {
-				this.property = property;
-			}
-
 			public List<String> getValueList() {
 				return this.valueList;
 			}
 
 			public void setValueList(List<String> valueList) {
 				this.valueList = valueList;
+			}
+
+			public String getProperty() {
+				return this.property;
+			}
+
+			public void setProperty(String property) {
+				this.property = property;
 			}
 
 			public List<OptionListItem> getOptionList() {

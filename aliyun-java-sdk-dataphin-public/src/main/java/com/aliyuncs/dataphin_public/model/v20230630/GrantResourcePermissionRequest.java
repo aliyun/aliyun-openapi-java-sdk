@@ -71,11 +71,11 @@ public class GrantResourcePermissionRequest extends RpcAcsRequest<GrantResourceP
 		@SerializedName("UserIdList")
 		private List<String> userIdList;
 
-		@SerializedName("ResourceType")
-		private String resourceType;
-
 		@SerializedName("ResourceList")
 		private List<ResourceListItem> resourceList;
+
+		@SerializedName("ResourceType")
+		private String resourceType;
 
 		@SerializedName("EffectiveEnd")
 		private String effectiveEnd;
@@ -104,20 +104,20 @@ public class GrantResourcePermissionRequest extends RpcAcsRequest<GrantResourceP
 			this.userIdList = userIdList;
 		}
 
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
 		public List<ResourceListItem> getResourceList() {
 			return this.resourceList;
 		}
 
 		public void setResourceList(List<ResourceListItem> resourceList) {
 			this.resourceList = resourceList;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public String getEffectiveEnd() {

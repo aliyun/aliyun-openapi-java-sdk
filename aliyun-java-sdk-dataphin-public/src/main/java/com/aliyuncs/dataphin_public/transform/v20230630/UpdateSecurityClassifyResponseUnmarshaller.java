@@ -23,11 +23,11 @@ public class UpdateSecurityClassifyResponseUnmarshaller {
 	public static UpdateSecurityClassifyResponse unmarshall(UpdateSecurityClassifyResponse updateSecurityClassifyResponse, UnmarshallerContext _ctx) {
 		
 		updateSecurityClassifyResponse.setRequestId(_ctx.stringValue("UpdateSecurityClassifyResponse.RequestId"));
-		updateSecurityClassifyResponse.setSuccess(_ctx.booleanValue("UpdateSecurityClassifyResponse.Success"));
-		updateSecurityClassifyResponse.setHttpStatusCode(_ctx.integerValue("UpdateSecurityClassifyResponse.HttpStatusCode"));
-		updateSecurityClassifyResponse.setCode(_ctx.stringValue("UpdateSecurityClassifyResponse.Code"));
 		updateSecurityClassifyResponse.setMessage(_ctx.stringValue("UpdateSecurityClassifyResponse.Message"));
+		updateSecurityClassifyResponse.setHttpStatusCode(_ctx.integerValue("UpdateSecurityClassifyResponse.HttpStatusCode"));
 		updateSecurityClassifyResponse.setData(_ctx.longValue("UpdateSecurityClassifyResponse.Data"));
+		updateSecurityClassifyResponse.setCode(_ctx.stringValue("UpdateSecurityClassifyResponse.Code"));
+		updateSecurityClassifyResponse.setSuccess(_ctx.booleanValue("UpdateSecurityClassifyResponse.Success"));
 	 
 	 	return updateSecurityClassifyResponse;
 	}

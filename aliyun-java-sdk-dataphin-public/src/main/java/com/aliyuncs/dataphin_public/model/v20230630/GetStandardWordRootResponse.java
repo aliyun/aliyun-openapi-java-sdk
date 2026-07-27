@@ -26,13 +26,13 @@ public class GetStandardWordRootResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private WordRootInfo wordRootInfo;
 
@@ -44,12 +44,12 @@ public class GetStandardWordRootResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class GetStandardWordRootResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public WordRootInfo getWordRootInfo() {
@@ -86,32 +86,56 @@ public class GetStandardWordRootResponse extends AcsResponse {
 
 	public static class WordRootInfo {
 
-		private String name;
+		private String abbreviation;
+
+		private String modifyTime;
+
+		private String lastModifier;
+
+		private String description;
 
 		private String fullName;
 
-		private String abbreviation;
-
-		private String description;
+		private String createTime;
 
 		private String creator;
 
 		private String creatorName;
 
-		private String lastModifier;
-
 		private String lastModifierName;
 
-		private String createTime;
+		private String name;
 
-		private String modifyTime;
-
-		public String getName() {
-			return this.name;
+		public String getAbbreviation() {
+			return this.abbreviation;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setAbbreviation(String abbreviation) {
+			this.abbreviation = abbreviation;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public String getLastModifier() {
+			return this.lastModifier;
+		}
+
+		public void setLastModifier(String lastModifier) {
+			this.lastModifier = lastModifier;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getFullName() {
@@ -122,20 +146,12 @@ public class GetStandardWordRootResponse extends AcsResponse {
 			this.fullName = fullName;
 		}
 
-		public String getAbbreviation() {
-			return this.abbreviation;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setAbbreviation(String abbreviation) {
-			this.abbreviation = abbreviation;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getCreator() {
@@ -154,14 +170,6 @@ public class GetStandardWordRootResponse extends AcsResponse {
 			this.creatorName = creatorName;
 		}
 
-		public String getLastModifier() {
-			return this.lastModifier;
-		}
-
-		public void setLastModifier(String lastModifier) {
-			this.lastModifier = lastModifier;
-		}
-
 		public String getLastModifierName() {
 			return this.lastModifierName;
 		}
@@ -170,20 +178,12 @@ public class GetStandardWordRootResponse extends AcsResponse {
 			this.lastModifierName = lastModifierName;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

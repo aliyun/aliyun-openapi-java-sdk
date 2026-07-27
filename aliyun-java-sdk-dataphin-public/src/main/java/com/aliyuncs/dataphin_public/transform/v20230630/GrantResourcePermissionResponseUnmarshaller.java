@@ -23,10 +23,10 @@ public class GrantResourcePermissionResponseUnmarshaller {
 	public static GrantResourcePermissionResponse unmarshall(GrantResourcePermissionResponse grantResourcePermissionResponse, UnmarshallerContext _ctx) {
 		
 		grantResourcePermissionResponse.setRequestId(_ctx.stringValue("GrantResourcePermissionResponse.RequestId"));
-		grantResourcePermissionResponse.setSuccess(_ctx.booleanValue("GrantResourcePermissionResponse.Success"));
+		grantResourcePermissionResponse.setMessage(_ctx.stringValue("GrantResourcePermissionResponse.Message"));
 		grantResourcePermissionResponse.setHttpStatusCode(_ctx.integerValue("GrantResourcePermissionResponse.HttpStatusCode"));
 		grantResourcePermissionResponse.setCode(_ctx.stringValue("GrantResourcePermissionResponse.Code"));
-		grantResourcePermissionResponse.setMessage(_ctx.stringValue("GrantResourcePermissionResponse.Message"));
+		grantResourcePermissionResponse.setSuccess(_ctx.booleanValue("GrantResourcePermissionResponse.Success"));
 	 
 	 	return grantResourcePermissionResponse;
 	}

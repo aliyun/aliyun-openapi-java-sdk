@@ -27,13 +27,13 @@ public class GetSecuritySecretKeyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private SecuritySecretKeyInfo securitySecretKeyInfo;
 
@@ -45,12 +45,12 @@ public class GetSecuritySecretKeyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetSecuritySecretKeyResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public SecuritySecretKeyInfo getSecuritySecretKeyInfo() {
@@ -87,38 +87,78 @@ public class GetSecuritySecretKeyResponse extends AcsResponse {
 
 	public static class SecuritySecretKeyInfo {
 
-		private Long id;
-
-		private String name;
-
-		private String description;
-
-		private String type;
-
-		private String algorithmType;
-
-		private String generationType;
-
-		private Long subKeyCount;
-
 		private Boolean isOwnerManageOnly;
-
-		private Boolean enableOpenapiQuery;
-
-		private String algorithmTypeAlias;
 
 		private String owner;
 
 		private String ownerName;
 
+		private String description;
+
+		private Long subKeyCount;
+
+		private Boolean enableOpenapiQuery;
+
+		private String name;
+
+		private String generationType;
+
+		private String type;
+
+		private String algorithmType;
+
+		private String algorithmTypeAlias;
+
+		private Long id;
+
 		private List<String> secretKeyList;
 
-		public Long getId() {
-			return this.id;
+		public Boolean getIsOwnerManageOnly() {
+			return this.isOwnerManageOnly;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setIsOwnerManageOnly(Boolean isOwnerManageOnly) {
+			this.isOwnerManageOnly = isOwnerManageOnly;
+		}
+
+		public String getOwner() {
+			return this.owner;
+		}
+
+		public void setOwner(String owner) {
+			this.owner = owner;
+		}
+
+		public String getOwnerName() {
+			return this.ownerName;
+		}
+
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Long getSubKeyCount() {
+			return this.subKeyCount;
+		}
+
+		public void setSubKeyCount(Long subKeyCount) {
+			this.subKeyCount = subKeyCount;
+		}
+
+		public Boolean getEnableOpenapiQuery() {
+			return this.enableOpenapiQuery;
+		}
+
+		public void setEnableOpenapiQuery(Boolean enableOpenapiQuery) {
+			this.enableOpenapiQuery = enableOpenapiQuery;
 		}
 
 		public String getName() {
@@ -129,12 +169,12 @@ public class GetSecuritySecretKeyResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getGenerationType() {
+			return this.generationType;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setGenerationType(String generationType) {
+			this.generationType = generationType;
 		}
 
 		public String getType() {
@@ -153,38 +193,6 @@ public class GetSecuritySecretKeyResponse extends AcsResponse {
 			this.algorithmType = algorithmType;
 		}
 
-		public String getGenerationType() {
-			return this.generationType;
-		}
-
-		public void setGenerationType(String generationType) {
-			this.generationType = generationType;
-		}
-
-		public Long getSubKeyCount() {
-			return this.subKeyCount;
-		}
-
-		public void setSubKeyCount(Long subKeyCount) {
-			this.subKeyCount = subKeyCount;
-		}
-
-		public Boolean getIsOwnerManageOnly() {
-			return this.isOwnerManageOnly;
-		}
-
-		public void setIsOwnerManageOnly(Boolean isOwnerManageOnly) {
-			this.isOwnerManageOnly = isOwnerManageOnly;
-		}
-
-		public Boolean getEnableOpenapiQuery() {
-			return this.enableOpenapiQuery;
-		}
-
-		public void setEnableOpenapiQuery(Boolean enableOpenapiQuery) {
-			this.enableOpenapiQuery = enableOpenapiQuery;
-		}
-
 		public String getAlgorithmTypeAlias() {
 			return this.algorithmTypeAlias;
 		}
@@ -193,20 +201,12 @@ public class GetSecuritySecretKeyResponse extends AcsResponse {
 			this.algorithmTypeAlias = algorithmTypeAlias;
 		}
 
-		public String getOwner() {
-			return this.owner;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setOwner(String owner) {
-			this.owner = owner;
-		}
-
-		public String getOwnerName() {
-			return this.ownerName;
-		}
-
-		public void setOwnerName(String ownerName) {
-			this.ownerName = ownerName;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public List<String> getSecretKeyList() {

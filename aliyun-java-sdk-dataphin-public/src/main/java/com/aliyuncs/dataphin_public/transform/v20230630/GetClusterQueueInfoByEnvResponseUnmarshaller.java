@@ -27,29 +27,29 @@ public class GetClusterQueueInfoByEnvResponseUnmarshaller {
 	public static GetClusterQueueInfoByEnvResponse unmarshall(GetClusterQueueInfoByEnvResponse getClusterQueueInfoByEnvResponse, UnmarshallerContext _ctx) {
 		
 		getClusterQueueInfoByEnvResponse.setRequestId(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.RequestId"));
-		getClusterQueueInfoByEnvResponse.setSuccess(_ctx.booleanValue("GetClusterQueueInfoByEnvResponse.Success"));
+		getClusterQueueInfoByEnvResponse.setMessage(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Message"));
 		getClusterQueueInfoByEnvResponse.setHttpStatusCode(_ctx.integerValue("GetClusterQueueInfoByEnvResponse.HttpStatusCode"));
 		getClusterQueueInfoByEnvResponse.setCode(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Code"));
-		getClusterQueueInfoByEnvResponse.setMessage(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Message"));
+		getClusterQueueInfoByEnvResponse.setSuccess(_ctx.booleanValue("GetClusterQueueInfoByEnvResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetClusterQueueInfoByEnvResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setClusterId(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].ClusterId"));
-			dataItem.setQueueName(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].QueueName"));
-			dataItem.setMaxVcore(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].MaxVcore"));
-			dataItem.setNamespace(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].Namespace"));
-			dataItem.setCreateAt(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].CreateAt"));
-			dataItem.setModifiedAt(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].ModifiedAt"));
-			dataItem.setAnnotations(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].Annotations"));
+			dataItem.setFlinkImageTag(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].FlinkImageTag"));
 			dataItem.setLabels(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].Labels"));
 			dataItem.setResourceVersion(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].ResourceVersion"));
-			dataItem.setSpec(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].Spec"));
-			dataItem.setVvpClusterType(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].VvpClusterType"));
+			dataItem.setNamespace(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].Namespace"));
+			dataItem.setModifiedAt(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].ModifiedAt"));
+			dataItem.setAnnotations(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].Annotations"));
+			dataItem.setCreateAt(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].CreateAt"));
+			dataItem.setMaxVcore(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].MaxVcore"));
 			dataItem.setFlinkVersion(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].FlinkVersion"));
-			dataItem.setFlinkImageRegistry(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].FlinkImageRegistry"));
+			dataItem.setVvpClusterType(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].VvpClusterType"));
 			dataItem.setFlinkImageRepository(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].FlinkImageRepository"));
-			dataItem.setFlinkImageTag(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].FlinkImageTag"));
+			dataItem.setSpec(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].Spec"));
+			dataItem.setQueueName(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].QueueName"));
+			dataItem.setFlinkImageRegistry(_ctx.stringValue("GetClusterQueueInfoByEnvResponse.Data["+ i +"].FlinkImageRegistry"));
 
 			data.add(dataItem);
 		}

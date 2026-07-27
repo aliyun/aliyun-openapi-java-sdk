@@ -23,11 +23,11 @@ public class GetQualityRuleTaskLogResponseUnmarshaller {
 	public static GetQualityRuleTaskLogResponse unmarshall(GetQualityRuleTaskLogResponse getQualityRuleTaskLogResponse, UnmarshallerContext _ctx) {
 		
 		getQualityRuleTaskLogResponse.setRequestId(_ctx.stringValue("GetQualityRuleTaskLogResponse.RequestId"));
-		getQualityRuleTaskLogResponse.setSuccess(_ctx.booleanValue("GetQualityRuleTaskLogResponse.Success"));
-		getQualityRuleTaskLogResponse.setHttpStatusCode(_ctx.integerValue("GetQualityRuleTaskLogResponse.HttpStatusCode"));
-		getQualityRuleTaskLogResponse.setCode(_ctx.stringValue("GetQualityRuleTaskLogResponse.Code"));
 		getQualityRuleTaskLogResponse.setMessage(_ctx.stringValue("GetQualityRuleTaskLogResponse.Message"));
+		getQualityRuleTaskLogResponse.setHttpStatusCode(_ctx.integerValue("GetQualityRuleTaskLogResponse.HttpStatusCode"));
 		getQualityRuleTaskLogResponse.setData(_ctx.stringValue("GetQualityRuleTaskLogResponse.Data"));
+		getQualityRuleTaskLogResponse.setCode(_ctx.stringValue("GetQualityRuleTaskLogResponse.Code"));
+		getQualityRuleTaskLogResponse.setSuccess(_ctx.booleanValue("GetQualityRuleTaskLogResponse.Success"));
 	 
 	 	return getQualityRuleTaskLogResponse;
 	}

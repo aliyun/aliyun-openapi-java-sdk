@@ -23,10 +23,10 @@ public class RemoveProjectMemberResponseUnmarshaller {
 	public static RemoveProjectMemberResponse unmarshall(RemoveProjectMemberResponse removeProjectMemberResponse, UnmarshallerContext _ctx) {
 		
 		removeProjectMemberResponse.setRequestId(_ctx.stringValue("RemoveProjectMemberResponse.RequestId"));
-		removeProjectMemberResponse.setSuccess(_ctx.booleanValue("RemoveProjectMemberResponse.Success"));
+		removeProjectMemberResponse.setMessage(_ctx.stringValue("RemoveProjectMemberResponse.Message"));
 		removeProjectMemberResponse.setHttpStatusCode(_ctx.integerValue("RemoveProjectMemberResponse.HttpStatusCode"));
 		removeProjectMemberResponse.setCode(_ctx.stringValue("RemoveProjectMemberResponse.Code"));
-		removeProjectMemberResponse.setMessage(_ctx.stringValue("RemoveProjectMemberResponse.Message"));
+		removeProjectMemberResponse.setSuccess(_ctx.booleanValue("RemoveProjectMemberResponse.Success"));
 	 
 	 	return removeProjectMemberResponse;
 	}

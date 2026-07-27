@@ -28,29 +28,29 @@ public class ListDataDomainsResponseUnmarshaller {
 	public static ListDataDomainsResponse unmarshall(ListDataDomainsResponse listDataDomainsResponse, UnmarshallerContext _ctx) {
 		
 		listDataDomainsResponse.setRequestId(_ctx.stringValue("ListDataDomainsResponse.RequestId"));
-		listDataDomainsResponse.setSuccess(_ctx.booleanValue("ListDataDomainsResponse.Success"));
+		listDataDomainsResponse.setMessage(_ctx.stringValue("ListDataDomainsResponse.Message"));
 		listDataDomainsResponse.setHttpStatusCode(_ctx.integerValue("ListDataDomainsResponse.HttpStatusCode"));
 		listDataDomainsResponse.setCode(_ctx.stringValue("ListDataDomainsResponse.Code"));
-		listDataDomainsResponse.setMessage(_ctx.stringValue("ListDataDomainsResponse.Message"));
+		listDataDomainsResponse.setSuccess(_ctx.booleanValue("ListDataDomainsResponse.Success"));
 
 		Data data = new Data();
 
 		List<DataDomainInfo> dataDomainList = new ArrayList<DataDomainInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListDataDomainsResponse.Data.DataDomainList.Length"); i++) {
 			DataDomainInfo dataDomainInfo = new DataDomainInfo();
-			dataDomainInfo.setId(_ctx.longValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].Id"));
-			dataDomainInfo.setBizUnitId(_ctx.longValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].BizUnitId"));
-			dataDomainInfo.setName(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].Name"));
-			dataDomainInfo.setDisplayName(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].DisplayName"));
 			dataDomainInfo.setAbbreviation(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].Abbreviation"));
-			dataDomainInfo.setDescription(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].Description"));
-			dataDomainInfo.setOwnerUserId(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].OwnerUserId"));
-			dataDomainInfo.setOwnerName(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].OwnerName"));
-			dataDomainInfo.setGmtCreate(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].GmtCreate"));
-			dataDomainInfo.setGmtModified(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].GmtModified"));
-			dataDomainInfo.setLastModifier(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].LastModifier"));
-			dataDomainInfo.setLastModifierName(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].LastModifierName"));
 			dataDomainInfo.setParentId(_ctx.longValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].ParentId"));
+			dataDomainInfo.setOwnerName(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].OwnerName"));
+			dataDomainInfo.setLastModifier(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].LastModifier"));
+			dataDomainInfo.setDescription(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].Description"));
+			dataDomainInfo.setGmtModified(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].GmtModified"));
+			dataDomainInfo.setLastModifierName(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].LastModifierName"));
+			dataDomainInfo.setName(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].Name"));
+			dataDomainInfo.setBizUnitId(_ctx.longValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].BizUnitId"));
+			dataDomainInfo.setOwnerUserId(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].OwnerUserId"));
+			dataDomainInfo.setGmtCreate(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].GmtCreate"));
+			dataDomainInfo.setDisplayName(_ctx.stringValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].DisplayName"));
+			dataDomainInfo.setId(_ctx.longValue("ListDataDomainsResponse.Data.DataDomainList["+ i +"].Id"));
 
 			dataDomainList.add(dataDomainInfo);
 		}

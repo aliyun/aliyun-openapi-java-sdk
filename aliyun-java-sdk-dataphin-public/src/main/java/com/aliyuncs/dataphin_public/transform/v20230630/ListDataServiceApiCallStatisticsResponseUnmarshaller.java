@@ -28,10 +28,10 @@ public class ListDataServiceApiCallStatisticsResponseUnmarshaller {
 	public static ListDataServiceApiCallStatisticsResponse unmarshall(ListDataServiceApiCallStatisticsResponse listDataServiceApiCallStatisticsResponse, UnmarshallerContext _ctx) {
 		
 		listDataServiceApiCallStatisticsResponse.setRequestId(_ctx.stringValue("ListDataServiceApiCallStatisticsResponse.RequestId"));
-		listDataServiceApiCallStatisticsResponse.setSuccess(_ctx.booleanValue("ListDataServiceApiCallStatisticsResponse.Success"));
+		listDataServiceApiCallStatisticsResponse.setMessage(_ctx.stringValue("ListDataServiceApiCallStatisticsResponse.Message"));
 		listDataServiceApiCallStatisticsResponse.setHttpStatusCode(_ctx.integerValue("ListDataServiceApiCallStatisticsResponse.HttpStatusCode"));
 		listDataServiceApiCallStatisticsResponse.setCode(_ctx.stringValue("ListDataServiceApiCallStatisticsResponse.Code"));
-		listDataServiceApiCallStatisticsResponse.setMessage(_ctx.stringValue("ListDataServiceApiCallStatisticsResponse.Message"));
+		listDataServiceApiCallStatisticsResponse.setSuccess(_ctx.booleanValue("ListDataServiceApiCallStatisticsResponse.Success"));
 
 		PageResult pageResult = new PageResult();
 		pageResult.setTotalCount(_ctx.integerValue("ListDataServiceApiCallStatisticsResponse.PageResult.TotalCount"));

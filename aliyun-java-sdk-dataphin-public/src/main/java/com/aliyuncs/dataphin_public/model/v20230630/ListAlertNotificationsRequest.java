@@ -86,14 +86,14 @@ public class ListAlertNotificationsRequest extends RpcAcsRequest<ListAlertNotifi
 		@SerializedName("Keyword")
 		private String keyword;
 
-		@SerializedName("ChannelTypeList")
-		private List<String> channelTypeList;
-
 		@SerializedName("CustomChannelIdList")
 		private List<String> customChannelIdList;
 
 		@SerializedName("SourceSystem")
 		private String sourceSystem;
+
+		@SerializedName("ChannelTypeList")
+		private List<String> channelTypeList;
 
 		@SerializedName("AlertReasonList")
 		private List<String> alertReasonList;
@@ -162,14 +162,6 @@ public class ListAlertNotificationsRequest extends RpcAcsRequest<ListAlertNotifi
 			this.keyword = keyword;
 		}
 
-		public List<String> getChannelTypeList() {
-			return this.channelTypeList;
-		}
-
-		public void setChannelTypeList(List<String> channelTypeList) {
-			this.channelTypeList = channelTypeList;
-		}
-
 		public List<String> getCustomChannelIdList() {
 			return this.customChannelIdList;
 		}
@@ -184,6 +176,14 @@ public class ListAlertNotificationsRequest extends RpcAcsRequest<ListAlertNotifi
 
 		public void setSourceSystem(String sourceSystem) {
 			this.sourceSystem = sourceSystem;
+		}
+
+		public List<String> getChannelTypeList() {
+			return this.channelTypeList;
+		}
+
+		public void setChannelTypeList(List<String> channelTypeList) {
+			this.channelTypeList = channelTypeList;
 		}
 
 		public List<String> getAlertReasonList() {

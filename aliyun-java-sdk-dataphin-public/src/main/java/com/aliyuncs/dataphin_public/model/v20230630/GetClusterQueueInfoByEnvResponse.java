@@ -27,13 +27,13 @@ public class GetClusterQueueInfoByEnvResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<DataItem> data;
 
@@ -45,12 +45,12 @@ public class GetClusterQueueInfoByEnvResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetClusterQueueInfoByEnvResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -89,33 +89,33 @@ public class GetClusterQueueInfoByEnvResponse extends AcsResponse {
 
 		private String clusterId;
 
-		private String queueName;
-
-		private String maxVcore;
-
-		private String namespace;
-
-		private String createAt;
-
-		private String modifiedAt;
-
-		private String annotations;
+		private String flinkImageTag;
 
 		private String labels;
 
 		private String resourceVersion;
 
-		private String spec;
+		private String namespace;
 
-		private String vvpClusterType;
+		private String modifiedAt;
+
+		private String annotations;
+
+		private String createAt;
+
+		private String maxVcore;
 
 		private String flinkVersion;
 
-		private String flinkImageRegistry;
+		private String vvpClusterType;
 
 		private String flinkImageRepository;
 
-		private String flinkImageTag;
+		private String spec;
+
+		private String queueName;
+
+		private String flinkImageRegistry;
 
 		public String getClusterId() {
 			return this.clusterId;
@@ -125,52 +125,12 @@ public class GetClusterQueueInfoByEnvResponse extends AcsResponse {
 			this.clusterId = clusterId;
 		}
 
-		public String getQueueName() {
-			return this.queueName;
+		public String getFlinkImageTag() {
+			return this.flinkImageTag;
 		}
 
-		public void setQueueName(String queueName) {
-			this.queueName = queueName;
-		}
-
-		public String getMaxVcore() {
-			return this.maxVcore;
-		}
-
-		public void setMaxVcore(String maxVcore) {
-			this.maxVcore = maxVcore;
-		}
-
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
-
-		public String getCreateAt() {
-			return this.createAt;
-		}
-
-		public void setCreateAt(String createAt) {
-			this.createAt = createAt;
-		}
-
-		public String getModifiedAt() {
-			return this.modifiedAt;
-		}
-
-		public void setModifiedAt(String modifiedAt) {
-			this.modifiedAt = modifiedAt;
-		}
-
-		public String getAnnotations() {
-			return this.annotations;
-		}
-
-		public void setAnnotations(String annotations) {
-			this.annotations = annotations;
+		public void setFlinkImageTag(String flinkImageTag) {
+			this.flinkImageTag = flinkImageTag;
 		}
 
 		public String getLabels() {
@@ -189,20 +149,44 @@ public class GetClusterQueueInfoByEnvResponse extends AcsResponse {
 			this.resourceVersion = resourceVersion;
 		}
 
-		public String getSpec() {
-			return this.spec;
+		public String getNamespace() {
+			return this.namespace;
 		}
 
-		public void setSpec(String spec) {
-			this.spec = spec;
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
 		}
 
-		public String getVvpClusterType() {
-			return this.vvpClusterType;
+		public String getModifiedAt() {
+			return this.modifiedAt;
 		}
 
-		public void setVvpClusterType(String vvpClusterType) {
-			this.vvpClusterType = vvpClusterType;
+		public void setModifiedAt(String modifiedAt) {
+			this.modifiedAt = modifiedAt;
+		}
+
+		public String getAnnotations() {
+			return this.annotations;
+		}
+
+		public void setAnnotations(String annotations) {
+			this.annotations = annotations;
+		}
+
+		public String getCreateAt() {
+			return this.createAt;
+		}
+
+		public void setCreateAt(String createAt) {
+			this.createAt = createAt;
+		}
+
+		public String getMaxVcore() {
+			return this.maxVcore;
+		}
+
+		public void setMaxVcore(String maxVcore) {
+			this.maxVcore = maxVcore;
 		}
 
 		public String getFlinkVersion() {
@@ -213,12 +197,12 @@ public class GetClusterQueueInfoByEnvResponse extends AcsResponse {
 			this.flinkVersion = flinkVersion;
 		}
 
-		public String getFlinkImageRegistry() {
-			return this.flinkImageRegistry;
+		public String getVvpClusterType() {
+			return this.vvpClusterType;
 		}
 
-		public void setFlinkImageRegistry(String flinkImageRegistry) {
-			this.flinkImageRegistry = flinkImageRegistry;
+		public void setVvpClusterType(String vvpClusterType) {
+			this.vvpClusterType = vvpClusterType;
 		}
 
 		public String getFlinkImageRepository() {
@@ -229,12 +213,28 @@ public class GetClusterQueueInfoByEnvResponse extends AcsResponse {
 			this.flinkImageRepository = flinkImageRepository;
 		}
 
-		public String getFlinkImageTag() {
-			return this.flinkImageTag;
+		public String getSpec() {
+			return this.spec;
 		}
 
-		public void setFlinkImageTag(String flinkImageTag) {
-			this.flinkImageTag = flinkImageTag;
+		public void setSpec(String spec) {
+			this.spec = spec;
+		}
+
+		public String getQueueName() {
+			return this.queueName;
+		}
+
+		public void setQueueName(String queueName) {
+			this.queueName = queueName;
+		}
+
+		public String getFlinkImageRegistry() {
+			return this.flinkImageRegistry;
+		}
+
+		public void setFlinkImageRegistry(String flinkImageRegistry) {
+			this.flinkImageRegistry = flinkImageRegistry;
 		}
 	}
 

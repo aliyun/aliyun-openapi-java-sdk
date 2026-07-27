@@ -24,10 +24,10 @@ public class CreateBizEntityResponseUnmarshaller {
 	public static CreateBizEntityResponse unmarshall(CreateBizEntityResponse createBizEntityResponse, UnmarshallerContext _ctx) {
 		
 		createBizEntityResponse.setRequestId(_ctx.stringValue("CreateBizEntityResponse.RequestId"));
-		createBizEntityResponse.setSuccess(_ctx.booleanValue("CreateBizEntityResponse.Success"));
+		createBizEntityResponse.setMessage(_ctx.stringValue("CreateBizEntityResponse.Message"));
 		createBizEntityResponse.setHttpStatusCode(_ctx.integerValue("CreateBizEntityResponse.HttpStatusCode"));
 		createBizEntityResponse.setCode(_ctx.stringValue("CreateBizEntityResponse.Code"));
-		createBizEntityResponse.setMessage(_ctx.stringValue("CreateBizEntityResponse.Message"));
+		createBizEntityResponse.setSuccess(_ctx.booleanValue("CreateBizEntityResponse.Success"));
 
 		CreateResult createResult = new CreateResult();
 		createResult.setBizEntityId(_ctx.longValue("CreateBizEntityResponse.CreateResult.BizEntityId"));

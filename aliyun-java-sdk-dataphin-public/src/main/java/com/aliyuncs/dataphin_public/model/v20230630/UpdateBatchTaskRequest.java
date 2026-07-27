@@ -116,11 +116,11 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 		@SerializedName("ProjectId")
 		private Long projectId;
 
-		@SerializedName("FileId")
-		private Long fileId;
-
 		@SerializedName("PythonModuleList")
 		private List<String> pythonModuleList;
+
+		@SerializedName("FileId")
+		private Long fileId;
 
 		public List<String> getNodeOutputNameList() {
 			return this.nodeOutputNameList;
@@ -266,20 +266,20 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 			this.projectId = projectId;
 		}
 
-		public Long getFileId() {
-			return this.fileId;
-		}
-
-		public void setFileId(Long fileId) {
-			this.fileId = fileId;
-		}
-
 		public List<String> getPythonModuleList() {
 			return this.pythonModuleList;
 		}
 
 		public void setPythonModuleList(List<String> pythonModuleList) {
 			this.pythonModuleList = pythonModuleList;
+		}
+
+		public Long getFileId() {
+			return this.fileId;
+		}
+
+		public void setFileId(Long fileId) {
+			this.fileId = fileId;
 		}
 
 		public static class SparkClientInfo {
@@ -453,11 +453,11 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 			@SerializedName("IntervalUnit")
 			private String intervalUnit;
 
-			@SerializedName("SchedulePeriod")
-			private String schedulePeriod;
-
 			@SerializedName("EndTime")
 			private String endTime;
+
+			@SerializedName("SchedulePeriod")
+			private String schedulePeriod;
 
 			@SerializedName("Interval")
 			private Integer interval;
@@ -473,20 +473,20 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 				this.intervalUnit = intervalUnit;
 			}
 
-			public String getSchedulePeriod() {
-				return this.schedulePeriod;
-			}
-
-			public void setSchedulePeriod(String schedulePeriod) {
-				this.schedulePeriod = schedulePeriod;
-			}
-
 			public String getEndTime() {
 				return this.endTime;
 			}
 
 			public void setEndTime(String endTime) {
 				this.endTime = endTime;
+			}
+
+			public String getSchedulePeriod() {
+				return this.schedulePeriod;
+			}
+
+			public void setSchedulePeriod(String schedulePeriod) {
+				this.schedulePeriod = schedulePeriod;
 			}
 
 			public Integer getInterval() {

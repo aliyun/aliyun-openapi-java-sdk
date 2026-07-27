@@ -26,13 +26,13 @@ public class GetQualityRuleTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private RuleTaskInfo ruleTaskInfo;
 
@@ -44,12 +44,12 @@ public class GetQualityRuleTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class GetQualityRuleTaskResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public RuleTaskInfo getRuleTaskInfo() {
@@ -86,49 +86,41 @@ public class GetQualityRuleTaskResponse extends AcsResponse {
 
 	public static class RuleTaskInfo {
 
-		private Long watchId;
-
 		private Long watchTaskId;
-
-		private Long id;
-
-		private Long ruleId;
-
-		private Long templateId;
 
 		private String status;
 
-		private String startTime;
+		private String modifyTime;
 
 		private String endTime;
 
-		private String validatePartition;
+		private Long ruleId;
 
-		private String validateObjectType;
+		private String createTime;
+
+		private String startTime;
+
+		private String creator;
+
+		private String bizDateFormat;
 
 		private String validateObjectName;
+
+		private String validatePartition;
+
+		private Long id;
+
+		private String modifier;
+
+		private Long templateId;
+
+		private String validateObjectType;
 
 		private Boolean validateSuccess;
 
 		private String bizDate;
 
-		private String bizDateFormat;
-
-		private String creator;
-
-		private String createTime;
-
-		private String modifyTime;
-
-		private String modifier;
-
-		public Long getWatchId() {
-			return this.watchId;
-		}
-
-		public void setWatchId(Long watchId) {
-			this.watchId = watchId;
-		}
+		private Long watchId;
 
 		public Long getWatchTaskId() {
 			return this.watchTaskId;
@@ -136,30 +128,6 @@ public class GetQualityRuleTaskResponse extends AcsResponse {
 
 		public void setWatchTaskId(Long watchTaskId) {
 			this.watchTaskId = watchTaskId;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public Long getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(Long ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public Long getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(Long templateId) {
-			this.templateId = templateId;
 		}
 
 		public String getStatus() {
@@ -170,12 +138,12 @@ public class GetQualityRuleTaskResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public String getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 
 		public String getEndTime() {
@@ -186,20 +154,44 @@ public class GetQualityRuleTaskResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
-		public String getValidatePartition() {
-			return this.validatePartition;
+		public Long getRuleId() {
+			return this.ruleId;
 		}
 
-		public void setValidatePartition(String validatePartition) {
-			this.validatePartition = validatePartition;
+		public void setRuleId(Long ruleId) {
+			this.ruleId = ruleId;
 		}
 
-		public String getValidateObjectType() {
-			return this.validateObjectType;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setValidateObjectType(String validateObjectType) {
-			this.validateObjectType = validateObjectType;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(String creator) {
+			this.creator = creator;
+		}
+
+		public String getBizDateFormat() {
+			return this.bizDateFormat;
+		}
+
+		public void setBizDateFormat(String bizDateFormat) {
+			this.bizDateFormat = bizDateFormat;
 		}
 
 		public String getValidateObjectName() {
@@ -208,6 +200,46 @@ public class GetQualityRuleTaskResponse extends AcsResponse {
 
 		public void setValidateObjectName(String validateObjectName) {
 			this.validateObjectName = validateObjectName;
+		}
+
+		public String getValidatePartition() {
+			return this.validatePartition;
+		}
+
+		public void setValidatePartition(String validatePartition) {
+			this.validatePartition = validatePartition;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getModifier() {
+			return this.modifier;
+		}
+
+		public void setModifier(String modifier) {
+			this.modifier = modifier;
+		}
+
+		public Long getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(Long templateId) {
+			this.templateId = templateId;
+		}
+
+		public String getValidateObjectType() {
+			return this.validateObjectType;
+		}
+
+		public void setValidateObjectType(String validateObjectType) {
+			this.validateObjectType = validateObjectType;
 		}
 
 		public Boolean getValidateSuccess() {
@@ -226,44 +258,12 @@ public class GetQualityRuleTaskResponse extends AcsResponse {
 			this.bizDate = bizDate;
 		}
 
-		public String getBizDateFormat() {
-			return this.bizDateFormat;
+		public Long getWatchId() {
+			return this.watchId;
 		}
 
-		public void setBizDateFormat(String bizDateFormat) {
-			this.bizDateFormat = bizDateFormat;
-		}
-
-		public String getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(String creator) {
-			this.creator = creator;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public String getModifier() {
-			return this.modifier;
-		}
-
-		public void setModifier(String modifier) {
-			this.modifier = modifier;
+		public void setWatchId(Long watchId) {
+			this.watchId = watchId;
 		}
 	}
 

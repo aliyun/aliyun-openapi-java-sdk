@@ -68,20 +68,20 @@ public class ListDataSourceWithConfigRequest extends RpcAcsRequest<ListDataSourc
 		@SerializedName("ScopeList")
 		private List<String> scopeList;
 
-		@SerializedName("Name")
-		private String name;
-
 		@SerializedName("PageSize")
 		private Integer pageSize;
+
+		@SerializedName("Name")
+		private String name;
 
 		@SerializedName("OwnerList")
 		private List<String> ownerList;
 
-		@SerializedName("Tag")
-		private String tag;
-
 		@SerializedName("Page")
 		private Integer page;
+
+		@SerializedName("Tag")
+		private String tag;
 
 		public List<String> getTypeList() {
 			return this.typeList;
@@ -99,20 +99,20 @@ public class ListDataSourceWithConfigRequest extends RpcAcsRequest<ListDataSourc
 			this.scopeList = scopeList;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public Integer getPageSize() {
 			return this.pageSize;
 		}
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<String> getOwnerList() {
@@ -123,20 +123,20 @@ public class ListDataSourceWithConfigRequest extends RpcAcsRequest<ListDataSourc
 			this.ownerList = ownerList;
 		}
 
-		public String getTag() {
-			return this.tag;
-		}
-
-		public void setTag(String tag) {
-			this.tag = tag;
-		}
-
 		public Integer getPage() {
 			return this.page;
 		}
 
 		public void setPage(Integer page) {
 			this.page = page;
+		}
+
+		public String getTag() {
+			return this.tag;
+		}
+
+		public void setTag(String tag) {
+			this.tag = tag;
 		}
 	}
 

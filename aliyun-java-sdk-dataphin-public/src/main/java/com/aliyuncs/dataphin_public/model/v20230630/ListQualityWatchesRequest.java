@@ -83,11 +83,11 @@ public class ListQualityWatchesRequest extends RpcAcsRequest<ListQualityWatchesR
 		@SerializedName("CurrentUserOwned")
 		private Boolean currentUserOwned;
 
-		@SerializedName("TableOwnerList")
-		private List<String> tableOwnerList;
-
 		@SerializedName("DataSourceIdList")
 		private List<Long> dataSourceIdList;
+
+		@SerializedName("TableOwnerList")
+		private List<String> tableOwnerList;
 
 		@SerializedName("DataSourceScopeList")
 		private List<String> dataSourceScopeList;
@@ -98,11 +98,11 @@ public class ListQualityWatchesRequest extends RpcAcsRequest<ListQualityWatchesR
 		@SerializedName("PageNo")
 		private Integer pageNo;
 
-		@SerializedName("TableTypeList")
-		private List<String> tableTypeList;
-
 		@SerializedName("IndexOwnerList")
 		private List<String> indexOwnerList;
+
+		@SerializedName("TableTypeList")
+		private List<String> tableTypeList;
 
 		@SerializedName("PageSize")
 		private Integer pageSize;
@@ -172,20 +172,20 @@ public class ListQualityWatchesRequest extends RpcAcsRequest<ListQualityWatchesR
 			this.currentUserOwned = currentUserOwned;
 		}
 
-		public List<String> getTableOwnerList() {
-			return this.tableOwnerList;
-		}
-
-		public void setTableOwnerList(List<String> tableOwnerList) {
-			this.tableOwnerList = tableOwnerList;
-		}
-
 		public List<Long> getDataSourceIdList() {
 			return this.dataSourceIdList;
 		}
 
 		public void setDataSourceIdList(List<Long> dataSourceIdList) {
 			this.dataSourceIdList = dataSourceIdList;
+		}
+
+		public List<String> getTableOwnerList() {
+			return this.tableOwnerList;
+		}
+
+		public void setTableOwnerList(List<String> tableOwnerList) {
+			this.tableOwnerList = tableOwnerList;
 		}
 
 		public List<String> getDataSourceScopeList() {
@@ -212,20 +212,20 @@ public class ListQualityWatchesRequest extends RpcAcsRequest<ListQualityWatchesR
 			this.pageNo = pageNo;
 		}
 
-		public List<String> getTableTypeList() {
-			return this.tableTypeList;
-		}
-
-		public void setTableTypeList(List<String> tableTypeList) {
-			this.tableTypeList = tableTypeList;
-		}
-
 		public List<String> getIndexOwnerList() {
 			return this.indexOwnerList;
 		}
 
 		public void setIndexOwnerList(List<String> indexOwnerList) {
 			this.indexOwnerList = indexOwnerList;
+		}
+
+		public List<String> getTableTypeList() {
+			return this.tableTypeList;
+		}
+
+		public void setTableTypeList(List<String> tableTypeList) {
+			this.tableTypeList = tableTypeList;
 		}
 
 		public Integer getPageSize() {

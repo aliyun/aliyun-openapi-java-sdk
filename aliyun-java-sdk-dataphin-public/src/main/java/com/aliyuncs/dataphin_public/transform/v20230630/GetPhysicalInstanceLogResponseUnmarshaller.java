@@ -27,19 +27,19 @@ public class GetPhysicalInstanceLogResponseUnmarshaller {
 	public static GetPhysicalInstanceLogResponse unmarshall(GetPhysicalInstanceLogResponse getPhysicalInstanceLogResponse, UnmarshallerContext _ctx) {
 		
 		getPhysicalInstanceLogResponse.setRequestId(_ctx.stringValue("GetPhysicalInstanceLogResponse.RequestId"));
-		getPhysicalInstanceLogResponse.setSuccess(_ctx.booleanValue("GetPhysicalInstanceLogResponse.Success"));
+		getPhysicalInstanceLogResponse.setMessage(_ctx.stringValue("GetPhysicalInstanceLogResponse.Message"));
 		getPhysicalInstanceLogResponse.setHttpStatusCode(_ctx.integerValue("GetPhysicalInstanceLogResponse.HttpStatusCode"));
 		getPhysicalInstanceLogResponse.setCode(_ctx.stringValue("GetPhysicalInstanceLogResponse.Code"));
-		getPhysicalInstanceLogResponse.setMessage(_ctx.stringValue("GetPhysicalInstanceLogResponse.Message"));
+		getPhysicalInstanceLogResponse.setSuccess(_ctx.booleanValue("GetPhysicalInstanceLogResponse.Success"));
 
 		List<TaskrunLog> taskrunLogList = new ArrayList<TaskrunLog>();
 		for (int i = 0; i < _ctx.lengthValue("GetPhysicalInstanceLogResponse.TaskrunLogList.Length"); i++) {
 			TaskrunLog taskrunLog = new TaskrunLog();
-			taskrunLog.setTaskrunId(_ctx.stringValue("GetPhysicalInstanceLogResponse.TaskrunLogList["+ i +"].TaskrunId"));
-			taskrunLog.setStartTime(_ctx.stringValue("GetPhysicalInstanceLogResponse.TaskrunLogList["+ i +"].StartTime"));
-			taskrunLog.setEndTime(_ctx.stringValue("GetPhysicalInstanceLogResponse.TaskrunLogList["+ i +"].EndTime"));
-			taskrunLog.setLogContent(_ctx.stringValue("GetPhysicalInstanceLogResponse.TaskrunLogList["+ i +"].LogContent"));
 			taskrunLog.setStatus(_ctx.stringValue("GetPhysicalInstanceLogResponse.TaskrunLogList["+ i +"].Status"));
+			taskrunLog.setEndTime(_ctx.stringValue("GetPhysicalInstanceLogResponse.TaskrunLogList["+ i +"].EndTime"));
+			taskrunLog.setTaskrunId(_ctx.stringValue("GetPhysicalInstanceLogResponse.TaskrunLogList["+ i +"].TaskrunId"));
+			taskrunLog.setLogContent(_ctx.stringValue("GetPhysicalInstanceLogResponse.TaskrunLogList["+ i +"].LogContent"));
+			taskrunLog.setStartTime(_ctx.stringValue("GetPhysicalInstanceLogResponse.TaskrunLogList["+ i +"].StartTime"));
 			taskrunLog.setDuration(_ctx.stringValue("GetPhysicalInstanceLogResponse.TaskrunLogList["+ i +"].Duration"));
 
 			taskrunLogList.add(taskrunLog);

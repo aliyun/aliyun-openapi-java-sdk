@@ -71,14 +71,14 @@ public class CreateBatchTaskRequest extends RpcAcsRequest<CreateBatchTaskRespons
 		@SerializedName("Engine")
 		private String engine;
 
-		@SerializedName("Name")
-		private String name;
+		@SerializedName("DataSourceSchema")
+		private String dataSourceSchema;
 
 		@SerializedName("DataSourceId")
 		private String dataSourceId;
 
-		@SerializedName("DataSourceSchema")
-		private String dataSourceSchema;
+		@SerializedName("Name")
+		private String name;
 
 		@SerializedName("Description")
 		private String description;
@@ -86,11 +86,11 @@ public class CreateBatchTaskRequest extends RpcAcsRequest<CreateBatchTaskRespons
 		@SerializedName("DataSourceCatalog")
 		private String dataSourceCatalog;
 
-		@SerializedName("Directory")
-		private String directory;
-
 		@SerializedName("ProjectId")
 		private Long projectId;
+
+		@SerializedName("Directory")
+		private String directory;
 
 		@SerializedName("PythonModuleList")
 		private List<String> pythonModuleList;
@@ -119,12 +119,12 @@ public class CreateBatchTaskRequest extends RpcAcsRequest<CreateBatchTaskRespons
 			this.engine = engine;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getDataSourceSchema() {
+			return this.dataSourceSchema;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setDataSourceSchema(String dataSourceSchema) {
+			this.dataSourceSchema = dataSourceSchema;
 		}
 
 		public String getDataSourceId() {
@@ -135,12 +135,12 @@ public class CreateBatchTaskRequest extends RpcAcsRequest<CreateBatchTaskRespons
 			this.dataSourceId = dataSourceId;
 		}
 
-		public String getDataSourceSchema() {
-			return this.dataSourceSchema;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setDataSourceSchema(String dataSourceSchema) {
-			this.dataSourceSchema = dataSourceSchema;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getDescription() {
@@ -159,20 +159,20 @@ public class CreateBatchTaskRequest extends RpcAcsRequest<CreateBatchTaskRespons
 			this.dataSourceCatalog = dataSourceCatalog;
 		}
 
-		public String getDirectory() {
-			return this.directory;
-		}
-
-		public void setDirectory(String directory) {
-			this.directory = directory;
-		}
-
 		public Long getProjectId() {
 			return this.projectId;
 		}
 
 		public void setProjectId(Long projectId) {
 			this.projectId = projectId;
+		}
+
+		public String getDirectory() {
+			return this.directory;
+		}
+
+		public void setDirectory(String directory) {
+			this.directory = directory;
 		}
 
 		public List<String> getPythonModuleList() {

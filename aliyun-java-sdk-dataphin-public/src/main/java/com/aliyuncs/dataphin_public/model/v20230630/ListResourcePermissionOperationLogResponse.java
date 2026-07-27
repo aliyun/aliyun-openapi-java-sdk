@@ -27,13 +27,13 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -45,12 +45,12 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -109,23 +109,31 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 
 		public static class PermissionOperateLog {
 
+			private Long operateTime;
+
 			private Long operateId;
+
+			private String authScope;
 
 			private String operateType;
 
 			private String reason;
 
-			private Long operateTime;
-
-			private String authScope;
-
 			private ResourceInfo resourceInfo;
 
 			private Account account;
 
+			private Period period;
+
 			private TargetAccount targetAccount;
 
-			private Period period;
+			public Long getOperateTime() {
+				return this.operateTime;
+			}
+
+			public void setOperateTime(Long operateTime) {
+				this.operateTime = operateTime;
+			}
 
 			public Long getOperateId() {
 				return this.operateId;
@@ -133,6 +141,14 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 
 			public void setOperateId(Long operateId) {
 				this.operateId = operateId;
+			}
+
+			public String getAuthScope() {
+				return this.authScope;
+			}
+
+			public void setAuthScope(String authScope) {
+				this.authScope = authScope;
 			}
 
 			public String getOperateType() {
@@ -151,22 +167,6 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 				this.reason = reason;
 			}
 
-			public Long getOperateTime() {
-				return this.operateTime;
-			}
-
-			public void setOperateTime(Long operateTime) {
-				this.operateTime = operateTime;
-			}
-
-			public String getAuthScope() {
-				return this.authScope;
-			}
-
-			public void setAuthScope(String authScope) {
-				this.authScope = authScope;
-			}
-
 			public ResourceInfo getResourceInfo() {
 				return this.resourceInfo;
 			}
@@ -183,14 +183,6 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 				this.account = account;
 			}
 
-			public TargetAccount getTargetAccount() {
-				return this.targetAccount;
-			}
-
-			public void setTargetAccount(TargetAccount targetAccount) {
-				this.targetAccount = targetAccount;
-			}
-
 			public Period getPeriod() {
 				return this.period;
 			}
@@ -199,36 +191,36 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 				this.period = period;
 			}
 
+			public TargetAccount getTargetAccount() {
+				return this.targetAccount;
+			}
+
+			public void setTargetAccount(TargetAccount targetAccount) {
+				this.targetAccount = targetAccount;
+			}
+
 			public static class ResourceInfo {
-
-				private String id;
-
-				private String name;
-
-				private String displayName;
 
 				private String type;
 
+				private String displayName;
+
+				private String id;
+
 				private String env;
+
+				private String name;
 
 				private BizUnitInfo bizUnitInfo;
 
 				private ProjectInfo projectInfo;
 
-				public String getId() {
-					return this.id;
+				public String getType() {
+					return this.type;
 				}
 
-				public void setId(String id) {
-					this.id = id;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
+				public void setType(String type) {
+					this.type = type;
 				}
 
 				public String getDisplayName() {
@@ -239,12 +231,12 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 					this.displayName = displayName;
 				}
 
-				public String getType() {
-					return this.type;
+				public String getId() {
+					return this.id;
 				}
 
-				public void setType(String type) {
-					this.type = type;
+				public void setId(String id) {
+					this.id = id;
 				}
 
 				public String getEnv() {
@@ -253,6 +245,14 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 
 				public void setEnv(String env) {
 					this.env = env;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 
 				public BizUnitInfo getBizUnitInfo() {
@@ -273,13 +273,21 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 
 				public static class BizUnitInfo {
 
+					private String displayName;
+
 					private String id;
+
+					private String env;
 
 					private String name;
 
-					private String displayName;
+					public String getDisplayName() {
+						return this.displayName;
+					}
 
-					private String env;
+					public void setDisplayName(String displayName) {
+						this.displayName = displayName;
+					}
 
 					public String getId() {
 						return this.id;
@@ -289,6 +297,14 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 						this.id = id;
 					}
 
+					public String getEnv() {
+						return this.env;
+					}
+
+					public void setEnv(String env) {
+						this.env = env;
+					}
+
 					public String getName() {
 						return this.name;
 					}
@@ -296,6 +312,17 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 					public void setName(String name) {
 						this.name = name;
 					}
+				}
+
+				public static class ProjectInfo {
+
+					private String displayName;
+
+					private Long id;
+
+					private String env;
+
+					private String name;
 
 					public String getDisplayName() {
 						return this.displayName;
@@ -304,25 +331,6 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 					public void setDisplayName(String displayName) {
 						this.displayName = displayName;
 					}
-
-					public String getEnv() {
-						return this.env;
-					}
-
-					public void setEnv(String env) {
-						this.env = env;
-					}
-				}
-
-				public static class ProjectInfo {
-
-					private Long id;
-
-					private String name;
-
-					private String displayName;
-
-					private String env;
 
 					public Long getId() {
 						return this.id;
@@ -332,22 +340,6 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 						this.id = id;
 					}
 
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
-
-					public String getDisplayName() {
-						return this.displayName;
-					}
-
-					public void setDisplayName(String displayName) {
-						this.displayName = displayName;
-					}
-
 					public String getEnv() {
 						return this.env;
 					}
@@ -355,16 +347,32 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 					public void setEnv(String env) {
 						this.env = env;
 					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
 				}
 			}
 
 			public static class Account {
 
+				private String type;
+
 				private String id;
 
 				private String name;
 
-				private String type;
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
 
 				public String getId() {
 					return this.id;
@@ -380,47 +388,6 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 
 				public void setName(String name) {
 					this.name = name;
-				}
-
-				public String getType() {
-					return this.type;
-				}
-
-				public void setType(String type) {
-					this.type = type;
-				}
-			}
-
-			public static class TargetAccount {
-
-				private String id;
-
-				private String name;
-
-				private String type;
-
-				public String getId() {
-					return this.id;
-				}
-
-				public void setId(String id) {
-					this.id = id;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public String getType() {
-					return this.type;
-				}
-
-				public void setType(String type) {
-					this.type = type;
 				}
 			}
 
@@ -444,6 +411,39 @@ public class ListResourcePermissionOperationLogResponse extends AcsResponse {
 
 				public void setEndTime(String endTime) {
 					this.endTime = endTime;
+				}
+			}
+
+			public static class TargetAccount {
+
+				private String type;
+
+				private String id;
+
+				private String name;
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 			}
 		}

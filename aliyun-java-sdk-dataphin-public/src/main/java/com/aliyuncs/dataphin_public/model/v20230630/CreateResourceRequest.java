@@ -79,11 +79,11 @@ public class CreateResourceRequest extends RpcAcsRequest<CreateResourceResponse>
 		@SerializedName("ProjectId")
 		private Long projectId;
 
-		@SerializedName("Directory")
-		private String directory;
-
 		@SerializedName("ResourceType")
 		private String resourceType;
+
+		@SerializedName("Directory")
+		private String directory;
 
 		public String getStorageAddress() {
 			return this.storageAddress;
@@ -133,20 +133,20 @@ public class CreateResourceRequest extends RpcAcsRequest<CreateResourceResponse>
 			this.projectId = projectId;
 		}
 
-		public String getDirectory() {
-			return this.directory;
-		}
-
-		public void setDirectory(String directory) {
-			this.directory = directory;
-		}
-
 		public String getResourceType() {
 			return this.resourceType;
 		}
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
+		}
+
+		public String getDirectory() {
+			return this.directory;
+		}
+
+		public void setDirectory(String directory) {
+			this.directory = directory;
 		}
 	}
 

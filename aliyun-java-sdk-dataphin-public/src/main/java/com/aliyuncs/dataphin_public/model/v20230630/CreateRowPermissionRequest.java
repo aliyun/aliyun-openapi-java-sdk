@@ -122,11 +122,11 @@ public class CreateRowPermissionRequest extends RpcAcsRequest<CreateRowPermissio
 			@SerializedName("ResourceId")
 			private String resourceId;
 
-			@SerializedName("MappingColumnName")
-			private String mappingColumnName;
-
 			@SerializedName("ColumnName")
 			private String columnName;
+
+			@SerializedName("MappingColumnName")
+			private String mappingColumnName;
 
 			public String getResourceId() {
 				return this.resourceId;
@@ -136,20 +136,20 @@ public class CreateRowPermissionRequest extends RpcAcsRequest<CreateRowPermissio
 				this.resourceId = resourceId;
 			}
 
-			public String getMappingColumnName() {
-				return this.mappingColumnName;
-			}
-
-			public void setMappingColumnName(String mappingColumnName) {
-				this.mappingColumnName = mappingColumnName;
-			}
-
 			public String getColumnName() {
 				return this.columnName;
 			}
 
 			public void setColumnName(String columnName) {
 				this.columnName = columnName;
+			}
+
+			public String getMappingColumnName() {
+				return this.mappingColumnName;
+			}
+
+			public void setMappingColumnName(String mappingColumnName) {
+				this.mappingColumnName = mappingColumnName;
 			}
 		}
 

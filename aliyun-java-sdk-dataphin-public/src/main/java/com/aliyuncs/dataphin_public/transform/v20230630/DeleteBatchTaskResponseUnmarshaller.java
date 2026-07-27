@@ -23,10 +23,10 @@ public class DeleteBatchTaskResponseUnmarshaller {
 	public static DeleteBatchTaskResponse unmarshall(DeleteBatchTaskResponse deleteBatchTaskResponse, UnmarshallerContext _ctx) {
 		
 		deleteBatchTaskResponse.setRequestId(_ctx.stringValue("DeleteBatchTaskResponse.RequestId"));
-		deleteBatchTaskResponse.setSuccess(_ctx.booleanValue("DeleteBatchTaskResponse.Success"));
+		deleteBatchTaskResponse.setMessage(_ctx.stringValue("DeleteBatchTaskResponse.Message"));
 		deleteBatchTaskResponse.setHttpStatusCode(_ctx.integerValue("DeleteBatchTaskResponse.HttpStatusCode"));
 		deleteBatchTaskResponse.setCode(_ctx.stringValue("DeleteBatchTaskResponse.Code"));
-		deleteBatchTaskResponse.setMessage(_ctx.stringValue("DeleteBatchTaskResponse.Message"));
+		deleteBatchTaskResponse.setSuccess(_ctx.booleanValue("DeleteBatchTaskResponse.Success"));
 	 
 	 	return deleteBatchTaskResponse;
 	}

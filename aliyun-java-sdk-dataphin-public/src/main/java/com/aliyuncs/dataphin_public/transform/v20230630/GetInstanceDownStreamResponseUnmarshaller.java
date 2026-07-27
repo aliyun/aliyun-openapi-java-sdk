@@ -29,32 +29,32 @@ public class GetInstanceDownStreamResponseUnmarshaller {
 	public static GetInstanceDownStreamResponse unmarshall(GetInstanceDownStreamResponse getInstanceDownStreamResponse, UnmarshallerContext _ctx) {
 		
 		getInstanceDownStreamResponse.setRequestId(_ctx.stringValue("GetInstanceDownStreamResponse.RequestId"));
-		getInstanceDownStreamResponse.setSuccess(_ctx.booleanValue("GetInstanceDownStreamResponse.Success"));
+		getInstanceDownStreamResponse.setMessage(_ctx.stringValue("GetInstanceDownStreamResponse.Message"));
 		getInstanceDownStreamResponse.setHttpStatusCode(_ctx.integerValue("GetInstanceDownStreamResponse.HttpStatusCode"));
 		getInstanceDownStreamResponse.setCode(_ctx.stringValue("GetInstanceDownStreamResponse.Code"));
-		getInstanceDownStreamResponse.setMessage(_ctx.stringValue("GetInstanceDownStreamResponse.Message"));
+		getInstanceDownStreamResponse.setSuccess(_ctx.booleanValue("GetInstanceDownStreamResponse.Success"));
 
 		List<InstanceRelation> instanceRelationList = new ArrayList<InstanceRelation>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceDownStreamResponse.InstanceRelationList.Length"); i++) {
 			InstanceRelation instanceRelation = new InstanceRelation();
 			instanceRelation.setSelectStatus(_ctx.stringValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].SelectStatus"));
+			instanceRelation.setDownStreamDepth(_ctx.integerValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].DownStreamDepth"));
 			instanceRelation.setSelectStatusCause(_ctx.stringValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].SelectStatusCause"));
 			instanceRelation.setRunStatus(_ctx.stringValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].RunStatus"));
-			instanceRelation.setDownStreamDepth(_ctx.integerValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].DownStreamDepth"));
 			instanceRelation.setExtendInfo(_ctx.stringValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].ExtendInfo"));
 
 			InstanceInfo instanceInfo = new InstanceInfo();
+			instanceInfo.setType(_ctx.stringValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].InstanceInfo.Type"));
 			instanceInfo.setId(_ctx.stringValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].InstanceInfo.Id"));
 			instanceInfo.setName(_ctx.stringValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].InstanceInfo.Name"));
-			instanceInfo.setType(_ctx.stringValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].InstanceInfo.Type"));
 			instanceRelation.setInstanceInfo(instanceInfo);
 
 			List<FieldInstance> fieldInstanceList = new ArrayList<FieldInstance>();
 			for (int j = 0; j < _ctx.lengthValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].FieldInstanceList.Length"); j++) {
 				FieldInstance fieldInstance = new FieldInstance();
 				fieldInstance.setSelectStatus(_ctx.stringValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].FieldInstanceList["+ j +"].SelectStatus"));
-				fieldInstance.setFieldInstanceId(_ctx.stringValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].FieldInstanceList["+ j +"].FieldInstanceId"));
 				fieldInstance.setRunStatus(_ctx.stringValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].FieldInstanceList["+ j +"].RunStatus"));
+				fieldInstance.setFieldInstanceId(_ctx.stringValue("GetInstanceDownStreamResponse.InstanceRelationList["+ i +"].FieldInstanceList["+ j +"].FieldInstanceId"));
 
 				fieldInstanceList.add(fieldInstance);
 			}

@@ -27,13 +27,13 @@ public class GetBatchTaskVersionsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -45,12 +45,12 @@ public class GetBatchTaskVersionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetBatchTaskVersionsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,30 +99,46 @@ public class GetBatchTaskVersionsResponse extends AcsResponse {
 
 		public static class BatchTaskVersion {
 
-			private String nodeId;
+			private String comment;
+
+			private String gmtCreate;
+
+			private String userName;
 
 			private String version;
 
 			private String userId;
 
-			private String userName;
-
-			private String comment;
-
-			private Boolean published;
+			private String nodeId;
 
 			private Long projectId;
 
-			private String gmtCreate;
-
 			private String gmtModified;
 
-			public String getNodeId() {
-				return this.nodeId;
+			private Boolean published;
+
+			public String getComment() {
+				return this.comment;
 			}
 
-			public void setNodeId(String nodeId) {
-				this.nodeId = nodeId;
+			public void setComment(String comment) {
+				this.comment = comment;
+			}
+
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getUserName() {
+				return this.userName;
+			}
+
+			public void setUserName(String userName) {
+				this.userName = userName;
 			}
 
 			public String getVersion() {
@@ -141,28 +157,12 @@ public class GetBatchTaskVersionsResponse extends AcsResponse {
 				this.userId = userId;
 			}
 
-			public String getUserName() {
-				return this.userName;
+			public String getNodeId() {
+				return this.nodeId;
 			}
 
-			public void setUserName(String userName) {
-				this.userName = userName;
-			}
-
-			public String getComment() {
-				return this.comment;
-			}
-
-			public void setComment(String comment) {
-				this.comment = comment;
-			}
-
-			public Boolean getPublished() {
-				return this.published;
-			}
-
-			public void setPublished(Boolean published) {
-				this.published = published;
+			public void setNodeId(String nodeId) {
+				this.nodeId = nodeId;
 			}
 
 			public Long getProjectId() {
@@ -173,20 +173,20 @@ public class GetBatchTaskVersionsResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
-			public String getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
 			public String getGmtModified() {
 				return this.gmtModified;
 			}
 
 			public void setGmtModified(String gmtModified) {
 				this.gmtModified = gmtModified;
+			}
+
+			public Boolean getPublished() {
+				return this.published;
+			}
+
+			public void setPublished(Boolean published) {
+				this.published = published;
 			}
 		}
 	}

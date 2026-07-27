@@ -23,10 +23,10 @@ public class RevokeDataServiceApiResponseUnmarshaller {
 	public static RevokeDataServiceApiResponse unmarshall(RevokeDataServiceApiResponse revokeDataServiceApiResponse, UnmarshallerContext _ctx) {
 		
 		revokeDataServiceApiResponse.setRequestId(_ctx.stringValue("RevokeDataServiceApiResponse.RequestId"));
-		revokeDataServiceApiResponse.setSuccess(_ctx.booleanValue("RevokeDataServiceApiResponse.Success"));
+		revokeDataServiceApiResponse.setMessage(_ctx.stringValue("RevokeDataServiceApiResponse.Message"));
 		revokeDataServiceApiResponse.setHttpStatusCode(_ctx.integerValue("RevokeDataServiceApiResponse.HttpStatusCode"));
 		revokeDataServiceApiResponse.setCode(_ctx.stringValue("RevokeDataServiceApiResponse.Code"));
-		revokeDataServiceApiResponse.setMessage(_ctx.stringValue("RevokeDataServiceApiResponse.Message"));
+		revokeDataServiceApiResponse.setSuccess(_ctx.booleanValue("RevokeDataServiceApiResponse.Success"));
 	 
 	 	return revokeDataServiceApiResponse;
 	}

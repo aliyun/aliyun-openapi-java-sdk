@@ -24,14 +24,14 @@ public class SubmitBatchTaskResponseUnmarshaller {
 	public static SubmitBatchTaskResponse unmarshall(SubmitBatchTaskResponse submitBatchTaskResponse, UnmarshallerContext _ctx) {
 		
 		submitBatchTaskResponse.setRequestId(_ctx.stringValue("SubmitBatchTaskResponse.RequestId"));
-		submitBatchTaskResponse.setSuccess(_ctx.booleanValue("SubmitBatchTaskResponse.Success"));
+		submitBatchTaskResponse.setMessage(_ctx.stringValue("SubmitBatchTaskResponse.Message"));
 		submitBatchTaskResponse.setHttpStatusCode(_ctx.integerValue("SubmitBatchTaskResponse.HttpStatusCode"));
 		submitBatchTaskResponse.setCode(_ctx.stringValue("SubmitBatchTaskResponse.Code"));
-		submitBatchTaskResponse.setMessage(_ctx.stringValue("SubmitBatchTaskResponse.Message"));
+		submitBatchTaskResponse.setSuccess(_ctx.booleanValue("SubmitBatchTaskResponse.Success"));
 
 		SubmitResult submitResult = new SubmitResult();
-		submitResult.setNodeId(_ctx.stringValue("SubmitBatchTaskResponse.SubmitResult.NodeId"));
 		submitResult.setSubmitId(_ctx.longValue("SubmitBatchTaskResponse.SubmitResult.SubmitId"));
+		submitResult.setNodeId(_ctx.stringValue("SubmitBatchTaskResponse.SubmitResult.NodeId"));
 		submitBatchTaskResponse.setSubmitResult(submitResult);
 	 
 	 	return submitBatchTaskResponse;

@@ -37,23 +37,40 @@ public class GetStandardSetResponseUnmarshaller {
 	public static GetStandardSetResponse unmarshall(GetStandardSetResponse getStandardSetResponse, UnmarshallerContext _ctx) {
 		
 		getStandardSetResponse.setRequestId(_ctx.stringValue("GetStandardSetResponse.RequestId"));
-		getStandardSetResponse.setSuccess(_ctx.booleanValue("GetStandardSetResponse.Success"));
+		getStandardSetResponse.setMessage(_ctx.stringValue("GetStandardSetResponse.Message"));
 		getStandardSetResponse.setHttpStatusCode(_ctx.integerValue("GetStandardSetResponse.HttpStatusCode"));
 		getStandardSetResponse.setCode(_ctx.stringValue("GetStandardSetResponse.Code"));
-		getStandardSetResponse.setMessage(_ctx.stringValue("GetStandardSetResponse.Message"));
+		getStandardSetResponse.setSuccess(_ctx.booleanValue("GetStandardSetResponse.Success"));
 
 		StandardSetInfo standardSetInfo = new StandardSetInfo();
-		standardSetInfo.setId(_ctx.longValue("GetStandardSetResponse.StandardSetInfo.Id"));
-		standardSetInfo.setName(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.Name"));
-		standardSetInfo.setCode(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.Code"));
+		standardSetInfo.setModifyTime(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.ModifyTime"));
 		standardSetInfo.setDescription(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.Description"));
 		standardSetInfo.setCreateTime(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.CreateTime"));
-		standardSetInfo.setModifyTime(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.ModifyTime"));
 		standardSetInfo.setDefaultStandardTemplateId(_ctx.longValue("GetStandardSetResponse.StandardSetInfo.DefaultStandardTemplateId"));
+		standardSetInfo.setCode(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.Code"));
+		standardSetInfo.setName(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.Name"));
+		standardSetInfo.setId(_ctx.longValue("GetStandardSetResponse.StandardSetInfo.Id"));
+
+		LastModifier lastModifier = new LastModifier();
+		lastModifier.setId(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.LastModifier.Id"));
+		lastModifier.setName(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.LastModifier.Name"));
+		standardSetInfo.setLastModifier(lastModifier);
+
+		ApprovalConfig approvalConfig = new ApprovalConfig();
+		approvalConfig.setIsSubmitInBatch(_ctx.booleanValue("GetStandardSetResponse.StandardSetInfo.ApprovalConfig.IsSubmitInBatch"));
+		approvalConfig.setApprovalType(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.ApprovalConfig.ApprovalType"));
+		approvalConfig.setEnableApproval(_ctx.booleanValue("GetStandardSetResponse.StandardSetInfo.ApprovalConfig.EnableApproval"));
+		approvalConfig.setTemplateId(_ctx.longValue("GetStandardSetResponse.StandardSetInfo.ApprovalConfig.TemplateId"));
+		standardSetInfo.setApprovalConfig(approvalConfig);
 
 		DirectoryReference directoryReference = new DirectoryReference();
 		directoryReference.setDirectory(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.DirectoryReference.Directory"));
 		standardSetInfo.setDirectoryReference(directoryReference);
+
+		Creator creator = new Creator();
+		creator.setId(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.Creator.Id"));
+		creator.setName(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.Creator.Name"));
+		standardSetInfo.setCreator(creator);
 
 		VisibilityConfig visibilityConfig = new VisibilityConfig();
 		visibilityConfig.setType(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.VisibilityConfig.Type"));
@@ -69,39 +86,22 @@ public class GetStandardSetResponseUnmarshaller {
 		visibilityConfig.setSpecifiedUserList(specifiedUserList);
 		standardSetInfo.setVisibilityConfig(visibilityConfig);
 
-		Creator creator = new Creator();
-		creator.setId(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.Creator.Id"));
-		creator.setName(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.Creator.Name"));
-		standardSetInfo.setCreator(creator);
-
-		LastModifier lastModifier = new LastModifier();
-		lastModifier.setId(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.LastModifier.Id"));
-		lastModifier.setName(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.LastModifier.Name"));
-		standardSetInfo.setLastModifier(lastModifier);
-
-		ApprovalConfig approvalConfig = new ApprovalConfig();
-		approvalConfig.setEnableApproval(_ctx.booleanValue("GetStandardSetResponse.StandardSetInfo.ApprovalConfig.EnableApproval"));
-		approvalConfig.setIsSubmitInBatch(_ctx.booleanValue("GetStandardSetResponse.StandardSetInfo.ApprovalConfig.IsSubmitInBatch"));
-		approvalConfig.setApprovalType(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.ApprovalConfig.ApprovalType"));
-		approvalConfig.setTemplateId(_ctx.longValue("GetStandardSetResponse.StandardSetInfo.ApprovalConfig.TemplateId"));
-		standardSetInfo.setApprovalConfig(approvalConfig);
-
 		OfflineApprovalConfig offlineApprovalConfig = new OfflineApprovalConfig();
-		offlineApprovalConfig.setEnableApproval(_ctx.booleanValue("GetStandardSetResponse.StandardSetInfo.OfflineApprovalConfig.EnableApproval"));
 		offlineApprovalConfig.setIsSubmitInBatch(_ctx.booleanValue("GetStandardSetResponse.StandardSetInfo.OfflineApprovalConfig.IsSubmitInBatch"));
 		offlineApprovalConfig.setApprovalType(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.OfflineApprovalConfig.ApprovalType"));
+		offlineApprovalConfig.setEnableApproval(_ctx.booleanValue("GetStandardSetResponse.StandardSetInfo.OfflineApprovalConfig.EnableApproval"));
 		offlineApprovalConfig.setTemplateId(_ctx.longValue("GetStandardSetResponse.StandardSetInfo.OfflineApprovalConfig.TemplateId"));
 		standardSetInfo.setOfflineApprovalConfig(offlineApprovalConfig);
 
-		List<Maintainer> maintainerList = new ArrayList<Maintainer>();
-		for (int i = 0; i < _ctx.lengthValue("GetStandardSetResponse.StandardSetInfo.MaintainerList.Length"); i++) {
-			Maintainer maintainer = new Maintainer();
-			maintainer.setId(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.MaintainerList["+ i +"].Id"));
-			maintainer.setName(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.MaintainerList["+ i +"].Name"));
+		List<MemberGroup> memberGroupList = new ArrayList<MemberGroup>();
+		for (int i = 0; i < _ctx.lengthValue("GetStandardSetResponse.StandardSetInfo.MemberGroupList.Length"); i++) {
+			MemberGroup memberGroup = new MemberGroup();
+			memberGroup.setId(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.MemberGroupList["+ i +"].Id"));
+			memberGroup.setName(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.MemberGroupList["+ i +"].Name"));
 
-			maintainerList.add(maintainer);
+			memberGroupList.add(memberGroup);
 		}
-		standardSetInfo.setMaintainerList(maintainerList);
+		standardSetInfo.setMemberGroupList(memberGroupList);
 
 		List<Member> memberList = new ArrayList<Member>();
 		for (int i = 0; i < _ctx.lengthValue("GetStandardSetResponse.StandardSetInfo.MemberList.Length"); i++) {
@@ -113,15 +113,15 @@ public class GetStandardSetResponseUnmarshaller {
 		}
 		standardSetInfo.setMemberList(memberList);
 
-		List<MemberGroup> memberGroupList = new ArrayList<MemberGroup>();
-		for (int i = 0; i < _ctx.lengthValue("GetStandardSetResponse.StandardSetInfo.MemberGroupList.Length"); i++) {
-			MemberGroup memberGroup = new MemberGroup();
-			memberGroup.setId(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.MemberGroupList["+ i +"].Id"));
-			memberGroup.setName(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.MemberGroupList["+ i +"].Name"));
+		List<Maintainer> maintainerList = new ArrayList<Maintainer>();
+		for (int i = 0; i < _ctx.lengthValue("GetStandardSetResponse.StandardSetInfo.MaintainerList.Length"); i++) {
+			Maintainer maintainer = new Maintainer();
+			maintainer.setId(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.MaintainerList["+ i +"].Id"));
+			maintainer.setName(_ctx.stringValue("GetStandardSetResponse.StandardSetInfo.MaintainerList["+ i +"].Name"));
 
-			memberGroupList.add(memberGroup);
+			maintainerList.add(maintainer);
 		}
-		standardSetInfo.setMemberGroupList(memberGroupList);
+		standardSetInfo.setMaintainerList(maintainerList);
 		getStandardSetResponse.setStandardSetInfo(standardSetInfo);
 	 
 	 	return getStandardSetResponse;

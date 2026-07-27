@@ -24,14 +24,14 @@ public class GetPhysicalNodeContentResponseUnmarshaller {
 	public static GetPhysicalNodeContentResponse unmarshall(GetPhysicalNodeContentResponse getPhysicalNodeContentResponse, UnmarshallerContext _ctx) {
 		
 		getPhysicalNodeContentResponse.setRequestId(_ctx.stringValue("GetPhysicalNodeContentResponse.RequestId"));
-		getPhysicalNodeContentResponse.setSuccess(_ctx.booleanValue("GetPhysicalNodeContentResponse.Success"));
+		getPhysicalNodeContentResponse.setMessage(_ctx.stringValue("GetPhysicalNodeContentResponse.Message"));
 		getPhysicalNodeContentResponse.setHttpStatusCode(_ctx.integerValue("GetPhysicalNodeContentResponse.HttpStatusCode"));
 		getPhysicalNodeContentResponse.setCode(_ctx.stringValue("GetPhysicalNodeContentResponse.Code"));
-		getPhysicalNodeContentResponse.setMessage(_ctx.stringValue("GetPhysicalNodeContentResponse.Message"));
+		getPhysicalNodeContentResponse.setSuccess(_ctx.booleanValue("GetPhysicalNodeContentResponse.Success"));
 
 		Data data = new Data();
-		data.setNodeId(_ctx.stringValue("GetPhysicalNodeContentResponse.Data.NodeId"));
 		data.setNodeName(_ctx.stringValue("GetPhysicalNodeContentResponse.Data.NodeName"));
+		data.setNodeId(_ctx.stringValue("GetPhysicalNodeContentResponse.Data.NodeId"));
 		data.setCodeContent(_ctx.stringValue("GetPhysicalNodeContentResponse.Data.CodeContent"));
 		getPhysicalNodeContentResponse.setData(data);
 	 

@@ -26,13 +26,13 @@ public class GetAdHocTaskLogResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private LogInfo logInfo;
 
@@ -44,12 +44,12 @@ public class GetAdHocTaskLogResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class GetAdHocTaskLogResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public LogInfo getLogInfo() {
@@ -86,27 +86,19 @@ public class GetAdHocTaskLogResponse extends AcsResponse {
 
 	public static class LogInfo {
 
-		private String taskId;
-
 		private Integer subTaskId;
 
-		private String taskStatus;
+		private String taskId;
 
-		private Boolean hasNext;
+		private String content;
 
 		private Boolean hasResult;
 
 		private Integer nextOffset;
 
-		private String content;
+		private String taskStatus;
 
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
+		private Boolean hasNext;
 
 		public Integer getSubTaskId() {
 			return this.subTaskId;
@@ -116,20 +108,20 @@ public class GetAdHocTaskLogResponse extends AcsResponse {
 			this.subTaskId = subTaskId;
 		}
 
-		public String getTaskStatus() {
-			return this.taskStatus;
+		public String getTaskId() {
+			return this.taskId;
 		}
 
-		public void setTaskStatus(String taskStatus) {
-			this.taskStatus = taskStatus;
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
-		public Boolean getHasNext() {
-			return this.hasNext;
+		public String getContent() {
+			return this.content;
 		}
 
-		public void setHasNext(Boolean hasNext) {
-			this.hasNext = hasNext;
+		public void setContent(String content) {
+			this.content = content;
 		}
 
 		public Boolean getHasResult() {
@@ -148,12 +140,20 @@ public class GetAdHocTaskLogResponse extends AcsResponse {
 			this.nextOffset = nextOffset;
 		}
 
-		public String getContent() {
-			return this.content;
+		public String getTaskStatus() {
+			return this.taskStatus;
 		}
 
-		public void setContent(String content) {
-			this.content = content;
+		public void setTaskStatus(String taskStatus) {
+			this.taskStatus = taskStatus;
+		}
+
+		public Boolean getHasNext() {
+			return this.hasNext;
+		}
+
+		public void setHasNext(Boolean hasNext) {
+			this.hasNext = hasNext;
 		}
 	}
 

@@ -157,11 +157,11 @@ public class CreateStandardTemplateRequest extends RpcAcsRequest<CreateStandardT
 				@SerializedName("Code")
 				private String code;
 
-				@SerializedName("Name")
-				private String name;
-
 				@SerializedName("ValueConfig")
 				private ValueConfig valueConfig;
+
+				@SerializedName("Name")
+				private String name;
 
 				@SerializedName("Description")
 				private String description;
@@ -183,20 +183,20 @@ public class CreateStandardTemplateRequest extends RpcAcsRequest<CreateStandardT
 					this.code = code;
 				}
 
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
 				public ValueConfig getValueConfig() {
 					return this.valueConfig;
 				}
 
 				public void setValueConfig(ValueConfig valueConfig) {
 					this.valueConfig = valueConfig;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 
 				public String getDescription() {
@@ -375,11 +375,11 @@ public class CreateStandardTemplateRequest extends RpcAcsRequest<CreateStandardT
 							@SerializedName("MaxValue")
 							private String maxValue;
 
-							@SerializedName("IncludeMinValue")
-							private Boolean includeMinValue;
-
 							@SerializedName("IncludeMaxValue")
 							private Boolean includeMaxValue;
+
+							@SerializedName("IncludeMinValue")
+							private Boolean includeMinValue;
 
 							@SerializedName("MinValue")
 							private String minValue;
@@ -392,20 +392,20 @@ public class CreateStandardTemplateRequest extends RpcAcsRequest<CreateStandardT
 								this.maxValue = maxValue;
 							}
 
-							public Boolean getIncludeMinValue() {
-								return this.includeMinValue;
-							}
-
-							public void setIncludeMinValue(Boolean includeMinValue) {
-								this.includeMinValue = includeMinValue;
-							}
-
 							public Boolean getIncludeMaxValue() {
 								return this.includeMaxValue;
 							}
 
 							public void setIncludeMaxValue(Boolean includeMaxValue) {
 								this.includeMaxValue = includeMaxValue;
+							}
+
+							public Boolean getIncludeMinValue() {
+								return this.includeMinValue;
+							}
+
+							public void setIncludeMinValue(Boolean includeMinValue) {
+								this.includeMinValue = includeMinValue;
 							}
 
 							public String getMinValue() {
@@ -595,11 +595,11 @@ public class CreateStandardTemplateRequest extends RpcAcsRequest<CreateStandardT
 						@SerializedName("StartValue")
 						private Long startValue;
 
-						@SerializedName("Step")
-						private Integer step;
-
 						@SerializedName("NeedPaddingZero")
 						private Boolean needPaddingZero;
+
+						@SerializedName("Step")
+						private Integer step;
 
 						@SerializedName("Digit")
 						private Integer digit;
@@ -612,20 +612,20 @@ public class CreateStandardTemplateRequest extends RpcAcsRequest<CreateStandardT
 							this.startValue = startValue;
 						}
 
-						public Integer getStep() {
-							return this.step;
-						}
-
-						public void setStep(Integer step) {
-							this.step = step;
-						}
-
 						public Boolean getNeedPaddingZero() {
 							return this.needPaddingZero;
 						}
 
 						public void setNeedPaddingZero(Boolean needPaddingZero) {
 							this.needPaddingZero = needPaddingZero;
+						}
+
+						public Integer getStep() {
+							return this.step;
+						}
+
+						public void setStep(Integer step) {
+							this.step = step;
 						}
 
 						public Integer getDigit() {

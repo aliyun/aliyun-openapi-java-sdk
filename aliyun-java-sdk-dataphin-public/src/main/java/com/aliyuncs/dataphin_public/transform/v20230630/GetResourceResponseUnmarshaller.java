@@ -24,25 +24,25 @@ public class GetResourceResponseUnmarshaller {
 	public static GetResourceResponse unmarshall(GetResourceResponse getResourceResponse, UnmarshallerContext _ctx) {
 		
 		getResourceResponse.setRequestId(_ctx.stringValue("GetResourceResponse.RequestId"));
-		getResourceResponse.setSuccess(_ctx.booleanValue("GetResourceResponse.Success"));
+		getResourceResponse.setMessage(_ctx.stringValue("GetResourceResponse.Message"));
 		getResourceResponse.setHttpStatusCode(_ctx.integerValue("GetResourceResponse.HttpStatusCode"));
 		getResourceResponse.setCode(_ctx.stringValue("GetResourceResponse.Code"));
-		getResourceResponse.setMessage(_ctx.stringValue("GetResourceResponse.Message"));
+		getResourceResponse.setSuccess(_ctx.booleanValue("GetResourceResponse.Success"));
 
 		ResourceInfo resourceInfo = new ResourceInfo();
-		resourceInfo.setId(_ctx.longValue("GetResourceResponse.ResourceInfo.Id"));
-		resourceInfo.setName(_ctx.stringValue("GetResourceResponse.ResourceInfo.Name"));
-		resourceInfo.setProjectId(_ctx.longValue("GetResourceResponse.ResourceInfo.ProjectId"));
-		resourceInfo.setResourceType(_ctx.stringValue("GetResourceResponse.ResourceInfo.ResourceType"));
-		resourceInfo.setDirectory(_ctx.stringValue("GetResourceResponse.ResourceInfo.Directory"));
-		resourceInfo.setStorageAddress(_ctx.stringValue("GetResourceResponse.ResourceInfo.StorageAddress"));
-		resourceInfo.setSize(_ctx.longValue("GetResourceResponse.ResourceInfo.Size"));
-		resourceInfo.setDescription(_ctx.stringValue("GetResourceResponse.ResourceInfo.Description"));
-		resourceInfo.setGmtCreate(_ctx.stringValue("GetResourceResponse.ResourceInfo.GmtCreate"));
-		resourceInfo.setGmtModified(_ctx.stringValue("GetResourceResponse.ResourceInfo.GmtModified"));
-		resourceInfo.setComputeEngineType(_ctx.stringValue("GetResourceResponse.ResourceInfo.ComputeEngineType"));
-		resourceInfo.setCreator(_ctx.stringValue("GetResourceResponse.ResourceInfo.Creator"));
 		resourceInfo.setLastModifier(_ctx.stringValue("GetResourceResponse.ResourceInfo.LastModifier"));
+		resourceInfo.setDescription(_ctx.stringValue("GetResourceResponse.ResourceInfo.Description"));
+		resourceInfo.setSize(_ctx.longValue("GetResourceResponse.ResourceInfo.Size"));
+		resourceInfo.setProjectId(_ctx.longValue("GetResourceResponse.ResourceInfo.ProjectId"));
+		resourceInfo.setGmtModified(_ctx.stringValue("GetResourceResponse.ResourceInfo.GmtModified"));
+		resourceInfo.setResourceType(_ctx.stringValue("GetResourceResponse.ResourceInfo.ResourceType"));
+		resourceInfo.setCreator(_ctx.stringValue("GetResourceResponse.ResourceInfo.Creator"));
+		resourceInfo.setName(_ctx.stringValue("GetResourceResponse.ResourceInfo.Name"));
+		resourceInfo.setStorageAddress(_ctx.stringValue("GetResourceResponse.ResourceInfo.StorageAddress"));
+		resourceInfo.setGmtCreate(_ctx.stringValue("GetResourceResponse.ResourceInfo.GmtCreate"));
+		resourceInfo.setComputeEngineType(_ctx.stringValue("GetResourceResponse.ResourceInfo.ComputeEngineType"));
+		resourceInfo.setId(_ctx.longValue("GetResourceResponse.ResourceInfo.Id"));
+		resourceInfo.setDirectory(_ctx.stringValue("GetResourceResponse.ResourceInfo.Directory"));
 		getResourceResponse.setResourceInfo(resourceInfo);
 	 
 	 	return getResourceResponse;

@@ -83,11 +83,11 @@ public class ListOperationRecordRequest extends RpcAcsRequest<ListOperationRecor
 		@SerializedName("PageSize")
 		private Integer pageSize;
 
-		@SerializedName("Page")
-		private Integer page;
-
 		@SerializedName("BeginTimeStart")
 		private String beginTimeStart;
+
+		@SerializedName("Page")
+		private Integer page;
 
 		@SerializedName("ObjectType")
 		private List<String> objectType;
@@ -157,20 +157,20 @@ public class ListOperationRecordRequest extends RpcAcsRequest<ListOperationRecor
 			this.pageSize = pageSize;
 		}
 
-		public Integer getPage() {
-			return this.page;
-		}
-
-		public void setPage(Integer page) {
-			this.page = page;
-		}
-
 		public String getBeginTimeStart() {
 			return this.beginTimeStart;
 		}
 
 		public void setBeginTimeStart(String beginTimeStart) {
 			this.beginTimeStart = beginTimeStart;
+		}
+
+		public Integer getPage() {
+			return this.page;
+		}
+
+		public void setPage(Integer page) {
+			this.page = page;
 		}
 
 		public List<String> getObjectType() {

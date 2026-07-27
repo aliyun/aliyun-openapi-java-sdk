@@ -76,14 +76,14 @@ public class ListSecurityIdentifyRecordsRequest extends RpcAcsRequest<ListSecuri
 		@SerializedName("DatasourceName")
 		private String datasourceName;
 
-		@SerializedName("IsDatasourceTable")
-		private Boolean isDatasourceTable;
-
 		@SerializedName("TableName")
 		private String tableName;
 
 		@SerializedName("Keyword")
 		private String keyword;
+
+		@SerializedName("IsDatasourceTable")
+		private Boolean isDatasourceTable;
 
 		@SerializedName("DatasourceEnv")
 		private String datasourceEnv;
@@ -128,14 +128,6 @@ public class ListSecurityIdentifyRecordsRequest extends RpcAcsRequest<ListSecuri
 			this.datasourceName = datasourceName;
 		}
 
-		public Boolean getIsDatasourceTable() {
-			return this.isDatasourceTable;
-		}
-
-		public void setIsDatasourceTable(Boolean isDatasourceTable) {
-			this.isDatasourceTable = isDatasourceTable;
-		}
-
 		public String getTableName() {
 			return this.tableName;
 		}
@@ -150,6 +142,14 @@ public class ListSecurityIdentifyRecordsRequest extends RpcAcsRequest<ListSecuri
 
 		public void setKeyword(String keyword) {
 			this.keyword = keyword;
+		}
+
+		public Boolean getIsDatasourceTable() {
+			return this.isDatasourceTable;
+		}
+
+		public void setIsDatasourceTable(Boolean isDatasourceTable) {
+			this.isDatasourceTable = isDatasourceTable;
 		}
 
 		public String getDatasourceEnv() {

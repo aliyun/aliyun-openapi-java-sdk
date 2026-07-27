@@ -27,13 +27,13 @@ public class GetBelongAssetMappingResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<MappingRelation> mappingRelationList;
 
@@ -45,12 +45,12 @@ public class GetBelongAssetMappingResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetBelongAssetMappingResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<MappingRelation> getMappingRelationList() {
@@ -89,25 +89,25 @@ public class GetBelongAssetMappingResponse extends AcsResponse {
 
 		private String modifyTime;
 
-		private String guid;
-
-		private String name;
+		private String standardStage;
 
 		private String assetType;
 
-		private Long standardId;
+		private String standardSetDirectory;
 
-		private String standardName;
+		private Long standardId;
 
 		private String standardCode;
 
 		private Long standardSetId;
 
+		private String guid;
+
 		private String standardSetName;
 
-		private String standardSetDirectory;
+		private String standardName;
 
-		private String standardStage;
+		private String name;
 
 		public String getModifyTime() {
 			return this.modifyTime;
@@ -117,20 +117,12 @@ public class GetBelongAssetMappingResponse extends AcsResponse {
 			this.modifyTime = modifyTime;
 		}
 
-		public String getGuid() {
-			return this.guid;
+		public String getStandardStage() {
+			return this.standardStage;
 		}
 
-		public void setGuid(String guid) {
-			this.guid = guid;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setStandardStage(String standardStage) {
+			this.standardStage = standardStage;
 		}
 
 		public String getAssetType() {
@@ -141,20 +133,20 @@ public class GetBelongAssetMappingResponse extends AcsResponse {
 			this.assetType = assetType;
 		}
 
+		public String getStandardSetDirectory() {
+			return this.standardSetDirectory;
+		}
+
+		public void setStandardSetDirectory(String standardSetDirectory) {
+			this.standardSetDirectory = standardSetDirectory;
+		}
+
 		public Long getStandardId() {
 			return this.standardId;
 		}
 
 		public void setStandardId(Long standardId) {
 			this.standardId = standardId;
-		}
-
-		public String getStandardName() {
-			return this.standardName;
-		}
-
-		public void setStandardName(String standardName) {
-			this.standardName = standardName;
 		}
 
 		public String getStandardCode() {
@@ -173,6 +165,14 @@ public class GetBelongAssetMappingResponse extends AcsResponse {
 			this.standardSetId = standardSetId;
 		}
 
+		public String getGuid() {
+			return this.guid;
+		}
+
+		public void setGuid(String guid) {
+			this.guid = guid;
+		}
+
 		public String getStandardSetName() {
 			return this.standardSetName;
 		}
@@ -181,20 +181,20 @@ public class GetBelongAssetMappingResponse extends AcsResponse {
 			this.standardSetName = standardSetName;
 		}
 
-		public String getStandardSetDirectory() {
-			return this.standardSetDirectory;
+		public String getStandardName() {
+			return this.standardName;
 		}
 
-		public void setStandardSetDirectory(String standardSetDirectory) {
-			this.standardSetDirectory = standardSetDirectory;
+		public void setStandardName(String standardName) {
+			this.standardName = standardName;
 		}
 
-		public String getStandardStage() {
-			return this.standardStage;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setStandardStage(String standardStage) {
-			this.standardStage = standardStage;
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

@@ -27,13 +27,13 @@ public class GetBizMetricByNameResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -45,12 +45,12 @@ public class GetBizMetricByNameResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetBizMetricByNameResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -87,46 +87,46 @@ public class GetBizMetricByNameResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long tenantId;
+		private String description;
 
 		private String guid;
 
 		private String name;
 
-		private String displayName;
+		private String metricRelationDiagramExpression;
 
-		private String description;
-
-		private String bizOwnerName;
+		private Long tenantId;
 
 		private String metricDefinition;
 
-		private Boolean metricRelationDiagramSwitchOpen;
+		private String displayName;
 
-		private String metricRelationDiagramExpression;
+		private Boolean metricRelationDiagramSwitchOpen;
 
 		private Boolean operateInstructionEnabled;
 
 		private String operateInstructionContent;
 
-		private List<归属目录列表> catalogs;
+		private String bizOwnerName;
+
+		private List<自定义属性> customAttribute;
 
 		private List<RelatedBizMetricsItem> relatedBizMetrics;
 
-		private List<AssociatedTechMetricsItem> associatedTechMetrics;
+		private List<归属目录列表> catalogs;
 
-		private List<自定义属性> customAttribute;
+		private List<AssociatedTechMetricsItem> associatedTechMetrics;
 
 		private List<String> labels;
 
 		private ViewScope viewScope;
 
-		public Long getTenantId() {
-			return this.tenantId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getGuid() {
@@ -145,28 +145,20 @@ public class GetBizMetricByNameResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getDisplayName() {
-			return this.displayName;
+		public String getMetricRelationDiagramExpression() {
+			return this.metricRelationDiagramExpression;
 		}
 
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
+		public void setMetricRelationDiagramExpression(String metricRelationDiagramExpression) {
+			this.metricRelationDiagramExpression = metricRelationDiagramExpression;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public Long getTenantId() {
+			return this.tenantId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getBizOwnerName() {
-			return this.bizOwnerName;
-		}
-
-		public void setBizOwnerName(String bizOwnerName) {
-			this.bizOwnerName = bizOwnerName;
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
 		}
 
 		public String getMetricDefinition() {
@@ -177,20 +169,20 @@ public class GetBizMetricByNameResponse extends AcsResponse {
 			this.metricDefinition = metricDefinition;
 		}
 
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
 		public Boolean getMetricRelationDiagramSwitchOpen() {
 			return this.metricRelationDiagramSwitchOpen;
 		}
 
 		public void setMetricRelationDiagramSwitchOpen(Boolean metricRelationDiagramSwitchOpen) {
 			this.metricRelationDiagramSwitchOpen = metricRelationDiagramSwitchOpen;
-		}
-
-		public String getMetricRelationDiagramExpression() {
-			return this.metricRelationDiagramExpression;
-		}
-
-		public void setMetricRelationDiagramExpression(String metricRelationDiagramExpression) {
-			this.metricRelationDiagramExpression = metricRelationDiagramExpression;
 		}
 
 		public Boolean getOperateInstructionEnabled() {
@@ -209,12 +201,20 @@ public class GetBizMetricByNameResponse extends AcsResponse {
 			this.operateInstructionContent = operateInstructionContent;
 		}
 
-		public List<归属目录列表> getCatalogs() {
-			return this.catalogs;
+		public String getBizOwnerName() {
+			return this.bizOwnerName;
 		}
 
-		public void setCatalogs(List<归属目录列表> catalogs) {
-			this.catalogs = catalogs;
+		public void setBizOwnerName(String bizOwnerName) {
+			this.bizOwnerName = bizOwnerName;
+		}
+
+		public List<自定义属性> getCustomAttribute() {
+			return this.customAttribute;
+		}
+
+		public void setCustomAttribute(List<自定义属性> customAttribute) {
+			this.customAttribute = customAttribute;
 		}
 
 		public List<RelatedBizMetricsItem> getRelatedBizMetrics() {
@@ -225,20 +225,20 @@ public class GetBizMetricByNameResponse extends AcsResponse {
 			this.relatedBizMetrics = relatedBizMetrics;
 		}
 
+		public List<归属目录列表> getCatalogs() {
+			return this.catalogs;
+		}
+
+		public void setCatalogs(List<归属目录列表> catalogs) {
+			this.catalogs = catalogs;
+		}
+
 		public List<AssociatedTechMetricsItem> getAssociatedTechMetrics() {
 			return this.associatedTechMetrics;
 		}
 
 		public void setAssociatedTechMetrics(List<AssociatedTechMetricsItem> associatedTechMetrics) {
 			this.associatedTechMetrics = associatedTechMetrics;
-		}
-
-		public List<自定义属性> getCustomAttribute() {
-			return this.customAttribute;
-		}
-
-		public void setCustomAttribute(List<自定义属性> customAttribute) {
-			this.customAttribute = customAttribute;
 		}
 
 		public List<String> getLabels() {
@@ -257,15 +257,83 @@ public class GetBizMetricByNameResponse extends AcsResponse {
 			this.viewScope = viewScope;
 		}
 
+		public static class 自定义属性 {
+
+			private String code;
+
+			private List<String> values;
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
+			}
+
+			public List<String> getValues() {
+				return this.values;
+			}
+
+			public void setValues(List<String> values) {
+				this.values = values;
+			}
+		}
+
+		public static class RelatedBizMetricsItem {
+
+			private String description;
+
+			private String relationType;
+
+			private String displayName;
+
+			private String guid;
+
+			private String name;
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getRelationType() {
+				return this.relationType;
+			}
+
+			public void setRelationType(String relationType) {
+				this.relationType = relationType;
+			}
+
+			public String getDisplayName() {
+				return this.displayName;
+			}
+
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
+			}
+
+			public String getGuid() {
+				return this.guid;
+			}
+
+			public void setGuid(String guid) {
+				this.guid = guid;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+		}
+
 		public static class 归属目录列表 {
-
-			private Long topicId;
-
-			private String topicName;
-
-			private Long catalogId;
-
-			private String catalogName;
 
 			private String catalogDesc;
 
@@ -273,37 +341,13 @@ public class GetBizMetricByNameResponse extends AcsResponse {
 
 			private String parentPath;
 
-			public Long getTopicId() {
-				return this.topicId;
-			}
+			private Long topicId;
 
-			public void setTopicId(Long topicId) {
-				this.topicId = topicId;
-			}
+			private String catalogName;
 
-			public String getTopicName() {
-				return this.topicName;
-			}
+			private Long catalogId;
 
-			public void setTopicName(String topicName) {
-				this.topicName = topicName;
-			}
-
-			public Long getCatalogId() {
-				return this.catalogId;
-			}
-
-			public void setCatalogId(Long catalogId) {
-				this.catalogId = catalogId;
-			}
-
-			public String getCatalogName() {
-				return this.catalogName;
-			}
-
-			public void setCatalogName(String catalogName) {
-				this.catalogName = catalogName;
-			}
+			private String topicName;
 
 			public String getCatalogDesc() {
 				return this.catalogDesc;
@@ -328,96 +372,51 @@ public class GetBizMetricByNameResponse extends AcsResponse {
 			public void setParentPath(String parentPath) {
 				this.parentPath = parentPath;
 			}
-		}
 
-		public static class RelatedBizMetricsItem {
-
-			private String guid;
-
-			private String name;
-
-			private String displayName;
-
-			private String description;
-
-			private String relationType;
-
-			public String getGuid() {
-				return this.guid;
+			public Long getTopicId() {
+				return this.topicId;
 			}
 
-			public void setGuid(String guid) {
-				this.guid = guid;
+			public void setTopicId(Long topicId) {
+				this.topicId = topicId;
 			}
 
-			public String getName() {
-				return this.name;
+			public String getCatalogName() {
+				return this.catalogName;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setCatalogName(String catalogName) {
+				this.catalogName = catalogName;
 			}
 
-			public String getDisplayName() {
-				return this.displayName;
+			public Long getCatalogId() {
+				return this.catalogId;
 			}
 
-			public void setDisplayName(String displayName) {
-				this.displayName = displayName;
+			public void setCatalogId(Long catalogId) {
+				this.catalogId = catalogId;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public String getTopicName() {
+				return this.topicName;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getRelationType() {
-				return this.relationType;
-			}
-
-			public void setRelationType(String relationType) {
-				this.relationType = relationType;
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
 			}
 		}
 
 		public static class AssociatedTechMetricsItem {
 
-			private String guid;
-
-			private String name;
-
-			private String displayName;
-
 			private String description;
 
 			private String subType;
 
-			public String getGuid() {
-				return this.guid;
-			}
+			private String displayName;
 
-			public void setGuid(String guid) {
-				this.guid = guid;
-			}
+			private String guid;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getDisplayName() {
-				return this.displayName;
-			}
-
-			public void setDisplayName(String displayName) {
-				this.displayName = displayName;
-			}
+			private String name;
 
 			public String getDescription() {
 				return this.description;
@@ -434,28 +433,29 @@ public class GetBizMetricByNameResponse extends AcsResponse {
 			public void setSubType(String subType) {
 				this.subType = subType;
 			}
-		}
 
-		public static class 自定义属性 {
-
-			private String code;
-
-			private List<String> values;
-
-			public String getCode() {
-				return this.code;
+			public String getDisplayName() {
+				return this.displayName;
 			}
 
-			public void setCode(String code) {
-				this.code = code;
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
 			}
 
-			public List<String> getValues() {
-				return this.values;
+			public String getGuid() {
+				return this.guid;
 			}
 
-			public void setValues(List<String> values) {
-				this.values = values;
+			public void setGuid(String guid) {
+				this.guid = guid;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 

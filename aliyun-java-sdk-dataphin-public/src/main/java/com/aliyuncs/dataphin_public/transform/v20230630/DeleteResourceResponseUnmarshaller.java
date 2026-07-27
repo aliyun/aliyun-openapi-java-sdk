@@ -23,10 +23,10 @@ public class DeleteResourceResponseUnmarshaller {
 	public static DeleteResourceResponse unmarshall(DeleteResourceResponse deleteResourceResponse, UnmarshallerContext _ctx) {
 		
 		deleteResourceResponse.setRequestId(_ctx.stringValue("DeleteResourceResponse.RequestId"));
-		deleteResourceResponse.setSuccess(_ctx.booleanValue("DeleteResourceResponse.Success"));
+		deleteResourceResponse.setMessage(_ctx.stringValue("DeleteResourceResponse.Message"));
 		deleteResourceResponse.setHttpStatusCode(_ctx.integerValue("DeleteResourceResponse.HttpStatusCode"));
 		deleteResourceResponse.setCode(_ctx.stringValue("DeleteResourceResponse.Code"));
-		deleteResourceResponse.setMessage(_ctx.stringValue("DeleteResourceResponse.Message"));
+		deleteResourceResponse.setSuccess(_ctx.booleanValue("DeleteResourceResponse.Success"));
 	 
 	 	return deleteResourceResponse;
 	}

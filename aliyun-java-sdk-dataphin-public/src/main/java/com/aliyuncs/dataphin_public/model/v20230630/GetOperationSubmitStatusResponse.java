@@ -26,13 +26,13 @@ public class GetOperationSubmitStatusResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private OperationSubmitJob operationSubmitJob;
 
@@ -44,12 +44,12 @@ public class GetOperationSubmitStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class GetOperationSubmitStatusResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public OperationSubmitJob getOperationSubmitJob() {
@@ -86,24 +86,24 @@ public class GetOperationSubmitStatusResponse extends AcsResponse {
 
 	public static class OperationSubmitJob {
 
-		private String jobId;
+		private String operator;
 
 		private String progress;
 
-		private String operation;
+		private String externalBizId;
 
 		private String operationStatus;
 
-		private String externalBizId;
+		private String operation;
 
-		private String operator;
+		private String jobId;
 
-		public String getJobId() {
-			return this.jobId;
+		public String getOperator() {
+			return this.operator;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
+		public void setOperator(String operator) {
+			this.operator = operator;
 		}
 
 		public String getProgress() {
@@ -114,12 +114,12 @@ public class GetOperationSubmitStatusResponse extends AcsResponse {
 			this.progress = progress;
 		}
 
-		public String getOperation() {
-			return this.operation;
+		public String getExternalBizId() {
+			return this.externalBizId;
 		}
 
-		public void setOperation(String operation) {
-			this.operation = operation;
+		public void setExternalBizId(String externalBizId) {
+			this.externalBizId = externalBizId;
 		}
 
 		public String getOperationStatus() {
@@ -130,20 +130,20 @@ public class GetOperationSubmitStatusResponse extends AcsResponse {
 			this.operationStatus = operationStatus;
 		}
 
-		public String getExternalBizId() {
-			return this.externalBizId;
+		public String getOperation() {
+			return this.operation;
 		}
 
-		public void setExternalBizId(String externalBizId) {
-			this.externalBizId = externalBizId;
+		public void setOperation(String operation) {
+			this.operation = operation;
 		}
 
-		public String getOperator() {
-			return this.operator;
+		public String getJobId() {
+			return this.jobId;
 		}
 
-		public void setOperator(String operator) {
-			this.operator = operator;
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 	}
 

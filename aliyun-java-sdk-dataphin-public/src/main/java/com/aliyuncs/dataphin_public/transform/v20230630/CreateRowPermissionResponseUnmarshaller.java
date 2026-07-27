@@ -23,11 +23,11 @@ public class CreateRowPermissionResponseUnmarshaller {
 	public static CreateRowPermissionResponse unmarshall(CreateRowPermissionResponse createRowPermissionResponse, UnmarshallerContext _ctx) {
 		
 		createRowPermissionResponse.setRequestId(_ctx.stringValue("CreateRowPermissionResponse.RequestId"));
-		createRowPermissionResponse.setSuccess(_ctx.booleanValue("CreateRowPermissionResponse.Success"));
-		createRowPermissionResponse.setHttpStatusCode(_ctx.integerValue("CreateRowPermissionResponse.HttpStatusCode"));
-		createRowPermissionResponse.setCode(_ctx.stringValue("CreateRowPermissionResponse.Code"));
 		createRowPermissionResponse.setMessage(_ctx.stringValue("CreateRowPermissionResponse.Message"));
+		createRowPermissionResponse.setHttpStatusCode(_ctx.integerValue("CreateRowPermissionResponse.HttpStatusCode"));
 		createRowPermissionResponse.setData(_ctx.longValue("CreateRowPermissionResponse.Data"));
+		createRowPermissionResponse.setCode(_ctx.stringValue("CreateRowPermissionResponse.Code"));
+		createRowPermissionResponse.setSuccess(_ctx.booleanValue("CreateRowPermissionResponse.Success"));
 	 
 	 	return createRowPermissionResponse;
 	}

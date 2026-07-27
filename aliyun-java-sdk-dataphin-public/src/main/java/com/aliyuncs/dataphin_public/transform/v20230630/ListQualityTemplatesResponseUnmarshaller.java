@@ -29,10 +29,10 @@ public class ListQualityTemplatesResponseUnmarshaller {
 	public static ListQualityTemplatesResponse unmarshall(ListQualityTemplatesResponse listQualityTemplatesResponse, UnmarshallerContext _ctx) {
 		
 		listQualityTemplatesResponse.setRequestId(_ctx.stringValue("ListQualityTemplatesResponse.RequestId"));
-		listQualityTemplatesResponse.setSuccess(_ctx.booleanValue("ListQualityTemplatesResponse.Success"));
+		listQualityTemplatesResponse.setMessage(_ctx.stringValue("ListQualityTemplatesResponse.Message"));
 		listQualityTemplatesResponse.setHttpStatusCode(_ctx.integerValue("ListQualityTemplatesResponse.HttpStatusCode"));
 		listQualityTemplatesResponse.setCode(_ctx.stringValue("ListQualityTemplatesResponse.Code"));
-		listQualityTemplatesResponse.setMessage(_ctx.stringValue("ListQualityTemplatesResponse.Message"));
+		listQualityTemplatesResponse.setSuccess(_ctx.booleanValue("ListQualityTemplatesResponse.Success"));
 
 		PageResult pageResult = new PageResult();
 		pageResult.setTotalCount(_ctx.longValue("ListQualityTemplatesResponse.PageResult.TotalCount"));
@@ -40,23 +40,23 @@ public class ListQualityTemplatesResponseUnmarshaller {
 		List<QualityTemplate> qualityTemplateList = new ArrayList<QualityTemplate>();
 		for (int i = 0; i < _ctx.lengthValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList.Length"); i++) {
 			QualityTemplate qualityTemplate = new QualityTemplate();
-			qualityTemplate.setId(_ctx.longValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Id"));
-			qualityTemplate.setName(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Name"));
-			qualityTemplate.setType(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Type"));
+			qualityTemplate.setModifyTime(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].ModifyTime"));
 			qualityTemplate.setTypeName(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].TypeName"));
-			qualityTemplate.setDescription(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Description"));
 			qualityTemplate.setOwner(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Owner"));
 			qualityTemplate.setOwnerName(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].OwnerName"));
-			qualityTemplate.setCatalog(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Catalog"));
-			qualityTemplate.setCatalogName(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].CatalogName"));
-			qualityTemplate.setSupportAllDataSourceType(_ctx.booleanValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].SupportAllDataSourceType"));
-			qualityTemplate.setIsSystemTemplate(_ctx.booleanValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].IsSystemTemplate"));
-			qualityTemplate.setCreator(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Creator"));
-			qualityTemplate.setCreatorName(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].CreatorName"));
+			qualityTemplate.setDescription(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Description"));
 			qualityTemplate.setCreateTime(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].CreateTime"));
-			qualityTemplate.setModifyTime(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].ModifyTime"));
-			qualityTemplate.setModifier(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Modifier"));
 			qualityTemplate.setModifierName(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].ModifierName"));
+			qualityTemplate.setCreator(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Creator"));
+			qualityTemplate.setIsSystemTemplate(_ctx.booleanValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].IsSystemTemplate"));
+			qualityTemplate.setCatalog(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Catalog"));
+			qualityTemplate.setName(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Name"));
+			qualityTemplate.setType(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Type"));
+			qualityTemplate.setSupportAllDataSourceType(_ctx.booleanValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].SupportAllDataSourceType"));
+			qualityTemplate.setCatalogName(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].CatalogName"));
+			qualityTemplate.setId(_ctx.longValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Id"));
+			qualityTemplate.setModifier(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].Modifier"));
+			qualityTemplate.setCreatorName(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].CreatorName"));
 
 			List<String> supportDataSourceTypeList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].SupportDataSourceTypeList.Length"); j++) {
@@ -68,8 +68,8 @@ public class ListQualityTemplatesResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].FormPropertyList.Length"); j++) {
 				FormProperty formProperty = new FormProperty();
 				formProperty.setComponentType(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].FormPropertyList["+ j +"].ComponentType"));
-				formProperty.setName(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].FormPropertyList["+ j +"].Name"));
 				formProperty.setValue(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].FormPropertyList["+ j +"].Value"));
+				formProperty.setName(_ctx.stringValue("ListQualityTemplatesResponse.PageResult.QualityTemplateList["+ i +"].FormPropertyList["+ j +"].Name"));
 
 				formPropertyList.add(formProperty);
 			}

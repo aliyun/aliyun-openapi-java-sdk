@@ -27,13 +27,13 @@ public class GetTransferInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -45,12 +45,12 @@ public class GetTransferInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetTransferInfoResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -87,55 +87,31 @@ public class GetTransferInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long proposalId;
-
-		private Long flowId;
-
-		private String title;
-
 		private String privilegeTransferMode;
-
-		private String transferComment;
-
-		private String transferStatus;
-
-		private String gmtCreate;
 
 		private String gmtModified;
 
+		private String title;
+
+		private Long flowId;
+
+		private String gmtCreate;
+
+		private String transferComment;
+
+		private Long proposalId;
+
+		private String transferStatus;
+
 		private List<PrivilegeTransferResultEntriesItem> privilegeTransferResultEntries;
-
-		private Creator creator;
-
-		private OldOwner oldOwner;
 
 		private NewOwner newOwner;
 
 		private LastModifier lastModifier;
 
-		public Long getProposalId() {
-			return this.proposalId;
-		}
+		private Creator creator;
 
-		public void setProposalId(Long proposalId) {
-			this.proposalId = proposalId;
-		}
-
-		public Long getFlowId() {
-			return this.flowId;
-		}
-
-		public void setFlowId(Long flowId) {
-			this.flowId = flowId;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
-		}
+		private OldOwner oldOwner;
 
 		public String getPrivilegeTransferMode() {
 			return this.privilegeTransferMode;
@@ -143,30 +119,6 @@ public class GetTransferInfoResponse extends AcsResponse {
 
 		public void setPrivilegeTransferMode(String privilegeTransferMode) {
 			this.privilegeTransferMode = privilegeTransferMode;
-		}
-
-		public String getTransferComment() {
-			return this.transferComment;
-		}
-
-		public void setTransferComment(String transferComment) {
-			this.transferComment = transferComment;
-		}
-
-		public String getTransferStatus() {
-			return this.transferStatus;
-		}
-
-		public void setTransferStatus(String transferStatus) {
-			this.transferStatus = transferStatus;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
 		}
 
 		public String getGmtModified() {
@@ -177,28 +129,60 @@ public class GetTransferInfoResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public Long getFlowId() {
+			return this.flowId;
+		}
+
+		public void setFlowId(Long flowId) {
+			this.flowId = flowId;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getTransferComment() {
+			return this.transferComment;
+		}
+
+		public void setTransferComment(String transferComment) {
+			this.transferComment = transferComment;
+		}
+
+		public Long getProposalId() {
+			return this.proposalId;
+		}
+
+		public void setProposalId(Long proposalId) {
+			this.proposalId = proposalId;
+		}
+
+		public String getTransferStatus() {
+			return this.transferStatus;
+		}
+
+		public void setTransferStatus(String transferStatus) {
+			this.transferStatus = transferStatus;
+		}
+
 		public List<PrivilegeTransferResultEntriesItem> getPrivilegeTransferResultEntries() {
 			return this.privilegeTransferResultEntries;
 		}
 
 		public void setPrivilegeTransferResultEntries(List<PrivilegeTransferResultEntriesItem> privilegeTransferResultEntries) {
 			this.privilegeTransferResultEntries = privilegeTransferResultEntries;
-		}
-
-		public Creator getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(Creator creator) {
-			this.creator = creator;
-		}
-
-		public OldOwner getOldOwner() {
-			return this.oldOwner;
-		}
-
-		public void setOldOwner(OldOwner oldOwner) {
-			this.oldOwner = oldOwner;
 		}
 
 		public NewOwner getNewOwner() {
@@ -215,6 +199,22 @@ public class GetTransferInfoResponse extends AcsResponse {
 
 		public void setLastModifier(LastModifier lastModifier) {
 			this.lastModifier = lastModifier;
+		}
+
+		public Creator getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(Creator creator) {
+			this.creator = creator;
+		}
+
+		public OldOwner getOldOwner() {
+			return this.oldOwner;
+		}
+
+		public void setOldOwner(OldOwner oldOwner) {
+			this.oldOwner = oldOwner;
 		}
 
 		public static class PrivilegeTransferResultEntriesItem {
@@ -250,52 +250,6 @@ public class GetTransferInfoResponse extends AcsResponse {
 			}
 		}
 
-		public static class Creator {
-
-			private String userId;
-
-			private String displayName;
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
-
-			public String getDisplayName() {
-				return this.displayName;
-			}
-
-			public void setDisplayName(String displayName) {
-				this.displayName = displayName;
-			}
-		}
-
-		public static class OldOwner {
-
-			private String userId;
-
-			private String displayName;
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
-
-			public String getDisplayName() {
-				return this.displayName;
-			}
-
-			public void setDisplayName(String displayName) {
-				this.displayName = displayName;
-			}
-		}
-
 		public static class NewOwner {
 
 			private String userId;
@@ -320,6 +274,52 @@ public class GetTransferInfoResponse extends AcsResponse {
 		}
 
 		public static class LastModifier {
+
+			private String userId;
+
+			private String displayName;
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getDisplayName() {
+				return this.displayName;
+			}
+
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
+			}
+		}
+
+		public static class Creator {
+
+			private String userId;
+
+			private String displayName;
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getDisplayName() {
+				return this.displayName;
+			}
+
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
+			}
+		}
+
+		public static class OldOwner {
 
 			private String userId;
 

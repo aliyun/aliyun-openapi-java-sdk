@@ -27,13 +27,13 @@ public class ListFilesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<File> fileList;
 
@@ -45,12 +45,12 @@ public class ListFilesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListFilesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<File> getFileList() {
@@ -87,50 +87,42 @@ public class ListFilesResponse extends AcsResponse {
 
 	public static class File {
 
-		private Long id;
+		private Long gmtCreate;
 
-		private String name;
-
-		private Long projectId;
+		private String lastModifier;
 
 		private String category;
 
 		private String fileType;
 
-		private String directory;
-
 		private String content;
 
-		private Long gmtCreate;
+		private Long projectId;
 
 		private Long gmtModified;
 
+		private Long id;
+
 		private String creator;
 
-		private String lastModifier;
+		private String name;
 
-		public Long getId() {
-			return this.id;
+		private String directory;
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getLastModifier() {
+			return this.lastModifier;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
+		public void setLastModifier(String lastModifier) {
+			this.lastModifier = lastModifier;
 		}
 
 		public String getCategory() {
@@ -149,14 +141,6 @@ public class ListFilesResponse extends AcsResponse {
 			this.fileType = fileType;
 		}
 
-		public String getDirectory() {
-			return this.directory;
-		}
-
-		public void setDirectory(String directory) {
-			this.directory = directory;
-		}
-
 		public String getContent() {
 			return this.content;
 		}
@@ -165,12 +149,12 @@ public class ListFilesResponse extends AcsResponse {
 			this.content = content;
 		}
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		public Long getProjectId() {
+			return this.projectId;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
 		}
 
 		public Long getGmtModified() {
@@ -181,6 +165,14 @@ public class ListFilesResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
 		public String getCreator() {
 			return this.creator;
 		}
@@ -189,12 +181,20 @@ public class ListFilesResponse extends AcsResponse {
 			this.creator = creator;
 		}
 
-		public String getLastModifier() {
-			return this.lastModifier;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setLastModifier(String lastModifier) {
-			this.lastModifier = lastModifier;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDirectory() {
+			return this.directory;
+		}
+
+		public void setDirectory(String directory) {
+			this.directory = directory;
 		}
 	}
 

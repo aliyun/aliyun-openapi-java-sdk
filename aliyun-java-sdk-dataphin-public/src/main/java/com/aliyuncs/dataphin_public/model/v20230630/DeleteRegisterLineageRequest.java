@@ -69,11 +69,11 @@ public class DeleteRegisterLineageRequest extends RpcAcsRequest<DeleteRegisterLi
 		@SerializedName("TenantId")
 		private Long tenantId;
 
-		@SerializedName("Source")
-		private Source source;
-
 		@SerializedName("CascadeDeleteLineage")
 		private Boolean cascadeDeleteLineage;
+
+		@SerializedName("Source")
+		private Source source;
 
 		@SerializedName("UserId")
 		private String userId;
@@ -97,20 +97,20 @@ public class DeleteRegisterLineageRequest extends RpcAcsRequest<DeleteRegisterLi
 			this.tenantId = tenantId;
 		}
 
-		public Source getSource() {
-			return this.source;
-		}
-
-		public void setSource(Source source) {
-			this.source = source;
-		}
-
 		public Boolean getCascadeDeleteLineage() {
 			return this.cascadeDeleteLineage;
 		}
 
 		public void setCascadeDeleteLineage(Boolean cascadeDeleteLineage) {
 			this.cascadeDeleteLineage = cascadeDeleteLineage;
+		}
+
+		public Source getSource() {
+			return this.source;
+		}
+
+		public void setSource(Source source) {
+			this.source = source;
 		}
 
 		public String getUserId() {

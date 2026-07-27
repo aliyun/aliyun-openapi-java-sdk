@@ -126,11 +126,11 @@ public class ListBizEntitiesRequest extends RpcAcsRequest<ListBizEntitiesRespons
 			@SerializedName("DataDomainIdList")
 			private List<Long> dataDomainIdList;
 
-			@SerializedName("BizUnitNameList")
-			private List<String> bizUnitNameList;
-
 			@SerializedName("DataDomainNameList")
 			private List<String> dataDomainNameList;
+
+			@SerializedName("BizUnitNameList")
+			private List<String> bizUnitNameList;
 
 			public List<String> getSubTypeList() {
 				return this.subTypeList;
@@ -180,20 +180,20 @@ public class ListBizEntitiesRequest extends RpcAcsRequest<ListBizEntitiesRespons
 				this.dataDomainIdList = dataDomainIdList;
 			}
 
-			public List<String> getBizUnitNameList() {
-				return this.bizUnitNameList;
-			}
-
-			public void setBizUnitNameList(List<String> bizUnitNameList) {
-				this.bizUnitNameList = bizUnitNameList;
-			}
-
 			public List<String> getDataDomainNameList() {
 				return this.dataDomainNameList;
 			}
 
 			public void setDataDomainNameList(List<String> dataDomainNameList) {
 				this.dataDomainNameList = dataDomainNameList;
+			}
+
+			public List<String> getBizUnitNameList() {
+				return this.bizUnitNameList;
+			}
+
+			public void setBizUnitNameList(List<String> bizUnitNameList) {
+				this.bizUnitNameList = bizUnitNameList;
 			}
 		}
 	}

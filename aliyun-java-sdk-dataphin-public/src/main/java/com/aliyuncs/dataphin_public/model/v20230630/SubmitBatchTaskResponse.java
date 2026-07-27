@@ -26,13 +26,13 @@ public class SubmitBatchTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private SubmitResult submitResult;
 
@@ -44,12 +44,12 @@ public class SubmitBatchTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class SubmitBatchTaskResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public SubmitResult getSubmitResult() {
@@ -86,17 +86,9 @@ public class SubmitBatchTaskResponse extends AcsResponse {
 
 	public static class SubmitResult {
 
-		private String nodeId;
-
 		private Long submitId;
 
-		public String getNodeId() {
-			return this.nodeId;
-		}
-
-		public void setNodeId(String nodeId) {
-			this.nodeId = nodeId;
-		}
+		private String nodeId;
 
 		public Long getSubmitId() {
 			return this.submitId;
@@ -104,6 +96,14 @@ public class SubmitBatchTaskResponse extends AcsResponse {
 
 		public void setSubmitId(Long submitId) {
 			this.submitId = submitId;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
 		}
 	}
 

@@ -87,11 +87,11 @@ public class FixDataRequest extends RpcAcsRequest<FixDataResponse> {
 		@SerializedName("RootInstanceId")
 		private RootInstanceId rootInstanceId;
 
-		@SerializedName("DownStreamInstanceIdList")
-		private List<DownStreamInstanceIdListItem> downStreamInstanceIdList;
-
 		@SerializedName("ProjectId")
 		private Long projectId;
+
+		@SerializedName("DownStreamInstanceIdList")
+		private List<DownStreamInstanceIdListItem> downStreamInstanceIdList;
 
 		public Boolean getForceRerun() {
 			return this.forceRerun;
@@ -125,20 +125,20 @@ public class FixDataRequest extends RpcAcsRequest<FixDataResponse> {
 			this.rootInstanceId = rootInstanceId;
 		}
 
-		public List<DownStreamInstanceIdListItem> getDownStreamInstanceIdList() {
-			return this.downStreamInstanceIdList;
-		}
-
-		public void setDownStreamInstanceIdList(List<DownStreamInstanceIdListItem> downStreamInstanceIdList) {
-			this.downStreamInstanceIdList = downStreamInstanceIdList;
-		}
-
 		public Long getProjectId() {
 			return this.projectId;
 		}
 
 		public void setProjectId(Long projectId) {
 			this.projectId = projectId;
+		}
+
+		public List<DownStreamInstanceIdListItem> getDownStreamInstanceIdList() {
+			return this.downStreamInstanceIdList;
+		}
+
+		public void setDownStreamInstanceIdList(List<DownStreamInstanceIdListItem> downStreamInstanceIdList) {
+			this.downStreamInstanceIdList = downStreamInstanceIdList;
 		}
 
 		public static class RootInstanceId {

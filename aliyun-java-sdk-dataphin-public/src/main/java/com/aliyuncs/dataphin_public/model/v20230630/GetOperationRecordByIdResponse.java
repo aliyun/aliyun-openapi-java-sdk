@@ -27,13 +27,13 @@ public class GetOperationRecordByIdResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private OperationLogDTO operationLogDTO;
 
@@ -45,12 +45,12 @@ public class GetOperationRecordByIdResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetOperationRecordByIdResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public OperationLogDTO getOperationLogDTO() {
@@ -87,38 +87,78 @@ public class GetOperationRecordByIdResponse extends AcsResponse {
 
 	public static class OperationLogDTO {
 
-		private Long id;
+		private Integer status;
+
+		private String runner;
+
+		private Long operationId;
+
+		private Long projectId;
+
+		private String beginTime;
+
+		private Long duration;
 
 		private String name;
 
 		private String objectType;
 
+		private Long tenantId;
+
 		private Integer codeType;
 
-		private Integer status;
-
-		private String beginTime;
-
-		private String runner;
+		private Long id;
 
 		private String runnerName;
 
-		private Long projectId;
-
-		private Long tenantId;
-
-		private Long operationId;
-
-		private Long duration;
-
 		private List<String> relationTables;
 
-		public Long getId() {
-			return this.id;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getRunner() {
+			return this.runner;
+		}
+
+		public void setRunner(String runner) {
+			this.runner = runner;
+		}
+
+		public Long getOperationId() {
+			return this.operationId;
+		}
+
+		public void setOperationId(Long operationId) {
+			this.operationId = operationId;
+		}
+
+		public Long getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
+		}
+
+		public String getBeginTime() {
+			return this.beginTime;
+		}
+
+		public void setBeginTime(String beginTime) {
+			this.beginTime = beginTime;
+		}
+
+		public Long getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Long duration) {
+			this.duration = duration;
 		}
 
 		public String getName() {
@@ -137,54 +177,6 @@ public class GetOperationRecordByIdResponse extends AcsResponse {
 			this.objectType = objectType;
 		}
 
-		public Integer getCodeType() {
-			return this.codeType;
-		}
-
-		public void setCodeType(Integer codeType) {
-			this.codeType = codeType;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getBeginTime() {
-			return this.beginTime;
-		}
-
-		public void setBeginTime(String beginTime) {
-			this.beginTime = beginTime;
-		}
-
-		public String getRunner() {
-			return this.runner;
-		}
-
-		public void setRunner(String runner) {
-			this.runner = runner;
-		}
-
-		public String getRunnerName() {
-			return this.runnerName;
-		}
-
-		public void setRunnerName(String runnerName) {
-			this.runnerName = runnerName;
-		}
-
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
-
 		public Long getTenantId() {
 			return this.tenantId;
 		}
@@ -193,20 +185,28 @@ public class GetOperationRecordByIdResponse extends AcsResponse {
 			this.tenantId = tenantId;
 		}
 
-		public Long getOperationId() {
-			return this.operationId;
+		public Integer getCodeType() {
+			return this.codeType;
 		}
 
-		public void setOperationId(Long operationId) {
-			this.operationId = operationId;
+		public void setCodeType(Integer codeType) {
+			this.codeType = codeType;
 		}
 
-		public Long getDuration() {
-			return this.duration;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setDuration(Long duration) {
-			this.duration = duration;
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getRunnerName() {
+			return this.runnerName;
+		}
+
+		public void setRunnerName(String runnerName) {
+			this.runnerName = runnerName;
 		}
 
 		public List<String> getRelationTables() {

@@ -27,10 +27,10 @@ public class GetDataSourceDependenciesResponseUnmarshaller {
 	public static GetDataSourceDependenciesResponse unmarshall(GetDataSourceDependenciesResponse getDataSourceDependenciesResponse, UnmarshallerContext _ctx) {
 		
 		getDataSourceDependenciesResponse.setRequestId(_ctx.stringValue("GetDataSourceDependenciesResponse.RequestId"));
-		getDataSourceDependenciesResponse.setSuccess(_ctx.booleanValue("GetDataSourceDependenciesResponse.Success"));
+		getDataSourceDependenciesResponse.setMessage(_ctx.stringValue("GetDataSourceDependenciesResponse.Message"));
 		getDataSourceDependenciesResponse.setHttpStatusCode(_ctx.integerValue("GetDataSourceDependenciesResponse.HttpStatusCode"));
 		getDataSourceDependenciesResponse.setCode(_ctx.stringValue("GetDataSourceDependenciesResponse.Code"));
-		getDataSourceDependenciesResponse.setMessage(_ctx.stringValue("GetDataSourceDependenciesResponse.Message"));
+		getDataSourceDependenciesResponse.setSuccess(_ctx.booleanValue("GetDataSourceDependenciesResponse.Success"));
 
 		List<Dependency> dependencyList = new ArrayList<Dependency>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataSourceDependenciesResponse.DependencyList.Length"); i++) {

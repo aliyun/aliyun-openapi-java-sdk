@@ -23,10 +23,10 @@ public class UpdateResourceResponseUnmarshaller {
 	public static UpdateResourceResponse unmarshall(UpdateResourceResponse updateResourceResponse, UnmarshallerContext _ctx) {
 		
 		updateResourceResponse.setRequestId(_ctx.stringValue("UpdateResourceResponse.RequestId"));
-		updateResourceResponse.setSuccess(_ctx.booleanValue("UpdateResourceResponse.Success"));
+		updateResourceResponse.setMessage(_ctx.stringValue("UpdateResourceResponse.Message"));
 		updateResourceResponse.setHttpStatusCode(_ctx.integerValue("UpdateResourceResponse.HttpStatusCode"));
 		updateResourceResponse.setCode(_ctx.stringValue("UpdateResourceResponse.Code"));
-		updateResourceResponse.setMessage(_ctx.stringValue("UpdateResourceResponse.Message"));
+		updateResourceResponse.setSuccess(_ctx.booleanValue("UpdateResourceResponse.Success"));
 	 
 	 	return updateResourceResponse;
 	}

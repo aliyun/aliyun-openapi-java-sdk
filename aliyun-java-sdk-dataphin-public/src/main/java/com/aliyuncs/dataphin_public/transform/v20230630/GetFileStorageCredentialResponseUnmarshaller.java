@@ -24,21 +24,21 @@ public class GetFileStorageCredentialResponseUnmarshaller {
 	public static GetFileStorageCredentialResponse unmarshall(GetFileStorageCredentialResponse getFileStorageCredentialResponse, UnmarshallerContext _ctx) {
 		
 		getFileStorageCredentialResponse.setRequestId(_ctx.stringValue("GetFileStorageCredentialResponse.RequestId"));
-		getFileStorageCredentialResponse.setSuccess(_ctx.booleanValue("GetFileStorageCredentialResponse.Success"));
+		getFileStorageCredentialResponse.setMessage(_ctx.stringValue("GetFileStorageCredentialResponse.Message"));
 		getFileStorageCredentialResponse.setHttpStatusCode(_ctx.integerValue("GetFileStorageCredentialResponse.HttpStatusCode"));
 		getFileStorageCredentialResponse.setCode(_ctx.stringValue("GetFileStorageCredentialResponse.Code"));
-		getFileStorageCredentialResponse.setMessage(_ctx.stringValue("GetFileStorageCredentialResponse.Message"));
+		getFileStorageCredentialResponse.setSuccess(_ctx.booleanValue("GetFileStorageCredentialResponse.Success"));
 
 		StorageCredential storageCredential = new StorageCredential();
+		storageCredential.setSecurityToken(_ctx.stringValue("GetFileStorageCredentialResponse.StorageCredential.SecurityToken"));
 		storageCredential.setStorageType(_ctx.stringValue("GetFileStorageCredentialResponse.StorageCredential.StorageType"));
 		storageCredential.setEndpoint(_ctx.stringValue("GetFileStorageCredentialResponse.StorageCredential.Endpoint"));
 		storageCredential.setBucket(_ctx.stringValue("GetFileStorageCredentialResponse.StorageCredential.Bucket"));
-		storageCredential.setRegion(_ctx.stringValue("GetFileStorageCredentialResponse.StorageCredential.Region"));
 		storageCredential.setAccessId(_ctx.stringValue("GetFileStorageCredentialResponse.StorageCredential.AccessId"));
+		storageCredential.setExpiration(_ctx.longValue("GetFileStorageCredentialResponse.StorageCredential.Expiration"));
+		storageCredential.setRegion(_ctx.stringValue("GetFileStorageCredentialResponse.StorageCredential.Region"));
 		storageCredential.setAccessKey(_ctx.stringValue("GetFileStorageCredentialResponse.StorageCredential.AccessKey"));
 		storageCredential.setObjectName(_ctx.stringValue("GetFileStorageCredentialResponse.StorageCredential.ObjectName"));
-		storageCredential.setExpiration(_ctx.longValue("GetFileStorageCredentialResponse.StorageCredential.Expiration"));
-		storageCredential.setSecurityToken(_ctx.stringValue("GetFileStorageCredentialResponse.StorageCredential.SecurityToken"));
 		getFileStorageCredentialResponse.setStorageCredential(storageCredential);
 	 
 	 	return getFileStorageCredentialResponse;

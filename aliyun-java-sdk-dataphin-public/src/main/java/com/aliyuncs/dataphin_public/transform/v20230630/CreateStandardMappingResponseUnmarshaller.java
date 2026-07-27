@@ -27,10 +27,10 @@ public class CreateStandardMappingResponseUnmarshaller {
 	public static CreateStandardMappingResponse unmarshall(CreateStandardMappingResponse createStandardMappingResponse, UnmarshallerContext _ctx) {
 		
 		createStandardMappingResponse.setRequestId(_ctx.stringValue("CreateStandardMappingResponse.RequestId"));
-		createStandardMappingResponse.setSuccess(_ctx.booleanValue("CreateStandardMappingResponse.Success"));
+		createStandardMappingResponse.setMessage(_ctx.stringValue("CreateStandardMappingResponse.Message"));
 		createStandardMappingResponse.setHttpStatusCode(_ctx.integerValue("CreateStandardMappingResponse.HttpStatusCode"));
 		createStandardMappingResponse.setCode(_ctx.stringValue("CreateStandardMappingResponse.Code"));
-		createStandardMappingResponse.setMessage(_ctx.stringValue("CreateStandardMappingResponse.Message"));
+		createStandardMappingResponse.setSuccess(_ctx.booleanValue("CreateStandardMappingResponse.Success"));
 
 		Data data = new Data();
 		data.setSuccessCount(_ctx.longValue("CreateStandardMappingResponse.Data.SuccessCount"));

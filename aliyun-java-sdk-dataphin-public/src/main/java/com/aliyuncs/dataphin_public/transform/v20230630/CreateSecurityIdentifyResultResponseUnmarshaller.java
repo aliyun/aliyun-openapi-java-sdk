@@ -23,11 +23,11 @@ public class CreateSecurityIdentifyResultResponseUnmarshaller {
 	public static CreateSecurityIdentifyResultResponse unmarshall(CreateSecurityIdentifyResultResponse createSecurityIdentifyResultResponse, UnmarshallerContext _ctx) {
 		
 		createSecurityIdentifyResultResponse.setRequestId(_ctx.stringValue("CreateSecurityIdentifyResultResponse.RequestId"));
-		createSecurityIdentifyResultResponse.setSuccess(_ctx.booleanValue("CreateSecurityIdentifyResultResponse.Success"));
-		createSecurityIdentifyResultResponse.setHttpStatusCode(_ctx.integerValue("CreateSecurityIdentifyResultResponse.HttpStatusCode"));
-		createSecurityIdentifyResultResponse.setCode(_ctx.stringValue("CreateSecurityIdentifyResultResponse.Code"));
 		createSecurityIdentifyResultResponse.setMessage(_ctx.stringValue("CreateSecurityIdentifyResultResponse.Message"));
+		createSecurityIdentifyResultResponse.setHttpStatusCode(_ctx.integerValue("CreateSecurityIdentifyResultResponse.HttpStatusCode"));
 		createSecurityIdentifyResultResponse.setData(_ctx.longValue("CreateSecurityIdentifyResultResponse.Data"));
+		createSecurityIdentifyResultResponse.setCode(_ctx.stringValue("CreateSecurityIdentifyResultResponse.Code"));
+		createSecurityIdentifyResultResponse.setSuccess(_ctx.booleanValue("CreateSecurityIdentifyResultResponse.Success"));
 	 
 	 	return createSecurityIdentifyResultResponse;
 	}

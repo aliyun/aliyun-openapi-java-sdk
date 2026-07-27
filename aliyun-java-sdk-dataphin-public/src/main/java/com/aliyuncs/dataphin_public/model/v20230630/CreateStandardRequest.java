@@ -65,17 +65,17 @@ public class CreateStandardRequest extends RpcAcsRequest<CreateStandardResponse>
 		@SerializedName("Owner")
 		private String owner;
 
-		@SerializedName("StandardSetReference")
-		private StandardSetReference standardSetReference;
-
 		@SerializedName("StandardGeneralMonitorConfig")
 		private StandardGeneralMonitorConfig standardGeneralMonitorConfig;
 
-		@SerializedName("EffectiveTimeConfig")
-		private EffectiveTimeConfig effectiveTimeConfig;
+		@SerializedName("StandardSetReference")
+		private StandardSetReference standardSetReference;
 
 		@SerializedName("NeedGenerateStandardCode")
 		private Boolean needGenerateStandardCode;
+
+		@SerializedName("EffectiveTimeConfig")
+		private EffectiveTimeConfig effectiveTimeConfig;
 
 		@SerializedName("StandardTemplateReference")
 		private StandardTemplateReference standardTemplateReference;
@@ -91,14 +91,6 @@ public class CreateStandardRequest extends RpcAcsRequest<CreateStandardResponse>
 			this.owner = owner;
 		}
 
-		public StandardSetReference getStandardSetReference() {
-			return this.standardSetReference;
-		}
-
-		public void setStandardSetReference(StandardSetReference standardSetReference) {
-			this.standardSetReference = standardSetReference;
-		}
-
 		public StandardGeneralMonitorConfig getStandardGeneralMonitorConfig() {
 			return this.standardGeneralMonitorConfig;
 		}
@@ -107,12 +99,12 @@ public class CreateStandardRequest extends RpcAcsRequest<CreateStandardResponse>
 			this.standardGeneralMonitorConfig = standardGeneralMonitorConfig;
 		}
 
-		public EffectiveTimeConfig getEffectiveTimeConfig() {
-			return this.effectiveTimeConfig;
+		public StandardSetReference getStandardSetReference() {
+			return this.standardSetReference;
 		}
 
-		public void setEffectiveTimeConfig(EffectiveTimeConfig effectiveTimeConfig) {
-			this.effectiveTimeConfig = effectiveTimeConfig;
+		public void setStandardSetReference(StandardSetReference standardSetReference) {
+			this.standardSetReference = standardSetReference;
 		}
 
 		public Boolean getNeedGenerateStandardCode() {
@@ -121,6 +113,14 @@ public class CreateStandardRequest extends RpcAcsRequest<CreateStandardResponse>
 
 		public void setNeedGenerateStandardCode(Boolean needGenerateStandardCode) {
 			this.needGenerateStandardCode = needGenerateStandardCode;
+		}
+
+		public EffectiveTimeConfig getEffectiveTimeConfig() {
+			return this.effectiveTimeConfig;
+		}
+
+		public void setEffectiveTimeConfig(EffectiveTimeConfig effectiveTimeConfig) {
+			this.effectiveTimeConfig = effectiveTimeConfig;
 		}
 
 		public StandardTemplateReference getStandardTemplateReference() {
@@ -137,20 +137,6 @@ public class CreateStandardRequest extends RpcAcsRequest<CreateStandardResponse>
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public static class StandardSetReference {
-
-			@SerializedName("Id")
-			private Long id;
-
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
 		}
 
 		public static class StandardGeneralMonitorConfig {
@@ -186,17 +172,17 @@ public class CreateStandardRequest extends RpcAcsRequest<CreateStandardResponse>
 				@SerializedName("Description")
 				private String description;
 
-				@SerializedName("RuleName")
-				private String ruleName;
-
 				@SerializedName("MonitorFrom")
 				private String monitorFrom;
 
-				@SerializedName("Id")
-				private Long id;
+				@SerializedName("RuleName")
+				private String ruleName;
 
 				@SerializedName("AttributeName")
 				private String attributeName;
+
+				@SerializedName("Id")
+				private Long id;
 
 				@SerializedName("Type")
 				private String type;
@@ -252,14 +238,6 @@ public class CreateStandardRequest extends RpcAcsRequest<CreateStandardResponse>
 					this.description = description;
 				}
 
-				public String getRuleName() {
-					return this.ruleName;
-				}
-
-				public void setRuleName(String ruleName) {
-					this.ruleName = ruleName;
-				}
-
 				public String getMonitorFrom() {
 					return this.monitorFrom;
 				}
@@ -268,12 +246,12 @@ public class CreateStandardRequest extends RpcAcsRequest<CreateStandardResponse>
 					this.monitorFrom = monitorFrom;
 				}
 
-				public Long getId() {
-					return this.id;
+				public String getRuleName() {
+					return this.ruleName;
 				}
 
-				public void setId(Long id) {
-					this.id = id;
+				public void setRuleName(String ruleName) {
+					this.ruleName = ruleName;
 				}
 
 				public String getAttributeName() {
@@ -282,6 +260,14 @@ public class CreateStandardRequest extends RpcAcsRequest<CreateStandardResponse>
 
 				public void setAttributeName(String attributeName) {
 					this.attributeName = attributeName;
+				}
+
+				public Long getId() {
+					return this.id;
+				}
+
+				public void setId(Long id) {
+					this.id = id;
 				}
 
 				public String getType() {
@@ -369,11 +355,11 @@ public class CreateStandardRequest extends RpcAcsRequest<CreateStandardResponse>
 					@SerializedName("Id")
 					private String id;
 
-					@SerializedName("Type")
-					private String type;
-
 					@SerializedName("MetricName")
 					private String metricName;
+
+					@SerializedName("Type")
+					private String type;
 
 					@SerializedName("Value")
 					private String value;
@@ -400,20 +386,20 @@ public class CreateStandardRequest extends RpcAcsRequest<CreateStandardResponse>
 						this.id = id;
 					}
 
-					public String getType() {
-						return this.type;
-					}
-
-					public void setType(String type) {
-						this.type = type;
-					}
-
 					public String getMetricName() {
 						return this.metricName;
 					}
 
 					public void setMetricName(String metricName) {
 						this.metricName = metricName;
+					}
+
+					public String getType() {
+						return this.type;
+					}
+
+					public void setType(String type) {
+						this.type = type;
 					}
 
 					public String getValue() {
@@ -476,6 +462,20 @@ public class CreateStandardRequest extends RpcAcsRequest<CreateStandardResponse>
 						this.type = type;
 					}
 				}
+			}
+		}
+
+		public static class StandardSetReference {
+
+			@SerializedName("Id")
+			private Long id;
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 

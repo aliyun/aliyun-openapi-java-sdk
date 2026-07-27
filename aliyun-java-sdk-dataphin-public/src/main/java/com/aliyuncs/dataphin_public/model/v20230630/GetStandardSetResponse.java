@@ -27,13 +27,13 @@ public class GetStandardSetResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private StandardSetInfo standardSetInfo;
 
@@ -45,12 +45,12 @@ public class GetStandardSetResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetStandardSetResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public StandardSetInfo getStandardSetInfo() {
@@ -87,60 +87,44 @@ public class GetStandardSetResponse extends AcsResponse {
 
 	public static class StandardSetInfo {
 
-		private Long id;
-
-		private String name;
-
-		private String code;
+		private String modifyTime;
 
 		private String description;
 
 		private String createTime;
 
-		private String modifyTime;
-
 		private Long defaultStandardTemplateId;
 
-		private List<Maintainer> maintainerList;
+		private String code;
 
-		private List<Member> memberList;
+		private String name;
+
+		private Long id;
 
 		private List<MemberGroup> memberGroupList;
 
-		private DirectoryReference directoryReference;
+		private List<Member> memberList;
 
-		private VisibilityConfig visibilityConfig;
-
-		private Creator creator;
+		private List<Maintainer> maintainerList;
 
 		private LastModifier lastModifier;
 
 		private ApprovalConfig approvalConfig;
 
+		private DirectoryReference directoryReference;
+
+		private Creator creator;
+
+		private VisibilityConfig visibilityConfig;
+
 		private OfflineApprovalConfig offlineApprovalConfig;
 
-		public Long getId() {
-			return this.id;
+		public String getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 
 		public String getDescription() {
@@ -159,14 +143,6 @@ public class GetStandardSetResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
 		public Long getDefaultStandardTemplateId() {
 			return this.defaultStandardTemplateId;
 		}
@@ -175,20 +151,28 @@ public class GetStandardSetResponse extends AcsResponse {
 			this.defaultStandardTemplateId = defaultStandardTemplateId;
 		}
 
-		public List<Maintainer> getMaintainerList() {
-			return this.maintainerList;
+		public String getCode() {
+			return this.code;
 		}
 
-		public void setMaintainerList(List<Maintainer> maintainerList) {
-			this.maintainerList = maintainerList;
+		public void setCode(String code) {
+			this.code = code;
 		}
 
-		public List<Member> getMemberList() {
-			return this.memberList;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setMemberList(List<Member> memberList) {
-			this.memberList = memberList;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public List<MemberGroup> getMemberGroupList() {
@@ -199,28 +183,20 @@ public class GetStandardSetResponse extends AcsResponse {
 			this.memberGroupList = memberGroupList;
 		}
 
-		public DirectoryReference getDirectoryReference() {
-			return this.directoryReference;
+		public List<Member> getMemberList() {
+			return this.memberList;
 		}
 
-		public void setDirectoryReference(DirectoryReference directoryReference) {
-			this.directoryReference = directoryReference;
+		public void setMemberList(List<Member> memberList) {
+			this.memberList = memberList;
 		}
 
-		public VisibilityConfig getVisibilityConfig() {
-			return this.visibilityConfig;
+		public List<Maintainer> getMaintainerList() {
+			return this.maintainerList;
 		}
 
-		public void setVisibilityConfig(VisibilityConfig visibilityConfig) {
-			this.visibilityConfig = visibilityConfig;
-		}
-
-		public Creator getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(Creator creator) {
-			this.creator = creator;
+		public void setMaintainerList(List<Maintainer> maintainerList) {
+			this.maintainerList = maintainerList;
 		}
 
 		public LastModifier getLastModifier() {
@@ -239,6 +215,30 @@ public class GetStandardSetResponse extends AcsResponse {
 			this.approvalConfig = approvalConfig;
 		}
 
+		public DirectoryReference getDirectoryReference() {
+			return this.directoryReference;
+		}
+
+		public void setDirectoryReference(DirectoryReference directoryReference) {
+			this.directoryReference = directoryReference;
+		}
+
+		public Creator getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(Creator creator) {
+			this.creator = creator;
+		}
+
+		public VisibilityConfig getVisibilityConfig() {
+			return this.visibilityConfig;
+		}
+
+		public void setVisibilityConfig(VisibilityConfig visibilityConfig) {
+			this.visibilityConfig = visibilityConfig;
+		}
+
 		public OfflineApprovalConfig getOfflineApprovalConfig() {
 			return this.offlineApprovalConfig;
 		}
@@ -247,7 +247,7 @@ public class GetStandardSetResponse extends AcsResponse {
 			this.offlineApprovalConfig = offlineApprovalConfig;
 		}
 
-		public static class Maintainer {
+		public static class MemberGroup {
 
 			private String id;
 
@@ -293,7 +293,7 @@ public class GetStandardSetResponse extends AcsResponse {
 			}
 		}
 
-		public static class MemberGroup {
+		public static class Maintainer {
 
 			private String id;
 
@@ -316,6 +316,72 @@ public class GetStandardSetResponse extends AcsResponse {
 			}
 		}
 
+		public static class LastModifier {
+
+			private String id;
+
+			private String name;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+		}
+
+		public static class ApprovalConfig {
+
+			private Boolean isSubmitInBatch;
+
+			private String approvalType;
+
+			private Boolean enableApproval;
+
+			private Long templateId;
+
+			public Boolean getIsSubmitInBatch() {
+				return this.isSubmitInBatch;
+			}
+
+			public void setIsSubmitInBatch(Boolean isSubmitInBatch) {
+				this.isSubmitInBatch = isSubmitInBatch;
+			}
+
+			public String getApprovalType() {
+				return this.approvalType;
+			}
+
+			public void setApprovalType(String approvalType) {
+				this.approvalType = approvalType;
+			}
+
+			public Boolean getEnableApproval() {
+				return this.enableApproval;
+			}
+
+			public void setEnableApproval(Boolean enableApproval) {
+				this.enableApproval = enableApproval;
+			}
+
+			public Long getTemplateId() {
+				return this.templateId;
+			}
+
+			public void setTemplateId(Long templateId) {
+				this.templateId = templateId;
+			}
+		}
+
 		public static class DirectoryReference {
 
 			private String directory;
@@ -326,6 +392,29 @@ public class GetStandardSetResponse extends AcsResponse {
 
 			public void setDirectory(String directory) {
 				this.directory = directory;
+			}
+		}
+
+		public static class Creator {
+
+			private String id;
+
+			private String name;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 
@@ -375,112 +464,15 @@ public class GetStandardSetResponse extends AcsResponse {
 			}
 		}
 
-		public static class Creator {
-
-			private String id;
-
-			private String name;
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-		}
-
-		public static class LastModifier {
-
-			private String id;
-
-			private String name;
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-		}
-
-		public static class ApprovalConfig {
-
-			private Boolean enableApproval;
-
-			private Boolean isSubmitInBatch;
-
-			private String approvalType;
-
-			private Long templateId;
-
-			public Boolean getEnableApproval() {
-				return this.enableApproval;
-			}
-
-			public void setEnableApproval(Boolean enableApproval) {
-				this.enableApproval = enableApproval;
-			}
-
-			public Boolean getIsSubmitInBatch() {
-				return this.isSubmitInBatch;
-			}
-
-			public void setIsSubmitInBatch(Boolean isSubmitInBatch) {
-				this.isSubmitInBatch = isSubmitInBatch;
-			}
-
-			public String getApprovalType() {
-				return this.approvalType;
-			}
-
-			public void setApprovalType(String approvalType) {
-				this.approvalType = approvalType;
-			}
-
-			public Long getTemplateId() {
-				return this.templateId;
-			}
-
-			public void setTemplateId(Long templateId) {
-				this.templateId = templateId;
-			}
-		}
-
 		public static class OfflineApprovalConfig {
 
-			private Boolean enableApproval;
-
 			private Boolean isSubmitInBatch;
 
 			private String approvalType;
 
+			private Boolean enableApproval;
+
 			private Long templateId;
-
-			public Boolean getEnableApproval() {
-				return this.enableApproval;
-			}
-
-			public void setEnableApproval(Boolean enableApproval) {
-				this.enableApproval = enableApproval;
-			}
 
 			public Boolean getIsSubmitInBatch() {
 				return this.isSubmitInBatch;
@@ -496,6 +488,14 @@ public class GetStandardSetResponse extends AcsResponse {
 
 			public void setApprovalType(String approvalType) {
 				this.approvalType = approvalType;
+			}
+
+			public Boolean getEnableApproval() {
+				return this.enableApproval;
+			}
+
+			public void setEnableApproval(Boolean enableApproval) {
+				this.enableApproval = enableApproval;
 			}
 
 			public Long getTemplateId() {

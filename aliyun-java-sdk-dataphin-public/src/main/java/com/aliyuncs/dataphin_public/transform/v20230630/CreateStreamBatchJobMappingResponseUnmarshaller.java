@@ -24,10 +24,10 @@ public class CreateStreamBatchJobMappingResponseUnmarshaller {
 	public static CreateStreamBatchJobMappingResponse unmarshall(CreateStreamBatchJobMappingResponse createStreamBatchJobMappingResponse, UnmarshallerContext _ctx) {
 		
 		createStreamBatchJobMappingResponse.setRequestId(_ctx.stringValue("CreateStreamBatchJobMappingResponse.RequestId"));
-		createStreamBatchJobMappingResponse.setSuccess(_ctx.booleanValue("CreateStreamBatchJobMappingResponse.Success"));
+		createStreamBatchJobMappingResponse.setMessage(_ctx.stringValue("CreateStreamBatchJobMappingResponse.Message"));
 		createStreamBatchJobMappingResponse.setHttpStatusCode(_ctx.integerValue("CreateStreamBatchJobMappingResponse.HttpStatusCode"));
 		createStreamBatchJobMappingResponse.setCode(_ctx.stringValue("CreateStreamBatchJobMappingResponse.Code"));
-		createStreamBatchJobMappingResponse.setMessage(_ctx.stringValue("CreateStreamBatchJobMappingResponse.Message"));
+		createStreamBatchJobMappingResponse.setSuccess(_ctx.booleanValue("CreateStreamBatchJobMappingResponse.Success"));
 
 		Data data = new Data();
 		data.setFileId(_ctx.stringValue("CreateStreamBatchJobMappingResponse.Data.FileId"));

@@ -26,13 +26,13 @@ public class GetDataServiceApiCallSummaryResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -44,12 +44,12 @@ public class GetDataServiceApiCallSummaryResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class GetDataServiceApiCallSummaryResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -86,17 +86,41 @@ public class GetDataServiceApiCallSummaryResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long errorApiCount;
+
+		private Double offlineRate;
+
+		private Long errorAppCount;
+
 		private Long callCount;
 
 		private Long errorCount;
 
 		private Double errorRate;
 
-		private Double offlineRate;
+		public Long getErrorApiCount() {
+			return this.errorApiCount;
+		}
 
-		private Long errorApiCount;
+		public void setErrorApiCount(Long errorApiCount) {
+			this.errorApiCount = errorApiCount;
+		}
 
-		private Long errorAppCount;
+		public Double getOfflineRate() {
+			return this.offlineRate;
+		}
+
+		public void setOfflineRate(Double offlineRate) {
+			this.offlineRate = offlineRate;
+		}
+
+		public Long getErrorAppCount() {
+			return this.errorAppCount;
+		}
+
+		public void setErrorAppCount(Long errorAppCount) {
+			this.errorAppCount = errorAppCount;
+		}
 
 		public Long getCallCount() {
 			return this.callCount;
@@ -120,30 +144,6 @@ public class GetDataServiceApiCallSummaryResponse extends AcsResponse {
 
 		public void setErrorRate(Double errorRate) {
 			this.errorRate = errorRate;
-		}
-
-		public Double getOfflineRate() {
-			return this.offlineRate;
-		}
-
-		public void setOfflineRate(Double offlineRate) {
-			this.offlineRate = offlineRate;
-		}
-
-		public Long getErrorApiCount() {
-			return this.errorApiCount;
-		}
-
-		public void setErrorApiCount(Long errorApiCount) {
-			this.errorApiCount = errorApiCount;
-		}
-
-		public Long getErrorAppCount() {
-			return this.errorAppCount;
-		}
-
-		public void setErrorAppCount(Long errorAppCount) {
-			this.errorAppCount = errorAppCount;
 		}
 	}
 

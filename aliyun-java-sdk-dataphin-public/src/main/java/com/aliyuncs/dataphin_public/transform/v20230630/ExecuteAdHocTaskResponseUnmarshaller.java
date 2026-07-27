@@ -24,10 +24,10 @@ public class ExecuteAdHocTaskResponseUnmarshaller {
 	public static ExecuteAdHocTaskResponse unmarshall(ExecuteAdHocTaskResponse executeAdHocTaskResponse, UnmarshallerContext _ctx) {
 		
 		executeAdHocTaskResponse.setRequestId(_ctx.stringValue("ExecuteAdHocTaskResponse.RequestId"));
-		executeAdHocTaskResponse.setSuccess(_ctx.booleanValue("ExecuteAdHocTaskResponse.Success"));
+		executeAdHocTaskResponse.setMessage(_ctx.stringValue("ExecuteAdHocTaskResponse.Message"));
 		executeAdHocTaskResponse.setHttpStatusCode(_ctx.integerValue("ExecuteAdHocTaskResponse.HttpStatusCode"));
 		executeAdHocTaskResponse.setCode(_ctx.stringValue("ExecuteAdHocTaskResponse.Code"));
-		executeAdHocTaskResponse.setMessage(_ctx.stringValue("ExecuteAdHocTaskResponse.Message"));
+		executeAdHocTaskResponse.setSuccess(_ctx.booleanValue("ExecuteAdHocTaskResponse.Success"));
 
 		ExecuteResult executeResult = new ExecuteResult();
 		executeResult.setTaskId(_ctx.stringValue("ExecuteAdHocTaskResponse.ExecuteResult.TaskId"));

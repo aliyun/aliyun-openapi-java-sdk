@@ -23,10 +23,10 @@ public class GrantDataServiceApiResponseUnmarshaller {
 	public static GrantDataServiceApiResponse unmarshall(GrantDataServiceApiResponse grantDataServiceApiResponse, UnmarshallerContext _ctx) {
 		
 		grantDataServiceApiResponse.setRequestId(_ctx.stringValue("GrantDataServiceApiResponse.RequestId"));
-		grantDataServiceApiResponse.setSuccess(_ctx.booleanValue("GrantDataServiceApiResponse.Success"));
+		grantDataServiceApiResponse.setMessage(_ctx.stringValue("GrantDataServiceApiResponse.Message"));
 		grantDataServiceApiResponse.setHttpStatusCode(_ctx.integerValue("GrantDataServiceApiResponse.HttpStatusCode"));
 		grantDataServiceApiResponse.setCode(_ctx.stringValue("GrantDataServiceApiResponse.Code"));
-		grantDataServiceApiResponse.setMessage(_ctx.stringValue("GrantDataServiceApiResponse.Message"));
+		grantDataServiceApiResponse.setSuccess(_ctx.booleanValue("GrantDataServiceApiResponse.Success"));
 	 
 	 	return grantDataServiceApiResponse;
 	}

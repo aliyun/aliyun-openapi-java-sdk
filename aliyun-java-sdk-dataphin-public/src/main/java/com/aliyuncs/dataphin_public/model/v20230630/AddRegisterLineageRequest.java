@@ -69,11 +69,11 @@ public class AddRegisterLineageRequest extends RpcAcsRequest<AddRegisterLineageR
 		@SerializedName("DetailedLineages")
 		private List<DetailedLineagesItem> detailedLineages;
 
-		@SerializedName("CheckAssetExist")
-		private Boolean checkAssetExist;
-
 		@SerializedName("TenantId")
 		private Long tenantId;
+
+		@SerializedName("CheckAssetExist")
+		private Boolean checkAssetExist;
 
 		@SerializedName("Source")
 		private Source source;
@@ -100,20 +100,20 @@ public class AddRegisterLineageRequest extends RpcAcsRequest<AddRegisterLineageR
 			this.detailedLineages = detailedLineages;
 		}
 
-		public Boolean getCheckAssetExist() {
-			return this.checkAssetExist;
-		}
-
-		public void setCheckAssetExist(Boolean checkAssetExist) {
-			this.checkAssetExist = checkAssetExist;
-		}
-
 		public Long getTenantId() {
 			return this.tenantId;
 		}
 
 		public void setTenantId(Long tenantId) {
 			this.tenantId = tenantId;
+		}
+
+		public Boolean getCheckAssetExist() {
+			return this.checkAssetExist;
+		}
+
+		public void setCheckAssetExist(Boolean checkAssetExist) {
+			this.checkAssetExist = checkAssetExist;
 		}
 
 		public Source getSource() {

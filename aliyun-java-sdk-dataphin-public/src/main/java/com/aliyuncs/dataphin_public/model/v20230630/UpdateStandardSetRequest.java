@@ -89,11 +89,11 @@ public class UpdateStandardSetRequest extends RpcAcsRequest<UpdateStandardSetRes
 		@SerializedName("DirectoryReference")
 		private DirectoryReference directoryReference;
 
-		@SerializedName("StandardSetId")
-		private Long standardSetId;
-
 		@SerializedName("DefaultStandardTemplateId")
 		private Long defaultStandardTemplateId;
+
+		@SerializedName("StandardSetId")
+		private Long standardSetId;
 
 		@SerializedName("MemberGroupList")
 		private List<String> memberGroupList;
@@ -170,20 +170,20 @@ public class UpdateStandardSetRequest extends RpcAcsRequest<UpdateStandardSetRes
 			this.directoryReference = directoryReference;
 		}
 
-		public Long getStandardSetId() {
-			return this.standardSetId;
-		}
-
-		public void setStandardSetId(Long standardSetId) {
-			this.standardSetId = standardSetId;
-		}
-
 		public Long getDefaultStandardTemplateId() {
 			return this.defaultStandardTemplateId;
 		}
 
 		public void setDefaultStandardTemplateId(Long defaultStandardTemplateId) {
 			this.defaultStandardTemplateId = defaultStandardTemplateId;
+		}
+
+		public Long getStandardSetId() {
+			return this.standardSetId;
+		}
+
+		public void setStandardSetId(Long standardSetId) {
+			this.standardSetId = standardSetId;
 		}
 
 		public List<String> getMemberGroupList() {

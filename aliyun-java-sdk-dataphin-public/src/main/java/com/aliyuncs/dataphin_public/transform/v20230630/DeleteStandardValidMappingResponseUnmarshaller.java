@@ -23,10 +23,10 @@ public class DeleteStandardValidMappingResponseUnmarshaller {
 	public static DeleteStandardValidMappingResponse unmarshall(DeleteStandardValidMappingResponse deleteStandardValidMappingResponse, UnmarshallerContext _ctx) {
 		
 		deleteStandardValidMappingResponse.setRequestId(_ctx.stringValue("DeleteStandardValidMappingResponse.RequestId"));
-		deleteStandardValidMappingResponse.setSuccess(_ctx.booleanValue("DeleteStandardValidMappingResponse.Success"));
+		deleteStandardValidMappingResponse.setMessage(_ctx.stringValue("DeleteStandardValidMappingResponse.Message"));
 		deleteStandardValidMappingResponse.setHttpStatusCode(_ctx.integerValue("DeleteStandardValidMappingResponse.HttpStatusCode"));
 		deleteStandardValidMappingResponse.setCode(_ctx.stringValue("DeleteStandardValidMappingResponse.Code"));
-		deleteStandardValidMappingResponse.setMessage(_ctx.stringValue("DeleteStandardValidMappingResponse.Message"));
+		deleteStandardValidMappingResponse.setSuccess(_ctx.booleanValue("DeleteStandardValidMappingResponse.Success"));
 	 
 	 	return deleteStandardValidMappingResponse;
 	}

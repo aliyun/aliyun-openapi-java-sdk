@@ -65,14 +65,14 @@ public class CheckResourcePermissionRequest extends RpcAcsRequest<CheckResourceP
 		@SerializedName("Operate")
 		private String operate;
 
+		@SerializedName("ResourceList")
+		private List<ResourceListItem> resourceList;
+
 		@SerializedName("UserId")
 		private String userId;
 
 		@SerializedName("ResourceType")
 		private String resourceType;
-
-		@SerializedName("ResourceList")
-		private List<ResourceListItem> resourceList;
 
 		public String getOperate() {
 			return this.operate;
@@ -80,6 +80,14 @@ public class CheckResourcePermissionRequest extends RpcAcsRequest<CheckResourceP
 
 		public void setOperate(String operate) {
 			this.operate = operate;
+		}
+
+		public List<ResourceListItem> getResourceList() {
+			return this.resourceList;
+		}
+
+		public void setResourceList(List<ResourceListItem> resourceList) {
+			this.resourceList = resourceList;
 		}
 
 		public String getUserId() {
@@ -96,14 +104,6 @@ public class CheckResourcePermissionRequest extends RpcAcsRequest<CheckResourceP
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
-		}
-
-		public List<ResourceListItem> getResourceList() {
-			return this.resourceList;
-		}
-
-		public void setResourceList(List<ResourceListItem> resourceList) {
-			this.resourceList = resourceList;
 		}
 
 		public static class ResourceListItem {

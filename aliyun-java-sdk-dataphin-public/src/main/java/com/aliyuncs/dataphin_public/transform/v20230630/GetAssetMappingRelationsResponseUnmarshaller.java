@@ -27,25 +27,25 @@ public class GetAssetMappingRelationsResponseUnmarshaller {
 	public static GetAssetMappingRelationsResponse unmarshall(GetAssetMappingRelationsResponse getAssetMappingRelationsResponse, UnmarshallerContext _ctx) {
 		
 		getAssetMappingRelationsResponse.setRequestId(_ctx.stringValue("GetAssetMappingRelationsResponse.RequestId"));
-		getAssetMappingRelationsResponse.setSuccess(_ctx.booleanValue("GetAssetMappingRelationsResponse.Success"));
+		getAssetMappingRelationsResponse.setMessage(_ctx.stringValue("GetAssetMappingRelationsResponse.Message"));
 		getAssetMappingRelationsResponse.setHttpStatusCode(_ctx.integerValue("GetAssetMappingRelationsResponse.HttpStatusCode"));
 		getAssetMappingRelationsResponse.setCode(_ctx.stringValue("GetAssetMappingRelationsResponse.Code"));
-		getAssetMappingRelationsResponse.setMessage(_ctx.stringValue("GetAssetMappingRelationsResponse.Message"));
+		getAssetMappingRelationsResponse.setSuccess(_ctx.booleanValue("GetAssetMappingRelationsResponse.Success"));
 
 		List<MappingRelation> mappingRelationList = new ArrayList<MappingRelation>();
 		for (int i = 0; i < _ctx.lengthValue("GetAssetMappingRelationsResponse.MappingRelationList.Length"); i++) {
 			MappingRelation mappingRelation = new MappingRelation();
 			mappingRelation.setModifyTime(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].ModifyTime"));
-			mappingRelation.setGuid(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].Guid"));
-			mappingRelation.setName(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].Name"));
+			mappingRelation.setStandardStage(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].StandardStage"));
 			mappingRelation.setAssetType(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].AssetType"));
+			mappingRelation.setStandardSetDirectory(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].StandardSetDirectory"));
 			mappingRelation.setStandardId(_ctx.longValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].StandardId"));
-			mappingRelation.setStandardName(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].StandardName"));
 			mappingRelation.setStandardCode(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].StandardCode"));
 			mappingRelation.setStandardSetId(_ctx.longValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].StandardSetId"));
+			mappingRelation.setGuid(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].Guid"));
 			mappingRelation.setStandardSetName(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].StandardSetName"));
-			mappingRelation.setStandardSetDirectory(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].StandardSetDirectory"));
-			mappingRelation.setStandardStage(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].StandardStage"));
+			mappingRelation.setStandardName(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].StandardName"));
+			mappingRelation.setName(_ctx.stringValue("GetAssetMappingRelationsResponse.MappingRelationList["+ i +"].Name"));
 
 			mappingRelationList.add(mappingRelation);
 		}

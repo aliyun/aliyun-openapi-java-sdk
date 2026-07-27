@@ -23,10 +23,10 @@ public class StopAdHocTaskResponseUnmarshaller {
 	public static StopAdHocTaskResponse unmarshall(StopAdHocTaskResponse stopAdHocTaskResponse, UnmarshallerContext _ctx) {
 		
 		stopAdHocTaskResponse.setRequestId(_ctx.stringValue("StopAdHocTaskResponse.RequestId"));
-		stopAdHocTaskResponse.setSuccess(_ctx.booleanValue("StopAdHocTaskResponse.Success"));
+		stopAdHocTaskResponse.setMessage(_ctx.stringValue("StopAdHocTaskResponse.Message"));
 		stopAdHocTaskResponse.setHttpStatusCode(_ctx.integerValue("StopAdHocTaskResponse.HttpStatusCode"));
 		stopAdHocTaskResponse.setCode(_ctx.stringValue("StopAdHocTaskResponse.Code"));
-		stopAdHocTaskResponse.setMessage(_ctx.stringValue("StopAdHocTaskResponse.Message"));
+		stopAdHocTaskResponse.setSuccess(_ctx.booleanValue("StopAdHocTaskResponse.Success"));
 	 
 	 	return stopAdHocTaskResponse;
 	}

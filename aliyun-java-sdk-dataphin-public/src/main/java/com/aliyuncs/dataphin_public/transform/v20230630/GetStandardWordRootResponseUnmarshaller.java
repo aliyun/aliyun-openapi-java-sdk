@@ -24,22 +24,22 @@ public class GetStandardWordRootResponseUnmarshaller {
 	public static GetStandardWordRootResponse unmarshall(GetStandardWordRootResponse getStandardWordRootResponse, UnmarshallerContext _ctx) {
 		
 		getStandardWordRootResponse.setRequestId(_ctx.stringValue("GetStandardWordRootResponse.RequestId"));
-		getStandardWordRootResponse.setSuccess(_ctx.booleanValue("GetStandardWordRootResponse.Success"));
+		getStandardWordRootResponse.setMessage(_ctx.stringValue("GetStandardWordRootResponse.Message"));
 		getStandardWordRootResponse.setHttpStatusCode(_ctx.integerValue("GetStandardWordRootResponse.HttpStatusCode"));
 		getStandardWordRootResponse.setCode(_ctx.stringValue("GetStandardWordRootResponse.Code"));
-		getStandardWordRootResponse.setMessage(_ctx.stringValue("GetStandardWordRootResponse.Message"));
+		getStandardWordRootResponse.setSuccess(_ctx.booleanValue("GetStandardWordRootResponse.Success"));
 
 		WordRootInfo wordRootInfo = new WordRootInfo();
-		wordRootInfo.setName(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.Name"));
-		wordRootInfo.setFullName(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.FullName"));
 		wordRootInfo.setAbbreviation(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.Abbreviation"));
+		wordRootInfo.setModifyTime(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.ModifyTime"));
+		wordRootInfo.setLastModifier(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.LastModifier"));
 		wordRootInfo.setDescription(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.Description"));
+		wordRootInfo.setFullName(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.FullName"));
+		wordRootInfo.setCreateTime(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.CreateTime"));
 		wordRootInfo.setCreator(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.Creator"));
 		wordRootInfo.setCreatorName(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.CreatorName"));
-		wordRootInfo.setLastModifier(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.LastModifier"));
 		wordRootInfo.setLastModifierName(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.LastModifierName"));
-		wordRootInfo.setCreateTime(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.CreateTime"));
-		wordRootInfo.setModifyTime(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.ModifyTime"));
+		wordRootInfo.setName(_ctx.stringValue("GetStandardWordRootResponse.WordRootInfo.Name"));
 		getStandardWordRootResponse.setWordRootInfo(wordRootInfo);
 	 
 	 	return getStandardWordRootResponse;

@@ -23,11 +23,11 @@ public class RemoveUserGroupMemberResponseUnmarshaller {
 	public static RemoveUserGroupMemberResponse unmarshall(RemoveUserGroupMemberResponse removeUserGroupMemberResponse, UnmarshallerContext _ctx) {
 		
 		removeUserGroupMemberResponse.setRequestId(_ctx.stringValue("RemoveUserGroupMemberResponse.RequestId"));
-		removeUserGroupMemberResponse.setSuccess(_ctx.booleanValue("RemoveUserGroupMemberResponse.Success"));
-		removeUserGroupMemberResponse.setHttpStatusCode(_ctx.integerValue("RemoveUserGroupMemberResponse.HttpStatusCode"));
-		removeUserGroupMemberResponse.setCode(_ctx.stringValue("RemoveUserGroupMemberResponse.Code"));
 		removeUserGroupMemberResponse.setMessage(_ctx.stringValue("RemoveUserGroupMemberResponse.Message"));
+		removeUserGroupMemberResponse.setHttpStatusCode(_ctx.integerValue("RemoveUserGroupMemberResponse.HttpStatusCode"));
 		removeUserGroupMemberResponse.setData(_ctx.booleanValue("RemoveUserGroupMemberResponse.Data"));
+		removeUserGroupMemberResponse.setCode(_ctx.stringValue("RemoveUserGroupMemberResponse.Code"));
+		removeUserGroupMemberResponse.setSuccess(_ctx.booleanValue("RemoveUserGroupMemberResponse.Success"));
 	 
 	 	return removeUserGroupMemberResponse;
 	}

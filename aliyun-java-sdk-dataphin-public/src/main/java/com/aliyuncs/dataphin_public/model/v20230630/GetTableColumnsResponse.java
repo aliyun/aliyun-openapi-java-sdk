@@ -27,13 +27,13 @@ public class GetTableColumnsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<Column> columnList;
 
@@ -45,12 +45,12 @@ public class GetTableColumnsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetTableColumnsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Column> getColumnList() {
@@ -87,53 +87,93 @@ public class GetTableColumnsResponse extends AcsResponse {
 
 	public static class Column {
 
+		private String levelAbbreviation;
+
+		private String comment;
+
+		private String modifyTime;
+
+		private String lastModifier;
+
+		private String createTime;
+
 		private String guid;
 
+		private String creator;
+
 		private String env;
-
-		private String tableGuid;
-
-		private Long dataSourceId;
-
-		private String dataSourceType;
-
-		private String tableName;
 
 		private Integer seqNumber;
 
 		private String name;
 
-		private String displayName;
+		private Long visitCount30d;
 
-		private String comment;
-
-		private String dataType;
-
-		private Boolean nullable;
+		private String tableName;
 
 		private String defaultValue;
 
-		private Boolean isPrimaryKey;
-
-		private Boolean isForeignKey;
-
-		private Boolean isPartitionColumn;
-
-		private String creator;
-
-		private String lastModifier;
-
-		private Long visitCount30d;
-
-		private String createTime;
-
-		private String modifyTime;
-
-		private Long classifyId;
+		private String tableGuid;
 
 		private String classifyName;
 
-		private String levelAbbreviation;
+		private Long classifyId;
+
+		private Boolean isPartitionColumn;
+
+		private String dataSourceType;
+
+		private String displayName;
+
+		private String dataType;
+
+		private Boolean isForeignKey;
+
+		private Long dataSourceId;
+
+		private Boolean nullable;
+
+		private Boolean isPrimaryKey;
+
+		public String getLevelAbbreviation() {
+			return this.levelAbbreviation;
+		}
+
+		public void setLevelAbbreviation(String levelAbbreviation) {
+			this.levelAbbreviation = levelAbbreviation;
+		}
+
+		public String getComment() {
+			return this.comment;
+		}
+
+		public void setComment(String comment) {
+			this.comment = comment;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public String getLastModifier() {
+			return this.lastModifier;
+		}
+
+		public void setLastModifier(String lastModifier) {
+			this.lastModifier = lastModifier;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
 
 		public String getGuid() {
 			return this.guid;
@@ -143,44 +183,20 @@ public class GetTableColumnsResponse extends AcsResponse {
 			this.guid = guid;
 		}
 
+		public String getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(String creator) {
+			this.creator = creator;
+		}
+
 		public String getEnv() {
 			return this.env;
 		}
 
 		public void setEnv(String env) {
 			this.env = env;
-		}
-
-		public String getTableGuid() {
-			return this.tableGuid;
-		}
-
-		public void setTableGuid(String tableGuid) {
-			this.tableGuid = tableGuid;
-		}
-
-		public Long getDataSourceId() {
-			return this.dataSourceId;
-		}
-
-		public void setDataSourceId(Long dataSourceId) {
-			this.dataSourceId = dataSourceId;
-		}
-
-		public String getDataSourceType() {
-			return this.dataSourceType;
-		}
-
-		public void setDataSourceType(String dataSourceType) {
-			this.dataSourceType = dataSourceType;
-		}
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
 		}
 
 		public Integer getSeqNumber() {
@@ -199,36 +215,20 @@ public class GetTableColumnsResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getDisplayName() {
-			return this.displayName;
+		public Long getVisitCount30d() {
+			return this.visitCount30d;
 		}
 
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
+		public void setVisitCount30d(Long visitCount30d) {
+			this.visitCount30d = visitCount30d;
 		}
 
-		public String getComment() {
-			return this.comment;
+		public String getTableName() {
+			return this.tableName;
 		}
 
-		public void setComment(String comment) {
-			this.comment = comment;
-		}
-
-		public String getDataType() {
-			return this.dataType;
-		}
-
-		public void setDataType(String dataType) {
-			this.dataType = dataType;
-		}
-
-		public Boolean getNullable() {
-			return this.nullable;
-		}
-
-		public void setNullable(Boolean nullable) {
-			this.nullable = nullable;
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 
 		public String getDefaultValue() {
@@ -239,76 +239,12 @@ public class GetTableColumnsResponse extends AcsResponse {
 			this.defaultValue = defaultValue;
 		}
 
-		public Boolean getIsPrimaryKey() {
-			return this.isPrimaryKey;
+		public String getTableGuid() {
+			return this.tableGuid;
 		}
 
-		public void setIsPrimaryKey(Boolean isPrimaryKey) {
-			this.isPrimaryKey = isPrimaryKey;
-		}
-
-		public Boolean getIsForeignKey() {
-			return this.isForeignKey;
-		}
-
-		public void setIsForeignKey(Boolean isForeignKey) {
-			this.isForeignKey = isForeignKey;
-		}
-
-		public Boolean getIsPartitionColumn() {
-			return this.isPartitionColumn;
-		}
-
-		public void setIsPartitionColumn(Boolean isPartitionColumn) {
-			this.isPartitionColumn = isPartitionColumn;
-		}
-
-		public String getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(String creator) {
-			this.creator = creator;
-		}
-
-		public String getLastModifier() {
-			return this.lastModifier;
-		}
-
-		public void setLastModifier(String lastModifier) {
-			this.lastModifier = lastModifier;
-		}
-
-		public Long getVisitCount30d() {
-			return this.visitCount30d;
-		}
-
-		public void setVisitCount30d(Long visitCount30d) {
-			this.visitCount30d = visitCount30d;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public Long getClassifyId() {
-			return this.classifyId;
-		}
-
-		public void setClassifyId(Long classifyId) {
-			this.classifyId = classifyId;
+		public void setTableGuid(String tableGuid) {
+			this.tableGuid = tableGuid;
 		}
 
 		public String getClassifyName() {
@@ -319,12 +255,76 @@ public class GetTableColumnsResponse extends AcsResponse {
 			this.classifyName = classifyName;
 		}
 
-		public String getLevelAbbreviation() {
-			return this.levelAbbreviation;
+		public Long getClassifyId() {
+			return this.classifyId;
 		}
 
-		public void setLevelAbbreviation(String levelAbbreviation) {
-			this.levelAbbreviation = levelAbbreviation;
+		public void setClassifyId(Long classifyId) {
+			this.classifyId = classifyId;
+		}
+
+		public Boolean getIsPartitionColumn() {
+			return this.isPartitionColumn;
+		}
+
+		public void setIsPartitionColumn(Boolean isPartitionColumn) {
+			this.isPartitionColumn = isPartitionColumn;
+		}
+
+		public String getDataSourceType() {
+			return this.dataSourceType;
+		}
+
+		public void setDataSourceType(String dataSourceType) {
+			this.dataSourceType = dataSourceType;
+		}
+
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
+		public String getDataType() {
+			return this.dataType;
+		}
+
+		public void setDataType(String dataType) {
+			this.dataType = dataType;
+		}
+
+		public Boolean getIsForeignKey() {
+			return this.isForeignKey;
+		}
+
+		public void setIsForeignKey(Boolean isForeignKey) {
+			this.isForeignKey = isForeignKey;
+		}
+
+		public Long getDataSourceId() {
+			return this.dataSourceId;
+		}
+
+		public void setDataSourceId(Long dataSourceId) {
+			this.dataSourceId = dataSourceId;
+		}
+
+		public Boolean getNullable() {
+			return this.nullable;
+		}
+
+		public void setNullable(Boolean nullable) {
+			this.nullable = nullable;
+		}
+
+		public Boolean getIsPrimaryKey() {
+			return this.isPrimaryKey;
+		}
+
+		public void setIsPrimaryKey(Boolean isPrimaryKey) {
+			this.isPrimaryKey = isPrimaryKey;
 		}
 	}
 

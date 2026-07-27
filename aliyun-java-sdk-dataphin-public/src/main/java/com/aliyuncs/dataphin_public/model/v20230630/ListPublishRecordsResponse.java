@@ -27,13 +27,13 @@ public class ListPublishRecordsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private ListResult listResult;
 
@@ -45,12 +45,12 @@ public class ListPublishRecordsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListPublishRecordsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public ListResult getListResult() {
@@ -109,52 +109,44 @@ public class ListPublishRecordsResponse extends AcsResponse {
 
 		public static class PublishRecordInfo {
 
-			private Long id;
-
-			private String publishName;
+			private String objectId;
 
 			private String projectId;
 
 			private String publisher;
 
-			private String publisherName;
-
-			private String gmtCreate;
-
-			private String gmtModify;
-
-			private Integer changeType;
+			private String objectName;
 
 			private String objectType;
 
-			private String objectName;
-
-			private String objectId;
-
-			private String nodeId;
-
 			private String objectVersion;
+
+			private String gmtCreate;
 
 			private String finishTime;
 
+			private Integer changeType;
+
+			private String gmtModify;
+
+			private String publisherName;
+
+			private String nodeId;
+
+			private Long id;
+
 			private String errorMessage;
+
+			private String publishName;
 
 			private Integer publishStatus;
 
-			public Long getId() {
-				return this.id;
+			public String getObjectId() {
+				return this.objectId;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getPublishName() {
-				return this.publishName;
-			}
-
-			public void setPublishName(String publishName) {
-				this.publishName = publishName;
+			public void setObjectId(String objectId) {
+				this.objectId = objectId;
 			}
 
 			public String getProjectId() {
@@ -173,36 +165,12 @@ public class ListPublishRecordsResponse extends AcsResponse {
 				this.publisher = publisher;
 			}
 
-			public String getPublisherName() {
-				return this.publisherName;
+			public String getObjectName() {
+				return this.objectName;
 			}
 
-			public void setPublisherName(String publisherName) {
-				this.publisherName = publisherName;
-			}
-
-			public String getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getGmtModify() {
-				return this.gmtModify;
-			}
-
-			public void setGmtModify(String gmtModify) {
-				this.gmtModify = gmtModify;
-			}
-
-			public Integer getChangeType() {
-				return this.changeType;
-			}
-
-			public void setChangeType(Integer changeType) {
-				this.changeType = changeType;
+			public void setObjectName(String objectName) {
+				this.objectName = objectName;
 			}
 
 			public String getObjectType() {
@@ -213,36 +181,20 @@ public class ListPublishRecordsResponse extends AcsResponse {
 				this.objectType = objectType;
 			}
 
-			public String getObjectName() {
-				return this.objectName;
-			}
-
-			public void setObjectName(String objectName) {
-				this.objectName = objectName;
-			}
-
-			public String getObjectId() {
-				return this.objectId;
-			}
-
-			public void setObjectId(String objectId) {
-				this.objectId = objectId;
-			}
-
-			public String getNodeId() {
-				return this.nodeId;
-			}
-
-			public void setNodeId(String nodeId) {
-				this.nodeId = nodeId;
-			}
-
 			public String getObjectVersion() {
 				return this.objectVersion;
 			}
 
 			public void setObjectVersion(String objectVersion) {
 				this.objectVersion = objectVersion;
+			}
+
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 
 			public String getFinishTime() {
@@ -253,12 +205,60 @@ public class ListPublishRecordsResponse extends AcsResponse {
 				this.finishTime = finishTime;
 			}
 
+			public Integer getChangeType() {
+				return this.changeType;
+			}
+
+			public void setChangeType(Integer changeType) {
+				this.changeType = changeType;
+			}
+
+			public String getGmtModify() {
+				return this.gmtModify;
+			}
+
+			public void setGmtModify(String gmtModify) {
+				this.gmtModify = gmtModify;
+			}
+
+			public String getPublisherName() {
+				return this.publisherName;
+			}
+
+			public void setPublisherName(String publisherName) {
+				this.publisherName = publisherName;
+			}
+
+			public String getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(String nodeId) {
+				this.nodeId = nodeId;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
 			public String getErrorMessage() {
 				return this.errorMessage;
 			}
 
 			public void setErrorMessage(String errorMessage) {
 				this.errorMessage = errorMessage;
+			}
+
+			public String getPublishName() {
+				return this.publishName;
+			}
+
+			public void setPublishName(String publishName) {
+				this.publishName = publishName;
 			}
 
 			public Integer getPublishStatus() {

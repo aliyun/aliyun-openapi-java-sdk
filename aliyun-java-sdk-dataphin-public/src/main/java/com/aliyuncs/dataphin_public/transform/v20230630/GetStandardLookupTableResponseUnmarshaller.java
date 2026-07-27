@@ -29,24 +29,24 @@ public class GetStandardLookupTableResponseUnmarshaller {
 	public static GetStandardLookupTableResponse unmarshall(GetStandardLookupTableResponse getStandardLookupTableResponse, UnmarshallerContext _ctx) {
 		
 		getStandardLookupTableResponse.setRequestId(_ctx.stringValue("GetStandardLookupTableResponse.RequestId"));
-		getStandardLookupTableResponse.setSuccess(_ctx.booleanValue("GetStandardLookupTableResponse.Success"));
+		getStandardLookupTableResponse.setMessage(_ctx.stringValue("GetStandardLookupTableResponse.Message"));
 		getStandardLookupTableResponse.setHttpStatusCode(_ctx.integerValue("GetStandardLookupTableResponse.HttpStatusCode"));
 		getStandardLookupTableResponse.setCode(_ctx.stringValue("GetStandardLookupTableResponse.Code"));
-		getStandardLookupTableResponse.setMessage(_ctx.stringValue("GetStandardLookupTableResponse.Message"));
+		getStandardLookupTableResponse.setSuccess(_ctx.booleanValue("GetStandardLookupTableResponse.Success"));
 
 		LookupTableInfo lookupTableInfo = new LookupTableInfo();
-		lookupTableInfo.setId(_ctx.longValue("GetStandardLookupTableResponse.LookupTableInfo.Id"));
-		lookupTableInfo.setName(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.Name"));
-		lookupTableInfo.setCode(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.Code"));
-		lookupTableInfo.setDescription(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.Description"));
-		lookupTableInfo.setCreator(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.Creator"));
-		lookupTableInfo.setCreatorName(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.CreatorName"));
+		lookupTableInfo.setModifyTime(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.ModifyTime"));
 		lookupTableInfo.setLastModifier(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.LastModifier"));
-		lookupTableInfo.setLastModifierName(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.LastModifierName"));
 		lookupTableInfo.setOwner(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.Owner"));
 		lookupTableInfo.setOwnerName(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.OwnerName"));
+		lookupTableInfo.setDescription(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.Description"));
 		lookupTableInfo.setCreateTime(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.CreateTime"));
-		lookupTableInfo.setModifyTime(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.ModifyTime"));
+		lookupTableInfo.setCreator(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.Creator"));
+		lookupTableInfo.setCode(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.Code"));
+		lookupTableInfo.setLastModifierName(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.LastModifierName"));
+		lookupTableInfo.setName(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.Name"));
+		lookupTableInfo.setId(_ctx.longValue("GetStandardLookupTableResponse.LookupTableInfo.Id"));
+		lookupTableInfo.setCreatorName(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.CreatorName"));
 
 		DirectoryReference directoryReference = new DirectoryReference();
 		directoryReference.setDirectory(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.DirectoryReference.Directory"));
@@ -55,10 +55,10 @@ public class GetStandardLookupTableResponseUnmarshaller {
 		List<LookupTableValue> lookupTableValueList = new ArrayList<LookupTableValue>();
 		for (int i = 0; i < _ctx.lengthValue("GetStandardLookupTableResponse.LookupTableInfo.LookupTableValueList.Length"); i++) {
 			LookupTableValue lookupTableValue = new LookupTableValue();
+			lookupTableValue.setDescription(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.LookupTableValueList["+ i +"].Description"));
 			lookupTableValue.setValue(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.LookupTableValueList["+ i +"].Value"));
 			lookupTableValue.setName(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.LookupTableValueList["+ i +"].Name"));
 			lookupTableValue.setEnglishName(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.LookupTableValueList["+ i +"].EnglishName"));
-			lookupTableValue.setDescription(_ctx.stringValue("GetStandardLookupTableResponse.LookupTableInfo.LookupTableValueList["+ i +"].Description"));
 
 			lookupTableValueList.add(lookupTableValue);
 		}

@@ -23,11 +23,11 @@ public class CreateUdfResponseUnmarshaller {
 	public static CreateUdfResponse unmarshall(CreateUdfResponse createUdfResponse, UnmarshallerContext _ctx) {
 		
 		createUdfResponse.setRequestId(_ctx.stringValue("CreateUdfResponse.RequestId"));
-		createUdfResponse.setSuccess(_ctx.booleanValue("CreateUdfResponse.Success"));
-		createUdfResponse.setHttpStatusCode(_ctx.integerValue("CreateUdfResponse.HttpStatusCode"));
-		createUdfResponse.setCode(_ctx.stringValue("CreateUdfResponse.Code"));
 		createUdfResponse.setMessage(_ctx.stringValue("CreateUdfResponse.Message"));
+		createUdfResponse.setHttpStatusCode(_ctx.integerValue("CreateUdfResponse.HttpStatusCode"));
 		createUdfResponse.setData(_ctx.longValue("CreateUdfResponse.Data"));
+		createUdfResponse.setCode(_ctx.stringValue("CreateUdfResponse.Code"));
+		createUdfResponse.setSuccess(_ctx.booleanValue("CreateUdfResponse.Success"));
 	 
 	 	return createUdfResponse;
 	}

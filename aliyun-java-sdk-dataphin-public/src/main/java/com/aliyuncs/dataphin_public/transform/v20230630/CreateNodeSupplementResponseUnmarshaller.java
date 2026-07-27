@@ -23,11 +23,11 @@ public class CreateNodeSupplementResponseUnmarshaller {
 	public static CreateNodeSupplementResponse unmarshall(CreateNodeSupplementResponse createNodeSupplementResponse, UnmarshallerContext _ctx) {
 		
 		createNodeSupplementResponse.setRequestId(_ctx.stringValue("CreateNodeSupplementResponse.RequestId"));
-		createNodeSupplementResponse.setSuccess(_ctx.booleanValue("CreateNodeSupplementResponse.Success"));
-		createNodeSupplementResponse.setHttpStatusCode(_ctx.integerValue("CreateNodeSupplementResponse.HttpStatusCode"));
-		createNodeSupplementResponse.setCode(_ctx.stringValue("CreateNodeSupplementResponse.Code"));
 		createNodeSupplementResponse.setMessage(_ctx.stringValue("CreateNodeSupplementResponse.Message"));
 		createNodeSupplementResponse.setSubmitId(_ctx.stringValue("CreateNodeSupplementResponse.SubmitId"));
+		createNodeSupplementResponse.setHttpStatusCode(_ctx.integerValue("CreateNodeSupplementResponse.HttpStatusCode"));
+		createNodeSupplementResponse.setCode(_ctx.stringValue("CreateNodeSupplementResponse.Code"));
+		createNodeSupplementResponse.setSuccess(_ctx.booleanValue("CreateNodeSupplementResponse.Success"));
 	 
 	 	return createNodeSupplementResponse;
 	}

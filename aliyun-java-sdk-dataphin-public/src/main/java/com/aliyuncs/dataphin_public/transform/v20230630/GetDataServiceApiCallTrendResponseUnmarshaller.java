@@ -29,23 +29,12 @@ public class GetDataServiceApiCallTrendResponseUnmarshaller {
 	public static GetDataServiceApiCallTrendResponse unmarshall(GetDataServiceApiCallTrendResponse getDataServiceApiCallTrendResponse, UnmarshallerContext _ctx) {
 		
 		getDataServiceApiCallTrendResponse.setRequestId(_ctx.stringValue("GetDataServiceApiCallTrendResponse.RequestId"));
-		getDataServiceApiCallTrendResponse.setSuccess(_ctx.booleanValue("GetDataServiceApiCallTrendResponse.Success"));
+		getDataServiceApiCallTrendResponse.setMessage(_ctx.stringValue("GetDataServiceApiCallTrendResponse.Message"));
 		getDataServiceApiCallTrendResponse.setHttpStatusCode(_ctx.integerValue("GetDataServiceApiCallTrendResponse.HttpStatusCode"));
 		getDataServiceApiCallTrendResponse.setCode(_ctx.stringValue("GetDataServiceApiCallTrendResponse.Code"));
-		getDataServiceApiCallTrendResponse.setMessage(_ctx.stringValue("GetDataServiceApiCallTrendResponse.Message"));
+		getDataServiceApiCallTrendResponse.setSuccess(_ctx.booleanValue("GetDataServiceApiCallTrendResponse.Success"));
 
 		Data data = new Data();
-
-		List<CallErrorTrend> callErrorTrendList = new ArrayList<CallErrorTrend>();
-		for (int i = 0; i < _ctx.lengthValue("GetDataServiceApiCallTrendResponse.Data.CallErrorTrendList.Length"); i++) {
-			CallErrorTrend callErrorTrend = new CallErrorTrend();
-			callErrorTrend.setMinute(_ctx.stringValue("GetDataServiceApiCallTrendResponse.Data.CallErrorTrendList["+ i +"].Minute"));
-			callErrorTrend.setCallCount(_ctx.longValue("GetDataServiceApiCallTrendResponse.Data.CallErrorTrendList["+ i +"].CallCount"));
-			callErrorTrend.setErrorCount(_ctx.longValue("GetDataServiceApiCallTrendResponse.Data.CallErrorTrendList["+ i +"].ErrorCount"));
-
-			callErrorTrendList.add(callErrorTrend);
-		}
-		data.setCallErrorTrendList(callErrorTrendList);
 
 		List<CallErrorImpactTrend> callErrorImpactTrendList = new ArrayList<CallErrorImpactTrend>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataServiceApiCallTrendResponse.Data.CallErrorImpactTrendList.Length"); i++) {
@@ -63,6 +52,17 @@ public class GetDataServiceApiCallTrendResponseUnmarshaller {
 			callErrorImpactTrendList.add(callErrorImpactTrend);
 		}
 		data.setCallErrorImpactTrendList(callErrorImpactTrendList);
+
+		List<CallErrorTrend> callErrorTrendList = new ArrayList<CallErrorTrend>();
+		for (int i = 0; i < _ctx.lengthValue("GetDataServiceApiCallTrendResponse.Data.CallErrorTrendList.Length"); i++) {
+			CallErrorTrend callErrorTrend = new CallErrorTrend();
+			callErrorTrend.setMinute(_ctx.stringValue("GetDataServiceApiCallTrendResponse.Data.CallErrorTrendList["+ i +"].Minute"));
+			callErrorTrend.setCallCount(_ctx.longValue("GetDataServiceApiCallTrendResponse.Data.CallErrorTrendList["+ i +"].CallCount"));
+			callErrorTrend.setErrorCount(_ctx.longValue("GetDataServiceApiCallTrendResponse.Data.CallErrorTrendList["+ i +"].ErrorCount"));
+
+			callErrorTrendList.add(callErrorTrend);
+		}
+		data.setCallErrorTrendList(callErrorTrendList);
 		getDataServiceApiCallTrendResponse.setData(data);
 	 
 	 	return getDataServiceApiCallTrendResponse;

@@ -28,10 +28,10 @@ public class ListSecurityIdentifyRecordsResponseUnmarshaller {
 	public static ListSecurityIdentifyRecordsResponse unmarshall(ListSecurityIdentifyRecordsResponse listSecurityIdentifyRecordsResponse, UnmarshallerContext _ctx) {
 		
 		listSecurityIdentifyRecordsResponse.setRequestId(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.RequestId"));
-		listSecurityIdentifyRecordsResponse.setSuccess(_ctx.booleanValue("ListSecurityIdentifyRecordsResponse.Success"));
+		listSecurityIdentifyRecordsResponse.setMessage(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.Message"));
 		listSecurityIdentifyRecordsResponse.setHttpStatusCode(_ctx.integerValue("ListSecurityIdentifyRecordsResponse.HttpStatusCode"));
 		listSecurityIdentifyRecordsResponse.setCode(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.Code"));
-		listSecurityIdentifyRecordsResponse.setMessage(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.Message"));
+		listSecurityIdentifyRecordsResponse.setSuccess(_ctx.booleanValue("ListSecurityIdentifyRecordsResponse.Success"));
 
 		PageResult pageResult = new PageResult();
 		pageResult.setTotalCount(_ctx.integerValue("ListSecurityIdentifyRecordsResponse.PageResult.TotalCount"));
@@ -39,35 +39,35 @@ public class ListSecurityIdentifyRecordsResponseUnmarshaller {
 		List<IdentifyRecord> identifyRecordList = new ArrayList<IdentifyRecord>();
 		for (int i = 0; i < _ctx.lengthValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList.Length"); i++) {
 			IdentifyRecord identifyRecord = new IdentifyRecord();
-			identifyRecord.setId(_ctx.longValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].Id"));
-			identifyRecord.setBizUnitId(_ctx.longValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].BizUnitId"));
-			identifyRecord.setBizUnitName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].BizUnitName"));
-			identifyRecord.setBizUnitDisplayName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].BizUnitDisplayName"));
-			identifyRecord.setProjectId(_ctx.longValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ProjectId"));
-			identifyRecord.setProjectName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ProjectName"));
-			identifyRecord.setProjectDisplayName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ProjectDisplayName"));
-			identifyRecord.setDatasourceId(_ctx.longValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].DatasourceId"));
-			identifyRecord.setDatasourceName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].DatasourceName"));
-			identifyRecord.setTableEnv(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].TableEnv"));
 			identifyRecord.setTableId(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].TableId"));
-			identifyRecord.setTableName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].TableName"));
-			identifyRecord.setTableDescription(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].TableDescription"));
-			identifyRecord.setTableType(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].TableType"));
-			identifyRecord.setFieldId(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].FieldId"));
-			identifyRecord.setFieldName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].FieldName"));
-			identifyRecord.setFieldDescription(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].FieldDescription"));
-			identifyRecord.setActualIdentifyRate(_ctx.doubleValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ActualIdentifyRate"));
-			identifyRecord.setClassifyId(_ctx.longValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ClassifyId"));
-			identifyRecord.setClassifyName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ClassifyName"));
-			identifyRecord.setClassifyAbbreviation(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ClassifyAbbreviation"));
-			identifyRecord.setClassifyStatus(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ClassifyStatus"));
-			identifyRecord.setLevelIndex(_ctx.longValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].LevelIndex"));
-			identifyRecord.setLevelName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].LevelName"));
 			identifyRecord.setLevelAbbreviation(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].LevelAbbreviation"));
+			identifyRecord.setDatasourceId(_ctx.longValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].DatasourceId"));
+			identifyRecord.setClassifyAbbreviation(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ClassifyAbbreviation"));
 			identifyRecord.setIsCustomIdentify(_ctx.booleanValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].IsCustomIdentify"));
-			identifyRecord.setIsLocked(_ctx.booleanValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].IsLocked"));
-			identifyRecord.setIsBetterMatch(_ctx.booleanValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].IsBetterMatch"));
+			identifyRecord.setProjectName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ProjectName"));
+			identifyRecord.setActualIdentifyRate(_ctx.doubleValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ActualIdentifyRate"));
+			identifyRecord.setTableDescription(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].TableDescription"));
+			identifyRecord.setBizUnitId(_ctx.longValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].BizUnitId"));
+			identifyRecord.setBizUnitDisplayName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].BizUnitDisplayName"));
+			identifyRecord.setClassifyId(_ctx.longValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ClassifyId"));
+			identifyRecord.setBizUnitName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].BizUnitName"));
+			identifyRecord.setClassifyStatus(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ClassifyStatus"));
+			identifyRecord.setFieldName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].FieldName"));
 			identifyRecord.setBizDate(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].BizDate"));
+			identifyRecord.setProjectDisplayName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ProjectDisplayName"));
+			identifyRecord.setDatasourceName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].DatasourceName"));
+			identifyRecord.setTableType(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].TableType"));
+			identifyRecord.setTableEnv(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].TableEnv"));
+			identifyRecord.setIsBetterMatch(_ctx.booleanValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].IsBetterMatch"));
+			identifyRecord.setProjectId(_ctx.longValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ProjectId"));
+			identifyRecord.setIsLocked(_ctx.booleanValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].IsLocked"));
+			identifyRecord.setFieldDescription(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].FieldDescription"));
+			identifyRecord.setTableName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].TableName"));
+			identifyRecord.setClassifyName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].ClassifyName"));
+			identifyRecord.setFieldId(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].FieldId"));
+			identifyRecord.setLevelName(_ctx.stringValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].LevelName"));
+			identifyRecord.setId(_ctx.longValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].Id"));
+			identifyRecord.setLevelIndex(_ctx.longValue("ListSecurityIdentifyRecordsResponse.PageResult.IdentifyRecordList["+ i +"].LevelIndex"));
 
 			identifyRecordList.add(identifyRecord);
 		}

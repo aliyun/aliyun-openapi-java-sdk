@@ -150,11 +150,11 @@ public class UpsertQualityWatchRequest extends RpcAcsRequest<UpsertQualityWatchR
 			@SerializedName("Description")
 			private String description;
 
-			@SerializedName("Id")
-			private String id;
-
 			@SerializedName("GranularityId")
 			private Long granularityId;
+
+			@SerializedName("Id")
+			private String id;
 
 			@SerializedName("Type")
 			private String type;
@@ -221,20 +221,20 @@ public class UpsertQualityWatchRequest extends RpcAcsRequest<UpsertQualityWatchR
 				this.description = description;
 			}
 
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
 			public Long getGranularityId() {
 				return this.granularityId;
 			}
 
 			public void setGranularityId(Long granularityId) {
 				this.granularityId = granularityId;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
 			}
 
 			public String getType() {

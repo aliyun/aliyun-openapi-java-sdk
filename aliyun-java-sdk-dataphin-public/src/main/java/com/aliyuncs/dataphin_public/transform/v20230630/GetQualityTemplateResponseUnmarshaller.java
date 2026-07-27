@@ -28,29 +28,29 @@ public class GetQualityTemplateResponseUnmarshaller {
 	public static GetQualityTemplateResponse unmarshall(GetQualityTemplateResponse getQualityTemplateResponse, UnmarshallerContext _ctx) {
 		
 		getQualityTemplateResponse.setRequestId(_ctx.stringValue("GetQualityTemplateResponse.RequestId"));
-		getQualityTemplateResponse.setSuccess(_ctx.booleanValue("GetQualityTemplateResponse.Success"));
+		getQualityTemplateResponse.setMessage(_ctx.stringValue("GetQualityTemplateResponse.Message"));
 		getQualityTemplateResponse.setHttpStatusCode(_ctx.integerValue("GetQualityTemplateResponse.HttpStatusCode"));
 		getQualityTemplateResponse.setCode(_ctx.stringValue("GetQualityTemplateResponse.Code"));
-		getQualityTemplateResponse.setMessage(_ctx.stringValue("GetQualityTemplateResponse.Message"));
+		getQualityTemplateResponse.setSuccess(_ctx.booleanValue("GetQualityTemplateResponse.Success"));
 
 		QualityTemplateInfo qualityTemplateInfo = new QualityTemplateInfo();
-		qualityTemplateInfo.setId(_ctx.longValue("GetQualityTemplateResponse.QualityTemplateInfo.Id"));
-		qualityTemplateInfo.setName(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.Name"));
-		qualityTemplateInfo.setType(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.Type"));
+		qualityTemplateInfo.setModifyTime(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.ModifyTime"));
 		qualityTemplateInfo.setTypeName(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.TypeName"));
-		qualityTemplateInfo.setDescription(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.Description"));
 		qualityTemplateInfo.setOwner(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.Owner"));
 		qualityTemplateInfo.setOwnerName(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.OwnerName"));
-		qualityTemplateInfo.setCatalog(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.Catalog"));
-		qualityTemplateInfo.setCatalogName(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.CatalogName"));
-		qualityTemplateInfo.setSupportAllDataSourceType(_ctx.booleanValue("GetQualityTemplateResponse.QualityTemplateInfo.SupportAllDataSourceType"));
-		qualityTemplateInfo.setIsSystemTemplate(_ctx.booleanValue("GetQualityTemplateResponse.QualityTemplateInfo.IsSystemTemplate"));
-		qualityTemplateInfo.setCreator(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.Creator"));
-		qualityTemplateInfo.setCreatorName(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.CreatorName"));
+		qualityTemplateInfo.setDescription(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.Description"));
 		qualityTemplateInfo.setCreateTime(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.CreateTime"));
-		qualityTemplateInfo.setModifyTime(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.ModifyTime"));
-		qualityTemplateInfo.setModifier(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.Modifier"));
 		qualityTemplateInfo.setModifierName(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.ModifierName"));
+		qualityTemplateInfo.setCreator(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.Creator"));
+		qualityTemplateInfo.setIsSystemTemplate(_ctx.booleanValue("GetQualityTemplateResponse.QualityTemplateInfo.IsSystemTemplate"));
+		qualityTemplateInfo.setCatalog(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.Catalog"));
+		qualityTemplateInfo.setName(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.Name"));
+		qualityTemplateInfo.setType(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.Type"));
+		qualityTemplateInfo.setSupportAllDataSourceType(_ctx.booleanValue("GetQualityTemplateResponse.QualityTemplateInfo.SupportAllDataSourceType"));
+		qualityTemplateInfo.setCatalogName(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.CatalogName"));
+		qualityTemplateInfo.setId(_ctx.longValue("GetQualityTemplateResponse.QualityTemplateInfo.Id"));
+		qualityTemplateInfo.setModifier(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.Modifier"));
+		qualityTemplateInfo.setCreatorName(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.CreatorName"));
 
 		List<String> supportDataSourceTypeList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityTemplateResponse.QualityTemplateInfo.SupportDataSourceTypeList.Length"); i++) {
@@ -62,8 +62,8 @@ public class GetQualityTemplateResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetQualityTemplateResponse.QualityTemplateInfo.FormPropertyList.Length"); i++) {
 			FormProperty formProperty = new FormProperty();
 			formProperty.setComponentType(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.FormPropertyList["+ i +"].ComponentType"));
-			formProperty.setName(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.FormPropertyList["+ i +"].Name"));
 			formProperty.setValue(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.FormPropertyList["+ i +"].Value"));
+			formProperty.setName(_ctx.stringValue("GetQualityTemplateResponse.QualityTemplateInfo.FormPropertyList["+ i +"].Name"));
 
 			formPropertyList.add(formProperty);
 		}

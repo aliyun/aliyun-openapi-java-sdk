@@ -28,10 +28,10 @@ public class ListDataServiceMyApiPermissionsResponseUnmarshaller {
 	public static ListDataServiceMyApiPermissionsResponse unmarshall(ListDataServiceMyApiPermissionsResponse listDataServiceMyApiPermissionsResponse, UnmarshallerContext _ctx) {
 		
 		listDataServiceMyApiPermissionsResponse.setRequestId(_ctx.stringValue("ListDataServiceMyApiPermissionsResponse.RequestId"));
-		listDataServiceMyApiPermissionsResponse.setSuccess(_ctx.booleanValue("ListDataServiceMyApiPermissionsResponse.Success"));
+		listDataServiceMyApiPermissionsResponse.setMessage(_ctx.stringValue("ListDataServiceMyApiPermissionsResponse.Message"));
 		listDataServiceMyApiPermissionsResponse.setHttpStatusCode(_ctx.integerValue("ListDataServiceMyApiPermissionsResponse.HttpStatusCode"));
 		listDataServiceMyApiPermissionsResponse.setCode(_ctx.stringValue("ListDataServiceMyApiPermissionsResponse.Code"));
-		listDataServiceMyApiPermissionsResponse.setMessage(_ctx.stringValue("ListDataServiceMyApiPermissionsResponse.Message"));
+		listDataServiceMyApiPermissionsResponse.setSuccess(_ctx.booleanValue("ListDataServiceMyApiPermissionsResponse.Success"));
 
 		PageResult pageResult = new PageResult();
 		pageResult.setTotalCount(_ctx.integerValue("ListDataServiceMyApiPermissionsResponse.PageResult.TotalCount"));

@@ -23,11 +23,11 @@ public class AssignQualityRuleOfAllRuleScopeSchedulesResponseUnmarshaller {
 	public static AssignQualityRuleOfAllRuleScopeSchedulesResponse unmarshall(AssignQualityRuleOfAllRuleScopeSchedulesResponse assignQualityRuleOfAllRuleScopeSchedulesResponse, UnmarshallerContext _ctx) {
 		
 		assignQualityRuleOfAllRuleScopeSchedulesResponse.setRequestId(_ctx.stringValue("AssignQualityRuleOfAllRuleScopeSchedulesResponse.RequestId"));
-		assignQualityRuleOfAllRuleScopeSchedulesResponse.setSuccess(_ctx.booleanValue("AssignQualityRuleOfAllRuleScopeSchedulesResponse.Success"));
-		assignQualityRuleOfAllRuleScopeSchedulesResponse.setHttpStatusCode(_ctx.integerValue("AssignQualityRuleOfAllRuleScopeSchedulesResponse.HttpStatusCode"));
-		assignQualityRuleOfAllRuleScopeSchedulesResponse.setCode(_ctx.stringValue("AssignQualityRuleOfAllRuleScopeSchedulesResponse.Code"));
 		assignQualityRuleOfAllRuleScopeSchedulesResponse.setMessage(_ctx.stringValue("AssignQualityRuleOfAllRuleScopeSchedulesResponse.Message"));
+		assignQualityRuleOfAllRuleScopeSchedulesResponse.setHttpStatusCode(_ctx.integerValue("AssignQualityRuleOfAllRuleScopeSchedulesResponse.HttpStatusCode"));
 		assignQualityRuleOfAllRuleScopeSchedulesResponse.setData(_ctx.booleanValue("AssignQualityRuleOfAllRuleScopeSchedulesResponse.Data"));
+		assignQualityRuleOfAllRuleScopeSchedulesResponse.setCode(_ctx.stringValue("AssignQualityRuleOfAllRuleScopeSchedulesResponse.Code"));
+		assignQualityRuleOfAllRuleScopeSchedulesResponse.setSuccess(_ctx.booleanValue("AssignQualityRuleOfAllRuleScopeSchedulesResponse.Success"));
 	 
 	 	return assignQualityRuleOfAllRuleScopeSchedulesResponse;
 	}

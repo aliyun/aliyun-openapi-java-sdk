@@ -78,11 +78,11 @@ public class AddTenantMembersBySourceUserRequest extends RpcAcsRequest<AddTenant
 			@SerializedName("SourceId")
 			private String sourceId;
 
-			@SerializedName("AccountName")
-			private String accountName;
-
 			@SerializedName("Mail")
 			private String mail;
+
+			@SerializedName("AccountName")
+			private String accountName;
 
 			@SerializedName("DisplayName")
 			private String displayName;
@@ -101,20 +101,20 @@ public class AddTenantMembersBySourceUserRequest extends RpcAcsRequest<AddTenant
 				this.sourceId = sourceId;
 			}
 
-			public String getAccountName() {
-				return this.accountName;
-			}
-
-			public void setAccountName(String accountName) {
-				this.accountName = accountName;
-			}
-
 			public String getMail() {
 				return this.mail;
 			}
 
 			public void setMail(String mail) {
 				this.mail = mail;
+			}
+
+			public String getAccountName() {
+				return this.accountName;
+			}
+
+			public void setAccountName(String accountName) {
+				this.accountName = accountName;
 			}
 
 			public String getDisplayName() {

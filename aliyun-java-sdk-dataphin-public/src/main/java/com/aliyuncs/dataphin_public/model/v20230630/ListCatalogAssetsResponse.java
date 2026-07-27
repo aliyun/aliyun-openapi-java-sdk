@@ -27,13 +27,13 @@ public class ListCatalogAssetsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -45,12 +45,12 @@ public class ListCatalogAssetsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListCatalogAssetsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -109,199 +109,63 @@ public class ListCatalogAssetsResponse extends AcsResponse {
 
 		public static class Asset {
 
-			private String guid;
-
-			private String assetType;
-
-			private Boolean isDeleted;
-
-			private String assetName;
-
-			private String assetDisplayName;
-
-			private String assetFullName;
-
-			private String maxSecurityLevel;
-
-			private String assetDescription;
-
-			private String assetFrom;
-
-			private Long bizUnitId;
-
-			private String bizUnitName;
-
-			private Long projectId;
-
-			private String projectName;
-
-			private Long datasourceId;
-
-			private String dataSourceName;
-
-			private String subType;
-
-			private String sumTableGuid;
-
 			private String sumTableName;
 
-			private String granularity;
-
-			private String dataCellId;
-
-			private String dataCellName;
-
-			private Long apiId;
+			private Long datasourceId;
 
 			private String apiGroupName;
 
 			private String apiRequestMethod;
 
-			private String apiCallMode;
+			private String dataCellName;
+
+			private String projectName;
+
+			private String sumTableGuid;
+
+			private Long chartCount;
+
+			private String assetDescription;
+
+			private String guid;
+
+			private String assetFrom;
+
+			private String granularity;
+
+			private String dataCellId;
+
+			private String maxSecurityLevel;
+
+			private Long bizUnitId;
+
+			private String bizUnitName;
+
+			private String assetFullName;
+
+			private Boolean isDeleted;
+
+			private String subType;
 
 			private String biCatalog;
 
-			private Long chartCount;
+			private Long projectId;
+
+			private String apiCallMode;
+
+			private String assetName;
+
+			private String assetType;
+
+			private String dataSourceName;
+
+			private String assetDisplayName;
+
+			private Long apiId;
 
 			private List<Directorie> directories;
 
 			private List<String> assetTags;
-
-			public String getGuid() {
-				return this.guid;
-			}
-
-			public void setGuid(String guid) {
-				this.guid = guid;
-			}
-
-			public String getAssetType() {
-				return this.assetType;
-			}
-
-			public void setAssetType(String assetType) {
-				this.assetType = assetType;
-			}
-
-			public Boolean getIsDeleted() {
-				return this.isDeleted;
-			}
-
-			public void setIsDeleted(Boolean isDeleted) {
-				this.isDeleted = isDeleted;
-			}
-
-			public String getAssetName() {
-				return this.assetName;
-			}
-
-			public void setAssetName(String assetName) {
-				this.assetName = assetName;
-			}
-
-			public String getAssetDisplayName() {
-				return this.assetDisplayName;
-			}
-
-			public void setAssetDisplayName(String assetDisplayName) {
-				this.assetDisplayName = assetDisplayName;
-			}
-
-			public String getAssetFullName() {
-				return this.assetFullName;
-			}
-
-			public void setAssetFullName(String assetFullName) {
-				this.assetFullName = assetFullName;
-			}
-
-			public String getMaxSecurityLevel() {
-				return this.maxSecurityLevel;
-			}
-
-			public void setMaxSecurityLevel(String maxSecurityLevel) {
-				this.maxSecurityLevel = maxSecurityLevel;
-			}
-
-			public String getAssetDescription() {
-				return this.assetDescription;
-			}
-
-			public void setAssetDescription(String assetDescription) {
-				this.assetDescription = assetDescription;
-			}
-
-			public String getAssetFrom() {
-				return this.assetFrom;
-			}
-
-			public void setAssetFrom(String assetFrom) {
-				this.assetFrom = assetFrom;
-			}
-
-			public Long getBizUnitId() {
-				return this.bizUnitId;
-			}
-
-			public void setBizUnitId(Long bizUnitId) {
-				this.bizUnitId = bizUnitId;
-			}
-
-			public String getBizUnitName() {
-				return this.bizUnitName;
-			}
-
-			public void setBizUnitName(String bizUnitName) {
-				this.bizUnitName = bizUnitName;
-			}
-
-			public Long getProjectId() {
-				return this.projectId;
-			}
-
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
-
-			public String getProjectName() {
-				return this.projectName;
-			}
-
-			public void setProjectName(String projectName) {
-				this.projectName = projectName;
-			}
-
-			public Long getDatasourceId() {
-				return this.datasourceId;
-			}
-
-			public void setDatasourceId(Long datasourceId) {
-				this.datasourceId = datasourceId;
-			}
-
-			public String getDataSourceName() {
-				return this.dataSourceName;
-			}
-
-			public void setDataSourceName(String dataSourceName) {
-				this.dataSourceName = dataSourceName;
-			}
-
-			public String getSubType() {
-				return this.subType;
-			}
-
-			public void setSubType(String subType) {
-				this.subType = subType;
-			}
-
-			public String getSumTableGuid() {
-				return this.sumTableGuid;
-			}
-
-			public void setSumTableGuid(String sumTableGuid) {
-				this.sumTableGuid = sumTableGuid;
-			}
 
 			public String getSumTableName() {
 				return this.sumTableName;
@@ -311,36 +175,12 @@ public class ListCatalogAssetsResponse extends AcsResponse {
 				this.sumTableName = sumTableName;
 			}
 
-			public String getGranularity() {
-				return this.granularity;
+			public Long getDatasourceId() {
+				return this.datasourceId;
 			}
 
-			public void setGranularity(String granularity) {
-				this.granularity = granularity;
-			}
-
-			public String getDataCellId() {
-				return this.dataCellId;
-			}
-
-			public void setDataCellId(String dataCellId) {
-				this.dataCellId = dataCellId;
-			}
-
-			public String getDataCellName() {
-				return this.dataCellName;
-			}
-
-			public void setDataCellName(String dataCellName) {
-				this.dataCellName = dataCellName;
-			}
-
-			public Long getApiId() {
-				return this.apiId;
-			}
-
-			public void setApiId(Long apiId) {
-				this.apiId = apiId;
+			public void setDatasourceId(Long datasourceId) {
+				this.datasourceId = datasourceId;
 			}
 
 			public String getApiGroupName() {
@@ -359,12 +199,124 @@ public class ListCatalogAssetsResponse extends AcsResponse {
 				this.apiRequestMethod = apiRequestMethod;
 			}
 
-			public String getApiCallMode() {
-				return this.apiCallMode;
+			public String getDataCellName() {
+				return this.dataCellName;
 			}
 
-			public void setApiCallMode(String apiCallMode) {
-				this.apiCallMode = apiCallMode;
+			public void setDataCellName(String dataCellName) {
+				this.dataCellName = dataCellName;
+			}
+
+			public String getProjectName() {
+				return this.projectName;
+			}
+
+			public void setProjectName(String projectName) {
+				this.projectName = projectName;
+			}
+
+			public String getSumTableGuid() {
+				return this.sumTableGuid;
+			}
+
+			public void setSumTableGuid(String sumTableGuid) {
+				this.sumTableGuid = sumTableGuid;
+			}
+
+			public Long getChartCount() {
+				return this.chartCount;
+			}
+
+			public void setChartCount(Long chartCount) {
+				this.chartCount = chartCount;
+			}
+
+			public String getAssetDescription() {
+				return this.assetDescription;
+			}
+
+			public void setAssetDescription(String assetDescription) {
+				this.assetDescription = assetDescription;
+			}
+
+			public String getGuid() {
+				return this.guid;
+			}
+
+			public void setGuid(String guid) {
+				this.guid = guid;
+			}
+
+			public String getAssetFrom() {
+				return this.assetFrom;
+			}
+
+			public void setAssetFrom(String assetFrom) {
+				this.assetFrom = assetFrom;
+			}
+
+			public String getGranularity() {
+				return this.granularity;
+			}
+
+			public void setGranularity(String granularity) {
+				this.granularity = granularity;
+			}
+
+			public String getDataCellId() {
+				return this.dataCellId;
+			}
+
+			public void setDataCellId(String dataCellId) {
+				this.dataCellId = dataCellId;
+			}
+
+			public String getMaxSecurityLevel() {
+				return this.maxSecurityLevel;
+			}
+
+			public void setMaxSecurityLevel(String maxSecurityLevel) {
+				this.maxSecurityLevel = maxSecurityLevel;
+			}
+
+			public Long getBizUnitId() {
+				return this.bizUnitId;
+			}
+
+			public void setBizUnitId(Long bizUnitId) {
+				this.bizUnitId = bizUnitId;
+			}
+
+			public String getBizUnitName() {
+				return this.bizUnitName;
+			}
+
+			public void setBizUnitName(String bizUnitName) {
+				this.bizUnitName = bizUnitName;
+			}
+
+			public String getAssetFullName() {
+				return this.assetFullName;
+			}
+
+			public void setAssetFullName(String assetFullName) {
+				this.assetFullName = assetFullName;
+			}
+
+			public Boolean getIsDeleted() {
+				return this.isDeleted;
+			}
+
+			public void setIsDeleted(Boolean isDeleted) {
+				this.isDeleted = isDeleted;
+			}
+
+			public String getSubType() {
+				return this.subType;
+			}
+
+			public void setSubType(String subType) {
+				this.subType = subType;
 			}
 
 			public String getBiCatalog() {
@@ -375,12 +327,60 @@ public class ListCatalogAssetsResponse extends AcsResponse {
 				this.biCatalog = biCatalog;
 			}
 
-			public Long getChartCount() {
-				return this.chartCount;
+			public Long getProjectId() {
+				return this.projectId;
 			}
 
-			public void setChartCount(Long chartCount) {
-				this.chartCount = chartCount;
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
+			}
+
+			public String getApiCallMode() {
+				return this.apiCallMode;
+			}
+
+			public void setApiCallMode(String apiCallMode) {
+				this.apiCallMode = apiCallMode;
+			}
+
+			public String getAssetName() {
+				return this.assetName;
+			}
+
+			public void setAssetName(String assetName) {
+				this.assetName = assetName;
+			}
+
+			public String getAssetType() {
+				return this.assetType;
+			}
+
+			public void setAssetType(String assetType) {
+				this.assetType = assetType;
+			}
+
+			public String getDataSourceName() {
+				return this.dataSourceName;
+			}
+
+			public void setDataSourceName(String dataSourceName) {
+				this.dataSourceName = dataSourceName;
+			}
+
+			public String getAssetDisplayName() {
+				return this.assetDisplayName;
+			}
+
+			public void setAssetDisplayName(String assetDisplayName) {
+				this.assetDisplayName = assetDisplayName;
+			}
+
+			public Long getApiId() {
+				return this.apiId;
+			}
+
+			public void setApiId(Long apiId) {
+				this.apiId = apiId;
 			}
 
 			public List<Directorie> getDirectories() {
@@ -401,29 +401,13 @@ public class ListCatalogAssetsResponse extends AcsResponse {
 
 			public static class Directorie {
 
-				private Long topicId;
-
-				private String topicName;
-
 				private Long directoryId;
+
+				private Long topicId;
 
 				private String directoryName;
 
-				public Long getTopicId() {
-					return this.topicId;
-				}
-
-				public void setTopicId(Long topicId) {
-					this.topicId = topicId;
-				}
-
-				public String getTopicName() {
-					return this.topicName;
-				}
-
-				public void setTopicName(String topicName) {
-					this.topicName = topicName;
-				}
+				private String topicName;
 
 				public Long getDirectoryId() {
 					return this.directoryId;
@@ -433,12 +417,28 @@ public class ListCatalogAssetsResponse extends AcsResponse {
 					this.directoryId = directoryId;
 				}
 
+				public Long getTopicId() {
+					return this.topicId;
+				}
+
+				public void setTopicId(Long topicId) {
+					this.topicId = topicId;
+				}
+
 				public String getDirectoryName() {
 					return this.directoryName;
 				}
 
 				public void setDirectoryName(String directoryName) {
 					this.directoryName = directoryName;
+				}
+
+				public String getTopicName() {
+					return this.topicName;
+				}
+
+				public void setTopicName(String topicName) {
+					this.topicName = topicName;
 				}
 			}
 		}

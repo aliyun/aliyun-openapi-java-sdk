@@ -27,17 +27,17 @@ public class GetMyRolesResponseUnmarshaller {
 	public static GetMyRolesResponse unmarshall(GetMyRolesResponse getMyRolesResponse, UnmarshallerContext _ctx) {
 		
 		getMyRolesResponse.setRequestId(_ctx.stringValue("GetMyRolesResponse.RequestId"));
-		getMyRolesResponse.setSuccess(_ctx.booleanValue("GetMyRolesResponse.Success"));
+		getMyRolesResponse.setMessage(_ctx.stringValue("GetMyRolesResponse.Message"));
 		getMyRolesResponse.setHttpStatusCode(_ctx.integerValue("GetMyRolesResponse.HttpStatusCode"));
 		getMyRolesResponse.setCode(_ctx.stringValue("GetMyRolesResponse.Code"));
-		getMyRolesResponse.setMessage(_ctx.stringValue("GetMyRolesResponse.Message"));
+		getMyRolesResponse.setSuccess(_ctx.booleanValue("GetMyRolesResponse.Success"));
 
 		List<Role> roleList = new ArrayList<Role>();
 		for (int i = 0; i < _ctx.lengthValue("GetMyRolesResponse.RoleList.Length"); i++) {
 			Role role = new Role();
+			role.setDescription(_ctx.stringValue("GetMyRolesResponse.RoleList["+ i +"].Description"));
 			role.setId(_ctx.longValue("GetMyRolesResponse.RoleList["+ i +"].Id"));
 			role.setName(_ctx.stringValue("GetMyRolesResponse.RoleList["+ i +"].Name"));
-			role.setDescription(_ctx.stringValue("GetMyRolesResponse.RoleList["+ i +"].Description"));
 
 			roleList.add(role);
 		}

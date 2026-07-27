@@ -26,13 +26,13 @@ public class GetPhysicalNodeContentResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -44,12 +44,12 @@ public class GetPhysicalNodeContentResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class GetPhysicalNodeContentResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -86,19 +86,11 @@ public class GetPhysicalNodeContentResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String nodeId;
-
 		private String nodeName;
 
+		private String nodeId;
+
 		private String codeContent;
-
-		public String getNodeId() {
-			return this.nodeId;
-		}
-
-		public void setNodeId(String nodeId) {
-			this.nodeId = nodeId;
-		}
 
 		public String getNodeName() {
 			return this.nodeName;
@@ -106,6 +98,14 @@ public class GetPhysicalNodeContentResponse extends AcsResponse {
 
 		public void setNodeName(String nodeName) {
 			this.nodeName = nodeName;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
 		}
 
 		public String getCodeContent() {

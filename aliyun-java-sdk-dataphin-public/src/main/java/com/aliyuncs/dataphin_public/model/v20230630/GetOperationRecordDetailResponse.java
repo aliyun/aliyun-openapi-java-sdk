@@ -27,13 +27,13 @@ public class GetOperationRecordDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private OperationRecordDetailResponse operationRecordDetailResponse;
 
@@ -45,12 +45,12 @@ public class GetOperationRecordDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetOperationRecordDetailResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public OperationRecordDetailResponse getOperationRecordDetailResponse() {
@@ -129,30 +129,22 @@ public class GetOperationRecordDetailResponse extends AcsResponse {
 
 		public static class ResultItem {
 
-			private String result;
-
-			private Integer index;
+			private String taskId;
 
 			private String title;
 
+			private Integer index;
+
+			private String result;
+
 			private String sql;
 
-			private String taskId;
-
-			public String getResult() {
-				return this.result;
+			public String getTaskId() {
+				return this.taskId;
 			}
 
-			public void setResult(String result) {
-				this.result = result;
-			}
-
-			public Integer getIndex() {
-				return this.index;
-			}
-
-			public void setIndex(Integer index) {
-				this.index = index;
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
 			}
 
 			public String getTitle() {
@@ -163,20 +155,28 @@ public class GetOperationRecordDetailResponse extends AcsResponse {
 				this.title = title;
 			}
 
+			public Integer getIndex() {
+				return this.index;
+			}
+
+			public void setIndex(Integer index) {
+				this.index = index;
+			}
+
+			public String getResult() {
+				return this.result;
+			}
+
+			public void setResult(String result) {
+				this.result = result;
+			}
+
 			public String getSql() {
 				return this.sql;
 			}
 
 			public void setSql(String sql) {
 				this.sql = sql;
-			}
-
-			public String getTaskId() {
-				return this.taskId;
-			}
-
-			public void setTaskId(String taskId) {
-				this.taskId = taskId;
 			}
 		}
 	}

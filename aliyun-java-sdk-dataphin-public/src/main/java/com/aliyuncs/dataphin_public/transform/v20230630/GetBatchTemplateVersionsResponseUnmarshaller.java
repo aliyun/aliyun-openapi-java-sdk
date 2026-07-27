@@ -28,32 +28,32 @@ public class GetBatchTemplateVersionsResponseUnmarshaller {
 	public static GetBatchTemplateVersionsResponse unmarshall(GetBatchTemplateVersionsResponse getBatchTemplateVersionsResponse, UnmarshallerContext _ctx) {
 		
 		getBatchTemplateVersionsResponse.setRequestId(_ctx.stringValue("GetBatchTemplateVersionsResponse.RequestId"));
-		getBatchTemplateVersionsResponse.setSuccess(_ctx.booleanValue("GetBatchTemplateVersionsResponse.Success"));
+		getBatchTemplateVersionsResponse.setMessage(_ctx.stringValue("GetBatchTemplateVersionsResponse.Message"));
 		getBatchTemplateVersionsResponse.setHttpStatusCode(_ctx.integerValue("GetBatchTemplateVersionsResponse.HttpStatusCode"));
 		getBatchTemplateVersionsResponse.setCode(_ctx.stringValue("GetBatchTemplateVersionsResponse.Code"));
-		getBatchTemplateVersionsResponse.setMessage(_ctx.stringValue("GetBatchTemplateVersionsResponse.Message"));
+		getBatchTemplateVersionsResponse.setSuccess(_ctx.booleanValue("GetBatchTemplateVersionsResponse.Success"));
 
 		Data data = new Data();
 
 		List<TemplateVersion> templateVersionList = new ArrayList<TemplateVersion>();
 		for (int i = 0; i < _ctx.lengthValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList.Length"); i++) {
 			TemplateVersion templateVersion = new TemplateVersion();
-			templateVersion.setId(_ctx.longValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Id"));
-			templateVersion.setProjectId(_ctx.longValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].ProjectId"));
-			templateVersion.setName(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Name"));
-			templateVersion.setOperatorType(_ctx.integerValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].OperatorType"));
-			templateVersion.setEngine(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Engine"));
-			templateVersion.setContent(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Content"));
-			templateVersion.setVersion(_ctx.longValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Version"));
 			templateVersion.setStatus(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Status"));
-			templateVersion.setDescription(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Description"));
-			templateVersion.setOwner(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Owner"));
-			templateVersion.setOwnerId(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].OwnerId"));
 			templateVersion.setComment(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Comment"));
-			templateVersion.setModifier(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Modifier"));
-			templateVersion.setModifierId(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].ModifierId"));
-			templateVersion.setGmtCreate(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].GmtCreate"));
+			templateVersion.setOwner(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Owner"));
+			templateVersion.setDescription(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Description"));
+			templateVersion.setProjectId(_ctx.longValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].ProjectId"));
 			templateVersion.setGmtModified(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].GmtModified"));
+			templateVersion.setOperatorType(_ctx.integerValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].OperatorType"));
+			templateVersion.setName(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Name"));
+			templateVersion.setGmtCreate(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].GmtCreate"));
+			templateVersion.setOwnerId(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].OwnerId"));
+			templateVersion.setVersion(_ctx.longValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Version"));
+			templateVersion.setContent(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Content"));
+			templateVersion.setId(_ctx.longValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Id"));
+			templateVersion.setModifier(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Modifier"));
+			templateVersion.setEngine(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].Engine"));
+			templateVersion.setModifierId(_ctx.stringValue("GetBatchTemplateVersionsResponse.Data.TemplateVersionList["+ i +"].ModifierId"));
 
 			templateVersionList.add(templateVersion);
 		}

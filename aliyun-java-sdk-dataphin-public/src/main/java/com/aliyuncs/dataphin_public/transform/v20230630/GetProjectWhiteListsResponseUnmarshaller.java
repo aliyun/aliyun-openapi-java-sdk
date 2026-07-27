@@ -27,10 +27,10 @@ public class GetProjectWhiteListsResponseUnmarshaller {
 	public static GetProjectWhiteListsResponse unmarshall(GetProjectWhiteListsResponse getProjectWhiteListsResponse, UnmarshallerContext _ctx) {
 		
 		getProjectWhiteListsResponse.setRequestId(_ctx.stringValue("GetProjectWhiteListsResponse.RequestId"));
-		getProjectWhiteListsResponse.setSuccess(_ctx.booleanValue("GetProjectWhiteListsResponse.Success"));
+		getProjectWhiteListsResponse.setMessage(_ctx.stringValue("GetProjectWhiteListsResponse.Message"));
 		getProjectWhiteListsResponse.setHttpStatusCode(_ctx.integerValue("GetProjectWhiteListsResponse.HttpStatusCode"));
 		getProjectWhiteListsResponse.setCode(_ctx.stringValue("GetProjectWhiteListsResponse.Code"));
-		getProjectWhiteListsResponse.setMessage(_ctx.stringValue("GetProjectWhiteListsResponse.Message"));
+		getProjectWhiteListsResponse.setSuccess(_ctx.booleanValue("GetProjectWhiteListsResponse.Success"));
 
 		List<WhiteList> whiteLists = new ArrayList<WhiteList>();
 		for (int i = 0; i < _ctx.lengthValue("GetProjectWhiteListsResponse.WhiteLists.Length"); i++) {

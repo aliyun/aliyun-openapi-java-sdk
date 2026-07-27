@@ -27,13 +27,13 @@ public class GetTableLineagesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<TableLineage> tableLineageList;
 
@@ -45,12 +45,12 @@ public class GetTableLineagesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetTableLineagesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<TableLineage> getTableLineageList() {
@@ -87,17 +87,35 @@ public class GetTableLineagesResponse extends AcsResponse {
 
 	public static class TableLineage {
 
-		private String nodeId;
+		private Long outputProjectId;
 
-		private String nodeEnv;
+		private Long inputProjectId;
 
 		private String inputTableEnv;
 
-		private String inputTableGuid;
+		private String outputTableName;
+
+		private Boolean inputTableDeleted;
+
+		private String outputTableGuid;
+
+		private String nodeEnv;
+
+		private Long outputBizUnitId;
+
+		private Boolean outputTableDeleted;
+
+		private String outputTableEnv;
 
 		private String inputTableName;
 
-		private Long inputProjectId;
+		private String nodeId;
+
+		private Long outputDataSourceId;
+
+		private String outputDataSourceType;
+
+		private String inputTableGuid;
 
 		private Long inputBizUnitId;
 
@@ -105,38 +123,20 @@ public class GetTableLineagesResponse extends AcsResponse {
 
 		private String inputDataSourceType;
 
-		private Boolean inputTableDeleted;
-
-		private String outputTableEnv;
-
-		private String outputTableGuid;
-
-		private String outputTableName;
-
-		private Long outputProjectId;
-
-		private Long outputBizUnitId;
-
-		private Long outputDataSourceId;
-
-		private String outputDataSourceType;
-
-		private Boolean outputTableDeleted;
-
-		public String getNodeId() {
-			return this.nodeId;
+		public Long getOutputProjectId() {
+			return this.outputProjectId;
 		}
 
-		public void setNodeId(String nodeId) {
-			this.nodeId = nodeId;
+		public void setOutputProjectId(Long outputProjectId) {
+			this.outputProjectId = outputProjectId;
 		}
 
-		public String getNodeEnv() {
-			return this.nodeEnv;
+		public Long getInputProjectId() {
+			return this.inputProjectId;
 		}
 
-		public void setNodeEnv(String nodeEnv) {
-			this.nodeEnv = nodeEnv;
+		public void setInputProjectId(Long inputProjectId) {
+			this.inputProjectId = inputProjectId;
 		}
 
 		public String getInputTableEnv() {
@@ -147,12 +147,60 @@ public class GetTableLineagesResponse extends AcsResponse {
 			this.inputTableEnv = inputTableEnv;
 		}
 
-		public String getInputTableGuid() {
-			return this.inputTableGuid;
+		public String getOutputTableName() {
+			return this.outputTableName;
 		}
 
-		public void setInputTableGuid(String inputTableGuid) {
-			this.inputTableGuid = inputTableGuid;
+		public void setOutputTableName(String outputTableName) {
+			this.outputTableName = outputTableName;
+		}
+
+		public Boolean getInputTableDeleted() {
+			return this.inputTableDeleted;
+		}
+
+		public void setInputTableDeleted(Boolean inputTableDeleted) {
+			this.inputTableDeleted = inputTableDeleted;
+		}
+
+		public String getOutputTableGuid() {
+			return this.outputTableGuid;
+		}
+
+		public void setOutputTableGuid(String outputTableGuid) {
+			this.outputTableGuid = outputTableGuid;
+		}
+
+		public String getNodeEnv() {
+			return this.nodeEnv;
+		}
+
+		public void setNodeEnv(String nodeEnv) {
+			this.nodeEnv = nodeEnv;
+		}
+
+		public Long getOutputBizUnitId() {
+			return this.outputBizUnitId;
+		}
+
+		public void setOutputBizUnitId(Long outputBizUnitId) {
+			this.outputBizUnitId = outputBizUnitId;
+		}
+
+		public Boolean getOutputTableDeleted() {
+			return this.outputTableDeleted;
+		}
+
+		public void setOutputTableDeleted(Boolean outputTableDeleted) {
+			this.outputTableDeleted = outputTableDeleted;
+		}
+
+		public String getOutputTableEnv() {
+			return this.outputTableEnv;
+		}
+
+		public void setOutputTableEnv(String outputTableEnv) {
+			this.outputTableEnv = outputTableEnv;
 		}
 
 		public String getInputTableName() {
@@ -163,12 +211,36 @@ public class GetTableLineagesResponse extends AcsResponse {
 			this.inputTableName = inputTableName;
 		}
 
-		public Long getInputProjectId() {
-			return this.inputProjectId;
+		public String getNodeId() {
+			return this.nodeId;
 		}
 
-		public void setInputProjectId(Long inputProjectId) {
-			this.inputProjectId = inputProjectId;
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
+		}
+
+		public Long getOutputDataSourceId() {
+			return this.outputDataSourceId;
+		}
+
+		public void setOutputDataSourceId(Long outputDataSourceId) {
+			this.outputDataSourceId = outputDataSourceId;
+		}
+
+		public String getOutputDataSourceType() {
+			return this.outputDataSourceType;
+		}
+
+		public void setOutputDataSourceType(String outputDataSourceType) {
+			this.outputDataSourceType = outputDataSourceType;
+		}
+
+		public String getInputTableGuid() {
+			return this.inputTableGuid;
+		}
+
+		public void setInputTableGuid(String inputTableGuid) {
+			this.inputTableGuid = inputTableGuid;
 		}
 
 		public Long getInputBizUnitId() {
@@ -193,78 +265,6 @@ public class GetTableLineagesResponse extends AcsResponse {
 
 		public void setInputDataSourceType(String inputDataSourceType) {
 			this.inputDataSourceType = inputDataSourceType;
-		}
-
-		public Boolean getInputTableDeleted() {
-			return this.inputTableDeleted;
-		}
-
-		public void setInputTableDeleted(Boolean inputTableDeleted) {
-			this.inputTableDeleted = inputTableDeleted;
-		}
-
-		public String getOutputTableEnv() {
-			return this.outputTableEnv;
-		}
-
-		public void setOutputTableEnv(String outputTableEnv) {
-			this.outputTableEnv = outputTableEnv;
-		}
-
-		public String getOutputTableGuid() {
-			return this.outputTableGuid;
-		}
-
-		public void setOutputTableGuid(String outputTableGuid) {
-			this.outputTableGuid = outputTableGuid;
-		}
-
-		public String getOutputTableName() {
-			return this.outputTableName;
-		}
-
-		public void setOutputTableName(String outputTableName) {
-			this.outputTableName = outputTableName;
-		}
-
-		public Long getOutputProjectId() {
-			return this.outputProjectId;
-		}
-
-		public void setOutputProjectId(Long outputProjectId) {
-			this.outputProjectId = outputProjectId;
-		}
-
-		public Long getOutputBizUnitId() {
-			return this.outputBizUnitId;
-		}
-
-		public void setOutputBizUnitId(Long outputBizUnitId) {
-			this.outputBizUnitId = outputBizUnitId;
-		}
-
-		public Long getOutputDataSourceId() {
-			return this.outputDataSourceId;
-		}
-
-		public void setOutputDataSourceId(Long outputDataSourceId) {
-			this.outputDataSourceId = outputDataSourceId;
-		}
-
-		public String getOutputDataSourceType() {
-			return this.outputDataSourceType;
-		}
-
-		public void setOutputDataSourceType(String outputDataSourceType) {
-			this.outputDataSourceType = outputDataSourceType;
-		}
-
-		public Boolean getOutputTableDeleted() {
-			return this.outputTableDeleted;
-		}
-
-		public void setOutputTableDeleted(Boolean outputTableDeleted) {
-			this.outputTableDeleted = outputTableDeleted;
 		}
 	}
 

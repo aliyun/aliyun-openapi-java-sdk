@@ -92,11 +92,11 @@ public class ListDatasetsRequest extends RpcAcsRequest<ListDatasetsResponse> {
 		@SerializedName("StorageType")
 		private String storageType;
 
-		@SerializedName("ContentType")
-		private String contentType;
-
 		@SerializedName("DataUnit")
 		private String dataUnit;
+
+		@SerializedName("ContentType")
+		private String contentType;
 
 		public String getOwner() {
 			return this.owner;
@@ -178,20 +178,20 @@ public class ListDatasetsRequest extends RpcAcsRequest<ListDatasetsResponse> {
 			this.storageType = storageType;
 		}
 
-		public String getContentType() {
-			return this.contentType;
-		}
-
-		public void setContentType(String contentType) {
-			this.contentType = contentType;
-		}
-
 		public String getDataUnit() {
 			return this.dataUnit;
 		}
 
 		public void setDataUnit(String dataUnit) {
 			this.dataUnit = dataUnit;
+		}
+
+		public String getContentType() {
+			return this.contentType;
+		}
+
+		public void setContentType(String contentType) {
+			this.contentType = contentType;
 		}
 	}
 

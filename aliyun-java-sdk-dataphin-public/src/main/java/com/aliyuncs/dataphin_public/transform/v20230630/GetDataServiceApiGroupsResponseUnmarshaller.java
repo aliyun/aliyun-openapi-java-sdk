@@ -27,10 +27,10 @@ public class GetDataServiceApiGroupsResponseUnmarshaller {
 	public static GetDataServiceApiGroupsResponse unmarshall(GetDataServiceApiGroupsResponse getDataServiceApiGroupsResponse, UnmarshallerContext _ctx) {
 		
 		getDataServiceApiGroupsResponse.setRequestId(_ctx.stringValue("GetDataServiceApiGroupsResponse.RequestId"));
-		getDataServiceApiGroupsResponse.setSuccess(_ctx.booleanValue("GetDataServiceApiGroupsResponse.Success"));
+		getDataServiceApiGroupsResponse.setMessage(_ctx.stringValue("GetDataServiceApiGroupsResponse.Message"));
 		getDataServiceApiGroupsResponse.setHttpStatusCode(_ctx.integerValue("GetDataServiceApiGroupsResponse.HttpStatusCode"));
 		getDataServiceApiGroupsResponse.setCode(_ctx.stringValue("GetDataServiceApiGroupsResponse.Code"));
-		getDataServiceApiGroupsResponse.setMessage(_ctx.stringValue("GetDataServiceApiGroupsResponse.Message"));
+		getDataServiceApiGroupsResponse.setSuccess(_ctx.booleanValue("GetDataServiceApiGroupsResponse.Success"));
 
 		List<ApiGroup> apiGroupList = new ArrayList<ApiGroup>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataServiceApiGroupsResponse.ApiGroupList.Length"); i++) {

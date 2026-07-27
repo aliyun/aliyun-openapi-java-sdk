@@ -28,10 +28,10 @@ public class ListBizEntitiesResponseUnmarshaller {
 	public static ListBizEntitiesResponse unmarshall(ListBizEntitiesResponse listBizEntitiesResponse, UnmarshallerContext _ctx) {
 		
 		listBizEntitiesResponse.setRequestId(_ctx.stringValue("ListBizEntitiesResponse.RequestId"));
-		listBizEntitiesResponse.setSuccess(_ctx.booleanValue("ListBizEntitiesResponse.Success"));
+		listBizEntitiesResponse.setMessage(_ctx.stringValue("ListBizEntitiesResponse.Message"));
 		listBizEntitiesResponse.setHttpStatusCode(_ctx.integerValue("ListBizEntitiesResponse.HttpStatusCode"));
 		listBizEntitiesResponse.setCode(_ctx.stringValue("ListBizEntitiesResponse.Code"));
-		listBizEntitiesResponse.setMessage(_ctx.stringValue("ListBizEntitiesResponse.Message"));
+		listBizEntitiesResponse.setSuccess(_ctx.booleanValue("ListBizEntitiesResponse.Success"));
 
 		PageResult pageResult = new PageResult();
 		pageResult.setTotalCount(_ctx.integerValue("ListBizEntitiesResponse.PageResult.TotalCount"));
@@ -39,37 +39,25 @@ public class ListBizEntitiesResponseUnmarshaller {
 		List<BizEntityInfo> bizEntityList = new ArrayList<BizEntityInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListBizEntitiesResponse.PageResult.BizEntityList.Length"); i++) {
 			BizEntityInfo bizEntityInfo = new BizEntityInfo();
-			bizEntityInfo.setId(_ctx.longValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].Id"));
-			bizEntityInfo.setName(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].Name"));
-			bizEntityInfo.setDisplayName(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].DisplayName"));
-			bizEntityInfo.setDescription(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].Description"));
-			bizEntityInfo.setOwnerUserId(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].OwnerUserId"));
+			bizEntityInfo.setStatus(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].Status"));
 			bizEntityInfo.setOwnerName(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].OwnerName"));
-			bizEntityInfo.setType(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].Type"));
+			bizEntityInfo.setLastModifier(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].LastModifier"));
+			bizEntityInfo.setDescription(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].Description"));
 			bizEntityInfo.setSubType(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].SubType"));
+			bizEntityInfo.setGmtModified(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].GmtModified"));
+			bizEntityInfo.setOnlineStatus(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].OnlineStatus"));
+			bizEntityInfo.setLevelSubBizObject(_ctx.booleanValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].LevelSubBizObject"));
+			bizEntityInfo.setLastModifierName(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].LastModifierName"));
+			bizEntityInfo.setName(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].Name"));
 			bizEntityInfo.setDataDomainId(_ctx.longValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].DataDomainId"));
 			bizEntityInfo.setBizUnitId(_ctx.longValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].BizUnitId"));
+			bizEntityInfo.setOwnerUserId(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].OwnerUserId"));
+			bizEntityInfo.setType(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].Type"));
 			bizEntityInfo.setGmtCreate(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].GmtCreate"));
-			bizEntityInfo.setGmtModified(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].GmtModified"));
-			bizEntityInfo.setLastModifier(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].LastModifier"));
-			bizEntityInfo.setLastModifierName(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].LastModifierName"));
-			bizEntityInfo.setOnlineStatus(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].OnlineStatus"));
-			bizEntityInfo.setStatus(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].Status"));
 			bizEntityInfo.setRefTableCount(_ctx.integerValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].RefTableCount"));
 			bizEntityInfo.setHasChildBizEntity(_ctx.booleanValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].HasChildBizEntity"));
-			bizEntityInfo.setLevelSubBizObject(_ctx.booleanValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].LevelSubBizObject"));
-
-			List<Long> refBizEntityIdList = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].RefBizEntityIdList.Length"); j++) {
-				refBizEntityIdList.add(_ctx.longValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].RefBizEntityIdList["+ j +"]"));
-			}
-			bizEntityInfo.setRefBizEntityIdList(refBizEntityIdList);
-
-			List<Long> belongToBizEntityIdList = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].BelongToBizEntityIdList.Length"); j++) {
-				belongToBizEntityIdList.add(_ctx.longValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].BelongToBizEntityIdList["+ j +"]"));
-			}
-			bizEntityInfo.setBelongToBizEntityIdList(belongToBizEntityIdList);
+			bizEntityInfo.setDisplayName(_ctx.stringValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].DisplayName"));
+			bizEntityInfo.setId(_ctx.longValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].Id"));
 
 			List<Long> childBizEntityIdList = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].ChildBizEntityIdList.Length"); j++) {
@@ -77,11 +65,23 @@ public class ListBizEntitiesResponseUnmarshaller {
 			}
 			bizEntityInfo.setChildBizEntityIdList(childBizEntityIdList);
 
+			List<Long> refBizEntityIdList = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].RefBizEntityIdList.Length"); j++) {
+				refBizEntityIdList.add(_ctx.longValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].RefBizEntityIdList["+ j +"]"));
+			}
+			bizEntityInfo.setRefBizEntityIdList(refBizEntityIdList);
+
 			List<Long> suffixBizEntityIdList = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].SuffixBizEntityIdList.Length"); j++) {
 				suffixBizEntityIdList.add(_ctx.longValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].SuffixBizEntityIdList["+ j +"]"));
 			}
 			bizEntityInfo.setSuffixBizEntityIdList(suffixBizEntityIdList);
+
+			List<Long> belongToBizEntityIdList = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].BelongToBizEntityIdList.Length"); j++) {
+				belongToBizEntityIdList.add(_ctx.longValue("ListBizEntitiesResponse.PageResult.BizEntityList["+ i +"].BelongToBizEntityIdList["+ j +"]"));
+			}
+			bizEntityInfo.setBelongToBizEntityIdList(belongToBizEntityIdList);
 
 			bizEntityList.add(bizEntityInfo);
 		}

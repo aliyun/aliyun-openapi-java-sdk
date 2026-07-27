@@ -27,13 +27,13 @@ public class ListNodeDownStreamResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<NodeInfo> nodeInfoList;
 
@@ -45,12 +45,12 @@ public class ListNodeDownStreamResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListNodeDownStreamResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<NodeInfo> getNodeInfoList() {
@@ -87,31 +87,15 @@ public class ListNodeDownStreamResponse extends AcsResponse {
 
 	public static class NodeInfo {
 
-		private String id;
-
-		private String name;
-
 		private String type;
+
+		private String id;
 
 		private Integer depth;
 
+		private String name;
+
 		private List<String> fieldIdList;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getType() {
 			return this.type;
@@ -121,12 +105,28 @@ public class ListNodeDownStreamResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
 		public Integer getDepth() {
 			return this.depth;
 		}
 
 		public void setDepth(Integer depth) {
 			this.depth = depth;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<String> getFieldIdList() {

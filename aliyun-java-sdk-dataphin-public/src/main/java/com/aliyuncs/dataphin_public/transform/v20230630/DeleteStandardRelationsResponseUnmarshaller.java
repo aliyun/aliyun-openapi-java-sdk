@@ -27,10 +27,10 @@ public class DeleteStandardRelationsResponseUnmarshaller {
 	public static DeleteStandardRelationsResponse unmarshall(DeleteStandardRelationsResponse deleteStandardRelationsResponse, UnmarshallerContext _ctx) {
 		
 		deleteStandardRelationsResponse.setRequestId(_ctx.stringValue("DeleteStandardRelationsResponse.RequestId"));
-		deleteStandardRelationsResponse.setSuccess(_ctx.booleanValue("DeleteStandardRelationsResponse.Success"));
+		deleteStandardRelationsResponse.setMessage(_ctx.stringValue("DeleteStandardRelationsResponse.Message"));
 		deleteStandardRelationsResponse.setHttpStatusCode(_ctx.integerValue("DeleteStandardRelationsResponse.HttpStatusCode"));
 		deleteStandardRelationsResponse.setCode(_ctx.stringValue("DeleteStandardRelationsResponse.Code"));
-		deleteStandardRelationsResponse.setMessage(_ctx.stringValue("DeleteStandardRelationsResponse.Message"));
+		deleteStandardRelationsResponse.setSuccess(_ctx.booleanValue("DeleteStandardRelationsResponse.Success"));
 
 		Data data = new Data();
 		data.setSuccessCount(_ctx.integerValue("DeleteStandardRelationsResponse.Data.SuccessCount"));

@@ -23,10 +23,10 @@ public class ApplyDataServiceApiResponseUnmarshaller {
 	public static ApplyDataServiceApiResponse unmarshall(ApplyDataServiceApiResponse applyDataServiceApiResponse, UnmarshallerContext _ctx) {
 		
 		applyDataServiceApiResponse.setRequestId(_ctx.stringValue("ApplyDataServiceApiResponse.RequestId"));
-		applyDataServiceApiResponse.setSuccess(_ctx.booleanValue("ApplyDataServiceApiResponse.Success"));
+		applyDataServiceApiResponse.setMessage(_ctx.stringValue("ApplyDataServiceApiResponse.Message"));
 		applyDataServiceApiResponse.setHttpStatusCode(_ctx.integerValue("ApplyDataServiceApiResponse.HttpStatusCode"));
 		applyDataServiceApiResponse.setCode(_ctx.stringValue("ApplyDataServiceApiResponse.Code"));
-		applyDataServiceApiResponse.setMessage(_ctx.stringValue("ApplyDataServiceApiResponse.Message"));
+		applyDataServiceApiResponse.setSuccess(_ctx.booleanValue("ApplyDataServiceApiResponse.Success"));
 	 
 	 	return applyDataServiceApiResponse;
 	}

@@ -23,10 +23,10 @@ public class DeleteDirectoryResponseUnmarshaller {
 	public static DeleteDirectoryResponse unmarshall(DeleteDirectoryResponse deleteDirectoryResponse, UnmarshallerContext _ctx) {
 		
 		deleteDirectoryResponse.setRequestId(_ctx.stringValue("DeleteDirectoryResponse.RequestId"));
-		deleteDirectoryResponse.setSuccess(_ctx.booleanValue("DeleteDirectoryResponse.Success"));
+		deleteDirectoryResponse.setMessage(_ctx.stringValue("DeleteDirectoryResponse.Message"));
 		deleteDirectoryResponse.setHttpStatusCode(_ctx.integerValue("DeleteDirectoryResponse.HttpStatusCode"));
 		deleteDirectoryResponse.setCode(_ctx.stringValue("DeleteDirectoryResponse.Code"));
-		deleteDirectoryResponse.setMessage(_ctx.stringValue("DeleteDirectoryResponse.Message"));
+		deleteDirectoryResponse.setSuccess(_ctx.booleanValue("DeleteDirectoryResponse.Success"));
 	 
 	 	return deleteDirectoryResponse;
 	}

@@ -62,11 +62,11 @@ public class CreateSecurityClassifyCatalogRequest extends RpcAcsRequest<CreateSe
 
 	public static class CreateCommand {
 
-		@SerializedName("Name")
-		private String name;
-
 		@SerializedName("ParentPath")
 		private String parentPath;
+
+		@SerializedName("Name")
+		private String name;
 
 		@SerializedName("OwnerList")
 		private List<String> ownerList;
@@ -74,20 +74,20 @@ public class CreateSecurityClassifyCatalogRequest extends RpcAcsRequest<CreateSe
 		@SerializedName("VisibleType")
 		private String visibleType;
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getParentPath() {
 			return this.parentPath;
 		}
 
 		public void setParentPath(String parentPath) {
 			this.parentPath = parentPath;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<String> getOwnerList() {

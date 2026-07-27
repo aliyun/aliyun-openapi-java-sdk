@@ -29,10 +29,10 @@ public class GetDataServiceApiErrorImpactResponseUnmarshaller {
 	public static GetDataServiceApiErrorImpactResponse unmarshall(GetDataServiceApiErrorImpactResponse getDataServiceApiErrorImpactResponse, UnmarshallerContext _ctx) {
 		
 		getDataServiceApiErrorImpactResponse.setRequestId(_ctx.stringValue("GetDataServiceApiErrorImpactResponse.RequestId"));
-		getDataServiceApiErrorImpactResponse.setSuccess(_ctx.booleanValue("GetDataServiceApiErrorImpactResponse.Success"));
+		getDataServiceApiErrorImpactResponse.setMessage(_ctx.stringValue("GetDataServiceApiErrorImpactResponse.Message"));
 		getDataServiceApiErrorImpactResponse.setHttpStatusCode(_ctx.integerValue("GetDataServiceApiErrorImpactResponse.HttpStatusCode"));
 		getDataServiceApiErrorImpactResponse.setCode(_ctx.stringValue("GetDataServiceApiErrorImpactResponse.Code"));
-		getDataServiceApiErrorImpactResponse.setMessage(_ctx.stringValue("GetDataServiceApiErrorImpactResponse.Message"));
+		getDataServiceApiErrorImpactResponse.setSuccess(_ctx.booleanValue("GetDataServiceApiErrorImpactResponse.Success"));
 
 		Data data = new Data();
 

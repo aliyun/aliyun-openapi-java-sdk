@@ -75,11 +75,11 @@ public class ApplyDataServiceApiRequest extends RpcAcsRequest<ApplyDataServiceAp
 
 	public static class ApplyCommand {
 
-		@SerializedName("Reason")
-		private String reason;
-
 		@SerializedName("ApplyProd")
 		private Boolean applyProd;
+
+		@SerializedName("Reason")
+		private String reason;
 
 		@SerializedName("ApplyDev")
 		private Boolean applyDev;
@@ -96,22 +96,14 @@ public class ApplyDataServiceApiRequest extends RpcAcsRequest<ApplyDataServiceAp
 		@SerializedName("ProdFieldList")
 		private List<ProdFieldListItem> prodFieldList;
 
-		@SerializedName("ApiId")
-		private Long apiId;
-
 		@SerializedName("ApplyType")
 		private String applyType;
 
+		@SerializedName("ApiId")
+		private Long apiId;
+
 		@SerializedName("DevFieldList")
 		private List<DevFieldListItem> devFieldList;
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
 
 		public Boolean getApplyProd() {
 			return this.applyProd;
@@ -119,6 +111,14 @@ public class ApplyDataServiceApiRequest extends RpcAcsRequest<ApplyDataServiceAp
 
 		public void setApplyProd(Boolean applyProd) {
 			this.applyProd = applyProd;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 
 		public Boolean getApplyDev() {
@@ -161,20 +161,20 @@ public class ApplyDataServiceApiRequest extends RpcAcsRequest<ApplyDataServiceAp
 			this.prodFieldList = prodFieldList;
 		}
 
-		public Long getApiId() {
-			return this.apiId;
-		}
-
-		public void setApiId(Long apiId) {
-			this.apiId = apiId;
-		}
-
 		public String getApplyType() {
 			return this.applyType;
 		}
 
 		public void setApplyType(String applyType) {
 			this.applyType = applyType;
+		}
+
+		public Long getApiId() {
+			return this.apiId;
+		}
+
+		public void setApiId(Long apiId) {
+			this.apiId = apiId;
 		}
 
 		public List<DevFieldListItem> getDevFieldList() {

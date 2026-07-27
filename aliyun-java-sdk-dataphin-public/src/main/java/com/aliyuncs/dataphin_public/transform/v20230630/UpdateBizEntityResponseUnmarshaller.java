@@ -23,10 +23,10 @@ public class UpdateBizEntityResponseUnmarshaller {
 	public static UpdateBizEntityResponse unmarshall(UpdateBizEntityResponse updateBizEntityResponse, UnmarshallerContext _ctx) {
 		
 		updateBizEntityResponse.setRequestId(_ctx.stringValue("UpdateBizEntityResponse.RequestId"));
-		updateBizEntityResponse.setSuccess(_ctx.booleanValue("UpdateBizEntityResponse.Success"));
+		updateBizEntityResponse.setMessage(_ctx.stringValue("UpdateBizEntityResponse.Message"));
 		updateBizEntityResponse.setHttpStatusCode(_ctx.integerValue("UpdateBizEntityResponse.HttpStatusCode"));
 		updateBizEntityResponse.setCode(_ctx.stringValue("UpdateBizEntityResponse.Code"));
-		updateBizEntityResponse.setMessage(_ctx.stringValue("UpdateBizEntityResponse.Message"));
+		updateBizEntityResponse.setSuccess(_ctx.booleanValue("UpdateBizEntityResponse.Success"));
 	 
 	 	return updateBizEntityResponse;
 	}

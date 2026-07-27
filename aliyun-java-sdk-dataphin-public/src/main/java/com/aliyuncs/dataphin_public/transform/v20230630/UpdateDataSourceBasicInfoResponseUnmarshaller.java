@@ -23,11 +23,11 @@ public class UpdateDataSourceBasicInfoResponseUnmarshaller {
 	public static UpdateDataSourceBasicInfoResponse unmarshall(UpdateDataSourceBasicInfoResponse updateDataSourceBasicInfoResponse, UnmarshallerContext _ctx) {
 		
 		updateDataSourceBasicInfoResponse.setRequestId(_ctx.stringValue("UpdateDataSourceBasicInfoResponse.RequestId"));
-		updateDataSourceBasicInfoResponse.setSuccess(_ctx.booleanValue("UpdateDataSourceBasicInfoResponse.Success"));
-		updateDataSourceBasicInfoResponse.setHttpStatusCode(_ctx.integerValue("UpdateDataSourceBasicInfoResponse.HttpStatusCode"));
-		updateDataSourceBasicInfoResponse.setCode(_ctx.stringValue("UpdateDataSourceBasicInfoResponse.Code"));
 		updateDataSourceBasicInfoResponse.setMessage(_ctx.stringValue("UpdateDataSourceBasicInfoResponse.Message"));
+		updateDataSourceBasicInfoResponse.setHttpStatusCode(_ctx.integerValue("UpdateDataSourceBasicInfoResponse.HttpStatusCode"));
 		updateDataSourceBasicInfoResponse.setData(_ctx.booleanValue("UpdateDataSourceBasicInfoResponse.Data"));
+		updateDataSourceBasicInfoResponse.setCode(_ctx.stringValue("UpdateDataSourceBasicInfoResponse.Code"));
+		updateDataSourceBasicInfoResponse.setSuccess(_ctx.booleanValue("UpdateDataSourceBasicInfoResponse.Success"));
 	 
 	 	return updateDataSourceBasicInfoResponse;
 	}

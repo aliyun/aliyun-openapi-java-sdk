@@ -23,10 +23,10 @@ public class PublishDataServiceApiResponseUnmarshaller {
 	public static PublishDataServiceApiResponse unmarshall(PublishDataServiceApiResponse publishDataServiceApiResponse, UnmarshallerContext _ctx) {
 		
 		publishDataServiceApiResponse.setRequestId(_ctx.stringValue("PublishDataServiceApiResponse.RequestId"));
-		publishDataServiceApiResponse.setSuccess(_ctx.booleanValue("PublishDataServiceApiResponse.Success"));
+		publishDataServiceApiResponse.setMessage(_ctx.stringValue("PublishDataServiceApiResponse.Message"));
 		publishDataServiceApiResponse.setHttpStatusCode(_ctx.integerValue("PublishDataServiceApiResponse.HttpStatusCode"));
 		publishDataServiceApiResponse.setCode(_ctx.stringValue("PublishDataServiceApiResponse.Code"));
-		publishDataServiceApiResponse.setMessage(_ctx.stringValue("PublishDataServiceApiResponse.Message"));
+		publishDataServiceApiResponse.setSuccess(_ctx.booleanValue("PublishDataServiceApiResponse.Success"));
 	 
 	 	return publishDataServiceApiResponse;
 	}

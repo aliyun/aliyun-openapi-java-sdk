@@ -24,19 +24,19 @@ public class GetAdHocTaskLogResponseUnmarshaller {
 	public static GetAdHocTaskLogResponse unmarshall(GetAdHocTaskLogResponse getAdHocTaskLogResponse, UnmarshallerContext _ctx) {
 		
 		getAdHocTaskLogResponse.setRequestId(_ctx.stringValue("GetAdHocTaskLogResponse.RequestId"));
-		getAdHocTaskLogResponse.setSuccess(_ctx.booleanValue("GetAdHocTaskLogResponse.Success"));
+		getAdHocTaskLogResponse.setMessage(_ctx.stringValue("GetAdHocTaskLogResponse.Message"));
 		getAdHocTaskLogResponse.setHttpStatusCode(_ctx.integerValue("GetAdHocTaskLogResponse.HttpStatusCode"));
 		getAdHocTaskLogResponse.setCode(_ctx.stringValue("GetAdHocTaskLogResponse.Code"));
-		getAdHocTaskLogResponse.setMessage(_ctx.stringValue("GetAdHocTaskLogResponse.Message"));
+		getAdHocTaskLogResponse.setSuccess(_ctx.booleanValue("GetAdHocTaskLogResponse.Success"));
 
 		LogInfo logInfo = new LogInfo();
-		logInfo.setTaskId(_ctx.stringValue("GetAdHocTaskLogResponse.LogInfo.TaskId"));
 		logInfo.setSubTaskId(_ctx.integerValue("GetAdHocTaskLogResponse.LogInfo.SubTaskId"));
-		logInfo.setTaskStatus(_ctx.stringValue("GetAdHocTaskLogResponse.LogInfo.TaskStatus"));
-		logInfo.setHasNext(_ctx.booleanValue("GetAdHocTaskLogResponse.LogInfo.HasNext"));
+		logInfo.setTaskId(_ctx.stringValue("GetAdHocTaskLogResponse.LogInfo.TaskId"));
+		logInfo.setContent(_ctx.stringValue("GetAdHocTaskLogResponse.LogInfo.Content"));
 		logInfo.setHasResult(_ctx.booleanValue("GetAdHocTaskLogResponse.LogInfo.HasResult"));
 		logInfo.setNextOffset(_ctx.integerValue("GetAdHocTaskLogResponse.LogInfo.NextOffset"));
-		logInfo.setContent(_ctx.stringValue("GetAdHocTaskLogResponse.LogInfo.Content"));
+		logInfo.setTaskStatus(_ctx.stringValue("GetAdHocTaskLogResponse.LogInfo.TaskStatus"));
+		logInfo.setHasNext(_ctx.booleanValue("GetAdHocTaskLogResponse.LogInfo.HasNext"));
 		getAdHocTaskLogResponse.setLogInfo(logInfo);
 	 
 	 	return getAdHocTaskLogResponse;

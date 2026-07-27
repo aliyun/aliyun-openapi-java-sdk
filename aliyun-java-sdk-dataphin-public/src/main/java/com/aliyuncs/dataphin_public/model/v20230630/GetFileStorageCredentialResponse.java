@@ -26,13 +26,13 @@ public class GetFileStorageCredentialResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private StorageCredential storageCredential;
 
@@ -44,12 +44,12 @@ public class GetFileStorageCredentialResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class GetFileStorageCredentialResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public StorageCredential getStorageCredential() {
@@ -86,23 +86,31 @@ public class GetFileStorageCredentialResponse extends AcsResponse {
 
 	public static class StorageCredential {
 
+		private String securityToken;
+
 		private String storageType;
 
 		private String endpoint;
 
 		private String bucket;
 
-		private String region;
-
 		private String accessId;
+
+		private Long expiration;
+
+		private String region;
 
 		private String accessKey;
 
 		private String objectName;
 
-		private Long expiration;
+		public String getSecurityToken() {
+			return this.securityToken;
+		}
 
-		private String securityToken;
+		public void setSecurityToken(String securityToken) {
+			this.securityToken = securityToken;
+		}
 
 		public String getStorageType() {
 			return this.storageType;
@@ -128,20 +136,28 @@ public class GetFileStorageCredentialResponse extends AcsResponse {
 			this.bucket = bucket;
 		}
 
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
 		public String getAccessId() {
 			return this.accessId;
 		}
 
 		public void setAccessId(String accessId) {
 			this.accessId = accessId;
+		}
+
+		public Long getExpiration() {
+			return this.expiration;
+		}
+
+		public void setExpiration(Long expiration) {
+			this.expiration = expiration;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
 		public String getAccessKey() {
@@ -158,22 +174,6 @@ public class GetFileStorageCredentialResponse extends AcsResponse {
 
 		public void setObjectName(String objectName) {
 			this.objectName = objectName;
-		}
-
-		public Long getExpiration() {
-			return this.expiration;
-		}
-
-		public void setExpiration(Long expiration) {
-			this.expiration = expiration;
-		}
-
-		public String getSecurityToken() {
-			return this.securityToken;
-		}
-
-		public void setSecurityToken(String securityToken) {
-			this.securityToken = securityToken;
 		}
 	}
 

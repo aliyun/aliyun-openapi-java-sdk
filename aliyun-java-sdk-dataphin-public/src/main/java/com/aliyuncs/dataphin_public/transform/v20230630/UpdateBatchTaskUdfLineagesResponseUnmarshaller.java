@@ -23,10 +23,10 @@ public class UpdateBatchTaskUdfLineagesResponseUnmarshaller {
 	public static UpdateBatchTaskUdfLineagesResponse unmarshall(UpdateBatchTaskUdfLineagesResponse updateBatchTaskUdfLineagesResponse, UnmarshallerContext _ctx) {
 		
 		updateBatchTaskUdfLineagesResponse.setRequestId(_ctx.stringValue("UpdateBatchTaskUdfLineagesResponse.RequestId"));
-		updateBatchTaskUdfLineagesResponse.setSuccess(_ctx.booleanValue("UpdateBatchTaskUdfLineagesResponse.Success"));
+		updateBatchTaskUdfLineagesResponse.setMessage(_ctx.stringValue("UpdateBatchTaskUdfLineagesResponse.Message"));
 		updateBatchTaskUdfLineagesResponse.setHttpStatusCode(_ctx.integerValue("UpdateBatchTaskUdfLineagesResponse.HttpStatusCode"));
 		updateBatchTaskUdfLineagesResponse.setCode(_ctx.stringValue("UpdateBatchTaskUdfLineagesResponse.Code"));
-		updateBatchTaskUdfLineagesResponse.setMessage(_ctx.stringValue("UpdateBatchTaskUdfLineagesResponse.Message"));
+		updateBatchTaskUdfLineagesResponse.setSuccess(_ctx.booleanValue("UpdateBatchTaskUdfLineagesResponse.Success"));
 	 
 	 	return updateBatchTaskUdfLineagesResponse;
 	}

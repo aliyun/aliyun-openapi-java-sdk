@@ -28,10 +28,10 @@ public class ListQualityRuleTasksResponseUnmarshaller {
 	public static ListQualityRuleTasksResponse unmarshall(ListQualityRuleTasksResponse listQualityRuleTasksResponse, UnmarshallerContext _ctx) {
 		
 		listQualityRuleTasksResponse.setRequestId(_ctx.stringValue("ListQualityRuleTasksResponse.RequestId"));
-		listQualityRuleTasksResponse.setSuccess(_ctx.booleanValue("ListQualityRuleTasksResponse.Success"));
+		listQualityRuleTasksResponse.setMessage(_ctx.stringValue("ListQualityRuleTasksResponse.Message"));
 		listQualityRuleTasksResponse.setHttpStatusCode(_ctx.integerValue("ListQualityRuleTasksResponse.HttpStatusCode"));
 		listQualityRuleTasksResponse.setCode(_ctx.stringValue("ListQualityRuleTasksResponse.Code"));
-		listQualityRuleTasksResponse.setMessage(_ctx.stringValue("ListQualityRuleTasksResponse.Message"));
+		listQualityRuleTasksResponse.setSuccess(_ctx.booleanValue("ListQualityRuleTasksResponse.Success"));
 
 		PageResult pageResult = new PageResult();
 		pageResult.setTotalCount(_ctx.longValue("ListQualityRuleTasksResponse.PageResult.TotalCount"));
@@ -39,24 +39,24 @@ public class ListQualityRuleTasksResponseUnmarshaller {
 		List<QualityRuleTask> qualityRuleTaskList = new ArrayList<QualityRuleTask>();
 		for (int i = 0; i < _ctx.lengthValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList.Length"); i++) {
 			QualityRuleTask qualityRuleTask = new QualityRuleTask();
-			qualityRuleTask.setWatchId(_ctx.longValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].WatchId"));
 			qualityRuleTask.setWatchTaskId(_ctx.longValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].WatchTaskId"));
-			qualityRuleTask.setId(_ctx.longValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].Id"));
-			qualityRuleTask.setRuleId(_ctx.longValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].RuleId"));
-			qualityRuleTask.setTemplateId(_ctx.longValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].TemplateId"));
 			qualityRuleTask.setStatus(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].Status"));
-			qualityRuleTask.setStartTime(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].StartTime"));
+			qualityRuleTask.setModifyTime(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].ModifyTime"));
 			qualityRuleTask.setEndTime(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].EndTime"));
-			qualityRuleTask.setValidatePartition(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].ValidatePartition"));
-			qualityRuleTask.setValidateObjectType(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].ValidateObjectType"));
+			qualityRuleTask.setRuleId(_ctx.longValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].RuleId"));
+			qualityRuleTask.setCreateTime(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].CreateTime"));
+			qualityRuleTask.setStartTime(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].StartTime"));
+			qualityRuleTask.setCreator(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].Creator"));
+			qualityRuleTask.setBizDateFormat(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].BizDateFormat"));
 			qualityRuleTask.setValidateObjectName(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].ValidateObjectName"));
+			qualityRuleTask.setValidatePartition(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].ValidatePartition"));
+			qualityRuleTask.setId(_ctx.longValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].Id"));
+			qualityRuleTask.setModifier(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].Modifier"));
+			qualityRuleTask.setTemplateId(_ctx.longValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].TemplateId"));
+			qualityRuleTask.setValidateObjectType(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].ValidateObjectType"));
 			qualityRuleTask.setValidateSuccess(_ctx.booleanValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].ValidateSuccess"));
 			qualityRuleTask.setBizDate(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].BizDate"));
-			qualityRuleTask.setBizDateFormat(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].BizDateFormat"));
-			qualityRuleTask.setCreator(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].Creator"));
-			qualityRuleTask.setCreateTime(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].CreateTime"));
-			qualityRuleTask.setModifyTime(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].ModifyTime"));
-			qualityRuleTask.setModifier(_ctx.stringValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].Modifier"));
+			qualityRuleTask.setWatchId(_ctx.longValue("ListQualityRuleTasksResponse.PageResult.QualityRuleTaskList["+ i +"].WatchId"));
 
 			qualityRuleTaskList.add(qualityRuleTask);
 		}

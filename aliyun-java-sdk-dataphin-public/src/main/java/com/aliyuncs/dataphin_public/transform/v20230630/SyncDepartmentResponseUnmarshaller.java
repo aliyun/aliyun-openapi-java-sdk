@@ -23,11 +23,11 @@ public class SyncDepartmentResponseUnmarshaller {
 	public static SyncDepartmentResponse unmarshall(SyncDepartmentResponse syncDepartmentResponse, UnmarshallerContext _ctx) {
 		
 		syncDepartmentResponse.setRequestId(_ctx.stringValue("SyncDepartmentResponse.RequestId"));
-		syncDepartmentResponse.setSuccess(_ctx.booleanValue("SyncDepartmentResponse.Success"));
-		syncDepartmentResponse.setHttpStatusCode(_ctx.integerValue("SyncDepartmentResponse.HttpStatusCode"));
-		syncDepartmentResponse.setCode(_ctx.stringValue("SyncDepartmentResponse.Code"));
 		syncDepartmentResponse.setMessage(_ctx.stringValue("SyncDepartmentResponse.Message"));
+		syncDepartmentResponse.setHttpStatusCode(_ctx.integerValue("SyncDepartmentResponse.HttpStatusCode"));
 		syncDepartmentResponse.setData(_ctx.booleanValue("SyncDepartmentResponse.Data"));
+		syncDepartmentResponse.setCode(_ctx.stringValue("SyncDepartmentResponse.Code"));
+		syncDepartmentResponse.setSuccess(_ctx.booleanValue("SyncDepartmentResponse.Success"));
 	 
 	 	return syncDepartmentResponse;
 	}

@@ -24,10 +24,10 @@ public class UpdateBatchTaskResponseUnmarshaller {
 	public static UpdateBatchTaskResponse unmarshall(UpdateBatchTaskResponse updateBatchTaskResponse, UnmarshallerContext _ctx) {
 		
 		updateBatchTaskResponse.setRequestId(_ctx.stringValue("UpdateBatchTaskResponse.RequestId"));
-		updateBatchTaskResponse.setSuccess(_ctx.booleanValue("UpdateBatchTaskResponse.Success"));
+		updateBatchTaskResponse.setMessage(_ctx.stringValue("UpdateBatchTaskResponse.Message"));
 		updateBatchTaskResponse.setHttpStatusCode(_ctx.integerValue("UpdateBatchTaskResponse.HttpStatusCode"));
 		updateBatchTaskResponse.setCode(_ctx.stringValue("UpdateBatchTaskResponse.Code"));
-		updateBatchTaskResponse.setMessage(_ctx.stringValue("UpdateBatchTaskResponse.Message"));
+		updateBatchTaskResponse.setSuccess(_ctx.booleanValue("UpdateBatchTaskResponse.Success"));
 
 		UpdateResult updateResult = new UpdateResult();
 		updateResult.setFileId(_ctx.longValue("UpdateBatchTaskResponse.UpdateResult.FileId"));

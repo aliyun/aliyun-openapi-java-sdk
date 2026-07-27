@@ -29,34 +29,34 @@ public class GetBizUnitInfoResponseUnmarshaller {
 	public static GetBizUnitInfoResponse unmarshall(GetBizUnitInfoResponse getBizUnitInfoResponse, UnmarshallerContext _ctx) {
 		
 		getBizUnitInfoResponse.setRequestId(_ctx.stringValue("GetBizUnitInfoResponse.RequestId"));
-		getBizUnitInfoResponse.setSuccess(_ctx.booleanValue("GetBizUnitInfoResponse.Success"));
+		getBizUnitInfoResponse.setMessage(_ctx.stringValue("GetBizUnitInfoResponse.Message"));
 		getBizUnitInfoResponse.setHttpStatusCode(_ctx.integerValue("GetBizUnitInfoResponse.HttpStatusCode"));
 		getBizUnitInfoResponse.setCode(_ctx.stringValue("GetBizUnitInfoResponse.Code"));
-		getBizUnitInfoResponse.setMessage(_ctx.stringValue("GetBizUnitInfoResponse.Message"));
+		getBizUnitInfoResponse.setSuccess(_ctx.booleanValue("GetBizUnitInfoResponse.Success"));
 
 		BizUnitInfo bizUnitInfo = new BizUnitInfo();
-		bizUnitInfo.setId(_ctx.longValue("GetBizUnitInfoResponse.BizUnitInfo.Id"));
-		bizUnitInfo.setName(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.Name"));
-		bizUnitInfo.setDisplayName(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.DisplayName"));
-		bizUnitInfo.setDescription(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.Description"));
-		bizUnitInfo.setOwnerUserId(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.OwnerUserId"));
 		bizUnitInfo.setOwnerName(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.OwnerName"));
-		bizUnitInfo.setGmtCreate(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.GmtCreate"));
-		bizUnitInfo.setGmtModified(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.GmtModified"));
 		bizUnitInfo.setLastModifier(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.LastModifier"));
-		bizUnitInfo.setLastModifierName(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.LastModifierName"));
-		bizUnitInfo.setIcon(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.Icon"));
+		bizUnitInfo.setDescription(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.Description"));
 		bizUnitInfo.setMode(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.Mode"));
-		bizUnitInfo.setDataDomainCount(_ctx.integerValue("GetBizUnitInfoResponse.BizUnitInfo.DataDomainCount"));
+		bizUnitInfo.setGmtModified(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.GmtModified"));
 		bizUnitInfo.setBizObjectCount(_ctx.integerValue("GetBizUnitInfoResponse.BizUnitInfo.BizObjectCount"));
+		bizUnitInfo.setLastModifierName(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.LastModifierName"));
+		bizUnitInfo.setName(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.Name"));
+		bizUnitInfo.setOwnerUserId(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.OwnerUserId"));
+		bizUnitInfo.setGmtCreate(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.GmtCreate"));
+		bizUnitInfo.setDataDomainCount(_ctx.integerValue("GetBizUnitInfoResponse.BizUnitInfo.DataDomainCount"));
+		bizUnitInfo.setDisplayName(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.DisplayName"));
 		bizUnitInfo.setBizProcessCount(_ctx.integerValue("GetBizUnitInfoResponse.BizUnitInfo.BizProcessCount"));
+		bizUnitInfo.setId(_ctx.longValue("GetBizUnitInfoResponse.BizUnitInfo.Id"));
+		bizUnitInfo.setIcon(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.Icon"));
 
 		List<EnvName> envList = new ArrayList<EnvName>();
 		for (int i = 0; i < _ctx.lengthValue("GetBizUnitInfoResponse.BizUnitInfo.EnvList.Length"); i++) {
 			EnvName envName = new EnvName();
+			envName.setDisplayName(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.EnvList["+ i +"].DisplayName"));
 			envName.setEnvName(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.EnvList["+ i +"].EnvName"));
 			envName.setName(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.EnvList["+ i +"].Name"));
-			envName.setDisplayName(_ctx.stringValue("GetBizUnitInfoResponse.BizUnitInfo.EnvList["+ i +"].DisplayName"));
 
 			envList.add(envName);
 		}

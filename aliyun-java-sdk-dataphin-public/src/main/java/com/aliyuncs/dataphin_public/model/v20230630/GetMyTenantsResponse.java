@@ -27,13 +27,13 @@ public class GetMyTenantsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<TenantInfo> tenantList;
 
@@ -45,12 +45,12 @@ public class GetMyTenantsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetMyTenantsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<TenantInfo> getTenantList() {
@@ -87,51 +87,27 @@ public class GetMyTenantsResponse extends AcsResponse {
 
 	public static class TenantInfo {
 
-		private Long id;
-
-		private String name;
-
-		private String ownerId;
-
 		private String description;
 
-		private Boolean deleted;
-
-		private Long deleteTime;
-
-		private String titleType;
+		private String ownerId;
 
 		private Boolean opsTenant;
 
 		private Boolean resourceLimited;
 
+		private Long deleteTime;
+
+		private String titleType;
+
 		private Boolean visible;
 
+		private Long id;
+
+		private Boolean deleted;
+
+		private String name;
+
 		private List<String> tenantTypeList;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
-		}
 
 		public String getDescription() {
 			return this.description;
@@ -141,28 +117,12 @@ public class GetMyTenantsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Boolean getDeleted() {
-			return this.deleted;
+		public String getOwnerId() {
+			return this.ownerId;
 		}
 
-		public void setDeleted(Boolean deleted) {
-			this.deleted = deleted;
-		}
-
-		public Long getDeleteTime() {
-			return this.deleteTime;
-		}
-
-		public void setDeleteTime(Long deleteTime) {
-			this.deleteTime = deleteTime;
-		}
-
-		public String getTitleType() {
-			return this.titleType;
-		}
-
-		public void setTitleType(String titleType) {
-			this.titleType = titleType;
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
 		}
 
 		public Boolean getOpsTenant() {
@@ -181,12 +141,52 @@ public class GetMyTenantsResponse extends AcsResponse {
 			this.resourceLimited = resourceLimited;
 		}
 
+		public Long getDeleteTime() {
+			return this.deleteTime;
+		}
+
+		public void setDeleteTime(Long deleteTime) {
+			this.deleteTime = deleteTime;
+		}
+
+		public String getTitleType() {
+			return this.titleType;
+		}
+
+		public void setTitleType(String titleType) {
+			this.titleType = titleType;
+		}
+
 		public Boolean getVisible() {
 			return this.visible;
 		}
 
 		public void setVisible(Boolean visible) {
 			this.visible = visible;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Boolean getDeleted() {
+			return this.deleted;
+		}
+
+		public void setDeleted(Boolean deleted) {
+			this.deleted = deleted;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<String> getTenantTypeList() {

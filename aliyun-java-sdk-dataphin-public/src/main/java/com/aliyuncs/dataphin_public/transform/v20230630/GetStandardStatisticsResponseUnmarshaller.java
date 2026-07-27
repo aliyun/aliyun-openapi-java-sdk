@@ -28,10 +28,10 @@ public class GetStandardStatisticsResponseUnmarshaller {
 	public static GetStandardStatisticsResponse unmarshall(GetStandardStatisticsResponse getStandardStatisticsResponse, UnmarshallerContext _ctx) {
 		
 		getStandardStatisticsResponse.setRequestId(_ctx.stringValue("GetStandardStatisticsResponse.RequestId"));
-		getStandardStatisticsResponse.setSuccess(_ctx.booleanValue("GetStandardStatisticsResponse.Success"));
+		getStandardStatisticsResponse.setMessage(_ctx.stringValue("GetStandardStatisticsResponse.Message"));
 		getStandardStatisticsResponse.setHttpStatusCode(_ctx.integerValue("GetStandardStatisticsResponse.HttpStatusCode"));
 		getStandardStatisticsResponse.setCode(_ctx.stringValue("GetStandardStatisticsResponse.Code"));
-		getStandardStatisticsResponse.setMessage(_ctx.stringValue("GetStandardStatisticsResponse.Message"));
+		getStandardStatisticsResponse.setSuccess(_ctx.booleanValue("GetStandardStatisticsResponse.Success"));
 
 		Data data = new Data();
 		data.setTotalCount(_ctx.integerValue("GetStandardStatisticsResponse.Data.TotalCount"));
@@ -39,8 +39,8 @@ public class GetStandardStatisticsResponseUnmarshaller {
 		List<StandardTypeCount> standardTypeCountList = new ArrayList<StandardTypeCount>();
 		for (int i = 0; i < _ctx.lengthValue("GetStandardStatisticsResponse.Data.StandardTypeCountList.Length"); i++) {
 			StandardTypeCount standardTypeCount = new StandardTypeCount();
-			standardTypeCount.setStandardType(_ctx.stringValue("GetStandardStatisticsResponse.Data.StandardTypeCountList["+ i +"].StandardType"));
 			standardTypeCount.setCount(_ctx.integerValue("GetStandardStatisticsResponse.Data.StandardTypeCountList["+ i +"].Count"));
+			standardTypeCount.setStandardType(_ctx.stringValue("GetStandardStatisticsResponse.Data.StandardTypeCountList["+ i +"].StandardType"));
 
 			standardTypeCountList.add(standardTypeCount);
 		}

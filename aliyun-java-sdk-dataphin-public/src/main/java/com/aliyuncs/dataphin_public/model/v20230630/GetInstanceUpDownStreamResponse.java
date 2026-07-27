@@ -27,13 +27,13 @@ public class GetInstanceUpDownStreamResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private InstanceDagInfo instanceDagInfo;
 
@@ -45,12 +45,12 @@ public class GetInstanceUpDownStreamResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetInstanceUpDownStreamResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public InstanceDagInfo getInstanceDagInfo() {
@@ -87,11 +87,19 @@ public class GetInstanceUpDownStreamResponse extends AcsResponse {
 
 	public static class InstanceDagInfo {
 
+		private List<InstanceInfo> downInstanceList;
+
 		private List<InstanceInfo> startInstanceList;
 
 		private List<InstanceInfo> upInstanceList;
 
-		private List<InstanceInfo> downInstanceList;
+		public List<InstanceInfo> getDownInstanceList() {
+			return this.downInstanceList;
+		}
+
+		public void setDownInstanceList(List<InstanceInfo> downInstanceList) {
+			this.downInstanceList = downInstanceList;
+		}
 
 		public List<InstanceInfo> getStartInstanceList() {
 			return this.startInstanceList;
@@ -109,25 +117,33 @@ public class GetInstanceUpDownStreamResponse extends AcsResponse {
 			this.upInstanceList = upInstanceList;
 		}
 
-		public List<InstanceInfo> getDownInstanceList() {
-			return this.downInstanceList;
-		}
-
-		public void setDownInstanceList(List<InstanceInfo> downInstanceList) {
-			this.downInstanceList = downInstanceList;
-		}
-
 		public static class InstanceInfo {
+
+			private String nodeType;
+
+			private String nodeId;
 
 			private String id;
 
 			private String name;
 
-			private String nodeId;
-
-			private String nodeType;
-
 			private List<String> fieldInstanceIdList;
+
+			public String getNodeType() {
+				return this.nodeType;
+			}
+
+			public void setNodeType(String nodeType) {
+				this.nodeType = nodeType;
+			}
+
+			public String getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(String nodeId) {
+				this.nodeId = nodeId;
+			}
 
 			public String getId() {
 				return this.id;
@@ -143,22 +159,6 @@ public class GetInstanceUpDownStreamResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
-			}
-
-			public String getNodeId() {
-				return this.nodeId;
-			}
-
-			public void setNodeId(String nodeId) {
-				this.nodeId = nodeId;
-			}
-
-			public String getNodeType() {
-				return this.nodeType;
-			}
-
-			public void setNodeType(String nodeType) {
-				this.nodeType = nodeType;
 			}
 
 			public List<String> getFieldInstanceIdList() {

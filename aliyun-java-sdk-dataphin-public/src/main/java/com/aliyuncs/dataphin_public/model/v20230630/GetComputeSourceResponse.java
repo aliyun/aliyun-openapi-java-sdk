@@ -26,13 +26,13 @@ public class GetComputeSourceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private ComputeSourceInfo computeSourceInfo;
 
@@ -44,12 +44,12 @@ public class GetComputeSourceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class GetComputeSourceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public ComputeSourceInfo getComputeSourceInfo() {
@@ -86,81 +86,33 @@ public class GetComputeSourceResponse extends AcsResponse {
 
 	public static class ComputeSourceInfo {
 
-		private Long id;
-
-		private String name;
-
-		private String displayName;
-
-		private String description;
-
-		private String gmtCreate;
-
-		private String gmtModified;
-
 		private String owner;
-
-		private String creator;
 
 		private String ownerName;
 
-		private String creatorName;
-
-		private String bindProjectName;
-
 		private Long bindProjectId;
+
+		private String description;
 
 		private Boolean bindProject;
 
+		private String gmtModified;
+
+		private String creator;
+
+		private String name;
+
+		private String gmtCreate;
+
 		private String type;
 
-		public Long getId() {
-			return this.id;
-		}
+		private String displayName;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private Long id;
 
-		public String getName() {
-			return this.name;
-		}
+		private String bindProjectName;
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDisplayName() {
-			return this.displayName;
-		}
-
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
+		private String creatorName;
 
 		public String getOwner() {
 			return this.owner;
@@ -168,14 +120,6 @@ public class GetComputeSourceResponse extends AcsResponse {
 
 		public void setOwner(String owner) {
 			this.owner = owner;
-		}
-
-		public String getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(String creator) {
-			this.creator = creator;
 		}
 
 		public String getOwnerName() {
@@ -186,28 +130,20 @@ public class GetComputeSourceResponse extends AcsResponse {
 			this.ownerName = ownerName;
 		}
 
-		public String getCreatorName() {
-			return this.creatorName;
-		}
-
-		public void setCreatorName(String creatorName) {
-			this.creatorName = creatorName;
-		}
-
-		public String getBindProjectName() {
-			return this.bindProjectName;
-		}
-
-		public void setBindProjectName(String bindProjectName) {
-			this.bindProjectName = bindProjectName;
-		}
-
 		public Long getBindProjectId() {
 			return this.bindProjectId;
 		}
 
 		public void setBindProjectId(Long bindProjectId) {
 			this.bindProjectId = bindProjectId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Boolean getBindProject() {
@@ -218,12 +154,76 @@ public class GetComputeSourceResponse extends AcsResponse {
 			this.bindProject = bindProject;
 		}
 
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(String creator) {
+			this.creator = creator;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
 		public String getType() {
 			return this.type;
 		}
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getBindProjectName() {
+			return this.bindProjectName;
+		}
+
+		public void setBindProjectName(String bindProjectName) {
+			this.bindProjectName = bindProjectName;
+		}
+
+		public String getCreatorName() {
+			return this.creatorName;
+		}
+
+		public void setCreatorName(String creatorName) {
+			this.creatorName = creatorName;
 		}
 	}
 

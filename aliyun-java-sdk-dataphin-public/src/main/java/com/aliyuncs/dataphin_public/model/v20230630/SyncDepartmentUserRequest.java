@@ -75,19 +75,11 @@ public class SyncDepartmentUserRequest extends RpcAcsRequest<SyncDepartmentUserR
 
 		public static class DeptUserMappingItem {
 
-			@SerializedName("SourceUserId")
-			private String sourceUserId;
-
 			@SerializedName("DepartmentIdList")
 			private List<String> departmentIdList;
 
-			public String getSourceUserId() {
-				return this.sourceUserId;
-			}
-
-			public void setSourceUserId(String sourceUserId) {
-				this.sourceUserId = sourceUserId;
-			}
+			@SerializedName("SourceUserId")
+			private String sourceUserId;
 
 			public List<String> getDepartmentIdList() {
 				return this.departmentIdList;
@@ -95,6 +87,14 @@ public class SyncDepartmentUserRequest extends RpcAcsRequest<SyncDepartmentUserR
 
 			public void setDepartmentIdList(List<String> departmentIdList) {
 				this.departmentIdList = departmentIdList;
+			}
+
+			public String getSourceUserId() {
+				return this.sourceUserId;
+			}
+
+			public void setSourceUserId(String sourceUserId) {
+				this.sourceUserId = sourceUserId;
 			}
 		}
 	}

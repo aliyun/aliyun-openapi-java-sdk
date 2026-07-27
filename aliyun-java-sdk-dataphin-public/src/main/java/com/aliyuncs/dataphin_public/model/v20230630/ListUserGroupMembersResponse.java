@@ -27,13 +27,13 @@ public class ListUserGroupMembersResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -45,12 +45,12 @@ public class ListUserGroupMembersResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListUserGroupMembersResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -109,32 +109,24 @@ public class ListUserGroupMembersResponse extends AcsResponse {
 
 		public static class UserGroupMemberInfo {
 
-			private String id;
-
-			private String userGroupId;
+			private Long gmtCreate;
 
 			private String userRole;
 
-			private Long gmtCreate;
+			private String userGroupId;
+
+			private String id;
 
 			private UserInfo userInfo;
 
 			private Creator creator;
 
-			public String getId() {
-				return this.id;
+			public Long getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getUserGroupId() {
-				return this.userGroupId;
-			}
-
-			public void setUserGroupId(String userGroupId) {
-				this.userGroupId = userGroupId;
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 
 			public String getUserRole() {
@@ -145,12 +137,20 @@ public class ListUserGroupMembersResponse extends AcsResponse {
 				this.userRole = userRole;
 			}
 
-			public Long getGmtCreate() {
-				return this.gmtCreate;
+			public String getUserGroupId() {
+				return this.userGroupId;
 			}
 
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
+			public void setUserGroupId(String userGroupId) {
+				this.userGroupId = userGroupId;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
 			}
 
 			public UserInfo getUserInfo() {
@@ -171,19 +171,11 @@ public class ListUserGroupMembersResponse extends AcsResponse {
 
 			public static class UserInfo {
 
-				private String id;
-
 				private String displayName;
 
+				private String id;
+
 				private String accountName;
-
-				public String getId() {
-					return this.id;
-				}
-
-				public void setId(String id) {
-					this.id = id;
-				}
 
 				public String getDisplayName() {
 					return this.displayName;
@@ -191,6 +183,14 @@ public class ListUserGroupMembersResponse extends AcsResponse {
 
 				public void setDisplayName(String displayName) {
 					this.displayName = displayName;
+				}
+
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
 				}
 
 				public String getAccountName() {
@@ -204,19 +204,11 @@ public class ListUserGroupMembersResponse extends AcsResponse {
 
 			public static class Creator {
 
-				private String id;
-
 				private String displayName;
 
+				private String id;
+
 				private String accountName;
-
-				public String getId() {
-					return this.id;
-				}
-
-				public void setId(String id) {
-					this.id = id;
-				}
 
 				public String getDisplayName() {
 					return this.displayName;
@@ -224,6 +216,14 @@ public class ListUserGroupMembersResponse extends AcsResponse {
 
 				public void setDisplayName(String displayName) {
 					this.displayName = displayName;
+				}
+
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
 				}
 
 				public String getAccountName() {

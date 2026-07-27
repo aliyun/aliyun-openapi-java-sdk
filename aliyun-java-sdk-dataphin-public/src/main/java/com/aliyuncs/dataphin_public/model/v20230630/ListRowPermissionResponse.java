@@ -27,13 +27,13 @@ public class ListRowPermissionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -45,12 +45,12 @@ public class ListRowPermissionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListRowPermissionResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -109,13 +109,15 @@ public class ListRowPermissionResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private Long rowPermissionId;
+			private String gmtCreate;
+
+			private Long tenantId;
 
 			private String rowPermissionDesc;
 
-			private String rowPermissionName;
+			private Long rowPermissionId;
 
-			private String gmtCreate;
+			private String rowPermissionName;
 
 			private String gmtModified;
 
@@ -123,20 +125,26 @@ public class ListRowPermissionResponse extends AcsResponse {
 
 			private String modifier;
 
-			private Long tenantId;
+			private List<TablesItem> tables;
 
 			private List<MappingColumnsItem> mappingColumns;
 
 			private List<RulesItem> rules;
 
-			private List<TablesItem> tables;
-
-			public Long getRowPermissionId() {
-				return this.rowPermissionId;
+			public String getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setRowPermissionId(Long rowPermissionId) {
-				this.rowPermissionId = rowPermissionId;
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public Long getTenantId() {
+				return this.tenantId;
+			}
+
+			public void setTenantId(Long tenantId) {
+				this.tenantId = tenantId;
 			}
 
 			public String getRowPermissionDesc() {
@@ -147,20 +155,20 @@ public class ListRowPermissionResponse extends AcsResponse {
 				this.rowPermissionDesc = rowPermissionDesc;
 			}
 
+			public Long getRowPermissionId() {
+				return this.rowPermissionId;
+			}
+
+			public void setRowPermissionId(Long rowPermissionId) {
+				this.rowPermissionId = rowPermissionId;
+			}
+
 			public String getRowPermissionName() {
 				return this.rowPermissionName;
 			}
 
 			public void setRowPermissionName(String rowPermissionName) {
 				this.rowPermissionName = rowPermissionName;
-			}
-
-			public String getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
 			}
 
 			public String getGmtModified() {
@@ -187,12 +195,12 @@ public class ListRowPermissionResponse extends AcsResponse {
 				this.modifier = modifier;
 			}
 
-			public Long getTenantId() {
-				return this.tenantId;
+			public List<TablesItem> getTables() {
+				return this.tables;
 			}
 
-			public void setTenantId(Long tenantId) {
-				this.tenantId = tenantId;
+			public void setTables(List<TablesItem> tables) {
+				this.tables = tables;
 			}
 
 			public List<MappingColumnsItem> getMappingColumns() {
@@ -211,12 +219,37 @@ public class ListRowPermissionResponse extends AcsResponse {
 				this.rules = rules;
 			}
 
-			public List<TablesItem> getTables() {
-				return this.tables;
-			}
+			public static class TablesItem {
 
-			public void setTables(List<TablesItem> tables) {
-				this.tables = tables;
+				private String columnName;
+
+				private String mappingColumnName;
+
+				private String resourceId;
+
+				public String getColumnName() {
+					return this.columnName;
+				}
+
+				public void setColumnName(String columnName) {
+					this.columnName = columnName;
+				}
+
+				public String getMappingColumnName() {
+					return this.mappingColumnName;
+				}
+
+				public void setMappingColumnName(String mappingColumnName) {
+					this.mappingColumnName = mappingColumnName;
+				}
+
+				public String getResourceId() {
+					return this.resourceId;
+				}
+
+				public void setResourceId(String resourceId) {
+					this.resourceId = resourceId;
+				}
 			}
 
 			public static class MappingColumnsItem {
@@ -254,19 +287,43 @@ public class ListRowPermissionResponse extends AcsResponse {
 
 			public static class RulesItem {
 
+				private String scopeType;
+
+				private Integer status;
+
+				private Boolean isDelete;
+
 				private Long id;
 
 				private String ruleName;
 
-				private String scopeType;
-
-				private Boolean isDelete;
-
-				private Integer status;
-
 				private List<ExpressionsItem> expressions;
 
 				private List<UserMappingListItem> userMappingList;
+
+				public String getScopeType() {
+					return this.scopeType;
+				}
+
+				public void setScopeType(String scopeType) {
+					this.scopeType = scopeType;
+				}
+
+				public Integer getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(Integer status) {
+					this.status = status;
+				}
+
+				public Boolean getIsDelete() {
+					return this.isDelete;
+				}
+
+				public void setIsDelete(Boolean isDelete) {
+					this.isDelete = isDelete;
+				}
 
 				public Long getId() {
 					return this.id;
@@ -282,30 +339,6 @@ public class ListRowPermissionResponse extends AcsResponse {
 
 				public void setRuleName(String ruleName) {
 					this.ruleName = ruleName;
-				}
-
-				public String getScopeType() {
-					return this.scopeType;
-				}
-
-				public void setScopeType(String scopeType) {
-					this.scopeType = scopeType;
-				}
-
-				public Boolean getIsDelete() {
-					return this.isDelete;
-				}
-
-				public void setIsDelete(Boolean isDelete) {
-					this.isDelete = isDelete;
-				}
-
-				public Integer getStatus() {
-					return this.status;
-				}
-
-				public void setStatus(Integer status) {
-					this.status = status;
 				}
 
 				public List<ExpressionsItem> getExpressions() {
@@ -326,22 +359,22 @@ public class ListRowPermissionResponse extends AcsResponse {
 
 				public static class ExpressionsItem {
 
-					private String mappingColumnName;
+					private String operator;
 
 					private String type;
 
-					private String operator;
-
-					private List<String> values;
+					private String mappingColumnName;
 
 					private List<String> subConditions;
 
-					public String getMappingColumnName() {
-						return this.mappingColumnName;
+					private List<String> values;
+
+					public String getOperator() {
+						return this.operator;
 					}
 
-					public void setMappingColumnName(String mappingColumnName) {
-						this.mappingColumnName = mappingColumnName;
+					public void setOperator(String operator) {
+						this.operator = operator;
 					}
 
 					public String getType() {
@@ -352,20 +385,12 @@ public class ListRowPermissionResponse extends AcsResponse {
 						this.type = type;
 					}
 
-					public String getOperator() {
-						return this.operator;
+					public String getMappingColumnName() {
+						return this.mappingColumnName;
 					}
 
-					public void setOperator(String operator) {
-						this.operator = operator;
-					}
-
-					public List<String> getValues() {
-						return this.values;
-					}
-
-					public void setValues(List<String> values) {
-						this.values = values;
+					public void setMappingColumnName(String mappingColumnName) {
+						this.mappingColumnName = mappingColumnName;
 					}
 
 					public List<String> getSubConditions() {
@@ -374,6 +399,14 @@ public class ListRowPermissionResponse extends AcsResponse {
 
 					public void setSubConditions(List<String> subConditions) {
 						this.subConditions = subConditions;
+					}
+
+					public List<String> getValues() {
+						return this.values;
+					}
+
+					public void setValues(List<String> values) {
+						this.values = values;
 					}
 				}
 
@@ -411,39 +444,6 @@ public class ListRowPermissionResponse extends AcsResponse {
 							this.accountId = accountId;
 						}
 					}
-				}
-			}
-
-			public static class TablesItem {
-
-				private String mappingColumnName;
-
-				private String resourceId;
-
-				private String columnName;
-
-				public String getMappingColumnName() {
-					return this.mappingColumnName;
-				}
-
-				public void setMappingColumnName(String mappingColumnName) {
-					this.mappingColumnName = mappingColumnName;
-				}
-
-				public String getResourceId() {
-					return this.resourceId;
-				}
-
-				public void setResourceId(String resourceId) {
-					this.resourceId = resourceId;
-				}
-
-				public String getColumnName() {
-					return this.columnName;
-				}
-
-				public void setColumnName(String columnName) {
-					this.columnName = columnName;
 				}
 			}
 		}

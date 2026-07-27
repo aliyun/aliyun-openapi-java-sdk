@@ -31,20 +31,20 @@ public class GetPhysicalInstanceResponseUnmarshaller {
 	public static GetPhysicalInstanceResponse unmarshall(GetPhysicalInstanceResponse getPhysicalInstanceResponse, UnmarshallerContext _ctx) {
 		
 		getPhysicalInstanceResponse.setRequestId(_ctx.stringValue("GetPhysicalInstanceResponse.RequestId"));
-		getPhysicalInstanceResponse.setSuccess(_ctx.booleanValue("GetPhysicalInstanceResponse.Success"));
+		getPhysicalInstanceResponse.setMessage(_ctx.stringValue("GetPhysicalInstanceResponse.Message"));
 		getPhysicalInstanceResponse.setHttpStatusCode(_ctx.integerValue("GetPhysicalInstanceResponse.HttpStatusCode"));
 		getPhysicalInstanceResponse.setCode(_ctx.stringValue("GetPhysicalInstanceResponse.Code"));
-		getPhysicalInstanceResponse.setMessage(_ctx.stringValue("GetPhysicalInstanceResponse.Message"));
+		getPhysicalInstanceResponse.setSuccess(_ctx.booleanValue("GetPhysicalInstanceResponse.Success"));
 
 		Instance instance = new Instance();
-		instance.setId(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.Id"));
-		instance.setBizDate(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.BizDate"));
 		instance.setDueTime(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.DueTime"));
-		instance.setStartExecuteTime(_ctx.longValue("GetPhysicalInstanceResponse.Instance.StartExecuteTime"));
 		instance.setEndExecuteTime(_ctx.longValue("GetPhysicalInstanceResponse.Instance.EndExecuteTime"));
 		instance.setDuration(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.Duration"));
 		instance.setIndex(_ctx.integerValue("GetPhysicalInstanceResponse.Instance.Index"));
+		instance.setId(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.Id"));
+		instance.setBizDate(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.BizDate"));
 		instance.setExtendInfo(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.ExtendInfo"));
+		instance.setStartExecuteTime(_ctx.longValue("GetPhysicalInstanceResponse.Instance.StartExecuteTime"));
 
 		List<String> statusList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetPhysicalInstanceResponse.Instance.StatusList.Length"); i++) {
@@ -53,25 +53,25 @@ public class GetPhysicalInstanceResponseUnmarshaller {
 		instance.setStatusList(statusList);
 
 		NodeInfo nodeInfo = new NodeInfo();
-		nodeInfo.setId(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.Id"));
-		nodeInfo.setFrom(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.From"));
-		nodeInfo.setType(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.Type"));
-		nodeInfo.setName(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.Name"));
-		nodeInfo.setSubDetailType(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.SubDetailType"));
 		nodeInfo.setDescription(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.Description"));
-		nodeInfo.setDryRun(_ctx.booleanValue("GetPhysicalInstanceResponse.Instance.NodeInfo.DryRun"));
-		nodeInfo.setSchedulePaused(_ctx.booleanValue("GetPhysicalInstanceResponse.Instance.NodeInfo.SchedulePaused"));
-		nodeInfo.setHasProd(_ctx.booleanValue("GetPhysicalInstanceResponse.Instance.NodeInfo.HasProd"));
-		nodeInfo.setHasDev(_ctx.booleanValue("GetPhysicalInstanceResponse.Instance.NodeInfo.HasDev"));
-		nodeInfo.setBizUnitName(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.BizUnitName"));
 		nodeInfo.setCreateTime(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.CreateTime"));
+		nodeInfo.setDryRun(_ctx.booleanValue("GetPhysicalInstanceResponse.Instance.NodeInfo.DryRun"));
+		nodeInfo.setFrom(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.From"));
+		nodeInfo.setSubDetailType(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.SubDetailType"));
+		nodeInfo.setName(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.Name"));
+		nodeInfo.setHasProd(_ctx.booleanValue("GetPhysicalInstanceResponse.Instance.NodeInfo.HasProd"));
+		nodeInfo.setType(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.Type"));
+		nodeInfo.setHasDev(_ctx.booleanValue("GetPhysicalInstanceResponse.Instance.NodeInfo.HasDev"));
+		nodeInfo.setSchedulePaused(_ctx.booleanValue("GetPhysicalInstanceResponse.Instance.NodeInfo.SchedulePaused"));
 		nodeInfo.setLastModifiedTime(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.LastModifiedTime"));
+		nodeInfo.setBizUnitName(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.BizUnitName"));
+		nodeInfo.setId(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.Id"));
 
-		List<String> priorityList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetPhysicalInstanceResponse.Instance.NodeInfo.PriorityList.Length"); i++) {
-			priorityList.add(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.PriorityList["+ i +"]"));
+		List<String> schedulePeriodList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetPhysicalInstanceResponse.Instance.NodeInfo.SchedulePeriodList.Length"); i++) {
+			schedulePeriodList.add(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.SchedulePeriodList["+ i +"]"));
 		}
-		nodeInfo.setPriorityList(priorityList);
+		nodeInfo.setSchedulePeriodList(schedulePeriodList);
 
 		List<String> resourceGroupList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetPhysicalInstanceResponse.Instance.NodeInfo.ResourceGroupList.Length"); i++) {
@@ -79,11 +79,11 @@ public class GetPhysicalInstanceResponseUnmarshaller {
 		}
 		nodeInfo.setResourceGroupList(resourceGroupList);
 
-		List<String> schedulePeriodList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetPhysicalInstanceResponse.Instance.NodeInfo.SchedulePeriodList.Length"); i++) {
-			schedulePeriodList.add(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.SchedulePeriodList["+ i +"]"));
+		List<String> priorityList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetPhysicalInstanceResponse.Instance.NodeInfo.PriorityList.Length"); i++) {
+			priorityList.add(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.PriorityList["+ i +"]"));
 		}
-		nodeInfo.setSchedulePeriodList(schedulePeriodList);
+		nodeInfo.setPriorityList(priorityList);
 
 		Creator creator = new Creator();
 		creator.setId(_ctx.stringValue("GetPhysicalInstanceResponse.Instance.NodeInfo.Creator.Id"));

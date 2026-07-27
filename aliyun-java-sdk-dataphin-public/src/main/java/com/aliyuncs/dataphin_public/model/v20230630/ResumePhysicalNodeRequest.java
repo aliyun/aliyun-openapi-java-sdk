@@ -75,19 +75,11 @@ public class ResumePhysicalNodeRequest extends RpcAcsRequest<ResumePhysicalNodeR
 
 	public static class ResumeCommand {
 
-		@SerializedName("ProjectId")
-		private Long projectId;
-
 		@SerializedName("NodeIdList")
 		private List<String> nodeIdList;
 
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
+		@SerializedName("ProjectId")
+		private Long projectId;
 
 		public List<String> getNodeIdList() {
 			return this.nodeIdList;
@@ -95,6 +87,14 @@ public class ResumePhysicalNodeRequest extends RpcAcsRequest<ResumePhysicalNodeR
 
 		public void setNodeIdList(List<String> nodeIdList) {
 			this.nodeIdList = nodeIdList;
+		}
+
+		public Long getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
 		}
 	}
 

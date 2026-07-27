@@ -27,13 +27,13 @@ public class GetUserGroupResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private UserGroupInfo userGroupInfo;
 
@@ -45,12 +45,12 @@ public class GetUserGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetUserGroupResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public UserGroupInfo getUserGroupInfo() {
@@ -87,17 +87,41 @@ public class GetUserGroupResponse extends AcsResponse {
 
 	public static class UserGroupInfo {
 
+		private Boolean active;
+
+		private String description;
+
+		private String myRole;
+
 		private String id;
 
 		private String name;
 
-		private String description;
-
-		private Boolean active;
-
-		private String myRole;
-
 		private List<User> adminList;
+
+		public Boolean getActive() {
+			return this.active;
+		}
+
+		public void setActive(Boolean active) {
+			this.active = active;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getMyRole() {
+			return this.myRole;
+		}
+
+		public void setMyRole(String myRole) {
+			this.myRole = myRole;
+		}
 
 		public String getId() {
 			return this.id;
@@ -115,30 +139,6 @@ public class GetUserGroupResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Boolean getActive() {
-			return this.active;
-		}
-
-		public void setActive(Boolean active) {
-			this.active = active;
-		}
-
-		public String getMyRole() {
-			return this.myRole;
-		}
-
-		public void setMyRole(String myRole) {
-			this.myRole = myRole;
-		}
-
 		public List<User> getAdminList() {
 			return this.adminList;
 		}
@@ -149,19 +149,11 @@ public class GetUserGroupResponse extends AcsResponse {
 
 		public static class User {
 
-			private String id;
-
 			private String displayName;
 
+			private String id;
+
 			private String accountName;
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
 
 			public String getDisplayName() {
 				return this.displayName;
@@ -169,6 +161,14 @@ public class GetUserGroupResponse extends AcsResponse {
 
 			public void setDisplayName(String displayName) {
 				this.displayName = displayName;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
 			}
 
 			public String getAccountName() {

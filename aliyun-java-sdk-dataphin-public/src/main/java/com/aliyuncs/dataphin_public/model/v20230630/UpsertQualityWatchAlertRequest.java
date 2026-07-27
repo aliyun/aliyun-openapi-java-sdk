@@ -62,19 +62,11 @@ public class UpsertQualityWatchAlertRequest extends RpcAcsRequest<UpsertQualityW
 
 	public static class UpsertCommand {
 
-		@SerializedName("WatchId")
-		private Long watchId;
-
 		@SerializedName("QualityAlertInfo")
 		private QualityAlertInfo qualityAlertInfo;
 
-		public Long getWatchId() {
-			return this.watchId;
-		}
-
-		public void setWatchId(Long watchId) {
-			this.watchId = watchId;
-		}
+		@SerializedName("WatchId")
+		private Long watchId;
 
 		public QualityAlertInfo getQualityAlertInfo() {
 			return this.qualityAlertInfo;
@@ -84,13 +76,21 @@ public class UpsertQualityWatchAlertRequest extends RpcAcsRequest<UpsertQualityW
 			this.qualityAlertInfo = qualityAlertInfo;
 		}
 
-		public static class QualityAlertInfo {
+		public Long getWatchId() {
+			return this.watchId;
+		}
 
-			@SerializedName("AlertUserList")
-			private List<AlertUserListItem> alertUserList;
+		public void setWatchId(Long watchId) {
+			this.watchId = watchId;
+		}
+
+		public static class QualityAlertInfo {
 
 			@SerializedName("AlertDutyList")
 			private List<AlertDutyListItem> alertDutyList;
+
+			@SerializedName("AlertUserList")
+			private List<AlertUserListItem> alertUserList;
 
 			@SerializedName("EnableAlertQualityOwner")
 			private Boolean enableAlertQualityOwner;
@@ -104,20 +104,20 @@ public class UpsertQualityWatchAlertRequest extends RpcAcsRequest<UpsertQualityW
 			@SerializedName("AlertUserChannelList")
 			private List<String> alertUserChannelList;
 
-			public List<AlertUserListItem> getAlertUserList() {
-				return this.alertUserList;
-			}
-
-			public void setAlertUserList(List<AlertUserListItem> alertUserList) {
-				this.alertUserList = alertUserList;
-			}
-
 			public List<AlertDutyListItem> getAlertDutyList() {
 				return this.alertDutyList;
 			}
 
 			public void setAlertDutyList(List<AlertDutyListItem> alertDutyList) {
 				this.alertDutyList = alertDutyList;
+			}
+
+			public List<AlertUserListItem> getAlertUserList() {
+				return this.alertUserList;
+			}
+
+			public void setAlertUserList(List<AlertUserListItem> alertUserList) {
+				this.alertUserList = alertUserList;
 			}
 
 			public Boolean getEnableAlertQualityOwner() {
@@ -152,7 +152,7 @@ public class UpsertQualityWatchAlertRequest extends RpcAcsRequest<UpsertQualityW
 				this.alertUserChannelList = alertUserChannelList;
 			}
 
-			public static class AlertUserListItem {
+			public static class AlertDutyListItem {
 
 				@SerializedName("Name")
 				private String name;
@@ -177,7 +177,7 @@ public class UpsertQualityWatchAlertRequest extends RpcAcsRequest<UpsertQualityW
 				}
 			}
 
-			public static class AlertDutyListItem {
+			public static class AlertUserListItem {
 
 				@SerializedName("Name")
 				private String name;

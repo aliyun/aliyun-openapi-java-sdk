@@ -27,13 +27,13 @@ public class GetStandardLookupTableResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private LookupTableInfo lookupTableInfo;
 
@@ -45,12 +45,12 @@ public class GetStandardLookupTableResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetStandardLookupTableResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public LookupTableInfo getLookupTableInfo() {
@@ -87,80 +87,40 @@ public class GetStandardLookupTableResponse extends AcsResponse {
 
 	public static class LookupTableInfo {
 
-		private Long id;
-
-		private String name;
-
-		private String code;
-
-		private String description;
-
-		private String creator;
-
-		private String creatorName;
+		private String modifyTime;
 
 		private String lastModifier;
-
-		private String lastModifierName;
 
 		private String owner;
 
 		private String ownerName;
 
+		private String description;
+
 		private String createTime;
 
-		private String modifyTime;
+		private String creator;
+
+		private String code;
+
+		private String lastModifierName;
+
+		private String name;
+
+		private Long id;
+
+		private String creatorName;
 
 		private List<LookupTableValue> lookupTableValueList;
 
 		private DirectoryReference directoryReference;
 
-		public Long getId() {
-			return this.id;
+		public String getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(String creator) {
-			this.creator = creator;
-		}
-
-		public String getCreatorName() {
-			return this.creatorName;
-		}
-
-		public void setCreatorName(String creatorName) {
-			this.creatorName = creatorName;
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 
 		public String getLastModifier() {
@@ -169,14 +129,6 @@ public class GetStandardLookupTableResponse extends AcsResponse {
 
 		public void setLastModifier(String lastModifier) {
 			this.lastModifier = lastModifier;
-		}
-
-		public String getLastModifierName() {
-			return this.lastModifierName;
-		}
-
-		public void setLastModifierName(String lastModifierName) {
-			this.lastModifierName = lastModifierName;
 		}
 
 		public String getOwner() {
@@ -195,6 +147,14 @@ public class GetStandardLookupTableResponse extends AcsResponse {
 			this.ownerName = ownerName;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -203,12 +163,52 @@ public class GetStandardLookupTableResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		public String getCreator() {
+			return this.creator;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setCreator(String creator) {
+			this.creator = creator;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getLastModifierName() {
+			return this.lastModifierName;
+		}
+
+		public void setLastModifierName(String lastModifierName) {
+			this.lastModifierName = lastModifierName;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getCreatorName() {
+			return this.creatorName;
+		}
+
+		public void setCreatorName(String creatorName) {
+			this.creatorName = creatorName;
 		}
 
 		public List<LookupTableValue> getLookupTableValueList() {
@@ -229,13 +229,21 @@ public class GetStandardLookupTableResponse extends AcsResponse {
 
 		public static class LookupTableValue {
 
+			private String description;
+
 			private String value;
 
 			private String name;
 
 			private String englishName;
 
-			private String description;
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
 
 			public String getValue() {
 				return this.value;
@@ -259,14 +267,6 @@ public class GetStandardLookupTableResponse extends AcsResponse {
 
 			public void setEnglishName(String englishName) {
 				this.englishName = englishName;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
 			}
 		}
 

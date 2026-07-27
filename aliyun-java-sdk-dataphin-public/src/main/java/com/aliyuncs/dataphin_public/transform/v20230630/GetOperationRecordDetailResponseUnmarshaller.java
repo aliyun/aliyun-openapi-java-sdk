@@ -28,10 +28,10 @@ public class GetOperationRecordDetailResponseUnmarshaller {
 	public static GetOperationRecordDetailResponse unmarshall(GetOperationRecordDetailResponse getOperationRecordDetailResponse, UnmarshallerContext _ctx) {
 		
 		getOperationRecordDetailResponse.setRequestId(_ctx.stringValue("GetOperationRecordDetailResponse.RequestId"));
-		getOperationRecordDetailResponse.setSuccess(_ctx.booleanValue("GetOperationRecordDetailResponse.Success"));
+		getOperationRecordDetailResponse.setMessage(_ctx.stringValue("GetOperationRecordDetailResponse.Message"));
 		getOperationRecordDetailResponse.setHttpStatusCode(_ctx.integerValue("GetOperationRecordDetailResponse.HttpStatusCode"));
 		getOperationRecordDetailResponse.setCode(_ctx.stringValue("GetOperationRecordDetailResponse.Code"));
-		getOperationRecordDetailResponse.setMessage(_ctx.stringValue("GetOperationRecordDetailResponse.Message"));
+		getOperationRecordDetailResponse.setSuccess(_ctx.booleanValue("GetOperationRecordDetailResponse.Success"));
 
 		OperationRecordDetailResponse operationRecordDetailResponse = new OperationRecordDetailResponse();
 		operationRecordDetailResponse.setOperationId(_ctx.stringValue("GetOperationRecordDetailResponse.OperationRecordDetailResponse.OperationId"));
@@ -41,11 +41,11 @@ public class GetOperationRecordDetailResponseUnmarshaller {
 		List<ResultItem> results = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOperationRecordDetailResponse.OperationRecordDetailResponse.Results.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setResult(_ctx.stringValue("GetOperationRecordDetailResponse.OperationRecordDetailResponse.Results["+ i +"].Result"));
-			resultItem.setIndex(_ctx.integerValue("GetOperationRecordDetailResponse.OperationRecordDetailResponse.Results["+ i +"].Index"));
-			resultItem.setTitle(_ctx.stringValue("GetOperationRecordDetailResponse.OperationRecordDetailResponse.Results["+ i +"].Title"));
-			resultItem.setSql(_ctx.stringValue("GetOperationRecordDetailResponse.OperationRecordDetailResponse.Results["+ i +"].Sql"));
 			resultItem.setTaskId(_ctx.stringValue("GetOperationRecordDetailResponse.OperationRecordDetailResponse.Results["+ i +"].TaskId"));
+			resultItem.setTitle(_ctx.stringValue("GetOperationRecordDetailResponse.OperationRecordDetailResponse.Results["+ i +"].Title"));
+			resultItem.setIndex(_ctx.integerValue("GetOperationRecordDetailResponse.OperationRecordDetailResponse.Results["+ i +"].Index"));
+			resultItem.setResult(_ctx.stringValue("GetOperationRecordDetailResponse.OperationRecordDetailResponse.Results["+ i +"].Result"));
+			resultItem.setSql(_ctx.stringValue("GetOperationRecordDetailResponse.OperationRecordDetailResponse.Results["+ i +"].Sql"));
 
 			results.add(resultItem);
 		}

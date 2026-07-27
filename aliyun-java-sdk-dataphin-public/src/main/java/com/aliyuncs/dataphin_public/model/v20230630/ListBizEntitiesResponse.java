@@ -27,13 +27,13 @@ public class ListBizEntitiesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -45,12 +45,12 @@ public class ListBizEntitiesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListBizEntitiesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -109,90 +109,58 @@ public class ListBizEntitiesResponse extends AcsResponse {
 
 		public static class BizEntityInfo {
 
-			private Long id;
-
-			private String name;
-
-			private String displayName;
-
-			private String description;
-
-			private String ownerUserId;
+			private String status;
 
 			private String ownerName;
 
-			private String type;
+			private String lastModifier;
+
+			private String description;
 
 			private String subType;
+
+			private String gmtModified;
+
+			private String onlineStatus;
+
+			private Boolean levelSubBizObject;
+
+			private String lastModifierName;
+
+			private String name;
 
 			private Long dataDomainId;
 
 			private Long bizUnitId;
 
+			private String ownerUserId;
+
+			private String type;
+
 			private String gmtCreate;
-
-			private String gmtModified;
-
-			private String lastModifier;
-
-			private String lastModifierName;
-
-			private String onlineStatus;
-
-			private String status;
 
 			private Integer refTableCount;
 
 			private Boolean hasChildBizEntity;
 
-			private Boolean levelSubBizObject;
+			private String displayName;
 
-			private List<Long> refBizEntityIdList;
-
-			private List<Long> belongToBizEntityIdList;
+			private Long id;
 
 			private List<Long> childBizEntityIdList;
 
+			private List<Long> refBizEntityIdList;
+
 			private List<Long> suffixBizEntityIdList;
 
-			public Long getId() {
-				return this.id;
+			private List<Long> belongToBizEntityIdList;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getDisplayName() {
-				return this.displayName;
-			}
-
-			public void setDisplayName(String displayName) {
-				this.displayName = displayName;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getOwnerUserId() {
-				return this.ownerUserId;
-			}
-
-			public void setOwnerUserId(String ownerUserId) {
-				this.ownerUserId = ownerUserId;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getOwnerName() {
@@ -203,12 +171,20 @@ public class ListBizEntitiesResponse extends AcsResponse {
 				this.ownerName = ownerName;
 			}
 
-			public String getType() {
-				return this.type;
+			public String getLastModifier() {
+				return this.lastModifier;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setLastModifier(String lastModifier) {
+				this.lastModifier = lastModifier;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getSubType() {
@@ -217,6 +193,46 @@ public class ListBizEntitiesResponse extends AcsResponse {
 
 			public void setSubType(String subType) {
 				this.subType = subType;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public String getOnlineStatus() {
+				return this.onlineStatus;
+			}
+
+			public void setOnlineStatus(String onlineStatus) {
+				this.onlineStatus = onlineStatus;
+			}
+
+			public Boolean getLevelSubBizObject() {
+				return this.levelSubBizObject;
+			}
+
+			public void setLevelSubBizObject(Boolean levelSubBizObject) {
+				this.levelSubBizObject = levelSubBizObject;
+			}
+
+			public String getLastModifierName() {
+				return this.lastModifierName;
+			}
+
+			public void setLastModifierName(String lastModifierName) {
+				this.lastModifierName = lastModifierName;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public Long getDataDomainId() {
@@ -235,52 +251,28 @@ public class ListBizEntitiesResponse extends AcsResponse {
 				this.bizUnitId = bizUnitId;
 			}
 
+			public String getOwnerUserId() {
+				return this.ownerUserId;
+			}
+
+			public void setOwnerUserId(String ownerUserId) {
+				this.ownerUserId = ownerUserId;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
 			public String getGmtCreate() {
 				return this.gmtCreate;
 			}
 
 			public void setGmtCreate(String gmtCreate) {
 				this.gmtCreate = gmtCreate;
-			}
-
-			public String getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public String getLastModifier() {
-				return this.lastModifier;
-			}
-
-			public void setLastModifier(String lastModifier) {
-				this.lastModifier = lastModifier;
-			}
-
-			public String getLastModifierName() {
-				return this.lastModifierName;
-			}
-
-			public void setLastModifierName(String lastModifierName) {
-				this.lastModifierName = lastModifierName;
-			}
-
-			public String getOnlineStatus() {
-				return this.onlineStatus;
-			}
-
-			public void setOnlineStatus(String onlineStatus) {
-				this.onlineStatus = onlineStatus;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
 			}
 
 			public Integer getRefTableCount() {
@@ -299,28 +291,20 @@ public class ListBizEntitiesResponse extends AcsResponse {
 				this.hasChildBizEntity = hasChildBizEntity;
 			}
 
-			public Boolean getLevelSubBizObject() {
-				return this.levelSubBizObject;
+			public String getDisplayName() {
+				return this.displayName;
 			}
 
-			public void setLevelSubBizObject(Boolean levelSubBizObject) {
-				this.levelSubBizObject = levelSubBizObject;
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
 			}
 
-			public List<Long> getRefBizEntityIdList() {
-				return this.refBizEntityIdList;
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setRefBizEntityIdList(List<Long> refBizEntityIdList) {
-				this.refBizEntityIdList = refBizEntityIdList;
-			}
-
-			public List<Long> getBelongToBizEntityIdList() {
-				return this.belongToBizEntityIdList;
-			}
-
-			public void setBelongToBizEntityIdList(List<Long> belongToBizEntityIdList) {
-				this.belongToBizEntityIdList = belongToBizEntityIdList;
+			public void setId(Long id) {
+				this.id = id;
 			}
 
 			public List<Long> getChildBizEntityIdList() {
@@ -331,12 +315,28 @@ public class ListBizEntitiesResponse extends AcsResponse {
 				this.childBizEntityIdList = childBizEntityIdList;
 			}
 
+			public List<Long> getRefBizEntityIdList() {
+				return this.refBizEntityIdList;
+			}
+
+			public void setRefBizEntityIdList(List<Long> refBizEntityIdList) {
+				this.refBizEntityIdList = refBizEntityIdList;
+			}
+
 			public List<Long> getSuffixBizEntityIdList() {
 				return this.suffixBizEntityIdList;
 			}
 
 			public void setSuffixBizEntityIdList(List<Long> suffixBizEntityIdList) {
 				this.suffixBizEntityIdList = suffixBizEntityIdList;
+			}
+
+			public List<Long> getBelongToBizEntityIdList() {
+				return this.belongToBizEntityIdList;
+			}
+
+			public void setBelongToBizEntityIdList(List<Long> belongToBizEntityIdList) {
+				this.belongToBizEntityIdList = belongToBizEntityIdList;
 			}
 		}
 	}

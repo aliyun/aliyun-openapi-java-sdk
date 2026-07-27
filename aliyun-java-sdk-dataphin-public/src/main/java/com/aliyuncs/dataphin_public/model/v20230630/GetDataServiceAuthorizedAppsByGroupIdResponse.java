@@ -27,13 +27,13 @@ public class GetDataServiceAuthorizedAppsByGroupIdResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<AppInfo> appInfoList;
 
@@ -45,12 +45,12 @@ public class GetDataServiceAuthorizedAppsByGroupIdResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetDataServiceAuthorizedAppsByGroupIdResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<AppInfo> getAppInfoList() {
@@ -87,13 +87,29 @@ public class GetDataServiceAuthorizedAppsByGroupIdResponse extends AcsResponse {
 
 	public static class AppInfo {
 
+		private String appKeyStr;
+
+		private Long appKey;
+
 		private Integer id;
 
 		private String name;
 
-		private Long appKey;
+		public String getAppKeyStr() {
+			return this.appKeyStr;
+		}
 
-		private String appKeyStr;
+		public void setAppKeyStr(String appKeyStr) {
+			this.appKeyStr = appKeyStr;
+		}
+
+		public Long getAppKey() {
+			return this.appKey;
+		}
+
+		public void setAppKey(Long appKey) {
+			this.appKey = appKey;
+		}
 
 		public Integer getId() {
 			return this.id;
@@ -109,22 +125,6 @@ public class GetDataServiceAuthorizedAppsByGroupIdResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public Long getAppKey() {
-			return this.appKey;
-		}
-
-		public void setAppKey(Long appKey) {
-			this.appKey = appKey;
-		}
-
-		public String getAppKeyStr() {
-			return this.appKeyStr;
-		}
-
-		public void setAppKeyStr(String appKeyStr) {
-			this.appKeyStr = appKeyStr;
 		}
 	}
 

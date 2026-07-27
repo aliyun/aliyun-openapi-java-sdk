@@ -23,11 +23,11 @@ public class CreateStandardLookupTableResponseUnmarshaller {
 	public static CreateStandardLookupTableResponse unmarshall(CreateStandardLookupTableResponse createStandardLookupTableResponse, UnmarshallerContext _ctx) {
 		
 		createStandardLookupTableResponse.setRequestId(_ctx.stringValue("CreateStandardLookupTableResponse.RequestId"));
-		createStandardLookupTableResponse.setSuccess(_ctx.booleanValue("CreateStandardLookupTableResponse.Success"));
-		createStandardLookupTableResponse.setHttpStatusCode(_ctx.integerValue("CreateStandardLookupTableResponse.HttpStatusCode"));
-		createStandardLookupTableResponse.setCode(_ctx.stringValue("CreateStandardLookupTableResponse.Code"));
 		createStandardLookupTableResponse.setMessage(_ctx.stringValue("CreateStandardLookupTableResponse.Message"));
+		createStandardLookupTableResponse.setHttpStatusCode(_ctx.integerValue("CreateStandardLookupTableResponse.HttpStatusCode"));
 		createStandardLookupTableResponse.setData(_ctx.longValue("CreateStandardLookupTableResponse.Data"));
+		createStandardLookupTableResponse.setCode(_ctx.stringValue("CreateStandardLookupTableResponse.Code"));
+		createStandardLookupTableResponse.setSuccess(_ctx.booleanValue("CreateStandardLookupTableResponse.Success"));
 	 
 	 	return createStandardLookupTableResponse;
 	}

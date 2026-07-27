@@ -28,23 +28,23 @@ public class GetUserGroupResponseUnmarshaller {
 	public static GetUserGroupResponse unmarshall(GetUserGroupResponse getUserGroupResponse, UnmarshallerContext _ctx) {
 		
 		getUserGroupResponse.setRequestId(_ctx.stringValue("GetUserGroupResponse.RequestId"));
-		getUserGroupResponse.setSuccess(_ctx.booleanValue("GetUserGroupResponse.Success"));
+		getUserGroupResponse.setMessage(_ctx.stringValue("GetUserGroupResponse.Message"));
 		getUserGroupResponse.setHttpStatusCode(_ctx.integerValue("GetUserGroupResponse.HttpStatusCode"));
 		getUserGroupResponse.setCode(_ctx.stringValue("GetUserGroupResponse.Code"));
-		getUserGroupResponse.setMessage(_ctx.stringValue("GetUserGroupResponse.Message"));
+		getUserGroupResponse.setSuccess(_ctx.booleanValue("GetUserGroupResponse.Success"));
 
 		UserGroupInfo userGroupInfo = new UserGroupInfo();
+		userGroupInfo.setActive(_ctx.booleanValue("GetUserGroupResponse.UserGroupInfo.Active"));
+		userGroupInfo.setDescription(_ctx.stringValue("GetUserGroupResponse.UserGroupInfo.Description"));
+		userGroupInfo.setMyRole(_ctx.stringValue("GetUserGroupResponse.UserGroupInfo.MyRole"));
 		userGroupInfo.setId(_ctx.stringValue("GetUserGroupResponse.UserGroupInfo.Id"));
 		userGroupInfo.setName(_ctx.stringValue("GetUserGroupResponse.UserGroupInfo.Name"));
-		userGroupInfo.setDescription(_ctx.stringValue("GetUserGroupResponse.UserGroupInfo.Description"));
-		userGroupInfo.setActive(_ctx.booleanValue("GetUserGroupResponse.UserGroupInfo.Active"));
-		userGroupInfo.setMyRole(_ctx.stringValue("GetUserGroupResponse.UserGroupInfo.MyRole"));
 
 		List<User> adminList = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("GetUserGroupResponse.UserGroupInfo.AdminList.Length"); i++) {
 			User user = new User();
-			user.setId(_ctx.stringValue("GetUserGroupResponse.UserGroupInfo.AdminList["+ i +"].Id"));
 			user.setDisplayName(_ctx.stringValue("GetUserGroupResponse.UserGroupInfo.AdminList["+ i +"].DisplayName"));
+			user.setId(_ctx.stringValue("GetUserGroupResponse.UserGroupInfo.AdminList["+ i +"].Id"));
 			user.setAccountName(_ctx.stringValue("GetUserGroupResponse.UserGroupInfo.AdminList["+ i +"].AccountName"));
 
 			adminList.add(user);

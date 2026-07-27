@@ -27,10 +27,10 @@ public class ListAddableRolesResponseUnmarshaller {
 	public static ListAddableRolesResponse unmarshall(ListAddableRolesResponse listAddableRolesResponse, UnmarshallerContext _ctx) {
 		
 		listAddableRolesResponse.setRequestId(_ctx.stringValue("ListAddableRolesResponse.RequestId"));
-		listAddableRolesResponse.setSuccess(_ctx.booleanValue("ListAddableRolesResponse.Success"));
+		listAddableRolesResponse.setMessage(_ctx.stringValue("ListAddableRolesResponse.Message"));
 		listAddableRolesResponse.setHttpStatusCode(_ctx.integerValue("ListAddableRolesResponse.HttpStatusCode"));
 		listAddableRolesResponse.setCode(_ctx.stringValue("ListAddableRolesResponse.Code"));
-		listAddableRolesResponse.setMessage(_ctx.stringValue("ListAddableRolesResponse.Message"));
+		listAddableRolesResponse.setSuccess(_ctx.booleanValue("ListAddableRolesResponse.Success"));
 
 		List<Role> roleList = new ArrayList<Role>();
 		for (int i = 0; i < _ctx.lengthValue("ListAddableRolesResponse.RoleList.Length"); i++) {

@@ -34,36 +34,36 @@ public class GetAlertEventResponseUnmarshaller {
 	public static GetAlertEventResponse unmarshall(GetAlertEventResponse getAlertEventResponse, UnmarshallerContext _ctx) {
 		
 		getAlertEventResponse.setRequestId(_ctx.stringValue("GetAlertEventResponse.RequestId"));
-		getAlertEventResponse.setSuccess(_ctx.booleanValue("GetAlertEventResponse.Success"));
+		getAlertEventResponse.setMessage(_ctx.stringValue("GetAlertEventResponse.Message"));
 		getAlertEventResponse.setHttpStatusCode(_ctx.integerValue("GetAlertEventResponse.HttpStatusCode"));
 		getAlertEventResponse.setCode(_ctx.stringValue("GetAlertEventResponse.Code"));
-		getAlertEventResponse.setMessage(_ctx.stringValue("GetAlertEventResponse.Message"));
+		getAlertEventResponse.setSuccess(_ctx.booleanValue("GetAlertEventResponse.Success"));
 
 		AlertEventInfo alertEventInfo = new AlertEventInfo();
-		alertEventInfo.setId(_ctx.longValue("GetAlertEventResponse.AlertEventInfo.Id"));
-		alertEventInfo.setLatestAlertTime(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.LatestAlertTime"));
 		alertEventInfo.setFirstAlertTime(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.FirstAlertTime"));
 		alertEventInfo.setStatus(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.Status"));
 		alertEventInfo.setAlertFrequency(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertFrequency"));
 		alertEventInfo.setTotalAlertTimes(_ctx.longValue("GetAlertEventResponse.AlertEventInfo.TotalAlertTimes"));
+		alertEventInfo.setId(_ctx.longValue("GetAlertEventResponse.AlertEventInfo.Id"));
+		alertEventInfo.setLatestAlertTime(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.LatestAlertTime"));
 		alertEventInfo.setDoNotDisturbEndTime(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.DoNotDisturbEndTime"));
 
 		AlertObject alertObject = new AlertObject();
 		alertObject.setSourceSystemType(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertObject.SourceSystemType"));
-		alertObject.setName(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertObject.Name"));
 		alertObject.setType(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertObject.Type"));
+		alertObject.setName(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertObject.Name"));
 		alertEventInfo.setAlertObject(alertObject);
 
 		AlertReason alertReason = new AlertReason();
 		alertReason.setType(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertReason.Type"));
-		alertReason.setBizDate(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertReason.BizDate"));
 		alertReason.setUniqueKey(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertReason.UniqueKey"));
+		alertReason.setBizDate(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertReason.BizDate"));
 
 		List<AlertReasonParam> alertReasonParamList = new ArrayList<AlertReasonParam>();
 		for (int i = 0; i < _ctx.lengthValue("GetAlertEventResponse.AlertEventInfo.AlertReason.AlertReasonParamList.Length"); i++) {
 			AlertReasonParam alertReasonParam = new AlertReasonParam();
-			alertReasonParam.setKey(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertReason.AlertReasonParamList["+ i +"].Key"));
 			alertReasonParam.setValue(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertReason.AlertReasonParamList["+ i +"].Value"));
+			alertReasonParam.setKey(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertReason.AlertReasonParamList["+ i +"].Key"));
 
 			alertReasonParamList.add(alertReasonParam);
 		}
@@ -76,28 +76,28 @@ public class GetAlertEventResponseUnmarshaller {
 		alertEventInfo.setBelongProject(belongProject);
 
 		UrlConfig urlConfig = new UrlConfig();
-		urlConfig.setObjectUrl(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.UrlConfig.ObjectUrl"));
 		urlConfig.setLogUrl(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.UrlConfig.LogUrl"));
+		urlConfig.setObjectUrl(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.UrlConfig.ObjectUrl"));
 		urlConfig.setAlertConfigUrl(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.UrlConfig.AlertConfigUrl"));
 		alertEventInfo.setUrlConfig(urlConfig);
 
 		List<AlertReceiver> alertReceiverList = new ArrayList<AlertReceiver>();
 		for (int i = 0; i < _ctx.lengthValue("GetAlertEventResponse.AlertEventInfo.AlertReceiverList.Length"); i++) {
 			AlertReceiver alertReceiver = new AlertReceiver();
-			alertReceiver.setType(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertReceiverList["+ i +"].Type"));
 			alertReceiver.setOnCallTableName(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertReceiverList["+ i +"].OnCallTableName"));
-
-			List<String> alertChannelTypeList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("GetAlertEventResponse.AlertEventInfo.AlertReceiverList["+ i +"].AlertChannelTypeList.Length"); j++) {
-				alertChannelTypeList.add(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertReceiverList["+ i +"].AlertChannelTypeList["+ j +"]"));
-			}
-			alertReceiver.setAlertChannelTypeList(alertChannelTypeList);
+			alertReceiver.setType(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertReceiverList["+ i +"].Type"));
 
 			List<String> customAlertChannelIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetAlertEventResponse.AlertEventInfo.AlertReceiverList["+ i +"].CustomAlertChannelIdList.Length"); j++) {
 				customAlertChannelIdList.add(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertReceiverList["+ i +"].CustomAlertChannelIdList["+ j +"]"));
 			}
 			alertReceiver.setCustomAlertChannelIdList(customAlertChannelIdList);
+
+			List<String> alertChannelTypeList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetAlertEventResponse.AlertEventInfo.AlertReceiverList["+ i +"].AlertChannelTypeList.Length"); j++) {
+				alertChannelTypeList.add(_ctx.stringValue("GetAlertEventResponse.AlertEventInfo.AlertReceiverList["+ i +"].AlertChannelTypeList["+ j +"]"));
+			}
+			alertReceiver.setAlertChannelTypeList(alertChannelTypeList);
 
 			List<User> userList = new ArrayList<User>();
 			for (int j = 0; j < _ctx.lengthValue("GetAlertEventResponse.AlertEventInfo.AlertReceiverList["+ i +"].UserList.Length"); j++) {

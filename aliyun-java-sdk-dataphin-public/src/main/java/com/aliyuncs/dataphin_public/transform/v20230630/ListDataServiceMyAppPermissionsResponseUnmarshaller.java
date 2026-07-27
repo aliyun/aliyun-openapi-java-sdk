@@ -29,10 +29,10 @@ public class ListDataServiceMyAppPermissionsResponseUnmarshaller {
 	public static ListDataServiceMyAppPermissionsResponse unmarshall(ListDataServiceMyAppPermissionsResponse listDataServiceMyAppPermissionsResponse, UnmarshallerContext _ctx) {
 		
 		listDataServiceMyAppPermissionsResponse.setRequestId(_ctx.stringValue("ListDataServiceMyAppPermissionsResponse.RequestId"));
-		listDataServiceMyAppPermissionsResponse.setSuccess(_ctx.booleanValue("ListDataServiceMyAppPermissionsResponse.Success"));
+		listDataServiceMyAppPermissionsResponse.setMessage(_ctx.stringValue("ListDataServiceMyAppPermissionsResponse.Message"));
 		listDataServiceMyAppPermissionsResponse.setHttpStatusCode(_ctx.integerValue("ListDataServiceMyAppPermissionsResponse.HttpStatusCode"));
 		listDataServiceMyAppPermissionsResponse.setCode(_ctx.stringValue("ListDataServiceMyAppPermissionsResponse.Code"));
-		listDataServiceMyAppPermissionsResponse.setMessage(_ctx.stringValue("ListDataServiceMyAppPermissionsResponse.Message"));
+		listDataServiceMyAppPermissionsResponse.setSuccess(_ctx.booleanValue("ListDataServiceMyAppPermissionsResponse.Success"));
 
 		PageResult pageResult = new PageResult();
 		pageResult.setTotalCount(_ctx.integerValue("ListDataServiceMyAppPermissionsResponse.PageResult.TotalCount"));

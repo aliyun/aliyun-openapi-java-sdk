@@ -32,30 +32,20 @@ public class GetTransferInfoResponseUnmarshaller {
 	public static GetTransferInfoResponse unmarshall(GetTransferInfoResponse getTransferInfoResponse, UnmarshallerContext _ctx) {
 		
 		getTransferInfoResponse.setRequestId(_ctx.stringValue("GetTransferInfoResponse.RequestId"));
-		getTransferInfoResponse.setSuccess(_ctx.booleanValue("GetTransferInfoResponse.Success"));
+		getTransferInfoResponse.setMessage(_ctx.stringValue("GetTransferInfoResponse.Message"));
 		getTransferInfoResponse.setHttpStatusCode(_ctx.integerValue("GetTransferInfoResponse.HttpStatusCode"));
 		getTransferInfoResponse.setCode(_ctx.stringValue("GetTransferInfoResponse.Code"));
-		getTransferInfoResponse.setMessage(_ctx.stringValue("GetTransferInfoResponse.Message"));
+		getTransferInfoResponse.setSuccess(_ctx.booleanValue("GetTransferInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setProposalId(_ctx.longValue("GetTransferInfoResponse.Data.ProposalId"));
-		data.setFlowId(_ctx.longValue("GetTransferInfoResponse.Data.FlowId"));
-		data.setTitle(_ctx.stringValue("GetTransferInfoResponse.Data.Title"));
 		data.setPrivilegeTransferMode(_ctx.stringValue("GetTransferInfoResponse.Data.PrivilegeTransferMode"));
-		data.setTransferComment(_ctx.stringValue("GetTransferInfoResponse.Data.TransferComment"));
-		data.setTransferStatus(_ctx.stringValue("GetTransferInfoResponse.Data.TransferStatus"));
-		data.setGmtCreate(_ctx.stringValue("GetTransferInfoResponse.Data.GmtCreate"));
 		data.setGmtModified(_ctx.stringValue("GetTransferInfoResponse.Data.GmtModified"));
-
-		Creator creator = new Creator();
-		creator.setUserId(_ctx.stringValue("GetTransferInfoResponse.Data.Creator.UserId"));
-		creator.setDisplayName(_ctx.stringValue("GetTransferInfoResponse.Data.Creator.DisplayName"));
-		data.setCreator(creator);
-
-		OldOwner oldOwner = new OldOwner();
-		oldOwner.setUserId(_ctx.stringValue("GetTransferInfoResponse.Data.OldOwner.UserId"));
-		oldOwner.setDisplayName(_ctx.stringValue("GetTransferInfoResponse.Data.OldOwner.DisplayName"));
-		data.setOldOwner(oldOwner);
+		data.setTitle(_ctx.stringValue("GetTransferInfoResponse.Data.Title"));
+		data.setFlowId(_ctx.longValue("GetTransferInfoResponse.Data.FlowId"));
+		data.setGmtCreate(_ctx.stringValue("GetTransferInfoResponse.Data.GmtCreate"));
+		data.setTransferComment(_ctx.stringValue("GetTransferInfoResponse.Data.TransferComment"));
+		data.setProposalId(_ctx.longValue("GetTransferInfoResponse.Data.ProposalId"));
+		data.setTransferStatus(_ctx.stringValue("GetTransferInfoResponse.Data.TransferStatus"));
 
 		NewOwner newOwner = new NewOwner();
 		newOwner.setUserId(_ctx.stringValue("GetTransferInfoResponse.Data.NewOwner.UserId"));
@@ -66,6 +56,16 @@ public class GetTransferInfoResponseUnmarshaller {
 		lastModifier.setUserId(_ctx.stringValue("GetTransferInfoResponse.Data.LastModifier.UserId"));
 		lastModifier.setDisplayName(_ctx.stringValue("GetTransferInfoResponse.Data.LastModifier.DisplayName"));
 		data.setLastModifier(lastModifier);
+
+		Creator creator = new Creator();
+		creator.setUserId(_ctx.stringValue("GetTransferInfoResponse.Data.Creator.UserId"));
+		creator.setDisplayName(_ctx.stringValue("GetTransferInfoResponse.Data.Creator.DisplayName"));
+		data.setCreator(creator);
+
+		OldOwner oldOwner = new OldOwner();
+		oldOwner.setUserId(_ctx.stringValue("GetTransferInfoResponse.Data.OldOwner.UserId"));
+		oldOwner.setDisplayName(_ctx.stringValue("GetTransferInfoResponse.Data.OldOwner.DisplayName"));
+		data.setOldOwner(oldOwner);
 
 		List<PrivilegeTransferResultEntriesItem> privilegeTransferResultEntries = new ArrayList<PrivilegeTransferResultEntriesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetTransferInfoResponse.Data.PrivilegeTransferResultEntries.Length"); i++) {

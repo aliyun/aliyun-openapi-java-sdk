@@ -29,10 +29,10 @@ public class ListCatalogAssetsResponseUnmarshaller {
 	public static ListCatalogAssetsResponse unmarshall(ListCatalogAssetsResponse listCatalogAssetsResponse, UnmarshallerContext _ctx) {
 		
 		listCatalogAssetsResponse.setRequestId(_ctx.stringValue("ListCatalogAssetsResponse.RequestId"));
-		listCatalogAssetsResponse.setSuccess(_ctx.booleanValue("ListCatalogAssetsResponse.Success"));
+		listCatalogAssetsResponse.setMessage(_ctx.stringValue("ListCatalogAssetsResponse.Message"));
 		listCatalogAssetsResponse.setHttpStatusCode(_ctx.integerValue("ListCatalogAssetsResponse.HttpStatusCode"));
 		listCatalogAssetsResponse.setCode(_ctx.stringValue("ListCatalogAssetsResponse.Code"));
-		listCatalogAssetsResponse.setMessage(_ctx.stringValue("ListCatalogAssetsResponse.Message"));
+		listCatalogAssetsResponse.setSuccess(_ctx.booleanValue("ListCatalogAssetsResponse.Success"));
 
 		Data data = new Data();
 		data.setTotalCount(_ctx.longValue("ListCatalogAssetsResponse.Data.TotalCount"));
@@ -40,33 +40,33 @@ public class ListCatalogAssetsResponseUnmarshaller {
 		List<Asset> assetList = new ArrayList<Asset>();
 		for (int i = 0; i < _ctx.lengthValue("ListCatalogAssetsResponse.Data.AssetList.Length"); i++) {
 			Asset asset = new Asset();
-			asset.setGuid(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].Guid"));
-			asset.setAssetType(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].AssetType"));
-			asset.setIsDeleted(_ctx.booleanValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].IsDeleted"));
-			asset.setAssetName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].AssetName"));
-			asset.setAssetDisplayName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].AssetDisplayName"));
-			asset.setAssetFullName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].AssetFullName"));
-			asset.setMaxSecurityLevel(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].MaxSecurityLevel"));
-			asset.setAssetDescription(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].AssetDescription"));
-			asset.setAssetFrom(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].AssetFrom"));
-			asset.setBizUnitId(_ctx.longValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].BizUnitId"));
-			asset.setBizUnitName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].BizUnitName"));
-			asset.setProjectId(_ctx.longValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].ProjectId"));
-			asset.setProjectName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].ProjectName"));
-			asset.setDatasourceId(_ctx.longValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].DatasourceId"));
-			asset.setDataSourceName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].DataSourceName"));
-			asset.setSubType(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].SubType"));
-			asset.setSumTableGuid(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].SumTableGuid"));
 			asset.setSumTableName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].SumTableName"));
-			asset.setGranularity(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].Granularity"));
-			asset.setDataCellId(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].DataCellId"));
-			asset.setDataCellName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].DataCellName"));
-			asset.setApiId(_ctx.longValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].ApiId"));
+			asset.setDatasourceId(_ctx.longValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].DatasourceId"));
 			asset.setApiGroupName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].ApiGroupName"));
 			asset.setApiRequestMethod(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].ApiRequestMethod"));
-			asset.setApiCallMode(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].ApiCallMode"));
-			asset.setBiCatalog(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].BiCatalog"));
+			asset.setDataCellName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].DataCellName"));
+			asset.setProjectName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].ProjectName"));
+			asset.setSumTableGuid(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].SumTableGuid"));
 			asset.setChartCount(_ctx.longValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].ChartCount"));
+			asset.setAssetDescription(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].AssetDescription"));
+			asset.setGuid(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].Guid"));
+			asset.setAssetFrom(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].AssetFrom"));
+			asset.setGranularity(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].Granularity"));
+			asset.setDataCellId(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].DataCellId"));
+			asset.setMaxSecurityLevel(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].MaxSecurityLevel"));
+			asset.setBizUnitId(_ctx.longValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].BizUnitId"));
+			asset.setBizUnitName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].BizUnitName"));
+			asset.setAssetFullName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].AssetFullName"));
+			asset.setIsDeleted(_ctx.booleanValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].IsDeleted"));
+			asset.setSubType(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].SubType"));
+			asset.setBiCatalog(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].BiCatalog"));
+			asset.setProjectId(_ctx.longValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].ProjectId"));
+			asset.setApiCallMode(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].ApiCallMode"));
+			asset.setAssetName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].AssetName"));
+			asset.setAssetType(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].AssetType"));
+			asset.setDataSourceName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].DataSourceName"));
+			asset.setAssetDisplayName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].AssetDisplayName"));
+			asset.setApiId(_ctx.longValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].ApiId"));
 
 			List<String> assetTags = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].AssetTags.Length"); j++) {
@@ -77,10 +77,10 @@ public class ListCatalogAssetsResponseUnmarshaller {
 			List<Directorie> directories = new ArrayList<Directorie>();
 			for (int j = 0; j < _ctx.lengthValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].Directories.Length"); j++) {
 				Directorie directorie = new Directorie();
-				directorie.setTopicId(_ctx.longValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].Directories["+ j +"].TopicId"));
-				directorie.setTopicName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].Directories["+ j +"].TopicName"));
 				directorie.setDirectoryId(_ctx.longValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].Directories["+ j +"].DirectoryId"));
+				directorie.setTopicId(_ctx.longValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].Directories["+ j +"].TopicId"));
 				directorie.setDirectoryName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].Directories["+ j +"].DirectoryName"));
+				directorie.setTopicName(_ctx.stringValue("ListCatalogAssetsResponse.Data.AssetList["+ i +"].Directories["+ j +"].TopicName"));
 
 				directories.add(directorie);
 			}

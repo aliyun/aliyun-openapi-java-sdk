@@ -27,13 +27,13 @@ public class OperateInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<InstanceStatus> instanceStatusList;
 
@@ -45,12 +45,12 @@ public class OperateInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class OperateInstanceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<InstanceStatus> getInstanceStatusList() {
@@ -87,43 +87,19 @@ public class OperateInstanceResponse extends AcsResponse {
 
 	public static class InstanceStatus {
 
-		private String id;
-
-		private String name;
-
-		private String displayName;
-
 		private String status;
-
-		private String errorMessage;
-
-		private String ownerId;
 
 		private String ownerName;
 
-		public String getId() {
-			return this.id;
-		}
+		private String ownerId;
 
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String displayName;
 
-		public String getName() {
-			return this.name;
-		}
+		private String id;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String errorMessage;
 
-		public String getDisplayName() {
-			return this.displayName;
-		}
-
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
+		private String name;
 
 		public String getStatus() {
 			return this.status;
@@ -133,12 +109,12 @@ public class OperateInstanceResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
+		public String getOwnerName() {
+			return this.ownerName;
 		}
 
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
 		}
 
 		public String getOwnerId() {
@@ -149,12 +125,36 @@ public class OperateInstanceResponse extends AcsResponse {
 			this.ownerId = ownerId;
 		}
 
-		public String getOwnerName() {
-			return this.ownerName;
+		public String getDisplayName() {
+			return this.displayName;
 		}
 
-		public void setOwnerName(String ownerName) {
-			this.ownerName = ownerName;
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

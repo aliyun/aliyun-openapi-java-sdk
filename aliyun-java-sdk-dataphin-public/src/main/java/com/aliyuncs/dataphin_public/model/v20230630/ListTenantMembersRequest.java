@@ -65,11 +65,11 @@ public class ListTenantMembersRequest extends RpcAcsRequest<ListTenantMembersRes
 		@SerializedName("SearchText")
 		private String searchText;
 
-		@SerializedName("UserGroupIdList")
-		private List<String> userGroupIdList;
-
 		@SerializedName("RoleList")
 		private List<String> roleList;
+
+		@SerializedName("UserGroupIdList")
+		private List<String> userGroupIdList;
 
 		@SerializedName("PageSize")
 		private Integer pageSize;
@@ -85,20 +85,20 @@ public class ListTenantMembersRequest extends RpcAcsRequest<ListTenantMembersRes
 			this.searchText = searchText;
 		}
 
-		public List<String> getUserGroupIdList() {
-			return this.userGroupIdList;
-		}
-
-		public void setUserGroupIdList(List<String> userGroupIdList) {
-			this.userGroupIdList = userGroupIdList;
-		}
-
 		public List<String> getRoleList() {
 			return this.roleList;
 		}
 
 		public void setRoleList(List<String> roleList) {
 			this.roleList = roleList;
+		}
+
+		public List<String> getUserGroupIdList() {
+			return this.userGroupIdList;
+		}
+
+		public void setUserGroupIdList(List<String> userGroupIdList) {
+			this.userGroupIdList = userGroupIdList;
 		}
 
 		public Integer getPageSize() {

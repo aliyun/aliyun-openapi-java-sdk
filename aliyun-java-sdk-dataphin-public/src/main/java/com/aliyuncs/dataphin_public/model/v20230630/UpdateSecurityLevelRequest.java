@@ -64,11 +64,11 @@ public class UpdateSecurityLevelRequest extends RpcAcsRequest<UpdateSecurityLeve
 		@SerializedName("Name")
 		private String name;
 
-		@SerializedName("Index")
-		private Long index;
-
 		@SerializedName("Description")
 		private String description;
+
+		@SerializedName("Index")
+		private Long index;
 
 		public String getName() {
 			return this.name;
@@ -78,20 +78,20 @@ public class UpdateSecurityLevelRequest extends RpcAcsRequest<UpdateSecurityLeve
 			this.name = name;
 		}
 
-		public Long getIndex() {
-			return this.index;
-		}
-
-		public void setIndex(Long index) {
-			this.index = index;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public Long getIndex() {
+			return this.index;
+		}
+
+		public void setIndex(Long index) {
+			this.index = index;
 		}
 	}
 

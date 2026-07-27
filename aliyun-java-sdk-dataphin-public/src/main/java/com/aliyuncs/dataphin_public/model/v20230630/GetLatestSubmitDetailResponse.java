@@ -26,13 +26,13 @@ public class GetLatestSubmitDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private SubmitDetailResult submitDetailResult;
 
@@ -44,12 +44,12 @@ public class GetLatestSubmitDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class GetLatestSubmitDetailResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public SubmitDetailResult getSubmitDetailResult() {
@@ -86,23 +86,15 @@ public class GetLatestSubmitDetailResponse extends AcsResponse {
 
 	public static class SubmitDetailResult {
 
-		private Long id;
-
 		private String submitStatus;
 
-		private String publishStatus;
+		private Long id;
 
 		private String tag;
 
+		private String publishStatus;
+
 		private ReleaseObject releaseObject;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
 
 		public String getSubmitStatus() {
 			return this.submitStatus;
@@ -112,12 +104,12 @@ public class GetLatestSubmitDetailResponse extends AcsResponse {
 			this.submitStatus = submitStatus;
 		}
 
-		public String getPublishStatus() {
-			return this.publishStatus;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setPublishStatus(String publishStatus) {
-			this.publishStatus = publishStatus;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public String getTag() {
@@ -126,6 +118,14 @@ public class GetLatestSubmitDetailResponse extends AcsResponse {
 
 		public void setTag(String tag) {
 			this.tag = tag;
+		}
+
+		public String getPublishStatus() {
+			return this.publishStatus;
+		}
+
+		public void setPublishStatus(String publishStatus) {
+			this.publishStatus = publishStatus;
 		}
 
 		public ReleaseObject getReleaseObject() {
@@ -140,13 +140,13 @@ public class GetLatestSubmitDetailResponse extends AcsResponse {
 
 			private String objectVersion;
 
+			private String submitComment;
+
 			private String changeType;
 
 			private Long projectId;
 
 			private String nodeId;
-
-			private String submitComment;
 
 			private SubmitObject submitObject;
 
@@ -156,6 +156,14 @@ public class GetLatestSubmitDetailResponse extends AcsResponse {
 
 			public void setObjectVersion(String objectVersion) {
 				this.objectVersion = objectVersion;
+			}
+
+			public String getSubmitComment() {
+				return this.submitComment;
+			}
+
+			public void setSubmitComment(String submitComment) {
+				this.submitComment = submitComment;
 			}
 
 			public String getChangeType() {
@@ -182,14 +190,6 @@ public class GetLatestSubmitDetailResponse extends AcsResponse {
 				this.nodeId = nodeId;
 			}
 
-			public String getSubmitComment() {
-				return this.submitComment;
-			}
-
-			public void setSubmitComment(String submitComment) {
-				this.submitComment = submitComment;
-			}
-
 			public SubmitObject getSubmitObject() {
 				return this.submitObject;
 			}
@@ -200,19 +200,11 @@ public class GetLatestSubmitDetailResponse extends AcsResponse {
 
 			public static class SubmitObject {
 
-				private String objectId;
-
 				private String objectType;
 
+				private String objectId;
+
 				private String objectName;
-
-				public String getObjectId() {
-					return this.objectId;
-				}
-
-				public void setObjectId(String objectId) {
-					this.objectId = objectId;
-				}
 
 				public String getObjectType() {
 					return this.objectType;
@@ -220,6 +212,14 @@ public class GetLatestSubmitDetailResponse extends AcsResponse {
 
 				public void setObjectType(String objectType) {
 					this.objectType = objectType;
+				}
+
+				public String getObjectId() {
+					return this.objectId;
+				}
+
+				public void setObjectId(String objectId) {
+					this.objectId = objectId;
 				}
 
 				public String getObjectName() {

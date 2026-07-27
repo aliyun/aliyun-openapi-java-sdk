@@ -205,11 +205,11 @@ public class UpdateBizEntityRequest extends RpcAcsRequest<UpdateBizEntityRespons
 			@SerializedName("DisplayName")
 			private String displayName;
 
-			@SerializedName("Name")
-			private String name;
-
 			@SerializedName("PreBizProcessIdList")
 			private List<Long> preBizProcessIdList;
+
+			@SerializedName("Name")
+			private String name;
 
 			@SerializedName("Description")
 			private String description;
@@ -236,20 +236,20 @@ public class UpdateBizEntityRequest extends RpcAcsRequest<UpdateBizEntityRespons
 				this.displayName = displayName;
 			}
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
 			public List<Long> getPreBizProcessIdList() {
 				return this.preBizProcessIdList;
 			}
 
 			public void setPreBizProcessIdList(List<Long> preBizProcessIdList) {
 				this.preBizProcessIdList = preBizProcessIdList;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public String getDescription() {

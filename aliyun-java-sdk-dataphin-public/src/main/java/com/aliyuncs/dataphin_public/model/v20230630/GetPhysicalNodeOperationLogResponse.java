@@ -27,13 +27,13 @@ public class GetPhysicalNodeOperationLogResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<OperationLog> operationLogList;
 
@@ -45,12 +45,12 @@ public class GetPhysicalNodeOperationLogResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetPhysicalNodeOperationLogResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<OperationLog> getOperationLogList() {
@@ -89,13 +89,13 @@ public class GetPhysicalNodeOperationLogResponse extends AcsResponse {
 
 		private String context;
 
-		private String operationType;
-
 		private String operator;
 
-		private String operationTime;
-
 		private String operatorName;
+
+		private String operationType;
+
+		private String operationTime;
 
 		public String getContext() {
 			return this.context;
@@ -103,14 +103,6 @@ public class GetPhysicalNodeOperationLogResponse extends AcsResponse {
 
 		public void setContext(String context) {
 			this.context = context;
-		}
-
-		public String getOperationType() {
-			return this.operationType;
-		}
-
-		public void setOperationType(String operationType) {
-			this.operationType = operationType;
 		}
 
 		public String getOperator() {
@@ -121,20 +113,28 @@ public class GetPhysicalNodeOperationLogResponse extends AcsResponse {
 			this.operator = operator;
 		}
 
-		public String getOperationTime() {
-			return this.operationTime;
-		}
-
-		public void setOperationTime(String operationTime) {
-			this.operationTime = operationTime;
-		}
-
 		public String getOperatorName() {
 			return this.operatorName;
 		}
 
 		public void setOperatorName(String operatorName) {
 			this.operatorName = operatorName;
+		}
+
+		public String getOperationType() {
+			return this.operationType;
+		}
+
+		public void setOperationType(String operationType) {
+			this.operationType = operationType;
+		}
+
+		public String getOperationTime() {
+			return this.operationTime;
+		}
+
+		public void setOperationTime(String operationTime) {
+			this.operationTime = operationTime;
 		}
 	}
 

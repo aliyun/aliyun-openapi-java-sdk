@@ -27,13 +27,13 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -45,12 +45,12 @@ public class ListQualityRulesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListQualityRulesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -109,80 +109,64 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 		public static class QualityRule {
 
-			private Long id;
-
-			private String name;
-
-			private String status;
+			private String modifyTime;
 
 			private String description;
 
-			private String strength;
-
-			private String templateType;
-
-			private Long templateId;
-
-			private String templateName;
-
-			private String templateScope;
-
-			private Long watchId;
+			private Boolean testRunRuleValidateResult;
 
 			private Boolean enableErrorArchive;
 
-			private Long testRunRuleTaskId;
-
-			private String testRunRuleTaskStatus;
-
-			private Boolean testRunRuleValidateResult;
-
 			private String creator;
 
-			private String creatorName;
+			private String name;
+
+			private String templateName;
 
 			private String modifier;
+
+			private Long templateId;
+
+			private String status;
 
 			private String modifierName;
 
 			private String createTime;
 
-			private String modifyTime;
+			private String templateScope;
 
-			private List<ValidateCondition> validateConditionList;
+			private String templateType;
 
-			private List<ScheduleBind> scheduleBindList;
+			private String testRunRuleTaskStatus;
+
+			private Long testRunRuleTaskId;
+
+			private Long id;
+
+			private String strength;
+
+			private String creatorName;
+
+			private Long watchId;
 
 			private List<FormProperty> formPropertyList;
 
+			private List<ValidateCondition> validateConditionList;
+
 			private List<AttributeWithValue> attributeWithValueList;
+
+			private List<ScheduleBind> scheduleBindList;
 
 			private List<String> catalogList;
 
 			private ValidateObject validateObject;
 
-			public Long getId() {
-				return this.id;
+			public String getModifyTime() {
+				return this.modifyTime;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
+			public void setModifyTime(String modifyTime) {
+				this.modifyTime = modifyTime;
 			}
 
 			public String getDescription() {
@@ -193,52 +177,12 @@ public class ListQualityRulesResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getStrength() {
-				return this.strength;
+			public Boolean getTestRunRuleValidateResult() {
+				return this.testRunRuleValidateResult;
 			}
 
-			public void setStrength(String strength) {
-				this.strength = strength;
-			}
-
-			public String getTemplateType() {
-				return this.templateType;
-			}
-
-			public void setTemplateType(String templateType) {
-				this.templateType = templateType;
-			}
-
-			public Long getTemplateId() {
-				return this.templateId;
-			}
-
-			public void setTemplateId(Long templateId) {
-				this.templateId = templateId;
-			}
-
-			public String getTemplateName() {
-				return this.templateName;
-			}
-
-			public void setTemplateName(String templateName) {
-				this.templateName = templateName;
-			}
-
-			public String getTemplateScope() {
-				return this.templateScope;
-			}
-
-			public void setTemplateScope(String templateScope) {
-				this.templateScope = templateScope;
-			}
-
-			public Long getWatchId() {
-				return this.watchId;
-			}
-
-			public void setWatchId(Long watchId) {
-				this.watchId = watchId;
+			public void setTestRunRuleValidateResult(Boolean testRunRuleValidateResult) {
+				this.testRunRuleValidateResult = testRunRuleValidateResult;
 			}
 
 			public Boolean getEnableErrorArchive() {
@@ -249,30 +193,6 @@ public class ListQualityRulesResponse extends AcsResponse {
 				this.enableErrorArchive = enableErrorArchive;
 			}
 
-			public Long getTestRunRuleTaskId() {
-				return this.testRunRuleTaskId;
-			}
-
-			public void setTestRunRuleTaskId(Long testRunRuleTaskId) {
-				this.testRunRuleTaskId = testRunRuleTaskId;
-			}
-
-			public String getTestRunRuleTaskStatus() {
-				return this.testRunRuleTaskStatus;
-			}
-
-			public void setTestRunRuleTaskStatus(String testRunRuleTaskStatus) {
-				this.testRunRuleTaskStatus = testRunRuleTaskStatus;
-			}
-
-			public Boolean getTestRunRuleValidateResult() {
-				return this.testRunRuleValidateResult;
-			}
-
-			public void setTestRunRuleValidateResult(Boolean testRunRuleValidateResult) {
-				this.testRunRuleValidateResult = testRunRuleValidateResult;
-			}
-
 			public String getCreator() {
 				return this.creator;
 			}
@@ -281,12 +201,20 @@ public class ListQualityRulesResponse extends AcsResponse {
 				this.creator = creator;
 			}
 
-			public String getCreatorName() {
-				return this.creatorName;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setCreatorName(String creatorName) {
-				this.creatorName = creatorName;
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getTemplateName() {
+				return this.templateName;
+			}
+
+			public void setTemplateName(String templateName) {
+				this.templateName = templateName;
 			}
 
 			public String getModifier() {
@@ -295,6 +223,22 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 			public void setModifier(String modifier) {
 				this.modifier = modifier;
+			}
+
+			public Long getTemplateId() {
+				return this.templateId;
+			}
+
+			public void setTemplateId(Long templateId) {
+				this.templateId = templateId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getModifierName() {
@@ -313,28 +257,68 @@ public class ListQualityRulesResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public String getModifyTime() {
-				return this.modifyTime;
+			public String getTemplateScope() {
+				return this.templateScope;
 			}
 
-			public void setModifyTime(String modifyTime) {
-				this.modifyTime = modifyTime;
+			public void setTemplateScope(String templateScope) {
+				this.templateScope = templateScope;
 			}
 
-			public List<ValidateCondition> getValidateConditionList() {
-				return this.validateConditionList;
+			public String getTemplateType() {
+				return this.templateType;
 			}
 
-			public void setValidateConditionList(List<ValidateCondition> validateConditionList) {
-				this.validateConditionList = validateConditionList;
+			public void setTemplateType(String templateType) {
+				this.templateType = templateType;
 			}
 
-			public List<ScheduleBind> getScheduleBindList() {
-				return this.scheduleBindList;
+			public String getTestRunRuleTaskStatus() {
+				return this.testRunRuleTaskStatus;
 			}
 
-			public void setScheduleBindList(List<ScheduleBind> scheduleBindList) {
-				this.scheduleBindList = scheduleBindList;
+			public void setTestRunRuleTaskStatus(String testRunRuleTaskStatus) {
+				this.testRunRuleTaskStatus = testRunRuleTaskStatus;
+			}
+
+			public Long getTestRunRuleTaskId() {
+				return this.testRunRuleTaskId;
+			}
+
+			public void setTestRunRuleTaskId(Long testRunRuleTaskId) {
+				this.testRunRuleTaskId = testRunRuleTaskId;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getStrength() {
+				return this.strength;
+			}
+
+			public void setStrength(String strength) {
+				this.strength = strength;
+			}
+
+			public String getCreatorName() {
+				return this.creatorName;
+			}
+
+			public void setCreatorName(String creatorName) {
+				this.creatorName = creatorName;
+			}
+
+			public Long getWatchId() {
+				return this.watchId;
+			}
+
+			public void setWatchId(Long watchId) {
+				this.watchId = watchId;
 			}
 
 			public List<FormProperty> getFormPropertyList() {
@@ -345,12 +329,28 @@ public class ListQualityRulesResponse extends AcsResponse {
 				this.formPropertyList = formPropertyList;
 			}
 
+			public List<ValidateCondition> getValidateConditionList() {
+				return this.validateConditionList;
+			}
+
+			public void setValidateConditionList(List<ValidateCondition> validateConditionList) {
+				this.validateConditionList = validateConditionList;
+			}
+
 			public List<AttributeWithValue> getAttributeWithValueList() {
 				return this.attributeWithValueList;
 			}
 
 			public void setAttributeWithValueList(List<AttributeWithValue> attributeWithValueList) {
 				this.attributeWithValueList = attributeWithValueList;
+			}
+
+			public List<ScheduleBind> getScheduleBindList() {
+				return this.scheduleBindList;
+			}
+
+			public void setScheduleBindList(List<ScheduleBind> scheduleBindList) {
+				this.scheduleBindList = scheduleBindList;
 			}
 
 			public List<String> getCatalogList() {
@@ -369,39 +369,56 @@ public class ListQualityRulesResponse extends AcsResponse {
 				this.validateObject = validateObject;
 			}
 
-			public static class ValidateCondition {
+			public static class FormProperty {
 
-				private String id;
-
-				private String type;
-
-				private String operator;
-
-				private String operatorName;
-
-				private String metric;
-
-				private String metricName;
+				private String componentType;
 
 				private String value;
 
+				private String name;
+
+				public String getComponentType() {
+					return this.componentType;
+				}
+
+				public void setComponentType(String componentType) {
+					this.componentType = componentType;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+			}
+
+			public static class ValidateCondition {
+
+				private String operator;
+
 				private String parentId;
 
-				public String getId() {
-					return this.id;
-				}
+				private String metricName;
 
-				public void setId(String id) {
-					this.id = id;
-				}
+				private String type;
 
-				public String getType() {
-					return this.type;
-				}
+				private String operatorName;
 
-				public void setType(String type) {
-					this.type = type;
-				}
+				private String value;
+
+				private String metric;
+
+				private String id;
 
 				public String getOperator() {
 					return this.operator;
@@ -411,20 +428,12 @@ public class ListQualityRulesResponse extends AcsResponse {
 					this.operator = operator;
 				}
 
-				public String getOperatorName() {
-					return this.operatorName;
+				public String getParentId() {
+					return this.parentId;
 				}
 
-				public void setOperatorName(String operatorName) {
-					this.operatorName = operatorName;
-				}
-
-				public String getMetric() {
-					return this.metric;
-				}
-
-				public void setMetric(String metric) {
-					this.metric = metric;
+				public void setParentId(String parentId) {
+					this.parentId = parentId;
 				}
 
 				public String getMetricName() {
@@ -435,68 +444,20 @@ public class ListQualityRulesResponse extends AcsResponse {
 					this.metricName = metricName;
 				}
 
-				public String getValue() {
-					return this.value;
+				public String getType() {
+					return this.type;
 				}
 
-				public void setValue(String value) {
-					this.value = value;
+				public void setType(String type) {
+					this.type = type;
 				}
 
-				public String getParentId() {
-					return this.parentId;
+				public String getOperatorName() {
+					return this.operatorName;
 				}
 
-				public void setParentId(String parentId) {
-					this.parentId = parentId;
-				}
-			}
-
-			public static class ScheduleBind {
-
-				private Long scheduleId;
-
-				private String scheduleName;
-
-				public Long getScheduleId() {
-					return this.scheduleId;
-				}
-
-				public void setScheduleId(Long scheduleId) {
-					this.scheduleId = scheduleId;
-				}
-
-				public String getScheduleName() {
-					return this.scheduleName;
-				}
-
-				public void setScheduleName(String scheduleName) {
-					this.scheduleName = scheduleName;
-				}
-			}
-
-			public static class FormProperty {
-
-				private String componentType;
-
-				private String name;
-
-				private String value;
-
-				public String getComponentType() {
-					return this.componentType;
-				}
-
-				public void setComponentType(String componentType) {
-					this.componentType = componentType;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
+				public void setOperatorName(String operatorName) {
+					this.operatorName = operatorName;
 				}
 
 				public String getValue() {
@@ -505,6 +466,22 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 				public void setValue(String value) {
 					this.value = value;
+				}
+
+				public String getMetric() {
+					return this.metric;
+				}
+
+				public void setMetric(String metric) {
+					this.metric = metric;
+				}
+
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
 				}
 			}
 
@@ -532,35 +509,19 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 				public static class AttributeInfo {
 
-					private Long id;
-
-					private String name;
-
 					private String description;
-
-					private Boolean enabled;
 
 					private Boolean required;
 
+					private Boolean enabled;
+
+					private Long id;
+
 					private Boolean searchable;
 
+					private String name;
+
 					private ValueConfig valueConfig;
-
-					public Long getId() {
-						return this.id;
-					}
-
-					public void setId(Long id) {
-						this.id = id;
-					}
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
 
 					public String getDescription() {
 						return this.description;
@@ -568,14 +529,6 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 					public void setDescription(String description) {
 						this.description = description;
-					}
-
-					public Boolean getEnabled() {
-						return this.enabled;
-					}
-
-					public void setEnabled(Boolean enabled) {
-						this.enabled = enabled;
 					}
 
 					public Boolean getRequired() {
@@ -586,12 +539,36 @@ public class ListQualityRulesResponse extends AcsResponse {
 						this.required = required;
 					}
 
+					public Boolean getEnabled() {
+						return this.enabled;
+					}
+
+					public void setEnabled(Boolean enabled) {
+						this.enabled = enabled;
+					}
+
+					public Long getId() {
+						return this.id;
+					}
+
+					public void setId(Long id) {
+						this.id = id;
+					}
+
 					public Boolean getSearchable() {
 						return this.searchable;
 					}
 
 					public void setSearchable(Boolean searchable) {
 						this.searchable = searchable;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
 					}
 
 					public ValueConfig getValueConfig() {
@@ -606,9 +583,9 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 						private String type;
 
-						private String dataType;
-
 						private Integer length;
+
+						private String dataType;
 
 						private List<String> valueEnumList;
 
@@ -622,20 +599,20 @@ public class ListQualityRulesResponse extends AcsResponse {
 							this.type = type;
 						}
 
-						public String getDataType() {
-							return this.dataType;
-						}
-
-						public void setDataType(String dataType) {
-							this.dataType = dataType;
-						}
-
 						public Integer getLength() {
 							return this.length;
 						}
 
 						public void setLength(Integer length) {
 							this.length = length;
+						}
+
+						public String getDataType() {
+							return this.dataType;
+						}
+
+						public void setDataType(String dataType) {
+							this.dataType = dataType;
 						}
 
 						public List<String> getValueEnumList() {
@@ -656,15 +633,23 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 						public static class DefaultValue {
 
-							private String minValue;
+							private Boolean includeMaxValue;
 
-							private Boolean includeMinValue;
+							private String minValue;
 
 							private String maxValue;
 
-							private Boolean includeMaxValue;
+							private Boolean includeMinValue;
 
 							private List<String> valueList;
+
+							public Boolean getIncludeMaxValue() {
+								return this.includeMaxValue;
+							}
+
+							public void setIncludeMaxValue(Boolean includeMaxValue) {
+								this.includeMaxValue = includeMaxValue;
+							}
 
 							public String getMinValue() {
 								return this.minValue;
@@ -672,14 +657,6 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 							public void setMinValue(String minValue) {
 								this.minValue = minValue;
-							}
-
-							public Boolean getIncludeMinValue() {
-								return this.includeMinValue;
-							}
-
-							public void setIncludeMinValue(Boolean includeMinValue) {
-								this.includeMinValue = includeMinValue;
 							}
 
 							public String getMaxValue() {
@@ -690,12 +667,12 @@ public class ListQualityRulesResponse extends AcsResponse {
 								this.maxValue = maxValue;
 							}
 
-							public Boolean getIncludeMaxValue() {
-								return this.includeMaxValue;
+							public Boolean getIncludeMinValue() {
+								return this.includeMinValue;
 							}
 
-							public void setIncludeMaxValue(Boolean includeMaxValue) {
-								this.includeMaxValue = includeMaxValue;
+							public void setIncludeMinValue(Boolean includeMinValue) {
+								this.includeMinValue = includeMinValue;
 							}
 
 							public List<String> getValueList() {
@@ -711,15 +688,23 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 				public static class AttributeValue {
 
-					private String minValue;
+					private Boolean includeMaxValue;
 
-					private Boolean includeMinValue;
+					private String minValue;
 
 					private String maxValue;
 
-					private Boolean includeMaxValue;
+					private Boolean includeMinValue;
 
 					private List<String> valueList1;
+
+					public Boolean getIncludeMaxValue() {
+						return this.includeMaxValue;
+					}
+
+					public void setIncludeMaxValue(Boolean includeMaxValue) {
+						this.includeMaxValue = includeMaxValue;
+					}
 
 					public String getMinValue() {
 						return this.minValue;
@@ -727,14 +712,6 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 					public void setMinValue(String minValue) {
 						this.minValue = minValue;
-					}
-
-					public Boolean getIncludeMinValue() {
-						return this.includeMinValue;
-					}
-
-					public void setIncludeMinValue(Boolean includeMinValue) {
-						this.includeMinValue = includeMinValue;
 					}
 
 					public String getMaxValue() {
@@ -745,12 +722,12 @@ public class ListQualityRulesResponse extends AcsResponse {
 						this.maxValue = maxValue;
 					}
 
-					public Boolean getIncludeMaxValue() {
-						return this.includeMaxValue;
+					public Boolean getIncludeMinValue() {
+						return this.includeMinValue;
 					}
 
-					public void setIncludeMaxValue(Boolean includeMaxValue) {
-						this.includeMaxValue = includeMaxValue;
+					public void setIncludeMinValue(Boolean includeMinValue) {
+						this.includeMinValue = includeMinValue;
 					}
 
 					public List<String> getValueList1() {
@@ -760,6 +737,29 @@ public class ListQualityRulesResponse extends AcsResponse {
 					public void setValueList1(List<String> valueList1) {
 						this.valueList1 = valueList1;
 					}
+				}
+			}
+
+			public static class ScheduleBind {
+
+				private Long scheduleId;
+
+				private String scheduleName;
+
+				public Long getScheduleId() {
+					return this.scheduleId;
+				}
+
+				public void setScheduleId(Long scheduleId) {
+					this.scheduleId = scheduleId;
+				}
+
+				public String getScheduleName() {
+					return this.scheduleName;
+				}
+
+				public void setScheduleName(String scheduleName) {
+					this.scheduleName = scheduleName;
 				}
 			}
 

@@ -23,10 +23,10 @@ public class UpdateStandardTemplateResponseUnmarshaller {
 	public static UpdateStandardTemplateResponse unmarshall(UpdateStandardTemplateResponse updateStandardTemplateResponse, UnmarshallerContext _ctx) {
 		
 		updateStandardTemplateResponse.setRequestId(_ctx.stringValue("UpdateStandardTemplateResponse.RequestId"));
-		updateStandardTemplateResponse.setSuccess(_ctx.booleanValue("UpdateStandardTemplateResponse.Success"));
+		updateStandardTemplateResponse.setMessage(_ctx.stringValue("UpdateStandardTemplateResponse.Message"));
 		updateStandardTemplateResponse.setHttpStatusCode(_ctx.integerValue("UpdateStandardTemplateResponse.HttpStatusCode"));
 		updateStandardTemplateResponse.setCode(_ctx.stringValue("UpdateStandardTemplateResponse.Code"));
-		updateStandardTemplateResponse.setMessage(_ctx.stringValue("UpdateStandardTemplateResponse.Message"));
+		updateStandardTemplateResponse.setSuccess(_ctx.booleanValue("UpdateStandardTemplateResponse.Success"));
 	 
 	 	return updateStandardTemplateResponse;
 	}

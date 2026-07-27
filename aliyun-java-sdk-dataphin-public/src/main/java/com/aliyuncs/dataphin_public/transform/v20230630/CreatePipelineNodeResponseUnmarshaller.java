@@ -27,10 +27,10 @@ public class CreatePipelineNodeResponseUnmarshaller {
 	public static CreatePipelineNodeResponse unmarshall(CreatePipelineNodeResponse createPipelineNodeResponse, UnmarshallerContext _ctx) {
 		
 		createPipelineNodeResponse.setRequestId(_ctx.stringValue("CreatePipelineNodeResponse.RequestId"));
-		createPipelineNodeResponse.setSuccess(_ctx.booleanValue("CreatePipelineNodeResponse.Success"));
+		createPipelineNodeResponse.setMessage(_ctx.stringValue("CreatePipelineNodeResponse.Message"));
 		createPipelineNodeResponse.setHttpStatusCode(_ctx.integerValue("CreatePipelineNodeResponse.HttpStatusCode"));
 		createPipelineNodeResponse.setCode(_ctx.stringValue("CreatePipelineNodeResponse.Code"));
-		createPipelineNodeResponse.setMessage(_ctx.stringValue("CreatePipelineNodeResponse.Message"));
+		createPipelineNodeResponse.setSuccess(_ctx.booleanValue("CreatePipelineNodeResponse.Success"));
 
 		Data data = new Data();
 		data.setPipelineId(_ctx.longValue("CreatePipelineNodeResponse.Data.PipelineId"));

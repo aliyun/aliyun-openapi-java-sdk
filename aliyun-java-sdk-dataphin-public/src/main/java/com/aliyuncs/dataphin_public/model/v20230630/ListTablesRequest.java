@@ -61,11 +61,11 @@ public class ListTablesRequest extends RpcAcsRequest<ListTablesResponse> {
 
 	public static class ListQuery {
 
-		@SerializedName("Catalog")
-		private String catalog;
-
 		@SerializedName("PageNo")
 		private Integer pageNo;
+
+		@SerializedName("Catalog")
+		private String catalog;
 
 		@SerializedName("PageSize")
 		private Integer pageSize;
@@ -73,20 +73,20 @@ public class ListTablesRequest extends RpcAcsRequest<ListTablesResponse> {
 		@SerializedName("Keyword")
 		private String keyword;
 
-		public String getCatalog() {
-			return this.catalog;
-		}
-
-		public void setCatalog(String catalog) {
-			this.catalog = catalog;
-		}
-
 		public Integer getPageNo() {
 			return this.pageNo;
 		}
 
 		public void setPageNo(Integer pageNo) {
 			this.pageNo = pageNo;
+		}
+
+		public String getCatalog() {
+			return this.catalog;
+		}
+
+		public void setCatalog(String catalog) {
+			this.catalog = catalog;
 		}
 
 		public Integer getPageSize() {

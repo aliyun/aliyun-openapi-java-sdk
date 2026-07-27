@@ -29,10 +29,10 @@ public class ListDataServiceAuthorizedAppsResponseUnmarshaller {
 	public static ListDataServiceAuthorizedAppsResponse unmarshall(ListDataServiceAuthorizedAppsResponse listDataServiceAuthorizedAppsResponse, UnmarshallerContext _ctx) {
 		
 		listDataServiceAuthorizedAppsResponse.setRequestId(_ctx.stringValue("ListDataServiceAuthorizedAppsResponse.RequestId"));
-		listDataServiceAuthorizedAppsResponse.setSuccess(_ctx.booleanValue("ListDataServiceAuthorizedAppsResponse.Success"));
+		listDataServiceAuthorizedAppsResponse.setMessage(_ctx.stringValue("ListDataServiceAuthorizedAppsResponse.Message"));
 		listDataServiceAuthorizedAppsResponse.setHttpStatusCode(_ctx.integerValue("ListDataServiceAuthorizedAppsResponse.HttpStatusCode"));
 		listDataServiceAuthorizedAppsResponse.setCode(_ctx.stringValue("ListDataServiceAuthorizedAppsResponse.Code"));
-		listDataServiceAuthorizedAppsResponse.setMessage(_ctx.stringValue("ListDataServiceAuthorizedAppsResponse.Message"));
+		listDataServiceAuthorizedAppsResponse.setSuccess(_ctx.booleanValue("ListDataServiceAuthorizedAppsResponse.Success"));
 
 		PageResult pageResult = new PageResult();
 		pageResult.setTotalCount(_ctx.integerValue("ListDataServiceAuthorizedAppsResponse.PageResult.TotalCount"));

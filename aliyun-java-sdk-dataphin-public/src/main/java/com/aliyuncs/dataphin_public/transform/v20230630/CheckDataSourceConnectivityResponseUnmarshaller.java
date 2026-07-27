@@ -23,11 +23,11 @@ public class CheckDataSourceConnectivityResponseUnmarshaller {
 	public static CheckDataSourceConnectivityResponse unmarshall(CheckDataSourceConnectivityResponse checkDataSourceConnectivityResponse, UnmarshallerContext _ctx) {
 		
 		checkDataSourceConnectivityResponse.setRequestId(_ctx.stringValue("CheckDataSourceConnectivityResponse.RequestId"));
-		checkDataSourceConnectivityResponse.setSuccess(_ctx.booleanValue("CheckDataSourceConnectivityResponse.Success"));
-		checkDataSourceConnectivityResponse.setHttpStatusCode(_ctx.integerValue("CheckDataSourceConnectivityResponse.HttpStatusCode"));
-		checkDataSourceConnectivityResponse.setCode(_ctx.stringValue("CheckDataSourceConnectivityResponse.Code"));
 		checkDataSourceConnectivityResponse.setMessage(_ctx.stringValue("CheckDataSourceConnectivityResponse.Message"));
+		checkDataSourceConnectivityResponse.setHttpStatusCode(_ctx.integerValue("CheckDataSourceConnectivityResponse.HttpStatusCode"));
 		checkDataSourceConnectivityResponse.setData(_ctx.booleanValue("CheckDataSourceConnectivityResponse.Data"));
+		checkDataSourceConnectivityResponse.setCode(_ctx.stringValue("CheckDataSourceConnectivityResponse.Code"));
+		checkDataSourceConnectivityResponse.setSuccess(_ctx.booleanValue("CheckDataSourceConnectivityResponse.Success"));
 	 
 	 	return checkDataSourceConnectivityResponse;
 	}

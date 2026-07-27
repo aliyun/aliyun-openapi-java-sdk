@@ -23,10 +23,10 @@ public class UpdateStandardWordRootResponseUnmarshaller {
 	public static UpdateStandardWordRootResponse unmarshall(UpdateStandardWordRootResponse updateStandardWordRootResponse, UnmarshallerContext _ctx) {
 		
 		updateStandardWordRootResponse.setRequestId(_ctx.stringValue("UpdateStandardWordRootResponse.RequestId"));
-		updateStandardWordRootResponse.setSuccess(_ctx.booleanValue("UpdateStandardWordRootResponse.Success"));
+		updateStandardWordRootResponse.setMessage(_ctx.stringValue("UpdateStandardWordRootResponse.Message"));
 		updateStandardWordRootResponse.setHttpStatusCode(_ctx.integerValue("UpdateStandardWordRootResponse.HttpStatusCode"));
 		updateStandardWordRootResponse.setCode(_ctx.stringValue("UpdateStandardWordRootResponse.Code"));
-		updateStandardWordRootResponse.setMessage(_ctx.stringValue("UpdateStandardWordRootResponse.Message"));
+		updateStandardWordRootResponse.setSuccess(_ctx.booleanValue("UpdateStandardWordRootResponse.Success"));
 	 
 	 	return updateStandardWordRootResponse;
 	}

@@ -62,11 +62,11 @@ public class ListStandardsRequest extends RpcAcsRequest<ListStandardsResponse> {
 
 	public static class ListQuery {
 
-		@SerializedName("StandardTypeList")
-		private List<String> standardTypeList;
-
 		@SerializedName("StandardStage")
 		private String standardStage;
+
+		@SerializedName("StandardTypeList")
+		private List<String> standardTypeList;
 
 		@SerializedName("PageNo")
 		private Integer pageNo;
@@ -74,11 +74,11 @@ public class ListStandardsRequest extends RpcAcsRequest<ListStandardsResponse> {
 		@SerializedName("StandardStatusList")
 		private List<String> standardStatusList;
 
-		@SerializedName("StandardTemplateIdList")
-		private List<Long> standardTemplateIdList;
-
 		@SerializedName("PageSize")
 		private Integer pageSize;
+
+		@SerializedName("StandardTemplateIdList")
+		private List<Long> standardTemplateIdList;
 
 		@SerializedName("StandardSetIdList")
 		private List<Long> standardSetIdList;
@@ -86,19 +86,11 @@ public class ListStandardsRequest extends RpcAcsRequest<ListStandardsResponse> {
 		@SerializedName("Keyword")
 		private String keyword;
 
-		@SerializedName("Directory")
-		private String directory;
-
 		@SerializedName("UserId")
 		private String userId;
 
-		public List<String> getStandardTypeList() {
-			return this.standardTypeList;
-		}
-
-		public void setStandardTypeList(List<String> standardTypeList) {
-			this.standardTypeList = standardTypeList;
-		}
+		@SerializedName("Directory")
+		private String directory;
 
 		public String getStandardStage() {
 			return this.standardStage;
@@ -106,6 +98,14 @@ public class ListStandardsRequest extends RpcAcsRequest<ListStandardsResponse> {
 
 		public void setStandardStage(String standardStage) {
 			this.standardStage = standardStage;
+		}
+
+		public List<String> getStandardTypeList() {
+			return this.standardTypeList;
+		}
+
+		public void setStandardTypeList(List<String> standardTypeList) {
+			this.standardTypeList = standardTypeList;
 		}
 
 		public Integer getPageNo() {
@@ -124,20 +124,20 @@ public class ListStandardsRequest extends RpcAcsRequest<ListStandardsResponse> {
 			this.standardStatusList = standardStatusList;
 		}
 
-		public List<Long> getStandardTemplateIdList() {
-			return this.standardTemplateIdList;
-		}
-
-		public void setStandardTemplateIdList(List<Long> standardTemplateIdList) {
-			this.standardTemplateIdList = standardTemplateIdList;
-		}
-
 		public Integer getPageSize() {
 			return this.pageSize;
 		}
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public List<Long> getStandardTemplateIdList() {
+			return this.standardTemplateIdList;
+		}
+
+		public void setStandardTemplateIdList(List<Long> standardTemplateIdList) {
+			this.standardTemplateIdList = standardTemplateIdList;
 		}
 
 		public List<Long> getStandardSetIdList() {
@@ -156,20 +156,20 @@ public class ListStandardsRequest extends RpcAcsRequest<ListStandardsResponse> {
 			this.keyword = keyword;
 		}
 
-		public String getDirectory() {
-			return this.directory;
-		}
-
-		public void setDirectory(String directory) {
-			this.directory = directory;
-		}
-
 		public String getUserId() {
 			return this.userId;
 		}
 
 		public void setUserId(String userId) {
 			this.userId = userId;
+		}
+
+		public String getDirectory() {
+			return this.directory;
+		}
+
+		public void setDirectory(String directory) {
+			this.directory = directory;
 		}
 	}
 

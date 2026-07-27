@@ -27,10 +27,10 @@ public class GetDataServiceAppAuthorizedUsersResponseUnmarshaller {
 	public static GetDataServiceAppAuthorizedUsersResponse unmarshall(GetDataServiceAppAuthorizedUsersResponse getDataServiceAppAuthorizedUsersResponse, UnmarshallerContext _ctx) {
 		
 		getDataServiceAppAuthorizedUsersResponse.setRequestId(_ctx.stringValue("GetDataServiceAppAuthorizedUsersResponse.RequestId"));
-		getDataServiceAppAuthorizedUsersResponse.setSuccess(_ctx.booleanValue("GetDataServiceAppAuthorizedUsersResponse.Success"));
+		getDataServiceAppAuthorizedUsersResponse.setMessage(_ctx.stringValue("GetDataServiceAppAuthorizedUsersResponse.Message"));
 		getDataServiceAppAuthorizedUsersResponse.setHttpStatusCode(_ctx.integerValue("GetDataServiceAppAuthorizedUsersResponse.HttpStatusCode"));
 		getDataServiceAppAuthorizedUsersResponse.setCode(_ctx.stringValue("GetDataServiceAppAuthorizedUsersResponse.Code"));
-		getDataServiceAppAuthorizedUsersResponse.setMessage(_ctx.stringValue("GetDataServiceAppAuthorizedUsersResponse.Message"));
+		getDataServiceAppAuthorizedUsersResponse.setSuccess(_ctx.booleanValue("GetDataServiceAppAuthorizedUsersResponse.Success"));
 
 		List<User> userList = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataServiceAppAuthorizedUsersResponse.UserList.Length"); i++) {

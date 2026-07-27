@@ -23,11 +23,11 @@ public class UpsertQualityRuleResponseUnmarshaller {
 	public static UpsertQualityRuleResponse unmarshall(UpsertQualityRuleResponse upsertQualityRuleResponse, UnmarshallerContext _ctx) {
 		
 		upsertQualityRuleResponse.setRequestId(_ctx.stringValue("UpsertQualityRuleResponse.RequestId"));
-		upsertQualityRuleResponse.setSuccess(_ctx.booleanValue("UpsertQualityRuleResponse.Success"));
-		upsertQualityRuleResponse.setHttpStatusCode(_ctx.integerValue("UpsertQualityRuleResponse.HttpStatusCode"));
-		upsertQualityRuleResponse.setCode(_ctx.stringValue("UpsertQualityRuleResponse.Code"));
 		upsertQualityRuleResponse.setMessage(_ctx.stringValue("UpsertQualityRuleResponse.Message"));
+		upsertQualityRuleResponse.setHttpStatusCode(_ctx.integerValue("UpsertQualityRuleResponse.HttpStatusCode"));
 		upsertQualityRuleResponse.setData(_ctx.longValue("UpsertQualityRuleResponse.Data"));
+		upsertQualityRuleResponse.setCode(_ctx.stringValue("UpsertQualityRuleResponse.Code"));
+		upsertQualityRuleResponse.setSuccess(_ctx.booleanValue("UpsertQualityRuleResponse.Success"));
 	 
 	 	return upsertQualityRuleResponse;
 	}

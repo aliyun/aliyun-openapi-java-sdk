@@ -65,11 +65,11 @@ public class CreateStandardMappingRequest extends RpcAcsRequest<CreateStandardMa
 		@SerializedName("RelationType")
 		private String relationType;
 
-		@SerializedName("StandardId")
-		private Long standardId;
-
 		@SerializedName("InvalidMappingRelationOperationType")
 		private String invalidMappingRelationOperationType;
+
+		@SerializedName("StandardId")
+		private Long standardId;
 
 		@SerializedName("AssetGuidList")
 		private List<String> assetGuidList;
@@ -82,20 +82,20 @@ public class CreateStandardMappingRequest extends RpcAcsRequest<CreateStandardMa
 			this.relationType = relationType;
 		}
 
-		public Long getStandardId() {
-			return this.standardId;
-		}
-
-		public void setStandardId(Long standardId) {
-			this.standardId = standardId;
-		}
-
 		public String getInvalidMappingRelationOperationType() {
 			return this.invalidMappingRelationOperationType;
 		}
 
 		public void setInvalidMappingRelationOperationType(String invalidMappingRelationOperationType) {
 			this.invalidMappingRelationOperationType = invalidMappingRelationOperationType;
+		}
+
+		public Long getStandardId() {
+			return this.standardId;
+		}
+
+		public void setStandardId(Long standardId) {
+			this.standardId = standardId;
 		}
 
 		public List<String> getAssetGuidList() {

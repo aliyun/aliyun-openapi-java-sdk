@@ -27,13 +27,13 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -45,12 +45,12 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -131,21 +131,7 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 
 			public static class ProdDataSourceInfo {
 
-				private Long id;
-
-				private String name;
-
-				private String type;
-
-				private String scope;
-
-				private Long createTime;
-
 				private Long modifyTime;
-
-				private String creator;
-
-				private String creatorName;
 
 				private String owner;
 
@@ -153,49 +139,23 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 
 				private String description;
 
+				private Long createTime;
+
+				private String creator;
+
 				private String env;
 
+				private String name;
+
+				private String type;
+
+				private String scope;
+
+				private Long id;
+
+				private String creatorName;
+
 				private List<ConfigItem> configItemList;
-
-				public Long getId() {
-					return this.id;
-				}
-
-				public void setId(Long id) {
-					this.id = id;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public String getType() {
-					return this.type;
-				}
-
-				public void setType(String type) {
-					this.type = type;
-				}
-
-				public String getScope() {
-					return this.scope;
-				}
-
-				public void setScope(String scope) {
-					this.scope = scope;
-				}
-
-				public Long getCreateTime() {
-					return this.createTime;
-				}
-
-				public void setCreateTime(Long createTime) {
-					this.createTime = createTime;
-				}
 
 				public Long getModifyTime() {
 					return this.modifyTime;
@@ -203,22 +163,6 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 
 				public void setModifyTime(Long modifyTime) {
 					this.modifyTime = modifyTime;
-				}
-
-				public String getCreator() {
-					return this.creator;
-				}
-
-				public void setCreator(String creator) {
-					this.creator = creator;
-				}
-
-				public String getCreatorName() {
-					return this.creatorName;
-				}
-
-				public void setCreatorName(String creatorName) {
-					this.creatorName = creatorName;
 				}
 
 				public String getOwner() {
@@ -245,12 +189,68 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 					this.description = description;
 				}
 
+				public Long getCreateTime() {
+					return this.createTime;
+				}
+
+				public void setCreateTime(Long createTime) {
+					this.createTime = createTime;
+				}
+
+				public String getCreator() {
+					return this.creator;
+				}
+
+				public void setCreator(String creator) {
+					this.creator = creator;
+				}
+
 				public String getEnv() {
 					return this.env;
 				}
 
 				public void setEnv(String env) {
 					this.env = env;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public String getScope() {
+					return this.scope;
+				}
+
+				public void setScope(String scope) {
+					this.scope = scope;
+				}
+
+				public Long getId() {
+					return this.id;
+				}
+
+				public void setId(Long id) {
+					this.id = id;
+				}
+
+				public String getCreatorName() {
+					return this.creatorName;
+				}
+
+				public void setCreatorName(String creatorName) {
+					this.creatorName = creatorName;
 				}
 
 				public List<ConfigItem> getConfigItemList() {
@@ -263,17 +263,9 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 
 				public static class ConfigItem {
 
-					private String key;
-
 					private String value;
 
-					public String getKey() {
-						return this.key;
-					}
-
-					public void setKey(String key) {
-						this.key = key;
-					}
+					private String key;
 
 					public String getValue() {
 						return this.value;
@@ -282,26 +274,20 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 					public void setValue(String value) {
 						this.value = value;
 					}
+
+					public String getKey() {
+						return this.key;
+					}
+
+					public void setKey(String key) {
+						this.key = key;
+					}
 				}
 			}
 
 			public static class DevDataSourceInfo {
 
-				private Long id;
-
-				private String name;
-
-				private String type;
-
-				private String scope;
-
-				private Long createTime;
-
 				private Long modifyTime;
-
-				private String creator;
-
-				private String creatorName;
 
 				private String owner;
 
@@ -309,49 +295,23 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 
 				private String description;
 
+				private Long createTime;
+
+				private String creator;
+
 				private String env;
 
+				private String name;
+
+				private String type;
+
+				private String scope;
+
+				private Long id;
+
+				private String creatorName;
+
 				private List<ConfigItem2> configItemList1;
-
-				public Long getId() {
-					return this.id;
-				}
-
-				public void setId(Long id) {
-					this.id = id;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public String getType() {
-					return this.type;
-				}
-
-				public void setType(String type) {
-					this.type = type;
-				}
-
-				public String getScope() {
-					return this.scope;
-				}
-
-				public void setScope(String scope) {
-					this.scope = scope;
-				}
-
-				public Long getCreateTime() {
-					return this.createTime;
-				}
-
-				public void setCreateTime(Long createTime) {
-					this.createTime = createTime;
-				}
 
 				public Long getModifyTime() {
 					return this.modifyTime;
@@ -359,22 +319,6 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 
 				public void setModifyTime(Long modifyTime) {
 					this.modifyTime = modifyTime;
-				}
-
-				public String getCreator() {
-					return this.creator;
-				}
-
-				public void setCreator(String creator) {
-					this.creator = creator;
-				}
-
-				public String getCreatorName() {
-					return this.creatorName;
-				}
-
-				public void setCreatorName(String creatorName) {
-					this.creatorName = creatorName;
 				}
 
 				public String getOwner() {
@@ -401,12 +345,68 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 					this.description = description;
 				}
 
+				public Long getCreateTime() {
+					return this.createTime;
+				}
+
+				public void setCreateTime(Long createTime) {
+					this.createTime = createTime;
+				}
+
+				public String getCreator() {
+					return this.creator;
+				}
+
+				public void setCreator(String creator) {
+					this.creator = creator;
+				}
+
 				public String getEnv() {
 					return this.env;
 				}
 
 				public void setEnv(String env) {
 					this.env = env;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public String getScope() {
+					return this.scope;
+				}
+
+				public void setScope(String scope) {
+					this.scope = scope;
+				}
+
+				public Long getId() {
+					return this.id;
+				}
+
+				public void setId(Long id) {
+					this.id = id;
+				}
+
+				public String getCreatorName() {
+					return this.creatorName;
+				}
+
+				public void setCreatorName(String creatorName) {
+					this.creatorName = creatorName;
 				}
 
 				public List<ConfigItem2> getConfigItemList1() {
@@ -419,17 +419,9 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 
 				public static class ConfigItem2 {
 
-					private String key;
-
 					private String value;
 
-					public String getKey() {
-						return this.key;
-					}
-
-					public void setKey(String key) {
-						this.key = key;
-					}
+					private String key;
 
 					public String getValue() {
 						return this.value;
@@ -437,6 +429,14 @@ public class ListDataSourceWithConfigResponse extends AcsResponse {
 
 					public void setValue(String value) {
 						this.value = value;
+					}
+
+					public String getKey() {
+						return this.key;
+					}
+
+					public void setKey(String key) {
+						this.key = key;
 					}
 				}
 			}

@@ -23,10 +23,10 @@ public class DeleteUdfResponseUnmarshaller {
 	public static DeleteUdfResponse unmarshall(DeleteUdfResponse deleteUdfResponse, UnmarshallerContext _ctx) {
 		
 		deleteUdfResponse.setRequestId(_ctx.stringValue("DeleteUdfResponse.RequestId"));
-		deleteUdfResponse.setSuccess(_ctx.booleanValue("DeleteUdfResponse.Success"));
+		deleteUdfResponse.setMessage(_ctx.stringValue("DeleteUdfResponse.Message"));
 		deleteUdfResponse.setHttpStatusCode(_ctx.integerValue("DeleteUdfResponse.HttpStatusCode"));
 		deleteUdfResponse.setCode(_ctx.stringValue("DeleteUdfResponse.Code"));
-		deleteUdfResponse.setMessage(_ctx.stringValue("DeleteUdfResponse.Message"));
+		deleteUdfResponse.setSuccess(_ctx.booleanValue("DeleteUdfResponse.Success"));
 	 
 	 	return deleteUdfResponse;
 	}

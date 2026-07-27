@@ -28,10 +28,10 @@ public class ListProjectsResponseUnmarshaller {
 	public static ListProjectsResponse unmarshall(ListProjectsResponse listProjectsResponse, UnmarshallerContext _ctx) {
 		
 		listProjectsResponse.setRequestId(_ctx.stringValue("ListProjectsResponse.RequestId"));
-		listProjectsResponse.setSuccess(_ctx.booleanValue("ListProjectsResponse.Success"));
+		listProjectsResponse.setMessage(_ctx.stringValue("ListProjectsResponse.Message"));
 		listProjectsResponse.setHttpStatusCode(_ctx.integerValue("ListProjectsResponse.HttpStatusCode"));
 		listProjectsResponse.setCode(_ctx.stringValue("ListProjectsResponse.Code"));
-		listProjectsResponse.setMessage(_ctx.stringValue("ListProjectsResponse.Message"));
+		listProjectsResponse.setSuccess(_ctx.booleanValue("ListProjectsResponse.Success"));
 
 		PageResult pageResult = new PageResult();
 		pageResult.setTotalCount(_ctx.integerValue("ListProjectsResponse.PageResult.TotalCount"));

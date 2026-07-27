@@ -23,11 +23,11 @@ public class GetQualityWatchTaskLogResponseUnmarshaller {
 	public static GetQualityWatchTaskLogResponse unmarshall(GetQualityWatchTaskLogResponse getQualityWatchTaskLogResponse, UnmarshallerContext _ctx) {
 		
 		getQualityWatchTaskLogResponse.setRequestId(_ctx.stringValue("GetQualityWatchTaskLogResponse.RequestId"));
-		getQualityWatchTaskLogResponse.setSuccess(_ctx.booleanValue("GetQualityWatchTaskLogResponse.Success"));
-		getQualityWatchTaskLogResponse.setHttpStatusCode(_ctx.integerValue("GetQualityWatchTaskLogResponse.HttpStatusCode"));
-		getQualityWatchTaskLogResponse.setCode(_ctx.stringValue("GetQualityWatchTaskLogResponse.Code"));
 		getQualityWatchTaskLogResponse.setMessage(_ctx.stringValue("GetQualityWatchTaskLogResponse.Message"));
+		getQualityWatchTaskLogResponse.setHttpStatusCode(_ctx.integerValue("GetQualityWatchTaskLogResponse.HttpStatusCode"));
 		getQualityWatchTaskLogResponse.setData(_ctx.stringValue("GetQualityWatchTaskLogResponse.Data"));
+		getQualityWatchTaskLogResponse.setCode(_ctx.stringValue("GetQualityWatchTaskLogResponse.Code"));
+		getQualityWatchTaskLogResponse.setSuccess(_ctx.booleanValue("GetQualityWatchTaskLogResponse.Success"));
 	 
 	 	return getQualityWatchTaskLogResponse;
 	}

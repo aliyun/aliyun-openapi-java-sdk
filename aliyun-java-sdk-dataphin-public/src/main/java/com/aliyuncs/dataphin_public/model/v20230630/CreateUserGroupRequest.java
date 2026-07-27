@@ -65,11 +65,11 @@ public class CreateUserGroupRequest extends RpcAcsRequest<CreateUserGroupRespons
 		@SerializedName("Name")
 		private String name;
 
-		@SerializedName("Description")
-		private String description;
-
 		@SerializedName("Active")
 		private Boolean active;
+
+		@SerializedName("Description")
+		private String description;
 
 		@SerializedName("AdminUserIdList")
 		private List<String> adminUserIdList;
@@ -82,20 +82,20 @@ public class CreateUserGroupRequest extends RpcAcsRequest<CreateUserGroupRespons
 			this.name = name;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
 		public Boolean getActive() {
 			return this.active;
 		}
 
 		public void setActive(Boolean active) {
 			this.active = active;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public List<String> getAdminUserIdList() {

@@ -62,31 +62,23 @@ public class CreateBizUnitRequest extends RpcAcsRequest<CreateBizUnitResponse> {
 
 	public static class CreateCommand {
 
-		@SerializedName("Mode")
-		private String mode;
-
 		@SerializedName("BizUnitAccountList")
 		private List<BizUnitAccountListItem> bizUnitAccountList;
+
+		@SerializedName("Mode")
+		private String mode;
 
 		@SerializedName("DisplayName")
 		private String displayName;
 
-		@SerializedName("Name")
-		private String name;
-
 		@SerializedName("Icon")
 		private String icon;
 
+		@SerializedName("Name")
+		private String name;
+
 		@SerializedName("Description")
 		private String description;
-
-		public String getMode() {
-			return this.mode;
-		}
-
-		public void setMode(String mode) {
-			this.mode = mode;
-		}
 
 		public List<BizUnitAccountListItem> getBizUnitAccountList() {
 			return this.bizUnitAccountList;
@@ -94,6 +86,14 @@ public class CreateBizUnitRequest extends RpcAcsRequest<CreateBizUnitResponse> {
 
 		public void setBizUnitAccountList(List<BizUnitAccountListItem> bizUnitAccountList) {
 			this.bizUnitAccountList = bizUnitAccountList;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
 		}
 
 		public String getDisplayName() {
@@ -104,20 +104,20 @@ public class CreateBizUnitRequest extends RpcAcsRequest<CreateBizUnitResponse> {
 			this.displayName = displayName;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getIcon() {
 			return this.icon;
 		}
 
 		public void setIcon(String icon) {
 			this.icon = icon;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getDescription() {

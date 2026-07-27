@@ -27,10 +27,10 @@ public class CreateStandardRelationsResponseUnmarshaller {
 	public static CreateStandardRelationsResponse unmarshall(CreateStandardRelationsResponse createStandardRelationsResponse, UnmarshallerContext _ctx) {
 		
 		createStandardRelationsResponse.setRequestId(_ctx.stringValue("CreateStandardRelationsResponse.RequestId"));
-		createStandardRelationsResponse.setSuccess(_ctx.booleanValue("CreateStandardRelationsResponse.Success"));
+		createStandardRelationsResponse.setMessage(_ctx.stringValue("CreateStandardRelationsResponse.Message"));
 		createStandardRelationsResponse.setHttpStatusCode(_ctx.integerValue("CreateStandardRelationsResponse.HttpStatusCode"));
 		createStandardRelationsResponse.setCode(_ctx.stringValue("CreateStandardRelationsResponse.Code"));
-		createStandardRelationsResponse.setMessage(_ctx.stringValue("CreateStandardRelationsResponse.Message"));
+		createStandardRelationsResponse.setSuccess(_ctx.booleanValue("CreateStandardRelationsResponse.Success"));
 
 		Data data = new Data();
 		data.setSuccessCount(_ctx.integerValue("CreateStandardRelationsResponse.Data.SuccessCount"));

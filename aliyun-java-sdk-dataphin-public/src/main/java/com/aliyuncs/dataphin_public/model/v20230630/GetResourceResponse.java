@@ -26,13 +26,13 @@ public class GetResourceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private ResourceInfo resourceInfo;
 
@@ -44,12 +44,12 @@ public class GetResourceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class GetResourceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public ResourceInfo getResourceInfo() {
@@ -86,86 +86,38 @@ public class GetResourceResponse extends AcsResponse {
 
 	public static class ResourceInfo {
 
-		private Long id;
-
-		private String name;
-
-		private Long projectId;
-
-		private String resourceType;
-
-		private String directory;
-
-		private String storageAddress;
-
-		private Long size;
+		private String lastModifier;
 
 		private String description;
 
-		private String gmtCreate;
+		private Long size;
+
+		private Long projectId;
 
 		private String gmtModified;
 
-		private String computeEngineType;
+		private String resourceType;
 
 		private String creator;
 
-		private String lastModifier;
+		private String name;
 
-		public Long getId() {
-			return this.id;
+		private String storageAddress;
+
+		private String gmtCreate;
+
+		private String computeEngineType;
+
+		private Long id;
+
+		private String directory;
+
+		public String getLastModifier() {
+			return this.lastModifier;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
-		public String getDirectory() {
-			return this.directory;
-		}
-
-		public void setDirectory(String directory) {
-			this.directory = directory;
-		}
-
-		public String getStorageAddress() {
-			return this.storageAddress;
-		}
-
-		public void setStorageAddress(String storageAddress) {
-			this.storageAddress = storageAddress;
-		}
-
-		public Long getSize() {
-			return this.size;
-		}
-
-		public void setSize(Long size) {
-			this.size = size;
+		public void setLastModifier(String lastModifier) {
+			this.lastModifier = lastModifier;
 		}
 
 		public String getDescription() {
@@ -176,12 +128,20 @@ public class GetResourceResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public Long getSize() {
+			return this.size;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
+		public Long getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
 		}
 
 		public String getGmtModified() {
@@ -192,12 +152,12 @@ public class GetResourceResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public String getComputeEngineType() {
-			return this.computeEngineType;
+		public String getResourceType() {
+			return this.resourceType;
 		}
 
-		public void setComputeEngineType(String computeEngineType) {
-			this.computeEngineType = computeEngineType;
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public String getCreator() {
@@ -208,12 +168,52 @@ public class GetResourceResponse extends AcsResponse {
 			this.creator = creator;
 		}
 
-		public String getLastModifier() {
-			return this.lastModifier;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setLastModifier(String lastModifier) {
-			this.lastModifier = lastModifier;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getStorageAddress() {
+			return this.storageAddress;
+		}
+
+		public void setStorageAddress(String storageAddress) {
+			this.storageAddress = storageAddress;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getComputeEngineType() {
+			return this.computeEngineType;
+		}
+
+		public void setComputeEngineType(String computeEngineType) {
+			this.computeEngineType = computeEngineType;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getDirectory() {
+			return this.directory;
+		}
+
+		public void setDirectory(String directory) {
+			this.directory = directory;
 		}
 	}
 

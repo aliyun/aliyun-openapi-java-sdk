@@ -65,11 +65,11 @@ public class ExecuteAdHocTaskRequest extends RpcAcsRequest<ExecuteAdHocTaskRespo
 		@SerializedName("Code")
 		private String code;
 
-		@SerializedName("DataSourceId")
-		private Long dataSourceId;
-
 		@SerializedName("DataSourceSchema")
 		private String dataSourceSchema;
+
+		@SerializedName("DataSourceId")
+		private Long dataSourceId;
 
 		@SerializedName("ParamList")
 		private List<ParamListItem> paramList;
@@ -77,11 +77,11 @@ public class ExecuteAdHocTaskRequest extends RpcAcsRequest<ExecuteAdHocTaskRespo
 		@SerializedName("DataSourceCatalog")
 		private String dataSourceCatalog;
 
-		@SerializedName("OperatorType")
-		private String operatorType;
-
 		@SerializedName("ProjectId")
 		private Long projectId;
+
+		@SerializedName("OperatorType")
+		private String operatorType;
 
 		public String getCode() {
 			return this.code;
@@ -91,20 +91,20 @@ public class ExecuteAdHocTaskRequest extends RpcAcsRequest<ExecuteAdHocTaskRespo
 			this.code = code;
 		}
 
-		public Long getDataSourceId() {
-			return this.dataSourceId;
-		}
-
-		public void setDataSourceId(Long dataSourceId) {
-			this.dataSourceId = dataSourceId;
-		}
-
 		public String getDataSourceSchema() {
 			return this.dataSourceSchema;
 		}
 
 		public void setDataSourceSchema(String dataSourceSchema) {
 			this.dataSourceSchema = dataSourceSchema;
+		}
+
+		public Long getDataSourceId() {
+			return this.dataSourceId;
+		}
+
+		public void setDataSourceId(Long dataSourceId) {
+			this.dataSourceId = dataSourceId;
 		}
 
 		public List<ParamListItem> getParamList() {
@@ -123,20 +123,20 @@ public class ExecuteAdHocTaskRequest extends RpcAcsRequest<ExecuteAdHocTaskRespo
 			this.dataSourceCatalog = dataSourceCatalog;
 		}
 
-		public String getOperatorType() {
-			return this.operatorType;
-		}
-
-		public void setOperatorType(String operatorType) {
-			this.operatorType = operatorType;
-		}
-
 		public Long getProjectId() {
 			return this.projectId;
 		}
 
 		public void setProjectId(Long projectId) {
 			this.projectId = projectId;
+		}
+
+		public String getOperatorType() {
+			return this.operatorType;
+		}
+
+		public void setOperatorType(String operatorType) {
+			this.operatorType = operatorType;
 		}
 
 		public static class ParamListItem {

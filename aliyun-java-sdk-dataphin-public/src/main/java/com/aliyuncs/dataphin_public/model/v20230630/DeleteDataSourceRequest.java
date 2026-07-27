@@ -61,19 +61,11 @@ public class DeleteDataSourceRequest extends RpcAcsRequest<DeleteDataSourceRespo
 
 	public static class DeleteCommand {
 
-		@SerializedName("Mode")
-		private String mode;
-
 		@SerializedName("ProdDataSourceId")
 		private Long prodDataSourceId;
 
-		public String getMode() {
-			return this.mode;
-		}
-
-		public void setMode(String mode) {
-			this.mode = mode;
-		}
+		@SerializedName("Mode")
+		private String mode;
 
 		public Long getProdDataSourceId() {
 			return this.prodDataSourceId;
@@ -81,6 +73,14 @@ public class DeleteDataSourceRequest extends RpcAcsRequest<DeleteDataSourceRespo
 
 		public void setProdDataSourceId(Long prodDataSourceId) {
 			this.prodDataSourceId = prodDataSourceId;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
 		}
 	}
 

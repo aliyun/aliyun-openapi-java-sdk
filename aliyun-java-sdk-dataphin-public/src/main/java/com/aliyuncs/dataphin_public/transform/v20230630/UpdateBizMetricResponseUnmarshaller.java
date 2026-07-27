@@ -24,14 +24,14 @@ public class UpdateBizMetricResponseUnmarshaller {
 	public static UpdateBizMetricResponse unmarshall(UpdateBizMetricResponse updateBizMetricResponse, UnmarshallerContext _ctx) {
 		
 		updateBizMetricResponse.setRequestId(_ctx.stringValue("UpdateBizMetricResponse.RequestId"));
-		updateBizMetricResponse.setSuccess(_ctx.booleanValue("UpdateBizMetricResponse.Success"));
+		updateBizMetricResponse.setMessage(_ctx.stringValue("UpdateBizMetricResponse.Message"));
 		updateBizMetricResponse.setHttpStatusCode(_ctx.integerValue("UpdateBizMetricResponse.HttpStatusCode"));
 		updateBizMetricResponse.setCode(_ctx.stringValue("UpdateBizMetricResponse.Code"));
-		updateBizMetricResponse.setMessage(_ctx.stringValue("UpdateBizMetricResponse.Message"));
+		updateBizMetricResponse.setSuccess(_ctx.booleanValue("UpdateBizMetricResponse.Success"));
 
 		Data data = new Data();
-		data.setSuccess(_ctx.booleanValue("UpdateBizMetricResponse.Data.Success"));
 		data.setMessage(_ctx.stringValue("UpdateBizMetricResponse.Data.Message"));
+		data.setSuccess(_ctx.booleanValue("UpdateBizMetricResponse.Data.Success"));
 		updateBizMetricResponse.setData(data);
 	 
 	 	return updateBizMetricResponse;

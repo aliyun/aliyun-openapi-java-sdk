@@ -27,13 +27,13 @@ public class GetPhysicalNodeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private NodeInfo nodeInfo;
 
@@ -45,12 +45,12 @@ public class GetPhysicalNodeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetPhysicalNodeResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public NodeInfo getNodeInfo() {
@@ -87,58 +87,58 @@ public class GetPhysicalNodeResponse extends AcsResponse {
 
 	public static class NodeInfo {
 
-		private String id;
+		private String status;
 
-		private String name;
+		private String scheduleType;
 
 		private String description;
 
-		private String operatorType;
-
-		private String scheduleType;
+		private String dataSourceSchema;
 
 		private String priority;
 
 		private Long createTime;
 
-		private Long lastModifiedTime;
-
-		private String status;
-
 		private String triggerConfig;
 
 		private String from;
+
+		private String operatorType;
+
+		private String name;
+
+		private Long lastModifiedTime;
+
+		private String id;
 
 		private String cronExpression;
 
 		private Long dataSourceId;
 
-		private String dataSourceSchema;
-
 		private List<String> outputNameList;
-
-		private ProjectInfo projectInfo;
-
-		private Creator creator;
 
 		private Owner owner;
 
+		private Creator creator;
+
+		private ProjectInfo projectInfo;
+
 		private Modifier modifier;
 
-		public String getId() {
-			return this.id;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getScheduleType() {
+			return this.scheduleType;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setScheduleType(String scheduleType) {
+			this.scheduleType = scheduleType;
 		}
 
 		public String getDescription() {
@@ -149,20 +149,12 @@ public class GetPhysicalNodeResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getOperatorType() {
-			return this.operatorType;
+		public String getDataSourceSchema() {
+			return this.dataSourceSchema;
 		}
 
-		public void setOperatorType(String operatorType) {
-			this.operatorType = operatorType;
-		}
-
-		public String getScheduleType() {
-			return this.scheduleType;
-		}
-
-		public void setScheduleType(String scheduleType) {
-			this.scheduleType = scheduleType;
+		public void setDataSourceSchema(String dataSourceSchema) {
+			this.dataSourceSchema = dataSourceSchema;
 		}
 
 		public String getPriority() {
@@ -181,22 +173,6 @@ public class GetPhysicalNodeResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getLastModifiedTime() {
-			return this.lastModifiedTime;
-		}
-
-		public void setLastModifiedTime(Long lastModifiedTime) {
-			this.lastModifiedTime = lastModifiedTime;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getTriggerConfig() {
 			return this.triggerConfig;
 		}
@@ -211,6 +187,38 @@ public class GetPhysicalNodeResponse extends AcsResponse {
 
 		public void setFrom(String from) {
 			this.from = from;
+		}
+
+		public String getOperatorType() {
+			return this.operatorType;
+		}
+
+		public void setOperatorType(String operatorType) {
+			this.operatorType = operatorType;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getLastModifiedTime() {
+			return this.lastModifiedTime;
+		}
+
+		public void setLastModifiedTime(Long lastModifiedTime) {
+			this.lastModifiedTime = lastModifiedTime;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public String getCronExpression() {
@@ -229,36 +237,12 @@ public class GetPhysicalNodeResponse extends AcsResponse {
 			this.dataSourceId = dataSourceId;
 		}
 
-		public String getDataSourceSchema() {
-			return this.dataSourceSchema;
-		}
-
-		public void setDataSourceSchema(String dataSourceSchema) {
-			this.dataSourceSchema = dataSourceSchema;
-		}
-
 		public List<String> getOutputNameList() {
 			return this.outputNameList;
 		}
 
 		public void setOutputNameList(List<String> outputNameList) {
 			this.outputNameList = outputNameList;
-		}
-
-		public ProjectInfo getProjectInfo() {
-			return this.projectInfo;
-		}
-
-		public void setProjectInfo(ProjectInfo projectInfo) {
-			this.projectInfo = projectInfo;
-		}
-
-		public Creator getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(Creator creator) {
-			this.creator = creator;
 		}
 
 		public Owner getOwner() {
@@ -269,6 +253,22 @@ public class GetPhysicalNodeResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
+		public Creator getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(Creator creator) {
+			this.creator = creator;
+		}
+
+		public ProjectInfo getProjectInfo() {
+			return this.projectInfo;
+		}
+
+		public void setProjectInfo(ProjectInfo projectInfo) {
+			this.projectInfo = projectInfo;
+		}
+
 		public Modifier getModifier() {
 			return this.modifier;
 		}
@@ -277,7 +277,7 @@ public class GetPhysicalNodeResponse extends AcsResponse {
 			this.modifier = modifier;
 		}
 
-		public static class ProjectInfo {
+		public static class Owner {
 
 			private String id;
 
@@ -323,7 +323,7 @@ public class GetPhysicalNodeResponse extends AcsResponse {
 			}
 		}
 
-		public static class Owner {
+		public static class ProjectInfo {
 
 			private String id;
 

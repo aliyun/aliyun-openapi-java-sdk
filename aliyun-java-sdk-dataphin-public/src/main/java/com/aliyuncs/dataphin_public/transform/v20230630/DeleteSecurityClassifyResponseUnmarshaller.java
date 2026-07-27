@@ -23,11 +23,11 @@ public class DeleteSecurityClassifyResponseUnmarshaller {
 	public static DeleteSecurityClassifyResponse unmarshall(DeleteSecurityClassifyResponse deleteSecurityClassifyResponse, UnmarshallerContext _ctx) {
 		
 		deleteSecurityClassifyResponse.setRequestId(_ctx.stringValue("DeleteSecurityClassifyResponse.RequestId"));
-		deleteSecurityClassifyResponse.setSuccess(_ctx.booleanValue("DeleteSecurityClassifyResponse.Success"));
-		deleteSecurityClassifyResponse.setHttpStatusCode(_ctx.integerValue("DeleteSecurityClassifyResponse.HttpStatusCode"));
-		deleteSecurityClassifyResponse.setCode(_ctx.stringValue("DeleteSecurityClassifyResponse.Code"));
 		deleteSecurityClassifyResponse.setMessage(_ctx.stringValue("DeleteSecurityClassifyResponse.Message"));
+		deleteSecurityClassifyResponse.setHttpStatusCode(_ctx.integerValue("DeleteSecurityClassifyResponse.HttpStatusCode"));
 		deleteSecurityClassifyResponse.setData(_ctx.booleanValue("DeleteSecurityClassifyResponse.Data"));
+		deleteSecurityClassifyResponse.setCode(_ctx.stringValue("DeleteSecurityClassifyResponse.Code"));
+		deleteSecurityClassifyResponse.setSuccess(_ctx.booleanValue("DeleteSecurityClassifyResponse.Success"));
 	 
 	 	return deleteSecurityClassifyResponse;
 	}

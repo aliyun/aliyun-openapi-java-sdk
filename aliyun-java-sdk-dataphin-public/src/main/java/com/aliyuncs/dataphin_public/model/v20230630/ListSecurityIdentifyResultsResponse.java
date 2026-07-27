@@ -27,13 +27,13 @@ public class ListSecurityIdentifyResultsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -45,12 +45,12 @@ public class ListSecurityIdentifyResultsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListSecurityIdentifyResultsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -109,143 +109,79 @@ public class ListSecurityIdentifyResultsResponse extends AcsResponse {
 
 		public static class SecurityIdentifyResult {
 
-			private Long id;
-
-			private Long scanTaskId;
-
-			private Long tableTaskId;
-
-			private Long classifyId;
-
-			private String classifyName;
-
-			private String classifyAbbreviation;
-
-			private Long levelIndex;
-
-			private String levelName;
-
 			private String levelAbbreviation;
-
-			private Long levelColor;
-
-			private Long bizUnitId;
-
-			private String bizUnitName;
-
-			private String bizUnitDisplayName;
-
-			private Long projectId;
-
-			private String projectName;
-
-			private String projectDisplayName;
-
-			private Long datasourceId;
-
-			private String datasourceName;
-
-			private String tableEnv;
-
-			private String tableType;
-
-			private String tableCatalog;
 
 			private String tableId;
 
-			private String tableName;
+			private String modifyTime;
 
-			private String tableDescription;
+			private Long levelColor;
 
-			private String fieldId;
+			private String classifyAbbreviation;
 
-			private String fieldName;
-
-			private String fieldDescription;
+			private Long datasourceId;
 
 			private Boolean isCustomIdentify;
 
-			private Boolean isLocked;
+			private String projectName;
 
-			private Boolean hasBetterRule;
-
-			private Long identifyRecordId;
-
-			private String status;
-
-			private String bizDate;
+			private Long tableTaskId;
 
 			private String creator;
 
-			private String createTime;
+			private String tableDescription;
+
+			private Boolean hasBetterRule;
+
+			private Long bizUnitId;
+
+			private String bizUnitDisplayName;
+
+			private Long scanTaskId;
+
+			private Long classifyId;
+
+			private String tableCatalog;
+
+			private String bizUnitName;
+
+			private String fieldName;
 
 			private String modifier;
 
-			private String modifyTime;
+			private String bizDate;
 
-			public Long getId() {
-				return this.id;
-			}
+			private String status;
 
-			public void setId(Long id) {
-				this.id = id;
-			}
+			private String projectDisplayName;
 
-			public Long getScanTaskId() {
-				return this.scanTaskId;
-			}
+			private Long identifyRecordId;
 
-			public void setScanTaskId(Long scanTaskId) {
-				this.scanTaskId = scanTaskId;
-			}
+			private String datasourceName;
 
-			public Long getTableTaskId() {
-				return this.tableTaskId;
-			}
+			private String tableType;
 
-			public void setTableTaskId(Long tableTaskId) {
-				this.tableTaskId = tableTaskId;
-			}
+			private String tableEnv;
 
-			public Long getClassifyId() {
-				return this.classifyId;
-			}
+			private String createTime;
 
-			public void setClassifyId(Long classifyId) {
-				this.classifyId = classifyId;
-			}
+			private Long projectId;
 
-			public String getClassifyName() {
-				return this.classifyName;
-			}
+			private Boolean isLocked;
 
-			public void setClassifyName(String classifyName) {
-				this.classifyName = classifyName;
-			}
+			private String fieldDescription;
 
-			public String getClassifyAbbreviation() {
-				return this.classifyAbbreviation;
-			}
+			private String tableName;
 
-			public void setClassifyAbbreviation(String classifyAbbreviation) {
-				this.classifyAbbreviation = classifyAbbreviation;
-			}
+			private String classifyName;
 
-			public Long getLevelIndex() {
-				return this.levelIndex;
-			}
+			private String fieldId;
 
-			public void setLevelIndex(Long levelIndex) {
-				this.levelIndex = levelIndex;
-			}
+			private String levelName;
 
-			public String getLevelName() {
-				return this.levelName;
-			}
+			private Long id;
 
-			public void setLevelName(String levelName) {
-				this.levelName = levelName;
-			}
+			private Long levelIndex;
 
 			public String getLevelAbbreviation() {
 				return this.levelAbbreviation;
@@ -253,102 +189,6 @@ public class ListSecurityIdentifyResultsResponse extends AcsResponse {
 
 			public void setLevelAbbreviation(String levelAbbreviation) {
 				this.levelAbbreviation = levelAbbreviation;
-			}
-
-			public Long getLevelColor() {
-				return this.levelColor;
-			}
-
-			public void setLevelColor(Long levelColor) {
-				this.levelColor = levelColor;
-			}
-
-			public Long getBizUnitId() {
-				return this.bizUnitId;
-			}
-
-			public void setBizUnitId(Long bizUnitId) {
-				this.bizUnitId = bizUnitId;
-			}
-
-			public String getBizUnitName() {
-				return this.bizUnitName;
-			}
-
-			public void setBizUnitName(String bizUnitName) {
-				this.bizUnitName = bizUnitName;
-			}
-
-			public String getBizUnitDisplayName() {
-				return this.bizUnitDisplayName;
-			}
-
-			public void setBizUnitDisplayName(String bizUnitDisplayName) {
-				this.bizUnitDisplayName = bizUnitDisplayName;
-			}
-
-			public Long getProjectId() {
-				return this.projectId;
-			}
-
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
-
-			public String getProjectName() {
-				return this.projectName;
-			}
-
-			public void setProjectName(String projectName) {
-				this.projectName = projectName;
-			}
-
-			public String getProjectDisplayName() {
-				return this.projectDisplayName;
-			}
-
-			public void setProjectDisplayName(String projectDisplayName) {
-				this.projectDisplayName = projectDisplayName;
-			}
-
-			public Long getDatasourceId() {
-				return this.datasourceId;
-			}
-
-			public void setDatasourceId(Long datasourceId) {
-				this.datasourceId = datasourceId;
-			}
-
-			public String getDatasourceName() {
-				return this.datasourceName;
-			}
-
-			public void setDatasourceName(String datasourceName) {
-				this.datasourceName = datasourceName;
-			}
-
-			public String getTableEnv() {
-				return this.tableEnv;
-			}
-
-			public void setTableEnv(String tableEnv) {
-				this.tableEnv = tableEnv;
-			}
-
-			public String getTableType() {
-				return this.tableType;
-			}
-
-			public void setTableType(String tableType) {
-				this.tableType = tableType;
-			}
-
-			public String getTableCatalog() {
-				return this.tableCatalog;
-			}
-
-			public void setTableCatalog(String tableCatalog) {
-				this.tableCatalog = tableCatalog;
 			}
 
 			public String getTableId() {
@@ -359,44 +199,36 @@ public class ListSecurityIdentifyResultsResponse extends AcsResponse {
 				this.tableId = tableId;
 			}
 
-			public String getTableName() {
-				return this.tableName;
+			public String getModifyTime() {
+				return this.modifyTime;
 			}
 
-			public void setTableName(String tableName) {
-				this.tableName = tableName;
+			public void setModifyTime(String modifyTime) {
+				this.modifyTime = modifyTime;
 			}
 
-			public String getTableDescription() {
-				return this.tableDescription;
+			public Long getLevelColor() {
+				return this.levelColor;
 			}
 
-			public void setTableDescription(String tableDescription) {
-				this.tableDescription = tableDescription;
+			public void setLevelColor(Long levelColor) {
+				this.levelColor = levelColor;
 			}
 
-			public String getFieldId() {
-				return this.fieldId;
+			public String getClassifyAbbreviation() {
+				return this.classifyAbbreviation;
 			}
 
-			public void setFieldId(String fieldId) {
-				this.fieldId = fieldId;
+			public void setClassifyAbbreviation(String classifyAbbreviation) {
+				this.classifyAbbreviation = classifyAbbreviation;
 			}
 
-			public String getFieldName() {
-				return this.fieldName;
+			public Long getDatasourceId() {
+				return this.datasourceId;
 			}
 
-			public void setFieldName(String fieldName) {
-				this.fieldName = fieldName;
-			}
-
-			public String getFieldDescription() {
-				return this.fieldDescription;
-			}
-
-			public void setFieldDescription(String fieldDescription) {
-				this.fieldDescription = fieldDescription;
+			public void setDatasourceId(Long datasourceId) {
+				this.datasourceId = datasourceId;
 			}
 
 			public Boolean getIsCustomIdentify() {
@@ -407,44 +239,20 @@ public class ListSecurityIdentifyResultsResponse extends AcsResponse {
 				this.isCustomIdentify = isCustomIdentify;
 			}
 
-			public Boolean getIsLocked() {
-				return this.isLocked;
+			public String getProjectName() {
+				return this.projectName;
 			}
 
-			public void setIsLocked(Boolean isLocked) {
-				this.isLocked = isLocked;
+			public void setProjectName(String projectName) {
+				this.projectName = projectName;
 			}
 
-			public Boolean getHasBetterRule() {
-				return this.hasBetterRule;
+			public Long getTableTaskId() {
+				return this.tableTaskId;
 			}
 
-			public void setHasBetterRule(Boolean hasBetterRule) {
-				this.hasBetterRule = hasBetterRule;
-			}
-
-			public Long getIdentifyRecordId() {
-				return this.identifyRecordId;
-			}
-
-			public void setIdentifyRecordId(Long identifyRecordId) {
-				this.identifyRecordId = identifyRecordId;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getBizDate() {
-				return this.bizDate;
-			}
-
-			public void setBizDate(String bizDate) {
-				this.bizDate = bizDate;
+			public void setTableTaskId(Long tableTaskId) {
+				this.tableTaskId = tableTaskId;
 			}
 
 			public String getCreator() {
@@ -455,12 +263,76 @@ public class ListSecurityIdentifyResultsResponse extends AcsResponse {
 				this.creator = creator;
 			}
 
-			public String getCreateTime() {
-				return this.createTime;
+			public String getTableDescription() {
+				return this.tableDescription;
 			}
 
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
+			public void setTableDescription(String tableDescription) {
+				this.tableDescription = tableDescription;
+			}
+
+			public Boolean getHasBetterRule() {
+				return this.hasBetterRule;
+			}
+
+			public void setHasBetterRule(Boolean hasBetterRule) {
+				this.hasBetterRule = hasBetterRule;
+			}
+
+			public Long getBizUnitId() {
+				return this.bizUnitId;
+			}
+
+			public void setBizUnitId(Long bizUnitId) {
+				this.bizUnitId = bizUnitId;
+			}
+
+			public String getBizUnitDisplayName() {
+				return this.bizUnitDisplayName;
+			}
+
+			public void setBizUnitDisplayName(String bizUnitDisplayName) {
+				this.bizUnitDisplayName = bizUnitDisplayName;
+			}
+
+			public Long getScanTaskId() {
+				return this.scanTaskId;
+			}
+
+			public void setScanTaskId(Long scanTaskId) {
+				this.scanTaskId = scanTaskId;
+			}
+
+			public Long getClassifyId() {
+				return this.classifyId;
+			}
+
+			public void setClassifyId(Long classifyId) {
+				this.classifyId = classifyId;
+			}
+
+			public String getTableCatalog() {
+				return this.tableCatalog;
+			}
+
+			public void setTableCatalog(String tableCatalog) {
+				this.tableCatalog = tableCatalog;
+			}
+
+			public String getBizUnitName() {
+				return this.bizUnitName;
+			}
+
+			public void setBizUnitName(String bizUnitName) {
+				this.bizUnitName = bizUnitName;
+			}
+
+			public String getFieldName() {
+				return this.fieldName;
+			}
+
+			public void setFieldName(String fieldName) {
+				this.fieldName = fieldName;
 			}
 
 			public String getModifier() {
@@ -471,12 +343,140 @@ public class ListSecurityIdentifyResultsResponse extends AcsResponse {
 				this.modifier = modifier;
 			}
 
-			public String getModifyTime() {
-				return this.modifyTime;
+			public String getBizDate() {
+				return this.bizDate;
 			}
 
-			public void setModifyTime(String modifyTime) {
-				this.modifyTime = modifyTime;
+			public void setBizDate(String bizDate) {
+				this.bizDate = bizDate;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getProjectDisplayName() {
+				return this.projectDisplayName;
+			}
+
+			public void setProjectDisplayName(String projectDisplayName) {
+				this.projectDisplayName = projectDisplayName;
+			}
+
+			public Long getIdentifyRecordId() {
+				return this.identifyRecordId;
+			}
+
+			public void setIdentifyRecordId(Long identifyRecordId) {
+				this.identifyRecordId = identifyRecordId;
+			}
+
+			public String getDatasourceName() {
+				return this.datasourceName;
+			}
+
+			public void setDatasourceName(String datasourceName) {
+				this.datasourceName = datasourceName;
+			}
+
+			public String getTableType() {
+				return this.tableType;
+			}
+
+			public void setTableType(String tableType) {
+				this.tableType = tableType;
+			}
+
+			public String getTableEnv() {
+				return this.tableEnv;
+			}
+
+			public void setTableEnv(String tableEnv) {
+				this.tableEnv = tableEnv;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
+			}
+
+			public Boolean getIsLocked() {
+				return this.isLocked;
+			}
+
+			public void setIsLocked(Boolean isLocked) {
+				this.isLocked = isLocked;
+			}
+
+			public String getFieldDescription() {
+				return this.fieldDescription;
+			}
+
+			public void setFieldDescription(String fieldDescription) {
+				this.fieldDescription = fieldDescription;
+			}
+
+			public String getTableName() {
+				return this.tableName;
+			}
+
+			public void setTableName(String tableName) {
+				this.tableName = tableName;
+			}
+
+			public String getClassifyName() {
+				return this.classifyName;
+			}
+
+			public void setClassifyName(String classifyName) {
+				this.classifyName = classifyName;
+			}
+
+			public String getFieldId() {
+				return this.fieldId;
+			}
+
+			public void setFieldId(String fieldId) {
+				this.fieldId = fieldId;
+			}
+
+			public String getLevelName() {
+				return this.levelName;
+			}
+
+			public void setLevelName(String levelName) {
+				this.levelName = levelName;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public Long getLevelIndex() {
+				return this.levelIndex;
+			}
+
+			public void setLevelIndex(Long levelIndex) {
+				this.levelIndex = levelIndex;
 			}
 		}
 	}

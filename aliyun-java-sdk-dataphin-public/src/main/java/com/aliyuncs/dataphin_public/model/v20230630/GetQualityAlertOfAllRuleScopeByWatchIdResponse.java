@@ -27,13 +27,13 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdResponse extends AcsResponse 
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private QualityAlertInfo qualityAlertInfo;
 
@@ -45,12 +45,12 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdResponse extends AcsResponse 
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdResponse extends AcsResponse 
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public QualityAlertInfo getQualityAlertInfo() {
@@ -87,27 +87,19 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdResponse extends AcsResponse 
 
 	public static class QualityAlertInfo {
 
-		private Long watchId;
-
 		private Boolean enableAlertQualityOwner;
 
-		private List<AlertUser> alertUserList;
+		private Long watchId;
 
 		private List<AlertDuty> alertDutyList;
+
+		private List<AlertUser> alertUserList;
 
 		private List<String> alertUserChannelList;
 
 		private List<String> alertDutyChannelList;
 
 		private List<String> alertQualityOwnerChannelList;
-
-		public Long getWatchId() {
-			return this.watchId;
-		}
-
-		public void setWatchId(Long watchId) {
-			this.watchId = watchId;
-		}
 
 		public Boolean getEnableAlertQualityOwner() {
 			return this.enableAlertQualityOwner;
@@ -117,12 +109,12 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdResponse extends AcsResponse 
 			this.enableAlertQualityOwner = enableAlertQualityOwner;
 		}
 
-		public List<AlertUser> getAlertUserList() {
-			return this.alertUserList;
+		public Long getWatchId() {
+			return this.watchId;
 		}
 
-		public void setAlertUserList(List<AlertUser> alertUserList) {
-			this.alertUserList = alertUserList;
+		public void setWatchId(Long watchId) {
+			this.watchId = watchId;
 		}
 
 		public List<AlertDuty> getAlertDutyList() {
@@ -131,6 +123,14 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdResponse extends AcsResponse 
 
 		public void setAlertDutyList(List<AlertDuty> alertDutyList) {
 			this.alertDutyList = alertDutyList;
+		}
+
+		public List<AlertUser> getAlertUserList() {
+			return this.alertUserList;
+		}
+
+		public void setAlertUserList(List<AlertUser> alertUserList) {
+			this.alertUserList = alertUserList;
 		}
 
 		public List<String> getAlertUserChannelList() {
@@ -157,7 +157,7 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdResponse extends AcsResponse 
 			this.alertQualityOwnerChannelList = alertQualityOwnerChannelList;
 		}
 
-		public static class AlertUser {
+		public static class AlertDuty {
 
 			private String id;
 
@@ -180,7 +180,7 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdResponse extends AcsResponse 
 			}
 		}
 
-		public static class AlertDuty {
+		public static class AlertUser {
 
 			private String id;
 

@@ -78,11 +78,11 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		@SerializedName("SearchText")
 		private String searchText;
 
-		@SerializedName("MinBizDate")
-		private String minBizDate;
-
 		@SerializedName("ScheduleType")
 		private String scheduleType;
+
+		@SerializedName("MinBizDate")
+		private String minBizDate;
 
 		@SerializedName("SubBizTypeList")
 		private List<String> subBizTypeList;
@@ -114,23 +114,23 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		@SerializedName("Page")
 		private Integer page;
 
-		@SerializedName("NodeId")
-		private String nodeId;
-
 		@SerializedName("ProjectId")
 		private Long projectId;
 
 		@SerializedName("FlowId")
 		private String flowId;
 
+		@SerializedName("NodeId")
+		private String nodeId;
+
 		@SerializedName("BizUnitId")
 		private Long bizUnitId;
 
-		@SerializedName("PriorityList")
-		private List<String> priorityList;
-
 		@SerializedName("MaxRunDate")
 		private String maxRunDate;
+
+		@SerializedName("PriorityList")
+		private List<String> priorityList;
 
 		public String getSearchText() {
 			return this.searchText;
@@ -140,20 +140,20 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 			this.searchText = searchText;
 		}
 
-		public String getMinBizDate() {
-			return this.minBizDate;
-		}
-
-		public void setMinBizDate(String minBizDate) {
-			this.minBizDate = minBizDate;
-		}
-
 		public String getScheduleType() {
 			return this.scheduleType;
 		}
 
 		public void setScheduleType(String scheduleType) {
 			this.scheduleType = scheduleType;
+		}
+
+		public String getMinBizDate() {
+			return this.minBizDate;
+		}
+
+		public void setMinBizDate(String minBizDate) {
+			this.minBizDate = minBizDate;
 		}
 
 		public List<String> getSubBizTypeList() {
@@ -236,14 +236,6 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 			this.page = page;
 		}
 
-		public String getNodeId() {
-			return this.nodeId;
-		}
-
-		public void setNodeId(String nodeId) {
-			this.nodeId = nodeId;
-		}
-
 		public Long getProjectId() {
 			return this.projectId;
 		}
@@ -260,6 +252,14 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 			this.flowId = flowId;
 		}
 
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
+		}
+
 		public Long getBizUnitId() {
 			return this.bizUnitId;
 		}
@@ -268,20 +268,20 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 			this.bizUnitId = bizUnitId;
 		}
 
-		public List<String> getPriorityList() {
-			return this.priorityList;
-		}
-
-		public void setPriorityList(List<String> priorityList) {
-			this.priorityList = priorityList;
-		}
-
 		public String getMaxRunDate() {
 			return this.maxRunDate;
 		}
 
 		public void setMaxRunDate(String maxRunDate) {
 			this.maxRunDate = maxRunDate;
+		}
+
+		public List<String> getPriorityList() {
+			return this.priorityList;
+		}
+
+		public void setPriorityList(List<String> priorityList) {
+			this.priorityList = priorityList;
 		}
 	}
 

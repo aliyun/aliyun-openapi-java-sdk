@@ -71,11 +71,11 @@ public class ListQualityRulesRequest extends RpcAcsRequest<ListQualityRulesRespo
 		@SerializedName("TestRunTaskValidateResultList")
 		private List<String> testRunTaskValidateResultList;
 
-		@SerializedName("WatchId")
-		private Long watchId;
-
 		@SerializedName("PageNo")
 		private Integer pageNo;
+
+		@SerializedName("WatchId")
+		private Long watchId;
 
 		@SerializedName("PageSize")
 		private Integer pageSize;
@@ -116,20 +116,20 @@ public class ListQualityRulesRequest extends RpcAcsRequest<ListQualityRulesRespo
 			this.testRunTaskValidateResultList = testRunTaskValidateResultList;
 		}
 
-		public Long getWatchId() {
-			return this.watchId;
-		}
-
-		public void setWatchId(Long watchId) {
-			this.watchId = watchId;
-		}
-
 		public Integer getPageNo() {
 			return this.pageNo;
 		}
 
 		public void setPageNo(Integer pageNo) {
 			this.pageNo = pageNo;
+		}
+
+		public Long getWatchId() {
+			return this.watchId;
+		}
+
+		public void setWatchId(Long watchId) {
+			this.watchId = watchId;
 		}
 
 		public Integer getPageSize() {

@@ -27,13 +27,13 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private ListResult listResult;
 
@@ -45,12 +45,12 @@ public class ListAlertEventsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListAlertEventsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public ListResult getListResult() {
@@ -109,10 +109,6 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 		public static class AlertEventInfo {
 
-			private String id;
-
-			private String latestAlertTime;
-
 			private String firstAlertTime;
 
 			private String status;
@@ -120,6 +116,10 @@ public class ListAlertEventsResponse extends AcsResponse {
 			private String alertFrequency;
 
 			private Long totalAlertTimes;
+
+			private String id;
+
+			private String latestAlertTime;
 
 			private String doNotDisturbEndTime;
 
@@ -132,22 +132,6 @@ public class ListAlertEventsResponse extends AcsResponse {
 			private BelongProject belongProject;
 
 			private UrlConfig urlConfig;
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getLatestAlertTime() {
-				return this.latestAlertTime;
-			}
-
-			public void setLatestAlertTime(String latestAlertTime) {
-				this.latestAlertTime = latestAlertTime;
-			}
 
 			public String getFirstAlertTime() {
 				return this.firstAlertTime;
@@ -179,6 +163,22 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 			public void setTotalAlertTimes(Long totalAlertTimes) {
 				this.totalAlertTimes = totalAlertTimes;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getLatestAlertTime() {
+				return this.latestAlertTime;
+			}
+
+			public void setLatestAlertTime(String latestAlertTime) {
+				this.latestAlertTime = latestAlertTime;
 			}
 
 			public String getDoNotDisturbEndTime() {
@@ -231,23 +231,15 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 			public static class AlertReceiver {
 
-				private String type;
-
 				private String onCallTableName;
+
+				private String type;
 
 				private List<User> userList;
 
-				private List<String> alertChannelTypeList;
-
 				private List<String> customAlertChannelIdList;
 
-				public String getType() {
-					return this.type;
-				}
-
-				public void setType(String type) {
-					this.type = type;
-				}
+				private List<String> alertChannelTypeList;
 
 				public String getOnCallTableName() {
 					return this.onCallTableName;
@@ -255,6 +247,14 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 				public void setOnCallTableName(String onCallTableName) {
 					this.onCallTableName = onCallTableName;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
 				}
 
 				public List<User> getUserList() {
@@ -265,20 +265,20 @@ public class ListAlertEventsResponse extends AcsResponse {
 					this.userList = userList;
 				}
 
-				public List<String> getAlertChannelTypeList() {
-					return this.alertChannelTypeList;
-				}
-
-				public void setAlertChannelTypeList(List<String> alertChannelTypeList) {
-					this.alertChannelTypeList = alertChannelTypeList;
-				}
-
 				public List<String> getCustomAlertChannelIdList() {
 					return this.customAlertChannelIdList;
 				}
 
 				public void setCustomAlertChannelIdList(List<String> customAlertChannelIdList) {
 					this.customAlertChannelIdList = customAlertChannelIdList;
+				}
+
+				public List<String> getAlertChannelTypeList() {
+					return this.alertChannelTypeList;
+				}
+
+				public void setAlertChannelTypeList(List<String> alertChannelTypeList) {
+					this.alertChannelTypeList = alertChannelTypeList;
 				}
 
 				public static class User {
@@ -299,9 +299,9 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 				private String sourceSystemType;
 
-				private String name;
-
 				private String type;
+
+				private String name;
 
 				public String getSourceSystemType() {
 					return this.sourceSystemType;
@@ -311,14 +311,6 @@ public class ListAlertEventsResponse extends AcsResponse {
 					this.sourceSystemType = sourceSystemType;
 				}
 
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
 				public String getType() {
 					return this.type;
 				}
@@ -326,15 +318,23 @@ public class ListAlertEventsResponse extends AcsResponse {
 				public void setType(String type) {
 					this.type = type;
 				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
 			}
 
 			public static class AlertReason {
 
 				private String type;
 
-				private String bizDate;
-
 				private String uniqueKey;
+
+				private String bizDate;
 
 				private List<AlertReasonParam> alertReasonParamList;
 
@@ -346,20 +346,20 @@ public class ListAlertEventsResponse extends AcsResponse {
 					this.type = type;
 				}
 
-				public String getBizDate() {
-					return this.bizDate;
-				}
-
-				public void setBizDate(String bizDate) {
-					this.bizDate = bizDate;
-				}
-
 				public String getUniqueKey() {
 					return this.uniqueKey;
 				}
 
 				public void setUniqueKey(String uniqueKey) {
 					this.uniqueKey = uniqueKey;
+				}
+
+				public String getBizDate() {
+					return this.bizDate;
+				}
+
+				public void setBizDate(String bizDate) {
+					this.bizDate = bizDate;
 				}
 
 				public List<AlertReasonParam> getAlertReasonParamList() {
@@ -372,17 +372,9 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 				public static class AlertReasonParam {
 
-					private String key;
-
 					private String value;
 
-					public String getKey() {
-						return this.key;
-					}
-
-					public void setKey(String key) {
-						this.key = key;
-					}
+					private String key;
 
 					public String getValue() {
 						return this.value;
@@ -390,6 +382,14 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 					public void setValue(String value) {
 						this.value = value;
+					}
+
+					public String getKey() {
+						return this.key;
+					}
+
+					public void setKey(String key) {
+						this.key = key;
 					}
 				}
 			}
@@ -419,19 +419,11 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 			public static class UrlConfig {
 
-				private String objectUrl;
-
 				private String logUrl;
 
+				private String objectUrl;
+
 				private String alertConfigUrl;
-
-				public String getObjectUrl() {
-					return this.objectUrl;
-				}
-
-				public void setObjectUrl(String objectUrl) {
-					this.objectUrl = objectUrl;
-				}
 
 				public String getLogUrl() {
 					return this.logUrl;
@@ -439,6 +431,14 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 				public void setLogUrl(String logUrl) {
 					this.logUrl = logUrl;
+				}
+
+				public String getObjectUrl() {
+					return this.objectUrl;
+				}
+
+				public void setObjectUrl(String objectUrl) {
+					this.objectUrl = objectUrl;
 				}
 
 				public String getAlertConfigUrl() {

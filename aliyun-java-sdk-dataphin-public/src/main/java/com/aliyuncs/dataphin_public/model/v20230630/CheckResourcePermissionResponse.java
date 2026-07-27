@@ -27,13 +27,13 @@ public class CheckResourcePermissionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<ResourcePermission> resourcePermissionList;
 
@@ -45,12 +45,12 @@ public class CheckResourcePermissionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class CheckResourcePermissionResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ResourcePermission> getResourcePermissionList() {
@@ -87,17 +87,9 @@ public class CheckResourcePermissionResponse extends AcsResponse {
 
 	public static class ResourcePermission {
 
-		private String resourceId;
-
 		private Boolean hasPermission;
 
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
+		private String resourceId;
 
 		public Boolean getHasPermission() {
 			return this.hasPermission;
@@ -105,6 +97,14 @@ public class CheckResourcePermissionResponse extends AcsResponse {
 
 		public void setHasPermission(Boolean hasPermission) {
 			this.hasPermission = hasPermission;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 	}
 

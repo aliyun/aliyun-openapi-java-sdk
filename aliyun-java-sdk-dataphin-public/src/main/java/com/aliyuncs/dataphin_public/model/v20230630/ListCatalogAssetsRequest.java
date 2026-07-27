@@ -64,11 +64,11 @@ public class ListCatalogAssetsRequest extends RpcAcsRequest<ListCatalogAssetsRes
 		@SerializedName("QueryMode")
 		private String queryMode;
 
-		@SerializedName("Name")
-		private String name;
-
 		@SerializedName("PageSize")
 		private Integer pageSize;
+
+		@SerializedName("Name")
+		private String name;
 
 		@SerializedName("Keyword")
 		private String keyword;
@@ -87,20 +87,20 @@ public class ListCatalogAssetsRequest extends RpcAcsRequest<ListCatalogAssetsRes
 			this.queryMode = queryMode;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public Integer getPageSize() {
 			return this.pageSize;
 		}
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getKeyword() {

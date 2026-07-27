@@ -27,13 +27,13 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -45,12 +45,12 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -111,45 +111,45 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 
 			private String groupName;
 
-			private Integer groupId;
-
-			private Long apiId;
-
-			private String apiName;
+			private String owner;
 
 			private String description;
 
-			private String ownerUserName;
-
-			private String owner;
-
-			private String deployTime;
-
 			private Integer updateRate;
 
-			private String customUpdateRate;
+			private String apiName;
+
+			private String projectName;
 
 			private Integer appCount;
-
-			private Integer callCount;
-
-			private Long logicUnitNo;
 
 			private Integer mode;
 
 			private Integer applyStatus;
 
+			private Integer projectId;
+
+			private Integer groupId;
+
+			private String customUpdateRate;
+
+			private String deployTime;
+
+			private String version;
+
+			private Long logicUnitNo;
+
 			private String updateTime;
 
 			private Integer createType;
 
+			private String ownerUserName;
+
+			private Integer callCount;
+
 			private Integer executeMode;
 
-			private Integer projectId;
-
-			private String projectName;
-
-			private String version;
+			private Long apiId;
 
 			private List<AppInfo> appInfoList;
 
@@ -161,28 +161,12 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 				this.groupName = groupName;
 			}
 
-			public Integer getGroupId() {
-				return this.groupId;
+			public String getOwner() {
+				return this.owner;
 			}
 
-			public void setGroupId(Integer groupId) {
-				this.groupId = groupId;
-			}
-
-			public Long getApiId() {
-				return this.apiId;
-			}
-
-			public void setApiId(Long apiId) {
-				this.apiId = apiId;
-			}
-
-			public String getApiName() {
-				return this.apiName;
-			}
-
-			public void setApiName(String apiName) {
-				this.apiName = apiName;
+			public void setOwner(String owner) {
+				this.owner = owner;
 			}
 
 			public String getDescription() {
@@ -193,30 +177,6 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getOwnerUserName() {
-				return this.ownerUserName;
-			}
-
-			public void setOwnerUserName(String ownerUserName) {
-				this.ownerUserName = ownerUserName;
-			}
-
-			public String getOwner() {
-				return this.owner;
-			}
-
-			public void setOwner(String owner) {
-				this.owner = owner;
-			}
-
-			public String getDeployTime() {
-				return this.deployTime;
-			}
-
-			public void setDeployTime(String deployTime) {
-				this.deployTime = deployTime;
-			}
-
 			public Integer getUpdateRate() {
 				return this.updateRate;
 			}
@@ -225,12 +185,20 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 				this.updateRate = updateRate;
 			}
 
-			public String getCustomUpdateRate() {
-				return this.customUpdateRate;
+			public String getApiName() {
+				return this.apiName;
 			}
 
-			public void setCustomUpdateRate(String customUpdateRate) {
-				this.customUpdateRate = customUpdateRate;
+			public void setApiName(String apiName) {
+				this.apiName = apiName;
+			}
+
+			public String getProjectName() {
+				return this.projectName;
+			}
+
+			public void setProjectName(String projectName) {
+				this.projectName = projectName;
 			}
 
 			public Integer getAppCount() {
@@ -239,22 +207,6 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 
 			public void setAppCount(Integer appCount) {
 				this.appCount = appCount;
-			}
-
-			public Integer getCallCount() {
-				return this.callCount;
-			}
-
-			public void setCallCount(Integer callCount) {
-				this.callCount = callCount;
-			}
-
-			public Long getLogicUnitNo() {
-				return this.logicUnitNo;
-			}
-
-			public void setLogicUnitNo(Long logicUnitNo) {
-				this.logicUnitNo = logicUnitNo;
 			}
 
 			public Integer getMode() {
@@ -273,6 +225,54 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 				this.applyStatus = applyStatus;
 			}
 
+			public Integer getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Integer projectId) {
+				this.projectId = projectId;
+			}
+
+			public Integer getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(Integer groupId) {
+				this.groupId = groupId;
+			}
+
+			public String getCustomUpdateRate() {
+				return this.customUpdateRate;
+			}
+
+			public void setCustomUpdateRate(String customUpdateRate) {
+				this.customUpdateRate = customUpdateRate;
+			}
+
+			public String getDeployTime() {
+				return this.deployTime;
+			}
+
+			public void setDeployTime(String deployTime) {
+				this.deployTime = deployTime;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
+			public Long getLogicUnitNo() {
+				return this.logicUnitNo;
+			}
+
+			public void setLogicUnitNo(Long logicUnitNo) {
+				this.logicUnitNo = logicUnitNo;
+			}
+
 			public String getUpdateTime() {
 				return this.updateTime;
 			}
@@ -289,6 +289,22 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 				this.createType = createType;
 			}
 
+			public String getOwnerUserName() {
+				return this.ownerUserName;
+			}
+
+			public void setOwnerUserName(String ownerUserName) {
+				this.ownerUserName = ownerUserName;
+			}
+
+			public Integer getCallCount() {
+				return this.callCount;
+			}
+
+			public void setCallCount(Integer callCount) {
+				this.callCount = callCount;
+			}
+
 			public Integer getExecuteMode() {
 				return this.executeMode;
 			}
@@ -297,28 +313,12 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 				this.executeMode = executeMode;
 			}
 
-			public Integer getProjectId() {
-				return this.projectId;
+			public Long getApiId() {
+				return this.apiId;
 			}
 
-			public void setProjectId(Integer projectId) {
-				this.projectId = projectId;
-			}
-
-			public String getProjectName() {
-				return this.projectName;
-			}
-
-			public void setProjectName(String projectName) {
-				this.projectName = projectName;
-			}
-
-			public String getVersion() {
-				return this.version;
-			}
-
-			public void setVersion(String version) {
-				this.version = version;
+			public void setApiId(Long apiId) {
+				this.apiId = apiId;
 			}
 
 			public List<AppInfo> getAppInfoList() {
@@ -331,13 +331,21 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 
 			public static class AppInfo {
 
-				private Integer appId;
+				private String appKeyStr;
 
-				private String appName;
+				private Integer appId;
 
 				private Long appKey;
 
-				private String appKeyStr;
+				private String appName;
+
+				public String getAppKeyStr() {
+					return this.appKeyStr;
+				}
+
+				public void setAppKeyStr(String appKeyStr) {
+					this.appKeyStr = appKeyStr;
+				}
 
 				public Integer getAppId() {
 					return this.appId;
@@ -345,14 +353,6 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 
 				public void setAppId(Integer appId) {
 					this.appId = appId;
-				}
-
-				public String getAppName() {
-					return this.appName;
-				}
-
-				public void setAppName(String appName) {
-					this.appName = appName;
 				}
 
 				public Long getAppKey() {
@@ -363,12 +363,12 @@ public class ListDataServicePublishedApisResponse extends AcsResponse {
 					this.appKey = appKey;
 				}
 
-				public String getAppKeyStr() {
-					return this.appKeyStr;
+				public String getAppName() {
+					return this.appName;
 				}
 
-				public void setAppKeyStr(String appKeyStr) {
-					this.appKeyStr = appKeyStr;
+				public void setAppName(String appName) {
+					this.appName = appName;
 				}
 			}
 		}

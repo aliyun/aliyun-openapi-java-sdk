@@ -86,28 +86,20 @@ public class CreateDataSourceRequest extends RpcAcsRequest<CreateDataSourceRespo
 
 		public static class ProdDataSourceCreate {
 
-			@SerializedName("Name")
-			private String name;
-
 			@SerializedName("ConfigItemList")
 			private List<ConfigItemListItem> configItemList;
 
-			@SerializedName("Description")
-			private String description;
+			@SerializedName("Name")
+			private String name;
 
 			@SerializedName("CheckActivity")
 			private Boolean checkActivity;
 
+			@SerializedName("Description")
+			private String description;
+
 			@SerializedName("Type")
 			private String type;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
 
 			public List<ConfigItemListItem> getConfigItemList() {
 				return this.configItemList;
@@ -117,12 +109,12 @@ public class CreateDataSourceRequest extends RpcAcsRequest<CreateDataSourceRespo
 				this.configItemList = configItemList;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public Boolean getCheckActivity() {
@@ -131,6 +123,14 @@ public class CreateDataSourceRequest extends RpcAcsRequest<CreateDataSourceRespo
 
 			public void setCheckActivity(Boolean checkActivity) {
 				this.checkActivity = checkActivity;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getType() {
@@ -193,28 +193,20 @@ public class CreateDataSourceRequest extends RpcAcsRequest<CreateDataSourceRespo
 
 			public static class DataSourceCreate {
 
-				@SerializedName("Name")
-				private String name;
-
 				@SerializedName("ConfigItemList")
 				private List<ConfigItemListItem> configItemList;
 
-				@SerializedName("Description")
-				private String description;
+				@SerializedName("Name")
+				private String name;
 
 				@SerializedName("CheckActivity")
 				private Boolean checkActivity;
 
+				@SerializedName("Description")
+				private String description;
+
 				@SerializedName("Type")
 				private String type;
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
 
 				public List<ConfigItemListItem> getConfigItemList() {
 					return this.configItemList;
@@ -224,12 +216,12 @@ public class CreateDataSourceRequest extends RpcAcsRequest<CreateDataSourceRespo
 					this.configItemList = configItemList;
 				}
 
-				public String getDescription() {
-					return this.description;
+				public String getName() {
+					return this.name;
 				}
 
-				public void setDescription(String description) {
-					this.description = description;
+				public void setName(String name) {
+					this.name = name;
 				}
 
 				public Boolean getCheckActivity() {
@@ -238,6 +230,14 @@ public class CreateDataSourceRequest extends RpcAcsRequest<CreateDataSourceRespo
 
 				public void setCheckActivity(Boolean checkActivity) {
 					this.checkActivity = checkActivity;
+				}
+
+				public String getDescription() {
+					return this.description;
+				}
+
+				public void setDescription(String description) {
+					this.description = description;
 				}
 
 				public String getType() {

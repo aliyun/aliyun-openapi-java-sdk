@@ -24,10 +24,10 @@ public class CreateBatchTaskResponseUnmarshaller {
 	public static CreateBatchTaskResponse unmarshall(CreateBatchTaskResponse createBatchTaskResponse, UnmarshallerContext _ctx) {
 		
 		createBatchTaskResponse.setRequestId(_ctx.stringValue("CreateBatchTaskResponse.RequestId"));
-		createBatchTaskResponse.setSuccess(_ctx.booleanValue("CreateBatchTaskResponse.Success"));
+		createBatchTaskResponse.setMessage(_ctx.stringValue("CreateBatchTaskResponse.Message"));
 		createBatchTaskResponse.setHttpStatusCode(_ctx.integerValue("CreateBatchTaskResponse.HttpStatusCode"));
 		createBatchTaskResponse.setCode(_ctx.stringValue("CreateBatchTaskResponse.Code"));
-		createBatchTaskResponse.setMessage(_ctx.stringValue("CreateBatchTaskResponse.Message"));
+		createBatchTaskResponse.setSuccess(_ctx.booleanValue("CreateBatchTaskResponse.Success"));
 
 		CreateResult createResult = new CreateResult();
 		createResult.setFileId(_ctx.longValue("CreateBatchTaskResponse.CreateResult.FileId"));

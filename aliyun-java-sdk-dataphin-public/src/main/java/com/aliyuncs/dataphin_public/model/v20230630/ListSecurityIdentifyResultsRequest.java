@@ -62,11 +62,11 @@ public class ListSecurityIdentifyResultsRequest extends RpcAcsRequest<ListSecuri
 
 	public static class ListQuery {
 
-		@SerializedName("ClassifyId")
-		private Long classifyId;
-
 		@SerializedName("ProjectNameList")
 		private List<String> projectNameList;
+
+		@SerializedName("ClassifyId")
+		private Long classifyId;
 
 		@SerializedName("PageNo")
 		private Integer pageNo;
@@ -80,11 +80,11 @@ public class ListSecurityIdentifyResultsRequest extends RpcAcsRequest<ListSecuri
 		@SerializedName("DatasourceNameList")
 		private List<String> datasourceNameList;
 
-		@SerializedName("Env")
-		private String env;
-
 		@SerializedName("Keyword")
 		private String keyword;
+
+		@SerializedName("Env")
+		private String env;
 
 		@SerializedName("BizUnitNameList")
 		private List<String> bizUnitNameList;
@@ -92,20 +92,20 @@ public class ListSecurityIdentifyResultsRequest extends RpcAcsRequest<ListSecuri
 		@SerializedName("Status")
 		private String status;
 
-		public Long getClassifyId() {
-			return this.classifyId;
-		}
-
-		public void setClassifyId(Long classifyId) {
-			this.classifyId = classifyId;
-		}
-
 		public List<String> getProjectNameList() {
 			return this.projectNameList;
 		}
 
 		public void setProjectNameList(List<String> projectNameList) {
 			this.projectNameList = projectNameList;
+		}
+
+		public Long getClassifyId() {
+			return this.classifyId;
+		}
+
+		public void setClassifyId(Long classifyId) {
+			this.classifyId = classifyId;
 		}
 
 		public Integer getPageNo() {
@@ -140,20 +140,20 @@ public class ListSecurityIdentifyResultsRequest extends RpcAcsRequest<ListSecuri
 			this.datasourceNameList = datasourceNameList;
 		}
 
-		public String getEnv() {
-			return this.env;
-		}
-
-		public void setEnv(String env) {
-			this.env = env;
-		}
-
 		public String getKeyword() {
 			return this.keyword;
 		}
 
 		public void setKeyword(String keyword) {
 			this.keyword = keyword;
+		}
+
+		public String getEnv() {
+			return this.env;
+		}
+
+		public void setEnv(String env) {
+			this.env = env;
 		}
 
 		public List<String> getBizUnitNameList() {

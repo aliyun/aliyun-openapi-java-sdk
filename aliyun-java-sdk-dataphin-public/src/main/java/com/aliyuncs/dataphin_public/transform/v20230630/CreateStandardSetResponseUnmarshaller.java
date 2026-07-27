@@ -23,11 +23,11 @@ public class CreateStandardSetResponseUnmarshaller {
 	public static CreateStandardSetResponse unmarshall(CreateStandardSetResponse createStandardSetResponse, UnmarshallerContext _ctx) {
 		
 		createStandardSetResponse.setRequestId(_ctx.stringValue("CreateStandardSetResponse.RequestId"));
-		createStandardSetResponse.setSuccess(_ctx.booleanValue("CreateStandardSetResponse.Success"));
-		createStandardSetResponse.setHttpStatusCode(_ctx.integerValue("CreateStandardSetResponse.HttpStatusCode"));
-		createStandardSetResponse.setCode(_ctx.stringValue("CreateStandardSetResponse.Code"));
 		createStandardSetResponse.setMessage(_ctx.stringValue("CreateStandardSetResponse.Message"));
+		createStandardSetResponse.setHttpStatusCode(_ctx.integerValue("CreateStandardSetResponse.HttpStatusCode"));
 		createStandardSetResponse.setData(_ctx.longValue("CreateStandardSetResponse.Data"));
+		createStandardSetResponse.setCode(_ctx.stringValue("CreateStandardSetResponse.Code"));
+		createStandardSetResponse.setSuccess(_ctx.booleanValue("CreateStandardSetResponse.Success"));
 	 
 	 	return createStandardSetResponse;
 	}

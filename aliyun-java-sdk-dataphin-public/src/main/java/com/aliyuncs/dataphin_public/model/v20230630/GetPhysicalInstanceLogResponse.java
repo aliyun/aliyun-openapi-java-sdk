@@ -27,13 +27,13 @@ public class GetPhysicalInstanceLogResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<TaskrunLog> taskrunLogList;
 
@@ -45,12 +45,12 @@ public class GetPhysicalInstanceLogResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetPhysicalInstanceLogResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<TaskrunLog> getTaskrunLogList() {
@@ -87,32 +87,24 @@ public class GetPhysicalInstanceLogResponse extends AcsResponse {
 
 	public static class TaskrunLog {
 
-		private String taskrunId;
-
-		private String startTime;
+		private String status;
 
 		private String endTime;
 
+		private String taskrunId;
+
 		private String logContent;
 
-		private String status;
+		private String startTime;
 
 		private String duration;
 
-		public String getTaskrunId() {
-			return this.taskrunId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setTaskrunId(String taskrunId) {
-			this.taskrunId = taskrunId;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getEndTime() {
@@ -123,6 +115,14 @@ public class GetPhysicalInstanceLogResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
+		public String getTaskrunId() {
+			return this.taskrunId;
+		}
+
+		public void setTaskrunId(String taskrunId) {
+			this.taskrunId = taskrunId;
+		}
+
 		public String getLogContent() {
 			return this.logContent;
 		}
@@ -131,12 +131,12 @@ public class GetPhysicalInstanceLogResponse extends AcsResponse {
 			this.logContent = logContent;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public String getDuration() {

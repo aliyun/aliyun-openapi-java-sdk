@@ -23,10 +23,10 @@ public class UpdateSecurityLevelResponseUnmarshaller {
 	public static UpdateSecurityLevelResponse unmarshall(UpdateSecurityLevelResponse updateSecurityLevelResponse, UnmarshallerContext _ctx) {
 		
 		updateSecurityLevelResponse.setRequestId(_ctx.stringValue("UpdateSecurityLevelResponse.RequestId"));
-		updateSecurityLevelResponse.setSuccess(_ctx.booleanValue("UpdateSecurityLevelResponse.Success"));
+		updateSecurityLevelResponse.setMessage(_ctx.stringValue("UpdateSecurityLevelResponse.Message"));
 		updateSecurityLevelResponse.setHttpStatusCode(_ctx.integerValue("UpdateSecurityLevelResponse.HttpStatusCode"));
 		updateSecurityLevelResponse.setCode(_ctx.stringValue("UpdateSecurityLevelResponse.Code"));
-		updateSecurityLevelResponse.setMessage(_ctx.stringValue("UpdateSecurityLevelResponse.Message"));
+		updateSecurityLevelResponse.setSuccess(_ctx.booleanValue("UpdateSecurityLevelResponse.Success"));
 	 
 	 	return updateSecurityLevelResponse;
 	}

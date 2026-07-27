@@ -105,11 +105,11 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 		@SerializedName("ProjectId")
 		private Long projectId;
 
-		@SerializedName("PriorityList")
-		private List<String> priorityList;
-
 		@SerializedName("SchedulePaused")
 		private Boolean schedulePaused;
+
+		@SerializedName("PriorityList")
+		private List<String> priorityList;
 
 		public String getSearchText() {
 			return this.searchText;
@@ -191,20 +191,20 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 			this.projectId = projectId;
 		}
 
-		public List<String> getPriorityList() {
-			return this.priorityList;
-		}
-
-		public void setPriorityList(List<String> priorityList) {
-			this.priorityList = priorityList;
-		}
-
 		public Boolean getSchedulePaused() {
 			return this.schedulePaused;
 		}
 
 		public void setSchedulePaused(Boolean schedulePaused) {
 			this.schedulePaused = schedulePaused;
+		}
+
+		public List<String> getPriorityList() {
+			return this.priorityList;
+		}
+
+		public void setPriorityList(List<String> priorityList) {
+			this.priorityList = priorityList;
 		}
 	}
 

@@ -26,15 +26,15 @@ public class CreateDataServiceApiResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
-
 	private Long apiId;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,12 +44,12 @@ public class CreateDataServiceApiResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,20 +68,20 @@ public class CreateDataServiceApiResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public Long getApiId() {
 		return this.apiId;
 	}
 
 	public void setApiId(Long apiId) {
 		this.apiId = apiId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

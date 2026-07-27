@@ -113,14 +113,14 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 		@SerializedName("ProjectId")
 		private Long projectId;
 
-		@SerializedName("FileId")
-		private Long fileId;
+		@SerializedName("OfflineCodeTemplateParams")
+		private List<OfflineCodeTemplateParamsItem> offlineCodeTemplateParams;
 
 		@SerializedName("PythonModuleList")
 		private List<String> pythonModuleList;
 
-		@SerializedName("OfflineCodeTemplateParams")
-		private List<OfflineCodeTemplateParamsItem> offlineCodeTemplateParams;
+		@SerializedName("FileId")
+		private Long fileId;
 
 		public List<String> getNodeOutputNameList() {
 			return this.nodeOutputNameList;
@@ -258,12 +258,12 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 			this.projectId = projectId;
 		}
 
-		public Long getFileId() {
-			return this.fileId;
+		public List<OfflineCodeTemplateParamsItem> getOfflineCodeTemplateParams() {
+			return this.offlineCodeTemplateParams;
 		}
 
-		public void setFileId(Long fileId) {
-			this.fileId = fileId;
+		public void setOfflineCodeTemplateParams(List<OfflineCodeTemplateParamsItem> offlineCodeTemplateParams) {
+			this.offlineCodeTemplateParams = offlineCodeTemplateParams;
 		}
 
 		public List<String> getPythonModuleList() {
@@ -274,12 +274,12 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 			this.pythonModuleList = pythonModuleList;
 		}
 
-		public List<OfflineCodeTemplateParamsItem> getOfflineCodeTemplateParams() {
-			return this.offlineCodeTemplateParams;
+		public Long getFileId() {
+			return this.fileId;
 		}
 
-		public void setOfflineCodeTemplateParams(List<OfflineCodeTemplateParamsItem> offlineCodeTemplateParams) {
-			this.offlineCodeTemplateParams = offlineCodeTemplateParams;
+		public void setFileId(Long fileId) {
+			this.fileId = fileId;
 		}
 
 		public static class SparkClientInfo {
@@ -453,11 +453,11 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 			@SerializedName("IntervalUnit")
 			private String intervalUnit;
 
-			@SerializedName("SchedulePeriod")
-			private String schedulePeriod;
-
 			@SerializedName("EndTime")
 			private String endTime;
+
+			@SerializedName("SchedulePeriod")
+			private String schedulePeriod;
 
 			@SerializedName("Interval")
 			private Integer interval;
@@ -473,20 +473,20 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 				this.intervalUnit = intervalUnit;
 			}
 
-			public String getSchedulePeriod() {
-				return this.schedulePeriod;
-			}
-
-			public void setSchedulePeriod(String schedulePeriod) {
-				this.schedulePeriod = schedulePeriod;
-			}
-
 			public String getEndTime() {
 				return this.endTime;
 			}
 
 			public void setEndTime(String endTime) {
 				this.endTime = endTime;
+			}
+
+			public String getSchedulePeriod() {
+				return this.schedulePeriod;
+			}
+
+			public void setSchedulePeriod(String schedulePeriod) {
+				this.schedulePeriod = schedulePeriod;
 			}
 
 			public Integer getInterval() {

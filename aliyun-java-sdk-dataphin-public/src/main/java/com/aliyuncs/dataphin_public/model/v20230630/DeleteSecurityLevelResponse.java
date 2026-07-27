@@ -27,13 +27,13 @@ public class DeleteSecurityLevelResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private DeleteResult deleteResult;
 
@@ -45,12 +45,12 @@ public class DeleteSecurityLevelResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class DeleteSecurityLevelResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public DeleteResult getDeleteResult() {
@@ -87,19 +87,11 @@ public class DeleteSecurityLevelResponse extends AcsResponse {
 
 	public static class DeleteResult {
 
-		private Boolean success;
-
 		private String errorCode;
 
+		private Boolean success;
+
 		private List<Long> relatedClassifyIdList;
-
-		public Boolean getSuccess() {
-			return this.success;
-		}
-
-		public void setSuccess(Boolean success) {
-			this.success = success;
-		}
 
 		public String getErrorCode() {
 			return this.errorCode;
@@ -107,6 +99,14 @@ public class DeleteSecurityLevelResponse extends AcsResponse {
 
 		public void setErrorCode(String errorCode) {
 			this.errorCode = errorCode;
+		}
+
+		public Boolean getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Boolean success) {
+			this.success = success;
 		}
 
 		public List<Long> getRelatedClassifyIdList() {

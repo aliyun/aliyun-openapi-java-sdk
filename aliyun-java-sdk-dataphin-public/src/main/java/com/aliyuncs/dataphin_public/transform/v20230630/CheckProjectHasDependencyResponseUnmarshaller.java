@@ -23,11 +23,11 @@ public class CheckProjectHasDependencyResponseUnmarshaller {
 	public static CheckProjectHasDependencyResponse unmarshall(CheckProjectHasDependencyResponse checkProjectHasDependencyResponse, UnmarshallerContext _ctx) {
 		
 		checkProjectHasDependencyResponse.setRequestId(_ctx.stringValue("CheckProjectHasDependencyResponse.RequestId"));
-		checkProjectHasDependencyResponse.setSuccess(_ctx.booleanValue("CheckProjectHasDependencyResponse.Success"));
-		checkProjectHasDependencyResponse.setHttpStatusCode(_ctx.integerValue("CheckProjectHasDependencyResponse.HttpStatusCode"));
-		checkProjectHasDependencyResponse.setCode(_ctx.stringValue("CheckProjectHasDependencyResponse.Code"));
 		checkProjectHasDependencyResponse.setMessage(_ctx.stringValue("CheckProjectHasDependencyResponse.Message"));
+		checkProjectHasDependencyResponse.setHttpStatusCode(_ctx.integerValue("CheckProjectHasDependencyResponse.HttpStatusCode"));
 		checkProjectHasDependencyResponse.setData(_ctx.booleanValue("CheckProjectHasDependencyResponse.Data"));
+		checkProjectHasDependencyResponse.setCode(_ctx.stringValue("CheckProjectHasDependencyResponse.Code"));
+		checkProjectHasDependencyResponse.setSuccess(_ctx.booleanValue("CheckProjectHasDependencyResponse.Success"));
 	 
 	 	return checkProjectHasDependencyResponse;
 	}

@@ -27,25 +27,25 @@ public class DeleteSecurityClassifyCatalogResponseUnmarshaller {
 	public static DeleteSecurityClassifyCatalogResponse unmarshall(DeleteSecurityClassifyCatalogResponse deleteSecurityClassifyCatalogResponse, UnmarshallerContext _ctx) {
 		
 		deleteSecurityClassifyCatalogResponse.setRequestId(_ctx.stringValue("DeleteSecurityClassifyCatalogResponse.RequestId"));
-		deleteSecurityClassifyCatalogResponse.setSuccess(_ctx.booleanValue("DeleteSecurityClassifyCatalogResponse.Success"));
+		deleteSecurityClassifyCatalogResponse.setMessage(_ctx.stringValue("DeleteSecurityClassifyCatalogResponse.Message"));
 		deleteSecurityClassifyCatalogResponse.setHttpStatusCode(_ctx.integerValue("DeleteSecurityClassifyCatalogResponse.HttpStatusCode"));
 		deleteSecurityClassifyCatalogResponse.setCode(_ctx.stringValue("DeleteSecurityClassifyCatalogResponse.Code"));
-		deleteSecurityClassifyCatalogResponse.setMessage(_ctx.stringValue("DeleteSecurityClassifyCatalogResponse.Message"));
+		deleteSecurityClassifyCatalogResponse.setSuccess(_ctx.booleanValue("DeleteSecurityClassifyCatalogResponse.Success"));
 
 		Data data = new Data();
 		data.setSuccess(_ctx.booleanValue("DeleteSecurityClassifyCatalogResponse.Data.Success"));
-
-		List<String> childCatalogFullPathList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DeleteSecurityClassifyCatalogResponse.Data.ChildCatalogFullPathList.Length"); i++) {
-			childCatalogFullPathList.add(_ctx.stringValue("DeleteSecurityClassifyCatalogResponse.Data.ChildCatalogFullPathList["+ i +"]"));
-		}
-		data.setChildCatalogFullPathList(childCatalogFullPathList);
 
 		List<Long> classifyIdList = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("DeleteSecurityClassifyCatalogResponse.Data.ClassifyIdList.Length"); i++) {
 			classifyIdList.add(_ctx.longValue("DeleteSecurityClassifyCatalogResponse.Data.ClassifyIdList["+ i +"]"));
 		}
 		data.setClassifyIdList(classifyIdList);
+
+		List<String> childCatalogFullPathList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DeleteSecurityClassifyCatalogResponse.Data.ChildCatalogFullPathList.Length"); i++) {
+			childCatalogFullPathList.add(_ctx.stringValue("DeleteSecurityClassifyCatalogResponse.Data.ChildCatalogFullPathList["+ i +"]"));
+		}
+		data.setChildCatalogFullPathList(childCatalogFullPathList);
 		deleteSecurityClassifyCatalogResponse.setData(data);
 	 
 	 	return deleteSecurityClassifyCatalogResponse;

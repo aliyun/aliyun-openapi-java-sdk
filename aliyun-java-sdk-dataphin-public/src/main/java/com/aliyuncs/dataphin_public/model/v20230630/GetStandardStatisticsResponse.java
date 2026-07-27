@@ -27,13 +27,13 @@ public class GetStandardStatisticsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -45,12 +45,12 @@ public class GetStandardStatisticsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetStandardStatisticsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -109,17 +109,9 @@ public class GetStandardStatisticsResponse extends AcsResponse {
 
 		public static class StandardTypeCount {
 
-			private String standardType;
-
 			private Integer count;
 
-			public String getStandardType() {
-				return this.standardType;
-			}
-
-			public void setStandardType(String standardType) {
-				this.standardType = standardType;
-			}
+			private String standardType;
 
 			public Integer getCount() {
 				return this.count;
@@ -127,6 +119,14 @@ public class GetStandardStatisticsResponse extends AcsResponse {
 
 			public void setCount(Integer count) {
 				this.count = count;
+			}
+
+			public String getStandardType() {
+				return this.standardType;
+			}
+
+			public void setStandardType(String standardType) {
+				this.standardType = standardType;
 			}
 		}
 	}

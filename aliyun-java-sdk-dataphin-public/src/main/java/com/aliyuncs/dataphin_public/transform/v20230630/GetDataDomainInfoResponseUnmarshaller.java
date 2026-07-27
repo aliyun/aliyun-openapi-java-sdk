@@ -24,25 +24,25 @@ public class GetDataDomainInfoResponseUnmarshaller {
 	public static GetDataDomainInfoResponse unmarshall(GetDataDomainInfoResponse getDataDomainInfoResponse, UnmarshallerContext _ctx) {
 		
 		getDataDomainInfoResponse.setRequestId(_ctx.stringValue("GetDataDomainInfoResponse.RequestId"));
-		getDataDomainInfoResponse.setSuccess(_ctx.booleanValue("GetDataDomainInfoResponse.Success"));
+		getDataDomainInfoResponse.setMessage(_ctx.stringValue("GetDataDomainInfoResponse.Message"));
 		getDataDomainInfoResponse.setHttpStatusCode(_ctx.integerValue("GetDataDomainInfoResponse.HttpStatusCode"));
 		getDataDomainInfoResponse.setCode(_ctx.stringValue("GetDataDomainInfoResponse.Code"));
-		getDataDomainInfoResponse.setMessage(_ctx.stringValue("GetDataDomainInfoResponse.Message"));
+		getDataDomainInfoResponse.setSuccess(_ctx.booleanValue("GetDataDomainInfoResponse.Success"));
 
 		DataDomainInfo dataDomainInfo = new DataDomainInfo();
-		dataDomainInfo.setId(_ctx.longValue("GetDataDomainInfoResponse.DataDomainInfo.Id"));
-		dataDomainInfo.setBizUnitId(_ctx.longValue("GetDataDomainInfoResponse.DataDomainInfo.BizUnitId"));
-		dataDomainInfo.setName(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.Name"));
-		dataDomainInfo.setDisplayName(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.DisplayName"));
 		dataDomainInfo.setAbbreviation(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.Abbreviation"));
-		dataDomainInfo.setDescription(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.Description"));
-		dataDomainInfo.setOwnerUserId(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.OwnerUserId"));
-		dataDomainInfo.setOwnerName(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.OwnerName"));
-		dataDomainInfo.setGmtCreate(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.GmtCreate"));
-		dataDomainInfo.setGmtModified(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.GmtModified"));
-		dataDomainInfo.setLastModifier(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.LastModifier"));
-		dataDomainInfo.setLastModifierName(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.LastModifierName"));
 		dataDomainInfo.setParentId(_ctx.longValue("GetDataDomainInfoResponse.DataDomainInfo.ParentId"));
+		dataDomainInfo.setOwnerName(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.OwnerName"));
+		dataDomainInfo.setLastModifier(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.LastModifier"));
+		dataDomainInfo.setDescription(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.Description"));
+		dataDomainInfo.setGmtModified(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.GmtModified"));
+		dataDomainInfo.setLastModifierName(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.LastModifierName"));
+		dataDomainInfo.setName(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.Name"));
+		dataDomainInfo.setBizUnitId(_ctx.longValue("GetDataDomainInfoResponse.DataDomainInfo.BizUnitId"));
+		dataDomainInfo.setOwnerUserId(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.OwnerUserId"));
+		dataDomainInfo.setGmtCreate(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.GmtCreate"));
+		dataDomainInfo.setDisplayName(_ctx.stringValue("GetDataDomainInfoResponse.DataDomainInfo.DisplayName"));
+		dataDomainInfo.setId(_ctx.longValue("GetDataDomainInfoResponse.DataDomainInfo.Id"));
 		getDataDomainInfoResponse.setDataDomainInfo(dataDomainInfo);
 	 
 	 	return getDataDomainInfoResponse;

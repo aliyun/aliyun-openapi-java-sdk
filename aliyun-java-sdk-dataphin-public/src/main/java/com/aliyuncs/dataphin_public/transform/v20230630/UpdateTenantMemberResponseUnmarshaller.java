@@ -23,10 +23,10 @@ public class UpdateTenantMemberResponseUnmarshaller {
 	public static UpdateTenantMemberResponse unmarshall(UpdateTenantMemberResponse updateTenantMemberResponse, UnmarshallerContext _ctx) {
 		
 		updateTenantMemberResponse.setRequestId(_ctx.stringValue("UpdateTenantMemberResponse.RequestId"));
-		updateTenantMemberResponse.setSuccess(_ctx.booleanValue("UpdateTenantMemberResponse.Success"));
+		updateTenantMemberResponse.setMessage(_ctx.stringValue("UpdateTenantMemberResponse.Message"));
 		updateTenantMemberResponse.setHttpStatusCode(_ctx.integerValue("UpdateTenantMemberResponse.HttpStatusCode"));
 		updateTenantMemberResponse.setCode(_ctx.stringValue("UpdateTenantMemberResponse.Code"));
-		updateTenantMemberResponse.setMessage(_ctx.stringValue("UpdateTenantMemberResponse.Message"));
+		updateTenantMemberResponse.setSuccess(_ctx.booleanValue("UpdateTenantMemberResponse.Success"));
 	 
 	 	return updateTenantMemberResponse;
 	}

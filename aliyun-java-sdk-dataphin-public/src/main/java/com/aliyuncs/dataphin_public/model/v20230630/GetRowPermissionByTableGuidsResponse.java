@@ -27,13 +27,13 @@ public class GetRowPermissionByTableGuidsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<DataItem> data;
 
@@ -45,12 +45,12 @@ public class GetRowPermissionByTableGuidsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetRowPermissionByTableGuidsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -87,11 +87,19 @@ public class GetRowPermissionByTableGuidsResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private String rowPermissionDesc;
+
 		private String rowPermissionId;
 
 		private String rowPermissionName;
 
-		private String rowPermissionDesc;
+		public String getRowPermissionDesc() {
+			return this.rowPermissionDesc;
+		}
+
+		public void setRowPermissionDesc(String rowPermissionDesc) {
+			this.rowPermissionDesc = rowPermissionDesc;
+		}
 
 		public String getRowPermissionId() {
 			return this.rowPermissionId;
@@ -107,14 +115,6 @@ public class GetRowPermissionByTableGuidsResponse extends AcsResponse {
 
 		public void setRowPermissionName(String rowPermissionName) {
 			this.rowPermissionName = rowPermissionName;
-		}
-
-		public String getRowPermissionDesc() {
-			return this.rowPermissionDesc;
-		}
-
-		public void setRowPermissionDesc(String rowPermissionDesc) {
-			this.rowPermissionDesc = rowPermissionDesc;
 		}
 	}
 

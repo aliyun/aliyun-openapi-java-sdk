@@ -23,11 +23,11 @@ public class AddTenantMembersResponseUnmarshaller {
 	public static AddTenantMembersResponse unmarshall(AddTenantMembersResponse addTenantMembersResponse, UnmarshallerContext _ctx) {
 		
 		addTenantMembersResponse.setRequestId(_ctx.stringValue("AddTenantMembersResponse.RequestId"));
-		addTenantMembersResponse.setSuccess(_ctx.booleanValue("AddTenantMembersResponse.Success"));
-		addTenantMembersResponse.setHttpStatusCode(_ctx.integerValue("AddTenantMembersResponse.HttpStatusCode"));
-		addTenantMembersResponse.setCode(_ctx.stringValue("AddTenantMembersResponse.Code"));
 		addTenantMembersResponse.setMessage(_ctx.stringValue("AddTenantMembersResponse.Message"));
+		addTenantMembersResponse.setHttpStatusCode(_ctx.integerValue("AddTenantMembersResponse.HttpStatusCode"));
 		addTenantMembersResponse.setData(_ctx.booleanValue("AddTenantMembersResponse.Data"));
+		addTenantMembersResponse.setCode(_ctx.stringValue("AddTenantMembersResponse.Code"));
+		addTenantMembersResponse.setSuccess(_ctx.booleanValue("AddTenantMembersResponse.Success"));
 	 
 	 	return addTenantMembersResponse;
 	}

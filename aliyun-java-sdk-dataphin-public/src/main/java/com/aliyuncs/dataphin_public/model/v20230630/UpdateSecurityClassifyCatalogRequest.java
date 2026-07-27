@@ -65,11 +65,11 @@ public class UpdateSecurityClassifyCatalogRequest extends RpcAcsRequest<UpdateSe
 		@SerializedName("Path")
 		private String path;
 
-		@SerializedName("Name")
-		private String name;
-
 		@SerializedName("ParentPath")
 		private String parentPath;
+
+		@SerializedName("Name")
+		private String name;
 
 		@SerializedName("OwnerList")
 		private List<String> ownerList;
@@ -85,20 +85,20 @@ public class UpdateSecurityClassifyCatalogRequest extends RpcAcsRequest<UpdateSe
 			this.path = path;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getParentPath() {
 			return this.parentPath;
 		}
 
 		public void setParentPath(String parentPath) {
 			this.parentPath = parentPath;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<String> getOwnerList() {

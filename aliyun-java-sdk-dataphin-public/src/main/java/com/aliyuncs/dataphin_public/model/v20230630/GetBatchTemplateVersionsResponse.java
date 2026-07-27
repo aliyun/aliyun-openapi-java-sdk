@@ -27,13 +27,13 @@ public class GetBatchTemplateVersionsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -45,12 +45,12 @@ public class GetBatchTemplateVersionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetBatchTemplateVersionsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,93 +99,37 @@ public class GetBatchTemplateVersionsResponse extends AcsResponse {
 
 		public static class TemplateVersion {
 
-			private Long id;
-
-			private Long projectId;
-
-			private String name;
-
-			private Integer operatorType;
-
-			private String engine;
-
-			private String content;
-
-			private Long version;
-
 			private String status;
-
-			private String description;
-
-			private String owner;
-
-			private String ownerId;
 
 			private String comment;
 
-			private String modifier;
+			private String owner;
 
-			private String modifierId;
+			private String description;
 
-			private String gmtCreate;
+			private Long projectId;
 
 			private String gmtModified;
 
-			public Long getId() {
-				return this.id;
-			}
+			private Integer operatorType;
 
-			public void setId(Long id) {
-				this.id = id;
-			}
+			private String name;
 
-			public Long getProjectId() {
-				return this.projectId;
-			}
+			private String gmtCreate;
 
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
+			private String ownerId;
 
-			public String getName() {
-				return this.name;
-			}
+			private Long version;
 
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String content;
 
-			public Integer getOperatorType() {
-				return this.operatorType;
-			}
+			private Long id;
 
-			public void setOperatorType(Integer operatorType) {
-				this.operatorType = operatorType;
-			}
+			private String modifier;
 
-			public String getEngine() {
-				return this.engine;
-			}
+			private String engine;
 
-			public void setEngine(String engine) {
-				this.engine = engine;
-			}
-
-			public String getContent() {
-				return this.content;
-			}
-
-			public void setContent(String content) {
-				this.content = content;
-			}
-
-			public Long getVersion() {
-				return this.version;
-			}
-
-			public void setVersion(Long version) {
-				this.version = version;
-			}
+			private String modifierId;
 
 			public String getStatus() {
 				return this.status;
@@ -193,30 +137,6 @@ public class GetBatchTemplateVersionsResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getOwner() {
-				return this.owner;
-			}
-
-			public void setOwner(String owner) {
-				this.owner = owner;
-			}
-
-			public String getOwnerId() {
-				return this.ownerId;
-			}
-
-			public void setOwnerId(String ownerId) {
-				this.ownerId = ownerId;
 			}
 
 			public String getComment() {
@@ -227,20 +147,52 @@ public class GetBatchTemplateVersionsResponse extends AcsResponse {
 				this.comment = comment;
 			}
 
-			public String getModifier() {
-				return this.modifier;
+			public String getOwner() {
+				return this.owner;
 			}
 
-			public void setModifier(String modifier) {
-				this.modifier = modifier;
+			public void setOwner(String owner) {
+				this.owner = owner;
 			}
 
-			public String getModifierId() {
-				return this.modifierId;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setModifierId(String modifierId) {
-				this.modifierId = modifierId;
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public Long getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public Integer getOperatorType() {
+				return this.operatorType;
+			}
+
+			public void setOperatorType(Integer operatorType) {
+				this.operatorType = operatorType;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public String getGmtCreate() {
@@ -251,12 +203,60 @@ public class GetBatchTemplateVersionsResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
-			public String getGmtModified() {
-				return this.gmtModified;
+			public String getOwnerId() {
+				return this.ownerId;
 			}
 
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
+			public void setOwnerId(String ownerId) {
+				this.ownerId = ownerId;
+			}
+
+			public Long getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(Long version) {
+				this.version = version;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getModifier() {
+				return this.modifier;
+			}
+
+			public void setModifier(String modifier) {
+				this.modifier = modifier;
+			}
+
+			public String getEngine() {
+				return this.engine;
+			}
+
+			public void setEngine(String engine) {
+				this.engine = engine;
+			}
+
+			public String getModifierId() {
+				return this.modifierId;
+			}
+
+			public void setModifierId(String modifierId) {
+				this.modifierId = modifierId;
 			}
 		}
 	}

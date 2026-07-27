@@ -23,10 +23,10 @@ public class OfflineStandardResponseUnmarshaller {
 	public static OfflineStandardResponse unmarshall(OfflineStandardResponse offlineStandardResponse, UnmarshallerContext _ctx) {
 		
 		offlineStandardResponse.setRequestId(_ctx.stringValue("OfflineStandardResponse.RequestId"));
-		offlineStandardResponse.setSuccess(_ctx.booleanValue("OfflineStandardResponse.Success"));
+		offlineStandardResponse.setMessage(_ctx.stringValue("OfflineStandardResponse.Message"));
 		offlineStandardResponse.setHttpStatusCode(_ctx.integerValue("OfflineStandardResponse.HttpStatusCode"));
 		offlineStandardResponse.setCode(_ctx.stringValue("OfflineStandardResponse.Code"));
-		offlineStandardResponse.setMessage(_ctx.stringValue("OfflineStandardResponse.Message"));
+		offlineStandardResponse.setSuccess(_ctx.booleanValue("OfflineStandardResponse.Success"));
 	 
 	 	return offlineStandardResponse;
 	}

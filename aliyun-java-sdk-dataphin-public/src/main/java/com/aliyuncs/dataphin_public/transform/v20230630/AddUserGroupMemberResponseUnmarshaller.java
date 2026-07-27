@@ -23,11 +23,11 @@ public class AddUserGroupMemberResponseUnmarshaller {
 	public static AddUserGroupMemberResponse unmarshall(AddUserGroupMemberResponse addUserGroupMemberResponse, UnmarshallerContext _ctx) {
 		
 		addUserGroupMemberResponse.setRequestId(_ctx.stringValue("AddUserGroupMemberResponse.RequestId"));
-		addUserGroupMemberResponse.setSuccess(_ctx.booleanValue("AddUserGroupMemberResponse.Success"));
-		addUserGroupMemberResponse.setHttpStatusCode(_ctx.integerValue("AddUserGroupMemberResponse.HttpStatusCode"));
-		addUserGroupMemberResponse.setCode(_ctx.stringValue("AddUserGroupMemberResponse.Code"));
 		addUserGroupMemberResponse.setMessage(_ctx.stringValue("AddUserGroupMemberResponse.Message"));
+		addUserGroupMemberResponse.setHttpStatusCode(_ctx.integerValue("AddUserGroupMemberResponse.HttpStatusCode"));
 		addUserGroupMemberResponse.setData(_ctx.booleanValue("AddUserGroupMemberResponse.Data"));
+		addUserGroupMemberResponse.setCode(_ctx.stringValue("AddUserGroupMemberResponse.Code"));
+		addUserGroupMemberResponse.setSuccess(_ctx.booleanValue("AddUserGroupMemberResponse.Success"));
 	 
 	 	return addUserGroupMemberResponse;
 	}

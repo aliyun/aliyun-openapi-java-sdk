@@ -75,11 +75,11 @@ public class GrantDataServiceApiRequest extends RpcAcsRequest<GrantDataServiceAp
 
 	public static class GrantCommand {
 
-		@SerializedName("Reason")
-		private String reason;
-
 		@SerializedName("ApplyProd")
 		private Boolean applyProd;
+
+		@SerializedName("Reason")
+		private String reason;
 
 		@SerializedName("ApplyDev")
 		private Boolean applyDev;
@@ -93,11 +93,11 @@ public class GrantDataServiceApiRequest extends RpcAcsRequest<GrantDataServiceAp
 		@SerializedName("AuthTypes")
 		private List<String> authTypes;
 
-		@SerializedName("ProdFieldList")
-		private List<ProdFieldListItem> prodFieldList;
-
 		@SerializedName("UserId")
 		private String userId;
+
+		@SerializedName("ProdFieldList")
+		private List<ProdFieldListItem> prodFieldList;
 
 		@SerializedName("ApiId")
 		private Long apiId;
@@ -108,20 +108,20 @@ public class GrantDataServiceApiRequest extends RpcAcsRequest<GrantDataServiceAp
 		@SerializedName("GranteeType")
 		private String granteeType;
 
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
 		public Boolean getApplyProd() {
 			return this.applyProd;
 		}
 
 		public void setApplyProd(Boolean applyProd) {
 			this.applyProd = applyProd;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 
 		public Boolean getApplyDev() {
@@ -156,20 +156,20 @@ public class GrantDataServiceApiRequest extends RpcAcsRequest<GrantDataServiceAp
 			this.authTypes = authTypes;
 		}
 
-		public List<ProdFieldListItem> getProdFieldList() {
-			return this.prodFieldList;
-		}
-
-		public void setProdFieldList(List<ProdFieldListItem> prodFieldList) {
-			this.prodFieldList = prodFieldList;
-		}
-
 		public String getUserId() {
 			return this.userId;
 		}
 
 		public void setUserId(String userId) {
 			this.userId = userId;
+		}
+
+		public List<ProdFieldListItem> getProdFieldList() {
+			return this.prodFieldList;
+		}
+
+		public void setProdFieldList(List<ProdFieldListItem> prodFieldList) {
+			this.prodFieldList = prodFieldList;
 		}
 
 		public Long getApiId() {

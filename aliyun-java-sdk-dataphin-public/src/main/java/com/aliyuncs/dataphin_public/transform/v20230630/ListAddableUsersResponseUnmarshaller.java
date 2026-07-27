@@ -28,10 +28,10 @@ public class ListAddableUsersResponseUnmarshaller {
 	public static ListAddableUsersResponse unmarshall(ListAddableUsersResponse listAddableUsersResponse, UnmarshallerContext _ctx) {
 		
 		listAddableUsersResponse.setRequestId(_ctx.stringValue("ListAddableUsersResponse.RequestId"));
-		listAddableUsersResponse.setSuccess(_ctx.booleanValue("ListAddableUsersResponse.Success"));
+		listAddableUsersResponse.setMessage(_ctx.stringValue("ListAddableUsersResponse.Message"));
 		listAddableUsersResponse.setHttpStatusCode(_ctx.integerValue("ListAddableUsersResponse.HttpStatusCode"));
 		listAddableUsersResponse.setCode(_ctx.stringValue("ListAddableUsersResponse.Code"));
-		listAddableUsersResponse.setMessage(_ctx.stringValue("ListAddableUsersResponse.Message"));
+		listAddableUsersResponse.setSuccess(_ctx.booleanValue("ListAddableUsersResponse.Success"));
 
 		PageResult pageResult = new PageResult();
 		pageResult.setTotalCount(_ctx.integerValue("ListAddableUsersResponse.PageResult.TotalCount"));
@@ -39,25 +39,25 @@ public class ListAddableUsersResponseUnmarshaller {
 		List<User> userList = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("ListAddableUsersResponse.PageResult.UserList.Length"); i++) {
 			User user = new User();
-			user.setId(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].Id"));
 			user.setParentId(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].ParentId"));
+			user.setWhiteIp(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].WhiteIp"));
 			user.setSourceType(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].SourceType"));
 			user.setSourceId(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].SourceId"));
-			user.setName(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].Name"));
-			user.setDisplayName(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].DisplayName"));
-			user.setDisplayNameWithoutStatus(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].DisplayNameWithoutStatus"));
-			user.setAccountName(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].AccountName"));
-			user.setRealName(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].RealName"));
+			user.setFeiShuRobot(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].FeiShuRobot"));
+			user.setGmtModified(_ctx.longValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].GmtModified"));
 			user.setNickName(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].NickName"));
-			user.setGmtCreate(_ctx.longValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].GmtCreate"));
 			user.setMobilePhone(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].MobilePhone"));
+			user.setName(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].Name"));
+			user.setGmtCreate(_ctx.longValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].GmtCreate"));
 			user.setMail(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].Mail"));
 			user.setDingNumber(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].DingNumber"));
-			user.setWeChatRobot(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].WeChatRobot"));
-			user.setFeiShuRobot(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].FeiShuRobot"));
+			user.setDisplayName(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].DisplayName"));
 			user.setEnableWhiteIp(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].EnableWhiteIp"));
-			user.setWhiteIp(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].WhiteIp"));
-			user.setGmtModified(_ctx.longValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].GmtModified"));
+			user.setId(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].Id"));
+			user.setRealName(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].RealName"));
+			user.setDisplayNameWithoutStatus(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].DisplayNameWithoutStatus"));
+			user.setAccountName(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].AccountName"));
+			user.setWeChatRobot(_ctx.stringValue("ListAddableUsersResponse.PageResult.UserList["+ i +"].WeChatRobot"));
 
 			userList.add(user);
 		}

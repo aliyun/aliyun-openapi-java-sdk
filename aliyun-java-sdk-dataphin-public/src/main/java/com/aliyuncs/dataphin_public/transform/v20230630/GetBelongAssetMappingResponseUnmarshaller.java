@@ -27,25 +27,25 @@ public class GetBelongAssetMappingResponseUnmarshaller {
 	public static GetBelongAssetMappingResponse unmarshall(GetBelongAssetMappingResponse getBelongAssetMappingResponse, UnmarshallerContext _ctx) {
 		
 		getBelongAssetMappingResponse.setRequestId(_ctx.stringValue("GetBelongAssetMappingResponse.RequestId"));
-		getBelongAssetMappingResponse.setSuccess(_ctx.booleanValue("GetBelongAssetMappingResponse.Success"));
+		getBelongAssetMappingResponse.setMessage(_ctx.stringValue("GetBelongAssetMappingResponse.Message"));
 		getBelongAssetMappingResponse.setHttpStatusCode(_ctx.integerValue("GetBelongAssetMappingResponse.HttpStatusCode"));
 		getBelongAssetMappingResponse.setCode(_ctx.stringValue("GetBelongAssetMappingResponse.Code"));
-		getBelongAssetMappingResponse.setMessage(_ctx.stringValue("GetBelongAssetMappingResponse.Message"));
+		getBelongAssetMappingResponse.setSuccess(_ctx.booleanValue("GetBelongAssetMappingResponse.Success"));
 
 		List<MappingRelation> mappingRelationList = new ArrayList<MappingRelation>();
 		for (int i = 0; i < _ctx.lengthValue("GetBelongAssetMappingResponse.MappingRelationList.Length"); i++) {
 			MappingRelation mappingRelation = new MappingRelation();
 			mappingRelation.setModifyTime(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].ModifyTime"));
-			mappingRelation.setGuid(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].Guid"));
-			mappingRelation.setName(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].Name"));
+			mappingRelation.setStandardStage(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].StandardStage"));
 			mappingRelation.setAssetType(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].AssetType"));
+			mappingRelation.setStandardSetDirectory(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].StandardSetDirectory"));
 			mappingRelation.setStandardId(_ctx.longValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].StandardId"));
-			mappingRelation.setStandardName(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].StandardName"));
 			mappingRelation.setStandardCode(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].StandardCode"));
 			mappingRelation.setStandardSetId(_ctx.longValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].StandardSetId"));
+			mappingRelation.setGuid(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].Guid"));
 			mappingRelation.setStandardSetName(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].StandardSetName"));
-			mappingRelation.setStandardSetDirectory(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].StandardSetDirectory"));
-			mappingRelation.setStandardStage(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].StandardStage"));
+			mappingRelation.setStandardName(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].StandardName"));
+			mappingRelation.setName(_ctx.stringValue("GetBelongAssetMappingResponse.MappingRelationList["+ i +"].Name"));
 
 			mappingRelationList.add(mappingRelation);
 		}

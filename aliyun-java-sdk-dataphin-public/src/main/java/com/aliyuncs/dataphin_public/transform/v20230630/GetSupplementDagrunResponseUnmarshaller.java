@@ -27,21 +27,21 @@ public class GetSupplementDagrunResponseUnmarshaller {
 	public static GetSupplementDagrunResponse unmarshall(GetSupplementDagrunResponse getSupplementDagrunResponse, UnmarshallerContext _ctx) {
 		
 		getSupplementDagrunResponse.setRequestId(_ctx.stringValue("GetSupplementDagrunResponse.RequestId"));
-		getSupplementDagrunResponse.setSuccess(_ctx.booleanValue("GetSupplementDagrunResponse.Success"));
+		getSupplementDagrunResponse.setMessage(_ctx.stringValue("GetSupplementDagrunResponse.Message"));
 		getSupplementDagrunResponse.setHttpStatusCode(_ctx.integerValue("GetSupplementDagrunResponse.HttpStatusCode"));
 		getSupplementDagrunResponse.setCode(_ctx.stringValue("GetSupplementDagrunResponse.Code"));
-		getSupplementDagrunResponse.setMessage(_ctx.stringValue("GetSupplementDagrunResponse.Message"));
+		getSupplementDagrunResponse.setSuccess(_ctx.booleanValue("GetSupplementDagrunResponse.Success"));
 
 		List<DagrunInfo> dagrunList = new ArrayList<DagrunInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetSupplementDagrunResponse.DagrunList.Length"); i++) {
 			DagrunInfo dagrunInfo = new DagrunInfo();
+			dagrunInfo.setStatus(_ctx.stringValue("GetSupplementDagrunResponse.DagrunList["+ i +"].Status"));
+			dagrunInfo.setSupplementId(_ctx.stringValue("GetSupplementDagrunResponse.DagrunList["+ i +"].SupplementId"));
+			dagrunInfo.setEndExecuteTime(_ctx.longValue("GetSupplementDagrunResponse.DagrunList["+ i +"].EndExecuteTime"));
+			dagrunInfo.setDuration(_ctx.stringValue("GetSupplementDagrunResponse.DagrunList["+ i +"].Duration"));
 			dagrunInfo.setId(_ctx.stringValue("GetSupplementDagrunResponse.DagrunList["+ i +"].Id"));
 			dagrunInfo.setBizDate(_ctx.stringValue("GetSupplementDagrunResponse.DagrunList["+ i +"].BizDate"));
-			dagrunInfo.setStatus(_ctx.stringValue("GetSupplementDagrunResponse.DagrunList["+ i +"].Status"));
 			dagrunInfo.setStartExecuteTime(_ctx.longValue("GetSupplementDagrunResponse.DagrunList["+ i +"].StartExecuteTime"));
-			dagrunInfo.setEndExecuteTime(_ctx.longValue("GetSupplementDagrunResponse.DagrunList["+ i +"].EndExecuteTime"));
-			dagrunInfo.setSupplementId(_ctx.stringValue("GetSupplementDagrunResponse.DagrunList["+ i +"].SupplementId"));
-			dagrunInfo.setDuration(_ctx.stringValue("GetSupplementDagrunResponse.DagrunList["+ i +"].Duration"));
 
 			dagrunList.add(dagrunInfo);
 		}

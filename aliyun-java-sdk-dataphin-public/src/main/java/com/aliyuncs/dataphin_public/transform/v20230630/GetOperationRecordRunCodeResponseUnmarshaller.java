@@ -24,16 +24,16 @@ public class GetOperationRecordRunCodeResponseUnmarshaller {
 	public static GetOperationRecordRunCodeResponse unmarshall(GetOperationRecordRunCodeResponse getOperationRecordRunCodeResponse, UnmarshallerContext _ctx) {
 		
 		getOperationRecordRunCodeResponse.setRequestId(_ctx.stringValue("GetOperationRecordRunCodeResponse.RequestId"));
-		getOperationRecordRunCodeResponse.setSuccess(_ctx.booleanValue("GetOperationRecordRunCodeResponse.Success"));
+		getOperationRecordRunCodeResponse.setMessage(_ctx.stringValue("GetOperationRecordRunCodeResponse.Message"));
 		getOperationRecordRunCodeResponse.setHttpStatusCode(_ctx.integerValue("GetOperationRecordRunCodeResponse.HttpStatusCode"));
 		getOperationRecordRunCodeResponse.setCode(_ctx.stringValue("GetOperationRecordRunCodeResponse.Code"));
-		getOperationRecordRunCodeResponse.setMessage(_ctx.stringValue("GetOperationRecordRunCodeResponse.Message"));
+		getOperationRecordRunCodeResponse.setSuccess(_ctx.booleanValue("GetOperationRecordRunCodeResponse.Success"));
 
 		OperationLogCodeResponse operationLogCodeResponse = new OperationLogCodeResponse();
-		operationLogCodeResponse.setOperatorId(_ctx.integerValue("GetOperationRecordRunCodeResponse.OperationLogCodeResponse.OperatorId"));
-		operationLogCodeResponse.setCode(_ctx.stringValue("GetOperationRecordRunCodeResponse.OperationLogCodeResponse.Code"));
 		operationLogCodeResponse.setOperatorName(_ctx.stringValue("GetOperationRecordRunCodeResponse.OperationLogCodeResponse.OperatorName"));
 		operationLogCodeResponse.setSqlNum(_ctx.integerValue("GetOperationRecordRunCodeResponse.OperationLogCodeResponse.SqlNum"));
+		operationLogCodeResponse.setOperatorId(_ctx.integerValue("GetOperationRecordRunCodeResponse.OperationLogCodeResponse.OperatorId"));
+		operationLogCodeResponse.setCode(_ctx.stringValue("GetOperationRecordRunCodeResponse.OperationLogCodeResponse.Code"));
 		getOperationRecordRunCodeResponse.setOperationLogCodeResponse(operationLogCodeResponse);
 	 
 	 	return getOperationRecordRunCodeResponse;

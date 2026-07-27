@@ -23,10 +23,10 @@ public class UpdateStandardMappingToInvalidResponseUnmarshaller {
 	public static UpdateStandardMappingToInvalidResponse unmarshall(UpdateStandardMappingToInvalidResponse updateStandardMappingToInvalidResponse, UnmarshallerContext _ctx) {
 		
 		updateStandardMappingToInvalidResponse.setRequestId(_ctx.stringValue("UpdateStandardMappingToInvalidResponse.RequestId"));
-		updateStandardMappingToInvalidResponse.setSuccess(_ctx.booleanValue("UpdateStandardMappingToInvalidResponse.Success"));
+		updateStandardMappingToInvalidResponse.setMessage(_ctx.stringValue("UpdateStandardMappingToInvalidResponse.Message"));
 		updateStandardMappingToInvalidResponse.setHttpStatusCode(_ctx.integerValue("UpdateStandardMappingToInvalidResponse.HttpStatusCode"));
 		updateStandardMappingToInvalidResponse.setCode(_ctx.stringValue("UpdateStandardMappingToInvalidResponse.Code"));
-		updateStandardMappingToInvalidResponse.setMessage(_ctx.stringValue("UpdateStandardMappingToInvalidResponse.Message"));
+		updateStandardMappingToInvalidResponse.setSuccess(_ctx.booleanValue("UpdateStandardMappingToInvalidResponse.Success"));
 	 
 	 	return updateStandardMappingToInvalidResponse;
 	}

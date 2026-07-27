@@ -61,11 +61,11 @@ public class CreateStreamBatchJobMappingRequest extends RpcAcsRequest<CreateStre
 
 	public static class StreamBatchJobMappingCreateCommand {
 
-		@SerializedName("QueueName")
-		private String queueName;
-
 		@SerializedName("FileType")
 		private String fileType;
+
+		@SerializedName("QueueName")
+		private String queueName;
 
 		@SerializedName("FileName")
 		private String fileName;
@@ -85,19 +85,11 @@ public class CreateStreamBatchJobMappingRequest extends RpcAcsRequest<CreateStre
 		@SerializedName("Env")
 		private String env;
 
-		@SerializedName("Directory")
-		private String directory;
-
 		@SerializedName("ProjectId")
 		private Long projectId;
 
-		public String getQueueName() {
-			return this.queueName;
-		}
-
-		public void setQueueName(String queueName) {
-			this.queueName = queueName;
-		}
+		@SerializedName("Directory")
+		private String directory;
 
 		public String getFileType() {
 			return this.fileType;
@@ -105,6 +97,14 @@ public class CreateStreamBatchJobMappingRequest extends RpcAcsRequest<CreateStre
 
 		public void setFileType(String fileType) {
 			this.fileType = fileType;
+		}
+
+		public String getQueueName() {
+			return this.queueName;
+		}
+
+		public void setQueueName(String queueName) {
+			this.queueName = queueName;
 		}
 
 		public String getFileName() {
@@ -155,20 +155,20 @@ public class CreateStreamBatchJobMappingRequest extends RpcAcsRequest<CreateStre
 			this.env = env;
 		}
 
-		public String getDirectory() {
-			return this.directory;
-		}
-
-		public void setDirectory(String directory) {
-			this.directory = directory;
-		}
-
 		public Long getProjectId() {
 			return this.projectId;
 		}
 
 		public void setProjectId(Long projectId) {
 			this.projectId = projectId;
+		}
+
+		public String getDirectory() {
+			return this.directory;
+		}
+
+		public void setDirectory(String directory) {
+			this.directory = directory;
 		}
 	}
 

@@ -24,10 +24,10 @@ public class CreateDataDomainResponseUnmarshaller {
 	public static CreateDataDomainResponse unmarshall(CreateDataDomainResponse createDataDomainResponse, UnmarshallerContext _ctx) {
 		
 		createDataDomainResponse.setRequestId(_ctx.stringValue("CreateDataDomainResponse.RequestId"));
-		createDataDomainResponse.setSuccess(_ctx.booleanValue("CreateDataDomainResponse.Success"));
+		createDataDomainResponse.setMessage(_ctx.stringValue("CreateDataDomainResponse.Message"));
 		createDataDomainResponse.setHttpStatusCode(_ctx.integerValue("CreateDataDomainResponse.HttpStatusCode"));
 		createDataDomainResponse.setCode(_ctx.stringValue("CreateDataDomainResponse.Code"));
-		createDataDomainResponse.setMessage(_ctx.stringValue("CreateDataDomainResponse.Message"));
+		createDataDomainResponse.setSuccess(_ctx.booleanValue("CreateDataDomainResponse.Success"));
 
 		CreateResult createResult = new CreateResult();
 		createResult.setDataDomainId(_ctx.longValue("CreateDataDomainResponse.CreateResult.DataDomainId"));

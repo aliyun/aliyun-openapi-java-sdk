@@ -26,13 +26,13 @@ public class GetUdfResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private UdfInfo udfInfo;
 
@@ -44,12 +44,12 @@ public class GetUdfResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class GetUdfResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public UdfInfo getUdfInfo() {
@@ -86,68 +86,44 @@ public class GetUdfResponse extends AcsResponse {
 
 	public static class UdfInfo {
 
-		private Long id;
-
-		private String name;
-
-		private String computeEngineType;
-
-		private String directory;
-
-		private String className;
-
-		private Integer category;
-
-		private String commandHelp;
-
-		private String description;
-
 		private String gmtCreate;
-
-		private String gmtModified;
-
-		private String creator;
 
 		private String lastModifier;
 
-		public Long getId() {
-			return this.id;
+		private Integer category;
+
+		private String description;
+
+		private String commandHelp;
+
+		private String computeEngineType;
+
+		private String className;
+
+		private String gmtModified;
+
+		private Long id;
+
+		private String creator;
+
+		private String name;
+
+		private String directory;
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getLastModifier() {
+			return this.lastModifier;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getComputeEngineType() {
-			return this.computeEngineType;
-		}
-
-		public void setComputeEngineType(String computeEngineType) {
-			this.computeEngineType = computeEngineType;
-		}
-
-		public String getDirectory() {
-			return this.directory;
-		}
-
-		public void setDirectory(String directory) {
-			this.directory = directory;
-		}
-
-		public String getClassName() {
-			return this.className;
-		}
-
-		public void setClassName(String className) {
-			this.className = className;
+		public void setLastModifier(String lastModifier) {
+			this.lastModifier = lastModifier;
 		}
 
 		public Integer getCategory() {
@@ -158,14 +134,6 @@ public class GetUdfResponse extends AcsResponse {
 			this.category = category;
 		}
 
-		public String getCommandHelp() {
-			return this.commandHelp;
-		}
-
-		public void setCommandHelp(String commandHelp) {
-			this.commandHelp = commandHelp;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
@@ -174,12 +142,28 @@ public class GetUdfResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getCommandHelp() {
+			return this.commandHelp;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setCommandHelp(String commandHelp) {
+			this.commandHelp = commandHelp;
+		}
+
+		public String getComputeEngineType() {
+			return this.computeEngineType;
+		}
+
+		public void setComputeEngineType(String computeEngineType) {
+			this.computeEngineType = computeEngineType;
+		}
+
+		public String getClassName() {
+			return this.className;
+		}
+
+		public void setClassName(String className) {
+			this.className = className;
 		}
 
 		public String getGmtModified() {
@@ -190,6 +174,14 @@ public class GetUdfResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
 		public String getCreator() {
 			return this.creator;
 		}
@@ -198,12 +190,20 @@ public class GetUdfResponse extends AcsResponse {
 			this.creator = creator;
 		}
 
-		public String getLastModifier() {
-			return this.lastModifier;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setLastModifier(String lastModifier) {
-			this.lastModifier = lastModifier;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDirectory() {
+			return this.directory;
+		}
+
+		public void setDirectory(String directory) {
+			this.directory = directory;
 		}
 	}
 

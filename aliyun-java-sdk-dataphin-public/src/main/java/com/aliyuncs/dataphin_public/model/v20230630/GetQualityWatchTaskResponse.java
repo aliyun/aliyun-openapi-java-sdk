@@ -27,13 +27,13 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private WatchTaskInfo watchTaskInfo;
 
@@ -45,12 +45,12 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public WatchTaskInfo getWatchTaskInfo() {
@@ -87,83 +87,35 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 
 	public static class WatchTaskInfo {
 
-		private Long id;
-
-		private Long watchId;
-
-		private String startTime;
-
-		private String endTime;
-
-		private String qualityOwner;
-
-		private String qualityOwnerName;
-
 		private String status;
-
-		private String bizDate;
-
-		private String bizDateFormat;
-
-		private String creator;
-
-		private String createTime;
 
 		private String modifyTime;
 
+		private String endTime;
+
+		private String createTime;
+
+		private String startTime;
+
+		private String creator;
+
+		private String bizDateFormat;
+
+		private String qualityOwnerName;
+
+		private String qualityOwner;
+
+		private Long id;
+
 		private String modifier;
+
+		private String bizDate;
+
+		private Long watchId;
 
 		private List<Long> ruleIdList;
 
 		private RuleCountInfo ruleCountInfo;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public Long getWatchId() {
-			return this.watchId;
-		}
-
-		public void setWatchId(Long watchId) {
-			this.watchId = watchId;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getQualityOwner() {
-			return this.qualityOwner;
-		}
-
-		public void setQualityOwner(String qualityOwner) {
-			this.qualityOwner = qualityOwner;
-		}
-
-		public String getQualityOwnerName() {
-			return this.qualityOwnerName;
-		}
-
-		public void setQualityOwnerName(String qualityOwnerName) {
-			this.qualityOwnerName = qualityOwnerName;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -171,38 +123,6 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getBizDate() {
-			return this.bizDate;
-		}
-
-		public void setBizDate(String bizDate) {
-			this.bizDate = bizDate;
-		}
-
-		public String getBizDateFormat() {
-			return this.bizDateFormat;
-		}
-
-		public void setBizDateFormat(String bizDateFormat) {
-			this.bizDateFormat = bizDateFormat;
-		}
-
-		public String getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(String creator) {
-			this.creator = creator;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getModifyTime() {
@@ -213,12 +133,92 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 			this.modifyTime = modifyTime;
 		}
 
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(String creator) {
+			this.creator = creator;
+		}
+
+		public String getBizDateFormat() {
+			return this.bizDateFormat;
+		}
+
+		public void setBizDateFormat(String bizDateFormat) {
+			this.bizDateFormat = bizDateFormat;
+		}
+
+		public String getQualityOwnerName() {
+			return this.qualityOwnerName;
+		}
+
+		public void setQualityOwnerName(String qualityOwnerName) {
+			this.qualityOwnerName = qualityOwnerName;
+		}
+
+		public String getQualityOwner() {
+			return this.qualityOwner;
+		}
+
+		public void setQualityOwner(String qualityOwner) {
+			this.qualityOwner = qualityOwner;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
 		public String getModifier() {
 			return this.modifier;
 		}
 
 		public void setModifier(String modifier) {
 			this.modifier = modifier;
+		}
+
+		public String getBizDate() {
+			return this.bizDate;
+		}
+
+		public void setBizDate(String bizDate) {
+			this.bizDate = bizDate;
+		}
+
+		public Long getWatchId() {
+			return this.watchId;
+		}
+
+		public void setWatchId(Long watchId) {
+			this.watchId = watchId;
 		}
 
 		public List<Long> getRuleIdList() {
@@ -239,11 +239,19 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 
 		public static class RuleCountInfo {
 
+			private WeakRuleCount weakRuleCount;
+
 			private ValidateRuleCount validateRuleCount;
 
 			private StrongRuleCount strongRuleCount;
 
-			private WeakRuleCount weakRuleCount;
+			public WeakRuleCount getWeakRuleCount() {
+				return this.weakRuleCount;
+			}
+
+			public void setWeakRuleCount(WeakRuleCount weakRuleCount) {
+				this.weakRuleCount = weakRuleCount;
+			}
 
 			public ValidateRuleCount getValidateRuleCount() {
 				return this.validateRuleCount;
@@ -261,23 +269,15 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 				this.strongRuleCount = strongRuleCount;
 			}
 
-			public WeakRuleCount getWeakRuleCount() {
-				return this.weakRuleCount;
-			}
-
-			public void setWeakRuleCount(WeakRuleCount weakRuleCount) {
-				this.weakRuleCount = weakRuleCount;
-			}
-
-			public static class ValidateRuleCount {
+			public static class WeakRuleCount {
 
 				private Long totalRuleCount;
-
-				private Long finishedRuleCount;
 
 				private Long errorRuleCount;
 
 				private Long successRuleCount;
+
+				private Long finishedRuleCount;
 
 				public Long getTotalRuleCount() {
 					return this.totalRuleCount;
@@ -285,14 +285,6 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 
 				public void setTotalRuleCount(Long totalRuleCount) {
 					this.totalRuleCount = totalRuleCount;
-				}
-
-				public Long getFinishedRuleCount() {
-					return this.finishedRuleCount;
-				}
-
-				public void setFinishedRuleCount(Long finishedRuleCount) {
-					this.finishedRuleCount = finishedRuleCount;
 				}
 
 				public Long getErrorRuleCount() {
@@ -309,6 +301,57 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 
 				public void setSuccessRuleCount(Long successRuleCount) {
 					this.successRuleCount = successRuleCount;
+				}
+
+				public Long getFinishedRuleCount() {
+					return this.finishedRuleCount;
+				}
+
+				public void setFinishedRuleCount(Long finishedRuleCount) {
+					this.finishedRuleCount = finishedRuleCount;
+				}
+			}
+
+			public static class ValidateRuleCount {
+
+				private Long totalRuleCount;
+
+				private Long errorRuleCount;
+
+				private Long successRuleCount;
+
+				private Long finishedRuleCount;
+
+				public Long getTotalRuleCount() {
+					return this.totalRuleCount;
+				}
+
+				public void setTotalRuleCount(Long totalRuleCount) {
+					this.totalRuleCount = totalRuleCount;
+				}
+
+				public Long getErrorRuleCount() {
+					return this.errorRuleCount;
+				}
+
+				public void setErrorRuleCount(Long errorRuleCount) {
+					this.errorRuleCount = errorRuleCount;
+				}
+
+				public Long getSuccessRuleCount() {
+					return this.successRuleCount;
+				}
+
+				public void setSuccessRuleCount(Long successRuleCount) {
+					this.successRuleCount = successRuleCount;
+				}
+
+				public Long getFinishedRuleCount() {
+					return this.finishedRuleCount;
+				}
+
+				public void setFinishedRuleCount(Long finishedRuleCount) {
+					this.finishedRuleCount = finishedRuleCount;
 				}
 			}
 
@@ -316,11 +359,11 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 
 				private Long totalRuleCount;
 
-				private Long finishedRuleCount;
-
 				private Long errorRuleCount;
 
 				private Long successRuleCount;
+
+				private Long finishedRuleCount;
 
 				public Long getTotalRuleCount() {
 					return this.totalRuleCount;
@@ -328,14 +371,6 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 
 				public void setTotalRuleCount(Long totalRuleCount) {
 					this.totalRuleCount = totalRuleCount;
-				}
-
-				public Long getFinishedRuleCount() {
-					return this.finishedRuleCount;
-				}
-
-				public void setFinishedRuleCount(Long finishedRuleCount) {
-					this.finishedRuleCount = finishedRuleCount;
 				}
 
 				public Long getErrorRuleCount() {
@@ -353,25 +388,6 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 				public void setSuccessRuleCount(Long successRuleCount) {
 					this.successRuleCount = successRuleCount;
 				}
-			}
-
-			public static class WeakRuleCount {
-
-				private Long totalRuleCount;
-
-				private Long finishedRuleCount;
-
-				private Long errorRuleCount;
-
-				private Long successRuleCount;
-
-				public Long getTotalRuleCount() {
-					return this.totalRuleCount;
-				}
-
-				public void setTotalRuleCount(Long totalRuleCount) {
-					this.totalRuleCount = totalRuleCount;
-				}
 
 				public Long getFinishedRuleCount() {
 					return this.finishedRuleCount;
@@ -379,22 +395,6 @@ public class GetQualityWatchTaskResponse extends AcsResponse {
 
 				public void setFinishedRuleCount(Long finishedRuleCount) {
 					this.finishedRuleCount = finishedRuleCount;
-				}
-
-				public Long getErrorRuleCount() {
-					return this.errorRuleCount;
-				}
-
-				public void setErrorRuleCount(Long errorRuleCount) {
-					this.errorRuleCount = errorRuleCount;
-				}
-
-				public Long getSuccessRuleCount() {
-					return this.successRuleCount;
-				}
-
-				public void setSuccessRuleCount(Long successRuleCount) {
-					this.successRuleCount = successRuleCount;
 				}
 			}
 		}

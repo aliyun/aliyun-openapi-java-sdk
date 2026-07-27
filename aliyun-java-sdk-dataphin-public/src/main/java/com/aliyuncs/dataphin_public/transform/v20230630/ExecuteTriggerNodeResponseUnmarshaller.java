@@ -23,10 +23,10 @@ public class ExecuteTriggerNodeResponseUnmarshaller {
 	public static ExecuteTriggerNodeResponse unmarshall(ExecuteTriggerNodeResponse executeTriggerNodeResponse, UnmarshallerContext _ctx) {
 		
 		executeTriggerNodeResponse.setRequestId(_ctx.stringValue("ExecuteTriggerNodeResponse.RequestId"));
-		executeTriggerNodeResponse.setSuccess(_ctx.booleanValue("ExecuteTriggerNodeResponse.Success"));
+		executeTriggerNodeResponse.setMessage(_ctx.stringValue("ExecuteTriggerNodeResponse.Message"));
 		executeTriggerNodeResponse.setHttpStatusCode(_ctx.integerValue("ExecuteTriggerNodeResponse.HttpStatusCode"));
 		executeTriggerNodeResponse.setCode(_ctx.stringValue("ExecuteTriggerNodeResponse.Code"));
-		executeTriggerNodeResponse.setMessage(_ctx.stringValue("ExecuteTriggerNodeResponse.Message"));
+		executeTriggerNodeResponse.setSuccess(_ctx.booleanValue("ExecuteTriggerNodeResponse.Success"));
 	 
 	 	return executeTriggerNodeResponse;
 	}

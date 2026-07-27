@@ -27,18 +27,18 @@ public class GetSparkLocalClientInfoResponseUnmarshaller {
 	public static GetSparkLocalClientInfoResponse unmarshall(GetSparkLocalClientInfoResponse getSparkLocalClientInfoResponse, UnmarshallerContext _ctx) {
 		
 		getSparkLocalClientInfoResponse.setRequestId(_ctx.stringValue("GetSparkLocalClientInfoResponse.RequestId"));
-		getSparkLocalClientInfoResponse.setSuccess(_ctx.booleanValue("GetSparkLocalClientInfoResponse.Success"));
+		getSparkLocalClientInfoResponse.setMessage(_ctx.stringValue("GetSparkLocalClientInfoResponse.Message"));
 		getSparkLocalClientInfoResponse.setHttpStatusCode(_ctx.integerValue("GetSparkLocalClientInfoResponse.HttpStatusCode"));
 		getSparkLocalClientInfoResponse.setCode(_ctx.stringValue("GetSparkLocalClientInfoResponse.Code"));
-		getSparkLocalClientInfoResponse.setMessage(_ctx.stringValue("GetSparkLocalClientInfoResponse.Message"));
+		getSparkLocalClientInfoResponse.setSuccess(_ctx.booleanValue("GetSparkLocalClientInfoResponse.Success"));
 
 		List<SparkLocalClientInfo> data = new ArrayList<SparkLocalClientInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetSparkLocalClientInfoResponse.Data.Length"); i++) {
 			SparkLocalClientInfo sparkLocalClientInfo = new SparkLocalClientInfo();
 			sparkLocalClientInfo.setClientName(_ctx.stringValue("GetSparkLocalClientInfoResponse.Data["+ i +"].ClientName"));
+			sparkLocalClientInfo.setEditable(_ctx.booleanValue("GetSparkLocalClientInfoResponse.Data["+ i +"].Editable"));
 			sparkLocalClientInfo.setClientFileResourceName(_ctx.stringValue("GetSparkLocalClientInfoResponse.Data["+ i +"].ClientFileResourceName"));
 			sparkLocalClientInfo.setClientFileResourceId(_ctx.stringValue("GetSparkLocalClientInfoResponse.Data["+ i +"].ClientFileResourceId"));
-			sparkLocalClientInfo.setEditable(_ctx.booleanValue("GetSparkLocalClientInfoResponse.Data["+ i +"].Editable"));
 
 			data.add(sparkLocalClientInfo);
 		}

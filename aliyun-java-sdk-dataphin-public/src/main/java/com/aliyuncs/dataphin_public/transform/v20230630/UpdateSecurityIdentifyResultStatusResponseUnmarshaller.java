@@ -23,11 +23,11 @@ public class UpdateSecurityIdentifyResultStatusResponseUnmarshaller {
 	public static UpdateSecurityIdentifyResultStatusResponse unmarshall(UpdateSecurityIdentifyResultStatusResponse updateSecurityIdentifyResultStatusResponse, UnmarshallerContext _ctx) {
 		
 		updateSecurityIdentifyResultStatusResponse.setRequestId(_ctx.stringValue("UpdateSecurityIdentifyResultStatusResponse.RequestId"));
-		updateSecurityIdentifyResultStatusResponse.setSuccess(_ctx.booleanValue("UpdateSecurityIdentifyResultStatusResponse.Success"));
-		updateSecurityIdentifyResultStatusResponse.setHttpStatusCode(_ctx.integerValue("UpdateSecurityIdentifyResultStatusResponse.HttpStatusCode"));
-		updateSecurityIdentifyResultStatusResponse.setCode(_ctx.stringValue("UpdateSecurityIdentifyResultStatusResponse.Code"));
 		updateSecurityIdentifyResultStatusResponse.setMessage(_ctx.stringValue("UpdateSecurityIdentifyResultStatusResponse.Message"));
+		updateSecurityIdentifyResultStatusResponse.setHttpStatusCode(_ctx.integerValue("UpdateSecurityIdentifyResultStatusResponse.HttpStatusCode"));
 		updateSecurityIdentifyResultStatusResponse.setData(_ctx.booleanValue("UpdateSecurityIdentifyResultStatusResponse.Data"));
+		updateSecurityIdentifyResultStatusResponse.setCode(_ctx.stringValue("UpdateSecurityIdentifyResultStatusResponse.Code"));
+		updateSecurityIdentifyResultStatusResponse.setSuccess(_ctx.booleanValue("UpdateSecurityIdentifyResultStatusResponse.Success"));
 	 
 	 	return updateSecurityIdentifyResultStatusResponse;
 	}

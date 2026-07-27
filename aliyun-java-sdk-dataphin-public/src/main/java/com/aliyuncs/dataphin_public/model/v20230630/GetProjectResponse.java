@@ -27,13 +27,13 @@ public class GetProjectResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private ProjectInfo projectInfo;
 
@@ -45,12 +45,12 @@ public class GetProjectResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetProjectResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public ProjectInfo getProjectInfo() {
@@ -87,171 +87,43 @@ public class GetProjectResponse extends AcsResponse {
 
 	public static class ProjectInfo {
 
-		private Long bizUnitId;
-
-		private String bizUnitDisplayName;
-
-		private Long computeSourceId;
-
-		private String computeSourceName;
-
-		private Long streamComputeSourceId;
-
-		private String streamComputeSourceName;
-
-		private String nameSpaceTag;
-
-		private String env;
-
-		private String mode;
-
-		private String type;
-
-		private Long id;
-
-		private String name;
-
-		private String displayName;
-
-		private String description;
-
-		private String gmtCreate;
-
-		private String gmtModified;
-
 		private String owner;
 
 		private String ownerName;
 
+		private String description;
+
+		private Long streamComputeSourceId;
+
+		private String mode;
+
+		private String gmtModified;
+
+		private String env;
+
+		private String computeSourceName;
+
+		private String nameSpaceTag;
+
+		private String name;
+
+		private Long bizUnitId;
+
+		private String type;
+
+		private String gmtCreate;
+
+		private String bizUnitDisplayName;
+
+		private String displayName;
+
+		private String streamComputeSourceName;
+
+		private Long computeSourceId;
+
+		private Long id;
+
 		private List<WhiteList> whiteLists;
-
-		public Long getBizUnitId() {
-			return this.bizUnitId;
-		}
-
-		public void setBizUnitId(Long bizUnitId) {
-			this.bizUnitId = bizUnitId;
-		}
-
-		public String getBizUnitDisplayName() {
-			return this.bizUnitDisplayName;
-		}
-
-		public void setBizUnitDisplayName(String bizUnitDisplayName) {
-			this.bizUnitDisplayName = bizUnitDisplayName;
-		}
-
-		public Long getComputeSourceId() {
-			return this.computeSourceId;
-		}
-
-		public void setComputeSourceId(Long computeSourceId) {
-			this.computeSourceId = computeSourceId;
-		}
-
-		public String getComputeSourceName() {
-			return this.computeSourceName;
-		}
-
-		public void setComputeSourceName(String computeSourceName) {
-			this.computeSourceName = computeSourceName;
-		}
-
-		public Long getStreamComputeSourceId() {
-			return this.streamComputeSourceId;
-		}
-
-		public void setStreamComputeSourceId(Long streamComputeSourceId) {
-			this.streamComputeSourceId = streamComputeSourceId;
-		}
-
-		public String getStreamComputeSourceName() {
-			return this.streamComputeSourceName;
-		}
-
-		public void setStreamComputeSourceName(String streamComputeSourceName) {
-			this.streamComputeSourceName = streamComputeSourceName;
-		}
-
-		public String getNameSpaceTag() {
-			return this.nameSpaceTag;
-		}
-
-		public void setNameSpaceTag(String nameSpaceTag) {
-			this.nameSpaceTag = nameSpaceTag;
-		}
-
-		public String getEnv() {
-			return this.env;
-		}
-
-		public void setEnv(String env) {
-			this.env = env;
-		}
-
-		public String getMode() {
-			return this.mode;
-		}
-
-		public void setMode(String mode) {
-			this.mode = mode;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDisplayName() {
-			return this.displayName;
-		}
-
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
 
 		public String getOwner() {
 			return this.owner;
@@ -267,6 +139,134 @@ public class GetProjectResponse extends AcsResponse {
 
 		public void setOwnerName(String ownerName) {
 			this.ownerName = ownerName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Long getStreamComputeSourceId() {
+			return this.streamComputeSourceId;
+		}
+
+		public void setStreamComputeSourceId(Long streamComputeSourceId) {
+			this.streamComputeSourceId = streamComputeSourceId;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getEnv() {
+			return this.env;
+		}
+
+		public void setEnv(String env) {
+			this.env = env;
+		}
+
+		public String getComputeSourceName() {
+			return this.computeSourceName;
+		}
+
+		public void setComputeSourceName(String computeSourceName) {
+			this.computeSourceName = computeSourceName;
+		}
+
+		public String getNameSpaceTag() {
+			return this.nameSpaceTag;
+		}
+
+		public void setNameSpaceTag(String nameSpaceTag) {
+			this.nameSpaceTag = nameSpaceTag;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getBizUnitId() {
+			return this.bizUnitId;
+		}
+
+		public void setBizUnitId(Long bizUnitId) {
+			this.bizUnitId = bizUnitId;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getBizUnitDisplayName() {
+			return this.bizUnitDisplayName;
+		}
+
+		public void setBizUnitDisplayName(String bizUnitDisplayName) {
+			this.bizUnitDisplayName = bizUnitDisplayName;
+		}
+
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
+		public String getStreamComputeSourceName() {
+			return this.streamComputeSourceName;
+		}
+
+		public void setStreamComputeSourceName(String streamComputeSourceName) {
+			this.streamComputeSourceName = streamComputeSourceName;
+		}
+
+		public Long getComputeSourceId() {
+			return this.computeSourceId;
+		}
+
+		public void setComputeSourceId(Long computeSourceId) {
+			this.computeSourceId = computeSourceId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public List<WhiteList> getWhiteLists() {

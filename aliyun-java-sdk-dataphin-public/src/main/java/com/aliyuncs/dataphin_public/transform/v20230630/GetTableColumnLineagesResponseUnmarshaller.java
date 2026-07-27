@@ -27,36 +27,36 @@ public class GetTableColumnLineagesResponseUnmarshaller {
 	public static GetTableColumnLineagesResponse unmarshall(GetTableColumnLineagesResponse getTableColumnLineagesResponse, UnmarshallerContext _ctx) {
 		
 		getTableColumnLineagesResponse.setRequestId(_ctx.stringValue("GetTableColumnLineagesResponse.RequestId"));
-		getTableColumnLineagesResponse.setSuccess(_ctx.booleanValue("GetTableColumnLineagesResponse.Success"));
+		getTableColumnLineagesResponse.setMessage(_ctx.stringValue("GetTableColumnLineagesResponse.Message"));
 		getTableColumnLineagesResponse.setHttpStatusCode(_ctx.integerValue("GetTableColumnLineagesResponse.HttpStatusCode"));
 		getTableColumnLineagesResponse.setCode(_ctx.stringValue("GetTableColumnLineagesResponse.Code"));
-		getTableColumnLineagesResponse.setMessage(_ctx.stringValue("GetTableColumnLineagesResponse.Message"));
+		getTableColumnLineagesResponse.setSuccess(_ctx.booleanValue("GetTableColumnLineagesResponse.Success"));
 
 		List<TableColumnLineage> tableColumnLineageList = new ArrayList<TableColumnLineage>();
 		for (int i = 0; i < _ctx.lengthValue("GetTableColumnLineagesResponse.TableColumnLineageList.Length"); i++) {
 			TableColumnLineage tableColumnLineage = new TableColumnLineage();
-			tableColumnLineage.setNodeId(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].NodeId"));
-			tableColumnLineage.setNodeEnv(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].NodeEnv"));
-			tableColumnLineage.setInputTableEnv(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputTableEnv"));
-			tableColumnLineage.setInputTableGuid(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputTableGuid"));
-			tableColumnLineage.setInputTableName(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputTableName"));
-			tableColumnLineage.setInputColumnName(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputColumnName"));
+			tableColumnLineage.setOutputProjectId(_ctx.longValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputProjectId"));
 			tableColumnLineage.setInputColumnGuid(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputColumnGuid"));
 			tableColumnLineage.setInputProjectId(_ctx.longValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputProjectId"));
+			tableColumnLineage.setInputTableEnv(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputTableEnv"));
+			tableColumnLineage.setOutputTableName(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputTableName"));
+			tableColumnLineage.setInputTableDeleted(_ctx.booleanValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputTableDeleted"));
+			tableColumnLineage.setOutputTableGuid(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputTableGuid"));
+			tableColumnLineage.setNodeEnv(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].NodeEnv"));
+			tableColumnLineage.setOutputBizUnitId(_ctx.longValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputBizUnitId"));
+			tableColumnLineage.setOutputTableDeleted(_ctx.booleanValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputTableDeleted"));
+			tableColumnLineage.setOutputTableEnv(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputTableEnv"));
+			tableColumnLineage.setInputTableName(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputTableName"));
+			tableColumnLineage.setNodeId(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].NodeId"));
+			tableColumnLineage.setInputColumnName(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputColumnName"));
+			tableColumnLineage.setOutputDataSourceId(_ctx.longValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputDataSourceId"));
+			tableColumnLineage.setOutputDataSourceType(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputDataSourceType"));
+			tableColumnLineage.setInputTableGuid(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputTableGuid"));
+			tableColumnLineage.setOutputColumnGuid(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputColumnGuid"));
 			tableColumnLineage.setInputBizUnitId(_ctx.longValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputBizUnitId"));
 			tableColumnLineage.setInputDataSourceId(_ctx.longValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputDataSourceId"));
 			tableColumnLineage.setInputDataSourceType(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputDataSourceType"));
-			tableColumnLineage.setInputTableDeleted(_ctx.booleanValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].InputTableDeleted"));
-			tableColumnLineage.setOutputTableEnv(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputTableEnv"));
-			tableColumnLineage.setOutputTableGuid(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputTableGuid"));
-			tableColumnLineage.setOutputTableName(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputTableName"));
 			tableColumnLineage.setOutputColumnName(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputColumnName"));
-			tableColumnLineage.setOutputColumnGuid(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputColumnGuid"));
-			tableColumnLineage.setOutputProjectId(_ctx.longValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputProjectId"));
-			tableColumnLineage.setOutputBizUnitId(_ctx.longValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputBizUnitId"));
-			tableColumnLineage.setOutputDataSourceId(_ctx.longValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputDataSourceId"));
-			tableColumnLineage.setOutputDataSourceType(_ctx.stringValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputDataSourceType"));
-			tableColumnLineage.setOutputTableDeleted(_ctx.booleanValue("GetTableColumnLineagesResponse.TableColumnLineageList["+ i +"].OutputTableDeleted"));
 
 			tableColumnLineageList.add(tableColumnLineage);
 		}

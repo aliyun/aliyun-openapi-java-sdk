@@ -27,16 +27,16 @@ public class GetSecurityLevelResponseUnmarshaller {
 	public static GetSecurityLevelResponse unmarshall(GetSecurityLevelResponse getSecurityLevelResponse, UnmarshallerContext _ctx) {
 		
 		getSecurityLevelResponse.setRequestId(_ctx.stringValue("GetSecurityLevelResponse.RequestId"));
-		getSecurityLevelResponse.setSuccess(_ctx.booleanValue("GetSecurityLevelResponse.Success"));
+		getSecurityLevelResponse.setMessage(_ctx.stringValue("GetSecurityLevelResponse.Message"));
 		getSecurityLevelResponse.setHttpStatusCode(_ctx.integerValue("GetSecurityLevelResponse.HttpStatusCode"));
 		getSecurityLevelResponse.setCode(_ctx.stringValue("GetSecurityLevelResponse.Code"));
-		getSecurityLevelResponse.setMessage(_ctx.stringValue("GetSecurityLevelResponse.Message"));
+		getSecurityLevelResponse.setSuccess(_ctx.booleanValue("GetSecurityLevelResponse.Success"));
 
 		SecurityLevelInfo securityLevelInfo = new SecurityLevelInfo();
-		securityLevelInfo.setName(_ctx.stringValue("GetSecurityLevelResponse.SecurityLevelInfo.Name"));
 		securityLevelInfo.setAbbreviation(_ctx.stringValue("GetSecurityLevelResponse.SecurityLevelInfo.Abbreviation"));
 		securityLevelInfo.setDescription(_ctx.stringValue("GetSecurityLevelResponse.SecurityLevelInfo.Description"));
 		securityLevelInfo.setIndex(_ctx.longValue("GetSecurityLevelResponse.SecurityLevelInfo.Index"));
+		securityLevelInfo.setName(_ctx.stringValue("GetSecurityLevelResponse.SecurityLevelInfo.Name"));
 
 		List<Long> relatedClassifyIdList = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("GetSecurityLevelResponse.SecurityLevelInfo.RelatedClassifyIdList.Length"); i++) {

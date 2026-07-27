@@ -23,11 +23,11 @@ public class DeleteSecurityIdentifyResultsResponseUnmarshaller {
 	public static DeleteSecurityIdentifyResultsResponse unmarshall(DeleteSecurityIdentifyResultsResponse deleteSecurityIdentifyResultsResponse, UnmarshallerContext _ctx) {
 		
 		deleteSecurityIdentifyResultsResponse.setRequestId(_ctx.stringValue("DeleteSecurityIdentifyResultsResponse.RequestId"));
-		deleteSecurityIdentifyResultsResponse.setSuccess(_ctx.booleanValue("DeleteSecurityIdentifyResultsResponse.Success"));
-		deleteSecurityIdentifyResultsResponse.setHttpStatusCode(_ctx.integerValue("DeleteSecurityIdentifyResultsResponse.HttpStatusCode"));
-		deleteSecurityIdentifyResultsResponse.setCode(_ctx.stringValue("DeleteSecurityIdentifyResultsResponse.Code"));
 		deleteSecurityIdentifyResultsResponse.setMessage(_ctx.stringValue("DeleteSecurityIdentifyResultsResponse.Message"));
+		deleteSecurityIdentifyResultsResponse.setHttpStatusCode(_ctx.integerValue("DeleteSecurityIdentifyResultsResponse.HttpStatusCode"));
 		deleteSecurityIdentifyResultsResponse.setData(_ctx.booleanValue("DeleteSecurityIdentifyResultsResponse.Data"));
+		deleteSecurityIdentifyResultsResponse.setCode(_ctx.stringValue("DeleteSecurityIdentifyResultsResponse.Code"));
+		deleteSecurityIdentifyResultsResponse.setSuccess(_ctx.booleanValue("DeleteSecurityIdentifyResultsResponse.Success"));
 	 
 	 	return deleteSecurityIdentifyResultsResponse;
 	}

@@ -92,11 +92,11 @@ public class ListAlertEventsRequest extends RpcAcsRequest<ListAlertEventsRespons
 		@SerializedName("Page")
 		private Integer page;
 
-		@SerializedName("MonitoredItemIdList")
-		private List<String> monitoredItemIdList;
-
 		@SerializedName("Keyword")
 		private String keyword;
+
+		@SerializedName("MonitoredItemIdList")
+		private List<String> monitoredItemIdList;
 
 		@SerializedName("AlertReasonList")
 		private List<String> alertReasonList;
@@ -181,20 +181,20 @@ public class ListAlertEventsRequest extends RpcAcsRequest<ListAlertEventsRespons
 			this.page = page;
 		}
 
-		public List<String> getMonitoredItemIdList() {
-			return this.monitoredItemIdList;
-		}
-
-		public void setMonitoredItemIdList(List<String> monitoredItemIdList) {
-			this.monitoredItemIdList = monitoredItemIdList;
-		}
-
 		public String getKeyword() {
 			return this.keyword;
 		}
 
 		public void setKeyword(String keyword) {
 			this.keyword = keyword;
+		}
+
+		public List<String> getMonitoredItemIdList() {
+			return this.monitoredItemIdList;
+		}
+
+		public void setMonitoredItemIdList(List<String> monitoredItemIdList) {
+			this.monitoredItemIdList = monitoredItemIdList;
 		}
 
 		public List<String> getAlertReasonList() {

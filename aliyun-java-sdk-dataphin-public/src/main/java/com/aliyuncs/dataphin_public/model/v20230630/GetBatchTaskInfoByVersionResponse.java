@@ -27,13 +27,13 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private TaskInfo taskInfo;
 
@@ -45,12 +45,12 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public TaskInfo getTaskInfo() {
@@ -87,61 +87,61 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 
 	public static class TaskInfo {
 
-		private Long fileId;
-
-		private String name;
-
-		private String status;
-
-		private Boolean published;
-
-		private Boolean needPublish;
-
-		private Boolean hasDevNode;
-
-		private String nodeId;
-
-		private String nodeName;
-
-		private String ownerUserId;
+		private Integer scheduleType;
 
 		private String ownerName;
 
-		private String operatorUserId;
+		private String nodeName;
 
-		private String nodeDescription;
-
-		private Integer taskType;
-
-		private Integer scheduleType;
-
-		private String schedulePeriod;
-
-		private String cronExpression;
-
-		private String code;
-
-		private String remark;
+		private String dataSourceSchema;
 
 		private String dagId;
 
+		private String name;
+
+		private String remark;
+
+		private String nodeDescription;
+
+		private String schedulePeriod;
+
+		private Integer taskType;
+
 		private Boolean rerunable;
 
-		private Integer priority;
-
-		private Integer nodeStatus;
+		private String cronExpression;
 
 		private Boolean paused;
+
+		private String status;
+
+		private Integer priority;
 
 		private String nodeFrom;
 
 		private Long projectId;
 
-		private String dataSourceId;
+		private String operatorUserId;
+
+		private String code;
 
 		private String dataSourceCatalog;
 
-		private String dataSourceSchema;
+		private String ownerUserId;
+
+		private Boolean needPublish;
+
+		private String nodeId;
+
+		private Boolean published;
+
+		private Long fileId;
+
+		private Integer nodeStatus;
+
+		private String dataSourceId;
+
+		private Boolean hasDevNode;
 
 		private List<Param> paramList;
 
@@ -153,76 +153,12 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 
 		private SparkClientInfo sparkClientInfo;
 
-		public Long getFileId() {
-			return this.fileId;
+		public Integer getScheduleType() {
+			return this.scheduleType;
 		}
 
-		public void setFileId(Long fileId) {
-			this.fileId = fileId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Boolean getPublished() {
-			return this.published;
-		}
-
-		public void setPublished(Boolean published) {
-			this.published = published;
-		}
-
-		public Boolean getNeedPublish() {
-			return this.needPublish;
-		}
-
-		public void setNeedPublish(Boolean needPublish) {
-			this.needPublish = needPublish;
-		}
-
-		public Boolean getHasDevNode() {
-			return this.hasDevNode;
-		}
-
-		public void setHasDevNode(Boolean hasDevNode) {
-			this.hasDevNode = hasDevNode;
-		}
-
-		public String getNodeId() {
-			return this.nodeId;
-		}
-
-		public void setNodeId(String nodeId) {
-			this.nodeId = nodeId;
-		}
-
-		public String getNodeName() {
-			return this.nodeName;
-		}
-
-		public void setNodeName(String nodeName) {
-			this.nodeName = nodeName;
-		}
-
-		public String getOwnerUserId() {
-			return this.ownerUserId;
-		}
-
-		public void setOwnerUserId(String ownerUserId) {
-			this.ownerUserId = ownerUserId;
+		public void setScheduleType(Integer scheduleType) {
+			this.scheduleType = scheduleType;
 		}
 
 		public String getOwnerName() {
@@ -233,68 +169,20 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 			this.ownerName = ownerName;
 		}
 
-		public String getOperatorUserId() {
-			return this.operatorUserId;
+		public String getNodeName() {
+			return this.nodeName;
 		}
 
-		public void setOperatorUserId(String operatorUserId) {
-			this.operatorUserId = operatorUserId;
+		public void setNodeName(String nodeName) {
+			this.nodeName = nodeName;
 		}
 
-		public String getNodeDescription() {
-			return this.nodeDescription;
+		public String getDataSourceSchema() {
+			return this.dataSourceSchema;
 		}
 
-		public void setNodeDescription(String nodeDescription) {
-			this.nodeDescription = nodeDescription;
-		}
-
-		public Integer getTaskType() {
-			return this.taskType;
-		}
-
-		public void setTaskType(Integer taskType) {
-			this.taskType = taskType;
-		}
-
-		public Integer getScheduleType() {
-			return this.scheduleType;
-		}
-
-		public void setScheduleType(Integer scheduleType) {
-			this.scheduleType = scheduleType;
-		}
-
-		public String getSchedulePeriod() {
-			return this.schedulePeriod;
-		}
-
-		public void setSchedulePeriod(String schedulePeriod) {
-			this.schedulePeriod = schedulePeriod;
-		}
-
-		public String getCronExpression() {
-			return this.cronExpression;
-		}
-
-		public void setCronExpression(String cronExpression) {
-			this.cronExpression = cronExpression;
-		}
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
-
-		public String getRemark() {
-			return this.remark;
-		}
-
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setDataSourceSchema(String dataSourceSchema) {
+			this.dataSourceSchema = dataSourceSchema;
 		}
 
 		public String getDagId() {
@@ -305,6 +193,46 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 			this.dagId = dagId;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
+		public String getNodeDescription() {
+			return this.nodeDescription;
+		}
+
+		public void setNodeDescription(String nodeDescription) {
+			this.nodeDescription = nodeDescription;
+		}
+
+		public String getSchedulePeriod() {
+			return this.schedulePeriod;
+		}
+
+		public void setSchedulePeriod(String schedulePeriod) {
+			this.schedulePeriod = schedulePeriod;
+		}
+
+		public Integer getTaskType() {
+			return this.taskType;
+		}
+
+		public void setTaskType(Integer taskType) {
+			this.taskType = taskType;
+		}
+
 		public Boolean getRerunable() {
 			return this.rerunable;
 		}
@@ -313,20 +241,12 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 			this.rerunable = rerunable;
 		}
 
-		public Integer getPriority() {
-			return this.priority;
+		public String getCronExpression() {
+			return this.cronExpression;
 		}
 
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
-
-		public Integer getNodeStatus() {
-			return this.nodeStatus;
-		}
-
-		public void setNodeStatus(Integer nodeStatus) {
-			this.nodeStatus = nodeStatus;
+		public void setCronExpression(String cronExpression) {
+			this.cronExpression = cronExpression;
 		}
 
 		public Boolean getPaused() {
@@ -335,6 +255,22 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 
 		public void setPaused(Boolean paused) {
 			this.paused = paused;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
 		}
 
 		public String getNodeFrom() {
@@ -353,12 +289,20 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 			this.projectId = projectId;
 		}
 
-		public String getDataSourceId() {
-			return this.dataSourceId;
+		public String getOperatorUserId() {
+			return this.operatorUserId;
 		}
 
-		public void setDataSourceId(String dataSourceId) {
-			this.dataSourceId = dataSourceId;
+		public void setOperatorUserId(String operatorUserId) {
+			this.operatorUserId = operatorUserId;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
 		}
 
 		public String getDataSourceCatalog() {
@@ -369,12 +313,68 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 			this.dataSourceCatalog = dataSourceCatalog;
 		}
 
-		public String getDataSourceSchema() {
-			return this.dataSourceSchema;
+		public String getOwnerUserId() {
+			return this.ownerUserId;
 		}
 
-		public void setDataSourceSchema(String dataSourceSchema) {
-			this.dataSourceSchema = dataSourceSchema;
+		public void setOwnerUserId(String ownerUserId) {
+			this.ownerUserId = ownerUserId;
+		}
+
+		public Boolean getNeedPublish() {
+			return this.needPublish;
+		}
+
+		public void setNeedPublish(Boolean needPublish) {
+			this.needPublish = needPublish;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
+		}
+
+		public Boolean getPublished() {
+			return this.published;
+		}
+
+		public void setPublished(Boolean published) {
+			this.published = published;
+		}
+
+		public Long getFileId() {
+			return this.fileId;
+		}
+
+		public void setFileId(Long fileId) {
+			this.fileId = fileId;
+		}
+
+		public Integer getNodeStatus() {
+			return this.nodeStatus;
+		}
+
+		public void setNodeStatus(Integer nodeStatus) {
+			this.nodeStatus = nodeStatus;
+		}
+
+		public String getDataSourceId() {
+			return this.dataSourceId;
+		}
+
+		public void setDataSourceId(String dataSourceId) {
+			this.dataSourceId = dataSourceId;
+		}
+
+		public Boolean getHasDevNode() {
+			return this.hasDevNode;
+		}
+
+		public void setHasDevNode(Boolean hasDevNode) {
+			this.hasDevNode = hasDevNode;
 		}
 
 		public List<Param> getParamList() {
@@ -419,17 +419,9 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 
 		public static class Param {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -438,38 +430,46 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 			public void setValue(String value) {
 				this.value = value;
 			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
 		}
 
 		public static class NodeRelation {
 
-			private String nodeType;
+			private String sourceTableName;
 
 			private String sourceNodeId;
+
+			private Integer periodDiff;
+
+			private String nodeType;
 
 			private String sourceNodeName;
 
 			private String sourceNodeUserName;
 
+			private Boolean sourceNodeEnabled;
+
 			private String sourceNodeOutputName;
 
-			private String sourceTableName;
-
-			private Integer periodDiff;
-
 			private String dependStrategy;
-
-			private Boolean sourceNodeEnabled;
 
 			private List<String> fieldList;
 
 			private DependPeriod dependPeriod;
 
-			public String getNodeType() {
-				return this.nodeType;
+			public String getSourceTableName() {
+				return this.sourceTableName;
 			}
 
-			public void setNodeType(String nodeType) {
-				this.nodeType = nodeType;
+			public void setSourceTableName(String sourceTableName) {
+				this.sourceTableName = sourceTableName;
 			}
 
 			public String getSourceNodeId() {
@@ -478,6 +478,22 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 
 			public void setSourceNodeId(String sourceNodeId) {
 				this.sourceNodeId = sourceNodeId;
+			}
+
+			public Integer getPeriodDiff() {
+				return this.periodDiff;
+			}
+
+			public void setPeriodDiff(Integer periodDiff) {
+				this.periodDiff = periodDiff;
+			}
+
+			public String getNodeType() {
+				return this.nodeType;
+			}
+
+			public void setNodeType(String nodeType) {
+				this.nodeType = nodeType;
 			}
 
 			public String getSourceNodeName() {
@@ -496,6 +512,14 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 				this.sourceNodeUserName = sourceNodeUserName;
 			}
 
+			public Boolean getSourceNodeEnabled() {
+				return this.sourceNodeEnabled;
+			}
+
+			public void setSourceNodeEnabled(Boolean sourceNodeEnabled) {
+				this.sourceNodeEnabled = sourceNodeEnabled;
+			}
+
 			public String getSourceNodeOutputName() {
 				return this.sourceNodeOutputName;
 			}
@@ -504,36 +528,12 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 				this.sourceNodeOutputName = sourceNodeOutputName;
 			}
 
-			public String getSourceTableName() {
-				return this.sourceTableName;
-			}
-
-			public void setSourceTableName(String sourceTableName) {
-				this.sourceTableName = sourceTableName;
-			}
-
-			public Integer getPeriodDiff() {
-				return this.periodDiff;
-			}
-
-			public void setPeriodDiff(Integer periodDiff) {
-				this.periodDiff = periodDiff;
-			}
-
 			public String getDependStrategy() {
 				return this.dependStrategy;
 			}
 
 			public void setDependStrategy(String dependStrategy) {
 				this.dependStrategy = dependStrategy;
-			}
-
-			public Boolean getSourceNodeEnabled() {
-				return this.sourceNodeEnabled;
-			}
-
-			public void setSourceNodeEnabled(Boolean sourceNodeEnabled) {
-				this.sourceNodeEnabled = sourceNodeEnabled;
 			}
 
 			public List<String> getFieldList() {
@@ -578,31 +578,15 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 
 		public static class CustomScheduleConfig {
 
-			private String schedulePeriod;
-
-			private Integer interval;
-
 			private String intervalUnit;
-
-			private String startTime;
 
 			private String endTime;
 
-			public String getSchedulePeriod() {
-				return this.schedulePeriod;
-			}
+			private String schedulePeriod;
 
-			public void setSchedulePeriod(String schedulePeriod) {
-				this.schedulePeriod = schedulePeriod;
-			}
+			private String startTime;
 
-			public Integer getInterval() {
-				return this.interval;
-			}
-
-			public void setInterval(Integer interval) {
-				this.interval = interval;
-			}
+			private Integer interval;
 
 			public String getIntervalUnit() {
 				return this.intervalUnit;
@@ -610,6 +594,22 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 
 			public void setIntervalUnit(String intervalUnit) {
 				this.intervalUnit = intervalUnit;
+			}
+
+			public String getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
+			}
+
+			public String getSchedulePeriod() {
+				return this.schedulePeriod;
+			}
+
+			public void setSchedulePeriod(String schedulePeriod) {
+				this.schedulePeriod = schedulePeriod;
 			}
 
 			public String getStartTime() {
@@ -620,12 +620,12 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public String getEndTime() {
-				return this.endTime;
+			public Integer getInterval() {
+				return this.interval;
 			}
 
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
+			public void setInterval(Integer interval) {
+				this.interval = interval;
 			}
 		}
 

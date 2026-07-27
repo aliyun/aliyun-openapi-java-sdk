@@ -27,10 +27,10 @@ public class GetDataServiceProjectAddableUsersResponseUnmarshaller {
 	public static GetDataServiceProjectAddableUsersResponse unmarshall(GetDataServiceProjectAddableUsersResponse getDataServiceProjectAddableUsersResponse, UnmarshallerContext _ctx) {
 		
 		getDataServiceProjectAddableUsersResponse.setRequestId(_ctx.stringValue("GetDataServiceProjectAddableUsersResponse.RequestId"));
-		getDataServiceProjectAddableUsersResponse.setSuccess(_ctx.booleanValue("GetDataServiceProjectAddableUsersResponse.Success"));
+		getDataServiceProjectAddableUsersResponse.setMessage(_ctx.stringValue("GetDataServiceProjectAddableUsersResponse.Message"));
 		getDataServiceProjectAddableUsersResponse.setHttpStatusCode(_ctx.integerValue("GetDataServiceProjectAddableUsersResponse.HttpStatusCode"));
 		getDataServiceProjectAddableUsersResponse.setCode(_ctx.stringValue("GetDataServiceProjectAddableUsersResponse.Code"));
-		getDataServiceProjectAddableUsersResponse.setMessage(_ctx.stringValue("GetDataServiceProjectAddableUsersResponse.Message"));
+		getDataServiceProjectAddableUsersResponse.setSuccess(_ctx.booleanValue("GetDataServiceProjectAddableUsersResponse.Success"));
 
 		List<User> userList = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataServiceProjectAddableUsersResponse.UserList.Length"); i++) {

@@ -23,11 +23,11 @@ public class UpdateUserGroupSwitchResponseUnmarshaller {
 	public static UpdateUserGroupSwitchResponse unmarshall(UpdateUserGroupSwitchResponse updateUserGroupSwitchResponse, UnmarshallerContext _ctx) {
 		
 		updateUserGroupSwitchResponse.setRequestId(_ctx.stringValue("UpdateUserGroupSwitchResponse.RequestId"));
-		updateUserGroupSwitchResponse.setSuccess(_ctx.booleanValue("UpdateUserGroupSwitchResponse.Success"));
-		updateUserGroupSwitchResponse.setHttpStatusCode(_ctx.integerValue("UpdateUserGroupSwitchResponse.HttpStatusCode"));
-		updateUserGroupSwitchResponse.setCode(_ctx.stringValue("UpdateUserGroupSwitchResponse.Code"));
 		updateUserGroupSwitchResponse.setMessage(_ctx.stringValue("UpdateUserGroupSwitchResponse.Message"));
+		updateUserGroupSwitchResponse.setHttpStatusCode(_ctx.integerValue("UpdateUserGroupSwitchResponse.HttpStatusCode"));
 		updateUserGroupSwitchResponse.setData(_ctx.booleanValue("UpdateUserGroupSwitchResponse.Data"));
+		updateUserGroupSwitchResponse.setCode(_ctx.stringValue("UpdateUserGroupSwitchResponse.Code"));
+		updateUserGroupSwitchResponse.setSuccess(_ctx.booleanValue("UpdateUserGroupSwitchResponse.Success"));
 	 
 	 	return updateUserGroupSwitchResponse;
 	}

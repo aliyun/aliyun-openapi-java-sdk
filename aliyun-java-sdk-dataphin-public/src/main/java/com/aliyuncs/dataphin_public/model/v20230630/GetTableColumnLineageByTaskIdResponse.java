@@ -27,13 +27,13 @@ public class GetTableColumnLineageByTaskIdResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<LineageInfo> data;
 
@@ -45,12 +45,12 @@ public class GetTableColumnLineageByTaskIdResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetTableColumnLineageByTaskIdResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<LineageInfo> getData() {
@@ -87,67 +87,59 @@ public class GetTableColumnLineageByTaskIdResponse extends AcsResponse {
 
 	public static class LineageInfo {
 
-		private Long tenantId;
-
 		private String taskId;
 
-		private String taskEnv;
+		private String outputTableName;
+
+		private Boolean inputTableDeleted;
 
 		private String inputEnv;
 
-		private String inputTableId;
+		private Boolean outputTableDeleted;
+
+		private String outputEnv;
 
 		private String inputTableName;
 
+		private String inputColumnName;
+
+		private Long outputDataSourceId;
+
+		private String outputDataSourceType;
+
+		private String taskEnv;
+
 		private String inputColumnId;
 
-		private String inputColumnName;
+		private Long outputProjectId;
 
 		private String inputTableType;
 
-		private String inputDataSourceType;
+		private String outputTableType;
+
+		private Long inputProjectId;
 
 		private String inputDbType;
 
-		private Long inputProjectId;
+		private Long outputBizUnitId;
+
+		private Long tenantId;
+
+		private String outputTableId;
+
+		private String outputColumnId;
+
+		private String inputTableId;
+
+		private String outputDbType;
+
+		private String inputDataSourceType;
 
 		private Long inputBizUnitId;
 
 		private Long inputDataSourceId;
 
-		private Boolean inputTableDeleted;
-
-		private String outputTableType;
-
-		private String outputEnv;
-
-		private Long outputBizUnitId;
-
-		private String outputDataSourceType;
-
-		private String outputDbType;
-
-		private Long outputProjectId;
-
-		private Long outputDataSourceId;
-
-		private String outputTableId;
-
-		private String outputTableName;
-
-		private String outputColumnId;
-
 		private String outputColumnName;
-
-		private Boolean outputTableDeleted;
-
-		public Long getTenantId() {
-			return this.tenantId;
-		}
-
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
-		}
 
 		public String getTaskId() {
 			return this.taskId;
@@ -157,12 +149,20 @@ public class GetTableColumnLineageByTaskIdResponse extends AcsResponse {
 			this.taskId = taskId;
 		}
 
-		public String getTaskEnv() {
-			return this.taskEnv;
+		public String getOutputTableName() {
+			return this.outputTableName;
 		}
 
-		public void setTaskEnv(String taskEnv) {
-			this.taskEnv = taskEnv;
+		public void setOutputTableName(String outputTableName) {
+			this.outputTableName = outputTableName;
+		}
+
+		public Boolean getInputTableDeleted() {
+			return this.inputTableDeleted;
+		}
+
+		public void setInputTableDeleted(Boolean inputTableDeleted) {
+			this.inputTableDeleted = inputTableDeleted;
 		}
 
 		public String getInputEnv() {
@@ -173,12 +173,20 @@ public class GetTableColumnLineageByTaskIdResponse extends AcsResponse {
 			this.inputEnv = inputEnv;
 		}
 
-		public String getInputTableId() {
-			return this.inputTableId;
+		public Boolean getOutputTableDeleted() {
+			return this.outputTableDeleted;
 		}
 
-		public void setInputTableId(String inputTableId) {
-			this.inputTableId = inputTableId;
+		public void setOutputTableDeleted(Boolean outputTableDeleted) {
+			this.outputTableDeleted = outputTableDeleted;
+		}
+
+		public String getOutputEnv() {
+			return this.outputEnv;
+		}
+
+		public void setOutputEnv(String outputEnv) {
+			this.outputEnv = outputEnv;
 		}
 
 		public String getInputTableName() {
@@ -189,6 +197,38 @@ public class GetTableColumnLineageByTaskIdResponse extends AcsResponse {
 			this.inputTableName = inputTableName;
 		}
 
+		public String getInputColumnName() {
+			return this.inputColumnName;
+		}
+
+		public void setInputColumnName(String inputColumnName) {
+			this.inputColumnName = inputColumnName;
+		}
+
+		public Long getOutputDataSourceId() {
+			return this.outputDataSourceId;
+		}
+
+		public void setOutputDataSourceId(Long outputDataSourceId) {
+			this.outputDataSourceId = outputDataSourceId;
+		}
+
+		public String getOutputDataSourceType() {
+			return this.outputDataSourceType;
+		}
+
+		public void setOutputDataSourceType(String outputDataSourceType) {
+			this.outputDataSourceType = outputDataSourceType;
+		}
+
+		public String getTaskEnv() {
+			return this.taskEnv;
+		}
+
+		public void setTaskEnv(String taskEnv) {
+			this.taskEnv = taskEnv;
+		}
+
 		public String getInputColumnId() {
 			return this.inputColumnId;
 		}
@@ -197,12 +237,12 @@ public class GetTableColumnLineageByTaskIdResponse extends AcsResponse {
 			this.inputColumnId = inputColumnId;
 		}
 
-		public String getInputColumnName() {
-			return this.inputColumnName;
+		public Long getOutputProjectId() {
+			return this.outputProjectId;
 		}
 
-		public void setInputColumnName(String inputColumnName) {
-			this.inputColumnName = inputColumnName;
+		public void setOutputProjectId(Long outputProjectId) {
+			this.outputProjectId = outputProjectId;
 		}
 
 		public String getInputTableType() {
@@ -213,12 +253,20 @@ public class GetTableColumnLineageByTaskIdResponse extends AcsResponse {
 			this.inputTableType = inputTableType;
 		}
 
-		public String getInputDataSourceType() {
-			return this.inputDataSourceType;
+		public String getOutputTableType() {
+			return this.outputTableType;
 		}
 
-		public void setInputDataSourceType(String inputDataSourceType) {
-			this.inputDataSourceType = inputDataSourceType;
+		public void setOutputTableType(String outputTableType) {
+			this.outputTableType = outputTableType;
+		}
+
+		public Long getInputProjectId() {
+			return this.inputProjectId;
+		}
+
+		public void setInputProjectId(Long inputProjectId) {
+			this.inputProjectId = inputProjectId;
 		}
 
 		public String getInputDbType() {
@@ -229,12 +277,60 @@ public class GetTableColumnLineageByTaskIdResponse extends AcsResponse {
 			this.inputDbType = inputDbType;
 		}
 
-		public Long getInputProjectId() {
-			return this.inputProjectId;
+		public Long getOutputBizUnitId() {
+			return this.outputBizUnitId;
 		}
 
-		public void setInputProjectId(Long inputProjectId) {
-			this.inputProjectId = inputProjectId;
+		public void setOutputBizUnitId(Long outputBizUnitId) {
+			this.outputBizUnitId = outputBizUnitId;
+		}
+
+		public Long getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
+		}
+
+		public String getOutputTableId() {
+			return this.outputTableId;
+		}
+
+		public void setOutputTableId(String outputTableId) {
+			this.outputTableId = outputTableId;
+		}
+
+		public String getOutputColumnId() {
+			return this.outputColumnId;
+		}
+
+		public void setOutputColumnId(String outputColumnId) {
+			this.outputColumnId = outputColumnId;
+		}
+
+		public String getInputTableId() {
+			return this.inputTableId;
+		}
+
+		public void setInputTableId(String inputTableId) {
+			this.inputTableId = inputTableId;
+		}
+
+		public String getOutputDbType() {
+			return this.outputDbType;
+		}
+
+		public void setOutputDbType(String outputDbType) {
+			this.outputDbType = outputDbType;
+		}
+
+		public String getInputDataSourceType() {
+			return this.inputDataSourceType;
+		}
+
+		public void setInputDataSourceType(String inputDataSourceType) {
+			this.inputDataSourceType = inputDataSourceType;
 		}
 
 		public Long getInputBizUnitId() {
@@ -253,108 +349,12 @@ public class GetTableColumnLineageByTaskIdResponse extends AcsResponse {
 			this.inputDataSourceId = inputDataSourceId;
 		}
 
-		public Boolean getInputTableDeleted() {
-			return this.inputTableDeleted;
-		}
-
-		public void setInputTableDeleted(Boolean inputTableDeleted) {
-			this.inputTableDeleted = inputTableDeleted;
-		}
-
-		public String getOutputTableType() {
-			return this.outputTableType;
-		}
-
-		public void setOutputTableType(String outputTableType) {
-			this.outputTableType = outputTableType;
-		}
-
-		public String getOutputEnv() {
-			return this.outputEnv;
-		}
-
-		public void setOutputEnv(String outputEnv) {
-			this.outputEnv = outputEnv;
-		}
-
-		public Long getOutputBizUnitId() {
-			return this.outputBizUnitId;
-		}
-
-		public void setOutputBizUnitId(Long outputBizUnitId) {
-			this.outputBizUnitId = outputBizUnitId;
-		}
-
-		public String getOutputDataSourceType() {
-			return this.outputDataSourceType;
-		}
-
-		public void setOutputDataSourceType(String outputDataSourceType) {
-			this.outputDataSourceType = outputDataSourceType;
-		}
-
-		public String getOutputDbType() {
-			return this.outputDbType;
-		}
-
-		public void setOutputDbType(String outputDbType) {
-			this.outputDbType = outputDbType;
-		}
-
-		public Long getOutputProjectId() {
-			return this.outputProjectId;
-		}
-
-		public void setOutputProjectId(Long outputProjectId) {
-			this.outputProjectId = outputProjectId;
-		}
-
-		public Long getOutputDataSourceId() {
-			return this.outputDataSourceId;
-		}
-
-		public void setOutputDataSourceId(Long outputDataSourceId) {
-			this.outputDataSourceId = outputDataSourceId;
-		}
-
-		public String getOutputTableId() {
-			return this.outputTableId;
-		}
-
-		public void setOutputTableId(String outputTableId) {
-			this.outputTableId = outputTableId;
-		}
-
-		public String getOutputTableName() {
-			return this.outputTableName;
-		}
-
-		public void setOutputTableName(String outputTableName) {
-			this.outputTableName = outputTableName;
-		}
-
-		public String getOutputColumnId() {
-			return this.outputColumnId;
-		}
-
-		public void setOutputColumnId(String outputColumnId) {
-			this.outputColumnId = outputColumnId;
-		}
-
 		public String getOutputColumnName() {
 			return this.outputColumnName;
 		}
 
 		public void setOutputColumnName(String outputColumnName) {
 			this.outputColumnName = outputColumnName;
-		}
-
-		public Boolean getOutputTableDeleted() {
-			return this.outputTableDeleted;
-		}
-
-		public void setOutputTableDeleted(Boolean outputTableDeleted) {
-			this.outputTableDeleted = outputTableDeleted;
 		}
 	}
 

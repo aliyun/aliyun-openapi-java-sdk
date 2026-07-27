@@ -23,10 +23,10 @@ public class DeleteAdHocFileResponseUnmarshaller {
 	public static DeleteAdHocFileResponse unmarshall(DeleteAdHocFileResponse deleteAdHocFileResponse, UnmarshallerContext _ctx) {
 		
 		deleteAdHocFileResponse.setRequestId(_ctx.stringValue("DeleteAdHocFileResponse.RequestId"));
-		deleteAdHocFileResponse.setSuccess(_ctx.booleanValue("DeleteAdHocFileResponse.Success"));
+		deleteAdHocFileResponse.setMessage(_ctx.stringValue("DeleteAdHocFileResponse.Message"));
 		deleteAdHocFileResponse.setHttpStatusCode(_ctx.integerValue("DeleteAdHocFileResponse.HttpStatusCode"));
 		deleteAdHocFileResponse.setCode(_ctx.stringValue("DeleteAdHocFileResponse.Code"));
-		deleteAdHocFileResponse.setMessage(_ctx.stringValue("DeleteAdHocFileResponse.Message"));
+		deleteAdHocFileResponse.setSuccess(_ctx.booleanValue("DeleteAdHocFileResponse.Success"));
 	 
 	 	return deleteAdHocFileResponse;
 	}

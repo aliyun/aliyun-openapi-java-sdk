@@ -27,13 +27,13 @@ public class GetDevObjectDependencyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<DevObjectDependency> devObjectDependencyList;
 
@@ -45,12 +45,12 @@ public class GetDevObjectDependencyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetDevObjectDependencyResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DevObjectDependency> getDevObjectDependencyList() {
@@ -382,18 +382,18 @@ public class GetDevObjectDependencyResponse extends AcsResponse {
 
 		public static class ContextParam {
 
-			private String key;
+			private String defaultValue;
 
 			private String description;
 
-			private String defaultValue;
+			private String key;
 
-			public String getKey() {
-				return this.key;
+			public String getDefaultValue() {
+				return this.defaultValue;
 			}
 
-			public void setKey(String key) {
-				this.key = key;
+			public void setDefaultValue(String defaultValue) {
+				this.defaultValue = defaultValue;
 			}
 
 			public String getDescription() {
@@ -404,12 +404,12 @@ public class GetDevObjectDependencyResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getDefaultValue() {
-				return this.defaultValue;
+			public String getKey() {
+				return this.key;
 			}
 
-			public void setDefaultValue(String defaultValue) {
-				this.defaultValue = defaultValue;
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 

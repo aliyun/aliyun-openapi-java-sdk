@@ -23,10 +23,10 @@ public class ReplaceProjectWhiteListsResponseUnmarshaller {
 	public static ReplaceProjectWhiteListsResponse unmarshall(ReplaceProjectWhiteListsResponse replaceProjectWhiteListsResponse, UnmarshallerContext _ctx) {
 		
 		replaceProjectWhiteListsResponse.setRequestId(_ctx.stringValue("ReplaceProjectWhiteListsResponse.RequestId"));
-		replaceProjectWhiteListsResponse.setSuccess(_ctx.booleanValue("ReplaceProjectWhiteListsResponse.Success"));
+		replaceProjectWhiteListsResponse.setMessage(_ctx.stringValue("ReplaceProjectWhiteListsResponse.Message"));
 		replaceProjectWhiteListsResponse.setHttpStatusCode(_ctx.integerValue("ReplaceProjectWhiteListsResponse.HttpStatusCode"));
 		replaceProjectWhiteListsResponse.setCode(_ctx.stringValue("ReplaceProjectWhiteListsResponse.Code"));
-		replaceProjectWhiteListsResponse.setMessage(_ctx.stringValue("ReplaceProjectWhiteListsResponse.Message"));
+		replaceProjectWhiteListsResponse.setSuccess(_ctx.booleanValue("ReplaceProjectWhiteListsResponse.Success"));
 	 
 	 	return replaceProjectWhiteListsResponse;
 	}

@@ -26,13 +26,13 @@ public class GetOperationRecordRunCodeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private OperationLogCodeResponse operationLogCodeResponse;
 
@@ -44,12 +44,12 @@ public class GetOperationRecordRunCodeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,12 +68,12 @@ public class GetOperationRecordRunCodeResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public OperationLogCodeResponse getOperationLogCodeResponse() {
@@ -86,29 +86,13 @@ public class GetOperationRecordRunCodeResponse extends AcsResponse {
 
 	public static class OperationLogCodeResponse {
 
-		private Integer operatorId;
-
-		private String code;
-
 		private String operatorName;
 
 		private Integer sqlNum;
 
-		public Integer getOperatorId() {
-			return this.operatorId;
-		}
+		private Integer operatorId;
 
-		public void setOperatorId(Integer operatorId) {
-			this.operatorId = operatorId;
-		}
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
+		private String code;
 
 		public String getOperatorName() {
 			return this.operatorName;
@@ -124,6 +108,22 @@ public class GetOperationRecordRunCodeResponse extends AcsResponse {
 
 		public void setSqlNum(Integer sqlNum) {
 			this.sqlNum = sqlNum;
+		}
+
+		public Integer getOperatorId() {
+			return this.operatorId;
+		}
+
+		public void setOperatorId(Integer operatorId) {
+			this.operatorId = operatorId;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
 		}
 	}
 

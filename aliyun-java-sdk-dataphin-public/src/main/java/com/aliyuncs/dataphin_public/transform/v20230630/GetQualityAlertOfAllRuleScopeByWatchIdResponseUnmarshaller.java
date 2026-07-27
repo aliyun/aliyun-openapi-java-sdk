@@ -29,14 +29,14 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdResponseUnmarshaller {
 	public static GetQualityAlertOfAllRuleScopeByWatchIdResponse unmarshall(GetQualityAlertOfAllRuleScopeByWatchIdResponse getQualityAlertOfAllRuleScopeByWatchIdResponse, UnmarshallerContext _ctx) {
 		
 		getQualityAlertOfAllRuleScopeByWatchIdResponse.setRequestId(_ctx.stringValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.RequestId"));
-		getQualityAlertOfAllRuleScopeByWatchIdResponse.setSuccess(_ctx.booleanValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.Success"));
+		getQualityAlertOfAllRuleScopeByWatchIdResponse.setMessage(_ctx.stringValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.Message"));
 		getQualityAlertOfAllRuleScopeByWatchIdResponse.setHttpStatusCode(_ctx.integerValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.HttpStatusCode"));
 		getQualityAlertOfAllRuleScopeByWatchIdResponse.setCode(_ctx.stringValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.Code"));
-		getQualityAlertOfAllRuleScopeByWatchIdResponse.setMessage(_ctx.stringValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.Message"));
+		getQualityAlertOfAllRuleScopeByWatchIdResponse.setSuccess(_ctx.booleanValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.Success"));
 
 		QualityAlertInfo qualityAlertInfo = new QualityAlertInfo();
-		qualityAlertInfo.setWatchId(_ctx.longValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.QualityAlertInfo.WatchId"));
 		qualityAlertInfo.setEnableAlertQualityOwner(_ctx.booleanValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.QualityAlertInfo.EnableAlertQualityOwner"));
+		qualityAlertInfo.setWatchId(_ctx.longValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.QualityAlertInfo.WatchId"));
 
 		List<String> alertUserChannelList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.QualityAlertInfo.AlertUserChannelList.Length"); i++) {
@@ -56,16 +56,6 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdResponseUnmarshaller {
 		}
 		qualityAlertInfo.setAlertQualityOwnerChannelList(alertQualityOwnerChannelList);
 
-		List<AlertUser> alertUserList = new ArrayList<AlertUser>();
-		for (int i = 0; i < _ctx.lengthValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.QualityAlertInfo.AlertUserList.Length"); i++) {
-			AlertUser alertUser = new AlertUser();
-			alertUser.setId(_ctx.stringValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.QualityAlertInfo.AlertUserList["+ i +"].Id"));
-			alertUser.setName(_ctx.stringValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.QualityAlertInfo.AlertUserList["+ i +"].Name"));
-
-			alertUserList.add(alertUser);
-		}
-		qualityAlertInfo.setAlertUserList(alertUserList);
-
 		List<AlertDuty> alertDutyList = new ArrayList<AlertDuty>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.QualityAlertInfo.AlertDutyList.Length"); i++) {
 			AlertDuty alertDuty = new AlertDuty();
@@ -75,6 +65,16 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdResponseUnmarshaller {
 			alertDutyList.add(alertDuty);
 		}
 		qualityAlertInfo.setAlertDutyList(alertDutyList);
+
+		List<AlertUser> alertUserList = new ArrayList<AlertUser>();
+		for (int i = 0; i < _ctx.lengthValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.QualityAlertInfo.AlertUserList.Length"); i++) {
+			AlertUser alertUser = new AlertUser();
+			alertUser.setId(_ctx.stringValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.QualityAlertInfo.AlertUserList["+ i +"].Id"));
+			alertUser.setName(_ctx.stringValue("GetQualityAlertOfAllRuleScopeByWatchIdResponse.QualityAlertInfo.AlertUserList["+ i +"].Name"));
+
+			alertUserList.add(alertUser);
+		}
+		qualityAlertInfo.setAlertUserList(alertUserList);
 		getQualityAlertOfAllRuleScopeByWatchIdResponse.setQualityAlertInfo(qualityAlertInfo);
 	 
 	 	return getQualityAlertOfAllRuleScopeByWatchIdResponse;

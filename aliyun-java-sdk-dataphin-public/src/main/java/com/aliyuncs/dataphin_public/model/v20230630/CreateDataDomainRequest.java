@@ -73,11 +73,11 @@ public class CreateDataDomainRequest extends RpcAcsRequest<CreateDataDomainRespo
 		@SerializedName("Abbreviation")
 		private String abbreviation;
 
-		@SerializedName("BizUnitId")
-		private Long bizUnitId;
-
 		@SerializedName("ParentId")
 		private Long parentId;
+
+		@SerializedName("BizUnitId")
+		private Long bizUnitId;
 
 		public String getDisplayName() {
 			return this.displayName;
@@ -111,20 +111,20 @@ public class CreateDataDomainRequest extends RpcAcsRequest<CreateDataDomainRespo
 			this.abbreviation = abbreviation;
 		}
 
-		public Long getBizUnitId() {
-			return this.bizUnitId;
-		}
-
-		public void setBizUnitId(Long bizUnitId) {
-			this.bizUnitId = bizUnitId;
-		}
-
 		public Long getParentId() {
 			return this.parentId;
 		}
 
 		public void setParentId(Long parentId) {
 			this.parentId = parentId;
+		}
+
+		public Long getBizUnitId() {
+			return this.bizUnitId;
+		}
+
+		public void setBizUnitId(Long bizUnitId) {
+			this.bizUnitId = bizUnitId;
 		}
 	}
 

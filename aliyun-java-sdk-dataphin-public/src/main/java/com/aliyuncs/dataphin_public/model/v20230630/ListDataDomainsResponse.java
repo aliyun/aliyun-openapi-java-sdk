@@ -27,13 +27,13 @@ public class ListDataDomainsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -45,12 +45,12 @@ public class ListDataDomainsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListDataDomainsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,63 +99,31 @@ public class ListDataDomainsResponse extends AcsResponse {
 
 		public static class DataDomainInfo {
 
-			private Long id;
-
-			private Long bizUnitId;
-
-			private String name;
-
-			private String displayName;
-
 			private String abbreviation;
-
-			private String description;
-
-			private String ownerUserId;
-
-			private String ownerName;
-
-			private String gmtCreate;
-
-			private String gmtModified;
-
-			private String lastModifier;
-
-			private String lastModifierName;
 
 			private Long parentId;
 
-			public Long getId() {
-				return this.id;
-			}
+			private String ownerName;
 
-			public void setId(Long id) {
-				this.id = id;
-			}
+			private String lastModifier;
 
-			public Long getBizUnitId() {
-				return this.bizUnitId;
-			}
+			private String description;
 
-			public void setBizUnitId(Long bizUnitId) {
-				this.bizUnitId = bizUnitId;
-			}
+			private String gmtModified;
 
-			public String getName() {
-				return this.name;
-			}
+			private String lastModifierName;
 
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
-			public String getDisplayName() {
-				return this.displayName;
-			}
+			private Long bizUnitId;
 
-			public void setDisplayName(String displayName) {
-				this.displayName = displayName;
-			}
+			private String ownerUserId;
+
+			private String gmtCreate;
+
+			private String displayName;
+
+			private Long id;
 
 			public String getAbbreviation() {
 				return this.abbreviation;
@@ -165,20 +133,12 @@ public class ListDataDomainsResponse extends AcsResponse {
 				this.abbreviation = abbreviation;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public Long getParentId() {
+				return this.parentId;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getOwnerUserId() {
-				return this.ownerUserId;
-			}
-
-			public void setOwnerUserId(String ownerUserId) {
-				this.ownerUserId = ownerUserId;
+			public void setParentId(Long parentId) {
+				this.parentId = parentId;
 			}
 
 			public String getOwnerName() {
@@ -189,12 +149,20 @@ public class ListDataDomainsResponse extends AcsResponse {
 				this.ownerName = ownerName;
 			}
 
-			public String getGmtCreate() {
-				return this.gmtCreate;
+			public String getLastModifier() {
+				return this.lastModifier;
 			}
 
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
+			public void setLastModifier(String lastModifier) {
+				this.lastModifier = lastModifier;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getGmtModified() {
@@ -205,14 +173,6 @@ public class ListDataDomainsResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public String getLastModifier() {
-				return this.lastModifier;
-			}
-
-			public void setLastModifier(String lastModifier) {
-				this.lastModifier = lastModifier;
-			}
-
 			public String getLastModifierName() {
 				return this.lastModifierName;
 			}
@@ -221,12 +181,52 @@ public class ListDataDomainsResponse extends AcsResponse {
 				this.lastModifierName = lastModifierName;
 			}
 
-			public Long getParentId() {
-				return this.parentId;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setParentId(Long parentId) {
-				this.parentId = parentId;
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Long getBizUnitId() {
+				return this.bizUnitId;
+			}
+
+			public void setBizUnitId(Long bizUnitId) {
+				this.bizUnitId = bizUnitId;
+			}
+
+			public String getOwnerUserId() {
+				return this.ownerUserId;
+			}
+
+			public void setOwnerUserId(String ownerUserId) {
+				this.ownerUserId = ownerUserId;
+			}
+
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getDisplayName() {
+				return this.displayName;
+			}
+
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

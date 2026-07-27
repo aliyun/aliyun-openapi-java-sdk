@@ -23,10 +23,10 @@ public class PublishStandardResponseUnmarshaller {
 	public static PublishStandardResponse unmarshall(PublishStandardResponse publishStandardResponse, UnmarshallerContext _ctx) {
 		
 		publishStandardResponse.setRequestId(_ctx.stringValue("PublishStandardResponse.RequestId"));
-		publishStandardResponse.setSuccess(_ctx.booleanValue("PublishStandardResponse.Success"));
+		publishStandardResponse.setMessage(_ctx.stringValue("PublishStandardResponse.Message"));
 		publishStandardResponse.setHttpStatusCode(_ctx.integerValue("PublishStandardResponse.HttpStatusCode"));
 		publishStandardResponse.setCode(_ctx.stringValue("PublishStandardResponse.Code"));
-		publishStandardResponse.setMessage(_ctx.stringValue("PublishStandardResponse.Message"));
+		publishStandardResponse.setSuccess(_ctx.booleanValue("PublishStandardResponse.Success"));
 	 
 	 	return publishStandardResponse;
 	}

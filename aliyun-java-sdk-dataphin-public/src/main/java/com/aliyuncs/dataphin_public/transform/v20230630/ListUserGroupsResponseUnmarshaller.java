@@ -29,10 +29,10 @@ public class ListUserGroupsResponseUnmarshaller {
 	public static ListUserGroupsResponse unmarshall(ListUserGroupsResponse listUserGroupsResponse, UnmarshallerContext _ctx) {
 		
 		listUserGroupsResponse.setRequestId(_ctx.stringValue("ListUserGroupsResponse.RequestId"));
-		listUserGroupsResponse.setSuccess(_ctx.booleanValue("ListUserGroupsResponse.Success"));
+		listUserGroupsResponse.setMessage(_ctx.stringValue("ListUserGroupsResponse.Message"));
 		listUserGroupsResponse.setHttpStatusCode(_ctx.integerValue("ListUserGroupsResponse.HttpStatusCode"));
 		listUserGroupsResponse.setCode(_ctx.stringValue("ListUserGroupsResponse.Code"));
-		listUserGroupsResponse.setMessage(_ctx.stringValue("ListUserGroupsResponse.Message"));
+		listUserGroupsResponse.setSuccess(_ctx.booleanValue("ListUserGroupsResponse.Success"));
 
 		PageResult pageResult = new PageResult();
 		pageResult.setTotalCount(_ctx.integerValue("ListUserGroupsResponse.PageResult.TotalCount"));
@@ -40,17 +40,17 @@ public class ListUserGroupsResponseUnmarshaller {
 		List<UserGroupInfo> userGroupList = new ArrayList<UserGroupInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserGroupsResponse.PageResult.UserGroupList.Length"); i++) {
 			UserGroupInfo userGroupInfo = new UserGroupInfo();
+			userGroupInfo.setActive(_ctx.booleanValue("ListUserGroupsResponse.PageResult.UserGroupList["+ i +"].Active"));
+			userGroupInfo.setDescription(_ctx.stringValue("ListUserGroupsResponse.PageResult.UserGroupList["+ i +"].Description"));
+			userGroupInfo.setMyRole(_ctx.stringValue("ListUserGroupsResponse.PageResult.UserGroupList["+ i +"].MyRole"));
 			userGroupInfo.setId(_ctx.stringValue("ListUserGroupsResponse.PageResult.UserGroupList["+ i +"].Id"));
 			userGroupInfo.setName(_ctx.stringValue("ListUserGroupsResponse.PageResult.UserGroupList["+ i +"].Name"));
-			userGroupInfo.setDescription(_ctx.stringValue("ListUserGroupsResponse.PageResult.UserGroupList["+ i +"].Description"));
-			userGroupInfo.setActive(_ctx.booleanValue("ListUserGroupsResponse.PageResult.UserGroupList["+ i +"].Active"));
-			userGroupInfo.setMyRole(_ctx.stringValue("ListUserGroupsResponse.PageResult.UserGroupList["+ i +"].MyRole"));
 
 			List<User> adminList = new ArrayList<User>();
 			for (int j = 0; j < _ctx.lengthValue("ListUserGroupsResponse.PageResult.UserGroupList["+ i +"].AdminList.Length"); j++) {
 				User user = new User();
-				user.setId(_ctx.stringValue("ListUserGroupsResponse.PageResult.UserGroupList["+ i +"].AdminList["+ j +"].Id"));
 				user.setDisplayName(_ctx.stringValue("ListUserGroupsResponse.PageResult.UserGroupList["+ i +"].AdminList["+ j +"].DisplayName"));
+				user.setId(_ctx.stringValue("ListUserGroupsResponse.PageResult.UserGroupList["+ i +"].AdminList["+ j +"].Id"));
 				user.setAccountName(_ctx.stringValue("ListUserGroupsResponse.PageResult.UserGroupList["+ i +"].AdminList["+ j +"].AccountName"));
 
 				adminList.add(user);

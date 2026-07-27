@@ -27,14 +27,14 @@ public class DeleteSecurityLevelResponseUnmarshaller {
 	public static DeleteSecurityLevelResponse unmarshall(DeleteSecurityLevelResponse deleteSecurityLevelResponse, UnmarshallerContext _ctx) {
 		
 		deleteSecurityLevelResponse.setRequestId(_ctx.stringValue("DeleteSecurityLevelResponse.RequestId"));
-		deleteSecurityLevelResponse.setSuccess(_ctx.booleanValue("DeleteSecurityLevelResponse.Success"));
+		deleteSecurityLevelResponse.setMessage(_ctx.stringValue("DeleteSecurityLevelResponse.Message"));
 		deleteSecurityLevelResponse.setHttpStatusCode(_ctx.integerValue("DeleteSecurityLevelResponse.HttpStatusCode"));
 		deleteSecurityLevelResponse.setCode(_ctx.stringValue("DeleteSecurityLevelResponse.Code"));
-		deleteSecurityLevelResponse.setMessage(_ctx.stringValue("DeleteSecurityLevelResponse.Message"));
+		deleteSecurityLevelResponse.setSuccess(_ctx.booleanValue("DeleteSecurityLevelResponse.Success"));
 
 		DeleteResult deleteResult = new DeleteResult();
-		deleteResult.setSuccess(_ctx.booleanValue("DeleteSecurityLevelResponse.DeleteResult.Success"));
 		deleteResult.setErrorCode(_ctx.stringValue("DeleteSecurityLevelResponse.DeleteResult.ErrorCode"));
+		deleteResult.setSuccess(_ctx.booleanValue("DeleteSecurityLevelResponse.DeleteResult.Success"));
 
 		List<Long> relatedClassifyIdList = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("DeleteSecurityLevelResponse.DeleteResult.RelatedClassifyIdList.Length"); i++) {

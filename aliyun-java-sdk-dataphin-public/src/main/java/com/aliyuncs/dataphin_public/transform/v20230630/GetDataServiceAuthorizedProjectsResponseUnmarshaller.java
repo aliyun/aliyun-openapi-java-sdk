@@ -27,10 +27,10 @@ public class GetDataServiceAuthorizedProjectsResponseUnmarshaller {
 	public static GetDataServiceAuthorizedProjectsResponse unmarshall(GetDataServiceAuthorizedProjectsResponse getDataServiceAuthorizedProjectsResponse, UnmarshallerContext _ctx) {
 		
 		getDataServiceAuthorizedProjectsResponse.setRequestId(_ctx.stringValue("GetDataServiceAuthorizedProjectsResponse.RequestId"));
-		getDataServiceAuthorizedProjectsResponse.setSuccess(_ctx.booleanValue("GetDataServiceAuthorizedProjectsResponse.Success"));
+		getDataServiceAuthorizedProjectsResponse.setMessage(_ctx.stringValue("GetDataServiceAuthorizedProjectsResponse.Message"));
 		getDataServiceAuthorizedProjectsResponse.setHttpStatusCode(_ctx.integerValue("GetDataServiceAuthorizedProjectsResponse.HttpStatusCode"));
 		getDataServiceAuthorizedProjectsResponse.setCode(_ctx.stringValue("GetDataServiceAuthorizedProjectsResponse.Code"));
-		getDataServiceAuthorizedProjectsResponse.setMessage(_ctx.stringValue("GetDataServiceAuthorizedProjectsResponse.Message"));
+		getDataServiceAuthorizedProjectsResponse.setSuccess(_ctx.booleanValue("GetDataServiceAuthorizedProjectsResponse.Success"));
 
 		List<Project> projectList = new ArrayList<Project>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataServiceAuthorizedProjectsResponse.ProjectList.Length"); i++) {

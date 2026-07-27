@@ -26,15 +26,15 @@ public class CreateUserGroupResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
+
+	private String userGroupId;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
-
-	private String userGroupId;
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,12 +44,20 @@ public class CreateUserGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getUserGroupId() {
+		return this.userGroupId;
+	}
+
+	public void setUserGroupId(String userGroupId) {
+		this.userGroupId = userGroupId;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -68,20 +76,12 @@ public class CreateUserGroupResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getUserGroupId() {
-		return this.userGroupId;
-	}
-
-	public void setUserGroupId(String userGroupId) {
-		this.userGroupId = userGroupId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

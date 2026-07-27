@@ -27,13 +27,13 @@ public class GetDirectoryTreeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<DataItem> data;
 
@@ -45,12 +45,12 @@ public class GetDirectoryTreeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetDirectoryTreeResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -109,48 +109,48 @@ public class GetDirectoryTreeResponse extends AcsResponse {
 
 		public static class Parent {
 
-			private Long id;
+			private String lastModifier;
 
-			private String stringId;
+			private String dirName;
 
 			private Long projectId;
 
+			private String gmtModified;
+
 			private String categoryType;
+
+			private String creator;
 
 			private Long dataCellId;
 
-			private String dirName;
+			private String lastModifierName;
 
 			private String name;
 
 			private String type;
 
-			private String creator;
+			private String gmtCreate;
+
+			private String stringId;
+
+			private Long id;
 
 			private String creatorName;
 
-			private String gmtCreate;
-
-			private String gmtModified;
-
-			private String lastModifier;
-
-			private String lastModifierName;
-
-			public Long getId() {
-				return this.id;
+			public String getLastModifier() {
+				return this.lastModifier;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
+			public void setLastModifier(String lastModifier) {
+				this.lastModifier = lastModifier;
 			}
 
-			public String getStringId() {
-				return this.stringId;
+			public String getDirName() {
+				return this.dirName;
 			}
 
-			public void setStringId(String stringId) {
-				this.stringId = stringId;
+			public void setDirName(String dirName) {
+				this.dirName = dirName;
 			}
 
 			public Long getProjectId() {
@@ -161,12 +161,28 @@ public class GetDirectoryTreeResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
 			public String getCategoryType() {
 				return this.categoryType;
 			}
 
 			public void setCategoryType(String categoryType) {
 				this.categoryType = categoryType;
+			}
+
+			public String getCreator() {
+				return this.creator;
+			}
+
+			public void setCreator(String creator) {
+				this.creator = creator;
 			}
 
 			public Long getDataCellId() {
@@ -177,12 +193,12 @@ public class GetDirectoryTreeResponse extends AcsResponse {
 				this.dataCellId = dataCellId;
 			}
 
-			public String getDirName() {
-				return this.dirName;
+			public String getLastModifierName() {
+				return this.lastModifierName;
 			}
 
-			public void setDirName(String dirName) {
-				this.dirName = dirName;
+			public void setLastModifierName(String lastModifierName) {
+				this.lastModifierName = lastModifierName;
 			}
 
 			public String getName() {
@@ -201,22 +217,6 @@ public class GetDirectoryTreeResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public String getCreator() {
-				return this.creator;
-			}
-
-			public void setCreator(String creator) {
-				this.creator = creator;
-			}
-
-			public String getCreatorName() {
-				return this.creatorName;
-			}
-
-			public void setCreatorName(String creatorName) {
-				this.creatorName = creatorName;
-			}
-
 			public String getGmtCreate() {
 				return this.gmtCreate;
 			}
@@ -225,75 +225,75 @@ public class GetDirectoryTreeResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
-			public String getGmtModified() {
-				return this.gmtModified;
+			public String getStringId() {
+				return this.stringId;
 			}
 
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
+			public void setStringId(String stringId) {
+				this.stringId = stringId;
 			}
 
-			public String getLastModifier() {
-				return this.lastModifier;
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setLastModifier(String lastModifier) {
-				this.lastModifier = lastModifier;
+			public void setId(Long id) {
+				this.id = id;
 			}
 
-			public String getLastModifierName() {
-				return this.lastModifierName;
+			public String getCreatorName() {
+				return this.creatorName;
 			}
 
-			public void setLastModifierName(String lastModifierName) {
-				this.lastModifierName = lastModifierName;
+			public void setCreatorName(String creatorName) {
+				this.creatorName = creatorName;
 			}
 		}
 
 		public static class Children {
 
-			private Long id;
+			private String lastModifier;
 
-			private String stringId;
+			private String dirName;
 
 			private Long projectId;
 
+			private String gmtModified;
+
 			private String categoryType;
+
+			private String creator;
 
 			private Long dataCellId;
 
-			private String dirName;
+			private String lastModifierName;
 
 			private String name;
 
 			private String type;
 
-			private String creator;
+			private String gmtCreate;
+
+			private String stringId;
+
+			private Long id;
 
 			private String creatorName;
 
-			private String gmtCreate;
-
-			private String gmtModified;
-
-			private String lastModifier;
-
-			private String lastModifierName;
-
-			public Long getId() {
-				return this.id;
+			public String getLastModifier() {
+				return this.lastModifier;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
+			public void setLastModifier(String lastModifier) {
+				this.lastModifier = lastModifier;
 			}
 
-			public String getStringId() {
-				return this.stringId;
+			public String getDirName() {
+				return this.dirName;
 			}
 
-			public void setStringId(String stringId) {
-				this.stringId = stringId;
+			public void setDirName(String dirName) {
+				this.dirName = dirName;
 			}
 
 			public Long getProjectId() {
@@ -304,12 +304,28 @@ public class GetDirectoryTreeResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
 			public String getCategoryType() {
 				return this.categoryType;
 			}
 
 			public void setCategoryType(String categoryType) {
 				this.categoryType = categoryType;
+			}
+
+			public String getCreator() {
+				return this.creator;
+			}
+
+			public void setCreator(String creator) {
+				this.creator = creator;
 			}
 
 			public Long getDataCellId() {
@@ -320,12 +336,12 @@ public class GetDirectoryTreeResponse extends AcsResponse {
 				this.dataCellId = dataCellId;
 			}
 
-			public String getDirName() {
-				return this.dirName;
+			public String getLastModifierName() {
+				return this.lastModifierName;
 			}
 
-			public void setDirName(String dirName) {
-				this.dirName = dirName;
+			public void setLastModifierName(String lastModifierName) {
+				this.lastModifierName = lastModifierName;
 			}
 
 			public String getName() {
@@ -344,22 +360,6 @@ public class GetDirectoryTreeResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public String getCreator() {
-				return this.creator;
-			}
-
-			public void setCreator(String creator) {
-				this.creator = creator;
-			}
-
-			public String getCreatorName() {
-				return this.creatorName;
-			}
-
-			public void setCreatorName(String creatorName) {
-				this.creatorName = creatorName;
-			}
-
 			public String getGmtCreate() {
 				return this.gmtCreate;
 			}
@@ -368,28 +368,28 @@ public class GetDirectoryTreeResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
-			public String getGmtModified() {
-				return this.gmtModified;
+			public String getStringId() {
+				return this.stringId;
 			}
 
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
+			public void setStringId(String stringId) {
+				this.stringId = stringId;
 			}
 
-			public String getLastModifier() {
-				return this.lastModifier;
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setLastModifier(String lastModifier) {
-				this.lastModifier = lastModifier;
+			public void setId(Long id) {
+				this.id = id;
 			}
 
-			public String getLastModifierName() {
-				return this.lastModifierName;
+			public String getCreatorName() {
+				return this.creatorName;
 			}
 
-			public void setLastModifierName(String lastModifierName) {
-				this.lastModifierName = lastModifierName;
+			public void setCreatorName(String creatorName) {
+				this.creatorName = creatorName;
 			}
 		}
 	}

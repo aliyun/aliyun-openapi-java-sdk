@@ -23,10 +23,10 @@ public class DeleteStandardSetResponseUnmarshaller {
 	public static DeleteStandardSetResponse unmarshall(DeleteStandardSetResponse deleteStandardSetResponse, UnmarshallerContext _ctx) {
 		
 		deleteStandardSetResponse.setRequestId(_ctx.stringValue("DeleteStandardSetResponse.RequestId"));
-		deleteStandardSetResponse.setSuccess(_ctx.booleanValue("DeleteStandardSetResponse.Success"));
+		deleteStandardSetResponse.setMessage(_ctx.stringValue("DeleteStandardSetResponse.Message"));
 		deleteStandardSetResponse.setHttpStatusCode(_ctx.integerValue("DeleteStandardSetResponse.HttpStatusCode"));
 		deleteStandardSetResponse.setCode(_ctx.stringValue("DeleteStandardSetResponse.Code"));
-		deleteStandardSetResponse.setMessage(_ctx.stringValue("DeleteStandardSetResponse.Message"));
+		deleteStandardSetResponse.setSuccess(_ctx.booleanValue("DeleteStandardSetResponse.Success"));
 	 
 	 	return deleteStandardSetResponse;
 	}

@@ -27,13 +27,13 @@ public class ListNodesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -45,12 +45,12 @@ public class ListNodesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListNodesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -139,9 +139,9 @@ public class ListNodesResponse extends AcsResponse {
 
 			private List<User> ownerList;
 
-			private List<String> priorityList;
-
 			private List<String> schedulePeriodList;
+
+			private List<String> priorityList;
 
 			private Creator creator;
 
@@ -269,20 +269,20 @@ public class ListNodesResponse extends AcsResponse {
 				this.ownerList = ownerList;
 			}
 
-			public List<String> getPriorityList() {
-				return this.priorityList;
-			}
-
-			public void setPriorityList(List<String> priorityList) {
-				this.priorityList = priorityList;
-			}
-
 			public List<String> getSchedulePeriodList() {
 				return this.schedulePeriodList;
 			}
 
 			public void setSchedulePeriodList(List<String> schedulePeriodList) {
 				this.schedulePeriodList = schedulePeriodList;
+			}
+
+			public List<String> getPriorityList() {
+				return this.priorityList;
+			}
+
+			public void setPriorityList(List<String> priorityList) {
+				this.priorityList = priorityList;
 			}
 
 			public Creator getCreator() {

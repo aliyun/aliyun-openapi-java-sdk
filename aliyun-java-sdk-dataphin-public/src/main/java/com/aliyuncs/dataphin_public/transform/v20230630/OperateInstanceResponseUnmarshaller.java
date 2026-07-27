@@ -27,21 +27,21 @@ public class OperateInstanceResponseUnmarshaller {
 	public static OperateInstanceResponse unmarshall(OperateInstanceResponse operateInstanceResponse, UnmarshallerContext _ctx) {
 		
 		operateInstanceResponse.setRequestId(_ctx.stringValue("OperateInstanceResponse.RequestId"));
-		operateInstanceResponse.setSuccess(_ctx.booleanValue("OperateInstanceResponse.Success"));
+		operateInstanceResponse.setMessage(_ctx.stringValue("OperateInstanceResponse.Message"));
 		operateInstanceResponse.setHttpStatusCode(_ctx.integerValue("OperateInstanceResponse.HttpStatusCode"));
 		operateInstanceResponse.setCode(_ctx.stringValue("OperateInstanceResponse.Code"));
-		operateInstanceResponse.setMessage(_ctx.stringValue("OperateInstanceResponse.Message"));
+		operateInstanceResponse.setSuccess(_ctx.booleanValue("OperateInstanceResponse.Success"));
 
 		List<InstanceStatus> instanceStatusList = new ArrayList<InstanceStatus>();
 		for (int i = 0; i < _ctx.lengthValue("OperateInstanceResponse.InstanceStatusList.Length"); i++) {
 			InstanceStatus instanceStatus = new InstanceStatus();
-			instanceStatus.setId(_ctx.stringValue("OperateInstanceResponse.InstanceStatusList["+ i +"].Id"));
-			instanceStatus.setName(_ctx.stringValue("OperateInstanceResponse.InstanceStatusList["+ i +"].Name"));
-			instanceStatus.setDisplayName(_ctx.stringValue("OperateInstanceResponse.InstanceStatusList["+ i +"].DisplayName"));
 			instanceStatus.setStatus(_ctx.stringValue("OperateInstanceResponse.InstanceStatusList["+ i +"].Status"));
-			instanceStatus.setErrorMessage(_ctx.stringValue("OperateInstanceResponse.InstanceStatusList["+ i +"].ErrorMessage"));
-			instanceStatus.setOwnerId(_ctx.stringValue("OperateInstanceResponse.InstanceStatusList["+ i +"].OwnerId"));
 			instanceStatus.setOwnerName(_ctx.stringValue("OperateInstanceResponse.InstanceStatusList["+ i +"].OwnerName"));
+			instanceStatus.setOwnerId(_ctx.stringValue("OperateInstanceResponse.InstanceStatusList["+ i +"].OwnerId"));
+			instanceStatus.setDisplayName(_ctx.stringValue("OperateInstanceResponse.InstanceStatusList["+ i +"].DisplayName"));
+			instanceStatus.setId(_ctx.stringValue("OperateInstanceResponse.InstanceStatusList["+ i +"].Id"));
+			instanceStatus.setErrorMessage(_ctx.stringValue("OperateInstanceResponse.InstanceStatusList["+ i +"].ErrorMessage"));
+			instanceStatus.setName(_ctx.stringValue("OperateInstanceResponse.InstanceStatusList["+ i +"].Name"));
 
 			instanceStatusList.add(instanceStatus);
 		}

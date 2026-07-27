@@ -27,13 +27,13 @@ public class GetStandardTemplateResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private TemplateInfo templateInfo;
 
@@ -45,12 +45,12 @@ public class GetStandardTemplateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetStandardTemplateResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public TemplateInfo getTemplateInfo() {
@@ -87,49 +87,33 @@ public class GetStandardTemplateResponse extends AcsResponse {
 
 	public static class TemplateInfo {
 
-		private Long id;
-
-		private String templateFrom;
-
 		private String uniqueId;
 
-		private Integer version;
-
-		private String name;
-
-		private String code;
+		private String modifyTime;
 
 		private String description;
 
 		private String createTime;
 
-		private String modifyTime;
+		private String code;
+
+		private String name;
+
+		private Integer version;
+
+		private Long id;
+
+		private String templateFrom;
 
 		private List<Maintainer> maintainerList;
-
-		private Creator creator;
 
 		private LastModifier lastModifier;
 
 		private AttributesConfig attributesConfig;
 
+		private Creator creator;
+
 		private CodeRuleConfig codeRuleConfig;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getTemplateFrom() {
-			return this.templateFrom;
-		}
-
-		public void setTemplateFrom(String templateFrom) {
-			this.templateFrom = templateFrom;
-		}
 
 		public String getUniqueId() {
 			return this.uniqueId;
@@ -139,28 +123,12 @@ public class GetStandardTemplateResponse extends AcsResponse {
 			this.uniqueId = uniqueId;
 		}
 
-		public Integer getVersion() {
-			return this.version;
+		public String getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setVersion(Integer version) {
-			this.version = version;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 
 		public String getDescription() {
@@ -179,12 +147,44 @@ public class GetStandardTemplateResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		public String getCode() {
+			return this.code;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Integer version) {
+			this.version = version;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getTemplateFrom() {
+			return this.templateFrom;
+		}
+
+		public void setTemplateFrom(String templateFrom) {
+			this.templateFrom = templateFrom;
 		}
 
 		public List<Maintainer> getMaintainerList() {
@@ -193,14 +193,6 @@ public class GetStandardTemplateResponse extends AcsResponse {
 
 		public void setMaintainerList(List<Maintainer> maintainerList) {
 			this.maintainerList = maintainerList;
-		}
-
-		public Creator getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(Creator creator) {
-			this.creator = creator;
 		}
 
 		public LastModifier getLastModifier() {
@@ -219,6 +211,14 @@ public class GetStandardTemplateResponse extends AcsResponse {
 			this.attributesConfig = attributesConfig;
 		}
 
+		public Creator getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(Creator creator) {
+			this.creator = creator;
+		}
+
 		public CodeRuleConfig getCodeRuleConfig() {
 			return this.codeRuleConfig;
 		}
@@ -228,29 +228,6 @@ public class GetStandardTemplateResponse extends AcsResponse {
 		}
 
 		public static class Maintainer {
-
-			private String id;
-
-			private String name;
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-		}
-
-		public static class Creator {
 
 			private String id;
 
@@ -310,41 +287,25 @@ public class GetStandardTemplateResponse extends AcsResponse {
 
 			public static class Attribute {
 
-				private String name;
-
-				private String code;
-
 				private String type;
-
-				private Boolean required;
-
-				private Boolean enableMonitorConfig;
 
 				private String description;
 
+				private Boolean required;
+
 				private Long id;
+
+				private String code;
+
+				private Boolean enableMonitorConfig;
+
+				private String name;
+
+				private RefAttribute refAttribute;
 
 				private ValueConfig valueConfig;
 
 				private MonitorConfig monitorConfig;
-
-				private RefAttribute refAttribute;
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public String getCode() {
-					return this.code;
-				}
-
-				public void setCode(String code) {
-					this.code = code;
-				}
 
 				public String getType() {
 					return this.type;
@@ -352,22 +313,6 @@ public class GetStandardTemplateResponse extends AcsResponse {
 
 				public void setType(String type) {
 					this.type = type;
-				}
-
-				public Boolean getRequired() {
-					return this.required;
-				}
-
-				public void setRequired(Boolean required) {
-					this.required = required;
-				}
-
-				public Boolean getEnableMonitorConfig() {
-					return this.enableMonitorConfig;
-				}
-
-				public void setEnableMonitorConfig(Boolean enableMonitorConfig) {
-					this.enableMonitorConfig = enableMonitorConfig;
 				}
 
 				public String getDescription() {
@@ -378,12 +323,52 @@ public class GetStandardTemplateResponse extends AcsResponse {
 					this.description = description;
 				}
 
+				public Boolean getRequired() {
+					return this.required;
+				}
+
+				public void setRequired(Boolean required) {
+					this.required = required;
+				}
+
 				public Long getId() {
 					return this.id;
 				}
 
 				public void setId(Long id) {
 					this.id = id;
+				}
+
+				public String getCode() {
+					return this.code;
+				}
+
+				public void setCode(String code) {
+					this.code = code;
+				}
+
+				public Boolean getEnableMonitorConfig() {
+					return this.enableMonitorConfig;
+				}
+
+				public void setEnableMonitorConfig(Boolean enableMonitorConfig) {
+					this.enableMonitorConfig = enableMonitorConfig;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public RefAttribute getRefAttribute() {
+					return this.refAttribute;
+				}
+
+				public void setRefAttribute(RefAttribute refAttribute) {
+					this.refAttribute = refAttribute;
 				}
 
 				public ValueConfig getValueConfig() {
@@ -400,219 +385,6 @@ public class GetStandardTemplateResponse extends AcsResponse {
 
 				public void setMonitorConfig(MonitorConfig monitorConfig) {
 					this.monitorConfig = monitorConfig;
-				}
-
-				public RefAttribute getRefAttribute() {
-					return this.refAttribute;
-				}
-
-				public void setRefAttribute(RefAttribute refAttribute) {
-					this.refAttribute = refAttribute;
-				}
-
-				public static class ValueConfig {
-
-					private String type;
-
-					private String dataType;
-
-					private Integer length;
-
-					private String defaultValue;
-
-					private ValueRange valueRange;
-
-					public String getType() {
-						return this.type;
-					}
-
-					public void setType(String type) {
-						this.type = type;
-					}
-
-					public String getDataType() {
-						return this.dataType;
-					}
-
-					public void setDataType(String dataType) {
-						this.dataType = dataType;
-					}
-
-					public Integer getLength() {
-						return this.length;
-					}
-
-					public void setLength(Integer length) {
-						this.length = length;
-					}
-
-					public String getDefaultValue() {
-						return this.defaultValue;
-					}
-
-					public void setDefaultValue(String defaultValue) {
-						this.defaultValue = defaultValue;
-					}
-
-					public ValueRange getValueRange() {
-						return this.valueRange;
-					}
-
-					public void setValueRange(ValueRange valueRange) {
-						this.valueRange = valueRange;
-					}
-
-					public static class ValueRange {
-
-						private String valueConstraint;
-
-						private String dataphinAttributeType;
-
-						private List<String> valueList;
-
-						private MinMaxValueConfig minMaxValueConfig;
-
-						private LookupTableReference lookupTableReference;
-
-						public String getValueConstraint() {
-							return this.valueConstraint;
-						}
-
-						public void setValueConstraint(String valueConstraint) {
-							this.valueConstraint = valueConstraint;
-						}
-
-						public String getDataphinAttributeType() {
-							return this.dataphinAttributeType;
-						}
-
-						public void setDataphinAttributeType(String dataphinAttributeType) {
-							this.dataphinAttributeType = dataphinAttributeType;
-						}
-
-						public List<String> getValueList() {
-							return this.valueList;
-						}
-
-						public void setValueList(List<String> valueList) {
-							this.valueList = valueList;
-						}
-
-						public MinMaxValueConfig getMinMaxValueConfig() {
-							return this.minMaxValueConfig;
-						}
-
-						public void setMinMaxValueConfig(MinMaxValueConfig minMaxValueConfig) {
-							this.minMaxValueConfig = minMaxValueConfig;
-						}
-
-						public LookupTableReference getLookupTableReference() {
-							return this.lookupTableReference;
-						}
-
-						public void setLookupTableReference(LookupTableReference lookupTableReference) {
-							this.lookupTableReference = lookupTableReference;
-						}
-
-						public static class MinMaxValueConfig {
-
-							private String minValue;
-
-							private Boolean includeMinValue;
-
-							private String maxValue;
-
-							private Boolean includeMaxValue;
-
-							public String getMinValue() {
-								return this.minValue;
-							}
-
-							public void setMinValue(String minValue) {
-								this.minValue = minValue;
-							}
-
-							public Boolean getIncludeMinValue() {
-								return this.includeMinValue;
-							}
-
-							public void setIncludeMinValue(Boolean includeMinValue) {
-								this.includeMinValue = includeMinValue;
-							}
-
-							public String getMaxValue() {
-								return this.maxValue;
-							}
-
-							public void setMaxValue(String maxValue) {
-								this.maxValue = maxValue;
-							}
-
-							public Boolean getIncludeMaxValue() {
-								return this.includeMaxValue;
-							}
-
-							public void setIncludeMaxValue(Boolean includeMaxValue) {
-								this.includeMaxValue = includeMaxValue;
-							}
-						}
-
-						public static class LookupTableReference {
-
-							private Long lookupTableId;
-
-							private String column;
-
-							public Long getLookupTableId() {
-								return this.lookupTableId;
-							}
-
-							public void setLookupTableId(Long lookupTableId) {
-								this.lookupTableId = lookupTableId;
-							}
-
-							public String getColumn() {
-								return this.column;
-							}
-
-							public void setColumn(String column) {
-								this.column = column;
-							}
-						}
-					}
-				}
-
-				public static class MonitorConfig {
-
-					private String type;
-
-					private String columnName;
-
-					private Boolean isCaseSensitive;
-
-					public String getType() {
-						return this.type;
-					}
-
-					public void setType(String type) {
-						this.type = type;
-					}
-
-					public String getColumnName() {
-						return this.columnName;
-					}
-
-					public void setColumnName(String columnName) {
-						this.columnName = columnName;
-					}
-
-					public Boolean getIsCaseSensitive() {
-						return this.isCaseSensitive;
-					}
-
-					public void setIsCaseSensitive(Boolean isCaseSensitive) {
-						this.isCaseSensitive = isCaseSensitive;
-					}
 				}
 
 				public static class RefAttribute {
@@ -661,17 +433,9 @@ public class GetStandardTemplateResponse extends AcsResponse {
 
 						public static class StandardReference {
 
-							private Long standardId;
-
 							private Integer version;
 
-							public Long getStandardId() {
-								return this.standardId;
-							}
-
-							public void setStandardId(Long standardId) {
-								this.standardId = standardId;
-							}
+							private Long standardId;
 
 							public Integer getVersion() {
 								return this.version;
@@ -680,9 +444,245 @@ public class GetStandardTemplateResponse extends AcsResponse {
 							public void setVersion(Integer version) {
 								this.version = version;
 							}
+
+							public Long getStandardId() {
+								return this.standardId;
+							}
+
+							public void setStandardId(Long standardId) {
+								this.standardId = standardId;
+							}
 						}
 					}
 				}
+
+				public static class ValueConfig {
+
+					private String defaultValue;
+
+					private String type;
+
+					private Integer length;
+
+					private String dataType;
+
+					private ValueRange valueRange;
+
+					public String getDefaultValue() {
+						return this.defaultValue;
+					}
+
+					public void setDefaultValue(String defaultValue) {
+						this.defaultValue = defaultValue;
+					}
+
+					public String getType() {
+						return this.type;
+					}
+
+					public void setType(String type) {
+						this.type = type;
+					}
+
+					public Integer getLength() {
+						return this.length;
+					}
+
+					public void setLength(Integer length) {
+						this.length = length;
+					}
+
+					public String getDataType() {
+						return this.dataType;
+					}
+
+					public void setDataType(String dataType) {
+						this.dataType = dataType;
+					}
+
+					public ValueRange getValueRange() {
+						return this.valueRange;
+					}
+
+					public void setValueRange(ValueRange valueRange) {
+						this.valueRange = valueRange;
+					}
+
+					public static class ValueRange {
+
+						private String dataphinAttributeType;
+
+						private String valueConstraint;
+
+						private List<String> valueList;
+
+						private LookupTableReference lookupTableReference;
+
+						private MinMaxValueConfig minMaxValueConfig;
+
+						public String getDataphinAttributeType() {
+							return this.dataphinAttributeType;
+						}
+
+						public void setDataphinAttributeType(String dataphinAttributeType) {
+							this.dataphinAttributeType = dataphinAttributeType;
+						}
+
+						public String getValueConstraint() {
+							return this.valueConstraint;
+						}
+
+						public void setValueConstraint(String valueConstraint) {
+							this.valueConstraint = valueConstraint;
+						}
+
+						public List<String> getValueList() {
+							return this.valueList;
+						}
+
+						public void setValueList(List<String> valueList) {
+							this.valueList = valueList;
+						}
+
+						public LookupTableReference getLookupTableReference() {
+							return this.lookupTableReference;
+						}
+
+						public void setLookupTableReference(LookupTableReference lookupTableReference) {
+							this.lookupTableReference = lookupTableReference;
+						}
+
+						public MinMaxValueConfig getMinMaxValueConfig() {
+							return this.minMaxValueConfig;
+						}
+
+						public void setMinMaxValueConfig(MinMaxValueConfig minMaxValueConfig) {
+							this.minMaxValueConfig = minMaxValueConfig;
+						}
+
+						public static class LookupTableReference {
+
+							private Long lookupTableId;
+
+							private String column;
+
+							public Long getLookupTableId() {
+								return this.lookupTableId;
+							}
+
+							public void setLookupTableId(Long lookupTableId) {
+								this.lookupTableId = lookupTableId;
+							}
+
+							public String getColumn() {
+								return this.column;
+							}
+
+							public void setColumn(String column) {
+								this.column = column;
+							}
+						}
+
+						public static class MinMaxValueConfig {
+
+							private Boolean includeMaxValue;
+
+							private String minValue;
+
+							private String maxValue;
+
+							private Boolean includeMinValue;
+
+							public Boolean getIncludeMaxValue() {
+								return this.includeMaxValue;
+							}
+
+							public void setIncludeMaxValue(Boolean includeMaxValue) {
+								this.includeMaxValue = includeMaxValue;
+							}
+
+							public String getMinValue() {
+								return this.minValue;
+							}
+
+							public void setMinValue(String minValue) {
+								this.minValue = minValue;
+							}
+
+							public String getMaxValue() {
+								return this.maxValue;
+							}
+
+							public void setMaxValue(String maxValue) {
+								this.maxValue = maxValue;
+							}
+
+							public Boolean getIncludeMinValue() {
+								return this.includeMinValue;
+							}
+
+							public void setIncludeMinValue(Boolean includeMinValue) {
+								this.includeMinValue = includeMinValue;
+							}
+						}
+					}
+				}
+
+				public static class MonitorConfig {
+
+					private String columnName;
+
+					private String type;
+
+					private Boolean isCaseSensitive;
+
+					public String getColumnName() {
+						return this.columnName;
+					}
+
+					public void setColumnName(String columnName) {
+						this.columnName = columnName;
+					}
+
+					public String getType() {
+						return this.type;
+					}
+
+					public void setType(String type) {
+						this.type = type;
+					}
+
+					public Boolean getIsCaseSensitive() {
+						return this.isCaseSensitive;
+					}
+
+					public void setIsCaseSensitive(Boolean isCaseSensitive) {
+						this.isCaseSensitive = isCaseSensitive;
+					}
+				}
+			}
+		}
+
+		public static class Creator {
+
+			private String id;
+
+			private String name;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 
@@ -732,21 +732,13 @@ public class GetStandardTemplateResponse extends AcsResponse {
 
 				public static class CodeRule {
 
-					private Integer index;
-
 					private String type;
 
 					private String value;
 
+					private Integer index;
+
 					private AutoIncrementSequenceConfig autoIncrementSequenceConfig;
-
-					public Integer getIndex() {
-						return this.index;
-					}
-
-					public void setIndex(Integer index) {
-						this.index = index;
-					}
 
 					public String getType() {
 						return this.type;
@@ -764,6 +756,14 @@ public class GetStandardTemplateResponse extends AcsResponse {
 						this.value = value;
 					}
 
+					public Integer getIndex() {
+						return this.index;
+					}
+
+					public void setIndex(Integer index) {
+						this.index = index;
+					}
+
 					public AutoIncrementSequenceConfig getAutoIncrementSequenceConfig() {
 						return this.autoIncrementSequenceConfig;
 					}
@@ -776,11 +776,11 @@ public class GetStandardTemplateResponse extends AcsResponse {
 
 						private Integer digit;
 
+						private Boolean needPaddingZero;
+
 						private Long startValue;
 
 						private Integer step;
-
-						private Boolean needPaddingZero;
 
 						public Integer getDigit() {
 							return this.digit;
@@ -788,6 +788,14 @@ public class GetStandardTemplateResponse extends AcsResponse {
 
 						public void setDigit(Integer digit) {
 							this.digit = digit;
+						}
+
+						public Boolean getNeedPaddingZero() {
+							return this.needPaddingZero;
+						}
+
+						public void setNeedPaddingZero(Boolean needPaddingZero) {
+							this.needPaddingZero = needPaddingZero;
 						}
 
 						public Long getStartValue() {
@@ -804,14 +812,6 @@ public class GetStandardTemplateResponse extends AcsResponse {
 
 						public void setStep(Integer step) {
 							this.step = step;
-						}
-
-						public Boolean getNeedPaddingZero() {
-							return this.needPaddingZero;
-						}
-
-						public void setNeedPaddingZero(Boolean needPaddingZero) {
-							this.needPaddingZero = needPaddingZero;
 						}
 					}
 				}

@@ -28,25 +28,25 @@ public class GetBatchTaskVersionsResponseUnmarshaller {
 	public static GetBatchTaskVersionsResponse unmarshall(GetBatchTaskVersionsResponse getBatchTaskVersionsResponse, UnmarshallerContext _ctx) {
 		
 		getBatchTaskVersionsResponse.setRequestId(_ctx.stringValue("GetBatchTaskVersionsResponse.RequestId"));
-		getBatchTaskVersionsResponse.setSuccess(_ctx.booleanValue("GetBatchTaskVersionsResponse.Success"));
+		getBatchTaskVersionsResponse.setMessage(_ctx.stringValue("GetBatchTaskVersionsResponse.Message"));
 		getBatchTaskVersionsResponse.setHttpStatusCode(_ctx.integerValue("GetBatchTaskVersionsResponse.HttpStatusCode"));
 		getBatchTaskVersionsResponse.setCode(_ctx.stringValue("GetBatchTaskVersionsResponse.Code"));
-		getBatchTaskVersionsResponse.setMessage(_ctx.stringValue("GetBatchTaskVersionsResponse.Message"));
+		getBatchTaskVersionsResponse.setSuccess(_ctx.booleanValue("GetBatchTaskVersionsResponse.Success"));
 
 		Data data = new Data();
 
 		List<BatchTaskVersion> batchTaskVersionList = new ArrayList<BatchTaskVersion>();
 		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList.Length"); i++) {
 			BatchTaskVersion batchTaskVersion = new BatchTaskVersion();
-			batchTaskVersion.setNodeId(_ctx.stringValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].NodeId"));
+			batchTaskVersion.setComment(_ctx.stringValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].Comment"));
+			batchTaskVersion.setGmtCreate(_ctx.stringValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].GmtCreate"));
+			batchTaskVersion.setUserName(_ctx.stringValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].UserName"));
 			batchTaskVersion.setVersion(_ctx.stringValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].Version"));
 			batchTaskVersion.setUserId(_ctx.stringValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].UserId"));
-			batchTaskVersion.setUserName(_ctx.stringValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].UserName"));
-			batchTaskVersion.setComment(_ctx.stringValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].Comment"));
-			batchTaskVersion.setPublished(_ctx.booleanValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].Published"));
+			batchTaskVersion.setNodeId(_ctx.stringValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].NodeId"));
 			batchTaskVersion.setProjectId(_ctx.longValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].ProjectId"));
-			batchTaskVersion.setGmtCreate(_ctx.stringValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].GmtCreate"));
 			batchTaskVersion.setGmtModified(_ctx.stringValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].GmtModified"));
+			batchTaskVersion.setPublished(_ctx.booleanValue("GetBatchTaskVersionsResponse.Data.BatchTaskVersionList["+ i +"].Published"));
 
 			batchTaskVersionList.add(batchTaskVersion);
 		}

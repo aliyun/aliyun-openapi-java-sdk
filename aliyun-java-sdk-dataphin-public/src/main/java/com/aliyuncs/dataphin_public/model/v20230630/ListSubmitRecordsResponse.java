@@ -27,13 +27,13 @@ public class ListSubmitRecordsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private ListResult listResult;
 
@@ -45,12 +45,12 @@ public class ListSubmitRecordsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListSubmitRecordsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public ListResult getListResult() {
@@ -109,38 +109,38 @@ public class ListSubmitRecordsResponse extends AcsResponse {
 
 		public static class SubmitRecordInfo {
 
-			private Long id;
+			private String objectId;
 
 			private String projectId;
 
-			private String submitter;
-
-			private String submitterName;
-
-			private String gmtCreate;
-
-			private String gmtModify;
-
-			private Integer changeType;
+			private String objectName;
 
 			private String objectType;
 
-			private String objectName;
-
-			private String objectId;
-
-			private String nodeId;
-
 			private String objectVersion;
+
+			private String gmtCreate;
 
 			private String submitComment;
 
-			public Long getId() {
-				return this.id;
+			private String submitter;
+
+			private Integer changeType;
+
+			private String gmtModify;
+
+			private String nodeId;
+
+			private String submitterName;
+
+			private Long id;
+
+			public String getObjectId() {
+				return this.objectId;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
+			public void setObjectId(String objectId) {
+				this.objectId = objectId;
 			}
 
 			public String getProjectId() {
@@ -151,44 +151,12 @@ public class ListSubmitRecordsResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
-			public String getSubmitter() {
-				return this.submitter;
+			public String getObjectName() {
+				return this.objectName;
 			}
 
-			public void setSubmitter(String submitter) {
-				this.submitter = submitter;
-			}
-
-			public String getSubmitterName() {
-				return this.submitterName;
-			}
-
-			public void setSubmitterName(String submitterName) {
-				this.submitterName = submitterName;
-			}
-
-			public String getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getGmtModify() {
-				return this.gmtModify;
-			}
-
-			public void setGmtModify(String gmtModify) {
-				this.gmtModify = gmtModify;
-			}
-
-			public Integer getChangeType() {
-				return this.changeType;
-			}
-
-			public void setChangeType(Integer changeType) {
-				this.changeType = changeType;
+			public void setObjectName(String objectName) {
+				this.objectName = objectName;
 			}
 
 			public String getObjectType() {
@@ -199,20 +167,52 @@ public class ListSubmitRecordsResponse extends AcsResponse {
 				this.objectType = objectType;
 			}
 
-			public String getObjectName() {
-				return this.objectName;
+			public String getObjectVersion() {
+				return this.objectVersion;
 			}
 
-			public void setObjectName(String objectName) {
-				this.objectName = objectName;
+			public void setObjectVersion(String objectVersion) {
+				this.objectVersion = objectVersion;
 			}
 
-			public String getObjectId() {
-				return this.objectId;
+			public String getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setObjectId(String objectId) {
-				this.objectId = objectId;
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getSubmitComment() {
+				return this.submitComment;
+			}
+
+			public void setSubmitComment(String submitComment) {
+				this.submitComment = submitComment;
+			}
+
+			public String getSubmitter() {
+				return this.submitter;
+			}
+
+			public void setSubmitter(String submitter) {
+				this.submitter = submitter;
+			}
+
+			public Integer getChangeType() {
+				return this.changeType;
+			}
+
+			public void setChangeType(Integer changeType) {
+				this.changeType = changeType;
+			}
+
+			public String getGmtModify() {
+				return this.gmtModify;
+			}
+
+			public void setGmtModify(String gmtModify) {
+				this.gmtModify = gmtModify;
 			}
 
 			public String getNodeId() {
@@ -223,20 +223,20 @@ public class ListSubmitRecordsResponse extends AcsResponse {
 				this.nodeId = nodeId;
 			}
 
-			public String getObjectVersion() {
-				return this.objectVersion;
+			public String getSubmitterName() {
+				return this.submitterName;
 			}
 
-			public void setObjectVersion(String objectVersion) {
-				this.objectVersion = objectVersion;
+			public void setSubmitterName(String submitterName) {
+				this.submitterName = submitterName;
 			}
 
-			public String getSubmitComment() {
-				return this.submitComment;
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setSubmitComment(String submitComment) {
-				this.submitComment = submitComment;
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

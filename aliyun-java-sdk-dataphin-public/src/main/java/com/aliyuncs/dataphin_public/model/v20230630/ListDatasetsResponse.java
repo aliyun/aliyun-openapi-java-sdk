@@ -28,13 +28,13 @@ public class ListDatasetsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -46,12 +46,12 @@ public class ListDatasetsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -70,12 +70,12 @@ public class ListDatasetsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -110,45 +110,45 @@ public class ListDatasetsResponse extends AcsResponse {
 
 		public static class DatasetDTO {
 
-			private Long id;
-
-			private Long projectId;
-
-			private String projectName;
-
-			private String name;
-
-			private Long fileId;
-
-			private String directory;
-
-			private String dataCellId;
-
-			private String dataCellName;
-
-			private String type;
-
 			private String storageType;
-
-			private String metadataStorageType;
-
-			private String scenario;
-
-			private String contentType;
-
-			private String creator;
-
-			private String creatorName;
-
-			private String gmtCreate;
-
-			private String gmtModified;
 
 			private String description;
 
-			private Long tenantId;
+			private String dataCellName;
+
+			private String contentType;
+
+			private String projectName;
+
+			private Long projectId;
+
+			private String gmtModified;
+
+			private String metadataStorageType;
+
+			private String creator;
 
 			private String lockOwner;
+
+			private String dataCellId;
+
+			private String name;
+
+			private String scenario;
+
+			private String type;
+
+			private String gmtCreate;
+
+			private Long tenantId;
+
+			private Long fileId;
+
+			private Long id;
+
+			private String creatorName;
+
+			private String directory;
 
 			private String lockOwnerName;
 
@@ -156,140 +156,12 @@ public class ListDatasetsResponse extends AcsResponse {
 
 			private List<DatasetVersionDTO> versionList;
 
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public Long getProjectId() {
-				return this.projectId;
-			}
-
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
-
-			public String getProjectName() {
-				return this.projectName;
-			}
-
-			public void setProjectName(String projectName) {
-				this.projectName = projectName;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public Long getFileId() {
-				return this.fileId;
-			}
-
-			public void setFileId(Long fileId) {
-				this.fileId = fileId;
-			}
-
-			public String getDirectory() {
-				return this.directory;
-			}
-
-			public void setDirectory(String directory) {
-				this.directory = directory;
-			}
-
-			public String getDataCellId() {
-				return this.dataCellId;
-			}
-
-			public void setDataCellId(String dataCellId) {
-				this.dataCellId = dataCellId;
-			}
-
-			public String getDataCellName() {
-				return this.dataCellName;
-			}
-
-			public void setDataCellName(String dataCellName) {
-				this.dataCellName = dataCellName;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
 			public String getStorageType() {
 				return this.storageType;
 			}
 
 			public void setStorageType(String storageType) {
 				this.storageType = storageType;
-			}
-
-			public String getMetadataStorageType() {
-				return this.metadataStorageType;
-			}
-
-			public void setMetadataStorageType(String metadataStorageType) {
-				this.metadataStorageType = metadataStorageType;
-			}
-
-			public String getScenario() {
-				return this.scenario;
-			}
-
-			public void setScenario(String scenario) {
-				this.scenario = scenario;
-			}
-
-			public String getContentType() {
-				return this.contentType;
-			}
-
-			public void setContentType(String contentType) {
-				this.contentType = contentType;
-			}
-
-			public String getCreator() {
-				return this.creator;
-			}
-
-			public void setCreator(String creator) {
-				this.creator = creator;
-			}
-
-			public String getCreatorName() {
-				return this.creatorName;
-			}
-
-			public void setCreatorName(String creatorName) {
-				this.creatorName = creatorName;
-			}
-
-			public String getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
 			}
 
 			public String getDescription() {
@@ -300,12 +172,60 @@ public class ListDatasetsResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public Long getTenantId() {
-				return this.tenantId;
+			public String getDataCellName() {
+				return this.dataCellName;
 			}
 
-			public void setTenantId(Long tenantId) {
-				this.tenantId = tenantId;
+			public void setDataCellName(String dataCellName) {
+				this.dataCellName = dataCellName;
+			}
+
+			public String getContentType() {
+				return this.contentType;
+			}
+
+			public void setContentType(String contentType) {
+				this.contentType = contentType;
+			}
+
+			public String getProjectName() {
+				return this.projectName;
+			}
+
+			public void setProjectName(String projectName) {
+				this.projectName = projectName;
+			}
+
+			public Long getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public String getMetadataStorageType() {
+				return this.metadataStorageType;
+			}
+
+			public void setMetadataStorageType(String metadataStorageType) {
+				this.metadataStorageType = metadataStorageType;
+			}
+
+			public String getCreator() {
+				return this.creator;
+			}
+
+			public void setCreator(String creator) {
+				this.creator = creator;
 			}
 
 			public String getLockOwner() {
@@ -314,6 +234,86 @@ public class ListDatasetsResponse extends AcsResponse {
 
 			public void setLockOwner(String lockOwner) {
 				this.lockOwner = lockOwner;
+			}
+
+			public String getDataCellId() {
+				return this.dataCellId;
+			}
+
+			public void setDataCellId(String dataCellId) {
+				this.dataCellId = dataCellId;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getScenario() {
+				return this.scenario;
+			}
+
+			public void setScenario(String scenario) {
+				this.scenario = scenario;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public Long getTenantId() {
+				return this.tenantId;
+			}
+
+			public void setTenantId(Long tenantId) {
+				this.tenantId = tenantId;
+			}
+
+			public Long getFileId() {
+				return this.fileId;
+			}
+
+			public void setFileId(Long fileId) {
+				this.fileId = fileId;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getCreatorName() {
+				return this.creatorName;
+			}
+
+			public void setCreatorName(String creatorName) {
+				this.creatorName = creatorName;
+			}
+
+			public String getDirectory() {
+				return this.directory;
+			}
+
+			public void setDirectory(String directory) {
+				this.directory = directory;
 			}
 
 			public String getLockOwnerName() {
@@ -342,17 +342,9 @@ public class ListDatasetsResponse extends AcsResponse {
 
 			public static class Owner {
 
-				private String userId;
-
 				private String userName;
 
-				public String getUserId() {
-					return this.userId;
-				}
-
-				public void setUserId(String userId) {
-					this.userId = userId;
-				}
+				private String userId;
 
 				public String getUserName() {
 					return this.userName;
@@ -361,38 +353,38 @@ public class ListDatasetsResponse extends AcsResponse {
 				public void setUserName(String userName) {
 					this.userName = userName;
 				}
+
+				public String getUserId() {
+					return this.userId;
+				}
+
+				public void setUserId(String userId) {
+					this.userId = userId;
+				}
 			}
 
 			public static class DatasetVersionDTO {
 
-				private Long id;
-
-				private Long datasetId;
+				private String gmtCreate;
 
 				private String version;
 
+				private String gmtModified;
+
+				private Long id;
+
 				private String creator;
 
-				private String gmtCreate;
-
-				private String gmtModified;
+				private Long datasetId;
 
 				private DataVersionConfig dataVersionConfig;
 
-				public Long getId() {
-					return this.id;
+				public String getGmtCreate() {
+					return this.gmtCreate;
 				}
 
-				public void setId(Long id) {
-					this.id = id;
-				}
-
-				public Long getDatasetId() {
-					return this.datasetId;
-				}
-
-				public void setDatasetId(Long datasetId) {
-					this.datasetId = datasetId;
+				public void setGmtCreate(String gmtCreate) {
+					this.gmtCreate = gmtCreate;
 				}
 
 				public String getVersion() {
@@ -403,6 +395,22 @@ public class ListDatasetsResponse extends AcsResponse {
 					this.version = version;
 				}
 
+				public String getGmtModified() {
+					return this.gmtModified;
+				}
+
+				public void setGmtModified(String gmtModified) {
+					this.gmtModified = gmtModified;
+				}
+
+				public Long getId() {
+					return this.id;
+				}
+
+				public void setId(Long id) {
+					this.id = id;
+				}
+
 				public String getCreator() {
 					return this.creator;
 				}
@@ -411,20 +419,12 @@ public class ListDatasetsResponse extends AcsResponse {
 					this.creator = creator;
 				}
 
-				public String getGmtCreate() {
-					return this.gmtCreate;
+				public Long getDatasetId() {
+					return this.datasetId;
 				}
 
-				public void setGmtCreate(String gmtCreate) {
-					this.gmtCreate = gmtCreate;
-				}
-
-				public String getGmtModified() {
-					return this.gmtModified;
-				}
-
-				public void setGmtModified(String gmtModified) {
-					this.gmtModified = gmtModified;
+				public void setDatasetId(Long datasetId) {
+					this.datasetId = datasetId;
 				}
 
 				public DataVersionConfig getDataVersionConfig() {
@@ -441,9 +441,9 @@ public class ListDatasetsResponse extends AcsResponse {
 
 					private FileStorageConfig fileStorageConfig;
 
-					private MetadataStorageConfig metadataStorageConfig;
-
 					private RealtimeMetaTableConfig realtimeMetaTableConfig;
+
+					private MetadataStorageConfig metadataStorageConfig;
 
 					public String getVersionDescription() {
 						return this.versionDescription;
@@ -461,14 +461,6 @@ public class ListDatasetsResponse extends AcsResponse {
 						this.fileStorageConfig = fileStorageConfig;
 					}
 
-					public MetadataStorageConfig getMetadataStorageConfig() {
-						return this.metadataStorageConfig;
-					}
-
-					public void setMetadataStorageConfig(MetadataStorageConfig metadataStorageConfig) {
-						this.metadataStorageConfig = metadataStorageConfig;
-					}
-
 					public RealtimeMetaTableConfig getRealtimeMetaTableConfig() {
 						return this.realtimeMetaTableConfig;
 					}
@@ -477,24 +469,32 @@ public class ListDatasetsResponse extends AcsResponse {
 						this.realtimeMetaTableConfig = realtimeMetaTableConfig;
 					}
 
+					public MetadataStorageConfig getMetadataStorageConfig() {
+						return this.metadataStorageConfig;
+					}
+
+					public void setMetadataStorageConfig(MetadataStorageConfig metadataStorageConfig) {
+						this.metadataStorageConfig = metadataStorageConfig;
+					}
+
 					public static class FileStorageConfig {
-
-						private String dataSourceId;
-
-						private String dataSourceName;
-
-						private String devPath;
-
-						private String prodPath;
 
 						private String mountPath;
 
-						public String getDataSourceId() {
-							return this.dataSourceId;
+						private String dataSourceName;
+
+						private String prodPath;
+
+						private String dataSourceId;
+
+						private String devPath;
+
+						public String getMountPath() {
+							return this.mountPath;
 						}
 
-						public void setDataSourceId(String dataSourceId) {
-							this.dataSourceId = dataSourceId;
+						public void setMountPath(String mountPath) {
+							this.mountPath = mountPath;
 						}
 
 						public String getDataSourceName() {
@@ -503,14 +503,6 @@ public class ListDatasetsResponse extends AcsResponse {
 
 						public void setDataSourceName(String dataSourceName) {
 							this.dataSourceName = dataSourceName;
-						}
-
-						public String getDevPath() {
-							return this.devPath;
-						}
-
-						public void setDevPath(String devPath) {
-							this.devPath = devPath;
 						}
 
 						public String getProdPath() {
@@ -521,49 +513,6 @@ public class ListDatasetsResponse extends AcsResponse {
 							this.prodPath = prodPath;
 						}
 
-						public String getMountPath() {
-							return this.mountPath;
-						}
-
-						public void setMountPath(String mountPath) {
-							this.mountPath = mountPath;
-						}
-					}
-
-					public static class MetadataStorageConfig {
-
-						private String metadataStorageMode;
-
-						private String metadataStorageType;
-
-						private String dataSourceId;
-
-						private String dataSourceName;
-
-						private String devSchema;
-
-						private String prodSchema;
-
-						private String tableName;
-
-						private TableSchema tableSchema;
-
-						public String getMetadataStorageMode() {
-							return this.metadataStorageMode;
-						}
-
-						public void setMetadataStorageMode(String metadataStorageMode) {
-							this.metadataStorageMode = metadataStorageMode;
-						}
-
-						public String getMetadataStorageType() {
-							return this.metadataStorageType;
-						}
-
-						public void setMetadataStorageType(String metadataStorageType) {
-							this.metadataStorageType = metadataStorageType;
-						}
-
 						public String getDataSourceId() {
 							return this.dataSourceId;
 						}
@@ -572,193 +521,12 @@ public class ListDatasetsResponse extends AcsResponse {
 							this.dataSourceId = dataSourceId;
 						}
 
-						public String getDataSourceName() {
-							return this.dataSourceName;
+						public String getDevPath() {
+							return this.devPath;
 						}
 
-						public void setDataSourceName(String dataSourceName) {
-							this.dataSourceName = dataSourceName;
-						}
-
-						public String getDevSchema() {
-							return this.devSchema;
-						}
-
-						public void setDevSchema(String devSchema) {
-							this.devSchema = devSchema;
-						}
-
-						public String getProdSchema() {
-							return this.prodSchema;
-						}
-
-						public void setProdSchema(String prodSchema) {
-							this.prodSchema = prodSchema;
-						}
-
-						public String getTableName() {
-							return this.tableName;
-						}
-
-						public void setTableName(String tableName) {
-							this.tableName = tableName;
-						}
-
-						public TableSchema getTableSchema() {
-							return this.tableSchema;
-						}
-
-						public void setTableSchema(TableSchema tableSchema) {
-							this.tableSchema = tableSchema;
-						}
-
-						public static class TableSchema {
-
-							private List<ColumnSchemaDTO> columns;
-
-							public List<ColumnSchemaDTO> getColumns() {
-								return this.columns;
-							}
-
-							public void setColumns(List<ColumnSchemaDTO> columns) {
-								this.columns = columns;
-							}
-
-							public static class ColumnSchemaDTO {
-
-								private String name;
-
-								private String type;
-
-								private String elementType;
-
-								private Integer maxCapacity;
-
-								private Boolean pk;
-
-								private String comment;
-
-								private Boolean url;
-
-								private VectorIndexConfig vectorIndexConfig;
-
-								public String getName() {
-									return this.name;
-								}
-
-								public void setName(String name) {
-									this.name = name;
-								}
-
-								public String getType() {
-									return this.type;
-								}
-
-								public void setType(String type) {
-									this.type = type;
-								}
-
-								public String getElementType() {
-									return this.elementType;
-								}
-
-								public void setElementType(String elementType) {
-									this.elementType = elementType;
-								}
-
-								public Integer getMaxCapacity() {
-									return this.maxCapacity;
-								}
-
-								public void setMaxCapacity(Integer maxCapacity) {
-									this.maxCapacity = maxCapacity;
-								}
-
-								public Boolean getPk() {
-									return this.pk;
-								}
-
-								public void setPk(Boolean pk) {
-									this.pk = pk;
-								}
-
-								public String getComment() {
-									return this.comment;
-								}
-
-								public void setComment(String comment) {
-									this.comment = comment;
-								}
-
-								public Boolean getUrl() {
-									return this.url;
-								}
-
-								public void setUrl(Boolean url) {
-									this.url = url;
-								}
-
-								public VectorIndexConfig getVectorIndexConfig() {
-									return this.vectorIndexConfig;
-								}
-
-								public void setVectorIndexConfig(VectorIndexConfig vectorIndexConfig) {
-									this.vectorIndexConfig = vectorIndexConfig;
-								}
-
-								public static class VectorIndexConfig {
-
-									private String embeddingModel;
-
-									private Long dimension;
-
-									private String indexType;
-
-									private String similarityType;
-
-									private Map<Object,Object> indexParams;
-
-									public String getEmbeddingModel() {
-										return this.embeddingModel;
-									}
-
-									public void setEmbeddingModel(String embeddingModel) {
-										this.embeddingModel = embeddingModel;
-									}
-
-									public Long getDimension() {
-										return this.dimension;
-									}
-
-									public void setDimension(Long dimension) {
-										this.dimension = dimension;
-									}
-
-									public String getIndexType() {
-										return this.indexType;
-									}
-
-									public void setIndexType(String indexType) {
-										this.indexType = indexType;
-									}
-
-									public String getSimilarityType() {
-										return this.similarityType;
-									}
-
-									public void setSimilarityType(String similarityType) {
-										this.similarityType = similarityType;
-									}
-
-									public Map<Object,Object> getIndexParams() {
-										return this.indexParams;
-									}
-
-									public void setIndexParams(Map<Object,Object> indexParams) {
-										this.indexParams = indexParams;
-									}
-								}
-							}
+						public void setDevPath(String devPath) {
+							this.devPath = devPath;
 						}
 					}
 
@@ -770,7 +538,7 @@ public class ListDatasetsResponse extends AcsResponse {
 
 						private String datasourceType;
 
-						private TableSchema1 tableSchema1;
+						private TableSchema tableSchema;
 
 						public Long getProjectId() {
 							return this.projectId;
@@ -796,6 +564,238 @@ public class ListDatasetsResponse extends AcsResponse {
 							this.datasourceType = datasourceType;
 						}
 
+						public TableSchema getTableSchema() {
+							return this.tableSchema;
+						}
+
+						public void setTableSchema(TableSchema tableSchema) {
+							this.tableSchema = tableSchema;
+						}
+
+						public static class TableSchema {
+
+							private List<ColumnSchemaDTO> columns;
+
+							public List<ColumnSchemaDTO> getColumns() {
+								return this.columns;
+							}
+
+							public void setColumns(List<ColumnSchemaDTO> columns) {
+								this.columns = columns;
+							}
+
+							public static class ColumnSchemaDTO {
+
+								private String comment;
+
+								private String type;
+
+								private String elementType;
+
+								private Boolean pk;
+
+								private Boolean url;
+
+								private String name;
+
+								private Integer maxCapacity;
+
+								private VectorIndexConfig vectorIndexConfig;
+
+								public String getComment() {
+									return this.comment;
+								}
+
+								public void setComment(String comment) {
+									this.comment = comment;
+								}
+
+								public String getType() {
+									return this.type;
+								}
+
+								public void setType(String type) {
+									this.type = type;
+								}
+
+								public String getElementType() {
+									return this.elementType;
+								}
+
+								public void setElementType(String elementType) {
+									this.elementType = elementType;
+								}
+
+								public Boolean getPk() {
+									return this.pk;
+								}
+
+								public void setPk(Boolean pk) {
+									this.pk = pk;
+								}
+
+								public Boolean getUrl() {
+									return this.url;
+								}
+
+								public void setUrl(Boolean url) {
+									this.url = url;
+								}
+
+								public String getName() {
+									return this.name;
+								}
+
+								public void setName(String name) {
+									this.name = name;
+								}
+
+								public Integer getMaxCapacity() {
+									return this.maxCapacity;
+								}
+
+								public void setMaxCapacity(Integer maxCapacity) {
+									this.maxCapacity = maxCapacity;
+								}
+
+								public VectorIndexConfig getVectorIndexConfig() {
+									return this.vectorIndexConfig;
+								}
+
+								public void setVectorIndexConfig(VectorIndexConfig vectorIndexConfig) {
+									this.vectorIndexConfig = vectorIndexConfig;
+								}
+
+								public static class VectorIndexConfig {
+
+									private String similarityType;
+
+									private String embeddingModel;
+
+									private Long dimension;
+
+									private Map<Object,Object> indexParams;
+
+									private String indexType;
+
+									public String getSimilarityType() {
+										return this.similarityType;
+									}
+
+									public void setSimilarityType(String similarityType) {
+										this.similarityType = similarityType;
+									}
+
+									public String getEmbeddingModel() {
+										return this.embeddingModel;
+									}
+
+									public void setEmbeddingModel(String embeddingModel) {
+										this.embeddingModel = embeddingModel;
+									}
+
+									public Long getDimension() {
+										return this.dimension;
+									}
+
+									public void setDimension(Long dimension) {
+										this.dimension = dimension;
+									}
+
+									public Map<Object,Object> getIndexParams() {
+										return this.indexParams;
+									}
+
+									public void setIndexParams(Map<Object,Object> indexParams) {
+										this.indexParams = indexParams;
+									}
+
+									public String getIndexType() {
+										return this.indexType;
+									}
+
+									public void setIndexType(String indexType) {
+										this.indexType = indexType;
+									}
+								}
+							}
+						}
+					}
+
+					public static class MetadataStorageConfig {
+
+						private String tableName;
+
+						private String metadataStorageMode;
+
+						private String dataSourceName;
+
+						private String metadataStorageType;
+
+						private String prodSchema;
+
+						private String dataSourceId;
+
+						private String devSchema;
+
+						private TableSchema1 tableSchema1;
+
+						public String getTableName() {
+							return this.tableName;
+						}
+
+						public void setTableName(String tableName) {
+							this.tableName = tableName;
+						}
+
+						public String getMetadataStorageMode() {
+							return this.metadataStorageMode;
+						}
+
+						public void setMetadataStorageMode(String metadataStorageMode) {
+							this.metadataStorageMode = metadataStorageMode;
+						}
+
+						public String getDataSourceName() {
+							return this.dataSourceName;
+						}
+
+						public void setDataSourceName(String dataSourceName) {
+							this.dataSourceName = dataSourceName;
+						}
+
+						public String getMetadataStorageType() {
+							return this.metadataStorageType;
+						}
+
+						public void setMetadataStorageType(String metadataStorageType) {
+							this.metadataStorageType = metadataStorageType;
+						}
+
+						public String getProdSchema() {
+							return this.prodSchema;
+						}
+
+						public void setProdSchema(String prodSchema) {
+							this.prodSchema = prodSchema;
+						}
+
+						public String getDataSourceId() {
+							return this.dataSourceId;
+						}
+
+						public void setDataSourceId(String dataSourceId) {
+							this.dataSourceId = dataSourceId;
+						}
+
+						public String getDevSchema() {
+							return this.devSchema;
+						}
+
+						public void setDevSchema(String devSchema) {
+							this.devSchema = devSchema;
+						}
+
 						public TableSchema1 getTableSchema1() {
 							return this.tableSchema1;
 						}
@@ -818,28 +818,28 @@ public class ListDatasetsResponse extends AcsResponse {
 
 							public static class ColumnSchemaDTO3 {
 
-								private String name;
+								private String comment;
 
 								private String type;
 
 								private String elementType;
 
-								private Integer maxCapacity;
-
 								private Boolean pk;
-
-								private String comment;
 
 								private Boolean url;
 
+								private String name;
+
+								private Integer maxCapacity;
+
 								private VectorIndexConfig4 vectorIndexConfig4;
 
-								public String getName() {
-									return this.name;
+								public String getComment() {
+									return this.comment;
 								}
 
-								public void setName(String name) {
-									this.name = name;
+								public void setComment(String comment) {
+									this.comment = comment;
 								}
 
 								public String getType() {
@@ -858,14 +858,6 @@ public class ListDatasetsResponse extends AcsResponse {
 									this.elementType = elementType;
 								}
 
-								public Integer getMaxCapacity() {
-									return this.maxCapacity;
-								}
-
-								public void setMaxCapacity(Integer maxCapacity) {
-									this.maxCapacity = maxCapacity;
-								}
-
 								public Boolean getPk() {
 									return this.pk;
 								}
@@ -874,20 +866,28 @@ public class ListDatasetsResponse extends AcsResponse {
 									this.pk = pk;
 								}
 
-								public String getComment() {
-									return this.comment;
-								}
-
-								public void setComment(String comment) {
-									this.comment = comment;
-								}
-
 								public Boolean getUrl() {
 									return this.url;
 								}
 
 								public void setUrl(Boolean url) {
 									this.url = url;
+								}
+
+								public String getName() {
+									return this.name;
+								}
+
+								public void setName(String name) {
+									this.name = name;
+								}
+
+								public Integer getMaxCapacity() {
+									return this.maxCapacity;
+								}
+
+								public void setMaxCapacity(Integer maxCapacity) {
+									this.maxCapacity = maxCapacity;
 								}
 
 								public VectorIndexConfig4 getVectorIndexConfig4() {
@@ -900,15 +900,23 @@ public class ListDatasetsResponse extends AcsResponse {
 
 								public static class VectorIndexConfig4 {
 
+									private String similarityType;
+
 									private String embeddingModel;
 
 									private Long dimension;
 
+									private Map<Object,Object> indexParams;
+
 									private String indexType;
 
-									private String similarityType;
+									public String getSimilarityType() {
+										return this.similarityType;
+									}
 
-									private Map<Object,Object> indexParams;
+									public void setSimilarityType(String similarityType) {
+										this.similarityType = similarityType;
+									}
 
 									public String getEmbeddingModel() {
 										return this.embeddingModel;
@@ -926,28 +934,20 @@ public class ListDatasetsResponse extends AcsResponse {
 										this.dimension = dimension;
 									}
 
-									public String getIndexType() {
-										return this.indexType;
-									}
-
-									public void setIndexType(String indexType) {
-										this.indexType = indexType;
-									}
-
-									public String getSimilarityType() {
-										return this.similarityType;
-									}
-
-									public void setSimilarityType(String similarityType) {
-										this.similarityType = similarityType;
-									}
-
 									public Map<Object,Object> getIndexParams() {
 										return this.indexParams;
 									}
 
 									public void setIndexParams(Map<Object,Object> indexParams) {
 										this.indexParams = indexParams;
+									}
+
+									public String getIndexType() {
+										return this.indexType;
+									}
+
+									public void setIndexType(String indexType) {
+										this.indexType = indexType;
 									}
 								}
 							}

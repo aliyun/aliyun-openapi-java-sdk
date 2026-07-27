@@ -24,14 +24,14 @@ public class GetUserBySourceIdResponseUnmarshaller {
 	public static GetUserBySourceIdResponse unmarshall(GetUserBySourceIdResponse getUserBySourceIdResponse, UnmarshallerContext _ctx) {
 		
 		getUserBySourceIdResponse.setRequestId(_ctx.stringValue("GetUserBySourceIdResponse.RequestId"));
-		getUserBySourceIdResponse.setSuccess(_ctx.booleanValue("GetUserBySourceIdResponse.Success"));
+		getUserBySourceIdResponse.setMessage(_ctx.stringValue("GetUserBySourceIdResponse.Message"));
 		getUserBySourceIdResponse.setHttpStatusCode(_ctx.integerValue("GetUserBySourceIdResponse.HttpStatusCode"));
 		getUserBySourceIdResponse.setCode(_ctx.stringValue("GetUserBySourceIdResponse.Code"));
-		getUserBySourceIdResponse.setMessage(_ctx.stringValue("GetUserBySourceIdResponse.Message"));
+		getUserBySourceIdResponse.setSuccess(_ctx.booleanValue("GetUserBySourceIdResponse.Success"));
 
 		User user = new User();
-		user.setId(_ctx.stringValue("GetUserBySourceIdResponse.User.Id"));
 		user.setDisplayName(_ctx.stringValue("GetUserBySourceIdResponse.User.DisplayName"));
+		user.setId(_ctx.stringValue("GetUserBySourceIdResponse.User.Id"));
 		getUserBySourceIdResponse.setUser(user);
 	 
 	 	return getUserBySourceIdResponse;

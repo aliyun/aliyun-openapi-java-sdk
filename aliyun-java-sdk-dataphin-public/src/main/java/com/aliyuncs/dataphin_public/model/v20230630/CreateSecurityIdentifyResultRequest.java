@@ -79,11 +79,11 @@ public class CreateSecurityIdentifyResultRequest extends RpcAcsRequest<CreateSec
 		@SerializedName("DatasourceName")
 		private String datasourceName;
 
-		@SerializedName("IsDatasourceTable")
-		private Boolean isDatasourceTable;
-
 		@SerializedName("TableName")
 		private String tableName;
+
+		@SerializedName("IsDatasourceTable")
+		private Boolean isDatasourceTable;
 
 		@SerializedName("DatasourceEnv")
 		private String datasourceEnv;
@@ -136,20 +136,20 @@ public class CreateSecurityIdentifyResultRequest extends RpcAcsRequest<CreateSec
 			this.datasourceName = datasourceName;
 		}
 
-		public Boolean getIsDatasourceTable() {
-			return this.isDatasourceTable;
-		}
-
-		public void setIsDatasourceTable(Boolean isDatasourceTable) {
-			this.isDatasourceTable = isDatasourceTable;
-		}
-
 		public String getTableName() {
 			return this.tableName;
 		}
 
 		public void setTableName(String tableName) {
 			this.tableName = tableName;
+		}
+
+		public Boolean getIsDatasourceTable() {
+			return this.isDatasourceTable;
+		}
+
+		public void setIsDatasourceTable(Boolean isDatasourceTable) {
+			this.isDatasourceTable = isDatasourceTable;
 		}
 
 		public String getDatasourceEnv() {

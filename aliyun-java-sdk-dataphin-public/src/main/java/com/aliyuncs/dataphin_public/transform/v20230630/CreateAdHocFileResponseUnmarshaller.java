@@ -23,11 +23,11 @@ public class CreateAdHocFileResponseUnmarshaller {
 	public static CreateAdHocFileResponse unmarshall(CreateAdHocFileResponse createAdHocFileResponse, UnmarshallerContext _ctx) {
 		
 		createAdHocFileResponse.setRequestId(_ctx.stringValue("CreateAdHocFileResponse.RequestId"));
-		createAdHocFileResponse.setSuccess(_ctx.booleanValue("CreateAdHocFileResponse.Success"));
-		createAdHocFileResponse.setHttpStatusCode(_ctx.integerValue("CreateAdHocFileResponse.HttpStatusCode"));
-		createAdHocFileResponse.setCode(_ctx.stringValue("CreateAdHocFileResponse.Code"));
 		createAdHocFileResponse.setMessage(_ctx.stringValue("CreateAdHocFileResponse.Message"));
+		createAdHocFileResponse.setHttpStatusCode(_ctx.integerValue("CreateAdHocFileResponse.HttpStatusCode"));
 		createAdHocFileResponse.setFileId(_ctx.longValue("CreateAdHocFileResponse.FileId"));
+		createAdHocFileResponse.setCode(_ctx.stringValue("CreateAdHocFileResponse.Code"));
+		createAdHocFileResponse.setSuccess(_ctx.booleanValue("CreateAdHocFileResponse.Success"));
 	 
 	 	return createAdHocFileResponse;
 	}

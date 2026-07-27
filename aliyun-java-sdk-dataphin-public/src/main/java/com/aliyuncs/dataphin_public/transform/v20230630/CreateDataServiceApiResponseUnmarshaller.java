@@ -23,11 +23,11 @@ public class CreateDataServiceApiResponseUnmarshaller {
 	public static CreateDataServiceApiResponse unmarshall(CreateDataServiceApiResponse createDataServiceApiResponse, UnmarshallerContext _ctx) {
 		
 		createDataServiceApiResponse.setRequestId(_ctx.stringValue("CreateDataServiceApiResponse.RequestId"));
-		createDataServiceApiResponse.setSuccess(_ctx.booleanValue("CreateDataServiceApiResponse.Success"));
+		createDataServiceApiResponse.setMessage(_ctx.stringValue("CreateDataServiceApiResponse.Message"));
 		createDataServiceApiResponse.setHttpStatusCode(_ctx.integerValue("CreateDataServiceApiResponse.HttpStatusCode"));
 		createDataServiceApiResponse.setCode(_ctx.stringValue("CreateDataServiceApiResponse.Code"));
-		createDataServiceApiResponse.setMessage(_ctx.stringValue("CreateDataServiceApiResponse.Message"));
 		createDataServiceApiResponse.setApiId(_ctx.longValue("CreateDataServiceApiResponse.ApiId"));
+		createDataServiceApiResponse.setSuccess(_ctx.booleanValue("CreateDataServiceApiResponse.Success"));
 	 
 	 	return createDataServiceApiResponse;
 	}

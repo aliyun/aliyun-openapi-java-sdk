@@ -27,13 +27,13 @@ public class ListTablesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -45,12 +45,12 @@ public class ListTablesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListTablesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -109,61 +109,61 @@ public class ListTablesResponse extends AcsResponse {
 
 		public static class Table {
 
-			private String guid;
-
-			private Long dataSourceId;
-
-			private Long tableSizeInBytes;
-
 			private Long lifeCycle;
-
-			private String createTime;
-
-			private String lastDdlTime;
-
-			private String lastQueryTime;
 
 			private String owner;
 
-			private String creator;
+			private Boolean isPartitionTable;
 
-			private Long visitCount30d;
+			private Long tableSizeInBytes;
+
+			private String projectName;
+
+			private String guid;
+
+			private String creator;
 
 			private String env;
 
 			private String name;
 
+			private Long dataDomainId;
+
+			private Long bizUnitId;
+
+			private Long securityLevel;
+
 			private String displayName;
 
 			private String lastDmlTime;
 
-			private String comment;
-
-			private Long bizUnitId;
-
 			private String bizUnitName;
-
-			private Long dataDomainId;
-
-			private String dataDomainName;
-
-			private Long projectId;
-
-			private String projectName;
-
-			private String parentModelId;
-
-			private String fileId;
-
-			private Boolean isPartitionTable;
-
-			private String storageType;
 
 			private Boolean isBasicMode;
 
-			private Long securityLevel;
+			private String comment;
+
+			private String storageType;
+
+			private String lastDdlTime;
+
+			private String createTime;
+
+			private String lastQueryTime;
+
+			private String parentModelId;
+
+			private Long projectId;
+
+			private Long visitCount30d;
 
 			private String securityLevelName;
+
+			private String dataDomainName;
+
+			private String fileId;
+
+			private Long dataSourceId;
 
 			private String securityLevelAbbreviation;
 
@@ -171,60 +171,12 @@ public class ListTablesResponse extends AcsResponse {
 
 			private List<String> assetTagList;
 
-			public String getGuid() {
-				return this.guid;
-			}
-
-			public void setGuid(String guid) {
-				this.guid = guid;
-			}
-
-			public Long getDataSourceId() {
-				return this.dataSourceId;
-			}
-
-			public void setDataSourceId(Long dataSourceId) {
-				this.dataSourceId = dataSourceId;
-			}
-
-			public Long getTableSizeInBytes() {
-				return this.tableSizeInBytes;
-			}
-
-			public void setTableSizeInBytes(Long tableSizeInBytes) {
-				this.tableSizeInBytes = tableSizeInBytes;
-			}
-
 			public Long getLifeCycle() {
 				return this.lifeCycle;
 			}
 
 			public void setLifeCycle(Long lifeCycle) {
 				this.lifeCycle = lifeCycle;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getLastDdlTime() {
-				return this.lastDdlTime;
-			}
-
-			public void setLastDdlTime(String lastDdlTime) {
-				this.lastDdlTime = lastDdlTime;
-			}
-
-			public String getLastQueryTime() {
-				return this.lastQueryTime;
-			}
-
-			public void setLastQueryTime(String lastQueryTime) {
-				this.lastQueryTime = lastQueryTime;
 			}
 
 			public String getOwner() {
@@ -235,20 +187,44 @@ public class ListTablesResponse extends AcsResponse {
 				this.owner = owner;
 			}
 
+			public Boolean getIsPartitionTable() {
+				return this.isPartitionTable;
+			}
+
+			public void setIsPartitionTable(Boolean isPartitionTable) {
+				this.isPartitionTable = isPartitionTable;
+			}
+
+			public Long getTableSizeInBytes() {
+				return this.tableSizeInBytes;
+			}
+
+			public void setTableSizeInBytes(Long tableSizeInBytes) {
+				this.tableSizeInBytes = tableSizeInBytes;
+			}
+
+			public String getProjectName() {
+				return this.projectName;
+			}
+
+			public void setProjectName(String projectName) {
+				this.projectName = projectName;
+			}
+
+			public String getGuid() {
+				return this.guid;
+			}
+
+			public void setGuid(String guid) {
+				this.guid = guid;
+			}
+
 			public String getCreator() {
 				return this.creator;
 			}
 
 			public void setCreator(String creator) {
 				this.creator = creator;
-			}
-
-			public Long getVisitCount30d() {
-				return this.visitCount30d;
-			}
-
-			public void setVisitCount30d(Long visitCount30d) {
-				this.visitCount30d = visitCount30d;
 			}
 
 			public String getEnv() {
@@ -267,6 +243,30 @@ public class ListTablesResponse extends AcsResponse {
 				this.name = name;
 			}
 
+			public Long getDataDomainId() {
+				return this.dataDomainId;
+			}
+
+			public void setDataDomainId(Long dataDomainId) {
+				this.dataDomainId = dataDomainId;
+			}
+
+			public Long getBizUnitId() {
+				return this.bizUnitId;
+			}
+
+			public void setBizUnitId(Long bizUnitId) {
+				this.bizUnitId = bizUnitId;
+			}
+
+			public Long getSecurityLevel() {
+				return this.securityLevel;
+			}
+
+			public void setSecurityLevel(Long securityLevel) {
+				this.securityLevel = securityLevel;
+			}
+
 			public String getDisplayName() {
 				return this.displayName;
 			}
@@ -283,92 +283,12 @@ public class ListTablesResponse extends AcsResponse {
 				this.lastDmlTime = lastDmlTime;
 			}
 
-			public String getComment() {
-				return this.comment;
-			}
-
-			public void setComment(String comment) {
-				this.comment = comment;
-			}
-
-			public Long getBizUnitId() {
-				return this.bizUnitId;
-			}
-
-			public void setBizUnitId(Long bizUnitId) {
-				this.bizUnitId = bizUnitId;
-			}
-
 			public String getBizUnitName() {
 				return this.bizUnitName;
 			}
 
 			public void setBizUnitName(String bizUnitName) {
 				this.bizUnitName = bizUnitName;
-			}
-
-			public Long getDataDomainId() {
-				return this.dataDomainId;
-			}
-
-			public void setDataDomainId(Long dataDomainId) {
-				this.dataDomainId = dataDomainId;
-			}
-
-			public String getDataDomainName() {
-				return this.dataDomainName;
-			}
-
-			public void setDataDomainName(String dataDomainName) {
-				this.dataDomainName = dataDomainName;
-			}
-
-			public Long getProjectId() {
-				return this.projectId;
-			}
-
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
-
-			public String getProjectName() {
-				return this.projectName;
-			}
-
-			public void setProjectName(String projectName) {
-				this.projectName = projectName;
-			}
-
-			public String getParentModelId() {
-				return this.parentModelId;
-			}
-
-			public void setParentModelId(String parentModelId) {
-				this.parentModelId = parentModelId;
-			}
-
-			public String getFileId() {
-				return this.fileId;
-			}
-
-			public void setFileId(String fileId) {
-				this.fileId = fileId;
-			}
-
-			public Boolean getIsPartitionTable() {
-				return this.isPartitionTable;
-			}
-
-			public void setIsPartitionTable(Boolean isPartitionTable) {
-				this.isPartitionTable = isPartitionTable;
-			}
-
-			public String getStorageType() {
-				return this.storageType;
-			}
-
-			public void setStorageType(String storageType) {
-				this.storageType = storageType;
 			}
 
 			public Boolean getIsBasicMode() {
@@ -379,12 +299,68 @@ public class ListTablesResponse extends AcsResponse {
 				this.isBasicMode = isBasicMode;
 			}
 
-			public Long getSecurityLevel() {
-				return this.securityLevel;
+			public String getComment() {
+				return this.comment;
 			}
 
-			public void setSecurityLevel(Long securityLevel) {
-				this.securityLevel = securityLevel;
+			public void setComment(String comment) {
+				this.comment = comment;
+			}
+
+			public String getStorageType() {
+				return this.storageType;
+			}
+
+			public void setStorageType(String storageType) {
+				this.storageType = storageType;
+			}
+
+			public String getLastDdlTime() {
+				return this.lastDdlTime;
+			}
+
+			public void setLastDdlTime(String lastDdlTime) {
+				this.lastDdlTime = lastDdlTime;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getLastQueryTime() {
+				return this.lastQueryTime;
+			}
+
+			public void setLastQueryTime(String lastQueryTime) {
+				this.lastQueryTime = lastQueryTime;
+			}
+
+			public String getParentModelId() {
+				return this.parentModelId;
+			}
+
+			public void setParentModelId(String parentModelId) {
+				this.parentModelId = parentModelId;
+			}
+
+			public Long getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
+			}
+
+			public Long getVisitCount30d() {
+				return this.visitCount30d;
+			}
+
+			public void setVisitCount30d(Long visitCount30d) {
+				this.visitCount30d = visitCount30d;
 			}
 
 			public String getSecurityLevelName() {
@@ -393,6 +369,30 @@ public class ListTablesResponse extends AcsResponse {
 
 			public void setSecurityLevelName(String securityLevelName) {
 				this.securityLevelName = securityLevelName;
+			}
+
+			public String getDataDomainName() {
+				return this.dataDomainName;
+			}
+
+			public void setDataDomainName(String dataDomainName) {
+				this.dataDomainName = dataDomainName;
+			}
+
+			public String getFileId() {
+				return this.fileId;
+			}
+
+			public void setFileId(String fileId) {
+				this.fileId = fileId;
+			}
+
+			public Long getDataSourceId() {
+				return this.dataSourceId;
+			}
+
+			public void setDataSourceId(Long dataSourceId) {
+				this.dataSourceId = dataSourceId;
 			}
 
 			public String getSecurityLevelAbbreviation() {
@@ -421,17 +421,9 @@ public class ListTablesResponse extends AcsResponse {
 
 			public static class StreamTableConfigItem {
 
-				private String key;
-
 				private String value;
 
-				public String getKey() {
-					return this.key;
-				}
-
-				public void setKey(String key) {
-					this.key = key;
-				}
+				private String key;
 
 				public String getValue() {
 					return this.value;
@@ -439,6 +431,14 @@ public class ListTablesResponse extends AcsResponse {
 
 				public void setValue(String value) {
 					this.value = value;
+				}
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
 				}
 			}
 		}

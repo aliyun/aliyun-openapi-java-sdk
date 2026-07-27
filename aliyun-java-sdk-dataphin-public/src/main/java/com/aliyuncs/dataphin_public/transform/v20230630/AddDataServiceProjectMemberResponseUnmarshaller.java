@@ -23,10 +23,10 @@ public class AddDataServiceProjectMemberResponseUnmarshaller {
 	public static AddDataServiceProjectMemberResponse unmarshall(AddDataServiceProjectMemberResponse addDataServiceProjectMemberResponse, UnmarshallerContext _ctx) {
 		
 		addDataServiceProjectMemberResponse.setRequestId(_ctx.stringValue("AddDataServiceProjectMemberResponse.RequestId"));
-		addDataServiceProjectMemberResponse.setSuccess(_ctx.booleanValue("AddDataServiceProjectMemberResponse.Success"));
+		addDataServiceProjectMemberResponse.setMessage(_ctx.stringValue("AddDataServiceProjectMemberResponse.Message"));
 		addDataServiceProjectMemberResponse.setHttpStatusCode(_ctx.integerValue("AddDataServiceProjectMemberResponse.HttpStatusCode"));
 		addDataServiceProjectMemberResponse.setCode(_ctx.stringValue("AddDataServiceProjectMemberResponse.Code"));
-		addDataServiceProjectMemberResponse.setMessage(_ctx.stringValue("AddDataServiceProjectMemberResponse.Message"));
+		addDataServiceProjectMemberResponse.setSuccess(_ctx.booleanValue("AddDataServiceProjectMemberResponse.Success"));
 	 
 	 	return addDataServiceProjectMemberResponse;
 	}

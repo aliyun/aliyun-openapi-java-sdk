@@ -27,10 +27,10 @@ public class GetStreamJobsResponseUnmarshaller {
 	public static GetStreamJobsResponse unmarshall(GetStreamJobsResponse getStreamJobsResponse, UnmarshallerContext _ctx) {
 		
 		getStreamJobsResponse.setRequestId(_ctx.stringValue("GetStreamJobsResponse.RequestId"));
-		getStreamJobsResponse.setSuccess(_ctx.booleanValue("GetStreamJobsResponse.Success"));
+		getStreamJobsResponse.setMessage(_ctx.stringValue("GetStreamJobsResponse.Message"));
 		getStreamJobsResponse.setHttpStatusCode(_ctx.integerValue("GetStreamJobsResponse.HttpStatusCode"));
 		getStreamJobsResponse.setCode(_ctx.stringValue("GetStreamJobsResponse.Code"));
-		getStreamJobsResponse.setMessage(_ctx.stringValue("GetStreamJobsResponse.Message"));
+		getStreamJobsResponse.setSuccess(_ctx.booleanValue("GetStreamJobsResponse.Success"));
 
 		List<StreamJobMapping> data = new ArrayList<StreamJobMapping>();
 		for (int i = 0; i < _ctx.lengthValue("GetStreamJobsResponse.Data.Length"); i++) {

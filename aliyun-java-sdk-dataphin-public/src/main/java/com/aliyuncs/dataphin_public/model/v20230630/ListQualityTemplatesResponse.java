@@ -27,13 +27,13 @@ public class ListQualityTemplatesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -45,12 +45,12 @@ public class ListQualityTemplatesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListQualityTemplatesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -109,66 +109,50 @@ public class ListQualityTemplatesResponse extends AcsResponse {
 
 		public static class QualityTemplate {
 
-			private Long id;
-
-			private String name;
-
-			private String type;
+			private String modifyTime;
 
 			private String typeName;
-
-			private String description;
 
 			private String owner;
 
 			private String ownerName;
 
-			private String catalog;
-
-			private String catalogName;
-
-			private Boolean supportAllDataSourceType;
-
-			private Boolean isSystemTemplate;
-
-			private String creator;
-
-			private String creatorName;
+			private String description;
 
 			private String createTime;
 
-			private String modifyTime;
+			private String modifierName;
+
+			private String creator;
+
+			private Boolean isSystemTemplate;
+
+			private String catalog;
+
+			private String name;
+
+			private String type;
+
+			private Boolean supportAllDataSourceType;
+
+			private String catalogName;
+
+			private Long id;
 
 			private String modifier;
 
-			private String modifierName;
+			private String creatorName;
 
 			private List<FormProperty> formPropertyList;
 
 			private List<String> supportDataSourceTypeList;
 
-			public Long getId() {
-				return this.id;
+			public String getModifyTime() {
+				return this.modifyTime;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
+			public void setModifyTime(String modifyTime) {
+				this.modifyTime = modifyTime;
 			}
 
 			public String getTypeName() {
@@ -177,14 +161,6 @@ public class ListQualityTemplatesResponse extends AcsResponse {
 
 			public void setTypeName(String typeName) {
 				this.typeName = typeName;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
 			}
 
 			public String getOwner() {
@@ -203,52 +179,12 @@ public class ListQualityTemplatesResponse extends AcsResponse {
 				this.ownerName = ownerName;
 			}
 
-			public String getCatalog() {
-				return this.catalog;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setCatalog(String catalog) {
-				this.catalog = catalog;
-			}
-
-			public String getCatalogName() {
-				return this.catalogName;
-			}
-
-			public void setCatalogName(String catalogName) {
-				this.catalogName = catalogName;
-			}
-
-			public Boolean getSupportAllDataSourceType() {
-				return this.supportAllDataSourceType;
-			}
-
-			public void setSupportAllDataSourceType(Boolean supportAllDataSourceType) {
-				this.supportAllDataSourceType = supportAllDataSourceType;
-			}
-
-			public Boolean getIsSystemTemplate() {
-				return this.isSystemTemplate;
-			}
-
-			public void setIsSystemTemplate(Boolean isSystemTemplate) {
-				this.isSystemTemplate = isSystemTemplate;
-			}
-
-			public String getCreator() {
-				return this.creator;
-			}
-
-			public void setCreator(String creator) {
-				this.creator = creator;
-			}
-
-			public String getCreatorName() {
-				return this.creatorName;
-			}
-
-			public void setCreatorName(String creatorName) {
-				this.creatorName = creatorName;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getCreateTime() {
@@ -259,12 +195,76 @@ public class ListQualityTemplatesResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public String getModifyTime() {
-				return this.modifyTime;
+			public String getModifierName() {
+				return this.modifierName;
 			}
 
-			public void setModifyTime(String modifyTime) {
-				this.modifyTime = modifyTime;
+			public void setModifierName(String modifierName) {
+				this.modifierName = modifierName;
+			}
+
+			public String getCreator() {
+				return this.creator;
+			}
+
+			public void setCreator(String creator) {
+				this.creator = creator;
+			}
+
+			public Boolean getIsSystemTemplate() {
+				return this.isSystemTemplate;
+			}
+
+			public void setIsSystemTemplate(Boolean isSystemTemplate) {
+				this.isSystemTemplate = isSystemTemplate;
+			}
+
+			public String getCatalog() {
+				return this.catalog;
+			}
+
+			public void setCatalog(String catalog) {
+				this.catalog = catalog;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public Boolean getSupportAllDataSourceType() {
+				return this.supportAllDataSourceType;
+			}
+
+			public void setSupportAllDataSourceType(Boolean supportAllDataSourceType) {
+				this.supportAllDataSourceType = supportAllDataSourceType;
+			}
+
+			public String getCatalogName() {
+				return this.catalogName;
+			}
+
+			public void setCatalogName(String catalogName) {
+				this.catalogName = catalogName;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 
 			public String getModifier() {
@@ -275,12 +275,12 @@ public class ListQualityTemplatesResponse extends AcsResponse {
 				this.modifier = modifier;
 			}
 
-			public String getModifierName() {
-				return this.modifierName;
+			public String getCreatorName() {
+				return this.creatorName;
 			}
 
-			public void setModifierName(String modifierName) {
-				this.modifierName = modifierName;
+			public void setCreatorName(String creatorName) {
+				this.creatorName = creatorName;
 			}
 
 			public List<FormProperty> getFormPropertyList() {
@@ -303,9 +303,9 @@ public class ListQualityTemplatesResponse extends AcsResponse {
 
 				private String componentType;
 
-				private String name;
-
 				private String value;
+
+				private String name;
 
 				public String getComponentType() {
 					return this.componentType;
@@ -315,20 +315,20 @@ public class ListQualityTemplatesResponse extends AcsResponse {
 					this.componentType = componentType;
 				}
 
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
 				public String getValue() {
 					return this.value;
 				}
 
 				public void setValue(String value) {
 					this.value = value;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 			}
 		}

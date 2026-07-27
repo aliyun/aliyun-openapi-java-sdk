@@ -84,11 +84,11 @@ public class CreateNodeSupplementRequest extends RpcAcsRequest<CreateNodeSupplem
 		@SerializedName("StartBizDate")
 		private String startBizDate;
 
-		@SerializedName("Parallelism")
-		private Integer parallelism;
-
 		@SerializedName("GlobalParamList")
 		private List<GlobalParamListItem> globalParamList;
+
+		@SerializedName("Parallelism")
+		private Integer parallelism;
 
 		@SerializedName("EndBizDate")
 		private String endBizDate;
@@ -105,11 +105,11 @@ public class CreateNodeSupplementRequest extends RpcAcsRequest<CreateNodeSupplem
 		@SerializedName("MinDueTime")
 		private String minDueTime;
 
-		@SerializedName("NodeIdList")
-		private List<NodeIdListItem> nodeIdList;
-
 		@SerializedName("ProjectId")
 		private Long projectId;
+
+		@SerializedName("NodeIdList")
+		private List<NodeIdListItem> nodeIdList;
 
 		@SerializedName("DownStreamNodeIdList")
 		private List<DownStreamNodeIdListItem> downStreamNodeIdList;
@@ -138,20 +138,20 @@ public class CreateNodeSupplementRequest extends RpcAcsRequest<CreateNodeSupplem
 			this.startBizDate = startBizDate;
 		}
 
-		public Integer getParallelism() {
-			return this.parallelism;
-		}
-
-		public void setParallelism(Integer parallelism) {
-			this.parallelism = parallelism;
-		}
-
 		public List<GlobalParamListItem> getGlobalParamList() {
 			return this.globalParamList;
 		}
 
 		public void setGlobalParamList(List<GlobalParamListItem> globalParamList) {
 			this.globalParamList = globalParamList;
+		}
+
+		public Integer getParallelism() {
+			return this.parallelism;
+		}
+
+		public void setParallelism(Integer parallelism) {
+			this.parallelism = parallelism;
 		}
 
 		public String getEndBizDate() {
@@ -194,20 +194,20 @@ public class CreateNodeSupplementRequest extends RpcAcsRequest<CreateNodeSupplem
 			this.minDueTime = minDueTime;
 		}
 
-		public List<NodeIdListItem> getNodeIdList() {
-			return this.nodeIdList;
-		}
-
-		public void setNodeIdList(List<NodeIdListItem> nodeIdList) {
-			this.nodeIdList = nodeIdList;
-		}
-
 		public Long getProjectId() {
 			return this.projectId;
 		}
 
 		public void setProjectId(Long projectId) {
 			this.projectId = projectId;
+		}
+
+		public List<NodeIdListItem> getNodeIdList() {
+			return this.nodeIdList;
+		}
+
+		public void setNodeIdList(List<NodeIdListItem> nodeIdList) {
+			this.nodeIdList = nodeIdList;
 		}
 
 		public List<DownStreamNodeIdListItem> getDownStreamNodeIdList() {

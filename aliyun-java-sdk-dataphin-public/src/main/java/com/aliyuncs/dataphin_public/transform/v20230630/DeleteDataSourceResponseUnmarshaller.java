@@ -23,11 +23,11 @@ public class DeleteDataSourceResponseUnmarshaller {
 	public static DeleteDataSourceResponse unmarshall(DeleteDataSourceResponse deleteDataSourceResponse, UnmarshallerContext _ctx) {
 		
 		deleteDataSourceResponse.setRequestId(_ctx.stringValue("DeleteDataSourceResponse.RequestId"));
-		deleteDataSourceResponse.setSuccess(_ctx.booleanValue("DeleteDataSourceResponse.Success"));
-		deleteDataSourceResponse.setHttpStatusCode(_ctx.integerValue("DeleteDataSourceResponse.HttpStatusCode"));
-		deleteDataSourceResponse.setCode(_ctx.stringValue("DeleteDataSourceResponse.Code"));
 		deleteDataSourceResponse.setMessage(_ctx.stringValue("DeleteDataSourceResponse.Message"));
+		deleteDataSourceResponse.setHttpStatusCode(_ctx.integerValue("DeleteDataSourceResponse.HttpStatusCode"));
 		deleteDataSourceResponse.setData(_ctx.booleanValue("DeleteDataSourceResponse.Data"));
+		deleteDataSourceResponse.setCode(_ctx.stringValue("DeleteDataSourceResponse.Code"));
+		deleteDataSourceResponse.setSuccess(_ctx.booleanValue("DeleteDataSourceResponse.Success"));
 	 
 	 	return deleteDataSourceResponse;
 	}

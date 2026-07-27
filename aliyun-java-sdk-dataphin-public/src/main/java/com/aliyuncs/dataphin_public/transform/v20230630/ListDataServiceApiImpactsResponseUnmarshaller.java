@@ -28,10 +28,10 @@ public class ListDataServiceApiImpactsResponseUnmarshaller {
 	public static ListDataServiceApiImpactsResponse unmarshall(ListDataServiceApiImpactsResponse listDataServiceApiImpactsResponse, UnmarshallerContext _ctx) {
 		
 		listDataServiceApiImpactsResponse.setRequestId(_ctx.stringValue("ListDataServiceApiImpactsResponse.RequestId"));
-		listDataServiceApiImpactsResponse.setSuccess(_ctx.booleanValue("ListDataServiceApiImpactsResponse.Success"));
+		listDataServiceApiImpactsResponse.setMessage(_ctx.stringValue("ListDataServiceApiImpactsResponse.Message"));
 		listDataServiceApiImpactsResponse.setHttpStatusCode(_ctx.integerValue("ListDataServiceApiImpactsResponse.HttpStatusCode"));
 		listDataServiceApiImpactsResponse.setCode(_ctx.stringValue("ListDataServiceApiImpactsResponse.Code"));
-		listDataServiceApiImpactsResponse.setMessage(_ctx.stringValue("ListDataServiceApiImpactsResponse.Message"));
+		listDataServiceApiImpactsResponse.setSuccess(_ctx.booleanValue("ListDataServiceApiImpactsResponse.Success"));
 
 		PageResult pageResult = new PageResult();
 		pageResult.setTotalCount(_ctx.integerValue("ListDataServiceApiImpactsResponse.PageResult.TotalCount"));

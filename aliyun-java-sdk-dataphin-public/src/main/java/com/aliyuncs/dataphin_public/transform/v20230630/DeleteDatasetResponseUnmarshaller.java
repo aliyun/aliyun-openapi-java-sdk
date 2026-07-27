@@ -23,10 +23,10 @@ public class DeleteDatasetResponseUnmarshaller {
 	public static DeleteDatasetResponse unmarshall(DeleteDatasetResponse deleteDatasetResponse, UnmarshallerContext _ctx) {
 		
 		deleteDatasetResponse.setRequestId(_ctx.stringValue("DeleteDatasetResponse.RequestId"));
-		deleteDatasetResponse.setSuccess(_ctx.booleanValue("DeleteDatasetResponse.Success"));
+		deleteDatasetResponse.setMessage(_ctx.stringValue("DeleteDatasetResponse.Message"));
 		deleteDatasetResponse.setHttpStatusCode(_ctx.integerValue("DeleteDatasetResponse.HttpStatusCode"));
 		deleteDatasetResponse.setCode(_ctx.stringValue("DeleteDatasetResponse.Code"));
-		deleteDatasetResponse.setMessage(_ctx.stringValue("DeleteDatasetResponse.Message"));
+		deleteDatasetResponse.setSuccess(_ctx.booleanValue("DeleteDatasetResponse.Success"));
 	 
 	 	return deleteDatasetResponse;
 	}

@@ -27,13 +27,13 @@ public class ListQualityWatchesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private PageResult pageResult;
 
@@ -45,12 +45,12 @@ public class ListQualityWatchesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class ListQualityWatchesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public PageResult getPageResult() {
@@ -109,65 +109,41 @@ public class ListQualityWatchesResponse extends AcsResponse {
 
 		public static class QualityWatch {
 
-			private String type;
-
-			private Long id;
-
-			private String name;
-
 			private String status;
-
-			private String qualityOwner;
-
-			private String qualityOwnerName;
-
-			private Long latestWatchTaskId;
-
-			private String latestWatchTaskStatus;
 
 			private Long ruleCount;
 
-			private Long enabledRuleCount;
-
-			private String creator;
-
-			private String creatorName;
-
-			private String createTime;
+			private Long latestWatchTaskId;
 
 			private String modifyTime;
 
+			private String createTime;
+
+			private Long enabledRuleCount;
+
+			private String latestWatchTaskStatus;
+
+			private String creator;
+
+			private String name;
+
+			private String qualityOwnerName;
+
+			private String type;
+
+			private String qualityOwner;
+
+			private Long id;
+
 			private String modifier;
+
+			private String creatorName;
+
+			private IndexInfo indexInfo;
 
 			private DataSourceInfo dataSourceInfo;
 
 			private TableInfo tableInfo;
-
-			private IndexInfo indexInfo;
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
 
 			public String getStatus() {
 				return this.status;
@@ -175,38 +151,6 @@ public class ListQualityWatchesResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
-			}
-
-			public String getQualityOwner() {
-				return this.qualityOwner;
-			}
-
-			public void setQualityOwner(String qualityOwner) {
-				this.qualityOwner = qualityOwner;
-			}
-
-			public String getQualityOwnerName() {
-				return this.qualityOwnerName;
-			}
-
-			public void setQualityOwnerName(String qualityOwnerName) {
-				this.qualityOwnerName = qualityOwnerName;
-			}
-
-			public Long getLatestWatchTaskId() {
-				return this.latestWatchTaskId;
-			}
-
-			public void setLatestWatchTaskId(Long latestWatchTaskId) {
-				this.latestWatchTaskId = latestWatchTaskId;
-			}
-
-			public String getLatestWatchTaskStatus() {
-				return this.latestWatchTaskStatus;
-			}
-
-			public void setLatestWatchTaskStatus(String latestWatchTaskStatus) {
-				this.latestWatchTaskStatus = latestWatchTaskStatus;
 			}
 
 			public Long getRuleCount() {
@@ -217,36 +161,12 @@ public class ListQualityWatchesResponse extends AcsResponse {
 				this.ruleCount = ruleCount;
 			}
 
-			public Long getEnabledRuleCount() {
-				return this.enabledRuleCount;
+			public Long getLatestWatchTaskId() {
+				return this.latestWatchTaskId;
 			}
 
-			public void setEnabledRuleCount(Long enabledRuleCount) {
-				this.enabledRuleCount = enabledRuleCount;
-			}
-
-			public String getCreator() {
-				return this.creator;
-			}
-
-			public void setCreator(String creator) {
-				this.creator = creator;
-			}
-
-			public String getCreatorName() {
-				return this.creatorName;
-			}
-
-			public void setCreatorName(String creatorName) {
-				this.creatorName = creatorName;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
+			public void setLatestWatchTaskId(Long latestWatchTaskId) {
+				this.latestWatchTaskId = latestWatchTaskId;
 			}
 
 			public String getModifyTime() {
@@ -257,12 +177,100 @@ public class ListQualityWatchesResponse extends AcsResponse {
 				this.modifyTime = modifyTime;
 			}
 
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getEnabledRuleCount() {
+				return this.enabledRuleCount;
+			}
+
+			public void setEnabledRuleCount(Long enabledRuleCount) {
+				this.enabledRuleCount = enabledRuleCount;
+			}
+
+			public String getLatestWatchTaskStatus() {
+				return this.latestWatchTaskStatus;
+			}
+
+			public void setLatestWatchTaskStatus(String latestWatchTaskStatus) {
+				this.latestWatchTaskStatus = latestWatchTaskStatus;
+			}
+
+			public String getCreator() {
+				return this.creator;
+			}
+
+			public void setCreator(String creator) {
+				this.creator = creator;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getQualityOwnerName() {
+				return this.qualityOwnerName;
+			}
+
+			public void setQualityOwnerName(String qualityOwnerName) {
+				this.qualityOwnerName = qualityOwnerName;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getQualityOwner() {
+				return this.qualityOwner;
+			}
+
+			public void setQualityOwner(String qualityOwner) {
+				this.qualityOwner = qualityOwner;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
 			public String getModifier() {
 				return this.modifier;
 			}
 
 			public void setModifier(String modifier) {
 				this.modifier = modifier;
+			}
+
+			public String getCreatorName() {
+				return this.creatorName;
+			}
+
+			public void setCreatorName(String creatorName) {
+				this.creatorName = creatorName;
+			}
+
+			public IndexInfo getIndexInfo() {
+				return this.indexInfo;
+			}
+
+			public void setIndexInfo(IndexInfo indexInfo) {
+				this.indexInfo = indexInfo;
 			}
 
 			public DataSourceInfo getDataSourceInfo() {
@@ -281,42 +289,106 @@ public class ListQualityWatchesResponse extends AcsResponse {
 				this.tableInfo = tableInfo;
 			}
 
-			public IndexInfo getIndexInfo() {
-				return this.indexInfo;
-			}
-
-			public void setIndexInfo(IndexInfo indexInfo) {
-				this.indexInfo = indexInfo;
-			}
-
-			public static class DataSourceInfo {
-
-				private String id;
-
-				private String name;
-
-				private String type;
-
-				private String creator;
-
-				private String creatorName;
+			public static class IndexInfo {
 
 				private String owner;
 
 				private String ownerName;
 
-				private String createTime;
+				private String description;
 
-				private String modifyTime;
+				private String projectName;
 
-				private String env;
+				private Long projectId;
 
-				public String getId() {
-					return this.id;
+				private String guid;
+
+				private String computeType;
+
+				private String catalog;
+
+				private String name;
+
+				private String granularityDisplayName;
+
+				private Long bizUnitId;
+
+				private String cellSumLogicTableName;
+
+				private String type;
+
+				private String displayName;
+
+				private Long granularityId;
+
+				private String bizUnitName;
+
+				private String id;
+
+				private String dateType;
+
+				public String getOwner() {
+					return this.owner;
 				}
 
-				public void setId(String id) {
-					this.id = id;
+				public void setOwner(String owner) {
+					this.owner = owner;
+				}
+
+				public String getOwnerName() {
+					return this.ownerName;
+				}
+
+				public void setOwnerName(String ownerName) {
+					this.ownerName = ownerName;
+				}
+
+				public String getDescription() {
+					return this.description;
+				}
+
+				public void setDescription(String description) {
+					this.description = description;
+				}
+
+				public String getProjectName() {
+					return this.projectName;
+				}
+
+				public void setProjectName(String projectName) {
+					this.projectName = projectName;
+				}
+
+				public Long getProjectId() {
+					return this.projectId;
+				}
+
+				public void setProjectId(Long projectId) {
+					this.projectId = projectId;
+				}
+
+				public String getGuid() {
+					return this.guid;
+				}
+
+				public void setGuid(String guid) {
+					this.guid = guid;
+				}
+
+				public String getComputeType() {
+					return this.computeType;
+				}
+
+				public void setComputeType(String computeType) {
+					this.computeType = computeType;
+				}
+
+				public String getCatalog() {
+					return this.catalog;
+				}
+
+				public void setCatalog(String catalog) {
+					this.catalog = catalog;
 				}
 
 				public String getName() {
@@ -327,6 +399,30 @@ public class ListQualityWatchesResponse extends AcsResponse {
 					this.name = name;
 				}
 
+				public String getGranularityDisplayName() {
+					return this.granularityDisplayName;
+				}
+
+				public void setGranularityDisplayName(String granularityDisplayName) {
+					this.granularityDisplayName = granularityDisplayName;
+				}
+
+				public Long getBizUnitId() {
+					return this.bizUnitId;
+				}
+
+				public void setBizUnitId(Long bizUnitId) {
+					this.bizUnitId = bizUnitId;
+				}
+
+				public String getCellSumLogicTableName() {
+					return this.cellSumLogicTableName;
+				}
+
+				public void setCellSumLogicTableName(String cellSumLogicTableName) {
+					this.cellSumLogicTableName = cellSumLogicTableName;
+				}
+
 				public String getType() {
 					return this.type;
 				}
@@ -335,20 +431,83 @@ public class ListQualityWatchesResponse extends AcsResponse {
 					this.type = type;
 				}
 
-				public String getCreator() {
-					return this.creator;
+				public String getDisplayName() {
+					return this.displayName;
 				}
 
-				public void setCreator(String creator) {
-					this.creator = creator;
+				public void setDisplayName(String displayName) {
+					this.displayName = displayName;
 				}
 
-				public String getCreatorName() {
-					return this.creatorName;
+				public Long getGranularityId() {
+					return this.granularityId;
 				}
 
-				public void setCreatorName(String creatorName) {
-					this.creatorName = creatorName;
+				public void setGranularityId(Long granularityId) {
+					this.granularityId = granularityId;
+				}
+
+				public String getBizUnitName() {
+					return this.bizUnitName;
+				}
+
+				public void setBizUnitName(String bizUnitName) {
+					this.bizUnitName = bizUnitName;
+				}
+
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
+				}
+
+				public String getDateType() {
+					return this.dateType;
+				}
+
+				public void setDateType(String dateType) {
+					this.dateType = dateType;
+				}
+			}
+
+			public static class DataSourceInfo {
+
+				private String modifyTime;
+
+				private String type;
+
+				private String owner;
+
+				private String ownerName;
+
+				private String createTime;
+
+				private String id;
+
+				private String creator;
+
+				private String env;
+
+				private String creatorName;
+
+				private String name;
+
+				public String getModifyTime() {
+					return this.modifyTime;
+				}
+
+				public void setModifyTime(String modifyTime) {
+					this.modifyTime = modifyTime;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
 				}
 
 				public String getOwner() {
@@ -375,12 +534,20 @@ public class ListQualityWatchesResponse extends AcsResponse {
 					this.createTime = createTime;
 				}
 
-				public String getModifyTime() {
-					return this.modifyTime;
+				public String getId() {
+					return this.id;
 				}
 
-				public void setModifyTime(String modifyTime) {
-					this.modifyTime = modifyTime;
+				public void setId(String id) {
+					this.id = id;
+				}
+
+				public String getCreator() {
+					return this.creator;
+				}
+
+				public void setCreator(String creator) {
+					this.creator = creator;
 				}
 
 				public String getEnv() {
@@ -390,62 +557,13 @@ public class ListQualityWatchesResponse extends AcsResponse {
 				public void setEnv(String env) {
 					this.env = env;
 				}
-			}
 
-			public static class TableInfo {
-
-				private String type;
-
-				private String catalog;
-
-				private String id;
-
-				private String name;
-
-				private String description;
-
-				private String env;
-
-				private String owner;
-
-				private String ownerName;
-
-				private Long bizUnitId;
-
-				private String bizUnitName;
-
-				private Long projectId;
-
-				private String projectName;
-
-				private String dataSourceType;
-
-				private String dataSourceId;
-
-				private Boolean isPartitionTable;
-
-				public String getType() {
-					return this.type;
+				public String getCreatorName() {
+					return this.creatorName;
 				}
 
-				public void setType(String type) {
-					this.type = type;
-				}
-
-				public String getCatalog() {
-					return this.catalog;
-				}
-
-				public void setCatalog(String catalog) {
-					this.catalog = catalog;
-				}
-
-				public String getId() {
-					return this.id;
-				}
-
-				public void setId(String id) {
-					this.id = id;
+				public void setCreatorName(String creatorName) {
+					this.creatorName = creatorName;
 				}
 
 				public String getName() {
@@ -455,22 +573,39 @@ public class ListQualityWatchesResponse extends AcsResponse {
 				public void setName(String name) {
 					this.name = name;
 				}
+			}
 
-				public String getDescription() {
-					return this.description;
-				}
+			public static class TableInfo {
 
-				public void setDescription(String description) {
-					this.description = description;
-				}
+				private String owner;
 
-				public String getEnv() {
-					return this.env;
-				}
+				private String ownerName;
 
-				public void setEnv(String env) {
-					this.env = env;
-				}
+				private String description;
+
+				private Boolean isPartitionTable;
+
+				private String projectName;
+
+				private Long projectId;
+
+				private String env;
+
+				private String catalog;
+
+				private String name;
+
+				private Long bizUnitId;
+
+				private String type;
+
+				private String dataSourceType;
+
+				private String bizUnitName;
+
+				private String id;
+
+				private String dataSourceId;
 
 				public String getOwner() {
 					return this.owner;
@@ -488,20 +623,28 @@ public class ListQualityWatchesResponse extends AcsResponse {
 					this.ownerName = ownerName;
 				}
 
-				public Long getBizUnitId() {
-					return this.bizUnitId;
+				public String getDescription() {
+					return this.description;
 				}
 
-				public void setBizUnitId(Long bizUnitId) {
-					this.bizUnitId = bizUnitId;
+				public void setDescription(String description) {
+					this.description = description;
 				}
 
-				public String getBizUnitName() {
-					return this.bizUnitName;
+				public Boolean getIsPartitionTable() {
+					return this.isPartitionTable;
 				}
 
-				public void setBizUnitName(String bizUnitName) {
-					this.bizUnitName = bizUnitName;
+				public void setIsPartitionTable(Boolean isPartitionTable) {
+					this.isPartitionTable = isPartitionTable;
+				}
+
+				public String getProjectName() {
+					return this.projectName;
+				}
+
+				public void setProjectName(String projectName) {
+					this.projectName = projectName;
 				}
 
 				public Long getProjectId() {
@@ -512,12 +655,44 @@ public class ListQualityWatchesResponse extends AcsResponse {
 					this.projectId = projectId;
 				}
 
-				public String getProjectName() {
-					return this.projectName;
+				public String getEnv() {
+					return this.env;
 				}
 
-				public void setProjectName(String projectName) {
-					this.projectName = projectName;
+				public void setEnv(String env) {
+					this.env = env;
+				}
+
+				public String getCatalog() {
+					return this.catalog;
+				}
+
+				public void setCatalog(String catalog) {
+					this.catalog = catalog;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public Long getBizUnitId() {
+					return this.bizUnitId;
+				}
+
+				public void setBizUnitId(Long bizUnitId) {
+					this.bizUnitId = bizUnitId;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
 				}
 
 				public String getDataSourceType() {
@@ -528,83 +703,12 @@ public class ListQualityWatchesResponse extends AcsResponse {
 					this.dataSourceType = dataSourceType;
 				}
 
-				public String getDataSourceId() {
-					return this.dataSourceId;
+				public String getBizUnitName() {
+					return this.bizUnitName;
 				}
 
-				public void setDataSourceId(String dataSourceId) {
-					this.dataSourceId = dataSourceId;
-				}
-
-				public Boolean getIsPartitionTable() {
-					return this.isPartitionTable;
-				}
-
-				public void setIsPartitionTable(Boolean isPartitionTable) {
-					this.isPartitionTable = isPartitionTable;
-				}
-			}
-
-			public static class IndexInfo {
-
-				private Long projectId;
-
-				private String projectName;
-
-				private String catalog;
-
-				private String id;
-
-				private String guid;
-
-				private String name;
-
-				private String displayName;
-
-				private Long granularityId;
-
-				private String granularityDisplayName;
-
-				private String computeType;
-
-				private String cellSumLogicTableName;
-
-				private String type;
-
-				private Long bizUnitId;
-
-				private String bizUnitName;
-
-				private String owner;
-
-				private String ownerName;
-
-				private String description;
-
-				private String dateType;
-
-				public Long getProjectId() {
-					return this.projectId;
-				}
-
-				public void setProjectId(Long projectId) {
-					this.projectId = projectId;
-				}
-
-				public String getProjectName() {
-					return this.projectName;
-				}
-
-				public void setProjectName(String projectName) {
-					this.projectName = projectName;
-				}
-
-				public String getCatalog() {
-					return this.catalog;
-				}
-
-				public void setCatalog(String catalog) {
-					this.catalog = catalog;
+				public void setBizUnitName(String bizUnitName) {
+					this.bizUnitName = bizUnitName;
 				}
 
 				public String getId() {
@@ -615,116 +719,12 @@ public class ListQualityWatchesResponse extends AcsResponse {
 					this.id = id;
 				}
 
-				public String getGuid() {
-					return this.guid;
+				public String getDataSourceId() {
+					return this.dataSourceId;
 				}
 
-				public void setGuid(String guid) {
-					this.guid = guid;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public String getDisplayName() {
-					return this.displayName;
-				}
-
-				public void setDisplayName(String displayName) {
-					this.displayName = displayName;
-				}
-
-				public Long getGranularityId() {
-					return this.granularityId;
-				}
-
-				public void setGranularityId(Long granularityId) {
-					this.granularityId = granularityId;
-				}
-
-				public String getGranularityDisplayName() {
-					return this.granularityDisplayName;
-				}
-
-				public void setGranularityDisplayName(String granularityDisplayName) {
-					this.granularityDisplayName = granularityDisplayName;
-				}
-
-				public String getComputeType() {
-					return this.computeType;
-				}
-
-				public void setComputeType(String computeType) {
-					this.computeType = computeType;
-				}
-
-				public String getCellSumLogicTableName() {
-					return this.cellSumLogicTableName;
-				}
-
-				public void setCellSumLogicTableName(String cellSumLogicTableName) {
-					this.cellSumLogicTableName = cellSumLogicTableName;
-				}
-
-				public String getType() {
-					return this.type;
-				}
-
-				public void setType(String type) {
-					this.type = type;
-				}
-
-				public Long getBizUnitId() {
-					return this.bizUnitId;
-				}
-
-				public void setBizUnitId(Long bizUnitId) {
-					this.bizUnitId = bizUnitId;
-				}
-
-				public String getBizUnitName() {
-					return this.bizUnitName;
-				}
-
-				public void setBizUnitName(String bizUnitName) {
-					this.bizUnitName = bizUnitName;
-				}
-
-				public String getOwner() {
-					return this.owner;
-				}
-
-				public void setOwner(String owner) {
-					this.owner = owner;
-				}
-
-				public String getOwnerName() {
-					return this.ownerName;
-				}
-
-				public void setOwnerName(String ownerName) {
-					this.ownerName = ownerName;
-				}
-
-				public String getDescription() {
-					return this.description;
-				}
-
-				public void setDescription(String description) {
-					this.description = description;
-				}
-
-				public String getDateType() {
-					return this.dateType;
-				}
-
-				public void setDateType(String dateType) {
-					this.dateType = dateType;
+				public void setDataSourceId(String dataSourceId) {
+					this.dataSourceId = dataSourceId;
 				}
 			}
 		}

@@ -29,47 +29,47 @@ public class GetDirectoryTreeResponseUnmarshaller {
 	public static GetDirectoryTreeResponse unmarshall(GetDirectoryTreeResponse getDirectoryTreeResponse, UnmarshallerContext _ctx) {
 		
 		getDirectoryTreeResponse.setRequestId(_ctx.stringValue("GetDirectoryTreeResponse.RequestId"));
-		getDirectoryTreeResponse.setSuccess(_ctx.booleanValue("GetDirectoryTreeResponse.Success"));
+		getDirectoryTreeResponse.setMessage(_ctx.stringValue("GetDirectoryTreeResponse.Message"));
 		getDirectoryTreeResponse.setHttpStatusCode(_ctx.integerValue("GetDirectoryTreeResponse.HttpStatusCode"));
 		getDirectoryTreeResponse.setCode(_ctx.stringValue("GetDirectoryTreeResponse.Code"));
-		getDirectoryTreeResponse.setMessage(_ctx.stringValue("GetDirectoryTreeResponse.Message"));
+		getDirectoryTreeResponse.setSuccess(_ctx.booleanValue("GetDirectoryTreeResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetDirectoryTreeResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 
 			Parent parent = new Parent();
-			parent.setId(_ctx.longValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.Id"));
-			parent.setStringId(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.StringId"));
-			parent.setProjectId(_ctx.longValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.ProjectId"));
-			parent.setCategoryType(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.CategoryType"));
-			parent.setDataCellId(_ctx.longValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.DataCellId"));
+			parent.setLastModifier(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.LastModifier"));
 			parent.setDirName(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.DirName"));
+			parent.setProjectId(_ctx.longValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.ProjectId"));
+			parent.setGmtModified(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.GmtModified"));
+			parent.setCategoryType(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.CategoryType"));
+			parent.setCreator(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.Creator"));
+			parent.setDataCellId(_ctx.longValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.DataCellId"));
+			parent.setLastModifierName(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.LastModifierName"));
 			parent.setName(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.Name"));
 			parent.setType(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.Type"));
-			parent.setCreator(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.Creator"));
-			parent.setCreatorName(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.CreatorName"));
 			parent.setGmtCreate(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.GmtCreate"));
-			parent.setGmtModified(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.GmtModified"));
-			parent.setLastModifier(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.LastModifier"));
-			parent.setLastModifierName(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.LastModifierName"));
+			parent.setStringId(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.StringId"));
+			parent.setId(_ctx.longValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.Id"));
+			parent.setCreatorName(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Parent.CreatorName"));
 			dataItem.setParent(parent);
 
 			Children children = new Children();
-			children.setId(_ctx.longValue("GetDirectoryTreeResponse.Data["+ i +"].Children.Id"));
-			children.setStringId(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.StringId"));
-			children.setProjectId(_ctx.longValue("GetDirectoryTreeResponse.Data["+ i +"].Children.ProjectId"));
-			children.setCategoryType(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.CategoryType"));
-			children.setDataCellId(_ctx.longValue("GetDirectoryTreeResponse.Data["+ i +"].Children.DataCellId"));
+			children.setLastModifier(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.LastModifier"));
 			children.setDirName(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.DirName"));
+			children.setProjectId(_ctx.longValue("GetDirectoryTreeResponse.Data["+ i +"].Children.ProjectId"));
+			children.setGmtModified(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.GmtModified"));
+			children.setCategoryType(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.CategoryType"));
+			children.setCreator(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.Creator"));
+			children.setDataCellId(_ctx.longValue("GetDirectoryTreeResponse.Data["+ i +"].Children.DataCellId"));
+			children.setLastModifierName(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.LastModifierName"));
 			children.setName(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.Name"));
 			children.setType(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.Type"));
-			children.setCreator(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.Creator"));
-			children.setCreatorName(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.CreatorName"));
 			children.setGmtCreate(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.GmtCreate"));
-			children.setGmtModified(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.GmtModified"));
-			children.setLastModifier(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.LastModifier"));
-			children.setLastModifierName(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.LastModifierName"));
+			children.setStringId(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.StringId"));
+			children.setId(_ctx.longValue("GetDirectoryTreeResponse.Data["+ i +"].Children.Id"));
+			children.setCreatorName(_ctx.stringValue("GetDirectoryTreeResponse.Data["+ i +"].Children.CreatorName"));
 			dataItem.setChildren(children);
 
 			data.add(dataItem);

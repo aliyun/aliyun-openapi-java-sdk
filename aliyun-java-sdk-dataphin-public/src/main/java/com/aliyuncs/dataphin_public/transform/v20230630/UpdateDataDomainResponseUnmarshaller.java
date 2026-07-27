@@ -23,10 +23,10 @@ public class UpdateDataDomainResponseUnmarshaller {
 	public static UpdateDataDomainResponse unmarshall(UpdateDataDomainResponse updateDataDomainResponse, UnmarshallerContext _ctx) {
 		
 		updateDataDomainResponse.setRequestId(_ctx.stringValue("UpdateDataDomainResponse.RequestId"));
-		updateDataDomainResponse.setSuccess(_ctx.booleanValue("UpdateDataDomainResponse.Success"));
+		updateDataDomainResponse.setMessage(_ctx.stringValue("UpdateDataDomainResponse.Message"));
 		updateDataDomainResponse.setHttpStatusCode(_ctx.integerValue("UpdateDataDomainResponse.HttpStatusCode"));
 		updateDataDomainResponse.setCode(_ctx.stringValue("UpdateDataDomainResponse.Code"));
-		updateDataDomainResponse.setMessage(_ctx.stringValue("UpdateDataDomainResponse.Message"));
+		updateDataDomainResponse.setSuccess(_ctx.booleanValue("UpdateDataDomainResponse.Success"));
 	 
 	 	return updateDataDomainResponse;
 	}

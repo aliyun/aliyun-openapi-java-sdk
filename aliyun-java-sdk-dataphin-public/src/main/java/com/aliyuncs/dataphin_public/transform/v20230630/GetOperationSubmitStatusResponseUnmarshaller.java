@@ -24,18 +24,18 @@ public class GetOperationSubmitStatusResponseUnmarshaller {
 	public static GetOperationSubmitStatusResponse unmarshall(GetOperationSubmitStatusResponse getOperationSubmitStatusResponse, UnmarshallerContext _ctx) {
 		
 		getOperationSubmitStatusResponse.setRequestId(_ctx.stringValue("GetOperationSubmitStatusResponse.RequestId"));
-		getOperationSubmitStatusResponse.setSuccess(_ctx.booleanValue("GetOperationSubmitStatusResponse.Success"));
+		getOperationSubmitStatusResponse.setMessage(_ctx.stringValue("GetOperationSubmitStatusResponse.Message"));
 		getOperationSubmitStatusResponse.setHttpStatusCode(_ctx.integerValue("GetOperationSubmitStatusResponse.HttpStatusCode"));
 		getOperationSubmitStatusResponse.setCode(_ctx.stringValue("GetOperationSubmitStatusResponse.Code"));
-		getOperationSubmitStatusResponse.setMessage(_ctx.stringValue("GetOperationSubmitStatusResponse.Message"));
+		getOperationSubmitStatusResponse.setSuccess(_ctx.booleanValue("GetOperationSubmitStatusResponse.Success"));
 
 		OperationSubmitJob operationSubmitJob = new OperationSubmitJob();
-		operationSubmitJob.setJobId(_ctx.stringValue("GetOperationSubmitStatusResponse.OperationSubmitJob.JobId"));
-		operationSubmitJob.setProgress(_ctx.stringValue("GetOperationSubmitStatusResponse.OperationSubmitJob.Progress"));
-		operationSubmitJob.setOperation(_ctx.stringValue("GetOperationSubmitStatusResponse.OperationSubmitJob.Operation"));
-		operationSubmitJob.setOperationStatus(_ctx.stringValue("GetOperationSubmitStatusResponse.OperationSubmitJob.OperationStatus"));
-		operationSubmitJob.setExternalBizId(_ctx.stringValue("GetOperationSubmitStatusResponse.OperationSubmitJob.ExternalBizId"));
 		operationSubmitJob.setOperator(_ctx.stringValue("GetOperationSubmitStatusResponse.OperationSubmitJob.Operator"));
+		operationSubmitJob.setProgress(_ctx.stringValue("GetOperationSubmitStatusResponse.OperationSubmitJob.Progress"));
+		operationSubmitJob.setExternalBizId(_ctx.stringValue("GetOperationSubmitStatusResponse.OperationSubmitJob.ExternalBizId"));
+		operationSubmitJob.setOperationStatus(_ctx.stringValue("GetOperationSubmitStatusResponse.OperationSubmitJob.OperationStatus"));
+		operationSubmitJob.setOperation(_ctx.stringValue("GetOperationSubmitStatusResponse.OperationSubmitJob.Operation"));
+		operationSubmitJob.setJobId(_ctx.stringValue("GetOperationSubmitStatusResponse.OperationSubmitJob.JobId"));
 		getOperationSubmitStatusResponse.setOperationSubmitJob(operationSubmitJob);
 	 
 	 	return getOperationSubmitStatusResponse;

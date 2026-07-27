@@ -26,27 +26,27 @@ public class GetLatestSubmitDetailResponseUnmarshaller {
 	public static GetLatestSubmitDetailResponse unmarshall(GetLatestSubmitDetailResponse getLatestSubmitDetailResponse, UnmarshallerContext _ctx) {
 		
 		getLatestSubmitDetailResponse.setRequestId(_ctx.stringValue("GetLatestSubmitDetailResponse.RequestId"));
-		getLatestSubmitDetailResponse.setSuccess(_ctx.booleanValue("GetLatestSubmitDetailResponse.Success"));
+		getLatestSubmitDetailResponse.setMessage(_ctx.stringValue("GetLatestSubmitDetailResponse.Message"));
 		getLatestSubmitDetailResponse.setHttpStatusCode(_ctx.integerValue("GetLatestSubmitDetailResponse.HttpStatusCode"));
 		getLatestSubmitDetailResponse.setCode(_ctx.stringValue("GetLatestSubmitDetailResponse.Code"));
-		getLatestSubmitDetailResponse.setMessage(_ctx.stringValue("GetLatestSubmitDetailResponse.Message"));
+		getLatestSubmitDetailResponse.setSuccess(_ctx.booleanValue("GetLatestSubmitDetailResponse.Success"));
 
 		SubmitDetailResult submitDetailResult = new SubmitDetailResult();
-		submitDetailResult.setId(_ctx.longValue("GetLatestSubmitDetailResponse.SubmitDetailResult.Id"));
 		submitDetailResult.setSubmitStatus(_ctx.stringValue("GetLatestSubmitDetailResponse.SubmitDetailResult.SubmitStatus"));
-		submitDetailResult.setPublishStatus(_ctx.stringValue("GetLatestSubmitDetailResponse.SubmitDetailResult.PublishStatus"));
+		submitDetailResult.setId(_ctx.longValue("GetLatestSubmitDetailResponse.SubmitDetailResult.Id"));
 		submitDetailResult.setTag(_ctx.stringValue("GetLatestSubmitDetailResponse.SubmitDetailResult.Tag"));
+		submitDetailResult.setPublishStatus(_ctx.stringValue("GetLatestSubmitDetailResponse.SubmitDetailResult.PublishStatus"));
 
 		ReleaseObject releaseObject = new ReleaseObject();
 		releaseObject.setObjectVersion(_ctx.stringValue("GetLatestSubmitDetailResponse.SubmitDetailResult.ReleaseObject.ObjectVersion"));
+		releaseObject.setSubmitComment(_ctx.stringValue("GetLatestSubmitDetailResponse.SubmitDetailResult.ReleaseObject.SubmitComment"));
 		releaseObject.setChangeType(_ctx.stringValue("GetLatestSubmitDetailResponse.SubmitDetailResult.ReleaseObject.ChangeType"));
 		releaseObject.setProjectId(_ctx.longValue("GetLatestSubmitDetailResponse.SubmitDetailResult.ReleaseObject.ProjectId"));
 		releaseObject.setNodeId(_ctx.stringValue("GetLatestSubmitDetailResponse.SubmitDetailResult.ReleaseObject.NodeId"));
-		releaseObject.setSubmitComment(_ctx.stringValue("GetLatestSubmitDetailResponse.SubmitDetailResult.ReleaseObject.SubmitComment"));
 
 		SubmitObject submitObject = new SubmitObject();
-		submitObject.setObjectId(_ctx.stringValue("GetLatestSubmitDetailResponse.SubmitDetailResult.ReleaseObject.SubmitObject.ObjectId"));
 		submitObject.setObjectType(_ctx.stringValue("GetLatestSubmitDetailResponse.SubmitDetailResult.ReleaseObject.SubmitObject.ObjectType"));
+		submitObject.setObjectId(_ctx.stringValue("GetLatestSubmitDetailResponse.SubmitDetailResult.ReleaseObject.SubmitObject.ObjectId"));
 		submitObject.setObjectName(_ctx.stringValue("GetLatestSubmitDetailResponse.SubmitDetailResult.ReleaseObject.SubmitObject.ObjectName"));
 		releaseObject.setSubmitObject(submitObject);
 		submitDetailResult.setReleaseObject(releaseObject);

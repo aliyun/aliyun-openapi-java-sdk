@@ -104,20 +104,20 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 		@SerializedName("RowPermissionIds")
 		private List<Long> rowPermissionIds;
 
-		@SerializedName("BizProtocol")
-		private List<Integer> bizProtocol;
-
 		@SerializedName("ReturnSqlSwitch")
 		private Boolean returnSqlSwitch;
+
+		@SerializedName("BizProtocol")
+		private List<Integer> bizProtocol;
 
 		@SerializedName("CustomUpdateRate")
 		private String customUpdateRate;
 
-		@SerializedName("ProjectId")
-		private Long projectId;
-
 		@SerializedName("ApiGroupId")
 		private Long apiGroupId;
+
+		@SerializedName("ProjectId")
+		private Long projectId;
 
 		@SerializedName("DmlConfig")
 		private DmlConfig dmlConfig;
@@ -234,20 +234,20 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 			this.rowPermissionIds = rowPermissionIds;
 		}
 
-		public List<Integer> getBizProtocol() {
-			return this.bizProtocol;
-		}
-
-		public void setBizProtocol(List<Integer> bizProtocol) {
-			this.bizProtocol = bizProtocol;
-		}
-
 		public Boolean getReturnSqlSwitch() {
 			return this.returnSqlSwitch;
 		}
 
 		public void setReturnSqlSwitch(Boolean returnSqlSwitch) {
 			this.returnSqlSwitch = returnSqlSwitch;
+		}
+
+		public List<Integer> getBizProtocol() {
+			return this.bizProtocol;
+		}
+
+		public void setBizProtocol(List<Integer> bizProtocol) {
+			this.bizProtocol = bizProtocol;
 		}
 
 		public String getCustomUpdateRate() {
@@ -258,20 +258,20 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 			this.customUpdateRate = customUpdateRate;
 		}
 
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
-
 		public Long getApiGroupId() {
 			return this.apiGroupId;
 		}
 
 		public void setApiGroupId(Long apiGroupId) {
 			this.apiGroupId = apiGroupId;
+		}
+
+		public Long getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
 		}
 
 		public DmlConfig getDmlConfig() {
@@ -383,11 +383,11 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 				@SerializedName("ParameterName")
 				private String parameterName;
 
-				@SerializedName("ParameterDescription")
-				private String parameterDescription;
-
 				@SerializedName("ExampleValue")
 				private String exampleValue;
+
+				@SerializedName("ParameterDescription")
+				private String parameterDescription;
 
 				public String getParameterLocation() {
 					return this.parameterLocation;
@@ -413,20 +413,20 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 					this.parameterName = parameterName;
 				}
 
-				public String getParameterDescription() {
-					return this.parameterDescription;
-				}
-
-				public void setParameterDescription(String parameterDescription) {
-					this.parameterDescription = parameterDescription;
-				}
-
 				public String getExampleValue() {
 					return this.exampleValue;
 				}
 
 				public void setExampleValue(String exampleValue) {
 					this.exampleValue = exampleValue;
+				}
+
+				public String getParameterDescription() {
+					return this.parameterDescription;
+				}
+
+				public void setParameterDescription(String parameterDescription) {
+					this.parameterDescription = parameterDescription;
 				}
 			}
 
@@ -447,11 +447,11 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 				@SerializedName("ParameterName")
 				private String parameterName;
 
-				@SerializedName("ParameterDescription")
-				private String parameterDescription;
-
 				@SerializedName("ExampleValue")
 				private String exampleValue;
+
+				@SerializedName("ParameterDescription")
+				private String parameterDescription;
 
 				public String getParameterValueType() {
 					return this.parameterValueType;
@@ -493,20 +493,20 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 					this.parameterName = parameterName;
 				}
 
-				public String getParameterDescription() {
-					return this.parameterDescription;
-				}
-
-				public void setParameterDescription(String parameterDescription) {
-					this.parameterDescription = parameterDescription;
-				}
-
 				public String getExampleValue() {
 					return this.exampleValue;
 				}
 
 				public void setExampleValue(String exampleValue) {
 					this.exampleValue = exampleValue;
+				}
+
+				public String getParameterDescription() {
+					return this.parameterDescription;
+				}
+
+				public void setParameterDescription(String parameterDescription) {
+					this.parameterDescription = parameterDescription;
 				}
 			}
 		}

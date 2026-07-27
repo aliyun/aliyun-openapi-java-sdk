@@ -27,10 +27,10 @@ public class PublishObjectListResponseUnmarshaller {
 	public static PublishObjectListResponse unmarshall(PublishObjectListResponse publishObjectListResponse, UnmarshallerContext _ctx) {
 		
 		publishObjectListResponse.setRequestId(_ctx.stringValue("PublishObjectListResponse.RequestId"));
-		publishObjectListResponse.setSuccess(_ctx.booleanValue("PublishObjectListResponse.Success"));
+		publishObjectListResponse.setMessage(_ctx.stringValue("PublishObjectListResponse.Message"));
 		publishObjectListResponse.setHttpStatusCode(_ctx.integerValue("PublishObjectListResponse.HttpStatusCode"));
 		publishObjectListResponse.setCode(_ctx.stringValue("PublishObjectListResponse.Code"));
-		publishObjectListResponse.setMessage(_ctx.stringValue("PublishObjectListResponse.Message"));
+		publishObjectListResponse.setSuccess(_ctx.booleanValue("PublishObjectListResponse.Success"));
 
 		PublishResult publishResult = new PublishResult();
 

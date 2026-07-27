@@ -68,11 +68,11 @@ public class UpdateBizUnitRequest extends RpcAcsRequest<UpdateBizUnitResponse> {
 		@SerializedName("DisplayName")
 		private String displayName;
 
-		@SerializedName("Name")
-		private String name;
-
 		@SerializedName("Icon")
 		private String icon;
+
+		@SerializedName("Name")
+		private String name;
 
 		@SerializedName("Description")
 		private String description;
@@ -96,20 +96,20 @@ public class UpdateBizUnitRequest extends RpcAcsRequest<UpdateBizUnitResponse> {
 			this.displayName = displayName;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getIcon() {
 			return this.icon;
 		}
 
 		public void setIcon(String icon) {
 			this.icon = icon;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getDescription() {

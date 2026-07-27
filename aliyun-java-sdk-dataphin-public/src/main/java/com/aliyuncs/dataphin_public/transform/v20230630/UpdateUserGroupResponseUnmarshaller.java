@@ -23,11 +23,11 @@ public class UpdateUserGroupResponseUnmarshaller {
 	public static UpdateUserGroupResponse unmarshall(UpdateUserGroupResponse updateUserGroupResponse, UnmarshallerContext _ctx) {
 		
 		updateUserGroupResponse.setRequestId(_ctx.stringValue("UpdateUserGroupResponse.RequestId"));
-		updateUserGroupResponse.setSuccess(_ctx.booleanValue("UpdateUserGroupResponse.Success"));
-		updateUserGroupResponse.setHttpStatusCode(_ctx.integerValue("UpdateUserGroupResponse.HttpStatusCode"));
-		updateUserGroupResponse.setCode(_ctx.stringValue("UpdateUserGroupResponse.Code"));
 		updateUserGroupResponse.setMessage(_ctx.stringValue("UpdateUserGroupResponse.Message"));
+		updateUserGroupResponse.setHttpStatusCode(_ctx.integerValue("UpdateUserGroupResponse.HttpStatusCode"));
 		updateUserGroupResponse.setData(_ctx.booleanValue("UpdateUserGroupResponse.Data"));
+		updateUserGroupResponse.setCode(_ctx.stringValue("UpdateUserGroupResponse.Code"));
+		updateUserGroupResponse.setSuccess(_ctx.booleanValue("UpdateUserGroupResponse.Success"));
 	 
 	 	return updateUserGroupResponse;
 	}

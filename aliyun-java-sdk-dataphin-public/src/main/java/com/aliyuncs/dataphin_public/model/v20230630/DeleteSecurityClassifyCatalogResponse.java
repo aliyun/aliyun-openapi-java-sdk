@@ -27,13 +27,13 @@ public class DeleteSecurityClassifyCatalogResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -45,12 +45,12 @@ public class DeleteSecurityClassifyCatalogResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class DeleteSecurityClassifyCatalogResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -89,9 +89,9 @@ public class DeleteSecurityClassifyCatalogResponse extends AcsResponse {
 
 		private Boolean success;
 
-		private List<String> childCatalogFullPathList;
-
 		private List<Long> classifyIdList;
+
+		private List<String> childCatalogFullPathList;
 
 		public Boolean getSuccess() {
 			return this.success;
@@ -101,20 +101,20 @@ public class DeleteSecurityClassifyCatalogResponse extends AcsResponse {
 			this.success = success;
 		}
 
-		public List<String> getChildCatalogFullPathList() {
-			return this.childCatalogFullPathList;
-		}
-
-		public void setChildCatalogFullPathList(List<String> childCatalogFullPathList) {
-			this.childCatalogFullPathList = childCatalogFullPathList;
-		}
-
 		public List<Long> getClassifyIdList() {
 			return this.classifyIdList;
 		}
 
 		public void setClassifyIdList(List<Long> classifyIdList) {
 			this.classifyIdList = classifyIdList;
+		}
+
+		public List<String> getChildCatalogFullPathList() {
+			return this.childCatalogFullPathList;
+		}
+
+		public void setChildCatalogFullPathList(List<String> childCatalogFullPathList) {
+			this.childCatalogFullPathList = childCatalogFullPathList;
 		}
 	}
 

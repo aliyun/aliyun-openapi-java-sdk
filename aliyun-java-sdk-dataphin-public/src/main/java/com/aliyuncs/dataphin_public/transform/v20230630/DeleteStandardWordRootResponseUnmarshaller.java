@@ -23,10 +23,10 @@ public class DeleteStandardWordRootResponseUnmarshaller {
 	public static DeleteStandardWordRootResponse unmarshall(DeleteStandardWordRootResponse deleteStandardWordRootResponse, UnmarshallerContext _ctx) {
 		
 		deleteStandardWordRootResponse.setRequestId(_ctx.stringValue("DeleteStandardWordRootResponse.RequestId"));
-		deleteStandardWordRootResponse.setSuccess(_ctx.booleanValue("DeleteStandardWordRootResponse.Success"));
+		deleteStandardWordRootResponse.setMessage(_ctx.stringValue("DeleteStandardWordRootResponse.Message"));
 		deleteStandardWordRootResponse.setHttpStatusCode(_ctx.integerValue("DeleteStandardWordRootResponse.HttpStatusCode"));
 		deleteStandardWordRootResponse.setCode(_ctx.stringValue("DeleteStandardWordRootResponse.Code"));
-		deleteStandardWordRootResponse.setMessage(_ctx.stringValue("DeleteStandardWordRootResponse.Message"));
+		deleteStandardWordRootResponse.setSuccess(_ctx.booleanValue("DeleteStandardWordRootResponse.Success"));
 	 
 	 	return deleteStandardWordRootResponse;
 	}

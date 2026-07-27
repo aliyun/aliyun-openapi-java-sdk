@@ -27,13 +27,13 @@ public class GetSupplementDagrunInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<Instance> instanceList;
 
@@ -45,12 +45,12 @@ public class GetSupplementDagrunInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetSupplementDagrunInstanceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Instance> getInstanceList() {
@@ -87,15 +87,9 @@ public class GetSupplementDagrunInstanceResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String id;
-
 		private String type;
 
-		private Long bizDate;
-
 		private Long dueTime;
-
-		private Long startExecuteTime;
 
 		private Long endExecuteTime;
 
@@ -103,19 +97,17 @@ public class GetSupplementDagrunInstanceResponse extends AcsResponse {
 
 		private Integer index;
 
+		private String id;
+
+		private Long bizDate;
+
 		private String extendInfo;
+
+		private Long startExecuteTime;
 
 		private List<String> statusList;
 
 		private NodeInfo nodeInfo;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
 
 		public String getType() {
 			return this.type;
@@ -125,28 +117,12 @@ public class GetSupplementDagrunInstanceResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public Long getBizDate() {
-			return this.bizDate;
-		}
-
-		public void setBizDate(Long bizDate) {
-			this.bizDate = bizDate;
-		}
-
 		public Long getDueTime() {
 			return this.dueTime;
 		}
 
 		public void setDueTime(Long dueTime) {
 			this.dueTime = dueTime;
-		}
-
-		public Long getStartExecuteTime() {
-			return this.startExecuteTime;
-		}
-
-		public void setStartExecuteTime(Long startExecuteTime) {
-			this.startExecuteTime = startExecuteTime;
 		}
 
 		public Long getEndExecuteTime() {
@@ -173,12 +149,36 @@ public class GetSupplementDagrunInstanceResponse extends AcsResponse {
 			this.index = index;
 		}
 
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public Long getBizDate() {
+			return this.bizDate;
+		}
+
+		public void setBizDate(Long bizDate) {
+			this.bizDate = bizDate;
+		}
+
 		public String getExtendInfo() {
 			return this.extendInfo;
 		}
 
 		public void setExtendInfo(String extendInfo) {
 			this.extendInfo = extendInfo;
+		}
+
+		public Long getStartExecuteTime() {
+			return this.startExecuteTime;
+		}
+
+		public void setStartExecuteTime(Long startExecuteTime) {
+			this.startExecuteTime = startExecuteTime;
 		}
 
 		public List<String> getStatusList() {
@@ -199,66 +199,66 @@ public class GetSupplementDagrunInstanceResponse extends AcsResponse {
 
 		public static class NodeInfo {
 
-			private String id;
+			private String description;
 
-			private String name;
+			private String createTime;
 
-			private String type;
+			private Boolean dryRun;
 
 			private String from;
 
 			private String subDetailType;
 
-			private String description;
-
-			private Boolean dryRun;
-
-			private Boolean schedulePaused;
+			private String name;
 
 			private Boolean hasProd;
 
+			private String type;
+
 			private Boolean hasDev;
 
-			private String bizUnitName;
-
-			private String createTime;
+			private Boolean schedulePaused;
 
 			private String lastModifiedTime;
 
+			private String bizUnitName;
+
+			private String id;
+
 			private List<User> ownerList;
+
+			private List<String> schedulePeriodList;
 
 			private List<String> resourceGroupList;
 
 			private List<String> priorityList;
 
-			private List<String> schedulePeriodList;
-
 			private Creator creator;
 
 			private Modifier modifier;
 
-			public String getId() {
-				return this.id;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setId(String id) {
-				this.id = id;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
-			public String getName() {
-				return this.name;
+			public String getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
 			}
 
-			public String getType() {
-				return this.type;
+			public Boolean getDryRun() {
+				return this.dryRun;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setDryRun(Boolean dryRun) {
+				this.dryRun = dryRun;
 			}
 
 			public String getFrom() {
@@ -277,28 +277,12 @@ public class GetSupplementDagrunInstanceResponse extends AcsResponse {
 				this.subDetailType = subDetailType;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public Boolean getDryRun() {
-				return this.dryRun;
-			}
-
-			public void setDryRun(Boolean dryRun) {
-				this.dryRun = dryRun;
-			}
-
-			public Boolean getSchedulePaused() {
-				return this.schedulePaused;
-			}
-
-			public void setSchedulePaused(Boolean schedulePaused) {
-				this.schedulePaused = schedulePaused;
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public Boolean getHasProd() {
@@ -309,6 +293,14 @@ public class GetSupplementDagrunInstanceResponse extends AcsResponse {
 				this.hasProd = hasProd;
 			}
 
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
 			public Boolean getHasDev() {
 				return this.hasDev;
 			}
@@ -317,20 +309,12 @@ public class GetSupplementDagrunInstanceResponse extends AcsResponse {
 				this.hasDev = hasDev;
 			}
 
-			public String getBizUnitName() {
-				return this.bizUnitName;
+			public Boolean getSchedulePaused() {
+				return this.schedulePaused;
 			}
 
-			public void setBizUnitName(String bizUnitName) {
-				this.bizUnitName = bizUnitName;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
+			public void setSchedulePaused(Boolean schedulePaused) {
+				this.schedulePaused = schedulePaused;
 			}
 
 			public String getLastModifiedTime() {
@@ -341,12 +325,36 @@ public class GetSupplementDagrunInstanceResponse extends AcsResponse {
 				this.lastModifiedTime = lastModifiedTime;
 			}
 
+			public String getBizUnitName() {
+				return this.bizUnitName;
+			}
+
+			public void setBizUnitName(String bizUnitName) {
+				this.bizUnitName = bizUnitName;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
 			public List<User> getOwnerList() {
 				return this.ownerList;
 			}
 
 			public void setOwnerList(List<User> ownerList) {
 				this.ownerList = ownerList;
+			}
+
+			public List<String> getSchedulePeriodList() {
+				return this.schedulePeriodList;
+			}
+
+			public void setSchedulePeriodList(List<String> schedulePeriodList) {
+				this.schedulePeriodList = schedulePeriodList;
 			}
 
 			public List<String> getResourceGroupList() {
@@ -363,14 +371,6 @@ public class GetSupplementDagrunInstanceResponse extends AcsResponse {
 
 			public void setPriorityList(List<String> priorityList) {
 				this.priorityList = priorityList;
-			}
-
-			public List<String> getSchedulePeriodList() {
-				return this.schedulePeriodList;
-			}
-
-			public void setSchedulePeriodList(List<String> schedulePeriodList) {
-				this.schedulePeriodList = schedulePeriodList;
 			}
 
 			public Creator getCreator() {

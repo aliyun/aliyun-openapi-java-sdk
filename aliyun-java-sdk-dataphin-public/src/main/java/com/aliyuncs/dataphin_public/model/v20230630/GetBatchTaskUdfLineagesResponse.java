@@ -27,13 +27,13 @@ public class GetBatchTaskUdfLineagesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -45,12 +45,12 @@ public class GetBatchTaskUdfLineagesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -69,12 +69,12 @@ public class GetBatchTaskUdfLineagesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -121,56 +121,40 @@ public class GetBatchTaskUdfLineagesResponse extends AcsResponse {
 
 			public static class LineageTable {
 
-				private String name;
-
-				private String displayName;
-
-				private String guid;
+				private String ownerName;
 
 				private String description;
 
-				private String ownerName;
-
-				private String ownerUserId;
+				private String subType;
 
 				private String projectName;
 
+				private Boolean fullTable;
+
 				private String projectId;
 
-				private String bizUnitId;
-
-				private String bizUnitName;
+				private String guid;
 
 				private String env;
 
-				private String subType;
+				private String name;
 
-				private Boolean fullTable;
+				private String bizUnitId;
+
+				private String ownerUserId;
+
+				private String displayName;
+
+				private String bizUnitName;
 
 				private List<LineageColumn> columnList;
 
-				public String getName() {
-					return this.name;
+				public String getOwnerName() {
+					return this.ownerName;
 				}
 
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public String getDisplayName() {
-					return this.displayName;
-				}
-
-				public void setDisplayName(String displayName) {
-					this.displayName = displayName;
-				}
-
-				public String getGuid() {
-					return this.guid;
-				}
-
-				public void setGuid(String guid) {
-					this.guid = guid;
+				public void setOwnerName(String ownerName) {
+					this.ownerName = ownerName;
 				}
 
 				public String getDescription() {
@@ -181,20 +165,12 @@ public class GetBatchTaskUdfLineagesResponse extends AcsResponse {
 					this.description = description;
 				}
 
-				public String getOwnerName() {
-					return this.ownerName;
+				public String getSubType() {
+					return this.subType;
 				}
 
-				public void setOwnerName(String ownerName) {
-					this.ownerName = ownerName;
-				}
-
-				public String getOwnerUserId() {
-					return this.ownerUserId;
-				}
-
-				public void setOwnerUserId(String ownerUserId) {
-					this.ownerUserId = ownerUserId;
+				public void setSubType(String subType) {
+					this.subType = subType;
 				}
 
 				public String getProjectName() {
@@ -205,6 +181,14 @@ public class GetBatchTaskUdfLineagesResponse extends AcsResponse {
 					this.projectName = projectName;
 				}
 
+				public Boolean getFullTable() {
+					return this.fullTable;
+				}
+
+				public void setFullTable(Boolean fullTable) {
+					this.fullTable = fullTable;
+				}
+
 				public String getProjectId() {
 					return this.projectId;
 				}
@@ -213,20 +197,12 @@ public class GetBatchTaskUdfLineagesResponse extends AcsResponse {
 					this.projectId = projectId;
 				}
 
-				public String getBizUnitId() {
-					return this.bizUnitId;
+				public String getGuid() {
+					return this.guid;
 				}
 
-				public void setBizUnitId(String bizUnitId) {
-					this.bizUnitId = bizUnitId;
-				}
-
-				public String getBizUnitName() {
-					return this.bizUnitName;
-				}
-
-				public void setBizUnitName(String bizUnitName) {
-					this.bizUnitName = bizUnitName;
+				public void setGuid(String guid) {
+					this.guid = guid;
 				}
 
 				public String getEnv() {
@@ -237,20 +213,44 @@ public class GetBatchTaskUdfLineagesResponse extends AcsResponse {
 					this.env = env;
 				}
 
-				public String getSubType() {
-					return this.subType;
+				public String getName() {
+					return this.name;
 				}
 
-				public void setSubType(String subType) {
-					this.subType = subType;
+				public void setName(String name) {
+					this.name = name;
 				}
 
-				public Boolean getFullTable() {
-					return this.fullTable;
+				public String getBizUnitId() {
+					return this.bizUnitId;
 				}
 
-				public void setFullTable(Boolean fullTable) {
-					this.fullTable = fullTable;
+				public void setBizUnitId(String bizUnitId) {
+					this.bizUnitId = bizUnitId;
+				}
+
+				public String getOwnerUserId() {
+					return this.ownerUserId;
+				}
+
+				public void setOwnerUserId(String ownerUserId) {
+					this.ownerUserId = ownerUserId;
+				}
+
+				public String getDisplayName() {
+					return this.displayName;
+				}
+
+				public void setDisplayName(String displayName) {
+					this.displayName = displayName;
+				}
+
+				public String getBizUnitName() {
+					return this.bizUnitName;
+				}
+
+				public void setBizUnitName(String bizUnitName) {
+					this.bizUnitName = bizUnitName;
 				}
 
 				public List<LineageColumn> getColumnList() {
@@ -263,10 +263,6 @@ public class GetBatchTaskUdfLineagesResponse extends AcsResponse {
 
 				public static class LineageColumn {
 
-					private String id;
-
-					private String name;
-
 					private String description;
 
 					private String dataType;
@@ -275,21 +271,9 @@ public class GetBatchTaskUdfLineagesResponse extends AcsResponse {
 
 					private Boolean primaryKey;
 
-					public String getId() {
-						return this.id;
-					}
+					private String id;
 
-					public void setId(String id) {
-						this.id = id;
-					}
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
+					private String name;
 
 					public String getDescription() {
 						return this.description;
@@ -321,6 +305,22 @@ public class GetBatchTaskUdfLineagesResponse extends AcsResponse {
 
 					public void setPrimaryKey(Boolean primaryKey) {
 						this.primaryKey = primaryKey;
+					}
+
+					public String getId() {
+						return this.id;
+					}
+
+					public void setId(String id) {
+						this.id = id;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
 					}
 				}
 			}

@@ -27,16 +27,16 @@ public class CheckResourcePermissionResponseUnmarshaller {
 	public static CheckResourcePermissionResponse unmarshall(CheckResourcePermissionResponse checkResourcePermissionResponse, UnmarshallerContext _ctx) {
 		
 		checkResourcePermissionResponse.setRequestId(_ctx.stringValue("CheckResourcePermissionResponse.RequestId"));
-		checkResourcePermissionResponse.setSuccess(_ctx.booleanValue("CheckResourcePermissionResponse.Success"));
+		checkResourcePermissionResponse.setMessage(_ctx.stringValue("CheckResourcePermissionResponse.Message"));
 		checkResourcePermissionResponse.setHttpStatusCode(_ctx.integerValue("CheckResourcePermissionResponse.HttpStatusCode"));
 		checkResourcePermissionResponse.setCode(_ctx.stringValue("CheckResourcePermissionResponse.Code"));
-		checkResourcePermissionResponse.setMessage(_ctx.stringValue("CheckResourcePermissionResponse.Message"));
+		checkResourcePermissionResponse.setSuccess(_ctx.booleanValue("CheckResourcePermissionResponse.Success"));
 
 		List<ResourcePermission> resourcePermissionList = new ArrayList<ResourcePermission>();
 		for (int i = 0; i < _ctx.lengthValue("CheckResourcePermissionResponse.ResourcePermissionList.Length"); i++) {
 			ResourcePermission resourcePermission = new ResourcePermission();
-			resourcePermission.setResourceId(_ctx.stringValue("CheckResourcePermissionResponse.ResourcePermissionList["+ i +"].ResourceId"));
 			resourcePermission.setHasPermission(_ctx.booleanValue("CheckResourcePermissionResponse.ResourcePermissionList["+ i +"].HasPermission"));
+			resourcePermission.setResourceId(_ctx.stringValue("CheckResourcePermissionResponse.ResourcePermissionList["+ i +"].ResourceId"));
 
 			resourcePermissionList.add(resourcePermission);
 		}

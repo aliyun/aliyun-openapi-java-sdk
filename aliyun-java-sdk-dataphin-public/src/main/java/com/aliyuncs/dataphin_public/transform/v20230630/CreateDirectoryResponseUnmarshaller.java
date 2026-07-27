@@ -23,11 +23,11 @@ public class CreateDirectoryResponseUnmarshaller {
 	public static CreateDirectoryResponse unmarshall(CreateDirectoryResponse createDirectoryResponse, UnmarshallerContext _ctx) {
 		
 		createDirectoryResponse.setRequestId(_ctx.stringValue("CreateDirectoryResponse.RequestId"));
-		createDirectoryResponse.setSuccess(_ctx.booleanValue("CreateDirectoryResponse.Success"));
-		createDirectoryResponse.setHttpStatusCode(_ctx.integerValue("CreateDirectoryResponse.HttpStatusCode"));
-		createDirectoryResponse.setCode(_ctx.stringValue("CreateDirectoryResponse.Code"));
 		createDirectoryResponse.setMessage(_ctx.stringValue("CreateDirectoryResponse.Message"));
+		createDirectoryResponse.setHttpStatusCode(_ctx.integerValue("CreateDirectoryResponse.HttpStatusCode"));
 		createDirectoryResponse.setFileId(_ctx.longValue("CreateDirectoryResponse.FileId"));
+		createDirectoryResponse.setCode(_ctx.stringValue("CreateDirectoryResponse.Code"));
+		createDirectoryResponse.setSuccess(_ctx.booleanValue("CreateDirectoryResponse.Success"));
 	 
 	 	return createDirectoryResponse;
 	}
