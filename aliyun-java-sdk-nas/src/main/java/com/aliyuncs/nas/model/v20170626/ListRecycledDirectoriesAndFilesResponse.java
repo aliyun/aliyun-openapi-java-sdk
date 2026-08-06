@@ -57,31 +57,23 @@ public class ListRecycledDirectoriesAndFilesResponse extends AcsResponse {
 
 	public static class Entry {
 
-		private String fileId;
-
 		private String type;
-
-		private String name;
-
-		private String deleteTime;
 
 		private String inode;
 
 		private String aTime;
 
-		private String mTime;
+		private Long size;
+
+		private String deleteTime;
 
 		private String cTime;
 
-		private Long size;
+		private String fileId;
 
-		public String getFileId() {
-			return this.fileId;
-		}
+		private String mTime;
 
-		public void setFileId(String fileId) {
-			this.fileId = fileId;
-		}
+		private String name;
 
 		public String getType() {
 			return this.type;
@@ -89,22 +81,6 @@ public class ListRecycledDirectoriesAndFilesResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDeleteTime() {
-			return this.deleteTime;
-		}
-
-		public void setDeleteTime(String deleteTime) {
-			this.deleteTime = deleteTime;
 		}
 
 		public String getInode() {
@@ -123,12 +99,20 @@ public class ListRecycledDirectoriesAndFilesResponse extends AcsResponse {
 			this.aTime = aTime;
 		}
 
-		public String getMTime() {
-			return this.mTime;
+		public Long getSize() {
+			return this.size;
 		}
 
-		public void setMTime(String mTime) {
-			this.mTime = mTime;
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
+		public String getDeleteTime() {
+			return this.deleteTime;
+		}
+
+		public void setDeleteTime(String deleteTime) {
+			this.deleteTime = deleteTime;
 		}
 
 		public String getCTime() {
@@ -139,12 +123,28 @@ public class ListRecycledDirectoriesAndFilesResponse extends AcsResponse {
 			this.cTime = cTime;
 		}
 
-		public Long getSize() {
-			return this.size;
+		public String getFileId() {
+			return this.fileId;
 		}
 
-		public void setSize(Long size) {
-			this.size = size;
+		public void setFileId(String fileId) {
+			this.fileId = fileId;
+		}
+
+		public String getMTime() {
+			return this.mTime;
+		}
+
+		public void setMTime(String mTime) {
+			this.mTime = mTime;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

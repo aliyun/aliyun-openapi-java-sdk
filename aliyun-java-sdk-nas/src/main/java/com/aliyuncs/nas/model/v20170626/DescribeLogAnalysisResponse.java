@@ -109,28 +109,20 @@ public class DescribeLogAnalysisResponse extends AcsResponse {
 
 		public static class MetaValue {
 
-			private String roleArn;
-
-			private String region;
+			private String project;
 
 			private String logstore;
 
-			private String project;
+			private String region;
 
-			public String getRoleArn() {
-				return this.roleArn;
+			private String roleArn;
+
+			public String getProject() {
+				return this.project;
 			}
 
-			public void setRoleArn(String roleArn) {
-				this.roleArn = roleArn;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
+			public void setProject(String project) {
+				this.project = project;
 			}
 
 			public String getLogstore() {
@@ -141,12 +133,20 @@ public class DescribeLogAnalysisResponse extends AcsResponse {
 				this.logstore = logstore;
 			}
 
-			public String getProject() {
-				return this.project;
+			public String getRegion() {
+				return this.region;
 			}
 
-			public void setProject(String project) {
-				this.project = project;
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public String getRoleArn() {
+				return this.roleArn;
+			}
+
+			public void setRoleArn(String roleArn) {
+				this.roleArn = roleArn;
 			}
 		}
 	}

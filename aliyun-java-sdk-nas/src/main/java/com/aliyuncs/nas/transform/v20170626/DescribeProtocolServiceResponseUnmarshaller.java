@@ -32,19 +32,21 @@ public class DescribeProtocolServiceResponseUnmarshaller {
 		List<ProtocolService> protocolServices = new ArrayList<ProtocolService>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProtocolServiceResponse.ProtocolServices.Length"); i++) {
 			ProtocolService protocolService = new ProtocolService();
-			protocolService.setFileSystemId(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].FileSystemId"));
-			protocolService.setProtocolServiceId(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].ProtocolServiceId"));
-			protocolService.setProtocolSpec(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].ProtocolSpec"));
 			protocolService.setProtocolThroughput(_ctx.integerValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].ProtocolThroughput"));
-			protocolService.setInstanceRAM(_ctx.integerValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].InstanceRAM"));
-			protocolService.setInstanceBaseThroughput(_ctx.integerValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].InstanceBaseThroughput"));
-			protocolService.setInstanceBurstThroughput(_ctx.integerValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].InstanceBurstThroughput"));
-			protocolService.setMountTargetCount(_ctx.integerValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].MountTargetCount"));
-			protocolService.setProtocolType(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].ProtocolType"));
 			protocolService.setStatus(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].Status"));
+			protocolService.setModifyTime(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].ModifyTime"));
 			protocolService.setDescription(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].Description"));
 			protocolService.setCreateTime(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].CreateTime"));
-			protocolService.setModifyTime(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].ModifyTime"));
+			protocolService.setVSwitchId(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].VSwitchId"));
+			protocolService.setProtocolServiceId(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].ProtocolServiceId"));
+			protocolService.setMountTargetCount(_ctx.integerValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].MountTargetCount"));
+			protocolService.setInstanceBaseThroughput(_ctx.integerValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].InstanceBaseThroughput"));
+			protocolService.setInstanceBurstThroughput(_ctx.integerValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].InstanceBurstThroughput"));
+			protocolService.setVpcId(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].VpcId"));
+			protocolService.setInstanceRAM(_ctx.integerValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].InstanceRAM"));
+			protocolService.setProtocolType(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].ProtocolType"));
+			protocolService.setProtocolSpec(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].ProtocolSpec"));
+			protocolService.setFileSystemId(_ctx.stringValue("DescribeProtocolServiceResponse.ProtocolServices["+ i +"].FileSystemId"));
 
 			protocolServices.add(protocolService);
 		}

@@ -36,22 +36,23 @@ public class DescribeMountTargetsResponseUnmarshaller {
 		List<MountTarget> mountTargets = new ArrayList<MountTarget>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMountTargetsResponse.MountTargets.Length"); i++) {
 			MountTarget mountTarget = new MountTarget();
-			mountTarget.setVpcId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].VpcId"));
 			mountTarget.setStatus(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Status"));
-			mountTarget.setMountTargetDomain(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].MountTargetDomain"));
-			mountTarget.setAccessGroup(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].AccessGroup"));
+			mountTarget.setVpcId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].VpcId"));
 			mountTarget.setDualStackMountTargetDomain(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].DualStackMountTargetDomain"));
 			mountTarget.setVswId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].VswId"));
+			mountTarget.setMountTargetDomain(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].MountTargetDomain"));
+			mountTarget.setAccessGroup(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].AccessGroup"));
 			mountTarget.setNetworkType(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].NetworkType"));
-			mountTarget.setIPVersion(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].IPVersion"));
 			mountTarget.setMountTargetIp(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].MountTargetIp"));
+			mountTarget.setAccessPointAccessOnly(_ctx.booleanValue("DescribeMountTargetsResponse.MountTargets["+ i +"].AccessPointAccessOnly"));
+			mountTarget.setIPVersion(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].IPVersion"));
 
 			List<ClientMasterNode> clientMasterNodes = new ArrayList<ClientMasterNode>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes.Length"); j++) {
 				ClientMasterNode clientMasterNode = new ClientMasterNode();
+				clientMasterNode.setEcsIp(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes["+ j +"].EcsIp"));
 				clientMasterNode.setEcsId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes["+ j +"].EcsId"));
 				clientMasterNode.setDefaultPasswd(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes["+ j +"].DefaultPasswd"));
-				clientMasterNode.setEcsIp(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes["+ j +"].EcsIp"));
 
 				clientMasterNodes.add(clientMasterNode);
 			}
@@ -60,8 +61,8 @@ public class DescribeMountTargetsResponseUnmarshaller {
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setKey(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Tags["+ j +"].Key"));
 				tag.setValue(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Tags["+ j +"].Key"));
 
 				tags.add(tag);
 			}

@@ -34,17 +34,17 @@ public class DescribeZonesResponseUnmarshaller {
 			Zone zone = new Zone();
 			zone.setZoneId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
 
-			List<String> performance = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].Performance.Length"); j++) {
-				performance.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].Performance["+ j +"]"));
-			}
-			zone.setPerformance(performance);
-
 			List<String> capacity = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].Capacity.Length"); j++) {
 				capacity.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].Capacity["+ j +"]"));
 			}
 			zone.setCapacity(capacity);
+
+			List<String> performance = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].Performance.Length"); j++) {
+				performance.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].Performance["+ j +"]"));
+			}
+			zone.setPerformance(performance);
 
 			List<InstanceType> instanceTypes = new ArrayList<InstanceType>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].InstanceTypes.Length"); j++) {

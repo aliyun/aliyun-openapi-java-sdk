@@ -32,19 +32,21 @@ public class ListDirectoriesAndFilesResponseUnmarshaller {
 		List<Entry> entries = new ArrayList<Entry>();
 		for (int i = 0; i < _ctx.lengthValue("ListDirectoriesAndFilesResponse.Entries.Length"); i++) {
 			Entry entry = new Entry();
+			entry.setHasArchiveFile(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].HasArchiveFile"));
+			entry.setOfflineUnchangedDuration(_ctx.longValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].OfflineUnchangedDuration"));
+			entry.setOwner(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Owner"));
+			entry.setStorageType(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].StorageType"));
+			entry.setOfflineDuration(_ctx.longValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].OfflineDuration"));
+			entry.setAtime(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Atime"));
+			entry.setSize(_ctx.longValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Size"));
+			entry.setMtime(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Mtime"));
+			entry.setRetrieveTime(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].RetrieveTime"));
+			entry.setName(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Name"));
 			entry.setType(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Type"));
+			entry.setInode(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Inode"));
 			entry.setHasInfrequentAccessFile(_ctx.booleanValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].HasInfrequentAccessFile"));
 			entry.setCtime(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Ctime"));
-			entry.setMtime(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Mtime"));
-			entry.setSize(_ctx.longValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Size"));
-			entry.setStorageType(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].StorageType"));
-			entry.setAtime(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Atime"));
-			entry.setName(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Name"));
-			entry.setRetrieveTime(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].RetrieveTime"));
-			entry.setInode(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Inode"));
 			entry.setFileId(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].FileId"));
-			entry.setOwner(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Owner"));
-			entry.setHasArchiveFile(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].HasArchiveFile"));
 
 			entries.add(entry);
 		}

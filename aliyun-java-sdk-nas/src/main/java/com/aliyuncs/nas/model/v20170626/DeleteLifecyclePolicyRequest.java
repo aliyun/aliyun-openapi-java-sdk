@@ -28,6 +28,8 @@ public class DeleteLifecyclePolicyRequest extends RpcAcsRequest<DeleteLifecycleP
 	private String lifecyclePolicyName;
 
 	private String fileSystemId;
+
+	private String lifecyclePolicyId;
 	public DeleteLifecyclePolicyRequest() {
 		super("NAS", "2017-06-26", "DeleteLifecyclePolicy", "nas");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class DeleteLifecyclePolicyRequest extends RpcAcsRequest<DeleteLifecycleP
 		this.fileSystemId = fileSystemId;
 		if(fileSystemId != null){
 			putQueryParameter("FileSystemId", fileSystemId);
+		}
+	}
+
+	public String getLifecyclePolicyId() {
+		return this.lifecyclePolicyId;
+	}
+
+	public void setLifecyclePolicyId(String lifecyclePolicyId) {
+		this.lifecyclePolicyId = lifecyclePolicyId;
+		if(lifecyclePolicyId != null){
+			putQueryParameter("LifecyclePolicyId", lifecyclePolicyId);
 		}
 	}
 

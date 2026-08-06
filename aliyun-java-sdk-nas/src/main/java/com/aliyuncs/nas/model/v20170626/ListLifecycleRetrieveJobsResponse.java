@@ -77,31 +77,23 @@ public class ListLifecycleRetrieveJobsResponse extends AcsResponse {
 
 	public static class LifecycleRetrieveJob {
 
-		private String fileSystemId;
-
 		private String status;
 
-		private Long discoveredFileCount;
+		private String storageType;
+
+		private String createTime;
 
 		private String updateTime;
 
 		private Long retrievedFileCount;
 
+		private String fileSystemId;
+
+		private Long discoveredFileCount;
+
 		private String jobId;
 
-		private String createTime;
-
-		private String storageType;
-
 		private List<String> paths;
-
-		public String getFileSystemId() {
-			return this.fileSystemId;
-		}
-
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -111,12 +103,20 @@ public class ListLifecycleRetrieveJobsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Long getDiscoveredFileCount() {
-			return this.discoveredFileCount;
+		public String getStorageType() {
+			return this.storageType;
 		}
 
-		public void setDiscoveredFileCount(Long discoveredFileCount) {
-			this.discoveredFileCount = discoveredFileCount;
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getUpdateTime() {
@@ -135,28 +135,28 @@ public class ListLifecycleRetrieveJobsResponse extends AcsResponse {
 			this.retrievedFileCount = retrievedFileCount;
 		}
 
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
+		}
+
+		public Long getDiscoveredFileCount() {
+			return this.discoveredFileCount;
+		}
+
+		public void setDiscoveredFileCount(Long discoveredFileCount) {
+			this.discoveredFileCount = discoveredFileCount;
+		}
+
 		public String getJobId() {
 			return this.jobId;
 		}
 
 		public void setJobId(String jobId) {
 			this.jobId = jobId;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getStorageType() {
-			return this.storageType;
-		}
-
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
 		}
 
 		public List<String> getPaths() {

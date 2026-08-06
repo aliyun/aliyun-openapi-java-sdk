@@ -46,33 +46,17 @@ public class GetRecycleBinAttributeResponse extends AcsResponse {
 
 	public static class RecycleBinAttribute {
 
-		private Long size;
-
-		private Long secondarySize;
-
 		private String status;
 
 		private Long reservedDays;
 
-		private String enableTime;
-
 		private Long archiveSize;
 
-		public Long getSize() {
-			return this.size;
-		}
+		private Long size;
 
-		public void setSize(Long size) {
-			this.size = size;
-		}
+		private Long secondarySize;
 
-		public Long getSecondarySize() {
-			return this.secondarySize;
-		}
-
-		public void setSecondarySize(Long secondarySize) {
-			this.secondarySize = secondarySize;
-		}
+		private String enableTime;
 
 		public String getStatus() {
 			return this.status;
@@ -90,20 +74,36 @@ public class GetRecycleBinAttributeResponse extends AcsResponse {
 			this.reservedDays = reservedDays;
 		}
 
-		public String getEnableTime() {
-			return this.enableTime;
-		}
-
-		public void setEnableTime(String enableTime) {
-			this.enableTime = enableTime;
-		}
-
 		public Long getArchiveSize() {
 			return this.archiveSize;
 		}
 
 		public void setArchiveSize(Long archiveSize) {
 			this.archiveSize = archiveSize;
+		}
+
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
+		public Long getSecondarySize() {
+			return this.secondarySize;
+		}
+
+		public void setSecondarySize(Long secondarySize) {
+			this.secondarySize = secondarySize;
+		}
+
+		public String getEnableTime() {
+			return this.enableTime;
+		}
+
+		public void setEnableTime(String enableTime) {
+			this.enableTime = enableTime;
 		}
 	}
 

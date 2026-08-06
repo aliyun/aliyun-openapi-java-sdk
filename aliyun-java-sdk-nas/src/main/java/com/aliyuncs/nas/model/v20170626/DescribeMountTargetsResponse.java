@@ -77,35 +77,29 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 
 	public static class MountTarget {
 
-		private String vpcId;
-
 		private String status;
 
-		private String mountTargetDomain;
-
-		private String accessGroup;
+		private String vpcId;
 
 		private String dualStackMountTargetDomain;
 
 		private String vswId;
 
+		private String mountTargetDomain;
+
+		private String accessGroup;
+
 		private String networkType;
 
-		private String iPVersion;
-
 		private String mountTargetIp;
+
+		private Boolean accessPointAccessOnly;
+
+		private String iPVersion;
 
 		private List<ClientMasterNode> clientMasterNodes;
 
 		private List<Tag> tags;
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -115,20 +109,12 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getMountTargetDomain() {
-			return this.mountTargetDomain;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setMountTargetDomain(String mountTargetDomain) {
-			this.mountTargetDomain = mountTargetDomain;
-		}
-
-		public String getAccessGroup() {
-			return this.accessGroup;
-		}
-
-		public void setAccessGroup(String accessGroup) {
-			this.accessGroup = accessGroup;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getDualStackMountTargetDomain() {
@@ -147,6 +133,22 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 			this.vswId = vswId;
 		}
 
+		public String getMountTargetDomain() {
+			return this.mountTargetDomain;
+		}
+
+		public void setMountTargetDomain(String mountTargetDomain) {
+			this.mountTargetDomain = mountTargetDomain;
+		}
+
+		public String getAccessGroup() {
+			return this.accessGroup;
+		}
+
+		public void setAccessGroup(String accessGroup) {
+			this.accessGroup = accessGroup;
+		}
+
 		public String getNetworkType() {
 			return this.networkType;
 		}
@@ -155,20 +157,28 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 			this.networkType = networkType;
 		}
 
-		public String getIPVersion() {
-			return this.iPVersion;
-		}
-
-		public void setIPVersion(String iPVersion) {
-			this.iPVersion = iPVersion;
-		}
-
 		public String getMountTargetIp() {
 			return this.mountTargetIp;
 		}
 
 		public void setMountTargetIp(String mountTargetIp) {
 			this.mountTargetIp = mountTargetIp;
+		}
+
+		public Boolean getAccessPointAccessOnly() {
+			return this.accessPointAccessOnly;
+		}
+
+		public void setAccessPointAccessOnly(Boolean accessPointAccessOnly) {
+			this.accessPointAccessOnly = accessPointAccessOnly;
+		}
+
+		public String getIPVersion() {
+			return this.iPVersion;
+		}
+
+		public void setIPVersion(String iPVersion) {
+			this.iPVersion = iPVersion;
 		}
 
 		public List<ClientMasterNode> getClientMasterNodes() {
@@ -189,11 +199,19 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 
 		public static class ClientMasterNode {
 
+			private String ecsIp;
+
 			private String ecsId;
 
 			private String defaultPasswd;
 
-			private String ecsIp;
+			public String getEcsIp() {
+				return this.ecsIp;
+			}
+
+			public void setEcsIp(String ecsIp) {
+				this.ecsIp = ecsIp;
+			}
 
 			public String getEcsId() {
 				return this.ecsId;
@@ -210,29 +228,13 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 			public void setDefaultPasswd(String defaultPasswd) {
 				this.defaultPasswd = defaultPasswd;
 			}
-
-			public String getEcsIp() {
-				return this.ecsIp;
-			}
-
-			public void setEcsIp(String ecsIp) {
-				this.ecsIp = ecsIp;
-			}
 		}
 
 		public static class Tag {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -240,6 +242,14 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

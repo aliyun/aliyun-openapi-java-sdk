@@ -39,10 +39,10 @@ public class DescribeLogAnalysisResponseUnmarshaller {
 			analysis.setMetaKey(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaKey"));
 
 			MetaValue metaValue = new MetaValue();
-			metaValue.setRoleArn(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.RoleArn"));
-			metaValue.setRegion(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.Region"));
-			metaValue.setLogstore(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.Logstore"));
 			metaValue.setProject(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.Project"));
+			metaValue.setLogstore(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.Logstore"));
+			metaValue.setRegion(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.Region"));
+			metaValue.setRoleArn(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.RoleArn"));
 			analysis.setMetaValue(metaValue);
 
 			analyses.add(analysis);

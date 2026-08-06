@@ -57,81 +57,33 @@ public class DescribeDataFlowSubTasksResponse extends AcsResponse {
 
 	public static class DataFlowSubTaskItem {
 
-		private String fileSystemId;
-
-		private String dataFlowId;
-
-		private String dataFlowTaskId;
-
-		private String dataFlowSubTaskId;
-
-		private String srcFilePath;
-
-		private String dstFilePath;
-
 		private String status;
 
 		private Integer progress;
+
+		private String dataFlowSubTaskId;
+
+		private String endTime;
+
+		private String dstFilePath;
 
 		private String createTime;
 
 		private String startTime;
 
-		private String endTime;
-
 		private String errorMsg;
 
-		private ProgressStats progressStats;
+		private String dataFlowTaskId;
+
+		private String srcFilePath;
+
+		private String fileSystemId;
+
+		private String dataFlowId;
 
 		private FileDetail fileDetail;
 
-		public String getFileSystemId() {
-			return this.fileSystemId;
-		}
-
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
-		}
-
-		public String getDataFlowId() {
-			return this.dataFlowId;
-		}
-
-		public void setDataFlowId(String dataFlowId) {
-			this.dataFlowId = dataFlowId;
-		}
-
-		public String getDataFlowTaskId() {
-			return this.dataFlowTaskId;
-		}
-
-		public void setDataFlowTaskId(String dataFlowTaskId) {
-			this.dataFlowTaskId = dataFlowTaskId;
-		}
-
-		public String getDataFlowSubTaskId() {
-			return this.dataFlowSubTaskId;
-		}
-
-		public void setDataFlowSubTaskId(String dataFlowSubTaskId) {
-			this.dataFlowSubTaskId = dataFlowSubTaskId;
-		}
-
-		public String getSrcFilePath() {
-			return this.srcFilePath;
-		}
-
-		public void setSrcFilePath(String srcFilePath) {
-			this.srcFilePath = srcFilePath;
-		}
-
-		public String getDstFilePath() {
-			return this.dstFilePath;
-		}
-
-		public void setDstFilePath(String dstFilePath) {
-			this.dstFilePath = dstFilePath;
-		}
+		private ProgressStats progressStats;
 
 		public String getStatus() {
 			return this.status;
@@ -147,6 +99,30 @@ public class DescribeDataFlowSubTasksResponse extends AcsResponse {
 
 		public void setProgress(Integer progress) {
 			this.progress = progress;
+		}
+
+		public String getDataFlowSubTaskId() {
+			return this.dataFlowSubTaskId;
+		}
+
+		public void setDataFlowSubTaskId(String dataFlowSubTaskId) {
+			this.dataFlowSubTaskId = dataFlowSubTaskId;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getDstFilePath() {
+			return this.dstFilePath;
+		}
+
+		public void setDstFilePath(String dstFilePath) {
+			this.dstFilePath = dstFilePath;
 		}
 
 		public String getCreateTime() {
@@ -165,14 +141,6 @@ public class DescribeDataFlowSubTasksResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
 		public String getErrorMsg() {
 			return this.errorMsg;
 		}
@@ -181,12 +149,36 @@ public class DescribeDataFlowSubTasksResponse extends AcsResponse {
 			this.errorMsg = errorMsg;
 		}
 
-		public ProgressStats getProgressStats() {
-			return this.progressStats;
+		public String getDataFlowTaskId() {
+			return this.dataFlowTaskId;
 		}
 
-		public void setProgressStats(ProgressStats progressStats) {
-			this.progressStats = progressStats;
+		public void setDataFlowTaskId(String dataFlowTaskId) {
+			this.dataFlowTaskId = dataFlowTaskId;
+		}
+
+		public String getSrcFilePath() {
+			return this.srcFilePath;
+		}
+
+		public void setSrcFilePath(String srcFilePath) {
+			this.srcFilePath = srcFilePath;
+		}
+
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
+		}
+
+		public String getDataFlowId() {
+			return this.dataFlowId;
+		}
+
+		public void setDataFlowId(String dataFlowId) {
+			this.dataFlowId = dataFlowId;
 		}
 
 		public FileDetail getFileDetail() {
@@ -197,47 +189,12 @@ public class DescribeDataFlowSubTasksResponse extends AcsResponse {
 			this.fileDetail = fileDetail;
 		}
 
-		public static class ProgressStats {
+		public ProgressStats getProgressStats() {
+			return this.progressStats;
+		}
 
-			private Long bytesTotal;
-
-			private Long bytesDone;
-
-			private Long actualBytes;
-
-			private Long averageSpeed;
-
-			public Long getBytesTotal() {
-				return this.bytesTotal;
-			}
-
-			public void setBytesTotal(Long bytesTotal) {
-				this.bytesTotal = bytesTotal;
-			}
-
-			public Long getBytesDone() {
-				return this.bytesDone;
-			}
-
-			public void setBytesDone(Long bytesDone) {
-				this.bytesDone = bytesDone;
-			}
-
-			public Long getActualBytes() {
-				return this.actualBytes;
-			}
-
-			public void setActualBytes(Long actualBytes) {
-				this.actualBytes = actualBytes;
-			}
-
-			public Long getAverageSpeed() {
-				return this.averageSpeed;
-			}
-
-			public void setAverageSpeed(Long averageSpeed) {
-				this.averageSpeed = averageSpeed;
-			}
+		public void setProgressStats(ProgressStats progressStats) {
+			this.progressStats = progressStats;
 		}
 
 		public static class FileDetail {
@@ -270,6 +227,49 @@ public class DescribeDataFlowSubTasksResponse extends AcsResponse {
 
 			public void setChecksum(String checksum) {
 				this.checksum = checksum;
+			}
+		}
+
+		public static class ProgressStats {
+
+			private Long averageSpeed;
+
+			private Long bytesDone;
+
+			private Long actualBytes;
+
+			private Long bytesTotal;
+
+			public Long getAverageSpeed() {
+				return this.averageSpeed;
+			}
+
+			public void setAverageSpeed(Long averageSpeed) {
+				this.averageSpeed = averageSpeed;
+			}
+
+			public Long getBytesDone() {
+				return this.bytesDone;
+			}
+
+			public void setBytesDone(Long bytesDone) {
+				this.bytesDone = bytesDone;
+			}
+
+			public Long getActualBytes() {
+				return this.actualBytes;
+			}
+
+			public void setActualBytes(Long actualBytes) {
+				this.actualBytes = actualBytes;
+			}
+
+			public Long getBytesTotal() {
+				return this.bytesTotal;
+			}
+
+			public void setBytesTotal(Long bytesTotal) {
+				this.bytesTotal = bytesTotal;
 			}
 		}
 	}

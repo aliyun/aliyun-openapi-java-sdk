@@ -34,31 +34,31 @@ public class DescribeDataFlowSubTasksResponseUnmarshaller {
 		List<DataFlowSubTaskItem> dataFlowSubTask = new ArrayList<DataFlowSubTaskItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask.Length"); i++) {
 			DataFlowSubTaskItem dataFlowSubTaskItem = new DataFlowSubTaskItem();
-			dataFlowSubTaskItem.setFileSystemId(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].FileSystemId"));
-			dataFlowSubTaskItem.setDataFlowId(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].DataFlowId"));
-			dataFlowSubTaskItem.setDataFlowTaskId(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].DataFlowTaskId"));
-			dataFlowSubTaskItem.setDataFlowSubTaskId(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].DataFlowSubTaskId"));
-			dataFlowSubTaskItem.setSrcFilePath(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].SrcFilePath"));
-			dataFlowSubTaskItem.setDstFilePath(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].DstFilePath"));
 			dataFlowSubTaskItem.setStatus(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].Status"));
 			dataFlowSubTaskItem.setProgress(_ctx.integerValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].Progress"));
+			dataFlowSubTaskItem.setDataFlowSubTaskId(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].DataFlowSubTaskId"));
+			dataFlowSubTaskItem.setEndTime(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].EndTime"));
+			dataFlowSubTaskItem.setDstFilePath(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].DstFilePath"));
 			dataFlowSubTaskItem.setCreateTime(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].CreateTime"));
 			dataFlowSubTaskItem.setStartTime(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].StartTime"));
-			dataFlowSubTaskItem.setEndTime(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].EndTime"));
 			dataFlowSubTaskItem.setErrorMsg(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].ErrorMsg"));
-
-			ProgressStats progressStats = new ProgressStats();
-			progressStats.setBytesTotal(_ctx.longValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].ProgressStats.BytesTotal"));
-			progressStats.setBytesDone(_ctx.longValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].ProgressStats.BytesDone"));
-			progressStats.setActualBytes(_ctx.longValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].ProgressStats.ActualBytes"));
-			progressStats.setAverageSpeed(_ctx.longValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].ProgressStats.AverageSpeed"));
-			dataFlowSubTaskItem.setProgressStats(progressStats);
+			dataFlowSubTaskItem.setDataFlowTaskId(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].DataFlowTaskId"));
+			dataFlowSubTaskItem.setSrcFilePath(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].SrcFilePath"));
+			dataFlowSubTaskItem.setFileSystemId(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].FileSystemId"));
+			dataFlowSubTaskItem.setDataFlowId(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].DataFlowId"));
 
 			FileDetail fileDetail = new FileDetail();
 			fileDetail.setModifyTime(_ctx.longValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].FileDetail.ModifyTime"));
 			fileDetail.setSize(_ctx.longValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].FileDetail.Size"));
 			fileDetail.setChecksum(_ctx.stringValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].FileDetail.Checksum"));
 			dataFlowSubTaskItem.setFileDetail(fileDetail);
+
+			ProgressStats progressStats = new ProgressStats();
+			progressStats.setAverageSpeed(_ctx.longValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].ProgressStats.AverageSpeed"));
+			progressStats.setBytesDone(_ctx.longValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].ProgressStats.BytesDone"));
+			progressStats.setActualBytes(_ctx.longValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].ProgressStats.ActualBytes"));
+			progressStats.setBytesTotal(_ctx.longValue("DescribeDataFlowSubTasksResponse.DataFlowSubTask["+ i +"].ProgressStats.BytesTotal"));
+			dataFlowSubTaskItem.setProgressStats(progressStats);
 
 			dataFlowSubTask.add(dataFlowSubTaskItem);
 		}

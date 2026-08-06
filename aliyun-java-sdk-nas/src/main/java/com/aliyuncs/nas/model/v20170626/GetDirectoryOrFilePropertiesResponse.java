@@ -46,58 +46,62 @@ public class GetDirectoryOrFilePropertiesResponse extends AcsResponse {
 
 	public static class Entry {
 
-		private String type;
+		private Boolean hasArchiveFile;
 
-		private Boolean hasInfrequentAccessFile;
+		private Long offlineUnchangedDuration;
 
-		private String mTime;
+		private String storageType;
 
-		private String aTime;
+		private Long offlineDuration;
 
 		private Long size;
 
 		private String cTime;
 
-		private String storageType;
+		private String retrieveTime;
 
 		private String name;
 
-		private String retrieveTime;
+		private String type;
 
 		private String inode;
 
-		private Boolean hasArchiveFile;
+		private String aTime;
 
-		public String getType() {
-			return this.type;
+		private Boolean hasInfrequentAccessFile;
+
+		private String mTime;
+
+		public Boolean getHasArchiveFile() {
+			return this.hasArchiveFile;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setHasArchiveFile(Boolean hasArchiveFile) {
+			this.hasArchiveFile = hasArchiveFile;
 		}
 
-		public Boolean getHasInfrequentAccessFile() {
-			return this.hasInfrequentAccessFile;
+		public Long getOfflineUnchangedDuration() {
+			return this.offlineUnchangedDuration;
 		}
 
-		public void setHasInfrequentAccessFile(Boolean hasInfrequentAccessFile) {
-			this.hasInfrequentAccessFile = hasInfrequentAccessFile;
+		public void setOfflineUnchangedDuration(Long offlineUnchangedDuration) {
+			this.offlineUnchangedDuration = offlineUnchangedDuration;
 		}
 
-		public String getMTime() {
-			return this.mTime;
+		public String getStorageType() {
+			return this.storageType;
 		}
 
-		public void setMTime(String mTime) {
-			this.mTime = mTime;
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
 		}
 
-		public String getATime() {
-			return this.aTime;
+		public Long getOfflineDuration() {
+			return this.offlineDuration;
 		}
 
-		public void setATime(String aTime) {
-			this.aTime = aTime;
+		public void setOfflineDuration(Long offlineDuration) {
+			this.offlineDuration = offlineDuration;
 		}
 
 		public Long getSize() {
@@ -116,12 +120,12 @@ public class GetDirectoryOrFilePropertiesResponse extends AcsResponse {
 			this.cTime = cTime;
 		}
 
-		public String getStorageType() {
-			return this.storageType;
+		public String getRetrieveTime() {
+			return this.retrieveTime;
 		}
 
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
+		public void setRetrieveTime(String retrieveTime) {
+			this.retrieveTime = retrieveTime;
 		}
 
 		public String getName() {
@@ -132,12 +136,12 @@ public class GetDirectoryOrFilePropertiesResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getRetrieveTime() {
-			return this.retrieveTime;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setRetrieveTime(String retrieveTime) {
-			this.retrieveTime = retrieveTime;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getInode() {
@@ -148,12 +152,28 @@ public class GetDirectoryOrFilePropertiesResponse extends AcsResponse {
 			this.inode = inode;
 		}
 
-		public Boolean getHasArchiveFile() {
-			return this.hasArchiveFile;
+		public String getATime() {
+			return this.aTime;
 		}
 
-		public void setHasArchiveFile(Boolean hasArchiveFile) {
-			this.hasArchiveFile = hasArchiveFile;
+		public void setATime(String aTime) {
+			this.aTime = aTime;
+		}
+
+		public Boolean getHasInfrequentAccessFile() {
+			return this.hasInfrequentAccessFile;
+		}
+
+		public void setHasInfrequentAccessFile(Boolean hasInfrequentAccessFile) {
+			this.hasInfrequentAccessFile = hasInfrequentAccessFile;
+		}
+
+		public String getMTime() {
+			return this.mTime;
+		}
+
+		public void setMTime(String mTime) {
+			this.mTime = mTime;
 		}
 	}
 

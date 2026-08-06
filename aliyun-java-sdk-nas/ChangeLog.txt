@@ -1,3 +1,6 @@
+2026-08-06 Version: 3.14.5
+- Supported DataInsight.
+
 2025-11-03 Version: 3.14.4
 - Generated 2017-06-26 for `NAS`.
 

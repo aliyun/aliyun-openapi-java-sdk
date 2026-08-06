@@ -33,6 +33,8 @@ public class ModifyLifecyclePolicyRequest extends RpcAcsRequest<ModifyLifecycleP
 
 	private String fileSystemId;
 
+	private String lifecyclePolicyId;
+
 	private String lifecycleRuleName;
 	public ModifyLifecyclePolicyRequest() {
 		super("NAS", "2017-06-26", "ModifyLifecyclePolicy", "nas");
@@ -84,6 +86,17 @@ public class ModifyLifecyclePolicyRequest extends RpcAcsRequest<ModifyLifecycleP
 		this.fileSystemId = fileSystemId;
 		if(fileSystemId != null){
 			putQueryParameter("FileSystemId", fileSystemId);
+		}
+	}
+
+	public String getLifecyclePolicyId() {
+		return this.lifecyclePolicyId;
+	}
+
+	public void setLifecyclePolicyId(String lifecyclePolicyId) {
+		this.lifecyclePolicyId = lifecyclePolicyId;
+		if(lifecyclePolicyId != null){
+			putQueryParameter("LifecyclePolicyId", lifecyclePolicyId);
 		}
 	}
 

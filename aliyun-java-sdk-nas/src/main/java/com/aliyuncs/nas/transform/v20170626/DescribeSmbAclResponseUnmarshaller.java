@@ -26,14 +26,14 @@ public class DescribeSmbAclResponseUnmarshaller {
 		describeSmbAclResponse.setRequestId(_ctx.stringValue("DescribeSmbAclResponse.RequestId"));
 
 		Acl acl = new Acl();
-		acl.setAuthMethod(_ctx.stringValue("DescribeSmbAclResponse.Acl.AuthMethod"));
-		acl.setAuthCenter(_ctx.stringValue("DescribeSmbAclResponse.Acl.AuthCenter"));
-		acl.setEnableAnonymousAccess(_ctx.booleanValue("DescribeSmbAclResponse.Acl.EnableAnonymousAccess"));
-		acl.setEnabled(_ctx.booleanValue("DescribeSmbAclResponse.Acl.Enabled"));
-		acl.setEncryptData(_ctx.booleanValue("DescribeSmbAclResponse.Acl.EncryptData"));
-		acl.setRejectUnencryptedAccess(_ctx.booleanValue("DescribeSmbAclResponse.Acl.RejectUnencryptedAccess"));
-		acl.setSuperAdminSid(_ctx.stringValue("DescribeSmbAclResponse.Acl.SuperAdminSid"));
 		acl.setHomeDirPath(_ctx.stringValue("DescribeSmbAclResponse.Acl.HomeDirPath"));
+		acl.setEnableAnonymousAccess(_ctx.booleanValue("DescribeSmbAclResponse.Acl.EnableAnonymousAccess"));
+		acl.setAuthCenter(_ctx.stringValue("DescribeSmbAclResponse.Acl.AuthCenter"));
+		acl.setEnabled(_ctx.booleanValue("DescribeSmbAclResponse.Acl.Enabled"));
+		acl.setSuperAdminSid(_ctx.stringValue("DescribeSmbAclResponse.Acl.SuperAdminSid"));
+		acl.setRejectUnencryptedAccess(_ctx.booleanValue("DescribeSmbAclResponse.Acl.RejectUnencryptedAccess"));
+		acl.setEncryptData(_ctx.booleanValue("DescribeSmbAclResponse.Acl.EncryptData"));
+		acl.setAuthMethod(_ctx.stringValue("DescribeSmbAclResponse.Acl.AuthMethod"));
 		describeSmbAclResponse.setAcl(acl);
 	 
 	 	return describeSmbAclResponse;

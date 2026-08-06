@@ -32,18 +32,24 @@ public class DescribeProtocolMountTargetResponseUnmarshaller {
 		List<ProtocolMountTarget> protocolMountTargets = new ArrayList<ProtocolMountTarget>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets.Length"); i++) {
 			ProtocolMountTarget protocolMountTarget = new ProtocolMountTarget();
-			protocolMountTarget.setExportId(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].ExportId"));
-			protocolMountTarget.setProtocolMountTargetDomain(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].ProtocolMountTargetDomain"));
-			protocolMountTarget.setProtocolType(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].ProtocolType"));
-			protocolMountTarget.setVpcId(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].VpcId"));
-			protocolMountTarget.setVSwitchId(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].VSwitchId"));
 			protocolMountTarget.setFsetId(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].FsetId"));
 			protocolMountTarget.setPath(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].Path"));
+			protocolMountTarget.setStatus(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].Status"));
+			protocolMountTarget.setExportId(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].ExportId"));
+			protocolMountTarget.setDescription(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].Description"));
+			protocolMountTarget.setProtocolMountTargetDomain(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].ProtocolMountTargetDomain"));
+			protocolMountTarget.setVSwitchId(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].VSwitchId"));
 			protocolMountTarget.setAccessGroupName(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].AccessGroupName"));
 			protocolMountTarget.setCreateTime(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].CreateTime"));
-			protocolMountTarget.setStatus(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].Status"));
 			protocolMountTarget.setProtocolServiceId(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].ProtocolServiceId"));
-			protocolMountTarget.setDescription(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].Description"));
+			protocolMountTarget.setVpcId(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].VpcId"));
+			protocolMountTarget.setProtocolType(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].ProtocolType"));
+
+			List<String> vSwitchIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].VSwitchIds.Length"); j++) {
+				vSwitchIds.add(_ctx.stringValue("DescribeProtocolMountTargetResponse.ProtocolMountTargets["+ i +"].VSwitchIds["+ j +"]"));
+			}
+			protocolMountTarget.setVSwitchIds(vSwitchIds);
 
 			protocolMountTargets.add(protocolMountTarget);
 		}

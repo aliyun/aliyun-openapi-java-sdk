@@ -30,6 +30,8 @@ public class DescribeFileSystemsRequest extends RpcAcsRequest<DescribeFileSystem
 
 	private Integer pageNumber;
 
+	private String storageType;
+
 	private String resourceGroupId;
 
 	private Integer pageSize;
@@ -67,6 +69,17 @@ public class DescribeFileSystemsRequest extends RpcAcsRequest<DescribeFileSystem
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
 		}
 	}
 

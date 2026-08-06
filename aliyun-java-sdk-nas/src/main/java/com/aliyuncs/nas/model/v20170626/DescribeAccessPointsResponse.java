@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAccessPointsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
 
 	private String nextToken;
 
-	private Integer totalCount;
-
 	private List<AccessPoint> accessPoints;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<AccessPoint> getAccessPoints() {
 		return this.accessPoints;
 	}
@@ -67,33 +67,33 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 
 	public static class AccessPoint {
 
-		private String aRN;
-
-		private String accessGroup;
-
-		private String accessPointId;
-
-		private String accessPointName;
-
-		private String createTime;
-
-		private String domainName;
-
-		private Boolean enabledRam;
-
-		private String fileSystemId;
+		private String status;
 
 		private String modifyTime;
 
 		private String rootPath;
 
-		private String rootPathStatus;
+		private String domainName;
 
-		private String status;
+		private String createTime;
 
 		private String vSwitchId;
 
+		private Boolean enabledRam;
+
+		private String accessPointName;
+
 		private String vpcId;
+
+		private String accessGroup;
+
+		private String accessPointId;
+
+		private String fileSystemId;
+
+		private String aRN;
+
+		private String rootPathStatus;
 
 		private List<Tag> tags;
 
@@ -101,68 +101,12 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 
 		private RootPathPermission rootPathPermission;
 
-		public String getARN() {
-			return this.aRN;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setARN(String aRN) {
-			this.aRN = aRN;
-		}
-
-		public String getAccessGroup() {
-			return this.accessGroup;
-		}
-
-		public void setAccessGroup(String accessGroup) {
-			this.accessGroup = accessGroup;
-		}
-
-		public String getAccessPointId() {
-			return this.accessPointId;
-		}
-
-		public void setAccessPointId(String accessPointId) {
-			this.accessPointId = accessPointId;
-		}
-
-		public String getAccessPointName() {
-			return this.accessPointName;
-		}
-
-		public void setAccessPointName(String accessPointName) {
-			this.accessPointName = accessPointName;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public Boolean getEnabledRam() {
-			return this.enabledRam;
-		}
-
-		public void setEnabledRam(Boolean enabledRam) {
-			this.enabledRam = enabledRam;
-		}
-
-		public String getFileSystemId() {
-			return this.fileSystemId;
-		}
-
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getModifyTime() {
@@ -181,20 +125,20 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 			this.rootPath = rootPath;
 		}
 
-		public String getRootPathStatus() {
-			return this.rootPathStatus;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setRootPathStatus(String rootPathStatus) {
-			this.rootPathStatus = rootPathStatus;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getVSwitchId() {
@@ -205,12 +149,68 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 			this.vSwitchId = vSwitchId;
 		}
 
+		public Boolean getEnabledRam() {
+			return this.enabledRam;
+		}
+
+		public void setEnabledRam(Boolean enabledRam) {
+			this.enabledRam = enabledRam;
+		}
+
+		public String getAccessPointName() {
+			return this.accessPointName;
+		}
+
+		public void setAccessPointName(String accessPointName) {
+			this.accessPointName = accessPointName;
+		}
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getAccessGroup() {
+			return this.accessGroup;
+		}
+
+		public void setAccessGroup(String accessGroup) {
+			this.accessGroup = accessGroup;
+		}
+
+		public String getAccessPointId() {
+			return this.accessPointId;
+		}
+
+		public void setAccessPointId(String accessPointId) {
+			this.accessPointId = accessPointId;
+		}
+
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
+		}
+
+		public String getARN() {
+			return this.aRN;
+		}
+
+		public void setARN(String aRN) {
+			this.aRN = aRN;
+		}
+
+		public String getRootPathStatus() {
+			return this.rootPathStatus;
+		}
+
+		public void setRootPathStatus(String rootPathStatus) {
+			this.rootPathStatus = rootPathStatus;
 		}
 
 		public List<Tag> getTags() {
@@ -239,17 +239,9 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -257,6 +249,14 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 
@@ -295,19 +295,11 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 
 		public static class RootPathPermission {
 
-			private Long ownerGroupId;
-
 			private Long ownerUserId;
 
 			private String permission;
 
-			public Long getOwnerGroupId() {
-				return this.ownerGroupId;
-			}
-
-			public void setOwnerGroupId(Long ownerGroupId) {
-				this.ownerGroupId = ownerGroupId;
-			}
+			private Long ownerGroupId;
 
 			public Long getOwnerUserId() {
 				return this.ownerUserId;
@@ -323,6 +315,14 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 
 			public void setPermission(String permission) {
 				this.permission = permission;
+			}
+
+			public Long getOwnerGroupId() {
+				return this.ownerGroupId;
+			}
+
+			public void setOwnerGroupId(Long ownerGroupId) {
+				this.ownerGroupId = ownerGroupId;
 			}
 		}
 	}

@@ -89,31 +89,31 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 
 		private String status;
 
-		private Long capacity;
+		private String storageType;
+
+		private String description;
+
+		private String zoneId;
 
 		private Long meteredIASize;
 
 		private String createTime;
 
+		private Long meteredSize;
+
+		private Long capacity;
+
 		private String chargeType;
 
-		private String storageType;
-
-		private String regionId;
+		private String protocolType;
 
 		private String fileSystemType;
 
-		private String fileSystemId;
-
-		private Long meteredSize;
-
-		private String description;
-
 		private String expiredTime;
 
-		private String zoneId;
+		private String fileSystemId;
 
-		private String protocolType;
+		private String regionId;
 
 		private List<_Package> packages;
 
@@ -125,12 +125,28 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Long getCapacity() {
-			return this.capacity;
+		public String getStorageType() {
+			return this.storageType;
 		}
 
-		public void setCapacity(Long capacity) {
-			this.capacity = capacity;
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public Long getMeteredIASize() {
@@ -149,6 +165,22 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public Long getMeteredSize() {
+			return this.meteredSize;
+		}
+
+		public void setMeteredSize(Long meteredSize) {
+			this.meteredSize = meteredSize;
+		}
+
+		public Long getCapacity() {
+			return this.capacity;
+		}
+
+		public void setCapacity(Long capacity) {
+			this.capacity = capacity;
+		}
+
 		public String getChargeType() {
 			return this.chargeType;
 		}
@@ -157,20 +189,12 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 			this.chargeType = chargeType;
 		}
 
-		public String getStorageType() {
-			return this.storageType;
+		public String getProtocolType() {
+			return this.protocolType;
 		}
 
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
 		}
 
 		public String getFileSystemType() {
@@ -181,30 +205,6 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 			this.fileSystemType = fileSystemType;
 		}
 
-		public String getFileSystemId() {
-			return this.fileSystemId;
-		}
-
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
-		}
-
-		public Long getMeteredSize() {
-			return this.meteredSize;
-		}
-
-		public void setMeteredSize(Long meteredSize) {
-			this.meteredSize = meteredSize;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
 		public String getExpiredTime() {
 			return this.expiredTime;
 		}
@@ -213,20 +213,20 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 			this.expiredTime = expiredTime;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public String getFileSystemId() {
+			return this.fileSystemId;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
 		}
 
-		public String getProtocolType() {
-			return this.protocolType;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setProtocolType(String protocolType) {
-			this.protocolType = protocolType;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<_Package> getPackages() {
@@ -239,20 +239,20 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 
 		public static class _Package {
 
-			private String startTime;
+			private Long size;
 
 			private String expiredTime;
 
-			private Long size;
+			private String startTime;
 
 			private String packageId;
 
-			public String getStartTime() {
-				return this.startTime;
+			public Long getSize() {
+				return this.size;
 			}
 
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
+			public void setSize(Long size) {
+				this.size = size;
 			}
 
 			public String getExpiredTime() {
@@ -263,12 +263,12 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 				this.expiredTime = expiredTime;
 			}
 
-			public Long getSize() {
-				return this.size;
+			public String getStartTime() {
+				return this.startTime;
 			}
 
-			public void setSize(Long size) {
-				this.size = size;
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
 			}
 
 			public String getPackageId() {
@@ -283,15 +283,31 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 
 	public static class FileSystemStatistic {
 
+		private Integer totalCount;
+
+		private Integer expiredCount;
+
 		private String fileSystemType;
 
 		private Long meteredSize;
 
 		private Integer expiringCount;
 
-		private Integer totalCount;
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
 
-		private Integer expiredCount;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
+		public Integer getExpiredCount() {
+			return this.expiredCount;
+		}
+
+		public void setExpiredCount(Integer expiredCount) {
+			this.expiredCount = expiredCount;
+		}
 
 		public String getFileSystemType() {
 			return this.fileSystemType;
@@ -315,22 +331,6 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 
 		public void setExpiringCount(Integer expiringCount) {
 			this.expiringCount = expiringCount;
-		}
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public Integer getExpiredCount() {
-			return this.expiredCount;
-		}
-
-		public void setExpiredCount(Integer expiredCount) {
-			this.expiredCount = expiredCount;
 		}
 	}
 

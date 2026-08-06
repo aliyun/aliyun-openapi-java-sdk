@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRecycleBinJobsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
 
-	private Long pageNumber;
+	private String requestId;
 
 	private Long pageSize;
 
+	private Long pageNumber;
+
 	private List<Job> jobs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class ListRecycleBinJobsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getPageSize() {
@@ -65,6 +57,14 @@ public class ListRecycleBinJobsResponse extends AcsResponse {
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Job> getJobs() {
@@ -77,15 +77,9 @@ public class ListRecycleBinJobsResponse extends AcsResponse {
 
 	public static class Job {
 
-		private String id;
-
-		private String type;
-
-		private String fileId;
-
 		private String status;
 
-		private String errorCode;
+		private String type;
 
 		private String progress;
 
@@ -93,31 +87,13 @@ public class ListRecycleBinJobsResponse extends AcsResponse {
 
 		private String fileName;
 
+		private String fileId;
+
+		private String id;
+
+		private String errorCode;
+
 		private String errorMessage;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getFileId() {
-			return this.fileId;
-		}
-
-		public void setFileId(String fileId) {
-			this.fileId = fileId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -127,12 +103,12 @@ public class ListRecycleBinJobsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getErrorCode() {
-			return this.errorCode;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getProgress() {
@@ -157,6 +133,30 @@ public class ListRecycleBinJobsResponse extends AcsResponse {
 
 		public void setFileName(String fileName) {
 			this.fileName = fileName;
+		}
+
+		public String getFileId() {
+			return this.fileId;
+		}
+
+		public void setFileId(String fileId) {
+			this.fileId = fileId;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
 		}
 
 		public String getErrorMessage() {

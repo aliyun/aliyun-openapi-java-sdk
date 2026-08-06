@@ -29,6 +29,8 @@ public class AttachVscToFilesystemsRequest extends RpcAcsRequest<AttachVscToFile
 
 	private String clientToken;
 
+	private List<RoleChain> roleChain;
+
 	private List<ResourceIds> resourceIds;
 	public AttachVscToFilesystemsRequest() {
 		super("NAS", "2017-06-26", "AttachVscToFilesystems", "nas");
@@ -51,6 +53,24 @@ public class AttachVscToFilesystemsRequest extends RpcAcsRequest<AttachVscToFile
 		}
 	}
 
+	public List<RoleChain> getRoleChain() {
+		return this.roleChain;
+	}
+
+	public void setRoleChain(List<RoleChain> roleChain) {
+		this.roleChain = roleChain;	
+		if (roleChain != null) {
+			for (int depth1 = 0; depth1 < roleChain.size(); depth1++) {
+				if (roleChain.get(depth1) != null) {
+					
+						putQueryParameter("RoleChain." + (depth1 + 1) + ".RoleArn" , roleChain.get(depth1).getRoleArn());
+						putQueryParameter("RoleChain." + (depth1 + 1) + ".RoleType" , roleChain.get(depth1).getRoleType());
+						putQueryParameter("RoleChain." + (depth1 + 1) + ".AssumeRoleFor" , roleChain.get(depth1).getAssumeRoleFor());
+				}
+			}
+		}	
+	}
+
 	public List<ResourceIds> getResourceIds() {
 		return this.resourceIds;
 	}
@@ -66,6 +86,39 @@ public class AttachVscToFilesystemsRequest extends RpcAcsRequest<AttachVscToFile
 				}
 			}
 		}	
+	}
+
+	public static class RoleChain {
+
+		private String roleArn;
+
+		private String roleType;
+
+		private String assumeRoleFor;
+
+		public String getRoleArn() {
+			return this.roleArn;
+		}
+
+		public void setRoleArn(String roleArn) {
+			this.roleArn = roleArn;
+		}
+
+		public String getRoleType() {
+			return this.roleType;
+		}
+
+		public void setRoleType(String roleType) {
+			this.roleType = roleType;
+		}
+
+		public String getAssumeRoleFor() {
+			return this.assumeRoleFor;
+		}
+
+		public void setAssumeRoleFor(String assumeRoleFor) {
+			this.assumeRoleFor = assumeRoleFor;
+		}
 	}
 
 	public static class ResourceIds {

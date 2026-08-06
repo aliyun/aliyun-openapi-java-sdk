@@ -57,31 +57,115 @@ public class ListDirectoriesAndFilesResponse extends AcsResponse {
 
 	public static class Entry {
 
+		private String hasArchiveFile;
+
+		private Long offlineUnchangedDuration;
+
+		private String owner;
+
+		private String storageType;
+
+		private Long offlineDuration;
+
+		private String atime;
+
+		private Long size;
+
+		private String mtime;
+
+		private String retrieveTime;
+
+		private String name;
+
 		private String type;
+
+		private String inode;
 
 		private Boolean hasInfrequentAccessFile;
 
 		private String ctime;
 
-		private String mtime;
-
-		private Long size;
-
-		private String storageType;
-
-		private String atime;
-
-		private String name;
-
-		private String retrieveTime;
-
-		private String inode;
-
 		private String fileId;
 
-		private String owner;
+		public String getHasArchiveFile() {
+			return this.hasArchiveFile;
+		}
 
-		private String hasArchiveFile;
+		public void setHasArchiveFile(String hasArchiveFile) {
+			this.hasArchiveFile = hasArchiveFile;
+		}
+
+		public Long getOfflineUnchangedDuration() {
+			return this.offlineUnchangedDuration;
+		}
+
+		public void setOfflineUnchangedDuration(Long offlineUnchangedDuration) {
+			this.offlineUnchangedDuration = offlineUnchangedDuration;
+		}
+
+		public String getOwner() {
+			return this.owner;
+		}
+
+		public void setOwner(String owner) {
+			this.owner = owner;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public Long getOfflineDuration() {
+			return this.offlineDuration;
+		}
+
+		public void setOfflineDuration(Long offlineDuration) {
+			this.offlineDuration = offlineDuration;
+		}
+
+		public String getAtime() {
+			return this.atime;
+		}
+
+		public void setAtime(String atime) {
+			this.atime = atime;
+		}
+
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
+		public String getMtime() {
+			return this.mtime;
+		}
+
+		public void setMtime(String mtime) {
+			this.mtime = mtime;
+		}
+
+		public String getRetrieveTime() {
+			return this.retrieveTime;
+		}
+
+		public void setRetrieveTime(String retrieveTime) {
+			this.retrieveTime = retrieveTime;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 
 		public String getType() {
 			return this.type;
@@ -89,6 +173,14 @@ public class ListDirectoriesAndFilesResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getInode() {
+			return this.inode;
+		}
+
+		public void setInode(String inode) {
+			this.inode = inode;
 		}
 
 		public Boolean getHasInfrequentAccessFile() {
@@ -107,84 +199,12 @@ public class ListDirectoriesAndFilesResponse extends AcsResponse {
 			this.ctime = ctime;
 		}
 
-		public String getMtime() {
-			return this.mtime;
-		}
-
-		public void setMtime(String mtime) {
-			this.mtime = mtime;
-		}
-
-		public Long getSize() {
-			return this.size;
-		}
-
-		public void setSize(Long size) {
-			this.size = size;
-		}
-
-		public String getStorageType() {
-			return this.storageType;
-		}
-
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
-		}
-
-		public String getAtime() {
-			return this.atime;
-		}
-
-		public void setAtime(String atime) {
-			this.atime = atime;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getRetrieveTime() {
-			return this.retrieveTime;
-		}
-
-		public void setRetrieveTime(String retrieveTime) {
-			this.retrieveTime = retrieveTime;
-		}
-
-		public String getInode() {
-			return this.inode;
-		}
-
-		public void setInode(String inode) {
-			this.inode = inode;
-		}
-
 		public String getFileId() {
 			return this.fileId;
 		}
 
 		public void setFileId(String fileId) {
 			this.fileId = fileId;
-		}
-
-		public String getOwner() {
-			return this.owner;
-		}
-
-		public void setOwner(String owner) {
-			this.owner = owner;
-		}
-
-		public String getHasArchiveFile() {
-			return this.hasArchiveFile;
-		}
-
-		public void setHasArchiveFile(String hasArchiveFile) {
-			this.hasArchiveFile = hasArchiveFile;
 		}
 	}
 

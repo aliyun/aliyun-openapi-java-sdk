@@ -25,15 +25,23 @@ import com.aliyuncs.nas.Endpoint;
 public class DescribeLifecyclePoliciesRequest extends RpcAcsRequest<DescribeLifecyclePoliciesResponse> {
 	   
 
+	private String description;
+
 	private Integer pageNumber;
 
 	private String storageType;
+
+	private String path;
+
+	private String lifecyclePolicyType;
 
 	private String lifecyclePolicyName;
 
 	private Integer pageSize;
 
 	private String fileSystemId;
+
+	private String lifecyclePolicyId;
 	public DescribeLifecyclePoliciesRequest() {
 		super("NAS", "2017-06-26", "DescribeLifecyclePolicies", "nas");
 		setMethod(MethodType.GET);
@@ -41,6 +49,17 @@ public class DescribeLifecyclePoliciesRequest extends RpcAcsRequest<DescribeLife
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -62,6 +81,28 @@ public class DescribeLifecyclePoliciesRequest extends RpcAcsRequest<DescribeLife
 		this.storageType = storageType;
 		if(storageType != null){
 			putQueryParameter("StorageType", storageType);
+		}
+	}
+
+	public String getPath() {
+		return this.path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+		if(path != null){
+			putQueryParameter("Path", path);
+		}
+	}
+
+	public String getLifecyclePolicyType() {
+		return this.lifecyclePolicyType;
+	}
+
+	public void setLifecyclePolicyType(String lifecyclePolicyType) {
+		this.lifecyclePolicyType = lifecyclePolicyType;
+		if(lifecyclePolicyType != null){
+			putQueryParameter("LifecyclePolicyType", lifecyclePolicyType);
 		}
 	}
 
@@ -95,6 +136,17 @@ public class DescribeLifecyclePoliciesRequest extends RpcAcsRequest<DescribeLife
 		this.fileSystemId = fileSystemId;
 		if(fileSystemId != null){
 			putQueryParameter("FileSystemId", fileSystemId);
+		}
+	}
+
+	public String getLifecyclePolicyId() {
+		return this.lifecyclePolicyId;
+	}
+
+	public void setLifecyclePolicyId(String lifecyclePolicyId) {
+		this.lifecyclePolicyId = lifecyclePolicyId;
+		if(lifecyclePolicyId != null){
+			putQueryParameter("LifecyclePolicyId", lifecyclePolicyId);
 		}
 	}
 

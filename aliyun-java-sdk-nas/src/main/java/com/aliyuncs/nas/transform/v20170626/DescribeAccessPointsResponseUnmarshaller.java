@@ -30,26 +30,26 @@ public class DescribeAccessPointsResponseUnmarshaller {
 	public static DescribeAccessPointsResponse unmarshall(DescribeAccessPointsResponse describeAccessPointsResponse, UnmarshallerContext _ctx) {
 		
 		describeAccessPointsResponse.setRequestId(_ctx.stringValue("DescribeAccessPointsResponse.RequestId"));
-		describeAccessPointsResponse.setNextToken(_ctx.stringValue("DescribeAccessPointsResponse.NextToken"));
 		describeAccessPointsResponse.setTotalCount(_ctx.integerValue("DescribeAccessPointsResponse.TotalCount"));
+		describeAccessPointsResponse.setNextToken(_ctx.stringValue("DescribeAccessPointsResponse.NextToken"));
 
 		List<AccessPoint> accessPoints = new ArrayList<AccessPoint>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccessPointsResponse.AccessPoints.Length"); i++) {
 			AccessPoint accessPoint = new AccessPoint();
-			accessPoint.setARN(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].ARN"));
-			accessPoint.setAccessGroup(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].AccessGroup"));
-			accessPoint.setAccessPointId(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].AccessPointId"));
-			accessPoint.setAccessPointName(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].AccessPointName"));
-			accessPoint.setCreateTime(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].CreateTime"));
-			accessPoint.setDomainName(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].DomainName"));
-			accessPoint.setEnabledRam(_ctx.booleanValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].EnabledRam"));
-			accessPoint.setFileSystemId(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].FileSystemId"));
+			accessPoint.setStatus(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].Status"));
 			accessPoint.setModifyTime(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].ModifyTime"));
 			accessPoint.setRootPath(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].RootPath"));
-			accessPoint.setRootPathStatus(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].RootPathStatus"));
-			accessPoint.setStatus(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].Status"));
+			accessPoint.setDomainName(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].DomainName"));
+			accessPoint.setCreateTime(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].CreateTime"));
 			accessPoint.setVSwitchId(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].VSwitchId"));
+			accessPoint.setEnabledRam(_ctx.booleanValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].EnabledRam"));
+			accessPoint.setAccessPointName(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].AccessPointName"));
 			accessPoint.setVpcId(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].VpcId"));
+			accessPoint.setAccessGroup(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].AccessGroup"));
+			accessPoint.setAccessPointId(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].AccessPointId"));
+			accessPoint.setFileSystemId(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].FileSystemId"));
+			accessPoint.setARN(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].ARN"));
+			accessPoint.setRootPathStatus(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].RootPathStatus"));
 
 			PosixUser posixUser = new PosixUser();
 			posixUser.setPosixGroupId(_ctx.integerValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].PosixUser.PosixGroupId"));
@@ -63,16 +63,16 @@ public class DescribeAccessPointsResponseUnmarshaller {
 			accessPoint.setPosixUser(posixUser);
 
 			RootPathPermission rootPathPermission = new RootPathPermission();
-			rootPathPermission.setOwnerGroupId(_ctx.longValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].RootPathPermission.OwnerGroupId"));
 			rootPathPermission.setOwnerUserId(_ctx.longValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].RootPathPermission.OwnerUserId"));
 			rootPathPermission.setPermission(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].RootPathPermission.Permission"));
+			rootPathPermission.setOwnerGroupId(_ctx.longValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].RootPathPermission.OwnerGroupId"));
 			accessPoint.setRootPathPermission(rootPathPermission);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setKey(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].Tags["+ j +"].Key"));
 				tag.setValue(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("DescribeAccessPointsResponse.AccessPoints["+ i +"].Tags["+ j +"].Key"));
 
 				tags.add(tag);
 			}

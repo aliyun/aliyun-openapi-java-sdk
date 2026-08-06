@@ -81,31 +81,31 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String progress;
 
+		private String description;
+
+		private String sourceFileSystemVersion;
+
+		private String completedTime;
+
 		private String createTime;
 
 		private String sourceFileSystemId;
 
 		private Integer retentionDays;
 
-		private Integer remainTime;
+		private String snapshotName;
+
+		private String snapshotId;
 
 		private Long sourceFileSystemSize;
 
-		private String sourceFileSystemVersion;
-
-		private String snapshotName;
-
 		private Integer encryptType;
-
-		private String description;
-
-		private String snapshotId;
 
 		private String fileSystemType;
 
 		private String snapshotType;
 
-		private String completedTime;
+		private Integer remainTime;
 
 		public String getStatus() {
 			return this.status;
@@ -121,6 +121,30 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setProgress(String progress) {
 			this.progress = progress;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getSourceFileSystemVersion() {
+			return this.sourceFileSystemVersion;
+		}
+
+		public void setSourceFileSystemVersion(String sourceFileSystemVersion) {
+			this.sourceFileSystemVersion = sourceFileSystemVersion;
+		}
+
+		public String getCompletedTime() {
+			return this.completedTime;
+		}
+
+		public void setCompletedTime(String completedTime) {
+			this.completedTime = completedTime;
 		}
 
 		public String getCreateTime() {
@@ -147,12 +171,20 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 			this.retentionDays = retentionDays;
 		}
 
-		public Integer getRemainTime() {
-			return this.remainTime;
+		public String getSnapshotName() {
+			return this.snapshotName;
 		}
 
-		public void setRemainTime(Integer remainTime) {
-			this.remainTime = remainTime;
+		public void setSnapshotName(String snapshotName) {
+			this.snapshotName = snapshotName;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
 		}
 
 		public Long getSourceFileSystemSize() {
@@ -163,44 +195,12 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 			this.sourceFileSystemSize = sourceFileSystemSize;
 		}
 
-		public String getSourceFileSystemVersion() {
-			return this.sourceFileSystemVersion;
-		}
-
-		public void setSourceFileSystemVersion(String sourceFileSystemVersion) {
-			this.sourceFileSystemVersion = sourceFileSystemVersion;
-		}
-
-		public String getSnapshotName() {
-			return this.snapshotName;
-		}
-
-		public void setSnapshotName(String snapshotName) {
-			this.snapshotName = snapshotName;
-		}
-
 		public Integer getEncryptType() {
 			return this.encryptType;
 		}
 
 		public void setEncryptType(Integer encryptType) {
 			this.encryptType = encryptType;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getSnapshotId() {
-			return this.snapshotId;
-		}
-
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
 		}
 
 		public String getFileSystemType() {
@@ -219,12 +219,12 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 			this.snapshotType = snapshotType;
 		}
 
-		public String getCompletedTime() {
-			return this.completedTime;
+		public Integer getRemainTime() {
+			return this.remainTime;
 		}
 
-		public void setCompletedTime(String completedTime) {
-			this.completedTime = completedTime;
+		public void setRemainTime(Integer remainTime) {
+			this.remainTime = remainTime;
 		}
 	}
 

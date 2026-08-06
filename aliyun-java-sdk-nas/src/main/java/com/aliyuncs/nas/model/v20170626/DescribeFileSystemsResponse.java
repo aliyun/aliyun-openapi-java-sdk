@@ -77,106 +77,94 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 	public static class FileSystem {
 
-		private String status;
-
-		private Long meteredIASize;
-
-		private Long capacity;
+		private Integer secondaryBandwidth;
 
 		private Long mountTargetCountLimit;
 
-		private String createTime;
-
-		private String chargeType;
-
-		private String storageType;
-
-		private Long meteredSize;
-
 		private String description;
-
-		private Long bandwidth;
-
-		private String version;
-
-		private String nasNamespaceId;
-
-		private String protocolType;
 
 		private String kMSKeyId;
 
-		private String autoSnapshotPolicyId;
-
-		private String regionId;
-
-		private String fileSystemType;
-
-		private String fileSystemId;
-
-		private Integer encryptType;
-
-		private String expiredTime;
-
-		private String zoneId;
-
-		private String vpcId;
-
 		private Integer nodeNum;
+
+		private String resourceGroupId;
+
+		private String vscTarget;
 
 		private String hpnZone;
 
-		private String accessPointCount;
+		private Long meteredSize;
 
-		private String resourceGroupId;
+		private Long capacity;
+
+		private String version;
+
+		private Long bandwidth;
+
+		private String expiredTime;
+
+		private String fileSystemId;
 
 		private Long meteredArchiveSize;
 
 		private String quorumVswId;
 
+		private String status;
+
+		private String accessPointCount;
+
+		private String storageType;
+
+		private String zoneId;
+
+		private String nasNamespaceId;
+
+		private Long meteredIASize;
+
+		private String createTime;
+
+		private String redundancyType;
+
+		private String autoSnapshotPolicyId;
+
+		private Integer encryptType;
+
+		private String vpcId;
+
+		private String chargeType;
+
+		private String protocolType;
+
+		private String fileSystemType;
+
 		private Long secondaryCapacity;
 
-		private Integer secondaryBandwidth;
+		private String regionId;
 
-		private String vscTarget;
+		private List<_Package> packages;
 
 		private List<Tag> tags;
 
 		private List<MountTarget> mountTargets;
 
-		private List<_Package> packages;
+		private List<String> vswIds;
+
+		private List<String> redundancyVSwitchIds;
 
 		private List<String> supportedFeatures;
 
-		private List<String> vswIds;
-
-		private Ldap ldap;
+		private Options options;
 
 		private GuiInfo guiInfo;
 
-		private Options options;
+		private Ldap ldap;
 
-		public String getStatus() {
-			return this.status;
+		public Integer getSecondaryBandwidth() {
+			return this.secondaryBandwidth;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Long getMeteredIASize() {
-			return this.meteredIASize;
-		}
-
-		public void setMeteredIASize(Long meteredIASize) {
-			this.meteredIASize = meteredIASize;
-		}
-
-		public Long getCapacity() {
-			return this.capacity;
-		}
-
-		public void setCapacity(Long capacity) {
-			this.capacity = capacity;
+		public void setSecondaryBandwidth(Integer secondaryBandwidth) {
+			this.secondaryBandwidth = secondaryBandwidth;
 		}
 
 		public Long getMountTargetCountLimit() {
@@ -187,76 +175,12 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.mountTargetCountLimit = mountTargetCountLimit;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getStorageType() {
-			return this.storageType;
-		}
-
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
-		}
-
-		public Long getMeteredSize() {
-			return this.meteredSize;
-		}
-
-		public void setMeteredSize(Long meteredSize) {
-			this.meteredSize = meteredSize;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public Long getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(Long bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
-		}
-
-		public String getNasNamespaceId() {
-			return this.nasNamespaceId;
-		}
-
-		public void setNasNamespaceId(String nasNamespaceId) {
-			this.nasNamespaceId = nasNamespaceId;
-		}
-
-		public String getProtocolType() {
-			return this.protocolType;
-		}
-
-		public void setProtocolType(String protocolType) {
-			this.protocolType = protocolType;
 		}
 
 		public String getKMSKeyId() {
@@ -267,76 +191,28 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.kMSKeyId = kMSKeyId;
 		}
 
-		public String getAutoSnapshotPolicyId() {
-			return this.autoSnapshotPolicyId;
-		}
-
-		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
-			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getFileSystemType() {
-			return this.fileSystemType;
-		}
-
-		public void setFileSystemType(String fileSystemType) {
-			this.fileSystemType = fileSystemType;
-		}
-
-		public String getFileSystemId() {
-			return this.fileSystemId;
-		}
-
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
-		}
-
-		public Integer getEncryptType() {
-			return this.encryptType;
-		}
-
-		public void setEncryptType(Integer encryptType) {
-			this.encryptType = encryptType;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
 		public Integer getNodeNum() {
 			return this.nodeNum;
 		}
 
 		public void setNodeNum(Integer nodeNum) {
 			this.nodeNum = nodeNum;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getVscTarget() {
+			return this.vscTarget;
+		}
+
+		public void setVscTarget(String vscTarget) {
+			this.vscTarget = vscTarget;
 		}
 
 		public String getHpnZone() {
@@ -347,20 +223,52 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.hpnZone = hpnZone;
 		}
 
-		public String getAccessPointCount() {
-			return this.accessPointCount;
+		public Long getMeteredSize() {
+			return this.meteredSize;
 		}
 
-		public void setAccessPointCount(String accessPointCount) {
-			this.accessPointCount = accessPointCount;
+		public void setMeteredSize(Long meteredSize) {
+			this.meteredSize = meteredSize;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public Long getCapacity() {
+			return this.capacity;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setCapacity(Long capacity) {
+			this.capacity = capacity;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public Long getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Long bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
 		}
 
 		public Long getMeteredArchiveSize() {
@@ -379,6 +287,118 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.quorumVswId = quorumVswId;
 		}
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getAccessPointCount() {
+			return this.accessPointCount;
+		}
+
+		public void setAccessPointCount(String accessPointCount) {
+			this.accessPointCount = accessPointCount;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getNasNamespaceId() {
+			return this.nasNamespaceId;
+		}
+
+		public void setNasNamespaceId(String nasNamespaceId) {
+			this.nasNamespaceId = nasNamespaceId;
+		}
+
+		public Long getMeteredIASize() {
+			return this.meteredIASize;
+		}
+
+		public void setMeteredIASize(Long meteredIASize) {
+			this.meteredIASize = meteredIASize;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getRedundancyType() {
+			return this.redundancyType;
+		}
+
+		public void setRedundancyType(String redundancyType) {
+			this.redundancyType = redundancyType;
+		}
+
+		public String getAutoSnapshotPolicyId() {
+			return this.autoSnapshotPolicyId;
+		}
+
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		}
+
+		public Integer getEncryptType() {
+			return this.encryptType;
+		}
+
+		public void setEncryptType(Integer encryptType) {
+			this.encryptType = encryptType;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
+		}
+
+		public String getFileSystemType() {
+			return this.fileSystemType;
+		}
+
+		public void setFileSystemType(String fileSystemType) {
+			this.fileSystemType = fileSystemType;
+		}
+
 		public Long getSecondaryCapacity() {
 			return this.secondaryCapacity;
 		}
@@ -387,20 +407,20 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.secondaryCapacity = secondaryCapacity;
 		}
 
-		public Integer getSecondaryBandwidth() {
-			return this.secondaryBandwidth;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setSecondaryBandwidth(Integer secondaryBandwidth) {
-			this.secondaryBandwidth = secondaryBandwidth;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
-		public String getVscTarget() {
-			return this.vscTarget;
+		public List<_Package> getPackages() {
+			return this.packages;
 		}
 
-		public void setVscTarget(String vscTarget) {
-			this.vscTarget = vscTarget;
+		public void setPackages(List<_Package> packages) {
+			this.packages = packages;
 		}
 
 		public List<Tag> getTags() {
@@ -419,12 +439,20 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.mountTargets = mountTargets;
 		}
 
-		public List<_Package> getPackages() {
-			return this.packages;
+		public List<String> getVswIds() {
+			return this.vswIds;
 		}
 
-		public void setPackages(List<_Package> packages) {
-			this.packages = packages;
+		public void setVswIds(List<String> vswIds) {
+			this.vswIds = vswIds;
+		}
+
+		public List<String> getRedundancyVSwitchIds() {
+			return this.redundancyVSwitchIds;
+		}
+
+		public void setRedundancyVSwitchIds(List<String> redundancyVSwitchIds) {
+			this.redundancyVSwitchIds = redundancyVSwitchIds;
 		}
 
 		public List<String> getSupportedFeatures() {
@@ -435,20 +463,12 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.supportedFeatures = supportedFeatures;
 		}
 
-		public List<String> getVswIds() {
-			return this.vswIds;
+		public Options getOptions() {
+			return this.options;
 		}
 
-		public void setVswIds(List<String> vswIds) {
-			this.vswIds = vswIds;
-		}
-
-		public Ldap getLdap() {
-			return this.ldap;
-		}
-
-		public void setLdap(Ldap ldap) {
-			this.ldap = ldap;
+		public void setOptions(Options options) {
+			this.options = options;
 		}
 
 		public GuiInfo getGuiInfo() {
@@ -459,27 +479,72 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.guiInfo = guiInfo;
 		}
 
-		public Options getOptions() {
-			return this.options;
+		public Ldap getLdap() {
+			return this.ldap;
 		}
 
-		public void setOptions(Options options) {
-			this.options = options;
+		public void setLdap(Ldap ldap) {
+			this.ldap = ldap;
+		}
+
+		public static class _Package {
+
+			private Long size;
+
+			private String expiredTime;
+
+			private String packageType;
+
+			private String startTime;
+
+			private String packageId;
+
+			public Long getSize() {
+				return this.size;
+			}
+
+			public void setSize(Long size) {
+				this.size = size;
+			}
+
+			public String getExpiredTime() {
+				return this.expiredTime;
+			}
+
+			public void setExpiredTime(String expiredTime) {
+				this.expiredTime = expiredTime;
+			}
+
+			public String getPackageType() {
+				return this.packageType;
+			}
+
+			public void setPackageType(String packageType) {
+				this.packageType = packageType;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getPackageId() {
+				return this.packageId;
+			}
+
+			public void setPackageId(String packageId) {
+				this.packageId = packageId;
+			}
 		}
 
 		public static class Tag {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -488,37 +553,39 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			public void setValue(String value) {
 				this.value = value;
 			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
 		}
 
 		public static class MountTarget {
 
-			private String vpcId;
-
 			private String status;
 
-			private String mountTargetDomain;
-
-			private String accessGroupName;
+			private String vpcId;
 
 			private String dualStackMountTargetDomain;
 
 			private String vswId;
 
+			private String mountTargetDomain;
+
 			private String networkType;
 
+			private String accessGroupName;
+
 			private String mountTargetIp;
+
+			private Boolean accessPointAccessOnly;
 
 			private List<ClientMasterNode> clientMasterNodes;
 
 			private List<Tag2> tags1;
-
-			public String getVpcId() {
-				return this.vpcId;
-			}
-
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
-			}
 
 			public String getStatus() {
 				return this.status;
@@ -528,20 +595,12 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getMountTargetDomain() {
-				return this.mountTargetDomain;
+			public String getVpcId() {
+				return this.vpcId;
 			}
 
-			public void setMountTargetDomain(String mountTargetDomain) {
-				this.mountTargetDomain = mountTargetDomain;
-			}
-
-			public String getAccessGroupName() {
-				return this.accessGroupName;
-			}
-
-			public void setAccessGroupName(String accessGroupName) {
-				this.accessGroupName = accessGroupName;
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
 			}
 
 			public String getDualStackMountTargetDomain() {
@@ -560,6 +619,14 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 				this.vswId = vswId;
 			}
 
+			public String getMountTargetDomain() {
+				return this.mountTargetDomain;
+			}
+
+			public void setMountTargetDomain(String mountTargetDomain) {
+				this.mountTargetDomain = mountTargetDomain;
+			}
+
 			public String getNetworkType() {
 				return this.networkType;
 			}
@@ -568,12 +635,28 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 				this.networkType = networkType;
 			}
 
+			public String getAccessGroupName() {
+				return this.accessGroupName;
+			}
+
+			public void setAccessGroupName(String accessGroupName) {
+				this.accessGroupName = accessGroupName;
+			}
+
 			public String getMountTargetIp() {
 				return this.mountTargetIp;
 			}
 
 			public void setMountTargetIp(String mountTargetIp) {
 				this.mountTargetIp = mountTargetIp;
+			}
+
+			public Boolean getAccessPointAccessOnly() {
+				return this.accessPointAccessOnly;
+			}
+
+			public void setAccessPointAccessOnly(Boolean accessPointAccessOnly) {
+				this.accessPointAccessOnly = accessPointAccessOnly;
 			}
 
 			public List<ClientMasterNode> getClientMasterNodes() {
@@ -594,11 +677,19 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 			public static class ClientMasterNode {
 
+				private String ecsIp;
+
 				private String ecsId;
 
 				private String defaultPasswd;
 
-				private String ecsIp;
+				public String getEcsIp() {
+					return this.ecsIp;
+				}
+
+				public void setEcsIp(String ecsIp) {
+					this.ecsIp = ecsIp;
+				}
 
 				public String getEcsId() {
 					return this.ecsId;
@@ -615,29 +706,13 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 				public void setDefaultPasswd(String defaultPasswd) {
 					this.defaultPasswd = defaultPasswd;
 				}
-
-				public String getEcsIp() {
-					return this.ecsIp;
-				}
-
-				public void setEcsIp(String ecsIp) {
-					this.ecsIp = ecsIp;
-				}
 			}
 
 			public static class Tag2 {
 
-				private String key;
-
 				private String value;
 
-				public String getKey() {
-					return this.key;
-				}
-
-				public void setKey(String key) {
-					this.key = key;
-				}
+				private String key;
 
 				public String getValue() {
 					return this.value;
@@ -646,102 +721,75 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 				public void setValue(String value) {
 					this.value = value;
 				}
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
 			}
 		}
 
-		public static class _Package {
+		public static class Options {
 
-			private String startTime;
+			private Boolean enableOplock;
 
-			private String expiredTime;
+			private Boolean vscAccessPointAccessOnly;
 
-			private Long size;
+			private Boolean enableABE;
 
-			private String packageId;
+			private Boolean enableDataInsight;
 
-			private String packageType;
-
-			public String getStartTime() {
-				return this.startTime;
+			public Boolean getEnableOplock() {
+				return this.enableOplock;
 			}
 
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
+			public void setEnableOplock(Boolean enableOplock) {
+				this.enableOplock = enableOplock;
 			}
 
-			public String getExpiredTime() {
-				return this.expiredTime;
+			public Boolean getVscAccessPointAccessOnly() {
+				return this.vscAccessPointAccessOnly;
 			}
 
-			public void setExpiredTime(String expiredTime) {
-				this.expiredTime = expiredTime;
+			public void setVscAccessPointAccessOnly(Boolean vscAccessPointAccessOnly) {
+				this.vscAccessPointAccessOnly = vscAccessPointAccessOnly;
 			}
 
-			public Long getSize() {
-				return this.size;
+			public Boolean getEnableABE() {
+				return this.enableABE;
 			}
 
-			public void setSize(Long size) {
-				this.size = size;
+			public void setEnableABE(Boolean enableABE) {
+				this.enableABE = enableABE;
 			}
 
-			public String getPackageId() {
-				return this.packageId;
+			public Boolean getEnableDataInsight() {
+				return this.enableDataInsight;
 			}
 
-			public void setPackageId(String packageId) {
-				this.packageId = packageId;
-			}
-
-			public String getPackageType() {
-				return this.packageType;
-			}
-
-			public void setPackageType(String packageType) {
-				this.packageType = packageType;
-			}
-		}
-
-		public static class Ldap {
-
-			private String bindDN;
-
-			private String searchBase;
-
-			private String uRI;
-
-			public String getBindDN() {
-				return this.bindDN;
-			}
-
-			public void setBindDN(String bindDN) {
-				this.bindDN = bindDN;
-			}
-
-			public String getSearchBase() {
-				return this.searchBase;
-			}
-
-			public void setSearchBase(String searchBase) {
-				this.searchBase = searchBase;
-			}
-
-			public String getURI() {
-				return this.uRI;
-			}
-
-			public void setURI(String uRI) {
-				this.uRI = uRI;
+			public void setEnableDataInsight(Boolean enableDataInsight) {
+				this.enableDataInsight = enableDataInsight;
 			}
 		}
 
 		public static class GuiInfo {
 
+			private String user;
+
 			private String endpoint;
 
 			private String password;
 
-			private String user;
+			public String getUser() {
+				return this.user;
+			}
+
+			public void setUser(String user) {
+				this.user = user;
+			}
 
 			public String getEndpoint() {
 				return this.endpoint;
@@ -758,26 +806,38 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			public void setPassword(String password) {
 				this.password = password;
 			}
-
-			public String getUser() {
-				return this.user;
-			}
-
-			public void setUser(String user) {
-				this.user = user;
-			}
 		}
 
-		public static class Options {
+		public static class Ldap {
 
-			private Boolean enableOplock;
+			private String searchBase;
 
-			public Boolean getEnableOplock() {
-				return this.enableOplock;
+			private String bindDN;
+
+			private String uRI;
+
+			public String getSearchBase() {
+				return this.searchBase;
 			}
 
-			public void setEnableOplock(Boolean enableOplock) {
-				this.enableOplock = enableOplock;
+			public void setSearchBase(String searchBase) {
+				this.searchBase = searchBase;
+			}
+
+			public String getBindDN() {
+				return this.bindDN;
+			}
+
+			public void setBindDN(String bindDN) {
+				this.bindDN = bindDN;
+			}
+
+			public String getURI() {
+				return this.uRI;
+			}
+
+			public void setURI(String uRI) {
+				this.uRI = uRI;
 			}
 		}
 	}

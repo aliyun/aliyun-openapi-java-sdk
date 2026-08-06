@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
@@ -30,6 +31,8 @@ public class CreateProtocolMountTargetRequest extends RpcAcsRequest<CreateProtoc
 	private String fsetId;
 
 	private String clientToken;
+
+	private List<String> vSwitchIdss;
 
 	private String description;
 
@@ -84,6 +87,19 @@ public class CreateProtocolMountTargetRequest extends RpcAcsRequest<CreateProtoc
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
 		}
+	}
+
+	public List<String> getVSwitchIdss() {
+		return this.vSwitchIdss;
+	}
+
+	public void setVSwitchIdss(List<String> vSwitchIdss) {
+		this.vSwitchIdss = vSwitchIdss;	
+		if (vSwitchIdss != null) {
+			for (int i = 0; i < vSwitchIdss.size(); i++) {
+				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIdss.get(i));
+			}
+		}	
 	}
 
 	public String getDescription() {

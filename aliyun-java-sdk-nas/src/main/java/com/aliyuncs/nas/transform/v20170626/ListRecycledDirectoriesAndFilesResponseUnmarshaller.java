@@ -32,15 +32,15 @@ public class ListRecycledDirectoriesAndFilesResponseUnmarshaller {
 		List<Entry> entries = new ArrayList<Entry>();
 		for (int i = 0; i < _ctx.lengthValue("ListRecycledDirectoriesAndFilesResponse.Entries.Length"); i++) {
 			Entry entry = new Entry();
-			entry.setFileId(_ctx.stringValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].FileId"));
 			entry.setType(_ctx.stringValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].Type"));
-			entry.setName(_ctx.stringValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].Name"));
-			entry.setDeleteTime(_ctx.stringValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].DeleteTime"));
 			entry.setInode(_ctx.stringValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].Inode"));
 			entry.setATime(_ctx.stringValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].ATime"));
-			entry.setMTime(_ctx.stringValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].MTime"));
-			entry.setCTime(_ctx.stringValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].CTime"));
 			entry.setSize(_ctx.longValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].Size"));
+			entry.setDeleteTime(_ctx.stringValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].DeleteTime"));
+			entry.setCTime(_ctx.stringValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].CTime"));
+			entry.setFileId(_ctx.stringValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].FileId"));
+			entry.setMTime(_ctx.stringValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].MTime"));
+			entry.setName(_ctx.stringValue("ListRecycledDirectoriesAndFilesResponse.Entries["+ i +"].Name"));
 
 			entries.add(entry);
 		}

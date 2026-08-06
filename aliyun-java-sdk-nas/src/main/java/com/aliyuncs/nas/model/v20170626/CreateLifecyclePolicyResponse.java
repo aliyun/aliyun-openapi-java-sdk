@@ -26,6 +26,8 @@ public class CreateLifecyclePolicyResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String lifecyclePolicyId;
+
 	private Boolean success;
 
 	public String getRequestId() {
@@ -34,6 +36,14 @@ public class CreateLifecyclePolicyResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getLifecyclePolicyId() {
+		return this.lifecyclePolicyId;
+	}
+
+	public void setLifecyclePolicyId(String lifecyclePolicyId) {
+		this.lifecyclePolicyId = lifecyclePolicyId;
 	}
 
 	public Boolean getSuccess() {

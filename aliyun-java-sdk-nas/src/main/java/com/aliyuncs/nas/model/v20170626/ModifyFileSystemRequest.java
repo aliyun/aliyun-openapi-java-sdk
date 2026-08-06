@@ -80,12 +80,34 @@ public class ModifyFileSystemRequest extends RpcAcsRequest<ModifyFileSystemRespo
 		@SerializedName("EnableOplock")
 		private Boolean enableOplock;
 
+		@SerializedName("VscAccessPointAccessOnly")
+		private Boolean vscAccessPointAccessOnly;
+
+		@SerializedName("EnableABE")
+		private Boolean enableABE;
+
 		public Boolean getEnableOplock() {
 			return this.enableOplock;
 		}
 
 		public void setEnableOplock(Boolean enableOplock) {
 			this.enableOplock = enableOplock;
+		}
+
+		public Boolean getVscAccessPointAccessOnly() {
+			return this.vscAccessPointAccessOnly;
+		}
+
+		public void setVscAccessPointAccessOnly(Boolean vscAccessPointAccessOnly) {
+			this.vscAccessPointAccessOnly = vscAccessPointAccessOnly;
+		}
+
+		public Boolean getEnableABE() {
+			return this.enableABE;
+		}
+
+		public void setEnableABE(Boolean enableABE) {
+			this.enableABE = enableABE;
 		}
 	}
 

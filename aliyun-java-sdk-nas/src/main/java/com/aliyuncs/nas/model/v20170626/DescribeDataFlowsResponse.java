@@ -57,54 +57,50 @@ public class DescribeDataFlowsResponse extends AcsResponse {
 
 	public static class DataFlow {
 
-		private String fileSystemId;
-
-		private String dataFlowId;
+		private String status;
 
 		private String fsetId;
 
-		private String status;
-
-		private String errorMessage;
-
-		private String sourceStorage;
-
-		private String sourceSecurityType;
-
-		private Long throughput;
+		private String fileSystemPath;
 
 		private String description;
 
 		private String createTime;
 
-		private String updateTime;
-
-		private String fileSystemPath;
-
-		private String fsetDescription;
+		private Long throughput;
 
 		private Long autoRefreshInterval;
 
-		private String autoRefreshPolicy;
+		private String fsetDescription;
+
+		private String sourceStorage;
 
 		private String sourceStoragePath;
 
+		private String sourceSecurityType;
+
+		private String updateTime;
+
+		private String fileSystemId;
+
+		private String autoRefreshPolicy;
+
+		private String errorMessage;
+
+		private String dataFlowId;
+
 		private List<AutoRefreshItem> autoRefresh;
 
-		public String getFileSystemId() {
-			return this.fileSystemId;
+		private LazyLoadConfiguration lazyLoadConfiguration;
+
+		private AutoImportConfiguration autoImportConfiguration;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
-		}
-
-		public String getDataFlowId() {
-			return this.dataFlowId;
-		}
-
-		public void setDataFlowId(String dataFlowId) {
-			this.dataFlowId = dataFlowId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getFsetId() {
@@ -115,44 +111,12 @@ public class DescribeDataFlowsResponse extends AcsResponse {
 			this.fsetId = fsetId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getFileSystemPath() {
+			return this.fileSystemPath;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
-		public String getSourceStorage() {
-			return this.sourceStorage;
-		}
-
-		public void setSourceStorage(String sourceStorage) {
-			this.sourceStorage = sourceStorage;
-		}
-
-		public String getSourceSecurityType() {
-			return this.sourceSecurityType;
-		}
-
-		public void setSourceSecurityType(String sourceSecurityType) {
-			this.sourceSecurityType = sourceSecurityType;
-		}
-
-		public Long getThroughput() {
-			return this.throughput;
-		}
-
-		public void setThroughput(Long throughput) {
-			this.throughput = throughput;
+		public void setFileSystemPath(String fileSystemPath) {
+			this.fileSystemPath = fileSystemPath;
 		}
 
 		public String getDescription() {
@@ -171,28 +135,12 @@ public class DescribeDataFlowsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
+		public Long getThroughput() {
+			return this.throughput;
 		}
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getFileSystemPath() {
-			return this.fileSystemPath;
-		}
-
-		public void setFileSystemPath(String fileSystemPath) {
-			this.fileSystemPath = fileSystemPath;
-		}
-
-		public String getFsetDescription() {
-			return this.fsetDescription;
-		}
-
-		public void setFsetDescription(String fsetDescription) {
-			this.fsetDescription = fsetDescription;
+		public void setThroughput(Long throughput) {
+			this.throughput = throughput;
 		}
 
 		public Long getAutoRefreshInterval() {
@@ -203,12 +151,20 @@ public class DescribeDataFlowsResponse extends AcsResponse {
 			this.autoRefreshInterval = autoRefreshInterval;
 		}
 
-		public String getAutoRefreshPolicy() {
-			return this.autoRefreshPolicy;
+		public String getFsetDescription() {
+			return this.fsetDescription;
 		}
 
-		public void setAutoRefreshPolicy(String autoRefreshPolicy) {
-			this.autoRefreshPolicy = autoRefreshPolicy;
+		public void setFsetDescription(String fsetDescription) {
+			this.fsetDescription = fsetDescription;
+		}
+
+		public String getSourceStorage() {
+			return this.sourceStorage;
+		}
+
+		public void setSourceStorage(String sourceStorage) {
+			this.sourceStorage = sourceStorage;
 		}
 
 		public String getSourceStoragePath() {
@@ -219,12 +175,76 @@ public class DescribeDataFlowsResponse extends AcsResponse {
 			this.sourceStoragePath = sourceStoragePath;
 		}
 
+		public String getSourceSecurityType() {
+			return this.sourceSecurityType;
+		}
+
+		public void setSourceSecurityType(String sourceSecurityType) {
+			this.sourceSecurityType = sourceSecurityType;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
+		}
+
+		public String getAutoRefreshPolicy() {
+			return this.autoRefreshPolicy;
+		}
+
+		public void setAutoRefreshPolicy(String autoRefreshPolicy) {
+			this.autoRefreshPolicy = autoRefreshPolicy;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public String getDataFlowId() {
+			return this.dataFlowId;
+		}
+
+		public void setDataFlowId(String dataFlowId) {
+			this.dataFlowId = dataFlowId;
+		}
+
 		public List<AutoRefreshItem> getAutoRefresh() {
 			return this.autoRefresh;
 		}
 
 		public void setAutoRefresh(List<AutoRefreshItem> autoRefresh) {
 			this.autoRefresh = autoRefresh;
+		}
+
+		public LazyLoadConfiguration getLazyLoadConfiguration() {
+			return this.lazyLoadConfiguration;
+		}
+
+		public void setLazyLoadConfiguration(LazyLoadConfiguration lazyLoadConfiguration) {
+			this.lazyLoadConfiguration = lazyLoadConfiguration;
+		}
+
+		public AutoImportConfiguration getAutoImportConfiguration() {
+			return this.autoImportConfiguration;
+		}
+
+		public void setAutoImportConfiguration(AutoImportConfiguration autoImportConfiguration) {
+			this.autoImportConfiguration = autoImportConfiguration;
 		}
 
 		public static class AutoRefreshItem {
@@ -237,6 +257,108 @@ public class DescribeDataFlowsResponse extends AcsResponse {
 
 			public void setRefreshPath(String refreshPath) {
 				this.refreshPath = refreshPath;
+			}
+		}
+
+		public static class LazyLoadConfiguration {
+
+			private Boolean enabled;
+
+			private List<EvictRule> evictRules;
+
+			public Boolean getEnabled() {
+				return this.enabled;
+			}
+
+			public void setEnabled(Boolean enabled) {
+				this.enabled = enabled;
+			}
+
+			public List<EvictRule> getEvictRules() {
+				return this.evictRules;
+			}
+
+			public void setEvictRules(List<EvictRule> evictRules) {
+				this.evictRules = evictRules;
+			}
+
+			public static class EvictRule {
+
+				private String attribute;
+
+				private String threshold;
+
+				public String getAttribute() {
+					return this.attribute;
+				}
+
+				public void setAttribute(String attribute) {
+					this.attribute = attribute;
+				}
+
+				public String getThreshold() {
+					return this.threshold;
+				}
+
+				public void setThreshold(String threshold) {
+					this.threshold = threshold;
+				}
+			}
+		}
+
+		public static class AutoImportConfiguration {
+
+			private Boolean enabled;
+
+			private String dataType;
+
+			private OssInventoryConfig ossInventoryConfig;
+
+			public Boolean getEnabled() {
+				return this.enabled;
+			}
+
+			public void setEnabled(Boolean enabled) {
+				this.enabled = enabled;
+			}
+
+			public String getDataType() {
+				return this.dataType;
+			}
+
+			public void setDataType(String dataType) {
+				this.dataType = dataType;
+			}
+
+			public OssInventoryConfig getOssInventoryConfig() {
+				return this.ossInventoryConfig;
+			}
+
+			public void setOssInventoryConfig(OssInventoryConfig ossInventoryConfig) {
+				this.ossInventoryConfig = ossInventoryConfig;
+			}
+
+			public static class OssInventoryConfig {
+
+				private String roleArn;
+
+				private String inventoryId;
+
+				public String getRoleArn() {
+					return this.roleArn;
+				}
+
+				public void setRoleArn(String roleArn) {
+					this.roleArn = roleArn;
+				}
+
+				public String getInventoryId() {
+					return this.inventoryId;
+				}
+
+				public void setInventoryId(String inventoryId) {
+					this.inventoryId = inventoryId;
+				}
 			}
 		}
 	}

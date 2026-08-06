@@ -23,6 +23,7 @@ public class CreateLifecyclePolicyResponseUnmarshaller {
 	public static CreateLifecyclePolicyResponse unmarshall(CreateLifecyclePolicyResponse createLifecyclePolicyResponse, UnmarshallerContext _ctx) {
 		
 		createLifecyclePolicyResponse.setRequestId(_ctx.stringValue("CreateLifecyclePolicyResponse.RequestId"));
+		createLifecyclePolicyResponse.setLifecyclePolicyId(_ctx.stringValue("CreateLifecyclePolicyResponse.LifecyclePolicyId"));
 		createLifecyclePolicyResponse.setSuccess(_ctx.booleanValue("CreateLifecyclePolicyResponse.Success"));
 	 
 	 	return createLifecyclePolicyResponse;

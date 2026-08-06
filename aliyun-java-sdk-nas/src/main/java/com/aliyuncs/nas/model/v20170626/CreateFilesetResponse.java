@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateFilesetResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String fsetId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getFsetId() {
 		return this.fsetId;
@@ -42,6 +34,14 @@ public class CreateFilesetResponse extends AcsResponse {
 
 	public void setFsetId(String fsetId) {
 		this.fsetId = fsetId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

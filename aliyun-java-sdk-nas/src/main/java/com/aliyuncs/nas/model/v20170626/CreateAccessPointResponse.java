@@ -46,17 +46,9 @@ public class CreateAccessPointResponse extends AcsResponse {
 
 	public static class AccessPoint {
 
-		private String accessPointDomain;
-
 		private String accessPointId;
 
-		public String getAccessPointDomain() {
-			return this.accessPointDomain;
-		}
-
-		public void setAccessPointDomain(String accessPointDomain) {
-			this.accessPointDomain = accessPointDomain;
-		}
+		private String accessPointDomain;
 
 		public String getAccessPointId() {
 			return this.accessPointId;
@@ -64,6 +56,14 @@ public class CreateAccessPointResponse extends AcsResponse {
 
 		public void setAccessPointId(String accessPointId) {
 			this.accessPointId = accessPointId;
+		}
+
+		public String getAccessPointDomain() {
+			return this.accessPointDomain;
+		}
+
+		public void setAccessPointDomain(String accessPointDomain) {
+			this.accessPointDomain = accessPointDomain;
 		}
 	}
 

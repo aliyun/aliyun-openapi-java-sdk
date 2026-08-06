@@ -57,21 +57,13 @@ public class ListRecentlyRecycledDirectoriesResponse extends AcsResponse {
 
 	public static class Entry {
 
-		private String fileId;
-
 		private String path;
-
-		private String name;
 
 		private String lastDeleteTime;
 
-		public String getFileId() {
-			return this.fileId;
-		}
+		private String fileId;
 
-		public void setFileId(String fileId) {
-			this.fileId = fileId;
-		}
+		private String name;
 
 		public String getPath() {
 			return this.path;
@@ -81,20 +73,28 @@ public class ListRecentlyRecycledDirectoriesResponse extends AcsResponse {
 			this.path = path;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getLastDeleteTime() {
 			return this.lastDeleteTime;
 		}
 
 		public void setLastDeleteTime(String lastDeleteTime) {
 			this.lastDeleteTime = lastDeleteTime;
+		}
+
+		public String getFileId() {
+			return this.fileId;
+		}
+
+		public void setFileId(String fileId) {
+			this.fileId = fileId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

@@ -34,16 +34,16 @@ public class DescribeAutoSnapshotPoliciesResponseUnmarshaller {
 		List<AutoSnapshotPolicy> autoSnapshotPolicies = new ArrayList<AutoSnapshotPolicy>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies.Length"); i++) {
 			AutoSnapshotPolicy autoSnapshotPolicy = new AutoSnapshotPolicy();
-			autoSnapshotPolicy.setTimePoints(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].TimePoints"));
 			autoSnapshotPolicy.setStatus(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].Status"));
-			autoSnapshotPolicy.setRepeatWeekdays(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].RepeatWeekdays"));
-			autoSnapshotPolicy.setAutoSnapshotPolicyName(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyName"));
+			autoSnapshotPolicy.setTimePoints(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].TimePoints"));
 			autoSnapshotPolicy.setCreateTime(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].CreateTime"));
+			autoSnapshotPolicy.setFileSystemNums(_ctx.integerValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].FileSystemNums"));
+			autoSnapshotPolicy.setFileSystemType(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].FileSystemType"));
 			autoSnapshotPolicy.setAutoSnapshotPolicyId(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyId"));
 			autoSnapshotPolicy.setRetentionDays(_ctx.integerValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].RetentionDays"));
-			autoSnapshotPolicy.setFileSystemNums(_ctx.integerValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].FileSystemNums"));
+			autoSnapshotPolicy.setRepeatWeekdays(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].RepeatWeekdays"));
 			autoSnapshotPolicy.setRegionId(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].RegionId"));
-			autoSnapshotPolicy.setFileSystemType(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].FileSystemType"));
+			autoSnapshotPolicy.setAutoSnapshotPolicyName(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyName"));
 
 			autoSnapshotPolicies.add(autoSnapshotPolicy);
 		}

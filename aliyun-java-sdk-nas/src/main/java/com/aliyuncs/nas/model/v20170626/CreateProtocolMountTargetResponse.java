@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateProtocolMountTargetResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String exportId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getExportId() {
 		return this.exportId;
@@ -42,6 +34,14 @@ public class CreateProtocolMountTargetResponse extends AcsResponse {
 
 	public void setExportId(String exportId) {
 		this.exportId = exportId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

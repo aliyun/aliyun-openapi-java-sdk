@@ -34,44 +34,45 @@ public class DescribeDataFlowTasksResponseUnmarshaller {
 		List<Task> taskInfo = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataFlowTasksResponse.TaskInfo.Length"); i++) {
 			Task task = new Task();
-			task.setFilesystemId(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].FilesystemId"));
-			task.setDataFlowId(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].DataFlowId"));
-			task.setTaskId(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].TaskId"));
-			task.setSourceStorage(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].SourceStorage"));
 			task.setFileSystemPath(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].FileSystemPath"));
-			task.setOriginator(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Originator"));
-			task.setTaskAction(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].TaskAction"));
-			task.setDataType(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].DataType"));
-			task.setProgress(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Progress"));
 			task.setStatus(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Status"));
-			task.setReportPath(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ReportPath"));
+			task.setFilesystemId(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].FilesystemId"));
+			task.setProgress(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Progress"));
+			task.setTaskId(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].TaskId"));
+			task.setEndTime(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].EndTime"));
+			task.setTaskAction(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].TaskAction"));
 			task.setCreateTime(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].CreateTime"));
 			task.setStartTime(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].StartTime"));
-			task.setEndTime(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].EndTime"));
-			task.setFsPath(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].FsPath"));
-			task.setConflictPolicy(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ConflictPolicy"));
-			task.setDirectory(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Directory"));
-			task.setDstDirectory(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].DstDirectory"));
 			task.setErrorMsg(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ErrorMsg"));
+			task.setEntryList(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].EntryList"));
+			task.setDstDirectory(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].DstDirectory"));
 			task.setIncludes(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Includes"));
+			task.setSourceStorage(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].SourceStorage"));
+			task.setConflictPolicy(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ConflictPolicy"));
+			task.setOriginator(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Originator"));
+			task.setReportPath(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ReportPath"));
+			task.setDataType(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].DataType"));
 			task.setTransferFileListPath(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].TransferFileListPath"));
+			task.setDataFlowId(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].DataFlowId"));
+			task.setFsPath(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].FsPath"));
+			task.setDirectory(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Directory"));
 
 			ProgressStats progressStats = new ProgressStats();
+			progressStats.setAverageSpeed(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ProgressStats.AverageSpeed"));
 			progressStats.setFilesTotal(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ProgressStats.FilesTotal"));
 			progressStats.setFilesDone(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ProgressStats.FilesDone"));
-			progressStats.setActualFiles(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ProgressStats.ActualFiles"));
-			progressStats.setBytesTotal(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ProgressStats.BytesTotal"));
 			progressStats.setBytesDone(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ProgressStats.BytesDone"));
 			progressStats.setActualBytes(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ProgressStats.ActualBytes"));
 			progressStats.setRemainTime(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ProgressStats.RemainTime"));
-			progressStats.setAverageSpeed(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ProgressStats.AverageSpeed"));
+			progressStats.setActualFiles(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ProgressStats.ActualFiles"));
+			progressStats.setBytesTotal(_ctx.longValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].ProgressStats.BytesTotal"));
 			task.setProgressStats(progressStats);
 
 			List<Report> reports = new ArrayList<Report>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Reports.Length"); j++) {
 				Report report = new Report();
-				report.setName(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Reports["+ j +"].Name"));
 				report.setPath(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Reports["+ j +"].Path"));
+				report.setName(_ctx.stringValue("DescribeDataFlowTasksResponse.TaskInfo["+ i +"].Reports["+ j +"].Name"));
 
 				reports.add(report);
 			}

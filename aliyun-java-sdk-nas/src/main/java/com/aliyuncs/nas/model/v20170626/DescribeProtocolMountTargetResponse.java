@@ -57,69 +57,31 @@ public class DescribeProtocolMountTargetResponse extends AcsResponse {
 
 	public static class ProtocolMountTarget {
 
-		private String exportId;
-
-		private String protocolMountTargetDomain;
-
-		private String protocolType;
-
-		private String vpcId;
-
-		private String vSwitchId;
-
 		private String fsetId;
 
 		private String path;
+
+		private String status;
+
+		private String exportId;
+
+		private String description;
+
+		private String protocolMountTargetDomain;
+
+		private String vSwitchId;
 
 		private String accessGroupName;
 
 		private String createTime;
 
-		private String status;
-
 		private String protocolServiceId;
 
-		private String description;
+		private String vpcId;
 
-		public String getExportId() {
-			return this.exportId;
-		}
+		private String protocolType;
 
-		public void setExportId(String exportId) {
-			this.exportId = exportId;
-		}
-
-		public String getProtocolMountTargetDomain() {
-			return this.protocolMountTargetDomain;
-		}
-
-		public void setProtocolMountTargetDomain(String protocolMountTargetDomain) {
-			this.protocolMountTargetDomain = protocolMountTargetDomain;
-		}
-
-		public String getProtocolType() {
-			return this.protocolType;
-		}
-
-		public void setProtocolType(String protocolType) {
-			this.protocolType = protocolType;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
+		private List<String> vSwitchIds;
 
 		public String getFsetId() {
 			return this.fsetId;
@@ -135,6 +97,46 @@ public class DescribeProtocolMountTargetResponse extends AcsResponse {
 
 		public void setPath(String path) {
 			this.path = path;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getExportId() {
+			return this.exportId;
+		}
+
+		public void setExportId(String exportId) {
+			this.exportId = exportId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getProtocolMountTargetDomain() {
+			return this.protocolMountTargetDomain;
+		}
+
+		public void setProtocolMountTargetDomain(String protocolMountTargetDomain) {
+			this.protocolMountTargetDomain = protocolMountTargetDomain;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
 		}
 
 		public String getAccessGroupName() {
@@ -153,14 +155,6 @@ public class DescribeProtocolMountTargetResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getProtocolServiceId() {
 			return this.protocolServiceId;
 		}
@@ -169,12 +163,28 @@ public class DescribeProtocolMountTargetResponse extends AcsResponse {
 			this.protocolServiceId = protocolServiceId;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
+		}
+
+		public List<String> getVSwitchIds() {
+			return this.vSwitchIds;
+		}
+
+		public void setVSwitchIds(List<String> vSwitchIds) {
+			this.vSwitchIds = vSwitchIds;
 		}
 	}
 

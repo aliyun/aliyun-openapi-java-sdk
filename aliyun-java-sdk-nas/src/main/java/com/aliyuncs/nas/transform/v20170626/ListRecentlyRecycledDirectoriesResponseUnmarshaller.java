@@ -32,10 +32,10 @@ public class ListRecentlyRecycledDirectoriesResponseUnmarshaller {
 		List<Entry> entries = new ArrayList<Entry>();
 		for (int i = 0; i < _ctx.lengthValue("ListRecentlyRecycledDirectoriesResponse.Entries.Length"); i++) {
 			Entry entry = new Entry();
-			entry.setFileId(_ctx.stringValue("ListRecentlyRecycledDirectoriesResponse.Entries["+ i +"].FileId"));
 			entry.setPath(_ctx.stringValue("ListRecentlyRecycledDirectoriesResponse.Entries["+ i +"].Path"));
-			entry.setName(_ctx.stringValue("ListRecentlyRecycledDirectoriesResponse.Entries["+ i +"].Name"));
 			entry.setLastDeleteTime(_ctx.stringValue("ListRecentlyRecycledDirectoriesResponse.Entries["+ i +"].LastDeleteTime"));
+			entry.setFileId(_ctx.stringValue("ListRecentlyRecycledDirectoriesResponse.Entries["+ i +"].FileId"));
+			entry.setName(_ctx.stringValue("ListRecentlyRecycledDirectoriesResponse.Entries["+ i +"].Name"));
 
 			entries.add(entry);
 		}

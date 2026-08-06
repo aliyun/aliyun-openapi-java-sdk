@@ -57,83 +57,53 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 
 	public static class Task {
 
-		private String filesystemId;
-
-		private String dataFlowId;
-
-		private String taskId;
-
-		private String sourceStorage;
-
 		private String fileSystemPath;
-
-		private String originator;
-
-		private String taskAction;
-
-		private String dataType;
-
-		private Long progress;
 
 		private String status;
 
-		private String reportPath;
+		private String filesystemId;
+
+		private Long progress;
+
+		private String taskId;
+
+		private String endTime;
+
+		private String taskAction;
 
 		private String createTime;
 
 		private String startTime;
 
-		private String endTime;
+		private String errorMsg;
 
-		private String fsPath;
-
-		private String conflictPolicy;
-
-		private String directory;
+		private String entryList;
 
 		private String dstDirectory;
 
-		private String errorMsg;
-
 		private String includes;
 
+		private String sourceStorage;
+
+		private String conflictPolicy;
+
+		private String originator;
+
+		private String reportPath;
+
+		private String dataType;
+
 		private String transferFileListPath;
+
+		private String dataFlowId;
+
+		private String fsPath;
+
+		private String directory;
 
 		private List<Report> reports;
 
 		private ProgressStats progressStats;
-
-		public String getFilesystemId() {
-			return this.filesystemId;
-		}
-
-		public void setFilesystemId(String filesystemId) {
-			this.filesystemId = filesystemId;
-		}
-
-		public String getDataFlowId() {
-			return this.dataFlowId;
-		}
-
-		public void setDataFlowId(String dataFlowId) {
-			this.dataFlowId = dataFlowId;
-		}
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getSourceStorage() {
-			return this.sourceStorage;
-		}
-
-		public void setSourceStorage(String sourceStorage) {
-			this.sourceStorage = sourceStorage;
-		}
 
 		public String getFileSystemPath() {
 			return this.fileSystemPath;
@@ -141,38 +111,6 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 
 		public void setFileSystemPath(String fileSystemPath) {
 			this.fileSystemPath = fileSystemPath;
-		}
-
-		public String getOriginator() {
-			return this.originator;
-		}
-
-		public void setOriginator(String originator) {
-			this.originator = originator;
-		}
-
-		public String getTaskAction() {
-			return this.taskAction;
-		}
-
-		public void setTaskAction(String taskAction) {
-			this.taskAction = taskAction;
-		}
-
-		public String getDataType() {
-			return this.dataType;
-		}
-
-		public void setDataType(String dataType) {
-			this.dataType = dataType;
-		}
-
-		public Long getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(Long progress) {
-			this.progress = progress;
 		}
 
 		public String getStatus() {
@@ -183,12 +121,44 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getReportPath() {
-			return this.reportPath;
+		public String getFilesystemId() {
+			return this.filesystemId;
 		}
 
-		public void setReportPath(String reportPath) {
-			this.reportPath = reportPath;
+		public void setFilesystemId(String filesystemId) {
+			this.filesystemId = filesystemId;
+		}
+
+		public Long getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Long progress) {
+			this.progress = progress;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getTaskAction() {
+			return this.taskAction;
+		}
+
+		public void setTaskAction(String taskAction) {
+			this.taskAction = taskAction;
 		}
 
 		public String getCreateTime() {
@@ -207,36 +177,20 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getErrorMsg() {
+			return this.errorMsg;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setErrorMsg(String errorMsg) {
+			this.errorMsg = errorMsg;
 		}
 
-		public String getFsPath() {
-			return this.fsPath;
+		public String getEntryList() {
+			return this.entryList;
 		}
 
-		public void setFsPath(String fsPath) {
-			this.fsPath = fsPath;
-		}
-
-		public String getConflictPolicy() {
-			return this.conflictPolicy;
-		}
-
-		public void setConflictPolicy(String conflictPolicy) {
-			this.conflictPolicy = conflictPolicy;
-		}
-
-		public String getDirectory() {
-			return this.directory;
-		}
-
-		public void setDirectory(String directory) {
-			this.directory = directory;
+		public void setEntryList(String entryList) {
+			this.entryList = entryList;
 		}
 
 		public String getDstDirectory() {
@@ -247,14 +201,6 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 			this.dstDirectory = dstDirectory;
 		}
 
-		public String getErrorMsg() {
-			return this.errorMsg;
-		}
-
-		public void setErrorMsg(String errorMsg) {
-			this.errorMsg = errorMsg;
-		}
-
 		public String getIncludes() {
 			return this.includes;
 		}
@@ -263,12 +209,76 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 			this.includes = includes;
 		}
 
+		public String getSourceStorage() {
+			return this.sourceStorage;
+		}
+
+		public void setSourceStorage(String sourceStorage) {
+			this.sourceStorage = sourceStorage;
+		}
+
+		public String getConflictPolicy() {
+			return this.conflictPolicy;
+		}
+
+		public void setConflictPolicy(String conflictPolicy) {
+			this.conflictPolicy = conflictPolicy;
+		}
+
+		public String getOriginator() {
+			return this.originator;
+		}
+
+		public void setOriginator(String originator) {
+			this.originator = originator;
+		}
+
+		public String getReportPath() {
+			return this.reportPath;
+		}
+
+		public void setReportPath(String reportPath) {
+			this.reportPath = reportPath;
+		}
+
+		public String getDataType() {
+			return this.dataType;
+		}
+
+		public void setDataType(String dataType) {
+			this.dataType = dataType;
+		}
+
 		public String getTransferFileListPath() {
 			return this.transferFileListPath;
 		}
 
 		public void setTransferFileListPath(String transferFileListPath) {
 			this.transferFileListPath = transferFileListPath;
+		}
+
+		public String getDataFlowId() {
+			return this.dataFlowId;
+		}
+
+		public void setDataFlowId(String dataFlowId) {
+			this.dataFlowId = dataFlowId;
+		}
+
+		public String getFsPath() {
+			return this.fsPath;
+		}
+
+		public void setFsPath(String fsPath) {
+			this.fsPath = fsPath;
+		}
+
+		public String getDirectory() {
+			return this.directory;
+		}
+
+		public void setDirectory(String directory) {
+			this.directory = directory;
 		}
 
 		public List<Report> getReports() {
@@ -289,17 +299,9 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 
 		public static class Report {
 
-			private String name;
-
 			private String path;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public String getPath() {
 				return this.path;
@@ -308,17 +310,23 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 			public void setPath(String path) {
 				this.path = path;
 			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
 		}
 
 		public static class ProgressStats {
 
+			private Long averageSpeed;
+
 			private Long filesTotal;
 
 			private Long filesDone;
-
-			private Long actualFiles;
-
-			private Long bytesTotal;
 
 			private Long bytesDone;
 
@@ -326,7 +334,17 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 
 			private Long remainTime;
 
-			private Long averageSpeed;
+			private Long actualFiles;
+
+			private Long bytesTotal;
+
+			public Long getAverageSpeed() {
+				return this.averageSpeed;
+			}
+
+			public void setAverageSpeed(Long averageSpeed) {
+				this.averageSpeed = averageSpeed;
+			}
 
 			public Long getFilesTotal() {
 				return this.filesTotal;
@@ -342,22 +360,6 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 
 			public void setFilesDone(Long filesDone) {
 				this.filesDone = filesDone;
-			}
-
-			public Long getActualFiles() {
-				return this.actualFiles;
-			}
-
-			public void setActualFiles(Long actualFiles) {
-				this.actualFiles = actualFiles;
-			}
-
-			public Long getBytesTotal() {
-				return this.bytesTotal;
-			}
-
-			public void setBytesTotal(Long bytesTotal) {
-				this.bytesTotal = bytesTotal;
 			}
 
 			public Long getBytesDone() {
@@ -384,12 +386,20 @@ public class DescribeDataFlowTasksResponse extends AcsResponse {
 				this.remainTime = remainTime;
 			}
 
-			public Long getAverageSpeed() {
-				return this.averageSpeed;
+			public Long getActualFiles() {
+				return this.actualFiles;
 			}
 
-			public void setAverageSpeed(Long averageSpeed) {
-				this.averageSpeed = averageSpeed;
+			public void setActualFiles(Long actualFiles) {
+				this.actualFiles = actualFiles;
+			}
+
+			public Long getBytesTotal() {
+				return this.bytesTotal;
+			}
+
+			public void setBytesTotal(Long bytesTotal) {
+				this.bytesTotal = bytesTotal;
 			}
 		}
 	}

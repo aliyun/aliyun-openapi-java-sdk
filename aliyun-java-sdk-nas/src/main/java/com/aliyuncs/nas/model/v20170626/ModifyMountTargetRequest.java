@@ -25,6 +25,8 @@ import com.aliyuncs.nas.Endpoint;
 public class ModifyMountTargetRequest extends RpcAcsRequest<ModifyMountTargetResponse> {
 	   
 
+	private Boolean accessPointAccessOnly;
+
 	private String fileSystemId;
 
 	private String mountTargetDomain;
@@ -41,6 +43,17 @@ public class ModifyMountTargetRequest extends RpcAcsRequest<ModifyMountTargetRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getAccessPointAccessOnly() {
+		return this.accessPointAccessOnly;
+	}
+
+	public void setAccessPointAccessOnly(Boolean accessPointAccessOnly) {
+		this.accessPointAccessOnly = accessPointAccessOnly;
+		if(accessPointAccessOnly != null){
+			putQueryParameter("AccessPointAccessOnly", accessPointAccessOnly.toString());
+		}
 	}
 
 	public String getFileSystemId() {

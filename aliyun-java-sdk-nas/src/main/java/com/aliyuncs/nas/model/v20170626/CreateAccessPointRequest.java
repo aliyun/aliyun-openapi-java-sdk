@@ -48,6 +48,8 @@ public class CreateAccessPointRequest extends RpcAcsRequest<CreateAccessPointRes
 
 	private String vpcId;
 
+	private String agenticSpaceId;
+
 	private String rootDirectory;
 
 	private String accessGroup;
@@ -183,6 +185,17 @@ public class CreateAccessPointRequest extends RpcAcsRequest<CreateAccessPointRes
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getAgenticSpaceId() {
+		return this.agenticSpaceId;
+	}
+
+	public void setAgenticSpaceId(String agenticSpaceId) {
+		this.agenticSpaceId = agenticSpaceId;
+		if(agenticSpaceId != null){
+			putQueryParameter("AgenticSpaceId", agenticSpaceId);
 		}
 	}
 

@@ -26,11 +26,21 @@ import com.aliyuncs.nas.Endpoint;
 public class CreateLifecyclePolicyRequest extends RpcAcsRequest<CreateLifecyclePolicyResponse> {
 	   
 
+	private List<DeleteRules> deleteRuless;
+
+	private String description;
+
 	private String storageType;
 
 	private String path;
 
+	private List<TransitRules> transitRuless;
+
+	private String lifecyclePolicyType;
+
 	private String lifecyclePolicyName;
+
+	private List<RetrieveRules> retrieveRuless;
 
 	private String fileSystemId;
 
@@ -44,6 +54,31 @@ public class CreateLifecyclePolicyRequest extends RpcAcsRequest<CreateLifecycleP
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<DeleteRules> getDeleteRuless() {
+		return this.deleteRuless;
+	}
+
+	public void setDeleteRuless(List<DeleteRules> deleteRuless) {
+		this.deleteRuless = deleteRuless;	
+		if (deleteRuless != null) {
+			for (int depth1 = 0; depth1 < deleteRuless.size(); depth1++) {
+				putQueryParameter("DeleteRules." + (depth1 + 1) + ".Threshold" , deleteRuless.get(depth1).getThreshold());
+				putQueryParameter("DeleteRules." + (depth1 + 1) + ".Attribute" , deleteRuless.get(depth1).getAttribute());
+			}
+		}	
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
 	public String getStorageType() {
@@ -68,6 +103,31 @@ public class CreateLifecyclePolicyRequest extends RpcAcsRequest<CreateLifecycleP
 		}
 	}
 
+	public List<TransitRules> getTransitRuless() {
+		return this.transitRuless;
+	}
+
+	public void setTransitRuless(List<TransitRules> transitRuless) {
+		this.transitRuless = transitRuless;	
+		if (transitRuless != null) {
+			for (int depth1 = 0; depth1 < transitRuless.size(); depth1++) {
+				putQueryParameter("TransitRules." + (depth1 + 1) + ".Threshold" , transitRuless.get(depth1).getThreshold());
+				putQueryParameter("TransitRules." + (depth1 + 1) + ".Attribute" , transitRuless.get(depth1).getAttribute());
+			}
+		}	
+	}
+
+	public String getLifecyclePolicyType() {
+		return this.lifecyclePolicyType;
+	}
+
+	public void setLifecyclePolicyType(String lifecyclePolicyType) {
+		this.lifecyclePolicyType = lifecyclePolicyType;
+		if(lifecyclePolicyType != null){
+			putQueryParameter("LifecyclePolicyType", lifecyclePolicyType);
+		}
+	}
+
 	public String getLifecyclePolicyName() {
 		return this.lifecyclePolicyName;
 	}
@@ -77,6 +137,20 @@ public class CreateLifecyclePolicyRequest extends RpcAcsRequest<CreateLifecycleP
 		if(lifecyclePolicyName != null){
 			putQueryParameter("LifecyclePolicyName", lifecyclePolicyName);
 		}
+	}
+
+	public List<RetrieveRules> getRetrieveRuless() {
+		return this.retrieveRuless;
+	}
+
+	public void setRetrieveRuless(List<RetrieveRules> retrieveRuless) {
+		this.retrieveRuless = retrieveRuless;	
+		if (retrieveRuless != null) {
+			for (int depth1 = 0; depth1 < retrieveRuless.size(); depth1++) {
+				putQueryParameter("RetrieveRules." + (depth1 + 1) + ".Threshold" , retrieveRuless.get(depth1).getThreshold());
+				putQueryParameter("RetrieveRules." + (depth1 + 1) + ".Attribute" , retrieveRuless.get(depth1).getAttribute());
+			}
+		}	
 	}
 
 	public String getFileSystemId() {
@@ -112,6 +186,75 @@ public class CreateLifecyclePolicyRequest extends RpcAcsRequest<CreateLifecycleP
 				putQueryParameter("Paths." + (i + 1) , pathss.get(i));
 			}
 		}	
+	}
+
+	public static class DeleteRules {
+
+		private String threshold;
+
+		private String attribute;
+
+		public String getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(String threshold) {
+			this.threshold = threshold;
+		}
+
+		public String getAttribute() {
+			return this.attribute;
+		}
+
+		public void setAttribute(String attribute) {
+			this.attribute = attribute;
+		}
+	}
+
+	public static class TransitRules {
+
+		private String threshold;
+
+		private String attribute;
+
+		public String getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(String threshold) {
+			this.threshold = threshold;
+		}
+
+		public String getAttribute() {
+			return this.attribute;
+		}
+
+		public void setAttribute(String attribute) {
+			this.attribute = attribute;
+		}
+	}
+
+	public static class RetrieveRules {
+
+		private String threshold;
+
+		private String attribute;
+
+		public String getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(String threshold) {
+			this.threshold = threshold;
+		}
+
+		public String getAttribute() {
+			return this.attribute;
+		}
+
+		public void setAttribute(String attribute) {
+			this.attribute = attribute;
+		}
 	}
 
 	@Override

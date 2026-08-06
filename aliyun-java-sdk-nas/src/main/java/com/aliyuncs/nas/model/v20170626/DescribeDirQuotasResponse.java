@@ -119,10 +119,6 @@ public class DescribeDirQuotasResponse extends AcsResponse {
 
 		public static class UserQuotaInfo {
 
-			private Long fileCountReal;
-
-			private String userType;
-
 			private Long fileCountLimit;
 
 			private String userId;
@@ -131,25 +127,13 @@ public class DescribeDirQuotasResponse extends AcsResponse {
 
 			private String quotaType;
 
+			private Long fileCountReal;
+
 			private Long sizeReal;
 
+			private String userType;
+
 			private Long sizeRealInByte;
-
-			public Long getFileCountReal() {
-				return this.fileCountReal;
-			}
-
-			public void setFileCountReal(Long fileCountReal) {
-				this.fileCountReal = fileCountReal;
-			}
-
-			public String getUserType() {
-				return this.userType;
-			}
-
-			public void setUserType(String userType) {
-				this.userType = userType;
-			}
 
 			public Long getFileCountLimit() {
 				return this.fileCountLimit;
@@ -183,12 +167,28 @@ public class DescribeDirQuotasResponse extends AcsResponse {
 				this.quotaType = quotaType;
 			}
 
+			public Long getFileCountReal() {
+				return this.fileCountReal;
+			}
+
+			public void setFileCountReal(Long fileCountReal) {
+				this.fileCountReal = fileCountReal;
+			}
+
 			public Long getSizeReal() {
 				return this.sizeReal;
 			}
 
 			public void setSizeReal(Long sizeReal) {
 				this.sizeReal = sizeReal;
+			}
+
+			public String getUserType() {
+				return this.userType;
+			}
+
+			public void setUserType(String userType) {
+				this.userType = userType;
 			}
 
 			public Long getSizeRealInByte() {

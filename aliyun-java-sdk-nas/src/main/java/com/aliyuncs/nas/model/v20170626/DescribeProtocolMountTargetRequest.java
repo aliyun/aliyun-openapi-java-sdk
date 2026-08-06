@@ -30,6 +30,8 @@ public class DescribeProtocolMountTargetRequest extends RpcAcsRequest<DescribePr
 
 	private String nextToken;
 
+	private String protocolServiceIds;
+
 	private String fileSystemId;
 
 	private List<Filters> filterss;
@@ -63,6 +65,17 @@ public class DescribeProtocolMountTargetRequest extends RpcAcsRequest<DescribePr
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getProtocolServiceIds() {
+		return this.protocolServiceIds;
+	}
+
+	public void setProtocolServiceIds(String protocolServiceIds) {
+		this.protocolServiceIds = protocolServiceIds;
+		if(protocolServiceIds != null){
+			putQueryParameter("ProtocolServiceIds", protocolServiceIds);
 		}
 	}
 

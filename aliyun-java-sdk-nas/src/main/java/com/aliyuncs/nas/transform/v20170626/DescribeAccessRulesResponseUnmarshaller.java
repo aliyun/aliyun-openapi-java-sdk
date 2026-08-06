@@ -34,15 +34,15 @@ public class DescribeAccessRulesResponseUnmarshaller {
 		List<AccessRule> accessRules = new ArrayList<AccessRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccessRulesResponse.AccessRules.Length"); i++) {
 			AccessRule accessRule = new AccessRule();
-			accessRule.setAccessRuleId(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].AccessRuleId"));
-			accessRule.setSourceCidrIp(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].SourceCidrIp"));
-			accessRule.setIpv6SourceCidrIp(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].Ipv6SourceCidrIp"));
 			accessRule.setRWAccess(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].RWAccess"));
 			accessRule.setUserAccess(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].UserAccess"));
 			accessRule.setPriority(_ctx.integerValue("DescribeAccessRulesResponse.AccessRules["+ i +"].Priority"));
+			accessRule.setSourceCidrIp(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].SourceCidrIp"));
 			accessRule.setFileSystemType(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].FileSystemType"));
 			accessRule.setAccessGroupName(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].AccessGroupName"));
+			accessRule.setIpv6SourceCidrIp(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].Ipv6SourceCidrIp"));
 			accessRule.setRegionId(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].RegionId"));
+			accessRule.setAccessRuleId(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].AccessRuleId"));
 
 			accessRules.add(accessRule);
 		}

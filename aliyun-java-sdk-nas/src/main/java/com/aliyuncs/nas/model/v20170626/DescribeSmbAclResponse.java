@@ -46,36 +46,28 @@ public class DescribeSmbAclResponse extends AcsResponse {
 
 	public static class Acl {
 
-		private String authMethod;
-
-		private String authCenter;
+		private String homeDirPath;
 
 		private Boolean enableAnonymousAccess;
 
+		private String authCenter;
+
 		private Boolean enabled;
-
-		private Boolean encryptData;
-
-		private Boolean rejectUnencryptedAccess;
 
 		private String superAdminSid;
 
-		private String homeDirPath;
+		private Boolean rejectUnencryptedAccess;
 
-		public String getAuthMethod() {
-			return this.authMethod;
+		private Boolean encryptData;
+
+		private String authMethod;
+
+		public String getHomeDirPath() {
+			return this.homeDirPath;
 		}
 
-		public void setAuthMethod(String authMethod) {
-			this.authMethod = authMethod;
-		}
-
-		public String getAuthCenter() {
-			return this.authCenter;
-		}
-
-		public void setAuthCenter(String authCenter) {
-			this.authCenter = authCenter;
+		public void setHomeDirPath(String homeDirPath) {
+			this.homeDirPath = homeDirPath;
 		}
 
 		public Boolean getEnableAnonymousAccess() {
@@ -86,28 +78,20 @@ public class DescribeSmbAclResponse extends AcsResponse {
 			this.enableAnonymousAccess = enableAnonymousAccess;
 		}
 
+		public String getAuthCenter() {
+			return this.authCenter;
+		}
+
+		public void setAuthCenter(String authCenter) {
+			this.authCenter = authCenter;
+		}
+
 		public Boolean getEnabled() {
 			return this.enabled;
 		}
 
 		public void setEnabled(Boolean enabled) {
 			this.enabled = enabled;
-		}
-
-		public Boolean getEncryptData() {
-			return this.encryptData;
-		}
-
-		public void setEncryptData(Boolean encryptData) {
-			this.encryptData = encryptData;
-		}
-
-		public Boolean getRejectUnencryptedAccess() {
-			return this.rejectUnencryptedAccess;
-		}
-
-		public void setRejectUnencryptedAccess(Boolean rejectUnencryptedAccess) {
-			this.rejectUnencryptedAccess = rejectUnencryptedAccess;
 		}
 
 		public String getSuperAdminSid() {
@@ -118,12 +102,28 @@ public class DescribeSmbAclResponse extends AcsResponse {
 			this.superAdminSid = superAdminSid;
 		}
 
-		public String getHomeDirPath() {
-			return this.homeDirPath;
+		public Boolean getRejectUnencryptedAccess() {
+			return this.rejectUnencryptedAccess;
 		}
 
-		public void setHomeDirPath(String homeDirPath) {
-			this.homeDirPath = homeDirPath;
+		public void setRejectUnencryptedAccess(Boolean rejectUnencryptedAccess) {
+			this.rejectUnencryptedAccess = rejectUnencryptedAccess;
+		}
+
+		public Boolean getEncryptData() {
+			return this.encryptData;
+		}
+
+		public void setEncryptData(Boolean encryptData) {
+			this.encryptData = encryptData;
+		}
+
+		public String getAuthMethod() {
+			return this.authMethod;
+		}
+
+		public void setAuthMethod(String authMethod) {
+			this.authMethod = authMethod;
 		}
 	}
 

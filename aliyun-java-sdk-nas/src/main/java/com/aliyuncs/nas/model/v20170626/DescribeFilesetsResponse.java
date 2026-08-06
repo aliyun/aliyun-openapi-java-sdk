@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeFilesetsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
 
 	private String nextToken;
-
-	private String fileSystemId;
-
-	private Integer totalCount;
 
 	private Integer pageSize;
 
 	private Integer pageNumber;
 
+	private String fileSystemId;
+
 	private List<Entrie> entries;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,22 +61,6 @@ public class DescribeFilesetsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
-	}
-
-	public String getFileSystemId() {
-		return this.fileSystemId;
-	}
-
-	public void setFileSystemId(String fileSystemId) {
-		this.fileSystemId = fileSystemId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -87,6 +79,14 @@ public class DescribeFilesetsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public String getFileSystemId() {
+		return this.fileSystemId;
+	}
+
+	public void setFileSystemId(String fileSystemId) {
+		this.fileSystemId = fileSystemId;
+	}
+
 	public List<Entrie> getEntries() {
 		return this.entries;
 	}
@@ -97,35 +97,27 @@ public class DescribeFilesetsResponse extends AcsResponse {
 
 	public static class Entrie {
 
-		private String description;
-
 		private String fileSystemPath;
 
 		private String fsetId;
 
 		private String status;
 
+		private String description;
+
+		private Long spaceUsage;
+
 		private String createTime;
 
 		private String updateTime;
+
+		private String fileSystemId;
 
 		private Boolean deletionProtection;
 
 		private Long fileCountUsage;
 
-		private Long spaceUsage;
-
-		private String fileSystemId;
-
 		private Quota quota;
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
 
 		public String getFileSystemPath() {
 			return this.fileSystemPath;
@@ -151,6 +143,22 @@ public class DescribeFilesetsResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Long getSpaceUsage() {
+			return this.spaceUsage;
+		}
+
+		public void setSpaceUsage(Long spaceUsage) {
+			this.spaceUsage = spaceUsage;
+		}
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -165,6 +173,14 @@ public class DescribeFilesetsResponse extends AcsResponse {
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
 		}
 
 		public Boolean getDeletionProtection() {
@@ -183,22 +199,6 @@ public class DescribeFilesetsResponse extends AcsResponse {
 			this.fileCountUsage = fileCountUsage;
 		}
 
-		public Long getSpaceUsage() {
-			return this.spaceUsage;
-		}
-
-		public void setSpaceUsage(Long spaceUsage) {
-			this.spaceUsage = spaceUsage;
-		}
-
-		public String getFileSystemId() {
-			return this.fileSystemId;
-		}
-
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
-		}
-
 		public Quota getQuota() {
 			return this.quota;
 		}
@@ -209,17 +209,9 @@ public class DescribeFilesetsResponse extends AcsResponse {
 
 		public static class Quota {
 
-			private Long sizeLimit;
-
 			private Long fileCountLimit;
 
-			public Long getSizeLimit() {
-				return this.sizeLimit;
-			}
-
-			public void setSizeLimit(Long sizeLimit) {
-				this.sizeLimit = sizeLimit;
-			}
+			private Long sizeLimit;
 
 			public Long getFileCountLimit() {
 				return this.fileCountLimit;
@@ -227,6 +219,14 @@ public class DescribeFilesetsResponse extends AcsResponse {
 
 			public void setFileCountLimit(Long fileCountLimit) {
 				this.fileCountLimit = fileCountLimit;
+			}
+
+			public Long getSizeLimit() {
+				return this.sizeLimit;
+			}
+
+			public void setSizeLimit(Long sizeLimit) {
+				this.sizeLimit = sizeLimit;
 			}
 		}
 	}

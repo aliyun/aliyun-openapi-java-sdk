@@ -42,13 +42,13 @@ public class DescribeDirQuotasResponseUnmarshaller {
 			List<UserQuotaInfo> userQuotaInfos = new ArrayList<UserQuotaInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos.Length"); j++) {
 				UserQuotaInfo userQuotaInfo = new UserQuotaInfo();
-				userQuotaInfo.setFileCountReal(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].FileCountReal"));
-				userQuotaInfo.setUserType(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].UserType"));
 				userQuotaInfo.setFileCountLimit(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].FileCountLimit"));
 				userQuotaInfo.setUserId(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].UserId"));
 				userQuotaInfo.setSizeLimit(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].SizeLimit"));
 				userQuotaInfo.setQuotaType(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].QuotaType"));
+				userQuotaInfo.setFileCountReal(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].FileCountReal"));
 				userQuotaInfo.setSizeReal(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].SizeReal"));
+				userQuotaInfo.setUserType(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].UserType"));
 				userQuotaInfo.setSizeRealInByte(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].SizeRealInByte"));
 
 				userQuotaInfos.add(userQuotaInfo);

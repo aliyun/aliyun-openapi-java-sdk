@@ -19,7 +19,11 @@ import java.util.List;
 
 import com.aliyuncs.nas.model.v20170626.DescribeDataFlowsResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeDataFlowsResponse.DataFlow;
+import com.aliyuncs.nas.model.v20170626.DescribeDataFlowsResponse.DataFlow.AutoImportConfiguration;
+import com.aliyuncs.nas.model.v20170626.DescribeDataFlowsResponse.DataFlow.AutoImportConfiguration.OssInventoryConfig;
 import com.aliyuncs.nas.model.v20170626.DescribeDataFlowsResponse.DataFlow.AutoRefreshItem;
+import com.aliyuncs.nas.model.v20170626.DescribeDataFlowsResponse.DataFlow.LazyLoadConfiguration;
+import com.aliyuncs.nas.model.v20170626.DescribeDataFlowsResponse.DataFlow.LazyLoadConfiguration.EvictRule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,22 +37,46 @@ public class DescribeDataFlowsResponseUnmarshaller {
 		List<DataFlow> dataFlowInfo = new ArrayList<DataFlow>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataFlowsResponse.DataFlowInfo.Length"); i++) {
 			DataFlow dataFlow = new DataFlow();
-			dataFlow.setFileSystemId(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].FileSystemId"));
-			dataFlow.setDataFlowId(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].DataFlowId"));
-			dataFlow.setFsetId(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].FsetId"));
 			dataFlow.setStatus(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].Status"));
-			dataFlow.setErrorMessage(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].ErrorMessage"));
-			dataFlow.setSourceStorage(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].SourceStorage"));
-			dataFlow.setSourceSecurityType(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].SourceSecurityType"));
-			dataFlow.setThroughput(_ctx.longValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].Throughput"));
+			dataFlow.setFsetId(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].FsetId"));
+			dataFlow.setFileSystemPath(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].FileSystemPath"));
 			dataFlow.setDescription(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].Description"));
 			dataFlow.setCreateTime(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].CreateTime"));
-			dataFlow.setUpdateTime(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].UpdateTime"));
-			dataFlow.setFileSystemPath(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].FileSystemPath"));
-			dataFlow.setFsetDescription(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].FsetDescription"));
+			dataFlow.setThroughput(_ctx.longValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].Throughput"));
 			dataFlow.setAutoRefreshInterval(_ctx.longValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].AutoRefreshInterval"));
-			dataFlow.setAutoRefreshPolicy(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].AutoRefreshPolicy"));
+			dataFlow.setFsetDescription(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].FsetDescription"));
+			dataFlow.setSourceStorage(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].SourceStorage"));
 			dataFlow.setSourceStoragePath(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].SourceStoragePath"));
+			dataFlow.setSourceSecurityType(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].SourceSecurityType"));
+			dataFlow.setUpdateTime(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].UpdateTime"));
+			dataFlow.setFileSystemId(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].FileSystemId"));
+			dataFlow.setAutoRefreshPolicy(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].AutoRefreshPolicy"));
+			dataFlow.setErrorMessage(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].ErrorMessage"));
+			dataFlow.setDataFlowId(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].DataFlowId"));
+
+			LazyLoadConfiguration lazyLoadConfiguration = new LazyLoadConfiguration();
+			lazyLoadConfiguration.setEnabled(_ctx.booleanValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].LazyLoadConfiguration.Enabled"));
+
+			List<EvictRule> evictRules = new ArrayList<EvictRule>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].LazyLoadConfiguration.EvictRules.Length"); j++) {
+				EvictRule evictRule = new EvictRule();
+				evictRule.setAttribute(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].LazyLoadConfiguration.EvictRules["+ j +"].Attribute"));
+				evictRule.setThreshold(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].LazyLoadConfiguration.EvictRules["+ j +"].Threshold"));
+
+				evictRules.add(evictRule);
+			}
+			lazyLoadConfiguration.setEvictRules(evictRules);
+			dataFlow.setLazyLoadConfiguration(lazyLoadConfiguration);
+
+			AutoImportConfiguration autoImportConfiguration = new AutoImportConfiguration();
+			autoImportConfiguration.setEnabled(_ctx.booleanValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].AutoImportConfiguration.Enabled"));
+			autoImportConfiguration.setDataType(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].AutoImportConfiguration.DataType"));
+
+			OssInventoryConfig ossInventoryConfig = new OssInventoryConfig();
+			ossInventoryConfig.setRoleArn(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].AutoImportConfiguration.OssInventoryConfig.RoleArn"));
+			ossInventoryConfig.setInventoryId(_ctx.stringValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].AutoImportConfiguration.OssInventoryConfig.InventoryId"));
+			autoImportConfiguration.setOssInventoryConfig(ossInventoryConfig);
+			dataFlow.setAutoImportConfiguration(autoImportConfiguration);
 
 			List<AutoRefreshItem> autoRefresh = new ArrayList<AutoRefreshItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDataFlowsResponse.DataFlowInfo["+ i +"].AutoRefresh.Length"); j++) {

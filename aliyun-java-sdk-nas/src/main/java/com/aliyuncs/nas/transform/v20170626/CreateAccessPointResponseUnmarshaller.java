@@ -26,8 +26,8 @@ public class CreateAccessPointResponseUnmarshaller {
 		createAccessPointResponse.setRequestId(_ctx.stringValue("CreateAccessPointResponse.RequestId"));
 
 		AccessPoint accessPoint = new AccessPoint();
-		accessPoint.setAccessPointDomain(_ctx.stringValue("CreateAccessPointResponse.AccessPoint.AccessPointDomain"));
 		accessPoint.setAccessPointId(_ctx.stringValue("CreateAccessPointResponse.AccessPoint.AccessPointId"));
+		accessPoint.setAccessPointDomain(_ctx.stringValue("CreateAccessPointResponse.AccessPoint.AccessPointDomain"));
 		createAccessPointResponse.setAccessPoint(accessPoint);
 	 
 	 	return createAccessPointResponse;

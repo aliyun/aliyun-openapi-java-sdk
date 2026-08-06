@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeFilesystemsVscAttachInfoResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
 
 	private String nextToken;
 
-	private Integer totalCount;
-
 	private Integer maxResults;
 
 	private List<VscAttachInfoItem> vscAttachInfo;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeFilesystemsVscAttachInfoResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getMaxResults() {
@@ -77,19 +77,11 @@ public class DescribeFilesystemsVscAttachInfoResponse extends AcsResponse {
 
 	public static class VscAttachInfoItem {
 
-		private String fileSystemId;
-
 		private String vscId;
 
 		private String status;
 
-		public String getFileSystemId() {
-			return this.fileSystemId;
-		}
-
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
-		}
+		private String fileSystemId;
 
 		public String getVscId() {
 			return this.vscId;
@@ -105,6 +97,14 @@ public class DescribeFilesystemsVscAttachInfoResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
 		}
 	}
 

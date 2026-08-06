@@ -51,9 +51,9 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		private List<InstanceType> instanceTypes;
 
-		private List<String> performance;
-
 		private List<String> capacity;
+
+		private List<String> performance;
 
 		public String getZoneId() {
 			return this.zoneId;
@@ -71,20 +71,20 @@ public class DescribeZonesResponse extends AcsResponse {
 			this.instanceTypes = instanceTypes;
 		}
 
-		public List<String> getPerformance() {
-			return this.performance;
-		}
-
-		public void setPerformance(List<String> performance) {
-			this.performance = performance;
-		}
-
 		public List<String> getCapacity() {
 			return this.capacity;
 		}
 
 		public void setCapacity(List<String> capacity) {
 			this.capacity = capacity;
+		}
+
+		public List<String> getPerformance() {
+			return this.performance;
+		}
+
+		public void setPerformance(List<String> performance) {
+			this.performance = performance;
 		}
 
 		public static class InstanceType {

@@ -28,9 +28,9 @@ public class CreateDataFlowRequest extends RpcAcsRequest<CreateDataFlowResponse>
 
 	private String autoRefreshPolicy;
 
-	private String fsetId;
-
 	private String clientToken;
+
+	private String fsetId;
 
 	private String description;
 
@@ -71,17 +71,6 @@ public class CreateDataFlowRequest extends RpcAcsRequest<CreateDataFlowResponse>
 		}
 	}
 
-	public String getFsetId() {
-		return this.fsetId;
-	}
-
-	public void setFsetId(String fsetId) {
-		this.fsetId = fsetId;
-		if(fsetId != null){
-			putQueryParameter("FsetId", fsetId);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -90,6 +79,17 @@ public class CreateDataFlowRequest extends RpcAcsRequest<CreateDataFlowResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getFsetId() {
+		return this.fsetId;
+	}
+
+	public void setFsetId(String fsetId) {
+		this.fsetId = fsetId;
+		if(fsetId != null){
+			putQueryParameter("FsetId", fsetId);
 		}
 	}
 

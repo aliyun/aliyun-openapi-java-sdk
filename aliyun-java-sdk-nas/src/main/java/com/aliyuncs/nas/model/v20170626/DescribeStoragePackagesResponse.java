@@ -79,15 +79,15 @@ public class DescribeStoragePackagesResponse extends AcsResponse {
 
 		private String status;
 
-		private String fileSystemId;
-
-		private String startTime;
-
-		private String expiredTime;
+		private String storageType;
 
 		private Long size;
 
-		private String storageType;
+		private String expiredTime;
+
+		private String startTime;
+
+		private String fileSystemId;
 
 		private String packageId;
 
@@ -99,28 +99,12 @@ public class DescribeStoragePackagesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getFileSystemId() {
-			return this.fileSystemId;
+		public String getStorageType() {
+			return this.storageType;
 		}
 
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
 		}
 
 		public Long getSize() {
@@ -131,12 +115,28 @@ public class DescribeStoragePackagesResponse extends AcsResponse {
 			this.size = size;
 		}
 
-		public String getStorageType() {
-			return this.storageType;
+		public String getExpiredTime() {
+			return this.expiredTime;
 		}
 
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
 		}
 
 		public String getPackageId() {

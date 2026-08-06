@@ -26,6 +26,22 @@ import com.aliyuncs.nas.Endpoint;
 public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemResponse> {
 	   
 
+	private String storageType;
+
+	private Integer encryptType;
+
+	private String resourceGroupId;
+
+	private List<Tag> tags;
+
+	private List<String> redundancyVSwitchIdss;
+
+	private Boolean dryRun;
+
+	private String vSwitchId;
+
+	private String zoneId;
+
 	private String snapshotId;
 
 	private String clientToken;
@@ -34,27 +50,15 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 
 	private String fileSystemType;
 
-	private String storageType;
-
 	private Long capacity;
-
-	private Integer encryptType;
 
 	private Integer duration;
 
-	private String resourceGroupId;
-
-	private List<Tag> tags;
-
-	private Boolean dryRun;
-
 	private Long bandwidth;
 
-	private String vSwitchId;
+	private String redundancyType;
 
 	private String vpcId;
-
-	private String zoneId;
 
 	private String protocolType;
 
@@ -68,6 +72,99 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
+		}
+	}
+
+	public Integer getEncryptType() {
+		return this.encryptType;
+	}
+
+	public void setEncryptType(Integer encryptType) {
+		this.encryptType = encryptType;
+		if(encryptType != null){
+			putQueryParameter("EncryptType", encryptType.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public List<String> getRedundancyVSwitchIdss() {
+		return this.redundancyVSwitchIdss;
+	}
+
+	public void setRedundancyVSwitchIdss(List<String> redundancyVSwitchIdss) {
+		this.redundancyVSwitchIdss = redundancyVSwitchIdss;	
+		if (redundancyVSwitchIdss != null) {
+			for (int i = 0; i < redundancyVSwitchIdss.size(); i++) {
+				putQueryParameter("RedundancyVSwitchIds." + (i + 1) , redundancyVSwitchIdss.get(i));
+			}
+		}	
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
 	}
 
 	public String getSnapshotId() {
@@ -114,17 +211,6 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		}
 	}
 
-	public String getStorageType() {
-		return this.storageType;
-	}
-
-	public void setStorageType(String storageType) {
-		this.storageType = storageType;
-		if(storageType != null){
-			putQueryParameter("StorageType", storageType);
-		}
-	}
-
 	public Long getCapacity() {
 		return this.capacity;
 	}
@@ -133,17 +219,6 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		this.capacity = capacity;
 		if(capacity != null){
 			putQueryParameter("Capacity", capacity.toString());
-		}
-	}
-
-	public Integer getEncryptType() {
-		return this.encryptType;
-	}
-
-	public void setEncryptType(Integer encryptType) {
-		this.encryptType = encryptType;
-		if(encryptType != null){
-			putQueryParameter("EncryptType", encryptType.toString());
 		}
 	}
 
@@ -158,42 +233,6 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
-	}
-
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
-		}
-	}
-
 	public Long getBandwidth() {
 		return this.bandwidth;
 	}
@@ -205,14 +244,14 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
+	public String getRedundancyType() {
+		return this.redundancyType;
 	}
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
+	public void setRedundancyType(String redundancyType) {
+		this.redundancyType = redundancyType;
+		if(redundancyType != null){
+			putQueryParameter("RedundancyType", redundancyType);
 		}
 	}
 
@@ -224,17 +263,6 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

@@ -57,55 +57,35 @@ public class DescribeProtocolServiceResponse extends AcsResponse {
 
 	public static class ProtocolService {
 
-		private String fileSystemId;
-
-		private String protocolServiceId;
-
-		private String protocolSpec;
-
 		private Integer protocolThroughput;
 
-		private Integer instanceRAM;
-
-		private Integer instanceBaseThroughput;
-
-		private Integer instanceBurstThroughput;
-
-		private Integer mountTargetCount;
-
-		private String protocolType;
-
 		private String status;
+
+		private String modifyTime;
 
 		private String description;
 
 		private String createTime;
 
-		private String modifyTime;
+		private String vSwitchId;
 
-		public String getFileSystemId() {
-			return this.fileSystemId;
-		}
+		private String protocolServiceId;
 
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
-		}
+		private Integer mountTargetCount;
 
-		public String getProtocolServiceId() {
-			return this.protocolServiceId;
-		}
+		private Integer instanceBaseThroughput;
 
-		public void setProtocolServiceId(String protocolServiceId) {
-			this.protocolServiceId = protocolServiceId;
-		}
+		private Integer instanceBurstThroughput;
 
-		public String getProtocolSpec() {
-			return this.protocolSpec;
-		}
+		private String vpcId;
 
-		public void setProtocolSpec(String protocolSpec) {
-			this.protocolSpec = protocolSpec;
-		}
+		private Integer instanceRAM;
+
+		private String protocolType;
+
+		private String protocolSpec;
+
+		private String fileSystemId;
 
 		public Integer getProtocolThroughput() {
 			return this.protocolThroughput;
@@ -115,52 +95,20 @@ public class DescribeProtocolServiceResponse extends AcsResponse {
 			this.protocolThroughput = protocolThroughput;
 		}
 
-		public Integer getInstanceRAM() {
-			return this.instanceRAM;
-		}
-
-		public void setInstanceRAM(Integer instanceRAM) {
-			this.instanceRAM = instanceRAM;
-		}
-
-		public Integer getInstanceBaseThroughput() {
-			return this.instanceBaseThroughput;
-		}
-
-		public void setInstanceBaseThroughput(Integer instanceBaseThroughput) {
-			this.instanceBaseThroughput = instanceBaseThroughput;
-		}
-
-		public Integer getInstanceBurstThroughput() {
-			return this.instanceBurstThroughput;
-		}
-
-		public void setInstanceBurstThroughput(Integer instanceBurstThroughput) {
-			this.instanceBurstThroughput = instanceBurstThroughput;
-		}
-
-		public Integer getMountTargetCount() {
-			return this.mountTargetCount;
-		}
-
-		public void setMountTargetCount(Integer mountTargetCount) {
-			this.mountTargetCount = mountTargetCount;
-		}
-
-		public String getProtocolType() {
-			return this.protocolType;
-		}
-
-		public void setProtocolType(String protocolType) {
-			this.protocolType = protocolType;
-		}
-
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 
 		public String getDescription() {
@@ -179,12 +127,84 @@ public class DescribeProtocolServiceResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		public String getVSwitchId() {
+			return this.vSwitchId;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getProtocolServiceId() {
+			return this.protocolServiceId;
+		}
+
+		public void setProtocolServiceId(String protocolServiceId) {
+			this.protocolServiceId = protocolServiceId;
+		}
+
+		public Integer getMountTargetCount() {
+			return this.mountTargetCount;
+		}
+
+		public void setMountTargetCount(Integer mountTargetCount) {
+			this.mountTargetCount = mountTargetCount;
+		}
+
+		public Integer getInstanceBaseThroughput() {
+			return this.instanceBaseThroughput;
+		}
+
+		public void setInstanceBaseThroughput(Integer instanceBaseThroughput) {
+			this.instanceBaseThroughput = instanceBaseThroughput;
+		}
+
+		public Integer getInstanceBurstThroughput() {
+			return this.instanceBurstThroughput;
+		}
+
+		public void setInstanceBurstThroughput(Integer instanceBurstThroughput) {
+			this.instanceBurstThroughput = instanceBurstThroughput;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public Integer getInstanceRAM() {
+			return this.instanceRAM;
+		}
+
+		public void setInstanceRAM(Integer instanceRAM) {
+			this.instanceRAM = instanceRAM;
+		}
+
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
+		}
+
+		public String getProtocolSpec() {
+			return this.protocolSpec;
+		}
+
+		public void setProtocolSpec(String protocolSpec) {
+			this.protocolSpec = protocolSpec;
+		}
+
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
 		}
 	}
 

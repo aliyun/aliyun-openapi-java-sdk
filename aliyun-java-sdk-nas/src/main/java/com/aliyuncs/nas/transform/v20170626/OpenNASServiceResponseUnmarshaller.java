@@ -23,8 +23,8 @@ public class OpenNASServiceResponseUnmarshaller {
 	public static OpenNASServiceResponse unmarshall(OpenNASServiceResponse openNASServiceResponse, UnmarshallerContext _ctx) {
 		
 		openNASServiceResponse.setRequestId(_ctx.stringValue("OpenNASServiceResponse.RequestId"));
-		openNASServiceResponse.setOrderId(_ctx.stringValue("OpenNASServiceResponse.OrderId"));
 		openNASServiceResponse.setAccessDeniedDetail(_ctx.stringValue("OpenNASServiceResponse.AccessDeniedDetail"));
+		openNASServiceResponse.setOrderId(_ctx.stringValue("OpenNASServiceResponse.OrderId"));
 	 
 	 	return openNASServiceResponse;
 	}

@@ -77,47 +77,23 @@ public class DescribeAccessRulesResponse extends AcsResponse {
 
 	public static class AccessRule {
 
-		private String accessRuleId;
-
-		private String sourceCidrIp;
-
-		private String ipv6SourceCidrIp;
-
 		private String rWAccess;
 
 		private String userAccess;
 
 		private Integer priority;
 
+		private String sourceCidrIp;
+
 		private String fileSystemType;
 
 		private String accessGroupName;
 
+		private String ipv6SourceCidrIp;
+
 		private String regionId;
 
-		public String getAccessRuleId() {
-			return this.accessRuleId;
-		}
-
-		public void setAccessRuleId(String accessRuleId) {
-			this.accessRuleId = accessRuleId;
-		}
-
-		public String getSourceCidrIp() {
-			return this.sourceCidrIp;
-		}
-
-		public void setSourceCidrIp(String sourceCidrIp) {
-			this.sourceCidrIp = sourceCidrIp;
-		}
-
-		public String getIpv6SourceCidrIp() {
-			return this.ipv6SourceCidrIp;
-		}
-
-		public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
-			this.ipv6SourceCidrIp = ipv6SourceCidrIp;
-		}
+		private String accessRuleId;
 
 		public String getRWAccess() {
 			return this.rWAccess;
@@ -143,6 +119,14 @@ public class DescribeAccessRulesResponse extends AcsResponse {
 			this.priority = priority;
 		}
 
+		public String getSourceCidrIp() {
+			return this.sourceCidrIp;
+		}
+
+		public void setSourceCidrIp(String sourceCidrIp) {
+			this.sourceCidrIp = sourceCidrIp;
+		}
+
 		public String getFileSystemType() {
 			return this.fileSystemType;
 		}
@@ -159,12 +143,28 @@ public class DescribeAccessRulesResponse extends AcsResponse {
 			this.accessGroupName = accessGroupName;
 		}
 
+		public String getIpv6SourceCidrIp() {
+			return this.ipv6SourceCidrIp;
+		}
+
+		public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
+			this.ipv6SourceCidrIp = ipv6SourceCidrIp;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getAccessRuleId() {
+			return this.accessRuleId;
+		}
+
+		public void setAccessRuleId(String accessRuleId) {
+			this.accessRuleId = accessRuleId;
 		}
 	}
 

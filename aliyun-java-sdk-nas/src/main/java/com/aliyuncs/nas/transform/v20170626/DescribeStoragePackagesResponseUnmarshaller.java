@@ -35,11 +35,11 @@ public class DescribeStoragePackagesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeStoragePackagesResponse.Packages.Length"); i++) {
 			_Package _package = new _Package();
 			_package.setStatus(_ctx.stringValue("DescribeStoragePackagesResponse.Packages["+ i +"].Status"));
-			_package.setFileSystemId(_ctx.stringValue("DescribeStoragePackagesResponse.Packages["+ i +"].FileSystemId"));
-			_package.setStartTime(_ctx.stringValue("DescribeStoragePackagesResponse.Packages["+ i +"].StartTime"));
-			_package.setExpiredTime(_ctx.stringValue("DescribeStoragePackagesResponse.Packages["+ i +"].ExpiredTime"));
-			_package.setSize(_ctx.longValue("DescribeStoragePackagesResponse.Packages["+ i +"].Size"));
 			_package.setStorageType(_ctx.stringValue("DescribeStoragePackagesResponse.Packages["+ i +"].StorageType"));
+			_package.setSize(_ctx.longValue("DescribeStoragePackagesResponse.Packages["+ i +"].Size"));
+			_package.setExpiredTime(_ctx.stringValue("DescribeStoragePackagesResponse.Packages["+ i +"].ExpiredTime"));
+			_package.setStartTime(_ctx.stringValue("DescribeStoragePackagesResponse.Packages["+ i +"].StartTime"));
+			_package.setFileSystemId(_ctx.stringValue("DescribeStoragePackagesResponse.Packages["+ i +"].FileSystemId"));
 			_package.setPackageId(_ctx.stringValue("DescribeStoragePackagesResponse.Packages["+ i +"].PackageId"));
 
 			packages.add(_package);

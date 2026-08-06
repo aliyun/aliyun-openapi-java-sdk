@@ -77,33 +77,25 @@ public class DescribeAutoSnapshotPoliciesResponse extends AcsResponse {
 
 	public static class AutoSnapshotPolicy {
 
-		private String timePoints;
-
 		private String status;
 
-		private String repeatWeekdays;
-
-		private String autoSnapshotPolicyName;
+		private String timePoints;
 
 		private String createTime;
+
+		private Integer fileSystemNums;
+
+		private String fileSystemType;
 
 		private String autoSnapshotPolicyId;
 
 		private Integer retentionDays;
 
-		private Integer fileSystemNums;
+		private String repeatWeekdays;
 
 		private String regionId;
 
-		private String fileSystemType;
-
-		public String getTimePoints() {
-			return this.timePoints;
-		}
-
-		public void setTimePoints(String timePoints) {
-			this.timePoints = timePoints;
-		}
+		private String autoSnapshotPolicyName;
 
 		public String getStatus() {
 			return this.status;
@@ -113,20 +105,12 @@ public class DescribeAutoSnapshotPoliciesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getRepeatWeekdays() {
-			return this.repeatWeekdays;
+		public String getTimePoints() {
+			return this.timePoints;
 		}
 
-		public void setRepeatWeekdays(String repeatWeekdays) {
-			this.repeatWeekdays = repeatWeekdays;
-		}
-
-		public String getAutoSnapshotPolicyName() {
-			return this.autoSnapshotPolicyName;
-		}
-
-		public void setAutoSnapshotPolicyName(String autoSnapshotPolicyName) {
-			this.autoSnapshotPolicyName = autoSnapshotPolicyName;
+		public void setTimePoints(String timePoints) {
+			this.timePoints = timePoints;
 		}
 
 		public String getCreateTime() {
@@ -135,6 +119,22 @@ public class DescribeAutoSnapshotPoliciesResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public Integer getFileSystemNums() {
+			return this.fileSystemNums;
+		}
+
+		public void setFileSystemNums(Integer fileSystemNums) {
+			this.fileSystemNums = fileSystemNums;
+		}
+
+		public String getFileSystemType() {
+			return this.fileSystemType;
+		}
+
+		public void setFileSystemType(String fileSystemType) {
+			this.fileSystemType = fileSystemType;
 		}
 
 		public String getAutoSnapshotPolicyId() {
@@ -153,12 +153,12 @@ public class DescribeAutoSnapshotPoliciesResponse extends AcsResponse {
 			this.retentionDays = retentionDays;
 		}
 
-		public Integer getFileSystemNums() {
-			return this.fileSystemNums;
+		public String getRepeatWeekdays() {
+			return this.repeatWeekdays;
 		}
 
-		public void setFileSystemNums(Integer fileSystemNums) {
-			this.fileSystemNums = fileSystemNums;
+		public void setRepeatWeekdays(String repeatWeekdays) {
+			this.repeatWeekdays = repeatWeekdays;
 		}
 
 		public String getRegionId() {
@@ -169,12 +169,12 @@ public class DescribeAutoSnapshotPoliciesResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getFileSystemType() {
-			return this.fileSystemType;
+		public String getAutoSnapshotPolicyName() {
+			return this.autoSnapshotPolicyName;
 		}
 
-		public void setFileSystemType(String fileSystemType) {
-			this.fileSystemType = fileSystemType;
+		public void setAutoSnapshotPolicyName(String autoSnapshotPolicyName) {
+			this.autoSnapshotPolicyName = autoSnapshotPolicyName;
 		}
 	}
 

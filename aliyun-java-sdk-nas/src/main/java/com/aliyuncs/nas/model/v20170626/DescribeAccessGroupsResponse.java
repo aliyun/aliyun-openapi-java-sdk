@@ -77,46 +77,30 @@ public class DescribeAccessGroupsResponse extends AcsResponse {
 
 	public static class AccessGroup {
 
-		private String accessGroupName;
-
-		private String description;
-
-		private String createTime;
+		private Integer ruleCount;
 
 		private String accessGroupType;
 
-		private Integer ruleCount;
+		private String description;
 
-		private Integer mountTargetCount;
+		private String accessGroupName;
+
+		private String createTime;
 
 		private String fileSystemType;
 
 		private String regionId;
 
+		private Integer mountTargetCount;
+
 		private List<Tag> tags;
 
-		public String getAccessGroupName() {
-			return this.accessGroupName;
+		public Integer getRuleCount() {
+			return this.ruleCount;
 		}
 
-		public void setAccessGroupName(String accessGroupName) {
-			this.accessGroupName = accessGroupName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setRuleCount(Integer ruleCount) {
+			this.ruleCount = ruleCount;
 		}
 
 		public String getAccessGroupType() {
@@ -127,20 +111,28 @@ public class DescribeAccessGroupsResponse extends AcsResponse {
 			this.accessGroupType = accessGroupType;
 		}
 
-		public Integer getRuleCount() {
-			return this.ruleCount;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setRuleCount(Integer ruleCount) {
-			this.ruleCount = ruleCount;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
-		public Integer getMountTargetCount() {
-			return this.mountTargetCount;
+		public String getAccessGroupName() {
+			return this.accessGroupName;
 		}
 
-		public void setMountTargetCount(Integer mountTargetCount) {
-			this.mountTargetCount = mountTargetCount;
+		public void setAccessGroupName(String accessGroupName) {
+			this.accessGroupName = accessGroupName;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getFileSystemType() {
@@ -159,6 +151,14 @@ public class DescribeAccessGroupsResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
+		public Integer getMountTargetCount() {
+			return this.mountTargetCount;
+		}
+
+		public void setMountTargetCount(Integer mountTargetCount) {
+			this.mountTargetCount = mountTargetCount;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -169,17 +169,9 @@ public class DescribeAccessGroupsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -187,6 +179,14 @@ public class DescribeAccessGroupsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

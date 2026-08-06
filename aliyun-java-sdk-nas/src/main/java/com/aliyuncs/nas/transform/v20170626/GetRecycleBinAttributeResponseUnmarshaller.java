@@ -26,12 +26,12 @@ public class GetRecycleBinAttributeResponseUnmarshaller {
 		getRecycleBinAttributeResponse.setRequestId(_ctx.stringValue("GetRecycleBinAttributeResponse.RequestId"));
 
 		RecycleBinAttribute recycleBinAttribute = new RecycleBinAttribute();
-		recycleBinAttribute.setSize(_ctx.longValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.Size"));
-		recycleBinAttribute.setSecondarySize(_ctx.longValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.SecondarySize"));
 		recycleBinAttribute.setStatus(_ctx.stringValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.Status"));
 		recycleBinAttribute.setReservedDays(_ctx.longValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.ReservedDays"));
-		recycleBinAttribute.setEnableTime(_ctx.stringValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.EnableTime"));
 		recycleBinAttribute.setArchiveSize(_ctx.longValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.ArchiveSize"));
+		recycleBinAttribute.setSize(_ctx.longValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.Size"));
+		recycleBinAttribute.setSecondarySize(_ctx.longValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.SecondarySize"));
+		recycleBinAttribute.setEnableTime(_ctx.stringValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.EnableTime"));
 		getRecycleBinAttributeResponse.setRecycleBinAttribute(recycleBinAttribute);
 	 
 	 	return getRecycleBinAttributeResponse;

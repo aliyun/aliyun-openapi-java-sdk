@@ -26,17 +26,19 @@ public class GetDirectoryOrFilePropertiesResponseUnmarshaller {
 		getDirectoryOrFilePropertiesResponse.setRequestId(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.RequestId"));
 
 		Entry entry = new Entry();
-		entry.setType(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.Type"));
-		entry.setHasInfrequentAccessFile(_ctx.booleanValue("GetDirectoryOrFilePropertiesResponse.Entry.HasInfrequentAccessFile"));
-		entry.setMTime(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.MTime"));
-		entry.setATime(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.ATime"));
+		entry.setHasArchiveFile(_ctx.booleanValue("GetDirectoryOrFilePropertiesResponse.Entry.HasArchiveFile"));
+		entry.setOfflineUnchangedDuration(_ctx.longValue("GetDirectoryOrFilePropertiesResponse.Entry.OfflineUnchangedDuration"));
+		entry.setStorageType(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.StorageType"));
+		entry.setOfflineDuration(_ctx.longValue("GetDirectoryOrFilePropertiesResponse.Entry.OfflineDuration"));
 		entry.setSize(_ctx.longValue("GetDirectoryOrFilePropertiesResponse.Entry.Size"));
 		entry.setCTime(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.CTime"));
-		entry.setStorageType(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.StorageType"));
-		entry.setName(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.Name"));
 		entry.setRetrieveTime(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.RetrieveTime"));
+		entry.setName(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.Name"));
+		entry.setType(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.Type"));
 		entry.setInode(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.Inode"));
-		entry.setHasArchiveFile(_ctx.booleanValue("GetDirectoryOrFilePropertiesResponse.Entry.HasArchiveFile"));
+		entry.setATime(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.ATime"));
+		entry.setHasInfrequentAccessFile(_ctx.booleanValue("GetDirectoryOrFilePropertiesResponse.Entry.HasInfrequentAccessFile"));
+		entry.setMTime(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.MTime"));
 		getDirectoryOrFilePropertiesResponse.setEntry(entry);
 	 
 	 	return getDirectoryOrFilePropertiesResponse;
