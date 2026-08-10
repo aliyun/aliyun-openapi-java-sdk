@@ -1,3 +1,14 @@
+2026-08-10 Version: 1.0.21
+Add api ExecuteDDL.
+Add api ListPipelines.
+Add api ListSecurityClassify.
+Add api SubmitPipelineById.
+Add api SearchKgBySemantic.
+Update api AddTenantMembersBySourceUser.
+Update api ListResourcePermissions.
+Update api ListResourcePermissionOperationLog.
+
+
 2026-07-27 Version: 1.0.19
 - Add api CreateBasicProject.
 - Add api CreateDevProdProject.

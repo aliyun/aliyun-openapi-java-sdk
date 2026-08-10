@@ -93,6 +93,9 @@ public class AddTenantMembersBySourceUserRequest extends RpcAcsRequest<AddTenant
 			@SerializedName("DingNumber")
 			private String dingNumber;
 
+			@SerializedName("SourceType")
+			private String sourceType;
+
 			public String getSourceId() {
 				return this.sourceId;
 			}
@@ -139,6 +142,14 @@ public class AddTenantMembersBySourceUserRequest extends RpcAcsRequest<AddTenant
 
 			public void setDingNumber(String dingNumber) {
 				this.dingNumber = dingNumber;
+			}
+
+			public String getSourceType() {
+				return this.sourceType;
+			}
+
+			public void setSourceType(String sourceType) {
+				this.sourceType = sourceType;
 			}
 		}
 	}
