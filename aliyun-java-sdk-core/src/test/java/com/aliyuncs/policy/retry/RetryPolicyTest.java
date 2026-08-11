@@ -82,7 +82,7 @@ public class RetryPolicyTest {
                 .build();
 
         String coordinate = "nanhe:test";
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         RetryPolicyContext context = RetryPolicyContext.builder()
                 .coordinate(coordinate)
                 .httpRequest(request)

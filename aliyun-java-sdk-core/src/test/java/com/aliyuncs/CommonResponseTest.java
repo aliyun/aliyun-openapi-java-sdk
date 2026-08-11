@@ -7,8 +7,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.mockito.Mockito.mock;
-
 public class CommonResponseTest {
     private CommonResponse response;
 
@@ -25,14 +23,14 @@ public class CommonResponseTest {
         response.setHttpStatus(200);
         Assert.assertEquals(200, response.getHttpStatus());
 
-        HttpResponse httpResponse = mock(HttpResponse.class);
+        HttpResponse httpResponse = new HttpResponse();
         response.setHttpResponse(httpResponse);
         Assert.assertTrue(httpResponse == response.getHttpResponse());
     }
 
     @Test
     public void getInstanceTest() throws ClientException {
-        UnmarshallerContext context = mock(UnmarshallerContext.class);
+        UnmarshallerContext context = new UnmarshallerContext();
         Assert.assertNull(response.getInstance(context));
     }
 
