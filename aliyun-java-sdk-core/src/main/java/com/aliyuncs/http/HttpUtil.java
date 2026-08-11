@@ -17,6 +17,9 @@ import org.apache.http.HttpHost;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.StringUtils;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.CredentialsProvider;
 
 public class HttpUtil {
 
@@ -173,5 +176,24 @@ public class HttpUtil {
             }
         }
         return true;
+    }
+
+    public static void readCredentialsFromApacheProxy(CredentialsProvider credentialsProvider, String proxy)
+            throws ClientException {
+        try {
+            if (!StringUtils.isEmpty(proxy)) {
+                URL proxyUrl = new URL(proxy);
+                String userInfo = proxyUrl.getUserInfo();
+                if (!StringUtils.isEmpty(userInfo)) {
+                    final String[] userMessage = userInfo.split(":");
+                    credentialsProvider.setCredentials(
+                            new AuthScope(proxyUrl.getHost(),
+                                    proxyUrl.getPort()),
+                            new UsernamePasswordCredentials(userMessage[0], userMessage[1]));
+                }
+            }
+        } catch (IOException e) {
+            throw new ClientException("SDK.InvalidProxy", "proxy url is invalid");
+        }
     }
 }
