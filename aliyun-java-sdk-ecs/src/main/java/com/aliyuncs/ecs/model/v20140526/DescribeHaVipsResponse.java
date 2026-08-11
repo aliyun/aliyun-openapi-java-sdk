@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHaVipsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<HaVip> haVips;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeHaVipsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<HaVip> getHaVips() {
 		return this.haVips;
 	}
@@ -79,25 +79,25 @@ public class DescribeHaVipsResponse extends AcsResponse {
 
 		private String status;
 
-		private String vpcId;
-
-		private String vSwitchId;
-
-		private String ipAddress;
-
 		private String description;
 
-		private String haVipId;
-
-		private String createTime;
+		private String vpcId;
 
 		private String masterInstanceId;
 
+		private String vSwitchId;
+
+		private String createTime;
+
+		private String ipAddress;
+
+		private String haVipId;
+
 		private String regionId;
 
-		private List<String> associatedEipAddresses;
-
 		private List<String> associatedInstances;
+
+		private List<String> associatedEipAddresses;
 
 		public String getStatus() {
 			return this.status;
@@ -105,30 +105,6 @@ public class DescribeHaVipsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getIpAddress() {
-			return this.ipAddress;
-		}
-
-		public void setIpAddress(String ipAddress) {
-			this.ipAddress = ipAddress;
 		}
 
 		public String getDescription() {
@@ -139,20 +115,12 @@ public class DescribeHaVipsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getHaVipId() {
-			return this.haVipId;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setHaVipId(String haVipId) {
-			this.haVipId = haVipId;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getMasterInstanceId() {
@@ -163,6 +131,38 @@ public class DescribeHaVipsResponse extends AcsResponse {
 			this.masterInstanceId = masterInstanceId;
 		}
 
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getIpAddress() {
+			return this.ipAddress;
+		}
+
+		public void setIpAddress(String ipAddress) {
+			this.ipAddress = ipAddress;
+		}
+
+		public String getHaVipId() {
+			return this.haVipId;
+		}
+
+		public void setHaVipId(String haVipId) {
+			this.haVipId = haVipId;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -171,20 +171,20 @@ public class DescribeHaVipsResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public List<String> getAssociatedEipAddresses() {
-			return this.associatedEipAddresses;
-		}
-
-		public void setAssociatedEipAddresses(List<String> associatedEipAddresses) {
-			this.associatedEipAddresses = associatedEipAddresses;
-		}
-
 		public List<String> getAssociatedInstances() {
 			return this.associatedInstances;
 		}
 
 		public void setAssociatedInstances(List<String> associatedInstances) {
 			this.associatedInstances = associatedInstances;
+		}
+
+		public List<String> getAssociatedEipAddresses() {
+			return this.associatedEipAddresses;
+		}
+
+		public void setAssociatedEipAddresses(List<String> associatedEipAddresses) {
+			this.associatedEipAddresses = associatedEipAddresses;
 		}
 	}
 

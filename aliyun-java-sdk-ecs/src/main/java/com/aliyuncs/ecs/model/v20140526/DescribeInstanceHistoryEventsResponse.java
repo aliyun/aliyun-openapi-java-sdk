@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
-	private Integer pageNumber;
-
-	private Integer totalCount;
-
 	private String nextToken;
 
+	private Integer pageNumber;
+
 	private List<InstanceSystemEventType> instanceSystemEventSet;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -53,28 +61,20 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<InstanceSystemEventType> getInstanceSystemEventSet() {
@@ -87,36 +87,36 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 	public static class InstanceSystemEventType {
 
-		private String eventId;
+		private String eventFinishTime;
 
 		private String eventPublishTime;
 
-		private String eventFinishTime;
-
-		private String resourceType;
+		private String instanceId;
 
 		private String impactLevel;
 
+		private String eventId;
+
+		private String resourceType;
+
 		private String notBefore;
-
-		private String instanceId;
-
-		private String reason;
 
 		private String reasonCode;
 
-		private EventType eventType;
+		private String reason;
 
 		private EventCycleStatus eventCycleStatus;
 
+		private EventType eventType;
+
 		private ExtendedAttribute extendedAttribute;
 
-		public String getEventId() {
-			return this.eventId;
+		public String getEventFinishTime() {
+			return this.eventFinishTime;
 		}
 
-		public void setEventId(String eventId) {
-			this.eventId = eventId;
+		public void setEventFinishTime(String eventFinishTime) {
+			this.eventFinishTime = eventFinishTime;
 		}
 
 		public String getEventPublishTime() {
@@ -127,20 +127,12 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 			this.eventPublishTime = eventPublishTime;
 		}
 
-		public String getEventFinishTime() {
-			return this.eventFinishTime;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setEventFinishTime(String eventFinishTime) {
-			this.eventFinishTime = eventFinishTime;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getImpactLevel() {
@@ -151,28 +143,28 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 			this.impactLevel = impactLevel;
 		}
 
+		public String getEventId() {
+			return this.eventId;
+		}
+
+		public void setEventId(String eventId) {
+			this.eventId = eventId;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
 		public String getNotBefore() {
 			return this.notBefore;
 		}
 
 		public void setNotBefore(String notBefore) {
 			this.notBefore = notBefore;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
 		}
 
 		public String getReasonCode() {
@@ -183,12 +175,12 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 			this.reasonCode = reasonCode;
 		}
 
-		public EventType getEventType() {
-			return this.eventType;
+		public String getReason() {
+			return this.reason;
 		}
 
-		public void setEventType(EventType eventType) {
-			this.eventType = eventType;
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 
 		public EventCycleStatus getEventCycleStatus() {
@@ -199,6 +191,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 			this.eventCycleStatus = eventCycleStatus;
 		}
 
+		public EventType getEventType() {
+			return this.eventType;
+		}
+
+		public void setEventType(EventType eventType) {
+			this.eventType = eventType;
+		}
+
 		public ExtendedAttribute getExtendedAttribute() {
 			return this.extendedAttribute;
 		}
@@ -207,19 +207,11 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 			this.extendedAttribute = extendedAttribute;
 		}
 
-		public static class EventType {
-
-			private String name;
+		public static class EventCycleStatus {
 
 			private Integer code;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public Integer getCode() {
 				return this.code;
@@ -227,22 +219,22 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			public void setCode(Integer code) {
 				this.code = code;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 
-		public static class EventCycleStatus {
-
-			private String name;
+		public static class EventType {
 
 			private Integer code;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public Integer getCode() {
 				return this.code;
@@ -250,6 +242,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			public void setCode(Integer code) {
 				this.code = code;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 
@@ -257,33 +257,33 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			private String device;
 
-			private String diskId;
-
-			private String hostType;
-
-			private String hostId;
-
-			private String onlineRepairPolicy;
-
-			private String rack;
-
 			private String punishType;
 
 			private String punishDomain;
 
-			private String punishUrl;
+			private String initialNotBefore;
+
+			private String hostId;
 
 			private String code;
 
 			private String canAccept;
 
-			private String responseResult;
+			private String rack;
 
-			private String metricValue;
+			private String punishUrl;
 
 			private String metricName;
 
-			private String initialNotBefore;
+			private String hostType;
+
+			private String metricValue;
+
+			private String responseResult;
+
+			private String diskId;
+
+			private String onlineRepairPolicy;
 
 			private List<InactiveDisk> inactiveDisks;
 
@@ -295,46 +295,6 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			public void setDevice(String device) {
 				this.device = device;
-			}
-
-			public String getDiskId() {
-				return this.diskId;
-			}
-
-			public void setDiskId(String diskId) {
-				this.diskId = diskId;
-			}
-
-			public String getHostType() {
-				return this.hostType;
-			}
-
-			public void setHostType(String hostType) {
-				this.hostType = hostType;
-			}
-
-			public String getHostId() {
-				return this.hostId;
-			}
-
-			public void setHostId(String hostId) {
-				this.hostId = hostId;
-			}
-
-			public String getOnlineRepairPolicy() {
-				return this.onlineRepairPolicy;
-			}
-
-			public void setOnlineRepairPolicy(String onlineRepairPolicy) {
-				this.onlineRepairPolicy = onlineRepairPolicy;
-			}
-
-			public String getRack() {
-				return this.rack;
-			}
-
-			public void setRack(String rack) {
-				this.rack = rack;
 			}
 
 			public String getPunishType() {
@@ -353,12 +313,20 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 				this.punishDomain = punishDomain;
 			}
 
-			public String getPunishUrl() {
-				return this.punishUrl;
+			public String getInitialNotBefore() {
+				return this.initialNotBefore;
 			}
 
-			public void setPunishUrl(String punishUrl) {
-				this.punishUrl = punishUrl;
+			public void setInitialNotBefore(String initialNotBefore) {
+				this.initialNotBefore = initialNotBefore;
+			}
+
+			public String getHostId() {
+				return this.hostId;
+			}
+
+			public void setHostId(String hostId) {
+				this.hostId = hostId;
 			}
 
 			public String getCode() {
@@ -377,20 +345,20 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 				this.canAccept = canAccept;
 			}
 
-			public String getResponseResult() {
-				return this.responseResult;
+			public String getRack() {
+				return this.rack;
 			}
 
-			public void setResponseResult(String responseResult) {
-				this.responseResult = responseResult;
+			public void setRack(String rack) {
+				this.rack = rack;
 			}
 
-			public String getMetricValue() {
-				return this.metricValue;
+			public String getPunishUrl() {
+				return this.punishUrl;
 			}
 
-			public void setMetricValue(String metricValue) {
-				this.metricValue = metricValue;
+			public void setPunishUrl(String punishUrl) {
+				this.punishUrl = punishUrl;
 			}
 
 			public String getMetricName() {
@@ -401,12 +369,44 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 				this.metricName = metricName;
 			}
 
-			public String getInitialNotBefore() {
-				return this.initialNotBefore;
+			public String getHostType() {
+				return this.hostType;
 			}
 
-			public void setInitialNotBefore(String initialNotBefore) {
-				this.initialNotBefore = initialNotBefore;
+			public void setHostType(String hostType) {
+				this.hostType = hostType;
+			}
+
+			public String getMetricValue() {
+				return this.metricValue;
+			}
+
+			public void setMetricValue(String metricValue) {
+				this.metricValue = metricValue;
+			}
+
+			public String getResponseResult() {
+				return this.responseResult;
+			}
+
+			public void setResponseResult(String responseResult) {
+				this.responseResult = responseResult;
+			}
+
+			public String getDiskId() {
+				return this.diskId;
+			}
+
+			public void setDiskId(String diskId) {
+				this.diskId = diskId;
+			}
+
+			public String getOnlineRepairPolicy() {
+				return this.onlineRepairPolicy;
+			}
+
+			public void setOnlineRepairPolicy(String onlineRepairPolicy) {
+				this.onlineRepairPolicy = onlineRepairPolicy;
 			}
 
 			public List<InactiveDisk> getInactiveDisks() {
@@ -427,39 +427,15 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			public static class InactiveDisk {
 
-				private String creationTime;
-
-				private String deviceSize;
-
-				private String deviceCategory;
-
 				private String deviceType;
 
 				private String releaseTime;
 
-				public String getCreationTime() {
-					return this.creationTime;
-				}
+				private String deviceSize;
 
-				public void setCreationTime(String creationTime) {
-					this.creationTime = creationTime;
-				}
+				private String creationTime;
 
-				public String getDeviceSize() {
-					return this.deviceSize;
-				}
-
-				public void setDeviceSize(String deviceSize) {
-					this.deviceSize = deviceSize;
-				}
-
-				public String getDeviceCategory() {
-					return this.deviceCategory;
-				}
-
-				public void setDeviceCategory(String deviceCategory) {
-					this.deviceCategory = deviceCategory;
-				}
+				private String deviceCategory;
 
 				public String getDeviceType() {
 					return this.deviceType;
@@ -475,6 +451,30 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 				public void setReleaseTime(String releaseTime) {
 					this.releaseTime = releaseTime;
+				}
+
+				public String getDeviceSize() {
+					return this.deviceSize;
+				}
+
+				public void setDeviceSize(String deviceSize) {
+					this.deviceSize = deviceSize;
+				}
+
+				public String getCreationTime() {
+					return this.creationTime;
+				}
+
+				public void setCreationTime(String creationTime) {
+					this.creationTime = creationTime;
+				}
+
+				public String getDeviceCategory() {
+					return this.deviceCategory;
+				}
+
+				public void setDeviceCategory(String deviceCategory) {
+					this.deviceCategory = deviceCategory;
 				}
 			}
 		}

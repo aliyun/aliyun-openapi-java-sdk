@@ -37,13 +37,13 @@ public class DescribeAccountAttributesResponseUnmarshaller {
 			List<ValueItem> attributeValues = new ArrayList<ValueItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues.Length"); j++) {
 				ValueItem valueItem = new ValueItem();
-				valueItem.setDiskCategory(_ctx.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].DiskCategory"));
-				valueItem.setValue(_ctx.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].Value"));
-				valueItem.setExpiredTime(_ctx.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].ExpiredTime"));
 				valueItem.setZoneId(_ctx.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].ZoneId"));
-				valueItem.setInstanceType(_ctx.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceType"));
-				valueItem.setCount(_ctx.integerValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].Count"));
 				valueItem.setInstanceChargeType(_ctx.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceChargeType"));
+				valueItem.setExpiredTime(_ctx.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].ExpiredTime"));
+				valueItem.setValue(_ctx.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].Value"));
+				valueItem.setDiskCategory(_ctx.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].DiskCategory"));
+				valueItem.setCount(_ctx.integerValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].Count"));
+				valueItem.setInstanceType(_ctx.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceType"));
 
 				attributeValues.add(valueItem);
 			}

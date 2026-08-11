@@ -20,23 +20,23 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price;
-import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.Coupon;
-import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.Coupon.AdditionalInfo;
+import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.Coupon7;
+import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.Coupon7.AdditionalInfo9;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfo.Attribute;
-import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfo.DepreciateInfo1;
-import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfo.Rule2;
-import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.Promotion7;
+import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfo.DepreciateInfo5;
+import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfo.Rule6;
+import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.Promotion3;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.SubPrice;
-import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.SubPrice.DepreciateInfo4;
-import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.SubPrice.Promotion;
+import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.SubPrice.DepreciateInfo11;
+import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Price.SubPrice.Promotion13;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.PriceWarning;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.RelatedPrice;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice;
-import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupon12;
-import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupon12.AdditionalInfo14;
-import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotion11;
+import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupon;
+import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupon.AdditionalInfo;
+import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotion;
 import com.aliyuncs.ecs.model.v20140526.DescribeRenewalPriceResponse.PriceInfo.Rule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -49,14 +49,69 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 
 		PriceInfo priceInfo = new PriceInfo();
 
+		RelatedPrice relatedPrice = new RelatedPrice();
+
+		MarketplaceImagePrice marketplaceImagePrice = new MarketplaceImagePrice();
+		marketplaceImagePrice.setOriginalPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.OriginalPrice"));
+		marketplaceImagePrice.setCurrency(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Currency"));
+		marketplaceImagePrice.setDiscountPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.DiscountPrice"));
+		marketplaceImagePrice.setTradePrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.TradePrice"));
+
+		List<Promotion> promotions = new ArrayList<Promotion>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions.Length"); i++) {
+			Promotion promotion = new Promotion();
+			promotion.setDiscountOff(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions["+ i +"].DiscountOff"));
+			promotion.setType(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions["+ i +"].Type"));
+			promotion.setRuleId(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions["+ i +"].RuleId"));
+			promotion.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions["+ i +"].Name"));
+
+			promotions.add(promotion);
+		}
+		marketplaceImagePrice.setPromotions(promotions);
+
+		List<Coupon> coupons = new ArrayList<Coupon>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons.Length"); i++) {
+			Coupon coupon = new Coupon();
+			coupon.setCouponNo(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].CouponNo"));
+			coupon.setDiscountOff(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].DiscountOff"));
+			coupon.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].Description"));
+			coupon.setIsSelected(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].IsSelected"));
+			coupon.setOptionCode(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].OptionCode"));
+			coupon.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].Name"));
+			coupon.setEffective(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].Effective"));
+
+			List<Long> ruleIds = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].RuleIds.Length"); j++) {
+				ruleIds.add(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].RuleIds["+ j +"]"));
+			}
+			coupon.setRuleIds(ruleIds);
+
+			AdditionalInfo additionalInfo = new AdditionalInfo();
+			additionalInfo.setVoucherTotalAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.VoucherTotalAmount"));
+			additionalInfo.setEndTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.EndTime"));
+			additionalInfo.setUpperLimitAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.UpperLimitAmount"));
+			additionalInfo.setCouponType(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.CouponType"));
+			additionalInfo.setStartTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.StartTime"));
+			additionalInfo.setAvailableAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.AvailableAmount"));
+			additionalInfo.setIneffectiveReason(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.IneffectiveReason"));
+			additionalInfo.setDiscountRate(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.DiscountRate"));
+			additionalInfo.setCertainAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.CertainAmount"));
+			coupon.setAdditionalInfo(additionalInfo);
+
+			coupons.add(coupon);
+		}
+		marketplaceImagePrice.setCoupons(coupons);
+		relatedPrice.setMarketplaceImagePrice(marketplaceImagePrice);
+		priceInfo.setRelatedPrice(relatedPrice);
+
 		Price price = new Price();
 		price.setOriginalPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.OriginalPrice"));
-		price.setDiscountPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DiscountPrice"));
-		price.setCurrency(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Currency"));
-		price.setTradePrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.TradePrice"));
 		price.setStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.StandardPrice"));
 		price.setStandardDiscountPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.StandardDiscountPrice"));
+		price.setTradePrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.TradePrice"));
 		price.setIsContractPromotion(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.IsContractPromotion"));
+		price.setDiscountPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DiscountPrice"));
+		price.setCurrency(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Currency"));
 
 		List<String> ruleIdSet = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.RuleIdSet.Length"); i++) {
@@ -65,55 +120,73 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 		price.setRuleIdSet(ruleIdSet);
 
 		DepreciateInfo depreciateInfo = new DepreciateInfo();
-		depreciateInfo.setListPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo.ListPrice"));
-		depreciateInfo.setOriginalStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo.OriginalStandardPrice"));
 		depreciateInfo.setCheapStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo.CheapStandardPrice"));
 		depreciateInfo.setCheapRate(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo.CheapRate"));
-		depreciateInfo.setDifferentialPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo.DifferentialPrice"));
 		depreciateInfo.setDifferentialName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo.DifferentialName"));
 		depreciateInfo.setMonthPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo.MonthPrice"));
-		depreciateInfo.setIsShow(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo.IsShow"));
+		depreciateInfo.setOriginalStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo.OriginalStandardPrice"));
+		depreciateInfo.setDifferentialPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo.DifferentialPrice"));
 		depreciateInfo.setStartTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo.StartTime"));
+		depreciateInfo.setIsShow(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo.IsShow"));
+		depreciateInfo.setListPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DepreciateInfo.ListPrice"));
 		price.setDepreciateInfo(depreciateInfo);
+
+		List<Promotion3> promotions1 = new ArrayList<Promotion3>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions.Length"); i++) {
+			Promotion3 promotion3 = new Promotion3();
+			promotion3.setDiscountOff(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions["+ i +"].DiscountOff"));
+			promotion3.setType(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions["+ i +"].Type"));
+			promotion3.setRemainQuota(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions["+ i +"].RemainQuota"));
+			promotion3.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions["+ i +"].Name"));
+
+			List<Long> ruleIds4 = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions["+ i +"].RuleIds.Length"); j++) {
+				ruleIds4.add(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions["+ i +"].RuleIds["+ j +"]"));
+			}
+			promotion3.setRuleIds4(ruleIds4);
+
+			promotions1.add(promotion3);
+		}
+		price.setPromotions1(promotions1);
 
 		List<DetailInfo> detailInfos = new ArrayList<DetailInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos.Length"); i++) {
 			DetailInfo detailInfo = new DetailInfo();
-			detailInfo.setResource(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Resource"));
 			detailInfo.setOriginalPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].OriginalPrice"));
 			detailInfo.setDiscountPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DiscountPrice"));
-			detailInfo.setTradePrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].TradePrice"));
+			detailInfo.setResource(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Resource"));
 			detailInfo.setStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].StandardPrice"));
 			detailInfo.setStandardDiscountPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].StandardDiscountPrice"));
+			detailInfo.setTradePrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].TradePrice"));
 			detailInfo.setIsContractPromotion(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].IsContractPromotion"));
 
-			DepreciateInfo1 depreciateInfo1 = new DepreciateInfo1();
-			depreciateInfo1.setListPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.ListPrice"));
-			depreciateInfo1.setOriginalStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.OriginalStandardPrice"));
-			depreciateInfo1.setCheapStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.CheapStandardPrice"));
-			depreciateInfo1.setCheapRate(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.CheapRate"));
-			depreciateInfo1.setDifferentialPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.DifferentialPrice"));
-			depreciateInfo1.setDifferentialName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.DifferentialName"));
-			depreciateInfo1.setMonthPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.MonthPrice"));
-			depreciateInfo1.setIsShow(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.IsShow"));
-			depreciateInfo1.setStartTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.StartTime"));
-			detailInfo.setDepreciateInfo1(depreciateInfo1);
+			DepreciateInfo5 depreciateInfo5 = new DepreciateInfo5();
+			depreciateInfo5.setCheapStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.CheapStandardPrice"));
+			depreciateInfo5.setCheapRate(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.CheapRate"));
+			depreciateInfo5.setDifferentialName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.DifferentialName"));
+			depreciateInfo5.setMonthPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.MonthPrice"));
+			depreciateInfo5.setOriginalStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.OriginalStandardPrice"));
+			depreciateInfo5.setDifferentialPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.DifferentialPrice"));
+			depreciateInfo5.setStartTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.StartTime"));
+			depreciateInfo5.setIsShow(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.IsShow"));
+			depreciateInfo5.setListPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DepreciateInfo.ListPrice"));
+			detailInfo.setDepreciateInfo5(depreciateInfo5);
 
-			List<Rule2> subRules = new ArrayList<Rule2>();
+			List<Rule6> subRules = new ArrayList<Rule6>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules.Length"); j++) {
-				Rule2 rule2 = new Rule2();
-				rule2.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].Description"));
-				rule2.setRuleId(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].RuleId"));
+				Rule6 rule6 = new Rule6();
+				rule6.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].Description"));
+				rule6.setRuleId(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].RuleId"));
 
-				subRules.add(rule2);
+				subRules.add(rule6);
 			}
 			detailInfo.setSubRules(subRules);
 
 			List<Attribute> attributes = new ArrayList<Attribute>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Attributes.Length"); j++) {
 				Attribute attribute = new Attribute();
-				attribute.setCode(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Attributes["+ j +"].Code"));
 				attribute.setValue(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Attributes["+ j +"].Value"));
+				attribute.setCode(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Attributes["+ j +"].Code"));
 
 				attributes.add(attribute);
 			}
@@ -123,38 +196,38 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 		}
 		price.setDetailInfos(detailInfos);
 
-		List<Coupon> coupons = new ArrayList<Coupon>();
+		List<Coupon7> coupons2 = new ArrayList<Coupon7>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons.Length"); i++) {
-			Coupon coupon = new Coupon();
-			coupon.setIsSelected(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].IsSelected"));
-			coupon.setCouponNo(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].CouponNo"));
-			coupon.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].Description"));
-			coupon.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].Name"));
-			coupon.setDiscountOff(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].DiscountOff"));
-			coupon.setOptionCode(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].OptionCode"));
-			coupon.setEffective(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].Effective"));
+			Coupon7 coupon7 = new Coupon7();
+			coupon7.setCouponNo(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].CouponNo"));
+			coupon7.setDiscountOff(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].DiscountOff"));
+			coupon7.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].Description"));
+			coupon7.setIsSelected(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].IsSelected"));
+			coupon7.setOptionCode(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].OptionCode"));
+			coupon7.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].Name"));
+			coupon7.setEffective(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].Effective"));
 
-			List<Long> ruleIds = new ArrayList<Long>();
+			List<Long> ruleIds8 = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].RuleIds.Length"); j++) {
-				ruleIds.add(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].RuleIds["+ j +"]"));
+				ruleIds8.add(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].RuleIds["+ j +"]"));
 			}
-			coupon.setRuleIds(ruleIds);
+			coupon7.setRuleIds8(ruleIds8);
 
-			AdditionalInfo additionalInfo = new AdditionalInfo();
-			additionalInfo.setCouponType(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.CouponType"));
-			additionalInfo.setAvailableAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.AvailableAmount"));
-			additionalInfo.setUpperLimitAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.UpperLimitAmount"));
-			additionalInfo.setStartTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.StartTime"));
-			additionalInfo.setEndTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.EndTime"));
-			additionalInfo.setIneffectiveReason(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.IneffectiveReason"));
-			additionalInfo.setDiscountRate(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.DiscountRate"));
-			additionalInfo.setCertainAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.CertainAmount"));
-			additionalInfo.setVoucherTotalAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.VoucherTotalAmount"));
-			coupon.setAdditionalInfo(additionalInfo);
+			AdditionalInfo9 additionalInfo9 = new AdditionalInfo9();
+			additionalInfo9.setVoucherTotalAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.VoucherTotalAmount"));
+			additionalInfo9.setEndTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.EndTime"));
+			additionalInfo9.setUpperLimitAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.UpperLimitAmount"));
+			additionalInfo9.setCouponType(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.CouponType"));
+			additionalInfo9.setStartTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.StartTime"));
+			additionalInfo9.setAvailableAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.AvailableAmount"));
+			additionalInfo9.setIneffectiveReason(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.IneffectiveReason"));
+			additionalInfo9.setDiscountRate(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.DiscountRate"));
+			additionalInfo9.setCertainAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.Price.Coupons["+ i +"].AdditionalInfo.CertainAmount"));
+			coupon7.setAdditionalInfo9(additionalInfo9);
 
-			coupons.add(coupon);
+			coupons2.add(coupon7);
 		}
-		price.setCoupons(coupons);
+		price.setCoupons2(coupons2);
 
 		List<SubPrice> subPrices = new ArrayList<SubPrice>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices.Length"); i++) {
@@ -162,129 +235,56 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 			subPrice.setOriginalPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].OriginalPrice"));
 			subPrice.setInstanceId(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].InstanceId"));
 			subPrice.setDiscountPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DiscountPrice"));
-			subPrice.setTradePrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].TradePrice"));
 			subPrice.setStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].StandardPrice"));
 			subPrice.setStandardDiscountPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].StandardDiscountPrice"));
+			subPrice.setTradePrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].TradePrice"));
 			subPrice.setIsContractPromotion(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].IsContractPromotion"));
 
-			List<String> ruleIdSet3 = new ArrayList<String>();
+			List<String> ruleIdSet10 = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].RuleIdSet.Length"); j++) {
-				ruleIdSet3.add(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].RuleIdSet["+ j +"]"));
+				ruleIdSet10.add(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].RuleIdSet["+ j +"]"));
 			}
-			subPrice.setRuleIdSet3(ruleIdSet3);
+			subPrice.setRuleIdSet10(ruleIdSet10);
 
-			DepreciateInfo4 depreciateInfo4 = new DepreciateInfo4();
-			depreciateInfo4.setListPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.ListPrice"));
-			depreciateInfo4.setOriginalStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.OriginalStandardPrice"));
-			depreciateInfo4.setCheapStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.CheapStandardPrice"));
-			depreciateInfo4.setCheapRate(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.CheapRate"));
-			depreciateInfo4.setDifferentialPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.DifferentialPrice"));
-			depreciateInfo4.setDifferentialName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.DifferentialName"));
-			depreciateInfo4.setMonthPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.MonthPrice"));
-			depreciateInfo4.setIsShow(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.IsShow"));
-			depreciateInfo4.setStartTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.StartTime"));
-			subPrice.setDepreciateInfo4(depreciateInfo4);
+			DepreciateInfo11 depreciateInfo11 = new DepreciateInfo11();
+			depreciateInfo11.setCheapStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.CheapStandardPrice"));
+			depreciateInfo11.setCheapRate(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.CheapRate"));
+			depreciateInfo11.setDifferentialName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.DifferentialName"));
+			depreciateInfo11.setMonthPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.MonthPrice"));
+			depreciateInfo11.setOriginalStandardPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.OriginalStandardPrice"));
+			depreciateInfo11.setDifferentialPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.DifferentialPrice"));
+			depreciateInfo11.setStartTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.StartTime"));
+			depreciateInfo11.setIsShow(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.IsShow"));
+			depreciateInfo11.setListPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].DepreciateInfo.ListPrice"));
+			subPrice.setDepreciateInfo11(depreciateInfo11);
 
-			List<Promotion> promotions5 = new ArrayList<Promotion>();
+			List<Promotion13> promotions12 = new ArrayList<Promotion13>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].Promotions.Length"); j++) {
-				Promotion promotion = new Promotion();
-				promotion.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].Promotions["+ j +"].Name"));
-				promotion.setDiscountOff(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].Promotions["+ j +"].DiscountOff"));
-				promotion.setType(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].Promotions["+ j +"].Type"));
-				promotion.setRemainQuota(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].Promotions["+ j +"].RemainQuota"));
+				Promotion13 promotion13 = new Promotion13();
+				promotion13.setDiscountOff(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].Promotions["+ j +"].DiscountOff"));
+				promotion13.setType(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].Promotions["+ j +"].Type"));
+				promotion13.setRemainQuota(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].Promotions["+ j +"].RemainQuota"));
+				promotion13.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].Promotions["+ j +"].Name"));
 
-				List<Long> ruleIds6 = new ArrayList<Long>();
+				List<Long> ruleIds14 = new ArrayList<Long>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].Promotions["+ j +"].RuleIds.Length"); k++) {
-					ruleIds6.add(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].Promotions["+ j +"].RuleIds["+ k +"]"));
+					ruleIds14.add(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.Price.SubPrices["+ i +"].Promotions["+ j +"].RuleIds["+ k +"]"));
 				}
-				promotion.setRuleIds6(ruleIds6);
+				promotion13.setRuleIds14(ruleIds14);
 
-				promotions5.add(promotion);
+				promotions12.add(promotion13);
 			}
-			subPrice.setPromotions5(promotions5);
+			subPrice.setPromotions12(promotions12);
 
 			subPrices.add(subPrice);
 		}
 		price.setSubPrices(subPrices);
-
-		List<Promotion7> promotions = new ArrayList<Promotion7>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions.Length"); i++) {
-			Promotion7 promotion7 = new Promotion7();
-			promotion7.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions["+ i +"].Name"));
-			promotion7.setDiscountOff(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions["+ i +"].DiscountOff"));
-			promotion7.setType(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions["+ i +"].Type"));
-			promotion7.setRemainQuota(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions["+ i +"].RemainQuota"));
-
-			List<Long> ruleIds8 = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions["+ i +"].RuleIds.Length"); j++) {
-				ruleIds8.add(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.Price.Promotions["+ i +"].RuleIds["+ j +"]"));
-			}
-			promotion7.setRuleIds8(ruleIds8);
-
-			promotions.add(promotion7);
-		}
-		price.setPromotions(promotions);
 		priceInfo.setPrice(price);
 
 		PriceWarning priceWarning = new PriceWarning();
 		priceWarning.setMsg(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.PriceWarning.Msg"));
 		priceWarning.setCode(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.PriceWarning.Code"));
 		priceInfo.setPriceWarning(priceWarning);
-
-		RelatedPrice relatedPrice = new RelatedPrice();
-
-		MarketplaceImagePrice marketplaceImagePrice = new MarketplaceImagePrice();
-		marketplaceImagePrice.setCurrency(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Currency"));
-		marketplaceImagePrice.setOriginalPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.OriginalPrice"));
-		marketplaceImagePrice.setDiscountPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.DiscountPrice"));
-		marketplaceImagePrice.setTradePrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.TradePrice"));
-
-		List<Promotion11> promotions9 = new ArrayList<Promotion11>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions.Length"); i++) {
-			Promotion11 promotion11 = new Promotion11();
-			promotion11.setRuleId(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions["+ i +"].RuleId"));
-			promotion11.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions["+ i +"].Name"));
-			promotion11.setDiscountOff(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions["+ i +"].DiscountOff"));
-			promotion11.setType(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Promotions["+ i +"].Type"));
-
-			promotions9.add(promotion11);
-		}
-		marketplaceImagePrice.setPromotions9(promotions9);
-
-		List<Coupon12> coupons10 = new ArrayList<Coupon12>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons.Length"); i++) {
-			Coupon12 coupon12 = new Coupon12();
-			coupon12.setCouponNo(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].CouponNo"));
-			coupon12.setDiscountOff(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].DiscountOff"));
-			coupon12.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].Description"));
-			coupon12.setIsSelected(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].IsSelected"));
-			coupon12.setOptionCode(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].OptionCode"));
-			coupon12.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].Name"));
-			coupon12.setEffective(_ctx.booleanValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].Effective"));
-
-			List<Long> ruleIds13 = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].RuleIds.Length"); j++) {
-				ruleIds13.add(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].RuleIds["+ j +"]"));
-			}
-			coupon12.setRuleIds13(ruleIds13);
-
-			AdditionalInfo14 additionalInfo14 = new AdditionalInfo14();
-			additionalInfo14.setCouponType(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.CouponType"));
-			additionalInfo14.setAvailableAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.AvailableAmount"));
-			additionalInfo14.setUpperLimitAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.UpperLimitAmount"));
-			additionalInfo14.setStartTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.StartTime"));
-			additionalInfo14.setEndTime(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.EndTime"));
-			additionalInfo14.setIneffectiveReason(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.IneffectiveReason"));
-			additionalInfo14.setDiscountRate(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.DiscountRate"));
-			additionalInfo14.setCertainAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.CertainAmount"));
-			additionalInfo14.setVoucherTotalAmount(_ctx.doubleValue("DescribeRenewalPriceResponse.PriceInfo.RelatedPrice.MarketplaceImagePrice.Coupons["+ i +"].AdditionalInfo.VoucherTotalAmount"));
-			coupon12.setAdditionalInfo14(additionalInfo14);
-
-			coupons10.add(coupon12);
-		}
-		marketplaceImagePrice.setCoupons10(coupons10);
-		relatedPrice.setMarketplaceImagePrice(marketplaceImagePrice);
-		priceInfo.setRelatedPrice(relatedPrice);
 
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Rules.Length"); i++) {

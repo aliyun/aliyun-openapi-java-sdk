@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<StorageCapacityUnit> storageCapacityUnits;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<StorageCapacityUnit> getStorageCapacityUnits() {
 		return this.storageCapacityUnits;
 	}
@@ -77,35 +77,27 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 
 	public static class StorageCapacityUnit {
 
-		private String creationTime;
-
 		private String status;
-
-		private String startTime;
-
-		private Integer capacity;
 
 		private String description;
 
 		private String allocationStatus;
 
-		private String expiredTime;
+		private Integer capacity;
 
 		private String storageCapacityUnitId;
 
-		private String name;
+		private String expiredTime;
+
+		private String creationTime;
+
+		private String startTime;
 
 		private String regionId;
 
+		private String name;
+
 		private List<Tag> tags;
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -113,22 +105,6 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public Integer getCapacity() {
-			return this.capacity;
-		}
-
-		public void setCapacity(Integer capacity) {
-			this.capacity = capacity;
 		}
 
 		public String getDescription() {
@@ -147,12 +123,12 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 			this.allocationStatus = allocationStatus;
 		}
 
-		public String getExpiredTime() {
-			return this.expiredTime;
+		public Integer getCapacity() {
+			return this.capacity;
 		}
 
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setCapacity(Integer capacity) {
+			this.capacity = capacity;
 		}
 
 		public String getStorageCapacityUnitId() {
@@ -163,12 +139,28 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 			this.storageCapacityUnitId = storageCapacityUnitId;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getExpiredTime() {
+			return this.expiredTime;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public String getRegionId() {
@@ -177,6 +169,14 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<Tag> getTags() {
@@ -189,17 +189,9 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagValue;
-
 			private String tagKey;
 
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
+			private String tagValue;
 
 			public String getTagKey() {
 				return this.tagKey;
@@ -207,6 +199,14 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

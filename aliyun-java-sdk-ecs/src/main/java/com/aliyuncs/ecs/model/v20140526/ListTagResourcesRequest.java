@@ -82,8 +82,8 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -142,12 +142,12 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		this.tagFilters = tagFilters;	
 		if (tagFilters != null) {
 			for (int depth1 = 0; depth1 < tagFilters.size(); depth1++) {
+				putQueryParameter("TagFilter." + (depth1 + 1) + ".TagKey" , tagFilters.get(depth1).getTagKey());
 				if (tagFilters.get(depth1).getTagValuess() != null) {
 					for (int i = 0; i < tagFilters.get(depth1).getTagValuess().size(); i++) {
 						putQueryParameter("TagFilter." + (depth1 + 1) + ".TagValues." + (i + 1) , tagFilters.get(depth1).getTagValuess().get(i));
 					}
 				}
-				putQueryParameter("TagFilter." + (depth1 + 1) + ".TagKey" , tagFilters.get(depth1).getTagKey());
 			}
 		}	
 	}
@@ -165,17 +165,9 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 
 	public static class Tag {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -184,21 +176,21 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		public void setValue(String value) {
 			this.value = value;
 		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	public static class TagFilter {
 
-		private List<String> tagValuess;
-
 		private String tagKey;
 
-		public List<String> getTagValuess() {
-			return this.tagValuess;
-		}
-
-		public void setTagValuess(List<String> tagValuess) {
-			this.tagValuess = tagValuess;
-		}
+		private List<String> tagValuess;
 
 		public String getTagKey() {
 			return this.tagKey;
@@ -206,6 +198,14 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 
 		public void setTagKey(String tagKey) {
 			this.tagKey = tagKey;
+		}
+
+		public List<String> getTagValuess() {
+			return this.tagValuess;
+		}
+
+		public void setTagValuess(List<String> tagValuess) {
+			this.tagValuess = tagValuess;
 		}
 	}
 

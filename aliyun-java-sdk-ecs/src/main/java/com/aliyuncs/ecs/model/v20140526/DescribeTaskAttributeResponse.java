@@ -25,86 +25,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTaskAttributeResponse extends AcsResponse {
 
-	private String creationTime;
-
-	private String supportCancel;
-
-	private Integer totalCount;
-
-	private Integer successCount;
-
-	private String regionId;
-
-	private String taskAction;
-
-	private Integer failedCount;
+	private String taskId;
 
 	private String requestId;
 
-	private String taskStatus;
+	private String taskAction;
 
-	private String taskProcess;
+	private Integer successCount;
+
+	private String taskStatus;
 
 	private String finishedTime;
 
-	private String taskId;
+	private Integer totalCount;
+
+	private String taskProcess;
+
+	private String supportCancel;
+
+	private String creationTime;
+
+	private Integer failedCount;
+
+	private String regionId;
 
 	private List<OperationProgress> operationProgressSet;
 
-	public String getCreationTime() {
-		return this.creationTime;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setCreationTime(String creationTime) {
-		this.creationTime = creationTime;
-	}
-
-	public String getSupportCancel() {
-		return this.supportCancel;
-	}
-
-	public void setSupportCancel(String supportCancel) {
-		this.supportCancel = supportCancel;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public Integer getSuccessCount() {
-		return this.successCount;
-	}
-
-	public void setSuccessCount(Integer successCount) {
-		this.successCount = successCount;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getTaskAction() {
-		return this.taskAction;
-	}
-
-	public void setTaskAction(String taskAction) {
-		this.taskAction = taskAction;
-	}
-
-	public Integer getFailedCount() {
-		return this.failedCount;
-	}
-
-	public void setFailedCount(Integer failedCount) {
-		this.failedCount = failedCount;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public String getRequestId() {
@@ -115,20 +67,28 @@ public class DescribeTaskAttributeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getTaskAction() {
+		return this.taskAction;
+	}
+
+	public void setTaskAction(String taskAction) {
+		this.taskAction = taskAction;
+	}
+
+	public Integer getSuccessCount() {
+		return this.successCount;
+	}
+
+	public void setSuccessCount(Integer successCount) {
+		this.successCount = successCount;
+	}
+
 	public String getTaskStatus() {
 		return this.taskStatus;
 	}
 
 	public void setTaskStatus(String taskStatus) {
 		this.taskStatus = taskStatus;
-	}
-
-	public String getTaskProcess() {
-		return this.taskProcess;
-	}
-
-	public void setTaskProcess(String taskProcess) {
-		this.taskProcess = taskProcess;
 	}
 
 	public String getFinishedTime() {
@@ -139,12 +99,52 @@ public class DescribeTaskAttributeResponse extends AcsResponse {
 		this.finishedTime = finishedTime;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getTaskProcess() {
+		return this.taskProcess;
+	}
+
+	public void setTaskProcess(String taskProcess) {
+		this.taskProcess = taskProcess;
+	}
+
+	public String getSupportCancel() {
+		return this.supportCancel;
+	}
+
+	public void setSupportCancel(String supportCancel) {
+		this.supportCancel = supportCancel;
+	}
+
+	public String getCreationTime() {
+		return this.creationTime;
+	}
+
+	public void setCreationTime(String creationTime) {
+		this.creationTime = creationTime;
+	}
+
+	public Integer getFailedCount() {
+		return this.failedCount;
+	}
+
+	public void setFailedCount(Integer failedCount) {
+		this.failedCount = failedCount;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	public List<OperationProgress> getOperationProgressSet() {
@@ -157,13 +157,21 @@ public class DescribeTaskAttributeResponse extends AcsResponse {
 
 	public static class OperationProgress {
 
+		private String operationStatus;
+
 		private String errorMsg;
 
 		private String errorCode;
 
-		private String operationStatus;
-
 		private List<RelatedItem> relatedItemSet;
+
+		public String getOperationStatus() {
+			return this.operationStatus;
+		}
+
+		public void setOperationStatus(String operationStatus) {
+			this.operationStatus = operationStatus;
+		}
 
 		public String getErrorMsg() {
 			return this.errorMsg;
@@ -181,14 +189,6 @@ public class DescribeTaskAttributeResponse extends AcsResponse {
 			this.errorCode = errorCode;
 		}
 
-		public String getOperationStatus() {
-			return this.operationStatus;
-		}
-
-		public void setOperationStatus(String operationStatus) {
-			this.operationStatus = operationStatus;
-		}
-
 		public List<RelatedItem> getRelatedItemSet() {
 			return this.relatedItemSet;
 		}
@@ -199,17 +199,9 @@ public class DescribeTaskAttributeResponse extends AcsResponse {
 
 		public static class RelatedItem {
 
-			private String name;
-
 			private String value;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public String getValue() {
 				return this.value;
@@ -217,6 +209,14 @@ public class DescribeTaskAttributeResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

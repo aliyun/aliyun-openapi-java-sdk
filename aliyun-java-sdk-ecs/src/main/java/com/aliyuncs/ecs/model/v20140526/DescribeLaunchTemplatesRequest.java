@@ -108,8 +108,8 @@ public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunch
 		this.templateTags = templateTags;	
 		if (templateTags != null) {
 			for (int depth1 = 0; depth1 < templateTags.size(); depth1++) {
-				putQueryParameter("TemplateTag." + (depth1 + 1) + ".Key" , templateTags.get(depth1).getKey());
 				putQueryParameter("TemplateTag." + (depth1 + 1) + ".Value" , templateTags.get(depth1).getValue());
+				putQueryParameter("TemplateTag." + (depth1 + 1) + ".Key" , templateTags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -173,17 +173,9 @@ public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunch
 
 	public static class TemplateTag {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -191,6 +183,14 @@ public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunch
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

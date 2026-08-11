@@ -27,20 +27,20 @@ public class DescribeAccessPointsResponseUnmarshaller {
 	public static DescribeAccessPointsResponse unmarshall(DescribeAccessPointsResponse describeAccessPointsResponse, UnmarshallerContext _ctx) {
 		
 		describeAccessPointsResponse.setRequestId(_ctx.stringValue("DescribeAccessPointsResponse.RequestId"));
-		describeAccessPointsResponse.setPageNumber(_ctx.integerValue("DescribeAccessPointsResponse.PageNumber"));
-		describeAccessPointsResponse.setPageSize(_ctx.integerValue("DescribeAccessPointsResponse.PageSize"));
 		describeAccessPointsResponse.setTotalCount(_ctx.integerValue("DescribeAccessPointsResponse.TotalCount"));
+		describeAccessPointsResponse.setPageSize(_ctx.integerValue("DescribeAccessPointsResponse.PageSize"));
+		describeAccessPointsResponse.setPageNumber(_ctx.integerValue("DescribeAccessPointsResponse.PageNumber"));
 
 		List<AccessPointType> accessPointSet = new ArrayList<AccessPointType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccessPointsResponse.AccessPointSet.Length"); i++) {
 			AccessPointType accessPointType = new AccessPointType();
 			accessPointType.setStatus(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].Status"));
 			accessPointType.setType(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].Type"));
-			accessPointType.setHostOperator(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].HostOperator"));
 			accessPointType.setDescription(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].Description"));
 			accessPointType.setAttachedRegionNo(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].AttachedRegionNo"));
-			accessPointType.setName(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].Name"));
+			accessPointType.setHostOperator(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].HostOperator"));
 			accessPointType.setAccessPointId(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].AccessPointId"));
+			accessPointType.setName(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].Name"));
 			accessPointType.setLocation(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].Location"));
 
 			accessPointSet.add(accessPointType);

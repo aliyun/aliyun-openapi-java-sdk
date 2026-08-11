@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<AutoProvisioningGroup> autoProvisioningGroups;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<AutoProvisioningGroup> getAutoProvisioningGroups() {
 		return this.autoProvisioningGroups;
 	}
@@ -77,37 +77,37 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
 	public static class AutoProvisioningGroup {
 
-		private String creationTime;
-
-		private String autoProvisioningGroupName;
-
 		private String status;
 
-		private Boolean terminateInstances;
-
-		private Float maxSpotPrice;
-
-		private String state;
-
-		private String launchTemplateId;
-
-		private String validFrom;
-
-		private String launchTemplateVersion;
-
-		private Boolean terminateInstancesWithExpiration;
-
-		private String regionId;
-
-		private String validUntil;
-
-		private String autoProvisioningGroupType;
-
-		private String autoProvisioningGroupId;
+		private String autoProvisioningGroupName;
 
 		private String excessCapacityTerminationPolicy;
 
 		private String resourceGroupId;
+
+		private String launchTemplateId;
+
+		private String autoProvisioningGroupType;
+
+		private Boolean terminateInstancesWithExpiration;
+
+		private String validUntil;
+
+		private String state;
+
+		private String autoProvisioningGroupId;
+
+		private String creationTime;
+
+		private String launchTemplateVersion;
+
+		private String validFrom;
+
+		private Float maxSpotPrice;
+
+		private String regionId;
+
+		private Boolean terminateInstances;
 
 		private List<LaunchTemplateConfig> launchTemplateConfigs;
 
@@ -115,31 +115,15 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
 		private List<String> suspendedProcesses;
 
-		private SpotOptions spotOptions;
+		private TargetCapacitySpecification targetCapacitySpecification;
 
 		private PayAsYouGoOptions payAsYouGoOptions;
 
-		private TargetCapacitySpecification targetCapacitySpecification;
+		private SpotOptions spotOptions;
 
 		private CandidateOptions candidateOptions;
 
 		private CapacitySpecification capacitySpecification;
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getAutoProvisioningGroupName() {
-			return this.autoProvisioningGroupName;
-		}
-
-		public void setAutoProvisioningGroupName(String autoProvisioningGroupName) {
-			this.autoProvisioningGroupName = autoProvisioningGroupName;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -149,92 +133,12 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Boolean getTerminateInstances() {
-			return this.terminateInstances;
+		public String getAutoProvisioningGroupName() {
+			return this.autoProvisioningGroupName;
 		}
 
-		public void setTerminateInstances(Boolean terminateInstances) {
-			this.terminateInstances = terminateInstances;
-		}
-
-		public Float getMaxSpotPrice() {
-			return this.maxSpotPrice;
-		}
-
-		public void setMaxSpotPrice(Float maxSpotPrice) {
-			this.maxSpotPrice = maxSpotPrice;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getLaunchTemplateId() {
-			return this.launchTemplateId;
-		}
-
-		public void setLaunchTemplateId(String launchTemplateId) {
-			this.launchTemplateId = launchTemplateId;
-		}
-
-		public String getValidFrom() {
-			return this.validFrom;
-		}
-
-		public void setValidFrom(String validFrom) {
-			this.validFrom = validFrom;
-		}
-
-		public String getLaunchTemplateVersion() {
-			return this.launchTemplateVersion;
-		}
-
-		public void setLaunchTemplateVersion(String launchTemplateVersion) {
-			this.launchTemplateVersion = launchTemplateVersion;
-		}
-
-		public Boolean getTerminateInstancesWithExpiration() {
-			return this.terminateInstancesWithExpiration;
-		}
-
-		public void setTerminateInstancesWithExpiration(Boolean terminateInstancesWithExpiration) {
-			this.terminateInstancesWithExpiration = terminateInstancesWithExpiration;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getValidUntil() {
-			return this.validUntil;
-		}
-
-		public void setValidUntil(String validUntil) {
-			this.validUntil = validUntil;
-		}
-
-		public String getAutoProvisioningGroupType() {
-			return this.autoProvisioningGroupType;
-		}
-
-		public void setAutoProvisioningGroupType(String autoProvisioningGroupType) {
-			this.autoProvisioningGroupType = autoProvisioningGroupType;
-		}
-
-		public String getAutoProvisioningGroupId() {
-			return this.autoProvisioningGroupId;
-		}
-
-		public void setAutoProvisioningGroupId(String autoProvisioningGroupId) {
-			this.autoProvisioningGroupId = autoProvisioningGroupId;
+		public void setAutoProvisioningGroupName(String autoProvisioningGroupName) {
+			this.autoProvisioningGroupName = autoProvisioningGroupName;
 		}
 
 		public String getExcessCapacityTerminationPolicy() {
@@ -251,6 +155,102 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getLaunchTemplateId() {
+			return this.launchTemplateId;
+		}
+
+		public void setLaunchTemplateId(String launchTemplateId) {
+			this.launchTemplateId = launchTemplateId;
+		}
+
+		public String getAutoProvisioningGroupType() {
+			return this.autoProvisioningGroupType;
+		}
+
+		public void setAutoProvisioningGroupType(String autoProvisioningGroupType) {
+			this.autoProvisioningGroupType = autoProvisioningGroupType;
+		}
+
+		public Boolean getTerminateInstancesWithExpiration() {
+			return this.terminateInstancesWithExpiration;
+		}
+
+		public void setTerminateInstancesWithExpiration(Boolean terminateInstancesWithExpiration) {
+			this.terminateInstancesWithExpiration = terminateInstancesWithExpiration;
+		}
+
+		public String getValidUntil() {
+			return this.validUntil;
+		}
+
+		public void setValidUntil(String validUntil) {
+			this.validUntil = validUntil;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getAutoProvisioningGroupId() {
+			return this.autoProvisioningGroupId;
+		}
+
+		public void setAutoProvisioningGroupId(String autoProvisioningGroupId) {
+			this.autoProvisioningGroupId = autoProvisioningGroupId;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getLaunchTemplateVersion() {
+			return this.launchTemplateVersion;
+		}
+
+		public void setLaunchTemplateVersion(String launchTemplateVersion) {
+			this.launchTemplateVersion = launchTemplateVersion;
+		}
+
+		public String getValidFrom() {
+			return this.validFrom;
+		}
+
+		public void setValidFrom(String validFrom) {
+			this.validFrom = validFrom;
+		}
+
+		public Float getMaxSpotPrice() {
+			return this.maxSpotPrice;
+		}
+
+		public void setMaxSpotPrice(Float maxSpotPrice) {
+			this.maxSpotPrice = maxSpotPrice;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Boolean getTerminateInstances() {
+			return this.terminateInstances;
+		}
+
+		public void setTerminateInstances(Boolean terminateInstances) {
+			this.terminateInstances = terminateInstances;
 		}
 
 		public List<LaunchTemplateConfig> getLaunchTemplateConfigs() {
@@ -277,12 +277,12 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 			this.suspendedProcesses = suspendedProcesses;
 		}
 
-		public SpotOptions getSpotOptions() {
-			return this.spotOptions;
+		public TargetCapacitySpecification getTargetCapacitySpecification() {
+			return this.targetCapacitySpecification;
 		}
 
-		public void setSpotOptions(SpotOptions spotOptions) {
-			this.spotOptions = spotOptions;
+		public void setTargetCapacitySpecification(TargetCapacitySpecification targetCapacitySpecification) {
+			this.targetCapacitySpecification = targetCapacitySpecification;
 		}
 
 		public PayAsYouGoOptions getPayAsYouGoOptions() {
@@ -293,12 +293,12 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 			this.payAsYouGoOptions = payAsYouGoOptions;
 		}
 
-		public TargetCapacitySpecification getTargetCapacitySpecification() {
-			return this.targetCapacitySpecification;
+		public SpotOptions getSpotOptions() {
+			return this.spotOptions;
 		}
 
-		public void setTargetCapacitySpecification(TargetCapacitySpecification targetCapacitySpecification) {
-			this.targetCapacitySpecification = targetCapacitySpecification;
+		public void setSpotOptions(SpotOptions spotOptions) {
+			this.spotOptions = spotOptions;
 		}
 
 		public CandidateOptions getCandidateOptions() {
@@ -319,22 +319,22 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
 		public static class LaunchTemplateConfig {
 
-			private Float maxPrice;
+			private Float weightedCapacity;
 
 			private Float priority;
 
 			private String vSwitchId;
 
-			private Float weightedCapacity;
+			private Float maxPrice;
 
 			private String instanceType;
 
-			public Float getMaxPrice() {
-				return this.maxPrice;
+			public Float getWeightedCapacity() {
+				return this.weightedCapacity;
 			}
 
-			public void setMaxPrice(Float maxPrice) {
-				this.maxPrice = maxPrice;
+			public void setWeightedCapacity(Float weightedCapacity) {
+				this.weightedCapacity = weightedCapacity;
 			}
 
 			public Float getPriority() {
@@ -353,12 +353,12 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 				this.vSwitchId = vSwitchId;
 			}
 
-			public Float getWeightedCapacity() {
-				return this.weightedCapacity;
+			public Float getMaxPrice() {
+				return this.maxPrice;
 			}
 
-			public void setWeightedCapacity(Float weightedCapacity) {
-				this.weightedCapacity = weightedCapacity;
+			public void setMaxPrice(Float maxPrice) {
+				this.maxPrice = maxPrice;
 			}
 
 			public String getInstanceType() {
@@ -393,61 +393,31 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 			}
 		}
 
-		public static class SpotOptions {
-
-			private Integer instancePoolsToUseCount;
-
-			private String allocationStrategy;
-
-			private String instanceInterruptionBehavior;
-
-			public Integer getInstancePoolsToUseCount() {
-				return this.instancePoolsToUseCount;
-			}
-
-			public void setInstancePoolsToUseCount(Integer instancePoolsToUseCount) {
-				this.instancePoolsToUseCount = instancePoolsToUseCount;
-			}
-
-			public String getAllocationStrategy() {
-				return this.allocationStrategy;
-			}
-
-			public void setAllocationStrategy(String allocationStrategy) {
-				this.allocationStrategy = allocationStrategy;
-			}
-
-			public String getInstanceInterruptionBehavior() {
-				return this.instanceInterruptionBehavior;
-			}
-
-			public void setInstanceInterruptionBehavior(String instanceInterruptionBehavior) {
-				this.instanceInterruptionBehavior = instanceInterruptionBehavior;
-			}
-		}
-
-		public static class PayAsYouGoOptions {
-
-			private String allocationStrategy;
-
-			public String getAllocationStrategy() {
-				return this.allocationStrategy;
-			}
-
-			public void setAllocationStrategy(String allocationStrategy) {
-				this.allocationStrategy = allocationStrategy;
-			}
-		}
-
 		public static class TargetCapacitySpecification {
+
+			private String defaultTargetCapacityType;
+
+			private Float totalTargetCapacity;
 
 			private Float spotTargetCapacity;
 
 			private Float payAsYouGoTargetCapacity;
 
-			private String defaultTargetCapacityType;
+			public String getDefaultTargetCapacityType() {
+				return this.defaultTargetCapacityType;
+			}
 
-			private Float totalTargetCapacity;
+			public void setDefaultTargetCapacityType(String defaultTargetCapacityType) {
+				this.defaultTargetCapacityType = defaultTargetCapacityType;
+			}
+
+			public Float getTotalTargetCapacity() {
+				return this.totalTargetCapacity;
+			}
+
+			public void setTotalTargetCapacity(Float totalTargetCapacity) {
+				this.totalTargetCapacity = totalTargetCapacity;
+			}
 
 			public Float getSpotTargetCapacity() {
 				return this.spotTargetCapacity;
@@ -464,21 +434,51 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 			public void setPayAsYouGoTargetCapacity(Float payAsYouGoTargetCapacity) {
 				this.payAsYouGoTargetCapacity = payAsYouGoTargetCapacity;
 			}
+		}
 
-			public String getDefaultTargetCapacityType() {
-				return this.defaultTargetCapacityType;
+		public static class PayAsYouGoOptions {
+
+			private String allocationStrategy;
+
+			public String getAllocationStrategy() {
+				return this.allocationStrategy;
 			}
 
-			public void setDefaultTargetCapacityType(String defaultTargetCapacityType) {
-				this.defaultTargetCapacityType = defaultTargetCapacityType;
+			public void setAllocationStrategy(String allocationStrategy) {
+				this.allocationStrategy = allocationStrategy;
+			}
+		}
+
+		public static class SpotOptions {
+
+			private String allocationStrategy;
+
+			private String instanceInterruptionBehavior;
+
+			private Integer instancePoolsToUseCount;
+
+			public String getAllocationStrategy() {
+				return this.allocationStrategy;
 			}
 
-			public Float getTotalTargetCapacity() {
-				return this.totalTargetCapacity;
+			public void setAllocationStrategy(String allocationStrategy) {
+				this.allocationStrategy = allocationStrategy;
 			}
 
-			public void setTotalTargetCapacity(Float totalTargetCapacity) {
-				this.totalTargetCapacity = totalTargetCapacity;
+			public String getInstanceInterruptionBehavior() {
+				return this.instanceInterruptionBehavior;
+			}
+
+			public void setInstanceInterruptionBehavior(String instanceInterruptionBehavior) {
+				this.instanceInterruptionBehavior = instanceInterruptionBehavior;
+			}
+
+			public Integer getInstancePoolsToUseCount() {
+				return this.instancePoolsToUseCount;
+			}
+
+			public void setInstancePoolsToUseCount(Integer instancePoolsToUseCount) {
+				this.instancePoolsToUseCount = instancePoolsToUseCount;
 			}
 		}
 
@@ -497,21 +497,13 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
 		public static class CapacitySpecification {
 
-			private Float payAsYouGoCapacity;
-
 			private Float prePaidCapacity;
 
-			private Float spotCapacity;
+			private Float payAsYouGoCapacity;
 
 			private Float totalCapacity;
 
-			public Float getPayAsYouGoCapacity() {
-				return this.payAsYouGoCapacity;
-			}
-
-			public void setPayAsYouGoCapacity(Float payAsYouGoCapacity) {
-				this.payAsYouGoCapacity = payAsYouGoCapacity;
-			}
+			private Float spotCapacity;
 
 			public Float getPrePaidCapacity() {
 				return this.prePaidCapacity;
@@ -521,12 +513,12 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 				this.prePaidCapacity = prePaidCapacity;
 			}
 
-			public Float getSpotCapacity() {
-				return this.spotCapacity;
+			public Float getPayAsYouGoCapacity() {
+				return this.payAsYouGoCapacity;
 			}
 
-			public void setSpotCapacity(Float spotCapacity) {
-				this.spotCapacity = spotCapacity;
+			public void setPayAsYouGoCapacity(Float payAsYouGoCapacity) {
+				this.payAsYouGoCapacity = payAsYouGoCapacity;
 			}
 
 			public Float getTotalCapacity() {
@@ -535,6 +527,14 @@ public class DescribeAutoProvisioningGroupsResponse extends AcsResponse {
 
 			public void setTotalCapacity(Float totalCapacity) {
 				this.totalCapacity = totalCapacity;
+			}
+
+			public Float getSpotCapacity() {
+				return this.spotCapacity;
+			}
+
+			public void setSpotCapacity(Float spotCapacity) {
+				this.spotCapacity = spotCapacity;
 			}
 		}
 	}

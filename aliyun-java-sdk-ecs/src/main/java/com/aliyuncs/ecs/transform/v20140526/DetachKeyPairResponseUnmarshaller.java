@@ -34,9 +34,9 @@ public class DetachKeyPairResponseUnmarshaller {
 		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("DetachKeyPairResponse.Results.Length"); i++) {
 			Result result = new Result();
-			result.setCode(_ctx.stringValue("DetachKeyPairResponse.Results["+ i +"].Code"));
 			result.setMessage(_ctx.stringValue("DetachKeyPairResponse.Results["+ i +"].Message"));
 			result.setInstanceId(_ctx.stringValue("DetachKeyPairResponse.Results["+ i +"].InstanceId"));
+			result.setCode(_ctx.stringValue("DetachKeyPairResponse.Results["+ i +"].Code"));
 			result.setSuccess(_ctx.stringValue("DetachKeyPairResponse.Results["+ i +"].Success"));
 
 			results.add(result);

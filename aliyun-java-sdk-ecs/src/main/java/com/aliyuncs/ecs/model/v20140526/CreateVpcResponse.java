@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVpcResponse extends AcsResponse {
 
-	private String vpcId;
-
 	private String vRouterId;
-
-	private String requestId;
 
 	private String routeTableId;
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
+	private String vpcId;
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-	}
+	private String requestId;
 
 	public String getVRouterId() {
 		return this.vRouterId;
@@ -48,20 +40,28 @@ public class CreateVpcResponse extends AcsResponse {
 		this.vRouterId = vRouterId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getRouteTableId() {
 		return this.routeTableId;
 	}
 
 	public void setRouteTableId(String routeTableId) {
 		this.routeTableId = routeTableId;
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

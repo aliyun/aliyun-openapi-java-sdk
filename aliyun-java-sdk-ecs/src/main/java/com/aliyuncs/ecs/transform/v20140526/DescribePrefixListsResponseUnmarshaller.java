@@ -33,20 +33,20 @@ public class DescribePrefixListsResponseUnmarshaller {
 		List<PrefixList> prefixLists = new ArrayList<PrefixList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePrefixListsResponse.PrefixLists.Length"); i++) {
 			PrefixList prefixList = new PrefixList();
-			prefixList.setCreationTime(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].CreationTime"));
-			prefixList.setAssociationCount(_ctx.integerValue("DescribePrefixListsResponse.PrefixLists["+ i +"].AssociationCount"));
 			prefixList.setMaxEntries(_ctx.integerValue("DescribePrefixListsResponse.PrefixLists["+ i +"].MaxEntries"));
 			prefixList.setDescription(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].Description"));
-			prefixList.setAddressFamily(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].AddressFamily"));
-			prefixList.setPrefixListName(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].PrefixListName"));
-			prefixList.setPrefixListId(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].PrefixListId"));
+			prefixList.setAssociationCount(_ctx.integerValue("DescribePrefixListsResponse.PrefixLists["+ i +"].AssociationCount"));
 			prefixList.setResourceGroupId(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].ResourceGroupId"));
+			prefixList.setPrefixListId(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].PrefixListId"));
+			prefixList.setPrefixListName(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].PrefixListName"));
+			prefixList.setCreationTime(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].CreationTime"));
+			prefixList.setAddressFamily(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].AddressFamily"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePrefixListsResponse.PrefixLists["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagValue(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].Tags["+ j +"].TagValue"));
 				tag.setTagKey(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].Tags["+ j +"].TagValue"));
 
 				tags.add(tag);
 			}

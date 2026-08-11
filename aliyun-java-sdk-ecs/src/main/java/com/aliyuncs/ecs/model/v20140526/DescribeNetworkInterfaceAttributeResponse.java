@@ -25,102 +25,134 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
-	private String creationTime;
+	private String description;
 
-	private String vpcId;
+	private String privateIpAddress;
 
-	private String type;
+	private Boolean serviceManaged;
+
+	private String resourceGroupId;
+
+	private Boolean deleteOnRelease;
+
+	private String networkInterfaceId;
+
+	private String ownerId;
 
 	private String status;
 
 	private String networkInterfaceTrafficMode;
 
+	private String requestId;
+
+	private String zoneId;
+
+	private String instanceId;
+
+	private String vSwitchId;
+
 	private String networkInterfaceName;
 
 	private String macAddress;
 
-	private Integer queuePairNumber;
-
-	private String networkInterfaceId;
-
 	private Long serviceID;
-
-	private String instanceId;
-
-	private String ownerId;
-
-	private Boolean serviceManaged;
-
-	private String vSwitchId;
-
-	private String requestId;
-
-	private String description;
-
-	private String resourceGroupId;
-
-	private String zoneId;
-
-	private String privateIpAddress;
-
-	private Integer queueNumber;
-
-	private Boolean deleteOnRelease;
 
 	private String tcpOptionAddressEnabled;
 
 	private Boolean sourceDestCheck;
 
-	private List<PrivateIpSet> privateIpSets;
+	private String type;
+
+	private Integer queuePairNumber;
+
+	private Integer queueNumber;
+
+	private String vpcId;
+
+	private String creationTime;
 
 	private List<Ipv6Set> ipv6Sets;
 
-	private List<Ipv4PrefixSet> ipv4PrefixSets;
+	private List<Tag> tags;
 
 	private List<Ipv6PrefixSet> ipv6PrefixSets;
 
-	private List<Tag> tags;
+	private List<Ipv4PrefixSet> ipv4PrefixSets;
+
+	private List<PrivateIpSet> privateIpSets;
 
 	private List<String> securityGroupIds;
 
-	private AssociatedPublicIp associatedPublicIp;
-
 	private Attachment attachment;
 
-	private BondInterfaceSpecification bondInterfaceSpecification;
+	private EnhancedNetwork enhancedNetwork;
+
+	private AssociatedPublicIp associatedPublicIp;
 
 	private SlaveInterfaceSpecification slaveInterfaceSpecification;
+
+	private QoSConfig qoSConfig;
+
+	private BondInterfaceSpecification bondInterfaceSpecification;
 
 	private NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig;
 
 	private ConnectionTrackingConfiguration connectionTrackingConfiguration;
 
-	private EnhancedNetwork enhancedNetwork;
-
-	private QoSConfig qoSConfig;
-
-	public String getCreationTime() {
-		return this.creationTime;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setCreationTime(String creationTime) {
-		this.creationTime = creationTime;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
 	}
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
 	}
 
-	public String getType() {
-		return this.type;
+	public Boolean getServiceManaged() {
+		return this.serviceManaged;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setServiceManaged(Boolean serviceManaged) {
+		this.serviceManaged = serviceManaged;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public Boolean getDeleteOnRelease() {
+		return this.deleteOnRelease;
+	}
+
+	public void setDeleteOnRelease(Boolean deleteOnRelease) {
+		this.deleteOnRelease = deleteOnRelease;
+	}
+
+	public String getNetworkInterfaceId() {
+		return this.networkInterfaceId;
+	}
+
+	public void setNetworkInterfaceId(String networkInterfaceId) {
+		this.networkInterfaceId = networkInterfaceId;
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
 	}
 
 	public String getStatus() {
@@ -139,6 +171,38 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+	}
+
 	public String getNetworkInterfaceName() {
 		return this.networkInterfaceName;
 	}
@@ -155,116 +219,12 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		this.macAddress = macAddress;
 	}
 
-	public Integer getQueuePairNumber() {
-		return this.queuePairNumber;
-	}
-
-	public void setQueuePairNumber(Integer queuePairNumber) {
-		this.queuePairNumber = queuePairNumber;
-	}
-
-	public String getNetworkInterfaceId() {
-		return this.networkInterfaceId;
-	}
-
-	public void setNetworkInterfaceId(String networkInterfaceId) {
-		this.networkInterfaceId = networkInterfaceId;
-	}
-
 	public Long getServiceID() {
 		return this.serviceID;
 	}
 
 	public void setServiceID(Long serviceID) {
 		this.serviceID = serviceID;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-	}
-
-	public Boolean getServiceManaged() {
-		return this.serviceManaged;
-	}
-
-	public void setServiceManaged(Boolean serviceManaged) {
-		this.serviceManaged = serviceManaged;
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-	}
-
-	public String getPrivateIpAddress() {
-		return this.privateIpAddress;
-	}
-
-	public void setPrivateIpAddress(String privateIpAddress) {
-		this.privateIpAddress = privateIpAddress;
-	}
-
-	public Integer getQueueNumber() {
-		return this.queueNumber;
-	}
-
-	public void setQueueNumber(Integer queueNumber) {
-		this.queueNumber = queueNumber;
-	}
-
-	public Boolean getDeleteOnRelease() {
-		return this.deleteOnRelease;
-	}
-
-	public void setDeleteOnRelease(Boolean deleteOnRelease) {
-		this.deleteOnRelease = deleteOnRelease;
 	}
 
 	public String getTcpOptionAddressEnabled() {
@@ -283,12 +243,44 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		this.sourceDestCheck = sourceDestCheck;
 	}
 
-	public List<PrivateIpSet> getPrivateIpSets() {
-		return this.privateIpSets;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setPrivateIpSets(List<PrivateIpSet> privateIpSets) {
-		this.privateIpSets = privateIpSets;
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public Integer getQueuePairNumber() {
+		return this.queuePairNumber;
+	}
+
+	public void setQueuePairNumber(Integer queuePairNumber) {
+		this.queuePairNumber = queuePairNumber;
+	}
+
+	public Integer getQueueNumber() {
+		return this.queueNumber;
+	}
+
+	public void setQueueNumber(Integer queueNumber) {
+		this.queueNumber = queueNumber;
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+	}
+
+	public String getCreationTime() {
+		return this.creationTime;
+	}
+
+	public void setCreationTime(String creationTime) {
+		this.creationTime = creationTime;
 	}
 
 	public List<Ipv6Set> getIpv6Sets() {
@@ -299,12 +291,12 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		this.ipv6Sets = ipv6Sets;
 	}
 
-	public List<Ipv4PrefixSet> getIpv4PrefixSets() {
-		return this.ipv4PrefixSets;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setIpv4PrefixSets(List<Ipv4PrefixSet> ipv4PrefixSets) {
-		this.ipv4PrefixSets = ipv4PrefixSets;
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
 	}
 
 	public List<Ipv6PrefixSet> getIpv6PrefixSets() {
@@ -315,12 +307,20 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		this.ipv6PrefixSets = ipv6PrefixSets;
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
+	public List<Ipv4PrefixSet> getIpv4PrefixSets() {
+		return this.ipv4PrefixSets;
 	}
 
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;
+	public void setIpv4PrefixSets(List<Ipv4PrefixSet> ipv4PrefixSets) {
+		this.ipv4PrefixSets = ipv4PrefixSets;
+	}
+
+	public List<PrivateIpSet> getPrivateIpSets() {
+		return this.privateIpSets;
+	}
+
+	public void setPrivateIpSets(List<PrivateIpSet> privateIpSets) {
+		this.privateIpSets = privateIpSets;
 	}
 
 	public List<String> getSecurityGroupIds() {
@@ -331,14 +331,6 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		this.securityGroupIds = securityGroupIds;
 	}
 
-	public AssociatedPublicIp getAssociatedPublicIp() {
-		return this.associatedPublicIp;
-	}
-
-	public void setAssociatedPublicIp(AssociatedPublicIp associatedPublicIp) {
-		this.associatedPublicIp = associatedPublicIp;
-	}
-
 	public Attachment getAttachment() {
 		return this.attachment;
 	}
@@ -347,12 +339,20 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		this.attachment = attachment;
 	}
 
-	public BondInterfaceSpecification getBondInterfaceSpecification() {
-		return this.bondInterfaceSpecification;
+	public EnhancedNetwork getEnhancedNetwork() {
+		return this.enhancedNetwork;
 	}
 
-	public void setBondInterfaceSpecification(BondInterfaceSpecification bondInterfaceSpecification) {
-		this.bondInterfaceSpecification = bondInterfaceSpecification;
+	public void setEnhancedNetwork(EnhancedNetwork enhancedNetwork) {
+		this.enhancedNetwork = enhancedNetwork;
+	}
+
+	public AssociatedPublicIp getAssociatedPublicIp() {
+		return this.associatedPublicIp;
+	}
+
+	public void setAssociatedPublicIp(AssociatedPublicIp associatedPublicIp) {
+		this.associatedPublicIp = associatedPublicIp;
 	}
 
 	public SlaveInterfaceSpecification getSlaveInterfaceSpecification() {
@@ -361,6 +361,22 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 	public void setSlaveInterfaceSpecification(SlaveInterfaceSpecification slaveInterfaceSpecification) {
 		this.slaveInterfaceSpecification = slaveInterfaceSpecification;
+	}
+
+	public QoSConfig getQoSConfig() {
+		return this.qoSConfig;
+	}
+
+	public void setQoSConfig(QoSConfig qoSConfig) {
+		this.qoSConfig = qoSConfig;
+	}
+
+	public BondInterfaceSpecification getBondInterfaceSpecification() {
+		return this.bondInterfaceSpecification;
+	}
+
+	public void setBondInterfaceSpecification(BondInterfaceSpecification bondInterfaceSpecification) {
+		this.bondInterfaceSpecification = bondInterfaceSpecification;
 	}
 
 	public NetworkInterfaceTrafficConfig getNetworkInterfaceTrafficConfig() {
@@ -379,20 +395,76 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		this.connectionTrackingConfiguration = connectionTrackingConfiguration;
 	}
 
-	public EnhancedNetwork getEnhancedNetwork() {
-		return this.enhancedNetwork;
+	public static class Ipv6Set {
+
+		private Boolean primary;
+
+		private String ipv6Address;
+
+		public Boolean getPrimary() {
+			return this.primary;
+		}
+
+		public void setPrimary(Boolean primary) {
+			this.primary = primary;
+		}
+
+		public String getIpv6Address() {
+			return this.ipv6Address;
+		}
+
+		public void setIpv6Address(String ipv6Address) {
+			this.ipv6Address = ipv6Address;
+		}
 	}
 
-	public void setEnhancedNetwork(EnhancedNetwork enhancedNetwork) {
-		this.enhancedNetwork = enhancedNetwork;
+	public static class Tag {
+
+		private String tagKey;
+
+		private String tagValue;
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
 	}
 
-	public QoSConfig getQoSConfig() {
-		return this.qoSConfig;
+	public static class Ipv6PrefixSet {
+
+		private String ipv6Prefix;
+
+		public String getIpv6Prefix() {
+			return this.ipv6Prefix;
+		}
+
+		public void setIpv6Prefix(String ipv6Prefix) {
+			this.ipv6Prefix = ipv6Prefix;
+		}
 	}
 
-	public void setQoSConfig(QoSConfig qoSConfig) {
-		this.qoSConfig = qoSConfig;
+	public static class Ipv4PrefixSet {
+
+		private String ipv4Prefix;
+
+		public String getIpv4Prefix() {
+			return this.ipv4Prefix;
+		}
+
+		public void setIpv4Prefix(String ipv4Prefix) {
+			this.ipv4Prefix = ipv4Prefix;
+		}
 	}
 
 	public static class PrivateIpSet {
@@ -451,65 +523,109 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		}
 	}
 
-	public static class Ipv6Set {
+	public static class Attachment {
 
-		private String ipv6Address;
+		private String instanceId;
 
-		public String getIpv6Address() {
-			return this.ipv6Address;
+		private Integer deviceIndex;
+
+		private Integer networkCardIndex;
+
+		private String trunkNetworkInterfaceId;
+
+		private List<String> memberNetworkInterfaceIds;
+
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setIpv6Address(String ipv6Address) {
-			this.ipv6Address = ipv6Address;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Integer getDeviceIndex() {
+			return this.deviceIndex;
+		}
+
+		public void setDeviceIndex(Integer deviceIndex) {
+			this.deviceIndex = deviceIndex;
+		}
+
+		public Integer getNetworkCardIndex() {
+			return this.networkCardIndex;
+		}
+
+		public void setNetworkCardIndex(Integer networkCardIndex) {
+			this.networkCardIndex = networkCardIndex;
+		}
+
+		public String getTrunkNetworkInterfaceId() {
+			return this.trunkNetworkInterfaceId;
+		}
+
+		public void setTrunkNetworkInterfaceId(String trunkNetworkInterfaceId) {
+			this.trunkNetworkInterfaceId = trunkNetworkInterfaceId;
+		}
+
+		public List<String> getMemberNetworkInterfaceIds() {
+			return this.memberNetworkInterfaceIds;
+		}
+
+		public void setMemberNetworkInterfaceIds(List<String> memberNetworkInterfaceIds) {
+			this.memberNetworkInterfaceIds = memberNetworkInterfaceIds;
 		}
 	}
 
-	public static class Ipv4PrefixSet {
+	public static class EnhancedNetwork {
 
-		private String ipv4Prefix;
+		private Boolean enableRss;
 
-		public String getIpv4Prefix() {
-			return this.ipv4Prefix;
+		private Integer virtualFunctionTotalQueueNumber;
+
+		private Boolean enableSriov;
+
+		private Integer virtualFunctionQuantity;
+
+		private Boolean enableExpress;
+
+		public Boolean getEnableRss() {
+			return this.enableRss;
 		}
 
-		public void setIpv4Prefix(String ipv4Prefix) {
-			this.ipv4Prefix = ipv4Prefix;
-		}
-	}
-
-	public static class Ipv6PrefixSet {
-
-		private String ipv6Prefix;
-
-		public String getIpv6Prefix() {
-			return this.ipv6Prefix;
+		public void setEnableRss(Boolean enableRss) {
+			this.enableRss = enableRss;
 		}
 
-		public void setIpv6Prefix(String ipv6Prefix) {
-			this.ipv6Prefix = ipv6Prefix;
-		}
-	}
-
-	public static class Tag {
-
-		private String tagValue;
-
-		private String tagKey;
-
-		public String getTagValue() {
-			return this.tagValue;
+		public Integer getVirtualFunctionTotalQueueNumber() {
+			return this.virtualFunctionTotalQueueNumber;
 		}
 
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
+		public void setVirtualFunctionTotalQueueNumber(Integer virtualFunctionTotalQueueNumber) {
+			this.virtualFunctionTotalQueueNumber = virtualFunctionTotalQueueNumber;
 		}
 
-		public String getTagKey() {
-			return this.tagKey;
+		public Boolean getEnableSriov() {
+			return this.enableSriov;
 		}
 
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
+		public void setEnableSriov(Boolean enableSriov) {
+			this.enableSriov = enableSriov;
+		}
+
+		public Integer getVirtualFunctionQuantity() {
+			return this.virtualFunctionQuantity;
+		}
+
+		public void setVirtualFunctionQuantity(Integer virtualFunctionQuantity) {
+			this.virtualFunctionQuantity = virtualFunctionQuantity;
+		}
+
+		public Boolean getEnableExpress() {
+			return this.enableExpress;
+		}
+
+		public void setEnableExpress(Boolean enableExpress) {
+			this.enableExpress = enableExpress;
 		}
 	}
 
@@ -536,56 +652,112 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		}
 	}
 
-	public static class Attachment {
+	public static class SlaveInterfaceSpecification {
 
-		private Integer deviceIndex;
+		private String bondNetworkInterfaceId;
 
-		private String instanceId;
+		private String workState;
 
-		private String trunkNetworkInterfaceId;
+		private String slaveNetworkInterfaceId;
 
-		private Integer networkCardIndex;
-
-		private List<String> memberNetworkInterfaceIds;
-
-		public Integer getDeviceIndex() {
-			return this.deviceIndex;
+		public String getBondNetworkInterfaceId() {
+			return this.bondNetworkInterfaceId;
 		}
 
-		public void setDeviceIndex(Integer deviceIndex) {
-			this.deviceIndex = deviceIndex;
+		public void setBondNetworkInterfaceId(String bondNetworkInterfaceId) {
+			this.bondNetworkInterfaceId = bondNetworkInterfaceId;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getWorkState() {
+			return this.workState;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setWorkState(String workState) {
+			this.workState = workState;
 		}
 
-		public String getTrunkNetworkInterfaceId() {
-			return this.trunkNetworkInterfaceId;
+		public String getSlaveNetworkInterfaceId() {
+			return this.slaveNetworkInterfaceId;
 		}
 
-		public void setTrunkNetworkInterfaceId(String trunkNetworkInterfaceId) {
-			this.trunkNetworkInterfaceId = trunkNetworkInterfaceId;
+		public void setSlaveNetworkInterfaceId(String slaveNetworkInterfaceId) {
+			this.slaveNetworkInterfaceId = slaveNetworkInterfaceId;
+		}
+	}
+
+	public static class QoSConfig {
+
+		private Boolean enableQoS;
+
+		private QoS qoS;
+
+		public Boolean getEnableQoS() {
+			return this.enableQoS;
 		}
 
-		public Integer getNetworkCardIndex() {
-			return this.networkCardIndex;
+		public void setEnableQoS(Boolean enableQoS) {
+			this.enableQoS = enableQoS;
 		}
 
-		public void setNetworkCardIndex(Integer networkCardIndex) {
-			this.networkCardIndex = networkCardIndex;
+		public QoS getQoS() {
+			return this.qoS;
 		}
 
-		public List<String> getMemberNetworkInterfaceIds() {
-			return this.memberNetworkInterfaceIds;
+		public void setQoS(QoS qoS) {
+			this.qoS = qoS;
 		}
 
-		public void setMemberNetworkInterfaceIds(List<String> memberNetworkInterfaceIds) {
-			this.memberNetworkInterfaceIds = memberNetworkInterfaceIds;
+		public static class QoS {
+
+			private Long ppsRx;
+
+			private Long bandwidthTx;
+
+			private Long bandwidthRx;
+
+			private Long ppsTx;
+
+			private Long concurrentConnections;
+
+			public Long getPpsRx() {
+				return this.ppsRx;
+			}
+
+			public void setPpsRx(Long ppsRx) {
+				this.ppsRx = ppsRx;
+			}
+
+			public Long getBandwidthTx() {
+				return this.bandwidthTx;
+			}
+
+			public void setBandwidthTx(Long bandwidthTx) {
+				this.bandwidthTx = bandwidthTx;
+			}
+
+			public Long getBandwidthRx() {
+				return this.bandwidthRx;
+			}
+
+			public void setBandwidthRx(Long bandwidthRx) {
+				this.bandwidthRx = bandwidthRx;
+			}
+
+			public Long getPpsTx() {
+				return this.ppsTx;
+			}
+
+			public void setPpsTx(Long ppsTx) {
+				this.ppsTx = ppsTx;
+			}
+
+			public Long getConcurrentConnections() {
+				return this.concurrentConnections;
+			}
+
+			public void setConcurrentConnections(Long concurrentConnections) {
+				this.concurrentConnections = concurrentConnections;
+			}
 		}
 	}
 
@@ -613,18 +785,18 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 		public static class SlaveInterfaceSpecificationSet {
 
-			private String slaveNetworkInterfaceId;
+			private String bondNetworkInterfaceId;
 
 			private String workState;
 
-			private String bondNetworkInterfaceId;
+			private String slaveNetworkInterfaceId;
 
-			public String getSlaveNetworkInterfaceId() {
-				return this.slaveNetworkInterfaceId;
+			public String getBondNetworkInterfaceId() {
+				return this.bondNetworkInterfaceId;
 			}
 
-			public void setSlaveNetworkInterfaceId(String slaveNetworkInterfaceId) {
-				this.slaveNetworkInterfaceId = slaveNetworkInterfaceId;
+			public void setBondNetworkInterfaceId(String bondNetworkInterfaceId) {
+				this.bondNetworkInterfaceId = bondNetworkInterfaceId;
 			}
 
 			public String getWorkState() {
@@ -635,46 +807,13 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 				this.workState = workState;
 			}
 
-			public String getBondNetworkInterfaceId() {
-				return this.bondNetworkInterfaceId;
+			public String getSlaveNetworkInterfaceId() {
+				return this.slaveNetworkInterfaceId;
 			}
 
-			public void setBondNetworkInterfaceId(String bondNetworkInterfaceId) {
-				this.bondNetworkInterfaceId = bondNetworkInterfaceId;
+			public void setSlaveNetworkInterfaceId(String slaveNetworkInterfaceId) {
+				this.slaveNetworkInterfaceId = slaveNetworkInterfaceId;
 			}
-		}
-	}
-
-	public static class SlaveInterfaceSpecification {
-
-		private String slaveNetworkInterfaceId;
-
-		private String workState;
-
-		private String bondNetworkInterfaceId;
-
-		public String getSlaveNetworkInterfaceId() {
-			return this.slaveNetworkInterfaceId;
-		}
-
-		public void setSlaveNetworkInterfaceId(String slaveNetworkInterfaceId) {
-			this.slaveNetworkInterfaceId = slaveNetworkInterfaceId;
-		}
-
-		public String getWorkState() {
-			return this.workState;
-		}
-
-		public void setWorkState(String workState) {
-			this.workState = workState;
-		}
-
-		public String getBondNetworkInterfaceId() {
-			return this.bondNetworkInterfaceId;
-		}
-
-		public void setBondNetworkInterfaceId(String bondNetworkInterfaceId) {
-			this.bondNetworkInterfaceId = bondNetworkInterfaceId;
 		}
 	}
 
@@ -713,19 +852,11 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 	public static class ConnectionTrackingConfiguration {
 
-		private Integer tcpEstablishedTimeout;
-
 		private Integer tcpClosedAndTimeWaitTimeout;
 
 		private Integer udpTimeout;
 
-		public Integer getTcpEstablishedTimeout() {
-			return this.tcpEstablishedTimeout;
-		}
-
-		public void setTcpEstablishedTimeout(Integer tcpEstablishedTimeout) {
-			this.tcpEstablishedTimeout = tcpEstablishedTimeout;
-		}
+		private Integer tcpEstablishedTimeout;
 
 		public Integer getTcpClosedAndTimeWaitTimeout() {
 			return this.tcpClosedAndTimeWaitTimeout;
@@ -742,124 +873,13 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		public void setUdpTimeout(Integer udpTimeout) {
 			this.udpTimeout = udpTimeout;
 		}
-	}
 
-	public static class EnhancedNetwork {
-
-		private Boolean enableSriov;
-
-		private Boolean enableRss;
-
-		private Integer virtualFunctionTotalQueueNumber;
-
-		private Integer virtualFunctionQuantity;
-
-		public Boolean getEnableSriov() {
-			return this.enableSriov;
+		public Integer getTcpEstablishedTimeout() {
+			return this.tcpEstablishedTimeout;
 		}
 
-		public void setEnableSriov(Boolean enableSriov) {
-			this.enableSriov = enableSriov;
-		}
-
-		public Boolean getEnableRss() {
-			return this.enableRss;
-		}
-
-		public void setEnableRss(Boolean enableRss) {
-			this.enableRss = enableRss;
-		}
-
-		public Integer getVirtualFunctionTotalQueueNumber() {
-			return this.virtualFunctionTotalQueueNumber;
-		}
-
-		public void setVirtualFunctionTotalQueueNumber(Integer virtualFunctionTotalQueueNumber) {
-			this.virtualFunctionTotalQueueNumber = virtualFunctionTotalQueueNumber;
-		}
-
-		public Integer getVirtualFunctionQuantity() {
-			return this.virtualFunctionQuantity;
-		}
-
-		public void setVirtualFunctionQuantity(Integer virtualFunctionQuantity) {
-			this.virtualFunctionQuantity = virtualFunctionQuantity;
-		}
-	}
-
-	public static class QoSConfig {
-
-		private Boolean enableQoS;
-
-		private QoS qoS;
-
-		public Boolean getEnableQoS() {
-			return this.enableQoS;
-		}
-
-		public void setEnableQoS(Boolean enableQoS) {
-			this.enableQoS = enableQoS;
-		}
-
-		public QoS getQoS() {
-			return this.qoS;
-		}
-
-		public void setQoS(QoS qoS) {
-			this.qoS = qoS;
-		}
-
-		public static class QoS {
-
-			private Long bandwidthTx;
-
-			private Long bandwidthRx;
-
-			private Long ppsTx;
-
-			private Long ppsRx;
-
-			private Long concurrentConnections;
-
-			public Long getBandwidthTx() {
-				return this.bandwidthTx;
-			}
-
-			public void setBandwidthTx(Long bandwidthTx) {
-				this.bandwidthTx = bandwidthTx;
-			}
-
-			public Long getBandwidthRx() {
-				return this.bandwidthRx;
-			}
-
-			public void setBandwidthRx(Long bandwidthRx) {
-				this.bandwidthRx = bandwidthRx;
-			}
-
-			public Long getPpsTx() {
-				return this.ppsTx;
-			}
-
-			public void setPpsTx(Long ppsTx) {
-				this.ppsTx = ppsTx;
-			}
-
-			public Long getPpsRx() {
-				return this.ppsRx;
-			}
-
-			public void setPpsRx(Long ppsRx) {
-				this.ppsRx = ppsRx;
-			}
-
-			public Long getConcurrentConnections() {
-				return this.concurrentConnections;
-			}
-
-			public void setConcurrentConnections(Long concurrentConnections) {
-				this.concurrentConnections = concurrentConnections;
-			}
+		public void setTcpEstablishedTimeout(Integer tcpEstablishedTimeout) {
+			this.tcpEstablishedTimeout = tcpEstablishedTimeout;
 		}
 	}
 

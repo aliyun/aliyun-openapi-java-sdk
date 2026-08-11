@@ -47,28 +47,20 @@ public class DescribeReservedInstanceAutoRenewAttributeResponse extends AcsRespo
 
 	public static class ReservedInstanceRenewAttribute {
 
-		private String periodUnit;
-
-		private Integer duration;
+		private String renewalStatus;
 
 		private String reservedInstanceId;
 
-		private String renewalStatus;
+		private Integer duration;
 
-		public String getPeriodUnit() {
-			return this.periodUnit;
+		private String periodUnit;
+
+		public String getRenewalStatus() {
+			return this.renewalStatus;
 		}
 
-		public void setPeriodUnit(String periodUnit) {
-			this.periodUnit = periodUnit;
-		}
-
-		public Integer getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(Integer duration) {
-			this.duration = duration;
+		public void setRenewalStatus(String renewalStatus) {
+			this.renewalStatus = renewalStatus;
 		}
 
 		public String getReservedInstanceId() {
@@ -79,12 +71,20 @@ public class DescribeReservedInstanceAutoRenewAttributeResponse extends AcsRespo
 			this.reservedInstanceId = reservedInstanceId;
 		}
 
-		public String getRenewalStatus() {
-			return this.renewalStatus;
+		public Integer getDuration() {
+			return this.duration;
 		}
 
-		public void setRenewalStatus(String renewalStatus) {
-			this.renewalStatus = renewalStatus;
+		public void setDuration(Integer duration) {
+			this.duration = duration;
+		}
+
+		public String getPeriodUnit() {
+			return this.periodUnit;
+		}
+
+		public void setPeriodUnit(String periodUnit) {
+			this.periodUnit = periodUnit;
 		}
 	}
 

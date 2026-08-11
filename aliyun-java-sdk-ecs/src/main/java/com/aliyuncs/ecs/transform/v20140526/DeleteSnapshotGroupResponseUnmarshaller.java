@@ -32,15 +32,15 @@ public class DeleteSnapshotGroupResponseUnmarshaller {
 		List<OperationProgress> operationProgressSet = new ArrayList<OperationProgress>();
 		for (int i = 0; i < _ctx.lengthValue("DeleteSnapshotGroupResponse.OperationProgressSet.Length"); i++) {
 			OperationProgress operationProgress = new OperationProgress();
+			operationProgress.setOperationStatus(_ctx.stringValue("DeleteSnapshotGroupResponse.OperationProgressSet["+ i +"].OperationStatus"));
 			operationProgress.setErrorMsg(_ctx.stringValue("DeleteSnapshotGroupResponse.OperationProgressSet["+ i +"].ErrorMsg"));
 			operationProgress.setErrorCode(_ctx.stringValue("DeleteSnapshotGroupResponse.OperationProgressSet["+ i +"].ErrorCode"));
-			operationProgress.setOperationStatus(_ctx.stringValue("DeleteSnapshotGroupResponse.OperationProgressSet["+ i +"].OperationStatus"));
 
 			List<RelatedItem> relatedItemSet = new ArrayList<RelatedItem>();
 			for (int j = 0; j < _ctx.lengthValue("DeleteSnapshotGroupResponse.OperationProgressSet["+ i +"].RelatedItemSet.Length"); j++) {
 				RelatedItem relatedItem = new RelatedItem();
-				relatedItem.setName(_ctx.stringValue("DeleteSnapshotGroupResponse.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Name"));
 				relatedItem.setValue(_ctx.stringValue("DeleteSnapshotGroupResponse.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Value"));
+				relatedItem.setName(_ctx.stringValue("DeleteSnapshotGroupResponse.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Name"));
 
 				relatedItemSet.add(relatedItem);
 			}

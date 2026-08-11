@@ -69,34 +69,34 @@ public class DescribeAccountAttributesResponse extends AcsResponse {
 
 		public static class ValueItem {
 
-			private String diskCategory;
-
-			private String value;
-
-			private String expiredTime;
-
 			private String zoneId;
-
-			private String instanceType;
-
-			private Integer count;
 
 			private String instanceChargeType;
 
-			public String getDiskCategory() {
-				return this.diskCategory;
+			private String expiredTime;
+
+			private String value;
+
+			private String diskCategory;
+
+			private Integer count;
+
+			private String instanceType;
+
+			public String getZoneId() {
+				return this.zoneId;
 			}
 
-			public void setDiskCategory(String diskCategory) {
-				this.diskCategory = diskCategory;
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
 			}
 
-			public String getValue() {
-				return this.value;
+			public String getInstanceChargeType() {
+				return this.instanceChargeType;
 			}
 
-			public void setValue(String value) {
-				this.value = value;
+			public void setInstanceChargeType(String instanceChargeType) {
+				this.instanceChargeType = instanceChargeType;
 			}
 
 			public String getExpiredTime() {
@@ -107,20 +107,20 @@ public class DescribeAccountAttributesResponse extends AcsResponse {
 				this.expiredTime = expiredTime;
 			}
 
-			public String getZoneId() {
-				return this.zoneId;
+			public String getValue() {
+				return this.value;
 			}
 
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
+			public void setValue(String value) {
+				this.value = value;
 			}
 
-			public String getInstanceType() {
-				return this.instanceType;
+			public String getDiskCategory() {
+				return this.diskCategory;
 			}
 
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
+			public void setDiskCategory(String diskCategory) {
+				this.diskCategory = diskCategory;
 			}
 
 			public Integer getCount() {
@@ -131,12 +131,12 @@ public class DescribeAccountAttributesResponse extends AcsResponse {
 				this.count = count;
 			}
 
-			public String getInstanceChargeType() {
-				return this.instanceChargeType;
+			public String getInstanceType() {
+				return this.instanceType;
 			}
 
-			public void setInstanceChargeType(String instanceChargeType) {
-				this.instanceChargeType = instanceChargeType;
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
 			}
 		}
 	}

@@ -57,37 +57,21 @@ public class DescribeEniMonitorDataResponse extends AcsResponse {
 
 	public static class EniMonitorData {
 
-		private String packetRx;
-
-		private String timeStamp;
-
 		private String dropPacketRx;
+
+		private String packetTx;
+
+		private String packetRx;
 
 		private String eniId;
 
 		private String dropPacketTx;
 
-		private String packetTx;
-
 		private String intranetTx;
 
+		private String timeStamp;
+
 		private String intranetRx;
-
-		public String getPacketRx() {
-			return this.packetRx;
-		}
-
-		public void setPacketRx(String packetRx) {
-			this.packetRx = packetRx;
-		}
-
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
 
 		public String getDropPacketRx() {
 			return this.dropPacketRx;
@@ -95,6 +79,22 @@ public class DescribeEniMonitorDataResponse extends AcsResponse {
 
 		public void setDropPacketRx(String dropPacketRx) {
 			this.dropPacketRx = dropPacketRx;
+		}
+
+		public String getPacketTx() {
+			return this.packetTx;
+		}
+
+		public void setPacketTx(String packetTx) {
+			this.packetTx = packetTx;
+		}
+
+		public String getPacketRx() {
+			return this.packetRx;
+		}
+
+		public void setPacketRx(String packetRx) {
+			this.packetRx = packetRx;
 		}
 
 		public String getEniId() {
@@ -113,20 +113,20 @@ public class DescribeEniMonitorDataResponse extends AcsResponse {
 			this.dropPacketTx = dropPacketTx;
 		}
 
-		public String getPacketTx() {
-			return this.packetTx;
-		}
-
-		public void setPacketTx(String packetTx) {
-			this.packetTx = packetTx;
-		}
-
 		public String getIntranetTx() {
 			return this.intranetTx;
 		}
 
 		public void setIntranetTx(String intranetTx) {
 			this.intranetTx = intranetTx;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 
 		public String getIntranetRx() {

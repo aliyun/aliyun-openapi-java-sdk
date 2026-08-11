@@ -47,32 +47,24 @@ public class DescribeDedicatedHostAutoRenewResponse extends AcsResponse {
 
 	public static class DedicatedHostRenewAttribute {
 
-		private String periodUnit;
-
-		private Integer duration;
+		private Boolean autoRenewEnabled;
 
 		private String dedicatedHostId;
 
 		private String renewalStatus;
 
-		private Boolean autoRenewEnabled;
-
 		private String autoRenewWithEcs;
 
-		public String getPeriodUnit() {
-			return this.periodUnit;
+		private Integer duration;
+
+		private String periodUnit;
+
+		public Boolean getAutoRenewEnabled() {
+			return this.autoRenewEnabled;
 		}
 
-		public void setPeriodUnit(String periodUnit) {
-			this.periodUnit = periodUnit;
-		}
-
-		public Integer getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(Integer duration) {
-			this.duration = duration;
+		public void setAutoRenewEnabled(Boolean autoRenewEnabled) {
+			this.autoRenewEnabled = autoRenewEnabled;
 		}
 
 		public String getDedicatedHostId() {
@@ -91,20 +83,28 @@ public class DescribeDedicatedHostAutoRenewResponse extends AcsResponse {
 			this.renewalStatus = renewalStatus;
 		}
 
-		public Boolean getAutoRenewEnabled() {
-			return this.autoRenewEnabled;
-		}
-
-		public void setAutoRenewEnabled(Boolean autoRenewEnabled) {
-			this.autoRenewEnabled = autoRenewEnabled;
-		}
-
 		public String getAutoRenewWithEcs() {
 			return this.autoRenewWithEcs;
 		}
 
 		public void setAutoRenewWithEcs(String autoRenewWithEcs) {
 			this.autoRenewWithEcs = autoRenewWithEcs;
+		}
+
+		public Integer getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Integer duration) {
+			this.duration = duration;
+		}
+
+		public String getPeriodUnit() {
+			return this.periodUnit;
+		}
+
+		public void setPeriodUnit(String periodUnit) {
+			this.periodUnit = periodUnit;
 		}
 	}
 

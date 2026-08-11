@@ -210,22 +210,14 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 
 	public static class EncryptionOptions {
 
-		@SerializedName("Enabled")
-		private Boolean enabled;
-
 		@SerializedName("KMSKeyId")
 		private String kMSKeyId;
 
 		@SerializedName("Mode")
 		private String mode;
 
-		public Boolean getEnabled() {
-			return this.enabled;
-		}
-
-		public void setEnabled(Boolean enabled) {
-			this.enabled = enabled;
-		}
+		@SerializedName("Enabled")
+		private Boolean enabled;
 
 		public String getKMSKeyId() {
 			return this.kMSKeyId;
@@ -241,6 +233,14 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 
 		public void setMode(String mode) {
 			this.mode = mode;
+		}
+
+		public Boolean getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
 		}
 	}
 

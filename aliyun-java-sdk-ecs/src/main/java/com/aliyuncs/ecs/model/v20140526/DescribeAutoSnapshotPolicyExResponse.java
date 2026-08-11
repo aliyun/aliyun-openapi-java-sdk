@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<AutoSnapshotPolicy> autoSnapshotPolicies;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<AutoSnapshotPolicy> getAutoSnapshotPolicies() {
 		return this.autoSnapshotPolicies;
 	}
@@ -77,55 +77,43 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 
 	public static class AutoSnapshotPolicy {
 
-		private String timePoints;
-
-		private String creationTime;
-
 		private String status;
 
-		private String autoSnapshotPolicyName;
-
-		private String targetCopyRegions;
-
-		private Integer copiedSnapshotsRetentionDays;
-
-		private String autoSnapshotPolicyId;
-
-		private Integer retentionDays;
-
-		private String regionId;
-
-		private Integer diskNums;
-
-		private Boolean enableCrossRegionCopy;
-
-		private String repeatWeekdays;
+		private String timePoints;
 
 		private Integer volumeNums;
 
 		private String resourceGroupId;
 
+		private String autoSnapshotPolicyId;
+
+		private Integer retentionDays;
+
+		private String repeatWeekdays;
+
+		private Integer diskNums;
+
+		private Integer copiedSnapshotsRetentionDays;
+
 		private String type;
+
+		private String targetCopyRegions;
+
+		private String associationType;
+
+		private Boolean enableCrossRegionCopy;
+
+		private String creationTime;
+
+		private String regionId;
+
+		private String autoSnapshotPolicyName;
+
+		private List<TargetTag> targetTags;
 
 		private List<Tag> tags;
 
 		private CopyEncryptionConfiguration copyEncryptionConfiguration;
-
-		public String getTimePoints() {
-			return this.timePoints;
-		}
-
-		public void setTimePoints(String timePoints) {
-			this.timePoints = timePoints;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -135,76 +123,12 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getAutoSnapshotPolicyName() {
-			return this.autoSnapshotPolicyName;
+		public String getTimePoints() {
+			return this.timePoints;
 		}
 
-		public void setAutoSnapshotPolicyName(String autoSnapshotPolicyName) {
-			this.autoSnapshotPolicyName = autoSnapshotPolicyName;
-		}
-
-		public String getTargetCopyRegions() {
-			return this.targetCopyRegions;
-		}
-
-		public void setTargetCopyRegions(String targetCopyRegions) {
-			this.targetCopyRegions = targetCopyRegions;
-		}
-
-		public Integer getCopiedSnapshotsRetentionDays() {
-			return this.copiedSnapshotsRetentionDays;
-		}
-
-		public void setCopiedSnapshotsRetentionDays(Integer copiedSnapshotsRetentionDays) {
-			this.copiedSnapshotsRetentionDays = copiedSnapshotsRetentionDays;
-		}
-
-		public String getAutoSnapshotPolicyId() {
-			return this.autoSnapshotPolicyId;
-		}
-
-		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
-			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
-		}
-
-		public Integer getRetentionDays() {
-			return this.retentionDays;
-		}
-
-		public void setRetentionDays(Integer retentionDays) {
-			this.retentionDays = retentionDays;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public Integer getDiskNums() {
-			return this.diskNums;
-		}
-
-		public void setDiskNums(Integer diskNums) {
-			this.diskNums = diskNums;
-		}
-
-		public Boolean getEnableCrossRegionCopy() {
-			return this.enableCrossRegionCopy;
-		}
-
-		public void setEnableCrossRegionCopy(Boolean enableCrossRegionCopy) {
-			this.enableCrossRegionCopy = enableCrossRegionCopy;
-		}
-
-		public String getRepeatWeekdays() {
-			return this.repeatWeekdays;
-		}
-
-		public void setRepeatWeekdays(String repeatWeekdays) {
-			this.repeatWeekdays = repeatWeekdays;
+		public void setTimePoints(String timePoints) {
+			this.timePoints = timePoints;
 		}
 
 		public Integer getVolumeNums() {
@@ -223,12 +147,108 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public String getAutoSnapshotPolicyId() {
+			return this.autoSnapshotPolicyId;
+		}
+
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		}
+
+		public Integer getRetentionDays() {
+			return this.retentionDays;
+		}
+
+		public void setRetentionDays(Integer retentionDays) {
+			this.retentionDays = retentionDays;
+		}
+
+		public String getRepeatWeekdays() {
+			return this.repeatWeekdays;
+		}
+
+		public void setRepeatWeekdays(String repeatWeekdays) {
+			this.repeatWeekdays = repeatWeekdays;
+		}
+
+		public Integer getDiskNums() {
+			return this.diskNums;
+		}
+
+		public void setDiskNums(Integer diskNums) {
+			this.diskNums = diskNums;
+		}
+
+		public Integer getCopiedSnapshotsRetentionDays() {
+			return this.copiedSnapshotsRetentionDays;
+		}
+
+		public void setCopiedSnapshotsRetentionDays(Integer copiedSnapshotsRetentionDays) {
+			this.copiedSnapshotsRetentionDays = copiedSnapshotsRetentionDays;
+		}
+
 		public String getType() {
 			return this.type;
 		}
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getTargetCopyRegions() {
+			return this.targetCopyRegions;
+		}
+
+		public void setTargetCopyRegions(String targetCopyRegions) {
+			this.targetCopyRegions = targetCopyRegions;
+		}
+
+		public String getAssociationType() {
+			return this.associationType;
+		}
+
+		public void setAssociationType(String associationType) {
+			this.associationType = associationType;
+		}
+
+		public Boolean getEnableCrossRegionCopy() {
+			return this.enableCrossRegionCopy;
+		}
+
+		public void setEnableCrossRegionCopy(Boolean enableCrossRegionCopy) {
+			this.enableCrossRegionCopy = enableCrossRegionCopy;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getAutoSnapshotPolicyName() {
+			return this.autoSnapshotPolicyName;
+		}
+
+		public void setAutoSnapshotPolicyName(String autoSnapshotPolicyName) {
+			this.autoSnapshotPolicyName = autoSnapshotPolicyName;
+		}
+
+		public List<TargetTag> getTargetTags() {
+			return this.targetTags;
+		}
+
+		public void setTargetTags(List<TargetTag> targetTags) {
+			this.targetTags = targetTags;
 		}
 
 		public List<Tag> getTags() {
@@ -247,19 +267,11 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 			this.copyEncryptionConfiguration = copyEncryptionConfiguration;
 		}
 
-		public static class Tag {
-
-			private String tagValue;
+		public static class TargetTag {
 
 			private String tagKey;
 
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
+			private String tagValue;
 
 			public String getTagKey() {
 				return this.tagKey;
@@ -268,21 +280,44 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
 			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 
 		public static class CopyEncryptionConfiguration {
 
-			private Boolean encrypted;
-
 			private String kMSKeyId;
 
-			public Boolean getEncrypted() {
-				return this.encrypted;
-			}
-
-			public void setEncrypted(Boolean encrypted) {
-				this.encrypted = encrypted;
-			}
+			private Boolean encrypted;
 
 			public String getKMSKeyId() {
 				return this.kMSKeyId;
@@ -290,6 +325,14 @@ public class DescribeAutoSnapshotPolicyExResponse extends AcsResponse {
 
 			public void setKMSKeyId(String kMSKeyId) {
 				this.kMSKeyId = kMSKeyId;
+			}
+
+			public Boolean getEncrypted() {
+				return this.encrypted;
+			}
+
+			public void setEncrypted(Boolean encrypted) {
+				this.encrypted = encrypted;
 			}
 		}
 	}

@@ -27,19 +27,19 @@ public class DescribeInstanceAutoRenewAttributeResponseUnmarshaller {
 	public static DescribeInstanceAutoRenewAttributeResponse unmarshall(DescribeInstanceAutoRenewAttributeResponse describeInstanceAutoRenewAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceAutoRenewAttributeResponse.setRequestId(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.RequestId"));
-		describeInstanceAutoRenewAttributeResponse.setPageNumber(_ctx.integerValue("DescribeInstanceAutoRenewAttributeResponse.PageNumber"));
-		describeInstanceAutoRenewAttributeResponse.setPageSize(_ctx.integerValue("DescribeInstanceAutoRenewAttributeResponse.PageSize"));
 		describeInstanceAutoRenewAttributeResponse.setTotalCount(_ctx.integerValue("DescribeInstanceAutoRenewAttributeResponse.TotalCount"));
+		describeInstanceAutoRenewAttributeResponse.setPageSize(_ctx.integerValue("DescribeInstanceAutoRenewAttributeResponse.PageSize"));
+		describeInstanceAutoRenewAttributeResponse.setPageNumber(_ctx.integerValue("DescribeInstanceAutoRenewAttributeResponse.PageNumber"));
 
 		List<InstanceRenewAttribute> instanceRenewAttributes = new ArrayList<InstanceRenewAttribute>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes.Length"); i++) {
 			InstanceRenewAttribute instanceRenewAttribute = new InstanceRenewAttribute();
-			instanceRenewAttribute.setPeriodUnit(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].PeriodUnit"));
-			instanceRenewAttribute.setDuration(_ctx.integerValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].Duration"));
-			instanceRenewAttribute.setRenewalStatus(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].RenewalStatus"));
-			instanceRenewAttribute.setInstanceId(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].InstanceId"));
 			instanceRenewAttribute.setAutoRenewEnabled(_ctx.booleanValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].AutoRenewEnabled"));
 			instanceRenewAttribute.setEnableExpectedRenewDay(_ctx.booleanValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].EnableExpectedRenewDay"));
+			instanceRenewAttribute.setInstanceId(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].InstanceId"));
+			instanceRenewAttribute.setRenewalStatus(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].RenewalStatus"));
+			instanceRenewAttribute.setDuration(_ctx.integerValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].Duration"));
+			instanceRenewAttribute.setPeriodUnit(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].PeriodUnit"));
 
 			instanceRenewAttributes.add(instanceRenewAttribute);
 		}

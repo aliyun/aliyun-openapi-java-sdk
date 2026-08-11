@@ -66,10 +66,10 @@ public class EnableNetworkInterfaceQoSRequest extends RpcAcsRequest<EnableNetwor
 		this.qoS = qoS;	
 		if (qoS != null) {
 			
+				putQueryParameter("QoS.PpsRx" , qoS.getPpsRx());
 				putQueryParameter("QoS.BandwidthTx" , qoS.getBandwidthTx());
 				putQueryParameter("QoS.BandwidthRx" , qoS.getBandwidthRx());
 				putQueryParameter("QoS.PpsTx" , qoS.getPpsTx());
-				putQueryParameter("QoS.PpsRx" , qoS.getPpsRx());
 				putQueryParameter("QoS.ConcurrentConnections" , qoS.getConcurrentConnections());
 		}	
 	}
@@ -120,15 +120,23 @@ public class EnableNetworkInterfaceQoSRequest extends RpcAcsRequest<EnableNetwor
 
 	public static class QoS {
 
+		private Long ppsRx;
+
 		private Long bandwidthTx;
 
 		private Long bandwidthRx;
 
 		private Long ppsTx;
 
-		private Long ppsRx;
-
 		private Long concurrentConnections;
+
+		public Long getPpsRx() {
+			return this.ppsRx;
+		}
+
+		public void setPpsRx(Long ppsRx) {
+			this.ppsRx = ppsRx;
+		}
 
 		public Long getBandwidthTx() {
 			return this.bandwidthTx;
@@ -152,14 +160,6 @@ public class EnableNetworkInterfaceQoSRequest extends RpcAcsRequest<EnableNetwor
 
 		public void setPpsTx(Long ppsTx) {
 			this.ppsTx = ppsTx;
-		}
-
-		public Long getPpsRx() {
-			return this.ppsRx;
-		}
-
-		public void setPpsRx(Long ppsRx) {
-			this.ppsRx = ppsRx;
 		}
 
 		public Long getConcurrentConnections() {

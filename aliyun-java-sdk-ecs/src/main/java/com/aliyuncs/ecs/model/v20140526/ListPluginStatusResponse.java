@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPluginStatusResponse extends AcsResponse {
 
+	private Long totalCount;
+
 	private Long pageSize;
 
 	private String requestId;
 
-	private Long pageNumber;
-
-	private Long totalCount;
-
 	private String nextToken;
 
+	private Long pageNumber;
+
 	private List<InstancePluginStatus> instancePluginStatusSet;
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Long getPageSize() {
 		return this.pageSize;
@@ -53,28 +61,20 @@ public class ListPluginStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<InstancePluginStatus> getInstancePluginStatusSet() {

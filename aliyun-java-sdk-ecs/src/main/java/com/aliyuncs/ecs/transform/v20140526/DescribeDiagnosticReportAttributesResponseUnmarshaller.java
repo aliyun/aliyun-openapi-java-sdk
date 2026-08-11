@@ -28,35 +28,35 @@ public class DescribeDiagnosticReportAttributesResponseUnmarshaller {
 	public static DescribeDiagnosticReportAttributesResponse unmarshall(DescribeDiagnosticReportAttributesResponse describeDiagnosticReportAttributesResponse, UnmarshallerContext _ctx) {
 		
 		describeDiagnosticReportAttributesResponse.setRequestId(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.RequestId"));
-		describeDiagnosticReportAttributesResponse.setResourceId(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.ResourceId"));
-		describeDiagnosticReportAttributesResponse.setResourceType(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.ResourceType"));
-		describeDiagnosticReportAttributesResponse.setReportId(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.ReportId"));
 		describeDiagnosticReportAttributesResponse.setStatus(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.Status"));
-		describeDiagnosticReportAttributesResponse.setCreationTime(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.CreationTime"));
-		describeDiagnosticReportAttributesResponse.setFinishedTime(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.FinishedTime"));
-		describeDiagnosticReportAttributesResponse.setStartTime(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.StartTime"));
 		describeDiagnosticReportAttributesResponse.setEndTime(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.EndTime"));
-		describeDiagnosticReportAttributesResponse.setSeverity(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.Severity"));
 		describeDiagnosticReportAttributesResponse.setMetricSetId(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricSetId"));
+		describeDiagnosticReportAttributesResponse.setStartTime(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.StartTime"));
 		describeDiagnosticReportAttributesResponse.setAttributes(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.Attributes"));
+		describeDiagnosticReportAttributesResponse.setReportId(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.ReportId"));
+		describeDiagnosticReportAttributesResponse.setResourceType(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.ResourceType"));
+		describeDiagnosticReportAttributesResponse.setSeverity(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.Severity"));
+		describeDiagnosticReportAttributesResponse.setFinishedTime(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.FinishedTime"));
+		describeDiagnosticReportAttributesResponse.setResourceId(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.ResourceId"));
+		describeDiagnosticReportAttributesResponse.setCreationTime(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.CreationTime"));
 
 		List<MetricResult> metricResults = new ArrayList<MetricResult>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDiagnosticReportAttributesResponse.MetricResults.Length"); i++) {
 			MetricResult metricResult = new MetricResult();
-			metricResult.setMetricId(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].MetricId"));
-			metricResult.setMetricCategory(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].MetricCategory"));
-			metricResult.setSeverity(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Severity"));
 			metricResult.setStatus(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Status"));
+			metricResult.setMetricId(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].MetricId"));
+			metricResult.setSeverity(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Severity"));
+			metricResult.setMetricCategory(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].MetricCategory"));
 
 			List<Issue> issues = new ArrayList<Issue>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues.Length"); j++) {
 				Issue issue = new Issue();
-				issue.setIssueId(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].IssueId"));
-				issue.setSeverity(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].Severity"));
-				issue.setAdditional(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].Additional"));
 				issue.setOccurrenceTime(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].OccurrenceTime"));
-				issue.setRepairStatus(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].RepairStatus"));
 				issue.setRepairable(_ctx.booleanValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].Repairable"));
+				issue.setAdditional(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].Additional"));
+				issue.setSeverity(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].Severity"));
+				issue.setRepairStatus(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].RepairStatus"));
+				issue.setIssueId(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricResults["+ i +"].Issues["+ j +"].IssueId"));
 
 				issues.add(issue);
 			}

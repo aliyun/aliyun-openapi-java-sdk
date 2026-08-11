@@ -57,32 +57,24 @@ public class DescribeDiagnosticMetricSetsResponse extends AcsResponse {
 
 	public static class MetricSet {
 
-		private String metricSetId;
-
-		private String metricSetName;
+		private String type;
 
 		private String description;
 
-		private String type;
+		private String metricSetId;
 
 		private String resourceType;
 
+		private String metricSetName;
+
 		private List<String> metricIds;
 
-		public String getMetricSetId() {
-			return this.metricSetId;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setMetricSetId(String metricSetId) {
-			this.metricSetId = metricSetId;
-		}
-
-		public String getMetricSetName() {
-			return this.metricSetName;
-		}
-
-		public void setMetricSetName(String metricSetName) {
-			this.metricSetName = metricSetName;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getDescription() {
@@ -93,12 +85,12 @@ public class DescribeDiagnosticMetricSetsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getMetricSetId() {
+			return this.metricSetId;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setMetricSetId(String metricSetId) {
+			this.metricSetId = metricSetId;
 		}
 
 		public String getResourceType() {
@@ -107,6 +99,14 @@ public class DescribeDiagnosticMetricSetsResponse extends AcsResponse {
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
+		}
+
+		public String getMetricSetName() {
+			return this.metricSetName;
+		}
+
+		public void setMetricSetName(String metricSetName) {
+			this.metricSetName = metricSetName;
 		}
 
 		public List<String> getMetricIds() {

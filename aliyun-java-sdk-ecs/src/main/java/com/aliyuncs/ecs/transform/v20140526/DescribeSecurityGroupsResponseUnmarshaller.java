@@ -28,34 +28,34 @@ public class DescribeSecurityGroupsResponseUnmarshaller {
 	public static DescribeSecurityGroupsResponse unmarshall(DescribeSecurityGroupsResponse describeSecurityGroupsResponse, UnmarshallerContext _ctx) {
 		
 		describeSecurityGroupsResponse.setRequestId(_ctx.stringValue("DescribeSecurityGroupsResponse.RequestId"));
-		describeSecurityGroupsResponse.setRegionId(_ctx.stringValue("DescribeSecurityGroupsResponse.RegionId"));
-		describeSecurityGroupsResponse.setNextToken(_ctx.stringValue("DescribeSecurityGroupsResponse.NextToken"));
 		describeSecurityGroupsResponse.setTotalCount(_ctx.integerValue("DescribeSecurityGroupsResponse.TotalCount"));
-		describeSecurityGroupsResponse.setPageNumber(_ctx.integerValue("DescribeSecurityGroupsResponse.PageNumber"));
+		describeSecurityGroupsResponse.setNextToken(_ctx.stringValue("DescribeSecurityGroupsResponse.NextToken"));
 		describeSecurityGroupsResponse.setPageSize(_ctx.integerValue("DescribeSecurityGroupsResponse.PageSize"));
+		describeSecurityGroupsResponse.setPageNumber(_ctx.integerValue("DescribeSecurityGroupsResponse.PageNumber"));
+		describeSecurityGroupsResponse.setRegionId(_ctx.stringValue("DescribeSecurityGroupsResponse.RegionId"));
 
 		List<SecurityGroup> securityGroups = new ArrayList<SecurityGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityGroupsResponse.SecurityGroups.Length"); i++) {
 			SecurityGroup securityGroup = new SecurityGroup();
-			securityGroup.setSecurityGroupId(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupId"));
-			securityGroup.setSecurityGroupName(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupName"));
-			securityGroup.setDescription(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Description"));
-			securityGroup.setSecurityGroupType(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupType"));
-			securityGroup.setVpcId(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].VpcId"));
-			securityGroup.setCreationTime(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].CreationTime"));
+			securityGroup.setRuleCount(_ctx.integerValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].RuleCount"));
 			securityGroup.setEcsCount(_ctx.integerValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].EcsCount"));
-			securityGroup.setAvailableInstanceAmount(_ctx.integerValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].AvailableInstanceAmount"));
+			securityGroup.setDescription(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Description"));
+			securityGroup.setSecurityGroupName(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupName"));
 			securityGroup.setResourceGroupId(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].ResourceGroupId"));
 			securityGroup.setServiceManaged(_ctx.booleanValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].ServiceManaged"));
+			securityGroup.setSecurityGroupId(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupId"));
+			securityGroup.setSecurityGroupType(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupType"));
+			securityGroup.setAvailableInstanceAmount(_ctx.integerValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].AvailableInstanceAmount"));
 			securityGroup.setServiceID(_ctx.longValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].ServiceID"));
-			securityGroup.setRuleCount(_ctx.integerValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].RuleCount"));
+			securityGroup.setVpcId(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].VpcId"));
 			securityGroup.setGroupToGroupRuleCount(_ctx.integerValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].GroupToGroupRuleCount"));
+			securityGroup.setCreationTime(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].CreationTime"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagValue(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Tags["+ j +"].TagValue"));
 				tag.setTagKey(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Tags["+ j +"].TagValue"));
 
 				tags.add(tag);
 			}

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<MaintenanceAttribute> maintenanceAttributes;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<MaintenanceAttribute> getMaintenanceAttributes() {
 		return this.maintenanceAttributes;
 	}
@@ -77,21 +77,13 @@ public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 
 	public static class MaintenanceAttribute {
 
-		private Boolean notifyOnMaintenance;
-
 		private String instanceId;
+
+		private Boolean notifyOnMaintenance;
 
 		private List<MaintenanceWindow> maintenanceWindows;
 
 		private ActionOnMaintenance actionOnMaintenance;
-
-		public Boolean getNotifyOnMaintenance() {
-			return this.notifyOnMaintenance;
-		}
-
-		public void setNotifyOnMaintenance(Boolean notifyOnMaintenance) {
-			this.notifyOnMaintenance = notifyOnMaintenance;
-		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -99,6 +91,14 @@ public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public Boolean getNotifyOnMaintenance() {
+			return this.notifyOnMaintenance;
+		}
+
+		public void setNotifyOnMaintenance(Boolean notifyOnMaintenance) {
+			this.notifyOnMaintenance = notifyOnMaintenance;
 		}
 
 		public List<MaintenanceWindow> getMaintenanceWindows() {

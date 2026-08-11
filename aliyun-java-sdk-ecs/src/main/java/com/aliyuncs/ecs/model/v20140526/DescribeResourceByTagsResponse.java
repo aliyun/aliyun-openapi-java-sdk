@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeResourceByTagsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
 
 	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<Resource> resources;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class DescribeResourceByTagsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<Resource> getResources() {
 		return this.resources;
 	}
@@ -77,19 +77,11 @@ public class DescribeResourceByTagsResponse extends AcsResponse {
 
 	public static class Resource {
 
-		private String resourceType;
-
 		private String resourceId;
 
+		private String resourceType;
+
 		private String regionId;
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
 
 		public String getResourceId() {
 			return this.resourceId;
@@ -97,6 +89,14 @@ public class DescribeResourceByTagsResponse extends AcsResponse {
 
 		public void setResourceId(String resourceId) {
 			this.resourceId = resourceId;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public String getRegionId() {

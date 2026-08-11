@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEipAddressesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<EipAddress> eipAddresses;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<EipAddress> getEipAddresses() {
 		return this.eipAddresses;
 	}
@@ -79,27 +79,27 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String status;
 
-		private String allocationTime;
-
-		private String chargeType;
-
 		private String instanceId;
-
-		private String instanceType;
-
-		private String regionId;
-
-		private String ipAddress;
-
-		private String bandwidth;
-
-		private String expiredTime;
 
 		private String allocationId;
 
 		private String internetChargeType;
 
+		private String allocationTime;
+
 		private String eipBandwidth;
+
+		private String chargeType;
+
+		private String bandwidth;
+
+		private String expiredTime;
+
+		private String ipAddress;
+
+		private String regionId;
+
+		private String instanceType;
 
 		private List<LockReason> operationLocks;
 
@@ -111,68 +111,12 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getAllocationTime() {
-			return this.allocationTime;
-		}
-
-		public void setAllocationTime(String allocationTime) {
-			this.allocationTime = allocationTime;
-		}
-
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getIpAddress() {
-			return this.ipAddress;
-		}
-
-		public void setIpAddress(String ipAddress) {
-			this.ipAddress = ipAddress;
-		}
-
-		public String getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(String bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
 		}
 
 		public String getAllocationId() {
@@ -191,12 +135,68 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.internetChargeType = internetChargeType;
 		}
 
+		public String getAllocationTime() {
+			return this.allocationTime;
+		}
+
+		public void setAllocationTime(String allocationTime) {
+			this.allocationTime = allocationTime;
+		}
+
 		public String getEipBandwidth() {
 			return this.eipBandwidth;
 		}
 
 		public void setEipBandwidth(String eipBandwidth) {
 			this.eipBandwidth = eipBandwidth;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(String bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getIpAddress() {
+			return this.ipAddress;
+		}
+
+		public void setIpAddress(String ipAddress) {
+			this.ipAddress = ipAddress;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public List<LockReason> getOperationLocks() {

@@ -65,11 +65,11 @@ public class ModifyReservedInstancesRequest extends RpcAcsRequest<ModifyReserved
 		this.configurations = configurations;	
 		if (configurations != null) {
 			for (int depth1 = 0; depth1 < configurations.size(); depth1++) {
-				putQueryParameter("Configuration." + (depth1 + 1) + ".ReservedInstanceName" , configurations.get(depth1).getReservedInstanceName());
+				putQueryParameter("Configuration." + (depth1 + 1) + ".InstanceAmount" , configurations.get(depth1).getInstanceAmount());
 				putQueryParameter("Configuration." + (depth1 + 1) + ".ZoneId" , configurations.get(depth1).getZoneId());
 				putQueryParameter("Configuration." + (depth1 + 1) + ".Scope" , configurations.get(depth1).getScope());
+				putQueryParameter("Configuration." + (depth1 + 1) + ".ReservedInstanceName" , configurations.get(depth1).getReservedInstanceName());
 				putQueryParameter("Configuration." + (depth1 + 1) + ".InstanceType" , configurations.get(depth1).getInstanceType());
-				putQueryParameter("Configuration." + (depth1 + 1) + ".InstanceAmount" , configurations.get(depth1).getInstanceAmount());
 			}
 		}	
 	}
@@ -122,22 +122,22 @@ public class ModifyReservedInstancesRequest extends RpcAcsRequest<ModifyReserved
 
 	public static class Configuration {
 
-		private String reservedInstanceName;
+		private Integer instanceAmount;
 
 		private String zoneId;
 
 		private String scope;
 
+		private String reservedInstanceName;
+
 		private String instanceType;
 
-		private Integer instanceAmount;
-
-		public String getReservedInstanceName() {
-			return this.reservedInstanceName;
+		public Integer getInstanceAmount() {
+			return this.instanceAmount;
 		}
 
-		public void setReservedInstanceName(String reservedInstanceName) {
-			this.reservedInstanceName = reservedInstanceName;
+		public void setInstanceAmount(Integer instanceAmount) {
+			this.instanceAmount = instanceAmount;
 		}
 
 		public String getZoneId() {
@@ -156,20 +156,20 @@ public class ModifyReservedInstancesRequest extends RpcAcsRequest<ModifyReserved
 			this.scope = scope;
 		}
 
+		public String getReservedInstanceName() {
+			return this.reservedInstanceName;
+		}
+
+		public void setReservedInstanceName(String reservedInstanceName) {
+			this.reservedInstanceName = reservedInstanceName;
+		}
+
 		public String getInstanceType() {
 			return this.instanceType;
 		}
 
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
-		}
-
-		public Integer getInstanceAmount() {
-			return this.instanceAmount;
-		}
-
-		public void setInstanceAmount(Integer instanceAmount) {
-			this.instanceAmount = instanceAmount;
 		}
 	}
 

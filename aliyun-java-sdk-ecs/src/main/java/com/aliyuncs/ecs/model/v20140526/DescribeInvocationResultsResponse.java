@@ -47,31 +47,15 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 	public static class Invocation {
 
-		private Long pageSize;
-
-		private Long pageNumber;
-
 		private Long totalCount;
+
+		private Long pageSize;
 
 		private String nextToken;
 
+		private Long pageNumber;
+
 		private List<InvocationResult> invocationResults;
-
-		public Long getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Long pageSize) {
-			this.pageSize = pageSize;
-		}
-
-		public Long getPageNumber() {
-			return this.pageNumber;
-		}
-
-		public void setPageNumber(Long pageNumber) {
-			this.pageNumber = pageNumber;
-		}
 
 		public Long getTotalCount() {
 			return this.totalCount;
@@ -81,12 +65,28 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
+		public Long getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Long pageSize) {
+			this.pageSize = pageSize;
+		}
+
 		public String getNextToken() {
 			return this.nextToken;
 		}
 
 		public void setNextToken(String nextToken) {
 			this.nextToken = nextToken;
+		}
+
+		public Long getPageNumber() {
+			return this.pageNumber;
+		}
+
+		public void setPageNumber(Long pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public List<InvocationResult> getInvocationResults() {
@@ -99,15 +99,35 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 		public static class InvocationResult {
 
-			private Integer dropped;
-
 			private String ossOutputDelivery;
+
+			private String ossOutputErrorInfo;
+
+			private String ossOutputErrorCode;
+
+			private Long exitCode;
+
+			private String finishedTime;
+
+			private String ossOutputUri;
+
+			private String ossOutputStatus;
+
+			private String containerId;
+
+			private String containerName;
+
+			private String output;
+
+			private String invokeId;
+
+			private String stopTime;
+
+			private Integer dropped;
 
 			private String invocationStatus;
 
 			private String instanceId;
-
-			private Long exitCode;
 
 			private String errorInfo;
 
@@ -117,23 +137,7 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			private String invokeRecordStatus;
 
-			private String finishedTime;
-
-			private String ossOutputUri;
-
-			private String ossOutputStatus;
-
-			private String ossOutputErrorCode;
-
-			private String ossOutputErrorInfo;
-
 			private String username;
-
-			private String containerId;
-
-			private String containerName;
-
-			private String output;
 
 			private String launcher;
 
@@ -141,21 +145,9 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			private String errorCode;
 
-			private String invokeId;
-
 			private String terminationMode;
 
-			private String stopTime;
-
 			private List<Tag> tags;
-
-			public Integer getDropped() {
-				return this.dropped;
-			}
-
-			public void setDropped(Integer dropped) {
-				this.dropped = dropped;
-			}
 
 			public String getOssOutputDelivery() {
 				return this.ossOutputDelivery;
@@ -163,6 +155,102 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			public void setOssOutputDelivery(String ossOutputDelivery) {
 				this.ossOutputDelivery = ossOutputDelivery;
+			}
+
+			public String getOssOutputErrorInfo() {
+				return this.ossOutputErrorInfo;
+			}
+
+			public void setOssOutputErrorInfo(String ossOutputErrorInfo) {
+				this.ossOutputErrorInfo = ossOutputErrorInfo;
+			}
+
+			public String getOssOutputErrorCode() {
+				return this.ossOutputErrorCode;
+			}
+
+			public void setOssOutputErrorCode(String ossOutputErrorCode) {
+				this.ossOutputErrorCode = ossOutputErrorCode;
+			}
+
+			public Long getExitCode() {
+				return this.exitCode;
+			}
+
+			public void setExitCode(Long exitCode) {
+				this.exitCode = exitCode;
+			}
+
+			public String getFinishedTime() {
+				return this.finishedTime;
+			}
+
+			public void setFinishedTime(String finishedTime) {
+				this.finishedTime = finishedTime;
+			}
+
+			public String getOssOutputUri() {
+				return this.ossOutputUri;
+			}
+
+			public void setOssOutputUri(String ossOutputUri) {
+				this.ossOutputUri = ossOutputUri;
+			}
+
+			public String getOssOutputStatus() {
+				return this.ossOutputStatus;
+			}
+
+			public void setOssOutputStatus(String ossOutputStatus) {
+				this.ossOutputStatus = ossOutputStatus;
+			}
+
+			public String getContainerId() {
+				return this.containerId;
+			}
+
+			public void setContainerId(String containerId) {
+				this.containerId = containerId;
+			}
+
+			public String getContainerName() {
+				return this.containerName;
+			}
+
+			public void setContainerName(String containerName) {
+				this.containerName = containerName;
+			}
+
+			public String getOutput() {
+				return this.output;
+			}
+
+			public void setOutput(String output) {
+				this.output = output;
+			}
+
+			public String getInvokeId() {
+				return this.invokeId;
+			}
+
+			public void setInvokeId(String invokeId) {
+				this.invokeId = invokeId;
+			}
+
+			public String getStopTime() {
+				return this.stopTime;
+			}
+
+			public void setStopTime(String stopTime) {
+				this.stopTime = stopTime;
+			}
+
+			public Integer getDropped() {
+				return this.dropped;
+			}
+
+			public void setDropped(Integer dropped) {
+				this.dropped = dropped;
 			}
 
 			public String getInvocationStatus() {
@@ -179,14 +267,6 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
-			}
-
-			public Long getExitCode() {
-				return this.exitCode;
-			}
-
-			public void setExitCode(Long exitCode) {
-				this.exitCode = exitCode;
 			}
 
 			public String getErrorInfo() {
@@ -221,76 +301,12 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 				this.invokeRecordStatus = invokeRecordStatus;
 			}
 
-			public String getFinishedTime() {
-				return this.finishedTime;
-			}
-
-			public void setFinishedTime(String finishedTime) {
-				this.finishedTime = finishedTime;
-			}
-
-			public String getOssOutputUri() {
-				return this.ossOutputUri;
-			}
-
-			public void setOssOutputUri(String ossOutputUri) {
-				this.ossOutputUri = ossOutputUri;
-			}
-
-			public String getOssOutputStatus() {
-				return this.ossOutputStatus;
-			}
-
-			public void setOssOutputStatus(String ossOutputStatus) {
-				this.ossOutputStatus = ossOutputStatus;
-			}
-
-			public String getOssOutputErrorCode() {
-				return this.ossOutputErrorCode;
-			}
-
-			public void setOssOutputErrorCode(String ossOutputErrorCode) {
-				this.ossOutputErrorCode = ossOutputErrorCode;
-			}
-
-			public String getOssOutputErrorInfo() {
-				return this.ossOutputErrorInfo;
-			}
-
-			public void setOssOutputErrorInfo(String ossOutputErrorInfo) {
-				this.ossOutputErrorInfo = ossOutputErrorInfo;
-			}
-
 			public String getUsername() {
 				return this.username;
 			}
 
 			public void setUsername(String username) {
 				this.username = username;
-			}
-
-			public String getContainerId() {
-				return this.containerId;
-			}
-
-			public void setContainerId(String containerId) {
-				this.containerId = containerId;
-			}
-
-			public String getContainerName() {
-				return this.containerName;
-			}
-
-			public void setContainerName(String containerName) {
-				this.containerName = containerName;
-			}
-
-			public String getOutput() {
-				return this.output;
-			}
-
-			public void setOutput(String output) {
-				this.output = output;
 			}
 
 			public String getLauncher() {
@@ -317,28 +333,12 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 				this.errorCode = errorCode;
 			}
 
-			public String getInvokeId() {
-				return this.invokeId;
-			}
-
-			public void setInvokeId(String invokeId) {
-				this.invokeId = invokeId;
-			}
-
 			public String getTerminationMode() {
 				return this.terminationMode;
 			}
 
 			public void setTerminationMode(String terminationMode) {
 				this.terminationMode = terminationMode;
-			}
-
-			public String getStopTime() {
-				return this.stopTime;
-			}
-
-			public void setStopTime(String stopTime) {
-				this.stopTime = stopTime;
 			}
 
 			public List<Tag> getTags() {

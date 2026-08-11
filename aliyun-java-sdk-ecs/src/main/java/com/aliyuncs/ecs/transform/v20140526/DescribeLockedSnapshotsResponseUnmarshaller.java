@@ -33,14 +33,14 @@ public class DescribeLockedSnapshotsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo.Length"); i++) {
 			LockedSnapshotInfo lockedSnapshotInfo = new LockedSnapshotInfo();
 			lockedSnapshotInfo.setSnapshotId(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].SnapshotId"));
-			lockedSnapshotInfo.setLockMode(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].LockMode"));
-			lockedSnapshotInfo.setLockStatus(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].LockStatus"));
-			lockedSnapshotInfo.setLockCreationTime(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].LockCreationTime"));
-			lockedSnapshotInfo.setCoolOffPeriod(_ctx.integerValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].CoolOffPeriod"));
 			lockedSnapshotInfo.setCoolOffPeriodExpiredTime(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].CoolOffPeriodExpiredTime"));
-			lockedSnapshotInfo.setLockDuration(_ctx.integerValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].LockDuration"));
 			lockedSnapshotInfo.setLockDurationStartTime(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].LockDurationStartTime"));
+			lockedSnapshotInfo.setLockStatus(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].LockStatus"));
+			lockedSnapshotInfo.setCoolOffPeriod(_ctx.integerValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].CoolOffPeriod"));
 			lockedSnapshotInfo.setLockExpiredTime(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].LockExpiredTime"));
+			lockedSnapshotInfo.setLockDuration(_ctx.integerValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].LockDuration"));
+			lockedSnapshotInfo.setLockCreationTime(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].LockCreationTime"));
+			lockedSnapshotInfo.setLockMode(_ctx.stringValue("DescribeLockedSnapshotsResponse.LockedSnapshotsInfo["+ i +"].LockMode"));
 
 			lockedSnapshotsInfo.add(lockedSnapshotInfo);
 		}

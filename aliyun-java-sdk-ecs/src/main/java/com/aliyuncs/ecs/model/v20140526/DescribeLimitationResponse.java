@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLimitationResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String limitation;
 
 	private String value;
 
-	private String requestId;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getLimitation() {
 		return this.limitation;
@@ -44,14 +52,6 @@ public class DescribeLimitationResponse extends AcsResponse {
 
 	public void setValue(String value) {
 		this.value = value;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	@Override

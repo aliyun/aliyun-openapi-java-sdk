@@ -168,19 +168,11 @@ public class ModifyPlanMaintenanceWindowRequest extends RpcAcsRequest<ModifyPlan
 
 		public static class TagsItem {
 
-			@SerializedName("Key")
-			private String key;
-
 			@SerializedName("Value")
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			@SerializedName("Key")
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -189,24 +181,24 @@ public class ModifyPlanMaintenanceWindowRequest extends RpcAcsRequest<ModifyPlan
 			public void setValue(String value) {
 				this.value = value;
 			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
 		}
 	}
 
 	public static class TimePeriod {
 
-		@SerializedName("PeriodUnit")
-		private String periodUnit;
-
 		@SerializedName("RangeList")
 		private List<RangeListItem> rangeList;
 
-		public String getPeriodUnit() {
-			return this.periodUnit;
-		}
-
-		public void setPeriodUnit(String periodUnit) {
-			this.periodUnit = periodUnit;
-		}
+		@SerializedName("PeriodUnit")
+		private String periodUnit;
 
 		public List<RangeListItem> getRangeList() {
 			return this.rangeList;
@@ -216,21 +208,21 @@ public class ModifyPlanMaintenanceWindowRequest extends RpcAcsRequest<ModifyPlan
 			this.rangeList = rangeList;
 		}
 
-		public static class RangeListItem {
+		public String getPeriodUnit() {
+			return this.periodUnit;
+		}
 
-			@SerializedName("StartTime")
-			private String startTime;
+		public void setPeriodUnit(String periodUnit) {
+			this.periodUnit = periodUnit;
+		}
+
+		public static class RangeListItem {
 
 			@SerializedName("EndTime")
 			private String endTime;
 
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
+			@SerializedName("StartTime")
+			private String startTime;
 
 			public String getEndTime() {
 				return this.endTime;
@@ -238,6 +230,14 @@ public class ModifyPlanMaintenanceWindowRequest extends RpcAcsRequest<ModifyPlan
 
 			public void setEndTime(String endTime) {
 				this.endTime = endTime;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
 			}
 		}
 	}

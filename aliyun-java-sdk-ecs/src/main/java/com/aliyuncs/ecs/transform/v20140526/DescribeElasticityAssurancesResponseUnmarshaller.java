@@ -31,47 +31,59 @@ public class DescribeElasticityAssurancesResponseUnmarshaller {
 	public static DescribeElasticityAssurancesResponse unmarshall(DescribeElasticityAssurancesResponse describeElasticityAssurancesResponse, UnmarshallerContext _ctx) {
 		
 		describeElasticityAssurancesResponse.setRequestId(_ctx.stringValue("DescribeElasticityAssurancesResponse.RequestId"));
-		describeElasticityAssurancesResponse.setNextToken(_ctx.stringValue("DescribeElasticityAssurancesResponse.NextToken"));
 		describeElasticityAssurancesResponse.setTotalCount(_ctx.integerValue("DescribeElasticityAssurancesResponse.TotalCount"));
+		describeElasticityAssurancesResponse.setNextToken(_ctx.stringValue("DescribeElasticityAssurancesResponse.NextToken"));
 		describeElasticityAssurancesResponse.setMaxResults(_ctx.integerValue("DescribeElasticityAssurancesResponse.MaxResults"));
 
 		List<ElasticityAssuranceItem> elasticityAssuranceSet = new ArrayList<ElasticityAssuranceItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet.Length"); i++) {
 			ElasticityAssuranceItem elasticityAssuranceItem = new ElasticityAssuranceItem();
 			elasticityAssuranceItem.setStatus(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Status"));
-			elasticityAssuranceItem.setPrivatePoolOptionsMatchCriteria(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].PrivatePoolOptionsMatchCriteria"));
-			elasticityAssuranceItem.setPrivatePoolOptionsId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].PrivatePoolOptionsId"));
 			elasticityAssuranceItem.setUsedAssuranceTimes(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].UsedAssuranceTimes"));
+			elasticityAssuranceItem.setDescription(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Description"));
+			elasticityAssuranceItem.setEndTime(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].EndTime"));
+			elasticityAssuranceItem.setResourceGroupId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].ResourceGroupId"));
 			elasticityAssuranceItem.setLatestStartTime(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].LatestStartTime"));
 			elasticityAssuranceItem.setPrivatePoolOptionsName(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].PrivatePoolOptionsName"));
-			elasticityAssuranceItem.setRegionId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RegionId"));
-			elasticityAssuranceItem.setEndTime(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].EndTime"));
-			elasticityAssuranceItem.setStartTime(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].StartTime"));
-			elasticityAssuranceItem.setDescription(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Description"));
-			elasticityAssuranceItem.setResourceGroupId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].ResourceGroupId"));
-			elasticityAssuranceItem.setTotalAssuranceTimes(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].TotalAssuranceTimes"));
 			elasticityAssuranceItem.setInstanceChargeType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].InstanceChargeType"));
-			elasticityAssuranceItem.setStartTimeType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].StartTimeType"));
 			elasticityAssuranceItem.setElasticityAssuranceOwnerId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].ElasticityAssuranceOwnerId"));
+			elasticityAssuranceItem.setStartTime(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].StartTime"));
+			elasticityAssuranceItem.setStartTimeType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].StartTimeType"));
+			elasticityAssuranceItem.setPrivatePoolOptionsMatchCriteria(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].PrivatePoolOptionsMatchCriteria"));
+			elasticityAssuranceItem.setPrivatePoolOptionsId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].PrivatePoolOptionsId"));
+			elasticityAssuranceItem.setTotalAssuranceTimes(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].TotalAssuranceTimes"));
 			elasticityAssuranceItem.setPackageType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].PackageType"));
+			elasticityAssuranceItem.setRegionId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RegionId"));
+
+			List<RecurrenceRule> recurrenceRules = new ArrayList<RecurrenceRule>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules.Length"); j++) {
+				RecurrenceRule recurrenceRule = new RecurrenceRule();
+				recurrenceRule.setStartHour(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules["+ j +"].StartHour"));
+				recurrenceRule.setRecurrenceType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules["+ j +"].RecurrenceType"));
+				recurrenceRule.setEndHour(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules["+ j +"].EndHour"));
+				recurrenceRule.setRecurrenceValue(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules["+ j +"].RecurrenceValue"));
+
+				recurrenceRules.add(recurrenceRule);
+			}
+			elasticityAssuranceItem.setRecurrenceRules(recurrenceRules);
 
 			List<AllocatedResource> allocatedResources = new ArrayList<AllocatedResource>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources.Length"); j++) {
 				AllocatedResource allocatedResource = new AllocatedResource();
 				allocatedResource.setUsedAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].UsedAmount"));
-				allocatedResource.setTotalAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].TotalAmount"));
 				allocatedResource.setAvailableAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].AvailableAmount"));
-				allocatedResource.setFailedAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].FailedAmount"));
-				allocatedResource.setLockedAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].LockedAmount"));
 				allocatedResource.setZoneId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].zoneId"));
+				allocatedResource.setTotalAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].TotalAmount"));
+				allocatedResource.setFailedAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].FailedAmount"));
 				allocatedResource.setInstanceType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].InstanceType"));
+				allocatedResource.setLockedAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].LockedAmount"));
 
 				List<ElasticityAssuranceUsage> elasticityAssuranceUsages = new ArrayList<ElasticityAssuranceUsage>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].ElasticityAssuranceUsages.Length"); k++) {
 					ElasticityAssuranceUsage elasticityAssuranceUsage = new ElasticityAssuranceUsage();
+					elasticityAssuranceUsage.setUsedAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].ElasticityAssuranceUsages["+ k +"].UsedAmount"));
 					elasticityAssuranceUsage.setAccountId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].ElasticityAssuranceUsages["+ k +"].AccountId"));
 					elasticityAssuranceUsage.setServiceName(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].ElasticityAssuranceUsages["+ k +"].ServiceName"));
-					elasticityAssuranceUsage.setUsedAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].ElasticityAssuranceUsages["+ k +"].UsedAmount"));
 
 					elasticityAssuranceUsages.add(elasticityAssuranceUsage);
 				}
@@ -84,24 +96,12 @@ public class DescribeElasticityAssurancesResponseUnmarshaller {
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagValue(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Tags["+ j +"].TagValue"));
 				tag.setTagKey(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Tags["+ j +"].TagValue"));
 
 				tags.add(tag);
 			}
 			elasticityAssuranceItem.setTags(tags);
-
-			List<RecurrenceRule> recurrenceRules = new ArrayList<RecurrenceRule>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules.Length"); j++) {
-				RecurrenceRule recurrenceRule = new RecurrenceRule();
-				recurrenceRule.setRecurrenceType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules["+ j +"].RecurrenceType"));
-				recurrenceRule.setRecurrenceValue(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules["+ j +"].RecurrenceValue"));
-				recurrenceRule.setStartHour(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules["+ j +"].StartHour"));
-				recurrenceRule.setEndHour(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RecurrenceRules["+ j +"].EndHour"));
-
-				recurrenceRules.add(recurrenceRule);
-			}
-			elasticityAssuranceItem.setRecurrenceRules(recurrenceRules);
 
 			elasticityAssuranceSet.add(elasticityAssuranceItem);
 		}

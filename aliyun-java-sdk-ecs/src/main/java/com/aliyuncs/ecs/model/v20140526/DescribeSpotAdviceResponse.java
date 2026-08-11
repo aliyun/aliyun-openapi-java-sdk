@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSpotAdviceResponse extends AcsResponse {
 
-	private String regionId;
-
 	private String requestId;
 
+	private String regionId;
+
 	private List<AvailableSpotZone> availableSpotZones;
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class DescribeSpotAdviceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	public List<AvailableSpotZone> getAvailableSpotZones() {
@@ -81,9 +81,9 @@ public class DescribeSpotAdviceResponse extends AcsResponse {
 
 			private String interruptRateDesc;
 
-			private Integer averageSpotDiscount;
-
 			private String instanceType;
+
+			private Integer averageSpotDiscount;
 
 			private Float interruptionRate;
 
@@ -95,20 +95,20 @@ public class DescribeSpotAdviceResponse extends AcsResponse {
 				this.interruptRateDesc = interruptRateDesc;
 			}
 
-			public Integer getAverageSpotDiscount() {
-				return this.averageSpotDiscount;
-			}
-
-			public void setAverageSpotDiscount(Integer averageSpotDiscount) {
-				this.averageSpotDiscount = averageSpotDiscount;
-			}
-
 			public String getInstanceType() {
 				return this.instanceType;
 			}
 
 			public void setInstanceType(String instanceType) {
 				this.instanceType = instanceType;
+			}
+
+			public Integer getAverageSpotDiscount() {
+				return this.averageSpotDiscount;
+			}
+
+			public void setAverageSpotDiscount(Integer averageSpotDiscount) {
+				this.averageSpotDiscount = averageSpotDiscount;
 			}
 
 			public Float getInterruptionRate() {

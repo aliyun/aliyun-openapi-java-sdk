@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSecurityGroupsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private String regionId;
+	private String requestId;
 
 	private String nextToken;
 
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String regionId;
 
 	private List<SecurityGroup> securityGroups;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,14 +53,6 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
 	}
 
 	public String getNextToken() {
@@ -63,12 +63,12 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -79,12 +79,12 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRegionId() {
+		return this.regionId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	public List<SecurityGroup> getSecurityGroups() {
@@ -97,80 +97,40 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 	public static class SecurityGroup {
 
-		private String securityGroupId;
-
-		private String securityGroupName;
-
-		private String description;
-
-		private String securityGroupType;
-
-		private String vpcId;
-
-		private String creationTime;
+		private Integer ruleCount;
 
 		private Integer ecsCount;
 
-		private Integer availableInstanceAmount;
+		private String description;
+
+		private String securityGroupName;
 
 		private String resourceGroupId;
 
 		private Boolean serviceManaged;
 
+		private String securityGroupId;
+
+		private String securityGroupType;
+
+		private Integer availableInstanceAmount;
+
 		private Long serviceID;
 
-		private Integer ruleCount;
+		private String vpcId;
 
 		private Integer groupToGroupRuleCount;
 
+		private String creationTime;
+
 		private List<Tag> tags;
 
-		public String getSecurityGroupId() {
-			return this.securityGroupId;
+		public Integer getRuleCount() {
+			return this.ruleCount;
 		}
 
-		public void setSecurityGroupId(String securityGroupId) {
-			this.securityGroupId = securityGroupId;
-		}
-
-		public String getSecurityGroupName() {
-			return this.securityGroupName;
-		}
-
-		public void setSecurityGroupName(String securityGroupName) {
-			this.securityGroupName = securityGroupName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getSecurityGroupType() {
-			return this.securityGroupType;
-		}
-
-		public void setSecurityGroupType(String securityGroupType) {
-			this.securityGroupType = securityGroupType;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setRuleCount(Integer ruleCount) {
+			this.ruleCount = ruleCount;
 		}
 
 		public Integer getEcsCount() {
@@ -181,12 +141,20 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 			this.ecsCount = ecsCount;
 		}
 
-		public Integer getAvailableInstanceAmount() {
-			return this.availableInstanceAmount;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setAvailableInstanceAmount(Integer availableInstanceAmount) {
-			this.availableInstanceAmount = availableInstanceAmount;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getSecurityGroupName() {
+			return this.securityGroupName;
+		}
+
+		public void setSecurityGroupName(String securityGroupName) {
+			this.securityGroupName = securityGroupName;
 		}
 
 		public String getResourceGroupId() {
@@ -205,6 +173,30 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 			this.serviceManaged = serviceManaged;
 		}
 
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getSecurityGroupType() {
+			return this.securityGroupType;
+		}
+
+		public void setSecurityGroupType(String securityGroupType) {
+			this.securityGroupType = securityGroupType;
+		}
+
+		public Integer getAvailableInstanceAmount() {
+			return this.availableInstanceAmount;
+		}
+
+		public void setAvailableInstanceAmount(Integer availableInstanceAmount) {
+			this.availableInstanceAmount = availableInstanceAmount;
+		}
+
 		public Long getServiceID() {
 			return this.serviceID;
 		}
@@ -213,12 +205,12 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 			this.serviceID = serviceID;
 		}
 
-		public Integer getRuleCount() {
-			return this.ruleCount;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setRuleCount(Integer ruleCount) {
-			this.ruleCount = ruleCount;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public Integer getGroupToGroupRuleCount() {
@@ -227,6 +219,14 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		public void setGroupToGroupRuleCount(Integer groupToGroupRuleCount) {
 			this.groupToGroupRuleCount = groupToGroupRuleCount;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public List<Tag> getTags() {
@@ -239,17 +239,9 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagValue;
-
 			private String tagKey;
 
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
+			private String tagValue;
 
 			public String getTagKey() {
 				return this.tagKey;
@@ -257,6 +249,14 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

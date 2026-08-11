@@ -27,23 +27,23 @@ public class DescribeCloudAssistantStatusResponseUnmarshaller {
 	public static DescribeCloudAssistantStatusResponse unmarshall(DescribeCloudAssistantStatusResponse describeCloudAssistantStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeCloudAssistantStatusResponse.setRequestId(_ctx.stringValue("DescribeCloudAssistantStatusResponse.RequestId"));
-		describeCloudAssistantStatusResponse.setPageSize(_ctx.longValue("DescribeCloudAssistantStatusResponse.PageSize"));
-		describeCloudAssistantStatusResponse.setPageNumber(_ctx.longValue("DescribeCloudAssistantStatusResponse.PageNumber"));
 		describeCloudAssistantStatusResponse.setTotalCount(_ctx.longValue("DescribeCloudAssistantStatusResponse.TotalCount"));
+		describeCloudAssistantStatusResponse.setPageSize(_ctx.longValue("DescribeCloudAssistantStatusResponse.PageSize"));
 		describeCloudAssistantStatusResponse.setNextToken(_ctx.stringValue("DescribeCloudAssistantStatusResponse.NextToken"));
+		describeCloudAssistantStatusResponse.setPageNumber(_ctx.longValue("DescribeCloudAssistantStatusResponse.PageNumber"));
 
 		List<InstanceCloudAssistantStatus> instanceCloudAssistantStatusSet = new ArrayList<InstanceCloudAssistantStatus>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet.Length"); i++) {
 			InstanceCloudAssistantStatus instanceCloudAssistantStatus = new InstanceCloudAssistantStatus();
-			instanceCloudAssistantStatus.setCloudAssistantStatus(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantStatus"));
-			instanceCloudAssistantStatus.setLastInvokedTime(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].LastInvokedTime"));
 			instanceCloudAssistantStatus.setCloudAssistantVersion(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantVersion"));
-			instanceCloudAssistantStatus.setActiveTaskCount(_ctx.longValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].ActiveTaskCount"));
-			instanceCloudAssistantStatus.setInvocationCount(_ctx.longValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].InvocationCount"));
-			instanceCloudAssistantStatus.setInstanceId(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].InstanceId"));
-			instanceCloudAssistantStatus.setLastHeartbeatTime(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].LastHeartbeatTime"));
-			instanceCloudAssistantStatus.setOSType(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].OSType"));
 			instanceCloudAssistantStatus.setSupportSessionManager(_ctx.booleanValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].SupportSessionManager"));
+			instanceCloudAssistantStatus.setInstanceId(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].InstanceId"));
+			instanceCloudAssistantStatus.setInvocationCount(_ctx.longValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].InvocationCount"));
+			instanceCloudAssistantStatus.setOSType(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].OSType"));
+			instanceCloudAssistantStatus.setCloudAssistantStatus(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantStatus"));
+			instanceCloudAssistantStatus.setLastHeartbeatTime(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].LastHeartbeatTime"));
+			instanceCloudAssistantStatus.setLastInvokedTime(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].LastInvokedTime"));
+			instanceCloudAssistantStatus.setActiveTaskCount(_ctx.longValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].ActiveTaskCount"));
 
 			instanceCloudAssistantStatusSet.add(instanceCloudAssistantStatus);
 		}

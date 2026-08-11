@@ -28,29 +28,29 @@ public class DescribeImagePipelineExecutionsResponseUnmarshaller {
 	public static DescribeImagePipelineExecutionsResponse unmarshall(DescribeImagePipelineExecutionsResponse describeImagePipelineExecutionsResponse, UnmarshallerContext _ctx) {
 		
 		describeImagePipelineExecutionsResponse.setRequestId(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.RequestId"));
-		describeImagePipelineExecutionsResponse.setNextToken(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.NextToken"));
 		describeImagePipelineExecutionsResponse.setTotalCount(_ctx.integerValue("DescribeImagePipelineExecutionsResponse.TotalCount"));
+		describeImagePipelineExecutionsResponse.setNextToken(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.NextToken"));
 		describeImagePipelineExecutionsResponse.setMaxResults(_ctx.integerValue("DescribeImagePipelineExecutionsResponse.MaxResults"));
 
 		List<ImagePipelineExecutionSet> imagePipelineExecution = new ArrayList<ImagePipelineExecutionSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution.Length"); i++) {
 			ImagePipelineExecutionSet imagePipelineExecutionSet = new ImagePipelineExecutionSet();
-			imagePipelineExecutionSet.setCreationTime(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].CreationTime"));
-			imagePipelineExecutionSet.setImagePipelineId(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ImagePipelineId"));
 			imagePipelineExecutionSet.setStatus(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].Status"));
 			imagePipelineExecutionSet.setModifiedTime(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ModifiedTime"));
 			imagePipelineExecutionSet.setResourceGroupId(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ResourceGroupId"));
 			imagePipelineExecutionSet.setMessage(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].Message"));
-			imagePipelineExecutionSet.setImageId(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ImageId"));
-			imagePipelineExecutionSet.setExecutionId(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ExecutionId"));
-			imagePipelineExecutionSet.setErrorCode(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ErrorCode"));
+			imagePipelineExecutionSet.setImagePipelineId(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ImagePipelineId"));
 			imagePipelineExecutionSet.setErrorInfo(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ErrorInfo"));
+			imagePipelineExecutionSet.setCreationTime(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].CreationTime"));
+			imagePipelineExecutionSet.setImageId(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ImageId"));
+			imagePipelineExecutionSet.setErrorCode(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ErrorCode"));
+			imagePipelineExecutionSet.setExecutionId(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].ExecutionId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagValue(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].Tags["+ j +"].TagValue"));
 				tag.setTagKey(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeImagePipelineExecutionsResponse.ImagePipelineExecution["+ i +"].Tags["+ j +"].TagValue"));
 
 				tags.add(tag);
 			}

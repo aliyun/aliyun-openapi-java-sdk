@@ -32,11 +32,11 @@ public class DescribeDiagnosticMetricSetsResponseUnmarshaller {
 		List<MetricSet> metricSets = new ArrayList<MetricSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDiagnosticMetricSetsResponse.MetricSets.Length"); i++) {
 			MetricSet metricSet = new MetricSet();
-			metricSet.setMetricSetId(_ctx.stringValue("DescribeDiagnosticMetricSetsResponse.MetricSets["+ i +"].MetricSetId"));
-			metricSet.setMetricSetName(_ctx.stringValue("DescribeDiagnosticMetricSetsResponse.MetricSets["+ i +"].MetricSetName"));
-			metricSet.setDescription(_ctx.stringValue("DescribeDiagnosticMetricSetsResponse.MetricSets["+ i +"].Description"));
 			metricSet.setType(_ctx.stringValue("DescribeDiagnosticMetricSetsResponse.MetricSets["+ i +"].Type"));
+			metricSet.setDescription(_ctx.stringValue("DescribeDiagnosticMetricSetsResponse.MetricSets["+ i +"].Description"));
+			metricSet.setMetricSetId(_ctx.stringValue("DescribeDiagnosticMetricSetsResponse.MetricSets["+ i +"].MetricSetId"));
 			metricSet.setResourceType(_ctx.stringValue("DescribeDiagnosticMetricSetsResponse.MetricSets["+ i +"].ResourceType"));
+			metricSet.setMetricSetName(_ctx.stringValue("DescribeDiagnosticMetricSetsResponse.MetricSets["+ i +"].MetricSetName"));
 
 			List<String> metricIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDiagnosticMetricSetsResponse.MetricSets["+ i +"].MetricIds.Length"); j++) {

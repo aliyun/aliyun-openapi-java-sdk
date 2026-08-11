@@ -23,15 +23,15 @@ public class DescribeSavingsPlanEstimationResponseUnmarshaller {
 	public static DescribeSavingsPlanEstimationResponse unmarshall(DescribeSavingsPlanEstimationResponse describeSavingsPlanEstimationResponse, UnmarshallerContext _ctx) {
 		
 		describeSavingsPlanEstimationResponse.setRequestId(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.RequestId"));
+		describeSavingsPlanEstimationResponse.setOfferingType(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.OfferingType"));
+		describeSavingsPlanEstimationResponse.setCommittedAmount(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.CommittedAmount"));
 		describeSavingsPlanEstimationResponse.setResourceId(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.ResourceId"));
 		describeSavingsPlanEstimationResponse.setInstanceTypeFamily(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.InstanceTypeFamily"));
-		describeSavingsPlanEstimationResponse.setCommittedAmount(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.CommittedAmount"));
 		describeSavingsPlanEstimationResponse.setCurrency(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.Currency"));
-		describeSavingsPlanEstimationResponse.setOfferingType(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.OfferingType"));
-		describeSavingsPlanEstimationResponse.setPeriodUnit(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.PeriodUnit"));
-		describeSavingsPlanEstimationResponse.setPeriod(_ctx.integerValue("DescribeSavingsPlanEstimationResponse.Period"));
 		describeSavingsPlanEstimationResponse.setPlanType(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.PlanType"));
+		describeSavingsPlanEstimationResponse.setPeriod(_ctx.integerValue("DescribeSavingsPlanEstimationResponse.Period"));
 		describeSavingsPlanEstimationResponse.setInstanceTypeFamilyGroup(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.InstanceTypeFamilyGroup"));
+		describeSavingsPlanEstimationResponse.setPeriodUnit(_ctx.stringValue("DescribeSavingsPlanEstimationResponse.PeriodUnit"));
 	 
 	 	return describeSavingsPlanEstimationResponse;
 	}

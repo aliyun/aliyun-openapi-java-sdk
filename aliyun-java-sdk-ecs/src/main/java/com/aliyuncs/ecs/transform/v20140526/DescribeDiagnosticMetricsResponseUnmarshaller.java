@@ -32,13 +32,13 @@ public class DescribeDiagnosticMetricsResponseUnmarshaller {
 		List<Metric> metrics = new ArrayList<Metric>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDiagnosticMetricsResponse.Metrics.Length"); i++) {
 			Metric metric = new Metric();
-			metric.setMetricId(_ctx.stringValue("DescribeDiagnosticMetricsResponse.Metrics["+ i +"].MetricId"));
 			metric.setMetricName(_ctx.stringValue("DescribeDiagnosticMetricsResponse.Metrics["+ i +"].MetricName"));
-			metric.setMetricCategory(_ctx.stringValue("DescribeDiagnosticMetricsResponse.Metrics["+ i +"].MetricCategory"));
+			metric.setMetricId(_ctx.stringValue("DescribeDiagnosticMetricsResponse.Metrics["+ i +"].MetricId"));
 			metric.setDescription(_ctx.stringValue("DescribeDiagnosticMetricsResponse.Metrics["+ i +"].Description"));
 			metric.setResourceType(_ctx.stringValue("DescribeDiagnosticMetricsResponse.Metrics["+ i +"].ResourceType"));
 			metric.setGuestMetric(_ctx.booleanValue("DescribeDiagnosticMetricsResponse.Metrics["+ i +"].GuestMetric"));
 			metric.setSupportedOperatingSystem(_ctx.stringValue("DescribeDiagnosticMetricsResponse.Metrics["+ i +"].SupportedOperatingSystem"));
+			metric.setMetricCategory(_ctx.stringValue("DescribeDiagnosticMetricsResponse.Metrics["+ i +"].MetricCategory"));
 
 			metrics.add(metric);
 		}

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<InstanceRenewAttribute> instanceRenewAttributes;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<InstanceRenewAttribute> getInstanceRenewAttributes() {
@@ -77,49 +77,17 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 	public static class InstanceRenewAttribute {
 
-		private String periodUnit;
-
-		private Integer duration;
-
-		private String renewalStatus;
-
-		private String instanceId;
-
 		private Boolean autoRenewEnabled;
 
 		private Boolean enableExpectedRenewDay;
 
-		public String getPeriodUnit() {
-			return this.periodUnit;
-		}
+		private String instanceId;
 
-		public void setPeriodUnit(String periodUnit) {
-			this.periodUnit = periodUnit;
-		}
+		private String renewalStatus;
 
-		public Integer getDuration() {
-			return this.duration;
-		}
+		private Integer duration;
 
-		public void setDuration(Integer duration) {
-			this.duration = duration;
-		}
-
-		public String getRenewalStatus() {
-			return this.renewalStatus;
-		}
-
-		public void setRenewalStatus(String renewalStatus) {
-			this.renewalStatus = renewalStatus;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String periodUnit;
 
 		public Boolean getAutoRenewEnabled() {
 			return this.autoRenewEnabled;
@@ -135,6 +103,38 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 		public void setEnableExpectedRenewDay(Boolean enableExpectedRenewDay) {
 			this.enableExpectedRenewDay = enableExpectedRenewDay;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getRenewalStatus() {
+			return this.renewalStatus;
+		}
+
+		public void setRenewalStatus(String renewalStatus) {
+			this.renewalStatus = renewalStatus;
+		}
+
+		public Integer getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Integer duration) {
+			this.duration = duration;
+		}
+
+		public String getPeriodUnit() {
+			return this.periodUnit;
+		}
+
+		public void setPeriodUnit(String periodUnit) {
+			this.periodUnit = periodUnit;
 		}
 	}
 

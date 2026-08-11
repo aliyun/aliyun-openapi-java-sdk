@@ -27,8 +27,8 @@ public class DescribeCapacityReservationInstancesResponseUnmarshaller {
 	public static DescribeCapacityReservationInstancesResponse unmarshall(DescribeCapacityReservationInstancesResponse describeCapacityReservationInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeCapacityReservationInstancesResponse.setRequestId(_ctx.stringValue("DescribeCapacityReservationInstancesResponse.RequestId"));
-		describeCapacityReservationInstancesResponse.setNextToken(_ctx.stringValue("DescribeCapacityReservationInstancesResponse.NextToken"));
 		describeCapacityReservationInstancesResponse.setTotalCount(_ctx.integerValue("DescribeCapacityReservationInstancesResponse.TotalCount"));
+		describeCapacityReservationInstancesResponse.setNextToken(_ctx.stringValue("DescribeCapacityReservationInstancesResponse.NextToken"));
 		describeCapacityReservationInstancesResponse.setMaxResults(_ctx.integerValue("DescribeCapacityReservationInstancesResponse.MaxResults"));
 
 		List<InstanceIdSet> capacityReservationItem = new ArrayList<InstanceIdSet>();

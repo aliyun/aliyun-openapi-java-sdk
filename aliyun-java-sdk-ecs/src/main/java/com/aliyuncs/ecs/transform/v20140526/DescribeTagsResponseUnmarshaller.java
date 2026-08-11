@@ -28,29 +28,29 @@ public class DescribeTagsResponseUnmarshaller {
 	public static DescribeTagsResponse unmarshall(DescribeTagsResponse describeTagsResponse, UnmarshallerContext _ctx) {
 		
 		describeTagsResponse.setRequestId(_ctx.stringValue("DescribeTagsResponse.RequestId"));
+		describeTagsResponse.setTotalCount(_ctx.integerValue("DescribeTagsResponse.TotalCount"));
 		describeTagsResponse.setPageSize(_ctx.integerValue("DescribeTagsResponse.PageSize"));
 		describeTagsResponse.setPageNumber(_ctx.integerValue("DescribeTagsResponse.PageNumber"));
-		describeTagsResponse.setTotalCount(_ctx.integerValue("DescribeTagsResponse.TotalCount"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTagsResponse.Tags.Length"); i++) {
 			Tag tag = new Tag();
-			tag.setTagValue(_ctx.stringValue("DescribeTagsResponse.Tags["+ i +"].TagValue"));
 			tag.setTagKey(_ctx.stringValue("DescribeTagsResponse.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("DescribeTagsResponse.Tags["+ i +"].TagValue"));
 
 			ResourceTypeCount resourceTypeCount = new ResourceTypeCount();
-			resourceTypeCount.setInstance(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Instance"));
-			resourceTypeCount.setImage(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Image"));
-			resourceTypeCount.setDdh(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Ddh"));
-			resourceTypeCount.setSnapshotPolicy(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.SnapshotPolicy"));
-			resourceTypeCount.setSecuritygroup(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Securitygroup"));
 			resourceTypeCount.setSnapshot(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Snapshot"));
-			resourceTypeCount.setReservedInstance(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.ReservedInstance"));
-			resourceTypeCount.setLaunchTemplate(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.LaunchTemplate"));
 			resourceTypeCount.setEni(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Eni"));
-			resourceTypeCount.setDisk(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Disk"));
 			resourceTypeCount.setKeyPair(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.KeyPair"));
+			resourceTypeCount.setSnapshotPolicy(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.SnapshotPolicy"));
+			resourceTypeCount.setReservedInstance(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.ReservedInstance"));
+			resourceTypeCount.setInstance(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Instance"));
 			resourceTypeCount.setVolume(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Volume"));
+			resourceTypeCount.setLaunchTemplate(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.LaunchTemplate"));
+			resourceTypeCount.setDdh(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Ddh"));
+			resourceTypeCount.setSecuritygroup(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Securitygroup"));
+			resourceTypeCount.setImage(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Image"));
+			resourceTypeCount.setDisk(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Disk"));
 			tag.setResourceTypeCount(resourceTypeCount);
 
 			tags.add(tag);

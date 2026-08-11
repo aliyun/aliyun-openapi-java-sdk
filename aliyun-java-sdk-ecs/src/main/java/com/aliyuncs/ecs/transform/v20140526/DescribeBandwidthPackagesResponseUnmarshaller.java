@@ -28,33 +28,33 @@ public class DescribeBandwidthPackagesResponseUnmarshaller {
 	public static DescribeBandwidthPackagesResponse unmarshall(DescribeBandwidthPackagesResponse describeBandwidthPackagesResponse, UnmarshallerContext _ctx) {
 		
 		describeBandwidthPackagesResponse.setRequestId(_ctx.stringValue("DescribeBandwidthPackagesResponse.RequestId"));
+		describeBandwidthPackagesResponse.setTotalCount(_ctx.integerValue("DescribeBandwidthPackagesResponse.TotalCount"));
 		describeBandwidthPackagesResponse.setPageSize(_ctx.integerValue("DescribeBandwidthPackagesResponse.PageSize"));
 		describeBandwidthPackagesResponse.setPageNumber(_ctx.integerValue("DescribeBandwidthPackagesResponse.PageNumber"));
-		describeBandwidthPackagesResponse.setTotalCount(_ctx.integerValue("DescribeBandwidthPackagesResponse.TotalCount"));
 
 		List<BandwidthPackage> bandwidthPackages = new ArrayList<BandwidthPackage>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBandwidthPackagesResponse.BandwidthPackages.Length"); i++) {
 			BandwidthPackage bandwidthPackage = new BandwidthPackage();
 			bandwidthPackage.setStatus(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].Status"));
-			bandwidthPackage.setCreationTime(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].CreationTime"));
 			bandwidthPackage.setIpCount(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].IpCount"));
-			bandwidthPackage.setRegionId(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].RegionId"));
-			bandwidthPackage.setInstanceChargeType(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].InstanceChargeType"));
-			bandwidthPackage.setBandwidthPackageId(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].BandwidthPackageId"));
 			bandwidthPackage.setDescription(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].Description"));
-			bandwidthPackage.setBandwidth(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].Bandwidth"));
-			bandwidthPackage.setNatGatewayId(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].NatGatewayId"));
 			bandwidthPackage.setZoneId(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].ZoneId"));
-			bandwidthPackage.setInternetChargeType(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].InternetChargeType"));
-			bandwidthPackage.setBusinessStatus(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].BusinessStatus"));
-			bandwidthPackage.setName(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].Name"));
+			bandwidthPackage.setInstanceChargeType(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].InstanceChargeType"));
 			bandwidthPackage.setISP(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].ISP"));
+			bandwidthPackage.setBusinessStatus(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].BusinessStatus"));
+			bandwidthPackage.setInternetChargeType(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].InternetChargeType"));
+			bandwidthPackage.setName(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].Name"));
+			bandwidthPackage.setBandwidth(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].Bandwidth"));
+			bandwidthPackage.setCreationTime(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].CreationTime"));
+			bandwidthPackage.setBandwidthPackageId(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].BandwidthPackageId"));
+			bandwidthPackage.setRegionId(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].RegionId"));
+			bandwidthPackage.setNatGatewayId(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].NatGatewayId"));
 
 			List<PublicIpAddresse> publicIpAddresses = new ArrayList<PublicIpAddresse>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].PublicIpAddresses.Length"); j++) {
 				PublicIpAddresse publicIpAddresse = new PublicIpAddresse();
-				publicIpAddresse.setIpAddress(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].PublicIpAddresses["+ j +"].IpAddress"));
 				publicIpAddresse.setAllocationId(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].PublicIpAddresses["+ j +"].AllocationId"));
+				publicIpAddresse.setIpAddress(_ctx.stringValue("DescribeBandwidthPackagesResponse.BandwidthPackages["+ i +"].PublicIpAddresses["+ j +"].IpAddress"));
 
 				publicIpAddresses.add(publicIpAddresse);
 			}

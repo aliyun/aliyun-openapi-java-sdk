@@ -33,10 +33,10 @@ public class DescribeImageSupportInstanceTypesResponseUnmarshaller {
 		List<InstanceType> instanceTypes = new ArrayList<InstanceType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes.Length"); i++) {
 			InstanceType instanceType = new InstanceType();
-			instanceType.setInstanceTypeId(_ctx.stringValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeId"));
-			instanceType.setInstanceTypeFamily(_ctx.stringValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeFamily"));
-			instanceType.setCpuCoreCount(_ctx.integerValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].CpuCoreCount"));
 			instanceType.setMemorySize(_ctx.floatValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].MemorySize"));
+			instanceType.setCpuCoreCount(_ctx.integerValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].CpuCoreCount"));
+			instanceType.setInstanceTypeFamily(_ctx.stringValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeFamily"));
+			instanceType.setInstanceTypeId(_ctx.stringValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeId"));
 
 			instanceTypes.add(instanceType);
 		}

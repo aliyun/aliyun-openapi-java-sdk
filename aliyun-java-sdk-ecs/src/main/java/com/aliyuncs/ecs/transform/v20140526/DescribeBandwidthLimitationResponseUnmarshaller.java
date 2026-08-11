@@ -31,10 +31,10 @@ public class DescribeBandwidthLimitationResponseUnmarshaller {
 		List<Bandwidth> bandwidths = new ArrayList<Bandwidth>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBandwidthLimitationResponse.Bandwidths.Length"); i++) {
 			Bandwidth bandwidth = new Bandwidth();
-			bandwidth.setInternetChargeType(_ctx.stringValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].InternetChargeType"));
-			bandwidth.setMax(_ctx.integerValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Max"));
 			bandwidth.setMin(_ctx.integerValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Min"));
+			bandwidth.setMax(_ctx.integerValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Max"));
 			bandwidth.setUnit(_ctx.stringValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Unit"));
+			bandwidth.setInternetChargeType(_ctx.stringValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].InternetChargeType"));
 
 			bandwidths.add(bandwidth);
 		}

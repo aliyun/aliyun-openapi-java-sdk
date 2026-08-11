@@ -42,28 +42,28 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 	public static DescribeNetworkInterfaceAttributeResponse unmarshall(DescribeNetworkInterfaceAttributeResponse describeNetworkInterfaceAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeNetworkInterfaceAttributeResponse.setRequestId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.RequestId"));
-		describeNetworkInterfaceAttributeResponse.setCreationTime(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.CreationTime"));
-		describeNetworkInterfaceAttributeResponse.setVpcId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.VpcId"));
-		describeNetworkInterfaceAttributeResponse.setType(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Type"));
+		describeNetworkInterfaceAttributeResponse.setDescription(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Description"));
+		describeNetworkInterfaceAttributeResponse.setPrivateIpAddress(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.PrivateIpAddress"));
+		describeNetworkInterfaceAttributeResponse.setServiceManaged(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.ServiceManaged"));
+		describeNetworkInterfaceAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.ResourceGroupId"));
+		describeNetworkInterfaceAttributeResponse.setDeleteOnRelease(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.DeleteOnRelease"));
+		describeNetworkInterfaceAttributeResponse.setNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceId"));
+		describeNetworkInterfaceAttributeResponse.setOwnerId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.OwnerId"));
 		describeNetworkInterfaceAttributeResponse.setStatus(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Status"));
 		describeNetworkInterfaceAttributeResponse.setNetworkInterfaceTrafficMode(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceTrafficMode"));
+		describeNetworkInterfaceAttributeResponse.setZoneId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.ZoneId"));
+		describeNetworkInterfaceAttributeResponse.setInstanceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.InstanceId"));
+		describeNetworkInterfaceAttributeResponse.setVSwitchId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.VSwitchId"));
 		describeNetworkInterfaceAttributeResponse.setNetworkInterfaceName(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceName"));
 		describeNetworkInterfaceAttributeResponse.setMacAddress(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.MacAddress"));
-		describeNetworkInterfaceAttributeResponse.setQueuePairNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.QueuePairNumber"));
-		describeNetworkInterfaceAttributeResponse.setNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceId"));
 		describeNetworkInterfaceAttributeResponse.setServiceID(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.ServiceID"));
-		describeNetworkInterfaceAttributeResponse.setInstanceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.InstanceId"));
-		describeNetworkInterfaceAttributeResponse.setOwnerId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.OwnerId"));
-		describeNetworkInterfaceAttributeResponse.setServiceManaged(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.ServiceManaged"));
-		describeNetworkInterfaceAttributeResponse.setVSwitchId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.VSwitchId"));
-		describeNetworkInterfaceAttributeResponse.setDescription(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Description"));
-		describeNetworkInterfaceAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.ResourceGroupId"));
-		describeNetworkInterfaceAttributeResponse.setZoneId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.ZoneId"));
-		describeNetworkInterfaceAttributeResponse.setPrivateIpAddress(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.PrivateIpAddress"));
-		describeNetworkInterfaceAttributeResponse.setQueueNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.QueueNumber"));
-		describeNetworkInterfaceAttributeResponse.setDeleteOnRelease(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.DeleteOnRelease"));
 		describeNetworkInterfaceAttributeResponse.setTcpOptionAddressEnabled(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.TcpOptionAddressEnabled"));
 		describeNetworkInterfaceAttributeResponse.setSourceDestCheck(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.SourceDestCheck"));
+		describeNetworkInterfaceAttributeResponse.setType(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Type"));
+		describeNetworkInterfaceAttributeResponse.setQueuePairNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.QueuePairNumber"));
+		describeNetworkInterfaceAttributeResponse.setQueueNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.QueueNumber"));
+		describeNetworkInterfaceAttributeResponse.setVpcId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.VpcId"));
+		describeNetworkInterfaceAttributeResponse.setCreationTime(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.CreationTime"));
 
 		List<String> securityGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.SecurityGroupIds.Length"); i++) {
@@ -71,16 +71,11 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 		}
 		describeNetworkInterfaceAttributeResponse.setSecurityGroupIds(securityGroupIds);
 
-		AssociatedPublicIp associatedPublicIp = new AssociatedPublicIp();
-		associatedPublicIp.setPublicIpAddress(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.AssociatedPublicIp.PublicIpAddress"));
-		associatedPublicIp.setAllocationId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.AssociatedPublicIp.AllocationId"));
-		describeNetworkInterfaceAttributeResponse.setAssociatedPublicIp(associatedPublicIp);
-
 		Attachment attachment = new Attachment();
-		attachment.setDeviceIndex(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.Attachment.DeviceIndex"));
 		attachment.setInstanceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Attachment.InstanceId"));
-		attachment.setTrunkNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Attachment.TrunkNetworkInterfaceId"));
+		attachment.setDeviceIndex(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.Attachment.DeviceIndex"));
 		attachment.setNetworkCardIndex(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.Attachment.NetworkCardIndex"));
+		attachment.setTrunkNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Attachment.TrunkNetworkInterfaceId"));
 
 		List<String> memberNetworkInterfaceIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.Attachment.MemberNetworkInterfaceIds.Length"); i++) {
@@ -89,26 +84,51 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 		attachment.setMemberNetworkInterfaceIds(memberNetworkInterfaceIds);
 		describeNetworkInterfaceAttributeResponse.setAttachment(attachment);
 
+		EnhancedNetwork enhancedNetwork = new EnhancedNetwork();
+		enhancedNetwork.setEnableRss(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.EnableRss"));
+		enhancedNetwork.setVirtualFunctionTotalQueueNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.VirtualFunctionTotalQueueNumber"));
+		enhancedNetwork.setEnableSriov(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.EnableSriov"));
+		enhancedNetwork.setVirtualFunctionQuantity(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.VirtualFunctionQuantity"));
+		enhancedNetwork.setEnableExpress(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.EnableExpress"));
+		describeNetworkInterfaceAttributeResponse.setEnhancedNetwork(enhancedNetwork);
+
+		AssociatedPublicIp associatedPublicIp = new AssociatedPublicIp();
+		associatedPublicIp.setPublicIpAddress(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.AssociatedPublicIp.PublicIpAddress"));
+		associatedPublicIp.setAllocationId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.AssociatedPublicIp.AllocationId"));
+		describeNetworkInterfaceAttributeResponse.setAssociatedPublicIp(associatedPublicIp);
+
+		SlaveInterfaceSpecification slaveInterfaceSpecification = new SlaveInterfaceSpecification();
+		slaveInterfaceSpecification.setBondNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification.BondNetworkInterfaceId"));
+		slaveInterfaceSpecification.setWorkState(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification.WorkState"));
+		slaveInterfaceSpecification.setSlaveNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification.SlaveNetworkInterfaceId"));
+		describeNetworkInterfaceAttributeResponse.setSlaveInterfaceSpecification(slaveInterfaceSpecification);
+
+		QoSConfig qoSConfig = new QoSConfig();
+		qoSConfig.setEnableQoS(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.EnableQoS"));
+
+		QoS qoS = new QoS();
+		qoS.setPpsRx(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.PpsRx"));
+		qoS.setBandwidthTx(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.BandwidthTx"));
+		qoS.setBandwidthRx(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.BandwidthRx"));
+		qoS.setPpsTx(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.PpsTx"));
+		qoS.setConcurrentConnections(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.ConcurrentConnections"));
+		qoSConfig.setQoS(qoS);
+		describeNetworkInterfaceAttributeResponse.setQoSConfig(qoSConfig);
+
 		BondInterfaceSpecification bondInterfaceSpecification = new BondInterfaceSpecification();
 		bondInterfaceSpecification.setBondMode(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification.BondMode"));
 
 		List<SlaveInterfaceSpecificationSet> slaveInterfaceSpecification2 = new ArrayList<SlaveInterfaceSpecificationSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification.SlaveInterfaceSpecification.Length"); i++) {
 			SlaveInterfaceSpecificationSet slaveInterfaceSpecificationSet = new SlaveInterfaceSpecificationSet();
-			slaveInterfaceSpecificationSet.setSlaveNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification.SlaveInterfaceSpecification["+ i +"].SlaveNetworkInterfaceId"));
-			slaveInterfaceSpecificationSet.setWorkState(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification.SlaveInterfaceSpecification["+ i +"].WorkState"));
 			slaveInterfaceSpecificationSet.setBondNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification.SlaveInterfaceSpecification["+ i +"].BondNetworkInterfaceId"));
+			slaveInterfaceSpecificationSet.setWorkState(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification.SlaveInterfaceSpecification["+ i +"].WorkState"));
+			slaveInterfaceSpecificationSet.setSlaveNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification.SlaveInterfaceSpecification["+ i +"].SlaveNetworkInterfaceId"));
 
 			slaveInterfaceSpecification2.add(slaveInterfaceSpecificationSet);
 		}
 		bondInterfaceSpecification.setSlaveInterfaceSpecification2(slaveInterfaceSpecification2);
 		describeNetworkInterfaceAttributeResponse.setBondInterfaceSpecification(bondInterfaceSpecification);
-
-		SlaveInterfaceSpecification slaveInterfaceSpecification = new SlaveInterfaceSpecification();
-		slaveInterfaceSpecification.setSlaveNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification.SlaveNetworkInterfaceId"));
-		slaveInterfaceSpecification.setWorkState(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification.WorkState"));
-		slaveInterfaceSpecification.setBondNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification.BondNetworkInterfaceId"));
-		describeNetworkInterfaceAttributeResponse.setSlaveInterfaceSpecification(slaveInterfaceSpecification);
 
 		NetworkInterfaceTrafficConfig networkInterfaceTrafficConfig = new NetworkInterfaceTrafficConfig();
 		networkInterfaceTrafficConfig.setNetworkInterfaceTrafficMode(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceTrafficConfig.NetworkInterfaceTrafficMode"));
@@ -117,29 +137,48 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 		describeNetworkInterfaceAttributeResponse.setNetworkInterfaceTrafficConfig(networkInterfaceTrafficConfig);
 
 		ConnectionTrackingConfiguration connectionTrackingConfiguration = new ConnectionTrackingConfiguration();
-		connectionTrackingConfiguration.setTcpEstablishedTimeout(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.ConnectionTrackingConfiguration.TcpEstablishedTimeout"));
 		connectionTrackingConfiguration.setTcpClosedAndTimeWaitTimeout(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.ConnectionTrackingConfiguration.TcpClosedAndTimeWaitTimeout"));
 		connectionTrackingConfiguration.setUdpTimeout(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.ConnectionTrackingConfiguration.UdpTimeout"));
+		connectionTrackingConfiguration.setTcpEstablishedTimeout(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.ConnectionTrackingConfiguration.TcpEstablishedTimeout"));
 		describeNetworkInterfaceAttributeResponse.setConnectionTrackingConfiguration(connectionTrackingConfiguration);
 
-		EnhancedNetwork enhancedNetwork = new EnhancedNetwork();
-		enhancedNetwork.setEnableSriov(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.EnableSriov"));
-		enhancedNetwork.setEnableRss(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.EnableRss"));
-		enhancedNetwork.setVirtualFunctionTotalQueueNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.VirtualFunctionTotalQueueNumber"));
-		enhancedNetwork.setVirtualFunctionQuantity(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.EnhancedNetwork.VirtualFunctionQuantity"));
-		describeNetworkInterfaceAttributeResponse.setEnhancedNetwork(enhancedNetwork);
+		List<Ipv6Set> ipv6Sets = new ArrayList<Ipv6Set>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.Ipv6Sets.Length"); i++) {
+			Ipv6Set ipv6Set = new Ipv6Set();
+			ipv6Set.setPrimary(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.Ipv6Sets["+ i +"].Primary"));
+			ipv6Set.setIpv6Address(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Ipv6Sets["+ i +"].Ipv6Address"));
 
-		QoSConfig qoSConfig = new QoSConfig();
-		qoSConfig.setEnableQoS(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.EnableQoS"));
+			ipv6Sets.add(ipv6Set);
+		}
+		describeNetworkInterfaceAttributeResponse.setIpv6Sets(ipv6Sets);
 
-		QoS qoS = new QoS();
-		qoS.setBandwidthTx(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.BandwidthTx"));
-		qoS.setBandwidthRx(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.BandwidthRx"));
-		qoS.setPpsTx(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.PpsTx"));
-		qoS.setPpsRx(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.PpsRx"));
-		qoS.setConcurrentConnections(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.QoSConfig.QoS.ConcurrentConnections"));
-		qoSConfig.setQoS(qoS);
-		describeNetworkInterfaceAttributeResponse.setQoSConfig(qoSConfig);
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Tags["+ i +"].TagValue"));
+
+			tags.add(tag);
+		}
+		describeNetworkInterfaceAttributeResponse.setTags(tags);
+
+		List<Ipv6PrefixSet> ipv6PrefixSets = new ArrayList<Ipv6PrefixSet>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.Ipv6PrefixSets.Length"); i++) {
+			Ipv6PrefixSet ipv6PrefixSet = new Ipv6PrefixSet();
+			ipv6PrefixSet.setIpv6Prefix(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Ipv6PrefixSets["+ i +"].Ipv6Prefix"));
+
+			ipv6PrefixSets.add(ipv6PrefixSet);
+		}
+		describeNetworkInterfaceAttributeResponse.setIpv6PrefixSets(ipv6PrefixSets);
+
+		List<Ipv4PrefixSet> ipv4PrefixSets = new ArrayList<Ipv4PrefixSet>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.Ipv4PrefixSets.Length"); i++) {
+			Ipv4PrefixSet ipv4PrefixSet = new Ipv4PrefixSet();
+			ipv4PrefixSet.setIpv4Prefix(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Ipv4PrefixSets["+ i +"].Ipv4Prefix"));
+
+			ipv4PrefixSets.add(ipv4PrefixSet);
+		}
+		describeNetworkInterfaceAttributeResponse.setIpv4PrefixSets(ipv4PrefixSets);
 
 		List<PrivateIpSet> privateIpSets = new ArrayList<PrivateIpSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.PrivateIpSets.Length"); i++) {
@@ -155,43 +194,6 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 			privateIpSets.add(privateIpSet);
 		}
 		describeNetworkInterfaceAttributeResponse.setPrivateIpSets(privateIpSets);
-
-		List<Ipv6Set> ipv6Sets = new ArrayList<Ipv6Set>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.Ipv6Sets.Length"); i++) {
-			Ipv6Set ipv6Set = new Ipv6Set();
-			ipv6Set.setIpv6Address(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Ipv6Sets["+ i +"].Ipv6Address"));
-
-			ipv6Sets.add(ipv6Set);
-		}
-		describeNetworkInterfaceAttributeResponse.setIpv6Sets(ipv6Sets);
-
-		List<Ipv4PrefixSet> ipv4PrefixSets = new ArrayList<Ipv4PrefixSet>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.Ipv4PrefixSets.Length"); i++) {
-			Ipv4PrefixSet ipv4PrefixSet = new Ipv4PrefixSet();
-			ipv4PrefixSet.setIpv4Prefix(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Ipv4PrefixSets["+ i +"].Ipv4Prefix"));
-
-			ipv4PrefixSets.add(ipv4PrefixSet);
-		}
-		describeNetworkInterfaceAttributeResponse.setIpv4PrefixSets(ipv4PrefixSets);
-
-		List<Ipv6PrefixSet> ipv6PrefixSets = new ArrayList<Ipv6PrefixSet>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.Ipv6PrefixSets.Length"); i++) {
-			Ipv6PrefixSet ipv6PrefixSet = new Ipv6PrefixSet();
-			ipv6PrefixSet.setIpv6Prefix(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Ipv6PrefixSets["+ i +"].Ipv6Prefix"));
-
-			ipv6PrefixSets.add(ipv6PrefixSet);
-		}
-		describeNetworkInterfaceAttributeResponse.setIpv6PrefixSets(ipv6PrefixSets);
-
-		List<Tag> tags = new ArrayList<Tag>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.Tags.Length"); i++) {
-			Tag tag = new Tag();
-			tag.setTagValue(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Tags["+ i +"].TagValue"));
-			tag.setTagKey(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Tags["+ i +"].TagKey"));
-
-			tags.add(tag);
-		}
-		describeNetworkInterfaceAttributeResponse.setTags(tags);
 	 
 	 	return describeNetworkInterfaceAttributeResponse;
 	}

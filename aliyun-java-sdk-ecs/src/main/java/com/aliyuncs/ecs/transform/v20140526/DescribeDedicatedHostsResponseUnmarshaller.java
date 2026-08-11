@@ -35,44 +35,38 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 	public static DescribeDedicatedHostsResponse unmarshall(DescribeDedicatedHostsResponse describeDedicatedHostsResponse, UnmarshallerContext _ctx) {
 		
 		describeDedicatedHostsResponse.setRequestId(_ctx.stringValue("DescribeDedicatedHostsResponse.RequestId"));
-		describeDedicatedHostsResponse.setPageSize(_ctx.integerValue("DescribeDedicatedHostsResponse.PageSize"));
-		describeDedicatedHostsResponse.setPageNumber(_ctx.integerValue("DescribeDedicatedHostsResponse.PageNumber"));
 		describeDedicatedHostsResponse.setTotalCount(_ctx.integerValue("DescribeDedicatedHostsResponse.TotalCount"));
+		describeDedicatedHostsResponse.setPageSize(_ctx.integerValue("DescribeDedicatedHostsResponse.PageSize"));
 		describeDedicatedHostsResponse.setNextToken(_ctx.stringValue("DescribeDedicatedHostsResponse.NextToken"));
+		describeDedicatedHostsResponse.setPageNumber(_ctx.integerValue("DescribeDedicatedHostsResponse.PageNumber"));
 
 		List<DedicatedHost> dedicatedHosts = new ArrayList<DedicatedHost>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts.Length"); i++) {
 			DedicatedHost dedicatedHost = new DedicatedHost();
-			dedicatedHost.setCreationTime(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].CreationTime"));
-			dedicatedHost.setSchedulerOptionsManagedPrivateSpaceId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SchedulerOptions.ManagedPrivateSpaceId"));
-			dedicatedHost.setStatus(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Status"));
-			dedicatedHost.setCores(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Cores"));
-			dedicatedHost.setAutoPlacement(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].AutoPlacement"));
-			dedicatedHost.setGPUSpec(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].GPUSpec"));
-			dedicatedHost.setAutoReleaseTime(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].AutoReleaseTime"));
-			dedicatedHost.setChargeType(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ChargeType"));
-			dedicatedHost.setCpuOverCommitRatio(_ctx.floatValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].CpuOverCommitRatio"));
-			dedicatedHost.setActionOnMaintenance(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ActionOnMaintenance"));
-			dedicatedHost.setSaleCycle(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SaleCycle"));
 			dedicatedHost.setPhysicalGpus(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].PhysicalGpus"));
-			dedicatedHost.setRegionId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].RegionId"));
-			dedicatedHost.setDedicatedHostName(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].DedicatedHostName"));
-			dedicatedHost.setDescription(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Description"));
-			dedicatedHost.setDedicatedHostClusterId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].DedicatedHostClusterId"));
-			dedicatedHost.setExpiredTime(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ExpiredTime"));
-			dedicatedHost.setDedicatedHostType(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].DedicatedHostType"));
-			dedicatedHost.setResourceGroupId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ResourceGroupId"));
-			dedicatedHost.setZoneId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ZoneId"));
-			dedicatedHost.setDedicatedHostId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].DedicatedHostId"));
-			dedicatedHost.setSockets(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Sockets"));
 			dedicatedHost.setMachineId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].MachineId"));
+			dedicatedHost.setSchedulerOptionsManagedPrivateSpaceId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SchedulerOptions.ManagedPrivateSpaceId"));
+			dedicatedHost.setDedicatedHostId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].DedicatedHostId"));
+			dedicatedHost.setDescription(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Description"));
+			dedicatedHost.setResourceGroupId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ResourceGroupId"));
+			dedicatedHost.setGPUSpec(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].GPUSpec"));
+			dedicatedHost.setDedicatedHostName(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].DedicatedHostName"));
+			dedicatedHost.setCpuOverCommitRatio(_ctx.floatValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].CpuOverCommitRatio"));
+			dedicatedHost.setExpiredTime(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ExpiredTime"));
+			dedicatedHost.setSaleCycle(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SaleCycle"));
 			dedicatedHost.setDedicatedHostOwnerId(_ctx.longValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].DedicatedHostOwnerId"));
-
-			List<String> supportedInstanceTypeFamilies = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SupportedInstanceTypeFamilies.Length"); j++) {
-				supportedInstanceTypeFamilies.add(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SupportedInstanceTypeFamilies["+ j +"]"));
-			}
-			dedicatedHost.setSupportedInstanceTypeFamilies(supportedInstanceTypeFamilies);
+			dedicatedHost.setStatus(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Status"));
+			dedicatedHost.setZoneId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ZoneId"));
+			dedicatedHost.setAutoPlacement(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].AutoPlacement"));
+			dedicatedHost.setDedicatedHostType(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].DedicatedHostType"));
+			dedicatedHost.setCores(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Cores"));
+			dedicatedHost.setSockets(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Sockets"));
+			dedicatedHost.setChargeType(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ChargeType"));
+			dedicatedHost.setCreationTime(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].CreationTime"));
+			dedicatedHost.setActionOnMaintenance(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ActionOnMaintenance"));
+			dedicatedHost.setRegionId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].RegionId"));
+			dedicatedHost.setDedicatedHostClusterId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].DedicatedHostClusterId"));
+			dedicatedHost.setAutoReleaseTime(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].AutoReleaseTime"));
 
 			List<String> supportedCustomInstanceTypeFamilies = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SupportedCustomInstanceTypeFamilies.Length"); j++) {
@@ -80,22 +74,43 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 			}
 			dedicatedHost.setSupportedCustomInstanceTypeFamilies(supportedCustomInstanceTypeFamilies);
 
+			List<String> supportedInstanceTypeFamilies = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SupportedInstanceTypeFamilies.Length"); j++) {
+				supportedInstanceTypeFamilies.add(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SupportedInstanceTypeFamilies["+ j +"]"));
+			}
+			dedicatedHost.setSupportedInstanceTypeFamilies(supportedInstanceTypeFamilies);
+
 			List<String> supportedInstanceTypesList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SupportedInstanceTypesList.Length"); j++) {
 				supportedInstanceTypesList.add(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SupportedInstanceTypesList["+ j +"]"));
 			}
 			dedicatedHost.setSupportedInstanceTypesList(supportedInstanceTypesList);
 
+			NetworkAttributes networkAttributes = new NetworkAttributes();
+			networkAttributes.setUdpTimeout(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].NetworkAttributes.UdpTimeout"));
+			networkAttributes.setSlbUdpTimeout(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].NetworkAttributes.SlbUdpTimeout"));
+			dedicatedHost.setNetworkAttributes(networkAttributes);
+
 			Capacity capacity = new Capacity();
-			capacity.setAvailableMemory(_ctx.floatValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableMemory"));
 			capacity.setLocalStorageCategory(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.LocalStorageCategory"));
-			capacity.setTotalMemory(_ctx.floatValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.TotalMemory"));
-			capacity.setTotalLocalStorage(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.TotalLocalStorage"));
-			capacity.setTotalVcpus(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.TotalVcpus"));
-			capacity.setTotalVgpus(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.TotalVgpus"));
-			capacity.setAvailableLocalStorage(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableLocalStorage"));
-			capacity.setAvailableVcpus(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableVcpus"));
 			capacity.setAvailableVgpus(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableVgpus"));
+			capacity.setTotalVgpus(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.TotalVgpus"));
+			capacity.setAvailableMemory(_ctx.floatValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableMemory"));
+			capacity.setTotalMemory(_ctx.floatValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.TotalMemory"));
+			capacity.setAvailableVcpus(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableVcpus"));
+			capacity.setTotalVcpus(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.TotalVcpus"));
+			capacity.setAvailableLocalStorage(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableLocalStorage"));
+			capacity.setTotalLocalStorage(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.TotalLocalStorage"));
+
+			List<AvailableInstanceType> availableInstanceTypes = new ArrayList<AvailableInstanceType>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableInstanceTypes.Length"); j++) {
+				AvailableInstanceType availableInstanceType = new AvailableInstanceType();
+				availableInstanceType.setAvailableInstanceCapacity(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableInstanceTypes["+ j +"].AvailableInstanceCapacity"));
+				availableInstanceType.setInstanceType(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableInstanceTypes["+ j +"].InstanceType"));
+
+				availableInstanceTypes.add(availableInstanceType);
+			}
+			capacity.setAvailableInstanceTypes(availableInstanceTypes);
 
 			List<SocketCapacity> socketCapacities = new ArrayList<SocketCapacity>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.SocketCapacities.Length"); j++) {
@@ -103,44 +118,27 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 				socketCapacity.setSocketId(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.SocketCapacities["+ j +"].SocketId"));
 				socketCapacity.setAvailableMemory(_ctx.floatValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.SocketCapacities["+ j +"].AvailableMemory"));
 				socketCapacity.setTotalMemory(_ctx.floatValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.SocketCapacities["+ j +"].TotalMemory"));
-				socketCapacity.setAvailableVcpu(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.SocketCapacities["+ j +"].AvailableVcpu"));
 				socketCapacity.setTotalVcpu(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.SocketCapacities["+ j +"].TotalVcpu"));
+				socketCapacity.setAvailableVcpu(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.SocketCapacities["+ j +"].AvailableVcpu"));
 
 				socketCapacities.add(socketCapacity);
 			}
 			capacity.setSocketCapacities(socketCapacities);
-
-			List<AvailableInstanceType> availableInstanceTypes = new ArrayList<AvailableInstanceType>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableInstanceTypes.Length"); j++) {
-				AvailableInstanceType availableInstanceType = new AvailableInstanceType();
-				availableInstanceType.setInstanceType(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableInstanceTypes["+ j +"].InstanceType"));
-				availableInstanceType.setAvailableInstanceCapacity(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableInstanceTypes["+ j +"].AvailableInstanceCapacity"));
-
-				availableInstanceTypes.add(availableInstanceType);
-			}
-			capacity.setAvailableInstanceTypes(availableInstanceTypes);
 			dedicatedHost.setCapacity(capacity);
-
-			NetworkAttributes networkAttributes = new NetworkAttributes();
-			networkAttributes.setUdpTimeout(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].NetworkAttributes.UdpTimeout"));
-			networkAttributes.setSlbUdpTimeout(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].NetworkAttributes.SlbUdpTimeout"));
-			dedicatedHost.setNetworkAttributes(networkAttributes);
 
 			HostDetailInfo hostDetailInfo = new HostDetailInfo();
 			hostDetailInfo.setSerialNumber(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].HostDetailInfo.SerialNumber"));
 			dedicatedHost.setHostDetailInfo(hostDetailInfo);
 
-			List<Instance> instances = new ArrayList<Instance>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Instances.Length"); j++) {
-				Instance instance = new Instance();
-				instance.setInstanceType(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Instances["+ j +"].InstanceType"));
-				instance.setInstanceId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Instances["+ j +"].InstanceId"));
-				instance.setSocketId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Instances["+ j +"].SocketId"));
-				instance.setInstanceOwnerId(_ctx.longValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Instances["+ j +"].InstanceOwnerId"));
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Tags["+ j +"].TagValue"));
 
-				instances.add(instance);
+				tags.add(tag);
 			}
-			dedicatedHost.setInstances(instances);
+			dedicatedHost.setTags(tags);
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].OperationLocks.Length"); j++) {
@@ -151,15 +149,17 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 			}
 			dedicatedHost.setOperationLocks(operationLocks);
 
-			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Tags.Length"); j++) {
-				Tag tag = new Tag();
-				tag.setTagValue(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Tags["+ j +"].TagValue"));
-				tag.setTagKey(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Tags["+ j +"].TagKey"));
+			List<Instance> instances = new ArrayList<Instance>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Instances.Length"); j++) {
+				Instance instance = new Instance();
+				instance.setInstanceId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Instances["+ j +"].InstanceId"));
+				instance.setSocketId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Instances["+ j +"].SocketId"));
+				instance.setInstanceType(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Instances["+ j +"].InstanceType"));
+				instance.setInstanceOwnerId(_ctx.longValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Instances["+ j +"].InstanceOwnerId"));
 
-				tags.add(tag);
+				instances.add(instance);
 			}
-			dedicatedHost.setTags(tags);
+			dedicatedHost.setInstances(instances);
 
 			dedicatedHosts.add(dedicatedHost);
 		}

@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetInstanceConsoleOutputResponse extends AcsResponse {
 
-	private String lastUpdateTime;
+	private String consoleOutput;
 
 	private String requestId;
 
+	private String lastUpdateTime;
+
 	private String instanceId;
 
-	private String consoleOutput;
-
-	public String getLastUpdateTime() {
-		return this.lastUpdateTime;
+	public String getConsoleOutput() {
+		return this.consoleOutput;
 	}
 
-	public void setLastUpdateTime(String lastUpdateTime) {
-		this.lastUpdateTime = lastUpdateTime;
+	public void setConsoleOutput(String consoleOutput) {
+		this.consoleOutput = consoleOutput;
 	}
 
 	public String getRequestId() {
@@ -48,20 +48,20 @@ public class GetInstanceConsoleOutputResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getLastUpdateTime() {
+		return this.lastUpdateTime;
+	}
+
+	public void setLastUpdateTime(String lastUpdateTime) {
+		this.lastUpdateTime = lastUpdateTime;
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-	}
-
-	public String getConsoleOutput() {
-		return this.consoleOutput;
-	}
-
-	public void setConsoleOutput(String consoleOutput) {
-		this.consoleOutput = consoleOutput;
 	}
 
 	@Override

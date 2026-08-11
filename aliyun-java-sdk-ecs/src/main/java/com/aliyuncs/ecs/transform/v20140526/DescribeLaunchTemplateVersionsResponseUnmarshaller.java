@@ -33,74 +33,74 @@ public class DescribeLaunchTemplateVersionsResponseUnmarshaller {
 	public static DescribeLaunchTemplateVersionsResponse unmarshall(DescribeLaunchTemplateVersionsResponse describeLaunchTemplateVersionsResponse, UnmarshallerContext _ctx) {
 		
 		describeLaunchTemplateVersionsResponse.setRequestId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.RequestId"));
+		describeLaunchTemplateVersionsResponse.setTotalCount(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.TotalCount"));
 		describeLaunchTemplateVersionsResponse.setPageSize(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.PageSize"));
 		describeLaunchTemplateVersionsResponse.setPageNumber(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.PageNumber"));
-		describeLaunchTemplateVersionsResponse.setTotalCount(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.TotalCount"));
 
 		List<LaunchTemplateVersionSet> launchTemplateVersionSets = new ArrayList<LaunchTemplateVersionSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets.Length"); i++) {
 			LaunchTemplateVersionSet launchTemplateVersionSet = new LaunchTemplateVersionSet();
 			launchTemplateVersionSet.setLaunchTemplateName(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateName"));
-			launchTemplateVersionSet.setDefaultVersion(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].DefaultVersion"));
-			launchTemplateVersionSet.setVersionNumber(_ctx.longValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].VersionNumber"));
-			launchTemplateVersionSet.setModifiedTime(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].ModifiedTime"));
-			launchTemplateVersionSet.setLaunchTemplateId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateId"));
-			launchTemplateVersionSet.setCreateTime(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].CreateTime"));
 			launchTemplateVersionSet.setCreatedBy(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].CreatedBy"));
 			launchTemplateVersionSet.setVersionDescription(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].VersionDescription"));
+			launchTemplateVersionSet.setModifiedTime(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].ModifiedTime"));
+			launchTemplateVersionSet.setDefaultVersion(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].DefaultVersion"));
+			launchTemplateVersionSet.setCreateTime(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].CreateTime"));
+			launchTemplateVersionSet.setLaunchTemplateId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateId"));
+			launchTemplateVersionSet.setVersionNumber(_ctx.longValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].VersionNumber"));
 
 			LaunchTemplateData launchTemplateData = new LaunchTemplateData();
-			launchTemplateData.setDeploymentSetId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DeploymentSetId"));
-			launchTemplateData.setVpcId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.VpcId"));
-			launchTemplateData.setSystemDiskPerformanceLevel(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.PerformanceLevel"));
-			launchTemplateData.setKeyPairName(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.KeyPairName"));
-			launchTemplateData.setSecurityGroupId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupId"));
-			launchTemplateData.setNetworkType(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkType"));
-			launchTemplateData.setSpotStrategy(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SpotStrategy"));
-			launchTemplateData.setEnableVmOsConfig(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.EnableVmOsConfig"));
-			launchTemplateData.setDescription(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Description"));
-			launchTemplateData.setSpotDuration(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SpotDuration"));
-			launchTemplateData.setInstanceName(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InstanceName"));
-			launchTemplateData.setSecurityEnhancementStrategy(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityEnhancementStrategy"));
-			launchTemplateData.setUserData(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.UserData"));
+			launchTemplateData.setHttpPutResponseHopLimit(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HttpPutResponseHopLimit"));
+			launchTemplateData.setResourceGroupId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ResourceGroupId"));
+			launchTemplateData.setInstanceChargeType(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InstanceChargeType"));
+			launchTemplateData.setSystemDiskBurstingEnabled(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.BurstingEnabled"));
 			launchTemplateData.setSystemDiskDiskName(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.DiskName"));
-			launchTemplateData.setSystemDiskSize(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Size"));
-			launchTemplateData.setSpotPriceLimit(_ctx.floatValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SpotPriceLimit"));
-			launchTemplateData.setPasswordInherit(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.PasswordInherit"));
-			launchTemplateData.setPrivateIpAddress(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.PrivateIpAddress"));
+			launchTemplateData.setRamRoleName(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.RamRoleName"));
+			launchTemplateData.setSystemDiskProvisionedIops(_ctx.longValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.ProvisionedIops"));
 			launchTemplateData.setImageId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ImageId"));
 			launchTemplateData.setSystemDiskDeleteWithInstance(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.DeleteWithInstance"));
+			launchTemplateData.setSystemDiskEncrypted(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Encrypted"));
 			launchTemplateData.setSystemDiskCategory(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Category"));
-			launchTemplateData.setAutoReleaseTime(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.AutoReleaseTime"));
-			launchTemplateData.setSystemDiskDescription(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Description"));
-			launchTemplateData.setImageOwnerAlias(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ImageOwnerAlias"));
 			launchTemplateData.setHostName(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HostName"));
+			launchTemplateData.setVSwitchId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.VSwitchId"));
+			launchTemplateData.setPeriod(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Period"));
+			launchTemplateData.setDeletionProtection(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DeletionProtection"));
+			launchTemplateData.setHttpEndpoint(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HttpEndpoint"));
+			launchTemplateData.setInternetChargeType(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InternetChargeType"));
+			launchTemplateData.setDeploymentSetId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DeploymentSetId"));
+			launchTemplateData.setInstanceName(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InstanceName"));
+			launchTemplateData.setInternetMaxBandwidthOut(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InternetMaxBandwidthOut"));
+			launchTemplateData.setVpcId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.VpcId"));
+			launchTemplateData.setSecurityEnhancementStrategy(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityEnhancementStrategy"));
+			launchTemplateData.setAutoReleaseTime(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.AutoReleaseTime"));
+			launchTemplateData.setPeriodUnit(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.PeriodUnit"));
+			launchTemplateData.setImageOwnerAlias(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ImageOwnerAlias"));
+			launchTemplateData.setDescription(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Description"));
+			launchTemplateData.setPrivateIpAddress(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.PrivateIpAddress"));
+			launchTemplateData.setUserData(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.UserData"));
+			launchTemplateData.setAutoRenew(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.AutoRenew"));
+			launchTemplateData.setSpotDuration(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SpotDuration"));
+			launchTemplateData.setSystemDiskSize(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Size"));
+			launchTemplateData.setSystemDiskPerformanceLevel(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.PerformanceLevel"));
+			launchTemplateData.setNetworkType(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkType"));
+			launchTemplateData.setIpv6AddressCount(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Ipv6AddressCount"));
+			launchTemplateData.setSpotPriceLimit(_ctx.floatValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SpotPriceLimit"));
+			launchTemplateData.setInstanceType(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InstanceType"));
+			launchTemplateData.setSpotStrategy(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SpotStrategy"));
+			launchTemplateData.setPasswordInherit(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.PasswordInherit"));
+			launchTemplateData.setAutoRenewPeriod(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.AutoRenewPeriod"));
+			launchTemplateData.setKeyPairName(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.KeyPairName"));
 			launchTemplateData.setSystemDiskIops(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Iops"));
 			launchTemplateData.setSystemDiskAutoSnapshotPolicyId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.AutoSnapshotPolicyId"));
-			launchTemplateData.setInternetMaxBandwidthOut(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InternetMaxBandwidthOut"));
-			launchTemplateData.setInternetMaxBandwidthIn(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InternetMaxBandwidthIn"));
-			launchTemplateData.setInstanceType(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InstanceType"));
-			launchTemplateData.setPeriod(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Period"));
-			launchTemplateData.setInstanceChargeType(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InstanceChargeType"));
 			launchTemplateData.setIoOptimized(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.IoOptimized"));
-			launchTemplateData.setRamRoleName(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.RamRoleName"));
-			launchTemplateData.setVSwitchId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.VSwitchId"));
-			launchTemplateData.setResourceGroupId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ResourceGroupId"));
-			launchTemplateData.setInternetChargeType(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InternetChargeType"));
-			launchTemplateData.setZoneId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ZoneId"));
-			launchTemplateData.setIpv6AddressCount(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Ipv6AddressCount"));
-			launchTemplateData.setSystemDiskProvisionedIops(_ctx.longValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.ProvisionedIops"));
-			launchTemplateData.setSystemDiskBurstingEnabled(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.BurstingEnabled"));
-			launchTemplateData.setSystemDiskEncrypted(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Encrypted"));
-			launchTemplateData.setDeletionProtection(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DeletionProtection"));
-			launchTemplateData.setCreditSpecification(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.CreditSpecification"));
-			launchTemplateData.setAutoRenew(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.AutoRenew"));
-			launchTemplateData.setAutoRenewPeriod(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.AutoRenewPeriod"));
-			launchTemplateData.setPeriodUnit(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.PeriodUnit"));
-			launchTemplateData.setHttpEndpoint(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HttpEndpoint"));
-			launchTemplateData.setHttpTokens(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HttpTokens"));
-			launchTemplateData.setHttpPutResponseHopLimit(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HttpPutResponseHopLimit"));
 			launchTemplateData.setSystemDiskKMSKeyId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.KMSKeyId"));
+			launchTemplateData.setSystemDiskDescription(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Description"));
+			launchTemplateData.setZoneId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ZoneId"));
+			launchTemplateData.setSecurityGroupId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupId"));
+			launchTemplateData.setEnableVmOsConfig(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.EnableVmOsConfig"));
+			launchTemplateData.setHttpTokens(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HttpTokens"));
+			launchTemplateData.setInternetMaxBandwidthIn(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InternetMaxBandwidthIn"));
+			launchTemplateData.setCreditSpecification(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.CreditSpecification"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupIds.Length"); j++) {
@@ -119,35 +119,45 @@ public class DescribeLaunchTemplateVersionsResponseUnmarshaller {
 			List<DataDisk> dataDisks = new ArrayList<DataDisk>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks.Length"); j++) {
 				DataDisk dataDisk = new DataDisk();
-				dataDisk.setPerformanceLevel(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].PerformanceLevel"));
+				dataDisk.setBurstingEnabled(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].BurstingEnabled"));
 				dataDisk.setDescription(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].Description"));
-				dataDisk.setSnapshotId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].SnapshotId"));
+				dataDisk.setCategory(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].Category"));
+				dataDisk.setKMSKeyId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].KMSKeyId"));
+				dataDisk.setPerformanceLevel(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].PerformanceLevel"));
 				dataDisk.setDevice(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].Device"));
 				dataDisk.setSize(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].Size"));
-				dataDisk.setDiskName(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].DiskName"));
-				dataDisk.setCategory(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].Category"));
-				dataDisk.setDeleteWithInstance(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].DeleteWithInstance"));
 				dataDisk.setEncrypted(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].Encrypted"));
-				dataDisk.setProvisionedIops(_ctx.longValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].ProvisionedIops"));
-				dataDisk.setBurstingEnabled(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].BurstingEnabled"));
+				dataDisk.setDeleteWithInstance(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].DeleteWithInstance"));
 				dataDisk.setAutoSnapshotPolicyId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].AutoSnapshotPolicyId"));
-				dataDisk.setKMSKeyId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].KMSKeyId"));
+				dataDisk.setDiskName(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].DiskName"));
+				dataDisk.setProvisionedIops(_ctx.longValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].ProvisionedIops"));
+				dataDisk.setSnapshotId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].SnapshotId"));
 
 				dataDisks.add(dataDisk);
 			}
 			launchTemplateData.setDataDisks(dataDisks);
 
+			List<InstanceTag> tags = new ArrayList<InstanceTag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Tags.Length"); j++) {
+				InstanceTag instanceTag = new InstanceTag();
+				instanceTag.setValue(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Tags["+ j +"].Value"));
+				instanceTag.setKey(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Tags["+ j +"].Key"));
+
+				tags.add(instanceTag);
+			}
+			launchTemplateData.setTags(tags);
+
 			List<NetworkInterface> networkInterfaces = new ArrayList<NetworkInterface>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces.Length"); j++) {
 				NetworkInterface networkInterface = new NetworkInterface();
-				networkInterface.setNetworkInterfaceName(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].NetworkInterfaceName"));
-				networkInterface.setVSwitchId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].VSwitchId"));
-				networkInterface.setDescription(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].Description"));
-				networkInterface.setPrimaryIpAddress(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].PrimaryIpAddress"));
-				networkInterface.setSecurityGroupId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].SecurityGroupId"));
-				networkInterface.setInstanceType(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].InstanceType"));
 				networkInterface.setNetworkInterfaceTrafficMode(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].NetworkInterfaceTrafficMode"));
+				networkInterface.setDescription(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].Description"));
 				networkInterface.setDeleteOnRelease(_ctx.booleanValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].DeleteOnRelease"));
+				networkInterface.setVSwitchId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].VSwitchId"));
+				networkInterface.setSecurityGroupId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].SecurityGroupId"));
+				networkInterface.setNetworkInterfaceName(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].NetworkInterfaceName"));
+				networkInterface.setPrimaryIpAddress(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].PrimaryIpAddress"));
+				networkInterface.setInstanceType(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].InstanceType"));
 
 				List<String> securityGroupIds1 = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].SecurityGroupIds.Length"); k++) {
@@ -158,16 +168,6 @@ public class DescribeLaunchTemplateVersionsResponseUnmarshaller {
 				networkInterfaces.add(networkInterface);
 			}
 			launchTemplateData.setNetworkInterfaces(networkInterfaces);
-
-			List<InstanceTag> tags = new ArrayList<InstanceTag>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Tags.Length"); j++) {
-				InstanceTag instanceTag = new InstanceTag();
-				instanceTag.setKey(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Tags["+ j +"].Key"));
-				instanceTag.setValue(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Tags["+ j +"].Value"));
-
-				tags.add(instanceTag);
-			}
-			launchTemplateData.setTags(tags);
 			launchTemplateVersionSet.setLaunchTemplateData(launchTemplateData);
 
 			launchTemplateVersionSets.add(launchTemplateVersionSet);

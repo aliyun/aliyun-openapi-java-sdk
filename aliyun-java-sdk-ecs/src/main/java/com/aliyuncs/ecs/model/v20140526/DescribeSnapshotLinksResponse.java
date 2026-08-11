@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSnapshotLinksResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String nextToken;
 
 	private Integer pageSize;
@@ -33,9 +35,15 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<SnapshotLink> snapshotLinks;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -69,14 +77,6 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<SnapshotLink> getSnapshotLinks() {
 		return this.snapshotLinks;
 	}
@@ -87,29 +87,37 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 
 	public static class SnapshotLink {
 
+		private String instanceName;
+
 		private Boolean instantAccess;
 
-		private Long totalSize;
+		private Integer totalCount;
 
-		private String sourceDiskName;
+		private String category;
 
 		private Integer sourceDiskSize;
-
-		private String sourceDiskType;
 
 		private String instanceId;
 
 		private String snapshotLinkId;
 
-		private Integer totalCount;
+		private String sourceDiskName;
 
 		private String regionId;
 
+		private Long totalSize;
+
+		private String sourceDiskType;
+
 		private String sourceDiskId;
 
-		private String instanceName;
+		public String getInstanceName() {
+			return this.instanceName;
+		}
 
-		private String category;
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
 
 		public Boolean getInstantAccess() {
 			return this.instantAccess;
@@ -119,20 +127,20 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 			this.instantAccess = instantAccess;
 		}
 
-		public Long getTotalSize() {
-			return this.totalSize;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setTotalSize(Long totalSize) {
-			this.totalSize = totalSize;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
-		public String getSourceDiskName() {
-			return this.sourceDiskName;
+		public String getCategory() {
+			return this.category;
 		}
 
-		public void setSourceDiskName(String sourceDiskName) {
-			this.sourceDiskName = sourceDiskName;
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
 		public Integer getSourceDiskSize() {
@@ -141,14 +149,6 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 
 		public void setSourceDiskSize(Integer sourceDiskSize) {
 			this.sourceDiskSize = sourceDiskSize;
-		}
-
-		public String getSourceDiskType() {
-			return this.sourceDiskType;
-		}
-
-		public void setSourceDiskType(String sourceDiskType) {
-			this.sourceDiskType = sourceDiskType;
 		}
 
 		public String getInstanceId() {
@@ -167,12 +167,12 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 			this.snapshotLinkId = snapshotLinkId;
 		}
 
-		public Integer getTotalCount() {
-			return this.totalCount;
+		public String getSourceDiskName() {
+			return this.sourceDiskName;
 		}
 
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
+		public void setSourceDiskName(String sourceDiskName) {
+			this.sourceDiskName = sourceDiskName;
 		}
 
 		public String getRegionId() {
@@ -183,28 +183,28 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
+		public Long getTotalSize() {
+			return this.totalSize;
+		}
+
+		public void setTotalSize(Long totalSize) {
+			this.totalSize = totalSize;
+		}
+
+		public String getSourceDiskType() {
+			return this.sourceDiskType;
+		}
+
+		public void setSourceDiskType(String sourceDiskType) {
+			this.sourceDiskType = sourceDiskType;
+		}
+
 		public String getSourceDiskId() {
 			return this.sourceDiskId;
 		}
 
 		public void setSourceDiskId(String sourceDiskId) {
 			this.sourceDiskId = sourceDiskId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
 		}
 	}
 

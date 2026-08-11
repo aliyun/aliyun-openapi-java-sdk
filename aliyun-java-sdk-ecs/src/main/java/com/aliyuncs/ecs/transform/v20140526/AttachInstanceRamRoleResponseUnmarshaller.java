@@ -27,16 +27,16 @@ public class AttachInstanceRamRoleResponseUnmarshaller {
 	public static AttachInstanceRamRoleResponse unmarshall(AttachInstanceRamRoleResponse attachInstanceRamRoleResponse, UnmarshallerContext _ctx) {
 		
 		attachInstanceRamRoleResponse.setRequestId(_ctx.stringValue("AttachInstanceRamRoleResponse.RequestId"));
-		attachInstanceRamRoleResponse.setRamRoleName(_ctx.stringValue("AttachInstanceRamRoleResponse.RamRoleName"));
 		attachInstanceRamRoleResponse.setTotalCount(_ctx.integerValue("AttachInstanceRamRoleResponse.TotalCount"));
+		attachInstanceRamRoleResponse.setRamRoleName(_ctx.stringValue("AttachInstanceRamRoleResponse.RamRoleName"));
 		attachInstanceRamRoleResponse.setFailCount(_ctx.integerValue("AttachInstanceRamRoleResponse.FailCount"));
 
 		List<AttachInstanceRamRoleResult> attachInstanceRamRoleResults = new ArrayList<AttachInstanceRamRoleResult>();
 		for (int i = 0; i < _ctx.lengthValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults.Length"); i++) {
 			AttachInstanceRamRoleResult attachInstanceRamRoleResult = new AttachInstanceRamRoleResult();
-			attachInstanceRamRoleResult.setCode(_ctx.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Code"));
 			attachInstanceRamRoleResult.setMessage(_ctx.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Message"));
 			attachInstanceRamRoleResult.setInstanceId(_ctx.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].InstanceId"));
+			attachInstanceRamRoleResult.setCode(_ctx.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Code"));
 			attachInstanceRamRoleResult.setSuccess(_ctx.booleanValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Success"));
 
 			attachInstanceRamRoleResults.add(attachInstanceRamRoleResult);

@@ -59,23 +59,25 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 
 		private String status;
 
-		private String creationTime;
+		private String progressStatus;
 
 		private String description;
 
-		private String progressStatus;
-
-		private String snapshotGroupId;
+		private String resourceGroupId;
 
 		private String instanceId;
 
+		private String creationTime;
+
+		private Integer retentionDays;
+
+		private String snapshotGroupId;
+
 		private String name;
 
-		private String resourceGroupId;
-
-		private List<Tag> tags;
-
 		private List<Snapshot> snapshots;
+
+		private List<Tag2> tags;
 
 		public String getStatus() {
 			return this.status;
@@ -83,22 +85,6 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getProgressStatus() {
@@ -109,28 +95,12 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 			this.progressStatus = progressStatus;
 		}
 
-		public String getSnapshotGroupId() {
-			return this.snapshotGroupId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setSnapshotGroupId(String snapshotGroupId) {
-			this.snapshotGroupId = snapshotGroupId;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getResourceGroupId() {
@@ -141,12 +111,44 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public List<Tag> getTags() {
-			return this.tags;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setTags(List<Tag> tags) {
-			this.tags = tags;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public Integer getRetentionDays() {
+			return this.retentionDays;
+		}
+
+		public void setRetentionDays(Integer retentionDays) {
+			this.retentionDays = retentionDays;
+		}
+
+		public String getSnapshotGroupId() {
+			return this.snapshotGroupId;
+		}
+
+		public void setSnapshotGroupId(String snapshotGroupId) {
+			this.snapshotGroupId = snapshotGroupId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<Snapshot> getSnapshots() {
@@ -157,53 +159,46 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 			this.snapshots = snapshots;
 		}
 
-		public static class Tag {
+		public List<Tag2> getTags() {
+			return this.tags;
+		}
 
-			private String key;
-
-			private String value;
-
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
+		public void setTags(List<Tag2> tags) {
+			this.tags = tags;
 		}
 
 		public static class Snapshot {
-
-			private String sourceDiskId;
-
-			private String progress;
-
-			private Boolean available;
-
-			private Integer instantAccessRetentionDays;
 
 			private String snapshotId;
 
 			private Boolean instantAccess;
 
+			private String progress;
+
+			private Boolean available;
+
 			private String sourceDiskType;
 
-			private List<Tag2> tags1;
+			private Integer instantAccessRetentionDays;
 
-			public String getSourceDiskId() {
-				return this.sourceDiskId;
+			private String sourceDiskId;
+
+			private List<Tag> tags1;
+
+			public String getSnapshotId() {
+				return this.snapshotId;
 			}
 
-			public void setSourceDiskId(String sourceDiskId) {
-				this.sourceDiskId = sourceDiskId;
+			public void setSnapshotId(String snapshotId) {
+				this.snapshotId = snapshotId;
+			}
+
+			public Boolean getInstantAccess() {
+				return this.instantAccess;
+			}
+
+			public void setInstantAccess(Boolean instantAccess) {
+				this.instantAccess = instantAccess;
 			}
 
 			public String getProgress() {
@@ -222,30 +217,6 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 				this.available = available;
 			}
 
-			public Integer getInstantAccessRetentionDays() {
-				return this.instantAccessRetentionDays;
-			}
-
-			public void setInstantAccessRetentionDays(Integer instantAccessRetentionDays) {
-				this.instantAccessRetentionDays = instantAccessRetentionDays;
-			}
-
-			public String getSnapshotId() {
-				return this.snapshotId;
-			}
-
-			public void setSnapshotId(String snapshotId) {
-				this.snapshotId = snapshotId;
-			}
-
-			public Boolean getInstantAccess() {
-				return this.instantAccess;
-			}
-
-			public void setInstantAccess(Boolean instantAccess) {
-				this.instantAccess = instantAccess;
-			}
-
 			public String getSourceDiskType() {
 				return this.sourceDiskType;
 			}
@@ -254,27 +225,35 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 				this.sourceDiskType = sourceDiskType;
 			}
 
-			public List<Tag2> getTags1() {
+			public Integer getInstantAccessRetentionDays() {
+				return this.instantAccessRetentionDays;
+			}
+
+			public void setInstantAccessRetentionDays(Integer instantAccessRetentionDays) {
+				this.instantAccessRetentionDays = instantAccessRetentionDays;
+			}
+
+			public String getSourceDiskId() {
+				return this.sourceDiskId;
+			}
+
+			public void setSourceDiskId(String sourceDiskId) {
+				this.sourceDiskId = sourceDiskId;
+			}
+
+			public List<Tag> getTags1() {
 				return this.tags1;
 			}
 
-			public void setTags1(List<Tag2> tags1) {
+			public void setTags1(List<Tag> tags1) {
 				this.tags1 = tags1;
 			}
 
-			public static class Tag2 {
-
-				private String key;
+			public static class Tag {
 
 				private String value;
 
-				public String getKey() {
-					return this.key;
-				}
-
-				public void setKey(String key) {
-					this.key = key;
-				}
+				private String key;
 
 				public String getValue() {
 					return this.value;
@@ -283,6 +262,37 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 				public void setValue(String value) {
 					this.value = value;
 				}
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+			}
+		}
+
+		public static class Tag2 {
+
+			private String value;
+
+			private String key;
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

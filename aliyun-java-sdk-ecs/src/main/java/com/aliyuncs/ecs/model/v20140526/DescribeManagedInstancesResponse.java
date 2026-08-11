@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeManagedInstancesResponse extends AcsResponse {
 
+	private Long totalCount;
+
 	private Long pageSize;
 
 	private String requestId;
 
-	private Long pageNumber;
-
-	private Long totalCount;
-
 	private String nextToken;
 
+	private Long pageNumber;
+
 	private List<Instance> instances;
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Long getPageSize() {
 		return this.pageSize;
@@ -53,28 +61,20 @@ public class DescribeManagedInstancesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Instance> getInstances() {
@@ -87,141 +87,37 @@ public class DescribeManagedInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String lastInvokedTime;
-
-		private Boolean connected;
-
-		private String internetIp;
-
-		private String hostname;
-
-		private String instanceId;
-
-		private String activationId;
-
-		private String intranetIp;
-
-		private String agentVersion;
-
-		private String registrationTime;
-
-		private String instanceName;
-
-		private String osType;
-
-		private String osVersion;
-
-		private Long invocationCount;
-
 		private String machineId;
 
 		private String resourceGroupId;
 
+		private Boolean connected;
+
+		private String instanceId;
+
+		private String agentVersion;
+
+		private Long invocationCount;
+
+		private String osVersion;
+
+		private String hostname;
+
+		private String activationId;
+
+		private String registrationTime;
+
+		private String intranetIp;
+
+		private String instanceName;
+
+		private String internetIp;
+
+		private String osType;
+
+		private String lastInvokedTime;
+
 		private List<Tag> tags;
-
-		public String getLastInvokedTime() {
-			return this.lastInvokedTime;
-		}
-
-		public void setLastInvokedTime(String lastInvokedTime) {
-			this.lastInvokedTime = lastInvokedTime;
-		}
-
-		public Boolean getConnected() {
-			return this.connected;
-		}
-
-		public void setConnected(Boolean connected) {
-			this.connected = connected;
-		}
-
-		public String getInternetIp() {
-			return this.internetIp;
-		}
-
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
-		}
-
-		public String getHostname() {
-			return this.hostname;
-		}
-
-		public void setHostname(String hostname) {
-			this.hostname = hostname;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getActivationId() {
-			return this.activationId;
-		}
-
-		public void setActivationId(String activationId) {
-			this.activationId = activationId;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
-
-		public String getAgentVersion() {
-			return this.agentVersion;
-		}
-
-		public void setAgentVersion(String agentVersion) {
-			this.agentVersion = agentVersion;
-		}
-
-		public String getRegistrationTime() {
-			return this.registrationTime;
-		}
-
-		public void setRegistrationTime(String registrationTime) {
-			this.registrationTime = registrationTime;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getOsType() {
-			return this.osType;
-		}
-
-		public void setOsType(String osType) {
-			this.osType = osType;
-		}
-
-		public String getOsVersion() {
-			return this.osVersion;
-		}
-
-		public void setOsVersion(String osVersion) {
-			this.osVersion = osVersion;
-		}
-
-		public Long getInvocationCount() {
-			return this.invocationCount;
-		}
-
-		public void setInvocationCount(Long invocationCount) {
-			this.invocationCount = invocationCount;
-		}
 
 		public String getMachineId() {
 			return this.machineId;
@@ -237,6 +133,110 @@ public class DescribeManagedInstancesResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Boolean getConnected() {
+			return this.connected;
+		}
+
+		public void setConnected(Boolean connected) {
+			this.connected = connected;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getAgentVersion() {
+			return this.agentVersion;
+		}
+
+		public void setAgentVersion(String agentVersion) {
+			this.agentVersion = agentVersion;
+		}
+
+		public Long getInvocationCount() {
+			return this.invocationCount;
+		}
+
+		public void setInvocationCount(Long invocationCount) {
+			this.invocationCount = invocationCount;
+		}
+
+		public String getOsVersion() {
+			return this.osVersion;
+		}
+
+		public void setOsVersion(String osVersion) {
+			this.osVersion = osVersion;
+		}
+
+		public String getHostname() {
+			return this.hostname;
+		}
+
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
+		}
+
+		public String getActivationId() {
+			return this.activationId;
+		}
+
+		public void setActivationId(String activationId) {
+			this.activationId = activationId;
+		}
+
+		public String getRegistrationTime() {
+			return this.registrationTime;
+		}
+
+		public void setRegistrationTime(String registrationTime) {
+			this.registrationTime = registrationTime;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
+
+		public String getOsType() {
+			return this.osType;
+		}
+
+		public void setOsType(String osType) {
+			this.osType = osType;
+		}
+
+		public String getLastInvokedTime() {
+			return this.lastInvokedTime;
+		}
+
+		public void setLastInvokedTime(String lastInvokedTime) {
+			this.lastInvokedTime = lastInvokedTime;
 		}
 
 		public List<Tag> getTags() {

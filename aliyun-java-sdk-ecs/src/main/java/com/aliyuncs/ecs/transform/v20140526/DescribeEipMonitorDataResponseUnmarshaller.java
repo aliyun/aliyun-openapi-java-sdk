@@ -31,11 +31,11 @@ public class DescribeEipMonitorDataResponseUnmarshaller {
 		List<EipMonitorData> eipMonitorDatas = new ArrayList<EipMonitorData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEipMonitorDataResponse.EipMonitorDatas.Length"); i++) {
 			EipMonitorData eipMonitorData = new EipMonitorData();
-			eipMonitorData.setEipTX(_ctx.integerValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipTX"));
 			eipMonitorData.setEipPackets(_ctx.integerValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipPackets"));
 			eipMonitorData.setEipBandwidth(_ctx.integerValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipBandwidth"));
-			eipMonitorData.setTimeStamp(_ctx.stringValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].TimeStamp"));
 			eipMonitorData.setEipFlow(_ctx.integerValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipFlow"));
+			eipMonitorData.setEipTX(_ctx.integerValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipTX"));
+			eipMonitorData.setTimeStamp(_ctx.stringValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].TimeStamp"));
 			eipMonitorData.setEipRX(_ctx.integerValue("DescribeEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipRX"));
 
 			eipMonitorDatas.add(eipMonitorData);

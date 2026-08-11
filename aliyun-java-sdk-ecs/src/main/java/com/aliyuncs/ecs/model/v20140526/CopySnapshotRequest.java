@@ -127,8 +127,8 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -141,9 +141,9 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 		this.arns = arns;	
 		if (arns != null) {
 			for (int depth1 = 0; depth1 < arns.size(); depth1++) {
+				putQueryParameter("Arn." + (depth1 + 1) + ".AssumeRoleFor" , arns.get(depth1).getAssumeRoleFor());
 				putQueryParameter("Arn." + (depth1 + 1) + ".RoleType" , arns.get(depth1).getRoleType());
 				putQueryParameter("Arn." + (depth1 + 1) + ".Rolearn" , arns.get(depth1).getRolearn());
-				putQueryParameter("Arn." + (depth1 + 1) + ".AssumeRoleFor" , arns.get(depth1).getAssumeRoleFor());
 			}
 		}	
 	}
@@ -238,17 +238,9 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 
 	public static class Tag {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -257,15 +249,31 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 		public void setValue(String value) {
 			this.value = value;
 		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	public static class Arn {
+
+		private Long assumeRoleFor;
 
 		private String roleType;
 
 		private String rolearn;
 
-		private Long assumeRoleFor;
+		public Long getAssumeRoleFor() {
+			return this.assumeRoleFor;
+		}
+
+		public void setAssumeRoleFor(Long assumeRoleFor) {
+			this.assumeRoleFor = assumeRoleFor;
+		}
 
 		public String getRoleType() {
 			return this.roleType;
@@ -281,14 +289,6 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 
 		public void setRolearn(String rolearn) {
 			this.rolearn = rolearn;
-		}
-
-		public Long getAssumeRoleFor() {
-			return this.assumeRoleFor;
-		}
-
-		public void setAssumeRoleFor(Long assumeRoleFor) {
-			this.assumeRoleFor = assumeRoleFor;
 		}
 	}
 

@@ -27,9 +27,9 @@ public class DescribeClassicLinkInstancesResponseUnmarshaller {
 	public static DescribeClassicLinkInstancesResponse unmarshall(DescribeClassicLinkInstancesResponse describeClassicLinkInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeClassicLinkInstancesResponse.setRequestId(_ctx.stringValue("DescribeClassicLinkInstancesResponse.RequestId"));
+		describeClassicLinkInstancesResponse.setTotalCount(_ctx.integerValue("DescribeClassicLinkInstancesResponse.TotalCount"));
 		describeClassicLinkInstancesResponse.setPageSize(_ctx.integerValue("DescribeClassicLinkInstancesResponse.PageSize"));
 		describeClassicLinkInstancesResponse.setPageNumber(_ctx.integerValue("DescribeClassicLinkInstancesResponse.PageNumber"));
-		describeClassicLinkInstancesResponse.setTotalCount(_ctx.integerValue("DescribeClassicLinkInstancesResponse.TotalCount"));
 
 		List<Link> links = new ArrayList<Link>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClassicLinkInstancesResponse.Links.Length"); i++) {

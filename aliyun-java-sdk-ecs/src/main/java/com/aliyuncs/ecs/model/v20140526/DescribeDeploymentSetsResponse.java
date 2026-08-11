@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDeploymentSetsResponse extends AcsResponse {
 
-	private Integer pageSize;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private Integer pageSize;
 
 	private String requestId;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private String regionId;
 
 	private List<DeploymentSet> deploymentSets;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -43,14 +51,6 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public String getRequestId() {
@@ -61,12 +61,12 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public String getRegionId() {
@@ -87,59 +87,35 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 	public static class DeploymentSet {
 
-		private String creationTime;
-
-		private String strategy;
-
-		private String deploymentSetId;
-
 		private Long accountId;
-
-		private String deploymentStrategy;
-
-		private String deploymentSetDescription;
-
-		private String domain;
 
 		private Integer groupCount;
 
 		private String granularity;
 
-		private String deploymentSetName;
+		private String deploymentStrategy;
 
-		private Integer instanceAmount;
+		private String deploymentSetId;
 
 		private String type;
 
+		private String deploymentSetDescription;
+
+		private Integer instanceAmount;
+
+		private String creationTime;
+
+		private String strategy;
+
 		private Long affinity;
+
+		private String deploymentSetName;
+
+		private String domain;
 
 		private List<Capacity> capacities;
 
 		private List<String> instanceIds;
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getStrategy() {
-			return this.strategy;
-		}
-
-		public void setStrategy(String strategy) {
-			this.strategy = strategy;
-		}
-
-		public String getDeploymentSetId() {
-			return this.deploymentSetId;
-		}
-
-		public void setDeploymentSetId(String deploymentSetId) {
-			this.deploymentSetId = deploymentSetId;
-		}
 
 		public Long getAccountId() {
 			return this.accountId;
@@ -147,30 +123,6 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 		public void setAccountId(Long accountId) {
 			this.accountId = accountId;
-		}
-
-		public String getDeploymentStrategy() {
-			return this.deploymentStrategy;
-		}
-
-		public void setDeploymentStrategy(String deploymentStrategy) {
-			this.deploymentStrategy = deploymentStrategy;
-		}
-
-		public String getDeploymentSetDescription() {
-			return this.deploymentSetDescription;
-		}
-
-		public void setDeploymentSetDescription(String deploymentSetDescription) {
-			this.deploymentSetDescription = deploymentSetDescription;
-		}
-
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
 		}
 
 		public Integer getGroupCount() {
@@ -189,20 +141,20 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 			this.granularity = granularity;
 		}
 
-		public String getDeploymentSetName() {
-			return this.deploymentSetName;
+		public String getDeploymentStrategy() {
+			return this.deploymentStrategy;
 		}
 
-		public void setDeploymentSetName(String deploymentSetName) {
-			this.deploymentSetName = deploymentSetName;
+		public void setDeploymentStrategy(String deploymentStrategy) {
+			this.deploymentStrategy = deploymentStrategy;
 		}
 
-		public Integer getInstanceAmount() {
-			return this.instanceAmount;
+		public String getDeploymentSetId() {
+			return this.deploymentSetId;
 		}
 
-		public void setInstanceAmount(Integer instanceAmount) {
-			this.instanceAmount = instanceAmount;
+		public void setDeploymentSetId(String deploymentSetId) {
+			this.deploymentSetId = deploymentSetId;
 		}
 
 		public String getType() {
@@ -213,12 +165,60 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getDeploymentSetDescription() {
+			return this.deploymentSetDescription;
+		}
+
+		public void setDeploymentSetDescription(String deploymentSetDescription) {
+			this.deploymentSetDescription = deploymentSetDescription;
+		}
+
+		public Integer getInstanceAmount() {
+			return this.instanceAmount;
+		}
+
+		public void setInstanceAmount(Integer instanceAmount) {
+			this.instanceAmount = instanceAmount;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getStrategy() {
+			return this.strategy;
+		}
+
+		public void setStrategy(String strategy) {
+			this.strategy = strategy;
+		}
+
 		public Long getAffinity() {
 			return this.affinity;
 		}
 
 		public void setAffinity(Long affinity) {
 			this.affinity = affinity;
+		}
+
+		public String getDeploymentSetName() {
+			return this.deploymentSetName;
+		}
+
+		public void setDeploymentSetName(String deploymentSetName) {
+			this.deploymentSetName = deploymentSetName;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 
 		public List<Capacity> getCapacities() {
@@ -239,19 +239,11 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 		public static class Capacity {
 
-			private String zoneId;
-
 			private Integer usedAmount;
 
+			private String zoneId;
+
 			private Integer availableAmount;
-
-			public String getZoneId() {
-				return this.zoneId;
-			}
-
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
-			}
 
 			public Integer getUsedAmount() {
 				return this.usedAmount;
@@ -259,6 +251,14 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 			public void setUsedAmount(Integer usedAmount) {
 				this.usedAmount = usedAmount;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
 			}
 
 			public Integer getAvailableAmount() {

@@ -84,6 +84,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private Integer queuePairNumber;
 
+	private Boolean enablePrimaryIPv6;
+
 	private List<String> securityGroupIdss;
 
 	private String networkInterfaceTrafficMode;
@@ -145,8 +147,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		this.networkInterfaceTrafficConfig = networkInterfaceTrafficConfig;	
 		if (networkInterfaceTrafficConfig != null) {
 			
-				putQueryParameter("NetworkInterfaceTrafficConfig.QueueNumber" , networkInterfaceTrafficConfig.getQueueNumber());
 				putQueryParameter("NetworkInterfaceTrafficConfig.NetworkInterfaceTrafficMode" , networkInterfaceTrafficConfig.getNetworkInterfaceTrafficMode());
+				putQueryParameter("NetworkInterfaceTrafficConfig.QueueNumber" , networkInterfaceTrafficConfig.getQueueNumber());
 				putQueryParameter("NetworkInterfaceTrafficConfig.QueuePairNumber" , networkInterfaceTrafficConfig.getQueuePairNumber());
 				putQueryParameter("NetworkInterfaceTrafficConfig.TxQueueSize" , networkInterfaceTrafficConfig.getTxQueueSize());
 				putQueryParameter("NetworkInterfaceTrafficConfig.RxQueueSize" , networkInterfaceTrafficConfig.getRxQueueSize());
@@ -194,10 +196,11 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		this.enhancedNetwork = enhancedNetwork;	
 		if (enhancedNetwork != null) {
 			
-				putQueryParameter("EnhancedNetwork.EnableSriov" , enhancedNetwork.getEnableSriov());
 				putQueryParameter("EnhancedNetwork.EnableRss" , enhancedNetwork.getEnableRss());
 				putQueryParameter("EnhancedNetwork.VirtualFunctionTotalQueueNumber" , enhancedNetwork.getVirtualFunctionTotalQueueNumber());
+				putQueryParameter("EnhancedNetwork.EnableSriov" , enhancedNetwork.getEnableSriov());
 				putQueryParameter("EnhancedNetwork.VirtualFunctionQuantity" , enhancedNetwork.getVirtualFunctionQuantity());
+				putQueryParameter("EnhancedNetwork.EnableExpress" , enhancedNetwork.getEnableExpress());
 		}	
 	}
 
@@ -209,8 +212,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -441,6 +444,17 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}
 	}
 
+	public Boolean getEnablePrimaryIPv6() {
+		return this.enablePrimaryIPv6;
+	}
+
+	public void setEnablePrimaryIPv6(Boolean enablePrimaryIPv6) {
+		this.enablePrimaryIPv6 = enablePrimaryIPv6;
+		if(enablePrimaryIPv6 != null){
+			putQueryParameter("EnablePrimaryIPv6", enablePrimaryIPv6.toString());
+		}
+	}
+
 	public List<String> getSecurityGroupIdss() {
 		return this.securityGroupIdss;
 	}
@@ -484,9 +498,9 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		this.connectionTrackingConfiguration = connectionTrackingConfiguration;	
 		if (connectionTrackingConfiguration != null) {
 			
-				putQueryParameter("ConnectionTrackingConfiguration.TcpEstablishedTimeout" , connectionTrackingConfiguration.getTcpEstablishedTimeout());
 				putQueryParameter("ConnectionTrackingConfiguration.TcpClosedAndTimeWaitTimeout" , connectionTrackingConfiguration.getTcpClosedAndTimeWaitTimeout());
 				putQueryParameter("ConnectionTrackingConfiguration.UdpTimeout" , connectionTrackingConfiguration.getUdpTimeout());
+				putQueryParameter("ConnectionTrackingConfiguration.TcpEstablishedTimeout" , connectionTrackingConfiguration.getTcpEstablishedTimeout());
 		}	
 	}
 
@@ -503,9 +517,9 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	public static class NetworkInterfaceTrafficConfig {
 
-		private Integer queueNumber;
-
 		private String networkInterfaceTrafficMode;
+
+		private Integer queueNumber;
 
 		private Integer queuePairNumber;
 
@@ -513,20 +527,20 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 		private Integer rxQueueSize;
 
-		public Integer getQueueNumber() {
-			return this.queueNumber;
-		}
-
-		public void setQueueNumber(Integer queueNumber) {
-			this.queueNumber = queueNumber;
-		}
-
 		public String getNetworkInterfaceTrafficMode() {
 			return this.networkInterfaceTrafficMode;
 		}
 
 		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
 			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		}
+
+		public Integer getQueueNumber() {
+			return this.queueNumber;
+		}
+
+		public void setQueueNumber(Integer queueNumber) {
+			this.queueNumber = queueNumber;
 		}
 
 		public Integer getQueuePairNumber() {
@@ -556,21 +570,15 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	public static class EnhancedNetwork {
 
-		private Boolean enableSriov;
-
 		private Boolean enableRss;
 
 		private Integer virtualFunctionTotalQueueNumber;
 
+		private Boolean enableSriov;
+
 		private Integer virtualFunctionQuantity;
 
-		public Boolean getEnableSriov() {
-			return this.enableSriov;
-		}
-
-		public void setEnableSriov(Boolean enableSriov) {
-			this.enableSriov = enableSriov;
-		}
+		private Boolean enableExpress;
 
 		public Boolean getEnableRss() {
 			return this.enableRss;
@@ -588,6 +596,14 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 			this.virtualFunctionTotalQueueNumber = virtualFunctionTotalQueueNumber;
 		}
 
+		public Boolean getEnableSriov() {
+			return this.enableSriov;
+		}
+
+		public void setEnableSriov(Boolean enableSriov) {
+			this.enableSriov = enableSriov;
+		}
+
 		public Integer getVirtualFunctionQuantity() {
 			return this.virtualFunctionQuantity;
 		}
@@ -595,21 +611,21 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		public void setVirtualFunctionQuantity(Integer virtualFunctionQuantity) {
 			this.virtualFunctionQuantity = virtualFunctionQuantity;
 		}
+
+		public Boolean getEnableExpress() {
+			return this.enableExpress;
+		}
+
+		public void setEnableExpress(Boolean enableExpress) {
+			this.enableExpress = enableExpress;
+		}
 	}
 
 	public static class Tag {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -618,23 +634,23 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		public void setValue(String value) {
 			this.value = value;
 		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	public static class ConnectionTrackingConfiguration {
-
-		private Integer tcpEstablishedTimeout;
 
 		private Integer tcpClosedAndTimeWaitTimeout;
 
 		private Integer udpTimeout;
 
-		public Integer getTcpEstablishedTimeout() {
-			return this.tcpEstablishedTimeout;
-		}
-
-		public void setTcpEstablishedTimeout(Integer tcpEstablishedTimeout) {
-			this.tcpEstablishedTimeout = tcpEstablishedTimeout;
-		}
+		private Integer tcpEstablishedTimeout;
 
 		public Integer getTcpClosedAndTimeWaitTimeout() {
 			return this.tcpClosedAndTimeWaitTimeout;
@@ -650,6 +666,14 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 		public void setUdpTimeout(Integer udpTimeout) {
 			this.udpTimeout = udpTimeout;
+		}
+
+		public Integer getTcpEstablishedTimeout() {
+			return this.tcpEstablishedTimeout;
+		}
+
+		public void setTcpEstablishedTimeout(Integer tcpEstablishedTimeout) {
+			this.tcpEstablishedTimeout = tcpEstablishedTimeout;
 		}
 	}
 

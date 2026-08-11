@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateKeyPairResponse extends AcsResponse {
 
-	private String privateKeyBody;
+	private String keyPairFingerPrint;
 
 	private String keyPairName;
 
-	private String keyPairId;
-
 	private String requestId;
 
-	private String keyPairFingerPrint;
+	private String keyPairId;
 
-	public String getPrivateKeyBody() {
-		return this.privateKeyBody;
+	private String privateKeyBody;
+
+	public String getKeyPairFingerPrint() {
+		return this.keyPairFingerPrint;
 	}
 
-	public void setPrivateKeyBody(String privateKeyBody) {
-		this.privateKeyBody = privateKeyBody;
+	public void setKeyPairFingerPrint(String keyPairFingerPrint) {
+		this.keyPairFingerPrint = keyPairFingerPrint;
 	}
 
 	public String getKeyPairName() {
@@ -50,14 +50,6 @@ public class CreateKeyPairResponse extends AcsResponse {
 		this.keyPairName = keyPairName;
 	}
 
-	public String getKeyPairId() {
-		return this.keyPairId;
-	}
-
-	public void setKeyPairId(String keyPairId) {
-		this.keyPairId = keyPairId;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -66,12 +58,20 @@ public class CreateKeyPairResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getKeyPairFingerPrint() {
-		return this.keyPairFingerPrint;
+	public String getKeyPairId() {
+		return this.keyPairId;
 	}
 
-	public void setKeyPairFingerPrint(String keyPairFingerPrint) {
-		this.keyPairFingerPrint = keyPairFingerPrint;
+	public void setKeyPairId(String keyPairId) {
+		this.keyPairId = keyPairId;
+	}
+
+	public String getPrivateKeyBody() {
+		return this.privateKeyBody;
+	}
+
+	public void setPrivateKeyBody(String privateKeyBody) {
+		this.privateKeyBody = privateKeyBody;
 	}
 
 	@Override

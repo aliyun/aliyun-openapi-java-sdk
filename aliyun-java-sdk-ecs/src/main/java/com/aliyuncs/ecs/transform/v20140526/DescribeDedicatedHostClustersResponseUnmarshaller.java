@@ -31,19 +31,19 @@ public class DescribeDedicatedHostClustersResponseUnmarshaller {
 	public static DescribeDedicatedHostClustersResponse unmarshall(DescribeDedicatedHostClustersResponse describeDedicatedHostClustersResponse, UnmarshallerContext _ctx) {
 		
 		describeDedicatedHostClustersResponse.setRequestId(_ctx.stringValue("DescribeDedicatedHostClustersResponse.RequestId"));
+		describeDedicatedHostClustersResponse.setTotalCount(_ctx.integerValue("DescribeDedicatedHostClustersResponse.TotalCount"));
 		describeDedicatedHostClustersResponse.setPageSize(_ctx.integerValue("DescribeDedicatedHostClustersResponse.PageSize"));
 		describeDedicatedHostClustersResponse.setPageNumber(_ctx.integerValue("DescribeDedicatedHostClustersResponse.PageNumber"));
-		describeDedicatedHostClustersResponse.setTotalCount(_ctx.integerValue("DescribeDedicatedHostClustersResponse.TotalCount"));
 
 		List<DedicatedHostCluster> dedicatedHostClusters = new ArrayList<DedicatedHostCluster>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters.Length"); i++) {
 			DedicatedHostCluster dedicatedHostCluster = new DedicatedHostCluster();
 			dedicatedHostCluster.setDescription(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].Description"));
-			dedicatedHostCluster.setDedicatedHostClusterId(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterId"));
 			dedicatedHostCluster.setResourceGroupId(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].ResourceGroupId"));
 			dedicatedHostCluster.setZoneId(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].ZoneId"));
-			dedicatedHostCluster.setRegionId(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].RegionId"));
 			dedicatedHostCluster.setDedicatedHostClusterName(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterName"));
+			dedicatedHostCluster.setRegionId(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].RegionId"));
+			dedicatedHostCluster.setDedicatedHostClusterId(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterId"));
 
 			List<String> dedicatedHostIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostIds.Length"); j++) {
@@ -52,38 +52,38 @@ public class DescribeDedicatedHostClustersResponseUnmarshaller {
 			dedicatedHostCluster.setDedicatedHostIds(dedicatedHostIds);
 
 			DedicatedHostClusterCapacity dedicatedHostClusterCapacity = new DedicatedHostClusterCapacity();
-			dedicatedHostClusterCapacity.setAvailableVcpus(_ctx.integerValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.AvailableVcpus"));
 			dedicatedHostClusterCapacity.setAvailableMemory(_ctx.integerValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.AvailableMemory"));
 			dedicatedHostClusterCapacity.setTotalMemory(_ctx.integerValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.TotalMemory"));
+			dedicatedHostClusterCapacity.setAvailableVcpus(_ctx.integerValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.AvailableVcpus"));
 			dedicatedHostClusterCapacity.setTotalVcpus(_ctx.integerValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.TotalVcpus"));
-
-			List<LocalStorageCapacity> localStorageCapacities = new ArrayList<LocalStorageCapacity>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.LocalStorageCapacities.Length"); j++) {
-				LocalStorageCapacity localStorageCapacity = new LocalStorageCapacity();
-				localStorageCapacity.setDataDiskCategory(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.LocalStorageCapacities["+ j +"].DataDiskCategory"));
-				localStorageCapacity.setAvailableDisk(_ctx.integerValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.LocalStorageCapacities["+ j +"].AvailableDisk"));
-				localStorageCapacity.setTotalDisk(_ctx.integerValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.LocalStorageCapacities["+ j +"].TotalDisk"));
-
-				localStorageCapacities.add(localStorageCapacity);
-			}
-			dedicatedHostClusterCapacity.setLocalStorageCapacities(localStorageCapacities);
 
 			List<AvailableInstanceType> availableInstanceTypes = new ArrayList<AvailableInstanceType>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.AvailableInstanceTypes.Length"); j++) {
 				AvailableInstanceType availableInstanceType = new AvailableInstanceType();
-				availableInstanceType.setInstanceType(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.AvailableInstanceTypes["+ j +"].InstanceType"));
 				availableInstanceType.setAvailableInstanceCapacity(_ctx.integerValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.AvailableInstanceTypes["+ j +"].AvailableInstanceCapacity"));
+				availableInstanceType.setInstanceType(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.AvailableInstanceTypes["+ j +"].InstanceType"));
 
 				availableInstanceTypes.add(availableInstanceType);
 			}
 			dedicatedHostClusterCapacity.setAvailableInstanceTypes(availableInstanceTypes);
+
+			List<LocalStorageCapacity> localStorageCapacities = new ArrayList<LocalStorageCapacity>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.LocalStorageCapacities.Length"); j++) {
+				LocalStorageCapacity localStorageCapacity = new LocalStorageCapacity();
+				localStorageCapacity.setTotalDisk(_ctx.integerValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.LocalStorageCapacities["+ j +"].TotalDisk"));
+				localStorageCapacity.setAvailableDisk(_ctx.integerValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.LocalStorageCapacities["+ j +"].AvailableDisk"));
+				localStorageCapacity.setDataDiskCategory(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.LocalStorageCapacities["+ j +"].DataDiskCategory"));
+
+				localStorageCapacities.add(localStorageCapacity);
+			}
+			dedicatedHostClusterCapacity.setLocalStorageCapacities(localStorageCapacities);
 			dedicatedHostCluster.setDedicatedHostClusterCapacity(dedicatedHostClusterCapacity);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagValue(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].Tags["+ j +"].TagValue"));
 				tag.setTagKey(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].Tags["+ j +"].TagValue"));
 
 				tags.add(tag);
 			}

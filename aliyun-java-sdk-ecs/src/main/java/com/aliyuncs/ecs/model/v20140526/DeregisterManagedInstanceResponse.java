@@ -46,129 +46,33 @@ public class DeregisterManagedInstanceResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String lastInvokedTime;
-
-		private String internetIp;
-
-		private String hostname;
-
-		private String instanceId;
-
-		private String activationId;
-
-		private String intranetIp;
-
-		private String agentVersion;
-
-		private String registrationTime;
-
-		private String instanceName;
-
-		private String osType;
-
-		private String osVersion;
-
-		private Long invocationCount;
-
 		private String machineId;
 
 		private String resourceGroupId;
 
-		public String getLastInvokedTime() {
-			return this.lastInvokedTime;
-		}
+		private String instanceId;
 
-		public void setLastInvokedTime(String lastInvokedTime) {
-			this.lastInvokedTime = lastInvokedTime;
-		}
+		private String agentVersion;
 
-		public String getInternetIp() {
-			return this.internetIp;
-		}
+		private Long invocationCount;
 
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
-		}
+		private String osVersion;
 
-		public String getHostname() {
-			return this.hostname;
-		}
+		private String hostname;
 
-		public void setHostname(String hostname) {
-			this.hostname = hostname;
-		}
+		private String activationId;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private String registrationTime;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String intranetIp;
 
-		public String getActivationId() {
-			return this.activationId;
-		}
+		private String instanceName;
 
-		public void setActivationId(String activationId) {
-			this.activationId = activationId;
-		}
+		private String internetIp;
 
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
+		private String osType;
 
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
-
-		public String getAgentVersion() {
-			return this.agentVersion;
-		}
-
-		public void setAgentVersion(String agentVersion) {
-			this.agentVersion = agentVersion;
-		}
-
-		public String getRegistrationTime() {
-			return this.registrationTime;
-		}
-
-		public void setRegistrationTime(String registrationTime) {
-			this.registrationTime = registrationTime;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getOsType() {
-			return this.osType;
-		}
-
-		public void setOsType(String osType) {
-			this.osType = osType;
-		}
-
-		public String getOsVersion() {
-			return this.osVersion;
-		}
-
-		public void setOsVersion(String osVersion) {
-			this.osVersion = osVersion;
-		}
-
-		public Long getInvocationCount() {
-			return this.invocationCount;
-		}
-
-		public void setInvocationCount(Long invocationCount) {
-			this.invocationCount = invocationCount;
-		}
+		private String lastInvokedTime;
 
 		public String getMachineId() {
 			return this.machineId;
@@ -184,6 +88,102 @@ public class DeregisterManagedInstanceResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getAgentVersion() {
+			return this.agentVersion;
+		}
+
+		public void setAgentVersion(String agentVersion) {
+			this.agentVersion = agentVersion;
+		}
+
+		public Long getInvocationCount() {
+			return this.invocationCount;
+		}
+
+		public void setInvocationCount(Long invocationCount) {
+			this.invocationCount = invocationCount;
+		}
+
+		public String getOsVersion() {
+			return this.osVersion;
+		}
+
+		public void setOsVersion(String osVersion) {
+			this.osVersion = osVersion;
+		}
+
+		public String getHostname() {
+			return this.hostname;
+		}
+
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
+		}
+
+		public String getActivationId() {
+			return this.activationId;
+		}
+
+		public void setActivationId(String activationId) {
+			this.activationId = activationId;
+		}
+
+		public String getRegistrationTime() {
+			return this.registrationTime;
+		}
+
+		public void setRegistrationTime(String registrationTime) {
+			this.registrationTime = registrationTime;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
+
+		public String getOsType() {
+			return this.osType;
+		}
+
+		public void setOsType(String osType) {
+			this.osType = osType;
+		}
+
+		public String getLastInvokedTime() {
+			return this.lastInvokedTime;
+		}
+
+		public void setLastInvokedTime(String lastInvokedTime) {
+			this.lastInvokedTime = lastInvokedTime;
 		}
 	}
 

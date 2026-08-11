@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateHpcClusterResponse extends AcsResponse {
 
-	private String hpcClusterId;
-
 	private String requestId;
 
-	public String getHpcClusterId() {
-		return this.hpcClusterId;
-	}
-
-	public void setHpcClusterId(String hpcClusterId) {
-		this.hpcClusterId = hpcClusterId;
-	}
+	private String hpcClusterId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class CreateHpcClusterResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getHpcClusterId() {
+		return this.hpcClusterId;
+	}
+
+	public void setHpcClusterId(String hpcClusterId) {
+		this.hpcClusterId = hpcClusterId;
 	}
 
 	@Override

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<ForwardTableEntry> forwardTableEntries;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<ForwardTableEntry> getForwardTableEntries() {
 		return this.forwardTableEntries;
 	}
@@ -79,19 +79,19 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
 		private String status;
 
-		private String forwardEntryId;
-
-		private String internalIp;
-
-		private String internalPort;
-
-		private String forwardTableId;
-
 		private String externalPort;
+
+		private String externalIp;
+
+		private String forwardEntryId;
 
 		private String ipProtocol;
 
-		private String externalIp;
+		private String internalPort;
+
+		private String internalIp;
+
+		private String forwardTableId;
 
 		public String getStatus() {
 			return this.status;
@@ -99,38 +99,6 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getForwardEntryId() {
-			return this.forwardEntryId;
-		}
-
-		public void setForwardEntryId(String forwardEntryId) {
-			this.forwardEntryId = forwardEntryId;
-		}
-
-		public String getInternalIp() {
-			return this.internalIp;
-		}
-
-		public void setInternalIp(String internalIp) {
-			this.internalIp = internalIp;
-		}
-
-		public String getInternalPort() {
-			return this.internalPort;
-		}
-
-		public void setInternalPort(String internalPort) {
-			this.internalPort = internalPort;
-		}
-
-		public String getForwardTableId() {
-			return this.forwardTableId;
-		}
-
-		public void setForwardTableId(String forwardTableId) {
-			this.forwardTableId = forwardTableId;
 		}
 
 		public String getExternalPort() {
@@ -141,6 +109,22 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 			this.externalPort = externalPort;
 		}
 
+		public String getExternalIp() {
+			return this.externalIp;
+		}
+
+		public void setExternalIp(String externalIp) {
+			this.externalIp = externalIp;
+		}
+
+		public String getForwardEntryId() {
+			return this.forwardEntryId;
+		}
+
+		public void setForwardEntryId(String forwardEntryId) {
+			this.forwardEntryId = forwardEntryId;
+		}
+
 		public String getIpProtocol() {
 			return this.ipProtocol;
 		}
@@ -149,12 +133,28 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 			this.ipProtocol = ipProtocol;
 		}
 
-		public String getExternalIp() {
-			return this.externalIp;
+		public String getInternalPort() {
+			return this.internalPort;
 		}
 
-		public void setExternalIp(String externalIp) {
-			this.externalIp = externalIp;
+		public void setInternalPort(String internalPort) {
+			this.internalPort = internalPort;
+		}
+
+		public String getInternalIp() {
+			return this.internalIp;
+		}
+
+		public void setInternalIp(String internalIp) {
+			this.internalIp = internalIp;
+		}
+
+		public String getForwardTableId() {
+			return this.forwardTableId;
+		}
+
+		public void setForwardTableId(String forwardTableId) {
+			this.forwardTableId = forwardTableId;
 		}
 	}
 

@@ -26,15 +26,15 @@ public class DeleteActivationResponseUnmarshaller {
 		deleteActivationResponse.setRequestId(_ctx.stringValue("DeleteActivationResponse.RequestId"));
 
 		Activation activation = new Activation();
-		activation.setCreationTime(_ctx.stringValue("DeleteActivationResponse.Activation.CreationTime"));
+		activation.setInstanceName(_ctx.stringValue("DeleteActivationResponse.Activation.InstanceName"));
 		activation.setDeregisteredCount(_ctx.integerValue("DeleteActivationResponse.Activation.DeregisteredCount"));
 		activation.setInstanceCount(_ctx.integerValue("DeleteActivationResponse.Activation.InstanceCount"));
 		activation.setDescription(_ctx.stringValue("DeleteActivationResponse.Activation.Description"));
-		activation.setRegisteredCount(_ctx.integerValue("DeleteActivationResponse.Activation.RegisteredCount"));
-		activation.setInstanceName(_ctx.stringValue("DeleteActivationResponse.Activation.InstanceName"));
-		activation.setIpAddressRange(_ctx.stringValue("DeleteActivationResponse.Activation.IpAddressRange"));
-		activation.setTimeToLiveInHours(_ctx.longValue("DeleteActivationResponse.Activation.TimeToLiveInHours"));
+		activation.setCreationTime(_ctx.stringValue("DeleteActivationResponse.Activation.CreationTime"));
 		activation.setActivationId(_ctx.stringValue("DeleteActivationResponse.Activation.ActivationId"));
+		activation.setRegisteredCount(_ctx.integerValue("DeleteActivationResponse.Activation.RegisteredCount"));
+		activation.setTimeToLiveInHours(_ctx.longValue("DeleteActivationResponse.Activation.TimeToLiveInHours"));
+		activation.setIpAddressRange(_ctx.stringValue("DeleteActivationResponse.Activation.IpAddressRange"));
 		deleteActivationResponse.setActivation(activation);
 	 
 	 	return deleteActivationResponse;

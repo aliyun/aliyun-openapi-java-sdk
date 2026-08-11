@@ -27,9 +27,9 @@ public class DetachKeyPairResponse extends AcsResponse {
 
 	private String keyPairName;
 
-	private String requestId;
-
 	private String totalCount;
+
+	private String requestId;
 
 	private String failCount;
 
@@ -43,20 +43,20 @@ public class DetachKeyPairResponse extends AcsResponse {
 		this.keyPairName = keyPairName;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(String totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getFailCount() {
@@ -77,21 +77,13 @@ public class DetachKeyPairResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String code;
-
 		private String message;
 
 		private String instanceId;
 
+		private String code;
+
 		private String success;
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
 
 		public String getMessage() {
 			return this.message;
@@ -107,6 +99,14 @@ public class DetachKeyPairResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
 		}
 
 		public String getSuccess() {

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AttachInstanceRamRoleResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String ramRoleName;
 
 	private String requestId;
 
-	private Integer totalCount;
-
 	private Integer failCount;
 
 	private List<AttachInstanceRamRoleResult> attachInstanceRamRoleResults;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRamRoleName() {
 		return this.ramRoleName;
@@ -49,14 +57,6 @@ public class AttachInstanceRamRoleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getFailCount() {
@@ -77,21 +77,13 @@ public class AttachInstanceRamRoleResponse extends AcsResponse {
 
 	public static class AttachInstanceRamRoleResult {
 
-		private String code;
-
 		private String message;
 
 		private String instanceId;
 
+		private String code;
+
 		private Boolean success;
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
 
 		public String getMessage() {
 			return this.message;
@@ -107,6 +99,14 @@ public class AttachInstanceRamRoleResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
 		}
 
 		public Boolean getSuccess() {

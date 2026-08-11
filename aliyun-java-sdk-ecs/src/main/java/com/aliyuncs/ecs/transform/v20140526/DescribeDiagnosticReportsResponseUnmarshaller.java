@@ -33,24 +33,24 @@ public class DescribeDiagnosticReportsResponseUnmarshaller {
 		List<Report> reports = new ArrayList<Report>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDiagnosticReportsResponse.Reports.Length"); i++) {
 			Report report = new Report();
+			report.setStatus(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].Status"));
+			report.setEndTime(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].EndTime"));
 			report.setResourceId(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].ResourceId"));
-			report.setResourceType(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].ResourceType"));
 			report.setMetricSetId(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].MetricSetId"));
 			report.setStartTime(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].StartTime"));
-			report.setEndTime(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].EndTime"));
-			report.setReportId(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].ReportId"));
-			report.setStatus(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].Status"));
 			report.setCreationTime(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].CreationTime"));
-			report.setFinishedTime(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].FinishedTime"));
+			report.setReportId(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].ReportId"));
+			report.setResourceType(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].ResourceType"));
 			report.setSeverity(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].Severity"));
+			report.setFinishedTime(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].FinishedTime"));
 
 			List<Issue> issues = new ArrayList<Issue>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].Issues.Length"); j++) {
 				Issue issue = new Issue();
 				issue.setMetricId(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].MetricId"));
-				issue.setMetricCategory(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].MetricCategory"));
-				issue.setIssueId(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].IssueId"));
 				issue.setSeverity(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].Severity"));
+				issue.setIssueId(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].IssueId"));
+				issue.setMetricCategory(_ctx.stringValue("DescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].MetricCategory"));
 
 				issues.add(issue);
 			}

@@ -46,7 +46,7 @@ public class DisableActivationResponse extends AcsResponse {
 
 	public static class Activation {
 
-		private String creationTime;
+		private String instanceName;
 
 		private Integer deregisteredCount;
 
@@ -54,24 +54,24 @@ public class DisableActivationResponse extends AcsResponse {
 
 		private String description;
 
+		private String creationTime;
+
+		private String activationId;
+
 		private Integer registeredCount;
 
-		private String instanceName;
+		private Long timeToLiveInHours;
 
 		private Boolean disabled;
 
 		private String ipAddressRange;
 
-		private Long timeToLiveInHours;
-
-		private String activationId;
-
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getInstanceName() {
+			return this.instanceName;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public Integer getDeregisteredCount() {
@@ -98,6 +98,22 @@ public class DisableActivationResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getActivationId() {
+			return this.activationId;
+		}
+
+		public void setActivationId(String activationId) {
+			this.activationId = activationId;
+		}
+
 		public Integer getRegisteredCount() {
 			return this.registeredCount;
 		}
@@ -106,12 +122,12 @@ public class DisableActivationResponse extends AcsResponse {
 			this.registeredCount = registeredCount;
 		}
 
-		public String getInstanceName() {
-			return this.instanceName;
+		public Long getTimeToLiveInHours() {
+			return this.timeToLiveInHours;
 		}
 
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setTimeToLiveInHours(Long timeToLiveInHours) {
+			this.timeToLiveInHours = timeToLiveInHours;
 		}
 
 		public Boolean getDisabled() {
@@ -128,22 +144,6 @@ public class DisableActivationResponse extends AcsResponse {
 
 		public void setIpAddressRange(String ipAddressRange) {
 			this.ipAddressRange = ipAddressRange;
-		}
-
-		public Long getTimeToLiveInHours() {
-			return this.timeToLiveInHours;
-		}
-
-		public void setTimeToLiveInHours(Long timeToLiveInHours) {
-			this.timeToLiveInHours = timeToLiveInHours;
-		}
-
-		public String getActivationId() {
-			return this.activationId;
-		}
-
-		public void setActivationId(String activationId) {
-			this.activationId = activationId;
 		}
 	}
 

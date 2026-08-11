@@ -27,9 +27,9 @@ public class DescribeInstanceAttachmentAttributesResponseUnmarshaller {
 	public static DescribeInstanceAttachmentAttributesResponse unmarshall(DescribeInstanceAttachmentAttributesResponse describeInstanceAttachmentAttributesResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceAttachmentAttributesResponse.setRequestId(_ctx.stringValue("DescribeInstanceAttachmentAttributesResponse.RequestId"));
+		describeInstanceAttachmentAttributesResponse.setTotalCount(_ctx.integerValue("DescribeInstanceAttachmentAttributesResponse.TotalCount"));
 		describeInstanceAttachmentAttributesResponse.setPageSize(_ctx.integerValue("DescribeInstanceAttachmentAttributesResponse.PageSize"));
 		describeInstanceAttachmentAttributesResponse.setPageNumber(_ctx.integerValue("DescribeInstanceAttachmentAttributesResponse.PageNumber"));
-		describeInstanceAttachmentAttributesResponse.setTotalCount(_ctx.integerValue("DescribeInstanceAttachmentAttributesResponse.TotalCount"));
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAttachmentAttributesResponse.Instances.Length"); i++) {

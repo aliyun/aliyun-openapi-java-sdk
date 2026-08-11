@@ -57,27 +57,43 @@ public class DescribeDiagnosticReportsResponse extends AcsResponse {
 
 	public static class Report {
 
-		private String resourceId;
+		private String status;
 
-		private String resourceType;
+		private String endTime;
+
+		private String resourceId;
 
 		private String metricSetId;
 
 		private String startTime;
 
-		private String endTime;
+		private String creationTime;
 
 		private String reportId;
 
-		private String status;
-
-		private String creationTime;
-
-		private String finishedTime;
+		private String resourceType;
 
 		private String severity;
 
+		private String finishedTime;
+
 		private List<Issue> issues;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
 
 		public String getResourceId() {
 			return this.resourceId;
@@ -85,14 +101,6 @@ public class DescribeDiagnosticReportsResponse extends AcsResponse {
 
 		public void setResourceId(String resourceId) {
 			this.resourceId = resourceId;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
 		}
 
 		public String getMetricSetId() {
@@ -111,12 +119,12 @@ public class DescribeDiagnosticReportsResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getReportId() {
@@ -127,28 +135,12 @@ public class DescribeDiagnosticReportsResponse extends AcsResponse {
 			this.reportId = reportId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getResourceType() {
+			return this.resourceType;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getFinishedTime() {
-			return this.finishedTime;
-		}
-
-		public void setFinishedTime(String finishedTime) {
-			this.finishedTime = finishedTime;
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public String getSeverity() {
@@ -157,6 +149,14 @@ public class DescribeDiagnosticReportsResponse extends AcsResponse {
 
 		public void setSeverity(String severity) {
 			this.severity = severity;
+		}
+
+		public String getFinishedTime() {
+			return this.finishedTime;
+		}
+
+		public void setFinishedTime(String finishedTime) {
+			this.finishedTime = finishedTime;
 		}
 
 		public List<Issue> getIssues() {
@@ -171,11 +171,11 @@ public class DescribeDiagnosticReportsResponse extends AcsResponse {
 
 			private String metricId;
 
-			private String metricCategory;
+			private String severity;
 
 			private String issueId;
 
-			private String severity;
+			private String metricCategory;
 
 			public String getMetricId() {
 				return this.metricId;
@@ -185,12 +185,12 @@ public class DescribeDiagnosticReportsResponse extends AcsResponse {
 				this.metricId = metricId;
 			}
 
-			public String getMetricCategory() {
-				return this.metricCategory;
+			public String getSeverity() {
+				return this.severity;
 			}
 
-			public void setMetricCategory(String metricCategory) {
-				this.metricCategory = metricCategory;
+			public void setSeverity(String severity) {
+				this.severity = severity;
 			}
 
 			public String getIssueId() {
@@ -201,12 +201,12 @@ public class DescribeDiagnosticReportsResponse extends AcsResponse {
 				this.issueId = issueId;
 			}
 
-			public String getSeverity() {
-				return this.severity;
+			public String getMetricCategory() {
+				return this.metricCategory;
 			}
 
-			public void setSeverity(String severity) {
-				this.severity = severity;
+			public void setMetricCategory(String metricCategory) {
+				this.metricCategory = metricCategory;
 			}
 		}
 	}

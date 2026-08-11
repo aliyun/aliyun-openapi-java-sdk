@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDiskDefaultKMSKeyIdResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String kMSKeyId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getKMSKeyId() {
 		return this.kMSKeyId;
@@ -42,6 +34,14 @@ public class DescribeDiskDefaultKMSKeyIdResponse extends AcsResponse {
 
 	public void setKMSKeyId(String kMSKeyId) {
 		this.kMSKeyId = kMSKeyId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

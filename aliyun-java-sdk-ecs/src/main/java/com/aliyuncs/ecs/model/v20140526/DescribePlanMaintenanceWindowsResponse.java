@@ -77,30 +77,54 @@ public class DescribePlanMaintenanceWindowsResponse extends AcsResponse {
 
 	public static class PlanMaintenanceWindowInfo {
 
-		private String planWindowId;
+		private String supportMaintenanceAction;
+
+		private String modifiedTime;
+
+		private String createTime;
+
+		private Integer minMaintenanceInterval;
 
 		private String planWindowName;
 
 		private Boolean enable;
 
-		private String supportMaintenanceAction;
-
-		private String createTime;
-
-		private String modifiedTime;
-
-		private Integer minMaintenanceInterval;
-
-		private TimePeriod timePeriod;
+		private String planWindowId;
 
 		private TargetResource targetResource;
 
-		public String getPlanWindowId() {
-			return this.planWindowId;
+		private TimePeriod timePeriod;
+
+		public String getSupportMaintenanceAction() {
+			return this.supportMaintenanceAction;
 		}
 
-		public void setPlanWindowId(String planWindowId) {
-			this.planWindowId = planWindowId;
+		public void setSupportMaintenanceAction(String supportMaintenanceAction) {
+			this.supportMaintenanceAction = supportMaintenanceAction;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Integer getMinMaintenanceInterval() {
+			return this.minMaintenanceInterval;
+		}
+
+		public void setMinMaintenanceInterval(Integer minMaintenanceInterval) {
+			this.minMaintenanceInterval = minMaintenanceInterval;
 		}
 
 		public String getPlanWindowName() {
@@ -119,44 +143,12 @@ public class DescribePlanMaintenanceWindowsResponse extends AcsResponse {
 			this.enable = enable;
 		}
 
-		public String getSupportMaintenanceAction() {
-			return this.supportMaintenanceAction;
+		public String getPlanWindowId() {
+			return this.planWindowId;
 		}
 
-		public void setSupportMaintenanceAction(String supportMaintenanceAction) {
-			this.supportMaintenanceAction = supportMaintenanceAction;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public Integer getMinMaintenanceInterval() {
-			return this.minMaintenanceInterval;
-		}
-
-		public void setMinMaintenanceInterval(Integer minMaintenanceInterval) {
-			this.minMaintenanceInterval = minMaintenanceInterval;
-		}
-
-		public TimePeriod getTimePeriod() {
-			return this.timePeriod;
-		}
-
-		public void setTimePeriod(TimePeriod timePeriod) {
-			this.timePeriod = timePeriod;
+		public void setPlanWindowId(String planWindowId) {
+			this.planWindowId = planWindowId;
 		}
 
 		public TargetResource getTargetResource() {
@@ -167,50 +159,12 @@ public class DescribePlanMaintenanceWindowsResponse extends AcsResponse {
 			this.targetResource = targetResource;
 		}
 
-		public static class TimePeriod {
+		public TimePeriod getTimePeriod() {
+			return this.timePeriod;
+		}
 
-			private String periodUnit;
-
-			private List<TimeWindows> rangeList;
-
-			public String getPeriodUnit() {
-				return this.periodUnit;
-			}
-
-			public void setPeriodUnit(String periodUnit) {
-				this.periodUnit = periodUnit;
-			}
-
-			public List<TimeWindows> getRangeList() {
-				return this.rangeList;
-			}
-
-			public void setRangeList(List<TimeWindows> rangeList) {
-				this.rangeList = rangeList;
-			}
-
-			public static class TimeWindows {
-
-				private String startTime;
-
-				private String endTime;
-
-				public String getStartTime() {
-					return this.startTime;
-				}
-
-				public void setStartTime(String startTime) {
-					this.startTime = startTime;
-				}
-
-				public String getEndTime() {
-					return this.endTime;
-				}
-
-				public void setEndTime(String endTime) {
-					this.endTime = endTime;
-				}
-			}
+		public void setTimePeriod(TimePeriod timePeriod) {
+			this.timePeriod = timePeriod;
 		}
 
 		public static class TargetResource {
@@ -247,9 +201,17 @@ public class DescribePlanMaintenanceWindowsResponse extends AcsResponse {
 
 			public static class ResourceTags {
 
+				private String value;
+
 				private String key;
 
-				private String value;
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
 
 				public String getKey() {
 					return this.key;
@@ -258,13 +220,51 @@ public class DescribePlanMaintenanceWindowsResponse extends AcsResponse {
 				public void setKey(String key) {
 					this.key = key;
 				}
+			}
+		}
 
-				public String getValue() {
-					return this.value;
+		public static class TimePeriod {
+
+			private String periodUnit;
+
+			private List<TimeWindows> rangeList;
+
+			public String getPeriodUnit() {
+				return this.periodUnit;
+			}
+
+			public void setPeriodUnit(String periodUnit) {
+				this.periodUnit = periodUnit;
+			}
+
+			public List<TimeWindows> getRangeList() {
+				return this.rangeList;
+			}
+
+			public void setRangeList(List<TimeWindows> rangeList) {
+				this.rangeList = rangeList;
+			}
+
+			public static class TimeWindows {
+
+				private String endTime;
+
+				private String startTime;
+
+				public String getEndTime() {
+					return this.endTime;
 				}
 
-				public void setValue(String value) {
-					this.value = value;
+				public void setEndTime(String endTime) {
+					this.endTime = endTime;
+				}
+
+				public String getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
 				}
 			}
 		}

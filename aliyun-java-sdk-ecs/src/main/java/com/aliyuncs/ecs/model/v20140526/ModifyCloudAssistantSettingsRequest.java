@@ -173,12 +173,6 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 
 	public static class AgentUpgradeConfig {
 
-		@SerializedName("Enabled")
-		private Boolean enabled;
-
-		@SerializedName("AllowedUpgradeWindow")
-		private List<String> allowedUpgradeWindow;
-
 		@SerializedName("TimeZone")
 		private String timeZone;
 
@@ -188,21 +182,11 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 		@SerializedName("DisableUpgrade")
 		private Boolean disableUpgrade;
 
-		public Boolean getEnabled() {
-			return this.enabled;
-		}
+		@SerializedName("Enabled")
+		private Boolean enabled;
 
-		public void setEnabled(Boolean enabled) {
-			this.enabled = enabled;
-		}
-
-		public List<String> getAllowedUpgradeWindow() {
-			return this.allowedUpgradeWindow;
-		}
-
-		public void setAllowedUpgradeWindow(List<String> allowedUpgradeWindow) {
-			this.allowedUpgradeWindow = allowedUpgradeWindow;
-		}
+		@SerializedName("AllowedUpgradeWindow")
+		private List<String> allowedUpgradeWindow;
 
 		public String getTimeZone() {
 			return this.timeZone;
@@ -227,27 +211,6 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 		public void setDisableUpgrade(Boolean disableUpgrade) {
 			this.disableUpgrade = disableUpgrade;
 		}
-	}
-
-	public static class OssDeliveryConfig {
-
-		@SerializedName("Enabled")
-		private Boolean enabled;
-
-		@SerializedName("BucketName")
-		private String bucketName;
-
-		@SerializedName("Prefix")
-		private String prefix;
-
-		@SerializedName("EncryptionType")
-		private String encryptionType;
-
-		@SerializedName("EncryptionAlgorithm")
-		private String encryptionAlgorithm;
-
-		@SerializedName("EncryptionKeyId")
-		private String encryptionKeyId;
 
 		public Boolean getEnabled() {
 			return this.enabled;
@@ -255,6 +218,43 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 
 		public void setEnabled(Boolean enabled) {
 			this.enabled = enabled;
+		}
+
+		public List<String> getAllowedUpgradeWindow() {
+			return this.allowedUpgradeWindow;
+		}
+
+		public void setAllowedUpgradeWindow(List<String> allowedUpgradeWindow) {
+			this.allowedUpgradeWindow = allowedUpgradeWindow;
+		}
+	}
+
+	public static class OssDeliveryConfig {
+
+		@SerializedName("EncryptionType")
+		private String encryptionType;
+
+		@SerializedName("BucketName")
+		private String bucketName;
+
+		@SerializedName("Enabled")
+		private Boolean enabled;
+
+		@SerializedName("EncryptionAlgorithm")
+		private String encryptionAlgorithm;
+
+		@SerializedName("Prefix")
+		private String prefix;
+
+		@SerializedName("EncryptionKeyId")
+		private String encryptionKeyId;
+
+		public String getEncryptionType() {
+			return this.encryptionType;
+		}
+
+		public void setEncryptionType(String encryptionType) {
+			this.encryptionType = encryptionType;
 		}
 
 		public String getBucketName() {
@@ -265,20 +265,12 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 			this.bucketName = bucketName;
 		}
 
-		public String getPrefix() {
-			return this.prefix;
+		public Boolean getEnabled() {
+			return this.enabled;
 		}
 
-		public void setPrefix(String prefix) {
-			this.prefix = prefix;
-		}
-
-		public String getEncryptionType() {
-			return this.encryptionType;
-		}
-
-		public void setEncryptionType(String encryptionType) {
-			this.encryptionType = encryptionType;
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
 		}
 
 		public String getEncryptionAlgorithm() {
@@ -287,6 +279,14 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 
 		public void setEncryptionAlgorithm(String encryptionAlgorithm) {
 			this.encryptionAlgorithm = encryptionAlgorithm;
+		}
+
+		public String getPrefix() {
+			return this.prefix;
+		}
+
+		public void setPrefix(String prefix) {
+			this.prefix = prefix;
 		}
 
 		public String getEncryptionKeyId() {
@@ -314,21 +314,21 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 
 	public static class SlsDeliveryConfig {
 
-		@SerializedName("Enabled")
-		private Boolean enabled;
+		@SerializedName("LogstoreName")
+		private String logstoreName;
 
 		@SerializedName("ProjectName")
 		private String projectName;
 
-		@SerializedName("LogstoreName")
-		private String logstoreName;
+		@SerializedName("Enabled")
+		private Boolean enabled;
 
-		public Boolean getEnabled() {
-			return this.enabled;
+		public String getLogstoreName() {
+			return this.logstoreName;
 		}
 
-		public void setEnabled(Boolean enabled) {
-			this.enabled = enabled;
+		public void setLogstoreName(String logstoreName) {
+			this.logstoreName = logstoreName;
 		}
 
 		public String getProjectName() {
@@ -339,42 +339,34 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 			this.projectName = projectName;
 		}
 
-		public String getLogstoreName() {
-			return this.logstoreName;
+		public Boolean getEnabled() {
+			return this.enabled;
 		}
 
-		public void setLogstoreName(String logstoreName) {
-			this.logstoreName = logstoreName;
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
 		}
 	}
 
 	public static class ResourceUsageConfig {
 
-		@SerializedName("CpuLimit")
-		private Integer cpuLimit;
-
 		@SerializedName("MemoryLimit")
 		private String memoryLimit;
-
-		@SerializedName("OverloadLimit")
-		private Integer overloadLimit;
-
-		@SerializedName("LogFileCountLimit")
-		private Integer logFileCountLimit;
-
-		@SerializedName("LogSizeLimit")
-		private String logSizeLimit;
 
 		@SerializedName("KeepScriptFile")
 		private Boolean keepScriptFile;
 
-		public Integer getCpuLimit() {
-			return this.cpuLimit;
-		}
+		@SerializedName("CpuLimit")
+		private Integer cpuLimit;
 
-		public void setCpuLimit(Integer cpuLimit) {
-			this.cpuLimit = cpuLimit;
-		}
+		@SerializedName("OverloadLimit")
+		private Integer overloadLimit;
+
+		@SerializedName("LogSizeLimit")
+		private String logSizeLimit;
+
+		@SerializedName("LogFileCountLimit")
+		private Integer logFileCountLimit;
 
 		public String getMemoryLimit() {
 			return this.memoryLimit;
@@ -382,6 +374,22 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 
 		public void setMemoryLimit(String memoryLimit) {
 			this.memoryLimit = memoryLimit;
+		}
+
+		public Boolean getKeepScriptFile() {
+			return this.keepScriptFile;
+		}
+
+		public void setKeepScriptFile(Boolean keepScriptFile) {
+			this.keepScriptFile = keepScriptFile;
+		}
+
+		public Integer getCpuLimit() {
+			return this.cpuLimit;
+		}
+
+		public void setCpuLimit(Integer cpuLimit) {
+			this.cpuLimit = cpuLimit;
 		}
 
 		public Integer getOverloadLimit() {
@@ -392,14 +400,6 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 			this.overloadLimit = overloadLimit;
 		}
 
-		public Integer getLogFileCountLimit() {
-			return this.logFileCountLimit;
-		}
-
-		public void setLogFileCountLimit(Integer logFileCountLimit) {
-			this.logFileCountLimit = logFileCountLimit;
-		}
-
 		public String getLogSizeLimit() {
 			return this.logSizeLimit;
 		}
@@ -408,12 +408,12 @@ public class ModifyCloudAssistantSettingsRequest extends RpcAcsRequest<ModifyClo
 			this.logSizeLimit = logSizeLimit;
 		}
 
-		public Boolean getKeepScriptFile() {
-			return this.keepScriptFile;
+		public Integer getLogFileCountLimit() {
+			return this.logFileCountLimit;
 		}
 
-		public void setKeepScriptFile(Boolean keepScriptFile) {
-			this.keepScriptFile = keepScriptFile;
+		public void setLogFileCountLimit(Integer logFileCountLimit) {
+			this.logFileCountLimit = logFileCountLimit;
 		}
 	}
 

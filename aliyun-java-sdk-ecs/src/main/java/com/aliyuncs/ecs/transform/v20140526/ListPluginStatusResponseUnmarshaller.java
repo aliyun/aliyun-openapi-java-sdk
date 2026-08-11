@@ -28,10 +28,10 @@ public class ListPluginStatusResponseUnmarshaller {
 	public static ListPluginStatusResponse unmarshall(ListPluginStatusResponse listPluginStatusResponse, UnmarshallerContext _ctx) {
 		
 		listPluginStatusResponse.setRequestId(_ctx.stringValue("ListPluginStatusResponse.RequestId"));
-		listPluginStatusResponse.setPageSize(_ctx.longValue("ListPluginStatusResponse.PageSize"));
-		listPluginStatusResponse.setPageNumber(_ctx.longValue("ListPluginStatusResponse.PageNumber"));
 		listPluginStatusResponse.setTotalCount(_ctx.longValue("ListPluginStatusResponse.TotalCount"));
+		listPluginStatusResponse.setPageSize(_ctx.longValue("ListPluginStatusResponse.PageSize"));
 		listPluginStatusResponse.setNextToken(_ctx.stringValue("ListPluginStatusResponse.NextToken"));
+		listPluginStatusResponse.setPageNumber(_ctx.longValue("ListPluginStatusResponse.PageNumber"));
 
 		List<InstancePluginStatus> instancePluginStatusSet = new ArrayList<InstancePluginStatus>();
 		for (int i = 0; i < _ctx.lengthValue("ListPluginStatusResponse.InstancePluginStatusSet.Length"); i++) {

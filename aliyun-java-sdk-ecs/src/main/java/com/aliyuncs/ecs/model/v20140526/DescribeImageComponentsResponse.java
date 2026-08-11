@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeImageComponentsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String nextToken;
 
 	private String requestId;
 
-	private Integer totalCount;
-
 	private Integer maxResults;
 
 	private List<ImageComponentSet> imageComponent;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -49,14 +57,6 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getMaxResults() {
@@ -77,36 +77,44 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 
 	public static class ImageComponentSet {
 
-		private String creationTime;
+		private String componentType;
+
+		private String owner;
 
 		private String description;
+
+		private String resourceGroupId;
+
+		private String content;
+
+		private String creationTime;
 
 		private String systemType;
 
 		private String imageComponentId;
 
-		private String componentType;
-
-		private String resourceGroupId;
-
 		private String name;
-
-		private String content;
-
-		private String owner;
 
 		private String componentVersion;
 
-		private List<Tag> tags;
-
 		private List<Parameter> parameters;
 
-		public String getCreationTime() {
-			return this.creationTime;
+		private List<Tag> tags;
+
+		public String getComponentType() {
+			return this.componentType;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setComponentType(String componentType) {
+			this.componentType = componentType;
+		}
+
+		public String getOwner() {
+			return this.owner;
+		}
+
+		public void setOwner(String owner) {
+			this.owner = owner;
 		}
 
 		public String getDescription() {
@@ -115,6 +123,30 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getContent() {
+			return this.content;
+		}
+
+		public void setContent(String content) {
+			this.content = content;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getSystemType() {
@@ -133,44 +165,12 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 			this.imageComponentId = imageComponentId;
 		}
 
-		public String getComponentType() {
-			return this.componentType;
-		}
-
-		public void setComponentType(String componentType) {
-			this.componentType = componentType;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getContent() {
-			return this.content;
-		}
-
-		public void setContent(String content) {
-			this.content = content;
-		}
-
-		public String getOwner() {
-			return this.owner;
-		}
-
-		public void setOwner(String owner) {
-			this.owner = owner;
 		}
 
 		public String getComponentVersion() {
@@ -181,14 +181,6 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 			this.componentVersion = componentVersion;
 		}
 
-		public List<Tag> getTags() {
-			return this.tags;
-		}
-
-		public void setTags(List<Tag> tags) {
-			this.tags = tags;
-		}
-
 		public List<Parameter> getParameters() {
 			return this.parameters;
 		}
@@ -197,43 +189,28 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 			this.parameters = parameters;
 		}
 
-		public static class Tag {
+		public List<Tag> getTags() {
+			return this.tags;
+		}
 
-			private String tagValue;
-
-			private String tagKey;
-
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
-
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public static class Parameter {
 
-			private String name;
+			private String defaultValue;
 
 			private String type;
 
-			private String defaultValue;
+			private String name;
 
-			public String getName() {
-				return this.name;
+			public String getDefaultValue() {
+				return this.defaultValue;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setDefaultValue(String defaultValue) {
+				this.defaultValue = defaultValue;
 			}
 
 			public String getType() {
@@ -244,12 +221,35 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public String getDefaultValue() {
-				return this.defaultValue;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setDefaultValue(String defaultValue) {
-				this.defaultValue = defaultValue;
+			public void setName(String name) {
+				this.name = name;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

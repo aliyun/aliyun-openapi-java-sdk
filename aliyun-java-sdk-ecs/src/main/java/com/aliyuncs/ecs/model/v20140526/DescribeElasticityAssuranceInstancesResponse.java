@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeElasticityAssuranceInstancesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String nextToken;
 
 	private String requestId;
 
-	private Integer totalCount;
-
 	private Integer maxResults;
 
 	private List<InstanceIdSet> elasticityAssuranceItem;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -49,14 +57,6 @@ public class DescribeElasticityAssuranceInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getMaxResults() {

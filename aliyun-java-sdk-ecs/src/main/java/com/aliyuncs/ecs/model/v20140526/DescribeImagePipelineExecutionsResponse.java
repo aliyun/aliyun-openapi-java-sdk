@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String nextToken;
 
 	private String requestId;
 
-	private Integer totalCount;
-
 	private Integer maxResults;
 
 	private List<ImagePipelineExecutionSet> imagePipelineExecution;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -49,14 +57,6 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getMaxResults() {
@@ -77,10 +77,6 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
 	public static class ImagePipelineExecutionSet {
 
-		private String creationTime;
-
-		private String imagePipelineId;
-
 		private String status;
 
 		private String modifiedTime;
@@ -89,31 +85,19 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
 		private String message;
 
-		private String imageId;
-
-		private String executionId;
-
-		private String errorCode;
+		private String imagePipelineId;
 
 		private String errorInfo;
 
+		private String creationTime;
+
+		private String imageId;
+
+		private String errorCode;
+
+		private String executionId;
+
 		private List<Tag> tags;
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getImagePipelineId() {
-			return this.imagePipelineId;
-		}
-
-		public void setImagePipelineId(String imagePipelineId) {
-			this.imagePipelineId = imagePipelineId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -147,20 +131,36 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 			this.message = message;
 		}
 
+		public String getImagePipelineId() {
+			return this.imagePipelineId;
+		}
+
+		public void setImagePipelineId(String imagePipelineId) {
+			this.imagePipelineId = imagePipelineId;
+		}
+
+		public String getErrorInfo() {
+			return this.errorInfo;
+		}
+
+		public void setErrorInfo(String errorInfo) {
+			this.errorInfo = errorInfo;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
 		public String getImageId() {
 			return this.imageId;
 		}
 
 		public void setImageId(String imageId) {
 			this.imageId = imageId;
-		}
-
-		public String getExecutionId() {
-			return this.executionId;
-		}
-
-		public void setExecutionId(String executionId) {
-			this.executionId = executionId;
 		}
 
 		public String getErrorCode() {
@@ -171,12 +171,12 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 			this.errorCode = errorCode;
 		}
 
-		public String getErrorInfo() {
-			return this.errorInfo;
+		public String getExecutionId() {
+			return this.executionId;
 		}
 
-		public void setErrorInfo(String errorInfo) {
-			this.errorInfo = errorInfo;
+		public void setExecutionId(String executionId) {
+			this.executionId = executionId;
 		}
 
 		public List<Tag> getTags() {
@@ -189,17 +189,9 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagValue;
-
 			private String tagKey;
 
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
+			private String tagValue;
 
 			public String getTagKey() {
 				return this.tagKey;
@@ -207,6 +199,14 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

@@ -67,28 +67,20 @@ public class DescribeImageSupportInstanceTypesResponse extends AcsResponse {
 
 	public static class InstanceType {
 
-		private String instanceTypeId;
-
-		private String instanceTypeFamily;
+		private Float memorySize;
 
 		private Integer cpuCoreCount;
 
-		private Float memorySize;
+		private String instanceTypeFamily;
 
-		public String getInstanceTypeId() {
-			return this.instanceTypeId;
+		private String instanceTypeId;
+
+		public Float getMemorySize() {
+			return this.memorySize;
 		}
 
-		public void setInstanceTypeId(String instanceTypeId) {
-			this.instanceTypeId = instanceTypeId;
-		}
-
-		public String getInstanceTypeFamily() {
-			return this.instanceTypeFamily;
-		}
-
-		public void setInstanceTypeFamily(String instanceTypeFamily) {
-			this.instanceTypeFamily = instanceTypeFamily;
+		public void setMemorySize(Float memorySize) {
+			this.memorySize = memorySize;
 		}
 
 		public Integer getCpuCoreCount() {
@@ -99,12 +91,20 @@ public class DescribeImageSupportInstanceTypesResponse extends AcsResponse {
 			this.cpuCoreCount = cpuCoreCount;
 		}
 
-		public Float getMemorySize() {
-			return this.memorySize;
+		public String getInstanceTypeFamily() {
+			return this.instanceTypeFamily;
 		}
 
-		public void setMemorySize(Float memorySize) {
-			this.memorySize = memorySize;
+		public void setInstanceTypeFamily(String instanceTypeFamily) {
+			this.instanceTypeFamily = instanceTypeFamily;
+		}
+
+		public String getInstanceTypeId() {
+			return this.instanceTypeId;
+		}
+
+		public void setInstanceTypeId(String instanceTypeId) {
+			this.instanceTypeId = instanceTypeId;
 		}
 	}
 

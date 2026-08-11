@@ -205,6 +205,7 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.securityOptions = securityOptions;	
 		if (securityOptions != null) {
 			
+				putQueryParameter("SecurityOptions.EnableSecureBoot" , securityOptions.getEnableSecureBoot());
 				putQueryParameter("SecurityOptions.TrustedSystemMode" , securityOptions.getTrustedSystemMode());
 		}	
 	}
@@ -328,8 +329,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.templateTags = templateTags;	
 		if (templateTags != null) {
 			for (int depth1 = 0; depth1 < templateTags.size(); depth1++) {
-				putQueryParameter("TemplateTag." + (depth1 + 1) + ".Key" , templateTags.get(depth1).getKey());
 				putQueryParameter("TemplateTag." + (depth1 + 1) + ".Value" , templateTags.get(depth1).getValue());
+				putQueryParameter("TemplateTag." + (depth1 + 1) + ".Key" , templateTags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -342,8 +343,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -719,19 +720,19 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.networkInterfaces = networkInterfaces;	
 		if (networkInterfaces != null) {
 			for (int depth1 = 0; depth1 < networkInterfaces.size(); depth1++) {
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".VSwitchId" , networkInterfaces.get(depth1).getVSwitchId());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceName" , networkInterfaces.get(depth1).getNetworkInterfaceName());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceTrafficMode" , networkInterfaces.get(depth1).getNetworkInterfaceTrafficMode());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Description" , networkInterfaces.get(depth1).getDescription());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".DeleteOnRelease" , networkInterfaces.get(depth1).getDeleteOnRelease());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".VSwitchId" , networkInterfaces.get(depth1).getVSwitchId());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupId" , networkInterfaces.get(depth1).getSecurityGroupId());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceName" , networkInterfaces.get(depth1).getNetworkInterfaceName());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".PrimaryIpAddress" , networkInterfaces.get(depth1).getPrimaryIpAddress());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".InstanceType" , networkInterfaces.get(depth1).getInstanceType());
 				if (networkInterfaces.get(depth1).getSecurityGroupIdss() != null) {
 					for (int i = 0; i < networkInterfaces.get(depth1).getSecurityGroupIdss().size(); i++) {
 						putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupIds." + (i + 1) , networkInterfaces.get(depth1).getSecurityGroupIdss().get(i));
 					}
 				}
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".InstanceType" , networkInterfaces.get(depth1).getInstanceType());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceTrafficMode" , networkInterfaces.get(depth1).getNetworkInterfaceTrafficMode());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".DeleteOnRelease" , networkInterfaces.get(depth1).getDeleteOnRelease());
 			}
 		}	
 	}
@@ -834,19 +835,19 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.dataDisks = dataDisks;	
 		if (dataDisks != null) {
 			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".BurstingEnabled" , dataDisks.get(depth1).getBurstingEnabled());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".AutoSnapshotPolicyId" , dataDisks.get(depth1).getAutoSnapshotPolicyId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".ProvisionedIops" , dataDisks.get(depth1).getProvisionedIops());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".BurstingEnabled" , dataDisks.get(depth1).getBurstingEnabled());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
 			}
 		}	
 	}
@@ -919,7 +920,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	public static class SecurityOptions {
 
+		private Boolean enableSecureBoot;
+
 		private String trustedSystemMode;
+
+		public Boolean getEnableSecureBoot() {
+			return this.enableSecureBoot;
+		}
+
+		public void setEnableSecureBoot(Boolean enableSecureBoot) {
+			this.enableSecureBoot = enableSecureBoot;
+		}
 
 		public String getTrustedSystemMode() {
 			return this.trustedSystemMode;
@@ -945,17 +956,9 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	public static class TemplateTag {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -963,22 +966,22 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
 	public static class Tag {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -987,42 +990,42 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		public void setValue(String value) {
 			this.value = value;
 		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	public static class NetworkInterface {
 
-		private String vSwitchId;
-
-		private String networkInterfaceName;
+		private String networkInterfaceTrafficMode;
 
 		private String description;
 
+		private Boolean deleteOnRelease;
+
+		private String vSwitchId;
+
 		private String securityGroupId;
+
+		private String networkInterfaceName;
 
 		private String primaryIpAddress;
 
-		private List<String> securityGroupIdss;
-
 		private String instanceType;
 
-		private String networkInterfaceTrafficMode;
+		private List<String> securityGroupIdss;
 
-		private Boolean deleteOnRelease;
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getNetworkInterfaceName() {
-			return this.networkInterfaceName;
-		}
-
-		public void setNetworkInterfaceName(String networkInterfaceName) {
-			this.networkInterfaceName = networkInterfaceName;
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
 		}
 
 		public String getDescription() {
@@ -1031,6 +1034,22 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public Boolean getDeleteOnRelease() {
+			return this.deleteOnRelease;
+		}
+
+		public void setDeleteOnRelease(Boolean deleteOnRelease) {
+			this.deleteOnRelease = deleteOnRelease;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
 		}
 
 		public String getSecurityGroupId() {
@@ -1041,20 +1060,20 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 			this.securityGroupId = securityGroupId;
 		}
 
+		public String getNetworkInterfaceName() {
+			return this.networkInterfaceName;
+		}
+
+		public void setNetworkInterfaceName(String networkInterfaceName) {
+			this.networkInterfaceName = networkInterfaceName;
+		}
+
 		public String getPrimaryIpAddress() {
 			return this.primaryIpAddress;
 		}
 
 		public void setPrimaryIpAddress(String primaryIpAddress) {
 			this.primaryIpAddress = primaryIpAddress;
-		}
-
-		public List<String> getSecurityGroupIdss() {
-			return this.securityGroupIdss;
-		}
-
-		public void setSecurityGroupIdss(List<String> securityGroupIdss) {
-			this.securityGroupIdss = securityGroupIdss;
 		}
 
 		public String getInstanceType() {
@@ -1065,57 +1084,49 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 			this.instanceType = instanceType;
 		}
 
-		public String getNetworkInterfaceTrafficMode() {
-			return this.networkInterfaceTrafficMode;
+		public List<String> getSecurityGroupIdss() {
+			return this.securityGroupIdss;
 		}
 
-		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
-			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
-		}
-
-		public Boolean getDeleteOnRelease() {
-			return this.deleteOnRelease;
-		}
-
-		public void setDeleteOnRelease(Boolean deleteOnRelease) {
-			this.deleteOnRelease = deleteOnRelease;
+		public void setSecurityGroupIdss(List<String> securityGroupIdss) {
+			this.securityGroupIdss = securityGroupIdss;
 		}
 	}
 
 	public static class DataDisk {
 
-		private String performanceLevel;
+		private Boolean burstingEnabled;
 
 		private String description;
 
-		private String snapshotId;
+		private String category;
+
+		private String kMSKeyId;
+
+		private String performanceLevel;
 
 		private Integer size;
 
 		private String device;
 
-		private String diskName;
-
-		private String category;
+		private String encrypted;
 
 		private Boolean deleteWithInstance;
 
-		private String encrypted;
-
 		private String autoSnapshotPolicyId;
+
+		private String diskName;
 
 		private Long provisionedIops;
 
-		private Boolean burstingEnabled;
+		private String snapshotId;
 
-		private String kMSKeyId;
-
-		public String getPerformanceLevel() {
-			return this.performanceLevel;
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
 		}
 
-		public void setPerformanceLevel(String performanceLevel) {
-			this.performanceLevel = performanceLevel;
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
 		}
 
 		public String getDescription() {
@@ -1126,12 +1137,28 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 			this.description = description;
 		}
 
-		public String getSnapshotId() {
-			return this.snapshotId;
+		public String getCategory() {
+			return this.category;
 		}
 
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
+		}
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
 		}
 
 		public Integer getSize() {
@@ -1150,20 +1177,12 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 			this.device = device;
 		}
 
-		public String getDiskName() {
-			return this.diskName;
+		public String getEncrypted() {
+			return this.encrypted;
 		}
 
-		public void setDiskName(String diskName) {
-			this.diskName = diskName;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
+		public void setEncrypted(String encrypted) {
+			this.encrypted = encrypted;
 		}
 
 		public Boolean getDeleteWithInstance() {
@@ -1174,20 +1193,20 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 			this.deleteWithInstance = deleteWithInstance;
 		}
 
-		public String getEncrypted() {
-			return this.encrypted;
-		}
-
-		public void setEncrypted(String encrypted) {
-			this.encrypted = encrypted;
-		}
-
 		public String getAutoSnapshotPolicyId() {
 			return this.autoSnapshotPolicyId;
 		}
 
 		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
 			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		}
+
+		public String getDiskName() {
+			return this.diskName;
+		}
+
+		public void setDiskName(String diskName) {
+			this.diskName = diskName;
 		}
 
 		public Long getProvisionedIops() {
@@ -1198,20 +1217,12 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 			this.provisionedIops = provisionedIops;
 		}
 
-		public Boolean getBurstingEnabled() {
-			return this.burstingEnabled;
+		public String getSnapshotId() {
+			return this.snapshotId;
 		}
 
-		public void setBurstingEnabled(Boolean burstingEnabled) {
-			this.burstingEnabled = burstingEnabled;
-		}
-
-		public String getKMSKeyId() {
-			return this.kMSKeyId;
-		}
-
-		public void setKMSKeyId(String kMSKeyId) {
-			this.kMSKeyId = kMSKeyId;
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
 		}
 	}
 

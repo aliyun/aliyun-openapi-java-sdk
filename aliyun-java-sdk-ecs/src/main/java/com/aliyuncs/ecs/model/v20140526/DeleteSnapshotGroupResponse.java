@@ -47,13 +47,21 @@ public class DeleteSnapshotGroupResponse extends AcsResponse {
 
 	public static class OperationProgress {
 
+		private String operationStatus;
+
 		private String errorMsg;
 
 		private String errorCode;
 
-		private String operationStatus;
-
 		private List<RelatedItem> relatedItemSet;
+
+		public String getOperationStatus() {
+			return this.operationStatus;
+		}
+
+		public void setOperationStatus(String operationStatus) {
+			this.operationStatus = operationStatus;
+		}
 
 		public String getErrorMsg() {
 			return this.errorMsg;
@@ -71,14 +79,6 @@ public class DeleteSnapshotGroupResponse extends AcsResponse {
 			this.errorCode = errorCode;
 		}
 
-		public String getOperationStatus() {
-			return this.operationStatus;
-		}
-
-		public void setOperationStatus(String operationStatus) {
-			this.operationStatus = operationStatus;
-		}
-
 		public List<RelatedItem> getRelatedItemSet() {
 			return this.relatedItemSet;
 		}
@@ -89,17 +89,9 @@ public class DeleteSnapshotGroupResponse extends AcsResponse {
 
 		public static class RelatedItem {
 
-			private String name;
-
 			private String value;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public String getValue() {
 				return this.value;
@@ -107,6 +99,14 @@ public class DeleteSnapshotGroupResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

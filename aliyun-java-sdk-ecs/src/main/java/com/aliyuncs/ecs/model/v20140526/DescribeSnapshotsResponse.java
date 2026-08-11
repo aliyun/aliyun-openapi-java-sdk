@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSnapshotsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String nextToken;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
-
 	private String requestId;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<Snapshot> snapshots;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -53,14 +61,6 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -69,12 +69,12 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Snapshot> getSnapshots() {
@@ -87,89 +87,65 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 	public static class Snapshot {
 
-		private String status;
-
-		private String creationTime;
-
-		private String progress;
-
 		private Boolean instantAccess;
 
-		private Boolean available;
-
-		private Integer remainTime;
-
-		private String sourceDiskSize;
-
-		private Integer retentionDays;
-
-		private String sourceDiskType;
-
-		private String sourceStorageType;
-
-		private String usage;
-
-		private String lastModifiedTime;
-
-		private Boolean encrypted;
-
-		private String snapshotType;
-
-		private String sourceDiskId;
-
-		private String snapshotName;
-
-		private Integer instantAccessRetentionDays;
-
 		private String description;
-
-		private String snapshotId;
-
-		private String regionId;
-
-		private String resourceGroupId;
 
 		private String category;
 
 		private String kMSKeyId;
 
+		private String resourceGroupId;
+
+		private Boolean encrypted;
+
+		private String snapshotLinkId;
+
+		private String snapshotName;
+
+		private Integer instantAccessRetentionDays;
+
+		private String sourceDiskId;
+
 		private String snapshotSN;
+
+		private String sourceRegionId;
+
+		private Boolean available;
+
+		private String status;
+
+		private String progress;
+
+		private String usage;
 
 		private String productCode;
 
 		private String sourceSnapshotId;
 
-		private String sourceRegionId;
+		private Integer retentionDays;
+
+		private String sourceStorageType;
+
+		private String snapshotId;
 
 		private Long fullSnapshotSizeInBytes;
 
-		private String snapshotLinkId;
+		private String sourceDiskSize;
+
+		private String creationTime;
+
+		private String lastModifiedTime;
+
+		private String snapshotType;
+
+		private String regionId;
+
+		private Integer remainTime;
+
+		private String sourceDiskType;
 
 		private List<Tag> tags;
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(String progress) {
-			this.progress = progress;
-		}
 
 		public Boolean getInstantAccess() {
 			return this.instantAccess;
@@ -179,140 +155,12 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 			this.instantAccess = instantAccess;
 		}
 
-		public Boolean getAvailable() {
-			return this.available;
-		}
-
-		public void setAvailable(Boolean available) {
-			this.available = available;
-		}
-
-		public Integer getRemainTime() {
-			return this.remainTime;
-		}
-
-		public void setRemainTime(Integer remainTime) {
-			this.remainTime = remainTime;
-		}
-
-		public String getSourceDiskSize() {
-			return this.sourceDiskSize;
-		}
-
-		public void setSourceDiskSize(String sourceDiskSize) {
-			this.sourceDiskSize = sourceDiskSize;
-		}
-
-		public Integer getRetentionDays() {
-			return this.retentionDays;
-		}
-
-		public void setRetentionDays(Integer retentionDays) {
-			this.retentionDays = retentionDays;
-		}
-
-		public String getSourceDiskType() {
-			return this.sourceDiskType;
-		}
-
-		public void setSourceDiskType(String sourceDiskType) {
-			this.sourceDiskType = sourceDiskType;
-		}
-
-		public String getSourceStorageType() {
-			return this.sourceStorageType;
-		}
-
-		public void setSourceStorageType(String sourceStorageType) {
-			this.sourceStorageType = sourceStorageType;
-		}
-
-		public String getUsage() {
-			return this.usage;
-		}
-
-		public void setUsage(String usage) {
-			this.usage = usage;
-		}
-
-		public String getLastModifiedTime() {
-			return this.lastModifiedTime;
-		}
-
-		public void setLastModifiedTime(String lastModifiedTime) {
-			this.lastModifiedTime = lastModifiedTime;
-		}
-
-		public Boolean getEncrypted() {
-			return this.encrypted;
-		}
-
-		public void setEncrypted(Boolean encrypted) {
-			this.encrypted = encrypted;
-		}
-
-		public String getSnapshotType() {
-			return this.snapshotType;
-		}
-
-		public void setSnapshotType(String snapshotType) {
-			this.snapshotType = snapshotType;
-		}
-
-		public String getSourceDiskId() {
-			return this.sourceDiskId;
-		}
-
-		public void setSourceDiskId(String sourceDiskId) {
-			this.sourceDiskId = sourceDiskId;
-		}
-
-		public String getSnapshotName() {
-			return this.snapshotName;
-		}
-
-		public void setSnapshotName(String snapshotName) {
-			this.snapshotName = snapshotName;
-		}
-
-		public Integer getInstantAccessRetentionDays() {
-			return this.instantAccessRetentionDays;
-		}
-
-		public void setInstantAccessRetentionDays(Integer instantAccessRetentionDays) {
-			this.instantAccessRetentionDays = instantAccessRetentionDays;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public String getSnapshotId() {
-			return this.snapshotId;
-		}
-
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getCategory() {
@@ -331,12 +179,100 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 			this.kMSKeyId = kMSKeyId;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Boolean getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
+		}
+
+		public String getSnapshotLinkId() {
+			return this.snapshotLinkId;
+		}
+
+		public void setSnapshotLinkId(String snapshotLinkId) {
+			this.snapshotLinkId = snapshotLinkId;
+		}
+
+		public String getSnapshotName() {
+			return this.snapshotName;
+		}
+
+		public void setSnapshotName(String snapshotName) {
+			this.snapshotName = snapshotName;
+		}
+
+		public Integer getInstantAccessRetentionDays() {
+			return this.instantAccessRetentionDays;
+		}
+
+		public void setInstantAccessRetentionDays(Integer instantAccessRetentionDays) {
+			this.instantAccessRetentionDays = instantAccessRetentionDays;
+		}
+
+		public String getSourceDiskId() {
+			return this.sourceDiskId;
+		}
+
+		public void setSourceDiskId(String sourceDiskId) {
+			this.sourceDiskId = sourceDiskId;
+		}
+
 		public String getSnapshotSN() {
 			return this.snapshotSN;
 		}
 
 		public void setSnapshotSN(String snapshotSN) {
 			this.snapshotSN = snapshotSN;
+		}
+
+		public String getSourceRegionId() {
+			return this.sourceRegionId;
+		}
+
+		public void setSourceRegionId(String sourceRegionId) {
+			this.sourceRegionId = sourceRegionId;
+		}
+
+		public Boolean getAvailable() {
+			return this.available;
+		}
+
+		public void setAvailable(Boolean available) {
+			this.available = available;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(String progress) {
+			this.progress = progress;
+		}
+
+		public String getUsage() {
+			return this.usage;
+		}
+
+		public void setUsage(String usage) {
+			this.usage = usage;
 		}
 
 		public String getProductCode() {
@@ -355,12 +291,28 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 			this.sourceSnapshotId = sourceSnapshotId;
 		}
 
-		public String getSourceRegionId() {
-			return this.sourceRegionId;
+		public Integer getRetentionDays() {
+			return this.retentionDays;
 		}
 
-		public void setSourceRegionId(String sourceRegionId) {
-			this.sourceRegionId = sourceRegionId;
+		public void setRetentionDays(Integer retentionDays) {
+			this.retentionDays = retentionDays;
+		}
+
+		public String getSourceStorageType() {
+			return this.sourceStorageType;
+		}
+
+		public void setSourceStorageType(String sourceStorageType) {
+			this.sourceStorageType = sourceStorageType;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
 		}
 
 		public Long getFullSnapshotSizeInBytes() {
@@ -371,12 +323,60 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 			this.fullSnapshotSizeInBytes = fullSnapshotSizeInBytes;
 		}
 
-		public String getSnapshotLinkId() {
-			return this.snapshotLinkId;
+		public String getSourceDiskSize() {
+			return this.sourceDiskSize;
 		}
 
-		public void setSnapshotLinkId(String snapshotLinkId) {
-			this.snapshotLinkId = snapshotLinkId;
+		public void setSourceDiskSize(String sourceDiskSize) {
+			this.sourceDiskSize = sourceDiskSize;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getLastModifiedTime() {
+			return this.lastModifiedTime;
+		}
+
+		public void setLastModifiedTime(String lastModifiedTime) {
+			this.lastModifiedTime = lastModifiedTime;
+		}
+
+		public String getSnapshotType() {
+			return this.snapshotType;
+		}
+
+		public void setSnapshotType(String snapshotType) {
+			this.snapshotType = snapshotType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Integer getRemainTime() {
+			return this.remainTime;
+		}
+
+		public void setRemainTime(Integer remainTime) {
+			this.remainTime = remainTime;
+		}
+
+		public String getSourceDiskType() {
+			return this.sourceDiskType;
+		}
+
+		public void setSourceDiskType(String sourceDiskType) {
+			this.sourceDiskType = sourceDiskType;
 		}
 
 		public List<Tag> getTags() {
@@ -389,17 +389,9 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagValue;
-
 			private String tagKey;
 
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
+			private String tagValue;
 
 			public String getTagKey() {
 				return this.tagKey;
@@ -407,6 +399,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

@@ -31,8 +31,8 @@ public class DeleteLaunchTemplateVersionResponseUnmarshaller {
 		List<LaunchTemplateVersion> launchTemplateVersions = new ArrayList<LaunchTemplateVersion>();
 		for (int i = 0; i < _ctx.lengthValue("DeleteLaunchTemplateVersionResponse.LaunchTemplateVersions.Length"); i++) {
 			LaunchTemplateVersion launchTemplateVersion = new LaunchTemplateVersion();
-			launchTemplateVersion.setLaunchTemplateId(_ctx.stringValue("DeleteLaunchTemplateVersionResponse.LaunchTemplateVersions["+ i +"].LaunchTemplateId"));
 			launchTemplateVersion.setLaunchTemplateVersionNumber(_ctx.longValue("DeleteLaunchTemplateVersionResponse.LaunchTemplateVersions["+ i +"].LaunchTemplateVersionNumber"));
+			launchTemplateVersion.setLaunchTemplateId(_ctx.stringValue("DeleteLaunchTemplateVersionResponse.LaunchTemplateVersions["+ i +"].LaunchTemplateId"));
 
 			launchTemplateVersions.add(launchTemplateVersion);
 		}

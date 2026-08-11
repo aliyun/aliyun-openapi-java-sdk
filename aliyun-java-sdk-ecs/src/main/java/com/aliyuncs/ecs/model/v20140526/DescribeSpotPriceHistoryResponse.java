@@ -67,19 +67,35 @@ public class DescribeSpotPriceHistoryResponse extends AcsResponse {
 
 	public static class SpotPriceType {
 
+		private Float spotPrice;
+
+		private Float originPrice;
+
 		private String ioOptimized;
 
 		private String zoneId;
-
-		private Float spotPrice;
-
-		private String timestamp;
 
 		private String networkType;
 
 		private String instanceType;
 
-		private Float originPrice;
+		private String timestamp;
+
+		public Float getSpotPrice() {
+			return this.spotPrice;
+		}
+
+		public void setSpotPrice(Float spotPrice) {
+			this.spotPrice = spotPrice;
+		}
+
+		public Float getOriginPrice() {
+			return this.originPrice;
+		}
+
+		public void setOriginPrice(Float originPrice) {
+			this.originPrice = originPrice;
+		}
 
 		public String getIoOptimized() {
 			return this.ioOptimized;
@@ -95,22 +111,6 @@ public class DescribeSpotPriceHistoryResponse extends AcsResponse {
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
-		}
-
-		public Float getSpotPrice() {
-			return this.spotPrice;
-		}
-
-		public void setSpotPrice(Float spotPrice) {
-			this.spotPrice = spotPrice;
-		}
-
-		public String getTimestamp() {
-			return this.timestamp;
-		}
-
-		public void setTimestamp(String timestamp) {
-			this.timestamp = timestamp;
 		}
 
 		public String getNetworkType() {
@@ -129,12 +129,12 @@ public class DescribeSpotPriceHistoryResponse extends AcsResponse {
 			this.instanceType = instanceType;
 		}
 
-		public Float getOriginPrice() {
-			return this.originPrice;
+		public String getTimestamp() {
+			return this.timestamp;
 		}
 
-		public void setOriginPrice(Float originPrice) {
-			this.originPrice = originPrice;
+		public void setTimestamp(String timestamp) {
+			this.timestamp = timestamp;
 		}
 	}
 

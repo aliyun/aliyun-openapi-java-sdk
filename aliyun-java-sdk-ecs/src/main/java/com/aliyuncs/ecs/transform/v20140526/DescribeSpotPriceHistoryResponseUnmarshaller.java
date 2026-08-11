@@ -33,13 +33,13 @@ public class DescribeSpotPriceHistoryResponseUnmarshaller {
 		List<SpotPriceType> spotPrices = new ArrayList<SpotPriceType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSpotPriceHistoryResponse.SpotPrices.Length"); i++) {
 			SpotPriceType spotPriceType = new SpotPriceType();
+			spotPriceType.setSpotPrice(_ctx.floatValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].SpotPrice"));
+			spotPriceType.setOriginPrice(_ctx.floatValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].OriginPrice"));
 			spotPriceType.setIoOptimized(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].IoOptimized"));
 			spotPriceType.setZoneId(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].ZoneId"));
-			spotPriceType.setSpotPrice(_ctx.floatValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].SpotPrice"));
-			spotPriceType.setTimestamp(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].Timestamp"));
 			spotPriceType.setNetworkType(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].NetworkType"));
 			spotPriceType.setInstanceType(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].InstanceType"));
-			spotPriceType.setOriginPrice(_ctx.floatValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].OriginPrice"));
+			spotPriceType.setTimestamp(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].Timestamp"));
 
 			spotPrices.add(spotPriceType);
 		}

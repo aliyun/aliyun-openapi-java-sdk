@@ -27,9 +27,9 @@ public class DescribeInstanceStatusResponseUnmarshaller {
 	public static DescribeInstanceStatusResponse unmarshall(DescribeInstanceStatusResponse describeInstanceStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceStatusResponse.setRequestId(_ctx.stringValue("DescribeInstanceStatusResponse.RequestId"));
+		describeInstanceStatusResponse.setTotalCount(_ctx.integerValue("DescribeInstanceStatusResponse.TotalCount"));
 		describeInstanceStatusResponse.setPageSize(_ctx.integerValue("DescribeInstanceStatusResponse.PageSize"));
 		describeInstanceStatusResponse.setPageNumber(_ctx.integerValue("DescribeInstanceStatusResponse.PageNumber"));
-		describeInstanceStatusResponse.setTotalCount(_ctx.integerValue("DescribeInstanceStatusResponse.TotalCount"));
 
 		List<InstanceStatus> instanceStatuses = new ArrayList<InstanceStatus>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceStatusResponse.InstanceStatuses.Length"); i++) {

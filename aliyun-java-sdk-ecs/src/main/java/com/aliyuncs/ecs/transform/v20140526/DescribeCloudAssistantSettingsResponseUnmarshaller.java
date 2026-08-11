@@ -33,10 +33,10 @@ public class DescribeCloudAssistantSettingsResponseUnmarshaller {
 		describeCloudAssistantSettingsResponse.setRequestId(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.RequestId"));
 
 		AgentUpgradeConfig agentUpgradeConfig = new AgentUpgradeConfig();
-		agentUpgradeConfig.setEnabled(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.AgentUpgradeConfig.Enabled"));
 		agentUpgradeConfig.setTimeZone(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.AgentUpgradeConfig.TimeZone"));
 		agentUpgradeConfig.setBootstrapUpgrade(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.AgentUpgradeConfig.BootstrapUpgrade"));
 		agentUpgradeConfig.setDisableUpgrade(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.AgentUpgradeConfig.DisableUpgrade"));
+		agentUpgradeConfig.setEnabled(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.AgentUpgradeConfig.Enabled"));
 
 		List<String> allowedUpgradeWindows = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudAssistantSettingsResponse.AgentUpgradeConfig.AllowedUpgradeWindows.Length"); i++) {
@@ -45,28 +45,28 @@ public class DescribeCloudAssistantSettingsResponseUnmarshaller {
 		agentUpgradeConfig.setAllowedUpgradeWindows(allowedUpgradeWindows);
 		describeCloudAssistantSettingsResponse.setAgentUpgradeConfig(agentUpgradeConfig);
 
-		ResourceUsageConfig resourceUsageConfig = new ResourceUsageConfig();
-		resourceUsageConfig.setCpuLimit(_ctx.integerValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.CpuLimit"));
-		resourceUsageConfig.setMemoryLimit(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.MemoryLimit"));
-		resourceUsageConfig.setOverloadLimit(_ctx.integerValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.OverloadLimit"));
-		resourceUsageConfig.setLogFileCountLimit(_ctx.integerValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.LogFileCountLimit"));
-		resourceUsageConfig.setLogSizeLimit(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.LogSizeLimit"));
-		resourceUsageConfig.setKeepScriptFile(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.KeepScriptFile"));
-		describeCloudAssistantSettingsResponse.setResourceUsageConfig(resourceUsageConfig);
-
 		SessionManagerConfig sessionManagerConfig = new SessionManagerConfig();
 		sessionManagerConfig.setSessionManagerEnabled(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.SessionManagerConfig.SessionManagerEnabled"));
 		describeCloudAssistantSettingsResponse.setSessionManagerConfig(sessionManagerConfig);
+
+		ResourceUsageConfig resourceUsageConfig = new ResourceUsageConfig();
+		resourceUsageConfig.setMemoryLimit(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.MemoryLimit"));
+		resourceUsageConfig.setKeepScriptFile(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.KeepScriptFile"));
+		resourceUsageConfig.setCpuLimit(_ctx.integerValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.CpuLimit"));
+		resourceUsageConfig.setOverloadLimit(_ctx.integerValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.OverloadLimit"));
+		resourceUsageConfig.setLogSizeLimit(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.LogSizeLimit"));
+		resourceUsageConfig.setLogFileCountLimit(_ctx.integerValue("DescribeCloudAssistantSettingsResponse.ResourceUsageConfig.LogFileCountLimit"));
+		describeCloudAssistantSettingsResponse.setResourceUsageConfig(resourceUsageConfig);
 
 		List<OssDeliveryConfig> ossDeliveryConfigs = new ArrayList<OssDeliveryConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudAssistantSettingsResponse.OssDeliveryConfigs.Length"); i++) {
 			OssDeliveryConfig ossDeliveryConfig = new OssDeliveryConfig();
 			ossDeliveryConfig.setEncryptionType(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.OssDeliveryConfigs["+ i +"].EncryptionType"));
-			ossDeliveryConfig.setEncryptionAlgorithm(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.OssDeliveryConfigs["+ i +"].EncryptionAlgorithm"));
-			ossDeliveryConfig.setDeliveryType(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.OssDeliveryConfigs["+ i +"].DeliveryType"));
-			ossDeliveryConfig.setEnabled(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.OssDeliveryConfigs["+ i +"].Enabled"));
 			ossDeliveryConfig.setBucketName(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.OssDeliveryConfigs["+ i +"].BucketName"));
+			ossDeliveryConfig.setEncryptionAlgorithm(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.OssDeliveryConfigs["+ i +"].EncryptionAlgorithm"));
+			ossDeliveryConfig.setEnabled(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.OssDeliveryConfigs["+ i +"].Enabled"));
 			ossDeliveryConfig.setPrefix(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.OssDeliveryConfigs["+ i +"].Prefix"));
+			ossDeliveryConfig.setDeliveryType(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.OssDeliveryConfigs["+ i +"].DeliveryType"));
 			ossDeliveryConfig.setEncryptionKeyId(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.OssDeliveryConfigs["+ i +"].EncryptionKeyId"));
 
 			ossDeliveryConfigs.add(ossDeliveryConfig);
@@ -76,10 +76,10 @@ public class DescribeCloudAssistantSettingsResponseUnmarshaller {
 		List<SlsDeliveryConfig> slsDeliveryConfigs = new ArrayList<SlsDeliveryConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudAssistantSettingsResponse.SlsDeliveryConfigs.Length"); i++) {
 			SlsDeliveryConfig slsDeliveryConfig = new SlsDeliveryConfig();
-			slsDeliveryConfig.setDeliveryType(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.SlsDeliveryConfigs["+ i +"].DeliveryType"));
 			slsDeliveryConfig.setLogstoreName(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.SlsDeliveryConfigs["+ i +"].LogstoreName"));
-			slsDeliveryConfig.setEnabled(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.SlsDeliveryConfigs["+ i +"].Enabled"));
 			slsDeliveryConfig.setProjectName(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.SlsDeliveryConfigs["+ i +"].ProjectName"));
+			slsDeliveryConfig.setEnabled(_ctx.booleanValue("DescribeCloudAssistantSettingsResponse.SlsDeliveryConfigs["+ i +"].Enabled"));
+			slsDeliveryConfig.setDeliveryType(_ctx.stringValue("DescribeCloudAssistantSettingsResponse.SlsDeliveryConfigs["+ i +"].DeliveryType"));
 
 			slsDeliveryConfigs.add(slsDeliveryConfig);
 		}

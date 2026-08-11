@@ -28,30 +28,30 @@ public class DescribeTaskAttributeResponseUnmarshaller {
 	public static DescribeTaskAttributeResponse unmarshall(DescribeTaskAttributeResponse describeTaskAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeTaskAttributeResponse.setRequestId(_ctx.stringValue("DescribeTaskAttributeResponse.RequestId"));
-		describeTaskAttributeResponse.setCreationTime(_ctx.stringValue("DescribeTaskAttributeResponse.CreationTime"));
-		describeTaskAttributeResponse.setSupportCancel(_ctx.stringValue("DescribeTaskAttributeResponse.SupportCancel"));
-		describeTaskAttributeResponse.setTotalCount(_ctx.integerValue("DescribeTaskAttributeResponse.TotalCount"));
-		describeTaskAttributeResponse.setSuccessCount(_ctx.integerValue("DescribeTaskAttributeResponse.SuccessCount"));
-		describeTaskAttributeResponse.setRegionId(_ctx.stringValue("DescribeTaskAttributeResponse.RegionId"));
-		describeTaskAttributeResponse.setTaskAction(_ctx.stringValue("DescribeTaskAttributeResponse.TaskAction"));
-		describeTaskAttributeResponse.setFailedCount(_ctx.integerValue("DescribeTaskAttributeResponse.FailedCount"));
-		describeTaskAttributeResponse.setTaskStatus(_ctx.stringValue("DescribeTaskAttributeResponse.TaskStatus"));
-		describeTaskAttributeResponse.setTaskProcess(_ctx.stringValue("DescribeTaskAttributeResponse.TaskProcess"));
-		describeTaskAttributeResponse.setFinishedTime(_ctx.stringValue("DescribeTaskAttributeResponse.FinishedTime"));
 		describeTaskAttributeResponse.setTaskId(_ctx.stringValue("DescribeTaskAttributeResponse.TaskId"));
+		describeTaskAttributeResponse.setTaskAction(_ctx.stringValue("DescribeTaskAttributeResponse.TaskAction"));
+		describeTaskAttributeResponse.setSuccessCount(_ctx.integerValue("DescribeTaskAttributeResponse.SuccessCount"));
+		describeTaskAttributeResponse.setTaskStatus(_ctx.stringValue("DescribeTaskAttributeResponse.TaskStatus"));
+		describeTaskAttributeResponse.setFinishedTime(_ctx.stringValue("DescribeTaskAttributeResponse.FinishedTime"));
+		describeTaskAttributeResponse.setTotalCount(_ctx.integerValue("DescribeTaskAttributeResponse.TotalCount"));
+		describeTaskAttributeResponse.setTaskProcess(_ctx.stringValue("DescribeTaskAttributeResponse.TaskProcess"));
+		describeTaskAttributeResponse.setSupportCancel(_ctx.stringValue("DescribeTaskAttributeResponse.SupportCancel"));
+		describeTaskAttributeResponse.setCreationTime(_ctx.stringValue("DescribeTaskAttributeResponse.CreationTime"));
+		describeTaskAttributeResponse.setFailedCount(_ctx.integerValue("DescribeTaskAttributeResponse.FailedCount"));
+		describeTaskAttributeResponse.setRegionId(_ctx.stringValue("DescribeTaskAttributeResponse.RegionId"));
 
 		List<OperationProgress> operationProgressSet = new ArrayList<OperationProgress>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTaskAttributeResponse.OperationProgressSet.Length"); i++) {
 			OperationProgress operationProgress = new OperationProgress();
+			operationProgress.setOperationStatus(_ctx.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].OperationStatus"));
 			operationProgress.setErrorMsg(_ctx.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].ErrorMsg"));
 			operationProgress.setErrorCode(_ctx.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].ErrorCode"));
-			operationProgress.setOperationStatus(_ctx.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].OperationStatus"));
 
 			List<RelatedItem> relatedItemSet = new ArrayList<RelatedItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].RelatedItemSet.Length"); j++) {
 				RelatedItem relatedItem = new RelatedItem();
-				relatedItem.setName(_ctx.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Name"));
 				relatedItem.setValue(_ctx.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Value"));
+				relatedItem.setName(_ctx.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Name"));
 
 				relatedItemSet.add(relatedItem);
 			}

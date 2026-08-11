@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSnapshotPackageResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<SnapshotPackage> snapshotPackages;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeSnapshotPackageResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<SnapshotPackage> getSnapshotPackages() {
 		return this.snapshotPackages;
 	}
@@ -77,21 +77,13 @@ public class DescribeSnapshotPackageResponse extends AcsResponse {
 
 	public static class SnapshotPackage {
 
-		private String displayName;
-
 		private String endTime;
-
-		private String startTime;
 
 		private Long initCapacity;
 
-		public String getDisplayName() {
-			return this.displayName;
-		}
+		private String displayName;
 
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
+		private String startTime;
 
 		public String getEndTime() {
 			return this.endTime;
@@ -101,20 +93,28 @@ public class DescribeSnapshotPackageResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
 		public Long getInitCapacity() {
 			return this.initCapacity;
 		}
 
 		public void setInitCapacity(Long initCapacity) {
 			this.initCapacity = initCapacity;
+		}
+
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 	}
 

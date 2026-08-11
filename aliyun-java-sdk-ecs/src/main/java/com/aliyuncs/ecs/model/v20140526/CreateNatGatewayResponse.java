@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateNatGatewayResponse extends AcsResponse {
 
-	private String natGatewayId;
-
 	private String requestId;
+
+	private String natGatewayId;
 
 	private List<String> forwardTableIds;
 
 	private List<String> bandwidthPackageIds;
-
-	public String getNatGatewayId() {
-		return this.natGatewayId;
-	}
-
-	public void setNatGatewayId(String natGatewayId) {
-		this.natGatewayId = natGatewayId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +39,14 @@ public class CreateNatGatewayResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNatGatewayId() {
+		return this.natGatewayId;
+	}
+
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
 	}
 
 	public List<String> getForwardTableIds() {

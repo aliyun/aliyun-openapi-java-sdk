@@ -38,27 +38,13 @@ public class DescribePlanMaintenanceWindowsResponseUnmarshaller {
 		List<PlanMaintenanceWindowInfo> planMaintenanceWindowList = new ArrayList<PlanMaintenanceWindowInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList.Length"); i++) {
 			PlanMaintenanceWindowInfo planMaintenanceWindowInfo = new PlanMaintenanceWindowInfo();
-			planMaintenanceWindowInfo.setPlanWindowId(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].PlanWindowId"));
+			planMaintenanceWindowInfo.setSupportMaintenanceAction(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].SupportMaintenanceAction"));
+			planMaintenanceWindowInfo.setModifiedTime(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].ModifiedTime"));
+			planMaintenanceWindowInfo.setCreateTime(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].CreateTime"));
+			planMaintenanceWindowInfo.setMinMaintenanceInterval(_ctx.integerValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].MinMaintenanceInterval"));
 			planMaintenanceWindowInfo.setPlanWindowName(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].PlanWindowName"));
 			planMaintenanceWindowInfo.setEnable(_ctx.booleanValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].Enable"));
-			planMaintenanceWindowInfo.setSupportMaintenanceAction(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].SupportMaintenanceAction"));
-			planMaintenanceWindowInfo.setCreateTime(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].CreateTime"));
-			planMaintenanceWindowInfo.setModifiedTime(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].ModifiedTime"));
-			planMaintenanceWindowInfo.setMinMaintenanceInterval(_ctx.integerValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].MinMaintenanceInterval"));
-
-			TimePeriod timePeriod = new TimePeriod();
-			timePeriod.setPeriodUnit(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].TimePeriod.PeriodUnit"));
-
-			List<TimeWindows> rangeList = new ArrayList<TimeWindows>();
-			for (int j = 0; j < _ctx.lengthValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].TimePeriod.RangeList.Length"); j++) {
-				TimeWindows timeWindows = new TimeWindows();
-				timeWindows.setStartTime(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].TimePeriod.RangeList["+ j +"].StartTime"));
-				timeWindows.setEndTime(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].TimePeriod.RangeList["+ j +"].EndTime"));
-
-				rangeList.add(timeWindows);
-			}
-			timePeriod.setRangeList(rangeList);
-			planMaintenanceWindowInfo.setTimePeriod(timePeriod);
+			planMaintenanceWindowInfo.setPlanWindowId(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].PlanWindowId"));
 
 			TargetResource targetResource = new TargetResource();
 			targetResource.setScope(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].TargetResource.Scope"));
@@ -67,13 +53,27 @@ public class DescribePlanMaintenanceWindowsResponseUnmarshaller {
 			List<ResourceTags> tags = new ArrayList<ResourceTags>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].TargetResource.Tags.Length"); j++) {
 				ResourceTags resourceTags = new ResourceTags();
-				resourceTags.setKey(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].TargetResource.Tags["+ j +"].Key"));
 				resourceTags.setValue(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].TargetResource.Tags["+ j +"].Value"));
+				resourceTags.setKey(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].TargetResource.Tags["+ j +"].Key"));
 
 				tags.add(resourceTags);
 			}
 			targetResource.setTags(tags);
 			planMaintenanceWindowInfo.setTargetResource(targetResource);
+
+			TimePeriod timePeriod = new TimePeriod();
+			timePeriod.setPeriodUnit(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].TimePeriod.PeriodUnit"));
+
+			List<TimeWindows> rangeList = new ArrayList<TimeWindows>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].TimePeriod.RangeList.Length"); j++) {
+				TimeWindows timeWindows = new TimeWindows();
+				timeWindows.setEndTime(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].TimePeriod.RangeList["+ j +"].EndTime"));
+				timeWindows.setStartTime(_ctx.stringValue("DescribePlanMaintenanceWindowsResponse.PlanMaintenanceWindowList["+ i +"].TimePeriod.RangeList["+ j +"].StartTime"));
+
+				rangeList.add(timeWindows);
+			}
+			timePeriod.setRangeList(rangeList);
+			planMaintenanceWindowInfo.setTimePeriod(timePeriod);
 
 			planMaintenanceWindowList.add(planMaintenanceWindowInfo);
 		}

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeImagePipelinesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String nextToken;
 
 	private String requestId;
 
-	private Integer totalCount;
-
 	private Integer maxResults;
 
 	private List<ImagePipelineSet> imagePipeline;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -49,14 +57,6 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getMaxResults() {
@@ -77,41 +77,41 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 	public static class ImagePipelineSet {
 
-		private String creationTime;
-
-		private Boolean deleteInstanceOnFailure;
-
-		private String instanceType;
-
-		private Integer internetMaxBandwidthOut;
-
-		private String imagePipelineId;
-
-		private String vSwitchId;
-
-		private Integer systemDiskSize;
+		private String nvmeSupport;
 
 		private String description;
 
-		private String baseImage;
-
 		private String resourceGroupId;
 
-		private String imageName;
+		private Integer systemDiskSize;
 
-		private String baseImageType;
+		private String imagePipelineId;
 
 		private String name;
 
-		private String buildContent;
-
-		private String repairMode;
+		private String instanceType;
 
 		private String testContent;
 
+		private String baseImage;
+
+		private String baseImageType;
+
+		private String vSwitchId;
+
 		private String imageFamily;
 
-		private String nvmeSupport;
+		private String repairMode;
+
+		private Boolean deleteInstanceOnFailure;
+
+		private String imageName;
+
+		private Integer internetMaxBandwidthOut;
+
+		private String creationTime;
+
+		private String buildContent;
 
 		private List<Tag> tags;
 
@@ -119,66 +119,20 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 		private List<String> addAccounts;
 
-		private ImportImageOptions importImageOptions;
+		private List<String> repairItems;
 
 		private AdvancedOptions advancedOptions;
 
+		private ImportImageOptions importImageOptions;
+
 		private ImageOptions imageOptions;
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getNvmeSupport() {
+			return this.nvmeSupport;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public Boolean getDeleteInstanceOnFailure() {
-			return this.deleteInstanceOnFailure;
-		}
-
-		public void setDeleteInstanceOnFailure(Boolean deleteInstanceOnFailure) {
-			this.deleteInstanceOnFailure = deleteInstanceOnFailure;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public Integer getInternetMaxBandwidthOut() {
-			return this.internetMaxBandwidthOut;
-		}
-
-		public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
-			this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		}
-
-		public String getImagePipelineId() {
-			return this.imagePipelineId;
-		}
-
-		public void setImagePipelineId(String imagePipelineId) {
-			this.imagePipelineId = imagePipelineId;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public Integer getSystemDiskSize() {
-			return this.systemDiskSize;
-		}
-
-		public void setSystemDiskSize(Integer systemDiskSize) {
-			this.systemDiskSize = systemDiskSize;
+		public void setNvmeSupport(String nvmeSupport) {
+			this.nvmeSupport = nvmeSupport;
 		}
 
 		public String getDescription() {
@@ -189,14 +143,6 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getBaseImage() {
-			return this.baseImage;
-		}
-
-		public void setBaseImage(String baseImage) {
-			this.baseImage = baseImage;
-		}
-
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
@@ -205,20 +151,20 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getImageName() {
-			return this.imageName;
+		public Integer getSystemDiskSize() {
+			return this.systemDiskSize;
 		}
 
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
+		public void setSystemDiskSize(Integer systemDiskSize) {
+			this.systemDiskSize = systemDiskSize;
 		}
 
-		public String getBaseImageType() {
-			return this.baseImageType;
+		public String getImagePipelineId() {
+			return this.imagePipelineId;
 		}
 
-		public void setBaseImageType(String baseImageType) {
-			this.baseImageType = baseImageType;
+		public void setImagePipelineId(String imagePipelineId) {
+			this.imagePipelineId = imagePipelineId;
 		}
 
 		public String getName() {
@@ -229,20 +175,12 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getBuildContent() {
-			return this.buildContent;
+		public String getInstanceType() {
+			return this.instanceType;
 		}
 
-		public void setBuildContent(String buildContent) {
-			this.buildContent = buildContent;
-		}
-
-		public String getRepairMode() {
-			return this.repairMode;
-		}
-
-		public void setRepairMode(String repairMode) {
-			this.repairMode = repairMode;
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public String getTestContent() {
@@ -253,6 +191,30 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.testContent = testContent;
 		}
 
+		public String getBaseImage() {
+			return this.baseImage;
+		}
+
+		public void setBaseImage(String baseImage) {
+			this.baseImage = baseImage;
+		}
+
+		public String getBaseImageType() {
+			return this.baseImageType;
+		}
+
+		public void setBaseImageType(String baseImageType) {
+			this.baseImageType = baseImageType;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
 		public String getImageFamily() {
 			return this.imageFamily;
 		}
@@ -261,12 +223,52 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.imageFamily = imageFamily;
 		}
 
-		public String getNvmeSupport() {
-			return this.nvmeSupport;
+		public String getRepairMode() {
+			return this.repairMode;
 		}
 
-		public void setNvmeSupport(String nvmeSupport) {
-			this.nvmeSupport = nvmeSupport;
+		public void setRepairMode(String repairMode) {
+			this.repairMode = repairMode;
+		}
+
+		public Boolean getDeleteInstanceOnFailure() {
+			return this.deleteInstanceOnFailure;
+		}
+
+		public void setDeleteInstanceOnFailure(Boolean deleteInstanceOnFailure) {
+			this.deleteInstanceOnFailure = deleteInstanceOnFailure;
+		}
+
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
+		}
+
+		public Integer getInternetMaxBandwidthOut() {
+			return this.internetMaxBandwidthOut;
+		}
+
+		public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
+			this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getBuildContent() {
+			return this.buildContent;
+		}
+
+		public void setBuildContent(String buildContent) {
+			this.buildContent = buildContent;
 		}
 
 		public List<Tag> getTags() {
@@ -293,12 +295,12 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.addAccounts = addAccounts;
 		}
 
-		public ImportImageOptions getImportImageOptions() {
-			return this.importImageOptions;
+		public List<String> getRepairItems() {
+			return this.repairItems;
 		}
 
-		public void setImportImageOptions(ImportImageOptions importImageOptions) {
-			this.importImageOptions = importImageOptions;
+		public void setRepairItems(List<String> repairItems) {
+			this.repairItems = repairItems;
 		}
 
 		public AdvancedOptions getAdvancedOptions() {
@@ -307,6 +309,14 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 		public void setAdvancedOptions(AdvancedOptions advancedOptions) {
 			this.advancedOptions = advancedOptions;
+		}
+
+		public ImportImageOptions getImportImageOptions() {
+			return this.importImageOptions;
+		}
+
+		public void setImportImageOptions(ImportImageOptions importImageOptions) {
+			this.importImageOptions = importImageOptions;
 		}
 
 		public ImageOptions getImageOptions() {
@@ -319,17 +329,9 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagValue;
-
 			private String tagKey;
 
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
+			private String tagValue;
 
 			public String getTagKey() {
 				return this.tagKey;
@@ -338,13 +340,64 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
 			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+
+		public static class AdvancedOptions {
+
+			private Boolean retainCloudAssistant;
+
+			private String imageNameSuffix;
+
+			private Boolean skipCheckImage;
+
+			private Boolean skipBuildImage;
+
+			public Boolean getRetainCloudAssistant() {
+				return this.retainCloudAssistant;
+			}
+
+			public void setRetainCloudAssistant(Boolean retainCloudAssistant) {
+				this.retainCloudAssistant = retainCloudAssistant;
+			}
+
+			public String getImageNameSuffix() {
+				return this.imageNameSuffix;
+			}
+
+			public void setImageNameSuffix(String imageNameSuffix) {
+				this.imageNameSuffix = imageNameSuffix;
+			}
+
+			public Boolean getSkipCheckImage() {
+				return this.skipCheckImage;
+			}
+
+			public void setSkipCheckImage(Boolean skipCheckImage) {
+				this.skipCheckImage = skipCheckImage;
+			}
+
+			public Boolean getSkipBuildImage() {
+				return this.skipBuildImage;
+			}
+
+			public void setSkipBuildImage(Boolean skipBuildImage) {
+				this.skipBuildImage = skipBuildImage;
+			}
 		}
 
 		public static class ImportImageOptions {
 
-			private String architecture;
+			private String description;
 
-			private String oSType;
+			private String architecture;
 
 			private String platform;
 
@@ -352,23 +405,31 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 			private String licenseType;
 
-			private Boolean retainImportedImage;
+			private String imageName;
+
+			private String roleName;
 
 			private String retentionStrategy;
 
-			private String imageName;
+			private String oSType;
 
-			private String description;
-
-			private String roleName;
+			private Boolean retainImportedImage;
 
 			private List<DiskDeviceMapping> diskDeviceMappings;
 
 			private List<ImportImageTag> importImageTags;
 
+			private DockerOptions dockerOptions;
+
 			private Features features;
 
-			private DockerOptions dockerOptions;
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
 
 			public String getArchitecture() {
 				return this.architecture;
@@ -376,14 +437,6 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 			public void setArchitecture(String architecture) {
 				this.architecture = architecture;
-			}
-
-			public String getOSType() {
-				return this.oSType;
-			}
-
-			public void setOSType(String oSType) {
-				this.oSType = oSType;
 			}
 
 			public String getPlatform() {
@@ -410,12 +463,20 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 				this.licenseType = licenseType;
 			}
 
-			public Boolean getRetainImportedImage() {
-				return this.retainImportedImage;
+			public String getImageName() {
+				return this.imageName;
 			}
 
-			public void setRetainImportedImage(Boolean retainImportedImage) {
-				this.retainImportedImage = retainImportedImage;
+			public void setImageName(String imageName) {
+				this.imageName = imageName;
+			}
+
+			public String getRoleName() {
+				return this.roleName;
+			}
+
+			public void setRoleName(String roleName) {
+				this.roleName = roleName;
 			}
 
 			public String getRetentionStrategy() {
@@ -426,28 +487,20 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 				this.retentionStrategy = retentionStrategy;
 			}
 
-			public String getImageName() {
-				return this.imageName;
+			public String getOSType() {
+				return this.oSType;
 			}
 
-			public void setImageName(String imageName) {
-				this.imageName = imageName;
+			public void setOSType(String oSType) {
+				this.oSType = oSType;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public Boolean getRetainImportedImage() {
+				return this.retainImportedImage;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getRoleName() {
-				return this.roleName;
-			}
-
-			public void setRoleName(String roleName) {
-				this.roleName = roleName;
+			public void setRetainImportedImage(Boolean retainImportedImage) {
+				this.retainImportedImage = retainImportedImage;
 			}
 
 			public List<DiskDeviceMapping> getDiskDeviceMappings() {
@@ -466,14 +519,6 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 				this.importImageTags = importImageTags;
 			}
 
-			public Features getFeatures() {
-				return this.features;
-			}
-
-			public void setFeatures(Features features) {
-				this.features = features;
-			}
-
 			public DockerOptions getDockerOptions() {
 				return this.dockerOptions;
 			}
@@ -482,22 +527,30 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 				this.dockerOptions = dockerOptions;
 			}
 
+			public Features getFeatures() {
+				return this.features;
+			}
+
+			public void setFeatures(Features features) {
+				this.features = features;
+			}
+
 			public static class DiskDeviceMapping {
-
-				private String oSSBucket;
-
-				private String oSSObject;
 
 				private String format;
 
+				private String oSSObject;
+
 				private Integer diskImageSize;
 
-				public String getOSSBucket() {
-					return this.oSSBucket;
+				private String oSSBucket;
+
+				public String getFormat() {
+					return this.format;
 				}
 
-				public void setOSSBucket(String oSSBucket) {
-					this.oSSBucket = oSSBucket;
+				public void setFormat(String format) {
+					this.format = format;
 				}
 
 				public String getOSSObject() {
@@ -508,14 +561,6 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 					this.oSSObject = oSSObject;
 				}
 
-				public String getFormat() {
-					return this.format;
-				}
-
-				public void setFormat(String format) {
-					this.format = format;
-				}
-
 				public Integer getDiskImageSize() {
 					return this.diskImageSize;
 				}
@@ -523,13 +568,29 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 				public void setDiskImageSize(Integer diskImageSize) {
 					this.diskImageSize = diskImageSize;
 				}
+
+				public String getOSSBucket() {
+					return this.oSSBucket;
+				}
+
+				public void setOSSBucket(String oSSBucket) {
+					this.oSSBucket = oSSBucket;
+				}
 			}
 
 			public static class ImportImageTag {
 
+				private String value;
+
 				private String key;
 
-				private String value;
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
 
 				public String getKey() {
 					return this.key;
@@ -538,13 +599,28 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 				public void setKey(String key) {
 					this.key = key;
 				}
+			}
 
-				public String getValue() {
-					return this.value;
+			public static class DockerOptions {
+
+				private Integer imageSize;
+
+				private String image;
+
+				public Integer getImageSize() {
+					return this.imageSize;
 				}
 
-				public void setValue(String value) {
-					this.value = value;
+				public void setImageSize(Integer imageSize) {
+					this.imageSize = imageSize;
+				}
+
+				public String getImage() {
+					return this.image;
+				}
+
+				public void setImage(String image) {
+					this.image = image;
 				}
 			}
 
@@ -570,81 +646,15 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 					this.imdsSupport = imdsSupport;
 				}
 			}
-
-			public static class DockerOptions {
-
-				private String image;
-
-				private Integer imageSize;
-
-				public String getImage() {
-					return this.image;
-				}
-
-				public void setImage(String image) {
-					this.image = image;
-				}
-
-				public Integer getImageSize() {
-					return this.imageSize;
-				}
-
-				public void setImageSize(Integer imageSize) {
-					this.imageSize = imageSize;
-				}
-			}
-		}
-
-		public static class AdvancedOptions {
-
-			private Boolean retainCloudAssistant;
-
-			private Boolean skipBuildImage;
-
-			private Boolean skipCheckImage;
-
-			private String imageNameSuffix;
-
-			public Boolean getRetainCloudAssistant() {
-				return this.retainCloudAssistant;
-			}
-
-			public void setRetainCloudAssistant(Boolean retainCloudAssistant) {
-				this.retainCloudAssistant = retainCloudAssistant;
-			}
-
-			public Boolean getSkipBuildImage() {
-				return this.skipBuildImage;
-			}
-
-			public void setSkipBuildImage(Boolean skipBuildImage) {
-				this.skipBuildImage = skipBuildImage;
-			}
-
-			public Boolean getSkipCheckImage() {
-				return this.skipCheckImage;
-			}
-
-			public void setSkipCheckImage(Boolean skipCheckImage) {
-				this.skipCheckImage = skipCheckImage;
-			}
-
-			public String getImageNameSuffix() {
-				return this.imageNameSuffix;
-			}
-
-			public void setImageNameSuffix(String imageNameSuffix) {
-				this.imageNameSuffix = imageNameSuffix;
-			}
 		}
 
 		public static class ImageOptions {
 
 			private String imageName;
 
-			private String imageFamily;
-
 			private String description;
+
+			private String imageFamily;
 
 			private List<ImageTag> imageTags;
 
@@ -658,20 +668,20 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 				this.imageName = imageName;
 			}
 
-			public String getImageFamily() {
-				return this.imageFamily;
-			}
-
-			public void setImageFamily(String imageFamily) {
-				this.imageFamily = imageFamily;
-			}
-
 			public String getDescription() {
 				return this.description;
 			}
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public String getImageFamily() {
+				return this.imageFamily;
+			}
+
+			public void setImageFamily(String imageFamily) {
+				this.imageFamily = imageFamily;
 			}
 
 			public List<ImageTag> getImageTags() {

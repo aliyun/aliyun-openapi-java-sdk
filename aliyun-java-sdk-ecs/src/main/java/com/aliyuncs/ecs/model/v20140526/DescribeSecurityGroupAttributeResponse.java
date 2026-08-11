@@ -25,27 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
+	private String description;
+
 	private String vpcId;
 
 	private String requestId;
 
-	private String innerAccessPolicy;
+	private String securityGroupName;
 
-	private String description;
+	private String nextToken;
 
 	private String securityGroupId;
 
-	private String securityGroupName;
+	private String innerAccessPolicy;
 
 	private String regionId;
-
-	private String nextToken;
 
 	private List<Permission> permissions;
 
 	private List<String> snapshotPolicyIds;
 
 	private ReferencedInfo referencedInfo;
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	public String getVpcId() {
 		return this.vpcId;
@@ -63,20 +71,20 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getInnerAccessPolicy() {
-		return this.innerAccessPolicy;
+	public String getSecurityGroupName() {
+		return this.securityGroupName;
 	}
 
-	public void setInnerAccessPolicy(String innerAccessPolicy) {
-		this.innerAccessPolicy = innerAccessPolicy;
+	public void setSecurityGroupName(String securityGroupName) {
+		this.securityGroupName = securityGroupName;
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public String getSecurityGroupId() {
@@ -87,12 +95,12 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 		this.securityGroupId = securityGroupId;
 	}
 
-	public String getSecurityGroupName() {
-		return this.securityGroupName;
+	public String getInnerAccessPolicy() {
+		return this.innerAccessPolicy;
 	}
 
-	public void setSecurityGroupName(String securityGroupName) {
-		this.securityGroupName = securityGroupName;
+	public void setInnerAccessPolicy(String innerAccessPolicy) {
+		this.innerAccessPolicy = innerAccessPolicy;
 	}
 
 	public String getRegionId() {
@@ -101,14 +109,6 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
 	}
 
 	public List<Permission> getPermissions() {
@@ -137,73 +137,57 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	public static class Permission {
 
-		private String securityGroupRuleId;
-
-		private String direction;
-
 		private String sourceGroupId;
-
-		private String destGroupOwnerAccount;
-
-		private String destPrefixListId;
-
-		private String destPrefixListName;
-
-		private String sourceCidrIp;
-
-		private String ipv6DestCidrIp;
-
-		private String createTime;
-
-		private String ipv6SourceCidrIp;
-
-		private String destGroupId;
-
-		private String destCidrIp;
-
-		private String ipProtocol;
-
-		private String priority;
-
-		private String destGroupName;
-
-		private String nicType;
 
 		private String policy;
 
 		private String description;
 
-		private String portRange;
+		private String destPrefixListName;
+
+		private String direction;
+
+		private String sourceCidrIp;
 
 		private String sourcePrefixListName;
 
-		private String sourcePrefixListId;
+		private String destCidrIp;
 
-		private String sourceGroupOwnerAccount;
-
-		private String sourceGroupName;
+		private String ipv6DestCidrIp;
 
 		private String sourcePortRange;
 
-		private String portRangeListId;
+		private String priority;
+
+		private String createTime;
+
+		private String ipv6SourceCidrIp;
 
 		private String portRangeListName;
 
-		public String getSecurityGroupRuleId() {
-			return this.securityGroupRuleId;
-		}
+		private String nicType;
 
-		public void setSecurityGroupRuleId(String securityGroupRuleId) {
-			this.securityGroupRuleId = securityGroupRuleId;
-		}
+		private String destGroupId;
 
-		public String getDirection() {
-			return this.direction;
-		}
+		private String sourceGroupName;
 
-		public void setDirection(String direction) {
-			this.direction = direction;
-		}
+		private String destGroupOwnerAccount;
+
+		private String portRange;
+
+		private String destPrefixListId;
+
+		private String ipProtocol;
+
+		private String portRangeListId;
+
+		private String securityGroupRuleId;
+
+		private String destGroupName;
+
+		private String sourceGroupOwnerAccount;
+
+		private String sourcePrefixListId;
 
 		public String getSourceGroupId() {
 			return this.sourceGroupId;
@@ -211,110 +195,6 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		public void setSourceGroupId(String sourceGroupId) {
 			this.sourceGroupId = sourceGroupId;
-		}
-
-		public String getDestGroupOwnerAccount() {
-			return this.destGroupOwnerAccount;
-		}
-
-		public void setDestGroupOwnerAccount(String destGroupOwnerAccount) {
-			this.destGroupOwnerAccount = destGroupOwnerAccount;
-		}
-
-		public String getDestPrefixListId() {
-			return this.destPrefixListId;
-		}
-
-		public void setDestPrefixListId(String destPrefixListId) {
-			this.destPrefixListId = destPrefixListId;
-		}
-
-		public String getDestPrefixListName() {
-			return this.destPrefixListName;
-		}
-
-		public void setDestPrefixListName(String destPrefixListName) {
-			this.destPrefixListName = destPrefixListName;
-		}
-
-		public String getSourceCidrIp() {
-			return this.sourceCidrIp;
-		}
-
-		public void setSourceCidrIp(String sourceCidrIp) {
-			this.sourceCidrIp = sourceCidrIp;
-		}
-
-		public String getIpv6DestCidrIp() {
-			return this.ipv6DestCidrIp;
-		}
-
-		public void setIpv6DestCidrIp(String ipv6DestCidrIp) {
-			this.ipv6DestCidrIp = ipv6DestCidrIp;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getIpv6SourceCidrIp() {
-			return this.ipv6SourceCidrIp;
-		}
-
-		public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
-			this.ipv6SourceCidrIp = ipv6SourceCidrIp;
-		}
-
-		public String getDestGroupId() {
-			return this.destGroupId;
-		}
-
-		public void setDestGroupId(String destGroupId) {
-			this.destGroupId = destGroupId;
-		}
-
-		public String getDestCidrIp() {
-			return this.destCidrIp;
-		}
-
-		public void setDestCidrIp(String destCidrIp) {
-			this.destCidrIp = destCidrIp;
-		}
-
-		public String getIpProtocol() {
-			return this.ipProtocol;
-		}
-
-		public void setIpProtocol(String ipProtocol) {
-			this.ipProtocol = ipProtocol;
-		}
-
-		public String getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(String priority) {
-			this.priority = priority;
-		}
-
-		public String getDestGroupName() {
-			return this.destGroupName;
-		}
-
-		public void setDestGroupName(String destGroupName) {
-			this.destGroupName = destGroupName;
-		}
-
-		public String getNicType() {
-			return this.nicType;
-		}
-
-		public void setNicType(String nicType) {
-			this.nicType = nicType;
 		}
 
 		public String getPolicy() {
@@ -333,12 +213,28 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getPortRange() {
-			return this.portRange;
+		public String getDestPrefixListName() {
+			return this.destPrefixListName;
 		}
 
-		public void setPortRange(String portRange) {
-			this.portRange = portRange;
+		public void setDestPrefixListName(String destPrefixListName) {
+			this.destPrefixListName = destPrefixListName;
+		}
+
+		public String getDirection() {
+			return this.direction;
+		}
+
+		public void setDirection(String direction) {
+			this.direction = direction;
+		}
+
+		public String getSourceCidrIp() {
+			return this.sourceCidrIp;
+		}
+
+		public void setSourceCidrIp(String sourceCidrIp) {
+			this.sourceCidrIp = sourceCidrIp;
 		}
 
 		public String getSourcePrefixListName() {
@@ -349,28 +245,20 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 			this.sourcePrefixListName = sourcePrefixListName;
 		}
 
-		public String getSourcePrefixListId() {
-			return this.sourcePrefixListId;
+		public String getDestCidrIp() {
+			return this.destCidrIp;
 		}
 
-		public void setSourcePrefixListId(String sourcePrefixListId) {
-			this.sourcePrefixListId = sourcePrefixListId;
+		public void setDestCidrIp(String destCidrIp) {
+			this.destCidrIp = destCidrIp;
 		}
 
-		public String getSourceGroupOwnerAccount() {
-			return this.sourceGroupOwnerAccount;
+		public String getIpv6DestCidrIp() {
+			return this.ipv6DestCidrIp;
 		}
 
-		public void setSourceGroupOwnerAccount(String sourceGroupOwnerAccount) {
-			this.sourceGroupOwnerAccount = sourceGroupOwnerAccount;
-		}
-
-		public String getSourceGroupName() {
-			return this.sourceGroupName;
-		}
-
-		public void setSourceGroupName(String sourceGroupName) {
-			this.sourceGroupName = sourceGroupName;
+		public void setIpv6DestCidrIp(String ipv6DestCidrIp) {
+			this.ipv6DestCidrIp = ipv6DestCidrIp;
 		}
 
 		public String getSourcePortRange() {
@@ -381,12 +269,28 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 			this.sourcePortRange = sourcePortRange;
 		}
 
-		public String getPortRangeListId() {
-			return this.portRangeListId;
+		public String getPriority() {
+			return this.priority;
 		}
 
-		public void setPortRangeListId(String portRangeListId) {
-			this.portRangeListId = portRangeListId;
+		public void setPriority(String priority) {
+			this.priority = priority;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getIpv6SourceCidrIp() {
+			return this.ipv6SourceCidrIp;
+		}
+
+		public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
+			this.ipv6SourceCidrIp = ipv6SourceCidrIp;
 		}
 
 		public String getPortRangeListName() {
@@ -395,6 +299,102 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		public void setPortRangeListName(String portRangeListName) {
 			this.portRangeListName = portRangeListName;
+		}
+
+		public String getNicType() {
+			return this.nicType;
+		}
+
+		public void setNicType(String nicType) {
+			this.nicType = nicType;
+		}
+
+		public String getDestGroupId() {
+			return this.destGroupId;
+		}
+
+		public void setDestGroupId(String destGroupId) {
+			this.destGroupId = destGroupId;
+		}
+
+		public String getSourceGroupName() {
+			return this.sourceGroupName;
+		}
+
+		public void setSourceGroupName(String sourceGroupName) {
+			this.sourceGroupName = sourceGroupName;
+		}
+
+		public String getDestGroupOwnerAccount() {
+			return this.destGroupOwnerAccount;
+		}
+
+		public void setDestGroupOwnerAccount(String destGroupOwnerAccount) {
+			this.destGroupOwnerAccount = destGroupOwnerAccount;
+		}
+
+		public String getPortRange() {
+			return this.portRange;
+		}
+
+		public void setPortRange(String portRange) {
+			this.portRange = portRange;
+		}
+
+		public String getDestPrefixListId() {
+			return this.destPrefixListId;
+		}
+
+		public void setDestPrefixListId(String destPrefixListId) {
+			this.destPrefixListId = destPrefixListId;
+		}
+
+		public String getIpProtocol() {
+			return this.ipProtocol;
+		}
+
+		public void setIpProtocol(String ipProtocol) {
+			this.ipProtocol = ipProtocol;
+		}
+
+		public String getPortRangeListId() {
+			return this.portRangeListId;
+		}
+
+		public void setPortRangeListId(String portRangeListId) {
+			this.portRangeListId = portRangeListId;
+		}
+
+		public String getSecurityGroupRuleId() {
+			return this.securityGroupRuleId;
+		}
+
+		public void setSecurityGroupRuleId(String securityGroupRuleId) {
+			this.securityGroupRuleId = securityGroupRuleId;
+		}
+
+		public String getDestGroupName() {
+			return this.destGroupName;
+		}
+
+		public void setDestGroupName(String destGroupName) {
+			this.destGroupName = destGroupName;
+		}
+
+		public String getSourceGroupOwnerAccount() {
+			return this.sourceGroupOwnerAccount;
+		}
+
+		public void setSourceGroupOwnerAccount(String sourceGroupOwnerAccount) {
+			this.sourceGroupOwnerAccount = sourceGroupOwnerAccount;
+		}
+
+		public String getSourcePrefixListId() {
+			return this.sourcePrefixListId;
+		}
+
+		public void setSourcePrefixListId(String sourcePrefixListId) {
+			this.sourcePrefixListId = sourcePrefixListId;
 		}
 	}
 

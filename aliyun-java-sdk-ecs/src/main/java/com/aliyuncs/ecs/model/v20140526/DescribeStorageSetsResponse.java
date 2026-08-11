@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStorageSetsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<StorageSet> storageSets;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeStorageSetsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<StorageSet> getStorageSets() {
 		return this.storageSets;
 	}
@@ -77,31 +77,23 @@ public class DescribeStorageSetsResponse extends AcsResponse {
 
 	public static class StorageSet {
 
-		private String creationTime;
-
 		private String description;
 
 		private String zoneId;
 
-		private String storageSetId;
+		private String resourceGroupId;
+
+		private String creationTime;
 
 		private Integer storageSetPartitionNumber;
 
-		private String storageSetName;
+		private String storageSetId;
 
 		private String regionId;
 
-		private String resourceGroupId;
+		private String storageSetName;
 
 		private List<Tag> tags;
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
 
 		public String getDescription() {
 			return this.description;
@@ -119,12 +111,20 @@ public class DescribeStorageSetsResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
-		public String getStorageSetId() {
-			return this.storageSetId;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setStorageSetId(String storageSetId) {
-			this.storageSetId = storageSetId;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public Integer getStorageSetPartitionNumber() {
@@ -135,12 +135,12 @@ public class DescribeStorageSetsResponse extends AcsResponse {
 			this.storageSetPartitionNumber = storageSetPartitionNumber;
 		}
 
-		public String getStorageSetName() {
-			return this.storageSetName;
+		public String getStorageSetId() {
+			return this.storageSetId;
 		}
 
-		public void setStorageSetName(String storageSetName) {
-			this.storageSetName = storageSetName;
+		public void setStorageSetId(String storageSetId) {
+			this.storageSetId = storageSetId;
 		}
 
 		public String getRegionId() {
@@ -151,12 +151,12 @@ public class DescribeStorageSetsResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getStorageSetName() {
+			return this.storageSetName;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setStorageSetName(String storageSetName) {
+			this.storageSetName = storageSetName;
 		}
 
 		public List<Tag> getTags() {
@@ -169,17 +169,9 @@ public class DescribeStorageSetsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -187,6 +179,14 @@ public class DescribeStorageSetsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

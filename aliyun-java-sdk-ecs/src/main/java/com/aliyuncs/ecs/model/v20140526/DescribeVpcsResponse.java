@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVpcsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<Vpc> vpcs;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeVpcsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<Vpc> getVpcs() {
 		return this.vpcs;
 	}
@@ -77,21 +77,21 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 	public static class Vpc {
 
-		private String creationTime;
-
-		private String vpcName;
-
 		private String status;
-
-		private String vpcId;
 
 		private String vRouterId;
 
 		private Boolean isDefault;
 
+		private String description;
+
+		private String vpcId;
+
+		private String creationTime;
+
 		private String cidrBlock;
 
-		private String description;
+		private String vpcName;
 
 		private String regionId;
 
@@ -99,36 +99,12 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		private List<String> userCidrs;
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getVpcName() {
-			return this.vpcName;
-		}
-
-		public void setVpcName(String vpcName) {
-			this.vpcName = vpcName;
-		}
-
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
 		}
 
 		public String getVRouterId() {
@@ -147,6 +123,30 @@ public class DescribeVpcsResponse extends AcsResponse {
 			this.isDefault = isDefault;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
 		public String getCidrBlock() {
 			return this.cidrBlock;
 		}
@@ -155,12 +155,12 @@ public class DescribeVpcsResponse extends AcsResponse {
 			this.cidrBlock = cidrBlock;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getVpcName() {
+			return this.vpcName;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setVpcName(String vpcName) {
+			this.vpcName = vpcName;
 		}
 
 		public String getRegionId() {

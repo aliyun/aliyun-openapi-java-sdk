@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCapacityReservationsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String nextToken;
 
 	private String requestId;
 
-	private Integer totalCount;
-
 	private Integer maxResults;
 
 	private List<CapacityReservationItem> capacityReservationSet;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -49,14 +57,6 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getMaxResults() {
@@ -79,41 +79,41 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 		private String status;
 
-		private String timeSlot;
-
-		private String privatePoolOptionsMatchCriteria;
-
-		private String privatePoolOptionsId;
-
-		private String privatePoolOptionsName;
-
-		private String regionId;
-
-		private String instanceChargeType;
-
-		private String endTime;
-
-		private String startTime;
-
 		private String description;
 
-		private String endTimeType;
+		private String endTime;
 
 		private String resourceGroupId;
 
 		private String platform;
 
+		private String privatePoolOptionsName;
+
+		private String instanceChargeType;
+
+		private String startTime;
+
 		private String startTimeType;
+
+		private String unlockedTime;
+
+		private String privatePoolOptionsMatchCriteria;
+
+		private String timeSlot;
 
 		private String savingPlanId;
 
-		private String reservedInstanceId;
-
 		private String capacityReservationOwnerId;
+
+		private String privatePoolOptionsId;
 
 		private String deliveryTime;
 
-		private String unlockedTime;
+		private String endTimeType;
+
+		private String reservedInstanceId;
+
+		private String regionId;
 
 		private List<AllocatedResource> allocatedResources;
 
@@ -127,70 +127,6 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getTimeSlot() {
-			return this.timeSlot;
-		}
-
-		public void setTimeSlot(String timeSlot) {
-			this.timeSlot = timeSlot;
-		}
-
-		public String getPrivatePoolOptionsMatchCriteria() {
-			return this.privatePoolOptionsMatchCriteria;
-		}
-
-		public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
-			this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
-		}
-
-		public String getPrivatePoolOptionsId() {
-			return this.privatePoolOptionsId;
-		}
-
-		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
-			this.privatePoolOptionsId = privatePoolOptionsId;
-		}
-
-		public String getPrivatePoolOptionsName() {
-			return this.privatePoolOptionsName;
-		}
-
-		public void setPrivatePoolOptionsName(String privatePoolOptionsName) {
-			this.privatePoolOptionsName = privatePoolOptionsName;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getInstanceChargeType() {
-			return this.instanceChargeType;
-		}
-
-		public void setInstanceChargeType(String instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
@@ -199,12 +135,12 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getEndTimeType() {
-			return this.endTimeType;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setEndTimeType(String endTimeType) {
-			this.endTimeType = endTimeType;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getResourceGroupId() {
@@ -223,12 +159,60 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 			this.platform = platform;
 		}
 
+		public String getPrivatePoolOptionsName() {
+			return this.privatePoolOptionsName;
+		}
+
+		public void setPrivatePoolOptionsName(String privatePoolOptionsName) {
+			this.privatePoolOptionsName = privatePoolOptionsName;
+		}
+
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
 		public String getStartTimeType() {
 			return this.startTimeType;
 		}
 
 		public void setStartTimeType(String startTimeType) {
 			this.startTimeType = startTimeType;
+		}
+
+		public String getUnlockedTime() {
+			return this.unlockedTime;
+		}
+
+		public void setUnlockedTime(String unlockedTime) {
+			this.unlockedTime = unlockedTime;
+		}
+
+		public String getPrivatePoolOptionsMatchCriteria() {
+			return this.privatePoolOptionsMatchCriteria;
+		}
+
+		public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
+			this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
+		}
+
+		public String getTimeSlot() {
+			return this.timeSlot;
+		}
+
+		public void setTimeSlot(String timeSlot) {
+			this.timeSlot = timeSlot;
 		}
 
 		public String getSavingPlanId() {
@@ -239,20 +223,20 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 			this.savingPlanId = savingPlanId;
 		}
 
-		public String getReservedInstanceId() {
-			return this.reservedInstanceId;
-		}
-
-		public void setReservedInstanceId(String reservedInstanceId) {
-			this.reservedInstanceId = reservedInstanceId;
-		}
-
 		public String getCapacityReservationOwnerId() {
 			return this.capacityReservationOwnerId;
 		}
 
 		public void setCapacityReservationOwnerId(String capacityReservationOwnerId) {
 			this.capacityReservationOwnerId = capacityReservationOwnerId;
+		}
+
+		public String getPrivatePoolOptionsId() {
+			return this.privatePoolOptionsId;
+		}
+
+		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+			this.privatePoolOptionsId = privatePoolOptionsId;
 		}
 
 		public String getDeliveryTime() {
@@ -263,12 +247,28 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 			this.deliveryTime = deliveryTime;
 		}
 
-		public String getUnlockedTime() {
-			return this.unlockedTime;
+		public String getEndTimeType() {
+			return this.endTimeType;
 		}
 
-		public void setUnlockedTime(String unlockedTime) {
-			this.unlockedTime = unlockedTime;
+		public void setEndTimeType(String endTimeType) {
+			this.endTimeType = endTimeType;
+		}
+
+		public String getReservedInstanceId() {
+			return this.reservedInstanceId;
+		}
+
+		public void setReservedInstanceId(String reservedInstanceId) {
+			this.reservedInstanceId = reservedInstanceId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<AllocatedResource> getAllocatedResources() {
@@ -291,17 +291,17 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 			private Integer usedAmount;
 
-			private Integer totalAmount;
-
 			private Integer availableAmount;
-
-			private Integer failedAmount;
-
-			private Integer lockedAmount;
 
 			private String zoneId;
 
+			private Integer totalAmount;
+
+			private Integer failedAmount;
+
 			private String instanceType;
+
+			private Integer lockedAmount;
 
 			private List<CapacityReservationUsage> capacityReservationUsages;
 
@@ -313,36 +313,12 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 				this.usedAmount = usedAmount;
 			}
 
-			public Integer getTotalAmount() {
-				return this.totalAmount;
-			}
-
-			public void setTotalAmount(Integer totalAmount) {
-				this.totalAmount = totalAmount;
-			}
-
 			public Integer getAvailableAmount() {
 				return this.availableAmount;
 			}
 
 			public void setAvailableAmount(Integer availableAmount) {
 				this.availableAmount = availableAmount;
-			}
-
-			public Integer getFailedAmount() {
-				return this.failedAmount;
-			}
-
-			public void setFailedAmount(Integer failedAmount) {
-				this.failedAmount = failedAmount;
-			}
-
-			public Integer getLockedAmount() {
-				return this.lockedAmount;
-			}
-
-			public void setLockedAmount(Integer lockedAmount) {
-				this.lockedAmount = lockedAmount;
 			}
 
 			public String getZoneId() {
@@ -353,12 +329,36 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 				this.zoneId = zoneId;
 			}
 
+			public Integer getTotalAmount() {
+				return this.totalAmount;
+			}
+
+			public void setTotalAmount(Integer totalAmount) {
+				this.totalAmount = totalAmount;
+			}
+
+			public Integer getFailedAmount() {
+				return this.failedAmount;
+			}
+
+			public void setFailedAmount(Integer failedAmount) {
+				this.failedAmount = failedAmount;
+			}
+
 			public String getInstanceType() {
 				return this.instanceType;
 			}
 
 			public void setInstanceType(String instanceType) {
 				this.instanceType = instanceType;
+			}
+
+			public Integer getLockedAmount() {
+				return this.lockedAmount;
+			}
+
+			public void setLockedAmount(Integer lockedAmount) {
+				this.lockedAmount = lockedAmount;
 			}
 
 			public List<CapacityReservationUsage> getCapacityReservationUsages() {
@@ -371,11 +371,19 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 			public static class CapacityReservationUsage {
 
+				private Integer usedAmount;
+
 				private String accountId;
 
 				private String serviceName;
 
-				private Integer usedAmount;
+				public Integer getUsedAmount() {
+					return this.usedAmount;
+				}
+
+				public void setUsedAmount(Integer usedAmount) {
+					this.usedAmount = usedAmount;
+				}
 
 				public String getAccountId() {
 					return this.accountId;
@@ -392,30 +400,14 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 				public void setServiceName(String serviceName) {
 					this.serviceName = serviceName;
 				}
-
-				public Integer getUsedAmount() {
-					return this.usedAmount;
-				}
-
-				public void setUsedAmount(Integer usedAmount) {
-					this.usedAmount = usedAmount;
-				}
 			}
 		}
 
 		public static class Tag {
 
-			private String tagValue;
-
 			private String tagKey;
 
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
+			private String tagValue;
 
 			public String getTagKey() {
 				return this.tagKey;
@@ -423,6 +415,14 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

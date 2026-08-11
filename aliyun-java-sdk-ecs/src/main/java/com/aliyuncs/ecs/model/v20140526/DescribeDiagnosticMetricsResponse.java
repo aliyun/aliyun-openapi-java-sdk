@@ -57,11 +57,9 @@ public class DescribeDiagnosticMetricsResponse extends AcsResponse {
 
 	public static class Metric {
 
-		private String metricId;
-
 		private String metricName;
 
-		private String metricCategory;
+		private String metricId;
 
 		private String description;
 
@@ -71,13 +69,7 @@ public class DescribeDiagnosticMetricsResponse extends AcsResponse {
 
 		private String supportedOperatingSystem;
 
-		public String getMetricId() {
-			return this.metricId;
-		}
-
-		public void setMetricId(String metricId) {
-			this.metricId = metricId;
-		}
+		private String metricCategory;
 
 		public String getMetricName() {
 			return this.metricName;
@@ -87,12 +79,12 @@ public class DescribeDiagnosticMetricsResponse extends AcsResponse {
 			this.metricName = metricName;
 		}
 
-		public String getMetricCategory() {
-			return this.metricCategory;
+		public String getMetricId() {
+			return this.metricId;
 		}
 
-		public void setMetricCategory(String metricCategory) {
-			this.metricCategory = metricCategory;
+		public void setMetricId(String metricId) {
+			this.metricId = metricId;
 		}
 
 		public String getDescription() {
@@ -125,6 +117,14 @@ public class DescribeDiagnosticMetricsResponse extends AcsResponse {
 
 		public void setSupportedOperatingSystem(String supportedOperatingSystem) {
 			this.supportedOperatingSystem = supportedOperatingSystem;
+		}
+
+		public String getMetricCategory() {
+			return this.metricCategory;
+		}
+
+		public void setMetricCategory(String metricCategory) {
+			this.metricCategory = metricCategory;
 		}
 	}
 

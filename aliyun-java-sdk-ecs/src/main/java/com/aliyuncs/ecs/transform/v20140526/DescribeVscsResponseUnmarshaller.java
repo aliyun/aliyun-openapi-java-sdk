@@ -34,12 +34,12 @@ public class DescribeVscsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeVscsResponse.Vscs.Length"); i++) {
 			Vsc vsc = new Vsc();
 			vsc.setVscId(_ctx.stringValue("DescribeVscsResponse.Vscs["+ i +"].VscId"));
-			vsc.setVscName(_ctx.stringValue("DescribeVscsResponse.Vscs["+ i +"].VscName"));
 			vsc.setVscType(_ctx.stringValue("DescribeVscsResponse.Vscs["+ i +"].VscType"));
-			vsc.setDescription(_ctx.stringValue("DescribeVscsResponse.Vscs["+ i +"].Description"));
 			vsc.setStatus(_ctx.stringValue("DescribeVscsResponse.Vscs["+ i +"].Status"));
-			vsc.setInstanceId(_ctx.stringValue("DescribeVscsResponse.Vscs["+ i +"].InstanceId"));
+			vsc.setDescription(_ctx.stringValue("DescribeVscsResponse.Vscs["+ i +"].Description"));
 			vsc.setResourceGroupId(_ctx.stringValue("DescribeVscsResponse.Vscs["+ i +"].ResourceGroupId"));
+			vsc.setInstanceId(_ctx.stringValue("DescribeVscsResponse.Vscs["+ i +"].InstanceId"));
+			vsc.setVscName(_ctx.stringValue("DescribeVscsResponse.Vscs["+ i +"].VscName"));
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVscsResponse.Vscs["+ i +"].Tags.Length"); j++) {

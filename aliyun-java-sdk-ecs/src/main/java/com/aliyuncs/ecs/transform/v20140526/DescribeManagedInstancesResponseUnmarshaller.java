@@ -28,29 +28,29 @@ public class DescribeManagedInstancesResponseUnmarshaller {
 	public static DescribeManagedInstancesResponse unmarshall(DescribeManagedInstancesResponse describeManagedInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeManagedInstancesResponse.setRequestId(_ctx.stringValue("DescribeManagedInstancesResponse.RequestId"));
-		describeManagedInstancesResponse.setPageSize(_ctx.longValue("DescribeManagedInstancesResponse.PageSize"));
-		describeManagedInstancesResponse.setPageNumber(_ctx.longValue("DescribeManagedInstancesResponse.PageNumber"));
 		describeManagedInstancesResponse.setTotalCount(_ctx.longValue("DescribeManagedInstancesResponse.TotalCount"));
+		describeManagedInstancesResponse.setPageSize(_ctx.longValue("DescribeManagedInstancesResponse.PageSize"));
 		describeManagedInstancesResponse.setNextToken(_ctx.stringValue("DescribeManagedInstancesResponse.NextToken"));
+		describeManagedInstancesResponse.setPageNumber(_ctx.longValue("DescribeManagedInstancesResponse.PageNumber"));
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeManagedInstancesResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setLastInvokedTime(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].LastInvokedTime"));
-			instance.setConnected(_ctx.booleanValue("DescribeManagedInstancesResponse.Instances["+ i +"].Connected"));
-			instance.setInternetIp(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].InternetIp"));
-			instance.setHostname(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].Hostname"));
-			instance.setInstanceId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].InstanceId"));
-			instance.setActivationId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].ActivationId"));
-			instance.setIntranetIp(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].IntranetIp"));
-			instance.setAgentVersion(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].AgentVersion"));
-			instance.setRegistrationTime(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].RegistrationTime"));
-			instance.setInstanceName(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].InstanceName"));
-			instance.setOsType(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].OsType"));
-			instance.setOsVersion(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].OsVersion"));
-			instance.setInvocationCount(_ctx.longValue("DescribeManagedInstancesResponse.Instances["+ i +"].InvocationCount"));
 			instance.setMachineId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].MachineId"));
 			instance.setResourceGroupId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].ResourceGroupId"));
+			instance.setConnected(_ctx.booleanValue("DescribeManagedInstancesResponse.Instances["+ i +"].Connected"));
+			instance.setInstanceId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].InstanceId"));
+			instance.setAgentVersion(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].AgentVersion"));
+			instance.setInvocationCount(_ctx.longValue("DescribeManagedInstancesResponse.Instances["+ i +"].InvocationCount"));
+			instance.setOsVersion(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].OsVersion"));
+			instance.setHostname(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].Hostname"));
+			instance.setActivationId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].ActivationId"));
+			instance.setRegistrationTime(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].RegistrationTime"));
+			instance.setIntranetIp(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].IntranetIp"));
+			instance.setInstanceName(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].InstanceName"));
+			instance.setInternetIp(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].InternetIp"));
+			instance.setOsType(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].OsType"));
+			instance.setLastInvokedTime(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].LastInvokedTime"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeManagedInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDisksFullStatusResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<DiskFullStatusType> diskFullStatusSet;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<DiskFullStatusType> getDiskFullStatusSet() {
 		return this.diskFullStatusSet;
 	}
@@ -77,25 +77,17 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 
 	public static class DiskFullStatusType {
 
-		private String diskId;
-
 		private String instanceId;
 
 		private String device;
+
+		private String diskId;
 
 		private List<DiskEventType> diskEventSet;
 
 		private Status status;
 
 		private HealthStatus healthStatus;
-
-		public String getDiskId() {
-			return this.diskId;
-		}
-
-		public void setDiskId(String diskId) {
-			this.diskId = diskId;
-		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -111,6 +103,14 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 
 		public void setDevice(String device) {
 			this.device = device;
+		}
+
+		public String getDiskId() {
+			return this.diskId;
+		}
+
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
 		}
 
 		public List<DiskEventType> getDiskEventSet() {
@@ -139,31 +139,15 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 
 		public static class DiskEventType {
 
-			private String eventId;
-
-			private String eventEndTime;
-
 			private String eventTime;
 
 			private String impactLevel;
 
+			private String eventId;
+
+			private String eventEndTime;
+
 			private EventType eventType;
-
-			public String getEventId() {
-				return this.eventId;
-			}
-
-			public void setEventId(String eventId) {
-				this.eventId = eventId;
-			}
-
-			public String getEventEndTime() {
-				return this.eventEndTime;
-			}
-
-			public void setEventEndTime(String eventEndTime) {
-				this.eventEndTime = eventEndTime;
-			}
 
 			public String getEventTime() {
 				return this.eventTime;
@@ -181,6 +165,22 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 				this.impactLevel = impactLevel;
 			}
 
+			public String getEventId() {
+				return this.eventId;
+			}
+
+			public void setEventId(String eventId) {
+				this.eventId = eventId;
+			}
+
+			public String getEventEndTime() {
+				return this.eventEndTime;
+			}
+
+			public void setEventEndTime(String eventEndTime) {
+				this.eventEndTime = eventEndTime;
+			}
+
 			public EventType getEventType() {
 				return this.eventType;
 			}
@@ -191,17 +191,9 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 
 			public static class EventType {
 
-				private String name;
-
 				private Integer code;
 
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
+				private String name;
 
 				public Integer getCode() {
 					return this.code;
@@ -210,22 +202,22 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 				public void setCode(Integer code) {
 					this.code = code;
 				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
 			}
 		}
 
 		public static class Status {
 
-			private String name;
-
 			private Integer code;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public Integer getCode() {
 				return this.code;
@@ -233,22 +225,22 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 
 			public void setCode(Integer code) {
 				this.code = code;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 
 		public static class HealthStatus {
 
-			private String name;
-
 			private Integer code;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public Integer getCode() {
 				return this.code;
@@ -256,6 +248,14 @@ public class DescribeDisksFullStatusResponse extends AcsResponse {
 
 			public void setCode(Integer code) {
 				this.code = code;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<LaunchTemplateVersionSet> launchTemplateVersionSets;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<LaunchTemplateVersionSet> getLaunchTemplateVersionSets() {
 		return this.launchTemplateVersionSets;
 	}
@@ -79,19 +79,19 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 		private String launchTemplateName;
 
-		private Boolean defaultVersion;
-
-		private Long versionNumber;
-
-		private String modifiedTime;
-
-		private String launchTemplateId;
-
-		private String createTime;
-
 		private String createdBy;
 
 		private String versionDescription;
+
+		private String modifiedTime;
+
+		private Boolean defaultVersion;
+
+		private String createTime;
+
+		private String launchTemplateId;
+
+		private Long versionNumber;
 
 		private LaunchTemplateData launchTemplateData;
 
@@ -101,46 +101,6 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 		public void setLaunchTemplateName(String launchTemplateName) {
 			this.launchTemplateName = launchTemplateName;
-		}
-
-		public Boolean getDefaultVersion() {
-			return this.defaultVersion;
-		}
-
-		public void setDefaultVersion(Boolean defaultVersion) {
-			this.defaultVersion = defaultVersion;
-		}
-
-		public Long getVersionNumber() {
-			return this.versionNumber;
-		}
-
-		public void setVersionNumber(Long versionNumber) {
-			this.versionNumber = versionNumber;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public String getLaunchTemplateId() {
-			return this.launchTemplateId;
-		}
-
-		public void setLaunchTemplateId(String launchTemplateId) {
-			this.launchTemplateId = launchTemplateId;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getCreatedBy() {
@@ -159,6 +119,46 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 			this.versionDescription = versionDescription;
 		}
 
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public Boolean getDefaultVersion() {
+			return this.defaultVersion;
+		}
+
+		public void setDefaultVersion(Boolean defaultVersion) {
+			this.defaultVersion = defaultVersion;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getLaunchTemplateId() {
+			return this.launchTemplateId;
+		}
+
+		public void setLaunchTemplateId(String launchTemplateId) {
+			this.launchTemplateId = launchTemplateId;
+		}
+
+		public Long getVersionNumber() {
+			return this.versionNumber;
+		}
+
+		public void setVersionNumber(Long versionNumber) {
+			this.versionNumber = versionNumber;
+		}
+
 		public LaunchTemplateData getLaunchTemplateData() {
 			return this.launchTemplateData;
 		}
@@ -169,113 +169,113 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 		public static class LaunchTemplateData {
 
-			private String deploymentSetId;
+			private Integer httpPutResponseHopLimit;
 
-			private String vpcId;
+			private String resourceGroupId;
 
-			private String systemDiskPerformanceLevel;
+			private String instanceChargeType;
 
-			private String keyPairName;
-
-			private String securityGroupId;
-
-			private String networkType;
-
-			private String spotStrategy;
-
-			private Boolean enableVmOsConfig;
-
-			private String description;
-
-			private Integer spotDuration;
-
-			private String instanceName;
-
-			private String securityEnhancementStrategy;
-
-			private String userData;
+			private Boolean systemDiskBurstingEnabled;
 
 			private String systemDiskDiskName;
 
-			private Integer systemDiskSize;
+			private String ramRoleName;
 
-			private Float spotPriceLimit;
-
-			private Boolean passwordInherit;
-
-			private String privateIpAddress;
+			private Long systemDiskProvisionedIops;
 
 			private String imageId;
 
 			private Boolean systemDiskDeleteWithInstance;
 
+			private String systemDiskEncrypted;
+
 			private String systemDiskCategory;
+
+			private String hostName;
+
+			private String vSwitchId;
+
+			private Integer period;
+
+			private Boolean deletionProtection;
+
+			private String httpEndpoint;
+
+			private String internetChargeType;
+
+			private String deploymentSetId;
+
+			private String instanceName;
+
+			private Integer internetMaxBandwidthOut;
+
+			private String vpcId;
+
+			private String securityEnhancementStrategy;
 
 			private String autoReleaseTime;
 
-			private String systemDiskDescription;
+			private String periodUnit;
 
 			private String imageOwnerAlias;
 
-			private String hostName;
+			private String description;
+
+			private String privateIpAddress;
+
+			private String userData;
+
+			private Boolean autoRenew;
+
+			private Integer spotDuration;
+
+			private Integer systemDiskSize;
+
+			private String systemDiskPerformanceLevel;
+
+			private String networkType;
+
+			private Integer ipv6AddressCount;
+
+			private Float spotPriceLimit;
+
+			private String instanceType;
+
+			private String spotStrategy;
+
+			private Boolean passwordInherit;
+
+			private Integer autoRenewPeriod;
+
+			private String keyPairName;
 
 			private Integer systemDiskIops;
 
 			private String systemDiskAutoSnapshotPolicyId;
 
-			private Integer internetMaxBandwidthOut;
-
-			private Integer internetMaxBandwidthIn;
-
-			private String instanceType;
-
-			private Integer period;
-
-			private String instanceChargeType;
-
 			private String ioOptimized;
-
-			private String ramRoleName;
-
-			private String vSwitchId;
-
-			private String resourceGroupId;
-
-			private String internetChargeType;
-
-			private String zoneId;
-
-			private Integer ipv6AddressCount;
-
-			private Long systemDiskProvisionedIops;
-
-			private Boolean systemDiskBurstingEnabled;
-
-			private String systemDiskEncrypted;
-
-			private Boolean deletionProtection;
-
-			private String creditSpecification;
-
-			private Boolean autoRenew;
-
-			private Integer autoRenewPeriod;
-
-			private String periodUnit;
-
-			private String httpEndpoint;
-
-			private String httpTokens;
-
-			private Integer httpPutResponseHopLimit;
 
 			private String systemDiskKMSKeyId;
 
+			private String systemDiskDescription;
+
+			private String zoneId;
+
+			private String securityGroupId;
+
+			private Boolean enableVmOsConfig;
+
+			private String httpTokens;
+
+			private Integer internetMaxBandwidthIn;
+
+			private String creditSpecification;
+
 			private List<DataDisk> dataDisks;
 
-			private List<NetworkInterface> networkInterfaces;
-
 			private List<InstanceTag> tags;
+
+			private List<NetworkInterface> networkInterfaces;
 
 			private List<String> securityGroupIds;
 
@@ -283,108 +283,36 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private SecurityOptions securityOptions;
 
-			public String getDeploymentSetId() {
-				return this.deploymentSetId;
+			public Integer getHttpPutResponseHopLimit() {
+				return this.httpPutResponseHopLimit;
 			}
 
-			public void setDeploymentSetId(String deploymentSetId) {
-				this.deploymentSetId = deploymentSetId;
+			public void setHttpPutResponseHopLimit(Integer httpPutResponseHopLimit) {
+				this.httpPutResponseHopLimit = httpPutResponseHopLimit;
 			}
 
-			public String getVpcId() {
-				return this.vpcId;
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
 			}
 
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 
-			public String getSystemDiskPerformanceLevel() {
-				return this.systemDiskPerformanceLevel;
+			public String getInstanceChargeType() {
+				return this.instanceChargeType;
 			}
 
-			public void setSystemDiskPerformanceLevel(String systemDiskPerformanceLevel) {
-				this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+			public void setInstanceChargeType(String instanceChargeType) {
+				this.instanceChargeType = instanceChargeType;
 			}
 
-			public String getKeyPairName() {
-				return this.keyPairName;
+			public Boolean getSystemDiskBurstingEnabled() {
+				return this.systemDiskBurstingEnabled;
 			}
 
-			public void setKeyPairName(String keyPairName) {
-				this.keyPairName = keyPairName;
-			}
-
-			public String getSecurityGroupId() {
-				return this.securityGroupId;
-			}
-
-			public void setSecurityGroupId(String securityGroupId) {
-				this.securityGroupId = securityGroupId;
-			}
-
-			public String getNetworkType() {
-				return this.networkType;
-			}
-
-			public void setNetworkType(String networkType) {
-				this.networkType = networkType;
-			}
-
-			public String getSpotStrategy() {
-				return this.spotStrategy;
-			}
-
-			public void setSpotStrategy(String spotStrategy) {
-				this.spotStrategy = spotStrategy;
-			}
-
-			public Boolean getEnableVmOsConfig() {
-				return this.enableVmOsConfig;
-			}
-
-			public void setEnableVmOsConfig(Boolean enableVmOsConfig) {
-				this.enableVmOsConfig = enableVmOsConfig;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public Integer getSpotDuration() {
-				return this.spotDuration;
-			}
-
-			public void setSpotDuration(Integer spotDuration) {
-				this.spotDuration = spotDuration;
-			}
-
-			public String getInstanceName() {
-				return this.instanceName;
-			}
-
-			public void setInstanceName(String instanceName) {
-				this.instanceName = instanceName;
-			}
-
-			public String getSecurityEnhancementStrategy() {
-				return this.securityEnhancementStrategy;
-			}
-
-			public void setSecurityEnhancementStrategy(String securityEnhancementStrategy) {
-				this.securityEnhancementStrategy = securityEnhancementStrategy;
-			}
-
-			public String getUserData() {
-				return this.userData;
-			}
-
-			public void setUserData(String userData) {
-				this.userData = userData;
+			public void setSystemDiskBurstingEnabled(Boolean systemDiskBurstingEnabled) {
+				this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
 			}
 
 			public String getSystemDiskDiskName() {
@@ -395,36 +323,20 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.systemDiskDiskName = systemDiskDiskName;
 			}
 
-			public Integer getSystemDiskSize() {
-				return this.systemDiskSize;
+			public String getRamRoleName() {
+				return this.ramRoleName;
 			}
 
-			public void setSystemDiskSize(Integer systemDiskSize) {
-				this.systemDiskSize = systemDiskSize;
+			public void setRamRoleName(String ramRoleName) {
+				this.ramRoleName = ramRoleName;
 			}
 
-			public Float getSpotPriceLimit() {
-				return this.spotPriceLimit;
+			public Long getSystemDiskProvisionedIops() {
+				return this.systemDiskProvisionedIops;
 			}
 
-			public void setSpotPriceLimit(Float spotPriceLimit) {
-				this.spotPriceLimit = spotPriceLimit;
-			}
-
-			public Boolean getPasswordInherit() {
-				return this.passwordInherit;
-			}
-
-			public void setPasswordInherit(Boolean passwordInherit) {
-				this.passwordInherit = passwordInherit;
-			}
-
-			public String getPrivateIpAddress() {
-				return this.privateIpAddress;
-			}
-
-			public void setPrivateIpAddress(String privateIpAddress) {
-				this.privateIpAddress = privateIpAddress;
+			public void setSystemDiskProvisionedIops(Long systemDiskProvisionedIops) {
+				this.systemDiskProvisionedIops = systemDiskProvisionedIops;
 			}
 
 			public String getImageId() {
@@ -443,12 +355,108 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.systemDiskDeleteWithInstance = systemDiskDeleteWithInstance;
 			}
 
+			public String getSystemDiskEncrypted() {
+				return this.systemDiskEncrypted;
+			}
+
+			public void setSystemDiskEncrypted(String systemDiskEncrypted) {
+				this.systemDiskEncrypted = systemDiskEncrypted;
+			}
+
 			public String getSystemDiskCategory() {
 				return this.systemDiskCategory;
 			}
 
 			public void setSystemDiskCategory(String systemDiskCategory) {
 				this.systemDiskCategory = systemDiskCategory;
+			}
+
+			public String getHostName() {
+				return this.hostName;
+			}
+
+			public void setHostName(String hostName) {
+				this.hostName = hostName;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public Integer getPeriod() {
+				return this.period;
+			}
+
+			public void setPeriod(Integer period) {
+				this.period = period;
+			}
+
+			public Boolean getDeletionProtection() {
+				return this.deletionProtection;
+			}
+
+			public void setDeletionProtection(Boolean deletionProtection) {
+				this.deletionProtection = deletionProtection;
+			}
+
+			public String getHttpEndpoint() {
+				return this.httpEndpoint;
+			}
+
+			public void setHttpEndpoint(String httpEndpoint) {
+				this.httpEndpoint = httpEndpoint;
+			}
+
+			public String getInternetChargeType() {
+				return this.internetChargeType;
+			}
+
+			public void setInternetChargeType(String internetChargeType) {
+				this.internetChargeType = internetChargeType;
+			}
+
+			public String getDeploymentSetId() {
+				return this.deploymentSetId;
+			}
+
+			public void setDeploymentSetId(String deploymentSetId) {
+				this.deploymentSetId = deploymentSetId;
+			}
+
+			public String getInstanceName() {
+				return this.instanceName;
+			}
+
+			public void setInstanceName(String instanceName) {
+				this.instanceName = instanceName;
+			}
+
+			public Integer getInternetMaxBandwidthOut() {
+				return this.internetMaxBandwidthOut;
+			}
+
+			public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
+				this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+			}
+
+			public String getVpcId() {
+				return this.vpcId;
+			}
+
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
+			}
+
+			public String getSecurityEnhancementStrategy() {
+				return this.securityEnhancementStrategy;
+			}
+
+			public void setSecurityEnhancementStrategy(String securityEnhancementStrategy) {
+				this.securityEnhancementStrategy = securityEnhancementStrategy;
 			}
 
 			public String getAutoReleaseTime() {
@@ -459,12 +467,12 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.autoReleaseTime = autoReleaseTime;
 			}
 
-			public String getSystemDiskDescription() {
-				return this.systemDiskDescription;
+			public String getPeriodUnit() {
+				return this.periodUnit;
 			}
 
-			public void setSystemDiskDescription(String systemDiskDescription) {
-				this.systemDiskDescription = systemDiskDescription;
+			public void setPeriodUnit(String periodUnit) {
+				this.periodUnit = periodUnit;
 			}
 
 			public String getImageOwnerAlias() {
@@ -475,12 +483,124 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.imageOwnerAlias = imageOwnerAlias;
 			}
 
-			public String getHostName() {
-				return this.hostName;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setHostName(String hostName) {
-				this.hostName = hostName;
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getPrivateIpAddress() {
+				return this.privateIpAddress;
+			}
+
+			public void setPrivateIpAddress(String privateIpAddress) {
+				this.privateIpAddress = privateIpAddress;
+			}
+
+			public String getUserData() {
+				return this.userData;
+			}
+
+			public void setUserData(String userData) {
+				this.userData = userData;
+			}
+
+			public Boolean getAutoRenew() {
+				return this.autoRenew;
+			}
+
+			public void setAutoRenew(Boolean autoRenew) {
+				this.autoRenew = autoRenew;
+			}
+
+			public Integer getSpotDuration() {
+				return this.spotDuration;
+			}
+
+			public void setSpotDuration(Integer spotDuration) {
+				this.spotDuration = spotDuration;
+			}
+
+			public Integer getSystemDiskSize() {
+				return this.systemDiskSize;
+			}
+
+			public void setSystemDiskSize(Integer systemDiskSize) {
+				this.systemDiskSize = systemDiskSize;
+			}
+
+			public String getSystemDiskPerformanceLevel() {
+				return this.systemDiskPerformanceLevel;
+			}
+
+			public void setSystemDiskPerformanceLevel(String systemDiskPerformanceLevel) {
+				this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+			}
+
+			public String getNetworkType() {
+				return this.networkType;
+			}
+
+			public void setNetworkType(String networkType) {
+				this.networkType = networkType;
+			}
+
+			public Integer getIpv6AddressCount() {
+				return this.ipv6AddressCount;
+			}
+
+			public void setIpv6AddressCount(Integer ipv6AddressCount) {
+				this.ipv6AddressCount = ipv6AddressCount;
+			}
+
+			public Float getSpotPriceLimit() {
+				return this.spotPriceLimit;
+			}
+
+			public void setSpotPriceLimit(Float spotPriceLimit) {
+				this.spotPriceLimit = spotPriceLimit;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public String getSpotStrategy() {
+				return this.spotStrategy;
+			}
+
+			public void setSpotStrategy(String spotStrategy) {
+				this.spotStrategy = spotStrategy;
+			}
+
+			public Boolean getPasswordInherit() {
+				return this.passwordInherit;
+			}
+
+			public void setPasswordInherit(Boolean passwordInherit) {
+				this.passwordInherit = passwordInherit;
+			}
+
+			public Integer getAutoRenewPeriod() {
+				return this.autoRenewPeriod;
+			}
+
+			public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+				this.autoRenewPeriod = autoRenewPeriod;
+			}
+
+			public String getKeyPairName() {
+				return this.keyPairName;
+			}
+
+			public void setKeyPairName(String keyPairName) {
+				this.keyPairName = keyPairName;
 			}
 
 			public Integer getSystemDiskIops() {
@@ -499,188 +619,12 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
 			}
 
-			public Integer getInternetMaxBandwidthOut() {
-				return this.internetMaxBandwidthOut;
-			}
-
-			public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
-				this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-			}
-
-			public Integer getInternetMaxBandwidthIn() {
-				return this.internetMaxBandwidthIn;
-			}
-
-			public void setInternetMaxBandwidthIn(Integer internetMaxBandwidthIn) {
-				this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-			}
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
-			}
-
-			public Integer getPeriod() {
-				return this.period;
-			}
-
-			public void setPeriod(Integer period) {
-				this.period = period;
-			}
-
-			public String getInstanceChargeType() {
-				return this.instanceChargeType;
-			}
-
-			public void setInstanceChargeType(String instanceChargeType) {
-				this.instanceChargeType = instanceChargeType;
-			}
-
 			public String getIoOptimized() {
 				return this.ioOptimized;
 			}
 
 			public void setIoOptimized(String ioOptimized) {
 				this.ioOptimized = ioOptimized;
-			}
-
-			public String getRamRoleName() {
-				return this.ramRoleName;
-			}
-
-			public void setRamRoleName(String ramRoleName) {
-				this.ramRoleName = ramRoleName;
-			}
-
-			public String getVSwitchId() {
-				return this.vSwitchId;
-			}
-
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
-			}
-
-			public String getResourceGroupId() {
-				return this.resourceGroupId;
-			}
-
-			public void setResourceGroupId(String resourceGroupId) {
-				this.resourceGroupId = resourceGroupId;
-			}
-
-			public String getInternetChargeType() {
-				return this.internetChargeType;
-			}
-
-			public void setInternetChargeType(String internetChargeType) {
-				this.internetChargeType = internetChargeType;
-			}
-
-			public String getZoneId() {
-				return this.zoneId;
-			}
-
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
-			}
-
-			public Integer getIpv6AddressCount() {
-				return this.ipv6AddressCount;
-			}
-
-			public void setIpv6AddressCount(Integer ipv6AddressCount) {
-				this.ipv6AddressCount = ipv6AddressCount;
-			}
-
-			public Long getSystemDiskProvisionedIops() {
-				return this.systemDiskProvisionedIops;
-			}
-
-			public void setSystemDiskProvisionedIops(Long systemDiskProvisionedIops) {
-				this.systemDiskProvisionedIops = systemDiskProvisionedIops;
-			}
-
-			public Boolean getSystemDiskBurstingEnabled() {
-				return this.systemDiskBurstingEnabled;
-			}
-
-			public void setSystemDiskBurstingEnabled(Boolean systemDiskBurstingEnabled) {
-				this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
-			}
-
-			public String getSystemDiskEncrypted() {
-				return this.systemDiskEncrypted;
-			}
-
-			public void setSystemDiskEncrypted(String systemDiskEncrypted) {
-				this.systemDiskEncrypted = systemDiskEncrypted;
-			}
-
-			public Boolean getDeletionProtection() {
-				return this.deletionProtection;
-			}
-
-			public void setDeletionProtection(Boolean deletionProtection) {
-				this.deletionProtection = deletionProtection;
-			}
-
-			public String getCreditSpecification() {
-				return this.creditSpecification;
-			}
-
-			public void setCreditSpecification(String creditSpecification) {
-				this.creditSpecification = creditSpecification;
-			}
-
-			public Boolean getAutoRenew() {
-				return this.autoRenew;
-			}
-
-			public void setAutoRenew(Boolean autoRenew) {
-				this.autoRenew = autoRenew;
-			}
-
-			public Integer getAutoRenewPeriod() {
-				return this.autoRenewPeriod;
-			}
-
-			public void setAutoRenewPeriod(Integer autoRenewPeriod) {
-				this.autoRenewPeriod = autoRenewPeriod;
-			}
-
-			public String getPeriodUnit() {
-				return this.periodUnit;
-			}
-
-			public void setPeriodUnit(String periodUnit) {
-				this.periodUnit = periodUnit;
-			}
-
-			public String getHttpEndpoint() {
-				return this.httpEndpoint;
-			}
-
-			public void setHttpEndpoint(String httpEndpoint) {
-				this.httpEndpoint = httpEndpoint;
-			}
-
-			public String getHttpTokens() {
-				return this.httpTokens;
-			}
-
-			public void setHttpTokens(String httpTokens) {
-				this.httpTokens = httpTokens;
-			}
-
-			public Integer getHttpPutResponseHopLimit() {
-				return this.httpPutResponseHopLimit;
-			}
-
-			public void setHttpPutResponseHopLimit(Integer httpPutResponseHopLimit) {
-				this.httpPutResponseHopLimit = httpPutResponseHopLimit;
 			}
 
 			public String getSystemDiskKMSKeyId() {
@@ -691,6 +635,62 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.systemDiskKMSKeyId = systemDiskKMSKeyId;
 			}
 
+			public String getSystemDiskDescription() {
+				return this.systemDiskDescription;
+			}
+
+			public void setSystemDiskDescription(String systemDiskDescription) {
+				this.systemDiskDescription = systemDiskDescription;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public String getSecurityGroupId() {
+				return this.securityGroupId;
+			}
+
+			public void setSecurityGroupId(String securityGroupId) {
+				this.securityGroupId = securityGroupId;
+			}
+
+			public Boolean getEnableVmOsConfig() {
+				return this.enableVmOsConfig;
+			}
+
+			public void setEnableVmOsConfig(Boolean enableVmOsConfig) {
+				this.enableVmOsConfig = enableVmOsConfig;
+			}
+
+			public String getHttpTokens() {
+				return this.httpTokens;
+			}
+
+			public void setHttpTokens(String httpTokens) {
+				this.httpTokens = httpTokens;
+			}
+
+			public Integer getInternetMaxBandwidthIn() {
+				return this.internetMaxBandwidthIn;
+			}
+
+			public void setInternetMaxBandwidthIn(Integer internetMaxBandwidthIn) {
+				this.internetMaxBandwidthIn = internetMaxBandwidthIn;
+			}
+
+			public String getCreditSpecification() {
+				return this.creditSpecification;
+			}
+
+			public void setCreditSpecification(String creditSpecification) {
+				this.creditSpecification = creditSpecification;
+			}
+
 			public List<DataDisk> getDataDisks() {
 				return this.dataDisks;
 			}
@@ -699,20 +699,20 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.dataDisks = dataDisks;
 			}
 
-			public List<NetworkInterface> getNetworkInterfaces() {
-				return this.networkInterfaces;
-			}
-
-			public void setNetworkInterfaces(List<NetworkInterface> networkInterfaces) {
-				this.networkInterfaces = networkInterfaces;
-			}
-
 			public List<InstanceTag> getTags() {
 				return this.tags;
 			}
 
 			public void setTags(List<InstanceTag> tags) {
 				this.tags = tags;
+			}
+
+			public List<NetworkInterface> getNetworkInterfaces() {
+				return this.networkInterfaces;
+			}
+
+			public void setNetworkInterfaces(List<NetworkInterface> networkInterfaces) {
+				this.networkInterfaces = networkInterfaces;
 			}
 
 			public List<String> getSecurityGroupIds() {
@@ -741,38 +741,38 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			public static class DataDisk {
 
-				private String performanceLevel;
+				private Boolean burstingEnabled;
 
 				private String description;
 
-				private String snapshotId;
+				private String category;
+
+				private String kMSKeyId;
+
+				private String performanceLevel;
 
 				private String device;
 
 				private Integer size;
 
-				private String diskName;
-
-				private String category;
+				private String encrypted;
 
 				private Boolean deleteWithInstance;
 
-				private String encrypted;
+				private String autoSnapshotPolicyId;
+
+				private String diskName;
 
 				private Long provisionedIops;
 
-				private Boolean burstingEnabled;
+				private String snapshotId;
 
-				private String autoSnapshotPolicyId;
-
-				private String kMSKeyId;
-
-				public String getPerformanceLevel() {
-					return this.performanceLevel;
+				public Boolean getBurstingEnabled() {
+					return this.burstingEnabled;
 				}
 
-				public void setPerformanceLevel(String performanceLevel) {
-					this.performanceLevel = performanceLevel;
+				public void setBurstingEnabled(Boolean burstingEnabled) {
+					this.burstingEnabled = burstingEnabled;
 				}
 
 				public String getDescription() {
@@ -783,12 +783,28 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 					this.description = description;
 				}
 
-				public String getSnapshotId() {
-					return this.snapshotId;
+				public String getCategory() {
+					return this.category;
 				}
 
-				public void setSnapshotId(String snapshotId) {
-					this.snapshotId = snapshotId;
+				public void setCategory(String category) {
+					this.category = category;
+				}
+
+				public String getKMSKeyId() {
+					return this.kMSKeyId;
+				}
+
+				public void setKMSKeyId(String kMSKeyId) {
+					this.kMSKeyId = kMSKeyId;
+				}
+
+				public String getPerformanceLevel() {
+					return this.performanceLevel;
+				}
+
+				public void setPerformanceLevel(String performanceLevel) {
+					this.performanceLevel = performanceLevel;
 				}
 
 				public String getDevice() {
@@ -807,20 +823,12 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 					this.size = size;
 				}
 
-				public String getDiskName() {
-					return this.diskName;
+				public String getEncrypted() {
+					return this.encrypted;
 				}
 
-				public void setDiskName(String diskName) {
-					this.diskName = diskName;
-				}
-
-				public String getCategory() {
-					return this.category;
-				}
-
-				public void setCategory(String category) {
-					this.category = category;
+				public void setEncrypted(String encrypted) {
+					this.encrypted = encrypted;
 				}
 
 				public Boolean getDeleteWithInstance() {
@@ -831,12 +839,20 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 					this.deleteWithInstance = deleteWithInstance;
 				}
 
-				public String getEncrypted() {
-					return this.encrypted;
+				public String getAutoSnapshotPolicyId() {
+					return this.autoSnapshotPolicyId;
 				}
 
-				public void setEncrypted(String encrypted) {
-					this.encrypted = encrypted;
+				public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+					this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+				}
+
+				public String getDiskName() {
+					return this.diskName;
+				}
+
+				public void setDiskName(String diskName) {
+					this.diskName = diskName;
 				}
 
 				public Long getProvisionedIops() {
@@ -847,65 +863,64 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 					this.provisionedIops = provisionedIops;
 				}
 
-				public Boolean getBurstingEnabled() {
-					return this.burstingEnabled;
+				public String getSnapshotId() {
+					return this.snapshotId;
 				}
 
-				public void setBurstingEnabled(Boolean burstingEnabled) {
-					this.burstingEnabled = burstingEnabled;
+				public void setSnapshotId(String snapshotId) {
+					this.snapshotId = snapshotId;
+				}
+			}
+
+			public static class InstanceTag {
+
+				private String value;
+
+				private String key;
+
+				public String getValue() {
+					return this.value;
 				}
 
-				public String getAutoSnapshotPolicyId() {
-					return this.autoSnapshotPolicyId;
+				public void setValue(String value) {
+					this.value = value;
 				}
 
-				public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
-					this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+				public String getKey() {
+					return this.key;
 				}
 
-				public String getKMSKeyId() {
-					return this.kMSKeyId;
-				}
-
-				public void setKMSKeyId(String kMSKeyId) {
-					this.kMSKeyId = kMSKeyId;
+				public void setKey(String key) {
+					this.key = key;
 				}
 			}
 
 			public static class NetworkInterface {
 
-				private String networkInterfaceName;
-
-				private String vSwitchId;
+				private String networkInterfaceTrafficMode;
 
 				private String description;
 
-				private String primaryIpAddress;
+				private Boolean deleteOnRelease;
+
+				private String vSwitchId;
 
 				private String securityGroupId;
 
+				private String networkInterfaceName;
+
+				private String primaryIpAddress;
+
 				private String instanceType;
-
-				private String networkInterfaceTrafficMode;
-
-				private Boolean deleteOnRelease;
 
 				private List<String> securityGroupIds1;
 
-				public String getNetworkInterfaceName() {
-					return this.networkInterfaceName;
+				public String getNetworkInterfaceTrafficMode() {
+					return this.networkInterfaceTrafficMode;
 				}
 
-				public void setNetworkInterfaceName(String networkInterfaceName) {
-					this.networkInterfaceName = networkInterfaceName;
-				}
-
-				public String getVSwitchId() {
-					return this.vSwitchId;
-				}
-
-				public void setVSwitchId(String vSwitchId) {
-					this.vSwitchId = vSwitchId;
+				public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+					this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
 				}
 
 				public String getDescription() {
@@ -916,12 +931,20 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 					this.description = description;
 				}
 
-				public String getPrimaryIpAddress() {
-					return this.primaryIpAddress;
+				public Boolean getDeleteOnRelease() {
+					return this.deleteOnRelease;
 				}
 
-				public void setPrimaryIpAddress(String primaryIpAddress) {
-					this.primaryIpAddress = primaryIpAddress;
+				public void setDeleteOnRelease(Boolean deleteOnRelease) {
+					this.deleteOnRelease = deleteOnRelease;
+				}
+
+				public String getVSwitchId() {
+					return this.vSwitchId;
+				}
+
+				public void setVSwitchId(String vSwitchId) {
+					this.vSwitchId = vSwitchId;
 				}
 
 				public String getSecurityGroupId() {
@@ -932,6 +955,22 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 					this.securityGroupId = securityGroupId;
 				}
 
+				public String getNetworkInterfaceName() {
+					return this.networkInterfaceName;
+				}
+
+				public void setNetworkInterfaceName(String networkInterfaceName) {
+					this.networkInterfaceName = networkInterfaceName;
+				}
+
+				public String getPrimaryIpAddress() {
+					return this.primaryIpAddress;
+				}
+
+				public void setPrimaryIpAddress(String primaryIpAddress) {
+					this.primaryIpAddress = primaryIpAddress;
+				}
+
 				public String getInstanceType() {
 					return this.instanceType;
 				}
@@ -940,51 +979,12 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 					this.instanceType = instanceType;
 				}
 
-				public String getNetworkInterfaceTrafficMode() {
-					return this.networkInterfaceTrafficMode;
-				}
-
-				public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
-					this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
-				}
-
-				public Boolean getDeleteOnRelease() {
-					return this.deleteOnRelease;
-				}
-
-				public void setDeleteOnRelease(Boolean deleteOnRelease) {
-					this.deleteOnRelease = deleteOnRelease;
-				}
-
 				public List<String> getSecurityGroupIds1() {
 					return this.securityGroupIds1;
 				}
 
 				public void setSecurityGroupIds1(List<String> securityGroupIds1) {
 					this.securityGroupIds1 = securityGroupIds1;
-				}
-			}
-
-			public static class InstanceTag {
-
-				private String key;
-
-				private String value;
-
-				public String getKey() {
-					return this.key;
-				}
-
-				public void setKey(String key) {
-					this.key = key;
-				}
-
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
 				}
 			}
 

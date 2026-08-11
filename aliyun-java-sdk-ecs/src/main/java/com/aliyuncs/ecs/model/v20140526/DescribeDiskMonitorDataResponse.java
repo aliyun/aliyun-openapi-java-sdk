@@ -57,33 +57,25 @@ public class DescribeDiskMonitorDataResponse extends AcsResponse {
 
 	public static class DiskMonitorData {
 
-		private Integer bPSRead;
-
 		private Integer iOPSRead;
 
-		private Integer latencyRead;
+		private Integer iOPSTotal;
+
+		private Integer iOPSWrite;
 
 		private Integer bPSTotal;
 
-		private Integer iOPSTotal;
+		private Integer latencyRead;
+
+		private Integer bPSWrite;
+
+		private Integer bPSRead;
 
 		private String timeStamp;
 
 		private Integer latencyWrite;
 
-		private Integer iOPSWrite;
-
 		private String diskId;
-
-		private Integer bPSWrite;
-
-		public Integer getBPSRead() {
-			return this.bPSRead;
-		}
-
-		public void setBPSRead(Integer bPSRead) {
-			this.bPSRead = bPSRead;
-		}
 
 		public Integer getIOPSRead() {
 			return this.iOPSRead;
@@ -93,12 +85,20 @@ public class DescribeDiskMonitorDataResponse extends AcsResponse {
 			this.iOPSRead = iOPSRead;
 		}
 
-		public Integer getLatencyRead() {
-			return this.latencyRead;
+		public Integer getIOPSTotal() {
+			return this.iOPSTotal;
 		}
 
-		public void setLatencyRead(Integer latencyRead) {
-			this.latencyRead = latencyRead;
+		public void setIOPSTotal(Integer iOPSTotal) {
+			this.iOPSTotal = iOPSTotal;
+		}
+
+		public Integer getIOPSWrite() {
+			return this.iOPSWrite;
+		}
+
+		public void setIOPSWrite(Integer iOPSWrite) {
+			this.iOPSWrite = iOPSWrite;
 		}
 
 		public Integer getBPSTotal() {
@@ -109,12 +109,28 @@ public class DescribeDiskMonitorDataResponse extends AcsResponse {
 			this.bPSTotal = bPSTotal;
 		}
 
-		public Integer getIOPSTotal() {
-			return this.iOPSTotal;
+		public Integer getLatencyRead() {
+			return this.latencyRead;
 		}
 
-		public void setIOPSTotal(Integer iOPSTotal) {
-			this.iOPSTotal = iOPSTotal;
+		public void setLatencyRead(Integer latencyRead) {
+			this.latencyRead = latencyRead;
+		}
+
+		public Integer getBPSWrite() {
+			return this.bPSWrite;
+		}
+
+		public void setBPSWrite(Integer bPSWrite) {
+			this.bPSWrite = bPSWrite;
+		}
+
+		public Integer getBPSRead() {
+			return this.bPSRead;
+		}
+
+		public void setBPSRead(Integer bPSRead) {
+			this.bPSRead = bPSRead;
 		}
 
 		public String getTimeStamp() {
@@ -133,28 +149,12 @@ public class DescribeDiskMonitorDataResponse extends AcsResponse {
 			this.latencyWrite = latencyWrite;
 		}
 
-		public Integer getIOPSWrite() {
-			return this.iOPSWrite;
-		}
-
-		public void setIOPSWrite(Integer iOPSWrite) {
-			this.iOPSWrite = iOPSWrite;
-		}
-
 		public String getDiskId() {
 			return this.diskId;
 		}
 
 		public void setDiskId(String diskId) {
 			this.diskId = diskId;
-		}
-
-		public Integer getBPSWrite() {
-			return this.bPSWrite;
-		}
-
-		public void setBPSWrite(Integer bPSWrite) {
-			this.bPSWrite = bPSWrite;
 		}
 	}
 

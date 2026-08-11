@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<VirtualBorderRouterForPhysicalConnectionType> virtualBorderRouterForPhysicalConnectionSet;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<VirtualBorderRouterForPhysicalConnectionType> getVirtualBorderRouterForPhysicalConnectionSet() {
@@ -77,53 +77,21 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 	public static class VirtualBorderRouterForPhysicalConnectionType {
 
-		private String creationTime;
-
-		private String circuitCode;
-
-		private String recoveryTime;
-
-		private String terminationTime;
-
 		private String activationTime;
 
 		private Long vbrOwnerUid;
 
+		private String circuitCode;
+
+		private String creationTime;
+
 		private String vbrId;
+
+		private String terminationTime;
 
 		private Integer vlanId;
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getCircuitCode() {
-			return this.circuitCode;
-		}
-
-		public void setCircuitCode(String circuitCode) {
-			this.circuitCode = circuitCode;
-		}
-
-		public String getRecoveryTime() {
-			return this.recoveryTime;
-		}
-
-		public void setRecoveryTime(String recoveryTime) {
-			this.recoveryTime = recoveryTime;
-		}
-
-		public String getTerminationTime() {
-			return this.terminationTime;
-		}
-
-		public void setTerminationTime(String terminationTime) {
-			this.terminationTime = terminationTime;
-		}
+		private String recoveryTime;
 
 		public String getActivationTime() {
 			return this.activationTime;
@@ -141,6 +109,22 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 			this.vbrOwnerUid = vbrOwnerUid;
 		}
 
+		public String getCircuitCode() {
+			return this.circuitCode;
+		}
+
+		public void setCircuitCode(String circuitCode) {
+			this.circuitCode = circuitCode;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
 		public String getVbrId() {
 			return this.vbrId;
 		}
@@ -149,12 +133,28 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 			this.vbrId = vbrId;
 		}
 
+		public String getTerminationTime() {
+			return this.terminationTime;
+		}
+
+		public void setTerminationTime(String terminationTime) {
+			this.terminationTime = terminationTime;
+		}
+
 		public Integer getVlanId() {
 			return this.vlanId;
 		}
 
 		public void setVlanId(Integer vlanId) {
 			this.vlanId = vlanId;
+		}
+
+		public String getRecoveryTime() {
+			return this.recoveryTime;
+		}
+
+		public void setRecoveryTime(String recoveryTime) {
+			this.recoveryTime = recoveryTime;
 		}
 	}
 

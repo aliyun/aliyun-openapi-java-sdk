@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInvocationsResponse extends AcsResponse {
 
+	private Long totalCount;
+
 	private Long pageSize;
 
 	private String requestId;
 
-	private Long pageNumber;
-
-	private Long totalCount;
-
 	private String nextToken;
 
+	private Long pageNumber;
+
 	private List<Invocation> invocations;
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Long getPageSize() {
 		return this.pageSize;
@@ -53,28 +61,20 @@ public class DescribeInvocationsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Invocation> getInvocations() {
@@ -323,7 +323,11 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			private String invocationStatus;
 
+			private String ossOutputErrorInfo;
+
 			private String instanceId;
+
+			private String ossOutputErrorCode;
 
 			private Boolean timed;
 
@@ -340,10 +344,6 @@ public class DescribeInvocationsResponse extends AcsResponse {
 			private String ossOutputUri;
 
 			private String ossOutputStatus;
-
-			private String ossOutputErrorCode;
-
-			private String ossOutputErrorInfo;
 
 			private String finishTime;
 
@@ -373,12 +373,28 @@ public class DescribeInvocationsResponse extends AcsResponse {
 				this.invocationStatus = invocationStatus;
 			}
 
+			public String getOssOutputErrorInfo() {
+				return this.ossOutputErrorInfo;
+			}
+
+			public void setOssOutputErrorInfo(String ossOutputErrorInfo) {
+				this.ossOutputErrorInfo = ossOutputErrorInfo;
+			}
+
 			public String getInstanceId() {
 				return this.instanceId;
 			}
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+
+			public String getOssOutputErrorCode() {
+				return this.ossOutputErrorCode;
+			}
+
+			public void setOssOutputErrorCode(String ossOutputErrorCode) {
+				this.ossOutputErrorCode = ossOutputErrorCode;
 			}
 
 			public Boolean getTimed() {
@@ -443,22 +459,6 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			public void setOssOutputStatus(String ossOutputStatus) {
 				this.ossOutputStatus = ossOutputStatus;
-			}
-
-			public String getOssOutputErrorCode() {
-				return this.ossOutputErrorCode;
-			}
-
-			public void setOssOutputErrorCode(String ossOutputErrorCode) {
-				this.ossOutputErrorCode = ossOutputErrorCode;
-			}
-
-			public String getOssOutputErrorInfo() {
-				return this.ossOutputErrorInfo;
-			}
-
-			public void setOssOutputErrorInfo(String ossOutputErrorInfo) {
-				this.ossOutputErrorInfo = ossOutputErrorInfo;
 			}
 
 			public String getFinishTime() {

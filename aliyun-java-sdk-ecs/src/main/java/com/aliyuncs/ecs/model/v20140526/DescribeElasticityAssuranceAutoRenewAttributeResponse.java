@@ -47,20 +47,20 @@ public class DescribeElasticityAssuranceAutoRenewAttributeResponse extends AcsRe
 
 	public static class ElasticityAssuranceRenewAttribute {
 
-		private String periodUnit;
+		private String renewalStatus;
 
 		private Integer period;
 
+		private String periodUnit;
+
 		private String privatePoolOptionsId;
 
-		private String renewalStatus;
-
-		public String getPeriodUnit() {
-			return this.periodUnit;
+		public String getRenewalStatus() {
+			return this.renewalStatus;
 		}
 
-		public void setPeriodUnit(String periodUnit) {
-			this.periodUnit = periodUnit;
+		public void setRenewalStatus(String renewalStatus) {
+			this.renewalStatus = renewalStatus;
 		}
 
 		public Integer getPeriod() {
@@ -71,20 +71,20 @@ public class DescribeElasticityAssuranceAutoRenewAttributeResponse extends AcsRe
 			this.period = period;
 		}
 
+		public String getPeriodUnit() {
+			return this.periodUnit;
+		}
+
+		public void setPeriodUnit(String periodUnit) {
+			this.periodUnit = periodUnit;
+		}
+
 		public String getPrivatePoolOptionsId() {
 			return this.privatePoolOptionsId;
 		}
 
 		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
 			this.privatePoolOptionsId = privatePoolOptionsId;
-		}
-
-		public String getRenewalStatus() {
-			return this.renewalStatus;
-		}
-
-		public void setRenewalStatus(String renewalStatus) {
-			this.renewalStatus = renewalStatus;
 		}
 	}
 

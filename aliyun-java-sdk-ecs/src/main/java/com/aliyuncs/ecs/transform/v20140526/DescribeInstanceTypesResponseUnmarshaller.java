@@ -27,6 +27,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceTy
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkInfo.BandwidthWeighting;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkInfo.BandwidthWeighting.WeightingInfo;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.SecurityOptions;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,44 +41,44 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 		List<InstanceType> instanceTypes = new ArrayList<InstanceType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes.Length"); i++) {
 			InstanceType instanceType = new InstanceType();
-			instanceType.setEniTotalQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniTotalQuantity"));
-			instanceType.setLocalStorageCategory(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].LocalStorageCategory"));
-			instanceType.setPrimaryEniQueueNumber(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].PrimaryEniQueueNumber"));
-			instanceType.setMemorySize(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].MemorySize"));
-			instanceType.setLocalStorageCapacity(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].LocalStorageCapacity"));
-			instanceType.setInstanceFamilyLevel(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceFamilyLevel"));
-			instanceType.setInstancePpsRx(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstancePpsRx"));
-			instanceType.setEniIpv6AddressQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniIpv6AddressQuantity"));
-			instanceType.setMaximumQueueNumberPerEni(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].MaximumQueueNumberPerEni"));
-			instanceType.setInstanceTypeId(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeId"));
-			instanceType.setInstanceBandwidthRx(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceBandwidthRx"));
-			instanceType.setSecondaryEniQueueNumber(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].SecondaryEniQueueNumber"));
-			instanceType.setGPUSpec(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUSpec"));
-			instanceType.setInstanceBandwidthTx(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceBandwidthTx"));
-			instanceType.setQueuePairNumber(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].QueuePairNumber"));
-			instanceType.setEriQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EriQuantity"));
-			instanceType.setGPUAmount(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUAmount"));
-			instanceType.setTotalEniQueueQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].TotalEniQueueQuantity"));
-			instanceType.setNvmeSupport(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NvmeSupport"));
-			instanceType.setDiskQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].DiskQuantity"));
-			instanceType.setInitialCredit(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InitialCredit"));
-			instanceType.setLocalStorageAmount(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].LocalStorageAmount"));
-			instanceType.setBaselineCredit(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].BaselineCredit"));
 			instanceType.setInstancePpsTx(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstancePpsTx"));
-			instanceType.setEniPrivateIpAddressQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniPrivateIpAddressQuantity"));
-			instanceType.setCpuCoreCount(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuCoreCount"));
-			instanceType.setInstanceTypeFamily(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeFamily"));
-			instanceType.setEniQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniQuantity"));
+			instanceType.setNvmeSupport(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NvmeSupport"));
+			instanceType.setPrimaryEniQueueNumber(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].PrimaryEniQueueNumber"));
+			instanceType.setLocalStorageCapacity(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].LocalStorageCapacity"));
+			instanceType.setTotalEniQueueQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].TotalEniQueueQuantity"));
 			instanceType.setEniTrunkSupported(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniTrunkSupported"));
-			instanceType.setCpuSpeedFrequency(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuSpeedFrequency"));
-			instanceType.setCpuTurboFrequency(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuTurboFrequency"));
-			instanceType.setPhysicalProcessorModel(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].PhysicalProcessorModel"));
+			instanceType.setInstanceTypeFamily(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeFamily"));
+			instanceType.setInstancePpsRx(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstancePpsRx"));
 			instanceType.setNetworkEncryptionSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkEncryptionSupport"));
-			instanceType.setInstanceCategory(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceCategory"));
+			instanceType.setEriQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EriQuantity"));
+			instanceType.setInstanceBandwidthRx(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceBandwidthRx"));
+			instanceType.setInstanceBandwidthTx(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceBandwidthTx"));
+			instanceType.setLocalStorageAmount(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].LocalStorageAmount"));
+			instanceType.setSecondaryEniQueueNumber(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].SecondaryEniQueueNumber"));
+			instanceType.setPhysicalProcessorModel(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].PhysicalProcessorModel"));
+			instanceType.setLocalStorageCategory(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].LocalStorageCategory"));
+			instanceType.setGPUSpec(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUSpec"));
 			instanceType.setCpuArchitecture(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuArchitecture"));
+			instanceType.setInstanceTypeId(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeId"));
+			instanceType.setMemorySize(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].MemorySize"));
+			instanceType.setMaximumQueueNumberPerEni(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].MaximumQueueNumberPerEni"));
+			instanceType.setEniIpv6AddressQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniIpv6AddressQuantity"));
 			instanceType.setGPUMemorySize(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUMemorySize"));
+			instanceType.setEniTotalQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniTotalQuantity"));
+			instanceType.setCpuCoreCount(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuCoreCount"));
+			instanceType.setInitialCredit(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InitialCredit"));
 			instanceType.setNetworkCardQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCardQuantity"));
+			instanceType.setInstanceCategory(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceCategory"));
+			instanceType.setEniQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniQuantity"));
+			instanceType.setGPUAmount(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUAmount"));
+			instanceType.setDiskQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].DiskQuantity"));
+			instanceType.setCpuSpeedFrequency(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuSpeedFrequency"));
+			instanceType.setQueuePairNumber(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].QueuePairNumber"));
+			instanceType.setBaselineCredit(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].BaselineCredit"));
+			instanceType.setInstanceFamilyLevel(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceFamilyLevel"));
 			instanceType.setJumboFrameSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].JumboFrameSupport"));
+			instanceType.setCpuTurboFrequency(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuTurboFrequency"));
+			instanceType.setEniPrivateIpAddressQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniPrivateIpAddressQuantity"));
 
 			List<String> supportedBootModes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].SupportedBootModes.Length"); j++) {
@@ -85,29 +86,16 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			}
 			instanceType.setSupportedBootModes(supportedBootModes);
 
-			EnhancedNetwork enhancedNetwork = new EnhancedNetwork();
-			enhancedNetwork.setSriovSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.SriovSupport"));
-			enhancedNetwork.setVfQueueNumberPerEni(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.VfQueueNumberPerEni"));
-			enhancedNetwork.setRssSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.RssSupport"));
-			instanceType.setEnhancedNetwork(enhancedNetwork);
-
-			CpuOptions cpuOptions = new CpuOptions();
-			cpuOptions.setThreadsPerCore(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.ThreadsPerCore"));
-			cpuOptions.setCore(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.Core"));
-			cpuOptions.setCoreFactor(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.CoreFactor"));
-			cpuOptions.setHyperThreadingAdjustable(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.HyperThreadingAdjustable"));
-			cpuOptions.setNestedVirtualizationSupport(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.NestedVirtualizationSupport"));
-
-			List<String> supportedTopologyTypes = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.SupportedTopologyTypes.Length"); j++) {
-				supportedTopologyTypes.add(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.SupportedTopologyTypes["+ j +"]"));
-			}
-			cpuOptions.setSupportedTopologyTypes(supportedTopologyTypes);
-			instanceType.setCpuOptions(cpuOptions);
-
 			Clock clock = new Clock();
 			clock.setPtpSupport(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Clock.PtpSupport"));
 			instanceType.setClock(clock);
+
+			EnhancedNetwork enhancedNetwork = new EnhancedNetwork();
+			enhancedNetwork.setExpressSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.ExpressSupport"));
+			enhancedNetwork.setVfQueueNumberPerEni(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.VfQueueNumberPerEni"));
+			enhancedNetwork.setRssSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.RssSupport"));
+			enhancedNetwork.setSriovSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EnhancedNetwork.SriovSupport"));
+			instanceType.setEnhancedNetwork(enhancedNetwork);
 
 			NetworkInfo networkInfo = new NetworkInfo();
 
@@ -116,17 +104,45 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			List<WeightingInfo> weightingInfos = new ArrayList<WeightingInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos.Length"); j++) {
 				WeightingInfo weightingInfo = new WeightingInfo();
-				weightingInfo.setName(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].Name"));
 				weightingInfo.setVpcBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].VpcBandwidth"));
-				weightingInfo.setVpcBurstBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].VpcBurstBandwidth"));
-				weightingInfo.setEbsBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].EbsBandwidth"));
 				weightingInfo.setEbsBurstBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].EbsBurstBandwidth"));
+				weightingInfo.setEbsBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].EbsBandwidth"));
+				weightingInfo.setVpcBurstBandwidth(_ctx.longValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].VpcBurstBandwidth"));
+				weightingInfo.setName(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkInfo.BandwidthWeighting.WeightingInfos["+ j +"].Name"));
 
 				weightingInfos.add(weightingInfo);
 			}
 			bandwidthWeighting.setWeightingInfos(weightingInfos);
 			networkInfo.setBandwidthWeighting(bandwidthWeighting);
 			instanceType.setNetworkInfo(networkInfo);
+
+			CpuOptions cpuOptions = new CpuOptions();
+			cpuOptions.setNestedVirtualizationSupport(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.NestedVirtualizationSupport"));
+			cpuOptions.setCoreFactor(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.CoreFactor"));
+			cpuOptions.setThreadsPerCore(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.ThreadsPerCore"));
+			cpuOptions.setHyperThreadingAdjustable(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.HyperThreadingAdjustable"));
+			cpuOptions.setCore(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.Core"));
+
+			List<String> supportedTopologyTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.SupportedTopologyTypes.Length"); j++) {
+				supportedTopologyTypes.add(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuOptions.SupportedTopologyTypes["+ j +"]"));
+			}
+			cpuOptions.setSupportedTopologyTypes(supportedTopologyTypes);
+			instanceType.setCpuOptions(cpuOptions);
+
+			SecurityOptions securityOptions = new SecurityOptions();
+			securityOptions.setSecureBootSupport(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].SecurityOptions.SecureBootSupport"));
+			instanceType.setSecurityOptions(securityOptions);
+
+			List<Attribute> attributes = new ArrayList<Attribute>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Attributes.Length"); j++) {
+				Attribute attribute = new Attribute();
+				attribute.setValue(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Attributes["+ j +"].Value"));
+				attribute.setName(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Attributes["+ j +"].Name"));
+
+				attributes.add(attribute);
+			}
+			instanceType.setAttributes(attributes);
 
 			List<NetworkCardInfo> networkCards = new ArrayList<NetworkCardInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCards.Length"); j++) {
@@ -136,16 +152,6 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 				networkCards.add(networkCardInfo);
 			}
 			instanceType.setNetworkCards(networkCards);
-
-			List<Attribute> attributes = new ArrayList<Attribute>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Attributes.Length"); j++) {
-				Attribute attribute = new Attribute();
-				attribute.setName(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Attributes["+ j +"].Name"));
-				attribute.setValue(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].Attributes["+ j +"].Value"));
-
-				attributes.add(attribute);
-			}
-			instanceType.setAttributes(attributes);
 
 			instanceTypes.add(instanceType);
 		}

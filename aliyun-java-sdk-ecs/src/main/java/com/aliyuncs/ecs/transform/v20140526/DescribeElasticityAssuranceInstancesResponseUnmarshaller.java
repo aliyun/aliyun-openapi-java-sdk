@@ -27,8 +27,8 @@ public class DescribeElasticityAssuranceInstancesResponseUnmarshaller {
 	public static DescribeElasticityAssuranceInstancesResponse unmarshall(DescribeElasticityAssuranceInstancesResponse describeElasticityAssuranceInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeElasticityAssuranceInstancesResponse.setRequestId(_ctx.stringValue("DescribeElasticityAssuranceInstancesResponse.RequestId"));
-		describeElasticityAssuranceInstancesResponse.setNextToken(_ctx.stringValue("DescribeElasticityAssuranceInstancesResponse.NextToken"));
 		describeElasticityAssuranceInstancesResponse.setTotalCount(_ctx.integerValue("DescribeElasticityAssuranceInstancesResponse.TotalCount"));
+		describeElasticityAssuranceInstancesResponse.setNextToken(_ctx.stringValue("DescribeElasticityAssuranceInstancesResponse.NextToken"));
 		describeElasticityAssuranceInstancesResponse.setMaxResults(_ctx.integerValue("DescribeElasticityAssuranceInstancesResponse.MaxResults"));
 
 		List<InstanceIdSet> elasticityAssuranceItem = new ArrayList<InstanceIdSet>();

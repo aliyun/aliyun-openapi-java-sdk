@@ -270,8 +270,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 			
 				putQueryParameter("PrivateDnsNameOptions.HostnameType" , privateDnsNameOptions.getHostnameType());
 				putQueryParameter("PrivateDnsNameOptions.EnableInstanceIdDnsARecord" , privateDnsNameOptions.getEnableInstanceIdDnsARecord());
-				putQueryParameter("PrivateDnsNameOptions.EnableInstanceIdDnsAAAARecord" , privateDnsNameOptions.getEnableInstanceIdDnsAAAARecord());
 				putQueryParameter("PrivateDnsNameOptions.EnableIpDnsARecord" , privateDnsNameOptions.getEnableIpDnsARecord());
+				putQueryParameter("PrivateDnsNameOptions.EnableInstanceIdDnsAAAARecord" , privateDnsNameOptions.getEnableInstanceIdDnsAAAARecord());
 				putQueryParameter("PrivateDnsNameOptions.EnableIpDnsPtrRecord" , privateDnsNameOptions.getEnableIpDnsPtrRecord());
 		}	
 	}
@@ -395,9 +395,9 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 		private Boolean enableInstanceIdDnsARecord;
 
-		private Boolean enableInstanceIdDnsAAAARecord;
-
 		private Boolean enableIpDnsARecord;
+
+		private Boolean enableInstanceIdDnsAAAARecord;
 
 		private Boolean enableIpDnsPtrRecord;
 
@@ -417,20 +417,20 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 			this.enableInstanceIdDnsARecord = enableInstanceIdDnsARecord;
 		}
 
-		public Boolean getEnableInstanceIdDnsAAAARecord() {
-			return this.enableInstanceIdDnsAAAARecord;
-		}
-
-		public void setEnableInstanceIdDnsAAAARecord(Boolean enableInstanceIdDnsAAAARecord) {
-			this.enableInstanceIdDnsAAAARecord = enableInstanceIdDnsAAAARecord;
-		}
-
 		public Boolean getEnableIpDnsARecord() {
 			return this.enableIpDnsARecord;
 		}
 
 		public void setEnableIpDnsARecord(Boolean enableIpDnsARecord) {
 			this.enableIpDnsARecord = enableIpDnsARecord;
+		}
+
+		public Boolean getEnableInstanceIdDnsAAAARecord() {
+			return this.enableInstanceIdDnsAAAARecord;
+		}
+
+		public void setEnableInstanceIdDnsAAAARecord(Boolean enableInstanceIdDnsAAAARecord) {
+			this.enableInstanceIdDnsAAAARecord = enableInstanceIdDnsAAAARecord;
 		}
 
 		public Boolean getEnableIpDnsPtrRecord() {

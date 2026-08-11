@@ -27,15 +27,15 @@ public class DescribeResourceByTagsResponseUnmarshaller {
 	public static DescribeResourceByTagsResponse unmarshall(DescribeResourceByTagsResponse describeResourceByTagsResponse, UnmarshallerContext _ctx) {
 		
 		describeResourceByTagsResponse.setRequestId(_ctx.stringValue("DescribeResourceByTagsResponse.RequestId"));
+		describeResourceByTagsResponse.setTotalCount(_ctx.integerValue("DescribeResourceByTagsResponse.TotalCount"));
 		describeResourceByTagsResponse.setPageSize(_ctx.integerValue("DescribeResourceByTagsResponse.PageSize"));
 		describeResourceByTagsResponse.setPageNumber(_ctx.integerValue("DescribeResourceByTagsResponse.PageNumber"));
-		describeResourceByTagsResponse.setTotalCount(_ctx.integerValue("DescribeResourceByTagsResponse.TotalCount"));
 
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeResourceByTagsResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setResourceType(_ctx.stringValue("DescribeResourceByTagsResponse.Resources["+ i +"].ResourceType"));
 			resource.setResourceId(_ctx.stringValue("DescribeResourceByTagsResponse.Resources["+ i +"].ResourceId"));
+			resource.setResourceType(_ctx.stringValue("DescribeResourceByTagsResponse.Resources["+ i +"].ResourceType"));
 			resource.setRegionId(_ctx.stringValue("DescribeResourceByTagsResponse.Resources["+ i +"].RegionId"));
 
 			resources.add(resource);

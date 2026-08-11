@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNatGatewaysResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<NatGateway> natGateways;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<NatGateway> getNatGateways() {
 		return this.natGateways;
 	}
@@ -79,23 +79,23 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private String status;
 
-		private String creationTime;
+		private String description;
 
 		private String vpcId;
 
-		private String spec;
+		private String instanceChargeType;
 
-		private String description;
+		private String creationTime;
+
+		private String regionId;
+
+		private String spec;
 
 		private String natGatewayId;
 
 		private String businessStatus;
 
 		private String name;
-
-		private String instanceChargeType;
-
-		private String regionId;
 
 		private List<String> forwardTableIds;
 
@@ -109,12 +109,12 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getVpcId() {
@@ -125,20 +125,36 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public String getSpec() {
 			return this.spec;
 		}
 
 		public void setSpec(String spec) {
 			this.spec = spec;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getNatGatewayId() {
@@ -163,22 +179,6 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getInstanceChargeType() {
-			return this.instanceChargeType;
-		}
-
-		public void setInstanceChargeType(String instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
 		}
 
 		public List<String> getForwardTableIds() {

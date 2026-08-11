@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSendFileResultsResponse extends AcsResponse {
 
+	private Long totalCount;
+
 	private Long pageSize;
 
 	private String requestId;
 
-	private Long pageNumber;
-
-	private Long totalCount;
-
 	private String nextToken;
 
+	private Long pageNumber;
+
 	private List<Invocation> invocations;
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Long getPageSize() {
 		return this.pageSize;
@@ -53,28 +61,20 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Invocation> getInvocations() {
@@ -87,42 +87,42 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 
 	public static class Invocation {
 
-		private String creationTime;
+		private String fileMode;
 
 		private String invocationStatus;
 
-		private String contentType;
-
-		private String targetDir;
-
-		private String fileOwner;
+		private String overwrite;
 
 		private String description;
 
+		private String contentType;
+
 		private Integer vmCount;
 
-		private String fileMode;
+		private String targetDir;
 
 		private String fileGroup;
 
-		private String invokeId;
+		private String fileOwner;
 
 		private String name;
 
 		private String content;
 
-		private String overwrite;
+		private String creationTime;
+
+		private String invokeId;
 
 		private List<InvokeInstance> invokeInstances;
 
 		private List<Tag> tags;
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getFileMode() {
+			return this.fileMode;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setFileMode(String fileMode) {
+			this.fileMode = fileMode;
 		}
 
 		public String getInvocationStatus() {
@@ -133,28 +133,12 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 			this.invocationStatus = invocationStatus;
 		}
 
-		public String getContentType() {
-			return this.contentType;
+		public String getOverwrite() {
+			return this.overwrite;
 		}
 
-		public void setContentType(String contentType) {
-			this.contentType = contentType;
-		}
-
-		public String getTargetDir() {
-			return this.targetDir;
-		}
-
-		public void setTargetDir(String targetDir) {
-			this.targetDir = targetDir;
-		}
-
-		public String getFileOwner() {
-			return this.fileOwner;
-		}
-
-		public void setFileOwner(String fileOwner) {
-			this.fileOwner = fileOwner;
+		public void setOverwrite(String overwrite) {
+			this.overwrite = overwrite;
 		}
 
 		public String getDescription() {
@@ -165,6 +149,14 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getContentType() {
+			return this.contentType;
+		}
+
+		public void setContentType(String contentType) {
+			this.contentType = contentType;
+		}
+
 		public Integer getVmCount() {
 			return this.vmCount;
 		}
@@ -173,12 +165,12 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 			this.vmCount = vmCount;
 		}
 
-		public String getFileMode() {
-			return this.fileMode;
+		public String getTargetDir() {
+			return this.targetDir;
 		}
 
-		public void setFileMode(String fileMode) {
-			this.fileMode = fileMode;
+		public void setTargetDir(String targetDir) {
+			this.targetDir = targetDir;
 		}
 
 		public String getFileGroup() {
@@ -189,12 +181,12 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 			this.fileGroup = fileGroup;
 		}
 
-		public String getInvokeId() {
-			return this.invokeId;
+		public String getFileOwner() {
+			return this.fileOwner;
 		}
 
-		public void setInvokeId(String invokeId) {
-			this.invokeId = invokeId;
+		public void setFileOwner(String fileOwner) {
+			this.fileOwner = fileOwner;
 		}
 
 		public String getName() {
@@ -213,12 +205,20 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 			this.content = content;
 		}
 
-		public String getOverwrite() {
-			return this.overwrite;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setOverwrite(String overwrite) {
-			this.overwrite = overwrite;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getInvokeId() {
+			return this.invokeId;
+		}
+
+		public void setInvokeId(String invokeId) {
+			this.invokeId = invokeId;
 		}
 
 		public List<InvokeInstance> getInvokeInstances() {
@@ -239,37 +239,21 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 
 		public static class InvokeInstance {
 
-			private String creationTime;
-
-			private String startTime;
-
 			private String invocationStatus;
 
 			private String finishTime;
 
-			private String updateTime;
+			private String instanceId;
 
 			private String errorInfo;
 
+			private String creationTime;
+
+			private String startTime;
+
+			private String updateTime;
+
 			private String errorCode;
-
-			private String instanceId;
-
-			public String getCreationTime() {
-				return this.creationTime;
-			}
-
-			public void setCreationTime(String creationTime) {
-				this.creationTime = creationTime;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
 
 			public String getInvocationStatus() {
 				return this.invocationStatus;
@@ -287,12 +271,12 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 				this.finishTime = finishTime;
 			}
 
-			public String getUpdateTime() {
-				return this.updateTime;
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setUpdateTime(String updateTime) {
-				this.updateTime = updateTime;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getErrorInfo() {
@@ -303,20 +287,36 @@ public class DescribeSendFileResultsResponse extends AcsResponse {
 				this.errorInfo = errorInfo;
 			}
 
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getUpdateTime() {
+				return this.updateTime;
+			}
+
+			public void setUpdateTime(String updateTime) {
+				this.updateTime = updateTime;
+			}
+
 			public String getErrorCode() {
 				return this.errorCode;
 			}
 
 			public void setErrorCode(String errorCode) {
 				this.errorCode = errorCode;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
 			}
 		}
 

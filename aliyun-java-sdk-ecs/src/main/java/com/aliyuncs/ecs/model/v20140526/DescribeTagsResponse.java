@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTagsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
 
 	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<Tag> tags;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class DescribeTagsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -77,19 +77,11 @@ public class DescribeTagsResponse extends AcsResponse {
 
 	public static class Tag {
 
-		private String tagValue;
-
 		private String tagKey;
 
+		private String tagValue;
+
 		private ResourceTypeCount resourceTypeCount;
-
-		public String getTagValue() {
-			return this.tagValue;
-		}
-
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
-		}
 
 		public String getTagKey() {
 			return this.tagKey;
@@ -97,6 +89,14 @@ public class DescribeTagsResponse extends AcsResponse {
 
 		public void setTagKey(String tagKey) {
 			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 
 		public ResourceTypeCount getResourceTypeCount() {
@@ -109,69 +109,29 @@ public class DescribeTagsResponse extends AcsResponse {
 
 		public static class ResourceTypeCount {
 
-			private Integer instance;
-
-			private Integer image;
-
-			private Integer ddh;
-
-			private Integer snapshotPolicy;
-
-			private Integer securitygroup;
-
 			private Integer snapshot;
-
-			private Integer reservedInstance;
-
-			private Integer launchTemplate;
 
 			private Integer eni;
 
-			private Integer disk;
-
 			private Integer keyPair;
+
+			private Integer snapshotPolicy;
+
+			private Integer reservedInstance;
+
+			private Integer instance;
 
 			private Integer volume;
 
-			public Integer getInstance() {
-				return this.instance;
-			}
+			private Integer launchTemplate;
 
-			public void setInstance(Integer instance) {
-				this.instance = instance;
-			}
+			private Integer ddh;
 
-			public Integer getImage() {
-				return this.image;
-			}
+			private Integer securitygroup;
 
-			public void setImage(Integer image) {
-				this.image = image;
-			}
+			private Integer image;
 
-			public Integer getDdh() {
-				return this.ddh;
-			}
-
-			public void setDdh(Integer ddh) {
-				this.ddh = ddh;
-			}
-
-			public Integer getSnapshotPolicy() {
-				return this.snapshotPolicy;
-			}
-
-			public void setSnapshotPolicy(Integer snapshotPolicy) {
-				this.snapshotPolicy = snapshotPolicy;
-			}
-
-			public Integer getSecuritygroup() {
-				return this.securitygroup;
-			}
-
-			public void setSecuritygroup(Integer securitygroup) {
-				this.securitygroup = securitygroup;
-			}
+			private Integer disk;
 
 			public Integer getSnapshot() {
 				return this.snapshot;
@@ -179,22 +139,6 @@ public class DescribeTagsResponse extends AcsResponse {
 
 			public void setSnapshot(Integer snapshot) {
 				this.snapshot = snapshot;
-			}
-
-			public Integer getReservedInstance() {
-				return this.reservedInstance;
-			}
-
-			public void setReservedInstance(Integer reservedInstance) {
-				this.reservedInstance = reservedInstance;
-			}
-
-			public Integer getLaunchTemplate() {
-				return this.launchTemplate;
-			}
-
-			public void setLaunchTemplate(Integer launchTemplate) {
-				this.launchTemplate = launchTemplate;
 			}
 
 			public Integer getEni() {
@@ -205,14 +149,6 @@ public class DescribeTagsResponse extends AcsResponse {
 				this.eni = eni;
 			}
 
-			public Integer getDisk() {
-				return this.disk;
-			}
-
-			public void setDisk(Integer disk) {
-				this.disk = disk;
-			}
-
 			public Integer getKeyPair() {
 				return this.keyPair;
 			}
@@ -221,12 +157,76 @@ public class DescribeTagsResponse extends AcsResponse {
 				this.keyPair = keyPair;
 			}
 
+			public Integer getSnapshotPolicy() {
+				return this.snapshotPolicy;
+			}
+
+			public void setSnapshotPolicy(Integer snapshotPolicy) {
+				this.snapshotPolicy = snapshotPolicy;
+			}
+
+			public Integer getReservedInstance() {
+				return this.reservedInstance;
+			}
+
+			public void setReservedInstance(Integer reservedInstance) {
+				this.reservedInstance = reservedInstance;
+			}
+
+			public Integer getInstance() {
+				return this.instance;
+			}
+
+			public void setInstance(Integer instance) {
+				this.instance = instance;
+			}
+
 			public Integer getVolume() {
 				return this.volume;
 			}
 
 			public void setVolume(Integer volume) {
 				this.volume = volume;
+			}
+
+			public Integer getLaunchTemplate() {
+				return this.launchTemplate;
+			}
+
+			public void setLaunchTemplate(Integer launchTemplate) {
+				this.launchTemplate = launchTemplate;
+			}
+
+			public Integer getDdh() {
+				return this.ddh;
+			}
+
+			public void setDdh(Integer ddh) {
+				this.ddh = ddh;
+			}
+
+			public Integer getSecuritygroup() {
+				return this.securitygroup;
+			}
+
+			public void setSecuritygroup(Integer securitygroup) {
+				this.securitygroup = securitygroup;
+			}
+
+			public Integer getImage() {
+				return this.image;
+			}
+
+			public void setImage(Integer image) {
+				this.image = image;
+			}
+
+			public Integer getDisk() {
+				return this.disk;
+			}
+
+			public void setDisk(Integer disk) {
+				this.disk = disk;
 			}
 		}
 	}

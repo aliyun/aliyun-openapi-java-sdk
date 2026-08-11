@@ -47,20 +47,20 @@ public class DescribeBandwidthLimitationResponse extends AcsResponse {
 
 	public static class Bandwidth {
 
-		private String internetChargeType;
+		private Integer min;
 
 		private Integer max;
 
-		private Integer min;
-
 		private String unit;
 
-		public String getInternetChargeType() {
-			return this.internetChargeType;
+		private String internetChargeType;
+
+		public Integer getMin() {
+			return this.min;
 		}
 
-		public void setInternetChargeType(String internetChargeType) {
-			this.internetChargeType = internetChargeType;
+		public void setMin(Integer min) {
+			this.min = min;
 		}
 
 		public Integer getMax() {
@@ -71,20 +71,20 @@ public class DescribeBandwidthLimitationResponse extends AcsResponse {
 			this.max = max;
 		}
 
-		public Integer getMin() {
-			return this.min;
-		}
-
-		public void setMin(Integer min) {
-			this.min = min;
-		}
-
 		public String getUnit() {
 			return this.unit;
 		}
 
 		public void setUnit(String unit) {
 			this.unit = unit;
+		}
+
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
 		}
 	}
 

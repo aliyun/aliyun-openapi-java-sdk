@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<Instance> instances;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse 
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<Instance> getInstances() {
 		return this.instances;
 	}
@@ -79,27 +79,27 @@ public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse 
 
 		private String status;
 
-		private String creationTime;
-
 		private Boolean isSpot;
-
-		private Integer cPU;
-
-		private String instanceId;
-
-		private String networkType;
-
-		private String instanceType;
-
-		private String regionId;
 
 		private Boolean ioOptimized;
 
-		private String osType;
-
 		private String zoneId;
 
+		private String instanceId;
+
+		private String osType;
+
+		private String networkType;
+
 		private Integer memory;
+
+		private String creationTime;
+
+		private Integer cPU;
+
+		private String regionId;
+
+		private String instanceType;
 
 		public String getStatus() {
 			return this.status;
@@ -107,14 +107,6 @@ public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse 
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
 		}
 
 		public Boolean getIsSpot() {
@@ -125,60 +117,12 @@ public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse 
 			this.isSpot = isSpot;
 		}
 
-		public Integer getCPU() {
-			return this.cPU;
-		}
-
-		public void setCPU(Integer cPU) {
-			this.cPU = cPU;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getNetworkType() {
-			return this.networkType;
-		}
-
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
 		public Boolean getIoOptimized() {
 			return this.ioOptimized;
 		}
 
 		public void setIoOptimized(Boolean ioOptimized) {
 			this.ioOptimized = ioOptimized;
-		}
-
-		public String getOsType() {
-			return this.osType;
-		}
-
-		public void setOsType(String osType) {
-			this.osType = osType;
 		}
 
 		public String getZoneId() {
@@ -189,12 +133,68 @@ public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse 
 			this.zoneId = zoneId;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getOsType() {
+			return this.osType;
+		}
+
+		public void setOsType(String osType) {
+			this.osType = osType;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
+
 		public Integer getMemory() {
 			return this.memory;
 		}
 
 		public void setMemory(Integer memory) {
 			this.memory = memory;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public Integer getCPU() {
+			return this.cPU;
+		}
+
+		public void setCPU(Integer cPU) {
+			this.cPU = cPU;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 	}
 

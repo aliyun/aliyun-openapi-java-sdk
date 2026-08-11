@@ -31,10 +31,10 @@ public class DescribeElasticityAssuranceAutoRenewAttributeResponseUnmarshaller {
 		List<ElasticityAssuranceRenewAttribute> elasticityAssuranceRenewAttributes = new ArrayList<ElasticityAssuranceRenewAttribute>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeElasticityAssuranceAutoRenewAttributeResponse.ElasticityAssuranceRenewAttributes.Length"); i++) {
 			ElasticityAssuranceRenewAttribute elasticityAssuranceRenewAttribute = new ElasticityAssuranceRenewAttribute();
-			elasticityAssuranceRenewAttribute.setPeriodUnit(_ctx.stringValue("DescribeElasticityAssuranceAutoRenewAttributeResponse.ElasticityAssuranceRenewAttributes["+ i +"].PeriodUnit"));
-			elasticityAssuranceRenewAttribute.setPeriod(_ctx.integerValue("DescribeElasticityAssuranceAutoRenewAttributeResponse.ElasticityAssuranceRenewAttributes["+ i +"].Period"));
-			elasticityAssuranceRenewAttribute.setPrivatePoolOptionsId(_ctx.stringValue("DescribeElasticityAssuranceAutoRenewAttributeResponse.ElasticityAssuranceRenewAttributes["+ i +"].PrivatePoolOptionsId"));
 			elasticityAssuranceRenewAttribute.setRenewalStatus(_ctx.stringValue("DescribeElasticityAssuranceAutoRenewAttributeResponse.ElasticityAssuranceRenewAttributes["+ i +"].RenewalStatus"));
+			elasticityAssuranceRenewAttribute.setPeriod(_ctx.integerValue("DescribeElasticityAssuranceAutoRenewAttributeResponse.ElasticityAssuranceRenewAttributes["+ i +"].Period"));
+			elasticityAssuranceRenewAttribute.setPeriodUnit(_ctx.stringValue("DescribeElasticityAssuranceAutoRenewAttributeResponse.ElasticityAssuranceRenewAttributes["+ i +"].PeriodUnit"));
+			elasticityAssuranceRenewAttribute.setPrivatePoolOptionsId(_ctx.stringValue("DescribeElasticityAssuranceAutoRenewAttributeResponse.ElasticityAssuranceRenewAttributes["+ i +"].PrivatePoolOptionsId"));
 
 			elasticityAssuranceRenewAttributes.add(elasticityAssuranceRenewAttribute);
 		}

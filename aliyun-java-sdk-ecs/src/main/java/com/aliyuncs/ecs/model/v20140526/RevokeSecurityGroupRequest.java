@@ -146,21 +146,21 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 				if (permissions.get(depth1) != null) {
 					
 						putQueryParameter("Permissions." + (depth1 + 1) + ".Policy" , permissions.get(depth1).getPolicy());
-						putQueryParameter("Permissions." + (depth1 + 1) + ".Priority" , permissions.get(depth1).getPriority());
-						putQueryParameter("Permissions." + (depth1 + 1) + ".IpProtocol" , permissions.get(depth1).getIpProtocol());
-						putQueryParameter("Permissions." + (depth1 + 1) + ".SourceCidrIp" , permissions.get(depth1).getSourceCidrIp());
-						putQueryParameter("Permissions." + (depth1 + 1) + ".Ipv6SourceCidrIp" , permissions.get(depth1).getIpv6SourceCidrIp());
 						putQueryParameter("Permissions." + (depth1 + 1) + ".SourceGroupId" , permissions.get(depth1).getSourceGroupId());
-						putQueryParameter("Permissions." + (depth1 + 1) + ".SourcePrefixListId" , permissions.get(depth1).getSourcePrefixListId());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".Description" , permissions.get(depth1).getDescription());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".SourcePortRange" , permissions.get(depth1).getSourcePortRange());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".Priority" , permissions.get(depth1).getPriority());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".SourceGroupOwnerId" , permissions.get(depth1).getSourceGroupOwnerId());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".Ipv6SourceCidrIp" , permissions.get(depth1).getIpv6SourceCidrIp());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".NicType" , permissions.get(depth1).getNicType());
 						putQueryParameter("Permissions." + (depth1 + 1) + ".PortRange" , permissions.get(depth1).getPortRange());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".SourceCidrIp" , permissions.get(depth1).getSourceCidrIp());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".IpProtocol" , permissions.get(depth1).getIpProtocol());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".PortRangeListId" , permissions.get(depth1).getPortRangeListId());
 						putQueryParameter("Permissions." + (depth1 + 1) + ".DestCidrIp" , permissions.get(depth1).getDestCidrIp());
 						putQueryParameter("Permissions." + (depth1 + 1) + ".Ipv6DestCidrIp" , permissions.get(depth1).getIpv6DestCidrIp());
-						putQueryParameter("Permissions." + (depth1 + 1) + ".SourcePortRange" , permissions.get(depth1).getSourcePortRange());
 						putQueryParameter("Permissions." + (depth1 + 1) + ".SourceGroupOwnerAccount" , permissions.get(depth1).getSourceGroupOwnerAccount());
-						putQueryParameter("Permissions." + (depth1 + 1) + ".SourceGroupOwnerId" , permissions.get(depth1).getSourceGroupOwnerId());
-						putQueryParameter("Permissions." + (depth1 + 1) + ".NicType" , permissions.get(depth1).getNicType());
-						putQueryParameter("Permissions." + (depth1 + 1) + ".Description" , permissions.get(depth1).getDescription());
-						putQueryParameter("Permissions." + (depth1 + 1) + ".PortRangeListId" , permissions.get(depth1).getPortRangeListId());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".SourcePrefixListId" , permissions.get(depth1).getSourcePrefixListId());
 				}
 			}
 		}	
@@ -359,35 +359,35 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 
 		private String policy;
 
+		private String sourceGroupId;
+
+		private String description;
+
+		private String sourcePortRange;
+
 		private String priority;
 
-		private String ipProtocol;
-
-		private String sourceCidrIp;
+		private Long sourceGroupOwnerId;
 
 		private String ipv6SourceCidrIp;
 
-		private String sourceGroupId;
-
-		private String sourcePrefixListId;
+		private String nicType;
 
 		private String portRange;
+
+		private String sourceCidrIp;
+
+		private String ipProtocol;
+
+		private String portRangeListId;
 
 		private String destCidrIp;
 
 		private String ipv6DestCidrIp;
 
-		private String sourcePortRange;
-
 		private String sourceGroupOwnerAccount;
 
-		private Long sourceGroupOwnerId;
-
-		private String nicType;
-
-		private String description;
-
-		private String portRangeListId;
+		private String sourcePrefixListId;
 
 		public String getPolicy() {
 			return this.policy;
@@ -395,38 +395,6 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 
 		public void setPolicy(String policy) {
 			this.policy = policy;
-		}
-
-		public String getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(String priority) {
-			this.priority = priority;
-		}
-
-		public String getIpProtocol() {
-			return this.ipProtocol;
-		}
-
-		public void setIpProtocol(String ipProtocol) {
-			this.ipProtocol = ipProtocol;
-		}
-
-		public String getSourceCidrIp() {
-			return this.sourceCidrIp;
-		}
-
-		public void setSourceCidrIp(String sourceCidrIp) {
-			this.sourceCidrIp = sourceCidrIp;
-		}
-
-		public String getIpv6SourceCidrIp() {
-			return this.ipv6SourceCidrIp;
-		}
-
-		public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
-			this.ipv6SourceCidrIp = ipv6SourceCidrIp;
 		}
 
 		public String getSourceGroupId() {
@@ -437,12 +405,52 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 			this.sourceGroupId = sourceGroupId;
 		}
 
-		public String getSourcePrefixListId() {
-			return this.sourcePrefixListId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setSourcePrefixListId(String sourcePrefixListId) {
-			this.sourcePrefixListId = sourcePrefixListId;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getSourcePortRange() {
+			return this.sourcePortRange;
+		}
+
+		public void setSourcePortRange(String sourcePortRange) {
+			this.sourcePortRange = sourcePortRange;
+		}
+
+		public String getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(String priority) {
+			this.priority = priority;
+		}
+
+		public Long getSourceGroupOwnerId() {
+			return this.sourceGroupOwnerId;
+		}
+
+		public void setSourceGroupOwnerId(Long sourceGroupOwnerId) {
+			this.sourceGroupOwnerId = sourceGroupOwnerId;
+		}
+
+		public String getIpv6SourceCidrIp() {
+			return this.ipv6SourceCidrIp;
+		}
+
+		public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
+			this.ipv6SourceCidrIp = ipv6SourceCidrIp;
+		}
+
+		public String getNicType() {
+			return this.nicType;
+		}
+
+		public void setNicType(String nicType) {
+			this.nicType = nicType;
 		}
 
 		public String getPortRange() {
@@ -451,6 +459,30 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 
 		public void setPortRange(String portRange) {
 			this.portRange = portRange;
+		}
+
+		public String getSourceCidrIp() {
+			return this.sourceCidrIp;
+		}
+
+		public void setSourceCidrIp(String sourceCidrIp) {
+			this.sourceCidrIp = sourceCidrIp;
+		}
+
+		public String getIpProtocol() {
+			return this.ipProtocol;
+		}
+
+		public void setIpProtocol(String ipProtocol) {
+			this.ipProtocol = ipProtocol;
+		}
+
+		public String getPortRangeListId() {
+			return this.portRangeListId;
+		}
+
+		public void setPortRangeListId(String portRangeListId) {
+			this.portRangeListId = portRangeListId;
 		}
 
 		public String getDestCidrIp() {
@@ -469,14 +501,6 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 			this.ipv6DestCidrIp = ipv6DestCidrIp;
 		}
 
-		public String getSourcePortRange() {
-			return this.sourcePortRange;
-		}
-
-		public void setSourcePortRange(String sourcePortRange) {
-			this.sourcePortRange = sourcePortRange;
-		}
-
 		public String getSourceGroupOwnerAccount() {
 			return this.sourceGroupOwnerAccount;
 		}
@@ -485,36 +509,12 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 			this.sourceGroupOwnerAccount = sourceGroupOwnerAccount;
 		}
 
-		public Long getSourceGroupOwnerId() {
-			return this.sourceGroupOwnerId;
+		public String getSourcePrefixListId() {
+			return this.sourcePrefixListId;
 		}
 
-		public void setSourceGroupOwnerId(Long sourceGroupOwnerId) {
-			this.sourceGroupOwnerId = sourceGroupOwnerId;
-		}
-
-		public String getNicType() {
-			return this.nicType;
-		}
-
-		public void setNicType(String nicType) {
-			this.nicType = nicType;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getPortRangeListId() {
-			return this.portRangeListId;
-		}
-
-		public void setPortRangeListId(String portRangeListId) {
-			this.portRangeListId = portRangeListId;
+		public void setSourcePrefixListId(String sourcePrefixListId) {
+			this.sourcePrefixListId = sourcePrefixListId;
 		}
 	}
 

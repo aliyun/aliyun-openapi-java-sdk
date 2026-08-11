@@ -47,23 +47,15 @@ public class StartInstancesResponse extends AcsResponse {
 
 	public static class InstanceResponse {
 
-		private String code;
-
 		private String message;
 
 		private String instanceId;
 
-		private String currentStatus;
-
 		private String previousStatus;
 
-		public String getCode() {
-			return this.code;
-		}
+		private String currentStatus;
 
-		public void setCode(String code) {
-			this.code = code;
-		}
+		private String code;
 
 		public String getMessage() {
 			return this.message;
@@ -81,6 +73,14 @@ public class StartInstancesResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
+		public String getPreviousStatus() {
+			return this.previousStatus;
+		}
+
+		public void setPreviousStatus(String previousStatus) {
+			this.previousStatus = previousStatus;
+		}
+
 		public String getCurrentStatus() {
 			return this.currentStatus;
 		}
@@ -89,12 +89,12 @@ public class StartInstancesResponse extends AcsResponse {
 			this.currentStatus = currentStatus;
 		}
 
-		public String getPreviousStatus() {
-			return this.previousStatus;
+		public String getCode() {
+			return this.code;
 		}
 
-		public void setPreviousStatus(String previousStatus) {
-			this.previousStatus = previousStatus;
+		public void setCode(String code) {
+			this.code = code;
 		}
 	}
 

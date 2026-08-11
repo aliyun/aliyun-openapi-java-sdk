@@ -23,8 +23,8 @@ public class CreateLaunchTemplateResponseUnmarshaller {
 	public static CreateLaunchTemplateResponse unmarshall(CreateLaunchTemplateResponse createLaunchTemplateResponse, UnmarshallerContext _ctx) {
 		
 		createLaunchTemplateResponse.setRequestId(_ctx.stringValue("CreateLaunchTemplateResponse.RequestId"));
-		createLaunchTemplateResponse.setLaunchTemplateId(_ctx.stringValue("CreateLaunchTemplateResponse.LaunchTemplateId"));
 		createLaunchTemplateResponse.setLaunchTemplateVersionNumber(_ctx.longValue("CreateLaunchTemplateResponse.LaunchTemplateVersionNumber"));
+		createLaunchTemplateResponse.setLaunchTemplateId(_ctx.stringValue("CreateLaunchTemplateResponse.LaunchTemplateId"));
 	 
 	 	return createLaunchTemplateResponse;
 	}

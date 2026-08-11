@@ -29,15 +29,15 @@ public class DescribeInstanceMaintenanceAttributesResponseUnmarshaller {
 	public static DescribeInstanceMaintenanceAttributesResponse unmarshall(DescribeInstanceMaintenanceAttributesResponse describeInstanceMaintenanceAttributesResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceMaintenanceAttributesResponse.setRequestId(_ctx.stringValue("DescribeInstanceMaintenanceAttributesResponse.RequestId"));
+		describeInstanceMaintenanceAttributesResponse.setTotalCount(_ctx.integerValue("DescribeInstanceMaintenanceAttributesResponse.TotalCount"));
 		describeInstanceMaintenanceAttributesResponse.setPageSize(_ctx.integerValue("DescribeInstanceMaintenanceAttributesResponse.PageSize"));
 		describeInstanceMaintenanceAttributesResponse.setPageNumber(_ctx.integerValue("DescribeInstanceMaintenanceAttributesResponse.PageNumber"));
-		describeInstanceMaintenanceAttributesResponse.setTotalCount(_ctx.integerValue("DescribeInstanceMaintenanceAttributesResponse.TotalCount"));
 
 		List<MaintenanceAttribute> maintenanceAttributes = new ArrayList<MaintenanceAttribute>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceMaintenanceAttributesResponse.MaintenanceAttributes.Length"); i++) {
 			MaintenanceAttribute maintenanceAttribute = new MaintenanceAttribute();
-			maintenanceAttribute.setNotifyOnMaintenance(_ctx.booleanValue("DescribeInstanceMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].NotifyOnMaintenance"));
 			maintenanceAttribute.setInstanceId(_ctx.stringValue("DescribeInstanceMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].InstanceId"));
+			maintenanceAttribute.setNotifyOnMaintenance(_ctx.booleanValue("DescribeInstanceMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].NotifyOnMaintenance"));
 
 			ActionOnMaintenance actionOnMaintenance = new ActionOnMaintenance();
 			actionOnMaintenance.setDefaultValue(_ctx.stringValue("DescribeInstanceMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].ActionOnMaintenance.DefaultValue"));

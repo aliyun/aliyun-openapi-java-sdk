@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRouterInterfacesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<RouterInterfaceType> routerInterfaceSet;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<RouterInterfaceType> getRouterInterfaceSet() {
@@ -77,87 +77,55 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 
 	public static class RouterInterfaceType {
 
-		private String healthCheckTargetIp;
-
-		private String creationTime;
-
-		private String status;
-
-		private String spec;
-
 		private String oppositeInterfaceId;
-
-		private String routerInterfaceId;
-
-		private String chargeType;
-
-		private String oppositeRouterType;
-
-		private String oppositeInterfaceOwnerId;
-
-		private String description;
-
-		private String name;
-
-		private String oppositeRouterId;
-
-		private String oppositeInterfaceSpec;
-
-		private String routerId;
-
-		private String oppositeInterfaceBusinessStatus;
-
-		private String connectedTime;
 
 		private String oppositeInterfaceStatus;
 
-		private String healthCheckSourceIp;
+		private String description;
+
+		private String oppositeRouterId;
 
 		private String endTime;
 
-		private String oppositeRegionId;
-
-		private String oppositeAccessPointId;
+		private String routerId;
 
 		private String businessStatus;
+
+		private String name;
+
+		private String oppositeRouterType;
+
+		private String connectedTime;
+
+		private String status;
+
+		private String oppositeInterfaceOwnerId;
+
+		private String oppositeRegionId;
+
+		private String healthCheckSourceIp;
+
+		private String oppositeInterfaceSpec;
 
 		private String role;
 
 		private String routerType;
 
+		private String chargeType;
+
+		private String creationTime;
+
 		private String accessPointId;
 
-		public String getHealthCheckTargetIp() {
-			return this.healthCheckTargetIp;
-		}
+		private String oppositeInterfaceBusinessStatus;
 
-		public void setHealthCheckTargetIp(String healthCheckTargetIp) {
-			this.healthCheckTargetIp = healthCheckTargetIp;
-		}
+		private String oppositeAccessPointId;
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
+		private String spec;
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
+		private String healthCheckTargetIp;
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getSpec() {
-			return this.spec;
-		}
-
-		public void setSpec(String spec) {
-			this.spec = spec;
-		}
+		private String routerInterfaceId;
 
 		public String getOppositeInterfaceId() {
 			return this.oppositeInterfaceId;
@@ -165,94 +133,6 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 
 		public void setOppositeInterfaceId(String oppositeInterfaceId) {
 			this.oppositeInterfaceId = oppositeInterfaceId;
-		}
-
-		public String getRouterInterfaceId() {
-			return this.routerInterfaceId;
-		}
-
-		public void setRouterInterfaceId(String routerInterfaceId) {
-			this.routerInterfaceId = routerInterfaceId;
-		}
-
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getOppositeRouterType() {
-			return this.oppositeRouterType;
-		}
-
-		public void setOppositeRouterType(String oppositeRouterType) {
-			this.oppositeRouterType = oppositeRouterType;
-		}
-
-		public String getOppositeInterfaceOwnerId() {
-			return this.oppositeInterfaceOwnerId;
-		}
-
-		public void setOppositeInterfaceOwnerId(String oppositeInterfaceOwnerId) {
-			this.oppositeInterfaceOwnerId = oppositeInterfaceOwnerId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getOppositeRouterId() {
-			return this.oppositeRouterId;
-		}
-
-		public void setOppositeRouterId(String oppositeRouterId) {
-			this.oppositeRouterId = oppositeRouterId;
-		}
-
-		public String getOppositeInterfaceSpec() {
-			return this.oppositeInterfaceSpec;
-		}
-
-		public void setOppositeInterfaceSpec(String oppositeInterfaceSpec) {
-			this.oppositeInterfaceSpec = oppositeInterfaceSpec;
-		}
-
-		public String getRouterId() {
-			return this.routerId;
-		}
-
-		public void setRouterId(String routerId) {
-			this.routerId = routerId;
-		}
-
-		public String getOppositeInterfaceBusinessStatus() {
-			return this.oppositeInterfaceBusinessStatus;
-		}
-
-		public void setOppositeInterfaceBusinessStatus(String oppositeInterfaceBusinessStatus) {
-			this.oppositeInterfaceBusinessStatus = oppositeInterfaceBusinessStatus;
-		}
-
-		public String getConnectedTime() {
-			return this.connectedTime;
-		}
-
-		public void setConnectedTime(String connectedTime) {
-			this.connectedTime = connectedTime;
 		}
 
 		public String getOppositeInterfaceStatus() {
@@ -263,12 +143,20 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 			this.oppositeInterfaceStatus = oppositeInterfaceStatus;
 		}
 
-		public String getHealthCheckSourceIp() {
-			return this.healthCheckSourceIp;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setHealthCheckSourceIp(String healthCheckSourceIp) {
-			this.healthCheckSourceIp = healthCheckSourceIp;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getOppositeRouterId() {
+			return this.oppositeRouterId;
+		}
+
+		public void setOppositeRouterId(String oppositeRouterId) {
+			this.oppositeRouterId = oppositeRouterId;
 		}
 
 		public String getEndTime() {
@@ -279,20 +167,12 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
-		public String getOppositeRegionId() {
-			return this.oppositeRegionId;
+		public String getRouterId() {
+			return this.routerId;
 		}
 
-		public void setOppositeRegionId(String oppositeRegionId) {
-			this.oppositeRegionId = oppositeRegionId;
-		}
-
-		public String getOppositeAccessPointId() {
-			return this.oppositeAccessPointId;
-		}
-
-		public void setOppositeAccessPointId(String oppositeAccessPointId) {
-			this.oppositeAccessPointId = oppositeAccessPointId;
+		public void setRouterId(String routerId) {
+			this.routerId = routerId;
 		}
 
 		public String getBusinessStatus() {
@@ -301,6 +181,70 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 
 		public void setBusinessStatus(String businessStatus) {
 			this.businessStatus = businessStatus;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getOppositeRouterType() {
+			return this.oppositeRouterType;
+		}
+
+		public void setOppositeRouterType(String oppositeRouterType) {
+			this.oppositeRouterType = oppositeRouterType;
+		}
+
+		public String getConnectedTime() {
+			return this.connectedTime;
+		}
+
+		public void setConnectedTime(String connectedTime) {
+			this.connectedTime = connectedTime;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getOppositeInterfaceOwnerId() {
+			return this.oppositeInterfaceOwnerId;
+		}
+
+		public void setOppositeInterfaceOwnerId(String oppositeInterfaceOwnerId) {
+			this.oppositeInterfaceOwnerId = oppositeInterfaceOwnerId;
+		}
+
+		public String getOppositeRegionId() {
+			return this.oppositeRegionId;
+		}
+
+		public void setOppositeRegionId(String oppositeRegionId) {
+			this.oppositeRegionId = oppositeRegionId;
+		}
+
+		public String getHealthCheckSourceIp() {
+			return this.healthCheckSourceIp;
+		}
+
+		public void setHealthCheckSourceIp(String healthCheckSourceIp) {
+			this.healthCheckSourceIp = healthCheckSourceIp;
+		}
+
+		public String getOppositeInterfaceSpec() {
+			return this.oppositeInterfaceSpec;
+		}
+
+		public void setOppositeInterfaceSpec(String oppositeInterfaceSpec) {
+			this.oppositeInterfaceSpec = oppositeInterfaceSpec;
 		}
 
 		public String getRole() {
@@ -319,12 +263,68 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 			this.routerType = routerType;
 		}
 
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
 		public String getAccessPointId() {
 			return this.accessPointId;
 		}
 
 		public void setAccessPointId(String accessPointId) {
 			this.accessPointId = accessPointId;
+		}
+
+		public String getOppositeInterfaceBusinessStatus() {
+			return this.oppositeInterfaceBusinessStatus;
+		}
+
+		public void setOppositeInterfaceBusinessStatus(String oppositeInterfaceBusinessStatus) {
+			this.oppositeInterfaceBusinessStatus = oppositeInterfaceBusinessStatus;
+		}
+
+		public String getOppositeAccessPointId() {
+			return this.oppositeAccessPointId;
+		}
+
+		public void setOppositeAccessPointId(String oppositeAccessPointId) {
+			this.oppositeAccessPointId = oppositeAccessPointId;
+		}
+
+		public String getSpec() {
+			return this.spec;
+		}
+
+		public void setSpec(String spec) {
+			this.spec = spec;
+		}
+
+		public String getHealthCheckTargetIp() {
+			return this.healthCheckTargetIp;
+		}
+
+		public void setHealthCheckTargetIp(String healthCheckTargetIp) {
+			this.healthCheckTargetIp = healthCheckTargetIp;
+		}
+
+		public String getRouterInterfaceId() {
+			return this.routerInterfaceId;
+		}
+
+		public void setRouterInterfaceId(String routerInterfaceId) {
+			this.routerInterfaceId = routerInterfaceId;
 		}
 	}
 

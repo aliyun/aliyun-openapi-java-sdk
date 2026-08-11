@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNetworkInterfacePermissionsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<NetworkInterfacePermission> networkInterfacePermissions;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeNetworkInterfacePermissionsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<NetworkInterfacePermission> getNetworkInterfacePermissions() {
 		return this.networkInterfacePermissions;
 	}
@@ -77,9 +77,7 @@ public class DescribeNetworkInterfacePermissionsResponse extends AcsResponse {
 
 	public static class NetworkInterfacePermission {
 
-		private String permission;
-
-		private String networkInterfaceId;
+		private String permissionState;
 
 		private Long accountId;
 
@@ -87,22 +85,16 @@ public class DescribeNetworkInterfacePermissionsResponse extends AcsResponse {
 
 		private String serviceName;
 
-		private String permissionState;
+		private String permission;
 
-		public String getPermission() {
-			return this.permission;
+		private String networkInterfaceId;
+
+		public String getPermissionState() {
+			return this.permissionState;
 		}
 
-		public void setPermission(String permission) {
-			this.permission = permission;
-		}
-
-		public String getNetworkInterfaceId() {
-			return this.networkInterfaceId;
-		}
-
-		public void setNetworkInterfaceId(String networkInterfaceId) {
-			this.networkInterfaceId = networkInterfaceId;
+		public void setPermissionState(String permissionState) {
+			this.permissionState = permissionState;
 		}
 
 		public Long getAccountId() {
@@ -129,12 +121,20 @@ public class DescribeNetworkInterfacePermissionsResponse extends AcsResponse {
 			this.serviceName = serviceName;
 		}
 
-		public String getPermissionState() {
-			return this.permissionState;
+		public String getPermission() {
+			return this.permission;
 		}
 
-		public void setPermissionState(String permissionState) {
-			this.permissionState = permissionState;
+		public void setPermission(String permission) {
+			this.permission = permission;
+		}
+
+		public String getNetworkInterfaceId() {
+			return this.networkInterfaceId;
+		}
+
+		public void setNetworkInterfaceId(String networkInterfaceId) {
+			this.networkInterfaceId = networkInterfaceId;
 		}
 	}
 

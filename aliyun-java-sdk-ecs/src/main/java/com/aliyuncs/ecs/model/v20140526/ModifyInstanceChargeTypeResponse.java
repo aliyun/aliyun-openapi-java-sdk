@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyInstanceChargeTypeResponse extends AcsResponse {
 
-	private String orderId;
-
 	private String requestId;
 
+	private String orderId;
+
 	private List<FeeOfInstance> feeOfInstances;
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class ModifyInstanceChargeTypeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	public List<FeeOfInstance> getFeeOfInstances() {

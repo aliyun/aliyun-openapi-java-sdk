@@ -57,238 +57,104 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 	public static class InstanceType {
 
-		private Integer eniTotalQuantity;
-
-		private String localStorageCategory;
-
-		private Integer primaryEniQueueNumber;
-
-		private Float memorySize;
-
-		private Long localStorageCapacity;
-
-		private String instanceFamilyLevel;
-
-		private Long instancePpsRx;
-
-		private Integer eniIpv6AddressQuantity;
-
-		private Integer maximumQueueNumberPerEni;
-
-		private String instanceTypeId;
-
-		private Integer instanceBandwidthRx;
-
-		private Integer secondaryEniQueueNumber;
-
-		private String gPUSpec;
-
-		private Integer instanceBandwidthTx;
-
-		private Integer queuePairNumber;
-
-		private Integer eriQuantity;
-
-		private Integer gPUAmount;
-
-		private Integer totalEniQueueQuantity;
+		private Long instancePpsTx;
 
 		private String nvmeSupport;
 
-		private Integer diskQuantity;
+		private Integer primaryEniQueueNumber;
 
-		private Integer initialCredit;
+		private Long localStorageCapacity;
 
-		private Integer localStorageAmount;
-
-		private Integer baselineCredit;
-
-		private Long instancePpsTx;
-
-		private Integer eniPrivateIpAddressQuantity;
-
-		private Integer cpuCoreCount;
-
-		private String instanceTypeFamily;
-
-		private Integer eniQuantity;
+		private Integer totalEniQueueQuantity;
 
 		private Boolean eniTrunkSupported;
 
-		private Float cpuSpeedFrequency;
+		private String instanceTypeFamily;
 
-		private Float cpuTurboFrequency;
-
-		private String physicalProcessorModel;
+		private Long instancePpsRx;
 
 		private Boolean networkEncryptionSupport;
 
-		private String instanceCategory;
+		private Integer eriQuantity;
+
+		private Integer instanceBandwidthRx;
+
+		private Integer instanceBandwidthTx;
+
+		private Integer localStorageAmount;
+
+		private Integer secondaryEniQueueNumber;
+
+		private String physicalProcessorModel;
+
+		private String localStorageCategory;
+
+		private String gPUSpec;
 
 		private String cpuArchitecture;
 
+		private String instanceTypeId;
+
+		private Float memorySize;
+
+		private Integer maximumQueueNumberPerEni;
+
+		private Integer eniIpv6AddressQuantity;
+
 		private Float gPUMemorySize;
+
+		private Integer eniTotalQuantity;
+
+		private Integer cpuCoreCount;
+
+		private Integer initialCredit;
 
 		private Integer networkCardQuantity;
 
+		private String instanceCategory;
+
+		private Integer eniQuantity;
+
+		private Integer gPUAmount;
+
+		private Integer diskQuantity;
+
+		private Float cpuSpeedFrequency;
+
+		private Integer queuePairNumber;
+
+		private Integer baselineCredit;
+
+		private String instanceFamilyLevel;
+
 		private Boolean jumboFrameSupport;
 
-		private List<NetworkCardInfo> networkCards;
+		private Float cpuTurboFrequency;
+
+		private Integer eniPrivateIpAddressQuantity;
 
 		private List<Attribute> attributes;
 
+		private List<NetworkCardInfo> networkCards;
+
 		private List<String> supportedBootModes;
-
-		private EnhancedNetwork enhancedNetwork;
-
-		private CpuOptions cpuOptions;
 
 		private Clock clock;
 
+		private EnhancedNetwork enhancedNetwork;
+
 		private NetworkInfo networkInfo;
 
-		public Integer getEniTotalQuantity() {
-			return this.eniTotalQuantity;
+		private CpuOptions cpuOptions;
+
+		private SecurityOptions securityOptions;
+
+		public Long getInstancePpsTx() {
+			return this.instancePpsTx;
 		}
 
-		public void setEniTotalQuantity(Integer eniTotalQuantity) {
-			this.eniTotalQuantity = eniTotalQuantity;
-		}
-
-		public String getLocalStorageCategory() {
-			return this.localStorageCategory;
-		}
-
-		public void setLocalStorageCategory(String localStorageCategory) {
-			this.localStorageCategory = localStorageCategory;
-		}
-
-		public Integer getPrimaryEniQueueNumber() {
-			return this.primaryEniQueueNumber;
-		}
-
-		public void setPrimaryEniQueueNumber(Integer primaryEniQueueNumber) {
-			this.primaryEniQueueNumber = primaryEniQueueNumber;
-		}
-
-		public Float getMemorySize() {
-			return this.memorySize;
-		}
-
-		public void setMemorySize(Float memorySize) {
-			this.memorySize = memorySize;
-		}
-
-		public Long getLocalStorageCapacity() {
-			return this.localStorageCapacity;
-		}
-
-		public void setLocalStorageCapacity(Long localStorageCapacity) {
-			this.localStorageCapacity = localStorageCapacity;
-		}
-
-		public String getInstanceFamilyLevel() {
-			return this.instanceFamilyLevel;
-		}
-
-		public void setInstanceFamilyLevel(String instanceFamilyLevel) {
-			this.instanceFamilyLevel = instanceFamilyLevel;
-		}
-
-		public Long getInstancePpsRx() {
-			return this.instancePpsRx;
-		}
-
-		public void setInstancePpsRx(Long instancePpsRx) {
-			this.instancePpsRx = instancePpsRx;
-		}
-
-		public Integer getEniIpv6AddressQuantity() {
-			return this.eniIpv6AddressQuantity;
-		}
-
-		public void setEniIpv6AddressQuantity(Integer eniIpv6AddressQuantity) {
-			this.eniIpv6AddressQuantity = eniIpv6AddressQuantity;
-		}
-
-		public Integer getMaximumQueueNumberPerEni() {
-			return this.maximumQueueNumberPerEni;
-		}
-
-		public void setMaximumQueueNumberPerEni(Integer maximumQueueNumberPerEni) {
-			this.maximumQueueNumberPerEni = maximumQueueNumberPerEni;
-		}
-
-		public String getInstanceTypeId() {
-			return this.instanceTypeId;
-		}
-
-		public void setInstanceTypeId(String instanceTypeId) {
-			this.instanceTypeId = instanceTypeId;
-		}
-
-		public Integer getInstanceBandwidthRx() {
-			return this.instanceBandwidthRx;
-		}
-
-		public void setInstanceBandwidthRx(Integer instanceBandwidthRx) {
-			this.instanceBandwidthRx = instanceBandwidthRx;
-		}
-
-		public Integer getSecondaryEniQueueNumber() {
-			return this.secondaryEniQueueNumber;
-		}
-
-		public void setSecondaryEniQueueNumber(Integer secondaryEniQueueNumber) {
-			this.secondaryEniQueueNumber = secondaryEniQueueNumber;
-		}
-
-		public String getGPUSpec() {
-			return this.gPUSpec;
-		}
-
-		public void setGPUSpec(String gPUSpec) {
-			this.gPUSpec = gPUSpec;
-		}
-
-		public Integer getInstanceBandwidthTx() {
-			return this.instanceBandwidthTx;
-		}
-
-		public void setInstanceBandwidthTx(Integer instanceBandwidthTx) {
-			this.instanceBandwidthTx = instanceBandwidthTx;
-		}
-
-		public Integer getQueuePairNumber() {
-			return this.queuePairNumber;
-		}
-
-		public void setQueuePairNumber(Integer queuePairNumber) {
-			this.queuePairNumber = queuePairNumber;
-		}
-
-		public Integer getEriQuantity() {
-			return this.eriQuantity;
-		}
-
-		public void setEriQuantity(Integer eriQuantity) {
-			this.eriQuantity = eriQuantity;
-		}
-
-		public Integer getGPUAmount() {
-			return this.gPUAmount;
-		}
-
-		public void setGPUAmount(Integer gPUAmount) {
-			this.gPUAmount = gPUAmount;
-		}
-
-		public Integer getTotalEniQueueQuantity() {
-			return this.totalEniQueueQuantity;
-		}
-
-		public void setTotalEniQueueQuantity(Integer totalEniQueueQuantity) {
-			this.totalEniQueueQuantity = totalEniQueueQuantity;
+		public void setInstancePpsTx(Long instancePpsTx) {
+			this.instancePpsTx = instancePpsTx;
 		}
 
 		public String getNvmeSupport() {
@@ -299,76 +165,28 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.nvmeSupport = nvmeSupport;
 		}
 
-		public Integer getDiskQuantity() {
-			return this.diskQuantity;
+		public Integer getPrimaryEniQueueNumber() {
+			return this.primaryEniQueueNumber;
 		}
 
-		public void setDiskQuantity(Integer diskQuantity) {
-			this.diskQuantity = diskQuantity;
+		public void setPrimaryEniQueueNumber(Integer primaryEniQueueNumber) {
+			this.primaryEniQueueNumber = primaryEniQueueNumber;
 		}
 
-		public Integer getInitialCredit() {
-			return this.initialCredit;
+		public Long getLocalStorageCapacity() {
+			return this.localStorageCapacity;
 		}
 
-		public void setInitialCredit(Integer initialCredit) {
-			this.initialCredit = initialCredit;
+		public void setLocalStorageCapacity(Long localStorageCapacity) {
+			this.localStorageCapacity = localStorageCapacity;
 		}
 
-		public Integer getLocalStorageAmount() {
-			return this.localStorageAmount;
+		public Integer getTotalEniQueueQuantity() {
+			return this.totalEniQueueQuantity;
 		}
 
-		public void setLocalStorageAmount(Integer localStorageAmount) {
-			this.localStorageAmount = localStorageAmount;
-		}
-
-		public Integer getBaselineCredit() {
-			return this.baselineCredit;
-		}
-
-		public void setBaselineCredit(Integer baselineCredit) {
-			this.baselineCredit = baselineCredit;
-		}
-
-		public Long getInstancePpsTx() {
-			return this.instancePpsTx;
-		}
-
-		public void setInstancePpsTx(Long instancePpsTx) {
-			this.instancePpsTx = instancePpsTx;
-		}
-
-		public Integer getEniPrivateIpAddressQuantity() {
-			return this.eniPrivateIpAddressQuantity;
-		}
-
-		public void setEniPrivateIpAddressQuantity(Integer eniPrivateIpAddressQuantity) {
-			this.eniPrivateIpAddressQuantity = eniPrivateIpAddressQuantity;
-		}
-
-		public Integer getCpuCoreCount() {
-			return this.cpuCoreCount;
-		}
-
-		public void setCpuCoreCount(Integer cpuCoreCount) {
-			this.cpuCoreCount = cpuCoreCount;
-		}
-
-		public String getInstanceTypeFamily() {
-			return this.instanceTypeFamily;
-		}
-
-		public void setInstanceTypeFamily(String instanceTypeFamily) {
-			this.instanceTypeFamily = instanceTypeFamily;
-		}
-
-		public Integer getEniQuantity() {
-			return this.eniQuantity;
-		}
-
-		public void setEniQuantity(Integer eniQuantity) {
-			this.eniQuantity = eniQuantity;
+		public void setTotalEniQueueQuantity(Integer totalEniQueueQuantity) {
+			this.totalEniQueueQuantity = totalEniQueueQuantity;
 		}
 
 		public Boolean getEniTrunkSupported() {
@@ -379,28 +197,20 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.eniTrunkSupported = eniTrunkSupported;
 		}
 
-		public Float getCpuSpeedFrequency() {
-			return this.cpuSpeedFrequency;
+		public String getInstanceTypeFamily() {
+			return this.instanceTypeFamily;
 		}
 
-		public void setCpuSpeedFrequency(Float cpuSpeedFrequency) {
-			this.cpuSpeedFrequency = cpuSpeedFrequency;
+		public void setInstanceTypeFamily(String instanceTypeFamily) {
+			this.instanceTypeFamily = instanceTypeFamily;
 		}
 
-		public Float getCpuTurboFrequency() {
-			return this.cpuTurboFrequency;
+		public Long getInstancePpsRx() {
+			return this.instancePpsRx;
 		}
 
-		public void setCpuTurboFrequency(Float cpuTurboFrequency) {
-			this.cpuTurboFrequency = cpuTurboFrequency;
-		}
-
-		public String getPhysicalProcessorModel() {
-			return this.physicalProcessorModel;
-		}
-
-		public void setPhysicalProcessorModel(String physicalProcessorModel) {
-			this.physicalProcessorModel = physicalProcessorModel;
+		public void setInstancePpsRx(Long instancePpsRx) {
+			this.instancePpsRx = instancePpsRx;
 		}
 
 		public Boolean getNetworkEncryptionSupport() {
@@ -411,12 +221,68 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.networkEncryptionSupport = networkEncryptionSupport;
 		}
 
-		public String getInstanceCategory() {
-			return this.instanceCategory;
+		public Integer getEriQuantity() {
+			return this.eriQuantity;
 		}
 
-		public void setInstanceCategory(String instanceCategory) {
-			this.instanceCategory = instanceCategory;
+		public void setEriQuantity(Integer eriQuantity) {
+			this.eriQuantity = eriQuantity;
+		}
+
+		public Integer getInstanceBandwidthRx() {
+			return this.instanceBandwidthRx;
+		}
+
+		public void setInstanceBandwidthRx(Integer instanceBandwidthRx) {
+			this.instanceBandwidthRx = instanceBandwidthRx;
+		}
+
+		public Integer getInstanceBandwidthTx() {
+			return this.instanceBandwidthTx;
+		}
+
+		public void setInstanceBandwidthTx(Integer instanceBandwidthTx) {
+			this.instanceBandwidthTx = instanceBandwidthTx;
+		}
+
+		public Integer getLocalStorageAmount() {
+			return this.localStorageAmount;
+		}
+
+		public void setLocalStorageAmount(Integer localStorageAmount) {
+			this.localStorageAmount = localStorageAmount;
+		}
+
+		public Integer getSecondaryEniQueueNumber() {
+			return this.secondaryEniQueueNumber;
+		}
+
+		public void setSecondaryEniQueueNumber(Integer secondaryEniQueueNumber) {
+			this.secondaryEniQueueNumber = secondaryEniQueueNumber;
+		}
+
+		public String getPhysicalProcessorModel() {
+			return this.physicalProcessorModel;
+		}
+
+		public void setPhysicalProcessorModel(String physicalProcessorModel) {
+			this.physicalProcessorModel = physicalProcessorModel;
+		}
+
+		public String getLocalStorageCategory() {
+			return this.localStorageCategory;
+		}
+
+		public void setLocalStorageCategory(String localStorageCategory) {
+			this.localStorageCategory = localStorageCategory;
+		}
+
+		public String getGPUSpec() {
+			return this.gPUSpec;
+		}
+
+		public void setGPUSpec(String gPUSpec) {
+			this.gPUSpec = gPUSpec;
 		}
 
 		public String getCpuArchitecture() {
@@ -427,12 +293,68 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.cpuArchitecture = cpuArchitecture;
 		}
 
+		public String getInstanceTypeId() {
+			return this.instanceTypeId;
+		}
+
+		public void setInstanceTypeId(String instanceTypeId) {
+			this.instanceTypeId = instanceTypeId;
+		}
+
+		public Float getMemorySize() {
+			return this.memorySize;
+		}
+
+		public void setMemorySize(Float memorySize) {
+			this.memorySize = memorySize;
+		}
+
+		public Integer getMaximumQueueNumberPerEni() {
+			return this.maximumQueueNumberPerEni;
+		}
+
+		public void setMaximumQueueNumberPerEni(Integer maximumQueueNumberPerEni) {
+			this.maximumQueueNumberPerEni = maximumQueueNumberPerEni;
+		}
+
+		public Integer getEniIpv6AddressQuantity() {
+			return this.eniIpv6AddressQuantity;
+		}
+
+		public void setEniIpv6AddressQuantity(Integer eniIpv6AddressQuantity) {
+			this.eniIpv6AddressQuantity = eniIpv6AddressQuantity;
+		}
+
 		public Float getGPUMemorySize() {
 			return this.gPUMemorySize;
 		}
 
 		public void setGPUMemorySize(Float gPUMemorySize) {
 			this.gPUMemorySize = gPUMemorySize;
+		}
+
+		public Integer getEniTotalQuantity() {
+			return this.eniTotalQuantity;
+		}
+
+		public void setEniTotalQuantity(Integer eniTotalQuantity) {
+			this.eniTotalQuantity = eniTotalQuantity;
+		}
+
+		public Integer getCpuCoreCount() {
+			return this.cpuCoreCount;
+		}
+
+		public void setCpuCoreCount(Integer cpuCoreCount) {
+			this.cpuCoreCount = cpuCoreCount;
+		}
+
+		public Integer getInitialCredit() {
+			return this.initialCredit;
+		}
+
+		public void setInitialCredit(Integer initialCredit) {
+			this.initialCredit = initialCredit;
 		}
 
 		public Integer getNetworkCardQuantity() {
@@ -443,6 +365,70 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.networkCardQuantity = networkCardQuantity;
 		}
 
+		public String getInstanceCategory() {
+			return this.instanceCategory;
+		}
+
+		public void setInstanceCategory(String instanceCategory) {
+			this.instanceCategory = instanceCategory;
+		}
+
+		public Integer getEniQuantity() {
+			return this.eniQuantity;
+		}
+
+		public void setEniQuantity(Integer eniQuantity) {
+			this.eniQuantity = eniQuantity;
+		}
+
+		public Integer getGPUAmount() {
+			return this.gPUAmount;
+		}
+
+		public void setGPUAmount(Integer gPUAmount) {
+			this.gPUAmount = gPUAmount;
+		}
+
+		public Integer getDiskQuantity() {
+			return this.diskQuantity;
+		}
+
+		public void setDiskQuantity(Integer diskQuantity) {
+			this.diskQuantity = diskQuantity;
+		}
+
+		public Float getCpuSpeedFrequency() {
+			return this.cpuSpeedFrequency;
+		}
+
+		public void setCpuSpeedFrequency(Float cpuSpeedFrequency) {
+			this.cpuSpeedFrequency = cpuSpeedFrequency;
+		}
+
+		public Integer getQueuePairNumber() {
+			return this.queuePairNumber;
+		}
+
+		public void setQueuePairNumber(Integer queuePairNumber) {
+			this.queuePairNumber = queuePairNumber;
+		}
+
+		public Integer getBaselineCredit() {
+			return this.baselineCredit;
+		}
+
+		public void setBaselineCredit(Integer baselineCredit) {
+			this.baselineCredit = baselineCredit;
+		}
+
+		public String getInstanceFamilyLevel() {
+			return this.instanceFamilyLevel;
+		}
+
+		public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+			this.instanceFamilyLevel = instanceFamilyLevel;
+		}
+
 		public Boolean getJumboFrameSupport() {
 			return this.jumboFrameSupport;
 		}
@@ -451,12 +437,20 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.jumboFrameSupport = jumboFrameSupport;
 		}
 
-		public List<NetworkCardInfo> getNetworkCards() {
-			return this.networkCards;
+		public Float getCpuTurboFrequency() {
+			return this.cpuTurboFrequency;
 		}
 
-		public void setNetworkCards(List<NetworkCardInfo> networkCards) {
-			this.networkCards = networkCards;
+		public void setCpuTurboFrequency(Float cpuTurboFrequency) {
+			this.cpuTurboFrequency = cpuTurboFrequency;
+		}
+
+		public Integer getEniPrivateIpAddressQuantity() {
+			return this.eniPrivateIpAddressQuantity;
+		}
+
+		public void setEniPrivateIpAddressQuantity(Integer eniPrivateIpAddressQuantity) {
+			this.eniPrivateIpAddressQuantity = eniPrivateIpAddressQuantity;
 		}
 
 		public List<Attribute> getAttributes() {
@@ -467,28 +461,20 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.attributes = attributes;
 		}
 
+		public List<NetworkCardInfo> getNetworkCards() {
+			return this.networkCards;
+		}
+
+		public void setNetworkCards(List<NetworkCardInfo> networkCards) {
+			this.networkCards = networkCards;
+		}
+
 		public List<String> getSupportedBootModes() {
 			return this.supportedBootModes;
 		}
 
 		public void setSupportedBootModes(List<String> supportedBootModes) {
 			this.supportedBootModes = supportedBootModes;
-		}
-
-		public EnhancedNetwork getEnhancedNetwork() {
-			return this.enhancedNetwork;
-		}
-
-		public void setEnhancedNetwork(EnhancedNetwork enhancedNetwork) {
-			this.enhancedNetwork = enhancedNetwork;
-		}
-
-		public CpuOptions getCpuOptions() {
-			return this.cpuOptions;
-		}
-
-		public void setCpuOptions(CpuOptions cpuOptions) {
-			this.cpuOptions = cpuOptions;
 		}
 
 		public Clock getClock() {
@@ -499,12 +485,59 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.clock = clock;
 		}
 
+		public EnhancedNetwork getEnhancedNetwork() {
+			return this.enhancedNetwork;
+		}
+
+		public void setEnhancedNetwork(EnhancedNetwork enhancedNetwork) {
+			this.enhancedNetwork = enhancedNetwork;
+		}
+
 		public NetworkInfo getNetworkInfo() {
 			return this.networkInfo;
 		}
 
 		public void setNetworkInfo(NetworkInfo networkInfo) {
 			this.networkInfo = networkInfo;
+		}
+
+		public CpuOptions getCpuOptions() {
+			return this.cpuOptions;
+		}
+
+		public void setCpuOptions(CpuOptions cpuOptions) {
+			this.cpuOptions = cpuOptions;
+		}
+
+		public SecurityOptions getSecurityOptions() {
+			return this.securityOptions;
+		}
+
+		public void setSecurityOptions(SecurityOptions securityOptions) {
+			this.securityOptions = securityOptions;
+		}
+
+		public static class Attribute {
+
+			private String value;
+
+			private String name;
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
 		}
 
 		public static class NetworkCardInfo {
@@ -520,43 +553,35 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			}
 		}
 
-		public static class Attribute {
+		public static class Clock {
 
-			private String name;
+			private String ptpSupport;
 
-			private String value;
-
-			public String getName() {
-				return this.name;
+			public String getPtpSupport() {
+				return this.ptpSupport;
 			}
 
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
+			public void setPtpSupport(String ptpSupport) {
+				this.ptpSupport = ptpSupport;
 			}
 		}
 
 		public static class EnhancedNetwork {
 
-			private Boolean sriovSupport;
+			private Boolean expressSupport;
 
 			private Integer vfQueueNumberPerEni;
 
 			private Boolean rssSupport;
 
-			public Boolean getSriovSupport() {
-				return this.sriovSupport;
+			private Boolean sriovSupport;
+
+			public Boolean getExpressSupport() {
+				return this.expressSupport;
 			}
 
-			public void setSriovSupport(Boolean sriovSupport) {
-				this.sriovSupport = sriovSupport;
+			public void setExpressSupport(Boolean expressSupport) {
+				this.expressSupport = expressSupport;
 			}
 
 			public Integer getVfQueueNumberPerEni() {
@@ -574,81 +599,13 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			public void setRssSupport(Boolean rssSupport) {
 				this.rssSupport = rssSupport;
 			}
-		}
 
-		public static class CpuOptions {
-
-			private Integer threadsPerCore;
-
-			private Integer core;
-
-			private Integer coreFactor;
-
-			private Boolean hyperThreadingAdjustable;
-
-			private String nestedVirtualizationSupport;
-
-			private List<String> supportedTopologyTypes;
-
-			public Integer getThreadsPerCore() {
-				return this.threadsPerCore;
+			public Boolean getSriovSupport() {
+				return this.sriovSupport;
 			}
 
-			public void setThreadsPerCore(Integer threadsPerCore) {
-				this.threadsPerCore = threadsPerCore;
-			}
-
-			public Integer getCore() {
-				return this.core;
-			}
-
-			public void setCore(Integer core) {
-				this.core = core;
-			}
-
-			public Integer getCoreFactor() {
-				return this.coreFactor;
-			}
-
-			public void setCoreFactor(Integer coreFactor) {
-				this.coreFactor = coreFactor;
-			}
-
-			public Boolean getHyperThreadingAdjustable() {
-				return this.hyperThreadingAdjustable;
-			}
-
-			public void setHyperThreadingAdjustable(Boolean hyperThreadingAdjustable) {
-				this.hyperThreadingAdjustable = hyperThreadingAdjustable;
-			}
-
-			public String getNestedVirtualizationSupport() {
-				return this.nestedVirtualizationSupport;
-			}
-
-			public void setNestedVirtualizationSupport(String nestedVirtualizationSupport) {
-				this.nestedVirtualizationSupport = nestedVirtualizationSupport;
-			}
-
-			public List<String> getSupportedTopologyTypes() {
-				return this.supportedTopologyTypes;
-			}
-
-			public void setSupportedTopologyTypes(List<String> supportedTopologyTypes) {
-				this.supportedTopologyTypes = supportedTopologyTypes;
-			}
-		}
-
-		public static class Clock {
-
-			private String ptpSupport;
-
-			public String getPtpSupport() {
-				return this.ptpSupport;
-			}
-
-			public void setPtpSupport(String ptpSupport) {
-				this.ptpSupport = ptpSupport;
+			public void setSriovSupport(Boolean sriovSupport) {
+				this.sriovSupport = sriovSupport;
 			}
 		}
 
@@ -678,23 +635,15 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 				public static class WeightingInfo {
 
-					private String name;
-
 					private Long vpcBandwidth;
-
-					private Long vpcBurstBandwidth;
-
-					private Long ebsBandwidth;
 
 					private Long ebsBurstBandwidth;
 
-					public String getName() {
-						return this.name;
-					}
+					private Long ebsBandwidth;
 
-					public void setName(String name) {
-						this.name = name;
-					}
+					private Long vpcBurstBandwidth;
+
+					private String name;
 
 					public Long getVpcBandwidth() {
 						return this.vpcBandwidth;
@@ -704,12 +653,12 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 						this.vpcBandwidth = vpcBandwidth;
 					}
 
-					public Long getVpcBurstBandwidth() {
-						return this.vpcBurstBandwidth;
+					public Long getEbsBurstBandwidth() {
+						return this.ebsBurstBandwidth;
 					}
 
-					public void setVpcBurstBandwidth(Long vpcBurstBandwidth) {
-						this.vpcBurstBandwidth = vpcBurstBandwidth;
+					public void setEbsBurstBandwidth(Long ebsBurstBandwidth) {
+						this.ebsBurstBandwidth = ebsBurstBandwidth;
 					}
 
 					public Long getEbsBandwidth() {
@@ -720,14 +669,98 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 						this.ebsBandwidth = ebsBandwidth;
 					}
 
-					public Long getEbsBurstBandwidth() {
-						return this.ebsBurstBandwidth;
+					public Long getVpcBurstBandwidth() {
+						return this.vpcBurstBandwidth;
 					}
 
-					public void setEbsBurstBandwidth(Long ebsBurstBandwidth) {
-						this.ebsBurstBandwidth = ebsBurstBandwidth;
+					public void setVpcBurstBandwidth(Long vpcBurstBandwidth) {
+						this.vpcBurstBandwidth = vpcBurstBandwidth;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
 					}
 				}
+			}
+		}
+
+		public static class CpuOptions {
+
+			private String nestedVirtualizationSupport;
+
+			private Integer coreFactor;
+
+			private Integer threadsPerCore;
+
+			private Boolean hyperThreadingAdjustable;
+
+			private Integer core;
+
+			private List<String> supportedTopologyTypes;
+
+			public String getNestedVirtualizationSupport() {
+				return this.nestedVirtualizationSupport;
+			}
+
+			public void setNestedVirtualizationSupport(String nestedVirtualizationSupport) {
+				this.nestedVirtualizationSupport = nestedVirtualizationSupport;
+			}
+
+			public Integer getCoreFactor() {
+				return this.coreFactor;
+			}
+
+			public void setCoreFactor(Integer coreFactor) {
+				this.coreFactor = coreFactor;
+			}
+
+			public Integer getThreadsPerCore() {
+				return this.threadsPerCore;
+			}
+
+			public void setThreadsPerCore(Integer threadsPerCore) {
+				this.threadsPerCore = threadsPerCore;
+			}
+
+			public Boolean getHyperThreadingAdjustable() {
+				return this.hyperThreadingAdjustable;
+			}
+
+			public void setHyperThreadingAdjustable(Boolean hyperThreadingAdjustable) {
+				this.hyperThreadingAdjustable = hyperThreadingAdjustable;
+			}
+
+			public Integer getCore() {
+				return this.core;
+			}
+
+			public void setCore(Integer core) {
+				this.core = core;
+			}
+
+			public List<String> getSupportedTopologyTypes() {
+				return this.supportedTopologyTypes;
+			}
+
+			public void setSupportedTopologyTypes(List<String> supportedTopologyTypes) {
+				this.supportedTopologyTypes = supportedTopologyTypes;
+			}
+		}
+
+		public static class SecurityOptions {
+
+			private String secureBootSupport;
+
+			public String getSecureBootSupport() {
+				return this.secureBootSupport;
+			}
+
+			public void setSecureBootSupport(String secureBootSupport) {
+				this.secureBootSupport = secureBootSupport;
 			}
 		}
 	}

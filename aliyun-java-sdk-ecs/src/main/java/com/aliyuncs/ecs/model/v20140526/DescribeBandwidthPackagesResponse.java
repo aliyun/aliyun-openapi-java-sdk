@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBandwidthPackagesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<BandwidthPackage> bandwidthPackages;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeBandwidthPackagesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<BandwidthPackage> getBandwidthPackages() {
 		return this.bandwidthPackages;
 	}
@@ -79,31 +79,31 @@ public class DescribeBandwidthPackagesResponse extends AcsResponse {
 
 		private String status;
 
-		private String creationTime;
-
 		private String ipCount;
-
-		private String regionId;
-
-		private String instanceChargeType;
-
-		private String bandwidthPackageId;
 
 		private String description;
 
-		private String bandwidth;
-
-		private String natGatewayId;
-
 		private String zoneId;
 
-		private String internetChargeType;
+		private String instanceChargeType;
+
+		private String iSP;
 
 		private String businessStatus;
 
+		private String internetChargeType;
+
 		private String name;
 
-		private String iSP;
+		private String bandwidth;
+
+		private String creationTime;
+
+		private String bandwidthPackageId;
+
+		private String regionId;
+
+		private String natGatewayId;
 
 		private List<PublicIpAddresse> publicIpAddresses;
 
@@ -115,44 +115,12 @@ public class DescribeBandwidthPackagesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
 		public String getIpCount() {
 			return this.ipCount;
 		}
 
 		public void setIpCount(String ipCount) {
 			this.ipCount = ipCount;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getInstanceChargeType() {
-			return this.instanceChargeType;
-		}
-
-		public void setInstanceChargeType(String instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
-		}
-
-		public String getBandwidthPackageId() {
-			return this.bandwidthPackageId;
-		}
-
-		public void setBandwidthPackageId(String bandwidthPackageId) {
-			this.bandwidthPackageId = bandwidthPackageId;
 		}
 
 		public String getDescription() {
@@ -163,22 +131,6 @@ public class DescribeBandwidthPackagesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(String bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public String getNatGatewayId() {
-			return this.natGatewayId;
-		}
-
-		public void setNatGatewayId(String natGatewayId) {
-			this.natGatewayId = natGatewayId;
-		}
-
 		public String getZoneId() {
 			return this.zoneId;
 		}
@@ -187,12 +139,20 @@ public class DescribeBandwidthPackagesResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
-		public String getInternetChargeType() {
-			return this.internetChargeType;
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
 		}
 
-		public void setInternetChargeType(String internetChargeType) {
-			this.internetChargeType = internetChargeType;
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
+		}
+
+		public String getISP() {
+			return this.iSP;
+		}
+
+		public void setISP(String iSP) {
+			this.iSP = iSP;
 		}
 
 		public String getBusinessStatus() {
@@ -203,6 +163,14 @@ public class DescribeBandwidthPackagesResponse extends AcsResponse {
 			this.businessStatus = businessStatus;
 		}
 
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
+		}
+
 		public String getName() {
 			return this.name;
 		}
@@ -211,12 +179,44 @@ public class DescribeBandwidthPackagesResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getISP() {
-			return this.iSP;
+		public String getBandwidth() {
+			return this.bandwidth;
 		}
 
-		public void setISP(String iSP) {
-			this.iSP = iSP;
+		public void setBandwidth(String bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getBandwidthPackageId() {
+			return this.bandwidthPackageId;
+		}
+
+		public void setBandwidthPackageId(String bandwidthPackageId) {
+			this.bandwidthPackageId = bandwidthPackageId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getNatGatewayId() {
+			return this.natGatewayId;
+		}
+
+		public void setNatGatewayId(String natGatewayId) {
+			this.natGatewayId = natGatewayId;
 		}
 
 		public List<PublicIpAddresse> getPublicIpAddresses() {
@@ -229,17 +229,9 @@ public class DescribeBandwidthPackagesResponse extends AcsResponse {
 
 		public static class PublicIpAddresse {
 
-			private String ipAddress;
-
 			private String allocationId;
 
-			public String getIpAddress() {
-				return this.ipAddress;
-			}
-
-			public void setIpAddress(String ipAddress) {
-				this.ipAddress = ipAddress;
-			}
+			private String ipAddress;
 
 			public String getAllocationId() {
 				return this.allocationId;
@@ -247,6 +239,14 @@ public class DescribeBandwidthPackagesResponse extends AcsResponse {
 
 			public void setAllocationId(String allocationId) {
 				this.allocationId = allocationId;
+			}
+
+			public String getIpAddress() {
+				return this.ipAddress;
+			}
+
+			public void setIpAddress(String ipAddress) {
+				this.ipAddress = ipAddress;
 			}
 		}
 	}

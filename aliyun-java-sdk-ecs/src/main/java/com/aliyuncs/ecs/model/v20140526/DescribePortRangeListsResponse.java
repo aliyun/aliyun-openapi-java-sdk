@@ -57,21 +57,61 @@ public class DescribePortRangeListsResponse extends AcsResponse {
 
 	public static class PortRangeList {
 
+		private Integer maxEntries;
+
+		private String description;
+
+		private Integer associationCount;
+
+		private String resourceGroupId;
+
+		private String creationTime;
+
 		private String portRangeListId;
 
 		private String portRangeListName;
 
-		private Integer maxEntries;
-
-		private Integer associationCount;
-
-		private String description;
-
-		private String creationTime;
-
-		private String resourceGroupId;
-
 		private List<Tag> tags;
+
+		public Integer getMaxEntries() {
+			return this.maxEntries;
+		}
+
+		public void setMaxEntries(Integer maxEntries) {
+			this.maxEntries = maxEntries;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Integer getAssociationCount() {
+			return this.associationCount;
+		}
+
+		public void setAssociationCount(Integer associationCount) {
+			this.associationCount = associationCount;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
 
 		public String getPortRangeListId() {
 			return this.portRangeListId;
@@ -87,46 +127,6 @@ public class DescribePortRangeListsResponse extends AcsResponse {
 
 		public void setPortRangeListName(String portRangeListName) {
 			this.portRangeListName = portRangeListName;
-		}
-
-		public Integer getMaxEntries() {
-			return this.maxEntries;
-		}
-
-		public void setMaxEntries(Integer maxEntries) {
-			this.maxEntries = maxEntries;
-		}
-
-		public Integer getAssociationCount() {
-			return this.associationCount;
-		}
-
-		public void setAssociationCount(Integer associationCount) {
-			this.associationCount = associationCount;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

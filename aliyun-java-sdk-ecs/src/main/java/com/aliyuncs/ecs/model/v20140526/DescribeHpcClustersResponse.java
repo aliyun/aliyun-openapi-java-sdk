@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHpcClustersResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<HpcCluster> hpcClusters;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeHpcClustersResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<HpcCluster> getHpcClusters() {
 		return this.hpcClusters;
 	}
@@ -77,11 +77,19 @@ public class DescribeHpcClustersResponse extends AcsResponse {
 
 	public static class HpcCluster {
 
+		private String description;
+
 		private String hpcClusterId;
 
 		private String name;
 
-		private String description;
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
 
 		public String getHpcClusterId() {
 			return this.hpcClusterId;
@@ -97,14 +105,6 @@ public class DescribeHpcClustersResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 	}
 

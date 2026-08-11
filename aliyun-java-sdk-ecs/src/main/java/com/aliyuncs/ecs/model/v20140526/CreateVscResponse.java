@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVscResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String vscId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getVscId() {
 		return this.vscId;
@@ -42,6 +34,14 @@ public class CreateVscResponse extends AcsResponse {
 
 	public void setVscId(String vscId) {
 		this.vscId = vscId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

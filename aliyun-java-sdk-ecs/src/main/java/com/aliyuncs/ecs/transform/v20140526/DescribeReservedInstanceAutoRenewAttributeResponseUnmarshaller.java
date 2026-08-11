@@ -31,10 +31,10 @@ public class DescribeReservedInstanceAutoRenewAttributeResponseUnmarshaller {
 		List<ReservedInstanceRenewAttribute> reservedInstanceRenewAttributes = new ArrayList<ReservedInstanceRenewAttribute>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeReservedInstanceAutoRenewAttributeResponse.ReservedInstanceRenewAttributes.Length"); i++) {
 			ReservedInstanceRenewAttribute reservedInstanceRenewAttribute = new ReservedInstanceRenewAttribute();
-			reservedInstanceRenewAttribute.setPeriodUnit(_ctx.stringValue("DescribeReservedInstanceAutoRenewAttributeResponse.ReservedInstanceRenewAttributes["+ i +"].PeriodUnit"));
-			reservedInstanceRenewAttribute.setDuration(_ctx.integerValue("DescribeReservedInstanceAutoRenewAttributeResponse.ReservedInstanceRenewAttributes["+ i +"].Duration"));
-			reservedInstanceRenewAttribute.setReservedInstanceId(_ctx.stringValue("DescribeReservedInstanceAutoRenewAttributeResponse.ReservedInstanceRenewAttributes["+ i +"].ReservedInstanceId"));
 			reservedInstanceRenewAttribute.setRenewalStatus(_ctx.stringValue("DescribeReservedInstanceAutoRenewAttributeResponse.ReservedInstanceRenewAttributes["+ i +"].RenewalStatus"));
+			reservedInstanceRenewAttribute.setReservedInstanceId(_ctx.stringValue("DescribeReservedInstanceAutoRenewAttributeResponse.ReservedInstanceRenewAttributes["+ i +"].ReservedInstanceId"));
+			reservedInstanceRenewAttribute.setDuration(_ctx.integerValue("DescribeReservedInstanceAutoRenewAttributeResponse.ReservedInstanceRenewAttributes["+ i +"].Duration"));
+			reservedInstanceRenewAttribute.setPeriodUnit(_ctx.stringValue("DescribeReservedInstanceAutoRenewAttributeResponse.ReservedInstanceRenewAttributes["+ i +"].PeriodUnit"));
 
 			reservedInstanceRenewAttributes.add(reservedInstanceRenewAttribute);
 		}

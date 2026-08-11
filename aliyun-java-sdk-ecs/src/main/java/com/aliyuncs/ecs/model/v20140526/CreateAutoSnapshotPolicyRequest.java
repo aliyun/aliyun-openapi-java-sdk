@@ -46,9 +46,13 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 
 	private String resourceOwnerAccount;
 
+	private List<TargetTags> targetTagss;
+
 	private Long ownerId;
 
 	private String autoSnapshotPolicyName;
+
+	private String associationType;
 
 	private Integer retentionDays;
 
@@ -187,6 +191,20 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		}
 	}
 
+	public List<TargetTags> getTargetTagss() {
+		return this.targetTagss;
+	}
+
+	public void setTargetTagss(List<TargetTags> targetTagss) {
+		this.targetTagss = targetTagss;	
+		if (targetTagss != null) {
+			for (int depth1 = 0; depth1 < targetTagss.size(); depth1++) {
+				putQueryParameter("TargetTags." + (depth1 + 1) + ".Value" , targetTagss.get(depth1).getValue());
+				putQueryParameter("TargetTags." + (depth1 + 1) + ".Key" , targetTagss.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -206,6 +224,17 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		this.autoSnapshotPolicyName = autoSnapshotPolicyName;
 		if(autoSnapshotPolicyName != null){
 			putQueryParameter("autoSnapshotPolicyName", autoSnapshotPolicyName);
+		}
+	}
+
+	public String getAssociationType() {
+		return this.associationType;
+	}
+
+	public void setAssociationType(String associationType) {
+		this.associationType = associationType;
+		if(associationType != null){
+			putQueryParameter("AssociationType", associationType);
 		}
 	}
 
@@ -298,6 +327,29 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 	}
 
 	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
+	public static class TargetTags {
 
 		private String value;
 

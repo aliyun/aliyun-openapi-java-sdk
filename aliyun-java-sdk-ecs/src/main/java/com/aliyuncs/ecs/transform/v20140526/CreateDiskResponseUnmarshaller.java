@@ -23,8 +23,8 @@ public class CreateDiskResponseUnmarshaller {
 	public static CreateDiskResponse unmarshall(CreateDiskResponse createDiskResponse, UnmarshallerContext _ctx) {
 		
 		createDiskResponse.setRequestId(_ctx.stringValue("CreateDiskResponse.RequestId"));
-		createDiskResponse.setDiskId(_ctx.stringValue("CreateDiskResponse.DiskId"));
 		createDiskResponse.setOrderId(_ctx.stringValue("CreateDiskResponse.OrderId"));
+		createDiskResponse.setDiskId(_ctx.stringValue("CreateDiskResponse.DiskId"));
 	 
 	 	return createDiskResponse;
 	}

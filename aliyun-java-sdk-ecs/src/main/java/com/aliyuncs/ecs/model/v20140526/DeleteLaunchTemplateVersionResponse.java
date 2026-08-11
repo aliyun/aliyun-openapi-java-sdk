@@ -47,17 +47,9 @@ public class DeleteLaunchTemplateVersionResponse extends AcsResponse {
 
 	public static class LaunchTemplateVersion {
 
-		private String launchTemplateId;
-
 		private Long launchTemplateVersionNumber;
 
-		public String getLaunchTemplateId() {
-			return this.launchTemplateId;
-		}
-
-		public void setLaunchTemplateId(String launchTemplateId) {
-			this.launchTemplateId = launchTemplateId;
-		}
+		private String launchTemplateId;
 
 		public Long getLaunchTemplateVersionNumber() {
 			return this.launchTemplateVersionNumber;
@@ -65,6 +57,14 @@ public class DeleteLaunchTemplateVersionResponse extends AcsResponse {
 
 		public void setLaunchTemplateVersionNumber(Long launchTemplateVersionNumber) {
 			this.launchTemplateVersionNumber = launchTemplateVersionNumber;
+		}
+
+		public String getLaunchTemplateId() {
+			return this.launchTemplateId;
+		}
+
+		public void setLaunchTemplateId(String launchTemplateId) {
+			this.launchTemplateId = launchTemplateId;
 		}
 	}
 

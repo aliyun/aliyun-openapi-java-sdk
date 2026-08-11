@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDeploymentSetSupportedInstanceTypeFamilyResponse extends AcsResponse {
 
-	private String instanceTypeFamilies;
-
 	private String requestId;
 
-	public String getInstanceTypeFamilies() {
-		return this.instanceTypeFamilies;
-	}
-
-	public void setInstanceTypeFamilies(String instanceTypeFamilies) {
-		this.instanceTypeFamilies = instanceTypeFamilies;
-	}
+	private String instanceTypeFamilies;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class DescribeDeploymentSetSupportedInstanceTypeFamilyResponse extends Ac
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getInstanceTypeFamilies() {
+		return this.instanceTypeFamilies;
+	}
+
+	public void setInstanceTypeFamilies(String instanceTypeFamilies) {
+		this.instanceTypeFamilies = instanceTypeFamilies;
 	}
 
 	@Override

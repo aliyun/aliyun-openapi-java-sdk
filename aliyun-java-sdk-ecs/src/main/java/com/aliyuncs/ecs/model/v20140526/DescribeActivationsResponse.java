@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeActivationsResponse extends AcsResponse {
 
+	private Long totalCount;
+
 	private Long pageSize;
 
 	private String requestId;
 
-	private Long pageNumber;
-
-	private Long totalCount;
-
 	private String nextToken;
 
+	private Long pageNumber;
+
 	private List<Activation> activationList;
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Long getPageSize() {
 		return this.pageSize;
@@ -53,28 +61,20 @@ public class DescribeActivationsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Activation> getActivationList() {
@@ -87,7 +87,7 @@ public class DescribeActivationsResponse extends AcsResponse {
 
 	public static class Activation {
 
-		private String creationTime;
+		private String instanceName;
 
 		private Integer deregisteredCount;
 
@@ -95,28 +95,28 @@ public class DescribeActivationsResponse extends AcsResponse {
 
 		private String description;
 
+		private String resourceGroupId;
+
+		private String creationTime;
+
+		private String activationId;
+
 		private Integer registeredCount;
 
-		private String instanceName;
+		private Long timeToLiveInHours;
 
 		private Boolean disabled;
 
 		private String ipAddressRange;
 
-		private Long timeToLiveInHours;
-
-		private String activationId;
-
-		private String resourceGroupId;
-
 		private List<Tag> tags;
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getInstanceName() {
+			return this.instanceName;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public Integer getDeregisteredCount() {
@@ -143,6 +143,30 @@ public class DescribeActivationsResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getActivationId() {
+			return this.activationId;
+		}
+
+		public void setActivationId(String activationId) {
+			this.activationId = activationId;
+		}
+
 		public Integer getRegisteredCount() {
 			return this.registeredCount;
 		}
@@ -151,12 +175,12 @@ public class DescribeActivationsResponse extends AcsResponse {
 			this.registeredCount = registeredCount;
 		}
 
-		public String getInstanceName() {
-			return this.instanceName;
+		public Long getTimeToLiveInHours() {
+			return this.timeToLiveInHours;
 		}
 
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setTimeToLiveInHours(Long timeToLiveInHours) {
+			this.timeToLiveInHours = timeToLiveInHours;
 		}
 
 		public Boolean getDisabled() {
@@ -173,30 +197,6 @@ public class DescribeActivationsResponse extends AcsResponse {
 
 		public void setIpAddressRange(String ipAddressRange) {
 			this.ipAddressRange = ipAddressRange;
-		}
-
-		public Long getTimeToLiveInHours() {
-			return this.timeToLiveInHours;
-		}
-
-		public void setTimeToLiveInHours(Long timeToLiveInHours) {
-			this.timeToLiveInHours = timeToLiveInHours;
-		}
-
-		public String getActivationId() {
-			return this.activationId;
-		}
-
-		public void setActivationId(String activationId) {
-			this.activationId = activationId;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

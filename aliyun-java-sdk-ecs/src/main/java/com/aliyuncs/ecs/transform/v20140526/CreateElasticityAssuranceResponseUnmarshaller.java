@@ -23,8 +23,8 @@ public class CreateElasticityAssuranceResponseUnmarshaller {
 	public static CreateElasticityAssuranceResponse unmarshall(CreateElasticityAssuranceResponse createElasticityAssuranceResponse, UnmarshallerContext _ctx) {
 		
 		createElasticityAssuranceResponse.setRequestId(_ctx.stringValue("CreateElasticityAssuranceResponse.RequestId"));
-		createElasticityAssuranceResponse.setPrivatePoolOptionsId(_ctx.stringValue("CreateElasticityAssuranceResponse.PrivatePoolOptionsId"));
 		createElasticityAssuranceResponse.setOrderId(_ctx.stringValue("CreateElasticityAssuranceResponse.OrderId"));
+		createElasticityAssuranceResponse.setPrivatePoolOptionsId(_ctx.stringValue("CreateElasticityAssuranceResponse.PrivatePoolOptionsId"));
 	 
 	 	return createElasticityAssuranceResponse;
 	}

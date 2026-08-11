@@ -35,15 +35,15 @@ public class DescribeSavingsPlanPriceResponseUnmarshaller {
 		Price price = new Price();
 		price.setOriginalPrice(_ctx.floatValue("DescribeSavingsPlanPriceResponse.PriceInfo.Price.OriginalPrice"));
 		price.setDiscountPrice(_ctx.floatValue("DescribeSavingsPlanPriceResponse.PriceInfo.Price.DiscountPrice"));
-		price.setTradePrice(_ctx.floatValue("DescribeSavingsPlanPriceResponse.PriceInfo.Price.TradePrice"));
 		price.setCurrency(_ctx.stringValue("DescribeSavingsPlanPriceResponse.PriceInfo.Price.Currency"));
+		price.setTradePrice(_ctx.floatValue("DescribeSavingsPlanPriceResponse.PriceInfo.Price.TradePrice"));
 		priceInfo.setPrice(price);
 
 		List<RulesItem> rules = new ArrayList<RulesItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSavingsPlanPriceResponse.PriceInfo.Rules.Length"); i++) {
 			RulesItem rulesItem = new RulesItem();
-			rulesItem.setRuleId(_ctx.stringValue("DescribeSavingsPlanPriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 			rulesItem.setDescription(_ctx.stringValue("DescribeSavingsPlanPriceResponse.PriceInfo.Rules["+ i +"].Description"));
+			rulesItem.setRuleId(_ctx.stringValue("DescribeSavingsPlanPriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 
 			rules.add(rulesItem);
 		}

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private Integer pageSize;
 
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<AutoProvisioningGroupHistory> autoProvisioningGroupHistories;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,14 +67,6 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<AutoProvisioningGroupHistory> getAutoProvisioningGroupHistories() {
 		return this.autoProvisioningGroupHistories;
 	}
@@ -79,9 +79,9 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 
 		private String status;
 
-		private String startTime;
-
 		private String taskId;
+
+		private String startTime;
 
 		private String lastEventTime;
 
@@ -95,20 +95,20 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
 		public String getTaskId() {
 			return this.taskId;
 		}
 
 		public void setTaskId(String taskId) {
 			this.taskId = taskId;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public String getLastEventTime() {
@@ -135,9 +135,9 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 
 			private List<ErrorMessage> errorMessages;
 
-			private List<String> createdInstanceIds;
-
 			private List<String> destroyedInstanceIds;
+
+			private List<String> createdInstanceIds;
 
 			public String getStatus() {
 				return this.status;
@@ -163,14 +163,6 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 				this.errorMessages = errorMessages;
 			}
 
-			public List<String> getCreatedInstanceIds() {
-				return this.createdInstanceIds;
-			}
-
-			public void setCreatedInstanceIds(List<String> createdInstanceIds) {
-				this.createdInstanceIds = createdInstanceIds;
-			}
-
 			public List<String> getDestroyedInstanceIds() {
 				return this.destroyedInstanceIds;
 			}
@@ -179,21 +171,21 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 				this.destroyedInstanceIds = destroyedInstanceIds;
 			}
 
-			public static class ErrorMessage {
+			public List<String> getCreatedInstanceIds() {
+				return this.createdInstanceIds;
+			}
 
-				private String code;
+			public void setCreatedInstanceIds(List<String> createdInstanceIds) {
+				this.createdInstanceIds = createdInstanceIds;
+			}
+
+			public static class ErrorMessage {
 
 				private String message;
 
+				private String code;
+
 				private List<String> failedInstanceIds;
-
-				public String getCode() {
-					return this.code;
-				}
-
-				public void setCode(String code) {
-					this.code = code;
-				}
 
 				public String getMessage() {
 					return this.message;
@@ -201,6 +193,14 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 
 				public void setMessage(String message) {
 					this.message = message;
+				}
+
+				public String getCode() {
+					return this.code;
+				}
+
+				public void setCode(String code) {
+					this.code = code;
 				}
 
 				public List<String> getFailedInstanceIds() {

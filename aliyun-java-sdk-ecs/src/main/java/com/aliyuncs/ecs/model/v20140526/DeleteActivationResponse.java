@@ -46,7 +46,7 @@ public class DeleteActivationResponse extends AcsResponse {
 
 	public static class Activation {
 
-		private String creationTime;
+		private String instanceName;
 
 		private Integer deregisteredCount;
 
@@ -54,22 +54,22 @@ public class DeleteActivationResponse extends AcsResponse {
 
 		private String description;
 
-		private Integer registeredCount;
-
-		private String instanceName;
-
-		private String ipAddressRange;
-
-		private Long timeToLiveInHours;
+		private String creationTime;
 
 		private String activationId;
 
-		public String getCreationTime() {
-			return this.creationTime;
+		private Integer registeredCount;
+
+		private Long timeToLiveInHours;
+
+		private String ipAddressRange;
+
+		public String getInstanceName() {
+			return this.instanceName;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public Integer getDeregisteredCount() {
@@ -96,28 +96,28 @@ public class DeleteActivationResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getActivationId() {
+			return this.activationId;
+		}
+
+		public void setActivationId(String activationId) {
+			this.activationId = activationId;
+		}
+
 		public Integer getRegisteredCount() {
 			return this.registeredCount;
 		}
 
 		public void setRegisteredCount(Integer registeredCount) {
 			this.registeredCount = registeredCount;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getIpAddressRange() {
-			return this.ipAddressRange;
-		}
-
-		public void setIpAddressRange(String ipAddressRange) {
-			this.ipAddressRange = ipAddressRange;
 		}
 
 		public Long getTimeToLiveInHours() {
@@ -128,12 +128,12 @@ public class DeleteActivationResponse extends AcsResponse {
 			this.timeToLiveInHours = timeToLiveInHours;
 		}
 
-		public String getActivationId() {
-			return this.activationId;
+		public String getIpAddressRange() {
+			return this.ipAddressRange;
 		}
 
-		public void setActivationId(String activationId) {
-			this.activationId = activationId;
+		public void setIpAddressRange(String ipAddressRange) {
+			this.ipAddressRange = ipAddressRange;
 		}
 	}
 

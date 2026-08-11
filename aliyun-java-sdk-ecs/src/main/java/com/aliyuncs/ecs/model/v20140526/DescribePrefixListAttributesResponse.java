@@ -25,29 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePrefixListAttributesResponse extends AcsResponse {
 
-	private String creationTime;
-
 	private Integer maxEntries;
-
-	private String requestId;
 
 	private String description;
 
-	private String addressFamily;
-
-	private String prefixListName;
+	private String requestId;
 
 	private String prefixListId;
 
+	private String prefixListName;
+
+	private String creationTime;
+
+	private String addressFamily;
+
 	private List<Entry> entries;
-
-	public String getCreationTime() {
-		return this.creationTime;
-	}
-
-	public void setCreationTime(String creationTime) {
-		this.creationTime = creationTime;
-	}
 
 	public Integer getMaxEntries() {
 		return this.maxEntries;
@@ -55,14 +47,6 @@ public class DescribePrefixListAttributesResponse extends AcsResponse {
 
 	public void setMaxEntries(Integer maxEntries) {
 		this.maxEntries = maxEntries;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getDescription() {
@@ -73,12 +57,20 @@ public class DescribePrefixListAttributesResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getAddressFamily() {
-		return this.addressFamily;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setAddressFamily(String addressFamily) {
-		this.addressFamily = addressFamily;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getPrefixListId() {
+		return this.prefixListId;
+	}
+
+	public void setPrefixListId(String prefixListId) {
+		this.prefixListId = prefixListId;
 	}
 
 	public String getPrefixListName() {
@@ -89,12 +81,20 @@ public class DescribePrefixListAttributesResponse extends AcsResponse {
 		this.prefixListName = prefixListName;
 	}
 
-	public String getPrefixListId() {
-		return this.prefixListId;
+	public String getCreationTime() {
+		return this.creationTime;
 	}
 
-	public void setPrefixListId(String prefixListId) {
-		this.prefixListId = prefixListId;
+	public void setCreationTime(String creationTime) {
+		this.creationTime = creationTime;
+	}
+
+	public String getAddressFamily() {
+		return this.addressFamily;
+	}
+
+	public void setAddressFamily(String addressFamily) {
+		this.addressFamily = addressFamily;
 	}
 
 	public List<Entry> getEntries() {

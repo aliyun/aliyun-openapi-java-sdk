@@ -24,25 +24,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSavingsPlanEstimationResponse extends AcsResponse {
 
+	private String offeringType;
+
 	private String requestId;
+
+	private String committedAmount;
 
 	private String resourceId;
 
 	private String instanceTypeFamily;
 
-	private String committedAmount;
-
 	private String currency;
-
-	private String offeringType;
-
-	private String periodUnit;
-
-	private Integer period;
 
 	private String planType;
 
+	private Integer period;
+
 	private String instanceTypeFamilyGroup;
+
+	private String periodUnit;
+
+	public String getOfferingType() {
+		return this.offeringType;
+	}
+
+	public void setOfferingType(String offeringType) {
+		this.offeringType = offeringType;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,6 +58,14 @@ public class DescribeSavingsPlanEstimationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCommittedAmount() {
+		return this.committedAmount;
+	}
+
+	public void setCommittedAmount(String committedAmount) {
+		this.committedAmount = committedAmount;
 	}
 
 	public String getResourceId() {
@@ -68,44 +84,12 @@ public class DescribeSavingsPlanEstimationResponse extends AcsResponse {
 		this.instanceTypeFamily = instanceTypeFamily;
 	}
 
-	public String getCommittedAmount() {
-		return this.committedAmount;
-	}
-
-	public void setCommittedAmount(String committedAmount) {
-		this.committedAmount = committedAmount;
-	}
-
 	public String getCurrency() {
 		return this.currency;
 	}
 
 	public void setCurrency(String currency) {
 		this.currency = currency;
-	}
-
-	public String getOfferingType() {
-		return this.offeringType;
-	}
-
-	public void setOfferingType(String offeringType) {
-		this.offeringType = offeringType;
-	}
-
-	public String getPeriodUnit() {
-		return this.periodUnit;
-	}
-
-	public void setPeriodUnit(String periodUnit) {
-		this.periodUnit = periodUnit;
-	}
-
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
 	}
 
 	public String getPlanType() {
@@ -116,12 +100,28 @@ public class DescribeSavingsPlanEstimationResponse extends AcsResponse {
 		this.planType = planType;
 	}
 
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+	}
+
 	public String getInstanceTypeFamilyGroup() {
 		return this.instanceTypeFamilyGroup;
 	}
 
 	public void setInstanceTypeFamilyGroup(String instanceTypeFamilyGroup) {
 		this.instanceTypeFamilyGroup = instanceTypeFamilyGroup;
+	}
+
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
 	}
 
 	@Override

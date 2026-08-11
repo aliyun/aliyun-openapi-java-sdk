@@ -42,6 +42,8 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String instanceId;
 
+	private SecureBootOptions secureBootOptions;
+
 	private List<DiskDeviceMapping> diskDeviceMappings;
 
 	private String snapshotId;
@@ -164,6 +166,18 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
 		}
+	}
+
+	public SecureBootOptions getSecureBootOptions() {
+		return this.secureBootOptions;
+	}
+
+	public void setSecureBootOptions(SecureBootOptions secureBootOptions) {
+		this.secureBootOptions = secureBootOptions;	
+		if (secureBootOptions != null) {
+			
+				putQueryParameter("SecureBootOptions.SecureBootSupport" , secureBootOptions.getSecureBootSupport());
+		}	
 	}
 
 	public List<DiskDeviceMapping> getDiskDeviceMappings() {
@@ -336,6 +350,19 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+	}
+
+	public static class SecureBootOptions {
+
+		private String secureBootSupport;
+
+		public String getSecureBootSupport() {
+			return this.secureBootSupport;
+		}
+
+		public void setSecureBootSupport(String secureBootSupport) {
+			this.secureBootSupport = secureBootSupport;
 		}
 	}
 

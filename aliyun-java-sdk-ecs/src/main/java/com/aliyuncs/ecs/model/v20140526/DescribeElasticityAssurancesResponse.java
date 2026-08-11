@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String nextToken;
 
 	private String requestId;
 
-	private Integer totalCount;
-
 	private Integer maxResults;
 
 	private List<ElasticityAssuranceItem> elasticityAssuranceSet;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -49,14 +57,6 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getMaxResults() {
@@ -79,41 +79,41 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 		private String status;
 
-		private String privatePoolOptionsMatchCriteria;
-
-		private String privatePoolOptionsId;
-
 		private Integer usedAssuranceTimes;
+
+		private String description;
+
+		private String endTime;
+
+		private String resourceGroupId;
 
 		private String latestStartTime;
 
 		private String privatePoolOptionsName;
 
-		private String regionId;
-
-		private String endTime;
-
-		private String startTime;
-
-		private String description;
-
-		private String resourceGroupId;
-
-		private String totalAssuranceTimes;
-
 		private String instanceChargeType;
-
-		private String startTimeType;
 
 		private String elasticityAssuranceOwnerId;
 
+		private String startTime;
+
+		private String startTimeType;
+
+		private String privatePoolOptionsMatchCriteria;
+
+		private String privatePoolOptionsId;
+
+		private String totalAssuranceTimes;
+
 		private String packageType;
+
+		private String regionId;
+
+		private List<RecurrenceRule> recurrenceRules;
 
 		private List<AllocatedResource> allocatedResources;
 
 		private List<Tag> tags;
-
-		private List<RecurrenceRule> recurrenceRules;
 
 		public String getStatus() {
 			return this.status;
@@ -123,28 +123,36 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getPrivatePoolOptionsMatchCriteria() {
-			return this.privatePoolOptionsMatchCriteria;
-		}
-
-		public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
-			this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
-		}
-
-		public String getPrivatePoolOptionsId() {
-			return this.privatePoolOptionsId;
-		}
-
-		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
-			this.privatePoolOptionsId = privatePoolOptionsId;
-		}
-
 		public Integer getUsedAssuranceTimes() {
 			return this.usedAssuranceTimes;
 		}
 
 		public void setUsedAssuranceTimes(Integer usedAssuranceTimes) {
 			this.usedAssuranceTimes = usedAssuranceTimes;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getLatestStartTime() {
@@ -163,68 +171,12 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 			this.privatePoolOptionsName = privatePoolOptionsName;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getTotalAssuranceTimes() {
-			return this.totalAssuranceTimes;
-		}
-
-		public void setTotalAssuranceTimes(String totalAssuranceTimes) {
-			this.totalAssuranceTimes = totalAssuranceTimes;
-		}
-
 		public String getInstanceChargeType() {
 			return this.instanceChargeType;
 		}
 
 		public void setInstanceChargeType(String instanceChargeType) {
 			this.instanceChargeType = instanceChargeType;
-		}
-
-		public String getStartTimeType() {
-			return this.startTimeType;
-		}
-
-		public void setStartTimeType(String startTimeType) {
-			this.startTimeType = startTimeType;
 		}
 
 		public String getElasticityAssuranceOwnerId() {
@@ -235,12 +187,68 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 			this.elasticityAssuranceOwnerId = elasticityAssuranceOwnerId;
 		}
 
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getStartTimeType() {
+			return this.startTimeType;
+		}
+
+		public void setStartTimeType(String startTimeType) {
+			this.startTimeType = startTimeType;
+		}
+
+		public String getPrivatePoolOptionsMatchCriteria() {
+			return this.privatePoolOptionsMatchCriteria;
+		}
+
+		public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
+			this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
+		}
+
+		public String getPrivatePoolOptionsId() {
+			return this.privatePoolOptionsId;
+		}
+
+		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+			this.privatePoolOptionsId = privatePoolOptionsId;
+		}
+
+		public String getTotalAssuranceTimes() {
+			return this.totalAssuranceTimes;
+		}
+
+		public void setTotalAssuranceTimes(String totalAssuranceTimes) {
+			this.totalAssuranceTimes = totalAssuranceTimes;
+		}
+
 		public String getPackageType() {
 			return this.packageType;
 		}
 
 		public void setPackageType(String packageType) {
 			this.packageType = packageType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public List<RecurrenceRule> getRecurrenceRules() {
+			return this.recurrenceRules;
+		}
+
+		public void setRecurrenceRules(List<RecurrenceRule> recurrenceRules) {
+			this.recurrenceRules = recurrenceRules;
 		}
 
 		public List<AllocatedResource> getAllocatedResources() {
@@ -259,29 +267,64 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
-		public List<RecurrenceRule> getRecurrenceRules() {
-			return this.recurrenceRules;
-		}
+		public static class RecurrenceRule {
 
-		public void setRecurrenceRules(List<RecurrenceRule> recurrenceRules) {
-			this.recurrenceRules = recurrenceRules;
+			private Integer startHour;
+
+			private String recurrenceType;
+
+			private Integer endHour;
+
+			private String recurrenceValue;
+
+			public Integer getStartHour() {
+				return this.startHour;
+			}
+
+			public void setStartHour(Integer startHour) {
+				this.startHour = startHour;
+			}
+
+			public String getRecurrenceType() {
+				return this.recurrenceType;
+			}
+
+			public void setRecurrenceType(String recurrenceType) {
+				this.recurrenceType = recurrenceType;
+			}
+
+			public Integer getEndHour() {
+				return this.endHour;
+			}
+
+			public void setEndHour(Integer endHour) {
+				this.endHour = endHour;
+			}
+
+			public String getRecurrenceValue() {
+				return this.recurrenceValue;
+			}
+
+			public void setRecurrenceValue(String recurrenceValue) {
+				this.recurrenceValue = recurrenceValue;
+			}
 		}
 
 		public static class AllocatedResource {
 
 			private Integer usedAmount;
 
-			private Integer totalAmount;
-
 			private Integer availableAmount;
-
-			private Integer failedAmount;
-
-			private Integer lockedAmount;
 
 			private String zoneId;
 
+			private Integer totalAmount;
+
+			private Integer failedAmount;
+
 			private String instanceType;
+
+			private Integer lockedAmount;
 
 			private List<ElasticityAssuranceUsage> elasticityAssuranceUsages;
 
@@ -293,36 +336,12 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 				this.usedAmount = usedAmount;
 			}
 
-			public Integer getTotalAmount() {
-				return this.totalAmount;
-			}
-
-			public void setTotalAmount(Integer totalAmount) {
-				this.totalAmount = totalAmount;
-			}
-
 			public Integer getAvailableAmount() {
 				return this.availableAmount;
 			}
 
 			public void setAvailableAmount(Integer availableAmount) {
 				this.availableAmount = availableAmount;
-			}
-
-			public Integer getFailedAmount() {
-				return this.failedAmount;
-			}
-
-			public void setFailedAmount(Integer failedAmount) {
-				this.failedAmount = failedAmount;
-			}
-
-			public Integer getLockedAmount() {
-				return this.lockedAmount;
-			}
-
-			public void setLockedAmount(Integer lockedAmount) {
-				this.lockedAmount = lockedAmount;
 			}
 
 			public String getZoneId() {
@@ -333,12 +352,36 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 				this.zoneId = zoneId;
 			}
 
+			public Integer getTotalAmount() {
+				return this.totalAmount;
+			}
+
+			public void setTotalAmount(Integer totalAmount) {
+				this.totalAmount = totalAmount;
+			}
+
+			public Integer getFailedAmount() {
+				return this.failedAmount;
+			}
+
+			public void setFailedAmount(Integer failedAmount) {
+				this.failedAmount = failedAmount;
+			}
+
 			public String getInstanceType() {
 				return this.instanceType;
 			}
 
 			public void setInstanceType(String instanceType) {
 				this.instanceType = instanceType;
+			}
+
+			public Integer getLockedAmount() {
+				return this.lockedAmount;
+			}
+
+			public void setLockedAmount(Integer lockedAmount) {
+				this.lockedAmount = lockedAmount;
 			}
 
 			public List<ElasticityAssuranceUsage> getElasticityAssuranceUsages() {
@@ -351,11 +394,19 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 			public static class ElasticityAssuranceUsage {
 
+				private Integer usedAmount;
+
 				private String accountId;
 
 				private String serviceName;
 
-				private Integer usedAmount;
+				public Integer getUsedAmount() {
+					return this.usedAmount;
+				}
+
+				public void setUsedAmount(Integer usedAmount) {
+					this.usedAmount = usedAmount;
+				}
 
 				public String getAccountId() {
 					return this.accountId;
@@ -372,30 +423,14 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 				public void setServiceName(String serviceName) {
 					this.serviceName = serviceName;
 				}
-
-				public Integer getUsedAmount() {
-					return this.usedAmount;
-				}
-
-				public void setUsedAmount(Integer usedAmount) {
-					this.usedAmount = usedAmount;
-				}
 			}
 		}
 
 		public static class Tag {
 
-			private String tagValue;
-
 			private String tagKey;
 
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
+			private String tagValue;
 
 			public String getTagKey() {
 				return this.tagKey;
@@ -404,48 +439,13 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
 			}
-		}
 
-		public static class RecurrenceRule {
-
-			private String recurrenceType;
-
-			private String recurrenceValue;
-
-			private Integer startHour;
-
-			private Integer endHour;
-
-			public String getRecurrenceType() {
-				return this.recurrenceType;
+			public String getTagValue() {
+				return this.tagValue;
 			}
 
-			public void setRecurrenceType(String recurrenceType) {
-				this.recurrenceType = recurrenceType;
-			}
-
-			public String getRecurrenceValue() {
-				return this.recurrenceValue;
-			}
-
-			public void setRecurrenceValue(String recurrenceValue) {
-				this.recurrenceValue = recurrenceValue;
-			}
-
-			public Integer getStartHour() {
-				return this.startHour;
-			}
-
-			public void setStartHour(Integer startHour) {
-				this.startHour = startHour;
-			}
-
-			public Integer getEndHour() {
-				return this.endHour;
-			}
-
-			public void setEndHour(Integer endHour) {
-				this.endHour = endHour;
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

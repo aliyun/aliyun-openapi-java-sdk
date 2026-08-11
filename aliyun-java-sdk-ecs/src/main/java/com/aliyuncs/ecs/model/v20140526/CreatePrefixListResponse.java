@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreatePrefixListResponse extends AcsResponse {
 
-	private String prefixListId;
-
 	private String requestId;
 
-	public String getPrefixListId() {
-		return this.prefixListId;
-	}
-
-	public void setPrefixListId(String prefixListId) {
-		this.prefixListId = prefixListId;
-	}
+	private String prefixListId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class CreatePrefixListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getPrefixListId() {
+		return this.prefixListId;
+	}
+
+	public void setPrefixListId(String prefixListId) {
+		this.prefixListId = prefixListId;
 	}
 
 	@Override

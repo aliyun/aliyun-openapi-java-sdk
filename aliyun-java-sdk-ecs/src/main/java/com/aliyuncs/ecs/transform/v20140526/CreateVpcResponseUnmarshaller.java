@@ -23,9 +23,9 @@ public class CreateVpcResponseUnmarshaller {
 	public static CreateVpcResponse unmarshall(CreateVpcResponse createVpcResponse, UnmarshallerContext _ctx) {
 		
 		createVpcResponse.setRequestId(_ctx.stringValue("CreateVpcResponse.RequestId"));
-		createVpcResponse.setVpcId(_ctx.stringValue("CreateVpcResponse.VpcId"));
 		createVpcResponse.setVRouterId(_ctx.stringValue("CreateVpcResponse.VRouterId"));
 		createVpcResponse.setRouteTableId(_ctx.stringValue("CreateVpcResponse.RouteTableId"));
+		createVpcResponse.setVpcId(_ctx.stringValue("CreateVpcResponse.VpcId"));
 	 
 	 	return createVpcResponse;
 	}

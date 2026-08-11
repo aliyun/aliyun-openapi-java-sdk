@@ -33,13 +33,13 @@ public class DescribePortRangeListsResponseUnmarshaller {
 		List<PortRangeList> portRangeLists = new ArrayList<PortRangeList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePortRangeListsResponse.PortRangeLists.Length"); i++) {
 			PortRangeList portRangeList = new PortRangeList();
+			portRangeList.setMaxEntries(_ctx.integerValue("DescribePortRangeListsResponse.PortRangeLists["+ i +"].MaxEntries"));
+			portRangeList.setDescription(_ctx.stringValue("DescribePortRangeListsResponse.PortRangeLists["+ i +"].Description"));
+			portRangeList.setAssociationCount(_ctx.integerValue("DescribePortRangeListsResponse.PortRangeLists["+ i +"].AssociationCount"));
+			portRangeList.setResourceGroupId(_ctx.stringValue("DescribePortRangeListsResponse.PortRangeLists["+ i +"].ResourceGroupId"));
+			portRangeList.setCreationTime(_ctx.stringValue("DescribePortRangeListsResponse.PortRangeLists["+ i +"].CreationTime"));
 			portRangeList.setPortRangeListId(_ctx.stringValue("DescribePortRangeListsResponse.PortRangeLists["+ i +"].PortRangeListId"));
 			portRangeList.setPortRangeListName(_ctx.stringValue("DescribePortRangeListsResponse.PortRangeLists["+ i +"].PortRangeListName"));
-			portRangeList.setMaxEntries(_ctx.integerValue("DescribePortRangeListsResponse.PortRangeLists["+ i +"].MaxEntries"));
-			portRangeList.setAssociationCount(_ctx.integerValue("DescribePortRangeListsResponse.PortRangeLists["+ i +"].AssociationCount"));
-			portRangeList.setDescription(_ctx.stringValue("DescribePortRangeListsResponse.PortRangeLists["+ i +"].Description"));
-			portRangeList.setCreationTime(_ctx.stringValue("DescribePortRangeListsResponse.PortRangeLists["+ i +"].CreationTime"));
-			portRangeList.setResourceGroupId(_ctx.stringValue("DescribePortRangeListsResponse.PortRangeLists["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePortRangeListsResponse.PortRangeLists["+ i +"].Tags.Length"); j++) {

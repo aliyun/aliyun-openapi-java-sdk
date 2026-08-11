@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateLaunchTemplateResponse extends AcsResponse {
 
-	private String launchTemplateId;
-
 	private String requestId;
 
 	private Long launchTemplateVersionNumber;
 
-	public String getLaunchTemplateId() {
-		return this.launchTemplateId;
-	}
-
-	public void setLaunchTemplateId(String launchTemplateId) {
-		this.launchTemplateId = launchTemplateId;
-	}
+	private String launchTemplateId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,6 +44,14 @@ public class CreateLaunchTemplateResponse extends AcsResponse {
 
 	public void setLaunchTemplateVersionNumber(Long launchTemplateVersionNumber) {
 		this.launchTemplateVersionNumber = launchTemplateVersionNumber;
+	}
+
+	public String getLaunchTemplateId() {
+		return this.launchTemplateId;
+	}
+
+	public void setLaunchTemplateId(String launchTemplateId) {
+		this.launchTemplateId = launchTemplateId;
 	}
 
 	@Override

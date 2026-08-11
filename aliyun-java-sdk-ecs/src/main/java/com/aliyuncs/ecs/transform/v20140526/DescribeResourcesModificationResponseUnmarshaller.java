@@ -35,9 +35,9 @@ public class DescribeResourcesModificationResponseUnmarshaller {
 		List<AvailableZone> availableZones = new ArrayList<AvailableZone>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeResourcesModificationResponse.AvailableZones.Length"); i++) {
 			AvailableZone availableZone = new AvailableZone();
-			availableZone.setZoneId(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].ZoneId"));
 			availableZone.setStatus(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].Status"));
 			availableZone.setStatusCategory(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].StatusCategory"));
+			availableZone.setZoneId(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].ZoneId"));
 			availableZone.setRegionId(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].RegionId"));
 
 			List<AvailableResource> availableResources = new ArrayList<AvailableResource>();
@@ -45,29 +45,15 @@ public class DescribeResourcesModificationResponseUnmarshaller {
 				AvailableResource availableResource = new AvailableResource();
 				availableResource.setType(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].Type"));
 
-				List<SupportedResource> supportedResources = new ArrayList<SupportedResource>();
-				for (int k = 0; k < _ctx.lengthValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources.Length"); k++) {
-					SupportedResource supportedResource = new SupportedResource();
-					supportedResource.setStatus(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Status"));
-					supportedResource.setValue(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Value"));
-					supportedResource.setMax(_ctx.integerValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Max"));
-					supportedResource.setUnit(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Unit"));
-					supportedResource.setStatusCategory(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].StatusCategory"));
-					supportedResource.setMin(_ctx.integerValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Min"));
-
-					supportedResources.add(supportedResource);
-				}
-				availableResource.setSupportedResources(supportedResources);
-
 				List<ConditionSupportedResource> conditionSupportedResources = new ArrayList<ConditionSupportedResource>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources.Length"); k++) {
 					ConditionSupportedResource conditionSupportedResource = new ConditionSupportedResource();
 					conditionSupportedResource.setStatus(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Status"));
-					conditionSupportedResource.setValue(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Value"));
-					conditionSupportedResource.setMax(_ctx.integerValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Max"));
-					conditionSupportedResource.setUnit(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Unit"));
 					conditionSupportedResource.setStatusCategory(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].StatusCategory"));
 					conditionSupportedResource.setMin(_ctx.integerValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Min"));
+					conditionSupportedResource.setMax(_ctx.integerValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Max"));
+					conditionSupportedResource.setValue(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Value"));
+					conditionSupportedResource.setUnit(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Unit"));
 
 					List<Condition> conditions = new ArrayList<Condition>();
 					for (int l = 0; l < _ctx.lengthValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Conditions.Length"); l++) {
@@ -81,6 +67,20 @@ public class DescribeResourcesModificationResponseUnmarshaller {
 					conditionSupportedResources.add(conditionSupportedResource);
 				}
 				availableResource.setConditionSupportedResources(conditionSupportedResources);
+
+				List<SupportedResource> supportedResources = new ArrayList<SupportedResource>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources.Length"); k++) {
+					SupportedResource supportedResource = new SupportedResource();
+					supportedResource.setStatus(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Status"));
+					supportedResource.setStatusCategory(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].StatusCategory"));
+					supportedResource.setMin(_ctx.integerValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Min"));
+					supportedResource.setMax(_ctx.integerValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Max"));
+					supportedResource.setValue(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Value"));
+					supportedResource.setUnit(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Unit"));
+
+					supportedResources.add(supportedResource);
+				}
+				availableResource.setSupportedResources(supportedResources);
 
 				availableResources.add(availableResource);
 			}

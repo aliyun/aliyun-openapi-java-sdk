@@ -151,8 +151,8 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 		this.performanceControlOptions = performanceControlOptions;	
 		if (performanceControlOptions != null) {
 			
-				putQueryParameter("PerformanceControlOptions.IOPS" , performanceControlOptions.getIOPS());
 				putQueryParameter("PerformanceControlOptions.Throughput" , performanceControlOptions.getThroughput());
+				putQueryParameter("PerformanceControlOptions.IOPS" , performanceControlOptions.getIOPS());
 				putQueryParameter("PerformanceControlOptions.Recover" , performanceControlOptions.getRecover());
 		}	
 	}
@@ -181,19 +181,11 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 
 	public static class PerformanceControlOptions {
 
-		private Integer iOPS;
-
 		private Integer throughput;
 
+		private Integer iOPS;
+
 		private String recover;
-
-		public Integer getIOPS() {
-			return this.iOPS;
-		}
-
-		public void setIOPS(Integer iOPS) {
-			this.iOPS = iOPS;
-		}
 
 		public Integer getThroughput() {
 			return this.throughput;
@@ -201,6 +193,14 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 
 		public void setThroughput(Integer throughput) {
 			this.throughput = throughput;
+		}
+
+		public Integer getIOPS() {
+			return this.iOPS;
+		}
+
+		public void setIOPS(Integer iOPS) {
+			this.iOPS = iOPS;
 		}
 
 		public String getRecover() {

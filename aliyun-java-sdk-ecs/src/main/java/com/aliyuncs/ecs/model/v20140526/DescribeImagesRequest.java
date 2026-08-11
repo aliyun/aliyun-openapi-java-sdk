@@ -56,6 +56,8 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private Integer pageNumber;
 
+	private Boolean usable;
+
 	private Boolean isSupportIoOptimized;
 
 	private String imageName;
@@ -251,6 +253,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Boolean getUsable() {
+		return this.usable;
+	}
+
+	public void setUsable(Boolean usable) {
+		this.usable = usable;
+		if(usable != null){
+			putQueryParameter("Usable", usable.toString());
 		}
 	}
 

@@ -33,9 +33,9 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 
 	private AgentUpgradeConfig agentUpgradeConfig;
 
-	private ResourceUsageConfig resourceUsageConfig;
-
 	private SessionManagerConfig sessionManagerConfig;
+
+	private ResourceUsageConfig resourceUsageConfig;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -69,14 +69,6 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 		this.agentUpgradeConfig = agentUpgradeConfig;
 	}
 
-	public ResourceUsageConfig getResourceUsageConfig() {
-		return this.resourceUsageConfig;
-	}
-
-	public void setResourceUsageConfig(ResourceUsageConfig resourceUsageConfig) {
-		this.resourceUsageConfig = resourceUsageConfig;
-	}
-
 	public SessionManagerConfig getSessionManagerConfig() {
 		return this.sessionManagerConfig;
 	}
@@ -85,19 +77,27 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 		this.sessionManagerConfig = sessionManagerConfig;
 	}
 
+	public ResourceUsageConfig getResourceUsageConfig() {
+		return this.resourceUsageConfig;
+	}
+
+	public void setResourceUsageConfig(ResourceUsageConfig resourceUsageConfig) {
+		this.resourceUsageConfig = resourceUsageConfig;
+	}
+
 	public static class OssDeliveryConfig {
 
 		private String encryptionType;
 
-		private String encryptionAlgorithm;
+		private String bucketName;
 
-		private String deliveryType;
+		private String encryptionAlgorithm;
 
 		private Boolean enabled;
 
-		private String bucketName;
-
 		private String prefix;
+
+		private String deliveryType;
 
 		private String encryptionKeyId;
 
@@ -109,20 +109,20 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 			this.encryptionType = encryptionType;
 		}
 
+		public String getBucketName() {
+			return this.bucketName;
+		}
+
+		public void setBucketName(String bucketName) {
+			this.bucketName = bucketName;
+		}
+
 		public String getEncryptionAlgorithm() {
 			return this.encryptionAlgorithm;
 		}
 
 		public void setEncryptionAlgorithm(String encryptionAlgorithm) {
 			this.encryptionAlgorithm = encryptionAlgorithm;
-		}
-
-		public String getDeliveryType() {
-			return this.deliveryType;
-		}
-
-		public void setDeliveryType(String deliveryType) {
-			this.deliveryType = deliveryType;
 		}
 
 		public Boolean getEnabled() {
@@ -133,20 +133,20 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 			this.enabled = enabled;
 		}
 
-		public String getBucketName() {
-			return this.bucketName;
-		}
-
-		public void setBucketName(String bucketName) {
-			this.bucketName = bucketName;
-		}
-
 		public String getPrefix() {
 			return this.prefix;
 		}
 
 		public void setPrefix(String prefix) {
 			this.prefix = prefix;
+		}
+
+		public String getDeliveryType() {
+			return this.deliveryType;
+		}
+
+		public void setDeliveryType(String deliveryType) {
+			this.deliveryType = deliveryType;
 		}
 
 		public String getEncryptionKeyId() {
@@ -160,21 +160,13 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 
 	public static class SlsDeliveryConfig {
 
-		private String deliveryType;
-
 		private String logstoreName;
-
-		private Boolean enabled;
 
 		private String projectName;
 
-		public String getDeliveryType() {
-			return this.deliveryType;
-		}
+		private Boolean enabled;
 
-		public void setDeliveryType(String deliveryType) {
-			this.deliveryType = deliveryType;
-		}
+		private String deliveryType;
 
 		public String getLogstoreName() {
 			return this.logstoreName;
@@ -184,14 +176,6 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 			this.logstoreName = logstoreName;
 		}
 
-		public Boolean getEnabled() {
-			return this.enabled;
-		}
-
-		public void setEnabled(Boolean enabled) {
-			this.enabled = enabled;
-		}
-
 		public String getProjectName() {
 			return this.projectName;
 		}
@@ -199,19 +183,6 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 		public void setProjectName(String projectName) {
 			this.projectName = projectName;
 		}
-	}
-
-	public static class AgentUpgradeConfig {
-
-		private Boolean enabled;
-
-		private String timeZone;
-
-		private Boolean bootstrapUpgrade;
-
-		private Boolean disableUpgrade;
-
-		private List<String> allowedUpgradeWindows;
 
 		public Boolean getEnabled() {
 			return this.enabled;
@@ -220,6 +191,27 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 		public void setEnabled(Boolean enabled) {
 			this.enabled = enabled;
 		}
+
+		public String getDeliveryType() {
+			return this.deliveryType;
+		}
+
+		public void setDeliveryType(String deliveryType) {
+			this.deliveryType = deliveryType;
+		}
+	}
+
+	public static class AgentUpgradeConfig {
+
+		private String timeZone;
+
+		private Boolean bootstrapUpgrade;
+
+		private Boolean disableUpgrade;
+
+		private Boolean enabled;
+
+		private List<String> allowedUpgradeWindows;
 
 		public String getTimeZone() {
 			return this.timeZone;
@@ -245,75 +237,20 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 			this.disableUpgrade = disableUpgrade;
 		}
 
+		public Boolean getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
+		}
+
 		public List<String> getAllowedUpgradeWindows() {
 			return this.allowedUpgradeWindows;
 		}
 
 		public void setAllowedUpgradeWindows(List<String> allowedUpgradeWindows) {
 			this.allowedUpgradeWindows = allowedUpgradeWindows;
-		}
-	}
-
-	public static class ResourceUsageConfig {
-
-		private Integer cpuLimit;
-
-		private String memoryLimit;
-
-		private Integer overloadLimit;
-
-		private Integer logFileCountLimit;
-
-		private String logSizeLimit;
-
-		private Boolean keepScriptFile;
-
-		public Integer getCpuLimit() {
-			return this.cpuLimit;
-		}
-
-		public void setCpuLimit(Integer cpuLimit) {
-			this.cpuLimit = cpuLimit;
-		}
-
-		public String getMemoryLimit() {
-			return this.memoryLimit;
-		}
-
-		public void setMemoryLimit(String memoryLimit) {
-			this.memoryLimit = memoryLimit;
-		}
-
-		public Integer getOverloadLimit() {
-			return this.overloadLimit;
-		}
-
-		public void setOverloadLimit(Integer overloadLimit) {
-			this.overloadLimit = overloadLimit;
-		}
-
-		public Integer getLogFileCountLimit() {
-			return this.logFileCountLimit;
-		}
-
-		public void setLogFileCountLimit(Integer logFileCountLimit) {
-			this.logFileCountLimit = logFileCountLimit;
-		}
-
-		public String getLogSizeLimit() {
-			return this.logSizeLimit;
-		}
-
-		public void setLogSizeLimit(String logSizeLimit) {
-			this.logSizeLimit = logSizeLimit;
-		}
-
-		public Boolean getKeepScriptFile() {
-			return this.keepScriptFile;
-		}
-
-		public void setKeepScriptFile(Boolean keepScriptFile) {
-			this.keepScriptFile = keepScriptFile;
 		}
 	}
 
@@ -327,6 +264,69 @@ public class DescribeCloudAssistantSettingsResponse extends AcsResponse {
 
 		public void setSessionManagerEnabled(Boolean sessionManagerEnabled) {
 			this.sessionManagerEnabled = sessionManagerEnabled;
+		}
+	}
+
+	public static class ResourceUsageConfig {
+
+		private String memoryLimit;
+
+		private Boolean keepScriptFile;
+
+		private Integer cpuLimit;
+
+		private Integer overloadLimit;
+
+		private String logSizeLimit;
+
+		private Integer logFileCountLimit;
+
+		public String getMemoryLimit() {
+			return this.memoryLimit;
+		}
+
+		public void setMemoryLimit(String memoryLimit) {
+			this.memoryLimit = memoryLimit;
+		}
+
+		public Boolean getKeepScriptFile() {
+			return this.keepScriptFile;
+		}
+
+		public void setKeepScriptFile(Boolean keepScriptFile) {
+			this.keepScriptFile = keepScriptFile;
+		}
+
+		public Integer getCpuLimit() {
+			return this.cpuLimit;
+		}
+
+		public void setCpuLimit(Integer cpuLimit) {
+			this.cpuLimit = cpuLimit;
+		}
+
+		public Integer getOverloadLimit() {
+			return this.overloadLimit;
+		}
+
+		public void setOverloadLimit(Integer overloadLimit) {
+			this.overloadLimit = overloadLimit;
+		}
+
+		public String getLogSizeLimit() {
+			return this.logSizeLimit;
+		}
+
+		public void setLogSizeLimit(String logSizeLimit) {
+			this.logSizeLimit = logSizeLimit;
+		}
+
+		public Integer getLogFileCountLimit() {
+			return this.logFileCountLimit;
+		}
+
+		public void setLogFileCountLimit(Integer logFileCountLimit) {
+			this.logFileCountLimit = logFileCountLimit;
 		}
 	}
 

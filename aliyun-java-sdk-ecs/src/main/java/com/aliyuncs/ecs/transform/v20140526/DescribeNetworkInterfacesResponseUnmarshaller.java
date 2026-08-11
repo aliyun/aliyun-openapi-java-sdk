@@ -35,35 +35,35 @@ public class DescribeNetworkInterfacesResponseUnmarshaller {
 	public static DescribeNetworkInterfacesResponse unmarshall(DescribeNetworkInterfacesResponse describeNetworkInterfacesResponse, UnmarshallerContext _ctx) {
 		
 		describeNetworkInterfacesResponse.setRequestId(_ctx.stringValue("DescribeNetworkInterfacesResponse.RequestId"));
+		describeNetworkInterfacesResponse.setTotalCount(_ctx.integerValue("DescribeNetworkInterfacesResponse.TotalCount"));
 		describeNetworkInterfacesResponse.setNextToken(_ctx.stringValue("DescribeNetworkInterfacesResponse.NextToken"));
 		describeNetworkInterfacesResponse.setPageSize(_ctx.integerValue("DescribeNetworkInterfacesResponse.PageSize"));
 		describeNetworkInterfacesResponse.setPageNumber(_ctx.integerValue("DescribeNetworkInterfacesResponse.PageNumber"));
-		describeNetworkInterfacesResponse.setTotalCount(_ctx.integerValue("DescribeNetworkInterfacesResponse.TotalCount"));
 
 		List<NetworkInterfaceSet> networkInterfaceSets = new ArrayList<NetworkInterfaceSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets.Length"); i++) {
 			NetworkInterfaceSet networkInterfaceSet = new NetworkInterfaceSet();
-			networkInterfaceSet.setCreationTime(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].CreationTime"));
-			networkInterfaceSet.setVpcId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].VpcId"));
-			networkInterfaceSet.setType(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Type"));
+			networkInterfaceSet.setDescription(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Description"));
+			networkInterfaceSet.setPrivateIpAddress(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpAddress"));
+			networkInterfaceSet.setServiceManaged(_ctx.booleanValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].ServiceManaged"));
+			networkInterfaceSet.setResourceGroupId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].ResourceGroupId"));
+			networkInterfaceSet.setDeleteOnRelease(_ctx.booleanValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].DeleteOnRelease"));
+			networkInterfaceSet.setNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].NetworkInterfaceId"));
+			networkInterfaceSet.setOwnerId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].OwnerId"));
 			networkInterfaceSet.setStatus(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Status"));
 			networkInterfaceSet.setNetworkInterfaceTrafficMode(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].NetworkInterfaceTrafficMode"));
+			networkInterfaceSet.setZoneId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].ZoneId"));
+			networkInterfaceSet.setInstanceId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].InstanceId"));
+			networkInterfaceSet.setVSwitchId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].VSwitchId"));
 			networkInterfaceSet.setNetworkInterfaceName(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].NetworkInterfaceName"));
 			networkInterfaceSet.setMacAddress(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].MacAddress"));
-			networkInterfaceSet.setQueuePairNumber(_ctx.integerValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].QueuePairNumber"));
-			networkInterfaceSet.setNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].NetworkInterfaceId"));
 			networkInterfaceSet.setServiceID(_ctx.longValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].ServiceID"));
-			networkInterfaceSet.setInstanceId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].InstanceId"));
-			networkInterfaceSet.setOwnerId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].OwnerId"));
-			networkInterfaceSet.setServiceManaged(_ctx.booleanValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].ServiceManaged"));
-			networkInterfaceSet.setVSwitchId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].VSwitchId"));
-			networkInterfaceSet.setDescription(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Description"));
-			networkInterfaceSet.setResourceGroupId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].ResourceGroupId"));
-			networkInterfaceSet.setZoneId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].ZoneId"));
-			networkInterfaceSet.setPrivateIpAddress(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpAddress"));
-			networkInterfaceSet.setQueueNumber(_ctx.integerValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].QueueNumber"));
-			networkInterfaceSet.setDeleteOnRelease(_ctx.booleanValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].DeleteOnRelease"));
 			networkInterfaceSet.setSourceDestCheck(_ctx.booleanValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].SourceDestCheck"));
+			networkInterfaceSet.setType(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Type"));
+			networkInterfaceSet.setQueuePairNumber(_ctx.integerValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].QueuePairNumber"));
+			networkInterfaceSet.setQueueNumber(_ctx.integerValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].QueueNumber"));
+			networkInterfaceSet.setVpcId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].VpcId"));
+			networkInterfaceSet.setCreationTime(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].CreationTime"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].SecurityGroupIds.Length"); j++) {
@@ -71,51 +71,37 @@ public class DescribeNetworkInterfacesResponseUnmarshaller {
 			}
 			networkInterfaceSet.setSecurityGroupIds(securityGroupIds);
 
+			Attachment attachment = new Attachment();
+			attachment.setInstanceId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Attachment.InstanceId"));
+			attachment.setDeviceIndex(_ctx.integerValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Attachment.DeviceIndex"));
+			attachment.setNetworkCardIndex(_ctx.integerValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Attachment.NetworkCardIndex"));
+			attachment.setTrunkNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Attachment.TrunkNetworkInterfaceId"));
+			networkInterfaceSet.setAttachment(attachment);
+
 			AssociatedPublicIp associatedPublicIp = new AssociatedPublicIp();
 			associatedPublicIp.setPublicIpAddress(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].AssociatedPublicIp.PublicIpAddress"));
 			associatedPublicIp.setAllocationId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].AssociatedPublicIp.AllocationId"));
 			networkInterfaceSet.setAssociatedPublicIp(associatedPublicIp);
 
-			Attachment attachment = new Attachment();
-			attachment.setDeviceIndex(_ctx.integerValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Attachment.DeviceIndex"));
-			attachment.setInstanceId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Attachment.InstanceId"));
-			attachment.setTrunkNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Attachment.TrunkNetworkInterfaceId"));
-			attachment.setNetworkCardIndex(_ctx.integerValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Attachment.NetworkCardIndex"));
-			networkInterfaceSet.setAttachment(attachment);
-
-			List<PrivateIpSet> privateIpSets = new ArrayList<PrivateIpSet>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets.Length"); j++) {
-				PrivateIpSet privateIpSet = new PrivateIpSet();
-				privateIpSet.setPrivateIpAddress(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].PrivateIpAddress"));
-				privateIpSet.setPrimary(_ctx.booleanValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].Primary"));
-				privateIpSet.setPrivateDnsName(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].PrivateDnsName"));
-
-				AssociatedPublicIp1 associatedPublicIp1 = new AssociatedPublicIp1();
-				associatedPublicIp1.setPublicIpAddress(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].AssociatedPublicIp.PublicIpAddress"));
-				associatedPublicIp1.setAllocationId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].AssociatedPublicIp.AllocationId"));
-				privateIpSet.setAssociatedPublicIp1(associatedPublicIp1);
-
-				privateIpSets.add(privateIpSet);
-			}
-			networkInterfaceSet.setPrivateIpSets(privateIpSets);
-
 			List<Ipv6Set> ipv6Sets = new ArrayList<Ipv6Set>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Ipv6Sets.Length"); j++) {
 				Ipv6Set ipv6Set = new Ipv6Set();
+				ipv6Set.setPrimary(_ctx.booleanValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Ipv6Sets["+ j +"].Primary"));
 				ipv6Set.setIpv6Address(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Ipv6Sets["+ j +"].Ipv6Address"));
 
 				ipv6Sets.add(ipv6Set);
 			}
 			networkInterfaceSet.setIpv6Sets(ipv6Sets);
 
-			List<Ipv4PrefixSet> ipv4PrefixSets = new ArrayList<Ipv4PrefixSet>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Ipv4PrefixSets.Length"); j++) {
-				Ipv4PrefixSet ipv4PrefixSet = new Ipv4PrefixSet();
-				ipv4PrefixSet.setIpv4Prefix(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Ipv4PrefixSets["+ j +"].Ipv4Prefix"));
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Tags["+ j +"].TagValue"));
 
-				ipv4PrefixSets.add(ipv4PrefixSet);
+				tags.add(tag);
 			}
-			networkInterfaceSet.setIpv4PrefixSets(ipv4PrefixSets);
+			networkInterfaceSet.setTags(tags);
 
 			List<Ipv6PrefixSet> ipv6PrefixSets = new ArrayList<Ipv6PrefixSet>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Ipv6PrefixSets.Length"); j++) {
@@ -126,15 +112,30 @@ public class DescribeNetworkInterfacesResponseUnmarshaller {
 			}
 			networkInterfaceSet.setIpv6PrefixSets(ipv6PrefixSets);
 
-			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Tags.Length"); j++) {
-				Tag tag = new Tag();
-				tag.setTagValue(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Tags["+ j +"].TagValue"));
-				tag.setTagKey(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Tags["+ j +"].TagKey"));
+			List<Ipv4PrefixSet> ipv4PrefixSets = new ArrayList<Ipv4PrefixSet>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Ipv4PrefixSets.Length"); j++) {
+				Ipv4PrefixSet ipv4PrefixSet = new Ipv4PrefixSet();
+				ipv4PrefixSet.setIpv4Prefix(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Ipv4PrefixSets["+ j +"].Ipv4Prefix"));
 
-				tags.add(tag);
+				ipv4PrefixSets.add(ipv4PrefixSet);
 			}
-			networkInterfaceSet.setTags(tags);
+			networkInterfaceSet.setIpv4PrefixSets(ipv4PrefixSets);
+
+			List<PrivateIpSet> privateIpSets = new ArrayList<PrivateIpSet>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets.Length"); j++) {
+				PrivateIpSet privateIpSet = new PrivateIpSet();
+				privateIpSet.setPrivateIpAddress(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].PrivateIpAddress"));
+				privateIpSet.setPrivateDnsName(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].PrivateDnsName"));
+				privateIpSet.setPrimary(_ctx.booleanValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].Primary"));
+
+				AssociatedPublicIp1 associatedPublicIp1 = new AssociatedPublicIp1();
+				associatedPublicIp1.setPublicIpAddress(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].AssociatedPublicIp.PublicIpAddress"));
+				associatedPublicIp1.setAllocationId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].AssociatedPublicIp.AllocationId"));
+				privateIpSet.setAssociatedPublicIp1(associatedPublicIp1);
+
+				privateIpSets.add(privateIpSet);
+			}
+			networkInterfaceSet.setPrivateIpSets(privateIpSets);
 
 			networkInterfaceSets.add(networkInterfaceSet);
 		}

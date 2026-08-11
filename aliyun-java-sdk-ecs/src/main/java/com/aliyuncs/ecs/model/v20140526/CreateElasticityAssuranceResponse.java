@@ -26,9 +26,9 @@ public class CreateElasticityAssuranceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String privatePoolOptionsId;
-
 	private String orderId;
+
+	private String privatePoolOptionsId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class CreateElasticityAssuranceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getPrivatePoolOptionsId() {
-		return this.privatePoolOptionsId;
-	}
-
-	public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
-		this.privatePoolOptionsId = privatePoolOptionsId;
-	}
-
 	public String getOrderId() {
 		return this.orderId;
 	}
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
+	}
+
+	public String getPrivatePoolOptionsId() {
+		return this.privatePoolOptionsId;
+	}
+
+	public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+		this.privatePoolOptionsId = privatePoolOptionsId;
 	}
 
 	@Override

@@ -27,14 +27,14 @@ public class LockSnapshotResponseUnmarshaller {
 
 		LockedSnapshotInfo lockedSnapshotInfo = new LockedSnapshotInfo();
 		lockedSnapshotInfo.setSnapshotId(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.SnapshotId"));
-		lockedSnapshotInfo.setLockMode(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.LockMode"));
-		lockedSnapshotInfo.setLockStatus(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.LockStatus"));
-		lockedSnapshotInfo.setLockCreationTime(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.LockCreationTime"));
-		lockedSnapshotInfo.setCoolOffPeriod(_ctx.integerValue("LockSnapshotResponse.LockedSnapshotInfo.CoolOffPeriod"));
 		lockedSnapshotInfo.setCoolOffPeriodExpiredTime(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.CoolOffPeriodExpiredTime"));
-		lockedSnapshotInfo.setLockDuration(_ctx.integerValue("LockSnapshotResponse.LockedSnapshotInfo.LockDuration"));
 		lockedSnapshotInfo.setLockDurationStartTime(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.LockDurationStartTime"));
+		lockedSnapshotInfo.setLockStatus(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.LockStatus"));
+		lockedSnapshotInfo.setCoolOffPeriod(_ctx.integerValue("LockSnapshotResponse.LockedSnapshotInfo.CoolOffPeriod"));
 		lockedSnapshotInfo.setLockExpiredTime(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.LockExpiredTime"));
+		lockedSnapshotInfo.setLockDuration(_ctx.integerValue("LockSnapshotResponse.LockedSnapshotInfo.LockDuration"));
+		lockedSnapshotInfo.setLockCreationTime(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.LockCreationTime"));
+		lockedSnapshotInfo.setLockMode(_ctx.stringValue("LockSnapshotResponse.LockedSnapshotInfo.LockMode"));
 		lockSnapshotResponse.setLockedSnapshotInfo(lockedSnapshotInfo);
 	 
 	 	return lockSnapshotResponse;

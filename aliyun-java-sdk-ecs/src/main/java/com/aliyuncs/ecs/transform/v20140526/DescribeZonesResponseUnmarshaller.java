@@ -36,12 +36,6 @@ public class DescribeZonesResponseUnmarshaller {
 			zone.setZoneType(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneType"));
 			zone.setLocalName(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].LocalName"));
 
-			List<String> availableResourceCreation = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResourceCreation.Length"); j++) {
-				availableResourceCreation.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResourceCreation["+ j +"]"));
-			}
-			zone.setAvailableResourceCreation(availableResourceCreation);
-
 			List<String> dedicatedHostGenerations = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].DedicatedHostGenerations.Length"); j++) {
 				dedicatedHostGenerations.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].DedicatedHostGenerations["+ j +"]"));
@@ -54,17 +48,23 @@ public class DescribeZonesResponseUnmarshaller {
 			}
 			zone.setAvailableInstanceTypes(availableInstanceTypes);
 
+			List<String> availableDedicatedHostTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableDedicatedHostTypes.Length"); j++) {
+				availableDedicatedHostTypes.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableDedicatedHostTypes["+ j +"]"));
+			}
+			zone.setAvailableDedicatedHostTypes(availableDedicatedHostTypes);
+
 			List<String> availableDiskCategories = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableDiskCategories.Length"); j++) {
 				availableDiskCategories.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableDiskCategories["+ j +"]"));
 			}
 			zone.setAvailableDiskCategories(availableDiskCategories);
 
-			List<String> availableDedicatedHostTypes = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableDedicatedHostTypes.Length"); j++) {
-				availableDedicatedHostTypes.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableDedicatedHostTypes["+ j +"]"));
+			List<String> availableResourceCreation = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResourceCreation.Length"); j++) {
+				availableResourceCreation.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResourceCreation["+ j +"]"));
 			}
-			zone.setAvailableDedicatedHostTypes(availableDedicatedHostTypes);
+			zone.setAvailableResourceCreation(availableResourceCreation);
 
 			List<String> availableVolumeCategories = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableVolumeCategories.Length"); j++) {
@@ -77,23 +77,23 @@ public class DescribeZonesResponseUnmarshaller {
 				ResourcesInfo resourcesInfo = new ResourcesInfo();
 				resourcesInfo.setIoOptimized(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].IoOptimized"));
 
-				List<String> systemDiskCategories = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].SystemDiskCategories.Length"); k++) {
-					systemDiskCategories.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].SystemDiskCategories["+ k +"]"));
-				}
-				resourcesInfo.setSystemDiskCategories(systemDiskCategories);
-
 				List<String> instanceGenerations = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].InstanceGenerations.Length"); k++) {
 					instanceGenerations.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].InstanceGenerations["+ k +"]"));
 				}
 				resourcesInfo.setInstanceGenerations(instanceGenerations);
 
-				List<String> dataDiskCategories = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].DataDiskCategories.Length"); k++) {
-					dataDiskCategories.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].DataDiskCategories["+ k +"]"));
+				List<String> networkTypes = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].NetworkTypes.Length"); k++) {
+					networkTypes.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].NetworkTypes["+ k +"]"));
 				}
-				resourcesInfo.setDataDiskCategories(dataDiskCategories);
+				resourcesInfo.setNetworkTypes(networkTypes);
+
+				List<String> systemDiskCategories = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].SystemDiskCategories.Length"); k++) {
+					systemDiskCategories.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].SystemDiskCategories["+ k +"]"));
+				}
+				resourcesInfo.setSystemDiskCategories(systemDiskCategories);
 
 				List<String> instanceTypes = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].InstanceTypes.Length"); k++) {
@@ -107,11 +107,11 @@ public class DescribeZonesResponseUnmarshaller {
 				}
 				resourcesInfo.setInstanceTypeFamilies(instanceTypeFamilies);
 
-				List<String> networkTypes = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].NetworkTypes.Length"); k++) {
-					networkTypes.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].NetworkTypes["+ k +"]"));
+				List<String> dataDiskCategories = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].DataDiskCategories.Length"); k++) {
+					dataDiskCategories.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].AvailableResources["+ j +"].DataDiskCategories["+ k +"]"));
 				}
-				resourcesInfo.setNetworkTypes(networkTypes);
+				resourcesInfo.setDataDiskCategories(dataDiskCategories);
 
 				availableResources.add(resourcesInfo);
 			}

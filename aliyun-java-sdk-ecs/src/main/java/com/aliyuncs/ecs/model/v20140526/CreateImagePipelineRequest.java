@@ -52,6 +52,8 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 	private String name;
 
+	private List<String> repairItems;
+
 	private ImportImageOptions importImageOptions;
 
 	private String testContent;
@@ -130,18 +132,18 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 		if (imageOptions != null) {
 			
 				putQueryParameter("ImageOptions.ImageName" , imageOptions.getImageName());
-				putQueryParameter("ImageOptions.ImageFamily" , imageOptions.getImageFamily());
 				putQueryParameter("ImageOptions.Description" , imageOptions.getDescription());
 				if (imageOptions.getImageFeatures() != null) {
 					
 						putQueryParameter("ImageOptions.ImageFeatures.NvmeSupport" , imageOptions.getImageFeatures().getNvmeSupport());
 				}
+				putQueryParameter("ImageOptions.ImageFamily" , imageOptions.getImageFamily());
 				if (imageOptions.getImageTags() != null) {
 					for (int depth1 = 0; depth1 < imageOptions.getImageTags().size(); depth1++) {
 						if (imageOptions.getImageTags().get(depth1) != null) {
 							
-								putQueryParameter("ImageOptions.ImageTags." + (depth1 + 1) + ".Key" , imageOptions.getImageTags().get(depth1).getKey());
 								putQueryParameter("ImageOptions.ImageTags." + (depth1 + 1) + ".Value" , imageOptions.getImageTags().get(depth1).getValue());
+								putQueryParameter("ImageOptions.ImageTags." + (depth1 + 1) + ".Key" , imageOptions.getImageTags().get(depth1).getKey());
 						}
 					}
 				}
@@ -167,8 +169,8 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -182,9 +184,9 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 		if (advancedOptions != null) {
 			
 				putQueryParameter("AdvancedOptions.RetainCloudAssistant" , advancedOptions.getRetainCloudAssistant());
-				putQueryParameter("AdvancedOptions.SkipBuildImage" , advancedOptions.getSkipBuildImage());
-				putQueryParameter("AdvancedOptions.SkipCheckImage" , advancedOptions.getSkipCheckImage());
 				putQueryParameter("AdvancedOptions.ImageNameSuffix" , advancedOptions.getImageNameSuffix());
+				putQueryParameter("AdvancedOptions.SkipCheckImage" , advancedOptions.getSkipCheckImage());
+				putQueryParameter("AdvancedOptions.SkipBuildImage" , advancedOptions.getSkipBuildImage());
 		}	
 	}
 
@@ -256,6 +258,19 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 		}
 	}
 
+	public List<String> getRepairItems() {
+		return this.repairItems;
+	}
+
+	public void setRepairItems(List<String> repairItems) {
+		this.repairItems = repairItems;	
+		if (repairItems != null) {
+			for (int i = 0; i < repairItems.size(); i++) {
+				putQueryParameter("RepairItem." + (i + 1) , repairItems.get(i));
+			}
+		}	
+	}
+
 	public ImportImageOptions getImportImageOptions() {
 		return this.importImageOptions;
 	}
@@ -264,43 +279,43 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 		this.importImageOptions = importImageOptions;	
 		if (importImageOptions != null) {
 			
+				if (importImageOptions.getDockerOptions() != null) {
+					
+						putQueryParameter("ImportImageOptions.DockerOptions.ImageSize" , importImageOptions.getDockerOptions().getImageSize());
+						putQueryParameter("ImportImageOptions.DockerOptions.Image" , importImageOptions.getDockerOptions().getImage());
+				}
+				putQueryParameter("ImportImageOptions.Description" , importImageOptions.getDescription());
 				putQueryParameter("ImportImageOptions.Architecture" , importImageOptions.getArchitecture());
-				putQueryParameter("ImportImageOptions.OSType" , importImageOptions.getOSType());
 				putQueryParameter("ImportImageOptions.Platform" , importImageOptions.getPlatform());
 				putQueryParameter("ImportImageOptions.BootMode" , importImageOptions.getBootMode());
 				putQueryParameter("ImportImageOptions.LicenseType" , importImageOptions.getLicenseType());
+				putQueryParameter("ImportImageOptions.ImageName" , importImageOptions.getImageName());
 				if (importImageOptions.getDiskDeviceMappings() != null) {
 					for (int depth1 = 0; depth1 < importImageOptions.getDiskDeviceMappings().size(); depth1++) {
 						if (importImageOptions.getDiskDeviceMappings().get(depth1) != null) {
 							
-								putQueryParameter("ImportImageOptions.DiskDeviceMappings." + (depth1 + 1) + ".OSSBucket" , importImageOptions.getDiskDeviceMappings().get(depth1).getOSSBucket());
-								putQueryParameter("ImportImageOptions.DiskDeviceMappings." + (depth1 + 1) + ".OSSObject" , importImageOptions.getDiskDeviceMappings().get(depth1).getOSSObject());
 								putQueryParameter("ImportImageOptions.DiskDeviceMappings." + (depth1 + 1) + ".Format" , importImageOptions.getDiskDeviceMappings().get(depth1).getFormat());
+								putQueryParameter("ImportImageOptions.DiskDeviceMappings." + (depth1 + 1) + ".OSSObject" , importImageOptions.getDiskDeviceMappings().get(depth1).getOSSObject());
 								putQueryParameter("ImportImageOptions.DiskDeviceMappings." + (depth1 + 1) + ".DiskImageSize" , importImageOptions.getDiskDeviceMappings().get(depth1).getDiskImageSize());
+								putQueryParameter("ImportImageOptions.DiskDeviceMappings." + (depth1 + 1) + ".OSSBucket" , importImageOptions.getDiskDeviceMappings().get(depth1).getOSSBucket());
 						}
 					}
 				}
+				putQueryParameter("ImportImageOptions.RoleName" , importImageOptions.getRoleName());
+				putQueryParameter("ImportImageOptions.RetentionStrategy" , importImageOptions.getRetentionStrategy());
+				putQueryParameter("ImportImageOptions.OSType" , importImageOptions.getOSType());
+				putQueryParameter("ImportImageOptions.RetainImportedImage" , importImageOptions.getRetainImportedImage());
 				if (importImageOptions.getFeatures() != null) {
 					
 						putQueryParameter("ImportImageOptions.Features.NvmeSupport" , importImageOptions.getFeatures().getNvmeSupport());
 						putQueryParameter("ImportImageOptions.Features.ImdsSupport" , importImageOptions.getFeatures().getImdsSupport());
 				}
-				putQueryParameter("ImportImageOptions.RetainImportedImage" , importImageOptions.getRetainImportedImage());
-				putQueryParameter("ImportImageOptions.RetentionStrategy" , importImageOptions.getRetentionStrategy());
-				putQueryParameter("ImportImageOptions.ImageName" , importImageOptions.getImageName());
-				putQueryParameter("ImportImageOptions.Description" , importImageOptions.getDescription());
-				putQueryParameter("ImportImageOptions.RoleName" , importImageOptions.getRoleName());
-				if (importImageOptions.getDockerOptions() != null) {
-					
-						putQueryParameter("ImportImageOptions.DockerOptions.Image" , importImageOptions.getDockerOptions().getImage());
-						putQueryParameter("ImportImageOptions.DockerOptions.ImageSize" , importImageOptions.getDockerOptions().getImageSize());
-				}
 				if (importImageOptions.getImportImageTags() != null) {
 					for (int depth1 = 0; depth1 < importImageOptions.getImportImageTags().size(); depth1++) {
 						if (importImageOptions.getImportImageTags().get(depth1) != null) {
 							
-								putQueryParameter("ImportImageOptions.ImportImageTags." + (depth1 + 1) + ".Key" , importImageOptions.getImportImageTags().get(depth1).getKey());
 								putQueryParameter("ImportImageOptions.ImportImageTags." + (depth1 + 1) + ".Value" , importImageOptions.getImportImageTags().get(depth1).getValue());
+								putQueryParameter("ImportImageOptions.ImportImageTags." + (depth1 + 1) + ".Key" , importImageOptions.getImportImageTags().get(depth1).getKey());
 						}
 					}
 				}
@@ -456,11 +471,11 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 		private String imageName;
 
-		private String imageFamily;
-
 		private String description;
 
 		private ImageFeatures imageFeatures;
+
+		private String imageFamily;
 
 		private List<ImageTagsItem> imageTags;
 
@@ -470,14 +485,6 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 		public void setImageName(String imageName) {
 			this.imageName = imageName;
-		}
-
-		public String getImageFamily() {
-			return this.imageFamily;
-		}
-
-		public void setImageFamily(String imageFamily) {
-			this.imageFamily = imageFamily;
 		}
 
 		public String getDescription() {
@@ -494,6 +501,14 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 		public void setImageFeatures(ImageFeatures imageFeatures) {
 			this.imageFeatures = imageFeatures;
+		}
+
+		public String getImageFamily() {
+			return this.imageFamily;
+		}
+
+		public void setImageFamily(String imageFamily) {
+			this.imageFamily = imageFamily;
 		}
 
 		public List<ImageTagsItem> getImageTags() {
@@ -519,17 +534,9 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 		public static class ImageTagsItem {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -538,22 +545,22 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 			public void setValue(String value) {
 				this.value = value;
 			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
 		}
 	}
 
 	public static class Tag {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -562,17 +569,25 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 		public void setValue(String value) {
 			this.value = value;
 		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	public static class AdvancedOptions {
 
 		private Boolean retainCloudAssistant;
 
-		private Boolean skipBuildImage;
+		private String imageNameSuffix;
 
 		private Boolean skipCheckImage;
 
-		private String imageNameSuffix;
+		private Boolean skipBuildImage;
 
 		public Boolean getRetainCloudAssistant() {
 			return this.retainCloudAssistant;
@@ -582,12 +597,12 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 			this.retainCloudAssistant = retainCloudAssistant;
 		}
 
-		public Boolean getSkipBuildImage() {
-			return this.skipBuildImage;
+		public String getImageNameSuffix() {
+			return this.imageNameSuffix;
 		}
 
-		public void setSkipBuildImage(Boolean skipBuildImage) {
-			this.skipBuildImage = skipBuildImage;
+		public void setImageNameSuffix(String imageNameSuffix) {
+			this.imageNameSuffix = imageNameSuffix;
 		}
 
 		public Boolean getSkipCheckImage() {
@@ -598,20 +613,22 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 			this.skipCheckImage = skipCheckImage;
 		}
 
-		public String getImageNameSuffix() {
-			return this.imageNameSuffix;
+		public Boolean getSkipBuildImage() {
+			return this.skipBuildImage;
 		}
 
-		public void setImageNameSuffix(String imageNameSuffix) {
-			this.imageNameSuffix = imageNameSuffix;
+		public void setSkipBuildImage(Boolean skipBuildImage) {
+			this.skipBuildImage = skipBuildImage;
 		}
 	}
 
 	public static class ImportImageOptions {
 
-		private String architecture;
+		private DockerOptions dockerOptions;
 
-		private String oSType;
+		private String description;
+
+		private String architecture;
 
 		private String platform;
 
@@ -619,23 +636,37 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 		private String licenseType;
 
-		private List<DiskDeviceMappingsItem> diskDeviceMappings;
-
-		private Features features;
-
-		private Boolean retainImportedImage;
-
-		private String retentionStrategy;
-
 		private String imageName;
 
-		private String description;
+		private List<DiskDeviceMappingsItem> diskDeviceMappings;
 
 		private String roleName;
 
-		private DockerOptions dockerOptions;
+		private String retentionStrategy;
+
+		private String oSType;
+
+		private Boolean retainImportedImage;
+
+		private Features features;
 
 		private List<ImportImageTagsItem> importImageTags;
+
+		public DockerOptions getDockerOptions() {
+			return this.dockerOptions;
+		}
+
+		public void setDockerOptions(DockerOptions dockerOptions) {
+			this.dockerOptions = dockerOptions;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
 
 		public String getArchitecture() {
 			return this.architecture;
@@ -643,14 +674,6 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 		public void setArchitecture(String architecture) {
 			this.architecture = architecture;
-		}
-
-		public String getOSType() {
-			return this.oSType;
-		}
-
-		public void setOSType(String oSType) {
-			this.oSType = oSType;
 		}
 
 		public String getPlatform() {
@@ -677,38 +700,6 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 			this.licenseType = licenseType;
 		}
 
-		public List<DiskDeviceMappingsItem> getDiskDeviceMappings() {
-			return this.diskDeviceMappings;
-		}
-
-		public void setDiskDeviceMappings(List<DiskDeviceMappingsItem> diskDeviceMappings) {
-			this.diskDeviceMappings = diskDeviceMappings;
-		}
-
-		public Features getFeatures() {
-			return this.features;
-		}
-
-		public void setFeatures(Features features) {
-			this.features = features;
-		}
-
-		public Boolean getRetainImportedImage() {
-			return this.retainImportedImage;
-		}
-
-		public void setRetainImportedImage(Boolean retainImportedImage) {
-			this.retainImportedImage = retainImportedImage;
-		}
-
-		public String getRetentionStrategy() {
-			return this.retentionStrategy;
-		}
-
-		public void setRetentionStrategy(String retentionStrategy) {
-			this.retentionStrategy = retentionStrategy;
-		}
-
 		public String getImageName() {
 			return this.imageName;
 		}
@@ -717,12 +708,12 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 			this.imageName = imageName;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public List<DiskDeviceMappingsItem> getDiskDeviceMappings() {
+			return this.diskDeviceMappings;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setDiskDeviceMappings(List<DiskDeviceMappingsItem> diskDeviceMappings) {
+			this.diskDeviceMappings = diskDeviceMappings;
 		}
 
 		public String getRoleName() {
@@ -733,12 +724,36 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 			this.roleName = roleName;
 		}
 
-		public DockerOptions getDockerOptions() {
-			return this.dockerOptions;
+		public String getRetentionStrategy() {
+			return this.retentionStrategy;
 		}
 
-		public void setDockerOptions(DockerOptions dockerOptions) {
-			this.dockerOptions = dockerOptions;
+		public void setRetentionStrategy(String retentionStrategy) {
+			this.retentionStrategy = retentionStrategy;
+		}
+
+		public String getOSType() {
+			return this.oSType;
+		}
+
+		public void setOSType(String oSType) {
+			this.oSType = oSType;
+		}
+
+		public Boolean getRetainImportedImage() {
+			return this.retainImportedImage;
+		}
+
+		public void setRetainImportedImage(Boolean retainImportedImage) {
+			this.retainImportedImage = retainImportedImage;
+		}
+
+		public Features getFeatures() {
+			return this.features;
+		}
+
+		public void setFeatures(Features features) {
+			this.features = features;
 		}
 
 		public List<ImportImageTagsItem> getImportImageTags() {
@@ -749,22 +764,45 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 			this.importImageTags = importImageTags;
 		}
 
+		public static class DockerOptions {
+
+			private Integer imageSize;
+
+			private String image;
+
+			public Integer getImageSize() {
+				return this.imageSize;
+			}
+
+			public void setImageSize(Integer imageSize) {
+				this.imageSize = imageSize;
+			}
+
+			public String getImage() {
+				return this.image;
+			}
+
+			public void setImage(String image) {
+				this.image = image;
+			}
+		}
+
 		public static class DiskDeviceMappingsItem {
-
-			private String oSSBucket;
-
-			private String oSSObject;
 
 			private String format;
 
+			private String oSSObject;
+
 			private Integer diskImageSize;
 
-			public String getOSSBucket() {
-				return this.oSSBucket;
+			private String oSSBucket;
+
+			public String getFormat() {
+				return this.format;
 			}
 
-			public void setOSSBucket(String oSSBucket) {
-				this.oSSBucket = oSSBucket;
+			public void setFormat(String format) {
+				this.format = format;
 			}
 
 			public String getOSSObject() {
@@ -775,20 +813,20 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 				this.oSSObject = oSSObject;
 			}
 
-			public String getFormat() {
-				return this.format;
-			}
-
-			public void setFormat(String format) {
-				this.format = format;
-			}
-
 			public Integer getDiskImageSize() {
 				return this.diskImageSize;
 			}
 
 			public void setDiskImageSize(Integer diskImageSize) {
 				this.diskImageSize = diskImageSize;
+			}
+
+			public String getOSSBucket() {
+				return this.oSSBucket;
+			}
+
+			public void setOSSBucket(String oSSBucket) {
+				this.oSSBucket = oSSBucket;
 			}
 		}
 
@@ -815,42 +853,11 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 			}
 		}
 
-		public static class DockerOptions {
-
-			private String image;
-
-			private Integer imageSize;
-
-			public String getImage() {
-				return this.image;
-			}
-
-			public void setImage(String image) {
-				this.image = image;
-			}
-
-			public Integer getImageSize() {
-				return this.imageSize;
-			}
-
-			public void setImageSize(Integer imageSize) {
-				this.imageSize = imageSize;
-			}
-		}
-
 		public static class ImportImageTagsItem {
-
-			private String key;
 
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -858,6 +865,14 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

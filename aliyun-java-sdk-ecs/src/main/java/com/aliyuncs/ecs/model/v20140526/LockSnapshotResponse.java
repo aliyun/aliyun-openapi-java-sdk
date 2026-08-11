@@ -48,21 +48,21 @@ public class LockSnapshotResponse extends AcsResponse {
 
 		private String snapshotId;
 
-		private String lockMode;
-
-		private String lockStatus;
-
-		private String lockCreationTime;
-
-		private Integer coolOffPeriod;
-
 		private String coolOffPeriodExpiredTime;
-
-		private Integer lockDuration;
 
 		private String lockDurationStartTime;
 
+		private String lockStatus;
+
+		private Integer coolOffPeriod;
+
 		private String lockExpiredTime;
+
+		private Integer lockDuration;
+
+		private String lockCreationTime;
+
+		private String lockMode;
 
 		public String getSnapshotId() {
 			return this.snapshotId;
@@ -70,38 +70,6 @@ public class LockSnapshotResponse extends AcsResponse {
 
 		public void setSnapshotId(String snapshotId) {
 			this.snapshotId = snapshotId;
-		}
-
-		public String getLockMode() {
-			return this.lockMode;
-		}
-
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
-		}
-
-		public String getLockStatus() {
-			return this.lockStatus;
-		}
-
-		public void setLockStatus(String lockStatus) {
-			this.lockStatus = lockStatus;
-		}
-
-		public String getLockCreationTime() {
-			return this.lockCreationTime;
-		}
-
-		public void setLockCreationTime(String lockCreationTime) {
-			this.lockCreationTime = lockCreationTime;
-		}
-
-		public Integer getCoolOffPeriod() {
-			return this.coolOffPeriod;
-		}
-
-		public void setCoolOffPeriod(Integer coolOffPeriod) {
-			this.coolOffPeriod = coolOffPeriod;
 		}
 
 		public String getCoolOffPeriodExpiredTime() {
@@ -112,14 +80,6 @@ public class LockSnapshotResponse extends AcsResponse {
 			this.coolOffPeriodExpiredTime = coolOffPeriodExpiredTime;
 		}
 
-		public Integer getLockDuration() {
-			return this.lockDuration;
-		}
-
-		public void setLockDuration(Integer lockDuration) {
-			this.lockDuration = lockDuration;
-		}
-
 		public String getLockDurationStartTime() {
 			return this.lockDurationStartTime;
 		}
@@ -128,12 +88,52 @@ public class LockSnapshotResponse extends AcsResponse {
 			this.lockDurationStartTime = lockDurationStartTime;
 		}
 
+		public String getLockStatus() {
+			return this.lockStatus;
+		}
+
+		public void setLockStatus(String lockStatus) {
+			this.lockStatus = lockStatus;
+		}
+
+		public Integer getCoolOffPeriod() {
+			return this.coolOffPeriod;
+		}
+
+		public void setCoolOffPeriod(Integer coolOffPeriod) {
+			this.coolOffPeriod = coolOffPeriod;
+		}
+
 		public String getLockExpiredTime() {
 			return this.lockExpiredTime;
 		}
 
 		public void setLockExpiredTime(String lockExpiredTime) {
 			this.lockExpiredTime = lockExpiredTime;
+		}
+
+		public Integer getLockDuration() {
+			return this.lockDuration;
+		}
+
+		public void setLockDuration(Integer lockDuration) {
+			this.lockDuration = lockDuration;
+		}
+
+		public String getLockCreationTime() {
+			return this.lockCreationTime;
+		}
+
+		public void setLockCreationTime(String lockCreationTime) {
+			this.lockCreationTime = lockCreationTime;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
 		}
 	}
 

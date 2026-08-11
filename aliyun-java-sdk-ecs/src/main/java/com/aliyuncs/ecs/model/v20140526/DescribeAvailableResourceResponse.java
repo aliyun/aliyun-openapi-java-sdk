@@ -47,23 +47,15 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 	public static class AvailableZone {
 
-		private String zoneId;
-
 		private String status;
 
 		private String statusCategory;
 
+		private String zoneId;
+
 		private String regionId;
 
 		private List<AvailableResource> availableResources;
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -79,6 +71,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		public void setStatusCategory(String statusCategory) {
 			this.statusCategory = statusCategory;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public String getRegionId() {
@@ -123,15 +123,15 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 				private String status;
 
-				private String value;
-
-				private Integer max;
-
-				private String unit;
-
 				private String statusCategory;
 
 				private Integer min;
+
+				private Integer max;
+
+				private String value;
+
+				private String unit;
 
 				public String getStatus() {
 					return this.status;
@@ -139,30 +139,6 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 				public void setStatus(String status) {
 					this.status = status;
-				}
-
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
-				}
-
-				public Integer getMax() {
-					return this.max;
-				}
-
-				public void setMax(Integer max) {
-					this.max = max;
-				}
-
-				public String getUnit() {
-					return this.unit;
-				}
-
-				public void setUnit(String unit) {
-					this.unit = unit;
 				}
 
 				public String getStatusCategory() {
@@ -179,6 +155,30 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 				public void setMin(Integer min) {
 					this.min = min;
+				}
+
+				public Integer getMax() {
+					return this.max;
+				}
+
+				public void setMax(Integer max) {
+					this.max = max;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+
+				public String getUnit() {
+					return this.unit;
+				}
+
+				public void setUnit(String unit) {
+					this.unit = unit;
 				}
 			}
 		}

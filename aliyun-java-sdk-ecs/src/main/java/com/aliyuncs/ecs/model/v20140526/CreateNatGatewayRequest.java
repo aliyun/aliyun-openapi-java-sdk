@@ -93,8 +93,8 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		this.bandwidthPackages = bandwidthPackages;	
 		if (bandwidthPackages != null) {
 			for (int depth1 = 0; depth1 < bandwidthPackages.size(); depth1++) {
-				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Bandwidth" , bandwidthPackages.get(depth1).getBandwidth());
 				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Zone" , bandwidthPackages.get(depth1).getZone());
+				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Bandwidth" , bandwidthPackages.get(depth1).getBandwidth());
 				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".IpCount" , bandwidthPackages.get(depth1).getIpCount());
 			}
 		}	
@@ -157,19 +157,11 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	public static class BandwidthPackage {
 
-		private Integer bandwidth;
-
 		private String zone;
 
+		private Integer bandwidth;
+
 		private Integer ipCount;
-
-		public Integer getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(Integer bandwidth) {
-			this.bandwidth = bandwidth;
-		}
 
 		public String getZone() {
 			return this.zone;
@@ -177,6 +169,14 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 		public void setZone(String zone) {
 			this.zone = zone;
+		}
+
+		public Integer getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
 		}
 
 		public Integer getIpCount() {

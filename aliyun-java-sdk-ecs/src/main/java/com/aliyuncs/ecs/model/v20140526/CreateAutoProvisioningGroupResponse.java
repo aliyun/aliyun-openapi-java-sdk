@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 
-	private String autoProvisioningGroupId;
-
 	private String requestId;
 
+	private String autoProvisioningGroupId;
+
 	private List<LaunchResult> launchResults;
-
-	public String getAutoProvisioningGroupId() {
-		return this.autoProvisioningGroupId;
-	}
-
-	public void setAutoProvisioningGroupId(String autoProvisioningGroupId) {
-		this.autoProvisioningGroupId = autoProvisioningGroupId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAutoProvisioningGroupId() {
+		return this.autoProvisioningGroupId;
+	}
+
+	public void setAutoProvisioningGroupId(String autoProvisioningGroupId) {
+		this.autoProvisioningGroupId = autoProvisioningGroupId;
 	}
 
 	public List<LaunchResult> getLaunchResults() {
@@ -57,21 +57,29 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 
 	public static class LaunchResult {
 
+		private String candidateEvaluateLevel;
+
 		private String zoneId;
-
-		private String errorMsg;
-
-		private String instanceType;
-
-		private String errorCode;
-
-		private String spotStrategy;
 
 		private Integer amount;
 
-		private String candidateEvaluateLevel;
+		private String errorMsg;
+
+		private String errorCode;
+
+		private String instanceType;
+
+		private String spotStrategy;
 
 		private List<String> instanceIds;
+
+		public String getCandidateEvaluateLevel() {
+			return this.candidateEvaluateLevel;
+		}
+
+		public void setCandidateEvaluateLevel(String candidateEvaluateLevel) {
+			this.candidateEvaluateLevel = candidateEvaluateLevel;
+		}
 
 		public String getZoneId() {
 			return this.zoneId;
@@ -79,38 +87,6 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
-		}
-
-		public String getErrorMsg() {
-			return this.errorMsg;
-		}
-
-		public void setErrorMsg(String errorMsg) {
-			this.errorMsg = errorMsg;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getErrorCode() {
-			return this.errorCode;
-		}
-
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
-		}
-
-		public String getSpotStrategy() {
-			return this.spotStrategy;
-		}
-
-		public void setSpotStrategy(String spotStrategy) {
-			this.spotStrategy = spotStrategy;
 		}
 
 		public Integer getAmount() {
@@ -121,12 +97,36 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 			this.amount = amount;
 		}
 
-		public String getCandidateEvaluateLevel() {
-			return this.candidateEvaluateLevel;
+		public String getErrorMsg() {
+			return this.errorMsg;
 		}
 
-		public void setCandidateEvaluateLevel(String candidateEvaluateLevel) {
-			this.candidateEvaluateLevel = candidateEvaluateLevel;
+		public void setErrorMsg(String errorMsg) {
+			this.errorMsg = errorMsg;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
 		}
 
 		public List<String> getInstanceIds() {

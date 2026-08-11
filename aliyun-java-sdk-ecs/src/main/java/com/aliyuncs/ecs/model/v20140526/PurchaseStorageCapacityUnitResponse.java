@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PurchaseStorageCapacityUnitResponse extends AcsResponse {
 
-	private String orderId;
-
 	private String requestId;
 
+	private String orderId;
+
 	private List<String> storageCapacityUnitIds;
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class PurchaseStorageCapacityUnitResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	public List<String> getStorageCapacityUnitIds() {

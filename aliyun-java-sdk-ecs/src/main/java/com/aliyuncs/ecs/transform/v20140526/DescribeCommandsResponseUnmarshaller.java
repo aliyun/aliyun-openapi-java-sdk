@@ -29,10 +29,10 @@ public class DescribeCommandsResponseUnmarshaller {
 	public static DescribeCommandsResponse unmarshall(DescribeCommandsResponse describeCommandsResponse, UnmarshallerContext _ctx) {
 		
 		describeCommandsResponse.setRequestId(_ctx.stringValue("DescribeCommandsResponse.RequestId"));
-		describeCommandsResponse.setPageSize(_ctx.longValue("DescribeCommandsResponse.PageSize"));
-		describeCommandsResponse.setPageNumber(_ctx.longValue("DescribeCommandsResponse.PageNumber"));
 		describeCommandsResponse.setTotalCount(_ctx.longValue("DescribeCommandsResponse.TotalCount"));
+		describeCommandsResponse.setPageSize(_ctx.longValue("DescribeCommandsResponse.PageSize"));
 		describeCommandsResponse.setNextToken(_ctx.stringValue("DescribeCommandsResponse.NextToken"));
+		describeCommandsResponse.setPageNumber(_ctx.longValue("DescribeCommandsResponse.PageNumber"));
 
 		List<Command> commands = new ArrayList<Command>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCommandsResponse.Commands.Length"); i++) {

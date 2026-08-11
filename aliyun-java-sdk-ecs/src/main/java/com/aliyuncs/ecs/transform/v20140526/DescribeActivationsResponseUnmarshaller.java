@@ -28,25 +28,25 @@ public class DescribeActivationsResponseUnmarshaller {
 	public static DescribeActivationsResponse unmarshall(DescribeActivationsResponse describeActivationsResponse, UnmarshallerContext _ctx) {
 		
 		describeActivationsResponse.setRequestId(_ctx.stringValue("DescribeActivationsResponse.RequestId"));
-		describeActivationsResponse.setPageSize(_ctx.longValue("DescribeActivationsResponse.PageSize"));
-		describeActivationsResponse.setPageNumber(_ctx.longValue("DescribeActivationsResponse.PageNumber"));
 		describeActivationsResponse.setTotalCount(_ctx.longValue("DescribeActivationsResponse.TotalCount"));
+		describeActivationsResponse.setPageSize(_ctx.longValue("DescribeActivationsResponse.PageSize"));
 		describeActivationsResponse.setNextToken(_ctx.stringValue("DescribeActivationsResponse.NextToken"));
+		describeActivationsResponse.setPageNumber(_ctx.longValue("DescribeActivationsResponse.PageNumber"));
 
 		List<Activation> activationList = new ArrayList<Activation>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeActivationsResponse.ActivationList.Length"); i++) {
 			Activation activation = new Activation();
-			activation.setCreationTime(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].CreationTime"));
+			activation.setInstanceName(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].InstanceName"));
 			activation.setDeregisteredCount(_ctx.integerValue("DescribeActivationsResponse.ActivationList["+ i +"].DeregisteredCount"));
 			activation.setInstanceCount(_ctx.integerValue("DescribeActivationsResponse.ActivationList["+ i +"].InstanceCount"));
 			activation.setDescription(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].Description"));
+			activation.setResourceGroupId(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].ResourceGroupId"));
+			activation.setCreationTime(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].CreationTime"));
+			activation.setActivationId(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].ActivationId"));
 			activation.setRegisteredCount(_ctx.integerValue("DescribeActivationsResponse.ActivationList["+ i +"].RegisteredCount"));
-			activation.setInstanceName(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].InstanceName"));
+			activation.setTimeToLiveInHours(_ctx.longValue("DescribeActivationsResponse.ActivationList["+ i +"].TimeToLiveInHours"));
 			activation.setDisabled(_ctx.booleanValue("DescribeActivationsResponse.ActivationList["+ i +"].Disabled"));
 			activation.setIpAddressRange(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].IpAddressRange"));
-			activation.setTimeToLiveInHours(_ctx.longValue("DescribeActivationsResponse.ActivationList["+ i +"].TimeToLiveInHours"));
-			activation.setActivationId(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].ActivationId"));
-			activation.setResourceGroupId(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeActivationsResponse.ActivationList["+ i +"].Tags.Length"); j++) {

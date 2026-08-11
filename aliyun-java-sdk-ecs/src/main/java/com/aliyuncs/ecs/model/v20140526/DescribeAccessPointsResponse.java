@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAccessPointsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<AccessPointType> accessPointSet;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<AccessPointType> getAccessPointSet() {
@@ -81,15 +81,15 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 
 		private String type;
 
-		private String hostOperator;
-
 		private String description;
 
 		private String attachedRegionNo;
 
-		private String name;
+		private String hostOperator;
 
 		private String accessPointId;
+
+		private String name;
 
 		private String location;
 
@@ -109,14 +109,6 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getHostOperator() {
-			return this.hostOperator;
-		}
-
-		public void setHostOperator(String hostOperator) {
-			this.hostOperator = hostOperator;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
@@ -133,12 +125,12 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 			this.attachedRegionNo = attachedRegionNo;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getHostOperator() {
+			return this.hostOperator;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setHostOperator(String hostOperator) {
+			this.hostOperator = hostOperator;
 		}
 
 		public String getAccessPointId() {
@@ -147,6 +139,14 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 
 		public void setAccessPointId(String accessPointId) {
 			this.accessPointId = accessPointId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getLocation() {

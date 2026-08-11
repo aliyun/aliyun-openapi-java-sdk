@@ -29,10 +29,10 @@ public class DescribeInvocationsResponseUnmarshaller {
 	public static DescribeInvocationsResponse unmarshall(DescribeInvocationsResponse describeInvocationsResponse, UnmarshallerContext _ctx) {
 		
 		describeInvocationsResponse.setRequestId(_ctx.stringValue("DescribeInvocationsResponse.RequestId"));
-		describeInvocationsResponse.setPageSize(_ctx.longValue("DescribeInvocationsResponse.PageSize"));
-		describeInvocationsResponse.setPageNumber(_ctx.longValue("DescribeInvocationsResponse.PageNumber"));
 		describeInvocationsResponse.setTotalCount(_ctx.longValue("DescribeInvocationsResponse.TotalCount"));
+		describeInvocationsResponse.setPageSize(_ctx.longValue("DescribeInvocationsResponse.PageSize"));
 		describeInvocationsResponse.setNextToken(_ctx.stringValue("DescribeInvocationsResponse.NextToken"));
+		describeInvocationsResponse.setPageNumber(_ctx.longValue("DescribeInvocationsResponse.PageNumber"));
 
 		List<Invocation> invocations = new ArrayList<Invocation>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInvocationsResponse.Invocations.Length"); i++) {
@@ -64,7 +64,9 @@ public class DescribeInvocationsResponseUnmarshaller {
 				InvokeInstance invokeInstance = new InvokeInstance();
 				invokeInstance.setDropped(_ctx.integerValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].Dropped"));
 				invokeInstance.setInvocationStatus(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].InvocationStatus"));
+				invokeInstance.setOssOutputErrorInfo(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].OssOutputErrorInfo"));
 				invokeInstance.setInstanceId(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceId"));
+				invokeInstance.setOssOutputErrorCode(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].OssOutputErrorCode"));
 				invokeInstance.setTimed(_ctx.booleanValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].Timed"));
 				invokeInstance.setInstanceInvokeStatus(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceInvokeStatus"));
 				invokeInstance.setExitCode(_ctx.longValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].ExitCode"));
@@ -73,8 +75,6 @@ public class DescribeInvocationsResponseUnmarshaller {
 				invokeInstance.setRepeats(_ctx.integerValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].Repeats"));
 				invokeInstance.setOssOutputUri(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].OssOutputUri"));
 				invokeInstance.setOssOutputStatus(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].OssOutputStatus"));
-				invokeInstance.setOssOutputErrorCode(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].OssOutputErrorCode"));
-				invokeInstance.setOssOutputErrorInfo(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].OssOutputErrorInfo"));
 				invokeInstance.setFinishTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].FinishTime"));
 				invokeInstance.setOutput(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].Output"));
 				invokeInstance.setCreationTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].CreationTime"));

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSnapshotGroupResponse extends AcsResponse {
 
-	private String snapshotGroupId;
-
 	private String requestId;
 
-	public String getSnapshotGroupId() {
-		return this.snapshotGroupId;
-	}
-
-	public void setSnapshotGroupId(String snapshotGroupId) {
-		this.snapshotGroupId = snapshotGroupId;
-	}
+	private String snapshotGroupId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class CreateSnapshotGroupResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSnapshotGroupId() {
+		return this.snapshotGroupId;
+	}
+
+	public void setSnapshotGroupId(String snapshotGroupId) {
+		this.snapshotGroupId = snapshotGroupId;
 	}
 
 	@Override

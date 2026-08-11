@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDedicatedHostClusterResponse extends AcsResponse {
 
-	private String dedicatedHostClusterId;
-
 	private String requestId;
 
-	public String getDedicatedHostClusterId() {
-		return this.dedicatedHostClusterId;
-	}
-
-	public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
-		this.dedicatedHostClusterId = dedicatedHostClusterId;
-	}
+	private String dedicatedHostClusterId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class CreateDedicatedHostClusterResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDedicatedHostClusterId() {
+		return this.dedicatedHostClusterId;
+	}
+
+	public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
+		this.dedicatedHostClusterId = dedicatedHostClusterId;
 	}
 
 	@Override

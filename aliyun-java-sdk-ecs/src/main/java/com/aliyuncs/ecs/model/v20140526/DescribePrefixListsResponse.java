@@ -57,39 +57,23 @@ public class DescribePrefixListsResponse extends AcsResponse {
 
 	public static class PrefixList {
 
-		private String creationTime;
-
-		private Integer associationCount;
-
 		private Integer maxEntries;
 
 		private String description;
 
-		private String addressFamily;
-
-		private String prefixListName;
-
-		private String prefixListId;
+		private Integer associationCount;
 
 		private String resourceGroupId;
 
+		private String prefixListId;
+
+		private String prefixListName;
+
+		private String creationTime;
+
+		private String addressFamily;
+
 		private List<Tag> tags;
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public Integer getAssociationCount() {
-			return this.associationCount;
-		}
-
-		public void setAssociationCount(Integer associationCount) {
-			this.associationCount = associationCount;
-		}
 
 		public Integer getMaxEntries() {
 			return this.maxEntries;
@@ -107,20 +91,20 @@ public class DescribePrefixListsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getAddressFamily() {
-			return this.addressFamily;
+		public Integer getAssociationCount() {
+			return this.associationCount;
 		}
 
-		public void setAddressFamily(String addressFamily) {
-			this.addressFamily = addressFamily;
+		public void setAssociationCount(Integer associationCount) {
+			this.associationCount = associationCount;
 		}
 
-		public String getPrefixListName() {
-			return this.prefixListName;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setPrefixListName(String prefixListName) {
-			this.prefixListName = prefixListName;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getPrefixListId() {
@@ -131,12 +115,28 @@ public class DescribePrefixListsResponse extends AcsResponse {
 			this.prefixListId = prefixListId;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getPrefixListName() {
+			return this.prefixListName;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setPrefixListName(String prefixListName) {
+			this.prefixListName = prefixListName;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getAddressFamily() {
+			return this.addressFamily;
+		}
+
+		public void setAddressFamily(String addressFamily) {
+			this.addressFamily = addressFamily;
 		}
 
 		public List<Tag> getTags() {
@@ -149,17 +149,9 @@ public class DescribePrefixListsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagValue;
-
 			private String tagKey;
 
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
+			private String tagValue;
 
 			public String getTagKey() {
 				return this.tagKey;
@@ -167,6 +159,14 @@ public class DescribePrefixListsResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

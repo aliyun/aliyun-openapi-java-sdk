@@ -32,13 +32,13 @@ public class CreateAutoProvisioningGroupResponseUnmarshaller {
 		List<LaunchResult> launchResults = new ArrayList<LaunchResult>();
 		for (int i = 0; i < _ctx.lengthValue("CreateAutoProvisioningGroupResponse.LaunchResults.Length"); i++) {
 			LaunchResult launchResult = new LaunchResult();
-			launchResult.setZoneId(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].ZoneId"));
-			launchResult.setErrorMsg(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].ErrorMsg"));
-			launchResult.setInstanceType(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].InstanceType"));
-			launchResult.setErrorCode(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].ErrorCode"));
-			launchResult.setSpotStrategy(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].SpotStrategy"));
-			launchResult.setAmount(_ctx.integerValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].Amount"));
 			launchResult.setCandidateEvaluateLevel(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].CandidateEvaluateLevel"));
+			launchResult.setZoneId(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].ZoneId"));
+			launchResult.setAmount(_ctx.integerValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].Amount"));
+			launchResult.setErrorMsg(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].ErrorMsg"));
+			launchResult.setErrorCode(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].ErrorCode"));
+			launchResult.setInstanceType(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].InstanceType"));
+			launchResult.setSpotStrategy(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].SpotStrategy"));
 
 			List<String> instanceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].InstanceIds.Length"); j++) {

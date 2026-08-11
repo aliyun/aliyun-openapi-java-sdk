@@ -59,17 +59,17 @@ public class DescribeVscsResponse extends AcsResponse {
 
 		private String vscId;
 
-		private String vscName;
-
 		private String vscType;
-
-		private String description;
 
 		private String status;
 
-		private String instanceId;
+		private String description;
 
 		private String resourceGroupId;
+
+		private String instanceId;
+
+		private String vscName;
 
 		private List<TagsItem> tags;
 
@@ -81,28 +81,12 @@ public class DescribeVscsResponse extends AcsResponse {
 			this.vscId = vscId;
 		}
 
-		public String getVscName() {
-			return this.vscName;
-		}
-
-		public void setVscName(String vscName) {
-			this.vscName = vscName;
-		}
-
 		public String getVscType() {
 			return this.vscType;
 		}
 
 		public void setVscType(String vscType) {
 			this.vscType = vscType;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getStatus() {
@@ -113,12 +97,12 @@ public class DescribeVscsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getResourceGroupId() {
@@ -127,6 +111,22 @@ public class DescribeVscsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getVscName() {
+			return this.vscName;
+		}
+
+		public void setVscName(String vscName) {
+			this.vscName = vscName;
 		}
 
 		public List<TagsItem> getTags() {

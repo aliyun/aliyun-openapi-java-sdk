@@ -25,63 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String resourceId;
-
-	private String resourceType;
-
-	private String reportId;
-
 	private String status;
 
-	private String creationTime;
-
-	private String finishedTime;
-
-	private String startTime;
+	private String requestId;
 
 	private String endTime;
 
-	private String severity;
-
 	private String metricSetId;
+
+	private String startTime;
 
 	private String attributes;
 
+	private String reportId;
+
+	private String resourceType;
+
+	private String severity;
+
+	private String finishedTime;
+
+	private String resourceId;
+
+	private String creationTime;
+
 	private List<MetricResult> metricResults;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getResourceId() {
-		return this.resourceId;
-	}
-
-	public void setResourceId(String resourceId) {
-		this.resourceId = resourceId;
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-	}
-
-	public String getReportId() {
-		return this.reportId;
-	}
-
-	public void setReportId(String reportId) {
-		this.reportId = reportId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -91,28 +59,12 @@ public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getCreationTime() {
-		return this.creationTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCreationTime(String creationTime) {
-		this.creationTime = creationTime;
-	}
-
-	public String getFinishedTime() {
-		return this.finishedTime;
-	}
-
-	public void setFinishedTime(String finishedTime) {
-		this.finishedTime = finishedTime;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getEndTime() {
@@ -123,14 +75,6 @@ public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public String getSeverity() {
-		return this.severity;
-	}
-
-	public void setSeverity(String severity) {
-		this.severity = severity;
-	}
-
 	public String getMetricSetId() {
 		return this.metricSetId;
 	}
@@ -139,12 +83,68 @@ public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 		this.metricSetId = metricSetId;
 	}
 
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
 	public String getAttributes() {
 		return this.attributes;
 	}
 
 	public void setAttributes(String attributes) {
 		this.attributes = attributes;
+	}
+
+	public String getReportId() {
+		return this.reportId;
+	}
+
+	public void setReportId(String reportId) {
+		this.reportId = reportId;
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+	}
+
+	public String getSeverity() {
+		return this.severity;
+	}
+
+	public void setSeverity(String severity) {
+		this.severity = severity;
+	}
+
+	public String getFinishedTime() {
+		return this.finishedTime;
+	}
+
+	public void setFinishedTime(String finishedTime) {
+		this.finishedTime = finishedTime;
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+	}
+
+	public String getCreationTime() {
+		return this.creationTime;
+	}
+
+	public void setCreationTime(String creationTime) {
+		this.creationTime = creationTime;
 	}
 
 	public List<MetricResult> getMetricResults() {
@@ -157,15 +157,23 @@ public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 
 	public static class MetricResult {
 
-		private String metricId;
+		private String status;
 
-		private String metricCategory;
+		private String metricId;
 
 		private String severity;
 
-		private String status;
+		private String metricCategory;
 
 		private List<Issue> issues;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getMetricId() {
 			return this.metricId;
@@ -173,14 +181,6 @@ public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 
 		public void setMetricId(String metricId) {
 			this.metricId = metricId;
-		}
-
-		public String getMetricCategory() {
-			return this.metricCategory;
-		}
-
-		public void setMetricCategory(String metricCategory) {
-			this.metricCategory = metricCategory;
 		}
 
 		public String getSeverity() {
@@ -191,12 +191,12 @@ public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 			this.severity = severity;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getMetricCategory() {
+			return this.metricCategory;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setMetricCategory(String metricCategory) {
+			this.metricCategory = metricCategory;
 		}
 
 		public List<Issue> getIssues() {
@@ -209,32 +209,32 @@ public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 
 		public static class Issue {
 
-			private String issueId;
-
-			private String severity;
-
-			private String additional;
-
 			private String occurrenceTime;
-
-			private String repairStatus;
 
 			private Boolean repairable;
 
-			public String getIssueId() {
-				return this.issueId;
+			private String additional;
+
+			private String severity;
+
+			private String repairStatus;
+
+			private String issueId;
+
+			public String getOccurrenceTime() {
+				return this.occurrenceTime;
 			}
 
-			public void setIssueId(String issueId) {
-				this.issueId = issueId;
+			public void setOccurrenceTime(String occurrenceTime) {
+				this.occurrenceTime = occurrenceTime;
 			}
 
-			public String getSeverity() {
-				return this.severity;
+			public Boolean getRepairable() {
+				return this.repairable;
 			}
 
-			public void setSeverity(String severity) {
-				this.severity = severity;
+			public void setRepairable(Boolean repairable) {
+				this.repairable = repairable;
 			}
 
 			public String getAdditional() {
@@ -245,12 +245,12 @@ public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 				this.additional = additional;
 			}
 
-			public String getOccurrenceTime() {
-				return this.occurrenceTime;
+			public String getSeverity() {
+				return this.severity;
 			}
 
-			public void setOccurrenceTime(String occurrenceTime) {
-				this.occurrenceTime = occurrenceTime;
+			public void setSeverity(String severity) {
+				this.severity = severity;
 			}
 
 			public String getRepairStatus() {
@@ -261,12 +261,12 @@ public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 				this.repairStatus = repairStatus;
 			}
 
-			public Boolean getRepairable() {
-				return this.repairable;
+			public String getIssueId() {
+				return this.issueId;
 			}
 
-			public void setRepairable(Boolean repairable) {
-				this.repairable = repairable;
+			public void setIssueId(String issueId) {
+				this.issueId = issueId;
 			}
 		}
 	}

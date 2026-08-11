@@ -49,11 +49,11 @@ public class DescribePriceResponse extends AcsResponse {
 
 		private List<Rule> rules;
 
+		private RelatedPrice relatedPrice;
+
 		private Price price;
 
 		private PriceWarning priceWarning;
-
-		private RelatedPrice relatedPrice;
 
 		public List<Rule> getRules() {
 			return this.rules;
@@ -61,6 +61,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 		public void setRules(List<Rule> rules) {
 			this.rules = rules;
+		}
+
+		public RelatedPrice getRelatedPrice() {
+			return this.relatedPrice;
+		}
+
+		public void setRelatedPrice(RelatedPrice relatedPrice) {
+			this.relatedPrice = relatedPrice;
 		}
 
 		public Price getPrice() {
@@ -77,14 +85,6 @@ public class DescribePriceResponse extends AcsResponse {
 
 		public void setPriceWarning(PriceWarning priceWarning) {
 			this.priceWarning = priceWarning;
-		}
-
-		public RelatedPrice getRelatedPrice() {
-			return this.relatedPrice;
-		}
-
-		public void setRelatedPrice(RelatedPrice relatedPrice) {
-			this.relatedPrice = relatedPrice;
 		}
 
 		public static class Rule {
@@ -110,9 +110,328 @@ public class DescribePriceResponse extends AcsResponse {
 			}
 		}
 
+		public static class RelatedPrice {
+
+			private MarketplaceImagePrice marketplaceImagePrice;
+
+			public MarketplaceImagePrice getMarketplaceImagePrice() {
+				return this.marketplaceImagePrice;
+			}
+
+			public void setMarketplaceImagePrice(MarketplaceImagePrice marketplaceImagePrice) {
+				this.marketplaceImagePrice = marketplaceImagePrice;
+			}
+
+			public static class MarketplaceImagePrice {
+
+				private Float originalPrice;
+
+				private String currency;
+
+				private Float discountPrice;
+
+				private Float tradePrice;
+
+				private List<Promotion> promotions;
+
+				private List<Coupon> coupons;
+
+				public Float getOriginalPrice() {
+					return this.originalPrice;
+				}
+
+				public void setOriginalPrice(Float originalPrice) {
+					this.originalPrice = originalPrice;
+				}
+
+				public String getCurrency() {
+					return this.currency;
+				}
+
+				public void setCurrency(String currency) {
+					this.currency = currency;
+				}
+
+				public Float getDiscountPrice() {
+					return this.discountPrice;
+				}
+
+				public void setDiscountPrice(Float discountPrice) {
+					this.discountPrice = discountPrice;
+				}
+
+				public Float getTradePrice() {
+					return this.tradePrice;
+				}
+
+				public void setTradePrice(Float tradePrice) {
+					this.tradePrice = tradePrice;
+				}
+
+				public List<Promotion> getPromotions() {
+					return this.promotions;
+				}
+
+				public void setPromotions(List<Promotion> promotions) {
+					this.promotions = promotions;
+				}
+
+				public List<Coupon> getCoupons() {
+					return this.coupons;
+				}
+
+				public void setCoupons(List<Coupon> coupons) {
+					this.coupons = coupons;
+				}
+
+				public static class Promotion {
+
+					private Float discountOff;
+
+					private String type;
+
+					private Long ruleId;
+
+					private String name;
+
+					public Float getDiscountOff() {
+						return this.discountOff;
+					}
+
+					public void setDiscountOff(Float discountOff) {
+						this.discountOff = discountOff;
+					}
+
+					public String getType() {
+						return this.type;
+					}
+
+					public void setType(String type) {
+						this.type = type;
+					}
+
+					public Long getRuleId() {
+						return this.ruleId;
+					}
+
+					public void setRuleId(Long ruleId) {
+						this.ruleId = ruleId;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+				}
+
+				public static class Coupon {
+
+					private String couponNo;
+
+					private Float discountOff;
+
+					private String description;
+
+					private Boolean isSelected;
+
+					private String optionCode;
+
+					private String name;
+
+					private Boolean effective;
+
+					private List<Long> ruleIds;
+
+					private AdditionalInfo additionalInfo;
+
+					public String getCouponNo() {
+						return this.couponNo;
+					}
+
+					public void setCouponNo(String couponNo) {
+						this.couponNo = couponNo;
+					}
+
+					public Float getDiscountOff() {
+						return this.discountOff;
+					}
+
+					public void setDiscountOff(Float discountOff) {
+						this.discountOff = discountOff;
+					}
+
+					public String getDescription() {
+						return this.description;
+					}
+
+					public void setDescription(String description) {
+						this.description = description;
+					}
+
+					public Boolean getIsSelected() {
+						return this.isSelected;
+					}
+
+					public void setIsSelected(Boolean isSelected) {
+						this.isSelected = isSelected;
+					}
+
+					public String getOptionCode() {
+						return this.optionCode;
+					}
+
+					public void setOptionCode(String optionCode) {
+						this.optionCode = optionCode;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public Boolean getEffective() {
+						return this.effective;
+					}
+
+					public void setEffective(Boolean effective) {
+						this.effective = effective;
+					}
+
+					public List<Long> getRuleIds() {
+						return this.ruleIds;
+					}
+
+					public void setRuleIds(List<Long> ruleIds) {
+						this.ruleIds = ruleIds;
+					}
+
+					public AdditionalInfo getAdditionalInfo() {
+						return this.additionalInfo;
+					}
+
+					public void setAdditionalInfo(AdditionalInfo additionalInfo) {
+						this.additionalInfo = additionalInfo;
+					}
+
+					public static class AdditionalInfo {
+
+						private Double voucherTotalAmount;
+
+						private String endTime;
+
+						private Double upperLimitAmount;
+
+						private String couponType;
+
+						private String startTime;
+
+						private Double availableAmount;
+
+						private String ineffectiveReason;
+
+						private Double discountRate;
+
+						private Double certainAmount;
+
+						public Double getVoucherTotalAmount() {
+							return this.voucherTotalAmount;
+						}
+
+						public void setVoucherTotalAmount(Double voucherTotalAmount) {
+							this.voucherTotalAmount = voucherTotalAmount;
+						}
+
+						public String getEndTime() {
+							return this.endTime;
+						}
+
+						public void setEndTime(String endTime) {
+							this.endTime = endTime;
+						}
+
+						public Double getUpperLimitAmount() {
+							return this.upperLimitAmount;
+						}
+
+						public void setUpperLimitAmount(Double upperLimitAmount) {
+							this.upperLimitAmount = upperLimitAmount;
+						}
+
+						public String getCouponType() {
+							return this.couponType;
+						}
+
+						public void setCouponType(String couponType) {
+							this.couponType = couponType;
+						}
+
+						public String getStartTime() {
+							return this.startTime;
+						}
+
+						public void setStartTime(String startTime) {
+							this.startTime = startTime;
+						}
+
+						public Double getAvailableAmount() {
+							return this.availableAmount;
+						}
+
+						public void setAvailableAmount(Double availableAmount) {
+							this.availableAmount = availableAmount;
+						}
+
+						public String getIneffectiveReason() {
+							return this.ineffectiveReason;
+						}
+
+						public void setIneffectiveReason(String ineffectiveReason) {
+							this.ineffectiveReason = ineffectiveReason;
+						}
+
+						public Double getDiscountRate() {
+							return this.discountRate;
+						}
+
+						public void setDiscountRate(Double discountRate) {
+							this.discountRate = discountRate;
+						}
+
+						public Double getCertainAmount() {
+							return this.certainAmount;
+						}
+
+						public void setCertainAmount(Double certainAmount) {
+							this.certainAmount = certainAmount;
+						}
+					}
+				}
+			}
+		}
+
 		public static class Price {
 
+			private Float spotInstanceTypeOriginalPrice;
+
 			private Float originalPrice;
+
+			private Float reservedInstanceHourTradePrice;
+
+			private Float standardPrice;
+
+			private Float standardDiscountPrice;
+
+			private Float tradePrice;
+
+			private Boolean isContractPromotion;
+
+			private Float reservedInstanceHourDiscountPrice;
 
 			private Float reservedInstanceHourPrice;
 
@@ -120,31 +439,25 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private String currency;
 
-			private Float tradePrice;
-
-			private Float standardPrice;
-
-			private Float standardDiscountPrice;
-
-			private Boolean isContractPromotion;
-
 			private Float spotInstanceTypePrice;
 
-			private Float spotInstanceTypeOriginalPrice;
-
-			private Float reservedInstanceHourTradePrice;
-
-			private Float reservedInstanceHourDiscountPrice;
-
-			private List<Coupon> coupons;
+			private List<Promotion3> promotions1;
 
 			private List<DetailInfo> detailInfos;
 
-			private List<Promotion7> promotions;
+			private List<Coupon12> coupons2;
 
 			private List<String> ruleIdSet;
 
 			private DepreciateInfo depreciateInfo;
+
+			public Float getSpotInstanceTypeOriginalPrice() {
+				return this.spotInstanceTypeOriginalPrice;
+			}
+
+			public void setSpotInstanceTypeOriginalPrice(Float spotInstanceTypeOriginalPrice) {
+				this.spotInstanceTypeOriginalPrice = spotInstanceTypeOriginalPrice;
+			}
 
 			public Float getOriginalPrice() {
 				return this.originalPrice;
@@ -152,6 +465,54 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setOriginalPrice(Float originalPrice) {
 				this.originalPrice = originalPrice;
+			}
+
+			public Float getReservedInstanceHourTradePrice() {
+				return this.reservedInstanceHourTradePrice;
+			}
+
+			public void setReservedInstanceHourTradePrice(Float reservedInstanceHourTradePrice) {
+				this.reservedInstanceHourTradePrice = reservedInstanceHourTradePrice;
+			}
+
+			public Float getStandardPrice() {
+				return this.standardPrice;
+			}
+
+			public void setStandardPrice(Float standardPrice) {
+				this.standardPrice = standardPrice;
+			}
+
+			public Float getStandardDiscountPrice() {
+				return this.standardDiscountPrice;
+			}
+
+			public void setStandardDiscountPrice(Float standardDiscountPrice) {
+				this.standardDiscountPrice = standardDiscountPrice;
+			}
+
+			public Float getTradePrice() {
+				return this.tradePrice;
+			}
+
+			public void setTradePrice(Float tradePrice) {
+				this.tradePrice = tradePrice;
+			}
+
+			public Boolean getIsContractPromotion() {
+				return this.isContractPromotion;
+			}
+
+			public void setIsContractPromotion(Boolean isContractPromotion) {
+				this.isContractPromotion = isContractPromotion;
+			}
+
+			public Float getReservedInstanceHourDiscountPrice() {
+				return this.reservedInstanceHourDiscountPrice;
+			}
+
+			public void setReservedInstanceHourDiscountPrice(Float reservedInstanceHourDiscountPrice) {
+				this.reservedInstanceHourDiscountPrice = reservedInstanceHourDiscountPrice;
 			}
 
 			public Float getReservedInstanceHourPrice() {
@@ -178,38 +539,6 @@ public class DescribePriceResponse extends AcsResponse {
 				this.currency = currency;
 			}
 
-			public Float getTradePrice() {
-				return this.tradePrice;
-			}
-
-			public void setTradePrice(Float tradePrice) {
-				this.tradePrice = tradePrice;
-			}
-
-			public Float getStandardPrice() {
-				return this.standardPrice;
-			}
-
-			public void setStandardPrice(Float standardPrice) {
-				this.standardPrice = standardPrice;
-			}
-
-			public Float getStandardDiscountPrice() {
-				return this.standardDiscountPrice;
-			}
-
-			public void setStandardDiscountPrice(Float standardDiscountPrice) {
-				this.standardDiscountPrice = standardDiscountPrice;
-			}
-
-			public Boolean getIsContractPromotion() {
-				return this.isContractPromotion;
-			}
-
-			public void setIsContractPromotion(Boolean isContractPromotion) {
-				this.isContractPromotion = isContractPromotion;
-			}
-
 			public Float getSpotInstanceTypePrice() {
 				return this.spotInstanceTypePrice;
 			}
@@ -218,36 +547,12 @@ public class DescribePriceResponse extends AcsResponse {
 				this.spotInstanceTypePrice = spotInstanceTypePrice;
 			}
 
-			public Float getSpotInstanceTypeOriginalPrice() {
-				return this.spotInstanceTypeOriginalPrice;
+			public List<Promotion3> getPromotions1() {
+				return this.promotions1;
 			}
 
-			public void setSpotInstanceTypeOriginalPrice(Float spotInstanceTypeOriginalPrice) {
-				this.spotInstanceTypeOriginalPrice = spotInstanceTypeOriginalPrice;
-			}
-
-			public Float getReservedInstanceHourTradePrice() {
-				return this.reservedInstanceHourTradePrice;
-			}
-
-			public void setReservedInstanceHourTradePrice(Float reservedInstanceHourTradePrice) {
-				this.reservedInstanceHourTradePrice = reservedInstanceHourTradePrice;
-			}
-
-			public Float getReservedInstanceHourDiscountPrice() {
-				return this.reservedInstanceHourDiscountPrice;
-			}
-
-			public void setReservedInstanceHourDiscountPrice(Float reservedInstanceHourDiscountPrice) {
-				this.reservedInstanceHourDiscountPrice = reservedInstanceHourDiscountPrice;
-			}
-
-			public List<Coupon> getCoupons() {
-				return this.coupons;
-			}
-
-			public void setCoupons(List<Coupon> coupons) {
-				this.coupons = coupons;
+			public void setPromotions1(List<Promotion3> promotions1) {
+				this.promotions1 = promotions1;
 			}
 
 			public List<DetailInfo> getDetailInfos() {
@@ -258,12 +563,12 @@ public class DescribePriceResponse extends AcsResponse {
 				this.detailInfos = detailInfos;
 			}
 
-			public List<Promotion7> getPromotions() {
-				return this.promotions;
+			public List<Coupon12> getCoupons2() {
+				return this.coupons2;
 			}
 
-			public void setPromotions(List<Promotion7> promotions) {
-				this.promotions = promotions;
+			public void setCoupons2(List<Coupon12> coupons2) {
+				this.coupons2 = coupons2;
 			}
 
 			public List<String> getRuleIdSet() {
@@ -282,33 +587,17 @@ public class DescribePriceResponse extends AcsResponse {
 				this.depreciateInfo = depreciateInfo;
 			}
 
-			public static class Coupon {
-
-				private String couponNo;
+			public static class Promotion3 {
 
 				private Float discountOff;
 
-				private String description;
+				private String type;
 
-				private Boolean isSelected;
-
-				private String optionCode;
+				private Float remainQuota;
 
 				private String name;
 
-				private Boolean effective;
-
-				private List<Long> ruleIds;
-
-				private AdditionalInfo additionalInfo;
-
-				public String getCouponNo() {
-					return this.couponNo;
-				}
-
-				public void setCouponNo(String couponNo) {
-					this.couponNo = couponNo;
-				}
+				private List<Long> ruleIds4;
 
 				public Float getDiscountOff() {
 					return this.discountOff;
@@ -318,28 +607,20 @@ public class DescribePriceResponse extends AcsResponse {
 					this.discountOff = discountOff;
 				}
 
-				public String getDescription() {
-					return this.description;
+				public String getType() {
+					return this.type;
 				}
 
-				public void setDescription(String description) {
-					this.description = description;
+				public void setType(String type) {
+					this.type = type;
 				}
 
-				public Boolean getIsSelected() {
-					return this.isSelected;
+				public Float getRemainQuota() {
+					return this.remainQuota;
 				}
 
-				public void setIsSelected(Boolean isSelected) {
-					this.isSelected = isSelected;
-				}
-
-				public String getOptionCode() {
-					return this.optionCode;
-				}
-
-				public void setOptionCode(String optionCode) {
-					this.optionCode = optionCode;
+				public void setRemainQuota(Float remainQuota) {
+					this.remainQuota = remainQuota;
 				}
 
 				public String getName() {
@@ -350,121 +631,12 @@ public class DescribePriceResponse extends AcsResponse {
 					this.name = name;
 				}
 
-				public Boolean getEffective() {
-					return this.effective;
+				public List<Long> getRuleIds4() {
+					return this.ruleIds4;
 				}
 
-				public void setEffective(Boolean effective) {
-					this.effective = effective;
-				}
-
-				public List<Long> getRuleIds() {
-					return this.ruleIds;
-				}
-
-				public void setRuleIds(List<Long> ruleIds) {
-					this.ruleIds = ruleIds;
-				}
-
-				public AdditionalInfo getAdditionalInfo() {
-					return this.additionalInfo;
-				}
-
-				public void setAdditionalInfo(AdditionalInfo additionalInfo) {
-					this.additionalInfo = additionalInfo;
-				}
-
-				public static class AdditionalInfo {
-
-					private String couponType;
-
-					private Double availableAmount;
-
-					private Double upperLimitAmount;
-
-					private String startTime;
-
-					private String endTime;
-
-					private String ineffectiveReason;
-
-					private Double discountRate;
-
-					private Double certainAmount;
-
-					private Double voucherTotalAmount;
-
-					public String getCouponType() {
-						return this.couponType;
-					}
-
-					public void setCouponType(String couponType) {
-						this.couponType = couponType;
-					}
-
-					public Double getAvailableAmount() {
-						return this.availableAmount;
-					}
-
-					public void setAvailableAmount(Double availableAmount) {
-						this.availableAmount = availableAmount;
-					}
-
-					public Double getUpperLimitAmount() {
-						return this.upperLimitAmount;
-					}
-
-					public void setUpperLimitAmount(Double upperLimitAmount) {
-						this.upperLimitAmount = upperLimitAmount;
-					}
-
-					public String getStartTime() {
-						return this.startTime;
-					}
-
-					public void setStartTime(String startTime) {
-						this.startTime = startTime;
-					}
-
-					public String getEndTime() {
-						return this.endTime;
-					}
-
-					public void setEndTime(String endTime) {
-						this.endTime = endTime;
-					}
-
-					public String getIneffectiveReason() {
-						return this.ineffectiveReason;
-					}
-
-					public void setIneffectiveReason(String ineffectiveReason) {
-						this.ineffectiveReason = ineffectiveReason;
-					}
-
-					public Double getDiscountRate() {
-						return this.discountRate;
-					}
-
-					public void setDiscountRate(Double discountRate) {
-						this.discountRate = discountRate;
-					}
-
-					public Double getCertainAmount() {
-						return this.certainAmount;
-					}
-
-					public void setCertainAmount(Double certainAmount) {
-						this.certainAmount = certainAmount;
-					}
-
-					public Double getVoucherTotalAmount() {
-						return this.voucherTotalAmount;
-					}
-
-					public void setVoucherTotalAmount(Double voucherTotalAmount) {
-						this.voucherTotalAmount = voucherTotalAmount;
-					}
+				public void setRuleIds4(List<Long> ruleIds4) {
+					this.ruleIds4 = ruleIds4;
 				}
 			}
 
@@ -484,15 +656,15 @@ public class DescribePriceResponse extends AcsResponse {
 
 				private Boolean isContractPromotion;
 
-				private List<Rule4> subRules;
+				private List<Promotion8> promotions6;
+
+				private List<Rule9> subRules;
 
 				private List<Attribute> attributes;
 
-				private List<Promotion> promotions2;
+				private List<Coupon10> coupons7;
 
-				private List<Coupon5> coupons3;
-
-				private DepreciateInfo1 depreciateInfo1;
+				private DepreciateInfo5 depreciateInfo5;
 
 				public Float getOriginalPrice() {
 					return this.originalPrice;
@@ -550,11 +722,19 @@ public class DescribePriceResponse extends AcsResponse {
 					this.isContractPromotion = isContractPromotion;
 				}
 
-				public List<Rule4> getSubRules() {
+				public List<Promotion8> getPromotions6() {
+					return this.promotions6;
+				}
+
+				public void setPromotions6(List<Promotion8> promotions6) {
+					this.promotions6 = promotions6;
+				}
+
+				public List<Rule9> getSubRules() {
 					return this.subRules;
 				}
 
-				public void setSubRules(List<Rule4> subRules) {
+				public void setSubRules(List<Rule9> subRules) {
 					this.subRules = subRules;
 				}
 
@@ -566,31 +746,66 @@ public class DescribePriceResponse extends AcsResponse {
 					this.attributes = attributes;
 				}
 
-				public List<Promotion> getPromotions2() {
-					return this.promotions2;
+				public List<Coupon10> getCoupons7() {
+					return this.coupons7;
 				}
 
-				public void setPromotions2(List<Promotion> promotions2) {
-					this.promotions2 = promotions2;
+				public void setCoupons7(List<Coupon10> coupons7) {
+					this.coupons7 = coupons7;
 				}
 
-				public List<Coupon5> getCoupons3() {
-					return this.coupons3;
+				public DepreciateInfo5 getDepreciateInfo5() {
+					return this.depreciateInfo5;
 				}
 
-				public void setCoupons3(List<Coupon5> coupons3) {
-					this.coupons3 = coupons3;
+				public void setDepreciateInfo5(DepreciateInfo5 depreciateInfo5) {
+					this.depreciateInfo5 = depreciateInfo5;
 				}
 
-				public DepreciateInfo1 getDepreciateInfo1() {
-					return this.depreciateInfo1;
+				public static class Promotion8 {
+
+					private Float discountOff;
+
+					private String type;
+
+					private Long ruleId;
+
+					private String name;
+
+					public Float getDiscountOff() {
+						return this.discountOff;
+					}
+
+					public void setDiscountOff(Float discountOff) {
+						this.discountOff = discountOff;
+					}
+
+					public String getType() {
+						return this.type;
+					}
+
+					public void setType(String type) {
+						this.type = type;
+					}
+
+					public Long getRuleId() {
+						return this.ruleId;
+					}
+
+					public void setRuleId(Long ruleId) {
+						this.ruleId = ruleId;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
 				}
 
-				public void setDepreciateInfo1(DepreciateInfo1 depreciateInfo1) {
-					this.depreciateInfo1 = depreciateInfo1;
-				}
-
-				public static class Rule4 {
+				public static class Rule9 {
 
 					private String description;
 
@@ -636,58 +851,15 @@ public class DescribePriceResponse extends AcsResponse {
 					}
 				}
 
-				public static class Promotion {
-
-					private Long ruleId;
-
-					private String name;
-
-					private Float discountOff;
-
-					private String type;
-
-					public Long getRuleId() {
-						return this.ruleId;
-					}
-
-					public void setRuleId(Long ruleId) {
-						this.ruleId = ruleId;
-					}
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
-
-					public Float getDiscountOff() {
-						return this.discountOff;
-					}
-
-					public void setDiscountOff(Float discountOff) {
-						this.discountOff = discountOff;
-					}
-
-					public String getType() {
-						return this.type;
-					}
-
-					public void setType(String type) {
-						this.type = type;
-					}
-				}
-
-				public static class Coupon5 {
+				public static class Coupon10 {
 
 					private String couponNo;
 
-					private String name;
-
 					private Float discountOff;
 
-					private AdditionalInfo6 additionalInfo6;
+					private String name;
+
+					private AdditionalInfo11 additionalInfo11;
 
 					public String getCouponNo() {
 						return this.couponNo;
@@ -697,14 +869,6 @@ public class DescribePriceResponse extends AcsResponse {
 						this.couponNo = couponNo;
 					}
 
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
-
 					public Float getDiscountOff() {
 						return this.discountOff;
 					}
@@ -713,25 +877,35 @@ public class DescribePriceResponse extends AcsResponse {
 						this.discountOff = discountOff;
 					}
 
-					public AdditionalInfo6 getAdditionalInfo6() {
-						return this.additionalInfo6;
+					public String getName() {
+						return this.name;
 					}
 
-					public void setAdditionalInfo6(AdditionalInfo6 additionalInfo6) {
-						this.additionalInfo6 = additionalInfo6;
+					public void setName(String name) {
+						this.name = name;
 					}
 
-					public static class AdditionalInfo6 {
+					public AdditionalInfo11 getAdditionalInfo11() {
+						return this.additionalInfo11;
+					}
 
-						private String couponType;
+					public void setAdditionalInfo11(AdditionalInfo11 additionalInfo11) {
+						this.additionalInfo11 = additionalInfo11;
+					}
 
-						private Double availableAmount;
+					public static class AdditionalInfo11 {
+
+						private Double voucherTotalAmount;
+
+						private String endTime;
 
 						private Double upperLimitAmount;
 
+						private String couponType;
+
 						private String startTime;
 
-						private String endTime;
+						private Double availableAmount;
 
 						private String ineffectiveReason;
 
@@ -739,22 +913,20 @@ public class DescribePriceResponse extends AcsResponse {
 
 						private Double certainAmount;
 
-						private Double voucherTotalAmount;
-
-						public String getCouponType() {
-							return this.couponType;
+						public Double getVoucherTotalAmount() {
+							return this.voucherTotalAmount;
 						}
 
-						public void setCouponType(String couponType) {
-							this.couponType = couponType;
+						public void setVoucherTotalAmount(Double voucherTotalAmount) {
+							this.voucherTotalAmount = voucherTotalAmount;
 						}
 
-						public Double getAvailableAmount() {
-							return this.availableAmount;
+						public String getEndTime() {
+							return this.endTime;
 						}
 
-						public void setAvailableAmount(Double availableAmount) {
-							this.availableAmount = availableAmount;
+						public void setEndTime(String endTime) {
+							this.endTime = endTime;
 						}
 
 						public Double getUpperLimitAmount() {
@@ -765,6 +937,14 @@ public class DescribePriceResponse extends AcsResponse {
 							this.upperLimitAmount = upperLimitAmount;
 						}
 
+						public String getCouponType() {
+							return this.couponType;
+						}
+
+						public void setCouponType(String couponType) {
+							this.couponType = couponType;
+						}
+
 						public String getStartTime() {
 							return this.startTime;
 						}
@@ -773,12 +953,12 @@ public class DescribePriceResponse extends AcsResponse {
 							this.startTime = startTime;
 						}
 
-						public String getEndTime() {
-							return this.endTime;
+						public Double getAvailableAmount() {
+							return this.availableAmount;
 						}
 
-						public void setEndTime(String endTime) {
-							this.endTime = endTime;
+						public void setAvailableAmount(Double availableAmount) {
+							this.availableAmount = availableAmount;
 						}
 
 						public String getIneffectiveReason() {
@@ -804,18 +984,10 @@ public class DescribePriceResponse extends AcsResponse {
 						public void setCertainAmount(Double certainAmount) {
 							this.certainAmount = certainAmount;
 						}
-
-						public Double getVoucherTotalAmount() {
-							return this.voucherTotalAmount;
-						}
-
-						public void setVoucherTotalAmount(Double voucherTotalAmount) {
-							this.voucherTotalAmount = voucherTotalAmount;
-						}
 					}
 				}
 
-				public static class DepreciateInfo1 {
+				public static class DepreciateInfo5 {
 
 					private Float cheapStandardPrice;
 
@@ -909,17 +1081,33 @@ public class DescribePriceResponse extends AcsResponse {
 				}
 			}
 
-			public static class Promotion7 {
+			public static class Coupon12 {
+
+				private String couponNo;
 
 				private Float discountOff;
 
-				private String type;
+				private String description;
 
-				private Float remainQuota;
+				private Boolean isSelected;
+
+				private String optionCode;
 
 				private String name;
 
-				private List<Long> ruleIds8;
+				private Boolean effective;
+
+				private List<Long> ruleIds13;
+
+				private AdditionalInfo14 additionalInfo14;
+
+				public String getCouponNo() {
+					return this.couponNo;
+				}
+
+				public void setCouponNo(String couponNo) {
+					this.couponNo = couponNo;
+				}
 
 				public Float getDiscountOff() {
 					return this.discountOff;
@@ -929,20 +1117,28 @@ public class DescribePriceResponse extends AcsResponse {
 					this.discountOff = discountOff;
 				}
 
-				public String getType() {
-					return this.type;
+				public String getDescription() {
+					return this.description;
 				}
 
-				public void setType(String type) {
-					this.type = type;
+				public void setDescription(String description) {
+					this.description = description;
 				}
 
-				public Float getRemainQuota() {
-					return this.remainQuota;
+				public Boolean getIsSelected() {
+					return this.isSelected;
 				}
 
-				public void setRemainQuota(Float remainQuota) {
-					this.remainQuota = remainQuota;
+				public void setIsSelected(Boolean isSelected) {
+					this.isSelected = isSelected;
+				}
+
+				public String getOptionCode() {
+					return this.optionCode;
+				}
+
+				public void setOptionCode(String optionCode) {
+					this.optionCode = optionCode;
 				}
 
 				public String getName() {
@@ -953,50 +1149,143 @@ public class DescribePriceResponse extends AcsResponse {
 					this.name = name;
 				}
 
-				public List<Long> getRuleIds8() {
-					return this.ruleIds8;
+				public Boolean getEffective() {
+					return this.effective;
 				}
 
-				public void setRuleIds8(List<Long> ruleIds8) {
-					this.ruleIds8 = ruleIds8;
+				public void setEffective(Boolean effective) {
+					this.effective = effective;
+				}
+
+				public List<Long> getRuleIds13() {
+					return this.ruleIds13;
+				}
+
+				public void setRuleIds13(List<Long> ruleIds13) {
+					this.ruleIds13 = ruleIds13;
+				}
+
+				public AdditionalInfo14 getAdditionalInfo14() {
+					return this.additionalInfo14;
+				}
+
+				public void setAdditionalInfo14(AdditionalInfo14 additionalInfo14) {
+					this.additionalInfo14 = additionalInfo14;
+				}
+
+				public static class AdditionalInfo14 {
+
+					private Double voucherTotalAmount;
+
+					private String endTime;
+
+					private Double upperLimitAmount;
+
+					private String couponType;
+
+					private String startTime;
+
+					private Double availableAmount;
+
+					private String ineffectiveReason;
+
+					private Double discountRate;
+
+					private Double certainAmount;
+
+					public Double getVoucherTotalAmount() {
+						return this.voucherTotalAmount;
+					}
+
+					public void setVoucherTotalAmount(Double voucherTotalAmount) {
+						this.voucherTotalAmount = voucherTotalAmount;
+					}
+
+					public String getEndTime() {
+						return this.endTime;
+					}
+
+					public void setEndTime(String endTime) {
+						this.endTime = endTime;
+					}
+
+					public Double getUpperLimitAmount() {
+						return this.upperLimitAmount;
+					}
+
+					public void setUpperLimitAmount(Double upperLimitAmount) {
+						this.upperLimitAmount = upperLimitAmount;
+					}
+
+					public String getCouponType() {
+						return this.couponType;
+					}
+
+					public void setCouponType(String couponType) {
+						this.couponType = couponType;
+					}
+
+					public String getStartTime() {
+						return this.startTime;
+					}
+
+					public void setStartTime(String startTime) {
+						this.startTime = startTime;
+					}
+
+					public Double getAvailableAmount() {
+						return this.availableAmount;
+					}
+
+					public void setAvailableAmount(Double availableAmount) {
+						this.availableAmount = availableAmount;
+					}
+
+					public String getIneffectiveReason() {
+						return this.ineffectiveReason;
+					}
+
+					public void setIneffectiveReason(String ineffectiveReason) {
+						this.ineffectiveReason = ineffectiveReason;
+					}
+
+					public Double getDiscountRate() {
+						return this.discountRate;
+					}
+
+					public void setDiscountRate(Double discountRate) {
+						this.discountRate = discountRate;
+					}
+
+					public Double getCertainAmount() {
+						return this.certainAmount;
+					}
+
+					public void setCertainAmount(Double certainAmount) {
+						this.certainAmount = certainAmount;
+					}
 				}
 			}
 
 			public static class DepreciateInfo {
 
-				private Float listPrice;
-
-				private Float originalStandardPrice;
-
 				private Float cheapStandardPrice;
 
 				private Float cheapRate;
-
-				private Float differentialPrice;
 
 				private String differentialName;
 
 				private Float monthPrice;
 
-				private Boolean isShow;
+				private Float originalStandardPrice;
+
+				private Float differentialPrice;
 
 				private String startTime;
 
-				public Float getListPrice() {
-					return this.listPrice;
-				}
+				private Boolean isShow;
 
-				public void setListPrice(Float listPrice) {
-					this.listPrice = listPrice;
-				}
-
-				public Float getOriginalStandardPrice() {
-					return this.originalStandardPrice;
-				}
-
-				public void setOriginalStandardPrice(Float originalStandardPrice) {
-					this.originalStandardPrice = originalStandardPrice;
-				}
+				private Float listPrice;
 
 				public Float getCheapStandardPrice() {
 					return this.cheapStandardPrice;
@@ -1012,14 +1301,6 @@ public class DescribePriceResponse extends AcsResponse {
 
 				public void setCheapRate(Float cheapRate) {
 					this.cheapRate = cheapRate;
-				}
-
-				public Float getDifferentialPrice() {
-					return this.differentialPrice;
-				}
-
-				public void setDifferentialPrice(Float differentialPrice) {
-					this.differentialPrice = differentialPrice;
 				}
 
 				public String getDifferentialName() {
@@ -1038,12 +1319,20 @@ public class DescribePriceResponse extends AcsResponse {
 					this.monthPrice = monthPrice;
 				}
 
-				public Boolean getIsShow() {
-					return this.isShow;
+				public Float getOriginalStandardPrice() {
+					return this.originalStandardPrice;
 				}
 
-				public void setIsShow(Boolean isShow) {
-					this.isShow = isShow;
+				public void setOriginalStandardPrice(Float originalStandardPrice) {
+					this.originalStandardPrice = originalStandardPrice;
+				}
+
+				public Float getDifferentialPrice() {
+					return this.differentialPrice;
+				}
+
+				public void setDifferentialPrice(Float differentialPrice) {
+					this.differentialPrice = differentialPrice;
 				}
 
 				public String getStartTime() {
@@ -1052,6 +1341,22 @@ public class DescribePriceResponse extends AcsResponse {
 
 				public void setStartTime(String startTime) {
 					this.startTime = startTime;
+				}
+
+				public Boolean getIsShow() {
+					return this.isShow;
+				}
+
+				public void setIsShow(Boolean isShow) {
+					this.isShow = isShow;
+				}
+
+				public Float getListPrice() {
+					return this.listPrice;
+				}
+
+				public void setListPrice(Float listPrice) {
+					this.listPrice = listPrice;
 				}
 			}
 		}
@@ -1076,311 +1381,6 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setCode(String code) {
 				this.code = code;
-			}
-		}
-
-		public static class RelatedPrice {
-
-			private MarketplaceImagePrice marketplaceImagePrice;
-
-			public MarketplaceImagePrice getMarketplaceImagePrice() {
-				return this.marketplaceImagePrice;
-			}
-
-			public void setMarketplaceImagePrice(MarketplaceImagePrice marketplaceImagePrice) {
-				this.marketplaceImagePrice = marketplaceImagePrice;
-			}
-
-			public static class MarketplaceImagePrice {
-
-				private String currency;
-
-				private Float originalPrice;
-
-				private Float discountPrice;
-
-				private Float tradePrice;
-
-				private List<Promotion11> promotions9;
-
-				private List<Coupon12> coupons10;
-
-				public String getCurrency() {
-					return this.currency;
-				}
-
-				public void setCurrency(String currency) {
-					this.currency = currency;
-				}
-
-				public Float getOriginalPrice() {
-					return this.originalPrice;
-				}
-
-				public void setOriginalPrice(Float originalPrice) {
-					this.originalPrice = originalPrice;
-				}
-
-				public Float getDiscountPrice() {
-					return this.discountPrice;
-				}
-
-				public void setDiscountPrice(Float discountPrice) {
-					this.discountPrice = discountPrice;
-				}
-
-				public Float getTradePrice() {
-					return this.tradePrice;
-				}
-
-				public void setTradePrice(Float tradePrice) {
-					this.tradePrice = tradePrice;
-				}
-
-				public List<Promotion11> getPromotions9() {
-					return this.promotions9;
-				}
-
-				public void setPromotions9(List<Promotion11> promotions9) {
-					this.promotions9 = promotions9;
-				}
-
-				public List<Coupon12> getCoupons10() {
-					return this.coupons10;
-				}
-
-				public void setCoupons10(List<Coupon12> coupons10) {
-					this.coupons10 = coupons10;
-				}
-
-				public static class Promotion11 {
-
-					private Long ruleId;
-
-					private String name;
-
-					private Float discountOff;
-
-					private String type;
-
-					public Long getRuleId() {
-						return this.ruleId;
-					}
-
-					public void setRuleId(Long ruleId) {
-						this.ruleId = ruleId;
-					}
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
-
-					public Float getDiscountOff() {
-						return this.discountOff;
-					}
-
-					public void setDiscountOff(Float discountOff) {
-						this.discountOff = discountOff;
-					}
-
-					public String getType() {
-						return this.type;
-					}
-
-					public void setType(String type) {
-						this.type = type;
-					}
-				}
-
-				public static class Coupon12 {
-
-					private String couponNo;
-
-					private Float discountOff;
-
-					private String description;
-
-					private Boolean isSelected;
-
-					private String optionCode;
-
-					private String name;
-
-					private Boolean effective;
-
-					private List<Long> ruleIds13;
-
-					private AdditionalInfo14 additionalInfo14;
-
-					public String getCouponNo() {
-						return this.couponNo;
-					}
-
-					public void setCouponNo(String couponNo) {
-						this.couponNo = couponNo;
-					}
-
-					public Float getDiscountOff() {
-						return this.discountOff;
-					}
-
-					public void setDiscountOff(Float discountOff) {
-						this.discountOff = discountOff;
-					}
-
-					public String getDescription() {
-						return this.description;
-					}
-
-					public void setDescription(String description) {
-						this.description = description;
-					}
-
-					public Boolean getIsSelected() {
-						return this.isSelected;
-					}
-
-					public void setIsSelected(Boolean isSelected) {
-						this.isSelected = isSelected;
-					}
-
-					public String getOptionCode() {
-						return this.optionCode;
-					}
-
-					public void setOptionCode(String optionCode) {
-						this.optionCode = optionCode;
-					}
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
-
-					public Boolean getEffective() {
-						return this.effective;
-					}
-
-					public void setEffective(Boolean effective) {
-						this.effective = effective;
-					}
-
-					public List<Long> getRuleIds13() {
-						return this.ruleIds13;
-					}
-
-					public void setRuleIds13(List<Long> ruleIds13) {
-						this.ruleIds13 = ruleIds13;
-					}
-
-					public AdditionalInfo14 getAdditionalInfo14() {
-						return this.additionalInfo14;
-					}
-
-					public void setAdditionalInfo14(AdditionalInfo14 additionalInfo14) {
-						this.additionalInfo14 = additionalInfo14;
-					}
-
-					public static class AdditionalInfo14 {
-
-						private String couponType;
-
-						private Double availableAmount;
-
-						private Double upperLimitAmount;
-
-						private String startTime;
-
-						private String endTime;
-
-						private String ineffectiveReason;
-
-						private Double discountRate;
-
-						private Double certainAmount;
-
-						private Double voucherTotalAmount;
-
-						public String getCouponType() {
-							return this.couponType;
-						}
-
-						public void setCouponType(String couponType) {
-							this.couponType = couponType;
-						}
-
-						public Double getAvailableAmount() {
-							return this.availableAmount;
-						}
-
-						public void setAvailableAmount(Double availableAmount) {
-							this.availableAmount = availableAmount;
-						}
-
-						public Double getUpperLimitAmount() {
-							return this.upperLimitAmount;
-						}
-
-						public void setUpperLimitAmount(Double upperLimitAmount) {
-							this.upperLimitAmount = upperLimitAmount;
-						}
-
-						public String getStartTime() {
-							return this.startTime;
-						}
-
-						public void setStartTime(String startTime) {
-							this.startTime = startTime;
-						}
-
-						public String getEndTime() {
-							return this.endTime;
-						}
-
-						public void setEndTime(String endTime) {
-							this.endTime = endTime;
-						}
-
-						public String getIneffectiveReason() {
-							return this.ineffectiveReason;
-						}
-
-						public void setIneffectiveReason(String ineffectiveReason) {
-							this.ineffectiveReason = ineffectiveReason;
-						}
-
-						public Double getDiscountRate() {
-							return this.discountRate;
-						}
-
-						public void setDiscountRate(Double discountRate) {
-							this.discountRate = discountRate;
-						}
-
-						public Double getCertainAmount() {
-							return this.certainAmount;
-						}
-
-						public void setCertainAmount(Double certainAmount) {
-							this.certainAmount = certainAmount;
-						}
-
-						public Double getVoucherTotalAmount() {
-							return this.voucherTotalAmount;
-						}
-
-						public void setVoucherTotalAmount(Double voucherTotalAmount) {
-							this.voucherTotalAmount = voucherTotalAmount;
-						}
-					}
-				}
 			}
 		}
 	}

@@ -22,6 +22,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.Dedica
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.EipAddress;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.LockReason;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.NetworkOptions;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.SecurityOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceAttributeResponse.VpcAttributes;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -31,38 +32,32 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 	public static DescribeInstanceAttributeResponse unmarshall(DescribeInstanceAttributeResponse describeInstanceAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceAttributeResponse.setRequestId(_ctx.stringValue("DescribeInstanceAttributeResponse.RequestId"));
-		describeInstanceAttributeResponse.setStatus(_ctx.stringValue("DescribeInstanceAttributeResponse.Status"));
-		describeInstanceAttributeResponse.setSerialNumber(_ctx.stringValue("DescribeInstanceAttributeResponse.SerialNumber"));
-		describeInstanceAttributeResponse.setCreationTime(_ctx.stringValue("DescribeInstanceAttributeResponse.CreationTime"));
 		describeInstanceAttributeResponse.setDescription(_ctx.stringValue("DescribeInstanceAttributeResponse.Description"));
-		describeInstanceAttributeResponse.setInstanceName(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceName"));
-		describeInstanceAttributeResponse.setInstanceNetworkType(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceNetworkType"));
-		describeInstanceAttributeResponse.setMemory(_ctx.integerValue("DescribeInstanceAttributeResponse.Memory"));
-		describeInstanceAttributeResponse.setImageId(_ctx.stringValue("DescribeInstanceAttributeResponse.ImageId"));
-		describeInstanceAttributeResponse.setClusterId(_ctx.stringValue("DescribeInstanceAttributeResponse.ClusterId"));
-		describeInstanceAttributeResponse.setVlanId(_ctx.stringValue("DescribeInstanceAttributeResponse.VlanId"));
-		describeInstanceAttributeResponse.setStoppedMode(_ctx.stringValue("DescribeInstanceAttributeResponse.StoppedMode"));
-		describeInstanceAttributeResponse.setHostName(_ctx.stringValue("DescribeInstanceAttributeResponse.HostName"));
-		describeInstanceAttributeResponse.setInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceId"));
-		describeInstanceAttributeResponse.setInstanceType(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceType"));
-		describeInstanceAttributeResponse.setInternetMaxBandwidthIn(_ctx.integerValue("DescribeInstanceAttributeResponse.InternetMaxBandwidthIn"));
-		describeInstanceAttributeResponse.setInternetMaxBandwidthOut(_ctx.integerValue("DescribeInstanceAttributeResponse.InternetMaxBandwidthOut"));
-		describeInstanceAttributeResponse.setRegionId(_ctx.stringValue("DescribeInstanceAttributeResponse.RegionId"));
-		describeInstanceAttributeResponse.setInstanceChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceChargeType"));
-		describeInstanceAttributeResponse.setIoOptimized(_ctx.stringValue("DescribeInstanceAttributeResponse.IoOptimized"));
-		describeInstanceAttributeResponse.setCpu(_ctx.integerValue("DescribeInstanceAttributeResponse.Cpu"));
-		describeInstanceAttributeResponse.setExpiredTime(_ctx.stringValue("DescribeInstanceAttributeResponse.ExpiredTime"));
-		describeInstanceAttributeResponse.setZoneId(_ctx.stringValue("DescribeInstanceAttributeResponse.ZoneId"));
-		describeInstanceAttributeResponse.setInternetChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.InternetChargeType"));
-		describeInstanceAttributeResponse.setCreditSpecification(_ctx.stringValue("DescribeInstanceAttributeResponse.CreditSpecification"));
-		describeInstanceAttributeResponse.setEnableJumboFrame(_ctx.booleanValue("DescribeInstanceAttributeResponse.EnableJumboFrame"));
 		describeInstanceAttributeResponse.setEnableNetworkEncryption(_ctx.booleanValue("DescribeInstanceAttributeResponse.EnableNetworkEncryption"));
-
-		List<String> securityGroupIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAttributeResponse.SecurityGroupIds.Length"); i++) {
-			securityGroupIds.add(_ctx.stringValue("DescribeInstanceAttributeResponse.SecurityGroupIds["+ i +"]"));
-		}
-		describeInstanceAttributeResponse.setSecurityGroupIds(securityGroupIds);
+		describeInstanceAttributeResponse.setMemory(_ctx.integerValue("DescribeInstanceAttributeResponse.Memory"));
+		describeInstanceAttributeResponse.setInstanceChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceChargeType"));
+		describeInstanceAttributeResponse.setCpu(_ctx.integerValue("DescribeInstanceAttributeResponse.Cpu"));
+		describeInstanceAttributeResponse.setInstanceNetworkType(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceNetworkType"));
+		describeInstanceAttributeResponse.setEnableJumboFrame(_ctx.booleanValue("DescribeInstanceAttributeResponse.EnableJumboFrame"));
+		describeInstanceAttributeResponse.setExpiredTime(_ctx.stringValue("DescribeInstanceAttributeResponse.ExpiredTime"));
+		describeInstanceAttributeResponse.setImageId(_ctx.stringValue("DescribeInstanceAttributeResponse.ImageId"));
+		describeInstanceAttributeResponse.setInstanceType(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceType"));
+		describeInstanceAttributeResponse.setVlanId(_ctx.stringValue("DescribeInstanceAttributeResponse.VlanId"));
+		describeInstanceAttributeResponse.setHostName(_ctx.stringValue("DescribeInstanceAttributeResponse.HostName"));
+		describeInstanceAttributeResponse.setStatus(_ctx.stringValue("DescribeInstanceAttributeResponse.Status"));
+		describeInstanceAttributeResponse.setIoOptimized(_ctx.stringValue("DescribeInstanceAttributeResponse.IoOptimized"));
+		describeInstanceAttributeResponse.setZoneId(_ctx.stringValue("DescribeInstanceAttributeResponse.ZoneId"));
+		describeInstanceAttributeResponse.setClusterId(_ctx.stringValue("DescribeInstanceAttributeResponse.ClusterId"));
+		describeInstanceAttributeResponse.setInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceId"));
+		describeInstanceAttributeResponse.setStoppedMode(_ctx.stringValue("DescribeInstanceAttributeResponse.StoppedMode"));
+		describeInstanceAttributeResponse.setInternetChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.InternetChargeType"));
+		describeInstanceAttributeResponse.setInstanceName(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceName"));
+		describeInstanceAttributeResponse.setInternetMaxBandwidthOut(_ctx.integerValue("DescribeInstanceAttributeResponse.InternetMaxBandwidthOut"));
+		describeInstanceAttributeResponse.setSerialNumber(_ctx.stringValue("DescribeInstanceAttributeResponse.SerialNumber"));
+		describeInstanceAttributeResponse.setInternetMaxBandwidthIn(_ctx.integerValue("DescribeInstanceAttributeResponse.InternetMaxBandwidthIn"));
+		describeInstanceAttributeResponse.setCreationTime(_ctx.stringValue("DescribeInstanceAttributeResponse.CreationTime"));
+		describeInstanceAttributeResponse.setRegionId(_ctx.stringValue("DescribeInstanceAttributeResponse.RegionId"));
+		describeInstanceAttributeResponse.setCreditSpecification(_ctx.stringValue("DescribeInstanceAttributeResponse.CreditSpecification"));
 
 		List<String> publicIpAddress = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAttributeResponse.PublicIpAddress.Length"); i++) {
@@ -76,10 +71,28 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		}
 		describeInstanceAttributeResponse.setInnerIpAddress(innerIpAddress);
 
+		List<String> securityGroupIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAttributeResponse.SecurityGroupIds.Length"); i++) {
+			securityGroupIds.add(_ctx.stringValue("DescribeInstanceAttributeResponse.SecurityGroupIds["+ i +"]"));
+		}
+		describeInstanceAttributeResponse.setSecurityGroupIds(securityGroupIds);
+
+		EipAddress eipAddress = new EipAddress();
+		eipAddress.setBandwidth(_ctx.integerValue("DescribeInstanceAttributeResponse.EipAddress.Bandwidth"));
+		eipAddress.setAllocationId(_ctx.stringValue("DescribeInstanceAttributeResponse.EipAddress.AllocationId"));
+		eipAddress.setIpAddress(_ctx.stringValue("DescribeInstanceAttributeResponse.EipAddress.IpAddress"));
+		eipAddress.setInternetChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.EipAddress.InternetChargeType"));
+		describeInstanceAttributeResponse.setEipAddress(eipAddress);
+
+		DedicatedHostAttribute dedicatedHostAttribute = new DedicatedHostAttribute();
+		dedicatedHostAttribute.setDedicatedHostId(_ctx.stringValue("DescribeInstanceAttributeResponse.DedicatedHostAttribute.DedicatedHostId"));
+		dedicatedHostAttribute.setDedicatedHostName(_ctx.stringValue("DescribeInstanceAttributeResponse.DedicatedHostAttribute.DedicatedHostName"));
+		describeInstanceAttributeResponse.setDedicatedHostAttribute(dedicatedHostAttribute);
+
 		VpcAttributes vpcAttributes = new VpcAttributes();
 		vpcAttributes.setVpcId(_ctx.stringValue("DescribeInstanceAttributeResponse.VpcAttributes.VpcId"));
-		vpcAttributes.setNatIpAddress(_ctx.stringValue("DescribeInstanceAttributeResponse.VpcAttributes.NatIpAddress"));
 		vpcAttributes.setVSwitchId(_ctx.stringValue("DescribeInstanceAttributeResponse.VpcAttributes.VSwitchId"));
+		vpcAttributes.setNatIpAddress(_ctx.stringValue("DescribeInstanceAttributeResponse.VpcAttributes.NatIpAddress"));
 
 		List<String> privateIpAddress = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAttributeResponse.VpcAttributes.PrivateIpAddress.Length"); i++) {
@@ -88,23 +101,15 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		vpcAttributes.setPrivateIpAddress(privateIpAddress);
 		describeInstanceAttributeResponse.setVpcAttributes(vpcAttributes);
 
-		EipAddress eipAddress = new EipAddress();
-		eipAddress.setInternetChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.EipAddress.InternetChargeType"));
-		eipAddress.setIpAddress(_ctx.stringValue("DescribeInstanceAttributeResponse.EipAddress.IpAddress"));
-		eipAddress.setBandwidth(_ctx.integerValue("DescribeInstanceAttributeResponse.EipAddress.Bandwidth"));
-		eipAddress.setAllocationId(_ctx.stringValue("DescribeInstanceAttributeResponse.EipAddress.AllocationId"));
-		describeInstanceAttributeResponse.setEipAddress(eipAddress);
-
-		DedicatedHostAttribute dedicatedHostAttribute = new DedicatedHostAttribute();
-		dedicatedHostAttribute.setDedicatedHostName(_ctx.stringValue("DescribeInstanceAttributeResponse.DedicatedHostAttribute.DedicatedHostName"));
-		dedicatedHostAttribute.setDedicatedHostId(_ctx.stringValue("DescribeInstanceAttributeResponse.DedicatedHostAttribute.DedicatedHostId"));
-		describeInstanceAttributeResponse.setDedicatedHostAttribute(dedicatedHostAttribute);
-
 		NetworkOptions networkOptions = new NetworkOptions();
 		networkOptions.setEnableJumboFrame(_ctx.booleanValue("DescribeInstanceAttributeResponse.NetworkOptions.EnableJumboFrame"));
 		networkOptions.setEnableNetworkEncryption(_ctx.booleanValue("DescribeInstanceAttributeResponse.NetworkOptions.EnableNetworkEncryption"));
 		networkOptions.setBandwidthWeighting(_ctx.stringValue("DescribeInstanceAttributeResponse.NetworkOptions.BandwidthWeighting"));
 		describeInstanceAttributeResponse.setNetworkOptions(networkOptions);
+
+		SecurityOptions securityOptions = new SecurityOptions();
+		securityOptions.setEnableSecureBoot(_ctx.booleanValue("DescribeInstanceAttributeResponse.SecurityOptions.EnableSecureBoot"));
+		describeInstanceAttributeResponse.setSecurityOptions(securityOptions);
 
 		List<LockReason> operationLocks = new ArrayList<LockReason>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAttributeResponse.OperationLocks.Length"); i++) {

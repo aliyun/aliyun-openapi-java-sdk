@@ -47,33 +47,25 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 
 	public static class RecommendInstanceType {
 
-		private String commodityCode;
-
 		private String zoneId;
 
 		private Integer priority;
 
 		private String networkType;
 
+		private String instanceChargeType;
+
+		private String commodityCode;
+
+		private String regionId;
+
 		private String scene;
 
 		private String spotStrategy;
 
-		private String regionId;
-
-		private String instanceChargeType;
-
 		private List<Zone> zones;
 
 		private InstanceType instanceType;
-
-		public String getCommodityCode() {
-			return this.commodityCode;
-		}
-
-		public void setCommodityCode(String commodityCode) {
-			this.commodityCode = commodityCode;
-		}
 
 		public String getZoneId() {
 			return this.zoneId;
@@ -99,6 +91,30 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 			this.networkType = networkType;
 		}
 
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
+		}
+
+		public String getCommodityCode() {
+			return this.commodityCode;
+		}
+
+		public void setCommodityCode(String commodityCode) {
+			this.commodityCode = commodityCode;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public String getScene() {
 			return this.scene;
 		}
@@ -113,22 +129,6 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 
 		public void setSpotStrategy(String spotStrategy) {
 			this.spotStrategy = spotStrategy;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getInstanceChargeType() {
-			return this.instanceChargeType;
-		}
-
-		public void setInstanceChargeType(String instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
 		}
 
 		public List<Zone> getZones() {
@@ -176,13 +176,13 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 
 			private Integer cores;
 
-			private Integer memory;
+			private String generation;
 
-			private String instanceType;
+			private Integer memory;
 
 			private String instanceTypeFamily;
 
-			private String generation;
+			private String instanceType;
 
 			public String getSupportIoOptimized() {
 				return this.supportIoOptimized;
@@ -200,20 +200,20 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 				this.cores = cores;
 			}
 
+			public String getGeneration() {
+				return this.generation;
+			}
+
+			public void setGeneration(String generation) {
+				this.generation = generation;
+			}
+
 			public Integer getMemory() {
 				return this.memory;
 			}
 
 			public void setMemory(Integer memory) {
 				this.memory = memory;
-			}
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
 			}
 
 			public String getInstanceTypeFamily() {
@@ -224,12 +224,12 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 				this.instanceTypeFamily = instanceTypeFamily;
 			}
 
-			public String getGeneration() {
-				return this.generation;
+			public String getInstanceType() {
+				return this.instanceType;
 			}
 
-			public void setGeneration(String generation) {
-				this.generation = generation;
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
 			}
 		}
 	}

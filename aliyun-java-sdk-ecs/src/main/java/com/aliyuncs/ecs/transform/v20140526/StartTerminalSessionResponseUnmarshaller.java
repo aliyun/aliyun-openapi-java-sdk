@@ -23,9 +23,9 @@ public class StartTerminalSessionResponseUnmarshaller {
 	public static StartTerminalSessionResponse unmarshall(StartTerminalSessionResponse startTerminalSessionResponse, UnmarshallerContext _ctx) {
 		
 		startTerminalSessionResponse.setRequestId(_ctx.stringValue("StartTerminalSessionResponse.RequestId"));
-		startTerminalSessionResponse.setSessionId(_ctx.stringValue("StartTerminalSessionResponse.SessionId"));
 		startTerminalSessionResponse.setSecurityToken(_ctx.stringValue("StartTerminalSessionResponse.SecurityToken"));
 		startTerminalSessionResponse.setWebSocketUrl(_ctx.stringValue("StartTerminalSessionResponse.WebSocketUrl"));
+		startTerminalSessionResponse.setSessionId(_ctx.stringValue("StartTerminalSessionResponse.SessionId"));
 	 
 	 	return startTerminalSessionResponse;
 	}

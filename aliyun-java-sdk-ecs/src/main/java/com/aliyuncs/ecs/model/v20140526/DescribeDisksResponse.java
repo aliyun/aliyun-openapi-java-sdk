@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDisksResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String nextToken;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
-
 	private String requestId;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<Disk> disks;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -53,14 +61,6 @@ public class DescribeDisksResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -69,12 +69,12 @@ public class DescribeDisksResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Disk> getDisks() {
@@ -87,202 +87,122 @@ public class DescribeDisksResponse extends AcsResponse {
 
 	public static class Disk {
 
-		private String serialNumber;
+		private String kMSKeyId;
 
-		private String creationTime;
-
-		private String status;
-
-		private String type;
-
-		private String performanceLevel;
-
-		private String bdfId;
-
-		private Boolean enableAutoSnapshot;
-
-		private String storageSetId;
-
-		private Integer storageSetPartitionNumber;
-
-		private String diskId;
-
-		private Boolean deleteAutoSnapshot;
-
-		private String storageClusterId;
+		private String resourceGroupId;
 
 		private Boolean encrypted;
 
-		private Integer iOPSRead;
+		private Integer size;
 
-		private Integer mountInstanceNum;
+		private Boolean deleteAutoSnapshot;
 
-		private String description;
+		private Integer iOPS;
 
-		private String device;
+		private String multiAttach;
 
-		private String diskName;
+		private String sourceDiskId;
 
-		private Boolean portable;
+		private String expiredTime;
 
 		private String imageId;
 
-		private String kMSKeyId;
+		private String storageSetId;
 
-		private Boolean deleteWithInstance;
+		private String status;
 
-		private String detachedTime;
+		private Integer iOPSRead;
 
-		private String sourceSnapshotId;
-
-		private String autoSnapshotPolicyId;
-
-		private Boolean enableAutomatedSnapshotPolicy;
+		private String attachedTime;
 
 		private Integer iOPSWrite;
 
 		private String instanceId;
 
-		private Integer iOPS;
-
-		private String regionId;
-
-		private String expiredTime;
-
-		private Integer size;
-
-		private String resourceGroupId;
-
-		private String diskChargeType;
-
-		private String zoneId;
-
-		private String attachedTime;
-
-		private String category;
-
 		private String productCode;
 
-		private String multiAttach;
+		private String device;
+
+		private Boolean deleteWithInstance;
 
 		private Long provisionedIops;
 
-		private Boolean burstingEnabled;
-
-		private Integer throughput;
-
-		private Integer throughputRead;
+		private String bdfId;
 
 		private Integer throughputWrite;
 
-		private String sourceDiskId;
+		private Boolean portable;
 
-		private List<OperationLock> operationLocks;
+		private Integer mountInstanceNum;
 
-		private List<MountInstance> mountInstances;
+		private String serialNumber;
+
+		private String creationTime;
+
+		private String diskId;
+
+		private String detachedTime;
+
+		private String description;
+
+		private String category;
+
+		private Integer throughputRead;
+
+		private String diskChargeType;
+
+		private Integer throughput;
+
+		private Integer storageSetPartitionNumber;
+
+		private Boolean burstingEnabled;
+
+		private String storageClusterId;
+
+		private String zoneId;
+
+		private String sourceSnapshotId;
+
+		private String performanceLevel;
+
+		private Boolean enableAutomatedSnapshotPolicy;
+
+		private Boolean enableAutoSnapshot;
+
+		private String autoSnapshotPolicyId;
+
+		private String diskName;
+
+		private String type;
+
+		private String regionId;
 
 		private List<Tag> tags;
 
 		private List<Attachment> attachments;
 
+		private List<OperationLock> operationLocks;
+
+		private List<MountInstance> mountInstances;
+
 		private Placement placement;
 
 		private DataSource dataSource;
 
-		public String getSerialNumber() {
-			return this.serialNumber;
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
 		}
 
-		public void setSerialNumber(String serialNumber) {
-			this.serialNumber = serialNumber;
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getPerformanceLevel() {
-			return this.performanceLevel;
-		}
-
-		public void setPerformanceLevel(String performanceLevel) {
-			this.performanceLevel = performanceLevel;
-		}
-
-		public String getBdfId() {
-			return this.bdfId;
-		}
-
-		public void setBdfId(String bdfId) {
-			this.bdfId = bdfId;
-		}
-
-		public Boolean getEnableAutoSnapshot() {
-			return this.enableAutoSnapshot;
-		}
-
-		public void setEnableAutoSnapshot(Boolean enableAutoSnapshot) {
-			this.enableAutoSnapshot = enableAutoSnapshot;
-		}
-
-		public String getStorageSetId() {
-			return this.storageSetId;
-		}
-
-		public void setStorageSetId(String storageSetId) {
-			this.storageSetId = storageSetId;
-		}
-
-		public Integer getStorageSetPartitionNumber() {
-			return this.storageSetPartitionNumber;
-		}
-
-		public void setStorageSetPartitionNumber(Integer storageSetPartitionNumber) {
-			this.storageSetPartitionNumber = storageSetPartitionNumber;
-		}
-
-		public String getDiskId() {
-			return this.diskId;
-		}
-
-		public void setDiskId(String diskId) {
-			this.diskId = diskId;
-		}
-
-		public Boolean getDeleteAutoSnapshot() {
-			return this.deleteAutoSnapshot;
-		}
-
-		public void setDeleteAutoSnapshot(Boolean deleteAutoSnapshot) {
-			this.deleteAutoSnapshot = deleteAutoSnapshot;
-		}
-
-		public String getStorageClusterId() {
-			return this.storageClusterId;
-		}
-
-		public void setStorageClusterId(String storageClusterId) {
-			this.storageClusterId = storageClusterId;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public Boolean getEncrypted() {
@@ -293,52 +213,52 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.encrypted = encrypted;
 		}
 
-		public Integer getIOPSRead() {
-			return this.iOPSRead;
+		public Integer getSize() {
+			return this.size;
 		}
 
-		public void setIOPSRead(Integer iOPSRead) {
-			this.iOPSRead = iOPSRead;
+		public void setSize(Integer size) {
+			this.size = size;
 		}
 
-		public Integer getMountInstanceNum() {
-			return this.mountInstanceNum;
+		public Boolean getDeleteAutoSnapshot() {
+			return this.deleteAutoSnapshot;
 		}
 
-		public void setMountInstanceNum(Integer mountInstanceNum) {
-			this.mountInstanceNum = mountInstanceNum;
+		public void setDeleteAutoSnapshot(Boolean deleteAutoSnapshot) {
+			this.deleteAutoSnapshot = deleteAutoSnapshot;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public Integer getIOPS() {
+			return this.iOPS;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setIOPS(Integer iOPS) {
+			this.iOPS = iOPS;
 		}
 
-		public String getDevice() {
-			return this.device;
+		public String getMultiAttach() {
+			return this.multiAttach;
 		}
 
-		public void setDevice(String device) {
-			this.device = device;
+		public void setMultiAttach(String multiAttach) {
+			this.multiAttach = multiAttach;
 		}
 
-		public String getDiskName() {
-			return this.diskName;
+		public String getSourceDiskId() {
+			return this.sourceDiskId;
 		}
 
-		public void setDiskName(String diskName) {
-			this.diskName = diskName;
+		public void setSourceDiskId(String sourceDiskId) {
+			this.sourceDiskId = sourceDiskId;
 		}
 
-		public Boolean getPortable() {
-			return this.portable;
+		public String getExpiredTime() {
+			return this.expiredTime;
 		}
 
-		public void setPortable(Boolean portable) {
-			this.portable = portable;
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public String getImageId() {
@@ -349,52 +269,36 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.imageId = imageId;
 		}
 
-		public String getKMSKeyId() {
-			return this.kMSKeyId;
+		public String getStorageSetId() {
+			return this.storageSetId;
 		}
 
-		public void setKMSKeyId(String kMSKeyId) {
-			this.kMSKeyId = kMSKeyId;
+		public void setStorageSetId(String storageSetId) {
+			this.storageSetId = storageSetId;
 		}
 
-		public Boolean getDeleteWithInstance() {
-			return this.deleteWithInstance;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDeleteWithInstance(Boolean deleteWithInstance) {
-			this.deleteWithInstance = deleteWithInstance;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getDetachedTime() {
-			return this.detachedTime;
+		public Integer getIOPSRead() {
+			return this.iOPSRead;
 		}
 
-		public void setDetachedTime(String detachedTime) {
-			this.detachedTime = detachedTime;
+		public void setIOPSRead(Integer iOPSRead) {
+			this.iOPSRead = iOPSRead;
 		}
 
-		public String getSourceSnapshotId() {
-			return this.sourceSnapshotId;
+		public String getAttachedTime() {
+			return this.attachedTime;
 		}
 
-		public void setSourceSnapshotId(String sourceSnapshotId) {
-			this.sourceSnapshotId = sourceSnapshotId;
-		}
-
-		public String getAutoSnapshotPolicyId() {
-			return this.autoSnapshotPolicyId;
-		}
-
-		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
-			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
-		}
-
-		public Boolean getEnableAutomatedSnapshotPolicy() {
-			return this.enableAutomatedSnapshotPolicy;
-		}
-
-		public void setEnableAutomatedSnapshotPolicy(Boolean enableAutomatedSnapshotPolicy) {
-			this.enableAutomatedSnapshotPolicy = enableAutomatedSnapshotPolicy;
+		public void setAttachedTime(String attachedTime) {
+			this.attachedTime = attachedTime;
 		}
 
 		public Integer getIOPSWrite() {
@@ -413,78 +317,6 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public Integer getIOPS() {
-			return this.iOPS;
-		}
-
-		public void setIOPS(Integer iOPS) {
-			this.iOPS = iOPS;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public Integer getSize() {
-			return this.size;
-		}
-
-		public void setSize(Integer size) {
-			this.size = size;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getDiskChargeType() {
-			return this.diskChargeType;
-		}
-
-		public void setDiskChargeType(String diskChargeType) {
-			this.diskChargeType = diskChargeType;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getAttachedTime() {
-			return this.attachedTime;
-		}
-
-		public void setAttachedTime(String attachedTime) {
-			this.attachedTime = attachedTime;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
 		public String getProductCode() {
 			return this.productCode;
 		}
@@ -493,12 +325,20 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.productCode = productCode;
 		}
 
-		public String getMultiAttach() {
-			return this.multiAttach;
+		public String getDevice() {
+			return this.device;
 		}
 
-		public void setMultiAttach(String multiAttach) {
-			this.multiAttach = multiAttach;
+		public void setDevice(String device) {
+			this.device = device;
+		}
+
+		public Boolean getDeleteWithInstance() {
+			return this.deleteWithInstance;
+		}
+
+		public void setDeleteWithInstance(Boolean deleteWithInstance) {
+			this.deleteWithInstance = deleteWithInstance;
 		}
 
 		public Long getProvisionedIops() {
@@ -509,28 +349,12 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.provisionedIops = provisionedIops;
 		}
 
-		public Boolean getBurstingEnabled() {
-			return this.burstingEnabled;
+		public String getBdfId() {
+			return this.bdfId;
 		}
 
-		public void setBurstingEnabled(Boolean burstingEnabled) {
-			this.burstingEnabled = burstingEnabled;
-		}
-
-		public Integer getThroughput() {
-			return this.throughput;
-		}
-
-		public void setThroughput(Integer throughput) {
-			this.throughput = throughput;
-		}
-
-		public Integer getThroughputRead() {
-			return this.throughputRead;
-		}
-
-		public void setThroughputRead(Integer throughputRead) {
-			this.throughputRead = throughputRead;
+		public void setBdfId(String bdfId) {
+			this.bdfId = bdfId;
 		}
 
 		public Integer getThroughputWrite() {
@@ -541,28 +365,188 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.throughputWrite = throughputWrite;
 		}
 
-		public String getSourceDiskId() {
-			return this.sourceDiskId;
+		public Boolean getPortable() {
+			return this.portable;
 		}
 
-		public void setSourceDiskId(String sourceDiskId) {
-			this.sourceDiskId = sourceDiskId;
+		public void setPortable(Boolean portable) {
+			this.portable = portable;
 		}
 
-		public List<OperationLock> getOperationLocks() {
-			return this.operationLocks;
+		public Integer getMountInstanceNum() {
+			return this.mountInstanceNum;
 		}
 
-		public void setOperationLocks(List<OperationLock> operationLocks) {
-			this.operationLocks = operationLocks;
+		public void setMountInstanceNum(Integer mountInstanceNum) {
+			this.mountInstanceNum = mountInstanceNum;
 		}
 
-		public List<MountInstance> getMountInstances() {
-			return this.mountInstances;
+		public String getSerialNumber() {
+			return this.serialNumber;
 		}
 
-		public void setMountInstances(List<MountInstance> mountInstances) {
-			this.mountInstances = mountInstances;
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getDiskId() {
+			return this.diskId;
+		}
+
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
+		}
+
+		public String getDetachedTime() {
+			return this.detachedTime;
+		}
+
+		public void setDetachedTime(String detachedTime) {
+			this.detachedTime = detachedTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public Integer getThroughputRead() {
+			return this.throughputRead;
+		}
+
+		public void setThroughputRead(Integer throughputRead) {
+			this.throughputRead = throughputRead;
+		}
+
+		public String getDiskChargeType() {
+			return this.diskChargeType;
+		}
+
+		public void setDiskChargeType(String diskChargeType) {
+			this.diskChargeType = diskChargeType;
+		}
+
+		public Integer getThroughput() {
+			return this.throughput;
+		}
+
+		public void setThroughput(Integer throughput) {
+			this.throughput = throughput;
+		}
+
+		public Integer getStorageSetPartitionNumber() {
+			return this.storageSetPartitionNumber;
+		}
+
+		public void setStorageSetPartitionNumber(Integer storageSetPartitionNumber) {
+			this.storageSetPartitionNumber = storageSetPartitionNumber;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
+		}
+
+		public String getStorageClusterId() {
+			return this.storageClusterId;
+		}
+
+		public void setStorageClusterId(String storageClusterId) {
+			this.storageClusterId = storageClusterId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getSourceSnapshotId() {
+			return this.sourceSnapshotId;
+		}
+
+		public void setSourceSnapshotId(String sourceSnapshotId) {
+			this.sourceSnapshotId = sourceSnapshotId;
+		}
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
+		}
+
+		public Boolean getEnableAutomatedSnapshotPolicy() {
+			return this.enableAutomatedSnapshotPolicy;
+		}
+
+		public void setEnableAutomatedSnapshotPolicy(Boolean enableAutomatedSnapshotPolicy) {
+			this.enableAutomatedSnapshotPolicy = enableAutomatedSnapshotPolicy;
+		}
+
+		public Boolean getEnableAutoSnapshot() {
+			return this.enableAutoSnapshot;
+		}
+
+		public void setEnableAutoSnapshot(Boolean enableAutoSnapshot) {
+			this.enableAutoSnapshot = enableAutoSnapshot;
+		}
+
+		public String getAutoSnapshotPolicyId() {
+			return this.autoSnapshotPolicyId;
+		}
+
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		}
+
+		public String getDiskName() {
+			return this.diskName;
+		}
+
+		public void setDiskName(String diskName) {
+			this.diskName = diskName;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<Tag> getTags() {
@@ -581,6 +565,22 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.attachments = attachments;
 		}
 
+		public List<OperationLock> getOperationLocks() {
+			return this.operationLocks;
+		}
+
+		public void setOperationLocks(List<OperationLock> operationLocks) {
+			this.operationLocks = operationLocks;
+		}
+
+		public List<MountInstance> getMountInstances() {
+			return this.mountInstances;
+		}
+
+		public void setMountInstances(List<MountInstance> mountInstances) {
+			this.mountInstances = mountInstances;
+		}
+
 		public Placement getPlacement() {
 			return this.placement;
 		}
@@ -595,6 +595,122 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setDataSource(DataSource dataSource) {
 			this.dataSource = dataSource;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+
+		public static class Attachment {
+
+			private String attachedTime;
+
+			private String vuid;
+
+			private String identifier;
+
+			private String instanceId;
+
+			private Long nsId;
+
+			private String device;
+
+			private String accessToken;
+
+			private String nguid;
+
+			private String targetDevice;
+
+			public String getAttachedTime() {
+				return this.attachedTime;
+			}
+
+			public void setAttachedTime(String attachedTime) {
+				this.attachedTime = attachedTime;
+			}
+
+			public String getVuid() {
+				return this.vuid;
+			}
+
+			public void setVuid(String vuid) {
+				this.vuid = vuid;
+			}
+
+			public String getIdentifier() {
+				return this.identifier;
+			}
+
+			public void setIdentifier(String identifier) {
+				this.identifier = identifier;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public Long getNsId() {
+				return this.nsId;
+			}
+
+			public void setNsId(Long nsId) {
+				this.nsId = nsId;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
+			}
+
+			public String getAccessToken() {
+				return this.accessToken;
+			}
+
+			public void setAccessToken(String accessToken) {
+				this.accessToken = accessToken;
+			}
+
+			public String getNguid() {
+				return this.nguid;
+			}
+
+			public void setNguid(String nguid) {
+				this.nguid = nguid;
+			}
+
+			public String getTargetDevice() {
+				return this.targetDevice;
+			}
+
+			public void setTargetDevice(String targetDevice) {
+				this.targetDevice = targetDevice;
+			}
 		}
 
 		public static class OperationLock {
@@ -643,122 +759,6 @@ public class DescribeDisksResponse extends AcsResponse {
 			}
 		}
 
-		public static class Tag {
-
-			private String tagValue;
-
-			private String tagKey;
-
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
-
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
-		}
-
-		public static class Attachment {
-
-			private String instanceId;
-
-			private String device;
-
-			private String attachedTime;
-
-			private Long nsId;
-
-			private String nguid;
-
-			private String identifier;
-
-			private String targetDevice;
-
-			private String accessToken;
-
-			private String vuid;
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public String getDevice() {
-				return this.device;
-			}
-
-			public void setDevice(String device) {
-				this.device = device;
-			}
-
-			public String getAttachedTime() {
-				return this.attachedTime;
-			}
-
-			public void setAttachedTime(String attachedTime) {
-				this.attachedTime = attachedTime;
-			}
-
-			public Long getNsId() {
-				return this.nsId;
-			}
-
-			public void setNsId(Long nsId) {
-				this.nsId = nsId;
-			}
-
-			public String getNguid() {
-				return this.nguid;
-			}
-
-			public void setNguid(String nguid) {
-				this.nguid = nguid;
-			}
-
-			public String getIdentifier() {
-				return this.identifier;
-			}
-
-			public void setIdentifier(String identifier) {
-				this.identifier = identifier;
-			}
-
-			public String getTargetDevice() {
-				return this.targetDevice;
-			}
-
-			public void setTargetDevice(String targetDevice) {
-				this.targetDevice = targetDevice;
-			}
-
-			public String getAccessToken() {
-				return this.accessToken;
-			}
-
-			public void setAccessToken(String accessToken) {
-				this.accessToken = accessToken;
-			}
-
-			public String getVuid() {
-				return this.vuid;
-			}
-
-			public void setVuid(String vuid) {
-				this.vuid = vuid;
-			}
-		}
-
 		public static class Placement {
 
 			private String zoneIds;
@@ -774,17 +774,9 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public static class DataSource {
 
-			private String id;
-
 			private String type;
 
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
+			private String id;
 
 			public String getType() {
 				return this.type;
@@ -792,6 +784,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
 			}
 		}
 	}
