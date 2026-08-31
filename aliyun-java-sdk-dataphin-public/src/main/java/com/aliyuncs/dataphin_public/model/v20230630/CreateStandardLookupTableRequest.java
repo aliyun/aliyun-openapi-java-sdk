@@ -30,10 +30,12 @@ public class CreateStandardLookupTableRequest extends RpcAcsRequest<CreateStanda
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateStandardLookupTableRequest() {
-		super("dataphin-public", "2023-06-30", "CreateStandardLookupTable");
+		super("dataphin-public", "2023-06-30", "CreateStandardLookupTable", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class CreateStandardLookupTableRequest extends RpcAcsRequest<CreateStanda
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

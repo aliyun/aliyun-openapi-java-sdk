@@ -27,6 +27,8 @@ public class GetDevObjectDependencyRequest extends RpcAcsRequest<GetDevObjectDep
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String objectFrom;
 
 	private String objectType;
@@ -35,7 +37,7 @@ public class GetDevObjectDependencyRequest extends RpcAcsRequest<GetDevObjectDep
 
 	private String objectId;
 	public GetDevObjectDependencyRequest() {
-		super("dataphin-public", "2023-06-30", "GetDevObjectDependency");
+		super("dataphin-public", "2023-06-30", "GetDevObjectDependency", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class GetDevObjectDependencyRequest extends RpcAcsRequest<GetDevObjectDep
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

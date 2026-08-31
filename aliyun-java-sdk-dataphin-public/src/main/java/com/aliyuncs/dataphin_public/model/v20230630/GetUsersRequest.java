@@ -30,10 +30,12 @@ public class GetUsersRequest extends RpcAcsRequest<GetUsersResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("userIdList")
 	private List<String> userIdList;
 	public GetUsersRequest() {
-		super("dataphin-public", "2023-06-30", "GetUsers");
+		super("dataphin-public", "2023-06-30", "GetUsers", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class GetUsersRequest extends RpcAcsRequest<GetUsersResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

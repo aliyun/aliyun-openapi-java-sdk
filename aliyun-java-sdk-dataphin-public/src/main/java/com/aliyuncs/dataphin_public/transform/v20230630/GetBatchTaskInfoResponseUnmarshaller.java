@@ -71,11 +71,35 @@ public class GetBatchTaskInfoResponseUnmarshaller {
 		taskInfo.setDataSourceId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DataSourceId"));
 		taskInfo.setHasDevNode(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.HasDevNode"));
 
+		List<String> opsOwnerNameList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.OpsOwnerNameList.Length"); i++) {
+			opsOwnerNameList.add(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OpsOwnerNameList["+ i +"]"));
+		}
+		taskInfo.setOpsOwnerNameList(opsOwnerNameList);
+
 		List<String> nodeOutputNameList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.NodeOutputNameList.Length"); i++) {
 			nodeOutputNameList.add(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.NodeOutputNameList["+ i +"]"));
 		}
 		taskInfo.setNodeOutputNameList(nodeOutputNameList);
+
+		List<String> developOwnerNameList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.DevelopOwnerNameList.Length"); i++) {
+			developOwnerNameList.add(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DevelopOwnerNameList["+ i +"]"));
+		}
+		taskInfo.setDevelopOwnerNameList(developOwnerNameList);
+
+		List<String> developOwnerIdList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.DevelopOwnerIdList.Length"); i++) {
+			developOwnerIdList.add(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DevelopOwnerIdList["+ i +"]"));
+		}
+		taskInfo.setDevelopOwnerIdList(developOwnerIdList);
+
+		List<String> opsOwnerIdList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.OpsOwnerIdList.Length"); i++) {
+			opsOwnerIdList.add(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OpsOwnerIdList["+ i +"]"));
+		}
+		taskInfo.setOpsOwnerIdList(opsOwnerIdList);
 
 		CustomScheduleConfig customScheduleConfig = new CustomScheduleConfig();
 		customScheduleConfig.setIntervalUnit(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.CustomScheduleConfig.IntervalUnit"));

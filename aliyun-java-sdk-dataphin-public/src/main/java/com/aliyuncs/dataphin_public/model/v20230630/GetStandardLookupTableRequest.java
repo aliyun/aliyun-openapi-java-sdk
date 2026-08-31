@@ -27,11 +27,13 @@ public class GetStandardLookupTableRequest extends RpcAcsRequest<GetStandardLook
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Boolean nullable;
 
 	private Long id;
 	public GetStandardLookupTableRequest() {
-		super("dataphin-public", "2023-06-30", "GetStandardLookupTable");
+		super("dataphin-public", "2023-06-30", "GetStandardLookupTable", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -44,6 +46,17 @@ public class GetStandardLookupTableRequest extends RpcAcsRequest<GetStandardLook
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

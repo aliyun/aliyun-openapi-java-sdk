@@ -30,10 +30,12 @@ public class GetMyTenantsRequest extends RpcAcsRequest<GetMyTenantsResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("featureCodeList")
 	private List<String> featureCodeList;
 	public GetMyTenantsRequest() {
-		super("dataphin-public", "2023-06-30", "GetMyTenants");
+		super("dataphin-public", "2023-06-30", "GetMyTenants", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class GetMyTenantsRequest extends RpcAcsRequest<GetMyTenantsResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

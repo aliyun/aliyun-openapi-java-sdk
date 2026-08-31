@@ -27,11 +27,13 @@ public class GetBatchTaskUdfLineagesRequest extends RpcAcsRequest<GetBatchTaskUd
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long projectId;
 
 	private Long fileId;
 	public GetBatchTaskUdfLineagesRequest() {
-		super("dataphin-public", "2023-06-30", "GetBatchTaskUdfLineages");
+		super("dataphin-public", "2023-06-30", "GetBatchTaskUdfLineages", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -44,6 +46,17 @@ public class GetBatchTaskUdfLineagesRequest extends RpcAcsRequest<GetBatchTaskUd
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

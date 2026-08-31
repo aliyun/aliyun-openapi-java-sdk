@@ -27,9 +27,11 @@ public class DeleteProjectRequest extends RpcAcsRequest<DeleteProjectResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long id;
 	public DeleteProjectRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteProject");
+		super("dataphin-public", "2023-06-30", "DeleteProject", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class DeleteProjectRequest extends RpcAcsRequest<DeleteProjectResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

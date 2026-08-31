@@ -27,13 +27,15 @@ public class DeleteUdfRequest extends RpcAcsRequest<DeleteUdfResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String comment;
 
 	private Long id;
 
 	private Long projectId;
 	public DeleteUdfRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteUdf");
+		super("dataphin-public", "2023-06-30", "DeleteUdf", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class DeleteUdfRequest extends RpcAcsRequest<DeleteUdfResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

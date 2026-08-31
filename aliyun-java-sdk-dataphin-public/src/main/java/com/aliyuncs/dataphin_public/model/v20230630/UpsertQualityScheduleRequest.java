@@ -30,10 +30,12 @@ public class UpsertQualityScheduleRequest extends RpcAcsRequest<UpsertQualitySch
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("upsertCommand")
 	private UpsertCommand upsertCommand;
 	public UpsertQualityScheduleRequest() {
-		super("dataphin-public", "2023-06-30", "UpsertQualitySchedule");
+		super("dataphin-public", "2023-06-30", "UpsertQualitySchedule", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class UpsertQualityScheduleRequest extends RpcAcsRequest<UpsertQualitySch
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

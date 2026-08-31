@@ -30,10 +30,12 @@ public class UpdateSecurityIdentifyResultStatusRequest extends RpcAcsRequest<Upd
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateSecurityIdentifyResultStatusRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateSecurityIdentifyResultStatus");
+		super("dataphin-public", "2023-06-30", "UpdateSecurityIdentifyResultStatus", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class UpdateSecurityIdentifyResultStatusRequest extends RpcAcsRequest<Upd
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

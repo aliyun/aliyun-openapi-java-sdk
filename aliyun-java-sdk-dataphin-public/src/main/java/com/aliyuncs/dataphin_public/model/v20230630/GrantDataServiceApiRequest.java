@@ -30,12 +30,14 @@ public class GrantDataServiceApiRequest extends RpcAcsRequest<GrantDataServiceAp
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("grantCommand")
 	private GrantCommand grantCommand;
 
 	private Integer projectId;
 	public GrantDataServiceApiRequest() {
-		super("dataphin-public", "2023-06-30", "GrantDataServiceApi");
+		super("dataphin-public", "2023-06-30", "GrantDataServiceApi", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class GrantDataServiceApiRequest extends RpcAcsRequest<GrantDataServiceAp
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

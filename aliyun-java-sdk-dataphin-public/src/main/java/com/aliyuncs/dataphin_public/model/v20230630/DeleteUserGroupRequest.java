@@ -27,9 +27,11 @@ public class DeleteUserGroupRequest extends RpcAcsRequest<DeleteUserGroupRespons
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String userGroupId;
 	public DeleteUserGroupRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteUserGroup");
+		super("dataphin-public", "2023-06-30", "DeleteUserGroup", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class DeleteUserGroupRequest extends RpcAcsRequest<DeleteUserGroupRespons
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

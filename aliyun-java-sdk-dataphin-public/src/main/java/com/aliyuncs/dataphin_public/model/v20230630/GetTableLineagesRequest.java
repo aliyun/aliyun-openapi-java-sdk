@@ -30,12 +30,14 @@ public class GetTableLineagesRequest extends RpcAcsRequest<GetTableLineagesRespo
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("filterQuery")
 	private FilterQuery filterQuery;
 
 	private String tableGuid;
 	public GetTableLineagesRequest() {
-		super("dataphin-public", "2023-06-30", "GetTableLineages");
+		super("dataphin-public", "2023-06-30", "GetTableLineages", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class GetTableLineagesRequest extends RpcAcsRequest<GetTableLineagesRespo
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

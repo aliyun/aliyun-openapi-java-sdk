@@ -28,8 +28,12 @@ public class GetUserBySourceIdRequest extends RpcAcsRequest<GetUserBySourceIdRes
 	private Long opTenantId;
 
 	private String sourceId;
+
+	private String opUserId;
+
+	private String sourceType;
 	public GetUserBySourceIdRequest() {
-		super("dataphin-public", "2023-06-30", "GetUserBySourceId");
+		super("dataphin-public", "2023-06-30", "GetUserBySourceId", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -53,6 +57,28 @@ public class GetUserBySourceIdRequest extends RpcAcsRequest<GetUserBySourceIdRes
 		this.sourceId = sourceId;
 		if(sourceId != null){
 			putQueryParameter("SourceId", sourceId);
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
+		}
+	}
+
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
 		}
 	}
 

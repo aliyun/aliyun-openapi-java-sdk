@@ -35,7 +35,7 @@ public class ExecuteDDLRequest extends RpcAcsRequest<ExecuteDDLResponse> {
 	@SerializedName("context")
 	private Context context;
 	public ExecuteDDLRequest() {
-		super("dataphin-public", "2023-06-30", "ExecuteDDL");
+		super("dataphin-public", "2023-06-30", "ExecuteDDL", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -30,12 +30,14 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 
 	private String env;
 	public ListInstancesRequest() {
-		super("dataphin-public", "2023-06-30", "ListInstances");
+		super("dataphin-public", "2023-06-30", "ListInstances", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 
@@ -101,6 +114,9 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 		@SerializedName("SchedulePaused")
 		private Boolean schedulePaused;
+
+		@SerializedName("TagList")
+		private List<String> tagList;
 
 		@SerializedName("BizType")
 		private String bizType;
@@ -202,6 +218,14 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 		public void setSchedulePaused(Boolean schedulePaused) {
 			this.schedulePaused = schedulePaused;
+		}
+
+		public List<String> getTagList() {
+			return this.tagList;
+		}
+
+		public void setTagList(List<String> tagList) {
+			this.tagList = tagList;
 		}
 
 		public String getBizType() {

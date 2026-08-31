@@ -29,6 +29,8 @@ public class ListBatchTemplatesRequest extends RpcAcsRequest<ListBatchTemplatesR
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 
@@ -36,7 +38,7 @@ public class ListBatchTemplatesRequest extends RpcAcsRequest<ListBatchTemplatesR
 
 	private Long projectId;
 	public ListBatchTemplatesRequest() {
-		super("dataphin-public", "2023-06-30", "ListBatchTemplates");
+		super("dataphin-public", "2023-06-30", "ListBatchTemplates", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -49,6 +51,17 @@ public class ListBatchTemplatesRequest extends RpcAcsRequest<ListBatchTemplatesR
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

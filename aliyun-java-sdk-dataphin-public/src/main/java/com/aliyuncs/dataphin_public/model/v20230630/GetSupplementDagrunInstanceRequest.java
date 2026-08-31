@@ -27,11 +27,13 @@ public class GetSupplementDagrunInstanceRequest extends RpcAcsRequest<GetSupplem
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String env;
 
 	private String dagrunId;
 	public GetSupplementDagrunInstanceRequest() {
-		super("dataphin-public", "2023-06-30", "GetSupplementDagrunInstance");
+		super("dataphin-public", "2023-06-30", "GetSupplementDagrunInstance", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -44,6 +46,17 @@ public class GetSupplementDagrunInstanceRequest extends RpcAcsRequest<GetSupplem
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

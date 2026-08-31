@@ -20,6 +20,9 @@ import java.util.List;
 import com.aliyuncs.dataphin_public.model.v20230630.GetDatasetResponse;
 import com.aliyuncs.dataphin_public.model.v20230630.GetDatasetResponse.DatasetDTO;
 import com.aliyuncs.dataphin_public.model.v20230630.GetDatasetResponse.DatasetDTO.DatasetVersionDTO;
+import com.aliyuncs.dataphin_public.model.v20230630.GetDatasetResponse.DatasetDTO.DatasetVersionDTO.ApiInfo;
+import com.aliyuncs.dataphin_public.model.v20230630.GetDatasetResponse.DatasetDTO.DatasetVersionDTO.ApiInfo.ApiRequestParamDTO;
+import com.aliyuncs.dataphin_public.model.v20230630.GetDatasetResponse.DatasetDTO.DatasetVersionDTO.ApiInfo.ApiResponseParamDTO;
 import com.aliyuncs.dataphin_public.model.v20230630.GetDatasetResponse.DatasetDTO.DatasetVersionDTO.DataVersionConfig;
 import com.aliyuncs.dataphin_public.model.v20230630.GetDatasetResponse.DatasetDTO.DatasetVersionDTO.DataVersionConfig.FileStorageConfig;
 import com.aliyuncs.dataphin_public.model.v20230630.GetDatasetResponse.DatasetDTO.DatasetVersionDTO.DataVersionConfig.MetadataStorageConfig;
@@ -87,6 +90,57 @@ public class GetDatasetResponseUnmarshaller {
 			datasetVersionDTO.setId(_ctx.longValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].Id"));
 			datasetVersionDTO.setCreator(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].Creator"));
 			datasetVersionDTO.setDatasetId(_ctx.longValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].DatasetId"));
+
+			ApiInfo apiInfo = new ApiInfo();
+			apiInfo.setOsApiGroup(_ctx.integerValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.OsApiGroup"));
+			apiInfo.setApiNo(_ctx.longValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.ApiNo"));
+			apiInfo.setOsApiGroupName(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.OsApiGroupName"));
+			apiInfo.setRequestMethod(_ctx.integerValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestMethod"));
+			apiInfo.setTimeout(_ctx.integerValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.Timeout"));
+			apiInfo.setOsProject(_ctx.integerValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.OsProject"));
+			apiInfo.setBizProtocol(_ctx.integerValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.Protocol"));
+			apiInfo.setExecuteMode(_ctx.integerValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.ExecuteMode"));
+			apiInfo.setExecTimeout(_ctx.integerValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.ExecTimeout"));
+			apiInfo.setOsProjectName(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.OsProjectName"));
+
+			List<ApiResponseParamDTO> responseParamList = new ArrayList<ApiResponseParamDTO>();
+			for (int j = 0; j < _ctx.lengthValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.ResponseParamList.Length"); j++) {
+				ApiResponseParamDTO apiResponseParamDTO = new ApiResponseParamDTO();
+				apiResponseParamDTO.setSeqNum(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.ResponseParamList["+ j +"].SeqNum"));
+				apiResponseParamDTO.setMappingColumn(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.ResponseParamList["+ j +"].MappingColumn"));
+				apiResponseParamDTO.setSample(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.ResponseParamList["+ j +"].Sample"));
+				apiResponseParamDTO.setDateFormat(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.ResponseParamList["+ j +"].DateFormat"));
+				apiResponseParamDTO.setDescr(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.ResponseParamList["+ j +"].Descr"));
+				apiResponseParamDTO.setParamName(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.ResponseParamList["+ j +"].ParamName"));
+				apiResponseParamDTO.setParamType(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.ResponseParamList["+ j +"].ParamType"));
+				apiResponseParamDTO.setIsUrl(_ctx.booleanValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.ResponseParamList["+ j +"].IsUrl"));
+				apiResponseParamDTO.setOriginalColumn(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.ResponseParamList["+ j +"].OriginalColumn"));
+
+				responseParamList.add(apiResponseParamDTO);
+			}
+			apiInfo.setResponseParamList(responseParamList);
+
+			List<ApiRequestParamDTO> requestParamList = new ArrayList<ApiRequestParamDTO>();
+			for (int j = 0; j < _ctx.lengthValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList.Length"); j++) {
+				ApiRequestParamDTO apiRequestParamDTO = new ApiRequestParamDTO();
+				apiRequestParamDTO.setOperator(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList["+ j +"].Operator"));
+				apiRequestParamDTO.setSeqNum(_ctx.integerValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList["+ j +"].SeqNum"));
+				apiRequestParamDTO.setOptional(_ctx.booleanValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList["+ j +"].Optional"));
+				apiRequestParamDTO.setMappingColumn(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList["+ j +"].MappingColumn"));
+				apiRequestParamDTO.setSample(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList["+ j +"].Sample"));
+				apiRequestParamDTO.setDescr(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList["+ j +"].Descr"));
+				apiRequestParamDTO.setMust(_ctx.booleanValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList["+ j +"].Must"));
+				apiRequestParamDTO.setParamType(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList["+ j +"].ParamType"));
+				apiRequestParamDTO.setOriginalColumn(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList["+ j +"].OriginalColumn"));
+				apiRequestParamDTO.setDefaultValue(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList["+ j +"].DefaultValue"));
+				apiRequestParamDTO.setDateFormat(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList["+ j +"].DateFormat"));
+				apiRequestParamDTO.setParamName(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList["+ j +"].ParamName"));
+				apiRequestParamDTO.setIsUrl(_ctx.booleanValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].ApiInfo.RequestParamList["+ j +"].IsUrl"));
+
+				requestParamList.add(apiRequestParamDTO);
+			}
+			apiInfo.setRequestParamList(requestParamList);
+			datasetVersionDTO.setApiInfo(apiInfo);
 
 			DataVersionConfig dataVersionConfig = new DataVersionConfig();
 			dataVersionConfig.setVersionDescription(_ctx.stringValue("GetDatasetResponse.DatasetDTO.VersionList["+ i +"].DataVersionConfig.VersionDescription"));

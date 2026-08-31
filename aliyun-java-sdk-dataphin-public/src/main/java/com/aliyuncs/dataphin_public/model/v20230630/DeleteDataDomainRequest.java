@@ -27,11 +27,13 @@ public class DeleteDataDomainRequest extends RpcAcsRequest<DeleteDataDomainRespo
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long id;
 
 	private Long bizUnitId;
 	public DeleteDataDomainRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteDataDomain");
+		super("dataphin-public", "2023-06-30", "DeleteDataDomain", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -44,6 +46,17 @@ public class DeleteDataDomainRequest extends RpcAcsRequest<DeleteDataDomainRespo
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

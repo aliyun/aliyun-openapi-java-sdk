@@ -29,10 +29,12 @@ public class TransferOwnershipForAllObjectRequest extends RpcAcsRequest<Transfer
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("privilegeTransferRecord")
 	private PrivilegeTransferRecord privilegeTransferRecord;
 	public TransferOwnershipForAllObjectRequest() {
-		super("dataphin-public", "2023-06-30", "TransferOwnershipForAllObject");
+		super("dataphin-public", "2023-06-30", "TransferOwnershipForAllObject", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class TransferOwnershipForAllObjectRequest extends RpcAcsRequest<Transfer
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

@@ -30,13 +30,15 @@ public class UpdatePipelineByAsyncRequest extends RpcAcsRequest<UpdatePipelineBy
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 
 	@SerializedName("context")
 	private Context context;
 	public UpdatePipelineByAsyncRequest() {
-		super("dataphin-public", "2023-06-30", "UpdatePipelineByAsync");
+		super("dataphin-public", "2023-06-30", "UpdatePipelineByAsync", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -49,6 +51,17 @@ public class UpdatePipelineByAsyncRequest extends RpcAcsRequest<UpdatePipelineBy
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

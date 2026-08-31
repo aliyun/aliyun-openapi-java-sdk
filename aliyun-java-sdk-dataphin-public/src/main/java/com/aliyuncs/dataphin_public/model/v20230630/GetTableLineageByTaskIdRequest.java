@@ -29,10 +29,12 @@ public class GetTableLineageByTaskIdRequest extends RpcAcsRequest<GetTableLineag
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("tableLineageByTaskIdQuery")
 	private TableLineageByTaskIdQuery tableLineageByTaskIdQuery;
 	public GetTableLineageByTaskIdRequest() {
-		super("dataphin-public", "2023-06-30", "GetTableLineageByTaskId");
+		super("dataphin-public", "2023-06-30", "GetTableLineageByTaskId", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class GetTableLineageByTaskIdRequest extends RpcAcsRequest<GetTableLineag
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

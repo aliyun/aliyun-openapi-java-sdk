@@ -29,6 +29,8 @@ public class ListKgRelationRequest extends RpcAcsRequest<ListKgRelationResponse>
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 
@@ -36,7 +38,7 @@ public class ListKgRelationRequest extends RpcAcsRequest<ListKgRelationResponse>
 
 	private String workspaceId;
 	public ListKgRelationRequest() {
-		super("dataphin-public", "2023-06-30", "ListKgRelation");
+		super("dataphin-public", "2023-06-30", "ListKgRelation", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -49,6 +51,17 @@ public class ListKgRelationRequest extends RpcAcsRequest<ListKgRelationResponse>
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

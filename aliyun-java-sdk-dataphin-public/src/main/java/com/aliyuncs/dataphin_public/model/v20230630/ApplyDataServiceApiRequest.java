@@ -30,12 +30,14 @@ public class ApplyDataServiceApiRequest extends RpcAcsRequest<ApplyDataServiceAp
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("applyCommand")
 	private ApplyCommand applyCommand;
 
 	private Integer projectId;
 	public ApplyDataServiceApiRequest() {
-		super("dataphin-public", "2023-06-30", "ApplyDataServiceApi");
+		super("dataphin-public", "2023-06-30", "ApplyDataServiceApi", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class ApplyDataServiceApiRequest extends RpcAcsRequest<ApplyDataServiceAp
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

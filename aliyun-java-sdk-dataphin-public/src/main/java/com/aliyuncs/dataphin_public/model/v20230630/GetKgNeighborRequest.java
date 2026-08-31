@@ -30,6 +30,8 @@ public class GetKgNeighborRequest extends RpcAcsRequest<GetKgNeighborResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String entityType;
 
 	private String entityDataId;
@@ -39,7 +41,7 @@ public class GetKgNeighborRequest extends RpcAcsRequest<GetKgNeighborResponse> {
 
 	private String workspaceId;
 	public GetKgNeighborRequest() {
-		super("dataphin-public", "2023-06-30", "GetKgNeighbor");
+		super("dataphin-public", "2023-06-30", "GetKgNeighbor", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -52,6 +54,17 @@ public class GetKgNeighborRequest extends RpcAcsRequest<GetKgNeighborResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

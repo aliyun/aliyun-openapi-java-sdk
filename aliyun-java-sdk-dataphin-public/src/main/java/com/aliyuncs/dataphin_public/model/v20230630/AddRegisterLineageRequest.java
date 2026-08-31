@@ -31,10 +31,12 @@ public class AddRegisterLineageRequest extends RpcAcsRequest<AddRegisterLineageR
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("addRegisterLineageCommand")
 	private AddRegisterLineageCommand addRegisterLineageCommand;
 	public AddRegisterLineageRequest() {
-		super("dataphin-public", "2023-06-30", "AddRegisterLineage");
+		super("dataphin-public", "2023-06-30", "AddRegisterLineage", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -47,6 +49,17 @@ public class AddRegisterLineageRequest extends RpcAcsRequest<AddRegisterLineageR
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

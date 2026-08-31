@@ -29,10 +29,12 @@ public class GetAssetMappingRelationsRequest extends RpcAcsRequest<GetAssetMappi
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("assetMappingQuery")
 	private AssetMappingQuery assetMappingQuery;
 	public GetAssetMappingRelationsRequest() {
-		super("dataphin-public", "2023-06-30", "GetAssetMappingRelations");
+		super("dataphin-public", "2023-06-30", "GetAssetMappingRelations", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class GetAssetMappingRelationsRequest extends RpcAcsRequest<GetAssetMappi
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

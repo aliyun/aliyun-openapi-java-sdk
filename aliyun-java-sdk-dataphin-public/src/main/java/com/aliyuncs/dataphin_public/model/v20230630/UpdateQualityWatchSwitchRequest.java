@@ -30,10 +30,12 @@ public class UpdateQualityWatchSwitchRequest extends RpcAcsRequest<UpdateQuality
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateQualityWatchSwitchRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateQualityWatchSwitch");
+		super("dataphin-public", "2023-06-30", "UpdateQualityWatchSwitch", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class UpdateQualityWatchSwitchRequest extends RpcAcsRequest<UpdateQuality
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

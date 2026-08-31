@@ -27,13 +27,15 @@ public class GetFileStorageCredentialRequest extends RpcAcsRequest<GetFileStorag
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String purpose;
 
 	private Boolean useVpcEndpoint;
 
 	private Long projectId;
 	public GetFileStorageCredentialRequest() {
-		super("dataphin-public", "2023-06-30", "GetFileStorageCredential");
+		super("dataphin-public", "2023-06-30", "GetFileStorageCredential", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class GetFileStorageCredentialRequest extends RpcAcsRequest<GetFileStorag
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

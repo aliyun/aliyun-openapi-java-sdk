@@ -29,10 +29,12 @@ public class DeleteStandardRequest extends RpcAcsRequest<DeleteStandardResponse>
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("deleteCommand")
 	private DeleteCommand deleteCommand;
 	public DeleteStandardRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteStandard");
+		super("dataphin-public", "2023-06-30", "DeleteStandard", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class DeleteStandardRequest extends RpcAcsRequest<DeleteStandardResponse>
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

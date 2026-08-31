@@ -27,9 +27,11 @@ public class GetDataSourceDependenciesRequest extends RpcAcsRequest<GetDataSourc
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long id;
 	public GetDataSourceDependenciesRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataSourceDependencies");
+		super("dataphin-public", "2023-06-30", "GetDataSourceDependencies", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class GetDataSourceDependenciesRequest extends RpcAcsRequest<GetDataSourc
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

@@ -30,10 +30,12 @@ public class ListOperationRecordRequest extends RpcAcsRequest<ListOperationRecor
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("listCommand")
 	private ListCommand listCommand;
 	public ListOperationRecordRequest() {
-		super("dataphin-public", "2023-06-30", "ListOperationRecord");
+		super("dataphin-public", "2023-06-30", "ListOperationRecord", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class ListOperationRecordRequest extends RpcAcsRequest<ListOperationRecor
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

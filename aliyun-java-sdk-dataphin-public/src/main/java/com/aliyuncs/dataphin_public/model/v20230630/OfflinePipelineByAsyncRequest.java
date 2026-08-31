@@ -29,13 +29,15 @@ public class OfflinePipelineByAsyncRequest extends RpcAcsRequest<OfflinePipeline
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("offlineCommand")
 	private OfflineCommand offlineCommand;
 
 	@SerializedName("context")
 	private Context context;
 	public OfflinePipelineByAsyncRequest() {
-		super("dataphin-public", "2023-06-30", "OfflinePipelineByAsync");
+		super("dataphin-public", "2023-06-30", "OfflinePipelineByAsync", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class OfflinePipelineByAsyncRequest extends RpcAcsRequest<OfflinePipeline
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

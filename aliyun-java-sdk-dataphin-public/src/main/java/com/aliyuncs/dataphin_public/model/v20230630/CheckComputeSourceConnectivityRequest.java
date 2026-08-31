@@ -30,10 +30,12 @@ public class CheckComputeSourceConnectivityRequest extends RpcAcsRequest<CheckCo
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("checkCommand")
 	private CheckCommand checkCommand;
 	public CheckComputeSourceConnectivityRequest() {
-		super("dataphin-public", "2023-06-30", "CheckComputeSourceConnectivity");
+		super("dataphin-public", "2023-06-30", "CheckComputeSourceConnectivity", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class CheckComputeSourceConnectivityRequest extends RpcAcsRequest<CheckCo
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

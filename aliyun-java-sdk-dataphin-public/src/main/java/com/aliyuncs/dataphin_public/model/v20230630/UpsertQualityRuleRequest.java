@@ -30,10 +30,12 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("upsertCommand")
 	private UpsertCommand upsertCommand;
 	public UpsertQualityRuleRequest() {
-		super("dataphin-public", "2023-06-30", "UpsertQualityRule");
+		super("dataphin-public", "2023-06-30", "UpsertQualityRule", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 
@@ -62,17 +75,26 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 
 	public static class UpsertCommand {
 
-		@SerializedName("EnableErrorArchive")
-		private Boolean enableErrorArchive;
-
-		@SerializedName("ValidateConditionList")
-		private List<ValidateConditionListItem> validateConditionList;
-
 		@SerializedName("Strength")
 		private String strength;
 
 		@SerializedName("FormPropertyList")
 		private List<FormPropertyListItem> formPropertyList;
+
+		@SerializedName("Description")
+		private String description;
+
+		@SerializedName("AttributeWithValueList")
+		private List<AttributeWithValueListItem> attributeWithValueList;
+
+		@SerializedName("TemplateId")
+		private Long templateId;
+
+		@SerializedName("EnableErrorArchive")
+		private Boolean enableErrorArchive;
+
+		@SerializedName("ValidateConditionList")
+		private List<ValidateConditionListItem> validateConditionList;
 
 		@SerializedName("CatalogList")
 		private List<String> catalogList;
@@ -86,33 +108,14 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 		@SerializedName("Name")
 		private String name;
 
-		@SerializedName("Description")
-		private String description;
+		@SerializedName("ArchiveStoreType")
+		private String archiveStoreType;
 
 		@SerializedName("Id")
 		private Long id;
 
-		@SerializedName("AttributeWithValueList")
-		private List<AttributeWithValueListItem> attributeWithValueList;
-
-		@SerializedName("TemplateId")
-		private Long templateId;
-
-		public Boolean getEnableErrorArchive() {
-			return this.enableErrorArchive;
-		}
-
-		public void setEnableErrorArchive(Boolean enableErrorArchive) {
-			this.enableErrorArchive = enableErrorArchive;
-		}
-
-		public List<ValidateConditionListItem> getValidateConditionList() {
-			return this.validateConditionList;
-		}
-
-		public void setValidateConditionList(List<ValidateConditionListItem> validateConditionList) {
-			this.validateConditionList = validateConditionList;
-		}
+		@SerializedName("ArchiveMode")
+		private String archiveMode;
 
 		public String getStrength() {
 			return this.strength;
@@ -128,6 +131,46 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 
 		public void setFormPropertyList(List<FormPropertyListItem> formPropertyList) {
 			this.formPropertyList = formPropertyList;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public List<AttributeWithValueListItem> getAttributeWithValueList() {
+			return this.attributeWithValueList;
+		}
+
+		public void setAttributeWithValueList(List<AttributeWithValueListItem> attributeWithValueList) {
+			this.attributeWithValueList = attributeWithValueList;
+		}
+
+		public Long getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(Long templateId) {
+			this.templateId = templateId;
+		}
+
+		public Boolean getEnableErrorArchive() {
+			return this.enableErrorArchive;
+		}
+
+		public void setEnableErrorArchive(Boolean enableErrorArchive) {
+			this.enableErrorArchive = enableErrorArchive;
+		}
+
+		public List<ValidateConditionListItem> getValidateConditionList() {
+			return this.validateConditionList;
+		}
+
+		public void setValidateConditionList(List<ValidateConditionListItem> validateConditionList) {
+			this.validateConditionList = validateConditionList;
 		}
 
 		public List<String> getCatalogList() {
@@ -162,12 +205,12 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 			this.name = name;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getArchiveStoreType() {
+			return this.archiveStoreType;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setArchiveStoreType(String archiveStoreType) {
+			this.archiveStoreType = archiveStoreType;
 		}
 
 		public Long getId() {
@@ -178,89 +221,12 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 			this.id = id;
 		}
 
-		public List<AttributeWithValueListItem> getAttributeWithValueList() {
-			return this.attributeWithValueList;
+		public String getArchiveMode() {
+			return this.archiveMode;
 		}
 
-		public void setAttributeWithValueList(List<AttributeWithValueListItem> attributeWithValueList) {
-			this.attributeWithValueList = attributeWithValueList;
-		}
-
-		public Long getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(Long templateId) {
-			this.templateId = templateId;
-		}
-
-		public static class ValidateConditionListItem {
-
-			@SerializedName("Metric")
-			private String metric;
-
-			@SerializedName("Id")
-			private String id;
-
-			@SerializedName("Type")
-			private String type;
-
-			@SerializedName("Value")
-			private String value;
-
-			@SerializedName("Operator")
-			private String operator;
-
-			@SerializedName("ParentId")
-			private String parentId;
-
-			public String getMetric() {
-				return this.metric;
-			}
-
-			public void setMetric(String metric) {
-				this.metric = metric;
-			}
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
-
-			public String getOperator() {
-				return this.operator;
-			}
-
-			public void setOperator(String operator) {
-				this.operator = operator;
-			}
-
-			public String getParentId() {
-				return this.parentId;
-			}
-
-			public void setParentId(String parentId) {
-				this.parentId = parentId;
-			}
+		public void setArchiveMode(String archiveMode) {
+			this.archiveMode = archiveMode;
 		}
 
 		public static class FormPropertyListItem {
@@ -575,6 +541,75 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 				public void setMinValue(String minValue) {
 					this.minValue = minValue;
 				}
+			}
+		}
+
+		public static class ValidateConditionListItem {
+
+			@SerializedName("Metric")
+			private String metric;
+
+			@SerializedName("Id")
+			private String id;
+
+			@SerializedName("Type")
+			private String type;
+
+			@SerializedName("Value")
+			private String value;
+
+			@SerializedName("Operator")
+			private String operator;
+
+			@SerializedName("ParentId")
+			private String parentId;
+
+			public String getMetric() {
+				return this.metric;
+			}
+
+			public void setMetric(String metric) {
+				this.metric = metric;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(String operator) {
+				this.operator = operator;
+			}
+
+			public String getParentId() {
+				return this.parentId;
+			}
+
+			public void setParentId(String parentId) {
+				this.parentId = parentId;
 			}
 		}
 	}

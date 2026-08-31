@@ -31,12 +31,14 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 
 	private String projectId;
 	public CreateDatasetRequest() {
-		super("dataphin-public", "2023-06-30", "CreateDataset");
+		super("dataphin-public", "2023-06-30", "CreateDataset", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -49,6 +51,17 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 
@@ -111,6 +124,9 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 
 		@SerializedName("Name")
 		private String name;
+
+		@SerializedName("ApiInfo")
+		private ApiInfo apiInfo;
 
 		@SerializedName("FileId")
 		private String fileId;
@@ -209,6 +225,14 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public ApiInfo getApiInfo() {
+			return this.apiInfo;
+		}
+
+		public void setApiInfo(ApiInfo apiInfo) {
+			this.apiInfo = apiInfo;
 		}
 
 		public String getFileId() {
@@ -784,6 +808,246 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 
 				public void setDataSourceName(String dataSourceName) {
 					this.dataSourceName = dataSourceName;
+				}
+			}
+		}
+
+		public static class ApiInfo {
+
+			@SerializedName("ExecuteMode")
+			private Integer executeMode;
+
+			@SerializedName("RequestMethod")
+			private Integer requestMethod;
+
+			@SerializedName("Protocol")
+			private Integer protocol;
+
+			@SerializedName("RequestParamList")
+			private List<RequestParamListItem> requestParamList;
+
+			@SerializedName("OsApiGroup")
+			private Integer osApiGroup;
+
+			@SerializedName("OsProject")
+			private Integer osProject;
+
+			@SerializedName("ExecTimeout")
+			private Integer execTimeout;
+
+			@SerializedName("ResponseParamList")
+			private List<ResponseParamListItem> responseParamList;
+
+			@SerializedName("Timeout")
+			private Integer timeout;
+
+			public Integer getExecuteMode() {
+				return this.executeMode;
+			}
+
+			public void setExecuteMode(Integer executeMode) {
+				this.executeMode = executeMode;
+			}
+
+			public Integer getRequestMethod() {
+				return this.requestMethod;
+			}
+
+			public void setRequestMethod(Integer requestMethod) {
+				this.requestMethod = requestMethod;
+			}
+
+			public Integer getBizProtocol() {
+				return this.protocol;
+			}
+
+			public void setBizProtocol(Integer protocol) {
+				this.protocol = protocol;
+			}
+
+			public List<RequestParamListItem> getRequestParamList() {
+				return this.requestParamList;
+			}
+
+			public void setRequestParamList(List<RequestParamListItem> requestParamList) {
+				this.requestParamList = requestParamList;
+			}
+
+			public Integer getOsApiGroup() {
+				return this.osApiGroup;
+			}
+
+			public void setOsApiGroup(Integer osApiGroup) {
+				this.osApiGroup = osApiGroup;
+			}
+
+			public Integer getOsProject() {
+				return this.osProject;
+			}
+
+			public void setOsProject(Integer osProject) {
+				this.osProject = osProject;
+			}
+
+			public Integer getExecTimeout() {
+				return this.execTimeout;
+			}
+
+			public void setExecTimeout(Integer execTimeout) {
+				this.execTimeout = execTimeout;
+			}
+
+			public List<ResponseParamListItem> getResponseParamList() {
+				return this.responseParamList;
+			}
+
+			public void setResponseParamList(List<ResponseParamListItem> responseParamList) {
+				this.responseParamList = responseParamList;
+			}
+
+			public Integer getTimeout() {
+				return this.timeout;
+			}
+
+			public void setTimeout(Integer timeout) {
+				this.timeout = timeout;
+			}
+
+			public static class RequestParamListItem {
+
+				@SerializedName("Descr")
+				private String descr;
+
+				@SerializedName("ParamType")
+				private String paramType;
+
+				@SerializedName("IsUrl")
+				private Boolean isUrl;
+
+				@SerializedName("DefaultValue")
+				private String defaultValue;
+
+				@SerializedName("Must")
+				private Boolean must;
+
+				@SerializedName("ParamName")
+				private String paramName;
+
+				@SerializedName("Sample")
+				private String sample;
+
+				public String getDescr() {
+					return this.descr;
+				}
+
+				public void setDescr(String descr) {
+					this.descr = descr;
+				}
+
+				public String getParamType() {
+					return this.paramType;
+				}
+
+				public void setParamType(String paramType) {
+					this.paramType = paramType;
+				}
+
+				public Boolean getIsUrl() {
+					return this.isUrl;
+				}
+
+				public void setIsUrl(Boolean isUrl) {
+					this.isUrl = isUrl;
+				}
+
+				public String getDefaultValue() {
+					return this.defaultValue;
+				}
+
+				public void setDefaultValue(String defaultValue) {
+					this.defaultValue = defaultValue;
+				}
+
+				public Boolean getMust() {
+					return this.must;
+				}
+
+				public void setMust(Boolean must) {
+					this.must = must;
+				}
+
+				public String getParamName() {
+					return this.paramName;
+				}
+
+				public void setParamName(String paramName) {
+					this.paramName = paramName;
+				}
+
+				public String getSample() {
+					return this.sample;
+				}
+
+				public void setSample(String sample) {
+					this.sample = sample;
+				}
+			}
+
+			public static class ResponseParamListItem {
+
+				@SerializedName("Descr")
+				private String descr;
+
+				@SerializedName("ParamType")
+				private String paramType;
+
+				@SerializedName("IsUrl")
+				private Boolean isUrl;
+
+				@SerializedName("ParamName")
+				private String paramName;
+
+				@SerializedName("Sample")
+				private String sample;
+
+				public String getDescr() {
+					return this.descr;
+				}
+
+				public void setDescr(String descr) {
+					this.descr = descr;
+				}
+
+				public String getParamType() {
+					return this.paramType;
+				}
+
+				public void setParamType(String paramType) {
+					this.paramType = paramType;
+				}
+
+				public Boolean getIsUrl() {
+					return this.isUrl;
+				}
+
+				public void setIsUrl(Boolean isUrl) {
+					this.isUrl = isUrl;
+				}
+
+				public String getParamName() {
+					return this.paramName;
+				}
+
+				public void setParamName(String paramName) {
+					this.paramName = paramName;
+				}
+
+				public String getSample() {
+					return this.sample;
+				}
+
+				public void setSample(String sample) {
+					this.sample = sample;
 				}
 			}
 		}

@@ -29,10 +29,12 @@ public class CreateResourceRequest extends RpcAcsRequest<CreateResourceResponse>
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateResourceRequest() {
-		super("dataphin-public", "2023-06-30", "CreateResource");
+		super("dataphin-public", "2023-06-30", "CreateResource", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class CreateResourceRequest extends RpcAcsRequest<CreateResourceResponse>
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

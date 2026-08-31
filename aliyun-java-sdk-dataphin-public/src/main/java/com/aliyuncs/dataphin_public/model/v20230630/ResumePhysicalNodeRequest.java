@@ -30,12 +30,14 @@ public class ResumePhysicalNodeRequest extends RpcAcsRequest<ResumePhysicalNodeR
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("resumeCommand")
 	private ResumeCommand resumeCommand;
 
 	private String env;
 	public ResumePhysicalNodeRequest() {
-		super("dataphin-public", "2023-06-30", "ResumePhysicalNode");
+		super("dataphin-public", "2023-06-30", "ResumePhysicalNode", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class ResumePhysicalNodeRequest extends RpcAcsRequest<ResumePhysicalNodeR
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

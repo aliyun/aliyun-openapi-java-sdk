@@ -29,10 +29,12 @@ public class RemoveTenantMemberRequest extends RpcAcsRequest<RemoveTenantMemberR
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("removeCommand")
 	private RemoveCommand removeCommand;
 	public RemoveTenantMemberRequest() {
-		super("dataphin-public", "2023-06-30", "RemoveTenantMember");
+		super("dataphin-public", "2023-06-30", "RemoveTenantMember", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class RemoveTenantMemberRequest extends RpcAcsRequest<RemoveTenantMemberR
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 
@@ -64,12 +77,23 @@ public class RemoveTenantMemberRequest extends RpcAcsRequest<RemoveTenantMemberR
 		@SerializedName("SourceId")
 		private String sourceId;
 
+		@SerializedName("SourceType")
+		private String sourceType;
+
 		public String getSourceId() {
 			return this.sourceId;
 		}
 
 		public void setSourceId(String sourceId) {
 			this.sourceId = sourceId;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
 		}
 	}
 

@@ -29,12 +29,14 @@ public class ListDataServicePublishedApisRequest extends RpcAcsRequest<ListDataS
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 
 	private Integer projectId;
 	public ListDataServicePublishedApisRequest() {
-		super("dataphin-public", "2023-06-30", "ListDataServicePublishedApis");
+		super("dataphin-public", "2023-06-30", "ListDataServicePublishedApis", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -47,6 +49,17 @@ public class ListDataServicePublishedApisRequest extends RpcAcsRequest<ListDataS
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

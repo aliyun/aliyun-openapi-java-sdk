@@ -35,7 +35,7 @@ public class SearchKgBySemanticRequest extends RpcAcsRequest<SearchKgBySemanticR
 
 	private String workspaceId;
 	public SearchKgBySemanticRequest() {
-		super("dataphin-public", "2023-06-30", "SearchKgBySemantic");
+		super("dataphin-public", "2023-06-30", "SearchKgBySemantic", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

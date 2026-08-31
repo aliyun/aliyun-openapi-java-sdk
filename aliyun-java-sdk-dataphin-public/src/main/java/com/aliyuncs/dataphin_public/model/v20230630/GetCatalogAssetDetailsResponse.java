@@ -199,6 +199,8 @@ public class GetCatalogAssetDetailsResponse extends AcsResponse {
 
 		private Owner1 owner1;
 
+		private QualityScoreRadar qualityScoreRadar;
+
 		private LastOnShelveUser lastOnShelveUser;
 
 		private FirstOnShelveUser firstOnShelveUser;
@@ -651,6 +653,14 @@ public class GetCatalogAssetDetailsResponse extends AcsResponse {
 			this.owner1 = owner1;
 		}
 
+		public QualityScoreRadar getQualityScoreRadar() {
+			return this.qualityScoreRadar;
+		}
+
+		public void setQualityScoreRadar(QualityScoreRadar qualityScoreRadar) {
+			this.qualityScoreRadar = qualityScoreRadar;
+		}
+
 		public LastOnShelveUser getLastOnShelveUser() {
 			return this.lastOnShelveUser;
 		}
@@ -714,11 +724,17 @@ public class GetCatalogAssetDetailsResponse extends AcsResponse {
 
 			private Long directoryId;
 
+			private String directoryDescription;
+
 			private Long topicId;
+
+			private String topicDescription;
 
 			private String directoryName;
 
 			private String topicName;
+
+			private List<DirectoryChainItem> directoryChain;
 
 			public Long getDirectoryId() {
 				return this.directoryId;
@@ -728,12 +744,28 @@ public class GetCatalogAssetDetailsResponse extends AcsResponse {
 				this.directoryId = directoryId;
 			}
 
+			public String getDirectoryDescription() {
+				return this.directoryDescription;
+			}
+
+			public void setDirectoryDescription(String directoryDescription) {
+				this.directoryDescription = directoryDescription;
+			}
+
 			public Long getTopicId() {
 				return this.topicId;
 			}
 
 			public void setTopicId(Long topicId) {
 				this.topicId = topicId;
+			}
+
+			public String getTopicDescription() {
+				return this.topicDescription;
+			}
+
+			public void setTopicDescription(String topicDescription) {
+				this.topicDescription = topicDescription;
 			}
 
 			public String getDirectoryName() {
@@ -750,6 +782,57 @@ public class GetCatalogAssetDetailsResponse extends AcsResponse {
 
 			public void setTopicName(String topicName) {
 				this.topicName = topicName;
+			}
+
+			public List<DirectoryChainItem> getDirectoryChain() {
+				return this.directoryChain;
+			}
+
+			public void setDirectoryChain(List<DirectoryChainItem> directoryChain) {
+				this.directoryChain = directoryChain;
+			}
+
+			public static class DirectoryChainItem {
+
+				private Long directoryId;
+
+				private String directoryDescription;
+
+				private Integer level;
+
+				private String directoryName;
+
+				public Long getDirectoryId() {
+					return this.directoryId;
+				}
+
+				public void setDirectoryId(Long directoryId) {
+					this.directoryId = directoryId;
+				}
+
+				public String getDirectoryDescription() {
+					return this.directoryDescription;
+				}
+
+				public void setDirectoryDescription(String directoryDescription) {
+					this.directoryDescription = directoryDescription;
+				}
+
+				public Integer getLevel() {
+					return this.level;
+				}
+
+				public void setLevel(Integer level) {
+					this.level = level;
+				}
+
+				public String getDirectoryName() {
+					return this.directoryName;
+				}
+
+				public void setDirectoryName(String directoryName) {
+					this.directoryName = directoryName;
+				}
 			}
 		}
 
@@ -1101,6 +1184,122 @@ public class GetCatalogAssetDetailsResponse extends AcsResponse {
 
 			public void setDisplayName(String displayName) {
 				this.displayName = displayName;
+			}
+		}
+
+		public static class QualityScoreRadar {
+
+			private Integer validateRuleCount;
+
+			private Double totalScore;
+
+			private Integer passRuleCount;
+
+			private List<CatalogScore> catalogScores;
+
+			public Integer getValidateRuleCount() {
+				return this.validateRuleCount;
+			}
+
+			public void setValidateRuleCount(Integer validateRuleCount) {
+				this.validateRuleCount = validateRuleCount;
+			}
+
+			public Double getTotalScore() {
+				return this.totalScore;
+			}
+
+			public void setTotalScore(Double totalScore) {
+				this.totalScore = totalScore;
+			}
+
+			public Integer getPassRuleCount() {
+				return this.passRuleCount;
+			}
+
+			public void setPassRuleCount(Integer passRuleCount) {
+				this.passRuleCount = passRuleCount;
+			}
+
+			public List<CatalogScore> getCatalogScores() {
+				return this.catalogScores;
+			}
+
+			public void setCatalogScores(List<CatalogScore> catalogScores) {
+				this.catalogScores = catalogScores;
+			}
+
+			public static class CatalogScore {
+
+				private Integer tableRuleCount;
+
+				private Integer fieldRuleCount;
+
+				private Double score;
+
+				private Double passRate;
+
+				private Integer validateRuleCount;
+
+				private Integer passRuleCount;
+
+				private String catalog;
+
+				public Integer getTableRuleCount() {
+					return this.tableRuleCount;
+				}
+
+				public void setTableRuleCount(Integer tableRuleCount) {
+					this.tableRuleCount = tableRuleCount;
+				}
+
+				public Integer getFieldRuleCount() {
+					return this.fieldRuleCount;
+				}
+
+				public void setFieldRuleCount(Integer fieldRuleCount) {
+					this.fieldRuleCount = fieldRuleCount;
+				}
+
+				public Double getScore() {
+					return this.score;
+				}
+
+				public void setScore(Double score) {
+					this.score = score;
+				}
+
+				public Double getPassRate() {
+					return this.passRate;
+				}
+
+				public void setPassRate(Double passRate) {
+					this.passRate = passRate;
+				}
+
+				public Integer getValidateRuleCount() {
+					return this.validateRuleCount;
+				}
+
+				public void setValidateRuleCount(Integer validateRuleCount) {
+					this.validateRuleCount = validateRuleCount;
+				}
+
+				public Integer getPassRuleCount() {
+					return this.passRuleCount;
+				}
+
+				public void setPassRuleCount(Integer passRuleCount) {
+					this.passRuleCount = passRuleCount;
+				}
+
+				public String getCatalog() {
+					return this.catalog;
+				}
+
+				public void setCatalog(String catalog) {
+					this.catalog = catalog;
+				}
 			}
 		}
 

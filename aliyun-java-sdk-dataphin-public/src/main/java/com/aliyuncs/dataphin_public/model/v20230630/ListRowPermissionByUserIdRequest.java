@@ -29,10 +29,12 @@ public class ListRowPermissionByUserIdRequest extends RpcAcsRequest<ListRowPermi
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("listRowPermissionByUserIdQuery")
 	private ListRowPermissionByUserIdQuery listRowPermissionByUserIdQuery;
 	public ListRowPermissionByUserIdRequest() {
-		super("dataphin-public", "2023-06-30", "ListRowPermissionByUserId");
+		super("dataphin-public", "2023-06-30", "ListRowPermissionByUserId", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class ListRowPermissionByUserIdRequest extends RpcAcsRequest<ListRowPermi
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

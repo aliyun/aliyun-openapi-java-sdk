@@ -29,10 +29,12 @@ public class ResetDataServiceAppSecretRequest extends RpcAcsRequest<ResetDataSer
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public ResetDataServiceAppSecretRequest() {
-		super("dataphin-public", "2023-06-30", "ResetDataServiceAppSecret");
+		super("dataphin-public", "2023-06-30", "ResetDataServiceAppSecret", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class ResetDataServiceAppSecretRequest extends RpcAcsRequest<ResetDataSer
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

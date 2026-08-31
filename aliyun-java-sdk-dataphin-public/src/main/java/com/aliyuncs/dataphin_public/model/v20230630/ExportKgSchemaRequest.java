@@ -27,13 +27,15 @@ public class ExportKgSchemaRequest extends RpcAcsRequest<ExportKgSchemaResponse>
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Integer versionId;
 
 	private String outputFormat;
 
 	private String workspaceId;
 	public ExportKgSchemaRequest() {
-		super("dataphin-public", "2023-06-30", "ExportKgSchema");
+		super("dataphin-public", "2023-06-30", "ExportKgSchema", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class ExportKgSchemaRequest extends RpcAcsRequest<ExportKgSchemaResponse>
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

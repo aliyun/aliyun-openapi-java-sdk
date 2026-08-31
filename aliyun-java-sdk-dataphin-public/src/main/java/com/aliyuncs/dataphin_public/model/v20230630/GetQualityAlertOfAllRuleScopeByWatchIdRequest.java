@@ -27,9 +27,11 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdRequest extends RpcAcsRequest
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long watchId;
 	public GetQualityAlertOfAllRuleScopeByWatchIdRequest() {
-		super("dataphin-public", "2023-06-30", "GetQualityAlertOfAllRuleScopeByWatchId");
+		super("dataphin-public", "2023-06-30", "GetQualityAlertOfAllRuleScopeByWatchId", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdRequest extends RpcAcsRequest
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

@@ -27,6 +27,8 @@ public class ExecuteTriggerNodeRequest extends RpcAcsRequest<ExecuteTriggerNodeR
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Integer index;
 
 	private String env;
@@ -37,7 +39,7 @@ public class ExecuteTriggerNodeRequest extends RpcAcsRequest<ExecuteTriggerNodeR
 
 	private Long projectId;
 	public ExecuteTriggerNodeRequest() {
-		super("dataphin-public", "2023-06-30", "ExecuteTriggerNode");
+		super("dataphin-public", "2023-06-30", "ExecuteTriggerNode", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -50,6 +52,17 @@ public class ExecuteTriggerNodeRequest extends RpcAcsRequest<ExecuteTriggerNodeR
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

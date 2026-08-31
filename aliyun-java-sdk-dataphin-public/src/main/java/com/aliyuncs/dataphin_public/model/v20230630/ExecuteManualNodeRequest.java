@@ -30,12 +30,14 @@ public class ExecuteManualNodeRequest extends RpcAcsRequest<ExecuteManualNodeRes
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String env;
 
 	@SerializedName("executeCommand")
 	private ExecuteCommand executeCommand;
 	public ExecuteManualNodeRequest() {
-		super("dataphin-public", "2023-06-30", "ExecuteManualNode");
+		super("dataphin-public", "2023-06-30", "ExecuteManualNode", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class ExecuteManualNodeRequest extends RpcAcsRequest<ExecuteManualNodeRes
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

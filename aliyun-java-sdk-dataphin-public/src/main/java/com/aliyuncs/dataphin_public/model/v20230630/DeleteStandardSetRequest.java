@@ -27,9 +27,11 @@ public class DeleteStandardSetRequest extends RpcAcsRequest<DeleteStandardSetRes
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long id;
 	public DeleteStandardSetRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteStandardSet");
+		super("dataphin-public", "2023-06-30", "DeleteStandardSet", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class DeleteStandardSetRequest extends RpcAcsRequest<DeleteStandardSetRes
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

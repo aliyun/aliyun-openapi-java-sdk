@@ -29,10 +29,12 @@ public class CreatePipelineNodeRequest extends RpcAcsRequest<CreatePipelineNodeR
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("createPipelineNodeCommand")
 	private CreatePipelineNodeCommand createPipelineNodeCommand;
 	public CreatePipelineNodeRequest() {
-		super("dataphin-public", "2023-06-30", "CreatePipelineNode");
+		super("dataphin-public", "2023-06-30", "CreatePipelineNode", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class CreatePipelineNodeRequest extends RpcAcsRequest<CreatePipelineNodeR
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

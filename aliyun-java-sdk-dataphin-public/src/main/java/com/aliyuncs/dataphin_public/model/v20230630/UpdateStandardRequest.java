@@ -30,10 +30,12 @@ public class UpdateStandardRequest extends RpcAcsRequest<UpdateStandardResponse>
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateStandardRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateStandard");
+		super("dataphin-public", "2023-06-30", "UpdateStandard", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class UpdateStandardRequest extends RpcAcsRequest<UpdateStandardResponse>
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

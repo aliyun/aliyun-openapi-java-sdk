@@ -30,10 +30,12 @@ public class ListQualityRulesRequest extends RpcAcsRequest<ListQualityRulesRespo
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListQualityRulesRequest() {
-		super("dataphin-public", "2023-06-30", "ListQualityRules");
+		super("dataphin-public", "2023-06-30", "ListQualityRules", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class ListQualityRulesRequest extends RpcAcsRequest<ListQualityRulesRespo
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

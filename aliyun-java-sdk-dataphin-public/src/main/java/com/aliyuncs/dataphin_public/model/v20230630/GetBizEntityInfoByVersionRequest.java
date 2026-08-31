@@ -27,13 +27,15 @@ public class GetBizEntityInfoByVersionRequest extends RpcAcsRequest<GetBizEntity
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String type;
 
 	private Long versionId;
 
 	private Long id;
 	public GetBizEntityInfoByVersionRequest() {
-		super("dataphin-public", "2023-06-30", "GetBizEntityInfoByVersion");
+		super("dataphin-public", "2023-06-30", "GetBizEntityInfoByVersion", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class GetBizEntityInfoByVersionRequest extends RpcAcsRequest<GetBizEntity
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

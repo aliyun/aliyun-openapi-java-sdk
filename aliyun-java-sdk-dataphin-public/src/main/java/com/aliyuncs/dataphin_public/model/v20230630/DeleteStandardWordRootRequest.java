@@ -27,9 +27,11 @@ public class DeleteStandardWordRootRequest extends RpcAcsRequest<DeleteStandardW
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String name;
 	public DeleteStandardWordRootRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteStandardWordRoot");
+		super("dataphin-public", "2023-06-30", "DeleteStandardWordRoot", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class DeleteStandardWordRootRequest extends RpcAcsRequest<DeleteStandardW
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

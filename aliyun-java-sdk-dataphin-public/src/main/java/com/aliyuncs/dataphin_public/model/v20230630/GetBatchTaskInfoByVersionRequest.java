@@ -27,13 +27,15 @@ public class GetBatchTaskInfoByVersionRequest extends RpcAcsRequest<GetBatchTask
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long versionId;
 
 	private Long projectId;
 
 	private Long fileId;
 	public GetBatchTaskInfoByVersionRequest() {
-		super("dataphin-public", "2023-06-30", "GetBatchTaskInfoByVersion");
+		super("dataphin-public", "2023-06-30", "GetBatchTaskInfoByVersion", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class GetBatchTaskInfoByVersionRequest extends RpcAcsRequest<GetBatchTask
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

@@ -27,11 +27,13 @@ public class GetUdfRequest extends RpcAcsRequest<GetUdfResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long id;
 
 	private Long projectId;
 	public GetUdfRequest() {
-		super("dataphin-public", "2023-06-30", "GetUdf");
+		super("dataphin-public", "2023-06-30", "GetUdf", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -44,6 +46,17 @@ public class GetUdfRequest extends RpcAcsRequest<GetUdfResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

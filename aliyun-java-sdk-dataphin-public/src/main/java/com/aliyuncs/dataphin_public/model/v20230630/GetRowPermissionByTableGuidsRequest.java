@@ -30,10 +30,12 @@ public class GetRowPermissionByTableGuidsRequest extends RpcAcsRequest<GetRowPer
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("getRowPermissionByTableGuidsQuery")
 	private GetRowPermissionByTableGuidsQuery getRowPermissionByTableGuidsQuery;
 	public GetRowPermissionByTableGuidsRequest() {
-		super("dataphin-public", "2023-06-30", "GetRowPermissionByTableGuids");
+		super("dataphin-public", "2023-06-30", "GetRowPermissionByTableGuids", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class GetRowPermissionByTableGuidsRequest extends RpcAcsRequest<GetRowPer
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

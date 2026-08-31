@@ -27,9 +27,11 @@ public class GetComputeSourceRequest extends RpcAcsRequest<GetComputeSourceRespo
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long id;
 	public GetComputeSourceRequest() {
-		super("dataphin-public", "2023-06-30", "GetComputeSource");
+		super("dataphin-public", "2023-06-30", "GetComputeSource", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class GetComputeSourceRequest extends RpcAcsRequest<GetComputeSourceRespo
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

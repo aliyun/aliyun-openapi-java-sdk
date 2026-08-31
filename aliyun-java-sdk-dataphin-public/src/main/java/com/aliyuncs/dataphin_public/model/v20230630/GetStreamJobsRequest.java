@@ -27,11 +27,13 @@ public class GetStreamJobsRequest extends RpcAcsRequest<GetStreamJobsResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String env;
 
 	private Long projectId;
 	public GetStreamJobsRequest() {
-		super("dataphin-public", "2023-06-30", "GetStreamJobs");
+		super("dataphin-public", "2023-06-30", "GetStreamJobs", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -44,6 +46,17 @@ public class GetStreamJobsRequest extends RpcAcsRequest<GetStreamJobsResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

@@ -29,6 +29,8 @@ public class GetStandardTemplateRequest extends RpcAcsRequest<GetStandardTemplat
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("filterQuery")
 	private FilterQuery filterQuery;
 
@@ -36,7 +38,7 @@ public class GetStandardTemplateRequest extends RpcAcsRequest<GetStandardTemplat
 
 	private Long id;
 	public GetStandardTemplateRequest() {
-		super("dataphin-public", "2023-06-30", "GetStandardTemplate");
+		super("dataphin-public", "2023-06-30", "GetStandardTemplate", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -49,6 +51,17 @@ public class GetStandardTemplateRequest extends RpcAcsRequest<GetStandardTemplat
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

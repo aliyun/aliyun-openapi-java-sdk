@@ -29,10 +29,12 @@ public class OfflineStandardRequest extends RpcAcsRequest<OfflineStandardRespons
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("offlineCommand")
 	private OfflineCommand offlineCommand;
 	public OfflineStandardRequest() {
-		super("dataphin-public", "2023-06-30", "OfflineStandard");
+		super("dataphin-public", "2023-06-30", "OfflineStandard", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class OfflineStandardRequest extends RpcAcsRequest<OfflineStandardRespons
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

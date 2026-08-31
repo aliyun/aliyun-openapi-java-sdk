@@ -35,7 +35,7 @@ public class SubmitPipelineByIdRequest extends RpcAcsRequest<SubmitPipelineByIdR
 	@SerializedName("context")
 	private Context context;
 	public SubmitPipelineByIdRequest() {
-		super("dataphin-public", "2023-06-30", "SubmitPipelineById");
+		super("dataphin-public", "2023-06-30", "SubmitPipelineById", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

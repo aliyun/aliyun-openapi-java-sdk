@@ -27,13 +27,15 @@ public class UpdateFileDirectoryRequest extends RpcAcsRequest<UpdateFileDirector
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String directory;
 
 	private Long projectId;
 
 	private Long fileId;
 	public UpdateFileDirectoryRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateFileDirectory");
+		super("dataphin-public", "2023-06-30", "UpdateFileDirectory", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class UpdateFileDirectoryRequest extends RpcAcsRequest<UpdateFileDirector
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

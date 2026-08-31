@@ -30,10 +30,12 @@ public class SyncDepartmentRequest extends RpcAcsRequest<SyncDepartmentResponse>
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("syncDepartmentCommand")
 	private SyncDepartmentCommand syncDepartmentCommand;
 	public SyncDepartmentRequest() {
-		super("dataphin-public", "2023-06-30", "SyncDepartment");
+		super("dataphin-public", "2023-06-30", "SyncDepartment", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class SyncDepartmentRequest extends RpcAcsRequest<SyncDepartmentResponse>
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

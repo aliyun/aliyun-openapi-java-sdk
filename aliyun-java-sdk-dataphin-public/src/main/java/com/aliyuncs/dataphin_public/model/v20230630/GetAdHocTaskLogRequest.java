@@ -27,6 +27,8 @@ public class GetAdHocTaskLogRequest extends RpcAcsRequest<GetAdHocTaskLogRespons
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Integer offset;
 
 	private Integer subTaskId;
@@ -35,7 +37,7 @@ public class GetAdHocTaskLogRequest extends RpcAcsRequest<GetAdHocTaskLogRespons
 
 	private String taskId;
 	public GetAdHocTaskLogRequest() {
-		super("dataphin-public", "2023-06-30", "GetAdHocTaskLog");
+		super("dataphin-public", "2023-06-30", "GetAdHocTaskLog", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class GetAdHocTaskLogRequest extends RpcAcsRequest<GetAdHocTaskLogRespons
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

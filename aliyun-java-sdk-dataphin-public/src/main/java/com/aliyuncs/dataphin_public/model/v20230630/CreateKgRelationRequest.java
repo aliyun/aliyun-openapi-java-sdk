@@ -30,12 +30,14 @@ public class CreateKgRelationRequest extends RpcAcsRequest<CreateKgRelationRespo
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 
 	private String workspaceId;
 	public CreateKgRelationRequest() {
-		super("dataphin-public", "2023-06-30", "CreateKgRelation");
+		super("dataphin-public", "2023-06-30", "CreateKgRelation", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class CreateKgRelationRequest extends RpcAcsRequest<CreateKgRelationRespo
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

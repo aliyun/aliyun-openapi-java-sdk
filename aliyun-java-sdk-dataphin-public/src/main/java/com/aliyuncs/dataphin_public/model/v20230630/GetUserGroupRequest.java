@@ -27,9 +27,11 @@ public class GetUserGroupRequest extends RpcAcsRequest<GetUserGroupResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String userGroupId;
 	public GetUserGroupRequest() {
-		super("dataphin-public", "2023-06-30", "GetUserGroup");
+		super("dataphin-public", "2023-06-30", "GetUserGroup", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class GetUserGroupRequest extends RpcAcsRequest<GetUserGroupResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

@@ -29,10 +29,12 @@ public class GetOperationRecordRunCodeRequest extends RpcAcsRequest<GetOperation
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("codeCommand")
 	private CodeCommand codeCommand;
 	public GetOperationRecordRunCodeRequest() {
-		super("dataphin-public", "2023-06-30", "GetOperationRecordRunCode");
+		super("dataphin-public", "2023-06-30", "GetOperationRecordRunCode", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class GetOperationRecordRunCodeRequest extends RpcAcsRequest<GetOperation
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

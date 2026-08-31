@@ -30,12 +30,14 @@ public class ExecKgCypherRequest extends RpcAcsRequest<ExecKgCypherResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("execCommand")
 	private ExecCommand execCommand;
 
 	private String workspaceId;
 	public ExecKgCypherRequest() {
-		super("dataphin-public", "2023-06-30", "ExecKgCypher");
+		super("dataphin-public", "2023-06-30", "ExecKgCypher", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class ExecKgCypherRequest extends RpcAcsRequest<ExecKgCypherResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

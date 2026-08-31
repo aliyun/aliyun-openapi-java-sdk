@@ -30,10 +30,12 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateBatchTaskRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateBatchTask");
+		super("dataphin-public", "2023-06-30", "UpdateBatchTask", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 
@@ -103,6 +116,9 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 
 		@SerializedName("NodeDescription")
 		private String nodeDescription;
+
+		@SerializedName("DevelopOwnerIdList")
+		private List<String> developOwnerIdList;
 
 		@SerializedName("Name")
 		private String name;
@@ -232,6 +248,14 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 
 		public void setNodeDescription(String nodeDescription) {
 			this.nodeDescription = nodeDescription;
+		}
+
+		public List<String> getDevelopOwnerIdList() {
+			return this.developOwnerIdList;
+		}
+
+		public void setDevelopOwnerIdList(List<String> developOwnerIdList) {
+			this.developOwnerIdList = developOwnerIdList;
 		}
 
 		public String getName() {

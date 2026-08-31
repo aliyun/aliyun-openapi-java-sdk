@@ -27,9 +27,11 @@ public class DeleteDataServiceAppGroupRequest extends RpcAcsRequest<DeleteDataSe
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Integer groupId;
 	public DeleteDataServiceAppGroupRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteDataServiceAppGroup");
+		super("dataphin-public", "2023-06-30", "DeleteDataServiceAppGroup", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class DeleteDataServiceAppGroupRequest extends RpcAcsRequest<DeleteDataSe
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

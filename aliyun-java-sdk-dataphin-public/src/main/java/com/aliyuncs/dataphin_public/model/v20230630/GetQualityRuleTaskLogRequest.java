@@ -27,9 +27,11 @@ public class GetQualityRuleTaskLogRequest extends RpcAcsRequest<GetQualityRuleTa
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long ruleTaskId;
 	public GetQualityRuleTaskLogRequest() {
-		super("dataphin-public", "2023-06-30", "GetQualityRuleTaskLog");
+		super("dataphin-public", "2023-06-30", "GetQualityRuleTaskLog", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class GetQualityRuleTaskLogRequest extends RpcAcsRequest<GetQualityRuleTa
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

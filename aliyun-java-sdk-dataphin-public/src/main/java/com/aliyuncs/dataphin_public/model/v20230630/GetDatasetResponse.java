@@ -355,6 +355,8 @@ public class GetDatasetResponse extends AcsResponse {
 
 			private Long datasetId;
 
+			private ApiInfo apiInfo;
+
 			private DataVersionConfig dataVersionConfig;
 
 			public String getGmtCreate() {
@@ -405,12 +407,369 @@ public class GetDatasetResponse extends AcsResponse {
 				this.datasetId = datasetId;
 			}
 
+			public ApiInfo getApiInfo() {
+				return this.apiInfo;
+			}
+
+			public void setApiInfo(ApiInfo apiInfo) {
+				this.apiInfo = apiInfo;
+			}
+
 			public DataVersionConfig getDataVersionConfig() {
 				return this.dataVersionConfig;
 			}
 
 			public void setDataVersionConfig(DataVersionConfig dataVersionConfig) {
 				this.dataVersionConfig = dataVersionConfig;
+			}
+
+			public static class ApiInfo {
+
+				private Integer osApiGroup;
+
+				private Long apiNo;
+
+				private String osApiGroupName;
+
+				private Integer requestMethod;
+
+				private Integer timeout;
+
+				private Integer osProject;
+
+				private Integer protocol;
+
+				private Integer executeMode;
+
+				private Integer execTimeout;
+
+				private String osProjectName;
+
+				private List<ApiResponseParamDTO> responseParamList;
+
+				private List<ApiRequestParamDTO> requestParamList;
+
+				public Integer getOsApiGroup() {
+					return this.osApiGroup;
+				}
+
+				public void setOsApiGroup(Integer osApiGroup) {
+					this.osApiGroup = osApiGroup;
+				}
+
+				public Long getApiNo() {
+					return this.apiNo;
+				}
+
+				public void setApiNo(Long apiNo) {
+					this.apiNo = apiNo;
+				}
+
+				public String getOsApiGroupName() {
+					return this.osApiGroupName;
+				}
+
+				public void setOsApiGroupName(String osApiGroupName) {
+					this.osApiGroupName = osApiGroupName;
+				}
+
+				public Integer getRequestMethod() {
+					return this.requestMethod;
+				}
+
+				public void setRequestMethod(Integer requestMethod) {
+					this.requestMethod = requestMethod;
+				}
+
+				public Integer getTimeout() {
+					return this.timeout;
+				}
+
+				public void setTimeout(Integer timeout) {
+					this.timeout = timeout;
+				}
+
+				public Integer getOsProject() {
+					return this.osProject;
+				}
+
+				public void setOsProject(Integer osProject) {
+					this.osProject = osProject;
+				}
+
+				public Integer getBizProtocol() {
+					return this.protocol;
+				}
+
+				public void setBizProtocol(Integer protocol) {
+					this.protocol = protocol;
+				}
+
+				public Integer getExecuteMode() {
+					return this.executeMode;
+				}
+
+				public void setExecuteMode(Integer executeMode) {
+					this.executeMode = executeMode;
+				}
+
+				public Integer getExecTimeout() {
+					return this.execTimeout;
+				}
+
+				public void setExecTimeout(Integer execTimeout) {
+					this.execTimeout = execTimeout;
+				}
+
+				public String getOsProjectName() {
+					return this.osProjectName;
+				}
+
+				public void setOsProjectName(String osProjectName) {
+					this.osProjectName = osProjectName;
+				}
+
+				public List<ApiResponseParamDTO> getResponseParamList() {
+					return this.responseParamList;
+				}
+
+				public void setResponseParamList(List<ApiResponseParamDTO> responseParamList) {
+					this.responseParamList = responseParamList;
+				}
+
+				public List<ApiRequestParamDTO> getRequestParamList() {
+					return this.requestParamList;
+				}
+
+				public void setRequestParamList(List<ApiRequestParamDTO> requestParamList) {
+					this.requestParamList = requestParamList;
+				}
+
+				public static class ApiResponseParamDTO {
+
+					private String seqNum;
+
+					private String mappingColumn;
+
+					private String sample;
+
+					private String dateFormat;
+
+					private String descr;
+
+					private String paramName;
+
+					private String paramType;
+
+					private Boolean isUrl;
+
+					private String originalColumn;
+
+					public String getSeqNum() {
+						return this.seqNum;
+					}
+
+					public void setSeqNum(String seqNum) {
+						this.seqNum = seqNum;
+					}
+
+					public String getMappingColumn() {
+						return this.mappingColumn;
+					}
+
+					public void setMappingColumn(String mappingColumn) {
+						this.mappingColumn = mappingColumn;
+					}
+
+					public String getSample() {
+						return this.sample;
+					}
+
+					public void setSample(String sample) {
+						this.sample = sample;
+					}
+
+					public String getDateFormat() {
+						return this.dateFormat;
+					}
+
+					public void setDateFormat(String dateFormat) {
+						this.dateFormat = dateFormat;
+					}
+
+					public String getDescr() {
+						return this.descr;
+					}
+
+					public void setDescr(String descr) {
+						this.descr = descr;
+					}
+
+					public String getParamName() {
+						return this.paramName;
+					}
+
+					public void setParamName(String paramName) {
+						this.paramName = paramName;
+					}
+
+					public String getParamType() {
+						return this.paramType;
+					}
+
+					public void setParamType(String paramType) {
+						this.paramType = paramType;
+					}
+
+					public Boolean getIsUrl() {
+						return this.isUrl;
+					}
+
+					public void setIsUrl(Boolean isUrl) {
+						this.isUrl = isUrl;
+					}
+
+					public String getOriginalColumn() {
+						return this.originalColumn;
+					}
+
+					public void setOriginalColumn(String originalColumn) {
+						this.originalColumn = originalColumn;
+					}
+				}
+
+				public static class ApiRequestParamDTO {
+
+					private String operator;
+
+					private Integer seqNum;
+
+					private Boolean optional;
+
+					private String mappingColumn;
+
+					private String sample;
+
+					private String descr;
+
+					private Boolean must;
+
+					private String paramType;
+
+					private String originalColumn;
+
+					private String defaultValue;
+
+					private String dateFormat;
+
+					private String paramName;
+
+					private Boolean isUrl;
+
+					public String getOperator() {
+						return this.operator;
+					}
+
+					public void setOperator(String operator) {
+						this.operator = operator;
+					}
+
+					public Integer getSeqNum() {
+						return this.seqNum;
+					}
+
+					public void setSeqNum(Integer seqNum) {
+						this.seqNum = seqNum;
+					}
+
+					public Boolean getOptional() {
+						return this.optional;
+					}
+
+					public void setOptional(Boolean optional) {
+						this.optional = optional;
+					}
+
+					public String getMappingColumn() {
+						return this.mappingColumn;
+					}
+
+					public void setMappingColumn(String mappingColumn) {
+						this.mappingColumn = mappingColumn;
+					}
+
+					public String getSample() {
+						return this.sample;
+					}
+
+					public void setSample(String sample) {
+						this.sample = sample;
+					}
+
+					public String getDescr() {
+						return this.descr;
+					}
+
+					public void setDescr(String descr) {
+						this.descr = descr;
+					}
+
+					public Boolean getMust() {
+						return this.must;
+					}
+
+					public void setMust(Boolean must) {
+						this.must = must;
+					}
+
+					public String getParamType() {
+						return this.paramType;
+					}
+
+					public void setParamType(String paramType) {
+						this.paramType = paramType;
+					}
+
+					public String getOriginalColumn() {
+						return this.originalColumn;
+					}
+
+					public void setOriginalColumn(String originalColumn) {
+						this.originalColumn = originalColumn;
+					}
+
+					public String getDefaultValue() {
+						return this.defaultValue;
+					}
+
+					public void setDefaultValue(String defaultValue) {
+						this.defaultValue = defaultValue;
+					}
+
+					public String getDateFormat() {
+						return this.dateFormat;
+					}
+
+					public void setDateFormat(String dateFormat) {
+						this.dateFormat = dateFormat;
+					}
+
+					public String getParamName() {
+						return this.paramName;
+					}
+
+					public void setParamName(String paramName) {
+						this.paramName = paramName;
+					}
+
+					public Boolean getIsUrl() {
+						return this.isUrl;
+					}
+
+					public void setIsUrl(Boolean isUrl) {
+						this.isUrl = isUrl;
+					}
+				}
 			}
 
 			public static class DataVersionConfig {

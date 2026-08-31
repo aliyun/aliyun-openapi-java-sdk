@@ -30,10 +30,12 @@ public class CreateSecurityClassifyCatalogRequest extends RpcAcsRequest<CreateSe
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateSecurityClassifyCatalogRequest() {
-		super("dataphin-public", "2023-06-30", "CreateSecurityClassifyCatalog");
+		super("dataphin-public", "2023-06-30", "CreateSecurityClassifyCatalog", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class CreateSecurityClassifyCatalogRequest extends RpcAcsRequest<CreateSe
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

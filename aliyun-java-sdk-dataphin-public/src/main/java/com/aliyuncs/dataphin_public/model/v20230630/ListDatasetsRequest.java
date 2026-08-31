@@ -30,10 +30,12 @@ public class ListDatasetsRequest extends RpcAcsRequest<ListDatasetsResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("datasetQuery")
 	private DatasetQuery datasetQuery;
 	public ListDatasetsRequest() {
-		super("dataphin-public", "2023-06-30", "ListDatasets");
+		super("dataphin-public", "2023-06-30", "ListDatasets", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class ListDatasetsRequest extends RpcAcsRequest<ListDatasetsResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

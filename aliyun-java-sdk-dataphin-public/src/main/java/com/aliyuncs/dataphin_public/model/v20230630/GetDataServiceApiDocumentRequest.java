@@ -27,11 +27,13 @@ public class GetDataServiceApiDocumentRequest extends RpcAcsRequest<GetDataServi
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String versionId;
 
 	private Long id;
 	public GetDataServiceApiDocumentRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataServiceApiDocument");
+		super("dataphin-public", "2023-06-30", "GetDataServiceApiDocument", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -44,6 +46,17 @@ public class GetDataServiceApiDocumentRequest extends RpcAcsRequest<GetDataServi
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

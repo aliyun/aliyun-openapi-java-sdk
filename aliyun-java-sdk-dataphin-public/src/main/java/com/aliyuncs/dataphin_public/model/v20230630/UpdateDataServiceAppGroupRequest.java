@@ -29,10 +29,12 @@ public class UpdateDataServiceAppGroupRequest extends RpcAcsRequest<UpdateDataSe
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateDataServiceAppGroupRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateDataServiceAppGroup");
+		super("dataphin-public", "2023-06-30", "UpdateDataServiceAppGroup", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class UpdateDataServiceAppGroupRequest extends RpcAcsRequest<UpdateDataSe
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

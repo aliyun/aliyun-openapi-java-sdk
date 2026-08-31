@@ -30,10 +30,12 @@ public class PublishStandardRequest extends RpcAcsRequest<PublishStandardRespons
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("publishCommand")
 	private PublishCommand publishCommand;
 	public PublishStandardRequest() {
-		super("dataphin-public", "2023-06-30", "PublishStandard");
+		super("dataphin-public", "2023-06-30", "PublishStandard", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class PublishStandardRequest extends RpcAcsRequest<PublishStandardRespons
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

@@ -30,10 +30,12 @@ public class DeleteStandardValidMappingRequest extends RpcAcsRequest<DeleteStand
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("deleteCommand")
 	private DeleteCommand deleteCommand;
 	public DeleteStandardValidMappingRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteStandardValidMapping");
+		super("dataphin-public", "2023-06-30", "DeleteStandardValidMapping", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class DeleteStandardValidMappingRequest extends RpcAcsRequest<DeleteStand
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

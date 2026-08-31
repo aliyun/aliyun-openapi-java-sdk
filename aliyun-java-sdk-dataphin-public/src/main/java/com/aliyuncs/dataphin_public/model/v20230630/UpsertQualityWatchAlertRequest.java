@@ -30,10 +30,12 @@ public class UpsertQualityWatchAlertRequest extends RpcAcsRequest<UpsertQualityW
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("upsertCommand")
 	private UpsertCommand upsertCommand;
 	public UpsertQualityWatchAlertRequest() {
-		super("dataphin-public", "2023-06-30", "UpsertQualityWatchAlert");
+		super("dataphin-public", "2023-06-30", "UpsertQualityWatchAlert", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class UpsertQualityWatchAlertRequest extends RpcAcsRequest<UpsertQualityW
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

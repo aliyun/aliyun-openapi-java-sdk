@@ -29,10 +29,12 @@ public class GetStandardRequest extends RpcAcsRequest<GetStandardResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("standardGetQuery")
 	private StandardGetQuery standardGetQuery;
 	public GetStandardRequest() {
-		super("dataphin-public", "2023-06-30", "GetStandard");
+		super("dataphin-public", "2023-06-30", "GetStandard", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class GetStandardRequest extends RpcAcsRequest<GetStandardResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

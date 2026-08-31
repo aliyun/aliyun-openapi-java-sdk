@@ -30,10 +30,12 @@ public class CreateBatchTaskRequest extends RpcAcsRequest<CreateBatchTaskRespons
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateBatchTaskRequest() {
-		super("dataphin-public", "2023-06-30", "CreateBatchTask");
+		super("dataphin-public", "2023-06-30", "CreateBatchTask", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class CreateBatchTaskRequest extends RpcAcsRequest<CreateBatchTaskRespons
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 
@@ -68,17 +81,11 @@ public class CreateBatchTaskRequest extends RpcAcsRequest<CreateBatchTaskRespons
 		@SerializedName("TaskType")
 		private Integer taskType;
 
-		@SerializedName("Engine")
-		private String engine;
+		@SerializedName("OpsOwnerIdList")
+		private List<String> opsOwnerIdList;
 
 		@SerializedName("DataSourceSchema")
 		private String dataSourceSchema;
-
-		@SerializedName("DataSourceId")
-		private String dataSourceId;
-
-		@SerializedName("Name")
-		private String name;
 
 		@SerializedName("Description")
 		private String description;
@@ -86,11 +93,23 @@ public class CreateBatchTaskRequest extends RpcAcsRequest<CreateBatchTaskRespons
 		@SerializedName("DataSourceCatalog")
 		private String dataSourceCatalog;
 
-		@SerializedName("ProjectId")
-		private Long projectId;
-
 		@SerializedName("Directory")
 		private String directory;
+
+		@SerializedName("Engine")
+		private String engine;
+
+		@SerializedName("DevelopOwnerIdList")
+		private List<String> developOwnerIdList;
+
+		@SerializedName("Name")
+		private String name;
+
+		@SerializedName("DataSourceId")
+		private String dataSourceId;
+
+		@SerializedName("ProjectId")
+		private Long projectId;
 
 		@SerializedName("PythonModuleList")
 		private List<String> pythonModuleList;
@@ -111,12 +130,12 @@ public class CreateBatchTaskRequest extends RpcAcsRequest<CreateBatchTaskRespons
 			this.taskType = taskType;
 		}
 
-		public String getEngine() {
-			return this.engine;
+		public List<String> getOpsOwnerIdList() {
+			return this.opsOwnerIdList;
 		}
 
-		public void setEngine(String engine) {
-			this.engine = engine;
+		public void setOpsOwnerIdList(List<String> opsOwnerIdList) {
+			this.opsOwnerIdList = opsOwnerIdList;
 		}
 
 		public String getDataSourceSchema() {
@@ -125,22 +144,6 @@ public class CreateBatchTaskRequest extends RpcAcsRequest<CreateBatchTaskRespons
 
 		public void setDataSourceSchema(String dataSourceSchema) {
 			this.dataSourceSchema = dataSourceSchema;
-		}
-
-		public String getDataSourceId() {
-			return this.dataSourceId;
-		}
-
-		public void setDataSourceId(String dataSourceId) {
-			this.dataSourceId = dataSourceId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
 		}
 
 		public String getDescription() {
@@ -159,20 +162,52 @@ public class CreateBatchTaskRequest extends RpcAcsRequest<CreateBatchTaskRespons
 			this.dataSourceCatalog = dataSourceCatalog;
 		}
 
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
-
 		public String getDirectory() {
 			return this.directory;
 		}
 
 		public void setDirectory(String directory) {
 			this.directory = directory;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public List<String> getDevelopOwnerIdList() {
+			return this.developOwnerIdList;
+		}
+
+		public void setDevelopOwnerIdList(List<String> developOwnerIdList) {
+			this.developOwnerIdList = developOwnerIdList;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDataSourceId() {
+			return this.dataSourceId;
+		}
+
+		public void setDataSourceId(String dataSourceId) {
+			this.dataSourceId = dataSourceId;
+		}
+
+		public Long getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
 		}
 
 		public List<String> getPythonModuleList() {

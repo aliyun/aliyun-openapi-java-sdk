@@ -27,9 +27,11 @@ public class GetQualityScheduleRequest extends RpcAcsRequest<GetQualityScheduleR
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long id;
 	public GetQualityScheduleRequest() {
-		super("dataphin-public", "2023-06-30", "GetQualitySchedule");
+		super("dataphin-public", "2023-06-30", "GetQualitySchedule", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class GetQualityScheduleRequest extends RpcAcsRequest<GetQualityScheduleR
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

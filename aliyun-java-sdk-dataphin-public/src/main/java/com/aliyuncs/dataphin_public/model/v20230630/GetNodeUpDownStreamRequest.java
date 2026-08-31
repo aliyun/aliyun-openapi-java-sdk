@@ -29,6 +29,8 @@ public class GetNodeUpDownStreamRequest extends RpcAcsRequest<GetNodeUpDownStrea
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String env;
 
 	private Integer upStreamDepth;
@@ -40,7 +42,7 @@ public class GetNodeUpDownStreamRequest extends RpcAcsRequest<GetNodeUpDownStrea
 
 	private Integer downStreamDepth;
 	public GetNodeUpDownStreamRequest() {
-		super("dataphin-public", "2023-06-30", "GetNodeUpDownStream");
+		super("dataphin-public", "2023-06-30", "GetNodeUpDownStream", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -53,6 +55,17 @@ public class GetNodeUpDownStreamRequest extends RpcAcsRequest<GetNodeUpDownStrea
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

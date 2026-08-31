@@ -30,12 +30,14 @@ public class PausePhysicalNodeRequest extends RpcAcsRequest<PausePhysicalNodeRes
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String env;
 
 	@SerializedName("pauseCommand")
 	private PauseCommand pauseCommand;
 	public PausePhysicalNodeRequest() {
-		super("dataphin-public", "2023-06-30", "PausePhysicalNode");
+		super("dataphin-public", "2023-06-30", "PausePhysicalNode", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class PausePhysicalNodeRequest extends RpcAcsRequest<PausePhysicalNodeRes
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

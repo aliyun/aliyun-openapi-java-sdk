@@ -27,9 +27,11 @@ public class GetDataServiceAppGroupsRequest extends RpcAcsRequest<GetDataService
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Integer projectId;
 	public GetDataServiceAppGroupsRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataServiceAppGroups");
+		super("dataphin-public", "2023-06-30", "GetDataServiceAppGroups", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class GetDataServiceAppGroupsRequest extends RpcAcsRequest<GetDataService
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

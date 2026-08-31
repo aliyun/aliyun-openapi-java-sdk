@@ -27,11 +27,13 @@ public class GetStandardWordRootRequest extends RpcAcsRequest<GetStandardWordRoo
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Boolean nullable;
 
 	private String name;
 	public GetStandardWordRootRequest() {
-		super("dataphin-public", "2023-06-30", "GetStandardWordRoot");
+		super("dataphin-public", "2023-06-30", "GetStandardWordRoot", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -44,6 +46,17 @@ public class GetStandardWordRootRequest extends RpcAcsRequest<GetStandardWordRoo
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

@@ -27,13 +27,15 @@ public class PublishDataServiceApiRequest extends RpcAcsRequest<PublishDataServi
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String versionId;
 
 	private Integer projectId;
 
 	private Long apiId;
 	public PublishDataServiceApiRequest() {
-		super("dataphin-public", "2023-06-30", "PublishDataServiceApi");
+		super("dataphin-public", "2023-06-30", "PublishDataServiceApi", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class PublishDataServiceApiRequest extends RpcAcsRequest<PublishDataServi
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

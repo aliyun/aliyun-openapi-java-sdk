@@ -30,12 +30,14 @@ public class PublishKgSchemaRequest extends RpcAcsRequest<PublishKgSchemaRespons
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("publishCommand")
 	private PublishCommand publishCommand;
 
 	private String workspaceId;
 	public PublishKgSchemaRequest() {
-		super("dataphin-public", "2023-06-30", "PublishKgSchema");
+		super("dataphin-public", "2023-06-30", "PublishKgSchema", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class PublishKgSchemaRequest extends RpcAcsRequest<PublishKgSchemaRespons
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

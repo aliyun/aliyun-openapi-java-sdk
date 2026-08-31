@@ -27,11 +27,13 @@ public class StopAdHocTaskRequest extends RpcAcsRequest<StopAdHocTaskResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long projectId;
 
 	private String taskId;
 	public StopAdHocTaskRequest() {
-		super("dataphin-public", "2023-06-30", "StopAdHocTask");
+		super("dataphin-public", "2023-06-30", "StopAdHocTask", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -44,6 +46,17 @@ public class StopAdHocTaskRequest extends RpcAcsRequest<StopAdHocTaskResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

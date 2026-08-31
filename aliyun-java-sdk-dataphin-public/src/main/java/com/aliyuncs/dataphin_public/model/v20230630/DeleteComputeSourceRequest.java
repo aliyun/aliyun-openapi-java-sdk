@@ -27,9 +27,11 @@ public class DeleteComputeSourceRequest extends RpcAcsRequest<DeleteComputeSourc
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long id;
 	public DeleteComputeSourceRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteComputeSource");
+		super("dataphin-public", "2023-06-30", "DeleteComputeSource", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class DeleteComputeSourceRequest extends RpcAcsRequest<DeleteComputeSourc
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

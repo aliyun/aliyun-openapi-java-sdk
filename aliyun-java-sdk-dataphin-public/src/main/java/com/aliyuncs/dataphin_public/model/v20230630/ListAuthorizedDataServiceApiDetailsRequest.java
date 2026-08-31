@@ -29,10 +29,12 @@ public class ListAuthorizedDataServiceApiDetailsRequest extends RpcAcsRequest<Li
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListAuthorizedDataServiceApiDetailsRequest() {
-		super("dataphin-public", "2023-06-30", "ListAuthorizedDataServiceApiDetails");
+		super("dataphin-public", "2023-06-30", "ListAuthorizedDataServiceApiDetails", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class ListAuthorizedDataServiceApiDetailsRequest extends RpcAcsRequest<Li
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

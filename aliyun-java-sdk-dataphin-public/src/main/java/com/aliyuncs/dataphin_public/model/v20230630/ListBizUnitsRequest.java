@@ -26,8 +26,10 @@ public class ListBizUnitsRequest extends RpcAcsRequest<ListBizUnitsResponse> {
 	   
 
 	private Long opTenantId;
+
+	private String opUserId;
 	public ListBizUnitsRequest() {
-		super("dataphin-public", "2023-06-30", "ListBizUnits");
+		super("dataphin-public", "2023-06-30", "ListBizUnits", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -40,6 +42,17 @@ public class ListBizUnitsRequest extends RpcAcsRequest<ListBizUnitsResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

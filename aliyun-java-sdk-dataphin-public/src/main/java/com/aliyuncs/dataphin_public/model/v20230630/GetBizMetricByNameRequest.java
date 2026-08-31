@@ -29,10 +29,12 @@ public class GetBizMetricByNameRequest extends RpcAcsRequest<GetBizMetricByNameR
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("bizMetricByNameQuery")
 	private BizMetricByNameQuery bizMetricByNameQuery;
 	public GetBizMetricByNameRequest() {
-		super("dataphin-public", "2023-06-30", "GetBizMetricByName");
+		super("dataphin-public", "2023-06-30", "GetBizMetricByName", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class GetBizMetricByNameRequest extends RpcAcsRequest<GetBizMetricByNameR
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

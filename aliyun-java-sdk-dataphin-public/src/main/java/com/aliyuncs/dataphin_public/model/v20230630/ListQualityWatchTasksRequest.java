@@ -30,10 +30,12 @@ public class ListQualityWatchTasksRequest extends RpcAcsRequest<ListQualityWatch
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListQualityWatchTasksRequest() {
-		super("dataphin-public", "2023-06-30", "ListQualityWatchTasks");
+		super("dataphin-public", "2023-06-30", "ListQualityWatchTasks", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class ListQualityWatchTasksRequest extends RpcAcsRequest<ListQualityWatch
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

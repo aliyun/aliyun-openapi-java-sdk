@@ -30,10 +30,12 @@ public class RemoveQualityRuleSchedulesRequest extends RpcAcsRequest<RemoveQuali
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("removeCommand")
 	private RemoveCommand removeCommand;
 	public RemoveQualityRuleSchedulesRequest() {
-		super("dataphin-public", "2023-06-30", "RemoveQualityRuleSchedules");
+		super("dataphin-public", "2023-06-30", "RemoveQualityRuleSchedules", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class RemoveQualityRuleSchedulesRequest extends RpcAcsRequest<RemoveQuali
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

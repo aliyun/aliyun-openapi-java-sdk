@@ -27,13 +27,15 @@ public class GetResourceByVersionRequest extends RpcAcsRequest<GetResourceByVers
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long versionId;
 
 	private String name;
 
 	private Long projectId;
 	public GetResourceByVersionRequest() {
-		super("dataphin-public", "2023-06-30", "GetResourceByVersion");
+		super("dataphin-public", "2023-06-30", "GetResourceByVersion", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class GetResourceByVersionRequest extends RpcAcsRequest<GetResourceByVers
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

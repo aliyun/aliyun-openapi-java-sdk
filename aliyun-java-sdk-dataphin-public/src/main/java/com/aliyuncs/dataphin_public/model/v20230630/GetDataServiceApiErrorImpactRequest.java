@@ -27,13 +27,15 @@ public class GetDataServiceApiErrorImpactRequest extends RpcAcsRequest<GetDataSe
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String endTime;
 
 	private String startTime;
 
 	private Integer projectId;
 	public GetDataServiceApiErrorImpactRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataServiceApiErrorImpact");
+		super("dataphin-public", "2023-06-30", "GetDataServiceApiErrorImpact", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class GetDataServiceApiErrorImpactRequest extends RpcAcsRequest<GetDataSe
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

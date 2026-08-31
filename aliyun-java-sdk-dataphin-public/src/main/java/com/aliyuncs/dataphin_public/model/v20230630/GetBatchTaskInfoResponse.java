@@ -155,7 +155,15 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 		private List<NodeRelation> upStreamList;
 
+		private List<String> opsOwnerNameList;
+
 		private List<String> nodeOutputNameList;
+
+		private List<String> developOwnerNameList;
+
+		private List<String> developOwnerIdList;
+
+		private List<String> opsOwnerIdList;
 
 		private CustomScheduleConfig customScheduleConfig;
 
@@ -433,12 +441,44 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.upStreamList = upStreamList;
 		}
 
+		public List<String> getOpsOwnerNameList() {
+			return this.opsOwnerNameList;
+		}
+
+		public void setOpsOwnerNameList(List<String> opsOwnerNameList) {
+			this.opsOwnerNameList = opsOwnerNameList;
+		}
+
 		public List<String> getNodeOutputNameList() {
 			return this.nodeOutputNameList;
 		}
 
 		public void setNodeOutputNameList(List<String> nodeOutputNameList) {
 			this.nodeOutputNameList = nodeOutputNameList;
+		}
+
+		public List<String> getDevelopOwnerNameList() {
+			return this.developOwnerNameList;
+		}
+
+		public void setDevelopOwnerNameList(List<String> developOwnerNameList) {
+			this.developOwnerNameList = developOwnerNameList;
+		}
+
+		public List<String> getDevelopOwnerIdList() {
+			return this.developOwnerIdList;
+		}
+
+		public void setDevelopOwnerIdList(List<String> developOwnerIdList) {
+			this.developOwnerIdList = developOwnerIdList;
+		}
+
+		public List<String> getOpsOwnerIdList() {
+			return this.opsOwnerIdList;
+		}
+
+		public void setOpsOwnerIdList(List<String> opsOwnerIdList) {
+			this.opsOwnerIdList = opsOwnerIdList;
 		}
 
 		public CustomScheduleConfig getCustomScheduleConfig() {

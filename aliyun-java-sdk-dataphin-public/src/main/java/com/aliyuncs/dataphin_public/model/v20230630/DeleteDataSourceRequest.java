@@ -29,10 +29,12 @@ public class DeleteDataSourceRequest extends RpcAcsRequest<DeleteDataSourceRespo
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("deleteCommand")
 	private DeleteCommand deleteCommand;
 	public DeleteDataSourceRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteDataSource");
+		super("dataphin-public", "2023-06-30", "DeleteDataSource", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class DeleteDataSourceRequest extends RpcAcsRequest<DeleteDataSourceRespo
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

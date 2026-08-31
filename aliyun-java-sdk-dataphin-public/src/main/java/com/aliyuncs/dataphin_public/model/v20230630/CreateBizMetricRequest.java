@@ -30,10 +30,12 @@ public class CreateBizMetricRequest extends RpcAcsRequest<CreateBizMetricRespons
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("createBizMetricCommand")
 	private CreateBizMetricCommand createBizMetricCommand;
 	public CreateBizMetricRequest() {
-		super("dataphin-public", "2023-06-30", "CreateBizMetric");
+		super("dataphin-public", "2023-06-30", "CreateBizMetric", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class CreateBizMetricRequest extends RpcAcsRequest<CreateBizMetricRespons
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

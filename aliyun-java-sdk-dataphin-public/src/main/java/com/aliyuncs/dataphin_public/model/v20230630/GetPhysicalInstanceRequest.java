@@ -27,13 +27,15 @@ public class GetPhysicalInstanceRequest extends RpcAcsRequest<GetPhysicalInstanc
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String env;
 
 	private String instanceId;
 
 	private Long projectId;
 	public GetPhysicalInstanceRequest() {
-		super("dataphin-public", "2023-06-30", "GetPhysicalInstance");
+		super("dataphin-public", "2023-06-30", "GetPhysicalInstance", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class GetPhysicalInstanceRequest extends RpcAcsRequest<GetPhysicalInstanc
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

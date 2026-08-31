@@ -30,10 +30,12 @@ public class ListDataSourceWithConfigRequest extends RpcAcsRequest<ListDataSourc
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListDataSourceWithConfigRequest() {
-		super("dataphin-public", "2023-06-30", "ListDataSourceWithConfig");
+		super("dataphin-public", "2023-06-30", "ListDataSourceWithConfig", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class ListDataSourceWithConfigRequest extends RpcAcsRequest<ListDataSourc
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

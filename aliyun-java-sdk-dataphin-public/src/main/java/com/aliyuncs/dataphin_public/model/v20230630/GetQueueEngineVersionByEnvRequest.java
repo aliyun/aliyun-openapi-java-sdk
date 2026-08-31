@@ -27,6 +27,8 @@ public class GetQueueEngineVersionByEnvRequest extends RpcAcsRequest<GetQueueEng
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String queueName;
 
 	private String clusterId;
@@ -37,7 +39,7 @@ public class GetQueueEngineVersionByEnvRequest extends RpcAcsRequest<GetQueueEng
 
 	private String streamBatchMode;
 	public GetQueueEngineVersionByEnvRequest() {
-		super("dataphin-public", "2023-06-30", "GetQueueEngineVersionByEnv");
+		super("dataphin-public", "2023-06-30", "GetQueueEngineVersionByEnv", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -50,6 +52,17 @@ public class GetQueueEngineVersionByEnvRequest extends RpcAcsRequest<GetQueueEng
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

@@ -30,10 +30,12 @@ public class RevokeResourcePermissionRequest extends RpcAcsRequest<RevokeResourc
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("revokeCommand")
 	private RevokeCommand revokeCommand;
 	public RevokeResourcePermissionRequest() {
-		super("dataphin-public", "2023-06-30", "RevokeResourcePermission");
+		super("dataphin-public", "2023-06-30", "RevokeResourcePermission", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class RevokeResourcePermissionRequest extends RpcAcsRequest<RevokeResourc
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

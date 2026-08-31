@@ -30,12 +30,14 @@ public class CreateNodeSupplementRequest extends RpcAcsRequest<CreateNodeSupplem
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String env;
 
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateNodeSupplementRequest() {
-		super("dataphin-public", "2023-06-30", "CreateNodeSupplement");
+		super("dataphin-public", "2023-06-30", "CreateNodeSupplement", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class CreateNodeSupplementRequest extends RpcAcsRequest<CreateNodeSupplem
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 
@@ -77,6 +90,9 @@ public class CreateNodeSupplementRequest extends RpcAcsRequest<CreateNodeSupplem
 
 		@SerializedName("MaxDueTime")
 		private String maxDueTime;
+
+		@SerializedName("RunImmediately")
+		private Boolean runImmediately;
 
 		@SerializedName("ContainAllDownStream")
 		private Boolean containAllDownStream;
@@ -120,6 +136,14 @@ public class CreateNodeSupplementRequest extends RpcAcsRequest<CreateNodeSupplem
 
 		public void setMaxDueTime(String maxDueTime) {
 			this.maxDueTime = maxDueTime;
+		}
+
+		public Boolean getRunImmediately() {
+			return this.runImmediately;
+		}
+
+		public void setRunImmediately(Boolean runImmediately) {
+			this.runImmediately = runImmediately;
 		}
 
 		public Boolean getContainAllDownStream() {

@@ -29,10 +29,12 @@ public class ParseBatchTaskDependencyRequest extends RpcAcsRequest<ParseBatchTas
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("parseCommand")
 	private ParseCommand parseCommand;
 	public ParseBatchTaskDependencyRequest() {
-		super("dataphin-public", "2023-06-30", "ParseBatchTaskDependency");
+		super("dataphin-public", "2023-06-30", "ParseBatchTaskDependency", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class ParseBatchTaskDependencyRequest extends RpcAcsRequest<ParseBatchTas
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

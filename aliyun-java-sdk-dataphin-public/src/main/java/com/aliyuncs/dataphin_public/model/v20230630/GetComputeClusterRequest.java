@@ -1,0 +1,77 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.dataphin_public.model.v20230630;
+
+import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class GetComputeClusterRequest extends RpcAcsRequest<GetComputeClusterResponse> {
+	   
+
+	private Long opTenantId;
+
+	private String opUserId;
+
+	private Long id;
+	public GetComputeClusterRequest() {
+		super("dataphin-public", "2023-06-30", "GetComputeCluster", "Dataphin");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+	}
+
+	public Long getOpTenantId() {
+		return this.opTenantId;
+	}
+
+	public void setOpTenantId(Long opTenantId) {
+		this.opTenantId = opTenantId;
+		if(opTenantId != null){
+			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
+		}
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	@Override
+	public Class<GetComputeClusterResponse> getResponseClass() {
+		return GetComputeClusterResponse.class;
+	}
+
+}

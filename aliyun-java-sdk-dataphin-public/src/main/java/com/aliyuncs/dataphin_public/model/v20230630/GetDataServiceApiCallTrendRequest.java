@@ -27,13 +27,15 @@ public class GetDataServiceApiCallTrendRequest extends RpcAcsRequest<GetDataServ
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String endTime;
 
 	private String startTime;
 
 	private Integer projectId;
 	public GetDataServiceApiCallTrendRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataServiceApiCallTrend");
+		super("dataphin-public", "2023-06-30", "GetDataServiceApiCallTrend", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class GetDataServiceApiCallTrendRequest extends RpcAcsRequest<GetDataServ
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

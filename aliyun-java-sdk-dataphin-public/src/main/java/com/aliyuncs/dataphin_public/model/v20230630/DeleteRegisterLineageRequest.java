@@ -31,10 +31,12 @@ public class DeleteRegisterLineageRequest extends RpcAcsRequest<DeleteRegisterLi
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("deleteRegisterLineageCommand")
 	private DeleteRegisterLineageCommand deleteRegisterLineageCommand;
 	public DeleteRegisterLineageRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteRegisterLineage");
+		super("dataphin-public", "2023-06-30", "DeleteRegisterLineage", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -47,6 +49,17 @@ public class DeleteRegisterLineageRequest extends RpcAcsRequest<DeleteRegisterLi
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

@@ -30,12 +30,14 @@ public class ReplaceProjectWhiteListsRequest extends RpcAcsRequest<ReplaceProjec
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("replaceCommand")
 	private ReplaceCommand replaceCommand;
 
 	private Long id;
 	public ReplaceProjectWhiteListsRequest() {
-		super("dataphin-public", "2023-06-30", "ReplaceProjectWhiteLists");
+		super("dataphin-public", "2023-06-30", "ReplaceProjectWhiteLists", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class ReplaceProjectWhiteListsRequest extends RpcAcsRequest<ReplaceProjec
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

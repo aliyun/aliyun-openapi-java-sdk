@@ -27,11 +27,13 @@ public class UpdateUserGroupSwitchRequest extends RpcAcsRequest<UpdateUserGroupS
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String userGroupId;
 
 	private Boolean active;
 	public UpdateUserGroupSwitchRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateUserGroupSwitch");
+		super("dataphin-public", "2023-06-30", "UpdateUserGroupSwitch", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -44,6 +46,17 @@ public class UpdateUserGroupSwitchRequest extends RpcAcsRequest<UpdateUserGroupS
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

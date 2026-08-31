@@ -29,10 +29,12 @@ public class GetCatalogAssetDetailsRequest extends RpcAcsRequest<GetCatalogAsset
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("getCatalogAssetDetailsQuery")
 	private GetCatalogAssetDetailsQuery getCatalogAssetDetailsQuery;
 	public GetCatalogAssetDetailsRequest() {
-		super("dataphin-public", "2023-06-30", "GetCatalogAssetDetails");
+		super("dataphin-public", "2023-06-30", "GetCatalogAssetDetails", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class GetCatalogAssetDetailsRequest extends RpcAcsRequest<GetCatalogAsset
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

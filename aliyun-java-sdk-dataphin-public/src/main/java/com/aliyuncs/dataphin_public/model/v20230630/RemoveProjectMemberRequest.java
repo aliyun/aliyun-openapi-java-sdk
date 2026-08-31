@@ -30,12 +30,14 @@ public class RemoveProjectMemberRequest extends RpcAcsRequest<RemoveProjectMembe
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("removeCommand")
 	private RemoveCommand removeCommand;
 
 	private Long id;
 	public RemoveProjectMemberRequest() {
-		super("dataphin-public", "2023-06-30", "RemoveProjectMember");
+		super("dataphin-public", "2023-06-30", "RemoveProjectMember", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class RemoveProjectMemberRequest extends RpcAcsRequest<RemoveProjectMembe
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

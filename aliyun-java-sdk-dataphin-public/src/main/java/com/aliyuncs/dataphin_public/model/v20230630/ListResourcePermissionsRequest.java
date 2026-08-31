@@ -32,7 +32,7 @@ public class ListResourcePermissionsRequest extends RpcAcsRequest<ListResourcePe
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListResourcePermissionsRequest() {
-		super("dataphin-public", "2023-06-30", "ListResourcePermissions");
+		super("dataphin-public", "2023-06-30", "ListResourcePermissions", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

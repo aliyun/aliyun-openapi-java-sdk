@@ -27,9 +27,11 @@ public class GetTransferInfoRequest extends RpcAcsRequest<GetTransferInfoRespons
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long proposalId;
 	public GetTransferInfoRequest() {
-		super("dataphin-public", "2023-06-30", "GetTransferInfo");
+		super("dataphin-public", "2023-06-30", "GetTransferInfo", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class GetTransferInfoRequest extends RpcAcsRequest<GetTransferInfoRespons
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

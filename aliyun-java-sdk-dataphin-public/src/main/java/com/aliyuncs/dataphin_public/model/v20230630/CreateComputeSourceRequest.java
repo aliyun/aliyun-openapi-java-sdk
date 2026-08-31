@@ -30,10 +30,12 @@ public class CreateComputeSourceRequest extends RpcAcsRequest<CreateComputeSourc
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateComputeSourceRequest() {
-		super("dataphin-public", "2023-06-30", "CreateComputeSource");
+		super("dataphin-public", "2023-06-30", "CreateComputeSource", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class CreateComputeSourceRequest extends RpcAcsRequest<CreateComputeSourc
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 
@@ -71,8 +84,17 @@ public class CreateComputeSourceRequest extends RpcAcsRequest<CreateComputeSourc
 		@SerializedName("ConfigList")
 		private List<ConfigListItem> configList;
 
+		@SerializedName("ClusterId")
+		private Long clusterId;
+
 		@SerializedName("Type")
 		private String type;
+
+		@SerializedName("CreateType")
+		private String createType;
+
+		@SerializedName("TypeVersion")
+		private String typeVersion;
 
 		public String getName() {
 			return this.name;
@@ -98,12 +120,36 @@ public class CreateComputeSourceRequest extends RpcAcsRequest<CreateComputeSourc
 			this.configList = configList;
 		}
 
+		public Long getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(Long clusterId) {
+			this.clusterId = clusterId;
+		}
+
 		public String getType() {
 			return this.type;
 		}
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getCreateType() {
+			return this.createType;
+		}
+
+		public void setCreateType(String createType) {
+			this.createType = createType;
+		}
+
+		public String getTypeVersion() {
+			return this.typeVersion;
+		}
+
+		public void setTypeVersion(String typeVersion) {
+			this.typeVersion = typeVersion;
 		}
 
 		public static class ConfigListItem {

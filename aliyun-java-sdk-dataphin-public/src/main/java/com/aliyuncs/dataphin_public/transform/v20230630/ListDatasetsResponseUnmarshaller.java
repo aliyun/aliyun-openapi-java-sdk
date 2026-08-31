@@ -21,6 +21,9 @@ import com.aliyuncs.dataphin_public.model.v20230630.ListDatasetsResponse;
 import com.aliyuncs.dataphin_public.model.v20230630.ListDatasetsResponse.PageResult;
 import com.aliyuncs.dataphin_public.model.v20230630.ListDatasetsResponse.PageResult.DatasetDTO;
 import com.aliyuncs.dataphin_public.model.v20230630.ListDatasetsResponse.PageResult.DatasetDTO.DatasetVersionDTO;
+import com.aliyuncs.dataphin_public.model.v20230630.ListDatasetsResponse.PageResult.DatasetDTO.DatasetVersionDTO.ApiInfo;
+import com.aliyuncs.dataphin_public.model.v20230630.ListDatasetsResponse.PageResult.DatasetDTO.DatasetVersionDTO.ApiInfo.ApiRequestParamDTO;
+import com.aliyuncs.dataphin_public.model.v20230630.ListDatasetsResponse.PageResult.DatasetDTO.DatasetVersionDTO.ApiInfo.ApiResponseParamDTO;
 import com.aliyuncs.dataphin_public.model.v20230630.ListDatasetsResponse.PageResult.DatasetDTO.DatasetVersionDTO.DataVersionConfig;
 import com.aliyuncs.dataphin_public.model.v20230630.ListDatasetsResponse.PageResult.DatasetDTO.DatasetVersionDTO.DataVersionConfig.FileStorageConfig;
 import com.aliyuncs.dataphin_public.model.v20230630.ListDatasetsResponse.PageResult.DatasetDTO.DatasetVersionDTO.DataVersionConfig.MetadataStorageConfig;
@@ -93,6 +96,57 @@ public class ListDatasetsResponseUnmarshaller {
 				datasetVersionDTO.setId(_ctx.longValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].Id"));
 				datasetVersionDTO.setCreator(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].Creator"));
 				datasetVersionDTO.setDatasetId(_ctx.longValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].DatasetId"));
+
+				ApiInfo apiInfo = new ApiInfo();
+				apiInfo.setOsApiGroup(_ctx.integerValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.OsApiGroup"));
+				apiInfo.setApiNo(_ctx.longValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.ApiNo"));
+				apiInfo.setOsApiGroupName(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.OsApiGroupName"));
+				apiInfo.setRequestMethod(_ctx.integerValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestMethod"));
+				apiInfo.setTimeout(_ctx.integerValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.Timeout"));
+				apiInfo.setOsProject(_ctx.integerValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.OsProject"));
+				apiInfo.setBizProtocol(_ctx.integerValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.Protocol"));
+				apiInfo.setExecuteMode(_ctx.integerValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.ExecuteMode"));
+				apiInfo.setExecTimeout(_ctx.integerValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.ExecTimeout"));
+				apiInfo.setOsProjectName(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.OsProjectName"));
+
+				List<ApiResponseParamDTO> responseParamList = new ArrayList<ApiResponseParamDTO>();
+				for (int k = 0; k < _ctx.lengthValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.ResponseParamList.Length"); k++) {
+					ApiResponseParamDTO apiResponseParamDTO = new ApiResponseParamDTO();
+					apiResponseParamDTO.setSeqNum(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.ResponseParamList["+ k +"].SeqNum"));
+					apiResponseParamDTO.setMappingColumn(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.ResponseParamList["+ k +"].MappingColumn"));
+					apiResponseParamDTO.setSample(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.ResponseParamList["+ k +"].Sample"));
+					apiResponseParamDTO.setDateFormat(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.ResponseParamList["+ k +"].DateFormat"));
+					apiResponseParamDTO.setDescr(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.ResponseParamList["+ k +"].Descr"));
+					apiResponseParamDTO.setParamName(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.ResponseParamList["+ k +"].ParamName"));
+					apiResponseParamDTO.setParamType(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.ResponseParamList["+ k +"].ParamType"));
+					apiResponseParamDTO.setIsUrl(_ctx.booleanValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.ResponseParamList["+ k +"].IsUrl"));
+					apiResponseParamDTO.setOriginalColumn(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.ResponseParamList["+ k +"].OriginalColumn"));
+
+					responseParamList.add(apiResponseParamDTO);
+				}
+				apiInfo.setResponseParamList(responseParamList);
+
+				List<ApiRequestParamDTO> requestParamList = new ArrayList<ApiRequestParamDTO>();
+				for (int k = 0; k < _ctx.lengthValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList.Length"); k++) {
+					ApiRequestParamDTO apiRequestParamDTO = new ApiRequestParamDTO();
+					apiRequestParamDTO.setOperator(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList["+ k +"].Operator"));
+					apiRequestParamDTO.setSeqNum(_ctx.integerValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList["+ k +"].SeqNum"));
+					apiRequestParamDTO.setOptional(_ctx.booleanValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList["+ k +"].Optional"));
+					apiRequestParamDTO.setMappingColumn(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList["+ k +"].MappingColumn"));
+					apiRequestParamDTO.setSample(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList["+ k +"].Sample"));
+					apiRequestParamDTO.setDescr(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList["+ k +"].Descr"));
+					apiRequestParamDTO.setMust(_ctx.booleanValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList["+ k +"].Must"));
+					apiRequestParamDTO.setParamType(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList["+ k +"].ParamType"));
+					apiRequestParamDTO.setOriginalColumn(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList["+ k +"].OriginalColumn"));
+					apiRequestParamDTO.setDefaultValue(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList["+ k +"].DefaultValue"));
+					apiRequestParamDTO.setDateFormat(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList["+ k +"].DateFormat"));
+					apiRequestParamDTO.setParamName(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList["+ k +"].ParamName"));
+					apiRequestParamDTO.setIsUrl(_ctx.booleanValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].ApiInfo.RequestParamList["+ k +"].IsUrl"));
+
+					requestParamList.add(apiRequestParamDTO);
+				}
+				apiInfo.setRequestParamList(requestParamList);
+				datasetVersionDTO.setApiInfo(apiInfo);
 
 				DataVersionConfig dataVersionConfig = new DataVersionConfig();
 				dataVersionConfig.setVersionDescription(_ctx.stringValue("ListDatasetsResponse.PageResult.ResultData["+ i +"].VersionList["+ j +"].DataVersionConfig.VersionDescription"));

@@ -30,10 +30,12 @@ public class CreateStandardRelationsRequest extends RpcAcsRequest<CreateStandard
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateStandardRelationsRequest() {
-		super("dataphin-public", "2023-06-30", "CreateStandardRelations");
+		super("dataphin-public", "2023-06-30", "CreateStandardRelations", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class CreateStandardRelationsRequest extends RpcAcsRequest<CreateStandard
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

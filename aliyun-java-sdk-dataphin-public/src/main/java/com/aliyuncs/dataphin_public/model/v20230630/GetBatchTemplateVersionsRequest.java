@@ -27,13 +27,15 @@ public class GetBatchTemplateVersionsRequest extends RpcAcsRequest<GetBatchTempl
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long templateId;
 
 	private String env;
 
 	private Long projectId;
 	public GetBatchTemplateVersionsRequest() {
-		super("dataphin-public", "2023-06-30", "GetBatchTemplateVersions");
+		super("dataphin-public", "2023-06-30", "GetBatchTemplateVersions", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class GetBatchTemplateVersionsRequest extends RpcAcsRequest<GetBatchTempl
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

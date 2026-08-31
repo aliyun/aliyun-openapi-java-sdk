@@ -27,13 +27,15 @@ public class DeleteKgRelationRequest extends RpcAcsRequest<DeleteKgRelationRespo
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String relationId;
 
 	private String relationType;
 
 	private String workspaceId;
 	public DeleteKgRelationRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteKgRelation");
+		super("dataphin-public", "2023-06-30", "DeleteKgRelation", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class DeleteKgRelationRequest extends RpcAcsRequest<DeleteKgRelationRespo
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

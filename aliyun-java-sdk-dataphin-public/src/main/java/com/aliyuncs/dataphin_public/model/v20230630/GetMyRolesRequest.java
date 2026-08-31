@@ -26,8 +26,10 @@ public class GetMyRolesRequest extends RpcAcsRequest<GetMyRolesResponse> {
 	   
 
 	private Long opTenantId;
+
+	private String opUserId;
 	public GetMyRolesRequest() {
-		super("dataphin-public", "2023-06-30", "GetMyRoles");
+		super("dataphin-public", "2023-06-30", "GetMyRoles", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -40,6 +42,17 @@ public class GetMyRolesRequest extends RpcAcsRequest<GetMyRolesResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

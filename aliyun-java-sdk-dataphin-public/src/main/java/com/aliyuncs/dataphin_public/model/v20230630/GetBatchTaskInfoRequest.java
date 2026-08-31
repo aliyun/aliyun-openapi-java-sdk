@@ -27,6 +27,8 @@ public class GetBatchTaskInfoRequest extends RpcAcsRequest<GetBatchTaskInfoRespo
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String env;
 
 	private Boolean includeAllUpStreams;
@@ -35,7 +37,7 @@ public class GetBatchTaskInfoRequest extends RpcAcsRequest<GetBatchTaskInfoRespo
 
 	private Long fileId;
 	public GetBatchTaskInfoRequest() {
-		super("dataphin-public", "2023-06-30", "GetBatchTaskInfo");
+		super("dataphin-public", "2023-06-30", "GetBatchTaskInfo", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class GetBatchTaskInfoRequest extends RpcAcsRequest<GetBatchTaskInfoRespo
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

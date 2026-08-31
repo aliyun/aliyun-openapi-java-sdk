@@ -30,10 +30,12 @@ public class CreateStandardMappingRequest extends RpcAcsRequest<CreateStandardMa
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateStandardMappingRequest() {
-		super("dataphin-public", "2023-06-30", "CreateStandardMapping");
+		super("dataphin-public", "2023-06-30", "CreateStandardMapping", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class CreateStandardMappingRequest extends RpcAcsRequest<CreateStandardMa
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

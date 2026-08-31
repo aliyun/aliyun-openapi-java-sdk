@@ -33,7 +33,7 @@ public class ListSecurityClassifyRequest extends RpcAcsRequest<ListSecurityClass
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListSecurityClassifyRequest() {
-		super("dataphin-public", "2023-06-30", "ListSecurityClassify");
+		super("dataphin-public", "2023-06-30", "ListSecurityClassify", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

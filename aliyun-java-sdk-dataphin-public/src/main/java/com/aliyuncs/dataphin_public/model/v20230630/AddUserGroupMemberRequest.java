@@ -30,10 +30,12 @@ public class AddUserGroupMemberRequest extends RpcAcsRequest<AddUserGroupMemberR
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("addCommand")
 	private AddCommand addCommand;
 	public AddUserGroupMemberRequest() {
-		super("dataphin-public", "2023-06-30", "AddUserGroupMember");
+		super("dataphin-public", "2023-06-30", "AddUserGroupMember", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class AddUserGroupMemberRequest extends RpcAcsRequest<AddUserGroupMemberR
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

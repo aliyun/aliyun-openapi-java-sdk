@@ -29,13 +29,15 @@ public class GetPipelineByIdRequest extends RpcAcsRequest<GetPipelineByIdRespons
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("queryId")
 	private QueryId queryId;
 
 	@SerializedName("context")
 	private Context context;
 	public GetPipelineByIdRequest() {
-		super("dataphin-public", "2023-06-30", "GetPipelineById");
+		super("dataphin-public", "2023-06-30", "GetPipelineById", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class GetPipelineByIdRequest extends RpcAcsRequest<GetPipelineByIdRespons
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

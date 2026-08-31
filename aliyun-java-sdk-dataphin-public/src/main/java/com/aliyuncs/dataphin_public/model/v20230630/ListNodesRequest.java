@@ -30,12 +30,14 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 
 	private String env;
 	public ListNodesRequest() {
-		super("dataphin-public", "2023-06-30", "ListNodes");
+		super("dataphin-public", "2023-06-30", "ListNodes", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

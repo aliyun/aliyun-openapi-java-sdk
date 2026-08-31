@@ -30,10 +30,12 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateDataServiceApiRequest() {
-		super("dataphin-public", "2023-06-30", "CreateDataServiceApi");
+		super("dataphin-public", "2023-06-30", "CreateDataServiceApi", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

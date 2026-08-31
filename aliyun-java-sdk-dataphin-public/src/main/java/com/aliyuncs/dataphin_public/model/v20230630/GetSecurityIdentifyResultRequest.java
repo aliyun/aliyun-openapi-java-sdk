@@ -27,9 +27,11 @@ public class GetSecurityIdentifyResultRequest extends RpcAcsRequest<GetSecurityI
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long id;
 	public GetSecurityIdentifyResultRequest() {
-		super("dataphin-public", "2023-06-30", "GetSecurityIdentifyResult");
+		super("dataphin-public", "2023-06-30", "GetSecurityIdentifyResult", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -42,6 +44,17 @@ public class GetSecurityIdentifyResultRequest extends RpcAcsRequest<GetSecurityI
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

@@ -30,10 +30,12 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("submitCommand")
 	private SubmitCommand submitCommand;
 	public SubmitBatchTaskRequest() {
-		super("dataphin-public", "2023-06-30", "SubmitBatchTask");
+		super("dataphin-public", "2023-06-30", "SubmitBatchTask", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

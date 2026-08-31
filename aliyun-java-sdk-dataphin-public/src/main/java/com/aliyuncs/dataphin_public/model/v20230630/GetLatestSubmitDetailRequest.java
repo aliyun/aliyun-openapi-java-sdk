@@ -29,10 +29,12 @@ public class GetLatestSubmitDetailRequest extends RpcAcsRequest<GetLatestSubmitD
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("submitDetailQuery")
 	private SubmitDetailQuery submitDetailQuery;
 	public GetLatestSubmitDetailRequest() {
-		super("dataphin-public", "2023-06-30", "GetLatestSubmitDetail");
+		super("dataphin-public", "2023-06-30", "GetLatestSubmitDetail", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +47,17 @@ public class GetLatestSubmitDetailRequest extends RpcAcsRequest<GetLatestSubmitD
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

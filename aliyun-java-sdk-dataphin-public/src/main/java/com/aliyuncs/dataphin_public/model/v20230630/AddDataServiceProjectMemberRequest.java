@@ -30,12 +30,14 @@ public class AddDataServiceProjectMemberRequest extends RpcAcsRequest<AddDataSer
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("addCommand")
 	private AddCommand addCommand;
 
 	private Integer projectId;
 	public AddDataServiceProjectMemberRequest() {
-		super("dataphin-public", "2023-06-30", "AddDataServiceProjectMember");
+		super("dataphin-public", "2023-06-30", "AddDataServiceProjectMember", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -48,6 +50,17 @@ public class AddDataServiceProjectMemberRequest extends RpcAcsRequest<AddDataSer
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

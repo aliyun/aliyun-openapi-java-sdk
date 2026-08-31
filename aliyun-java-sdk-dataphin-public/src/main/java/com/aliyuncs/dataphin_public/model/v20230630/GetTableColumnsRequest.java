@@ -27,11 +27,13 @@ public class GetTableColumnsRequest extends RpcAcsRequest<GetTableColumnsRespons
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private String catalog;
 
 	private String tableName;
 	public GetTableColumnsRequest() {
-		super("dataphin-public", "2023-06-30", "GetTableColumns");
+		super("dataphin-public", "2023-06-30", "GetTableColumns", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -44,6 +46,17 @@ public class GetTableColumnsRequest extends RpcAcsRequest<GetTableColumnsRespons
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

@@ -27,13 +27,15 @@ public class GetUdfByVersionRequest extends RpcAcsRequest<GetUdfByVersionRespons
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	private Long versionId;
 
 	private Long id;
 
 	private Long projectId;
 	public GetUdfByVersionRequest() {
-		super("dataphin-public", "2023-06-30", "GetUdfByVersion");
+		super("dataphin-public", "2023-06-30", "GetUdfByVersion", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -46,6 +48,17 @@ public class GetUdfByVersionRequest extends RpcAcsRequest<GetUdfByVersionRespons
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 

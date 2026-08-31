@@ -24,9 +24,12 @@ import com.aliyuncs.dataphin_public.model.v20230630.GetCatalogAssetDetailsRespon
 import com.aliyuncs.dataphin_public.model.v20230630.GetCatalogAssetDetailsResponse.Data.Column.Standard;
 import com.aliyuncs.dataphin_public.model.v20230630.GetCatalogAssetDetailsResponse.Data.CustomAttribute;
 import com.aliyuncs.dataphin_public.model.v20230630.GetCatalogAssetDetailsResponse.Data.Directorie;
+import com.aliyuncs.dataphin_public.model.v20230630.GetCatalogAssetDetailsResponse.Data.Directorie.DirectoryChainItem;
 import com.aliyuncs.dataphin_public.model.v20230630.GetCatalogAssetDetailsResponse.Data.FirstOnShelveUser;
 import com.aliyuncs.dataphin_public.model.v20230630.GetCatalogAssetDetailsResponse.Data.LastOnShelveUser;
 import com.aliyuncs.dataphin_public.model.v20230630.GetCatalogAssetDetailsResponse.Data.Owner1;
+import com.aliyuncs.dataphin_public.model.v20230630.GetCatalogAssetDetailsResponse.Data.QualityScoreRadar;
+import com.aliyuncs.dataphin_public.model.v20230630.GetCatalogAssetDetailsResponse.Data.QualityScoreRadar.CatalogScore;
 import com.aliyuncs.dataphin_public.model.v20230630.GetCatalogAssetDetailsResponse.Data.SimpleNodeInfo;
 import com.aliyuncs.dataphin_public.model.v20230630.GetCatalogAssetDetailsResponse.Data.SimpleNodeInfo.Owner;
 import com.aliyuncs.dataphin_public.model.v20230630.GetCatalogAssetDetailsResponse.Data.SimpleNodeInfo.Project;
@@ -136,6 +139,27 @@ public class GetCatalogAssetDetailsResponseUnmarshaller {
 		owner1.setDisplayName(_ctx.stringValue("GetCatalogAssetDetailsResponse.Data.Owner.DisplayName"));
 		data.setOwner1(owner1);
 
+		QualityScoreRadar qualityScoreRadar = new QualityScoreRadar();
+		qualityScoreRadar.setValidateRuleCount(_ctx.integerValue("GetCatalogAssetDetailsResponse.Data.QualityScoreRadar.ValidateRuleCount"));
+		qualityScoreRadar.setTotalScore(_ctx.doubleValue("GetCatalogAssetDetailsResponse.Data.QualityScoreRadar.TotalScore"));
+		qualityScoreRadar.setPassRuleCount(_ctx.integerValue("GetCatalogAssetDetailsResponse.Data.QualityScoreRadar.PassRuleCount"));
+
+		List<CatalogScore> catalogScores = new ArrayList<CatalogScore>();
+		for (int i = 0; i < _ctx.lengthValue("GetCatalogAssetDetailsResponse.Data.QualityScoreRadar.CatalogScores.Length"); i++) {
+			CatalogScore catalogScore = new CatalogScore();
+			catalogScore.setTableRuleCount(_ctx.integerValue("GetCatalogAssetDetailsResponse.Data.QualityScoreRadar.CatalogScores["+ i +"].TableRuleCount"));
+			catalogScore.setFieldRuleCount(_ctx.integerValue("GetCatalogAssetDetailsResponse.Data.QualityScoreRadar.CatalogScores["+ i +"].FieldRuleCount"));
+			catalogScore.setScore(_ctx.doubleValue("GetCatalogAssetDetailsResponse.Data.QualityScoreRadar.CatalogScores["+ i +"].Score"));
+			catalogScore.setPassRate(_ctx.doubleValue("GetCatalogAssetDetailsResponse.Data.QualityScoreRadar.CatalogScores["+ i +"].PassRate"));
+			catalogScore.setValidateRuleCount(_ctx.integerValue("GetCatalogAssetDetailsResponse.Data.QualityScoreRadar.CatalogScores["+ i +"].ValidateRuleCount"));
+			catalogScore.setPassRuleCount(_ctx.integerValue("GetCatalogAssetDetailsResponse.Data.QualityScoreRadar.CatalogScores["+ i +"].PassRuleCount"));
+			catalogScore.setCatalog(_ctx.stringValue("GetCatalogAssetDetailsResponse.Data.QualityScoreRadar.CatalogScores["+ i +"].Catalog"));
+
+			catalogScores.add(catalogScore);
+		}
+		qualityScoreRadar.setCatalogScores(catalogScores);
+		data.setQualityScoreRadar(qualityScoreRadar);
+
 		LastOnShelveUser lastOnShelveUser = new LastOnShelveUser();
 		lastOnShelveUser.setUserId(_ctx.stringValue("GetCatalogAssetDetailsResponse.Data.LastOnShelveUser.UserId"));
 		lastOnShelveUser.setDisplayName(_ctx.stringValue("GetCatalogAssetDetailsResponse.Data.LastOnShelveUser.DisplayName"));
@@ -162,9 +186,23 @@ public class GetCatalogAssetDetailsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetCatalogAssetDetailsResponse.Data.Directories.Length"); i++) {
 			Directorie directorie = new Directorie();
 			directorie.setDirectoryId(_ctx.longValue("GetCatalogAssetDetailsResponse.Data.Directories["+ i +"].DirectoryId"));
+			directorie.setDirectoryDescription(_ctx.stringValue("GetCatalogAssetDetailsResponse.Data.Directories["+ i +"].DirectoryDescription"));
 			directorie.setTopicId(_ctx.longValue("GetCatalogAssetDetailsResponse.Data.Directories["+ i +"].TopicId"));
+			directorie.setTopicDescription(_ctx.stringValue("GetCatalogAssetDetailsResponse.Data.Directories["+ i +"].TopicDescription"));
 			directorie.setDirectoryName(_ctx.stringValue("GetCatalogAssetDetailsResponse.Data.Directories["+ i +"].DirectoryName"));
 			directorie.setTopicName(_ctx.stringValue("GetCatalogAssetDetailsResponse.Data.Directories["+ i +"].TopicName"));
+
+			List<DirectoryChainItem> directoryChain = new ArrayList<DirectoryChainItem>();
+			for (int j = 0; j < _ctx.lengthValue("GetCatalogAssetDetailsResponse.Data.Directories["+ i +"].DirectoryChain.Length"); j++) {
+				DirectoryChainItem directoryChainItem = new DirectoryChainItem();
+				directoryChainItem.setDirectoryId(_ctx.longValue("GetCatalogAssetDetailsResponse.Data.Directories["+ i +"].DirectoryChain["+ j +"].DirectoryId"));
+				directoryChainItem.setDirectoryDescription(_ctx.stringValue("GetCatalogAssetDetailsResponse.Data.Directories["+ i +"].DirectoryChain["+ j +"].DirectoryDescription"));
+				directoryChainItem.setLevel(_ctx.integerValue("GetCatalogAssetDetailsResponse.Data.Directories["+ i +"].DirectoryChain["+ j +"].Level"));
+				directoryChainItem.setDirectoryName(_ctx.stringValue("GetCatalogAssetDetailsResponse.Data.Directories["+ i +"].DirectoryChain["+ j +"].DirectoryName"));
+
+				directoryChain.add(directoryChainItem);
+			}
+			directorie.setDirectoryChain(directoryChain);
 
 			directories.add(directorie);
 		}

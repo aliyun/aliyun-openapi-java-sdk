@@ -15,6 +15,7 @@
 package com.aliyuncs.dataphin_public.model.v20230630;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.ProtocolType;
@@ -29,10 +30,12 @@ public class ListCatalogAssetsRequest extends RpcAcsRequest<ListCatalogAssetsRes
 
 	private Long opTenantId;
 
+	private String opUserId;
+
 	@SerializedName("listCatalogAssetsQuery")
 	private ListCatalogAssetsQuery listCatalogAssetsQuery;
 	public ListCatalogAssetsRequest() {
-		super("dataphin-public", "2023-06-30", "ListCatalogAssets");
+		super("dataphin-public", "2023-06-30", "ListCatalogAssets", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -45,6 +48,17 @@ public class ListCatalogAssetsRequest extends RpcAcsRequest<ListCatalogAssetsRes
 		this.opTenantId = opTenantId;
 		if(opTenantId != null){
 			putQueryParameter("OpTenantId", opTenantId.toString());
+		}
+	}
+
+	public String getOpUserId() {
+		return this.opUserId;
+	}
+
+	public void setOpUserId(String opUserId) {
+		this.opUserId = opUserId;
+		if(opUserId != null){
+			putQueryParameter("OpUserId", opUserId);
 		}
 	}
 
@@ -75,6 +89,9 @@ public class ListCatalogAssetsRequest extends RpcAcsRequest<ListCatalogAssetsRes
 
 		@SerializedName("PageNum")
 		private Integer pageNum;
+
+		@SerializedName("ShelveDirectoryIds")
+		private List<Long> shelveDirectoryIds;
 
 		@SerializedName("AssetType")
 		private String assetType;
@@ -117,6 +134,14 @@ public class ListCatalogAssetsRequest extends RpcAcsRequest<ListCatalogAssetsRes
 
 		public void setPageNum(Integer pageNum) {
 			this.pageNum = pageNum;
+		}
+
+		public List<Long> getShelveDirectoryIds() {
+			return this.shelveDirectoryIds;
+		}
+
+		public void setShelveDirectoryIds(List<Long> shelveDirectoryIds) {
+			this.shelveDirectoryIds = shelveDirectoryIds;
 		}
 
 		public String getAssetType() {
