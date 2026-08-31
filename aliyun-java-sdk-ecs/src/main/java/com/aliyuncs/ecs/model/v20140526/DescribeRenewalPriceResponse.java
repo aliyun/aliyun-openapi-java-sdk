@@ -136,6 +136,8 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 				private List<Coupon> coupons;
 
+				private List<SubPrice> subPrices;
+
 				public Float getOriginalPrice() {
 					return this.originalPrice;
 				}
@@ -182,6 +184,14 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 				public void setCoupons(List<Coupon> coupons) {
 					this.coupons = coupons;
+				}
+
+				public List<SubPrice> getSubPrices() {
+					return this.subPrices;
+				}
+
+				public void setSubPrices(List<SubPrice> subPrices) {
+					this.subPrices = subPrices;
 				}
 
 				public static class Promotion {
@@ -412,6 +422,122 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 						}
 					}
 				}
+
+				public static class SubPrice {
+
+					private Float originalPrice;
+
+					private String instanceId;
+
+					private Float discountPrice;
+
+					private Float tradePrice;
+
+					private List<Promotion2> promotions1;
+
+					private List<String> ruleIdSet;
+
+					public Float getOriginalPrice() {
+						return this.originalPrice;
+					}
+
+					public void setOriginalPrice(Float originalPrice) {
+						this.originalPrice = originalPrice;
+					}
+
+					public String getInstanceId() {
+						return this.instanceId;
+					}
+
+					public void setInstanceId(String instanceId) {
+						this.instanceId = instanceId;
+					}
+
+					public Float getDiscountPrice() {
+						return this.discountPrice;
+					}
+
+					public void setDiscountPrice(Float discountPrice) {
+						this.discountPrice = discountPrice;
+					}
+
+					public Float getTradePrice() {
+						return this.tradePrice;
+					}
+
+					public void setTradePrice(Float tradePrice) {
+						this.tradePrice = tradePrice;
+					}
+
+					public List<Promotion2> getPromotions1() {
+						return this.promotions1;
+					}
+
+					public void setPromotions1(List<Promotion2> promotions1) {
+						this.promotions1 = promotions1;
+					}
+
+					public List<String> getRuleIdSet() {
+						return this.ruleIdSet;
+					}
+
+					public void setRuleIdSet(List<String> ruleIdSet) {
+						this.ruleIdSet = ruleIdSet;
+					}
+
+					public static class Promotion2 {
+
+						private Float discountOff;
+
+						private String type;
+
+						private Float remainQuota;
+
+						private String name;
+
+						private List<Long> ruleIds3;
+
+						public Float getDiscountOff() {
+							return this.discountOff;
+						}
+
+						public void setDiscountOff(Float discountOff) {
+							this.discountOff = discountOff;
+						}
+
+						public String getType() {
+							return this.type;
+						}
+
+						public void setType(String type) {
+							this.type = type;
+						}
+
+						public Float getRemainQuota() {
+							return this.remainQuota;
+						}
+
+						public void setRemainQuota(Float remainQuota) {
+							this.remainQuota = remainQuota;
+						}
+
+						public String getName() {
+							return this.name;
+						}
+
+						public void setName(String name) {
+							this.name = name;
+						}
+
+						public List<Long> getRuleIds3() {
+							return this.ruleIds3;
+						}
+
+						public void setRuleIds3(List<Long> ruleIds3) {
+							this.ruleIds3 = ruleIds3;
+						}
+					}
+				}
 			}
 		}
 
@@ -431,15 +557,15 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 			private String currency;
 
-			private List<Promotion3> promotions1;
+			private List<Promotion8> promotions5;
 
 			private List<DetailInfo> detailInfos;
 
-			private List<Coupon7> coupons2;
+			private List<Coupon12> coupons6;
 
-			private List<SubPrice> subPrices;
+			private List<SubPrice15> subPrices7;
 
-			private List<String> ruleIdSet;
+			private List<String> ruleIdSet4;
 
 			private DepreciateInfo depreciateInfo;
 
@@ -499,12 +625,12 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 				this.currency = currency;
 			}
 
-			public List<Promotion3> getPromotions1() {
-				return this.promotions1;
+			public List<Promotion8> getPromotions5() {
+				return this.promotions5;
 			}
 
-			public void setPromotions1(List<Promotion3> promotions1) {
-				this.promotions1 = promotions1;
+			public void setPromotions5(List<Promotion8> promotions5) {
+				this.promotions5 = promotions5;
 			}
 
 			public List<DetailInfo> getDetailInfos() {
@@ -515,28 +641,28 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 				this.detailInfos = detailInfos;
 			}
 
-			public List<Coupon7> getCoupons2() {
-				return this.coupons2;
+			public List<Coupon12> getCoupons6() {
+				return this.coupons6;
 			}
 
-			public void setCoupons2(List<Coupon7> coupons2) {
-				this.coupons2 = coupons2;
+			public void setCoupons6(List<Coupon12> coupons6) {
+				this.coupons6 = coupons6;
 			}
 
-			public List<SubPrice> getSubPrices() {
-				return this.subPrices;
+			public List<SubPrice15> getSubPrices7() {
+				return this.subPrices7;
 			}
 
-			public void setSubPrices(List<SubPrice> subPrices) {
-				this.subPrices = subPrices;
+			public void setSubPrices7(List<SubPrice15> subPrices7) {
+				this.subPrices7 = subPrices7;
 			}
 
-			public List<String> getRuleIdSet() {
-				return this.ruleIdSet;
+			public List<String> getRuleIdSet4() {
+				return this.ruleIdSet4;
 			}
 
-			public void setRuleIdSet(List<String> ruleIdSet) {
-				this.ruleIdSet = ruleIdSet;
+			public void setRuleIdSet4(List<String> ruleIdSet4) {
+				this.ruleIdSet4 = ruleIdSet4;
 			}
 
 			public DepreciateInfo getDepreciateInfo() {
@@ -547,7 +673,7 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 				this.depreciateInfo = depreciateInfo;
 			}
 
-			public static class Promotion3 {
+			public static class Promotion8 {
 
 				private Float discountOff;
 
@@ -557,7 +683,7 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 				private String name;
 
-				private List<Long> ruleIds4;
+				private List<Long> ruleIds9;
 
 				public Float getDiscountOff() {
 					return this.discountOff;
@@ -591,12 +717,12 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 					this.name = name;
 				}
 
-				public List<Long> getRuleIds4() {
-					return this.ruleIds4;
+				public List<Long> getRuleIds9() {
+					return this.ruleIds9;
 				}
 
-				public void setRuleIds4(List<Long> ruleIds4) {
-					this.ruleIds4 = ruleIds4;
+				public void setRuleIds9(List<Long> ruleIds9) {
+					this.ruleIds9 = ruleIds9;
 				}
 			}
 
@@ -616,11 +742,11 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 				private Boolean isContractPromotion;
 
-				private List<Rule6> subRules;
+				private List<Rule11> subRules;
 
 				private List<Attribute> attributes;
 
-				private DepreciateInfo5 depreciateInfo5;
+				private DepreciateInfo10 depreciateInfo10;
 
 				public Float getOriginalPrice() {
 					return this.originalPrice;
@@ -678,11 +804,11 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 					this.isContractPromotion = isContractPromotion;
 				}
 
-				public List<Rule6> getSubRules() {
+				public List<Rule11> getSubRules() {
 					return this.subRules;
 				}
 
-				public void setSubRules(List<Rule6> subRules) {
+				public void setSubRules(List<Rule11> subRules) {
 					this.subRules = subRules;
 				}
 
@@ -694,15 +820,15 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 					this.attributes = attributes;
 				}
 
-				public DepreciateInfo5 getDepreciateInfo5() {
-					return this.depreciateInfo5;
+				public DepreciateInfo10 getDepreciateInfo10() {
+					return this.depreciateInfo10;
 				}
 
-				public void setDepreciateInfo5(DepreciateInfo5 depreciateInfo5) {
-					this.depreciateInfo5 = depreciateInfo5;
+				public void setDepreciateInfo10(DepreciateInfo10 depreciateInfo10) {
+					this.depreciateInfo10 = depreciateInfo10;
 				}
 
-				public static class Rule6 {
+				public static class Rule11 {
 
 					private String description;
 
@@ -748,7 +874,7 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 					}
 				}
 
-				public static class DepreciateInfo5 {
+				public static class DepreciateInfo10 {
 
 					private Float cheapStandardPrice;
 
@@ -842,7 +968,7 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 				}
 			}
 
-			public static class Coupon7 {
+			public static class Coupon12 {
 
 				private String couponNo;
 
@@ -858,9 +984,9 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 				private Boolean effective;
 
-				private List<Long> ruleIds8;
+				private List<Long> ruleIds13;
 
-				private AdditionalInfo9 additionalInfo9;
+				private AdditionalInfo14 additionalInfo14;
 
 				public String getCouponNo() {
 					return this.couponNo;
@@ -918,23 +1044,23 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 					this.effective = effective;
 				}
 
-				public List<Long> getRuleIds8() {
-					return this.ruleIds8;
+				public List<Long> getRuleIds13() {
+					return this.ruleIds13;
 				}
 
-				public void setRuleIds8(List<Long> ruleIds8) {
-					this.ruleIds8 = ruleIds8;
+				public void setRuleIds13(List<Long> ruleIds13) {
+					this.ruleIds13 = ruleIds13;
 				}
 
-				public AdditionalInfo9 getAdditionalInfo9() {
-					return this.additionalInfo9;
+				public AdditionalInfo14 getAdditionalInfo14() {
+					return this.additionalInfo14;
 				}
 
-				public void setAdditionalInfo9(AdditionalInfo9 additionalInfo9) {
-					this.additionalInfo9 = additionalInfo9;
+				public void setAdditionalInfo14(AdditionalInfo14 additionalInfo14) {
+					this.additionalInfo14 = additionalInfo14;
 				}
 
-				public static class AdditionalInfo9 {
+				public static class AdditionalInfo14 {
 
 					private Double voucherTotalAmount;
 
@@ -1028,7 +1154,7 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 				}
 			}
 
-			public static class SubPrice {
+			public static class SubPrice15 {
 
 				private Float originalPrice;
 
@@ -1044,11 +1170,11 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 				private Boolean isContractPromotion;
 
-				private List<Promotion13> promotions12;
+				private List<Promotion19> promotions18;
 
-				private List<String> ruleIdSet10;
+				private List<String> ruleIdSet16;
 
-				private DepreciateInfo11 depreciateInfo11;
+				private DepreciateInfo17 depreciateInfo17;
 
 				public Float getOriginalPrice() {
 					return this.originalPrice;
@@ -1106,31 +1232,31 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 					this.isContractPromotion = isContractPromotion;
 				}
 
-				public List<Promotion13> getPromotions12() {
-					return this.promotions12;
+				public List<Promotion19> getPromotions18() {
+					return this.promotions18;
 				}
 
-				public void setPromotions12(List<Promotion13> promotions12) {
-					this.promotions12 = promotions12;
+				public void setPromotions18(List<Promotion19> promotions18) {
+					this.promotions18 = promotions18;
 				}
 
-				public List<String> getRuleIdSet10() {
-					return this.ruleIdSet10;
+				public List<String> getRuleIdSet16() {
+					return this.ruleIdSet16;
 				}
 
-				public void setRuleIdSet10(List<String> ruleIdSet10) {
-					this.ruleIdSet10 = ruleIdSet10;
+				public void setRuleIdSet16(List<String> ruleIdSet16) {
+					this.ruleIdSet16 = ruleIdSet16;
 				}
 
-				public DepreciateInfo11 getDepreciateInfo11() {
-					return this.depreciateInfo11;
+				public DepreciateInfo17 getDepreciateInfo17() {
+					return this.depreciateInfo17;
 				}
 
-				public void setDepreciateInfo11(DepreciateInfo11 depreciateInfo11) {
-					this.depreciateInfo11 = depreciateInfo11;
+				public void setDepreciateInfo17(DepreciateInfo17 depreciateInfo17) {
+					this.depreciateInfo17 = depreciateInfo17;
 				}
 
-				public static class Promotion13 {
+				public static class Promotion19 {
 
 					private Float discountOff;
 
@@ -1140,7 +1266,7 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 					private String name;
 
-					private List<Long> ruleIds14;
+					private List<Long> ruleIds20;
 
 					public Float getDiscountOff() {
 						return this.discountOff;
@@ -1174,16 +1300,16 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 						this.name = name;
 					}
 
-					public List<Long> getRuleIds14() {
-						return this.ruleIds14;
+					public List<Long> getRuleIds20() {
+						return this.ruleIds20;
 					}
 
-					public void setRuleIds14(List<Long> ruleIds14) {
-						this.ruleIds14 = ruleIds14;
+					public void setRuleIds20(List<Long> ruleIds20) {
+						this.ruleIds20 = ruleIds20;
 					}
 				}
 
-				public static class DepreciateInfo11 {
+				public static class DepreciateInfo17 {
 
 					private Float cheapStandardPrice;
 

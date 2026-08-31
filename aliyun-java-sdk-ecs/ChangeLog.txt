@@ -1,3 +1,6 @@
+2026-08-31 Version: 5.11.31
+- Support Secure Boot.
+
 2026-08-11 Version: 5.11.30
 - Support Eni Express.
 
